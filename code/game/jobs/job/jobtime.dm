@@ -10,7 +10,12 @@
 /datum/jobtime/proc/update_jobtime() //updates our play time from DB
 	jobtime_list = parentclient.get_jobtime_list_db()
 
-
+	for(var/jtitle in jobtime_list) //checks and calculates sub categories and department times
+		var/datum/job/jtype = SSjobs.get_by_title(jtitle)
+		if(!jtype || !LAZYLEN(jtype.get_flags_to_exp()))
+			continue
+		for(var/category in jtype.get_flags_to_exp())
+			jobtime_list[category] += jobtime_list[jtitle]
 
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
 	return jobtime_list[tjob.title]
@@ -31,5 +36,6 @@
 
 	var/datum/jobtime/jb = src.client.jobtime
 	jb.update_jobtime()
-	to_chat(src, "Current jobtime is [jb.get_jobtime_by_job(mind.assigned_job)]")
+	for(var/job in jb.jobtime_list)
+		to_chat(src, "[job] : [jb.get_jobtime_by_title(job)]")
 

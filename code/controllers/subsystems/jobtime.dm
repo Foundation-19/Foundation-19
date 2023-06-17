@@ -98,8 +98,8 @@ SUBSYSTEM_DEF(jobtime)
 	var/list/valid_jobs = SSjobs.job_lists_by_map_name[GLOB.using_map.full_name]
 	valid_jobs = valid_jobs["jobs"]
 
-	for(var/rtype in valid_jobs)
-		if(!play_records[rtype])
-			play_records[rtype] = 0
+	for(var/datum/job/jtype in valid_jobs)
+		if(!play_records[jtype.title])
+			play_records[jtype.title] = 0
 
 	return play_records

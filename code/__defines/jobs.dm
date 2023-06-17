@@ -28,4 +28,6 @@
 #define EXP_TYPE_ECZ "ECZ"
 #define EXP_TYPE_HCZ "HCZ"
 #define EXP_TYPE_BUR "Bureaucrat"
+#define EXP_TYPE_REP "Representative"
 
+//Categories are stored on DB along with seperate jobs and sub-categories and departments are calculated in game to avoid cluttering DB.

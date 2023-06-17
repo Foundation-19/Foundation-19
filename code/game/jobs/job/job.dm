@@ -512,3 +512,38 @@
 		return TRUE
 	else
 		return FALSE
+
+/datum/job/proc/get_flags_to_exp()
+	var/list/exp_list
+	LAZYINITLIST(exp_list)
+
+	if(department_flag & CIV)
+		exp_list.Add(EXP_TYPE_CREW)
+	if(department_flag & COM)
+		exp_list.Add(EXP_TYPE_COMMAND)
+	if(department_flag & ENG)
+		exp_list.Add(EXP_TYPE_ENGINEERING)
+	if(department_flag & MED)
+		exp_list.Add(EXP_TYPE_MEDICAL)
+	if(department_flag & SCI)
+		exp_list.Add(EXP_TYPE_SCIENCE)
+	if(department_flag & SUP)
+		exp_list.Add(EXP_TYPE_SUPPLY)
+	if(department_flag & SEC)
+		exp_list.Add(EXP_TYPE_SECURITY)
+	if(department_flag & MSC)
+		exp_list.Add(EXP_TYPE_SILICON) //only silicon have MSC flag despite it standing for misc. jobs. This needs to be fixed and a proper silicon flag added
+	if(department_flag & SRV)
+		exp_list.Add(EXP_TYPE_SERVICE)
+	if(department_flag & LCZ)
+		exp_list.Add(EXP_TYPE_LCZ)
+	if(department_flag & ECZ)
+		exp_list.Add(EXP_TYPE_ECZ)
+	if(department_flag & HCZ)
+		exp_list.Add(EXP_TYPE_HCZ)
+	if(department_flag & BUR)
+		exp_list.Add(EXP_TYPE_BUR)
+	if(department_flag & REP)
+		exp_list.Add(EXP_TYPE_REP)
+
+	return exp_list

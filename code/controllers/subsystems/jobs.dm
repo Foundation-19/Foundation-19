@@ -10,6 +10,11 @@ var/const/SUP               =(1<<8)
 var/const/SPT               =(1<<9)
 var/const/EXP               =(1<<10)
 var/const/ROB               =(1<<11)
+var/const/LCZ               =(1<<12)
+var/const/ECZ               =(1<<13)
+var/const/HCZ               =(1<<14)
+var/const/BUR				=(1<<15)
+var/const/REP				=(1<<16)
 
 SUBSYSTEM_DEF(jobs)
 	name = "Jobs"

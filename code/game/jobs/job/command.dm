@@ -238,7 +238,7 @@
 /datum/job/goirep
 	title = "Global Occult Coalition Representative"
 	department = "Command"
-	department_flag = COM
+	department_flag = REP
 	selection_color = "#2f2f7f"
 	supervisors = "Your respective Group of Interest leaders"
 	total_positions = 1
