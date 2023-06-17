@@ -28,7 +28,7 @@
 	title = "Human Resources Officer"
 	department = "Command"
 	supervisors = "The Site Director"
-	department_flag = COM|CIV
+	department_flag = COM|CIV|BUR
 	selection_color = "#2f2f7f"
 	head_position = 1
 	total_positions = 1
@@ -210,7 +210,7 @@
 	title = "Ethics Committee Liaison"
 	department = "Civilian"
 	selection_color = "#2f2f7f"
-	department_flag = COM
+	department_flag = COM|BUR
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Ethics Committee"

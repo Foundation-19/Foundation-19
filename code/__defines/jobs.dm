@@ -18,7 +18,6 @@
 //Categories
 #define EXP_TYPE_LIVING "Living"
 #define EXP_TYPE_GHOST "Ghost"
-#define EXP_TYPE_SPECIAL "Special"
 #define EXP_TYPE_ANTAG "Antag"
 #define EXP_TYPE_ADMIN "Admin"
 #define EXP_TYPE_SCP "SCP"

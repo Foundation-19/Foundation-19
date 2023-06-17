@@ -36,7 +36,7 @@
 /datum/job/officeworker
 	title = "Office Worker"
 	department = "Civilian"
-	department_flag = CIV | BUR
+	department_flag = CIV|BUR
 	total_positions = 100
 	spawn_positions = 100
 	minimal_player_age = 10
@@ -158,7 +158,7 @@
 /datum/job/janitor
 	title = "Janitor"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = CIV|SVR
 	selection_color = "#515151"
 	total_positions = 3
 	spawn_positions = 3
@@ -189,7 +189,7 @@
 /datum/job/chef
 	title = "Chef"
 	department = "Civilian"
-	department_flag = CIV | SRV
+	department_flag = CIV|SRV
 	selection_color = "#515151"
 	total_positions = 1
 	spawn_positions = 1
@@ -221,7 +221,7 @@
 /datum/job/bartender
 	title = "Bartender"
 	department = "Civilian"
-	department_flag = CIV | SRV
+	department_flag = CIV|SRV
 	selection_color = "#515151"
 	total_positions = 1
 	spawn_positions = 1
@@ -254,7 +254,7 @@
 	title = "Archivist"
 	department = "Civilian"
 	selection_color = "#2f2f7f"
-	department_flag = CIV
+	department_flag = CIV|BUR
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 9
