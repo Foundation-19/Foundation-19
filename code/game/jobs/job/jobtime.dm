@@ -25,12 +25,18 @@
 	last_updated_jl = world.time
 
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
+	if(!tjob)
+		return 0
 	return jobtime_list[tjob.title]
 
 /datum/jobtime/proc/get_jobtime(job_title) //use title or category for this ONLY
+	if(!job_title)
+		return 0
 	return jobtime_list[job_title]
 
 /datum/jobtime/proc/get_jobtime_by_path(job_path)
+	if(!job_path)
+		return 0
 	var/datum/job/current_job = SSjobs.get_by_path(job_path)
 	return jobtime_list[current_job.title]
 
