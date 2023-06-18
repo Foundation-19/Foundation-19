@@ -153,13 +153,14 @@ SUBSYSTEM_DEF(jobs)
 	for(var/mob/living/carbon/human/C in SSmobs.mob_list)
 		var/char_name = joining.client.prefs.real_name
 		if(char_name == C.real_name)
-			to_chat(usr, SPAN_DANGER("A character with the name <b>[C.real_name]</b> already exists. Please join with a different name."))
+			to_chat (usr, SPAN_DANGER("A character with the name <b>[C.real_name]</b> already exists. Please join with a different name."))
 			return FALSE
 	if(!job.meets_req(joining.client))
 		var/list/job_reqs_remaining = job.get_req(joining.client)
 		to_chat(usr, SPAN_WARNING("You do not meet the playtime requirment to play this role! You need..."))
 		for(var/job_req in job_reqs_remaining)
-			to_chat(usr, SPAN_WARNING("		[job_reqs_remaining[job_req]] minutes as [job_req]"))
+			if(job_req)
+				to_chat(usr, SPAN_WARNING("	[job_reqs_remaining[job_req]] minutes as [job_req]"))
 		to_chat(usr, SPAN_WARNING("to play as [job.title]."))
 		return FALSE
 	return TRUE
@@ -180,7 +181,8 @@ SUBSYSTEM_DEF(jobs)
 		var/list/job_reqs_remaining = job.get_req(joining.client)
 		to_chat(usr, SPAN_WARNING("You do not meet the playtime requirment(s) to play this role! You need..."))
 		for(var/job_req in job_reqs_remaining)
-			to_chat(usr, SPAN_WARNING("		[job_reqs_remaining[job_req]] minutes as [job_req]"))
+			if(job_req)
+				to_chat(usr, SPAN_WARNING("	[job_reqs_remaining[job_req]] minutes as [job_req]"))
 		to_chat(usr, SPAN_WARNING("to play as [job.title]."))
 		return FALSE
 	return TRUE

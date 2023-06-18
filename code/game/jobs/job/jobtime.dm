@@ -9,7 +9,7 @@
 	update_jobtime(FALSE)
 	..()
 
-/datum/jobtime/proc/update_jobtime(check_cooldown = TRUE) //updates our play time from DB
+/datum/jobtime/proc/update_jobtime(check_cooldown = TRUE) //updates our play time from DB. You must call this beforehand if you are using any of the get_jobtime procs or accessing jobtime_list.
 	if((world.time - last_updated_jl < 1 MINUTE) && check_cooldown) //updating the jobtime list requires an SQL query which takes time, this prevents update_jobtime() from firing more than once per minute, as we can assume there have not been any significant changes in the db within that time.
 		return FALSE
 

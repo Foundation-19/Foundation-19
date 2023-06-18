@@ -391,6 +391,8 @@
 			reasons["Your species choice does not allow it."] = TRUE
 		if(!S.check_background(src, caller.prefs))
 			reasons["Your background choices do not allow it."] = TRUE
+	if(!meets_req(caller))
+		reasons["This role is timelocked for you."] = TRUE
 	if(LAZYLEN(reasons))
 		. = reasons
 
@@ -406,6 +408,8 @@
 	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
 		return FALSE
 	if(!player_old_enough(caller))
+		return FALSE
+	if(!meets_req(caller))
 		return FALSE
 	return TRUE
 
