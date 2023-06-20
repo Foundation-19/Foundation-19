@@ -54,4 +54,3 @@
 	for(var/job in jb.jobtime_list)
 		to_chat(src, "|[SPAN_CLASS("notice", "[job]")] played for [SPAN_CLASS("notice", "[jb.get_jobtime(job)] Minutes")]")
 	to_chat(src, SPAN_BOLD("+-------------------------------------+"))
-
