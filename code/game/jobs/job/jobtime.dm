@@ -41,11 +41,17 @@
 	return jobtime_list[current_job.title] ? jobtime_list[current_job.title] : 0
 
 /mob/verb/get_playtime_current()
-	set name = "Get Playtime"
+	set name = "See Playtime"
 	set category = "OOC"
 
 	var/datum/jobtime/jb = src.client.jobtime
+	if(!jb || !SSdbcore.IsConnected())
+		to_chat(src, SPAN_WARNING("Player time tracking data could not be retrieved!"))
+		return
+
 	jb.update_jobtime()
+	to_chat(src, SPAN_BOLD("+---------([ckey]'s Playtime)---------+"))
 	for(var/job in jb.jobtime_list)
-		to_chat(src, "[job] : [jb.get_jobtime(job)]")
+		to_chat(src, "|[SPAN_CLASS("notice", "[job]")] played for [SPAN_CLASS("notice", "[jb.get_jobtime(job)] Minutes")]")
+	to_chat(src, SPAN_BOLD("+-------------------------------------+"))
 
