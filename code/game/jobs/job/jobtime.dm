@@ -27,18 +27,18 @@
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
 	if(!tjob)
 		return 0
-	return jobtime_list[tjob.title]
+	return jobtime_list[tjob.title] ? jobtime_list[tjob.title] : 0
 
 /datum/jobtime/proc/get_jobtime(job_title) //use title or category for this ONLY
 	if(!job_title)
 		return 0
-	return jobtime_list[job_title]
+	return jobtime_list[job_title] ? jobtime_list[job_title] : 0
 
 /datum/jobtime/proc/get_jobtime_by_path(job_path)
 	if(!job_path)
 		return 0
 	var/datum/job/current_job = SSjobs.get_by_path(job_path)
-	return jobtime_list[current_job.title]
+	return jobtime_list[current_job.title] ? jobtime_list[current_job.title] : 0
 
 /mob/verb/get_playtime_current()
 	set name = "Get Playtime"
