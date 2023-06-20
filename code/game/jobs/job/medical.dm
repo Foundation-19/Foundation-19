@@ -16,6 +16,7 @@
 	department = "Medical"
 	department_flag = MED|COM
 	selection_color = "#026865"
+	requirements = list("Emergency Medical Technician" = 120, "Surgeon" = 300, "Medical Doctor" = 600, EXP_TYPE_MEDICAL = 1500)
 
 	head_position = 1
 	total_positions = 1
@@ -61,6 +62,7 @@
 	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 4
+	requirements = list("Class D" = 30)
 	alt_titles = list("Pharmacist")
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
@@ -103,6 +105,7 @@
 	minimal_player_age = 3
 	ideal_character_age = 40
 	economic_power = 5
+	requirements = list("Medical Doctor" = 60)
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list("Counselor")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
@@ -143,6 +146,7 @@
 	ideal_character_age = 26
 	minimal_player_age = 3
 	economic_power = 5
+	requirements = list("Class D" = 30)
 	alt_titles = list("Coroner")
 	outfit_type = /decl/hierarchy/outfit/job/medical/medicaldoctor
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -186,6 +190,7 @@
 	spawn_positions = 3
 	ideal_character_age = 30
 	economic_power = 5
+	requirements = list("Medical Doctor" = 480, EXP_TYPE_MEDICAL = 900)
 	supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
 	outfit_type = /decl/hierarchy/outfit/job/medical/surgeon
@@ -227,6 +232,7 @@
 	spawn_positions = 4
 	ideal_character_age = 40
 	economic_power = 5
+	requirements = list("Medical Doctor" = 300, EXP_TYPE_MEDICAL = 600)
 	//duties = "<big><b>As the EMT it is your job to man the medical post near the Class D cell block, and treat any injuries there of the guards or Class D's. You only have limited supplies, so it's best to make them count.</b></big>"
 	supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/medical/emt

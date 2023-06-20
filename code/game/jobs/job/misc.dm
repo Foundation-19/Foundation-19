@@ -15,8 +15,6 @@
 	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
-	requirements = null
-
 	max_skill = list(
 		SKILL_COMBAT = SKILL_TRAINED,
 		SKILL_WEAPONS = SKILL_TRAINED
@@ -73,7 +71,7 @@
 /datum/job/qm
 	title = "Logistics Officer"
 	department = "Logistics"
-	department_flag = SUP
+	department_flag = SUP|BUR
 	total_positions = 1
 	spawn_positions = 1
 	//supervisors = "the Site Director"
@@ -81,6 +79,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
+	requirements = list("Logistics Specialist" = 300)
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticsofficer
 	hud_icon = "huddeckchief"
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -116,13 +115,14 @@
 /datum/job/cargo_tech
 	title = "Logistics Specialist"
 	department = "Logistics"
-	department_flag = SUP
+	department_flag = SUP|BUR
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "B4802B"
 	//supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
+	requirements = list("Class D" = 30)
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
@@ -265,6 +265,7 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
+	requirements = list("Office Worker" = 300)
 	outfit_type = /decl/hierarchy/outfit/job/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)

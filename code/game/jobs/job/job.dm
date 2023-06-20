@@ -58,7 +58,7 @@
 
 	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
 
-	var/list/requirements = list("Class D" = 60) //the required playtime in other jobs or categories to play the role
+	var/list/requirements //the required playtime in other jobs or categories to play the role
 
 /datum/job/New()
 

@@ -21,7 +21,7 @@
 	access = list()				// see get_access() override
 	minimal_access = list()		// see get_access() override
 
-	requirements = list("Class D" = 60, EXP_TYPE_COMMAND = 120)
+	requirements = list(EXP_TYPE_COMMAND = 1800)
 
 /datum/job/captain/get_access()
 	return get_all_site_access()
@@ -30,7 +30,7 @@
 	title = "Human Resources Officer"
 	department = "Command"
 	supervisors = "The Site Director"
-	department_flag = COM|CIV|BUR
+	department_flag = COM|CIV|BUR|SRV
 	selection_color = "#2f2f7f"
 	head_position = 1
 	total_positions = 1
@@ -45,6 +45,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudhumanresources"
 	alt_titles = list("Head of Personnel")
+	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SERVICE = 480, EXP_TYPE_BUR = 480)
 
 	access = list(
 		ACCESS_HOP,
@@ -78,6 +79,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
 	allowed_branches = list(/datum/mil_branch/security)
 	hud_icon = "hudcommsofficer"
+	requirements = list(EXP_TYPE_ENGINEERING = 600, EXP_TYPE_SECURITY = 300, "Communications Technician" = 900)
 	allowed_ranks = list(
 	/datum/mil_rank/security/w5,
 	/datum/mil_rank/security/w6
@@ -136,6 +138,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
+	requirements = list(EXP_TYPE_ENGINEERING = 300)
 	alt_titles = list(
 		"Communications Programmer",
 		"Communications Dispatcher"
@@ -190,6 +193,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
+	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 120)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -220,6 +224,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/o5rep
+	requirements = list(EXP_TYPE_COMMAND = 180, EXP_TYPE_BUR = 480)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
