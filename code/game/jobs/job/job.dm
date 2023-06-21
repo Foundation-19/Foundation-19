@@ -392,7 +392,7 @@
 		if(!S.check_background(src, caller.prefs))
 			reasons["Your background choices do not allow it."] = TRUE
 	if(!meets_req(caller))
-		reasons["This role is timelocked for you."] = TRUE
+		reasons["You do not meet the playtime requirements."] = TRUE
 	if(LAZYLEN(reasons))
 		. = reasons
 
