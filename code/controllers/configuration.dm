@@ -245,7 +245,7 @@ var/list/gamemode_cache = list()
 
 	var/bccm = FALSE
 
-	var/use_jobtime_tracking = TRUE
+	var/use_timelocks = TRUE
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -528,8 +528,8 @@ var/list/gamemode_cache = list()
 				if ("traitor_scaling")
 					config.traitor_scaling = 1
 
-				if ("use_jobtime_tracking")
-					config.use_jobtime_tracking = 1
+				if ("use_timelocks")
+					config.use_timelocks = 1
 
 				if ("objectives_disabled")
 					if(!value)

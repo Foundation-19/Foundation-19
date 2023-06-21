@@ -462,4 +462,4 @@ RADIATION_LOWER_LIMIT 0.15
 #USE_BCCM
 
 ## Whether or not timelocks for roles are enabled. Comment out to disable.
-USE_JOBTIME_TRACKING
+USE_TIMELOCKS

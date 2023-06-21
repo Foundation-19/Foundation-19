@@ -604,11 +604,11 @@ var/global/floorIsLava = 0
 	if(!check_rights(R_ADMIN))
 		return
 
-	config.use_jobtime_tracking = !(config.use_jobtime_tracking)
-	if(config.use_jobtime_tracking && !SSdbcore.IsConnected())
-		config.use_jobtime_tracking = 0
+	config.use_timelocks = !(config.use_timelocks)
+	if(config.use_timelocks && !SSdbcore.IsConnected())
+		config.use_timelocks = 0
 		to_chat(usr,SPAN_WARNING("Timelocks cannot be enabled as there is no connection to the DB!"))
-	else if(config.use_jobtime_tracking)
+	else if(config.use_timelocks)
 		to_world("<B>Timelocks have been globally enabled!</B>")
 	else
 		to_world("<B>Timelocks have been globally disabled!</B>")
