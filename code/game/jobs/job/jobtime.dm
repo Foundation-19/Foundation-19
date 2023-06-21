@@ -1,21 +1,26 @@
 /datum/jobtime
-	var/list/jobtime_list //raw db list of jobs and associated playtime tracked
-	var/client/parentclient //parent client of the datum
+	///Raw db list of jobs and associated playtime tracked plus calculated categories
+	var/list/jobtime_list
+	///Parent client of the datum
+	var/client/parentclient
 
-	var/last_updated_jl //last time jobtime_list was updated
+	///Last time jobtime_list was updated
+	var/last_updated_jl
 
 /datum/jobtime/New(client/pclient)
 	parentclient = pclient
 	update_jobtime(FALSE)
 	..()
 
-/datum/jobtime/proc/update_jobtime(check_cooldown = TRUE) //updates our play time from DB. You must call this beforehand if you are using any of the get_jobtime procs or accessing jobtime_list.
+///Updates our play time from DB. You must call this beforehand if you are using any of the get_jobtime procs or accessing jobtime_list.
+/datum/jobtime/proc/update_jobtime(check_cooldown = TRUE)
 	if((world.time - last_updated_jl < 1 MINUTE) && check_cooldown) //updating the jobtime list requires an SQL query which takes time, this prevents update_jobtime() from firing more than once per minute, as we can assume there have not been any significant changes in the db within that time.
 		return FALSE
 
 	jobtime_list = parentclient.get_jobtime_list_db()
 
-	for(var/jtitle in jobtime_list) //checks and calculates sub categories and department times
+	//checks and calculates sub categories and department times
+	for(var/jtitle in jobtime_list)
 		var/datum/job/jtype = SSjobs.get_by_title(jtitle)
 		if(!jtype || !LAZYLEN(jtype.get_flags_to_exp()))
 			continue
@@ -29,7 +34,8 @@
 		return 0
 	return jobtime_list[tjob.title] ? jobtime_list[tjob.title] : 0
 
-/datum/jobtime/proc/get_jobtime(job_title) //use title or category for this ONLY
+///Use title or category for this ONLY
+/datum/jobtime/proc/get_jobtime(job_title)
 	if(!job_title)
 		return 0
 	return jobtime_list[job_title] ? jobtime_list[job_title] : 0

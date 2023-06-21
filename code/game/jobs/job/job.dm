@@ -58,7 +58,8 @@
 
 	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
 
-	var/list/requirements //the required playtime in other jobs or categories to play the role
+	///The required playtime in other jobs or categories to play the role
+	var/list/requirements
 
 /datum/job/New()
 
@@ -518,6 +519,7 @@
 	else
 		return FALSE
 
+///Converts department flags to exp definitions
 /datum/job/proc/get_flags_to_exp()
 	var/list/exp_list
 	LAZYINITLIST(exp_list)

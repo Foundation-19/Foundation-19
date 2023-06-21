@@ -273,7 +273,7 @@
 	if(SSinput.initialized)
 		set_macros()
 
-	// Initilizes jobtime datum
+	/// Initializes jobtime datum
 	jobtime = new /datum/jobtime(src)
 
 //////////////
