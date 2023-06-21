@@ -597,23 +597,20 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
 /datum/admins/proc/toggletimelocks()
-	set category = "Server"
-	set desc="Globally Toggles Timelocks for Jobs"
-	set name="Toggle Timelocks"
+    set category = "Server"
+    set desc="Globally Toggles Timelocks for Jobs"
+    set name="Toggle Timelocks"
 
-	if(!check_rights(R_ADMIN))
-		return
+    if(!check_rights(R_ADMIN))
+        return
+    if(!SSdbcore.IsConnected())
+        to_chat(usr,SPAN_WARNING("Timelocks cannot be enabled as there is no connection to the DB!"))
+        config.use_timelocks = 0
+        return
 
-	config.use_timelocks = !(config.use_timelocks)
-	if(config.use_timelocks && !SSdbcore.IsConnected())
-		config.use_timelocks = 0
-		to_chat(usr,SPAN_WARNING("Timelocks cannot be enabled as there is no connection to the DB!"))
-	else if(config.use_timelocks)
-		to_world("<B>Timelocks have been globally enabled!</B>")
-	else
-		to_world("<B>Timelocks have been globally disabled!</B>")
-	log_and_message_staff("toggled timelocks.")
-	SSstatistics.add_field_details("admin_verb","TTLOCK") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
+    config.use_timelocks = !(config.use_timelocks)
+    to_world("<B>Timelocks have been globally [config.use_timelocks ? "enabled" : "disabled"]!</B>")
+    log_and_message_staff("toggled timelocks.")
 
 /datum/admins/proc/toggleoocdead()
 	set category = "Server"
