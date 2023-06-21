@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(jobtime)
 	name = "Job Time Tracker"
 	flags = SS_NO_TICK_CHECK
-	wait = 50
+	wait = 3000
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 	init_order = SS_INIT_JOBTIME
 	priority = SS_PRIORITY_JOBTIME
@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(jobtime)
 	last_fired = world.time
 
 /datum/controller/subsystem/jobtime/fire()
-	update_jobtime(world.time - last_fired)
+	update_jobtime(Round((world.time - last_fired)/600)) //converts world time to minutes
 	last_fired = world.time
 
 /datum/controller/subsystem/jobtime/proc/update_jobtime_db()
