@@ -554,7 +554,7 @@
 	return exp_list
 
 /datum/job/proc/meets_req(client/tclient)
-	if(!requirements || !config.use_jobtime_tracking/* || check_rights(R_ADMIN, FALSE, tclient)*/)
+	if(!requirements || !config.use_jobtime_tracking || check_rights(R_ADMIN, FALSE, tclient))
 		return TRUE
 
 	var/datum/jobtime/jt = tclient.jobtime
@@ -570,7 +570,7 @@
 	return TRUE
 
 /datum/job/proc/get_req(client/tclient)
-	if(!requirements || !config.use_jobtime_tracking/* || check_rights(R_ADMIN, FALSE, tclient)*/)
+	if(!requirements || !config.use_jobtime_tracking || check_rights(R_ADMIN, FALSE, tclient))
 		return 0
 
 	var/datum/jobtime/jt = tclient.jobtime

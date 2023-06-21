@@ -71,7 +71,6 @@ SUBSYSTEM_DEF(jobtime)
 			"job" = jtype,
 			"ckey" = ckey,
 			"minutes" = jvalue)))
-		//prefs.exp[jtype] += jvalue
 	addtimer(CALLBACK(SSjobtime, /datum/controller/subsystem/jobtime/proc/update_jobtime_db),20,TIMER_OVERRIDE|TIMER_UNIQUE)
 
 /client/proc/get_jobtime_list_db()
