@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(jobtime)
 	name = "Job Time Tracker"
 	flags = SS_NO_TICK_CHECK
-	wait = 3000
+	wait = 5 MINUTES
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 	init_order = SS_INIT_JOBTIME
 	priority = SS_PRIORITY_JOBTIME
