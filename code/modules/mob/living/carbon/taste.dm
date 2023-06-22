@@ -2,7 +2,7 @@
 /mob/living/carbon/proc/ingest(datum/reagents/from, datum/reagents/target, amount = 1, multiplier = 1, copy = 0) //we kind of 'sneak' a proc in here for ingesting stuff so we can play with it.
 	for(var/thing in from.reagent_list)
 		var/datum/reagent/R = thing
-		SEND_SIGNAL(src, COMSIG_REAGENT_INGESTED_ + "[R.type]")
+		SEND_SIGNAL(src, COMSIG_REAGENT_INGESTED, R.type)
 
 	if(last_taste_time + 50 < world.time)
 		var/datum/reagents/temp = new(amount, GLOB.temp_reagents_holder) //temporary holder used to analyse what gets transfered.

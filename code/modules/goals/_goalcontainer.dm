@@ -1,6 +1,6 @@
 /datum/component/goalcontainer
-	var/list/list/goal_list = list()		// associative list of lists, each list is a category and the key is the category name
-	var/list/goal_history = list()	// text recap of objectives and whether they were succeeded/failed
+	var/list/list/goal_list = list()	// associative list of lists, each list is a category and the key is the category name
+	var/list/goal_history = list()		// text recap of objectives and whether they were succeeded/failed
 
 /datum/component/goalcontainer/New()
 	. = ..()
@@ -17,8 +17,10 @@
 
 /datum/component/goalcontainer/proc/add_goal_by_type(type, category, autofill_rewards = FALSE)
 	var/datum/goal/G = type
-	if(initial(G.no_duplicates) && (G in goal_list))
-		return FALSE
+	if(initial(G.no_duplicates))
+		for(var/thing in goal_list[category])
+			if(istype(thing, G))
+				return FALSE
 	var/datum/goal/new_G = new G(src)
 	if(!new_G.is_valid() || (autofill_rewards && !new_G.is_autofill_reward_valid()))
 		qdel(new_G)
@@ -34,8 +36,8 @@
 	return TRUE
 
 /datum/component/goalcontainer/proc/recalculate_goals()
-	for(var/thing1 in goal_list)
-		var/list/category = thing1
+	for(var/key in goal_list)
+		var/list/category = goal_list[key]
 		for(var/thing2 in category)
 			var/datum/goal/goal = thing2
 			if(goal.completed != GOAL_STAT_UNFINISHED)
@@ -43,6 +45,7 @@
 					goal_history += goal.success_description
 				else
 					goal_history += goal.failure_description
+				goal_list[key] -= goal
 				qdel(goal)
 
 	var/list/goals_skills = subtypesof(/datum/goal/skills)
@@ -103,7 +106,7 @@
 
 			for(var/thing2 in goal.rewards)
 				var/datum/reward/reward = thing2
-				description += "[reward.on_success ? "Reward" : "Punishment"]: [reward.description]"
+				description += " [reward.on_success ? "Reward" : "Punishment"]: [reward.description]"
 
 			cat_goals.Add(description)
 

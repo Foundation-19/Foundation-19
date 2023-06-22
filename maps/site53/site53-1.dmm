@@ -19213,6 +19213,10 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/llczmaint)
+"UA" = (
+/obj/structure/fitness/weightlifter,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignmentbubble)
 "UB" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -31812,7 +31816,7 @@ Gs
 Gs
 ST
 Yz
-Gs
+UA
 Fj
 Hb
 UT
@@ -33868,7 +33872,7 @@ xN
 SE
 Pi
 FS
-Gs
+UA
 Vv
 Gs
 UT

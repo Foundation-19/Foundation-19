@@ -28,7 +28,9 @@
 	var/datum/component/goalcontainer/C = attached_goal.container
 	var/datum/mind/MI = C.parent
 	var/mob/M = MI.current
-	M.buff_skill(list(buff_skill = buff_level), buff_timer)
+
+	// do NOT remove the parenthesis around buff_skill. BYOND reads it as "buff_skill" (as in a text var) if you remove them
+	M.buff_skill(list((buff_skill) = (buff_level - SKILL_MIN)), buff_timer)
 
 /datum/reward/sanity
 	var/sanity_damage = null	// how much sanity we lose/get
