@@ -735,35 +735,23 @@
 	else
 		lying = incapacitated(INCAPACITATION_KNOCKDOWN)
 
-	if(lying)
-		set_density(0)
-		if(l_hand) unEquip(l_hand)
-		if(r_hand) unEquip(r_hand)
-	else
-		set_density(initial(density))
+	HandleLyingDensity()
 	reset_layer()
 
 	for(var/obj/item/grab/G in grabbed_by)
 		if(G.force_stand())
 			lying = 0
 
-	var/isscp106 = isscp106(src)
-	var/isscp049 = isscp049(src)
-
-	if ((isscp106 || isscp049) && !incapacitated(INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_BUCKLED_PARTIALLY))
-		lying = 0
-		density = TRUE
-
 	// update SCP-106's vis_contents icon
-	if (isscp106)
+	if(isscp106(src))
 		var/mob/living/carbon/human/scp_106/H = src
-//		H.fix_icons()
+		// H.fix_icons()
 		H.update_vision_cone()
 
 	// update SCP-049's vis_contents icon
-	else if (isscp049)
+	else if(isscp049(src))
 		var/mob/living/carbon/human/scp049/H = src
-		//		H.fix_icons()
+		// H.fix_icons()
 		H.update_vision_cone()
 
 	//Temporarily moved here from the various life() procs
@@ -777,6 +765,20 @@
 		if (ishuman(src))
 			var/mob/living/carbon/human/H = src
 			H.update_vision_cone()
+
+// Simply handles density
+/mob/proc/HandleLyingDensity()
+	if(lying)
+		set_density(0)
+		if(l_hand) unEquip(l_hand)
+		if(r_hand) unEquip(r_hand)
+	else
+		set_density(initial(density))
+
+	// TODO: Hang whoever coded this in the first place, I am not touching this
+	if((isscp106(src) || isscp049(src)) && !incapacitated(INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_BUCKLED_PARTIALLY))
+		lying = 0
+		density = TRUE
 
 /mob/proc/reset_layer()
 	if(lying)
