@@ -30,7 +30,7 @@
 
 
 /obj/item/boombox/attack_self(mob/user)
-	playsound(src, "switch", 30)
+	playsound(src, SFX_MACHINE_SWITCH, 30)
 	if (GET_FLAGS(boombox_flags, BOOMBOX_BROKEN))
 		return
 	jukebox.ui_interact(user)

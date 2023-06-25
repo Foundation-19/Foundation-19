@@ -5,7 +5,7 @@
 	icon_state = "Contain_F"
 	anchored = TRUE
 	density = FALSE
-	unacidable = TRUE
+	acid_resistance = -1
 	use_power = POWER_USE_OFF
 	uncreated_component_parts = null
 	light_outer_range = 4
@@ -78,7 +78,7 @@
 	if(shock_cooldown > world.time)
 		return FALSE
 	shock_cooldown = world.time + 10
-	playsound(loc, "sparks", 50, 1, -1)
+	playsound(loc, SFX_SPARK, 50, 1, -1)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(5, 1, loc)
 	s.start()

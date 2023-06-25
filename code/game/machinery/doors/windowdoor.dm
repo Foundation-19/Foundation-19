@@ -60,7 +60,7 @@
 		ae.icon_state = "door_electronics_smoked"
 		operating = 0
 	set_density(0)
-	playsound(src, "shatter", 70, 1)
+	playsound(src, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	if(display_message)
 		visible_message("[src] shatters!")
@@ -203,7 +203,7 @@
 			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 			spark_system.set_up(5, 0, src.loc)
 			spark_system.start()
-			playsound(src.loc, "sparks", 50, 1)
+			playsound(src.loc, SFX_SPARK, 50, 1)
 			playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
 			visible_message(SPAN_WARNING("The glass door was sliced open by [user]!"))
 		return 1

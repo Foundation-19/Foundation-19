@@ -121,6 +121,8 @@
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
+	var/old_loc = loc
+
 	if (direct & (direct - 1))
 		if (direct & 1)
 			if (direct & 4)
@@ -165,6 +167,8 @@
 		src.m_flag = 1
 		if ((A != src.loc && A?.z == src.z))
 			src.last_move = get_dir(A, src.loc)
+
+	SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
 
 /client/Move(n, direction)
 	if(!user_acted(src))
