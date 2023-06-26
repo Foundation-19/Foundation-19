@@ -8,7 +8,6 @@ var/global/datum/ntnet/ntnet_global = new()
 	var/list/available_station_software = list()
 	var/list/available_antag_software = list()
 	var/list/available_virus_software = list()
-	var/list/available_news = list()
 	var/list/chat_channels = list()
 	var/list/fileservers = list()
 	/// Holds all the email accounts that exists. Hopefully won't exceed 999
@@ -30,13 +29,16 @@ var/global/datum/ntnet/ntnet_global = new()
 	/// Programs requiring NTNET_SYSTEMCONTROL won't work if this is set to FALSE and public-facing device they are connecting with is wireless.
 	var/setting_systemcontrol = TRUE
 
-	/// Setting to TRUE will disable all wireless connections, independently off relays status.
+	/// Setting to TRUE will disable all wireless connections, independently of relays status.
 	var/setting_disabled = FALSE
 
 	/// Whether the IDS warning system is enabled
 	var/intrusion_detection_enabled = TRUE
 	/// Set when there is an IDS warning due to malicious (antag) software.
 	var/intrusion_detection_alarm = FALSE
+
+	/// Unique identifier generated and given to network cards and server-based programs. Refer to /datum/ntnet/proc/generate_uid()
+	var/next_uid = 1
 
 
 // If new NTNet datum is spawned, it replaces the old one.
@@ -191,7 +193,7 @@ var/global/datum/ntnet/ntnet_global = new()
 			add_log("Configuration Updated. Wireless network firewall now [setting_communication ? "allows" : "disallows"] instant messaging and similar communication services.")
 		if(NTNET_SYSTEMCONTROL)
 			setting_systemcontrol = !setting_systemcontrol
-			add_log("Configuration Updated. Wireless network firewall now [setting_systemcontrol ? "allows" : "disallows"] remote control of station's systems.")
+			add_log("Configuration Updated. Wireless network firewall now [setting_systemcontrol ? "allows" : "disallows"] remote control of facility systems.")
 
 /datum/ntnet/proc/does_email_exist(login)
 	for(var/datum/computer_file/data/email_account/A in ntnet_global.email_accounts)
@@ -280,3 +282,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	for(var/datum/computer_file/report/report in available_reports)
 		if(report.verify_access_edit(access))
 			. += report
+
+// Generate and return a UID
+/datum/ntnet/proc/generate_uid()
+	return next_uid++

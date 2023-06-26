@@ -5,7 +5,7 @@ import { NtosWindow } from '../layouts';
 
 export const SCiPUploadClient = (props, context) => {
   const { act, data } = useBackend(context);
-  const { PC_device_theme, files = [] } = data;
+  const { PC_device_theme, error, files = [] } = data;
   return (
     <NtosWindow resizable theme={PC_device_theme}>
       <NtosWindow.Content scrollable>
@@ -17,6 +17,22 @@ export const SCiPUploadClient = (props, context) => {
         </Section>
       </NtosWindow.Content>
     </NtosWindow>
+  );
+};
+
+const Error = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { error } = data;
+  return (
+    <Section
+      title="An error has occured during operation."
+      buttons={
+        <Button icon="undo" onClick={() => act('PRG_reset')}>
+          Reset
+        </Button>
+      }>
+      Additional Information: {error}
+    </Section>
   );
 };
 

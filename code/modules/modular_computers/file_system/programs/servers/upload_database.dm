@@ -11,8 +11,9 @@
 	tgui_id = "SCiPUploadServer"
 	// metadata is used as an associative list - the key is a filename, and the value is a list of required accesses
 
-	var/hosting	= FALSE	// if we're available on SCiPnet for use
-	var/unique_token 	// UID of this server
+	var/hosting	= FALSE														// if we're available on SCiPnet for use
+	var/unique_token 														// UID of this server
+	var/list/datum/computer_file/program/upload_database_c/clients = list()	// all connected clients
 
 	// get_all_site_access()
 
@@ -22,8 +23,7 @@
 		return FALSE*/
 
 /datum/computer_file/program/upload_database/New()
-	unique_token = nttransfer_uid
-	nttransfer_uid++
+	unique_token = ntnet_global.generate_uid()
 	..()
 
 /datum/computer_file/program/upload_database/kill_program(forced)

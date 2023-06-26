@@ -1,5 +1,3 @@
-var/global/nttransfer_uid = 0
-
 /datum/computer_file/program/nttransfer
 	filename = "scptransfer"
 	filedesc = "SCiPnet P2P Transfer Client"
@@ -26,8 +24,7 @@ var/global/nttransfer_uid = 0
 	var/upload_menu = FALSE								// Whether we show the program list and upload menu
 
 /datum/computer_file/program/nttransfer/New()
-	unique_token = nttransfer_uid
-	nttransfer_uid++
+	unique_token = ntnet_global.generate_uid()
 	..()
 
 /datum/computer_file/program/nttransfer/process_tick()
