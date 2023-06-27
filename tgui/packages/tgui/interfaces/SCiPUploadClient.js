@@ -1,21 +1,25 @@
 /* eslint react/no-danger: "off" */
 import { useBackend } from '../backend';
-import { Button, Section, Table } from '../components';
+import { Button, Box, Section, Table, LabeledList, ProgressBar } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const SCiPUploadClient = (props, context) => {
   const { act, data } = useBackend(context);
-  const { PC_device_theme, error, files = [] } = data;
+  const { PC_device_theme, error, downloading, connected } = data;
+
+  let body = <ServerBrowser />;
+
+  if (error) {
+    body = <Error />;
+  } else if (downloading) {
+    body = <FileDownload />;
+  } else if (connected) {
+    body = <FileBrowser />;
+  }
+
   return (
-    <NtosWindow resizable theme={PC_device_theme}>
-      <NtosWindow.Content scrollable>
-        <Section>
-          <FileTable
-            files={files}
-            onDownload={(file) => act('PRG_downloadfile', { name: file })}
-          />
-        </Section>
-      </NtosWindow.Content>
+    <NtosWindow width={575} height={700} resizable theme={PC_device_theme}>
+      <NtosWindow.Content scrollable>{body}</NtosWindow.Content>
     </NtosWindow>
   );
 };
@@ -36,25 +40,87 @@ const Error = (props, context) => {
   );
 };
 
-const FileTable = (props) => {
-  const { files = [], onDownload } = props;
+const ServerBrowser = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { servers = [] } = data;
+  return (
+    <Section title="Available Servers">
+      {(servers.length && (
+        <LabeledList>
+          {servers.map((server) => (
+            <LabeledList.Item label={server.uid} key={server.uid}>
+              {server.name}&nbsp;
+              <Button
+                icon="server"
+                onClick={() =>
+                  act('PRG_connect_to_server', { uid: server.uid })
+                }>
+                Connect to Server
+              </Button>
+            </LabeledList.Item>
+          ))}
+        </LabeledList>
+      )) || <Box>No upload servers found.</Box>}
+    </Section>
+  );
+};
+
+const FileBrowser = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { files = [] } = data;
   return (
     <Table>
       <Table.Row header>
         <Table.Cell>File</Table.Cell>
-        <Table.Cell collapsing>Type</Table.Cell>
         <Table.Cell collapsing>Size</Table.Cell>
       </Table.Row>
       {files.map((file) => (
         <Table.Row key={file.name} className="candystripe">
-          <Table.Cell>{file.name}</Table.Cell>
-          <Table.Cell>{file.type}</Table.Cell>
+          <Table.Cell>
+            {file.name}.{file_type}
+          </Table.Cell>
           <Table.Cell>{file.size}</Table.Cell>
           <Table.Cell>
-            <Button onClick={() => onDownload(file.name)} />
+            <Button
+              onClick={() => act('PRG_downloadfile', { file_name: file })}>
+              Download
+            </Button>
           </Table.Cell>
         </Table.Row>
       ))}
     </Table>
+  );
+};
+
+const FileDownload = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    download_name,
+    download_type,
+    download_progress,
+    download_netspeed,
+    download_size,
+  } = data;
+  return (
+    <Section title="Download in progress">
+      <LabeledList>
+        <LabeledList.Item label="Downloading File">
+          {download_name}.{download_type}
+        </LabeledList.Item>
+        <LabeledList.Item label="Progress">
+          <ProgressBar value={download_progress} maxValue={download_size}>
+            {download_progress} / {download_size} GQ
+          </ProgressBar>
+        </LabeledList.Item>
+        <LabeledList.Item label="Transfer Speed">
+          {download_netspeed} GQ/s
+        </LabeledList.Item>
+        <LabeledList.Item label="Controls">
+          <Button icon="ban" onClick={() => act('PRG_cancel_download')}>
+            Cancel Download
+          </Button>
+        </LabeledList.Item>
+      </LabeledList>
+    </Section>
   );
 };

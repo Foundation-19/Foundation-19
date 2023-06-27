@@ -20,7 +20,8 @@ export const SCiPUploadServer = (props, context) => {
           }>
           <FileTable
             files={files}
-            onToggle={(file) => act('PRG_togglefile', { name: file })}
+            onToggle={(file) => act('PRG_togglefile', { file_name: file })}
+            onEdit={(file) => act('PRG_editfile', { file_name: file })}
           />
         </Section>
       </NtosWindow.Content>
@@ -29,24 +30,29 @@ export const SCiPUploadServer = (props, context) => {
 };
 
 const FileTable = (props) => {
-  const { files = [], onToggle } = props;
+  const { files = [], onToggle, onEdit } = props;
   return (
     <Table>
       <Table.Row header>
         <Table.Cell>File</Table.Cell>
-        <Table.Cell collapsing>Type</Table.Cell>
         <Table.Cell collapsing>Size</Table.Cell>
       </Table.Row>
       {files.map((file) => (
         <Table.Row key={file.name} className="candystripe">
-          <Table.Cell>{file.name}</Table.Cell>
-          <Table.Cell>{file.type}</Table.Cell>
+          <Table.Cell>
+            {file.name}.{file.type}
+          </Table.Cell>
           <Table.Cell>{file.size}</Table.Cell>
           <Table.Cell>
             <Button
-              checked={!(file.req_acc === null)}
+              checked={file.enabled}
               onClick={() => onToggle(file.name)}
             />
+          </Table.Cell>
+          <Table.Cell>
+            <Button icon="id-card" onClick={() => onEdit(file.name)}>
+              Edit Access
+            </Button>
           </Table.Cell>
         </Table.Row>
       ))}

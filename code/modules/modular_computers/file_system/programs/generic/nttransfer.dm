@@ -130,9 +130,9 @@
 			if(!remote || !remote.provided_file)
 				return
 			if(remote.server_password)
-				var/pass = sanitize(tgui_input_text(usr, "Code 401 Unauthorized. Please enter password:", "Password required"))
+				var/pass = sanitize(tgui_input_text(usr, "Please enter password:", "Password required"))
 				if(pass != remote.server_password)
-					error = "Incorrect Password"
+					error = "Code 401 Unauthorized"
 					return
 			downloaded_file = remote.provided_file.clone()
 			remote.connected_clients.Add(src)
