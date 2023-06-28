@@ -250,7 +250,7 @@
 	var/fuel = 0
 	var/on_damage = 7
 	var/produce_heat = 1500
-	activation_sound = 'sound/effects/flare.ogg'
+	activation_sound = 'sound/effects/flare_start.ogg'
 	flashlight_flags = FLASHLIGHT_SINGLE_USE
 
 	flashlight_max_bright = 0.8
@@ -274,6 +274,7 @@
 	fuel = max(fuel - 1, 0)
 	if (fuel <= 0)
 		on = FALSE
+		playsound(get_turf(src), 'sound/effects/flare_end.ogg', 75, 1)
 	if(!on)
 		update_damage()
 		set_flashlight()
