@@ -121,7 +121,7 @@
 	if(!priv_all_access_datums_region)
 		priv_all_access_datums_region = list()
 		for(var/datum/access/A in get_all_access_datums())
-			if(!priv_all_access_datums_region[A.region])
+			if(isnull(priv_all_access_datums_region[A.region]))
 				priv_all_access_datums_region[A.region] = list()
 			priv_all_access_datums_region[A.region] += A
 

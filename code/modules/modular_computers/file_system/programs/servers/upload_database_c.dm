@@ -60,9 +60,6 @@
 
 	data["error"] = error
 
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
-	var/obj/item/card/id/user_id_card = user?.GetIdCard()
-
 	data["downloading"] = !!downloading_file
 	if(downloading_file)
 		data["download_size"] = downloading_file.size
@@ -72,9 +69,10 @@
 		data["download_type"] = downloading_file.filetype
 
 	data["connected"] = !!remote
-	data["servers"] = list()
 
 	if(remote)
+		data["remote_name"] = remote.server_name
+		data["remote_uid"] = remote.unique_token
 		data["files"] = list()
 		for(var/datum/computer_file/F in available_files)
 			data["files"] += list(list(
@@ -83,11 +81,12 @@
 				"size" = F.size
 			))
 	else
+		data["servers"] = list()
 		for(var/datum/computer_file/program/upload_database/P in ntnet_global.fileservers)
-			data["servers"].Add(list(list(
-				"uid" = P.unique_token
-				"name" = P.name
-			)))
+			data["servers"] += list(list(
+				"uid" = P.unique_token,
+				"name" = P.server_name
+			))
 
 	return data
 
@@ -109,7 +108,7 @@
 					downloading_file = F
 			return TRUE
 		if("PRG_connect_to_server")
-			var/new_remote
+			var/datum/computer_file/program/upload_database/new_remote
 			for(var/datum/computer_file/program/upload_database/P in ntnet_global.fileservers)
 				if(P.unique_token == text2num(params["uid"]))
 					new_remote = P
@@ -119,4 +118,7 @@
 			remote = new_remote
 			remote.clients.Add(src)
 			available_files = remote.get_files(usr?.GetAccess())
+			return TRUE
+		if("PRG_disconnect_from_server")
+			cleanup_remote()
 			return TRUE

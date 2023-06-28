@@ -67,28 +67,40 @@ const ServerBrowser = (props, context) => {
 
 const FileBrowser = (props, context) => {
   const { act, data } = useBackend(context);
-  const { files = [] } = data;
+  const { files = [], remote_name, remote_uid } = data;
   return (
-    <Table>
-      <Table.Row header>
-        <Table.Cell>File</Table.Cell>
-        <Table.Cell collapsing>Size</Table.Cell>
-      </Table.Row>
-      {files.map((file) => (
-        <Table.Row key={file.name} className="candystripe">
-          <Table.Cell>
-            {file.name}.{file_type}
-          </Table.Cell>
-          <Table.Cell>{file.size}</Table.Cell>
-          <Table.Cell>
-            <Button
-              onClick={() => act('PRG_downloadfile', { file_name: file })}>
-              Download
-            </Button>
-          </Table.Cell>
+    <Section
+      title={remote_uid + ' : ' + remote_name}
+      buttons={
+        <Button
+          icon="sign-out"
+          onClick={() => act('PRG_disconnect_from_server')}>
+          Disconnect
+        </Button>
+      }>
+      <Table>
+        <Table.Row header>
+          <Table.Cell>File</Table.Cell>
+          <Table.Cell collapsing>Size</Table.Cell>
         </Table.Row>
-      ))}
-    </Table>
+        {files.map((file) => (
+          <Table.Row key={file.name} className="candystripe">
+            <Table.Cell>
+              {file.name}.{file.type}
+            </Table.Cell>
+            <Table.Cell>{file.size}</Table.Cell>
+            <Table.Cell>
+              <Button
+                onClick={() =>
+                  act('PRG_downloadfile', { file_name: file.name })
+                }>
+                Download
+              </Button>
+            </Table.Cell>
+          </Table.Row>
+        ))}
+      </Table>
+    </Section>
   );
 };
 
