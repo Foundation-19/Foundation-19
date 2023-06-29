@@ -76,7 +76,7 @@ const AccessEditor = (props, context) => {
   const { editing_file, region_access = [], region_names = [] } = data;
   return (
     <Section
-      title={'Editing ' + editing_file.name}
+      title={'Editing ' + editing_file}
       buttons={
         <Button icon="sign-out" onClick={() => act('PRG_exit')}>
           Exit

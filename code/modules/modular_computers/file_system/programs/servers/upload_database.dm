@@ -38,7 +38,14 @@
 			files_required_access[filename] = list()
 
 		var/list/req_acc = files_required_access[filename]
-		if(has_access(req_acc, accesses))
+
+		// since files_required_access stores actual access datums, whereas accesses is just their IDs, we need to convert from datum to ID
+		var/list/req_acc_id = list()
+		for(var/thing in req_acc)
+			var/datum/access/A = thing
+			req_acc_id += A.id
+
+		if(has_access(req_acc_id, accesses))
 			. += HDD.find_file_by_name(filename)
 
 /datum/computer_file/program/upload_database/proc/set_hosting(new_hosting)
@@ -91,14 +98,14 @@
 
 			for(var/thing in region)
 				var/datum/access/acc = thing
-				if(get_access_desc(acc))
+				if(acc.desc)
 					prepared_region += list(list(
-						"desc" = get_access_desc(acc),
+						"desc" = acc.desc,
 						"id" = acc.id,
 						"required" = (acc in files_required_access[editing_file]) ? 1 : 0
 					))
 
-			data["region_access"] += prepared_region
+			data["region_access"] += list(prepared_region)
 			data["region_names"] += r_name
 
 	/*var/list/regions = list()

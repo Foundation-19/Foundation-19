@@ -116,14 +116,15 @@
 
 	return priv_all_access_datums_id.Copy()
 
+// since BYOND is so shit and can't tell the difference between an array and a list, we HAVE to use an associative list for this to work
 /var/list/datum/access/priv_all_access_datums_region
 /proc/get_all_access_datums_by_region()
 	if(!priv_all_access_datums_region)
 		priv_all_access_datums_region = list()
 		for(var/datum/access/A in get_all_access_datums())
-			if(isnull(priv_all_access_datums_region[A.region]))
-				priv_all_access_datums_region[A.region] = list()
-			priv_all_access_datums_region[A.region] += A
+			if(isnull(priv_all_access_datums_region["[A.region]"]))
+				priv_all_access_datums_region["[A.region]"] = list()
+			priv_all_access_datums_region["[A.region]"] += A
 
 	return priv_all_access_datums_region.Copy()
 
