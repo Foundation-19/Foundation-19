@@ -101,10 +101,7 @@
 /area/centcom)
 "aZ" = (
 /obj/structure/window/reinforced,
-/obj/structure/bed/chair/shuttle/black{
-	dir = 4
-	},
-/obj/machinery/light{
+/obj/machinery/light_construct{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/black,
@@ -229,6 +226,10 @@
 	},
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
+"cr" = (
+/obj/structure/bed/chair/shuttle/black,
+/turf/unsimulated/floor/reinforced,
+/area/centcom)
 "cs" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/shutters{
@@ -271,9 +272,6 @@
 	},
 /area/centcom)
 "cF" = (
-/obj/structure/bed/chair/shuttle/black{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -283,7 +281,7 @@
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
 	},
-/obj/machinery/light{
+/obj/machinery/light_construct{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/black,
@@ -365,9 +363,7 @@
 /turf/simulated/floor/wood,
 /area/centcom/goc)
 "dt" = (
-/obj/structure/bed/chair/shuttle/black{
-	dir = 8
-	},
+/obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/shuttle/black,
 /area/centcom)
 "dB" = (
@@ -427,20 +423,13 @@
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
 "dX" = (
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -13;
-	pixel_y = -17;
-	startswith = list(/obj/item/screwdriver,/obj/item/weldingtool,/obj/item/crowbar,/obj/item/device/scanner/gas,/obj/item/wirecutters)
-	},
 /obj/item/trash/cigbutt/cigarbutt,
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
 "dZ" = (
-/obj/item/wrench{
-	pixel_x = -5;
-	pixel_y = -2
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/oil,
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
 "ec" = (
@@ -460,6 +449,14 @@
 "ek" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/centcom/chaos)
+"ep" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/shuttle/white,
+/area/centcom)
 "es" = (
 /obj/item/trash/cigbutt/jerichos,
 /turf/unsimulated/floor{
@@ -3364,6 +3361,14 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"ql" = (
+/obj/effect/decal/cleanable/blood/oil,
+/obj/item/wrench{
+	pixel_x = -5;
+	pixel_y = -2
+	},
+/turf/unsimulated/floor/reinforced,
+/area/centcom)
 "qn" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/gloves,
@@ -3833,6 +3838,10 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"sF" = (
+/obj/item/light/tube,
+/turf/simulated/floor/shuttle/black,
 /area/centcom)
 "sG" = (
 /obj/structure/closet,
@@ -6377,6 +6386,10 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Co" = (
+/obj/item/storage/toolbox/mechanical,
+/turf/unsimulated/floor/reinforced,
+/area/centcom)
 "Cr" = (
 /obj/structure/table/standard,
 /obj/item/storage/fancy/cigarettes/case,
@@ -7574,6 +7587,12 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
+/area/centcom)
+"Lv" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/turf/unsimulated/floor/reinforced,
 /area/centcom)
 "LD" = (
 /obj/structure/table/rack,
@@ -17991,13 +18010,13 @@ Rr
 Rr
 Uk
 Uk
+cr
 Uk
 Uk
+Lv
 Uk
 Uk
-Uk
-Uk
-Uk
+dZ
 Uk
 Uk
 Uk
@@ -18398,15 +18417,15 @@ af
 af
 az
 aZ
-cf
+ep
 cf
 cF
 df
 aY
 Uk
 Uk
-Uk
 eg
+Uk
 Uk
 Rr
 Rr
@@ -18602,14 +18621,14 @@ aL
 bg
 ci
 ci
-az
+sF
 az
 aY
 dQ
 aY
 aY
-aY
 eg
+Uk
 Rr
 Rr
 eE
@@ -18800,17 +18819,17 @@ Rr
 Uk
 af
 af
-az
+dt
 bi
 cj
 cj
 cG
-dt
+az
 aY
 Uk
 dT
-dZ
 eg
+Uk
 Uk
 Rr
 Rr
@@ -19009,9 +19028,9 @@ ck
 aY
 aY
 Uk
-Uk
+Co
 dX
-Uk
+ql
 Uk
 Uk
 Rr
