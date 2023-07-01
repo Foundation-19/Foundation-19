@@ -605,7 +605,7 @@ var/global/floorIsLava = 0
 	if(!SSdbcore.IsConnected())
 		to_chat(usr,SPAN_WARNING("Timelocks cannot be enabled as there is no connection to the DB!"))
 		config.use_timelocks = 0
-	return
+		return
 
 	config.use_timelocks = !(config.use_timelocks)
 	to_world("<B>Timelocks have been globally [config.use_timelocks ? "enabled" : "disabled"]!</B>")
