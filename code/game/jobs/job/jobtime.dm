@@ -17,7 +17,7 @@
 	if((world.time - last_updated_jl < 1 MINUTE) && check_cooldown) //updating the jobtime list requires an SQL query which takes time, this prevents update_jobtime() from firing more than once per minute, as we can assume there have not been any significant changes in the db within that time.
 		return FALSE
 
-	jobtime_list = parentclient.get_jobtime_list_db()
+	jobtime_list = SSjobtime.get_jobtime_list_db(parentclient)
 
 	//checks and calculates sub categories and department times
 	for(var/jtitle in jobtime_list)

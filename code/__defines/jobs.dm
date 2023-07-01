@@ -30,3 +30,22 @@
 #define EXP_TYPE_REP "Representative"
 
 //Categories are stored on DB along with seperate jobs and sub-categories and departments are calculated in game to avoid cluttering DB.
+
+//Bit Flag Defines
+#define ENG			(1<<0)
+#define SEC			(1<<1)
+#define MED			(1<<2)
+#define SCI			(1<<3)
+#define CIV			(1<<4)
+#define COM			(1<<5)
+#define MSC			(1<<6)
+#define SRV			(1<<7)
+#define SUP			(1<<8)
+#define SPT			(1<<9)
+#define EXP			(1<<10)
+#define ROB			(1<<11)
+#define LCZ			(1<<12)
+#define ECZ			(1<<13)
+#define HCZ			(1<<14)
+#define BUR			(1<<15)
+#define REP			(1<<16)

@@ -12,6 +12,7 @@ SUBSYSTEM_DEF(jobtime)
 /datum/controller/subsystem/jobtime/Initialize()
 	if(!SSdbcore.IsConnected())
 		log_world("Jobtime tracking cannot function when DB is disconnected!")
+		can_fire = FALSE
 	last_fired = world.time
 
 /datum/controller/subsystem/jobtime/fire()
@@ -30,11 +31,11 @@ SUBSYSTEM_DEF(jobtime)
 	for(var/client/L in GLOB.clients)
 		if(L.is_afk())
 			continue
-		L.update_jobtime_list(mins)
+		update_jobtime_list(mins, L)
 
-//Client Procs
+//Client related Procs
 
-/client/proc/update_jobtime_list(minutes)
+/datum/controller/subsystem/jobtime/proc/update_jobtime_list(minutes, client/tclient)
 	if(!SSdbcore.Connect())
 		return -1
 	if (!isnum(minutes))
@@ -42,10 +43,10 @@ SUBSYSTEM_DEF(jobtime)
 
 	var/list/play_records = list()
 
-	if(isobserver(mob))
+	if(isobserver(tclient.mob))
 		play_records[EXP_TYPE_GHOST] = minutes
-	else if(isliving(mob))
-		var/mob/living/living_mob = mob
+	else if(isliving(tclient.mob))
+		var/mob/living/living_mob = tclient.mob
 		var/list/mob_exp_list = living_mob.get_exp_list(minutes)
 		if(!length(mob_exp_list))
 			play_records["Unknown"] = minutes
@@ -56,7 +57,7 @@ SUBSYSTEM_DEF(jobtime)
 	else
 		return
 
-	if(check_rights(R_ADMIN, FALSE, src))
+	if(check_rights(R_ADMIN, FALSE, tclient))
 		play_records[EXP_TYPE_ADMIN] = minutes
 
 	for(var/jtype in play_records)
@@ -68,16 +69,16 @@ SUBSYSTEM_DEF(jobtime)
 		LAZYINITLIST(GLOB.jobtime_to_update)
 		GLOB.jobtime_to_update.Add(list(list(
 			"job" = jtype,
-			"ckey" = ckey,
+			"ckey" = tclient.ckey,
 			"minutes" = jvalue)))
 	addtimer(CALLBACK(SSjobtime, /datum/controller/subsystem/jobtime/proc/update_jobtime_db),20,TIMER_OVERRIDE|TIMER_UNIQUE)
 
-/client/proc/get_jobtime_list_db()
+/datum/controller/subsystem/jobtime/proc/get_jobtime_list_db(client/tclient)
 	if(!SSdbcore.Connect())
 		return -1
 	var/datum/db_query/exp_read = SSdbcore.NewQuery(
 		"SELECT job, minutes FROM [format_table_name("role_time")] WHERE ckey = :ckey",
-		list("ckey" = ckey)
+		list("ckey" = tclient.ckey)
 	)
 	if(!exp_read.Execute(async = TRUE))
 		qdel(exp_read)
