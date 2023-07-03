@@ -249,6 +249,7 @@
 	action_button_name = null //just pull it manually, neckbeard.
 	var/fuel = 0
 	var/on_damage = 7
+	var/deactivation_sound = 'sound/effects/flare_end.ogg'
 	var/produce_heat = 1500
 	activation_sound = 'sound/effects/flare_start.ogg'
 	flashlight_flags = FLASHLIGHT_SINGLE_USE
@@ -274,7 +275,8 @@
 	fuel = max(fuel - 1, 0)
 	if (fuel <= 0)
 		on = FALSE
-		playsound(get_turf(src), 'sound/effects/flare_end.ogg', 75, 1)
+		if(deactivation_sound)
+			playsound(get_turf(src), deactivation_sound, 75, 1)
 	if(!on)
 		update_damage()
 		set_flashlight()
@@ -328,6 +330,7 @@
 	randpixel = 12
 	produce_heat = 0
 	activation_sound = 'sound/effects/glowstick.ogg'
+	deactivation_sound = null
 
 	flashlight_max_bright = 0.6
 	flashlight_inner_range = 0.1
