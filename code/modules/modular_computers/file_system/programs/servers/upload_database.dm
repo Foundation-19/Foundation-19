@@ -10,13 +10,26 @@
 	usage_flags = PROGRAM_CONSOLE
 	tgui_id = "SCiPUploadServer"
 
-	var/list/files_required_access = list()									// associative list - the key is the filename, and the value is a list of required accesses
-	var/list/enabled_files = list()											// list of every file that's available for download. filenames, not the actual file datum
-	var/editing_file														// which file we're currently changing access requirements for
-	var/hosting	= FALSE														// if we're available on SCiPnet for use
-	var/server_name = ""													// user-set name for easier identification by the client
-	var/unique_token 														// UID of this server
-	var/list/datum/computer_file/program/upload_database_c/clients = list()	// all connected clients
+	/// associative list - the key is the filename, and the value is a list of required accesses
+	var/list/files_required_access = list()
+
+	/// list of every file that's available for download. filenames, not the actual file datum
+	var/list/enabled_files = list()
+
+	/// which file we're currently changing access requirements for
+	var/editing_file
+
+	/// if we're available on SCiPnet for use
+	var/hosting	= FALSE
+
+	/// user-set name for easier identification by the client
+	var/server_name = ""
+
+	/// UID of this server
+	var/unique_token
+
+	/// all connected clients
+	var/list/datum/computer_file/program/upload_database_c/clients = list()
 
 /datum/computer_file/program/upload_database/New()
 	unique_token = ntnet_global.generate_uid()
@@ -108,28 +121,11 @@
 			data["region_access"] += list(prepared_region)
 			data["region_names"] += r_name
 
-	/*var/list/regions = list()
-	for(var/i = ACCESS_REGION_MIN; i <= ACCESS_REGION_MAX; i++)
-		var/list/accesses = list()
-		for(var/access in get_region_accesses(i))
-			if (get_access_desc(access))
-				accesses.Add(list(list(
-					"desc" = replacetext(get_access_desc(access), " ", "&nbsp"),
-					"ref" = access,
-					"allowed" = (access in id_card.access) ? 1 : 0)))
-
-		regions.Add(list(list(
-			"name" = get_region_accesses_name(i),
-			"accesses" = accesses)))
-	data["regions"] = regions*/
-
 	return data
 
 /datum/computer_file/program/upload_database/tgui_act(action, list/params, datum/tgui/ui)
 	if(..())
 		return TRUE
-
-	//var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
 
 	switch(action)
 		if("PRG_togglehosting")

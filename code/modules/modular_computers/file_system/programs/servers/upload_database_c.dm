@@ -12,12 +12,23 @@
 	available_on_ntnet = TRUE
 	tgui_id = "SCiPUploadClient"
 
-	var/error = ""											// Error screen
-	var/datum/computer_file/program/upload_database/remote	// which server are we currently downloading from?
-	var/list/datum/computer_file/available_files = list()	// all the files on the remote (that we can see)
-	var/datum/computer_file/downloading_file				// the file we're currently downloading
-	var/download_completion = 0								// download progress in GQ
-	var/actual_netspeed = 0									// actual transfer speed (displayed in UI)
+	/// error message (for error screen)
+	var/error = ""
+
+	/// which server are we currently downloading from?
+	var/datum/computer_file/program/upload_database/remote
+
+	/// all the files on the remote (that we can see)
+	var/list/datum/computer_file/available_files = list()
+
+	/// the file we're currently downloading
+	var/datum/computer_file/downloading_file
+
+	/// download progress in GQ
+	var/download_completion = 0
+
+	/// actual transfer speed (displayed in UI)
+	var/actual_netspeed = 0
 
 /datum/computer_file/program/upload_database_c/process_tick()
 	..()
@@ -36,12 +47,12 @@
 			else
 				cleanup_download()
 
-// crashes the client and displays specific error message
+/// crashes the client and displays specific error message
 /datum/computer_file/program/upload_database_c/proc/crash(message)
 	error = message ? message : "An unknown error has occured during download"
 	cleanup_remote()
 
-// cleans up file downloading AND remote vars
+/// cleans up file downloading AND remote vars
 /datum/computer_file/program/upload_database_c/proc/cleanup_remote()
 	if(remote)
 		remote.clients.Remove(src)
@@ -49,7 +60,7 @@
 	available_files = list()
 	cleanup_download()
 
-// cleans up file downloading vars
+/// cleans up file downloading vars
 /datum/computer_file/program/upload_database_c/proc/cleanup_download()
 	downloading_file = null
 	download_completion = 0
