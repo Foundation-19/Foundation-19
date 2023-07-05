@@ -34,7 +34,8 @@
 	var/nutrient_stored = 0
 	/// Assoc list Type = Nutrient Required; This is responsible for forcing larva's evolution target type
 	var/larva_types = list(
-		/mob/living/simple_animal/hostile/infestation/broodling = 5,
+		/mob/living/simple_animal/hostile/infestation/broodling = 4,
+		/mob/living/simple_animal/hostile/infestation/floatfly = 6,
 		/mob/living/simple_animal/hostile/infestation/spitter = 8,
 		/mob/living/simple_animal/hostile/infestation/eviscerator = 12,
 		/mob/living/simple_animal/hostile/infestation/assembler = 16,
