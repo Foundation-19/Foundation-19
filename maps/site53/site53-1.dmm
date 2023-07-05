@@ -10990,6 +10990,13 @@
 /obj/item/handcuffs,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"zD" = (
+/obj/structure/railing/mapped,
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "zE" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -13552,6 +13559,11 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/reeducation)
+"Gc" = (
+/obj/structure/railing/mapped,
+/obj/machinery/vending/classdwater,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "Gd" = (
 /obj/machinery/door/window/northleft{
 	name = "Reeducation Separator";
@@ -14499,6 +14511,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
+"Iz" = (
+/obj/structure/railing/mapped,
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "IB" = (
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -15135,6 +15154,10 @@
 	pixel_y = 32;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
+/obj/structure/closet/boxinggloves,
+/obj/item/beach_ball/holoball,
+/obj/item/beach_ball/holoball,
+/obj/item/beach_ball/holoball,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "JX" = (
@@ -15372,6 +15395,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped,
+/obj/machinery/vending/classdwater,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "Kw" = (
@@ -18308,6 +18332,14 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Sk" = (
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "Sl" = (
 /obj/machinery/door/airlock/research{
 	name = "Containment Chamber";
@@ -18685,6 +18717,11 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Tj" = (
+/obj/structure/railing/mapped,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "Tk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -28169,7 +28206,7 @@ KD
 xT
 KD
 xT
-Kt
+zD
 Hw
 yo
 ua
@@ -28426,7 +28463,7 @@ xT
 xT
 xT
 xT
-Kt
+Tj
 Hw
 yo
 ua
@@ -28683,7 +28720,7 @@ KD
 xT
 KD
 xT
-Kt
+Iz
 Hw
 yo
 ua
@@ -28932,8 +28969,8 @@ gq
 gq
 gq
 yo
-yN
-yN
+Sk
+Sk
 yN
 xT
 xT
@@ -29711,7 +29748,7 @@ Hp
 xT
 Hp
 xT
-Kt
+zD
 Hw
 yo
 ua
@@ -29968,7 +30005,7 @@ xT
 xT
 xT
 xT
-Kt
+Tj
 Hw
 yo
 ua
@@ -30225,7 +30262,7 @@ Hp
 xT
 Hp
 xT
-Kt
+Iz
 Hw
 yo
 ua
@@ -30739,7 +30776,7 @@ Hp
 xT
 Hp
 xT
-Kt
+Gc
 Hw
 yo
 ua

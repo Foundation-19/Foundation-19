@@ -36540,6 +36540,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
+"sRD" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/sign/directions/heli,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "sRP" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -71015,7 +71020,7 @@ aOT
 aeg
 aeo
 uXT
-dgg
+sRD
 aaf
 qdk
 aZu

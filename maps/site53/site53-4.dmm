@@ -7394,6 +7394,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
+"Mi" = (
+/obj/effect/paint_stripe/blue,
+/obj/structure/sign/directions/security{
+	dir = 1
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/hallway)
 "Mm" = (
 /obj/structure/table/steel,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -7643,6 +7650,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
+"Oy" = (
+/obj/effect/paint_stripe/blue,
+/obj/structure/sign/directions/security{
+	dir = 8
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/hallway)
 "OC" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -41563,7 +41577,7 @@ hk
 hk
 hk
 hk
-ac
+Oy
 bK
 bK
 bK
@@ -42089,7 +42103,7 @@ xx
 ac
 ac
 ac
-ac
+Mi
 bK
 gw
 cH

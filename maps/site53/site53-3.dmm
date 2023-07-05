@@ -2581,6 +2581,7 @@
 /area/site53/medical/surgery/op2)
 "gE" = (
 /obj/effect/floor_decal/corner/orange/mono,
+/obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "gG" = (
@@ -4789,6 +4790,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/mono,
+/obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mT" = (
@@ -5262,6 +5264,13 @@
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/grass,
 /area/site53/upper_surface/maincontrolroomstairs)
+"pt" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/directions/supply{
+	dir = 8
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/commstower)
 "pu" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/status_display,
@@ -5435,13 +5444,8 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "qH" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/grass,
+/obj/structure/sign/directions/supply,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/surface)
 "qI" = (
 /obj/structure/cable{
@@ -5979,12 +5983,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "sB" = (
-/obj/structure/railing/mapped,
-/obj/structure/sign/directions/heli{
-	pixel_y = -11
+/obj/structure/sign/warning/moving_parts{
+	pixel_y = -32
 	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/turf/unsimulated/mineral,
+/area/space)
 "sD" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -8695,13 +8698,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
 "RW" = (
-/obj/structure/railing/mapped,
-/obj/structure/sign/directions/heli{
-	pixel_x = -32;
-	pixel_y = -12;
-	dir = 4
+/obj/structure/sign/directions/supply{
+	dir = 8
 	},
-/turf/simulated/floor/exoplanet/snow,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/surface)
 "RX" = (
 /obj/effect/paint_stripe/paleblue,
@@ -9247,12 +9247,17 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
 "Xg" = (
-/obj/structure/railing/mapped,
-/obj/structure/sign/directions/heli{
-	pixel_y = -11
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/directions/supply,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/commstower)
+"Xn" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/sign/directions/bridge{
+	dir = 1
 	},
-/turf/simulated/open,
-/area/site53/surface/surface)
+/turf/simulated/wall/titanium,
+/area/site53/medical/isolation)
 "Xp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -32060,10 +32065,10 @@ dA
 dA
 dA
 dA
-dA
+sB
 oV
 bf
-qK
+uW
 oV
 dA
 dA
@@ -33583,7 +33588,7 @@ dA
 dA
 dA
 dA
-bt
+qH
 nE
 nE
 zO
@@ -33840,7 +33845,7 @@ dA
 dA
 dA
 dA
-bt
+qH
 nE
 se
 si
@@ -35125,7 +35130,7 @@ dA
 dA
 dA
 dA
-bt
+RW
 nE
 sm
 cb
@@ -37695,7 +37700,7 @@ lX
 oJ
 bn
 bn
-bn
+pt
 nE
 sm
 cb
@@ -38978,7 +38983,7 @@ bn
 bn
 bn
 bn
-bn
+Xg
 Rx
 zu
 nE
@@ -41546,10 +41551,10 @@ cb
 sE
 sE
 sE
-Xg
+oX
 nE
 nE
-qH
+bt
 fL
 fL
 fL
@@ -41805,7 +41810,7 @@ sE
 sE
 oX
 nE
-nE
+bG
 qR
 bm
 bO
@@ -42079,7 +42084,7 @@ bO
 bO
 bO
 bO
-RW
+iz
 jg
 jg
 ZR
@@ -42239,7 +42244,7 @@ NE
 lu
 lu
 lu
-lu
+Xn
 mM
 mL
 dt
@@ -44366,7 +44371,7 @@ jg
 jg
 jg
 bO
-sB
+iz
 nE
 nE
 nE
