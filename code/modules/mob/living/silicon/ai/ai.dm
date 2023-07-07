@@ -316,7 +316,7 @@ var/list/ai_verbs_default = list(
 /mob/living/silicon/ai/var/message_cooldown = 0
 /mob/living/silicon/ai/proc/ai_announcement()
 	set category = "Silicon Commands"
-	set name = "Make Announcement"
+	set name = "Make Site-wide Announcement"
 
 	if(check_unable(AI_CHECK_WIRELESS | AI_CHECK_RADIO))
 		return
@@ -324,7 +324,7 @@ var/list/ai_verbs_default = list(
 	if(message_cooldown)
 		to_chat(src, "Please allow one minute to pass between announcements.")
 		return
-	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I. Announcement") as null|message
+	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I.C. Announcement") as null|message
 	if(!input)
 		return
 
@@ -386,7 +386,6 @@ var/list/ai_verbs_default = list(
 	Centcomm_announce(input, usr)
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
 	log_say("[key_name_admin(usr)] has made an AIC [GLOB.using_map.boss_short] announcement: [input]")
-	message_staff(SPAN_CLASS("adminnotice","[key_name_admin(usr)] has made an AIC [GLOB.using_map.boss_short] announcement: [input]"))
 	emergency_message_cooldown = 1
 	spawn(300)
 		emergency_message_cooldown = 0
