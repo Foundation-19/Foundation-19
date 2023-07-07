@@ -121,8 +121,8 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, obj/item/device/mmi/B, safety = 0)
 	announcement = new()
-	announcement.title = "A.I. Announcement"
-	announcement.announcement_type = "A.I. Announcement"
+	announcement.title = "A.I.C. Announcement"
+	announcement.announcement_type = "A.I.C. Announcement"
 	announcement.newscast = 1
 
 	var/list/possibleNames = GLOB.ai_names
@@ -385,7 +385,8 @@ var/list/ai_verbs_default = list(
 		return
 	Centcomm_announce(input, usr)
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
-	log_say("[key_name(usr)] has made an IA [GLOB.using_map.boss_short] announcement: [input]")
+	log_say("[key_name_admin(usr)] has made an AIC [GLOB.using_map.boss_short] announcement: [input]")
+	message_staff(SPAN_CLASS("adminnotice","[key_name_admin(usr)] has made an AIC [GLOB.using_map.boss_short] announcement: [input]"))
 	emergency_message_cooldown = 1
 	spawn(300)
 		emergency_message_cooldown = 0
