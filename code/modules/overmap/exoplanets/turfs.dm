@@ -206,6 +206,27 @@
 	burnt = TRUE
 	update_icon()
 
+// Flesh
+/turf/simulated/floor/exoplanet/flesh
+	name = "flesh"
+	icon = 'icons/turf/flooring/flesh.dmi'
+	icon_state = "flesh0"
+	color = "#94404e"
+	footstep_type = /decl/footsteps/blank
+
+/turf/simulated/floor/exoplanet/flesh/Initialize()
+	. = ..()
+	icon_state = "flesh[pick(0,1,2,3)]"
+
+/turf/simulated/floor/exoplanet/flesh/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if((temperature > T0C + 200 && prob(5)) || temperature > T0C + 1000)
+		melt()
+
+/turf/simulated/floor/exoplanet/flesh/melt()
+	SetName("scorched flesh")
+	footstep_type = /decl/footsteps/asteroid
+	color = "#70353a"
+
 //Special world edge turf
 
 /turf/simulated/planet_edge

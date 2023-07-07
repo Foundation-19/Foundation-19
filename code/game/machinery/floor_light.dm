@@ -56,7 +56,7 @@ var/list/floor_light_cache = list()
 	if(user.a_intent == I_HURT && !issmall(user))
 		if(!isnull(damaged) && !(stat & BROKEN))
 			visible_message(SPAN_DANGER("\The [user] smashes \the [src]!"))
-			playsound(src, "shatter", 70, 1)
+			playsound(src, SFX_SHATTER, 70, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			set_broken(TRUE)
 		else

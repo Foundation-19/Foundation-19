@@ -113,6 +113,7 @@
 	if(!(flags & IGNORE_MOB_SIZE) && location != CHEM_TOUCH)
 		effective *= (MOB_MEDIUM/M.mob_size)
 
+	effective = min(effective, volume)	// can't metabolize more than what's actually there
 	M.chem_doses[type] = M.chem_doses[type] + effective
 	if(effective >= (metabolism * 0.1) || effective >= 0.1) // If there's too little chemical, don't affect the mob, just remove it
 		switch(location)

@@ -47,13 +47,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		if(body.mind && body.mind.name)
 			name = body.mind.name
 		else
-			if(body.real_name)
-				name = body.real_name
-			else
-				if(gender == MALE)
-					name = capitalize(pick(GLOB.first_names_male)) + " " + capitalize(pick(GLOB.last_names))
-				else
-					name = capitalize(pick(GLOB.first_names_female)) + " " + capitalize(pick(GLOB.last_names))
+			name = body.real_name ? body.real_name : body.name
 
 		mind = body.mind	//we don't transfer the mind but we keep a reference to it.
 	if(!T)
@@ -482,7 +476,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	return 0
 
 /mob/observer/ghost/can_admin_interact()
-	return check_rights(R_ADMIN, 0, src)
+	return check_rights(R_ADMIN|R_MOD, 0, src)
 
 /mob/observer/ghost/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"

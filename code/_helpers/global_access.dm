@@ -333,8 +333,6 @@
 			return global.cameranet;
 		if("can_call_ert")
 			return global.can_call_ert;
-		if("captain_announcement")
-			return global.captain_announcement;
 		if("changelog_hash")
 			return global.changelog_hash;
 		if("channel_color_presets")
@@ -1198,8 +1196,6 @@
 			global.cameranet=newval;
 		if("can_call_ert")
 			global.can_call_ert=newval;
-		if("captain_announcement")
-			global.captain_announcement=newval;
 		if("changelog_hash")
 			global.changelog_hash=newval;
 		if("channel_color_presets")
@@ -1896,7 +1892,6 @@
 	"camera_repository",
 	"cameranet",
 	"can_call_ert",
-	"captain_announcement",
 	"changelog_hash",
 	"channel_color_presets",
 	"channel_to_radio_key",

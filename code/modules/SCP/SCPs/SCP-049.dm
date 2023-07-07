@@ -96,6 +96,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		add_language(LANGUAGE_HUMAN_FRENCH)
 		add_language(LANGUAGE_HUMAN_GERMAN)
 		add_language(LANGUAGE_HUMAN_SPANISH)
+		priority_announcement.Announce("Motion sensors triggered in the containment chamber of SCP-049, on-site security personnel are to investigate the issue.", "Motion Sensors", 'sound/AI/049.ogg')
 		if(!(MUTATION_XRAY in mutations))
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
@@ -259,7 +260,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	A.do_animate("spark")
 	do_after(10)
-	A.stat |= BROKEN
+	A.set_broken(TRUE)
 	var/check = A.open(1)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 

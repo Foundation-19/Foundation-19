@@ -95,12 +95,16 @@ var/global/floorIsLava = 0
 
 	var/list/dat = list()
 
-	var/p_age = "unknown"
+	var/p_age
 	for(var/client/C in GLOB.clients)
 		if(C.ckey == key)
 			p_age = C.player_age
 			break
-	dat += "<b>Player age: [p_age]</b><br><ul id='notes'>"
+
+	if(!p_age)
+		p_age = get_player_age(key)
+
+	dat += "<b>Player age: [p_age ? p_age : "unknown"]</b><br><ul id='notes'>"
 
 	var/savefile/info = new("data/player_saves/[copytext(key, 1, 2)]/[key]/info.sav")
 	var/list/infos

@@ -44,6 +44,8 @@
 
 	attack_damage = Clamp(attack_damage, 1, 5)
 
+	playsound(user.loc, attack_sound, 25, 1, -1)
+
 	if(target == user)
 		user.visible_message(SPAN_DANGER("[user] [pick(attack_verb)] \himself in the [affecting.name]!"))
 		return 0
@@ -82,6 +84,12 @@
 
 /datum/unarmed_attack/claws/strong/gloves
 	blocked_by_gloves = FALSE
+
+/datum/unarmed_attack/claws/strong/abomination
+	attack_verb = list("eviscerated", "gored")
+	damage = 8
+	attack_name = "terrifying claws"
+	attack_sound = 'sound/weapons/alien_claw_flesh2.ogg'
 
 /datum/unarmed_attack/bite/strong
 	attack_verb = list("mauled")

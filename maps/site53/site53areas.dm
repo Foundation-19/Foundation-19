@@ -548,6 +548,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
 
+/area/site53/uez/commandpanicbunker
+	name = "\improper Admin Panic Bunker"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
 /area/site53/uez/hallway
 	name = "\improper Upper Entrance Zone"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -632,7 +638,17 @@
 	icon_state = "checkpoint1"
 
 /area/site53/llcz/dclass/prep
-	name = "\improper Primary D-Class Checkpoint Preperation"
+	name = "\improper Primary D-Class Checkpoint Preparation"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/med_checkpoint
+	name = "\improper Medical D-Class Checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint"
+
+/area/site53/llcz/dclass/med_checkpointoverlook
+	name = "\improper Medical D-Class Checkpoint Overlook"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
@@ -935,11 +951,6 @@
 
 /area/site53/entrancezone/forensics
 	name = "\improper Forensics Laboratory"
-	icon_state = "detective"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/entrancezone/forensicsstairwell
-	name = "\improper Forensics Laboratory Stairwell"
 	icon_state = "detective"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 

@@ -168,7 +168,7 @@
 	force = 10
 	attack_verb = list ("smacked", "thwacked", "thunked")
 	matter = list(MATERIAL_ALUMINIUM = 200, MATERIAL_GLASS = 50)
-	hitsound = "swing_hit"
+	hitsound = SFX_SWING_HIT
 	flashlight_max_bright = 0.5
 	flashlight_outer_range = 5
 

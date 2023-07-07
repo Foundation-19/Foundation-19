@@ -56,6 +56,10 @@
 		crash_with("Warning: [src]([type]) initialized multiple times!")
 	atom_flags |= ATOM_FLAG_INITIALIZED
 
+	if (IsAbstract())
+		log_debug("Abstract atom [type] created!")
+		return INITIALIZE_HINT_QDEL
+
 	if(light_max_bright && light_outer_range)
 		update_light()
 
@@ -632,7 +636,7 @@ its easier to just keep the beam vertical.
 /atom/proc/slam_into(mob/living/L)
 	L.Weaken(2)
 	L.visible_message(SPAN_WARNING("\The [L] [pick("ran", "slammed")] into \the [src]!"))
-	playsound(L, "punch", 25, 1, FALSE)
+	playsound(L, SFX_PUNCH, 25, 1, FALSE)
 	show_sound_effect(L.loc, L)
 
 /**

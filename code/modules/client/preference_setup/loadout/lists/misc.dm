@@ -3,17 +3,6 @@
 	path = /obj/item/cane
 	denied_roles = list(/datum/job/classd)
 
-/datum/gear/union_card
-	display_name = "union membership"
-	path = /obj/item/card/union
-	denied_roles = list(/datum/job/classd)
-
-/datum/gear/union_card/spawn_on_mob(mob/living/carbon/human/H, metadata)
-	. = ..()
-	if(.)
-		var/obj/item/card/union/card = .
-		card.signed_by = H.real_name
-
 /datum/gear/dice
 	display_name = "dice pack"
 	path = /obj/item/storage/pill_bottle/dice

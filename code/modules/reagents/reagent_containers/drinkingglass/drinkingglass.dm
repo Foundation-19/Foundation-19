@@ -109,7 +109,7 @@
 				SPAN_DANGER("\The [src] shatters from the impact!"),
 				SPAN_DANGER("You hear the sound of glass shattering!")
 			)
-		playsound(src.loc, pick(GLOB.shatter_sound), 100)
+		playsound(src.loc, SFX_SHATTER, 100)
 		new /obj/item/material/shard(src.loc)
 		qdel(src)
 	else
@@ -221,7 +221,7 @@
 	if(istype(W, /obj/item/material/kitchen/utensil/spoon))
 		if(user.a_intent == I_HURT)
 			user.visible_message(SPAN_WARNING("[user] bashes \the [src] with a spoon, shattering it to pieces! What a rube."))
-			playsound(src, "shatter", 30, 1)
+			playsound(src, SFX_SHATTER, 30, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(reagents)
 				user.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [user]!"))

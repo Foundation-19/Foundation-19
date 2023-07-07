@@ -41,14 +41,11 @@ var/list/outfits_decls_by_type_
 	var/l_hand = null
 	var/holster = null
 	var/list/backpack_contents = list() // In the list(path=count,otherpath=count) format
-	var/list/belt_contents = list()
 
-	var/id_types
+	var/id_type
 	var/id_desc
-	var/id_slot
 
 	var/pda_type
-	var/pda_slot
 
 	var/id_pda_assignment
 
@@ -69,12 +66,6 @@ var/list/outfits_decls_by_type_
 		H.delete_inventory(TRUE)
 
 /decl/hierarchy/outfit/proc/post_equip(mob/living/carbon/human/H)
-	if(flags & OUTFIT_HAS_JETPACK)
-		var/obj/item/tank/jetpack/J = locate(/obj/item/tank/jetpack) in H
-		if(!J)
-			return
-		J.toggle()
-		J.toggle_valve()
 
 // A proc for non-human species, specially Unathi, since they e.g.
 // can't normally wear gloves as humans. Correct this issue by trying again, but
@@ -96,7 +87,7 @@ var/list/outfits_decls_by_type_
 			if ("exclude" in G.species_restricted) // are they excluded?
 				G.cut_fingertops()
 				// I could optimize this bit when we are trying to apply the gloves to e.g. Vox, a species still restricted despite G.cut_fingertops(). But who cares if this is codebase is like a plate of spaghetti twice over the brim, right? RIGHT?
-				H.equip_to_slot_or_del(G,slot_gloves) // try again
+				H.equip_to_slot_or_store_or_drop(G,slot_gloves) // try again
 		else
 			qdel(G)
 	// end Gloves
@@ -108,30 +99,24 @@ var/list/outfits_decls_by_type_
 
 	rank = id_pda_assignment || rank
 	assignment = id_pda_assignment || assignment || rank
-	var/list/id_cards = equip_ids(H, rank, assignment, equip_adjustments)
-	if(length(id_cards))
-		var/obj/item/card/id/W = id_cards[1]
-		rank = W.rank
-		assignment = W.assignment
+
+	H.update_icons()
+
+	equip_pda(H, rank, assignment, equip_adjustments)
 
 	// We set ID info in middle of equip to ensure the face is not obstructed for photo and mug shot is nice!
-	H.update_icons()
-	for(var/id_card in id_cards)
+	var/obj/item/card/id/id_card = equip_id(H, rank, assignment, equip_adjustments)
+	if(id_card)
+		rank = id_card.rank
+		assignment = id_card.assignment
 		H.set_id_info(id_card)
 
 	equip_post_base(H, equip_adjustments)
 
-	equip_pda(H, rank, assignment, equip_adjustments)
-
 	for(var/path in backpack_contents)
 		var/number = backpack_contents[path]
 		for(var/i=0,i<number,i++)
-			H.equip_to_slot_or_store_or_drop(new path(H), slot_in_backpack)
-
-	for(var/path in belt_contents)
-		var/number = belt_contents[path]
-		for(var/i=0,i<number,i++)
-			H.equip_to_slot_or_store_or_drop(new path(H), slot_in_belt)
+			H.equip_to_storage(new path(H))
 
 	if(!(OUTFIT_ADJUSTMENT_SKIP_POST_EQUIP & equip_adjustments))
 		post_equip(H)
@@ -144,44 +129,44 @@ var/list/outfits_decls_by_type_
 
 	//Start with uniform,suit,backpack for additional slots
 	if(uniform)
-		H.equip_to_slot_or_del(new uniform(H),slot_w_uniform)
+		H.equip_to_slot_or_store_or_drop(new uniform(H),slot_w_uniform)
 	if(holster && H.w_uniform)
 		var/obj/item/clothing/accessory/equip_holster = new holster
 		H.w_uniform.attackby(H, equip_holster)
 		if(equip_holster.loc != H.w_uniform)
 			qdel(equip_holster)
 	if(suit)
-		H.equip_to_slot_or_del(new suit(H),slot_wear_suit)
+		H.equip_to_slot_or_store_or_drop(new suit(H),slot_wear_suit)
 	if(back)
-		H.equip_to_slot_or_del(new back(H),slot_back)
+		H.equip_to_slot_or_store_or_drop(new back(H),slot_back)
 	if(belt)
-		H.equip_to_slot_or_del(new belt(H),slot_belt)
+		H.equip_to_slot_or_store_or_drop(new belt(H),slot_belt)
 	if(gloves)
-		H.equip_to_slot_or_del(new gloves(H),slot_gloves)
+		H.equip_to_slot_or_store_or_drop(new gloves(H),slot_gloves)
 	if(shoes)
-		H.equip_to_slot_or_del(new shoes(H),slot_shoes)
+		H.equip_to_slot_or_store_or_drop(new shoes(H),slot_shoes)
 	if(id)
-		H.equip_to_slot_or_del(new id(H),slot_wear_id)
+		H.equip_to_slot_or_store_or_drop(new id(H),slot_wear_id)
 	if(l_pocket)
-		H.equip_to_slot_or_del(new l_pocket(H),slot_l_store)
+		H.equip_to_slot_or_store_or_drop(new l_pocket(H),slot_l_store)
 	if(r_pocket)
-		H.equip_to_slot_or_del(new r_pocket(H),slot_r_store)
+		H.equip_to_slot_or_store_or_drop(new r_pocket(H),slot_r_store)
 	if(suit_store)
-		H.equip_to_slot_or_del(new suit_store(H),slot_s_store)
+		H.equip_to_slot_or_store_or_drop(new suit_store(H),slot_s_store)
 
 /decl/hierarchy/outfit/proc/equip_post_base(mob/living/carbon/human/H, equip_adjustments)
 	if(l_ear)
 		var/l_ear_path = (OUTFIT_ADJUSTMENT_PLAIN_HEADSET & equip_adjustments) && ispath(l_ear, /obj/item/device/radio/headset) ? /obj/item/device/radio/headset : l_ear
-		H.equip_to_slot_or_del(new l_ear_path(H),slot_l_ear)
+		H.equip_to_slot_or_store_or_drop(new l_ear_path(H),slot_l_ear)
 	if(r_ear)
 		var/r_ear_path = (OUTFIT_ADJUSTMENT_PLAIN_HEADSET & equip_adjustments) && ispath(r_ear, /obj/item/device/radio/headset) ? /obj/item/device/radio/headset : r_ear
-		H.equip_to_slot_or_del(new r_ear_path(H),slot_r_ear)
+		H.equip_to_slot_or_store_or_drop(new r_ear_path(H),slot_r_ear)
 	if(glasses)
-		H.equip_to_slot_or_del(new glasses(H),slot_glasses)
+		H.equip_to_slot_or_store_or_drop(new glasses(H),slot_glasses)
 	if(mask)
-		H.equip_to_slot_or_del(new mask(H),slot_wear_mask)
+		H.equip_to_slot_or_store_or_drop(new mask(H),slot_wear_mask)
 	if(head)
-		H.equip_to_slot_or_del(new head(H),slot_head)
+		H.equip_to_slot_or_store_or_drop(new head(H),slot_head)
 	if(l_hand)
 		H.put_in_l_hand(new l_hand(H))
 	if(r_hand)
@@ -211,38 +196,44 @@ var/list/outfits_decls_by_type_
 		H.species.equip_survival_gear(H, flags&OUTFIT_EXTENDED_SURVIVAL)
 	check_and_try_equip_xeno(H)
 
-/decl/hierarchy/outfit/proc/equip_ids(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
-	if(!id_slot || !length(id_types))
+/decl/hierarchy/outfit/proc/equip_id(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
+	if(!id_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
 		return
-	var/created_cards = list()
-	for(var/id_type in id_types)
-		var/obj/item/card/id/W = new id_type(H)
-		if(id_desc)
-			W.desc = id_desc
-		if(rank)
-			W.rank = rank
-		if(assignment)
-			W.assignment = assignment
 
-		if((flags & OUTFIT_USES_ACCOUNT) && H.mind?.initial_account)
-			W.associated_account_number = H.mind.initial_account.account_number
-		if((flags & OUTFIT_USES_EMAIL) && H.mind?.initial_email_login)
-			W.associated_email_login = H.mind.initial_email_login.Copy()
+	var/obj/item/card/id/W = new id_type(H)
+	if(id_desc)
+		W.desc = id_desc
+	if(rank)
+		W.rank = rank
+	if(assignment)
+		W.assignment = assignment
 
-		var/item_slot = id_types[id_type] || id_slot
-		H.equip_to_slot_or_store_or_drop(W, item_slot)
-		created_cards += W
-	return created_cards
+	if((flags & OUTFIT_USES_ACCOUNT) && H.mind?.initial_account)
+		W.associated_account_number = H.mind.initial_account.account_number
+	if((flags & OUTFIT_USES_EMAIL) && H.mind?.initial_email_login)
+		W.associated_email_login = H.mind.initial_email_login.Copy()
+
+	var/obj/item = H.get_equipped_item(slot_wear_id)
+	if(!!item)
+		if(istype(item, /obj/item/modular_computer/pda))
+			var/obj/item/modular_computer/pda/pda = item
+			if(pda.card_slot)
+				pda.card_slot.insert_id(W, H, suppress_message = TRUE)
+	else
+		H.equip_to_slot_or_store_or_drop(W, slot_wear_id)
+
+	return W
 
 /decl/hierarchy/outfit/proc/equip_pda(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
-	if(!pda_slot || !pda_type)
+	if(!pda_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
 		return
 	var/obj/item/modular_computer/pda/pda = new pda_type(H)
-	if(H.equip_to_slot_or_store_or_drop(pda, pda_slot))
+
+	if(H.equip_to_slot_or_store_or_drop(pda, slot_wear_id))
 		return pda
 
 /decl/hierarchy/outfit/dd_SortValue()

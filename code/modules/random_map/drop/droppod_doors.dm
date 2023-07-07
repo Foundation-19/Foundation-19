@@ -8,18 +8,13 @@
 	opacity = 1
 	layer = ABOVE_DOOR_LAYER
 	var/deploying
-	var/deployed
 
 /obj/structure/droppod_door/New(newloc, autoopen)
 	..(newloc)
 	if(autoopen)
+		deploying = 1
 		spawn(10 SECONDS)
 			deploy()
-
-/obj/structure/droppod_door/attack_ai(mob/user)
-	if(!user.Adjacent(src))
-		return
-	attack_hand(user)
 
 /obj/structure/droppod_door/attack_generic(mob/user)
 	if(istype(user))
@@ -27,23 +22,16 @@
 
 /obj/structure/droppod_door/attack_hand(mob/user)
 	if(deploying) return
+	deploying = 1
+
 	to_chat(user, SPAN_DANGER("You prime the explosive bolts. Better get clear!"))
 	sleep(30)
 	deploy()
 
 /obj/structure/droppod_door/proc/deploy()
-	if(deployed)
-		return
-
-	deployed = 1
 	visible_message(SPAN_DANGER("The explosive bolts on \the [src] detonate, throwing it open!"))
 	playsound(src.loc, 'sound/effects/bang.ogg', 50, 1, 5)
-
-	// This is shit but it will do for the sake of testing.
-	for(var/obj/structure/droppod_door/D in orange(1,src))
-		if(D.deployed)
-			continue
-		D.deploy()
+	show_sound_effect(src.loc)
 
 	// Overwrite turfs.
 	var/turf/origin = get_turf(src)
@@ -74,7 +62,7 @@
 	set_opacity(0)
 	icon_state = "ramptop"
 	var/obj/structure/droppod_door/door_bottom = new(T)
-	door_bottom.deployed = 1
+	door_bottom.deploying = 1
 	door_bottom.set_density(0)
 	door_bottom.set_opacity(0)
 	door_bottom.set_dir(src.dir)

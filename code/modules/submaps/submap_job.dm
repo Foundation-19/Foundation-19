@@ -6,7 +6,7 @@
 	announced = FALSE
 	create_record = FALSE
 	total_positions = 4
-	outfit_type = /decl/hierarchy/outfit/job/classd
+	outfit_type = /decl/hierarchy/outfit/job/survivor
 	hud_icon = "hudblank"
 	available_by_default = FALSE
 	allowed_ranks = null

@@ -427,14 +427,23 @@
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
-	job_access_type = /datum/job/mtf
+
+/obj/item/card/id/mtf/Initialize()
+	. = ..()
+	rank = "Mobile Task Force Operative"
+	access |= get_all_station_access()
+
 
 /obj/item/card/id/physics
 	name = " military ID"
 	desc = "A dark purple ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
-	job_access_type = /datum/job/physics
+
+/obj/item/card/id/physics/Initialize()
+	. = ..()
+	rank = "UNGOC Physics Operative"
+	access |= get_all_station_access()
 
 // COMMS CARDS
 
