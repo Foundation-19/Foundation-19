@@ -379,7 +379,7 @@ var/list/ai_verbs_default = list(
 	if(emergency_message_cooldown)
 		to_chat(usr, SPAN_WARNING("Arrays recycling. Please stand by."))
 		return
-	var/input = tgui_input_text(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "05 Emergency Message")
+	var/input = tgui_input_text(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement. Abuse will lead to decomission. There is a 30 second delay before you may send another message, be clear, full and concise.", "O5 Emergency Message")
 	if(!input)
 		return
 	Centcomm_announce(input, usr)
