@@ -66,8 +66,3 @@
 
 /datum/job/cyborg/equip(mob/living/carbon/human/H)
 	return !!H
-
-/datum/job/cyborg/New()
-	..()
-	alt_titles = SSrobots.robot_alt_titles.Copy()
-	alt_titles -= title // So the unit test doesn't flip out if a mob or mmi type is declared for our main title.
