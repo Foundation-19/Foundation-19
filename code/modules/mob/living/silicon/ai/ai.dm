@@ -322,12 +322,11 @@ var/list/ai_verbs_default = list(
 		return
 
 	if(message_cooldown)
-		to_chat(src, "Please allow one minute to pass between announcements.")
+		to_chat(src, SPAN_WARNING("Please allow one minute to pass between announcements."))
 		return
-	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I.C. Announcement") as null|message
+	var/input = tgui_input_text(usr, "Please write a message to announce to the [station_name()] crew.", "A.I.C. Announcement")
 	if(!input)
 		return
-
 	if(check_unable(AI_CHECK_WIRELESS | AI_CHECK_RADIO))
 		return
 
@@ -380,12 +379,12 @@ var/list/ai_verbs_default = list(
 	if(emergency_message_cooldown)
 		to_chat(usr, SPAN_WARNING("Arrays recycling. Please stand by."))
 		return
-	var/input = sanitize(input(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", ""))
+	var/input = tgui_input_text(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "05 Emergency Message")
 	if(!input)
 		return
 	Centcomm_announce(input, usr)
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
-	log_say("[key_name_admin(usr)] has made an AIC [GLOB.using_map.boss_short] announcement: [input]")
+	log_say("[key_name_admin(usr)] has made an emergency AIC [GLOB.using_map.boss_short] announcement: [input]")
 	emergency_message_cooldown = 1
 	spawn(300)
 		emergency_message_cooldown = 0
@@ -521,7 +520,7 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/proc/ai_statuschange()
 	set category = "Silicon Commands"
-	set name = "AI Status"
+	set name = "AIC Status"
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -532,7 +531,7 @@ var/list/ai_verbs_default = list(
 //I am the icon meister. Bow fefore me.	//>fefore
 /mob/living/silicon/ai/proc/ai_hologram_change()
 	set name = "Change Hologram"
-	set desc = "Change the default hologram available to AI to something else."
+	set desc = "Change the default hologram available to AIC to something else."
 	set category = "Silicon Commands"
 
 	if(check_unable())
@@ -576,7 +575,7 @@ var/list/ai_verbs_default = list(
 //Toggles the luminosity and applies it by re-entereing the camera.
 /mob/living/silicon/ai/proc/toggle_camera_light()
 	set name = "Toggle Camera Light"
-	set desc = "Toggles the light on the camera the AI is looking through."
+	set desc = "Toggles the light on the camera the AIC is looking through."
 	set category = "Silicon Commands"
 
 	if(check_unable())
