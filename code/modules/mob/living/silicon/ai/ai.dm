@@ -296,7 +296,7 @@ var/list/ai_verbs_default = list(
 	if(stat || !has_power())
 		return
 
-	var/new_sprite = input("Select an icon!", "AI", selected_sprite) as null|anything in available_icons()
+	var/new_sprite = tgui_input_list(usr, "Select an icon!", "Iconner.exe", available_icons())
 	if(new_sprite)
 		selected_sprite = new_sprite
 
@@ -342,7 +342,7 @@ var/list/ai_verbs_default = list(
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
 
-	var/confirm = alert("Are you sure you want to evacuate?", "Confirm Evacuation", "Yes", "No")
+	var/confirm = tgui_alert(usr, "Are you sure you want to evacuate?", "EvacMate.exe", list("Yes", "No"))
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -538,8 +538,7 @@ var/list/ai_verbs_default = list(
 		return
 
 	var/input
-	if(alert("Would you like to select a hologram based on a crew member or switch to unique avatar?",,"Crew Member","Unique")=="Crew Member")
-
+	if(tgui_alert(usr, "Would you like to select a hologram based on a crew member or switch to unique avatar?", "Hologrammer.exe", list("Crew Member", "Unique"))=="Crew Member")
 		var/personnel_list[] = list()
 
 		for(var/datum/computer_file/report/crew_record/t in GLOB.all_crew_records)//Look in data core locked.
@@ -563,7 +562,7 @@ var/list/ai_verbs_default = list(
 			var/decl/ai_holo/holo = holograms_by_type[holo_type]
 			if (holo.may_be_used_by_ai(src))
 				hologramsAICanUse.Add(holo)
-		var/decl/ai_holo/choice = input("Please select a hologram:") as null|anything in hologramsAICanUse
+		var/decl/ai_holo/choice = tgui_input_list(usr, "Please select a hologram:", "Hologrammer.exe", hologramsAICanUse)
 		if(choice)
 			qdel(holo_icon)
 			qdel(holo_icon_longrange)

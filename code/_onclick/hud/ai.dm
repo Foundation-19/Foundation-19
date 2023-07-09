@@ -11,7 +11,7 @@
 	adding = list()
 	adding += new /obj/screen/ai_button(null,
 			ui_ai_core,
-			"AI Core",
+			"AIC Core",
 			"ai_core",
 			/mob/living/silicon/ai/proc/core
 			)
