@@ -8,7 +8,6 @@
 	economic_power = 3
 	minimal_player_age = 0
 	ideal_character_age = 20
-	requirements = list("Class D" = 30)
 	alt_titles = list(
 		"Junior Maintenance Technician",
 		"Junior Engine Technician",
@@ -92,7 +91,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
-	requirements = list("Engineer" = 600, EXP_TYPE_ENGINEERING = 720)
+	requirements = list("Engineer" = 600)
 	alt_titles = list(
 		"Senior Maintenance Technician",
 		"Senior Engine Technician",
@@ -199,7 +198,7 @@
 	economic_power = 9
 	ideal_character_age = 35
 	minimal_player_age = 20
-	requirements = list("Containment Engineer" = 600, EXP_TYPE_ENGINEERING = 1500)
+	requirements = list("Containment Engineer" = 600, EXP_TYPE_ENGINEERING = 1800)
 	outfit_type = /decl/hierarchy/outfit/job/command/chief_engineer
 	allowed_branches = list(/datum/mil_branch/security)
 	allowed_ranks = list(

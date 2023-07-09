@@ -62,7 +62,6 @@
 	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 4
-	requirements = list("Class D" = 30)
 	alt_titles = list("Pharmacist")
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
@@ -146,7 +145,6 @@
 	ideal_character_age = 26
 	minimal_player_age = 3
 	economic_power = 5
-	requirements = list("Class D" = 30)
 	alt_titles = list("Coroner")
 	outfit_type = /decl/hierarchy/outfit/job/medical/medicaldoctor
 	allowed_branches = list(/datum/mil_branch/civilian)

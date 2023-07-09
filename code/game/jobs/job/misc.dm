@@ -122,7 +122,6 @@
 	//supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
-	requirements = list("Class D" = 30)
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)

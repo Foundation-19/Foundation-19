@@ -7,7 +7,6 @@
 	spawn_positions = 10
 	supervisors = "the Senior Researchers and Research Director"
 	economic_power = 4
-	requirements = list("Class D" = 30)
 	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher")
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/science/juniorscientist
@@ -44,7 +43,6 @@
 	spawn_positions = 5
 	supervisors = "the Senior Robotics Technicians and Research Director"
 	economic_power = 4
-	requirements = list("Class D" = 30)
 	alt_titles = list("Junior Exoskeleton Technician", "Junior Hardsuit Technician")
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/science/juniorroboticist
@@ -164,7 +162,7 @@
 	spawn_positions = 3
 	supervisors = "the Research Director"
 	economic_power = 4
-	requirements = list("Researcher" = 600, EXP_TYPE_SCIENCE = 720)
+	requirements = list("Researcher" = 600)
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -207,7 +205,7 @@
 	spawn_positions = 2
 	supervisors = "the Research Director"
 	economic_power = 4
-	requirements = list("Robotics Technician" = 600, EXP_TYPE_SCIENCE = 600)
+	requirements = list("Robotics Technician" = 600)
 	alt_titles = list("Senior Exoskeleton Technician", "Senior Hardsuit Technician")
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -249,7 +247,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 15
-	requirements = list("Senior Researcher" = 600, EXP_TYPE_SCIENCE = 1500)
+	requirements = list("Senior Researcher" = 600, EXP_TYPE_SCIENCE = 1800)
 	req_admin_notify = 1
 	supervisors = "the Site Director"
 	alt_titles = list("Chief Science Officer", "Head Researcher")
