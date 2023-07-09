@@ -30,3 +30,10 @@
 	mechanics_text = "This device can connect to a number of <span codexlink='conveyor belt'>conveyor belts</span> and control their movement. \
 	A two-way switch will allow you to make the conveyors run in forward and reverse mode, the one-way switch will only allow one direction.<br>\
 	Can be removed with a <l>crowbar</l>."
+
+/datum/codex_entry/contraband_detector
+	associated_paths = list(/obj/machinery/contraband_detector, /obj/machinery/contraband_detector_construct)
+	mechanics_text = "This machine will automatically scan anything that moves through its scanner, reporting any illicit items to the LCZ guard frequency. \
+	An ID lock on the panel prevents access to the internal wiring, although it can still be unwrenched and moved. \
+	With a box made of aluminum, you could pass contraband through without detection. \
+	The detector could also be hacked or destroyed, although this risks the anti-tampering alarm going off."

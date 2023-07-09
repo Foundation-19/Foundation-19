@@ -75,9 +75,6 @@
 	if((isWirecutter(I) || isMultitool(I)) && panel_open)
 		return wires.Interact(user)
 	if(isWrench(I))
-		if(id_locked)
-			to_chat(user, SPAN_WARNING("You cannot unsecure a locked contraband detector!"))
-			return
 		if(wrenching)
 			to_chat(user, SPAN_WARNING("Someone is already [anchored ? "un" : ""]securing the detector!"))
 			return
