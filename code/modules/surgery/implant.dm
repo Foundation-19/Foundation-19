@@ -153,8 +153,8 @@
 /decl/surgery_step/cavity/implant_removal/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
 	if(affected)
-		for(var/obj/O in affected.implants)
-			if(!istype(O, /obj/item/organ/internal))
+		for(var/atom/movable/A in affected.implants)
+			if(!istype(A, /obj/item/organ/internal))
 				return affected
 	return FALSE
 
@@ -183,34 +183,25 @@
 				loot |= wound.embedded_objects
 			find_prob += 50
 
-	if (loot.len)
+	if(loot.len)
 
-		var/obj/item/obj = pick(loot)
+		var/atom/movable/A = pick(loot)
 
-		if(istype(obj,/obj/item/implant))
-			var/obj/item/implant/imp = obj
+		if(istype(A, /obj/item/implant))
+			var/obj/item/implant/imp = A
 			if (imp.islegal())
-				find_prob +=60
+				find_prob += 60
 			else
-				find_prob +=40
+				find_prob += 40
 		else
-			find_prob +=50
+			find_prob += 50
 
-		if (prob(find_prob))
+		if(prob(find_prob))
 			user.visible_message(SPAN_NOTICE("[user] takes something out of incision on [target]'s [affected.name] with \the [tool]."), \
-			SPAN_NOTICE("You take \the [obj] out of incision on \the [target]'s [affected.name] with \the [tool].") )
-			target.remove_implant(obj, TRUE, affected)
+			SPAN_NOTICE("You take \the [A] out of incision on \the [target]'s [affected.name] with \the [tool].") )
+			target.remove_implant(A, TRUE, affected)
 
 			BITSET(target.hud_updateflag, IMPLOYAL_HUD)
-
-			//Handle possessive brain borers.
-			if(istype(obj,/mob/living/simple_animal/borer))
-				var/mob/living/simple_animal/borer/worm = obj
-				if(worm.controlling)
-					target.release_control()
-				worm.detatch()
-				worm.leave_host()
-
 
 			playsound(target.loc, 'sound/effects/squelch1.ogg', 15, 1)
 		else

@@ -26,7 +26,7 @@
 	handle_casings = EJECT_CASINGS
 	load_sound = 'sound/weapons/guns/interaction/shotgun_instert.ogg'
 	has_safety = FALSE // No brakes on this train baby
-	unacidable = TRUE
+	acid_resistance = -1
 
 /obj/item/gun/projectile/shotgun/popout/check_accidents(mob/living/user, message, skill_path, fail_chance, no_more_fail, factor)
 	// The pop-out shotgun is a very unique type of gun and doesn't function like a normal one. We do this to prevent people blowing themselves away if they're not weapons-trained

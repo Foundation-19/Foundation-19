@@ -85,7 +85,7 @@
 	to_chat(imp_in, instruction)
 	addtimer(CALLBACK(src,.proc/activate),3000,(TIMER_UNIQUE|TIMER_OVERRIDE))
 
-/obj/item/implant/imprinting/removed()
+/obj/item/implant/imprinting/ImplantRemoval()
 	if(brainwashing && !malfunction)
 		to_chat(imp_in,SPAN_WARNING("A wave of nausea comes over you.</span><br><span class='good'>You are no longer so sure of those beliefs you've had..."))
 	..()

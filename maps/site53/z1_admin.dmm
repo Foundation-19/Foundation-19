@@ -1484,7 +1484,7 @@
 	},
 /area/centcom)
 "iA" = (
-/obj/machinery/vending/sovietsoda,
+/obj/machinery/vending/classdwater,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp1102entrance)
 "iB" = (

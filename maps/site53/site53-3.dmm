@@ -5402,7 +5402,9 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 10
 	},
-/obj/structure/closet/secure_closet/personal/empty,
+/obj/structure/closet/secure_closet/personal/empty{
+	name = "Representative's Locker"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "qB" = (
@@ -5644,6 +5646,9 @@
 "rC" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/stamp/scp/o5rep,
+/obj/item/folder/blue,
+/obj/item/folder/red,
+/obj/item/folder/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "rE" = (
@@ -5651,9 +5656,7 @@
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
-/obj/machinery/vending/snack{
-	dir = 1
-	},
+/obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "rF" = (
@@ -8345,6 +8348,11 @@
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logistics)
+"Od" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/filingcabinet/wallcabinet,
+/turf/simulated/wall/titanium,
+/area/site53/uez/goirepoffice)
 "Of" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -8760,6 +8768,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"SB" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/filingcabinet/wallcabinet,
+/turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/ethics)
 "SC" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -9064,13 +9077,12 @@
 /obj/structure/table/woodentable/ebony,
 /obj/item/paper_bin,
 /obj/item/pen/fancy/quill,
+/obj/item/pen,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
 "VF" = (
 /obj/machinery/light,
-/obj/machinery/vending/cigarette{
-	dir = 1
-	},
+/obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "VG" = (
@@ -39897,7 +39909,7 @@ MX
 mk
 mk
 mk
-mk
+Od
 mk
 mk
 oS
@@ -44268,7 +44280,7 @@ Zp
 Zp
 Zp
 NX
-Zp
+SB
 NX
 bO
 ru

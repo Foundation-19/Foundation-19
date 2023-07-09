@@ -5,7 +5,7 @@
 	sharp = TRUE
 	var/reagent_amount = 15
 	life_span = 15 //shorter range
-	unacidable = TRUE
+	acid_resistance = -1
 
 	muzzle_type = null
 
@@ -28,6 +28,7 @@
 	leaves_residue = FALSE
 
 /obj/item/ammo_casing/chemdart/expend()
+	. = ..()
 	qdel(src)
 
 /obj/item/ammo_magazine/chemdart

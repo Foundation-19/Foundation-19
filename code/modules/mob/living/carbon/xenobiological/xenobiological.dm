@@ -282,7 +282,7 @@
 						sleep(3)
 						step_away(src,M,15)
 
-				playsound(loc, "punch", 25, 1, -1)
+				playsound(loc, SFX_PUNCH, 25, 1, -1)
 				visible_message(SPAN_DANGER("[M] has punched [src]!"), \
 						SPAN_DANGER("[M] has punched [src]!"))
 

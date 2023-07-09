@@ -29,7 +29,15 @@
 /// sent every carbon Life()
 #define COMSIG_CARBON_LIFE "carbon_life"
 
-/// sent by atom's Entered()
+/*
+* Atom
+*/
+
+/// Called in `/atom/movable/Move` and `/atom/movable/proc/forceMove` (/atom/movable, /atom, /atom)
+#define COMSIG_MOVED "moved"
+
+/// Called on `/atom/Entered` (/atom, enterer, old_loc)
 #define COMSIG_ENTERED "entered"
-/// sent by atom's Exited()
+
+/// Called on `/atom/Exited` (/atom, exitee, new_loc)
 #define COMSIG_EXITED "exited"

@@ -21,7 +21,7 @@
 	var/light_outer_range_on = 2
 	var/overlay_layer
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
-	clicksound = "keyboard"
+	clicksound = SFX_KEYBOARD
 
 /obj/machinery/computer/New()
 	overlay_layer = layer

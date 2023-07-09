@@ -61,6 +61,8 @@
 
 	if(!holder.callproc)
 		holder.callproc = new(src)
+	else if(!holder.callproc.C)
+		holder.callproc.C = src
 	holder.callproc.callproc(hastarget, target)
 
 #define CANCEL -1

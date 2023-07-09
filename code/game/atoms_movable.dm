@@ -90,6 +90,9 @@
 					AM.Crossed(src)
 			if(is_new_area && is_destination_turf)
 				destination.loc.Entered(src, origin)
+
+	SEND_SIGNAL(src, COMSIG_MOVED, src, origin, destination)
+
 	return 1
 
 /atom/movable/forceMove(atom/dest)
@@ -250,4 +253,8 @@
 * Called from [/atom/movable/proc/keyLoop], this exists to be overwritten by living mobs with a check to see if we're actually alive enough to change directions
 */
 /atom/movable/proc/keybind_face_direction(direction)
+	return
+
+/// Handles special effects of item being removed from "implants" of a mob
+/atom/movable/proc/ImplantRemoval(mob/user)
 	return

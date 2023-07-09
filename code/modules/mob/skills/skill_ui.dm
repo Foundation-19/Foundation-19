@@ -255,7 +255,7 @@ Admin version, with debugging options.
 	if(href_list["close"]) // This is called when the window is closed; we've signed up to get notified of it.
 		qdel(src)
 		return 1
-	if(!is_admin(usr))
+	if(!check_rights(R_ADMIN|R_MOD, 0, usr))
 		return 1
 
 	if(href_list["reset_antag"])
