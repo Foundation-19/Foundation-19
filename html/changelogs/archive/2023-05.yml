@@ -56,3 +56,24 @@
   - rscadd: Gave P90 it's full auto settign back
   - rscadd: Divided LCZ armoury into a lethal area and a non lethal area compartment,
       both compartment can be opened or locked by the ZC.
+2023-05-17:
+  EgorDinamit:
+  - admin: Ascent outfits, clothes and "props" were re-added. Yes, Yawet, this is
+      for you.
+2023-05-19:
+  Tsurupeta:
+  - bugfix: fixed tactical reload eating magazines
+2023-05-20:
+  EgorDinamit:
+  - rscadd: 'Abominable Infestation: The infestation mobs can potentially find their
+      way onto the facility via vents network. They evolve rapidly and "disassemble"
+      other creatures to produce more of its kind. Their meat contains potentially
+      powerful chemicals, but be careful not to consume it raw.'
+  casualspacestation14enjoyer:
+  - rscadd: Added new ruins to CD Mining, also expands it.
+2023-05-25:
+  casualspacestation14enjoyer:
+  - imageadd: makes nanoUI more immersive
+2023-05-26:
+  EgorDinamit:
+  - bugfix: Class D randomized names now work properly.

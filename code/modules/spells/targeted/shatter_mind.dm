@@ -18,7 +18,7 @@
 /datum/spell/targeted/shatter/cast(list/targets, mob/user)
 	var/mob/living/carbon/human/H = targets[1]
 	if(prob(50))
-		sound_to(user, get_sfx("swing_hit"))
+		sound_to(user, get_sfx(SFX_SWING_HIT))
 	if(prob(5))
 		to_chat(H, SPAN_WARNING("You feel unhinged."))
 	H.adjust_hallucination(5,5)

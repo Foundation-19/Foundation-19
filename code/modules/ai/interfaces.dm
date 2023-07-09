@@ -99,10 +99,9 @@
 	if (!old_T.Adjacent(newloc))
 		return MOVEMENT_FAILED
 
-	. = Move(newloc, dir) ? MOVEMENT_SUCCESSFUL : MOVEMENT_FAILED
-	if (. == MOVEMENT_SUCCESSFUL)
-		set_dir(get_dir(old_T, newloc))
+	if(DoMove(dir, src) == MOVEMENT_HANDLED)
 		// Apply movement delay.
 		// Player movement has more factors but its all in the client and fixing that would be its own project.
 		SetMoveCooldown(movement_delay())
+		return MOVEMENT_SUCCESSFUL
 	return

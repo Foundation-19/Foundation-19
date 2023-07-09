@@ -27,7 +27,6 @@
 	icon_living = "shark"
 	icon_dead = "shark_dead"
 	turns_per_move = 2
-	move_to_delay = 2
 	attack_same = 1
 	movement_cooldown = 4
 	mob_size = MOB_LARGE

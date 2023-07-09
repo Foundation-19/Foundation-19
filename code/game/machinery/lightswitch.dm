@@ -62,7 +62,7 @@
 
 /obj/machinery/light_switch/interface_interact(mob/user)
 	if(CanInteract(user, DefaultTopicState()))
-		playsound(src, "switch", 30)
+		playsound(src, SFX_MACHINE_SWITCH, 30)
 		set_state(!on)
 		return TRUE
 

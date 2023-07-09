@@ -16,7 +16,6 @@
 	health = 300
 	maxHealth = 300
 	movement_cooldown = 3
-	move_to_delay = 6
 	projectiletype = /obj/item/projectile/beam/drone
 	projectilesound = 'sound/weapons/laser3.ogg'
 	destroy_surroundings = 0

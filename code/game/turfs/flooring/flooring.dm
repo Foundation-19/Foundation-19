@@ -401,6 +401,11 @@
 	remove_timer = 60
 	can_engrave = FALSE
 
+/decl/flooring/flesh/infested
+	name = "pulsating flesh"
+	desc = "Disgusting flooring made out of flesh, bone, eyes, and various other human bits and pieces."
+	color = "#94404e"
+
 /decl/flooring/pool
 	name = "pool floor"
 	desc = "Sunken flooring designed to hold liquids."

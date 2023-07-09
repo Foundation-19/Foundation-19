@@ -288,3 +288,9 @@
 /mob/living/simple_animal/borer/flash_eyes(intensity, override_blindness_check, affect_silicon, visual, type)
 	intensity *= 1.5
 	. = ..()
+
+/mob/living/simple_animal/borer/ImplantRemoval()
+	if(controlling)
+		host.release_control()
+		detatch()
+		leave_host()
