@@ -10391,7 +10391,7 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
-"xR" = ()
+"xR" = (
 /obj/item/tape_roll,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/engineering/maintenance/llczmaint)
