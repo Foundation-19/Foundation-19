@@ -270,7 +270,7 @@
 	if(!override)
 		if(is_crisis_mode)
 			to_chat(src, SPAN_WARNING("Crisis mode active. Additional modules available."))
-		modtype = input("Please select a module!", "Robot module", null, null) as null|anything in robot_modules
+		modtype = tgui_input_list(src, "Please select a module!", "Modulator.exe", robot_modules)
 	else
 		if(module)
 			QDEL_NULL(module)
