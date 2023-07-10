@@ -1,7 +1,7 @@
 /obj/item/robot_module/research
 	name = "research module"
 	display_name = "Research"
-	module_category = ROBOT_MODULE_DISABLED
+	module_category = ROBOT_MODULE_TYPE_GROUNDED
 	channels = list(
 		"Science" = TRUE
 	)

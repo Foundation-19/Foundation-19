@@ -11,10 +11,6 @@ SUBSYSTEM_DEF(robots)
 
 /datum/controller/subsystem/robots/Initialize()
 	. = ..()
-
-	// This is done via loop instead of just assignment in order to trim associations.
-	sortTim(robot_alt_titles, /proc/cmp_text_asc)
-
 	for(var/module_type in subtypesof(/obj/item/robot_module))
 		var/obj/item/robot_module/module = module_type
 		var/module_category = initial(module.module_category)
@@ -42,9 +38,3 @@ SUBSYSTEM_DEF(robots)
 		var/list/modules = upgrade_modules_by_category[module_category]
 		if(modules[include_override])
 			.[include_override] = modules[include_override]
-
-/datum/controller/subsystem/robots/proc/get_mmi_type_by_title(check_title) //this is a lazy ass fix but i dont know how else to do this without breaking everything
-	. = /obj/item/device/mmi
-
-/datum/controller/subsystem/robots/proc/get_mob_type_by_title(check_title)
-	. = /mob/living/silicon/robot

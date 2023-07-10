@@ -129,7 +129,7 @@
 		mind.transfer_to(O)
 		if(O.mind && O.mind.assigned_role == "Robot")
 			O.mind.original = O
-			var/mmi_type = SSrobots.get_mmi_type_by_title(O.mind.role_alt_title ? O.mind.role_alt_title : O.mind.assigned_role)
+			var/mmi_type = /obj/item/device/mmi
 			if(mmi_type)
 				O.mmi = new mmi_type(O)
 				O.mmi.transfer_identity(src)
