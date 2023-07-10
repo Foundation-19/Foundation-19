@@ -37,7 +37,7 @@
 		/obj/item/tray/robotray,
 		/obj/item/reagent_containers/borghypo/service
 	)
-	emag = /obj/item/melee/energy/sword ///obj/item/reagent_containers/food/drinks/bottle/small/beer , this is literally a beer bottle, plus so we dont make the standard module stans angry, we are putting the esword to this guy
+	emag = /obj/item/reagent_containers/food/drinks/bottle/small/beer
 	skills = list(
 		SKILL_COMPUTER            = SKILL_EXPERIENCED,
 		SKILL_COOKING             = SKILL_MASTER,
