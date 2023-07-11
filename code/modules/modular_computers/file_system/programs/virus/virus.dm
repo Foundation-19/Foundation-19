@@ -44,9 +44,9 @@
 				else if(virus_runvar == 0)
 					var/datum/computer_file/data/autorun = get_data_file("autorun")
 					if(autorun)
-						autorun.stored_data = "programfile"
+						autorun.stored_data = filename
 					else
-						create_data_file("autorun", "programfile")
+						create_data_file("autorun", filename)
 
 					virus_runvar++
 					virus_cooldown = world.time + 1 MINUTE
