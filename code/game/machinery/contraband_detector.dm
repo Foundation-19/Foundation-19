@@ -13,6 +13,9 @@
 	var/wrenching = FALSE
 	var/obj/item/device/radio/intercom/announce
 
+	var/obj_cooldown = 0	// cooldown for triggering, kept separately so people can't abuse it
+	var/mob_cooldown = 0
+
 	wires = /datum/wires/contraband_detector
 	var/identifier_wire_pulsed_until = 0	// world time value, since it's only checked in 1 place we don't remove it when time has passed (more optimal than checking every tick)
 
@@ -40,6 +43,16 @@
 
 /obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)	// T isn't used, but it's passed by the signal as first argument so don't remove it
 	if(!wires.is_cut(WIRE_CONTRADETECT_IDENTIFIER) && (((identifier_wire_pulsed_until > world.time) && identifier_wire_pulsed_until != 0) || A.has_contraband()))
+		if(ismob(A))
+			if(mob_cooldown < world.time)
+				mob_cooldown = world.time + 1 SECOND
+			else
+				return
+		else
+			if(obj_cooldown < world.time)
+				obj_cooldown = world.time + 2 SECONDS
+			else
+				return
 		flick("detected", src)
 		visible_message(SPAN_WARNING("\The [src] detects contraband on \the [A.name]!"))
 		if(!wires.is_cut(WIRE_CONTRADETECT_ALARM))
