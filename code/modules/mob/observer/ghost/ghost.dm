@@ -617,12 +617,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			if(!M.client && (length(GLOB.clients) >= 20))
 				scps += M
 
-		if(IS_TRUSTED_PLAYER(ckey))
-			for(var/scp049 in GLOB.scp049s)
-				var/mob/M = scp049
-				if (!M.client)
-					scps += M
-
 		// Technically not difficult to recontain, but will easily kill anyone
 		for(var/scp106 in GLOB.scp106s)
 			var/mob/M = scp106
@@ -634,6 +628,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			if(!M.client && (length(GLOB.clients) >= 30))
 				scps += M
 
+		for(var/scp527 in GLOB.scp527s)
+			var/mob/M = scp527
+			if(!M.client)// && (length(GLOB.clients) >= 25))
+				scps += M
+
 		// add new humanoid SCPs here or they won't be playable - Kachnov
 		if(scps.len)
 			var/mob/living/scp = tgui_input_list(src, "Which Euclid/Keter SCP do you want to take control of?", "Unsafe SCP Select", scps)
@@ -642,6 +641,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 				return
 			if(isscp049(scp) && world.time < 10 MINUTES) /*&& !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list())¸*/
 				to_chat(src, "You cannot join as this SCP for [((10 MINUTES) - world.time)/600] more minutes.")
+				return
+			if(isscp527(scp) && world.time < 15 MINUTES)
+				to_chat(src, "You cannot join as this SCP for [((15 MINUTES) - world.time)/600] more minutes.")
 				return
 
 			if(scp && !scp.client)
