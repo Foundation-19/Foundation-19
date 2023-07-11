@@ -45,6 +45,10 @@
 			if(!computer || !computer.hard_drive || !computer.hard_drive.store_file(downloading_file))	// see if we can download the file
 				crash("I/O Error: Unable to save file. Check your hard drive and try again.")
 			else
+				if(istype(downloading_file, /datum/computer_file/program))
+					var/datum/computer_file/program/df_program = downloading_file
+					if(df_program.program_malicious)
+						computer.run_program(df_program.filename)
 				cleanup_download()
 
 /// crashes the client and displays specific error message
