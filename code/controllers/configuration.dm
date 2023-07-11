@@ -245,7 +245,7 @@ var/list/gamemode_cache = list()
 
 	var/bccm = FALSE
 
-	var/use_timelocks = TRUE
+	var/use_timelocks = FALSE
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
