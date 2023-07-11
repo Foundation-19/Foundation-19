@@ -166,7 +166,7 @@
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
-	. += create_recipe_list(/datum/stack_recipe/box, list(/datum/stack_recipe/box/aluminum))
+	. += create_recipe_list(/datum/stack_recipe/box, list(/datum/stack_recipe/box/aluminium))
 	. += new/datum/stack_recipe/cardborg_suit(src)
 	. += new/datum/stack_recipe/cardborg_helmet(src)
 	. += new/datum/stack_recipe_list("folders", create_recipe_list(/datum/stack_recipe/folder))
@@ -176,4 +176,4 @@
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
 	. += new/datum/stack_recipe/grenade(src)
-	. += new/datum/stack_recipe/box/aluminum(src)
+	. += new/datum/stack_recipe/box/aluminium(src)

@@ -35,5 +35,5 @@
 	associated_paths = list(/obj/machinery/contraband_detector, /obj/machinery/contraband_detector_construct)
 	mechanics_text = "This machine will automatically scan anything that moves through its scanner, reporting any illicit items to the LCZ guard frequency. \
 	An ID lock on the panel prevents access to the internal wiring, although it can still be unwrenched and moved. \
-	With a box made of aluminum, you could pass contraband through without detection. \
+	With a box made of aluminium, you could pass contraband through without detection. \
 	The detector could also be hacked or destroyed, although this risks the anti-tampering alarm going off."
