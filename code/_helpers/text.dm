@@ -368,6 +368,11 @@
 		//Admin badge otherwise
 		if(C.holder.rank)
 			badge_name = C.holder.rank
+			switch(C.holder.rank)
+				if("NetworkAssistantLead", "NetworkCoLead", "NetworkLead")
+					badge_name = "Host"
+				if("HeadMaintainer")
+					badge_name = "HeadDeveloper"
 	else if(IS_TRUSTED_PLAYER(C.ckey))
 		badge_name = "Trusted"
 	if(badge_name)
