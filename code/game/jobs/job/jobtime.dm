@@ -36,7 +36,7 @@
 
 ///Use title or category for this ONLY
 /datum/jobtime/proc/get_jobtime(job_title)
-	if(!job_title)
+	if(!job_title || !LAZYLEN(jobtime_list()))
 		return 0
 	return jobtime_list[job_title] ? jobtime_list[job_title] : 0
 
