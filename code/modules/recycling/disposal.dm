@@ -484,7 +484,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 /obj/machinery/disposal/slam_into(mob/living/L)
 	L.Weaken(4)
 	L.visible_message(SPAN_WARNING("\The [L] slammed into \the [src]!"))
-	playsound(L, "punch", 25, 1, FALSE)
+	playsound(L, SFX_PUNCH, 25, 1, FALSE)
 	show_sound_effect(L.loc, L)
 
 /obj/machinery/disposal_switch

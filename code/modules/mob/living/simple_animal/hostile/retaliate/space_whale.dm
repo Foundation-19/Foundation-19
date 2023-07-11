@@ -16,7 +16,7 @@
 
 	turns_per_move = 10
 	attack_delay = 2 SECONDS
-	move_to_delay = 2 SECONDS
+	movement_cooldown = 20
 
 	mob_size = MOB_LARGE
 	mob_bump_flag = HEAVY

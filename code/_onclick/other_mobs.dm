@@ -153,6 +153,9 @@
 	else
 		A.attackby(get_natural_weapon(), src)
 
+/mob/living/simple_animal/RangedAttack(atom/A, params)
+	return shoot_target(A)
+
 // Attack hand but for simple animals
 /atom/proc/attack_animal(mob/user)
 	return attack_hand(user)

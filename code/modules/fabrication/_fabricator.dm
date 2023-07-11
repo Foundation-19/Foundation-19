@@ -7,7 +7,7 @@
 	anchored = TRUE
 	idle_power_usage = 10
 	active_power_usage = 2000
-	clicksound = "keyboard"
+	clicksound = SFX_KEYBOARD
 	clickvol = 30
 	uncreated_component_parts = null
 	stat_immune = 0

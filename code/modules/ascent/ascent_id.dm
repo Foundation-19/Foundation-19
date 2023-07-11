@@ -2,7 +2,7 @@
 /obj/item/card/id/ascent
 	name = "alien chip"
 	icon = 'icons/obj/ascent.dmi'
-	icon_state = "ACCESS_CARD"
+	icon_state = "access_card"
 	desc = "A slender, complex chip of alien circuitry."
 	access = list(ACCESS_ASCENT)
 

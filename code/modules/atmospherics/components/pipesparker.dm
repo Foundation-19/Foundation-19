@@ -55,14 +55,14 @@
 	if (cant_ignite())
 		return
 
-	playsound(loc, "sparks", 100, 1)
+	playsound(loc, SFX_SPARK, 100, 1)
 	use_power_oneoff(2000)
 	flick("pipe-sparker-spark", src)
 	parent.air.react(null, TRUE, TRUE)//full bypass
 	last_spark = world.time
 
 /obj/machinery/atmospherics/pipe/cap/sparker/physical_attack_hand(mob/user)
-	playsound(loc, "button", 30, 1)
+	playsound(loc, SFX_MACHINE_BUTTON, 30, 1)
 	if (cant_ignite())
 		user.visible_message(
 			SPAN_NOTICE("\The [user] tries to activate \the [src], but nothing happens."),

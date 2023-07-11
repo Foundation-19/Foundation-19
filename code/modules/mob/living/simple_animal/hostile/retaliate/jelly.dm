@@ -5,7 +5,6 @@
 	icon_state = "jelly"
 	icon_living = "jelly"
 	icon_dead = "jelly_dead"
-	move_to_delay = 1
 	maxHealth = 75
 	health = 75
 	movement_cooldown = 3
