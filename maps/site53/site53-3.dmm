@@ -996,7 +996,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -1767,7 +1767,7 @@
 /obj/structure/cable/green,
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /obj/machinery/light,
 /obj/structure/filingcabinet,
@@ -1993,6 +1993,12 @@
 "eQ" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/isolation)
+"eR" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "eS" = (
 /obj/effect/paint_stripe/white,
 /obj/effect/paint_stripe/white,
@@ -4473,7 +4479,7 @@
 "lx" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
@@ -4841,6 +4847,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
+"nx" = (
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/maintenance/surfaceeast)
 "nz" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/surgery/hall)
@@ -4984,9 +4994,9 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
 "oq" = (
-/obj/structure/table/standard,
-/obj/item/storage/fancy/cigar,
-/obj/item/flame/lighter/zippo/bronze,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "or" = (
@@ -5399,11 +5409,13 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "qA" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 10
-	},
-/obj/structure/closet/secure_closet/personal/empty{
-	name = "Representative's Locker"
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "goirep";
+	name = "Shutters";
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -5605,6 +5617,9 @@
 /area/site53/uez/repoffice/ethics)
 "rt" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	id_tag = "goirep"
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
 "ru" = (
@@ -5654,7 +5669,7 @@
 "rE" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile,
@@ -6027,6 +6042,13 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
 /area/site53/maintenance/surfacewest)
+"tz" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "tD" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6350,13 +6372,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "vn" = (
-/obj/effect/floor_decal/corner/orange/border,
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
+/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/maintenance/surfaceeast)
 "vo" = (
 /obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
@@ -6473,7 +6492,7 @@
 "vO" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -6553,11 +6572,6 @@
 "wJ" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -6890,22 +6904,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
 "zE" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 5
-	},
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/entrancezone/securitypost)
 "zH" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/adv,
@@ -6999,7 +7001,7 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "Ai" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -7035,7 +7037,7 @@
 /area/site53/uez/goirepoffice)
 "AI" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -7084,6 +7086,13 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
+"Bb" = (
+/obj/effect/paint_stripe/orange,
+/obj/item/storage/secure/safe{
+	dir = 3
+	},
+/turf/simulated/wall/titanium,
+/area/site53/surface/surface)
 "Bj" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -7178,12 +7187,12 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "BY" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 6
-	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "GOI Office"
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -7635,6 +7644,10 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception)
+"Gu" = (
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/surface/surface)
 "Gv" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -7904,6 +7917,13 @@
 /obj/effect/landmark/corpse/classdescaped,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"IM" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "IQ" = (
 /obj/machinery/door/airlock/command{
 	name = "GOI Representative Office"
@@ -8080,6 +8100,16 @@
 /obj/structure/flora/pottedplant/fern,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
+"KL" = (
+/obj/structure/closet/secure_closet/personal/empty{
+	name = "Representative's Locker"
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
+	},
+/obj/item/storage/secure/briefcase/money,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "KN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8133,7 +8163,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "Cryo";
 	dir = 8;
-	network = list("Entrance Zone Network 1")
+	network = list("Entrance  Zone  Network  1")
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -8241,9 +8271,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
 "Mx" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 9
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "ME" = (
@@ -8349,9 +8376,11 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logistics)
 "Od" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/filingcabinet/wallcabinet,
-/turf/simulated/wall/titanium,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/door/window/brigdoor/northright,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "Of" = (
 /obj/structure/disposalpipe/segment{
@@ -8443,7 +8472,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -8978,7 +9007,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
+	network = list("Entrance  Zone  Network")
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -9105,9 +9134,7 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "VK" = (
@@ -9144,6 +9171,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Wp" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "Ww" = (
 /obj/machinery/chemical_dispenser/full,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -9255,10 +9290,15 @@
 /turf/simulated/floor/grass,
 /area/site53/medical/infirmary)
 "XD" = (
-/obj/effect/floor_decal/corner/orange/border,
 /obj/machinery/papershredder,
+/obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"XG" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/filingcabinet/wallcabinet,
+/turf/simulated/wall/titanium,
+/area/site53/surface/surface)
 "XH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -39649,13 +39689,13 @@ cR
 ed
 cp
 ES
-MX
-oS
-oS
-oS
-oS
-oS
-oS
+vn
+Gu
+Gu
+XG
+Bb
+Gu
+Gu
 rm
 rm
 rm
@@ -39905,14 +39945,14 @@ gh
 cR
 ed
 MX
-MX
-mk
-mk
-mk
+vn
+tz
+UI
+UI
 Od
-mk
-mk
-oS
+UI
+KL
+Gu
 rm
 rm
 rm
@@ -40162,14 +40202,14 @@ cg
 ux
 ux
 cq
-cq
-mk
+nx
+VI
 Mx
-UI
-UI
-qA
-mk
-oS
+Mx
+IG
+Vn
+XD
+Gu
 rm
 rm
 rm
@@ -40419,14 +40459,14 @@ dz
 ek
 ux
 ux
-ux
-mk
-wN
-IG
-Vn
-XD
-mk
-oS
+zE
+VI
+Mx
+IM
+qA
+Gv
+Wp
+Gu
 rm
 rm
 rm
@@ -40676,14 +40716,14 @@ vE
 vE
 ux
 cN
-ux
-mk
-VI
-oq
-Gv
-vn
-mk
-oS
+zE
+wN
+Mx
+Mx
+Mx
+QT
+Az
+Gu
 rm
 rm
 rm
@@ -40933,14 +40973,14 @@ vE
 vE
 fP
 cA
-ux
-mk
+zE
 Iz
+Mx
 Go
-QT
+Mx
+Mx
 Az
-mk
-oS
+Gu
 rm
 rm
 rm
@@ -41190,14 +41230,14 @@ dG
 ev
 da
 cP
-ux
-mk
 zE
+eR
+wJ
 wJ
 xs
 BY
-mk
-oS
+oq
+Gu
 oS
 oS
 oS
@@ -41447,7 +41487,7 @@ cg
 fG
 ux
 ux
-ux
+zE
 mk
 mk
 IQ
