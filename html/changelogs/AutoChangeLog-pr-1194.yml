@@ -1,0 +1,4 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - soundadd: 173 degradation announcement is quieter.
