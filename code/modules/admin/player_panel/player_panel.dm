@@ -484,7 +484,7 @@
 		.["client_rank"] = targetMob.client.holder ? targetMob.client.holder.rank : "Player"
 		.["client_muted"] = targetMob.client.prefs.muted
 
-		targetMob.client.jobtime.update_jobtime()
+		targetMob.client.jobtime?.update_jobtime()
 		var/list/jt_list = targetMob.client.jobtime.jobtime_list ? targetMob.client.jobtime.jobtime_list : list()
 		var/list/jobtime_by_time = list()
 		var/list/jobtime_by_name = list()
