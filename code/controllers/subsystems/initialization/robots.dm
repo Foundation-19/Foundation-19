@@ -9,8 +9,29 @@ SUBSYSTEM_DEF(robots)
 	var/list/all_module_names            = list()
 	var/list/robot_alt_titles            = list()
 
+	var/list/mob_types_by_title = list(
+		"robot, flying"  = /mob/living/silicon/robot/flying,
+		"drone, flying"  = /mob/living/silicon/robot/flying,
+		"cyborg, flying" = /mob/living/silicon/robot/flying
+	)
+
+	var/list/mmi_types_by_title = list(
+		"cyborg"         = /obj/item/device/mmi,
+		"robot"          = /obj/item/organ/internal/posibrain,
+		"drone"          = /obj/item/device/mmi/digital/robot,
+		"cyborg, flying" = /obj/item/device/mmi,
+		"robot, flying"  = /obj/item/organ/internal/posibrain,
+		"drone, flying"  = /obj/item/device/mmi/digital/robot
+	)
+
 /datum/controller/subsystem/robots/Initialize()
 	. = ..()
+
+	// This is done via loop instead of just assignment in order to trim associations.
+	for(var/title in (mob_types_by_title|mmi_types_by_title))
+		robot_alt_titles |= capitalize(title)
+	sortTim(robot_alt_titles, /proc/cmp_text_asc)
+
 	for(var/module_type in subtypesof(/obj/item/robot_module))
 		var/obj/item/robot_module/module = module_type
 		var/module_category = initial(module.module_category)
@@ -38,3 +59,9 @@ SUBSYSTEM_DEF(robots)
 		var/list/modules = upgrade_modules_by_category[module_category]
 		if(modules[include_override])
 			.[include_override] = modules[include_override]
+
+/datum/controller/subsystem/robots/proc/get_mmi_type_by_title(check_title)
+	. = mmi_types_by_title[lowertext(trim(check_title))] || /obj/item/device/mmi
+
+/datum/controller/subsystem/robots/proc/get_mob_type_by_title(check_title)
+	. = mob_types_by_title[lowertext(trim(check_title))] || /mob/living/silicon/robot

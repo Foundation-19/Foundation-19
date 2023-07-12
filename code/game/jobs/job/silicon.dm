@@ -16,7 +16,7 @@
 	skill_points = 0
 	no_skill_buffs = TRUE
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	allowed_ranks = list(/datum/mil_rank/civ/synth)
 	min_skill = list(
 		SKILL_PILOT         = SKILL_EXPERIENCED,
 		SKILL_BOTANY        = SKILL_EXPERIENCED,
@@ -48,7 +48,7 @@
 	return H
 
 /datum/job/cyborg
-	title = "Cyborg"
+	title = "Robot"
 	department_flag = MSC
 	total_positions = 2
 	spawn_positions = 2
@@ -63,10 +63,15 @@
 	skill_points = 0
 	no_skill_buffs = TRUE
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	allowed_ranks = list(/datum/mil_rank/civ/synth)
 
 /datum/job/cyborg/handle_variant_join(mob/living/carbon/human/H, alt_title)
-	return H && H.Robotize()
+	return H && H.Robotize(SSrobots.get_mob_type_by_title(alt_title || title))
 
 /datum/job/cyborg/equip(mob/living/carbon/human/H)
 	return !!H
+
+/datum/job/cyborg/New()
+	..()
+	alt_titles = SSrobots.robot_alt_titles.Copy()
+	alt_titles -= title // So the unit test doesn't flip out if a mob or mmi type is declared for our main title.
