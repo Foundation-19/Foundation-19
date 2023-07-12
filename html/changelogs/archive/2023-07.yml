@@ -1,3 +1,13 @@
 2023-07-05:
   cheesePizza2:
   - code_imp: Weakref code improvements.
+2023-07-12:
+  TheDarkElites:
+  - rscadd: badges for network leads and head maintainer
+  casualspacestation14enjoyer:
+  - rscadd: When storage items such as medkits and dufflebags are opened, they change
+      their sprite to indicate that they are open. (shit explanation)
+  cheesePizza2:
+  - soundadd: 173 degradation announcement is quieter.
+  - sounddel: Old flare sound has been deleted.
+  - soundadd: New flare sounds brazenly stolen from MS13
