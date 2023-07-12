@@ -1,0 +1,5 @@
+author: casualspacestation14enjoyer
+delete-after: true
+changes:
+  - rscadd: When storage items such as medkits and dufflebags are opened, they change
+      their sprite to indicate that they are open. (shit explanation)
