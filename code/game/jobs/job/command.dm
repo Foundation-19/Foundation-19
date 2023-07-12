@@ -45,7 +45,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudhumanresources"
 	alt_titles = list("Head of Personnel")
-	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SERVICE = 480, EXP_TYPE_BUR = 480)
+	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_BUR = 300)
 
 	access = list(
 		ACCESS_HOP,
@@ -79,7 +79,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
 	allowed_branches = list(/datum/mil_branch/security)
 	hud_icon = "hudcommsofficer"
-	requirements = list(EXP_TYPE_ENGINEERING = 600, EXP_TYPE_SECURITY = 300, "Communications Technician" = 900)
+	requirements = list("Communications Technician" = 600)
 	allowed_ranks = list(
 	/datum/mil_rank/security/w5,
 	/datum/mil_rank/security/w6
@@ -193,7 +193,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
-	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 120)
+	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600, EXP_TYPE_BUR = 60)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -224,7 +224,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/o5rep
-	requirements = list(EXP_TYPE_COMMAND = 180, EXP_TYPE_BUR = 480)
+	requirements = list(EXP_TYPE_BUR = 300)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)

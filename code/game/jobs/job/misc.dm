@@ -264,7 +264,7 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	requirements = list("Office Worker" = 300)
+	requirements = list("Office Worker" = 120)
 	outfit_type = /decl/hierarchy/outfit/job/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)

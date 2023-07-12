@@ -78,7 +78,7 @@
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	supervisors = "the Guard Commander"
 	economic_power = 4
-	requirements = list("LCZ Sergeant" = 600, EXP_TYPE_LCZ = 1800)
+	requirements = list("LCZ Sergeant" = 240, EXP_TYPE_LCZ = 900)
 	minimal_player_age = 10
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/security/lcz_zone_commander
@@ -128,7 +128,7 @@
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</b></big>"
 	supervisors = "the Guard Commander"
 	economic_power = 4
-	requirements = list("HCZ Sergeant" = 600, EXP_TYPE_HCZ = 1800)
+	requirements = list("HCZ Sergeant" = 240, EXP_TYPE_HCZ = 900)
 	minimal_player_age = 10
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/security/hcz_zone_commander
@@ -179,7 +179,7 @@
 	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</b></big>"
 	supervisors = "the Guard Commander"
 	economic_power = 4
-	requirements = list("EZ Senior Agent" = 600, EXP_TYPE_ECZ = 1800)
+	requirements = list("EZ Senior Agent" = 240, EXP_TYPE_ECZ = 900)
 	minimal_player_age = 10
 	ideal_character_age = 27
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_zone_commander
@@ -243,7 +243,7 @@
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the LCZ Zone Commander"
 	economic_power = 4
-	requirements = list("LCZ Guard" = 600)
+	requirements = list("LCZ Guard" = 480)
 	alt_titles = list("LCZ Senior Containment Response Agent", "LCZ Containment Response Sergeant", "LCZ Senior Combat Medic", "LCZ Riot Control Sergeant", "LCZ Senior Riot Control Agent", "LCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
@@ -297,7 +297,7 @@
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the HCZ Zone Commander"
 	economic_power = 4
-	requirements = list("HCZ Guard" = 600)
+	requirements = list("HCZ Guard" = 480)
 	alt_titles = list("HCZ Senior Containment Response Agent", "HCZ Containment Response Sergeant", "HCZ Senior Combat Medic", "HCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
@@ -348,7 +348,7 @@
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the EZ Supervisor"
 	economic_power = 4
-	requirements = list("EZ Agent" = 600)
+	requirements = list("EZ Agent" = 480)
 	alt_titles = list("Investigation Officer" = /decl/hierarchy/outfit/job/security/ez_sergeant_investigative, "EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 5
 	ideal_character_age = 25
@@ -460,7 +460,7 @@
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the HCZ Sergeants and Zone Commander"
 	economic_power = 4
-	requirements = list(EXP_TYPE_ECZ = 300)
+	requirements = list(EXP_TYPE_SECURITY = 120)
 	alt_titles = list("HCZ Containment Response Agent", "HCZ Containment Response Guard", "HCZ Combat Medic", "HCZ Agent")
 //	minimal_player_age = 0
 	ideal_character_age = 25
@@ -511,7 +511,7 @@
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the EZ Senior Agents and Supervisor"
 	economic_power = 4
-	requirements = list(EXP_TYPE_LCZ = 300)
+	requirements = list("Class D" = 60)
 	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/security/ez_guard_investigative, "EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 0
 	ideal_character_age = 25
