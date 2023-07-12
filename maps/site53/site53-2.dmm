@@ -31110,8 +31110,8 @@
 	dir = 4
 	},
 /obj/item/paper{
-	info = "Weapons have been moved to the armory, use the new weapon dispenser device.";
-	name = "notice from council";
+	info = "Weapons have been moved to the armory, use the new weapon dispenser devices.";
+	name = "notice from the council";
 	text = null
 	},
 /turf/simulated/floor/tiled/dark,

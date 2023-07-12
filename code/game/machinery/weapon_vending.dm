@@ -16,7 +16,10 @@
 		/obj/item/gun/projectile/automatic/scp/fnfal = 6,
 		/obj/item/gun/projectile/shotgun/pump/combat = 6,
 		/obj/item/gun/projectile/pistol = 6,
-		/obj/item/grenade/frag = 12
+		/obj/item/grenade/frag = 12,
+		/obj/item/ammo_magazine/scp/fnfal = 15,
+		/obj/item/ammo_magazine/scp = 15,
+		/obj/item/ammo_magazine/shot_holder/shell = 2
 	)
 
 /obj/machinery/vending/weaponry/chaos
@@ -25,7 +28,8 @@
 	icon_state = "ci_weaponry"
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/ak74 = 5,
-		/obj/item/gun/projectile/pistol = 5
+		/obj/item/gun/projectile/pistol = 5,
+		/obj/item/ammo_magazine/scp/ak = 5
 	)
 
 /obj/machinery/vending/weaponry/chaos/specialized
@@ -35,7 +39,9 @@
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/rpk = 2,
 		/obj/item/gun/projectile/automatic/scp/svd = 2,
-		/obj/item/grenade/frag = 10
+		/obj/item/grenade/frag = 10,
+		/obj/item/ammo_magazine/scp/ak = 30,
+		/obj/item/ammo_magazine/scp/svd = 30
 	)
 
 // ## LCZ MACHINES ## //
