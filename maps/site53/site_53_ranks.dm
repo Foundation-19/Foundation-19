@@ -366,7 +366,3 @@
 /datum/mil_rank/civ/classe
 	name = "Class E Foundation Personnel"
 	name_short = "Class E"
-
-/datum/mil_rank/civ/synth
-	name = "Synthetic Personnel"
-	name_short = "Silicon"
