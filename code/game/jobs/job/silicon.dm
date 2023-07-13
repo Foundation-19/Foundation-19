@@ -10,6 +10,7 @@
 	minimal_player_age = 14
 	account_allowed = 0
 	economic_power = 0
+	requirements = list("Robot" = 1200)
 	outfit_type = /decl/hierarchy/outfit/job/silicon/ai
 	loadout_allowed = FALSE
 	hud_icon = "hudblank"
