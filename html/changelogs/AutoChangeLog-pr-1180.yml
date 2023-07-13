@@ -1,0 +1,8 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - rscadd: Jobtime Tracking and Timelocks for certain roles
+  - server: new SQL table for role_time
+  - code_imp: goirep no longer has the COM flag, and is replaced with the new REP
+      flag
+  - admin: player panel now contains playtime tab
