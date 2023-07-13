@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - balance: Protolathe computers don't need access to use anymore.
+  - bugfix: Logistics personnel can now use the protolathe in their department.
