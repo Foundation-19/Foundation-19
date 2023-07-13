@@ -3,7 +3,7 @@
 /obj/item/ammo_magazine/c38
 	name = "speed loader (.38)"
 	desc = "A speed loader for revolvers."
-	icon_state = "38"
+	icon_state = "sl38"
 	caliber = "38"
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 	ammo_type = /obj/item/ammo_casing/pistol/c38
