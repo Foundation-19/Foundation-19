@@ -1,6 +1,7 @@
 /obj/item/robot_module/flying/filing
 	name = "filing drone module"
 	display_name = "Filing"
+	module_category = ROBOT_MODULE_TYPE_FLYING //we already have bureaucratic bot
 	channels = list(
 		"Service" = TRUE,
 		"Supply" = TRUE

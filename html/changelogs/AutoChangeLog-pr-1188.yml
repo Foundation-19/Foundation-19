@@ -1,0 +1,11 @@
+author: casualspacestation14enjoyer
+delete-after: true
+changes:
+  - rscdel: Cyborg alt-titles are now gone.
+  - rscadd: TGUI is now used for AIC and cyborg stuff
+  - rscadd: Adds a new button for AIC to send an emergency message to the O5 Council
+  - admin: You no longer need R_ADMIN to receive O5 emergency messages, now you need
+      R_MOD or above.
+  - rscadd: Some modules are now renamed so new players know what they do now.
+  - rscdel: Useless modules such as the research module and the standard module are
+      now disabled.
