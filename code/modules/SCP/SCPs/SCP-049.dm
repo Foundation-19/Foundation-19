@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	skillset.skill_list = list()
 	for(var/decl/hierarchy/skill/S in GLOB.skills)
 		skillset.skill_list[S.type] = SKILL_UNTRAINED
-	skillset.skill_list[SKILL_COOKING] = SKILL_EXPERIENCED
+	skillset.skill_list[SKILL_COOKING] = SKILL_TRAINED
 	skillset.skill_list[SKILL_BOTANY] = SKILL_TRAINED
 	skillset.skill_list[SKILL_HAULING] = SKILL_MASTER
 	skillset.skill_list[SKILL_COMBAT] = SKILL_MASTER
