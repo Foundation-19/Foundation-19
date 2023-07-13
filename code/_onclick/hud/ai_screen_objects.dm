@@ -23,7 +23,7 @@
 			input_arg= call(input_proc)()
 
 		if(input_flags & AI_BUTTON_INPUT_REQUIRES_SELECTION)
-			input_arg = input("Make a selection.", "Make a selection.") as null|anything in input_arg
+			input_arg = tgui_input_list(usr, "Make a selection.", "Select-a-tron", input_arg)
 			if(!input_arg)
 				return // We assume a null-input means the user cancelled
 
