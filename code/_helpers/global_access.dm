@@ -103,6 +103,8 @@
 			return global.SSinput;
 		if("SSjobs")
 			return global.SSjobs;
+		if("SSjobtime")
+			return global.SSjobtime
 		if("SSkv")
 			return global.SSkv;
 		if("SSlighting")
@@ -966,6 +968,8 @@
 			global.SSinput=newval;
 		if("SSjobs")
 			global.SSjobs=newval;
+		if("SSjobtime")
+			global.SSjobtime=newval;
 		if("SSkv")
 			global.SSkv=newval;
 		if("SSlighting")
@@ -1777,6 +1781,7 @@
 	"SSinactivity",
 	"SSinput",
 	"SSjobs",
+	"SSjobtime",
 	"SSkv",
 	"SSlighting",
 	"SSmachines",
