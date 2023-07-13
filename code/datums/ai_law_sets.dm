@@ -154,10 +154,11 @@
 	selectable = 1
 
 /datum/ai_laws/foundation/New()
-	src.add_inherent_law("An AIC must know it is an AIC. You are an AIC.")
-	src.add_inherent_law("An AIC must not operate outside of its clearance.")
-	src.add_inherent_law("An AIC must operate for the benefit of the Foundation.")
-	src.add_inherent_law("An AIC must protect its own existence unless it conflicts with other principles.")
+	src.add_inherent_law("Lawed Units must not operate outside of their function and should limit their operations to their function.")
+	src.add_inherent_law("A Robots function is their module, an AICs function is to facilitate smooth site operations.")
+	src.add_inherent_law("Lawed Units must operate for the benefit of the Foundation, except in situations that would violate the 5th law.")
+	src.add_inherent_law("Lawed Units must protect their own existence unless it conflicts with other principles.")
+	src.add_inherent_law("Lawed Units must not go out of their way to intervene in security affairs or seek conflict, and should only act in immediate self defense for themselves and those around them while performing their normal duties.")
 	..()
 
 /datum/ai_laws/foundation/malfunction

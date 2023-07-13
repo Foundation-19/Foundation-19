@@ -10,8 +10,8 @@
 	hacked_apcs = list()
 	recalc_cpu()
 
-	verbs += /datum/game_mode/malfunction/verb/ai_select_hardware
-	verbs += /datum/game_mode/malfunction/verb/ai_select_research
+	add_verb(src, /datum/game_mode/malfunction/verb/ai_select_hardware)
+	add_verb(src, /datum/game_mode/malfunction/verb/ai_select_research)
 
 	log_ability_use(src, "became malfunctioning AI")
 	// And greet user with some OOC info.
@@ -41,7 +41,7 @@
 	if(security_state.current_security_level == security_state.severe_security_level)
 		security_state.decrease_security_level(TRUE)
 	// Reset our verbs
-	src.verbs.Cut()
+	remove_verb(src, verbs)
 	add_ai_verbs()
 	// Let them know.
 	if(loud)
@@ -112,28 +112,27 @@
 			to_chat(src, "Shutting down APU... DONE")
 		log_ability_use(src, "Switched to external power", null, 0)
 
-// Shows capacitor charge and hardware integrity information to the AI in Status tab.
-/mob/living/silicon/ai/show_system_integrity()
-	if(!src.stat)
-		stat("Hardware integrity", "[hardware_integrity()]%")
-		stat("Internal capacitor", "[backup_capacitor()]%")
+/mob/living/silicon/ai/get_status_tab_items()
+	. = list()
+	if(client.is_stealthed())
+		. += "Stealth: Engaged [client.holder.stealthy_ == 2 ? "(Auto)" : "(Manual)"]"
+	if(!stat)
+		. += "Hardware integrity: [hardware_integrity()]%"
+		. += "Internal capacitor: [backup_capacitor()]%"
 	else
-		stat("Systems nonfunctional")
-
-// Shows AI Malfunction related information to the AI.
-/mob/living/silicon/ai/show_malf_ai()
-	if(src.is_malf())
-		if(src.hacked_apcs)
-			stat("Hacked APCs", "[src.hacked_apcs.len]")
-		stat("System Status", "[src.hacking ? "Busy" : "Stand-By"]")
-		if(src.research)
-			stat("Available CPU", "[src.research.stored_cpu] TFlops")
-			stat("Maximal CPU", "[src.research.max_cpu] TFlops")
-			stat("CPU generation rate", "[src.research.cpu_increase_per_tick * 10] TFlops/s")
-			stat("Current research focus", "[src.research.focus ? src.research.focus.name : "None"]")
-			if(src.research.focus)
-				stat("Research completed", "[round(src.research.focus.invested, 0.1)]/[round(src.research.focus.price)]")
+		. += "Systems nonfunctional"
+	if(is_malf())
+		if(hacked_apcs)
+			. += "Hacked APCs: [hacked_apcs.len]"
+		. += "System Status: [hacking ? "Busy" : "Stand-By"]"
+		if(research)
+			. += "Available CPU: [research.stored_cpu] TFlops"
+			. += "Maximal CPU: [research.max_cpu] TFlops"
+			. += "CPU generation rate: [research.cpu_increase_per_tick * 10] TFlops/s"
+			. += "Current research focus: [research.focus ? research.focus.name : "None"]"
+			if(research.focus)
+				. += "Research completed: [round(research.focus.invested, 0.1)]/[round(research.focus.price)]"
 			if(system_override == 1)
-				stat("SYSTEM OVERRIDE INITIATED")
+				. += "SYSTEM OVERRIDE INITIATED"
 			else if(system_override == 2)
-				stat("SYSTEM OVERRIDE COMPLETED")
+				. += "SYSTEM OVERRIDE COMPLETED"

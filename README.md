@@ -1,39 +1,40 @@
-### [![TeguStation](.github/assets/tegustation.png)](#)
-### Welcome to the alternative code repository for **TeguStation**, a modified fork of [BayStation 12](https://github.com/Baystation12/Baystation12) created on 05-06-2021.
-## For the first repository visit: [TeguStation](https://github.com/vlggms/tegustation)
+### <p align="center"><img src=".github/assets/f19.png" width="200"> 
+<p align="center">Secure. Contain. Protect.
+
+# Foundation-19
+### Welcome to the code repository for **Foundation-19**, a modified fork of [BayStation 12](https://github.com/Baystation12/Baystation12), rebased onto [TeguStation](https://github.com/vlggms/tegustation).
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](#) [![forthebadge](https://forthebadge.com/images/badges/contains-tasty-spaghetti-code.svg)](#) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-[![Build Status](https://github.com/vlggms/tegustation/workflows/CI%20Suite/badge.svg)](https://github.com/vlggms/tegustation/actions?query=workflow%3A%22CI+Suite%22)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/vlggms/tegustation.svg)](https://isitmaintained.com/project/vlggms/tegustation "Percentage of issues still open")
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/vlggms/tegustation.svg)](https://isitmaintained.com/project/vlggms/tegustation "Average time to resolve an issue")
+[![Build Status](https://github.com/foundation-19/foundation-19/workflows/CI%20Suite/badge.svg)](https://github.com/foundation-19/foundation-19/actions?query=workflow%3A%22CI+Suite%22)
+[![Percentage of issues still open](https://isitmaintained.com/badge/open/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Percentage of issues still open")
+[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Average time to resolve an issue")
 
 ## Community
-[<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/AzmEhtH)
+[<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/GbqVYJJAFk)
 Discord is the place where most of the discussion happens, due to absence of a forum. Here you can contact administrators, ask mentors for help, or simply discuss your rounds. It is also a place where you can find links to ban appeals, admin applications and others, which could be really useful.
 
-**Space Station 13** is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. Have fun, and survive!
+**Space Station 13** is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. This is an SCP inspired flavour, set on **Site 53**.
 
 ## Information
-* **Code:** https://github.com/vlggms/tegustation-bay12
+* **Code:** https://github.com/foundation-19/foundation-19
 * **SS13 Coderbus Discord:** https://discord.gg/Vh8TJp9
-* **/tg/Station Wiki:** https://tgstation13.org/wiki/Main_Page
+* **Foundation-19 Wiki:** https://scp13.miraheze.org/wiki/Main_Page
 
-## Downloading and running a server
-[Downloading](.github/DOWNLOADING.md)
+## :exclamation: How to compile :exclamation:
 
-[Running on the server](.github/RUNNING_A_SERVER.md)
+**The quick way**. Find `bin/server.cmd` in this folder and double click it to automatically build and host the server on port 1337.
 
-[Maps and Away Missions](.github/MAPS_AND_AWAY_MISSIONS.md)
+**The long way**. Find `bin/build.cmd` in this folder, and double click it to initiate the build. It consists of multiple steps and might take around 1-5 minutes to compile. If it closes, it means it has finished its job. You can then set up the server normally by opening `baystation12.dmb` in DreamDaemon.
+
+**Building baystation12.dmb in DreamMaker directly is now deprecated and might produce errors**, such as `'tgui.bundle.js': cannot find file`.
+
+**[How to compile in VSCode and other build options](tools/build/README.md).**
 
 ## Contributing
 [Guidelines for Contributors](.github/CONTRIBUTING.md)
 
-[Documenting your code](.github/AUTODOC_GUIDE.md)
-
-[Policy configuration system](.github/POLICYCONFIG.md)
-
-[Interested in some starting lore? (/tg/)](https://github.com/tgstation/common_core)
+[Code of Conduct](docs/CODE_OF_CONDUCT.md)
 
 ## LICENSE
 [![license-badge](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.html)

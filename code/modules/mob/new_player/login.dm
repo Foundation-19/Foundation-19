@@ -9,7 +9,8 @@
 		mind.active = 1
 		mind.current = src
 
-	loc = null
+	if(length(GLOB.new_player))
+		forceMove(pick(GLOB.new_player))
 	my_client = client
 	sight |= SEE_TURFS
 
@@ -29,8 +30,6 @@
 	if(client)
 		client.playtitlemusic()
 		maybe_send_staffwarns("connected as new player")
-		if(client.get_preference_value(/datum/client_preference/goonchat) == GLOB.PREF_YES)
-			client.chatOutput.start()
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	var/decl/security_level/SL = security_state.current_security_level

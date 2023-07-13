@@ -34,7 +34,7 @@
 		var/obj/item/robot_parts/robot_component/comp = wrapped
 		wrapped.icon_state = comp.icon_state_broken
 
-	installed = -1
+	installed = 1
 	uninstall()
 
 /datum/robot_component/proc/repair()

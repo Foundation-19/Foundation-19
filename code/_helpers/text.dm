@@ -355,7 +355,7 @@
 /proc/create_text_tag(var/tagname, var/tagdesc = tagname, var/client/C = null)
 	if(!(C?.get_preference_value(/datum/client_preference/chat_tags) == GLOB.PREF_SHOW))
 		return tagdesc
-	return icon2html(icon('./icons/chattags.dmi', tagname), world, realsize=TRUE, class="text_tag")
+	return icon2html(icon('./icons/chattags.dmi', tagname), world, extra_classes="text_tag")
 
 /proc/text_badge(client/C = null)
 	if(!C)
@@ -371,7 +371,7 @@
 	else if(IS_TRUSTED_PLAYER(C.ckey))
 		badge_name = "Trusted"
 	if(badge_name)
-		return icon2html(icon('./icons/chatbadges.dmi', badge_name), world, realsize=TRUE, class="text_tag")
+		return icon2html(icon('./icons/chatbadges.dmi', badge_name), world, extra_classes="text_tag")
 	return null
 
 /proc/contains_az09(var/input)
@@ -418,7 +418,7 @@
 	t = replacetext(t, "\[/i\]", "</I>")
 	t = replacetext(t, "\[u\]", "<U>")
 	t = replacetext(t, "\[/u\]", "</U>")
-	t = replacetext(t, "\[time\]", "[stationtime2text()]")
+	t = replacetext(t, "\[time\]", "[station_time_timestamp("hh:mm")]")
 	t = replacetext(t, "\[date\]", "[stationdate2text()]")
 	t = replacetext(t, "\[large\]", "<font size=\"4\">")
 	t = replacetext(t, "\[/large\]", "</font>")
@@ -464,6 +464,11 @@
 	t = replacetext(t, "\[ecd\]", "<img src = ecd.png>")
 	t = replacetext(t, "\[goc\]", "<img src = ungoc.png>")
 	t = replacetext(t, "\[uiu\]", "<img src = uiu.png>")
+	t = replacetext(t, "\[thi\]", "<img src = thi.png>")
+	t = replacetext(t, "\[ar\]", "<img src = ar.png>")
+	t = replacetext(t, "\[ci\]", "<img src = ci.png>")
+	t = replacetext(t, "\[sh\]", "<img src = sh.png>")
+	t = replacetext(t, "\[cotbg\]", "<img src = cotbg.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
@@ -629,3 +634,51 @@
 			var/regex/matcher = entry[1]
 			message = replacetext_char(message, matcher, entry[2])
 	return message
+
+/**
+ * Used to get a properly sanitized input. Returns null if cancel is pressed.
+ *
+ * Arguments
+ ** user - Target of the input prompt.
+ ** message - The text inside of the prompt.
+ ** title - The window title of the prompt.
+ ** max_length - If you intend to impose a length limit - default is 1024.
+ ** no_trim - Prevents the input from being trimmed if you intend to parse newlines or whitespace.
+*/
+/proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+	var/user_input = input(user, message, title, default) as text|null
+	if(isnull(user_input)) // User pressed cancel
+		return
+	if(no_trim)
+		return copytext(html_encode(user_input), 1, max_length)
+	else
+		return trim(html_encode(user_input), max_length) //trim is "outside" because html_encode can expand single symbols into multiple symbols (such as turning < into &lt;)
+
+/**
+ * Used to get a properly sanitized input in a larger box. Works very similarly to stripped_input.
+ *
+ * Arguments
+ ** user - Target of the input prompt.
+ ** message - The text inside of the prompt.
+ ** title - The window title of the prompt.
+ ** max_length - If you intend to impose a length limit - default is 1024.
+ ** no_trim - Prevents the input from being trimmed if you intend to parse newlines or whitespace.
+*/
+/proc/stripped_multiline_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+	var/user_input = input(user, message, title, default) as message|null
+	if(isnull(user_input)) // User pressed cancel
+		return
+	if(no_trim)
+		return copytext(html_encode(user_input), 1, max_length)
+	else
+		return trim(html_encode(user_input), max_length)
+
+// Format a power value in W, kW, MW, or GW.
+/proc/DisplayPower(powerused)
+	if(powerused < 1000) //Less than a kW
+		return "[powerused] W"
+	else if(powerused < 1000000) //Less than a MW
+		return "[round((powerused * 0.001),0.01)] kW"
+	else if(powerused < 1000000000) //Less than a GW
+		return "[round((powerused * 0.000001),0.001)] MW"
+	return "[round((powerused * 0.000000001),0.0001)] GW"

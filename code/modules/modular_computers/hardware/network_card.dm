@@ -50,18 +50,12 @@ var/global/ntnet_card_uid = 1
 	hardware_size = 3
 
 /obj/item/stock_parts/computer/network_card/Destroy()
-	ntnet_global.unregister(identification_id)
+	if(holder2 && (holder2.network_card == src))
+		holder2.network_card = null
 	return ..()
 
 // Returns a string identifier of this network card
 /obj/item/stock_parts/computer/network_card/proc/get_network_tag(list/routed_through) // Argument is a safety parameter for internal calls. Don't use manually.
-	if(proxy_id && !(src in routed_through))
-		var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(proxy_id)
-		if(comp) // If not we default to exposing ourselves, but it means there was likely a logic error elsewhere.
-			LAZYADD(routed_through, src)
-			var/obj/item/stock_parts/computer/network_card/network_card = comp.get_component(PART_NETWORK)
-			if(network_card)
-				return network_card.get_network_tag(routed_through)
 	return "[identification_string] (NID [identification_id])"
 
 /obj/item/stock_parts/computer/network_card/proc/is_banned()
@@ -69,55 +63,31 @@ var/global/ntnet_card_uid = 1
 
 // 0 - No signal, 1 - Low signal, 2 - High signal. 3 - Wired Connection
 /obj/item/stock_parts/computer/network_card/proc/get_signal(var/specific_action = 0, list/routed_through)
-	. = 0
+	if(!holder2) // Hardware is not installed in anything. No signal. How did this even get called?
+		return 0
+
 	if(!enabled)
-		return
+		return 0
 
 	if(!check_functionality() || !ntnet_global || is_banned())
-		return
+		return 0
+
+	if(ethernet) // Computer is connected via wired connection.
+		return 3
 
 	if(!ntnet_global.check_function(specific_action)) // NTNet is down and we are not connected via wired connection. No signal.
-		if(!ethernet || specific_action) // Wired connection ensures a basic connection to NTNet, however no usage of disabled network services.
-			return
+		return 0
 
-	var/strength = 1
-	if(ethernet)
-		strength = 3
-	else if(long_range)
-		strength = 2
-
-	var/turf/T = get_turf(src)
-	if(!istype(T)) //no reception in nullspace
-		return
-	if(T.z in GLOB.using_map.station_levels)
-		// Computer is on station. Low/High signal depending on what type of network card you have
-		. = strength
-	else if(T.z in GLOB.using_map.contact_levels) //not on station, but close enough for radio signal to travel
-		. = strength - 1
-
-	if(proxy_id)
-		var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(proxy_id)
-		if(!comp || !comp.on)
+	if(holder2)
+		var/turf/T = get_turf(holder2)
+		if(!istype(T)) //no reception in nullspace
 			return 0
-		if(src in routed_through) // circular proxy chain
-			return 0
-		LAZYADD(routed_through, src)
-		var/obj/item/stock_parts/computer/network_card/network_card = comp.get_component(PART_NETWORK)
-		if(network_card)
-			. = min(., network_card.get_signal(specific_action, routed_through))
-
-/obj/item/stock_parts/computer/network_card/on_disable()
-	ntnet_global.unregister(identification_id)
-
-/obj/item/stock_parts/computer/network_card/on_enable(var/datum/extension/interactive/ntos/os)
-	ntnet_global.register(identification_id, os)
-
-/obj/item/stock_parts/computer/network_card/on_install(var/obj/machinery/machine)
-	..()
-	var/datum/extension/interactive/ntos/os = get_extension(machine, /datum/extension/interactive/ntos)
-	if(os)
-		on_enable(os)
-
-/obj/item/stock_parts/computer/network_card/on_uninstall(var/obj/machinery/machine, var/temporary = FALSE)
-	..()
-	on_disable()
+		if(T.z in GLOB.using_map.station_levels)
+			// Computer is on station. Low/High signal depending on what type of network card you have
+			if(long_range)
+				return 2
+			else
+				return 1
+		if(T.z in GLOB.using_map.contact_levels) //not on station, but close enough for radio signal to travel
+			if(long_range) // Computer is not on station, but it has upgraded network card. Low signal.
+				return 1

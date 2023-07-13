@@ -4,7 +4,8 @@
 	slot = slot_shoes
 	category = /datum/gear/shoes
 	denied_roles = list(/datum/job/classd)
-	// Reasoning : none of the options provided fits security branches. You don't want to see security officers with high heels or sandals on a high security facility. But it makes sense for civi staff.
+	allowed_branches = list(/datum/mil_branch/civilian)
+	// Reasoning : Most options are not fit, save for some of the boots selections such as workboots which are allowed for all. You don't want to see security officers with high heels or sandals on a high security facility. But it makes sense for civi staff.
 
 /datum/gear/shoes/athletic
 	display_name = "athletic shoes, colour select"
@@ -15,6 +16,7 @@
 	display_name = "boot selection"
 	path = /obj/item/clothing/shoes
 	cost = 2
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
 
 /datum/gear/shoes/boots/New()
 	..()

@@ -98,6 +98,10 @@
 			GLOB.latejoin_lcz += loc
 			delete_me = 1
 			return
+		if("NewPlayer")
+			GLOB.new_player += loc
+			delete_me = 1
+			return
 
 	landmarks_list += src
 	return 1
@@ -291,4 +295,4 @@
 /obj/effect/landmark/ruin/Destroy()
 	GLOB.ruin_landmarks -= src
 	ruin_template = null
-	. = ..()
+	return ..()

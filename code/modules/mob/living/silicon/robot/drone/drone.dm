@@ -65,7 +65,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/Initialize()
 	. = ..()
 
-	verbs += /mob/living/proc/hide
+	add_verb(src, /mob/living/proc/hide)
 	remove_language(LANGUAGE_ROBOT_GLOBAL)
 	add_language(LANGUAGE_ROBOT_GLOBAL, 0)
 	add_language(LANGUAGE_DRONE_GLOBAL, 1)
@@ -78,7 +78,7 @@ var/list/mob_hat_cache = list()
 		var/datum/robot_component/C = components[V]
 		C.max_damage = 10
 
-	verbs -= /mob/living/silicon/robot/verb/Namepick
+	remove_verb(src, /mob/living/silicon/robot/verb/Namepick)
 	update_icon()
 
 	GLOB.moved_event.register(src, src, /mob/living/silicon/robot/drone/proc/on_moved)

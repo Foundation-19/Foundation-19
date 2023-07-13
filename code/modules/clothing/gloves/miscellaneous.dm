@@ -121,6 +121,33 @@
 	icon_state = "nitrile"
 	item_state = "ngloves"
 
+/obj/item/clothing/gloves/forensic/armored
+	desc = "Specially made gloves for investigation agents and officers-alike. This one is made of durable kevlar composite."
+	name = "auditor gloves"
+	icon_state = "armoredauditor"
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_MINOR)
+
+/obj/item/clothing/gloves/latex/nitrile/armored
+	name = "armored nitrile gloves"
+	desc = "Sterile nitrile gloves. with layered kevlar making it more resistant againsts damage"
+	icon_state = "armorednitrile"
+	item_state = "bgloves"
+	siemens_coefficient = 0.50
+	permeability_coefficient = 0.05
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_MINOR)
+
 /obj/item/clothing/gloves/latex/nitrile/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
 

@@ -86,37 +86,33 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 
 	hud_type = /datum/hud/pai
 
-/mob/living/silicon/pai/New(var/obj/item/device/paicard)
+/mob/living/silicon/pai/Initialize()
+	. = ..()
 	status_flags |= NO_ANTAG
-	card = paicard
+	card = loc
 
 	//As a human made device, we'll understand sol common without the need of the translator
 	add_language(LANGUAGE_ENGLISH, 1)
-	verbs -= /mob/living/verb/ghost
+	remove_verb(src, /mob/living/verb/ghost)
 
-	..()
+	.=..()
 
 	if(card)
 		if(!card.radio)
 			card.radio = new /obj/item/device/radio(card)
 		silicon_radio = card.radio
+	software = default_pai_software.Copy()
 
 /mob/living/silicon/pai/Destroy()
 	card = null
 	silicon_radio = null // Because this radio actually belongs to another instance we simply null
 	. = ..()
 
-// this function shows the information about being silenced as a pAI in the Status panel
-/mob/living/silicon/pai/proc/show_silenced()
+/mob/living/silicon/pai/get_status_tab_items()
+	.=..()
 	if(silence_time)
 		var/timeleft = round((silence_time - world.timeofday)/10 ,1)
-		stat(null, "Communications system reboot in -[(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]")
-
-/mob/living/silicon/pai/Stat()
-	. = ..()
-	statpanel("Status")
-	if (client.statpanel == "Status")
-		show_silenced()
+		. += "Communications system reboot in -[(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]"
 
 /mob/living/silicon/pai/check_eye(var/mob/user as mob)
 	if (!current)

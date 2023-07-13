@@ -2,7 +2,7 @@
 #define STEALTH_MANUAL 1
 #define STEALTH_AUTO 2
 
-var/list/admin_datums = list()
+GLOBAL_LIST_EMPTY(admin_datums)
 
 /datum/admins
 	var/rank         = "Temporary Admin"
@@ -17,6 +17,8 @@ var/list/admin_datums = list()
 	var/datum/feed_channel/admincaster_feed_channel = new /datum/feed_channel
 	var/admincaster_signature	//What you'll sign the newsfeeds as
 
+	var/datum/admins/logging/logging
+
 /datum/admins/proc/marked_datum()
 	if(marked_datum_weak)
 		return marked_datum_weak.resolve()
@@ -29,17 +31,19 @@ var/list/admin_datums = list()
 	admincaster_signature = "[GLOB.using_map.company_name] Officer #[rand(0,9)][rand(0,9)][rand(0,9)]"
 	rank = initial_rank
 	rights = initial_rights
-	admin_datums[ckey] = src
+	GLOB.admin_datums[ckey] = src
 	if (rights & R_DEBUG)
 		world.SetConfig("APP/admin", ckey, "role=admin")
 
+
 /datum/admins/proc/associate(client/C)
 	if(istype(C))
-		if(admin_datums[C.ckey] != src)
+		if(GLOB.admin_datums[C.ckey] != src)
 			return
 		owner = C
 		owner.holder = src
 		owner.add_admin_verbs()	//TODO
+		C.init_verbs()
 		GLOB.admins |= C
 
 /datum/admins/proc/disassociate()
@@ -48,6 +52,7 @@ var/list/admin_datums = list()
 		owner.remove_admin_verbs()
 		owner.deadmin_holder = owner.holder
 		owner.holder = null
+		owner.init_verbs()
 
 /datum/admins/proc/reassociate()
 	if(owner)
@@ -107,15 +112,6 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		holder.disassociate()
 		//qdel(holder)
 	return 1
-
-/mob/Stat()
-	. = ..()
-	if(!client)
-		return
-
-	var/stealth_status = client.is_stealthed()
-	if(stealth_status && statpanel("Status"))
-		stat("Stealth", "Engaged [client.holder.stealthy_ == STEALTH_AUTO ? "(Auto)" : "(Manual)"]")
 
 /client/proc/is_stealthed()
 	if(!holder)

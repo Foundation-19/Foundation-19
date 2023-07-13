@@ -3,16 +3,16 @@
 	desc = "An ancient, but well-liked cargo handling exosuit."
 
 /mob/living/exosuit/premade/powerloader/Initialize()
-	if(!arms) 
+	if(!arms)
 		arms = new /obj/item/mech_component/manipulators/powerloader(src)
 		arms.color = "#ffbc37"
-	if(!legs) 
+	if(!legs)
 		legs = new /obj/item/mech_component/propulsion/powerloader(src)
 		legs.color = "#ffbc37"
-	if(!head) 
+	if(!head)
 		head = new /obj/item/mech_component/sensors/powerloader(src)
 		head.color = "#ffbc37"
-	if(!body) 
+	if(!body)
 		body = new /obj/item/mech_component/chassis/powerloader(src)
 		body.color = "#ffbc37"
 
@@ -25,7 +25,7 @@
 
 /mob/living/exosuit/premade/powerloader/mechete/Initialize()
 	. = ..()
-	
+
 	if (arms)
 		arms.color = "#6c8aaf"
 	if (legs)
@@ -42,7 +42,7 @@
 /obj/item/mech_component/manipulators/powerloader
 	name = "exosuit arms"
 	exosuit_desc_string = "heavy-duty industrial lifters"
-	max_damage = 70
+	max_damage = 95
 	power_use = 30
 	desc = "The Xion Industrial Digital Interaction Manifolds allow you poke untold dangers from the relative safety of your cockpit."
 
@@ -50,8 +50,8 @@
 	name = "exosuit legs"
 	exosuit_desc_string = "reinforced hydraulic legs"
 	desc = "Wide and stable but not particularly fast."
-	max_damage = 70
-	move_delay = 4
+	max_damage = 80
+	move_delay = 3
 	turn_delay = 4
 	power_use = 10
 
@@ -115,16 +115,16 @@
 	desc = "A mix and match of industrial parts designed to withstand fires."
 
 /mob/living/exosuit/premade/firefighter/New()
-	if(!arms) 
+	if(!arms)
 		arms = new /obj/item/mech_component/manipulators/powerloader(src)
 		arms.color = "#385b3c"
-	if(!legs) 
+	if(!legs)
 		legs = new /obj/item/mech_component/propulsion/powerloader(src)
 		legs.color = "#385b3c"
-	if(!head) 
+	if(!head)
 		head = new /obj/item/mech_component/sensors/powerloader(src)
 		head.color = "#385b3c"
-	if(!body) 
+	if(!body)
 		body = new /obj/item/mech_component/chassis/heavy(src)
 		body.color = "#385b3c"
 

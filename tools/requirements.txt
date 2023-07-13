@@ -3,5 +3,7 @@ bidict==0.13.1
 Pillow==9.0.1
 
 # changelogs
-PyYaml==5.4
-beautifulsoup4==4.9.3
+PyYAML==6.0
+beautifulsoup4==4.10.0
+ruamel.yaml==0.17.20
+PyGithub==1.55

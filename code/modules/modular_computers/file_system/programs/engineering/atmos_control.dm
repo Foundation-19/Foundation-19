@@ -11,7 +11,6 @@
 	network_destination = "atmospheric control system"
 	requires_ntnet_feature = NTNET_SYSTEMCONTROL
 	usage_flags = PROGRAM_LAPTOP | PROGRAM_CONSOLE
-	category = PROG_ENG
 	size = 17
 
 /datum/nano_module/atmos_control

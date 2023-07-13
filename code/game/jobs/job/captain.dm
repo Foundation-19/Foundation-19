@@ -186,7 +186,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimal_player_age = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu)
+	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu,"Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/thirep)
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -202,3 +202,33 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	)
 
 	minimal_access = list()
+
+/datum/job/mtf
+	title = "Mobile Task Force Operative"
+	department = "Regional Dispatch"
+	department_flag = COM
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "O5 Regional Dispatch and O5 Command"
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/event/mtfbasic
+	hud_icon = "hudseniorenlistedadvisor"
+	access = list()
+	minimal_access = list()
+
+/datum/job/mtf/get_access()
+	return get_all_station_access()
+
+/datum/job/physics
+	title = "UNGOC Physics Operative"
+	department = "Regional Dispatch"
+	department_flag = COM
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "UNGOC Regional Dispatch and UNGOC Central Command"
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc
+	hud_icon = "hudseniorenlistedadvisor"
+	access = list()
+	minimal_access = list()
+
+/datum/job/physics/get_access()
+	return get_all_station_access()

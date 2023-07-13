@@ -21,7 +21,7 @@ var/repository/mob/mob_repository = new()
 
 /datum/mob_lite/New(var/mob/M)
 	name = M ? (M.real_name ? M.real_name : M.name) : name
-	ref = any2ref(M)
+	ref = REF(M)
 	client = client_repository.get_lite_client(M)
 
 /datum/mob_lite/proc/key_name(var/pm_link = TRUE, var/check_if_offline = TRUE)

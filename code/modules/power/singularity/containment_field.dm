@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
-
 /obj/machinery/containment_field
 	name = "Containment Field"
 	desc = "An energy field."
@@ -21,7 +19,7 @@
 		FG1.cleanup()
 	if(FG2 && !FG2.clean_up)
 		FG2.cleanup()
-	. = ..()
+	return ..()
 
 /obj/machinery/containment_field/physical_attack_hand(mob/user)
 	return shock(user)

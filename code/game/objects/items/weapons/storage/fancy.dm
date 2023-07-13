@@ -137,7 +137,7 @@
 ////////////
 /obj/item/storage/fancy/cigarettes
 	name = "pack of Trans-Stellar Duty-frees"
-	desc = "A ubiquitous brand of cigarettes, found in the facilities of every major spacefaring corporation in the universe. As mild and flavorless as it gets."
+	desc = "A ubiquitous brand of cigarettes, found in the facilities of every major corporation in the world. As mild and flavorless as it gets."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
@@ -220,14 +220,14 @@
 
 /obj/item/storage/fancy/cigarettes/jerichos
 	name = "pack of Jerichos"
-	desc = "Typically seen dangling from the lips of Martian soldiers and border world hustlers. Tastes like hickory smoke, feels like warm liquid death down your lungs."
+	desc = "Typically seen dangling from the lips of battle hardened soldiers and veterans. Tastes like hickory smoke, feels like warm liquid death down your lungs."
 	icon_state = "Jpacket"
 	item_state = "Dpacket"
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/jerichos = 6)
 
 /obj/item/storage/fancy/cigarettes/menthols
 	name = "pack of Temperamento Menthols"
-	desc = "With a sharp and natural organic menthol flavor, these Temperamentos are a favorite of NDV crews. Hardly anyone knows they make 'em in non-menthol!"
+	desc = "With a sharp and natural organic menthol flavor, these Temperamentos are a favorite of corporate workers. Hardly anyone knows they make 'em in non-menthol!"
 	icon_state = "TMpacket"
 	item_state = "Dpacket"
 
@@ -251,7 +251,7 @@
 //cigarellos
 /obj/item/storage/fancy/cigarettes/cigarello
 	name = "pack of Trident Original cigars"
-	desc = "The Trident brand's wood tipped little cigar, favored by the Sol corps diplomatique for their pleasant aroma. Machine made on Mars for over 100 years."
+	desc = "The Trident brand's wood tipped little cigar, favored by high ranking executives for their pleasant aroma."
 	icon_state = "CRpacket"
 	item_state = "Dpacket"
 	max_storage_space = 5
@@ -260,7 +260,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigarello/variety
 	name = "pack of Trident Fruit cigars"
-	desc = "The Trident brand's wood tipped little cigar, favored by the Sol corps diplomatique for their pleasant aroma. Machine made on Mars for over 100 years. This is a fruit variety pack."
+	desc = "The Trident brand's wood tipped little cigar, favored by high ranking executives for their pleasant aroma. This is a fruit variety pack."
 	icon_state = "CRFpacket"
 	startswith = list(	/obj/item/clothing/mask/smokable/cigarette/trident/watermelon,
 						/obj/item/clothing/mask/smokable/cigarette/trident/orange,
@@ -270,7 +270,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigarello/mint
 	name = "pack of Trident Menthol cigars"
-	desc = "The Trident brand's wood tipped little cigar, favored by the Sol corps diplomatique for their pleasant aroma. Machine made on Mars for over 100 years. These are the menthol variety."
+	desc = "The Trident brand's wood tipped little cigar, favored by high ranking executives for their pleasant aroma. These are the menthol variety."
 	icon_state = "CRMpacket"
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/trident/mint = 5)
 

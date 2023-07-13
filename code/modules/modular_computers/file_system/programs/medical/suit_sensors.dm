@@ -11,7 +11,6 @@
 	requires_ntnet = TRUE
 	network_destination = "crew lifesigns monitoring system"
 	size = 11
-	category = PROG_MONITOR
 	var/has_alert = FALSE
 
 /datum/computer_file/program/suit_sensors/process_tick()

@@ -9,7 +9,6 @@
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/crew_manifest
 	usage_flags = PROGRAM_ALL
-	category = PROG_OFFICE
 
 /datum/nano_module/crew_manifest
 	name = "Crew Manifest"

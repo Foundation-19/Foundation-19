@@ -1,6 +1,6 @@
 /client/proc/cmd_admin_say(msg as text)
-	set category = "Staffhelp"
 	set name = "Asay" //Gave this shit a shorter name so you only have to time out "asay" rather than "admin say" to use it --NeoFite
+	set category = "Staff Help"
 	if(!check_rights(R_ADMIN))	return
 
 	msg = sanitize(msg)
@@ -16,9 +16,9 @@
 	SSstatistics.add_field_details("admin_verb","M") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_mentor_say(msg as text)
-	set category = "Staffhelp"
 	set name = "Msay"
 	set desc = "Chat with other mentors."
+	set category = "Staff Help"
 
 	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR))
 		return
@@ -32,6 +32,6 @@
 	if(check_rights(R_ADMIN, 0))
 		usr = "<span class='admin'>[usr]</span>"
 	for(var/client/C in GLOB.admins)
-		to_chat(C, "<span class='mentor_channel'>" + create_text_tag("msay", "MSAY:", C) + " " + SPAN_BOLD(usr) + ": <span class='message'>[msg]</span></span>")
+		to_chat(C, "<span class='mentor_channel'>" + create_text_tag("msay", "MSAY:", C) + " " + SPAN_BOLD(key_name_mentor(src)) + ": <span class='message'>[msg]</span></span>")
 
 	SSstatistics.add_field_details("admin_verb","MS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

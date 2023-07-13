@@ -68,6 +68,7 @@
 		scanner.do_after_install(user, src)
 	if(found && user.unEquip(H, src))
 		to_chat(user, "You install \the [H] into \the [src]")
+		H.holder2 = src
 		update_verbs()
 
 // Uninstalls component. Found and Critical vars may be passed by parent types, if they have additional hardware.
@@ -108,9 +109,8 @@
 	if(found)
 		if(user)
 			to_chat(user, "You remove \the [H] from \the [src].")
-			user.put_in_hands(H)
-		else
-			H.dropInto(loc)
+		H.forceMove(get_turf(src))
+		H.holder2 = null
 		update_verbs()
 	if(critical && enabled)
 		if(user)

@@ -3,19 +3,21 @@
 	slot = slot_head
 	category = /datum/gear/head
 	denied_roles = list(/datum/job/classd)
+	allowed_branches = list(/datum/mil_branch/civilian)
 
-	//Same idea, eats the helmet slot which guards spawn with. With the exception of certain beret variations, no reason to wear any of these.
+	//Same idea, eats the helmet slot which guards spawn with. Will selectively allow certain headgear that would fit security like beanies, hwoever
 
 /datum/gear/head/beret
 	display_name = "beret, colour select"
 	path = /obj/item/clothing/head/beret/plaincolor
 	flags = GEAR_HAS_COLOR_SELECTION
 	description = "A simple, solid color beret. This one has no emblems or insignia on it."
-
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/head/bandana
 	display_name = "bandana selection"
 	path = /obj/item/clothing
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
 
 /datum/gear/head/bandana/New()
 	..()
@@ -26,6 +28,7 @@
 	path = /obj/item/clothing/head/beanie
 	flags = GEAR_HAS_COLOR_SELECTION
 	denied_roles = null
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
 
 /datum/gear/head/bow
 	display_name = "hair bow, colour select"
@@ -43,6 +46,7 @@
 	display_name = "mariner's cap, colour select"
 	path = /obj/item/clothing/head/mariner
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/head/orange_cap
 	display_name = "orange cap"
@@ -69,6 +73,23 @@
 	caps["white cap"] = /obj/item/clothing/head/soft/mime
 	caps["yellow cap"] = /obj/item/clothing/head/soft/yellow
 	caps["major bill's shipping cap"] = /obj/item/clothing/head/soft/mbill
+	gear_tweaks += new/datum/gear_tweak/path(caps)
+
+
+/datum/gear/head/capuniform
+	display_name = "Uniform cap"
+	path = /obj/item/clothing/head
+	allowed_branches = list(/datum/mil_branch/security)
+
+/datum/gear/head/capuniform/New()
+	..()
+	var/caps = list()
+	caps["black cap"] = /obj/item/clothing/head/soft/black
+	caps["blue cap"] = /obj/item/clothing/head/soft/blue
+	caps["green cap"] = /obj/item/clothing/head/soft/green
+	caps["grey cap"] = /obj/item/clothing/head/soft/grey
+	caps["red cap"] = /obj/item/clothing/head/soft/red
+	caps["white cap"] = /obj/item/clothing/head/soft/mime
 	gear_tweaks += new/datum/gear_tweak/path(caps)
 
 /datum/gear/head/hairflower

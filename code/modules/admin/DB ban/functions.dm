@@ -9,8 +9,7 @@
 	var/dbreason = sql_sanitize_text(reason)
 	var/dbckey = sql_sanitize_text(ckey)
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		to_chat(usr,"<span class='error'>Failed adding StaffWarn: Database connection error!</span>")
 		return
 
@@ -32,8 +31,7 @@
 	if(!check_rights((R_ADMIN|R_MOD), 0)) return
 	var/dbckey = sql_sanitize_text(ckey)
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		to_chat(usr,"<span class='error'>Failed removing StaffWarn: Database connection error!</span>")
 		return 0
 
@@ -58,8 +56,7 @@
 	if(usr)
 		if(!check_rights(R_MOD,0) && !check_rights(R_BAN))	return
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		return 0
 
 	var/serverip = "[world.internet_address]:[world.port]"
@@ -170,8 +167,7 @@
 	if(job)
 		sql += " AND job = '[job]'"
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		return
 
 	var/ban_id
@@ -273,8 +269,7 @@
 
 	var/sql = "SELECT ckey FROM erro_ban WHERE id = [id]"
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		return
 
 	var/ban_number = 0 //failsafe
@@ -327,8 +322,7 @@
 
 	if(!check_rights(R_BAN))	return
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		to_chat(usr, "<span class='warning'>Failed to establish database connection</span>")
 		return
 
@@ -356,11 +350,9 @@
 	output += "<tr><td width='50%' align='right'><b>Duration:</b> <input type='text' name='dbbaddduration'></td>"
 	output += "<td width='50%' align='right'><b>Job:</b><select name='dbbanaddjob'>"
 	output += "<option value=''>--</option>"
-	for(var/j in SSjobs.titles_to_datums)
+	for(var/j in SSjobs.distinct_job_titles)
 		output += "<option value='[j]'>[j]</option>"
-	for(var/j in SSjobs.titles_by_department(MSC))
-		output += "<option value='[j]'>[j]</option>"
-	var/list/bantypes = list("traitor","changeling","operative","revolutionary","cultist","wizard") //For legacy bans.
+	var/list/bantypes = list("Safe SCP","Non-Safe SCP","traitor","changeling","operative","revolutionary","cultist","wizard") //For legacy bans.
 	var/list/all_antag_types = GLOB.all_antag_types_
 	for(var/antag_type in all_antag_types) // Grab other bans.
 		var/datum/antagonist/antag = all_antag_types[antag_type]

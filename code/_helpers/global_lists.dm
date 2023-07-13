@@ -87,7 +87,7 @@ var/global/list/string_slot_flags = list(
 		. = new/mob/living/carbon/human/dummy/mannequin()
 		mannequins_[ckey] = .
 
-/hook/global_init/proc/makeDatumRefLists()
+/proc/make_datum_references_lists()
 	var/list/paths
 
 	//Hair - Initialise all /datum/sprite_accessory/hair into an list indexed by hair-style name
@@ -159,18 +159,6 @@ var/global/list/string_slot_flags = list(
 	for(var/grabstate_name in all_grabstates)
 		var/datum/grab/G = all_grabstates[grabstate_name]
 		G.refresh_updown()
-
-	// Keybindings
-	for(var/KB in subtypesof(/datum/keybinding))
-		var/datum/keybinding/keybinding = KB
-		if(!initial(keybinding.name))
-			continue
-		var/datum/keybinding/instance = new keybinding
-		global.keybindings_by_name[instance.name] = instance
-		if(length(instance.hotkey_keys))
-			for(var/bound_key in instance.hotkey_keys)
-				global.hotkey_keybinding_list_by_key[bound_key] += list(instance.name)
-
 	return 1
 
 //*** params cache

@@ -40,7 +40,7 @@ SUBSYSTEM_DEF(persistence)
 
 /datum/controller/subsystem/persistence/proc/show_info(var/mob/user)
 
-	if(!check_rights(R_INVESTIGATE, C = user))
+	if(!check_rights(R_ADMIN|R_MOD, C = user))
 		return
 
 	var/list/dat = list("<table width = '100%'>")

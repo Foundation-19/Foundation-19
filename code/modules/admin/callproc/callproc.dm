@@ -98,6 +98,10 @@
 			to_chat(usr, "\The [target] has no call [procname]()")
 			clear()
 			return
+		if(procname in list("set_variable_value", /datum/proc/set_variable_value))
+			to_chat(usr, SPAN_WARNING("You can't call [procname]!"))
+			clear()
+			return
 
 	arguments = list()
 	do_args()
@@ -184,7 +188,7 @@
 
 			if("click on atom")
 				waiting_for_click = 1
-				C.verbs += /client/proc/cancel_callproc_select
+				add_verb(C, /client/proc/cancel_callproc_select)
 				to_chat(C, "Click an atom to select it. Click an atom then click 'cancel', or use the Cancel-Callproc-Select verb to cancel selecting a target by click.")
 				return WAITING
 
@@ -197,7 +201,7 @@
 	set name = "Cancel Callproc Select"
 	set category = "Admin"
 
-	verbs -= /client/proc/cancel_callproc_select
+	remove_verb(src, /client/proc/cancel_callproc_select)
 	if(holder && holder.callproc && holder.callproc.waiting_for_click)
 		holder.callproc.waiting_for_click = 0
 		holder.callproc.do_args()

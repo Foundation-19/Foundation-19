@@ -162,8 +162,8 @@
 	base_name = "\improper NT cup"
 
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp
-	name = "\improper EXO coffee cup"
-	desc = "A tasteful coffee cup in Expeditionary Corps Organisation corporate colours."
+	name = "\improper Foundation coffee cup"
+	desc = "A tasteful coffee cup in SCP Foundation corporate colours."
 	icon_state = "coffeecup_corp"
 	base_name = "\improper EXO cup"
 

@@ -13,7 +13,7 @@ GLOBAL_DATUM_INIT(ert, /datum/antagonist/ert, new)
 		rules aside from those without explicit exceptions apply to the MTF.</b>"
 	leader_welcome_text = "You shouldn't see this"
 	landmark_id = "Response Team"
-	id_type = /obj/item/card/id/centcom/ERT
+	id_type = /obj/item/card/id/mtf
 
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_HAS_LEADER | ANTAG_CHOOSE_NAME | ANTAG_RANDOM_EXCEPTED
 	antaghud_indicator = "hudloyalist"

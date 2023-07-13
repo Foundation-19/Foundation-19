@@ -1,219 +1,205 @@
+
+/**
+ * # Vote Singleton
+ *
+ * A singleton datum that represents a type of vote for the voting subsystem.
+ */
 /datum/vote
-	var/name = "default vote"
-	var/initiator
-	var/question
+	/// The name of the vote.
+	var/name
+	/// If supplied, an override question will be displayed instead of the name of the vote.
+	var/override_question
+	/// The sound effect played to everyone when this vote is initiated.
+	var/vote_sound = 'sound/misc/bloop.ogg'
+	/// A list of default choices we have for this vote.
+	var/list/default_choices
+
+	// Internal values used when tracking ongoing votes.
+	// Don't mess with these, change the above values / override procs for subtypes.
+	/// An assoc list of [all choices] to [number of votes in the current running vote].
 	var/list/choices = list()
-
-	var/list/display_choices = list() // What's actually shown to the users.
-	var/list/additional_text = list() // Stuff for UI formatting.
-	var/additional_header
-
-	var/start_time
+	/// A assoc list of [ckey] to [what they voted for in the current running vote].
+	var/list/choices_by_ckey = list()
+	/// The world time this vote was started.
+	var/started_time
+	/// The time remaining in this vote's run.
 	var/time_remaining
-	var/time_set                   // Custom length of voting period
-	var/status = VOTE_STATUS_PREVOTE
 
-	var/list/result                // The results; format is list(choice = votes).
-	var/result_length = 1         // How many choices to show in the result. Must be >= 1
+/**
+ * Used to determine if this vote is a possible
+ * vote type for the vote subsystem.
+ *
+ * If FALSE is returned, this vote singleton
+ * will not be created when the vote subsystem initializes,
+ * meaning no one will be able to hold this vote.
+ */
+/datum/vote/proc/is_accessible_vote()
+	return !!length(default_choices)
 
-	var/list/votes = list()        // Format is list(ckey = list(a, b, ...)); a, b, ... are ordered by order of preference and are numbers, referring to the index in choices
+/**
+ * Resets our vote to its default state.
+ */
+/datum/vote/proc/reset()
+	SHOULD_CALL_PARENT(TRUE)
 
-	var/win_x = 450
-	var/win_y = 740                // Vote window size.
+	choices.Cut()
+	choices_by_ckey.Cut()
+	started_time = null
+	time_remaining = null
 
-	var/manual_allowed = 1         // Whether humans can start it.
+/**
+ * If this vote has a config associated, toggles it between enabled and disabled.
+ * Returns TRUE on a successful toggle, FALSE otherwise
+ */
+/datum/vote/proc/toggle_votable(mob/toggler)
+	return FALSE
 
-//Expected to be run immediately after creation; a false return means that the vote could not be run and the datum will be deleted.
-/datum/vote/proc/setup(mob/creator, automatic)
-	if(!can_run(creator, automatic))
-		qdel(src)
-		return FALSE
-	setup_vote(creator, automatic)
-	if(!can_run(creator, automatic))
-		qdel(src)
-		return FALSE
-	start_vote()
+/**
+ * If this vote has a config associated, returns its value (True or False, usually).
+ * If it has no config, returns -1.
+ */
+/datum/vote/proc/is_config_enabled()
+	return -1
+
+/**
+ * Checks if the passed mob can initiate this vote.
+ *
+ * Return TRUE if the mob can begin the vote, allowing anyone to actually vote on it.
+ * Return FALSE if the mob cannot initiate the vote.
+ */
+/datum/vote/proc/can_be_initiated(mob/by_who, forced = FALSE)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(started_time)
+		var/next_allowed_time = (started_time + config.vote_delay)
+		if(next_allowed_time > world.time && !forced)
+			if(by_who)
+				to_chat(by_who, SPAN_WARNING("A vote was initiated recently. You must wait [DisplayTimeText(next_allowed_time - world.time)] before a new vote can be started!"))
+			return FALSE
+
 	return TRUE
 
-//Checks any conditions required for the vote to run. The argument is optional, in case a player started the vote.
-/datum/vote/proc/can_run(mob/creator, automatic)
+/**
+ * Called prior to the vote being initiated.
+ *
+ * Return FALSE to prevent the vote from being initiated.
+ */
+/datum/vote/proc/create_vote(mob/vote_creator)
+	SHOULD_CALL_PARENT(TRUE)
+
+	for(var/key in default_choices)
+		choices[key] = 0
+
 	return TRUE
 
-//Performs functions relating to setting up the question and choices, if relevant.
-/datum/vote/proc/setup_vote(mob/creator, automatic)
-	initiator = (!automatic && istype(creator)) ? creator.ckey : "the server"
-	for(var/choice in choices)
-		display_choices[choice] = choice // Default behavior is that the choice name is displayed directly.
+/**
+ * Called when this vote is actually initiated.
+ *
+ * Return a string - the text displayed to the world when the vote is initiated.
+ */
+/datum/vote/proc/initiate_vote(initiator, duration)
+	SHOULD_CALL_PARENT(TRUE)
 
-/datum/vote/proc/start_vote()
-	start_time = world.time
-	time_set = (time_set ? time_set : config.vote_period)
-	time_remaining = round(time_set / 10)
-	status = VOTE_STATUS_ACTIVE
+	started_time = world.time
+	time_remaining = round(duration / 10)
 
-	var/text = get_start_text()
+	return "[capitalize(name)] vote started by [initiator || "Central Command"]."
 
-	log_vote(text)
-	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [time_set/10] seconds to vote.</font>")
-	sound_to(world, sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = GLOB.vote_sound_channel))
+/**
+ * Gets the result of the vote.
+ *
+ * non_voters - a list of all ckeys who didn't vote in the vote.
+ *
+ * Returns a list of all options that won.
+ * If there were no votes at all, the list will be length = 0, non-null.
+ * If only one option one, the list will be length = 1.
+ * If there was a tie, the list will be length > 1.
+ */
+/datum/vote/proc/get_vote_result(list/non_voters)
+	RETURN_TYPE(/list)
 
-/datum/vote/proc/get_start_text()
-	return "[capitalize(name)] vote started by [initiator]."
+	var/list/winners = list()
+	var/highest_vote = 0
 
-//Modifies the vote totals based on non-voting mobs.
-/datum/vote/proc/handle_default_votes()
-	if(!config.vote_no_default)
-		return length(GLOB.clients) - length(votes) //Number of non-voters (might not be active, though; should be revisited if the config option is used. This is legacy code.)
+	for(var/option in choices)
 
-/datum/vote/proc/tally_result()
-	handle_default_votes()
+		var/vote_count = choices[option]
+		// If we currently have no winners...
+		if(!length(winners))
+			// And the current option has any votes, it's the new highest.
+			if(vote_count > 0)
+				winners += option
+				highest_vote = vote_count
+			continue
 
-	result = list()
-	var/list/remaining_choices = choices.Copy()
-	var/list/remaining_votes = votes.Copy()
-	while(length(result) < result_length)
-		remaining_choices = shuffle(remaining_choices)
-		sortTim(remaining_choices, /proc/cmp_numeric_dsc, TRUE)
-		if(!length(remaining_votes) || !length(remaining_choices))  // we ran out of options or votes, you get what we have
-			result += remaining_choices.Copy(1, Clamp(result_length - length(result) + 1, 0, length(remaining_choices) + 1))
-			break
-		else
-			// 50% majority or we don't have enough candidates to be picky, declare the winner and remove it from the possible candidates
-			if(remaining_choices[remaining_choices[1]] > length(remaining_votes) / 2 || length(remaining_choices) <= result_length - length(result))
-				var/winner = remaining_choices[1]
-				result[winner] = remaining_choices[remaining_choices[1]]
-				remove_candidate(remaining_choices, remaining_votes, winner)
-			else // no winner, remove the biggest loser and go again
-				var/loser = remaining_choices[length(remaining_choices)]
-				remove_candidate(remaining_choices, remaining_votes, loser)
+		// If we're greater than, and NOT equal to, the highest vote,
+		// we are the new supreme winner - clear all others
+		if(vote_count > highest_vote)
+			winners.Cut()
+			winners += option
+			highest_vote = vote_count
 
-// Remove candidate from choice_list and any votes for it from vote_list, transfering first choices to second
-/datum/vote/proc/remove_candidate(list/choice_list, list/vote_list, candidate)
-	var/candidate_index = list_find(choices, candidate) // use choices instead of choice_list because we need the original indexing
-	choice_list -= candidate
-	for(var/ckey in vote_list)
-		if(length(votes[ckey]) && vote_list[ckey][1] == candidate_index && length(vote_list[ckey]) > 1)
-			var/new_first_choice = choices[vote_list[ckey][2]]
-			choice_list[new_first_choice] += 1
-		vote_list[ckey] -= candidate_index
+		// If we're equal to the highest vote, we tie for winner
+		else if(vote_count == highest_vote)
+			winners += option
 
-		if(!length(vote_list[ckey]))
-			vote_list -= ckey
+	return winners
 
-// Truthy return indicates that either no one votes or there was another error.
-/datum/vote/proc/report_result()
-	if(!length(result))
-		return 1
+/**
+ * Gets the resulting text displayed when the vote is completed.
+ *
+ * all_winners - list of all options that won. Can be multiple, in the event of ties.
+ * real_winner - the option that actually won.
+ * non_voters - a list of all ckeys who didn't vote in the vote.
+ *
+ * Return a formatted string of text to be displayed to everyone.
+ */
+/datum/vote/proc/get_result_text(list/all_winners, real_winner, list/non_voters)
+	if(length(all_winners) <= 0 || !real_winner)
+		return SPAN_BOLD("Vote Result: Inconclusive - No Votes!")
 
-	var/text = get_result_announcement()
-	log_vote(text)
-	to_world("<font color='purple'>[text]</font>")
-
-	if(!(result[result[1]] > 0))
-		return 1
-
-/datum/vote/proc/get_result_announcement()
-	var/list/text = list()
-	if(!(result[result[1]] > 0)) // No one votes.
-		text += "<b>Vote Result: Inconclusive - No Votes!</b>"
+	var/returned_text = ""
+	if(override_question)
+		returned_text += SPAN_BOLD(override_question)
 	else
-		text += "<b>Vote Result: [display_choices[result[1]]][choices[result[1]] >= 1 ? " - \"[choices[result[1]]]\"" : null]</b>"
-		if(length(result) >= 2 && result[result[2]])
-			text += "\nSecond place: [display_choices[result[2]]][choices[result[2]] >= 1 ? " - \"[choices[result[2]]]\"" : null]"
-		if(length(result) >= 3 && result[result[3]])
-			text += "\nThird place: [display_choices[result[3]]][choices[result[3]] >= 1 ? " - \"[choices[result[3]]]\"" : null]"
+		returned_text += SPAN_BOLD("[capitalize(name)] Vote")
 
-	return JOINTEXT(text)
+	for(var/option in choices)
+		returned_text += "\n[SPAN_BOLD(option)]: [choices[option]]"
 
-/datum/vote/proc/submit_vote(var/mob/voter, var/vote)
-	if(mob_not_participating(voter))
-		return
+	returned_text += "\n"
+	returned_text += get_winner_text(all_winners, real_winner, non_voters)
 
-	var/ckey = voter.ckey
-	if(!votes[ckey])
-		votes[ckey] = list()
+	return returned_text
 
-	var/choice = choices[vote]
-	if(vote in votes[ckey])
-		if(votes[ckey][1] == vote)
-			choices[choice] -= 1
-			if(length(votes[ckey]) > 1) // If the player has rescinded their first choice, their second choice is promoted to their first choice, if it exists.
-				var/new_choice = choices[votes[ckey][2]]
-				choices[new_choice] += 1  // Update the running tally to reflect that
-		votes[ckey] -= vote
+/**
+ * Gets the text that displays the winning options within the result text.
+ *
+ * all_winners - list of all options that won. Can be multiple, in the event of ties.
+ * real_winner - the option that actually won.
+ * non_voters - a list of all ckeys who didn't vote in the vote.
+ *
+ * Return a formatted string of text to be displayed to everyone.
+ */
+/datum/vote/proc/get_winner_text(list/all_winners, real_winner, list/non_voters)
+	var/returned_text = ""
+	if(length(all_winners) > 1)
+		returned_text += "\n[SPAN_BOLD("Vote Tied Between:")]"
+		for(var/a_winner in all_winners)
+			returned_text += "\n\t[a_winner]"
 
-		if(!length(votes[ckey]))
-			votes -= ckey
-	else
-		votes[ckey] += vote
-		if(votes[ckey][1] == vote)
-			choices[choice] += 1
+	returned_text += SPAN_BOLD("\nVote Result: [real_winner]")
+	return returned_text
 
-// Checks if the mob is participating in the round sufficiently to vote, as per config settings.
-/datum/vote/proc/mob_not_participating(mob/voter)
-	if(config.vote_no_dead && voter.stat == DEAD && !voter.client.holder)
-		return 1
+/**
+ * How this vote handles a tiebreaker between multiple winners.
+ */
+/datum/vote/proc/tiebreaker(list/winners)
+	return pick(winners)
 
-//null = no toggle set. This is for UI purposes; a text return will give a link (toggle; currently "return") in the vote panel.
-/datum/vote/proc/check_toggle()
-
-//Called when toggle is hit.
-/datum/vote/proc/toggle(mob/user)
-
-//Will be run by the SS while the vote is running.
-/datum/vote/Process()
-	if(status == VOTE_STATUS_ACTIVE)
-		if(time_remaining > 0)
-			time_remaining = round((start_time + time_set - world.time)/10)
-			return VOTE_PROCESS_ONGOING
-		else
-			status = VOTE_STATUS_COMPLETE
-			return VOTE_PROCESS_COMPLETE
-	return VOTE_PROCESS_ABORT
-
-/datum/vote/proc/interface(mob/user)
-	. = list()
-	if(mob_not_participating(user))
-		. += "<h2>You can't participate in this vote unless you're participating in the round.</h2><br>"
-		return
-	if(question)
-		. += "<h2>Vote: '[question]'</h2>"
-	else
-		. += "<h2>Vote: [capitalize(name)]</h2>"
-	. += "Time Left: [time_remaining] s<hr>"
-	. += "<table width = '100%'><tr><th>Choices</th><th>Order</th>"
-	. += additional_header
-	. += "</tr>"
-
-	for(var/i = 1, i <= choices.len, i++)
-		var/choice = choices[i]
-		var/voted_for = votes[user.ckey] && (i in votes[user.ckey])
-
-		. += "<tr><td><a href='?src=\ref[src];choice=[i]'[voted_for ? " style='font-weight: bold'" : ""]>"
-		. += "[display_choices[choice]]"
-		. += "</a></td>"
-
-		. += "<td style='text-align: center;'>"
-		if(voted_for)
-			var/list/vote = votes[user.ckey]
-			. += "[list_find(vote, i)]"
-		. += "</td>"
-
-		if (additional_text[choice])
-			. += "[additional_text[choice]]" //Note lack of cell wrapper, to allow for dynamic formatting.
-		. += "</tr>"
-	. += "</table><hr>"
-
-/datum/vote/Topic(href, href_list, hsrc)
-	var/mob/user = usr
-	if(!istype(user) || !user.client)
-		return
-
-	if(!href_list["choice"])
-		return
-
-	var/choice = text2num(href_list["choice"])
-	if(!is_valid_index(choice, choices))
-		return
-
-	submit_vote(user, choice)
+/**
+ * Called when a vote is actually all said and done.
+ * Apply actual vote effects here.
+ */
+/datum/vote/proc/finalize_vote(winning_option)
+	return

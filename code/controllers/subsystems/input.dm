@@ -18,8 +18,8 @@ SUBSYSTEM_DEF(input)
 	macro_set = list(
 	"Any" = "\"KeyDown \[\[*\]\]\"",
 	"Any+UP" = "\"KeyUp \[\[*\]\]\"",
-	"Back" = "\".winset \\\"mainwindow.input.text=\\\"\\\"\\\"\"",
-	"Tab" = "\".winset \\\"mainwindow.input.focus=true?mapwindow.map.focus=true mainwindow.input.background-color=[COLOR_INPUT_DISABLED]:mainwindow.input.focus=true mainwindow.input.background-color=[COLOR_INPUT_ENABLED]\\\"\"",
+	"Back" = "\".winset \\\"outputwindow.input.text=\\\"\\\"\\\"\"",
+	"Tab" = "\".winset \\\"outputwindow.input.focus=true ? mapwindow.map.focus=true : outputwindow.input.focus=true\\\"\"",
 	"Escape" = "Reset-Held-Keys",
 	)
 

@@ -26,8 +26,8 @@
 /decl/surgery_step/limb/attach
 	name = "Replace limb"
 	allowed_tools = list(/obj/item/organ/external = 100)
-	min_duration = 50
-	max_duration = 70
+	min_duration = 40
+	max_duration = 60
 
 /decl/surgery_step/limb/attach/pre_surgery_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	. = FALSE
@@ -96,8 +96,8 @@
 		/obj/item/device/assembly/mousetrap = 20
 	)
 	can_infect = 1
-	min_duration = 100
-	max_duration = 120
+	min_duration = 80
+	max_duration = 100
 
 /decl/surgery_step/limb/connect/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool, target_zone)
 	var/obj/item/organ/external/E = target && target.get_organ(target_zone)
@@ -143,8 +143,8 @@
 	name = "Attach prosthetic limb"
 	allowed_tools = list(/obj/item/robot_parts = 100)
 
-	min_duration = 80
-	max_duration = 100
+	min_duration = 60
+	max_duration = 80
 
 /decl/surgery_step/limb/mechanize/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	if(target.isSynthetic())

@@ -332,7 +332,7 @@
 	for(var/obj/machinery/teleport/hub/R in SSmachines.all_machinery)
 		var/obj/machinery/computer/teleporter/com = R.com
 		if (istype(com, /obj/machinery/computer/teleporter) && com.locked && !com.one_time_use && com.operable())
-			.["[com.id] ([R.icon_state == "tele1" ? "Active" : "Inactive"])"] = "tport=[any2ref(com)]"
+			.["[com.id] ([R.icon_state == "tele1" ? "Active" : "Inactive"])"] = "tport=[REF(com)]"
 	.["None (Dangerous)"] = "tport=random"
 
 /obj/item/integrated_circuit/input/teleporter_locator/OnICTopic(href_list, user)

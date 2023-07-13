@@ -3,7 +3,7 @@
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "empty"
 	appearance_flags = 0
-	anchored = 1
+	anchored = TRUE
 //	var/cult = 0
 	var/toolate = 0
 	var/toolate_on = 0
@@ -14,7 +14,7 @@
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "Off"
 	appearance_flags = 0
-	anchored = 1
+	anchored = TRUE
 	toolate = 1
 	toolate_on = 0
 

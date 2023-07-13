@@ -156,7 +156,7 @@
 	set name = "Narrate"
 	set desc = "Selection of narrates targeting a mob."
 
-	if(!check_rights(R_INVESTIGATE))
+	if(!check_rights(R_ADMIN|R_MOD))
 		return
 
 	var/options = list()
@@ -186,7 +186,7 @@
 	set name = "Direct Narrate"
 	set desc = "Narrate to a specific mob."
 
-	if (!check_rights(R_INVESTIGATE))
+	if (!check_rights(R_ADMIN|R_MOD))
 		return
 
 	if (!M)
@@ -433,7 +433,7 @@ Ccomp's first proc.
 	if(config.antag_hud_allowed)
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						//Remove the verb from non-admin ghosts
-				g.verbs -= /mob/observer/ghost/verb/toggle_antagHUD
+				remove_verb(g, /mob/observer/ghost/verb/toggle_antagHUD)
 			if(g.antagHUD)
 				g.antagHUD = 0						// Disable it on those that have it enabled
 				g.has_enabled_antagHUD = 2				// We'll allow them to respawn
@@ -444,7 +444,7 @@ Ccomp's first proc.
 	else
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						// Add the verb back for all non-admin ghosts
-				g.verbs += /mob/observer/ghost/verb/toggle_antagHUD
+				add_verb(g, /mob/observer/ghost/verb/toggle_antagHUD)
 				to_chat(g, "<span class='notice'><B>The Administrator has enabled AntagHUD </B></span>")// Notify all observers they can now use AntagHUD
 
 		config.antag_hud_allowed = 1
@@ -813,3 +813,33 @@ Ccomp's first proc.
 		to_chat(usr, "Random events disabled")
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.", 1)
 	SSstatistics.add_field_details("admin_verb","TRE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/cmd_admin_alert_message(mob/M)
+	set name = "Alert Message"
+	set category = "Admin"
+
+	if(!ismob(M) || !check_rights(R_MOD, TRUE, src))
+		return
+
+	if(!M.client)
+		to_chat(mob, SPAN_WARNING("Mob doesn't have a client."))
+		return
+
+	switch(tgui_alert(mob, "Do you wish to send an admin alert to this user?", "Admin Aalert", list("Yes","No","Custom")))
+		if("Yes")
+			show_blurb(M, 15, "An admin is trying to talk to you!<br>Check your chat window and click their name to respond or you may be banned!", null, "center", "center", COLOR_RED, null, null, 1)
+			log_admin("[key_name(src)] sent a default admin alert to [key_name(M)].")
+			message_staff("[key_name(src)] sent a default admin alert to [key_name(M)].")
+
+		if("Custom")
+			var/message = tgui_input_text(src, "Input your custom admin alert text:", "Message")
+			if(!message)
+				return
+
+			var/new_color = input(src, "Input your message color:", "Color Selector") as color|null
+			if(!new_color)
+				return
+
+			show_blurb(M, 15, message, null, "center", "center", new_color, null, null, 1)
+			log_admin("[key_name(src)] sent an admin alert to [key_name(M)] with custom message [message].")
+			message_staff("[key_name(src)] sent an admin alert to [key_name(M)] with custom message [message].")

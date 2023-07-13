@@ -2442,13 +2442,13 @@
 	pixel_x = -1
 	},
 /obj/effect/spawner/newbomb/timer/syndicate,
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
 /obj/effect/landmark/delete_on_shuttle{
@@ -2479,7 +2479,7 @@
 /area/map_template/merc_shuttle)
 "CQ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/computer/modular/preset/full/merc{
+/obj/item/modular_computer/console/preset/full/merc{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -2547,13 +2547,13 @@
 	pixel_x = -1
 	},
 /obj/effect/spawner/newbomb/timer/syndicate,
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
 /obj/effect/landmark/delete_on_shuttle{

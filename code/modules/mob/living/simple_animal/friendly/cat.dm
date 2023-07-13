@@ -214,9 +214,9 @@
 	holder_type = /obj/item/holder/cat/fluff/bones
 	var/friend_name = "Erstatz Vryroxes"
 
-/mob/living/simple_animal/friendly/cat/kitten/New()
+/mob/living/simple_animal/friendly/cat/kitten/Initialize()
 	gender = pick(MALE, FEMALE)
-	..()
+	. = ..()
 
 /datum/ai_holder/simple_animal/passive/cat
 	can_flee = TRUE

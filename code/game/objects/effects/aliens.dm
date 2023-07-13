@@ -11,9 +11,9 @@
 	icon_state = "acid"
 	icon = 'icons/mob/alien.dmi'
 
-	density = 0
+	density = FALSE
 	opacity = 0
-	anchored = 1
+	anchored = TRUE
 
 	var/atom/target
 	var/acid_strength = ACID_WEAK

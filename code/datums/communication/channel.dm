@@ -25,7 +25,7 @@
 	if (check_rights(R_ADMIN, 0, C) && (!check_rights(R_BAN, 0, C)))
 		return TRUE
 	// Anyone else with investigation status may not ignore communication channels
-	return !check_rights(R_INVESTIGATE, 0, C)
+	return !check_rights(R_ADMIN|R_MOD, 0, C)
 
 /*
 * Procs for handling sending communication messages
@@ -45,7 +45,7 @@
 		log_debug("[log_info_line(communicator)] attempted to communicate over the channel [src] but was of an unexpected type.")
 		return FALSE
 
-	if(config_setting && !config.vars[config_setting] && !check_rights(R_INVESTIGATE,0,communicator))
+	if(config_setting && !config.vars[config_setting] && !check_rights(R_ADMIN|R_MOD,0,communicator))
 		to_chat(communicator, "<span class='danger'>[name] is globally muted.</span>")
 		return FALSE
 
@@ -67,7 +67,7 @@
 		to_chat(communicator, "<span class='danger'>Guests may not use the [name] channel.</span>")
 		return FALSE
 
-	if (config.forbidden_message_regex && !check_rights(R_INVESTIGATE, 0, communicator) && findtext(message, config.forbidden_message_regex))
+	if (config.forbidden_message_regex && !check_rights(R_ADMIN|R_MOD, 0, communicator) && findtext(message, config.forbidden_message_regex))
 		if (!config.forbidden_message_no_notifications)
 			if (!config.forbidden_message_hide_details)
 				log_and_message_admins("attempted to send a forbidden message in [name]: [message]", user = C)

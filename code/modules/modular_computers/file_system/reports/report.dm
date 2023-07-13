@@ -22,7 +22,7 @@
 /*
 Access stuff. The report's access/access_edit should control whether it can be opened/submitted.
 For field editing or viewing, use the field's access/access_edit permission instead.
-The access system is based on "access patterns", lists of access values. 
+The access system is based on "access patterns", lists of access values.
 A user needs all access values in a pattern to be granted access.
 A user needs to only match one of the potentially several stored access patterns to be granted access.
 You must have access to have edit access.
@@ -78,12 +78,12 @@ If the override option is set to 0, the access supplied will instead be added as
 			to_chat(user, "<span class='notice'>You are missing a required field!</span>")
 			return 0
 	creator = user.name
-	file_time = time_stamp()
+	file_time = station_time_timestamp()
 	rename_file(file_time)
 	return 1
 
 /datum/computer_file/report/proc/rename_file(append)
-	append = append || time_stamp()
+	append = append || station_time_timestamp()
 	append = replacetext(append, ":", "_")
 	filename = "[form_name]_[append]"
 

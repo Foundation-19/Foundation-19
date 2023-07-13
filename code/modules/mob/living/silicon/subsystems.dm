@@ -1,24 +1,24 @@
 /mob/living/silicon
 	var/list/silicon_subsystems_by_name = list()
 	var/list/silicon_subsystems = list(
-		/datum/nano_module/alarm_monitor/all,
+		/datum/tgui_module/alarm_monitor/all/robot,
 		/datum/nano_module/law_manager,
-		/datum/nano_module/email_client,
+		/datum/tgui_module/email_client/robot,
 		/datum/nano_module/crew_manifest
 	)
 
-/mob/living/silicon/ai/New()
+/mob/living/silicon/ai/Initialize()
 	silicon_subsystems.Cut()
 	for(var/subtype in subtypesof(/datum/nano_module))
 		var/datum/nano_module/NM = subtype
 		if(initial(NM.available_to_ai))
 			silicon_subsystems += NM
-	..()
+	. = ..()
 
 /mob/living/silicon/robot/syndicate
 	silicon_subsystems = list(
 		/datum/nano_module/law_manager,
-		/datum/nano_module/email_client
+		/datum/tgui_module/email_client/robot
 	)
 
 /mob/living/silicon/Destroy()
@@ -27,11 +27,17 @@
 	silicon_subsystems.Cut()
 	. = ..()
 
+/mob/living/silicon/proc/get_silicon_subsystems()
+	.=list()
+	for(var/stat_silicon_subsystem/sub_stat as anything in silicon_subsystems)
+		sub_stat = silicon_subsystems[sub_stat]
+		. += list(list("[sub_stat.name]", "\ref[sub_stat]"))
+
 /mob/living/silicon/proc/init_subsystems()
 	for(var/subsystem_type in silicon_subsystems)
 		init_subsystem(subsystem_type)
 
-	if(/datum/nano_module/alarm_monitor/all in silicon_subsystems)
+	if(/datum/tgui_module/alarm_monitor/all/robot in silicon_subsystems)
 		for(var/datum/alarm_handler/AH as anything in SSalarm.handlers)
 			AH.register_alarm(src, /mob/living/silicon/proc/receive_alarm)
 			queued_alarms[AH] = list()	// Makes sure alarms remain listed in consistent order
@@ -73,47 +79,42 @@
 	if(istype(SSS))
 		SSS.Click()
 
-/mob/living/silicon/Stat()
-	. = ..()
-	if(!.)
-		return
-	if(!silicon_subsystems.len)
-		return
-	if(!statpanel("Subsystems"))
-		return
-	for(var/subsystem_type in silicon_subsystems)
-		var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
-		stat(SSS)
-
 /mob/living/silicon/proc/get_subsystem_from_path(subsystem_type)
 	var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
 	if(!istype(SSS))
 		return 0
-	if(!istype(SSS.subsystem, subsystem_type))
-		return 0
-	return SSS.subsystem
+	if(ispath(subsystem_type, /datum/tgui_module))
+		if(istype(SSS.tgui_subsystem, subsystem_type))
+			return SSS.tgui_subsystem
+	else if(istype(SSS.nano_subsystem, subsystem_type))
+		return SSS.nano_subsystem
 
 /stat_silicon_subsystem
 	parent_type = /atom/movable
 	simulated = FALSE
 	var/ui_state
-	var/datum/nano_module/subsystem
+	var/datum/nano_module/nano_subsystem
+	var/datum/tgui_module/tgui_subsystem
 
 /stat_silicon_subsystem/New(var/mob/living/silicon/loc, var/subsystem_type, var/ui_state)
 	if(!istype(loc))
 		CRASH("Unexpected location. Expected /mob/living/silicon, was [loc.type].")
 	src.ui_state = ui_state
-	subsystem = new subsystem_type(loc)
-	name = subsystem.name
+	if(ispath(subsystem_type, /datum/tgui_module))
+		tgui_subsystem = new subsystem_type(loc)
+		name = tgui_subsystem.name
+	else
+		nano_subsystem = new subsystem_type(loc)
+		name = nano_subsystem.name
 	..()
 
 /stat_silicon_subsystem/Destroy()
-	qdel(subsystem)
-	subsystem = null
-	. = ..()
+	QDEL_NULL(nano_subsystem)
+	QDEL_NULL(tgui_subsystem)
+	.=..()
 
-/stat_silicon_subsystem/Click(var/mob/given = usr)
-	if (istype(given))
-		subsystem.ui_interact(given, state = ui_state)
+/stat_silicon_subsystem/Click(location, control, params)
+	if(tgui_subsystem)
+		tgui_subsystem.tgui_interact(usr)
 	else
-		subsystem.ui_interact(usr, state = ui_state)
+		nano_subsystem.ui_interact(usr, state = ui_state)

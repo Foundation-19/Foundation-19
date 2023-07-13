@@ -19,8 +19,8 @@
 		/obj/item/stack/medical/bruise_pack = 40,
 		/obj/item/tape_roll = 20
 	)
-	min_duration = 70
-	max_duration = 90
+	min_duration = 60
+	max_duration = 70
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_ROBOTIC | SURGERY_NO_STUMP
 
 /decl/surgery_step/internal/fix_organ/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
@@ -90,8 +90,8 @@
 		/obj/item/scalpel = 100,
 		/obj/item/material/shard = 50
 	)
-	min_duration = 90
-	max_duration = 110
+	min_duration = 70
+	max_duration = 90
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_ROBOTIC | SURGERY_NO_STUMP | SURGERY_NEEDS_ENCASEMENT
 
 /decl/surgery_step/internal/detatch_organ/pre_surgery_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
@@ -145,8 +145,8 @@
 		/obj/item/material/knife = 75,
 		/obj/item/material/kitchen/utensil/fork = 20
 	)
-	min_duration = 60
-	max_duration = 80
+	min_duration = 50
+	max_duration = 60
 
 /decl/surgery_step/internal/remove_organ/pre_surgery_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
@@ -225,8 +225,8 @@
 	allowed_tools = list(
 		/obj/item/organ/internal = 100
 	)
-	min_duration = 60
-	max_duration = 80
+	min_duration = 50
+	max_duration = 60
 	var/robotic_surgery = FALSE
 
 /decl/surgery_step/internal/replace_organ/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
@@ -306,8 +306,8 @@
 		/obj/item/stack/cable_coil = 75,
 		/obj/item/tape_roll = 50
 	)
-	min_duration = 100
-	max_duration = 120
+	min_duration = 80
+	max_duration = 100
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_ROBOTIC | SURGERY_NO_STUMP | SURGERY_NEEDS_ENCASEMENT
 
 /decl/surgery_step/internal/attach_organ/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
@@ -398,8 +398,8 @@
 	can_infect = 0
 	blood_level = 0
 
-	min_duration = 50
-	max_duration = 60
+	min_duration = 40
+	max_duration = 50
 
 /decl/surgery_step/internal/treat_necrosis/pre_surgery_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/reagent_containers/container = tool

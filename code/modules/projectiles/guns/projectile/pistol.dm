@@ -8,7 +8,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp
 	allowed_magazines = /obj/item/ammo_magazine/scp
 	accuracy_power = 7
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
 	fire_delay = 5 //making it pretty shit
 	load_method = MAGAZINE
 	w_class = ITEM_SIZE_NORMAL

@@ -94,7 +94,7 @@
 		for(var/target in targets)
 			if(istype(target, /mob/living/carbon/human))
 				var/mob/living/carbon/human/human_trafficking = target
-				if(!computer.emagged())
+				if(!computer.computer_emagged)
 					last_comms = "SAFETY LOCK ENABLED: SENTIENT MATTER UNTRANSMITTABLE"
 					return
 				if(!human_trafficking.handcuffed) // To avoid accidents and generally unwanted behavior
@@ -113,7 +113,7 @@
 		for(var/target in targets)
 			if(istype(target, /mob/living/carbon/human))
 				var/mob/living/carbon/human/human_trafficking = target
-				if(!computer.emagged())
+				if(!computer.computer_emagged)
 					last_comms = "SAFETY LOCK ENABLED: SENTIENT MATTER UNTRANSMITTABLE"
 					return
 				if(!human_trafficking.handcuffed)

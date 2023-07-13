@@ -15,8 +15,8 @@
 	)
 	can_infect = 1
 	blood_level = 1
-	min_duration = 70
-	max_duration = 90
+	min_duration = 60
+	max_duration = 70
 	shock_level = 40
 	delicate = 1
 	surgery_candidate_flags = SURGERY_NO_CRYSTAL | SURGERY_NO_ROBOTIC | SURGERY_NO_STUMP | SURGERY_NEEDS_RETRACTED
@@ -58,8 +58,8 @@
 	)
 	can_infect = 1
 	blood_level = 1
-	min_duration = 70
-	max_duration = 90
+	min_duration = 60
+	max_duration = 70
 	shock_level = 40
 	delicate = 1
 	strict_access_requirement = FALSE
@@ -105,8 +105,8 @@
 	)
 	can_infect = 0
 	blood_level = 0
-	min_duration = 120
-	max_duration = 180
+	min_duration = 100
+	max_duration = 140
 	surgery_candidate_flags = 0
 
 /decl/surgery_step/hardsuit/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
@@ -160,8 +160,8 @@
 	)
 	can_infect = 0
 	blood_level = 0
-	min_duration = 50
-	max_duration = 60
+	min_duration = 40
+	max_duration = 50
 
 /decl/surgery_step/sterilize/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()

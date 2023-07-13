@@ -183,11 +183,10 @@
 
 	return tally
 
-/mob/living/simple_animal/Stat()
-	. = ..()
-
-	if(statpanel("Status") && show_stat_health)
-		stat(null, "Health: [round((health / maxHealth) * 100)]%")
+/mob/living/simple_animal/get_status_tab_items()
+	.=..()
+	if(show_stat_health)
+		. += "Health: [round((health / maxHealth) * 100)]%"
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!", show_dead_message)
 	. = ..(gibbed,deathmessage,show_dead_message)

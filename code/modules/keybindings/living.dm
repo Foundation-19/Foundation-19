@@ -34,7 +34,12 @@
 
 /datum/keybinding/living/drop_item/down(client/user)
 	var/mob/living/L = user.mob
-	L.drop_item()
+	var/obj/item/hand = L.get_active_hand()
+	if(!hand)
+		to_chat(L, "<span class='warning'>You have nothing to drop in your hand.</span>")
+	else if(hand.can_be_dropped_by_client(L))
+		L.drop_item()
+
 	return TRUE
 
 /datum/keybinding/living/aim_mode

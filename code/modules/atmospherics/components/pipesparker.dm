@@ -16,7 +16,7 @@
 
 	var/last_spark = 0
 	var/disabled = FALSE
-	var/obj/item/device/assembly/signaler/signaler = null
+	var/obj/item/device/assembly/signaller/signaler = null
 
 	uncreated_component_parts = list(
 		/obj/item/stock_parts/radio/receiver,
@@ -92,7 +92,7 @@
 		update_icon()
 		return
 
-	if (istype(W, /obj/item/device/assembly/signaler) && signaler == null)
+	if (istype(W, /obj/item/device/assembly/signaller) && signaler == null)
 		if (disabled)
 			to_chat(user, SPAN_WARNING("\The [src] is disabled!"))
 			return

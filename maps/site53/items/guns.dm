@@ -29,7 +29,7 @@
 	caliber = "9mm"
 	silenced = 0
 	fire_delay = 2
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/mk9
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
@@ -45,7 +45,16 @@
 	ammo_type = /obj/item/ammo_casing/a50
 	handle_casings = CYCLE_CASINGS
 
-
+/obj/item/gun/projectile/revolver/rhino
+	name = "rhino"
+	desc = "Standard issue Foundation revolver based on the Chiappa Rhino. Chambered in .9mm Parabellum"
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "rhino"
+	caliber = "9mm"
+	fire_delay = 6
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/a50
+	handle_casings = CYCLE_CASINGS
 
 /obj/item/gun/projectile/silenced
 	name = "silenced pistol"
@@ -55,7 +64,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	caliber = ".45"
 	silenced = 1
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 8)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
@@ -92,7 +101,7 @@
 	caliber = ".45"
 	silenced = 0
 	fire_delay = 3
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m1911
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
@@ -106,7 +115,7 @@
 	caliber = ".45"
 	silenced = 0
 	fire_delay = 3
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/usp45
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/usp45)

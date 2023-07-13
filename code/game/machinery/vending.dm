@@ -141,7 +141,8 @@
 /obj/machinery/vending/emag_act(var/remaining_charges, var/mob/user)
 	if (!emagged)
 		emagged = TRUE
-		wires.CutWireIndex(VENDING_WIRE_CONTRABAND, FALSE)
+		wires.on_cut(WIRE_CONTRABAND, FALSE)
+		wires.cut_wires |= WIRE_CONTRABAND
 		req_access.Cut()
 		SSnano.update_uis(src)
 		to_chat(user, "You short out the product lock on \the [src]")
@@ -656,7 +657,7 @@
 	base_type = /obj/machinery/vending/boozeomat
 
 /obj/machinery/vending/assist
-	products = list(	/obj/item/device/assembly/prox_sensor = 5,/obj/item/device/assembly/igniter = 3,/obj/item/device/assembly/signaler = 4,
+	products = list(	/obj/item/device/assembly/prox_sensor = 5,/obj/item/device/assembly/igniter = 3,/obj/item/device/assembly/signaller = 4,
 						/obj/item/wirecutters = 1)
 	contraband = list(/obj/item/device/flashlight = 5,/obj/item/device/assembly/timer = 2)
 	product_ads = "Only the finest!;Have some tools.;The most robust equipment.;The finest gear in space!"
@@ -664,7 +665,7 @@
 /obj/machinery/vending/assist/antag
 	name = "\improper AntagCorpVend"
 	contraband = list()
-	products = list(	/obj/item/device/assembly/prox_sensor = 5, /obj/item/device/assembly/signaler = 4,
+	products = list(	/obj/item/device/assembly/prox_sensor = 5, /obj/item/device/assembly/signaller = 4,
 						/obj/item/device/assembly/infra = 4, /obj/item/device/assembly/prox_sensor = 4,
 						/obj/item/handcuffs = 8, /obj/item/device/flash = 4, /obj/item/clothing/glasses/sunglasses = 4)
 
@@ -845,26 +846,26 @@
 					/obj/item/storage/cigpaper/filters = 5,
 					/obj/item/storage/cigpaper = 3,
 					/obj/item/storage/cigpaper/fancy = 2,
-					/obj/item/storage/chewables/rollable/bad = 2,
-					/obj/item/storage/chewables/rollable/generic = 2,
-					/obj/item/storage/chewables/rollable/fine = 2,
-					/obj/item/storage/fancy/cigarettes = 5,
-					/obj/item/storage/fancy/cigarettes/luckystars = 2,
-					/obj/item/storage/fancy/cigarettes/jerichos = 2,
-					/obj/item/storage/fancy/cigarettes/menthols = 2,
-					/obj/item/storage/fancy/cigarettes/carcinomas = 2,
-					/obj/item/storage/fancy/cigarettes/professionals = 2,
-					/obj/item/storage/fancy/cigarettes/cigarello = 2,
-					/obj/item/storage/fancy/cigarettes/cigarello/mint = 2,
-					/obj/item/storage/fancy/cigarettes/cigarello/variety = 2,
+					/obj/item/storage/chewables/rollable/bad = 4,
+					/obj/item/storage/chewables/rollable/generic = 3,
+					/obj/item/storage/chewables/rollable/fine = 3,
+					/obj/item/storage/fancy/cigarettes = 7,
+					/obj/item/storage/fancy/cigarettes/luckystars = 4,
+					/obj/item/storage/fancy/cigarettes/jerichos = 4,
+					/obj/item/storage/fancy/cigarettes/menthols = 4,
+					/obj/item/storage/fancy/cigarettes/carcinomas = 4,
+					/obj/item/storage/fancy/cigarettes/professionals = 4,
+					/obj/item/storage/fancy/cigarettes/cigarello = 4,
+					/obj/item/storage/fancy/cigarettes/cigarello/mint = 4,
+					/obj/item/storage/fancy/cigarettes/cigarello/variety = 4,
 					/obj/item/storage/box/matches = 10,
-					/obj/item/flame/lighter/random = 4,
-					/obj/item/storage/chewables/tobacco = 2,
-					/obj/item/storage/chewables/tobacco2 = 2,
-					/obj/item/storage/chewables/tobacco3 = 2,
+					/obj/item/flame/lighter/random = 6,
+					/obj/item/storage/chewables/tobacco = 3,
+					/obj/item/storage/chewables/tobacco2 = 3,
+					/obj/item/storage/chewables/tobacco3 = 3,
 					/obj/item/clothing/mask/smokable/ecig/simple = 10,
 					/obj/item/clothing/mask/smokable/ecig/util = 5,
-					/obj/item/clothing/mask/smokable/ecig/deluxe = 1,
+					/obj/item/clothing/mask/smokable/ecig/deluxe = 2,
 					/obj/item/reagent_containers/ecig_cartridge/med_nicotine = 10,
 					/obj/item/reagent_containers/ecig_cartridge/high_nicotine = 5,
 					/obj/item/reagent_containers/ecig_cartridge/orange = 5,
@@ -955,7 +956,7 @@
 	desc = "All the fine parts you need in one vending machine!"
 	base_type = /obj/machinery/vending/phoronresearch
 	products = list(/obj/item/clothing/suit/bio_suit = 6,/obj/item/clothing/head/bio_hood = 6,
-					/obj/item/device/transfer_valve = 6,/obj/item/device/assembly/timer = 6,/obj/item/device/assembly/signaler = 6,
+					/obj/item/device/transfer_valve = 6,/obj/item/device/assembly/timer = 6,/obj/item/device/assembly/signaller = 6,
 					/obj/item/device/assembly/prox_sensor = 6,/obj/item/device/assembly/igniter = 6)
 
 /obj/machinery/vending/wallmed1

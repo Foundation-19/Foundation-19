@@ -206,6 +206,10 @@
 			thermitemelt(user)
 			return
 
+		else if(istype(W, /obj/item/flame/lighter))
+			thermitemelt(user)
+			return
+
 	var/turf/T = user.loc	//get user's location for delay checks
 
 	var/damage = get_damage_value()

@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 /obj/item/tank/jetpack
 	name = "jetpack (empty)"
 	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution."
@@ -21,7 +19,7 @@
 
 /obj/item/tank/jetpack/Destroy()
 	qdel(ion_trail)
-	..()
+	return ..()
 
 /obj/item/tank/jetpack/examine(mob/living/user)
 	. = ..()

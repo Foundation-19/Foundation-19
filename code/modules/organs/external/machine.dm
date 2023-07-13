@@ -12,11 +12,11 @@
 	var/servo_cost = 0.8
 
 
-/obj/item/organ/internal/cell/New()
+/obj/item/organ/internal/cell/Initialize()
 	robotize()
 	if(ispath(cell))
 		cell = new cell(src)
-	..()
+	.=..()
 
 /obj/item/organ/internal/cell/proc/percent()
 	if(!cell)
@@ -117,8 +117,8 @@
 	stored_mmi = null
 	return ..()
 
-/obj/item/organ/internal/mmi_holder/New(var/mob/living/carbon/human/new_owner, var/internal)
-	..(new_owner, internal)
+/obj/item/organ/internal/mmi_holder/Initialize(mapload)
+	.=..()
 	if(!stored_mmi)
 		stored_mmi = new(src)
 	sleep(-1)

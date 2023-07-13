@@ -105,3 +105,71 @@
 	)
 	minimal_access = list()
 
+
+/datum/job/seniorroboticist
+	title = "Senior Robotics Technician"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 3
+	spawn_positions = 3
+	//supervisors = "the Research Director and anyone in a higher position than you"
+	economic_power = 4
+	alt_titles = list("Senior Exoskeleton Technician", "Senior Hardsuit Technician")
+	ideal_character_age = 22
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/seniorroboticist
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
+	access = list(
+		access_sci_comms,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4
+	)
+	minimal_access = list()
+
+/datum/job/roboticist
+	title = "Robotics Technician"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 3
+	spawn_positions = 3
+	//supervisors = "the Research Director and anyone in a higher position than you"
+	economic_power = 4
+	alt_titles = list("Exoskeleton Technician", "Hardsuit Technician")
+	minimal_player_age = 5
+	ideal_character_age = 22
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/roboticist
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
+	access = list(
+		access_sci_comms,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3
+	)
+	minimal_access = list()
+
+/datum/job/juniorroboticist
+	title = "Junior Robotics Technician"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 3
+	spawn_positions = 3
+	//supervisors = "the Research Director and anyone in a higher position than you"
+	economic_power = 4
+	alt_titles = list("Junior Exoskeleton Technician", "Junior Hardsuit Technician")
+	ideal_character_age = 22
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorroboticist
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	hud_icon = "hudresearchassistant"
+	access = list(
+		access_sci_comms,
+		access_sciencelvl1,
+		access_sciencelvl2
+	)
+	minimal_access = list()

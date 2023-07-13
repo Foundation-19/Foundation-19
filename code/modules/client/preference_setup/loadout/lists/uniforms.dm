@@ -3,7 +3,8 @@
 	slot = slot_w_uniform
 	category = /datum/gear/uniform
 	denied_roles = list(/datum/job/classd)
-	//Security shouldn't wear something else than their uniform
+	allowed_branches = list(/datum/mil_branch/civilian)
+	//Security shouldn't wear something else than their uniform, breaks uniformity and is too visible, goes with the poll. Like Class Ds, Guards should be at least somewhat uniformized especially corresponding to their zone.
 
 /datum/gear/uniform/jumpsuit
 	display_name = "jumpsuit, colour select"

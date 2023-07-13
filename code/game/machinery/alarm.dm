@@ -56,7 +56,7 @@
 	idle_power_usage = 80
 	active_power_usage = 1000 //For heating/cooling rooms. 1000 joules equates to about 1 degree every 2 seconds for a single tile of air.
 	power_channel = ENVIRON
-	req_access = list(list(access_atmospherics, access_engine_equip))
+	req_access = list(list(access_securitylvl1, access_atmospherics, access_engine_equip)) //access_securitylvl1 added since mapper air alarms have it configured.
 	clicksound = "button"
 	clickvol = 30
 
@@ -828,7 +828,7 @@
 					to_chat(user, "It does nothing")
 					return
 				else
-					if(allowed(usr) && !wires.IsIndexCut(AALARM_WIRE_IDSCAN))
+					if(allowed(usr) && !wires.is_cut(WIRE_IDSCAN))
 						locked = !locked
 						to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the Air Alarm interface.</span>")
 					else

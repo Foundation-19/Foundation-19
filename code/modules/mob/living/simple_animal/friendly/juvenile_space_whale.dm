@@ -35,8 +35,8 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/passive
 	say_list_type = /datum/say_list/juvenile_space_whale
 
-/mob/living/simple_animal/friendly/juvenile_space_whale/New()
-	..()
+/mob/living/simple_animal/friendly/juvenile_space_whale/Initialize()
+	. = ..()
 	var/mob/living/simple_animal/hostile/retaliate/space_whale/W = locate() in viewers(src, 7)
 	if(W && !parent && !W.baby)
 		W.baby = src

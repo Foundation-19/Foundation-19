@@ -4,8 +4,8 @@
 	channels = list ("Engineering" = TRUE)
 	networks = list(NETWORK_ENGINEERING)
 	subsystems = list(
-		/datum/nano_module/power_monitor,
-		/datum/nano_module/supermatter_monitor
+		/datum/tgui_module/power_monitor/robot,
+		/datum/tgui_module/supermatter_monitor/robot
 	)
 	sprites = list(
 		"Drone" = "drone-engineer",

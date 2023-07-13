@@ -63,3 +63,4 @@
 	l_hand = /obj/item/storage/bible
 	id_types = list(/obj/item/card/id/civilian/chaplain)
 	pda_type = /obj/item/modular_computer/pda/medical
+

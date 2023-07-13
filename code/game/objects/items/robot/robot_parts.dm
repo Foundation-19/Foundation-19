@@ -144,6 +144,11 @@
 			H.set_species(species)
 			H.fully_replace_character_name(name)
 
+			// Add languages to human. MMI's can understand robot talk, so should FBP.
+			H.add_language(LANGUAGE_ENGLISH)
+			H.add_language(LANGUAGE_ROBOT_GLOBAL)
+			H.add_language(LANGUAGE_EAL)
+
 			// Remove all external organs other than chest and head..
 			for (var/O in list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG))
 				var/obj/item/organ/external/organ = H.organs_by_name[O]

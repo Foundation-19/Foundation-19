@@ -109,3 +109,52 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
 	armor = list(melee = 100, bullet = 100, laser = 90, energy = 95, bomb = 90, bio = 90, rad = 0)
+
+/obj/item/clothing/head/hcz_hazmat
+	name = "combat hazmat helmet"
+	icon_state = "hcz-hazard-helmet"
+	item_state = "hcz-hazard-helmet"
+	desc = "A helmet that protects the head and face from biological comtaminants, high temperatures, and bullets."
+	permeability_coefficient = 0
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_SHIELDED,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_SHIELDED
+		)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_PHORONGUARD|ITEM_FLAG_AIRTIGHT
+	body_parts_covered = HEAD|FACE|EYES
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/suit/hcz_hazmat
+	name = "combat hazmat suit"
+	desc = "An armored suit that protects against biological contamination and high temperatures."
+	icon_state = "hcz-hazard"
+	item_state = "hcz-hazard"
+	w_class = ITEM_SIZE_HUGE
+	gas_transfer_coefficient = 0
+	permeability_coefficient = 0
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_PHORONGUARD|ITEM_FLAG_AIRTIGHT
+	allowed = list(/obj/item/tank/emergency,/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight,/obj/item/clothing/head/hcz_hazmat,/obj/item/clothing/mask/gas)
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_SHIELDED,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_SHIELDED
+		)
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+	siemens_coefficient = 0.9

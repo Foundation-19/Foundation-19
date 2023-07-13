@@ -4,10 +4,10 @@
 #define PSI_IMPLANT_LOG        "Log Incident"
 #define PSI_IMPLANT_DISABLED   "Disabled"
 
-#define PSI_COERCION           "coercion"
-#define PSI_PSYCHOKINESIS      "psychokinesis"
-#define PSI_REDACTION          "redaction"
-#define PSI_ENERGISTICS        "energistics"
+#define PSI_COERCION           "Coercion"
+#define PSI_PSYCHOKINESIS      "Psychokinesis"
+#define PSI_REDACTION          "Redaction"
+#define PSI_ENERGISTICS        "Energistics"
 
 #define PSI_RANK_BLUNT         0
 #define PSI_RANK_LATENT        1

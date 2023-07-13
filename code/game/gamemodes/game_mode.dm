@@ -27,7 +27,7 @@ var/global/list/additional_antag_types = list()
 	var/round_autoantag = FALSE              // Will this round attempt to periodically spawn more antagonists?
 	var/antag_scaling_coeff = 5              // Coefficient for scaling max antagonists to player count.
 	var/require_all_templates = FALSE        // Will only start if all templates are checked and can spawn.
-	var/addantag_allowed = ADDANTAG_ADMIN | ADDANTAG_AUTO
+	var/addantag_allowed = ADDANTAG_ADMIN
 
 	var/station_was_nuked = FALSE            // See nuclearbomb.dm and malfunction.dm.
 	var/explosion_in_progress = FALSE        // Sit back and relax
@@ -472,7 +472,7 @@ var/global/list/additional_antag_types = list()
 	msg += "</span>" // close the span from right at the top
 
 	for(var/mob/M in SSmobs.mob_list)
-		if(M.client && M.client.holder)
+		if(check_rights(R_ADMIN|R_MOD, FALSE, M))
 			to_chat(M, msg)
 
 /proc/show_objectives(var/datum/mind/player)

@@ -94,7 +94,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	H.mutations |= MUTATION_FERAL
 	H.mutations |= MUTATION_XRAY
 	H.mutations |= mNobreath //Byond doesn't like adding them all in one OR statement :(
-	H.verbs += /mob/living/carbon/proc/consume
+	add_verb(H, /mob/living/carbon/proc/consume)
 	H.move_intents = list(/decl/move_intent/creep) //Zooming days are over
 	H.a_intent = "harm"
 	H.move_intent = new /decl/move_intent/creep

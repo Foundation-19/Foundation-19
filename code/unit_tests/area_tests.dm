@@ -24,7 +24,7 @@
 
 		if(sub_area_turfs.len != expected_number_of_sub_areas)
 			incoherent_areas++
-			log_bad("[log_info_line(A)] is incoherent. Expected [expected_number_of_sub_areas] subarea\s, fill gave [sub_area_turfs.len]. Origin turfs:")
+			log_bad("INCOHERENT AREA: [log_info_line(A)] is incoherent. Expected [expected_number_of_sub_areas] subarea\s, fill gave [sub_area_turfs.len]. Origin turfs:")
 			for(var/T in sub_area_turfs)
 				log_bad(log_info_line(T))
 

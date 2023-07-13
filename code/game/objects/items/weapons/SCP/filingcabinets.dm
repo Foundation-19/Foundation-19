@@ -9,8 +9,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -28,8 +28,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -44,8 +44,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -60,8 +60,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -78,8 +78,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -104,8 +104,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -120,8 +120,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -136,8 +136,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -154,8 +154,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -171,8 +171,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -187,8 +187,8 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
@@ -203,7 +203,7 @@
 	desc = "A large cabinet with drawers."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE

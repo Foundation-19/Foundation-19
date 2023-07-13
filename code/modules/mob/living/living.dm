@@ -1,11 +1,24 @@
-/mob/living/New()
-	..()
+/mob/living/Initialize()
+	. = ..()
 	if(stat == DEAD)
 		add_to_dead_mob_list()
 	else
 		add_to_living_mob_list()
 
 	selected_image = image(icon('icons/misc/buildmode.dmi'), loc = src, icon_state = "ai_sel")
+
+	if(possession_candidate)
+		set_extension(src, /datum/extension/on_click/alt/ghost_admin_killer)
+
+	if (say_list_type)
+		say_list = new say_list_type(src)
+
+	if (ai_holder_type)
+		ai_holder = new ai_holder_type(src)
+		if (istype(src, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = src
+			H.InitializeHud()
+		ai_status_image = image('icons/misc/buildmode.dmi', src, "ai_0")
 
 /mob/living/examine(mob/user, distance, infix, suffix)
 	. = ..()

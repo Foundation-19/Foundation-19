@@ -7,6 +7,11 @@
   *
  **/
 
+//Init the debugger datum first so we can debug Master
+//You might wonder why not just create the debugger datum global in its own file, since its loaded way earlier than this DM file
+//Well for whatever reason then the Master gets created first and then the debugger when doing that
+//So thats why this code lives here now, until someone finds out how Byond inits globals
+GLOBAL_REAL(Debugger, /datum/debugger) = new
 //This is the ABSOLUTE ONLY THING that should init globally like this
 GLOBAL_REAL(Master, /datum/controller/master) = new
 
@@ -62,7 +67,16 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/static/current_ticklimit = TICK_LIMIT_RUNNING
 
 /datum/controller/master/New()
-	total_run_times = list()
+	if(!config)
+		config = new /datum/configuration()
+		config.load("config/config.txt")
+		config.load("config/game_options.txt","game_options")
+		if (GLOB.using_map?.config_path)
+			config.load(GLOB.using_map.config_path, "using_map")
+		config.load_text("config/motd.txt", "motd")
+		config.load_text("config/event.txt", "event")
+		config.loadsql("config/dbconfig.txt")
+		total_run_times = list()
 	// Highlander-style: there can only be one! Kill off the old and replace it with the new.
 	var/list/_subsystems = list()
 	subsystems = _subsystems
@@ -587,12 +601,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 
 /datum/controller/master/stat_entry()
-	if(!stat_line)
-		stat_line = new (null, src)
-
-	stat("Byond:", "(FPS:[world.fps]) (TickCount:[world.time/world.tick_lag]) (TickDrift:[round(Master.tickdrift,1)]([round((Master.tickdrift/(world.time/world.tick_lag))*100,0.1)]%))")
-	stat_line.name = "(TickRate:[Master.processing]) (Iteration:[Master.iteration])"
-	stat(name, stat_line)
+	return "(TickRate:[Master.processing]) (Iteration:[Master.iteration]) (TickLimit: [round(Master.current_ticklimit, 0.1)])"
 
 /datum/controller/master/StartLoadingMap()
 	//disallow more than one map to load at once, multithreading it will just cause race conditions

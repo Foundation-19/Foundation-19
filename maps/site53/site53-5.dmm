@@ -4,15 +4,11 @@
 /area/space)
 "b" = (
 /turf/unsimulated/wall/scp106,
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "c" = (
 /obj/scp106_random,
 /turf/unsimulated/floor/scp106,
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "d" = (
 /obj/structure/girder/cult{
 	name = "twisted blockade"
@@ -20,51 +16,37 @@
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "e" = (
 /turf/unsimulated/floor/scp106,
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "g" = (
 /obj/structure/closet/coffin,
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "h" = (
 /obj/scp106_random,
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "i" = (
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "j" = (
 /obj/machinery/door/unpowered/simple/cult,
 /turf/unsimulated/floor/scp106,
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 "k" = (
 /obj/structure/girder/cult{
 	name = "twisted blockade"
 	},
 /turf/unsimulated/floor/scp106,
-/area/pocketdimension{
-	name = "\improper Pocket Dimension"
-	})
+/area/pocketdimension)
 
 (1,1,1) = {"
 a

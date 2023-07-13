@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
-
 /obj/machinery/particle_accelerator/control_box
 	name = "Particle Accelerator Control Computer"
 	desc = "This controls the density of the particles."
@@ -88,17 +86,17 @@
 		return
 
 	if(href_list["togglep"])
-		if(!wires.IsIndexCut(PARTICLE_TOGGLE_WIRE))
+		if(!wires.is_cut(WIRE_PARTICLE_POWER))
 			src.toggle_power()
 	else if(href_list["scan"])
 		src.part_scan()
 
 	else if(href_list["strengthup"])
-		if(!wires.IsIndexCut(PARTICLE_STRENGTH_WIRE))
+		if(!wires.is_cut(WIRE_PARTICLE_STRENGTH))
 			add_strength()
 
 	else if(href_list["strengthdown"])
-		if(!wires.IsIndexCut(PARTICLE_STRENGTH_WIRE))
+		if(!wires.is_cut(WIRE_PARTICLE_STRENGTH))
 			remove_strength()
 
 	src.updateDialog()

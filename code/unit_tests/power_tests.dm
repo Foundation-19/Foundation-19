@@ -90,4 +90,3 @@
 	else
 		pass("All areas had accurate power use values.")
 	return 1
-	

@@ -182,20 +182,12 @@
 /datum/controller/subsystem/Initialize(start_timeofday)
 	// Stub, no default behavior here please.
 
-/datum/controller/subsystem/stat_entry(text)
-	if (!stat_line)
-		stat_line = new (null, src)
-	if (Master.initializing)
-		text = "[stat_entry_init()]\t[text]"
-		var/letter = init_state_letter()
-		if (letter)
-			text = "\[[letter]] [text]"
+/datum/controller/subsystem/stat_entry(msg)
+	if(can_fire && !(SS_NO_FIRE & flags))
+		msg = "[round(cost,1)]ms|[round(tick_usage,1)]%([round(tick_overrun,1)]%)|[round(ticks,0.1)]\t[msg]"
 	else
-		text = "[stat_entry_run()]\t[text]"
-		if (can_fire && !suspended && !(flags & SS_NO_FIRE))
-			text = "\[[state_letter()]] [text]"
-	stat_line.name = text
-	stat(name, stat_line)
+		msg = "OFFLINE\t[msg]"
+	return msg
 
 /datum/controller/subsystem/proc/stat_entry_init()
 	if (init_state == SS_INITSTATE_DONE)

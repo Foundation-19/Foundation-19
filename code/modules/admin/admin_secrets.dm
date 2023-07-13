@@ -116,7 +116,7 @@ var/datum/admin_secrets/admin_secrets = new()
 /datum/admin_secret_item/investigation
 	category = /datum/admin_secret_category/investigation
 	log = 0
-	permissions = R_INVESTIGATE
+	permissions = R_ADMIN|R_MOD
 
 /datum/admin_secret_item/fun_secret
 	category = /datum/admin_secret_category/fun_secrets

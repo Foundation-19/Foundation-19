@@ -1,3 +1,20 @@
+#define TICKET_AUTORESPONSE_IC_ISSUE "<b>This issue has been deemed an IC (In-Character) issue, and will not be handled by staff. In case it's relevant, you may wish to ask your <a href='https://scp13.miraheze.org/wiki/Rank'>Chain Of Command</a> about your issue if you believe <a href='https://scp13.miraheze.org/wiki/Foundation_Rules'>Foundation Law</a> has been broken.</b>"
+#define TICKET_AUTORESPONSE_BEING_HANDLED "<b>The issue is already being dealt with.</b>"
+#define TICKET_AUTORESPONSE_FIXED "<b>The issue is already fixed.</b>"
+#define TICKET_AUTORESPONSE_THANKS "<b>Have a SCP day!</b>"
+#define TICKET_AUTORESPONSE_REQUESTING_TO_BE_SCP "<b>Only under certain circumstances will an admin put you into special SCPs. Examples of these circumstances are: Imminent Test, gross negligence in containment, or an ongoing event. Do not repeatedly ask to become an SCP, as this might get you a mute.</b>"
+#define TICKET_AUTORESPONSE_BECOMING_AN_SCP "<b>In order to become a standard SCP, go to the Ghost verbs tab and click on 'Become Euclid/Keter SCP' or 'Become Safe SCP'. If an SCP is not occupied nor listed, it is most likely a special SCP that cannot be automatically joined as.</b>"
+#define TICKET_AUTORESPONSE_GITHUB_ISSUE "<b>Thanks for reporting this issue! Though, for maximum effectivity, please create an issue report on our <a href='https://github.com/Foundation-19/Foundation-19/issues'>GitHub</a>.</b>"
+#define TICKET_AUTORESPONSE_RUST_ENGINE "<b>The RUST Engine can be set up by finding the placed manual in the chamber area's, or alternatively you can visit <a href='https://bay.ss13.me/Guides/RUST'>the wiki guide on this engine</a>.</b>"
+#define TICKET_AUTORESPONSE_D_CLASS_RIOT "<b>D-Class may only riot with permission from a member of staff, and needs a good reason. If you wish to start a riot, you are to adminhelp again, outlining your reason. A member of staff will take your request under advisement.</b>"
+#define TICKET_AUTORESPONSE_D_CLASS_CELLS "<b>You can only get out if the on-duty guards feel like releasing you. It's best to wait and watch a YouTube video until such time.</b>"
+#define TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST "<b>If you are lost, it is best to keep an eye on directional signs, ask a fellow player or find Holomaps, if they have been added to the current map.</b>"
+#define TICKET_AUTORESPONSE_CHARACTER_SETUP "<b>In order to join the game, you are required to select a branch and rank, found in the top area of the character set up. Once you have done this, you can join the jobs that are allowed for that rank. It is best to experiment for a moment to see which rank suits you best, since some jobs allow multiple.</b>"
+#define TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD "<b>Hello, and welcome! Our website is located at: <a href='https://foundation-19.github.io/live/#'>https://foundation-19.github.io/live/</a> , our wiki is located at: <a href='https://scp13.miraheze.org/wiki'>https://scp13.miraheze.org/wiki</a>, our Discord is located at: <a href='https://discord.gg/xPxjQpp3Ud'>https://discord.gg/xPxjQpp3Ud</a> and our Patreon is located at: <a href='https://www.patreon.com/GSDR'>https://www.patreon.com/GSDR</a>. Hope to see you soon!</b>"
+
+#define TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE "<b>NOTICE: [FONT_COLORED(COLOR_RED, usr.key)] is autoresponding with [FONT_COLORED(COLOR_ISLAMIC_GREEN, choice)].</b>"
+
+
 /datum/admins/Topic(href, href_list)
 	..()
 
@@ -101,7 +118,7 @@
 		if(task == "add")
 			var/new_ckey = ckey(input(usr,"New admin's ckey","Admin ckey", null) as text|null)
 			if(!new_ckey)	return
-			if(new_ckey in admin_datums)
+			if(new_ckey in GLOB.admin_datums)
 				to_chat(usr, "<font color='red'>Error: Topic 'editrights': [new_ckey] is already an admin</font>")
 				return
 			adm_ckey = new_ckey
@@ -112,12 +129,12 @@
 				to_chat(usr, "<font color='red'>Error: Topic 'editrights': No valid ckey</font>")
 				return
 
-		var/datum/admins/D = admin_datums[adm_ckey]
+		var/datum/admins/D = GLOB.admin_datums[adm_ckey]
 
 		if(task == "remove")
 			if(alert("Are you sure you want to remove [adm_ckey]?","Message","Yes","Cancel") == "Yes")
 				if(!D)	return
-				admin_datums -= adm_ckey
+				GLOB.admin_datums -= adm_ckey
 				D.disassociate()
 
 				message_admins("[key_name_admin(usr)] removed [adm_ckey] from the admins list")
@@ -316,334 +333,13 @@
 		SSstatistics.add_field("ban_edit",1)
 		unbanpanel()
 
-	/////////////////////////////////////new ban stuff
-
-	else if(href_list["jobban2"])
-//		if(!check_rights(R_BAN))	return
-
-		var/mob/M = locate(href_list["jobban2"])
-		if(!ismob(M))
-			to_chat(usr, "This can only be used on instances of type /mob")
-			return
-
-		if(!(LAST_CKEY(M)))	//sanity
-			to_chat(usr, "This mob has no ckey")
-			return
-
-		var/dat = ""
-		var/header = "<head><title>Job-Ban Panel: [M.name]</title></head>"
-		var/body
-		var/jobs = ""
-
-	/***********************************WARNING!************************************
-				      The jobban stuff looks mangled and disgusting
-						      But it looks beautiful in-game
-						                -Nodrak
-	************************************WARNING!***********************************/
-		var/counter = 0
-//Regular jobs
-	//Command (Blue)
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr align='center' bgcolor='ccccff'><th colspan='[length(SSjobs.titles_by_department(COM))]'><a href='?src=\ref[src];jobban3=commanddept;jobban4=\ref[M]'>Command Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(COM))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				jobs += "</tr><tr>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Command Support (Sky Blue)
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='87ceeb'><th colspan='[length(SSjobs.titles_by_department(SPT))]'><a href='?src=\ref[src];jobban3=supportdept;jobban4=\ref[M]'>Command Support Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(SPT))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				jobs += "</tr><tr>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Security (Red)
-		counter = 0
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ffddf0'><th colspan='[length(SSjobs.titles_by_department(SEC))]'><a href='?src=\ref[src];jobban3=securitydept;jobban4=\ref[M]'>Security Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(SEC))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 5) //So things dont get squiiiiished!
-				jobs += "</tr><tr align='center'>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Engineering (Yellow)
-		counter = 0
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='fff5cc'><th colspan='[length(SSjobs.titles_by_department(ENG))]'><a href='?src=\ref[src];jobban3=engineeringdept;jobban4=\ref[M]'>Engineering Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(ENG))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 5) //So things dont get squiiiiished!
-				jobs += "</tr><tr align='center'>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Medical (White)
-		counter = 0
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ffeef0'><th colspan='[length(SSjobs.titles_by_department(MED))]'><a href='?src=\ref[src];jobban3=medicaldept;jobban4=\ref[M]'>Medical Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(MED))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 5) //So things dont get squiiiiished!
-				jobs += "</tr><tr align='center'>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Science (Purple)
-		counter = 0
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='e79fff'><th colspan='[length(SSjobs.titles_by_department(SCI))]'><a href='?src=\ref[src];jobban3=sciencedept;jobban4=\ref[M]'>Science Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(SCI))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 5) //So things dont get squiiiiished!
-				jobs += "</tr><tr align='center'>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Exploration (Pale Purple)
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='b784a7'><th colspan='[length(SSjobs.titles_by_department(EXP))]'><a href='?src=\ref[src];jobban3=explorationdept;jobban4=\ref[M]'>Exploration Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(EXP))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				jobs += "</tr><tr>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Service (Tea Green)
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='d0f0c0'><th colspan='[length(SSjobs.titles_by_department(SRV))]'><a href='?src=\ref[src];jobban3=servicedept;jobban4=\ref[M]'>Service Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(SRV))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				jobs += "</tr><tr>"
-				counter = 0
-		jobs += "</tr></table>"
-
-
-	//Supply (Khaki)
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='f0e68c'><th colspan='[length(SSjobs.titles_by_department(SUP))]'><a href='?src=\ref[src];jobban3=supplydept;jobban4=\ref[M]'>Supply Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(SUP))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				jobs += "</tr><tr>"
-				counter = 0
-		jobs += "</tr></table>"
-
-	//Civilian (Grey)
-		counter = 0
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='dddddd'><th colspan='[length(SSjobs.titles_by_department(CIV))]'><a href='?src=\ref[src];jobban3=civiliandept;jobban4=\ref[M]'>Civilian Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(CIV))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 5) //So things dont get squiiiiished!
-				jobs += "</tr><tr align='center'>"
-				counter = 0
-
-		if(jobban_isbanned(M, "Internal Affairs Agent"))
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=Internal Affairs Agent;jobban4=\ref[M]'><font color=red>Internal Affairs Agent</font></a></td>"
-		else
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=Internal Affairs Agent;jobban4=\ref[M]'>Internal Affairs Agent</a></td>"
-
-		jobs += "</tr></table>"
-
-	//Non-Human (Green)
-		counter = 0
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ccffcc'><th colspan='[length(SSjobs.titles_by_department(MSC))+1]'><a href='?src=\ref[src];jobban3=nonhumandept;jobban4=\ref[M]'>Non-human Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(MSC))
-			if(!jobPos)	continue
-			var/datum/job/job = SSjobs.get_by_title(jobPos)
-			if(!job) continue
-
-			if(jobban_isbanned(M, job.title))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
-				counter++
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
-				counter++
-
-			if(counter >= 5) //So things dont get squiiiiished!
-				jobs += "</tr><tr align='center'>"
-				counter = 0
-
-		//pAI isn't technically a job, but it goes in here.
-
-		if(jobban_isbanned(M, "pAI"))
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=pAI;jobban4=\ref[M]'><font color=red>pAI</font></a></td>"
-		else
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=pAI;jobban4=\ref[M]'>pAI</a></td>"
-		if(jobban_isbanned(M, "AntagHUD"))
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=AntagHUD;jobban4=\ref[M]'><font color=red>AntagHUD</font></a></td>"
-		else
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=AntagHUD;jobban4=\ref[M]'>AntagHUD</a></td>"
-		jobs += "</tr></table>"
-
-	//Antagonist (Orange)
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ffeeaa'><th colspan='10'><a href='?src=\ref[src];jobban3=Syndicate;jobban4=\ref[M]'>Antagonist Positions</a></th></tr><tr align='center'>"
-
-		// Antagonists.
-		#define ANTAG_COLUMNS 5
-		var/list/all_antag_types = GLOB.all_antag_types_
-		var/i = 1
-		for(var/antag_type in all_antag_types)
-			var/datum/antagonist/antag = all_antag_types[antag_type]
-			if(!antag || !antag.id)
-				continue
-			if(jobban_isbanned(M, "[antag.id]"))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[antag.id];jobban4=\ref[M]'><font color=red>[replacetext("[antag.role_text]", " ", "&nbsp")]</font></a></td>"
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[antag.id];jobban4=\ref[M]'>[replacetext("[antag.role_text]", " ", "&nbsp")]</a></td>"
-			if(i % ANTAG_COLUMNS == 0 && i < length(all_antag_types))
-				jobs += "</tr><tr align='center'>"
-			i++
-		jobs += "</tr></table>"
-		#undef ANTAG_COLUMNS
-
-		var/list/misc_roles = list("Dionaea", "Graffiti")
-		//Other roles  (BLUE, because I have no idea what other color to make this)
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ccccff'><th colspan='[LAZYLEN(misc_roles)]'>Other Roles</th></tr><tr align='center'>"
-		for(var/entry in misc_roles)
-			if(jobban_isbanned(M, entry))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[entry];jobban4=\ref[M]'><font color=red>[entry]</font></a></td>"
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[entry];jobban4=\ref[M]'>[entry]</a></td>"
-		jobs += "</tr></table>"
-
-	// Channels
-		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		var/list/channels = decls_repository.get_decls_of_subtype(/decl/communication_channel)
-		jobs += "<tr bgcolor='ccccff'><th colspan='[LAZYLEN(channels)]'>Channel Bans</th></tr><tr align='center'>"
-		for(var/channel_type in channels)
-			var/decl/communication_channel/channel = channels[channel_type]
-			if(jobban_isbanned(M, channel.name))
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[channel.name];jobban4=\ref[M]'><font color=red>[channel.name]</font></a></td>"
-			else
-				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[channel.name];jobban4=\ref[M]'>[channel.name]</a></td>"
-		jobs += "</tr></table>"
-
-	// Finalize and display.
-		body = "<body>[jobs]</body>"
-		dat = "<tt>[header][body]</tt>"
-		show_browser(usr, dat, "window=jobban2;size=800x490")
-		return
-
 	//JOBBAN'S INNARDS
-	else if(href_list["jobban3"])
-		if(!check_rights(R_ADMIN,0))
+	else if(href_list["jobban1"])
+		if(!check_rights(R_BAN,0))
 			to_chat(usr, "<span class='warning'>You do not have the appropriate permissions to add job bans!</span>")
 			return
 
-		var/mob/M = locate(href_list["jobban4"])
+		var/mob/M = locate(href_list["jobban2"])
 		if(!ismob(M))
 			to_chat(usr, "This can only be used on instances of type /mob")
 			return
@@ -655,70 +351,70 @@
 
 		//get jobs for department if specified, otherwise just returnt he one job in a list.
 		var/list/job_list = list()
-		switch(href_list["jobban3"])
+		switch(href_list["jobban1"])
 			if("commanddept")
-				for(var/jobPos in SSjobs.titles_by_department(COM))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(COM))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("supportdept")
-				for(var/jobPos in SSjobs.titles_by_department(SPT))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(SPT))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("securitydept")
-				for(var/jobPos in SSjobs.titles_by_department(SEC))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(SEC))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("engineeringdept")
-				for(var/jobPos in SSjobs.titles_by_department(ENG))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(ENG))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("medicaldept")
-				for(var/jobPos in SSjobs.titles_by_department(MED))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(MED))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("sciencedept")
-				for(var/jobPos in SSjobs.titles_by_department(SCI))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(SCI))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("explorationdept")
-				for(var/jobPos in SSjobs.titles_by_department(EXP))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(EXP))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("servicedept")
-				for(var/jobPos in SSjobs.titles_by_department(SRV))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(SRV))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("supplydept")
-				for(var/jobPos in SSjobs.titles_by_department(SUP))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(SUP))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("civiliandept")
-				for(var/jobPos in SSjobs.titles_by_department(CIV))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(CIV))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
 			if("nonhumandept")
 				job_list += "pAI"
-				for(var/jobPos in SSjobs.titles_by_department(MSC))
+				for(var/jobPos in SSjobs.distinct_titles_by_department(MSC))
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
@@ -731,7 +427,7 @@
 					if(!temp) continue
 					job_list += temp.id
 			else
-				job_list += href_list["jobban3"]
+				job_list += href_list["jobban1"]
 
 		//Create a list of unbanned jobs within job_list
 		var/list/notbannedlist = list()
@@ -774,7 +470,7 @@
 					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 					to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 					to_chat(M, "<span class='warning'>This jobban will be lifted in [mins_readable].</span>")
-					href_list["jobban2"] = 1 // lets it fall through and refresh
+					job_ban(M) // lets it fall through and refresh
 					return 1
 				if("No")
 					if(!check_rights(R_BAN))  return
@@ -795,7 +491,7 @@
 						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 						to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 						to_chat(M, "<span class='warning'>Jobban can be lifted only upon request.</span>")
-						href_list["jobban2"] = 1 // lets it fall through and refresh
+						job_ban(M) // lets it fall through and refresh
 						return 1
 				if("Cancel")
 					return
@@ -826,11 +522,13 @@
 			if(msg)
 				message_admins("[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg]", 1)
 				to_chat(M, "<span class='danger'>You have been un-jobbanned by [usr.client.ckey] from [msg].</span>")
-				href_list["jobban2"] = 1 // lets it fall through and refresh
+				job_ban(M) // lets it fall through and refresh
 			return 1
 		return 0 //we didn't do anything!
 
 	else if(href_list["boot2"])
+		if(!check_rights(R_ADMIN|R_MOD))
+			return
 		var/mob/M = locate(href_list["boot2"])
 		if (ismob(M))
 			if(!check_if_greater_rights_than(M.client))
@@ -1349,6 +1047,79 @@
 
 		ticket.take(client_repository.get_lite_client(usr.client))
 
+	else if(href_list["autoresponse"])
+
+		var/mob/ref_person = locate(href_list["autoresponse"])
+		if(!ref_person || !istype(ref_person) || !ref_person.client)
+			to_chat(usr, "\blue Looks like that person stopped existing!")
+			return
+		var/client/ref_client = ref_person.client
+
+		var/datum/ticket/ticket = get_open_ticket_by_client(ref_client)
+		if(ticket && ticket.assigned_admins.len)
+			to_chat(usr, "<b>This adminhelp is already being handled, but continue if you wish.</b>")
+			if(alert(usr, "Are you sure you want to autoreply to this marked adminhelp?", "Confirmation", "Yes", "No") == "No")
+				return
+		else if (!ticket)
+			to_chat(usr, "<b>This ticket no longer exists.</b>")
+			return
+		ticket.take(client_repository.get_lite_client(usr.client))
+
+		var/list/choicelist = list("--CANCEL--",
+									"IC Issue",
+									"Being Handled",
+									"Fixed","Thanks!",
+									"L: GitHub Issue",
+									"A: Requesting to be an SCP",
+									"A: Becoming an SCP",
+									"L: RUST Engine",
+									"A: D-Class Riot",
+									"A: D-Class Cells",
+									"A: Directions/Lost",
+									"A: Character setup",
+									"L: Website and Discord information")
+
+		var/choice = input("Which autoresponse option do you want to send to the player?\n\n L - A webpage link.\n A - An answer to a common question.", "Autoresponse", "--CANCEL--") in choicelist
+
+		var/msgplayer
+		switch(choice)
+			if("IC Issue")
+				msgplayer = TICKET_AUTORESPONSE_IC_ISSUE
+			if("Being Handled")
+				msgplayer = TICKET_AUTORESPONSE_BEING_HANDLED
+			if("Fixed")
+				msgplayer = TICKET_AUTORESPONSE_FIXED
+			if("Thanks!")
+				msgplayer = TICKET_AUTORESPONSE_THANKS
+			if("A: Requesting to be an SCP")
+				msgplayer = TICKET_AUTORESPONSE_REQUESTING_TO_BE_SCP
+			if("A: Becoming an SCP")
+				msgplayer = TICKET_AUTORESPONSE_BECOMING_AN_SCP
+			if("L: GitHub Issue")
+				msgplayer = TICKET_AUTORESPONSE_GITHUB_ISSUE
+			if("L: RUST Engine")
+				msgplayer = TICKET_AUTORESPONSE_RUST_ENGINE
+			if("A: D-Class Riot")
+				msgplayer = TICKET_AUTORESPONSE_D_CLASS_RIOT
+			if("A: D-Class Cells")
+				msgplayer = TICKET_AUTORESPONSE_D_CLASS_CELLS
+			if("A: Directions/Lost")
+				msgplayer = TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST
+			if("A: Character setup")
+				msgplayer = TICKET_AUTORESPONSE_CHARACTER_SETUP
+			if("L: Website and Discord information")
+				msgplayer = TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD
+			else return
+
+		var/staff_message = "[usr.key] is autoresponding to [ref_client.key] with [FONT_COLORED(COLOR_ISLAMIC_GREEN, choice)]."
+		message_staff(staff_message, 1)
+		ticket.msgs += new /datum/ticket_msg(usr.ckey, ref_client.ckey, staff_message)
+		to_chat(ref_client, TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE)
+		to_chat(ref_client, msgplayer)
+		if(ref_client.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
+			sound_to(ref_client, 'sound/effects/adminhelp-reply.ogg')
+		ticket.close(client_repository.get_lite_client(usr.client))
+
 	else if(href_list["adminplayerobservecoodjump"])
 		if(!check_rights(R_ADMIN))	return
 
@@ -1588,7 +1359,7 @@
 		usr.client.sendmob(M)
 
 	else if(href_list["narrateto"])
-		if(!check_rights(R_INVESTIGATE))	return
+		if(!check_rights(R_ADMIN|R_MOD))	return
 
 		var/mob/M = locate(href_list["narrateto"])
 		usr.client.cmd_admin_direct_narrate(M)
@@ -1607,7 +1378,7 @@
 		show_traitor_panel(M)
 
 	else if(href_list["skillpanel"])
-		if(!check_rights(R_INVESTIGATE))
+		if(!check_rights(R_ADMIN|R_MOD))
 			return
 
 		if(GAME_STATE < RUNLEVEL_GAME)
@@ -1960,24 +1731,6 @@
 			if(href_list["vsc"] == "default")
 				vsc.SetDefault(usr)
 
-	else if(href_list["toglang"])
-		if(check_rights(R_SPAWN))
-			var/mob/M = locate(href_list["toglang"])
-			if(!istype(M))
-				to_chat(usr, "[M] is illegal type, must be /mob!")
-				return
-			var/lang2toggle = href_list["lang"]
-			var/datum/language/L = all_languages[lang2toggle]
-
-			if(L in M.languages)
-				if(!M.remove_language(lang2toggle))
-					to_chat(usr, "Failed to remove language '[lang2toggle]' from \the [M]!")
-			else
-				if(!M.add_language(lang2toggle))
-					to_chat(usr, "Failed to add language '[lang2toggle]' from \the [M]!")
-
-			show_player_panel(M)
-
 	else if(href_list["paralyze"])
 		var/mob/M = locate(href_list["paralyze"])
 		paralyze_mob(M)
@@ -2058,6 +1811,76 @@
 		show_player_panel(M)
 
 
+
+	if(href_list["say"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["say"])
+
+
+		for(var/log in C.say_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["ooc"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["ooc"])
+
+
+		for(var/log in C.ooc_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["emote"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["emote"])
+
+
+		for(var/log in C.emote_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["dsay"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["dsay"])
+
+
+		for(var/log in C.dsay_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["interact"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["interact"])
+
+
+		for(var/log in C.interact_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	// Now isn't that much better? IT IS NOW A PROC, i.e. kinda like a big panel like unstable
+	else if(href_list["playerpanelextended"])
+		player_panel_extended()
+
 /mob/living/proc/can_centcom_reply()
 	return 0
 
@@ -2106,3 +1929,19 @@
 	if(holder)
 		var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 		return admin_jump_link(target, src, delimiter, prefix, sufix, short_links)
+
+
+#undef TICKET_AUTORESPONSE_IC_ISSUE
+#undef TICKET_AUTORESPONSE_BEING_HANDLED
+#undef TICKET_AUTORESPONSE_FIXED
+#undef TICKET_AUTORESPONSE_THANKS
+#undef TICKET_AUTORESPONSE_REQUESTING_TO_BE_SCP
+#undef TICKET_AUTORESPONSE_BECOMING_AN_SCP
+#undef TICKET_AUTORESPONSE_GITHUB_ISSUE
+#undef TICKET_AUTORESPONSE_RUST_ENGINE
+#undef TICKET_AUTORESPONSE_D_CLASS_RIOT
+#undef TICKET_AUTORESPONSE_D_CLASS_CELLS
+#undef TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST
+#undef TICKET_AUTORESPONSE_CHARACTER_SETUP
+#undef TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD
+#undef TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE

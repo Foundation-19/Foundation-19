@@ -1,4 +1,4 @@
-﻿Contents:
+Contents:
 1. Legal shit
 2. Usage
 

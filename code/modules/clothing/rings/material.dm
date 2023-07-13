@@ -36,7 +36,7 @@
 				user.examinate(src)
 				return TOPIC_HANDLED
 
-/obj/item/clothing/ring/material/get_examine_line()
+/obj/item/clothing/ring/material/get_examine_line(mob/user)
 	. = ..()
 	. += " <a href='?src=\ref[src];examine=1'>\[View\]</a>"
 

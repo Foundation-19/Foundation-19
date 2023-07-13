@@ -1,3 +1,4 @@
+GLOBAL_LIST_INIT(all_psionics_faculty, list(PSI_COERCION, PSI_PSYCHOKINESIS, PSI_REDACTION, PSI_ENERGISTICS))
 GLOBAL_LIST_INIT(psychic_ranks_to_strings, list("Latent", "Operant", "Masterclass", "Grandmasterclass", "Paramount"))
 
 PROCESSING_SUBSYSTEM_DEF(psi)

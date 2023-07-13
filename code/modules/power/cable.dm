@@ -99,7 +99,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		user.examinate(src)
 		// following code taken from attackby (multitool)
 		if(powernet && (powernet.avail > 0))
-			to_chat(user, "<span class='warning'>[get_wattage()] in power network.</span>")
+			to_chat(user, SPAN_WARNING("[get_wattage()] in power network."))
 		else
 			to_chat(user, "<span class='warning'>The cable is not powered.</span>")
 	return

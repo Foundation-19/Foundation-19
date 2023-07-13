@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/tunic
 	name = "researcher's tunic"
-	desc = "A fashionable tunic that EXO provides to their lab workers."
+	desc = "A fashionable tunic that the SCP Foundation provides to their lab workers."
 	icon_state = "tunic"
 
 

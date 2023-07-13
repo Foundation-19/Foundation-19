@@ -14,10 +14,8 @@ SUBSYSTEM_DEF(ai)
 	var/list/processing = list()
 	var/list/currentrun = list()
 
-/datum/controller/subsystem/ai/stat_entry(msg_prefix)
-	var/list/msg = list(msg_prefix)
-	msg += "P:[processing.len]"
-	..(msg.Join())
+/datum/controller/subsystem/ai/stat_entry(msg)
+	.=..("[msg] P:[processing.len]")
 
 /datum/controller/subsystem/ai/fire(resumed = 0)
 	if (!resumed)

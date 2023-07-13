@@ -57,6 +57,24 @@
 	glass_name = "berry juice"
 	glass_desc = "Berry juice. Or maybe it's jam. Who cares?"
 
+/datum/reagent/drink/juice/blackberry
+	name = "Blackberry Juice"
+	description = "Juice made from several thousand blackberries, probably."
+	taste_description = "blackberry"
+	color = "#8e0baf"
+
+	glass_name = "blackberry juice"
+	glass_desc = "Its blackberry juice."
+
+/datum/reagent/drink/juice/blueraz
+	name = "Blue Razberry"
+	description = "An artifical fruit flavor created by man himself. "
+	taste_description = "blue razberry"
+	color = "#1408b8"
+
+	glass_name = "blue razberry juice"
+	glass_desc = "Are blue razberries an scp?"
+
 /datum/reagent/drink/juice/carrot
 	name = "Carrot juice"
 	description = "It is just like a carrot but without crunching."
@@ -70,6 +88,14 @@
 	..()
 	M.reagents.add_reagent(/datum/reagent/medicine/imidazoline, removed * 0.2)
 
+/datum/reagent/drink/juice/euclid
+	name = "Eculid Berry Juice"
+	description = "Not safe enough for the normal population"
+	taste_description = "redacted"
+	color = "#FFFCFF" // rgb: 255, 140, 0
+
+	glass_name = "euclid berry juice"
+	glass_desc = "Safely contained in a glass."
 /datum/reagent/drink/juice/grape
 	name = "Grape Juice"
 	description = "It's grrrrrape!"
@@ -78,7 +104,14 @@
 
 	glass_name = "grape juice"
 	glass_desc = "It's grrrrrape!"
+/datum/reagent/drink/juice/keter
+	name = "Keter Berry Juice"
+	description = "A dangerous drink for dangerous people"
+	taste_description = "expunged"
+	color = "#EF1212" // rgb: 255, 140, 0
 
+	glass_name = "keter berry juice"
+	glass_desc = "This juice could break out of the glass at any moment."
 /datum/reagent/drink/juice/lemon
 	name = "Lemon Juice"
 	description = "This juice is VERY sour."

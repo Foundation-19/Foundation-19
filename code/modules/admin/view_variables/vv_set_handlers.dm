@@ -132,3 +132,11 @@
 	var/new_falloff = variable == "light_falloff_curve" ? var_value : A.light_falloff_curve
 
 	A.set_light(new_max, new_inner, new_outer, new_falloff)
+
+/decl/vv_set_handler/tgui_window_handler
+	handled_type = /datum/tgui_window
+	handled_vars = list("id")
+
+//You cant change this!
+/decl/vv_set_handler/light_handler/handle_set_var(var/atom/A, variable, var_value, client)
+	return

@@ -18,10 +18,10 @@
 	var/global/list/mob/living/carbon/next_braindamage_stage = list()
 	var/global/list/mob/living/carbon/braindamage_stage = list()
 	var/global/list/mob/living/carbon/wake_up_timing = list()
-	var/static/list/paranoia_messages = list("You feel as if something is watching you...", "It feels as if something is stalking you")
+	var/static/list/paranoia_messages = list("You feel as if something is watching you...", "It feels as if something is stalking you...")
 	var/static/list/assault_messages = list("A horrifying monster attacks you, before running off!", "You are bolted awake by a horrifying entity attacking you!")
-	var/static/list/spook_messages = list("You see a disturbing entity lingering in your peripheral vision", "You swear you can see an abomination lurking...",
-		"A strange entity stares at you, and sends chiils to your very core.")
+	var/static/list/spook_messages = list("You see a disturbing entity lingering in your peripheral vision.", "You swear you can see an abomination lurking...",
+		"A strange entity stares at you, sending chills to your very core.")
 	var/static/list/insomnia_messages = list("You feel so tired... but you can't sleep.", "You feel like... like.... sleep is.... can't.... sleep....")
 
 /obj/item/scp513/Initialize()

@@ -8,19 +8,19 @@ var/global/floorIsLava = 0
 	msg = "<span class=\"log_message\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
-		if(R_ADMIN & C.holder.rights)
+		if(check_rights(R_ADMIN, FALSE, C))
 			to_chat(C, msg)
 /proc/message_staff(var/msg)
 	msg = "<span class=\"log_message\"><span class=\"prefix\">STAFF LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
-		if(C?.holder && (R_INVESTIGATE & C.holder.rights))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 			to_chat(C, msg)
 /proc/msg_admin_attack(var/text) //Toggleable Attack Messages
 	log_attack(text)
 	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	for(var/client/C in GLOB.admins)
-		if(check_rights(R_INVESTIGATE, 0, C))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				var/msg = rendered
 				to_chat(C, msg)
@@ -29,229 +29,6 @@ var/global/floorIsLava = 0
 		if(check_rights(rights, 0, M))
 			to_chat(M, message)
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
-
-/datum/admins/proc/show_player_panel(var/mob/M in SSmobs.mob_list)
-	set category = null
-	set name = "Show Player Panel"
-	set desc="Edit player (respawn, ban, heal, etc)"
-
-	if(!M)
-		to_chat(usr, "You seem to be selecting a mob that doesn't exist anymore.")
-		return
-	if (!istype(src,/datum/admins))
-		src = usr.client.holder
-	if (!istype(src,/datum/admins))
-		to_chat(usr, "Error: you are not an admin!")
-		return
-
-	var/body = "<html><head><title>Options for [M.key]</title></head>"
-	body += "<body>Options panel for <b>[M]</b>"
-	var/last_ckey = LAST_CKEY(M)
-	if(M.client)
-		body += " played by <b>[M.client]</b> "
-		body += "\[<A href='?src=\ref[src];editrights=show'>[M.client.holder ? M.client.holder.rank : "Player"]</A>\]"
-	else if(last_ckey)
-		body += " (last occupied by ckey <b>[last_ckey]</b>)"
-
-	if(istype(M, /mob/new_player))
-		body += " <B>Hasn't Entered Game</B> "
-	else
-		body += " \[<A href='?src=\ref[src];revive=\ref[M]'>Heal</A>\] "
-
-	var/mob/living/exosuit/E = M
-	if(istype(E) && E.pilots)
-		body += "<br><b>Exosuit pilots:</b><br>"
-		for(var/mob/living/pilot in E.pilots)
-			body += "[pilot] "
-			body += " \[<A href='?src=\ref[src];pilot=\ref[pilot]'>link</a>\]<br>"
-
-	body += {"
-		<br><br>\[
-		<a href='?_src_=vars;Vars=\ref[M]'>VV</a> -
-		<a href='?src=\ref[src];traitor=\ref[M]'>TP</a> -
-		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
-		<a href='?src=\ref[src];narrateto=\ref[M]'>DN</a> -
-		[admin_jump_link(M, src)]\] <br>
-		<b>Mob type:</b> [M.type]<br>
-		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
-		<A href='?src=\ref[src];paralyze=\ref[M]'>PARALYZE</A> |
-		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
-		<A href='?_src_=holder;warn=[last_ckey]'>Warn</A> |
-		<A href='?src=\ref[src];newban=\ref[M];last_key=[last_ckey]'>Ban</A> |
-		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
-		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A>
-	"}
-
-	if(M.client)
-		body += "| <A HREF='?src=\ref[src];sendtoprison=\ref[M]'>Prison</A> | "
-		body += "<A HREF='?src=\ref[src];reloadsave=\ref[M]'>Reload Save</A> | "
-		body += "<A HREF='?src=\ref[src];reloadchar=\ref[M]'>Reload Character</A> | "
-		var/muted = M.client.prefs.muted
-		body += {"<br><b>Mute: </b>
-			\[<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC)?"red":"blue"]'>IC</font></a> |
-			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_OOC]'><font color='[(muted & MUTE_OOC)?"red":"blue"]'>OOC</font></a> |
-			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_AOOC]'><font color='[(muted & MUTE_AOOC)?"red":"blue"]'>AOOC</font></a> |
-			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY)?"red":"blue"]'>PRAY</font></a> |
-			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP)?"red":"blue"]'>ADMINHELP</font></a> |
-			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT)?"red":"blue"]'>DEADCHAT</font></a>\] |
-			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_MENTOR]'><font_color='[(muted & MUTE_MENTOR)?"red":"blue"]'MENTOR</font></a>\]
-			(<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL)?"red":"blue"]'>toggle all</font></a>)
-		"}
-		body += "<br><br><b>Staff Warning:</b> [M.client.staffwarn ? M.client.staffwarn : "No"]<br>"
-		if (!M.client.staffwarn)
-			body += "<A href='?src=\ref[src];setstaffwarn=\ref[M]'>Set StaffWarn</A>"
-		else
-			body += "<A href='?src=\ref[src];removestaffwarn=\ref[M]'>Remove StaffWarn</A>"
-
-	body += {"<br><br>
-		<A href='?src=\ref[src];jumpto=\ref[M]'><b>Jump to</b></A> |
-		<A href='?src=\ref[src];getmob=\ref[M]'>Get</A> |
-		<A href='?src=\ref[src];sendmob=\ref[M]'>Send To</A>
-		<br><br>
-		[check_rights(R_ADMIN|R_MOD,0) ? "<A href='?src=\ref[src];traitor=\ref[M]'>Traitor panel</A> | " : "" ]
-		[check_rights(R_INVESTIGATE,0) ? "<A href='?src=\ref[src];skillpanel=\ref[M]'>Skill panel</A>" : "" ]
-	"}
-
-	if(M.mind)
-		body += "<br><br>"
-		body += "<b>Goals:</b>"
-		body += "<br>"
-		body += "[jointext(M.mind.summarize_goals(FALSE, TRUE, src), "<br>")]"
-		body += "<br>"
-		body += "<a href='?src=\ref[M.mind];add_goal=1'>Add Random Goal</a>"
-
-	body += "<br><br>"
-	body += "<b>Psionics:</b><br/>"
-	if(isliving(M))
-		var/mob/living/psyker = M
-		if(psyker.psi)
-			body += "<a href='?src=\ref[psyker.psi];remove_psionics=1'>Remove psionics.</a><br/><br/>"
-			body += "<a href='?src=\ref[psyker.psi];trigger_psi_latencies=1'>Trigger latencies.</a><br/>"
-		body += "<table width = '100%'>"
-		for(var/faculty in list(PSI_COERCION, PSI_PSYCHOKINESIS, PSI_REDACTION, PSI_ENERGISTICS))
-			var/decl/psionic_faculty/faculty_decl = SSpsi.get_faculty(faculty)
-			var/faculty_rank = psyker.psi ? psyker.psi.get_rank(faculty) : 0
-			body += "<tr><td><b>[faculty_decl.name]</b></td>"
-			for(var/i = 1 to LAZYLEN(GLOB.psychic_ranks_to_strings))
-				var/psi_title = GLOB.psychic_ranks_to_strings[i]
-				if(i == faculty_rank)
-					psi_title = "<b>[psi_title]</b>"
-				body += "<td><a href='?src=\ref[psyker.mind];set_psi_faculty_rank=[i];set_psi_faculty=[faculty]'>[psi_title]</a></td>"
-			body += "</tr>"
-		body += "</table>"
-
-	if (M.client)
-		if(!istype(M, /mob/new_player))
-			body += "<br><br>"
-			body += "<b>Transformation:</b>"
-			body += "<br>"
-
-			//Monkey
-			if(issmall(M))
-				body += "<B>Monkeyized</B> | "
-			else
-				body += "<A href='?src=\ref[src];monkeyone=\ref[M]'>Monkeyize</A> | "
-
-			//Corgi
-			if(iscorgi(M))
-				body += "<B>Corgized</B> | "
-			else
-				body += "<A href='?src=\ref[src];corgione=\ref[M]'>Corgize</A> | "
-
-			//AI / Cyborg
-			if(isAI(M))
-				body += "<B>Is an AI</B> "
-			else if(ishuman(M))
-				body += {"<A href='?src=\ref[src];makeai=\ref[M]'>Make AI</A> |
-					<A href='?src=\ref[src];makerobot=\ref[M]'>Make Robot</A> |
-					<A href='?src=\ref[src];makealien=\ref[M]'>Make Alien</A> |
-					<A href='?src=\ref[src];makeslime=\ref[M]'>Make Slime</A> |
-					<A href='?src=\ref[src];makezombie=\ref[M]'>Make Zombie</A> |
-				"}
-
-			//Simple Animals
-			if(isanimal(M))
-				body += "<A href='?src=\ref[src];makeanimal=\ref[M]'>Re-Animalize</A> | "
-			else
-				body += "<A href='?src=\ref[src];makeanimal=\ref[M]'>Animalize</A> | "
-
-			// DNA2 - Admin Hax
-			if(M.dna && iscarbon(M))
-				body += "<br><br>"
-				body += "<b>DNA Blocks:</b><br><table border='0'><tr><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>"
-				var/bname
-				for(var/block=1;block<=DNA_SE_LENGTH;block++)
-					if(((block-1)%5)==0)
-						body += "</tr><tr><th>[block-1]</th>"
-					bname = assigned_blocks[block]
-					body += "<td>"
-					if(bname)
-						var/bstate=M.dna.GetSEState(block)
-						var/bcolor="[(bstate)?"#006600":"#ff0000"]"
-						body += "<A href='?src=\ref[src];togmutate=\ref[M];block=[block]' style='color:[bcolor];'>[bname]</A><sub>[block]</sub>"
-					else
-						body += "[block]"
-					body+="</td>"
-				body += "</tr></table>"
-
-			body += {"<br><br>
-				<b>Rudimentary transformation:</b><font size=2><br>These transformations only create a new mob type and copy stuff over. They do not take into account MMIs and similar mob-specific things. The buttons in 'Transformations' are preferred, when possible.</font><br>
-				<A href='?src=\ref[src];simplemake=observer;mob=\ref[M]'>Observer</A> |
-				\[ Xenos: <A href='?src=\ref[src];simplemake=larva;mob=\ref[M]'>Larva</A>
-				\[ Crew: <A href='?src=\ref[src];simplemake=human;mob=\ref[M]'>Human</A>
-				<A href='?src=\ref[src];simplemake=human;species=Unathi;mob=\ref[M]'>Unathi</A>
-				<A href='?src=\ref[src];simplemake=human;species=Skrell;mob=\ref[M]'>Skrell</A>
-				<A href='?src=\ref[src];simplemake=human;species=Vox;mob=\ref[M]'>Vox</A> \] | \[
-				<A href='?src=\ref[src];simplemake=nymph;mob=\ref[M]'>Nymph</A>
-				<A href='?src=\ref[src];simplemake=human;species='Diona';mob=\ref[M]'>Diona</A> \] |
-				\[ slime: <A href='?src=\ref[src];simplemake=slime;mob=\ref[M]'>Baby</A>,
-				<A href='?src=\ref[src];simplemake=adultslime;mob=\ref[M]'>Adult</A> \]
-				<A href='?src=\ref[src];simplemake=monkey;mob=\ref[M]'>Monkey</A> |
-				<A href='?src=\ref[src];simplemake=robot;mob=\ref[M]'>Cyborg</A> |
-				<A href='?src=\ref[src];simplemake=cat;mob=\ref[M]'>Cat</A> |
-				<A href='?src=\ref[src];simplemake=runtime;mob=\ref[M]'>Runtime</A> |
-				<A href='?src=\ref[src];simplemake=corgi;mob=\ref[M]'>Corgi</A> |
-				<A href='?src=\ref[src];simplemake=ian;mob=\ref[M]'>Ian</A> |
-				<A href='?src=\ref[src];simplemake=crab;mob=\ref[M]'>Crab</A> |
-				<A href='?src=\ref[src];simplemake=coffee;mob=\ref[M]'>Coffee</A> |
-				\[ Construct: <A href='?src=\ref[src];simplemake=constructarmoured;mob=\ref[M]'>Armoured</A> ,
-				<A href='?src=\ref[src];simplemake=constructbuilder;mob=\ref[M]'>Builder</A> ,
-				<A href='?src=\ref[src];simplemake=constructwraith;mob=\ref[M]'>Wraith</A> \]
-				<A href='?src=\ref[src];simplemake=shade;mob=\ref[M]'>Shade</A>
-				<br>
-			"}
-	body += {"<br><br>
-			<b>Other actions:</b>
-			<br>
-			<A href='?src=\ref[src];forcespeech=\ref[M]'>Forcesay</A>
-			"}
-	if (M.client)
-		body += {" |
-			<A href='?src=\ref[src];tdome1=\ref[M]'>Thunderdome 1</A> |
-			<A href='?src=\ref[src];tdome2=\ref[M]'>Thunderdome 2</A> |
-			<A href='?src=\ref[src];tdomeadmin=\ref[M]'>Thunderdome Admin</A> |
-			<A href='?src=\ref[src];tdomeobserve=\ref[M]'>Thunderdome Observer</A> |
-		"}
-	// language toggles
-	body += "<br><br><b>Languages:</b><br>"
-	var/f = 1
-	for(var/k in all_languages)
-		var/datum/language/L = all_languages[k]
-		if(!(L.flags & INNATE))
-			if(!f) body += " | "
-			else f = 0
-			if(L in M.languages)
-				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#006600'>[k]</a>"
-			else
-				body += "<a href='?src=\ref[src];toglang=\ref[M];lang=[html_encode(k)]' style='color:#ff0000'>[k]</a>"
-
-	body += {"<br>
-		</body></html>
-	"}
-
-	show_browser(usr, body, "window=adminplayeropts;size=550x515")
-	SSstatistics.add_field_details("admin_verb","SPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 
 /datum/player_info/var/author // admin who authored the information
 /datum/player_info/var/rank //rank of admin who made the notes
@@ -949,7 +726,8 @@ var/global/floorIsLava = 0
 	set category = "Server"
 	set desc="Reboots the server post haste"
 	set name="Immediate Reboot"
-	if(!usr.client.holder)	return
+	if(!check_rights(R_SERVER, FALSE, usr))
+		return
 	if( alert("Reboot server?",,"Yes","No") == "No")
 		return
 	to_world("<span class='danger'>Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
@@ -1317,7 +1095,7 @@ var/global/floorIsLava = 0
 	if(!istype(M))
 		return
 	var/datum/nano_module/skill_ui/NM = /datum/nano_module/skill_ui
-	if(is_admin(usr))
+	if(check_rights(R_MOD|R_ADMIN, 0, usr))
 		NM = /datum/nano_module/skill_ui/admin //They get the fancy version that lets you change skills and debug stuff.
 	NM = new NM(usr, override = M.skillset)
 	NM.ui_interact(usr)
@@ -1457,7 +1235,7 @@ var/global/floorIsLava = 0
 	if(!isliving(H))
 		return
 
-	if(check_rights(R_INVESTIGATE))
+	if(check_rights(R_ADMIN|R_MOD))
 		if (!H.admin_paralyzed)
 			H.paralysis = 8000
 			H.admin_paralyzed = TRUE
@@ -1573,12 +1351,12 @@ var/global/floorIsLava = 0
 		if(P.sender) // sent as a reply
 			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
 			for(var/client/C in GLOB.admins)
-				if((R_INVESTIGATE) & C.holder.rights)
+				if((R_ADMIN|R_MOD) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 		else
 			log_admin("[key_name(src.owner)] has sent a fax message to [P.department]")
 			for(var/client/C in GLOB.admins)
-				if((R_INVESTIGATE) & C.holder.rights)
+				if((R_ADMIN|R_MOD) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [P.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 
 	else
@@ -1588,3 +1366,64 @@ var/global/floorIsLava = 0
 		qdel(P)
 		faxreply = null
 	return
+
+/datum/admins/proc/shutdown_server()
+	set category = "Server"
+	set name = "Shutdown Server"
+	set desc = "Shuts the server down."
+
+	var/static/client/shuttingdown
+
+	if(!(check_rights(R_ADMIN) && check_rights(R_DEBUG) && check_rights(R_SERVER)))
+		return
+
+	if(shuttingdown)
+		if(alert("Are you use you want to cancel the shutdown initiated by [shuttingdown.key]?", "Cancel the shutdown?", "No", "Yes") != "Yes")
+			return
+		message_admins("[key_name_admin(usr)] cancelled the server shutdown, started by [key_name_admin(shuttingdown)] .")
+		shuttingdown = FALSE
+		return
+
+	if(alert("Are you sure you want to shutdown the server? Only somebody with remote access to the server can turn it back on.", "Shutdown Server?", "Cancel", "Shutdown Server") != "Shutdown Server")
+		return
+
+	if(GAME_STATE == RUNLEVEL_GAME)
+		to_chat(usr, SPAN_DANGER("The server must be in either pre-game and the start must be delayed or already started with the end delayed to shutdown the server."))
+		return
+
+	if((GAME_STATE == RUNLEVEL_LOBBY && SSticker.round_start_time > 0) || (GAME_STATE == RUNLEVEL_POSTGAME && !SSticker.delay_end))
+		to_chat(usr, SPAN_DANGER("The round start/end is not delayed."))
+		return
+
+	to_chat(usr, SPAN_DANGER("Alert: Delayed confirmation required. You will be asked to confirm again in 30 seconds."))
+	log_and_message_admins("[key_name_admin(usr.client)] initiated the shutdown process.")
+	message_admins("You may abort this by pressing the shutdown server button again.")
+	shuttingdown = usr.client
+
+	sleep(30 SECONDS)
+
+	if(!shuttingdown || shuttingdown != usr?.client)
+		return
+
+	if(alert("ARE YOU REALLY SURE YOU WANT TO SHUTDOWN THE SERVER? ONLY SOMEBODY WITH REMOTE ACCESS TO THE SERVER CAN TURN IT BACK ON.", "Shutdown Server?", "Cancel", "Shutdown Server") != "Shutdown Server")
+		log_and_message_admins("[key_name_admin(shuttingdown)] decided against shutting down the server.")
+		shuttingdown = null
+		return
+
+	to_world("[SPAN_DANGER("Server shutting down in 30 seconds!")] [SPAN_NOTICE("Initiated by [shuttingdown.key]!")]")
+	message_admins("[key_name_admin(shuttingdown)] is shutting down the server. You may abort this by pressing the shutdown server button again within 30 seconds.")
+
+	sleep(30 SECONDS)
+
+	if(!shuttingdown)
+		to_world(SPAN_NOTICE("Server shutdown was aborted"))
+		return
+
+	if(shuttingdown != usr?.client)
+		return
+
+	to_world("[SPAN_DANGER("Shutting down server!")] [SPAN_NOTICE("Initiated by [shuttingdown.key]!")]")
+	log_admin("Server shutting down. Initiated by: [shuttingdown]")
+
+	sleep(world.tick_lag)
+	shutdown()

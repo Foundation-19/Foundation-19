@@ -6,17 +6,19 @@
 	organ_tag = BP_CELL
 	parent_organ = BP_CHEST
 	status = ORGAN_ROBOTIC
+	min_bruised_damage = 35 //Buff
+	min_broken_damage = 45 //NERF
 	vital = 1
 	var/open
 	var/obj/item/cell/cell = /obj/item/cell/hyper
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
 	var/servo_cost = 0.8
 
-/obj/item/organ/internal/cell/New()
+/obj/item/organ/internal/cell/Initialize()
+	. = ..()
 	robotize()
 	if(ispath(cell))
 		cell = new cell(src)
-	..()
 
 /obj/item/organ/internal/cell/proc/percent()
 	if(!cell)
@@ -40,7 +42,7 @@
 		return 0
 	return cell && cell.use(amount)
 
-/obj/item/organ/internal/cell/proc/get_power_drain()	
+/obj/item/organ/internal/cell/proc/get_power_drain()
 	var/damage_factor = 1 + 10 * damage/max_damage
 	return servo_cost * damage_factor
 

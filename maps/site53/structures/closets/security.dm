@@ -18,7 +18,7 @@
 	icon_locked = "enlisted-locked"
 	icon_opened = "enlisted-open"
 	icon_off = "enlisted-off"
-	anchored = 1
+	anchored = TRUE
 	req_access = list(access_securitylvl1)
 	var/registered_name = null
 

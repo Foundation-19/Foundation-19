@@ -453,10 +453,10 @@
 
 	connections = dirs_to_corner_states(connection_dirs)
 
-#define CORNER_NONE 0
-#define CORNER_COUNTERCLOCKWISE 1
-#define CORNER_DIAGONAL 2
-#define CORNER_CLOCKWISE 4
+#define CORNER_NONE 			0
+#define CORNER_COUNTERCLOCKWISE (1<<0)
+#define CORNER_DIAGONAL 		(1<<1)
+#define CORNER_CLOCKWISE 		(1<<2)
 
 /*
 	turn() is weird:

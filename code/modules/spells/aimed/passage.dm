@@ -9,7 +9,7 @@
 	invocation_type = INVOKE_SHOUT
 	range = 15
 	level_max = list(UPGRADE_TOTAL = 1, UPGRADE_SPEED = 0, UPGRADE_POWER = 1)
-	spell_flags = NEEDSCLOTHES
+	spell_flags = 0
 	duration = 15
 	projectile_type = /obj/item/projectile/spell_projectile/passage
 	var/amt_paralysis = 0

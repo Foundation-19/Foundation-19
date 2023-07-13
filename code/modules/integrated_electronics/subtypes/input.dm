@@ -808,7 +808,7 @@
 	. += "Please select a teleporter to lock in on:"
 	for (var/obj/machinery/computer/teleporter/computer in SSmachines.machinery)
 		if (computer.target && computer.operable() && AreConnectedZLevels(get_z(src), get_z(computer)))
-			.["[computer.id] ([computer.active ? "Active" : "Inactive"])"] = "tport=[any2ref(computer)]"
+			.["[computer.id] ([computer.active ? "Active" : "Inactive"])"] = "tport=[REF(computer)]"
 	.["None (Dangerous)"] = "tport=random"
 
 /obj/item/integrated_circuit/input/teleporter_locator/OnICTopic(href_list, user)

@@ -145,7 +145,7 @@
 // Entered() which is part of Move(), by spawn()ing we let that complete.  But we want to preserve if we were in client movement
 // or normal movement so other move behavior can continue.
 /atom/movable/proc/begin_falling(var/lastloc, var/below)
-	addtimer(CALLBACK(src, /atom/movable/proc/fall_callback, below), 0)
+	INVOKE_ASYNC(src, /atom/movable/proc/fall_callback, below)
 
 /atom/movable/proc/fall_callback(var/turf/below)
 	var/mob/M = src

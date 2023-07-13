@@ -22,24 +22,24 @@
 // The ENVIRON channel stays on as long as possible, and doesn't have a threshold
 
 #define CRITICAL_APC_EMP_PROTECTION 10	// EMP effect duration is divided by this number if the APC has "critical" flag
-#define APC_UPDATE_ICON_COOLDOWN 100	// Time between automatically updating the icon (10 seconds)
+#define APC_UPDATE_ICON_COOLDOWN 	100	// Time between automatically updating the icon (10 seconds)
 
 // Used to check whether or not to update the icon_state
-#define UPDATE_CELL_IN 1
-#define UPDATE_OPENED1 2
-#define UPDATE_OPENED2 4
-#define UPDATE_MAINT 8
-#define UPDATE_BROKE 16
-#define UPDATE_BLUESCREEN 32
-#define UPDATE_WIREEXP 64
-#define UPDATE_ALLGOOD 128
+#define UPDATE_CELL_IN 		(1<<0)
+#define UPDATE_OPENED1 		(1<<1)
+#define UPDATE_OPENED2 		(1<<2)
+#define UPDATE_MAINT 		(1<<3)
+#define UPDATE_BROKE 		(1<<4)
+#define UPDATE_BLUESCREEN 	(1<<5)	
+#define UPDATE_WIREEXP 		(1<<6)
+#define UPDATE_ALLGOOD 		(1<<7)
 
 // Used to check whether or not to update the overlay
-#define APC_UPOVERLAY_CHARGEING0 1
-#define APC_UPOVERLAY_CHARGEING1 2
-#define APC_UPOVERLAY_CHARGEING2 4
-#define APC_UPOVERLAY_LOCKED 8
-#define APC_UPOVERLAY_OPERATING 16
+#define APC_UPOVERLAY_CHARGEING0 	(1<<0)
+#define APC_UPOVERLAY_CHARGEING1 	(1<<1)
+#define APC_UPOVERLAY_CHARGEING2 	(1<<2)
+#define APC_UPOVERLAY_LOCKED 		(1<<3)
+#define APC_UPOVERLAY_OPERATING 	(1<<4)
 
 // Various APC types
 /obj/machinery/power/apc/inactive
@@ -518,7 +518,7 @@
 		else if(hacker && !hacker.hacked_apcs_hidden)
 			to_chat(user, "<span class='warning'>Access denied.</span>")
 		else
-			if(has_access(req_access, user.GetAccess()) && !isWireCut(APC_WIRE_IDSCAN))
+			if(has_access(req_access, user.GetAccess()) && !isWireCut(WIRE_IDSCAN))
 				locked = !locked
 				to_chat(user, "You [ locked ? "lock" : "unlock"] the APC interface.")
 				update_icon()
@@ -636,7 +636,7 @@
 	else
 		if (istype(user, /mob/living/silicon))
 			return attack_robot(user)
-		if (!opened && wiresexposed && (isMultitool(W) || isWirecutter(W) || istype(W, /obj/item/device/assembly/signaler)))
+		if (!opened && wiresexposed && (isMultitool(W) || isWirecutter(W) || istype(W, /obj/item/device/assembly/signaller)))
 			return wires.Interact(user)
 
 		user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
@@ -692,15 +692,15 @@
 			user.visible_message("<span class='warning'>\The [user] slashes at \the [src]!</span>", "<span class='notice'>You slash at \the [src]!</span>")
 			playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
 
-			var/allcut = wires.IsAllCut()
+			var/allcut = wires.is_all_cut()
 
 			if(beenhit >= pick(3, 4) && !wiresexposed)
 				wiresexposed = TRUE
 				src.update_icon()
 				src.visible_message("<span class='warning'>\The The [src]'s cover flies open, exposing the wires!</span>")
 
-			else if(wiresexposed && allcut == 0)
-				wires.CutAll()
+			else if(wiresexposed && !allcut)
+				wires.cut_all()
 				src.update_icon()
 				src.visible_message("<span class='warning'>\The [src]'s wires are shredded!</span>")
 			else
@@ -809,8 +809,8 @@
 		else
 			needs_powerdown_sound = TRUE
 
-/obj/machinery/power/apc/proc/isWireCut(var/wireIndex)
-	return wires.IsIndexCut(wireIndex)
+/obj/machinery/power/apc/proc/isWireCut(wire)
+	return wires.is_cut(wire)
 
 
 /obj/machinery/power/apc/CanUseTopic(mob/user, datum/topic_state/state)

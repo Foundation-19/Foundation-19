@@ -394,7 +394,7 @@
 
 /obj/item/gun/projectile/automatic/t12
 	name = "T12 rifle"
-	desc = "An assault rifle produced and used by TerraGov military. Highly lethal and capable of holding up to 50 rounds in its standard magazines."
+	desc = "An assault rifle produced and used by the Global Occult Coalition, rarely seen loaned to high-intensity Foundation units. Highly lethal and capable of holding up to 50 rounds in its standard magazines."
 	icon = 'icons/obj/guns/t12.dmi'
 	icon_state = "t12"
 	item_state = "t12"

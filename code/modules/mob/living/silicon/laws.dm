@@ -2,8 +2,8 @@
 	var/datum/ai_laws/laws
 	var/list/additional_law_channels = list("State" = "")
 
-/mob/living/silicon/New()
-	..()
+/mob/living/silicon/Initialize()
+	. = ..()
 	if(!laws)
 		laws = GLOB.using_map.default_law_type
 	if(ispath(laws))
@@ -119,4 +119,4 @@
 
 /mob/living/silicon/proc/log_law(var/law_message)
 	log_and_message_admins(law_message)
-	GLOB.lawchanges += "[stationtime2text()] - [usr ? "[key_name(usr)]" : "EVENT"] [law_message]"
+	GLOB.lawchanges += "[time_stamp("hh:mm")] - [usr ? "[key_name(usr)]" : "EVENT"] [law_message]"

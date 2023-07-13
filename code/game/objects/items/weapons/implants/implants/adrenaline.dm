@@ -3,7 +3,7 @@
 	desc = "Removes all stuns and knockdowns."
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 2, TECH_ESOTERIC = 2)
 	hidden = 1
-	var/uses
+	var/uses = 3
 
 /obj/item/implant/adrenalin/get_data()
 	return {"
@@ -20,7 +20,7 @@
 /obj/item/implant/adrenalin/trigger(emote, mob/source)
 	if (emote == "pale")
 		activate()
-		
+
 /obj/item/implant/adrenalin/activate()//this implant is unused but I'm changing it for the sake of consistency
 	if (uses < 1 || malfunction || !imp_in)	return 0
 	uses--
@@ -31,7 +31,7 @@
 
 /obj/item/implant/adrenalin/implanted(mob/source)
 	source.StoreMemory("A implant can be activated by using the pale emote, <B>say *pale</B> to attempt to activate.", /decl/memory_options/system)
-	to_chat(source, "The implanted freedom implant can be activated by using the pale emote, <B>say *pale</B> to attempt to activate.")
+	to_chat(source, "The implanted adrenaline implant can be activated by using the pale emote, <B>say *pale</B> to attempt to activate.")
 	return TRUE
 
 /obj/item/implanter/adrenalin
