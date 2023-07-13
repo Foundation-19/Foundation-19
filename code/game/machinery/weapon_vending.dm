@@ -72,7 +72,6 @@
 	icon_state = "weaponry"
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/p90 = 3,
-		/obj/item/gun/projectile/revolver/rhino = 1,
 		/obj/item/gun/projectile/revolver/mateba = 1,
 		/obj/item/gun/projectile/pistol/mk9 = 1
 	)
