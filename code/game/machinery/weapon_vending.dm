@@ -90,7 +90,7 @@
 
 /obj/machinery/vending/weaponry/ez
 	name = "\improper EntranZ AutoEquip Device"
-	desc = "An automated gun storage device that can dispense guns on demand, this one was designed for HCZ Sergeants."
+	desc = "An automated gun storage device that can dispense guns on demand, this one was designed for EZ Agents."
 	icon_state = "ez_weaponry"
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/p90 = 8,
