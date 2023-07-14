@@ -10,10 +10,10 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	attack_verb = list("stabbed")
 	hitsound = 'sound/scp/2427/stab.ogg'
 	damtype = BRUTE
-	melee_accuracy_bonus = 60 //skull emoji
-	stun_prob = 0 // Only combat!
-	edge = 1
-	force = 30 //still good at skrill issuing hcz
+	melee_accuracy_bonus = 60 //As a reminder! Putting the melee accuracy bonus above 100 does not work intended. Infact, it breaks forced dodges from things like shields/etc in many cases! The original value for this was 200, which broke a lot of combat changes we did!
+	stun_prob = 0 // Only combat! Please avoid adding stuns to something which, itself by nature, cannot be stunned!
+	edge = 1 //The natural weapon has a sharp edge! Though ideally, it should be 2; 1 is the value we have settled on for balancing reasons. If you need further context. Please look between states 1 & 2 on edged objects (pierce and slash)
+	force = 28
 
 /datum/ai_holder/simple_animal/melee/s2427_3
 	mauling = TRUE
@@ -67,11 +67,11 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	var/satiety = 300
 	/// How much satiety is reduced per tick
 	var/satiety_reduction_per_tick = 0.5
-	/// Upon going to that point or above - the mob goes into is_sleeping stage and is unable to act/speak/move for some time
+	/// Upon going to that point or above - the mob goes into the is_sleeping stage and is unable to act/speak/move for some time
 	var/max_satiety = 600
-	/// Upon that point, the mob is on rampage, allowing it to escape and to move faster
+	/// Upon that point, the mob is on a rampage, allowing it to escape and move faster
 	var/min_satiety = 0
-	/// When TRUE - it ignores purity list and can attack anything
+	/// When TRUE - it ignores the purity list and can attack anything
 	var/enraged = FALSE
 	var/is_sleeping = FALSE
 	/// If is_sleeping, getting down to that health will wake us up
@@ -184,19 +184,19 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if((L.stat == DEAD) || L.isMonkey() || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4)))) //2427 counted alive monkeys as pure lmao
+		if((L.stat == DEAD) || L.isMonkey() || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4)))) //This is an informational comment; but please do not remove the 'ISMONKEY' check due to the fact that unless we recode the purity mechanism, 2427-3 Cannot attack them!
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = round(max_satiety * 0.5)
 			if(ishuman(L))
 				nutr = round(max_satiety * 0.2)
 			if(L.isMonkey())
-				nutr = round(max_satiety * 0.05)
+				nutr = round(max_satiety * 0.1) //Return To Monkey (Makes Monkey's half as filling as humans, instead of 0.01x)
 			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
 			AdjustSatiety(nutr)
-			adjustBruteLoss(-nutr * 2)
+			adjustBruteLoss(-nutr * 1.5) //awhellnaw - PLEASE never set this above 1.5x; else 2427 can easily push through blockades due to how efficient this was before.
 			return
 	return ..()
 
