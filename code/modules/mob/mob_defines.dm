@@ -39,6 +39,7 @@
 	var/list/ooc_log = list()
 	var/list/dsay_log = list()
 	var/list/interact_log = list()
+	
 	var/stat = CONSCIOUS //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
 	var/obj/screen/cells = null
