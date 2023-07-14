@@ -179,7 +179,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list))
 		var/mob/living/carbon/human/H = A
-		if(H.stat != DEAD)
+		if(H.stat != DEAD && !H.isMonkey())
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
 			return
 	if(isliving(A))
