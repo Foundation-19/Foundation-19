@@ -10,10 +10,10 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	attack_verb = list("stabbed")
 	hitsound = 'sound/scp/2427/stab.ogg'
 	damtype = BRUTE
-	melee_accuracy_bonus = 200
+	melee_accuracy_bonus = 60 //skull emoji
 	stun_prob = 0 // Only combat!
 	edge = 1
-	force = 36
+	force = 30 //still good at skrill issuing hcz
 
 /datum/ai_holder/simple_animal/melee/s2427_3
 	mauling = TRUE
@@ -46,8 +46,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 1000 //500hp reduction.
+	health = 1000
 
 	movement_cooldown = 5
 	movement_sound = 'sound/mecha/mechmove04.ogg'
@@ -95,6 +95,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 /mob/living/simple_animal/hostile/scp_2427_3/Life()
 	. = ..()
+	resting = FALSE //Fuck you <3. Blame all my homies abusing resting.
 	if(!.)
 		return
 	if(!ckey)
@@ -117,7 +118,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		CheckPurity(L)
 	AdjustSatiety(-satiety_reduction_per_tick)
 	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
-		adjustBruteLoss(maxHealth * 0.01)
+		adjustBruteLoss(maxHealth * 0.06) //Starvation should kill you way faster.
 
 /mob/living/simple_animal/hostile/scp_2427_3/get_status_tab_items()
 	. = ..()
@@ -184,7 +185,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4))))
+		if((L.stat == DEAD) || L.isMonkey() || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4)))) //2427 counted alive monkeys as pure lmao
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = round(max_satiety * 0.5)
