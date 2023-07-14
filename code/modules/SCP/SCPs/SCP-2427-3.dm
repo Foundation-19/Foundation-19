@@ -95,7 +95,6 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 /mob/living/simple_animal/hostile/scp_2427_3/Life()
 	. = ..()
-	resting = FALSE //Fuck you <3. Blame all my homies abusing resting.
 	if(!.)
 		return
 	if(!ckey)
@@ -207,6 +206,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	return ..()
 
 /mob/living/simple_animal/hostile/scp_2427_3/SelfMove(direction)
+	resting = FALSE //2427 is forced to rest on dying... So make them not rest the next time they move.
 	if(is_sleeping)
 		return FALSE
 	return ..()
