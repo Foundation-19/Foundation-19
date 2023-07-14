@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	icon_dead = "dead"
 	pixel_x = -8
 	default_pixel_x = -8
-
+	can_rest = FALSE //Nope.
 	SCP = /datum/scp/scp_2427_3
 	status_flags = NO_ANTAG
 
@@ -179,7 +179,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list))
 		var/mob/living/carbon/human/H = A
-		if(H.stat != DEAD)
+		if(H.stat != DEAD && !H.isMonkey())
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
 			return
 	if(isliving(A))

@@ -721,11 +721,13 @@ default behaviour is:
 /mob/living/verb/lay_down()
 	set name = "Rest"
 	set category = "IC"
-
-	resting = !resting
-	to_chat(src, SPAN_NOTICE("You are now [resting ? "resting" : "getting up"]"))
-	if(hud_used)
-		hud_used.rest_button?.icon_state = "rest_[resting]"
+	if(src.can_rest)
+		resting = !resting
+		to_chat(src, SPAN_NOTICE("You are now [resting ? "resting" : "getting up"]"))
+		if(hud_used)
+			hud_used.rest_button?.icon_state = "rest_[resting]"
+	else
+		to_chat(src, SPAN_NOTICE("You cannot rest!"))
 
 //called when the mob receives a bright flash
 /mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
