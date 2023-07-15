@@ -58,7 +58,7 @@
 
 /datum/component/memetic/proc/saw_memetic(datum/source)
 	SIGNAL_HANDLER
-	if((!ishuman(source)) || source in affected_mobs)
+	if((!ishuman(source)) || (source in affected_mobs))
 		return
 	var/mob/living/carbon/human/H = source
 	if((memetic_flags & MVISUAL) && H.can_see(memetic_atom, TRUE))
@@ -74,7 +74,7 @@
 
 /datum/component/memetic/proc/examined_memetic(datum/source, atom/target)
 	SIGNAL_HANDLER
-	if((!ishuman(source)) || target != memetic_atom || source in affected_mobs)
+	if((!ishuman(source)) || target != memetic_atom || (source in affected_mobs))
 		return
 	var/mob/living/carbon/human/H = source
 	if((memetic_flags & MINSPECT) && H.can_see(visual_memetic = TRUE)) //examine function already checks memetics system but we need to check for protection
@@ -82,7 +82,7 @@
 
 /datum/component/memetic/proc/saw_memetic_photo(datum/source, obj/item/photo/photo_shown, mob/target)
 	SIGNAL_HANDLER
-	if((!ishuman(target)) || target in affected_mobs)
+	if((!ishuman(target)) || (target in affected_mobs))
 		return
 	if(!(memetic_atom in photo_shown.meta_data))
 		return
