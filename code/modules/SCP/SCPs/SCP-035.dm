@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 	designation = "035"
 	classification = KETER
 
-/obj/item/clothing/mask/spc_035
+/obj/item/clothing/mask/scp_035
 	name = "SCP-035"
 	icon = 'icons/SCP/scp-035.dmi'
 	icon_state = "scp035_0"
@@ -22,7 +22,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 										'sound/hallucinations/035_whispers_3.ogg',
 										'sound/hallucinations/035_whispers_4.ogg')
 
-/obj/item/clothing/mask/spc_035/Initialize()
+/obj/item/clothing/mask/scp_035/Initialize()
 	. = ..()
 	brain_client = new()
 	brain_client.mask = src
@@ -31,7 +31,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 	weepstart()
 	whisper()
 
-/obj/item/clothing/mask/spc_035/examine(mob/user)
+/obj/item/clothing/mask/scp_035/examine(mob/user)
 	. = ..()
 	var/message
 	if(icon_state)
@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 		message += " A viscious liquid is seeping out of its eyes and mouth."
 	to_chat(user, message)
 
-/obj/item/clothing/mask/spc_035/update_icon()
+/obj/item/clothing/mask/scp_035/update_icon()
 	. = ..()
 	cut_overlays()
 	icon_state = "scp035_[tradegy]"
@@ -53,25 +53,25 @@ GLOBAL_LIST_EMPTY(scp035s)
 			var/mob/living/carbon/human/H = loc
 			H.update_inv_wear_mask()
 
-/obj/item/clothing/mask/spc_035/proc/whisper()
+/obj/item/clothing/mask/scp_035/proc/whisper()
 	addtimer(CALLBACK(src, .proc/whisper), 1 MINUTES)
 	for(var/mob/living/carbon/human/H in viewers(src))
 		if(prob(66)) //every minute 2/3 chance they hear whispering while observing the mask
 			playsound(H.loc, pick(whispering_sounds), 50, 0, 10)
 
-/obj/item/clothing/mask/spc_035/proc/weepstart()
+/obj/item/clothing/mask/scp_035/proc/weepstart()
 	weeping = addtimer(CALLBACK(src, .proc/weepstop), rand(9.5, 304) SECONDS) //anywhere from 1 animation loop to 5 minutes
 	output_substance()
 	update_icon()
 
-/obj/item/clothing/mask/spc_035/proc/weepstop()
+/obj/item/clothing/mask/scp_035/proc/weepstop()
 	weeping = FALSE
 	update_icon()
 	addtimer(CALLBACK(src, .proc/weepstart), rand(9.5, 114) SECONDS) //only 2 min max downtime, it outputs alot
 	if(prob(5))
 		tradegy = !tradegy
 
-/obj/item/clothing/mask/spc_035/proc/output_substance()
+/obj/item/clothing/mask/scp_035/proc/output_substance()
 	if(!weeping)
 		return
 	if(prob(100)) //output under the mask 4/5 of the time
@@ -87,7 +87,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 		new /obj/effect/fluid/scp_035_substance(pick(target_list))
 	addtimer(CALLBACK(src, .proc/output_substance), 10 SECONDS)
 
-/obj/item/clothing/mask/spc_035/equipped(mob/user)
+/obj/item/clothing/mask/scp_035/equipped(mob/user)
 	. = ..()
 	if(!ishuman(user))
 		return
@@ -100,7 +100,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 		*/
 		corrupt_host(H)
 
-/obj/item/clothing/mask/spc_035/proc/corrupt_host(atom/user)
+/obj/item/clothing/mask/scp_035/proc/corrupt_host(atom/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		message_admins("corrupting human")
@@ -112,10 +112,10 @@ GLOBAL_LIST_EMPTY(scp035s)
 
 /mob/living/scp_035
 	name = "SCP-035"
-	var/obj/item/clothing/mask/spc_035/mask
+	var/obj/item/clothing/mask/scp_035/mask
 
 //THE CORROSIVE LIQUID
-/datum/reagent/blood/spc_035_substance
+/datum/reagent/blood/scp_035_substance
 	data = null
 	name = "Water"
 	description = "It is thick and viscous, its slowly degrading the container that contains it."
@@ -126,7 +126,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 	metabolism = REM * 10
 	taste_description = "death"
 
-/datum/reagent/blood/spc_035_substance/get_data()
+/datum/reagent/blood/scp_035_substance/get_data()
 	return null
 
 /obj/effect/decal/cleanable/blood/drip/scp035/
@@ -158,4 +158,4 @@ GLOBAL_LIST_EMPTY(scp035s)
 /obj/effect/fluid/scp_035_substance/Initialize()
 	. = ..()
 	create_reagents(20)
-	reagents.add_reagent(/datum/reagent/blood/spc_035_substance, 10)
+	reagents.add_reagent(/datum/reagent/blood/scp_035_substance, 10)
