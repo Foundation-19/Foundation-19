@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 /obj/machinery/implantchair
 	name = "loyalty implanter"
 	desc = "Used to implant occupants with loyalty implants."
@@ -69,7 +67,7 @@
 		return
 
 
-/obj/machinery/implantchair/attackby(var/obj/item/G as obj, var/mob/user as mob)
+/obj/machinery/implantchair/attackby(obj/item/G as obj, mob/user as mob)
 	if(istype(G, /obj/item/grab))
 		var/obj/item/grab/grab = G
 		if(!ismob(grab.affecting))
@@ -85,7 +83,7 @@
 	return
 
 
-/obj/machinery/implantchair/proc/go_out(var/mob/M)
+/obj/machinery/implantchair/proc/go_out(mob/M)
 	if(!( src.occupant ))
 		return
 	if(M == occupant) // so that the guy inside can't eject himself -Agouri
@@ -104,10 +102,10 @@
 
 /obj/machinery/implantchair/proc/put_mob(mob/living/carbon/M as mob)
 	if(!iscarbon(M))
-		to_chat(usr, "<span class='warning'>\The [src] cannot hold this!</span>")
+		to_chat(usr, SPAN_WARNING("\The [src] cannot hold this!"))
 		return
 	if(src.occupant)
-		to_chat(usr, "<span class='warning'>\The [src] is already occupied!</span>")
+		to_chat(usr, SPAN_WARNING("\The [src] is already occupied!"))
 		return
 	if(M.client)
 		M.client.perspective = EYE_PERSPECTIVE
@@ -120,7 +118,7 @@
 	return 1
 
 
-/obj/machinery/implantchair/proc/implant(var/mob/M)
+/obj/machinery/implantchair/proc/implant(mob/M)
 	if (!istype(M, /mob/living/carbon))
 		return
 	if(!implant_list.len)	return
@@ -128,7 +126,7 @@
 		if(!imp)	continue
 		if(istype(imp, /obj/item/implant/loyalty))
 			for (var/mob/O in viewers(M, null))
-				O.show_message("<span class='warning'>\The [M] has been implanted by \the [src].</span>", 1)
+				O.show_message(SPAN_WARNING("\The [M] has been implanted by \the [src]."), 1)
 
 			if(imp.implanted(M))
 				imp.forceMove(M)

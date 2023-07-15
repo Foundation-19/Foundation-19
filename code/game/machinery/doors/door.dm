@@ -1,4 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 #define DOOR_REPAIR_AMOUNT 50	//amount of health regained per stack amount used
 
 /obj/machinery/door
@@ -10,6 +9,7 @@
 	opacity = 1
 	density = TRUE
 	layer = CLOSED_DOOR_LAYER
+	plane = DEFAULT_PLANE
 	interact_offline = TRUE
 
 	var/open_layer = OPEN_DOOR_LAYER
@@ -51,18 +51,19 @@
 
 	atmos_canpass = CANPASS_PROC
 
-/obj/machinery/door/attack_generic(var/mob/user, var/damage, var/attack_verb, var/environment_smash)
+/obj/machinery/door/attack_generic(mob/user, damage, attack_verb, environment_smash)
 	if(environment_smash >= 1)
 		damage = max(damage, 10)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 	playsound(loc, hitsound, 50, 1)
+	show_sound_effect(loc, user)
 
 	if(damage >= 10)
-		visible_message("<span class='danger'>\The [user] [attack_verb] into \the [src]!</span>")
+		visible_message(SPAN_DANGER("\The [user] [attack_verb] into \the [src]!"))
 		take_damage(damage)
 	else
-		visible_message("<span class='notice'>\The [user] bonks \the [src] harmlessly.</span>")
+		visible_message(SPAN_NOTICE("\The [user] bonks \the [src] harmlessly."))
 	attack_animation(user)
 
 /obj/machinery/door/New()
@@ -183,7 +184,7 @@
 			do_animate("deny")
 	return
 
-/obj/machinery/door/bullet_act(var/obj/item/projectile/Proj)
+/obj/machinery/door/bullet_act(obj/item/projectile/Proj)
 	..()
 
 	var/damage = Proj.get_structure_damage()
@@ -192,7 +193,7 @@
 	if(damage > 90)
 		destroy_hits--
 		if(destroy_hits <= 0)
-			visible_message("<span class='danger'>\The [src.name] disintegrates!</span>")
+			visible_message(SPAN_DANGER("\The [src.name] disintegrates!"))
 			switch (Proj.damage_type)
 				if(BRUTE)
 					new /obj/item/stack/material/steel(src.loc, 2)
@@ -207,16 +208,17 @@
 
 
 
-/obj/machinery/door/hitby(AM as mob|obj, var/datum/thrownthing/TT)
+/obj/machinery/door/hitby(AM as mob|obj, datum/thrownthing/TT)
 
 	..()
-	visible_message("<span class='danger'>[src.name] was hit by [AM].</span>")
+	visible_message(SPAN_DANGER("[src.name] was hit by [AM]."))
 	var/tforce = 0
 	if(ismob(AM))
 		tforce = 3 * TT.speed
 	else
 		tforce = AM:throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	playsound(src.loc, hitsound, 100, 1)
+	show_sound_effect(src.loc)
 	take_damage(tforce)
 	return
 
@@ -230,13 +232,13 @@
 
 	if(istype(I, /obj/item/stack/material) && I.get_material_name() == src.get_material_name())
 		if(stat & BROKEN)
-			to_chat(user, "<span class='notice'>It looks like \the [src] is pretty busted. It's going to need more than just patching up now.</span>")
+			to_chat(user, SPAN_NOTICE("It looks like \the [src] is pretty busted. It's going to need more than just patching up now."))
 			return
 		if(health >= maxhealth)
-			to_chat(user, "<span class='notice'>Nothing to fix!</span>")
+			to_chat(user, SPAN_NOTICE("Nothing to fix!"))
 			return
 		if(!density)
-			to_chat(user, "<span class='warning'>\The [src] must be closed before you can repair it.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] must be closed before you can repair it."))
 			return
 
 		//figure out how much metal we need
@@ -248,7 +250,7 @@
 		if(repairing)
 			transfer = stack.transfer_to(repairing, amount_needed - repairing.amount)
 			if(!transfer)
-				to_chat(user, "<span class='warning'>You must weld or remove \the [repairing] from \the [src] before you can add anything else.</span>")
+				to_chat(user, SPAN_WARNING("You must weld or remove \the [repairing] from \the [src] before you can add anything else."))
 		else
 			repairing = stack.split(amount_needed)
 			if(repairing)
@@ -256,24 +258,24 @@
 				transfer = repairing.amount
 
 		if(transfer)
-			to_chat(user, "<span class='notice'>You fit [transfer] [stack.singular_name]\s to damaged and broken parts on \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You fit [transfer] [stack.singular_name]\s to damaged and broken parts on \the [src]."))
 
 		return
 
 	if(repairing && isWelder(I))
 		if(!density)
-			to_chat(user, "<span class='warning'>\The [src] must be closed before you can repair it.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] must be closed before you can repair it."))
 			return
 
 		var/obj/item/weldingtool/welder = I
 		if(welder.remove_fuel(0,user))
-			to_chat(user, "<span class='notice'>You start to fix dents and weld \the [repairing] into place.</span>")
+			to_chat(user, SPAN_NOTICE("You start to fix dents and weld \the [repairing] into place."))
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
 			if(do_after(user, 5 * repairing.amount, src) && welder && welder.isOn())
 				if(!repairing)
 					return //the materials in the door have been removed before welding was finished.
 
-				to_chat(user, "<span class='notice'>You finish repairing the damage to \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You finish repairing the damage to \the [src]."))
 				health = between(health, health + repairing.amount*DOOR_REPAIR_AMOUNT, maxhealth)
 				update_icon()
 				qdel(repairing)
@@ -281,7 +283,7 @@
 		return
 
 	if(repairing && isCrowbar(I))
-		to_chat(user, "<span class='notice'>You remove \the [repairing].</span>")
+		to_chat(user, SPAN_NOTICE("You remove \the [repairing]."))
 		playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
 		repairing.dropInto(user.loc)
 		repairing = null
@@ -306,7 +308,7 @@
 	update_icon()
 	return
 
-/obj/machinery/door/emag_act(var/remaining_charges)
+/obj/machinery/door/emag_act(remaining_charges)
 	if(density && operable())
 		do_animate("emag")
 		sleep(6)
@@ -329,10 +331,11 @@
 	else
 		visible_message(SPAN_DANGER("\The [user] hits \the [src] with \an [I], causing damage!"))
 		playsound(src, hitsound, 100, 1)
+		show_sound_effect(src.loc, user)
 		take_damage(I.force)
 	return TRUE
 
-/obj/machinery/door/proc/take_damage(var/damage)
+/obj/machinery/door/proc/take_damage(damage)
 	var/initialhealth = src.health
 	src.health = max(0, src.health - damage)
 	if(src.health <= 0 && initialhealth > 0)
@@ -371,9 +374,11 @@
 	switch(severity)
 		if(1)
 			qdel(src)
+			return
 		if(2)
 			if(prob(25))
 				qdel(src)
+				return
 			else
 				take_damage(100)
 			take_damage(200)
@@ -429,7 +434,7 @@
 	return
 
 
-/obj/machinery/door/proc/open(var/forced = 0)
+/obj/machinery/door/proc/open(forced = 0)
 	set waitfor = FALSE
 	if(!can_open(forced))
 		return
@@ -459,7 +464,7 @@
 /obj/machinery/door/proc/next_close_time()
 	return world.time + (normalspeed ? 150 : 5)
 
-/obj/machinery/door/proc/close(var/forced = 0)
+/obj/machinery/door/proc/close(forced = 0)
 	set waitfor = FALSE
 	if(!can_close(forced))
 		return
@@ -506,7 +511,7 @@
 		SSair.mark_for_update(turf)
 	return 1
 
-/obj/machinery/door/proc/update_heat_protection(var/turf/simulated/source)
+/obj/machinery/door/proc/update_heat_protection(turf/simulated/source)
 	if(istype(source))
 		if(src.density && (src.opacity || src.heat_proof))
 			source.thermal_conductivity = DOOR_HEAT_TRANSFER_COEFFICIENT
@@ -534,19 +539,19 @@
 	if(.)
 		deconstruct(null, TRUE)
 
-/obj/machinery/door/proc/CheckPenetration(var/base_chance, var/damage)
+/obj/machinery/door/proc/CheckPenetration(base_chance, damage)
 	. = damage/maxhealth*180
 	if(glass)
 		. *= 2
 	. = round(.)
 
-/obj/machinery/door/proc/deconstruct(mob/user, var/moved = FALSE)
+/obj/machinery/door/proc/deconstruct(mob/user, moved = FALSE)
 	return null
 
 /obj/machinery/door/morgue
 	icon = 'icons/obj/doors/doormorgue.dmi'
 
-/obj/machinery/door/proc/update_connections(var/propagate = 0)
+/obj/machinery/door/proc/update_connections(propagate = 0)
 	var/dirs = 0
 
 	for(var/direction in GLOB.cardinal)
@@ -577,13 +582,13 @@
 			dirs |= direction
 	connections = dirs
 
-/obj/machinery/door/CanFluidPass(var/coming_from)
+/obj/machinery/door/CanFluidPass(coming_from)
 	return !density
 
 // Most doors will never be deconstructed over the course of a round,
 // so as an optimization defer the creation of electronics until
 // the airlock is deconstructed
-/obj/machinery/door/proc/create_electronics(var/electronics_type = /obj/item/airlock_electronics)
+/obj/machinery/door/proc/create_electronics(electronics_type = /obj/item/airlock_electronics)
 	var/obj/item/airlock_electronics/electronics = new electronics_type(loc)
 	electronics.set_access(src)
 	electronics.autoset = autoset_access
@@ -607,7 +612,7 @@
 	else
 		req_access = req_access_diff(fore, aft)
 
-/obj/machinery/door/do_simple_ranged_interaction(var/mob/user)
+/obj/machinery/door/do_simple_ranged_interaction(mob/user)
 	if(!requiresID() || allowed(null))
 		toggle()
 	return TRUE

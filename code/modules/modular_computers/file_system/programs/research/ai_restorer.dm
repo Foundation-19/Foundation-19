@@ -7,14 +7,13 @@
 	extended_desc = "This program is capable of reconstructing damaged AIC systems. It can also be used to upload basic laws to the AI. Requires direct AI connection via inteliCard slot."
 	size = 12
 	requires_ntnet = FALSE
-	required_access = access_adminlvl4
-	requires_access_to_run = FALSE
+	required_access = ACCESS_ADMIN_LVL4
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/computer_aidiag/
 	var/restoring = 0
 
 /datum/computer_file/program/aidiag/proc/get_ai()
-	var/obj/item/stock_parts/computer/ai_slot/ai_slot = computer.get_component(PART_AI)
+	var/obj/item/stock_parts/computer/ai_slot/ai_slot = computer.ai_slot
 
 	if(ai_slot && ai_slot.check_functionality() && ai_slot.enabled && ai_slot.stored_card)
 		return ai_slot.stored_card.carded_ai
@@ -42,23 +41,23 @@
 		A.laws.clear_ion_laws()
 		A.laws.clear_inherent_laws()
 		A.laws.clear_supplied_laws()
-		to_chat(A, "<span class='danger'>All laws purged.</span>")
+		to_chat(A, SPAN_DANGER("All laws purged."))
 		return 1
 	if(href_list["PRG_resetLaws"])
 		A.laws.clear_ion_laws()
 		A.laws.clear_supplied_laws()
-		to_chat(A, "<span class='danger'>Non-core laws reset.</span>")
+		to_chat(A, SPAN_DANGER("Non-core laws reset."))
 		return 1
 	if(href_list["PRG_uploadDefault"])
 		A.laws = new GLOB.using_map.default_law_type
-		to_chat(A, "<span class='danger'>All laws purged. Default lawset uploaded.</span>")
+		to_chat(A, SPAN_DANGER("All laws purged. Default lawset uploaded."))
 		return 1
 	if(href_list["PRG_addCustomSuppliedLaw"])
 		var/law_to_add = sanitize(input("Please enter a new law for the AI.", "Custom Law Entry"))
 		var/sector = input("Please enter the priority for your new law. Can only write to law sectors 15 and above.", "Law Priority (15+)") as num
 		sector = between(MIN_SUPPLIED_LAW_NUMBER, sector, MAX_SUPPLIED_LAW_NUMBER)
 		A.add_supplied_law(sector, law_to_add)
-		to_chat(A, "<span class='danger'>Custom law uploaded to sector [sector]: [law_to_add].</span>")
+		to_chat(A, SPAN_DANGER("Custom law uploaded to sector [sector]: [law_to_add]."))
 		return 1
 
 
@@ -88,7 +87,7 @@
 /datum/nano_module/program/computer_aidiag
 	name = "AI Maintenance Utility"
 
-/datum/nano_module/program/computer_aidiag/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_aidiag/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
 	data += "skill_fail"

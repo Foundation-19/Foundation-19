@@ -11,7 +11,7 @@ var/list/ticket_panels = list()
 	var/opened_time
 	var/timeout = FALSE
 
-/datum/ticket/New(var/datum/client_lite/owner)
+/datum/ticket/New(datum/client_lite/owner)
 	src.owner = owner
 	tickets |= src
 	id = tickets.len
@@ -23,7 +23,7 @@ var/list/ticket_panels = list()
 		timeout = TRUE
 		close()
 
-/datum/ticket/proc/close(var/datum/client_lite/closed_by)
+/datum/ticket/proc/close(datum/client_lite/closed_by)
 	if(status == TICKET_CLOSED)
 		return
 
@@ -32,24 +32,24 @@ var/list/ticket_panels = list()
 
 	if(timeout == FALSE)
 		var/client/real_client = client_by_ckey(closed_by.ckey)
-		if(status == TICKET_ASSIGNED && (!real_client || !real_client.holder)) // non-admins can only close a ticket if no admin has taken it
+		if(status == TICKET_ASSIGNED && (!real_client || !check_rights(R_ADMIN|R_MOD, FALSE, real_client))) // non-admins can only close a ticket if no admin has taken it
 			return
 
 	src.status = TICKET_CLOSED
 
 	if(timeout == TRUE)
-		to_chat(client_by_ckey(src.owner.ckey), "<span class='notice'><b>Your ticket has timed out. Please adminhelp again if your issue is not resolved.</b></span>")
+		to_chat(client_by_ckey(src.owner.ckey), SPAN_NOTICE("<b>Your ticket has timed out. Please adminhelp again if your issue is not resolved.</b>"))
 	else
 		src.closed_by = closed_by
-		to_chat(client_by_ckey(src.owner.ckey), "<span class='notice'><b>Your ticket has been closed by [closed_by.key].</b></span>")
-		message_staff("<span class='notice'><b>[src.owner.key_name(0)]</b>'s ticket has been closed by <b>[closed_by.key]</b>.</span>")
+		to_chat(client_by_ckey(src.owner.ckey), SPAN_NOTICE("<b>Your ticket has been closed by [closed_by.key].</b>"))
+		message_staff(SPAN_NOTICE("<b>[src.owner.key_name(0)]</b>'s ticket has been closed by <b>[closed_by.key]</b>."))
 		send2adminirc("[src.owner.key_name(0)]'s ticket has been closed by [closed_by.key].")
 
 	update_ticket_panels()
 
 	return 1
 
-/datum/ticket/proc/take(var/datum/client_lite/assigned_admin)
+/datum/ticket/proc/take(datum/client_lite/assigned_admin)
 	if(status == TICKET_CLOSED)
 		return
 
@@ -62,9 +62,9 @@ var/list/ticket_panels = list()
 	assigned_admins |= assigned_admin
 	src.status = TICKET_ASSIGNED
 
-	message_staff("<span class='notice'><b>[assigned_admin.key]</b> has assigned themself to <b>[src.owner.key_name(0)]'s</b> ticket.</span>")
+	message_staff(SPAN_NOTICE("<b>[assigned_admin.key]</b> has assigned themself to <b>[src.owner.key_name(0)]'s</b> ticket."))
 	send2adminirc("[assigned_admin.key] has assigned themself to [src.owner.key_name(0)]'s ticket.")
-	to_chat(client_by_ckey(src.owner.ckey), "<span class='notice'><b>[assigned_admin.key] has added themself to your ticket and should respond shortly. Thanks for your patience!</b></span>")
+	to_chat(client_by_ckey(src.owner.ckey), SPAN_NOTICE("<b>[assigned_admin.key] has added themself to your ticket and should respond shortly. Thanks for your patience!</b>"))
 
 	update_ticket_panels()
 
@@ -82,7 +82,7 @@ var/list/ticket_panels = list()
 	for(var/datum/client_lite/assigned_admin in assigned_admins)
 		. |= assigned_admin.key
 
-/proc/get_open_ticket_by_client(var/datum/client_lite/owner)
+/proc/get_open_ticket_by_client(datum/client_lite/owner)
 	for(var/datum/ticket/ticket in tickets)
 		if(ticket.owner.ckey == owner.ckey && (ticket.status == TICKET_OPEN || ticket.status == TICKET_ASSIGNED))
 			return ticket // there should only be one open ticket by a client at a time, so no need to keep looking
@@ -104,7 +104,7 @@ var/list/ticket_panels = list()
 	var/msg
 	var/time_stamp
 
-/datum/ticket_msg/New(var/msg_from, var/msg_to, var/msg)
+/datum/ticket_msg/New(msg_from, msg_to, msg)
 	src.msg_from = msg_from
 	src.msg_to = msg_to
 	src.msg = msg
@@ -124,7 +124,7 @@ var/list/ticket_panels = list()
 	var/list/ticket_dat = list()
 	for(var/id = tickets.len, id >= 1, id--)
 		var/datum/ticket/ticket = tickets[id]
-		if(C.holder || ticket.owner.ckey == C.ckey)
+		if(check_rights(R_ADMIN|R_MOD, FALSE, C) || ticket.owner.ckey == C.ckey)
 			var/client/owner_client = client_by_ckey(ticket.owner.ckey)
 			var/open = 0
 			var/status = "Unknown status"
@@ -149,15 +149,17 @@ var/list/ticket_panels = list()
 			ticket_dat += "Ticket #[id] - [ticket.owner.key_name(0)] [owner_client ? "" : "(DC)"]<br />[status]<br /><a href='byond://?src=\ref[src];action=view;ticket=\ref[ticket]'>VIEW</a>"
 			if(open)
 				ticket_dat += " - <a href='byond://?src=\ref[src];action=pm;ticket=\ref[ticket]'>PM</a>"
-				if(C.holder)
+				if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 					ticket_dat += " - <a href='byond://?src=\ref[src];action=take;ticket=\ref[ticket]'>[(open == 1) ? "TAKE" : "JOIN"]</a>"
-				if(ticket.status != TICKET_CLOSED && (C.holder || ticket.status == TICKET_OPEN))
+				if(ticket.status != TICKET_CLOSED && (check_rights(R_ADMIN|R_MOD, FALSE, C) || ticket.status == TICKET_OPEN))
 					ticket_dat += " - <a href='byond://?src=\ref[src];action=close;ticket=\ref[ticket]'>CLOSE</a>"
-			if(C.holder)
+			if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 				var/ref_mob = ""
 				if(owner_client)
 					ref_mob = "\ref[owner_client.mob]"
 				ticket_dat += " - <A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A> - <A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A> - <A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A> - <A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>[owner_client ? "- [admin_jump_link(owner_client, src)]" : ""]"
+				if(ticket.status != TICKET_CLOSED)
+					ticket_dat +=  " - <a href='?_src_=holder;autoresponse=[ref_mob]'>Autoresponse</a>"
 			if(open_ticket && open_ticket == ticket)
 				ticket_dat += "</i>"
 			ticket_dat += "</li>"
@@ -220,7 +222,7 @@ var/list/ticket_panels = list()
 			ticket.close(client_repository.get_lite_client(usr.client))
 		if("pm")
 			ticket.take(client_repository.get_lite_client(usr.client))
-			if(usr.client.holder && ticket.owner.ckey != usr.ckey)
+			if(check_rights(R_ADMIN|R_MOD, FALSE, usr) && ticket.owner.ckey != usr.ckey)
 				usr.client.cmd_admin_pm(client_by_ckey(ticket.owner.ckey), ticket = ticket)
 			else if(ticket.status == TICKET_ASSIGNED)
 				// manually check that the target client exists here as to not spam the usr for each logged out admin on the ticket
@@ -232,7 +234,7 @@ var/list/ticket_panels = list()
 						usr.client.cmd_admin_pm(admin_client, ticket = ticket)
 						break
 				if(!admin_found)
-					to_chat(usr, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so please be patient!</span>")
+					to_chat(usr, SPAN_WARNING("Error: Private-Message: Client not found. They may have lost connection, so please be patient!"))
 			else
 				usr.client.adminhelp(input(usr,"", "adminhelp \"text\"") as text)
 

@@ -2,10 +2,11 @@
 	name = "repair drone module"
 	display_name = "Repair"
 	channels = list ("Engineering" = TRUE)
+	module_category = ROBOT_MODULE_TYPE_FLYING
 	networks = list(NETWORK_ENGINEERING)
 	subsystems = list(
-		/datum/nano_module/power_monitor,
-		/datum/nano_module/supermatter_monitor
+		/datum/tgui_module/power_monitor/robot,
+		/datum/tgui_module/supermatter_monitor/robot
 	)
 	sprites = list(
 		"Drone" = "drone-engineer",
@@ -92,7 +93,7 @@
 	PL.synths = list(plasteel)
 	. = ..()
 
-/obj/item/robot_module/flying/repair/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/flying/repair/respawn_consumable(mob/living/silicon/robot/R, amount)
 	var/obj/item/device/lightreplacer/LR = locate() in equipment
 	if(LR)
 		LR.Charge(R, amount)

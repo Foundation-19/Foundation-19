@@ -10,7 +10,7 @@
 	shorthand = "N/A"
 	var/drone_only
 
-/datum/language/binary/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
+/datum/language/binary/broadcast(mob/living/speaker,message,speaker_mask)
 
 	if(!speaker.binarycheck())
 		return
@@ -77,7 +77,7 @@
 	space_chance = 10
 	shorthand = "EAL"
 
-/datum/language/machine/can_speak_special(var/mob/living/speaker)
+/datum/language/machine/can_speak_special(mob/living/speaker)
 	return speaker.isSynthetic()
 
 /datum/language/machine/get_random_name()

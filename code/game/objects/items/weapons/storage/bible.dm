@@ -12,6 +12,15 @@
 	var/renamed = 0
 	var/icon_changed = 0
 
+/obj/item/storage/bible/open(mob/user)
+	. = ..()
+	icon_state = "bibleopen"
+
+/obj/item/storage/bible/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/bible/booze
 	name = "bible"
 	desc = "To be applied to the head repeatedly."
@@ -81,7 +90,7 @@
 	if(!proximity) return
 	if(user.mind && istype(user.mind.assigned_job, /datum/job/chaplain))
 		if(A.reagents && A.reagents.has_reagent(/datum/reagent/water)) //blesses all the water in the holder
-			to_chat(user, "<span class='notice'>You bless \the [A].</span>") // I wish it was this easy in nethack
+			to_chat(user, SPAN_NOTICE("You bless \the [A].")) // I wish it was this easy in nethack
 			var/water2holy = A.reagents.get_reagent_amount(/datum/reagent/water)
 			A.reagents.del_reagent(/datum/reagent/water)
 			A.reagents.add_reagent(/datum/reagent/water/holywater,water2holy)

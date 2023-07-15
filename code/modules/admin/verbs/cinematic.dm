@@ -1,4 +1,4 @@
-/client/proc/cinematic(var/cinematic as anything in list("explosion",null))
+/client/proc/cinematic(cinematic as anything in list("explosion",null))
 	set name = "Cinematic"
 	set category = "Fun"
 	set desc = "Shows a cinematic."	// Intended for testing but I thought it might be nice for events on the rare occasion Feel free to comment it out if it's not wanted.
@@ -20,4 +20,4 @@
 				override = null
 			GLOB.cinematic.station_explosion_cinematic(parameter,override)
 
-	log_and_message_admins("launched cinematic \"[cinematic]\"", src)
+	log_and_message_staff("launched cinematic \"[cinematic]\"", src)

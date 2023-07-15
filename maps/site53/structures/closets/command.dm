@@ -4,7 +4,7 @@
 
 /obj/structure/closet/secure_closet/administration/facilityadmin
 	name = "facility director's locker"
-	req_access = list(access_adminlvl5)
+	req_access = list(ACCESS_ADMIN_LVL5)
 	icon_state = "flocked"
 	icon_closed = "funlocked"
 	icon_locked = "flocked"
@@ -13,7 +13,7 @@
 
 /obj/structure/closet/secure_closet/administration/facilityadmin/WillContain()
 	return list(
-//		/obj/item/clothing/under/suittie,
+		/obj/item/clothing/accessory/armorplate/sneaky,
 		/obj/item/clothing/shoes/dress,
 		/obj/item/device/radio,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
@@ -21,7 +21,7 @@
 
 /obj/structure/closet/secure_closet/administration/commsofficer
 	name = "communications officer's locker"
-	req_access = list(access_adminlvl4)
+	req_access = list(ACCESS_ADMIN_LVL4)
 	icon_state = "commolocked"
 	icon_closed = "commounlocked"
 	icon_locked = "commolocked"
@@ -45,13 +45,12 @@
 		/obj/item/storage/box/encryptionkeys/eng,
 		/obj/item/storage/box/encryptionkeys/sec,
 		/obj/item/clothing/shoes/dutyboots,
-//		/obj/item/device/radio/headset/heads/commsofficer
 		/obj/item/paper/monitorkey,
 	)
 
 /obj/structure/closet/secure_closet/administration/commstech
 	name = "communications operator's locker"
-	req_access = list(access_adminlvl1)
+	req_access = list(ACCESS_ADMIN_LVL1)
 	icon_state = "commlocked"
 	icon_state = "commlocked"
 	icon_closed = "communlocked"
@@ -66,6 +65,5 @@
 		/obj/item/material/clipboard,
 		/obj/item/folder/blue,
 		/obj/item/clothing/shoes/dutyboots,
-//		/obj/item/device/radio/headset/commsdispatcher,
-		/obj/item/storage/belt/utility/full
+		/obj/item/storage/belt/utility/full,
 	)

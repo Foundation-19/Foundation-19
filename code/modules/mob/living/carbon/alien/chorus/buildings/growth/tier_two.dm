@@ -38,7 +38,7 @@
 	activation_cost_resource = /datum/chorus_resource/growth_nutrients
 	activation_cost_amount = 2
 	death_message = "cracks loudly and falls to pieces."
-	death_sound = "fracture"
+	death_sound = SFX_BONE_FRACTURE
 
 /obj/structure/chorus/ossifier/activate()
 	owner.add_to_resource(/datum/chorus_resource/growth_bones, 1)
@@ -125,7 +125,7 @@
 	turf_type_to_add = /turf/simulated/floor/scales
 	growth_verb = "bursts"
 	death_message = "fractures loudly in half, its two ends dangling apart."
-	death_sound = "fracture"
+	death_sound = SFX_BONE_FRACTURE
 
 /datum/chorus_building/set_to_turf/growth/bone_shooter
 	desc = "Automatically shoots bone fragments at enemies."
@@ -148,7 +148,7 @@
 	activation_cost_amount = 1
 	click_cooldown = 8 SECONDS
 
-/obj/structure/chorus/processor/sentry/bone_shooter/trigger_effect(var/list/targets)
+/obj/structure/chorus/processor/sentry/bone_shooter/trigger_effect(list/targets)
 	var/mob/living/T = get_atom_closest_to_atom(src, targets)
 	var/obj/item/projectile/bone_shard/bs = new(get_turf(src), owner)
 	set_dir(get_dir(src, T))
@@ -167,7 +167,7 @@
 	damage_flags = 0
 	var/datum/chorus/ignore
 
-/obj/item/projectile/bone_shard/Initialize(var/maploading, var/ignoring)
+/obj/item/projectile/bone_shard/Initialize(maploading, ignoring)
 	..()
 	ignore = ignoring
 

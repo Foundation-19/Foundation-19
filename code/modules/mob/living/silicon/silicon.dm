@@ -58,6 +58,7 @@
 	GLOB.silicon_mob_list -= src
 	QDEL_NULL(silicon_radio)
 	QDEL_NULL(silicon_camera)
+	QDEL_NULL(idcard)
 	for(var/datum/alarm_handler/AH as anything in SSalarm.handlers)
 		AH.unregister_alarm(src)
 	return ..()
@@ -92,14 +93,14 @@
 			take_organ_damage(0, 7, ORGAN_DAMAGE_SILICON_EMP)
 			confused = (min(confused + 2, 30))
 	flash_eyes(affect_silicon = 1)
-	to_chat(src, "<span class='danger'><B>*BZZZT*</B></span>")
-	to_chat(src, "<span class='danger'>Warning: Electromagnetic pulse detected.</span>")
+	to_chat(src, SPAN_DANGER("<B>*BZZZT*</B>"))
+	to_chat(src, SPAN_DANGER("Warning: Electromagnetic pulse detected."))
 	..()
 
-/mob/living/silicon/stun_effect_act(var/stun_amount, var/agony_amount)
+/mob/living/silicon/stun_effect_act(stun_amount, agony_amount)
 	return	//immune
 
-/mob/living/silicon/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, def_zone = null)
+/mob/living/silicon/electrocute_act(shock_damage, obj/source, siemens_coeff = 1.0, def_zone = null)
 
 	if (istype(source, /obj/machinery/containment_field))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -108,20 +109,20 @@
 
 		shock_damage *= 0.75	//take reduced damage
 		take_overall_damage(0, shock_damage)
-		visible_message("<span class='warning'>\The [src] was shocked by \the [source]!</span>", \
-			"<span class='danger'>Energy pulse detected, system damaged!</span>", \
-			"<span class='warning'>You hear an electrical crack</span>")
+		visible_message(SPAN_WARNING("\The [src] was shocked by \the [source]!"), \
+			SPAN_DANGER("Energy pulse detected, system damaged!"), \
+			SPAN_WARNING("You hear an electrical crack"))
 		if(prob(20))
 			Stun(2)
 		return
 
-/mob/living/silicon/proc/damage_mob(var/brute = 0, var/fire = 0, var/tox = 0)
+/mob/living/silicon/proc/damage_mob(brute = 0, fire = 0, tox = 0)
 	return
 
 /mob/living/silicon/IsAdvancedToolUser()
 	return 1
 
-/mob/living/silicon/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/silicon/bullet_act(obj/item/projectile/Proj)
 	if(status_flags & GODMODE)
 		return PROJECTILE_FORCE_MISS
 
@@ -136,48 +137,27 @@
 	updatehealth()
 	return 100
 
-/mob/living/silicon/apply_effect(var/effect = 0,var/effecttype = STUN, var/blocked = 0)
+/mob/living/silicon/apply_effect(effect = 0,effecttype = STUN, blocked = 0)
 	return 0//The only effect that can hit them atm is flashes and they still directly edit so this works for now
 
-/proc/islinked(var/mob/living/silicon/robot/bot, var/mob/living/silicon/ai/ai)
+/proc/islinked(mob/living/silicon/robot/bot, mob/living/silicon/ai/ai)
 	if(!istype(bot) || !istype(ai))
 		return 0
 	if (bot.connected_ai == ai)
 		return 1
 	return 0
 
-
-// this function shows the health of the AI in the Status panel
-/mob/living/silicon/proc/show_system_integrity()
-	if(!src.stat)
-		stat(null, text("System integrity: [round((health/maxHealth)*100)]%"))
-	else
-		stat(null, text("Systems nonfunctional"))
-
-
-// This is a pure virtual function, it should be overwritten by all subclasses
-/mob/living/silicon/proc/show_malf_ai()
-	return 0
-
-// this function displays the shuttles ETA in the status panel if the shuttle has been called
-/mob/living/silicon/proc/show_emergency_shuttle_eta()
-	if(evacuation_controller)
-		var/eta_status = evacuation_controller.get_status_panel_eta()
-		if(eta_status)
-			stat(null, eta_status)
-
-
 // This adds the basic clock, shuttle recall timer, and malf_ai info to all silicon lifeforms
-/mob/living/silicon/Stat()
-	if(statpanel("Status"))
-		show_emergency_shuttle_eta()
-		show_system_integrity()
-		show_malf_ai()
-	. = ..()
+/mob/living/silicon/get_status_tab_items()
+	.=..()
+	if(!stat)
+		. += "System integrity: [round((health/maxHealth)*100)]%"
+	else
+		. += "Systems nonfunctional"
 
 //can't inject synths
-/mob/living/silicon/can_inject(var/mob/user, var/target_zone)
-	to_chat(user, "<span class='warning'>The armoured plating is too tough.</span>")
+/mob/living/silicon/can_inject(mob/user, target_zone)
+	to_chat(user, SPAN_WARNING("The armoured plating is too tough."))
 	return 0
 
 
@@ -186,7 +166,7 @@
 /mob/living/silicon/can_speak(datum/language/speaking)
 	return universal_speak || (speaking in src.speech_synthesizer_langs)	//need speech synthesizer support to vocalize a language
 
-/mob/living/silicon/add_language(var/language, var/can_speak=1)
+/mob/living/silicon/add_language(language, can_speak=1)
 	var/datum/language/added_language = all_languages[language]
 	if(!added_language)
 		return
@@ -196,7 +176,7 @@
 		speech_synthesizer_langs += added_language
 		return 1
 
-/mob/living/silicon/remove_language(var/rem_language)
+/mob/living/silicon/remove_language(rem_language)
 	var/datum/language/removed_language = all_languages[rem_language]
 	if(!removed_language)
 		return
@@ -233,10 +213,10 @@
 	switch(sensor_type)
 		if ("Security")
 			sensor_mode = SEC_HUD
-			to_chat(src, "<span class='notice'>Security records overlay enabled.</span>")
+			to_chat(src, SPAN_NOTICE("Security records overlay enabled."))
 		if ("Medical")
 			sensor_mode = MED_HUD
-			to_chat(src, "<span class='notice'>Life signs monitor overlay enabled.</span>")
+			to_chat(src, SPAN_NOTICE("Life signs monitor overlay enabled."))
 		if ("Disable")
 			sensor_mode = 0
 			to_chat(src, "Sensor augmentations disabled.")
@@ -262,7 +242,7 @@
 	if(status_flags & GODMODE)
 		return
 
-	if(!blinded)
+	if(can_see())
 		flash_eyes()
 
 	var/brute
@@ -280,7 +260,7 @@
 	apply_damage(brute, BRUTE, damage_flags = DAM_EXPLODE)
 	apply_damage(burn, BURN, damage_flags = DAM_EXPLODE)
 
-/mob/living/silicon/proc/receive_alarm(var/datum/alarm_handler/alarm_handler, var/datum/alarm/alarm, was_raised)
+/mob/living/silicon/proc/receive_alarm(datum/alarm_handler/alarm_handler, datum/alarm/alarm, was_raised)
 	if(!(alarm.alarm_z() in GetConnectedZlevels(get_z(src))))
 		return // Didn't actually hear it as far as we're concerned.
 	if(!next_alarm_notice)
@@ -311,7 +291,7 @@
 					alarm_raised = 1
 					if(!reported)
 						reported = 1
-						to_chat(src, "<span class='warning'>--- [AH.category] Detected ---</span>")
+						to_chat(src, SPAN_WARNING("--- [AH.category] Detected ---"))
 					raised_alarm(A)
 
 		for(var/datum/alarm_handler/AH in queued_alarms)
@@ -321,7 +301,7 @@
 				if(alarms[A] == -1)
 					if(!reported)
 						reported = 1
-						to_chat(src, "<span class='notice'>--- [AH.category] Cleared ---</span>")
+						to_chat(src, SPAN_NOTICE("--- [AH.category] Cleared ---"))
 					to_chat(src, "\The [A.alarm_name()].")
 
 		if(alarm_raised)
@@ -331,10 +311,10 @@
 			var/list/alarms = queued_alarms[AH]
 			alarms.Cut()
 
-/mob/living/silicon/proc/raised_alarm(var/datum/alarm/A)
+/mob/living/silicon/proc/raised_alarm(datum/alarm/A)
 	to_chat(src, "[A.alarm_name()]!")
 
-/mob/living/silicon/ai/raised_alarm(var/datum/alarm/A)
+/mob/living/silicon/ai/raised_alarm(datum/alarm/A)
 	var/cameratext = ""
 	for(var/obj/machinery/camera/C in A.cameras())
 		cameratext += "[(cameratext == "")? "" : "|"]<A HREF=?src=\ref[src];switchcamera=\ref[C]>[C.c_tag]</A>"
@@ -380,5 +360,5 @@
 /mob/living/silicon/seizure()
 	flash_eyes(affect_silicon = TRUE)
 
-/mob/living/silicon/get_bullet_impact_effect_type(var/def_zone)
+/mob/living/silicon/get_bullet_impact_effect_type(def_zone)
 	return BULLET_IMPACT_METAL

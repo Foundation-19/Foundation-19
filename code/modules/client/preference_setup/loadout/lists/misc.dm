@@ -3,17 +3,6 @@
 	path = /obj/item/cane
 	denied_roles = list(/datum/job/classd)
 
-/datum/gear/union_card
-	display_name = "union membership"
-	path = /obj/item/card/union
-	denied_roles = list(/datum/job/classd)
-
-/datum/gear/union_card/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
-	. = ..()
-	if(.)
-		var/obj/item/card/union/card = .
-		card.signed_by = H.real_name
-
 /datum/gear/dice
 	display_name = "dice pack"
 	path = /obj/item/storage/pill_bottle/dice
@@ -128,7 +117,7 @@
 	path = /obj/item/paper/travelvisa
 	denied_roles = list(/datum/job/classd)
 
-/datum/gear/passport/earth
+/datum/gear/passport
 	display_name = "passports selection"
 	description = "A selection of passports."
 	path = /obj/item/passport
@@ -293,3 +282,23 @@
 	cointype["coin, phoron"] = /obj/item/material/coin/phoron
 	cointype["coin, platinum"] = /obj/item/material/coin/platinum
 	gear_tweaks += new/datum/gear_tweak/path(cointype)
+
+/datum/gear/mre
+	display_name = "mre"
+	description = "A Meal, Ready to Eat."
+	path = /obj/item/storage/mre
+	cost = 4
+
+/datum/gear/mre/New()
+	..()
+	var/mre = list()
+	mre["random mre"] = /obj/item/storage/mre/random
+	mre["vegan mre"] = /obj/item/storage/mre/menu9
+	gear_tweaks += new/datum/gear_tweak/path(mre)
+
+/datum/gear/tape
+	display_name = "duct tape"
+	description = "A roll of very strong tape."
+	path = /obj/item/tape_roll
+	cost = 6
+	denied_roles = list(/datum/job/classd)

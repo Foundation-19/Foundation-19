@@ -12,14 +12,13 @@
 	var/power_usage_idle = 100
 	var/power_usage_occupied = 2 KILOWATTS
 
-/obj/item/stock_parts/computer/ai_slot/update_power_usage()
+/obj/item/stock_parts/computer/ai_slot/proc/update_power_usage()
 	if(!stored_card || !stored_card.carded_ai)
 		power_usage = power_usage_idle
 	else
 		power_usage = power_usage_occupied
-	..()
 
-/obj/item/stock_parts/computer/ai_slot/attackby(var/obj/item/W, var/mob/user)
+/obj/item/stock_parts/computer/ai_slot/attackby(obj/item/W, mob/user)
 	if(..())
 		return 1
 	if(istype(W, /obj/item/aicard))
@@ -48,7 +47,7 @@
 		user = usr
 
 	if(!CanPhysicallyInteract(user))
-		to_chat(user, "<span class='warning'>You can't reach it.</span>")
+		to_chat(user, SPAN_WARNING("You can't reach it."))
 		return
 
 	var/obj/item/stock_parts/computer/ai_slot/device = src

@@ -9,13 +9,13 @@
 	metabolism = REM * 0.2
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/acetone/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/acetone/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien == IS_NABBER)
 		return
 
 	M.adjustToxLoss(removed * 3)
 
-/datum/reagent/acetone/touch_obj(var/obj/O)	//I copied this wholesale from ethanol and could likely be converted into a shared proc. ~Techhead
+/datum/reagent/acetone/touch_obj(obj/O)	//I copied this wholesale from ethanol and could likely be converted into a shared proc. ~Techhead
 	if(istype(O, /obj/item/paper))
 		var/obj/item/paper/paperaffected = O
 		paperaffected.clearpaper()
@@ -25,11 +25,11 @@
 		if(volume < 5)
 			return
 		if(istype(O, /obj/item/book/tome))
-			to_chat(usr, "<span class='notice'>The solution does nothing. Whatever this is, it isn't normal ink.</span>")
+			to_chat(usr, SPAN_NOTICE("The solution does nothing. Whatever this is, it isn't normal ink."))
 			return
 		var/obj/item/book/affectedbook = O
 		affectedbook.dat = null
-		to_chat(usr, "<span class='notice'>The solution dissolves the ink on the book.</span>")
+		to_chat(usr, SPAN_NOTICE("The solution dissolves the ink on the book."))
 	return
 
 /datum/reagent/aluminium
@@ -52,13 +52,13 @@
 	overdose = 5
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/ammonia/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ammonia/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien == IS_VOX)
 		M.add_chemical_effect(CE_OXYGENATED, 2)
 	else if(alien != IS_DIONA)
 		M.adjustToxLoss(removed * 1.5)
 
-/datum/reagent/ammonia/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/ammonia/overdose(mob/living/carbon/M, alien)
 	if(alien != IS_VOX || volume > overdose*6)
 		..()
 
@@ -72,7 +72,7 @@
 	ingest_met = REM * 5
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/carbon/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/carbon/affect_ingest(mob/living/carbon/M, alien, removed)
 	if(alien == IS_DIONA)
 		return
 	var/datum/reagents/ingested = M.get_ingested_reagents()
@@ -83,7 +83,7 @@
 				continue
 			ingested.remove_reagent(R.type, removed * effect)
 
-/datum/reagent/carbon/touch_turf(var/turf/T)
+/datum/reagent/carbon/touch_turf(turf/T)
 	if(!istype(T, /turf/space))
 		var/obj/effect/decal/cleanable/dirt/dirtoverlay = locate(/obj/effect/decal/cleanable/dirt, T)
 		if (!dirtoverlay)
@@ -121,15 +121,15 @@
 	glass_desc = "A well-known alcohol with a variety of applications."
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/ethanol/touch_mob(var/mob/living/L, var/amount)
+/datum/reagent/ethanol/touch_mob(mob/living/L, amount)
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 15)
 
-/datum/reagent/ethanol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/affect_blood(mob/living/carbon/M, alien, removed)
 	M.adjustToxLoss(removed * 2 * toxicity)
 	return
 
-/datum/reagent/ethanol/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/affect_ingest(mob/living/carbon/M, alien, removed)
 	M.adjust_nutrition(nutriment_factor * removed)
 	M.adjust_hydration(hydration_factor * removed)
 	var/strength_mod = 1
@@ -172,7 +172,7 @@
 	if(halluci)
 		M.adjust_hallucination(halluci, halluci)
 
-/datum/reagent/ethanol/touch_obj(var/obj/O)
+/datum/reagent/ethanol/touch_obj(obj/O)
 	if(istype(O, /obj/item/paper))
 		var/obj/item/paper/paperaffected = O
 		paperaffected.clearpaper()
@@ -182,11 +182,11 @@
 		if(volume < 5)
 			return
 		if(istype(O, /obj/item/book/tome))
-			to_chat(usr, "<span class='notice'>The solution does nothing. Whatever this is, it isn't normal ink.</span>")
+			to_chat(usr, SPAN_NOTICE("The solution does nothing. Whatever this is, it isn't normal ink."))
 			return
 		var/obj/item/book/affectedbook = O
 		affectedbook.dat = null
-		to_chat(usr, "<span class='notice'>The solution dissolves the ink on the book.</span>")
+		to_chat(usr, SPAN_NOTICE("The solution dissolves the ink on the book."))
 	return
 
 /datum/reagent/hydrazine
@@ -199,14 +199,14 @@
 	touch_met = 5
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/hydrazine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/hydrazine/affect_blood(mob/living/carbon/M, alien, removed)
 	M.adjustToxLoss(4 * removed)
 
-/datum/reagent/hydrazine/affect_touch(var/mob/living/carbon/M, var/alien, var/removed) // Hydrazine is both toxic and flammable.
+/datum/reagent/hydrazine/affect_touch(mob/living/carbon/M, alien, removed) // Hydrazine is both toxic and flammable.
 	M.adjust_fire_stacks(removed / 12)
 	M.adjustToxLoss(0.2 * removed)
 
-/datum/reagent/hydrazine/touch_turf(var/turf/T)
+/datum/reagent/hydrazine/touch_turf(turf/T)
 	new /obj/effect/decal/cleanable/liquid_fuel(T, volume)
 	remove_self(volume)
 	return
@@ -219,7 +219,7 @@
 	color = "#353535"
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/iron/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/iron/affect_ingest(mob/living/carbon/M, alien, removed)
 	if(alien != IS_DIONA)
 		M.add_chemical_effect(CE_BLOODRESTORE, 8 * removed)
 
@@ -231,7 +231,7 @@
 	color = "#808080"
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/lithium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/lithium/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien != IS_DIONA)
 		if(istype(M.loc, /turf/space))
 			M.SelfMove(pick(GLOB.cardinal))
@@ -246,7 +246,7 @@
 	color = "#484848"
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/mercury/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/mercury/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien != IS_DIONA)
 		if(istype(M.loc, /turf/space))
 			M.SelfMove(pick(GLOB.cardinal))
@@ -271,7 +271,7 @@
 	value = DISPENSER_REAGENT_VALUE
 	should_admin_log = TRUE
 
-/datum/reagent/potassium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/potassium/affect_blood(mob/living/carbon/M, alien, removed)
 	if(volume > 3)
 		M.add_chemical_effect(CE_PULSE, 1)
 	if(volume > 10)
@@ -286,10 +286,10 @@
 	value = DISPENSER_REAGENT_VALUE
 	should_admin_log = TRUE
 
-/datum/reagent/radium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/radium/affect_blood(mob/living/carbon/M, alien, removed)
 	M.apply_damage(10 * removed, IRRADIATE, armor_pen = 100) // Radium may increase your chances to cure a disease
 
-/datum/reagent/radium/touch_turf(var/turf/T)
+/datum/reagent/radium/touch_turf(turf/T)
 	if(volume >= 3)
 		if(!istype(T, /turf/space))
 			var/obj/effect/decal/cleanable/greenglow/glow = locate(/obj/effect/decal/cleanable/greenglow, T)
@@ -312,6 +312,16 @@
 	color = "#808080"
 	value = DISPENSER_REAGENT_VALUE
 
+// code for SCP-3349
+/datum/reagent/sodium/affect_blood(mob/living/carbon/M, alien, removed)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if((H.chem_doses[GLOB.scp3349_precedent] > 4.4) && (H.chem_doses[GLOB.scp3349_fake_precedent] < 0.6))
+			H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
+
+			var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
+			heart.scp3349_induced = TRUE
+
 /datum/reagent/sugar
 	name = "Sugar"
 	description = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
@@ -326,7 +336,7 @@
 	glass_icon = DRINK_ICON_NOISY
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/sugar/affect_blood(var/mob/living/carbon/human/M, var/alien, var/removed)
+/datum/reagent/sugar/affect_blood(mob/living/carbon/human/M, alien, removed)
 	M.adjust_nutrition(removed * 3)
 
 	if(alien == IS_UNATHI)

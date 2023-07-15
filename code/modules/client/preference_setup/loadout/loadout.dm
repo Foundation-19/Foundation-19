@@ -12,7 +12,7 @@ var/list/gear_datums = list()
 	var/category = ""
 	var/list/gear = list()
 
-/datum/loadout_category/New(var/cat)
+/datum/loadout_category/New(cat)
 	category = cat
 	..()
 
@@ -55,7 +55,7 @@ var/list/gear_datums = list()
 	W.write("gear_list", pref.gear_list)
 	W.write("gear_slot", pref.gear_slot)
 
-/datum/category_item/player_setup_item/loadout/proc/valid_gear_choices(var/max_cost)
+/datum/category_item/player_setup_item/loadout/proc/valid_gear_choices(max_cost)
 	. = list()
 	var/mob/preference_mob = preference_mob()
 	for(var/gear_name in gear_datums)
@@ -73,7 +73,7 @@ var/list/gear_datums = list()
 			continue
 		. += gear_name
 
-/datum/category_item/player_setup_item/loadout/proc/skill_check(var/list/jobs, var/list/skills_required)
+/datum/category_item/player_setup_item/loadout/proc/skill_check(list/jobs, list/skills_required)
 	for(var/datum/job/J in jobs)
 		. = TRUE
 		for(var/R in skills_required)
@@ -179,43 +179,83 @@ var/list/gear_datums = list()
 		entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"
 		entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
 		entry += "<td><font size=2>[G.get_description(get_gear_metadata(G,1))]</font>"
+		entry += "<br><i>"
+
 		var/allowed = 1
-		if(allowed && (G.allowed_roles || G.denied_roles))
-			var/good_job = 0
-			var/bad_job = 0
-			var/list/jobchecks = list()
-			for(var/datum/job/J in jobs)
-				if(!(J.type in G.denied_roles))
-					if(J.type in G?.allowed_roles)
-						jobchecks += "<font color=55cc55>[J.title]</font>"
-						good_job = 1
-				else
-					jobchecks += "<font color=cc5555>[J.title]</font>"
-					bad_job = 1
-			allowed = good_job || !bad_job
-			if(length(jobchecks))
-				entry += "<br><i>"
-				entry += "[english_list(jobchecks)]</i>"
 
-		if(allowed && G.allowed_branches)
-			var/list/branches = list()
-			for(var/datum/job/J in jobs)
-				if(pref.branches[J.title])
-					branches |= pref.branches[J.title]
-			if(length(branches))
-				var/list/branch_checks = list()
-				var/good_branch = 0
-				entry += "<br><i>"
-				for(var/branch in branches)
-					var/datum/mil_branch/player_branch = mil_branches.get_branch(branch)
-					if(player_branch.type in G.allowed_branches)
-						branch_checks += "<font color=55cc55>[player_branch.name]</font>"
-						good_branch = 1
+		var/list/good_jobs = list()
+		var/list/bad_jobs = list()
+		var/list/jobchecks = list()
+
+		var/is_blacklist = FALSE
+		var/is_whitelist = FALSE
+		var/is_mil_branch = FALSE
+
+		for(var/datum/job/J in jobs)
+			var/datum/mil_branch/player_branch
+			var/branch
+
+			if(pref.branches[J.title])
+				branch = pref.branches[J.title]
+				player_branch = mil_branches.get_branch(branch)
+
+			// If a branch permission is set, we'll work downwards
+			// We'll add all roles in a branch, and any allowed_roles, to our "allowed" list, and then remove the denied_roles
+			// Every other role is disallowed
+			if (G.allowed_branches)
+				is_mil_branch = TRUE
+				if (player_branch.type in G.allowed_branches)
+					if (!(J.type in G.denied_roles))
+						good_jobs |= J
 					else
-						branch_checks += "<font color=cc5555>[player_branch.name]</font>"
-				allowed = good_branch
+						bad_jobs |= J
+				else if (J.type in G.allowed_roles)
+					good_jobs |= J
+				else
+					bad_jobs |= J
 
-				entry += "[english_list(branch_checks)]</i>"
+			// Otherwise, if a specific allow role permission is set, we'll check that it isn't in an overriding denied_roles list
+			else if (G.allowed_roles)
+				is_whitelist = TRUE
+				if (J.type in G.denied_roles)
+					bad_jobs |= J
+				else if (J.type in G.allowed_roles)
+					good_jobs |= J
+				else
+					bad_jobs |= J
+
+			// And if we only have deny role permissions, we'll set everyone else to allow
+			else if (G.denied_roles)
+				is_blacklist = TRUE
+				if (J.type in G.denied_roles)
+					bad_jobs |= J
+				else
+					good_jobs |= J
+
+			// No permissions set = everyone
+			else
+				good_jobs |= J
+
+		if (is_mil_branch || is_whitelist)
+			for(var/datum/job/J in bad_jobs)
+				jobchecks += "<font color=cc5555>[J.title]</font>"
+				allowed = 0
+
+			for(var/datum/job/J in good_jobs)
+				jobchecks += "<font color=55cc55>[J.title]</font>"
+				allowed = 1
+
+		else if (is_blacklist)
+			entry += "Permitted for every role except: "
+			for(var/datum/job/J in bad_jobs)
+				jobchecks += "<font color=cc5555>[J.title]</font>"
+				allowed = 0
+
+			if(length(good_jobs))
+				allowed = 1
+
+		if (length(jobchecks))
+			entry += "[english_list(jobchecks)]</i>"
 
 		if(allowed && G.allowed_skills)
 			var/list/skills_required = list()//make it into instances? instead of path
@@ -270,7 +310,7 @@ var/list/gear_datums = list()
 	. += "</table>"
 	. = jointext(.,null)
 
-/datum/category_item/player_setup_item/loadout/proc/get_gear_metadata(var/datum/gear/G, var/readonly)
+/datum/category_item/player_setup_item/loadout/proc/get_gear_metadata(datum/gear/G, readonly)
 	var/list/gear = pref.gear_list[pref.gear_slot]
 	. = gear[G.display_name]
 	if(!.)
@@ -278,14 +318,14 @@ var/list/gear_datums = list()
 		if(!readonly)
 			gear[G.display_name] = .
 
-/datum/category_item/player_setup_item/loadout/proc/get_tweak_metadata(var/datum/gear/G, var/datum/gear_tweak/tweak)
+/datum/category_item/player_setup_item/loadout/proc/get_tweak_metadata(datum/gear/G, datum/gear_tweak/tweak)
 	var/list/metadata = get_gear_metadata(G)
 	. = metadata["[tweak]"]
 	if(!.)
 		. = tweak.get_default()
 		metadata["[tweak]"] = .
 
-/datum/category_item/player_setup_item/loadout/proc/set_tweak_metadata(var/datum/gear/G, var/datum/gear_tweak/tweak, var/new_metadata)
+/datum/category_item/player_setup_item/loadout/proc/set_tweak_metadata(datum/gear/G, datum/gear_tweak/tweak, new_metadata)
 	var/list/metadata = get_gear_metadata(G)
 	metadata["[tweak]"] = new_metadata
 
@@ -383,7 +423,7 @@ var/list/gear_datums = list()
 	if(custom_setup_proc)
 		gear_tweaks += new/datum/gear_tweak/custom_setup(custom_setup_proc)
 
-/datum/gear/proc/get_description(var/metadata)
+/datum/gear/proc/get_description(metadata)
 	. = description
 	for(var/datum/gear_tweak/gt in gear_tweaks)
 		. = gt.tweak_description(., metadata["[gt]"])
@@ -392,7 +432,7 @@ var/list/gear_datums = list()
 	var/path
 	var/location
 
-/datum/gear_data/New(var/path, var/location)
+/datum/gear_data/New(path, location)
 	src.path = path
 	src.location = location
 
@@ -405,17 +445,11 @@ var/list/gear_datums = list()
 		gt.tweak_item(user, item, metadata && metadata["[gt]"])
 	return item
 
-/datum/gear/proc/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
-	var/obj/item/item = spawn_item(H, H, metadata)
-	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1, force = 1))
-		. = item
-
-/datum/gear/proc/spawn_in_storage_or_drop(var/mob/living/carbon/human/H, var/metadata)
+/datum/gear/proc/spawn_in_storage_or_drop(mob/living/carbon/human/H, metadata)
 	var/obj/item/item = spawn_item(H, H, metadata)
 	item.add_fingerprint(H)
 
 	// Roundstart augments require special handling in order to properly install
-	// Putting this in "spawn_on_mob" requires overriding a bunch of logic, so we hook into here instead
 	if (istype(item, /obj/item/organ/internal/augment))
 		var/obj/item/organ/internal/augment/A = item
 		var/obj/item/organ/external/affected = H.get_organ(A.parent_organ)
@@ -441,12 +475,15 @@ var/list/gear_datums = list()
 				A.onRoundstart()
 				. = A
 	else
-		var/atom/placed_in = H.equip_to_storage(item)
-		if(placed_in)
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
+		if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 0, force = 0))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in its default inventory slot!"))
 		else if(H.equip_to_appropriate_slot(item))
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your inventory!"))
-		else if(H.put_in_hands(item))
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in an inventory slot!"))
 		else
-			to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))
+			var/atom/placed_in = H.equip_to_storage(item)
+			if(placed_in)
+				to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
+			else if(H.put_in_hands(item))
+				to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
+			else
+				to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))

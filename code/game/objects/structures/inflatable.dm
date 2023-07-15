@@ -198,15 +198,15 @@
 	deflate()
 	return TRUE
 
-/obj/structure/inflatable/attack_generic(var/mob/user, var/damage, var/attack_verb)
+/obj/structure/inflatable/attack_generic(mob/user, damage, attack_verb)
 	attack_animation(user)
 	if(damage_health(damage))
-		user.visible_message("<span class='danger'>[user] [attack_verb] open the [src]!</span>")
+		user.visible_message(SPAN_DANGER("[user] [attack_verb] open the [src]!"))
 	else
-		user.visible_message("<span class='danger'>[user] [attack_verb] at [src]!</span>")
+		user.visible_message(SPAN_DANGER("[user] [attack_verb] at [src]!"))
 	return 1
 
-/obj/structure/inflatable/CanFluidPass(var/coming_from)
+/obj/structure/inflatable/CanFluidPass(coming_from)
 	return !density
 
 /obj/structure/inflatable/door //Based on mineral door code
@@ -290,7 +290,7 @@
 	else
 		icon_state = "door_closed"
 
-/obj/structure/inflatable/door/deflate(var/violent=0)
+/obj/structure/inflatable/door/deflate(violent=0)
 	playsound(loc, 'sound/machines/hiss.ogg', 75, 1)
 	if(violent)
 		visible_message("[src] rapidly deflates!")
@@ -311,7 +311,7 @@
 	icon_state = "folded_wall_torn"
 
 /obj/item/inflatable/torn/attack_self(mob/user)
-	to_chat(user, "<span class='notice'>The inflatable wall is too torn to be inflated!</span>")
+	to_chat(user, SPAN_NOTICE("The inflatable wall is too torn to be inflated!"))
 	add_fingerprint(user)
 
 /obj/item/inflatable/door/torn
@@ -321,7 +321,7 @@
 	icon_state = "folded_door_torn"
 
 /obj/item/inflatable/door/torn/attack_self(mob/user)
-	to_chat(user, "<span class='notice'>The inflatable door is too torn to be inflated!</span>")
+	to_chat(user, SPAN_NOTICE("The inflatable door is too torn to be inflated!"))
 	add_fingerprint(user)
 
 /obj/item/storage/briefcase/inflatable

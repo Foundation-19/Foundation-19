@@ -1,26 +1,7 @@
-/var/server_name = "TeguStation"
+/var/server_name = "Foundation 19"
 /var/game_id = null
 
 GLOBAL_VAR(href_logfile)
-
-/hook/global_init/proc/generate_gameid()
-	if(game_id != null)
-		return
-	game_id = ""
-
-	var/list/c = list("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
-	var/l = c.len
-
-	var/t = world.timeofday
-	for(var/_ = 1 to 4)
-		game_id = "[c[(t % l) + 1]][game_id]"
-		t = round(t / l)
-	game_id = "-[game_id]"
-	t = round(world.realtime / (10 * 60 * 60 * 24))
-	for(var/_ = 1 to 3)
-		game_id = "[c[(t % l) + 1]][game_id]"
-		t = round(t / l)
-	return 1
 
 // Find mobs matching a given string
 //
@@ -68,10 +49,26 @@ GLOBAL_VAR(href_logfile)
 
 #define RECOMMENDED_VERSION 512
 /world/New()
-
-	enable_debugger()
 	//set window title
 	name = "[server_name] - [GLOB.using_map.full_name]"
+
+	if(isnull(game_id))
+		game_id = ""
+
+		var/list/c = list("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
+		var/l = c.len
+
+		var/t = world.timeofday
+		for(var/_ = 1 to 4)
+			game_id = "[c[(t % l) + 1]][game_id]"
+			t = round(t / l)
+		game_id = "-[game_id]"
+		t = round(world.realtime / (10 * 60 * 60 * 24))
+		for(var/_ = 1 to 3)
+			game_id = "[c[(t % l) + 1]][game_id]"
+			t = round(t / l)
+
+	make_datum_references_lists() //initialises global lists for referencing frequently used datums (so that we only ever do it once)
 
 	//logs
 	SetupLogs()
@@ -84,11 +81,21 @@ GLOBAL_VAR(href_logfile)
 		to_file(runtime_log, "Game [game_id] starting up at [time2text(world.timeofday, "hh:mm.ss")]")
 		log = runtime_log // Note that, as you can see, this is misnamed: this simply moves world.log into the runtime log file.
 
-	if (config && config.log_hrefs)
+	if(config && config.log_hrefs)
 		GLOB.href_logfile = file("data/logs/[date_string] hrefs.htm")
+
+	if(config?.log_assets)
+		GLOB.world_asset_log = file("[GLOB.log_directory]/asset.log")
 
 	if(byond_version < RECOMMENDED_VERSION)
 		to_world_log("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
+
+	LoadVerbs(/datum/verbs/menu)
+
+	GLOB.timezoneOffset = text2num(time2text(0,"hh")) * 36000
+
+	var/latest_changelog = file("html/changelogs/archive/" + time2text(world.timeofday, "YYYY-MM") + ".yml")
+	GLOB.changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for telling if the changelog has changed recently
 
 	// Database masterinit
 	SSdbcore.CheckSchemaVersion()
@@ -98,6 +105,7 @@ GLOBAL_VAR(href_logfile)
 
 	//TGS
 	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
+	revdata.load_tgs_info()
 	TgsInitializationComplete();
 
 	//Emergency Fix
@@ -114,6 +122,7 @@ GLOBAL_VAR(href_logfile)
 	load_unit_test_changes()
 #endif
 	Master.Initialize(10, FALSE)
+
 
 #undef RECOMMENDED_VERSION
 
@@ -171,8 +180,8 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 		// This is dumb, but spacestation13.com's banners break if player count isn't the 8th field of the reply, so... this has to go here.
 		s["players"] = 0
-		s["stationtime"] = stationtime2text()
-		s["roundduration"] = roundduration2text()
+		s["stationtime"] = station_time_timestamp("hh:mm")
+		s["roundduration"] = DisplayTimeText(world.time - SSticker.round_start_time)
 		s["map"] = replacetext(GLOB.using_map.full_name, "\improper", "") //Done to remove the non-UTF-8 text macros
 
 		var/active = 0
@@ -223,9 +232,8 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		L["dd_version"] = world.byond_version // DreamDaemon version running on
 		L["dd_build"] = world.byond_build // DreamDaemon build running on
 
-		if(revdata.revision)
-			L["revision"] = revdata.revision
-			L["branch"] = revdata.branch
+		if(revdata)
+			L["revision"] = revdata.commit
 			L["date"] = revdata.date
 		else
 			L["revision"] = "unknown"
@@ -402,8 +410,8 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		if(rank == "Unknown")
 			rank = "Staff"
 
-		var/message =	"<font color='red'>[rank] PM from <b><a href='?irc_msg=[input["sender"]]'>[input["sender"]]</a></b>: [input["msg"]]</font>"
-		var/amessage =  "<font color='blue'>[rank] PM from <a href='?irc_msg=[input["sender"]]'>[input["sender"]]</a> to <b>[key_name(C)]</b> : [input["msg"]]</font>"
+		var/message =	FONT_COLORED("red","[rank] PM from <b><a href='?irc_msg=[input["sender"]]'>[input["sender"]]</a></b>: [input["msg"]]")
+		var/amessage =  FONT_COLORED("blue","[rank] PM from <a href='?irc_msg=[input["sender"]]'>[input["sender"]]</a> to <b>[key_name(C)]</b> : [input["msg"]]")
 
 		C.received_irc_pm = world.time
 		C.irc_admin = input["sender"]
@@ -454,7 +462,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 #undef SET_THROTTLE
 
-/world/Reboot(var/reason)
+/world/Reboot(reason)
 	/*spawn(0)
 		sound_to(world, sound(pick('sound/AI/newroundsexy.ogg','sound/misc/apcdestroyed.ogg','sound/misc/bangindonk.ogg')))// random end sounds!! - LastyBatsy
 
@@ -463,13 +471,9 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 	Master.Shutdown()
 
-	var/datum/chatOutput/co
-	for(var/client/C in GLOB.clients)
-		co = C.chatOutput
-		if(co)
-			co.ehjax_send(data = "roundrestart")
 	if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 		for(var/client/C in GLOB.clients)
+			C?.tgui_panel?.send_roundrestart()
 			send_link(C, "byond://[config.server]")
 
 	if(config.wait_for_sigusr1_reboot && reason != 3)
@@ -480,6 +484,9 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	..(reason)
 
 /world/Del()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_shutdown")()
 	callHook("shutdown")
 	return ..()
 
@@ -497,20 +504,10 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 			SSticker.master_mode = Lines[1]
 			log_misc("Saved mode is '[SSticker.master_mode]'")
 
-/world/proc/save_mode(var/the_mode)
+/world/proc/save_mode(the_mode)
 	var/F = file("data/mode.txt")
 	fdel(F)
 	to_file(F, the_mode)
-
-/proc/load_configuration()
-	config = new /datum/configuration()
-	config.load("config/config.txt")
-	config.load("config/game_options.txt","game_options")
-	if (GLOB.using_map?.config_path)
-		config.load(GLOB.using_map.config_path, "using_map")
-	config.load_text("config/motd.txt", "motd")
-	config.load_text("config/event.txt", "event")
-	config.loadsql("config/dbconfig.txt")
 
 /hook/startup/proc/loadMods()
 	world.load_mods()
@@ -607,6 +604,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 	GLOB.world_qdel_log = file("[GLOB.log_directory]/qdel.log")
 	GLOB.query_debug_log = file("[GLOB.log_directory]/sql.log")
+	GLOB.tgui_log = file("[GLOB.log_directory]/tgui.log")
 	to_file(GLOB.world_qdel_log, "\n\nStarting up round ID [game_id]. [time_stamp()]\n---------------------")
 
 #define FAILED_DB_CONNECTION_CUTOFF 5
@@ -682,8 +680,3 @@ var/failed_old_db_connections = 0
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
-
-/world/proc/enable_debugger()
-	var/dll = world.GetConfig("env", "EXTOOLS_DLL")
-	if (dll)
-		call(dll, "debug_initialize")()

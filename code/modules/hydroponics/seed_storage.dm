@@ -5,14 +5,14 @@
 	var/list/obj/item/seeds/seeds = list() // Tracks actual objects contained in the pile
 	var/ID
 
-/datum/seed_pile/New(var/obj/item/seeds/O, var/ID)
+/datum/seed_pile/New(obj/item/seeds/O, ID)
 	name = O.name
 	amount = 1
 	seed_type = O.seed
 	seeds += O
 	src.ID = ID
 
-/datum/seed_pile/proc/matches(var/obj/item/seeds/O)
+/datum/seed_pile/proc/matches(obj/item/seeds/O)
 	if (O.seed == seed_type)
 		return 1
 	return 0
@@ -30,7 +30,7 @@
 	var/list/starting_seeds = list()
 	var/list/scanner = list() // What properties we can view
 
-/obj/machinery/seed_storage/Initialize(var/mapload)
+/obj/machinery/seed_storage/Initialize(mapload)
 	. = ..()
 	for(var/typepath in starting_seeds)
 		var/amount = starting_seeds[typepath]
@@ -193,7 +193,7 @@
 
 	var/dat = "<center><h1>Seed storage contents</h1></center>"
 	if (piles.len == 0)
-		dat += "<font color='red'>No seeds</font>"
+		dat += FONT_COLORED("red","No seeds")
 	else
 		dat += "<table style='text-align:center;border-style:solid;border-width:1px;padding:4px'><tr><td>Name</td>"
 		dat += "<td>Variety</td>"
@@ -248,12 +248,12 @@
 				if(1)
 					dat += "CARN "
 				if(2)
-					dat	+= "<font color='red'>CARN </font>"
+					dat	+= FONT_COLORED("red","CARN ")
 			switch(seed.get_trait(TRAIT_SPREAD))
 				if(1)
 					dat += "VINE "
 				if(2)
-					dat	+= "<font color='red'>VINE </font>"
+					dat	+= FONT_COLORED("red","VINE ")
 			if ("pressure" in scanner)
 				if(seed.get_trait(TRAIT_LOWKPA_TOLERANCE) < 20)
 					dat += "LP "
@@ -299,7 +299,7 @@
 	show_browser(user, dat, "window=seedstorage;size=800x500")
 	onclose(user, "seedstorage")
 
-/obj/machinery/seed_storage/Topic(var/href, var/list/href_list)
+/obj/machinery/seed_storage/Topic(href, list/href_list)
 	if (..())
 		return
 	var/task = href_list["task"]
@@ -328,7 +328,7 @@
 			break
 	updateUsrDialog()
 
-/obj/machinery/seed_storage/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/seed_storage/attackby(obj/item/O as obj, mob/user as mob)
 	if (istype(O, /obj/item/seeds))
 		add(O)
 		user.visible_message("[user] puts \the [O.name] into \the [src].", "You put \the [O] into \the [src].")
@@ -344,14 +344,14 @@
 		if (loaded)
 			user.visible_message("[user] puts the seeds from \the [O.name] into \the [src].", "You put the seeds from \the [O.name] into \the [src].")
 		else
-			to_chat(user, "<span class='notice'>There are no seeds in \the [O.name].</span>")
+			to_chat(user, SPAN_NOTICE("There are no seeds in \the [O.name]."))
 		return
 	else if(isWrench(O))
 		playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
 		anchored = !anchored
 		to_chat(user, "You [anchored ? "wrench" : "unwrench"] \the [src].")
 
-/obj/machinery/seed_storage/proc/add(var/obj/item/seeds/O, bypass_removal = 0)
+/obj/machinery/seed_storage/proc/add(obj/item/seeds/O, bypass_removal = 0)
 	if(!bypass_removal)
 		if (istype(O.loc, /mob))
 			var/mob/user = O.loc

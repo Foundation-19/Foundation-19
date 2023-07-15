@@ -1,12 +1,10 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /obj/machinery/computer/prisoner
 	name = "prisoner management console"
 	icon = 'icons/obj/computer.dmi'
 	icon_keyboard = "security_key"
 	icon_screen = "explosive"
 	light_color = "#a91515"
-	req_access = list(access_armory)
+	req_access = list(ACCESS_ARMORY)
 	machine_name = "prison management console"
 	machine_desc = "Prison management consoles display a readout of active tracking and chemical implants, and allows for remote activation of them."
 	var/id = 0.0
@@ -17,10 +15,10 @@
 	var/screen = 0 // 0 - No Access Denied, 1 - Access allowed
 
 
-/obj/machinery/computer/prisoner/attack_ai(var/mob/user as mob)
+/obj/machinery/computer/prisoner/attack_ai(mob/user as mob)
 	return src.attack_hand(user)
 
-/obj/machinery/computer/prisoner/attack_hand(var/mob/user as mob)
+/obj/machinery/computer/prisoner/attack_hand(mob/user as mob)
 	if(..())
 		return
 	user.set_machine(src)
@@ -100,7 +98,7 @@
 			var/obj/item/implant/I = locate(href_list["warn"])
 			if((I)&&(I.imp_in))
 				var/mob/living/carbon/R = I.imp_in
-				to_chat(R, "<span class='notice'>You hear a voice in your head saying: '[warning]'</span>")
+				to_chat(R, SPAN_NOTICE("You hear a voice in your head saying: '[warning]'"))
 
 	src.updateUsrDialog()
 	return

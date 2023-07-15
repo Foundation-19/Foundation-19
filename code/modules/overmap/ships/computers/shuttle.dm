@@ -6,7 +6,7 @@
 	machine_name = "long range shuttle console"
 	machine_desc = "Used to control spacecraft that are designed to move between local sectors in open space."
 
-/obj/machinery/computer/shuttle_control/explore/get_ui_data(var/datum/shuttle/autodock/overmap/shuttle)
+/obj/machinery/computer/shuttle_control/explore/get_ui_data(datum/shuttle/autodock/overmap/shuttle)
 	. = ..()
 	if(istype(shuttle))
 		var/total_gas = 0
@@ -27,7 +27,7 @@
 			"fuel_span" = fuel_span
 		)
 
-/obj/machinery/computer/shuttle_control/explore/handle_topic_href(var/datum/shuttle/autodock/overmap/shuttle, var/list/href_list)	
+/obj/machinery/computer/shuttle_control/explore/handle_topic_href(datum/shuttle/autodock/overmap/shuttle, list/href_list)
 	if(ismob(usr))
 		var/mob/user = usr
 		shuttle.operator_skill = user.get_skill_value(SKILL_PILOT)
@@ -41,7 +41,7 @@
 		if(possible_d.len)
 			D = input("Choose shuttle destination", "Shuttle Destination") as null|anything in possible_d
 		else
-			to_chat(usr,"<span class='warning'>No valid landing sites in range.</span>")
+			to_chat(usr,SPAN_WARNING("No valid landing sites in range."))
 		possible_d = shuttle.get_possible_destinations()
 		if(CanInteract(usr, GLOB.default_state) && (D in possible_d))
 			shuttle.set_destination(possible_d[D])

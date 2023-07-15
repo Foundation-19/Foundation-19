@@ -80,7 +80,7 @@
 		to_chat(user, "Evacuation procedures already in progress.")
 		return
 	if (evacuation_controller.call_evacuation(user, 1))
-		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has initiated abandonment of the site.")
+		log_and_message_staff("[user? key_name(user) : "Autotransfer"] has initiated abandonment of the site.")
 
 /datum/evacuation_option/end_shift
 	option_text = "End work shift"
@@ -102,7 +102,7 @@
 		to_chat(user, "Standard shift change already in progress.")
 		return
 	if (evacuation_controller.call_evacuation(user, 0))
-		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has initiated a shift change.")
+		log_and_message_staff("[user? key_name(user) : "Autotransfer"] has initiated a shift change.")
 
 /datum/evacuation_option/cancel_abandon_site
 	option_text = "Cancel abandonment"
@@ -113,7 +113,7 @@
 
 /datum/evacuation_option/cancel_abandon_site/execute(mob/user)
 	if (ticker && evacuation_controller && evacuation_controller.cancel_evacuation())
-		log_and_message_admins("[key_name(user)] has cancelled abandonment of the site.")
+		log_and_message_staff("[key_name(user)] has cancelled abandonment of the site.")
 
 /datum/evacuation_option/cancel_end_shift
 	option_text = "Cancel shift change"
@@ -124,7 +124,7 @@
 
 /datum/evacuation_option/cancel_end_shift/execute(mob/user)
 	if (ticker && evacuation_controller && evacuation_controller.cancel_evacuation())
-		log_and_message_admins("[key_name(user)] has cancelled the shift change.")
+		log_and_message_staff("[key_name(user)] has cancelled the shift change.")
 
 // /obj/screen/fullscreen/bluespace_overlay
 // 	icon = 'icons/effects/effects.dmi'

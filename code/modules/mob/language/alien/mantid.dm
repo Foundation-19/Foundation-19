@@ -20,7 +20,7 @@
 	)
 	has_written_form = TRUE
 
-/datum/language/mantid/can_be_spoken_properly_by(var/mob/speaker)
+/datum/language/mantid/can_be_spoken_properly_by(mob/speaker)
 	var/mob/living/S = speaker
 	if(!istype(S))
 		return FALSE
@@ -32,7 +32,7 @@
 			return TRUE
 	return FALSE
 
-/datum/language/mantid/muddle(var/message)
+/datum/language/mantid/muddle(message)
 	message = replacetext(message, "...",  ".")
 	message = replacetext(message, "!?",   ".")
 	message = replacetext(message, "?!",   ".")
@@ -45,7 +45,7 @@
 	message = replacetext(message, "&#39", "'")
 	return message
 
-/datum/language/mantid/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
+/datum/language/mantid/broadcast(mob/living/speaker,message,speaker_mask)
 	. = ..(speaker, message, speaker.real_name)
 
 /datum/language/mantid/nonvocal
@@ -61,7 +61,7 @@
 	has_written_form = FALSE
 
 #define MANTID_SCRAMBLE_CACHE_LEN 20
-/datum/language/mantid/nonvocal/scramble(var/input)
+/datum/language/mantid/nonvocal/scramble(input)
 	if(input in scramble_cache)
 		var/n = scramble_cache[input]
 		scramble_cache -= input
@@ -71,14 +71,14 @@
 	var/scrambled_text = ""
 	while(i)
 		i--
-		scrambled_text += "<font color='[get_random_colour(1)]'>*</font>"
+		scrambled_text += FONT_COLORED("[get_random_colour(1)]","*")
 	scramble_cache[input] = scrambled_text
 	if(scramble_cache.len > MANTID_SCRAMBLE_CACHE_LEN)
 		scramble_cache.Cut(1, scramble_cache.len-MANTID_SCRAMBLE_CACHE_LEN-1)
 	return scrambled_text
 #undef MANTID_SCRAMBLE_CACHE_LEN
 
-/datum/language/mantid/nonvocal/can_speak_special(var/mob/living/speaker)
+/datum/language/mantid/nonvocal/can_speak_special(mob/living/speaker)
 	if(istype(speaker) && speaker.isSynthetic())
 		return TRUE
 	else if(ishuman(speaker))
@@ -98,7 +98,7 @@
 	shorthand = "KB"
 	has_written_form = FALSE
 
-/datum/language/mantid/worldnet/check_special_condition(var/mob/living/carbon/other)
+/datum/language/mantid/worldnet/check_special_condition(mob/living/carbon/other)
 	if(istype(other, /mob/living/silicon/robot/flying/ascent))
 		return TRUE
 	if(istype(other) && (locate(/obj/item/organ/internal/controller) in other.internal_organs))

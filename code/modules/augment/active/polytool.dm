@@ -17,7 +17,7 @@
 	QDEL_NULL_LIST(items)
 	. = ..()
 
-/obj/item/organ/internal/augment/active/polytool/proc/holding_dropped(var/obj/item/I)
+/obj/item/organ/internal/augment/active/polytool/proc/holding_dropped(obj/item/I)
 
 	//Stop caring
 	GLOB.item_unequipped_event.unregister(I, src)

@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 /obj/item/tank/jetpack
 	name = "jetpack (empty)"
 	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution."
@@ -21,12 +19,12 @@
 
 /obj/item/tank/jetpack/Destroy()
 	qdel(ion_trail)
-	..()
+	return ..()
 
 /obj/item/tank/jetpack/examine(mob/living/user)
 	. = ..()
 	if(air_contents.total_moles < 5)
-		to_chat(user, "<span class='danger'>The meter on \the [src] indicates you are almost out of gas!</span>")
+		to_chat(user, SPAN_DANGER("The meter on \the [src] indicates you are almost out of gas!"))
 
 /obj/item/tank/jetpack/verb/toggle_rockets()
 	set name = "Toggle Jetpack Stabilization"

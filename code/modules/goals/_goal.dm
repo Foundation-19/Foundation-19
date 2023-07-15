@@ -6,7 +6,7 @@
 	var/can_reroll = TRUE
 	var/can_abandon = TRUE
 
-/datum/goal/New(var/_owner)
+/datum/goal/New(_owner)
 	owner = _owner
 	GLOB.destroyed_event.register(owner, src, /datum/proc/qdel_self)
 	if(istype(owner, /datum/mind))
@@ -23,7 +23,7 @@
 		owner = null
 	. = ..()
 
-/datum/goal/proc/summarize(var/show_success = FALSE, var/allow_modification = FALSE, var/mob/caller ,var/position = 1)
+/datum/goal/proc/summarize(show_success = FALSE, allow_modification = FALSE, mob/caller ,position = 1)
 	. = "[description][get_summary_value()]"
 	if(show_success)
 		. += get_success_string()
@@ -40,7 +40,7 @@
 /datum/goal/proc/update_strings()
 	return
 
-/datum/goal/proc/update_progress(var/progress)
+/datum/goal/proc/update_progress(progress)
 	return
 
 /datum/goal/proc/check_success()
@@ -53,7 +53,7 @@
 	if(completion_message && check_success())
 		if(istype(owner, /datum/mind))
 			var/datum/mind/mind = owner
-			to_chat(mind.current, "<font color='green'><b>[completion_message]</b></font>")
+			to_chat(mind.current, FONT_COLORED("green","<b>[completion_message]</b>"))
 
 /datum/goal/proc/on_failure()
 	if(failure_message && !check_success() && istype(owner, /datum/mind))

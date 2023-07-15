@@ -25,17 +25,13 @@ var/global/list/default_pai_software = list()
 		var/datum/pai_software/P = new type()
 		if(pai_software_by_key[P.id])
 			var/datum/pai_software/O = pai_software_by_key[P.id]
-			log_error("<span class='warning'>pAI software module [P.name] has the same key as [O.name]!</span>")
+			log_error(SPAN_WARNING("pAI software module [P.name] has the same key as [O.name]!"))
 			r = 0
 			continue
 		pai_software_by_key[P.id] = P
 		if(P.default)
 			default_pai_software[P.id] = P
 	return r
-
-/mob/living/silicon/pai/New()
-	..()
-	software = default_pai_software.Copy()
 
 /mob/living/silicon/pai/proc/paiInterface()
 	ui_interact(src)

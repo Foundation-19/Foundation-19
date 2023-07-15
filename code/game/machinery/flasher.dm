@@ -38,9 +38,9 @@
 		add_fingerprint(user, 0, W)
 		src.disable = !src.disable
 		if (src.disable)
-			user.visible_message("<span class='warning'>[user] has disconnected the [src]'s flashbulb!</span>", "<span class='warning'>You disconnect the [src]'s flashbulb!</span>")
+			user.visible_message(SPAN_WARNING("[user] has disconnected the [src]'s flashbulb!"), SPAN_WARNING("You disconnect the [src]'s flashbulb!"))
 		if (!src.disable)
-			user.visible_message("<span class='warning'>[user] has connected the [src]'s flashbulb!</span>", "<span class='warning'>You connect the [src]'s flashbulb!</span>")
+			user.visible_message(SPAN_WARNING("[user] has connected the [src]'s flashbulb!"), SPAN_WARNING("You connect the [src]'s flashbulb!"))
 	else
 		..()
 
@@ -59,6 +59,7 @@
 		return
 
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	show_sound_effect(src.loc)
 	flick("[base_state]_flash", src)
 	src.last_flash = world.time
 	use_power_oneoff(1500)
@@ -83,10 +84,10 @@
 					H.flash_eyes()
 					E.damage += rand(1, 5)
 
-		if(!O.blinded)
+		if(O.can_see())
 			do_flash(O, flash_time)
 
-/obj/machinery/flasher/proc/do_flash(var/mob/living/victim, var/flash_time)
+/obj/machinery/flasher/proc/do_flash(mob/living/victim, flash_time)
 	victim.flash_eyes()
 	victim.eye_blurry += flash_time
 	victim.confused += (flash_time + 2)
@@ -128,11 +129,11 @@
 		src.anchored = !src.anchored
 
 		if (!src.anchored)
-			user.show_message(text("<span class='warning'>[src] can now be moved.</span>"))
+			user.show_message(text(SPAN_WARNING("[src] can now be moved.")))
 			src.cut_overlays()
 
 		else if (src.anchored)
-			user.show_message(text("<span class='warning'>[src] is now secured.</span>"))
+			user.show_message(text(SPAN_WARNING("[src] is now secured.")))
 			src.add_overlay("[base_state]-s")
 
 /obj/machinery/button/flasher

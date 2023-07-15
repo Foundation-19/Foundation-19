@@ -4,8 +4,8 @@
 	desc = "A SalonPro Nano-Mirror(TM) brand mirror! The leading technology in hair salon products, utilizing nano-machinery to style your hair just right."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mirror"
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	var/shattered = 0
 	var/list/ui_users = list()
 
@@ -25,11 +25,12 @@
 	if(shattered)	return
 	shattered = 1
 	icon_state = "mirror_broke"
-	playsound(src, "shatter", 70, 1)
+	playsound(src, SFX_SHATTER, 70, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	desc = "Oh no, seven years of bad luck!"
 
 
-/obj/structure/mirror/bullet_act(var/obj/item/projectile/Proj)
+/obj/structure/mirror/bullet_act(obj/item/projectile/Proj)
 
 	if(prob(Proj.get_structure_damage() * 2))
 		if(!shattered)
@@ -44,23 +45,23 @@
 		return
 
 	if(prob(I.force * 2))
-		visible_message("<span class='warning'>[user] smashes [src] with [I]!</span>")
+		visible_message(SPAN_WARNING("[user] smashes [src] with [I]!"))
 		shatter()
 	else
-		visible_message("<span class='warning'>[user] hits [src] with [I]!</span>")
+		visible_message(SPAN_WARNING("[user] hits [src] with [I]!"))
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 70, 1)
 
-/obj/structure/mirror/attack_generic(var/mob/user, var/damage)
+/obj/structure/mirror/attack_generic(mob/user, damage)
 	attack_animation(user)
 	if(shattered)
 		playsound(src.loc, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)
 		return 0
 
 	if(damage)
-		user.visible_message("<span class='danger'>[user] smashes [src]!</span>")
+		user.visible_message(SPAN_DANGER("[user] smashes [src]!"))
 		shatter()
 	else
-		user.visible_message("<span class='danger'>[user] hits [src] and bounces off!</span>")
+		user.visible_message(SPAN_DANGER("[user] hits [src] and bounces off!"))
 	return 1
 
 /obj/structure/mirror/Destroy()
@@ -77,7 +78,7 @@
 	icon_state = "mirror_broke"
 	shattered = 1
 
-/obj/structure/mirror/raider/attack_hand(var/mob/living/carbon/human/user)
+/obj/structure/mirror/raider/attack_hand(mob/living/carbon/human/user)
 	if(istype(get_area(src),/area/syndicate_mothership))
 		if(istype(user) && user.mind && user.mind.special_role == "Raider" && user.species.name != SPECIES_VOX && is_alien_whitelisted(user, SPECIES_VOX))
 			var/choice = input("Do you wish to become a true Vox of the Shoal? This is not reversible.") as null|anything in list("No","Yes")

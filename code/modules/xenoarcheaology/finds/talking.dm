@@ -22,7 +22,7 @@
 	else if(heard_words.len >= 1 && world.time > last_talk_time + talk_interval && prob(talk_chance))
 		SaySomething()
 
-/datum/talking_atom/proc/catchMessage(var/msg, var/mob/source)
+/datum/talking_atom/proc/catchMessage(msg, mob/source)
 	if(!holder_atom)
 		return
 
@@ -54,7 +54,7 @@
 		var/list/options = list("[holder_atom] seems to be listening intently to [source]...",\
 			"[holder_atom] seems to be focusing on [source]...",\
 			"[holder_atom] seems to turn it's attention to [source]...")
-		holder_atom.loc.visible_message("<span class='notice'>[icon2html(holder_atom, viewers(get_turf(holder_atom)))] [pick(options)]</span>")
+		holder_atom.loc.visible_message(SPAN_NOTICE("[icon2html(holder_atom, viewers(get_turf(holder_atom)))] [pick(options)]"))
 
 	if(prob(20))
 		spawn(2)
@@ -68,7 +68,7 @@
 		for(var/X in d)
 			log_debug("[X]") */
 
-/datum/talking_atom/proc/SaySomething(var/word = null)
+/datum/talking_atom/proc/SaySomething(word = null)
 	if(!holder_atom)
 		return
 

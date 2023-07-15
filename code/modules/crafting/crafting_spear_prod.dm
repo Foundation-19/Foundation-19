@@ -5,8 +5,8 @@
 	completion_trigger_type = /obj/item/stack/material/rods
 	stack_consume_amount = 1
 	next_stages = list(
-		/decl/crafting_stage/spear_blade_shard, 
-		/decl/crafting_stage/spear_blade_blade, 
+		/decl/crafting_stage/spear_blade_shard,
+		/decl/crafting_stage/spear_blade_blade,
 		/decl/crafting_stage/stunprod_wirecutters
 	)
 
@@ -15,7 +15,7 @@
 	progress_message = "You fasten the shard to the top of the rod with the cable."
 	product = /obj/item/material/twohanded/spear
 
-/decl/crafting_stage/spear_blade_shard/get_product(var/obj/item/work)
+/decl/crafting_stage/spear_blade_shard/get_product(obj/item/work)
 	var/obj/item/material/shard/blade = locate() in work
 	. = ispath(product, /obj/item/material) && new product(get_turf(work), blade && blade.material && blade.material.name)
 
@@ -24,7 +24,7 @@
 	progress_message = "You fasten the blade to the top of the rod with the cable."
 	product = /obj/item/material/twohanded/spear
 
-/decl/crafting_stage/spear_blade_blade/get_product(var/obj/item/work)
+/decl/crafting_stage/spear_blade_blade/get_product(obj/item/work)
 	var/obj/item/material/butterflyblade/blade = locate() in work
 	. = ispath(product, /obj/item/material) && new product(get_turf(work), blade && blade.material && blade.material.name)
 

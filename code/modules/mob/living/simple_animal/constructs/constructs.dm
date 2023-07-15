@@ -7,7 +7,7 @@
 	response_disarm = "flailed at"
 	response_harm   = "punched"
 	icon_dead = "shade_dead"
-	speed = -1
+	movement_cooldown = 4
 	a_intent = I_HURT
 	status_flags = CANPUSH
 	universal_speak = FALSE
@@ -40,8 +40,8 @@
 /mob/living/simple_animal/construct/cultify()
 	return
 
-/mob/living/simple_animal/construct/New()
-	..()
+/mob/living/simple_animal/construct/Initialize()
+	. = ..()
 	name = text("[initial(name)] ([random_id(/mob/living/simple_animal/construct, 1000, 9999)])")
 	real_name = name
 	add_language(LANGUAGE_CULT)
@@ -94,7 +94,7 @@
 	harm_intent_damage = 0
 	natural_weapon = /obj/item/natural_weapon/juggernaut
 	mob_size = MOB_LARGE
-	speed = 3
+	movement_cooldown = 6
 	environment_smash = 2
 	status_flags = 0
 	resistance = 10
@@ -113,13 +113,13 @@
 	if ((. = ..()))
 		return
 
-/mob/living/simple_animal/construct/armoured/bullet_act(var/obj/item/projectile/P)
+/mob/living/simple_animal/construct/armoured/bullet_act(obj/item/projectile/P)
 	if(istype(P, /obj/item/projectile/energy) || istype(P, /obj/item/projectile/beam))
 		var/reflectchance = 80 - round(P.damage/3)
 		if(prob(reflectchance))
 			adjustBruteLoss(P.damage * 0.5)
-			visible_message("<span class='danger'>The [P.name] gets reflected by [src]'s shell!</span>", \
-							"<span class='userdanger'>The [P.name] gets reflected by [src]'s shell!</span>")
+			visible_message(SPAN_DANGER("The [P.name] gets reflected by [src]'s shell!"), \
+							SPAN_USERDANGER("The [P.name] gets reflected by [src]'s shell!"))
 
 			// Find a turf near or on the original location to bounce to
 			if(P.starting)
@@ -151,7 +151,7 @@
 	maxHealth = 75
 	health = 75
 	natural_weapon = /obj/item/natural_weapon/wraith
-	speed = -1
+	movement_cooldown = 3
 	environment_smash = 1
 	see_in_dark = 7
 	construct_spells = list(/datum/spell/targeted/ethereal_jaunt/shift)
@@ -186,7 +186,7 @@
 	response_harm = "viciously beaten"
 	harm_intent_damage = 5
 	natural_weapon = /obj/item/natural_weapon/cult_builder
-	speed = 0
+	movement_cooldown = 4
 	environment_smash = 1
 	construct_spells = list(/datum/spell/aoe_turf/conjure/construct/lesser,
 							/datum/spell/aoe_turf/conjure/wall,
@@ -226,7 +226,7 @@
 	response_harm   = "harmlessly punched"
 	harm_intent_damage = 0
 	natural_weapon = /obj/item/natural_weapon/juggernaut/behemoth
-	speed = 5
+	movement_cooldown = 8
 	environment_smash = 2
 
 	resistance = 10
@@ -253,7 +253,7 @@
 	maxHealth = 150
 	health = 150
 	natural_weapon = /obj/item/natural_weapon/harvester
-	speed = -1
+	movement_cooldown = 3
 	environment_smash = 1
 	see_in_dark = 7
 

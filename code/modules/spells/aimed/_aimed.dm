@@ -21,14 +21,14 @@
 		remove_ranged_ability(msg)
 		return
 	if(active)
-		msg = "<span class='notice'>[deactive_msg]</span>"
+		msg = SPAN_NOTICE("[deactive_msg]")
 		if(charge_type == "recharge")
 			var/refund_percent = current_amount/projectile_amount
 			charge_counter = charge_max * refund_percent
 		remove_ranged_ability(msg)
 		on_deactivation(user)
 	else
-		msg = "<span class='notice'>[active_msg] <B>Left-click to shoot it at a target!</B></span>"
+		msg = SPAN_NOTICE("[active_msg] <B>Left-click to shoot it at a target!</B>")
 		current_amount = projectile_amount
 		add_ranged_ability(user, msg, TRUE)
 		on_activation(user)

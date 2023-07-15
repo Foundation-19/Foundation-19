@@ -33,6 +33,7 @@
 	display_name = "storage belt selection"
 	path = /obj/item/storage/belt
 	slot = slot_belt
+	//Eats the belt slot which guards needs (holster)
 	cost = 2
 
 /datum/gear/storage/belt/New()
@@ -42,6 +43,7 @@
 		/obj/item/storage/belt/utility
 	)
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(belts)
+	//same as before
 
 /datum/gear/storage/webbing
 	display_name = "webbing, small"
@@ -57,6 +59,8 @@
 	display_name = "bandolier"
 	path = /obj/item/clothing/accessory/storage/bandolier
 	cost = 3
+	allowed_branches = list(/datum/mil_branch/security)
+	//tactical gear
 
 /datum/gear/storage/waistpack
 	display_name = "waist pack"

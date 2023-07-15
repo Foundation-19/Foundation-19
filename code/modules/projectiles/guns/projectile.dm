@@ -38,6 +38,8 @@
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
 
+	general_codex_key = "ballistic weapons"		// for codex
+
 /obj/item/gun/projectile/Initialize()
 	. = ..()
 	if (starts_loaded)
@@ -48,16 +50,29 @@
 			ammo_magazine = new magazine_type(src)
 	update_icon()
 
+/obj/item/gun/projectile/Destroy()
+	QDEL_NULL_LIST(loaded)
+	QDEL_NULL(chambered)
+	QDEL_NULL(ammo_magazine)
+	return ..()
+
+/obj/item/gun/projectile/handle_atom_del(atom/A)
+	if(A == ammo_magazine)
+		ammo_magazine = null
+	if(A == chambered)
+		chambered = null
+	LAZYREMOVE(loaded, A)
+
 /obj/item/gun/projectile/consume_next_projectile()
 	if(!is_jammed && prob(jam_chance))
-		src.visible_message("<span class='danger'>\The [src] jams!</span>")
+		src.visible_message(SPAN_DANGER("\The [src] jams!"))
 		is_jammed = 1
 		var/mob/user = loc
 		if(istype(user))
 			if(prob(user.skill_fail_chance(SKILL_WEAPONS, 100, SKILL_MASTER)))
 				return null
 			else
-				to_chat(user, "<span class='notice'>You reflexively clear the jam on \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You reflexively clear the jam on \the [src]."))
 				is_jammed = 0
 				playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
 	if(is_jammed)
@@ -73,13 +88,12 @@
 			ammo_magazine.stored_ammo -= chambered
 
 	if (chambered)
-		return chambered.BB
+		return chambered.expend()
 	return null
 
 /obj/item/gun/projectile/handle_post_fire()
 	..()
 	if(chambered)
-		chambered.expend()
 		process_chambered()
 
 /obj/item/gun/projectile/process_point_blank(obj/projectile, mob/user, atom/target)
@@ -125,7 +139,7 @@
 
 //Attempts to load A into src, depending on the type of thing being loaded and the load_method
 //Maybe this should be broken up into separate procs for each load method?
-/obj/item/gun/projectile/proc/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/proc/load_ammo(obj/item/A, mob/user)
 	if(istype(A, /obj/item/ammo_magazine))
 		. = TRUE
 		var/obj/item/ammo_magazine/AM = A
@@ -146,39 +160,43 @@
 							if(!can_special_reload)
 								to_chat(user, SPAN_WARNING("You can't tactically reload this gun!"))
 								return
+							//Experienced gets a 1 second delay, master gets a 0.5 second delay
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
+								return
 							if(!user.unEquip(AM, src))
 								return
-							//Experienced gets a 1 second delay, master gets a 0.5 second delay
-							if(do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
-								ammo_magazine.update_icon()
-								user.put_in_hands(ammo_magazine)
-								user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),
-													 SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
+							ammo_magazine.update_icon()
+							user.put_in_hands(ammo_magazine)
+							user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+												SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
 						else //Speed reloading
 							if(!can_special_reload)
 								to_chat(user, SPAN_WARNING("You can't speed reload with this gun!"))
 								return
+							//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
+								return
 							if(!user.unEquip(AM, src))
 								return
-							//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
-							if(do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
-								ammo_magazine.update_icon()
-								ammo_magazine.dropInto(user.loc)
-								user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),
-													 SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
+							ammo_magazine.update_icon()
+							ammo_magazine.dropInto(user.loc)
+							user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+												SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
 					ammo_magazine = AM
 					playsound(loc, mag_insert_sound, 75, 1)
+					show_sound_effect(loc, user, SFX_ICON_SMALL)
 					update_icon()
 					AM.update_icon()
 					return
 				if(!user.unEquip(AM, src))
 					return
 				ammo_magazine = AM
-				user.visible_message("[user] inserts [AM] into [src].", "<span class='notice'>You insert [AM] into [src].</span>")
+				user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
 				playsound(loc, mag_insert_sound, 50, 1)
+				show_sound_effect(loc, user, SFX_ICON_SMALL)
 			if(SPEEDLOADER)
 				if(loaded.len >= max_shells)
-					to_chat(user, "<span class='warning'>[src] is full!</span>")
+					to_chat(user, SPAN_WARNING("[src] is full!"))
 					return
 				var/count = 0
 				for(var/obj/item/ammo_casing/C in AM.stored_ammo)
@@ -190,7 +208,7 @@
 						AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
 						count++
 				if(count)
-					user.visible_message("[user] reloads [src].", "<span class='notice'>You load [count] round\s into [src].</span>")
+					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
 					playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
 		AM.update_icon()
 	else if(istype(A, /obj/item/ammo_casing))
@@ -199,12 +217,12 @@
 		if(!(load_method & SINGLE_CASING) || caliber != C.caliber)
 			return //incompatible
 		if(loaded.len >= max_shells)
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, SPAN_WARNING("[src] is full."))
 			return
 		if(!user.unEquip(C, src))
 			return
 		loaded.Insert(1, C) //add to the head of the list
-		user.visible_message("[user] inserts \a [C] into [src].", "<span class='notice'>You insert \a [C] into [src].</span>")
+		user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into [src]."))
 		playsound(loc, load_sound, 50, 1)
 
 	update_icon()
@@ -215,7 +233,7 @@
 #undef PROF_SPD_RELOAD
 
 //attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
-/obj/item/gun/projectile/proc/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/proc/unload_ammo(mob/user, allow_dump=1)
 	if(is_jammed)
 		user.visible_message("\The [user] begins to unjam [src].", "You clear the jam and unload [src]")
 		if(!do_after(user, 4, src))
@@ -224,7 +242,7 @@
 		playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
-		user.visible_message("[user] removes [ammo_magazine] from [src].", "<span class='notice'>You remove [ammo_magazine] from [src].</span>")
+		user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
 		playsound(loc, mag_remove_sound, 50, 1)
 		ammo_magazine.update_icon()
 		ammo_magazine = null
@@ -241,17 +259,17 @@
 					count++
 				loaded.Cut()
 			if(count)
-				user.visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
+				user.visible_message("[user] unloads [src].", SPAN_NOTICE("You unload [count] round\s from [src]."))
 		else if(load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			user.visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+			user.visible_message("[user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from [src]."))
 	else
-		to_chat(user, "<span class='warning'>[src] is empty.</span>")
+		to_chat(user, SPAN_WARNING("[src] is empty."))
 	update_icon()
 
-/obj/item/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
+/obj/item/gun/projectile/attackby(obj/item/A as obj, mob/user as mob)
 	if(!load_ammo(A, user))
 		return ..()
 
@@ -273,7 +291,7 @@
 		ammo_magazine.dropInto(user.loc)
 		user.visible_message(
 			"[ammo_magazine] falls out and clatters on the floor!",
-			"<span class='notice'>[ammo_magazine] falls out and clatters on the floor!</span>"
+			SPAN_NOTICE("[ammo_magazine] falls out and clatters on the floor!")
 			)
 		if(auto_eject_sound)
 			playsound(user, auto_eject_sound, 40, 1)
@@ -284,7 +302,7 @@
 /obj/item/gun/projectile/examine(mob/user)
 	. = ..()
 	if(is_jammed && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
-		to_chat(user, "<span class='warning'>It looks jammed.</span>")
+		to_chat(user, SPAN_WARNING("It looks jammed."))
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))

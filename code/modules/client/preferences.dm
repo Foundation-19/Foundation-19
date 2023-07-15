@@ -1,10 +1,10 @@
 #define SAVE_RESET -1
 
-#define JOB_PRIORITY_HIGH   0x1
-#define JOB_PRIORITY_MEDIUM 0x2
-#define JOB_PRIORITY_LOW    0x4
-#define JOB_PRIORITY_LIKELY 0x3
-#define JOB_PRIORITY_PICKED 0x7
+#define JOB_PRIORITY_HIGH   (1<<0)
+#define JOB_PRIORITY_MEDIUM (1<<1)
+#define JOB_PRIORITY_LOW    (1<<2)
+#define JOB_PRIORITY_LIKELY 3
+#define JOB_PRIORITY_PICKED 7 //fucking ew but fuck it
 
 #define MAX_LOAD_TRIES 5
 
@@ -29,6 +29,11 @@
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
 
+	var/hotkeys = TRUE
+	var/list/key_bindings = list()
+
+	var/datum/tgui_macro/macros
+
 	// Mob preview
 	var/icon/preview_icon = null
 
@@ -39,13 +44,13 @@
 	var/datum/browser/panel
 
 /datum/preferences/New(client/C)
+	// give them default keybinds too
+	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key)
+	macros = new(C, src)
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
 		SScharacter_setup.preferences_datums[C.ckey] = src
-
-		// give them default keybinds too
-		key_bindings = deepCopyList(global.hotkey_keybinding_list_by_key)
 
 		if(SScharacter_setup.initialized)
 			setup()
@@ -176,7 +181,7 @@
 		if(config.forumurl)
 			send_link(user, config.forumurl)
 		else
-			to_chat(user, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
+			to_chat(user, SPAN_DANGER("The forum URL is not set in the server configuration."))
 			return
 	update_setup_window(usr)
 	return 1

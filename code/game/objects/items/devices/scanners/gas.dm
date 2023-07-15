@@ -16,7 +16,7 @@
 /obj/item/device/scanner/gas/get_header()
 	return "[..()]<a href='?src=\ref[src];switchmode=1'>Switch Mode</a>"
 
-/obj/item/device/scanner/gas/OnTopic(var/user, var/list/href_list)
+/obj/item/device/scanner/gas/OnTopic(user, list/href_list)
 	..()
 	if(href_list["switchmode"])
 		++mode
@@ -36,13 +36,13 @@
 /obj/item/device/scanner/gas/scan(atom/A, mob/user)
 	var/air_contents = A.return_air()
 	if(!air_contents)
-		to_chat(user, "<span class='warning'>Your [src] flashes a red light as it fails to analyze \the [A].</span>")
+		to_chat(user, SPAN_WARNING("Your [src] flashes a red light as it fails to analyze \the [A]."))
 		return
 	scan_data = atmosanalyzer_scan(A, air_contents, mode)
 	scan_data = jointext(scan_data, "<br>")
 	user.show_message(SPAN_NOTICE(scan_data))
 
-/proc/atmosanalyzer_scan(var/atom/target, var/datum/gas_mixture/mixture, mode)
+/proc/atmosanalyzer_scan(atom/target, datum/gas_mixture/mixture, mode)
 	. = list()
 	. += "Results of the analysis of \the [target]:"
 	if(!mixture)
@@ -54,9 +54,9 @@
 
 		if (total_moles>0)
 			if(abs(pressure - ONE_ATMOSPHERE) < 10)
-				. += "<span class='notice'>Pressure: [round(pressure,0.01)] kPa</span>"
+				. += SPAN_NOTICE("Pressure: [round(pressure,0.01)] kPa")
 			else
-				. += "<span class='warning'>Pressure: [round(pressure,0.01)] kPa</span>"
+				. += SPAN_WARNING("Pressure: [round(pressure,0.01)] kPa")
 
 			var/perGas_add_string = ""
 			for(var/mix in mixture.gas)
@@ -84,7 +84,7 @@
 			. += "Temperature: [round(mixture.temperature-T0C)]&deg;C / [round(mixture.temperature)]K[totalGas_add_string]"
 
 			return
-	. += "<span class='warning'>\The [target] has no gases!</span>"
+	. += SPAN_WARNING("\The [target] has no gases!")
 
 #undef DEFAULT_MODE
 #undef MV_MODE

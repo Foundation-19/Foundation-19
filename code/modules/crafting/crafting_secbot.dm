@@ -1,11 +1,11 @@
 /decl/crafting_stage/secbot_signaller
 	begins_with_object_type = /obj/item/clothing/head/helmet
-	completion_trigger_type = /obj/item/device/assembly/signaler
+	completion_trigger_type = /obj/item/device/assembly/signaller
 	progress_message = "You add the signaler to the helmet."
 	item_icon_state = "secbot_1"
 	next_stages = list(/decl/crafting_stage/welding/secbot)
 
-/decl/crafting_stage/secbot_signaller/can_begin_with(var/obj/item/thing)
+/decl/crafting_stage/secbot_signaller/can_begin_with(obj/item/thing)
 	. = istype(thing) && thing.type == begins_with_object_type
 
 /decl/crafting_stage/welding/secbot

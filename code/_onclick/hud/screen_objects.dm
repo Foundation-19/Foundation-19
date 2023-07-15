@@ -12,20 +12,21 @@
 	plane = HUD_PLANE
 	layer = HUD_BASE_LAYER
 	appearance_flags = NO_CLIENT_COLOR
-	unacidable = TRUE
+	acid_resistance = -1
 	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
-	var/datum/hud/hud
+	var/weakref/hud_ref
+	//var/datum/hud/hud
 
 /obj/screen/Destroy()
 	master = null
-	hud = null
+	hud_ref = null
 	return ..()
 
 /obj/screen/text
 	icon = null
 	icon_state = null
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	screen_loc = "CENTER-7,CENTER-7"
 	maptext_height = 480
 	maptext_width = 480
@@ -164,7 +165,7 @@
 	screen_loc = ui_acti
 	var/intent = I_HELP
 
-/obj/screen/intent/Click(var/location, var/control, var/params)
+/obj/screen/intent/Click(location, control, params)
 	var/list/P = params2list(params)
 	var/icon_x = text2num(P["icon-x"])
 	var/icon_y = text2num(P["icon-y"])
@@ -227,7 +228,7 @@
 								no_mask = 1
 
 						if(no_mask)
-							to_chat(C, "<span class='notice'>You are not wearing a suitable mask or helmet.</span>")
+							to_chat(C, SPAN_NOTICE("You are not wearing a suitable mask or helmet."))
 							return 1
 						else
 							var/list/nicename = null
@@ -387,3 +388,17 @@
 				usr.update_inv_l_hand(0)
 				usr.update_inv_r_hand(0)
 	return 1
+
+/obj/screen/fov
+	icon = 'icons/mob/hide.dmi'
+	icon_state = "combat"
+	screen_loc = "1,1"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = VISION_CONE_PLANE
+
+/obj/screen/fov_mask
+	icon = 'icons/mob/hide.dmi'
+	icon_state = "combat_mask_alt"
+	screen_loc = "1,1"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = HIDDEN_PLANE

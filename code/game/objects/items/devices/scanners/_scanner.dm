@@ -42,7 +42,7 @@
 	if(!can_use(user))
 		return
 	if(is_valid_scan_target(A) && A.simulated)
-		user.visible_message("<span class='notice'>[user] runs \the [src] over \the [A].</span>", range = 2)
+		user.visible_message(SPAN_NOTICE("[user] runs \the [src] over \the [A]."), range = 2)
 		if(scan_sound)
 			playsound(src, scan_sound, 30)
 		if(use_delay && !do_after(user, use_delay, A))
@@ -71,7 +71,7 @@
 		return
 	print_report(user)
 
-/obj/item/device/scanner/OnTopic(var/user, var/list/href_list)
+/obj/item/device/scanner/OnTopic(user, list/href_list)
 	if(href_list["print"])
 		print_report(user)
 		return 1
@@ -81,7 +81,7 @@
 		scan_title = null
 		return 1
 
-/obj/item/device/scanner/proc/print_report(var/mob/living/user)
+/obj/item/device/scanner/proc/print_report(mob/living/user)
 	if(!scan_data)
 		to_chat(user, "There is no scan data to print.")
 		return

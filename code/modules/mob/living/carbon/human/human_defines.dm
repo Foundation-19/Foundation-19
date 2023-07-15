@@ -65,6 +65,12 @@
 
 	var/xylophone = 0 //For the spoooooooky xylophone cooldown
 
+	//Blink related vars
+	var/blink_total					//The total amount of blink time a human is given
+	var/blink_current				//The current amount of blink time a human has, when this reaches zero the human blinks
+	var/is_blinking	= FALSE			//Whether blinking is enabled for a human
+	var/list/blink_causers = list()	//What is causing the human to blink
+
 	var/mob/remoteview_target = null
 	var/hand_blood_color
 
@@ -84,6 +90,8 @@
 	var/equipment_vision_flags				// Extra vision flags from equipped items
 	var/equipment_see_invis					// Max see invibility level granted by equipped items
 	var/equipment_prescription				// Eye prescription granted by equipped items
+	var/visual_insulation = V_INSL_NONE		// How much your eyes are insulated, I.E how blinded you are. Different from tint in that insulation does not always mean your view is physically obstructed.
+	var/audible_insulation = A_INSL_NONE	// How much your ears are insulated, I.E how deafened you are.
 	var/equipment_light_protection
 	var/list/equipment_overlays = list()	// Extra overlays from equipped items
 
@@ -119,9 +127,6 @@
 	var/scp_013_instance = FALSE
 	var/scp_013_stage = 0
 
-	// SCP-173
-	var/scp173_killed = FALSE
-
 	// SCP-049
 	var/pre_scp049_name = ""
 	var/pre_scp049_real_name = ""
@@ -137,7 +142,7 @@
 	var/pre_scp013_species = "Human"
 
 	// SCP-078
-	var/dies_young = 0
+	var/scp078_status = 0
 
 	// SCP-106
 	var/pocket_dimension_decay = 0

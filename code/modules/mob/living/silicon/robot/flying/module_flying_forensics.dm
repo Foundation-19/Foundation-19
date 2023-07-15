@@ -1,7 +1,7 @@
 /obj/item/robot_module/flying/forensics
 	name = "forensic drone module"
 	display_name = "Forensics"
-	channels = list("Security" = TRUE)
+	channels = list("Security" = TRUE, "ECZ-Security" = TRUE, "HCZ-Security" = TRUE, "LCZ-Security" = TRUE)
 	networks = list(NETWORK_SECURITY)
 	subsystems = list(
 		/datum/nano_module/crew_monitor,
@@ -30,7 +30,6 @@
 	)
 	emag = /obj/item/gun/energy/laser/mounted
 	skills = list(
-		SKILL_BUREAUCRACY         = SKILL_MASTER,
 		SKILL_COMPUTER            = SKILL_EXPERIENCED,
 		SKILL_FORENSICS           = SKILL_MASTER,
 		SKILL_WEAPONS             = SKILL_EXPERIENCED,
@@ -38,7 +37,7 @@
 		SKILL_ANATOMY             = SKILL_TRAINED
 	)
 
-/obj/item/robot_module/flying/forensics/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/flying/forensics/respawn_consumable(mob/living/silicon/robot/R, amount)
 	var/obj/item/reagent_containers/spray/luminol/luminol = locate() in equipment
 	if(!luminol)
 		luminol = new(src)

@@ -11,7 +11,7 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	
+
 	machine_name = "operating table"
 	machine_desc = "A sterile and well-lit surface to conduct surgery. Operating tables are the only completely safe surfaces to perform operations. Comes with built-in neural suppressors to anesthetize a patient laying on top of it."
 
@@ -35,10 +35,10 @@
 		connected_monitor.update_victim()
 		connected_monitor.update_optable()
 	. = ..()
-	
+
 /obj/machinery/optable/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>The neural suppressors are switched [suppressing ? "on" : "off"].</span>")
+	to_chat(user, SPAN_NOTICE("The neural suppressors are switched [suppressing ? "on" : "off"]."))
 
 /obj/machinery/optable/ex_act(severity)
 
@@ -56,7 +56,7 @@
 			if (prob(25))
 				src.set_density(0)
 
-/obj/machinery/optable/attackby(var/obj/item/O, var/mob/user)
+/obj/machinery/optable/attackby(obj/item/O, mob/user)
 	if (istype(O, /obj/item/grab))
 		var/obj/item/grab/G = O
 		if(iscarbon(G.affecting) && check_table(G.affecting))
@@ -65,32 +65,32 @@
 			return
 	return ..()
 
-/obj/machinery/optable/state_transition(var/decl/machine_construction/default/new_state)
+/obj/machinery/optable/state_transition(decl/machine_construction/default/new_state)
 	. = ..()
 	if(istype(new_state))
 		updateUsrDialog()
 
-/obj/machinery/optable/physical_attack_hand(var/mob/user)
+/obj/machinery/optable/physical_attack_hand(mob/user)
 	if(MUTATION_HULK in user.mutations)
-		visible_message("<span class='danger'>\The [usr] destroys \the [src]!</span>")
+		visible_message(SPAN_DANGER("\The [usr] destroys \the [src]!"))
 		src.set_density(0)
 		qdel(src)
 		return TRUE
 
 	if(!victim)
-		to_chat(user, "<span class='warning'>There is nobody on \the [src]. It would be pointless to turn the suppressor on.</span>")
+		to_chat(user, SPAN_WARNING("There is nobody on \the [src]. It would be pointless to turn the suppressor on."))
 		return TRUE
 
 	if(user != victim && !suppressing) // Skip checks if you're doing it to yourself or turning it off, this is an anti-griefing mechanic more than anything.
-		user.visible_message("<span class='warning'>\The [user] begins switching on \the [src]'s neural suppressor.</span>")
+		user.visible_message(SPAN_WARNING("\The [user] begins switching on \the [src]'s neural suppressor."))
 		if(!do_after(user, 30, src) || !user || !src || user.incapacitated() || !user.Adjacent(src))
 			return TRUE
 		if(!victim)
-			to_chat(user, "<span class='warning'>There is nobody on \the [src]. It would be pointless to turn the suppressor on.</span>")
+			to_chat(user, SPAN_WARNING("There is nobody on \the [src]. It would be pointless to turn the suppressor on."))
 			return TRUE
 
 	suppressing = !suppressing
-	user.visible_message("<span class='notice'>\The [user] switches [suppressing ? "on" : "off"] \the [src]'s neural suppressor.</span>")
+	user.visible_message(SPAN_NOTICE("\The [user] switches [suppressing ? "on" : "off"] \the [src]'s neural suppressor."))
 	if (victim.stat == UNCONSCIOUS)
 		to_chat(victim, SPAN_NOTICE(SPAN_BOLD("... [pick("good feeling", "white light", "pain fades away", "safe now")] ...")))
 	return TRUE
@@ -136,7 +136,7 @@
 	if (C == user)
 		user.visible_message("[user] climbs on \the [src].","You climb on \the [src].")
 	else
-		visible_message("<span class='notice'>\The [C] has been laid on \the [src] by [user].</span>")
+		visible_message(SPAN_NOTICE("\The [C] has been laid on \the [src] by [user]."))
 	if (C.client)
 		C.client.perspective = EYE_PERSPECTIVE
 		C.client.eye = src
@@ -170,9 +170,9 @@
 /obj/machinery/optable/proc/check_table(mob/living/carbon/patient as mob)
 	check_victim()
 	if(src.victim && get_turf(victim) == get_turf(src) && victim.lying)
-		to_chat(usr, "<span class='warning'>\The [src] is already occupied!</span>")
+		to_chat(usr, SPAN_WARNING("\The [src] is already occupied!"))
 		return 0
 	if(patient.buckled)
-		to_chat(usr, "<span class='notice'>Unbuckle \the [patient] first!</span>")
+		to_chat(usr, SPAN_NOTICE("Unbuckle \the [patient] first!"))
 		return 0
 	return 1

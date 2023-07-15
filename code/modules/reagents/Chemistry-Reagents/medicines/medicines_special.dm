@@ -9,7 +9,7 @@
 	metabolism = REM * 0.5
 	value = 2
 
-/datum/reagent/medicine/adrenaline/affect_blood(var/mob/living/carbon/human/M, alien, removed)
+/datum/reagent/medicine/adrenaline/affect_blood(mob/living/carbon/human/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
 
@@ -36,7 +36,7 @@
 	taste_description = "sourness"
 	color = "#eeddcc"
 
-/datum/reagent/lactic_acid/affect_blood(var/mob/living/carbon/human/M, alien, removed)
+/datum/reagent/lactic_acid/affect_blood(mob/living/carbon/human/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
 	M.add_chemical_effect(CE_PULSE, 1)
@@ -103,9 +103,11 @@
 	description = "Leporazine can be use to stabilize an individuals body temperature."
 	color = "#c8a5dc"
 	chilling_products = list(/datum/reagent/medicine/leporazine/cold)
+	chilling_prod_english = "<span codexlink='cryogenic leporazine (chemical)'>cryogenic leporazine</span>"
 	chilling_point = -10 CELSIUS
 	chilling_message = "Takes on the consistency of slush."
 	heating_products = list(/datum/reagent/medicine/leporazine/hot)
+	heating_prod_english = "<span codexlink='pyrogenic leporazine (chemical)'>pyrogenic leporazine</span>"
 	heating_point = 110 CELSIUS
 	heating_message = "starts swirling, glowing occasionally."
 	value = 2
@@ -119,6 +121,7 @@
 /datum/reagent/medicine/leporazine/hot
 	name = "Pyrogenic Leporazine"
 	chilling_products = list(/datum/reagent/medicine/leporazine)
+	chilling_prod_english = "<span codexlink='leporazine (chemical)'>leporazine</span>"
 	chilling_point = 0 CELSIUS
 	chilling_message = "Stops swirling and glowing."
 	heating_products = null
@@ -135,6 +138,7 @@
 	chilling_point = null
 	chilling_message = null
 	heating_products = list(/datum/reagent/medicine/leporazine)
+	heating_prod_english = "<span codexlink='leporazine (chemical)'>leporazine</span>"
 	heating_point = 100 CELSIUS
 	heating_message = "Becomes clear and smooth."
 

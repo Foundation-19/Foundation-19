@@ -8,7 +8,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp
 	allowed_magazines = /obj/item/ammo_magazine/scp
 	accuracy_power = 7
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
 	fire_delay = 5 //making it pretty shit
 	load_method = MAGAZINE
 	w_class = ITEM_SIZE_NORMAL
@@ -32,13 +32,14 @@
 			add_overlay(image(icon, "ammo_ok"))
 
 /obj/item/gun/projectile/pistol/military
-	name = "military pistol"
-	desc = "The Hephaestus Industries P20 - a mass produced kinetic sidearm in widespread service with the SCGDF."
+	name = "GOC Glock pistol"
+	desc = "Standard issue pistol for GOC personnel. Chambered in 10mm."
 	magazine_type = /obj/item/ammo_magazine/pistol/double
-	allowed_magazines = /obj/item/ammo_magazine/pistol/double
+	allowed_magazines = /obj/item/ammo_magazine/pistol/double 
 	icon = 'icons/obj/guns/military_pistol.dmi'
 	icon_state = "military"
 	item_state = "secgundark"
+	caliber = "10mm"
 	safety_icon = "safety"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
 	fire_delay = 7

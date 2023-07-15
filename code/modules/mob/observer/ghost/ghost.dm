@@ -33,10 +33,11 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	var/obj/item/device/multitool/ghost_multitool
 	var/list/hud_images // A list of hud images
 
-/mob/observer/ghost/New(mob/body)
+/mob/observer/ghost/Initialize(mapload)
 	see_in_dark = 100
-	verbs += /mob/proc/toggle_antag_pool
+	add_verb(src, /mob/proc/toggle_antag_pool)
 
+	var/mob/body = loc
 	var/turf/T
 	if(ismob(body))
 		T = get_turf(body)               //Where is the body located?
@@ -46,20 +47,11 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		if(body.mind && body.mind.name)
 			name = body.mind.name
 		else
-			if(body.real_name)
-				name = body.real_name
-			else
-				if(gender == MALE)
-					name = capitalize(pick(GLOB.first_names_male)) + " " + capitalize(pick(GLOB.last_names))
-				else
-					name = capitalize(pick(GLOB.first_names_female)) + " " + capitalize(pick(GLOB.last_names))
+			name = body.real_name ? body.real_name : body.name
 
 		mind = body.mind	//we don't transfer the mind but we keep a reference to it.
-	else
-		spawn(10) // wait for the observer mob to receive the client's key
-			mind = new /datum/mind(key)
-			mind.current = src
-	if(!T)	T = pick(GLOB.latejoin | GLOB.latejoin_cryo | GLOB.latejoin_gateway)			//Safety in case we cannot find the body's position
+	if(!T)
+		T = pick(GLOB.latejoin | GLOB.latejoin_cryo | GLOB.latejoin_gateway)			//Safety in case we cannot find the body's position
 	forceMove(T)
 
 	if(!name)							//To prevent nameless ghosts
@@ -75,7 +67,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 	GLOB.ghost_mob_list += src
 
-	..()
+	.=..()
 
 /mob/observer/ghost/Destroy()
 	GLOB.ghost_mob_list -= src
@@ -125,7 +117,7 @@ Works together with spawning an observer, noted above.
 		process_medHUD(src)
 
 
-/mob/observer/ghost/proc/process_medHUD(var/mob/M)
+/mob/observer/ghost/proc/process_medHUD(mob/M)
 	var/client/C = M.client
 	for(var/mob/living/carbon/human/patient in oview(M, 14))
 		C.images += patient.hud_list[HEALTH_HUD]
@@ -139,7 +131,7 @@ Works together with spawning an observer, noted above.
 		C.images += target.hud_list[SPECIALROLE_HUD]
 	return 1
 
-/mob/proc/ghostize(var/can_reenter_corpse = CORPSE_CAN_REENTER)
+/mob/proc/ghostize(can_reenter_corpse = CORPSE_CAN_REENTER)
 	// Are we the body of an aghosted admin? If so, don't make a ghost.
 	if(teleop && istype(teleop, /mob/observer/ghost))
 		var/mob/observer/ghost/G = teleop
@@ -151,8 +143,9 @@ Works together with spawning an observer, noted above.
 		ghost.can_reenter_corpse = can_reenter_corpse
 		ghost.timeofdeath = src.stat == DEAD ? src.timeofdeath : world.time
 		ghost.key = key
-		if(ghost.client && !ghost.client.holder && !config.antag_hud_allowed)		// For new ghosts we remove the verb from even showing up if it's not allowed.
-			ghost.verbs -= /mob/observer/ghost/verb/toggle_antagHUD	// Poor guys, don't know what they are missing!
+		if(ghost.client && !ghost.client.holder && !config.antag_hud_allowed) // For new ghosts we remove the verb from even showing up if it's not allowed.
+			remove_verb(ghost, /mob/observer/ghost/verb/toggle_antagHUD) // Poor guys, don't know what they are missing!
+		ghost.client?.init_verbs()
 		return ghost
 
 /mob/observer/ghostize() // Do not create ghosts of ghosts.
@@ -169,19 +162,19 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		announce_ghost_joinleave(ghostize(1))
 	else
 		var/response
-		if(src.client && src.client.holder)
-			response = alert(src, "You have the ability to Admin-Ghost. The regular Ghost verb will announce your presence to dead chat. Both variants will allow you to return to your body using 'aghost'.\n\nWhat do you wish to do?", "Are you sure you want to ghost?", "Ghost", "Admin Ghost", "Stay in body")
-			if(response == "Admin Ghost")
+		if(src.client && check_rights(R_ADMIN|R_MOD, FALSE, src))
+			response = tgui_alert(src, "You have the ability to Admin-Ghost. The regular Ghost verb will announce your presence to dead chat. Both variants will allow you to return to your body using 'aghost'.\n\nWhat do you wish to do?", "Are you sure you want to ghost?", list("Ghost", "A-Ghost", "Stay in body"))
+			if(response == "A-Ghost")
 				if(!src.client)
 					return
 				src.client.admin_ghost()
 		else if(config.respawn_delay)
-			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to play this round for another [config.respawn_delay] minute\s! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", "Ghost", "Stay in body")
+			response = tgui_alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to play this round for another [config.respawn_delay] minute\s! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", list("Ghost", "Stay in body"))
 		else
-			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to return to this body! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", "Ghost", "Stay in body")
+			response = tgui_alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to return to this body! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", list("Ghost", "Stay in body"))
 		if(response != "Ghost")
 			return
-		log_and_message_admins("has ghosted.")
+		log_and_message_staff("has ghosted.")
 		ghosted = TRUE
 		var/mob/observer/ghost/ghost = ghostize(0)	//0 parameter is so we can never re-enter our body, "Charlie, you can never come baaaack~" :3
 		if (ghost)
@@ -191,28 +184,21 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/can_use_hands()	return 0
 /mob/observer/ghost/is_active()		return 0
 
-/mob/observer/ghost/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		if(evacuation_controller)
-			var/eta_status = evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
-
 /mob/observer/ghost/verb/reenter_corpse()
 	set category = "Ghost"
 	set name = "Re-enter Corpse"
 	if(!client)	return
 	if(!(mind && mind.current && can_reenter_corpse))
-		to_chat(src, "<span class='warning'>You have no body.</span>")
+		to_chat(src, SPAN_WARNING("You have no body."))
 		return
 	if(mind.current.key && copytext(mind.current.key,1,2)!="@")	//makes sure we don't accidentally kick any clients
-		to_chat(src, "<span class='warning'>Another consciousness is in your body... it is resisting you.</span>")
+		to_chat(src, SPAN_WARNING("Another consciousness is in your body... it is resisting you."))
 		return
 	stop_following()
 	mind.current.key = key
 	mind.current.teleop = null
 	mind.current.reload_fullscreen()
+	mind.current.client.init_verbs()
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
 	return 1
@@ -225,10 +211,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	if(medHUD)
 		medHUD = 0
-		to_chat(src, "<span class='notice'>Medical HUD Disabled</span>")
+		to_chat(src, SPAN_NOTICE("Medical HUD Disabled"))
 	else
 		medHUD = 1
-		to_chat(src, "<span class='notice'>Medical HUD Enabled</span>")
+		to_chat(src, SPAN_NOTICE("Medical HUD Enabled"))
 
 /mob/observer/ghost/verb/toggle_antagHUD()
 	set category = "Ghost"
@@ -269,7 +255,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	var/list/area_turfs = get_area_turfs(thearea, shall_check_if_holy() ? list(/proc/is_not_holy_turf) : list())
 	if(!area_turfs.len)
-		to_chat(src, "<span class='warning'>This area has been entirely made into sacred grounds, you cannot enter it while you are in this plane of existence!</span>")
+		to_chat(src, SPAN_WARNING("This area has been entirely made into sacred grounds, you cannot enter it while you are in this plane of existence!"))
 		return
 
 	ghost_to_turf(pick(area_turfs))
@@ -283,19 +269,19 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(T)
 		ghost_to_turf(T)
 	else
-		to_chat(src, "<span class='warning'>Invalid coordinates.</span>")
+		to_chat(src, SPAN_WARNING("Invalid coordinates."))
 
-/mob/observer/ghost/verb/follow(var/mob/fh in GLOB.player_list)
+/mob/observer/ghost/verb/follow(mob/fh in GLOB.player_list)
 	set category = "Ghost"
 	set name = "Follow"
 	set desc = "Follow a player"
 
 	if(!fh)
-		to_chat(src, "<span class='warning'>No active players found.</span>")
+		to_chat(src, SPAN_WARNING("No active players found."))
 		return
 	start_following(fh)
 
-/mob/observer/ghost/verb/jumptomob(var/mob/M in SSmobs.mob_list)
+/mob/observer/ghost/verb/jumptomob(mob/M in SSmobs.mob_list)
 	set category = "Ghost"
 	set name = "Jump to Mob"
 	set desc = "Jump to any mob"
@@ -304,13 +290,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	var/turf/T = get_turf(M)
 	if(!T)
-		to_chat(src, "<span class='warning'>Cannot jump to this mob!</span>")
+		to_chat(src, SPAN_WARNING("Cannot jump to this mob!"))
 		return
 	ghost_to_turf(T)
 
-/mob/observer/ghost/proc/ghost_to_turf(var/turf/target_turf)
+/mob/observer/ghost/proc/ghost_to_turf(turf/target_turf)
 	if(check_is_holy_turf(target_turf))
-		to_chat(src, "<span class='warning'>The target location is holy grounds!</span>")
+		to_chat(src, SPAN_WARNING("The target location is holy grounds!"))
 		return
 	stop_following()
 	forceMove(target_turf)
@@ -324,9 +310,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		make_floating(1)
 	return
 
-/mob/observer/ghost/start_following(var/atom/a)
+/mob/observer/ghost/start_following(atom/a)
 	..()
-	to_chat(src, "<span class='notice'>Now following \the [following].</span>")
+	to_chat(src, SPAN_NOTICE("Now following \the [following]."))
 	var/icon/I = icon(a.icon, a.icon_state, a.dir)
 	var/orbit_size = (I.Width() + I.Height()) * 0.5
 	orbit_size -= (orbit_size / WORLD_ICON_SIZE) * (WORLD_ICON_SIZE * 0.25)
@@ -335,15 +321,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/stop_following()
 	if(following)
-		to_chat(src, "<span class='notice'>No longer following \the [following]</span>")
+		to_chat(src, SPAN_NOTICE("No longer following \the [following]"))
 		stop_orbit()
 		update_floating()
 	..()
 
-/mob/observer/ghost/keep_following(var/atom/movable/am, var/old_loc, var/new_loc)
+/mob/observer/ghost/keep_following(atom/movable/am, old_loc, new_loc)
 	var/turf/T = get_turf(new_loc)
 	if(check_is_holy_turf(T))
-		to_chat(src, "<span class='warning'>You cannot follow something standing on holy grounds!</span>")
+		to_chat(src, SPAN_WARNING("You cannot follow something standing on holy grounds!"))
 		return
 	..()
 
@@ -355,11 +341,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/StoreMemory()
 	set hidden = 1
-	to_chat(src, "<span class='warning'>You are dead! You have no mind to store memory!</span>")
+	to_chat(src, SPAN_WARNING("You are dead! You have no mind to store memory!"))
 
 /mob/observer/ghost/AddMemory()
 	set hidden = 1
-	to_chat(src, "<span class='warning'>You are dead! You have no mind to store memory!</span>")
+	to_chat(src, SPAN_WARNING("You are dead! You have no mind to store memory!"))
 /mob/observer/ghost/PostIncorporealMovement()
 	stop_following()
 
@@ -378,7 +364,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/turf/t = get_turf(src)
 	if(t)
 		var/rads = SSradiation.get_rads_at_turf(t)
-		to_chat(src, "<span class='notice'>Radiation level: [rads ? rads : "0"] IU/s.</span>")
+		to_chat(src, SPAN_NOTICE("Radiation level: [rads ? rads : "0"] IU/s."))
 
 /mob/observer/ghost/verb/scan_target()
 	set name = "Scan Target"
@@ -388,14 +374,14 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(ishuman(following))
 		to_chat(src, medical_scan_results(following, 1, SKILL_MAX))
 
-	else to_chat(src, "<span class='notice'>Not a scannable target.</span>")
+	else to_chat(src, SPAN_NOTICE("Not a scannable target."))
 
 /mob/observer/ghost/verb/become_mouse()
 	set name = "Become mouse"
 	set category = "Ghost"
 
 	if(config.disable_player_mice)
-		to_chat(src, "<span class='warning'>Spawning as a mouse is currently disabled.</span>")
+		to_chat(src, SPAN_WARNING("Spawning as a mouse is currently disabled."))
 		return
 
 	if(!MayRespawn(1, ANIMAL_SPAWN_DELAY))
@@ -403,7 +389,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	var/turf/T = get_turf(src)
 	if(!T || (T.z in GLOB.using_map.admin_levels))
-		to_chat(src, "<span class='warning'>You may not spawn as a mouse on this Z-level.</span>")
+		to_chat(src, SPAN_WARNING("You may not spawn as a mouse on this Z-level."))
 		return
 
 	var/response = alert(src, "Are you -sure- you want to become a mouse?","Are you sure you want to squeek?","Squeek!","Nope!")
@@ -421,14 +407,14 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		vent_found = pick(found_vents)
 		host = new /mob/living/simple_animal/friendly/mouse(vent_found.loc)
 	else
-		to_chat(src, "<span class='warning'>Unable to find any unwelded vents to spawn mice at.</span>")
+		to_chat(src, SPAN_WARNING("Unable to find any unwelded vents to spawn mice at."))
 	if(host)
 		if(config.uneducated_mice)
 			host.universal_understand = FALSE
 		announce_ghost_joinleave(src, 0, "They are now a mouse.")
 		host.ckey = src.ckey
 		host.status_flags |= NO_ANTAG
-		to_chat(host, "<span class='info'>You are now a mouse. Try to avoid interaction with players, and do not give hints away that you are more than a simple rodent.</span>")
+		to_chat(host, SPAN_INFO("You are now a mouse. Try to avoid interaction with players, and do not give hints away that you are more than a simple rodent."))
 /mob/observer/ghost/verb/view_manfiest()
 	set name = "Show Crew Manifest"
 	set category = "Ghost"
@@ -456,9 +442,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	return ..()
 
-/mob/observer/ghost/proc/try_possession(var/mob/living/M)
+/mob/observer/ghost/proc/try_possession(mob/living/M)
 	if(!config.ghosts_can_possess_animals)
-		to_chat(src, "<span class='warning'>Ghosts are not permitted to possess animals.</span>")
+		to_chat(src, SPAN_WARNING("Ghosts are not permitted to possess animals."))
 		return 0
 	if(!M.can_be_possessed_by(src))
 		return 0
@@ -467,10 +453,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/pointed(atom/A as mob|obj|turf in view())
 	if(!..())
 		return 0
-	usr.visible_message("<span class='deadsay'><b>[src]</b> points to [A]</span>")
+	usr.visible_message(SPAN_DEADSAY("<b>[src]</b> points to [A]"))
 	return 1
 
-/mob/observer/ghost/proc/show_hud_icon(var/icon_state, var/make_visible)
+/mob/observer/ghost/proc/show_hud_icon(icon_state, make_visible)
 	if(!hud_images)
 		hud_images = list()
 	var/image/hud_image = hud_images[icon_state]
@@ -490,7 +476,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	return 0
 
 /mob/observer/ghost/can_admin_interact()
-	return check_rights(R_ADMIN, 0, src)
+	return check_rights(R_ADMIN|R_MOD, 0, src)
 
 /mob/observer/ghost/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"
@@ -527,33 +513,33 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		client.images |= ghost_sightless_images
 	client.images -= ghost_image //remove ourself
 
-/mob/observer/ghost/MayRespawn(var/feedback = 0, var/respawn_time = 0)
+/mob/observer/ghost/MayRespawn(feedback = 0, respawn_time = 0)
 	if(!client)
 		return 0
 	if(mind && mind.current && mind.current.stat != DEAD && can_reenter_corpse == CORPSE_CAN_REENTER)
 		if(feedback)
-			to_chat(src, "<span class='warning'>Your non-dead body prevents you from respawning.</span>")
+			to_chat(src, SPAN_WARNING("Your non-dead body prevents you from respawning."))
 		return 0
 	if(config.antag_hud_restricted && has_enabled_antagHUD == 1)
 		if(feedback)
-			to_chat(src, "<span class='warning'>antagHUD restrictions prevent you from respawning.</span>")
+			to_chat(src, SPAN_WARNING("antagHUD restrictions prevent you from respawning."))
 		return 0
 
 	var/timedifference = world.time - timeofdeath
-	if(!client.holder && !skip_respawn_timer && respawn_time && timeofdeath && timedifference < respawn_time MINUTES)
+	if(!check_rights(R_ADMIN|R_MOD, FALSE, client) && !skip_respawn_timer && respawn_time && timeofdeath && timedifference < respawn_time MINUTES)
 		var/timedifference_text = time2text(respawn_time MINUTES - timedifference,"mm:ss")
-		to_chat(src, "<span class='warning'>You must have been dead for [respawn_time] minute\s to respawn. You have [timedifference_text] left.</span>")
+		to_chat(src, SPAN_WARNING("You must have been dead for [respawn_time] minute\s to respawn. You have [timedifference_text] left."))
 		return 0
 
 	return 1
 
-/proc/isghostmind(var/datum/mind/player)
+/proc/isghostmind(datum/mind/player)
 	return player && !isnewplayer(player.current) && (!player.current || isghost(player.current) || (isliving(player.current) && player.current.stat == DEAD) || !player.current.client)
 
-/mob/proc/check_is_holy_turf(var/turf/T)
+/mob/proc/check_is_holy_turf(turf/T)
 	return 0
 
-/mob/observer/ghost/check_is_holy_turf(var/turf/T)
+/mob/observer/ghost/check_is_holy_turf(turf/T)
 	if(shall_check_if_holy() && is_holy_turf(T))
 		return TRUE
 
@@ -564,7 +550,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 	return TRUE
 
-/mob/observer/ghost/proc/set_appearance(var/mob/target)
+/mob/observer/ghost/proc/set_appearance(mob/target)
 	var/pre_alpha = alpha
 	var/pre_plane = plane
 	var/pre_layer = layer
@@ -601,53 +587,74 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/mob/new_player/M = new /mob/new_player()
 	if (can_reenter_corpse != CORPSE_CAN_REENTER_AND_RESPAWN)
 		M.respawned_time = world.time
+	mind?.active = FALSE
 	M.key = key
-	log_and_message_admins("has respawned.", M)
+	log_and_message_staff("has respawned.", M)
+	qdel(src)
 
 /mob/observer/ghost/verb/become_scp()
 	set category = "Ghost"
 	set name = "Become Euclid/Keter SCP"
 	set desc = "Take control of a clientless SCP."
 
+	if(jobban_isbanned(src,"Non-Safe SCP"))
+		to_chat(src, SPAN_DANGER("You are banned from playing as Non-Safe SCPs and cannot become one."))
+		return
+
 	if (world.time - timeofdeath >= 10 MINUTES || skip_respawn_timer)
 
+		// Someone has to rework this garbage, eventually
 		var/list/scps = list()
-/*
-		// no whitelist required
-		for (var/scp106 in GLOB.scp106s)
-			var/mob/M = scp106
-			if (!M.client)
-				scps += M
-*/
 
 		for (var/scp035 in GLOB.scp035s)
 			var/mob/M = scp035
 			if (!M.client)
 				scps += M
 
-		// whitelist required
 		for (var/scp049 in GLOB.scp049s)
 			var/mob/M = scp049
-			if (!M.client)
+			if(!M.client)
 				scps += M
 
-		// no whitelist required
-		for (var/scp173 in GLOB.scp173s)
+		// Requires logistics to buy goats or good security team to subdue
+		for(var/scp2427 in GLOB.scp2427_3s)
+			var/mob/M = scp2427
+			if(!M.client && (length(GLOB.clients) >= 20))
+				scps += M
+
+		// Technically not difficult to recontain, but will easily kill anyone
+		for(var/scp106 in GLOB.scp106s)
+			var/mob/M = scp106
+			if(!M.client && (length(GLOB.clients) >= 20))
+				scps += M
+
+		for(var/scp173 in GLOB.scp173s)
 			var/mob/M = scp173
-			if (!M.client)
+			if(!M.client && (length(GLOB.clients) >= 30))
+				scps += M
+
+		for(var/scp527 in GLOB.scp527s)
+			var/mob/M = scp527
+			if(!M.client)// && (length(GLOB.clients) >= 25))
 				scps += M
 
 
 
 		// add new humanoid SCPs here or they won't be playable - Kachnov
-		if (scps.len)
-			var/mob/living/scp = input(src, "Which Euclid/Keter SCP do you want to take control of?") as null|anything in scps
-			if (isscp106(scp) && world.time < 60 MINUTES)
-				to_chat(src, "You cannot join as this SCP for [((60 MINUTES) - world.time)/600] more minutes.")
-			if (isscp049(scp) && world.time < 10 MINUTES && !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list()))
+		if(scps.len)
+			var/mob/living/scp = tgui_input_list(src, "Which Euclid/Keter SCP do you want to take control of?", "Unsafe SCP Select", scps)
+			if(isscp106(scp) && world.time < 40 MINUTES)
+				to_chat(src, "You cannot join as this SCP for [((40 MINUTES) - world.time)/600] more minutes.")
+				return
+			if(isscp049(scp) && world.time < 10 MINUTES) /*&& !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list())¸*/
+				to_chat(src, "You cannot join as this SCP for [((10 MINUTES) - world.time)/600] more minutes.")
+				return
+			if(isscp527(scp) && world.time < 15 MINUTES)
 				to_chat(src, "You cannot join as this SCP for [((15 MINUTES) - world.time)/600] more minutes.")
-			else if (scp && !scp.client)
-				to_chat(src, "<span class='warning'>Keep in mind that you can and will be in your cage for long periods of time and even entire rounds.</span>")
+				return
+
+			if(scp && !scp.client)
+				to_chat(src, SPAN_WARNING("Keep in mind that you can and will be in your cage for long periods of time and even entire rounds."))
 				scp.do_possession(src)
 			else
 				to_chat(src, "<span class = 'danger'>This SCP has already been taken by someone else.</span>")
@@ -661,8 +668,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 
 	// if(config.disable_player_safe_scps)
-	// 	to_chat(src, "<span class='warning'>Spawning as adorable Safe SCPs is currently disabled.</span>")
+	// 	to_chat(src, SPAN_WARNING("Spawning as adorable Safe SCPs is currently disabled."))
 	// 	return
+
+	if(jobban_isbanned(src, "Safe SCP"))
+		to_chat(src, SPAN_DANGER("You are banned from playing as safe SCPs and cannot become one."))
+		return
 
 	if(!MayRespawn(1, ANIMAL_SPAWN_DELAY))
 		return
@@ -682,7 +693,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if (!M.client)
 			scps += M
 	if (scps.len)
-		var/mob/living/scp = input(src, "Which Safe SCP do you want to take control of?") as null|anything in scps
+		var/mob/living/scp = tgui_input_list(src, "Which Safe SCP do you want to take control of?", "Safe SCP Select", scps)
 		if (isscp999(scp) && world.time < 5 MINUTES)
 			to_chat(src, "You cannot join as this SCP for [((5 MINUTES) - world.time)/600] more minutes.")
 //		else if (isscp131(scp) && world.time < 5 MINUTES)
@@ -693,8 +704,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			scp.do_possession(src)
 			announce_ghost_joinleave(src, 0, "They are now a Safe SCP.")
 			if(src)
-				to_chat(src, "<span class='info'>You are now a Safe SCP. Be sure to read your relevant SCP page and roleplay accordingly!</span>")
+				to_chat(src, SPAN_INFO("You are now a Safe SCP. Be sure to read your relevant SCP page and roleplay accordingly!"))
 		else
-			to_chat(src, "<span class='warning'>Someone has already taken control of this SCP.</span>")
+			to_chat(src, SPAN_WARNING("Someone has already taken control of this SCP."))
 	else
-		to_chat(src, "<span class='warning'>All playable Safe SCPs are currently being played.</span>")
+		to_chat(src, SPAN_WARNING("All playable Safe SCPs are currently being played."))

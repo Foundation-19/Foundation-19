@@ -1,29 +1,18 @@
-var/const/ENG               =(1<<0)
-var/const/SEC               =(1<<1)
-var/const/MED               =(1<<2)
-var/const/SCI               =(1<<3)
-var/const/CIV               =(1<<4)
-var/const/COM               =(1<<5)
-var/const/MSC               =(1<<6)
-var/const/SRV               =(1<<7)
-var/const/SUP               =(1<<8)
-var/const/SPT               =(1<<9)
-var/const/EXP               =(1<<10)
-var/const/ROB               =(1<<11)
-
 SUBSYSTEM_DEF(jobs)
 	name = "Jobs"
 	init_order = SS_INIT_JOBS
 	flags = SS_NO_FIRE
 
-	var/list/archetype_job_datums =    list()
-	var/list/job_lists_by_map_name =   list()
-	var/list/titles_to_datums =        list()
-	var/list/types_to_datums =         list()
-	var/list/primary_job_datums =      list()
-	var/list/unassigned_roundstart =   list()
+	var/list/archetype_job_datums = list()
+	var/list/job_lists_by_map_name = list()
+	var/list/titles_to_datums = list()
+	var/list/distinct_job_titles = list()
+	var/list/types_to_datums = list()
+	var/list/primary_job_datums = list()
+	var/list/unassigned_roundstart = list()
 	var/list/positions_by_department = list()
-	var/list/job_icons =               list()
+	var/list/distinct_department_positions = list()
+	var/list/job_icons = list()
 
 /datum/controller/subsystem/jobs/Initialize(timeofday)
 
@@ -53,7 +42,7 @@ SUBSYSTEM_DEF(jobs)
 	if(!GLOB.skills.len)
 		decls_repository.get_decl(/decl/hierarchy/skill)
 	if(!GLOB.skills.len)
-		log_error("<span class='warning'>Error setting up job skill requirements, no skill datums found!</span>")
+		log_error(SPAN_WARNING("Error setting up job skill requirements, no skill datums found!"))
 
 	// Update title and path tracking, submap list, etc.
 	// Populate/set up map job lists.
@@ -77,18 +66,22 @@ SUBSYSTEM_DEF(jobs)
 	// Update valid job titles.
 	titles_to_datums = list()
 	types_to_datums = list()
+	distinct_job_titles = list()
 	positions_by_department = list()
+	distinct_department_positions = list()
 	for(var/map_name in job_lists_by_map_name)
 		var/list/map_data = job_lists_by_map_name[map_name]
 		for(var/datum/job/job in map_data["jobs"])
 			types_to_datums[job.type] = job
 			titles_to_datums[job.title] = job
+			distinct_job_titles[job.title] = job
 			for(var/alt_title in job.alt_titles)
 				titles_to_datums[alt_title] = job
 			if(job.department_flag)
 				for (var/I in 1 to GLOB.bitflags.len)
 					if(job.department_flag & GLOB.bitflags[I])
 						LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.title)
+						LAZYDISTINCTADD(distinct_department_positions["[GLOB.bitflags[I]]"], job.title)
 						if (length(job.alt_titles))
 							LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.alt_titles)
 
@@ -101,7 +94,7 @@ SUBSYSTEM_DEF(jobs)
 
 	. = ..()
 
-/datum/controller/subsystem/jobs/proc/guest_jobbans(var/job)
+/datum/controller/subsystem/jobs/proc/guest_jobbans(job)
 	for(var/dept in list(COM, MSC, SEC))
 		if(job in titles_by_department(dept))
 			return TRUE
@@ -117,45 +110,66 @@ SUBSYSTEM_DEF(jobs)
 		job.current_positions = 0
 	unassigned_roundstart = list()
 
-/datum/controller/subsystem/jobs/proc/get_by_title(var/rank)
+/datum/controller/subsystem/jobs/proc/get_by_title(rank)
 	return titles_to_datums[rank]
 
-/datum/controller/subsystem/jobs/proc/get_by_path(var/path)
+/datum/controller/subsystem/jobs/proc/get_by_path(path)
 	RETURN_TYPE(/datum/job)
 	return types_to_datums[path]
 
-/datum/controller/subsystem/jobs/proc/check_general_join_blockers(var/mob/new_player/joining, var/datum/job/job)
+/datum/controller/subsystem/jobs/proc/check_general_join_blockers(mob/new_player/joining, datum/job/job)
 	if(!istype(joining) || !joining.client || !joining.client.prefs)
 		return FALSE
 	if(!istype(job))
 		log_debug("Job assignment error for [joining] - job does not exist or is of the incorrect type.")
 		return FALSE
 	if(!job.is_position_available())
-		to_chat(joining, "<span class='warning'>Unfortunately, that job is no longer available.</span>")
+		to_chat(joining, SPAN_WARNING("Unfortunately, that job is no longer available."))
 		return FALSE
 	if(!config.enter_allowed)
-		to_chat(joining, "<span class='warning'>There is an administrative lock on entering the game!</span>")
+		to_chat(joining, SPAN_WARNING("There is an administrative lock on entering the game!"))
 		return FALSE
 	if(SSticker.mode && SSticker.mode.explosion_in_progress)
-		to_chat(joining, "<span class='warning'>The [station_name()] is currently exploding. Joining would go poorly.</span>")
+		to_chat(joining, SPAN_WARNING("The [station_name()] is currently exploding. Joining would go poorly."))
+		return FALSE
+	for(var/mob/living/carbon/human/C in SSmobs.mob_list)
+		var/char_name = joining.client.prefs.real_name
+		if(char_name == C.real_name)
+			to_chat (usr, SPAN_DANGER("A character with the name <b>[C.real_name]</b> already exists. Please join with a different name."))
+			return FALSE
+	if(!job.meets_req(joining.client))
+		var/list/job_reqs_remaining = job.get_req(joining.client)
+		to_chat(usr, SPAN_WARNING("You do not meet the playtime requirment to play this role! You need..."))
+		for(var/job_req in job_reqs_remaining)
+			if(job_req)
+				to_chat(usr, SPAN_WARNING("	[job_reqs_remaining[job_req]] minutes as [job_req]"))
+		to_chat(usr, SPAN_WARNING("to play as [job.title]."))
 		return FALSE
 	return TRUE
 
-/datum/controller/subsystem/jobs/proc/check_latejoin_blockers(var/mob/new_player/joining, var/datum/job/job)
+/datum/controller/subsystem/jobs/proc/check_latejoin_blockers(mob/new_player/joining, datum/job/job)
 	if(!check_general_join_blockers(joining, job))
 		return FALSE
 	if(job.minimum_character_age && (joining.client.prefs.age < job.minimum_character_age))
-		to_chat(joining, "<span class='warning'>Your character's in-game age is too low for this job.</span>")
+		to_chat(joining, SPAN_WARNING("Your character's in-game age is too low for this job."))
 		return FALSE
 	if(!job.player_old_enough(joining.client))
-		to_chat(joining, "<span class='warning'>Your player age (days since first seen on the server) is too low for this job.</span>")
+		to_chat(joining, SPAN_WARNING("Your player age (days since first seen on the server) is too low for this job."))
 		return FALSE
 	if(GAME_STATE != RUNLEVEL_GAME)
-		to_chat(joining, "<span class='warning'>The round is either not ready, or has already finished...</span>")
+		to_chat(joining, SPAN_WARNING("The round is either not ready, or has already finished..."))
+		return FALSE
+	if(!job.meets_req(joining.client))
+		var/list/job_reqs_remaining = job.get_req(joining.client)
+		to_chat(usr, SPAN_WARNING("You do not meet the playtime requirment(s) to play this role! You need..."))
+		for(var/job_req in job_reqs_remaining)
+			if(job_req)
+				to_chat(usr, SPAN_WARNING("	[job_reqs_remaining[job_req]] minutes as [job_req]"))
+		to_chat(usr, SPAN_WARNING("to play as [job.title]."))
 		return FALSE
 	return TRUE
 
-/datum/controller/subsystem/jobs/proc/check_unsafe_spawn(var/mob/living/spawner, var/turf/spawn_turf)
+/datum/controller/subsystem/jobs/proc/check_unsafe_spawn(mob/living/spawner, turf/spawn_turf)
 	var/radlevel = SSradiation.get_rads_at_turf(spawn_turf)
 	var/airstatus = IsTurfAtmosUnsafe(spawn_turf)
 	if(airstatus || radlevel > 0)
@@ -166,10 +180,10 @@ SUBSYSTEM_DEF(jobs)
 			return FALSE
 		else
 			// Let the staff know, in case the person complains about dying due to this later. They've been warned.
-			log_and_message_admins("User [spawner] spawned at spawn point with dangerous atmosphere.")
+			log_and_message_staff("User [spawner] spawned at spawn point with dangerous atmosphere.")
 	return TRUE
 
-/datum/controller/subsystem/jobs/proc/assign_role(var/mob/new_player/player, var/rank, var/latejoin = 0, var/datum/game_mode/mode = SSticker.mode)
+/datum/controller/subsystem/jobs/proc/assign_role(mob/new_player/player, rank, latejoin = 0, datum/game_mode/mode = SSticker.mode)
 	if(player && player.mind && rank)
 		var/datum/job/job = get_by_title(rank)
 		if(!job)
@@ -182,6 +196,8 @@ SUBSYSTEM_DEF(jobs)
 			return 0
 		if(job.title in mode.disabled_jobs)
 			return 0
+		if(!job.meets_req(player.client))
+			return FALSE
 
 		var/position_limit = job.total_positions
 		if(!latejoin)
@@ -206,11 +222,13 @@ SUBSYSTEM_DEF(jobs)
 			continue
 		if(flag && !(flag in player.client.prefs.be_special_role))
 			continue
+		if(!job.meets_req(player.client))
+			continue
 		if(player.client.prefs.CorrectLevel(job,level))
 			candidates += player
 	return candidates
 
-/datum/controller/subsystem/jobs/proc/give_random_job(var/mob/new_player/player, var/datum/game_mode/mode = SSticker.mode)
+/datum/controller/subsystem/jobs/proc/give_random_job(mob/new_player/player, datum/game_mode/mode = SSticker.mode)
 	for(var/datum/job/job in shuffle(primary_job_datums))
 		if(!job)
 			continue
@@ -228,13 +246,15 @@ SUBSYSTEM_DEF(jobs)
 			continue
 		if(job.title in mode.disabled_jobs)
 			continue
+		if(!job.meets_req(player.client))
+			continue
 		if((job.current_positions < job.spawn_positions) || job.spawn_positions == -1)
 			assign_role(player, job.title, mode = mode)
 			unassigned_roundstart -= player
 			break
 
 ///This proc is called before the level loop of divide_occupations() and will try to select a head, ignoring ALL non-head preferences for every level until it locates a head or runs out of levels to check
-/datum/controller/subsystem/jobs/proc/fill_head_position(var/datum/game_mode/mode)
+/datum/controller/subsystem/jobs/proc/fill_head_position(datum/game_mode/mode)
 	for(var/level = 1 to 3)
 		for(var/command_position in titles_by_department(COM))
 			var/datum/job/job = get_by_title(command_position)
@@ -269,7 +289,7 @@ SUBSYSTEM_DEF(jobs)
 	return 0
 
 ///This proc is called at the start of the level loop of divide_occupations() and will cause head jobs to be checked before any other jobs of the same level
-/datum/controller/subsystem/jobs/proc/CheckHeadPositions(var/level, var/datum/game_mode/mode)
+/datum/controller/subsystem/jobs/proc/CheckHeadPositions(level, datum/game_mode/mode)
 	for(var/command_position in titles_by_department(COM))
 		var/datum/job/job = get_by_title(command_position)
 		if(!job)	continue
@@ -351,23 +371,22 @@ SUBSYSTEM_DEF(jobs)
 			unassigned_roundstart -= player
 	return TRUE
 
-/datum/controller/subsystem/jobs/proc/attempt_role_assignment(var/mob/new_player/player, var/datum/job/job, var/level, var/datum/game_mode/mode)
+/datum/controller/subsystem/jobs/proc/attempt_role_assignment(mob/new_player/player, datum/job/job, level, datum/game_mode/mode)
 	if(!jobban_isbanned(player, job.title) && \
 	 job.player_old_enough(player.client) && \
 	 player.client.prefs.CorrectLevel(job, level) && \
-	 job.is_position_available())
+	 job.is_position_available() && \
+	 job.meets_req(player.client))
 		assign_role(player, job.title, mode = mode)
 		return TRUE
 	return FALSE
 
-/datum/controller/subsystem/jobs/proc/equip_custom_loadout(var/mob/living/carbon/human/H, var/datum/job/job)
+/datum/controller/subsystem/jobs/proc/equip_custom_loadout(mob/living/carbon/human/H, datum/job/job)
 
 	if(!H || !H.client)
 		return
 
 	// Equip custom gear loadout, replacing any job items
-	var/list/spawn_in_storage = list()
-	var/list/loadout_taken_slots = list()
 	if(H.client.prefs.Gear() && job.loadout_allowed)
 		for(var/thing in H.client.prefs.Gear())
 			var/datum/gear/G = gear_datums[thing]
@@ -401,13 +420,10 @@ SUBSYSTEM_DEF(jobs)
 					permitted = 0
 
 				if(!permitted)
-					to_chat(H, "<span class='warning'>Your current species, job, branch, skills or whitelist status does not permit you to spawn with [thing]!</span>")
+					to_chat(H, SPAN_WARNING("Your current species, job, branch, skills or whitelist status does not permit you to spawn with [thing]!"))
 					continue
 
-				if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
-					spawn_in_storage.Add(G)
-				else
-					loadout_taken_slots.Add(G.slot)
+				G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
 	// do accessories last so they don't attach to a suit that will be replaced
 	if(H.char_rank && H.char_rank.accessory)
@@ -418,19 +434,16 @@ SUBSYSTEM_DEF(jobs)
 				var/list/accessory_args = accessory_data.Copy()
 				accessory_args[1] = src
 				for(var/i in 1 to amt)
-					H.equip_to_slot_or_del(new accessory_path(arglist(accessory_args)), slot_tie)
+					H.equip_to_slot_or_store_or_drop(new accessory_path(arglist(accessory_args)), slot_tie)
 			else
 				for(var/i in 1 to (isnull(accessory_data)? 1 : accessory_data))
-					H.equip_to_slot_or_del(new accessory_path(src), slot_tie)
+					H.equip_to_slot_or_store_or_drop(new accessory_path(src), slot_tie)
 
-	return spawn_in_storage
-
-/datum/controller/subsystem/jobs/proc/equip_rank(var/mob/living/carbon/human/H, var/rank, var/joined_late = 0)
+/datum/controller/subsystem/jobs/proc/equip_rank(mob/living/carbon/human/H, rank, joined_late = 0)
 	if(!H)
 		return
 
 	var/datum/job/job = get_by_title(rank)
-	var/list/spawn_in_storage
 
 	if(job)
 		if(H.client)
@@ -465,7 +478,7 @@ SUBSYSTEM_DEF(jobs)
 
 		job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
 		job.apply_fingerprints(H)
-		spawn_in_storage = equip_custom_loadout(H, job)
+		equip_custom_loadout(H, job)
 
 		var/obj/item/clothing/under/uniform = H.w_uniform
 		if(istype(uniform) && uniform.has_sensor)
@@ -515,10 +528,6 @@ SUBSYSTEM_DEF(jobs)
 		job.post_equip_rank(other_mob, alt_title || rank)
 		return other_mob
 
-	if(spawn_in_storage)
-		for(var/datum/gear/G in spawn_in_storage)
-			G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
-
 	if(istype(H)) //give humans wheelchairs, if they need them.
 		var/obj/item/organ/external/l_foot = H.get_organ(BP_L_FOOT)
 		var/obj/item/organ/external/r_foot = H.get_organ(BP_R_FOOT)
@@ -542,7 +551,7 @@ SUBSYSTEM_DEF(jobs)
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)
-		var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
+		var/equipped = H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
 		if(equipped)
 			var/obj/item/clothing/glasses/G = H.glasses
 			G.prescription = 7
@@ -557,8 +566,11 @@ SUBSYSTEM_DEF(jobs)
 
 	return H
 
-/datum/controller/subsystem/jobs/proc/titles_by_department(var/dept)
+/datum/controller/subsystem/jobs/proc/titles_by_department(dept)
 	return positions_by_department["[dept]"] || list()
+
+/datum/controller/subsystem/jobs/proc/distinct_titles_by_department(dept)
+	return distinct_department_positions["[dept]"] || list()
 
 /datum/controller/subsystem/jobs/proc/spawn_empty_ai()
 	for(var/obj/effect/landmark/start/S in landmarks_list)
@@ -571,5 +583,5 @@ SUBSYSTEM_DEF(jobs)
 
 /proc/show_location_blurb(client/C, duration)
 	var/area/A = get_area(C.mob)
-	var/blurb_text = "[stationdate2text()], [stationtime2text()]\n[station_name()], [A.name]"
-	show_blurb(C, duration, blurb_text, 5)
+	var/blurb_text = "[stationdate2text()], [station_time_timestamp("hh:mm")]\n[station_name()], [A.name]"
+	show_blurb(C.mob, duration, blurb_text)

@@ -6,12 +6,14 @@
 	var/has_pressure = 1  // Draw the pressure indicator.
 	var/has_nutrition = 1 // Draw the nutrition indicator.
 	var/has_bodytemp = 1  // Draw the bodytemp indicator.
+	var/has_sanity = 0 	  // Draw the sanity indicator.
 	var/has_hands = 1     // Set to draw hands.
 	var/has_drop = 1      // Set to draw drop button.
 	var/has_throw = 1     // Set to draw throw button.
 	var/has_resist = 1    // Set to draw resist button.
 	var/has_internals = 1 // Set to draw the internals toggle button.
-	var/has_rest = 1 // Set to draw the rest button.
+	var/has_rest = 1      // Set to draw the rest button.
+	var/has_blink = 1
 	var/list/equip_slots = list() // Checked by mob_can_equip().
 
 	// Contains information on the position and tag for all inventory slots
@@ -47,6 +49,9 @@
 
 	if(slot_back in equip_slots)
 		equip_slots |= slot_in_backpack
+
+	if(slot_belt in equip_slots)
+		equip_slots |= slot_in_belt
 
 	if(slot_w_uniform in equip_slots)
 		equip_slots |= slot_tie

@@ -7,7 +7,7 @@
 	icon_state = "fountain"
 	density = TRUE
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	pixel_x = -16
 	var/used = FALSE
 
@@ -16,7 +16,7 @@
 	light_color = get_random_colour(lower = 190)
 	set_light(0.6, 3, 5, 2, light_color)
 
-/obj/structure/fountain/attack_hand(var/mob/living/user as mob)
+/obj/structure/fountain/attack_hand(mob/living/user as mob)
 	if(user.incapacitated())
 		return
 	if(!CanPhysicallyInteract(user))
@@ -34,22 +34,22 @@
 	else
 		visible_message("\The [user] retracts their hand suddenly.")
 
-/obj/structure/fountain/proc/time_dilation(var/mob/living/carbon/human/user as mob)
+/obj/structure/fountain/proc/time_dilation(mob/living/carbon/human/user as mob)
 	for(var/mob/living/L in oviewers(7, src))
 		L.flash_eyes(3)
 		L.eye_blurry += 9
-	visible_message("<span class='warning'>\The [src] erupts in a bright flash of light!</span>")
+	visible_message(SPAN_WARNING("\The [src] erupts in a bright flash of light!"))
 	playsound(src,'sound/items/time.ogg',100)
 
 	var/direction = rand(1,6)
 	if(direction == 1) //become older
-		to_chat(user, "<span class='cultannounce'>You touch the fountain. All the memories of your life seem to fade into the distant past as seconds drag like years. You feel the inexplicable sensation of your skin tightening and thinning across your entire body as your muscles degrade and your joints weaken. Time returns to its 'normal' pace. You can only just barely remember touching the fountain.</span>")
+		to_chat(user, SPAN_CLASS("cultannounce","You touch the fountain. All the memories of your life seem to fade into the distant past as seconds drag like years. You feel the inexplicable sensation of your skin tightening and thinning across your entire body as your muscles degrade and your joints weaken. Time returns to its 'normal' pace. You can only just barely remember touching the fountain."))
 		user.became_older = TRUE
 		user.change_hair_color(80, 80, 80)
 		var/age_holder = round(rand(15,20))
 		user.age += age_holder
 	else               //become younger
-		to_chat(user, "<span class='cultannounce'>You touch the fountain. Everything stops - then reverses. You relive in an instant the events of your life. The fountain, yesterday's lunch, your first love, your first kiss. It all feels as though it just happened moments ago. Then it feels like it never happened at all. Time reverses back into normality and continues its advance. You feel great, but why are you here?</span>")
+		to_chat(user, SPAN_CLASS("cultannounce","You touch the fountain. Everything stops - then reverses. You relive in an instant the events of your life. The fountain, yesterday's lunch, your first love, your first kiss. It all feels as though it just happened moments ago. Then it feels like it never happened at all. Time reverses back into normality and continues its advance. You feel great, but why are you here?"))
 		user.became_younger = TRUE
 		user.age = round(rand(18,min(20, user.age)))
 	used = TRUE

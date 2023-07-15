@@ -14,7 +14,7 @@
 			01, 01, 01, 01
 		)
 
-	mouse_opacity = 0    // nothing on this plane is mouse-visible
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT    // nothing on this plane is mouse-visible
 
 /obj/lighting_general
 	plane = LIGHTING_PLANE
@@ -34,7 +34,7 @@
 
 	transform = M
 
-/obj/lighting_general/proc/sync(var/new_colour)
+/obj/lighting_general/proc/sync(new_colour)
 	color = new_colour
 
 /mob
@@ -42,6 +42,6 @@
 	var/obj/lighting_general/l_general
 
 
-/mob/proc/change_light_colour(var/new_colour)
+/mob/proc/change_light_colour(new_colour)
 	if(l_general)
 		l_general.sync(new_colour)

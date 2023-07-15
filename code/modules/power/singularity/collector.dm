@@ -1,4 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
 var/global/list/rad_collectors = list()
 
 /obj/machinery/power/rad_collector
@@ -8,7 +7,7 @@ var/global/list/rad_collectors = list()
 	icon_state = "ca"
 	anchored = FALSE
 	density = TRUE
-	req_access = list(access_engine_equip)
+	req_access = list(ACCESS_ENGINEERING_LVL2)
 	var/obj/item/tank/phoron/P = null
 
 	var/health = 100
@@ -28,9 +27,9 @@ var/global/list/rad_collectors = list()
 	var/end_time = 0
 	var/alert_delay = 10 SECONDS
 
-/obj/machinery/power/rad_collector/New()
-	..()
+/obj/machinery/power/rad_collector/Initialize()
 	rad_collectors += src
+	return ..()
 
 /obj/machinery/power/rad_collector/Destroy()
 	rad_collectors -= src
@@ -79,22 +78,22 @@ var/global/list/rad_collectors = list()
 		return FALSE
 	. = TRUE
 	if((stat & BROKEN) || melted)
-		to_chat(user, "<span class='warning'>The [src] is completely destroyed!</span>")
+		to_chat(user, SPAN_WARNING("The [src] is completely destroyed!"))
 	if(!src.locked)
 		toggle_power()
 		user.visible_message("[user.name] turns the [src.name] [active? "on":"off"].", \
 		"You turn the [src.name] [active? "on":"off"].")
-		investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [user.key]. [P?"Fuel: [round(P.air_contents.gas[GAS_PHORON]/0.29)]%":"<font color='red'>It is empty</font>"].","singulo")
+		investigate_log("turned [active?FONT_COLORED("green","on"):FONT_COLORED("red","off")] by [user.key]. [P?"Fuel: [round(P.air_contents.gas[GAS_PHORON]/0.29)]%":FONT_COLORED("red","It is empty")].","singulo")
 	else
-		to_chat(user, "<span class='warning'>The controls are locked!</span>")
+		to_chat(user, SPAN_WARNING("The controls are locked!"))
 
 /obj/machinery/power/rad_collector/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/tank/phoron))
 		if(!src.anchored)
-			to_chat(user, "<span class='warning'>The [src] needs to be secured to the floor first.</span>")
+			to_chat(user, SPAN_WARNING("The [src] needs to be secured to the floor first."))
 			return 1
 		if(src.P)
-			to_chat(user, "<span class='warning'>There's already a phoron tank loaded.</span>")
+			to_chat(user, SPAN_WARNING("There's already a phoron tank loaded."))
 			return 1
 		if(!user.unEquip(W, src))
 			return
@@ -107,11 +106,11 @@ var/global/list/rad_collectors = list()
 			return 1
 	else if(isWrench(W))
 		if(P)
-			to_chat(user, "<span class='notice'>Remove the phoron tank first.</span>")
+			to_chat(user, SPAN_NOTICE("Remove the phoron tank first."))
 			return 1
 		for(var/obj/machinery/power/rad_collector/R in get_turf(src))
 			if(R != src)
-				to_chat(user, "<span class='warning'>You cannot install more than one collector on the same spot.</span>")
+				to_chat(user, SPAN_WARNING("You cannot install more than one collector on the same spot."))
 				return 1
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		src.anchored = !src.anchored
@@ -130,9 +129,9 @@ var/global/list/rad_collectors = list()
 				to_chat(user, "The controls are now [src.locked ? "locked." : "unlocked."]")
 			else
 				src.locked = 0 //just in case it somehow gets locked
-				to_chat(user, "<span class='warning'>The controls can only be locked when the [src] is active</span>")
+				to_chat(user, SPAN_WARNING("The controls can only be locked when the [src] is active"))
 		else
-			to_chat(user, "<span class='warning'>Access denied!</span>")
+			to_chat(user, SPAN_WARNING("Access denied!"))
 		return 1
 	return ..()
 
@@ -158,7 +157,7 @@ var/global/list/rad_collectors = list()
 			explosion(T, -1, -1, 0)
 			QDEL_NULL(P)
 	disconnect_from_network()
-	stat |= BROKEN
+	set_broken(TRUE)
 	melted = TRUE
 	anchored = FALSE
 	active = FALSE
@@ -182,7 +181,7 @@ var/global/list/rad_collectors = list()
 	else
 		update_icon()
 
-/obj/machinery/power/rad_collector/proc/receive_pulse(var/pulse_strength)
+/obj/machinery/power/rad_collector/proc/receive_pulse(pulse_strength)
 	if(P && active)
 		var/power_produced = 0
 		power_produced = min(100*P.air_contents.gas[GAS_PHORON]*pulse_strength*pulse_coeff,max_power)

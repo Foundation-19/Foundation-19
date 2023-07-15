@@ -236,8 +236,8 @@
 	containername = "\improper Vending Machine"
 
 /decl/hierarchy/supply_pack/supply/bodavendor
-	name = "Vendor - BODA - Zakuson TCC"
-	contains = list(/obj/machinery/vending/sovietsoda{anchored = FALSE})
+	name = "Vendor - Water Dispenser - Foundation"
+	contains = list(/obj/machinery/vending/classdwater{anchored = FALSE})
 	cost = 250
 	containertype = /obj/structure/largecrate
 	containername = "\improper Vending Machine"

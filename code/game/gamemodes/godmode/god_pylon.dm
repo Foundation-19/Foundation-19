@@ -6,7 +6,7 @@
 	icon_state = "pylon"
 	var/list/intuned = list()
 
-/obj/structure/deity/pylon/attack_deity(var/mob/living/deity/D)
+/obj/structure/deity/pylon/attack_deity(mob/living/deity/D)
 	if(D.pylon == src)
 		D.leave_pylon()
 	else
@@ -17,7 +17,7 @@
 		linked_god.leave_pylon()
 	return ..()
 
-/obj/structure/deity/pylon/attack_hand(var/mob/living/L)
+/obj/structure/deity/pylon/attack_hand(mob/living/L)
 	if(!linked_god)
 		return
 	if(L in intuned)
@@ -25,17 +25,17 @@
 	else
 		add_intuned(L)
 
-/obj/structure/deity/pylon/proc/add_intuned(var/mob/living/L)
+/obj/structure/deity/pylon/proc/add_intuned(mob/living/L)
 	if(L in intuned)
 		return
-	to_chat(L, "<span class='notice'>You place your hands on \the [src], feeling yourself intune to its vibrations.</span>")
+	to_chat(L, SPAN_NOTICE("You place your hands on \the [src], feeling yourself intune to its vibrations."))
 	intuned += L
 	GLOB.destroyed_event.register(L,src,/obj/structure/deity/pylon/proc/remove_intuned)
 
-/obj/structure/deity/pylon/proc/remove_intuned(var/mob/living/L)
+/obj/structure/deity/pylon/proc/remove_intuned(mob/living/L)
 	if(!(L in intuned))
 		return
-	to_chat(L, "<span class='warning'>You no longer feel intuned to \the [src].</span>")
+	to_chat(L, SPAN_WARNING("You no longer feel intuned to \the [src]."))
 	intuned -= L
 	GLOB.destroyed_event.unregister(L, src)
 

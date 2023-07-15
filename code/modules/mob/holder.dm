@@ -62,7 +62,7 @@ var/list/holder_mob_icon_cache = list()
 
 	last_holder = loc
 
-/obj/item/holder/onDropInto(var/atom/movable/AM)
+/obj/item/holder/onDropInto(atom/movable/AM)
 	if(ismob(loc))   // Bypass our holding mob and drop directly to its loc
 		return loc.loc
 	return ..()
@@ -94,7 +94,7 @@ var/list/holder_mob_icon_cache = list()
 
 	..()
 
-/obj/item/holder/proc/sync(var/mob/living/M)
+/obj/item/holder/proc/sync(mob/living/M)
 	dir = 2
 	cut_overlays()
 	icon = M.icon
@@ -138,7 +138,7 @@ var/list/holder_mob_icon_cache = list()
 //Mob procs and vars for scooping up
 /mob/living/var/holder_type
 
-/mob/living/proc/get_scooped(var/mob/living/carbon/human/grabber, var/self_grab)
+/mob/living/proc/get_scooped(mob/living/carbon/human/grabber, self_grab)
 	if(!holder_type || buckled || pinned.len)
 		return
 
@@ -151,18 +151,18 @@ var/list/holder_mob_icon_cache = list()
 
 	if(self_grab)
 		if(!grabber.equip_to_slot_if_possible(H, slot_back, del_on_fail=0, disable_warning=1))
-			to_chat(src, "<span class='warning'>You can't climb onto [grabber]!</span>")
+			to_chat(src, SPAN_WARNING("You can't climb onto [grabber]!"))
 			return
 
-		to_chat(grabber, "<span class='notice'>\The [src] clambers onto you!</span>")
-		to_chat(src, "<span class='notice'>You climb up onto \the [grabber]!</span>")
+		to_chat(grabber, SPAN_NOTICE("\The [src] clambers onto you!"))
+		to_chat(src, SPAN_NOTICE("You climb up onto \the [grabber]!"))
 	else
 		if(!grabber.put_in_hands(H))
-			to_chat(grabber, "<span class='warning'>Your hands are full!</span>")
+			to_chat(grabber, SPAN_WARNING("Your hands are full!"))
 			return
 
-		to_chat(grabber, "<span class='notice'>You scoop up \the [src]!</span>")
-		to_chat(src, "<span class='notice'>\The [grabber] scoops you up!</span>")
+		to_chat(grabber, SPAN_NOTICE("You scoop up \the [src]!"))
+		to_chat(src, SPAN_NOTICE("\The [grabber] scoops you up!"))
 
 	src.forceMove(H)
 
@@ -170,15 +170,15 @@ var/list/holder_mob_icon_cache = list()
 	H.sync(src)
 	return H
 
-/mob/living/MouseDrop(var/mob/living/carbon/human/over_object)
+/mob/living/MouseDrop(mob/living/carbon/human/over_object)
 	if(istype(over_object) && Adjacent(over_object) && (usr == src || usr == over_object) && over_object.a_intent == I_GRAB)
 		if(scoop_check(over_object))
 			get_scooped(over_object, (usr == src))
 			return
 	return ..()
 
-/mob/living/proc/scoop_check(var/mob/living/scooper)
+/mob/living/proc/scoop_check(mob/living/scooper)
 	return 1
 
-/mob/living/carbon/human/scoop_check(var/mob/living/scooper)
+/mob/living/carbon/human/scoop_check(mob/living/scooper)
 	return (scooper.mob_size > src.mob_size && a_intent == I_HELP)

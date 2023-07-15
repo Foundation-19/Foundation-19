@@ -75,7 +75,7 @@
 /turf/simulated/floor/airless/ceiling,
 /area/space)
 "j" = (
-/obj/effect/shuttle_landmark/escape_pod/transit/pod7,
+/obj/effect/shuttle_landmark/escape_pod/transit,
 /turf/simulated/floor/airless/ceiling,
 /area/space)
 "k" = (

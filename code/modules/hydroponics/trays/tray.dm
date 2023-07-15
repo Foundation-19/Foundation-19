@@ -139,7 +139,7 @@
 		return 1
 	return ..()
 
-/obj/machinery/portable_atmospherics/hydroponics/attack_ghost(var/mob/observer/ghost/user)
+/obj/machinery/portable_atmospherics/hydroponics/attack_ghost(mob/observer/ghost/user)
 	if(!(harvest && seed && seed.has_mob_product))
 		return
 
@@ -174,7 +174,7 @@
 	if(locate(/obj/item/seeds) in get_turf(src))
 		plant()
 
-/obj/machinery/portable_atmospherics/hydroponics/bullet_act(var/obj/item/projectile/Proj)
+/obj/machinery/portable_atmospherics/hydroponics/bullet_act(obj/item/projectile/Proj)
 
 	//Don't act on seeds like dionaea that shouldn't change.
 	if(seed && seed.get_trait(TRAIT_IMMUTABLE) > 0)
@@ -203,7 +203,7 @@
 	else
 		return !density
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/check_health(var/icon_update = 1)
+/obj/machinery/portable_atmospherics/hydroponics/proc/check_health(icon_update = 1)
 	if(seed && !dead && health <= 0)
 		die()
 	check_level_sanity()
@@ -269,7 +269,7 @@
 	check_health()
 
 //Harvests the product of a plant.
-/obj/machinery/portable_atmospherics/hydroponics/proc/harvest(var/mob/user)
+/obj/machinery/portable_atmospherics/hydroponics/proc/harvest(mob/user)
 
 	//Harvest the product of the plant,
 	if(!seed || !harvest)
@@ -298,7 +298,7 @@
 	check_health()
 
 //Clears out a dead plant.
-/obj/machinery/portable_atmospherics/hydroponics/proc/remove_dead(var/mob/user, var/silent)
+/obj/machinery/portable_atmospherics/hydroponics/proc/remove_dead(mob/user, silent)
 	if(!dead)
 		return
 
@@ -337,11 +337,11 @@
 	pestlevel = 0
 	sampled = 0
 	update_icon()
-	visible_message("<span class='notice'>[src] has been overtaken by [seed.display_name].</span>")
+	visible_message(SPAN_NOTICE("[src] has been overtaken by [seed.display_name]."))
 
 	return
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/mutate(var/severity)
+/obj/machinery/portable_atmospherics/hydroponics/proc/mutate(severity)
 
 	// No seed, no mutations.
 	if(!seed)
@@ -408,11 +408,11 @@
 	weedlevel = 0
 
 	update_icon()
-	visible_message("<span class='danger'>The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!</span>")
+	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!"))
 
 	return
 
-/obj/machinery/portable_atmospherics/hydroponics/attackby(var/obj/item/O, var/mob/user)
+/obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/O, mob/user)
 
 	if (O.is_open_container())
 		return 0
@@ -474,7 +474,7 @@
 	else if (istype(O, /obj/item/material/minihoe))  // The minihoe
 
 		if(weedlevel > 0)
-			user.visible_message("<span class='notice'>[user] starts uprooting the weeds.</span>", "<span class='notice'>You remove the weeds from the [src].</span>")
+			user.visible_message(SPAN_NOTICE("[user] starts uprooting the weeds."), SPAN_NOTICE("You remove the weeds from the [src]."))
 			weedlevel = 0
 			if(seed)
 				var/needed_skill = seed.mysterious ? SKILL_TRAINED : SKILL_BASIC
@@ -482,7 +482,7 @@
 					health -= rand(40,60)
 					check_health(1)
 		else
-			to_chat(user, "<span class='notice'>This plot is completely devoid of weeds. It doesn't need uprooting.</span>")
+			to_chat(user, SPAN_NOTICE("This plot is completely devoid of weeds. It doesn't need uprooting."))
 
 	else if (istype(O, /obj/item/storage/plants))
 
@@ -517,7 +517,7 @@
 
 	else if(O.force && seed)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message("<span class='danger'>\The [seed.display_name] has been attacked by [user] with \the [O]!</span>")
+		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [O]!"))
 		playsound(get_turf(src), O.hitsound, 100, 1)
 		if(!dead)
 			health -= O.force
@@ -525,10 +525,10 @@
 	else if(mechanical)
 		return component_attackby(O, user)
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/plant_seed(var/mob/user, var/obj/item/seeds/S)
+/obj/machinery/portable_atmospherics/hydroponics/proc/plant_seed(mob/user, obj/item/seeds/S)
 
 	if(seed)
-		to_chat(user, "<span class='warning'>\The [src] already has seeds in it!</span>")
+		to_chat(user, SPAN_WARNING("\The [src] already has seeds in it!"))
 		return
 
 	if(!S.seed)
@@ -571,7 +571,7 @@
 		to_chat(user, "\The [src] is empty.")
 		return
 
-	to_chat(user, "<span class='notice'>\An [seed.display_name] plant is growing here.</span>")
+	to_chat(user, SPAN_NOTICE("\An [seed.display_name] plant is growing here."))
 
 	if(user.skill_check(SKILL_BOTANY, SKILL_BASIC))
 		if(weedlevel >= 5)
@@ -580,7 +580,7 @@
 			to_chat(user, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
 
 		if(dead)
-			to_chat(user, "<span class='danger'>The [seed.display_name] plant is dead.</span>")
+			to_chat(user, SPAN_DANGER("The [seed.display_name] plant is dead."))
 		else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
 			to_chat(user, "The [seed.display_name] plant looks <span class='danger'>unhealthy</span>.")
 
@@ -620,7 +620,7 @@
 		close_lid(usr)
 	return
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/close_lid(var/mob/living/user)
+/obj/machinery/portable_atmospherics/hydroponics/proc/close_lid(mob/living/user)
 	closed_system = !closed_system
 	to_chat(user, "You [closed_system ? "close" : "open"] the tray's lid.")
 	update_icon()
@@ -637,7 +637,7 @@
 	qdel(S)
 	check_health()
 
-/obj/machinery/portable_atmospherics/hydroponics/do_simple_ranged_interaction(var/mob/user)
+/obj/machinery/portable_atmospherics/hydroponics/do_simple_ranged_interaction(mob/user)
 	if(dead)
 		remove_dead()
 	else if(harvest)

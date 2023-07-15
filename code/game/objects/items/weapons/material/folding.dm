@@ -15,7 +15,7 @@
 	unbreakable = TRUE
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("prodded", "tapped")
-	hitsound = "swing_hit"
+	hitsound = SFX_SWING_HIT
 	edge = FALSE
 	sharp = FALSE
 
@@ -40,10 +40,10 @@
 	update_force()
 	update_icon()
 	if(open)
-		user.visible_message("<span class='warning'>\The [user] opens \the [src].</span>")
+		user.visible_message(SPAN_WARNING("\The [user] opens \the [src]."))
 		playsound(user, 'sound/weapons/flipblade.ogg', 15, 1)
 	else
-		user.visible_message("<span class='notice'>\The [user] closes \the [src].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] closes \the [src]."))
 	add_fingerprint(user)
 
 /obj/item/material/knife/folding/update_force()

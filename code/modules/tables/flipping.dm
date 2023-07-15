@@ -1,4 +1,4 @@
-/obj/structure/table/proc/straight_table_check(var/direction)
+/obj/structure/table/proc/straight_table_check(direction)
 	if(get_current_health() > 100)
 		return 0
 	var/obj/structure/table/T
@@ -21,17 +21,17 @@
 		return
 
 	if(reinforced || flipped < 0 || !flip(get_cardinal_dir(usr,src)))
-		to_chat(usr, "<span class='notice'>It won't budge.</span>")
+		to_chat(usr, SPAN_NOTICE("It won't budge."))
 		return
 
-	usr.visible_message("<span class='warning'>[usr] flips \the [src]!</span>")
+	usr.visible_message(SPAN_WARNING("[usr] flips \the [src]!"))
 
 	if(atom_flags & ATOM_FLAG_CLIMBABLE)
 		object_shaken()
 
 	return
 
-/obj/structure/table/proc/unflipping_check(var/direction)
+/obj/structure/table/proc/unflipping_check(direction)
 
 	for(var/mob/M in oview(src,0))
 		return 0
@@ -64,11 +64,11 @@
 		return
 
 	if (!unflipping_check())
-		to_chat(usr, "<span class='notice'>It won't budge.</span>")
+		to_chat(usr, SPAN_NOTICE("It won't budge."))
 		return
 	unflip()
 
-/obj/structure/table/proc/flip(var/direction)
+/obj/structure/table/proc/flip(direction)
 	if( !straight_table_check(turn(direction,90)) || !straight_table_check(turn(direction,-90)) )
 		return FALSE
 

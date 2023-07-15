@@ -7,7 +7,7 @@
 	icon_state = "emitter"
 	anchored = FALSE
 	density = TRUE
-	req_access = list(access_engine_equip)
+	req_access = list(ACCESS_ENGINEERING_LVL2)
 	active_power_usage = 100 KILOWATTS
 	obj_flags = OBJ_FLAG_ROTATABLE
 
@@ -51,7 +51,7 @@
 		connect_to_network()
 
 /obj/machinery/power/emitter/Destroy()
-	log_and_message_admins("deleted \the [src]")
+	log_and_message_staff("deleted \the [src]")
 	investigate_log("<font color='red'>deleted</font> at ([x],[y],[z])","singulo")
 	return ..()
 
@@ -101,8 +101,8 @@
 					)
 				else
 					visible_message(SPAN_NOTICE("\The [src] turns off."))
-				playsound(src, "switch", 50)
-				log_and_message_admins("turned off \the [src] in [A.name]", user, src)
+				playsound(src, SFX_MACHINE_SWITCH, 50)
+				log_and_message_staff("turned off \the [src] in [A.name]", user, src)
 				investigate_log("turned <font color='red'>off</font> by [key_name_admin(user || usr)] in [A.name]","singulo")
 			else
 				active = TRUE
@@ -116,11 +116,11 @@
 					)
 				else
 					visible_message(SPAN_NOTICE("\The [src] turns on."))
-				playsound(src, "switch", 50)
+				playsound(src, SFX_MACHINE_SWITCH, 50)
 				update_efficiency()
 				shot_number = 0
 				fire_delay = get_initial_fire_delay()
-				log_and_message_admins("turned on \the [src] in [A.name]", user, src)
+				log_and_message_staff("turned on \the [src] in [A.name]", user, src)
 				investigate_log("turned <font color='green'>on</font> by [key_name_admin(user || usr)] in [A.name]","singulo")
 			update_icon()
 		else
@@ -136,7 +136,7 @@
 	var/skill_modifier = 0.8 * (SKILL_MAX - operator_skill)/(SKILL_MAX - SKILL_MIN) //How much randomness is added
 	efficiency *= 1 + (rand() - 1) * skill_modifier //subtract off between 0.8 and 0, depending on skill and luck.
 
-/obj/machinery/power/emitter/emp_act(var/severity)
+/obj/machinery/power/emitter/emp_act(severity)
 	return 1
 
 /obj/machinery/power/emitter/Process()
@@ -182,6 +182,7 @@
 
 		var/obj/item/projectile/beam/emitter/A = get_emitter_beam()
 		playsound(loc, A.fire_sound, 25, TRUE)
+		show_sound_effect(loc)
 		A.damage = round (power_per_shot / EMITTER_DAMAGE_POWER_TRANSFER)
 		A.launch( get_step(loc, dir) )
 
@@ -282,13 +283,13 @@
 	..()
 	return
 
-/obj/machinery/power/emitter/emag_act(var/remaining_charges, var/mob/user)
+/obj/machinery/power/emitter/emag_act(remaining_charges, mob/user)
 	if (!emagged)
 		locked = FALSE
 		emagged = TRUE
 		req_access.Cut()
 		user.visible_message(SPAN_WARNING("\The [user] messes with \the [src]'s controls."), SPAN_WARNING("You short out the control lock."))
-		user.playsound_local(loc, "sparks", 50, TRUE)
+		user.playsound_local(loc, SFX_SPARK, 50, TRUE)
 		return TRUE
 
 /obj/machinery/power/emitter/proc/get_initial_fire_delay()

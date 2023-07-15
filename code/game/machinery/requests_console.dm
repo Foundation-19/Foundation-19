@@ -98,7 +98,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	ui_interact(user)
 	return TRUE
 
-/obj/machinery/requests_console/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/requests_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/data[0]
 
 	data["department"] = department
@@ -189,7 +189,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 		return TOPIC_REFRESH
 
 					//err... hacking code, which has no reason for existing... but anyway... it was once supposed to unlock priority 3 messanging on that console (EXTREME priority...), but the code for that was removed.
-/obj/machinery/requests_console/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/requests_console/attackby(obj/item/O as obj, mob/user as mob)
 	/*
 	if (istype(O, /obj/item/crowbar))
 		if(open)
@@ -201,7 +201,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 				icon_state="req_comp_open"
 			else if(hackState == 1)
 				icon_state="req_comp_rewired"
-	if (istype(O, /obj/item/screwdriver))
+	if (isScrewdriver(O))
 		if(open)
 			if(hackState == 0)
 				hackState = 1
@@ -215,26 +215,26 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 		if(inoperable(MAINT)) return
 		if(screen == RCS_MESSAUTH)
 			var/obj/item/card/id/T = O
-			msgVerified = text("<font color='green'><b>Verified by [T.registered_name] ([T.assignment])</b></font>")
+			msgVerified = text(FONT_COLORED("green","<b>Verified by [T.registered_name] ([T.assignment])</b>"))
 			SSnano.update_uis(src)
 		if(screen == RCS_ANNOUNCE)
 			var/obj/item/card/id/ID = O
-			if (access_RC_announce in ID.GetAccess())
+			if (ACCESS_RC_ANNOUNCE in ID.GetAccess())
 				announceAuth = 1
 				announcement.announcer = ID.assignment ? "[ID.assignment] [ID.registered_name]" : ID.registered_name
 			else
 				reset_message()
-				to_chat(user, "<span class='warning'>You are not authorized to send announcements.</span>")
+				to_chat(user, SPAN_WARNING("You are not authorized to send announcements."))
 			SSnano.update_uis(src)
 	if (istype(O, /obj/item/stamp))
 		if(inoperable(MAINT)) return
 		if(screen == RCS_MESSAUTH)
 			var/obj/item/stamp/T = O
-			msgStamped = text("<font color='blue'><b>Stamped with the [T.name]</b></font>")
+			msgStamped = text(FONT_COLORED("blue","<b>Stamped with the [T.name]</b>"))
 			SSnano.update_uis(src)
 	return
 
-/obj/machinery/requests_console/proc/reset_message(var/mainmenu = 0)
+/obj/machinery/requests_console/proc/reset_message(mainmenu = 0)
 	message = ""
 	recipient = ""
 	priority = 0

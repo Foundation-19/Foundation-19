@@ -15,7 +15,7 @@
 {{else data.msg_title}}
 	<div class="item">
 		<div class="itemLabel">
-			Title: 
+			Title:
 		</div>
 		<div class="itemContent">
 			{{:data.msg_title}}&nbsp
@@ -49,7 +49,7 @@
 	<b>Viewing account {{:data.current_account}} in administrative mode.</b>
 	<div class="item">
 		<div class="itemLabel">
-			Account status: 
+			Account status:
 		</div>
 		<div class="itemContent">
 			{{if data.cur_suspended}}
@@ -88,9 +88,9 @@
 		</table>
 	{{else}}
 		<b>No messages found in selected account.</b>
-	{{/if}}	
+	{{/if}}
 {{else}}
-	<h2>Welcome to NTNet Email Administration System</h2>
+	<h2>Welcome to SCiPnet Email Administration System</h2>
 	<i>SECURE SYSTEM - Have your identification ready</i><br><br>
 	{{:helper.link('Create New Account', null, {'newaccount' : 1})}}<br><br>
 	<b>Select account which you wish to administrate:</b>

@@ -33,7 +33,7 @@
 		playsound(src.loc, src.use_sound, 50, 1, -5)
 	return ..()
 
-/obj/item/storage/backpack/equipped(var/mob/user, var/slot)
+/obj/item/storage/backpack/equipped(mob/user, slot)
 	if (slot == slot_back && src.use_sound)
 		playsound(src.loc, src.use_sound, 50, 1, -5)
 	..(user, slot)
@@ -56,7 +56,7 @@
 
 /obj/item/storage/backpack/holding/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/storage/backpack/holding) || istype(W, /obj/item/storage/bag/trash/bluespace))
-		to_chat(user, "<span class='warning'>The Bluespace interfaces of the two devices conflict and malfunction.</span>")
+		to_chat(user, SPAN_WARNING("The Bluespace interfaces of the two devices conflict and malfunction."))
 		qdel(W)
 		return 1
 	return ..()
@@ -203,6 +203,15 @@
 	w_class = ITEM_SIZE_HUGE
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 10
 
+/obj/item/storage/backpack/dufflebag/open(mob/user)
+	. = ..()
+	icon_state = "duffleopen"
+
+/obj/item/storage/backpack/dufflebag/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/backpack/dufflebag/Initialize()
 	. = ..()
 	slowdown_per_slot[slot_back] = 1
@@ -216,6 +225,16 @@
 /obj/item/storage/backpack/dufflebag/syndie/Initialize()
 	. = ..()
 	slowdown_per_slot[slot_back] = 0
+
+
+/obj/item/storage/backpack/dufflebag/syndie/open(mob/user)
+	. = ..()
+	icon_state = "duffle_syndieopen"
+
+/obj/item/storage/backpack/dufflebag/syndie/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/backpack/dufflebag/syndie/med
 	name = "medical dufflebag"
@@ -241,17 +260,44 @@
 	icon_state = "duffle_med"
 	item_state_slots = list(slot_l_hand_str = "duffle_med", slot_r_hand_str = "duffle_med")
 
+/obj/item/storage/backpack/dufflebag/med/open(mob/user)
+	. = ..()
+	icon_state = "duffle_medopen"
+
+/obj/item/storage/backpack/dufflebag/med/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/backpack/dufflebag/sec
 	name = "security dufflebag"
 	desc = "A large dufflebag for holding extra security supplies and ammunition."
 	icon_state = "duffle_sec"
 	item_state_slots = list(slot_l_hand_str = "duffle_sec", slot_r_hand_str = "duffle_sec")
 
+/obj/item/storage/backpack/dufflebag/sec/open(mob/user)
+	. = ..()
+	icon_state = "duffle_secopen"
+
+/obj/item/storage/backpack/dufflebag/sec/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/backpack/dufflebag/eng
 	name = "industrial dufflebag"
 	desc = "A large dufflebag for holding extra tools and supplies."
 	icon_state = "duffle_eng"
 	item_state_slots = list(slot_l_hand_str = "duffle_eng", slot_r_hand_str = "duffle_eng")
+
+/obj/item/storage/backpack/dufflebag/eng/open(mob/user)
+	. = ..()
+	icon_state = "duffle_engopen"
+
+/obj/item/storage/backpack/dufflebag/eng/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/backpack/dufflebag/firefighter
 	name = "firefighter's dufflebag"
@@ -408,13 +454,13 @@
 		/obj/item/crowbar
 		)
 
-/obj/item/storage/backpack/satchel/flat/MouseDrop(var/obj/over_object)
+/obj/item/storage/backpack/satchel/flat/MouseDrop(obj/over_object)
 	var/turf/T = get_turf(src)
 	if(hides_under_flooring() && isturf(T) && !T.is_plating())
 		return
 	..()
 
-/obj/item/storage/backpack/satchel/flat/hide(var/i)
+/obj/item/storage/backpack/satchel/flat/hide(i)
 	set_invisibility(i ? 101 : 0)
 	anchored = i ? TRUE : FALSE
 	alpha = i ? 128 : initial(alpha)
@@ -422,7 +468,7 @@
 /obj/item/storage/backpack/satchel/flat/attackby(obj/item/W, mob/user)
 	var/turf/T = get_turf(src)
 	if(hides_under_flooring() && isturf(T) && !T.is_plating())
-		to_chat(user, "<span class='warning'>You must remove the plating first.</span>")
+		to_chat(user, SPAN_WARNING("You must remove the plating first."))
 		return 1
 	return ..()
 

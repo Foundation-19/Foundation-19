@@ -6,17 +6,17 @@ the HUD updates properly! */
 /image/hud_overlay
 	appearance_flags = RESET_COLOR|RESET_TRANSFORM|KEEP_APART
 	layer = ABOVE_HUMAN_LAYER
-	plane = DEFAULT_PLANE
+	plane = MOB_PLANE
 
 //Medical HUD outputs. Called by the Life() proc of the mob using it, usually.
-/proc/process_med_hud(var/mob/M, var/local_scanner, var/mob/Alt)
+/proc/process_med_hud(mob/M, local_scanner, mob/Alt)
 	if(!can_process_hud(M))
 		return
 
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.med_hud_users)
 	for(var/mob/living/carbon/human/patient in P.Mob.in_view(P.Turf))
 
-		if(patient.is_invisible_to(P.Mob))
+		if(!P.Mob.can_see(patient))
 			continue
 
 		if(local_scanner)
@@ -28,14 +28,27 @@ the HUD updates properly! */
 			if(hassensorlevel(patient, SUIT_SENSOR_BINARY))
 				P.Client.images += patient.hud_list[LIFE_HUD]
 
+//Blink HUD for 173.
+/proc/process_blink_hud(mob/M, mob/Alt)
+	if(!can_process_hud(M))
+		return
+
+	if(isscp173(M)) //Only 173 should have a blink HUD (Also this is neccesary for maintaing the blink HUD while caged)
+		var/mob/living/scp_173/S = M
+		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scp173s)
+		for(var/mob/living/carbon/human/victim in dview(7, istype(S.loc, /obj/structure/scp173_cage) ? S.loc : S))
+			if(victim.stat) //The unconscious cant blink, and therefore do not need to be added to the blink HUD
+				continue
+			P.Client.images += victim.hud_list[BLINK_HUD]
+
 //Security HUDs. Pass a value for the second argument to enable implant viewing or other special features.
-/proc/process_sec_hud(var/mob/M, var/advanced_mode, var/mob/Alt)
+/proc/process_sec_hud(mob/M, advanced_mode, mob/Alt)
 	if(!can_process_hud(M))
 		return
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.sec_hud_users)
 	for(var/mob/living/carbon/human/perp in P.Mob.in_view(P.Turf))
 
-		if(perp.is_invisible_to(P.Mob))
+		if(!P.Mob.can_see(perp))
 			continue
 
 		P.Client.images += perp.hud_list[ID_HUD]
@@ -45,17 +58,32 @@ the HUD updates properly! */
 			P.Client.images += perp.hud_list[IMPLOYAL_HUD]
 			P.Client.images += perp.hud_list[IMPCHEM_HUD]
 
-/proc/process_jani_hud(var/mob/M, var/mob/Alt)
+/proc/process_jani_hud(mob/M, mob/Alt)
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.jani_hud_users)
 	for (var/obj/effect/decal/cleanable/dirtyfloor in view(P.Mob))
+		if(!P.Mob.can_see(dirtyfloor))
+			continue
 		P.Client.images += dirtyfloor.hud_overlay
+
+// SCRAMBLE gear.
+/proc/process_scramble_hud(mob/M,faulty_goggles = FALSE, mob/Alt)
+	if(!can_process_hud(M))
+		return
+
+	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scramble_hud_users)
+	if(!faulty_goggles)
+		GLOB.scramble_hud_protected |= M
+	// The only things that will have scramble hud, or so we assume
+	// is SCP-096 (or, if admin shenanigans were happening, SCP-096s)
+	for(var/mob/living/simple_animal/hostile/scp096/shylad in P.Mob.in_view(P.Turf))
+		P.Client.images += shylad.hud_scramble
 
 /datum/arranged_hud_process
 	var/client/Client
 	var/mob/Mob
 	var/turf/Turf
 
-/proc/arrange_hud_process(var/mob/M, var/mob/Alt, var/list/hud_list)
+/proc/arrange_hud_process(mob/M, mob/Alt, list/hud_list)
 	hud_list |= M
 	var/datum/arranged_hud_process/P = new
 	P.Client = M.client
@@ -63,7 +91,7 @@ the HUD updates properly! */
 	P.Turf = get_turf(P.Mob)
 	return P
 
-/proc/can_process_hud(var/mob/M)
+/proc/can_process_hud(mob/M)
 	if(!M)
 		return 0
 	if(!M.client)
@@ -80,11 +108,13 @@ the HUD updates properly! */
 	GLOB.med_hud_users -= src
 	GLOB.sec_hud_users -= src
 	GLOB.jani_hud_users -= src
+	GLOB.scramble_hud_users -= src
+	GLOB.scramble_hud_protected -= src
 
-/mob/proc/in_view(var/turf/T)
+/mob/proc/in_view(turf/T) //this is kind of stupid - dark
 	return view(T)
 
-/mob/observer/eye/in_view(var/turf/T)
+/mob/observer/eye/in_view(turf/T)
 	var/list/viewed = new
 	for(var/mob/living/carbon/human/H in SSmobs.mob_list)
 		if(get_dist(H, T) <= 7)

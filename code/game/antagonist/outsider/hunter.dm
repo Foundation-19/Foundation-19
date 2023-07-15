@@ -18,7 +18,7 @@ GLOBAL_DATUM_INIT(hunters, /datum/antagonist/hunter, new)
 	initial_spawn_req = 4
 	initial_spawn_target = 6
 
-/datum/antagonist/hunter/update_antag_mob(var/datum/mind/player, var/preserve_appearance)
+/datum/antagonist/hunter/update_antag_mob(datum/mind/player, preserve_appearance)
 	. = ..()
 	if(ishuman(player.current))
 		var/mob/living/carbon/human/H = player.current
@@ -35,7 +35,7 @@ GLOBAL_DATUM_INIT(hunters, /datum/antagonist/hunter, new)
 		H.real_name = ascent_culture.get_random_name(H.gender)
 		H.name = H.real_name
 
-/datum/antagonist/hunter/equip(var/mob/living/carbon/human/player)
+/datum/antagonist/hunter/equip(mob/living/carbon/human/player)
 	. = ..()
 	if(.)
 		if(player.species.get_bodytype(player) == SPECIES_MANTID_GYNE)

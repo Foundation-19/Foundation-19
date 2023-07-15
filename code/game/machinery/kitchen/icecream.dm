@@ -22,7 +22,7 @@
 	var/dispense_flavour = ICECREAM_VANILLA
 	var/flavour_name = "vanilla"
 
-/obj/machinery/icecream_vat/proc/get_ingredient_list(var/type)
+/obj/machinery/icecream_vat/proc/get_ingredient_list(type)
 	switch(type)
 		if(ICECREAM_CHOCOLATE)
 			return list(/datum/reagent/drink/milk, /datum/reagent/drink/ice, /datum/reagent/nutriment/coco)
@@ -41,7 +41,7 @@
 		else
 			return list(/datum/reagent/drink/milk, /datum/reagent/drink/ice)
 
-/obj/machinery/icecream_vat/proc/get_flavour_name(var/flavour_type)
+/obj/machinery/icecream_vat/proc/get_flavour_name(flavour_type)
 	switch(flavour_type)
 		if(ICECREAM_CHOCOLATE)
 			return "chocolate"
@@ -99,7 +99,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/obj/machinery/icecream_vat/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/icecream_vat/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/icecream))
 		var/obj/item/reagent_containers/food/snacks/icecream/I = O
 		if(!I.ice_creamed)
@@ -112,16 +112,16 @@
 				if(I.reagents.total_volume < 10)
 					I.reagents.add_reagent(/datum/reagent/sugar, 10 - I.reagents.total_volume)
 			else
-				to_chat(user, "<span class='warning'>There is not enough icecream left!</span>")
+				to_chat(user, SPAN_WARNING("There is not enough icecream left!"))
 		else
-			to_chat(user, "<span class='notice'>[O] already has icecream in it.</span>")
+			to_chat(user, SPAN_NOTICE("[O] already has icecream in it."))
 		return 1
 	else if(O.is_open_container())
 		return
 	else
 		..()
 
-/obj/machinery/icecream_vat/proc/make(var/mob/user, var/make_type, var/amount)
+/obj/machinery/icecream_vat/proc/make(mob/user, make_type, amount)
 	for(var/R in get_ingredient_list(make_type))
 		if(reagents.has_reagent(R, amount))
 			continue
@@ -133,11 +133,11 @@
 		product_types[make_type] += amount
 		var/flavour = get_flavour_name(make_type)
 		if(make_type > 6)
-			src.visible_message("<span class='info'>[user] cooks up some [flavour] cones.</span>")
+			src.visible_message(SPAN_INFO("[user] cooks up some [flavour] cones."))
 		else
-			src.visible_message("<span class='info'>[user] whips up some [flavour] icecream.</span>")
+			src.visible_message(SPAN_INFO("[user] whips up some [flavour] icecream."))
 	else
-		to_chat(user, "<span class='warning'>You don't have the ingredients to make this.</span>")
+		to_chat(user, SPAN_WARNING("You don't have the ingredients to make this."))
 
 /obj/machinery/icecream_vat/OnTopic(user, href_list)
 	if(href_list["close"])
@@ -147,7 +147,7 @@
 	if(href_list["select"])
 		dispense_flavour = text2num(href_list["select"])
 		flavour_name = get_flavour_name(dispense_flavour)
-		src.visible_message("<span class='notice'>[user] sets [src] to dispense [flavour_name] flavoured icecream.</span>")
+		src.visible_message(SPAN_NOTICE("[user] sets [src] to dispense [flavour_name] flavoured icecream."))
 		. = TOPIC_HANDLED
 
 	else if(href_list["cone"])
@@ -159,9 +159,9 @@
 			I.cone_type = cone_name
 			I.icon_state = "icecream_cone_[cone_name]"
 			I.desc = "Delicious [cone_name] cone, but no ice cream."
-			src.visible_message("<span class='info'>[user] dispenses a crunchy [cone_name] cone from [src].</span>")
+			src.visible_message(SPAN_INFO("[user] dispenses a crunchy [cone_name] cone from [src]."))
 		else
-			to_chat(user, "<span class='warning'>There are no [cone_name] cones left!</span>")
+			to_chat(user, SPAN_WARNING("There are no [cone_name] cones left!"))
 		. = TOPIC_REFRESH
 
 	else if(href_list["make"])
@@ -193,7 +193,7 @@
 	create_reagents(20)
 	reagents.add_reagent(/datum/reagent/nutriment, 5)
 
-/obj/item/reagent_containers/food/snacks/icecream/proc/add_ice_cream(var/flavour_name)
+/obj/item/reagent_containers/food/snacks/icecream/proc/add_ice_cream(flavour_name)
 	name = "[flavour_name] icecream"
 	src.add_overlay("icecream_[flavour_name]")
 	desc = "Delicious [cone_type] cone with a dollop of [flavour_name] ice cream."

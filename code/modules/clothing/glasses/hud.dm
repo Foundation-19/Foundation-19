@@ -17,11 +17,11 @@
 	toggle_on_message = "\The [src] boots up to life, flashing with information."
 	toggle_off_message = "\The [src] powers down with a beep."
 
-/obj/item/clothing/glasses/proc/process_hud(var/mob/M)
+/obj/item/clothing/glasses/proc/process_hud(mob/M)
 	if(hud)
 		hud.process_hud(M)
 
-/obj/item/clothing/glasses/hud/process_hud(var/mob/M)
+/obj/item/clothing/glasses/hud/process_hud(mob/M)
 	return
 
 /obj/item/clothing/glasses/hud/health
@@ -31,9 +31,9 @@
 	off_state = "healthhud_off"
 	hud_type = HUD_MEDICAL
 	body_parts_covered = 0
-	req_access = list(access_medicallvl1)
+	req_access = list(ACCESS_MEDICAL_LVL1)
 
-/obj/item/clothing/glasses/hud/health/process_hud(var/mob/M)
+/obj/item/clothing/glasses/hud/health/process_hud(mob/M)
 	process_med_hud(M, 1)
 
 /obj/item/clothing/glasses/hud/health/prescription
@@ -60,7 +60,7 @@
 	hud_type = HUD_SECURITY
 	body_parts_covered = 0
 	var/global/list/jobs[0]
-	req_access = list(access_securitylvl1)
+	req_access = list(ACCESS_SECURITY_LVL1)
 
 /obj/item/clothing/glasses/hud/security/prescription
 	name = "prescription security HUD"
@@ -81,7 +81,7 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 
 
-/obj/item/clothing/glasses/hud/security/process_hud(var/mob/M)
+/obj/item/clothing/glasses/hud/security/process_hud(mob/M)
 	process_sec_hud(M, 1)
 
 /obj/item/clothing/glasses/hud/janitor
@@ -100,7 +100,7 @@
 	desc = "A janitor HUD integrated with a set of prescription glasses."
 	prescription = 7
 
-/obj/item/clothing/glasses/hud/janitor/process_hud(var/mob/M)
+/obj/item/clothing/glasses/hud/janitor/process_hud(mob/M)
 	process_jani_hud(M)
 
 /obj/item/clothing/glasses/hud/science
@@ -118,3 +118,36 @@
 	item_state = "scihudpresc"
 	desc = "A science HUD integrated with a set of prescription glasses."
 	prescription = 7
+
+/obj/item/clothing/glasses/hud/scramble
+	name = "SCRAMBLE goggles"
+	desc = "State-of-the-art SCRAMBLE goggles. They work by obscuring the face of SCP-096 in software before the brain can register the image."
+	icon_state = "scramble"
+	item_state = "glasses"
+	origin_tech = null
+	action_button_name = "Toggle Goggles"
+	toggleable = TRUE
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	off_state = "denight"
+	electric = TRUE
+	var/faulty = FALSE
+
+/obj/item/clothing/glasses/hud/scramble/Initialize()
+	. = ..()
+	overlay = GLOB.global_hud.scramble
+
+/obj/item/clothing/glasses/hud/scramble/process_hud(mob/M)
+	process_scramble_hud(M, faulty)
+
+
+/obj/item/clothing/glasses/hud/scramble/faulty // for admin shenanigans
+	faulty = TRUE
+
+/obj/item/clothing/glasses/hud/scramble/experimental
+	name = "experimental SCRAMBLE goggles"
+	desc = "Experimental SCRAMBLE goggles. Designed to prevent the user from viewing the face of SCP-096 by obscuring it before the brain can register the image."
+
+/obj/item/clothing/glasses/hud/scramble/experimental/Initialize()
+	. = ..()
+	// 30% chance of being faulty
+	faulty = prob(30)

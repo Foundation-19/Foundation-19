@@ -18,6 +18,7 @@
 	display_name = "non-prescription glasses"
 	path = /obj/item/clothing/glasses
 	denied_roles = null
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/fashionglasses/New()
 	..()
@@ -31,6 +32,7 @@
 /datum/gear/eyes/sciencegoggles
 	display_name = "Science Goggles"
 	path = /obj/item/clothing/glasses/science
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/sciencegoggles/prescription
 	display_name = "Science Goggles, prescription"
@@ -39,31 +41,38 @@
 /datum/gear/eyes/sciencehud
 	display_name = "Science HUD"
 	path = /obj/item/clothing/glasses/hud/science
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/sciencehud/prescription
 	display_name = "Science HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/science/prescription
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/security
 	display_name = "Security HUD"
 	path = /obj/item/clothing/glasses/hud/security
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/prescription
 	display_name = "Security HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/security/prescription
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/sunglasses
 	display_name = "Security HUD Sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/sechud
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/aviators
 	display_name = "Security HUD Aviators"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/toggle
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/ipatch
 	display_name = "HUDpatch, Security"
 	path = /obj/item/clothing/glasses/eyepatch/hud/security
 	cost = 2
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/medical
 	display_name = "Medical HUD"
@@ -140,3 +149,4 @@
 /datum/gear/eyes/janitor/prescription
 	display_name = "JaniHUD, prescription"
 	path = /obj/item/clothing/glasses/hud/janitor/prescription
+	allowed_roles = list(/datum/job/janitor)

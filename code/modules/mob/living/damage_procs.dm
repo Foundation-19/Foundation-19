@@ -7,7 +7,7 @@
 	Returns
 	standard 0 if fail
 */
-/mob/living/proc/apply_damage(var/damage = 0,var/damagetype = BRUTE, var/def_zone = null, var/damage_flags = 0, var/used_weapon = null, var/armor_pen, var/silent = FALSE)
+/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, damage_flags = 0, used_weapon = null, armor_pen, silent = FALSE)
 	if(!damage)
 		return FALSE
 
@@ -42,7 +42,7 @@
 	return TRUE
 
 
-/mob/living/proc/apply_radiation(var/damage = 0)
+/mob/living/proc/apply_radiation(damage = 0)
 	if(!damage)
 		return FALSE
 
@@ -50,7 +50,7 @@
 	return TRUE
 
 
-/mob/living/proc/apply_damages(var/brute = 0, var/burn = 0, var/tox = 0, var/oxy = 0, var/clone = 0, var/halloss = 0, var/def_zone = null, var/damage_flags = 0)
+/mob/living/proc/apply_damages(brute = 0, burn = 0, tox = 0, oxy = 0, clone = 0, halloss = 0, def_zone = null, damage_flags = 0)
 	if(brute)	apply_damage(brute, BRUTE, def_zone)
 	if(burn)	apply_damage(burn, BURN, def_zone)
 	if(tox)		apply_damage(tox, TOX, def_zone)
@@ -60,7 +60,7 @@
 	return TRUE
 
 
-/mob/living/proc/apply_effect(var/effect = 0,var/effecttype = STUN, var/blocked = 0)
+/mob/living/proc/apply_effect(effect = 0,effecttype = STUN, blocked = 0)
 	if(!effect || (blocked >= 100))	return FALSE
 
 	switch(effecttype)
@@ -82,7 +82,7 @@
 	updatehealth()
 	return TRUE
 
-/mob/living/proc/apply_effects(var/stun = 0, var/weaken = 0, var/paralyze = 0, var/stutter = 0, var/eyeblur = 0, var/drowsy = 0, var/agony = 0, var/blocked = 0)
+/mob/living/proc/apply_effects(stun = 0, weaken = 0, paralyze = 0, stutter = 0, eyeblur = 0, drowsy = 0, agony = 0, blocked = 0)
 	if(stun)		apply_effect(stun,      STUN, blocked)
 	if(weaken)		apply_effect(weaken,    WEAKEN, blocked)
 	if(paralyze)	apply_effect(paralyze,  PARALYZE, blocked)

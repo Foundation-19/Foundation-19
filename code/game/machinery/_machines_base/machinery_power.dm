@@ -10,7 +10,7 @@ This is /obj/machinery level code to properly manage power usage from the area.
 
 // returns true if the area has power on given channel (or doesn't require power), defaults to power_channel.
 // May also optionally specify an area, otherwise defaults to src.loc.loc
-/obj/machinery/proc/powered(var/chan = -1, var/area/check_area = null)
+/obj/machinery/proc/powered(chan = -1, area/check_area = null)
 
 	if(!src.loc)
 		return 0
@@ -57,7 +57,7 @@ This is /obj/machinery level code to properly manage power usage from the area.
 			return 0
 
 // This will have this machine have its area eat this much power next tick, and not afterwards. Do not use for continued power draw.
-/obj/machinery/proc/use_power_oneoff(var/amount, var/chan = POWER_CHAN)
+/obj/machinery/proc/use_power_oneoff(amount, chan = POWER_CHAN)
 	if(chan == POWER_CHAN)
 		chan = power_channel
 	. = amount
@@ -69,7 +69,7 @@ This is /obj/machinery level code to properly manage power usage from the area.
 			return
 
 // Same thing, but dry run; doesn't actually do it.
-/obj/machinery/proc/can_use_power_oneoff(var/amount, var/chan = POWER_CHAN)
+/obj/machinery/proc/can_use_power_oneoff(amount, chan = POWER_CHAN)
 	if(chan == POWER_CHAN)
 		chan = power_channel
 	. = amount

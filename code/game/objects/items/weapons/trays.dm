@@ -13,7 +13,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	matter = list(MATERIAL_ALUMINIUM = 3000)
-	hitsound = "tray_hit"
+	hitsound = SFX_TRAY_HIT
 	var/bash_cooldown = 0 // You can bash a rolling pin against a tray to make a shield bash sound! Based on world.time
 	var/list/carrying = list() // List of things on the tray. - Doohl
 	var/max_carry = 2 * BASE_STORAGE_COST(ITEM_SIZE_NORMAL)
@@ -55,7 +55,7 @@
 /obj/item/tray/attackby(obj/item/W, mob/living/user)
 	if(istype(W, /obj/item/material/kitchen/rollingpin) && user.a_intent == I_HURT)
 		if(bash_cooldown < world.time)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
+			user.visible_message(SPAN_WARNING("[user] bashes [src] with [W]!"))
 			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
 			bash_cooldown = world.time + 25
 		return TRUE

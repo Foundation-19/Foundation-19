@@ -12,7 +12,7 @@
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 6)
 	name = "[fish_type] fillet"
 // This will remove carp poison etc. Deliberate, meant to be similar to preparing pufferfish.
-/obj/item/reagent_containers/food/snacks/fish/attackby(var/obj/item/W, var/mob/user)
+/obj/item/reagent_containers/food/snacks/fish/attackby(obj/item/W, mob/user)
 	if(is_sharp(W) && (locate(/obj/structure/table) in loc))
 		var/mob/M = loc
 		if(istype(M) && !M.unEquip(src))
@@ -21,7 +21,7 @@
 		var/toxin_amt = reagents.get_reagent_amount(/datum/reagent/toxin/carpotoxin)
 		if(toxin_amt && !prob(user.skill_fail_chance(SKILL_COOKING, 100, SKILL_MASTER)))
 			reagents.remove_reagent(/datum/reagent/toxin/carpotoxin, toxin_amt)
-		user.visible_message("<span class='notice'>\The [user] slices \the [src] into thin strips.</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] slices \the [src] into thin strips."))
 
 		var/transfer_amt = Floor(reagents.total_volume * 0.3)
 		for(var/i = 1 to 3)

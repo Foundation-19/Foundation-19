@@ -1,4 +1,4 @@
-/mob/living/deity/proc/set_boon(var/datum/boon)
+/mob/living/deity/proc/set_boon(datum/boon)
 	if(current_boon)
 		qdel(current_boon)
 	current_boon = boon
@@ -6,7 +6,7 @@
 		var/atom/movable/A = boon
 		A.forceMove(src)
 
-/mob/living/deity/proc/grant_boon(var/mob/living/L)
+/mob/living/deity/proc/grant_boon(mob/living/L)
 	if(istype(current_boon, /spell) && !grant_spell(L, current_boon))
 		return
 	else if(istype(current_boon, /obj/item))
@@ -21,29 +21,29 @@
 			var/obj/O =  L.equip_to_storage(I)
 			if(O)
 				origin_text = "in \the [O]"
-		to_chat(L,"<span class='notice'>It appears [origin_text].</span>")
+		to_chat(L,SPAN_NOTICE("It appears [origin_text]."))
 
-	to_chat(L, "<span class='cult'>\The [src] grants you a boon of [current_boon]!</span>")
-	to_chat(src, "<span class='notice'>You give \the [L] a boon of [current_boon].</span>")
-	log_and_message_admins("gave [key_name(L)] the boon [current_boon]")
+	to_chat(L, SPAN_OCCULT("\The [src] grants you a boon of [current_boon]!"))
+	to_chat(src, SPAN_NOTICE("You give \the [L] a boon of [current_boon]."))
+	log_and_message_staff("gave [key_name(L)] the boon [current_boon]")
 	current_boon = null
 	return
 
-/mob/living/deity/proc/grant_spell(var/mob/living/target, var/spell/spell)
+/mob/living/deity/proc/grant_spell(mob/living/target, spell/spell)
 	var/datum/mind/M = target.mind
 	for(var/s in M.learned_spells)
 		var/spell/S = s
 		if(istype(S, spell.type))
-			to_chat(src, "<span class='warning'>They already know that spell!</span>")
+			to_chat(src, SPAN_WARNING("They already know that spell!"))
 			return 0
 	target.add_spell(spell)
 	spell.set_connected_god(src)
-	to_chat(target, "<span class='notice'>You feel a surge of power as you learn the art of [current_boon].</span>")
+	to_chat(target, SPAN_NOTICE("You feel a surge of power as you learn the art of [current_boon]."))
 	return 1
 
 /* This is a generic proc used by the God to inact a sacrifice from somebody. Power is a value of magnitude.
 */
-/mob/living/deity/proc/take_charge(var/mob/living/L, var/power)
+/mob/living/deity/proc/take_charge(mob/living/L, power)
 	if(form)
 		return form.take_charge(L, power)
 	return 1

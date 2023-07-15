@@ -19,7 +19,7 @@
 	usr.show_message(t, 1)
 	SSstatistics.add_field_details("admin_verb","ASL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_robotize(var/mob/M in SSmobs.mob_list)
+/client/proc/cmd_admin_robotize(mob/M in SSmobs.mob_list)
 	set category = "Fun"
 	set name = "Make Robot"
 
@@ -34,7 +34,7 @@
 	else
 		alert("Invalid mob")
 
-/client/proc/cmd_admin_animalize(var/mob/M in SSmobs.mob_list)
+/client/proc/cmd_admin_animalize(mob/M in SSmobs.mob_list)
 	set category = "Fun"
 	set name = "Make Simple Animal"
 
@@ -55,7 +55,7 @@
 		M.Animalize()
 
 
-/client/proc/makepAI(var/turf/T in SSmobs.mob_list)
+/client/proc/makepAI(turf/T in SSmobs.mob_list)
 	set category = "Fun"
 	set name = "Make pAI"
 	set desc = "Specify a location to spawn a pAI device, then specify a key to play that pAI"
@@ -82,7 +82,7 @@
 			paiController.pai_candidates.Remove(candidate)
 	SSstatistics.add_field_details("admin_verb","MPAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_slimeize(var/mob/M in SSmobs.mob_list)
+/client/proc/cmd_admin_slimeize(mob/M in SSmobs.mob_list)
 	set category = "Fun"
 	set name = "Make slime"
 
@@ -94,7 +94,7 @@
 		spawn(10)
 			M:slimeize()
 			SSstatistics.add_field_details("admin_verb","MKMET") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-		log_and_message_admins("made [key_name(M)] into a slime.")
+		log_and_message_staff("made [key_name(M)] into a slime.")
 	else
 		alert("Invalid mob")
 
@@ -111,7 +111,7 @@
 			if(istype(O, hsbitem))
 				qdel(O)
 		log_admin("[key_name(src)] has deleted all instances of [hsbitem].")
-		message_admins("[key_name_admin(src)] has deleted all instances of [hsbitem].", 0)
+		message_staff("[key_name_admin(src)] has deleted all instances of [hsbitem].", 0)
 	SSstatistics.add_field_details("admin_verb","DELA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_debug_make_powernets()
@@ -119,10 +119,10 @@
 	set name = "Make Powernets"
 	SSmachines.makepowernets()
 	log_admin("[key_name(src)] has remade the powernet. makepowernets() called.")
-	message_admins("[key_name_admin(src)] has remade the powernets. makepowernets() called.", 0)
+	message_staff("[key_name_admin(src)] has remade the powernets. makepowernets() called.", 0)
 	SSstatistics.add_field_details("admin_verb","MPWN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_grantfullaccess(var/mob/M in SSmobs.mob_list)
+/client/proc/cmd_admin_grantfullaccess(mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Grant Full Access"
 
@@ -147,9 +147,9 @@
 	else
 		alert("Invalid mob")
 	SSstatistics.add_field_details("admin_verb","GFA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	log_and_message_admins("has granted [M.key] full access.")
+	log_and_message_staff("has granted [M.key] full access.")
 
-/client/proc/cmd_assume_direct_control(var/mob/M in SSmobs.mob_list)
+/client/proc/cmd_assume_direct_control(mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Assume direct control"
 	set desc = "Direct intervention"
@@ -161,9 +161,10 @@
 		else
 			var/mob/observer/ghost/ghost = new/mob/observer/ghost(M,1)
 			ghost.ckey = M.ckey
-	log_and_message_admins("assumed direct control of [M].")
+	log_and_message_staff("assumed direct control of [M].")
 	var/mob/adminmob = src.mob
 	M.ckey = src.ckey
+	M.client?.init_verbs()
 	if(isghost(adminmob))
 		qdel(adminmob)
 	SSstatistics.add_field_details("admin_verb","ADC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -283,13 +284,13 @@
 	SSstatistics.add_field_details("admin_verb","SEQ")
 	dressup_human(H, outfit, reset_equipment)
 
-/proc/dressup_human(var/mob/living/carbon/human/H, var/decl/hierarchy/outfit/outfit, var/undress = TRUE)
+/proc/dressup_human(mob/living/carbon/human/H, decl/hierarchy/outfit/outfit, undress = TRUE)
 	if(!H || !outfit)
 		return
 	if(undress)
 		H.delete_inventory(TRUE)
 	outfit.equip(H)
-	log_and_message_admins("changed the equipment of [key_name(H)] to [outfit.name].")
+	log_and_message_staff("changed the equipment of [key_name(H)] to [outfit.name].")
 
 /client/proc/startSinglo()
 	set category = "Debug"
@@ -363,7 +364,7 @@
 			to_chat(usr, jointext(GLOB.clients,","))
 
 // DNA2 - Admin Hax
-/client/proc/cmd_admin_toggle_block(var/mob/M,var/block)
+/client/proc/cmd_admin_toggle_block(mob/M,block)
 	if(GAME_STATE < RUNLEVEL_GAME)
 		alert("Wait until the game starts")
 		return
@@ -373,7 +374,7 @@
 		M.update_mutations()
 		var/state="[M.dna.GetSEState(block)?"on":"off"]"
 		var/blockname=assigned_blocks[block]
-		message_admins("[key_name_admin(src)] has toggled [M.key]'s [blockname] block [state]!")
+		message_staff("[key_name_admin(src)] has toggled [M.key]'s [blockname] block [state]!")
 		log_admin("[key_name(src)] has toggled [M.key]'s [blockname] block [state]!")
 	else
 		alert("Invalid mob")
@@ -398,7 +399,7 @@
 
 	cmd_analyse_health(H)
 
-/client/proc/cmd_analyse_health(var/mob/living/carbon/human/H)
+/client/proc/cmd_analyse_health(mob/living/carbon/human/H)
 
 	if(!check_rights(R_DEBUG))
 		return
@@ -459,7 +460,7 @@
 	set name = "Toggle Planet Mob Repopulating"
 
 	GLOB.planet_repopulation_disabled = !GLOB.planet_repopulation_disabled
-	log_and_message_admins("toggled planet mob repopulating [GLOB.planet_repopulation_disabled ? "OFF" : "ON"].")
+	log_and_message_staff("toggled planet mob repopulating [GLOB.planet_repopulation_disabled ? "OFF" : "ON"].")
 
 /client/proc/spawn_exoplanet(exoplanet_type as anything in subtypesof(/obj/effect/overmap/visitable/sector/exoplanet))
 	set category = "Debug"
@@ -492,6 +493,6 @@
 	new_planet.themes = list(new theme)
 	new_planet.lightlevel = rand(5, 10)/10
 
-	log_and_message_admins("is spawning [new_planet] at [new_planet.start_x],[new_planet.start_y], containing Z [english_list(new_planet.map_z)]")
+	log_and_message_staff("is spawning [new_planet] at [new_planet.start_x],[new_planet.start_y], containing Z [english_list(new_planet.map_z)]")
 	new_planet.build_level()
-	message_admins("[new_planet] has completed generation.")
+	message_staff("[new_planet] has completed generation.")

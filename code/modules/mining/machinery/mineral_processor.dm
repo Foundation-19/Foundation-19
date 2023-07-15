@@ -103,7 +103,7 @@
 					M.place_sheet(output_turf, making)
 					break
 
-/obj/machinery/mineral/processing_unit/proc/attempt_smelt(var/material/metal, var/max_result)
+/obj/machinery/mineral/processing_unit/proc/attempt_smelt(material/metal, max_result)
 	. = Clamp(Floor(ores_stored[metal.name]/metal.units_per_sheet),1,max_result)
 	ores_stored[metal.name] -= . * metal.units_per_sheet
 	var/material/M = SSmaterials.get_material_by_name(metal.ore_smelts_to)
@@ -112,7 +112,7 @@
 	else
 		. = -(.)
 
-/obj/machinery/mineral/processing_unit/proc/attempt_compression(var/material/metal, var/max_result)
+/obj/machinery/mineral/processing_unit/proc/attempt_compression(material/metal, max_result)
 	var/making = Clamp(Floor(ores_stored[metal.name]/metal.units_per_sheet),1,max_result)
 	if(making >= 2)
 		ores_stored[metal.name] -= making * metal.units_per_sheet
@@ -136,15 +136,15 @@
 		if(ores_processing[ore])
 			switch(ores_processing[ore])
 				if(ORE_DISABLED)
-					status_string = "<font color='red'>not processing</font>"
+					status_string = FONT_COLORED("red","not processing")
 				if(ORE_SMELT)
-					status_string = "<font color='orange'>smelting</font>"
+					status_string = FONT_COLORED("orange","smelting")
 				if(ORE_COMPRESS)
-					status_string = "<font color='blue'>compressing</font>"
+					status_string = FONT_COLORED("blue","compressing")
 				if(ORE_ALLOY)
-					status_string = "<font color='gray'>alloying</font>"
+					status_string = FONT_COLORED("gray","alloying")
 		else
-			status_string = "<font color='red'>not processing</font>"
+			status_string = FONT_COLORED("red","not processing")
 		result += "<tr><td>[line]</td><td><a href='?src=\ref[src];toggle_smelting=[ore]'>[status_string]</a></td></tr>"
 	. += "<table>[result]</table>"
 	. += "Currently displaying [report_all_ores ? "all ore types" : "only available ore types"]. <A href='?src=\ref[src];toggle_ores=1'>[report_all_ores ? "Show less" : "Show more"]</a>"

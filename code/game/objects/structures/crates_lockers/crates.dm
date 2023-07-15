@@ -18,7 +18,7 @@
 	. = ..()
 	if(.)
 		if(rigged)
-			visible_message("<span class='danger'>There are wires attached to the lid of [src]...</span>")
+			visible_message(SPAN_DANGER("There are wires attached to the lid of [src]..."))
 			for(var/obj/item/device/assembly_holder/H in src)
 				H.process_activation(usr)
 			for(var/obj/item/device/assembly/A in src)
@@ -42,21 +42,21 @@
 	else if(istype(W, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/C = W
 		if(rigged)
-			to_chat(user, "<span class='notice'>[src] is already rigged!</span>")
+			to_chat(user, SPAN_NOTICE("[src] is already rigged!"))
 			return
 		if (C.use(1))
-			to_chat(user, "<span class='notice'>You rig [src].</span>")
+			to_chat(user, SPAN_NOTICE("You rig [src]."))
 			rigged = 1
 			return
 	else if(istype(W, /obj/item/device/assembly_holder) || istype(W, /obj/item/device/assembly))
 		if(rigged)
 			if(!user.unEquip(W, src))
 				return
-			to_chat(user, "<span class='notice'>You attach [W] to [src].</span>")
+			to_chat(user, SPAN_NOTICE("You attach [W] to [src]."))
 			return
 	else if(isWirecutter(W))
 		if(rigged)
-			to_chat(user, "<span class='notice'>You cut away the wiring.</span>")
+			to_chat(user, SPAN_NOTICE("You cut away the wiring."))
 			playsound(loc, 'sound/items/Wirecutter.ogg', 100, 1)
 			rigged = 0
 			return
@@ -315,7 +315,7 @@
 	icon_closed = "biohazard"
 	open_sound = 'sound/items/Deconstruct.ogg'
 	close_sound = 'sound/items/Deconstruct.ogg'
-	req_access = list(access_xenobiology)
+	req_access = list(ACCESS_XENOBIOLOGY)
 	storage_capacity = 2 * MOB_LARGE
 	storage_types = CLOSET_STORAGE_ITEMS|CLOSET_STORAGE_MOBS|CLOSET_STORAGE_STRUCTURES
 
@@ -331,7 +331,7 @@
 /obj/structure/closet/crate/secure/biohazard/alt
 	name = "biowaste disposal cart"
 	desc = "A heavy cart used for organ disposal with markings indicating the things inside are probably gross."
-	req_access = list(access_surgery)
+	req_access = list(ACCESS_SURGERY)
 	closet_appearance = /decl/closet_appearance/cart/biohazard/alt
 
 /obj/structure/closet/crate/paper_refill

@@ -24,7 +24,7 @@
 
 		if(sub_area_turfs.len != expected_number_of_sub_areas)
 			incoherent_areas++
-			log_bad("[log_info_line(A)] is incoherent. Expected [expected_number_of_sub_areas] subarea\s, fill gave [sub_area_turfs.len]. Origin turfs:")
+			log_bad("INCOHERENT AREA: [log_info_line(A)] is incoherent. Expected [expected_number_of_sub_areas] subarea\s, fill gave [sub_area_turfs.len]. Origin turfs:")
 			for(var/T in sub_area_turfs)
 				log_bad(log_info_line(T))
 
@@ -36,7 +36,7 @@
 	return 1
 
 #define SHOULD_CHECK_TURF(turf_to_check) if(turf_to_check && turf_to_check.loc == T.loc && !(turf_to_check in .)) { turfs_to_check.Push(turf_to_check) }
-/datum/unit_test/areas_shall_be_coherent/proc/get_turfs_fill(var/turf/origin)
+/datum/unit_test/areas_shall_be_coherent/proc/get_turfs_fill(turf/origin)
 	. = list()
 	var/datum/stack/turfs_to_check = new()
 	turfs_to_check.Push(origin)

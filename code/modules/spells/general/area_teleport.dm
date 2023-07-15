@@ -33,7 +33,8 @@
 	perform(user, list(wizteleportlocs[thearea]))
 
 /datum/spell/area_teleport/cast(area/thearea, mob/user)
-	playsound(get_turf(user),cast_sound,50,1)
+	playsound(get_turf(user), cast_sound, 50, 1)
+	show_sound_effect(get_turf(user), user)
 	var/turf/end = user.try_teleport(thearea)
 
 	if(!end)

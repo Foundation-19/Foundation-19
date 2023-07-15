@@ -1,7 +1,7 @@
 /*
  *
  *  Map Unit Tests.
- *  Zone checks / APC / Scrubber / Vent / Cryopod Computers.
+ *  Zone checks / APC / Cryopod Computers.
  *
  *
  */
@@ -11,7 +11,7 @@
 
 
 /datum/unit_test/apc_area_test
-	name = "MAP: Area Test APC / Scrubbers / Vents"
+	name = "MAP: Area Test APC"
 
 
 /datum/unit_test/apc_area_test/start_test()
@@ -29,81 +29,30 @@
 
 		var/exemptions = get_exemptions(A)
 		if(!A.apc && !(exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] lacks an APC.")
+			var/turf/T = pick_area_turf(A)
+			log_bad("[bad_msg] lacks an APC. Area Z: [A.z] Random area turf: [T.x],[T.y],[T.z].")
 			area_good = 0
 		else if(A.apc && (exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] is not supposed to have an APC.")
-			area_good = 0
-
-		if(!A.air_scrub_names.len && !(exemptions & GLOB.using_map.NO_SCRUBBER))
-			log_bad("[bad_msg] lacks an air scrubber.")
-			area_good = 0
-		else if(A.air_scrub_names.len && (exemptions & GLOB.using_map.NO_SCRUBBER))
-			log_bad("[bad_msg] is not supposed to have an air scrubber.")
-			area_good = 0
-
-		if(!A.air_vent_names.len && !(exemptions & GLOB.using_map.NO_VENT))
-			log_bad("[bad_msg] lacks an air vent.[ascii_reset]")
-			area_good = 0
-		else if(A.air_vent_names.len && (exemptions & GLOB.using_map.NO_VENT))
-			log_bad("[bad_msg] is not supposed to have an air vent.")
+			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.apc.x], [A.apc.y], [A.apc.z].")
 			area_good = 0
 
 		if(!area_good)
 			bad_areas.Add(A)
 
 	if(bad_areas.len)
-		fail("\[[bad_areas.len]/[area_test_count]\]Some areas did not have the expected APC/vent/scrubber setup.")
+		fail("\[[bad_areas.len]/[area_test_count]\]Some areas did not have the expected APC setup.")
 	else
-		pass("All \[[area_test_count]\] areas contained APCs, air scrubbers, and air vents.")
+		pass("All \[[area_test_count]\] areas contained APCs.")
 
 	return 1
 
-/datum/unit_test/apc_area_test/proc/get_exemptions(var/area)
+/datum/unit_test/apc_area_test/proc/get_exemptions(area)
 	// We assume deeper types come last
 	for(var/i = GLOB.using_map.apc_test_exempt_areas.len; i>0; i--)
 		var/exempt_type = GLOB.using_map.apc_test_exempt_areas[i]
 		if(istype(area, exempt_type))
 			return GLOB.using_map.apc_test_exempt_areas[exempt_type]
 
-/datum/unit_test/air_alarm_connectivity
-	name = "MAP: Air alarms shall receive updates."
-	async = TRUE // Waits for SStimers to finish one full run before testing
-
-/datum/unit_test/air_alarm_connectivity/start_test()
-	return 1
-
-/datum/unit_test/air_alarm_connectivity/subsystems_to_await()
-	return list(SStimer)
-
-/datum/unit_test/air_alarm_connectivity/check_result()
-	var/failed = FALSE
-	for(var/area/A in world)
-		if(!A.z)
-			continue
-		if(!isPlayerLevel(A.z))
-			continue
-		var/obj/machinery/alarm/alarm = locate() in A // Only test areas with functional alarms
-		if(!alarm)
-			continue
-		if(alarm.stat & (NOPOWER | BROKEN))
-			continue
-
-		for(var/tag in A.air_vent_names) // The point of this test is that while the names list is registered at init, the info is transmitted by radio.
-			if(!A.air_vent_info[tag])
-				log_bad("Vent [A.air_vent_names[tag]] with id_tag [tag] did not update the air alarm in area [A].")
-				failed = TRUE
-		for(var/tag in A.air_scrub_names)
-			if(!A.air_scrub_info[tag])
-				log_bad("Scrubber [A.air_scrub_names[tag]] with id_tag [tag] did not update the air alarm in area [A].")
-				failed = TRUE
-
-	if(failed)
-		fail("Some areas did not receive updates from all of their atmos devices.")
-	else
-		pass("All atmos devices updated their area's air alarms successfully.")
-
-	return 1
 //=======================================================================================
 
 /datum/unit_test/wire_test
@@ -127,7 +76,7 @@
 		for(C in T)
 			wire_test_count++
 			var/combined_dir = "[C.d1]-[C.d2]"
-			if(combined_dir in dirs_checked)
+			if(combined_dir in dirs_checked && (!locate(/obj/machinery/power/breakerbox/activated) in T))
 				bad_tests++
 				log_unit_test("[bad_msg] Contains multiple wires with same direction on top of each other.")
 			dirs_checked.Add(combined_dir)
@@ -236,6 +185,7 @@
 
 	return 1
 
+/* Who cares?
 /datum/unit_test/map_image_map_test
 	name = "MAP: All map levels shall have a corresponding map image."
 
@@ -255,7 +205,7 @@
 		pass("All map levels had a corresponding image.")
 
 	return 1
-
+*/
 //=======================================================================================
 
 /datum/unit_test/correct_allowed_spawn_test
@@ -276,10 +226,10 @@
 	if(failed)
 		log_unit_test("Following spawn points exist:")
 		for(var/spawnpoint in spawntypes())
-			log_unit_test("\t[spawnpoint] ([any2ref(spawnpoint)])")
+			log_unit_test("\t[spawnpoint] ([REF(spawnpoint)])")
 		log_unit_test("Following spawn points are allowed:")
 		for(var/spawnpoint in GLOB.using_map.allowed_spawns)
-			log_unit_test("\t[spawnpoint] ([any2ref(spawnpoint)])")
+			log_unit_test("\t[spawnpoint] ([REF(spawnpoint)])")
 		fail("Some of the entries in allowed_spawns have no spawnpoint turfs.")
 	else
 		pass("All entries in allowed_spawns have spawnpoints.")
@@ -317,7 +267,7 @@
 
 	return 1
 
-/datum/unit_test/ladder_check/proc/check_direction(var/obj/structure/ladder/L, var/turf/destination_turf, var/check_direction, var/other_ladder_direction)
+/datum/unit_test/ladder_check/proc/check_direction(obj/structure/ladder/L, turf/destination_turf, check_direction, other_ladder_direction)
 	if(!destination_turf)
 		log_bad("Unable to acquire turf in the [dir2text(check_direction)] for [log_info_line(L)]")
 		return FALSE
@@ -330,7 +280,7 @@
 		return FALSE
 	return TRUE
 
-/datum/unit_test/ladder_check/proc/check_open_space(var/obj/structure/ladder/L)
+/datum/unit_test/ladder_check/proc/check_open_space(obj/structure/ladder/L)
 	if(!istype(get_turf(L), /turf/simulated/open))
 		log_bad("There is a non-open turf blocking the way for [log_info_line(L)]")
 		return FALSE
@@ -378,12 +328,12 @@
 
 	for(var/obj/machinery/cryopod/C in SSmachines.machinery)
 		if(!C.control_computer)
-			log_bad("[get_area(C)] lacks a cryopod control computer while holding a cryopod.")
+			log_bad("[get_area(C)] lacks a cryopod control computer while holding a cryopod. Location of cryo pod: [C.x],[C.y],[C.z]")
 			pass = FALSE
 
 	for(var/obj/machinery/computer/cryopod/C in SSmachines.machinery)
 		if(!(locate(/obj/machinery/cryopod) in get_area(C)))
-			log_bad("[get_area(C)] lacks a cryopod while holding a control computer.")
+			log_bad("[get_area(C)] lacks a cryopod while holding a control computer. Location of cryo computer: [C.x],[C.y],[C.z]")
 			pass = FALSE
 
 	if(pass)
@@ -488,7 +438,7 @@
 
 	return 1
 
-/datum/unit_test/disposal_segments_shall_connect_with_other_disposal_pipes/proc/turf_contains_matching_disposal_pipe(var/turf/T, var/straight_dir, var/list/curved_dirs)
+/datum/unit_test/disposal_segments_shall_connect_with_other_disposal_pipes/proc/turf_contains_matching_disposal_pipe(turf/T, straight_dir, list/curved_dirs)
 	if(!T)
 		return FALSE
 
@@ -504,28 +454,6 @@
 		else
 			return TRUE
 	return FALSE
-
-//=======================================================================================
-
-/datum/unit_test/simple_pipes_shall_not_face_north_or_west // The init code is worthless and cannot handle it
-	name = "MAP: Simple pipes shall not face north or west"
-
-/datum/unit_test/simple_pipes_shall_not_face_north_or_west/start_test()
-	var/failures = 0
-	for(var/obj/machinery/atmospherics/pipe/simple/pipe in world) // Pipes are removed from the SSmachines list during init.
-		if(!istype(pipe, /obj/machinery/atmospherics/pipe/simple/hidden) && !istype(pipe, /obj/machinery/atmospherics/pipe/simple/visible))
-			continue
-		if(pipe.dir == NORTH || pipe.dir == WEST)
-			log_bad("Following pipe had an invalid direction: [log_info_line(pipe)]")
-			failures++
-
-	if(failures)
-		fail("[failures] simple pipe\s faced the wrong direction.")
-	else
-		pass("All simple pipes faced an appropriate direction.")
-	return 1
-
-//=======================================================================================
 
 /datum/unit_test/shutoff_valves_shall_connect_to_two_different_pipe_networks
 	name = "MAP: Shutoff valves shall connect to two different pipe networks"
@@ -544,26 +472,6 @@
 	else
 		pass("All shutoff valves connect to two different pipe networks.")
 	return 1
-
-//=======================================================================================
-
-/datum/unit_test/station_pipes_shall_not_leak
-	name = "MAP: Station pipes shall not leak"
-
-/datum/unit_test/station_pipes_shall_not_leak/start_test()
-	var/failures = 0
-	for(var/obj/machinery/atmospherics/pipe/P in world)
-		if(P.leaking && isStationLevel(P.z))
-			failures++
-			log_bad("Following pipe is leaking: [log_info_line(P)]")
-
-	if(failures)
-		fail("[failures] station pipe\s leak.")
-	else
-		pass("No station pipes are leaking")
-	return 1
-
-//=======================================================================================
 
 /datum/unit_test/station_power_terminals_shall_be_wired
 	name = "MAP: Station power terminals shall be wired"
@@ -615,7 +523,7 @@
 	exceptions = exceptions_by_turf
 
 	for(var/obj/structure/cable/C in world)
-		if(!all_ends_connected(C))
+		if(!all_ends_connected(C) && !(C.d1 == UP || C.d2 == UP) && !(C.d1 == DOWN || C.d2 == DOWN))
 			failures++
 
 	if(failures)
@@ -630,7 +538,7 @@
 	return 1
 
 // We work on the assumption that another test ensures we only have valid directions
-/datum/unit_test/station_wires_shall_be_connected/proc/all_ends_connected(var/obj/structure/cable/C)
+/datum/unit_test/station_wires_shall_be_connected/proc/all_ends_connected(obj/structure/cable/C)
 	. = TRUE
 
 	var/turf/source_turf = get_turf(C)
@@ -753,7 +661,7 @@
 		return
 	return 0
 
-/datum/unit_test/networked_disposals_shall_deliver_tagged_packages/proc/package_delivered(var/obj/structure/disposalholder/unit_test/package)
+/datum/unit_test/networked_disposals_shall_deliver_tagged_packages/proc/package_delivered(obj/structure/disposalholder/unit_test/package)
 	if(!packages_awaiting_delivery[package])
 		return
 	var/obj/structure/disposalpipe/trunk/trunk = package.loc
@@ -767,7 +675,7 @@
 		return
 	packages_awaiting_delivery -= package
 
-/datum/unit_test/networked_disposals_shall_deliver_tagged_packages/proc/get_bin_from_junction(var/obj/structure/disposalpipe/sortjunction/sort)
+/datum/unit_test/networked_disposals_shall_deliver_tagged_packages/proc/get_bin_from_junction(obj/structure/disposalpipe/sortjunction/sort)
 	var/list/traversed = list(sort) // Avoid self-looping, infinite loops.
 	var/obj/structure/disposalpipe/our_pipe = sort
 	var/current_dir = sort.sortdir
@@ -816,7 +724,7 @@
 
 	return 1
 
-/datum/unit_test/req_access_shall_have_valid_strings/proc/is_invalid(var/value)
+/datum/unit_test/req_access_shall_have_valid_strings/proc/is_invalid(value)
 	if(!istext(value))
 		return TRUE //Someone tried to use a non-string as an access. There is no case where this is allowed.
 

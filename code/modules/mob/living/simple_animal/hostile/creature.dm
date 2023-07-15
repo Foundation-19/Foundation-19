@@ -10,7 +10,7 @@
 	maxHealth = 100
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	faction = "creature"
-	speed = 4
+	movement_cooldown = 4
 	supernatural = 1
 
 /mob/living/simple_animal/hostile/creature/cult

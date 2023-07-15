@@ -141,7 +141,7 @@ Class Procs:
 	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_ALL)
 	. = ..()
 
-/obj/machinery/proc/ProcessAll(var/wait)
+/obj/machinery/proc/ProcessAll(wait)
 	if(processing_flags & MACHINERY_PROCESS_COMPONENTS)
 		for(var/thing in processing_parts)
 			var/obj/item/stock_parts/part = thing
@@ -206,22 +206,22 @@ Class Procs:
 		stat ^= NOINPUT
 		return TRUE
 
-/proc/is_operable(var/obj/machinery/M, var/mob/user)
+/proc/is_operable(obj/machinery/M, mob/user)
 	return istype(M) && M.operable()
 
-/obj/machinery/proc/is_broken(var/additional_flags = 0)
+/obj/machinery/proc/is_broken(additional_flags = 0)
 	return (stat & (BROKEN|additional_flags))
 
-/obj/machinery/proc/is_powered(var/additional_flags = 0)
+/obj/machinery/proc/is_powered(additional_flags = 0)
 	return !(stat & (NOPOWER|additional_flags))
 
-/obj/machinery/proc/operable(var/additional_flags = 0)
+/obj/machinery/proc/operable(additional_flags = 0)
 	return !inoperable(additional_flags)
 
-/obj/machinery/proc/inoperable(var/additional_flags = 0)
+/obj/machinery/proc/inoperable(additional_flags = 0)
 	return (stat & (NOPOWER|BROKEN|additional_flags))
 
-/obj/machinery/CanUseTopic(var/mob/user)
+/obj/machinery/CanUseTopic(mob/user)
 	if(stat & BROKEN)
 		return STATUS_CLOSE
 
@@ -253,17 +253,17 @@ Class Procs:
 /mob/observer/ghost/direct_machine_interface(obj/machinery/machine)
 	return TRUE
 
-/obj/machinery/CanUseTopicPhysical(var/mob/user)
+/obj/machinery/CanUseTopicPhysical(mob/user)
 	if(stat & BROKEN)
 		return STATUS_CLOSE
 
 	return GLOB.physical_state.can_use_topic(nano_host(), user)
 
-/obj/machinery/CouldUseTopic(var/mob/user)
+/obj/machinery/CouldUseTopic(mob/user)
 	..()
 	user.set_machine(src)
 
-/obj/machinery/CouldNotUseTopic(var/mob/user)
+/obj/machinery/CouldNotUseTopic(mob/user)
 	user.unset_machine()
 
 /obj/machinery/Topic(href, href_list, datum/topic_state/state)
@@ -305,15 +305,15 @@ Class Procs:
 	if(!CanPhysicallyInteract(user))
 		return FALSE // The interactions below all assume physical access to the machine. If this is not the case, we let the machine take further action.
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return TRUE
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.getBrainLoss() >= 55)
-			visible_message("<span class='warning'>[H] stares cluelessly at \the [src].</span>")
+			visible_message(SPAN_WARNING("[H] stares cluelessly at \the [src]."))
 			return TRUE
 		else if(prob(H.getBrainLoss()))
-			to_chat(user, "<span class='warning'>You momentarily forget how to use \the [src].</span>")
+			to_chat(user, SPAN_WARNING("You momentarily forget how to use \the [src]."))
 			return TRUE
 	if((. = component_attack_hand(user)))
 		return
@@ -345,7 +345,7 @@ Class Procs:
 	var/list/missing = missing_parts()
 	set_broken(!!missing, MACHINE_BROKEN_NO_PARTS)
 
-/obj/machinery/proc/state(var/msg)
+/obj/machinery/proc/state(msg)
 	for(var/mob/O in hearers(src, null))
 		O.show_message("[icon2html(src, O)] <span class = 'notice'>[msg]</span>", 2)
 
@@ -355,6 +355,7 @@ Class Procs:
 
 	state(text, "blue")
 	playsound(src.loc, 'sound/machines/ping.ogg', 50, 0)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 
 /obj/machinery/proc/shock(mob/user, prb)
 	if(inoperable())
@@ -405,22 +406,22 @@ Class Procs:
 /datum/proc/remove_visual(mob/M)
 	return
 
-/obj/machinery/proc/malf_upgrade(var/mob/living/silicon/ai/user)
+/obj/machinery/proc/malf_upgrade(mob/living/silicon/ai/user)
 	return 0
 
-/obj/machinery/CouldUseTopic(var/mob/user)
+/obj/machinery/CouldUseTopic(mob/user)
 	..()
 	if(clicksound && world.time > next_clicksound && istype(user, /mob/living/carbon))
 		next_clicksound = world.time + CLICKSOUND_INTERVAL
 		playsound(src, clicksound, clickvol)
 
 /obj/machinery/proc/display_parts(mob/user)
-	to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
+	to_chat(user, SPAN_NOTICE("Following parts detected in the machine:"))
 	for(var/obj/item/C in component_parts)
-		to_chat(user, "<span class='notice'>	[C.name]</span>")
+		to_chat(user, SPAN_NOTICE("	[C.name]"))
 	for(var/path in uncreated_component_parts)
 		var/obj/item/thing = path
-		to_chat(user, "<span class='notice'>	[initial(thing.name)] ([uncreated_component_parts[path] || 1])</span>")
+		to_chat(user, SPAN_NOTICE("	[initial(thing.name)] ([uncreated_component_parts[path] || 1])"))
 
 /obj/machinery/examine(mob/user)
 	. = ..()
@@ -447,7 +448,7 @@ Class Procs:
 		to_chat(user, SPAN_NOTICE(machine_desc))
 
 // This is really pretty crap and should be overridden for specific machines.
-/obj/machinery/water_act(var/depth)
+/obj/machinery/water_act(depth)
 	..()
 	if(!(stat & (NOPOWER|BROKEN)) && !waterproof && (depth > FLUID_DEEP))
 		ex_act(3)

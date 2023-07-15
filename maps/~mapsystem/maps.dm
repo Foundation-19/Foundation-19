@@ -94,7 +94,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
 
 	var/default_law_type = /datum/ai_laws/foundation_alt  // The default lawset use by synth units, if not overriden by their laws var.
-	var/security_state = /decl/security_state/default // The default security state system to use.
+	var/security_state = /decl/security_state // The default security state system to use.
 
 	var/id_hud_icons = 'icons/mob/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
 
@@ -111,11 +111,11 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/salary_modifier	= 1			//Multiplier to starting character money
 	var/station_departments = list()//Gets filled automatically depending on jobs allowed
 
-	var/supply_currency_name = "Credits"
-	var/supply_currency_name_short = "Cr."
-	var/local_currency_name = "thalers"
-	var/local_currency_name_singular = "thaler"
-	var/local_currency_name_short = "T"
+	var/supply_currency_name = "Funds"
+	var/supply_currency_name_short = "$"
+	var/local_currency_name = "dollars"
+	var/local_currency_name_singular = "dollar"
+	var/local_currency_name_short = "$"
 
 	var/game_year
 
@@ -157,13 +157,13 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	)
 
 	var/access_modify_region = list(
-		ACCESS_REGION_SECURITY = list(access_hos, access_change_ids),
-		ACCESS_REGION_MEDBAY = list(access_cmo, access_change_ids),
-		ACCESS_REGION_RESEARCH = list(access_rd, access_change_ids),
-		ACCESS_REGION_ENGINEERING = list(access_ce, access_change_ids),
-		ACCESS_REGION_COMMAND = list(access_change_ids),
-		ACCESS_REGION_GENERAL = list(access_change_ids),
-		ACCESS_REGION_SUPPLY = list(access_change_ids)
+		ACCESS_REGION_SECURITY = list(ACCESS_HOS, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_MEDBAY = list(ACCESS_CMO, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_RESEARCH = list(ACCESS_RD, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_ENGINEERING = list(ACCESS_CE, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_COMMAND = list(ACCESS_CHANGE_IDS),
+		ACCESS_REGION_GENERAL = list(ACCESS_CHANGE_IDS),
+		ACCESS_REGION_SUPPLY = list(ACCESS_CHANGE_IDS)
 	)
 
 	// List of /datum/department types to instantiate at roundstart.
@@ -355,7 +355,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		new_planet.build_level()
 
 // Used to apply various post-compile procedural effects to the map.
-/datum/map/proc/refresh_mining_turfs(var/zlevel)
+/datum/map/proc/refresh_mining_turfs(zlevel)
 
 	set background = 1
 	set waitfor = 0
@@ -368,11 +368,11 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		if(istype(M))
 			M.updateMineralOverlays()
 
-/datum/map/proc/get_network_access(var/network)
+/datum/map/proc/get_network_access(network)
 	return 0
 
 // By default transition randomly to another zlevel
-/datum/map/proc/get_transit_zlevel(var/current_z_level)
+/datum/map/proc/get_transit_zlevel(current_z_level)
 	var/list/candidates = GLOB.using_map.accessible_z_levels.Copy()
 	candidates.Remove(num2text(current_z_level))
 
@@ -412,7 +412,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	department_accounts["Vendor"] = create_account("Vendor Account", "Vendor", 0, ACCOUNT_TYPE_DEPARTMENT)
 	vendor_account = department_accounts["Vendor"]
 
-/datum/map/proc/map_info(var/client/victim)
+/datum/map/proc/map_info(client/victim)
 	to_chat(victim, "<h2>Current map information</h2>")
 	to_chat(victim, get_map_info())
 
@@ -425,11 +425,11 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/unbolt_saferooms()
 	return // overriden by torch
 
-/datum/map/proc/make_maint_all_access(var/radstorm = 0) // parameter used by torch
+/datum/map/proc/make_maint_all_access(radstorm = 0) // parameter used by torch
 	maint_all_access = 1
 	priority_announcement.Announce("The maintenance access requirement has been revoked on all maintenance airlocks.", "Attention!")
 
-/datum/map/proc/revoke_maint_all_access(var/radstorm = 0) // parameter used by torch
+/datum/map/proc/revoke_maint_all_access(radstorm = 0) // parameter used by torch
 	maint_all_access = 0
 	priority_announcement.Announce("The maintenance access requirement has been readded on all maintenance airlocks.", "Attention!")
 
@@ -438,18 +438,18 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/default_internal_channels()
 	return list(
 		num2text(PUB_FREQ)   = list(),
-		num2text(AI_FREQ)    = list(access_synth),
+		num2text(AI_FREQ)    = list(ACCESS_SYNTH),
 		num2text(ENT_FREQ)   = list(),
-		num2text(ERT_FREQ)   = list(access_cent_specops),
-		num2text(COMM_FREQ)  = list(access_bridge),
-		num2text(ENG_FREQ)   = list(access_engine_equip, access_atmospherics),
-		num2text(MED_FREQ)   = list(access_medical_equip),
-		num2text(MED_I_FREQ) = list(access_medical_equip),
-		num2text(SEC_FREQ)   = list(access_security),
-		num2text(SEC_I_FREQ) = list(access_security),
-		num2text(SCI_FREQ)   = list(access_tox,access_robotics,access_xenobiology),
-		num2text(SUP_FREQ)   = list(access_cargo),
-		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
+		num2text(ERT_FREQ)   = list(ACCESS_CENT_SPECOPS),
+		num2text(COMM_FREQ)  = list(ACCESS_BRIDGE),
+		num2text(ENG_FREQ)   = list(ACCESS_ENGINEERING_LVL2, ACCESS_ATMOSPHERICS),
+		num2text(MED_FREQ)   = list(ACCESS_MEDICAL_EQUIP),
+		num2text(MED_I_FREQ) = list(ACCESS_MEDICAL_EQUIP),
+		num2text(SEC_FREQ)   = list(ACCESS_SECURITY),
+		num2text(SEC_I_FREQ) = list(ACCESS_SECURITY),
+		num2text(SCI_FREQ)   = list(ACCESS_TOX,ACCESS_ROBOTICS,ACCESS_XENOBIOLOGY),
+		num2text(SUP_FREQ)   = list(ACCESS_CARGO),
+		num2text(SRV_FREQ)   = list(ACCESS_JANITOR, ACCESS_HYDROPONICS),
 		num2text(HAIL_FREQ)  = list(),
 	)
 
@@ -461,26 +461,26 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 				var/turf/playerTurf = get_turf(Player)
 				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
 					if(isStationLevel(playerTurf.z))
-						to_chat(Player, "<span class='info'><b>You managed to survive, but were left behind on [station_name()] as [Player.real_name]...</b></span>")
+						to_chat(Player, SPAN_INFO("<b>You managed to survive, but were left behind on [station_name()] as [Player.real_name]...</b>"))
 					else if (isEscapeLevel(playerTurf.z))
-						to_chat(Player, "<font color='green'><b>You managed to survive the events on [station_name()] as [Player.real_name].</b></font>")
+						to_chat(Player, FONT_COLORED("green","<b>You managed to survive the events on [station_name()] as [Player.real_name].</b>"))
 					else
-						to_chat(Player, "<span class='info'><b>You managed to survive, but were lost far from [station_name()] as [Player.real_name]...</b></span>")
+						to_chat(Player, SPAN_INFO("<b>You managed to survive, but were lost far from [station_name()] as [Player.real_name]...</b>"))
 				else if(isAdminLevel(playerTurf.z))
-					to_chat(Player, "<font color='green'><b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b></font>")
+					to_chat(Player, FONT_COLORED("green","<b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b>"))
 				else if(issilicon(Player))
-					to_chat(Player, "<font color='green'><b>You remain operational after the events on [station_name()] as [Player.real_name].</b></font>")
+					to_chat(Player, FONT_COLORED("green","<b>You remain operational after the events on [station_name()] as [Player.real_name].</b>"))
 				else if (isNotStationLevel(playerTurf.z))
-					to_chat(Player, "<span class='info'><b>You managed to survive, but were lost far from [station_name()] as [Player.real_name]...</b></span>")
+					to_chat(Player, SPAN_INFO("<b>You managed to survive, but were lost far from [station_name()] as [Player.real_name]...</b>"))
 				else
-					to_chat(Player, "<span class='info'><b>You got through just another workday on [station_name()] as [Player.real_name].</b></span>")
+					to_chat(Player, SPAN_INFO("<b>You got through just another workday on [station_name()] as [Player.real_name].</b>"))
 			else
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
 					if(!O.started_as_observer)
-						to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+						to_chat(Player, FONT_COLORED("red","<b>You did not survive the events on [station_name()]...</b>"))
 				else
-					to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+					to_chat(Player, FONT_COLORED("red","<b>You did not survive the events on [station_name()]...</b>"))
 
 /datum/map/proc/roundend_statistics()
 	var/data = list()

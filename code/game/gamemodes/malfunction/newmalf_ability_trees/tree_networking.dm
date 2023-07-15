@@ -57,7 +57,7 @@
 			to_chat(user, "You already control this APC!")
 			return
 		else if(A.aidisabled)
-			to_chat(user, "<span class='notice'>Unable to connect to APC. Please verify wire connection and try again.</span>")
+			to_chat(user, SPAN_NOTICE("Unable to connect to APC. Please verify wire connection and try again."))
 			return
 	else
 		return
@@ -77,9 +77,9 @@
 		if(A.hacker == user)
 			to_chat(user, "Hack successful. You now have full control over \the [A].")
 		else
-			to_chat(user, "<span class='notice'>Hack failed. Connection to APC has been lost. Please verify wire connection and try again.</span>")
+			to_chat(user, SPAN_NOTICE("Hack failed. Connection to APC has been lost. Please verify wire connection and try again."))
 	else
-		to_chat(user, "<span class='notice'>Hack failed. Unable to locate APC. Please verify the APC still exists.</span>")
+		to_chat(user, SPAN_NOTICE("Hack failed. Unable to locate APC. Please verify the APC still exists."))
 
 
 /datum/game_mode/malfunction/verb/advanced_encryption_hack()
@@ -129,7 +129,7 @@
 		return
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	var/alert_target = input("Select new alert level:") as null|anything in (security_state.all_security_levels - security_state.current_security_level)
+	var/alert_target = input("Select new alert level:") as null|anything in (security_state.all_security_levels - security_state.current_security_level - security_state.destruction_security_level)
 	if(!alert_target || !ability_pay(user, price))
 		to_chat(user, "Hack Aborted")
 		return
@@ -217,4 +217,4 @@
 		command_announcement.Announce("Our system administrators just reported that we've been locked out from your control network. Whoever did this now has full access to [GLOB.using_map.station_name]'s systems.", "Network Administration Center")
 	user.hack_can_fail = 0
 	user.system_override = 2
-	user.verbs += new/datum/game_mode/malfunction/verb/ai_destroy_station()
+	add_verb(user, new/datum/game_mode/malfunction/verb/ai_destroy_station())

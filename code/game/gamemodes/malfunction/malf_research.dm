@@ -33,7 +33,7 @@
 		return
 	to_chat(owner, "<b>Research Completed</b>: [focus.name]")
 	if(focus.ability)
-		owner.verbs.Add(focus.ability)
+		add_verb(owner, focus.ability)
 	focus.research_finished(owner)
 	if(focus.next)
 		available_abilities += focus.next
@@ -44,7 +44,7 @@
 // Proc:		process()
 // Parameters: 	None
 // Description: Processes CPU gain and research progress based on "realtime" calculation.
-/datum/malf_research/proc/process(var/idle = 0)
+/datum/malf_research/proc/process(idle = 0)
 	if(idle)		// No power or running on APU. Do nothing.
 		last_tick = world.time
 		return

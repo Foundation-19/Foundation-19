@@ -12,7 +12,7 @@
 	maxHealth = 40
 	health = 40
 
-	movement_cooldown = 5	// A bit faster so that they can inject the eggs easier.
+	movement_cooldown = 3	// A bit faster so that they can inject the eggs easier.
 
 	poison_per_bite = 5
 	poison_type = "stoxin"
@@ -55,7 +55,7 @@
 			if(!eggcount)
 				var/eggs = new egg_type(O, src)
 				O.implants += eggs
-				to_chat(H, "<span class='critical'>\The [src] injects something into your [O.name]!</span>") // Oh god its laying eggs in me!
+				to_chat(H, SPAN_CLASS("critical","\The [src] injects something into your [O.name]!")) // Oh god its laying eggs in me!
 
 // Webs target in a web if able to.
 /mob/living/simple_animal/hostile/giant_spider/nurse/attack_target(atom/A)
@@ -235,7 +235,7 @@
 
 	for(var/AT in typecache_filter_list(range(vision_range, holder), alternative_targets))
 		var/obj/O = AT
-		if(can_see(holder, O, vision_range) && !O.anchored)
+		if(can_see_by_step(holder, O, vision_range) && !O.anchored)
 			. += O
 
 // Select an obj if no mobs are around.

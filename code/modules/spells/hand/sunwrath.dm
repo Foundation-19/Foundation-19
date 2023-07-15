@@ -13,7 +13,7 @@
 
 	hud_state = "wiz_immolate"
 
-/datum/spell/hand/duration/sunwrath/cast_hand(var/atom/A, var/mob/user)
+/datum/spell/hand/duration/sunwrath/cast_hand(atom/A, mob/user)
 	var/turf/T = get_turf(user)
 	var/list/turfs = getline(T,A) - T
 	for(var/t in turfs)

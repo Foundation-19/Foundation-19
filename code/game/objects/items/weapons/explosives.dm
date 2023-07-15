@@ -24,11 +24,11 @@
 	wires = null
 	return ..()
 
-/obj/item/plastique/attackby(var/obj/item/I, var/mob/user)
+/obj/item/plastique/attackby(obj/item/I, mob/user)
 	if(isScrewdriver(I))
 		open_panel = !open_panel
-		to_chat(user, "<span class='notice'>You [open_panel ? "open" : "close"] the wire panel.</span>")
-	else if(isWirecutter(I) || isMultitool(I) || istype(I, /obj/item/device/assembly/signaler ))
+		to_chat(user, SPAN_NOTICE("You [open_panel ? "open" : "close"] the wire panel."))
+	else if(isWirecutter(I) || isMultitool(I) || istype(I, /obj/item/device/assembly/signaller ))
 		wires.Interact(user)
 	else
 		..()
@@ -56,17 +56,17 @@
 
 		if (ismob(target))
 			admin_attack_log(user, target, "Planted \a [src] with a [timer] second fuse.", "Had \a [src] with a [timer] second fuse planted on them.", "planted \a [src] with a [timer] second fuse on")
-			user.visible_message("<span class='danger'>[user.name] finished planting an explosive on [target.name]!</span>")
+			user.visible_message(SPAN_DANGER("[user.name] finished planting an explosive on [target.name]!"))
 			log_game("[key_name(user)] planted [src.name] on [key_name(target)] with [timer] second fuse")
 
 		else
-			log_and_message_admins("planted \a [src] with a [timer] second fuse on \the [target].")
+			log_and_message_staff("planted \a [src] with a [timer] second fuse on \the [target].")
 
 		target.add_overlay(image_overlay)
 		to_chat(user, "Bomb has been planted. Timer counting down from [timer].")
 		run_timer()
 
-/obj/item/plastique/proc/explode(var/location)
+/obj/item/plastique/proc/explode(location)
 	if(!target)
 		target = get_atom_on_turf(src)
 	if(!target)

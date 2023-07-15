@@ -8,8 +8,7 @@
 	health = 200
 	natural_weapon = /obj/item/natural_weapon/bite/spider/strong
 	poison_per_bite = 5
-	speed = 2
-	move_to_delay = 4
+	movement_cooldown = 5
 	break_stuff_probability = 15
 	pry_time = 6 SECONDS
 
@@ -64,7 +63,7 @@
 	var/obj/item/W = get_natural_weapon()
 	if(W)
 		W.force = initial(W.force) + 5
-	move_to_delay--
+	movement_cooldown--
 	break_stuff_probability = 45
 	addtimer(CALLBACK(src, .proc/calm_down), 3 MINUTES)
 
@@ -74,5 +73,5 @@
 	var/obj/item/W = get_natural_weapon()
 	if(W)
 		W.force = initial(W.force)
-	move_to_delay++
+	movement_cooldown++
 	break_stuff_probability = 10

@@ -22,18 +22,16 @@
 	see_in_dark = 3
 
 
-/mob/living/simple_animal/cat/scp_066/New()
-
-	..()
-	add_language(/datum/language/english)
+/mob/living/simple_animal/cat/scp_066/Initialize()
+	add_language(LANGUAGE_ENGLISH)
 
 
 		// emotes
-	verbs += list(
+	add_verb(src, list(
 		/mob/living/simple_animal/cat/scp_066/proc/Eric,
 		/mob/living/simple_animal/cat/scp_066/proc/EarRape,
-		/mob/living/simple_animal/cat/scp_066/proc/Noise
-	)
+		/mob/living/simple_animal/cat/scp_066/proc/Noise,
+	))
 
 	// SCP-066 emotes
 /* /mob/living/simple_animal/cat/scp_066/proc/Eric()
@@ -56,6 +54,8 @@
 		if (random == 5)
 			playsound(src, 'sound/scp/066/066-eric5.ogg', 30)
 			next_emote = world.time + 10 */
+	return ..()
+
 
 		// SCP-066 emotes
 /mob/living/simple_animal/cat/scp_066/proc/Eric()
@@ -64,7 +64,7 @@
 
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf())
+			if(M.can_hear(src))
 //				M << pick('sound/scp/066/066-eric5.ogg', 'sound/scp/066/066-eric4.ogg', 'sound/scp/066/066-eric3.ogg', 'sound/scp/066/066-eric2.ogg', 'sound/scp/066/066-5-rape.ogg', 5, )
 				next_emote = world.time + 30
 
@@ -73,7 +73,7 @@
 	set name = "Noise"
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf())
+			if(M.can_hear(src))
 //				M << pick('sound/scp/066/066-ali.ogg', 'sound/scp/066/066-eric5.ogg', 'sound/scp/066/066-eric4.ogg', 'sound/scp/066/066-eric3.ogg', 'sound/scp/066/066-eric2.ogg', 'sound/scp/066/066-5-rape.ogg')
 				next_emote = world.time + 100
 
@@ -83,9 +83,9 @@
 //	playsound(src, 'sound/scp/066/066-ali.ogg', 30)
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf() || istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
+			if(!M.can_hear(src))
 				continue
-			to_chat(M, "<span class='danger'><i>\The [src] rings, sending chills to your very bone.</i></span>")
+			to_chat(M, SPAN_DANGER("<i>\The [src] rings, sending chills to your very bone.</i>"))
 //			M << pick('sound/scp/066/066-1-rape.ogg', 'sound/scp/066/066-2-rape.ogg', 'sound/scp/066/066-3-rape.ogg', 'sound/scp/066/066-4-rape.ogg', 'sound/scp/066/066-5-rape.ogg', 'sound/scp/066/066-ericrape.ogg')
 			next_emote = world.time + 600
 			M.Stun(2)

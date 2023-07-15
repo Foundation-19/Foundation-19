@@ -2,7 +2,11 @@
 	//set src in oview(1)
 	switch(severity)
 		if(1.0)
-			src.ChangeTurf(get_base_turf_by_area(src))
+			var/turf/below = GetBelow(src)
+			if(!below || !below.get_roof_turf())
+				src.ChangeTurf(get_base_turf_by_area(src))
+			else
+				src.ChangeTurf(below.get_roof_turf())
 		if(2.0)
 			switch(pick(40;1,40;2,3))
 				if (1)

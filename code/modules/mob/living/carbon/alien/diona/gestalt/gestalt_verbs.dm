@@ -5,7 +5,7 @@
 	set src = usr.loc
 
 	if(!is_alien_whitelisted(usr, all_species[SPECIES_DIONA]))
-		to_chat(usr, "<span class='warning'>You are not whitelisted for control of more complex forms of gestalt.</span>")
+		to_chat(usr, SPAN_WARNING("You are not whitelisted for control of more complex forms of gestalt."))
 		return
 
 	var/vote_type = input(usr, "Select the vote you wish to call.") as null|anything in democracy_bucket

@@ -32,23 +32,23 @@
 	if(distance > 2)
 		return
 
-	to_chat(user, "<span class='notice'>It contains:</span>")
+	to_chat(user, SPAN_NOTICE("It contains:"))
 	if(reagents && reagents.reagent_list.len)
 		for(var/datum/reagent/R in reagents.reagent_list)
-			to_chat(user, "<span class='notice'>[R.volume] units of [R.name]</span>")
+			to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
 	else
-		to_chat(user, "<span class='notice'>Nothing.</span>")
+		to_chat(user, SPAN_NOTICE("Nothing."))
 
 /obj/structure/reagent_dispensers/verb/set_amount_per_transfer_from_this()
 	set name = "Set transfer amount"
 	set category = "Object"
 	set src in view(1)
 	if(!CanPhysicallyInteract(usr))
-		to_chat(usr, "<span class='notice'>You're in no condition to do that!'</span>")
+		to_chat(usr, SPAN_NOTICE("You're in no condition to do that!'"))
 		return
 	var/N = input("Amount per transfer from this:","[src]") as null|anything in cached_number_list_decode(possible_transfer_amounts)
 	if(!CanPhysicallyInteract(usr))  // because input takes time and the situation can change
-		to_chat(usr, "<span class='notice'>You're in no condition to do that!'</span>")
+		to_chat(usr, SPAN_NOTICE("You're in no condition to do that!'"))
 		return
 	if (N)
 		amount_per_transfer_from_this = N
@@ -71,7 +71,7 @@
 		else
 	return
 
-/obj/structure/reagent_dispensers/AltClick(var/mob/user)
+/obj/structure/reagent_dispensers/AltClick(mob/user)
 	if(possible_transfer_amounts)
 		set_amount_per_transfer_from_this()
 	else
@@ -117,7 +117,7 @@
 	. = ..()
 
 	if(modded)
-		to_chat(user, "<span class='warning'>Someone has wrenched open its tap - it's spilling everywhere!</span>")
+		to_chat(user, SPAN_WARNING("Someone has wrenched open its tap - it's spilling everywhere!"))
 
 /obj/structure/reagent_dispensers/watertank/attackby(obj/item/W, mob/user)
 
@@ -131,11 +131,11 @@
 
 	if(isWrench(W))
 		modded = !modded
-		user.visible_message("<span class='notice'>\The [user] wrenches \the [src]'s tap [modded ? "open" : "shut"].</span>", \
-			"<span class='notice'>You wrench [src]'s drain [modded ? "open" : "shut"].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] wrenches \the [src]'s tap [modded ? "open" : "shut"]."), \
+			SPAN_NOTICE("You wrench [src]'s drain [modded ? "open" : "shut"]."))
 
 		if (modded)
-			log_and_message_admins("opened a water tank at [get_area(loc)], leaking water.")
+			log_and_message_staff("opened a water tank at [get_area(loc)], leaking water.")
 			// Allows the water tank to continuously expel water, differing it from the fuel tank.
 			START_PROCESSING(SSprocessing, src)
 		else
@@ -167,15 +167,15 @@
 	. = ..()
 
 	if (modded)
-		to_chat(user, "<span class='warning'>The faucet is wrenched open, leaking fuel!</span>")
+		to_chat(user, SPAN_WARNING("The faucet is wrenched open, leaking fuel!"))
 	if(rig)
-		to_chat(user, "<span class='notice'>There is some kind of device rigged to the tank.</span>")
+		to_chat(user, SPAN_NOTICE("There is some kind of device rigged to the tank."))
 
 /obj/structure/reagent_dispensers/fueltank/attack_hand()
 	if (rig)
-		usr.visible_message("<span class='notice'>\The [usr] begins to detach \the [rig] from \the [src].</span>", "<span class='notice'>You begin to detach \the [rig] from \the [src].</span>")
+		usr.visible_message(SPAN_NOTICE("\The [usr] begins to detach \the [rig] from \the [src]."), SPAN_NOTICE("You begin to detach \the [rig] from \the [src]."))
 		if(do_after(usr, 20, src))
-			usr.visible_message("<span class='notice'>\The [usr] detaches \the [rig] from \the [src].</span>", "<span class='notice'>You detach [rig] from \the [src]</span>")
+			usr.visible_message(SPAN_NOTICE("\The [usr] detaches \the [rig] from \the [src]."), SPAN_NOTICE("You detach [rig] from \the [src]"))
 			rig.dropInto(usr.loc)
 			rig = null
 			cut_overlays()
@@ -187,21 +187,21 @@
 			"You wrench [src]'s faucet [modded ? "closed" : "open"]")
 		modded = modded ? 0 : 1
 		if (modded)
-			log_and_message_admins("opened a fuel tank at [loc.loc.name], leaking fuel.")
+			log_and_message_staff("opened a fuel tank at [loc.loc.name], leaking fuel.")
 			leak_fuel(amount_per_transfer_from_this)
 	else if (istype(W,/obj/item/device/assembly_holder))
 		if (rig)
-			to_chat(user, "<span class='warning'>There is another device already in the way.</span>")
+			to_chat(user, SPAN_WARNING("There is another device already in the way."))
 			return ..()
 		user.visible_message("\The [user] begins rigging \the [W] to \the [src].", "You begin rigging \the [W] to \the [src]")
 		if(do_after(user, 20, src))
 			if(!user.unEquip(W, src))
 				return
-			user.visible_message("<span class='notice'>\The [user] rigs \the [W] to \the [src].</span>", "<span class='notice'>You rig \the [W] to \the [src].</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] rigs \the [W] to \the [src]."), SPAN_NOTICE("You rig \the [W] to \the [src]."))
 
 			var/obj/item/device/assembly_holder/H = W
 			if (istype(H.a_left,/obj/item/device/assembly/igniter) || istype(H.a_right,/obj/item/device/assembly/igniter))
-				log_and_message_admins("rigged a fuel tank for explosion at [loc.loc.name].")
+				log_and_message_staff("rigged a fuel tank for explosion at [loc.loc.name].")
 			rig = W
 			var/icon/test = getFlatIcon(W)
 			test.Shift(NORTH,1)
@@ -210,13 +210,13 @@
 
 	else if(isflamesource(W))
 		if(user.a_intent != I_HURT)
-			to_chat(user, "<span class='warning'>You almost got \the [W] too close to [src]! That could have ended very badly for you.</span>")
+			to_chat(user, SPAN_WARNING("You almost got \the [W] too close to [src]! That could have ended very badly for you."))
 			return
 
-		user.visible_message("<span class='warning'>\The [user] draws closer to the fuel tank with \the [W].</span>", "<span class='warning'>You draw closer to the fuel tank with \the [W].</span>")
+		user.visible_message(SPAN_WARNING("\The [user] draws closer to the fuel tank with \the [W]."), SPAN_WARNING("You draw closer to the fuel tank with \the [W]."))
 		if(do_after(user, 50, src))
-			log_and_message_admins("triggered a fuel tank explosion with \the [W].")
-			user.visible_message("<span class='danger'>\The [user] puts \the [W] to \the [src]!</span>", "<span class='danger'>You put \the [W] to \the [src] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done.</span>")
+			log_and_message_staff("triggered a fuel tank explosion with \the [W].")
+			user.visible_message(SPAN_DANGER("\The [user] puts \the [W] to \the [src]!"), SPAN_DANGER("You put \the [W] to \the [src] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done."))
 			src.explode()
 
 		return
@@ -224,15 +224,15 @@
 	return ..()
 
 
-/obj/structure/reagent_dispensers/fueltank/bullet_act(var/obj/item/projectile/Proj)
+/obj/structure/reagent_dispensers/fueltank/bullet_act(obj/item/projectile/Proj)
 	if(Proj.get_structure_damage())
 		if(istype(Proj.firer))
 			var/turf/turf = get_turf(src)
 			if(turf)
 				var/area/area = turf.loc || "*unknown area*"
-				log_and_message_admins("[key_name_admin(Proj.firer)] shot a fuel tank in \the [area].")
+				log_and_message_staff("[key_name_admin(Proj.firer)] shot a fuel tank in \the [area].")
 			else
-				log_and_message_admins("shot a fuel tank outside the world.")
+				log_and_message_staff("shot a fuel tank outside the world.")
 
 		if(!istype(Proj ,/obj/item/projectile/beam/lastertag) && !istype(Proj ,/obj/item/projectile/beam/practice) )
 			explode()
@@ -289,7 +289,7 @@
 	var/cups = 12
 	var/cup_type = /obj/item/reagent_containers/food/drinks/sillycup
 
-/obj/structure/reagent_dispensers/water_cooler/attack_hand(var/mob/user)
+/obj/structure/reagent_dispensers/water_cooler/attack_hand(mob/user)
 	if(cups > 0)
 		var/visible_messages = DispenserMessages(user)
 		visible_message(visible_messages[1], visible_messages[2])
@@ -299,10 +299,10 @@
 	else
 		to_chat(user, RejectionMessage(user))
 
-/obj/structure/reagent_dispensers/water_cooler/proc/DispenserMessages(var/mob/user)
+/obj/structure/reagent_dispensers/water_cooler/proc/DispenserMessages(mob/user)
 	return list("\The [user] grabs a paper cup from \the [src].", "You grab a paper cup from \the [src]'s cup compartment.")
 
-/obj/structure/reagent_dispensers/water_cooler/proc/RejectionMessage(var/mob/user)
+/obj/structure/reagent_dispensers/water_cooler/proc/RejectionMessage(mob/user)
 	return "The [src]'s cup dispenser is empty."
 
 /obj/structure/reagent_dispensers/water_cooler/attackby(obj/item/W as obj, mob/user as mob)
@@ -315,7 +315,7 @@
 
 		if(do_after(user, 20, src))
 			if(!src) return
-			to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
+			to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured \the [src]!"))
 			anchored = !anchored
 		return
 	else

@@ -179,7 +179,7 @@
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/attack_hand(mob/user)
 	if((. = ..()))
 		return
-	to_chat(user, "<span class='notice'>You can't directly interact with this machine. Use the scrubber control console.</span>")
+	to_chat(user, SPAN_NOTICE("You can't directly interact with this machine. Use the scrubber control console."))
 	return TRUE
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/on_update_icon()
@@ -190,15 +190,15 @@
 	else
 		icon_state = "scrubber:0"
 
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/attackby(var/obj/item/I as obj, var/mob/user as mob)
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/attackby(obj/item/I as obj, mob/user as mob)
 	if(isWrench(I))
 		if(use_power == POWER_USE_ACTIVE)
-			to_chat(user, "<span class='warning'>Turn \the [src] off first!</span>")
+			to_chat(user, SPAN_WARNING("Turn \the [src] off first!"))
 			return
 
 		anchored = !anchored
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>You [anchored ? "wrench" : "unwrench"] \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You [anchored ? "wrench" : "unwrench"] \the [src]."))
 
 		return
 	//doesn't hold tanks
@@ -214,9 +214,9 @@
 	machine_name = "large stationary portable scrubber"
 	machine_desc = "This is simply a large portable scrubber that can't be moved once it's bolted into place, and is otherwise identical."
 
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/attackby(var/obj/item/I as obj, var/mob/user as mob)
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/attackby(obj/item/I as obj, mob/user as mob)
 	if(isWrench(I))
-		to_chat(user, "<span class='warning'>The bolts are too tight for you to unscrew!</span>")
+		to_chat(user, SPAN_WARNING("The bolts are too tight for you to unscrew!"))
 		return
 
 	return ..()

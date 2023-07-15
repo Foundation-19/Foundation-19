@@ -3,6 +3,7 @@
 	desc = "Unknown Hardware."
 	icon = 'icons/obj/modular_components.dmi'
 	part_flags = PART_FLAG_HAND_REMOVE
+	var/obj/item/modular_computer/holder2 = null
 	var/power_usage = 0 			// If the hardware uses extra power, change this.
 	var/enabled = 1					// If the hardware is turned off set this to 0.
 	var/critical = 1				// Prevent disabling for important component, like the HDD.
@@ -11,11 +12,11 @@
 	var/max_damage = 100			// Maximal damage level.
 	var/damage_malfunction = 20		// "Malfunction" threshold. When damage exceeds this value the hardware piece will semi-randomly fail and do !!FUN!! things
 	var/damage_failure = 50			// "Failure" threshold. When damage exceeds this value the hardware piece will not work at all.
-	var/malfunction_probability = 10// Chance of malfunction when the component is damaged
+	var/malfunction_divisor = 2		// Damage is divided by this for probability of error
 	var/usage_flags = PROGRAM_ALL
 	var/external_slot				// Whether attackby will be passed on it even with a closed panel
 
-/obj/item/stock_parts/computer/attackby(var/obj/item/W as obj, var/mob/living/user as mob)
+/obj/item/stock_parts/computer/attackby(obj/item/W as obj, mob/living/user as mob)
 	// Multitool. Runs diagnostics
 	if(isMultitool(W))
 		to_chat(user, "***** DIAGNOSTICS REPORT *****")
@@ -51,6 +52,9 @@
 /obj/item/stock_parts/computer/Initialize()
 	. = ..()
 	w_class = hardware_size
+	if(istype(loc, /obj/item/modular_computer))
+		holder2 = loc
+		return
 
 /obj/item/stock_parts/computer/Destroy()
 	if(istype(loc, /obj/item/modular_computer))
@@ -68,7 +72,7 @@
 		return 0
 	// Still working. Well, sometimes...
 	if(damage >= damage_malfunction)
-		if(prob(malfunction_probability))
+		if(prob(damage / malfunction_divisor))
 			return 0
 	// Good to go.
 	return 1
@@ -76,22 +80,13 @@
 /obj/item/stock_parts/computer/examine(mob/user)
 	. = ..()
 	if(damage > damage_failure)
-		to_chat(user, "<span class='danger'>It seems to be severely damaged!</span>")
+		to_chat(user, SPAN_DANGER("It seems to be severely damaged!"))
 	else if(damage > damage_malfunction)
-		to_chat(user, "<span class='notice'>It seems to be damaged!</span>")
+		to_chat(user, SPAN_NOTICE("It seems to be damaged!"))
 	else if(damage)
 		to_chat(user, "It seems to be slightly damaged.")
 
 // Damages the component. Contains necessary checks. Negative damage "heals" the component.
-/obj/item/stock_parts/computer/proc/take_damage(var/amount)
+/obj/item/stock_parts/computer/proc/take_damage(amount)
 	damage += round(amount) 					// We want nice rounded numbers here.
 	damage = between(0, damage, max_damage)		// Clamp the value.
-
-// Called when component is disabled/enabled by the OS
-/obj/item/stock_parts/computer/proc/on_disable()
-/obj/item/stock_parts/computer/proc/on_enable(var/datum/extension/interactive/ntos/os)
-
-/obj/item/stock_parts/computer/proc/update_power_usage()
-	var/datum/extension/interactive/ntos/os = get_extension(loc, /datum/extension/interactive/ntos)
-	if(os)
-		os.recalc_power_usage()

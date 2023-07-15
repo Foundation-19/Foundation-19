@@ -9,7 +9,7 @@
 	var/heavy_effect_range = 1
 	var/light_effect_range = 2
 
-/obj/item/projectile/ion/on_impact(var/atom/A)
+/obj/item/projectile/ion/on_impact(atom/A)
 	empulse(A, heavy_effect_range, light_effect_range)
 	return 1
 
@@ -28,7 +28,7 @@
 	damage = 60
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
 
-/obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/bullet/gyro/on_hit(atom/target, blocked = 0)
 	explosion(target, -1, 0, 2)
 	return 1
 
@@ -42,7 +42,7 @@
 	nodamage = TRUE
 	var/firing_temperature = -40 // Temperature that will be added to the target
 
-/obj/item/projectile/temp/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/temp/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living))
 		var/mob/living/M = target
 		var/thermal_protection = 1
@@ -98,7 +98,7 @@
 	damage_type = TOX
 	nodamage = TRUE
 
-/obj/item/projectile/energy/floramut/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/energy/floramut/on_hit(atom/target, blocked = 0)
 	var/mob/living/M = target
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = M
@@ -107,7 +107,7 @@
 				H.apply_damage((rand(30,80)),IRRADIATE, damage_flags = DAM_DISPERSED)
 				H.Weaken(5)
 				for (var/mob/V in viewers(src))
-					V.show_message("<span class='warning'>[M] writhes in pain as \his vacuoles boil.</span>", 3, "<span class='warning'>You hear the crunching of leaves.</span>", 2)
+					V.show_message(SPAN_WARNING("[M] writhes in pain as \his vacuoles boil."), 3, SPAN_WARNING("You hear the crunching of leaves."), 2)
 			if(prob(35))
 				if(prob(80))
 					randmutb(M)
@@ -117,9 +117,9 @@
 					domutcheck(M,null)
 			else
 				M.adjustFireLoss(rand(5,15))
-				M.show_message("<span class='danger'>The radiation beam singes you!</span>")
+				M.show_message(SPAN_DANGER("The radiation beam singes you!"))
 	else if(istype(target, /mob/living/carbon/))
-		M.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
+		M.show_message(SPAN_NOTICE("The radiation beam dissipates harmlessly through your body."))
 	else
 		return 1
 
@@ -140,14 +140,14 @@
 	damage_type = TOX
 	nodamage = TRUE
 
-/obj/item/projectile/energy/florayield/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/energy/florayield/on_hit(atom/target, blocked = 0)
 	var/mob/M = target
 	if(ishuman(target)) //These rays make plantmen fat.
 		var/mob/living/carbon/human/H = M
 		if((H.species.species_flags & SPECIES_FLAG_IS_PLANT) && (H.nutrition < 500))
 			H.adjust_nutrition(30)
 	else if (istype(target, /mob/living/carbon/))
-		M.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
+		M.show_message(SPAN_NOTICE("The radiation beam dissipates harmlessly through your body."))
 	else
 		return 1
 
@@ -155,7 +155,7 @@
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
 
-/obj/item/projectile/beam/mindflayer/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/mindflayer/on_hit(atom/target, blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		M.confused += rand(5,8)

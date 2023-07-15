@@ -3,7 +3,7 @@
 /obj/structure/closet/secure_closet/miner
 	name = "miner's equipment"
 	closet_appearance = /decl/closet_appearance/secure_closet/mining
-	req_access = list(access_mining)
+	req_access = list(ACCESS_MINING)
 
 /obj/structure/closet/secure_closet/miner/WillContain()
 	return list(
@@ -131,6 +131,14 @@
 	build_from_parts = TRUE
 	hardware_color = COLOR_DIAMOND
 
+/obj/item/pickaxe/makeshift
+	name = "improvised pickaxe"
+	desc = "Anything is a pickaxe if you try hard enough."
+	icon_state = "pick_makeshift"
+	item_state = null
+	build_from_parts = FALSE
+	digspeed = 80
+	drill_verb = "chipping"
 /*****************************Shovel********************************/
 
 /obj/item/shovel
@@ -157,6 +165,14 @@
 	force = 5.0
 	throwforce = 7.0
 	w_class = ITEM_SIZE_SMALL
+
+/obj/item/shovel/makeshift
+	name = "improvised shovel"
+	desc = "A spoon is basically a tiny shovel."
+	icon_state = "shovel_makeshift"
+	item_state = null
+	force = 3.0
+	w_class = ITEM_SIZE_NORMAL
 
 // Flags.
 /obj/item/stack/flag
@@ -190,29 +206,29 @@
 	. = ..()
 	update_icon()
 
-/obj/item/stack/flag/attackby(var/obj/item/W, var/mob/user)
+/obj/item/stack/flag/attackby(obj/item/W, mob/user)
 	if(upright)
 		attack_hand(user)
 		return
 	return ..()
 
-/obj/item/stack/flag/attack_hand(var/mob/user)
+/obj/item/stack/flag/attack_hand(mob/user)
 	if(upright)
 		knock_down()
 		user.visible_message("\The [user] knocks down \the [singular_name].")
 		return
 	return ..()
 
-/obj/item/stack/flag/attack_self(var/mob/user)
+/obj/item/stack/flag/attack_self(mob/user)
 	var/turf/T = get_turf(src)
 
 	if(istype(T, /turf/space) || istype(T, /turf/simulated/open))
-		to_chat(user, "<span class='warning'>There's no solid surface to plant \the [singular_name] on.</span>")
+		to_chat(user, SPAN_WARNING("There's no solid surface to plant \the [singular_name] on."))
 		return
 
 	for(var/obj/item/stack/flag/F in T)
 		if(F.upright)
-			to_chat(user, "<span class='warning'>\The [F] is already planted here.</span>")
+			to_chat(user, SPAN_WARNING("\The [F] is already planted here."))
 			return
 
 	if(use(1)) // Don't skip use() checks even if you only need one! Stacks with the amount of 0 are possible, e.g. on synthetics!

@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(worker_names, list(
 	this stellar power are eusocial to an extent, and their society is shaped around the teeming masses \
 	of workers, soldiers, technicians and 'lesser' citizens supporting a throng of imperious and all-powerful queens."
 
-/decl/cultural_info/culture/ascent/get_random_name(var/gender)
+/decl/cultural_info/culture/ascent/get_random_name(gender)
 	if(gender == MALE)
 		return "[random_id(/datum/species/mantid, 10000, 99999)] [get_gyne_name()]"
 	else

@@ -15,17 +15,17 @@
 	if (stake)
 		stake.set_target(null)
 
-/obj/item/target/attackby(var/obj/item/W, var/mob/user)
+/obj/item/target/attackby(obj/item/W, mob/user)
 	if(isWelder(W))
 		var/obj/item/weldingtool/WT = W
 		if(WT.remove_fuel(0, user))
 			cut_overlays()
 			bulletholes.Cut()
 			hp = initial(hp)
-			to_chat(usr, "<span class='notice'>You slice off [src]'s uneven chunks of aluminium and scorch marks.</span>")
+			to_chat(usr, SPAN_NOTICE("You slice off [src]'s uneven chunks of aluminium and scorch marks."))
 			return
 
-/obj/item/target/attack_hand(var/mob/user)
+/obj/item/target/attack_hand(mob/user)
 	// taking pinned targets off!
 	if (stake)
 		stake.attack_hand(user)
@@ -41,7 +41,7 @@
 	desc = "A shooting target with a threatening silhouette."
 	hp = 2350 // alium onest too kinda
 
-/obj/item/target/bullet_act(var/obj/item/projectile/Proj)
+/obj/item/target/bullet_act(obj/item/projectile/Proj)
 	var/p_x = Proj.p_x + pick(0,0,0,0,0,-1,1) // really ugly way of coding "sometimes offset Proj.p_x!"
 	var/p_y = Proj.p_y + pick(0,0,0,0,0,-1,1)
 	var/decaltype = 1 // 1 - scorch, 2 - bullet
@@ -57,8 +57,8 @@
 		hp -= Proj.damage
 		if(hp <= 0)
 			for(var/mob/O in oviewers())
-				if ((O.client && !( O.blinded )))
-					to_chat(O, "<span class='warning'>\The [src] breaks into tiny pieces and collapses!</span>")
+				if (O.client && O.can_see())
+					to_chat(O, SPAN_WARNING("\The [src] breaks into tiny pieces and collapses!"))
 			qdel(src)
 
 		// Create a temporary object to represent the damage
@@ -123,7 +123,7 @@
 	var/b2y1 = 0
 	var/b2y2 = 0
 
-/datum/bullethole/New(var/obj/item/target/Target, var/pixel_x = 0, var/pixel_y = 0)
+/datum/bullethole/New(obj/item/target/Target, pixel_x = 0, pixel_y = 0)
 	if(!Target)
 		return
 

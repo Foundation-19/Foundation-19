@@ -364,13 +364,6 @@ STARLIGHT 0
 ## Uncomment this line to announce shuttle dock announcements to the main IRC channel, if MAIN_IRC has also been setup.
 # ANNOUNCE_EVAC_TO_IRC
 
-## Uncomment to enable map voting; you'll need to use the script at tools/server.sh or an equivalent for it to take effect
-## You'll also likely need to enable WAIT_FOR_SIGUSR1 below
-# MAP_SWITCHING
-
-## Uncomment to enable an automatic map vote and switch at end of round. MAP_SWITCHING must also be enabled.
-# AUTO_MAP_VOTE
-
 ## Uncomment to make Dream Daemon refuse to reboot for any reason other than SIGUSR1
 # WAIT_FOR_SIGUSR1
 
@@ -455,3 +448,18 @@ RADIATION_LOWER_LIMIT 0.15
 ## The delay in deciseconds between stat() updates.
 ## Lower can be more responsive to scene changes and updates but has a higher client/server overhead.
 # STAT_DELAY 5
+
+## Uncomment below to enable the Panic Bunker
+#USE_PANIC_BUNKER
+
+## Uncomment and add a message below to send to people when they attempt to join during Panic Bunker
+#PANIC_BUNKER_MESSAGE Your client's age is below a day on our server
+
+## Uncomment and add an amount in days below for how many days it must have been since the client first connected to join
+#PANIC_BUNKER_AGE 1
+
+## Uncomment to enable BCCM (IP checking and ASN banning utility). Warning: requires an active database connection.
+#USE_BCCM
+
+## Whether or not timelocks for roles are enabled. Comment out to disable.
+USE_TIMELOCKS

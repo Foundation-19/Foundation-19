@@ -44,7 +44,7 @@
 	// In case of overlap, all affected prefixes are given their default key
 	reset_duplicate_keys()
 
-/datum/category_item/player_setup_item/player_global/prefixes/content(var/mob/user)
+/datum/category_item/player_setup_item/player_global/prefixes/content(mob/user)
 	. += "<b>Prefix Keys:</b><br>"
 	. += "<table>"
 	for(var/prefix_name in prefix_by_name)
@@ -54,7 +54,7 @@
 		. += "<tr><td>[prefix_instance.name]</td><td>[pref.prefix_keys_by_type[prefix_instance.type]]</td><td>"
 
 		if(prefix_instance.is_locked)
-			. += "<span class='linkOff'>Change</span>"
+			. += SPAN_CLASS("linkOff","Change")
 		else
 
 			. += "<a href='?src=\ref[src];change_prefix=\ref[prefix_instance]'>Change</a>"
@@ -62,13 +62,13 @@
 		. += "</td><td>"
 
 		if(prefix_instance.is_locked || current_prefix == prefix_instance.default_key)
-			. += "<span class='linkOff'>Reset</span>"
+			. += SPAN_CLASS("linkOff","Reset")
 		else
 			. += "<a href='?src=\ref[src];reset_prefix=\ref[prefix_instance]'>Reset</a>"
 		. += "</td></tr>"
 	. += "</table>"
 
-/datum/category_item/player_setup_item/player_global/prefixes/OnTopic(var/href, var/list/href_list, var/mob/user)
+/datum/category_item/player_setup_item/player_global/prefixes/OnTopic(href, list/href_list, mob/user)
 	if(href_list["change_prefix"])
 		var/decl/prefix/prefix_instance = locate(href_list["change_prefix"])
 		if(!istype(prefix_instance) || prefix_instance.is_locked)
@@ -136,7 +136,7 @@
 				var/decl/prefix/prefix_instance = decls_repository.get_decl(prefix_type)
 				pref.prefix_keys_by_type[prefix_instance.type] = prefix_instance.default_key
 
-/mob/proc/get_prefix_key(var/prefix_type)
+/mob/proc/get_prefix_key(prefix_type)
 	if(client && client.prefs)
 		return client.prefs.prefix_keys_by_type[prefix_type]
 	var/decl/prefix/prefix_instance = decls_repository.get_decl(prefix_type)

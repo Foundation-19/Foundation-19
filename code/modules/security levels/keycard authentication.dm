@@ -20,7 +20,7 @@
 	power_channel = ENVIRON
 
 /obj/machinery/keycard_auth/attack_ai(mob/user as mob)
-	to_chat(user, "<span class='warning'>A firewall prevents you from interfacing with this device!</span>")
+	to_chat(user, SPAN_WARNING("A firewall prevents you from interfacing with this device!"))
 	return
 
 /obj/machinery/keycard_auth/attackby(obj/item/W as obj, mob/user as mob)
@@ -29,14 +29,14 @@
 		return
 	if(istype(W,/obj/item/card/id))
 		var/obj/item/card/id/ID = W
-		if(access_keycard_auth in ID.access)
+		if(ACCESS_KEYAUTH in ID.access)
 			if(active == 1)
 				//This is not the device that made the initial request. It is the device confirming the request.
 				if(event_source && event_source.event_triggered_by != usr)
 					event_source.confirmed = 1
 					event_source.event_confirmed_by = usr
 				else
-					to_chat(user, "<span class='warning'>Unable to confirm, DNA matches that of origin.</span>")
+					to_chat(user, SPAN_WARNING("Unable to confirm, DNA matches that of origin."))
 			else if(screen == 2)
 				event_triggered_by = usr
 				broadcast_request() //This is the device making the initial event request. It needs to broadcast to other devices
@@ -64,15 +64,6 @@
 	if(screen == 1)
 		dat += "Select an event to trigger:<ul>"
 
-		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-		if(security_state.current_security_level == security_state.severe_security_level)
-			dat += "<li>Cannot modify the alert level at this time: [security_state.severe_security_level.name] engaged.</li>"
-		else
-			if(security_state.current_security_level == security_state.high_security_level)
-				dat += "<li><A href='?src=\ref[src];triggerevent=Revert alert'>Disengage [security_state.high_security_level.name]</A></li>"
-			else
-				dat += "<li><A href='?src=\ref[src];triggerevent=Red alert'>Engage [security_state.high_security_level.name]</A></li>"
-
 		if(!config.ert_admin_call_only)
 			dat += "<li><A href='?src=\ref[src];triggerevent=Emergency Response Team'>Emergency Response Team</A></li>"
 
@@ -87,7 +78,7 @@
 		show_browser(user, dat, "window=keycard_auth;size=500x250")
 	return
 
-/obj/machinery/keycard_auth/CanUseTopic(var/mob/user, href_list)
+/obj/machinery/keycard_auth/CanUseTopic(mob/user, href_list)
 	if(busy)
 		to_chat(user, "This device is busy.")
 		return STATUS_CLOSE
@@ -130,10 +121,10 @@
 	if(confirmed)
 		confirmed = 0
 		trigger_event(event)
-		log_and_message_admins("triggered and [key_name(event_confirmed_by)] confirmed event [event]", event_triggered_by || usr)
+		log_and_message_staff("triggered and [key_name(event_confirmed_by)] confirmed event [event]", event_triggered_by || usr)
 	reset()
 
-/obj/machinery/keycard_auth/proc/receive_request(var/obj/machinery/keycard_auth/source)
+/obj/machinery/keycard_auth/proc/receive_request(obj/machinery/keycard_auth/source)
 	if(stat & (BROKEN|NOPOWER))
 		return
 	event_source = source
@@ -150,15 +141,6 @@
 
 /obj/machinery/keycard_auth/proc/trigger_event()
 	switch(event)
-		if("Red alert")
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-			security_state.stored_security_level = security_state.current_security_level
-			security_state.set_security_level(security_state.high_security_level)
-			SSstatistics.add_field("alert_keycard_auth_red",1)
-		if("Revert alert")
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-			security_state.set_security_level(security_state.stored_security_level)
-			SSstatistics.add_field("alert_keycard_revert_red",1)
 		if("Grant Emergency Maintenance Access")
 			GLOB.using_map.make_maint_all_access()
 			SSstatistics.add_field("alert_keycard_auth_maintGrant",1)
@@ -167,7 +149,7 @@
 			SSstatistics.add_field("alert_keycard_auth_maintRevoke",1)
 		if("Emergency Response Team")
 			if(is_ert_blocked())
-				to_chat(usr, "<span class='warning'>All emergency response teams are dispatched and can not be called at this time.</span>")
+				to_chat(usr, SPAN_WARNING("All emergency response teams are dispatched and can not be called at this time."))
 				return
 
 			trigger_armed_response_team(1)

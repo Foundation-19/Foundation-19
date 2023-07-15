@@ -3,7 +3,7 @@
 	desc = "A little floor repairing robot, he looks so excited!"
 	icon = 'icons/mob/bot/floorbot.dmi'
 	icon_state = "floorbot0"
-	req_access = list(list(access_construction, access_robotics))
+	req_access = list(list(ACCESS_CONSTRUCTION, ACCESS_ROBOTICS))
 	wait_if_pulled = 1
 	min_target_dist = 0
 
@@ -58,7 +58,7 @@
 		if(2)
 			. += "ERROROROROROR-----"
 
-/mob/living/bot/floorbot/ProcessCommand(var/mob/user, var/command, var/href_list)
+/mob/living/bot/floorbot/ProcessCommand(mob/user, command, href_list)
 	..()
 	if(CanAccessPanel(user))
 		switch(command)
@@ -75,12 +75,12 @@
 				if(emagged < 2)
 					emagged = !emagged
 
-/mob/living/bot/floorbot/emag_act(var/remaining_charges, var/mob/user)
+/mob/living/bot/floorbot/emag_act(remaining_charges, mob/user)
 	. = ..()
 	if(!emagged)
 		emagged = TRUE
 		if(user)
-			to_chat(user, "<span class='notice'>The [src] buzzes and beeps.</span>")
+			to_chat(user, SPAN_NOTICE("The [src] buzzes and beeps."))
 		return 1
 
 /mob/living/bot/floorbot/handleRegular()
@@ -108,7 +108,7 @@
 				target = S
 				return
 
-/mob/living/bot/floorbot/confirmTarget(var/atom/A) // The fact that we do some checks twice may seem confusing but remember that the bot's settings may be toggled while it's moving and we want them to stop in that case
+/mob/living/bot/floorbot/confirmTarget(atom/A) // The fact that we do some checks twice may seem confusing but remember that the bot's settings may be toggled while it's moving and we want them to stop in that case
 	anchored = FALSE
 	if(!..())
 		return 0
@@ -128,7 +128,7 @@
 		else
 			return (amount && (T.broken || T.burnt || (improvefloors && !T.flooring)))
 
-/mob/living/bot/floorbot/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/bot/floorbot/UnarmedAttack(atom/A, proximity)
 	if(!..())
 		return
 
@@ -143,12 +143,12 @@
 		busy = 1
 		update_icons()
 		if(F.flooring)
-			visible_message("<span class='warning'>[src] begins to tear the floor tile from the floor.</span>")
+			visible_message(SPAN_WARNING("[src] begins to tear the floor tile from the floor."))
 			if(do_after(src, 50, F))
 				F.break_tile_to_plating()
 				addTiles(1)
 		else
-			visible_message("<span class='danger'>[src] begins to tear through the floor!</span>")
+			visible_message(SPAN_DANGER("[src] begins to tear through the floor!"))
 			if(do_after(src, 150, F)) // Extra time because this can and will kill.
 				F.ReplaceWithLattice()
 				addTiles(1)
@@ -159,7 +159,7 @@
 		if(F.broken || F.burnt)
 			busy = 1
 			update_icons()
-			visible_message("<span class='notice'>[src] begins to remove the broken floor.</span>")
+			visible_message(SPAN_NOTICE("[src] begins to remove the broken floor."))
 			anchored = TRUE
 			if(do_after(src, 50, F))
 				if(F.broken || F.burnt)
@@ -171,7 +171,7 @@
 		else if(!F.flooring && amount)
 			busy = 1
 			update_icons()
-			visible_message("<span class='notice'>[src] begins to improve the floor.</span>")
+			visible_message(SPAN_NOTICE("[src] begins to improve the floor."))
 			anchored = TRUE
 			if(do_after(src, 50, F))
 				if(!F.flooring)
@@ -182,7 +182,7 @@
 			update_icons()
 	else if(istype(A, /obj/item/stack/tile/floor) && amount < maxAmount)
 		var/obj/item/stack/tile/floor/T = A
-		visible_message("<span class='notice'>\The [src] begins to collect tiles.</span>")
+		visible_message(SPAN_NOTICE("\The [src] begins to collect tiles."))
 		busy = 1
 		update_icons()
 		anchored = TRUE
@@ -197,7 +197,7 @@
 	else if(istype(A, /obj/item/stack/material) && amount + 4 <= maxAmount)
 		var/obj/item/stack/material/M = A
 		if(M.get_material_name() == MATERIAL_STEEL)
-			visible_message("<span class='notice'>\The [src] begins to make tiles.</span>")
+			visible_message(SPAN_NOTICE("\The [src] begins to make tiles."))
 			busy = 1
 			anchored = TRUE
 			update_icons()
@@ -209,7 +209,7 @@
 
 /mob/living/bot/floorbot/explode()
 	turn_off()
-	visible_message("<span class='danger'>[src] blows apart!</span>")
+	visible_message(SPAN_DANGER("[src] blows apart!"))
 	var/turf/Tsec = get_turf(src)
 
 
@@ -238,7 +238,7 @@
 
 	qdel(src)
 
-/mob/living/bot/floorbot/proc/addTiles(var/am)
+/mob/living/bot/floorbot/proc/addTiles(am)
 	amount += am
 	if(amount < 0)
 		amount = 0

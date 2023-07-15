@@ -1,6 +1,5 @@
 /mob
 	density = TRUE
-	plane = DEFAULT_PLANE
 	layer = MOB_LAYER
 
 	appearance_flags = PIXEL_SCALE | LONG_GLIDE
@@ -34,6 +33,13 @@
 	var/computer_id = null
 	var/last_ckey
 
+	//LOGGING STUFF: F19 Admin Logging Suite
+	var/list/say_log = list()
+	var/list/emote_log = list()
+	var/list/ooc_log = list()
+	var/list/dsay_log = list()
+	var/list/interact_log = list()
+
 	var/stat = CONSCIOUS //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
 	var/obj/screen/cells = null
@@ -49,6 +55,8 @@
 	var/obj/screen/fire = null
 	var/obj/screen/bodytemp = null
 	var/obj/screen/healths = null
+	var/obj/screen/sanity_icon = null
+	var/obj/screen/blink_icon = null
 	var/obj/screen/throw_icon = null
 	var/obj/screen/nutrition_icon = null
 	var/obj/screen/hydration_icon = null
@@ -181,7 +189,6 @@
 	var/mob/teleop = null
 
 	var/turf/listed_turf = null  	//the current turf being examined in the stat panel
-	var/list/shouldnt_see = list()	//list of objects that this mob shouldn't see in the stat panel. this silliness is needed because of AI alt+click and cult blood runes
 
 	var/mob_size = MOB_MEDIUM
 
@@ -201,3 +208,7 @@
 
 	///Allows a datum to intercept all click calls this mob is the source of
 	var/datum/click_intercept
+
+	var/datum/player_panel/mob_panel
+
+	var/list/datum/action/actions = list()

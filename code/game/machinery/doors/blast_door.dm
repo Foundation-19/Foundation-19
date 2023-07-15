@@ -25,6 +25,9 @@
 	var/open_sound = 'sound/machines/blastdoor_open.ogg'
 	var/close_sound = 'sound/machines/blastdoor_close.ogg'
 
+	var/open_plane = DEFAULT_PLANE
+	var/closed_plane = OBJ_PLANE
+
 	closed_layer = ABOVE_WINDOW_LAYER
 	dir = 1
 	explosion_resistance = 25
@@ -33,6 +36,7 @@
 	//Most blast doors are infrequently toggled and sometimes used with regular doors anyways,
 	//turning this off prevents awkward zone geometry in places like medbay lobby, for example.
 	block_air_zones = 0
+	explosion_block = 3
 
 	var/begins_closed = TRUE
 	var/material/implicit_material
@@ -59,6 +63,7 @@
 		set_density(0)
 		set_opacity(0)
 		layer = open_layer
+		plane = open_plane
 
 	implicit_material = SSmaterials.get_material_by_name(MATERIAL_PLASTEEL)
 
@@ -106,6 +111,7 @@
 	set_opacity(0)
 	sleep(15)
 	layer = open_layer
+	plane = open_plane
 	operating = 0
 
 // Proc: force_close()
@@ -115,6 +121,7 @@
 	operating = 1
 	playsound(src.loc, close_sound, 100, 1)
 	layer = closed_layer
+	plane = closed_plane
 	flick(icon_state_closing, src)
 	set_density(1)
 	update_nearby_tiles()
@@ -143,30 +150,30 @@
 	add_fingerprint(user, 0, C)
 	if(isCrowbar(C) || (istype(C, /obj/item/material/twohanded/fireaxe) && C:wielded == 1))
 		if(((stat & NOPOWER) || (stat & BROKEN)) && !( operating ))
-			to_chat(user, "<span class='notice'>You begin prying at \the [src]...</span>")
+			to_chat(user, SPAN_NOTICE("You begin prying at \the [src]..."))
 			if(do_after(user, 2 SECONDS, src))
 				force_toggle()
 		else
-			to_chat(user, "<span class='notice'>[src]'s motors resist your effort.</span>")
+			to_chat(user, SPAN_NOTICE("[src]'s motors resist your effort."))
 		return
 	if(istype(C, /obj/item/stack/material) && C.get_material_name() == MATERIAL_PLASTEEL)
 		var/amt = Ceiling((maxhealth - health)/150)
 		if(!amt)
-			to_chat(user, "<span class='notice'>\The [src] is already fully functional.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] is already fully functional."))
 			return
 		var/obj/item/stack/P = C
 		if(!P.can_use(amt))
-			to_chat(user, "<span class='warning'>You don't have enough sheets to repair this! You need at least [amt] sheets.</span>")
+			to_chat(user, SPAN_WARNING("You don't have enough sheets to repair this! You need at least [amt] sheets."))
 			return
-		to_chat(user, "<span class='notice'>You begin repairing \the [src]...</span>")
+		to_chat(user, SPAN_NOTICE("You begin repairing \the [src]..."))
 		if(do_after(user, 5 SECONDS, src))
 			if(P.use(amt))
-				to_chat(user, "<span class='notice'>You have repaired \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You have repaired \the [src]."))
 				repair()
 			else
-				to_chat(user, "<span class='warning'>You don't have enough sheets to repair this! You need at least [amt] sheets.</span>")
+				to_chat(user, SPAN_WARNING("You don't have enough sheets to repair this! You need at least [amt] sheets."))
 		else
-			to_chat(user, "<span class='warning'>You must remain still while working on \the [src].</span>")
+			to_chat(user, SPAN_WARNING("You must remain still while working on \the [src]."))
 	check_force(C, user)
 
 
@@ -208,7 +215,7 @@
 	if(air_group) return 1
 	return ..()
 
-/obj/machinery/door/blast/do_simple_ranged_interaction(var/mob/user)
+/obj/machinery/door/blast/do_simple_ranged_interaction(mob/user)
 	return TRUE
 
 // Used with mass drivers to time the close.
@@ -294,6 +301,8 @@
 
 	open_sound = 'sound/machines/shutters_open.ogg'
 	close_sound = 'sound/machines/shutters_close.ogg'
+	open_plane = OBJ_PLANE
+	plane = OBJ_PLANE
 	min_force = 15
 	maxhealth = 500
 	explosion_resistance = 10
@@ -302,7 +311,7 @@
 /obj/machinery/door/blast/shutters/open
 	begins_closed = FALSE
 
-/obj/machinery/door/blast/shutters/attack_generic(var/mob/user, var/damage)
+/obj/machinery/door/blast/shutters/attack_generic(mob/user, damage)
 	if(stat & BROKEN)
 		qdel(src)
 	..()

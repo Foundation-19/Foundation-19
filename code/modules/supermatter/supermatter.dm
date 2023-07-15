@@ -132,17 +132,17 @@
 	if(get_status() && (get_epr() < 0.5))
 		if(!aw_EPR)
 			var/area/A = get_area(src)
-			log_and_message_admins("WARN: Supermatter EPR value low. Possible core breach detected in [A.name]", null, src)
+			log_and_message_staff("WARN: Supermatter EPR value low. Possible core breach detected in [A.name]", null, src)
 		aw_EPR = TRUE
 	else
 		aw_EPR = FALSE
 
-/obj/machinery/power/supermatter/proc/status_adminwarn_check(var/min_status, var/current_state, var/message, var/send_to_irc = FALSE)
+/obj/machinery/power/supermatter/proc/status_adminwarn_check(min_status, current_state, message, send_to_irc = FALSE)
 	var/status = get_status()
 	if(status >= min_status)
 		if(!current_state)
 			var/area/A = get_area(src)
-			log_and_message_admins(message + " in [A.name]", null, src)
+			log_and_message_staff(message + " in [A.name]", null, src)
 			if(send_to_irc)
 				send2adminirc(message + " in [A.name]")
 		return TRUE
@@ -192,7 +192,7 @@
 	if(exploded)
 		return
 
-	log_and_message_admins("Supermatter delaminating at [x] [y] [z]")
+	log_and_message_staff("Supermatter delaminating at [x] [y] [z]")
 	anchored = TRUE
 	grav_pulling = 1
 	exploded = 1
@@ -273,7 +273,7 @@
 			to_chat(user, "Eyeballing it, you place the relative EER at around [display_power] MeV/cm3.")
 
 //Changes color and luminosity of the light to these values if they were not already set
-/obj/machinery/power/supermatter/proc/shift_light(var/lum, var/clr)
+/obj/machinery/power/supermatter/proc/shift_light(lum, clr)
 	if(lum != light_outer_range || clr != light_color)
 		set_light(1, 0.1, lum, l_color = clr)
 
@@ -310,7 +310,7 @@
 			GLOB.using_map.unbolt_saferooms() // torch
 			for(var/mob/M in GLOB.player_list)
 				var/turf/T = get_turf(M)
-				if(T && (T.z in GLOB.using_map.station_levels) && !istype(M,/mob/new_player) && !isdeaf(M))
+				if(T && (T.z in GLOB.using_map.station_levels) && !istype(M,/mob/new_player) && M.can_hear())
 					sound_to(M, 'sound/ambience/matteralarm.ogg')
 		else if(safe_warned && public_alert)
 			GLOB.global_announcer.autosay(alert_msg, "Supermatter Monitor")
@@ -419,7 +419,7 @@
 	return 1
 
 
-/obj/machinery/power/supermatter/bullet_act(var/obj/item/projectile/Proj)
+/obj/machinery/power/supermatter/bullet_act(obj/item/projectile/Proj)
 	var/turf/L = loc
 	if(!istype(L))		// We don't run process() when we are in space
 		return 0	// This stops people from being able to really power up the supermatter
@@ -455,7 +455,7 @@
 	Consume(user)
 
 // This is purely informational UI that may be accessed by AIs or robots
-/obj/machinery/power/supermatter/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/power/supermatter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/data[0]
 
 	data["integrity_percentage"] = round(get_integrity())
@@ -487,6 +487,7 @@
 		to_chat(user, SPAN_NOTICE("You repair some of the damage to \the [src] with \the [W]."))
 		damage = max(damage - 10, 0)
 		playsound(src, 'sound/effects/tape.ogg', 25)
+		show_sound_effect(src, user, soundicon = SFX_ICON_SMALL)
 
 	user.visible_message(
 		SPAN_WARNING("\The [user] touches \a [W] to \the [src], then flinches away as it flashes instantly into dust. Silence blankets the air."),
@@ -518,7 +519,7 @@
 	Consume(AM)
 
 
-/obj/machinery/power/supermatter/proc/Consume(var/mob/living/user)
+/obj/machinery/power/supermatter/proc/Consume(mob/living/user)
 	if(istype(user))
 		user.dust()
 		power += 200
@@ -537,7 +538,7 @@
 	SSradiation.radiate(src, rads)
 
 
-/proc/supermatter_pull(var/atom/target, var/pull_range = 255, var/pull_power = STAGE_FIVE)
+/proc/supermatter_pull(atom/target, pull_range = 255, pull_power = STAGE_FIVE)
 	for(var/atom/A in range(pull_range, target))
 		A.singularity_pull(target, pull_power)
 
@@ -547,7 +548,7 @@
 /obj/machinery/power/supermatter/RepelAirflowDest(n)
 	return
 
-/obj/machinery/power/supermatter/ex_act(var/severity)
+/obj/machinery/power/supermatter/ex_act(severity)
 	..()
 	switch(severity)
 		if(1.0)
@@ -556,7 +557,7 @@
 			power *= 3
 		if(3.0)
 			power *= 2
-	log_and_message_admins("WARN: Explosion near the Supermatter! New EER: [power].")
+	log_and_message_staff("WARN: Explosion near the Supermatter! New EER: [power].")
 
 /obj/machinery/power/supermatter/shard //Small subtype, less efficient and more sensitive, but less boom.
 	name = "supermatter shard"

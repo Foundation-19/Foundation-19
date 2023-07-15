@@ -5,7 +5,7 @@
 	desc = "A display case for prized possessions. It taunts you to kick it."
 	density = TRUE
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	alpha = 150
 	health_max = 14
 	damage_hitsound = 'sound/effects/Glasshit.ogg'
@@ -51,7 +51,8 @@
 		new /obj/item/material/shard(loc)
 		for(var/atom/movable/AM in src)
 			AM.dropInto(loc)
-		playsound(src, "shatter", 70, 1)
+		playsound(src, SFX_SHATTER, 70, 1)
+		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		update_icon()
 
 /obj/structure/displaycase/on_update_icon()
@@ -66,6 +67,6 @@
 /obj/structure/displaycase/attack_hand(mob/user as mob)
 	add_fingerprint(user)
 	if(is_alive())
-		to_chat(usr, text("<span class='warning'>You kick the display case.</span>"))
-		visible_message("<span class='warning'>[usr] kicks the display case.</span>")
+		to_chat(usr, text(SPAN_WARNING("You kick the display case.")))
+		visible_message(SPAN_WARNING("[usr] kicks the display case."))
 		damage_health(2, BRUTE)

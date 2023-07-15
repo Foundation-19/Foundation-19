@@ -76,7 +76,7 @@
 			to_chat(user, "The [src] is already empty.")
 
 
-/obj/item/portable_destructive_analyzer/afterattack(var/atom/target, var/mob/living/user, proximity)
+/obj/item/portable_destructive_analyzer/afterattack(atom/target, mob/living/user, proximity)
 	if(!target)
 		return
 	if(!proximity)
@@ -91,7 +91,7 @@
 		I.forceMove(src)
 		loaded_item = I
 		for(var/mob/M in viewers())
-			M.show_message(text("<span class='notice'>[user] adds the [I] to the [src].</span>"), 1)
+			M.show_message(text(SPAN_NOTICE("[user] adds the [I] to the [src].")), 1)
 		desc = initial(desc) + "<br>It is holding \the [loaded_item]."
 		flick("portable_analyzer_load", src)
 		icon_state = "portable_analyzer_full"
@@ -173,7 +173,7 @@
 	icon = 'icons/obj/weapons/other.dmi'
 	icon_state = "autoharvester"
 
-/obj/item/robot_harvester/afterattack(var/atom/target, var/mob/living/user, proximity)
+/obj/item/robot_harvester/afterattack(atom/target, mob/living/user, proximity)
 	if(!target)
 		return
 	if(!proximity)
@@ -270,8 +270,8 @@
 /obj/item/form_printer/attack_self(mob/user as mob)
 	deploy_paper(get_turf(src))
 
-/obj/item/form_printer/proc/deploy_paper(var/turf/T)
-	T.visible_message("<span class='notice'>\The [src.loc] dispenses a sheet of crisp white paper.</span>")
+/obj/item/form_printer/proc/deploy_paper(turf/T)
+	T.visible_message(SPAN_NOTICE("\The [src.loc] dispenses a sheet of crisp white paper."))
 	new /obj/item/paper(T)
 
 
@@ -435,23 +435,23 @@
 
 /obj/item/robot_rack/attack_self(mob/user)
 	if(!length(held))
-		to_chat(user, "<span class='notice'>The rack is empty.</span>")
+		to_chat(user, SPAN_NOTICE("The rack is empty."))
 		return
 	var/obj/item/R = held[length(held)]
 	R.dropInto(loc)
 	held -= R
 	R.attack_self(user) // deploy it
-	to_chat(user, "<span class='notice'>You deploy [R].</span>")
+	to_chat(user, SPAN_NOTICE("You deploy [R]."))
 	R.add_fingerprint(user)
 
 /obj/item/robot_rack/resolve_attackby(obj/O, mob/user, click_params)
 	if(istype(O, object_type))
 		if(length(held) < capacity)
-			to_chat(user, "<span class='notice'>You collect [O].</span>")
+			to_chat(user, SPAN_NOTICE("You collect [O]."))
 			O.forceMove(src)
 			held += O
 			return
-		to_chat(user, "<span class='notice'>\The [src] is full and can't store any more items.</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] is full and can't store any more items."))
 		return
 	if(istype(O, interact_type))
 		O.attack_hand(user)
@@ -471,7 +471,7 @@
 		/obj/item/reagent_containers/food/snacks/fish = 1.5
 	)
 
-/obj/item/bioreactor/attack_self(var/mob/user)
+/obj/item/bioreactor/attack_self(mob/user)
 	if(contents.len >= 1)
 		var/obj/item/removing = contents[1]
 		user.put_in_hands(removing)
@@ -479,7 +479,7 @@
 	else
 		to_chat(user, SPAN_WARNING("There is nothing loaded into \the [src]."))
 
-/obj/item/bioreactor/afterattack(var/atom/movable/target, var/mob/user, var/proximity_flag, var/click_parameters)
+/obj/item/bioreactor/afterattack(atom/movable/target, mob/user, proximity_flag, click_parameters)
 	if(!proximity_flag || !istype(target))
 		return
 

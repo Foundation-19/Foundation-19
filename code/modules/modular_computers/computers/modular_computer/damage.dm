@@ -1,7 +1,7 @@
 /obj/item/modular_computer/examine(mob/user)
 	. = ..()
 	if(damage > broken_damage)
-		to_chat(user, "<span class='danger'>It is heavily damaged!</span>")
+		to_chat(user, SPAN_DANGER("It is heavily damaged!"))
 	else if(damage)
 		to_chat(user, "It is damaged.")
 
@@ -16,7 +16,7 @@
 			H.take_damage(rand(10,30))
 	qdel(src)
 
-/obj/item/modular_computer/proc/take_damage(var/amount, var/component_probability, var/damage_casing = 1, var/randomize = 1)
+/obj/item/modular_computer/proc/take_damage(amount, damtype = BRUTE, user, used_weapon, bypass_resist = FALSE,  component_probability, damage_casing = TRUE, randomize = TRUE)
 	if(!modifiable)
 		return
 
@@ -38,17 +38,17 @@
 
 // Stronger explosions cause serious damage to internal components
 // Minor explosions are mostly mitigitated by casing.
-/obj/item/modular_computer/ex_act(var/severity)
+/obj/item/modular_computer/ex_act(severity)
 	take_damage(rand(100,200) / severity, 30 / severity)
 
 // EMPs are similar to explosions, but don't cause physical damage to the casing. Instead they screw up the components
-/obj/item/modular_computer/emp_act(var/severity)
+/obj/item/modular_computer/emp_act(severity)
 	take_damage(rand(100,200) / severity, 50 / severity, 0)
 
 // "Stun" weapons can cause minor damage to components (short-circuits?)
 // "Burn" damage is equally strong against internal components and exterior casing
 // "Brute" damage mostly damages the casing.
-/obj/item/modular_computer/bullet_act(var/obj/item/projectile/Proj)
+/obj/item/modular_computer/bullet_act(obj/item/projectile/Proj)
 	switch(Proj.damage_type)
 		if(BRUTE)
 			take_damage(Proj.damage, Proj.damage / 2)

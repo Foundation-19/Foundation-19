@@ -158,7 +158,7 @@ var/list/debug_verbs = list (
 
 	if(!check_rights(R_DEBUG)) return
 
-	verbs += debug_verbs
+	add_verb(src, debug_verbs)
 
 	SSstatistics.add_field_details("admin_verb","mDV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -168,7 +168,7 @@ var/list/debug_verbs = list (
 
 	if(!check_rights(R_DEBUG)) return
 
-	verbs -= debug_verbs
+	remove_verb(src, debug_verbs)
 
 	SSstatistics.add_field_details("admin_verb","hDV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -178,7 +178,7 @@ var/list/debug_verbs = list (
 /client/var/usedZAScolors = 0
 /client/var/list/image/ZAScolors = list()
 
-/client/proc/recurse_zone(var/zone/Z, var/recurse_level =1)
+/client/proc/recurse_zone(zone/Z, recurse_level =1)
 	testZAScolors_zones += Z
 	if(recurse_level > 10)
 		return
@@ -203,7 +203,7 @@ var/list/debug_verbs = list (
 	var/turf/simulated/location = get_turf(usr)
 
 	if(!istype(location, /turf/simulated))
-		to_chat(src, "<Span class='warning'>This debug tool can only be used while on a simulated turf.</span>")
+		to_chat(src, SPAN_WARNING("This debug tool can only be used while on a simulated turf."))
 		return
 
 	if(!usedZAScolors)
@@ -327,7 +327,7 @@ var/list/debug_verbs = list (
 	log_debug("There are [count] objects of type [type_path] in the game world")
 	SSstatistics.add_field_details("admin_verb","mOBJ") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/proc/get_zas_image(var/turf/T, var/icon_state)
+/proc/get_zas_image(turf/T, icon_state)
 	return image_repository.atom_image(T, 'icons/misc/debug_group.dmi', icon_state, plane = DEFAULT_PLANE, layer = ABOVE_TILE_LAYER)
 
 //Special for Cakey

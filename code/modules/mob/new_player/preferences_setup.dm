@@ -1,6 +1,6 @@
 #define ASSIGN_LIST_TO_COLORS(L, R, G, B) if(L) { R = L[1]; G = L[2]; B = L[3]; }
 
-/datum/preferences/proc/randomize_appearance_and_body_for(var/mob/living/carbon/human/H)
+/datum/preferences/proc/randomize_appearance_and_body_for(mob/living/carbon/human/H)
 	//The mob should have a gender you want before running this proc. Will run fine without H
 	var/datum/species/current_species = all_species[species]
 	if(!current_species) current_species = all_species[SPECIES_HUMAN]
@@ -42,7 +42,7 @@
 
 #undef ASSIGN_LIST_TO_COLORS
 
-/datum/preferences/proc/dress_preview_mob(var/mob/living/carbon/human/mannequin)
+/datum/preferences/proc/dress_preview_mob(mob/living/carbon/human/mannequin)
 	var/update_icon = FALSE
 	copy_to(mannequin, TRUE)
 
@@ -69,7 +69,6 @@
 
 	if((equip_preview_mob & EQUIP_PREVIEW_LOADOUT) && !(previewJob && (equip_preview_mob & EQUIP_PREVIEW_JOB) && (previewJob.type == /datum/job/ai || previewJob.type == /datum/job/cyborg)))
 		// Equip custom gear loadout, replacing any job items
-		var/list/loadout_taken_slots = list()
 		for(var/thing in Gear())
 			var/datum/gear/G = gear_datums[thing]
 			if(G)
@@ -88,8 +87,7 @@
 				if(!permitted)
 					continue
 
-				if(G.slot && G.slot != slot_tie && !(G.slot in loadout_taken_slots) && G.spawn_on_mob(mannequin, gear_list[gear_slot][G.display_name]))
-					loadout_taken_slots.Add(G.slot)
+				if(G.slot && G.slot != slot_tie && G.spawn_in_storage_or_drop(mannequin, gear_list[gear_slot][G.display_name]))
 					update_icon = TRUE
 
 	if(update_icon)

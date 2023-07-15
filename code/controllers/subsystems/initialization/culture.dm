@@ -7,7 +7,7 @@ SUBSYSTEM_DEF(culture)
 	var/list/cultural_info_by_path =      list()
 	var/list/tagged_info =                list()
 
-/datum/controller/subsystem/culture/proc/get_all_entries_tagged_with(var/token)
+/datum/controller/subsystem/culture/proc/get_all_entries_tagged_with(token)
 	return tagged_info[token]
 
 /datum/controller/subsystem/culture/Initialize()
@@ -28,5 +28,5 @@ SUBSYSTEM_DEF(culture)
 			tag_list[culture.name] = culture
 	. = ..()
 
-/datum/controller/subsystem/culture/proc/get_culture(var/culture_ident)
+/datum/controller/subsystem/culture/proc/get_culture(culture_ident)
 	return cultural_info_by_name[culture_ident] ? cultural_info_by_name[culture_ident] : cultural_info_by_path[culture_ident]

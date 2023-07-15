@@ -21,6 +21,7 @@
 		to_chat(M, SPAN_DANGER("A violent force slams into you as you touch \the [holder]!"))
 		holder.visible_message(SPAN_WARNING("\The [holder] shines bright as it releases a wave of energy!"))
 		playsound(get_turf(holder), "sound/magic/repulse.ogg", 100)
+		show_sound_effect(get_turf(holder), soundicon = SFX_ICON_SMALL)
 
 /datum/artifact_effect/pushback/DoEffectPulse()
 	if (holder)
@@ -33,6 +34,7 @@
 
 		holder.visible_message(SPAN_WARNING("\The [holder] shines bright as it releases a wave of energy!"))
 		playsound(get_turf(holder), "sound/magic/repulse.ogg", 100)
+		show_sound_effect(get_turf(holder), soundicon = SFX_ICON_SMALL)
 
 //returns a turf at a distance of 'throw_range' away from the artifact
 /datum/artifact_effect/pushback/proc/get_target_turf(mob/M)

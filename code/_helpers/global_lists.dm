@@ -43,7 +43,7 @@ var/global/list/rune_list = new()
 var/global/list/endgame_exits = list()
 var/global/list/endgame_safespawns = list()
 
-var/global/list/syndicate_access = list(access_maint_tunnels, access_syndicate, access_external_airlocks)
+var/global/list/syndicate_access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_EXTERNAL_AIRLOCKS)
 
 // Strings which corraspond to bodypart covering flags, useful for outputting what something covers.
 var/global/list/string_part_flags = list(
@@ -79,7 +79,7 @@ var/global/list/string_slot_flags = list(
 /////Initial Building/////
 //////////////////////////
 
-/proc/get_mannequin(var/ckey)
+/proc/get_mannequin(ckey)
 	if(!mannequins_)
 		mannequins_ = new()
 	. = mannequins_[ckey]
@@ -87,7 +87,7 @@ var/global/list/string_slot_flags = list(
 		. = new/mob/living/carbon/human/dummy/mannequin()
 		mannequins_[ckey] = .
 
-/hook/global_init/proc/makeDatumRefLists()
+/proc/make_datum_references_lists()
 	var/list/paths
 
 	//Hair - Initialise all /datum/sprite_accessory/hair into an list indexed by hair-style name
@@ -159,18 +159,6 @@ var/global/list/string_slot_flags = list(
 	for(var/grabstate_name in all_grabstates)
 		var/datum/grab/G = all_grabstates[grabstate_name]
 		G.refresh_updown()
-
-	// Keybindings
-	for(var/KB in subtypesof(/datum/keybinding))
-		var/datum/keybinding/keybinding = KB
-		if(!initial(keybinding.name))
-			continue
-		var/datum/keybinding/instance = new keybinding
-		global.keybindings_by_name[instance.name] = instance
-		if(length(instance.hotkey_keys))
-			for(var/bound_key in instance.hotkey_keys)
-				global.hotkey_keybinding_list_by_key[bound_key] += list(instance.name)
-
 	return 1
 
 //*** params cache
@@ -179,19 +167,19 @@ var/global/list/paramslist_cache = list()
 #define cached_key_number_decode(key_number_data) cached_params_decode(key_number_data, /proc/key_number_decode)
 #define cached_number_list_decode(number_list_data) cached_params_decode(number_list_data, /proc/number_list_decode)
 
-/proc/cached_params_decode(var/params_data, var/decode_proc)
+/proc/cached_params_decode(params_data, decode_proc)
 	. = paramslist_cache[params_data]
 	if(!.)
 		. = call(decode_proc)(params_data)
 		paramslist_cache[params_data] = .
 
-/proc/key_number_decode(var/key_number_data)
+/proc/key_number_decode(key_number_data)
 	var/list/L = params2list(key_number_data)
 	for(var/key in L)
 		L[key] = text2num(L[key])
 	return L
 
-/proc/number_list_decode(var/number_list_data)
+/proc/number_list_decode(number_list_data)
 	var/list/L = params2list(number_list_data)
 	for(var/i in 1 to L.len)
 		L[i] = text2num(L[i])

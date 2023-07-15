@@ -1,5 +1,3 @@
-GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
-
 /turf/simulated
 	name = "station"
 	var/wet = 0
@@ -51,7 +49,7 @@ GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
 		holy = 1
 	levelupdate()
 
-/turf/simulated/proc/AddTracks(var/typepath,var/bloodDNA,var/comingdir,var/goingdir,var/bloodcolor=COLOR_BLOOD_HUMAN)
+/turf/simulated/proc/AddTracks(typepath,bloodDNA,comingdir,goingdir,bloodcolor=COLOR_BLOOD_HUMAN)
 	var/obj/effect/decal/cleanable/blood/tracks/tracks = locate(typepath) in src
 	if(!tracks)
 		tracks = new typepath(src)
@@ -161,10 +159,10 @@ GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
 	else if( istype(M, /mob/living/silicon/robot ))
 		new /obj/effect/decal/cleanable/blood/oil(src)
 
-/turf/simulated/proc/can_build_cable(var/mob/user)
+/turf/simulated/proc/can_build_cable(mob/user)
 	return 0
 
-/turf/simulated/attackby(var/obj/item/thing, var/mob/user)
+/turf/simulated/attackby(obj/item/thing, mob/user)
 	if(isCoil(thing) && can_build_cable(user))
 		var/obj/item/stack/cable_coil/coil = thing
 		coil.turf_place(src, user)
@@ -175,3 +173,6 @@ GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
 	if(GAME_STATE >= RUNLEVEL_GAME)
 		fluid_update()
 	. = ..()
+
+/turf/simulated/get_roof_turf()
+	return /turf/simulated/open

@@ -4,18 +4,18 @@
 	flags = PHENOMENA_FOLLOWER
 	expected_type = /mob/living/carbon/human
 
-/datum/phenomena/exhude_blood/can_activate(var/mob/living/carbon/human/H)
+/datum/phenomena/exhude_blood/can_activate(mob/living/carbon/human/H)
 	if(!..())
 		return 0
 
 	if(!H.should_have_organ(BP_HEART) || H.vessel.total_volume == H.species.blood_volume)
-		to_chat(linked, "<span class='warning'>\The [H] doesn't require anymore blood.</span>")
+		to_chat(linked, SPAN_WARNING("\The [H] doesn't require anymore blood."))
 		return 0
 	return 1
 
-/datum/phenomena/exhude_blood/activate(var/mob/living/carbon/human/H, var/mob/living/deity/user)
+/datum/phenomena/exhude_blood/activate(mob/living/carbon/human/H, mob/living/deity/user)
 	H.vessel.add_reagent(/datum/reagent/blood, 30)
-	to_chat(H,"<span class='notice'>You feel a rush as new blood enters your system.</span>")
+	to_chat(H,SPAN_NOTICE("You feel a rush as new blood enters your system."))
 
 
 /datum/phenomena/hellscape
@@ -28,8 +28,8 @@
 										"You breathe in ash and decay, your lungs gasping for air as your body gives way to the floor.",
 										"An extreme pressure comes over you, as if an unknown force has marked you.")
 
-/datum/phenomena/hellscape/activate(var/mob/living/L)
-	to_chat(L, "<font size='3'><span class='cult'>[pick(creepy_notes)]</span></font>")
+/datum/phenomena/hellscape/activate(mob/living/L)
+	to_chat(L, FONT_LARGE("<span class='cult'>[pick(creepy_notes)]</span>"))
 	L.damageoverlaytemp = 100
 	sound_to(L, 'sound/hallucinations/far_noise.ogg')
 	L.Weaken(2)

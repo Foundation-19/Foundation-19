@@ -8,30 +8,29 @@
 	matter = list(MATERIAL_ALUMINIUM = 250, MATERIAL_STEEL = 250, MATERIAL_GLASS = 50)
 	w_class = ITEM_SIZE_SMALL
 
-/obj/item/device/gps/attack_self(var/mob/user as mob)
-	to_chat(user, "<span class='notice'>[icon2html(src, user)] \The [src] flashes <i>[get_coordinates()]</i>.</span>")
+/obj/item/device/gps/attack_self(mob/user as mob)
+	to_chat(user, SPAN_NOTICE("[icon2html(src, user)] \The [src] flashes <i>[get_coordinates()]</i>."))
 
 /obj/item/device/gps/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>\The [src]'s screen shows: <i>[get_coordinates()]</i>.</span>")
+	to_chat(user, SPAN_NOTICE("\The [src]'s screen shows: <i>[get_coordinates()]</i>."))
 
 /obj/item/device/gps/proc/get_coordinates()
 	var/turf/T = get_turf(src)
 	return T ? "[T.x]:[T.y]:[T.z]" : "N/A"
 
-/mob/living/carbon/human/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		var/obj/item/device/gps/L = locate() in src
-		if(L)
-			stat("Coordinates:", "[L.get_coordinates()]")
+/mob/living/carbon/human/get_status_tab_items()
+	.=..()
+	var/obj/item/device/gps/L = locate() in src
+	if(L)
+		. += "Coordinates: [L.get_coordinates()]"
 
-/mob/living/silicon/robot/Stat()
-	. = ..()
-	if(statpanel("Status") && (istype(module_state_1, /obj/item/device/gps) || istype(module_state_2, /obj/item/device/gps) || istype(module_state_3, /obj/item/device/gps)))
+/mob/living/silicon/robot/get_status_tab_items()
+	.=..()
+	if(istype(module_state_1, /obj/item/device/gps) || istype(module_state_2, /obj/item/device/gps) || istype(module_state_3, /obj/item/device/gps))
 		var/obj/item/device/gps/L = locate() in src
 		if(L)
-			stat("Coordinates:", "[L.get_coordinates()]")
+			. += "Coordinates: [L.get_coordinates()]"
 
 /obj/item/device/measuring_tape
 	name = "measuring tape"
@@ -79,10 +78,10 @@
 	var/last_scan_time = 0
 	var/scan_delay = 25
 
-/obj/item/device/ano_scanner/attack_self(var/mob/living/user)
+/obj/item/device/ano_scanner/attack_self(mob/living/user)
 	interact(user)
 
-/obj/item/device/ano_scanner/interact(var/mob/living/user)
+/obj/item/device/ano_scanner/interact(mob/living/user)
 	if(world.time - last_scan_time >= scan_delay)
 		last_scan_time = world.time
 
@@ -144,8 +143,8 @@
 	var/dissonance_spread = 1
 	var/material = "unknown"
 
-/obj/item/device/depth_scanner/proc/scan_atom(var/mob/user, var/atom/A)
-	user.visible_message("<span class='notice'>\The [user] scans \the [A], the air around them humming gently.</span>")
+/obj/item/device/depth_scanner/proc/scan_atom(mob/user, atom/A)
+	user.visible_message(SPAN_NOTICE("\The [user] scans \the [A], the air around them humming gently."))
 
 	if(istype(A, /turf/simulated/mineral))
 		var/turf/simulated/mineral/M = A
@@ -154,7 +153,7 @@
 			//create a new scanlog entry
 			var/datum/depth_scan/D = new()
 			D.coords = "[M.x]:[M.y]:[M.z]"
-			D.time = stationtime2text()
+			D.time = station_time_timestamp("hh:mm")
 			D.record_index = positive_locations.len + 1
 			D.material = M.mineral ? M.mineral.ore_name : "Rock"
 
@@ -167,7 +166,7 @@
 
 			positive_locations.Add(D)
 
-			to_chat(user, "<span class='notice'>[icon2html(src, user)] [src] pings.</span>")
+			to_chat(user, SPAN_NOTICE("[icon2html(src, user)] [src] pings."))
 
 	else if(istype(A, /obj/structure/boulder))
 		var/obj/structure/boulder/B = A
@@ -175,7 +174,7 @@
 			//create a new scanlog entry
 			var/datum/depth_scan/D = new()
 			D.coords = "[B.x]:[B.y]:[B.z]"
-			D.time = stationtime2text()
+			D.time = station_time_timestamp("hh:mm")
 			D.record_index = positive_locations.len + 1
 
 			//these values are arbitrary
@@ -185,14 +184,14 @@
 
 			positive_locations.Add(D)
 
-			to_chat(user, "<span class='notice'>[icon2html(src, user)] [src] pings [pick("madly","wildly","excitedly","crazily")]!</span>")
+			to_chat(user, SPAN_NOTICE("[icon2html(src, user)] [src] pings [pick("madly","wildly","excitedly","crazily")]!"))
 
 	updateSelfDialog()
 
-/obj/item/device/depth_scanner/attack_self(var/mob/living/user)
+/obj/item/device/depth_scanner/attack_self(mob/living/user)
 	interact(user)
 
-/obj/item/device/depth_scanner/interact(var/mob/user as mob)
+/obj/item/device/depth_scanner/interact(mob/user as mob)
 	user.set_machine(src)
 	var/dat = "<b>Coordinates with positive matches</b><br>"
 
@@ -274,10 +273,10 @@
 				cur_dist = check_dist
 				. = weakref(R)
 
-/obj/item/pinpointer/radio/attack_self(var/mob/user as mob)
+/obj/item/pinpointer/radio/attack_self(mob/user as mob)
 	interact(user)
 
-/obj/item/pinpointer/radio/interact(var/mob/user)
+/obj/item/pinpointer/radio/interact(mob/user)
 	var/dat = "<b>Radio frequency tracker</b><br>"
 	dat += {"
 				Tracking: <A href='byond://?src=\ref[src];toggle=1'>[active ? "Enabled" : "Disabled"]</A><BR>

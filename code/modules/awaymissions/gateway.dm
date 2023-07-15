@@ -80,10 +80,10 @@
 	if(linked.len != 8)	return
 	if(!powered())		return
 	if(!awaygate)
-		to_chat(user, "<span class='notice'>Error: No destination found.</span>")
+		to_chat(user, SPAN_NOTICE("Error: No destination found."))
 		return
 	if(world.time < wait)
-		to_chat(user, "<span class='notice'>Error: Warpspace triangulation in progress. Estimated time to completion: [round(((wait - world.time) / 10) / 60)] minutes.</span>")
+		to_chat(user, SPAN_NOTICE("Error: Warpspace triangulation in progress. Estimated time to completion: [round(((wait - world.time) / 10) / 60)] minutes."))
 		return
 
 	for(var/obj/machinery/gateway/G in linked)
@@ -181,7 +181,7 @@
 	if(!ready)			return
 	if(linked.len != 8)	return
 	if(!stationgate)
-		to_chat(user, "<span class='notice'>Error: No destination found.</span>")
+		to_chat(user, SPAN_NOTICE("Error: No destination found."))
 		return
 
 	for(var/obj/machinery/gateway/G in linked)

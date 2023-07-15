@@ -37,7 +37,7 @@ Right Click       - List/Create Area
 		return
 	M.color = colors.get(T.loc)
 
-/datum/build_mode/areas/OnClick(var/atom/A, var/list/parameters)
+/datum/build_mode/areas/OnClick(atom/A, list/parameters)
 	if (parameters["right"])
 		Configurate()
 		return
@@ -78,7 +78,7 @@ Right Click       - List/Create Area
 		user.client.debug_variables(selected_area)
 		to_chat(user, "Created area [new_area.name]")
 
-/datum/build_mode/areas/proc/SelectArea(var/area/A)
+/datum/build_mode/areas/proc/SelectArea(area/A)
 	if(!A || A == selected_area)
 		return
 	UnselectArea()

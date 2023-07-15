@@ -14,6 +14,7 @@
 	color = "#cf3600"
 	metabolism = REM * 0.25 // 0.05 by default. They last a while and slowly kill you.
 	heating_products = list(/datum/reagent/toxin/denatured)
+	heating_prod_english = "<span codexlink='denatured toxin (chemical)'>denatured toxin</span>"
 	heating_point = 100 CELSIUS
 	heating_message = "goes clear."
 	value = 2

@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /obj/machinery/constructable_frame/computerframe
 	name = "computer frame"
 	icon = 'icons/obj/stock_parts.dmi'

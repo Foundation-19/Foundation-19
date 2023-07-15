@@ -42,7 +42,7 @@
 					H.hallucination_power = max(H.hallucination_power, 70)
 					if (!cooldown[H] || (world.time >= (cooldown[H] + MESSAGE_COOLDOWN)))
 						cooldown[H] = world.time
-						to_chat(H, "<span class='danger'><B>You see unimaginable horrors within \the [src]...</B></span>")
+						to_chat(H, SPAN_DANGER("<B>You see unimaginable horrors within \the [src]...</B>"))
 //					if((time >= 10) && ((time % 2) == 0))
 //						var/obj/item/organ/internal/brain = H.internal_organs_by_name[BP_BRAIN]
 /*						if(brain)

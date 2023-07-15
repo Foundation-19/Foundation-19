@@ -20,7 +20,7 @@
 	var/brightness = 7
 	var/light_colour = "#ffffff"
 
-/obj/item/projectile/energy/flash/on_impact(var/atom/A)
+/obj/item/projectile/energy/flash/on_impact(atom/A)
 	var/turf/T = flash_range? src.loc : get_turf(A)
 	if(!istype(T)) return
 
@@ -33,7 +33,7 @@
 
 	//snap pop
 	playsound(src, 'sound/effects/snap.ogg', 50, 1)
-	src.visible_message("<span class='warning'>\The [src] explodes in a bright flash!</span>")
+	src.visible_message(SPAN_WARNING("\The [src] explodes in a bright flash!"))
 
 	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 	sparks.set_up(2, 1, T)
@@ -58,7 +58,7 @@
 			M.fire_stacks = max(2, M.fire_stacks)
 			M.IgniteMob()
 
-/obj/item/projectile/energy/flash/flare/on_impact(var/atom/A)
+/obj/item/projectile/energy/flash/flare/on_impact(atom/A)
 	light_colour = pick("#e58775", "#ffffff", "#faa159", "#e34e0e")
 	set_light(1, 2, 6, 1, light_colour)
 	..() //initial flash
@@ -72,7 +72,7 @@
 		//Everyone saw that!
 		for(var/mob/living/mob in GLOB.living_mob_list_)
 			var/turf/T = get_turf(mob)
-			if(T && (T != TO) && (TO.z == T.z) && !mob.blinded)
+			if(T && (T != TO) && (TO.z == T.z) && mob.can_see())
 				to_chat(mob, SPAN_NOTICE("You see a bright light to \the [dir2text(get_dir(T,TO))]"))
 			CHECK_TICK
 
@@ -155,7 +155,7 @@
 	var/med_dizziness_amt = 120
 	var/max_dizziness_amt = 300
 
-/obj/item/projectile/energy/plasmastun/proc/bang(var/mob/living/carbon/M)
+/obj/item/projectile/energy/plasmastun/proc/bang(mob/living/carbon/M)
 
 	if(!istype(M))
 		return
@@ -190,9 +190,18 @@
 		if(M.ear_damage >= 5)
 			to_chat(M, SPAN_DANGER("Your ears start to ring!"))
 
-/obj/item/projectile/energy/plasmastun/on_hit(var/atom/target)
+/obj/item/projectile/energy/plasmastun/on_hit(atom/target)
 	bang(target)
 	. = ..()
+
+/obj/item/projectile/energy/plasmastun/weak
+	name = "plasma spit"
+	armor_penetration = 0
+	life_span = 10
+	agony = 5
+	min_dizziness_amt = 5
+	med_dizziness_amt = 15
+	max_dizziness_amt = 20
 
 /obj/item/projectile/energy/plasmastun/sonic
 	name = "sonic pulse"
@@ -208,7 +217,7 @@
 	med_dizziness_amt = 60
 	max_dizziness_amt = 120
 
-/obj/item/projectile/energy/plasmastun/sonic/bang(var/mob/living/carbon/M)
+/obj/item/projectile/energy/plasmastun/sonic/bang(mob/living/carbon/M)
 	..()
 	if(istype(M, /atom/movable) && M.simulated && !M.anchored)
 		M.throw_at(get_edge_target_turf(M, get_dir(src, M)), rand(1,5), 6)
@@ -227,3 +236,11 @@
 	damage = 10
 	armor_penetration = 35
 	damage_type = BRUTE
+
+/obj/item/projectile/energy/acid_spit
+	name = "acid bolt"
+	icon_state = "toxin"
+	damage = 18
+	damage_type = BURN
+	fire_sound = 'sound/weapons/alien_spit.ogg'
+	pass_flags = PASS_FLAG_TABLE

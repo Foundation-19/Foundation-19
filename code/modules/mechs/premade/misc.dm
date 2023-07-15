@@ -3,7 +3,7 @@
 	exosuit_desc_string = "hydraulic quadlegs"
 	desc = "Xion Industrial's arachnid series boasts more leg per leg than the leading competitor."
 	icon_state = "spiderlegs"
-	max_damage = 80
+	max_damage = 90
 	move_delay = 4
 	turn_delay = 1
 	power_use = 25
@@ -27,7 +27,7 @@
 	hide_pilot = TRUE //Sprite too small, legs clip through, so for now hide pilot
 	exosuit_desc_string = "a spherical chassis"
 	icon_state = "pod_body"
-	max_damage = 70
+	max_damage = 90
 	power_use = 5
 	has_hardpoints = list(HARDPOINT_BACK)
 	desc = "The NanoTrasen Katamari series cockpits have won a massive tender by SCG few years back. No one is sure why, but these terrible things keep popping up on every government facility."

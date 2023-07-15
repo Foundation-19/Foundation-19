@@ -13,7 +13,7 @@
 	var/datum/pipe_network/network_node1
 	var/datum/pipe_network/network_node2
 
-/obj/machinery/clamp/New(loc, var/obj/machinery/atmospherics/pipe/simple/to_attach = null)
+/obj/machinery/clamp/New(loc, obj/machinery/atmospherics/pipe/simple/to_attach = null)
 	..()
 	if(istype(to_attach))
 		target = to_attach
@@ -38,14 +38,14 @@
 			var/datum/pipeline/P2 = node2.parent
 			network_node2 = P2.network
 
-/obj/machinery/clamp/physical_attack_hand(var/mob/user)
+/obj/machinery/clamp/physical_attack_hand(mob/user)
 	if(!target)
 		return FALSE
 	if(!open)
 		open()
 	else
 		close()
-	to_chat(user, "<span class='notice'>You turn [open ? "off" : "on"] \the [src]</span>")
+	to_chat(user, SPAN_NOTICE("You turn [open ? "off" : "on"] \the [src]"))
 	return TRUE
 
 /obj/machinery/clamp/Destroy()
@@ -123,9 +123,9 @@
 		return
 
 	if(open && over_object == usr && Adjacent(usr))
-		to_chat(usr, "<span class='notice'>You begin to remove \the [src]...</span>")
+		to_chat(usr, SPAN_NOTICE("You begin to remove \the [src]..."))
 		if (do_after(usr, 30, src))
-			to_chat(usr, "<span class='notice'>You have removed \the [src].</span>")
+			to_chat(usr, SPAN_NOTICE("You have removed \the [src]."))
 			var/obj/item/clamp/C = new/obj/item/clamp(src.loc)
 			C.forceMove(usr.loc)
 			if(ishuman(usr))
@@ -133,7 +133,7 @@
 			qdel(src)
 			return
 	else
-		to_chat(usr, "<span class='warning'>You can't remove \the [src] while it's active!</span>")
+		to_chat(usr, SPAN_WARNING("You can't remove \the [src] while it's active!"))
 
 /obj/machinery/clamp/proc/detach()
 	if (target && target.clamp == src)
@@ -148,7 +148,7 @@
 	icon_state = "pclamp0"
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_MAGNET = 4)
 
-/obj/item/clamp/afterattack(var/atom/A, mob/user as mob, proximity)
+/obj/item/clamp/afterattack(atom/A, mob/user as mob, proximity)
 	if(!proximity)
 		return
 
@@ -158,7 +158,7 @@
 			to_chat(user, SPAN_WARNING("There is already \a [P.clamp] attached to \the [P]."))
 			return
 
-		to_chat(user, "<span class='notice'>You begin to attach \the [src] to \the [A]...</span>")
+		to_chat(user, SPAN_NOTICE("You begin to attach \the [src] to \the [A]..."))
 		if (do_after(user, 30, src))
 			if (QDELETED(P))
 				return
@@ -167,6 +167,6 @@
 				return
 			if(!user.unEquip(src))
 				return
-			to_chat(user, "<span class='notice'>You have attached \the [src] to \the [A].</span>")
+			to_chat(user, SPAN_NOTICE("You have attached \the [src] to \the [A]."))
 			new/obj/machinery/clamp(A.loc, A)
 			qdel(src)

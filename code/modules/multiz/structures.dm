@@ -75,10 +75,10 @@
 		I.forceMove(landing)
 		landing.visible_message(SPAN_WARNING("\The [I] falls from the top of \the [target_down]!"))
 
-/obj/structure/ladder/attack_hand(var/mob/M)
+/obj/structure/ladder/attack_hand(mob/M)
 	climb(M)
 
-/obj/structure/ladder/attack_ai(var/mob/M)
+/obj/structure/ladder/attack_ai(mob/M)
 	var/mob/living/silicon/ai/ai = M
 	if(!istype(ai))
 		return
@@ -86,10 +86,10 @@
 	if(istype(AIeye))
 		instant_climb(AIeye)
 
-/obj/structure/ladder/attack_robot(var/mob/M)
+/obj/structure/ladder/attack_robot(mob/M)
 	climb(M)
 
-/obj/structure/ladder/proc/instant_climb(var/mob/M)
+/obj/structure/ladder/proc/instant_climb(mob/M)
 	var/atom/target_ladder = getTargetLadder(M)
 	if(target_ladder)
 		M.dropInto(target_ladder.loc)
@@ -103,7 +103,7 @@
 	if(!target_ladder)
 		return
 	if(!M.Move(get_turf(src)))
-		to_chat(M, "<span class='notice'>You fail to reach \the [src].</span>")
+		to_chat(M, SPAN_NOTICE("You fail to reach \the [src]."))
 		return
 
 	for (var/obj/item/grab/G in M)
@@ -111,23 +111,23 @@
 
 	var/direction = target_ladder == target_up ? "up" : "down"
 
-	M.visible_message("<span class='notice'>\The [M] begins climbing [direction] \the [src]!</span>",
+	M.visible_message(SPAN_NOTICE("\The [M] begins climbing [direction] \the [src]!"),
 	"You begin climbing [direction] \the [src]!",
 	"You hear the grunting and clanging of a metal ladder being used.")
 
-	target_ladder.audible_message("<span class='notice'>You hear something coming [direction] \the [src]</span>")
+	target_ladder.audible_message(SPAN_NOTICE("You hear something coming [direction] \the [src]"))
 
 	if(do_after(M, climb_time, src))
 		climbLadder(M, target_ladder, I)
 		for (var/obj/item/grab/G in M)
 			G.adjust_position(force = 1)
 
-/obj/structure/ladder/attack_ghost(var/mob/M)
+/obj/structure/ladder/attack_ghost(mob/M)
 	instant_climb(M)
 
-/obj/structure/ladder/proc/getTargetLadder(var/mob/M)
+/obj/structure/ladder/proc/getTargetLadder(mob/M)
 	if((!target_up && !target_down) || (target_up && !istype(target_up.loc, /turf/simulated/open) || (target_down && !istype(target_down.loc, /turf))))
-		to_chat(M, "<span class='notice'>\The [src] is incomplete and can't be climbed.</span>")
+		to_chat(M, SPAN_NOTICE("\The [src] is incomplete and can't be climbed."))
 		return
 	if(target_down && target_up)
 		var/direction = alert(M,"Do you want to go up or down?", "Ladder", "Up", "Down", "Cancel")
@@ -146,35 +146,35 @@
 	else
 		return target_down || target_up
 
-/mob/proc/may_climb_ladders(var/ladder)
+/mob/proc/may_climb_ladders(ladder)
 	if(!Adjacent(ladder))
-		to_chat(src, "<span class='warning'>You need to be next to \the [ladder] to start climbing.</span>")
+		to_chat(src, SPAN_WARNING("You need to be next to \the [ladder] to start climbing."))
 		return FALSE
 	if(incapacitated())
-		to_chat(src, "<span class='warning'>You are physically unable to climb \the [ladder].</span>")
+		to_chat(src, SPAN_WARNING("You are physically unable to climb \the [ladder]."))
 		return FALSE
 
 	var/carry_count = 0
 	for(var/obj/item/grab/G in src)
 		if(!G.ladder_carry())
-			to_chat(src, "<span class='warning'>You can't carry [G.affecting] up \the [ladder].</span>")
+			to_chat(src, SPAN_WARNING("You can't carry [G.affecting] up \the [ladder]."))
 			return FALSE
 		else
 			carry_count++
 	if(carry_count > 1)
-		to_chat(src, "<span class='warning'>You can't carry more than one person up \the [ladder].</span>")
+		to_chat(src, SPAN_WARNING("You can't carry more than one person up \the [ladder]."))
 		return FALSE
 
 	return TRUE
 
-/mob/observer/ghost/may_climb_ladders(var/ladder)
+/mob/observer/ghost/may_climb_ladders(ladder)
 	return TRUE
 
 /obj/structure/ladder/proc/climbLadder(mob/user, target_ladder, obj/item/I = null)
 	var/turf/T = get_turf(target_ladder)
 	for(var/atom/A in T)
 		if(!A.CanPass(user, user.loc, 1.5, 0))
-			to_chat(user, "<span class='notice'>\The [A] is blocking \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("\The [A] is blocking \the [src]."))
 
 			//We cannot use the ladder, but we probably can remove the obstruction
 			var/atom/movable/M = A
@@ -245,11 +245,11 @@
 					playsound(source, 'sound/effects/stairs_step.ogg', 50)
 					playsound(target, 'sound/effects/stairs_step.ogg', 50)
 		else
-			to_chat(A, "<span class='warning'>Something blocks the path.</span>")
+			to_chat(A, SPAN_WARNING("Something blocks the path."))
 	else
 		to_chat(A, SPAN_NOTICE("There is nothing of interest in this direction."))
 
-/obj/structure/stairs/proc/upperStep(var/turf/T)
+/obj/structure/stairs/proc/upperStep(turf/T)
 	return (T == loc)
 
 /obj/structure/stairs/CanPass(obj/mover, turf/source, height, airflow)

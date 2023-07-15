@@ -2,7 +2,7 @@
 	set name = "Possess Obj"
 	set category = "Object"
 
-	log_and_message_admins("has possessed [O]")
+	log_and_message_staff("has possessed [O]")
 
 	if(!usr.control_object) //If you're not already possessing something...
 		usr.name_archive = usr.real_name
@@ -38,6 +38,6 @@
 	set desc = "Give this guy possess/release verbs"
 	set category = "Debug"
 	set name = "Give Possessing Verbs"
-	M.verbs += /proc/possess
-	M.verbs += /proc/release
+	add_verb(M, /proc/possess)
+	add_verb(M, /proc/release)
 	SSstatistics.add_field_details("admin_verb","GPV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

@@ -48,7 +48,7 @@
 			return
 		if ((list_find(usr.contents, src) || (in_range(src, usr) && istype(src.loc, /turf))) || (istype(usr, /mob/living/silicon)))
 			command_announcement.Announce("Bluespace artillery fire detected. Brace for impact.")
-			log_and_message_admins("has launched an artillery strike.", 1)
+			log_and_message_staff("has launched an artillery strike.", 1)
 			var/list/L = list()
 			for(var/turf/T in get_area_turfs(thearea))
 				L+=T

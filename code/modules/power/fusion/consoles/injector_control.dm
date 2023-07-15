@@ -4,14 +4,14 @@
 	icon_screen = "fuel_screen"
 	ui_template = "fusion_injector_control.tmpl"
 
-/obj/machinery/computer/fusion/fuel_control/OnTopic(var/mob/user, var/href_list, var/datum/topic_state/state)
+/obj/machinery/computer/fusion/fuel_control/OnTopic(mob/user, href_list, datum/topic_state/state)
 	var/datum/local_network/lan = get_local_network()
 	var/list/fuel_injectors = lan.get_devices(/obj/machinery/fusion_fuel_injector)
 
 	if(href_list["global_toggle"])
 		if(!lan || !fuel_injectors)
 			return TOPIC_NOACTION
-			
+
 		for(var/obj/machinery/fusion_fuel_injector/F in fuel_injectors)
 			if(F.injecting)
 				F.StopInjecting()

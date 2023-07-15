@@ -96,12 +96,12 @@
 	name = "Corgi meat"
 	desc = "Tastes like... well you know..."
 
-/mob/living/simple_animal/friendly/corgi/attackby(var/obj/item/O as obj, var/mob/user as mob)  //Marker -Agouri
+/mob/living/simple_animal/friendly/corgi/attackby(obj/item/O as obj, mob/user as mob)  //Marker -Agouri
 	if(istype(O, /obj/item/newspaper))
 		if(!stat)
 			for(var/mob/M in viewers(user, null))
-				if ((M.client && !( M.blinded )))
-					M.show_message("<span class='notice'>[user] baps [name] on the nose with the rolled up [O]</span>")
+				if ((M.client && can_see()))
+					M.show_message(SPAN_NOTICE("[user] baps [name] on the nose with the rolled up [O]"))
 			spawn(0)
 				for(var/i in list(1,2,4,8,4,2,1,2))
 					set_dir(i)
@@ -144,7 +144,7 @@
 //pupplies cannot wear anything.
 /mob/living/simple_animal/friendly/corgi/puppy/OnTopic(mob/user, href_list)
 	if(href_list["remove_inv"] || href_list["add_inv"])
-		to_chat(user, "<span class='warning'>You can't fit this on [src]</span>")
+		to_chat(user, SPAN_WARNING("You can't fit this on [src]"))
 		return TOPIC_HANDLED
 	return ..()
 
@@ -166,7 +166,7 @@
 //Lisa already has a cute bow!
 /mob/living/simple_animal/friendly/corgi/Lisa/OnTopic(mob/user, href_list)
 	if(href_list["remove_inv"] || href_list["add_inv"])
-		to_chat(user, "<span class='warning'>[src] already has a cute bow!</span>")
+		to_chat(user, SPAN_WARNING("[src] already has a cute bow!"))
 		return TOPIC_HANDLED
 	return ..()
 

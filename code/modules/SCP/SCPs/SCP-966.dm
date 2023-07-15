@@ -18,11 +18,11 @@
 		return
 
 	if(istype(A, /obj/machinery/door/blast/regular))
-		to_chat(src, "<span class='warning'>You cannot open blast doors.</span>")
+		to_chat(src, SPAN_WARNING("You cannot open blast doors."))
 		return
 
 	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
 	if(!A.density)
@@ -38,6 +38,6 @@
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
-	A.stat |= BROKEN
+	A.set_broken(TRUE)
 	var/check = A.open(TRUE)
 	visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")

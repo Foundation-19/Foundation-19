@@ -69,7 +69,7 @@
 /obj/structure/closet/body_bag/cryobag/proc/get_saturation()
 	return -155 * (1 - stasis_power/initial(stasis_power))
 
-/obj/structure/closet/body_bag/cryobag/fold(var/user)
+/obj/structure/closet/body_bag/cryobag/fold(user)
 	var/obj/item/bodybag/cryobag/folded = ..()
 	if(istype(folded))
 		folded.stasis_power = stasis_power
@@ -100,7 +100,7 @@
 	. = ..()
 	to_chat(user,"The stasis meter shows '[stasis_power]x'.")
 	if(Adjacent(user)) //The bag's rather thick and opaque from a distance.
-		to_chat(user, "<span class='info'>You peer into \the [src].</span>")
+		to_chat(user, SPAN_INFO("You peer into \the [src]."))
 		for(var/mob/living/L in contents)
 			L.examine(arglist(args))
 

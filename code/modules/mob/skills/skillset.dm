@@ -88,7 +88,7 @@
 //Skill-related mob helper procs
 
 /mob/proc/get_skill_value(skill_path)
-	return skillset.get_value(skill_path)
+	return skillset?.get_value(skill_path)
 
 /mob/proc/reset_skillset()
 	qdel(skillset)
@@ -121,7 +121,7 @@
 		if(SKILL_UNTRAINED)
 			return max(0, 1 + 6*factor)
 		else
-			return max(0, 1 + (SKILL_DEFAULT - points) * factor)
+			return max(0, 1 + ((SKILL_BASIC - points) * factor))
 
 /mob/proc/do_skilled(base_delay, skill_path , atom/target = null, factor = 0.3, do_flags = DO_DEFAULT)
 	return do_after(src, base_delay * skill_delay_mult(skill_path, factor), target, do_flags)

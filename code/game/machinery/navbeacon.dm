@@ -14,7 +14,7 @@ var/global/list/navbeacons = list()
 	var/location = ""	// location response text
 	var/list/codes = list()		// assoc. list of transponder codes
 
-	req_access = list(access_engine)
+	req_access = list(ACCESS_ENGINEERING_LVL1)
 
 /obj/machinery/navbeacon/New()
 	..()
@@ -24,7 +24,7 @@ var/global/list/navbeacons = list()
 
 	navbeacons += src
 
-/obj/machinery/navbeacon/hide(var/intact)
+/obj/machinery/navbeacon/hide(intact)
 	set_invisibility(intact ? 101 : 0)
 	update_icon()
 
@@ -37,7 +37,7 @@ var/global/list/navbeacons = list()
 	else
 		icon_state = "[state]"
 
-/obj/machinery/navbeacon/attackby(var/obj/item/I, var/mob/user)
+/obj/machinery/navbeacon/attackby(obj/item/I, mob/user)
 	var/turf/T = loc
 	if(!T.is_plating())
 		return		// prevent intraction when T-scanner revealed
@@ -55,17 +55,17 @@ var/global/list/navbeacons = list()
 				src.locked = !src.locked
 				to_chat(user, "Controls are now [src.locked ? "locked." : "unlocked."]")
 			else
-				to_chat(user, "<span class='warning'>Access denied.</span>")
+				to_chat(user, SPAN_WARNING("Access denied."))
 			updateDialog()
 		else
 			to_chat(user, "You must open the cover first!")
 	return
 
-/obj/machinery/navbeacon/interface_interact(var/mob/user)
+/obj/machinery/navbeacon/interface_interact(mob/user)
 	interact(user)
 	return TRUE
 
-/obj/machinery/navbeacon/interact(var/mob/user)
+/obj/machinery/navbeacon/interact(mob/user)
 	var/ai = isAI(user)
 	var/turf/T = loc
 	if(!T.is_plating())

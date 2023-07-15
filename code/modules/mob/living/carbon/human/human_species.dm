@@ -17,7 +17,8 @@
 /mob/living/carbon/human/corpse/Initialize(mapload, new_species, obj/effect/landmark/corpse/corpse)
 	. = ..(mapload, new_species)
 
-	adjustOxyLoss(maxHealth)//cease life functions
+	INVOKE_ASYNC(src, /mob/proc/death)
+	adjustOxyLoss(maxHealth)
 	setBrainLoss(maxHealth)
 	var/obj/item/organ/internal/heart/corpse_heart = internal_organs_by_name[BP_HEART]
 	if(corpse_heart)
@@ -25,6 +26,8 @@
 	if(corpse)
 		corpse.randomize_appearance(src, new_species)
 		corpse.equip_outfit(src)
+		INVOKE_ASYNC(src, /mob/living/proc/adjustBruteLoss, corpse.brute_loss)
+		INVOKE_ASYNC(src, /mob/living/proc/adjustFireLoss, corpse.burn_loss)
 	update_icon()
 
 /mob/living/carbon/human/dummy/mannequin/add_to_living_mob_list()
@@ -39,40 +42,40 @@
 /mob/living/carbon/human/dummy/mannequin/InitializeHud()
 	return	// Mannequins don't get HUDs
 
-/mob/living/carbon/human/skrell/New(var/new_loc)
+/mob/living/carbon/human/skrell/Initialize(mapload)
 	h_style = "Skrell Male Tentacles"
-	..(new_loc, SPECIES_SKRELL)
+	.=..(mapload, SPECIES_SKRELL)
 
-/mob/living/carbon/human/unathi/New(var/new_loc)
+/mob/living/carbon/human/unathi/Initialize(mapload)
 	h_style = "Unathi Horns"
-	..(new_loc, SPECIES_UNATHI)
+	.=..(mapload, SPECIES_UNATHI)
 
-/mob/living/carbon/human/vox/New(var/new_loc)
+/mob/living/carbon/human/vox/Initialize(mapload)
 	h_style = "Long Vox Quills"
-	..(new_loc, SPECIES_VOX)
+	.=..(mapload, SPECIES_VOX)
 
-/mob/living/carbon/human/diona/New(var/new_loc)
-	..(new_loc, SPECIES_DIONA)
+/mob/living/carbon/human/diona/Initialize(mapload)
+	.=..(mapload, SPECIES_DIONA)
 
-/mob/living/carbon/human/machine/New(var/new_loc)
-	..(new_loc, SPECIES_IPC)
+/mob/living/carbon/human/machine/Initialize(mapload)
+	.=..(mapload, SPECIES_IPC)
 
-/mob/living/carbon/human/nabber/New(var/new_loc)
+/mob/living/carbon/human/nabber/Initialize(mapload)
 	pulling_punches = 1
-	..(new_loc, SPECIES_NABBER)
+	.=..(mapload, SPECIES_NABBER)
 
-/mob/living/carbon/human/monkey/New(var/new_loc)
+/mob/living/carbon/human/monkey/Initialize(mapload)
 	gender = pick(MALE, FEMALE)
-	..(new_loc, SPECIES_MONKEY)
+	.=..(mapload, SPECIES_MONKEY)
 
-/mob/living/carbon/human/farwa/New(var/new_loc)
-	..(new_loc, "Farwa")
+/mob/living/carbon/human/farwa/Initialize(mapload)
+	.=..(mapload, "Farwa")
 
-/mob/living/carbon/human/neaera/New(var/new_loc)
-	..(new_loc, "Neaera")
+/mob/living/carbon/human/neaera/Initialize(mapload)
+	.=..(mapload, "Neaera")
 
-/mob/living/carbon/human/stok/New(var/new_loc)
-	..(new_loc, "Stok")
+/mob/living/carbon/human/stok/Initialize(mapload)
+	.=..(mapload, "Stok")
 
-/mob/living/carbon/human/adherent/New(var/new_loc)
-	..(new_loc, SPECIES_ADHERENT)
+/mob/living/carbon/human/adherent/Initialize(mapload)
+	.=..(mapload, SPECIES_ADHERENT)

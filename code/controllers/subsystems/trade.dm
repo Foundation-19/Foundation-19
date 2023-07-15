@@ -30,10 +30,10 @@ SUBSYSTEM_DEF(trade)
 	if((traders.len <= max_traders) && prob(100 - 50 * traders.len / max_traders))
 		generate_trader()
 
-/datum/controller/subsystem/trade/stat_entry()
-	..("Traders: [traders.len]")
+/datum/controller/subsystem/trade/stat_entry(msg)
+	.=..("[msg] Traders: [traders.len]")
 
-/datum/controller/subsystem/trade/proc/generate_trader(var/stations = 0)
+/datum/controller/subsystem/trade/proc/generate_trader(stations = 0)
 	var/list/possible = list()
 	if(stations)
 		possible += subtypesof(/datum/trader) - typesof(/datum/trader/ship)

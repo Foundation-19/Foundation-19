@@ -6,6 +6,7 @@
 	density = FALSE
 	anchored = TRUE
 	layer = CATWALK_LAYER
+	plane = DEFAULT_PLANE
 	footstep_type = /decl/footsteps/catwalk
 	obj_flags = OBJ_FLAG_NOFALL
 	var/hatch_open = FALSE
@@ -58,13 +59,13 @@
 		do_pull_click(user, src)
 	..()
 
-/obj/structure/catwalk/attack_robot(var/mob/user)
+/obj/structure/catwalk/attack_robot(mob/user)
 	if(Adjacent(user))
 		attack_hand(user)
 
 /obj/structure/catwalk/proc/deconstruct(mob/user)
 	playsound(src, 'sound/items/Welder.ogg', 100, 1)
-	to_chat(user, "<span class='notice'>Slicing \the [src] joints ...</span>")
+	to_chat(user, SPAN_NOTICE("Slicing \the [src] joints ..."))
 	new /obj/item/stack/material/rods(src.loc)
 	new /obj/item/stack/material/rods(src.loc)
 	//Lattice would delete itself, but let's save ourselves a new obj
@@ -92,21 +93,21 @@
 		hatch_open = !hatch_open
 		if(hatch_open)
 			playsound(src, 'sound/items/Crowbar.ogg', 100, 2)
-			to_chat(user, "<span class='notice'>You pry open \the [src]'s maintenance hatch.</span>")
+			to_chat(user, SPAN_NOTICE("You pry open \the [src]'s maintenance hatch."))
 		else
 			playsound(src, 'sound/items/Deconstruct.ogg', 100, 2)
-			to_chat(user, "<span class='notice'>You shut \the [src]'s maintenance hatch.</span>")
+			to_chat(user, SPAN_NOTICE("You shut \the [src]'s maintenance hatch."))
 		update_icon()
 		return
 	if(istype(C, /obj/item/stack/tile/mono) && !plated_tile)
 		var/obj/item/stack/tile/floor/ST = C
 		if(!ST.in_use)
-			to_chat(user, "<span class='notice'>Placing tile...</span>")
+			to_chat(user, SPAN_NOTICE("Placing tile..."))
 			ST.in_use = 1
 			if (!do_after(user, 10))
 				ST.in_use = 0
 				return
-			to_chat(user, "<span class='notice'>You plate \the [src]</span>")
+			to_chat(user, SPAN_NOTICE("You plate \the [src]"))
 			name = "plated catwalk"
 			ST.in_use = 0
 			src.add_fingerprint(user)

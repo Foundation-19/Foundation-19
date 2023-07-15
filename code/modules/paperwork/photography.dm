@@ -75,14 +75,14 @@ var/global/photo_count = 0
 		show(user)
 		to_chat(user, desc)
 		if(anomalous)
-			to_chat(user, "<span class='danger'>You gain a dull headache.</span>")
+			to_chat(user, SPAN_DANGER("You gain a dull headache."))
 			switch(anomalytype)
-				if("096")
+				if(SCP_096)
 					var/mob/living/simple_animal/hostile/scp096/A = anomalymob //I hate this but I don't know another way to do it, so, we go the shitcode way!
-					A.specialexamine(user) //YOU ARE ALREADY DEAD.
+					to_chat(user, A.specialexamine(user)) //YOU ARE ALREADY DEAD.
 					return
 	else
-		to_chat(user, "<span class='notice'>It is too far away.</span>")
+		to_chat(user, SPAN_NOTICE("It is too far away."))
 
 /obj/item/photo/proc/show(mob/user as mob)
 	send_rsc(user, img, "tmp_photo_[id].png")
@@ -127,7 +127,7 @@ var/global/photo_count = 0
 		var/mob/M = usr
 		if(!( istype(over_object, /obj/screen) ))
 			return ..()
-		playsound(loc, "rustle", 50, 1, -5)
+		playsound(loc, SFX_RUSTLE, 50, 1, -5)
 		if((!( M.restrained() ) && !( M.stat ) && M.back == src))
 			switch(over_object.name)
 				if("r_hand")
@@ -185,7 +185,7 @@ var/global/photo_count = 0
 	var/nsize = input("Photo Size","Pick a size of resulting photo.") as null|anything in list(1,3,5,7)
 	if(nsize)
 		size = nsize
-		to_chat(usr, "<span class='notice'>Camera will now take [size]x[size] photos.</span>")
+		to_chat(usr, SPAN_NOTICE("Camera will now take [size]x[size] photos."))
 
 /obj/item/device/camera/attack(mob/living/carbon/human/M as mob, mob/user as mob)
 	return
@@ -199,9 +199,9 @@ var/global/photo_count = 0
 /obj/item/device/camera/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/device/camera_film))
 		if(pictures_left)
-			to_chat(user, "<span class='notice'>[src] still has some film in it!</span>")
+			to_chat(user, SPAN_NOTICE("[src] still has some film in it!"))
 			return
-		to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")
+		to_chat(user, SPAN_NOTICE("You insert [I] into [src]."))
 		qdel(I)
 		pictures_left = pictures_max
 		return
@@ -226,7 +226,7 @@ var/global/photo_count = 0
 		else
 			mob_detail += "You can also see [A] on the photo[(A.health / A.maxHealth)< 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]."
 	for(var/mob/living/simple_animal/hostile/B in the_turf) //Handles making images anomalous
-		if(anomalytype)
+		if(B.anomalytype)
 			anomalous = TRUE
 			if(B.anomalytype)
 				anomalytype = B.anomalytype
@@ -242,7 +242,7 @@ var/global/photo_count = 0
 	playsound(loc, pick('sound/items/polaroid1.ogg', 'sound/items/polaroid2.ogg'), 75, 1, -3)
 
 	pictures_left--
-	to_chat(user, "<span class='notice'>[pictures_left] photos left.</span>")
+	to_chat(user, SPAN_NOTICE("[pictures_left] photos left."))
 
 	on = 0
 	update_icon()
@@ -299,7 +299,7 @@ var/global/photo_count = 0
 	if(!user.put_in_inactive_hand(p))
 		p.dropInto(loc)
 
-/obj/item/photo/proc/copy(var/copy_id = 0)
+/obj/item/photo/proc/copy(copy_id = 0)
 	var/obj/item/photo/p = new/obj/item/photo()
 
 	p.SetName(name) // Do this first, manually, to make sure listeners are alerted properly.
@@ -311,6 +311,10 @@ var/global/photo_count = 0
 
 	p.photo_size = photo_size
 	p.scribble = scribble
+
+	p.anomalous = anomalous
+	p.anomalymob = anomalymob
+	p.anomalytype = anomalytype
 
 	if(copy_id)
 		p.id = id

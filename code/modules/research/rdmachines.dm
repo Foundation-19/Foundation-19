@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
-
 //All devices that link into the R&D console fall into thise type for easy identification and some shared procs.
 
 var/list/default_material_composition = list(MATERIAL_STEEL = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_PLASTIC = 0, MATERIAL_GLASS = 0, MATERIAL_GOLD = 0, MATERIAL_SILVER = 0, MATERIAL_PHORON = 0, MATERIAL_URANIUM = 0, MATERIAL_DIAMOND = 0)
@@ -25,7 +23,7 @@ var/list/default_material_composition = list(MATERIAL_STEEL = 0, MATERIAL_ALUMIN
 	return ..()
 
 
-/obj/machinery/r_n_d/proc/eject(var/material, var/amount)
+/obj/machinery/r_n_d/proc/eject(material, amount)
 	if(!(material in materials))
 		return
 	var/material/mat = SSmaterials.get_material_by_name(material)
@@ -38,7 +36,7 @@ var/list/default_material_composition = list(MATERIAL_STEEL = 0, MATERIAL_ALUMIN
 	for(var/f in materials)
 		. += materials[f]
 
-/obj/machinery/r_n_d/proc/getLackingMaterials(var/datum/design/D)
+/obj/machinery/r_n_d/proc/getLackingMaterials(datum/design/D)
 	var/list/ret = list()
 	for(var/M in D.materials)
 		if(materials[M] < D.materials[M])

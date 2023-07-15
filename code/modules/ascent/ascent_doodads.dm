@@ -67,8 +67,8 @@
 	cups = 50
 	cup_type = /obj/item/reagent_containers/food/snacks/hydration
 
-/obj/structure/reagent_dispensers/water_cooler/ascent/DispenserMessages(var/mob/user)
+/obj/structure/reagent_dispensers/water_cooler/ascent/DispenserMessages(mob/user)
 	return list("\The [user] grabs a hydration ration orb from \the [src].", "You grab a hydration ration orb from \the [src].")
 
-/obj/structure/reagent_dispensers/water_cooler/ascent/RejectionMessage(var/mob/user)
+/obj/structure/reagent_dispensers/water_cooler/ascent/RejectionMessage(mob/user)
 	return "\The [src]'s orb supply is empty. Notify a control mind."

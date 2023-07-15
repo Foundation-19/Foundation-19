@@ -14,7 +14,7 @@
 /obj/structure/lattice/get_material()
 	return material
 
-/obj/structure/lattice/Initialize(mapload, var/new_material)
+/obj/structure/lattice/Initialize(mapload, new_material)
 	. = ..()
 	DELETE_IF_DUPLICATE_OF(/obj/structure/lattice)
 	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open)))
@@ -39,7 +39,7 @@
 	if(old_loc)
 		update_neighbors(old_loc)
 
-/obj/structure/lattice/proc/update_neighbors(var/location = loc)
+/obj/structure/lattice/proc/update_neighbors(location = loc)
 	for (var/dir in GLOB.cardinal)
 		var/obj/structure/lattice/L = locate(/obj/structure/lattice, get_step(location, dir))
 		if(L)
@@ -49,8 +49,8 @@
 	if(severity <= 2)
 		qdel(src)
 
-/obj/structure/lattice/proc/deconstruct(var/mob/user)
-	to_chat(user, "<span class='notice'>Slicing lattice joints ...</span>")
+/obj/structure/lattice/proc/deconstruct(mob/user)
+	to_chat(user, SPAN_NOTICE("Slicing lattice joints ..."))
 	new /obj/item/stack/material/rods(loc, 1, material.name)
 	qdel(src)
 
@@ -80,7 +80,7 @@
 			qdel(src)
 			return
 		else
-			to_chat(user, "<span class='notice'>You require at least two rods to complete the catwalk.</span>")
+			to_chat(user, SPAN_NOTICE("You require at least two rods to complete the catwalk."))
 
 /obj/structure/lattice/on_update_icon()
 	var/dir_sum = 0

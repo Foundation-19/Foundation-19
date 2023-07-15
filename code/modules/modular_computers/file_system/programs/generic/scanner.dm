@@ -9,8 +9,6 @@
 	available_on_ntnet = TRUE
 	usage_flags = PROGRAM_ALL
 	nanomodule_path = /datum/nano_module/program/scanner
-	category = PROG_UTIL
-
 	var/using_scanner = 0	//Whether or not the program is synched with the scanner module.
 	var/data_buffer = ""	//Buffers scan output for saving/viewing.
 	var/scan_file_type = /datum/computer_file/data/text		//The type of file the data will be saved to.
@@ -20,7 +18,7 @@
 /datum/computer_file/program/scanner/proc/connect_scanner()	//If already connected, will reconnect.
 	if(!computer)
 		return 0
-	var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
+	var/obj/item/stock_parts/computer/scanner/scanner = computer.scanner
 	if(scanner && istype(src, scanner.driver_type))
 		using_scanner = 1
 		scanner.driver = src
@@ -30,7 +28,7 @@
 /datum/computer_file/program/scanner/proc/disconnect_scanner()
 	using_scanner = 0
 	if(computer)
-		var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
+		var/obj/item/stock_parts/computer/scanner/scanner = computer.scanner
 		if(scanner && (src == scanner.driver))
 			scanner.driver = null
 	data_buffer = null
@@ -40,14 +38,14 @@
 /datum/computer_file/program/scanner/proc/save_scan(name)
 	if(!data_buffer)
 		return 0
-	if(!create_file(name, data_buffer, scan_file_type, metadata_buffer.Copy()))
+	if(!create_data_file(name, data_buffer, scan_file_type, metadata_buffer.Copy()))
 		return 0
 	return 1
 
 /datum/computer_file/program/scanner/proc/check_scanning()
 	if(!computer)
 		return 0
-	var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
+	var/obj/item/stock_parts/computer/scanner/scanner = computer.scanner
 	if(!scanner)
 		return 0
 	if(!scanner.can_run_scan)
@@ -75,7 +73,7 @@
 	if(href_list["scan"])
 		if(check_scanning())
 			metadata_buffer.Cut()
-			var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
+			var/obj/item/stock_parts/computer/scanner/scanner = computer.scanner
 			scanner.run_scan(usr, src)
 		return 1
 
@@ -90,12 +88,12 @@
 /datum/nano_module/program/scanner
 	name = "Scanner"
 
-/datum/nano_module/program/scanner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/scanner/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/datum/computer_file/program/scanner/prog = program
 	if(!prog.computer)
 		return
-	var/obj/item/stock_parts/computer/scanner/scanner = prog.computer.get_component(PART_SCANNER)
+	var/obj/item/stock_parts/computer/scanner/scanner = prog.computer.scanner
 	if(scanner)
 		data["scanner_name"] = scanner.name
 		data["scanner_enabled"] = scanner.enabled

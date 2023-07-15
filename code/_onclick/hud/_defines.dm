@@ -85,7 +85,9 @@
 #define ui_nutrition_small "EAST-1:28,CENTER-2:24"
 #define ui_temp "EAST-1:28,CENTER-1:13"
 #define ui_health "EAST-1:28,CENTER:15"
+#define ui_sanity "EAST-1:28,CENTER+2:15"
 #define ui_internal "EAST-1:28,CENTER+1:17"
+#define ui_blink "EAST-1:28,CENTER-3:30"
 									//borgs
 #define ui_borg_health "EAST-1:28,CENTER-1:13" //borgs have the health display where humans have the pressure damage indicator.
 #define ui_alien_health "EAST-1:28,CENTER-1:13" //aliens have the health display where humans have the pressure damage indicator.
@@ -159,6 +161,7 @@
 #define ui_ai_color "RIGHT-1:30,BOTTOM+3:5"
 #define ui_ai_core_icon "RIGHT-1:30,BOTTOM+4:5"
 #define ui_ai_status "RIGHT-1:30,BOTTOM+5:5"
+#define ui_ai_emergency_announc "RIGHT-1:30,BOTTOM+6:5"
 
 // AI: Tools
 #define ui_ai_power_override "LEFT:6,TOP:0"

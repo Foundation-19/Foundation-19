@@ -59,7 +59,7 @@
 	if(distance <= 2)
 		to_chat(user, "It has [uses] light\s remaining.")
 
-/obj/item/device/lightreplacer/resolve_attackby(var/atom/A, mob/user)
+/obj/item/device/lightreplacer/resolve_attackby(atom/A, mob/user)
 
 	//Check for lights in a container, refilling our charges.
 	if(istype(A, /obj/item/storage/))
@@ -92,14 +92,14 @@
 	if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_GLASS)
 		var/obj/item/stack/G = W
 		if(uses >= max_uses)
-			to_chat(user, "<span class='warning'>[src.name] is full.</span>")
+			to_chat(user, SPAN_WARNING("[src.name] is full."))
 			return
 		else if(G.use(1))
 			AddUses(16) //Autolathe converts 1 sheet into 16 lights.
-			to_chat(user, "<span class='notice'>You insert a piece of glass into \the [src.name]. You have [uses] light\s remaining.</span>")
+			to_chat(user, SPAN_NOTICE("You insert a piece of glass into \the [src.name]. You have [uses] light\s remaining."))
 			return
 		else
-			to_chat(user, "<span class='warning'>You need one sheet of glass to replace lights.</span>")
+			to_chat(user, SPAN_WARNING("You need one sheet of glass to replace lights."))
 
 	if(istype(W, /obj/item/light))
 		var/obj/item/light/L = W
@@ -130,30 +130,30 @@
 	icon_state = "lightreplacer[emagged]"
 
 
-/obj/item/device/lightreplacer/proc/Use(var/mob/user)
+/obj/item/device/lightreplacer/proc/Use(mob/user)
 
 	playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 	AddUses(-1)
 	return 1
 
 // Negative numbers will subtract
-/obj/item/device/lightreplacer/proc/AddUses(var/amount = 1)
+/obj/item/device/lightreplacer/proc/AddUses(amount = 1)
 	uses = min(max(uses + amount, 0), max_uses)
 
-/obj/item/device/lightreplacer/proc/Charge(var/mob/user, var/amount = 1)
+/obj/item/device/lightreplacer/proc/Charge(mob/user, amount = 1)
 	charge += amount
 	if(charge > 6)
 		AddUses(1)
 		charge = 0
 
-/obj/item/device/lightreplacer/proc/ReplaceLight(var/obj/machinery/light/target, var/mob/living/U)
+/obj/item/device/lightreplacer/proc/ReplaceLight(obj/machinery/light/target, mob/living/U)
 
 	if(target.get_status() == LIGHT_OK)
 		to_chat(U, "There is a working [target.get_fitting_name()] already inserted.")
 	else if(!CanUse(U))
 		to_chat(U, "\The [src]'s refill light blinks red.")
 	else if(Use(U))
-		to_chat(U, "<span class='notice'>You replace the [target.get_fitting_name()] with the [src].</span>")
+		to_chat(U, SPAN_NOTICE("You replace the [target.get_fitting_name()] with the [src]."))
 
 		if(target.lightbulb)
 			var/obj/item/bulb = target.lightbulb
@@ -163,21 +163,21 @@
 
 		var/obj/item/light/L = new target.light_type()
 		if (emagged)
-			log_and_message_admins("used an emagged light replacer.", U)
+			log_and_message_staff("used an emagged light replacer.", U)
 			L.create_reagents(5)
 			L.reagents.add_reagent(/datum/reagent/toxin/phoron, 5)
 		target.insert_bulb(L)
 
 
-/obj/item/device/lightreplacer/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/device/lightreplacer/emag_act(remaining_charges, mob/user)
 	emagged = !emagged
-	playsound(src.loc, "sparks", 100, 1)
+	playsound(src.loc, SFX_SPARK, 100, 1)
 	update_icon()
 	return 1
 
 //Can you use it?
 
-/obj/item/device/lightreplacer/proc/CanUse(var/mob/living/user)
+/obj/item/device/lightreplacer/proc/CanUse(mob/living/user)
 	src.add_fingerprint(user)
 	//Not sure what else to check for. Maybe if clumsy?
 	if(uses > 0)

@@ -10,7 +10,7 @@
 	var/propelled = 0 // Check for fire-extinguisher-driven chairs
 	buckle_movable = TRUE
 
-/obj/structure/bed/chair/do_simple_ranged_interaction(var/mob/user)
+/obj/structure/bed/chair/do_simple_ranged_interaction(mob/user)
 	if(!buckled_mob && user)
 		rotate(user)
 	return TRUE
@@ -20,7 +20,7 @@
 	if(!padding_material && istype(W, /obj/item/assembly/shock_kit))
 		var/obj/item/assembly/shock_kit/SK = W
 		if(!SK.status)
-			to_chat(user, "<span class='notice'>\The [SK] is not ready to be attached!</span>")
+			to_chat(user, SPAN_NOTICE("\The [SK] is not ready to be attached!"))
 			return
 		if(!user.unEquip(SK))
 			return
@@ -251,7 +251,7 @@
 			victim.apply_effect(6, WEAKEN, blocked)
 			victim.apply_effect(6, STUTTER, blocked)
 			victim.apply_damage(10, BRUTE, def_zone)
-		occupant.visible_message("<span class='danger'>[occupant] crashed into \the [A]!</span>")
+		occupant.visible_message(SPAN_DANGER("[occupant] crashed into \the [A]!"))
 
 /obj/structure/bed/chair/office/light/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_CLOTH)
@@ -342,7 +342,7 @@
 		return
 	..()
 
-/obj/structure/bed/chair/wood/New(var/newloc)
+/obj/structure/bed/chair/wood/New(newloc)
 	..(newloc, chair_material)
 
 /obj/structure/bed/chair/wood/mahogany
@@ -396,7 +396,7 @@
 	icon_state = "pew_left"
 	base_icon = "pew_left"
 
-/obj/structure/bed/chair/pew/New(var/newloc)
+/obj/structure/bed/chair/pew/New(newloc)
 	..(newloc, pew_material)
 
 /obj/structure/bed/chair/pew/mahogany

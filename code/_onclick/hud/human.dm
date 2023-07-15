@@ -1,7 +1,7 @@
 /mob/living/carbon/human
 	hud_type = /datum/hud/human
 
-/datum/hud/human/FinalizeInstantiation(var/ui_style='icons/mob/screen1_White.dmi', var/ui_color = "#ffffff", var/ui_alpha = 255)
+/datum/hud/human/FinalizeInstantiation(ui_style='icons/mob/screen1_White.dmi', ui_color = "#ffffff", ui_alpha = 255)
 	var/mob/living/carbon/human/target = mymob
 	var/datum/hud_data/hud_data
 	if(!istype(target))
@@ -261,6 +261,22 @@
 		mymob.hydration_icon.screen_loc = ui_nutrition_small
 		hud_elements |= mymob.hydration_icon
 
+	if(hud_data.has_sanity)
+		mymob.sanity_icon = new /obj/screen/sanity()
+		mymob.sanity_icon.icon = 'icons/mob/status_sanity.dmi'
+		mymob.sanity_icon.icon_state = "sanity0"
+		mymob.sanity_icon.SetName("sanity")
+		mymob.sanity_icon.screen_loc = ui_sanity
+		hud_elements |= mymob.sanity_icon
+
+	if(hud_data.has_blink)
+		mymob.blink_icon = new /obj/screen/blink()
+		mymob.blink_icon.icon = 'icons/mob/status_blink.dmi'
+		mymob.blink_icon.icon_state = "blink_off"
+		mymob.blink_icon.SetName("blink")
+		mymob.blink_icon.screen_loc = ui_blink
+		hud_elements |= mymob.blink_icon
+
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain
 
@@ -296,14 +312,11 @@
 
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
-		H.fov = new /obj/screen()
-		H.fov.icon = 'icons/mob/hide.dmi'
-		H.fov.icon_state = "combat"
-		H.fov.name = " "
-		H.fov.screen_loc = "1,1"
-		H.fov.mouse_opacity = 0
-		H.fov.layer = UNDER_HUD_LAYER
+		H.fov = new /obj/screen/fov()
 		hud_elements |= H.fov
+
+		H.fov_mask = new /obj/screen/fov_mask()
+		hud_elements |= H.fov_mask
 
 	mymob.client.screen = list()
 
@@ -326,7 +339,7 @@
 // Yes, these use icon state. Yes, these are terrible. The alternative is duplicating
 // a bunch of fairly blobby logic for every click override on these objects.
 
-/obj/screen/food/Click(var/location, var/control, var/params)
+/obj/screen/food/Click(location, control, params)
 	if(istype(usr) && usr.nutrition_icon == src)
 		switch(icon_state)
 			if("nutrition0")
@@ -340,7 +353,7 @@
 			if("nutrition4")
 				to_chat(usr, SPAN_DANGER("You are starving!"))
 
-/obj/screen/drink/Click(var/location, var/control, var/params)
+/obj/screen/drink/Click(location, control, params)
 	if(istype(usr) && usr.hydration_icon == src)
 		switch(icon_state)
 			if("hydration0")
@@ -354,7 +367,7 @@
 			if("hydration4")
 				to_chat(usr, SPAN_DANGER("You are dying of thirst!"))
 
-/obj/screen/bodytemp/Click(var/location, var/control, var/params)
+/obj/screen/bodytemp/Click(location, control, params)
 	if(istype(usr) && usr.bodytemp == src)
 		switch(icon_state)
 			if("temp4")
@@ -376,7 +389,7 @@
 			else
 				to_chat(usr, SPAN_NOTICE("Your body is at a comfortable temperature."))
 
-/obj/screen/pressure/Click(var/location, var/control, var/params)
+/obj/screen/pressure/Click(location, control, params)
 	if(istype(usr) && usr.pressure == src)
 		switch(icon_state)
 			if("pressure2")
@@ -390,20 +403,97 @@
 			else
 				to_chat(usr, SPAN_NOTICE("The local air pressure is comfortable."))
 
-/obj/screen/toxins/Click(var/location, var/control, var/params)
+/obj/screen/toxins/Click(location, control, params)
 	if(istype(usr) && usr.toxin == src)
 		if(icon_state == "tox0")
 			to_chat(usr, SPAN_NOTICE("The air is clear of toxins."))
 		else
 			to_chat(usr, SPAN_DANGER("The air is eating away at your skin!"))
 
-/obj/screen/oxygen/Click(var/location, var/control, var/params)
+/obj/screen/oxygen/Click(location, control, params)
 	if(istype(usr) && usr.oxygen == src)
 		if(icon_state == "oxy0")
 			to_chat(usr, SPAN_NOTICE("You are breathing easy."))
 		else
 			to_chat(usr, SPAN_DANGER("You cannot breathe!"))
 
-/obj/screen/movement/Click(var/location, var/control, var/params)
+/obj/screen/movement/Click(location, control, params)
 	if(istype(usr))
 		usr.set_next_usable_move_intent()
+
+/obj/screen/sanity
+	var/sanity_lines = list(
+		list( // Sane.
+			"I feel well.", "I feel alright.",
+			"I'm feeling perfectly rational today.",
+			"I'm feeling good today."
+		),
+		list( // A little stressed.
+			"I feel stressed.", "I can't think straight anymore.",
+			"I don't feel so well",
+			"My thoughts are starting to wander a bit.",
+			"There's something strange going on and I can't quite put my finger on it.",
+			"I'm feeling a bit overwhelmed.",
+			"I can't concentrate on anything.",
+			"My thoughts are starting to drift away."
+		),
+		list( // Starting to go insane.
+			"I feel distressed.", "I'm losing it.",
+			"I'm sure I'm imagining things.",
+			"I feel like something is watching me.",
+			"I feel like I'm seeing and hearing things that can't be real.",
+			"My mind is playing tricks on me.",
+			"I can't trust my own judgement anymore."
+		),
+		list( // Schizophrenic med student.
+			"They are out to get me.", "The walls are breathing.",
+			"There is something crawling under my skin.",
+			"There is no ceiling.", "There is a ceiling.",
+			"It's behind me.", "It's here.",
+		)
+	)
+
+/obj/screen/sanity/Click(location, control, params)
+	if(istype(usr) && usr.sanity_icon == src)
+		switch(icon_state)
+			if("sanity1")
+				to_chat(usr, SPAN_NOTICE("<i>[pick(sanity_lines[1])]</i>"))
+			if("sanity2")
+				to_chat(usr, SPAN_NOTICE("<i>[pick(sanity_lines[2])]</i>"))
+			if("sanity3")
+				to_chat(usr, SPAN_WARNING("<i>[pick(sanity_lines[3])]</i>"))
+			if("sanity4")
+				to_chat(usr, SPAN_WARNING("<i>[pick(sanity_lines[4])]</i>"))
+			else
+				to_chat(usr, SPAN_NOTICE("<i>I'm feeling buggy today. <b>I should notify a coder.</b></i>"))
+
+/obj/screen/blink/Click(location, control, params)
+	if(istype(usr) && usr.blink_icon == src)
+		switch(icon_state)
+			if("blink_off")
+				to_chat(usr, SPAN_NOTICE("I dont feel like I need to blink anytime soon."))
+			if("blink_4")
+				to_chat(usr, SPAN_NOTICE("I'm gonna be able to avoid blinking for a bit."))
+			if("blink_3")
+				to_chat(usr, SPAN_NOTICE("I might blink in a bit."))
+			if("blink_2")
+				to_chat(usr, SPAN_NOTICE("Its getting harder to keep my eyes open."))
+			if("blink_1")
+				to_chat(usr, SPAN_WARNING("Im about to blink!"))
+			if("blink_1")
+				to_chat(usr, SPAN_NOTICE("I blinked."))
+
+/mob/living/carbon/human/InitializePlanes()
+	..()
+	var/obj/screen/plane_master/vision_cone_target/VC = new
+	var/obj/screen/plane_master/vision_cone/primary/mob = new
+	var/obj/screen/plane_master/vision_cone/inverted/sounds = new
+
+
+	//define what planes the masters dictate.
+	mob.plane = MOB_PLANE
+	sounds.plane = INSIDE_VISION_CONE_PLANE
+
+	client.screen += VC
+	client.screen += mob
+	client.screen += sounds

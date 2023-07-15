@@ -53,7 +53,7 @@
 	var/list/targets = list(get_turf(holder))
 	perform(user, targets)
 
-/datum/spell/messa_shroud/cast(var/list/targets, mob/user)
+/datum/spell/messa_shroud/cast(list/targets, mob/user)
 	var/turf/T = targets[1]
 
 	if(!istype(T))
@@ -114,7 +114,7 @@
 			hands += I
 	perform(user, hands)
 
-/datum/spell/moghes_blessing/cast(var/list/targets, mob/user)
+/datum/spell/moghes_blessing/cast(list/targets, mob/user)
 	for(var/obj/item/I in targets)
 		set_extension(I, /datum/extension/moghes_blessing)
 
@@ -123,7 +123,7 @@
 	expected_type = /obj/item
 	flags = EXTENSION_FLAG_IMMEDIATE
 
-/datum/extension/moghes_blessing/New(var/datum/holder)
+/datum/extension/moghes_blessing/New(datum/holder)
 	..(holder)
 	apply_blessing(holder)
 
@@ -161,7 +161,7 @@
 	color = "#3366ff"
 	contract_spells = list(/datum/spell/contract/return_master) //somewhat of a necessity due to how many spells they would have after a while.
 
-/obj/item/contract/apprentice/skrell/New(var/newloc,var/spellbook, var/owner)
+/obj/item/contract/apprentice/skrell/New(newloc,spellbook, owner)
 	..()
 	if(istype(spellbook,/obj/item/spellbook))
 		linked = spellbook
@@ -170,14 +170,14 @@
 
 /obj/item/contract/apprentice/skrell/attack_self(mob/user as mob)
 	if(!linked)
-		to_chat(user, "<span class='warning'>This contract requires a link to a spellbook.</span>")
+		to_chat(user, SPAN_WARNING("This contract requires a link to a spellbook."))
 		return
 	..()
 
 /obj/item/contract/apprentice/skrell/afterattack(atom/A, mob/user as mob, proximity)
 	if(!linked && istype(A,/obj/item/spellbook))
 		linked = A
-		to_chat(user, "<span class='notice'>You've linked \the [A] to \the [src]</span>")
+		to_chat(user, SPAN_NOTICE("You've linked \the [A] to \the [src]"))
 		return
 	..()
 
@@ -223,17 +223,17 @@
 		return null
 	perform(user, list(holder))
 
-/datum/spell/camera_connection/cast(var/list/targets, mob/user)
+/datum/spell/camera_connection/cast(list/targets, mob/user)
 	var/mob/living/L = targets[1]
 
 	vision.possess(L)
 	GLOB.destroyed_event.register(L, src, /datum/spell/camera_connection/proc/release)
 	GLOB.logged_out_event.register(L, src, /datum/spell/camera_connection/proc/release)
-	L.verbs += /mob/living/proc/release_eye
+	add_verb(L, /mob/living/proc/release_eye)
 
-/datum/spell/camera_connection/proc/release(var/mob/living/L)
+/datum/spell/camera_connection/proc/release(mob/living/L)
 	vision.release(L)
-	L.verbs -= /mob/living/proc/release_eye
+	remove_verb(L, /mob/living/proc/release_eye)
 	GLOB.destroyed_event.unregister(L, src)
 	GLOB.logged_out_event.unregister(L, src)
 
@@ -249,7 +249,7 @@
 	set desc = "Return your sight to your body."
 	set category = "Abilities"
 
-	verbs -= /mob/living/proc/release_eye //regardless of if we have an eye or not we want to get rid of this verb.
+	remove_verb(src, /mob/living/proc/release_eye) //regardless of if we have an eye or not we want to get rid of this verb.
 
 	if(!eyeobj)
 		return

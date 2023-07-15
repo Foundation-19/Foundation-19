@@ -26,6 +26,7 @@
 		var/obj/item/sign/S = new(src.loc)
 		S.SetName(name)
 		S.desc = desc
+		S.icon = icon
 		S.icon_state = icon_state
 		S.sign_state = icon_state
 		qdel(src)
@@ -39,7 +40,7 @@
 	var/sign_state = ""
 
 /obj/item/sign/attackby(obj/item/tool as obj, mob/user as mob)	//construction
-	if(istype(tool, /obj/item/screwdriver) && isturf(user.loc))
+	if(isScrewdriver(tool) && isturf(user.loc))
 		var/direction = input("In which direction?", "Select direction.") in list("North", "East", "South", "West", "Cancel")
 		if(direction == "Cancel") return
 		var/obj/structure/sign/S = new(user.loc)
@@ -55,6 +56,7 @@
 			else return
 		S.SetName(name)
 		S.desc = desc
+		S.icon = icon
 		S.icon_state = sign_state
 		to_chat(user, "You fasten \the [S] with your [tool].")
 		qdel(src)
@@ -419,7 +421,7 @@
 	icon_state = "direction_hcz"
 
 /obj/structure/sign/directions/lcz
-	name = "\improper Low Containment Zone"
+	name = "\improper Light Containment Zone"
 	icon_state = "direction_lcz"
 
 /obj/structure/sign/directions/ez
@@ -460,7 +462,7 @@
 
 /obj/item/sign/medipolma/attack_self(mob/user)
 	if(!claimant)
-		to_chat(user, "<span class='notice'>You fill in your name in the blanks with a permanent marker.</span>")
+		to_chat(user, SPAN_NOTICE("You fill in your name in the blanks with a permanent marker."))
 		claimant = user.real_name
 	..()
 

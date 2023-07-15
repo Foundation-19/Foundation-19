@@ -52,16 +52,16 @@ a creative player the means to solve many problems.  Circuits are held inside an
 /obj/item/integrated_circuit/proc/any_examine(mob/user)
 	return
 
-/obj/item/integrated_circuit/proc/attackby_react(var/atom/movable/A,mob/user)
+/obj/item/integrated_circuit/proc/attackby_react(atom/movable/A,mob/user)
 	return
 
-/obj/item/integrated_circuit/proc/sense(var/atom/movable/A,mob/user,prox)
+/obj/item/integrated_circuit/proc/sense(atom/movable/A,mob/user,prox)
 	return
 
 /obj/item/integrated_circuit/proc/OnICTopic(href_list, user)
 	return
 
-/obj/item/integrated_circuit/proc/get_topic_data(var/mob/user)
+/obj/item/integrated_circuit/proc/get_topic_data(mob/user)
 	return
 
 /obj/item/integrated_circuit/proc/check_interactivity(mob/user)
@@ -116,7 +116,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 	if(check_interactivity(M))
 		if(!input)
 			input = name
-		to_chat(M, "<span class='notice'>The circuit '[name]' is now labeled '[input]'.</span>")
+		to_chat(M, SPAN_NOTICE("The circuit '[name]' is now labeled '[input]'."))
 		displayed_name = input
 
 /obj/item/integrated_circuit/nano_host()
@@ -256,7 +256,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 				pin.handle_wire(linked, held_item, href_list["act"], usr)
 				. = IC_TOPIC_REFRESH
 			else
-				to_chat(usr, "<span class='warning'>You can't do a whole lot without the proper tools.</span>")
+				to_chat(usr, SPAN_WARNING("You can't do a whole lot without the proper tools."))
 				success = FALSE
 			if(success && assembly)
 				assembly.add_allowed_scanner(usr.ckey)
@@ -268,9 +268,9 @@ a creative player the means to solve many problems.  Circuits are held inside an
 				D.afterattack(src, usr, TRUE)
 				. = IC_TOPIC_REFRESH
 			else
-				to_chat(usr, "<span class='warning'>The debugger's 'ref scanner' needs to be on.</span>")
+				to_chat(usr, SPAN_WARNING("The debugger's 'ref scanner' needs to be on."))
 		else
-			to_chat(usr, "<span class='warning'>You need a debugger set to 'ref' mode to do that.</span>")
+			to_chat(usr, SPAN_WARNING("You need a debugger set to 'ref' mode to do that."))
 
 	else if(href_list["refresh"])
 		internal_examine(usr)
@@ -284,13 +284,13 @@ a creative player the means to solve many problems.  Circuits are held inside an
 		. = IC_TOPIC_REFRESH
 
 	else if(href_list["remove"] && assembly)
-		if(istype(held_item, /obj/item/screwdriver))
+		if(isScrewdriver(held_item))
 			disconnect_all()
 			dropInto(loc)
 			playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
-			to_chat(usr, "<span class='notice'>You pop \the [src] out of the case, and slide it out.</span>")
+			to_chat(usr, SPAN_NOTICE("You pop \the [src] out of the case, and slide it out."))
 		else
-			to_chat(usr, "<span class='warning'>You need a screwdriver to remove components.</span>")
+			to_chat(usr, SPAN_WARNING("You need a screwdriver to remove components."))
 		interact_with_assembly(usr)
 		. = IC_TOPIC_REFRESH
 
@@ -300,7 +300,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 	if(. == IC_TOPIC_REFRESH)
 		interact_with_assembly(usr)
 
-/obj/item/integrated_circuit/proc/interact_with_assembly(var/mob/user)
+/obj/item/integrated_circuit/proc/interact_with_assembly(mob/user)
 	if(assembly)
 		assembly.interact(user)
 		if(assembly.opened)
@@ -332,7 +332,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 		return TRUE // Battery has enough.
 	return FALSE // Not enough power.
 
-/obj/item/integrated_circuit/proc/check_then_do_work(ord,var/ignore_power = FALSE)
+/obj/item/integrated_circuit/proc/check_then_do_work(ord,ignore_power = FALSE)
 	if(world.time < next_use) 	// All intergrated circuits have an internal cooldown, to protect from spam.
 		return FALSE
 	if(assembly && ext_cooldown && (world.time < assembly.ext_next_use)) 	// Some circuits have external cooldown, to protect from spam.
@@ -401,8 +401,8 @@ a creative player the means to solve many problems.  Circuits are held inside an
 
 	return FALSE
 
-/obj/item/integrated_circuit/proc/added_to_assembly(var/obj/item/device/electronic_assembly/assembly)
+/obj/item/integrated_circuit/proc/added_to_assembly(obj/item/device/electronic_assembly/assembly)
 	return
 
-/obj/item/integrated_circuit/proc/removed_from_assembly(var/obj/item/device/electronic_assembly/assembly)
+/obj/item/integrated_circuit/proc/removed_from_assembly(obj/item/device/electronic_assembly/assembly)
 	return

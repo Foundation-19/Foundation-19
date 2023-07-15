@@ -1,5 +1,5 @@
 /obj/structure/deity/trap
-	density = 0
+	density = FALSE
 	health = 1
 	var/triggered = 0
 
@@ -23,7 +23,7 @@
 /obj/structure/deity/trap/bullet_act()
 	return
 
-/obj/structure/deity/trap/proc/trigger(var/atom/entered, var/atom/movable/enterer)
+/obj/structure/deity/trap/proc/trigger(atom/entered, atom/movable/enterer)
 	if(triggered > world.time || !istype(enterer, /mob/living))
 		return
 

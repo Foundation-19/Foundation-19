@@ -4,11 +4,11 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 
 /obj/item/weapon/scp1102ru
 	name = "SCP-1102-RU"
-	desc = "Very old plastic case. Looks a bit...Stranger than regular ones?"
+	desc = "Very old plastic case. Looks a bit... off?"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "briefcase"
 	item_state = "briefcase"
-	force = 8.0
+	force = 8
 	throw_speed = 1
 	throw_range = 4
 	w_class = ITEM_SIZE_HUGE
@@ -18,15 +18,15 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 		user.drop_item()
 		user.forceMove(pick(GLOB.scp1102_floors))
 		playsound(src, pick(climbsounds), 50)
-		user.visible_message("<span class='warning'>The [user] has opened the briefcase and climbed down into it!</span>")
+		user.visible_message(SPAN_WARNING("The [user] has opened the briefcase and climbed down into it!"))
 
-/obj/item/weapon/scp1102ru/New()
-	..()
+/obj/item/weapon/scp1102ru/Initialize()
 	GLOB.scp1102 += src
+	return ..()
 
 /obj/item/weapon/scp1102ru/Destroy()
 	GLOB.scp1102 -= src
-	. = ..()
+	return ..()
 
 
 ///////////Ladder
@@ -36,14 +36,12 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 	desc = "A ladder. You can climb it up and down."
 	icon_state = "ladder10"
 	icon = 'icons/obj/structures.dmi'
-	density = 0
-	opacity = 0
-	anchored = 1
+	anchored = TRUE
 
 /obj/structure/ladder_scp_1102/attackby(obj/item/C as obj, mob/user as mob)
 	climb(user)
 
-/obj/structure/ladder_scp_1102/attack_hand(var/mob/M)
+/obj/structure/ladder_scp_1102/attack_hand(mob/M)
 	climb(M)
 
 /obj/structure/ladder_scp_1102/proc/climb(mob/user)
@@ -51,4 +49,4 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 		var/turf/T = get_turf(pick(GLOB.scp1102))
 		user.forceMove(T)
 		playsound(src, pick(climbsounds), 50)
-		user.visible_message("<span class='warning'>The [user] climbed up!</span>")
+		user.visible_message(SPAN_WARNING("[user] climbs up the ladder!"))

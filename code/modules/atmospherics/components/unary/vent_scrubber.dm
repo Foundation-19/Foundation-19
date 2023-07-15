@@ -62,7 +62,7 @@
 	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER
 	icon = null
 
-/obj/machinery/atmospherics/unary/vent_scrubber/on_update_icon(var/safety = 0)
+/obj/machinery/atmospherics/unary/vent_scrubber/on_update_icon(safety = 0)
 	if(!check_icon_cache())
 		return
 
@@ -177,7 +177,7 @@
 
 	return 1
 
-/obj/machinery/atmospherics/unary/vent_scrubber/hide(var/i) //to make the little pipe section invisible, the icon changes.
+/obj/machinery/atmospherics/unary/vent_scrubber/hide(i) //to make the little pipe section invisible, the icon changes.
 	update_icon()
 	update_underlays()
 
@@ -185,7 +185,7 @@
 	var/decl/public_access/public_variable/panic/panic = decls_repository.get_decl(/decl/public_access/public_variable/panic)
 	panic.write_var(src, !panic)
 
-/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_scrub_gas(var/list/gases)
+/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_scrub_gas(list/gases)
 	for(var/gas_id in gases)
 		if((gas_id in scrubbing_gas) ^ gases[gas_id])
 			scrubbing_gas ^= gas_id
@@ -203,38 +203,38 @@
 			return SPAN_WARNING("You cannot take this [src] apart, it too exerted due to internal pressure.")
 	return ..()
 
-/obj/machinery/atmospherics/unary/vent_scrubber/attackby(var/obj/item/W as obj, var/mob/user as mob)
+/obj/machinery/atmospherics/unary/vent_scrubber/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weldingtool))
 
 		var/obj/item/weldingtool/WT = W
 
 		if(!WT.isOn())
-			to_chat(user, "<span class='notice'>The welding tool needs to be on to start this task.</span>")
+			to_chat(user, SPAN_NOTICE("The welding tool needs to be on to start this task."))
 			return 1
 
 		if(!WT.remove_fuel(0,user))
-			to_chat(user, "<span class='warning'>You need more welding fuel to complete this task.</span>")
+			to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 			return 1
 
-		to_chat(user, "<span class='notice'>Now welding \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("Now welding \the [src]."))
 		playsound(src, 'sound/items/Welder.ogg', 50, 1)
 
 		if(!do_after(user, 20, src))
-			to_chat(user, "<span class='notice'>You must remain close to finish this task.</span>")
+			to_chat(user, SPAN_NOTICE("You must remain close to finish this task."))
 			return 1
 
 		if(!src)
 			return 1
 
 		if(!WT.isOn())
-			to_chat(user, "<span class='notice'>The welding tool needs to be on to finish this task.</span>")
+			to_chat(user, SPAN_NOTICE("The welding tool needs to be on to finish this task."))
 			return 1
 
 		welded = !welded
 		update_icon()
 		playsound(src, 'sound/items/Welder2.ogg', 50, 1)
-		user.visible_message("<span class='notice'>\The [user] [welded ? "welds \the [src] shut" : "unwelds \the [src]"].</span>", \
-			"<span class='notice'>You [welded ? "weld \the [src] shut" : "unweld \the [src]"].</span>", \
+		user.visible_message(SPAN_NOTICE("\The [user] [welded ? "welds \the [src] shut" : "unwelds \the [src]"]."), \
+			SPAN_NOTICE("You [welded ? "weld \the [src] shut" : "unweld \the [src]"]."), \
 			"You hear welding.")
 		return 1
 

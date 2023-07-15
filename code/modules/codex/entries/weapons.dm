@@ -6,10 +6,10 @@
 
 /datum/codex_entry/energy_sword
 	associated_paths = list(/obj/item/melee/energy/sword)
-	antag_text = "The energy sword is a very strong melee weapon, capable of severing limbs easily, if they are targeted. It can also has a chance \
+	antag_text = "The energy sword is a very strong melee weapon, capable of severing targetted limbs easily. It can also has a chance \
 	to block projectiles and melee attacks while it is on and being held. The sword can be toggled on or off by using it in your hand. While it is off, \
 	it can be concealed in your pocket or bag."
 
 /datum/codex_entry/cultblade
 	associated_paths = list(/obj/item/melee/cultblade)
-	antag_text = "This sword is a powerful weapon, capable of severing limbs easily, if they are targeted. Nonbelivers are unable to use this weapon."
+	antag_text = "This sword is a powerful weapon, capable of severing targetted limbs easily. Nonbelivers are unable to use this weapon."

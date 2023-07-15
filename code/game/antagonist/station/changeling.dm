@@ -5,7 +5,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	role_text = "Changeling"
 	role_text_plural = "Changelings"
 	feedback_tag = "changeling_objective"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/o5rep, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep, /datum/job/o5rep)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep,)
 	welcome_text = "Use say \"%LANGUAGE_PREFIX%g message\" to communicate with your fellow changelings. Remember: you get all of their absorbed DNA if you absorb them."
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	antaghud_indicator = "hudchangeling"
@@ -16,20 +16,20 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 /datum/antagonist/changeling/get_welcome_text(mob/recipient)
 	return replacetext(welcome_text, "%LANGUAGE_PREFIX%", recipient?.get_prefix_key(/decl/prefix/language) || ",")
 
-/datum/antagonist/changeling/get_special_objective_text(var/datum/mind/player)
+/datum/antagonist/changeling/get_special_objective_text(datum/mind/player)
 	return "<br><b>Changeling ID:</b> [player.changeling.changelingID].<br><b>Genomes Absorbed:</b> [player.changeling.absorbed_count]"
 
-/datum/antagonist/changeling/update_antag_mob(var/datum/mind/player)
+/datum/antagonist/changeling/update_antag_mob(datum/mind/player)
 	..()
 	player.current.make_changeling()
 
-/datum/antagonist/changeling/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
+/datum/antagonist/changeling/remove_antagonist(datum/mind/player, show_message, implanted)
 	. = ..()
 	if(. && player && player.current)
-		player.current.verbs -= /datum/changeling/proc/EvolutionMenu
+		remove_verb(player.current, /datum/changeling/proc/EvolutionMenu)
 		QDEL_NULL(player.changeling)
 
-/datum/antagonist/changeling/create_objectives(var/datum/mind/changeling)
+/datum/antagonist/changeling/create_objectives(datum/mind/changeling)
 	if(!..())
 		return
 
@@ -66,7 +66,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 				changeling.objectives += survive_objective
 	return
 
-/datum/antagonist/changeling/can_become_antag(var/datum/mind/player, var/ignore_role)
+/datum/antagonist/changeling/can_become_antag(datum/mind/player, ignore_role)
 	if(..())
 		if(player.current)
 			if(ishuman(player.current))

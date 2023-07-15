@@ -46,8 +46,8 @@
 
 	layer = HIDING_MOB_LAYER
 
-/mob/living/bot/New()
-	..()
+/mob/living/bot/Initialize()
+	. = ..()
 	update_icons()
 
 	botcard = new /obj/item/card/id(src)
@@ -55,9 +55,6 @@
 
 	access_scanner = new /obj(src)
 	access_scanner.req_access = req_access.Copy()
-
-/mob/living/bot/Initialize()
-	. = ..()
 	if(on)
 		turn_on() // Update lights and other stuff
 	else
@@ -88,45 +85,45 @@
 /mob/living/bot/death()
 	explode()
 
-/mob/living/bot/attackby(var/obj/item/O, var/mob/user)
+/mob/living/bot/attackby(obj/item/O, mob/user)
 	if(O.GetIdCard())
 		if(access_scanner.allowed(user) && !open)
 			locked = !locked
-			to_chat(user, "<span class='notice'>Controls are now [locked ? "locked." : "unlocked."]</span>")
+			to_chat(user, SPAN_NOTICE("Controls are now [locked ? "locked." : "unlocked."]"))
 			Interact(usr)
 		else if(open)
-			to_chat(user, "<span class='warning'>Please close the access panel before locking it.</span>")
+			to_chat(user, SPAN_WARNING("Please close the access panel before locking it."))
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, SPAN_WARNING("Access denied."))
 		return
 	else if(isScrewdriver(O))
 		if(!locked)
 			open = !open
-			to_chat(user, "<span class='notice'>Maintenance panel is now [open ? "opened" : "closed"].</span>")
+			to_chat(user, SPAN_NOTICE("Maintenance panel is now [open ? "opened" : "closed"]."))
 			Interact(usr)
 		else
-			to_chat(user, "<span class='notice'>You need to unlock the controls first.</span>")
+			to_chat(user, SPAN_NOTICE("You need to unlock the controls first."))
 		return
 	else if(isWelder(O))
 		if(health < maxHealth)
 			if(open)
 				health = min(maxHealth, health + 10)
-				user.visible_message("<span class='notice'>\The [user] repairs \the [src].</span>","<span class='notice'>You repair \the [src].</span>")
+				user.visible_message(SPAN_NOTICE("\The [user] repairs \the [src]."),SPAN_NOTICE("You repair \the [src]."))
 			else
-				to_chat(user, "<span class='notice'>Unable to repair with the maintenance panel closed.</span>")
+				to_chat(user, SPAN_NOTICE("Unable to repair with the maintenance panel closed."))
 		else
-			to_chat(user, "<span class='notice'>\The [src] does not need a repair.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] does not need a repair."))
 		return
 	else
 		..()
 
-/mob/living/bot/attack_ai(var/mob/user)
+/mob/living/bot/attack_ai(mob/user)
 	Interact(user)
 
-/mob/living/bot/attack_hand(var/mob/user)
+/mob/living/bot/attack_hand(mob/user)
 	Interact(user)
 
-/mob/living/bot/proc/Interact(var/mob/user)
+/mob/living/bot/proc/Interact(mob/user)
 	add_fingerprint(user)
 	var/dat
 
@@ -175,7 +172,7 @@
 /mob/living/bot/proc/GetInteractMaintenance()
 	return
 
-/mob/living/bot/proc/ProcessCommand(var/mob/user, var/command, var/href_list)
+/mob/living/bot/proc/ProcessCommand(mob/user, command, href_list)
 	if(command == "toggle" && CanToggle(user))
 		if(on)
 			turn_off()
@@ -183,23 +180,23 @@
 			turn_on()
 	return
 
-/mob/living/bot/proc/CanToggle(var/mob/user)
+/mob/living/bot/proc/CanToggle(mob/user)
 	return (!RequiresAccessToToggle || access_scanner.allowed(user) || issilicon(user))
 
-/mob/living/bot/proc/CanAccessPanel(var/mob/user)
+/mob/living/bot/proc/CanAccessPanel(mob/user)
 	return (!locked || issilicon(user))
 
-/mob/living/bot/proc/CanAccessMaintenance(var/mob/user)
+/mob/living/bot/proc/CanAccessMaintenance(mob/user)
 	return (open || issilicon(user))
 
-/mob/living/bot/say(var/message)
+/mob/living/bot/say(message)
 	var/verb = "beeps"
 
 	message = sanitize(message)
 
 	..(message, null, verb)
 
-/mob/living/bot/Bump(var/atom/A)
+/mob/living/bot/Bump(atom/A)
 	if(on && botcard && istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
 		if(!istype(D, /obj/machinery/door/firedoor) && !istype(D, /obj/machinery/door/blast) && D.check_access(botcard))
@@ -207,7 +204,7 @@
 	else
 		..()
 
-/mob/living/bot/emag_act(var/remaining_charges, var/mob/user)
+/mob/living/bot/emag_act(remaining_charges, mob/user)
 	return 0
 
 /mob/living/bot/proc/handleAI()
@@ -263,7 +260,7 @@
 			++frustration
 	return
 
-/mob/living/bot/proc/handleFrustrated(var/targ)
+/mob/living/bot/proc/handleFrustrated(targ)
 	obstacle = targ ? target_path[1] : patrol_path[1]
 	target_path = list()
 	patrol_path = list()
@@ -272,7 +269,7 @@
 /mob/living/bot/proc/lookForTargets()
 	return
 
-/mob/living/bot/proc/confirmTarget(var/atom/A)
+/mob/living/bot/proc/confirmTarget(atom/A)
 	if(A.invisibility >= INVISIBILITY_LEVEL_ONE)
 		return 0
 	if(A in ignore_list)
@@ -288,7 +285,7 @@
 /mob/living/bot/proc/startPatrol()
 	var/turf/T = getPatrolTurf()
 	if(T)
-		patrol_path = AStar(get_turf(loc), T, /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_patrol_dist, id = botcard, exclude = obstacle)
+		patrol_path = AStar(get_turf(loc), T, /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_patrol_dist, adjacent_arg = botcard, exclude = obstacle)
 		if(!patrol_path)
 			patrol_path = list()
 		obstacle = null
@@ -320,7 +317,7 @@
 	return
 
 /mob/living/bot/proc/calcTargetPath()
-	target_path = AStar(get_turf(loc), get_turf(target), /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_target_dist, id = botcard, exclude = obstacle)
+	target_path = AStar(get_turf(loc), get_turf(target), /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_target_dist, adjacent_arg = botcard, exclude = obstacle)
 	if(!target_path)
 		if(target && target.loc)
 			ignore_list |= target
@@ -328,7 +325,7 @@
 		obstacle = null
 	return
 
-/mob/living/bot/proc/makeStep(var/list/path)
+/mob/living/bot/proc/makeStep(list/path)
 	if(!path.len)
 		return 0
 	var/turf/T = path[1]
@@ -370,7 +367,7 @@
 
 // Returns the surrounding cardinal turfs with open links
 // Including through doors openable with the ID
-/turf/proc/CardinalTurfsWithAccess(var/obj/item/card/id/ID)
+/turf/proc/CardinalTurfsWithAccess(obj/item/card/id/ID)
 	var/L[] = new()
 
 	//	for(var/turf/simulated/t in oview(src,1))
@@ -414,7 +411,7 @@
 
 // Returns true if direction is blocked from loc
 // Checks doors against access with given ID
-/proc/DirBlockedWithAccess(turf/loc,var/dir,var/obj/item/card/id/ID)
+/proc/DirBlockedWithAccess(turf/loc,dir,obj/item/card/id/ID)
 	for(var/obj/structure/window/D in loc)
 		if(!D.density)			continue
 		if(D.dir == SOUTHWEST)	return 1

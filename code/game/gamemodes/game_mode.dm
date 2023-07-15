@@ -27,7 +27,7 @@ var/global/list/additional_antag_types = list()
 	var/round_autoantag = FALSE              // Will this round attempt to periodically spawn more antagonists?
 	var/antag_scaling_coeff = 5              // Coefficient for scaling max antagonists to player count.
 	var/require_all_templates = FALSE        // Will only start if all templates are checked and can spawn.
-	var/addantag_allowed = ADDANTAG_ADMIN | ADDANTAG_AUTO
+	var/addantag_allowed = ADDANTAG_ADMIN
 
 	var/station_was_nuked = FALSE            // See nuclearbomb.dm and malfunction.dm.
 	var/explosion_in_progress = FALSE        // Sit back and relax
@@ -71,7 +71,7 @@ var/global/list/additional_antag_types = list()
 				auto_recall_shuttle = !auto_recall_shuttle
 			if("autotraitor")
 				round_autoantag = !round_autoantag
-		message_admins("Admin [key_name_admin(usr)] toggled game mode option '[href_list["toggle"]]'.")
+		message_staff("Admin [key_name_admin(usr)] toggled game mode option '[href_list["toggle"]]'.")
 	else if(href_list["set"])
 		var/choice = ""
 		switch(href_list["set"])
@@ -97,7 +97,7 @@ var/global/list/additional_antag_types = list()
 					return
 				event_delay_mod_major = choice
 				refresh_event_modifiers()
-		message_admins("Admin [key_name_admin(usr)] set game mode option '[href_list["set"]]' to [choice].")
+		message_staff("Admin [key_name_admin(usr)] set game mode option '[href_list["set"]]' to [choice].")
 	else if(href_list["debug_antag"])
 		if(href_list["debug_antag"] == "self")
 			usr.client.debug_variables(src)
@@ -105,7 +105,7 @@ var/global/list/additional_antag_types = list()
 		var/datum/antagonist/antag = GLOB.all_antag_types_[href_list["debug_antag"]]
 		if(antag)
 			usr.client.debug_variables(antag)
-			message_admins("Admin [key_name_admin(usr)] is debugging the [antag.role_text] template.")
+			message_staff("Admin [key_name_admin(usr)] is debugging the [antag.role_text] template.")
 	else if(href_list["remove_antag_type"])
 		if(antag_tags && (href_list["remove_antag_type"] in antag_tags))
 			to_chat(usr, "Cannot remove core mode antag type.")
@@ -114,7 +114,7 @@ var/global/list/additional_antag_types = list()
 		if(antag_templates && antag_templates.len && antag && (antag in antag_templates) && (antag.id in additional_antag_types))
 			antag_templates -= antag
 			additional_antag_types -= antag.id
-			message_admins("Admin [key_name_admin(usr)] removed [antag.role_text] template from game mode.")
+			message_staff("Admin [key_name_admin(usr)] removed [antag.role_text] template from game mode.")
 	else if(href_list["add_antag_type"])
 		var/choice = input("Which type do you wish to add?") as null|anything in GLOB.all_antag_types_
 		if(!choice)
@@ -124,7 +124,7 @@ var/global/list/additional_antag_types = list()
 			if(!islist(SSticker.mode.antag_templates))
 				SSticker.mode.antag_templates = list()
 			SSticker.mode.antag_templates |= antag
-			message_admins("Admin [key_name_admin(usr)] added [antag.role_text] template to game mode.")
+			message_staff("Admin [key_name_admin(usr)] added [antag.role_text] template to game mode.")
 
 	if (usr.client && usr.client.holder)
 		usr.client.holder.show_game_mode(usr)
@@ -148,7 +148,7 @@ var/global/list/additional_antag_types = list()
 		if(antag_templates.len > 1 && SSticker.master_mode != "secret")
 			to_world("[antag_summary]")
 		else
-			message_admins("[antag_summary]")
+			message_staff("[antag_summary]")
 
 /// Run prior to a mode vote to determine if the mode should be included. Falsy if yes, otherwise a status message.
 /datum/game_mode/proc/check_votable(list/lobby_players)
@@ -320,7 +320,7 @@ var/global/list/additional_antag_types = list()
 /datum/game_mode/proc/check_win() //universal trigger to be called at mob death, nuke explosion, etc. To be called from everywhere.
 	return 0
 
-/datum/game_mode/proc/get_players_for_role(var/antag_id)
+/datum/game_mode/proc/get_players_for_role(antag_id)
 	var/list/players = list()
 	var/list/candidates = list()
 
@@ -472,10 +472,10 @@ var/global/list/additional_antag_types = list()
 	msg += "</span>" // close the span from right at the top
 
 	for(var/mob/M in SSmobs.mob_list)
-		if(M.client && M.client.holder)
+		if(check_rights(R_ADMIN|R_MOD, FALSE, M))
 			to_chat(M, msg)
 
-/proc/show_objectives(var/datum/mind/player)
+/proc/show_objectives(datum/mind/player)
 
 	if(!player || !player.current) return
 
@@ -483,7 +483,7 @@ var/global/list/additional_antag_types = list()
 		return
 
 	var/obj_count = 1
-	to_chat(player.current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(player.current, SPAN_NOTICE("Your current objectives:"))
 	for(var/datum/objective/objective in player.objectives)
 		to_chat(player.current, "<B>Objective #[obj_count]</B>: [objective.explanation_text]")
 		obj_count++

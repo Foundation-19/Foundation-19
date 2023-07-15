@@ -159,7 +159,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	E.alpha = 0
 	E.name = "None"
 	E.maptext = null
-	E.mouse_opacity = 0
+	E.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	E.choice = null
 	E.next_page = FALSE
 
@@ -180,7 +180,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 
 	//Visuals
 	E.alpha = 255
-	E.mouse_opacity = 1
+	E.mouse_opacity = MOUSE_OPACITY_ICON
 	E.cut_overlays()
 	if(choice_id == NEXT_PAGE_ID)
 		E.name = "Next Page"

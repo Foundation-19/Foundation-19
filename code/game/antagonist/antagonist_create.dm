@@ -1,4 +1,4 @@
-/datum/antagonist/proc/create_antagonist(var/datum/mind/target, var/move, var/gag_announcement, var/preserve_appearance)
+/datum/antagonist/proc/create_antagonist(datum/mind/target, move, gag_announcement, preserve_appearance)
 
 	if(!target)
 		return
@@ -19,7 +19,7 @@
 	if(!gag_announcement)
 		announce_antagonist_spawn()
 
-/datum/antagonist/proc/create_default(var/mob/source)
+/datum/antagonist/proc/create_default(mob/source)
 	var/mob/living/M
 	if(mob_path)
 		M = new mob_path(get_turf(source))
@@ -29,17 +29,17 @@
 	add_antagonist(M.mind, 1, 0, 1) // Equip them and move them to spawn.
 	return M
 
-/datum/antagonist/proc/create_id(var/assignment, var/mob/living/carbon/human/player, var/equip = 1)
+/datum/antagonist/proc/create_id(assignment, mob/living/carbon/human/player, equip = 1)
 
 	var/obj/item/card/id/W = new id_type(player)
 	if(!W) return
 	W.access |= default_access
 	W.assignment = "[assignment]"
 	player.set_id_info(W)
-	if(equip) player.equip_to_slot_or_del(W, slot_wear_id)
+	if(equip) player.equip_to_slot_or_store_or_drop(W, slot_wear_id)
 	return W
 
-/datum/antagonist/proc/create_radio(var/freq, var/mob/living/carbon/human/player)
+/datum/antagonist/proc/create_radio(freq, mob/living/carbon/human/player)
 	var/obj/item/device/radio/R
 
 	switch(freq)
@@ -51,17 +51,17 @@
 			R = new/obj/item/device/radio/headset(player)
 			R.set_frequency(freq)
 
-	player.equip_to_slot_or_del(R, slot_l_ear)
+	player.equip_to_slot_or_store_or_drop(R, slot_l_ear)
 	return R
 
-/datum/antagonist/proc/greet(var/datum/mind/player)
+/datum/antagonist/proc/greet(datum/mind/player)
 
 	// Basic intro text.
-	to_chat(player.current, "<span class='danger'><font size=3>You are a [role_text]!</font></span>")
+	to_chat(player.current, SPAN_DANGER("<font size=3>You are a [role_text]!</font>"))
 	if(leader_welcome_text && player == leader)
-		to_chat(player.current, "<span class='antagdesc'>[get_leader_welcome_text(player.current)]</span>")
+		to_chat(player.current, SPAN_CLASS("antagdesc","[get_leader_welcome_text(player.current)]"))
 	else
-		to_chat(player.current, "<span class='antagdesc'>[get_welcome_text(player.current)]</span>")
+		to_chat(player.current, SPAN_CLASS("antagdesc","[get_welcome_text(player.current)]"))
 	if (config.objectives_disabled == CONFIG_OBJECTIVE_NONE || !player.objectives.len)
 		to_chat(player.current, get_antag_text(player.current))
 
@@ -73,7 +73,7 @@
 
 	return 1
 
-/datum/antagonist/proc/set_antag_name(var/mob/living/player)
+/datum/antagonist/proc/set_antag_name(mob/living/player)
 	// Choose a name, if any.
 	var/newname = sanitize(input(player, "You are a [role_text]. Would you like to change your name to something else?", "Name change") as null|text, MAX_NAME_LEN)
 	if (newname)

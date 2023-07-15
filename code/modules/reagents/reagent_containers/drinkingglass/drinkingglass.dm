@@ -109,7 +109,7 @@
 				SPAN_DANGER("\The [src] shatters from the impact!"),
 				SPAN_DANGER("You hear the sound of glass shattering!")
 			)
-		playsound(src.loc, pick(GLOB.shatter_sound), 100)
+		playsound(src.loc, SFX_SHATTER, 100)
 		new /obj/item/material/shard(src.loc)
 		qdel(src)
 	else
@@ -220,14 +220,15 @@
 /obj/item/reagent_containers/food/drinks/glass2/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/material/kitchen/utensil/spoon))
 		if(user.a_intent == I_HURT)
-			user.visible_message("<span class='warning'>[user] bashes \the [src] with a spoon, shattering it to pieces! What a rube.</span>")
-			playsound(src, "shatter", 30, 1)
+			user.visible_message(SPAN_WARNING("[user] bashes \the [src] with a spoon, shattering it to pieces! What a rube."))
+			playsound(src, SFX_SHATTER, 30, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(reagents)
-				user.visible_message("<span class='notice'>The contents of \the [src] splash all over [user]!</span>")
+				user.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [user]!"))
 				reagents.splash(user, reagents.total_volume)
 			qdel(src)
 			return
-		user.visible_message("<span class='notice'>[user] gently strikes \the [src] with a spoon, calling the room to attention.</span>")
+		user.visible_message(SPAN_NOTICE("[user] gently strikes \the [src] with a spoon, calling the room to attention."))
 		playsound(src, "sound/items/wineglass.ogg", 65, 1)
 	else return ..()
 

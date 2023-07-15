@@ -63,35 +63,35 @@
 		STOP_PROCESSING_POWER_OBJECT(src)
 	. = ..()
 
-/obj/item/device/powersink/attackby(var/obj/item/I, var/mob/user)
+/obj/item/device/powersink/attackby(obj/item/I, mob/user)
 	if(isScrewdriver(I))
 		if(mode == DISCONNECTED)
 			var/turf/T = loc
 			if(isturf(T) && !!T.is_plating())
 				attached = locate() in T
 				if(!attached)
-					to_chat(user, "<span class='warning'>This device must be placed over an exposed, powered cable node!</span>")
+					to_chat(user, SPAN_WARNING("This device must be placed over an exposed, powered cable node!"))
 				else
 					set_mode(CLAMPED_OFF)
 					user.visible_message( \
 						"[user] attaches \the [src] to the cable.", \
-						"<span class='notice'>You attach \the [src] to the cable.</span>",
-						"<span class='italics'>You hear some wires being connected to something.</span>")
+						SPAN_NOTICE("You attach \the [src] to the cable."),
+						SPAN_CLASS("italics","You hear some wires being connected to something."))
 			else
-				to_chat(user, "<span class='warning'>This device must be placed over an exposed, powered cable node!</span>")
+				to_chat(user, SPAN_WARNING("This device must be placed over an exposed, powered cable node!"))
 		else
 			set_mode(DISCONNECTED)
 			user.visible_message( \
 				"[user] detaches \the [src] from the cable.", \
-				"<span class='notice'>You detach \the [src] from the cable.</span>",
-				"<span class='italics'>You hear some wires being disconnected from something.</span>")
+				SPAN_NOTICE("You detach \the [src] from the cable."),
+				SPAN_CLASS("italics","You hear some wires being disconnected from something."))
 	else
 		return ..()
 
 /obj/item/device/powersink/attack_ai()
 	return
 
-/obj/item/device/powersink/attack_hand(var/mob/user)
+/obj/item/device/powersink/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -102,17 +102,17 @@
 		if(CLAMPED_OFF)
 			user.visible_message( \
 				"[user] activates \the [src]!", \
-				"<span class='notice'>You activate \the [src].</span>",
-				"<span class='italics'>You hear a click.</span>")
-			message_admins("Power sink activated by [key_name_admin(user)] at (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+				SPAN_NOTICE("You activate \the [src]."),
+				SPAN_CLASS("italics","You hear a click."))
+			message_staff("Power sink activated by [key_name_admin(user)] at (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
 			log_game("Power sink activated by [key_name(user)] at [get_area_name(src)]")
 			set_mode(OPERATING)
 
 		if(OPERATING)
 			user.visible_message( \
 				"[user] deactivates \the [src]!", \
-				"<span class='notice'>You deactivate \the [src].</span>",
-				"<span class='italics'>You hear a click.</span>")
+				SPAN_NOTICE("You deactivate \the [src]."),
+				SPAN_CLASS("italics","You hear a click."))
 			set_mode(CLAMPED_OFF)
 
 /obj/item/device/powersink/pwr_drain()

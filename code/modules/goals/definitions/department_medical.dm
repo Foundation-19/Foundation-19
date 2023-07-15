@@ -9,7 +9,7 @@
 	var/max_fatalities
 
 /datum/goal/department/medical_fatalities/New()
-	max_fatalities = rand(3,5)
+	max_fatalities = rand(20,30)
 	..()
 
 /datum/goal/department/medical_fatalities/update_strings()

@@ -34,7 +34,7 @@
 	return TRUE
 
 /obj/item/implant/translator/Destroy()
-	removed()
+	ImplantRemoval()
 	GLOB.listening_objects -= src
 	return ..()
 

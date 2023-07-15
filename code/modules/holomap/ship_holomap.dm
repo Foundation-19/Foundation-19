@@ -78,7 +78,7 @@
 
 	update_icon()
 
-/obj/machinery/ship_map/attack_hand(var/mob/user)
+/obj/machinery/ship_map/attack_hand(mob/user)
 	if(watching_mob && (watching_mob != user))
 		to_chat(user, SPAN_WARNING("Someone else is currently watching the holomap."))
 		return
@@ -88,7 +88,7 @@
 	startWatching(user)
 
 // Let people bump up against it to watch
-/obj/machinery/ship_map/Bumped(var/atom/movable/AM)
+/obj/machinery/ship_map/Bumped(atom/movable/AM)
 	if(!watching_mob && isliving(AM) && AM.loc == loc)
 		startWatching(AM)
 
@@ -101,7 +101,7 @@
 	else
 		return TRUE
 
-/obj/machinery/ship_map/proc/startWatching(var/mob/user)
+/obj/machinery/ship_map/proc/startWatching(mob/user)
 	if(isliving(user) && anchored && !(stat & (NOPOWER|BROKEN)))
 		if(user.client)
 			holomap_datum.station_map.loc = GLOB.global_hud.holomap  // Put the image on the holomap hud
@@ -309,16 +309,16 @@
 		if(LAZYLEN(legend))
 			QDEL_NULL_LIST(legend)
 		LAZYINITLIST(legend)
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_COMMAND, "� Command"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SECURITY, "� Security"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_MEDICAL, "� Medical"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SCIENCE, "� Research"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_EXPLORATION, "� Exploration"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ENGINEERING, "� Engineering"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CARGO, "� Supply"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_AIRLOCK, "� Airlock"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ESCAPE, "� Escape"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CREW, "� Crew"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_COMMAND, "Command"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SECURITY, "Security"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_MEDICAL, "Medical"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SCIENCE, "Research"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_EXPLORATION, "Exploration"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ENGINEERING, "Engineering"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CARGO, "Supply"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_AIRLOCK, "Airlock"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ESCAPE, "Escape"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CREW, "Crew"))
 		LAZYADD(legend, new /obj/screen/legend/cursor(null ,HOLOMAP_AREACOLOR_BASE, "You are here"))
 	if(reinit)
 		QDEL_NULL_LIST(maptexts)
@@ -373,7 +373,7 @@
 				var/obj/screen/maptext_overlay = new(null)
 				maptext_overlay.icon = null
 				maptext_overlay.layer = HUD_ITEM_LAYER
-				maptext_overlay.maptext = "<span style='text-align:center'>LEVEL [level-1]</span>"
+				maptext_overlay.maptext = SPAN_STYLE("text-align:center","LEVEL [level-1]")
 				maptext_overlay.maptext_width = 96
 				maptext_overlay.pixel_x = (HOLOMAP_ICON_SIZE / 2) - (maptext_overlay.maptext_width / 2)
 				maptext_overlay.pixel_y = HOLOMAP_MARGIN

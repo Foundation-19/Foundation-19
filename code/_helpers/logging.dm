@@ -80,10 +80,14 @@
 /proc/log_say(text)
 	if (config.log_say)
 		game_log("SAY", text)
+	if(usr)
+		usr?.say_log += "([time_stamp()]) (<b>[usr.x]X, [usr.y]Y, [usr.z]Z</b>) - [text]. (Location: [get_area(usr)])"
 
 /proc/log_ooc(text)
 	if (config.log_ooc)
 		game_log("OOC", text)
+	if(usr)
+		usr?.ooc_log += "([time_stamp()]) - [text]"
 
 /proc/log_whisper(text)
 	if (config.log_whisper)
@@ -92,6 +96,8 @@
 /proc/log_emote(text)
 	if (config.log_emote)
 		game_log("EMOTE", text)
+	if(usr)
+		usr?.emote_log += "([time_stamp()]) - [text]"
 
 /proc/log_attack(text)
 	if (config.log_attack)
@@ -124,8 +130,52 @@
 	if(config.log_world_output)
 		game_log("DD_OUTPUT", text)
 
+#ifdef REFERENCE_TRACKING_LOG
+#define log_reftracker(msg) log_world("## REF SEARCH [msg]")
+#else
+#define log_reftracker(msg)
+#endif
+
+
+/**
+ * Appends a tgui-related log entry. All arguments are optional.
+ */
+/proc/log_tgui(user, message, context,
+		datum/tgui_window/window,
+		datum/src_object)
+	var/entry = ""
+	// Insert user info
+	if(!user)
+		entry += "<nobody>"
+	else if(istype(user, /mob))
+		var/mob/mob = user
+		entry += "[mob.ckey] (as [mob] at [mob.x],[mob.y],[mob.z])"
+	else if(istype(user, /client))
+		var/client/client = user
+		entry += "[client.ckey]"
+	// Insert context
+	if(context)
+		entry += " in [context]"
+	else if(window)
+		entry += " in [window.id]"
+	// Resolve src_object
+	if(!src_object && window?.locked_by)
+		src_object = window.locked_by.src_object
+	// Insert src_object info
+	if(src_object)
+		entry += "\nUsing: [src_object.type] [REF(src_object)]"
+	// Insert message
+	if(message)
+		entry += "\n[message]"
+	to_file(GLOB.tgui_log, entry)
+
+/// Logging for loading and caching assets
+/proc/log_asset(text)
+	if(config.log_assets)
+		to_file(GLOB.world_asset_log, "ASSET: [text]")
+
 //pretty print a direction bitflag, can be useful for debugging.
-/proc/dir_text(var/dir)
+/proc/dir_text(dir)
 	var/list/comps = list()
 	if(dir & NORTH) comps += "NORTH"
 	if(dir & SOUTH) comps += "SOUTH"
@@ -137,7 +187,7 @@
 	return english_list(comps, nothing_text="0", and_text="|", comma_text="|")
 
 //more or less a logging utility
-/proc/key_name(var/whom, var/include_link = null, var/include_name = 1, var/highlight_special_characters = 1, var/datum/ticket/ticket = null)
+/proc/key_name(whom, include_link = null, include_name = 1, highlight_special_characters = 1, datum/ticket/ticket = null)
 	var/mob/M
 	var/client/C
 	var/key
@@ -193,12 +243,12 @@
 
 	return .
 
-/proc/key_name_admin(var/whom, var/include_name = 1)
+/proc/key_name_admin(whom, include_name = 1)
 	return key_name(whom, 1, include_name)
 
 // Helper procs for building detailed log lines
 /datum/proc/get_log_info_line()
-	return "[src] ([type]) ([any2ref(src)])"
+	return "[src] ([type]) ([REF(src)])"
 
 /area/get_log_info_line()
 	return "[..()] ([isnum(z) ? "[x],[y],[z]" : "0,0,0"])"
@@ -213,7 +263,7 @@
 /mob/get_log_info_line()
 	return ckey ? "[..()] ([ckey])" : ..()
 
-/proc/log_info_line(var/datum/d)
+/proc/log_info_line(datum/d)
 	if(isnull(d))
 		return "*null*"
 	if(islist(d))
@@ -227,6 +277,6 @@
 		return json_encode(d)
 	return d.get_log_info_line()
 
-/proc/report_progress(var/progress_message)
-	admin_notice("<span class='boldannounce'>[progress_message]</span>", R_DEBUG)
+/proc/report_progress(progress_message)
+	admin_notice(SPAN_CLASS("boldannounce","[progress_message]"), R_DEBUG)
 	to_world_log(progress_message)

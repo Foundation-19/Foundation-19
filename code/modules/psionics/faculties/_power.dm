@@ -43,3 +43,4 @@
 		admin_attack_log(user, target, "Used psipower ([name])", "Was subjected to a psipower ([name])", "used a psipower ([name]) on")
 	if(use_sound)
 		playsound(user.loc, use_sound, 75)
+		show_sound_effect(user.loc, user)

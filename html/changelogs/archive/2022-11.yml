@@ -1,0 +1,139 @@
+2022-11-02:
+  MACIEKBAKI:
+  - bugfix: One door (LCZ-EZ Checkpoint) should no longer be in a wall.
+  Realtimeslayer:
+  - bugfix: gas injector
+  Tsurupeta:
+  - config: added a BCCM value to config.
+  - admin: Added BCCM for use by admins.
+  - server: Added SQL migrations for BCCM functionality.
+2022-11-03:
+  Tsurupeta:
+  - rscadd: You can no longer respawn with the same character name.
+  - admin: change location of player logs storage.
+  - rscadd: You can now heat up tanks using welder.
+2022-11-04:
+  GGarciaECE:
+  - rscadd: new sprites for future guns courtesy of Civilization13
+  - rscadd: glock17 (unused), M60 (new LMG maybe for MTF or perhaps add one to HCZ
+      armoury, pretty op tho), Spas12 (reskin of Combat shotgun, variants that spawn
+      with beanbag, slug or buckshot, 9 shells), AR12 (Semi auto shotgun with 10 shell
+      mags, variants that spawn with beanbag, buckshot or slug mag initially), Saiga12
+      (identical as AR12 except mags hold 8 rounds)
+  - rscadd: Replaced LCZ locker room's P90's with shotguns loaded in beanbag.  Meant
+      to be used in CDC as beanbag is relatively efficient and less messy than P90
+      rubber
+  - balance: Buffed Titanium, Plasteel and Plasteel Osmium significantly against brute
+      attacks. Rifle bullets for the most part (apart from the most powerful) will
+      not scratch them.
+  - rscadd: HCZ spawn with ballistic armour, the hazmat armour can still be found
+      in their armoury
+  - rscadd: Changes to CDC and to various checkpoints to make them more utilitarians
+      and less claustrophobic
+  - rscadd: Add 2 pairs of sunglasses and 4 flashes (2 extra as replacement, flashes
+      burn quick) in CDC Medical for EMTs, in their locker room
+  - rscadd: Modified content of armoury, there are less rifles now (except in HCZ
+      which still has 8 assault rifles to arm 8 out of 9 operatives). HCZ has a new
+      LMG, the M60, but there is only one of them. All zone armouries have variants
+      of sidearms as well as Saiga12 with variants of shell boxes and mags (in both
+      non lethal and lethal). HCZ now has frag grenades and a single grenade launcher
+      (not to be abused). HCZ is truly the heavy weapon guys of the Site now
+  - rscadd: 'New shotgun shell: Rubbershot. It''s basically buckshot but non lethal
+      (it is to buckshot what beanbag is to slug)'
+  - rscadd: Connected Reeducation room through a tunnel to inside of CDCZ. It's relatively
+      secluded now, but its as expected for a room where the unspeakable occur.
+2022-11-05:
+  GGarciaECE:
+  - bugfix: fix desynced shutters on the CDC medical office
+  - bugfix: fix buttons set to the incorrect ID near CDC mining checkpoint
+  - bugfix: fix two direction windows incorrectly being displayed as fulltile window
+  MACIEKBAKI:
+  - bugfix: EZ Med Storage gravity should work properly (just before the doors, that
+      one)
+2022-11-08:
+  cheesePizza2:
+  - rscadd: New logos for documents! Now the science, medical, and administrative
+      department (among others) can specialize their paperwork better.
+  - rscadd: Codex updated! Examine a pen and hit the codex button for a guide on paperwork.
+  - imageadd: Manufacturing department logo is available (obtained from the same location
+      as many of the other images).
+  - imagedel: Baystation logos (NT logos, for example) are gone.
+  - code_imp: htmltopencode was updated as well, so logos should properly re-pencodify
+2022-11-09:
+  Tsurupeta:
+  - rscadd: IDs and Crew Records now contain cropped photos of people without their
+      headgear.
+2022-11-10:
+  MACIEKBAKI:
+  - bugfix: Shoes are now made thick enough to not allow injection using a syringe.
+  - bugfix: Foundation-Issued Tactical Gloves are now also made thick enough to prevent
+      injection.
+  - bugfix: Amputation surgery should no longer be instant, hopefully. Although same
+      goes for all surgery.
+  Tsurupeta:
+  - bugfix: Masks now redraw hair on adjust.
+  - bugfix: Mineral walls no longer contain vacuum inside of them.
+  Yawet330:
+  - tweak: 294 has recieved a small rework to make it less of a threat to round integrity.
+  cheesePizza2:
+  - imageadd: the APPROVE Stamp now has a sprite. It is no longer invisible
+2022-11-11:
+  CristoMagisto:
+  - bugfix: fixed syndie agent card name not changing when appearance is changed
+  Tsurupeta:
+  - rscadd: Added openspace blur effetcs.
+  - rscadd: Added effect that draws shadows from objects.
+  - bugfix: Rewrote Vision Cone to use alpha filter masks.
+  Yawet330:
+  - bugfix: No more synthetic immortality
+2022-11-12:
+  CapCamIII:
+  - rscadd: MTF teams are equipped with M4A1 with extended magazines in their rooms.
+  - rscadd: Brand new MTF/CentCom, slightly bigger.
+  - rscdel: Old MTF/CentCom is no more.
+  - balance: Adds spare gear to MTF base.
+  - bugfix: The the flare-gun launcher MTF get now uses the correct flare type.
+  TitanicEngineer(Titanized):
+  - balance: Grants the Chief Engineer access to administration-related tools.
+  - balance: Grants the communications officer access to SCiPNET monitoring programs.
+  - bugfix: Switches deprecated Torch engineering access to Site53's access model.
+2022-11-13:
+  Tsurupeta:
+  - bugfix: fixed skill-time multiplier being 0 at high skill levels.
+  - balance: nerfed EZ and LCZ ZC bullet armor a lot, nerfed other armor a little.
+  - balance: nerfed bullet damage and AP values slightly, nerfed slug damage a lot(they
+      are still extremely lethal, but not overly so).
+  Yawet330:
+  - tweak: Le brain in le chest. (Its no longer all in le head)
+2022-11-16:
+  CristoMagisto69:
+  - rscadd: voice changer masks now copy the item_flags of the masks they're copying,
+      i.e. internals masks can be used as internals
+  - bugfix: laptop sprite showing screen when closed
+2022-11-18:
+  CristoMagisto69:
+  - bugfix: chameleon item icons not appearing properly when examining a mob
+  Tsurupeta:
+  - rscadd: Added dynamic painkiller effect on-hud representation.
+  - code_imp: Ported GC from /tg/
+  checkraisefold:
+  - bugfix: Examining 151 with a blindfold on no longer effects you.
+  - bugfix: Photocopied/faxed photos of 096 are now anomalous
+2022-11-19:
+  Tsurupeta:
+  - bugfix: Fixed tile icon colors, so that tiles and monotiles share same darkness.
+  - bugfix: Reverted integrated HUD implant cost.
+  - bugfix: Fixed server lags from clogging (removed it).
+  Yawet330:
+  - rscadd: Spare reactors
+  - balance: Lots of armory changes, LCZ has new stuff, HCZ has less stuff, EZ has
+      some stuff changed.
+  - rscadd: new AIC core
+2022-11-21:
+  checkraisefold:
+  - bugfix: Blindfolds now block being effected by 012, sunglasses do not
+2022-11-30:
+  checkraisefold:
+  - bugfix: Rigs are no longer bricked if they're EMPed while turned off.
+  - bugfix: Hardsuit verbs tab shows up upon putting on a rig without having to refresh
+      tgui.

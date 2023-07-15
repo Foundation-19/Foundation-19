@@ -1,4 +1,4 @@
-/datum/antagonist/proc/add_antagonist(var/datum/mind/player, var/ignore_role, var/do_not_equip, var/move_to_spawn, var/do_not_announce, var/preserve_appearance)
+/datum/antagonist/proc/add_antagonist(datum/mind/player, ignore_role, do_not_equip, move_to_spawn, do_not_announce, preserve_appearance)
 
 	if(!add_antagonist_mind(player, ignore_role))
 		return
@@ -30,7 +30,7 @@
 		player.current.faction = faction
 	return 1
 
-/datum/antagonist/proc/add_antagonist_mind(var/datum/mind/player, var/ignore_role, var/nonstandard_role_type, var/nonstandard_role_msg)
+/datum/antagonist/proc/add_antagonist_mind(datum/mind/player, ignore_role, nonstandard_role_type, nonstandard_role_msg)
 	if(!istype(player))
 		return 0
 	if(!player.current)
@@ -42,39 +42,39 @@
 	current_antagonists |= player
 
 	if(faction_verb)
-		player.current.verbs |= faction_verb
+		add_verb(player.current, faction_verb)
 
 	if(config.objectives_disabled == CONFIG_OBJECTIVE_VERB)
-		player.current.verbs += /mob/proc/add_objectives
+		add_verb(player.current, /mob/proc/add_objectives)
 
 	if(player.current.client)
-		player.current.client.verbs += /client/proc/aooc
+		add_verb(player.current.client, /client/proc/aooc)
 
 	spawn(1 SECOND) //Added a delay so that this should pop up at the bottom and not the top of the text flood the new antag gets.
 		to_chat(player.current, "<span class='notice'>Once you decide on a goal to pursue, you can optionally display it to \
 			everyone at the end of the shift with the <b>Set Ambition</b> verb, located in the IC tab.  You can change this at any time, \
 			and it otherwise has no bearing on your round.</span>")
-	player.current.verbs += /mob/living/proc/set_ambition
+	add_verb(player.current, /mob/living/proc/set_ambition)
 
 	// Handle only adding a mind and not bothering with gear etc.
 	if(nonstandard_role_type)
 		faction_members |= player
-		to_chat(player.current, "<span class='danger'><font size=3>You are \a [nonstandard_role_type]!</font></span>")
+		to_chat(player.current, SPAN_DANGER("<font size=3>You are \a [nonstandard_role_type]!</font>"))
 		player.special_role = nonstandard_role_type
 		if(nonstandard_role_msg)
-			to_chat(player.current, "<span class='notice'>[nonstandard_role_msg]</span>")
+			to_chat(player.current, SPAN_NOTICE("[nonstandard_role_msg]"))
 		update_icons_added(player)
 	return 1
 
-/datum/antagonist/proc/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
+/datum/antagonist/proc/remove_antagonist(datum/mind/player, show_message, implanted)
 	if(!istype(player))
 		return 0
 	if(player.current && faction_verb)
-		player.current.verbs -= faction_verb
+		remove_verb(player.current, faction_verb)
 	if(faction && player.current.faction == faction)
 		player.current.faction = MOB_FACTION_NEUTRAL
 	if(player in current_antagonists)
-		to_chat(player.current, "<span class='danger'><font size = 3>You are no longer a [role_text]!</font></span>")
+		to_chat(player.current, SPAN_DANGER("<font size = 3>You are no longer a [role_text]!</font>"))
 		current_antagonists -= player
 		faction_members -= player
 		player.special_role = null
@@ -86,9 +86,9 @@
 
 		if(!is_special_character(player))
 			if(player.current)
-				player.current.verbs -= /mob/living/proc/set_ambition
+				remove_verb(player.current, /mob/living/proc/set_ambition)
 				if(player.current.client)
-					player.current.client.verbs -= /client/proc/aooc
+					remove_verb(player.current.client, /client/proc/aooc)
 			qdel(SSgoals.ambitions[player])
 		return 1
 	return 0

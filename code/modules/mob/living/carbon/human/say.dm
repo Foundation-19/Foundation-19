@@ -1,4 +1,4 @@
-/mob/living/carbon/human/say(var/message, var/datum/language/speaking = null, whispering)
+/mob/living/carbon/human/say(message, datum/language/speaking = null, whispering)
 	if (isscp049_1(src))
 		src << "<span class = 'warning'>You cannot speak. Use your \"Communicate\" verb instead.</span>"
 		return
@@ -28,11 +28,11 @@
 		var/obj/item/organ/internal/lungs/L = internal_organs_by_name[species.breathing_organ]
 		if(!L || L.breath_fail_ratio > 0.9)
 			if(L && world.time < L.last_successful_breath + 2 MINUTES) //if we're in grace suffocation period, give it up for last words
-				to_chat(src, "<span class='warning'>You use your remaining air to say something!</span>")
+				to_chat(src, SPAN_WARNING("You use your remaining air to say something!"))
 				L.last_successful_breath = world.time - 2 MINUTES
 				return ..(message, speaking = speaking)
 
-			to_chat(src, "<span class='warning'>You don't have enough air[L ? " in [L]" : ""] to make a sound!</span>")
+			to_chat(src, SPAN_WARNING("You don't have enough air[L ? " in [L]" : ""] to make a sound!"))
 			return
 		else if(L.breath_fail_ratio > 0.7)
 			whisper_say(length(message) > 5 ? stars(message) : message, speaking)
@@ -76,7 +76,7 @@
 					say(temp)
 				winset(client, "input", "text=[null]")
 
-/mob/living/carbon/human/say_understands(var/mob/other,var/datum/language/speaking = null)
+/mob/living/carbon/human/say_understands(mob/other,datum/language/speaking = null)
 
 	if(has_brain_worms()) //Brain worms translate everything. Even mice and alien speak.
 		return 1
@@ -134,7 +134,7 @@
 		return mind.changeling.mimicing
 	return real_name
 
-/mob/living/carbon/human/say_quote(var/message, var/datum/language/speaking = null)
+/mob/living/carbon/human/say_quote(message, datum/language/speaking = null)
 	var/verb = "says"
 	var/ending = copytext(message, length(message))
 
@@ -148,7 +148,7 @@
 
 	return verb
 
-/mob/living/carbon/human/handle_speech_problems(var/list/message_data)
+/mob/living/carbon/human/handle_speech_problems(list/message_data)
 	if(silent || (sdisabilities & MUTED))
 		to_chat(src, SPAN_WARNING("You try to speak, but cannot."))
 		message_data[1] = ""
@@ -237,7 +237,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/carbon/human/parse_language(var/message)
+/mob/living/carbon/human/parse_language(message)
 	var/prefix = copytext(message,1,2)
 	if(length(message) >= 1 && prefix == get_prefix_key(/decl/prefix/audible_emote))
 		return all_languages["Noise"]

@@ -1,7 +1,7 @@
 // Quick and deliberate movements are not necessarily mutually exclusive
-#define MOVE_INTENT_DELIBERATE 0x0001
-#define MOVE_INTENT_EXERTIVE   0x0002
-#define MOVE_INTENT_QUICK      0x0004
+#define MOVE_INTENT_DELIBERATE (1<<0)
+#define MOVE_INTENT_EXERTIVE   (1<<1)
+#define MOVE_INTENT_QUICK      (1<<2)
 
 /decl/move_intent
 	var/name
@@ -9,7 +9,7 @@
 	var/move_delay = 1
 	var/hud_icon_state
 
-/decl/move_intent/proc/can_be_used_by(var/mob/user)
+/decl/move_intent/proc/can_be_used_by(mob/user)
 	if(flags & MOVE_INTENT_QUICK)
 		return user.can_sprint()
 	return TRUE

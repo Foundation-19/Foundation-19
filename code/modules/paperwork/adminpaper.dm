@@ -19,7 +19,7 @@
 	var/footer = null
 	var/footerOn = FALSE
 
-	var/logo_list = list("admin.png", "o5.png", "isd.png", "ecd.png", "int.png", "log.png", "trib.png", "sec.png", "med.png", "ethics.png", "scplogo.png", "sci.png", "eng.png", "mtf.png", "ungoc.png", "uiu.pgn")
+	var/logo_list = list("admin.png", "o5.png", "isd.png", "dea.png", "int.png", "log.png", "man.png", "trib.png", "sec.png", "med.png", "ethics.png", "scplogo.png", "sci.png", "eng.png", "mtf.png", "ungoc.png", "uiu.pgn", "sh.png", "mcd.png", "ar.png", "ci.png", "cotbg.png")
 	var/logo = ""
 
 	var/unformatedText = ""
@@ -100,7 +100,7 @@
 
 
 		if(fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
-			to_chat(usr, "<span class='warning'>Too many fields. Sorry, you can't do this.</span>")
+			to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
 			fields = last_fields_value
 			return
 

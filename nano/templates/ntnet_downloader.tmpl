@@ -2,17 +2,17 @@
 {{if data.error}}
 	<h2>Download Error</h2>
 	<div class="itemLabel">
-		Information: 
+		Information:
 	</div>
 	<div class="itemContent">
 		{{:data.error}}
 	</div>
 	<div class="itemLabel">
-		Reset Program: 
+		Reset Program:
 	</div>
 	<div class="itemContent">
 		{{:helper.link("RESET", null, {'PRG_reseterror' : 1})}}
-	</div>	
+	</div>
 	<hr>
 {{/if}}
 
@@ -20,31 +20,31 @@
 	<i>{{:data.downloadname ? 'Please wait...' : 'Standing by...'}}</i>
 	<div class="item">
 		<div class="itemLabel">
-			File name: 
+			File name:
 		</div>
 		<div class="itemContent">
 			{{:data.downloadname ? data.downloadname : 'N/A'}}
 		</div>
 		<div class="itemLabel">
-			File description: 
+			File description:
 		</div>
 		<div class="itemContent">
 			{{:data.downloadname ? data.downloaddesc : 'N/A'}}
 		</div>
 		<div class="itemLabel">
-			File size: 
+			File size:
 		</div>
 		<div class="itemContent">
 			{{:data.downloadname ? (data.downloadcompletion + 'GQ / ' + data.downloadsize + 'GQ') : 'N/A'}}
 		</div>
 		<div class="itemLabel">
-			Transfer Rate: 
+			Transfer Rate:
 		</div>
 		<div class="itemContent">
 			{{:data.downloadname ? data.downloadspeed : '0'}} GQ/s
 		</div>
 		<div class="itemLabel">
-			Download progress: 
+			Download progress:
 		</div>
 		<div class="itemContent">
 			{{:helper.displayBar(data.downloadcompletion, 0, data.downloadname ? data.downloadsize : 0, 'good')}}
@@ -52,7 +52,7 @@
 	</div>
 
 	<br><hr>
-	
+
 	<h2>Downloads Queue</h2>
 	<div class="item">
 	{{for data.downloads_queue}}
@@ -68,10 +68,10 @@
 	{{/for}}
 	</div>
 	<br><hr>
-	
+
 	<h2>Primary software repository</h2>
 	<div class="itemLabel">
-		Hard drive: 
+		Hard drive:
 	</div>
 	<div class="itemContent">
 		{{:helper.displayBar(data.disk_used, 0, data.disk_size, 'good')}}
@@ -81,7 +81,7 @@
 	{{for data.downloadable_programs}}
 		<tr><td colspan=4><hr><center><h2>{{:value.category}}</h2></center>
 		{{for value.programs :inner:innerKey}}
-			<tr><td>{{:helper.link('', inner.icon, {'PRG_downloadfile' : inner.filename})}}	
+			<tr><td>{{:helper.link('', inner.icon, {'PRG_downloadfile' : inner.filename})}}
 				<td><span class='white'>{{:inner.filedesc}}</span>
 				<td>{{:inner.fileinfo}}
 				<td>{{:inner.size}} GQ
@@ -91,10 +91,10 @@
 	</table>
 	{{if data.hackedavailable}}
 		<h2>*UNKNOWN* software repository</h2>
-		<i>Please note that NanoTrasen does not recommend download of software from non-official servers.</i>
+		<i>Please note that the Foundation does not recommend download of software from non-official servers.</i>
 		<table>
 		{{for data.hacked_programs}}
-			<tr><td>{{:helper.link('', value.icon, {'PRG_downloadfile' : value.filename})}}	
+			<tr><td>{{:helper.link('', value.icon, {'PRG_downloadfile' : value.filename})}}
 				<td><span class='white'>{{:value.filedesc}}</span>
 				<td>{{:value.fileinfo}}
 				<td>{{:value.size}} GQ

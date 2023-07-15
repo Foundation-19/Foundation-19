@@ -11,17 +11,22 @@ var/list/mining_floors = list()
 	density = TRUE
 	opacity = TRUE
 
+/turf/unsimulated/mineral/is_phasable()
+	return TRUE
+
 /turf/unsimulated/mineral/attackby(obj/item/W, mob/user)
 	to_chat(user, SPAN_WARNING("\The [src] is too strong to break using any tool that you know of, handheld or not."))
 
 /turf/unsimulated/mineral/is_wall()
 	return TRUE
 
-/turf/simulated/mineral //wall piece
+/turf/unsimulated/mineral/get_roof_turf()
+	return /turf/simulated/floor/asteroid
+
+/turf/simulated/mineral
 	name = "rock"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock"
-	initial_gas = null
 	opacity = 1
 	density = TRUE
 	blocks_air = 1
@@ -49,6 +54,9 @@ var/list/mining_floors = list()
 /turf/simulated/mineral/is_wall()
 	return TRUE
 
+/turf/simulated/mineral/is_phasable()
+	return TRUE
+
 /turf/simulated/mineral/Initialize()
 	. = ..()
 	if (!mining_walls["[src.z]"])
@@ -68,7 +76,7 @@ var/list/mining_floors = list()
 /turf/simulated/mineral/is_plating()
 	return 1
 
-/turf/simulated/mineral/on_update_icon(var/update_neighbors)
+/turf/simulated/mineral/on_update_icon(update_neighbors)
 	if(!istype(mineral))
 		SetName(initial(name))
 		icon_state = "rock"
@@ -115,7 +123,7 @@ var/list/mining_floors = list()
 			mined_ore = 2 //some of the stuff gets blown up
 			GetDrilled()
 
-/turf/simulated/mineral/bullet_act(var/obj/item/projectile/Proj)
+/turf/simulated/mineral/bullet_act(obj/item/projectile/Proj)
 
 	// Emitter blasts
 	if(istype(Proj, /obj/item/projectile/beam/emitter))
@@ -165,7 +173,7 @@ var/list/mining_floors = list()
 //Not even going to touch this pile of spaghetti
 /turf/simulated/mineral/attackby(obj/item/W as obj, mob/user as mob)
 	if (!user.IsAdvancedToolUser())
-		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(usr, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return
 
 	if (istype(W, /obj/item/device/core_sampler))
@@ -181,9 +189,9 @@ var/list/mining_floors = list()
 
 	if (istype(W, /obj/item/device/measuring_tape))
 		var/obj/item/device/measuring_tape/P = W
-		user.visible_message("<span class='notice'>\The [user] extends [P] towards [src].</span>","<span class='notice'>You extend [P] towards [src].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] extends [P] towards [src]."),SPAN_NOTICE("You extend [P] towards [src]."))
 		if(do_after(user,10, src))
-			to_chat(user, "<span class='notice'>\The [src] has been excavated to a depth of [excavation_level]cm.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] has been excavated to a depth of [excavation_level]cm."))
 		return
 
 	if (istype(W, /obj/item/pickaxe))
@@ -205,7 +213,7 @@ var/list/mining_floors = list()
 			if(newDepth > F.excavation_required) // Digging too deep can break the item. At least you won't summon a Balrog (probably)
 				fail_message = ". <b>[pick("There is a crunching noise","[W] collides with some different rock","Part of the rock face crumbles away","Something breaks under [W]")]</b>"
 
-		to_chat(user, "<span class='notice'>You start [P.drill_verb][fail_message].</span>")
+		to_chat(user, SPAN_NOTICE("You start [P.drill_verb][fail_message]."))
 
 		if(fail_message && prob(90))
 			if(prob(25))
@@ -223,7 +231,7 @@ var/list/mining_floors = list()
 				else if(newDepth > F.excavation_required - F.clearance_range) // Not quite right but you still extract your find, the closer to the bottom the better, but not above 80%
 					excavate_find(prob(80 * (F.excavation_required - newDepth) / F.clearance_range), F)
 
-			to_chat(user, "<span class='notice'>You finish [P.drill_verb] \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You finish [P.drill_verb] \the [src]."))
 
 			if(newDepth >= 200) // This means the rock is mined out fully
 				var/obj/structure/boulder/B
@@ -306,7 +314,7 @@ var/list/mining_floors = list()
 		O.geologic_data = geologic_data
 	return O
 
-/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0)
+/turf/simulated/mineral/proc/GetDrilled(artifact_fail = 0)
 	//var/destroyed = 0 //used for breaking strange rocks
 	if (mineral && mineral.ore_result_amount)
 
@@ -321,7 +329,7 @@ var/list/mining_floors = list()
 		if(prob(50))
 			pain = 1
 		for(var/mob/living/M in range(src, 200))
-			to_chat(M, "<font color='red'><b>[pick("A high pitched [pick("keening","wailing","whistle")]","A rumbling noise like [pick("thunder","heavy machinery")]")] somehow penetrates your mind before fading away!</b></font>")
+			to_chat(M, FONT_COLORED("red","<b>[pick("A high pitched [pick("keening","wailing","whistle")]","A rumbling noise like [pick("thunder","heavy machinery")]")] somehow penetrates your mind before fading away!</b>"))
 			if(pain)
 				flick("pain",M.pain)
 				if(prob(50))
@@ -338,13 +346,13 @@ var/list/mining_floors = list()
 		N.overlay_detail = "asteroid[rand(0,9)]"
 		N.updateMineralOverlays(1)
 
-/turf/simulated/mineral/proc/excavate_find(var/prob_clean = 0, var/datum/find/F)
+/turf/simulated/mineral/proc/excavate_find(prob_clean = 0, datum/find/F)
 
 	//many finds are ancient and thus very delicate - luckily there is a specialised energy suspension field which protects them when they're being extracted
 	if(prob(F.prob_delicate))
 		var/obj/effect/suspension_field/S = locate() in src
 		if(!S)
-			visible_message("<span class='danger'>[pick("An object in the rock crumbles away into dust.","Something falls out of the rock and shatters onto the ground.")]</span>")
+			visible_message(SPAN_DANGER("[pick("An object in the rock crumbles away into dust.","Something falls out of the rock and shatters onto the ground.")]"))
 			finds.Remove(F)
 			return
 
@@ -361,7 +369,7 @@ var/list/mining_floors = list()
 	finds.Remove(F)
 
 
-/turf/simulated/mineral/proc/artifact_debris(var/severity = 0)
+/turf/simulated/mineral/proc/artifact_debris(severity = 0)
 	//cael's patented random limited drop componentized loot system!
 	//sky's patented not-fucking-retarded overhaul!
 
@@ -401,7 +409,7 @@ var/list/mining_floors = list()
 /turf/simulated/mineral/random
 	name = "mineral deposit"
 
-/turf/simulated/mineral/random/New(var/newloc, var/mineral_name, var/default_mineral_list = GLOB.weighted_minerals_sparse)
+/turf/simulated/mineral/random/New(newloc, mineral_name, default_mineral_list = GLOB.weighted_minerals_sparse)
 	if(!mineral_name && LAZYLEN(default_mineral_list))
 		mineral_name = pickweight(default_mineral_list)
 
@@ -411,7 +419,7 @@ var/list/mining_floors = list()
 		UpdateMineral()
 	..(newloc)
 
-/turf/simulated/mineral/random/high_chance/New(var/newloc, var/mineral_name, var/default_mineral_list)
+/turf/simulated/mineral/random/high_chance/New(newloc, mineral_name, default_mineral_list)
 	..(newloc, mineral_name, GLOB.weighted_minerals_rich)
 
 /**********************Asteroid**************************/
@@ -429,8 +437,6 @@ var/list/mining_floors = list()
 	footstep_type = /decl/footsteps/asteroid
 
 	initial_flooring = null
-	initial_gas = null
-	temperature = TCMB
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 	var/overlay_detail
 	has_resources = 1
@@ -481,19 +487,19 @@ var/list/mining_floors = list()
 
 	if(valid_tool)
 		if (dug)
-			to_chat(user, "<span class='warning'>This area has already been dug</span>")
+			to_chat(user, SPAN_WARNING("This area has already been dug"))
 			return
 
 		var/turf/T = user.loc
 		if (!(istype(T)))
 			return
 
-		to_chat(user, "<span class='warning'>You start digging.</span>")
+		to_chat(user, SPAN_WARNING("You start digging."))
 		playsound(user.loc, 'sound/effects/rustle1.ogg', 50, 1)
 
 		if(!do_after(user,40, src)) return
 
-		to_chat(user, "<span class='notice'>You dug a hole.</span>")
+		to_chat(user, SPAN_NOTICE("You dug a hole."))
 		gets_dug()
 
 	else if(istype(W,/obj/item/storage/ore))
@@ -525,7 +531,7 @@ var/list/mining_floors = list()
 	icon_state = "asteroid_dug"
 	return
 
-/turf/simulated/floor/asteroid/proc/updateMineralOverlays(var/update_neighbors)
+/turf/simulated/floor/asteroid/proc/updateMineralOverlays(update_neighbors)
 
 	cut_overlays()
 
@@ -569,3 +575,6 @@ var/list/mining_floors = list()
 				attackby(R.module_state_3,R)
 			else
 				return
+
+/turf/simulated/mineral/get_roof_turf()
+	return /turf/simulated/floor/asteroid

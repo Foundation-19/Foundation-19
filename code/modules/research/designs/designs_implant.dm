@@ -53,3 +53,10 @@
 	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_ESOTERIC = 4)
 	build_path = /obj/item/implantcase/explosive
 	sort_string = "MFAAG"
+
+/datum/design/item/implant/pad
+	name = "control pad"
+	id = "implant_pad"
+	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3)
+	build_path = /obj/item/implantpad
+	sort_string = "MFAAH"

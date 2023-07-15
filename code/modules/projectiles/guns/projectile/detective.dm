@@ -29,7 +29,7 @@
 	if(!M.mind)	return 0
 	if(M.incapacitated()) return 0
 	if(!M.mind.assigned_role == "Detective")
-		to_chat(M, "<span class='notice'>You don't feel cool enough to name this gun, chump.</span>")
+		to_chat(M, SPAN_NOTICE("You don't feel cool enough to name this gun, chump."))
 		return 0
 
 	var/input = sanitizeSafe(input("What do you want to name the gun?","Rename gun"), MAX_NAME_LEN)
@@ -62,7 +62,7 @@
 
 
 //apart of reskins that have two sprites, touching may result in frustration and breaks
-/obj/item/gun/projectile/pistol/sec/detective/attack_hand(var/mob/living/user)
+/obj/item/gun/projectile/pistol/sec/detective/attack_hand(mob/living/user)
 	if(!unique_reskin && loc == user)
 		reskin_gun(user)
 		return

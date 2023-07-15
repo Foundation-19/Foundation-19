@@ -113,7 +113,7 @@
  */
 /obj/item/clothing/head/radiation
 	name = "radiation hood"
-	icon_state = "rad"
+	icon_state = "rad_hood"
 	desc = "A hood with radiation protective properties. Label: Made with lead, do not eat insulation."
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES

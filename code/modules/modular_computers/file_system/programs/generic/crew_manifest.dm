@@ -1,7 +1,7 @@
 /datum/computer_file/program/crew_manifest
 	filename = "crewmanifest"
-	filedesc = "Crew Manifest"
-	extended_desc = "This program allows access to the manifest of active crew."
+	filedesc = "Personnel Manifest"
+	extended_desc = "This program allows access to the manifest of active on-site personnel."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
 	size = 4
@@ -9,7 +9,6 @@
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/crew_manifest
 	usage_flags = PROGRAM_ALL
-	category = PROG_OFFICE
 
 /datum/nano_module/crew_manifest
 	name = "Crew Manifest"

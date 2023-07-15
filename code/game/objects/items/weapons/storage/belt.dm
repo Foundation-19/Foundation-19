@@ -67,7 +67,7 @@
 /obj/item/storage/belt/holster/attackby(obj/item/W as obj, mob/user as mob)
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
 	if(H.holster(W, user))
-		return
+		return TRUE
 	else
 		. = ..(W, user)
 
@@ -269,14 +269,64 @@
 		/obj/item/material/knife/folding/
 		)
 
-/obj/item/storage/belt/holster/security/full/New()
+/obj/item/storage/belt/holster/security/fullmateba/New()
 	..()
-	new /obj/item/handcuffs(src)
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/revolver/mateba(src)
+	new /obj/item/ammo_magazine/c50(src)
+	new /obj/item/ammo_magazine/c50(src)
+	new /obj/item/ammo_magazine/box/a50(src)
+	new /obj/item/handcuffs(src)
 	update_icon()
 
+
+/obj/item/storage/belt/holster/security/fullrhino/Initialize()
+	. = ..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/revolver/rhino(src)
+	new /obj/item/ammo_magazine/box/a357(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
+
+
+/obj/item/storage/belt/holster/security/fullmk9/New()
+	..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/pistol/mk9(src)
+	new /obj/item/ammo_magazine/scp/mk9(src)
+	new /obj/item/ammo_magazine/scp/mk9(src)
+	new /obj/item/ammo_magazine/box/mk9(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
+
+
+/obj/item/storage/belt/holster/security/fullusp45/New()
+	..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/pistol/usp45(src)
+	new /obj/item/ammo_magazine/scp/usp45(src)
+	new /obj/item/ammo_magazine/scp/usp45(src)
+	new /obj/item/ammo_magazine/box/acp45(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
+
+/obj/item/storage/belt/holster/security/fullmilpistol/New()
+	..()
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/pistol/military(src)
+	new /obj/item/ammo_magazine/pistol/double(src)
+	new /obj/item/ammo_magazine/pistol/double(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
 
 /obj/item/storage/belt/general
 	name = "equipment belt"

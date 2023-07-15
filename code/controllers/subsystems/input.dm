@@ -10,6 +10,9 @@ SUBSYSTEM_DEF(input)
 
 /datum/controller/subsystem/input/Initialize()
 	setup_default_macro_sets()
+
+	initialized = TRUE
+
 	refresh_client_macro_sets()
 	return ..()
 
@@ -18,14 +21,15 @@ SUBSYSTEM_DEF(input)
 	macro_set = list(
 	"Any" = "\"KeyDown \[\[*\]\]\"",
 	"Any+UP" = "\"KeyUp \[\[*\]\]\"",
-	"Back" = "\".winset \\\"mainwindow.input.text=\\\"\\\"\\\"\"",
-	"Tab" = "\".winset \\\"mainwindow.input.focus=true?mapwindow.map.focus=true mainwindow.input.background-color=[COLOR_INPUT_DISABLED]:mainwindow.input.focus=true mainwindow.input.background-color=[COLOR_INPUT_ENABLED]\\\"\"",
+	"Back" = "\".winset \\\"outputwindow.input.text=\\\"\\\"\\\"\"",
+	"Tab" = "\".winset \\\"outputwindow.input.focus=true ? mapwindow.map.focus=true : outputwindow.input.focus=true\\\"\"",
 	"Escape" = "Reset-Held-Keys",
 	)
 
 // Badmins just wanna have fun d
 /datum/controller/subsystem/input/proc/refresh_client_macro_sets()
-	for(var/client/C in GLOB.clients)
+	var/list/clients_list = GLOB.clients
+	for(var/client/C in clients_list)
 		C.set_macros()
 
 /datum/controller/subsystem/input/fire()

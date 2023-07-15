@@ -27,9 +27,8 @@
 	icon_living = "shark"
 	icon_dead = "shark_dead"
 	turns_per_move = 2
-	move_to_delay = 2
 	attack_same = 1
-	speed = 0
+	movement_cooldown = 4
 	mob_size = MOB_LARGE
 	pixel_x = -16
 	health = 400
@@ -43,4 +42,4 @@
 	skin_amount = 30
 
 /obj/item/natural_weapon/bite/giantshark
-	force = 40 
+	force = 40

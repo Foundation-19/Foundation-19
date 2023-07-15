@@ -1,16 +1,16 @@
-/obj/proc/analyze_gases(var/obj/A, var/mob/user, mode)
-	user.visible_message("<span class='notice'>\The [user] has used \an [src] on \the [A].</span>")
+/obj/proc/analyze_gases(obj/A, mob/user, mode)
+	user.visible_message(SPAN_NOTICE("\The [user] has used \an [src] on \the [A]."))
 	A.add_fingerprint(user)
 
 	var/air_contents = A.return_air()
 	if(!air_contents)
-		to_chat(user, "<span class='warning'>Your [src] flashes a red light as it fails to analyze \the [A].</span>")
+		to_chat(user, SPAN_WARNING("Your [src] flashes a red light as it fails to analyze \the [A]."))
 		return 0
 
 	var/list/result = atmosanalyzer_scan(A, air_contents, mode)
 	print_atmos_analysis(user, result)
 	return 1
 
-/proc/print_atmos_analysis(user, var/list/result)
+/proc/print_atmos_analysis(user, list/result)
 	for(var/line in result)
-		to_chat(user, "<span class='notice'>[line]</span>")
+		to_chat(user, SPAN_NOTICE("[line]"))

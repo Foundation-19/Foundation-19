@@ -17,13 +17,13 @@
 	for(var/R in filling)
 		reagents.add_reagent(R, filling[R])
 
-/obj/item/clothing/mask/chewable/equipped(var/mob/living/user, var/slot)
+/obj/item/clothing/mask/chewable/equipped(mob/living/user, slot)
 	..()
 	if(slot == slot_wear_mask)
 		if(user.check_has_mouth())
 			START_PROCESSING(SSobj, src)
 		else
-			to_chat(user, "<span class='notice'>You don't have a mouth, and can't make much use of \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You don't have a mouth, and can't make much use of \the [src]."))
 
 /obj/item/clothing/mask/chewable/dropped()
 	STOP_PROCESSING(SSobj, src)
@@ -66,7 +66,7 @@
 	desc = "A disgusting spitwad."
 	icon_state = "spit-chew"
 
-/obj/item/clothing/mask/chewable/proc/extinguish(var/mob/user, var/no_message)
+/obj/item/clothing/mask/chewable/proc/extinguish(mob/user, no_message)
 	STOP_PROCESSING(SSobj, src)
 	if (type_butt)
 		var/obj/item/butt = new type_butt(get_turf(src))
@@ -77,7 +77,7 @@
 		if(ismob(loc))
 			var/mob/living/M = loc
 			if (!no_message)
-				to_chat(M, "<span class='notice'>You spit out the [name].</span>")
+				to_chat(M, SPAN_NOTICE("You spit out the [name]."))
 		qdel(src)
 
 /obj/item/clothing/mask/chewable/tobacco/lenni
@@ -139,6 +139,10 @@
 				/datum/reagent/drink/juice/pear,
 				/datum/reagent/drink/juice/banana,
 				/datum/reagent/drink/juice/berry,
+				/datum/reagent/drink/juice/blackberry,
+				/datum/reagent/drink/juice/blueraz,
+				/datum/reagent/drink/juice/euclid,
+				/datum/reagent/drink/juice/keter,
 				/datum/reagent/drink/juice/watermelon)), 3)
 	color = reagents.get_color()
 
@@ -161,6 +165,10 @@
 				/datum/reagent/drink/juice/pear,
 				/datum/reagent/drink/juice/banana,
 				/datum/reagent/drink/juice/berry,
+				/datum/reagent/drink/juice/blackberry,
+				/datum/reagent/drink/juice/blueraz,
+				/datum/reagent/drink/juice/euclid,
+				/datum/reagent/drink/juice/keter,
 				/datum/reagent/drink/juice/watermelon)), 3)
 	color = reagents.get_color()
 
@@ -177,8 +185,8 @@
 				/datum/reagent/medicine/tricordrazine,
 				/datum/reagent/medicine/stimulant/hyperzine,
 				/datum/reagent/medicine/hyronalin,
-				/datum/reagent/medicine/fluff/methylphenidate,
-				/datum/reagent/medicine/fluff/citalopram,
+				/datum/reagent/medicine/antidepressant/methylphenidate,
+				/datum/reagent/medicine/antidepressant/citalopram,
 				/datum/reagent/medicine/dylovene,
 				/datum/reagent/medicine/bicaridine,
 				/datum/reagent/medicine/kelotane,

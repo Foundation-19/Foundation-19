@@ -2,7 +2,7 @@ var/CMinutes = null
 var/savefile/Banlist
 
 
-/proc/CheckBan(var/ckey, var/id, var/address)
+/proc/CheckBan(ckey, id, address)
 	if(!Banlist)		// if Banlist cannot be located for some reason
 		LoadBans()		// try to load the bans
 		if(!Banlist)	// uh oh, can't find bans!
@@ -87,7 +87,7 @@ var/savefile/Banlist
 		if (!Banlist["key"] || !Banlist["id"])
 			RemoveBan(A)
 			log_admin("Invalid Ban.")
-			message_admins("Invalid Ban.")
+			message_staff("Invalid Ban.")
 			continue
 
 		if (!Banlist["temp"]) continue
@@ -106,10 +106,10 @@ var/savefile/Banlist
 
 	Banlist.cd = "/base"
 	if (list_find(Banlist.dir, "[ckey][computerid]"))
-		to_chat(usr, "<span class='warning'>Ban already exists.</span>")
+		to_chat(usr, SPAN_WARNING("Ban already exists."))
 		return 0
 	else if (!ckey)
-		to_chat(usr, "<span class='warning'>Ckey does not exist.</span>")
+		to_chat(usr, SPAN_WARNING("Ckey does not exist."))
 		return 0
 	else
 		Banlist.dir.Add("[ckey][computerid]")
@@ -137,11 +137,11 @@ var/savefile/Banlist
 
 	if(!usr)
 		log_admin("Ban Expired: [key]")
-		message_admins("Ban Expired: [key]")
+		message_staff("Ban Expired: [key]")
 	else
 		ban_unban_log_save("[key_name_admin(usr)] unbanned [key]")
 		log_admin("[key_name_admin(usr)] unbanned [key]")
-		message_admins("[key_name_admin(usr)] unbanned: [key]")
+		message_staff("[key_name_admin(usr)] unbanned: [key]")
 		SSstatistics.add_field("ban_unban",1)
 		usr.client.holder.DB_ban_unban( ckey(key), BANTYPE_ANY_FULLBAN)
 	for (var/A in Banlist.dir)
@@ -230,3 +230,24 @@ var/savefile/Banlist
 	for (var/A in Banlist.dir)
 		RemoveBan(A)
 
+/client/proc/cmd_admin_do_ban(mob/M)
+	if(!check_rights(R_BAN|R_MOD))  return
+
+	if(!ismob(M)) return
+
+	if(M.client && M.client.holder?.rights & R_MOD)
+		to_chat(usr, SPAN_WARNING("You can't ban mods and admins!"))
+		return	//mods+ cannot be banned. Even if they could, the ban doesn't affect them anyway
+
+	if(!M.ckey)
+		to_chat(usr, SPAN_DANGER("<B>Warning: Mob ckey for [M.name] not found.</b>"))
+		return
+	var/mins = input(usr,"How long (in minutes)? \n 180 = 3 hours \n 1440 = 1 day \n 4320 = 3 days \n 10080 = 7 days \n 43800 = 1 Month","Ban time",1440) as num|null
+	if(!mins)
+		return
+	if(mins >= 525600)
+		mins = 525599
+	var/reason = input(usr,"Reason? \n\nPress 'OK' to finalize the ban.","reason","Griefer") as message|null
+	if(!reason)
+		return
+	AddBan(M.ckey, M.computer_id, reason, key, TRUE, mins, M.lastKnownIP)

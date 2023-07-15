@@ -11,17 +11,17 @@
 	if(isnull(input))
 		config.event = ""
 		log_admin("[usr.key] has cleared the event text.")
-		message_admins("[key_name_admin(usr)] has cleared the event text.")
+		message_staff("[key_name_admin(usr)] has cleared the event text.")
 		return
 
 	log_admin("[usr.key] has changed the event text.")
-	message_admins("[key_name_admin(usr)] has changed the event text.")
+	message_staff("[key_name_admin(usr)] has changed the event text.")
 
 	config.event = input
 
 	to_world("<h1 class='alert'>Event</h1>")
 	to_world("<h2 class='alert'>An event is starting. OOC Info:</h2>")
-	to_world("<span class='alert'>[config.event]</span>")
+	to_world(SPAN_ALERT("[config.event]"))
 	to_world("<br>")
 
 	SSwebhooks.send(WEBHOOK_CUSTOM_EVENT, list("text" = config.event))
@@ -38,5 +38,5 @@
 
 	to_chat(src, "<h1 class='alert'>Event</h1>")
 	to_chat(src, "<h2 class='alert'>An event is taking place. OOC Info:</h2>")
-	to_chat(src, "<span class='alert'>[config.event]</span>")
+	to_chat(src, SPAN_ALERT("[config.event]"))
 	to_chat(src, "<br>")

@@ -18,7 +18,7 @@
 		var/new_name = sanitize(input(usr,"What would you like to name this mob?","Input a name",M.real_name) as text|null, MAX_NAME_LEN)
 		if(!new_name || !M)	return
 
-		message_admins("Admin [key_name_admin(usr)] renamed [key_name_admin(M)] to [new_name].")
+		message_staff("Admin [key_name_admin(usr)] renamed [key_name_admin(M)] to [new_name].")
 		M.fully_replace_character_name(new_name)
 		href_list["datumrefresh"] = href_list["rename"]
 
@@ -201,7 +201,7 @@
 					to_chat(usr, "No objects of this type exist")
 					return
 				log_admin("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted)")
-				message_admins("<span class='notice'>[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted)</span>")
+				message_staff(SPAN_NOTICE("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted)"))
 			if("Type and subtypes")
 				var/i = 0
 				for(var/obj/Obj in world)
@@ -212,7 +212,7 @@
 					to_chat(usr, "No objects of this type exist")
 					return
 				log_admin("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted)")
-				message_admins("<span class='notice'>[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted)</span>")
+				message_staff(SPAN_NOTICE("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted)"))
 
 	else if(href_list["explode"])
 		if(!check_rights(R_DEBUG|R_FUN))	return
@@ -411,7 +411,7 @@
 		if(!verb || verb == "Cancel")
 			return
 		else
-			H.verbs += verb
+			add_verb(H, verb)
 
 	else if(href_list["remverb"])
 		if(!check_rights(R_DEBUG))      return
@@ -428,7 +428,7 @@
 		if(!verb)
 			return
 		else
-			H.verbs -= verb
+			remove_verb(H, verb)
 
 	else if(href_list["addorgan"])
 		if(!check_rights(R_SPAWN))	return
@@ -485,9 +485,10 @@
 			return
 
 		SSnano.close_uis(H)
-		H.client.cache.Cut()
-		var/datum/asset/assets = get_asset_datum(/datum/asset/nanoui)
-		assets.send(H)
+		var/datum/asset/simple/nanoui/asset = get_asset_datum(/datum/asset/simple/nanoui)
+		//Pretend we never recieved this asset
+		H.client.sent_assets -= asset.assets
+		asset.send(H.client)
 
 		to_chat(usr, "Resource files sent")
 		to_chat(H, "Your NanoUI Resource files have been refreshed")
@@ -524,13 +525,14 @@
 			if("oxygen")L.adjustOxyLoss(amount)
 			if("brain")	L.adjustBrainLoss(amount)
 			if("clone")	L.adjustCloneLoss(amount)
+			if("sanity")L.adjustSanityLoss(amount)
 			else
 				to_chat(usr, "You caused an error. DEBUG: Text:[Text] Mob:[L]")
 				return
 
 		if(amount != 0)
 			log_admin("[key_name(usr)] dealt [amount] amount of [Text] damage to [L]")
-			message_admins("<span class='notice'>[key_name(usr)] dealt [amount] amount of [Text] damage to [L]</span>")
+			message_staff(SPAN_NOTICE("[key_name(usr)] dealt [amount] amount of [Text] damage to [L]"))
 			href_list["datumrefresh"] = href_list["mobToDamage"]
 
 	else if(href_list["call_proc"])
@@ -546,7 +548,7 @@
 		if(!choice || !L)
 			return
 		var/obj/o = new choice(L)
-		log_and_message_admins("added \the [o] to \the [L]")
+		log_and_message_staff("added \the [o] to \the [L]")
 	else if(href_list["removeaura"])
 		if(!check_rights(R_DEBUG|R_ADMIN|R_FUN))	return
 		var/mob/living/L = locate(href_list["removeaura"])
@@ -555,7 +557,7 @@
 		var/choice = input("Please choose an aura to remove", "Auras", null) as null|anything in L.auras
 		if(!choice || !L)
 			return
-		log_and_message_admins("removed \the [choice] to \the [L]")
+		log_and_message_staff("removed \the [choice] to \the [L]")
 		qdel(choice)
 
 	else if (href_list["debug_mob_ai"])
@@ -595,7 +597,7 @@
 		if (!choice || QDELETED(A) || !A.reagents)
 			return
 		A.reagents.add_reagent(to_add, choice)
-		log_and_message_admins("added [choice] units of [to_add] ([initial(to_add.name)]) to \the [A]")
+		log_and_message_staff("added [choice] units of [to_add] ([initial(to_add.name)]) to \the [A]")
 
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])

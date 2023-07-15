@@ -26,6 +26,7 @@
 		OXY:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=oxygen'>[getOxyLoss()]</a>
 		CLONE:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=clone'>[getCloneLoss()]</a>
 		BRAIN:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=brain'>[getBrainLoss()]</a>
+		SANITY:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=sanity'>[getSanityLoss()]</a>
 		</font>
 		"}
 
@@ -114,7 +115,7 @@
 /datum/proc/get_initial_variable_value(varname)
 	return initial(vars[varname])
 
-/datum/proc/make_view_variables_variable_entry(var/varname, var/value, var/hide_watch = 0)
+/datum/proc/make_view_variables_variable_entry(varname, value, hide_watch = 0)
 	return {"
 			(<a href='?_src_=vars;datumedit=\ref[src];varnameedit=[varname]'>E</a>)
 			(<a href='?_src_=vars;datumchange=\ref[src];varnamechange=[varname]'>C</a>)
@@ -123,7 +124,7 @@
 			"}
 
 // No mass editing of clients
-/client/make_view_variables_variable_entry(var/varname, var/value, var/hide_watch = 0)
+/client/make_view_variables_variable_entry(varname, value, hide_watch = 0)
 	return {"
 			(<a href='?_src_=vars;datumedit=\ref[src];varnameedit=[varname]'>E</a>)
 			(<a href='?_src_=vars;datumchange=\ref[src];varnamechange=[varname]'>C</a>)
@@ -183,11 +184,11 @@
 /client/VV_ckey_edit()
 	return list("key", "ckey")
 
-/datum/proc/may_edit_var(var/user, var/var_to_edit)
+/datum/proc/may_edit_var(user, var_to_edit)
 	if(!user)
 		return FALSE
 	if(!(var_to_edit in vars))
-		to_chat(user, "<span class='warning'>\The [src] does not have a var '[var_to_edit]'</span>")
+		to_chat(user, SPAN_WARNING("\The [src] does not have a var '[var_to_edit]'"))
 		return FALSE
 	if(var_to_edit in VV_static())
 		return FALSE

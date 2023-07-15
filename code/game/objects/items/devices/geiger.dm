@@ -21,7 +21,7 @@
 	. = ..()
 	sound_id = "[type]_[sequential_id(type)]"
 
-/obj/item/device/geiger/proc/update_sound(var/playing)
+/obj/item/device/geiger/proc/update_sound(playing)
 	if(playing && !sound_token)
 		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, "sound/items/geiger.ogg", volume = geiger_volume, range = 4, falloff = 3, prefer_mute = TRUE)
 	else if(!playing && sound_token)
@@ -42,18 +42,18 @@
 	. = ..()
 	var/msg = "[scanning ? "ambient" : "stored"] Radiation level: [radiation_count ? radiation_count : "0"] IU/s."
 	if(radiation_count > RAD_LEVEL_LOW)
-		to_chat(user, "<span class='warning'>[msg]</span>")
+		to_chat(user, SPAN_WARNING("[msg]"))
 	else
-		to_chat(user, "<span class='notice'>[msg]</span>")
+		to_chat(user, SPAN_NOTICE("[msg]"))
 
-/obj/item/device/geiger/attack_self(var/mob/user)
+/obj/item/device/geiger/attack_self(mob/user)
 	scanning = !scanning
 	if(scanning)
 		START_PROCESSING(SSobj, src)
 	else
 		STOP_PROCESSING(SSobj, src)
 	update_icon()
-	to_chat(user, "<span class='notice'>[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src].</span>")
+	to_chat(user, SPAN_NOTICE("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src]."))
 
 /obj/item/device/geiger/on_update_icon()
 	if(!scanning)

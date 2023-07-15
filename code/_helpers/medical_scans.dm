@@ -1,9 +1,9 @@
-/mob/living/carbon/human/proc/get_raw_medical_data(var/tag = FALSE)
+/mob/living/carbon/human/proc/get_raw_medical_data(tag = FALSE)
 	var/mob/living/carbon/human/H = src
 	var/list/scan = list()
 
 	scan["name"] = H.name
-	scan["time"] = stationtime2text()
+	scan["time"] = station_time_timestamp("hh:mm")
 	var/brain_result
 	if(H.should_have_organ(BP_BRAIN))
 		var/obj/item/organ/internal/brain/brain = H.internal_organs_by_name[BP_BRAIN]
@@ -31,6 +31,8 @@
 
 	if(pulse_result == ">250")
 		pulse_result = -3
+	if(length(pulse_result) > 5)	// SCP-3349 message. Yes this is shitcode
+		pulse_result = -4
 	scan["pulse"] = text2num(pulse_result)
 
 	scan["blood_pressure"] = H.get_blood_pressure()
@@ -103,7 +105,7 @@
 		scan["nearsight"] = TRUE
 	return scan
 
-/proc/display_medical_data_header(var/list/scan, skill_level = SKILL_DEFAULT)
+/proc/display_medical_data_header(list/scan, skill_level = SKILL_DEFAULT)
 	//In case of problems, abort.
 	var/dat = list()
 
@@ -124,7 +126,7 @@
 	dat = JOINTEXT(dat)
 	return dat
 
-/proc/display_medical_data_health(var/list/scan, skill_level = SKILL_DEFAULT)
+/proc/display_medical_data_health(list/scan, skill_level = SKILL_DEFAULT)
 	//In case of problems, abort.
 	if(!scan["name"])
 		return "<center><span class='bad'><strong>SCAN READOUT ERROR.</strong></span></center>"
@@ -171,6 +173,8 @@
 		dat += "<td>N/A</td></tr>"
 	else if(scan["pulse"] == -3)
 		dat += "<td><span class='bad'>250+bpm</span></td></tr>"
+	else if(scan["pulse"] == -4)
+		dat += "<td><span class='average'>ERROR - Anomalous activity detected. Printout advised.</span></td></tr>"
 	else if(scan["pulse"] == 0)
 		dat += "<td><span class='bad'>[scan["pulse"]]bpm</span></td></tr>"
 	else if(scan["pulse"] >= 140)
@@ -277,7 +281,7 @@
 
 	return dat
 
-/proc/display_medical_data_body(var/list/scan, skill_level = SKILL_DEFAULT)
+/proc/display_medical_data_body(list/scan, skill_level = SKILL_DEFAULT)
 	//In case of problems, abort.
 	if(!scan["name"])
 		return "<center><span class='bad'><strong>SCAN READOUT ERROR.</strong></span></center>"
@@ -326,7 +330,7 @@
 					row += "<span class='average'>[capitalize(get_wound_severity(E["burn_ratio"], (E["limb_flags"] & ORGAN_FLAG_HEALS_OVERKILL)))] burns</span></td>"
 			if(skill_level >= SKILL_TRAINED)
 				row += "<td>"
-				row += "<span class='bad'>[english_list(E["scan_results"], nothing_text="&nbsp;")]</span>"
+				row += SPAN_BAD("[english_list(E["scan_results"], nothing_text="&nbsp;")]")
 				row += "</td>"
 			else
 				row += "<td>&nbsp;</td>"
@@ -363,7 +367,7 @@
 			else
 				row += "<td>None</td>"
 			row += "<td>"
-			row += "<span class='bad'>[english_list(I["scan_results"], nothing_text="&nbsp;")]</span>"
+			row += SPAN_BAD("[english_list(I["scan_results"], nothing_text="&nbsp;")]")
 			row += "</td></tr>"
 			subdat += jointext(row, null)
 
@@ -386,7 +390,7 @@
 	dat = JOINTEXT(dat)
 	return dat
 
-/proc/display_medical_data(var/list/scan, skill_level = SKILL_DEFAULT, var/TT = FALSE)
+/proc/display_medical_data(list/scan, skill_level = SKILL_DEFAULT, TT = FALSE)
 	//In case of problems, abort.
 	if(!scan["name"])
 		return "<center><span class='bad'><strong>SCAN READOUT ERROR.</strong></span></center>"
@@ -411,27 +415,27 @@
 	dat = JOINTEXT(dat)
 	return dat
 
-/proc/get_severity(amount, var/tag = FALSE)
+/proc/get_severity(amount, tag = FALSE)
 	if(!amount)
 		return "none"
 
 	if(amount > 50)
 		if(tag)
-			. = "<span class='bad'>severe</span>"
+			. = SPAN_BAD("severe")
 		else
 			. = "severe"
 	else if(amount > 25)
 		if(tag)
-			. = "<span class='bad'>significant</span>"
+			. = SPAN_BAD("significant")
 		else
 			. = "significant"
 	else if(amount > 10)
 		if(tag)
-			. = "<span class='average'>moderate</span>"
+			. = SPAN_CLASS("average","moderate")
 		else
 			. = "moderate"
 	else
 		if (tag)
-			. = "<span class='mild'>minor</span>"
+			. = SPAN_CLASS("mild","minor")
 		else
 			. = "minor"

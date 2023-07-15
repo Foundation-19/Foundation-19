@@ -137,7 +137,7 @@
 /datum/reagent/toxin/methyl_bromide/affect_ingest(mob/living/carbon/M, alien, removed)
 	. = (alien != IS_MANTID && alien != IS_NABBER && ..())
 
-/datum/reagent/toxin/methyl_bromide/touch_turf(var/turf/simulated/T)
+/datum/reagent/toxin/methyl_bromide/touch_turf(turf/simulated/T)
 	if (istype(T))
 		T.assume_gas(GAS_METHYL_BROMIDE, volume, T20C)
 		remove_self(volume)
@@ -163,6 +163,7 @@
 	color = "#140b30"
 	strength = 4
 	heating_products = list(/datum/reagent/acetone, /datum/reagent/carbon, /datum/reagent/ethanol)
+	heating_prod_english = "<span codexlink='acetone (chemical)'>acetone</span>, <span codexlink='carbon (chemical)'>carbon</span>, and <span codexlink='ethanol (chemical)'>ethanol</span>"
 	heating_point = 145 CELSIUS
 	heating_message = "separates."
 

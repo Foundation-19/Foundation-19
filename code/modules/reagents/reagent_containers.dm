@@ -11,10 +11,10 @@
 
 /obj/item/reagent_containers/proc/cannot_interact(mob/user)
 	if(!CanPhysicallyInteract(user))
-		to_chat(usr, "<span class='notice'>You're in no condition to do that!'</span>")
+		to_chat(usr, SPAN_NOTICE("You're in no condition to do that!'"))
 		return TRUE
 	if(ismob(loc) && loc != user)
-		to_chat(usr, "<span class='notice'>You can't set transfer amounts while [src] is being held by someone else.</span>")
+		to_chat(usr, SPAN_NOTICE("You can't set transfer amounts while [src] is being held by someone else."))
 		return TRUE
 	return FALSE
 
@@ -51,9 +51,9 @@
 	if(istype(W, /obj/item/pen) || istype(W, /obj/item/device/flashlight/pen))
 		var/tmp_label = sanitizeSafe(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
 		if(length(tmp_label) > 10)
-			to_chat(user, "<span class='notice'>The label can be at most 10 characters long.</span>")
+			to_chat(user, SPAN_NOTICE("The label can be at most 10 characters long."))
 		else
-			to_chat(user, "<span class='notice'>You set the label to \"[tmp_label]\".</span>")
+			to_chat(user, SPAN_NOTICE("You set the label to \"[tmp_label]\"."))
 			label_text = tmp_label
 			update_name_label()
 	else
@@ -65,43 +65,43 @@
 	else
 		SetName("[initial(name)] ([label_text])")
 
-/obj/item/reagent_containers/proc/standard_dispenser_refill(var/mob/user, var/obj/structure/reagent_dispensers/target) // This goes into afterattack
+/obj/item/reagent_containers/proc/standard_dispenser_refill(mob/user, obj/structure/reagent_dispensers/target) // This goes into afterattack
 	if(!istype(target))
 		return 0
 
 	if(!target.reagents || !target.reagents.total_volume)
-		to_chat(user, "<span class='notice'>[target] is empty.</span>")
+		to_chat(user, SPAN_NOTICE("[target] is empty."))
 		return 1
 
 	if(reagents && !reagents.get_free_space())
-		to_chat(user, "<span class='notice'>[src] is full.</span>")
+		to_chat(user, SPAN_NOTICE("[src] is full."))
 		return 1
 
 	var/trans = target.reagents.trans_to_obj(src, target:amount_per_transfer_from_this)
-	to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+	to_chat(user, SPAN_NOTICE("You fill [src] with [trans] units of the contents of [target]."))
 	return 1
 
-/obj/item/reagent_containers/proc/standard_splash_mob(var/mob/user, var/mob/target) // This goes into afterattack
+/obj/item/reagent_containers/proc/standard_splash_mob(mob/user, mob/target) // This goes into afterattack
 	if(!istype(target))
 		return
 
 	if(user.a_intent == I_HELP)
-		to_chat(user, "<span class='notice'>You can't splash people on help intent.</span>")
+		to_chat(user, SPAN_NOTICE("You can't splash people on help intent."))
 		return 1
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, SPAN_NOTICE("[src] is empty."))
 		return 1
 
 	if(target.reagents && !target.reagents.get_free_space())
-		to_chat(user, "<span class='notice'>[target] is full.</span>")
+		to_chat(user, SPAN_NOTICE("[target] is full."))
 		return 1
 
 	var/contained = reagentlist()
 	if (reagents.should_admin_log())
 		admin_attack_log(user, target, "Used \the [name] containing [contained] to splash the victim.", "Was splashed by \the [name] containing [contained].", "used \the [name] containing [contained] to splash")
 
-	user.visible_message("<span class='danger'>[target] has been splashed with something by [user]!</span>", "<span class = 'notice'>You splash the solution onto [target].</span>")
+	user.visible_message(SPAN_DANGER("[target] has been splashed with something by [user]!"), "<span class = 'notice'>You splash the solution onto [target].</span>")
 	reagents.splash(target, reagents.total_volume)
 	return 1
 
@@ -118,24 +118,24 @@
 			reagents.splash(target, reagents.total_volume)
 			return TRUE
 
-/obj/item/reagent_containers/proc/self_feed_message(var/mob/user)
-	to_chat(user, "<span class='notice'>You eat \the [src]</span>")
+/obj/item/reagent_containers/proc/self_feed_message(mob/user)
+	to_chat(user, SPAN_NOTICE("You eat \the [src]"))
 
-/obj/item/reagent_containers/proc/other_feed_message_start(var/mob/user, var/mob/target)
-	user.visible_message("<span class='warning'>[user] is trying to feed [target] \the [src]!</span>")
+/obj/item/reagent_containers/proc/other_feed_message_start(mob/user, mob/target)
+	user.visible_message(SPAN_WARNING("[user] is trying to feed [target] \the [src]!"))
 
-/obj/item/reagent_containers/proc/other_feed_message_finish(var/mob/user, var/mob/target)
-	user.visible_message("<span class='warning'>[user] has fed [target] \the [src]!</span>")
+/obj/item/reagent_containers/proc/other_feed_message_finish(mob/user, mob/target)
+	user.visible_message(SPAN_WARNING("[user] has fed [target] \the [src]!"))
 
-/obj/item/reagent_containers/proc/feed_sound(var/mob/user)
+/obj/item/reagent_containers/proc/feed_sound(mob/user)
 	return
 
-/obj/item/reagent_containers/proc/standard_feed_mob(var/mob/user, var/mob/target) // This goes into attack
+/obj/item/reagent_containers/proc/standard_feed_mob(mob/user, mob/target) // This goes into attack
 	if(!istype(target))
 		return 0
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] is empty."))
 		return 1
 
 	// only carbons can eat
@@ -150,7 +150,7 @@
 					return
 				var/obj/item/blocked = H.check_mouth_coverage()
 				if (blocked)
-					to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
@@ -170,7 +170,7 @@
 				return
 			var/obj/item/blocked = H.check_mouth_coverage()
 			if (blocked)
-				to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+				to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 				return
 
 			other_feed_message_start(user, target)
@@ -191,36 +191,37 @@
 
 	return 0
 
-/obj/item/reagent_containers/proc/standard_pour_into(var/mob/user, var/atom/target) // This goes into afterattack and yes, it's atom-level
+/obj/item/reagent_containers/proc/standard_pour_into(mob/user, atom/target) // This goes into afterattack and yes, it's atom-level
 	if(!target.reagents)
 		return 0
 
 	// Ensure we don't splash beakers and similar containers.
 	if(!target.is_open_container() && istype(target, /obj/item/reagent_containers))
-		to_chat(user, "<span class='notice'>\The [target] is closed.</span>")
+		to_chat(user, SPAN_NOTICE("\The [target] is closed."))
 		return 1
 	// Otherwise don't care about splashing.
 	else if(!target.is_open_container())
 		return 0
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, SPAN_NOTICE("[src] is empty."))
 		return 1
 
 	if(!target.reagents.get_free_space())
-		to_chat(user, "<span class='notice'>[target] is full.</span>")
+		to_chat(user, SPAN_NOTICE("[target] is full."))
 		return 1
 
 	var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
 	playsound(src, 'sound/effects/pour.ogg', 25, 1)
-	to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to \the [target].  \The [src] now contains [src.reagents.total_volume] units.</span>")
+	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
+	to_chat(user, SPAN_NOTICE("You transfer [trans] unit\s of the solution to \the [target].  \The [src] now contains [src.reagents.total_volume] units."))
 	return 1
 
 /obj/item/reagent_containers/do_surgery(mob/living/carbon/M, mob/living/user)
 	if(user.zone_sel.selecting != BP_MOUTH) //in case it is ever used as a surgery tool
 		return ..()
 
-/obj/item/reagent_containers/AltClick(var/mob/user)
+/obj/item/reagent_containers/AltClick(mob/user)
 	if(possible_transfer_amounts)
 		set_amount_per_transfer_from_this()
 	else

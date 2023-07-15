@@ -14,7 +14,7 @@
 
 GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 
-/proc/iscultist(var/mob/player)
+/proc/iscultist(mob/player)
 	if(!GLOB.cult || !player.mind)
 		return 0
 	if(player.mind in GLOB.cult.current_antagonists)
@@ -24,7 +24,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	id = MODE_CULTIST
 	role_text = "Cultist"
 	role_text_plural = "Cultists"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/o5rep, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep)
 	feedback_tag = "cult_objective"
 	antag_indicator = "hudcultist"
 	welcome_text = "You have a tome in your possession; one that will help you start the cult. Use it well and remember - there are others."
@@ -69,7 +69,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	sacrifice_target = sacrifice.target
 	global_objectives |= sacrifice
 
-/datum/antagonist/cultist/equip(var/mob/living/carbon/human/player)
+/datum/antagonist/cultist/equip(mob/living/carbon/human/player)
 
 	if(!..())
 		return 0
@@ -90,34 +90,34 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	if(istype(S))
 		T.forceMove(S)
 
-/datum/antagonist/cultist/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
+/datum/antagonist/cultist/remove_antagonist(datum/mind/player, show_message, implanted)
 	if(!..())
 		return 0
-	to_chat(player.current, "<span class='danger'>An unfamiliar white light flashes through your mind, cleansing the taint of the dark-one and the memories of your time as his servant with it.</span>")
+	to_chat(player.current, SPAN_DANGER("An unfamiliar white light flashes through your mind, cleansing the taint of the dark-one and the memories of your time as his servant with it."))
 	player.ClearMemories(type)
 	if(show_message)
-		player.current.visible_message("<span class='notice'>[player.current] looks like they just reverted to their old faith!</span>")
+		player.current.visible_message(SPAN_NOTICE("[player.current] looks like they just reverted to their old faith!"))
 	remove_cult_magic(player.current)
 	remove_cultiness(CULTINESS_PER_CULTIST)
 
-/datum/antagonist/cultist/add_antagonist(var/datum/mind/player, var/ignore_role, var/do_not_equip, var/move_to_spawn, var/do_not_announce, var/preserve_appearance)
+/datum/antagonist/cultist/add_antagonist(datum/mind/player, ignore_role, do_not_equip, move_to_spawn, do_not_announce, preserve_appearance)
 	. = ..()
 	if(.)
-		to_chat(player, "<span class='cult'>[conversion_blurb]</span>")
+		to_chat(player, SPAN_OCCULT("[conversion_blurb]"))
 		if(player.current && !istype(player.current, /mob/living/simple_animal/construct))
 			player.current.add_language(LANGUAGE_CULT)
 
-/datum/antagonist/cultist/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
+/datum/antagonist/cultist/remove_antagonist(datum/mind/player, show_message, implanted)
 	. = ..()
 	if(. && player.current && !istype(player.current, /mob/living/simple_animal/construct))
 		player.current.remove_language(LANGUAGE_CULT)
 
-/datum/antagonist/cultist/update_antag_mob(var/datum/mind/player)
+/datum/antagonist/cultist/update_antag_mob(datum/mind/player)
 	. = ..()
 	add_cultiness(CULTINESS_PER_CULTIST)
 	add_cult_magic(player.current)
 
-/datum/antagonist/cultist/proc/add_cultiness(var/amount)
+/datum/antagonist/cultist/proc/add_cultiness(amount)
 	cult_rating += amount
 	var/old_rating = max_cult_rating
 	max_cult_rating = max(max_cult_rating, cult_rating)
@@ -131,54 +131,54 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	if(to_update.len)
 		update_cult_magic(to_update)
 
-/datum/antagonist/cultist/proc/update_cult_magic(var/list/to_update)
+/datum/antagonist/cultist/proc/update_cult_magic(list/to_update)
 	if(CULT_RUNES_1 in to_update)
 		for(var/datum/mind/H in GLOB.cult.current_antagonists)
 			if(H.current)
-				to_chat(H.current, "<span class='cult'>The veil between this world and beyond grows thin, and your power grows.</span>")
+				to_chat(H.current, SPAN_OCCULT("The veil between this world and beyond grows thin, and your power grows."))
 				add_cult_magic(H.current)
 	if(CULT_RUNES_2 in to_update)
 		for(var/datum/mind/H in GLOB.cult.current_antagonists)
 			if(H.current)
-				to_chat(H.current, "<span class='cult'>You feel that the fabric of reality is tearing.</span>")
+				to_chat(H.current, SPAN_OCCULT("You feel that the fabric of reality is tearing."))
 				add_cult_magic(H.current)
 	if(CULT_RUNES_3 in to_update)
 		for(var/datum/mind/H in GLOB.cult.current_antagonists)
 			if(H.current)
-				to_chat(H.current, "<span class='cult'>The world is at end. The veil is as thin as ever.</span>")
+				to_chat(H.current, SPAN_OCCULT("The world is at end. The veil is as thin as ever."))
 				add_cult_magic(H.current)
 
 	if((CULT_GHOSTS_1 in to_update) || (CULT_GHOSTS_2 in to_update) || (CULT_GHOSTS_3 in to_update))
 		for(var/mob/observer/ghost/D in SSmobs.mob_list)
 			add_ghost_magic(D)
 
-/datum/antagonist/cultist/proc/offer_uncult(var/mob/M)
+/datum/antagonist/cultist/proc/offer_uncult(mob/M)
 	if(!iscultist(M) || !M.mind)
 		return
 
-	to_chat(M, "<span class='cult'>Do you want to abandon the cult of Nar'Sie? <a href='?src=\ref[src];confirmleave=1'>ACCEPT</a></span>")
+	to_chat(M, SPAN_OCCULT("Do you want to abandon the cult of Nar'Sie? <a href='?src=\ref[src];confirmleave=1'>ACCEPT</a>"))
 
 /datum/antagonist/cultist/Topic(href, href_list)
 	if(href_list["confirmleave"])
 		GLOB.cult.remove_antagonist(usr.mind, 1)
 
-/datum/antagonist/cultist/proc/remove_cultiness(var/amount)
+/datum/antagonist/cultist/proc/remove_cultiness(amount)
 	cult_rating = max(0, cult_rating - amount)
 
-/datum/antagonist/cultist/proc/add_cult_magic(var/mob/M)
-	M.verbs += Tier1Runes
+/datum/antagonist/cultist/proc/add_cult_magic(mob/M)
+	add_verb(M, Tier1Runes)
 
 	if(max_cult_rating >= CULT_RUNES_1)
-		M.verbs += Tier2Runes
+		add_verb(M, Tier2Runes)
 
 		if(max_cult_rating >= CULT_RUNES_2)
-			M.verbs += Tier3Runes
+			add_verb(M, Tier3Runes)
 
 			if(max_cult_rating >= CULT_RUNES_3)
-				M.verbs += Tier4Runes
+				add_verb(M, Tier4Runes)
 
-/datum/antagonist/cultist/proc/remove_cult_magic(var/mob/M)
-	M.verbs -= Tier1Runes
-	M.verbs -= Tier2Runes
-	M.verbs -= Tier3Runes
-	M.verbs -= Tier4Runes
+/datum/antagonist/cultist/proc/remove_cult_magic(mob/M)
+	remove_verb(M, Tier1Runes)
+	remove_verb(M, Tier2Runes)
+	remove_verb(M, Tier3Runes)
+	remove_verb(M, Tier4Runes)

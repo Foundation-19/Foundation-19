@@ -28,13 +28,13 @@
 
 /turf/simulated/floor/exoplanet/attackby(obj/item/C, mob/user)
 	if(diggable && istype(C,/obj/item/shovel))
-		visible_message("<span class='notice'>\The [user] starts digging \the [src]</span>")
+		visible_message(SPAN_NOTICE("\The [user] starts digging \the [src]"))
 		if(do_after(user, 50))
-			to_chat(user,"<span class='notice'>You dig a deep pit.</span>")
+			to_chat(user,SPAN_NOTICE("You dig a deep pit."))
 			new /obj/structure/pit(src)
 			diggable = 0
 		else
-			to_chat(user,"<span class='notice'>You stop shoveling.</span>")
+			to_chat(user,SPAN_NOTICE("You stop shoveling."))
 	else if(istype(C, /obj/item/stack/tile))
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
@@ -57,7 +57,7 @@
 	. = ..()
 	update_icon(1)
 
-/turf/simulated/floor/exoplanet/on_update_icon(var/update_neighbors)
+/turf/simulated/floor/exoplanet/on_update_icon(update_neighbors)
 	cut_overlays()
 	if(LAZYLEN(decals))
 		add_overlay(decals)
@@ -94,11 +94,11 @@
 	footstep_type = /decl/footsteps/water
 	var/reagent_type = /datum/reagent/water
 
-/turf/simulated/floor/exoplanet/water/shallow/attackby(obj/item/O, var/mob/living/user)
+/turf/simulated/floor/exoplanet/water/shallow/attackby(obj/item/O, mob/living/user)
 	var/obj/item/reagent_containers/RG = O
 	if (reagent_type && istype(RG) && RG.is_open_container() && RG.reagents)
 		RG.reagents.add_reagent(reagent_type, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-		user.visible_message("<span class='notice'>[user] fills \the [RG] from \the [src].</span>","<span class='notice'>You fill \the [RG] from \the [src].</span>")
+		user.visible_message(SPAN_NOTICE("[user] fills \the [RG] from \the [src]."),SPAN_NOTICE("You fill \the [RG] from \the [src]."))
 	else
 		return ..()
 
@@ -206,6 +206,27 @@
 	burnt = TRUE
 	update_icon()
 
+// Flesh
+/turf/simulated/floor/exoplanet/flesh
+	name = "flesh"
+	icon = 'icons/turf/flooring/flesh.dmi'
+	icon_state = "flesh0"
+	color = "#94404e"
+	footstep_type = /decl/footsteps/blank
+
+/turf/simulated/floor/exoplanet/flesh/Initialize()
+	. = ..()
+	icon_state = "flesh[pick(0,1,2,3)]"
+
+/turf/simulated/floor/exoplanet/flesh/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if((temperature > T0C + 200 && prob(5)) || temperature > T0C + 1000)
+		melt()
+
+/turf/simulated/floor/exoplanet/flesh/melt()
+	SetName("scorched flesh")
+	footstep_type = /decl/footsteps/asteroid
+	color = "#70353a"
+
 //Special world edge turf
 
 /turf/simulated/planet_edge
@@ -240,7 +261,7 @@
 
 	//Need to put a mouse-opaque overlay there to prevent people turning/shooting towards ACTUAL location of vis_content things
 	var/obj/effect/overlay/O = new(src)
-	O.mouse_opacity = 2
+	O.mouse_opacity = MOUSE_OPACITY_OPAQUE
 	O.name = "distant terrain"
 	O.desc = "You need to come over there to take a better look."
 

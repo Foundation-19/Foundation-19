@@ -76,7 +76,7 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	value = 3.9
 
-/datum/reagent/medicine/meralyne/affect_blood(mob/living/carbon/M, alien, removed)
+/datum/reagent/medicine/meraline/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien != IS_DIONA)
 		M.heal_organ_damage(12 * removed, 0)
 
@@ -257,7 +257,7 @@
 	overdose = 5
 	metabolism = 1
 
-/datum/reagent/medicine/nanoblood/affect_blood(var/mob/living/carbon/human/M, alien, removed)
+/datum/reagent/medicine/nanoblood/affect_blood(mob/living/carbon/human/M, alien, removed)
 	if (!M.should_have_organ(BP_HEART)) // We want the var for safety but we can do without the actual blood.
 		return
 	if (M.regenerate_blood(4 * removed))

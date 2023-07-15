@@ -8,7 +8,7 @@
 #define INVESTIGATE_DIR "data/investigate/"
 
 //SYSTEM
-/proc/investigate_subject2file(var/subject)
+/proc/investigate_subject2file(subject)
 	return file("[INVESTIGATE_DIR][subject].html")
 
 /hook/startup/proc/resetInvestigate()
@@ -19,22 +19,22 @@
 	if(fdel(INVESTIGATE_DIR))	return 1
 	return 0
 
-/atom/proc/investigate_log(var/message, var/subject)
+/atom/proc/investigate_log(message, subject)
 	if(!message)	return
 	var/F = investigate_subject2file(subject)
 	if(!F)	return
-	to_chat(F, "<small>[time_stamp()] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>")
+	to_file(F, "<small>[time_stamp()] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>")
 
 //ADMINVERBS
-/client/proc/investigate_show( subject in list("hrefs","notes","singulo","telesci") )
+/client/proc/investigate_show( subject in list("hrefs","wires","singulo") )
 	set name = "Investigate"
 	set category = "Admin"
 	if(!holder)	return
 	switch(subject)
-		if("singulo", "telesci")			//general one-round-only stuff
+		if("singulo", "wires")			//general one-round-only stuff
 			var/F = investigate_subject2file(subject)
 			if(!F)
-				to_chat(src, "<span class='warning'>Error: admin_investigate: [INVESTIGATE_DIR][subject] is an invalid path or cannot be accessed.</span>")
+				to_chat(src, SPAN_WARNING("Error: admin_investigate: [INVESTIGATE_DIR][subject] is an invalid path or cannot be accessed."))
 				return
 			show_browser(src, F,"window=investigate[subject];size=800x300")
 
@@ -42,4 +42,4 @@
 			if (GLOB.href_logfile)
 				show_browser(src, GLOB.href_logfile, "window=investigate[subject];size=800x300")
 			else
-				to_chat(src, "<span class='warning'>Error: admin_investigate: Href Logging [config.log_hrefs ? "failed to start" : "is disabled"].</span>")
+				to_chat(src, SPAN_WARNING("Error: admin_investigate: Href Logging [config.log_hrefs ? "failed to start" : "is disabled"]."))

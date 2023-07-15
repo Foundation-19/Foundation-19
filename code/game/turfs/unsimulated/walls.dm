@@ -4,8 +4,12 @@
 	icon_state = "riveted"
 	opacity = 1
 	density = TRUE
+	explosion_block = 1
 
 /turf/unsimulated/wall/is_wall()
+	return TRUE
+
+/turf/unsimulated/wall/is_phasable()
 	return TRUE
 
 /turf/unsimulated/wall/fakeglass
@@ -21,3 +25,7 @@
 	desc = "Hideous images dance beneath the surface."
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "cult"
+
+/turf/unsimulated/wall/lobby_background
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT //we don't need to see this.
+	icon_state = "lobby_black"

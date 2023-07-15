@@ -52,6 +52,7 @@
 		go_out()
 		visible_message(SPAN_WARNING("\The [src] has ran out of charge!"))
 		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 		return
 
 	// If we have repair capabilities, repair any damage.
@@ -170,7 +171,7 @@
 /obj/machinery/recharge_station/attack_ai(mob/user)
 	return attack_hand(user)
 
-/obj/machinery/recharge_station/MouseDrop_T(var/mob/target, var/mob/user)
+/obj/machinery/recharge_station/MouseDrop_T(mob/target, mob/user)
 	if(!CanMouseDrop(target, user))
 		return
 	if(!istype(target))
@@ -206,18 +207,20 @@
 	last_overlay_state = overlay_state()
 	set_overlays(list(image(overlay_icon, overlay_state())))
 
-/obj/machinery/recharge_station/proc/go_in(var/mob/M)
+/obj/machinery/recharge_station/proc/go_in(mob/M)
 	if(occupant)
 		return
 
 	if(!hascell(M))
 		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 		return
 
 	var/obj/item/cell/cell = get_cell()
 	if(!cell || (cell.charge <= 0))
 		visible_message(SPAN_WARNING("\The [src] is out of charge!"))
 		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 		return
 
 	add_fingerprint(M)
@@ -227,7 +230,7 @@
 	update_icon()
 	return 1
 
-/obj/machinery/recharge_station/proc/hascell(var/mob/M)
+/obj/machinery/recharge_station/proc/hascell(mob/M)
 	if(isrobot(M))
 		var/mob/living/silicon/robot/R = M
 		return (R.cell)

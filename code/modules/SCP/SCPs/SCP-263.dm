@@ -17,19 +17,16 @@
 	var/mob/living/carbon/human/target
 
 /mob/living/simple_animal/hostile/scp_263/Initialize()
+	add_language(LANGUAGE_ENGLISH)
 
-	..()
-	add_language(/datum/language/english)
-
-
-		// emotes
-	verbs += list(
+	// emotes
+	add_verb(src, list(
 		/mob/living/simple_animal/hostile/scp_263/proc/On,
 		/mob/living/simple_animal/hostile/scp_263/proc/Cash,
 		/mob/living/simple_animal/hostile/scp_263/proc/Ash,
 		/mob/living/simple_animal/hostile/scp_263/proc/Cursed,
-
-	)
+	))
+	return ..()
 
 /mob/living/simple_animal/hostile/scp_263/Destroy()
 	target = null
@@ -44,7 +41,7 @@
 		if (world.time >= next_emote && gaming == 0)
 		/*	if(H in gameshow)
 				continue*/
-			if(H.stat || is_blind(H))
+			if(H.stat || !H.can_see())
 				continue
 
 
@@ -54,7 +51,7 @@
 				if(y_diff < 0 && H.dir == NORTH) //Mob is below src and looking up
 					if(dir == SOUTH) //src is looking down
 						eye_contact = 1
-						to_chat(H, "<span class='alert'>Welcome to the game show!</span>")
+						to_chat(H, SPAN_ALERT("Welcome to the game show!"))
 			if(eye_contact)
 				icon_living = "animation"
 				next_emote = world.time + 30
@@ -91,7 +88,7 @@
 	icon_state = "cursed"
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf())
+			if(M.can_hear(src))
 //				M << pick('sound/scp/263/263-cursed.ogg')
 				next_emote = world.time + 30
 //		for(var/mob/living/simple_animal/hostile/scp_263/S in hear(7, get_turf(src)))
@@ -131,7 +128,7 @@
 					eye_contact = 1
 
 		if(eye_contact)
-			to_chat(H, "<span class='alert'>Welcome to the game show!</span>")
+			to_chat(H, SPAN_ALERT("Welcome to the game show!"))
 			game_show_start(H)
 
 	return */

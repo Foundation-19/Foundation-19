@@ -70,7 +70,7 @@
 	amputation_point = "left shoulder"
 	tendon_name = "palmaris longus tendon"
 	artery_name = "basilic vein"
-	arterial_bleed_severity = 0.75
+	arterial_bleed_severity = 0.95 //You're going to die.
 	limb_flags = ORGAN_FLAG_CAN_AMPUTATE | ORGAN_FLAG_CAN_GRASP | ORGAN_FLAG_HAS_TENDON | ORGAN_FLAG_CAN_BREAK
 
 /obj/item/organ/external/arm/right
@@ -95,7 +95,7 @@
 	amputation_point = "left hip"
 	tendon_name = "cruciate ligament"
 	artery_name = "femoral artery"
-	arterial_bleed_severity = 0.75
+	arterial_bleed_severity = 0.95
 	limb_flags = ORGAN_FLAG_CAN_AMPUTATE | ORGAN_FLAG_CAN_STAND | ORGAN_FLAG_HAS_TENDON | ORGAN_FLAG_CAN_BREAK
 
 /obj/item/organ/external/leg/right
@@ -120,7 +120,7 @@
 	joint = "left ankle"
 	amputation_point = "left ankle"
 	tendon_name = "Achilles tendon"
-	arterial_bleed_severity = 0.5
+	arterial_bleed_severity = 0.75 //This is going to kill you.
 	limb_flags = ORGAN_FLAG_CAN_AMPUTATE | ORGAN_FLAG_CAN_STAND | ORGAN_FLAG_HAS_TENDON | ORGAN_FLAG_CAN_BREAK
 
 /obj/item/organ/external/foot/right
@@ -145,7 +145,7 @@
 	joint = "left wrist"
 	amputation_point = "left wrist"
 	tendon_name = "carpal ligament"
-	arterial_bleed_severity = 0.5
+	arterial_bleed_severity = 0.75
 	limb_flags = ORGAN_FLAG_CAN_AMPUTATE | ORGAN_FLAG_CAN_GRASP | ORGAN_FLAG_FINGERPRINT | ORGAN_FLAG_HAS_TENDON | ORGAN_FLAG_CAN_BREAK
 
 /obj/item/organ/external/hand/right

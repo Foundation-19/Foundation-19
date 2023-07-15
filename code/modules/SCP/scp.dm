@@ -55,7 +55,7 @@
 /atom/proc/canBeSCP(datum/scp/SCP_)
 	return SCP_.isCompatible(src)
 
-/atom/proc/isSCP(var/A)
+/atom/proc/isSCP(A)
 	if(A)
 		if(SCP.designation == A)
 			return 1
@@ -63,7 +63,7 @@
 		if(SCP)
 			return 1
 
-/atom/proc/removeSCP(var/A)
+/atom/proc/removeSCP(A)
 	if(!SCP)
 		return 0
 	if(A)

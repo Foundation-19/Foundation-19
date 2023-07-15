@@ -81,7 +81,7 @@ SUBSYSTEM_DEF(shuttle)
 			O = map_sectors["[shuttle_landmark.z]"]
 			O ? O.add_landmark(shuttle_landmark, shuttle_landmark.shuttle_restricted) : (landmarks_awaiting_sector += shuttle_landmark)
 
-/datum/controller/subsystem/shuttle/proc/get_landmark(var/shuttle_landmark_tag)
+/datum/controller/subsystem/shuttle/proc/get_landmark(shuttle_landmark_tag)
 	return registered_shuttle_landmarks[shuttle_landmark_tag]
 
 //Checks if the given sector's landmarks have initialized; if so, registers them with the sector, if not, marks them for assignment after they come in.
@@ -92,7 +92,7 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/landmark_tag in given_sector.initial_generic_waypoints)
 		if(!try_add_landmark_tag(landmark_tag, given_sector))
 			landmarks_still_needed[landmark_tag] = given_sector
-	
+
 	for(var/shuttle_name in given_sector.initial_restricted_waypoints)
 		for(var/landmark_tag in given_sector.initial_restricted_waypoints[shuttle_name])
 			if(!try_add_landmark_tag(landmark_tag, given_sector))
@@ -118,7 +118,7 @@ SUBSYSTEM_DEF(shuttle)
 			given_sector.add_landmark(landmark, shuttle_name)
 			. = 1
 
-/datum/controller/subsystem/shuttle/proc/initialize_shuttle(var/shuttle_type)
+/datum/controller/subsystem/shuttle/proc/initialize_shuttle(shuttle_type)
 	var/datum/shuttle/shuttle = shuttle_type
 	if(initial(shuttle.category) != shuttle_type)
 		shuttle = new shuttle()
@@ -155,5 +155,5 @@ SUBSYSTEM_DEF(shuttle)
 			return ship
 	return null
 
-/datum/controller/subsystem/shuttle/stat_entry()
-	..("Shuttles:[shuttles.len], Ships:[ships.len], L:[registered_shuttle_landmarks.len][overmap_halted ? ", HALT" : ""]")
+/datum/controller/subsystem/shuttle/stat_entry(msg)
+	.=..("[msg] Shuttles:[shuttles.len], Ships:[ships.len], L:[registered_shuttle_landmarks.len][overmap_halted ? ", HALT" : ""]")

@@ -6,70 +6,6 @@
 	overdose = 0 // No risk of OD from fluff chems
 	data = 0
 
-/datum/reagent/medicine/fluff/citalopram
-	name = "Citalopram"
-	description = "Stabilizes the mind a little."
-	color = "#ff80ff"
-	value = 6
-
-/datum/reagent/medicine/fluff/citalopram/affect_blood(mob/living/carbon/M, alien, removed)
-	if (alien == IS_DIONA)
-		return
-	if (volume <= 0.1 && M.chem_doses[type] >= 0.5 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
-		data = world.time
-		to_chat(M, SPAN_WARNING("Your mind feels a little less stable..."))
-	else
-		M.add_chemical_effect(CE_MIND, 1)
-		if (world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
-			data = world.time
-			to_chat(M, SPAN_NOTICE("Your mind feels stable... a little stable."))
-
-
-
-/datum/reagent/medicine/fluff/paroxetine
-	name = "Paroxetine"
-	description = "Stabilizes the mind greatly, but has a chance of adverse effects."
-	color = "#ff80bf"
-	value = 3.5
-
-/datum/reagent/medicine/fluff/paroxetine/affect_blood(mob/living/carbon/M, alien, removed)
-	if (alien == IS_DIONA)
-		return
-	if (volume <= 0.1 && M.chem_doses[type] >= 0.5 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
-		data = world.time
-		to_chat(M, SPAN_WARNING("Your mind feels much less stable..."))
-	else
-		M.add_chemical_effect(CE_MIND, 2)
-		if (world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
-			data = world.time
-			if (prob(99))
-				to_chat(M, SPAN_NOTICE("Your mind feels much more stable."))
-			else
-				to_chat(M, SPAN_WARNING("Your mind breaks apart..."))
-				M.hallucination(200, 100)
-
-
-
-/datum/reagent/medicine/fluff/methylphenidate
-	name = "Methylphenidate"
-	description = "Improves the ability to concentrate."
-	taste_description = "sourness"
-	color = "#bf80bf"
-	value = 6
-
-/datum/reagent/medicine/fluff/methylphenidate/affect_blood(mob/living/carbon/M, alien, removed)
-	if (alien == IS_DIONA)
-		return
-	if (volume <= 0.1 && M.chem_doses[type] >= 0.5 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
-		data = world.time
-		to_chat(M, SPAN_WARNING("You lose focus..."))
-	else
-		if (world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
-			data = world.time
-			to_chat(M, SPAN_NOTICE("Your mind feels focused and undivided."))
-
-
-
 // Antidexafen technically has antiviral effects, but viruses don't currently exist, making it do nothing.
 // The painkiller value is very very low, too, so it's only for boo-boos and not for that sucking chest wound.
 /datum/reagent/medicine/fluff/antidexafen
@@ -83,8 +19,6 @@
 		return
 	M.add_chemical_effect(CE_PAINKILLER, 5)
 	M.add_chemical_effect(CE_ANTIVIRAL, 1)
-
-
 
 // We classify nicotine and tobacco as a medicine for ease of coding, and because we can't simulate lung cancer after several years of use.
 /datum/reagent/medicine/fluff/nicotine

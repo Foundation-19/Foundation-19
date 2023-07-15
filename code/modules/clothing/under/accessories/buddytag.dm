@@ -24,7 +24,7 @@
 /obj/item/clothing/accessory/buddytag/DefaultTopicState()
 	return GLOB.physical_state
 
-/obj/item/clothing/accessory/buddytag/OnTopic(var/user, var/list/href_list, var/state)
+/obj/item/clothing/accessory/buddytag/OnTopic(user, list/href_list, state)
 	if(href_list["toggle"])
 		on = !on
 		if(on)

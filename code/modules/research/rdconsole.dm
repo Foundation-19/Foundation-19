@@ -65,9 +65,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/sync = 1		//If sync = 0, it doesn't show up on Server Control Console
 	var/can_analyze = TRUE //If the console is allowed to use destructive analyzers
 
-	req_access = list(access_research)	//Data and setting manipulation requires scientist access.
-
-/obj/machinery/computer/rdconsole/proc/CallMaterialName(var/ID)
+/obj/machinery/computer/rdconsole/proc/CallMaterialName(ID)
 	var/return_name = ID
 	switch(return_name)
 		if(MATERIAL_STEEL)
@@ -90,7 +88,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			return_name = "Diamond"
 	return return_name
 
-/obj/machinery/computer/rdconsole/proc/CallReagentName(var/reagent_type)
+/obj/machinery/computer/rdconsole/proc/CallReagentName(reagent_type)
 	var/datum/reagent/R = reagent_type
 	return ispath(reagent_type, /datum/reagent) ? initial(R.name) : "Unknown"
 
@@ -124,7 +122,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	SyncRDevices()
 	. = ..()
 
-/obj/machinery/computer/rdconsole/attackby(var/obj/item/D as obj, var/mob/user as mob)
+/obj/machinery/computer/rdconsole/attackby(obj/item/D as obj, mob/user as mob)
 	//Loading a disk into it.
 	if(istype(D, /obj/item/disk))
 		if(t_disk || d_disk)
@@ -137,10 +135,10 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		else if (istype(D, /obj/item/disk/design_disk))
 			d_disk = D
 		else
-			to_chat(user, "<span class='notice'>Machine cannot accept disks in that format.</span>")
+			to_chat(user, SPAN_NOTICE("Machine cannot accept disks in that format."))
 			return
 		user.drop_from_inventory(D, src)
-		to_chat(user, "<span class='notice'>You add \the [D] to the machine.</span>")
+		to_chat(user, SPAN_NOTICE("You add \the [D] to the machine."))
 	else
 		//The construction/deconstruction of the console code.
 		..()
@@ -148,15 +146,15 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	src.updateUsrDialog()
 	return
 
-/obj/machinery/computer/rdconsole/emag_act(var/remaining_charges, var/mob/user)
+/obj/machinery/computer/rdconsole/emag_act(remaining_charges, mob/user)
 	if(!emagged)
 		playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = TRUE
 		req_access.Cut()
-		to_chat(user, "<span class='notice'>You you disable the security protocols.</span>")
+		to_chat(user, SPAN_NOTICE("You you disable the security protocols."))
 		return 1
 
-/obj/machinery/computer/rdconsole/CanUseTopic(var/mob/user, var/datum/topic_state/state, var/href_list)
+/obj/machinery/computer/rdconsole/CanUseTopic(mob/user, datum/topic_state/state, href_list)
 	if(href_list && href_list["menu"])
 		var/temp_screen = text2num(href_list["menu"])
 		if(!((temp_screen <= 1.1) || (3 <= temp_screen && 4.9 >= temp_screen) || allowed(user)))
@@ -250,7 +248,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		. = TOPIC_REFRESH
 		CHECK_DESTROY
 		if(linked_destroy.busy)
-			to_chat(usr, "<span class='notice'>The destructive analyzer is busy at the moment.</span>")
+			to_chat(usr, SPAN_NOTICE("The destructive analyzer is busy at the moment."))
 
 		else if(linked_destroy.loaded_item)
 			linked_destroy.loaded_item.dropInto(linked_destroy.loc)
@@ -262,7 +260,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		. = TOPIC_REFRESH
 		CHECK_DESTROY
 		if(linked_destroy.busy)
-			to_chat(usr, "<span class='notice'>The destructive analyzer is busy at the moment.</span>")
+			to_chat(usr, SPAN_NOTICE("The destructive analyzer is busy at the moment."))
 			return TOPIC_HANDLED
 		if(alert("Proceeding will destroy loaded item. Continue?", "Destructive analyzer confirmation", "Yes", "No") == "No")
 			return TOPIC_HANDLED
@@ -282,7 +280,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	else if(href_list["sync"]) //Sync the research holder with all the R&D consoles in the game that aren't sync protected.
 		screen = 0.0
 		if(!sync)
-			to_chat(usr, "<span class='notice'>You must connect to the network first.</span>")
+			to_chat(usr, SPAN_NOTICE("You must connect to the network first."))
 		else
 			. = TOPIC_HANDLED
 			spawn(30)
@@ -425,7 +423,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			PR.name = "fabricator report"
 			PR.info = "<center><b>[station_name()] Fabricator Laboratory</b>"
 			PR.info += "<h2>[ (text2num(href_list["print"]) == 2) ? "Detailed" : null ] Fabricator Status Report</h2>"
-			PR.info += "<i>report prepared at [stationtime2text()] local time</i></center><br>"
+			PR.info += "<i>report prepared at [station_time_timestamp("hh:mm")] local time</i></center><br>"
 			if(text2num(href_list["print"]) == 2)
 				PR.info += GetResearchListInfo()
 			else
@@ -442,7 +440,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/mob/user = W.resolve()
 	linked_destroy.busy = 0
 	if(!linked_destroy.loaded_item)
-		to_chat(user, "<span class='notice'>The destructive analyzer appears to be empty.</span>")
+		to_chat(user, SPAN_NOTICE("The destructive analyzer appears to be empty."))
 		screen = 1.0
 		return
 	for(var/T in linked_destroy.loaded_item.origin_tech)
@@ -873,7 +871,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 /obj/machinery/computer/rdconsole/robotics
 	name = "robotics fabrication console"
 	id = 2
-	req_access = list(access_robotics)
+	req_access = list(ACCESS_ROBOTICS)
 	can_analyze = FALSE
 
 /obj/machinery/computer/rdconsole/core

@@ -39,7 +39,7 @@ D [1]/  ||
 	holder = loc
 
 	if(!istype(holder))
-		message_admins("ERROR: An integrated_io ([name]) spawned without a valid holder!  This is a bug.")
+		message_staff("ERROR: An integrated_io ([name]) spawned without a valid holder!  This is a bug.")
 
 /datum/integrated_io/Destroy()
 	disconnect_all()
@@ -47,14 +47,14 @@ D [1]/  ||
 	holder = null
 	return ..()
 
-/datum/integrated_io/proc/data_as_type(var/as_type)
+/datum/integrated_io/proc/data_as_type(as_type)
 	if(!isweakref(data))
 		return
 	var/weakref/w = data
 	var/output = w.resolve()
 	return istype(output, as_type) ? output : null
 
-/datum/integrated_io/proc/display_data(var/input)
+/datum/integrated_io/proc/display_data(input)
 	if(isnull(input))
 		return "(null)" // Empty data means nothing to show.
 
@@ -164,7 +164,7 @@ D [1]/  ||
 	linked.Remove(pin)
 
 
-/datum/integrated_io/proc/ask_for_data_type(mob/user, var/default, var/list/allowed_data_types = list("string","number","null"))
+/datum/integrated_io/proc/ask_for_data_type(mob/user, default, list/allowed_data_types = list("string","number","null"))
 	var/type_to_use = input("Please choose a type to use.","[src] type setting") as null|anything in allowed_data_types
 	if(!holder.check_interactivity(user))
 		return
@@ -175,16 +175,16 @@ D [1]/  ||
 			var/input_text = input(user, "Now type in a string.", "[src] string writing", istext(default) ? default : null) as null|text
 			new_data = sanitize(input_text, trim = 0)
 			if(istext(new_data) && holder.check_interactivity(user) )
-				to_chat(user, "<span class='notice'>You input "+new_data+" into the pin.</span>")
+				to_chat(user, SPAN_NOTICE("You input "+new_data+" into the pin."))
 				return new_data
 		if("number")
 			new_data = input("Now type in a number.","[src] number writing", isnum(default) ? default : null) as null|num
 			if(isnum(new_data) && holder.check_interactivity(user) )
-				to_chat(user, "<span class='notice'>You input [new_data] into the pin.</span>")
+				to_chat(user, SPAN_NOTICE("You input [new_data] into the pin."))
 				return new_data
 		if("null")
 			if(holder.check_interactivity(user))
-				to_chat(user, "<span class='notice'>You clear the pin's memory.</span>")
+				to_chat(user, SPAN_NOTICE("You clear the pin's memory."))
 				return new_data
 
 // Basically a null check
@@ -198,7 +198,7 @@ D [1]/  ||
 
 /datum/integrated_io/activate/ask_for_pin_data(mob/user) // This just pulses the pin.
 	holder.check_then_do_work(ord,ignore_power = TRUE)
-	to_chat(user, "<span class='notice'>You pulse \the [holder]'s [src] pin.</span>")
+	to_chat(user, SPAN_NOTICE("You pulse \the [holder]'s [src] pin."))
 
 /datum/integrated_io/activate
 	name = "activation pin"

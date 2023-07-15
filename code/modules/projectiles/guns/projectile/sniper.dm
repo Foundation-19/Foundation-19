@@ -31,10 +31,10 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-/obj/item/gun/projectile/heavysniper/handle_post_fire(mob/user, atom/target, var/pointblank=0, var/reflex=0)
+/obj/item/gun/projectile/heavysniper/handle_post_fire(mob/user, atom/target, pointblank=0, reflex=0)
 	..()
 	if(user && user.skill_check(SKILL_WEAPONS, SKILL_MASTER))
-		to_chat(user, "<span class='notice'>You work the bolt open with a reflexive motion, ejecting [chambered]!</span>")
+		to_chat(user, SPAN_NOTICE("You work the bolt open with a reflexive motion, ejecting [chambered]!"))
 		unload_shell()
 
 /obj/item/gun/projectile/heavysniper/proc/unload_shell()
@@ -50,12 +50,12 @@
 	bolt_open = !bolt_open
 	if(bolt_open)
 		if(chambered)
-			to_chat(user, "<span class='notice'>You work the bolt open, ejecting [chambered]!</span>")
+			to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
 			unload_shell()
 		else
-			to_chat(user, "<span class='notice'>You work the bolt open.</span>")
+			to_chat(user, SPAN_NOTICE("You work the bolt open."))
 	else
-		to_chat(user, "<span class='notice'>You work the bolt closed.</span>")
+		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
 		playsound(src.loc, 'sound/weapons/guns/interaction/rifle_boltforward.ogg', 50, 1)
 		bolt_open = 0
 	add_fingerprint(user)
@@ -63,16 +63,16 @@
 
 /obj/item/gun/projectile/heavysniper/special_check(mob/user)
 	if(bolt_open)
-		to_chat(user, "<span class='warning'>You can't fire [src] while the bolt is open!</span>")
+		to_chat(user, SPAN_WARNING("You can't fire [src] while the bolt is open!"))
 		return 0
 	return ..()
 
-/obj/item/gun/projectile/heavysniper/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/heavysniper/load_ammo(obj/item/A, mob/user)
 	if(!bolt_open)
 		return
 	..()
 
-/obj/item/gun/projectile/heavysniper/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/heavysniper/unload_ammo(mob/user, allow_dump=1)
 	if(!bolt_open)
 		return
 	..()

@@ -1,8 +1,8 @@
 var/global/ntnet_card_uid = 1
 
 /obj/item/stock_parts/computer/network_card/
-	name = "basic NTNet network card"
-	desc = "A basic network card for usage with standard NTNet frequencies."
+	name = "basic SCiPnet network card"
+	desc = "A basic network card for usage with standard SCiPnet frequencies."
 	power_usage = 50
 	origin_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 1)
 	critical = 0
@@ -13,7 +13,7 @@ var/global/ntnet_card_uid = 1
 	var/long_range = 0
 	var/ethernet = 0 // Hard-wired, therefore always on, ignores NTNet wireless checks.
 	var/proxy_id     // If set, uses the value to funnel connections through another network card.
-	malfunction_probability = 1
+	malfunction_divisor = 20
 
 /obj/item/stock_parts/computer/network_card/diagnostics()
 	. = ..()
@@ -26,14 +26,14 @@ var/global/ntnet_card_uid = 1
 	if(ethernet)
 		. += "OpenEth (Physical Connection) - Physical network connection port"
 
-/obj/item/stock_parts/computer/network_card/New(var/l)
+/obj/item/stock_parts/computer/network_card/New(l)
 	..(l)
 	identification_id = ntnet_card_uid
 	ntnet_card_uid++
 
 /obj/item/stock_parts/computer/network_card/advanced
-	name = "advanced NTNet network card"
-	desc = "An advanced network card for usage with standard NTNet frequencies. It's transmitter is strong enough to connect even when far away."
+	name = "advanced SCiPnet network card"
+	desc = "An advanced network card for usage with standard SCiPnet frequencies. It's transmitter is strong enough to connect even when far away."
 	long_range = 1
 	origin_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 2)
 	power_usage = 100 // Better range but higher power usage.
@@ -41,8 +41,8 @@ var/global/ntnet_card_uid = 1
 	hardware_size = 1
 
 /obj/item/stock_parts/computer/network_card/wired
-	name = "wired NTNet network card"
-	desc = "An advanced network card for usage with standard NTNet frequencies. This one also supports wired connection."
+	name = "wired SCiPnet network card"
+	desc = "An advanced network card for usage with standard SCiPnet frequencies. This one also supports wired connection."
 	ethernet = 1
 	origin_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 3)
 	power_usage = 100 // Better range but higher power usage.
@@ -50,74 +50,44 @@ var/global/ntnet_card_uid = 1
 	hardware_size = 3
 
 /obj/item/stock_parts/computer/network_card/Destroy()
-	ntnet_global.unregister(identification_id)
+	if(holder2 && (holder2.network_card == src))
+		holder2.network_card = null
 	return ..()
 
 // Returns a string identifier of this network card
 /obj/item/stock_parts/computer/network_card/proc/get_network_tag(list/routed_through) // Argument is a safety parameter for internal calls. Don't use manually.
-	if(proxy_id && !(src in routed_through))
-		var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(proxy_id)
-		if(comp) // If not we default to exposing ourselves, but it means there was likely a logic error elsewhere.
-			LAZYADD(routed_through, src)
-			var/obj/item/stock_parts/computer/network_card/network_card = comp.get_component(PART_NETWORK)
-			if(network_card)
-				return network_card.get_network_tag(routed_through)
 	return "[identification_string] (NID [identification_id])"
 
 /obj/item/stock_parts/computer/network_card/proc/is_banned()
 	return ntnet_global.check_banned(identification_id)
 
 // 0 - No signal, 1 - Low signal, 2 - High signal. 3 - Wired Connection
-/obj/item/stock_parts/computer/network_card/proc/get_signal(var/specific_action = 0, list/routed_through)
-	. = 0
+/obj/item/stock_parts/computer/network_card/proc/get_signal(specific_action = 0, list/routed_through)
+	if(!holder2) // Hardware is not installed in anything. No signal. How did this even get called?
+		return 0
+
 	if(!enabled)
-		return
+		return 0
 
 	if(!check_functionality() || !ntnet_global || is_banned())
-		return
+		return 0
+
+	if(ethernet) // Computer is connected via wired connection.
+		return 3
 
 	if(!ntnet_global.check_function(specific_action)) // NTNet is down and we are not connected via wired connection. No signal.
-		if(!ethernet || specific_action) // Wired connection ensures a basic connection to NTNet, however no usage of disabled network services.
-			return
+		return 0
 
-	var/strength = 1
-	if(ethernet)
-		strength = 3
-	else if(long_range)
-		strength = 2
-
-	var/turf/T = get_turf(src)
-	if(!istype(T)) //no reception in nullspace
-		return
-	if(T.z in GLOB.using_map.station_levels)
-		// Computer is on station. Low/High signal depending on what type of network card you have
-		. = strength
-	else if(T.z in GLOB.using_map.contact_levels) //not on station, but close enough for radio signal to travel
-		. = strength - 1
-
-	if(proxy_id)
-		var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(proxy_id)
-		if(!comp || !comp.on)
+	if(holder2)
+		var/turf/T = get_turf(holder2)
+		if(!istype(T)) //no reception in nullspace
 			return 0
-		if(src in routed_through) // circular proxy chain
-			return 0
-		LAZYADD(routed_through, src)
-		var/obj/item/stock_parts/computer/network_card/network_card = comp.get_component(PART_NETWORK)
-		if(network_card)
-			. = min(., network_card.get_signal(specific_action, routed_through))
-
-/obj/item/stock_parts/computer/network_card/on_disable()
-	ntnet_global.unregister(identification_id)
-
-/obj/item/stock_parts/computer/network_card/on_enable(var/datum/extension/interactive/ntos/os)
-	ntnet_global.register(identification_id, os)
-
-/obj/item/stock_parts/computer/network_card/on_install(var/obj/machinery/machine)
-	..()
-	var/datum/extension/interactive/ntos/os = get_extension(machine, /datum/extension/interactive/ntos)
-	if(os)
-		on_enable(os)
-
-/obj/item/stock_parts/computer/network_card/on_uninstall(var/obj/machinery/machine, var/temporary = FALSE)
-	..()
-	on_disable()
+		if(T.z in GLOB.using_map.station_levels)
+			// Computer is on station. Low/High signal depending on what type of network card you have
+			if(long_range)
+				return 2
+			else
+				return 1
+		if(T.z in GLOB.using_map.contact_levels) //not on station, but close enough for radio signal to travel
+			if(long_range) // Computer is not on station, but it has upgraded network card. Low signal.
+				return 1

@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(apostles)
 	id = "apostle"
 	role_text = "Apostle"
 	role_text_plural = "Apostles"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/o5rep, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep,)
 	flags = ANTAG_SUSPICIOUS
 	antaghud_indicator = "hudchangeling"
 	faction = "apostle"
@@ -34,10 +34,11 @@ GLOBAL_LIST_EMPTY(apostles)
 
 /datum/antagonist/apostle/proc/soundd_in(mob/living/carbon/human/H)
 	var/turf/T = get_turf(H)
-	playsound(H, 'sound/effects/apostle/mob/apostle_death_final.ogg', 100, TRUE, TRUE)
-	new /obj/effect/temporary/sparkle(T)
+	playsound(H, 'sound/scp/abnormality/white_night/apostle_death_final.ogg', 100, TRUE, TRUE)
+	show_sound_effect(H.loc, H)
+	new /obj/effect/temp_visual/sparkle(T)
 	addtimer(CALLBACK(src, .proc/drop_dust, H, T), 25)
 
 /datum/antagonist/apostle/proc/drop_dust(mob/living/carbon/human/H, turf/T)
-	new /obj/effect/temporary/runeconvert(T)
+	new /obj/effect/temp_visual/runeconvert(T)
 	H.dust()

@@ -1,11 +1,12 @@
-/client/proc/cmd_mass_modify_object_variables(atom/A, var/var_name)
+/client/proc/cmd_mass_modify_object_variables(atom/A, var_name)
 	set category = "Debug"
 	set name = "Mass Edit Variables"
 	set desc="(target) Edit all instances of a target item's variables"
 
 	var/method = 0	//0 means strict type detection while 1 means this type and all subtypes (IE: /obj/item with this set to 1 will set it to ALL itms)
 
-	if(!check_rights(R_VAREDIT))	return
+	if(!check_rights(R_VAREDIT))
+		return
 
 	if(A?.type)
 		if(typesof(A.type))
@@ -23,14 +24,15 @@
 	SSstatistics.add_field_details("admin_verb","MEV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
-/client/proc/massmodify_variables(var/atom/O, var/var_name = "", var/method = 0)
-	if(!check_rights(R_VAREDIT))	return
+/client/proc/massmodify_variables(atom/O, var_name = "", method = 0)
+	if(!check_rights(R_VAREDIT))
+		return
 
 	var/list/locked = list("vars", "key", "ckey", "client")
 
 	for(var/p in forbidden_varedit_object_types())
 		if( istype(O,p) )
-			to_chat(usr, "<span class='warning'>It is forbidden to edit this object's variables.</span>")
+			to_chat(usr, SPAN_WARNING("It is forbidden to edit this object's variables."))
 			return
 
 	var/list/names = list()
@@ -46,7 +48,8 @@
 	else
 		variable = var_name
 
-	if(!variable)	return
+	if(!variable)
+		return
 	var/default
 	var/var_value = O.vars[variable]
 	var/dir
@@ -115,8 +118,10 @@
 		if(dir)
 			to_chat(usr, "If a direction, direction is: [dir]")
 
-	var/class = input("What kind of variable?","Variable Type",default) as null|anything in list("text",
-		"num","type","icon","file","edit referenced object","restore to default")
+	var/list/class_input = list("text", "num", "atom typepath", "datum typepath", "type", "new atom", \
+		"new datum", "reference", "mob reference", "icon", "file", "color", "list", "edit referenced object", \
+		"restore to default")
+	var/class = input("What kind of variable?","Variable Type", default) as null|anything in class_input
 
 	if(!class)
 		return
@@ -135,33 +140,33 @@
 			if(method)
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if ( istype(M , O.type) )
+						if(istype(M , O.type))
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 			else
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if (M.type == O.type)
+						if(M.type == O.type)
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 		if("edit referenced object")
@@ -169,185 +174,338 @@
 
 		if("text")
 			var/new_value = input("Enter new text:","Text",O.vars[variable]) as text|null//todo: sanitize ???
-			if(new_value == null) return
+			if(new_value == null)
+				return
 			O.vars[variable] = new_value
 
 			if(method)
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if ( istype(M , O.type) )
+						if(istype(M , O.type))
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 			else
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if (M.type == O.type)
+						if(M.type == O.type)
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 		if("num")
-			var/new_value = input("Enter new number:","Num",\
-					O.vars[variable]) as num|null
-			if(new_value == null) return
+			var/new_value = input("Enter new number:","Num", O.vars[variable]) as num|null
+			if(new_value == null)
+				return
 			O.vars[variable] = new_value
 
 			if(method)
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if ( istype(M , O.type) )
+						if(istype(M , O.type))
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 			else
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if (M.type == O.type)
+						if(M.type == O.type)
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+		if("atom typepath")
+			var/new_value = pick_closest_path(FALSE)
+			O.vars[variable] = new_value
+			if(method)
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(istype(M , O.type))
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+			else
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(M.type == O.type)
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+		if("datum typepath")
+			var/new_value = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			O.vars[variable] = new_value
+			if(method)
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(istype(M , O.type))
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+			else
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(M.type == O.type)
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 		if("type")
-			var/new_value
-			new_value = input("Enter type:","Type",O.vars[variable]) as null|anything in typesof(/obj,/mob,/area,/turf)
-			if(new_value == null) return
+			var/new_value = null
+			var/error = ""
+			do
+				new_value = input("Enter type:[error]", "Type", new_value) as null|text
+				if(!new_value)
+					break
+				new_value = text2path(new_value)
+				error = "\nType not found, Please try again"
+			while(!new_value)
+			if(new_value == null)
+				return
 			O.vars[variable] = new_value
 			if(method)
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if ( istype(M , O.type) )
+						if(istype(M , O.type))
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 			else
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if (M.type == O.type)
+						if(M.type == O.type)
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+		if("new atom")
+			var/type = pick_closest_path(FALSE)
+			if(!type)
+				return
+			var/atom/new_value = new type()
+			O.vars[variable] = new_value
+			if(method)
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(istype(M , O.type))
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+			else
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(M.type == O.type)
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+		if("new datum")
+			var/type = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			if(!type)
+				return
+			var/datum/new_value = new type()
+			O.vars[variable] = new_value
+			if(method)
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(istype(M , O.type))
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(istype(A , O.type))
+							A.vars[variable] = O.vars[variable]
+			else
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if(M.type == O.type)
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if(A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 		if("file")
 			var/new_value = input("Pick file:","File",O.vars[variable]) as null|file
-			if(new_value == null) return
+			if(new_value == null)
+				return
 			O.vars[variable] = new_value
 
 			if(method)
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if ( istype(M , O.type) )
+						if(istype(M , O.type))
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O.type, /obj))
 					for(var/obj/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O.type, /turf))
 					for(var/turf/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 			else
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if (M.type == O.type)
+						if(M.type == O.type)
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O.type, /obj))
 					for(var/obj/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O.type, /turf))
 					for(var/turf/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 		if("icon")
 			var/new_value = input("Pick icon:","Icon",O.vars[variable]) as null|icon
-			if(new_value == null) return
+			if(new_value == null)
+				return
 			O.vars[variable] = new_value
 			if(method)
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if ( istype(M , O.type) )
+						if(istype(M , O.type))
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if ( istype(A , O.type) )
+						if(istype(A , O.type))
 							A.vars[variable] = O.vars[variable]
 
 			else
 				if(istype(O, /mob))
 					for(var/mob/M in SSmobs.mob_list)
-						if (M.type == O.type)
+						if(M.type == O.type)
 							M.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /obj))
 					for(var/obj/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 				else if(istype(O, /turf))
 					for(var/turf/A in world)
-						if (A.type == O.type)
+						if(A.type == O.type)
 							A.vars[variable] = O.vars[variable]
 
 	log_admin("[key_name(src)] mass modified [original_name]'s [variable] to [O.vars[variable]]")
-	message_admins("[key_name_admin(src)] mass modified [original_name]'s [variable] to [O.vars[variable]]", 1)
+	message_staff("[key_name_admin(src)] mass modified [original_name]'s [variable] to [O.vars[variable]]", 1)

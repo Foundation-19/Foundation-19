@@ -36,7 +36,7 @@
 	var/fixture_type = /obj/machinery/light
 	var/sheets_refunded = 2
 
-/obj/machinery/light_construct/New(atom/newloc, var/newdir, atom/fixture = null)
+/obj/machinery/light_construct/New(atom/newloc, newdir, atom/fixture = null)
 	..(newloc)
 
 	if(newdir)
@@ -233,7 +233,7 @@
 	QDEL_NULL(s)
 	. = ..()
 
-/obj/machinery/light/on_update_icon(var/trigger = 1)
+/obj/machinery/light/on_update_icon(trigger = 1)
 	cut_overlays()
 	icon_state = "[base_state]_empty" //Never use the initial state. That'll just reset it to the mapping icon.
 	atom_flags = atom_flags & ~ATOM_FLAG_CAN_BE_PAINTED
@@ -299,7 +299,7 @@
 		set_light(0)
 	update_icon()
 
-/obj/machinery/light/attack_generic(var/mob/user, var/damage)
+/obj/machinery/light/attack_generic(mob/user, damage)
 	if(!damage)
 		return
 	var/status = get_status()
@@ -313,7 +313,7 @@
 	broken()
 	return 1
 
-/obj/machinery/light/proc/set_mode(var/new_mode)
+/obj/machinery/light/proc/set_mode(new_mode)
 	if(current_mode != new_mode)
 		current_mode = new_mode
 		update_icon(0)
@@ -324,7 +324,7 @@
 	else
 		return lightbulb.b_colour
 
-/obj/machinery/light/proc/set_emergency_lighting(var/enable)
+/obj/machinery/light/proc/set_emergency_lighting(enable)
 	if(!lightbulb)
 		return
 
@@ -339,7 +339,7 @@
 
 // attempt to set the light's on/off status
 // will not switch on if broken/burned/empty
-/obj/machinery/light/proc/seton(var/state)
+/obj/machinery/light/proc/seton(state)
 	on = (state && get_status() == LIGHT_OK)
 	queue_icon_update()
 
@@ -408,7 +408,8 @@
 
 		else
 			user.visible_message(SPAN_WARNING("[user] hits the light!"), SPAN_WARNING("You hit the light!"), SPAN_WARNING("You hear glass cracking."))
-			playsound(loc, "glasscrack", 40, TRUE)
+			playsound(loc, SFX_GLASS_CRACK, 40, TRUE)
+			show_sound_effect(loc, user, SFX_ICON_SMALL)
 		attack_animation(user)
 
 	// attempt to stick weapon into light socket
@@ -437,7 +438,7 @@
 	var/area/A = get_area(src)
 	return A?.lightswitch && ..(power_channel)
 
-/obj/machinery/light/proc/flicker(var/amount = rand(10, 20))
+/obj/machinery/light/proc/flicker(amount = rand(10, 20))
 	if(flickering) return
 	flickering = 1
 	spawn(0)
@@ -511,7 +512,7 @@
 	else return ..()
 
 // break the light and make sparks if was on
-/obj/machinery/light/proc/broken(var/skip_sound_and_sparks = 0)
+/obj/machinery/light/proc/broken(skip_sound_and_sparks = 0)
 	if(!lightbulb)
 		return
 
@@ -564,7 +565,7 @@
 	light_type = /obj/item/light/bulb/red/readylight
 	var/state = 0
 
-/obj/machinery/light/small/readylight/proc/set_state(var/new_state)
+/obj/machinery/light/small/readylight/proc/set_state(new_state)
 	state = new_state
 	if(state)
 		set_mode(LIGHTMODE_READY)
@@ -741,7 +742,7 @@
 
 // attack bulb/tube with object
 // if a syringe, can inject phoron to make it explode
-/obj/item/light/attackby(var/obj/item/I, var/mob/user)
+/obj/item/light/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/reagent_containers/syringe) && status == LIGHT_OK)
 		var/obj/item/reagent_containers/syringe/S = I
 
@@ -751,7 +752,7 @@
 				S.reagents.trans_to_obj(src, 5)
 				to_chat(user, SPAN_WARNING("You inject the solution into [src]."))
 				if (reagents.get_reagent_amount(/datum/reagent/toxin/phoron) >= LIGHT_PHORON_EXPLODE_THRESHOLD)
-					log_and_message_admins("injected a light with phoron, rigging it to explode.", user)
+					log_and_message_staff("injected a light with phoron, rigging it to explode.", user)
 				return
 			else
 				to_chat(user, SPAN_WARNING("[src] is already filled with fluid!"))
@@ -777,7 +778,8 @@
 		status = LIGHT_BROKEN
 		force = 5
 		sharp = TRUE
-		playsound(loc, "glasscrack", 75, TRUE)
+		playsound(loc, SFX_GLASS_CRACK, 75, TRUE)
+		show_sound_effect(loc, soundicon = SFX_ICON_SMALL)
 		update_icon()
 
 /obj/item/light/proc/switch_on()
@@ -785,7 +787,7 @@
 	if(reagents)
 		if (reagents.get_reagent_amount(/datum/reagent/toxin/phoron) >= LIGHT_PHORON_EXPLODE_THRESHOLD)
 			visible_message(SPAN_DANGER("[src] flares brilliantly!"), SPAN_DANGER("You hear a loud crack!"))
-			log_and_message_admins("Rigged light explosion, last touched by [fingerprintslast]")
+			log_and_message_staff("Rigged light explosion, last touched by [fingerprintslast]")
 			var/turf/T = get_turf(loc)
 			status = LIGHT_BROKEN
 			spawn(0)
@@ -802,7 +804,7 @@
 		playsound(src, sound_on, 75)
 	return status
 
-/obj/machinery/light/do_simple_ranged_interaction(var/mob/user)
+/obj/machinery/light/do_simple_ranged_interaction(mob/user)
 	if(lightbulb)
 		remove_bulb()
 	return TRUE

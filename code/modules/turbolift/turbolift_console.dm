@@ -8,7 +8,7 @@
 
 	var/datum/turbolift/lift
 
-/obj/structure/lift/set_dir(var/newdir)
+/obj/structure/lift/set_dir(newdir)
 	. = ..()
 	pixel_x = 0
 	pixel_y = 0
@@ -21,28 +21,28 @@
 	else if(dir & WEST)
 		pixel_x = 32
 
-/obj/structure/lift/proc/pressed(var/mob/user)
+/obj/structure/lift/proc/pressed(mob/user)
 	if(!istype(user, /mob/living/silicon))
 		if(user.a_intent == I_HURT)
-			user.visible_message("<span class='danger'>\The [user] hammers on the lift button!</span>")
+			user.visible_message(SPAN_DANGER("\The [user] hammers on the lift button!"))
 		else
-			user.visible_message("<span class='notice'>\The [user] presses the lift button.</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] presses the lift button."))
 
 
-/obj/structure/lift/New(var/newloc, var/datum/turbolift/_lift)
+/obj/structure/lift/New(newloc, datum/turbolift/_lift)
 	lift = _lift
 	return ..(newloc)
 
-/obj/structure/lift/attack_ai(var/mob/user)
+/obj/structure/lift/attack_ai(mob/user)
 	return attack_hand(user)
 
-/obj/structure/lift/attack_generic(var/mob/user)
+/obj/structure/lift/attack_generic(mob/user)
 	return attack_hand(user)
 
-/obj/structure/lift/attack_hand(var/mob/user)
+/obj/structure/lift/attack_hand(mob/user)
 	return interact(user)
 
-/obj/structure/lift/interact(var/mob/user)
+/obj/structure/lift/interact(mob/user)
 	if(!lift.is_functional())
 		return 0
 	return 1
@@ -55,7 +55,7 @@
 	icon_state = "button"
 	var/light_up = FALSE
 	var/datum/turbolift_floor/floor
-	mouse_opacity = 2 //No more eyestrain aiming at tiny pixels
+	mouse_opacity = MOUSE_OPACITY_OPAQUE //No more eyestrain aiming at tiny pixels
 
 /obj/structure/lift/button/Destroy()
 	if(floor && floor.ext_panel == src)
@@ -67,7 +67,7 @@
 	light_up = FALSE
 	update_icon()
 
-/obj/structure/lift/button/interact(var/mob/user)
+/obj/structure/lift/button/interact(mob/user)
 	if(!..())
 		return
 	light_up()
@@ -95,13 +95,13 @@
 /obj/structure/lift/panel
 	name = "elevator control panel"
 	icon_state = "panel"
-	mouse_opacity = 2 //No more eyestrain aiming at tiny pixels
+	mouse_opacity = MOUSE_OPACITY_OPAQUE //No more eyestrain aiming at tiny pixels
 
 
-/obj/structure/lift/panel/attack_ghost(var/mob/user)
+/obj/structure/lift/panel/attack_ghost(mob/user)
 	return interact(user)
 
-/obj/structure/lift/panel/interact(var/mob/user)
+/obj/structure/lift/panel/interact(mob/user)
 	if(!..())
 		return
 
@@ -143,3 +143,4 @@
 	interact(user)
 
 // End panel.
+

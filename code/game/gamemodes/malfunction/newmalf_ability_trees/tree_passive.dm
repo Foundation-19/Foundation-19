@@ -29,11 +29,11 @@
 	next = new/datum/malf_research_ability/passive/relay_override()
 	name = "T3 - Relay Suppression"
 
-/datum/malf_research_ability/passive/relay_suppression/research_finished(var/mob/living/silicon/ai/user)
+/datum/malf_research_ability/passive/relay_suppression/research_finished(mob/living/silicon/ai/user)
 	..()
 	if(!user)
 		return
-	to_chat(user, "<span class='notice'>You have suppressed the IDS system of nearby quantum relay. Your hacks will no longer be prevented or detected.</span>")
+	to_chat(user, SPAN_NOTICE("You have suppressed the IDS system of nearby quantum relay. Your hacks will no longer be prevented or detected."))
 	user.hack_can_fail = 0
 
 
@@ -42,11 +42,11 @@
 	price = 4000
 	name = "T4 - Relay Override"
 
-/datum/malf_research_ability/passive/relay_override/research_finished(var/mob/living/silicon/ai/user)
+/datum/malf_research_ability/passive/relay_override/research_finished(mob/living/silicon/ai/user)
 	..()
 	if(!user)
 		return
-	to_chat(user, "<span class='notice'>You have completely overtaken a nearby quantum relay. No remote communications will work.</span>")
+	to_chat(user, SPAN_NOTICE("You have completely overtaken a nearby quantum relay. No remote communications will work."))
 	user.intercepts_communication = 1
 
 

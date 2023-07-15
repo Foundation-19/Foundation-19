@@ -1,4 +1,4 @@
-/mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/simple_animal/bullet_act(obj/item/projectile/Proj)
 	if(status_flags & GODMODE)
 		return PROJECTILE_FORCE_MISS
 
@@ -31,7 +31,7 @@
 	if(status_flags & GODMODE)
 		return
 
-	if(!blinded)
+	if(can_see())
 		flash_eyes()
 
 	var/damage
@@ -81,18 +81,18 @@
 
 	return
 
-/mob/living/simple_animal/attackby(var/obj/item/O, var/mob/user)
+/mob/living/simple_animal/attackby(obj/item/O, mob/user)
 	if(istype(O, /obj/item/stack/medical))
 		if(stat != DEAD)
-			var/obj/item/stack/medical/MED = O
-			if(!MED.animal_heal)
-				to_chat(user, SPAN_NOTICE("That [MED] won't help \the [src] at all!"))
+			var/obj/item/stack/medical/med = O
+			if(!med.animal_heal)
+				to_chat(user, SPAN_NOTICE("That [med] won't help \the [src] at all!"))
 				return
 			if(health < maxHealth)
-				if(MED.can_use(1))
-					adjustBruteLoss(-MED.animal_heal)
-					visible_message(SPAN_NOTICE("[user] applies the [MED] on [src]."))
-					MED.use(1)
+				if(med.can_use(1))
+					adjustBruteLoss(-med.animal_heal)
+					visible_message(SPAN_NOTICE("[user] applies the [med] on [src]."))
+					med.use(1)
 		else
 			to_chat(user, SPAN_NOTICE("\The [src] is dead, medical items won't bring \him back to life."))
 		return
@@ -132,7 +132,7 @@
 			if (ai_holder)
 				ai_holder.react_to_attack(user)
 
-/mob/living/simple_animal/hit_with_weapon(obj/item/O, mob/living/user, var/effective_force, var/hit_zone)
+/mob/living/simple_animal/hit_with_weapon(obj/item/O, mob/living/user, effective_force, hit_zone)
 
 	visible_message(SPAN_DANGER("\The [src] has been attacked with \the [O] by [user]!"))
 
@@ -157,7 +157,7 @@
 
 	return TRUE
 
-/mob/living/simple_animal/proc/reflect_unarmed_damage(var/mob/living/carbon/human/attacker, var/damage_type, var/description)
+/mob/living/simple_animal/proc/reflect_unarmed_damage(mob/living/carbon/human/attacker, damage_type, description)
 	if(attacker.a_intent == I_HURT)
 		var/hand_hurtie
 		if(attacker.hand)

@@ -7,19 +7,19 @@ var/global/universe_has_ended = 0
 
  	decay_rate = 5 // 5% chance of a turf decaying on lighting update/airflow (there's no actual tick for turfs)
 
-/datum/universal_state/supermatter_cascade/OnShuttleCall(var/mob/user)
+/datum/universal_state/supermatter_cascade/OnShuttleCall(mob/user)
 	if(user)
-		to_chat(user, "<span class='sinister'>All you hear on the frequency is static and panicked screaming. There will be no shuttle call today.</span>")
+		to_chat(user, SPAN_CLASS("sinister","All you hear on the frequency is static and panicked screaming. There will be no shuttle call today."))
 	return 0
 
-/datum/universal_state/supermatter_cascade/OnTurfChange(var/turf/T)
+/datum/universal_state/supermatter_cascade/OnTurfChange(turf/T)
 	var/turf/space/S = T
 	if(istype(S))
 		S.color = "#0066ff"
 	else
 		S.color = initial(S.color)
 
-/datum/universal_state/supermatter_cascade/DecayTurf(var/turf/T)
+/datum/universal_state/supermatter_cascade/DecayTurf(turf/T)
 	if(istype(T,/turf/simulated/wall))
 		var/turf/simulated/wall/W=T
 		W.melt()
@@ -37,7 +37,7 @@ var/global/universe_has_ended = 0
 // Apply changes when entering state
 /datum/universal_state/supermatter_cascade/OnEnter()
 	set background = 1
-	to_world("<span class='sinister' style='font-size:22pt'>You are blinded by a brilliant flash of energy.</span>")
+	to_world(SPAN_CLASS("sinister' style='font-size:22pt","You are blinded by a brilliant flash of energy."))
 	sound_to(world, sound('sound/effects/cascade.ogg'))
 
 	for(var/mob/M in GLOB.player_list)

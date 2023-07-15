@@ -17,7 +17,7 @@
 /mob/living/carbon/alien/chorus/proc/open_building_menu()
 	ui_interact(src)
 
-/mob/living/carbon/alien/chorus/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/uistate = GLOB.self_state)
+/mob/living/carbon/alien/chorus/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, uistate = GLOB.self_state)
 	if(selected_building)
 		nano_data["has_selected"] = TRUE
 		nano_data["selected"] = selected_building.get_nano_data(src)
@@ -31,11 +31,11 @@
 		ui.open()
 		ui.set_auto_update(TRUE)
 
-/mob/living/carbon/alien/chorus/proc/update_nano_resource(var/datum/chorus_resource/resource)
+/mob/living/carbon/alien/chorus/proc/update_nano_resource(datum/chorus_resource/resource)
 	for(var/i in 1 to length(nano_data["resources"]))
 		if(nano_data["resources"][i]["resource"] == resource)
 			nano_data["resources"][i]["amount"] = resource.get_amount()
 			return
 
-/mob/living/carbon/alien/chorus/self_can_use_topic(var/src_object)
+/mob/living/carbon/alien/chorus/self_can_use_topic(src_object)
 	return STATUS_INTERACTIVE

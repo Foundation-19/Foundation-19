@@ -1,6 +1,6 @@
 /obj/effect/overlay
 	name = "overlay"
-	unacidable = TRUE
+	acid_resistance = 1
 	var/i_attached//Added for possible image attachments to objects. For hallucinations and the like.
 
 /obj/effect/overlay/beam//Not actually a projectile, just an effect.
@@ -47,7 +47,7 @@
 	anchored = TRUE
 	density = TRUE
 	layer = ABOVE_TILE_LAYER
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/effect/overlay/wallrot/New()
 	..()

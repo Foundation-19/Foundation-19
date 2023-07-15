@@ -5,7 +5,7 @@
 	icon_state = "wad"
 	var/web_type = /obj/effect/razorweb
 
-/obj/item/razorweb/throw_impact(var/atom/hit_atom)
+/obj/item/razorweb/throw_impact(atom/hit_atom)
 	var/obj/effect/razorweb/web = new web_type(get_turf(hit_atom))
 	. = ..()
 	if(isliving(hit_atom))
@@ -51,7 +51,7 @@
 	name = "tough razorweb"
 	break_chance = 33
 
-/obj/effect/razorweb/Initialize(var/mapload)
+/obj/effect/razorweb/Initialize(mapload)
 
 	. = ..(mapload)
 
@@ -81,7 +81,7 @@
 	entangle(user, TRUE)
 	qdel_self()
 
-/obj/effect/razorweb/attackby(var/obj/item/thing, var/mob/user)
+/obj/effect/razorweb/attackby(obj/item/thing, mob/user)
 
 	var/destroy_self
 	if(thing.force)
@@ -108,7 +108,7 @@
 			last_light = current_light
 			update_icon()
 
-/obj/effect/razorweb/user_unbuckle_mob(var/mob/user)
+/obj/effect/razorweb/user_unbuckle_mob(mob/user)
 	var/mob/living/M = unbuckle_mob()
 	if(M)
 		if(M != user)
@@ -120,11 +120,11 @@
 		add_fingerprint(user)
 	return M
 
-/obj/effect/razorweb/Crossed(var/mob/living/L)
+/obj/effect/razorweb/Crossed(mob/living/L)
 	. = ..()
 	entangle(L)
 
-/obj/effect/razorweb/proc/entangle(var/mob/living/L, var/silent)
+/obj/effect/razorweb/proc/entangle(mob/living/L, silent)
 
 	if(!istype(L) || !L.simulated || L.lying || (MOVING_DELIBERATELY(L) && prob(25)) || L.is_floating)
 		return

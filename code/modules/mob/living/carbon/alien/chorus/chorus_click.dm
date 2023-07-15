@@ -1,4 +1,4 @@
-/mob/living/carbon/alien/chorus/ClickOn(var/atom/A, var/params)
+/mob/living/carbon/alien/chorus/ClickOn(atom/A, params)
 	if(stat != CONSCIOUS)
 		return
 	var/list/modifiers = params2list(params)
@@ -10,7 +10,7 @@
 	else
 		..()
 
-/mob/living/carbon/alien/chorus/UnarmedAttack(var/atom/A)
+/mob/living/carbon/alien/chorus/UnarmedAttack(atom/A)
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(A.attack_generic(src, melee_damage, attack_text, 1, BRUTE))
 		playsound(src, attack_sound, 50, 1)

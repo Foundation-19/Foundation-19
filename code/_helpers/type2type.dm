@@ -56,7 +56,7 @@
 		if ("SOUTHWEST") return 10
 
 // Converts an angle (degrees) into an ss13 direction
-/proc/angle2dir(var/degree)
+/proc/angle2dir(degree)
 	degree = (degree + 22.5) % 360 // 22.5 = 45 / 2
 	if (degree < 45)  return NORTH
 	if (degree < 90)  return NORTHEAST
@@ -68,7 +68,7 @@
 	return NORTH|WEST
 
 // Returns the north-zero clockwise angle in degrees, given a direction
-/proc/dir2angle(var/D)
+/proc/dir2angle(D)
 	switch (D)
 		if (NORTH)     return 0
 		if (SOUTH)     return 180
@@ -80,7 +80,7 @@
 		if (SOUTHWEST) return 225
 
 // Returns the angle in english
-/proc/angle2text(var/degree)
+/proc/angle2text(degree)
 	return dir2text(angle2dir(degree))
 
 // Converts a blend_mode constant to one acceptable to icon.Blend()
@@ -182,16 +182,36 @@
 /proc/isLeap(y)
 	return ((y) % 4 == 0 && ((y) % 100 != 0 || (y) % 400 == 0))
 
-/proc/atomtypes2nameassoclist(var/list/atom_types)
+/proc/atomtypes2nameassoclist(list/atom_types)
 	. = list()
 	for(var/atom_type in atom_types)
 		var/atom/A = atom_type
 		.[initial(A.name)] = atom_type
 	. = sortAssoc(.)
 
-/proc/atomtype2nameassoclist(var/atom_type)
+/proc/atomtype2nameassoclist(atom_type)
 	return atomtypes2nameassoclist(typesof(atom_type))
 
 //Splits the text of a file at seperator and returns them in a list.
 /world/proc/file2list(filename, seperator="\n")
 	return splittext(file2text(filename), seperator)
+
+/// Return html to load a url.
+/// for use inside of browse() calls to html assets that might be loaded on a cdn.
+/proc/url2htmlloader(url)
+	return {"<html><head><meta http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}
+
+/proc/type2parent(child)
+	var/string_type = "[child]"
+	var/last_slash = findlasttext(string_type, "/")
+	if(last_slash == 1)
+		switch(child)
+			if(/datum)
+				return null
+			if(/obj, /mob)
+				return /atom/movable
+			if(/area, /turf)
+				return /atom
+			else
+				return /datum
+	return text2path(copytext(string_type, 1, last_slash))

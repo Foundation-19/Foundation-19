@@ -51,7 +51,7 @@
 	H.mutations |= MUTATION_FERAL
 	H.mutations |= MUTATION_XRAY
 	H.mutations |= mNobreath //Byond doesn't like adding them all in one OR statement :(
-	H.verbs += /mob/living/carbon/proc/consume2
+	add_verb(H, /mob/living/carbon/proc/consume2)
 	H.move_intents = list(/decl/move_intent/creep) //Zooming days are over
 	H.a_intent = "harm"
 	H.move_intent = new /decl/move_intent/creep
@@ -199,6 +199,7 @@
 
 	src.visible_message(SPAN_DANGER("\The [src] hunkers down over \the [target], tearing into their flesh."))
 	playsound(loc, 'sound/effects/wounds/bonebreak3.ogg', 20, 1)
+	show_sound_effect(loc, src)
 
 	target.adjustHalLoss(50)
 

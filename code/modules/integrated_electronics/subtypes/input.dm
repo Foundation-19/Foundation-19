@@ -27,7 +27,7 @@
 
 /obj/item/integrated_circuit/input/button/OnICTopic(href_list, user)
 	if(href_list["press"])
-		to_chat(user, "<span class='notice'>You press the button labeled '[src.displayed_name]'.</span>")
+		to_chat(user, SPAN_NOTICE("You press the button labeled '[src.displayed_name]'."))
 		activate_pin(1)
 		return IC_TOPIC_REFRESH
 
@@ -52,7 +52,7 @@
 		set_pin_data(IC_OUTPUT, 1, !get_pin_data(IC_OUTPUT, 1))
 		push_data()
 		activate_pin(1)
-		to_chat(user, "<span class='notice'>You toggle the button labeled '[src.name]' [get_pin_data(IC_OUTPUT, 1) ? "on" : "off"].</span>")
+		to_chat(user, SPAN_NOTICE("You toggle the button labeled '[src.name]' [get_pin_data(IC_OUTPUT, 1) ? "on" : "off"]."))
 		return IC_TOPIC_REFRESH
 
 /obj/item/integrated_circuit/input/numberpad
@@ -177,7 +177,7 @@
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 80
 
-/obj/item/integrated_circuit/input/adv_med_scanner/proc/damage_to_severity(var/value)
+/obj/item/integrated_circuit/input/adv_med_scanner/proc/damage_to_severity(value)
 	if(value < 1)
 		return 0
 	if(value < 25)
@@ -706,14 +706,14 @@
 	code = new_code
 
 
-/obj/item/integrated_circuit/input/signaler/do_work(var/ord) // Sends a signal.
+/obj/item/integrated_circuit/input/signaler/do_work(ord) // Sends a signal.
 	if(!radio_connection || ord != 1)
 		return
 
 	radio_connection.post_signal(src, create_signal())
 	activate_pin(2)
 
-/obj/item/integrated_circuit/input/signaler/proc/signal_good(var/datum/signal/signal)
+/obj/item/integrated_circuit/input/signaler/proc/signal_good(datum/signal/signal)
 	if(!signal || signal.source == src)
 		return FALSE
 	if(code)
@@ -750,7 +750,7 @@
 	return 1
 
 //This only procs when a signal is valid.
-/obj/item/integrated_circuit/input/signaler/proc/treat_signal(var/datum/signal/signal)
+/obj/item/integrated_circuit/input/signaler/proc/treat_signal(datum/signal/signal)
 	activate_pin(3)
 
 /obj/item/integrated_circuit/input/signaler/advanced
@@ -770,7 +770,7 @@
 	..()
 	command = get_pin_data(IC_INPUT,3)
 
-/obj/item/integrated_circuit/input/signaler/advanced/signal_good(var/datum/signal/signal)
+/obj/item/integrated_circuit/input/signaler/advanced/signal_good(datum/signal/signal)
 	if(!..() || signal.data["tag"] != code)
 		return FALSE
 	return TRUE
@@ -783,7 +783,7 @@
 	signal.encryption = 0
 	return signal
 
-/obj/item/integrated_circuit/input/signaler/advanced/treat_signal(var/datum/signal/signal)
+/obj/item/integrated_circuit/input/signaler/advanced/treat_signal(datum/signal/signal)
 	set_pin_data(IC_OUTPUT,1,signal.data["command"])
 	push_data()
 	..()
@@ -808,7 +808,7 @@
 	. += "Please select a teleporter to lock in on:"
 	for (var/obj/machinery/computer/teleporter/computer in SSmachines.machinery)
 		if (computer.target && computer.operable() && AreConnectedZLevels(get_z(src), get_z(computer)))
-			.["[computer.id] ([computer.active ? "Active" : "Inactive"])"] = "tport=[any2ref(computer)]"
+			.["[computer.id] ([computer.active ? "Active" : "Inactive"])"] = "tport=[REF(computer)]"
 	.["None (Dangerous)"] = "tport=random"
 
 /obj/item/integrated_circuit/input/teleporter_locator/OnICTopic(href_list, user)
@@ -874,7 +874,7 @@
 	GLOB.listening_objects -= src
 	. = ..()
 
-/obj/item/integrated_circuit/input/microphone/hear_talk(var/mob/living/M as mob, text, verb, datum/language/speaking)
+/obj/item/integrated_circuit/input/microphone/hear_talk(mob/living/M as mob, text, verb, datum/language/speaking)
 	var/translated = TRUE
 	if(M && text)
 		if(speaking && !speaking.machine_understands)
@@ -910,7 +910,7 @@
 		return FALSE
 	set_pin_data(IC_OUTPUT, 1, weakref(A))
 	push_data()
-	to_chat(user, "<span class='notice'>You scan [A] with [assembly].</span>")
+	to_chat(user, SPAN_NOTICE("You scan [A] with [assembly]."))
 	activate_pin(1)
 	return TRUE
 
@@ -942,7 +942,7 @@
 		return FALSE
 	set_pin_data(IC_OUTPUT, 1, weakref(A))
 	push_data()
-	to_chat(user, "<span class='notice'>You scan [A] with [assembly].</span>")
+	to_chat(user, SPAN_NOTICE("You scan [A] with [assembly]."))
 	activate_pin(1)
 	return TRUE
 
@@ -959,7 +959,7 @@
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 20
 
-/obj/item/integrated_circuit/input/obj_scanner/attackby_react(var/atom/A,var/mob/user,intent)
+/obj/item/integrated_circuit/input/obj_scanner/attackby_react(atom/A,mob/user,intent)
 	if(intent!=I_HELP)
 		return FALSE
 	if(!check_then_do_work())
@@ -969,7 +969,7 @@
 		return FALSE
 	set_pin_data(IC_OUTPUT, 1, weakref(A))
 	push_data()
-	to_chat(user, "<span class='notice'>You let [assembly] scan [A].</span>")
+	to_chat(user, SPAN_NOTICE("You let [assembly] scan [A]."))
 	activate_pin(1)
 	return TRUE
 

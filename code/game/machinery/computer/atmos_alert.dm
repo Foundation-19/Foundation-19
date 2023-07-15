@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 var/global/list/priority_air_alarms = list()
 var/global/list/minor_air_alarms = list()
 
@@ -25,7 +23,7 @@ var/global/list/minor_air_alarms = list()
 	ui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/atmos_alert/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/computer/atmos_alert/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/data[0]
 	var/major_alarms[0]
 	var/minor_alarms[0]
@@ -70,7 +68,7 @@ var/global/list/minor_air_alarms = list()
 
 var/datum/topic_state/air_alarm_topic/air_alarm_topic = new()
 
-/datum/topic_state/air_alarm_topic/href_list(var/mob/user)
+/datum/topic_state/air_alarm_topic/href_list(mob/user)
 	var/list/extra_href = list()
 	extra_href["remote_connection"] = 1
 	extra_href["remote_access"] = 1

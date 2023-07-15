@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /*
 A Star pathfinding algorithm
 Returns a list of tiles forming a path from A to B, taking dense objects as well as walls, and the orientation of
@@ -36,6 +34,8 @@ length to avoid portals or something i guess?? Not that they're counted right no
 
 // Also added 'exclude' turf to avoid travelling over; defaults to null
 
+// replaced ID argument with adjacent arg for use with other adjacent procs. Can still work as before.
+
 /PathNode
 	var/datum/position
 	var/PathNode/previous_node
@@ -60,7 +60,7 @@ length to avoid portals or something i guess?? Not that they're counted right no
 /proc/PathWeightCompare(PathNode/a, PathNode/b)
 	return a.estimated_cost - b.estimated_cost
 
-/proc/AStar(var/start, var/end, adjacent, dist, var/max_nodes, var/max_node_depth = 30, var/min_target_dist = 0, var/min_node_dist, var/id, var/datum/exclude)
+/proc/AStar(start, end, adjacent, dist, max_nodes, max_node_depth = 30, min_target_dist = 0, min_node_dist, adjacent_arg, datum/exclude)
 	var/PriorityQueue/open = new /PriorityQueue(/proc/PathWeightCompare)
 	var/list/closed = list()
 	var/list/path
@@ -93,7 +93,7 @@ length to avoid portals or something i guess?? Not that they're counted right no
 			if(current.nodes_traversed >= max_node_depth)
 				continue
 
-		for(var/datum/datum in call(current.position, adjacent)(id))
+		for(var/datum/datum in call(current.position, adjacent)(adjacent_arg))
 			if(datum == exclude)
 				continue
 

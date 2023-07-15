@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(timer)
 	bucket_resolution = world.tick_lag
 
 /datum/controller/subsystem/timer/stat_entry(msg)
-	..("B:[bucket_count] P:[length(second_queue)] H:[length(hashes)] C:[length(clienttime_timers)] S:[length(timer_id_dict)]")
+	.=..("[msg] B:[bucket_count] P:[length(second_queue)] H:[length(hashes)] C:[length(clienttime_timers)] S:[length(timer_id_dict)]")
 
 /datum/controller/subsystem/timer/fire(resumed = FALSE)
 	var/lit = last_invoke_tick
@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(timer)
 	if(lit && lit < last_check && head_offset < last_check && last_invoke_warning < last_check)
 		last_invoke_warning = world.time
 		var/msg = "No regular timers processed in the last [BUCKET_LEN*1.5] ticks[bucket_auto_reset ? ", resetting buckets" : ""]!"
-		message_admins(msg)
+		message_staff(msg)
 		WARNING(msg)
 		if(bucket_auto_reset)
 			bucket_resolution = 0
@@ -456,6 +456,9 @@ SUBSYSTEM_DEF(timer)
 /proc/addtimer(datum/callback/callback, wait = 0, flags = 0)
 	if (!callback)
 		CRASH("addtimer called without a callback")
+
+	if (!isnum(wait))
+		crash_with("addtimer called with an invalid wait.")
 
 	if (wait < 0)
 		crash_with("addtimer called with a negative wait. Converting to [world.tick_lag]")

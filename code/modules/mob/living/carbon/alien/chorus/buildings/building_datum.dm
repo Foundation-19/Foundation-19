@@ -8,7 +8,7 @@
 	var/list/resource_cost = list() //Name = cost
 	var/list/building_requirements //type = num
 
-/datum/chorus_building/proc/can_build(var/mob/living/carbon/alien/chorus/c, var/atom/A, var/warnings = FALSE)
+/datum/chorus_building/proc/can_build(mob/living/carbon/alien/chorus/c, atom/A, warnings = FALSE)
 	A = get_turf(A)
 	var/atom/bt = building_type_to_build
 	if(A.density)
@@ -52,7 +52,7 @@
 		return r
 	return TRUE
 
-/datum/chorus_building/proc/pay_costs(var/mob/living/carbon/alien/chorus/c)
+/datum/chorus_building/proc/pay_costs(mob/living/carbon/alien/chorus/c)
 	for(var/name in resource_cost)
 		if(!c.chorus_type.use_resource(name, resource_cost[name]))
 			return FALSE
@@ -78,7 +78,7 @@
 	var/obj/structure/O = building_type_to_build
 	return initial(O.name)
 
-/datum/chorus_building/proc/get_nano_data(var/mob/living/carbon/alien/chorus/C)
+/datum/chorus_building/proc/get_nano_data(mob/living/carbon/alien/chorus/C)
 	. = list()
 	var/obj/structure/chorus/O = building_type_to_build
 	.["name"] = get_name()
@@ -93,7 +93,7 @@
 		.["activation_res"] = cr.printed_cost()
 		.["activation_amt"] = initial(O.activation_cost_amount)
 
-/datum/chorus_building/proc/get_printed_cost(var/mob/living/carbon/alien/chorus/C)
+/datum/chorus_building/proc/get_printed_cost(mob/living/carbon/alien/chorus/C)
 	. = list()
 	for(var/res in resource_cost)
 		var/datum/chorus_resource/cr = C.chorus_type.get_resource(res)
@@ -107,7 +107,7 @@
 			var/obj/structure/s = r
 			. += list(list("name" = initial(s.name), "amount" = building_requirements[r]))
 
-/datum/chorus_building/proc/build(var/atom/target, var/mob/living/carbon/alien/chorus/C, var/warnings = FALSE)
+/datum/chorus_building/proc/build(atom/target, mob/living/carbon/alien/chorus/C, warnings = FALSE)
 	if(can_build(C, target, warnings) && pay_costs(C))
 		return new building_type_to_build(target, C.chorus_type)
 
@@ -115,7 +115,7 @@
 	var/range = 0
 	var/turf_to_change_to
 
-/datum/chorus_building/set_to_turf/build(var/atom/target, var/mob/living/carbon/alien/chorus/C, var/warnings = FALSE)
+/datum/chorus_building/set_to_turf/build(atom/target, mob/living/carbon/alien/chorus/C, warnings = FALSE)
 	. = ..()
 	if(.)
 		for(var/turf/T in range(range, target))

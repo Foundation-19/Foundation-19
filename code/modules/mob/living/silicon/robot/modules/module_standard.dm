@@ -1,6 +1,7 @@
 /obj/item/robot_module/standard
 	name = "standard robot module"
 	display_name = "Standard"
+	module_category = ROBOT_MODULE_DISABLED
 	sprites = list(
 		"Basic" = "robot_old",
 		"Android" = "droid",
@@ -18,5 +19,4 @@
 		SKILL_COMBAT       = SKILL_TRAINED,
 		SKILL_MEDICAL      = SKILL_TRAINED,
 		SKILL_CONSTRUCTION = SKILL_TRAINED,
-		SKILL_BUREAUCRACY  = SKILL_TRAINED
 	)

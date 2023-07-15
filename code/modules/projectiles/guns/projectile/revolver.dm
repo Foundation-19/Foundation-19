@@ -28,9 +28,10 @@
 	set category = "Object"
 
 	chamber_offset = 0
-	visible_message("<span class='warning'>\The [usr] spins the cylinder of \the [src]!</span>", \
-	"<span class='notice'>You hear something metallic spin and click.</span>")
+	visible_message(SPAN_WARNING("\The [usr] spins the cylinder of \the [src]!"), \
+	SPAN_NOTICE("You hear something metallic spin and click."))
 	playsound(src.loc, 'sound/weapons/revolver_spin.ogg', 100, 1)
+	show_sound_effect(src.loc, src)
 	loaded = shuffle(loaded)
 	if(rand(1,max_shells) > loaded.len)
 		chamber_offset = rand(0,max_shells - loaded.len)
@@ -41,7 +42,7 @@
 		return
 	return ..()
 
-/obj/item/gun/projectile/revolver/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/revolver/load_ammo(obj/item/A, mob/user)
 	chamber_offset = 0
 	return ..()
 
@@ -52,7 +53,7 @@
 	caliber = ".44"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/a50
+	ammo_type = /obj/item/ammo_casing/pistol/a50
 
 /obj/item/gun/projectile/revolver/medium
 	name = "revolver"
@@ -89,7 +90,7 @@
 /obj/item/gun/projectile/revolver/capgun/attackby(obj/item/wirecutters/W, mob/user)
 	if(!istype(W) || icon_state == "revolver")
 		return ..()
-	to_chat(user, "<span class='notice'>You snip off the toy markings off the [src].</span>")
+	to_chat(user, SPAN_NOTICE("You snip off the toy markings off the [src]."))
 	name = "revolver"
 	icon_state = "revolver"
 	desc += " Someone snipped off the barrel's toy mark. How dastardly."

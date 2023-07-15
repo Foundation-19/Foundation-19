@@ -1,0 +1,32 @@
+2022-12-01:
+  CristoMagisto69:
+  - bugfix: fixed hud augments required IDs
+  - rscadd: made loadout role information to be more in-depth
+2022-12-09:
+  checkraisefold:
+  - admin: Logs (except debug) no longer spammed when SMES grounding wire cut
+2022-12-14:
+  DaGoonCore:
+  - rscadd: Expanded the restaurant to surface.
+  - rscadd: Added a personal office to the restaurant.
+  - rscadd: Added Shutters
+  - rscadd: Remade the kitchen, botany, front of the bar.
+  - rscadd: A lot of devices, plasticware, vendors and neat bits to the closets that
+      just make sense.
+  - rscadd: Tribunal exterior blast doors.
+  - rscdel: Removed the bed.
+  - balance: Mineable rock leading to EZ now has a perimeter wall.
+2022-12-15:
+  casualspacestation14enjoyer:
+  - rscadd: Added new SCP-500 Containment Chamber in HCZ near 1102-RU, which includes
+      the pill bottle.
+  - rscdel: Deleted the SCP-500 containment chamber in LCZ.
+2022-12-27:
+  casualspacestation14enjoyer:
+  - rscadd: Adds compatibility for power charging for 500.
+  - rscadd: Adds Electrified windows and a better containment cage for 500.
+  - rscadd: Fixes and makes the permissions needed to open the security booth in 500
+      higher (for the containment chamber also).
+2022-12-31:
+  cheesePizza2:
+  - bugfix: The "Hot Foods" vendor now actually has edible food.

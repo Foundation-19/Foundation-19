@@ -18,15 +18,11 @@
 	var/global/list/mob/living/carbon/next_braindamage_stage = list()
 	var/global/list/mob/living/carbon/braindamage_stage = list()
 	var/global/list/mob/living/carbon/wake_up_timing = list()
-	var/static/list/paranoia_messages = list("You feel as if something is watching you...", "It feels as if something is stalking you")
+	var/static/list/paranoia_messages = list("You feel as if something is watching you...", "It feels as if something is stalking you...")
 	var/static/list/assault_messages = list("A horrifying monster attacks you, before running off!", "You are bolted awake by a horrifying entity attacking you!")
-	var/static/list/spook_messages = list("You see a disturbing entity lingering in your peripheral vision", "You swear you can see an abomination lurking...",
-		"A strange entity stares at you, and sends chiils to your very core.")
+	var/static/list/spook_messages = list("You see a disturbing entity lingering in your peripheral vision.", "You swear you can see an abomination lurking...",
+		"A strange entity stares at you, sending chills to your very core.")
 	var/static/list/insomnia_messages = list("You feel so tired... but you can't sleep.", "You feel like... like.... sleep is.... can't.... sleep....")
-
-/obj/item/scp513/examine(mob/user)
-	. = ..()
-	to_chat(user, "<b><span class = 'euclid'><big>SCP-513</big></span></b> - [desc]")
 
 /obj/item/scp513/Initialize()
 	. = ..()
@@ -42,9 +38,9 @@
 
 /obj/item/scp513/proc/ring(mob/living/user)
 	for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-		if(M.is_deaf() || istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
+		if(!M.can_hear(src))
 			continue
-		to_chat(M, "<span class='danger'><i>\The [src] rings, sending chills to your very bone.</i></span>")
+		to_chat(M, SPAN_DANGER("<i>\The [src] rings, sending chills to your very bone.</i>"))
 		M << pick('sound/scp/spook/Bell2.ogg', 'sound/scp/spook/Bell3.ogg')
 		if(!(M in victims))
 			victims += M
@@ -54,31 +50,31 @@
 /obj/item/scp513/pickup(mob/living/user)
 	. = ..()
 	if(user.a_intent == I_HURT)
-		to_chat(user, "<span class='danger'><b><i>You accidentally ring \the [src]!</i></b></span>")
+		to_chat(user, SPAN_DANGER("<b><i>You accidentally ring \the [src]!</i></b>"))
 		ring(user)
 
 /obj/item/scp513/attack_self(mob/living/user)
 	if(user in victims)
-		to_chat(user, "<span class='notice'>I rang it once, and I felt terrible. Why the hell would I that again?!</span>")
+		to_chat(user, SPAN_NOTICE("I rang it once, and I felt terrible. Why the hell would I that again?!"))
 		return
 	ring(user)
 
 /obj/item/scp513/Process()
 	for(var/mob/living/carbon/M in victims)
 		if(prob(2.5))
-			to_chat(M, "<span class='warning'><i>[pick(paranoia_messages)]</i></span>")
+			to_chat(M, SPAN_WARNING("<i>[pick(paranoia_messages)]</i>"))
 		var/next_scare = victims[M]
 		if (M.sleeping >= 100 && !(M in wake_up_timing))
 			wake_up_timing[M] = world.time + rand(100, 150)
 		else if(wake_up_timing[M] && world.time >= wake_up_timing)
-			to_chat(M, "<span class='danger'>[pick(assault_messages)]</span>")
+			to_chat(M, SPAN_DANGER("[pick(assault_messages)]"))
 			M.sleeping = 0
 			M.adjustBruteLoss(rand(1,7))
 			display_513_1(get_step(get_turf(src), pick(GLOB.cardinal)), M, 17)
 		else if (world.time >= next_scare)
 			victims[M] = world.time + rand(100,1200)
 			display_513_1(find_safe_spot(get_turf(M), M.client.view), M, 17)
-			to_chat(M, "<span class='warning'><i>[pick(spook_messages)]</i></span>")
+			to_chat(M, SPAN_WARNING("<i>[pick(spook_messages)]</i>"))
 		else if (next_braindamage_stage[M] && world.time >= next_braindamage_stage[M])
 			if(M in braindamage_stage) //idk why this is needed but it spams runtime despite everyone being in victims and braindamage_stage
 				switch(braindamage_stage[M])
@@ -95,7 +91,7 @@
 				switch(braindamage_stage[M])
 					if(STAGE_MESSAGE)
 						if(prob(3.5))
-							to_chat(M, "<span class='warning'>[pick(insomnia_messages)]</span>")
+							to_chat(M, SPAN_WARNING("[pick(insomnia_messages)]"))
 					if(STAGE_SLEEP)
 						if(prob(4))
 							M.sleeping = 500

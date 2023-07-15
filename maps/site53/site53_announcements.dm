@@ -15,15 +15,10 @@
 	grid_restored_message = "Site power will be restored at this time"
 	grid_restored_sound = sound('sound/AI/announcer/poweron.ogg', volume = 150)
 
-	meteor_detected_message = "Warning! The underground cave system is now under collapse,The facility may be hit by falling debris.."
-	meteor_detected_sound = sound('sound/AI/announcer/industrialalarm.ogg', volume = 45)
-
 	radiation_detected_message = "Radioactive object class SAFE containment breach detected. Please report to the medical bay if you feel strange."
 	radiation_detected_sound = sound('sound/AI/torch/radiation.ogg', volume = 45)
 
 	space_time_anomaly_sound = sound('sound/AI/torch/spanomalies.ogg', volume = 45)
-
-	unknown_biological_entities_message = "Unknown persons have been detected near %STATION_NAME%, please stand-by."
 
 	unidentified_lifesigns_message = "Unidentified lifesigns detected within fifteen miles of %STATION_NAME%, security please stand-by."
 	unidentified_lifesigns_sound = sound('sound/AI/torch/aliens.ogg', volume = 45)
@@ -32,10 +27,11 @@
 
 	electrical_storm_moderate_sound = sound('sound/AI/torch/electricalstormmoderate.ogg', volume = 45)
 	electrical_storm_major_sound = sound('sound/AI/torch/electricalstormmajor.ogg', volume = 45)
-
-/datum/map/torch/level_x_biohazard_sound(var/bio_level)
+/*
+/datum/map/torch/level_x_biohazard_sound(bio_level)
 	switch(bio_level)
 		if(7)
 			return sound('sound/AI/torch/outbreak7.ogg', volume = 45)
 		else
 			return sound('sound/AI/torch/outbreak5.ogg', volume = 45)
+*/

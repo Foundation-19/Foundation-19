@@ -52,66 +52,66 @@
 
 	//uniform
 	if(w_uniform && !skipjumpsuit)
-		msg += "[p_they(TRUE)] [p_are()] wearing [w_uniform.get_examine_line()].\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [w_uniform.get_examine_line(user)].\n"
 
 	//head
 	if(head)
-		msg += "[p_they(TRUE)] [p_are()] wearing [head.get_examine_line()] on [p_their()] head.\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [head.get_examine_line(user)] on [p_their()] head.\n"
 
 	//suit/armour
 	if(wear_suit)
-		msg += "[p_they(TRUE)] [p_are()] wearing [wear_suit.get_examine_line()].\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_suit.get_examine_line(user)].\n"
 		//suit/armour storage
 		if(s_store && !skipsuitstorage)
-			msg += "[p_they(TRUE)] [p_are()] carrying [s_store.get_examine_line()] on [p_their()] [wear_suit.name].\n"
+			msg += "[p_they(TRUE)] [p_are()] carrying [s_store.get_examine_line(user)] on [p_their()] [wear_suit.name].\n"
 
 	//back
 	if(back)
-		msg += "[p_they(TRUE)] [p_have()] [back.get_examine_line()] on [p_their()] back.\n"
+		msg += "[p_they(TRUE)] [p_have()] [back.get_examine_line(user)] on [p_their()] back.\n"
 
 	//left hand
 	if(l_hand)
-		msg += "[p_they(TRUE)] [p_are()] holding [l_hand.get_examine_line()] in [p_their()] left hand.\n"
+		msg += "[p_they(TRUE)] [p_are()] holding [l_hand.get_examine_line(user)] in [p_their()] left hand.\n"
 
 	//right hand
 	if(r_hand)
-		msg += "[p_they(TRUE)] [p_are()] holding [r_hand.get_examine_line()] in [p_their()] right hand.\n"
+		msg += "[p_they(TRUE)] [p_are()] holding [r_hand.get_examine_line(user)] in [p_their()] right hand.\n"
 
 	//gloves
 	if(gloves && !skipgloves)
-		msg += "[p_they(TRUE)] [p_have()] [gloves.get_examine_line()] on [p_their()] hands.\n"
+		msg += "[p_they(TRUE)] [p_have()] [gloves.get_examine_line(user)] on [p_their()] hands.\n"
 	else if(blood_DNA)
 		msg += "<span class='warning'>[p_they()] [p_have()] [(hand_blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained hands!</span>\n"
 
 	//belt
 	if(belt)
-		msg += "[p_they(TRUE)] [p_have()] [belt.get_examine_line()] about [p_their()] waist.\n"
+		msg += "[p_they(TRUE)] [p_have()] [belt.get_examine_line(user)] about [p_their()] waist.\n"
 
 	//shoes
 	if(shoes && !skipshoes)
-		msg += "[p_they(TRUE)] [p_are()] wearing [shoes.get_examine_line()] on [p_their()] feet.\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [shoes.get_examine_line(user)] on [p_their()] feet.\n"
 	else if(feet_blood_DNA)
 		msg += "<span class='warning'>[p_they()] [p_have()] [(feet_blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained feet!</span>\n"
 
 	//mask
 	if(wear_mask && !skipmask)
-		msg += "[p_they(TRUE)] [p_have()] [wear_mask.get_examine_line()] on [p_their()] face.\n"
+		msg += "[p_they(TRUE)] [p_have()] [wear_mask.get_examine_line(user)] on [p_their()] face.\n"
 
 	//eyes
 	if(glasses && !skipeyes)
-		msg += "[p_they(TRUE)] [p_have()] [glasses.get_examine_line()] covering [p_their()] eyes.\n"
+		msg += "[p_they(TRUE)] [p_have()] [glasses.get_examine_line(user)] covering [p_their()] eyes.\n"
 
 	//left ear
 	if(l_ear && !skipears)
-		msg += "[p_they(TRUE)] [p_have()] [l_ear.get_examine_line()] on [p_their()] left ear.\n"
+		msg += "[p_they(TRUE)] [p_have()] [l_ear.get_examine_line(user)] on [p_their()] left ear.\n"
 
 	//right ear
 	if(r_ear && !skipears)
-		msg += "[p_they(TRUE)] [p_have()] [r_ear.get_examine_line()] on [p_their()] right ear.\n"
+		msg += "[p_they(TRUE)] [p_have()] [r_ear.get_examine_line(user)] on [p_their()] right ear.\n"
 
 	//ID
 	if(wear_id)
-		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line()].\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line(user)].\n"
 
 	//handcuffed?
 	if(handcuffed)
@@ -133,6 +133,7 @@
 		else if(jitteriness >= 100)
 			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] twitching ever so slightly.</span>\n"
 
+
 	//Disfigured face
 	if(!skipface) //Disfigurement only matters for the head currently.
 		var/obj/item/organ/external/head/E = get_organ(BP_HEAD)
@@ -141,6 +142,19 @@
 				msg += E.species.disfigure_msg(src)
 			else //Just in case they lack a species for whatever reason.
 				msg += "<span class='warning'>[p_their()] face is horribly mangled!</span>\n"
+
+		var/obj/item/organ/internal/eyes/eyeballs = get_organ(BP_EYES)
+		// Handle the sanity if we see the face & eyes. And if we have eyes.
+		// Sanity level of the examined mob, not the user
+		var/sanityLvl = getSanityLevel()
+		if(!skipeyes && sanityLvl && eyeballs && equipment_tint_total < TINT_MODERATE)
+			switch(sanityLvl)
+				if(SL_STRESSED)
+					msg += SPAN_WARNING("[p_they(TRUE)] seem[p_s()] to drift away, lost in thought, ever so slightly.\n")
+				if(SL_DISTRESSED)
+					msg += SPAN_WARNING("[p_their(TRUE)] eyes are darting around.\n")
+				if(SL_INSANE)
+					msg += SPAN_WARNING("[p_they(TRUE)] [p_are()] staring with bloodshot eyes.\n")
 
 	//splints
 	for(var/organ in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM))
@@ -310,7 +324,7 @@
 
 	var/show_descs = show_descriptors_to(user)
 	if(show_descs)
-		msg += "<span class='notice'>[jointext(show_descs, "<br>")]</span>"
+		msg += SPAN_NOTICE("[jointext(show_descs, "<br>")]")
 	to_chat(user, jointext(msg, null))
 
 //Helper procedure. Called by /mob/living/carbon/human/examine() and /mob/living/carbon/human/Topic() to determine HUD access to security and medical records.

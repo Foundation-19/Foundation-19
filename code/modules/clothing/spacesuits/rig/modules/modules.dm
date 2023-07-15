@@ -54,8 +54,6 @@
 	var/activate_string = "Activate"
 	var/deactivate_string = "Deactivate"
 
-	var/list/stat_rig_module/stat_modules = new()
-
 /obj/item/rig_module/examine(mob/user)
 	. = ..()
 	switch(damage)
@@ -130,45 +128,39 @@
 
 		charges = processed_charges
 
-	stat_modules +=	new/stat_rig_module/activate(src)
-	stat_modules +=	new/stat_rig_module/deactivate(src)
-	stat_modules +=	new/stat_rig_module/engage(src)
-	stat_modules +=	new/stat_rig_module/select(src)
-	stat_modules +=	new/stat_rig_module/charge(src)
-
 /obj/item/rig_module/Destroy()
 	deactivate()
 	. = ..()
 
 // Called when the module is installed into a suit.
-/obj/item/rig_module/proc/installed(var/obj/item/rig/new_holder)
+/obj/item/rig_module/proc/installed(obj/item/rig/new_holder)
 	holder = new_holder
 	return
 
-/obj/item/rig_module/proc/check(var/charge = 50)
+/obj/item/rig_module/proc/check(charge = 50)
 
 	if(damage >= 2)
-		to_chat(usr, "<span class='warning'>The [interface_name] is damaged beyond use!</span>")
+		to_chat(usr, SPAN_WARNING("The [interface_name] is damaged beyond use!"))
 		return 0
 
 	if(world.time < next_use)
-		to_chat(usr, "<span class='warning'>You cannot use the [interface_name] again so soon.</span>")
+		to_chat(usr, SPAN_WARNING("You cannot use the [interface_name] again so soon."))
 		return 0
 
 	if(!holder || holder.canremove)
-		to_chat(usr, "<span class='warning'>The suit is not initialized.</span>")
+		to_chat(usr, SPAN_WARNING("The suit is not initialized."))
 		return 0
 
 	if(usr.lying || usr.stat || usr.stunned || usr.paralysis || usr.weakened)
-		to_chat(usr, "<span class='warning'>You cannot use the suit in this state.</span>")
+		to_chat(usr, SPAN_WARNING("You cannot use the suit in this state."))
 		return 0
 
 	if(holder.wearer && holder.wearer.lying)
-		to_chat(usr, "<span class='warning'>The suit cannot function while the wearer is prone.</span>")
+		to_chat(usr, SPAN_WARNING("The suit cannot function while the wearer is prone."))
 		return 0
 
 	if(holder.security_check_enabled && !holder.check_suit_access(usr))
-		to_chat(usr, "<span class='danger'>Access denied.</span>")
+		to_chat(usr, SPAN_DANGER("Access denied."))
 		return 0
 
 	if(!holder.check_power_cost(usr, charge, 0, src, (istype(usr,/mob/living/silicon ? 1 : 0) ) ) )
@@ -256,121 +248,5 @@
 
 // Called by holder rigsuit attackby()
 // Checks if an item is usable with this module and handles it if it is
-/obj/item/rig_module/proc/accepts_item(var/obj/item/input_device)
-	return 0
-
-/mob/living/carbon/human/Stat()
-	. = ..()
-
-	if(. && istype(back,/obj/item/rig))
-		var/obj/item/rig/R = back
-		SetupStat(R)
-
-/mob/proc/SetupStat(var/obj/item/rig/R)
-	if(R && !R.canremove && R.installed_modules.len && statpanel("Hardsuit Modules"))
-		var/cell_status = R.cell ? "[R.cell.charge]/[R.cell.maxcharge]" : "ERROR"
-		stat("Suit Charge:", cell_status)
-		var/air_tank
-		if(R.air_supply)//makes sure you have tank
-			if(R.air_supply.air_contents)//make sure your tank has air
-				air_tank = "[round(R.air_supply.air_contents.return_pressure())] kPa"
-			else
-				air_tank = "0 kPa"
-		else
-			air_tank = "NOT FOUND"
-		stat("Tank Pressure:", air_tank)
-		for(var/obj/item/rig_module/module in R.installed_modules)
-			for(var/stat_rig_module/SRM in module.stat_modules)
-				if(SRM.CanUse())
-					stat(SRM.module.interface_name,SRM)
-
-/stat_rig_module
-	parent_type = /atom/movable
-	var/module_mode = ""
-	var/obj/item/rig_module/module
-
-/stat_rig_module/New(var/obj/item/rig_module/module)
-	..()
-	src.module = module
-
-/stat_rig_module/proc/AddHref(var/list/href_list)
-	return
-
-/stat_rig_module/proc/CanUse()
-	return 0
-
-/stat_rig_module/Click()
-	if(CanUse())
-		var/list/href_list = list(
-							"interact_module" = list_find(module.holder.installed_modules, module),
-							"module_mode" = module_mode
-							)
-		AddHref(href_list)
-		module.holder.Topic(usr, href_list)
-
-/stat_rig_module/DblClick()
-	return Click()
-
-/stat_rig_module/activate/New(var/obj/item/rig_module/module)
-	..()
-	name = module.activate_string
-	if(module.active_power_cost)
-		name += " ([module.active_power_cost*10]A)"
-	module_mode = "activate"
-
-/stat_rig_module/activate/CanUse()
-	return module.toggleable && !module.active
-
-/stat_rig_module/deactivate/New(var/obj/item/rig_module/module)
-	..()
-	name = module.deactivate_string
-	// Show cost despite being 0, if it means changing from an active cost.
-	if(module.active_power_cost || module.passive_power_cost)
-		name += " ([module.passive_power_cost*10]P)"
-
-	module_mode = "deactivate"
-
-/stat_rig_module/deactivate/CanUse()
-	return module.toggleable && module.active
-
-/stat_rig_module/engage/New(var/obj/item/rig_module/module)
-	..()
-	name = module.engage_string
-	if(module.use_power_cost)
-		name += " ([module.use_power_cost*10]E)"
-	module_mode = "engage"
-
-/stat_rig_module/engage/CanUse()
-	return module.usable
-
-/stat_rig_module/select/New()
-	..()
-	name = "Select"
-	module_mode = "select"
-
-/stat_rig_module/select/CanUse()
-	if(module.selectable)
-		name = module.holder.selected_module == module ? "Selected" : "Select"
-		return 1
-	return 0
-
-/stat_rig_module/charge/New()
-	..()
-	name = "Change Charge"
-	module_mode = "select_charge_type"
-
-/stat_rig_module/charge/AddHref(var/list/href_list)
-	var/charge_index = list_find(module.charges, module.charge_selected)
-	if(!charge_index)
-		charge_index = 0
-	else
-		charge_index = charge_index == module.charges.len ? 1 : charge_index+1
-
-	href_list["charge_type"] = module.charges[charge_index]
-
-/stat_rig_module/charge/CanUse()
-	if(module.charges && module.charges.len)
-		var/datum/rig_charge/charge = module.charges[module.charge_selected]
-		name = "[charge.display_name] ([charge.charges]C) - Change"
-		return 1
+/obj/item/rig_module/proc/accepts_item(obj/item/input_device)
 	return 0

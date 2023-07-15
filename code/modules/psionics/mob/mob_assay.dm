@@ -1,4 +1,4 @@
-/mob/living/proc/show_psi_assay(var/mob/viewer, var/obj/machinery/psi_meter/machine)
+/mob/living/proc/show_psi_assay(mob/viewer, obj/machinery/psi_meter/machine)
 
 	if(!viewer) viewer = usr
 
@@ -30,7 +30,7 @@
 			if(viewer != usr && GLOB.thralls.is_antagonist(mind) && ishuman(viewer))
 				var/mob/living/H = viewer
 				if(H.psi && H.psi.get_rank(PSI_REDACTION) >= PSI_RANK_GRANDMASTER)
-					dat += "<font color='#FF0000'><b>Their mind has been cored like an apple, and enslaved by another operant psychic.</b></font>"
+					dat += FONT_COLORED("#FF0000","<b>Their mind has been cored like an apple, and enslaved by another operant psychic.</b>")
 
 		if(!use_rating)
 			switch(effective_rating)

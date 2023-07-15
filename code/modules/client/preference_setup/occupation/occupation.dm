@@ -154,6 +154,8 @@
 				var/bad_message = ""
 				if(job.total_positions == 0 && job.spawn_positions == 0)
 					bad_message = "<b>\[UNAVAILABLE]</b>"
+				else if(!job.meets_req(user.client))
+					bad_message = "<b>\[TIMELOCKED]</b>"
 				else if(jobban_isbanned(user, title))
 					bad_message = "<b>\[BANNED]</b>"
 				else if (!job.is_species_whitelist_allowed(user.client))
@@ -205,6 +207,12 @@
 
 				if(bad_message)
 					. += "<del>[title_link]</del>[help_link][skill_link]<td>[bad_message]</td></tr>"
+					if(bad_message == "<b>\[TIMELOCKED]</b>")
+						var/list/req_list = job.get_req(user.client)
+						for(var/jreq in req_list)
+							if(req_list[jreq])
+								. += "<tr bgcolor='[job.selection_color]'>" //HTML for timelock indicators in occupations
+								. += "<td width='30%' align='left'></td><td width='10%' align='left'></td><td>[jreq]</td></td><td></td><td width = '10%' align = 'center'></td><td width='40%' align='left'>[req_list[jreq]] Minutes</td></tr>"
 					continue
 				else if((GLOB.using_map.default_assistant_title in pref.job_low) && (title != GLOB.using_map.default_assistant_title))
 					. += "<font color=grey>[title_link]</font>[help_link][skill_link]<td></td></tr>"
@@ -217,11 +225,11 @@
 					var/yes_link = "Yes"
 					var/no_link = "No"
 					if(title in pref.job_low)
-						yes_link = "<font color='#55cc55'>[yes_link]</font>"
-						no_link = "<font color='black'>[no_link]</font>"
+						yes_link = FONT_COLORED("#55cc55","[yes_link]")
+						no_link = FONT_COLORED("black","[no_link]")
 					else
-						yes_link = "<font color='black'>[yes_link]</font>"
-						no_link = "<font color='#55cc55'>[no_link]</font>"
+						yes_link = FONT_COLORED("black","[yes_link]")
+						no_link = FONT_COLORED("#55cc55","[no_link]")
 					. += "<a href='?src=\ref[src];set_job=[title];set_level=[JOB_LEVEL_LOW]'>[yes_link]</a><a href='?src=\ref[src];set_job=[title];set_level=[JOB_LEVEL_NEVER]'>[no_link]</a>"
 				else if(!job.available_by_default)
 					. += "<font color = '#cccccc'>Not available at roundstart.</font>"
@@ -229,11 +237,11 @@
 					var/level_link
 					switch(current_level)
 						if(JOB_LEVEL_LOW)
-							level_link = "<font color='#cc5555'>Low</font>"
+							level_link = FONT_COLORED("#cc5555","Low")
 						if(JOB_LEVEL_MEDIUM)
-							level_link = "<font color='#eecc22'>Medium</font>"
+							level_link = FONT_COLORED("#eecc22","Medium")
 						if(JOB_LEVEL_HIGH)
-							level_link = "<font color='#55cc55'>High</font>"
+							level_link = FONT_COLORED("#55cc55","High")
 						else
 							level_link = "<font color=black>Never</font>"
 					. += "<a href='?src=\ref[src];set_job=[title];inc_level=-1'>[level_link]</a>"
@@ -460,7 +468,7 @@
 
 	return 1
 
-/datum/category_item/player_setup_item/occupation/proc/GetCurrentJobLevel(var/job_title)
+/datum/category_item/player_setup_item/occupation/proc/GetCurrentJobLevel(job_title)
 	if(pref.job_high == job_title)
 		. = JOB_LEVEL_HIGH
 	else if(job_title in pref.job_medium)
@@ -470,7 +478,7 @@
 	else
 		. = JOB_LEVEL_NEVER
 
-/datum/category_item/player_setup_item/occupation/proc/SetJobDepartment(var/datum/job/job, var/level)
+/datum/category_item/player_setup_item/occupation/proc/SetJobDepartment(datum/job/job, level)
 	if(!job || !level)	return 0
 
 	var/current_level = GetCurrentJobLevel(job.title)
@@ -495,7 +503,7 @@
 
 	return 1
 
-/datum/preferences/proc/CorrectLevel(var/datum/job/job, var/level)
+/datum/preferences/proc/CorrectLevel(datum/job/job, level)
 	if(!job || !level)	return 0
 	switch(level)
 		if(1)

@@ -172,7 +172,7 @@
 	init_finish = REALTIMEOFDAY
 	. = (REALTIMEOFDAY - timeofday)/10
 	var/msg = "Initialized [name] subsystem within [.] second[. == 1 ? "" : "s"]!"
-	to_chat(world, "<span class='boldannounce'>[msg]</span>")
+	to_chat(world, SPAN_CLASS("boldannounce","[msg]"))
 	log_world(msg)
 
 	init_state = SS_INITSTATE_DONE
@@ -182,20 +182,12 @@
 /datum/controller/subsystem/Initialize(start_timeofday)
 	// Stub, no default behavior here please.
 
-/datum/controller/subsystem/stat_entry(text)
-	if (!stat_line)
-		stat_line = new (null, src)
-	if (Master.initializing)
-		text = "[stat_entry_init()]\t[text]"
-		var/letter = init_state_letter()
-		if (letter)
-			text = "\[[letter]] [text]"
+/datum/controller/subsystem/stat_entry(msg)
+	if(can_fire && !(SS_NO_FIRE & flags))
+		msg = "[round(cost,1)]ms|[round(tick_usage,1)]%([round(tick_overrun,1)]%)|[round(ticks,0.1)]\t[msg]"
 	else
-		text = "[stat_entry_run()]\t[text]"
-		if (can_fire && !suspended && !(flags & SS_NO_FIRE))
-			text = "\[[state_letter()]] [text]"
-	stat_line.name = text
-	stat(name, stat_line)
+		msg = "OFFLINE\t[msg]"
+	return msg
 
 /datum/controller/subsystem/proc/stat_entry_init()
 	if (init_state == SS_INITSTATE_DONE)
@@ -285,7 +277,7 @@
 	handled_vars = list("can_fire")
 	predicates = list(/proc/is_num_predicate)
 
-/decl/vv_set_handler/subsystem_handler/handle_set_var(var/datum/controller/subsystem/SS, variable, var_value, client)
+/decl/vv_set_handler/subsystem_handler/handle_set_var(datum/controller/subsystem/SS, variable, var_value, client)
 	if (var_value)
 		SS.enable()
 	else

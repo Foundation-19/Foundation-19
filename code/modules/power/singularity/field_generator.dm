@@ -1,15 +1,12 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
-
-
 /*
 field_generator power level display
-   The icon used for the field_generator need to have 'num_power_levels' number of icon states
-   named 'Field_Gen +p[num]' where 'num' ranges from 1 to 'num_power_levels'
+	The icon used for the field_generator need to have 'num_power_levels' number of icon states
+	named 'Field_Gen +p[num]' where 'num' ranges from 1 to 'num_power_levels'
 
-   The power level is displayed using overlays. The current displayed power level is stored in 'powerlevel'.
-   The overlay in use and the powerlevel variable must be kept in sync.  A powerlevel equal to 0 means that
-   no power level overlay is currently in the overlays list.
-   -Aygar
+	The power level is displayed using overlays. The current displayed power level is stored in 'powerlevel'.
+	The overlay in use and the powerlevel variable must be kept in sync.  A powerlevel equal to 0 means that
+	no power level overlay is currently in the overlays list.
+	-Aygar
 */
 
 #define field_generator_max_power 250000
@@ -117,13 +114,13 @@ field_generator power level display
 					"You hear ratchet")
 				src.anchored = FALSE
 			if(2)
-				to_chat(user, "<span class='warning'> The [src.name] needs to be unwelded from the floor.</span>")
+				to_chat(user, SPAN_WARNING(" The [src.name] needs to be unwelded from the floor."))
 				return
 	else if(isWelder(W))
 		var/obj/item/weldingtool/WT = W
 		switch(state)
 			if(0)
-				to_chat(user, "<span class='warning'>The [src.name] needs to be wrenched to the floor.</span>")
+				to_chat(user, SPAN_WARNING("The [src.name] needs to be wrenched to the floor."))
 				return
 			if(1)
 				if (WT.remove_fuel(0,user))
@@ -157,7 +154,7 @@ field_generator power level display
 /obj/machinery/field_generator/emp_act()
 	return 0
 
-/obj/machinery/field_generator/bullet_act(var/obj/item/projectile/Proj)
+/obj/machinery/field_generator/bullet_act(obj/item/projectile/Proj)
 	if(istype(Proj, /obj/item/projectile/beam))
 		power += Proj.damage * EMITTER_DAMAGE_POWER_TRANSFER
 		update_icon()
@@ -209,14 +206,14 @@ field_generator power level display
 		return 1
 	else
 		for(var/mob/M in viewers(src))
-			M.show_message("<span class='warning'>\The [src] shuts down!</span>")
+			M.show_message(SPAN_WARNING("\The [src] shuts down!"))
 		turn_off()
 		investigate_log("ran out of power and <font color='red'>deactivated</font>","singulo")
 		src.power = 0
 		return 0
 
 //Tries to draw the needed power from our own power reserve, or connected generators if we can. Returns the amount of power we were able to get.
-/obj/machinery/field_generator/proc/draw_power(var/draw = 0, var/list/flood_list = list())
+/obj/machinery/field_generator/proc/draw_power(draw = 0, list/flood_list = list())
 	flood_list += src
 
 	if(src.power >= draw)//We have enough power
@@ -251,7 +248,7 @@ field_generator power level display
 	src.active = 2
 
 
-/obj/machinery/field_generator/proc/setup_field(var/NSEW)
+/obj/machinery/field_generator/proc/setup_field(NSEW)
 	var/turf/T = src.loc
 	var/obj/machinery/field_generator/G
 	var/steps = 0
@@ -334,6 +331,6 @@ field_generator power level display
 			if(O.last_warning && temp)
 				if((world.time - O.last_warning) > 50) //to stop message-spam
 					temp = 0
-					message_admins("A singulo exists and a containment field has failed.",1)
+					message_staff("A singulo exists and a containment field has failed.",1)
 					investigate_log("has <font color='red'>failed</font> whilst a singulo exists.","singulo")
 			O.last_warning = world.time

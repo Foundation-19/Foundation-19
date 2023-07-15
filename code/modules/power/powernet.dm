@@ -5,6 +5,7 @@
 	var/load = 0				// the current load on the powernet, increased by each machine at processing
 	var/newavail = 0			// what available power was gathered last tick, then becomes...
 	var/avail = 0				//...the current available power in the powernet
+	var/viewavail = 0			// the availability as it appears on the power console (gradually updated)
 	var/viewload = 0			// the load as it appears on the power console (gradually updated)
 	var/number = 0				// Unused //TODEL
 
@@ -39,7 +40,7 @@
 /datum/powernet/proc/last_surplus()
 	return max(avail - load, 0)
 
-/datum/powernet/proc/draw_power(var/amount)
+/datum/powernet/proc/draw_power(amount)
 	var/draw = between(0, amount, avail - load)
 	load += draw
 	return draw
@@ -50,7 +51,7 @@
 //remove a cable from the current powernet
 //if the powernet is then empty, delete it
 //Warning : this proc DON'T check if the cable exists
-/datum/powernet/proc/remove_cable(var/obj/structure/cable/C)
+/datum/powernet/proc/remove_cable(obj/structure/cable/C)
 	cables -= C
 	C.powernet = null
 	if(is_empty())//the powernet is now empty...
@@ -58,7 +59,7 @@
 
 //add a cable to the current powernet
 //Warning : this proc DON'T check if the cable exists
-/datum/powernet/proc/add_cable(var/obj/structure/cable/C)
+/datum/powernet/proc/add_cable(obj/structure/cable/C)
 	if(C.powernet)// if C already has a powernet...
 		if(C.powernet == src)
 			return
@@ -70,7 +71,7 @@
 //remove a power machine from the current powernet
 //if the powernet is then empty, delete it
 //Warning : this proc DON'T check if the machine exists
-/datum/powernet/proc/remove_machine(var/obj/machinery/power/M)
+/datum/powernet/proc/remove_machine(obj/machinery/power/M)
 	nodes -=M
 	M.powernet = null
 	if(is_empty())//the powernet is now empty...
@@ -79,7 +80,7 @@
 
 //add a power machine to the current powernet
 //Warning : this proc DON'T check if the machine exists
-/datum/powernet/proc/add_machine(var/obj/machinery/power/M)
+/datum/powernet/proc/add_machine(obj/machinery/power/M)
 	if(M.powernet)// if M already has a powernet...
 		if(M.powernet == src)
 			return
@@ -89,7 +90,7 @@
 	nodes[M] = M
 
 // Triggers warning for certain amount of ticks
-/datum/powernet/proc/trigger_warning(var/duration_ticks = 20)
+/datum/powernet/proc/trigger_warning(duration_ticks = 20)
 	problem = max(duration_ticks, problem)
 
 
@@ -133,7 +134,8 @@
 			S.restore(perc)
 
 	//updates the viewed load (as seen on power computers)
-	viewload = round(load)
+	viewavail = round(0.8 * viewavail + 0.2 * avail)
+	viewload = round(0.8 * viewload + 0.2 * load)
 
 	//reset the powernet
 	load = 0
@@ -144,7 +146,7 @@
 	newavail = 0
 	smes_newavail = 0
 
-/datum/powernet/proc/get_percent_load(var/smes_only = 0)
+/datum/powernet/proc/get_percent_load(smes_only = 0)
 	if(smes_only)
 		var/smes_used = load - (avail - smes_avail) 			// SMESs are always last to provide power
 		if(!smes_used || smes_used < 0 || !smes_avail)			// SMES power isn't available or being used at all, SMES load is therefore 0%
@@ -173,7 +175,7 @@
 // Proc: apcs_overload()
 // Parameters: 3 (failure_chance - chance to actually break the APC, overload_chance - Chance of breaking lights, reboot_chance - Chance of temporarily disabling the APC)
 // Description: Damages output powernet by power surge. Destroys few APCs and lights, depending on parameters.
-/datum/powernet/proc/apcs_overload(var/failure_chance, var/overload_chance, var/reboot_chance)
+/datum/powernet/proc/apcs_overload(failure_chance, overload_chance, reboot_chance)
 	for(var/obj/machinery/power/terminal/T in nodes)
 		var/obj/machinery/power/apc/A = T.master_machine()
 		if(istype(A))

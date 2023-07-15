@@ -12,7 +12,7 @@
 
 /obj/item/teleportation_scroll/attack_self(mob/user as mob)
 	if((user.mind && !GLOB.wizards.is_antagonist(user.mind)))
-		to_chat(usr, "<span class='warning'>You stare at the scroll but cannot make sense of the markings!</span>")
+		to_chat(usr, SPAN_WARNING("You stare at the scroll but cannot make sense of the markings!"))
 		return
 
 	user.set_machine(src)
@@ -40,7 +40,7 @@
 	attack_self(H)
 	return
 
-/obj/item/teleportation_scroll/proc/teleportscroll(var/mob/user)
+/obj/item/teleportation_scroll/proc/teleportscroll(mob/user)
 	var/area/thearea = input(user, "Area to jump to", "BOOYEA") as null|anything in wizteleportlocs
 	thearea = thearea ? wizteleportlocs[thearea] : thearea
 

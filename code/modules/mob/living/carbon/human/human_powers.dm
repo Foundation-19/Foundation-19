@@ -7,7 +7,7 @@
 	set category = "IC"
 
 	if(incapacitated())
-		to_chat(src, "<span class='warning'>You can't mess with your hair right now!</span>")
+		to_chat(src, SPAN_WARNING("You can't mess with your hair right now!"))
 		return
 
 	if(h_style)
@@ -24,12 +24,12 @@
 					valid_hairstyles.Add(hair_string)
 			selected_string = input("Select a new hairstyle", "Your hairstyle", hair_style) as null|anything in valid_hairstyles
 		if(incapacitated())
-			to_chat(src, "<span class='warning'>You can't mess with your hair right now!</span>")
+			to_chat(src, SPAN_WARNING("You can't mess with your hair right now!"))
 			return
 		else if(selected_string && h_style != selected_string)
 			h_style = selected_string
 			regenerate_icons()
-			visible_message("<span class='notice'>[src] pauses a moment to style their hair.</span>")
+			visible_message(SPAN_NOTICE("[src] pauses a moment to style their hair."))
 		else
 			to_chat(src, "<span class ='notice'>You're already using that style.</span>")
 
@@ -59,18 +59,18 @@
 	var/mob/M = targets[target]
 
 	if(isghost(M) || M.stat == DEAD)
-		to_chat(src, "<span class='warning'>Not even a [src.species.name] can speak to the dead.</span>")
+		to_chat(src, SPAN_WARNING("Not even a [src.species.name] can speak to the dead."))
 		return
 
 	log_say("[key_name(src)] communed to [key_name(M)]: [text]")
 
-	to_chat(M, "<span class='notice'>Like lead slabs crashing into the ocean, alien thoughts drop into your mind: <i>[text]</i></span>")
+	to_chat(M, SPAN_NOTICE("Like lead slabs crashing into the ocean, alien thoughts drop into your mind: <i>[text]</i>"))
 	if(istype(M,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = M
 		if(H.species.name == src.species.name)
 			return
 		if(prob(75))
-			to_chat(H, "<span class='warning'>Your nose begins to bleed...</span>")
+			to_chat(H, SPAN_WARNING("Your nose begins to bleed..."))
 			H.drip(1)
 
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
@@ -81,8 +81,8 @@
 	var/msg = sanitize(input("Message:", "Psychic Whisper") as text|null)
 	if(msg)
 		log_say("PsychicWhisper: [key_name(src)]->[M.key] : [msg]")
-		to_chat(M, "<span class='alium'>You hear a strange, alien voice in your head... <i>[msg]</i></span>")
-		to_chat(src, "<span class='alium'>You channel a message: \"[msg]\" to [M]</span>")
+		to_chat(M, SPAN_CLASS("alium","You hear a strange, alien voice in your head... <i>[msg]</i>"))
+		to_chat(src, SPAN_CLASS("alium","You channel a message: \"[msg]\" to [M]"))
 	return
 
 /***********

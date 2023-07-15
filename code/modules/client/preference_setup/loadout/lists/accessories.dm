@@ -5,9 +5,12 @@
 	slot = slot_tie
 	denied_roles = list(/datum/job/classd)
 
+//guards don't wear ties
 /datum/gear/accessory/tie
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory
+	allowed_branches = list(/datum/mil_branch/civilian)
+
 
 /datum/gear/accessory/tie/New()
 	..()
@@ -27,6 +30,8 @@
 	display_name = "colored tie"
 	path = /obj/item/clothing/accessory
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_branches = list(/datum/mil_branch/civilian)
+
 
 /datum/gear/accessory/tie_color/New()
 	..()
@@ -34,6 +39,7 @@
 	ties["tie"] = /obj/item/clothing/accessory
 	ties["striped tie"] = /obj/item/clothing/accessory/long
 	gear_tweaks += new/datum/gear_tweak/path(ties)
+
 
 /datum/gear/accessory/locket
 	display_name = "locket"
@@ -47,13 +53,15 @@
 /datum/gear/accessory/bowtie
 	display_name = "bowtie, horrible"
 	path = /obj/item/clothing/accessory/bowtie/ugly
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/accessory/bowtie/color
 	display_name = "bowtie, colour select"
 	path = /obj/item/clothing/accessory/bowtie/color
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_branches = list(/datum/mil_branch/civilian)
 
-/datum/gear/accessory/ntaward
+/*/datum/gear/accessory/ntaward
 	display_name = "corporate award selection"
 	description = "A medal or ribbon awarded to corporate personnel for significant accomplishments."
 	path = /obj/item/clothing/accessory/medal
@@ -66,11 +74,12 @@
 	ntawards["distinguished service"] = /obj/item/clothing/accessory/medal/silver/nanotrasen
 	ntawards["command medal"] = /obj/item/clothing/accessory/medal/gold/nanotrasen
 	gear_tweaks += new/datum/gear_tweak/path(ntawards)
-
+*/
 //have to break up armbands to restrict access
 /datum/gear/accessory/armband_security
 	display_name = "security armband"
 	path = /obj/item/clothing/accessory/armband
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/accessory/armband_cargo
 	display_name = "cargo armband"
@@ -94,14 +103,14 @@
 	path = /obj/item/clothing/accessory/armband/hydro
 	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/classd)
 
-/datum/gear/accessory/armband_nt
+/*/datum/gear/accessory/armband_nt
 	display_name = "corporate armband"
 	path = /obj/item/clothing/accessory/armband/whitered
 
 /datum/gear/accessory/ftupin
 	display_name = "Free Trade Union pin"
 	path = /obj/item/clothing/accessory/ftupin
-
+*/
 /datum/gear/accessory/chaplaininsignia
 	display_name = "chaplain insignia"
 	path = /obj/item/clothing/accessory/chaplaininsignia

@@ -1,4 +1,4 @@
-/mob/living/deity/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="")
+/mob/living/deity/say(message, datum/language/speaking = null, verb="says", alt_name="")
 	if(!..())
 		return 0
 	if(pylon)
@@ -6,4 +6,4 @@
 	else
 		for(var/m in minions)
 			var/datum/mind/mind = m
-			to_chat(mind.current, "<span class='cult'><font size='3'>[message]</font></span>")
+			to_chat(mind.current, SPAN_OCCULT(FONT_LARGE("[message]")))

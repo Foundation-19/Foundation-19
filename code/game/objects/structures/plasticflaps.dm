@@ -42,14 +42,14 @@
 
 /obj/structure/plasticflaps/attackby(obj/item/W, mob/user)
 	if(isCrowbar(W) && !anchored)
-		user.visible_message("<span class='notice'>\The [user] begins deconstructing \the [src].</span>", "<span class='notice'>You start deconstructing \the [src].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] begins deconstructing \the [src]."), SPAN_NOTICE("You start deconstructing \the [src]."))
 		if(user.do_skilled(3 SECONDS, SKILL_CONSTRUCTION, src))
-			user.visible_message("<span class='warning'>\The [user] deconstructs \the [src].</span>", "<span class='warning'>You deconstruct \the [src].</span>")
+			user.visible_message(SPAN_WARNING("\The [user] deconstructs \the [src]."), SPAN_WARNING("You deconstruct \the [src]."))
 			qdel(src)
 	if(isScrewdriver(W) && anchored)
 		airtight = !airtight
 		airtight ? become_airtight() : clear_airtight()
-		user.visible_message("<span class='warning'>\The [user] adjusts \the [src], [airtight ? "preventing" : "allowing"] air flow.</span>")
+		user.visible_message(SPAN_WARNING("\The [user] adjusts \the [src], [airtight ? "preventing" : "allowing"] air flow."))
 	else ..()
 
 /obj/structure/plasticflaps/ex_act(severity)

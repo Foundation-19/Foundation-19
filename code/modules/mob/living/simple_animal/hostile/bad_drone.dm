@@ -11,7 +11,7 @@
 	min_gas = null
 	max_gas = null
 	minbodytemp = 0
-	speed = 4
+	movement_cooldown = 3
 	mob_size = MOB_TINY
 	var/corpse = /obj/effect/decal/cleanable/blood/gibs/robot
 

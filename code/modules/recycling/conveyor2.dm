@@ -48,7 +48,7 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 		if(!(stat & BROKEN))
 			var/obj/item/construct/conveyor/C = new /obj/item/construct/conveyor(loc, id)
 			transfer_fingerprints_to(C)
-		to_chat(user, "<span class='notice'>You remove the conveyor belt.</span>")
+		to_chat(user, SPAN_NOTICE("You remove the conveyor belt."))
 		qdel(src)
 		return
 
@@ -198,17 +198,13 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 		return FALSE
 	return TRUE
 
-// make the conveyor broken and propagate inoperability to any connected conveyor with the same conveyor datum
-/obj/machinery/conveyor/proc/make_broken()
-	stat |= BROKEN
-	operable = FALSE
-	update_icon()
-	var/obj/machinery/conveyor/C = locate() in get_step(src, forwards)
-	if(C)
-		C.set_operable(TRUE, id, FALSE)
-	C = locate() in get_step(src, backwards)
-	if(C)
-		C.set_operable(FALSE, id, FALSE)
+/obj/machinery/conveyor/set_broken(new_state, cause)
+	. = ..()
+	if(. && (stat & BROKEN))	// if we changed states and are now broken, set entire ID to inoperable
+		set_operable(TRUE, id, FALSE)
+		var/obj/machinery/conveyor/C = locate() in get_step(src, backwards)
+		if(C)
+			C.set_operable(FALSE, id, FALSE)
 
 /obj/machinery/conveyor/proc/set_operable(propagate_forwards, match_id, op) //Sets a conveyor inoperable if ID matches it, and propagates forwards / backwards
 	if(id != match_id)
@@ -331,7 +327,7 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 /obj/item/construct/conveyor/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/construct/conveyor_switch))
-		to_chat(user, "<span class='notice'>You link the switch to the conveyor belt assembly.</span>")
+		to_chat(user, SPAN_NOTICE("You link the switch to the conveyor belt assembly."))
 		var/obj/item/construct/conveyor_switch/C = I
 		id = C.id
 

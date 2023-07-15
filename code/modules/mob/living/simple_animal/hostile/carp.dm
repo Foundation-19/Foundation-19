@@ -8,7 +8,7 @@
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
-	speed = 2
+	movement_cooldown = 3
 	maxHealth = 50
 	health = 50
 
@@ -62,5 +62,5 @@
 	icon_living = "[carp_color]"
 	icon_dead = "[carp_color]_dead"
 
-/mob/living/simple_animal/hostile/carp/Allow_Spacemove(var/check_drift = 0)
+/mob/living/simple_animal/hostile/carp/Allow_Spacemove(check_drift = 0)
 	return 1	//No drifting in space for space carp!	//original comments do not steal

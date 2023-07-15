@@ -1,7 +1,7 @@
 /mob
 	var/moving           = FALSE
 
-/mob/proc/SelfMove(var/direction)
+/mob/proc/SelfMove(direction)
 	if(direction == UP || direction == DOWN)
 		if(buckled)
 			to_chat(src, SPAN_WARNING("You can't do that while buckled down!"))
@@ -20,12 +20,12 @@
 	else
 		return (!mover.density || !density || lying)
 
-/mob/proc/SetMoveCooldown(var/timeout)
+/mob/proc/SetMoveCooldown(timeout)
 	var/datum/movement_handler/mob/delay/delay = GetMovementHandler(/datum/movement_handler/mob/delay)
 	if(delay)
 		delay.SetDelay(timeout)
 
-/mob/proc/ExtraMoveCooldown(var/timeout)
+/mob/proc/ExtraMoveCooldown(timeout)
 	var/datum/movement_handler/mob/delay/delay = GetMovementHandler(/datum/movement_handler/mob/delay)
 	if(delay)
 		delay.AddDelay(timeout)
@@ -60,18 +60,18 @@
 				var/mob/living/carbon/C = usr
 				C.toggle_throw_mode()
 			else
-				to_chat(usr, "<span class='warning'>This mob type cannot throw items.</span>")
+				to_chat(usr, SPAN_WARNING("This mob type cannot throw items."))
 			return
 		if(NORTHWEST)
 			mob.hotkey_drop()
 
 /mob/proc/hotkey_drop()
-	to_chat(src, "<span class='warning'>This mob type cannot drop items.</span>")
+	to_chat(src, SPAN_WARNING("This mob type cannot drop items."))
 
 /mob/living/carbon/hotkey_drop()
 	var/obj/item/hand = get_active_hand()
 	if(!hand)
-		to_chat(src, "<span class='warning'>You have nothing to drop in your hand.</span>")
+		to_chat(src, SPAN_WARNING("You have nothing to drop in your hand."))
 	else if(hand.can_be_dropped_by_client(src))
 		drop_item()
 
@@ -80,7 +80,7 @@
 	set hidden = 1
 
 	if(!usr.pulling)
-		to_chat(usr, "<span class='notice'>You are not pulling anything.</span>")
+		to_chat(usr, SPAN_NOTICE("You are not pulling anything."))
 		return
 	usr.stop_pulling()
 
@@ -121,6 +121,8 @@
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
+	var/old_loc = loc
+
 	if (direct & (direct - 1))
 		if (direct & 1)
 			if (direct & 4)
@@ -166,6 +168,8 @@
 		if ((A != src.loc && A?.z == src.z))
 			src.last_move = get_dir(A, src.loc)
 
+	SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
+
 /client/Move(n, direction)
 	if(!user_acted(src))
 		return
@@ -181,7 +185,7 @@
 // Checks whether this mob is allowed to move in space
 // Return 1 for movement, 0 for none,
 // -1 to allow movement but with a chance of slipping
-/mob/proc/Allow_Spacemove(var/check_drift = 0)
+/mob/proc/Allow_Spacemove(check_drift = 0)
 	if(!Check_Dense_Object()) //Nothing to push off of so end here
 		return 0
 
@@ -231,14 +235,14 @@
 
 //return 1 if slipped, 0 otherwise
 /mob/proc/handle_spaceslipping()
-	if(prob(skill_fail_chance(SKILL_EVA, slip_chance(10), SKILL_EXPERIENCED)))
-		to_chat(src, "<span class='warning'>You slipped!</span>")
+	if(prob(skill_fail_chance(SKILL_HAULING, slip_chance(10), SKILL_EXPERIENCED)))
+		to_chat(src, SPAN_WARNING("You slipped!"))
 		src.inertia_dir = src.last_move
 		step(src, src.inertia_dir)
 		return 1
 	return 0
 
-/mob/proc/slip_chance(var/prob_slip = 10)
+/mob/proc/slip_chance(prob_slip = 10)
 	if(stat)
 		return 0
 	if(buckled)
@@ -280,7 +284,7 @@
 		if(set_move_intent(decls_repository.get_decl(checking_intent)))
 			return
 
-/mob/proc/set_move_intent(var/decl/move_intent/next_intent)
+/mob/proc/set_move_intent(decl/move_intent/next_intent)
 	if(next_intent && move_intent != next_intent && next_intent.can_be_used_by(src))
 		move_intent = next_intent
 		if(hud_used)
@@ -288,26 +292,26 @@
 		return TRUE
 	return FALSE
 
-/mob/proc/get_movement_datum_by_flag(var/move_flag = MOVE_INTENT_DELIBERATE)
+/mob/proc/get_movement_datum_by_flag(move_flag = MOVE_INTENT_DELIBERATE)
 	for(var/m_intent in move_intents)
 		var/decl/move_intent/check_move_intent = decls_repository.get_decl(m_intent)
 		if(check_move_intent.flags & move_flag)
 			return check_move_intent
 
-/mob/proc/get_movement_datum_by_missing_flag(var/move_flag = MOVE_INTENT_DELIBERATE)
+/mob/proc/get_movement_datum_by_missing_flag(move_flag = MOVE_INTENT_DELIBERATE)
 	for(var/m_intent in move_intents)
 		var/decl/move_intent/check_move_intent = decls_repository.get_decl(m_intent)
 		if(!(check_move_intent.flags & move_flag))
 			return check_move_intent
 
-/mob/proc/get_movement_datums_by_flag(var/move_flag = MOVE_INTENT_DELIBERATE)
+/mob/proc/get_movement_datums_by_flag(move_flag = MOVE_INTENT_DELIBERATE)
 	. = list()
 	for(var/m_intent in move_intents)
 		var/decl/move_intent/check_move_intent = decls_repository.get_decl(m_intent)
 		if(check_move_intent.flags & move_flag)
 			. += check_move_intent
 
-/mob/proc/get_movement_datums_by_missing_flag(var/move_flag = MOVE_INTENT_DELIBERATE)
+/mob/proc/get_movement_datums_by_missing_flag(move_flag = MOVE_INTENT_DELIBERATE)
 	. = list()
 	for(var/m_intent in move_intents)
 		var/decl/move_intent/check_move_intent = decls_repository.get_decl(m_intent)
@@ -357,7 +361,7 @@
 /mob/proc/can_sprint()
 	return FALSE
 
-/mob/proc/adjust_stamina(var/amt)
+/mob/proc/adjust_stamina(amt)
 	return
 
 /mob/proc/get_stamina()

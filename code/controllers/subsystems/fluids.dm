@@ -27,8 +27,8 @@ SUBSYSTEM_DEF(fluids)
 		'sound/effects/gurgle4.ogg'
 		)
 
-/datum/controller/subsystem/fluids/stat_entry()
-	..("A:[active_fluids.len] S:[water_sources.len]")
+/datum/controller/subsystem/fluids/stat_entry(msg)
+	.=..("[msg] A:[active_fluids.len] S:[water_sources.len]")
 
 /datum/controller/subsystem/fluids/fire(resumed = 0)
 	if (!resumed)
@@ -175,6 +175,7 @@ SUBSYSTEM_DEF(fluids)
 			if(F.flow_amount >= 10)
 				if(prob(1))
 					playsound(F.loc, 'sound/effects/slosh.ogg', 25, 1)
+					show_sound_effect(F.loc, soundicon = SFX_ICON_SMALL)
 				for(var/atom/movable/AM in F.loc.contents)
 					if(isnull(pushing_atoms[AM]) && AM.is_fluid_pushable(F.flow_amount))
 						pushing_atoms[AM] = TRUE

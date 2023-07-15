@@ -2,7 +2,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/preferences
 	var/species = SPECIES_HUMAN
-	var/b_type = "A+"					//blood type (not-chooseable)
+	var/b_type = "O-"					//blood type (not-chooseable)
 	var/h_style = "Bald"				//Hair type
 	var/r_hair = 0						//Hair color
 	var/g_hair = 0						//Hair color
@@ -93,7 +93,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	W.write("body_descriptors", pref.body_descriptors)
 	W.write("bgstate", pref.bgstate)
 
-/datum/category_item/player_setup_item/physical/body/sanitize_character(var/savefile/S)
+/datum/category_item/player_setup_item/physical/body/sanitize_character(savefile/S)
 	pref.r_hair			= sanitize_integer(pref.r_hair, 0, 255, initial(pref.r_hair))
 	pref.g_hair			= sanitize_integer(pref.g_hair, 0, 255, initial(pref.g_hair))
 	pref.b_hair			= sanitize_integer(pref.b_hair, 0, 255, initial(pref.b_hair))
@@ -148,7 +148,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	if(!pref.bgstate || !(pref.bgstate in pref.bgstate_options))
 		pref.bgstate = "000"
 
-/datum/category_item/player_setup_item/physical/body/content(var/mob/user)
+/datum/category_item/player_setup_item/physical/body/content(mob/user)
 	. = list()
 	if(!pref.preview_icon)
 		pref.update_preview_icon()
@@ -241,6 +241,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 				. += ", "
 			if(organ_name == BP_BRAIN)
 				. += "\tPositronic [organ_name]"
+			else
+				. += "\tSynthetic [organ_name]"
 		else if(status == "assisted")
 			++ind
 			if(ind > 1)
@@ -301,10 +303,10 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 	. = jointext(.,null)
 
-/datum/category_item/player_setup_item/physical/body/proc/has_flag(var/datum/species/mob_species, var/flag)
+/datum/category_item/player_setup_item/physical/body/proc/has_flag(datum/species/mob_species, flag)
 	return mob_species && (mob_species.appearance_flags & flag)
 
-/datum/category_item/player_setup_item/physical/body/OnTopic(var/href,var/list/href_list, var/mob/user)
+/datum/category_item/player_setup_item/physical/body/OnTopic(href,list/href_list, mob/user)
 
 	var/datum/species/mob_species = all_species[pref.species]
 	if(href_list["toggle_species_verbose"])
@@ -515,6 +517,9 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["limbs"])
 
 		var/list/limb_selection_list = list("Left Leg","Right Leg","Left Arm","Right Arm","Left Foot","Right Foot","Left Hand","Right Hand")
+
+		if(check_rights(R_ADMIN, 0) || whitelist_lookup(SPECIES_FBP, user.client.ckey))
+			limb_selection_list |= "Full Body"
 
 		// Full prosthetic bodies without a brain are borderline unkillable so make sure they have a brain to remove/destroy.
 		var/datum/species/current_species = all_species[pref.species]

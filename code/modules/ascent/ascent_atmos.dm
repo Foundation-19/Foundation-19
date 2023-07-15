@@ -13,7 +13,7 @@
 MANTIDIFY(/obj/machinery/alarm, "mantid thermostat", "atmospherics")
 
 /obj/machinery/alarm/ascent
-	req_access = list(access_ascent)
+	req_access = list(ACCESS_ASCENT)
 	construct_state = null
 	environment_type = /decl/environment_data/mantid
 

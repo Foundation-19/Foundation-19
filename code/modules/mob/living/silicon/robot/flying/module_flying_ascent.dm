@@ -59,13 +59,10 @@
 	)
 
 	skills = list(
-		SKILL_BUREAUCRACY	= SKILL_TRAINED,
-		SKILL_FINANCE		= SKILL_EXPERIENCED,
-		SKILL_EVA			= SKILL_EXPERIENCED,
-		SKILL_MECH			= HAS_PERK,
 		SKILL_PILOT			= SKILL_EXPERIENCED,
 		SKILL_HAULING		= SKILL_EXPERIENCED,
 		SKILL_COMPUTER		= SKILL_EXPERIENCED,
+		SKILL_FINANCE		= SKILL_EXPERIENCED,
 		SKILL_BOTANY		= SKILL_EXPERIENCED,
 		SKILL_COOKING		= SKILL_EXPERIENCED,
 		SKILL_COMBAT		= SKILL_EXPERIENCED,
@@ -119,7 +116,7 @@
 
 	. = ..()
 
-/obj/item/robot_module/flying/ascent/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/flying/ascent/respawn_consumable(mob/living/silicon/robot/R, amount)
 	var/obj/item/stack/medical/resin/drone/resin = locate() in equipment
 	if(!resin)
 		resin = new(src, amount = 1)

@@ -34,12 +34,13 @@ By design, d1 is the smallest direction and d2 is the highest
 	var/d2 = 1
 
 	layer = EXPOSED_WIRE_LAYER
+	plane = DEFAULT_PLANE
 
 	color = COLOR_MAROON
 	var/obj/machinery/power/breakerbox/breaker_box
 
 
-/obj/structure/cable/drain_power(var/drain_check, var/surge, var/amount = 0)
+/obj/structure/cable/drain_power(drain_check, surge, amount = 0)
 
 	if(drain_check)
 		return 1
@@ -99,9 +100,9 @@ By design, d1 is the smallest direction and d2 is the highest
 		user.examinate(src)
 		// following code taken from attackby (multitool)
 		if(powernet && (powernet.avail > 0))
-			to_chat(user, "<span class='warning'>[get_wattage()] in power network.</span>")
+			to_chat(user, SPAN_WARNING("[get_wattage()] in power network."))
 		else
-			to_chat(user, "<span class='warning'>The cable is not powered.</span>")
+			to_chat(user, SPAN_WARNING("The cable is not powered."))
 	return
 
 ///////////////////////////////////
@@ -116,7 +117,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	return "[round(powernet.avail)] W"
 
 //If underfloor, hide the cable
-/obj/structure/cable/hide(var/i)
+/obj/structure/cable/hide(i)
 	if(istype(loc, /turf))
 		set_invisibility(i ? 101 : 0)
 	update_icon()
@@ -152,10 +153,10 @@ By design, d1 is the smallest direction and d2 is the highest
 	else if(isMultitool(W))
 
 		if(powernet && (powernet.avail > 0))		// is it powered?
-			to_chat(user, "<span class='warning'>[get_wattage()] in power network.</span>")
+			to_chat(user, SPAN_WARNING("[get_wattage()] in power network."))
 
 		else
-			to_chat(user, "<span class='warning'>The cable is not powered.</span>")
+			to_chat(user, SPAN_WARNING("The cable is not powered."))
 
 		shock(user, 5, 0.2)
 
@@ -165,10 +166,10 @@ By design, d1 is the smallest direction and d2 is the highest
 		var/delay_holder
 
 		if(W.force < 5)
-			visible_message("<span class='warning'>[user] starts sawing away roughly at the cable with \the [W].</span>")
+			visible_message(SPAN_WARNING("[user] starts sawing away roughly at the cable with \the [W]."))
 			delay_holder = 8 SECONDS
 		else
-			visible_message("<span class='warning'>[user] begins to cut through the cable with \the [W].</span>")
+			visible_message(SPAN_WARNING("[user] begins to cut through the cable with \the [W]."))
 			delay_holder = 3 SECONDS
 
 		if(user.do_skilled(delay_holder, SKILL_ELECTRICAL, src))
@@ -176,7 +177,7 @@ By design, d1 is the smallest direction and d2 is the highest
 			if(W.obj_flags & OBJ_FLAG_CONDUCTIBLE)
 				shock(user, 66, 0.7)
 		else
-			visible_message("<span class='warning'>[user] stops cutting before any damage is done.</span>")
+			visible_message(SPAN_WARNING("[user] stops cutting before any damage is done."))
 
 	src.add_fingerprint(user)
 
@@ -186,11 +187,11 @@ By design, d1 is the smallest direction and d2 is the highest
 		return
 
 	if(d1 == UP || d2 == UP)
-		to_chat(user, "<span class='warning'>You must cut this cable from above.</span>")
+		to_chat(user, SPAN_WARNING("You must cut this cable from above."))
 		return
 
 	if(breaker_box)
-		to_chat(user, "<span class='warning'>This cable is connected to a nearby breaker box. Use the breaker box to interact with it.</span>")
+		to_chat(user, SPAN_WARNING("This cable is connected to a nearby breaker box. Use the breaker box to interact with it."))
 		return
 
 	if (shock(user, 50))
@@ -198,7 +199,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 	new/obj/item/stack/cable_coil(T, (src.d1 ? 2 : 1), color)
 
-	visible_message("<span class='warning'>[user] cuts the cable.</span>")
+	visible_message(SPAN_WARNING("[user] cuts the cable."))
 
 	if(HasBelow(z))
 		for(var/turf/turf in GetBelow(src))
@@ -211,7 +212,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	qdel(src)
 
 // shock the user with probability prb
-/obj/structure/cable/proc/shock(mob/user, prb, var/siemens_coeff = 1.0)
+/obj/structure/cable/proc/shock(mob/user, prb, siemens_coeff = 1.0)
 	if(!prob(prb))
 		return 0
 	if (electrocute_mob(user, powernet, src, siemens_coeff))
@@ -237,7 +238,7 @@ By design, d1 is the smallest direction and d2 is the highest
 				new/obj/item/stack/cable_coil(src.loc, src.d1 ? 2 : 1, color)
 				qdel(src)
 
-/obj/structure/cable/proc/cableColor(var/colorC)
+/obj/structure/cable/proc/cableColor(colorC)
 	var/color_n = "#dd0000"
 	if(colorC)
 		color_n = colorC
@@ -249,7 +250,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 //handles merging diagonally matching cables
 //for info : direction^3 is flipping horizontally, direction^12 is flipping vertically
-/obj/structure/cable/proc/mergeDiagonalsNetworks(var/direction)
+/obj/structure/cable/proc/mergeDiagonalsNetworks(direction)
 
 	//search for and merge diagonally matching cables from the first direction component (north/south)
 	var/turf/T  = get_step(src, direction&3)//go north/south
@@ -293,7 +294,7 @@ By design, d1 is the smallest direction and d2 is the highest
 				C.powernet.add_cable(src) //else, we simply connect to the matching cable powernet
 
 // merge with the powernets of power objects in the given direction
-/obj/structure/cable/proc/mergeConnectedNetworks(var/direction)
+/obj/structure/cable/proc/mergeConnectedNetworks(direction)
 
 	var/fdir = direction ? GLOB.reverse_dir[direction] : 0 //flip the direction, to match with the source position on its turf
 
@@ -368,7 +369,7 @@ By design, d1 is the smallest direction and d2 is the highest
 //////////////////////////////////////////////
 
 //if powernetless_only = 1, will only get connections without powernet
-/obj/structure/cable/proc/get_connections(var/powernetless_only = 0)
+/obj/structure/cable/proc/get_connections(powernetless_only = 0)
 	. = list()	// this will be a list of all connected power objects
 	var/turf/T
 
@@ -492,7 +493,7 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/item/stack/cable_coil/single
 	amount = 1
 
-/obj/item/stack/cable_coil/single/New(var/loc, var/length = 1, var/param_color = null)
+/obj/item/stack/cable_coil/single/New(loc, length = 1, param_color = null)
 	..(loc, length, param_color)
 
 /obj/item/stack/cable_coil/cyborg
@@ -503,7 +504,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	uses_charge = 1
 	charge_costs = list(1)
 
-/obj/item/stack/cable_coil/New(loc, length = MAXCOIL, var/param_color = null)
+/obj/item/stack/cable_coil/New(loc, length = MAXCOIL, param_color = null)
 	..()
 	src.amount = length
 	if (param_color) // It should be red by default, so only recolor it if parameter was specified.
@@ -516,7 +517,7 @@ By design, d1 is the smallest direction and d2 is the highest
 ///////////////////////////////////
 
 //you can use wires to heal robotics
-/obj/item/stack/cable_coil/attack(var/atom/A, var/mob/living/user, var/def_zone)
+/obj/item/stack/cable_coil/attack(atom/A, mob/living/user, def_zone)
 	if(ishuman(A) && user.a_intent == I_HELP)
 		var/mob/living/carbon/human/H = A
 		var/obj/item/organ/external/S = H.organs_by_name[user.zone_sel.selecting]
@@ -526,7 +527,7 @@ By design, d1 is the smallest direction and d2 is the highest
 			return ..()
 
 		if(BP_IS_BRITTLE(S))
-			to_chat(user, "<span class='warning'>\The [H]'s [S.name] is hard and brittle - \the [src] cannot repair it.</span>")
+			to_chat(user, SPAN_WARNING("\The [H]'s [S.name] is hard and brittle - \the [src] cannot repair it."))
 			return 1
 
 		var/use_amt = min(src.amount, ceil(S.burn_dam/3), 5)
@@ -553,7 +554,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		icon_state = "coil-max"
 		SetName(initial(name))
 
-/obj/item/stack/cable_coil/proc/set_cable_color(var/selected_color, var/user)
+/obj/item/stack/cable_coil/proc/set_cable_color(selected_color, user)
 	if(!selected_color)
 		return
 
@@ -562,7 +563,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		selected_color = "Red"
 		final_color = GLOB.possible_cable_colours[selected_color]
 	color = final_color
-	to_chat(user, "<span class='notice'>You change \the [src]'s color to [lowertext(selected_color)].</span>")
+	to_chat(user, SPAN_NOTICE("You change \the [src]'s color to [lowertext(selected_color)]."))
 
 /obj/item/stack/cable_coil/proc/update_wclass()
 	if(amount == 1)
@@ -578,13 +579,13 @@ By design, d1 is the smallest direction and d2 is the highest
 	if(ishuman(M) && !M.incapacitated())
 		if(!istype(usr.loc,/turf)) return
 		if(!src.use(15))
-			to_chat(usr, "<span class='warning'>You need at least 15 lengths to make restraints!</span>")
+			to_chat(usr, SPAN_WARNING("You need at least 15 lengths to make restraints!"))
 			return
 		var/obj/item/handcuffs/cable/B = new /obj/item/handcuffs/cable(usr.loc)
 		B.color = color
-		to_chat(usr, "<span class='notice'>You wind some cable together to make some restraints.</span>")
+		to_chat(usr, SPAN_NOTICE("You wind some cable together to make some restraints."))
 	else
-		to_chat(usr, "<span class='notice'>You cannot do that.</span>")
+		to_chat(usr, SPAN_NOTICE("You cannot do that."))
 
 /obj/item/stack/cable_coil/cyborg/verb/set_colour()
 	set name = "Change Colour"
@@ -596,7 +597,7 @@ By design, d1 is the smallest direction and d2 is the highest
 // Items usable on a cable coil :
 //   - Wirecutters : cut them duh !
 //   - Cable coil : merge cables
-/obj/item/stack/cable_coil/proc/can_merge(var/obj/item/stack/cable_coil/C)
+/obj/item/stack/cable_coil/proc/can_merge(obj/item/stack/cable_coil/C)
 	return color == C.color
 
 /obj/item/stack/cable_coil/cyborg/can_merge()
@@ -646,7 +647,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 	for(var/obj/structure/cable/LC in F)
 		if((LC.d1 == dirn && LC.d2 == end_dir ) || ( LC.d2 == dirn && LC.d1 == end_dir))
-			to_chat(user, "<span class='warning'>There's already a cable at that position.</span>")
+			to_chat(user, SPAN_WARNING("There's already a cable at that position."))
 			return
 
 	put_cable(F, user, end_dir, dirn)
@@ -817,7 +818,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	name = "cable fabricator"
 	var/cost_per_cable = 10
 
-/obj/item/stack/cable_coil/fabricator/split(var/tamount, var/force=FALSE)
+/obj/item/stack/cable_coil/fabricator/split(tamount, force=FALSE)
 	return
 
 /obj/item/stack/cable_coil/fabricator/get_cell()
@@ -828,7 +829,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		var/mob/living/silicon/robot/R = loc
 		return R.get_cell()
 
-/obj/item/stack/cable_coil/fabricator/use(var/used)
+/obj/item/stack/cable_coil/fabricator/use(used)
 	var/obj/item/cell/cell = get_cell()
 	if(cell) cell.use(used * cost_per_cable)
 

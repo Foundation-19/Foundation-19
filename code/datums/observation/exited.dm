@@ -21,4 +21,5 @@ GLOBAL_DATUM_INIT(exited_event, /decl/observ/exited, new)
 
 /atom/Exited(atom/movable/exitee, atom/new_loc)
 	. = ..()
+	SEND_SIGNAL(src, COMSIG_EXITED, src, exitee, new_loc)
 	GLOB.exited_event.raise_event(src, exitee, new_loc)

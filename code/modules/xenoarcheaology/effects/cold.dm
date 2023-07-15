@@ -9,10 +9,10 @@
 	effect = pick(EFFECT_TOUCH, EFFECT_AURA)
 	effect_type = pick(EFFECT_ORGANIC, EFFECT_BLUESPACE, EFFECT_SYNTH)
 
-/datum/artifact_effect/cold/DoEffectTouch(var/mob/user)
+/datum/artifact_effect/cold/DoEffectTouch(mob/user)
 	if(holder)
 		if (istype(user))
-			to_chat(user, "<span class='notice'>A chill passes up your spine!</span>")
+			to_chat(user, SPAN_NOTICE("A chill passes up your spine!"))
 		var/datum/gas_mixture/env = holder.loc.return_air()
 		if(env)
 			env.temperature = max(env.temperature - rand(5,50), 0)

@@ -10,9 +10,10 @@
 	BREAKING   - Indicates that the current loop is being terminated.
 	CONTINUING - Indicates that the rest of the current iteration of a loop is being skipped.
 */
-#define RETURNING  1
-#define BREAKING   2
-#define CONTINUING 4
+#define RETURNING  (1<<0)
+#define BREAKING   (1<<1)
+#define CONTINUING (1<<2)
+
 /n_Interpreter
 	var
 		scope
@@ -108,7 +109,7 @@
 								var/message = "Potential crash-inducing NTSL script detected at telecommunications server [Compiler.Holder] ([Holder.x], [Holder.y], [Holder.z])."
 
 								alertadmins = 1
-								message_admins(message, 1)
+								message_staff(message, 1)
 						break
 
 					if(istype(S, /node/statement/VariableAssignment))

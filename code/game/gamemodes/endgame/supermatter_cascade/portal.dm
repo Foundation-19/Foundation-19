@@ -27,7 +27,7 @@
 			M.see_rift(src)
 	eat()
 
-/obj/singularity/narsie/large/exit/acquire(var/mob/food)
+/obj/singularity/narsie/large/exit/acquire(mob/food)
 	return
 
 /obj/singularity/narsie/large/exit/consume(const/atom/A)
@@ -71,12 +71,12 @@
 	//thou shall always be able to see the rift
 	var/image/riftimage = null
 
-/mob/proc/see_rift(var/obj/singularity/narsie/large/exit/R)
+/mob/proc/see_rift(obj/singularity/narsie/large/exit/R)
 	var/turf/T_mob = get_turf(src)
 	if((R.z == get_z(T_mob)) && (get_dist(R,T_mob) <= (R.consume_range+10)) && !(R in view(T_mob)))
 		if(!riftimage)
 			riftimage = image('icons/obj/rift.dmi',T_mob,"rift",LIGHTING_LAYER+2,1)
-			riftimage.mouse_opacity = 0
+			riftimage.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 		var/new_x = 32 * (R.x - T_mob.x) + R.pixel_x
 		var/new_y = 32 * (R.y - T_mob.y) + R.pixel_y

@@ -49,8 +49,8 @@ SUBSYSTEM_DEF(supply)
 /datum/controller/subsystem/supply/fire()
 	add_points_from_source(points_per_process, "time")
 
-/datum/controller/subsystem/supply/stat_entry()
-	..("Points: [points]")
+/datum/controller/subsystem/supply/stat_entry(msg)
+	.=..("[msg] Points: [points]")
 
 //Supply-related helper procs.
 
@@ -184,7 +184,7 @@ SUBSYSTEM_DEF(supply)
 			slip.info += "</ul><br>CHECK CONTENTS AND STAMP BELOW THE LINE TO CONFIRM RECEIPT OF GOODS<hr>"
 
 // Adds any given item to the supply shuttle
-/datum/controller/subsystem/supply/proc/addAtom(var/atom/movable/A)
+/datum/controller/subsystem/supply/proc/addAtom(atom/movable/A)
 	var/list/clear_turfs = get_clear_turfs()
 	if(!clear_turfs.len)
 		return FALSE

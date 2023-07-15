@@ -72,3 +72,16 @@
 	var/mob/living/carbon/human/H = user.mob
 	H.give()
 	return TRUE
+
+/datum/keybinding/human/delay_blink
+	hotkey_keys = list("SPACEBAR")
+	name = "d_blink"
+	full_name = "Delay Blink"
+	description = "Spam in order to delay blinking."
+
+/datum/keybinding/human/delay_blink/down(client/user)
+	var/mob/living/carbon/human/H = user.mob
+	var/obj/item/organ/internal/eyes/h_eyes = H.internal_organs_by_name[BP_EYES]
+	h_eyes.delay_blink()
+	return TRUE
+

@@ -4,13 +4,13 @@
 	effect_type = EFFECT_ELECTRO
 	var/last_message
 
-/datum/artifact_effect/cellcharge/DoEffectTouch(var/mob/user)
+/datum/artifact_effect/cellcharge/DoEffectTouch(mob/user)
 	if(user)
 		if(istype(user, /mob/living/silicon/robot))
 			var/mob/living/silicon/robot/R = user
 			for (var/obj/item/cell/D in R.contents)
 				D.charge += rand() * 100 + 50
-				to_chat(R, "<span class='warning'>SYSTEM ALERT: Large energy boost detected!</span>")
+				to_chat(R, SPAN_WARNING("SYSTEM ALERT: Large energy boost detected!"))
 			return 1
 
 /datum/artifact_effect/cellcharge/DoEffectAura()
@@ -25,7 +25,7 @@
 			for (var/obj/item/cell/D in M.contents)
 				D.charge += 25
 				if(world.time - last_message > 200)
-					to_chat(M, "<span class='warning'>SYSTEM ALERT: Energy boost detected!</span>")
+					to_chat(M, SPAN_WARNING("SYSTEM ALERT: Energy boost detected!"))
 					last_message = world.time
 		return 1
 
@@ -41,6 +41,6 @@
 			for (var/obj/item/cell/D in M.contents)
 				D.charge += rand() * 100
 				if(world.time - last_message > 200)
-					to_chat(M, "<span class='warning'>SYSTEM ALERT: Energy boost detected!</span>")
+					to_chat(M, SPAN_WARNING("SYSTEM ALERT: Energy boost detected!"))
 					last_message = world.time
 		return 1

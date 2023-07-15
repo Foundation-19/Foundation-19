@@ -6,7 +6,7 @@
 	icon_state = "diamond"
 
 /obj/item/clothing/ring/engagement/attack_self(mob/user)
-	user.visible_message("<span class='warning'>\The [user] gets down on one knee, presenting \the [src].</span>","<span class='warning'>You get down on one knee, presenting \the [src].</span>")
+	user.visible_message(SPAN_WARNING("\The [user] gets down on one knee, presenting \the [src]."),SPAN_WARNING("You get down on one knee, presenting \the [src]."))
 
 /obj/item/clothing/ring/cti
 	name = "CTI ring"
@@ -36,12 +36,12 @@
 	desc = "A strange ring with symbols carved on it in some arcane language."
 	icon_state = "magic"
 
-/obj/item/clothing/ring/magic/equipped(var/mob/living/carbon/human/H, var/slot)
+/obj/item/clothing/ring/magic/equipped(mob/living/carbon/human/H, slot)
 	..()
 	if(istype(H) && slot == SLOT_GLOVES)
 		H.add_cloaking_source(src)
 
-/obj/item/clothing/ring/magic/dropped(var/mob/living/carbon/human/H)
+/obj/item/clothing/ring/magic/dropped(mob/living/carbon/human/H)
 	if(!..())
 		return 0
 
@@ -59,10 +59,10 @@
 	..()
 	create_reagents(15)
 
-/obj/item/clothing/ring/reagent/equipped(var/mob/living/carbon/human/H)
+/obj/item/clothing/ring/reagent/equipped(mob/living/carbon/human/H)
 	..()
 	if(istype(H) && H.gloves==src)
-		to_chat(H, "<span class='info'><b>You feel a prick as you slip on the ring.</b></span>")
+		to_chat(H, SPAN_INFO("<b>You feel a prick as you slip on the ring.</b>"))
 
 		if(reagents.total_volume)
 			if(H.reagents)
@@ -108,10 +108,10 @@
 
 /obj/item/clothing/ring/seal/signet/attack_self(mob/user)
 	if(nameset)
-		to_chat(user, "<span class='notice'>The [src] has already been claimed!</span>")
+		to_chat(user, SPAN_NOTICE("The [src] has already been claimed!"))
 		return
 
 	nameset = 1
-	to_chat(user, "<span class='notice'>You claim the [src] as your own!</span>")
+	to_chat(user, SPAN_NOTICE("You claim the [src] as your own!"))
 	name = "[user]'s signet ring"
 	desc = "A signet ring belonging to [user], for when you're too sophisticated to sign letters."

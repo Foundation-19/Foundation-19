@@ -22,7 +22,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user] releases a gout of crackling static and arcing lightning over \the [target]!</span>")
+		user.visible_message(SPAN_DANGER("\The [user] releases a gout of crackling static and arcing lightning over \the [target]!"))
 		empulse(target, 0, 1)
 		return TRUE
 
@@ -41,7 +41,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user] sends a jolt of electricity arcing into \the [target]!</span>")
+		user.visible_message(SPAN_DANGER("\The [user] sends a jolt of electricity arcing into \the [target]!"))
 		if(istype(target))
 			target.electrocute_act(rand(15,45), user, 1, user.zone_sel.selecting)
 			return TRUE
@@ -66,7 +66,7 @@
 		return
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user]'s eyes flare with light!</span>")
+		user.visible_message(SPAN_DANGER("\The [user]'s eyes flare with light!"))
 
 		var/user_rank = user.psi.get_rank(faculty)
 		var/obj/item/projectile/pew
@@ -115,7 +115,7 @@
 		if(istype(target,/obj/item/clothing/mask/smokable/cigarette))
 			var/obj/item/clothing/mask/smokable/cigarette/S = target
 			S.light("[user] snaps \his fingers and \the [S.name] lights up.")
-			playsound(S.loc, "sparks", 50, 1)
+			playsound(S.loc, SFX_SPARK, 50, 1)
 		else
 			var/datum/effect/effect/system/spark_spread/sparks = new ()
 			sparks.set_up(3, 0, get_turf(target))

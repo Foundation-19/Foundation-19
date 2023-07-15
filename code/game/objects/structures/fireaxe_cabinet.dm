@@ -11,12 +11,12 @@
 	var/shattered
 	var/obj/item/material/twohanded/fireaxe/fireaxe
 
-/obj/structure/fireaxecabinet/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+/obj/structure/fireaxecabinet/attack_generic(mob/user, damage, attack_verb, wallbreaker)
 	attack_animation(user)
 	playsound(user, 'sound/effects/Glasshit.ogg', 50, 1)
-	visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	visible_message(SPAN_DANGER("[user] [attack_verb] \the [src]!"))
 	if(damage_threshold > damage)
-		to_chat(user, "<span class='danger'>Your strike is deflected by the reinforced glass!</span>")
+		to_chat(user, SPAN_DANGER("Your strike is deflected by the reinforced glass!"))
 		return
 	if(shattered)
 		return
@@ -40,12 +40,12 @@
 	fireaxe = new(src)
 	update_icon()
 
-/obj/structure/fireaxecabinet/attack_ai(var/mob/user)
+/obj/structure/fireaxecabinet/attack_ai(mob/user)
 	toggle_lock(user)
 
-/obj/structure/fireaxecabinet/attack_hand(var/mob/user)
+/obj/structure/fireaxecabinet/attack_hand(mob/user)
 	if(!unlocked)
-		to_chat(user, "<span class='warning'>\The [src] is locked.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is locked."))
 		return
 	toggle_open(user)
 
@@ -56,11 +56,11 @@
 			return
 
 		if(!open)
-			to_chat(user, "<span class='warning'>\The [src] is closed.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is closed."))
 			return
 
 		if(!fireaxe)
-			to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is empty."))
 			return
 
 		user.put_in_hands(fireaxe)
@@ -75,7 +75,7 @@
 		fireaxe = null
 	return ..()
 
-/obj/structure/fireaxecabinet/attackby(var/obj/item/O, var/mob/user)
+/obj/structure/fireaxecabinet/attackby(obj/item/O, mob/user)
 
 	if(isMultitool(O))
 		toggle_lock(user)
@@ -84,11 +84,11 @@
 	if(istype(O, /obj/item/material/twohanded/fireaxe))
 		if(open)
 			if(fireaxe)
-				to_chat(user, "<span class='warning'>There is already \a [fireaxe] inside \the [src].</span>")
+				to_chat(user, SPAN_WARNING("There is already \a [fireaxe] inside \the [src]."))
 			else if(user.unEquip(O))
 				O.forceMove(src)
 				fireaxe = O
-				to_chat(user, "<span class='notice'>You place \the [fireaxe] into \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You place \the [fireaxe] into \the [src]."))
 				update_icon()
 			return
 
@@ -99,17 +99,17 @@
 
 	return ..()
 
-/obj/structure/fireaxecabinet/proc/toggle_open(var/mob/user)
+/obj/structure/fireaxecabinet/proc/toggle_open(mob/user)
 	if(shattered)
 		open = 1
 		unlocked = 1
 	else
 		user.setClickCooldown(10)
 		open = !open
-		to_chat(user, "<span class='notice'>You [open ? "open" : "close"] \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You [open ? "open" : "close"] \the [src]."))
 	update_icon()
 
-/obj/structure/fireaxecabinet/proc/toggle_lock(var/mob/user)
+/obj/structure/fireaxecabinet/proc/toggle_lock(mob/user)
 
 
 	if(open)
@@ -120,7 +120,7 @@
 		unlocked = 1
 	else
 		user.setClickCooldown(10)
-		to_chat(user, "<span class='notice'>You begin [unlocked ? "enabling" : "disabling"] \the [src]'s maglock.</span>")
+		to_chat(user, SPAN_NOTICE("You begin [unlocked ? "enabling" : "disabling"] \the [src]'s maglock."))
 
 		if(!do_after(user, 20,src))
 			return

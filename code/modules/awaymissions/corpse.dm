@@ -4,18 +4,18 @@
 
 //To do: Allow corpses to appear mangled, bloody, etc. Allow customizing the bodies appearance (they're all bald and white right now).
 
-#define CORPSE_SPAWNER_RANDOM_NAME       0x0001
-#define CORPSE_SPAWNER_CUT_SURVIVAL      0x0002
-#define CORPSE_SPAWNER_CUT_ID_PDA        0x0003
-#define CORPSE_SPAWNER_PLAIN_HEADSET     0x0004
+#define CORPSE_SPAWNER_RANDOM_NAME       	(1<<0)
+#define CORPSE_SPAWNER_CUT_SURVIVAL      	(1<<1)
+#define CORPSE_SPAWNER_CUT_ID_PDA        	(1<<2)
+#define CORPSE_SPAWNER_PLAIN_HEADSET     	(1<<3)
 
-#define CORPSE_SPAWNER_RANDOM_SKIN_TONE    0x0008
-#define CORPSE_SPAWNER_RANDOM_SKIN_COLOR   0x0010
-#define CORPSE_SPAWNER_RANDOM_HAIR_COLOR   0x0020
-#define CORPSE_SPAWNER_RANDOM_HAIR_STYLE   0x0040
-#define CORPSE_SPAWNER_RANDOM_FACIAL_STYLE 0x0080
-#define CORPSE_SPAWNER_RANDOM_EYE_COLOR    0x0100
-#define CORPSE_SPAWNER_RANDOM_GENDER       0x0200
+#define CORPSE_SPAWNER_RANDOM_SKIN_TONE    	(1<<4)
+#define CORPSE_SPAWNER_RANDOM_SKIN_COLOR   	(1<<5)
+#define CORPSE_SPAWNER_RANDOM_HAIR_COLOR   	(1<<6)
+#define CORPSE_SPAWNER_RANDOM_HAIR_STYLE   	(1<<7)
+#define CORPSE_SPAWNER_RANDOM_FACIAL_STYLE 	(1<<8)
+#define CORPSE_SPAWNER_RANDOM_EYE_COLOR    	(1<<9)
+#define CORPSE_SPAWNER_RANDOM_GENDER       	(1<<10)
 
 #define CORPSE_SPAWNER_NO_RANDOMIZATION ~(CORPSE_SPAWNER_RANDOM_NAME|CORPSE_SPAWNER_RANDOM_SKIN_TONE|CORPSE_SPAWNER_RANDOM_SKIN_COLOR|CORPSE_SPAWNER_RANDOM_HAIR_COLOR|CORPSE_SPAWNER_RANDOM_HAIR_STYLE|CORPSE_SPAWNER_RANDOM_FACIAL_STYLE|CORPSE_SPAWNER_RANDOM_EYE_COLOR)
 
@@ -34,6 +34,10 @@
 	var/facial_styles_per_species = list() // Custom facial hair styles, per species -type-, if any. See above as to why
 	var/genders_per_species       = list() // For gender biases per species -type-
 
+	// Spawn damage
+	var/brute_loss = 0
+	var/burn_loss = 0
+
 /obj/effect/landmark/corpse/Initialize()
 	..()
 	var/species_choice = pickweight(species)
@@ -41,7 +45,7 @@
 	return INITIALIZE_HINT_QDEL
 
 #define HEX_COLOR_TO_RGB_ARGS(X) arglist(GetHexColors(X))
-/obj/effect/landmark/corpse/proc/randomize_appearance(var/mob/living/carbon/human/M, species_choice)
+/obj/effect/landmark/corpse/proc/randomize_appearance(mob/living/carbon/human/M, species_choice)
 	if((spawn_flags & CORPSE_SPAWNER_RANDOM_GENDER))
 		if(species_choice in genders_per_species)
 			M.change_gender(pick(genders_per_species[species_choice]))
@@ -94,7 +98,7 @@
 
 #undef HEX_COLOR_TO_RGB_ARGS
 
-/obj/effect/landmark/corpse/proc/equip_outfit(var/mob/living/carbon/human/M)
+/obj/effect/landmark/corpse/proc/equip_outfit(mob/living/carbon/human/M)
 	var/adjustments = 0
 	adjustments = (spawn_flags & CORPSE_SPAWNER_CUT_SURVIVAL)  ? (adjustments|OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR) : adjustments
 	adjustments = (spawn_flags & CORPSE_SPAWNER_CUT_ID_PDA)    ? (adjustments|OUTFIT_ADJUSTMENT_SKIP_ID_PDA)        : adjustments
@@ -102,45 +106,6 @@
 
 	var/decl/hierarchy/outfit/corpse_outfit = outfit_by_type(pickweight(corpse_outfits))
 	corpse_outfit.equip(M, equip_adjustments = adjustments)
-
-/obj/effect/landmark/corpse/chef
-	name = "Chef"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/service/chef)
-
-/obj/effect/landmark/corpse/doctor
-	name = "Doctor"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/medical/doctor)
-
-/obj/effect/landmark/corpse/engineer
-	name = "Engineer"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/engineering/engineer)
-
-/obj/effect/landmark/corpse/scientist
-	name = "Scientist"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/science/scientist)
-
-/obj/effect/landmark/corpse/engineer/rig
-	corpse_outfits = list(/decl/hierarchy/outfit/job/engineering/engineer/void)
-
-/obj/effect/landmark/corpse/clown
-	name = "Clown"
-	corpse_outfits = list(/decl/hierarchy/outfit/clown)
-
-/obj/effect/landmark/corpse/miner
-	name = "Miner"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/cargo/mining)
-
-/obj/effect/landmark/corpse/miner/rig
-	corpse_outfits = list(/decl/hierarchy/outfit/job/cargo/mining/void)
-
-
-/obj/effect/landmark/corpse/bridgeofficer
-	name = "Bridge Officer"
-	corpse_outfits = list(/decl/hierarchy/outfit/nanotrasen/officer)
-
-/obj/effect/landmark/corpse/commander
-	name = "Commander"
-	corpse_outfits = list(/decl/hierarchy/outfit/nanotrasen/commander)
 
 /obj/effect/landmark/corpse/pirate
 	name = "Pirate"
@@ -167,3 +132,7 @@
 /obj/effect/landmark/corpse/syndicate/commando
 	name = "Syndicate Commando"
 	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate/commando)
+
+/obj/effect/landmark/corpse/riot_officer
+	name = "Riot Officer"
+	corpse_outfits = list(/decl/hierarchy/outfit/job/security/officer/armored/riot)

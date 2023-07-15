@@ -26,6 +26,9 @@
 	if(!(atom_flags & ATOM_FLAG_INITIALIZED))
 		crash_with("Was deleted before initalization")
 
+	if(loc)
+		loc.handle_atom_del(src)
+
 	for(var/A in src)
 		qdel(A)
 
@@ -47,7 +50,7 @@
 
 	. = ..()
 
-/atom/movable/Bump(var/atom/A, yes)
+/atom/movable/Bump(atom/A, yes)
 	if(!QDELETED(throwing))
 		throwing.hit_atom(A)
 
@@ -87,6 +90,9 @@
 					AM.Crossed(src)
 			if(is_new_area && is_destination_turf)
 				destination.loc.Entered(src, origin)
+
+	SEND_SIGNAL(src, COMSIG_MOVED, src, origin, destination)
+
 	return 1
 
 /atom/movable/forceMove(atom/dest)
@@ -123,7 +129,7 @@
 				L.source_atom.update_light()
 
 //called when src is thrown into hit_atom
-/atom/movable/proc/throw_impact(atom/hit_atom, var/datum/thrownthing/TT)
+/atom/movable/proc/throw_impact(atom/hit_atom, datum/thrownthing/TT)
 	if(istype(hit_atom,/mob/living))
 		var/mob/living/M = hit_atom
 		M.hitby(src,TT)
@@ -247,4 +253,8 @@
 * Called from [/atom/movable/proc/keyLoop], this exists to be overwritten by living mobs with a check to see if we're actually alive enough to change directions
 */
 /atom/movable/proc/keybind_face_direction(direction)
+	return
+
+/// Handles special effects of item being removed from "implants" of a mob
+/atom/movable/proc/ImplantRemoval(mob/user)
 	return

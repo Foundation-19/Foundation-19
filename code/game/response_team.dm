@@ -12,20 +12,20 @@ var/can_call_ert
 	set desc = "Send an emergency response team"
 
 	if(!holder)
-		to_chat(usr, "<span class='danger'>Only administrators may use this command.</span>")
+		to_chat(usr, SPAN_DANGER("Only administrators may use this command."))
 		return
 	if(GAME_STATE < RUNLEVEL_GAME)
-		to_chat(usr, "<span class='danger'>The game hasn't started yet!</span>")
+		to_chat(usr, SPAN_DANGER("The game hasn't started yet!"))
 		return
 	if(send_emergency_team)
-		to_chat(usr, "<span class='danger'>[GLOB.using_map.boss_name] has already dispatched an emergency response team!</span>")
+		to_chat(usr, SPAN_DANGER("[GLOB.using_map.boss_name] has already dispatched an emergency response team!"))
 		return
 	if(alert("Do you want to dispatch an Emergency Response Team?",,"Yes","No") != "Yes")
 		return
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	if(security_state.current_security_level_is_lower_than(security_state.high_security_level)) // Allow admins to reconsider if the alert level is below High
-		switch(alert("Current security level lower than [security_state.high_security_level.name]. Do you still want to dispatch a response team?",,"Yes","No"))
+	if(security_state.current_security_level_is_lower_than(security_state.severe_security_level)) // Allow admins to reconsider if the alert level is below High
+		switch(alert("Current security level lower than [security_state.severe_security_level.name]. Do you still want to dispatch a response team?",,"Yes","No"))
 			if("No")
 				return
 
@@ -39,9 +39,9 @@ var/can_call_ert
 		return
 
 	if(reason)
-		message_admins("[key_name_admin(usr)] is dispatching an Emergency Response Team for the reason: [reason]", 1)
+		message_staff("[key_name_admin(usr)] is dispatching an Emergency Response Team for the reason: [reason]", 1)
 	else
-		message_admins("[key_name_admin(usr)] is dispatching an Emergency Response Team.", 1)
+		message_staff("[key_name_admin(usr)] is dispatching an Emergency Response Team.", 1)
 
 	log_admin("[key_name(usr)] used Dispatch Response Team.")
 	trigger_armed_response_team(1, reason)
@@ -52,7 +52,7 @@ var/can_call_ert
 	set category = "IC"
 
 	if(!MayRespawn(1))
-		to_chat(usr, "<span class='warning'>You cannot join the response team at this time.</span>")
+		to_chat(usr, SPAN_WARNING("You cannot join the response team at this time."))
 		return
 
 	if(isghost(usr) || isnewplayer(usr))
@@ -60,7 +60,7 @@ var/can_call_ert
 			to_chat(usr, "No emergency response team is currently being sent.")
 			return
 		if(jobban_isbanned(usr, MODE_ERT) || jobban_isbanned(usr, "Security Officer"))
-			to_chat(usr, "<span class='danger'>You are jobbanned from the emergency reponse team!</span>")
+			to_chat(usr, SPAN_DANGER("You are jobbanned from the emergency reponse team!"))
 			return
 		if(GLOB.ert.current_antagonists.len >= GLOB.ert.hard_cap)
 			to_chat(usr, "The emergency response team is already full!")
@@ -99,11 +99,11 @@ var/can_call_ert
 	while(send_emergency_team == 0) // There is no ERT at the time.
 		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 		var/index = list_find(security_state.all_security_levels, security_state.current_security_level)
-		ert_base_chance += 2**index
+		ert_base_chance += index
 		sleep(600 * 3) // Minute * Number of Minutes
 
 
-/proc/trigger_armed_response_team(var/force = 0, var/reason = "")
+/proc/trigger_armed_response_team(force = 0, reason = "")
 	if(!can_call_ert && !force)
 		return
 	if(send_emergency_team)
@@ -123,7 +123,6 @@ var/can_call_ert
 		return
 
 	command_announcement.Announce("It would appear that an emergency response team was requested for [station_name()]. We will prepare and send one as soon as possible.", "[GLOB.using_map.boss_name]")
-	evacuation_controller.add_can_call_predicate(new/datum/evacuation_predicate/ert())
 
 	GLOB.ert.reason = reason //Set it even if it's blank to clear a reason from a previous ERT
 
@@ -132,19 +131,3 @@ var/can_call_ert
 
 	sleep(600 * 5)
 	send_emergency_team = 0 // Can no longer join the ERT.
-
-/datum/evacuation_predicate/ert
-	var/prevent_until
-
-/datum/evacuation_predicate/ert/New()
-	..()
-	prevent_until = world.time + 30 MINUTES
-
-/datum/evacuation_predicate/ert/is_valid()
-	return world.time < prevent_until
-
-/datum/evacuation_predicate/ert/can_call(var/user)
-	if(world.time >= prevent_until)
-		return TRUE
-	to_chat(user, "<span class='warning'>An emergency response team has been dispatched. Evacuation requests will be denied until [duration2stationtime(prevent_until - world.time)].</span>")
-	return FALSE

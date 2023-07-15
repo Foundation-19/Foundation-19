@@ -140,7 +140,7 @@
 	return candidates
 
 // Builds a list of potential antags without actually setting them. Used to test mode viability.
-/datum/antagonist/proc/get_potential_candidates(var/datum/game_mode/mode, var/ghosts_only)
+/datum/antagonist/proc/get_potential_candidates(datum/game_mode/mode, ghosts_only)
 	var/candidates = list()
 
 	// Keeping broken up for readability
@@ -168,25 +168,25 @@
 
 	update_current_antag_max(SSticker.mode)
 	var/active_antags = get_active_antag_count()
-	message_admins("[uppertext(id)]: Found [active_antags]/[cur_max] active [role_text_plural].")
+	message_staff("[uppertext(id)]: Found [active_antags]/[cur_max] active [role_text_plural].")
 
 	if(active_antags >= cur_max)
-		message_admins("Could not auto-spawn a [role_text], active antag limit reached.")
+		message_staff("Could not auto-spawn a [role_text], active antag limit reached.")
 		return 0
 
 	build_candidate_list(SSticker.mode, flags & (ANTAG_OVERRIDE_MOB|ANTAG_OVERRIDE_JOB))
 	if(!candidates.len)
-		message_admins("Could not auto-spawn a [role_text], no candidates found.")
+		message_staff("Could not auto-spawn a [role_text], no candidates found.")
 		return 0
 
 	attempt_spawn(1) //auto-spawn antags one at a time
 	if(!pending_antagonists.len)
-		message_admins("Could not auto-spawn a [role_text], none of the available candidates could be selected.")
+		message_staff("Could not auto-spawn a [role_text], none of the available candidates could be selected.")
 		return 0
 
 	var/datum/mind/player = pending_antagonists[1]
 	if(!add_antagonist(player,0,0,0,1,1))
-		message_admins("Could not auto-spawn a [role_text], failed to add antagonist.")
+		message_staff("Could not auto-spawn a [role_text], failed to add antagonist.")
 		return 0
 
 	reset_antag_selection()
@@ -198,7 +198,7 @@
 //Attempting to spawn an antag role with ANTAG_OVERRIDE_JOB should be done before jobs are assigned,
 //so that they do not occupy regular job slots. All other antag roles should be spawned after jobs are
 //assigned, so that job restrictions can be respected.
-/datum/antagonist/proc/attempt_spawn(var/spawn_target = null)
+/datum/antagonist/proc/attempt_spawn(spawn_target = null)
 	if(spawn_target == null)
 		spawn_target = initial_spawn_target
 
@@ -214,7 +214,7 @@
 
 	return 1
 
-/datum/antagonist/proc/draft_antagonist(var/datum/mind/player)
+/datum/antagonist/proc/draft_antagonist(datum/mind/player)
 	//Check if the player can join in this antag role, or if the player has already been given an antag role.
 	if(!can_become_antag(player))
 		log_debug("[player.key] was selected for [role_text] by lottery, but is not allowed to be that role.")

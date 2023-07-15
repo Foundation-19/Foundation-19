@@ -25,36 +25,33 @@
 				[GLOB.using_map.company_name] declined to comment as to whether this could impinge on profits."
 
 			if(ELECTION)
-				body = "The pre-selection of an additional candidates was announced for the upcoming [pick("supervisors council","advisory board","governership","board of inquisitors")] \
+				body = "The pre-selection of an additional candidate for the upcoming [pick("supervisors council","advisory board","governership","board of inquisitors")] \
 				election on [affected_dest.name] was announced earlier today, \
 				[pick("media mogul","web celebrity", "industry titan", "superstar", "famed chef", "popular gardener", "ex-army officer", "multi-billionaire")] \
 				[random_name(pick(MALE,FEMALE))]. In a statement to the media they said '[pick("My only goal is to help the [pick("sick","poor","children")]",\
 				"I will maintain my company's record profits","I believe in our future","We must return to our moral core","Just like... chill out dudes")]'."
 
 			if(RESIGNATION)
-				body = "[GLOB.using_map.company_name] regretfully announces the resignation of [pick("Sector Admiral","Division Admiral","Ship Admiral","Vice Admiral")] [random_name(pick(MALE,FEMALE))]."
-				if(prob(25))
-					var/locstring = pick("Segunda","Salusa","Cepheus","Andromeda","Gruis","Corona","Aquila","Asellus") + " " + pick("I","II","III","IV","V","VI","VII","VIII")
+				body = "[GLOB.using_map.company_name] regretfully announces the resignation of [pick("Site Director","Overseer","Department Head","Janitor")] [random_name(pick(MALE,FEMALE))]."
+				if(prob(33))
 					body += " In a ceremony on [affected_dest.name] this afternoon, they will be awarded the \
 					[pick("Red Star of Sacrifice","Purple Heart of Heroism","Blue Eagle of Loyalty","Green Lion of Ingenuity")] for "
 					if(prob(33))
-						body += "their actions at the Battle of [pick(locstring,"REDACTED")]."
+						body += "their actions during Incident-[rand(1,99)]-[rand(111,999)]."
 					else if(prob(50))
-						body += "their contribution to the colony of [locstring]."
+						body += "their contribution to [pick("Site","Area","Outpost")]-[rand(1,99)]."
 					else
 						body += "their loyal service over the years."
-				else if(prob(33))
-					body += " They are expected to settle down in [affected_dest.name], where they have been granted a handsome pension."
 				else if(prob(50))
-					body += " The news was broken on [affected_dest.name] earlier today, where they cited reasons of '[pick("health","family","REDACTED")]'"
+					body += " They are expected to settle down in [affected_dest.name], where they have been granted a handsome pension."
 				else
-					body += " Administration Aerospace wishes them the best of luck in their retirement ceremony on [affected_dest.name]."
+					body += " The news was broken on [affected_dest.name] earlier today, where they cited reasons of '[pick("health","family","\[REDACTED\]")]'"
 
 			if(CELEBRITY_DEATH)
 				body = "It is with regret today that we announce the sudden passing of the "
 				if(prob(33))
 					body += "[pick("distinguished","decorated","veteran","highly respected")] \
-					[pick("Ship's Captain","Vice Admiral","Colonel","Lieutenant Colonel")] "
+					[pick("Captain","Vice Admiral","Colonel","Lieutenant Colonel")] "
 				else if(prob(50))
 					body += "[pick("award-winning","popular","highly respected","trend-setting")] \
 					[pick("comedian","singer/songwright","artist","playwright","TV personality","model")] "
@@ -64,7 +61,7 @@
 
 				body += "[random_name(pick(MALE,FEMALE))] on [affected_dest.name] [pick("last week","yesterday","this morning","two days ago","three days ago")]\
 				[pick(". Assassination is suspected, but the perpetrators have not yet been brought to justice",\
-				" due to mercenary infiltrators (since captured)",\
+				" due to mercenary terrorists (since captured)",\
 				" during an industrial accident",\
 				" due to [pick("heart failure","kidney failure","liver failure","brain hemorrhage")]")]"
 
@@ -75,7 +72,7 @@
 			if(SONG_DEBUT)
 				body += "[pick("Singer","Singer/songwriter","Saxophonist","Pianist","Guitarist","TV personality","Star")] [random_name(pick(MALE,FEMALE))] \
 				announced the debut of their new [pick("single","album","EP","label")] '[pick("Everyone's","Look at the","Baby don't eye those","All of those","Dirty nasty")] \
-				[pick("roses","three stars","starships","nanobots","cyborgs",SPECIES_SKRELL,"Sren'darr")] \
+				[pick("roses","three stars","starships","nanobots","cyborgs")] \
 				[pick("on Venus","on Reade","on Moghes","in my hand","slip through my fingers","die for you","sing your heart out","fly away")]' \
 				with [pick("pre-puchases available","a release tour","cover signings","a launch concert")] on [affected_dest.name]."
 
@@ -143,13 +140,13 @@
 	"Woodchuck stops counting how many times he's chucked 'Never again'.",\
 	"[affected_dest.name] clerk first person able to pronounce '@*$%!'.",\
 	"[affected_dest.name] delis serving boiled paperback dictionaries, 'Adjectives chewy' customers declare.",\
-	"[affected_dest.name] weather deemed 'boring'; meteors and rad storms to be imported.",\
+	"[affected_dest.name] weather deemed 'boring'; tornadoes and acid rain to be imported.",\
 	"Most [affected_dest.name] security officers prefer cream over sugar.",\
 	"Palindrome speakers conference in [affected_dest.name]; 'Wow!' says Otto.",\
 	"Question mark worshipped as deity by ancient [affected_dest.name] dwellers.",\
 	"Spilled milk causes whole [affected_dest.name] populace to cry.",\
-	"World largest carp patty at display on [affected_dest.name].",\
-	"Man travels 7000 light years to retrieve lost hankie, 'It was my favourite'.",\
+	"World largest patty at display on [affected_dest.name].",\
+	"Man travels 700 miles on foot to retrieve lost hankie, 'It was my favourite'.",\
 	"New bowling lane that shoots mini-meteors at bowlers very popular.",\
 	"[pick(SPECIES_UNATHI,"Spacer")] gets tattoo of Nyx on chest '[pick("[GLOB.using_map.boss_short]","star","starship","asteroid")] tickles most'.",\
 	"Skrell marries computer; wedding attended by 100 modems.",\
@@ -164,7 +161,7 @@
 	"Survey: 'Cheese Louise' Voted Best Pizza Restaurant In Nyx",\
 	"I Was Framed, jokes [affected_dest.name] artist",\
 	"Mysterious Loud Rumbling Noises In [affected_dest.name] Found To Be Mysterious Loud Rumblings",\
-	"Alien ambassador becomes lost on [affected_dest.name], refuses to ask for directions",\
+	"Foreign ambassador becomes lost on [affected_dest.name], refuses to ask for directions",\
 	"Swamp Gas Verified To Be Exhalations Of Stars--Movie Stars--Long Passed",\
 	"Tainted Broccoli Weapon Of Choice For Efficient Assassins",\
 	"Chefs Find Broccoli Effective Tool For Cutting Cheese",\
@@ -193,7 +190,7 @@
 	"From The Desk Of Wise Guy Sammy: Two Points Determine A Straight Line",\
 	"From The Desk Of Wise Guy Sammy: Reading Improves The Mind And Lifts The Spirit",\
 	"From The Desk Of Wise Guy Sammy: Better To Aim High And Miss Then To Aim Low And Hit",\
-	"From The Desk Of Wise Guy Sammy: Meteors Often Strike The Same Place More Than Once",\
+	"From The Desk Of Wise Guy Sammy: Lightning Often Strikes The Same Place More Than Once",\
 	"Tommy B. Saif Sez: Look Both Ways Before Boarding The Shuttle",\
 	"Tommy B. Saif Sez: Hold On; Sudden Stops Sometimes Necessary",\
 	"Tommy B. Saif Sez: Keep Fingers Away From Moving Panels",\

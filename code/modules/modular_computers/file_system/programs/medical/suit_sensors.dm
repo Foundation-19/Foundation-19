@@ -6,12 +6,11 @@
 	program_icon_state = "crew"
 	program_key_state = "med_key"
 	program_menu_icon = "heart"
-	extended_desc = "This program connects to life signs monitoring system to provide basic information on crew health."
-	required_access = access_medicallvl1
+	extended_desc = "This program connects to life signs monitoring system to provide basic information on personnel health."
+	required_access = ACCESS_MEDICAL_LVL1
 	requires_ntnet = TRUE
 	network_destination = "crew lifesigns monitoring system"
 	size = 11
-	category = PROG_MONITOR
 	var/has_alert = FALSE
 
 /datum/computer_file/program/suit_sensors/process_tick()
@@ -50,7 +49,7 @@
 				AI.ai_actual_track(H)
 		return 1
 
-/datum/nano_module/crew_monitor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/crew_monitor/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
 	data["isAI"] = isAI(user)

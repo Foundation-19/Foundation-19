@@ -8,17 +8,15 @@
 	desc = "This is rubbish."
 	var/age = 0
 
-/obj/item/trash/New(var/newloc, var/_age)
+/obj/item/trash/New(newloc, _age)
 	..(newloc)
 	if(!isnull(_age))
 		age = _age
 
 /obj/item/trash/Initialize()
-	SSpersistence.track_value(src, /datum/persistent/filth/trash)
 	. = ..()
 
 /obj/item/trash/Destroy()
-	SSpersistence.forget_value(src, /datum/persistent/filth/trash)
 	. = ..()
 
 /obj/item/trash/raisins

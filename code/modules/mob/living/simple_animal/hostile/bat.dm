@@ -31,12 +31,12 @@
 
 	var/scare_chance = 15
 
-/mob/living/simple_animal/hostile/scarybat/apply_melee_effects(var/atom/A)
+/mob/living/simple_animal/hostile/scarybat/apply_melee_effects(atom/A)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(prob(scare_chance))
 			L.Stun(1)
-			L.visible_message("<span class='danger'>\the [src] scares \the [L]!</span>")
+			L.visible_message(SPAN_DANGER("\the [src] scares \the [L]!"))
 
 // Spookiest of bats
 /mob/living/simple_animal/hostile/scarybat/cult

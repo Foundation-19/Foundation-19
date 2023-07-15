@@ -9,8 +9,8 @@ would spawn and follow the beaker, even if it is carried or thrown.
 /obj/effect/effect
 	name = "effect"
 	icon = 'icons/effects/effects.dmi'
-	mouse_opacity = 0
-	unacidable = TRUE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	acid_resistance = -1
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 
 /datum/effect/effect/system
@@ -71,7 +71,7 @@ steam.start() -- spawns the effect
 	for(i=0, i<src.number, i++)
 		addtimer(CALLBACK(src, /datum/effect/effect/system/proc/spread, i), 0)
 
-/datum/effect/effect/system/steam_spread/spread(var/i)
+/datum/effect/effect/system/steam_spread/spread(i)
 	set waitfor = 0
 	if(holder)
 		src.location = get_turf(holder)
@@ -99,11 +99,11 @@ steam.start() -- spawns the effect
 	icon = 'icons/effects/effects.dmi'
 	var/amount = 6.0
 	anchored = TRUE
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/effect/sparks/New()
 	..()
-	playsound(src.loc, "sparks", 100, 1)
+	playsound(src.loc, SFX_SPARK, 100, 1)
 	var/turf/T = src.loc
 	if (istype(T, /turf))
 		T.hotspot_expose(1000,100)
@@ -141,7 +141,7 @@ steam.start() -- spawns the effect
 	for(i=0, i<src.number, i++)
 		addtimer(CALLBACK(src, /datum/effect/effect/system/proc/spread, i), 0)
 
-/datum/effect/effect/system/spark_spread/spread(var/i)
+/datum/effect/effect/system/spark_spread/spread(i)
 	set waitfor = 0
 	if(holder)
 		src.location = get_turf(holder)
@@ -174,7 +174,7 @@ steam.start() -- spawns the effect
 	icon_state = "smoke"
 	opacity = 1
 	anchored = FALSE
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/amount = 6.0
 	var/time_to_live = 100
 
@@ -183,16 +183,26 @@ steam.start() -- spawns the effect
 	pixel_x = -32
 	pixel_y = -32
 
-/obj/effect/effect/smoke/New()
-	..()
-	QDEL_IN(src, time_to_live)
+/obj/effect/effect/smoke/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, .proc/fade_out), time_to_live)
 
 /obj/effect/effect/smoke/Crossed(mob/living/carbon/M as mob )
 	..()
 	if(istype(M))
 		affect(M)
 
-/obj/effect/effect/smoke/proc/affect(var/mob/living/carbon/M)
+/// Fades out the smoke smoothly using it's alpha variable.
+/obj/effect/effect/smoke/proc/fade_out(frames = 16)
+	set_opacity(FALSE)
+	frames = max(frames, 1) //We will just assume that by 0 frames, the coder meant "during one frame".
+	var/alpha_step = round(alpha / frames)
+	while(alpha > 0)
+		alpha = max(0, alpha - alpha_step)
+		sleep(world.tick_lag)
+	qdel(src)
+
+/obj/effect/effect/smoke/proc/affect(mob/living/carbon/M)
 	if (!istype(M))
 		return 0
 	if (M.isSynthetic())
@@ -217,7 +227,7 @@ steam.start() -- spawns the effect
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "sparks"
 
-/obj/effect/effect/smoke/illumination/New(var/newloc, var/lifetime=10, var/range=null, var/power=null, var/color=null)
+/obj/effect/effect/smoke/illumination/New(newloc, lifetime=10, range=null, power=null, color=null)
 	set_light(power, 0.1, range, 2, color)
 	time_to_live=lifetime
 	..()
@@ -234,7 +244,7 @@ steam.start() -- spawns the effect
 	for(var/mob/living/carbon/M in get_turf(src))
 		affect(M)
 
-/obj/effect/effect/smoke/bad/affect(var/mob/living/carbon/M)
+/obj/effect/effect/smoke/bad/affect(mob/living/carbon/M)
 	if (!..())
 		return 0
 	M.unequip_item()
@@ -285,7 +295,7 @@ steam.start() -- spawns the effect
 	for(var/mob/living/carbon/human/R in get_turf(src))
 		affect(R)
 
-/obj/effect/effect/smoke/mustard/affect(var/mob/living/carbon/human/R)
+/obj/effect/effect/smoke/mustard/affect(mob/living/carbon/human/R)
 	if (!..())
 		return 0
 	if (R.wear_suit != null)
@@ -327,7 +337,7 @@ steam.start() -- spawns the effect
 			return
 		addtimer(CALLBACK(src, /datum/effect/effect/system/proc/spread, i), 0)
 
-/datum/effect/effect/system/smoke_spread/spread(var/i)
+/datum/effect/effect/system/smoke_spread/spread(i)
 	if(holder)
 		src.location = get_turf(holder)
 	var/obj/effect/effect/smoke/smoke = new smoke_type(location)
@@ -374,7 +384,7 @@ steam.start() -- spawns the effect
 	var/trail_type
 	var/duration_of_effect = 10
 
-/datum/effect/effect/system/trail/set_up(var/atom/atom)
+/datum/effect/effect/system/trail/set_up(atom/atom)
 	attach(atom)
 	oldposition = get_turf(atom)
 
@@ -410,7 +420,7 @@ steam.start() -- spawns the effect
 	src.processing = 0
 	src.on = 0
 
-/datum/effect/effect/system/trail/proc/effect(var/obj/effect/effect/T)
+/datum/effect/effect/system/trail/proc/effect(obj/effect/effect/T)
 	T.set_dir(src.holder.dir)
 	return
 
@@ -424,7 +434,7 @@ steam.start() -- spawns the effect
 	specific_turfs = list(/turf/space)
 	duration_of_effect = 20
 
-/datum/effect/effect/system/trail/ion/effect(var/obj/effect/effect/T)
+/datum/effect/effect/system/trail/ion/effect(obj/effect/effect/T)
 	..()
 	flick("ion_fade", T)
 	T.icon_state = "blank"
@@ -471,10 +481,10 @@ steam.start() -- spawns the effect
 		s.start()
 
 		for(var/mob/M in viewers(5, location))
-			to_chat(M, "<span class='warning'>The solution violently explodes.</span>")
+			to_chat(M, SPAN_WARNING("The solution violently explodes."))
 		for(var/mob/M in viewers(1, location))
 			if (prob (50 * amount))
-				to_chat(M, "<span class='warning'>The explosion knocks you down.</span>")
+				to_chat(M, SPAN_WARNING("The explosion knocks you down."))
 				M.Weaken(rand(1,5))
 		return
 	else
@@ -497,7 +507,7 @@ steam.start() -- spawns the effect
 			flash = (amount/4) * flashing_factor
 
 		for(var/mob/M in viewers(8, location))
-			to_chat(M, "<span class='warning'>The solution violently explodes.</span>")
+			to_chat(M, SPAN_WARNING("The solution violently explodes."))
 
 		explosion(
 			location,

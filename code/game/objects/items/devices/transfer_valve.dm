@@ -11,7 +11,7 @@
 	var/toggle = 1
 	movable_flags = MOVABLE_FLAG_PROXMOVE
 
-/obj/item/device/transfer_valve/proc/process_activation(var/obj/item/device/D)
+/obj/item/device/transfer_valve/proc/process_activation(obj/item/device/D)
 
 /obj/item/device/transfer_valve/IsAssemblyHolder()
 	return 1
@@ -23,7 +23,7 @@
 		var/T1_weight = 0
 		var/T2_weight = 0
 		if(tank_one && tank_two)
-			to_chat(user, "<span class='warning'>There are already two tanks attached, remove one first.</span>")
+			to_chat(user, SPAN_WARNING("There are already two tanks attached, remove one first."))
 			return
 
 		if(!user.unEquip(item, src))
@@ -32,9 +32,9 @@
 			tank_one = item
 		else
 			tank_two = item
-			message_admins("[key_name_admin(user)] attached both tanks to a transfer valve. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
+			message_staff("[key_name_admin(user)] attached both tanks to a transfer valve. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
 			log_game("[key_name_admin(user)] attached both tanks to a transfer valve.")
-		to_chat(user, "<span class='notice'>You attach the tank to the transfer valve.</span>")
+		to_chat(user, SPAN_NOTICE("You attach the tank to the transfer valve."))
 
 		T1_weight = tank_one.w_class
 		if(tank_two)
@@ -49,20 +49,20 @@
 	else if(isassembly(item))
 		var/obj/item/device/assembly/A = item
 		if(A.secured)
-			to_chat(user, "<span class='notice'>The device is secured.</span>")
+			to_chat(user, SPAN_NOTICE("The device is secured."))
 			return
 		if(attached_device)
-			to_chat(user, "<span class='warning'>There is already an device attached to the valve, remove it first.</span>")
+			to_chat(user, SPAN_WARNING("There is already an device attached to the valve, remove it first."))
 			return
 		if(!user.unEquip(item, src))
 			return
 		attached_device = A
-		to_chat(user, "<span class='notice'>You attach the [item] to the valve controls and secure it.</span>")
+		to_chat(user, SPAN_NOTICE("You attach the [item] to the valve controls and secure it."))
 		A.holder = src
 		A.toggle_secure()	//this calls update_icon(), which calls update_icon() on the holder (i.e. the bomb).
 
 		GLOB.bombers += "[key_name(user)] attached a [item] to a transfer valve."
-		message_admins("[key_name_admin(user)] attached a [item] to a transfer valve. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
+		message_staff("[key_name_admin(user)] attached a [item] to a transfer valve. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
 		log_game("[key_name_admin(user)] attached a [item] to a transfer valve.")
 		attacher = user
 		SSnano.update_uis(src) // update all UIs attached to src
@@ -78,7 +78,7 @@
 /obj/item/device/transfer_valve/attack_self(mob/user as mob)
 	ui_interact(user)
 
-/obj/item/device/transfer_valve/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/item/device/transfer_valve/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 
 	// this is the data which will be sent to the ui
 	var/data[0]
@@ -122,7 +122,7 @@
 			attached_device.attack_self(usr)
 	return 1 // Returning 1 sends an update to attached UIs
 
-/obj/item/device/transfer_valve/process_activation(var/obj/item/device/D)
+/obj/item/device/transfer_valve/process_activation(obj/item/device/D)
 	if(toggle)
 		toggle = 0
 		toggle_valve()
@@ -212,7 +212,7 @@
 
 		log_str += " Last touched by: [src.fingerprintslast][last_touch_info]"
 		GLOB.bombers += log_str
-		message_admins(log_str, 0, 1)
+		message_staff(log_str, 0, 1)
 		log_game(log_str)
 		merge_gases()
 

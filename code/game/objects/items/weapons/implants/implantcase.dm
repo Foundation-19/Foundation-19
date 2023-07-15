@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 /obj/item/implantcase
 	name = "glass case"
 	desc = "A case containing an implant."
@@ -64,7 +62,7 @@
 		update_icon()
 		M.update_icon()
 	else if (istype(I, /obj/item/implant) && user.unEquip(I, src))
-		to_chat(usr, "<span class='notice'>You slide \the [I] into \the [src].</span>")
+		to_chat(usr, SPAN_NOTICE("You slide \the [I] into \the [src]."))
 		imp = I
 		update_description()
 		update_icon()

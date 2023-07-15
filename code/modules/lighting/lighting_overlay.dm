@@ -1,7 +1,7 @@
 /var/total_lighting_overlays = 0
 /atom/movable/lighting_overlay
 	name = ""
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	simulated = FALSE
 	anchored = TRUE
 	icon = LIGHTING_ICON
@@ -26,7 +26,7 @@
 	atom_flags |= ATOM_FLAG_INITIALIZED
 	return INITIALIZE_HINT_NORMAL
 
-/atom/movable/lighting_overlay/New(var/atom/loc, var/no_update = FALSE)
+/atom/movable/lighting_overlay/New(atom/loc, no_update = FALSE)
 	var/turf/T = loc //If this runtimes atleast we'll know what's creating overlays outside of turfs.
 	if(T.dynamic_lighting)
 		. = ..()

@@ -44,7 +44,7 @@ SUBSYSTEM_DEF(goals)
 		dept.Initialize()
 	. = ..()
 
-/datum/controller/subsystem/goals/proc/update_department_goal(var/department_flag, var/goal_type, var/progress)
+/datum/controller/subsystem/goals/proc/update_department_goal(department_flag, goal_type, progress)
 	var/datum/department/dept = departments["[department_flag]"]
 	if(dept)
 		dept.update_progress(goal_type, progress)

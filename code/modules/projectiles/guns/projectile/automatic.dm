@@ -282,17 +282,17 @@
 	var/cover_open = 0
 
 /obj/item/gun/projectile/automatic/l6_saw/mag
-	magazine_type = /obj/item/ammo_magazine/rifle
+	magazine_type = /obj/item/ammo_magazine/box/machinegun
 
 /obj/item/gun/projectile/automatic/l6_saw/special_check(mob/user)
 	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
+		to_chat(user, SPAN_WARNING("[src]'s cover is open! Close it before firing!"))
 		return 0
 	return ..()
 
 /obj/item/gun/projectile/automatic/l6_saw/proc/toggle_cover(mob/user)
 	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
+	to_chat(user, SPAN_NOTICE("You [cover_open ? "open" : "close"] [src]'s cover."))
 	update_icon()
 
 /obj/item/gun/projectile/automatic/l6_saw/attack_self(mob/user as mob)
@@ -319,15 +319,15 @@
 		icon_state = "l6[cover_open ? "open" : "closed"]-empty"
 		item_state = "l6[cover_open ? "open" : "closed"]-empty"
 
-/obj/item/gun/projectile/automatic/l6_saw/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/automatic/l6_saw/load_ammo(obj/item/A, mob/user)
 	if(!cover_open)
-		to_chat(user, "<span class='warning'>You need to open the cover to load that into [src].</span>")
+		to_chat(user, SPAN_WARNING("You need to open the cover to load that into [src]."))
 		return
 	..()
 
-/obj/item/gun/projectile/automatic/l6_saw/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/automatic/l6_saw/unload_ammo(mob/user, allow_dump=1)
 	if(!cover_open)
-		to_chat(user, "<span class='warning'>You need to open the cover to unload [src].</span>")
+		to_chat(user, SPAN_WARNING("You need to open the cover to unload [src]."))
 		return
 	..()
 
@@ -394,7 +394,7 @@
 
 /obj/item/gun/projectile/automatic/t12
 	name = "T12 rifle"
-	desc = "An assault rifle produced and used by TerraGov military. Highly lethal and capable of holding up to 50 rounds in its standard magazines."
+	desc = "An assault rifle produced and used by the Global Occult Coalition, rarely seen loaned to high-intensity Foundation units. Highly lethal and capable of holding up to 50 rounds in its standard magazines."
 	icon = 'icons/obj/guns/t12.dmi'
 	icon_state = "t12"
 	item_state = "t12"
@@ -404,6 +404,7 @@
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
+	handle_casings = CLEAR_CASINGS
 	magazine_type = /obj/item/ammo_magazine/t12
 	allowed_magazines = /obj/item/ammo_magazine/t12
 	one_hand_penalty = 6

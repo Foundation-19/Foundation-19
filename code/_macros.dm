@@ -1,5 +1,3 @@
-#define any2ref(x) "\ref[x]"
-
 //Do (almost) nothing - indev placeholder for switch case implementations etc
 #define NOOP (.=.);
 
@@ -147,12 +145,6 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define CanPhysicallyInteractWith(user, target) (target.CanUseTopicPhysical(user) == STATUS_INTERACTIVE)
 
-#define QDEL_NULL_LIST(x) if(x) { for(var/y in x) { qdel(y) }}; if(x) {x.Cut(); x = null; } // Second x check to handle items that LAZYREMOVE on qdel.
-
-#define QDEL_NULL(x) if(x) { qdel(x) ; x = null }
-
-#define QDEL_IN(item, time) addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, item), time, TIMER_STOPPABLE)
-
 #define DROP_NULL(x) if(x) { x.dropInto(loc); x = null; }
 
 #define DROP_NULL_LIST(x) if(x) { for(var/atom/movable/y in x) { y.dropInto(loc) }}; x.Cut(); x = null;
@@ -179,6 +171,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define SPAN_BAD(X) "<span class='bad'>[X]</span>"
 
+#define SPAN_ALERT(X) "<span class='alert'>[X]</span>"
+
 #define SPAN_DANGER(X) "<span class='danger'>[X]</span>"
 
 #define SPAN_USERDANGER(X) "<span class='userdanger'>[X]</span>"
@@ -190,6 +184,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define SPAN_SUBTLE(X) "<span class='subtle'>[X]</span>"
 
 #define SPAN_INFO(X) "<span class='info'>[X]</span>"
+
+#define SPAN_INFOPLAIN(X) "<span class='infoplain'>[X]</span>"
 
 #define SPAN_DEBUG(X) "<span class='debug'>[X]</span>"
 
@@ -215,7 +211,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define crash_with(X) crash_at(X, __FILE__, __LINE__)
 
-#define isscp106(A) istype(A, /mob/living/carbon/human/scp106)
+#define isscp106(A) istype(A, /mob/living/carbon/human/scp_106)
 
 #define isscp049(A) istype(A, /mob/living/carbon/human/scp049)
 
@@ -229,6 +225,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isscp529(A) istype(A, /mob/living/simple_animal/cat/fluff/scp_529)
 
+#define isscp527(A) istype(A, /mob/living/carbon/human/scp_527)
+
 #define isscp173(A) istype(A, /mob/living/scp_173)
 
 #define isstructure(A) istype(A, /obj/structure)
@@ -236,3 +234,15 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define ismachinery(A) istype(A, /obj/machinery)
 
 #define isdatum(A) istype(A, /datum)
+
+#define isassembly(O) istype(O, /obj/item/device/assembly)
+
+#define isigniter(O) istype(O, /obj/item/device/assembly/igniter)
+
+#define isprox(O) istype(O, /obj/item/device/assembly/prox_sensor)
+
+#define issignaller(O) istype(O, /obj/item/device/assembly/signaller)
+
+#define istimer(O) istype(O, /obj/item/device/assembly/timer)
+
+#define isscp2343(A) istype(A, /mob/living/carbon/human/scp2343)

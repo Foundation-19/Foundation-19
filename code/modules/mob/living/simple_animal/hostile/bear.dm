@@ -11,7 +11,7 @@
 	maxHealth = 60
 	health = 60
 
-	movement_cooldown = 0.5 SECONDS
+	movement_cooldown = 4
 
 	melee_attack_delay = 1 SECOND
 	attacktext = list("mauled")

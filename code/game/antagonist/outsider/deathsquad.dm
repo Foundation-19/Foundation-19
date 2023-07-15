@@ -7,7 +7,7 @@ GLOBAL_DATUM_INIT(deathsquad, /datum/antagonist/deathsquad, new)
 	welcome_text = "You work in the service of corporate Asset Protection, answering directly to the Board of Directors."
 	landmark_id = "Commando"
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_HAS_LEADER | ANTAG_RANDOM_EXCEPTED
-	default_access = list(access_cent_general, access_cent_specops, access_cent_living, access_cent_storage)
+	default_access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
 	antaghud_indicator = "huddeathsquad"
 
 	hard_cap = 4
@@ -23,36 +23,36 @@ GLOBAL_DATUM_INIT(deathsquad, /datum/antagonist/deathsquad, new)
 	if(..())
 		deployed = 1
 
-/datum/antagonist/deathsquad/equip(var/mob/living/carbon/human/player)
+/datum/antagonist/deathsquad/equip(mob/living/carbon/human/player)
 	if(!..())
 		return
 
 	if (player.mind == leader)
-		player.equip_to_slot_or_del(new /obj/item/clothing/under/rank/centcom_officer(player), slot_w_uniform)
+		player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/under/rank/centcom_officer(player), slot_w_uniform)
 	else
-		player.equip_to_slot_or_del(new /obj/item/clothing/under/color/green(player), slot_w_uniform)
+		player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/under/color/green(player), slot_w_uniform)
 
-	player.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(player), slot_shoes)
-	player.equip_to_slot_or_del(new /obj/item/clothing/glasses/thermal(player), slot_glasses)
-	player.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/swat(player), slot_wear_mask)
+	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/shoes/swat(player), slot_shoes)
+	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/thermal(player), slot_glasses)
+	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/mask/gas/swat(player), slot_wear_mask)
 	if (player.mind == leader)
-		player.equip_to_slot_or_del(new /obj/item/pinpointer(player), slot_l_store)
-		player.equip_to_slot_or_del(new /obj/item/disk/nuclear(player), slot_r_store)
+		player.equip_to_slot_or_store_or_drop(new /obj/item/pinpointer(player), slot_l_store)
+		player.equip_to_slot_or_store_or_drop(new /obj/item/disk/nuclear(player), slot_r_store)
 	else
-		player.equip_to_slot_or_del(new /obj/item/plastique(player), slot_l_store)
-	player.equip_to_slot_or_del(new /obj/item/gun/projectile/revolver(player), slot_belt)
-	player.equip_to_slot_or_del(new /obj/item/gun/energy/pulse_rifle(player), slot_r_hand)
-	player.equip_to_slot_or_del(new /obj/item/rig/ert/assetprotection(player), slot_back)
-	player.equip_to_slot_or_del(new /obj/item/melee/energy/sword(player), slot_l_hand)
+		player.equip_to_slot_or_store_or_drop(new /obj/item/plastique(player), slot_l_store)
+	player.equip_to_slot_or_store_or_drop(new /obj/item/gun/projectile/revolver(player), slot_belt)
+	player.equip_to_slot_or_store_or_drop(new /obj/item/gun/energy/pulse_rifle(player), slot_r_hand)
+	player.equip_to_slot_or_store_or_drop(new /obj/item/rig/ert/assetprotection(player), slot_back)
+	player.equip_to_slot_or_store_or_drop(new /obj/item/melee/energy/sword(player), slot_l_hand)
 	player.implant_loyalty(player)
 
 	var/obj/item/card/id/id = create_id("Asset Protection", player)
 	if(id)
-		id.access |= get_all_station_access()
+		id.access |= get_all_site_access()
 		id.icon_state = "centcom"
 	create_radio(DTH_FREQ, player)
 
-/datum/antagonist/deathsquad/update_antag_mob(var/datum/mind/player)
+/datum/antagonist/deathsquad/update_antag_mob(datum/mind/player)
 
 	..()
 

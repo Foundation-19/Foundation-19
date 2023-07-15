@@ -22,7 +22,7 @@ Juke.setup({ file: import.meta.url }).then((code) => {
   process.exit(code);
 });
 
-const DME_NAME = 'tgstation';
+const DME_NAME = 'baystation12';
 
 export const DefineParameter = new Juke.Parameter({
   type: 'string[]',
@@ -63,12 +63,13 @@ export const DmTarget = new Juke.Target({
     get(DefineParameter).includes('ALL_MAPS') && DmMapsIncludeTarget,
   ],
   inputs: [
-    '_maps/map_files/generic/**',
+    'maps/**',
     'code/**',
     'goon/**',
     'html/**',
     'icons/**',
     'interface/**',
+    'packs/**',
     `${DME_NAME}.dme`,
   ],
   outputs: [

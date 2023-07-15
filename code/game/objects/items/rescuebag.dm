@@ -29,7 +29,7 @@
 		airtank = null
 	qdel(src)
 
-/obj/item/bodybag/rescue/attackby(obj/item/W, mob/user, var/click_params)
+/obj/item/bodybag/rescue/attackby(obj/item/W, mob/user, click_params)
 	if(istype(W,/obj/item/tank))
 		if(airtank)
 			to_chat(user, "\The [src] already has an air tank installed.")
@@ -52,7 +52,7 @@
 		to_chat(user,"The pressure meter on \the [airtank] shows '[airtank.air_contents.return_pressure()] kPa'.")
 		to_chat(user,"The distribution valve on \the [airtank] is set to '[airtank.distribute_pressure] kPa'.")
 	else
-		to_chat(user, "<span class='warning'>The air tank is missing.</span>")
+		to_chat(user, SPAN_WARNING("The air tank is missing."))
 
 /obj/structure/closet/body_bag/rescue
 	name = "rescue bag"
@@ -86,7 +86,7 @@
 	if(airtank)
 		add_overlay(image(icon, "tank"))
 
-/obj/structure/closet/body_bag/rescue/attackby(obj/item/W, mob/user, var/click_params)
+/obj/structure/closet/body_bag/rescue/attackby(obj/item/W, mob/user, click_params)
 	if(istype(W,/obj/item/tank/))
 		if(airtank)
 			to_chat(user, "\The [src] already has an air tank installed.")
@@ -103,7 +103,7 @@
 	else
 		..()
 
-/obj/structure/closet/body_bag/rescue/fold(var/user)
+/obj/structure/closet/body_bag/rescue/fold(user)
 	var/obj/item/tank/my_tank = airtank
 	airtank = null // Apparently this is required to avoid breaking my_tank checks further down after the parent proc runs qdel(src)
 	var/obj/item/bodybag/rescue/folded = ..()
@@ -133,9 +133,9 @@
 		to_chat(user,"The pressure meter on \the [airtank] shows '[airtank.air_contents.return_pressure()] kPa'.")
 		to_chat(user,"The distribution valve on \the [airtank] is set to '[airtank.distribute_pressure] kPa'.")
 	else
-		to_chat(user, "<span class='warning'>The air tank is missing.</span>")
+		to_chat(user, SPAN_WARNING("The air tank is missing."))
 	to_chat(user,"The pressure meter on [src] shows '[atmo.return_pressure()] kPa'.")
 	if(Adjacent(user)) //The bag's rather thick and opaque from a distance.
-		to_chat(user, "<span class='info'>You peer into \the [src].</span>")
+		to_chat(user, SPAN_INFO("You peer into \the [src]."))
 		for(var/mob/living/L in contents)
 			L.examine(arglist(args))

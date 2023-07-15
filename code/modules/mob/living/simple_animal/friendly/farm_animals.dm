@@ -32,9 +32,9 @@
 	if(holder.stat == CONSCIOUS && prob(50))
 		holder.visible_message(SPAN_WARNING("\The [holder] gets an evil-looking gleam in their eye."))
 
-/mob/living/simple_animal/hostile/retaliate/goat/New()
+/mob/living/simple_animal/hostile/retaliate/goat/Initialize()
 	udder = new(50, src)
-	..()
+	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Destroy()
 	QDEL_NULL(udder)
@@ -77,7 +77,7 @@
 				var/step = get_step_to(src, food, 0)
 				Move(step)
 
-/mob/living/simple_animal/hostile/retaliate/goat/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/hostile/retaliate/goat/attackby(obj/item/O as obj, mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
@@ -116,11 +116,11 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/cow
 	say_list_type = /datum/say_list/cow
 
-/mob/living/simple_animal/friendly/cow/New()
+/mob/living/simple_animal/friendly/cow/Initialize()
 	udder = new(50, src)
-	..()
+	. = ..()
 
-/mob/living/simple_animal/friendly/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/cow/attackby(obj/item/O as obj, mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
@@ -181,11 +181,11 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/sheep
 	say_list_type = /datum/say_list/sheep
 
-/mob/living/simple_animal/friendly/sheep/New()
+/mob/living/simple_animal/friendly/sheep/Initialize()
 	udder = new(50, src)
-	..()
+	. = ..()
 
-/mob/living/simple_animal/friendly/sheep/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/sheep/attackby(obj/item/O as obj, mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	var/transfered = udder.trans_type_to(G, /datum/reagent/drink/milk, rand(5,10))
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
@@ -235,8 +235,8 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/chick
 	say_list_type = /datum/say_list/chick
 
-/mob/living/simple_animal/friendly/chick/New()
-	..()
+/mob/living/simple_animal/friendly/chick/Initialize()
+	. = ..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
 
@@ -278,8 +278,8 @@ var/global/chicken_count = 0
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/chicken
 	say_list_type = /datum/say_list/chicken
 
-/mob/living/simple_animal/friendly/chicken/New()
-	..()
+/mob/living/simple_animal/friendly/chicken/Initialize()
+	. = ..()
 	if(!body_color)
 		body_color = pick( list("brown","black","white") )
 	icon_state = "chicken_[body_color]"
@@ -293,7 +293,7 @@ var/global/chicken_count = 0
 	..(gibbed, deathmessage, show_dead_message)
 	chicken_count -= 1
 
-/mob/living/simple_animal/friendly/chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/chicken/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")

@@ -24,7 +24,7 @@
 	else
 		. = ..()
 
-/obj/item/modular_computer/pda/AltClick(var/mob/user)
+/obj/item/modular_computer/pda/AltClick(mob/user)
 	if(!CanPhysicallyInteract(user))
 		return
 	if(card_slot && istype(card_slot.stored_card))
@@ -124,4 +124,4 @@
 /obj/item/modular_computer/pda/roboticist
 	icon_state = "pda-robot"
 	icon_state_unpowered = "pda-robot"
-	
+

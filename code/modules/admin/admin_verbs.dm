@@ -1,7 +1,7 @@
 //admin verb groups - They can overlap if you so wish. Only one of each verb will exist in the verbs list regardless
 var/list/admin_verbs_default = list(
 	/datum/admins/proc/show_player_panel, //shows an interface for individual players, with various links (links require additional flags), right-click player panel,
-	/client/proc/player_panel,
+	/client/proc/list_players,
 	/client/proc/secrets,
 	/client/proc/deadmin_self,			//destroys our own admin datum so we can play as a regular player,
 	/client/proc/hide_verbs,			//hides all our adminverbs,
@@ -26,12 +26,14 @@ var/list/admin_verbs_admin = list(
 	/client/proc/colorooc,				//allows us to set a custom colour for everythign we say in ooc,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
 	/client/proc/toggle_view_range,		//changes how far we can see,
+	/datum/admins/proc/view_txt_log,    //shows the server log for today,
 	/client/proc/cmd_admin_pm_context,	//right-click adminPM interface,
 	/client/proc/cmd_admin_pm_panel,	//admin-pm list,
 	/client/proc/cmd_admin_delete,		//delete an instance/object/mob/etc,
 	/client/proc/cmd_admin_check_contents,	//displays the contents of an instance,
 	/datum/admins/proc/access_news_network,	//allows access of newscasters,
 	/client/proc/jumptocoord,			//we ghost and jump to a coordinate,
+	/client/proc/getserverlog,          //allows us to fetch server logs for other days,
 	/client/proc/Getmob,				//teleports a mob to our location,
 	/client/proc/Getkey,				//teleports a mob with a certain ckey to our location,
 //	/client/proc/sendmob,				//sends a mob somewhere, -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage,
@@ -62,6 +64,7 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/togglelooc,		//toggles looc on/off for everyone,
 	/datum/admins/proc/toggleoocdead,	//toggles ooc on/off for everyone who is dead,
 	/datum/admins/proc/toggledsay,		//toggles dsay on/off for everyone,
+	/datum/admins/proc/toggletimelocks,	//toggles timelocks on jobs for the server. DOES NOT TURN OFF TIME TRACKING,
 	/client/proc/game_panel,			//game panel, allows to change game-mode etc,
 	/client/proc/cmd_admin_say,			//admin-only ooc chat,
 	/datum/admins/proc/togglehubvisibility, //toggles visibility on the BYOND Hub,
@@ -100,7 +103,10 @@ var/list/admin_verbs_admin = list(
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
-	/client/proc/jobbans
+	/client/proc/jobbans,
+	/client/proc/ban_panel,
+	/client/proc/BCCM_toggle,
+	/client/proc/BCCM_WhitelistPanel
 	)
 var/list/admin_verbs_sounds = list(
 	/client/proc/play_local_sound,
@@ -115,7 +121,6 @@ var/list/admin_verbs_fun = list(
 	/client/proc/drop_bomb,
 	/client/proc/cinematic,
 	/client/proc/cmd_admin_add_freeform_ai_law,
-	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/toggle_random_events,
 	/client/proc/editappear,
 	/client/proc/roll_dices,
@@ -150,7 +155,11 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/adspawn,
 	/datum/admins/proc/adjump,
 	/client/proc/toggle_random_events,
-	/client/proc/nanomapgen_DumpImage
+	/client/proc/nanomapgen_DumpImage,
+	/client/proc/panicbunker,
+	/client/proc/panicbunker_ckey_bypass,
+	/datum/admins/proc/shutdown_server,
+	/client/proc/BCCM_ASNPanel
 	)
 var/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,
@@ -226,6 +235,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/colorooc,
 	/client/proc/admin_ghost,
 	/client/proc/toggle_view_range,
+	/datum/admins/proc/view_txt_log,
 	/client/proc/cmd_admin_check_contents,
 	/datum/admins/proc/access_news_network,
 	/client/proc/admin_call_shuttle,
@@ -245,10 +255,8 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/drop_bomb,
 	/client/proc/cinematic,
 	/client/proc/cmd_admin_add_freeform_ai_law,
-	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/toggle_random_events,
-	/client/proc/cmd_admin_add_random_ai_law,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/endnow,
 	/datum/admins/proc/restart,
@@ -295,39 +303,59 @@ var/list/admin_verbs_mod = list(
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
 	/client/proc/check_fax_history,
-	/datum/admins/proc/paralyze_mob // right-click paralyze ,
+	/datum/admins/proc/paralyze_mob, // right-click paralyze ,
+	/client/proc/cmd_admin_say,
+	/client/proc/investigate_show,
+	/datum/admins/proc/view_txt_log,
+	/client/proc/game_panel,
+	/client/proc/free_slot_crew,
+	/client/proc/cmd_admin_create_centcom_report
 )
 var/list/admin_verbs_mentors = list(
 	/client/proc/cmd_mentor_say,
 	/client/proc/mentorpm_mob,
 	/client/proc/mentorpm_panel,
 	/client/proc/mentor_memo,
+	/client/proc/deadmin_self
 )
 
 /client/proc/add_admin_verbs()
 	if(holder)
 		if(holder.rights && holder.rights != R_MENTOR) //If we ONLY have mentor rights then we don't deserve the default perms
-			verbs += admin_verbs_default
-		if(holder.rights & R_BUILDMODE)		verbs += /client/proc/togglebuildmodeself
-		if(holder.rights & R_ADMIN)			verbs += admin_verbs_admin
-		if(holder.rights & R_BAN)			verbs += admin_verbs_ban
-		if(holder.rights & R_FUN)			verbs += admin_verbs_fun
-		if(holder.rights & R_SERVER)		verbs += admin_verbs_server
+			add_verb(src, admin_verbs_default)
+		if(holder.rights & R_BUILDMODE)
+			add_verb(src, /client/proc/togglebuildmodeself)
+		if(holder.rights & R_ADMIN)
+			add_verb(src, admin_verbs_admin)
+		if(holder.rights & R_BAN)
+			add_verb(src, admin_verbs_ban)
+		if(holder.rights & R_FUN)
+			add_verb(src, admin_verbs_fun)
+		if(holder.rights & R_SERVER)
+			add_verb(src, admin_verbs_server)
 		if(holder.rights & R_DEBUG)
-			verbs += admin_verbs_debug
+			add_verb(src, admin_verbs_debug)
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
-				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_POSSESS)		verbs += admin_verbs_possess
-		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
-		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
-		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
-		if(holder.rights & R_SOUNDS)		verbs += admin_verbs_sounds
-		if(holder.rights & R_SPAWN)			verbs += admin_verbs_spawn
-		if(holder.rights & R_MOD)			verbs += admin_verbs_mod
-		if(holder.rights & R_MENTOR)        verbs += admin_verbs_mentors
+				remove_verb(src, admin_verbs_paranoid_debug) //Right now it's just callproc but we can easily add others later on.
+		if(holder.rights & R_POSSESS)
+			add_verb(src, admin_verbs_possess)
+		if(holder.rights & R_PERMISSIONS)
+			add_verb(src, admin_verbs_permissions)
+		if(holder.rights & R_STEALTH)
+			add_verb(src, /client/proc/stealth)
+		if(holder.rights & R_REJUVINATE)
+			add_verb(src, admin_verbs_rejuv)
+		if(holder.rights & R_SOUNDS)
+			add_verb(src, admin_verbs_sounds)
+		if(holder.rights & R_SPAWN)
+			add_verb(src, admin_verbs_spawn)
+		if(holder.rights & R_MOD)
+			add_verb(src, admin_verbs_mod)
+		if(holder.rights & R_MENTOR)
+			add_verb(src, admin_verbs_mentors)
 
 /client/proc/remove_admin_verbs()
-	verbs.Remove(
+	remove_verb(src, list(
 		admin_verbs_default,
 		/client/proc/togglebuildmodeself,
 		admin_verbs_admin,
@@ -341,18 +369,20 @@ var/list/admin_verbs_mentors = list(
 		admin_verbs_rejuv,
 		admin_verbs_sounds,
 		admin_verbs_spawn,
+		admin_verbs_mod,
 		admin_verbs_mentors,
-		debug_verbs
-		)
+		debug_verbs,
+		))
 
 /client/proc/hide_most_verbs()//Allows you to keep some functionality while hiding some verbs
 	set name = "Adminverbs - Hide Most"
 	set category = "Admin"
 
-	verbs.Remove(/client/proc/hide_most_verbs, admin_verbs_hideable)
-	verbs += /client/proc/show_verbs
+	remove_verb(src, /client/proc/hide_most_verbs)
+	remove_verb(src, admin_verbs_hideable)
+	add_verb(src, /client/proc/show_verbs)
 
-	to_chat(src, "<span class='interface'>Most of your adminverbs have been hidden.</span>")
+	to_chat(src, SPAN_CLASS("interface","Most of your adminverbs have been hidden."))
 	SSstatistics.add_field_details("admin_verb","HMV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -361,9 +391,9 @@ var/list/admin_verbs_mentors = list(
 	set category = "Admin"
 
 	remove_admin_verbs()
-	verbs += /client/proc/show_verbs
+	add_verb(src, /client/proc/show_verbs)
 
-	to_chat(src, "<span class='interface'>Almost all of your adminverbs have been hidden.</span>")
+	to_chat(src, SPAN_CLASS("interface","Almost all of your adminverbs have been hidden."))
 	SSstatistics.add_field_details("admin_verb","TAVVH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -371,10 +401,10 @@ var/list/admin_verbs_mentors = list(
 	set name = "Adminverbs - Show"
 	set category = "Admin"
 
-	verbs -= /client/proc/show_verbs
+	remove_verb(src, /client/proc/show_verbs)
 	add_admin_verbs()
 
-	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>")
+	to_chat(src, SPAN_CLASS("interface","All of your adminverbs are now visible."))
 	SSstatistics.add_field_details("admin_verb","TAVVS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -384,14 +414,14 @@ var/list/admin_verbs_mentors = list(
 /client/proc/admin_ghost()
 	set category = "Admin"
 	set name = "Aghost"
-	if(!holder)	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	if(isghost(mob))
 		var/mob/observer/ghost/ghost = mob
 		ghost.reenter_corpse()
 		SSstatistics.add_field_details("admin_verb","P") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 	else if(istype(mob,/mob/new_player))
-		to_chat(src, "<font color='red'>Error: Aghost: Can't admin-ghost whilst in the lobby. Join or Observe first.</font>")
+		to_chat(src, FONT_COLORED("red","Error: Aghost: Can't admin-ghost whilst in the lobby. Join or Observe first."))
 	else
 		//ghostize
 		var/mob/body = mob
@@ -399,7 +429,8 @@ var/list/admin_verbs_mentors = list(
 		if (!ghost)
 			to_chat(src, FONT_COLORED("red", "You are already admin-ghosted."))
 			return
-		log_and_message_admins("has admin ghosted.", usr)
+		ghost.client?.init_verbs()
+		log_and_message_staff("has admin ghosted.", usr)
 		ghost.admin_ghosted = 1
 		if(body)
 			body.teleop = ghost
@@ -411,38 +442,27 @@ var/list/admin_verbs_mentors = list(
 	set name = "Invisimin"
 	set category = "Admin"
 	set desc = "Toggles ghost-like invisibility (Don't abuse this)"
-	if(holder && mob)
+	if(check_rights(R_ADMIN|R_MOD, FALSE) && mob)
 		if(mob.invisibility == INVISIBILITY_OBSERVER)
 			mob.set_invisibility(initial(mob.invisibility))
-			to_chat(mob, "<span class='danger'>Invisimin off. Invisibility reset.</span>")
+			to_chat(mob, SPAN_DANGER("Invisimin off. Invisibility reset."))
 			mob.alpha = max(mob.alpha + 100, 255)
 		else
 			mob.set_invisibility(INVISIBILITY_OBSERVER)
-			to_chat(mob, "<span class='notice'>Invisimin on. You are now as invisible as a ghost.</span>")
+			to_chat(mob, SPAN_NOTICE("Invisimin on. You are now as invisible as a ghost."))
 			mob.alpha = max(mob.alpha - 100, 0)
-
-
-/client/proc/player_panel()
-	set name = "Player Panel"
-	set category = "Admin"
-	if(holder)
-		holder.player_panel()
-	SSstatistics.add_field_details("admin_verb","PPN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	return
 
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.check_antagonists()
 		log_admin("[key_name(usr)] checked antagonists.")	//for tsar~
 	SSstatistics.add_field_details("admin_verb","CHA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
 /client/proc/jobbans()
-	set name = "Display Job bans"
-	set category = "Admin"
-	if(holder)
+	if(check_rights(R_BAN))
 		if(config.ban_legacy_system)
 			holder.Jobbans()
 		else
@@ -451,9 +471,7 @@ var/list/admin_verbs_mentors = list(
 	return
 
 /client/proc/unban_panel()
-	set name = "Unban Panel"
-	set category = "Admin"
-	if(holder)
+	if(check_rights(R_BAN))
 		if(config.ban_legacy_system)
 			holder.unbanpanel()
 		else
@@ -461,10 +479,22 @@ var/list/admin_verbs_mentors = list(
 	SSstatistics.add_field_details("admin_verb","UBP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+/client/proc/ban_panel()
+	set name = "Ban Panel"
+	set category = "Admin"
+	if(check_rights(R_BAN))
+		if(config.ban_legacy_system)
+			to_chat(usr, SPAN_NOTICE("Server is using legacy ban system, DB ban panel is unavailable."))
+			return
+		else
+			holder.DB_ban_panel()
+	SSstatistics.add_field_details("admin_verb","DBP")
+	return
+
 /client/proc/game_panel()
 	set name = "Game Panel"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.Game()
 	SSstatistics.add_field_details("admin_verb","GP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -472,7 +502,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/secrets()
 	set name = "Secrets"
 	set category = "Admin"
-	if (holder)
+	if (check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.Secrets()
 	SSstatistics.add_field_details("admin_verb","S") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -480,7 +510,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/colorooc()
 	set category = "Fun"
 	set name = "OOC Text Color"
-	if(!holder)	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change own OOC color", "Pick new color", "Reset to default", "Cancel")
 	if(response == "Pick new color")
 		prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
@@ -498,8 +528,8 @@ var/list/admin_verbs_mentors = list(
 	if(!check_rights(R_ADMIN))	return
 
 	if(!warned_ckey || !istext(warned_ckey))	return
-	if(warned_ckey in admin_datums)
-		to_chat(usr, "<font color='red'>Error: warn(): You can't warn admins.</font>")
+	if(warned_ckey in GLOB.admin_datums)
+		to_chat(usr, FONT_COLORED("red","Error: warn(): You can't warn admins."))
 		return
 
 	var/datum/preferences/D
@@ -508,26 +538,26 @@ var/list/admin_verbs_mentors = list(
 	else	D = SScharacter_setup.preferences_datums[warned_ckey]
 
 	if(!D)
-		to_chat(src, "<font color='red'>Error: warn(): No such ckey found.</font>")
+		to_chat(src, FONT_COLORED("red","Error: warn(): No such ckey found."))
 		return
 
 	if(++D.warns >= MAX_WARNS)					//uh ohhhh...you'reee iiiiin trouuuubble O:)
 		var/mins_readable = minutes_to_readable(AUTOBANTIME)
 		ban_unban_log_save("[ckey] warned [warned_ckey], resulting in a [mins_readable] autoban.")
 		if(C)
-			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)] resulting in a [mins_readable] ban.")
-			to_chat(C, "<font color='red'><BIG><B>You have been autobanned due to a warning by [ckey].</B></BIG><br>This is a temporary ban, it will be removed in [mins_readable].</font>")
+			message_staff("[key_name_admin(src)] has warned [key_name_admin(C)] resulting in a [mins_readable] ban.")
+			to_chat(C, FONT_COLORED("red","<BIG><B>You have been autobanned due to a warning by [ckey].</B></BIG><br>This is a temporary ban, it will be removed in [mins_readable]."))
 			qdel(C)
 		else
-			message_admins("[key_name_admin(src)] has warned [warned_ckey] resulting in a [mins_readable] ban.")
+			message_staff("[key_name_admin(src)] has warned [warned_ckey] resulting in a [mins_readable] ban.")
 		AddBan(warned_ckey, D.last_id, "Autobanning due to too many formal warnings", ckey, 1, AUTOBANTIME)
 		SSstatistics.add_field("ban_warn",1)
 	else
 		if(C)
-			to_chat(C, "<font color='red'><BIG><B>You have been formally warned by an administrator.</B></BIG><br>Further warnings will result in an autoban.</font>")
-			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
+			to_chat(C, FONT_COLORED("red","<BIG><B>You have been formally warned by an administrator.</B></BIG><br>Further warnings will result in an autoban."))
+			message_staff("[key_name_admin(src)] has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
 		else
-			message_admins("[key_name_admin(src)] has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
+			message_staff("[key_name_admin(src)] has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
 
 	SSstatistics.add_field_details("admin_verb","WARN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -538,6 +568,7 @@ var/list/admin_verbs_mentors = list(
 	set category = "Special Verbs"
 	set name = "Drop Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
+	if(!check_rights(R_FUN)) return
 
 	var/turf/epicenter = mob.loc
 	var/list/choices = list("Small Bomb", "Medium Bomb", "Big Bomb", "Custom Bomb")
@@ -565,7 +596,7 @@ var/list/admin_verbs_mentors = list(
 			if (isnull(flash_range))
 				return
 			explosion(epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range)
-	log_and_message_admins("created an admin explosion at [epicenter.loc].")
+	log_and_message_staff("created an admin explosion at [epicenter.loc].")
 	SSstatistics.add_field_details("admin_verb","DB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/togglebuildmodeself()
@@ -579,7 +610,7 @@ var/list/admin_verbs_mentors = list(
 		usr.PushClickHandler(/datum/click_handler/build_mode)
 	SSstatistics.add_field_details("admin_verb","TBMS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/object_talk(var/msg as text) // -- TLE
+/client/proc/object_talk(msg as text) // -- TLE
 	set category = "Special Verbs"
 	set name = "oSay"
 	set desc = "Display a message to everyone who can hear the target"
@@ -597,9 +628,9 @@ var/list/admin_verbs_mentors = list(
 	if(deadmin_holder)
 		deadmin_holder.reassociate()
 		log_admin("[src] re-admined themself.")
-		message_admins("[src] re-admined themself.", 1)
-		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or at least [GLOB.using_map.full_name].</span>")
-		verbs -= /client/proc/readmin_self
+		message_staff("[src] re-admined themself.", 1)
+		to_chat(src, SPAN_CLASS("interface","You now have the keys to control the planet, or at least [GLOB.using_map.full_name]."))
+		remove_verb(src, /client/proc/readmin_self)
 
 /client/proc/deadmin_self()
 	set name = "De-admin self"
@@ -608,16 +639,16 @@ var/list/admin_verbs_mentors = list(
 	if(holder)
 		if(alert("Confirm self-deadmin for the round? You can re-admin yourself at any time.",,"Yes","No") == "Yes")
 			log_admin("[src] deadmined themself.")
-			message_admins("[src] deadmined themself.", 1)
+			message_staff("[src] deadmined themself.", 1)
 			deadmin()
-			to_chat(src, "<span class='interface'>You are now a normal player.</span>")
-			verbs |= /client/proc/readmin_self
+			to_chat(src, SPAN_CLASS("interface","You are now a normal player."))
+			add_verb(src, /client/proc/readmin_self)
 	SSstatistics.add_field_details("admin_verb","DAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/toggle_log_hrefs()
 	set name = "Toggle href logging"
 	set category = "Server"
-	if(!holder)	return
+	if(!check_rights(R_SERVER))	return
 	if(config)
 		if(config.log_hrefs)
 			config.log_hrefs = 0
@@ -643,7 +674,7 @@ var/list/admin_verbs_mentors = list(
 
 	var/new_name = sanitizeSafe(input(src, "Enter new name. Leave blank or as is to cancel.", "[S.real_name] - Enter new silicon name", S.real_name))
 	if(new_name && new_name != S.real_name)
-		log_and_message_admins("has renamed the silicon '[S.real_name]' to '[new_name]'")
+		log_and_message_staff("has renamed the silicon '[S.real_name]' to '[new_name]'")
 		S.fully_replace_character_name(new_name)
 	SSstatistics.add_field_details("admin_verb","RAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -658,7 +689,7 @@ var/list/admin_verbs_mentors = list(
 
 	var/datum/nano_module/law_manager/L = new(S)
 	L.ui_interact(usr, state = GLOB.admin_state)
-	log_and_message_admins("has opened [S]'s law manager.")
+	log_and_message_staff("has opened [S]'s law manager.")
 	SSstatistics.add_field_details("admin_verb","MSL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/change_human_appearance_admin()
@@ -671,7 +702,7 @@ var/list/admin_verbs_mentors = list(
 	var/mob/living/carbon/human/H = input("Select mob.", "Change Mob Appearance - Admin") as null|anything in GLOB.human_mob_list
 	if(!H) return
 
-	log_and_message_admins("is altering the appearance of [H].")
+	log_and_message_staff("is altering the appearance of [H].")
 	H.change_appearance(APPEARANCE_ALL, FALSE, usr, state = GLOB.admin_state)
 	SSstatistics.add_field_details("admin_verb","CHAA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -691,10 +722,10 @@ var/list/admin_verbs_mentors = list(
 
 	switch(alert("Do you wish for [H] to be allowed to select non-whitelisted races?","Alter Mob Appearance","Yes","No","Cancel"))
 		if("Yes")
-			log_and_message_admins("has allowed [H] to change \his appearance, including races that requires whitelisting")
+			log_and_message_staff("has allowed [H] to change \his appearance, including races that requires whitelisting")
 			H.change_appearance(APPEARANCE_COMMON, FALSE)
 		if("No")
-			log_and_message_admins("has allowed [H] to change \his appearance, excluding races that requires whitelisting.")
+			log_and_message_staff("has allowed [H] to change \his appearance, excluding races that requires whitelisting.")
 			H.change_appearance(APPEARANCE_COMMON, TRUE)
 	SSstatistics.add_field_details("admin_verb","CMAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -734,7 +765,7 @@ var/list/admin_verbs_mentors = list(
 	var/mob/living/carbon/human/M = input("Select mob.", "Edit Appearance") as null|anything in GLOB.human_mob_list
 
 	if(!istype(M, /mob/living/carbon/human))
-		to_chat(usr, "<span class='warning'>You can only do this to humans!</span>")
+		to_chat(usr, SPAN_WARNING("You can only do this to humans!"))
 		return
 	switch(alert("Are you sure you wish to edit this mob's appearance? Skrell, Unathi and Vox can result in unintended consequences.",,"Yes","No"))
 		if("No")
@@ -796,14 +827,14 @@ var/list/admin_verbs_mentors = list(
 /client/proc/playernotes()
 	set name = "Show Player Info"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.PlayerNotes()
 	return
 
 /client/proc/free_slot_submap()
 	set name = "Free Job Slot (Submap)"
 	set category = "Admin"
-	if(!holder) return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE)) return
 
 	var/list/jobs = list()
 	for(var/thing in SSmapping.submaps)
@@ -822,12 +853,12 @@ var/list/admin_verbs_mentors = list(
 		var/datum/job/submap/job = jobs[job_name]
 		if(istype(job) && !job.is_position_available())
 			job.make_position_available()
-			message_admins("An offsite job slot for [job_name] has been opened by [key_name_admin(usr)]")
+			message_staff("An offsite job slot for [job_name] has been opened by [key_name_admin(usr)]")
 
 /client/proc/free_slot_crew()
 	set name = "Free Job Slot (Crew)"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		var/list/jobs = list()
 		for (var/datum/job/J in SSjobs.primary_job_datums)
 			if(!J.is_position_available())
@@ -839,36 +870,36 @@ var/list/admin_verbs_mentors = list(
 		var/datum/job/job = jobs[job_title]
 		if(job && !job.is_position_available())
 			job.make_position_available()
-			message_admins("A job slot for [job_title] has been opened by [key_name_admin(usr)]")
+			message_staff("A job slot for [job_title] has been opened by [key_name_admin(usr)]")
 			return
 
 /client/proc/toggleghostwriters()
 	set name = "Toggle ghost writers"
 	set category = "Server"
-	if(!holder)	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	if(config)
 		if(config.cult_ghostwriter)
 			config.cult_ghostwriter = 0
 			to_chat(src, "<b>Disallowed ghost writers.</b>")
-			message_admins("Admin [key_name_admin(usr)] has disabled ghost writers.", 1)
+			message_staff("Admin [key_name_admin(usr)] has disabled ghost writers.", 1)
 		else
 			config.cult_ghostwriter = 1
 			to_chat(src, "<b>Enabled ghost writers.</b>")
-			message_admins("Admin [key_name_admin(usr)] has enabled ghost writers.", 1)
+			message_staff("Admin [key_name_admin(usr)] has enabled ghost writers.", 1)
 
 /client/proc/toggledrones()
 	set name = "Toggle maintenance drones"
 	set category = "Server"
-	if(!holder)	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	if(config)
 		if(config.allow_drone_spawn)
 			config.allow_drone_spawn = 0
 			to_chat(src, "<b>Disallowed maint drones.</b>")
-			message_admins("Admin [key_name_admin(usr)] has disabled maint drones.", 1)
+			message_staff("Admin [key_name_admin(usr)] has disabled maint drones.", 1)
 		else
 			config.allow_drone_spawn = 1
 			to_chat(src, "<b>Enabled maint drones.</b>")
-			message_admins("Admin [key_name_admin(usr)] has enabled maint drones.", 1)
+			message_staff("Admin [key_name_admin(usr)] has enabled maint drones.", 1)
 
 /client/proc/man_up(mob/T as mob in SSmobs.mob_list)
 	set popup_menu = FALSE
@@ -876,28 +907,35 @@ var/list/admin_verbs_mentors = list(
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
-	to_chat(T, "<span class='notice'><b><font size=3>Man up and deal with it.</font></b></span>")
-	to_chat(T, "<span class='notice'>Move on.</span>")
+	if(!check_rights(R_FUN)) return
 
-	log_and_message_admins("told [key_name(T)] to man up and deal with it.")
+	to_chat(T, SPAN_NOTICE("<b><font size=3>Man up and deal with it.</font></b>"))
+	to_chat(T, SPAN_NOTICE("Move on."))
+
+	log_and_message_staff("told [key_name(T)] to man up and deal with it.")
 
 /client/proc/global_man_up()
 	set category = "Fun"
 	set name = "Man Up Global"
 	set desc = "Tells everyone to man up and deal with it."
 
+	if(!check_rights(R_FUN)) return
+
 	for (var/mob/T as mob in SSmobs.mob_list)
 		to_chat(T, "<br><center><span class='notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move on.</span></center><br>")
 		sound_to(T, 'sound/voice/ManUp1.ogg')
 
-	log_and_message_admins("told everyone to man up and deal with it.")
+	log_and_message_staff("told everyone to man up and deal with it.")
 
 /client/proc/give_spell(mob/T as mob in SSmobs.mob_list) // -- Urist
 	set category = "Fun"
 	set name = "Give Spell"
 	set desc = "Gives a spell to a mob."
+
+	if(!check_rights(R_FUN)) return
+
 	var/datum/spell/S = input("Choose the spell to give to that guy", "ABRAKADABRA") as null|anything in spells
 	if(!S) return
 	T.add_spell(new S)
 	SSstatistics.add_field_details("admin_verb","GS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	log_and_message_admins("gave [key_name(T)] the spell [S].")
+	log_and_message_staff("gave [key_name(T)] the spell [S].")

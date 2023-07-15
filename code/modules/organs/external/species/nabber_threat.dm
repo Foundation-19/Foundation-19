@@ -9,15 +9,15 @@
 		action.button_icon_state = "nabber-threat"
 		if(action.button) action.button.UpdateIcon()
 
-/obj/item/organ/external/chest/insectoid/nabber/attack_self(var/mob/user)
+/obj/item/organ/external/chest/insectoid/nabber/attack_self(mob/user)
 	. = ..()
 	if(.)
 		if(owner.incapacitated())
-			to_chat(owner, "<span class='warning'>You can't do a threat display in your current state.</span>")
+			to_chat(owner, SPAN_WARNING("You can't do a threat display in your current state."))
 			return
 		if(owner.skin_state == SKIN_NORMAL)
 			if(owner.pulling_punches)
-				to_chat(owner, "<span class='warning'>You must be in your hunting stance to do a threat display.</span>")
+				to_chat(owner, SPAN_WARNING("You must be in your hunting stance to do a threat display."))
 			else
 				var/message = alert(owner, "Would you like to show a scary message?",,"Cancel","Yes", "No")
 				if(message == "Cancel")

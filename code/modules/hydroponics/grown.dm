@@ -20,7 +20,7 @@
 /obj/item/reagent_containers/food/snacks/grown/Initialize()
 	. = ..()
 	if(!SSplants)
-		log_error("<span class='danger'>Plant controller does not exist and [src] requires it. Aborting.</span>")
+		log_error(SPAN_DANGER("Plant controller does not exist and [src] requires it. Aborting."))
 		return INITIALIZE_HINT_QDEL
 
 	seed = SSplants.seeds[plantname]
@@ -69,7 +69,7 @@
 	if(!SSplants)
 		sleep(250) // ugly hack, should mean roundstart plants are fine.
 	if(!SSplants)
-		log_error("<span class='danger'>Plant controller does not exist and [src] requires it. Aborting.</span>")
+		log_error(SPAN_DANGER("Plant controller does not exist and [src] requires it. Aborting."))
 		qdel(src)
 		return
 
@@ -140,7 +140,7 @@
 		fruit_leaves.color = seed.get_trait(TRAIT_PLANT_COLOUR)
 		add_overlay(fruit_leaves)
 
-/obj/item/reagent_containers/food/snacks/grown/Crossed(var/mob/living/M)
+/obj/item/reagent_containers/food/snacks/grown/Crossed(mob/living/M)
 	if(seed && seed.get_trait(TRAIT_JUICY) == 2)
 		if(istype(M))
 
@@ -164,7 +164,7 @@
 	if(seed) seed.thrown_at(src,hit_atom)
 	..()
 
-/obj/item/reagent_containers/food/snacks/grown/attackby(var/obj/item/W, var/mob/user)
+/obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/W, mob/user)
 
 	if(seed)
 		if(seed.get_trait(TRAIT_PRODUCES_POWER) && isCoil(W))
@@ -226,7 +226,7 @@
 					return
 	..()
 
-/obj/item/reagent_containers/food/snacks/grown/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+/obj/item/reagent_containers/food/snacks/grown/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	. = ..()
 
 	if(seed && seed.get_trait(TRAIT_STINGS))
@@ -239,7 +239,7 @@
 			return
 		if(prob(35))
 			if(user)
-				to_chat(user, "<span class='danger'>\The [src] has fallen to bits.</span>")
+				to_chat(user, SPAN_DANGER("\The [src] has fallen to bits."))
 			qdel(src)
 
 /obj/item/reagent_containers/food/snacks/grown/attack_self(mob/user as mob)
@@ -251,7 +251,7 @@
 		return
 
 	if(user.a_intent == I_HURT)
-		user.visible_message("<span class='danger'>\The [user] squashes \the [src]!</span>")
+		user.visible_message(SPAN_DANGER("\The [user] squashes \the [src]!"))
 		seed.thrown_at(src,user)
 		sleep(-1)
 		if(src) qdel(src)
@@ -311,7 +311,7 @@
 
 var/list/fruit_icon_cache = list()
 
-/obj/item/reagent_containers/food/snacks/fruit_slice/New(var/newloc, var/datum/seed/S)
+/obj/item/reagent_containers/food/snacks/fruit_slice/New(newloc, datum/seed/S)
 	..(newloc)
 	// Need to go through and make a general image caching controller. Todo.
 	if(!istype(S))

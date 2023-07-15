@@ -29,16 +29,49 @@
 #define mSmallsize     110 // Table climbing.
 
 // disabilities
-#define NEARSIGHTED 0x1
-#define EPILEPSY    0x2
-#define COUGHING    0x4
-#define TOURETTES   0x8
-#define NERVOUS     0x10
+#define NEARSIGHTED (1<<0)
+#define EPILEPSY    (1<<1)
+#define COUGHING    (1<<2)
+#define TOURETTES   (1<<3)
+#define NERVOUS     (1<<4)
 
 // sdisabilities
-#define BLINDED 0x1
-#define MUTED  0x2
-#define DEAFENED  0x4
+#define BLINDED     (1<<0)
+#define MUTED       (1<<1)
+#define DEAFENED    (1<<2)
+
+// What each index means:
+#define DNA_OFF_LOWERBOUND 0
+#define DNA_OFF_UPPERBOUND 1
+#define DNA_ON_LOWERBOUND  2
+#define DNA_ON_UPPERBOUND  3
+
+// Define block bounds (off-low,off-high,on-low,on-high)
+// Used in setupgame.dm
+#define DNA_DEFAULT_BOUNDS list(1,2049,2050,4095)
+#define DNA_HARDER_BOUNDS  list(1,3049,3050,4095)
+#define DNA_HARD_BOUNDS    list(1,3490,3500,4095)
+
+// UI Indices (can change to mutblock style, if desired)
+#define DNA_UI_HAIR_R      1
+#define DNA_UI_HAIR_G      2
+#define DNA_UI_HAIR_B      3
+#define DNA_UI_BEARD_R     4
+#define DNA_UI_BEARD_G     5
+#define DNA_UI_BEARD_B     6
+#define DNA_UI_SKIN_TONE   7
+#define DNA_UI_SKIN_R      8
+#define DNA_UI_SKIN_G      9
+#define DNA_UI_SKIN_B      10
+#define DNA_UI_EYES_R      11
+#define DNA_UI_EYES_G      12
+#define DNA_UI_EYES_B      13
+#define DNA_UI_GENDER      14
+#define DNA_UI_BEARD_STYLE 15
+#define DNA_UI_HAIR_STYLE  16
+#define DNA_UI_LENGTH      16 // Update this when you add something, or you WILL break shit.
+
+#define DNA_SE_LENGTH 27
 
 // The way blocks are handled badly needs a rewrite, this is horrible.
 // Too much of a project to handle at the moment, TODO for later.

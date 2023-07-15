@@ -19,10 +19,10 @@
 					is_multikeying = 1
 				if(matches)
 					if(M.client)
-						message_admins("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as <A href='?src=\ref[usr];priv_msg=\ref[M]'>[key_name_admin(M)]</A>.</span>", 1)
+						message_staff("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as <A href='?src=\ref[usr];priv_msg=\ref[M]'>[key_name_admin(M)]</A>.</span>", 1)
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)].")
 					else
-						message_admins("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as [key_name_admin(M)] (no longer logged in).</span>", 1)
+						message_staff("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as [key_name_admin(M)] (no longer logged in).</span>", 1)
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)] (no longer logged in).")
 		if(is_multikeying && !client.warned_about_multikeying)
 			client.warned_about_multikeying = 1
@@ -42,14 +42,14 @@
 			params["name"] = real_name || name
 			world.Export("[config.login_export_addr]?[list2params(params)]", null, 1)
 
-/mob/proc/maybe_send_staffwarns(var/action)
+/mob/proc/maybe_send_staffwarns(action)
 	if(client?.staffwarn)
 		for(var/client/C in GLOB.admins)
 			send_staffwarn(C, action)
 
-/mob/proc/send_staffwarn(var/client/C, var/action, var/noise = 1)
+/mob/proc/send_staffwarn(client/C, action, noise = 1)
 	if(check_rights((R_ADMIN|R_MOD),0,C))
-		to_chat(C,"<span class='staffwarn'>StaffWarn: [client.ckey] [action]</span><br><span class='notice'>[client.staffwarn]</span>")
+		to_chat(C,SPAN_CLASS("staffwarn","StaffWarn: [client.ckey] [action]</span><br><span class='notice'>[client.staffwarn]"))
 		if(noise && C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 			sound_to(C, 'sound/effects/adminhelp.ogg')
 
@@ -91,6 +91,7 @@
 	l_general = new()
 	client.screen += l_plane
 	client.screen += l_general
+	client.init_verbs()
 
 	refresh_client_images()
 	reload_fullscreen() // Reload any fullscreen overlays this mob has.

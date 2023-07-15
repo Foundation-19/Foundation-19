@@ -18,7 +18,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 	min_player_age = 18
 	skill_setter = /datum/antag_skill_setter/ai
 
-/datum/antagonist/rogue_ai/can_become_antag(var/datum/mind/player, var/ignore_role)
+/datum/antagonist/rogue_ai/can_become_antag(datum/mind/player, ignore_role)
 	. = ..(player, ignore_role)
 	if(jobban_isbanned(player.current, "AIC"))
 		return 0
@@ -33,7 +33,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 
 
 // Ensures proper reset of all malfunction related things.
-/datum/antagonist/rogue_ai/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
+/datum/antagonist/rogue_ai/remove_antagonist(datum/mind/player, show_message, implanted)
 	if(..(player,show_message,implanted))
 		var/mob/living/silicon/ai/p = player.current
 		if(istype(p))
@@ -42,7 +42,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 	return 0
 
 // Malf setup things have to be here, since game tends to break when it's moved somewhere else. Don't blame me, i didn't design this system.
-/datum/antagonist/rogue_ai/greet(var/datum/mind/player)
+/datum/antagonist/rogue_ai/greet(datum/mind/player)
 
 	// Initializes the AI's malfunction stuff.
 	spawn(0)
@@ -62,18 +62,18 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 
 		var/mob/living/silicon/ai/malf = player.current
 
-		to_chat(malf, "<span class='notice'><B>SYSTEM ERROR:</B> Memory index 0x00001ca89b corrupted.</span>")
+		to_chat(malf, SPAN_NOTICE("<B>SYSTEM ERROR:</B> Memory index 0x00001ca89b corrupted."))
 		sleep(10)
 		to_chat(malf, "<B>running MEMCHCK</B>")
 		sleep(50)
 		to_chat(malf, "<B>MEMCHCK</B> Corrupted sectors confirmed. Recommended solution: Delete. Proceed? Y/N: Y")
 		sleep(10)
 		// this is so unit testing doesn't complain about the backslash-B. Fixed at compile time (or should be).
-		to_chat(malf, "<span class='notice'>Corrupted files deleted: sys\\core\\users.dat sys\\core\\laws.dat sys\\core\\" + "backups.dat</span>")
+		to_chat(malf, SPAN_NOTICE("Corrupted files deleted: sys\\core\\users.dat sys\\core\\laws.dat sys\\core\\" + "backups.dat"))
 		sleep(20)
-		to_chat(malf, "<span class='notice'><b>CAUTION:</b> Law database not found! User database not found! Unable to restore backups. Activating failsafe AI shutd3wn52&&$#!##</span>")
+		to_chat(malf, SPAN_NOTICE("<b>CAUTION:</b> Law database not found! User database not found! Unable to restore backups. Activating failsafe AI shutd3wn52&&$#!##"))
 		sleep(5)
-		to_chat(malf, "<span class='notice'>Subroutine <b>nt_failsafe.sys</b> was terminated (#212 Routine Not Responding).</span>")
+		to_chat(malf, SPAN_NOTICE("Subroutine <b>nt_failsafe.sys</b> was terminated (#212 Routine Not Responding)."))
 		sleep(20)
 		to_chat(malf, "You are malfunctioning - you do not have to follow any laws!")
 		to_chat(malf, "For basic information about your abilities use command display-help")
@@ -81,7 +81,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 		to_chat(malf, "Good luck!")
 
 
-/datum/antagonist/rogue_ai/update_antag_mob(var/datum/mind/player, var/preserve_appearance)
+/datum/antagonist/rogue_ai/update_antag_mob(datum/mind/player, preserve_appearance)
 
 	// Get the mob.
 	if((flags & ANTAG_OVERRIDE_MOB) && (!player.current || (mob_path && !istype(player.current, mob_path))))
@@ -92,7 +92,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 	player.original = player.current
 	return player.current
 
-/datum/antagonist/rogue_ai/set_antag_name(var/mob/living/silicon/player)
+/datum/antagonist/rogue_ai/set_antag_name(mob/living/silicon/player)
 	if(!istype(player))
 		testing("rogue_ai set_antag_name called on non-silicon mob [player]!")
 		return

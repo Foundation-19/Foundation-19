@@ -1,6 +1,7 @@
 /obj/item/robot_module/flying/filing
 	name = "filing drone module"
 	display_name = "Filing"
+	module_category = ROBOT_MODULE_TYPE_FLYING //we already have bureaucratic bot
 	channels = list(
 		"Service" = TRUE,
 		"Supply" = TRUE
@@ -22,9 +23,8 @@
 	emag = /obj/item/stamp/chameleon
 	synths = list(/datum/matter_synth/package_wrap)
 	skills = list(
-		SKILL_BUREAUCRACY         = SKILL_MASTER,
-		SKILL_FINANCE             = SKILL_MASTER,
 		SKILL_COMPUTER            = SKILL_EXPERIENCED,
+		SKILL_FINANCE             = SKILL_MASTER,
 		SKILL_SCIENCE             = SKILL_EXPERIENCED,
 		SKILL_DEVICES             = SKILL_EXPERIENCED
 	)

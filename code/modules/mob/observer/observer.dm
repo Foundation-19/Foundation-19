@@ -16,8 +16,8 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	var/ghost_image_flag = GHOST_IMAGE_DARKNESS
 	var/image/ghost_image = null //this mobs ghost image, for deleting and stuff
 
-/mob/observer/New()
-	..()
+/mob/observer/Initialize()
+	.=..()
 	ghost_image = image(src.icon,src)
 	ghost_image.plane = plane
 	ghost_image.layer = layer
@@ -38,6 +38,10 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 		SSghost_images.queue_global_image_update()
 	. = ..()
 
+/mob/observer/Login()
+	mind?.active = TRUE
+	..()
+
 /mob/observer/check_airflow_movable()
 	return FALSE
 
@@ -50,11 +54,14 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 /mob/observer/gib()		//observers can't be gibbed.
 	return
 
-/mob/observer/is_blind()	//Not blind either.
-	return
+/mob/observer/can_see(atom/origin)	//Not blind either.
+	if(origin)
+		if(!(origin in view(src)))
+			return FALSE
+	return TRUE
 
-/mob/observer/is_deaf() 	//Nor deaf.
-	return
+/mob/observer/can_hear() 	//Nor deaf.
+	return TRUE
 
 /mob/observer/set_stat()
 	stat = DEAD // They are also always dead
@@ -80,4 +87,4 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 		forceMove(T)
 		inertia_dir = 0
 		throwing = null
-		to_chat(src, "<span class='notice'>You cannot move further in this direction.</span>")
+		to_chat(src, SPAN_NOTICE("You cannot move further in this direction."))

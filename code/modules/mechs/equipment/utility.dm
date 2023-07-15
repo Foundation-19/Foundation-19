@@ -27,7 +27,7 @@
 				carrying -= chosen_obj
 	. = ..()
 
-/obj/item/mech_equipment/clamp/afterattack(var/atom/target, var/mob/living/user, var/inrange, var/params)
+/obj/item/mech_equipment/clamp/afterattack(atom/target, mob/living/user, inrange, params)
 	. = ..()
 
 	if(.)
@@ -124,14 +124,14 @@
 					return
 				M.attack_generic(owner, (owner.arms ? owner.arms.melee_damage * 1.5 : 0), "slammed") //Honestly you should not be able to do this without hands, but still
 				M.throw_at(get_edge_target_turf(owner ,owner.dir),5, 2)
-				to_chat(user, "<span class='warning'>You slam [target] with [src.name].</span>")
+				to_chat(user, SPAN_WARNING("You slam [target] with [src.name]."))
 				owner.visible_message(SPAN_DANGER("[owner] slams [target] with the hydraulic clamp."))
 			else
 				step_away(M, owner)
 				to_chat(user, "You push [target] out of the way.")
 				owner.visible_message("[owner] pushes [target] out of the way.")
 
-/obj/item/mech_equipment/clamp/attack_self(var/mob/user)
+/obj/item/mech_equipment/clamp/attack_self(mob/user)
 	. = ..()
 	if(.)
 		drop_carrying(user, TRUE)
@@ -142,7 +142,7 @@
 	else
 		..()
 
-/obj/item/mech_equipment/clamp/proc/drop_carrying(var/mob/user, var/choose_object)
+/obj/item/mech_equipment/clamp/proc/drop_carrying(mob/user, choose_object)
 	if(!length(carrying))
 		to_chat(user, SPAN_WARNING("You are not carrying anything in \the [src]."))
 		return
@@ -211,7 +211,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/mech_equipment/light/attack_self(var/mob/user)
+/obj/item/mech_equipment/light/attack_self(mob/user)
 	. = ..()
 	if(.)
 		toggle()
@@ -267,7 +267,7 @@
 	return string
 
 
-/obj/item/mech_equipment/catapult/attack_self(var/mob/user)
+/obj/item/mech_equipment/catapult/attack_self(mob/user)
 	. = ..()
 	if(.)
 		mode = mode == CATAPULT_SINGLE ? CATAPULT_AREA : CATAPULT_SINGLE
@@ -275,7 +275,7 @@
 		update_icon()
 
 
-/obj/item/mech_equipment/catapult/afterattack(var/atom/target, var/mob/living/user, var/inrange, var/params)
+/obj/item/mech_equipment/catapult/afterattack(atom/target, mob/living/user, inrange, params)
 	. = ..()
 	if(.)
 
@@ -292,7 +292,7 @@
 				else if(target != locked)
 					if(locked in view(owner))
 						locked.throw_at(target, 14, 1.5, owner)
-						log_and_message_admins("used [src] to throw [locked] at [target].", user, owner.loc)
+						log_and_message_staff("used [src] to throw [locked] at [target].", user, owner.loc)
 						locked = null
 
 						var/obj/item/cell/C = owner.get_cell()
@@ -315,7 +315,7 @@
 					A.throw_at(get_edge_target_turf(A,get_dir(target, A)),dist,0.7)
 
 
-				log_and_message_admins("used [src]'s area throw on [target].", user, owner.loc)
+				log_and_message_staff("used [src]'s area throw on [target].", user, owner.loc)
 				var/obj/item/cell/C = owner.get_cell()
 				if(istype(C))
 					C.use(active_power_use * CELLRATE * 2) //bit more expensive to throw all
@@ -384,7 +384,7 @@
 	if (ispath(drill_head))
 		drill_head = new drill_head(src)
 
-/obj/item/mech_equipment/drill/attack_self(var/mob/user)
+/obj/item/mech_equipment/drill/attack_self(mob/user)
 	. = ..()
 	if(.)
 		if(drill_head)
@@ -452,7 +452,7 @@
 
 	if (ismob(target))
 		var/mob/tmob = target
-		if (tmob.unacidable)
+		if (tmob.unacidable == -1)
 			to_chat(user, SPAN_WARNING("\The [target] can't be drilled away."))
 			return
 		else
@@ -460,7 +460,7 @@
 
 	else if (isobj(target))
 		var/obj/tobj = target
-		if (tobj.unacidable)
+		if (tobj.acid_resistance == -1)
 			to_chat(user, SPAN_WARNING("\The [target] can't be drilled away."))
 			return
 
@@ -531,7 +531,7 @@
 		SPAN_DANGER("\The [owner] drives \the [src] into \the [target]."),
 		blind_message = SPAN_WARNING("You hear [audible].")
 	)
-	log_and_message_admins("used [src] on [target]", user, owner.loc)
+	log_and_message_staff("used [src] on [target]", user, owner.loc)
 	drill_head.durability -= 1
 	target.ex_act(2)
 

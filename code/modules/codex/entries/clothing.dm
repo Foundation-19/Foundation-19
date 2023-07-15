@@ -40,9 +40,9 @@
 		armor_strings += "It is airtight."
 
 	if(min_pressure_protection == 0)
-		armor_strings += "Wearing this will protect you from the vacuum of space."
+		armor_strings += "Wearing this will protect you from a complete vacuum."
 	else if(min_pressure_protection != null)
-		armor_strings += "Wearing this will protect you from low pressures, but not the vacuum of space."
+		armor_strings += "Wearing this will protect you from low pressures, but not a complete vacuum."
 
 	if(max_pressure_protection != null)
 		armor_strings += "This suit is rated for pressures up to [max_pressure_protection] kPa."
@@ -51,7 +51,7 @@
 		armor_strings += "The material is exceptionally thick."
 
 	if(max_heat_protection_temperature >= FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE)
-		armor_strings += "You could probably safely skydive into the Sun wearing this."
+		armor_strings += "This suit offers hefty protection from impossibly high temperatures."
 	else if(max_heat_protection_temperature >= SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE)
 		armor_strings += "It provides good protection against fire and heat."
 

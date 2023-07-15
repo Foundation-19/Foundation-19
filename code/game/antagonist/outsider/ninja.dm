@@ -20,7 +20,7 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 	faction = "ninja"
 	base_to_load = /datum/map_template/ruin/antag_spawn/ninja
 
-/datum/antagonist/ninja/create_objectives(var/datum/mind/ninja)
+/datum/antagonist/ninja/create_objectives(datum/mind/ninja)
 
 	if(!..())
 		return
@@ -71,7 +71,7 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 	ninja_objective.owner = ninja
 	ninja.objectives += ninja_objective
 
-/datum/antagonist/ninja/greet(var/datum/mind/player)
+/datum/antagonist/ninja/greet(datum/mind/player)
 
 	if(!..())
 		return 0
@@ -79,7 +79,7 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 	player.StoreMemory("<B>Directive:</B> <span class='danger'>[directive]</span><br>", /decl/memory_options/system)
 	to_chat(player, "<b>Remember your directive:</b> [directive].")
 
-/datum/antagonist/ninja/update_antag_mob(var/datum/mind/player)
+/datum/antagonist/ninja/update_antag_mob(datum/mind/player)
 	..()
 	var/ninja_title = pick(GLOB.ninja_titles)
 	var/ninja_name = pick(GLOB.ninja_names)
@@ -89,13 +89,13 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 		H.SetName(H.real_name)
 	player.name = H.name
 
-/datum/antagonist/ninja/equip(var/mob/living/carbon/human/player)
+/datum/antagonist/ninja/equip(mob/living/carbon/human/player)
 	. = ..()
 	if(.)
 		var/obj/item/device/radio/R = new /obj/item/device/radio/headset(player)
-		player.equip_to_slot_or_del(R, slot_l_ear)
-		player.equip_to_slot_or_del(new /obj/item/clothing/under/color/black(player), slot_w_uniform)
-		player.equip_to_slot_or_del(new /obj/item/device/flashlight(player), slot_belt)
+		player.equip_to_slot_or_store_or_drop(R, slot_l_ear)
+		player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/under/color/black(player), slot_w_uniform)
+		player.equip_to_slot_or_store_or_drop(new /obj/item/device/flashlight(player), slot_belt)
 		create_id("Infiltrator", player)
 		equip_rig(/obj/item/rig/light/ninja, player)
 		var/obj/item/modular_computer/pda/syndicate/U = new

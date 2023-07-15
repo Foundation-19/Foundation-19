@@ -6,7 +6,7 @@
 		else
 			A.SetName("alien creature")
 			A.real_name = "alien creature"
-			A.verbs |= /mob/living/simple_animal/proc/name_species
+			add_verb(A, /mob/living/simple_animal/proc/name_species)
 	if (atmosphere)
 		//Set up gases for living things
 		if (!LAZYLEN(breathgas))
@@ -58,17 +58,17 @@
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_random_species_name()
 	return pick("nol","shan","can","fel","xor")+pick("a","e","o","t","ar")+pick("ian","oid","ac","ese","inian","rd")
 
-/obj/effect/overmap/visitable/sector/exoplanet/proc/rename_species(var/species_type, var/newname, var/force = FALSE)
+/obj/effect/overmap/visitable/sector/exoplanet/proc/rename_species(species_type, newname, force = FALSE)
 	if (species[species_type] && !force)
 		return FALSE
 
 	species[species_type] = newname
-	log_and_message_admins("renamed [species_type] to [newname]")
+	log_and_message_staff("renamed [species_type] to [newname]")
 	for (var/mob/living/simple_animal/A in animals)
 		if (istype(A,species_type))
 			A.SetName(newname)
 			A.real_name = newname
-			A.verbs -= /mob/living/simple_animal/proc/name_species
+			remove_verb(A, /mob/living/simple_animal/proc/name_species)
 	return TRUE
 
 /obj/effect/landmark/exoplanet_spawn

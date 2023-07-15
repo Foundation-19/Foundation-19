@@ -1,7 +1,7 @@
 //Commendeering this file for  Site 53 instead of the torch, that was it's use, anyway.
 
 /obj/machinery/vending/medical/scp
-	req_access = list(access_medicallvl1)
+	req_access = list(ACCESS_MEDICAL_LVL1)
 
 //telecommunications gubbins for torch-specific networks
 
@@ -37,7 +37,7 @@
 	icon_deny = "sec-deny"
 	icon_vend = "sec-vend"
 	vend_delay = 14
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	products = list(/obj/item/weapon/handcuffs = 8,/obj/item/weapon/grenade/flashbang = 4,/obj/item/weapon/grenade/chem_grenade/teargas = 4,/obj/item/device/flash = 5,
 					/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12,/obj/item/weapon/storage/box/evidence = 6,/obj/item/clothing/accessory/badge/solgov/security = 6)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/weapon/storage/box/donut = 2)

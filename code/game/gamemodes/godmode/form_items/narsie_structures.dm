@@ -13,7 +13,7 @@
 
 	power_adjustment = 2
 
-/obj/structure/deity/blood_forge/attack_hand(var/mob/user)
+/obj/structure/deity/blood_forge/attack_hand(mob/user)
 	if(!linked_god || !linked_god.is_follower(user, silent = 1) || !ishuman(user))
 		return
 
@@ -28,12 +28,12 @@
 		dat += "<A href='?src=\ref[src];make_recipe=\ref[type];'>[initial(a.name)]</a> - [cost]<br><i>[initial(a.desc)]</i><br><br>"
 	show_browser(user, dat, "window=forge")
 
-/obj/structure/deity/blood_forge/CanUseTopic(var/user)
+/obj/structure/deity/blood_forge/CanUseTopic(user)
 	if(!linked_god || !linked_god.is_follower(user, silent = 1) || !ishuman(user))
 		return STATUS_CLOSE
 	return ..()
 
-/obj/structure/deity/blood_forge/OnTopic(var/user, var/list/href_list)
+/obj/structure/deity/blood_forge/OnTopic(user, list/href_list)
 	if(href_list["make_recipe"])
 		var/list/recipes = linked_god.feats[recipe_feat_list]
 		var/type = locate(href_list["make_recipe"]) in recipes
@@ -42,13 +42,13 @@
 			craft_item(type, cost, user)
 		return TOPIC_REFRESH
 
-/obj/structure/deity/blood_forge/proc/craft_item(var/path, var/blood_cost, var/mob/user)
+/obj/structure/deity/blood_forge/proc/craft_item(path, blood_cost, mob/user)
 	if(busy)
-		to_chat(user, "<span class='warning'>Someone is already using \the [src]!</span>")
+		to_chat(user, SPAN_WARNING("Someone is already using \the [src]!"))
 		return
 
 	busy = 1
-	to_chat(user, "<span class='notice'>You dip your hands into \the [src]'s [text_modifications["Dip"]]</span>")
+	to_chat(user, SPAN_NOTICE("You dip your hands into \the [src]'s [text_modifications["Dip"]]"))
 	for(var/count = 0, count < blood_cost/10, count++)
 		if(!do_after(user, 50,src))
 			busy = 0
@@ -60,7 +60,7 @@
 	user.visible_message("\The [user] pull out \the [I] from the [text_modifications["Out"]].", "You pull out the completed [I] from the [text_modifications["Out"]].")
 	busy = 0
 
-/obj/structure/deity/blood_forge/proc/take_charge(var/mob/living/user, var/charge)
+/obj/structure/deity/blood_forge/proc/take_charge(mob/living/user, charge)
 	if(linked_god)
 		linked_god.take_charge(user, charge)
 
@@ -73,14 +73,14 @@
 	health = 100 //Its a piece of rock.
 	build_cost = 700
 
-/obj/structure/deity/blood_stone/attack_hand(var/mob/user)
+/obj/structure/deity/blood_stone/attack_hand(mob/user)
 	if(!linked_god || !linked_god.is_follower(user, silent = 1) || !ishuman(user))
 		return
 
 	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='warning'>\The [user] calmly slices their finger on \the [src], smeering it over the black stone.</span>","<span class='warning'>You slowly slide your finger down one of \the [src]'s sharp edges, smeering it over its smooth surface.</span>")
+	user.visible_message(SPAN_WARNING("\The [user] calmly slices their finger on \the [src], smeering it over the black stone."),SPAN_WARNING("You slowly slide your finger down one of \the [src]'s sharp edges, smeering it over its smooth surface."))
 	while(do_after(H,50,src))
-		user.audible_message("\The [user] utters something under their breath.", "<span class='cult'>You mutter a dark prayer to your master as you feel the stone eat away at your lifeforce.</span>")
+		user.audible_message("\The [user] utters something under their breath.", SPAN_OCCULT("You mutter a dark prayer to your master as you feel the stone eat away at your lifeforce."))
 		if(H.should_have_organ(BP_HEART))
 			H.drip(5,get_turf(src))
 		else

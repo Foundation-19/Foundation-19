@@ -10,6 +10,7 @@ GLOBAL_LIST_EMPTY(latejoin_cyborg)
 GLOBAL_LIST_EMPTY(latejoin_dclass)
 GLOBAL_LIST_EMPTY(latejoin_comms)
 GLOBAL_LIST_EMPTY(latejoin_lcz)
+GLOBAL_LIST_EMPTY(new_player)
 
 GLOBAL_LIST_EMPTY(prisonwarp) // Prisoners go to these
 GLOBAL_LIST_EMPTY(tdome1)

@@ -12,15 +12,14 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	program_menu_icon = "star"
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
-	required_access = access_securitylvl2
+	required_access = ACCESS_SECURITY_LVL2
 	nanomodule_path = /datum/nano_module/program/digitalwarrant/
-	category = PROG_SEC
 
 /datum/nano_module/program/digitalwarrant/
 	name = "Warrant Assistant"
 	var/datum/computer_file/data/warrant/activewarrant
 
-/datum/nano_module/program/digitalwarrant/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/digitalwarrant/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
 	if(activewarrant)
@@ -84,7 +83,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	if(!istype(user))
 		return
 	var/obj/item/card/id/I = user.GetIdCard()
-	if(!istype(I) || !I.registered_name || !(access_securitylvl2 in I.access))
+	if(!istype(I) || !I.registered_name || !(ACCESS_SECURITY_LVL2 in I.access))
 		to_chat(user, "Authentication error: Unable to locate ID with apropriate access to allow this operation.")
 		return
 
@@ -139,7 +138,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 
 	if(href_list["printwarrant"])
 		. = TRUE
-		if(!program.computer.has_component(PART_PRINTER))
+		if(!program.computer.nano_printer)
 			to_chat(src, SPAN_WARNING("Hardware Error: Printer not found."))
 			return
 		if(!activewarrant)
@@ -149,7 +148,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 					activewarrant = W
 					break
 		if(activewarrant)
-			program.computer.print_paper(warranttotext(activewarrant), capitalize(activewarrant.fields["arrestsearch"]) + " Warrant - " + activewarrant.fields["namewarrant"])
+			program.computer.nano_printer.print_text(warranttotext(activewarrant), capitalize(activewarrant.fields["arrestsearch"]) + " Warrant - " + activewarrant.fields["namewarrant"])
 		else
 			to_chat(src, SPAN_WARNING("Internal error: Warrant not found."))
 
@@ -201,7 +200,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 		// access-granting is only available for arrest warrants
 		if(activewarrant.fields["arrestsearch"] == "search")
 			return
-		if(!(access_adminlvl1 in I.access))
+		if(!(ACCESS_ADMIN_LVL1 in I.access))
 			to_chat(user, "Authentication error: Unable to locate ID with appropriate access to allow this operation.")
 			return
 
@@ -242,7 +241,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 //Access authorized by: Notthe Capitano - Commanding Officer
 //
 //(legal notice)
-/datum/nano_module/program/digitalwarrant/proc/warranttotext(var/datum/computer_file/data/warrant/warrant)
+/datum/nano_module/program/digitalwarrant/proc/warranttotext(datum/computer_file/data/warrant/warrant)
 	. += "\[center]\[h3]" + GLOB.using_map.station_name + " " + capitalize(warrant.fields["arrestsearch"]) + " Warrant\[/center]\[/h3] \
 	      \[b]System: \[/b]" + GLOB.using_map.system_name
 	. += "\n\n\[b]Suspect Name: \[/b]" + warrant.fields["namewarrant"]

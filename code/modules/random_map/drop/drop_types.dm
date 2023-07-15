@@ -22,35 +22,6 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/dd_SortValue()
 	return name
 
-/datum/supply_drop_loot/supermatter
-	name = "Supermatter"
-/datum/supply_drop_loot/supermatter/New()
-	..()
-	contents = list(/obj/machinery/power/supermatter)
-
-/datum/supply_drop_loot/lasers
-	name = "Lasers"
-	container = /obj/structure/largecrate
-/datum/supply_drop_loot/lasers/New()
-	..()
-	contents = list(
-		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/sniperrifle,
-		/obj/item/gun/energy/ionrifle)
-
-/datum/supply_drop_loot/ballistics
-	name = "Ballistics"
-	container = /obj/structure/largecrate
-/datum/supply_drop_loot/ballistics/New()
-	..()
-	contents = list(
-		/obj/item/gun/projectile/pistol/sec,
-		/obj/item/gun/projectile/shotgun/doublebarrel,
-		/obj/item/gun/projectile/shotgun/pump/combat,
-		/obj/item/gun/projectile/automatic/sec_smg,
-		/obj/item/gun/projectile/automatic/bullpup_rifle)
-
 /datum/supply_drop_loot/ballistics
 	name = "Ballistics"
 	container = /obj/structure/largecrate
@@ -119,7 +90,6 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/clothing/suit/armor/vest,
 		/obj/item/clothing/suit/storage/vest,
 		/obj/item/clothing/suit/storage/vest,
-		/obj/item/clothing/suit/armor/laserproof,
 		/obj/item/clothing/suit/armor/bulletproof)
 
 /datum/supply_drop_loot/materials
@@ -156,10 +126,10 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/storage/box/syringes,
 		/obj/item/storage/box/autoinjectors)
 
-/datum/supply_drop_loot/power
-	name = "Power"
+/datum/supply_drop_loot/materials
+	name = "Materials"
 	container = /obj/structure/largecrate
-/datum/supply_drop_loot/power/New()
+/datum/supply_drop_loot/materials/New()
 	..()
 	contents = list(
 		/obj/item/stack/material/steel,
@@ -188,9 +158,4 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/power/New()
 	..()
 	contents = list(
-		/obj/machinery/power/port_gen/pacman,
-		/obj/machinery/power/port_gen/pacman/super,
 		/obj/machinery/power/port_gen/pacman/mrs)
-
-/datum/supply_drop_loot/power/contents()
-	return list(pick(contents))

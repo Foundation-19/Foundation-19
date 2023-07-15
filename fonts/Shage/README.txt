@@ -1,4 +1,4 @@
-﻿---LEGAL SHIT---
+---LEGAL SHIT---
 The font file in this archive was created using Fontstruct the free, online
 font-building tool.
 This font was created by “BlueNexus”.

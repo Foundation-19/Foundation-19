@@ -39,14 +39,14 @@ var/list/_client_preferences_by_type
 				_client_preferences += new client_type()
 	return _client_preferences
 
-/proc/get_client_preference(var/datum/client_preference/preference)
+/proc/get_client_preference(datum/client_preference/preference)
 	if(istype(preference))
 		return preference
 	if(ispath(preference))
 		return get_client_preference_by_type(preference)
 	return get_client_preference_by_key(preference)
 
-/proc/get_client_preference_by_key(var/preference)
+/proc/get_client_preference_by_key(preference)
 	if(!_client_preferences_by_key)
 		_client_preferences_by_key = list()
 		for(var/ct in get_client_preferences())
@@ -54,7 +54,7 @@ var/list/_client_preferences_by_type
 			_client_preferences_by_key[client_pref.key] = client_pref
 	return _client_preferences_by_key[preference]
 
-/proc/get_client_preference_by_type(var/preference)
+/proc/get_client_preference_by_type(preference)
 	if(!_client_preferences_by_type)
 		_client_preferences_by_type = list()
 		for(var/ct in get_client_preferences())
@@ -77,12 +77,16 @@ var/list/_client_preferences_by_type
 /datum/client_preference/proc/may_set(client/given_client)
 	return TRUE
 
-/datum/client_preference/proc/changed(var/mob/preference_mob, var/new_value)
+/datum/client_preference/proc/changed(mob/preference_mob, new_value)
 	return
 
 /*********************
 * Player Preferences *
 *********************/
+
+/datum/client_preference/play_vote_notification
+	description = "Play vote notification"
+	key = "SOUND_VOTE"
 
 /datum/client_preference/play_admin_midis
 	description = "Play admin midis"
@@ -92,7 +96,7 @@ var/list/_client_preferences_by_type
 	description = "Play lobby music"
 	key = "SOUND_LOBBY"
 
-/datum/client_preference/play_lobby_music/changed(var/mob/preference_mob, var/new_value)
+/datum/client_preference/play_lobby_music/changed(mob/preference_mob, new_value)
 	if(new_value == GLOB.PREF_YES)
 		if(isnewplayer(preference_mob))
 			sound_to(preference_mob, GLOB.using_map.lobby_track.get_sound())
@@ -104,7 +108,7 @@ var/list/_client_preferences_by_type
 	description = "Play ambience"
 	key = "SOUND_AMBIENCE"
 
-/datum/client_preference/play_ambiance/changed(var/mob/preference_mob, var/new_value)
+/datum/client_preference/play_ambiance/changed(mob/preference_mob, new_value)
 	if(new_value == GLOB.PREF_NO)
 		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.lobby_sound_channel))
 		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.ambience_sound_channel))
@@ -113,6 +117,7 @@ var/list/_client_preferences_by_type
 	description = "Play announcement sound effects"
 	key = "SOUND_ANNOUNCEMENT"
 	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+
 /datum/client_preference/ghost_ears
 	description = "Ghost ears"
 	key = "CHAT_GHOSTEARS"
@@ -148,7 +153,7 @@ var/list/_client_preferences_by_type
 	key = "SHOW_TYPING"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
-/datum/client_preference/show_typing_indicator/changed(var/mob/preference_mob, var/new_value)
+/datum/client_preference/show_typing_indicator/changed(mob/preference_mob, new_value)
 	if(new_value == GLOB.PREF_HIDE)
 		preference_mob.remove_typing_indicator()
 
@@ -244,20 +249,41 @@ var/list/_client_preferences_by_type
 	key = "FLOATING_CHAT"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
-/datum/client_preference/goonchat
-	description = "Use Goon Chat"
-	key = "USE_GOONCHAT"
+/datum/client_preference/fancy_tgui
+	description = "Fancy TGUI"
+	key = "FANCY_TGUI"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
 
-/datum/client_preference/goonchat/changed(var/mob/preference_mob, var/new_value)
-	if(preference_mob && preference_mob.client)
-		var/client/C = preference_mob.client
-		if(new_value == GLOB.PREF_YES)
-			C.chatOutput.loaded = FALSE
-			C.chatOutput.start()
-		else
-			C.force_white_theme()
-			winset(C, "output", "is-visible=true;is-disabled=false")
-			winset(C, "browseroutput", "is-visible=false")
+/datum/client_preference/lock_tgui
+	description = "Lock TGUI"
+	key = "LOCK_TGUI"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/fast_mc_refresh
+	description = "Fast MC Refresh"
+	key = "FAST_MC_REFRESH"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/use_tgui_inputs
+	description = "Use TGUI inputs"
+	key = "USE_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/large_tgui_inputs
+	description = "Large TGUI inputs buttons"
+	key = "LARGE_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/swap_tgui_inputs
+	description = "Swap Sumbmit/Cancle buttons"
+	key = "SWAP_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
 
 /********************
 * General Staff Preferences *

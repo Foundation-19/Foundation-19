@@ -27,7 +27,7 @@
 // Called during the loop that bangs people in lockers/containers and when banging
 // people in normal view.  Could theroetically be called during other explosions.
 // -- Polymorph
-/obj/item/grenade/flashbang/proc/bang(var/turf/T , var/mob/living/carbon/M)
+/obj/item/grenade/flashbang/proc/bang(turf/T , mob/living/carbon/M)
 	to_chat(M, SPAN_DANGER("BANG"))
 	playsound(src, 'sound/weapons/flashbang.ogg', 70, 1, 30)
 
@@ -78,9 +78,9 @@
 	//This really should be in mob not every check
 	switch(M.ear_damage)
 		if(1 to 14)
-			to_chat(M, "<span class='danger'>Your ears start to ring!</span>")
+			to_chat(M, SPAN_DANGER("Your ears start to ring!"))
 		if(15 to INFINITY)
-			to_chat(M, "<span class='danger'>Your ears start to ring badly!</span>")
+			to_chat(M, SPAN_DANGER("Your ears start to ring badly!"))
 
 	if(!ear_safety)
 		sound_to(M, 'sound/weapons/flash_ring.ogg')

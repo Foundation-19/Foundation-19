@@ -61,10 +61,10 @@
 	emote_prob =  0
 	wander_prob = 0
 
-/mob/living/carbon/alien/diona/sterile/Initialize(var/mapload)
+/mob/living/carbon/alien/diona/sterile/Initialize(mapload)
 	. = ..(mapload, 0)
 
-/mob/living/carbon/alien/diona/Initialize(var/mapload, var/flower_chance = 15)
+/mob/living/carbon/alien/diona/Initialize(mapload, flower_chance = 15)
 
 	species = all_species[SPECIES_DIONA]
 	add_language(LANGUAGE_ROOTGLOBAL)
@@ -87,14 +87,14 @@
 /mob/living/carbon/alien/diona/examine(mob/user)
 	. = ..()
 	if(holding_item)
-		to_chat(user, "<span class='notice'>It is holding [icon2html(holding_item, user)] \a [holding_item].</span>")
+		to_chat(user, SPAN_NOTICE("It is holding [icon2html(holding_item, user)] \a [holding_item]."))
 	if(hat)
-		to_chat(user, "<span class='notice'>It is wearing [icon2html(hat, user)] \a [hat].</span>")
+		to_chat(user, SPAN_NOTICE("It is wearing [icon2html(hat, user)] \a [hat]."))
 
 /mob/living/carbon/alien/diona/IsAdvancedToolUser()
 	return FALSE
 
-/mob/living/carbon/alien/diona/proc/handle_npc(var/mob/living/carbon/alien/diona/D)
+/mob/living/carbon/alien/diona/proc/handle_npc(mob/living/carbon/alien/diona/D)
 	if(D.stat != CONSCIOUS)
 		return
 	if(prob(wander_prob) && isturf(D.loc) && !D.pulledby) //won't move if being pulled
@@ -102,7 +102,7 @@
 	if(prob(emote_prob))
 		D.emote(pick("scratch","jump","chirp","tail"))
 
-/proc/split_into_nymphs(var/mob/living/carbon/human/donor, dying)
+/proc/split_into_nymphs(mob/living/carbon/human/donor, dying)
 
 	if(!donor || donor.species.name != SPECIES_DIONA)
 		return
@@ -143,11 +143,11 @@
 	else
 		first_nymph.key = donor.key
 
-	log_and_message_admins("has split into nymphs; player now controls [key_name_admin(first_nymph)]", donor)
+	log_and_message_staff("has split into nymphs; player now controls [key_name_admin(first_nymph)]", donor)
 
 	for(var/obj/item/W in donor)
 		donor.drop_from_inventory(W)
 
-	donor.visible_message("<span class='warning'>\The [donor] quivers slightly, then splits apart with a wet slithering noise.</span>")
+	donor.visible_message(SPAN_WARNING("\The [donor] quivers slightly, then splits apart with a wet slithering noise."))
 	if (!dying)
 		qdel(donor)

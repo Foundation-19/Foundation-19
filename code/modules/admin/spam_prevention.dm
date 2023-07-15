@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(ckey_punished_for_spam) // this round; to avoid redundant reco
 	// Punitive action
 	. = FALSE
 	if(admin_message)
-		log_and_message_admins(admin_message, C)
+		log_and_message_staff(admin_message, C)
 	if(client_message)
 		to_chat(C, SPAN_DANGER(client_message))
 	if(GLOB.ckey_punished_for_spam[ckey])

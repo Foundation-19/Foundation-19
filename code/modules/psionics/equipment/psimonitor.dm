@@ -6,7 +6,7 @@
 	anchored = TRUE
 	density = TRUE
 	opacity = FALSE
-	req_access = list(list(access_psiadvisor, access_captain, access_cmo, access_hop, access_hos))
+	req_access = list(list(ACCESS_PSIADVISOR, ACCESS_CAPTAIN, ACCESS_CMO, ACCESS_HOP, ACCESS_HOS))
 
 	var/list/psi_violations = list()
 	var/show_violations = FALSE
@@ -16,12 +16,12 @@
 	SSpsi.psi_monitors += src
 	..()
 
-/obj/machinery/psi_monitor/emag_act(var/remaining_charges, var/mob/user)
+/obj/machinery/psi_monitor/emag_act(remaining_charges, mob/user)
 	if(!emagged)
 		emagged = TRUE
 		remaining_charges--
 		req_access.Cut()
-		to_chat(user, "<span class='notice'>You short out the access protocols.</span>")
+		to_chat(user, SPAN_NOTICE("You short out the access protocols."))
 		return TRUE
 	return FALSE
 
@@ -34,7 +34,7 @@
 
 			var/obj/item/card/id/ID = usr.GetIdCard()
 			if(!ID || !allowed(usr))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, SPAN_WARNING("Access denied."))
 			else
 				authorized = "[ID.registered_name] ([ID.assignment])"
 			. = 1
@@ -65,11 +65,11 @@
 		if(. && usr)
 			interact(usr)
 
-/obj/machinery/psi_monitor/interface_interact(var/mob/user)
+/obj/machinery/psi_monitor/interface_interact(mob/user)
 	interact(user)
 	return TRUE
 
-/obj/machinery/psi_monitor/interact(var/mob/user)
+/obj/machinery/psi_monitor/interact(mob/user)
 
 	var/list/dat = list()
 	dat += "<h1>Psi Dampener Monitor</h1>"
@@ -111,7 +111,7 @@
 
 
 /obj/machinery/psi_monitor/proc/report_failure(obj/item/implant/psi_control/implant)
-	psi_violations += "<font color='#FF0000'>Critical system failure - [implant.imp_in.name].</font>"
+	psi_violations += FONT_COLORED("#FF0000","Critical system failure - [implant.imp_in.name].")
 
 /obj/machinery/psi_monitor/proc/report_violation(obj/item/implant/psi_control/implant, stress)
 	psi_violations += "Sigma [round(stress/10)] event - [implant.imp_in.name]."

@@ -1,6 +1,9 @@
 [langserver]
 dreamchecker = true
 
+[diagnostics]
+var_in_proc_parameter = "error"
+
 [debugger]
 engine = "auxtools"
 

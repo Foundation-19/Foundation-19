@@ -13,11 +13,11 @@
 	. = ..()
 
 // Called on state transition; can intercept, but must call parent.
-/obj/machinery/proc/state_transition(var/decl/machine_construction/new_state)
+/obj/machinery/proc/state_transition(decl/machine_construction/new_state)
 	construct_state = new_state
 
 // Return a change state define or a fail message to block transition.
-/obj/machinery/proc/cannot_transition_to(var/state_path, var/mob/user)
+/obj/machinery/proc/cannot_transition_to(state_path, mob/user)
 	return MCS_CHANGE
 
 /decl/machine_construction

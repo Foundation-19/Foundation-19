@@ -15,8 +15,7 @@
 	a_intent = I_HURT
 	health = 300
 	maxHealth = 300
-	speed = 8
-	move_to_delay = 6
+	movement_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/drone
 	projectilesound = 'sound/weapons/laser3.ogg'
 	destroy_surroundings = 0
@@ -78,16 +77,16 @@
 	ion_trail.set_up(src)
 	ion_trail.start()
 
-/mob/living/simple_animal/hostile/retaliate/malf_drone/Allow_Spacemove(var/check_drift = 0)
+/mob/living/simple_animal/hostile/retaliate/malf_drone/Allow_Spacemove(check_drift = 0)
 	return 1
 
 /mob/living/simple_animal/hostile/retaliate/malf_drone/proc/Haywire()
 	if(prob(disabled ? 0 : 1) && malfunctioning)
 		if(hostile_drone)
-			src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] retracts several targetting vanes, and dulls it's running lights.</span>")
+			src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] retracts several targetting vanes, and dulls it's running lights."))
 			hostile_drone = 0
 		else
-			src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] suddenly lights up, and additional targetting vanes slide into place.</span>")
+			src.visible_message(SPAN_WARNING("[icon2html(src, viewers(get_turf(src)))] [src] suddenly lights up, and additional targetting vanes slide into place."))
 			hostile_drone = 1
 
 //self repair systems have a chance to bring the drone back to life
@@ -108,7 +107,7 @@
 
 	//repair a bit of damage
 	if(prob(1))
-		src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] shudders and shakes as some of it's damaged systems come back online.</span>")
+		src.visible_message(SPAN_WARNING("[icon2html(src, viewers(get_turf(src)))] [src] shudders and shakes as some of it's damaged systems come back online."))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
@@ -141,17 +140,17 @@
 		exploding = 0
 		if(!disabled)
 			if(prob(50))
-				src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] suddenly shuts down!</span>")
+				src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] suddenly shuts down!"))
 			else
-				src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] suddenly lies still and quiet.</span>")
+				src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] suddenly lies still and quiet."))
 			disabled = rand(150, 600)
 			walk(src,0)
 
 	if(exploding && prob(20))
 		if(prob(50))
-			src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] begins to spark and shake violenty!</span>")
+			src.visible_message(SPAN_WARNING("[icon2html(src, viewers(get_turf(src)))] [src] begins to spark and shake violenty!"))
 		else
-			src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src] sparks and shakes like it's about to explode!</span>")
+			src.visible_message(SPAN_WARNING("[icon2html(src, viewers(get_turf(src)))] [src] sparks and shakes like it's about to explode!"))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()

@@ -1,4 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 var/global/list/all_objectives = list()
 
 /datum/objective
@@ -11,7 +10,7 @@ var/global/list/all_objectives = list()
 	//If they are focused on a particular number. Steal objectives have their own counter.
 	var/target_amount = 0
 
-/datum/objective/New(var/text)
+/datum/objective/New(text)
 	all_objectives |= src
 	if(text)
 		explanation_text = text
@@ -152,12 +151,12 @@ var/global/list/all_objectives = list()
 // Hijack //
 
 /datum/objective/hijack
-	explanation_text = "Hijack a shuttle."
+	explanation_text = "Hijack the train."
 
 // Shuttle Escape //
 
 /datum/objective/escape
-	explanation_text = "Escape on the shuttle or an escape pod alive and free."
+	explanation_text = "Escape on the train or another way alive and free."
 
 // Survive //
 
@@ -219,34 +218,21 @@ var/global/list/all_objectives = list()
 	var/target_name
 
 	var/global/possible_items[] = list(
-		"the captain's antique laser gun" = /obj/item/gun/energy/captain,
-		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
-		"an RCD" = /obj/item/rcd,
-		"a jetpack" = /obj/item/tank/jetpack,
-		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/aicard,
-		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the [station_name()] blueprints" = /obj/item/blueprints,
-		"a nasa voidsuit" = /obj/item/clothing/suit/space/void,
-		"28 moles of phoron (full tank)" = /obj/item/tank,
-		"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
-		"a chief science officer's jumpsuit" = /obj/item/clothing/under/rank/research_director,
-		"a chief engineer's jumpsuit" = /obj/item/clothing/under/rank/chief_engineer,
-		"a chief medical officer's jumpsuit" = /obj/item/clothing/under/rank/chief_medical_officer,
-		"a head of security's jumpsuit" = /obj/item/clothing/under/rank/head_of_security,
-		"a head of personnel's jumpsuit" = /obj/item/clothing/under/rank/head_of_personnel,
 		"the hypospray" = /obj/item/reagent_containers/hypospray,
 		"the captain's pinpointer" = /obj/item/pinpointer,
-		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
+		"an RCD" = /obj/item/rcd,
+		"SCP-500" = /obj/item/reagent_containers/pill/scp500,
+		"SCP-2398" = /obj/item/weapon/twohanded/scp_2398,
+		"SCP-1102-RU" = /obj/item/weapon/scp1102ru,
+		"SCP-513" = /obj/item/scp513,
+		"SCP-013" = /obj/item/storage/fancy/cigarettes/bluelady
 	)
 
 	var/global/possible_items_special[] = list(
 		/*"nuclear authentication disk" = /obj/item/disk/nuclear,*///Broken with the change to nuke disk making it respawn on z level change.
-		"nuclear gun" = /obj/item/gun/energy/gun/nuclear,
-		"diamond drill" = /obj/item/pickaxe/diamonddrill,
-		"bag of holding" = /obj/item/storage/backpack/holding,
-		"hyper-capacity cell" = /obj/item/cell/hyper,
+		"a hyper-capacity cell" = /obj/item/cell/hyper,
 		"10 diamonds" = /obj/item/stack/material/diamond,
 		"50 gold bars" = /obj/item/stack/material/gold,
 		"25 refined uranium bars" = /obj/item/stack/material/uranium,
@@ -266,7 +252,7 @@ var/global/list/all_objectives = list()
 
 
 /datum/objective/steal/proc/select_target()
-	var/list/possible_items_all = possible_items+possible_items_special+"custom"
+	var/list/possible_items_all = possible_items + possible_items_special + "custom"
 	var/new_target = input("Select target:", "Objective target", steal_target) as null|anything in possible_items_all
 	if (!new_target) return
 	if (new_target == "custom")
@@ -302,7 +288,7 @@ var/global/list/all_objectives = list()
 
 // Changeling Absorb //
 
-/datum/objective/absorb/proc/gen_amount_goal(var/lowbound = 4, var/highbound = 6)
+/datum/objective/absorb/proc/gen_amount_goal(lowbound = 4, highbound = 6)
 	target_amount = rand (lowbound,highbound)
 	var/n_p = 1 //autowin
 	if (GAME_STATE == RUNLEVEL_SETUP)

@@ -6,7 +6,7 @@
 
 /obj/item/integrated_circuit/reagent
 	category_text = "Reagent"
-	unacidable = TRUE
+	acid_resistance = -1
 	cooldown_per_use = 10
 	var/volume = 0
 
@@ -129,13 +129,13 @@
 			set_pin_data(IC_OUTPUT, 2, weakref(src))
 			push_data()
 
-/obj/item/integrated_circuit/reagent/injector/proc/target_nearby(var/weakref/target)
+/obj/item/integrated_circuit/reagent/injector/proc/target_nearby(weakref/target)
 	var/mob/living/L = target.resolve()
 	if(!L || get_dist(src,L) > 1)
 		return
 	return L
 
-/obj/item/integrated_circuit/reagent/injector/proc/inject_after(var/weakref/target)
+/obj/item/integrated_circuit/reagent/injector/proc/inject_after(weakref/target)
 	busy = FALSE
 	var/mob/living/L = target_nearby(target)
 	if(!L)
@@ -143,12 +143,12 @@
 		return
 	var/atom/movable/acting_object = get_object()
 	log_admin("[key_name(L)] was successfully injected with " + reagents.get_reagents() + " by \the [acting_object]")
-	L.visible_message("<span class='warning'>\The [acting_object] injects [L] with its needle!</span>", \
-					"<span class='warning'>\The [acting_object] injects you with its needle!</span>")
+	L.visible_message(SPAN_WARNING("\The [acting_object] injects [L] with its needle!"), \
+					SPAN_WARNING("\The [acting_object] injects you with its needle!"))
 	reagents.trans_to_mob(L, transfer_amount, CHEM_BLOOD)
 	activate_pin(2)
 
-/obj/item/integrated_circuit/reagent/injector/proc/draw_after(var/weakref/target, var/amount)
+/obj/item/integrated_circuit/reagent/injector/proc/draw_after(weakref/target, amount)
 	busy = FALSE
 	var/mob/living/carbon/C = target_nearby(target)
 	if(!C)
@@ -156,8 +156,8 @@
 		return
 	var/atom/movable/acting_object = get_object()
 
-	C.visible_message("<span class='warning'>\The [acting_object] draws blood from \the [C]</span>",
-					"<span class='warning'>\The [acting_object] draws blood from you.</span>"
+	C.visible_message(SPAN_WARNING("\The [acting_object] draws blood from \the [C]"),
+					SPAN_WARNING("\The [acting_object] draws blood from you.")
 					)
 	C.take_blood(src, amount)
 	activate_pin(2)
@@ -193,8 +193,8 @@
 				return
 			//Always log attemped injections for admins
 			log_admin("[key_name(L)] is getting injected with " + reagents.get_reagents() + " by \the [acting_object]")
-			L.visible_message("<span class='danger'>\The [acting_object] is trying to inject [L]!</span>", \
-								"<span class='danger'>\The [acting_object] is trying to inject you!</span>")
+			L.visible_message(SPAN_DANGER("\The [acting_object] is trying to inject [L]!"), \
+								SPAN_DANGER("\The [acting_object] is trying to inject you!"))
 			busy = TRUE
 			addtimer(CALLBACK(src, .proc/inject_after, weakref(L)), injection_delay)
 			return
@@ -223,15 +223,15 @@
 			if(istype(C, /mob/living/carbon/slime) || !C.dna || !injection_status)
 				activate_pin(3)
 				return
-			C.visible_message("<span class='danger'>\The [acting_object] is trying to take a blood sample from [C]!</span>", \
-								"<span class='danger'>\The [acting_object] is trying to take a blood sample from you!</span>")
+			C.visible_message(SPAN_DANGER("\The [acting_object] is trying to take a blood sample from [C]!"), \
+								SPAN_DANGER("\The [acting_object] is trying to take a blood sample from you!"))
 			busy = TRUE
 			addtimer(CALLBACK(src, .proc/draw_after, weakref(C), tramount), injection_delay)
 			return
 
 		else
 			if(!AM.reagents.total_volume)
-				acting_object.visible_message("<span class='notice'>\The [acting_object] tries to draw from [AM], but it is empty!</span>")
+				acting_object.visible_message(SPAN_NOTICE("\The [acting_object] tries to draw from [AM], but it is empty!"))
 				activate_pin(3)
 				return
 
@@ -510,7 +510,7 @@
 		"on transfer" = IC_PINTYPE_PULSE_OUT
 	)
 
-	unacidable = TRUE
+	acid_resistance = -1
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	complexity = 4
 	power_draw_per_use = 5

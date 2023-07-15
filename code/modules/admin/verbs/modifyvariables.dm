@@ -1,6 +1,8 @@
 /client/proc/mod_list_add_ass()
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","color","list","edit referenced object","restore to default")
+	var/list/class_input = list("text", "num", "atom typepath", "datum typepath", "type", "new atom", \
+		"new datum", "reference", "mob reference", "icon", "file", "color", "list", "edit referenced object", \
+		"restore to default")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -24,8 +26,39 @@
 		if("num")
 			var_value = input("Enter new number:","Num") as null|num
 
+		if("atom typepath")
+			var_value = pick_closest_path(FALSE)
+
+		if("datum typepath")
+			var_value = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+
 		if("type")
-			var_value = input("Enter type:","Type") as null|anything in typesof(/obj,/mob,/area,/turf)
+			var/type = null
+			var/error = ""
+			do
+				type = input("Enter type:[error]", "Type", type) as null|text
+				if(!type)
+					break
+				type = text2path(type)
+				error = "\nType not found, Please try again"
+			while(!type)
+			if(!type)
+				var_value = null
+			var_value = type
+
+		if("new atom")
+			var/type = pick_closest_path(FALSE)
+			if(!type)
+				return
+			var/atom/newguy = new type()
+			var_value = newguy
+
+		if("new datum")
+			var/type = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			if(!type)
+				return
+			var/datum/newguy = new type()
+			var_value = newguy
 
 		if("reference")
 			var_value = input("Select reference:","Reference") as null|mob|obj|turf|area in world
@@ -45,15 +78,18 @@
 		if("color")
 			var_value = input("Select new color:","Color") as null|color
 
-	if(!var_value) return
+	if(!var_value)
+		return
 
 	return var_value
 
 
-/client/proc/mod_list_add(var/list/L, atom/O, original_name, objectvar)
+/client/proc/mod_list_add(list/L, atom/O, original_name, objectvar)
 
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","color","edit referenced object","restore to default")
+	var/list/class_input = list("text", "num", "atom typepath", "datum typepath", "type", "new atom", \
+		"new datum", "reference", "mob reference", "icon", "file", "color", "list", "edit referenced object", \
+		"restore to default")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -77,8 +113,39 @@
 		if("num")
 			var_value = input("Enter new number:","Num") as num
 
+		if("atom typepath")
+			var_value = pick_closest_path(FALSE)
+
+		if("datum typepath")
+			var_value = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+
 		if("type")
-			var_value = input("Enter type:","Type") in typesof(/obj,/mob,/area,/turf)
+			var/type = null
+			var/error = ""
+			do
+				type = input("Enter type:[error]", "Type", type) as null|text
+				if(!type)
+					break
+				type = text2path(type)
+				error = "\nType not found, Please try again"
+			while(!type)
+			if(!type)
+				var_value = null
+			var_value = type
+
+		if("new atom")
+			var/type = pick_closest_path(FALSE)
+			if(!type)
+				return
+			var/atom/newguy = new type()
+			var_value = newguy
+
+		if("new datum")
+			var/type = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			if(!type)
+				return
+			var/datum/newguy = new type()
+			var_value = newguy
 
 		if("reference")
 			var_value = input("Select reference:","Reference") as mob|obj|turf|area in world
@@ -95,7 +162,8 @@
 		if("marked datum")
 			var_value = holder.marked_datum()
 
-	if(!var_value) return
+	if(!var_value)
+		return
 
 	switch(alert("Would you like to associate a var with the list entry?",,"Yes","No"))
 		if("Yes")
@@ -105,9 +173,9 @@
 			L += var_value
 	to_world_log("### ListVarEdit by [src]: [O.type] [objectvar]: ADDED=[var_value]")
 	log_admin("[key_name(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
-	message_admins("[key_name_admin(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
+	message_staff("[key_name_admin(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
 
-/client/proc/mod_list(var/list/L, atom/O, original_name, objectvar)
+/client/proc/mod_list(list/L, atom/O, original_name, objectvar)
 	if(!check_rights(R_VAREDIT))	return
 	if(!istype(L,/list)) to_chat(src, "Not a List.")
 	if(L.len > 1000)
@@ -214,7 +282,9 @@
 		if(dir)
 			to_chat(usr, "If a direction, direction is: [dir]")
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
+	var/list/class_input = list("text", "num", "atom typepath", "datum typepath", "type", "new atom", \
+		"new datum", "reference", "mob reference", "icon", "file", "color", "list", "edit referenced object", \
+		"restore to default")
 
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
@@ -256,7 +326,7 @@
 		if("DELETE FROM LIST")
 			to_world_log("### ListVarEdit by [src]: [O.type] [objectvar]: REMOVED=[html_encode("[variable]")]")
 			log_admin("[key_name(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
-			message_admins("[key_name_admin(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
+			message_staff("[key_name_admin(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
 			L -= variable
 			return
 
@@ -274,8 +344,54 @@
 			else
 				L[list_find(L, variable)] = new_var
 
+		if("atom typepath")
+			new_var = pick_closest_path(FALSE)
+			if(assoc)
+				L[assoc_key] = new_var
+			else
+				L[list_find(L, variable)] = new_var
+
+		if("datum typepath")
+			new_var = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			if(assoc)
+				L[assoc_key] = new_var
+			else
+				L[list_find(L, variable)] = new_var
+
 		if("type")
-			new_var = input("Enter type:","Type") in typesof(/obj,/mob,/area,/turf)
+			var/type = null
+			var/error = ""
+			do
+				type = input("Enter type:[error]", "Type", type) as null|text
+				if(!type)
+					break
+				type = text2path(type)
+				error = "\nType not found, Please try again"
+			while(!type)
+			if(!type)
+				return
+			if(assoc)
+				L[assoc_key] = type
+			else
+				L[list_find(L, variable)] = type
+
+		if("new atom")
+			var/type = pick_closest_path(FALSE)
+			if(!type)
+				return
+			var/atom/newguy = new type()
+			new_var = newguy
+			if(assoc)
+				L[assoc_key] = new_var
+			else
+				L[list_find(L, variable)] = new_var
+
+		if("new datum")
+			var/type = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			if(!type)
+				return
+			var/datum/newguy = new type()
+			new_var = newguy
 			if(assoc)
 				L[assoc_key] = new_var
 			else
@@ -320,14 +436,15 @@
 
 	to_world_log("### ListVarEdit by [src]: [O.type] [objectvar]: [original_var]=[new_var]")
 	log_admin("[key_name(src)] modified [original_name]'s [objectvar]: [original_var]=[new_var]")
-	message_admins("[key_name_admin(src)] modified [original_name]'s varlist [objectvar]: [original_var]=[new_var]")
+	message_staff("[key_name_admin(src)] modified [original_name]'s varlist [objectvar]: [original_var]=[new_var]")
 
-/client/proc/modify_variables(var/atom/O, var/param_var_name = null, var/autodetect_class = 0)
-	if(!check_rights(R_VAREDIT))	return
+/client/proc/modify_variables(atom/O, param_var_name = null, autodetect_class = 0)
+	if(!check_rights(R_VAREDIT))
+		return
 
 	for(var/p in forbidden_varedit_object_types())
 		if( istype(O,p) )
-			to_chat(usr, "<span class='danger'>It is forbidden to edit this object's variables.</span>")
+			to_chat(usr, SPAN_DANGER("It is forbidden to edit this object's variables."))
 			return
 
 	var/class
@@ -394,7 +511,8 @@
 		names = sortList(names)
 
 		variable = input("Which var?","Var") as null|anything in names
-		if(!variable)	return
+		if(!variable)
+			return
 		var_value = O.get_variable_value(variable)
 
 		if(!O.may_edit_var(usr, variable))
@@ -463,7 +581,9 @@
 					dir = null
 			if(dir)
 				to_chat(usr, "If a direction, direction is: [dir]")
-		var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","json","color","edit referenced object","restore to default")
+		var/list/class_input = list("text", "num", "atom typepath", "datum typepath", "type", "new atom", \
+			"new datum", "reference", "mob reference", "icon", "file", "color", "json", "list", "edit referenced object", \
+			"restore to default")
 		if(src.holder)
 			var/datum/marked_datum = holder.marked_datum()
 			if(marked_datum)
@@ -517,29 +637,68 @@
 				if(var_new==null) return
 				var_value = var_new
 
-		if("type")
-			var/var_new = input("Enter type:","Type",O.get_variable_value(variable)) as null|anything in typesof(/obj,/mob,/area,/turf)
-			if(var_new==null) return
+		if("atom typepath")
+			var/var_new = pick_closest_path(FALSE)
+			if(var_new == null)
+				return
 			var_value = var_new
+
+		if("datum typepath")
+			var/var_new = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			if(var_new == null)
+				return
+			var_value = var_new
+
+		if("type")
+			var/type = null
+			var/error = ""
+			do
+				type = input("Enter type:[error]", "Type", type) as null|text
+				if(!type)
+					break
+				type = text2path(type)
+				error = "\nType not found, Please try again"
+			while(!type)
+			if(!type)
+				var_value = null
+			var_value = type
+
+		if("new atom")
+			var/type = pick_closest_path(FALSE)
+			if(!type)
+				return
+			var/atom/newguy = new type()
+			var_value = newguy
+
+		if("new datum")
+			var/type = pick_closest_path(FALSE, get_fancy_list_of_datum_types())
+			if(!type)
+				return
+			var/datum/newguy = new type()
+			var_value = newguy
 
 		if("reference")
 			var/var_new = input("Select reference:","Reference",O.get_variable_value(variable)) as null|mob|obj|turf|area in world
-			if(var_new==null) return
+			if(var_new==null)
+				return
 			var_value = var_new
 
 		if("mob reference")
 			var/var_new = input("Select reference:","Reference",O.get_variable_value(variable)) as null|mob in world
-			if(var_new==null) return
+			if(var_new==null)
+				return
 			var_value = var_new
 
 		if("file")
 			var/var_new = input("Pick file:","File",O.get_variable_value(variable)) as null|file
-			if(var_new==null) return
+			if(var_new==null)
+				return
 			var_value = var_new
 
 		if("icon")
 			var/var_new = input("Pick icon:","Icon",O.get_variable_value(variable)) as null|icon
-			if(var_new==null) return
+			if(var_new==null)
+				return
 			var_value = var_new
 
 		if("color")
@@ -564,12 +723,12 @@
 		return
 
 	to_world_log("### VarEdit by [src]: [O.type] [variable]=[html_encode("[new_value]")]")
-	log_and_message_admins("modified [original_name]'s [variable] from '[old_value]' to '[new_value]'")
+	log_and_message_staff("modified [original_name]'s [variable] from '[old_value]' to '[new_value]'")
 
 /client
 	var/static/vv_set_handlers
 
-/client/proc/special_set_vv_var(var/datum/O, variable, var_value, client)
+/client/proc/special_set_vv_var(datum/O, variable, var_value, client)
 	if(!vv_set_handlers)
 		vv_set_handlers = init_subtypes(/decl/vv_set_handler)
 	for(var/vv_handler in vv_set_handlers)

@@ -3,7 +3,7 @@
 	name = "gas thruster"
 	var/obj/machinery/atmospherics/unary/engine/nozzle
 
-/datum/ship_engine/gas_thruster/New(var/obj/machinery/_holder)
+/datum/ship_engine/gas_thruster/New(obj/machinery/_holder)
 	..()
 	nozzle = _holder
 
@@ -20,7 +20,7 @@
 /datum/ship_engine/gas_thruster/burn()
 	return nozzle.burn()
 
-/datum/ship_engine/gas_thruster/set_thrust_limit(var/new_limit)
+/datum/ship_engine/gas_thruster/set_thrust_limit(new_limit)
 	nozzle.thrust_limit = new_limit
 
 /datum/ship_engine/gas_thruster/get_thrust_limit()
@@ -111,13 +111,13 @@
 	. = list()
 	.+= "Location: [get_area(src)]."
 	if(stat & NOPOWER)
-		.+= "<span class='average'>Insufficient power to operate.</span>"
+		.+= SPAN_CLASS("average","Insufficient power to operate.")
 	if(!check_fuel())
-		.+= "<span class='average'>Insufficient fuel for a burn.</span>"
+		.+= SPAN_CLASS("average","Insufficient fuel for a burn.")
 	if(stat & BROKEN)
-		.+= "<span class='average'>Inoperable engine configuration.</span>"
+		.+= SPAN_CLASS("average","Inoperable engine configuration.")
 	if(blockage)
-		.+= "<span class='average'>Obstruction of airflow detected.</span>"
+		.+= SPAN_CLASS("average","Obstruction of airflow detected.")
 
 	.+= "Propellant total mass: [round(air_contents.get_mass(),0.01)] kg."
 	.+= "Propellant used per burn: [round(air_contents.specific_mass() * moles_per_burn * thrust_limit,0.01)] kg."
@@ -163,7 +163,7 @@
 	if(!is_on())
 		return 0
 	if(!check_fuel() || (0 < use_power_oneoff(charge_per_burn)) || check_blockage())
-		audible_message(src,"<span class='warning'>[src] coughs once and goes silent!</span>")
+		audible_message(src,SPAN_WARNING("[src] coughs once and goes silent!"))
 		update_use_power(POWER_USE_OFF)
 		return 0
 

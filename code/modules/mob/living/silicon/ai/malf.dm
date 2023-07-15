@@ -10,8 +10,8 @@
 	hacked_apcs = list()
 	recalc_cpu()
 
-	verbs += /datum/game_mode/malfunction/verb/ai_select_hardware
-	verbs += /datum/game_mode/malfunction/verb/ai_select_research
+	add_verb(src, /datum/game_mode/malfunction/verb/ai_select_hardware)
+	add_verb(src, /datum/game_mode/malfunction/verb/ai_select_research)
 
 	log_ability_use(src, "became malfunctioning AI")
 	// And greet user with some OOC info.
@@ -19,7 +19,7 @@
 	to_chat(user, "Use the display-help command to view relevant information about your abilities")
 
 // Safely remove malfunction status, fixing hacked APCs and resetting variables.
-/mob/living/silicon/ai/proc/stop_malf(var/loud = 1)
+/mob/living/silicon/ai/proc/stop_malf(loud = 1)
 	if(!malfunctioning)
 		return
 	var/mob/living/silicon/ai/user = src
@@ -38,10 +38,10 @@
 	// Stop the delta alert, and, if applicable, self-destruct timer.
 	bombing_station = 0
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	if(security_state.current_security_level == security_state.severe_security_level)
-		security_state.decrease_security_level(TRUE)
+	if(security_state.current_security_level == security_state.destruction_security_level)
+		security_state.set_security_level(security_state.stored_security_level, TRUE)
 	// Reset our verbs
-	src.verbs.Cut()
+	remove_verb(src, verbs)
 	add_ai_verbs()
 	// Let them know.
 	if(loud)
@@ -55,7 +55,7 @@
 		if(!errored)
 			errored = 1
 			error("malf_process() called on AI without research datum. Report this.")
-			message_admins("ERROR: malf_process() called on AI without research datum. If admin modified one of the AI's vars revert the change and don't modify variables directly, instead use ProcCall or admin panels.")
+			message_staff("ERROR: malf_process() called on AI without research datum. If admin modified one of the AI's vars revert the change and don't modify variables directly, instead use ProcCall or admin panels.")
 			spawn(1200)
 				errored = 0
 		return
@@ -68,14 +68,14 @@
 // Recalculates CPU time gain and storage capacities.
 /mob/living/silicon/ai/proc/recalc_cpu()
 	// AI Starts with these values.
-	var/cpu_gain = 0.01
-	var/cpu_storage = 10
+	var/cpu_gain = 0.2 //Apparently this is x10'd
+	var/cpu_storage = 60
 
 	// Off-Station APCs should not count towards CPU generation.
 	for(var/obj/machinery/power/apc/A in hacked_apcs)
 		if(A.z in GLOB.using_map.station_levels)
-			cpu_gain += 0.004 * (hacked_apcs_hidden ? 0.5 : 1)
-			cpu_storage += 10
+			cpu_gain += 0.08 * (hacked_apcs_hidden ? 0.5 : 1)
+			cpu_storage += 40
 
 	research.max_cpu = cpu_storage + override_CPUStorage
 	if(hardware && istype(hardware, /datum/malf_hardware/dual_ram))
@@ -87,14 +87,14 @@
 		research.cpu_increase_per_tick = research.cpu_increase_per_tick * 2
 
 // Starts AI's APU generator
-/mob/living/silicon/ai/proc/start_apu(var/shutup = 0)
+/mob/living/silicon/ai/proc/start_apu(shutup = 0)
 	if(!hardware || !istype(hardware, /datum/malf_hardware/apu_gen))
 		if(!shutup)
 			to_chat(src, "You do not have an APU generator and you shouldn't have this verb. Report this.")
 		return
 	if(hardware_integrity() < 50)
 		if(!shutup)
-			to_chat(src, "<span class='notice'>Starting APU... <b>FAULT</b>(System Damaged)</span>")
+			to_chat(src, SPAN_NOTICE("Starting APU... <b>FAULT</b>(System Damaged)"))
 		return
 	if(!shutup)
 		to_chat(src, "Starting APU... ONLINE")
@@ -102,7 +102,7 @@
 	APU_power = 1
 
 // Stops AI's APU generator
-/mob/living/silicon/ai/proc/stop_apu(var/shutup = 0)
+/mob/living/silicon/ai/proc/stop_apu(shutup = 0)
 	if(!hardware || !istype(hardware, /datum/malf_hardware/apu_gen))
 		return
 
@@ -112,28 +112,27 @@
 			to_chat(src, "Shutting down APU... DONE")
 		log_ability_use(src, "Switched to external power", null, 0)
 
-// Shows capacitor charge and hardware integrity information to the AI in Status tab.
-/mob/living/silicon/ai/show_system_integrity()
-	if(!src.stat)
-		stat("Hardware integrity", "[hardware_integrity()]%")
-		stat("Internal capacitor", "[backup_capacitor()]%")
+/mob/living/silicon/ai/get_status_tab_items()
+	. = list()
+	if(client.is_stealthed())
+		. += "Stealth: Engaged [client.holder.stealthy_ == 2 ? "(Auto)" : "(Manual)"]"
+	if(!stat)
+		. += "Hardware integrity: [hardware_integrity()]%"
+		. += "Internal capacitor: [backup_capacitor()]%"
 	else
-		stat("Systems nonfunctional")
-
-// Shows AI Malfunction related information to the AI.
-/mob/living/silicon/ai/show_malf_ai()
-	if(src.is_malf())
-		if(src.hacked_apcs)
-			stat("Hacked APCs", "[src.hacked_apcs.len]")
-		stat("System Status", "[src.hacking ? "Busy" : "Stand-By"]")
-		if(src.research)
-			stat("Available CPU", "[src.research.stored_cpu] TFlops")
-			stat("Maximal CPU", "[src.research.max_cpu] TFlops")
-			stat("CPU generation rate", "[src.research.cpu_increase_per_tick * 10] TFlops/s")
-			stat("Current research focus", "[src.research.focus ? src.research.focus.name : "None"]")
-			if(src.research.focus)
-				stat("Research completed", "[round(src.research.focus.invested, 0.1)]/[round(src.research.focus.price)]")
+		. += "Systems nonfunctional"
+	if(is_malf())
+		if(hacked_apcs)
+			. += "Hacked APCs: [hacked_apcs.len]"
+		. += "System Status: [hacking ? "Busy" : "Stand-By"]"
+		if(research)
+			. += "Available CPU: [research.stored_cpu] TFlops"
+			. += "Maximal CPU: [research.max_cpu] TFlops"
+			. += "CPU generation rate: [research.cpu_increase_per_tick * 10] TFlops/s"
+			. += "Current research focus: [research.focus ? research.focus.name : "None"]"
+			if(research.focus)
+				. += "Research completed: [round(research.focus.invested, 0.1)]/[round(research.focus.price)]"
 			if(system_override == 1)
-				stat("SYSTEM OVERRIDE INITIATED")
+				. += "SYSTEM OVERRIDE INITIATED"
 			else if(system_override == 2)
-				stat("SYSTEM OVERRIDE COMPLETED")
+				. += "SYSTEM OVERRIDE COMPLETED"

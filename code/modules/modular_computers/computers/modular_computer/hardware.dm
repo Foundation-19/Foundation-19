@@ -1,5 +1,5 @@
 // Attempts to install the hardware into apropriate slot.
-/obj/item/modular_computer/proc/try_install_component(var/mob/living/user, var/obj/item/stock_parts/computer/H, var/found = 0)
+/obj/item/modular_computer/proc/try_install_component(mob/living/user, obj/item/stock_parts/computer/H, found = 0)
 	if(!(H.usage_flags & hardware_flag))
 		to_chat(user, "This computer isn't compatible with [H].")
 		return
@@ -68,10 +68,11 @@
 		scanner.do_after_install(user, src)
 	if(found && user.unEquip(H, src))
 		to_chat(user, "You install \the [H] into \the [src]")
+		H.holder2 = src
 		update_verbs()
 
 // Uninstalls component. Found and Critical vars may be passed by parent types, if they have additional hardware.
-/obj/item/modular_computer/proc/uninstall_component(var/mob/living/user, var/obj/item/stock_parts/computer/H, var/found = 0, var/critical = 0)
+/obj/item/modular_computer/proc/uninstall_component(mob/living/user, obj/item/stock_parts/computer/H, found = 0, critical = 0)
 	if(portable_drive == H)
 		portable_drive = null
 		found = 1
@@ -108,19 +109,18 @@
 	if(found)
 		if(user)
 			to_chat(user, "You remove \the [H] from \the [src].")
-			user.put_in_hands(H)
-		else
-			H.dropInto(loc)
+		H.forceMove(get_turf(src))
+		H.holder2 = null
 		update_verbs()
 	if(critical && enabled)
 		if(user)
-			to_chat(user, "<span class='danger'>\The [src]'s screen freezes for few seconds and then displays an \"HARDWARE ERROR: Critical component disconnected. Please verify component connection and reboot the device. If the problem persists contact technical support for assistance.\" warning.</span>")
+			to_chat(user, SPAN_DANGER("\The [src]'s screen freezes for few seconds and then displays an \"HARDWARE ERROR: Critical component disconnected. Please verify component connection and reboot the device. If the problem persists contact technical support for assistance.\" warning."))
 		shutdown_computer()
 		update_icon()
 
 
 // Checks all hardware pieces to determine if name matches, if yes, returns the hardware piece, otherwise returns null
-/obj/item/modular_computer/proc/find_hardware_by_name(var/name)
+/obj/item/modular_computer/proc/find_hardware_by_name(name)
 	if(portable_drive && (portable_drive.name == name))
 		return portable_drive
 	if(hard_drive && (hard_drive.name == name))

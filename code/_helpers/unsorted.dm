@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /*
  * A large number of misc global procs.
  */
@@ -33,7 +31,7 @@
 	return text("#[][][]", textr, textg, textb)
 
 //Returns the middle-most value
-/proc/dd_range(var/low, var/high, var/num)
+/proc/dd_range(low, high, num)
 	return max(low,min(high,num))
 
 /proc/get_projectile_angle(atom/source, atom/target)
@@ -53,7 +51,7 @@
 	return SIMPLIFY_DEGREES(arctan(ty - sy, tx - sx))
 
 //Returns whether or not A is the middle most value
-/proc/InRange(var/A, var/lower, var/upper)
+/proc/InRange(A, lower, upper)
 	if(A < lower) return 0
 	if(A > upper) return 0
 	return 1
@@ -168,7 +166,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 
 
-/proc/LinkBlocked(turf/A, turf/B)
+/proc/LinkBlocked(turf/A, turf/B, list/whitelist)
 	if(A == null || B == null) return 1
 	var/adir = get_dir(A,B)
 	var/rdir = get_dir(B,A)
@@ -180,29 +178,23 @@ Turf and target are seperate in case you want to teleport some distance from a t
 		if(!LinkBlocked(A,pStep) && !LinkBlocked(pStep,B)) return 0
 		return 1
 
-	if(DirBlocked(A,adir)) return 1
-	if(DirBlocked(B,rdir)) return 1
+	if(DirBlocked(A,adir, whitelist)) return 1
+	if(DirBlocked(B,rdir, whitelist)) return 1
 	return 0
 
 
-/proc/DirBlocked(turf/loc,var/dir)
+/proc/DirBlocked(turf/loc, dir, list/whitelist = list())
 	for(var/obj/structure/window/D in loc)
-		if(!D.density)			continue
+		if((!D.density) || (is_type_in_list(D, whitelist)))			continue
 		if(D.dir == SOUTHWEST)	return 1
 		if(D.dir == dir)		return 1
 
 	for(var/obj/machinery/door/D in loc)
-		if(!D.density)			continue
+		if((!D.density) || (is_type_in_list(D, whitelist)))			continue
 		if(istype(D, /obj/machinery/door/window))
 			if((dir & SOUTH) && (D.dir & (EAST|WEST)))		return 1
 			if((dir & EAST ) && (D.dir & (NORTH|SOUTH)))	return 1
 		else return 1	// it's a real, air blocking door
-	return 0
-
-/proc/TurfBlockedNonWindow(turf/loc)
-	for(var/obj/O in loc)
-		if(O.density && !istype(O, /obj/structure/window))
-			return 1
 	return 0
 
 /proc/sign(x)
@@ -240,7 +232,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return line
 
 #define LOCATE_COORDS(X, Y, Z) locate(between(1, X, world.maxx), between(1, Y, world.maxy), Z)
-/proc/getcircle(turf/center, var/radius) //Uses a fast Bresenham rasterization algorithm to return the turfs in a thin circle.
+/proc/getcircle(turf/center, radius) //Uses a fast Bresenham rasterization algorithm to return the turfs in a thin circle.
 	if(!radius) return list(center)
 
 	var/x = 0
@@ -283,7 +275,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return 1
 
 //Ensure the frequency is within bounds of what it should be sending/recieving at
-/proc/sanitize_frequency(var/f, var/low = PUBLIC_LOW_FREQ, var/high = PUBLIC_HIGH_FREQ)
+/proc/sanitize_frequency(f, low = PUBLIC_LOW_FREQ, high = PUBLIC_HIGH_FREQ)
 	f = round(f)
 	f = max(low, f)
 	f = min(high, f)
@@ -292,12 +284,12 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return f
 
 //Turns 1479 into 147.9
-/proc/format_frequency(var/f)
+/proc/format_frequency(f)
 	return "[round(f / 10)].[f % 10]"
 
 //Generalised helper proc for letting mobs rename themselves. Used to be clname() and ainame()
 //Last modified by Carn
-/mob/proc/rename_self(var/role, var/allow_numbers=0)
+/mob/proc/rename_self(role, allow_numbers=0)
 	spawn(0)
 		var/oldname = real_name
 
@@ -471,7 +463,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return moblist
 
 //Forces a variable to be posative
-/proc/modulus(var/M)
+/proc/modulus(M)
 	if(M >= 0)
 		return M
 	if(M < 0)
@@ -479,7 +471,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 // returns the turf located at the map edge in the specified direction relative to A
 // used for mass driver
-/proc/get_edge_target_turf(var/atom/A, var/direction)
+/proc/get_edge_target_turf(atom/A, direction)
 
 	var/turf/target = locate(A.x, A.y, A.z)
 	if(!A || !target)
@@ -503,7 +495,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 // result is bounded to map size
 // note range is non-pythagorean
 // used for disposal system
-/proc/get_ranged_target_turf(var/atom/A, var/direction, var/range)
+/proc/get_ranged_target_turf(atom/A, direction, range)
 
 	var/x = A.x
 	var/y = A.y
@@ -521,17 +513,17 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 // returns turf relative to A offset in dx and dy tiles
 // bound to map limits
-/proc/get_offset_target_turf(var/atom/A, var/dx, var/dy)
+/proc/get_offset_target_turf(atom/A, dx, dy)
 	var/x = min(world.maxx, max(1, A.x + dx))
 	var/y = min(world.maxy, max(1, A.y + dy))
 	return locate(x,y,A.z)
 
 //Makes sure MIDDLE is between LOW and HIGH. If not, it adjusts it. Returns the adjusted value. Lower bound takes priority.
-/proc/between(var/low, var/middle, var/high)
+/proc/between(low, middle, high)
 	return max(min(middle, high), low)
 
 //returns random gauss number
-/proc/GaussRand(var/sigma)
+/proc/GaussRand(sigma)
 	var/x,y,rsq
 	do
 		x=2*rand()-1
@@ -541,7 +533,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return sigma*y*sqrt(-2*log(rsq)/rsq)
 
 //returns random gauss number, rounded to 'roundto'
-/proc/GaussRandRound(var/sigma,var/roundto)
+/proc/GaussRandRound(sigma,roundto)
 	return round(GaussRand(sigma),roundto)
 
 //Will return the contents of an atom recursivly to a depth of 'searchDepth'
@@ -556,7 +548,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return toReturn
 
 //Step-towards method of determining whether one atom can see another. Similar to viewers()
-/proc/can_see(var/atom/source, var/atom/target, var/length=5) // I couldn't be arsed to do actual raycasting :I This is horribly inaccurate.
+/proc/can_see_by_step(atom/source, atom/target, length=5) // I couldn't be arsed to do actual raycasting :I This is horribly inaccurate.
 	var/turf/current = get_turf(source)
 	var/turf/target_turf = get_turf(target)
 	var/steps = 0
@@ -574,7 +566,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 	return 1
 
-/proc/is_blocked_turf(var/turf/T)
+/proc/is_blocked_turf(turf/T)
 	var/cant_pass = 0
 	if(T.density) cant_pass = 1
 	for(var/atom/A in T)
@@ -582,7 +574,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 			cant_pass = 1
 	return cant_pass
 
-/proc/get_step_towards2(var/atom/ref , var/atom/trg)
+/proc/get_step_towards2(atom/ref , atom/trg)
 	var/base_dir = get_dir(ref, get_step_towards(ref,trg))
 	var/turf/temp = get_step_towards(ref,trg)
 
@@ -612,12 +604,12 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 //Takes: Anything that could possibly have variables and a varname to check.
 //Returns: 1 if found, 0 if not.
-/proc/hasvar(var/datum/A, var/varname)
+/proc/hasvar(datum/A, varname)
 	return !!list_find(A.vars, lowertext(varname))
 
 //Takes: Area type as text string or as typepath OR an instance of the area.
 //Returns: A list of all areas of that type in the world.
-/proc/get_areas(var/areatype)
+/proc/get_areas(areatype)
 	if(!areatype) return null
 	if(istext(areatype)) areatype = text2path(areatype)
 	if(isarea(areatype))
@@ -631,7 +623,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 //Takes: Area type as a typepath OR an instance of the area.
 //Returns: A list of all atoms	(objs, turfs, mobs) in areas of that type of that type in the world.
-/proc/get_area_all_atoms(var/areatype)
+/proc/get_area_all_atoms(areatype)
 	if(!areatype)
 		return null
 	if(isarea(areatype))
@@ -647,7 +639,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 				atoms += A
 	return atoms
 
-/area/proc/move_contents_to(var/area/A)
+/area/proc/move_contents_to(area/A)
 	//Takes: Area.
 	//Returns: Nothing.
 	//Notes: Attempts to move the contents of one area to another area.
@@ -668,7 +660,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 		var/translation = get_turf_translation(src_origin, trg_origin, turfs_src)
 		translate_turfs(translation, null)
 
-/proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
+/proc/DuplicateObject(obj/original, perfectcopy = 0 , sameloc = 0)
 	if(!original)
 		return null
 
@@ -693,7 +685,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	var/y_pos = null
 	var/z_pos = null
 
-/area/proc/copy_contents_to(var/area/A , var/platingRequired = 0 )
+/area/proc/copy_contents_to(area/A , platingRequired = 0 )
 	//Takes: Area. Optional: If it should copy to areas that don't have plating
 	//Returns: Nothing.
 	//Notes: Attempts to move the contents of one area to another area.
@@ -1106,7 +1098,7 @@ var/global/list/common_tools = list(
 		if(hitzone in badzones)
 			return FALSE
 
-/proc/reverse_direction(var/dir)
+/proc/reverse_direction(dir)
 	switch(dir)
 		if(NORTH)
 			return SOUTH
@@ -1171,12 +1163,12 @@ var/list/WALLITEMS = list(
 /proc/format_text(text)
 	return replacetext(replacetext(text,"\proper ",""),"\improper ","")
 
-/proc/topic_link(var/datum/D, var/arglist, var/content)
+/proc/topic_link(datum/D, arglist, content)
 	if(istype(arglist,/list))
 		arglist = list2params(arglist)
 	return "<a href='?src=\ref[D];[arglist]'>[content]</a>"
 
-/proc/get_random_colour(var/simple = FALSE, var/lower = 0, var/upper = 255)
+/proc/get_random_colour(simple = FALSE, lower = 0, upper = 255)
 	var/colour
 	if(simple)
 		colour = pick(list("FF0000","FF7F00","FFFF00","00FF00","0000FF","4B0082","8F00FF"))
@@ -1191,9 +1183,12 @@ var/list/WALLITEMS = list(
 GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 //Version of view() which ignores darkness, because BYOND doesn't have it.
-/proc/dview(var/range = world.view, var/center, var/invis_flags = 0)
+/proc/dview(range = world.view, center, invis_flags = 0)
 	if(!center)
 		return
+
+	if(!isturf(center))
+		center = get_turf(center)
 
 	GLOB.dview_mob.loc = center
 	GLOB.dview_mob.see_invisible = invis_flags
@@ -1218,7 +1213,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	crash_with("Prevented attempt to delete dview mob: [log_info_line(src)]")
 	return QDEL_HINT_LETMELIVE // Prevents destruction
 
-/atom/proc/get_light_and_color(var/atom/origin)
+/atom/proc/get_light_and_color(atom/origin)
 	if(origin)
 		color = origin.color
 		set_light(origin.light_max_bright, origin.light_inner_range, origin.light_outer_range, origin.light_falloff_curve)
@@ -1243,41 +1238,96 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else
 		step(user.pulling, get_dir(user.pulling.loc, A))
 
-/proc/show_blurb(client/C, duration, blurb_text, fade_time = 5)
-	set waitfor = 0
+/**Shows a ticker reading out the given text on a client's screen.
+targets = mob or list of mobs to show it to.
 
-	if(!C)
+duration = how long it lingers after it finishes ticking.
+
+message = the message to display. Due to using maptext it isn't very flexible format-wise. 11px font, up to 480 pixels per line.
+Use \n for line breaks. Single-character HTML tags (<b></b>, <i></i>, <u></u> etc.) are handled correctly but others display strangely.
+Note that maptext can display text macros in strange ways, ex. \improper showing as "ÿ". Lines containing only spaces,
+including ones only containing "\improper ", don't display.
+
+scroll_down = by default each line pushes the previous line upwards - this tells it to start high and scroll down.
+Ticks on \n - does not autodetect line breaks in long strings.
+
+screen_position = screen loc for the bottom-left corner of the blurb.
+
+text_alignment = "right", "left", or "center"
+
+text_color = colour of the text.
+
+blurb_key = a key used for specific blurb types so they are not shown repeatedly. Ex. someone who joins as CLF repeatedly only seeing the mission blurb the first time.
+
+ignore_key = used to skip key checks. Ex. a USCM ERT member shouldn't see the normal USCM drop message,
+but should see their own spawn message even if the player already dropped as USCM.**/
+/proc/show_blurb(list/mob/targets, duration = 3 SECONDS, message, scroll_down, screen_position = "LEFT+0:16,BOTTOM+1:16",\
+	text_alignment = "left", text_color = "#FFFFFF", blurb_key, ignore_key = FALSE, speed = 1)
+	set waitfor = 0
+	if(!islist(targets))
+		targets = list(targets)
+	if(!length(targets))
 		return
 
-	var/style = "font-family: 'Fixedsys'; -dm-text-outline: 1 black; font-size: 11px;"
-	var/text = blurb_text
-	text = uppertext(text)
+	var/style = "font-family: Fixedsys, monospace; -dm-text-outline: 1 black; font-size: 11px; text-align: [text_alignment]; color: [text_color];" //This font doesn't seem to respect pixel sizes.
+	var/list/linebreaks = list() //Due to singular /'s making text disappear for a moment and for counting lines.
 
-	var/obj/effect/overlay/T = new()
-	T.maptext_height = 64
-	T.maptext_width = 448
-	T.layer = FLOAT_LAYER
-	T.plane = HUD_PLANE
-	T.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	T.screen_loc = "LEFT+1,BOTTOM+2"
+	var/linebreak = findtext(message, "\n")
+	while(linebreak)
+		linebreak++ //Otherwise it picks up the character immediately before the linebreak.
+		linebreaks += linebreak
+		linebreak = findtext(message, "\n", linebreak)
 
-	C.screen += T
-	animate(T, alpha = 255, time = 10)
-	for(var/i = 1 to length(text)+1)
-		T.maptext = "<span style=\"[style]\">[copytext(text,1,i)] </span>"
-		sleep(1)
+	var/list/html_tags = list()
+	var/html_tag = findtext(message, regex("<.>"))
+	var/opener = TRUE
+	while(html_tag)
+		html_tag++
+		if(opener)
+			html_tags += list(html_tag, html_tag + 1, html_tag + 2)
+			html_tag = findtext(message, regex("<.>"), html_tag + 2)
+			if(!html_tag)
+				opener = FALSE
+				html_tag = findtext(message, regex("</.>"))
+		else
+			html_tags += list(html_tag, html_tag + 1, html_tag + 2, html_tag + 3)
+			html_tag = findtext(message, regex("</.>"), html_tag + 3)
 
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/fade_blurb, C, T, fade_time), duration)
+	var/obj/screen/text/T = new()
+	T.screen_loc = screen_position
+	switch(text_alignment)
+		if("center")
+			T.maptext_x = -(T.maptext_width * 0.5 - 16) //Centering the textbox.
+		if("right")
+			T.maptext_x = -(T.maptext_width - 32) //Aligning the textbox with the right edge of the screen object.
+	if(scroll_down)
+		T.maptext_y = length(linebreaks) * 14
 
-/proc/fade_blurb(client/C, obj/T, fade_time = 5)
-	animate(T, alpha = 0, time = fade_time)
-	sleep(fade_time)
-	C.screen -= T
+	for(var/mob/M as anything in targets)
+		if(blurb_key)
+			if(!ignore_key && (M.key in GLOB.blurb_witnesses[blurb_key]))
+				continue
+			LAZYDISTINCTADD(GLOB.blurb_witnesses[blurb_key], M.key)
+		M.client?.screen += T
+
+	for(var/i in 1 to length(message) + 1)
+		if(i in linebreaks)
+			if(scroll_down)
+				T.maptext_y -= 14 //Move the object to keep lines in the same place.
+			continue
+		if(i in html_tags)
+			continue
+		T.maptext = "<span style=\"[style]\">[copytext(message,1,i)]</span>"
+		sleep(speed)
+
+	addtimer(CALLBACK(GLOBAL_PROC, /proc/fade_blurb, targets, T), duration)
+
+/proc/fade_blurb(list/mob/targets, obj/T)
+	animate(T, alpha = 0, time = 0.5 SECONDS)
+	sleep(5)
+	for(var/mob/M as anything in targets)
+		M.client?.screen -= T
 	qdel(T)
-
-/proc/show_global_blurb(duration, blurb_text, fade_time = 5) // Shows a blurb to every living player
-	for(var/mob/M in GLOB.player_list)
-		show_blurb(M.client, duration, blurb_text, fade_time)
 
 /proc/flash_color(mob_or_client, flash_color="#960000", flash_time=20)
 	var/client/C
@@ -1297,9 +1347,78 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	C.color = flash_color
 	animate(C, color = animate_color, time = flash_time)
 
+/proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
+	if (value == FALSE) //nothing should be calling us with a number, so this is safe
+		value = input("Enter type to find (blank for all, cancel to cancel)", "Search for type") as null|text
+		if (isnull(value))
+			return
+	value = trim(value)
+
+	var/random = FALSE
+	if(findtext(value, "?"))
+		value = replacetext(value, "?", "")
+		random = TRUE
+
+	if(!isnull(value) && value != "")
+		matches = filter_fancy_list(matches, value)
+
+	if(matches.len==0)
+		return
+
+	var/chosen
+	if(matches.len==1)
+		chosen = matches[1]
+	else if(random)
+		chosen = pick(matches) || null
+	else
+		chosen = input("Select a type", "Pick Type", matches[1]) as null|anything in sortList(matches)
+	if(!chosen)
+		return
+	chosen = matches[chosen]
+	return chosen
+
 // Misc. ported from TG
 
 #define UNTIL(X) while(!(X)) stoplag()
 
 //datum may be null, but it does need to be a typed var
 #define NAMEOF(datum, X) (#X || ##datum.##X)
+
+/// Creates and sorts all the keybinding datums
+/proc/init_keybindings()
+	. = list()
+	for(var/KB in subtypesof(/datum/keybinding))
+		var/datum/keybinding/keybinding = KB
+		if(!initial(keybinding.name))
+			continue
+		add_keybinding(new keybinding, .)
+	//init_emote_keybinds()
+
+/// Adds an instanced keybinding to the global tracker
+/proc/add_keybinding(datum/keybinding/instance, list/to_add_to)
+	to_add_to[instance.name] = instance
+
+	// Classic
+	if(LAZYLEN(instance.classic_keys))
+		for(var/bound_key in instance.classic_keys)
+			LAZYADD(GLOB.classic_keybinding_list_by_key[bound_key], list(instance.name))
+
+	// Hotkey
+	if(LAZYLEN(instance.hotkey_keys))
+		for(var/bound_key in instance.hotkey_keys)
+			LAZYADD(GLOB.hotkey_keybinding_list_by_key[bound_key], list(instance.name))
+
+/**
+\ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+If it ever becomes necesary to get a more performant REF(), this lies here in wait:
+```
+#define REF(thing) (thing && istype(thing, /datum) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+```
+*/
+/proc/REF(datum/input)
+	if(istype(input) && (input.datum_flags & DF_USE_TAG))
+		if(input.tag)
+			return "\[[url_encode(input.tag)]\]"
+		crash_with("A ref was requested of an object with DF_USE_TAG set but no tag: [input]")
+		input.datum_flags &= ~DF_USE_TAG
+	return "\ref[input]"

@@ -9,7 +9,7 @@
 	var/datum/gas_mixture/air_contents = null
 	var/volume = 4600
 	var/on = 0
-	var/activation_sound = 'sound/effects/flare.ogg'
+	var/activation_sound = 'sound/effects/flare_start.ogg'
 	light_color = "#e58775"
 	light_outer_range = 2
 	light_max_bright = 1
@@ -20,14 +20,14 @@
 	..()
 	update_icon()
 
-/obj/item/device/oxycandle/afterattack(var/obj/O, var/mob/user, var/proximity)
+/obj/item/device/oxycandle/afterattack(obj/O, mob/user, proximity)
 	if(proximity && istype(O) && on)
 		O.HandleObjectHeating(src, user, 500)
 	..()
 
 /obj/item/device/oxycandle/attack_self(mob/user)
 	if(!on)
-		to_chat(user, "<span class='notice'>You pull the cord and [src] ignites.</span>")
+		to_chat(user, SPAN_NOTICE("You pull the cord and [src] ignites."))
 		on = 1
 		update_icon()
 		playsound(src.loc, activation_sound, 75, 1)
@@ -48,6 +48,7 @@
 		on = 2
 		update_icon()
 		update_held_icon()
+		playsound(get_turf(src), 'sound/effects/flare_end.ogg', 75, 1)
 		SetName("burnt oxygen candle")
 		desc += "This tube has exhausted its chemicals."
 		return

@@ -1,13 +1,13 @@
 /datum/chorus
 	var/list/resources = list()
 
-/datum/chorus/proc/get_resource(var/path)
+/datum/chorus/proc/get_resource(path)
 	for(var/r in resources)
 		if(istype(r, path))
 			return r
 	return null
 
-/datum/chorus/proc/has_enough_resource(var/path, var/amt)
+/datum/chorus/proc/has_enough_resource(path, amt)
 	if(amt == 0)
 		return TRUE
 	var/datum/chorus_resource/resource = get_resource(path)
@@ -15,7 +15,7 @@
 		return resource.has_amount(amt)
 	return FALSE
 
-/datum/chorus/proc/use_resource(var/path, var/amt)
+/datum/chorus/proc/use_resource(path, amt)
 	if(amt == 0)
 		return TRUE
 	var/datum/chorus_resource/resource = get_resource(path)
@@ -26,7 +26,7 @@
 		return r
 	return FALSE
 
-/datum/chorus/proc/add_to_resource(var/path, var/amt)
+/datum/chorus/proc/add_to_resource(path, amt)
 	if(amt == 0)
 		return TRUE
 	var/datum/chorus_resource/resource = get_resource(path)
@@ -41,6 +41,6 @@
 	QDEL_NULL_LIST(resources)
 	. = ..()
 
-/datum/chorus/proc/update_resource(var/datum/chorus_resource/r)
+/datum/chorus/proc/update_resource(datum/chorus_resource/r)
 	update_nano_basic(r)
 	update_huds(FALSE, TRUE)

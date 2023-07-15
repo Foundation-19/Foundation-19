@@ -25,7 +25,7 @@
 			if(check_functionality())
 				read_string_stability = 100
 			else
-				read_string_stability = 100 - malfunction_probability
+				read_string_stability = 100 - (damage / malfunction_divisor)
 			. += "Registered Name: [stars(stored_card.registered_name, read_string_stability)]\n"
 			. += "Registered Assignment: [stars(stored_card.assignment, read_string_stability)]\n"
 			. += "Registered Rank: [stars(stored_card.rank, read_string_stability)]\n"
@@ -53,7 +53,7 @@
 	set src in view(1)
 
 	if(!CanPhysicallyInteract(usr))
-		to_chat(usr, "<span class='warning'>You can't reach it.</span>")
+		to_chat(usr, SPAN_WARNING("You can't reach it."))
 		return
 
 	var/obj/item/stock_parts/computer/card_slot/device = src
@@ -78,25 +78,25 @@
 		dropInto(loc)
 	stored_card = null
 
-	var/datum/extension/interactive/ntos/os = get_extension(loc, /datum/extension/interactive/ntos)
-	if(os)
-		os.event_idremoved()
+	holder2?.active_program?.event_idremoved()
 	loc.verbs -= /obj/item/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE
 
-/obj/item/stock_parts/computer/card_slot/proc/insert_id(var/obj/item/card/id/I, mob/user)
+/obj/item/stock_parts/computer/card_slot/proc/insert_id(obj/item/card/id/I, mob/user, suppress_message = FALSE)
 	if(!istype(I))
 		return FALSE
 
 	if(stored_card)
-		to_chat(user, "You try to insert [I] into [src], but its ID card slot is occupied.")
+		if(!suppress_message)
+			to_chat(user, "You try to insert [I] into [src], but its ID card slot is occupied.")
 		return FALSE
 
 	if(user && !user.unEquip(I, src))
 		return FALSE
 
 	stored_card = I
-	to_chat(user, "You insert [I] into [src].")
+	if(!suppress_message)
+		to_chat(user, "You insert [I] into [src].")
 	if(isobj(loc))
 		loc.verbs |= /obj/item/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE

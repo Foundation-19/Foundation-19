@@ -110,7 +110,7 @@
 	lore_text = "A strong, flexible alloy of iron and carbon. Probably the single most fundamentally useful and ubiquitous substance in human space."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/steel
-	brute_armor = 10
+	brute_armor = 20
 	burn_armor = 8
 	integrity = 200
 	melting_point = 3000
@@ -119,7 +119,6 @@
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = COLOR_STEEL
-	hitsound = 'sound/weapons/smash.ogg'
 	chem_products = list(
 				/datum/reagent/iron = 19.6,
 				/datum/reagent/carbon = 0.4
@@ -156,7 +155,6 @@
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#cccdcc"
-	hitsound = 'sound/weapons/smash.ogg'
 	sale_price = 1
 
 /material/aluminium/holographic
@@ -175,18 +173,17 @@
 	lore_text = "An alloy of steel and platinum. When regular high-tensile steel isn't tough enough to get the job done, the smart consumer turns to frankly absurd alloys of steel and platinum."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/plasteel
-	integrity = 800
+	integrity = 8000
 	melting_point = 12000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#a8a9b2"
 	explosion_resistance = 25
-	brute_armor = 8
-	burn_armor = 10
+	brute_armor = 100
+	burn_armor = 20
 	hardness = MATERIAL_VERY_HARD
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
-	hitsound = 'sound/weapons/smash.ogg'
 	construction_difficulty = MATERIAL_HARD_DIY
 	alloy_materials = list(MATERIAL_STEEL = 2500, MATERIAL_PLATINUM = 1250)
 	alloy_product = TRUE
@@ -197,7 +194,7 @@
 /material/plasteel/titanium
 	name = MATERIAL_TITANIUM
 	lore_text = "A light, strong, corrosion-resistant metal. Perfect for cladding high-velocity ballistic supply pods."
-	brute_armor = 20
+	brute_armor = 65
 	burn_armor = 16
 	integrity = 400
 	melting_point = 6000
@@ -216,12 +213,12 @@
 /material/plasteel/ocp
 	name = MATERIAL_OSMIUM_CARBIDE_PLASTEEL
 	stack_type = /obj/item/stack/material/ocp
-	integrity = 200
+	integrity = 8000
 	melting_point = 12000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#9bc6f2"
-	brute_armor = 4
+	brute_armor = 65
 	burn_armor = 20
 	weight = 27
 	stack_origin_tech = list(TECH_MATERIAL = 3)
@@ -322,7 +319,6 @@
 	weight = 22
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
-	hitsound = 'sound/weapons/smash.ogg'
 	construction_difficulty = MATERIAL_NORMAL_DIY
 	chem_products = list(
 				/datum/reagent/iron = 20
@@ -381,7 +377,7 @@
 	melting_point = rand(400,10000)
 	..()
 
-/material/aliumium/place_dismantled_girder(var/turf/target, var/material/reinf_material)
+/material/aliumium/place_dismantled_girder(turf/target, material/reinf_material)
 	return
 
 /material/hematite

@@ -87,7 +87,7 @@
 	update()
 	return
 
-/obj/structure/morgue/attack_robot(var/mob/user)
+/obj/structure/morgue/attack_robot(mob/user)
 	if(Adjacent(user))
 		return attack_hand(user)
 	else return ..()
@@ -168,8 +168,8 @@
 	O.forceMove(src.loc)
 	if (user != O)
 		for(var/mob/B in viewers(user, 3))
-			if ((B.client && !( B.blinded )))
-				to_chat(B, "<span class='warning'>\The [user] stuffs [O] into [src]!</span>")
+			if (B.client && B.can_see())
+				to_chat(B, SPAN_WARNING("\The [user] stuffs [O] into [src]!"))
 	return
 
 
@@ -232,7 +232,7 @@
 
 /obj/structure/crematorium/attack_hand(mob/user)
 	if(cremating)
-		to_chat(usr, "<span class='warning'>It's locked.</span>")
+		to_chat(usr, SPAN_WARNING("It's locked."))
 		return
 	if(src.connected && (src.locked == FALSE))
 		for(var/atom/movable/A as mob|obj in src.connected.loc)
@@ -294,17 +294,17 @@
 		return //don't let you cremate something twice or w/e
 
 	if(contents.len <= 0)
-		src.audible_message("<span class='warning'>You hear a hollow crackle.</span>", 1)
+		src.audible_message(SPAN_WARNING("You hear a hollow crackle."), 1)
 		return
 
 	else
 		if(length(search_contents_for(/obj/item/disk/nuclear)))
 			to_chat(loc, "The button's status indicator flashes yellow, indicating that something important is inside the crematorium, and must be removed.")
 			return
-		src.audible_message("<span class='warning'>You hear a roar as the [src] activates.</span>", 1)
+		src.audible_message(SPAN_WARNING("You hear a roar as the [src] activates."), 1)
 
-		cremating = 1
-		locked = 1
+		cremating = TRUE
+		locked = TRUE
 		update()
 
 		for(var/mob/living/M in contents)
@@ -317,7 +317,7 @@
 					C.adjustBrainLoss(5)
 
 					if(C.stat == DEAD || !(C in contents)) //In case we die or are removed at any point.
-						cremating = 0
+						cremating = FALSE
 						update()
 						break
 
@@ -345,6 +345,7 @@
 								shake_animation(5)
 							if(5)
 								playsound(src, 'sound/weapons/smash.ogg', 50, 1)
+								show_sound_effect(src.loc, user)
 								if(prob(50))
 									playsound(src, 'sound/weapons/smash.ogg', 50, 1)
 									shake_animation(9)
@@ -362,6 +363,9 @@
 				admin_attack_log(M, A, "Cremated their victim.", "Was cremated.", "cremated alive")
 				M.audible_message("[M]'s screams cease, as does any movement within the [src]. All that remains is a dull, empty silence.")
 				M.dust()
+				var/mob/observer/ghost/g = find_dead_player(M.last_ckey, TRUE)
+				if(istype(g))
+					g.timeofdeath -= (config.respawn_delay MINUTES * 0.5)
 
 		for(var/obj/O in contents) //obj instead of obj/item so that bodybags and ashes get destroyed. We dont want tons and tons of ash piling up
 			qdel(O)
@@ -417,7 +421,7 @@
 	O.forceMove(src.loc)
 	if (user != O)
 		for(var/mob/B in viewers(user, 3))
-			if ((B.client && !( B.blinded )))
+			if (B.client && B.can_see())
 				to_chat(B, text("<span class='warning'>[] stuffs [] into []!</span>", user, O, src))
 
 /obj/machinery/button/crematorium
@@ -425,7 +429,7 @@
 	desc = "Burn baby burn!"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "crema_switch"
-	req_access = list(access_crematorium)
+	req_access = list(ACCESS_CREMATORIUM)
 	id_tag = 1
 
 /obj/machinery/button/crematorium/on_update_icon()

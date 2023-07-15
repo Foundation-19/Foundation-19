@@ -14,23 +14,23 @@ var/list/registered_macros_by_ckey_
 	set category = null
 	log_macro(ckey, ".dblclick")
 
-/proc/log_macro(var/ckey, var/macro)
+/proc/log_macro(ckey, macro)
 	to_chat(usr, "The [macro] macro is disabled due to potential exploits.")
 	if(is_macro_use_registered(ckey, macro))
 		return
 	register_macro_use(ckey, macro)
-	log_and_message_admins("attempted to use the disabled [macro] macro.")
+	log_and_message_staff("attempted to use the disabled [macro] macro.")
 
 /proc/get_registered_macros()
 	if(!registered_macros_by_ckey_)
 		registered_macros_by_ckey_ = list()
 	return registered_macros_by_ckey_
 
-/proc/is_macro_use_registered(var/ckey, var/macro)
+/proc/is_macro_use_registered(ckey, macro)
 	var/list/registered_macros = get_registered_macros()[ckey]
 	return registered_macros && (macro in registered_macros)
 
-/proc/register_macro_use(var/ckey, var/macro)
+/proc/register_macro_use(ckey, macro)
 	var/list/registered_macros_by_ckey = get_registered_macros()
 	var/list/registered_macros = registered_macros_by_ckey[ckey]
 	if(!registered_macros)

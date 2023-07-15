@@ -61,7 +61,7 @@
 	icon = 'icons/obj/cult.dmi'
 	icon_state = "hole"
 	density = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	anchored = TRUE
 	var/spawnable = null
 
@@ -93,7 +93,7 @@
 	new t(src.loc)
 	qdel(src)
 
-/obj/effect/gateway/active/Crossed(var/atom/A)
+/obj/effect/gateway/active/Crossed(atom/A)
 	if(!istype(A, /mob/living))
 		return
 

@@ -26,8 +26,8 @@
 /decl/surgery_step/limb/attach
 	name = "Replace limb"
 	allowed_tools = list(/obj/item/organ/external = 100)
-	min_duration = 50
-	max_duration = 70
+	min_duration = 40
+	max_duration = 60
 
 /decl/surgery_step/limb/attach/pre_surgery_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	. = FALSE
@@ -72,8 +72,8 @@
 	if(!user.unEquip(tool))
 		return
 	var/obj/item/organ/external/E = tool
-	user.visible_message("<span class='notice'>[user] has attached [target]'s [E.name] to the [E.amputation_point].</span>",	\
-	"<span class='notice'>You have attached [target]'s [E.name] to the [E.amputation_point].</span>")
+	user.visible_message(SPAN_NOTICE("[user] has attached [target]'s [E.name] to the [E.amputation_point]."),	\
+	SPAN_NOTICE("You have attached [target]'s [E.name] to the [E.amputation_point]."))
 	E.replaced(target)
 	target.update_body()
 	target.updatehealth()
@@ -81,8 +81,8 @@
 
 /decl/surgery_step/limb/attach/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/E = tool
-	user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s [E.amputation_point]!</span>", \
-	"<span class='warning'> Your hand slips, damaging [target]'s [E.amputation_point]!</span>")
+	user.visible_message(SPAN_WARNING(" [user]'s hand slips, damaging [target]'s [E.amputation_point]!"), \
+	SPAN_WARNING(" Your hand slips, damaging [target]'s [E.amputation_point]!"))
 	target.apply_damage(10, BRUTE, null, damage_flags=DAM_SHARP)
 
 //////////////////////////////////////////////////////////////////
@@ -96,8 +96,8 @@
 		/obj/item/device/assembly/mousetrap = 20
 	)
 	can_infect = 1
-	min_duration = 100
-	max_duration = 120
+	min_duration = 80
+	max_duration = 100
 
 /decl/surgery_step/limb/connect/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool, target_zone)
 	var/obj/item/organ/external/E = target && target.get_organ(target_zone)
@@ -120,8 +120,8 @@
 
 /decl/surgery_step/limb/connect/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/E = target.get_organ(target_zone)
-	user.visible_message("<span class='notice'>[user] has connected tendons and muscles in [target]'s [E.amputation_point] with [tool].</span>",	\
-	"<span class='notice'>You have connected tendons and muscles in [target]'s [E.amputation_point] with [tool].</span>")
+	user.visible_message(SPAN_NOTICE("[user] has connected tendons and muscles in [target]'s [E.amputation_point] with [tool]."),	\
+	SPAN_NOTICE("You have connected tendons and muscles in [target]'s [E.amputation_point] with [tool]."))
 	E.status &= ~ORGAN_CUT_AWAY
 	if(E.children)
 		for(var/obj/item/organ/external/C in E.children)
@@ -132,8 +132,8 @@
 
 /decl/surgery_step/limb/connect/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/E = target.get_organ(target_zone)
-	user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s [E.amputation_point]!</span>", \
-	"<span class='warning'> Your hand slips, damaging [target]'s [E.amputation_point]!</span>")
+	user.visible_message(SPAN_WARNING(" [user]'s hand slips, damaging [target]'s [E.amputation_point]!"), \
+	SPAN_WARNING(" Your hand slips, damaging [target]'s [E.amputation_point]!"))
 	target.apply_damage(10, BRUTE, null, damage_flags=DAM_SHARP)
 
 //////////////////////////////////////////////////////////////////
@@ -143,8 +143,8 @@
 	name = "Attach prosthetic limb"
 	allowed_tools = list(/obj/item/robot_parts = 100)
 
-	min_duration = 80
-	max_duration = 100
+	min_duration = 60
+	max_duration = 80
 
 /decl/surgery_step/limb/mechanize/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	if(target.isSynthetic())
@@ -166,8 +166,8 @@
 
 /decl/surgery_step/limb/mechanize/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/robot_parts/L = tool
-	user.visible_message("<span class='notice'>[user] has attached \the [tool] to [target].</span>",	\
-	"<span class='notice'>You have attached \the [tool] to [target].</span>")
+	user.visible_message(SPAN_NOTICE("[user] has attached \the [tool] to [target]."),	\
+	SPAN_NOTICE("You have attached \the [tool] to [target]."))
 
 	if(L.part)
 		for(var/part_name in L.part)
@@ -189,6 +189,6 @@
 	qdel(tool)
 
 /decl/surgery_step/limb/mechanize/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
-		user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s flesh!</span>", \
-		"<span class='warning'> Your hand slips, damaging [target]'s flesh!</span>")
+		user.visible_message(SPAN_WARNING(" [user]'s hand slips, damaging [target]'s flesh!"), \
+		SPAN_WARNING(" Your hand slips, damaging [target]'s flesh!"))
 		target.apply_damage(10, BRUTE, null, damage_flags=DAM_SHARP)

@@ -1,82 +1,61 @@
-#define AUTOLATHE_HACK_WIRE    1
-#define AUTOLATHE_SHOCK_WIRE   2
-#define AUTOLATHE_DISABLE_WIRE 4
-
 /datum/wires/fabricator
-
 	holder_type = /obj/machinery/fabricator
 	wire_count = 6
-	descriptions = list(
-		new /datum/wire_description(AUTOLATHE_HACK_WIRE, "This wire appears to lead to an auxiliary data storage unit."),
-		new /datum/wire_description(AUTOLATHE_SHOCK_WIRE, "This wire seems to be carrying a heavy current."),
-		new /datum/wire_description(AUTOLATHE_DISABLE_WIRE, "This wire is connected to the power switch.", SKILL_EXPERIENCED)
-	)
+	proper_name = "Autolathe"
 
-/datum/wires/fabricator/GetInteractWindow(mob/user)
+/datum/wires/fabricator/New(atom/_holder)
+	wires = list(WIRE_AUTOLATHE_HACK, WIRE_ELECTRIFY, WIRE_AUTOLATHE_DISABLE)
+	return ..()
+
+/datum/wires/fabricator/get_status()
+	. = ..()
 	var/obj/machinery/fabricator/A = holder
-	. += ..()
-	. += "<BR>The red light is [(A.fab_status_flags & FAB_DISABLED) ? "off" : "on"]."
-	. += "<BR>The green light is [(A.fab_status_flags & FAB_SHOCKED) ? "off" : "on"]."
-	. += "<BR>The blue light is [(A.fab_status_flags & FAB_HACKED) ? "off" : "on"].<BR>"
+	. += "The red light is [(A.fab_status_flags & FAB_DISABLED) ? "off" : "on"]."
+	. += "The green light is [(A.fab_status_flags & FAB_SHOCKED) ? "off" : "on"]."
+	. += "The blue light is [(A.fab_status_flags & FAB_HACKED) ? "off" : "on"]."
 
-/datum/wires/fabricator/CanUse()
+/datum/wires/fabricator/interactable(mob/user)
 	var/obj/machinery/fabricator/A = holder
 	if(A.panel_open)
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
-/datum/wires/fabricator/UpdateCut(index, mended)
+/datum/wires/fabricator/on_cut(wire, mend)
 	var/obj/machinery/fabricator/A = holder
-	switch(index)
-		if(AUTOLATHE_HACK_WIRE)
-			if(mended)
+	switch(wire)
+		if(WIRE_AUTOLATHE_HACK)
+			if(mend)
 				A.fab_status_flags &= ~FAB_HACKED
 			else
 				A.fab_status_flags |= FAB_HACKED
-		if(AUTOLATHE_SHOCK_WIRE)
-			if(mended)
+		if(WIRE_ELECTRIFY)
+			if(mend)
 				A.fab_status_flags &= ~FAB_SHOCKED
 			else
 				A.fab_status_flags |= FAB_SHOCKED
-		if(AUTOLATHE_DISABLE_WIRE)
-			if(mended)
+		if(WIRE_AUTOLATHE_DISABLE)
+			if(mend)
 				A.fab_status_flags &= ~FAB_DISABLED
 			else
 				A.fab_status_flags |= FAB_DISABLED
 
-/datum/wires/fabricator/UpdatePulsed(index)
-	if(IsIndexCut(index))
+/datum/wires/fabricator/on_pulse(wire)
+	if(is_cut(wire))
 		return
 	var/obj/machinery/fabricator/A = holder
-	switch(index)
-		if(AUTOLATHE_HACK_WIRE)
-			if(A.fab_status_flags & FAB_HACKED)
-				A.fab_status_flags &= ~FAB_HACKED
-			else
-				A.fab_status_flags |= FAB_HACKED
+	switch(wire)
+		if(WIRE_AUTOLATHE_HACK)
+			A.fab_status_flags ^= FAB_HACKED
 			spawn(50)
-				if(A && !IsIndexCut(index))
+				if(A && !is_cut(wire))
 					A.fab_status_flags &= ~FAB_HACKED
-					Interact(usr)
-		if(AUTOLATHE_SHOCK_WIRE)
-			if(A.fab_status_flags & FAB_SHOCKED)
-				A.fab_status_flags &= ~FAB_SHOCKED
-			else
-				A.fab_status_flags |= FAB_SHOCKED
+		if(WIRE_ELECTRIFY)
+			A.fab_status_flags ^= FAB_SHOCKED
 			spawn(50)
-				if(A && !IsIndexCut(index))
+				if(A && !is_cut(wire))
 					A.fab_status_flags &= ~FAB_SHOCKED
-					Interact(usr)
-		if(AUTOLATHE_DISABLE_WIRE)
-			if(A.fab_status_flags & FAB_DISABLED)
-				A.fab_status_flags &= ~FAB_DISABLED
-			else
-				A.fab_status_flags |= FAB_DISABLED
+		if(WIRE_AUTOLATHE_DISABLE)
+			A.fab_status_flags ^= FAB_DISABLED
 			spawn(50)
-				if(A && !IsIndexCut(index))
+				if(A && !is_cut(wire))
 					A.fab_status_flags &= ~FAB_DISABLED
-					Interact(usr)
-
-#undef AUTOLATHE_HACK_WIRE
-#undef AUTOLATHE_SHOCK_WIRE
-#undef AUTOLATHE_DISABLE_WIRE

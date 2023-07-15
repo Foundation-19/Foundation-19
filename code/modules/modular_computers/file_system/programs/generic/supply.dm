@@ -14,13 +14,12 @@
 	size = 21
 	available_on_ntnet = TRUE
 	requires_ntnet = TRUE
-	category = PROG_SUPPLY
 
 /datum/computer_file/program/supply/process_tick()
 	..()
 	var/datum/nano_module/supply/SNM = NM
 	if(istype(SNM))
-		SNM.emagged = computer.emagged()
+		SNM.emagged = computer.computer_emagged
 		if(SNM.notifications_enabled)
 			if(SSsupply.requestlist.len)
 				ui_header = "supply_new_order.gif"
@@ -43,7 +42,7 @@
 	var/emagged_memory = FALSE // Keeps track if the program has to regenerate the catagories after an emag.
 	var/current_security_level
 	var/notifications_enabled = FALSE
-	var/admin_access = list(access_cargo, access_mailsorting)
+	var/admin_access = list(ACCESS_CARGO, ACCESS_MAILSORTING)
 
 /datum/nano_module/supply/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = host.initial_data()
@@ -119,7 +118,7 @@
 		ui.open()
 
 // Supply the order ID and where to look. This is just to reduce copypaste code.
-/datum/nano_module/supply/proc/find_order_by_id(var/order_id, var/list/find_in)
+/datum/nano_module/supply/proc/find_order_by_id(order_id, list/find_in)
 	for(var/datum/supply_order/SO in find_in)
 		if(SO.ordernum == order_id)
 			return SO
@@ -188,17 +187,17 @@
 		print_summary(user)
 
 	// Items requiring cargo access go below this entry. Other items go above.
-	if(!check_access(access_cargo))
+	if(!check_access(ACCESS_CARGO))
 		return 1
 
 	if(href_list["launch_shuttle"])
 		var/datum/shuttle/autodock/ferry/supply/shuttle = SSsupply.shuttle
 		if(!shuttle)
-			to_chat(user, "<span class='warning'>Error connecting to the shuttle.</span>")
+			to_chat(user, SPAN_WARNING("Error connecting to the shuttle."))
 			return
 		if(shuttle.at_station())
 			if (shuttle.forbidden_atoms_check())
-				to_chat(usr, "<span class='warning'>For safety reasons the automated supply shuttle cannot transport live organisms, classified nuclear weaponry or homing beacons.</span>")
+				to_chat(usr, SPAN_WARNING("For safety reasons the automated supply shuttle cannot transport live organisms, classified nuclear weaponry or homing beacons."))
 			else
 				shuttle.launch(user)
 		else
@@ -219,14 +218,14 @@
 		var/datum/supply_order/SO = find_order_by_id(id, SSsupply.requestlist)
 		if(SO)
 			if(SO.object.cost >= SSsupply.points)
-				to_chat(usr, "<span class='warning'>Not enough points to purchase \the [SO.object.name]!</span>")
+				to_chat(usr, SPAN_WARNING("Not enough points to purchase \the [SO.object.name]!"))
 			else
 				SSsupply.requestlist -= SO
 				SSsupply.shoppinglist += SO
 				SSsupply.points -= SO.object.cost
 
 		else
-			to_chat(user, "<span class='warning'>Could not find order number [id] to approve.</span>")
+			to_chat(user, SPAN_WARNING("Could not find order number [id] to approve."))
 
 		return 1
 
@@ -236,7 +235,7 @@
 		if(SO)
 			SSsupply.requestlist -= SO
 		else
-			to_chat(user, "<span class='warning'>Could not find order number [id] to deny.</span>")
+			to_chat(user, SPAN_WARNING("Could not find order number [id] to deny."))
 
 		return 1
 
@@ -247,7 +246,7 @@
 			SSsupply.shoppinglist -= SO
 			SSsupply.points += SO.object.cost
 		else
-			to_chat(user, "<span class='warning'>Could not find order number [id] to cancel.</span>")
+			to_chat(user, SPAN_WARNING("Could not find order number [id] to cancel."))
 
 		return 1
 
@@ -257,13 +256,13 @@
 		if(SO)
 			SSsupply.donelist -= SO
 		else
-			to_chat(user, "<span class='warning'>Could not find order number [id] to delete.</span>")
+			to_chat(user, SPAN_WARNING("Could not find order number [id] to delete."))
 
 		return 1
 
 	if(href_list["print_receipt"])
 		if(!can_print())
-			to_chat(user, "<span class='warning'>No printer connected to print receipts.</span>")
+			to_chat(user, SPAN_WARNING("No printer connected to print receipts."))
 			return 1
 
 		var/id = text2num(href_list["print_receipt"])
@@ -277,14 +276,14 @@
 			if(SUPPLY_LIST_ID_DONE)
 				list_to_search = SSsupply.donelist
 			else
-				to_chat(user, "<span class='warning'>Invalid list ID for order number [id]. Receipt not printed.</span>")
+				to_chat(user, SPAN_WARNING("Invalid list ID for order number [id]. Receipt not printed."))
 				return 1
 
 		var/datum/supply_order/SO = find_order_by_id(id, list_to_search)
 		if(SO)
 			print_order(SO, user)
 		else
-			to_chat(user, "<span class='warning'>Could not find order number [id] to print receipt.</span>")
+			to_chat(user, SPAN_WARNING("Could not find order number [id] to print receipt."))
 
 		return 1
 
@@ -311,7 +310,7 @@
 			)))
 		category_contents[sp.name] = category
 
-/datum/nano_module/supply/proc/generate_order_contents(var/order_ref)
+/datum/nano_module/supply/proc/generate_order_contents(order_ref)
 	var/decl/hierarchy/supply_pack/sp = locate(order_ref) in SSsupply.master_supply_list
 	if(!istype(sp))
 		return FALSE
@@ -355,7 +354,7 @@
 		return "Docked"
 	return "Docking/Undocking"
 
-/datum/nano_module/supply/proc/order_to_nanoui(var/datum/supply_order/SO, var/list_id)
+/datum/nano_module/supply/proc/order_to_nanoui(datum/supply_order/SO, list_id)
 	return list(list(
 		"id" = SO.ordernum,
 		"object" = SO.object.name,
@@ -366,12 +365,10 @@
 		))
 
 /datum/nano_module/supply/proc/can_print()
-	var/datum/extension/interactive/ntos/os = get_extension(nano_host(), /datum/extension/interactive/ntos)
-	if(os)
-		return os.has_component(PART_PRINTER)
-	return 0
+	var/obj/item/modular_computer/computer = nano_host()
+	return computer?.nano_printer
 
-/datum/nano_module/supply/proc/print_order(var/datum/supply_order/O, var/mob/user)
+/datum/nano_module/supply/proc/print_order(datum/supply_order/O, mob/user)
 	if(!O)
 		return
 
@@ -388,9 +385,9 @@
 	t += "<hr>"
 	print_text(t, user)
 
-/datum/nano_module/supply/proc/print_summary(var/mob/user)
+/datum/nano_module/supply/proc/print_summary(mob/user)
 	var/t = ""
-	t += "<center><BR><b><large>[GLOB.using_map.station_name]</large></b><BR><i>[station_date]</i><BR><i>Export overview<field></i></center><hr>"
+	t += "<center><BR><b><large>[GLOB.using_map.station_name]</large></b><BR><i>[stationdate2text()]</i><BR><i>Export overview<field></i></center><hr>"
 	for(var/source in SSsupply.point_source_descriptions)
 		t += "[SSsupply.point_source_descriptions[source]]: [SSsupply.point_sources[source] || 0]<br>"
 	print_text(t, user)

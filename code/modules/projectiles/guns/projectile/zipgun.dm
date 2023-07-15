@@ -25,8 +25,8 @@
 		/obj/item/ammo_casing/rifle
 		)
 
-/obj/item/gun/projectile/pirate/toggle_safety(var/mob/user)
-	to_chat(user, "<span class='warning'>There's no safety on \the [src]!</span>")
+/obj/item/gun/projectile/pirate/toggle_safety(mob/user)
+	to_chat(user, SPAN_WARNING("There's no safety on \the [src]!"))
 
 /obj/item/gun/projectile/pirate/Initialize()
 	var/obj/item/ammo_casing/ammo = pick(ammo_types)

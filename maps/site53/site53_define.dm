@@ -9,11 +9,16 @@
 	admin_levels = list(5,6,7)
 	empty_levels = list()
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"4"=1)
+	base_turf_by_z = list(
+		"1" = /turf/simulated/floor/exoplanet/desert,
+		"2" = /turf/simulated/floor/exoplanet/desert,
+		"3" = /turf/simulated/floor/exoplanet/snow,
+	)
 	overmap_size = 35
 	overmap_event_areas = 0
 	usable_email_tlds = list("site53.foundation", "security.site53.foundation", "science.site53.foundation", "utility.site53.foundation")
 
-	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone", "Security Base")
+	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone")
 	default_spawn = "Cryogenic Storage"
 
 	station_name  = "Foundation Site 53"
@@ -24,7 +29,7 @@
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 
-	map_admin_faxes = list("Foundation Central Office", "UIU Central Office", "GOC Central Office")
+	map_admin_faxes = list("Foundation Central Office", "UIU Central Office", "GOC Central Office", "Horizon Initiative Central Office ", "Marshall, Carter, and Dark Central Office")
 
 	//These should probably be moved into the evac controller...
 	shuttle_docked_message = "The outbound train is now boarding at the Train Station. It will depart in approximately %ETD%."
@@ -42,6 +47,25 @@
 	use_overmap = 0
 	num_exoplanets = 0
 	planet_size = list(129,129)
+	apc_test_exempt_areas = list(
+		/area/space = NO_APC,
+		/area/site53/llcz/mine/unexplored = NO_APC,
+		/area/site53/llcz/mine/explored = NO_APC,
+		/area/site53/surface = NO_APC,
+		/area/turbolift/site53/surface = NO_APC,
+		/area/turbolift/site53/basement = NO_APC,
+		/area/turbolift/site53/logistics = NO_APC,
+		/area/turbolift/site53/logisticstorage = NO_APC,
+		/area/turbolift/site53/scp106obs = NO_APC,
+		/area/turbolift/site53/scp106obs = NO_APC,
+		/area/turbolift/site53/uhcz = NO_APC,
+		/area/turbolift/site53/lhcz = NO_APC,
+		/area/shuttle/escape_pod = NO_APC,
+		/area/site53/tram/scpcar = NO_APC,
+		/area/turbolift/site53/commstower = NO_APC,
+		/area/turbolift/site53/scp106cont = NO_APC,
+		/area/centcom/goc = NO_APC,
+	)
 
 	away_site_budget = 3
 
@@ -97,7 +121,7 @@
 
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Sensor Readings:</font><hr />"
-	welcome_text += "Report generated on [stationdate2text()] at [stationtime2text()]</center><br /><br />"
+	welcome_text += "Report generated on [stationdate2text()] at [station_time_timestamp("hh:mm")]</center><br /><br />"
 	welcome_text += "Current system:<br /><b>[system_name()]</b><br />"
 	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br />"
 	welcome_text += "Travel time to Sol:<br /><b>[rand(15,45)] days</b><br />"

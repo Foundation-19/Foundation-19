@@ -79,15 +79,11 @@
 	desc = "You shouldn't see this."
 	icon = 'icons/effects/lighting_overlay.dmi'
 	icon_state = "dark"
-	plane = OPENTURF_MAX_PLANE
+	plane = OVER_OPENSPACE_PLANE
 	layer = MIMICED_LIGHTING_LAYER
-	blend_mode = BLEND_MULTIPLY
-	color = list(
-		SHADOWER_DARKENING_FACTOR, 0, 0,
-		0, SHADOWER_DARKENING_FACTOR, 0,
-		0, 0, SHADOWER_DARKENING_FACTOR
-	)
-
+	blend_mode = DEFAULT
+	color = "#000000"
+	alpha = (255 * (1 - SHADOWER_DARKENING_FACTOR))
 /atom/movable/openspace/multiplier/Destroy()
 	var/turf/myturf = loc
 	if (istype(myturf))
@@ -195,7 +191,7 @@
 // This thing holds the mimic appearance for non-OVERWRITE turfs.
 /atom/movable/openspace/turf_delegate
 	plane = OPENTURF_MAX_PLANE
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	no_z_overlay = TRUE  // Only one of these should ever be visible at a time, the mimic logic will handle that.
 
 /atom/movable/openspace/turf_delegate/attackby(obj/item/W, mob/user)
@@ -217,7 +213,7 @@
 // A type for copying delegates' self-appearance.
 /atom/movable/openspace/delegate_copy
 	plane = OPENTURF_MAX_PLANE	// These *should* only ever be at the top?
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/turf/delegate
 
 /atom/movable/openspace/delegate_copy/Initialize(mapload, ...)

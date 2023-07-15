@@ -1,4 +1,4 @@
-/mob/proc/flash_pain(var/target)
+/mob/proc/flash_pain(target)
 	if(pain)
 		animate(pain, alpha = target, time = 15, easing = ELASTIC_EASING)
 		animate(pain, alpha = 0, time = 20)
@@ -9,7 +9,7 @@
 // message is the custom message to be displayed
 // power decides how much painkillers will stop the message
 // force means it ignores anti-spam timer
-/mob/living/carbon/proc/custom_pain(var/message, var/power, var/force, var/obj/item/organ/external/affecting, var/nohalloss)
+/mob/living/carbon/proc/custom_pain(message, power, force, obj/item/organ/external/affecting, nohalloss)
 	if(!message || stat || !can_feel_pain() || chem_effects[CE_PAINKILLER] > power)
 		return 0
 
@@ -28,13 +28,13 @@
 	if(force || (message != last_pain_message) || (world.time >= next_pain_time))
 		last_pain_message = message
 		if(power >= 70)
-			to_chat(src, "<span class='danger'><font size=3>[message]</font></span>")
+			to_chat(src, SPAN_DANGER("<font size=3>[message]</font>"))
 		else if(power >= 40)
-			to_chat(src, "<span class='danger'><font size=2>[message]</font></span>")
+			to_chat(src, SPAN_DANGER("<font size=2>[message]</font>"))
 		else if(power >= 10)
-			to_chat(src, "<span class='danger'>[message]</span>")
+			to_chat(src, SPAN_DANGER("[message]"))
 		else
-			to_chat(src, "<span class='warning'>[message]</span>")
+			to_chat(src, SPAN_WARNING("[message]"))
 
 		var/force_emote = species.get_pain_emote(src, power)
 		if(force_emote && prob(power))
@@ -102,4 +102,4 @@
 				custom_pain("Your whole body hurts badly.", getToxLoss())
 			if(100 to INFINITY)
 				custom_pain("Your body aches all over, it's driving you mad.", getToxLoss())
-				
+

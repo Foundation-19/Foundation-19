@@ -2,7 +2,7 @@
 	var/overlay
 	var/ckey
 
-/datum/ai_emotion/New(var/over, var/key)
+/datum/ai_emotion/New(over, key)
 	overlay = over
 	ckey = key
 
@@ -28,7 +28,7 @@ var/list/ai_status_emotions = list(
 	"Ship Scan" 				= new /datum/ai_emotion("ai_shipscan")
 	)
 
-/proc/get_ai_emotions(var/ckey)
+/proc/get_ai_emotions(ckey)
 	var/list/emotions = new
 	for(var/emotion_name in ai_status_emotions)
 		var/datum/ai_emotion/emotion = ai_status_emotions[emotion_name]
@@ -39,7 +39,7 @@ var/list/ai_status_emotions = list(
 
 /proc/set_ai_status_displays(mob/user as mob)
 	var/list/ai_emotions = get_ai_emotions(user.ckey)
-	var/emote = input("Please, select a status!", "AI Status", null, null) in ai_emotions
+	var/emote = tgui_input_list(usr, "Please, select a status!", "StatusSetter.exe", ai_emotions)
 	for (var/obj/machinery/M in SSmachines.machinery) //change status
 		if(istype(M, /obj/machinery/ai_status_display))
 			var/obj/machinery/ai_status_display/AISD = M
@@ -88,7 +88,7 @@ var/list/ai_status_emotions = list(
 		if(2) // BSOD
 			set_picture("ai_bsod")
 
-/obj/machinery/ai_status_display/proc/set_picture(var/state)
+/obj/machinery/ai_status_display/proc/set_picture(state)
 	picture_state = state
 	if(overlays.len)
 		cut_overlays()

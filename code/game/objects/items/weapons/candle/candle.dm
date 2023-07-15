@@ -42,7 +42,7 @@
 	if(isflamesource(W) || is_hot(W))
 		light(user)
 
-/obj/item/flame/candle/resolve_attackby(var/atom/A, mob/user)
+/obj/item/flame/candle/resolve_attackby(atom/A, mob/user)
 	. = ..()
 	if(istype(A, /obj/item/flame/candle/) && is_hot(src))
 		var/obj/item/flame/candle/other_candle = A
@@ -51,7 +51,7 @@
 /obj/item/flame/candle/proc/light(mob/user)
 	if(!lit)
 		lit = 1
-		visible_message("<span class='notice'>\The [user] lights the [name].</span>")
+		visible_message(SPAN_NOTICE("\The [user] lights the [name]."))
 		set_light(candle_max_bright, candle_inner_range, candle_outer_range, candle_falloff)
 		START_PROCESSING(SSobj, src)
 

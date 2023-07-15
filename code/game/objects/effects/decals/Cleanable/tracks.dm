@@ -1,14 +1,14 @@
 // Stolen en masse from N3X15 of /vg/station with much gratitude.
 
 // The idea is to have 4 bits for coming and 4 for going.
-#define TRACKS_COMING_NORTH 1
-#define TRACKS_COMING_SOUTH 2
-#define TRACKS_COMING_EAST  4
-#define TRACKS_COMING_WEST  8
-#define TRACKS_GOING_NORTH  16
-#define TRACKS_GOING_SOUTH  32
-#define TRACKS_GOING_EAST   64
-#define TRACKS_GOING_WEST   128
+#define TRACKS_COMING_NORTH (1<<0)
+#define TRACKS_COMING_SOUTH (1<<1)
+#define TRACKS_COMING_EAST  (1<<2)
+#define TRACKS_COMING_WEST  (1<<3)
+#define TRACKS_GOING_NORTH  (1<<4)
+#define TRACKS_GOING_SOUTH  (1<<5)
+#define TRACKS_GOING_EAST   (1<<6)
+#define TRACKS_GOING_WEST   (1<<7)
 
 // 5 seconds
 #define TRACKS_CRUSTIFY_TIME   50
@@ -71,7 +71,7 @@ var/global/list/image/fluidtrack_cache=list()
 	* @param goingdir Direction tracks are going to (or 0).
 	* @param bloodcolor Color of the blood when wet.
 	*/
-/obj/effect/decal/cleanable/blood/tracks/proc/AddTracks(var/list/DNA, var/comingdir, var/goingdir, var/bloodcolor=COLOR_BLOOD_HUMAN)
+/obj/effect/decal/cleanable/blood/tracks/proc/AddTracks(list/DNA, comingdir, goingdir, bloodcolor=COLOR_BLOOD_HUMAN)
 	var/updated=0
 	// Shift our goingdir 4 spaces to the left so it's in the GOING bitblock.
 	var/realgoing=goingdir<<4
@@ -164,7 +164,7 @@ var/global/list/image/fluidtrack_cache=list()
 	coming_state = "human2"
 	going_state = "human1"
 
-/obj/effect/decal/cleanable/blood/tracks/footprints/reversed/AddTracks(var/list/DNA, var/comingdir, var/goingdir, var/bloodcolor=COLOR_BLOOD_HUMAN)
+/obj/effect/decal/cleanable/blood/tracks/footprints/reversed/AddTracks(list/DNA, comingdir, goingdir, bloodcolor=COLOR_BLOOD_HUMAN)
 	comingdir = reverse_direction(comingdir)
 	goingdir = reverse_direction(goingdir)
 	..(DNA, comingdir, goingdir, bloodcolor)

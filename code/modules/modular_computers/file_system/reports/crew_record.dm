@@ -11,6 +11,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	filetype = "CDB"
 	size = 2
 	var/icon/photo_front = null
+	var/icon/uncropped_photo_front = null
 	var/icon/photo_side = null
 	//More variables below.
 
@@ -22,14 +23,24 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	. = ..()
 	GLOB.all_crew_records.Remove(src)
 
-/datum/computer_file/report/crew_record/proc/load_from_mob(var/mob/living/carbon/human/H)
+/datum/computer_file/report/crew_record/proc/load_from_mob(mob/living/carbon/human/H)
 	if(istype(H))
-		photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
-		photo_side = getFlatIcon(H, WEST, always_use_defdir = 1)
+		var/obj/item/card/id/id = H.GetIdCard()
+		if(id && istype(id))
+			photo_front = id.front
+			uncropped_photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
+			photo_side = id.side
+		else
+			uncropped_photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
+			photo_front = uncropped_photo_front.Crop(9, 18, 23, 32)
+			photo_side = getFlatIcon(H, WEST, always_use_defdir = 1)
+			photo_side.Crop(9, 18, 23, 32)
 	else
 		var/mob/living/carbon/human/dummy = new()
-		photo_front = getFlatIcon(dummy, SOUTH, always_use_defdir = 1)
+		uncropped_photo_front = getFlatIcon(dummy, SOUTH, always_use_defdir = 1)
+		photo_front = uncropped_photo_front.Crop(9, 18, 23, 32)
 		photo_side = getFlatIcon(dummy, WEST, always_use_defdir = 1)
+		photo_side.Crop(9, 18, 23, 32)
 		qdel(dummy)
 
 	// Add honorifics, etc.
@@ -123,14 +134,14 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 // Global methods
 // Used by character creation to create a record for new arrivals.
-/proc/CreateModularRecord(var/mob/living/carbon/human/H)
+/proc/CreateModularRecord(mob/living/carbon/human/H)
 	var/datum/computer_file/report/crew_record/CR = new/datum/computer_file/report/crew_record()
 	GLOB.all_crew_records.Add(CR)
 	CR.load_from_mob(H)
 	return CR
 
 // Gets crew records filtered by set of positions
-/proc/department_crew_manifest(var/list/filter_positions, var/blacklist = FALSE)
+/proc/department_crew_manifest(list/filter_positions, blacklist = FALSE)
 	var/list/matches = list()
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
 		var/rank = CR.get_job()
@@ -144,8 +155,8 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 // Simple record to HTML (for paper purposes) conversion.
 // Not visually that nice, but it gets the work done, feel free to tweak it visually
-/proc/record_to_html(var/datum/computer_file/report/crew_record/CR, var/access)
-	var/dat = "<tt><H2>RECORD DATABASE DATA DUMP</H2><i>Generated on: [stationdate2text()] [stationtime2text()]</i><br>******************************<br>"
+/proc/record_to_html(datum/computer_file/report/crew_record/CR, access)
+	var/dat = "<tt><H2>RECORD DATABASE DATA DUMP</H2><i>Generated on: [stationdate2text()] [station_time_timestamp("hh:mm")]</i><br>******************************<br>"
 	dat += "<table>"
 	for(var/datum/report_field/F in CR.fields)
 		if(F.verify_access(access))
@@ -156,14 +167,14 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	dat += "</tt>"
 	return dat
 
-/proc/get_crewmember_record(var/name)
+/proc/get_crewmember_record(name)
 	name = sanitize(name)
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
 		if(CR.get_name() == name)
 			return CR
 	return null
 
-/proc/GetAssignment(var/mob/living/carbon/human/H)
+/proc/GetAssignment(mob/living/carbon/human/H)
 	if(!H)
 		return "Unassigned"
 	if(!H.mind)
@@ -176,7 +187,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 /datum/computer_file/report/crew_record/proc/set_##KEY(given_value){var/datum/report_field/F = locate(/datum/report_field/##PATH/##KEY) in fields; if(F) F.set_value(given_value)}
 #define SETUP_FIELD(NAME, KEY, PATH, ACCESS, ACCESS_EDIT) GETTER_SETTER(PATH, KEY); /datum/report_field/##PATH/##KEY;\
 /datum/computer_file/report/crew_record/generate_fields(){..(); var/datum/report_field/##KEY = add_field(/datum/report_field/##PATH/##KEY, ##NAME);\
-KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || access_bridge)}
+KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || ACCESS_BRIDGE)}
 
 // Fear not the preprocessor, for it is a friend. To add a field, use one of these, depending on value type and if you need special access to see it.
 // It will also create getter/setter procs for record datum, named like /get_[key here]() /set_[key_here](value) e.g. get_name() set_name(value)
@@ -189,39 +200,39 @@ KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || access_bridge)}
 /datum/report_field/options/crew_record/##KEY/get_options(){return OPTIONS}
 
 // GENERIC RECORDS
-FIELD_SHORT("Name", name, null, access_adminlvl5)
-FIELD_SHORT("Formal Name", formal_name, null, access_adminlvl5)
-FIELD_SHORT("Job", job, null, access_change_ids)
-FIELD_SHORT("Sex", sex, null, access_adminlvl5)
-FIELD_NUM("Age", age, null, access_change_ids)
-FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, access_medicallvl2)
+FIELD_SHORT("Name", name, null, ACCESS_ADMIN_LVL5)
+FIELD_SHORT("Formal Name", formal_name, null, ACCESS_ADMIN_LVL5)
+FIELD_SHORT("Job", job, null, ACCESS_CHANGE_IDS)
+FIELD_SHORT("Sex", sex, null, ACCESS_ADMIN_LVL5)
+FIELD_NUM("Age", age, null, ACCESS_CHANGE_IDS)
+FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, ACCESS_MEDICAL_LVL2)
 
-FIELD_SHORT("Species",species, null, access_adminlvl5)
-FIELD_LIST("Branch", branch, record_branches(), null, access_adminlvl5)
-FIELD_LIST("Rank", rank, record_ranks(), null, access_adminlvl5)
-FIELD_SHORT("Religion", religion, access_chapel_office, access_adminlvl5)
+FIELD_SHORT("Species",species, null, ACCESS_ADMIN_LVL5)
+FIELD_LIST("Branch", branch, record_branches(), null, ACCESS_ADMIN_LVL5)
+FIELD_LIST("Rank", rank, record_ranks(), null, ACCESS_ADMIN_LVL5)
+FIELD_SHORT("Religion", religion, ACCESS_CHAPEL_OFFICE, ACCESS_ADMIN_LVL5)
 
-FIELD_LONG("General Notes (Public)", public_record, null, access_adminlvl2)
+FIELD_LONG("General Notes (Public)", public_record, null, ACCESS_ADMIN_LVL2)
 
 // MEDICAL RECORDS
-FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medical, access_medicallvl2)
-FIELD_LONG("Medical Record", medRecord, access_medical, access_medicallvl2)
-FIELD_LONG("Known Implants", implants, access_medical, access_medicallvl2)
+FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, ACCESS_MEDICAL, ACCESS_MEDICAL_LVL2)
+FIELD_LONG("Medical Record", medRecord, ACCESS_MEDICAL, ACCESS_MEDICAL_LVL2)
+FIELD_LONG("Known Implants", implants, ACCESS_MEDICAL, ACCESS_MEDICAL_LVL2)
 
 // SECURITY RECORDS
-FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_securitylvl2, access_securitylvl2)
-FIELD_LONG("Security Record", secRecord, access_securitylvl2, access_securitylvl2)
-FIELD_SHORT("DNA", dna, access_securitylvl2, access_securitylvl2)
-FIELD_SHORT("Fingerprint", fingerprint, access_securitylvl2, access_securitylvl2)
+FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL2)
+FIELD_LONG("Security Record", secRecord, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL2)
+FIELD_SHORT("DNA", dna, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL2)
+FIELD_SHORT("Fingerprint", fingerprint, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL2)
 
 // EMPLOYMENT RECORDS
-FIELD_LONG("Employment Record", emplRecord, access_adminlvl2, access_adminlvl2)
-FIELD_SHORT("Home System", homeSystem, access_adminlvl5, access_adminlvl5)
-FIELD_SHORT("Faction", faction, access_adminlvl5, access_adminlvl5)
-FIELD_LONG("Qualifications", skillset, access_adminlvl5, access_adminlvl5)
+FIELD_LONG("Employment Record", emplRecord, ACCESS_ADMIN_LVL2, ACCESS_ADMIN_LVL2)
+FIELD_SHORT("Home System", homeSystem, ACCESS_ADMIN_LVL5, ACCESS_ADMIN_LVL5)
+FIELD_SHORT("Faction", faction, ACCESS_ADMIN_LVL5, ACCESS_ADMIN_LVL5)
+FIELD_LONG("Qualifications", skillset, ACCESS_ADMIN_LVL5, ACCESS_ADMIN_LVL5)
 
 // ANTAG RECORDS
-FIELD_LONG("Exploitable Information", antagRecord, access_syndicate, access_syndicate)
+FIELD_LONG("Exploitable Information", antagRecord, ACCESS_SYNDICATE, ACCESS_SYNDICATE)
 
 //Options builderes
 /datum/report_field/options/crew_record/rank/proc/record_ranks()

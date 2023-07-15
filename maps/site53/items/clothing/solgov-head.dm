@@ -60,7 +60,7 @@
 
 /obj/item/clothing/head/solgov/utility/marine/urban
 	name = "urban utility cover"
-	desc = "A grey utility cover bearing the crest of the SCG Marine Corps."
+	desc = "A grey utility cover bearing the crest of the Marine Corps."
 	icon_state = "greyutility"
 
 //Service
@@ -363,6 +363,8 @@
 	desc = "A dark red beret worn by members of the 'Red Right Hand' MTF unit, it feels kind of heavy for a beret."
 	icon_state = "alpha-beret"
 	item_state = "alpha-beret"
+	body_parts_covered = HEAD
+	armor = list(melee = 90, bullet = 90, laser = 90, energy = 95, bomb = 90, bio = 90, rad = 0)
 
 //GOC
 /obj/item/clothing/head/helmet/scp/goc

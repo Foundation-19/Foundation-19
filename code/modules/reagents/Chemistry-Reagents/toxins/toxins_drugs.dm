@@ -65,7 +65,7 @@
 /datum/reagent/mindbreaker_toxin/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
-	M.add_chemical_effect(CE_MIND, -2)
+	M.add_chemical_effect(CE_HALLUCINATION, -2)
 	if (alien == IS_SKRELL)
 		M.hallucination(25, 30)
 	else
@@ -105,7 +105,7 @@
 		if (prob(10))
 			M.emote(pick("twitch", "giggle"))
 	else
-		M.add_chemical_effect(CE_MIND, -1)
+		M.add_chemical_effect(CE_HALLUCINATION, -1)
 		M.apply_effect(3, STUTTER)
 		M.make_jittery(10)
 		M.make_dizzy(10)
@@ -166,7 +166,7 @@
 /datum/reagent/three_eye/affect_blood(mob/living/carbon/M, alien, removed)
 	M.add_client_color(/datum/client_color/thirdeye)
 	M.add_chemical_effect(CE_THIRDEYE, 1)
-	M.add_chemical_effect(CE_MIND, -2)
+	M.add_chemical_effect(CE_HALLUCINATION, -2)
 	M.hallucination(50, 50)
 	M.make_jittery(3)
 	M.make_dizzy(3)
@@ -219,7 +219,7 @@
 
 /datum/reagent/jerraman/affect_blood(mob/living/carbon/M, alien, removed)
 	M.add_chemical_effect(CE_THIRDEYE, 1)
-	M.add_chemical_effect(CE_MIND, -2)
+	M.add_chemical_effect(CE_HALLUCINATION, -2)
 	M.make_dizzy(5)
 	if(prob(30))
 		to_chat(M, SPAN_WARNING("<font size = [rand(1,2)]>[pick(dose_messages)]</font>"))

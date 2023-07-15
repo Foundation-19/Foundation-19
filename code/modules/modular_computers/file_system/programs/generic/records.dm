@@ -9,7 +9,6 @@
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/records
 	usage_flags = PROGRAM_ALL
-	category = PROG_OFFICE
 
 /datum/nano_module/records
 	name = "Crew Records"
@@ -24,7 +23,7 @@
 	if(active_record)
 		send_rsc(user, active_record.photo_front, "front_[active_record.uid].png")
 		send_rsc(user, active_record.photo_side, "side_[active_record.uid].png")
-		data["pic_edit"] = check_access(user, access_adminlvl2) || check_access(user, access_securitylvl2)
+		data["pic_edit"] = check_access(user, ACCESS_ADMIN_LVL2) || check_access(user, ACCESS_SECURITY_LVL2)
 		data += active_record.generate_nano_data(user_access)
 	else
 		var/list/all_records = list()
@@ -37,9 +36,9 @@
 				"id" = R.uid
 			)))
 		data["all_records"] = all_records
-		data["creation"] = check_access(user, access_adminlvl2)
-		data["dnasearch"] = check_access(user, access_medicallvl2) || check_access(user, access_securitylvl2)
-		data["fingersearch"] = check_access(user, access_securitylvl2)
+		data["creation"] = check_access(user, ACCESS_ADMIN_LVL2)
+		data["dnasearch"] = check_access(user, ACCESS_MEDICAL_LVL2) || check_access(user, ACCESS_SECURITY_LVL2)
+		data["fingersearch"] = check_access(user, ACCESS_SECURITY_LVL2)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -49,18 +48,16 @@
 		ui.open()
 
 
-/datum/nano_module/records/proc/get_record_access(var/mob/user)
+/datum/nano_module/records/proc/get_record_access(mob/user)
 	var/list/user_access = using_access || user.GetAccess()
-
-	var/obj/PC = nano_host()
-	var/datum/extension/interactive/ntos/os = get_extension(PC, /datum/extension/interactive/ntos)
-	if(os && os.emagged())
+	var/obj/item/modular_computer/computer = nano_host()
+	if(istype(computer) && computer.computer_emagged)			//this function can be called without a computer, in which case this would runtime if we don't check
 		user_access = user_access.Copy()
-		user_access |= access_syndicate
+		user_access |= ACCESS_SYNDICATE
 
 	return user_access
 
-/datum/nano_module/records/proc/edit_field(var/mob/user, var/field_ID)
+/datum/nano_module/records/proc/edit_field(mob/user, field_ID)
 	var/datum/computer_file/report/crew_record/R = active_record
 	if(!R)
 		return
@@ -68,7 +65,7 @@
 	if(!F)
 		return
 	if(!F.verify_access_edit(get_record_access(user)))
-		to_chat(user, "<span class='notice'>\The [nano_host()] flashes an \"Access Denied\" warning.</span>")
+		to_chat(user, SPAN_NOTICE("\The [nano_host()] flashes an \"Access Denied\" warning."))
 		return
 	F.ask_value(user)
 
@@ -89,7 +86,7 @@
 				break
 		return 1
 	if(href_list["new_record"])
-		if(!check_access(usr, access_adminlvl2))
+		if(!check_access(usr, ACCESS_ADMIN_LVL2))
 			to_chat(usr, "Access Denied.")
 			return
 		active_record = new/datum/computer_file/report/crew_record()
@@ -130,7 +127,7 @@
 		edit_field(usr, text2num(href_list["edit_field"]))
 		return 1
 
-/datum/nano_module/records/proc/get_photo(var/mob/user)
+/datum/nano_module/records/proc/get_photo(mob/user)
 	if(istype(user.get_active_hand(), /obj/item/photo))
 		var/obj/item/photo/photo = user.get_active_hand()
 		return photo.img

@@ -1,4 +1,4 @@
-/mob/living/carbon/alien/diona/drop_from_inventory(var/obj/item/I)
+/mob/living/carbon/alien/diona/drop_from_inventory(obj/item/I)
 	. = ..()
 	if(I == holding_item)
 		holding_item = null
@@ -6,14 +6,14 @@
 		hat = null
 		update_icons()
 
-/mob/living/carbon/alien/diona/put_in_hands(var/obj/item/W) // No hands. Use mouth.
+/mob/living/carbon/alien/diona/put_in_hands(obj/item/W) // No hands. Use mouth.
 	if(can_collect(W))
 		collect(W)
 	else
 		W.forceMove(get_turf(src))
 	return 1
 
-/mob/living/carbon/alien/diona/proc/wear_hat(var/obj/item/clothing/head/new_hat)
+/mob/living/carbon/alien/diona/proc/wear_hat(obj/item/clothing/head/new_hat)
 	if(hat || !istype(new_hat) || holding_item == new_hat)
 		return FALSE
 	hat = new_hat
@@ -27,9 +27,9 @@
 	if(holding_item || hat)
 		drop_item()
 	else
-		to_chat(usr, "<span class='warning'>You have nothing to drop.</span>")
+		to_chat(usr, SPAN_WARNING("You have nothing to drop."))
 
-/mob/living/carbon/alien/diona/proc/can_collect(var/obj/item/collecting)
+/mob/living/carbon/alien/diona/proc/can_collect(obj/item/collecting)
 	return (!holding_item && \
 		istype(collecting) && \
 		collecting != hat && \
@@ -39,10 +39,10 @@
 		collecting.w_class <= can_pull_size \
 	)
 
-/mob/living/carbon/alien/diona/proc/collect(var/obj/item/collecting)
+/mob/living/carbon/alien/diona/proc/collect(obj/item/collecting)
 	collecting.forceMove(src)
 	holding_item = collecting
-	visible_message("<span class='notice'>\The [src] engulfs \the [holding_item].</span>")
+	visible_message(SPAN_NOTICE("\The [src] engulfs \the [holding_item]."))
 
 	// This means dionaea can hoover up beakers as a kind of impromptu chem disposal
 	// technique, so long as they're okay with the reagents reacting inside them.
@@ -70,9 +70,9 @@
 
 /mob/living/carbon/alien/diona/drop_item()
 	if(holding_item && unEquip(holding_item))
-		visible_message("<span class='notice'>\The [src] regurgitates \the [holding_item].</span>")
+		visible_message(SPAN_NOTICE("\The [src] regurgitates \the [holding_item]."))
 	else if(hat && unEquip(hat))
-		visible_message("<span class='notice'>\The [src] wriggles out from under \the [hat].</span>")
+		visible_message(SPAN_NOTICE("\The [src] wriggles out from under \the [hat]."))
 		update_icons()
 	else
 		. = ..()

@@ -32,7 +32,7 @@
 	else
 		to_chat(user, "It has a blank space for a signature.")
 
-/obj/item/card/union/attackby(var/obj/item/thing, var/mob/user)
+/obj/item/card/union/attackby(obj/item/thing, mob/user)
 	if(istype(thing, /obj/item/pen))
 		if(signed_by)
 			to_chat(user, SPAN_WARNING("\The [src] has already been signed."))
@@ -83,22 +83,6 @@
  * ID CARDS
  */
 
-/obj/item/card/emag_broken
-	desc = "It's a blank ID card with a magnetic strip and some odd circuitry attached."
-	name = "identification card"
-	icon_state = "emag"
-	item_state = "card-id"
-	origin_tech = list(TECH_MAGNET = 2, TECH_ESOTERIC = 2)
-
-/obj/item/card/emag_broken/examine(mob/user, distance)
-	. = ..()
-	if(distance <= 0 && (user.skill_check(SKILL_DEVICES, SKILL_TRAINED) || player_is_antag(user.mind)))
-		to_chat(user, SPAN_WARNING("You can tell the components are completely fried; whatever use it may have had before is gone."))
-
-/obj/item/card/emag_broken/get_antag_info()
-	. = ..()
-	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
-
 /obj/item/card/emag
 	desc = "It's a blank ID card with a magnetic strip and some odd circuitry attached."
 	name = "identification card"
@@ -107,25 +91,32 @@
 	origin_tech = list(TECH_MAGNET = 2, TECH_ESOTERIC = 2)
 	var/uses = 10
 
-var/const/NO_EMAG_ACT = -50
-
 /obj/item/card/emag/resolve_attackby(atom/A, mob/user)
-	var/used_uses = A.emag_act(uses, user, src)
-	if(used_uses == NO_EMAG_ACT)
-		return ..(A, user)
-
-	uses -= used_uses
-	A.add_fingerprint(user)
-	if(used_uses)
-		log_and_message_admins("emagged \an [A].")
-
 	if(uses<1)
-		user.visible_message("<span class='warning'>\The [src] fizzles and sparks - it seems it's been used once too often, and is now spent.</span>")
-		var/obj/item/card/emag_broken/junk = new(user.loc)
-		junk.add_fingerprint(user)
-		qdel(src)
+		user.visible_message(SPAN_WARNING("\The [src] fizzles and sparks - it seems it's been used once too often."))
+	else
+		var/used_uses = A.emag_act(uses, user, src)
+		if(used_uses == EMAG_NO_ACT)
+			return ..(A, user)
+
+		uses -= used_uses
+		A.add_fingerprint(user)
+		log_and_message_staff("emagged \an [A].")
 
 	return 1
+
+/obj/item/card/emag/examine(mob/user, distance)
+	. = ..()
+	if((distance <= 0) && (user.skill_check(SKILL_DEVICES, SKILL_TRAINED) || player_is_antag(user.mind)))
+		switch(uses)
+			if(10 to INFINITY)
+				to_chat(user, SPAN_NOTICE("The card looks to be in a pristine condition!"))
+			if(4 to 9)
+				to_chat(user, SPAN_NOTICE("The card seems to be in normal working order."))
+			if(1 to 3)
+				to_chat(user, SPAN_NOTICE("The circuitry has visibly degraded, although the card does still look usable."))
+			else
+				to_chat(user, SPAN_WARNING("You can tell the components are completely fried; whatever use it may have had before is gone."))
 
 /obj/item/card/emag/Initialize()
 	. = ..()
@@ -134,6 +125,9 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/emag/get_antag_info()
 	. = ..()
 	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
+
+/obj/item/card/emag/broken
+	uses = 0
 
 /obj/item/card/id
 	name = "identification card"
@@ -194,11 +188,11 @@ var/const/NO_EMAG_ACT = -50
 	for(var/detail in extra_details)
 		add_overlay(overlay_image(icon, detail, flags=RESET_COLOR))
 */
-/obj/item/card/id/CanUseTopic(var/user)
+/obj/item/card/id/CanUseTopic(user)
 	if(user in view(get_turf(src)))
 		return STATUS_INTERACTIVE
 
-/obj/item/card/id/OnTopic(var/mob/user, var/list/href_list)
+/obj/item/card/id/OnTopic(mob/user, list/href_list)
 	if(href_list["look_at_id"])
 		if(istype(user))
 			user.examinate(src)
@@ -232,11 +226,13 @@ var/const/NO_EMAG_ACT = -50
 	if(assignment)
 		. += ", [assignment]"
 
-/obj/item/card/id/proc/set_id_photo(var/mob/M)
+/obj/item/card/id/proc/set_id_photo(mob/M)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)
+	front.Crop(9, 18, 23, 32)
 	side = getFlatIcon(M, WEST, always_use_defdir = 1)
+	side.Crop(9, 18, 23, 32)
 
-/mob/proc/set_id_info(var/obj/item/card/id/id_card)
+/mob/proc/set_id_info(obj/item/card/id/id_card)
 	id_card.age = 0
 
 	id_card.formal_name_prefix = initial(id_card.formal_name_prefix)
@@ -258,7 +254,7 @@ var/const/NO_EMAG_ACT = -50
 		id_card.dna_hash		= dna.unique_enzymes
 		id_card.fingerprint_hash= md5(dna.uni_identity)
 
-/mob/living/carbon/human/set_id_info(var/obj/item/card/id/id_card)
+/mob/living/carbon/human/set_id_info(obj/item/card/id/id_card)
 	..()
 	id_card.age = age
 	if(GLOB.using_map.flags & MAP_HAS_BRANCH)
@@ -282,7 +278,7 @@ var/const/NO_EMAG_ACT = -50
 	dat += text("Blood Type: []<BR>\n", blood_type)
 	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
 	if(front && side)
-		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=80 width=80 border=4><img src=side.png height=80 width=80 border=4></td>"
+		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=70 width=70 border=7 style='-ms-interpolation-mode: nearest-neighbor'> <img src=side.png height=70 width=70 border=4 style='-ms-interpolation-mode: nearest-neighbor'></td>"
 	dat += "</tr></table>"
 	return jointext(dat,null)
 
@@ -314,7 +310,7 @@ var/const/NO_EMAG_ACT = -50
 	handled_type = /obj/item/card/id
 	handled_vars = list("military_branch")
 
-/decl/vv_set_handler/id_card_military_branch/handle_set_var(var/obj/item/card/id/id, variable, var_value, client)
+/decl/vv_set_handler/id_card_military_branch/handle_set_var(obj/item/card/id/id, variable, var_value, client)
 	if(!var_value)
 		id.military_branch = null
 		id.military_rank = null
@@ -340,7 +336,7 @@ var/const/NO_EMAG_ACT = -50
 	handled_type = /obj/item/card/id
 	handled_vars = list("military_rank")
 
-/decl/vv_set_handler/id_card_military_rank/handle_set_var(var/obj/item/card/id/id, variable, var_value, client)
+/decl/vv_set_handler/id_card_military_rank/handle_set_var(obj/item/card/id/id, variable, var_value, client)
 	if(!var_value)
 		id.military_rank = null
 		return
@@ -383,7 +379,7 @@ var/const/NO_EMAG_ACT = -50
 	desc = "An ID straight from the Syndicate."
 	registered_name = "Syndicate"
 	assignment = "Syndicate Overlord"
-	access = list(access_syndicate, access_external_airlocks)
+	access = list(ACCESS_SYNDICATE, ACCESS_EXTERNAL_AIRLOCKS)
 	color = COLOR_RED_GRAY
 	detail_color = COLOR_GRAY40
 
@@ -396,7 +392,7 @@ var/const/NO_EMAG_ACT = -50
 	detail_color = COLOR_AMBER
 
 /obj/item/card/id/captains_spare/New()
-	access = get_all_station_access()
+	access = get_all_site_access()
 	..()
 
 /obj/item/card/id/synthetic
@@ -407,7 +403,7 @@ var/const/NO_EMAG_ACT = -50
 	detail_color = COLOR_AMBER
 
 /obj/item/card/id/synthetic/New()
-	access = get_all_station_access() + access_synth
+	access = get_all_site_access() + ACCESS_SYNTH
 	..()
 
 /obj/item/card/id/centcom
@@ -425,7 +421,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/centcom/station/New()
 	..()
-	access |= get_all_station_access()
+	access |= get_all_site_access()
 
 /obj/item/card/id/centcom/ERT
 	name = "\improper Emergency Response Team ID"
@@ -433,7 +429,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/centcom/ERT/New()
 	..()
-	access |= get_all_station_access()
+	access |= get_all_site_access()
 
 /obj/item/card/id/foundation_civilian
 	name = "operant registration card"
@@ -458,7 +454,7 @@ var/const/NO_EMAG_ACT = -50
 		else
 			to_chat(user, SPAN_NOTICE("This is the real deal, stamped by [GLOB.using_map.boss_name]. It gives the holder the full authority to pursue their goals. You believe it implicitly."))
 
-/obj/item/card/id/foundation/attack_self(var/mob/living/user)
+/obj/item/card/id/foundation/attack_self(mob/living/user)
 	. = ..()
 	if(istype(user))
 		for(var/mob/M in viewers(world.view, get_turf(user))-user)
@@ -474,7 +470,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/foundation/New()
 	..()
-	access |= get_all_station_access()
+	access |= get_all_site_access()
 
 /obj/item/card/id/all_access
 	name = "\improper Administrator's spare ID"
@@ -613,6 +609,6 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/merchant
 	name = "identification card"
 	desc = "A card issued to Merchants, indicating their right to sell and buy goods."
-	access = list(access_merchant)
+	access = list(ACCESS_MERCHANT)
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE

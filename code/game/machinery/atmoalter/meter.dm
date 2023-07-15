@@ -14,7 +14,7 @@
 	public_variables = list(
 		/decl/public_access/public_variable/gas,
 		/decl/public_access/public_variable/pressure,
-		/decl/public_access/public_variable/temperature		
+		/decl/public_access/public_variable/temperature
 	)
 	stock_part_presets = list(/decl/stock_part_preset/radio/basic_transmitter/meter = 1)
 
@@ -37,7 +37,7 @@
 /obj/machinery/meter/proc/clear_target()
 	if(target)
 		GLOB.destroyed_event.unregister(target, src)
-		target = null	
+		target = null
 
 /obj/machinery/meter/return_air()
 	if(target)
@@ -83,10 +83,10 @@
 	. = ..()
 
 	if(distance > 3 && !(istype(user, /mob/living/silicon/ai) || isghost(user)))
-		to_chat(user, "<span class='warning'>You are too far away to read it.</span>")
+		to_chat(user, SPAN_WARNING("You are too far away to read it."))
 
 	else if(stat & (NOPOWER|BROKEN))
-		to_chat(user, "<span class='warning'>The display is off.</span>")
+		to_chat(user, SPAN_WARNING("The display is off."))
 
 	else if(src.target)
 		var/datum/gas_mixture/environment = target.return_air()

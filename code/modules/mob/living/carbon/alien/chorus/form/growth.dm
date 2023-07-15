@@ -23,7 +23,7 @@
 			/datum/chorus_building/set_to_turf/growth/womb
 	)
 
-/datum/chorus_form/growth/setup_new_unit(var/mob/living/carbon/alien/chorus/c)
+/datum/chorus_form/growth/setup_new_unit(mob/living/carbon/alien/chorus/c)
 	c.icon = 'icons/mob/simple_animal/biocraps.dmi'
 	c.icon_living = "livingflesh"
 	c.icon_dead = "livingflesh_dead"

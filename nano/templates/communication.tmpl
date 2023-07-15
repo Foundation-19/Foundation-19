@@ -21,7 +21,7 @@
 		<h4>Additional</h4>
 		<div class=itemGroup>
 			<div class="item">{{:helper.link('Unbolt saferoom doors', null, {'action' : 'unbolt_doors'})}}</div>
-			<div class="item">{{:helper.link('Bolt saferoom doors', null, {'action' : 'bolt_doors'})}}</div>		
+			<div class="item">{{:helper.link('Bolt saferoom doors', null, {'action' : 'bolt_doors'})}}</div>
 			{{for data.evac_options}}
 				<div class="item">
 					{{:helper.link(value.option_text, null, {'action' : 'evac', 'target' : value.option_target}, ((value.needs_syscontrol && !data.net_syscont) || (!value.silicon_allowed && data.isAI)) ? 'disabled' : null, 'redButton')}}
@@ -77,7 +77,7 @@
                 {{:helper.link(data.message_line2 ? data.message_line2 : '(none)', null, {'action' : 'setstatus', 'target' : 'line2'})}}
             </div>
         </div>
-        
+
         <div class="item">
             <div class="itemLabel">
                 <b>Alert:</b>
@@ -108,17 +108,14 @@
 		{{if data.cannot_change_security_level}}
 			<div class=item><font color='red'><b>The self-destruct mechanism is active! Find a way to deactivate the mechanism, or evacuate.</b></font></div>
 		{{else}}
-			{{if data.current_security_level_is_high_security_level}}
-				<div class=item><font color='red'><b>This emergency may not be resolved from this system! Utilise the authentication devices.</b></font></div>
-			{{else}}
-				<div class=item>Set Security Level: </div>
-				<div class=itemGroup>
-				{{for data.security_levels}}
-					<div class="item">
-						<div class=item>{{:helper.link(value.title, null, {'action' : 'setalert', 'target' : value.ref}, data.current_security_level_ref === value.ref || data.isAI ? 'disabled' : null)}} </div>
-					</div>
-				{{/for}}
-			{{/if}}
+			<div class=item>Set Security Level: </div>
+			<div class=itemGroup>
+			{{for data.security_levels}}
+				<div class="item">
+					<div class=item>{{:helper.link(value.title, null, {'action' : 'setalert', 'target' : value.ref}, data.current_security_level_ref === value.ref || data.isAI ? 'disabled' : null)}} </div>
+				</div>
+				<div class=item>{{:value.desc}}</div>
+			{{/for}}
 			</br>
 			<div class=item>{{:helper.link('Back', null, {'action' : 'sw_menu', 'target' : 1})}} </div>
 		{{/if}}

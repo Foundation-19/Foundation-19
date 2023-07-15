@@ -9,17 +9,14 @@
 #define SKILL_MAX      5 // Max skill value selectable
 #define SKILL_DEFAULT  4 //most mobs will default to this
 
-#define SKILL_EASY     1
-#define SKILL_AVERAGE  2
-#define SKILL_HARD     4
+#define SKILL_EASY     (1<<0)
+#define SKILL_AVERAGE  (1<<1)
+#define SKILL_HARD     (1<<2)
 
-#define SKILL_BUREAUCRACY   /decl/hierarchy/skill/organizational/bureaucracy
-#define SKILL_FINANCE       /decl/hierarchy/skill/organizational/finance
-#define SKILL_EVA           /decl/hierarchy/skill/general/EVA
-#define SKILL_MECH          /decl/hierarchy/skill/general/EVA/mech
 #define SKILL_PILOT         /decl/hierarchy/skill/general/pilot
 #define SKILL_HAULING       /decl/hierarchy/skill/general/hauling
 #define SKILL_COMPUTER      /decl/hierarchy/skill/general/computer
+#define SKILL_FINANCE       /decl/hierarchy/skill/general/finance
 #define SKILL_BOTANY        /decl/hierarchy/skill/service/botany
 #define SKILL_COOKING       /decl/hierarchy/skill/service/cooking
 #define SKILL_COMBAT        /decl/hierarchy/skill/security/combat

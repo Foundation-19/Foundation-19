@@ -15,10 +15,10 @@
 	*/
 	signature = sanitize(input("Enter new signature. Leave blank for 'Anonymous'", "New Signature", signature))
 
-/obj/item/pen/proc/get_signature(var/mob/user)
+/obj/item/pen/proc/get_signature(mob/user)
 	return (user && user.real_name) ? user.real_name : "Anonymous"
 
-/obj/item/pen/chameleon/get_signature(var/mob/user)
+/obj/item/pen/chameleon/get_signature(mob/user)
 	return signature ? signature : "Anonymous"
 
 /obj/item/pen/chameleon/verb/set_colour()
@@ -57,4 +57,4 @@
 			else
 				colour = COLOR_BLACK
 				color_description = "black ink"
-		to_chat(usr, "<span class='info'>You select the [lowertext(selected_type)] ink container.</span>")
+		to_chat(usr, SPAN_INFO("You select the [lowertext(selected_type)] ink container."))

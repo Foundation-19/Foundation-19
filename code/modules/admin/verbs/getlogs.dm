@@ -24,16 +24,16 @@
 	set category = null
 
 	if(!src.holder)
-		to_chat(src, "<font color='red'>Only Admins may use this command.</font>")
+		to_chat(src, FONT_COLORED("red","Only Admins may use this command."))
 		return
 
 	var/client/target = input(src,"Choose somebody to grant access to the server's runtime logs (permissions expire at the end of each round):","Grant Permissions",null) as null|anything in GLOB.clients
 	if(!istype(target,/client))
-		to_chat(src, "<font color='red'>Error: giveruntimelog(): Client not found.</font>")
+		to_chat(src, FONT_COLORED("red","Error: giveruntimelog(): Client not found."))
 		return
 
 	target.verbs |= /client/proc/getruntimelog
-	to_chat(target, "<font color='red'>You have been granted access to runtime logs. Please use them responsibly or risk being banned.</font>")
+	to_chat(target, FONT_COLORED("red","You have been granted access to runtime logs. Please use them responsibly or risk being banned."))
 	return
 
 
@@ -51,7 +51,7 @@
 	if(file_spam_check())
 		return
 
-	message_admins("[key_name_admin(src)] accessed file: [path]")
+	message_staff("[key_name_admin(src)] accessed file: [path]")
 	src << browse(file(path), "window=runtimes")
 	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
 	return
@@ -60,9 +60,12 @@
 //This proc allows download of past server logs saved within the data/logs/ folder.
 //It works similarly to show-server-log.
 /client/proc/getserverlog()
-	set name = ".getserverlog"
+	set name = "Show Any Server Log"
 	set desc = "Fetch logfiles from data/logs"
-	set category = null
+	set category = "Admin"
+
+	if(!check_rights(R_ADMIN|R_MOD, TRUE))
+		return
 
 	var/path = browse_files("data/logs/")
 	if(!path)
@@ -71,8 +74,8 @@
 	if(file_spam_check())
 		return
 
-	message_admins("[key_name_admin(src)] accessed file: [path]")
-	src << browse(file(path), "window=serverlog")
+	message_staff("[key_name_admin(src)] accessed file: [path]")
+	to_target(src, run(file(path)))
 	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
 	return
 
@@ -82,16 +85,17 @@
 //Shows today's server log
 /datum/admins/proc/view_txt_log()
 	set category = "Admin"
-	set name = "Show Server Log"
+	set name = "Show Today Server Log"
 	set desc = "Shows today's server log."
 
-	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM-Month/DD-Day")].log"
-	if( fexists(path) )
-		src << run(file(path))
-	else
-		to_chat(src, "<font color='red'>Error: view_txt_log(): File not found/Invalid path([path]).</font>")
+	if(!check_rights(R_ADMIN|R_MOD, TRUE))
 		return
-	feedback_add_details("admin_verb","VTL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+	if( diary )
+		to_target(src, run(diary))
+	else
+		to_chat(src, FONT_COLORED("red","Error: view_txt_log(): diary global is null."))
+		return
 	return
 
 //Shows today's attack log
@@ -104,8 +108,7 @@
 	if( fexists(path) )
 		src << run(file(path))
 	else
-		to_chat(src, "<font color='red'>Error: view_atk_log(): File not found/Invalid path([path]).</font>")
+		to_chat(src, FONT_COLORED("red","Error: view_atk_log(): File not found/Invalid path([path])."))
 		return
 	usr << run(file(path))
-	feedback_add_details("admin_verb","SSAL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return

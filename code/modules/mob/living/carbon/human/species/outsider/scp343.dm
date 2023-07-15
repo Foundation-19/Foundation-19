@@ -37,7 +37,7 @@
 	hud_type = /datum/hud_data/scp343
 
 // #define 049AI
-/datum/species/scp343/handle_npc(var/mob/living/carbon/human/scp343/H)
+/datum/species/scp343/handle_npc(mob/living/carbon/human/scp343/H)
 	// sanity check, apparently its needed
 	if (!H || H.client)
 		return

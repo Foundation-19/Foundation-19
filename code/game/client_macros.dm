@@ -19,7 +19,7 @@ GLOBAL_LIST_EMPTY(registered_macros_by_ckey)
 	if (is_macro_use_registered(ckey, macro))
 		return
 	register_macro_use(ckey, macro)
-	log_and_message_admins("attempted to use the disabled [macro] macro.")
+	log_and_message_staff("attempted to use the disabled [macro] macro.")
 
 /proc/is_macro_use_registered(ckey, macro)
 	return macro in GLOB.registered_macros_by_ckey[ckey]

@@ -17,7 +17,7 @@
 
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
 
-/mob/proc/check_delete(var/atom/movable/overlay/animation)
+/mob/proc/check_delete(atom/movable/overlay/animation)
 	if(animation)	qdel(animation)
 	if(src)			qdel(src)
 
@@ -84,12 +84,19 @@
 
 	timeofdeath = world.time
 	if(mind)
-		mind.StoreMemory("Time of death: [stationtime2text()]", /decl/memory_options/system)
+		mind.StoreMemory("Time of death: [station_time_timestamp("hh:mm")]", /decl/memory_options/system)
 	switch_from_living_to_dead_mob_list()
 
 	update_icon()
 
-	if(SSticker.mode)
-		SSticker.mode.check_win()
-	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
-	return 1
+	SSticker.mode?.check_win()
+
+	to_chat(src, SPAN_DEADSAY("[show_dead_message]"))
+
+	// Very nice notification for our dead guy about his respawn options
+	var/respawn_enabled = (config.abandon_allowed && !SSticker.mode?.deny_respawn)
+	if (respawn_enabled)
+		var/respawn_text = "[config.respawn_delay <= 0 ? "<b>right now</b>" : "in [config.respawn_delay] minute\s"]"
+		to_chat(src, SPAN_DEADSAY("You may respawn [respawn_text] or try becoming an SCP."))
+
+	return TRUE

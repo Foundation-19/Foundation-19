@@ -15,8 +15,7 @@ Small, little HP, poisonous.
 	destroy_surroundings = 0
 	health = 15
 	maxHealth = 15
-	speed = 0
-	move_to_delay = 0
+	movement_cooldown = 1
 	density = TRUE
 	min_gas = null
 	mob_size = MOB_MINISCULE
@@ -52,13 +51,13 @@ Small, little HP, poisonous.
 		if(prob(H.getBruteLoss()/2))
 			V.attach(H)
 
-/mob/living/simple_animal/hostile/voxslug/get_scooped(var/mob/living/carbon/grabber)
+/mob/living/simple_animal/hostile/voxslug/get_scooped(mob/living/carbon/grabber)
 	if(grabber.species.get_bodytype() != SPECIES_VOX)
-		to_chat(grabber, "<span class='warning'>\The [src] wriggles out of your hands before you can pick it up!</span>")
+		to_chat(grabber, SPAN_WARNING("\The [src] wriggles out of your hands before you can pick it up!"))
 		return
 	else return ..()
 
-/mob/living/simple_animal/hostile/voxslug/proc/attach(var/mob/living/carbon/human/H)
+/mob/living/simple_animal/hostile/voxslug/proc/attach(mob/living/carbon/human/H)
 	var/obj/item/clothing/suit/space/S = H.get_covering_equipped_item_by_zone(BP_CHEST)
 	if(istype(S) && !length(S.breaches))
 		S.create_breaches(BRUTE, 20)
@@ -76,11 +75,11 @@ Small, little HP, poisonous.
 		var/mob/living/L = src.loc.loc
 		if(src.loc in L.get_visible_implants(0))
 			if(prob(1))
-				to_chat(L, "<span class='warning'>You feel strange as \the [src] pulses...</span>")
+				to_chat(L, SPAN_WARNING("You feel strange as \the [src] pulses..."))
 			var/datum/reagents/R = L.reagents
 			R.add_reagent(/datum/reagent/cryptobiolin, 0.5)
 
-/obj/item/holder/voxslug/attack(var/mob/target, var/mob/user)
+/obj/item/holder/voxslug/attack(mob/target, mob/user)
 	var/mob/living/simple_animal/hostile/voxslug/V = contents[1]
 	if(!V.stat && istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = target

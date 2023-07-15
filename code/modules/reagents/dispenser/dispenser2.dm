@@ -3,7 +3,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dispenser"
 	layer = BELOW_OBJ_LAYER
-	clicksound = "button"
+	clicksound = SFX_MACHINE_BUTTON
 	clickvol = 20
 
 	var/list/disp_reagents = null
@@ -28,23 +28,23 @@
 /obj/machinery/chemical_dispenser/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/reagent_containers/glass) || istype(W, /obj/item/reagent_containers/food))
 		if(container)
-			to_chat(user, "<span class='warning'>There is already \a [container] on \the [src]!</span>")
+			to_chat(user, SPAN_WARNING("There is already \a [container] on \the [src]!"))
 			return
 
 		var/obj/item/reagent_containers/RC = W
 
 		if(!accept_drinking && istype(RC,/obj/item/reagent_containers/food))
-			to_chat(user, "<span class='warning'>This machine only accepts beakers!</span>")
+			to_chat(user, SPAN_WARNING("This machine only accepts beakers!"))
 			return
 
 		if(!RC.is_open_container())
-			to_chat(user, "<span class='warning'>You don't see how \the [src] could dispense reagents into \the [RC].</span>")
+			to_chat(user, SPAN_WARNING("You don't see how \the [src] could dispense reagents into \the [RC]."))
 			return
 		if(!user.unEquip(RC, src))
 			return
 		container =  RC
 		update_icon()
-		to_chat(user, "<span class='notice'>You set \the [RC] on \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You set \the [RC] on \the [src]."))
 		SSnano.update_uis(src) // update all UIs attached to src
 
 	else
@@ -59,7 +59,7 @@
 	container = null
 	update_icon()
 
-/obj/machinery/chemical_dispenser/ui_interact(mob/user, ui_key = "main",var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/chemical_dispenser/ui_interact(mob/user, ui_key = "main",datum/nanoui/ui = null, force_open = 1)
 	// this is the data which will be sent to the ui
 	var/data[0]
 	data["amount"] = amount
@@ -99,6 +99,8 @@
 
 	if(href_list["dispense"])
 		var/label = href_list["dispense"]
+		if(!user.skill_check(core_skill, SKILL_BASIC) && prob(25))
+			label = pick(disp_reagents)
 		if(disp_reagents[label] && container && container.is_open_container())
 			var/datum/reagent/R = disp_reagents[label]
 			var/mult = 1 + (-0.5 + round(rand(), 0.1))*(user.skill_fail_chance(core_skill, 0.3, SKILL_TRAINED))

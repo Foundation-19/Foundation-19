@@ -13,12 +13,12 @@ GLOBAL_DATUM_INIT(global_hud, /datum/global_hud, new())
 	var/obj/screen/science
 	var/obj/screen/holomap
 
-/datum/global_hud/proc/setup_overlay(var/icon_state)
+/datum/global_hud/proc/setup_overlay(icon_state)
 	var/obj/screen/screen = new /obj/screen()
 	screen.screen_loc = "1,1"
 	screen.icon = 'icons/obj/hud_full.dmi'
 	screen.icon_state = icon_state
-	screen.mouse_opacity = 0
+	screen.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 	return screen
 
@@ -37,4 +37,4 @@ GLOBAL_DATUM_INIT(global_hud, /datum/global_hud, new())
 	holomap.icon = null
 	holomap.layer = HUD_BASE_LAYER
 	holomap.screen_loc = UI_HOLOMAP
-	holomap.mouse_opacity = 0
+	holomap.mouse_opacity = MOUSE_OPACITY_TRANSPARENT

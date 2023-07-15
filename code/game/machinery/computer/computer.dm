@@ -21,7 +21,7 @@
 	var/light_outer_range_on = 2
 	var/overlay_layer
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
-	clicksound = "keyboard"
+	clicksound = SFX_KEYBOARD
 
 /obj/machinery/computer/New()
 	overlay_layer = layer
@@ -56,7 +56,7 @@
 					verbs -= x
 				take_damage(max_health)
 
-/obj/machinery/computer/bullet_act(var/obj/item/projectile/Proj)
+/obj/machinery/computer/bullet_act(obj/item/projectile/Proj)
 	take_damage(Proj.get_structure_damage())
 	return ..()
 
@@ -69,11 +69,12 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
 	playsound(src, 'sound/weapons/smash.ogg', 25, 1)
+	show_sound_effect(src.loc, user)
 	if(I.force)
 		take_damage(I.force)
 	return ..()
 
-/obj/machinery/computer/proc/take_damage(var/damage)
+/obj/machinery/computer/proc/take_damage(damage)
 	if (health <= 0)
 		return
 
@@ -128,10 +129,10 @@
 
 /obj/machinery/computer/dismantle(mob/user)
 	if(stat & BROKEN)
-		to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
+		to_chat(user, SPAN_NOTICE("The broken glass falls out."))
 		for(var/obj/item/stock_parts/console_screen/screen in component_parts)
 			qdel(screen)
 			new /obj/item/material/shard(loc)
 	else
-		to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
+		to_chat(user, SPAN_NOTICE("You disconnect the monitor."))
 	return ..()

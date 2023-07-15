@@ -69,7 +69,7 @@
 
 	taste_description = "beer"
 
-/datum/reagent/ethanol/beer/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/beer/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	if(alien == IS_DIONA)
 		return
@@ -157,7 +157,7 @@
 	glass_name = "rum"
 	glass_desc = "Now you want to Pray for a pirate suit, don't you?"
 
-/datum/reagent/ethanol/deadrum/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/deadrum/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	if(alien == IS_DIONA)
 		return
@@ -188,7 +188,7 @@
 /datum/reagent/ethanol/coffee
 	overdose = 45
 
-/datum/reagent/ethanol/coffee/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/coffee/affect_ingest(mob/living/carbon/M, alien, removed)
 	if(alien == IS_DIONA)
 		return
 	..()
@@ -198,7 +198,7 @@
 	if(M.bodytemperature > 310)
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
 
-/datum/reagent/ethanol/coffee/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/ethanol/coffee/overdose(mob/living/carbon/M, alien)
 	if(alien == IS_DIONA)
 		return
 	M.make_jittery(5)
@@ -307,7 +307,7 @@
 	glass_name = "Thirteen Loko"
 	glass_desc = "This is a glass of Thirteen Loko, it appears to be of the highest quality. The drink, not the glass."
 
-/datum/reagent/ethanol/thirteenloko/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/thirteenloko/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	if(alien == IS_DIONA)
 		return
@@ -555,7 +555,7 @@
 	glass_name = "Beepsky Smash"
 	glass_desc = "Heavy, hot and strong. Just like the Iron fist of the LAW."
 
-/datum/reagent/ethanol/beepsky_smash/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/beepsky_smash/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	M.Stun(2)
 
@@ -1113,7 +1113,7 @@
 	glass_icon = DRINK_ICON_NOISY
 	glass_special = list("neuroright")
 
-/datum/reagent/ethanol/neurotoxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/neurotoxin/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	M.Weaken(3)
 	M.add_chemical_effect(CE_PULSE, -1)
@@ -1160,7 +1160,7 @@
 	glass_name = "???"
 	glass_desc = "A black ichor with an oily purple sheer on top. Are you sure you should drink this?"
 
-/datum/reagent/ethanol/pwine/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/pwine/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	if(M.chem_doses[type] > 30)
 		M.adjustToxLoss(2 * removed)
@@ -1193,6 +1193,37 @@
 
 	glass_name = "red mead"
 	glass_desc = "A true Viking's beverage, though its color is strange."
+
+/datum/reagent/ethanol/regrettiforgetti
+	name = "Regretti Forgetti"
+	description = "Amnestics, Vodka, And powerful hallucinogenics. For when you literally want to drink your worries away."
+	taste_description = "something you cant quite remember"
+	strength = 15
+	color = "#d81d6b"
+	overdose = 30
+	value = 10
+	glass_name = "Regretti Forgetti"
+	glass_desc = "A popular foundation home-remedy for PTSD. For when you literally want to drink your worries away. Made with genuine amnestics!"
+	var/list/dose_messages = list(
+		"What were you doing again?",
+		"Whats your name again? Oh rights, Thats it...",
+		"Its right on the tip of your tongue, You just cant quite remember...",
+		"What did they say to you again?",
+		"What were you sitting on again?",
+		"Huh... Where are you?",
+		"Black, White, Black, White, Black, White, Black, White, Black, White, Grey... Grey?",
+		"Oh right... Thats what it was called.",
+		"What do these numbers mean... Are they my name?",
+		"Why does my brain taste like purple and... Forgotten yellow?",
+		"Why does everything feel so... familiar?",
+		"Who are these people, and how do they know your name?"
+	)
+
+/datum/reagent/ethanol/regrettiforgetti/affect_ingest(mob/living/carbon/M, removed)
+	M.make_dizzy(5)
+	M.confused += 5
+	if (prob(10))
+		to_chat(M, SPAN_WARNING("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
 
 /datum/reagent/ethanol/red_whiskey
 	name = "Red Whiskey"
@@ -1523,7 +1554,7 @@
 	glass_name = "qokk'loa"
 	glass_desc = "An unrefined hallucigenic substance, potent to humans and harmless to Skrell."
 
-/datum/reagent/ethanol/alien/qokkloa/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/ethanol/alien/qokkloa/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	if(alien == IS_SKRELL)
 		return

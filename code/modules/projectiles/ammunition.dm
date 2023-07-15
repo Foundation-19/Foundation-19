@@ -12,13 +12,15 @@
 	var/leaves_residue = TRUE
 	var/caliber = ""					//Which kind of guns it can be loaded into
 	var/projectile_type					//The bullet type to create when New() is called
-	var/obj/item/projectile/BB = null	//The loaded bullet - make it so that the projectiles are created only when needed?
+	var/is_spent = FALSE
 	var/spent_icon = "pistolcasing-spent"
 	var/fall_sounds = list('sound/weapons/guns/casingfall1.ogg','sound/weapons/guns/casingfall2.ogg','sound/weapons/guns/casingfall3.ogg')
+	var/projectile_label
 
 /obj/item/ammo_casing/Initialize()
-	if(ispath(projectile_type))
-		BB = new projectile_type(src)
+	if(!ispath(projectile_type))
+		is_spent = TRUE
+
 	if(randpixel)
 		pixel_x = rand(-randpixel, randpixel)
 		pixel_y = rand(-randpixel, randpixel)
@@ -26,8 +28,15 @@
 
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()
-	. = BB
-	BB = null
+	if(!ispath(projectile_type))
+		return
+	if(is_spent)
+		return
+
+	var/obj/item/projectile/proj = new projectile_type(src)
+	is_spent = TRUE
+	if(projectile_label)
+		proj.SetName("[initial(proj.name)] (\"[projectile_label]\")")
 	set_dir(pick(GLOB.alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.
@@ -35,6 +44,8 @@
 		leave_residue()
 
 	update_icon()
+
+	return proj
 
 /obj/item/ammo_casing/proc/leave_residue()
 	var/mob/living/carbon/human/H = get_holder_of_type(src, /mob/living/carbon/human)
@@ -59,32 +70,33 @@
 		LAZYDISTINCTADD(A.gunshot_residue, caliber)
 
 /obj/item/ammo_casing/attackby(obj/item/W as obj, mob/user as mob)
-	if(isScrewdriver(W))
-		if(!BB)
-			to_chat(user, "<span class='notice'>There is no bullet in the casing to inscribe anything into.</span>")
-			return
+	if(!isScrewdriver(W))
+		return ..()
 
-		var/tmp_label = ""
-		var/label_text = sanitizeSafe(input(user, "Inscribe some text into \the [initial(BB.name)]","Inscription",tmp_label), MAX_NAME_LEN)
-		if(length(label_text) > 20)
-			to_chat(user, "<span class='warning'>The inscription can be at most 20 characters long.</span>")
-		else if(!label_text)
-			to_chat(user, "<span class='notice'>You scratch the inscription off of [initial(BB)].</span>")
-			BB.SetName(initial(BB.name))
-		else
-			to_chat(user, "<span class='notice'>You inscribe \"[label_text]\" into \the [initial(BB.name)].</span>")
-			BB.SetName("[initial(BB.name)] (\"[label_text]\")")
-	else ..()
+	if(is_spent)
+		to_chat(user, SPAN_NOTICE("There is no bullet in the casing to inscribe anything into."))
+		return
+
+	var/tmp_label = ""
+	var/label_text = sanitizeSafe(input(user, "Inscribe some text into \the [initial(projectile_type["name"])]","Inscription",tmp_label), MAX_NAME_LEN)
+	if(length(label_text) > 20)
+		to_chat(user, SPAN_WARNING("The inscription can be at most 20 characters long."))
+	else if(!label_text)
+		to_chat(user, SPAN_NOTICE("You scratch the inscription off of [initial(projectile_type["name"])]."))
+		projectile_label = null
+	else
+		to_chat(user, SPAN_NOTICE("You inscribe \"[label_text]\" into \the [initial(projectile_type["name"])]."))
+		projectile_label = label_text
 
 /obj/item/ammo_casing/on_update_icon()
-	if(spent_icon && !BB)
+	if(spent_icon && is_spent)
 		icon_state = spent_icon
 
 /obj/item/ammo_casing/examine(mob/user)
 	. = ..()
 	if(caliber)
 		to_chat(user, "Its caliber is [caliber].")
-	if (!BB)
+	if(is_spent)
 		to_chat(user, "This one is spent.")
 
 //An item that holds casings and can be used to put them inside guns
@@ -104,7 +116,7 @@
 
 	var/list/stored_ammo = list()
 	var/mag_type = SPEEDLOADER //ammo_magazines can only be used with compatible guns. This is not a bitflag, the load_method var on guns is.
-	var/caliber = "357"
+	var/caliber = ".357"
 	var/max_ammo = 7
 
 	var/ammo_type = /obj/item/ammo_casing //ammo type that is initially loaded
@@ -132,14 +144,22 @@
 			stored_ammo += new ammo_type(src)
 	update_icon()
 
+/obj/item/ammo_magazine/Destroy()
+	QDEL_NULL_LIST(stored_ammo)
+	return ..()
+
+/obj/item/ammo_magazine/handle_atom_del(atom/A)
+	stored_ammo -= A
+	update_icon()
+
 /obj/item/ammo_magazine/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = W
 		if(C.caliber != caliber)
-			to_chat(user, "<span class='warning'>[C] does not fit into [src].</span>")
+			to_chat(user, SPAN_WARNING("[C] does not fit into [src]."))
 			return
 		if(stored_ammo.len >= max_ammo)
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, SPAN_WARNING("[src] is full!"))
 			return
 		if(!user.unEquip(C, src))
 			return
@@ -150,13 +170,13 @@
 	if(istype(W, /obj/item/ammo_magazine/box))
 		var/obj/item/ammo_magazine/box/L = W
 		if(L.caliber != caliber)
-			user << "<span class='warning'>The ammo in [L] does not fit into [src].</span>"
+			user << SPAN_WARNING("The ammo in [L] does not fit into [src].")
 			return
 		if(!L.stored_ammo.len)
-			user << "<span class='warning'>There's no more ammo [L]!</span>"
+			user << SPAN_WARNING("There's no more ammo [L]!")
 			return
 		if(stored_ammo.len >= max_ammo)
-			user << "<span class='warning'>[src] is full!</span>"
+			user << SPAN_WARNING("[src] is full!")
 			return
 		var/obj/item/ammo_casing/AC = L.stored_ammo[1] //select the next casing.
 		L.stored_ammo -= AC //Remove this casing from loaded list of the clip.
@@ -169,9 +189,9 @@
 
 /obj/item/ammo_magazine/attack_self(mob/user)
 	if(!stored_ammo.len)
-		to_chat(user, "<span class='notice'>[src] is already empty!</span>")
+		to_chat(user, SPAN_NOTICE("[src] is already empty!"))
 		return
-	to_chat(user, "<span class='notice'>You empty [src].</span>")
+	to_chat(user, SPAN_NOTICE("You empty [src]."))
 	for(var/obj/item/ammo_casing/C in stored_ammo)
 		C.forceMove(user.loc)
 		C.set_dir(pick(GLOB.alldirs))
@@ -182,12 +202,12 @@
 /obj/item/ammo_magazine/attack_hand(mob/user)
 	if(user.get_inactive_hand() == src)
 		if(!stored_ammo.len)
-			to_chat(user, "<span class='notice'>[src] is already empty!</span>")
+			to_chat(user, SPAN_NOTICE("[src] is already empty!"))
 		else
 			var/obj/item/ammo_casing/C = stored_ammo[stored_ammo.len]
 			stored_ammo-=C
 			user.put_in_hands(C)
-			user.visible_message("\The [user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+			user.visible_message("\The [user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from [src]."))
 			update_icon()
 	else
 		..()
@@ -212,7 +232,7 @@
 /var/global/list/magazine_icondata_keys = list()
 /var/global/list/magazine_icondata_states = list()
 
-/proc/initialize_magazine_icondata(var/obj/item/ammo_magazine/M)
+/proc/initialize_magazine_icondata(obj/item/ammo_magazine/M)
 	var/typestr = "[M.type]"
 	if(!(typestr in magazine_icondata_keys) || !(typestr in magazine_icondata_states))
 		magazine_icondata_cache_add(M)
@@ -220,7 +240,7 @@
 	M.icon_keys = magazine_icondata_keys[typestr]
 	M.ammo_states = magazine_icondata_states[typestr]
 
-/proc/magazine_icondata_cache_add(var/obj/item/ammo_magazine/M)
+/proc/magazine_icondata_cache_add(obj/item/ammo_magazine/M)
 	var/list/icon_keys = list()
 	var/list/ammo_states = list()
 	var/list/states = icon_states(M.icon)

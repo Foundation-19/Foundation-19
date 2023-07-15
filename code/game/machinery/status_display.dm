@@ -138,7 +138,7 @@
 			return 1
 		if(STATUS_DISPLAY_TIME)
 			message1 = "TIME"
-			message2 = stationtime2text()
+			message2 = station_time_timestamp("hh:mm")
 			update_display(message1, message2)
 			if(status_display_show_alert_border)
 				add_alert_border_to_display()
@@ -191,9 +191,11 @@
 	var/decl/security_level/sl = security_state.current_security_level
 
 	var/image/alert = image(sl.icon, sl.overlay_status_display)
+	var/image/border = image(sl.icon, sl.alert_border)
 
 	set_light(sl.light_max_bright, sl.light_inner_range, sl.light_outer_range, 2, sl.light_color_alarm)
 	add_overlay(alert)
+	add_overlay(border)
 
 /obj/machinery/status_display/proc/set_picture(state)
 	remove_display()

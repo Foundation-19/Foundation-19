@@ -38,9 +38,9 @@ GLOBAL_LIST_INIT(secure_weapons, list())
 	else
 		..()
 
-/obj/item/gun/emag_act(var/charges, var/mob/user)
+/obj/item/gun/emag_act(charges, mob/user)
 	if(!charges)
-		return NO_EMAG_ACT
+		return EMAG_NO_ACT
 
 	if(is_secure_gun())
 		registered_owner = null
@@ -98,6 +98,7 @@ GLOBAL_LIST_INIT(secure_weapons, list())
 	if(is_secure_gun() && !free_fire() && (!authorized_modes[sel_mode] || !registered_owner))
 		audible_message(SPAN_WARNING("\The [src] buzzes, refusing to fire."), hearing_distance = 3)
 		playsound(loc, 'sound/machines/buzz-sigh.ogg', 10, 0)
+		show_sound_effect(loc, SFX_ICON_SMALL)
 		return 0
 
 	. = ..()

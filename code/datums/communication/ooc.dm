@@ -7,17 +7,17 @@
 	mute_setting = MUTE_OOC
 	show_preference_setting = /datum/client_preference/show_ooc
 
-/decl/communication_channel/ooc/can_communicate(var/client/C, var/message)
+/decl/communication_channel/ooc/can_communicate(client/C, message)
 	. = ..()
 	if(!.)
 		return
 
 	if(!C.holder)
 		if(!config.dooc_allowed && (C.mob.stat == DEAD))
-			to_chat(C, "<span class='danger'>[name] for dead mobs has been turned off.</span>")
+			to_chat(C, SPAN_DANGER("[name] for dead mobs has been turned off."))
 			return FALSE
 
-/decl/communication_channel/ooc/do_communicate(var/client/C, var/message)
+/decl/communication_channel/ooc/do_communicate(client/C, message)
 	var/datum/admins/holder = C.holder
 	var/is_stealthed = C.is_stealthed()
 
@@ -41,6 +41,6 @@
 			continue
 		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] [text_badge(C)] <EM>[C.key]:</EM> <span class='message linkify'>[message]</span>"
 		if(can_badmin)
-			receive_communication(C, target, "<font color='[ooc_color]'><span class='ooc'>[sent_message]</font></span>")
+			receive_communication(C, target, SPAN_CLASS("ooc",FONT_COLORED("[ooc_color]","[sent_message]")))
 		else
-			receive_communication(C, target, "<span class='ooc'><span class='[ooc_style]'>[sent_message]</span></span>")
+			receive_communication(C, target, SPAN_CLASS("ooc","<span class='[ooc_style]'>[sent_message]</span>"))

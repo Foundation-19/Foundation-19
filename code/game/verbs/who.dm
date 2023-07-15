@@ -7,7 +7,7 @@
 
 	var/list/Lines = list()
 
-	if(check_rights(R_INVESTIGATE, 0))
+	if(check_rights(R_ADMIN|R_MOD, 0))
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
@@ -15,19 +15,22 @@
 				Lines += entry
 				continue
 
-			entry += " - Playing as [C.mob.real_name]"
-			switch(C.mob.stat)
-				if(UNCONSCIOUS)
-					entry += " - <font color='darkgray'><b>Unconscious</b></font>"
-				if(DEAD)
-					if(isghost(C.mob))
-						var/mob/observer/ghost/O = C.mob
-						if(O.started_as_observer)
-							entry += " - <font color='gray'>Observing</font>"
+			if(isnewplayer(C.mob))
+				entry += " - <b>IN LOBBY</b>"
+			else
+				entry += " - Playing as [C.mob.real_name ? C.mob.real_name : C.mob.name]"
+				switch(C.mob.stat)
+					if(UNCONSCIOUS)
+						entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+					if(DEAD)
+						if(isghost(C.mob))
+							var/mob/observer/ghost/O = C.mob
+							if(O.started_as_observer)
+								entry += " - <font color='gray'>Observing</font>"
+							else
+								entry += " - <font color='black'><b>DEAD</b></font>"
 						else
 							entry += " - <font color='black'><b>DEAD</b></font>"
-					else
-						entry += " - <font color='black'><b>DEAD</b></font>"
 
 			var/age
 			if(isnum(C.player_age))
@@ -36,9 +39,9 @@
 				age = 0
 
 			if(age <= 1)
-				age = "<font color='#ff0000'><b>[age]</b></font>"
+				age = FONT_COLORED("#ff0000","<b>[age]</b>")
 			else if(age < 10)
-				age = "<font color='#ff8c00'><b>[age]</b></font>"
+				age = FONT_COLORED("#ff8c00","<b>[age]</b>")
 
 			entry += " - [age]"
 
@@ -60,13 +63,13 @@
 	to_chat(src, msg)
 
 /client/verb/staffwho()
-	set category = "Staffhelp"
 	set name = "Staffwho"
+	set category = "Staff Help"
 
 	var/list/msg = list()
 	var/active_staff = 0
 	var/total_staff = 0
-	var/can_investigate = check_rights(R_INVESTIGATE, 0)
+	var/can_investigate = check_rights(R_ADMIN|R_MOD, 0)
 
 	for(var/client/C in GLOB.admins)
 		var/line = list()
@@ -105,6 +108,6 @@
 			msg += line
 
 	if(config.admin_irc)
-		to_chat(src, "<span class='info'>Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond.</span>")
+		to_chat(src, SPAN_INFO("Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond."))
 	to_chat(src, "<b>Current Staff ([active_staff]/[total_staff]):</b>")
 	to_chat(src, jointext(msg,"\n"))

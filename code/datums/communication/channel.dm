@@ -9,7 +9,7 @@
 	var/mute_setting
 	var/show_preference_setting
 
-/decl/communication_channel/proc/can_ignore(var/client/C)
+/decl/communication_channel/proc/can_ignore(client/C)
 	if (!C)
 		return TRUE
 	// Channels that cannot be toggled can never be ignored
@@ -25,18 +25,18 @@
 	if (check_rights(R_ADMIN, 0, C) && (!check_rights(R_BAN, 0, C)))
 		return TRUE
 	// Anyone else with investigation status may not ignore communication channels
-	return !check_rights(R_INVESTIGATE, 0, C)
+	return !check_rights(R_ADMIN|R_MOD, 0, C)
 
 /*
 * Procs for handling sending communication messages
 */
-/decl/communication_channel/proc/communicate(var/datum/communicator, var/message)
+/decl/communication_channel/proc/communicate(datum/communicator, message)
 	if(can_communicate(arglist(args)))
 		call(log_proc)("[(flags&COMMUNICATION_LOG_CHANNEL_NAME) ? "([name]) " : ""][communicator.communication_identifier()] : [message]")
 		return do_communicate(arglist(args))
 	return FALSE
 
-/decl/communication_channel/proc/can_communicate(var/datum/communicator, var/message)
+/decl/communication_channel/proc/can_communicate(datum/communicator, message)
 
 	if(!message)
 		return FALSE
@@ -45,47 +45,47 @@
 		log_debug("[log_info_line(communicator)] attempted to communicate over the channel [src] but was of an unexpected type.")
 		return FALSE
 
-	if(config_setting && !config.vars[config_setting] && !check_rights(R_INVESTIGATE,0,communicator))
-		to_chat(communicator, "<span class='danger'>[name] is globally muted.</span>")
+	if(config_setting && !config.vars[config_setting] && !check_rights(R_ADMIN|R_MOD,0,communicator))
+		to_chat(communicator, SPAN_DANGER("[name] is globally muted."))
 		return FALSE
 
 	var/client/C = communicator.get_client()
 
 	if(jobban_isbanned(C.mob, name))
-		to_chat(communicator, "<span class='danger'>You cannot use [name] (banned).</span>")
+		to_chat(communicator, SPAN_DANGER("You cannot use [name] (banned)."))
 		return FALSE
 
 	if(can_ignore(C))
-		to_chat(communicator, "<span class='warning'>Couldn't send message - you have [name] muted.</span>")
+		to_chat(communicator, SPAN_WARNING("Couldn't send message - you have [name] muted."))
 		return FALSE
 
 	if(C && mute_setting && (C.prefs.muted & mute_setting))
-		to_chat(communicator, "<span class='danger'>You cannot use [name] (muted).</span>")
+		to_chat(communicator, SPAN_DANGER("You cannot use [name] (muted)."))
 		return FALSE
 
 	if(C && (flags & COMMUNICATION_NO_GUESTS) && IsGuestKey(C.key))
-		to_chat(communicator, "<span class='danger'>Guests may not use the [name] channel.</span>")
+		to_chat(communicator, SPAN_DANGER("Guests may not use the [name] channel."))
 		return FALSE
 
-	if (config.forbidden_message_regex && !check_rights(R_INVESTIGATE, 0, communicator) && findtext(message, config.forbidden_message_regex))
+	if (config.forbidden_message_regex && !check_rights(R_ADMIN|R_MOD, 0, communicator) && findtext(message, config.forbidden_message_regex))
 		if (!config.forbidden_message_no_notifications)
 			if (!config.forbidden_message_hide_details)
-				log_and_message_admins("attempted to send a forbidden message in [name]: [message]", user = C)
+				log_and_message_staff("attempted to send a forbidden message in [name]: [message]", user = C)
 			else
-				log_and_message_admins("attempted to send a forbidden message in [name]", user = C)
+				log_and_message_staff("attempted to send a forbidden message in [name]", user = C)
 		if (C && config.forbidden_message_warning)
 			to_chat(C, config.forbidden_message_warning)
 		return FALSE
 
 	return TRUE
 
-/decl/communication_channel/proc/do_communicate(var/communicator, var/message)
+/decl/communication_channel/proc/do_communicate(communicator, message)
 	return
 
 /*
 * Procs for handling the reception of communication messages
 */
-/decl/communication_channel/proc/receive_communication(var/datum/communicator, var/datum/receiver, var/message)
+/decl/communication_channel/proc/receive_communication(datum/communicator, datum/receiver, message)
 	if(can_receive_communication(receiver))
 		var/has_follow_links = FALSE
 		if((flags & COMMUNICATION_ADMIN_FOLLOW))
@@ -99,14 +99,14 @@
 				message = "[extra_links] [message]"
 		do_receive_communication(arglist(args))
 
-/decl/communication_channel/proc/can_receive_communication(var/datum/receiver)
+/decl/communication_channel/proc/can_receive_communication(datum/receiver)
 	if(show_preference_setting)
 		var/client/C = receiver.get_client()
 		if(can_ignore(C))
 			return FALSE
 	return TRUE
 
-/decl/communication_channel/proc/do_receive_communication(var/datum/communicator, var/datum/receiver, var/message)
+/decl/communication_channel/proc/do_receive_communication(datum/communicator, datum/receiver, message)
 	to_chat(receiver, message)
 
 
@@ -156,7 +156,7 @@
 	message = sanitize(message)
 	return communicate(arglist(args))
 
-/proc/communicate(var/channel_type, var/communicator, var/message)
+/proc/communicate(channel_type, communicator, message)
 	var/list/channels = decls_repository.get_decls_of_subtype(/decl/communication_channel)
 	var/decl/communication_channel/channel = channels[channel_type]
 

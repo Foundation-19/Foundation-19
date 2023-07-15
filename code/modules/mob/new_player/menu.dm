@@ -11,23 +11,23 @@
 	var/obj/screen/using
 
 	using = new /obj/screen/new_player/title(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/join_game(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/settings(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/manifest(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/observe(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	mymob.client.screen = list()
@@ -42,7 +42,7 @@
 /obj/screen/new_player/title
 	name = "Lobby art"
 	icon = 'maps/site53/icons/lobby.dmi'
-	icon_state = "title_old"
+	icon_state = "title_new"
 	screen_loc = "WEST,SOUTH"
 	var/lobby_index = 1
 	var/lobby_transition_delay = 100
@@ -51,15 +51,13 @@
 	var/list/lobby_screens = icon_states(icon)
 
 	icon_state = lobby_screens[lobby_index]
-	if(Master.initializing)
-		spawn(lobby_transition_delay)
-			cycle_lobby_screen(lobby_screens)
-	else
-		addtimer(CALLBACK(src, .proc/cycle_lobby_screen, lobby_screens), lobby_transition_delay, TIMER_UNIQUE | TIMER_CLIENT_TIME | TIMER_OVERRIDE)
+
+	addtimer(CALLBACK(src, .proc/cycle_lobby_screen, lobby_screens), lobby_transition_delay, TIMER_UNIQUE | TIMER_CLIENT_TIME | TIMER_OVERRIDE)
 
 	return ..()
 
 /obj/screen/new_player/title/proc/cycle_lobby_screen(list/lobby_screens)
+	var/datum/hud/hud = hud_ref.resolve()
 	if(!istype(hud) || !isnewplayer(hud.mymob))
 		return
 	lobby_index += 1
@@ -75,45 +73,74 @@
 
 /obj/screen/new_player/selection/New(datum/hud/H)
 	color = null
-	hud = H
+	hud_ref = weakref(H)
 	return ..()
 
 /obj/screen/new_player/selection/MouseEntered(location, control, params)
-	var/matrix/M = matrix()
-	M.Scale(1.1, 1)
-	animate(src, color = color_rotation(30), transform = M, time = 3, easing = CUBIC_EASING)
+	animate(src, color = color_rotation(30), time = 3)
 	return ..()
 
 /obj/screen/new_player/selection/MouseExited(location, control, params)
-	animate(src, color = null, transform = null, time = 3, easing = CUBIC_EASING)
+	animate(src, color = null, time = 3)
 	return ..()
 
 /obj/screen/new_player/selection/join_game
 	name = "Join Game"
-	icon_state = "joingame"
-	screen_loc = "RIGHT+2,CENTER-4"
+	icon_state = "unready"
+	screen_loc = "NORTH, CENTER-7"
 
-/obj/screen/new_player/selection/join_game/Click()//no ready system
+/obj/screen/new_player/selection/join_game/Initialize()
+	. = ..()
+	RegisterSignal(SSticker, COMSIG_TICKER_STARTED, .proc/update_lobby_icon)
+	update_lobby_icon()
+
+/obj/screen/new_player/selection/join_game/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 
-	if(GAME_STATE != RUNLEVEL_GAME)
-		to_chat(player, SPAN_WARNING("The round has either not started yet or already ended."))
-		return
-
-	if(!player.client.holder)
+	if(!check_rights(R_ADMIN|R_MOD, FALSE, player) && GAME_STATE > RUNLEVEL_LOBBY)
 		var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - player.respawned_time)
 		if(dsdiff > 0)
 			to_chat(player, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
 			return
-	player.LateChoices() //show the latejoin job selection menu
+
+	if(GAME_STATE <= RUNLEVEL_LOBBY)
+		player.ready = !player.ready
+		to_chat(player, SPAN_NOTICE("You are now [player.ready ? "ready" : "not ready"]."))
+
+	else
+		player.LateChoices() //show the latejoin job selection menu
+
+	update_lobby_icon()
+
+/obj/screen/new_player/selection/join_game/proc/update_lobby_icon()
+	SIGNAL_HANDLER
+
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
+	var/mob/new_player/player = hud.mymob
+
+	if(GAME_STATE <= RUNLEVEL_LOBBY)
+		if(player.ready)
+			icon_state = "ready"
+		else
+			icon_state = "unready"
+	else
+		icon_state = "joingame"
 
 /obj/screen/new_player/selection/settings
 	name = "Setup"
 	icon_state = "setup"
-	screen_loc = "RIGHT+2,CENTER-5"
+	screen_loc = "NORTH-1,CENTER-7"
 
 /obj/screen/new_player/selection/settings/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	player.setupcharacter()
@@ -125,9 +152,12 @@
 /obj/screen/new_player/selection/manifest
 	name = "Crew Manifest"
 	icon_state = "manifest"
-	screen_loc = "RIGHT+2,CENTER-6"
+	screen_loc = "NORTH-2,CENTER-7"
 
 /obj/screen/new_player/selection/manifest/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	if(GAME_STATE != (RUNLEVEL_GAME || RUNLEVEL_POSTGAME))
@@ -138,19 +168,25 @@
 /obj/screen/new_player/selection/observe
 	name = "Observe"
 	icon_state = "observe"
-	screen_loc = "RIGHT+2,CENTER-7"
+	screen_loc = "NORTH-3,CENTER-7"
 
 /obj/screen/new_player/selection/observe/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	player.new_player_observe()
 
 /mob/new_player/proc/new_player_observe()
 	if(GAME_STATE < RUNLEVEL_LOBBY)
-		to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
+		to_chat(src, SPAN_WARNING("Please wait for server initialization to complete..."))
 		return
 
-	if(!config.respawn_delay || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
+	if(!config.respawn_delay || tgui_alert(client,
+		"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!",
+		"Player Setup", list("Yes", "No")) == "Yes")
+
 		if(!client)
 			return TRUE
 		var/mob/observer/ghost/observer = new()
@@ -158,13 +194,20 @@
 		spawning = TRUE
 		sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
 
+		if(mind)
+			mind.active = FALSE //we wish to transfer the key manually
+			mind.original = observer
+			if(client.prefs.memory)
+				mind.StoreMemory(client.prefs.memory)
+			mind.transfer_to(observer)					//won't transfer key since the mind is not active
+
 		observer.started_as_observer = TRUE
 		var/obj/O = locate("landmark*Observer-Start")
 		if(istype(O))
-			to_chat(src, "<span class='notice'>Now teleporting.</span>")
+			to_chat(src, SPAN_NOTICE("Now teleporting."))
 			observer.forceMove(O.loc)
 		else
-			to_chat(src, "<span class='danger'>Could not locate an observer spawn point. Use the Teleport verb to jump to the map.</span>")
+			to_chat(src, SPAN_DANGER("Could not locate an observer spawn point. Use the Teleport verb to jump to the map."))
 		observer.timeofdeath = world.time // Set the time of death so that the respawn timer works correctly.
 
 		var/should_announce = client.get_preference_value(/datum/client_preference/announce_ghost_join) == GLOB.PREF_YES
@@ -182,8 +225,9 @@
 		observer.real_name = client.prefs.real_name
 		observer.SetName(observer.real_name)
 		if(!client.holder && !config.antag_hud_allowed)           // For new ghosts we remove the verb from even showing up if it's not allowed.
-			observer.verbs -= /mob/observer/ghost/verb/toggle_antagHUD        // Poor guys, don't know what they are missing!
+			add_verb(observer, /mob/observer/ghost/verb/toggle_antagHUD) // Poor guys, don't know what they are missing!
 		observer.key = key
+		observer.client.init_verbs()
 		qdel(src)
 
 		return TRUE

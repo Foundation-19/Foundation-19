@@ -76,7 +76,7 @@
 
 	current_grab.hit_with_grab(src)
 
-/obj/item/grab/resolve_attackby(atom/A, mob/user, var/click_params)
+/obj/item/grab/resolve_attackby(atom/A, mob/user, click_params)
 	if (QDELETED(src) || !assailant)
 		return TRUE
 	assailant.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -156,27 +156,27 @@
 	if(assailant.anchored || affecting.anchored)
 		return 0
 	if(assailant.get_active_hand())
-		to_chat(assailant, "<span class='notice'>You can't grab someone if your hand is full.</span>")
+		to_chat(assailant, SPAN_NOTICE("You can't grab someone if your hand is full."))
 		return 0
 	if(assailant.grabbed_by.len)
-		to_chat(assailant, "<span class='notice'>You can't grab someone if you're being grabbed.</span>")
+		to_chat(assailant, SPAN_NOTICE("You can't grab someone if you're being grabbed."))
 		return 0
 	var/obj/item/organ/organ = get_targeted_organ()
 	if(!istype(organ))
-		to_chat(assailant, "<span class='notice'>\The [affecting] is missing that body part!</span>")
+		to_chat(assailant, SPAN_NOTICE("\The [affecting] is missing that body part!"))
 		return 0
 	if(assailant == affecting)
 		if(!current_grab.can_grab_self)	//let's not nab ourselves
-			to_chat(assailant, "<span class='notice'>You can't grab yourself!</span>")
+			to_chat(assailant, SPAN_NOTICE("You can't grab yourself!"))
 			return 0
 		var/list/bad_parts = assailant.hand ? list(BP_L_ARM, BP_L_HAND) :  list(BP_R_ARM, BP_R_HAND)
 		if(organ.organ_tag in bad_parts)
-			to_chat(assailant, "<span class='notice'>You can't grab your own [organ.name] with itself!</span>")
+			to_chat(assailant, SPAN_NOTICE("You can't grab your own [organ.name] with itself!"))
 			return 0
 	for(var/obj/item/grab/G in affecting.grabbed_by)
 		if(G.assailant == assailant && G.target_zone == target_zone)
 			var/obj/O = G.get_targeted_organ()
-			to_chat(assailant, "<span class='notice'>You already grabbed [affecting]'s [O.name].</span>")
+			to_chat(assailant, SPAN_NOTICE("You already grabbed [affecting]'s [O.name]."))
 			return 0
 	return 1
 
@@ -199,7 +199,7 @@
 /obj/item/grab/proc/get_targeted_organ()
 	return (affecting?.get_organ(target_zone))
 
-/obj/item/grab/proc/resolve_item_attack(var/mob/living/M, var/obj/item/I, var/target_zone)
+/obj/item/grab/proc/resolve_item_attack(mob/living/M, obj/item/I, target_zone)
 	if((M && ishuman(M)) && I)
 		return current_grab.resolve_item_attack(src, M, I, target_zone)
 	else
@@ -226,9 +226,9 @@
 		if(prob(50))
 			C.ironed_state = WRINKLES_WRINKLY
 
-/obj/item/grab/proc/upgrade(var/bypass_cooldown = FALSE)
+/obj/item/grab/proc/upgrade(bypass_cooldown = FALSE)
 	if(!check_upgrade_cooldown() && !bypass_cooldown)
-		to_chat(assailant, "<span class='danger'>It's too soon to upgrade.</span>")
+		to_chat(assailant, SPAN_DANGER("It's too soon to upgrade."))
 		return
 
 	var/datum/grab/upgrab = current_grab.upgrade(src)
@@ -239,14 +239,6 @@
 		update_icon()
 		leave_forensic_traces()
 		current_grab.enter_as_up(src)
-		if (!bypass_cooldown && isscp106(loc) && !(loc.loc in GLOB.scp106_floors) && !(affecting.loc in GLOB.scp106_floors))
-			var/mob/living/carbon/human/scp106/H = loc
-			affecting.forceMove(pick(GLOB.scp106_floors))
-			H.set_last_xyz()
-			H.forceMove(get_turf(affecting))
-			H.verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
-			H.verbs += /mob/living/carbon/human/scp106/proc/go_back
-			qdel(src)
 
 /obj/item/grab/proc/downgrade()
 	var/datum/grab/downgrab = current_grab.downgrade(src)
@@ -275,7 +267,7 @@
 /obj/item/grab/proc/handle_resist()
 	current_grab.handle_resist(src)
 
-/obj/item/grab/proc/adjust_position(var/force = 0)
+/obj/item/grab/proc/adjust_position(force = 0)
 	if(force)	affecting.forceMove(assailant.loc)
 
 	if(!assailant || !affecting || !assailant.Adjacent(affecting))

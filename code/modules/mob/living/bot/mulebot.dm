@@ -23,7 +23,7 @@
 	max_target_dist = 250
 	target_speed = 3
 	max_frustration = 5
-	botcard_access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
+	botcard_access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_CARGO_BOT, ACCESS_QM, ACCESS_MINING, ACCESS_MINING_STATION)
 
 	var/atom/movable/load
 
@@ -38,8 +38,8 @@
 
 	var/global/amount = 0
 
-/mob/living/bot/mulebot/New()
-	..()
+/mob/living/bot/mulebot/Initialize()
+	. = ..()
 
 	var/turf/T = get_turf(loc)
 	var/obj/machinery/navbeacon/N = locate() in T
@@ -52,7 +52,7 @@
 	suffix = num2text(++amount)
 	name = "Mulebot #[suffix]"
 
-/mob/living/bot/mulebot/MouseDrop_T(var/atom/movable/C, var/mob/user)
+/mob/living/bot/mulebot/MouseDrop_T(atom/movable/C, mob/user)
 	if(user.stat)
 		return
 
@@ -85,7 +85,7 @@
 /mob/living/bot/mulebot/GetInteractMaintenance()
 	. = "<a href='?src=\ref[src];command=safety'>Toggle safety</a> ([safety ? "On" : "Off - DANGER"])"
 
-/mob/living/bot/mulebot/ProcessCommand(var/mob/user, var/command, var/href_list)
+/mob/living/bot/mulebot/ProcessCommand(mob/user, command, href_list)
 	..()
 	if(CanAccessPanel(user))
 		switch(command)
@@ -119,11 +119,11 @@
 			if("safety")
 				safety = !safety
 
-/mob/living/bot/mulebot/attackby(var/obj/item/O, var/mob/user)
+/mob/living/bot/mulebot/attackby(obj/item/O, mob/user)
 	..()
 	update_icons()
 
-/mob/living/bot/mulebot/proc/obeyCommand(var/command)
+/mob/living/bot/mulebot/proc/obeyCommand(command)
 	switch(command)
 		if("Home")
 			resetTarget()
@@ -145,9 +145,9 @@
 		if("Stop")
 			paused = 1
 
-/mob/living/bot/mulebot/emag_act(var/remaining_charges, var/user)
+/mob/living/bot/mulebot/emag_act(remaining_charges, user)
 	locked = !locked
-	to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] the mulebot's controls.</span>")
+	to_chat(user, SPAN_NOTICE("You [locked ? "lock" : "unlock"] the mulebot's controls."))
 	flick("mulebot-emagged", src)
 	playsound(loc, 'sound/effects/sparks1.ogg', 100, 0)
 	return 1
@@ -196,20 +196,20 @@
 		return
 	..()
 
-/mob/living/bot/mulebot/UnarmedAttack(var/turf/T)
+/mob/living/bot/mulebot/UnarmedAttack(turf/T)
 	if(T == src.loc)
 		unload(dir)
 
-/mob/living/bot/mulebot/Bump(var/mob/living/carbon/human/M)
+/mob/living/bot/mulebot/Bump(mob/living/carbon/human/M)
 	if(!safety && istype(M))
-		visible_message("<span class='warning'>[src] knocks over [M]!</span>")
+		visible_message(SPAN_WARNING("[src] knocks over [M]!"))
 		M.Stun(8)
 		M.Weaken(5)
 	..()
 
-/mob/living/bot/mulebot/proc/runOver(var/mob/living/carbon/human/H)
+/mob/living/bot/mulebot/proc/runOver(mob/living/carbon/human/H)
 	if(istype(H)) // No safety checks - WILL run over lying humans. Stop ERPing in the maint!
-		visible_message("<span class='warning'>[src] drives over [H]!</span>")
+		visible_message(SPAN_WARNING("[src] drives over [H]!"))
 		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 
 		var/damage = rand(5, 7)
@@ -222,14 +222,14 @@
 
 		blood_splatter(src, H, 1)
 
-/mob/living/bot/mulebot/relaymove(var/mob/user, var/direction)
+/mob/living/bot/mulebot/relaymove(mob/user, direction)
 	if(load == user)
 		unload(direction)
 
 /mob/living/bot/mulebot/explode()
 	unload(pick(0, 1, 2, 4, 8))
 
-	visible_message("<span class='danger'>[src] blows apart!</span>")
+	visible_message(SPAN_DANGER("[src] blows apart!"))
 
 	var/turf/Tsec = get_turf(src)
 	new /obj/item/device/assembly/prox_sensor(Tsec)
@@ -253,7 +253,7 @@
 		beaconlist[N.location] = N
 	return beaconlist
 
-/mob/living/bot/mulebot/proc/load(var/atom/movable/C)
+/mob/living/bot/mulebot/proc/load(atom/movable/C)
 	if(busy || load || get_dist(C, src) > 1 || !isturf(C.loc))
 		return
 
@@ -293,7 +293,7 @@
 
 	busy = 0
 
-/mob/living/bot/mulebot/proc/unload(var/dirn = 0)
+/mob/living/bot/mulebot/proc/unload(dirn = 0)
 	if(!load || busy)
 		return
 

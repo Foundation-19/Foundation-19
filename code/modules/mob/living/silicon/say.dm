@@ -1,4 +1,4 @@
-/mob/living/silicon/say(var/message, var/sanitize = 1)
+/mob/living/silicon/say(message, sanitize = 1)
 	return ..(sanitize ? sanitize(message) : message)
 
 /mob/living/silicon/handle_message_mode(message_mode, message, verb, speaking, used_radios, alt_name)
@@ -8,7 +8,7 @@
 	..()
 	if(message_mode)
 		if(!is_component_functioning("radio"))
-			to_chat(src, "<span class='warning'>Your radio isn't functional at this time.</span>")
+			to_chat(src, SPAN_WARNING("Your radio isn't functional at this time."))
 			return 0
 		if(message_mode == "general")
 			message_mode = null
@@ -20,7 +20,7 @@
 		return holopad_talk(message, verb, speaking)
 	else if(message_mode)
 		if (ai_radio.disabledAi || !has_power() || stat)
-			to_chat(src, "<span class='danger'>System Error - Transceiver Disabled.</span>")
+			to_chat(src, SPAN_DANGER("System Error - Transceiver Disabled."))
 			return 0
 		if(message_mode == "general")
 			message_mode = null
@@ -38,7 +38,7 @@
 					used_radios += I
 		return silicon_radio.talk_into(src,message,message_mode,verb,speaking)
 
-/mob/living/silicon/say_quote(var/text)
+/mob/living/silicon/say_quote(text)
 	var/ending = copytext(text, length(text))
 	if (ending == "?")
 		return speak_query
@@ -50,7 +50,7 @@
 #define IS_ROBOT 2
 #define IS_PAI 3
 
-/mob/living/silicon/say_understands(var/other,var/datum/language/speaking = null)
+/mob/living/silicon/say_understands(other,datum/language/speaking = null)
 	//These only pertain to common. Languages are handled by mob/say_understands()
 	if (!speaking)
 		if (istype(other, /mob/living/carbon))
@@ -62,7 +62,7 @@
 	return ..()
 
 //For holopads only. Usable by AI.
-/mob/living/silicon/ai/proc/holopad_talk(var/message, verb, datum/language/speaking)
+/mob/living/silicon/ai/proc/holopad_talk(message, verb, datum/language/speaking)
 
 	log_say("[key_name(src)] : [message]")
 
@@ -107,7 +107,9 @@
 				if(M.stat == DEAD && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
 					M.hear_say(message,verb,speaking,null,null, src)
 					continue
-				if(M.loc && (M.locs[1] in hearturfs))
+				else if(M.stat == DEAD)
+					continue
+				if((M in listening) && M.can_hear(H))
 					M.hear_say(message,verb,speaking,null,null, src)
 
 
@@ -116,7 +118,7 @@
 		return 0
 	return 1
 
-/mob/living/silicon/ai/proc/holopad_emote(var/message) //This is called when the AI uses the 'me' verb while using a holopad.
+/mob/living/silicon/ai/proc/holopad_emote(message) //This is called when the AI uses the 'me' verb while using a holopad.
 
 	log_emote("[key_name(src)] : [message]")
 
@@ -127,7 +129,7 @@
 
 	var/obj/machinery/hologram/holopad/T = src.holo
 	if(T && T?.masters[src])
-		var/rendered = "<span class='game say'><span class='name'>[name]</span> <span class='message'>[message]</span></span>"
+		var/rendered = SPAN_CLASS("game say","<span class='name'>[name]</span> <span class='message'>[message]</span>")
 		to_chat(src, "<i><span class='game say'>Holopad action relayed, <span class='name'>[real_name]</span> <span class='message'>[message]</span></span></i>")
 
 		for(var/mob/M in viewers(T.loc))

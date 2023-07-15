@@ -14,7 +14,7 @@
  */
 
 // Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
-/proc/sanitizeSQL(var/t as text)
+/proc/sanitizeSQL(t as text)
 	var/sqltext = dbcon.Quote(t);
 	return copytext(sqltext, 2, length(sqltext));//Quote() adds quotes around input, we already do that
 
@@ -28,7 +28,7 @@
 
 //Used for preprocessing entered text
 //Added in an additional check to alert players if input is too long
-/proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
+/proc/sanitize(input, max_length = MAX_MESSAGE_LEN, encode = 1, trim = 1, extra = 1)
 	if(!input)
 		return
 
@@ -36,7 +36,7 @@
 		//testing shows that just looking for > max_length alone will actually cut off the final character if message is precisely max_length, so >= instead
 		if(length(input) >= max_length)
 			var/overflow = ((length(input)+1) - max_length)
-			to_chat(usr, "<span class='warning'>Your message is too long by [overflow] character\s.</span>")
+			to_chat(usr, SPAN_WARNING("Your message is too long by [overflow] character\s."))
 			return
 		input = copytext(input,1,max_length)
 
@@ -64,11 +64,11 @@
 //Best used for sanitize object names, window titles.
 //If you have a problem with sanitize() in chat, when quotes and >, < are displayed as html entites -
 //this is a problem of double-encode(when & becomes &amp;), use sanitize() with encode=0, but not the sanitizeSafe()!
-/proc/sanitizeSafe(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
+/proc/sanitizeSafe(input, max_length = MAX_MESSAGE_LEN, encode = 1, trim = 1, extra = 1)
 	return sanitize(replace_characters(input, list(">"=" ","<"=" ", "\""="'")), max_length, encode, trim, extra)
 
 //Filters out undesirable characters from names
-/proc/sanitizeName(var/input, var/max_length = MAX_NAME_LEN, var/allow_numbers = 0, var/force_first_letter_uppercase = TRUE)
+/proc/sanitizeName(input, max_length = MAX_NAME_LEN, allow_numbers = 0, force_first_letter_uppercase = TRUE)
 	if(!input || length(input) > max_length)
 		return //Rejects the input if it is null or if it is longer then the max length allowed
 
@@ -160,7 +160,7 @@
 	return jointext(dat, null)
 
 //Returns null if there is any bad text in the string
-/proc/reject_bad_text(var/text, var/max_length=512)
+/proc/reject_bad_text(text, max_length=512)
 	if(length(text) > max_length)	return			//message too long
 	var/non_whitespace = 0
 	for(var/i=1, i<=length(text), i++)
@@ -174,7 +174,7 @@
 
 
 //Old variant. Haven't dared to replace in some places.
-/proc/sanitize_old(var/t,var/list/repl_chars = list("\n"="#","\t"="#"))
+/proc/sanitize_old(t,list/repl_chars = list("\n"="#","\t"="#"))
 	return html_encode(replace_characters(t,repl_chars))
 
 /*
@@ -214,7 +214,7 @@
  * Text modification
  */
 
-/proc/replace_characters(var/t,var/list/repl_chars)
+/proc/replace_characters(t,list/repl_chars)
 	for(var/char in repl_chars)
 		t = replacetext(t, char, repl_chars[char])
 	return t
@@ -270,12 +270,12 @@
 	return trim_left(trim_right(text))
 
 //Returns a string with the first element of the string capitalized.
-/proc/capitalize(var/t as text)
+/proc/capitalize(t as text)
 	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()
-/proc/strip_html_properly(var/input)
+/proc/strip_html_properly(input)
 	if(!input)
 		return
 	var/opentag = 1 //These store the position of < and > respectively.
@@ -301,7 +301,7 @@
 //This proc fills in all spaces with the "replace" var (* by default) with whatever
 //is in the other string at the same spot (assuming it is not a replace char).
 //This is used for fingerprints
-/proc/stringmerge(var/text,var/compare,replace = "*")
+/proc/stringmerge(text,compare,replace = "*")
 	var/newtext = text
 	if(length(text) != length(compare))
 		return 0
@@ -321,7 +321,7 @@
 
 //This proc returns the number of chars of the string that is the character
 //This is used for detective work to determine fingerprint completion.
-/proc/stringpercent(var/text,character = "*")
+/proc/stringpercent(text,character = "*")
 	if(!text || !character)
 		return 0
 	var/count = 0
@@ -331,7 +331,7 @@
 			count++
 	return count
 
-/proc/reverse_text(var/text = "")
+/proc/reverse_text(text = "")
 	var/new_text = ""
 	for(var/i = length(text); i > 0; i--)
 		new_text += copytext(text, i, i+1)
@@ -339,7 +339,7 @@
 
 //Used in preferences' SetFlavorText and human's set_flavor verb
 //Previews a string of len or less length
-/proc/TextPreview(var/string,var/len=40)
+/proc/TextPreview(string,len=40)
 	if(length(string) <= len)
 		if(!length(string))
 			return "\[...\]"
@@ -349,13 +349,13 @@
 		return "[copytext_preserve_html(string, 1, 37)]..."
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
-/proc/copytext_preserve_html(var/text, var/first, var/last)
+/proc/copytext_preserve_html(text, first, last)
 	return html_encode(copytext(html_decode(text), first, last))
 
-/proc/create_text_tag(var/tagname, var/tagdesc = tagname, var/client/C = null)
+/proc/create_text_tag(tagname, tagdesc = tagname, client/C = null)
 	if(!(C?.get_preference_value(/datum/client_preference/chat_tags) == GLOB.PREF_SHOW))
 		return tagdesc
-	return icon2html(icon('./icons/chattags.dmi', tagname), world, realsize=TRUE, class="text_tag")
+	return icon2html(icon('./icons/chattags.dmi', tagname), world, extra_classes="text_tag")
 
 /proc/text_badge(client/C = null)
 	if(!C)
@@ -368,13 +368,18 @@
 		//Admin badge otherwise
 		if(C.holder.rank)
 			badge_name = C.holder.rank
+			switch(C.holder.rank)
+				if("NetworkAssistantLead", "NetworkCoLead", "NetworkLead")
+					badge_name = "Host"
+				if("HeadMaintainer")
+					badge_name = "HeadDeveloper"
 	else if(IS_TRUSTED_PLAYER(C.ckey))
 		badge_name = "Trusted"
 	if(badge_name)
-		return icon2html(icon('./icons/chatbadges.dmi', badge_name), world, realsize=TRUE, class="text_tag")
+		return icon2html(icon('./icons/chatbadges.dmi', badge_name), world, extra_classes="text_tag")
 	return null
 
-/proc/contains_az09(var/input)
+/proc/contains_az09(input)
 	for(var/i=1, i<=length(input), i++)
 		var/ascii_char = text2ascii(input,i)
 		switch(ascii_char)
@@ -390,7 +395,7 @@
 				return 1
 	return 0
 
-/proc/generateRandomString(var/length)
+/proc/generateRandomString(length)
 	. = list()
 	for(var/a in 1 to length)
 		var/letter = rand(33,126)
@@ -418,7 +423,7 @@
 	t = replacetext(t, "\[/i\]", "</I>")
 	t = replacetext(t, "\[u\]", "<U>")
 	t = replacetext(t, "\[/u\]", "</U>")
-	t = replacetext(t, "\[time\]", "[stationtime2text()]")
+	t = replacetext(t, "\[time\]", "[station_time_timestamp("hh:mm")]")
 	t = replacetext(t, "\[date\]", "[stationdate2text()]")
 	t = replacetext(t, "\[large\]", "<font size=\"4\">")
 	t = replacetext(t, "\[/large\]", "</font>")
@@ -441,34 +446,35 @@
 	t = replacetext(t, "\[/grid\]", "</td></tr></table>")
 	t = replacetext(t, "\[row\]", "</td><tr>")
 	t = replacetext(t, "\[cell\]", "<td>")
-	t = replacetext(t, "\[logo\]", "<img src = exologo.png>")
-	t = replacetext(t, "\[bluelogo\]", "<img src = bluentlogo.png>")
-	t = replacetext(t, "\[solcrest\]", "<img src = sollogo.png>")
-	t = replacetext(t, "\[torchltd\]", "<img src = exologo.png>")
-	t = replacetext(t, "\[iccgseal\]", "<img src = terralogo.png>")
-	t = replacetext(t, "\[ntlogo\]", "<img src = ntlogo.png>")
-	t = replacetext(t, "\[daislogo\]", "<img src = daislogo.png>")
-	t = replacetext(t, "\[eclogo\]", "<img src = eclogo.png>")
-	t = replacetext(t, "\[xynlogo\]", "<img src = xynlogo.png>")
-	t = replacetext(t, "\[fleetlogo\]", "<img src = fleetlogo.png>")
-	t = replacetext(t, "\[sfplogo\]", "<img src = sfplogo.png>")
 	t = replacetext(t, "\[editorbr\]", "")
-	t = replacetext(t, "\[ethics\]", "<img src = ethics.png>")
-	t = replacetext(t, "\[eng\]", "<img src = eng.png>")
-	t = replacetext(t, "\[mtf\]", "<img src = mtf.png>")
-	t = replacetext(t, "\[log\]", "<img src = log.png>")
-	t = replacetext(t, "\[sec\]", "<img src = sec.png>")
 	t = replacetext(t, "\[scplogo\]", "<img src = scplogo.png>")
-	t = replacetext(t, "\[o5\]", "<img src = o5.png>")
-	t = replacetext(t, "\[isd\]", "<img src = isd.png>")
-	t = replacetext(t, "\[ecd\]", "<img src = ecd.png>")
-	t = replacetext(t, "\[goc\]", "<img src = ungoc.png>")
-	t = replacetext(t, "\[uiu\]", "<img src = uiu.png>")
+	t = replacetext(t, "\[ethicslogo\]", "<img src = ethics.png>")
+	t = replacetext(t, "\[o5logo\]", "<img src = o5.png>")
+	t = replacetext(t, "\[adminlogo\]", "<img src = admin.png>")
+	t = replacetext(t, "\[englogo\]", "<img src = eng.png>")
+	t = replacetext(t, "\[mtflogo\]", "<img src = mtf.png>")
+	t = replacetext(t, "\[loglogo\]", "<img src = log.png>")
+	t = replacetext(t, "\[manlogo\]", "<img src = man.png>")
+	t = replacetext(t, "\[medlogo\]", "<img src = med.png>")
+	t = replacetext(t, "\[scilogo\]", "<img src = sci.png>")
+	t = replacetext(t, "\[seclogo\]", "<img src = sec.png>")
+	t = replacetext(t, "\[isdlogo\]", "<img src = isd.png>")
+	t = replacetext(t, "\[dealogo\]", "<img src = dea.png>")
+	t = replacetext(t, "\[intlogo\]", "<img src = int.png>")
+	t = replacetext(t, "\[triblogo\]", "<img src = trib.png>")
+	t = replacetext(t, "\[goclogo\]", "<img src = ungoc.png>")
+	t = replacetext(t, "\[uiulogo\]", "<img src = uiu.png>")
+	t = replacetext(t, "\[thilogo\]", "<img src = thi.png>")
+	t = replacetext(t, "\[mcdlogo\]", "<img src = mcd.png>")
+	t = replacetext(t, "\[arlogo\]", "<img src = ar.png>")
+	t = replacetext(t, "\[cilogo\]", "<img src = ci.png>")
+	t = replacetext(t, "\[shlogo\]", "<img src = sh.png>")
+	t = replacetext(t, "\[cotbglogo\]", "<img src = cotbg.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
 //modular scanner data and txt file printing) and prints from them
-/proc/digitalPencode2html(var/text)
+/proc/digitalPencode2html(text)
 	text = replacetext(text, "\[pre\]", "<pre>")
 	text = replacetext(text, "\[/pre\]", "</pre>")
 	text = replacetext(text, "\[fontred\]", "<font color=\"red\">") //</font> to pass html tag integrity unit test
@@ -510,15 +516,29 @@
 	t = replacetext(t, "</table>", "\[/grid\]")
 	t = replacetext(t, "<tr>", "\[row\]")
 	t = replacetext(t, "<td>", "\[cell\]")
-	t = replacetext(t, "<img src = ntlogo.png>", "\[ntlogo\]")
-	t = replacetext(t, "<img src = bluentlogo.png>", "\[bluelogo\]")
-	t = replacetext(t, "<img src = sollogo.png>", "\[solcrest\]")
-	t = replacetext(t, "<img src = terralogo.png>", "\[iccgseal\]")
-	t = replacetext(t, "<img src = exologo.png>", "\[logo\]")
-	t = replacetext(t, "<img src = eclogo.png>", "\[eclogo\]")
-	t = replacetext(t, "<img src = daislogo.png>", "\[daislogo\]")
-	t = replacetext(t, "<img src = xynlogo.png>", "\[xynlogo\]")
-	t = replacetext(t, "<img src = sfplogo.png>", "\[sfplogo\]")
+	t = replacetext(t, "<img src = scplogo.png>", "\[scplogo\]")
+	t = replacetext(t, "<img src = ethics.png>", "\[ethicslogo\]")
+	t = replacetext(t, "<img src = o5.png>", "\[o5logo\]")
+	t = replacetext(t, "<img src = admin.png>", "\[adminlogo\]")
+	t = replacetext(t, "<img src = eng.png>", "\[englogo\]")
+	t = replacetext(t, "<img src = mtf.png>", "\[mtflogo\]")
+	t = replacetext(t, "<img src = log.png>", "\[loglogo\]")
+	t = replacetext(t, "<img src = man.png>", "\[manlogo\]")
+	t = replacetext(t, "<img src = med.png>", "\[medlogo\]")
+	t = replacetext(t, "<img src = sci.png>", "\[scilogo\]")
+	t = replacetext(t, "<img src = sec.png>", "\[seclogo\]")
+	t = replacetext(t, "<img src = isd.png>", "\[isdlogo\]")
+	t = replacetext(t, "<img src = dea.png>", "\[dealogo\]")
+	t = replacetext(t, "<img src = int.png>", "\[intlogo\]")
+	t = replacetext(t, "<img src = trib.png>", "\[triblogo\]")
+	t = replacetext(t, "<img src = ungoc.png>", "\[goclogo\]")
+	t = replacetext(t, "<img src = uiu.png>", "\[uiulogo\]")
+	t = replacetext(t, "<img src = thi.png>", "\[thilogo\]")
+	t = replacetext(t, "<img src = mcd.png>", "\[mcdlogo\]")
+	t = replacetext(t, "<img src = ar.png>", "\[arlogo\]")
+	t = replacetext(t, "<img src = ci.png>", "\[cilogo\]")
+	t = replacetext(t, "<img src = sh.png>", "\[shlogo\]")
+	t = replacetext(t, "<img src = cotbg.png>", "\[cotbglogo\]")
 	t = replacetext(t, "<span class=\"paper_field\"></span>", "\[field\]")
 	t = replacetext(t, "<span class=\"redacted\">R E D A C T E D</span>", "\[redacted\]")
 	t = strip_html_properly(t)
@@ -589,7 +609,7 @@
 	if(rest)
 		. += .(rest)
 
-/proc/deep_string_equals(var/A, var/B)
+/proc/deep_string_equals(A, B)
 	if (length(A) != length(B))
 		return FALSE
 	for (var/i = 1 to length(A))
@@ -598,15 +618,26 @@
 	return TRUE
 
 // If char isn't part of the text the entire text is returned
-/proc/copytext_after_last(var/text, var/char)
+/proc/copytext_after_last(text, char)
 	var/regex/R = regex("(\[^[char]\]*)$")
 	regex_find(R, text)
 	return R.group[1]
 
-/proc/sql_sanitize_text(var/text)
+/proc/sql_sanitize_text(text)
 	text = replacetext(text, "'", "''")
 	text = replacetext(text, ";", "")
 	text = replacetext(text, "&", "")
+	return text
+
+/proc/new_sql_sanitize_text(text)
+	text = replacetext(text, "'", "")
+	text = replacetext(text, ";", "")
+	text = replacetext(text, "&", "")
+	text = replacetext(text, "`", "")
+	return text
+
+/proc/remove_all_spaces(text)
+	text = replacetext(text, " ", "")
 	return text
 
 /proc/text2num_or_default(text, default)
@@ -629,3 +660,51 @@
 			var/regex/matcher = entry[1]
 			message = replacetext_char(message, matcher, entry[2])
 	return message
+
+/**
+ * Used to get a properly sanitized input. Returns null if cancel is pressed.
+ *
+ * Arguments
+ ** user - Target of the input prompt.
+ ** message - The text inside of the prompt.
+ ** title - The window title of the prompt.
+ ** max_length - If you intend to impose a length limit - default is 1024.
+ ** no_trim - Prevents the input from being trimmed if you intend to parse newlines or whitespace.
+*/
+/proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+	var/user_input = input(user, message, title, default) as text|null
+	if(isnull(user_input)) // User pressed cancel
+		return
+	if(no_trim)
+		return copytext(html_encode(user_input), 1, max_length)
+	else
+		return trim(html_encode(user_input), max_length) //trim is "outside" because html_encode can expand single symbols into multiple symbols (such as turning < into &lt;)
+
+/**
+ * Used to get a properly sanitized input in a larger box. Works very similarly to stripped_input.
+ *
+ * Arguments
+ ** user - Target of the input prompt.
+ ** message - The text inside of the prompt.
+ ** title - The window title of the prompt.
+ ** max_length - If you intend to impose a length limit - default is 1024.
+ ** no_trim - Prevents the input from being trimmed if you intend to parse newlines or whitespace.
+*/
+/proc/stripped_multiline_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+	var/user_input = input(user, message, title, default) as message|null
+	if(isnull(user_input)) // User pressed cancel
+		return
+	if(no_trim)
+		return copytext(html_encode(user_input), 1, max_length)
+	else
+		return trim(html_encode(user_input), max_length)
+
+// Format a power value in W, kW, MW, or GW.
+/proc/DisplayPower(powerused)
+	if(powerused < 1000) //Less than a kW
+		return "[powerused] W"
+	else if(powerused < 1000000) //Less than a MW
+		return "[round((powerused * 0.001),0.01)] kW"
+	else if(powerused < 1000000000) //Less than a GW
+		return "[round((powerused * 0.000001),0.001)] MW"
+	return "[round((powerused * 0.000000001),0.0001)] GW"

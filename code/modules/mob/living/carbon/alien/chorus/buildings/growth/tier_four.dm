@@ -56,7 +56,7 @@
 			continue
 		addtimer(CALLBACK(src, .proc/emit_acid, T), 0)
 
-/obj/structure/chorus/gastric_emitter/proc/emit_acid(var/turf/T)
+/obj/structure/chorus/gastric_emitter/proc/emit_acid(turf/T)
 	var/obj/effect/effect/water/chempuff/chem = new(get_turf(src))
 	chem.create_reagents(5)
 	chem.reagents.add_reagent(/datum/reagent/acid/hydrochloric,5)

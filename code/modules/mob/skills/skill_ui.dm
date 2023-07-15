@@ -1,6 +1,7 @@
 //Holders/managers for nano_ui for the skill panel.
 
 /datum/nano_module/skill_ui
+	available_to_ai = FALSE
 	var/datum/skillset/skillset
 	var/template = "skill_ui.tmpl"
 	var/hide_unskilled = FALSE
@@ -20,7 +21,7 @@
 	skillset = null
 	. = ..()
 
-/datum/nano_module/skill_ui/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.self_state)
+/datum/nano_module/skill_ui/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.self_state)
 	if(!skillset)
 		return
 	var/list/data = skillset.get_nano_data(hide_unskilled)
@@ -41,11 +42,11 @@
 	if(href_list["toggle_hide_unskilled"])
 		hide_unskilled = !hide_unskilled
 		return 1
-	
+
 /datum/nano_module/skill_ui/proc/get_data()
 	return list()
 
-/datum/skillset/proc/get_nano_data(var/hide_unskilled)
+/datum/skillset/proc/get_nano_data(hide_unskilled)
 	. = list()
 	.["name"] = owner.real_name
 	.["job"] = owner.mind && owner.mind.assigned_role
@@ -69,7 +70,7 @@
 			skill_data += list(skill_cat)
 	.["skills_by_cat"] = skill_data
 
-/datum/skillset/proc/get_nano_row(var/decl/hierarchy/skill/S)
+/datum/skillset/proc/get_nano_row(decl/hierarchy/skill/S)
 	var/list/skill_item = list()
 	skill_item["name"] = S.name
 	var/value = get_value(S.type)
@@ -240,7 +241,7 @@ Admin version, with debugging options.
 /datum/nano_module/skill_ui/admin
 	template = "skill_ui_admin.tmpl"
 
-/datum/nano_module/skill_ui/admin/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.admin_state)
+/datum/nano_module/skill_ui/admin/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.admin_state)
 	..() //Uses different default state.
 
 /datum/nano_module/skill_ui/admin/get_data()
@@ -254,21 +255,21 @@ Admin version, with debugging options.
 	if(href_list["close"]) // This is called when the window is closed; we've signed up to get notified of it.
 		qdel(src)
 		return 1
-	if(!is_admin(usr))
+	if(!check_rights(R_ADMIN|R_MOD, 0, usr))
 		return 1
 
 	if(href_list["reset_antag"])
 		for(var/datum/skill_buff/buff in skillset.owner.fetch_buffs_of_type(/datum/skill_buff/antag))
 			buff.remove()
-		log_and_message_admins("SKILLS: [key_name_admin(skillset.owner)] has been granted a reset of antag skills.")
+		log_and_message_staff("SKILLS: [key_name_admin(skillset.owner)] has been granted a reset of antag skills.")
 		return 1
 	if(href_list["reset_buffs"])
 		for(var/datum/skill_buff/buff in skillset.owner.fetch_buffs_of_type(/datum/skill_buff))
 			buff.remove()
-		log_and_message_admins("SKILLS: All skill buffs have been removed from [key_name_admin(skillset.owner)].")
+		log_and_message_staff("SKILLS: All skill buffs have been removed from [key_name_admin(skillset.owner)].")
 		return 1
 	if(href_list["reset_hard"])
-		log_and_message_admins("SKILLS: The skillset of [key_name_admin(skillset.owner)] has been reset.")
+		log_and_message_staff("SKILLS: The skillset of [key_name_admin(skillset.owner)] has been reset.")
 		skillset.owner.reset_skillset() // This will delete the NM and wipe all references.
 		return 1
 	if(href_list["prefs"])
@@ -281,7 +282,7 @@ Admin version, with debugging options.
 			to_chat(usr, "Valid job not found.")
 			return 1
 		skillset.obtain_from_client(job, my_client)
-		log_and_message_admins("SKILLS: The job skills for [key_name_admin(skillset.owner)] have been imported.")
+		log_and_message_staff("SKILLS: The job skills for [key_name_admin(skillset.owner)] have been imported.")
 		return 1
 	if(href_list["antag"])
 		var/datum/antagonist/antag = skillset.owner.mind && player_is_antag(skillset.owner.mind)
@@ -292,7 +293,7 @@ Admin version, with debugging options.
 			to_chat(usr, "Antag has no skill setter assigned.")
 			return 1
 		antag.skill_setter.initialize_skills(skillset)
-		log_and_message_admins("SKILLS: The antag skills for [key_name_admin(skillset.owner)] have been re-initialized.")
+		log_and_message_staff("SKILLS: The antag skills for [key_name_admin(skillset.owner)] have been re-initialized.")
 		return 1
 	if(href_list["refresh"])
 		skillset.refresh_uis()
@@ -316,7 +317,7 @@ Admin version, with debugging options.
 			var/buff_list = list()
 			buff_list[skill_type] = new_val - old_val
 			skillset.owner.buff_skill(buff_list, buff_type = /datum/skill_buff/admin)
-		log_and_message_admins("SKILLS: The skill values of [key_name_admin(skillset.owner)] have been altered.")
+		log_and_message_staff("SKILLS: The skill values of [key_name_admin(skillset.owner)] have been altered.")
 		return 1
 
 /datum/skill_buff/admin

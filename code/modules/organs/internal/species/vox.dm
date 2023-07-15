@@ -178,8 +178,8 @@
 	var/datum/mind/backup
 	var/prompting = FALSE // Are we waiting for a user prompt?
 
-/obj/item/organ/internal/voxstack/New()
-	..()
+/obj/item/organ/internal/voxstack/Initialize()
+	. = ..()
 	do_backup()
 	robotize()
 
@@ -254,7 +254,7 @@
 	owner.languages = languages.Copy()
 	to_chat(owner, SPAN_NOTICE("Consciousness slowly creeps over you as your new body awakens."))
 
-/datum/species/vox/handle_death(var/mob/living/carbon/human/H)
+/datum/species/vox/handle_death(mob/living/carbon/human/H)
 	..()
 	var/obj/item/organ/internal/voxstack/stack = H.get_organ(BP_STACK)
 	if (stack)

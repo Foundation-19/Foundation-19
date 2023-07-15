@@ -85,6 +85,7 @@
 
 		visible_message(SPAN_DANGER("\The [src] erupts from underneath, and hits \the [L]!"))
 		playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+		show_sound_effect(src.loc, src)
 		L.Weaken(3)
 		overshoot = FALSE
 
@@ -121,14 +122,15 @@
 		// Update T.
 		T = get_step(src, get_dir(src, destination))
 		if (T.density)
-			to_chat(src, "<span class='critical'>You hit something really solid!</span>")
-			playsound(src, "punch", 75, 1)
+			to_chat(src, SPAN_CLASS("critical","You hit something really solid!"))
+			playsound(src, SFX_PUNCH, 75, 1)
 			Weaken(5)
 			return FALSE // Hit a wall.
 
 		// Stun anyone in our way.
 		for (var/mob/living/L in T)
 			playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+			show_sound_effect(src.loc, src)
 			L.Weaken(2)
 
 		// Get into the tile.

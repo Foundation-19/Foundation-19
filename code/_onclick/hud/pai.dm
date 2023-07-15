@@ -32,7 +32,7 @@
 /obj/screen/pai/Click()
 	if(!isobserver(usr) && (!usr.incapacitated() || usr.resting))
 		OnClick()
-	
+
 /obj/screen/pai/proc/OnClick()
 
 /obj/screen/pai/software

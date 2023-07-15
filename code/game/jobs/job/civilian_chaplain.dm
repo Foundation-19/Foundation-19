@@ -2,23 +2,26 @@
 /datum/job/chaplain
 	title = "Chaplain"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = CIV|SRV
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
-	access = list(access_medicallvl1)
+	supervisors = null
+
+	access = list(
+	ACCESS_MEDICAL_LVL1,
+	ACCESS_CHAPEL_OFFICE
+	)
+
 	minimal_access = list()
 	outfit_type = /decl/hierarchy/outfit/job/chaplain
 
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 
-/datum/job/chaplain/equip(var/mob/living/carbon/human/H, var/alt_title, var/ask_questions = TRUE)
+/datum/job/chaplain/equip(mob/living/carbon/human/H, alt_title, ask_questions = TRUE)
 	. = ..()
-	if(!.)
-		return
-	if(!ask_questions)
+	if(!. || !ask_questions)
 		return
 
 	var/obj/item/storage/bible/B = locate(/obj/item/storage/bible) in H
@@ -33,7 +36,7 @@
 			new_religion = religion_name
 		switch(lowertext(new_religion))
 			if("christianity")
-				B.SetName(pick("The Holy Bible","The Dead Sea Scrolls"))
+				B.SetName("The Holy Bible")
 			if("satanism")
 				B.SetName("The Unholy Bible")
 			if("cthulu")

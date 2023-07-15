@@ -1,7 +1,7 @@
-#define WASHER_STATE_CLOSED  1
-#define WASHER_STATE_FULL    2
-#define WASHER_STATE_RUNNING 4
-#define WASHER_STATE_BLOODY  8
+#define WASHER_STATE_CLOSED  (1<<0)
+#define WASHER_STATE_FULL    (1<<1)
+#define WASHER_STATE_RUNNING (1<<2)
+#define WASHER_STATE_BLOODY  (1<<3)
 
 // WASHER_STATE_RUNNING implies WASHER_STATE_CLOSED | WASHER_STATE_FULL
 // if you break this assumption, you must update the icon file
@@ -21,20 +21,20 @@
 	var/obj/crayon
 	var/obj/item/reagent_containers/pill/detergent/detergent
 	obj_flags = OBJ_FLAG_ANCHORABLE
-	clicksound = "button"
+	clicksound = SFX_MACHINE_BUTTON
 	clickvol = 40
 
 	// Power
 	idle_power_usage = 10
 	active_power_usage = 150
-	
+
 	machine_name = "washing machine"
 	machine_desc = "Uses detergent and water to get your clothes minty fresh. Good for those pesky bloodstains! Also decontaminates clothing that has been exposed to toxic elements, as long as detergent is used in the washing process."
 
 /obj/machinery/washing_machine/Destroy()
 	QDEL_NULL(crayon)
 	QDEL_NULL(detergent)
-	. = ..()
+	return ..()
 
 /obj/machinery/washing_machine/verb/start()
 	set name = "Start Washing"
@@ -110,7 +110,7 @@
 		return
 	if(state & WASHER_STATE_CLOSED)
 		to_chat(usr, SPAN_WARNING("\The [src] is closed."))
-		return	
+		return
 	if(!do_after(usr, 2 SECONDS, src))
 		return
 	if(!(state & WASHER_STATE_CLOSED))
@@ -122,7 +122,7 @@
 /obj/machinery/washing_machine/clean_blood()
 	. = ..()
 	state &= ~WASHER_STATE_BLOODY
-	update_icon()	
+	update_icon()
 
 /obj/machinery/washing_machine/components_are_accessible(path)
 	return !(state & WASHER_STATE_RUNNING) && ..()

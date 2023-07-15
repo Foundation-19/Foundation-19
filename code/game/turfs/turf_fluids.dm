@@ -1,4 +1,4 @@
-/turf/CanFluidPass(var/coming_from)
+/turf/CanFluidPass(coming_from)
 	if(flooded || density)
 		return FALSE
 	if(isnull(fluid_can_pass))
@@ -9,13 +9,13 @@
 				break
 	return fluid_can_pass
 
-/turf/proc/add_fluid(var/amount, var/fluid)
+/turf/proc/add_fluid(amount, fluid)
 	if(!flooded)
 		var/obj/effect/fluid/F = locate() in src
 		if(!F) F = new(src)
 		SET_FLUID_DEPTH(F, F.fluid_amount + amount)
 
-/turf/proc/remove_fluid(var/amount = 0)
+/turf/proc/remove_fluid(amount = 0)
 	var/obj/effect/fluid/F = locate() in src
 	if(F) LOSE_FLUID(F, amount)
 
@@ -30,10 +30,10 @@
 		update_icon()
 		fluid_update()
 
-/turf/is_flooded(var/lying_mob, var/absolute)
+/turf/is_flooded(lying_mob, absolute)
 	return (flooded || (!absolute && check_fluid_depth(lying_mob ? FLUID_OVER_MOB_HEAD : FLUID_DEEP)))
 
-/turf/check_fluid_depth(var/min)
+/turf/check_fluid_depth(min)
 	..()
 	return (get_fluid_depth() >= min)
 
@@ -44,7 +44,7 @@
 	var/obj/effect/fluid/F = return_fluid()
 	return (istype(F) ? F.fluid_amount : 0 )
 
-/turf/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0)
+/turf/ChangeTurf(turf/N, tell_universe=1, force_lighting_update = 0)
 	. = ..()
 	var/turf/T = .
 	if(isturf(T) && !T.flooded && T.flood_object)
@@ -62,7 +62,7 @@
 	if(istype(F))
 		flick("bubbles",F)
 
-/turf/fluid_update(var/ignore_neighbors)
+/turf/fluid_update(ignore_neighbors)
 
 	fluid_blocked_dirs = null
 	fluid_can_pass = null

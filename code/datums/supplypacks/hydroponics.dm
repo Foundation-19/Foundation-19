@@ -16,7 +16,7 @@
 					)
 	cost = 15
 	containername = "hydroponics supply crate"
-	access = access_hydroponics
+	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/hydroponics/seeds
 	name = "Samples - Mundane Seeds"
@@ -39,7 +39,7 @@
 					/obj/item/seeds/sugarcaneseed)
 	cost = 10
 	containername = "seeds crate"
-	access = access_hydroponics
+	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/hydroponics/weedcontrol
 	name = "Gear - Weed control"
@@ -49,7 +49,7 @@
 					/obj/item/grenade/chem_grenade/antiweed = 2)
 	cost = 25
 	containername = "weed control crate"
-	access = access_hydroponics
+	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/hydroponics/exoticseeds
 	name = "Samples - Exotic seeds"
@@ -61,7 +61,7 @@
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
 	containername = "exotic Seeds crate"
-	access = access_xenobiology
+	access = ACCESS_XENOBIOLOGY
 
 /decl/hierarchy/supply_pack/hydroponics/watertank
 	name = "Liquid - Water tank"
@@ -78,7 +78,7 @@
 					/obj/item/bee_pack)
 	cost = 40
 	containername = "beekeeping crate"
-	access = access_hydroponics
+	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/hydroponics/hydrotray
 	name = "Equipment - Hydroponics tray"
@@ -86,7 +86,7 @@
 	cost = 30
 	containertype = /obj/structure/closet/crate/large/hydroponics
 	containername = "hydroponics tray crate"
-	access = access_hydroponics
+	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/hydroponics/pottedplant
 	name = "Deco - Potted plants"

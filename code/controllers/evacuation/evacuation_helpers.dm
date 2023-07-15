@@ -1,7 +1,7 @@
-/datum/evacuation_controller/proc/set_launch_time(var/val)
+/datum/evacuation_controller/proc/set_launch_time(val)
 	evac_launch_time = val
 
-/datum/evacuation_controller/proc/set_arrival_time(var/val)
+/datum/evacuation_controller/proc/set_arrival_time(val)
 	evac_arrival_time = val
 
 /datum/evacuation_controller/proc/is_prepared()
@@ -25,7 +25,7 @@
 /datum/evacuation_controller/proc/is_evacuating()
 	return state != EVAC_IDLE
 
-/datum/evacuation_controller/proc/can_evacuate(var/mob/user, var/forced)
+/datum/evacuation_controller/proc/can_evacuate(mob/user, forced)
 
 	if(!isnull(evac_called_at))
 		return 0
@@ -33,15 +33,6 @@
 	if (!GLOB.universe.OnShuttleCall(null))
 		return 0
 
-	if(!forced)
-		for(var/predicate in evacuation_predicates)
-			var/datum/evacuation_predicate/esp = predicate
-			if(!esp.is_valid())
-				evacuation_predicates -= esp
-				qdel(esp)
-			else
-				if(!esp.can_call(user))
-					return 0
 	return 1
 
 /datum/evacuation_controller/proc/waiting_to_leave()

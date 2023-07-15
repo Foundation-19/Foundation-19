@@ -1,4 +1,4 @@
-/mob/living/simple_animal/borer/proc/can_use_borer_ability(var/silent = FALSE, var/requires_host_value = TRUE, var/usable_while_docile = FALSE, var/check_last_special = TRUE)
+/mob/living/simple_animal/borer/proc/can_use_borer_ability(silent = FALSE, requires_host_value = TRUE, usable_while_docile = FALSE, check_last_special = TRUE)
 
 	if(controlling)
 		return FALSE
@@ -42,11 +42,11 @@
 	H.add_language(LANGUAGE_BORER_GLOBAL)
 
 	if(host.stat == DEAD)
-		H.verbs |= /mob/living/carbon/human/proc/jumpstart
+		add_verb(H, /mob/living/carbon/human/proc/jumpstart)
 
-	H.verbs |= /mob/living/carbon/human/proc/psychic_whisper
+	add_verb(H, /mob/living/carbon/human/proc/psychic_whisper)
 	if(!neutered)
-		H.verbs |= /mob/living/carbon/proc/spawn_larvae
+		add_verb(H, /mob/living/carbon/proc/spawn_larvae)
 
 	if(H.client)
 		H.ghostize(0)
@@ -84,7 +84,7 @@
 		to_chat(usr, SPAN_WARNING("Your host is already alive."))
 		return
 
-	verbs -= /mob/living/carbon/human/proc/jumpstart
+	remove_verb(src, /mob/living/carbon/human/proc/jumpstart)
 	visible_message(SPAN_DANGER("With a hideous, rattling moan, [src] shudders back to life!"))
 
 	rejuvenate()

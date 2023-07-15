@@ -18,7 +18,7 @@
 	maxbodytemp = 4000
 	min_gas = null
 	max_gas = null
-	speed = -1
+	movement_cooldown = 3
 	status_flags = 0
 	faction = "cult"
 	supernatural = 1
@@ -53,8 +53,8 @@
 	if(stat == 2)
 		new /obj/item/ectoplasm (src.loc)
 		for(var/mob/M in viewers(src, null))
-			if((M.client && !( M.blinded )))
-				M.show_message("<span class='warning'>[src] lets out a contented sigh as their form unwinds.</span>")
+			if((M.client && M.can_see()))
+				M.show_message(SPAN_WARNING("[src] lets out a contented sigh as their form unwinds."))
 				ghostize()
 		qdel(src)
 		return

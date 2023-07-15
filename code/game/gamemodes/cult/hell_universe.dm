@@ -13,11 +13,11 @@ In short:
 	name = "Hell Rising"
 	desc = "OH FUCK OH FUCK OH FUCK"
 
-/datum/universal_state/hell/OnShuttleCall(var/mob/user)
+/datum/universal_state/hell/OnShuttleCall(mob/user)
 	return 1
 	/*
 	if(user)
-		to_chat(user, "<span class='sinister'>All you hear on the frequency is static and panicked screaming. There will be no shuttle call today.</span>")
+		to_chat(user, SPAN_CLASS("sinister","All you hear on the frequency is static and panicked screaming. There will be no shuttle call today."))
 	return 0
 	*/
 

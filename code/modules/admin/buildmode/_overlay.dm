@@ -14,7 +14,7 @@
 	for (var/x = -size to size step 1)
 		for (var/y = -size to size step 1)
 			var/atom/movable/M = new
-			M.mouse_opacity = 0
+			M.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			M.icon = 'icons/turf/overlays.dmi'
 			M.icon_state = icon_state
 			M.screen_loc = "CENTER[x < 0 ? "-" : "+"][abs(x)],CENTER[y < 0 ? "-" : "+"][abs(y)]"
@@ -51,6 +51,6 @@
 			var/turf/T = locate(user.x + x, user.y + y, user.z)
 			if (T)
 				M.alpha = 255
-				ImmediateInvokeAsync(buildmode, /datum/build_mode/.proc/UpdateOverlay, M, T)
+				INVOKE_ASYNC(buildmode, /datum/build_mode/.proc/UpdateOverlay, M, T)
 			else
 				M.alpha = 0

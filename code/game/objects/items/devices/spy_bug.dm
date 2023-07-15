@@ -47,7 +47,7 @@
 	else
 		..()
 
-/obj/item/device/spy_bug/hear_talk(mob/M, var/msg, verb, datum/language/speaking)
+/obj/item/device/spy_bug/hear_talk(mob/M, msg, verb, datum/language/speaking)
 	radio.hear_talk(M, msg, speaking)
 
 
@@ -93,12 +93,12 @@
 	else
 		return ..()
 
-/obj/item/device/spy_monitor/proc/pair(var/obj/item/device/spy_bug/SB, var/mob/living/user)
+/obj/item/device/spy_monitor/proc/pair(obj/item/device/spy_bug/SB, mob/living/user)
 	if(SB.camera in cameras)
-		to_chat(user, "<span class='notice'>\The [SB] has been unpaired from \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("\The [SB] has been unpaired from \the [src]."))
 		cameras -= SB.camera
 	else
-		to_chat(user, "<span class='notice'>\The [SB] has been paired with \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("\The [SB] has been paired with \the [src]."))
 		cameras += SB.camera
 
 /obj/item/device/spy_monitor/proc/view_cameras(mob/user)
@@ -121,7 +121,7 @@
 			if(!T || !is_on_same_plane_or_station(T.z, user.z) || !selected_camera.can_use())
 				user.unset_machine()
 				user.reset_view(null)
-				to_chat(user, "<span class='notice'>[selected_camera] unavailable.</span>")
+				to_chat(user, SPAN_NOTICE("[selected_camera] unavailable."))
 				sleep(90)
 			else
 				user.set_machine(selected_camera)
@@ -135,13 +135,13 @@
 		return
 
 	if(!cameras.len)
-		to_chat(user, "<span class='warning'>No paired cameras detected!</span>")
-		to_chat(user, "<span class='warning'>Bring a bug in contact with this device to pair the camera.</span>")
+		to_chat(user, SPAN_WARNING("No paired cameras detected!"))
+		to_chat(user, SPAN_WARNING("Bring a bug in contact with this device to pair the camera."))
 		return
 
 	return 1
 
-/obj/item/device/spy_monitor/hear_talk(mob/M, var/msg, verb, datum/language/speaking)
+/obj/item/device/spy_monitor/hear_talk(mob/M, msg, verb, datum/language/speaking)
 	return radio.hear_talk(M, msg, speaking)
 
 
@@ -154,7 +154,7 @@
 	name = "DV-136ZB #[random_id(/obj/machinery/camera/spy, 1000,9999)]"
 	c_tag = name
 
-/obj/machinery/camera/spy/check_eye(var/mob/user as mob)
+/obj/machinery/camera/spy/check_eye(mob/user as mob)
 	return 0
 
 /obj/item/device/radio/spy

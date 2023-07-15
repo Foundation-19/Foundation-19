@@ -14,6 +14,7 @@
 	var/open
 	var/list/external_pump
 	scp106_vulnerable = FALSE
+	var/scp3349_induced = FALSE		// whether or not you're currently undergoing the effects of 3349
 
 /obj/item/organ/internal/heart/open
 	open = 1
@@ -78,7 +79,7 @@
 		should_stop = should_stop || prob(max(0, owner.getBrainLoss() - owner.maxHealth * 0.75)) //brain failing to work heart properly
 		should_stop = should_stop || (prob(5) && pulse == PULSE_THREADY) //erratic heart patterns, usually caused by oxyloss
 		if(should_stop) // The heart has stopped due to going into traumatic or cardiovascular shock.
-			to_chat(owner, "<span class='danger'>Your heart has stopped!</span>")
+			to_chat(owner, SPAN_DANGER("Your heart has stopped!"))
 			pulse = PULSE_NONE
 			return
 
@@ -100,6 +101,13 @@
 		else
 			pulse++
 
+	// So does SCP-3349
+	if(pulse != PULSE_NORM && scp3349_induced)
+		if(pulse > PULSE_NORM)
+			pulse--
+		else
+			pulse++
+
 /obj/item/organ/internal/heart/proc/handle_heartbeat()
 	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || is_below_sound_pressure(get_turf(owner)))
 		//PULSE_THREADY - maximum value for pulse, currently it 5.
@@ -109,9 +117,9 @@
 		if(owner.chem_effects[CE_PULSE] > 2)
 			heartbeat++
 
-		if(heartbeat >= rate)
+		if(heartbeat >= (scp3349_induced ? (rate * 2) : rate))	// scp3349 heartbeat is long so we play it half as often to prevent overlap
 			heartbeat = 0
-			sound_to(owner, sound(beat_sound,0,0,0,50))
+			sound_to(owner, sound((scp3349_induced ? 'sound/effects/heartbeatpurr.ogg' : beat_sound),0,0,0,50))
 		else
 			heartbeat++
 
@@ -209,21 +217,28 @@
 	if(!pulse || (owner.status_flags & FAKEDEATH))
 		return "no pulse"
 
-	var/pulsesound = "normal"
+	. = ""
+
 	if(is_bruised())
-		pulsesound = "irregular"
+		if(pulse == PULSE_NORM)
+			. += "irregular "
+		else
+			. += "irregular, "
 
 	switch(pulse)
 		if(PULSE_SLOW)
-			pulsesound = "slow"
+			. += "slow "
 		if(PULSE_FAST)
-			pulsesound = "fast"
+			. += "fast "
 		if(PULSE_2FAST)
-			pulsesound = "very fast"
+			. += "very fast "
 		if(PULSE_THREADY)
-			pulsesound = "extremely fast and faint"
+			. += "extremely fast and faint "
 
-	. = "[pulsesound] pulse"
+	if(scp3349_induced)
+		. += "cat purr"
+	else
+		. += "pulse"
 
 /obj/item/organ/internal/heart/get_mechanical_assisted_descriptor()
 	return "pacemaker-assisted [name]"

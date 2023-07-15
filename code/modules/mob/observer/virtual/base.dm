@@ -6,6 +6,7 @@ var/list/all_virtual_listeners = list()
 	see_in_dark = SEE_IN_DARK_DEFAULT
 	see_invisible = SEE_INVISIBLE_LIVING
 	sight = SEE_SELF
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 	virtual_mob = null
 	no_z_overlay = TRUE
@@ -17,7 +18,7 @@ var/list/all_virtual_listeners = list()
 
 	var/static/list/overlay_icons
 
-/mob/observer/virtual/New(var/location, var/atom/movable/host)
+/mob/observer/virtual/New(location, atom/movable/host)
 	..()
 	if(!istype(host, host_type))
 		CRASH("Received an unexpected host type. Expected [host_type], was [log_info_line(host)].")

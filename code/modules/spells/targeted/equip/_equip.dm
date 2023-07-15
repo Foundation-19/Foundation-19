@@ -36,5 +36,5 @@
 		for(var/obj/item/to_remove in summoned_items)
 			QDEL_IN(to_remove, duration)
 
-/datum/spell/targeted/equip_item/proc/summon_item(var/newtype)
+/datum/spell/targeted/equip_item/proc/summon_item(newtype)
 	return new newtype

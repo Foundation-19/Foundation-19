@@ -17,7 +17,7 @@
 	update_parent_organ()
 
 //General expectation is onInstall and onRemoved are overwritten to add effects to augmentee
-/obj/item/organ/internal/augment/replaced(var/mob/living/carbon/human/target)
+/obj/item/organ/internal/augment/replaced(mob/living/carbon/human/target)
 	if(..() && istype(owner))
 		onInstall()
 
@@ -27,7 +27,7 @@
 /obj/item/organ/internal/augment/proc/onRoundstart()
 	return
 
-/obj/item/organ/internal/augment/removed(var/mob/living/user, var/drop_organ=1)
+/obj/item/organ/internal/augment/removed(mob/living/user, drop_organ=1)
 	onRemove()
 	..()
 

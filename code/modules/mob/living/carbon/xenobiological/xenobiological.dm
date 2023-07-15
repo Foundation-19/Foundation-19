@@ -71,15 +71,15 @@
 /mob/living/carbon/slime/get_digestion_product()
 	return /datum/reagent/slime_jelly
 
-/mob/living/carbon/slime/adjustToxLoss(var/amount)
+/mob/living/carbon/slime/adjustToxLoss(amount)
 	toxloss = Clamp(toxloss + amount, 0, maxHealth)
 
-/mob/living/carbon/slime/setToxLoss(var/amount)
+/mob/living/carbon/slime/setToxLoss(amount)
 	adjustToxLoss(amount-getToxLoss())
 
-/mob/living/carbon/slime/New(var/location, var/colour="grey")
+/mob/living/carbon/slime/Initialize(mapload, colour = "grey")
 	ingested = new(240, src, CHEM_INGEST)
-	verbs += /mob/living/proc/ventcrawl
+	add_verb(src, /mob/living/proc/ventcrawl)
 
 	src.colour = colour
 	number = random_id(/mob/living/carbon/slime, 1, 1000)
@@ -87,7 +87,7 @@
 	real_name = name
 	mutation_chance = rand(25, 35)
 	regenerate_icons()
-	..(location)
+	. = ..()
 
 /mob/living/carbon/slime/movement_delay()
 	if (bodytemperature >= 330.23) // 135 F
@@ -153,28 +153,22 @@
 /mob/living/carbon/slime/Allow_Spacemove()
 	return 1
 
-/mob/living/carbon/slime/Stat()
-	. = ..()
-
-	statpanel("Status")
-	stat(null, "Health: [round((health / maxHealth) * 100)]%")
-	stat(null, "Intent: [a_intent]")
-
-	if (client.statpanel == "Status")
-		stat(null, "Nutrition: [nutrition]/[get_max_nutrition()]")
-		if(amount_grown >= 10)
-			if(is_adult)
-				stat(null, "You can reproduce!")
-			else
-				stat(null, "You can evolve!")
-
-		stat(null,"Power Level: [powerlevel]")
+/mob/living/carbon/slime/get_status_tab_items()
+	.=..()
+	. += "Health: [round((health / maxHealth) * 100)]%"
+	. += "Nutrition: [nutrition]/[get_max_nutrition()]"
+	if(amount_grown >= 10)
+		if(is_adult)
+			. += "You can reproduce!"
+		else
+			. += "You can evolve!"
+	. += "Power Level: [powerlevel]"
 
 /mob/living/carbon/slime/adjustFireLoss(amount)
 	..(-abs(amount)) // Heals them
 	return
 
-/mob/living/carbon/slime/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/carbon/slime/bullet_act(obj/item/projectile/Proj)
 	if(status_flags & GODMODE)
 		return PROJECTILE_FORCE_MISS
 
@@ -229,11 +223,11 @@
 	if(Victim)
 		if(Victim == M)
 			if(prob(60))
-				visible_message("<span class='warning'>\The [M] attempts to wrestle \the [src] off!</span>")
+				visible_message(SPAN_WARNING("\The [M] attempts to wrestle \the [src] off!"))
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 
 			else
-				visible_message("<span class='warning'>\The [M] manages to wrestle \the [src] off!</span>")
+				visible_message(SPAN_WARNING("\The [M] manages to wrestle \the [src] off!"))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 				confused = max(confused, 2)
@@ -244,11 +238,11 @@
 
 		else
 			if(prob(30))
-				visible_message("<span class='warning'>\The [M] attempts to wrestle \the [src] off \the [Victim]!</span>")
+				visible_message(SPAN_WARNING("\The [M] attempts to wrestle \the [src] off \the [Victim]!"))
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 
 			else
-				visible_message("<span class='warning'>\The [M] manages to wrestle \the [src] off \the [Victim]!</span>")
+				visible_message(SPAN_WARNING("\The [M] manages to wrestle \the [src] off \the [Victim]!"))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 				confused = max(confused, 2)
@@ -264,7 +258,7 @@
 
 		if (I_DISARM)
 			var/success = prob(40)
-			visible_message("<span class='warning'>\The [M] pushes \the [src]![success ? " \The [src] looks momentarily disoriented!" : ""]</span>")
+			visible_message(SPAN_WARNING("\The [M] pushes \the [src]![success ? " \The [src] looks momentarily disoriented!" : ""]"))
 			if(success)
 				confused = max(confused, 2)
 				UpdateFace()
@@ -288,22 +282,22 @@
 						sleep(3)
 						step_away(src,M,15)
 
-				playsound(loc, "punch", 25, 1, -1)
-				visible_message("<span class='danger'>[M] has punched [src]!</span>", \
-						"<span class='danger'>[M] has punched [src]!</span>")
+				playsound(loc, SFX_PUNCH, 25, 1, -1)
+				visible_message(SPAN_DANGER("[M] has punched [src]!"), \
+						SPAN_DANGER("[M] has punched [src]!"))
 
 				adjustBruteLoss(damage)
 				updatehealth()
 			else
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-				visible_message("<span class='danger'>[M] has attempted to punch [src]!</span>")
+				visible_message(SPAN_DANGER("[M] has attempted to punch [src]!"))
 	return
 
-/mob/living/carbon/slime/attackby(var/obj/item/W, var/mob/user)
+/mob/living/carbon/slime/attackby(obj/item/W, mob/user)
 	if(W.force > 0)
 		attacked += 10
 		if(!(stat) && prob(25)) //Only run this check if we're alive or otherwise motile, otherwise surgery will be agonizing for xenobiologists.
-			to_chat(user, "<span class='danger'>\The [W] passes right through \the [src]!</span>")
+			to_chat(user, SPAN_DANGER("\The [W] passes right through \the [src]!"))
 			return
 
 	. = ..()
@@ -327,7 +321,7 @@
 /mob/living/carbon/slime/check_has_mouth()
 	return 0
 
-/mob/living/carbon/slime/proc/gain_nutrition(var/amount)
+/mob/living/carbon/slime/proc/gain_nutrition(amount)
 	adjust_nutrition(amount)
 	if(prob(amount * 2)) // Gain around one level per 50 nutrition
 		powerlevel++
@@ -335,5 +329,5 @@
 			powerlevel = 10
 			adjustToxLoss(-10)
 
-/mob/living/carbon/slime/adjust_nutrition(var/amt)
+/mob/living/carbon/slime/adjust_nutrition(amt)
 	nutrition = Clamp(nutrition + amt, 0, get_max_nutrition())

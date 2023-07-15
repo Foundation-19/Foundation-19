@@ -12,7 +12,7 @@
 	cinematic.icon_state = "station_intact"
 	cinematic.plane = HUD_PLANE
 	cinematic.layer = HUD_ABOVE_ITEM_LAYER
-	cinematic.mouse_opacity = 2
+	cinematic.mouse_opacity = MOUSE_OPACITY_OPAQUE
 	cinematic.screen_loc = "1,0"
 
 /datum/universal_state/nuclear_explosion/OnEnter()
@@ -23,12 +23,12 @@
 
 	var/turf/T = get_turf(explosion_source)
 	if(isStationLevel(T.z))
-		to_world("<span class='danger'>The [station_name()] was destoyed by the nuclear blast!</span>")
+		to_world(SPAN_DANGER("The [station_name()] was destoyed by the nuclear blast!"))
 
 		dust_mobs(GetConnectedZlevels(T.z))
 		play_cinematic_station_destroyed()
 	else
-		to_world("<span class='danger'>A nuclear device was set off, but the explosion was out of reach of the [station_name()]!</span>")
+		to_world(SPAN_DANGER("A nuclear device was set off, but the explosion was out of reach of the [station_name()]!"))
 
 		dust_mobs(GetConnectedZlevels(T.z))
 		play_cinematic_station_unaffected()
@@ -51,7 +51,7 @@
 	if(SSticker.mode)
 		SSticker.mode.explosion_in_progress = 0
 
-/datum/universal_state/nuclear_explosion/proc/dust_mobs(var/list/affected_z_levels)
+/datum/universal_state/nuclear_explosion/proc/dust_mobs(list/affected_z_levels)
 	for(var/mob/living/L in SSmobs.mob_list)
 		var/turf/T = get_turf(L)
 		if(T && (T.z in affected_z_levels))

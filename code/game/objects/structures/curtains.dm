@@ -17,13 +17,13 @@
 
 /obj/structure/curtain/bullet_act(obj/item/projectile/P, def_zone)
 	if(!P.nodamage)
-		visible_message("<span class='warning'>[P] tears [src] down!</span>")
+		visible_message(SPAN_WARNING("[P] tears [src] down!"))
 		qdel(src)
 	else
 		..(P, def_zone)
 
 /obj/structure/curtain/attack_hand(mob/user)
-	playsound(get_turf(loc), "rustle", 15, 1, -5)
+	playsound(get_turf(loc), SFX_RUSTLE, 15, 1, -5)
 	toggle()
 	..()
 

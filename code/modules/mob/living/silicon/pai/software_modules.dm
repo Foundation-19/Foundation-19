@@ -69,7 +69,7 @@
 		if(answer == "Yes")
 			var/turf/T = get_turf_or_move(P.loc)
 			for (var/mob/v in viewers(T))
-				v.show_message("<span class='notice'>[M] presses \his thumb against [P].</span>", 3, "<span class='notice'>[P] makes a sharp clicking sound as it extracts DNA material from [M].</span>", 2)
+				v.show_message(SPAN_NOTICE("[M] presses \his thumb against [P]."), 3, SPAN_NOTICE("[P] makes a sharp clicking sound as it extracts DNA material from [M]."), 2)
 			var/datum/dna/dna = M.dna
 			to_chat(P, "<font color = red><h3>[M]'s UE string : [dna.unique_enzymes]</h3></font>")
 			if(dna.unique_enzymes == P.master_dna)
@@ -177,8 +177,8 @@
 		P.hack_aborted = 0
 		P.cable = new /obj/item/pai_cable(T)
 		for(var/mob/M in viewers(T))
-			M.show_message("<span class='warning'>A port on [P] opens to reveal [P.cable], which promptly falls to the floor.</span>", 3,
-							"<span class='warning'>You hear the soft click of something light and hard falling to the ground.</span>", 2)
+			M.show_message(SPAN_WARNING("A port on [P] opens to reveal [P.cable], which promptly falls to the floor."), 3,
+							SPAN_WARNING("You hear the soft click of something light and hard falling to the ground."), 2)
 		return 1
 
 /mob/living/silicon/pai/proc/hackloop()
@@ -276,7 +276,7 @@
 	name = "Universal Translator"
 	ram_cost = 35
 	id = "translator"
-	var/list/languages = list(LANGUAGE_ENGLISH, LANGUAGE_GUTTER, LANGUAGE_UNATHI_SINTA, LANGUAGE_SKRELLIAN, LANGUAGE_EAL, LANGUAGE_HUMAN_ARABIC, LANGUAGE_HUMAN_CHINESE, LANGUAGE_HUMAN_SPANISH, LANGUAGE_HUMAN_INDIAN, LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_HUMAN_SELENIAN)
+	var/list/languages = list(LANGUAGE_ENGLISH, LANGUAGE_GUTTER, LANGUAGE_UNATHI_SINTA, LANGUAGE_SKRELLIAN, LANGUAGE_EAL, LANGUAGE_HUMAN_ARABIC, LANGUAGE_HUMAN_CHINESE, LANGUAGE_HUMAN_SPANISH, LANGUAGE_HUMAN_INDIAN, LANGUAGE_HUMAN_RUSSIAN)
 
 /datum/pai_software/translator/toggle(mob/living/silicon/pai/user)
 	// 	Sol Common, Tradeband and Gutter are added with New() and are therefore the current default, always active languages

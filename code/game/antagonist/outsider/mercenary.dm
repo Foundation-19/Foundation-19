@@ -28,7 +28,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	global_objectives |= new /datum/objective/nuclear
 	return 1
 
-/datum/antagonist/mercenary/equip(var/mob/living/carbon/human/player)
+/datum/antagonist/mercenary/equip(mob/living/carbon/human/player)
 	if(!..())
 		return 0
 
@@ -41,13 +41,13 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	return 1
 
 /datum/antagonist/mercenary/equip_vox(mob/living/carbon/human/vox, mob/living/carbon/human/old)
-	vox.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_casual(vox), slot_w_uniform)
-	vox.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/vox(vox), slot_shoes)
-	vox.equip_to_slot_or_del(new /obj/item/clothing/gloves/vox(vox), slot_gloves)
-	vox.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/swat/vox(vox), slot_wear_mask)
-	vox.equip_to_slot_or_del(new /obj/item/tank/nitrogen(vox), slot_back)
-	vox.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(vox), slot_glasses)
-	vox.equip_to_slot_or_del(new /obj/item/card/id/syndicate(vox), slot_wear_id)
+	vox.equip_to_slot_or_store_or_drop(new /obj/item/clothing/under/vox/vox_casual(vox), slot_w_uniform)
+	vox.equip_to_slot_or_store_or_drop(new /obj/item/clothing/shoes/magboots/vox(vox), slot_shoes)
+	vox.equip_to_slot_or_store_or_drop(new /obj/item/clothing/gloves/vox(vox), slot_gloves)
+	vox.equip_to_slot_or_store_or_drop(new /obj/item/clothing/mask/gas/swat/vox(vox), slot_wear_mask)
+	vox.equip_to_slot_or_store_or_drop(new /obj/item/tank/nitrogen(vox), slot_back)
+	vox.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/sunglasses(vox), slot_glasses)
+	vox.equip_to_slot_or_store_or_drop(new /obj/item/card/id/syndicate(vox), slot_wear_id)
 	vox.put_in_hands(locate(/obj/item/device/radio/uplink) in old.contents)
 	vox.set_internals(locate(/obj/item/tank) in vox.contents)
 

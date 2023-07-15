@@ -1,12 +1,12 @@
 //Blocks an attempt to connect before even creating our client datum thing.
 /world/IsBanned(key,address,computer_id)
-	if(ckey(key) in admin_datums)
+	if(ckey(key) in GLOB.admin_datums)
 		return ..()
 
 	//Guest Checking
 	if(!config.guests_allowed && IsGuestKey(key))
 		log_access("Failed Login: [key] - Guests not allowed")
-		message_admins("<span class='notice'>Failed Login: [key] - Guests not allowed</span>")
+		message_staff(SPAN_NOTICE("Failed Login: [key] - Guests not allowed"))
 		return list("reason"="guest", "desc"="\nReason: Guests not allowed. Please sign in with a byond account.")
 
 	if(config.ban_legacy_system)
@@ -15,7 +15,7 @@
 		. = CheckBan( ckey(key), computer_id, address )
 		if(.)
 			log_access("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
-			message_admins("<span class='notice'>Failed Login: [key] id:[computer_id] ip:[address] - Banned [.["reason"]]</span>")
+			message_staff(SPAN_NOTICE("Failed Login: [key] id:[computer_id] ip:[address] - Banned [.["reason"]]"))
 			return .
 
 		return ..()	//default pager ban stuff
@@ -24,7 +24,7 @@
 
 		var/ckeytext = ckey(key)
 
-		if(!establish_db_connection())
+		if(!SSdbcore.Connect())
 			error("Ban database connection failure. Key [ckeytext] not checked")
 			log_misc("Ban database connection failure. Key [ckeytext] not checked")
 			return
@@ -33,7 +33,7 @@
 		var/failedip = 1
 
 		if (config.minimum_player_age && get_player_age(key) < config.minimum_player_age)
-			message_admins("[key] tried to join but did not meet the configured minimum player age.")
+			message_staff("[key] tried to join but did not meet the configured minimum player age.")
 			return list("reason"="player age", "desc"="This server is not currently allowing accounts with a low number of days since first connection to join.")
 
 		var/ipquery = ""
@@ -47,7 +47,6 @@
 			cidquery = " OR computerid = '[computer_id]' "
 
 		var/datum/db_query/query = SSdbcore.NewQuery("SELECT ckey, ip, computerid, a_ckey, reason, expiration_time, duration, bantime, bantype FROM erro_ban WHERE (ckey = '[ckeytext]' [ipquery] [cidquery]) AND (bantype = 'PERMABAN'  OR (bantype = 'TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned)")
-		// Hello future person doing work on this - yes, this query is never qdel'd but the DB ban system is deprecated until further notice since it's too outdated. -Cupa
 
 		query.Execute()
 
@@ -69,9 +68,10 @@
 			var/desc = "\nReason: You, or another user of this computer or connection ([pckey]) is banned from playing here. The ban reason is:\n[reason]\nThis ban was applied by [ackey] on [bantime], [expires]"
 
 			return list("reason"="[bantype]", "desc"="[desc]")
+		qdel(query)
 
 		if (failedcid)
-			message_admins("[key] has logged in with a blank computer id in the ban check.")
+			message_staff("[key] has logged in with a blank computer id in the ban check.")
 		if (failedip)
-			message_admins("[key] has logged in with a blank ip in the ban check.")
+			message_staff("[key] has logged in with a blank ip in the ban check.")
 		return ..()	//default pager ban stuff

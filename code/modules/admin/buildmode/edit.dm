@@ -9,11 +9,11 @@
 	. = ..()
 
 /datum/build_mode/edit/Help()
-	to_chat(user, "<span class='notice'>***********************************************************</span>")
-	to_chat(user, "<span class='notice'>Right Click on Build Mode Button = Select var & value</span>")
-	to_chat(user, "<span class='notice'>Left Click                       = Sets the var's value</span>")
-	to_chat(user, "<span class='notice'>Right Click                      = Reset the var's value</span>")
-	to_chat(user, "<span class='notice'>***********************************************************</span>")
+	to_chat(user, SPAN_NOTICE("***********************************************************"))
+	to_chat(user, SPAN_NOTICE("Right Click on Build Mode Button = Select var & value"))
+	to_chat(user, SPAN_NOTICE("Left Click                       = Sets the var's value"))
+	to_chat(user, SPAN_NOTICE("Right Click                      = Reset the var's value"))
+	to_chat(user, SPAN_NOTICE("***********************************************************"))
 
 /datum/build_mode/edit/Configurate()
 	var/var_name = input("Enter variable name:", "Name", var_to_edit) as text|null
@@ -40,7 +40,7 @@
 		var_to_edit = var_name
 		SetValue(new_value)
 
-/datum/build_mode/edit/OnClick(var/atom/A, var/list/parameters)
+/datum/build_mode/edit/OnClick(atom/A, list/parameters)
 	if(!A.may_edit_var(usr, var_to_edit))
 		return
 
@@ -54,17 +54,17 @@
 	if(old_value == new_value)
 		return
 	A.vars[var_to_edit] = new_value
-	to_chat(user, "<span class='notice'>Changed the value of [var_to_edit] from '[old_value]' to '[new_value]'.</span>")
+	to_chat(user, SPAN_NOTICE("Changed the value of [var_to_edit] from '[old_value]' to '[new_value]'."))
 	Log("[log_info_line(A)] - [var_to_edit] - [old_value] -> [new_value]")
 
-/datum/build_mode/edit/proc/SetValue(var/new_value)
+/datum/build_mode/edit/proc/SetValue(new_value)
 	if(value_to_set == new_value)
 		return
 	ClearValue()
 	value_to_set = new_value
 	GLOB.destroyed_event.register(value_to_set, src, /datum/build_mode/edit/proc/ClearValue)
 
-/datum/build_mode/edit/proc/ClearValue(var/feedback)
+/datum/build_mode/edit/proc/ClearValue(feedback)
 	if(!istype(value_to_set, /datum))
 		return
 

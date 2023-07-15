@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 		. -= round(H.shock_stage * 0.5)
 		if(H.eye_blurry)
 			. -= 20
-		if(H.eye_blind)
+		if(!H.can_see())
 			. -= 60
 
 	if(delicate)
@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 			. -= 10
 	. = max(., 0)
 
-/proc/spread_germs_to_organ(var/obj/item/organ/external/E, var/mob/living/carbon/human/user)
+/proc/spread_germs_to_organ(obj/item/organ/external/E, mob/living/carbon/human/user)
 	if(!istype(user) || !istype(E)) return
 
 	var/germ_level = user.germ_level

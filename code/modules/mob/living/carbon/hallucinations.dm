@@ -14,16 +14,16 @@
 /mob/living/carbon/proc/handle_hallucinations()
 	//Tick down the duration
 	hallucination_duration = max(0, hallucination_duration - 1)
-	if(chem_effects[CE_MIND] > 0)
+	if(chem_effects[CE_HALLUCINATION] > 0)
 		hallucination_duration = max(0, hallucination_duration - 1)
 
 	//Adjust power if we have some chems that affect it
-	if(chem_effects[CE_MIND] < 0)
+	if(chem_effects[CE_HALLUCINATION] < 0)
 		hallucination_power = min(hallucination_power++, 50)
-	if(chem_effects[CE_MIND] < -1)
+	if(chem_effects[CE_HALLUCINATION] < -1)
 		hallucination_power = hallucination_power++
-	if(chem_effects[CE_MIND] > 0)
-		hallucination_power = max(hallucination_power - chem_effects[CE_MIND], 0)
+	if(chem_effects[CE_HALLUCINATION] > 0)
+		hallucination_power = max(hallucination_power - chem_effects[CE_HALLUCINATION], 0)
 
 	//See if hallucination is gone
 	if(!hallucination_power)
@@ -35,7 +35,7 @@
 
 	if(!client || stat || world.time < next_hallucination)
 		return
-	if(chem_effects[CE_MIND] > 0 && prob(chem_effects[CE_MIND]*40)) //antipsychotics help
+	if(chem_effects[CE_HALLUCINATION] > 0 && prob(chem_effects[CE_HALLUCINATION]*40)) //antipsychotics help
 		return
 	var/hall_delay = rand(10,20) SECONDS
 
@@ -67,7 +67,7 @@
 
 /datum/hallucination/proc/end()
 
-/datum/hallucination/proc/can_affect(var/mob/living/carbon/C)
+/datum/hallucination/proc/can_affect(mob/living/carbon/C)
 	if(!C.client)
 		return 0
 	if(min_power > C.hallucination_power)
@@ -133,7 +133,7 @@
 	holder.playsound_local(origin,gunshot,50)
 
 //Hearing someone talking to/about you.
-/datum/hallucination/talking/can_affect(var/mob/living/carbon/C)
+/datum/hallucination/talking/can_affect(mob/living/carbon/C)
 	if(!..())
 		return 0
 	for(var/mob/living/M in oview(C))
@@ -158,10 +158,10 @@
 			if(holder.hallucination_power > 50)
 				phrases += list("What did you come here for[add]?","Don't touch me[add].","You're not getting out of here[add].", "You are a failure, [pick(names)].","Just kill yourself already, [pick(names)]")
 			message = pick(phrases)
-			to_chat(holder,"<span class='game say'><span class='name'>[talker.name]</span> [holder.say_quote(message)], <span class='message'><span class='body'>\"[message]\"</span></span></span>")
+			to_chat(holder,SPAN_CLASS("game say","<span class='name'>[talker.name]</span> [holder.say_quote(message)], <span class='message'><span class='body'>\"[message]\"</span></span>"))
 		else
 			to_chat(holder,"<B>[talker.name]</B> points at [holder.name]")
-			to_chat(holder,"<span class='game say'><span class='name'>[talker.name]</span> says something softly.</span>")
+			to_chat(holder,SPAN_CLASS("game say","<span class='name'>[talker.name]</span> says something softly."))
 		var/image/speech_bubble = image('icons/mob/talk.dmi',talker,"h[holder.say_test(message)]")
 		spawn(30) qdel(speech_bubble)
 		image_to(holder,speech_bubble)
@@ -171,7 +171,7 @@
 
 //Spiderling skitters
 /datum/hallucination/skitter/start()
-	to_chat(holder,"<span class='notice'>The spiderling skitters[pick(" away"," around","")].</span>")
+	to_chat(holder,SPAN_NOTICE("The spiderling skitters[pick(" away"," around","")]."))
 
 //Spiders in your body
 /datum/hallucination/spiderbabies
@@ -181,7 +181,7 @@
 	if(istype(holder,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = holder
 		var/obj/O = pick(H.organs)
-		to_chat(H,"<span class='warning'>You feel something [pick("moving","squirming","skittering")] inside of your [O.name]!</span>")
+		to_chat(H,SPAN_WARNING("You feel something [pick("moving","squirming","skittering")] inside of your [O.name]!"))
 
 //Seeing stuff
 /datum/hallucination/mirage
@@ -220,7 +220,7 @@
 	number = 2
 
 /datum/hallucination/mirage/money/generate_mirage()
-	return image('icons/obj/items.dmi', "spacecash[pick(1000,500,200,100,50)]", layer = BELOW_TABLE_LAYER)
+	return image('icons/obj/items.dmi', "cash[pick(1000,500,200,100,50)]", layer = BELOW_TABLE_LAYER)
 
 //Blood and aftermath of firefight
 /datum/hallucination/mirage/carnage
@@ -244,7 +244,7 @@
 /datum/hallucination/fakeattack
 	min_power = 30
 
-/datum/hallucination/fakeattack/can_affect(var/mob/living/carbon/C)
+/datum/hallucination/fakeattack/can_affect(mob/living/carbon/C)
 	if(!..())
 		return 0
 	for(var/mob/living/M in oview(C,1))
@@ -252,8 +252,8 @@
 
 /datum/hallucination/fakeattack/start()
 	for(var/mob/living/M in oview(holder,1))
-		to_chat(holder, "<span class='danger'>[M] has punched [holder]!</span>")
-		holder.playsound_local(get_turf(holder),"punch",50)
+		to_chat(holder, SPAN_DANGER("[M] has punched [holder]!"))
+		holder.playsound_local(get_turf(holder),SFX_PUNCH,50)
 
 //Fake injection
 /datum/hallucination/fakeattack/hypo

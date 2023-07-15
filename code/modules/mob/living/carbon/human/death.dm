@@ -30,7 +30,7 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 	BITSET(hud_updateflag, STATUS_HUD)
 	BITSET(hud_updateflag, LIFE_HUD)
-	
+
 	//Handle species-specific deaths.
 	species.handle_death(src)
 
@@ -54,7 +54,7 @@
 				B.host_brain.SetName("host brain")
 				B.host_brain.real_name = "host brain"
 
-			verbs -= /mob/living/carbon/proc/release_control
+			remove_verb(src, /mob/living/carbon/proc/release_control)
 
 	callHook("death", list(src, gibbed))
 
@@ -62,7 +62,7 @@
 		SSticker.mode.check_win()
 
 	if(wearing_rig)
-		wearing_rig.notify_ai("<span class='danger'>Warning: user death event. Mobility control passed to integrated intelligence system.</span>")
+		wearing_rig.notify_ai(SPAN_DANGER("Warning: user death event. Mobility control passed to integrated intelligence system."))
 
 	. = ..(gibbed,"no message")
 	if(!gibbed)

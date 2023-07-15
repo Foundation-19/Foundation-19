@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 //NOTE: Breathing happens once per FOUR TICKS, unless the last breath fails. In which case it happens once per ONE TICK! So oxyloss healing is done once per 4 ticks while oxyloss damage is applied once per tick!
 #define HUMAN_MAX_OXYLOSS 1 //Defines how much oxyloss humans can get per tick. A tile with no air at all (such as space) applies this value, otherwise it's a percentage of it.
 
@@ -39,7 +37,8 @@
 	var/temperature_alert = 0
 	var/heartbeat = 0
 	var/stamina = 100
-	var/obj/screen/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/obj/screen/fov/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/obj/screen/fov_mask/fov_mask
 	var/usefov = 1
 
 /mob/living/carbon/human/Life()
@@ -83,9 +82,15 @@
 
 		handle_medical_side_effects()
 
+		var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
+		eyes?.handle_blink()
+
 		if(!client && !mind)
 			species.handle_npc(src)
 
+
+	if (prob(1) && prob(5) && type == /mob/living/carbon/human && !isscp049_1(src) && !pestilence) // a 1 in 2,000 chance every 2 seconds = 66 minutes?
+		pestilence = TRUE
 
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
@@ -96,7 +101,7 @@
 /mob/living/carbon/human/get_stamina()
 	return stamina
 
-/mob/living/carbon/human/adjust_stamina(var/amt)
+/mob/living/carbon/human/adjust_stamina(amt)
 	var/last_stamina = stamina
 	if(stat == DEAD)
 		stamina = 0
@@ -114,7 +119,7 @@
 		var/mod = (lying + (nutrition / initial(nutrition))) / 2
 		adjust_stamina(max(config.minimum_stamina_recovery, config.maximum_stamina_recovery * mod) * (1+chem_effects[CE_ENERGETIC]))
 
-/mob/living/carbon/human/set_stat(var/new_stat)
+/mob/living/carbon/human/set_stat(new_stat)
 	var/old_stat = stat
 	. = ..()
 	if(stat)
@@ -158,7 +163,7 @@
 	return pressure_adjustment_coefficient
 
 // Calculate how much of the environment pressure-difference affects the human.
-/mob/living/carbon/human/calculate_affecting_pressure(var/pressure)
+/mob/living/carbon/human/calculate_affecting_pressure(pressure)
 	var/pressure_difference
 
 	// First get the absolute pressure difference.
@@ -259,13 +264,13 @@
 			if(!isSynthetic())
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 					radiation -= 5 * RADIATION_SPEED_COEFFICIENT
-					to_chat(src, "<span class='warning'>You feel weak.</span>")
+					to_chat(src, SPAN_WARNING("You feel weak."))
 					Weaken(3)
 					if(!lying)
 						emote("collapse")
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT) && species.get_bodytype(src) == SPECIES_HUMAN) //apes go bald
 					if((h_style != "Bald" || f_style != "Shaved" ))
-						to_chat(src, "<span class='warning'>Your hair falls out.</span>")
+						to_chat(src, SPAN_WARNING("Your hair falls out."))
 						h_style = "Bald"
 						f_style = "Shaved"
 						update_hair()
@@ -277,7 +282,7 @@
 				if(prob(5))
 					take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
 				if(prob(1))
-					to_chat(src, "<span class='warning'>You feel strange!</span>")
+					to_chat(src, SPAN_WARNING("You feel strange!"))
 					adjustCloneLoss(5 * RADIATION_SPEED_COEFFICIENT)
 					emote("gasp")
 		if(radiation > 150)
@@ -295,7 +300,7 @@
 
 	/** breathing **/
 
-/mob/living/carbon/human/handle_chemical_smoke(var/datum/gas_mixture/environment)
+/mob/living/carbon/human/handle_chemical_smoke(datum/gas_mixture/environment)
 	if(wear_mask && (wear_mask.item_flags & ITEM_FLAG_BLOCK_GAS_SMOKE_EFFECT))
 		return
 	if(glasses && (glasses.item_flags & ITEM_FLAG_BLOCK_GAS_SMOKE_EFFECT))
@@ -514,7 +519,7 @@
 	var/thermal_protection_flags = get_cold_protection_flags(temperature)
 	return get_thermal_protection(thermal_protection_flags)
 
-/mob/living/carbon/human/proc/get_thermal_protection(var/flags)
+/mob/living/carbon/human/proc/get_thermal_protection(flags)
 	.=0
 	if(flags)
 		if(flags & HEAD)
@@ -604,7 +609,7 @@
 
 		if(get_shock() >= species.total_health)
 			if(!stat)
-				to_chat(src, "<span class='warning'>[species.halloss_message_self]</span>")
+				to_chat(src, SPAN_WARNING("[species.halloss_message_self]"))
 				src.visible_message("<B>[src]</B> [species.halloss_message]")
 			Paralyse(10)
 
@@ -651,7 +656,7 @@
 				var/zzzchance = min(5, 5*drowsyness/30)
 				if((prob(zzzchance) || drowsyness >= 60))
 					if(stat == CONSCIOUS)
-						to_chat(src, "<span class='notice'>You are about to fall asleep...</span>")
+						to_chat(src, SPAN_NOTICE("You are about to fall asleep..."))
 					Sleeping(5)
 
 		// If you're dirty, your gloves will become dirty, too.
@@ -674,7 +679,7 @@
 		if(stasis_value > 1 && drowsyness < stasis_value * 4)
 			drowsyness += min(stasis_value, 3)
 			if(!stat && prob(1))
-				to_chat(src, "<span class='notice'>You feel slow and sluggish...</span>")
+				to_chat(src, SPAN_NOTICE("You feel slow and sluggish..."))
 
 	return 1
 
@@ -738,7 +743,9 @@
 
 		if(healths)
 			healths.cut_overlays()
-			if (chem_effects[CE_PAINKILLER] > 100)
+			var/painkiller_mult = chem_effects[CE_PAINKILLER] / 100
+
+			if(painkiller_mult >= 1)
 				healths.icon_state = "health_numb"
 			else
 				// Generate a by-limb health display.
@@ -750,7 +757,7 @@
 				// Collect and apply the images all at once to avoid appearance churn.
 				var/list/health_images = list()
 				for(var/obj/item/organ/external/E in organs)
-					health_images += E.get_damage_hud_image()
+					health_images += E.get_damage_hud_image(painkiller_mult)
 
 				// Apply a fire overlay if we're burning.
 				if(on_fire)
@@ -783,6 +790,25 @@
 				if(250 to 350)					hydration_icon.icon_state = "hydration2"
 				if(150 to 250)					hydration_icon.icon_state = "hydration3"
 				else							hydration_icon.icon_state = "hydration4"
+
+		if(sanity_icon)
+			var/sanity_lvl = getSanityLevel()
+			switch(sanity_lvl)
+				if(SL_SANE)						sanity_icon.icon_state = "sanity1"
+				if(SL_STRESSED)					sanity_icon.icon_state = "sanity2"
+				if(SL_DISTRESSED)				sanity_icon.icon_state = "sanity3"
+				if(SL_INSANE)					sanity_icon.icon_state = "sanity4"
+				else							sanity_icon.icon_state = "sanity-none" // fallback
+
+		if(blink_icon)
+			var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
+			switch(eyes?.get_blink())
+				if(B_OPEN)						blink_icon.icon_state = "blink_4"
+				if(B_3)							blink_icon.icon_state = "blink_3"
+				if(B_2)							blink_icon.icon_state = "blink_2"
+				if(B_1)							blink_icon.icon_state = "blink_1"
+				else							blink_icon.icon_state = "blink_off"
+			if(eye_blind)					blink_icon.icon_state = "blink_0" //Blinking assigns new times before humans finish blinking, so we need this
 
 		if(cells && isSynthetic())
 			var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]
@@ -871,13 +897,13 @@
 	if(isturf(loc) && rand(1,1000) == 1)
 		var/turf/T = loc
 		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			playsound_local(src,pick(GLOB.scarySounds),50, 1, -1)
+			playsound_local(src, SFX_SCARY_SOUND, 50, 1, -1)
 
 	var/area/A = get_area(src)
 	if(client && world.time >= client.played + 600)
 		A.play_ambience(src)
 	if(stat == UNCONSCIOUS && world.time - l_move_time < 5 && prob(10))
-		to_chat(src,"<span class='notice'>You feel like you're [pick("moving","flying","floating","falling","hovering")].</span>")
+		to_chat(src,SPAN_NOTICE("You feel like you're [pick("moving","flying","floating","falling","hovering")]."))
 
 /mob/living/carbon/human/proc/handle_changeling()
 	if(mind?.changeling)
@@ -961,6 +987,18 @@
 		else
 			holder.icon_state = "[pulse()]"
 		hud_list[HEALTH_HUD] = holder
+
+	if (BITTEST(hud_updateflag, BLINK_HUD) && hud_list[BLINK_HUD])
+		var/image/holder = hud_list[BLINK_HUD]
+		if(is_blinking)
+			if(eye_blind > 0) //Blink mechanics apply new blink times even while the victim is still blind, so this check is neccesary
+				holder.icon_state = "0"
+			else if(LAZYLEN(blink_causers) ? !can_see(blink_causers[1]) : !can_see()) //If victim cant see the blink_causer, updates HUD to "away" to alert blink HUD users
+				holder.icon_state = "away"
+			else
+				var/blink_timer_mapped = ceil((Clamp(((blink_current / blink_total) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
+				holder.icon_state = "[blink_timer_mapped]"
+		hud_list[BLINK_HUD] = holder
 
 	if (BITTEST(hud_updateflag, LIFE_HUD) && hud_list[LIFE_HUD])
 		var/image/holder = hud_list[LIFE_HUD]
@@ -1138,7 +1176,7 @@
 			remoteview_target = null
 			reset_view(null, 0)
 
-	update_equipment_vision()
+	update_audiovisual_equipment_protection()
 	species.handle_vision(src)
 
 /mob/living/carbon/human/update_living_sight()

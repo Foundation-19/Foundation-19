@@ -13,7 +13,7 @@
 	var/panel_file = 'icons/obj/doors/hazard/panel.dmi'
 	var/welded_file = 'icons/obj/doors/hazard/welded.dmi'
 	icon_state = "open"
-	req_access = list(list(access_atmospherics, access_engine_equip))
+	req_access = list(list(ACCESS_ATMOSPHERICS, ACCESS_ENGINEERING_LVL2))
 	autoset_access = FALSE
 	opacity = FALSE
 	density = FALSE
@@ -144,7 +144,7 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/door/firedoor/attack_generic(var/mob/user, var/damage)
+/obj/machinery/door/firedoor/attack_generic(mob/user, damage)
 	playsound(loc, 'sound/weapons/tablehit1.ogg', 50, 1)
 	if(stat & BROKEN)
 		qdel(src)
@@ -311,7 +311,7 @@
 			return
 	return ..()
 
-/obj/machinery/door/firedoor/deconstruct(mob/user, var/moved = FALSE)
+/obj/machinery/door/firedoor/deconstruct(mob/user, moved = FALSE)
 	if (stat & BROKEN)
 		new /obj/item/stock_parts/circuitboard/broken(loc)
 	else
@@ -437,7 +437,7 @@
 	closing = FALSE
 	return ..()
 
-/obj/machinery/door/firedoor/open(var/forced = FALSE)
+/obj/machinery/door/firedoor/open(forced = FALSE)
 	if(hatch_open)
 		hatch_open = FALSE
 		visible_message(SPAN_NOTICE("\The [src]'s maintenance hatch falls shut as it moves."))
@@ -449,7 +449,7 @@
 		else
 			use_power_oneoff(360)
 	else
-		log_and_message_admins("has forced open an emergency shutter.")
+		log_and_message_staff("has forced open an emergency shutter.")
 	latetoggle()
 	playsound(loc, open_sound, 25, TRUE)
 	return ..()

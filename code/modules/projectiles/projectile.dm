@@ -7,10 +7,10 @@
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "bullet"
 	density = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	anchored = TRUE //There's a reason this is here, Mport. God fucking damn it -Agouri. Find&Fix by Pete. The reason this is here is to stop the curving of emitter shots.
 	pass_flags = PASS_FLAG_TABLE
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	randpixel = 0
 	var/bumped = 0		//Prevents it from hitting more than one guy at once
 	var/def_zone = ""	//Aiming at
@@ -109,7 +109,7 @@
 	return damage_flags
 
 //TODO: make it so this is called more reliably, instead of sometimes by bullet_act() and sometimes not
-/obj/item/projectile/proc/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
+/obj/item/projectile/proc/on_hit(atom/target, blocked = 0, def_zone = null)
 	if(blocked >= 100)		return FALSE //Full block
 	if(!isliving(target))	return FALSE
 	if(isanimal(target))	return FALSE
@@ -124,7 +124,7 @@
 	return TRUE
 
 //called when the projectile stops flying because it collided with something
-/obj/item/projectile/proc/on_impact(var/atom/A)
+/obj/item/projectile/proc/on_impact(atom/A)
 	if(damage && damage_type == BURN)
 		var/turf/T = get_turf(A)
 		if(T)
@@ -143,7 +143,7 @@
 	return FALSE
 
 //return TRUE if the projectile should be allowed to pass through after all, FALSE if not.
-/obj/item/projectile/proc/check_penetrate(var/atom/A)
+/obj/item/projectile/proc/check_penetrate(atom/A)
 	return TRUE
 
 //called to launch a projectile
@@ -158,11 +158,11 @@
 	return fire(Angle_override, direct_target)
 
 //called to launch a projectile from a gun
-/obj/item/projectile/proc/launch_from_gun(atom/target, target_zone, mob/user, params, Angle_override, forced_spread, var/obj/item/gun/launcher)
+/obj/item/projectile/proc/launch_from_gun(atom/target, target_zone, mob/user, params, Angle_override, forced_spread, obj/item/gun/launcher)
 	return launch(target, target_zone, user, params)
 
 //sets the click point of the projectile using mouse input params
-/obj/item/projectile/proc/set_clickpoint(var/params)
+/obj/item/projectile/proc/set_clickpoint(params)
 	var/list/mouse_control = params2list(params)
 	if(mouse_control["icon-x"])
 		p_x = text2num(mouse_control["icon-x"])
@@ -176,7 +176,7 @@
 		p_y = between(0, p_y + rand(-radius, radius), world.icon_size)
 
 //Used to change the direction of the projectile in flight.
-/obj/item/projectile/proc/redirect(var/new_x, var/new_y, var/atom/starting_loc, var/mob/new_firer=null, var/is_ricochet = FALSE)
+/obj/item/projectile/proc/redirect(new_x, new_y, atom/starting_loc, mob/new_firer=null, is_ricochet = FALSE)
 	var/turf/starting_turf = get_turf(src)
 	var/turf/new_target = locate(new_x, new_y, src.z)
 
@@ -189,7 +189,7 @@
 	setAngle(new_Angle)
 
 //Called when the projectile intercepts a mob. Returns 1 if the projectile hit the mob, 0 if it missed and should keep flying.
-/obj/item/projectile/proc/attack_mob(var/mob/living/target_mob, var/distance, var/special_miss_modifier=0)
+/obj/item/projectile/proc/attack_mob(mob/living/target_mob, distance, special_miss_modifier=0)
 	if(!istype(target_mob))
 		return
 
@@ -235,16 +235,16 @@
 
 	if(result == PROJECTILE_FORCE_MISS)
 		if(!silenced)
-			target_mob.visible_message("<span class='notice'>\The [src] misses [target_mob] narrowly!</span>")
+			target_mob.visible_message(SPAN_NOTICE("\The [src] misses [target_mob] narrowly!"))
 			if(LAZYLEN(miss_sounds))
 				playsound(target_mob.loc, pick(miss_sounds), 60, 1)
 		return FALSE
 
 	//hit messages
 	if(silenced)
-		to_chat(target_mob, "<span class='danger'>You've been hit in the [parse_zone(def_zone)] by \the [src]!</span>")
+		to_chat(target_mob, SPAN_DANGER("You've been hit in the [parse_zone(def_zone)] by \the [src]!"))
 	else
-		target_mob.visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
+		target_mob.visible_message(SPAN_DANGER("\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!"))//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
 
 	//admin logs
 	if(!no_attack_log)
@@ -285,7 +285,7 @@
 			//if they have a neck grab on someone, that person gets hit instead
 			var/obj/item/grab/G = locate() in M
 			if(G?.shield_assailant())
-				visible_message("<span class='danger'>\The [M] uses [G.affecting] as a shield!</span>")
+				visible_message(SPAN_DANGER("\The [M] uses [G.affecting] as a shield!"))
 				if(Bump(G.affecting, forced=1))
 					return //If Bump() returns 0 (keep going) then we continue on to attack M.
 
@@ -364,7 +364,7 @@
 	if(shrapnel_type)
 		var/obj/item/SP = new shrapnel_type()
 		SP.SetName((name != "shrapnel")? "[name] shrapnel" : "shrapnel")
-		SP.desc += " It looks like it was fired from [shot_from]."
+		SP.desc += " It looks like it was fired from \the [shot_from]."
 		return SP
 
 /obj/item/projectile/proc/old_style_target(atom/target, atom/source)
@@ -491,7 +491,7 @@
 	check_distance_left()
 
 //Returns true if the target atom is on our current turf and above the right layer
-/obj/item/projectile/proc/can_hit_target(atom/target, var/list/passthrough)
+/obj/item/projectile/proc/can_hit_target(atom/target, list/passthrough)
 	return (target && ((target.layer >= TURF_LAYER + 0.3) || ismob(target)) && (loc == get_turf(target)) && (!(target in passthrough)))
 
 /proc/calculate_projectile_Angle_and_pixel_offsets(mob/user, params)
@@ -674,5 +674,5 @@
 		beam_segments = null
 		QDEL_NULL(beam_index)
 
-/obj/item/projectile/proc/update_effect(var/obj/effect/projectile/effect)
+/obj/item/projectile/proc/update_effect(obj/effect/projectile/effect)
 	return

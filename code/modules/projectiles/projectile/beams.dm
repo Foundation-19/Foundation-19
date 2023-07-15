@@ -141,7 +141,7 @@
 		list(11, 0.97),
 	)
 
-/obj/item/projectile/beam/pulse/destroy/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/pulse/destroy/on_hit(atom/target, blocked = 0)
 	if(isturf(target))
 		target.ex_act(2)
 	..()
@@ -181,7 +181,7 @@
 	tracer_type = /obj/effect/projectile/tracer/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue
 
-/obj/item/projectile/beam/lastertag/blue/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/lastertag/blue/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/M = target
 		if(istype(M.wear_suit, /obj/item/clothing/suit/redtag))
@@ -196,7 +196,7 @@
 	no_attack_log = TRUE
 	damage_type = BURN
 
-/obj/item/projectile/beam/lastertag/red/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/lastertag/red/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/M = target
 		if(istype(M.wear_suit, /obj/item/clothing/suit/bluetag))
@@ -214,7 +214,7 @@
 	tracer_type = /obj/effect/projectile/tracer/cult
 	impact_type = /obj/effect/projectile/impact/cult
 
-/obj/item/projectile/beam/lastertag/omni/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/lastertag/omni/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/M = target
 		if((istype(M.wear_suit, /obj/item/clothing/suit/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/redtag)))
@@ -331,7 +331,7 @@
 	tracer_type = /obj/effect/projectile/tracer/plasma_cutter
 	impact_type = /obj/effect/projectile/impact/plasma_cutter
 
-/obj/item/projectile/beam/plasmacutter/on_impact(var/atom/A)
+/obj/item/projectile/beam/plasmacutter/on_impact(atom/A)
 	if(istype(A, /turf/simulated/mineral))
 		var/turf/simulated/mineral/M = A
 		M.GetDrilled(1)
@@ -356,7 +356,7 @@
 	tracer_type = /obj/effect/projectile/tracer/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
 
-/obj/item/projectile/beam/confuseray/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/confuseray/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
 		var/potency = rand(potency_min, potency_max)
@@ -437,10 +437,30 @@
 	tracer_type = /obj/effect/projectile/tracer/incen
 	impact_type = /obj/effect/projectile/impact/incen
 
-/obj/item/projectile/beam/incendiary_laser/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/incendiary_laser/on_hit(atom/target, blocked = 0)
 	..()
 	if(isliving(target))
 		var/mob/living/L = target
 		L.adjust_fire_stacks(rand(2,4))
 		if(L.fire_stacks >= 3)
 			L.IgniteMob()
+
+/obj/item/projectile/beam/gigabeam
+	name = "concentrated energy beam" // Used by mega hivebot
+	icon_state = "emitter"
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	damage = 35
+	agony = 5
+	eyeblur = 5
+	sharp = FALSE
+	life_span = 20
+	penetration_modifier = 0.5
+
+	muzzle_type = /obj/effect/projectile/muzzle/emitter
+	tracer_type = /obj/effect/projectile/tracer/emitter
+	impact_type = /obj/effect/projectile/impact/emitter
+
+/obj/item/projectile/beam/gigabeam/on_hit(atom/target, blocked = 0)
+	..()
+	var/turf/T = get_turf(target)
+	explosion(T, 1, 3, 5)

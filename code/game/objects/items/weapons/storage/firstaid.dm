@@ -17,6 +17,15 @@
 	max_storage_space = DEFAULT_BOX_STORAGE
 	use_sound = 'sound/effects/storage/box.ogg'
 
+/obj/item/storage/firstaid/open(mob/user)
+	. = ..()
+	icon_state = "firstaidopen"
+
+/obj/item/storage/firstaid/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/empty
 	icon_state = "firstaid"
 	name = "First-Aid (empty)"
@@ -46,6 +55,15 @@
 	..()
 	icon_state = pick("radfirstaid", "radfirstaid2")
 
+/obj/item/storage/firstaid/trauma/open(mob/user)
+	. = ..()
+	icon_state = "radopen"
+
+/obj/item/storage/firstaid/trauma/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
 	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
@@ -59,6 +77,15 @@
 /obj/item/storage/firstaid/fire/New()
 	..()
 	icon_state = pick("ointment","firefirstaid")
+
+/obj/item/storage/firstaid/fire/open(mob/user)
+	. = ..()
+	icon_state = "fireopen"
+
+/obj/item/storage/firstaid/fire/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/toxin
 	name = "toxin first aid"
@@ -74,6 +101,15 @@
 	..()
 	icon_state = pick("antitoxin","antitoxfirstaid")
 
+/obj/item/storage/firstaid/toxin/open(mob/user)
+	. = ..()
+	icon_state = "toxinopen"
+
+/obj/item/storage/firstaid/toxin/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation first aid"
 	desc = "A box full of oxygen goodies."
@@ -83,6 +119,15 @@
 	startswith = list(
 		/obj/item/storage/med_pouch/oxyloss = 4
 		)
+
+/obj/item/storage/firstaid/o2/open(mob/user)
+	. = ..()
+	icon_state = "o2open"
+
+/obj/item/storage/firstaid/o2/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/adv
 	name = "advanced first-aid kit"
@@ -96,6 +141,15 @@
 		/obj/item/stack/medical/advanced/ointment = 2,
 		/obj/item/stack/medical/splint
 		)
+
+/obj/item/storage/firstaid/adv/open(mob/user)
+	. = ..()
+	icon_state = "doctor-kitopen"
+
+/obj/item/storage/firstaid/adv/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/combat
 	name = "combat medical kit"
@@ -112,6 +166,15 @@
 		/obj/item/storage/pill_bottle/spaceacillin,
 		/obj/item/stack/medical/splint,
 		)
+
+/obj/item/storage/firstaid/combat/open(mob/user)
+	. = ..()
+	icon_state = "bezerkopen"
+
+/obj/item/storage/firstaid/combat/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/stab
 	name = "stabilisation first aid"
@@ -165,6 +228,15 @@
 		/obj/item/stack/medical/advanced/bruise_pack,
 		)
 
+/obj/item/storage/firstaid/surgery/open(mob/user)
+	. = ..()
+	icon_state = "surgerykitopen"
+
+/obj/item/storage/firstaid/surgery/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /*
  * Pill Bottles
  */
@@ -189,11 +261,11 @@
 	if(!proximity_flag || !istype(target) || target != user)
 		return 1
 	if(!contents.len)
-		to_chat(user, "<span class='warning'>It's empty!</span>")
+		to_chat(user, SPAN_WARNING("It's empty!"))
 		return 1
 	var/zone = user.zone_sel.selecting
 	if(zone == BP_MOUTH && target.can_eat())
-		user.visible_message("<span class='notice'>[user] pops a pill from \the [src].</span>")
+		user.visible_message(SPAN_NOTICE("[user] pops a pill from \the [src]."))
 		playsound(get_turf(src), 'sound/effects/peelz.ogg', 50)
 		var/list/peelz = filter_list(contents,/obj/item/reagent_containers/pill)
 		if(peelz.len)
@@ -220,22 +292,22 @@
 
 /obj/item/storage/pill_bottle/attack_self(mob/living/user)
 	if(user.get_inactive_hand())
-		to_chat(user, "<span class='notice'>You need an empty hand to take something out.</span>")
+		to_chat(user, SPAN_NOTICE("You need an empty hand to take something out."))
 		return
 	if(contents.len)
 		var/obj/item/I = contents[1]
 		if(!remove_from_storage(I,user))
 			return
 		if(user.put_in_inactive_hand(I))
-			to_chat(user, "<span class='notice'>You take \the [I] out of \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You take \the [I] out of \the [src]."))
 			if(iscarbon(user))
 				var/mob/living/carbon/C = user
 				C.swap_hand()
 		else
 			I.dropInto(loc)
-			to_chat(user, "<span class='notice'>You fumble around with \the [src] and drop \the [I] on the floor.</span>")
+			to_chat(user, SPAN_NOTICE("You fumble around with \the [src] and drop \the [I] on the floor."))
 	else
-		to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is empty."))
 
 
 /obj/item/storage/pill_bottle/Initialize()

@@ -16,12 +16,6 @@
 	item_cost = 16
 	path = /obj/item/device/uplink_service/jamming/garble
 
-/datum/uplink_item/item/services/fake_rad_storm
-	name = "Radiation Storm Announcement"
-	desc = "A single-use device, that when activated, fakes an announcement, so people run to the tunnels in fear of being irradiated! "
-	item_cost = 24
-	path = /obj/item/device/uplink_service/fake_rad_storm
-
 /datum/uplink_item/item/services/fake_crew_annoncement
 	name = "Crew Arrival Announcement and Records"
 	desc = "A single-use device, that when activated, creates a fake crew arrival announcement as well as fake crew records, using your current appearance (including held items!) and worn id card. Prepare well!"
@@ -79,9 +73,9 @@
 			if(HAS_BEEN_ACTIVATED)
 				to_chat(user, "It is labeled '[service_label]' and appears to be permanently disabled.")
 
-/obj/item/device/uplink_service/attack_self(var/mob/user)
+/obj/item/device/uplink_service/attack_self(mob/user)
 	if(state != AWAITING_ACTIVATION)
-		to_chat(user, "<span class='warning'>\The [src] won't activate again.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] won't activate again."))
 		return
 	var/obj/effect/overmap/visitable/O = map_sectors["[get_z(src)]"]
 	var/choice = alert(user, "This will only affect your current location[istype(O) ? " ([O])" : ""]. Proceed?","Confirmation", "Yes", "No")
@@ -91,8 +85,8 @@
 		return
 	state = CURRENTLY_ACTIVE
 	update_icon()
-	user.visible_message("<span class='notice'>\The [user] activates \the [src].</span>", "<span class='notice'>You activate \the [src].</span>")
-	log_and_message_admins("has activated the service '[service_label]'", user)
+	user.visible_message(SPAN_NOTICE("\The [user] activates \the [src]."), SPAN_NOTICE("You activate \the [src]."))
+	log_and_message_staff("has activated the service '[service_label]'", user)
 
 	if(service_duration)
 		addtimer(CALLBACK(src,/obj/item/device/uplink_service/proc/deactivate), service_duration)
@@ -105,8 +99,8 @@
 	disable()
 	state = HAS_BEEN_ACTIVATED
 	update_icon()
-	playsound(loc, "sparks", 50, 1)
-	visible_message("<span class='warning'>\The [src] shuts down with a spark.</span>")
+	playsound(loc, SFX_SPARK, 50, 1)
+	visible_message(SPAN_WARNING("\The [src] shuts down with a spark."))
 
 /obj/item/device/uplink_service/on_update_icon()
 	switch(state)
@@ -117,10 +111,10 @@
 		if(HAS_BEEN_ACTIVATED)
 			icon_state = "flash_burnt"
 
-/obj/item/device/uplink_service/proc/enable(var/mob/user = usr)
+/obj/item/device/uplink_service/proc/enable(mob/user = usr)
 	return TRUE
 
-/obj/item/device/uplink_service/proc/disable(var/mob/user = usr)
+/obj/item/device/uplink_service/proc/disable(mob/user = usr)
 	return
 
 /*****************
@@ -140,11 +134,11 @@
 	ssjm = null
 	. = ..()
 
-/obj/item/device/uplink_service/jamming/enable(var/mob/user = usr)
+/obj/item/device/uplink_service/jamming/enable(mob/user = usr)
 	ssjm.enable()
 	. = ..()
 
-/obj/item/device/uplink_service/jamming/disable(var/mob/user = usr)
+/obj/item/device/uplink_service/jamming/disable(mob/user = usr)
 	ssjm.disable()
 
 /obj/item/device/uplink_service/jamming/garble
@@ -157,19 +151,8 @@
 /obj/item/device/uplink_service/fake_ion_storm
 	service_label = "Ion Storm Announcement"
 
-/obj/item/device/uplink_service/fake_ion_storm/enable(var/mob/user = usr)
+/obj/item/device/uplink_service/fake_ion_storm/enable(mob/user = usr)
 	ion_storm_announcement(GetConnectedZlevels(get_z(src)))
-	. = ..()
-
-/*****************
-* Fake Rad storm *
-*****************/
-/obj/item/device/uplink_service/fake_rad_storm
-	service_label = "Radiation Storm Announcement"
-
-/obj/item/device/uplink_service/fake_rad_storm/enable(var/mob/user = usr)
-	var/datum/event_meta/EM = new(EVENT_LEVEL_MUNDANE, "Fake Radiation Storm", add_to_queue = 0)
-	new/datum/event/radiation_storm/syndicate(EM)
 	. = ..()
 
 /***************************
@@ -178,7 +161,7 @@
 /obj/item/device/uplink_service/fake_update_announcement
 	service_label = "Update Announcement"
 
-/obj/item/device/uplink_service/fake_update_announcement/enable(var/mob/user = usr)
+/obj/item/device/uplink_service/fake_update_announcement/enable(mob/user = usr)
 	var/title = sanitize(input(user, "Enter your announcement title.", "Announcement Title") as null|text)
 	if(!title)
 		return
@@ -199,7 +182,7 @@
 
 #define COPY_VALUE(KEY) new_record.set_##KEY(random_record.get_##KEY())
 
-/obj/item/device/uplink_service/fake_crew_announcement/enable(var/mob/user = usr)
+/obj/item/device/uplink_service/fake_crew_announcement/enable(mob/user = usr)
 
 	var/datum/computer_file/report/crew_record/random_record
 	var/obj/item/card/id/I = user.GetIdCard()

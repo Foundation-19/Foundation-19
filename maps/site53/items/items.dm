@@ -6,7 +6,7 @@ Random item spawning
 	name = "random solgov equipment"
 	desc = "This is a random piece of solgov equipment or clothing."
 	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "helmet_sol"
+	icon_state = "helmetglass" //placeholder so it doesn't fail tests pending deletion
 
 /obj/random/solgov/spawn_choices()
 	return list(/obj/item/clothing/head/solgov/utility/fleet = 4,
@@ -71,7 +71,7 @@ Unique items
 	if(++selectedColor > 3)
 		selectedColor = 1
 	colour = colors[selectedColor]
-	to_chat(user, "<span class='notice'>Changed color to '[colour].'</span>")
+	to_chat(user, SPAN_NOTICE("Changed color to '[colour].'"))
 
 /******
 Weapons

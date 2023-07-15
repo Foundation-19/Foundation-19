@@ -4,6 +4,12 @@
 #define SD_EMPTY_TILE 3
 #define SD_SUPPLY_TILE 7
 
+/area/droppod
+	name = "Drop Pod"
+	requires_power = 0
+	dynamic_lighting = 0
+	sound_env = SMALL_ENCLOSED
+
 /datum/random_map/droppod
 	descriptor = "drop pod"
 	initial_wall_cell = 0
@@ -18,12 +24,12 @@
 	var/drop_type = /mob/living/simple_animal/hostile/retaliate/parrot
 	var/auto_open_doors
 
-	var/placement_explosion_dev =   1
-	var/placement_explosion_heavy = 2
-	var/placement_explosion_light = 6
-	var/placement_explosion_flash = 4
+	var/placement_explosion_dev =   0
+	var/placement_explosion_heavy = 1
+	var/placement_explosion_light = 3
+	var/placement_explosion_flash = 2
 
-/datum/random_map/droppod/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce, var/supplied_drop, var/list/supplied_drops, var/automated)
+/datum/random_map/droppod/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce, supplied_drop, list/supplied_drops, automated)
 
 	if(supplied_drop)
 		drop_type = supplied_drop
@@ -36,7 +42,7 @@
 	//Make sure there is a clear midpoint.
 	if(limit_x % 2 == 0) limit_x++
 	if(limit_y % 2 == 0) limit_y++
-	..()
+	..(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce, 0, /area/droppod)
 
 /datum/random_map/droppod/generate_map()
 
@@ -86,7 +92,7 @@
 			sleep(15) // Let the explosion finish proccing before we ChangeTurf(), otherwise it might destroy our spawned objects.
 	return ..()
 
-/datum/random_map/droppod/get_appropriate_path(var/value)
+/datum/random_map/droppod/get_appropriate_path(value)
 	if(value == SD_FLOOR_TILE || value == SD_SUPPLY_TILE)
 		return floor_type
 	else if(value == SD_WALL_TILE)
@@ -96,7 +102,7 @@
 	return null
 
 // Pods are circular. Get the direction this object is facing from the center of the pod.
-/datum/random_map/droppod/get_spawn_dir(var/x, var/y)
+/datum/random_map/droppod/get_spawn_dir(x, y)
 	var/x_midpoint = Ceiling(limit_x / 2)
 	var/y_midpoint = Ceiling(limit_y / 2)
 	if(x == x_midpoint && y == y_midpoint)
@@ -107,7 +113,7 @@
 		return null
 	return get_dir(middle, target)
 
-/datum/random_map/droppod/get_additional_spawns(var/value, var/turf/T, var/spawn_dir)
+/datum/random_map/droppod/get_additional_spawns(value, turf/T, spawn_dir)
 
 	// Splatter anything under us that survived the explosion.
 	if(value != SD_EMPTY_TILE && T.contents.len)
@@ -123,7 +129,7 @@
 	else if(value == SD_SUPPLY_TILE)
 		get_spawned_drop(T)
 
-/datum/random_map/droppod/proc/get_spawned_drop(var/turf/T)
+/datum/random_map/droppod/proc/get_spawned_drop(turf/T)
 	var/obj/structure/bed/chair/C = new(T)
 	C.set_light(0.5, 0.1, 3, 2, l_color = "#cc0000")
 	var/mob/living/drop
@@ -215,10 +221,10 @@
 		else
 			spawned_mob.ckey = selected_player.mob.ckey
 		spawned_mobs = list(spawned_mob)
-		log_and_message_admins("dropped a pod containing \the [spawned_mob] ([spawned_mob.key]) at ([usr.x],[usr.y],[usr.z])")
+		log_and_message_staff("dropped a pod containing \the [spawned_mob] ([spawned_mob.key]) at ([usr.x],[usr.y],[usr.z])")
 	else if(spawned_mobs.len)
 		automatic_pod = 1
-		log_and_message_admins("dropped a pod containing [spawned_mobs.len] [spawned_mobs[1]] at ([usr.x],[usr.y],[usr.z])")
+		log_and_message_staff("dropped a pod containing [spawned_mobs.len] [spawned_mobs[1]] at ([usr.x],[usr.y],[usr.z])")
 	else
 		return
 

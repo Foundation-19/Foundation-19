@@ -48,7 +48,7 @@
 	if(distance)
 		to_chat(user, "A light switch. It is [on? "on" : "off"].")
 
-/obj/machinery/light_switch/proc/set_state(var/newstate)
+/obj/machinery/light_switch/proc/set_state(newstate)
 	if(on != newstate)
 		on = newstate
 		connected_area.set_lightswitch(on)
@@ -62,12 +62,12 @@
 
 /obj/machinery/light_switch/interface_interact(mob/user)
 	if(CanInteract(user, DefaultTopicState()))
-		playsound(src, "switch", 30)
+		playsound(src, SFX_MACHINE_SWITCH, 30)
 		set_state(!on)
 		return TRUE
 
 /obj/machinery/light_switch/attackby(obj/item/tool as obj, mob/user as mob)
-	if(istype(tool, /obj/item/screwdriver))
+	if(isScrewdriver(tool))
 		new /obj/item/frame/light_switch(user.loc, 1)
 		qdel(src)
 

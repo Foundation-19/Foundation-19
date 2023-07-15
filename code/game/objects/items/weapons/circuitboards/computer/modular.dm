@@ -1,6 +1,6 @@
 /obj/item/stock_parts/circuitboard/modular_computer
 	name = "general-purpose computer motherboard"
-	build_path = /obj/machinery/computer/modular
+	build_path = /obj/item/modular_computer/console
 	req_components = list(
 		/obj/item/stock_parts/computer/processor_unit = 1
 	)
@@ -15,9 +15,9 @@
 	)
 	var/emagged
 
-/obj/item/stock_parts/circuitboard/modular_computer/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/stock_parts/circuitboard/modular_computer/emag_act(remaining_charges, mob/user)
 	if(emagged)
 		return ..()
 	else
 		emagged = TRUE
-		to_chat(user, "<span class='warning'>You disable the factory safeties on \the [src].</span>")
+		to_chat(user, SPAN_WARNING("You disable the factory safeties on \the [src]."))

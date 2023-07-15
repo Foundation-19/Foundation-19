@@ -54,12 +54,13 @@ var/global/list/floating_chat_colors = list()
 		var/image/unique = generate_floating_text(src, capitalize(unique_messages[client]), style, fontsize, duration, show_to)
 
 		show_to -= client //remove the client from the normal list if we're giving them a unique response to this
-		if(!client.mob.is_deaf() && client.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
+
+		if(client.mob.can_hear(src) && (client.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW))
 			client.images += unique
 
 
 	for(var/client/C in show_to)
-		if(!C.mob.is_deaf() && C.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
+		if(C.mob.can_hear(src) && C.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
 			if(C.mob.say_understands(null, language))
 				C.images += understood
 			else

@@ -5,7 +5,7 @@
 	icon = 'icons/obj/machines/power/fusion.dmi'
 	desc = "A heavy-duty, highly configurable industrial gyrotron suited for powering fusion reactors."
 	icon_state = "emitter-off"
-	req_access = list(access_engine)
+	req_access = list(ACCESS_ENGINEERING_LVL2)
 	use_power = POWER_USE_IDLE
 	active_power_usage = GYRO_POWER
 
@@ -53,7 +53,7 @@
 	else
 		icon_state = "emitter-off"
 
-/obj/machinery/power/emitter/gyrotron/attackby(var/obj/item/W, var/mob/user)
+/obj/machinery/power/emitter/gyrotron/attackby(obj/item/W, mob/user)
 	if(isMultitool(W))
 		var/datum/extension/local_network_member/fusion = get_extension(src, /datum/extension/local_network_member)
 		fusion.get_new_tag(user)

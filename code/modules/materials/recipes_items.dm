@@ -47,7 +47,7 @@
 
 /datum/stack_recipe/fork
 	title = "fork"
-	result_type = /obj/item/material/kitchen/utensil/fork/plastic
+	result_type = /obj/item/material/kitchen/utensil/fork
 	on_floor = 1
 	send_material_data = 1
 
@@ -60,7 +60,7 @@
 
 /datum/stack_recipe/spoon
 	title = "spoon"
-	result_type = /obj/item/material/kitchen/utensil/spoon/plastic
+	result_type = /obj/item/material/kitchen/utensil/spoon
 	on_floor = 1
 	send_material_data = 1
 

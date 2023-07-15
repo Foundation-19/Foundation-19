@@ -18,9 +18,9 @@
 /datum/dna/gene/basic/remoteview/New()
 	block=GLOB.REMOTEVIEWBLOCK
 
-/datum/dna/gene/basic/remoteview/activate(var/mob/M, var/connected, var/flags)
+/datum/dna/gene/basic/remoteview/activate(mob/M, connected, flags)
 	..(M,connected,flags)
-	M.verbs += /mob/living/carbon/human/proc/remoteobserve
+	add_verb(M, /mob/living/carbon/human/proc/remoteobserve)
 
 /datum/dna/gene/basic/regenerate
 	name="Regenerate"
@@ -46,9 +46,9 @@
 /datum/dna/gene/basic/remotetalk/New()
 	block=GLOB.REMOTETALKBLOCK
 
-/datum/dna/gene/basic/remotetalk/activate(var/mob/M, var/connected, var/flags)
+/datum/dna/gene/basic/remotetalk/activate(mob/M, connected, flags)
 	..(M,connected,flags)
-	M.verbs += /mob/living/carbon/human/proc/remotesay
+	add_verb(M, /mob/living/carbon/human/proc/remotesay)
 
 /datum/dna/gene/basic/morph
 	name="Morph"
@@ -58,9 +58,9 @@
 /datum/dna/gene/basic/morph/New()
 	block=GLOB.MORPHBLOCK
 
-/datum/dna/gene/basic/morph/activate(var/mob/M)
+/datum/dna/gene/basic/morph/activate(mob/M)
 	..(M)
-	M.verbs += /mob/living/carbon/human/proc/morph
+	add_verb(M, /mob/living/carbon/human/proc/morph)
 
 /* Not used on bay
 /datum/dna/gene/basic/heat_resist
@@ -93,7 +93,7 @@
 /datum/dna/gene/basic/cold_resist/New()
 	block=GLOB.FIREBLOCK
 
-/datum/dna/gene/basic/cold_resist/can_activate(var/mob/M,var/flags)
+/datum/dna/gene/basic/cold_resist/can_activate(mob/M,flags)
 	if(flags & MUTCHK_FORCED)
 		return 1
 	//	return !(/datum/dna/gene/basic/heat_resist in M.active_genes)
@@ -104,7 +104,7 @@
 	if(probinj(_prob,(flags&MUTCHK_FORCED)))
 		return 1
 
-/datum/dna/gene/basic/cold_resist/OnDrawUnderlays(var/mob/M,var/g,var/fat)
+/datum/dna/gene/basic/cold_resist/OnDrawUnderlays(mob/M,g,fat)
 	return "fire[fat]_s"
 
 /datum/dna/gene/basic/noprints
@@ -131,17 +131,17 @@
 /datum/dna/gene/basic/midget/New()
 	block=GLOB.SMALLSIZEBLOCK
 
-/datum/dna/gene/basic/midget/can_activate(var/mob/M,var/flags)
+/datum/dna/gene/basic/midget/can_activate(mob/M,flags)
 	// Can't be big and small.
 	if(MUTATION_HULK in M.mutations)
 		return 0
 	return ..(M,flags)
 
-/datum/dna/gene/basic/midget/activate(var/mob/M, var/connected, var/flags)
+/datum/dna/gene/basic/midget/activate(mob/M, connected, flags)
 	..(M,connected,flags)
 	M.pass_flags |= 1
 
-/datum/dna/gene/basic/midget/deactivate(var/mob/M, var/connected, var/flags)
+/datum/dna/gene/basic/midget/deactivate(mob/M, connected, flags)
 	..(M,connected,flags)
 	M.pass_flags &= ~PASS_FLAG_TABLE
 
@@ -153,24 +153,24 @@
 /datum/dna/gene/basic/hulk/New()
 	block=GLOB.HULKBLOCK
 
-/datum/dna/gene/basic/hulk/can_activate(var/mob/M,var/flags)
+/datum/dna/gene/basic/hulk/can_activate(mob/M,flags)
 	// Can't be big and small.
 	if(mSmallsize in M.mutations)
 		return 0
 	return ..(M,flags)
 
-/datum/dna/gene/basic/hulk/OnDrawUnderlays(var/mob/M,var/g,var/fat)
+/datum/dna/gene/basic/hulk/OnDrawUnderlays(mob/M,g,fat)
 	if(fat)
 		return "hulk_[fat]_s"
 	else
 		return "hulk_[g]_s"
 
-/datum/dna/gene/basic/hulk/OnMobLife(var/mob/living/carbon/human/M)
+/datum/dna/gene/basic/hulk/OnMobLife(mob/living/carbon/human/M)
 	if(!istype(M)) return
 	if(M.health <= 25)
 		M.mutations.Remove(MUTATION_HULK)
 		M.update_mutations()		//update our mutation overlays
-		to_chat(M, "<span class='warning'>You suddenly feel very weak.</span>")
+		to_chat(M, SPAN_WARNING("You suddenly feel very weak."))
 		M.Weaken(3)
 		M.emote("collapse")
 

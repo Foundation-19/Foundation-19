@@ -32,14 +32,14 @@
 	seed.display_name = "vines"
 	seed.chems = list(/datum/reagent/nutriment = list(1,20))
 
-/datum/spell/hand/charges/entangle/cast_hand(var/mob/M,var/mob/user)
+/datum/spell/hand/charges/entangle/cast_hand(mob/M,mob/user)
 	var/turf/T = get_turf(M)
 	var/obj/effect/vine/single/P = new(T,seed, start_matured =1)
 	P.can_buckle = 1
 
 	P.buckle_mob(M)
 	M.set_dir(pick(GLOB.cardinal))
-	M.visible_message("<span class='danger'>[P] appear from the floor, spinning around \the [M] tightly!</span>")
+	M.visible_message(SPAN_DANGER("[P] appear from the floor, spinning around \the [M] tightly!"))
 	return ..()
 
 /datum/spell/hand/charges/entangle/empower_spell()

@@ -33,12 +33,12 @@
 /obj/item/organ/internal/lungs/proc/can_drown()
 	return (is_broken() || !has_gills)
 
-/obj/item/organ/internal/lungs/proc/remove_oxygen_deprivation(var/amount)
+/obj/item/organ/internal/lungs/proc/remove_oxygen_deprivation(amount)
 	var/last_suffocation = oxygen_deprivation
 	oxygen_deprivation = min(species.total_health,max(0,oxygen_deprivation - amount))
 	return -(oxygen_deprivation - last_suffocation)
 
-/obj/item/organ/internal/lungs/proc/add_oxygen_deprivation(var/amount)
+/obj/item/organ/internal/lungs/proc/add_oxygen_deprivation(amount)
 	var/last_suffocation = oxygen_deprivation
 	oxygen_deprivation = min(species.total_health,max(0,oxygen_deprivation + amount))
 	return (oxygen_deprivation - last_suffocation)
@@ -53,7 +53,7 @@
 	. = ..()
 	icon_state = "lungs-prosthetic"
 
-/obj/item/organ/internal/lungs/set_dna(var/datum/dna/new_dna)
+/obj/item/organ/internal/lungs/set_dna(datum/dna/new_dna)
 	..()
 	sync_breath_types()
 	max_pressure_diff = species.max_pressure_diff
@@ -85,7 +85,7 @@
 			if(active_breathing)
 				owner.visible_message(
 					"<B>\The [owner]</B> coughs up blood!",
-					"<span class='warning'>You cough up blood!</span>",
+					SPAN_WARNING("You cough up blood!"),
 					"You hear someone coughing!",
 				)
 			else
@@ -99,11 +99,11 @@
 			if(active_breathing)
 				owner.visible_message(
 					"<B>\The [owner]</B> gasps for air!",
-					"<span class='danger'>You can't breathe!</span>",
+					SPAN_DANGER("You can't breathe!"),
 					"You hear someone gasp for air!",
 				)
 			else
-				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")
+				to_chat(owner, SPAN_DANGER("You're having trouble getting enough [breath_type]!"))
 
 			owner.losebreath = max(round(damage / 2), owner.losebreath)
 
@@ -127,7 +127,7 @@
 		if(!is_bruised() && lung_rupture_prob) //only rupture if NOT already ruptured
 			rupture()
 
-/obj/item/organ/internal/lungs/proc/handle_breath(datum/gas_mixture/breath, var/forced)
+/obj/item/organ/internal/lungs/proc/handle_breath(datum/gas_mixture/breath, forced)
 
 	if(!owner)
 		return 1
@@ -246,7 +246,7 @@
 		var/damage = 0
 		if(breath.temperature <= species.cold_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>You feel your face freezing and icicles forming in your lungs!</span>")
+				to_chat(owner, SPAN_DANGER("You feel your face freezing and icicles forming in your lungs!"))
 			switch(breath.temperature)
 				if(species.cold_level_3 to species.cold_level_2)
 					damage = COLD_GAS_DAMAGE_LEVEL_3
@@ -262,7 +262,7 @@
 			owner.fire_alert = 1
 		else if(breath.temperature >= species.heat_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>You feel your face burning and a searing heat in your lungs!</span>")
+				to_chat(owner, SPAN_DANGER("You feel your face burning and a searing heat in your lungs!"))
 
 			switch(breath.temperature)
 				if(species.heat_level_1 to species.heat_level_2)

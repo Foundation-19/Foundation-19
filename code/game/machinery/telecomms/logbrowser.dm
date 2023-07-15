@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /obj/machinery/computer/telecomms
 	icon_keyboard = "tech_key"
 
@@ -18,7 +16,7 @@
 
 	var/universal_translate = 0 // set to 1 if it can translate nonhuman speech
 
-	req_access = list(access_tcomsat)
+	req_access = list(ACCESS_TCOMSAT)
 
 /obj/machinery/computer/telecomms/server/interface_interact(mob/user)
 	interact(user)
@@ -153,7 +151,7 @@
 	if(href_list["delete"])
 
 		if(!src.allowed(usr) && !emagged)
-			to_chat(usr, "<span class='warning'>ACCESS DENIED.</span>")
+			to_chat(usr, SPAN_WARNING("ACCESS DENIED."))
 			return
 
 		if(SelectedServer)
@@ -189,11 +187,11 @@
 
 	updateUsrDialog()
 
-/obj/machinery/computer/telecomms/server/emag_act(var/remaining_charges, var/mob/user)
+/obj/machinery/computer/telecomms/server/emag_act(remaining_charges, mob/user)
 	if(!emagged)
 		playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = TRUE
 		req_access.Cut()
-		to_chat(user, "<span class='notice'>You you disable the security protocols</span>")
+		to_chat(user, SPAN_NOTICE("You you disable the security protocols"))
 		src.updateUsrDialog()
 		return 1

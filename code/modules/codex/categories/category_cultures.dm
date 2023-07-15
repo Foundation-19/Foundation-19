@@ -1,6 +1,6 @@
 /datum/codex_category/cultures/
-	name = "Factions and Culture"
-	desc = "Prominent planets, cultures, factions and religions of known space."
+	name = "Groups of Interest"
+	desc = "All Groups and People of Interest that the Foundation knows of."
 
 /datum/codex_category/cultures/Initialize()
 

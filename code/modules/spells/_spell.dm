@@ -79,7 +79,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 /datum/spell/New()
 	..()
 
-	//still_recharging_msg = "<span class='notice'>[name] is still recharging.</span>"
+	//still_recharging_msg = SPAN_NOTICE("[name] is still recharging.")
 	charge_counter = charge_max
 
 /datum/spell/proc/process()
@@ -144,7 +144,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 /datum/spell/proc/critfail(list/targets, mob/user) //the wizman has fucked up somehow
 	return
 
-/datum/spell/proc/after_spell(var/list/targets, var/mob/user, var/channel_duration) //After everything else is done.
+/datum/spell/proc/after_spell(list/targets, mob/user, channel_duration) //After everything else is done.
 	return
 
 /datum/spell/proc/adjust_var(mob/living/target = usr, type, amount) //handles the adjustment of the var when the spell is used. has some hardcoded types
@@ -222,7 +222,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 
 	if(!(src in user.mind.learned_spells) && holder == user && !(isanimal(user)))
 		error("[user] utilized the spell '[src]' without having it.")
-		to_chat(user, "<span class='warning'>You shouldn't have this spell! Something's wrong.</span>")
+		to_chat(user, SPAN_WARNING("You shouldn't have this spell! Something's wrong."))
 		return 0
 
 	var/spell_leech = user.disrupts_psionics()
@@ -232,7 +232,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 
 	var/turf/user_turf = get_turf(user)
 	if(!user_turf)
-		to_chat(user, "<span class='warning'>You cannot cast spells in null space!</span>")
+		to_chat(user, SPAN_WARNING("You cannot cast spells in null space!"))
 
 	if((spell_flags & Z2NOCAST) && (user_turf.z in GLOB.using_map.admin_levels)) //Certain spells are not allowed on the centcomm zlevel
 		return 0
@@ -249,14 +249,14 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 		if(istype(user, /mob/living/simple_animal))
 			var/mob/living/simple_animal/SA = user
 			if(SA.purge)
-				to_chat(SA, "<span class='warning'>The null sceptre's power interferes with your own!</span>")
+				to_chat(SA, SPAN_WARNING("The null sceptre's power interferes with your own!"))
 				return 0
 
 		if(!(spell_flags & GHOSTCAST))
 			if(!(spell_flags & NO_SOMATIC))
 				var/mob/living/L = user
 				if(L.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_FORCELYING|INCAPACITATION_KNOCKOUT))
-					to_chat(user, "<span class='warning'>You can't cast spells while incapacitated!</span>")
+					to_chat(user, SPAN_WARNING("You can't cast spells while incapacitated!"))
 					return 0
 
 			if(ishuman(user) && !(invocation_type in list(INVOKE_EMOTE, INVOKE_NONE)))
@@ -271,7 +271,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 
 	return 1
 
-/datum/spell/proc/check_charge(var/skipcharge, mob/user)
+/datum/spell/proc/check_charge(skipcharge, mob/user)
 	if(!skipcharge)
 		switch(charge_type)
 			if(SPELL_RECHARGE)
@@ -280,11 +280,11 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 					return 0
 			if(SPELL_CHARGES)
 				if(!charge_counter)
-					to_chat(user, "<span class='notice'>[name] has no charges left.</span>")
+					to_chat(user, SPAN_NOTICE("[name] has no charges left."))
 					return 0
 	return 1
 
-/datum/spell/proc/take_charge(mob/user = user, var/skipcharge)
+/datum/spell/proc/take_charge(mob/user = user, skipcharge)
 	if(!skipcharge)
 		switch(charge_type)
 			if(SPELL_RECHARGE)
@@ -300,7 +300,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 		return 0
 	return 1
 
-/datum/spell/proc/invocation(mob/user = usr, var/list/targets) //spelling the spell out and setting it on recharge/reducing charges amount
+/datum/spell/proc/invocation(mob/user = usr, list/targets) //spelling the spell out and setting it on recharge/reducing charges amount
 
 	switch(invocation_type)
 		if(INVOKE_SHOUT)
@@ -320,7 +320,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 ///UPGRADING PROCS///
 /////////////////////
 
-/datum/spell/proc/can_improve(var/upgrade_type)
+/datum/spell/proc/can_improve(upgrade_type)
 	if(level_max[UPGRADE_TOTAL] <= ( spell_levels[UPGRADE_SPEED] + spell_levels[UPGRADE_POWER] )) //too many levels, can't do it
 		return 0
 
@@ -375,7 +375,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 
 	return temp
 
-/datum/spell/proc/spell_do_after(var/mob/user as mob, delay as num, var/numticks = 5)
+/datum/spell/proc/spell_do_after(mob/user as mob, delay as num, numticks = 5)
 	if(!user || isnull(user))
 		return 0
 
@@ -390,7 +390,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 ///////////////////
 /datum/spell/proc/InterceptClickOn(mob/living/caller, params, atom/A)
 	if(caller.ranged_ability != src || ranged_ability_user != caller) //I'm not actually sure how these would trigger, but, uh, safety, I guess?
-		to_chat(caller, "<span class='warning'><b>[caller.ranged_ability.name]</b> has been disabled.</span>")
+		to_chat(caller, SPAN_WARNING("<b>[caller.ranged_ability.name]</b> has been disabled."))
 		caller.ranged_ability.remove_ranged_ability()
 		return TRUE //TRUE for failed, FALSE for passed.
 	if(ranged_clickcd_override >= 0)

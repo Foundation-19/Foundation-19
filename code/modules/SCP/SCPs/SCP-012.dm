@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(scp012s)
 	w_class = ITEM_SIZE_NO_CONTAINER //Quick fix that may need more work in the future.
 //	nothrow = TRUE
 	SCP = /datum/scp/scp_012
-	anchored = 1
+	anchored = TRUE
 	var/ticks = 0
 
 /datum/scp/scp_012
@@ -16,9 +16,9 @@ GLOBAL_LIST_EMPTY(scp012s)
 	classification = EUCLID
 
 /obj/item/paper/scp012/Initialize()
-	. = ..()
 	START_PROCESSING(SSobj, src)
 	GLOB.scp012s += src
+	return ..()
 
 /obj/item/paper/scp012/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -65,5 +65,6 @@ GLOBAL_LIST_EMPTY(scp012s)
 				affecting.visible_message("<span class = \"notice\">[affecting] looks at \"[name]\" and cries.</span>")
 				playsound(affecting, "sound/voice/emotes/[gender2text(affecting.gender)]_cry[pick(1,2)].ogg", 100)
 
-/obj/item/paper/proc/can_affect(var/mob/living/carbon/human/H)
-	return H.stat == CONSCIOUS && !(src in H.hidden_atoms) && !H.blinded && !istype(H.glasses, /obj/item/clothing/glasses/sunglasses)
+/obj/item/paper/scp012/proc/can_affect(mob/living/carbon/human/H)
+	// technically 012 is memetic, but having no counter and being insta-GBJ'd seems dumb
+	return H.can_see(src) || H.can_hear(src)

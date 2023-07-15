@@ -28,12 +28,30 @@
 	use_sound = 'sound/effects/storage/box.ogg'
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
 
+/obj/item/storage/box/open(mob/user)
+	. = ..()
+	icon_state = "boxopen"
+
+/obj/item/storage/box/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/box/large
 	name = "large box"
 	icon_state = "largebox"
 	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+
+/obj/item/storage/box/large/open(mob/user)
+	. = ..()
+	icon_state = "largeboxopen"
+
+/obj/item/storage/box/large/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/union_cards
 	name = "box of union cards"
@@ -65,7 +83,7 @@
 	if ( !found )	// User is too far away
 		return
 	// Now make the cardboard
-	to_chat(user, "<span class='notice'>You fold [src] flat.</span>")
+	to_chat(user, SPAN_NOTICE("You fold [src] flat."))
 	if(ispath(foldable, /obj/item/stack))
 		var/stack_amt = max(2**(w_class - 3), 1)
 		new src.foldable(get_turf(src), stack_amt)
@@ -190,6 +208,15 @@
 	icon_state = "ammo"
 	desc = "A sturdy metal box with several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
 	use_sound = 'sound/effects/closet_open.ogg'
+
+/obj/item/storage/box/ammo/open(mob/user)
+	. = ..()
+	item_state = "ammoopen"
+
+/obj/item/storage/box/ammo/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/ammo/blanks
 	name = "box of blank shells"
@@ -427,7 +454,7 @@
 		W.icon_state = "match_lit"
 		START_PROCESSING(SSobj, W)
 		playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
-		user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
+		user.visible_message(SPAN_NOTICE("[user] strikes the match on the matchbox."))
 	W.update_icon()
 	return
 
@@ -509,6 +536,15 @@
 
 /obj/item/storage/box/freezer/ProcessAtomTemperature()
 	return PROCESS_KILL
+
+/obj/item/storage/box/freezer/open(mob/user)
+	. = ..()
+	icon_state = "portafreezeropen"
+
+/obj/item/storage/box/freezer/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/checkers
 	name = "checkers box"

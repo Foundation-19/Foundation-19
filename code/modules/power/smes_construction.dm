@@ -78,7 +78,7 @@
 	maximum_component_parts = list(/obj/item/stock_parts/smes_coil = 6, /obj/item/stock_parts = 15)
 	interact_offline = TRUE
 
-/obj/machinery/power/smes/buildable/malf_upgrade(var/mob/living/silicon/ai/user)
+/obj/machinery/power/smes/buildable/malf_upgrade(mob/living/silicon/ai/user)
 	..()
 	malf_upgraded = 1
 	emp_proof = 1
@@ -114,6 +114,11 @@
 		if(powernet && prob(1)) // Small chance of overload occuring since grounding is disabled.
 			powernet.apcs_overload(5,10,20)
 
+		var/datum/wires/smes/smes_wires = wires
+
+		//yes, I know : operator is ass. No, I can't make this better. Wires is casted to /datum/wires by default by /obj/machinery. :(
+		log_debug("SMES GROUNDING TICK: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+
 	..()
 
 // Proc: attack_ai()
@@ -123,7 +128,7 @@
 	if(RCon)
 		..()
 	else // RCON wire cut
-		to_chat(user, "<span class='warning'>Connection error: Destination Unreachable.</span>")
+		to_chat(user, SPAN_WARNING("Connection error: Destination Unreachable."))
 
 // Proc: recalc_coils()
 // Parameters: None
@@ -146,7 +151,7 @@
 // Proc: total_system_failure()
 // Parameters: 2 (intensity - how strong the failure is, user - person which caused the failure)
 // Description: Checks the sensors for alerts. If change (alerts cleared or detected) occurs, calls for icon update.
-/obj/machinery/power/smes/buildable/proc/total_system_failure(var/intensity = 0, var/mob/user as mob)
+/obj/machinery/power/smes/buildable/proc/total_system_failure(intensity = 0, mob/user as mob)
 	// SMESs store very large amount of power. If someone screws up (ie: Disables safeties and attempts to modify the SMES) very bad things happen.
 	// Bad things are based on charge percentage.
 	// Possible effects:
@@ -175,7 +180,7 @@
 		var/obj/item/clothing/gloves/G = h_user.gloves
 		if(G.siemens_coefficient == 0)
 			user_protected = 1
-	log_and_message_admins("SMES FAILURE: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>")
+	log_and_message_staff("SMES FAILURE: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>")
 
 
 	switch (intensity)
@@ -247,7 +252,7 @@
 
 			if (prob(50))
 				// Added admin-notifications so they can stop it when griffed.
-				log_and_message_admins("SMES explosion imminent.")
+				log_and_message_staff("SMES explosion imminent.")
 				src.ping("DANGER! Magnetic containment field unstable! Containment field failure imminent!")
 				failing = 1
 				// 30 - 60 seconds and then BAM!
@@ -261,7 +266,7 @@
 					// Not sure if this is necessary, but just in case the SMES *somehow* survived..
 					qdel(src)
 
-/obj/machinery/power/smes/buildable/proc/check_total_system_failure(var/mob/user)
+/obj/machinery/power/smes/buildable/proc/check_total_system_failure(mob/user)
 	// Probability of failure if safety circuit is disabled (in %)
 	var/failure_probability = capacity ? round((charge / capacity) * 100) : 0
 
@@ -330,10 +335,10 @@
 // Proc: attackby()
 // Parameters: 2 (W - object that was used on this machine, user - person which used the object)
 // Description: Handles tool interaction. Allows deconstruction/upgrading/fixing.
-/obj/machinery/power/smes/buildable/attackby(var/obj/item/W as obj, var/mob/user as mob)
+/obj/machinery/power/smes/buildable/attackby(obj/item/W as obj, mob/user as mob)
 	// No more disassembling of overloaded SMESs. You broke it, now enjoy the consequences.
 	if (failing)
-		to_chat(user, "<span class='warning'>\The [src]'s screen is flashing with alerts. It seems to be overloaded! Touching it now is probably not a good idea.</span>")
+		to_chat(user, SPAN_WARNING("\The [src]'s screen is flashing with alerts. It seems to be overloaded! Touching it now is probably not a good idea."))
 		return
 
 	if (!..())
@@ -343,7 +348,7 @@
 			var/newtag = input(user, "Enter new RCON tag. Use \"NO_TAG\" to disable RCON or leave empty to cancel.", "SMES RCON system") as text
 			if(newtag)
 				RCon_tag = newtag
-				to_chat(user, "<span class='notice'>You changed the RCON tag to: [newtag]</span>")
+				to_chat(user, SPAN_NOTICE("You changed the RCON tag to: [newtag]"))
 
 // Proc: toggle_input()
 // Parameters: None
@@ -362,18 +367,18 @@
 // Proc: set_input()
 // Parameters: 1 (new_input - New input value in Watts)
 // Description: Sets input setting on this SMES. Trims it if limits are exceeded.
-/obj/machinery/power/smes/buildable/proc/set_input(var/new_input = 0)
+/obj/machinery/power/smes/buildable/proc/set_input(new_input = 0)
 	input_level = between(0, new_input, input_level_max)
 	update_icon()
 
 // Proc: set_output()
 // Parameters: 1 (new_output - New output value in Watts)
 // Description: Sets output setting on this SMES. Trims it if limits are exceeded.
-/obj/machinery/power/smes/buildable/proc/set_output(var/new_output = 0)
+/obj/machinery/power/smes/buildable/proc/set_output(new_output = 0)
 	output_level = between(0, new_output, output_level_max)
 	update_icon()
 
-/obj/machinery/power/smes/buildable/emp_act(var/severity)
+/obj/machinery/power/smes/buildable/emp_act(severity)
 	if(emp_proof)
 		return
 	..(severity)

@@ -7,6 +7,7 @@
 /mob
 	var/hud_type = null
 	var/datum/hud/hud_used = null
+	var/list/effects_planemasters = list()
 
 /mob/proc/InitializeHud()
 	if(hud_used)
@@ -15,6 +16,45 @@
 		hud_used = new hud_type(src)
 	else
 		hud_used = new /datum/hud
+	InitializePlanes()
+
+/mob/proc/InitializePlanes()
+	if(length(effects_planemasters))
+		for(var/i in effects_planemasters)
+			client.screen += effects_planemasters["[i]"]
+		return
+	var/list/plane_index = list(DEFAULT_PLANE, OBJ_PLANE, MOB_PLANE, OBSERVER_PLANE, EFFECTS_ABOVE_LIGHTING_PLANE, FULLSCREEN_PLANE)
+	effects_planemasters = list()
+
+	for(var/index in plane_index)
+		var/obj/screen/plane_master/effects_planemaster/generated_plane = new
+		generated_plane.plane = index
+		client.screen += generated_plane
+		effects_planemasters["[index]"] = generated_plane
+
+	for(var/os_plane_index = OPENTURF_MAX_PLANE-OPENTURF_MAX_DEPTH to OPENTURF_MAX_PLANE)
+		var/obj/screen/plane_master/effects_planemaster/openspace/os_pm = new
+		os_pm.plane = os_plane_index
+		client.screen += os_pm
+		effects_planemasters["[os_plane_index]"] = os_pm
+	InitializeAo()
+
+
+/mob/proc/InitializeAo()
+	var/obj/screen/plane_master/effects_planemaster/object_pm = effects_planemasters["[OBJ_PLANE]"]
+	if(object_pm)
+		object_pm.add_filter("ao", 1, list(type = "drop_shadow", x = 0, y = -2, size = 4, color = "#04080FAA"))
+
+
+/mob/proc/DeletePlanes()
+	for(var/y in effects_planemasters)
+		client.screen -= effects_planemasters["[y]"]
+	QDEL_LIST_ASSOC_VAL(effects_planemasters)
+	return TRUE
+
+/mob/Destroy()
+	QDEL_LIST_ASSOC_VAL(effects_planemasters)
+	return ..()
 
 /datum/hud
 	var/mob/mymob
@@ -162,20 +202,20 @@
 
 	FinalizeInstantiation(ui_style, ui_color, ui_alpha)
 
-/datum/hud/proc/FinalizeInstantiation(var/ui_style, var/ui_color, var/ui_alpha)
+/datum/hud/proc/FinalizeInstantiation(ui_style, ui_color, ui_alpha)
 	return
 
 //Triggered when F12 is pressed (Unless someone changed something in the DMF)
-/mob/verb/button_pressed_F12(var/full = 0 as null)
+/mob/verb/button_pressed_F12(full = 0 as null)
 	set name = "F12"
 	set hidden = 1
 
 	if(!hud_used)
-		to_chat(usr, "<span class='warning'>This mob type does not use a HUD.</span>")
+		to_chat(usr, SPAN_WARNING("This mob type does not use a HUD."))
 		return
 
 	if(!ishuman(src))
-		to_chat(usr, "<span class='warning'>Inventory hiding is currently only supported for human mobs, sorry.</span>")
+		to_chat(usr, SPAN_WARNING("Inventory hiding is currently only supported for human mobs, sorry."))
 		return
 
 	if(!client) return

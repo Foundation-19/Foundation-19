@@ -19,17 +19,17 @@
 	title = "Security Announcement"
 	announcement_type = "Security Announcement"
 
-/datum/announcement/New(var/do_log = 0, var/new_sound = null, var/do_newscast = 0)
+/datum/announcement/New(do_log = 0, new_sound = null, do_newscast = 0)
 	sound = new_sound
 	log = do_log
 	newscast = do_newscast
 
-/datum/announcement/priority/command/New(var/do_log = 1, var/new_sound = 'sound/misc/notice2.ogg', var/do_newscast = 0)
+/datum/announcement/priority/command/New(do_log = 1, new_sound = 'sound/misc/notice2.ogg', do_newscast = 0)
 	..(do_log, new_sound, do_newscast)
 	title = "[GLOB.using_map.boss_name] Update"
 	announcement_type = "[GLOB.using_map.boss_name] Update"
 
-/datum/announcement/proc/Announce(var/message as text, var/new_title = "", var/new_sound = null, var/do_newscast = newscast, var/msg_sanitized = 0, var/zlevels = GLOB.using_map.contact_levels)
+/datum/announcement/proc/Announce(message as text, new_title = "", new_sound = null, do_newscast = newscast, msg_sanitized = 0, zlevels = GLOB.using_map.contact_levels)
 	if(!message)
 		return
 	var/message_title = new_title ? new_title : title
@@ -41,7 +41,7 @@
 
 	var/msg = FormMessage(message, message_title)
 	for(var/mob/M in GLOB.player_list)
-		if((get_z(M) in (zlevels | GLOB.using_map.admin_levels)) && !istype(M,/mob/new_player) && !isdeaf(M))
+		if((get_z(M) in (zlevels | GLOB.using_map.admin_levels)) && !istype(M,/mob/new_player) && M.can_hear())
 			to_chat(M, msg)
 			if(message_sound && M.client.get_preference_value(/datum/client_preference/play_announcement_sfx) == GLOB.PREF_YES)
 				sound_to(M, message_sound)
@@ -51,7 +51,7 @@
 
 	if(log)
 		log_say("[key_name(usr)] has made \a [announcement_type]: [message_title] - [message] - [announcer]")
-		message_admins("[key_name_admin(usr)] has made \a [announcement_type].", 1)
+		message_staff("[key_name_admin(usr)] has made \a [announcement_type].", 1)
 
 /datum/announcement/proc/FormMessage(message as text, message_title as text)
 	. = "<h2 class='alert'>[message_title]</h2>"
@@ -93,17 +93,14 @@
 	news.can_be_redacted = 0
 	announce_newscaster_news(news, zlevels)
 
-/proc/GetNameAndAssignmentFromId(var/obj/item/card/id/I)
+/proc/GetNameAndAssignmentFromId(obj/item/card/id/I)
 	// Format currently matches that of newscaster feeds: Registered Name (Assigned Rank)
 	return I.assignment ? "[I.registered_name] ([I.assignment])" : I.registered_name
 
-/proc/level_seven_announcement()
-	GLOB.using_map.level_x_biohazard_announcement(7)
-
 /proc/ion_storm_announcement(list/affecting_z)
-	command_announcement.Announce("It has come to our attention that the [station_name()] passed through an ion storm.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", zlevels = affecting_z)
+	command_announcement.Announce("A period of anomalous activity has been detected near [station_name()].  Please monitor all electronic equipment for malfunctions.", "[station_name()] Sensor Array", zlevels = affecting_z)
 
-/proc/AnnounceArrival(var/mob/living/carbon/human/character, var/datum/job/job, var/join_message)
+/proc/AnnounceArrival(mob/living/carbon/human/character, datum/job/job, join_message)
 	if(!istype(job) || !job.announced)
 		return
 	if (GAME_STATE != RUNLEVEL_GAME)
@@ -114,16 +111,16 @@
 
 	AnnounceArrivalSimple(character.real_name, rank, join_message, get_announcement_frequency(job))
 
-/proc/AnnounceArrivalSimple(var/name, var/rank = "visitor", var/join_message = "has arrived on the [station_name()]", var/frequency)
+/proc/AnnounceArrivalSimple(name, rank = "visitor", join_message = "has arrived on the [station_name()]", frequency)
 	GLOB.global_announcer.autosay("[name], [rank], [join_message].", "Arrivals Announcement Computer", frequency)
 
-/proc/get_announcement_frequency(var/datum/job/job)
-	// During red alert all jobs are announced on main frequency.
+/proc/get_announcement_frequency(datum/job/job)
+	// During a containment breach all jobs are announced on main frequency.
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	if (security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level))
 		return "Common"
 
-	if(job.department_flag & (COM | CIV | MSC))
+	if(job.department_flag & (COM | CIV | MSC | REP))
 		return "Common"
 	if(job.department_flag & SUP)
 		return "Supply"
@@ -142,4 +139,4 @@
 	if(job.department_flag & EXP)
 		return "Exploration"
 	return "Common"
-	
+

@@ -26,7 +26,7 @@ The answer was five and a half years -ZeroBits
 	var/obj/machinery/libraryscanner/scanner
 	var/sort_by = "id"
 
-/datum/nano_module/library/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/library/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
 	if(error_message)
@@ -100,9 +100,6 @@ The answer was five and a half years -ZeroBits
 
 		if(!B.author)
 			B.author = "Anonymous"
-		else if(lowertext(B.author) == "edgar allen poe" || lowertext(B.author) == "edgar allan poe")
-			error_message = "User Error: Upload something original."
-			return 1
 
 		if(!B.title)
 			B.title = "Untitled"
@@ -127,7 +124,7 @@ The answer was five and a half years -ZeroBits
 				qdel(query)
 				return 1
 			else
-				log_and_message_admins("has uploaded the book titled [B.name], [length(B.dat)] signs")
+				log_and_message_staff("has uploaded the book titled [B.name], [length(B.dat)] signs")
 				log_game("[usr.name]/[usr.key] has uploaded the book titled [B.name], [length(B.dat)] signs")
 				alert("Upload Complete.")
 			qdel(query)
@@ -170,7 +167,7 @@ The answer was five and a half years -ZeroBits
 			error_message = ""
 		return 1
 
-/datum/nano_module/library/proc/view_book(var/id)
+/datum/nano_module/library/proc/view_book(id)
 	if(current_book || !id)
 		return 0
 

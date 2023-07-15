@@ -6,17 +6,19 @@
 	organ_tag = BP_CELL
 	parent_organ = BP_CHEST
 	status = ORGAN_ROBOTIC
+	min_bruised_damage = 35 //Buff
+	min_broken_damage = 45 //NERF
 	vital = 1
 	var/open
 	var/obj/item/cell/cell = /obj/item/cell/hyper
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
 	var/servo_cost = 0.8
 
-/obj/item/organ/internal/cell/New()
+/obj/item/organ/internal/cell/Initialize()
+	. = ..()
 	robotize()
 	if(ispath(cell))
 		cell = new cell(src)
-	..()
 
 /obj/item/organ/internal/cell/proc/percent()
 	if(!cell)
@@ -30,17 +32,17 @@
 		return 0
 	return round(cell.charge*(1 - damage/max_damage))
 
-/obj/item/organ/internal/cell/proc/checked_use(var/amount)
+/obj/item/organ/internal/cell/proc/checked_use(amount)
 	if(!is_usable())
 		return FALSE
 	return cell && cell.checked_use(amount)
 
-/obj/item/organ/internal/cell/proc/use(var/amount)
+/obj/item/organ/internal/cell/proc/use(amount)
 	if(!is_usable())
 		return 0
 	return cell && cell.use(amount)
 
-/obj/item/organ/internal/cell/proc/get_power_drain()	
+/obj/item/organ/internal/cell/proc/get_power_drain()
 	var/damage_factor = 1 + 10 * damage/max_damage
 	return servo_cost * damage_factor
 
@@ -55,7 +57,7 @@
 		cost *= 2
 	if(!checked_use(cost) && owner.isSynthetic())
 		if(!owner.lying && !owner.buckled)
-			to_chat(owner, "<span class='warning'>You don't have enough energy to function!</span>")
+			to_chat(owner, SPAN_WARNING("You don't have enough energy to function!"))
 		owner.Paralyse(3)
 
 /obj/item/organ/internal/cell/emp_act(severity)
@@ -67,16 +69,16 @@
 	if(isScrewdriver(W))
 		if(open)
 			open = 0
-			to_chat(user, "<span class='notice'>You screw the battery panel in place.</span>")
+			to_chat(user, SPAN_NOTICE("You screw the battery panel in place."))
 		else
 			open = 1
-			to_chat(user, "<span class='notice'>You unscrew the battery panel.</span>")
+			to_chat(user, SPAN_NOTICE("You unscrew the battery panel."))
 
 	if(isCrowbar(W))
 		if(open)
 			if(cell)
 				user.put_in_hands(cell)
-				to_chat(user, "<span class='notice'>You remove \the [cell] from \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You remove \the [cell] from \the [src]."))
 				cell = null
 
 	if (istype(W, /obj/item/cell))
@@ -89,10 +91,11 @@
 
 /obj/item/organ/internal/cell/replaced()
 	..()
-	// This is very ghetto way of rebooting an IPC. TODO better way.
-	if(owner && owner.stat == DEAD)
+	// This is a still, very ghetto way of FBP rebooting. But this should stop le funny.
+	var/obj/item/organ/internal/mmi_holder/sponge = owner.internal_organs_by_name[BP_BRAIN]
+	if(owner && owner.stat == DEAD && sponge) //No reviving people without a brain.
 		owner.set_stat(CONSCIOUS)
-		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
+		owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
 /obj/item/organ/internal/cell/listen()
 	if(get_charge())
@@ -103,7 +106,7 @@
 	name = "brain interface"
 	icon_state = "mmi-empty"
 	organ_tag = BP_BRAIN
-	parent_organ = BP_HEAD
+	parent_organ = BP_CHEST //Chest Change.
 	vital = 1
 	var/obj/item/device/mmi/stored_mmi
 	var/datum/mind/persistantMind //Mind that the organ will hold on to after being removed, used for transfer_and_delete
@@ -113,7 +116,7 @@
 	stored_mmi = null
 	return ..()
 
-/obj/item/organ/internal/mmi_holder/New(var/mob/living/carbon/human/new_owner, var/internal)
+/obj/item/organ/internal/mmi_holder/New(mob/living/carbon/human/new_owner, internal)
 	..(new_owner, internal)
 	if(!stored_mmi)
 		stored_mmi = new(src)
@@ -144,9 +147,9 @@
 	if(owner && owner.stat == DEAD)
 		owner.set_stat(CONSCIOUS)
 		owner.switch_from_dead_to_living_mob_list()
-		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
+		owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
-/obj/item/organ/internal/mmi_holder/cut_away(var/mob/living/user)
+/obj/item/organ/internal/mmi_holder/cut_away(mob/living/user)
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
 	if(istype(parent))
 		removed(user, 0)

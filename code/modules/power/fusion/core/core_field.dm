@@ -40,7 +40,7 @@
 	var/last_range
 	var/last_power
 
-/obj/effect/fusion_em_field/New(loc, var/obj/machinery/power/fusion_core/new_owned_core)
+/obj/effect/fusion_em_field/New(loc, obj/machinery/power/fusion_core/new_owned_core)
 	..()
 
 	set_light(light_min_power, light_min_range / 10, light_min_range)
@@ -193,21 +193,21 @@
 	else
 		if(percent_unstable > 0.5 && prob(percent_unstable*100))
 			if(plasma_temperature < FUSION_RUPTURE_THRESHOLD)
-				visible_message("<span class='danger'>\The [src] ripples uneasily, like a disturbed pond.</span>")
+				visible_message(SPAN_DANGER("\The [src] ripples uneasily, like a disturbed pond."))
 			else
 				var/flare
 				var/fuel_loss
 				var/rupture
 				if(percent_unstable < 0.7)
-					visible_message("<span class='danger'>\The [src] ripples uneasily, like a disturbed pond.</span>")
+					visible_message(SPAN_DANGER("\The [src] ripples uneasily, like a disturbed pond."))
 					fuel_loss = prob(5)
 				else if(percent_unstable < 0.9)
-					visible_message("<span class='danger'>\The [src] undulates violently, shedding plumes of plasma!</span>")
+					visible_message(SPAN_DANGER("\The [src] undulates violently, shedding plumes of plasma!"))
 					flare = prob(50)
 					fuel_loss = prob(20)
 					rupture = prob(5)
 				else
-					visible_message("<span class='danger'>\The [src] is wracked by a series of horrendous distortions, buckling and twisting like a living thing!</span>")
+					visible_message(SPAN_DANGER("\The [src] is wracked by a series of horrendous distortions, buckling and twisting like a living thing!"))
 					flare = 1
 					fuel_loss = prob(50)
 					rupture = prob(25)
@@ -235,7 +235,7 @@
 	return plasma_temperature < 1000
 
 /obj/effect/fusion_em_field/proc/Rupture()
-	visible_message("<span class='danger'>\The [src] shudders like a dying animal before flaring to eye-searing brightness and rupturing!</span>")
+	visible_message(SPAN_DANGER("\The [src] shudders like a dying animal before flaring to eye-searing brightness and rupturing!"))
 	set_light(1, 0.1, 15, 2, "#ccccff")
 	empulse(get_turf(src), ceil(plasma_temperature/1000), ceil(plasma_temperature/300))
 	sleep(5)
@@ -243,7 +243,7 @@
 	explosion(get_turf(owned_core),-1,-1,8,10) // Blow out all the windows.
 	return
 
-/obj/effect/fusion_em_field/proc/ChangeFieldStrength(var/new_strength)
+/obj/effect/fusion_em_field/proc/ChangeFieldStrength(new_strength)
 	var/calc_size = 1
 	if(new_strength <= 50)
 		calc_size = 1
@@ -262,7 +262,7 @@
 	field_strength = new_strength
 	change_size(calc_size)
 
-/obj/effect/fusion_em_field/proc/AddEnergy(var/a_energy, var/a_plasma_temperature)
+/obj/effect/fusion_em_field/proc/AddEnergy(a_energy, a_plasma_temperature)
 	energy += a_energy
 	plasma_temperature += a_plasma_temperature
 	if(a_energy && percent_unstable > 0)
@@ -273,14 +273,14 @@
 		energy -= 100
 		plasma_temperature += 1
 
-/obj/effect/fusion_em_field/proc/AddParticles(var/name, var/quantity = 1)
+/obj/effect/fusion_em_field/proc/AddParticles(name, quantity = 1)
 	if(name in reactants)
 		reactants[name] += quantity
 	else if(name != "proton" && name != "electron" && name != "neutron")
 		reactants.Add(name)
 		reactants[name] = quantity
 
-/obj/effect/fusion_em_field/proc/RadiateAll(var/ratio_lost = 1)
+/obj/effect/fusion_em_field/proc/RadiateAll(ratio_lost = 1)
 
 	// Create our plasma field and dump it into our environment.
 	var/turf/T = get_turf(src)
@@ -326,7 +326,7 @@
 			if(skip_obstacle)
 				continue
 
-			AM.visible_message("<span class='danger'>The field buckles visibly around \the [AM]!</span>")
+			AM.visible_message(SPAN_DANGER("The field buckles visibly around \the [AM]!"))
 			tick_instability += rand(30,50)
 			AM.emp_act(empsev)
 
@@ -336,7 +336,7 @@
 			environment.add_thermal_energy(plasma_temperature*20000)
 	radiation = 0
 
-/obj/effect/fusion_em_field/proc/change_size(var/newsize = 1)
+/obj/effect/fusion_em_field/proc/change_size(newsize = 1)
 	var/changed = 0
 	var/static/list/size_to_icon = list(
 			"3" = 'icons/effects/96x96.dmi',
@@ -486,7 +486,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/effect/fusion_em_field/bullet_act(var/obj/item/projectile/Proj)
+/obj/effect/fusion_em_field/bullet_act(obj/item/projectile/Proj)
 	AddEnergy(Proj.damage)
 	update_icon()
 	return 0

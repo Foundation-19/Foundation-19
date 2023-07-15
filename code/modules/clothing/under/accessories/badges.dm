@@ -18,22 +18,22 @@
 	. = ..()
 	. += "<br>Denotes affiliation to <l>[badge_string]</l>."
 
-/obj/item/clothing/accessory/badge/proc/set_name(var/new_name)
+/obj/item/clothing/accessory/badge/proc/set_name(new_name)
 	stored_name = new_name
 
-/obj/item/clothing/accessory/badge/proc/set_desc(var/mob/living/carbon/human/H)
+/obj/item/clothing/accessory/badge/proc/set_desc(mob/living/carbon/human/H)
 
-/obj/item/clothing/accessory/badge/CanUseTopic(var/user)
+/obj/item/clothing/accessory/badge/CanUseTopic(user)
 	if(user in view(get_turf(src)))
 		return STATUS_INTERACTIVE
 
-/obj/item/clothing/accessory/badge/OnTopic(var/mob/user, var/list/href_list)
+/obj/item/clothing/accessory/badge/OnTopic(mob/user, list/href_list)
 	if(href_list["look_at_me"])
 		if(istype(user))
 			user.examinate(src)
 			return TOPIC_HANDLED
 
-/obj/item/clothing/accessory/badge/get_examine_line()
+/obj/item/clothing/accessory/badge/get_examine_line(mob/user)
 	. = ..()
 	. += "  <a href='?src=\ref[src];look_at_me=1'>\[View\]</a>"
 
@@ -52,15 +52,15 @@
 
 	if(isliving(user))
 		if(stored_name)
-			user.visible_message("<span class='notice'>[user] displays their [src.name].\nIt reads: [stored_name], [badge_string].</span>","<span class='notice'>You display your [src.name].\nIt reads: [stored_name], [badge_string].</span>")
+			user.visible_message(SPAN_NOTICE("[user] displays their [src.name].\nIt reads: [stored_name], [badge_string]."),SPAN_NOTICE("You display your [src.name].\nIt reads: [stored_name], [badge_string]."))
 		else
-			user.visible_message("<span class='notice'>[user] displays their [src.name].\nIt reads: [badge_string].</span>","<span class='notice'>You display your [src.name]. It reads: [badge_string].</span>")
+			user.visible_message(SPAN_NOTICE("[user] displays their [src.name].\nIt reads: [badge_string]."),SPAN_NOTICE("You display your [src.name]. It reads: [badge_string]."))
 
 /obj/item/clothing/accessory/badge/attack(mob/living/carbon/human/M, mob/living/user)
 	if(isliving(user))
-		user.visible_message("<span class='danger'>[user] invades [M]'s personal space, thrusting \the [src] into their face insistently.</span>","<span class='danger'>You invade [M]'s personal space, thrusting \the [src] into their face insistently.</span>")
+		user.visible_message(SPAN_DANGER("[user] invades [M]'s personal space, thrusting \the [src] into their face insistently."),SPAN_DANGER("You invade [M]'s personal space, thrusting \the [src] into their face insistently."))
 		if(stored_name)
-			to_chat(M, "<span class='warning'>It reads: [stored_name], [badge_string].</span>")
+			to_chat(M, SPAN_WARNING("It reads: [stored_name], [badge_string]."))
 
 /obj/item/clothing/accessory/badge/PI
 	name = "private investigator's badge"
@@ -76,7 +76,7 @@
 	icon_state = "holobadge"
 	item_state = "holobadge"
 	badge_string = "Security"
-	var/badge_access = access_security
+	var/badge_access = ACCESS_SECURITY
 	var/badge_number
 	var/emagged //emag_act removes access requirements
 
@@ -86,7 +86,7 @@
 	icon_state = "ntholobadge"
 	color = null
 	badge_string = "Corporate Security"
-	badge_access = access_research
+	badge_access = ACCESS_RESEARCH
 
 /obj/item/clothing/accessory/badge/holo/cord
 	icon_state = "holobadge-cord"
@@ -96,7 +96,7 @@
 	icon_state = "holobadge-cord"
 	slot_flags = SLOT_MASK | SLOT_TIE
 
-/obj/item/clothing/accessory/badge/holo/set_name(var/new_name)
+/obj/item/clothing/accessory/badge/holo/set_name(new_name)
 	..()
 	badge_number = random_id(type,1000,9999)
 	name = "[name] ([badge_number])"
@@ -112,16 +112,16 @@
 		return
 	return ..()
 
-/obj/item/clothing/accessory/badge/holo/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/clothing/accessory/badge/holo/emag_act(remaining_charges, mob/user)
 	if (emagged)
-		to_chat(user, "<span class='danger'>\The [src] is already cracked.</span>")
+		to_chat(user, SPAN_DANGER("\The [src] is already cracked."))
 		return
 	else
 		emagged = TRUE
-		to_chat(user, "<span class='danger'>You crack the holobadge security checks.</span>")
+		to_chat(user, SPAN_DANGER("You crack the holobadge security checks."))
 		return 1
 
-/obj/item/clothing/accessory/badge/holo/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/item/clothing/accessory/badge/holo/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/card/id) || istype(O, /obj/item/modular_computer))
 
 		var/obj/item/card/id/id_card = O.GetIdCard()
@@ -195,42 +195,42 @@
 	desc = "A leather-backed plastic badge displaying that the owner is certified press personnel."
 	icon_state = "pressbadge"
 	badge_string = "Journalist"
-	
+
 /obj/item/clothing/accessory/badge/tags/skrell
 	name = "\improper Skrellian holobadge"
 	desc = "A high tech Skrellian holobadge, designed to project information about the owner."
 	icon_state = "skrell_badge"
 	badge_string = null	//Will be the name of the SDTF.
 
-/obj/item/clothing/accessory/badge/tags/skrell/set_desc(var/mob/living/carbon/human/H)
+/obj/item/clothing/accessory/badge/tags/skrell/set_desc(mob/living/carbon/human/H)
 	if(!istype(H))
 		return
 	desc = "Blood type: [H.b_type]"
-	
+
 /obj/item/clothing/accessory/badge/tags/skrell/verb/set_sdtf()
 	set name = "Set SDTF Name"
 	set category = "Object"
 	set src in usr
-	
+
 	if(usr.incapacitated())
-		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
+		to_chat(usr, SPAN_WARNING("You're unable to do that."))
 		return
-	
+
 	var/obj/item/in_hand = usr.get_active_hand()
 	if(in_hand != src)
-		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
+		to_chat(usr, SPAN_WARNING("You have to be holding [src] to modify it."))
 		return
-	
+
 	badge_string = sanitize(input(usr, "Input your SDTF.", "SDTF Holobadge") as null|text, MAX_NAME_LEN)
-	
+
 	if(usr.incapacitated())	//Because things can happen while you're typing
-		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
+		to_chat(usr, SPAN_WARNING("You're unable to do that."))
 		return
 	in_hand = usr.get_active_hand()
 	if(in_hand != src)
-		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
+		to_chat(usr, SPAN_WARNING("You have to be holding [src] to modify it."))
 		return
-		
+
 	if(badge_string)
 		set_name(usr.real_name)
 		set_desc(usr)

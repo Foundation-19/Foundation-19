@@ -25,7 +25,7 @@
 	desc = "A speed loader for revolvers."
 	icon_state = "38"
 	caliber = ".44"
-	ammo_type = /obj/item/ammo_casing/a50
+	ammo_type = /obj/item/ammo_casing/pistol/a50
 	matter = list(DEFAULT_WALL_MATERIAL = 1260)
 	max_ammo = 6
 	multiple_sprites = 1
@@ -74,7 +74,7 @@
 		var/obj/item/ammo_casing/C = stored_ammo[stored_ammo.len]
 		stored_ammo-=C
 		user.put_in_hands(C)
-		user.visible_message("\The [user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+		user.visible_message("\The [user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from [src]."))
 		update_icon()
 	else
 		..()
@@ -280,13 +280,13 @@
 
 /obj/item/ammo_magazine/box/machinegun
 	name = "magazine box"
-	icon_state = "machinegun"
+	icon_state = "usmc_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = CALIBER_RIFLE
 	matter = list(MATERIAL_STEEL = 4500)
 	ammo_type = /obj/item/ammo_casing/rifle
-	max_ammo = 80
+	max_ammo = 100
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/box/machinegun/empty

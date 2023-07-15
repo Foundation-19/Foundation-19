@@ -73,7 +73,7 @@
 	popup.set_content(jointext(dat, "<br>"))
 	popup.open()
 
-/obj/item/blueprints/proc/get_area_type(var/area/A = get_area(src))
+/obj/item/blueprints/proc/get_area_type(area/A = get_area(src))
 	if(istype(A, /area/space))
 		return AREA_SPACE
 
@@ -89,20 +89,20 @@
 	if(!istype(res,/list))
 		switch(res)
 			if(ROOM_ERR_SPACE)
-				to_chat(usr, "<span class='warning'>The new area must be completely airtight!</span>")
+				to_chat(usr, SPAN_WARNING("The new area must be completely airtight!"))
 				return
 			if(ROOM_ERR_TOOLARGE)
-				to_chat(usr, "<span class='warning'>The new area too large!</span>")
+				to_chat(usr, SPAN_WARNING("The new area too large!"))
 				return
 			else
-				to_chat(usr, "<span class='warning'>Error! Please notify administration!</span>")
+				to_chat(usr, SPAN_WARNING("Error! Please notify administration!"))
 				return
 	var/list/turf/turfs = res
 	var/str = sanitizeSafe(input("New area name:","Blueprint Editing", ""), MAX_NAME_LEN)
 	if(!str || !length(str)) //cancel
 		return
 	if(length(str) > 50)
-		to_chat(usr, "<span class='warning'>Name too long.</span>")
+		to_chat(usr, SPAN_WARNING("Name too long."))
 		return
 	var/area/A = new
 	A.SetName(str)
@@ -123,11 +123,11 @@
 	if(!str || !length(str) || str==prevname) //cancel
 		return
 	if(length(str) > 50)
-		to_chat(usr, "<span class='warning'>Text too long.</span>")
+		to_chat(usr, SPAN_WARNING("Text too long."))
 		return
 	set_area_machinery_title(A,str,prevname)
 	A.SetName(str)
-	to_chat(usr, "<span class='notice'>You set the area '[prevname]' title to '[str]'.</span>")
+	to_chat(usr, SPAN_NOTICE("You set the area '[prevname]' title to '[str]'."))
 	interact()
 
 /obj/item/blueprints/proc/delete_area()
@@ -135,12 +135,12 @@
 	if (get_area_type(A)!=AREA_STATION || A.apc) //let's just check this one last time, just in case
 		interact()
 		return
-	to_chat(usr, "<span class='notice'>You scrub [A.name] off the blueprint.</span>")
-	log_and_message_admins("deleted area [A.name] via station blueprints.")
+	to_chat(usr, SPAN_NOTICE("You scrub [A.name] off the blueprint."))
+	log_and_message_staff("deleted area [A.name] via station blueprints.")
 	qdel(A)
 	interact()
 
-/obj/item/blueprints/proc/set_area_machinery_title(var/area/A,var/title,var/oldtitle)
+/obj/item/blueprints/proc/set_area_machinery_title(area/A,title,oldtitle)
 	if (!oldtitle) // or replacetext goes to infinite loop
 		return
 
@@ -156,7 +156,7 @@
 		M.SetName(replacetext(M.name,oldtitle,title))
 	//TODO: much much more. Unnamed airlocks, cameras, etc.
 
-/obj/item/blueprints/proc/check_tile_is_border(var/turf/T2,var/dir)
+/obj/item/blueprints/proc/check_tile_is_border(turf/T2,dir)
 	if (istype(T2, /turf/space))
 		return BORDER_SPACE //omg hull breach we all going to die here
 	if (istype(T2, /turf/simulated/shuttle))
@@ -181,7 +181,7 @@
 
 	return BORDER_NONE
 
-/obj/item/blueprints/proc/detect_room(var/turf/first)
+/obj/item/blueprints/proc/detect_room(turf/first)
 	var/list/turf/found = new
 	var/list/turf/pending = list(first)
 	while(pending.len)
@@ -228,12 +228,12 @@
 /obj/item/blueprints/outpost/get_header()
 	return "<h2>Exoplanetary outpost blueprints</h2><small>Property of [GLOB.using_map.company_name].</small><hr>"
 
-/obj/item/blueprints/outpost/check_tile_is_border(var/turf/T2,var/dir)
+/obj/item/blueprints/outpost/check_tile_is_border(turf/T2,dir)
 	if (istype(T2, /turf/simulated/floor/exoplanet/))
 		return BORDER_SPACE
 	. = ..()
 
-/obj/item/blueprints/outpost/get_area_type(var/area/A = get_area(src))
+/obj/item/blueprints/outpost/get_area_type(area/A = get_area(src))
 	if(istype(A, /area/exoplanet))
 		return AREA_SPACE
 	var/obj/effect/overmap/visitable/sector/exoplanet/E = map_sectors["[z]"]

@@ -17,8 +17,8 @@
 // Results of pre-movement checks.
 // Todo: Move outside AI code?
 #define MOVEMENT_ON_COOLDOWN	-1	// Recently moved and needs to try again soon.
-#define MOVEMENT_FAILED			0	// Move() returned false for whatever reason and the mob didn't move.
-#define MOVEMENT_SUCCESSFUL		1	// Move() returned true and the mob hopefully moved.
+#define MOVEMENT_FAILED			0	// DoMove() returned for whatever reason and the mob didn't move.
+#define MOVEMENT_SUCCESSFUL		1	// DoMove() returned MOVEMENT_HANDLED and the mob hopefully moved.
 
 // Results of pre-attack checks
 #define ATTACK_ON_COOLDOWN		-1	// Recently attacked and needs to try again soon.

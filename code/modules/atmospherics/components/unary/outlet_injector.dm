@@ -85,20 +85,20 @@
 	if(href_list["toggle_power"])
 		update_use_power(!use_power)
 		queue_icon_update()
-		to_chat(user, "<span class='notice'>The multitool emits a short beep confirming the change.</span>")
+		to_chat(user, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
 		return TOPIC_REFRESH
 	if(href_list["settag"])
 		var/t = sanitizeSafe(input(user, "Enter the ID tag for [src.name]", src.name, id), MAX_NAME_LEN)
 		if(t && CanInteract(user, state))
 			id = t
-			to_chat(user, "<span class='notice'>The multitool emits a short beep confirming the change.</span>")
+			to_chat(user, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
 			return TOPIC_REFRESH
 		return TOPIC_HANDLED
 	if(href_list["setfreq"])
 		var/freq = input(user, "Enter the Frequency for [src.name]. Decimal will automatically be inserted", src.name, frequency) as num|null
 		if(CanInteract(user, state))
 			set_frequency(freq)
-			to_chat(user, "<span class='notice'>The multitool emits a short beep confirming the change.</span>")
+			to_chat(user, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
 			return TOPIC_REFRESH
 		return TOPIC_HANDLED
 
@@ -200,10 +200,10 @@
 
 	addtimer(CALLBACK(src, .proc/broadcast_status), 2, TIMER_UNIQUE)
 
-/obj/machinery/atmospherics/unary/outlet_injector/hide(var/i)
+/obj/machinery/atmospherics/unary/outlet_injector/hide(i)
 	update_underlays()
 
-/obj/machinery/atmospherics/unary/outlet_injector/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/atmospherics/unary/outlet_injector/attackby(obj/item/O as obj, mob/user as mob)
 	if(isMultitool(O))
 		var/datum/browser/popup = new (user, "Vent Configuration Utility", "[src] Configuration Panel", 600, 200)
 		popup.set_content(jointext(get_console_data(),"<br>"))

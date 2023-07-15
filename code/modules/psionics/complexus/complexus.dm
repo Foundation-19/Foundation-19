@@ -3,7 +3,6 @@
 	var/announced = FALSE             // Whether or not we have been announced to our holder yet.
 	var/suppressed = TRUE             // Whether or not we are suppressing our psi powers.
 	var/use_psi_armour = TRUE         // Whether or not we should automatically deflect/block incoming damage.
-	var/rebuild_power_cache = TRUE    // Whether or not we need to rebuild our cache of psi powers.
 
 	var/rating = 0                    // Overall psi rating.
 	var/cost_modifier = 1             // Multiplier for power use stamina costs.
@@ -44,7 +43,7 @@
 		_aura_image = create_aura_image(owner)
 	return _aura_image
 
-/proc/create_aura_image(var/newloc)
+/proc/create_aura_image(newloc)
 	var/image/aura_image = image(loc = newloc, icon = 'icons/effects/psi_aura_small.dmi', icon_state = "aura")
 	aura_image.blend_mode = BLEND_MULTIPLY
 	aura_image.appearance_flags = NO_CLIENT_COLOR | RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
@@ -52,7 +51,7 @@
 	aura_image.alpha = 0
 	aura_image.pixel_x = -64
 	aura_image.pixel_y = -64
-	aura_image.mouse_opacity = 0
+	aura_image.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	aura_image.appearance_flags = 0
 	for(var/thing in SSpsi.processing)
 		var/datum/psi_complexus/psychic = thing
@@ -61,14 +60,14 @@
 	SSpsi.all_aura_images[aura_image] = TRUE
 	return aura_image
 
-/proc/destroy_aura_image(var/image/aura_image)
+/proc/destroy_aura_image(image/aura_image)
 	for(var/thing in SSpsi.processing)
 		var/datum/psi_complexus/psychic = thing
 		if(psychic.owner.client)
 			psychic.owner.client.images -= aura_image
 	SSpsi.all_aura_images -= aura_image
 
-/datum/psi_complexus/New(var/mob/_owner)
+/datum/psi_complexus/New(mob/_owner)
 	owner = _owner
 	START_PROCESSING(SSpsi, src)
 	set_extension(src, /datum/extension/armor/psionic)

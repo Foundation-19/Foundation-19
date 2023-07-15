@@ -121,7 +121,7 @@
 
 	return 1
 
-/mob/living/carbon/alien/handle_environment(var/datum/gas_mixture/environment)
+/mob/living/carbon/alien/handle_environment(datum/gas_mixture/environment)
 	// Both alien subtypes survive in vaccum and suffer in high temperatures,
 	// so I'll just define this once, for both (see radiation comment above)
 	if(!environment) return
@@ -130,7 +130,7 @@
 		adjustFireLoss((environment.temperature - (T0C+66))/5) // Might be too high, check in testing.
 		if (fire) fire.icon_state = "fire2"
 		if(prob(20))
-			to_chat(src, "<span class='danger'>You feel a searing heat!</span>")
+			to_chat(src, SPAN_DANGER("You feel a searing heat!"))
 	else
 		if (fire) fire.icon_state = "fire0"
 

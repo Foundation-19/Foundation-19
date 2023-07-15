@@ -27,7 +27,7 @@
 	registered_name = "Commanding Officer"
 	assignment = "Commanding Officer"
 /obj/item/card/id/torch/captains_spare/New()
-	access = get_all_station_access()
+	access = get_all_site_access()
 	..()
 
 /*
@@ -420,6 +420,31 @@
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/captain
 
+// ERT CARDS
+
+/obj/item/card/id/mtf
+	name = " mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl5"
+	item_state = "Admin_ID"
+
+/obj/item/card/id/mtf/Initialize()
+	. = ..()
+	rank = "Mobile Task Force Operative"
+	access |= get_all_station_access()
+
+
+/obj/item/card/id/physics
+	name = " military ID"
+	desc = "A dark purple ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "securitylvl5"
+	item_state = "Sec_ID5"
+
+/obj/item/card/id/physics/Initialize()
+	. = ..()
+	rank = "UNGOC Physics Operative"
+	access |= get_all_station_access()
+
 // COMMS CARDS
 
 /obj/item/card/id/commslvl1
@@ -465,13 +490,6 @@
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/cmo
-
-/obj/item/card/id/virologist
-	name = " security ID"
-	desc = "A light blue card. Seems almost as unimportant as the person itself."
-	icon_state = "adminlvl2"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/virologist
 
 /obj/item/card/id/psychiatrist
 	name = " administration ID"
@@ -538,26 +556,33 @@
 /obj/item/card/id/dmining
 	name = " Mining Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclassmining
+	access = ACCESS_DCLASS_MINING
 /obj/item/card/id/dbotany
 	name = " Botany Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclassbotany
+	access = ACCESS_DCLASS_BOTANY
 
 /obj/item/card/id/dkitchen
 	name = " Kitchen Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclasskitchen
+	access = ACCESS_DCLASS_KITCHEN
 
 /obj/item/card/id/djanitorial
 	name = " Janitorial Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclassjanitorial
+	access = ACCESS_DCLASS_JANITORIAL
 
 
 /obj/item/card/id/officeworker
-	name = "Office staff ID"
+	name = "Office Staff ID"
 	desc = "A low level ID issued to office workers."
 	icon_state = "adminlvl1"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/officeworker
+
+/obj/item/card/id/classd
+	name = "Class-D ID"
+	desc = "An ID card issued to Class-D Foundation personnel."
+	icon_state = "classd"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/classd

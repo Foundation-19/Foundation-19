@@ -40,7 +40,7 @@
 
 	if(usr.incapacitated()) return
 	if(!engine)
-		to_chat(usr, "<span class='warning'>\The [src] does not have an engine block installed...</span>")
+		to_chat(usr, SPAN_WARNING("\The [src] does not have an engine block installed..."))
 		return
 
 	if(!on)
@@ -59,7 +59,7 @@
 		usr.visible_message("\The [usr] puts up \the [src]'s kickstand.")
 	else
 		if(istype(src.loc,/turf/space))
-			to_chat(usr, "<span class='warning'> You don't think kickstands work in space...</span>")
+			to_chat(usr, SPAN_WARNING(" You don't think kickstands work in space..."))
 			return
 		usr.visible_message("\The [usr] puts down \the [src]'s kickstand.")
 		if(pulledby)
@@ -68,7 +68,7 @@
 	kickstand = !kickstand
 	anchored = (kickstand || on)
 
-/obj/vehicle/bike/proc/load_engine(var/obj/item/engine/E, var/mob/user)
+/obj/vehicle/bike/proc/load_engine(obj/item/engine/E, mob/user)
 	if(engine)
 		return
 	if(user && !user.unEquip(E))
@@ -90,28 +90,28 @@
 		qdel(trail)
 	trail = null
 
-/obj/vehicle/bike/load(var/atom/movable/C)
+/obj/vehicle/bike/load(atom/movable/C)
 	var/mob/living/M = C
 	if(!istype(M)) return 0
 	if(M.buckled || M.restrained() || !Adjacent(M) || !M.Adjacent(src))
 		return 0
 	return ..(M)
 
-/obj/vehicle/bike/emp_act(var/severity)
+/obj/vehicle/bike/emp_act(severity)
 	if(engine)
 		engine.emp_act(severity)
 	..()
 
-/obj/vehicle/bike/insert_cell(var/obj/item/cell/C, var/mob/living/carbon/human/H)
+/obj/vehicle/bike/insert_cell(obj/item/cell/C, mob/living/carbon/human/H)
 	return
 
 /obj/vehicle/bike/attackby(obj/item/W as obj, mob/user as mob)
 	if(open)
 		if(istype(W, /obj/item/engine))
 			if(engine)
-				to_chat(user, "<span class='warning'>There is already an engine block in \the [src].</span>")
+				to_chat(user, SPAN_WARNING("There is already an engine block in \the [src]."))
 				return 1
-			user.visible_message("<span class='warning'>\The [user] installs \the [W] into \the [src].</span>")
+			user.visible_message(SPAN_WARNING("\The [user] installs \the [W] into \the [src]."))
 			load_engine(W)
 			return
 		else if(engine && engine.attackby(W,user))
@@ -122,12 +122,12 @@
 			return 1
 	return ..()
 
-/obj/vehicle/bike/MouseDrop_T(var/atom/movable/C, mob/user as mob)
+/obj/vehicle/bike/MouseDrop_T(atom/movable/C, mob/user as mob)
 	if(!load(C))
-		to_chat(user, "<span class='warning'> You were unable to load \the [C] onto \the [src].</span>")
+		to_chat(user, SPAN_WARNING(" You were unable to load \the [C] onto \the [src]."))
 		return
 
-/obj/vehicle/bike/attack_hand(var/mob/user as mob)
+/obj/vehicle/bike/attack_hand(mob/user as mob)
 	if(user == load)
 		unload(load)
 		to_chat(user, "You unbuckle yourself from \the [src]")
@@ -137,11 +137,11 @@
 		return
 	if(user.incapacitated())
 		unload(user)
-		visible_message("<span class='warning'>\The [user] falls off \the [src]!</span>")
+		visible_message(SPAN_WARNING("\The [user] falls off \the [src]!"))
 		return
 	return Move(get_step(src, direction))
 
-/obj/vehicle/bike/Move(var/turf/destination)
+/obj/vehicle/bike/Move(turf/destination)
 	if(kickstand || (world.time <= l_move_time + move_delay)) return
 	//these things like space, not turf. Dragging shouldn't weigh you down.
 	if(!pulledby)
@@ -188,7 +188,7 @@
 
 	..()
 
-/obj/vehicle/bike/bullet_act(var/obj/item/projectile/Proj)
+/obj/vehicle/bike/bullet_act(obj/item/projectile/Proj)
 	if(buckled_mob && prob((100-protection_percent)))
 		buckled_mob.bullet_act(Proj)
 		return

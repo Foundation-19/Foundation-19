@@ -137,7 +137,7 @@
 /datum/species/adherent/get_slowdown(mob/living/carbon/human/H)
 	return slowdown
 
-/datum/species/adherent/handle_fall_special(mob/living/carbon/human/H, var/turf/landing)
+/datum/species/adherent/handle_fall_special(mob/living/carbon/human/H, turf/landing)
 	var/float_is_usable = FALSE
 	if (H?.stat == CONSCIOUS)
 		for (var/obj/item/organ/internal/powered/float/float in H.internal_organs)

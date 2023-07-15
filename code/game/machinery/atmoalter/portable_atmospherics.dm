@@ -50,7 +50,7 @@
 		GAS_OXYGEN = O2STANDARD * MolesForPressure(),
 		GAS_NITROGEN = N2STANDARD *  MolesForPressure())
 
-/obj/machinery/portable_atmospherics/proc/MolesForPressure(var/target_pressure = start_pressure)
+/obj/machinery/portable_atmospherics/proc/MolesForPressure(target_pressure = start_pressure)
 	return (target_pressure * air_contents.volume) / (R_IDEAL_GAS_EQUATION * air_contents.temperature)
 
 /obj/machinery/portable_atmospherics/on_update_icon()
@@ -103,7 +103,7 @@
 	if (network)
 		network.update = 1
 
-/obj/machinery/portable_atmospherics/attackby(var/obj/item/W as obj, var/mob/user as mob)
+/obj/machinery/portable_atmospherics/attackby(obj/item/W as obj, mob/user as mob)
 	if ((istype(W, /obj/item/tank) && !( src.destroyed )))
 		if (src.holding)
 			return
@@ -116,21 +116,21 @@
 	else if(isWrench(W))
 		if(connected_port)
 			disconnect()
-			to_chat(user, "<span class='notice'>You disconnect \the [src] from the port.</span>")
+			to_chat(user, SPAN_NOTICE("You disconnect \the [src] from the port."))
 			update_icon()
 			return
 		else
 			var/obj/machinery/atmospherics/portables_connector/possible_port = locate(/obj/machinery/atmospherics/portables_connector/) in loc
 			if(possible_port)
 				if(connect(possible_port))
-					to_chat(user, "<span class='notice'>You connect \the [src] to the port.</span>")
+					to_chat(user, SPAN_NOTICE("You connect \the [src] to the port."))
 					update_icon()
 					return
 				else
-					to_chat(user, "<span class='notice'>\The [src] failed to connect to the port.</span>")
+					to_chat(user, SPAN_NOTICE("\The [src] failed to connect to the port."))
 					return
 			else
-				to_chat(user, "<span class='notice'>Nothing happens.</span>")
+				to_chat(user, SPAN_NOTICE("Nothing happens."))
 				return ..()
 
 	else if (istype(W, /obj/item/device/scanner/gas))
@@ -167,7 +167,7 @@
 			gases += ", [gas]"
 		else
 			gases = gas
-	log_and_message_admins("opened [src.name], containing [gases].")
+	log_and_message_staff("opened [src.name], containing [gases].")
 
 /obj/machinery/portable_atmospherics/powered/dismantle()
 	if(isturf(loc))

@@ -1,4 +1,4 @@
-/obj/item/stack/material/withstand_psi_stress(var/stress, var/atom/source)
+/obj/item/stack/material/withstand_psi_stress(stress, atom/source)
 	. = ..(stress, source)
 	if(amount > 0 && . > 0 && disrupts_psionics())
 		if(. > amount)

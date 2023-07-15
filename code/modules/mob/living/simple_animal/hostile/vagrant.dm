@@ -1,4 +1,3 @@
-
 /mob/living/simple_animal/hostile/vagrant
 	name = "creature"
 	desc = "You get the feeling you should run."
@@ -9,9 +8,8 @@
 	icon_gib = "vagrant"
 	maxHealth = 60
 	health = 20
-	speed = 5
+	movement_cooldown = 4
 	turns_per_move = 4
-	move_to_delay = 4
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -53,13 +51,13 @@
 			V.update_icon()
 			H.Weaken(1)
 			H.Stun(1)
-			H.visible_message("<span class='danger'>\the [src] latches onto \the [H], pulsating!</span>")
+			H.visible_message(SPAN_DANGER("\the [src] latches onto \the [H], pulsating!"))
 			V.forceMove(V.gripping.loc)
 
-/mob/living/simple_animal/hostile/vagrant/Allow_Spacemove(var/check_drift = 0)
+/mob/living/simple_animal/hostile/vagrant/Allow_Spacemove(check_drift = 0)
 	return 1
 
-/mob/living/simple_animal/hostile/vagrant/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/simple_animal/hostile/vagrant/bullet_act(obj/item/projectile/Proj)
 	var/oldhealth = health
 	. = ..()
 	if((target_mob != Proj.firer) && health < oldhealth && !incapacitated(INCAPACITATION_KNOCKOUT)) //Respond to being shot at
@@ -86,7 +84,7 @@
 				gripping.vessel.remove_reagent(/datum/reagent/blood, blood_per_tick)
 				health = min(health + health_per_tick, maxHealth)
 				if(prob(15))
-					to_chat(gripping, "<span class='danger'>You feel your fluids being drained!</span>")
+					to_chat(gripping, SPAN_DANGER("You feel your fluids being drained!"))
 			else
 				gripping = null
 
@@ -107,12 +105,12 @@
 		alpha = 75
 		set_light(0)
 		icon_state = initial(icon_state)
-		move_to_delay = initial(move_to_delay)
+		movement_cooldown = initial(movement_cooldown)
 	else //It's fight time
 		alpha = 255
 		icon_state = "vagrant_glowing"
 		set_light(0.2, 0.1, 3)
-		move_to_delay = 2
+		movement_cooldown = 2
 
 /mob/living/simple_animal/hostile/vagrant/swarm/Initialize()
 	. = ..()

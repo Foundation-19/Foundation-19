@@ -54,7 +54,7 @@ var/list/gamemode_cache = list()
 	var/list/probabilities = list()		// relative probability of each mode
 	var/secret_hide_possibilities = FALSE // Whether or not secret modes show list of possible round types
 	var/secret_disabled = FALSE // Whether or not secret - a hidden random pick from available modes - can be voted for
-	var/allow_random_events = 0			// enables random events mid-round when set to 1
+	var/allow_random_events = 1			// enables random events mid-round when set to 1
 	var/hostedby = null
 	var/respawn_delay = 30 //An observer must wait this many minutes before being able to return to the main menu
 	var/respawn_menu_delay = 0 //An observer that has returned to the main menu must wait this many minutes before rejoining
@@ -157,6 +157,10 @@ var/list/gamemode_cache = list()
 	var/minimum_byond_version = 512
 	var/minimum_byond_build = 1488
 
+	var/panic_bunker = 0
+	var/panic_bunker_message = ""
+	var/panic_bunker_age = 0
+
 	var/login_export_addr = null
 
 	var/enter_allowed = 1
@@ -171,11 +175,11 @@ var/list/gamemode_cache = list()
 	// Event settings
 	var/expected_round_length = 3 HOURS
 	/// If the first delay has a custom start time
-	var/static/list/event_first_run = list(EVENT_LEVEL_MUNDANE = null, EVENT_LEVEL_MODERATE = null, EVENT_LEVEL_MAJOR = list("lower" = 80 MINUTES, "upper" = 100 MINUTES), EVENT_LEVEL_EXO = list("lower" = 50 MINUTES, "upper" = 80 MINUTES))
+	var/static/list/event_first_run = list(EVENT_LEVEL_MUNDANE = null, EVENT_LEVEL_MODERATE = null, EVENT_LEVEL_MAJOR = list("lower" = 80 MINUTES, "upper" = 100 MINUTES))
 	/// The lowest delay until next event
-	var/static/list/event_delay_lower = list(EVENT_LEVEL_MUNDANE = 10 MINUTES, EVENT_LEVEL_MODERATE = 30 MINUTES, EVENT_LEVEL_MAJOR = 50 MINUTES, EVENT_LEVEL_EXO = 40 MINUTES)
+	var/static/list/event_delay_lower = list(EVENT_LEVEL_MUNDANE = 10 MINUTES, EVENT_LEVEL_MODERATE = 30 MINUTES, EVENT_LEVEL_MAJOR = 50 MINUTES)
 	/// The upper delay until next event
-	var/static/list/event_delay_upper = list(EVENT_LEVEL_MUNDANE = 15 MINUTES, EVENT_LEVEL_MODERATE = 45 MINUTES, EVENT_LEVEL_MAJOR = 70 MINUTES, EVENT_LEVEL_EXO = 60 MINUTES)
+	var/static/list/event_delay_upper = list(EVENT_LEVEL_MUNDANE = 15 MINUTES, EVENT_LEVEL_MODERATE = 45 MINUTES, EVENT_LEVEL_MAJOR = 70 MINUTES)
 
 	var/abandon_allowed = 1
 	var/ooc_allowed = 1
@@ -195,8 +199,6 @@ var/list/gamemode_cache = list()
 	var/ghosts_can_possess_animals = 0
 	var/delist_when_no_admins = FALSE
 
-	var/allow_map_switching = 0 // Whether map switching is allowed
-	var/auto_map_vote = 0 // Automatically call a map vote at end of round and switch to the selected map
 	var/wait_for_sigusr1_reboot = 0 // Don't allow reboot unless it was caused by SIGUSR1
 
 	var/radiation_decay_rate = 1 //How much radiation is reduced by each tick
@@ -229,8 +231,21 @@ var/list/gamemode_cache = list()
 	var/motd = ""
 	var/event = ""
 
-	/// The delay in deciseconds between stat() updates.
-	var/stat_delay = 5
+	var/asset_transport = "simple"
+
+	var/log_assets = FALSE
+
+	var/cache_assets = TRUE
+
+	var/asset_simple_preload = FALSE
+
+	var/asset_cdn_webroot = FALSE
+
+	var/asset_cdn_url
+
+	var/bccm = FALSE
+
+	var/use_timelocks = FALSE
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -513,6 +528,9 @@ var/list/gamemode_cache = list()
 				if ("traitor_scaling")
 					config.traitor_scaling = 1
 
+				if ("use_timelocks")
+					config.use_timelocks = 1
+
 				if ("objectives_disabled")
 					if(!value)
 						log_misc("Could not find value for objectives_disabled in configuration.")
@@ -697,12 +715,6 @@ var/list/gamemode_cache = list()
 				if("delist_when_no_admins")
 					config.delist_when_no_admins = TRUE
 
-				if("map_switching")
-					config.allow_map_switching = 1
-
-				if("auto_map_vote")
-					config.auto_map_vote = 1
-
 				if("wait_for_sigusr1")
 					config.wait_for_sigusr1_reboot = 1
 
@@ -789,8 +801,38 @@ var/list/gamemode_cache = list()
 				if ("game_version")
 					config.game_version = value
 
-				if ("stat_delay")
-					stat_delay = Floor(text2num(value))
+				if ("asset_transport")
+					asset_transport = lowertext(value)
+
+				if ("log_assets")
+					log_assets = text2num(value)
+
+				if ("cache_assets")
+					cache_assets = text2num(value)
+
+				if ("asset_simple_preload")
+					asset_simple_preload = text2num(value)
+
+				if ("asset_cdn_webroot")
+					asset_cdn_webroot = text2num(value)
+
+				if ("asset_cdn_url")
+					if (value || trim(value) != "")
+						if(value && value[length(value)] != "/")
+							value += "/"
+						asset_cdn_url = value
+
+				if ("use_panic_bunker")
+					config.panic_bunker = 1
+
+				if ("panic_bunker_message")
+					config.panic_bunker_message = value
+
+				if ("panic_bunker_age")
+					config.panic_bunker_age = text2num(value)
+
+				if ("use_bccm")
+					config.bccm = TRUE
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

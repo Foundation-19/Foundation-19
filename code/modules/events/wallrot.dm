@@ -1,31 +1,35 @@
 /datum/event/wallrot/setup()
-	announceWhen = rand(0, 300)
+	announceWhen = rand(60, 180)
 	endWhen = announceWhen + 1
 
 /datum/event/wallrot/announce()
-	command_announcement.Announce("Containment breach of object class Keter detected. Structures may be contaminated with SCP-020.", "Biohazard Alert", zlevels = affecting_z)
+	command_announcement.Announce("Containment breach of biohazardous Euclid-class object detected. Structures may be contaminated with fungal SCP.", "Biohazard Alert")
 
 /datum/event/wallrot/start()
-	spawn()
-		var/turf/simulated/wall/center = null
 
-		// 100 attempts
-		for(var/i=0, i<100, i++)
-			var/turf/candidate = locate(rand(1, world.maxx), rand(1, world.maxy), 1)
-			if(istype(candidate, /turf/simulated/wall))
-				center = candidate
+	var/list/pick_turfs = list()
 
-		if(center)
-			// Make sure at least one piece of wall rots!
-			center.rot()
+	for(var/z in GLOB.using_map.station_levels)
+		var/list/turfs = block(locate(1, 1, z), locate(world.maxx, world.maxy, z))
+		for(var/turf/simulated/wall/T in turfs)
+			if(is_randomly_rottable_turf(T))
+				pick_turfs += T
 
-			// Have a chance to rot lots of other walls.
-			var/rotcount = 0
-			var/actual_severity = severity * rand(5, 10)
-			for(var/turf/simulated/wall/W in range(5, center)) if(prob(50))
+	var/turf/simulated/wall/center
+
+	if(pick_turfs.len)
+
+		center = pick(pick_turfs)
+		center.rot()
+
+		for(var/i = (severity * rand(5, 10)), i > 0, i--)
+			var/turf/simulated/wall/W = pick_turf_in_range(center, (3 + (2 * severity)), list(/proc/is_station_turf, /proc/is_randomly_rottable_turf))
+			if(W)
 				W.rot()
-				rotcount++
+			else
+				break
 
-				// Only rot up to severity walls
-				if(rotcount >= actual_severity)
-					break
+// Predicate used for picking rottable turfs
+
+/proc/is_randomly_rottable_turf(turf/T)
+	return (istype(T, /turf/simulated/wall) && !(locate(/obj/effect/overlay/wallrot) in T))

@@ -49,12 +49,12 @@
 	name = "box of spare encryption keys"
 	desc = "A box full of spare encryption keys."
 	startswith = list(
-		/obj/item/device/encryptionkey/headset_sci = 4,
-		/obj/item/device/encryptionkey/headset_med = 4,
-		/obj/item/device/encryptionkey/headset_cargo = 4,
-		/obj/item/device/encryptionkey/headset_service = 4,
-		/obj/item/device/encryptionkey/headset_eng = 4,
-		/obj/item/device/encryptionkey/headset_sec = 4
+		/obj/item/device/encryptionkey/headset_sci = 2,
+		/obj/item/device/encryptionkey/headset_med = 2,
+		/obj/item/device/encryptionkey/headset_cargo = 2,
+		/obj/item/device/encryptionkey/headset_service = 2,
+		/obj/item/device/encryptionkey/headset_eng = 2,
+		/obj/item/device/encryptionkey/headset_sec = 2
 	)
 
 /obj/item/storage/box/encryptionkeys/sci

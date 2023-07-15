@@ -13,20 +13,20 @@
 <h1>WIRELESS CONNECTIVITY</h1>
 	<div class="item">
 		<div class="itemLabelWide">
-                	Active NTNet Relays: 
+                	Active SCiPnet Relays:
 		</div>
 		<div class="itemContentNarrow">
                 	<b>{{:data.ntnetrelays}}</b>
 		</div>
 		{{if data.ntnetrelays}}
 			<div class="itemLabelWide">
-                		System status: 
+                		System status:
 			</div>
 			<div class="itemContentNarrow">
                 		<b>{{:data.ntnetstatus ? "ENABLED" : "DISABLED"}}</b>
-			</div>		
+			</div>
 			<div class="itemLabelWide">
-                		Control: 
+                		Control:
 			</div>
 			<div class="itemContentNarrow">
                 		{{:helper.link('TOGGLE', null, {'toggleWireless' : 1})}}
@@ -36,7 +36,7 @@
 		{{else}}
 			</div>
 			<br><p>Wireless coverage unavailable, no relays are connected.</p>
-		{{/if}}	
+		{{/if}}
 
 <h1>FIREWALL CONFIGURATION</h1>
 <table>
@@ -71,11 +71,11 @@
 				<i>An abnormal activity has been detected in the network. Please verify system logs for more information</i>
 			</div>
 		</div>
-    </div>		
+    </div>
 	{{/if}}
 	<div class="item">
 		<div class="itemLabelWide">
-                	Intrusion Detection System: 
+                	Intrusion Detection System:
 		</div>
 		<div class="itemContentNarrow">
                 	<b>{{:data.idsstatus ? 'ENABLED' : 'DISABLED'}}</b>
@@ -83,7 +83,7 @@
     </div>
 	<div class="item">
 		<div class="itemLabelWide">
-                	Maximal Log Count: 
+                	Maximal Log Count:
 		</div>
 		<div class="itemContentNarrow">
                 	<b>{{:data.ntnetmaxlogs}}</b>
@@ -91,7 +91,7 @@
     </div>
     <div class="item">
 		<div class="itemLabelWide">
-                	Blacklisted NIDs: 
+                	Blacklisted NIDs:
 		</div>
 		<div class="itemContentNarrow">
 					{{:data.banned_nids}}
@@ -99,7 +99,7 @@
     </div>
 	<div class="item">
 		<div class="itemLabelWide">
-                	Controls: 
+                	Controls:
 		</div>
 		<div class="itemContentNarrow">
 			<table>

@@ -17,7 +17,7 @@
 	apply_damage(b_loss, BRUTE, null, DAM_EXPLODE | DAM_DISPERSED, used_weapon = "Explosive blast")
 	apply_damage(f_loss, BURN, null, DAM_EXPLODE | DAM_DISPERSED, used_weapon = "Explosive blast")
 
-/mob/living/exosuit/apply_effect(var/effect = 0,var/effecttype = STUN, var/blocked = 0)
+/mob/living/exosuit/apply_effect(effect = 0,effecttype = STUN, blocked = 0)
 	if(!effect || (blocked >= 100))
 		return 0
 	if(LAZYLEN(pilots) && (!hatch_closed || !prob(body.pilot_coverage)))
@@ -28,7 +28,7 @@
 	if(!(effecttype in list(PAIN, STUTTER, EYE_BLUR, DROWSY, STUN, WEAKEN)))
 		. = ..()
 
-/mob/living/exosuit/resolve_item_attack(var/obj/item/I, var/mob/living/user, var/def_zone)
+/mob/living/exosuit/resolve_item_attack(obj/item/I, mob/living/user, def_zone)
 	if(!I.force)
 		user.visible_message(SPAN_NOTICE("\The [user] bonks \the [src] harmlessly with \the [I]."))
 		return
@@ -46,7 +46,7 @@
 
 	return def_zone //Careful with effects, mechs shouldn't be stunned
 
-/mob/living/exosuit/hitby(atom/movable/AM, var/datum/thrownthing/TT)
+/mob/living/exosuit/hitby(atom/movable/AM, datum/thrownthing/TT)
 	if(LAZYLEN(pilots) && (!hatch_closed || !prob(body.pilot_coverage)))
 		var/mob/living/pilot = pick(pilots)
 		return pilot.hitby(AM, TT)
@@ -73,17 +73,17 @@
 	maxHealth = body ? body.mech_health : 0
 	health = maxHealth-(getFireLoss()+getBruteLoss())
 
-/mob/living/exosuit/adjustFireLoss(var/amount, var/obj/item/mech_component/MC = pick(list(arms, legs, body, head)))
+/mob/living/exosuit/adjustFireLoss(amount, obj/item/mech_component/MC = pick(list(arms, legs, body, head)))
 	if(MC)
 		MC.take_burn_damage(amount)
 		MC.update_health()
 
-/mob/living/exosuit/adjustBruteLoss(var/amount, var/obj/item/mech_component/MC = pick(list(arms, legs, body, head)))
+/mob/living/exosuit/adjustBruteLoss(amount, obj/item/mech_component/MC = pick(list(arms, legs, body, head)))
 	if(MC)
 		MC.take_brute_damage(amount)
 		MC.update_health()
 
-/mob/living/exosuit/proc/zoneToComponent(var/zone)
+/mob/living/exosuit/proc/zoneToComponent(zone)
 	switch(zone)
 		if(BP_EYES , BP_HEAD)
 			return head
@@ -94,7 +94,7 @@
 		else
 			return body
 
-/mob/living/exosuit/apply_damage(var/damage = 0,var/damagetype = BRUTE, var/def_zone = null, var/damage_flags = 0, var/used_weapon = null, var/armor_pen, var/silent = FALSE)
+/mob/living/exosuit/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, damage_flags = 0, used_weapon = null, armor_pen, silent = FALSE)
 	if(!damage)
 		return 0
 
@@ -145,7 +145,7 @@
 
 	return 1
 
-/mob/living/exosuit/rad_act(var/severity)
+/mob/living/exosuit/rad_act(severity)
 	return FALSE // Pilots already query rads, modify this for radiation alerts and such
 
 /mob/living/exosuit/get_rads()

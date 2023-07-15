@@ -1,6 +1,4 @@
-#define OPENTURF_MAX_PLANE -70
-#define OPENTURF_MAX_DEPTH 10		// The maxiumum number of planes deep we'll go before we just dump everything on the same plane.
-#define SHADOWER_DARKENING_FACTOR 0.6	// The multiplication factor for openturf shadower darkness. Lighting will be multiplied by this.
+#define SHADOWER_DARKENING_FACTOR 0.35	// The multiplication factor for openturf shadower darkness. Lighting will be multiplied by this.
 #define SHADOWER_DARKENING_COLOR "#999999"	// The above, but as an RGB string for lighting-less turfs.
 
 SUBSYSTEM_DEF(zcopy)
@@ -78,8 +76,8 @@ SUBSYSTEM_DEF(zcopy)
 
 	enable()
 
-/datum/controller/subsystem/zcopy/stat_entry()
-	..("Q:{T:[queued_turfs.len - (qt_idex - 1)]|O:[queued_overlays.len - (qo_idex - 1)]} T:{T:[openspace_turfs]|O:[openspace_overlays]}")
+/datum/controller/subsystem/zcopy/stat_entry(msg)
+	.=..("[msg] Q:{T:[queued_turfs.len - (qt_idex - 1)]|O:[queued_overlays.len - (qo_idex - 1)]} T:{T:[openspace_turfs]|O:[openspace_overlays]}")
 
 /datum/controller/subsystem/zcopy/Initialize(timeofday)
 	calculate_zstack_limits()

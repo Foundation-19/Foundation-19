@@ -6,7 +6,7 @@
 	..()
 	filters_per_client = list()
 
-/datum/admin_secret_item/investigation/attack_logs/execute(var/mob/user)
+/datum/admin_secret_item/investigation/attack_logs/execute(mob/user)
 	. = ..()
 	if(!.)
 		return
@@ -26,7 +26,7 @@
 		dat += "<tr><td>[al.station_time]</td>"
 
 		if(al.attacker)
-			dat += "<td>[al.attacker.key_name(check_if_offline = FALSE)] <a HREF='?_src_=holder;adminplayeropts=[al.attacker.ref]'>PP</a></td>"
+			dat += "<td>[al.attacker.key_name()] <a HREF='?_src_=holder;adminplayeropts=[al.attacker.ref]'>PP</a></td>"
 		else
 			dat += "<td></td>"
 
@@ -35,7 +35,7 @@
 		dat += "<td>[al.zone_sel]</td>"
 
 		if(al.victim)
-			dat += "<td>[al.victim.key_name(check_if_offline = FALSE)] <a HREF='?_src_=holder;adminplayeropts=[al.victim.ref]'>PP</a></td>"
+			dat += "<td>[al.victim.key_name()] <a HREF='?_src_=holder;adminplayeropts=[al.victim.ref]'>PP</a></td>"
 		else
 			dat += "<td></td>"
 
@@ -62,7 +62,7 @@
 	if(.)
 		execute(usr)
 
-/datum/admin_secret_item/investigation/attack_logs/proc/get_user_filters(var/mob/user)
+/datum/admin_secret_item/investigation/attack_logs/proc/get_user_filters(mob/user)
 	if(!user.client)
 		return list()
 
@@ -83,7 +83,7 @@
 		. += af.get_html()
 	. = jointext(.," | ")
 
-/datum/admin_secret_item/investigation/attack_logs/proc/filter_log(user, var/datum/attack_log/al)
+/datum/admin_secret_item/investigation/attack_logs/proc/filter_log(user, datum/attack_log/al)
 	for(var/filter in get_user_filters(user))
 		var/attack_filter/af = filter
 		if(af.filter_attack(al))
@@ -99,7 +99,7 @@
 	var/category = /attack_filter
 	var/datum/admin_secret_item/investigation/attack_logs/holder
 
-/attack_filter/New(var/holder)
+/attack_filter/New(holder)
 	..()
 	src.holder = holder
 
@@ -116,7 +116,7 @@
 /attack_filter/proc/reset()
 	return
 
-/attack_filter/proc/filter_attack(var/datum/attack_log/al)
+/attack_filter/proc/filter_attack(datum/attack_log/al)
 	return FALSE
 
 /attack_filter/proc/OnTopic(href_list)
@@ -148,7 +148,7 @@
 /attack_filter/no_client/reset()
 	filter_missing_clients = initial(filter_missing_clients)
 
-/attack_filter/no_client/filter_attack(var/datum/attack_log/al)
+/attack_filter/no_client/filter_attack(datum/attack_log/al)
 	if(!filter_missing_clients)
 		return FALSE
 	if(al.attacker && al.attacker.client.ckey == NO_CLIENT_CKEY)
@@ -194,7 +194,7 @@
 	. = sortList(.)
 	. += "*ANY*"
 
-/attack_filter/must_be_given_ckey/filter_attack(var/datum/attack_log/al)
+/attack_filter/must_be_given_ckey/filter_attack(datum/attack_log/al)
 	if(!ckey_filter)
 		return FALSE
 	if(check_attacker && al.attacker && al.attacker.client.ckey == ckey_filter)

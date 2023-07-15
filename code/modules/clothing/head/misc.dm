@@ -345,6 +345,8 @@
 	desc = "A bag worn over your head to protect your identity or the one of the man dragging you."
 	icon_state = "facecover"
 	tint = TINT_BLIND
+	visual_insulation = V_INSL_PERFECT
+	audio_insulation = A_INSL_IMPERFECT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	flash_protection = FLASH_PROTECTION_MAJOR

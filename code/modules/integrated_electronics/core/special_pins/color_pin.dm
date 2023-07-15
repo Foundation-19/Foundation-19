@@ -5,10 +5,10 @@
 /datum/integrated_io/color/ask_for_pin_data(mob/user)
 	var/new_data = input("Please select a color.","[src] color writing") as color|null
 	if(holder.check_interactivity(user) )
-		to_chat(user, "<span class='notice'>You input a <font color='[new_data]'>new color</font> into the pin.</span>")
+		to_chat(user, SPAN_NOTICE("You input a <font color='[new_data]'>new color</font> into the pin."))
 		write_data_to_pin(new_data)
 
-/datum/integrated_io/color/write_data_to_pin(var/new_data)
+/datum/integrated_io/color/write_data_to_pin(new_data)
 	// Since this is storing the color as a string hex color code, we need to make sure it's actually one.
 	if(isnull(new_data) || istext(new_data))
 		if(istext(new_data))
@@ -43,7 +43,7 @@
 /datum/integrated_io/color/display_pin_type()
 	return IC_FORMAT_COLOR
 
-/datum/integrated_io/color/display_data(var/input)
+/datum/integrated_io/color/display_data(input)
 	if(!isnull(data))
 		return "(<font color='[data]'>[data]</font>)"
 	return ..()

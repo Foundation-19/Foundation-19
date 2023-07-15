@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
-
 /obj/machinery/containment_field
 	name = "Containment Field"
 	desc = "An energy field."
@@ -7,7 +5,7 @@
 	icon_state = "Contain_F"
 	anchored = TRUE
 	density = FALSE
-	unacidable = TRUE
+	acid_resistance = -1
 	use_power = POWER_USE_OFF
 	uncreated_component_parts = null
 	light_outer_range = 4
@@ -21,7 +19,7 @@
 		FG1.cleanup()
 	if(FG2 && !FG2.clean_up)
 		FG2.cleanup()
-	. = ..()
+	return ..()
 
 /obj/machinery/containment_field/physical_attack_hand(mob/user)
 	return shock(user)
@@ -80,14 +78,14 @@
 	if(shock_cooldown > world.time)
 		return FALSE
 	shock_cooldown = world.time + 10
-	playsound(loc, "sparks", 50, 1, -1)
+	playsound(loc, SFX_SPARK, 50, 1, -1)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(5, 1, loc)
 	s.start()
 	var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
 	AM.throw_at(target, 200, 4)
 
-/obj/machinery/containment_field/proc/set_master(var/master1,var/master2)
+/obj/machinery/containment_field/proc/set_master(master1,master2)
 	if(!master1 || !master2)
 		return 0
 	FG1 = master1
