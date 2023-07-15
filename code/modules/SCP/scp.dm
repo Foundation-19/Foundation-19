@@ -31,7 +31,6 @@
 	metaFlags = vMetaFlags
 
 	parent = creation
-	to_world_log("[creation] is now parent of [src]")
 
 	parent.SetName(name)
 	onGain()

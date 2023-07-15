@@ -13,7 +13,7 @@
 	.=..()
 	memetic_atom = parent_atom
 	memetic_flags = flags
-	affected_proc = meme_procw
+	affected_proc = meme_proc
 
 /datum/component/memetic/Destroy(force, silent)
 	. = ..()
@@ -41,7 +41,7 @@
 		saw_memetic(H)
 
 /datum/component/memetic/proc/activate_memetic_effects()
-	if(!memetic_flags & MPERSISTENT) //if we arent a persistent memetic, then affected humans will be removed from effect after they no longer meet the reqs
+	if(!(memetic_flags & MPERSISTENT)) //if we arent a persistent memetic, then affected humans will be removed from effect after they no longer meet the reqs
 
 		for(var/mob/living/carbon/human/H in affected_mobs)
 			if((memetic_flags & MVISUAL) && H.can_see(memetic_atom, TRUE))
@@ -58,7 +58,7 @@
 
 /datum/component/memetic/proc/saw_memetic(datum/source)
 	SIGNAL_HANDLER
-	if(!ishuman(source) || source in affected_mobs)
+	if((!ishuman(source)) || source in affected_mobs)
 		return
 	var/mob/living/carbon/human/H = source
 	if((memetic_flags & MVISUAL) && H.can_see(memetic_atom, TRUE))
@@ -66,7 +66,7 @@
 
 /datum/component/memetic/proc/heard_memetic(datum/source, atom/sound_source)
 	SIGNAL_HANDLER
-	if(!ishuman(source) || sound_source != memetic_atom || source in affected_mobs)
+	if((!ishuman(source)) || sound_source != memetic_atom || source in affected_mobs)
 		return
 	var/mob/living/carbon/human/H = source
 	if((memetic_flags & MAUDIBLE) && H.can_hear(memetic_atom))
@@ -74,7 +74,7 @@
 
 /datum/component/memetic/proc/examined_memetic(datum/source, atom/target)
 	SIGNAL_HANDLER
-	if(!ishuman(source) || target != memetic_atom || source in affected_mobs)
+	if((!ishuman(source)) || target != memetic_atom || source in affected_mobs)
 		return
 	var/mob/living/carbon/human/H = source
 	if((memetic_flags & MINSPECT) && H.can_see(visual_memetic = TRUE)) //examine function already checks memetics system but we need to check for protection
@@ -82,9 +82,12 @@
 
 /datum/component/memetic/proc/saw_memetic_photo(datum/source, obj/item/photo/photo_shown, mob/target)
 	SIGNAL_HANDLER
-	if(!ishuman(target) || !target.can_see(visual_memetic = TRUE) || target in affected_mobs)
+	if((!ishuman(target)) || target in affected_mobs)
 		return
-	if(!memetic_atom in photo_shown.meta_data)
+	if(!(memetic_atom in photo_shown.meta_data))
+		return
+	var/mob/living/carbon/human/H = target
+	if(!H.can_see(visual_memetic = TRUE))
 		return
 	if(memetic_flags & MSELF_PERPETRAITING)
 		affected_mobs += target
