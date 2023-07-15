@@ -92,3 +92,33 @@
 
 /// Called on `/atom/Exited` (/atom, exitee, new_loc)
 #define COMSIG_EXITED "exited"
+
+/*
+*	Mob
+*/
+
+/// Called when a mob examines something. Target of examine is passed.
+#define COMSIG_MOB_EXAMINED "mobExamined"
+
+/*
+*	Memetic
+*/
+
+/// Called when a memetic atom is seen
+#define COMSIG_MEME_SAW "memeSaw"
+
+/*
+*	Photos
+*/
+
+/// Called when a photo is taken, passes the /obj/item/photo that is taken.
+#define COMSIG_PHOTO_TAKEN "photoTaken"
+/// Called when a photo is shown, passes the /obj/item/photo that is shown and the target.
+#define COMSIG_PHOTO_SHOWN "photoShown"
+
+/*
+*	Sound
+*/
+
+/// Called when a sound is played. Source is the mob recieving the sound and it also passes the source of the sound.
+#define COMSIG_SOUND_PLAYED "soundPlayed"

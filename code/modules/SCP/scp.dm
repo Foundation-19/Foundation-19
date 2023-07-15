@@ -1,40 +1,60 @@
-#define SAFE 1
-#define EUCLID 2
-#define KETER 3
-#define THAUMIEL 4
-#define NEUTRALIZED 5
-
 /datum/scp
-	var/name = "SCP-NULL"
-	var/designation = "0"
-	var/classification = SAFE
-	var/datum/component/scp/component //You don't have to use this, but it's really nice for smaller SCP's so you can make them SCP whenever you want
-	var/atom/owner
 
-/datum/scp/New(atom/creation)
-	creation.makeSCP()
+	///SCP name
+	var/name
+	///SCP Designation (i.e 173 or 096)
+	var/designation
+	///SCP Class (SAFE, EUCLID, ETC.)
+	var/classification
+
+	///Meta Flags for the SCP
+	var/metaFlags
+
+	///Flags that determine how a memetic scp is detected
+	var/memeticFlags
+
+	///Datum Parent
+	var/atom/parent
+
+	///Components
+	var/datum/component/memetic/meme_comp
+
+	///Proc called as an effect from memetic scps
+	var/memetic_proc
+
+/datum/scp/New(atom/creation, vName, vClass = SAFE, vDesg = trimSCP(vName), vMetaFlags)
+	GLOB.SCP_list += creation
+
+	name = vName
+	designation = vDesg
+	classification = vClass
+	metaFlags = vMetaFlags
+
+	parent = creation
+	to_world_log("[creation] is now parent of [src]")
+
+	parent.SetName(name)
+	onGain()
 
 /datum/scp/Destroy()
 	. = ..()
-	if(GLOB.SCP_list.len)
+	if(LAZYLEN(GLOB.SCP_list))
 		GLOB.SCP_list -= src
+	parent = null
 
-/datum/scp/proc/SCPinit(atom/A)
-	if(!isatom(A))
-		return
-	owner = A
-
-	if(component)
-		component = A.AddComponent(component,src,owner)
+///Run only after adding appropriate flags for components.
+/datum/scp/proc/compInit() //if more comps are added for SCPs, they can be put here
+	if(metaFlags & MEMETIC)
+		meme_comp = parent.AddComponent(/datum/component/memetic, parent, memeticFlags, memetic_proc)
 
 /datum/scp/proc/isCompatible(atom/A)
 	return 1
 
 /datum/scp/proc/Remove()
-	if(owner)
+	if(parent)
 		onLose()
-		owner.TakeComponent(component)
-		owner.SCP = null
+		parent.TakeComponent(meme_comp)
+		parent.SCP = null
 		qdel(src)
 
 	else
@@ -43,14 +63,6 @@
 /datum/scp/proc/onGain()
 
 /datum/scp/proc/onLose()
-
-/atom/proc/makeSCP()
-	GLOB.SCP_list += src
-//	if(ispath(c))
-//		SCP = new SCP()
-	SCP.SCPinit(src)
-	SCP.onGain()
-	return 1
 
 /atom/proc/canBeSCP(datum/scp/SCP_)
 	return SCP_.isCompatible(src)

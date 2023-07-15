@@ -430,6 +430,7 @@
 		if(source_turf && source_turf.z == target_turf?.z)
 			distance = get_dist(source_turf, target_turf)
 
+	SEND_SIGNAL(src, COMSIG_MOB_EXAMINED, A)
 	if(!A.examine(src, distance))
 		crash_with("Improper /examine() override: [log_info_line(A)]")
 

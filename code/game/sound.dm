@@ -22,11 +22,11 @@
 			var/turf/T = get_turf(M)
 
 			if(T?.z == turf_source.z && (!is_ambiance || M.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))
-				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global, extrarange, ignore_pressure)
+				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global, extrarange, ignore_pressure, source)
 
 var/const/FALLOFF_SOUNDS = 0.5
 
-/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, ignore_pressure)
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, ignore_pressure, source)
 	if(!src.client || ear_deaf > 0)
 		return
 	var/sound/S = soundin
@@ -111,6 +111,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 			S.environment = A.sound_env
 
 	sound_to(src, S)
+	SEND_SIGNAL(src, COMSIG_SOUND_PLAYED, source)
 
 /client/proc/playtitlemusic()
 	if (get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)

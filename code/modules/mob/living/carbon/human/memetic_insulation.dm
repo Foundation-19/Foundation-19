@@ -9,7 +9,7 @@ Made by TheDarkElites
 #define AUDIBLE_RANGE_NONE       -1 //Prevent it from being heard even on the same tile
 
 //Maximium lum count before we no longer consider it dark. Should be a value between 0 and 1.
-var/dark_maximium = 0.05
+var/dark_maximium = 0.03
 
 //View distance debuffs for sizes of objects/mobs passed through can_identify
 var/debuff_small = 1
