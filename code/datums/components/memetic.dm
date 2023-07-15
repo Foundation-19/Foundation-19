@@ -66,7 +66,7 @@
 
 /datum/component/memetic/proc/heard_memetic(datum/source, atom/sound_source)
 	SIGNAL_HANDLER
-	if((!ishuman(source)) || sound_source != memetic_atom || source in affected_mobs)
+	if((!ishuman(source)) || sound_source != memetic_atom || (source in affected_mobs))
 		return
 	var/mob/living/carbon/human/H = source
 	if((memetic_flags & MAUDIBLE) && H.can_hear(memetic_atom))
