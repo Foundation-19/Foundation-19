@@ -601,14 +601,8 @@
 			return global.next_account_number;
 		if("ninjastart")
 			return global.ninjastart;
-		if("ntnet_card_uid")
-			return global.ntnet_card_uid;
 		if("ntnet_global")
 			return global.ntnet_global;
-		if("ntnrc_uid")
-			return global.ntnrc_uid;
-		if("nttransfer_uid")
-			return global.nttransfer_uid;
 		if("nuke_disks")
 			return global.nuke_disks;
 		if("num_financial_terminals")
@@ -1466,14 +1460,8 @@
 			global.next_account_number=newval;
 		if("ninjastart")
 			global.ninjastart=newval;
-		if("ntnet_card_uid")
-			global.ntnet_card_uid=newval;
 		if("ntnet_global")
 			global.ntnet_global=newval;
-		if("ntnrc_uid")
-			global.ntnrc_uid=newval;
-		if("nttransfer_uid")
-			global.nttransfer_uid=newval;
 		if("nuke_disks")
 			global.nuke_disks=newval;
 		if("num_financial_terminals")
@@ -2039,10 +2027,7 @@
 	"newscaster_standard_feeds",
 	"next_account_number",
 	"ninjastart",
-	"ntnet_card_uid",
 	"ntnet_global",
-	"ntnrc_uid",
-	"nttransfer_uid",
 	"nuke_disks",
 	"num_financial_terminals",
 	"organ_cache",
