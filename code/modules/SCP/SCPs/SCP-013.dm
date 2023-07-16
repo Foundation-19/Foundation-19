@@ -10,7 +10,6 @@
 	desc = "The words 'Blue Lady' are written on this deftly-rolled cigarette in blue ink."
 
 	filling = list(/datum/reagent/medicine/fluff/tobacco = 1)
-	smoketime = 10 MINUTES //woooo scary anomaly cigarrete (lets all of the effects happen before the cigarrete goes out and is no longer capable of being callbacked)
 
 	///SCP Datum Ref
 	var/datum/scp/scpDAT
@@ -78,6 +77,7 @@
 				to_chat(H, SPAN_WARNING("You feel dysphoric about your appearance... you start to feel more like [SPAN_ITALIC("her")]."))
 				gender = FEMALE
 			addtimer(CALLBACK(H, /mob/living/carbon/human/proc/bluelady_message), 10 SECONDS)
+			extinguish()
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/proc/get_bluelady_image(mob/living/carbon/human/H)
 	var/image/I = image('icons/mob/human.dmi', icon_state = "body_f_s", loc = H)
@@ -88,6 +88,10 @@
 	I.add_overlay(image(icon = 'icons/mob/onmob/feet.dmi', icon_state = "heels"))
 
 	return I
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady/smoke(amount)
+	. = ..()
+	smoketime += amount //Infite smoke time until 013 can complete its effects
 
 /mob/living/carbon/human/proc/bluelady_message() //This is needed since once the cigarette goes out it is no longer an instance of 013 (and callbacks dont work)
 	if(!humanStageHandler.getStage("BlueLady")) //shouldent happen, but if admins do some fuckery with stages mid game then this will account for it

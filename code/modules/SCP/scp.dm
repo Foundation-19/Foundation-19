@@ -22,7 +22,7 @@
 	///Proc called as an effect from memetic scps
 	var/memetic_proc
 
-/datum/scp/New(atom/creation, vName, vClass = SAFE, vDesg = trimSCP(vName), vMetaFlags)
+/datum/scp/New(atom/creation, vName, vClass = SAFE, vDesg, vMetaFlags)
 	GLOB.SCP_list += creation
 
 	name = vName
