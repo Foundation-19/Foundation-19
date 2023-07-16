@@ -145,7 +145,6 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	dat += "</tt>"
 	return dat
 
-// Global methods
 // Used by character creation to create a record for new arrivals.
 /mob/proc/CreateModularRecord()
 	var/datum/computer_file/report/crew_record/CR = new/datum/computer_file/report/crew_record()
@@ -153,6 +152,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	CR.load_from_mob(src)
 	return CR
 
+// Global methods
 // Gets crew records filtered by set of positions
 /proc/department_crew_manifest(list/filter_positions, blacklist = FALSE)
 	var/list/matches = list()
