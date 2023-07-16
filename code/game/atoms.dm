@@ -322,7 +322,7 @@ its easier to just keep the beam vertical.
 
 /atom/proc/lava_act()
 	visible_message(SPAN_DANGER("\The [src] sizzles and melts away, consumed by the lava!"))
-	playsound(src, 'sound/effects/flare.ogg', 100, 3)
+	playsound(src, 'sound/effects/flare_start.ogg', 100, 3)
 	qdel(src)
 	. = TRUE
 
@@ -636,7 +636,7 @@ its easier to just keep the beam vertical.
 /atom/proc/slam_into(mob/living/L)
 	L.Weaken(2)
 	L.visible_message(SPAN_WARNING("\The [L] [pick("ran", "slammed")] into \the [src]!"))
-	playsound(L, "punch", 25, 1, FALSE)
+	playsound(L, SFX_PUNCH, 25, 1, FALSE)
 	show_sound_effect(L.loc, L)
 
 /**

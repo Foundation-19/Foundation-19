@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(scp527s)
+
 /mob/living/carbon/human/scp_527
 	SCP = /datum/scp/scp_527
 	status_flags = NO_ANTAG
@@ -15,10 +17,16 @@
 	fully_replace_character_name("Mr. Fish")
 	. = ..()
 
+	GLOB.scp527s += src
+
 	init_skills()
 
 	var/decl/hierarchy/outfit/scp_527/outfit = outfit_by_type(/decl/hierarchy/outfit/scp_527)
 	outfit.equip(src)
+
+/mob/living/carbon/human/scp_527/Destroy()
+	GLOB.scp527s -= src
+	return ..()
 
 /mob/living/carbon/human/scp_527/proc/init_skills()
 	skillset.skill_list = list()

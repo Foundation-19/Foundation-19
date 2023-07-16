@@ -11,7 +11,6 @@ SUBSYSTEM_DEF(shuttle)
 	var/list/process_shuttles = list()           //simple list of shuttles, for processing
 	var/list/registered_shuttle_landmarks = list()
 	var/last_landmark_registration_time
-	var/list/shuttle_logs = list()               //Keeps records of shuttle movement, format is list(datum/shuttle = datum/shuttle_log)
 	var/list/shuttle_areas = list()              //All the areas of all shuttles.
 	var/list/docking_registry = list()           //Docking controller tag -> docking controller program, mostly for init purposes.
 

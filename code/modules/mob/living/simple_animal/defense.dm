@@ -84,15 +84,15 @@
 /mob/living/simple_animal/attackby(obj/item/O, mob/user)
 	if(istype(O, /obj/item/stack/medical))
 		if(stat != DEAD)
-			var/obj/item/stack/medical/MED = O
-			if(!MED.animal_heal)
-				to_chat(user, SPAN_NOTICE("That [MED] won't help \the [src] at all!"))
+			var/obj/item/stack/medical/med = O
+			if(!med.animal_heal)
+				to_chat(user, SPAN_NOTICE("That [med] won't help \the [src] at all!"))
 				return
 			if(health < maxHealth)
-				if(MED.can_use(1))
-					adjustBruteLoss(-MED.animal_heal)
-					visible_message(SPAN_NOTICE("[user] applies the [MED] on [src]."))
-					MED.use(1)
+				if(med.can_use(1))
+					adjustBruteLoss(-med.animal_heal)
+					visible_message(SPAN_NOTICE("[user] applies the [med] on [src]."))
+					med.use(1)
 		else
 			to_chat(user, SPAN_NOTICE("\The [src] is dead, medical items won't bring \him back to life."))
 		return

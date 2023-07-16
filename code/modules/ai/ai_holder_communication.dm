@@ -109,14 +109,24 @@
 		switch(pick(comm_types))
 			if (COMM_SAY)
 				holder.ISay(pick(holder.say_list.speak))
+				PlayMobSound(holder.say_list.speak_sounds)
 			if (COMM_AUDIBLE_EMOTE)
 				holder.audible_emote(pick(holder.say_list.emote_hear))
+				PlayMobSound(holder.say_list.emote_hear_sounds)
 			if (COMM_VISUAL_EMOTE)
 				holder.visible_emote(pick(holder.say_list.emote_see))
+				PlayMobSound(holder.say_list.emote_see_sounds)
 
 #undef COMM_SAY
 #undef COMM_AUDIBLE_EMOTE
 #undef COMM_VISUAL_EMOTE
+
+// Simply plays a sound chosen out of a list
+/datum/ai_holder/proc/PlayMobSound(list/potential_sounds)
+	if(LAZYLEN(potential_sounds))
+		var/result = pickweight(holder.say_list.emote_see_sounds)
+		if(result != null)
+			playsound(holder, result, 50, 1)
 
 // Handles the holder hearing a mob's say()
 // Does nothing by default, override this proc for special behavior.

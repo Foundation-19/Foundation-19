@@ -10,7 +10,7 @@
 	var/atom/movable/preferred_target = null// If set, and if given the chance, we will always prefer to target this over other options.
 	var/turf/target_last_seen_turf = null 	// Where the mob last observed the target being, used if the target disappears but the mob wants to keep fighting.
 
-	var/vision_range = 7					// How far the targeting system will look for things to kill. Note that values higher than 7 are 'offscreen' and might be unsporting.
+	var/vision_range = 8					// How far the targeting system will look for things to kill. Note that values higher than 7 are 'offscreen' and might be unsporting.
 	var/respect_alpha = TRUE				// If true, mobs with a sufficently low alpha will be treated as invisible.
 	var/alpha_vision_threshold = FAKE_INVIS_ALPHA_THRESHOLD	// Targets with an alpha less or equal to this will be considered invisible. Requires above var to be true.
 

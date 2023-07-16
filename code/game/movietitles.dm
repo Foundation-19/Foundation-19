@@ -124,8 +124,8 @@ GLOBAL_LIST(end_titles)
 		if(!cast.len && !chunksize)
 			chunk += "CAST:"
 		var/job = ""
-		if(GetAssignment(H) != "Unassigned")
-			job = ", [uppertext(GetAssignment(H))]"
+		if(H.get_assignment("NONE", "NONE") != "NONE")
+			job = ", [uppertext(H.get_assignment())]"
 		var/used_name = H.real_name
 		var/datum/computer_file/report/crew_record/R = get_crewmember_record(H.real_name)
 		if(R?.get_rank())
