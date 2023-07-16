@@ -65,25 +65,3 @@
 
 /atom/proc/canBeSCP(datum/scp/SCP_)
 	return SCP_.isCompatible(src)
-
-/atom/proc/isSCP(A)
-	if(A)
-		if(SCP.designation == A)
-			return 1
-	else
-		if(SCP)
-			return 1
-
-/atom/proc/removeSCP(A)
-	if(!SCP)
-		return 0
-	if(A)
-		if(ispath(A) && (SCP.type == A))
-			SCP.Remove()
-			return 1
-		if(ispath(GLOB.SCP_list[A] && (SCP.type == GLOB.SCP_list[A])))
-			SCP.Remove()
-			return 1
-	else
-		SCP.Remove()
-		return 1

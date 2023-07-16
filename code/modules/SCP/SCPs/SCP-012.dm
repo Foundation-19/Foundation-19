@@ -6,9 +6,6 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 	show_title = FALSE
 
-	///SCP Datum Ref
-	var/datum/scp/scpDAT
-
 	///How long for an effect to happen
 	var/effect_cooldown = 5 SECONDS
 
@@ -18,7 +15,7 @@
 /obj/item/paper/scp012/Initialize()
 	START_PROCESSING(SSobj, src)
 
-	scpDAT = new /datum/scp(
+	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"Weird Composition", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
@@ -26,9 +23,9 @@
 		MEMETIC //Meta Flags, refer to code/_defines/SCP.dm
 	)
 
-	scpDAT.memeticFlags = MVISUAL //Memetic flags determine required factors for a human to be affected
-	scpDAT.memetic_proc = /obj/item/paper/scp012/proc/memetic_effect //proc to be called for the effect an affected individual should recieve
-	scpDAT.compInit()
+	SCP.memeticFlags = MVISUAL //Memetic flags determine required factors for a human to be affected
+	SCP.memetic_proc = /obj/item/paper/scp012/proc/memetic_effect //proc to be called for the effect an affected individual should recieve
+	SCP.compInit()
 	return ..()
 
 /obj/item/paper/scp012/Destroy()
@@ -36,8 +33,8 @@
 	return ..()
 
 /obj/item/paper/scp012/Process()
-	scpDAT.meme_comp.check_viewers()
-	scpDAT.meme_comp.activate_memetic_effects()
+	SCP.meme_comp.check_viewers()
+	SCP.meme_comp.activate_memetic_effects()
 
 /obj/item/paper/scp012/proc/memetic_effect(mob/living/carbon/human/H)
 	if(!H || H.stat == UNCONSCIOUS) //Unconscious individuals cant keep hurting themselves

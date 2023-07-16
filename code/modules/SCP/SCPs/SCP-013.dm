@@ -12,9 +12,6 @@
 
 	filling = list(/datum/reagent/medicine/fluff/tobacco = 1)
 
-	///SCP Datum Ref
-	var/datum/scp/scpDAT
-
 	///Appearance Handler
 	var/decl/appearance_handler/bl_handle = new /decl/appearance_handler()
 
@@ -23,7 +20,7 @@
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/Initialize()
 	. = ..()
-	scpDAT = new /datum/scp(
+	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"'Blue Lady' cigarette", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SAFE, //Obj Class

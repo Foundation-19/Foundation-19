@@ -133,6 +133,7 @@
 #include "code\_global_vars\lists\sound.dm"
 #include "code\_global_vars\lists\times.dm"
 #include "code\_helpers\_global_objects.dm"
+#include "code\_helpers\_scp.dm"
 #include "code\_helpers\areas.dm"
 #include "code\_helpers\atmospherics.dm"
 #include "code\_helpers\atom_movables.dm"
