@@ -32,7 +32,7 @@
 	Can be removed with a <l>crowbar</l>."
 
 /datum/codex_entry/contraband_detector
-	associated_paths = list(/obj/machinery/contraband_detector, /obj/machinery/contraband_detector_construct)
+	associated_paths = list(/obj/machinery/contraband_detector)
 	mechanics_text = "This machine will automatically scan anything that moves through its scanner, reporting any illicit items to the LCZ guard frequency. \
 	An ID lock on the panel prevents access to the internal wiring, although it can still be unwrenched and moved. \
 	With a box made of aluminium, you could pass contraband through without detection. \
