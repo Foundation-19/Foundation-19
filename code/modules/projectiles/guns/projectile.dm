@@ -78,7 +78,7 @@
 	if(is_jammed)
 		return null
 	//get the next casing
-	if(loaded.len)
+	if(LAZYLEN(loaded))
 		chambered = loaded[1] //load next casing.
 		if(handle_casings != HOLD_CASINGS)
 			loaded -= chambered
