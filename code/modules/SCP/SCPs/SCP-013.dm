@@ -1,7 +1,8 @@
 /obj/item/storage/fancy/cigarettes/bluelady
 	name = "Pack of 'Blue Lady' cigarettes"
-	desc = "A packet of six Blue Lady cigarettes. The SCP logo is stamped on the paper."
 	icon_state = "BLpacket"
+	desc = "A packet of six Blue Lady cigarettes. The SCP logo is stamped on the paper."
+
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/bluelady = 6)
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady
@@ -17,6 +18,9 @@
 	///Appearance Handler
 	var/decl/appearance_handler/bl_handle = new /decl/appearance_handler()
 
+	///Humans who have smoked 013, helps us prevent it from extinguishing if someone is still undergoing the effects
+	var/list/affected
+
 /obj/item/clothing/mask/smokable/cigarette/bluelady/Initialize()
 	. = ..()
 	scpDAT = new /datum/scp(
@@ -25,6 +29,8 @@
 		SAFE, //Obj Class
 		"013", //Numerical Designation
 	)
+
+	LAZYINITLIST(affected)
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/light()
 	. = ..()
@@ -45,8 +51,7 @@
 	if(lit)
 		if(H.humanStageHandler.createStage("BlueLady"))
 			update_013_status(H)
-			if(H.gender == MALE)
-				H.humanStageHandler.setStage("BlueLady_Tran", 1) //Our way of tracking pre-gender, if we need it for some reason
+			affected += H
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/proc/update_013_status(mob/living/carbon/human/H)
 	H.humanStageHandler.adjustStage("BlueLady", 1)
@@ -73,11 +78,10 @@
 			to_chat(H, SPAN_NOTICE(SPAN_ITALIC("I can't live without her...")))
 			addtimer(CALLBACK(src, .proc/update_013_status, H), 55 SECONDS)
 		if(7)
-			if(gender == MALE)
-				to_chat(H, SPAN_WARNING("You feel dysphoric about your appearance... you start to feel more like [SPAN_ITALIC("her")]."))
-				gender = FEMALE
 			addtimer(CALLBACK(H, /mob/living/carbon/human/proc/bluelady_message), 10 SECONDS)
-			extinguish()
+			affected -= H
+			if(!LAZYLEN(affected))
+				extinguish()
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/proc/get_bluelady_image(mob/living/carbon/human/H)
 	var/image/I = image('icons/mob/human.dmi', icon_state = "body_f_s", loc = H)
