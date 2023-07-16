@@ -460,3 +460,6 @@ RADIATION_LOWER_LIMIT 0.15
 
 ## Uncomment to enable BCCM (IP checking and ASN banning utility). Warning: requires an active database connection.
 #USE_BCCM
+
+## Whether or not timelocks for roles are enabled. Comment out to disable.
+USE_TIMELOCKS

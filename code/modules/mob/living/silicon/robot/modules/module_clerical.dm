@@ -70,7 +70,7 @@
 
 /obj/item/robot_module/clerical/general
 	name = "clerical robot module"
-	display_name = "Clerical"
+	display_name = "Bureaucratic"
 	channels = list(
 		"Service" = TRUE,
 		"Supply" =  TRUE

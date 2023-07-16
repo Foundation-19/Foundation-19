@@ -121,8 +121,8 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, obj/item/device/mmi/B, safety = 0)
 	announcement = new()
-	announcement.title = "A.I. Announcement"
-	announcement.announcement_type = "A.I. Announcement"
+	announcement.title = "A.I.C. Announcement"
+	announcement.announcement_type = "A.I.C. Announcement"
 	announcement.newscast = 1
 
 	var/list/possibleNames = GLOB.ai_names
@@ -296,7 +296,7 @@ var/list/ai_verbs_default = list(
 	if(stat || !has_power())
 		return
 
-	var/new_sprite = input("Select an icon!", "AI", selected_sprite) as null|anything in available_icons()
+	var/new_sprite = tgui_input_list(usr, "Select an icon!", "Iconner.exe", available_icons())
 	if(new_sprite)
 		selected_sprite = new_sprite
 
@@ -316,18 +316,17 @@ var/list/ai_verbs_default = list(
 /mob/living/silicon/ai/var/message_cooldown = 0
 /mob/living/silicon/ai/proc/ai_announcement()
 	set category = "Silicon Commands"
-	set name = "Make Announcement"
+	set name = "Make Site-wide Announcement"
 
 	if(check_unable(AI_CHECK_WIRELESS | AI_CHECK_RADIO))
 		return
 
 	if(message_cooldown)
-		to_chat(src, "Please allow one minute to pass between announcements.")
+		to_chat(src, SPAN_WARNING("Please allow one minute to pass between announcements."))
 		return
-	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I. Announcement") as null|message
+	var/input = tgui_input_text(usr, "Please write a message to announce to the [station_name()] crew.", "A.I.C. Announcement")
 	if(!input)
 		return
-
 	if(check_unable(AI_CHECK_WIRELESS | AI_CHECK_RADIO))
 		return
 
@@ -343,7 +342,7 @@ var/list/ai_verbs_default = list(
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
 
-	var/confirm = alert("Are you sure you want to evacuate?", "Confirm Evacuation", "Yes", "No")
+	var/confirm = tgui_alert(usr, "Are you sure you want to evacuate?", "EvacMate.exe", list("Yes", "No"))
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -380,12 +379,12 @@ var/list/ai_verbs_default = list(
 	if(emergency_message_cooldown)
 		to_chat(usr, SPAN_WARNING("Arrays recycling. Please stand by."))
 		return
-	var/input = sanitize(input(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", ""))
+	var/input = tgui_input_text(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement. Abuse will lead to decomission. There is a 30 second delay before you may send another message, be clear, full and concise.", "O5 Emergency Message")
 	if(!input)
 		return
 	Centcomm_announce(input, usr)
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
-	log_say("[key_name(usr)] has made an IA [GLOB.using_map.boss_short] announcement: [input]")
+	log_say("[key_name_admin(usr)] has made an emergency AIC [GLOB.using_map.boss_short] announcement: [input]")
 	emergency_message_cooldown = 1
 	spawn(300)
 		emergency_message_cooldown = 0
@@ -521,7 +520,7 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/proc/ai_statuschange()
 	set category = "Silicon Commands"
-	set name = "AI Status"
+	set name = "AIC Status"
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -532,15 +531,14 @@ var/list/ai_verbs_default = list(
 //I am the icon meister. Bow fefore me.	//>fefore
 /mob/living/silicon/ai/proc/ai_hologram_change()
 	set name = "Change Hologram"
-	set desc = "Change the default hologram available to AI to something else."
+	set desc = "Change the default hologram available to AIC to something else."
 	set category = "Silicon Commands"
 
 	if(check_unable())
 		return
 
 	var/input
-	if(alert("Would you like to select a hologram based on a crew member or switch to unique avatar?",,"Crew Member","Unique")=="Crew Member")
-
+	if(tgui_alert(usr, "Would you like to select a hologram based on a crew member or switch to unique avatar?", "Hologrammer.exe", list("Crew Member", "Unique"))=="Crew Member")
 		var/personnel_list[] = list()
 
 		for(var/datum/computer_file/report/crew_record/t in GLOB.all_crew_records)//Look in data core locked.
@@ -564,7 +562,7 @@ var/list/ai_verbs_default = list(
 			var/decl/ai_holo/holo = holograms_by_type[holo_type]
 			if (holo.may_be_used_by_ai(src))
 				hologramsAICanUse.Add(holo)
-		var/decl/ai_holo/choice = input("Please select a hologram:") as null|anything in hologramsAICanUse
+		var/decl/ai_holo/choice = tgui_input_list(usr, "Please select a hologram:", "Hologrammer.exe", hologramsAICanUse)
 		if(choice)
 			qdel(holo_icon)
 			qdel(holo_icon_longrange)
@@ -576,7 +574,7 @@ var/list/ai_verbs_default = list(
 //Toggles the luminosity and applies it by re-entereing the camera.
 /mob/living/silicon/ai/proc/toggle_camera_light()
 	set name = "Toggle Camera Light"
-	set desc = "Toggles the light on the camera the AI is looking through."
+	set desc = "Toggles the light on the camera the AIC is looking through."
 	set category = "Silicon Commands"
 
 	if(check_unable())
@@ -780,6 +778,14 @@ var/list/ai_verbs_default = list(
 	set name = "Show Crew Records"
 
 	open_subsystem(/datum/nano_module/records)
+
+/mob/living/silicon/ai/get_exp_list(minutes)
+	. = ..()
+
+	var/datum/job/ai/ai_job_ref = SSjobs.get_by_path(/datum/job/ai)
+
+	.[ai_job_ref.title] = minutes
+
 
 #undef AI_CHECK_WIRELESS
 #undef AI_CHECK_RADIO

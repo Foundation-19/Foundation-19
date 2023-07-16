@@ -355,7 +355,7 @@
 
 /obj/item/projectile/bullet/rifle/t12
 	fire_sound = SFX_GUN_T12
-	damage = 35
+	damage = 22 // If you buff the damage I will murder you, it is meant to have high AP low damage
 	armor_penetration = 85
 
 /obj/item/projectile/bullet/rifle/m16

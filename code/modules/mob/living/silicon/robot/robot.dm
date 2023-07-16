@@ -270,7 +270,7 @@
 	if(!override)
 		if(is_crisis_mode)
 			to_chat(src, SPAN_WARNING("Crisis mode active. Additional modules available."))
-		modtype = input("Please select a module!", "Robot module", null, null) as null|anything in robot_modules
+		modtype = tgui_input_list(src, "Please select a module!", "Modulator.exe", robot_modules)
 	else
 		if(module)
 			QDEL_NULL(module)
@@ -344,7 +344,8 @@
 
 	spawn(0)
 		var/newname
-		newname = sanitizeName(input(src,"You are a robot. Enter a name, or leave blank for the default name.", "Name change","") as text, MAX_NAME_LEN, allow_numbers = 1)
+		newname = sanitizeName(tgui_input_text(src, "You are a robot. Enter a name, or leave blank for the default name.", "Namepicker.exe"), MAX_NAME_LEN, allow_numbers = 1)
+
 		if (newname)
 			custom_name = newname
 
@@ -1093,3 +1094,10 @@
 	var/obj/item/robot_parts/robot_suit/C = new dismantle_type(loc)
 	C.dismantled_from(src)
 	qdel(src)
+
+/mob/living/silicon/robot/get_exp_list(minutes)
+	. = ..()
+
+	var/datum/job/cyborg/cyborg_job_ref = SSjobs.get_by_path(/datum/job/cyborg)
+
+	.[cyborg_job_ref.title] = minutes
