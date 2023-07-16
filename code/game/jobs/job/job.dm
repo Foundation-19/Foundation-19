@@ -58,6 +58,8 @@
 
 	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
 
+	///The required playtime in other jobs or categories to play the role
+	var/list/requirements
 
 /datum/job/New()
 
@@ -390,6 +392,8 @@
 			reasons["Your species choice does not allow it."] = TRUE
 		if(!S.check_background(src, caller.prefs))
 			reasons["Your background choices do not allow it."] = TRUE
+	if(!meets_req(caller))
+		reasons["You do not meet the playtime requirements."] = TRUE
 	if(LAZYLEN(reasons))
 		. = reasons
 
@@ -405,6 +409,8 @@
 	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
 		return FALSE
 	if(!player_old_enough(caller))
+		return FALSE
+	if(!meets_req(caller))
 		return FALSE
 	return TRUE
 
@@ -512,3 +518,76 @@
 		return TRUE
 	else
 		return FALSE
+
+///Converts department flags to exp definitions
+/datum/job/proc/get_flags_to_exp()
+	var/list/exp_list
+	LAZYINITLIST(exp_list)
+
+	if(department_flag & CIV)
+		exp_list.Add(EXP_TYPE_CREW)
+	if(department_flag & COM)
+		exp_list.Add(EXP_TYPE_COMMAND)
+	if(department_flag & ENG)
+		exp_list.Add(EXP_TYPE_ENGINEERING)
+	if(department_flag & MED)
+		exp_list.Add(EXP_TYPE_MEDICAL)
+	if(department_flag & SCI)
+		exp_list.Add(EXP_TYPE_SCIENCE)
+	if(department_flag & SUP)
+		exp_list.Add(EXP_TYPE_SUPPLY)
+	if(department_flag & SEC)
+		exp_list.Add(EXP_TYPE_SECURITY)
+	if(department_flag & MSC)
+		exp_list.Add(EXP_TYPE_SILICON) //only silicon have MSC flag despite it standing for misc. jobs. This needs to be fixed and a proper silicon flag added
+	if(department_flag & SRV)
+		exp_list.Add(EXP_TYPE_SERVICE)
+	if(department_flag & LCZ)
+		exp_list.Add(EXP_TYPE_LCZ)
+	if(department_flag & ECZ)
+		exp_list.Add(EXP_TYPE_ECZ)
+	if(department_flag & HCZ)
+		exp_list.Add(EXP_TYPE_HCZ)
+	if(department_flag & BUR)
+		exp_list.Add(EXP_TYPE_BUR)
+	if(department_flag & REP)
+		exp_list.Add(EXP_TYPE_REP)
+
+	return exp_list
+
+/datum/job/proc/meets_req(client/tclient)
+	if(!requirements || !config.use_timelocks || check_rights(R_ADMIN, FALSE, tclient))
+		return TRUE
+
+	var/datum/jobtime/jt = tclient.jobtime
+
+	if(!jt) //guests wont ever meet req because their time isint tracked
+		return FALSE
+
+	jt.update_jobtime()
+	for(var/requirement in requirements)
+		if(jt.get_jobtime(requirement) < requirements[requirement])
+			return FALSE
+
+	return TRUE
+
+/datum/job/proc/get_req(client/tclient)
+	if(!requirements || !config.use_timelocks || check_rights(R_ADMIN, FALSE, tclient))
+		return 0
+
+	var/datum/jobtime/jt = tclient.jobtime
+	var/list/required_time_remaining = list()
+
+	if(jt)
+		jt.update_jobtime()
+
+	for(var/requirement in requirements)
+		if(jt)
+			required_time_remaining[requirement] = requirements[requirement] - jt.get_jobtime(requirement)
+		else
+			required_time_remaining[requirement] = requirements[requirement]
+
+		if(required_time_remaining[requirement] <= 0)
+			required_time_remaining[requirement] = null
+
+	return required_time_remaining

@@ -296,6 +296,9 @@
 /mob/living/simple_animal/is_burnable()
 	return heat_damage_per_tick
 
+/mob/living/simple_animal/HandleLyingDensity()
+	return // Density does not change from resting
+
 /mob/living/simple_animal/proc/adjustBleedTicks(amount)
 	if(!can_bleed)
 		return
