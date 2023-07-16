@@ -1,16 +1,3 @@
-var/const/ENG               =(1<<0)
-var/const/SEC               =(1<<1)
-var/const/MED               =(1<<2)
-var/const/SCI               =(1<<3)
-var/const/CIV               =(1<<4)
-var/const/COM               =(1<<5)
-var/const/MSC               =(1<<6)
-var/const/SRV               =(1<<7)
-var/const/SUP               =(1<<8)
-var/const/SPT               =(1<<9)
-var/const/EXP               =(1<<10)
-var/const/ROB               =(1<<11)
-
 SUBSYSTEM_DEF(jobs)
 	name = "Jobs"
 	init_order = SS_INIT_JOBS
@@ -150,6 +137,14 @@ SUBSYSTEM_DEF(jobs)
 		if(char_name == C.real_name)
 			to_chat (usr, SPAN_DANGER("A character with the name <b>[C.real_name]</b> already exists. Please join with a different name."))
 			return FALSE
+	if(!job.meets_req(joining.client))
+		var/list/job_reqs_remaining = job.get_req(joining.client)
+		to_chat(usr, SPAN_WARNING("You do not meet the playtime requirment to play this role! You need..."))
+		for(var/job_req in job_reqs_remaining)
+			if(job_req)
+				to_chat(usr, SPAN_WARNING("	[job_reqs_remaining[job_req]] minutes as [job_req]"))
+		to_chat(usr, SPAN_WARNING("to play as [job.title]."))
+		return FALSE
 	return TRUE
 
 /datum/controller/subsystem/jobs/proc/check_latejoin_blockers(mob/new_player/joining, datum/job/job)
@@ -163,6 +158,14 @@ SUBSYSTEM_DEF(jobs)
 		return FALSE
 	if(GAME_STATE != RUNLEVEL_GAME)
 		to_chat(joining, SPAN_WARNING("The round is either not ready, or has already finished..."))
+		return FALSE
+	if(!job.meets_req(joining.client))
+		var/list/job_reqs_remaining = job.get_req(joining.client)
+		to_chat(usr, SPAN_WARNING("You do not meet the playtime requirment(s) to play this role! You need..."))
+		for(var/job_req in job_reqs_remaining)
+			if(job_req)
+				to_chat(usr, SPAN_WARNING("	[job_reqs_remaining[job_req]] minutes as [job_req]"))
+		to_chat(usr, SPAN_WARNING("to play as [job.title]."))
 		return FALSE
 	return TRUE
 
@@ -193,6 +196,8 @@ SUBSYSTEM_DEF(jobs)
 			return 0
 		if(job.title in mode.disabled_jobs)
 			return 0
+		if(!job.meets_req(player.client))
+			return FALSE
 
 		var/position_limit = job.total_positions
 		if(!latejoin)
@@ -217,6 +222,8 @@ SUBSYSTEM_DEF(jobs)
 			continue
 		if(flag && !(flag in player.client.prefs.be_special_role))
 			continue
+		if(!job.meets_req(player.client))
+			continue
 		if(player.client.prefs.CorrectLevel(job,level))
 			candidates += player
 	return candidates
@@ -238,6 +245,8 @@ SUBSYSTEM_DEF(jobs)
 		if(!job.player_old_enough(player.client))
 			continue
 		if(job.title in mode.disabled_jobs)
+			continue
+		if(!job.meets_req(player.client))
 			continue
 		if((job.current_positions < job.spawn_positions) || job.spawn_positions == -1)
 			assign_role(player, job.title, mode = mode)
@@ -366,7 +375,8 @@ SUBSYSTEM_DEF(jobs)
 	if(!jobban_isbanned(player, job.title) && \
 	 job.player_old_enough(player.client) && \
 	 player.client.prefs.CorrectLevel(job, level) && \
-	 job.is_position_available())
+	 job.is_position_available() && \
+	 job.meets_req(player.client))
 		assign_role(player, job.title, mode = mode)
 		return TRUE
 	return FALSE
