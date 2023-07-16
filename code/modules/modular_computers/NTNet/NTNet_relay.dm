@@ -70,7 +70,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "ntnet_relay.tmpl", "NTNet Quantum Relay", 500, 300, state = state)
+		ui = new(user, src, ui_key, "ntnet_relay.tmpl", "SCiPnet Quantum Relay", 500, 300, state = state)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(1)

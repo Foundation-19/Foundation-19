@@ -7,7 +7,7 @@ GLOBAL_LIST_INIT(weighted_minerals_sparse, \
 		MATERIAL_DIAMOND =      5, \
 		MATERIAL_GOLD =         8, \
 		MATERIAL_SILVER =       8, \
-		MATERIAL_PHORON =      10, \
+		MATERIAL_BAUXITE =     10, \
 		MATERIAL_QUARTZ =       3, \
 		MATERIAL_PYRITE =       3, \
 		MATERIAL_SPODUMENE =    3, \
@@ -15,7 +15,7 @@ GLOBAL_LIST_INIT(weighted_minerals_sparse, \
 		MATERIAL_PHOSPHORITE =  3, \
 		MATERIAL_ROCK_SALT =    3, \
 		MATERIAL_POTASH =       3, \
-		MATERIAL_BAUXITE =      3, \
+		MATERIAL_PHORON =		3, \
 		MATERIAL_RUTILE = 		3
 	))
 
@@ -28,7 +28,8 @@ GLOBAL_LIST_INIT(weighted_minerals_rich, \
 		MATERIAL_DIAMOND =      5, \
 		MATERIAL_GOLD =        10, \
 		MATERIAL_SILVER =      10, \
-		MATERIAL_PHORON =      20, \
+		MATERIAL_BAUXITE =     20, \
+		MATERIAL_PHORON =       5, \
 		MATERIAL_QUARTZ =       1, \
 		MATERIAL_PYRITE =       1, \
 		MATERIAL_SPODUMENE =    1, \
@@ -36,7 +37,6 @@ GLOBAL_LIST_INIT(weighted_minerals_rich, \
 		MATERIAL_PHOSPHORITE =  1, \
 		MATERIAL_ROCK_SALT =    1, \
 		MATERIAL_POTASH =       1, \
-		MATERIAL_BAUXITE =      1, \
 		MATERIAL_RUTILE = 		1
 	))
 
