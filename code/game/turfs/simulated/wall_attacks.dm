@@ -108,17 +108,17 @@
 				if(rotting && !reinf_material)
 					M.visible_message(SPAN_DANGER("[M.name] punches \the [src] and it crumbles!"), SPAN_DANGER("You punch \the [src] and it crumbles!"))
 					kill_health()
-					playsound(src, pick(GLOB.punch_sound), 20)
+					playsound(src, SFX_PUNCH, 20)
 				if (MUTATION_FERAL in user.mutations)
 					M.visible_message(SPAN_DANGER("[M.name] slams into \the [src]!"), SPAN_DANGER("You slam into \the [src]!"))
-					playsound(src, pick(GLOB.punch_sound), 45)
+					playsound(src, SFX_PUNCH, 45)
 					damage_health(5, BRUTE)
 					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2) //Additional cooldown
 					attack_animation(user)
 				else
 					M.visible_message(SPAN_DANGER("[M.name] punches \the [src]!"), SPAN_DANGER("You punch \the [src]!"))
 					M.apply_damage(3, BRUTE, M.hand ? BP_L_HAND : BP_R_HAND)
-					playsound(src, pick(GLOB.punch_sound), 40)
+					playsound(src, SFX_PUNCH, 40)
 
 	else
 		try_touch(user, rotting)
@@ -200,7 +200,7 @@
 
 			EB.spark_system.start()
 			to_chat(user, SPAN_NOTICE("You slash \the [src] with \the [EB]; the thermite ignites!"))
-			playsound(src, "sparks", 50, 1)
+			playsound(src, SFX_SPARK, 50, 1)
 			playsound(src, 'sound/weapons/blade1.ogg', 50, 1)
 
 			thermitemelt(user)
@@ -244,7 +244,7 @@
 				var/obj/item/gun/energy/plasmacutter/cutter = W
 				if(!cutter.slice(user))
 					return
-			dismantle_sound = "sparks"
+			dismantle_sound = SFX_SPARK
 			dismantle_verb = "slicing"
 			cut_delay *= 0.5
 		/*

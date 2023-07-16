@@ -1,4 +1,5 @@
 /obj/item/clothing/accessory/storage
+	abstract_type = /obj/item/clothing/accessory/storage
 	name = "base storage accessory"
 	icon_state = "webbing"
 	slot = ACCESSORY_SLOT_UTILITY
@@ -12,8 +13,6 @@
 
 /obj/item/clothing/accessory/storage/Initialize()
 	. = ..()
-	INIT_SKIP_QDELETED
-	INIT_DISALLOW_TYPE(/obj/item/clothing/accessory/storage)
 	if (!slots)
 		. = INITIALIZE_HINT_QDEL
 		crash_with("[type] created with no slots")
@@ -123,7 +122,6 @@
 
 /obj/item/clothing/accessory/storage/knifeharness/Initialize()
 	. = ..()
-	INIT_SKIP_QDELETED
 	if (container)
 		container.can_hold = list(
 			/obj/item/material/hatchet,
@@ -141,7 +139,6 @@
 
 /obj/item/clothing/accessory/storage/bandolier/Initialize()
 	. = ..()
-	INIT_SKIP_QDELETED
 	if (container)
 		container.can_hold = list(
 			/obj/item/ammo_casing,
@@ -171,7 +168,6 @@
 
 /obj/item/clothing/accessory/storage/bandolier/safari/Initialize()
 	. = ..()
-	INIT_SKIP_QDELETED
 	if (container)
 		for(var/i = 1 to abs(slots))
 			new /obj/item/net_shell (container)

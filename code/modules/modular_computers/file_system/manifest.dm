@@ -12,6 +12,7 @@
 		list("names" = list(), "header" = "Service", "flag" = SRV),
 		list("names" = list(), "header" = "Civilian", "flag" = CIV),
 		list("names" = list(), "header" = "Miscellaneous", "flag" = MSC),
+		list("names" = list(), "header" = "Representatives", "flag" = REP),
 		list("names" = list(), "header" = "Silicon")
 	)
 	var/list/misc //Special departments for easier access

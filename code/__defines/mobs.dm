@@ -19,6 +19,7 @@
 #define GRAB_NORMAL			"normal"
 #define GRAB_NAB			"nab"
 #define GRAB_NAB_SPECIAL	"special nab"
+#define GRAB_ABOMINATION	"terrifying grab"
 
 // Grab levels.
 #define NORM_PASSIVE    "normal passive"
@@ -30,6 +31,10 @@
 #define NAB_PASSIVE		"nab passive"
 #define NAB_AGGRESSIVE	"nab aggressive"
 #define NAB_KILL		"nab kill"
+
+#define GRAB_ABOMINATION_PASSIVE 	"terrifying grab passive"
+#define GRAB_ABOMINATION_AGGRESSIVE "terrifying grab aggressive"
+#define GRAB_ABOMINATION_KILL 		"terrifying grab kill"
 
 #define BORGMESON       (1<<0)
 #define BORGTHERM       (1<<1)
@@ -223,6 +228,7 @@
 #define BP_ANCHOR   "anchoring ligament"
 #define BP_PHORON   "phoron filter"
 #define BP_ACETONE  "acetone reactor"
+#define BP_LARVA    "larvae storage"
 
 // Vox bits.
 #define BP_HINDTONGUE "hindtongue"
@@ -347,12 +353,13 @@
 #define SPECIES_TRITONIAN   "Tritonian"
 #define SPECIES_GRAVWORLDER "Grav-Adapted Human"
 #define SPECIES_MULE        "Mule"
+#define SPECIES_ABOMINATION "Abomination"
 #define SPECIES_MONKEY      "Monkey"
 #define SPECIES_FBP         "Full Body Prosthesis"
 
 #define UNRESTRICTED_SPECIES list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER, SPECIES_MULE)
-#define RESTRICTED_SPECIES   list(SPECIES_VOX, SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN)
-#define HUMAN_SPECIES        list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_MULE)
+#define RESTRICTED_SPECIES   list(SPECIES_VOX, SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_ABOMINATION)
+#define HUMAN_SPECIES        list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_ABOMINATION)
 
 #define SPECIES_NABBER         "Giant armoured serpentid"
 #define SPECIES_MONARCH_WORKER "Monarch Serpentid Worker"
@@ -392,6 +399,7 @@
 
 #define ROBOT_MODULE_TYPE_GROUNDED "grounded"
 #define ROBOT_MODULE_TYPE_FLYING   "flying"
+#define ROBOT_MODULE_DISABLED	"disabled"
 
 #define RADIO_INTERRUPT_DEFAULT 30
 

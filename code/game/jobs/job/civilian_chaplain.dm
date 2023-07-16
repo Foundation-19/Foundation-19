@@ -2,7 +2,7 @@
 /datum/job/chaplain
 	title = "Chaplain"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = CIV|SRV
 
 	total_positions = 1
 	spawn_positions = 1

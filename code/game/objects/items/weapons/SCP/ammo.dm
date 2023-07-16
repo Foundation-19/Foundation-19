@@ -212,7 +212,7 @@
 // 5.7x28mm
 /obj/item/ammo_magazine/box/a57
 	name = "ammunition box (5.7x28mm)"
-	icon_state = "usmc_box"
+	icon_state = "fn_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "5.7x28mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)

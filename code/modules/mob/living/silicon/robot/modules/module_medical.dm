@@ -90,7 +90,7 @@
 
 /obj/item/robot_module/medical/crisis
 	name = "crisis robot module"
-	display_name = "Crisis"
+	display_name = "Medical"
 	sprites = list(
 		"Basic" = "Medbot",
 		"Standard" = "surgeon",

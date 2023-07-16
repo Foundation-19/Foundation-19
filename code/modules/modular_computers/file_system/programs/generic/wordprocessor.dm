@@ -30,8 +30,7 @@
 		return
 	var/datum/computer_file/data/F = get_data_file(filename)
 	if(!F) //try to make one if it doesn't exist
-		F = create_data_file(filename, loaded_data)
-		F.filetype = "TXT"
+		F = create_data_file(filename, loaded_data, file_type = /datum/computer_file/data/text)
 		return !isnull(F)
 	else
 		var/datum/computer_file/data/backup = F.clone()

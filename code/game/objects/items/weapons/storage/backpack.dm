@@ -203,6 +203,15 @@
 	w_class = ITEM_SIZE_HUGE
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 10
 
+/obj/item/storage/backpack/dufflebag/open(mob/user)
+	. = ..()
+	icon_state = "duffleopen"
+
+/obj/item/storage/backpack/dufflebag/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/backpack/dufflebag/Initialize()
 	. = ..()
 	slowdown_per_slot[slot_back] = 1
@@ -216,6 +225,16 @@
 /obj/item/storage/backpack/dufflebag/syndie/Initialize()
 	. = ..()
 	slowdown_per_slot[slot_back] = 0
+
+
+/obj/item/storage/backpack/dufflebag/syndie/open(mob/user)
+	. = ..()
+	icon_state = "duffle_syndieopen"
+
+/obj/item/storage/backpack/dufflebag/syndie/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/backpack/dufflebag/syndie/med
 	name = "medical dufflebag"
@@ -241,17 +260,44 @@
 	icon_state = "duffle_med"
 	item_state_slots = list(slot_l_hand_str = "duffle_med", slot_r_hand_str = "duffle_med")
 
+/obj/item/storage/backpack/dufflebag/med/open(mob/user)
+	. = ..()
+	icon_state = "duffle_medopen"
+
+/obj/item/storage/backpack/dufflebag/med/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/backpack/dufflebag/sec
 	name = "security dufflebag"
 	desc = "A large dufflebag for holding extra security supplies and ammunition."
 	icon_state = "duffle_sec"
 	item_state_slots = list(slot_l_hand_str = "duffle_sec", slot_r_hand_str = "duffle_sec")
 
+/obj/item/storage/backpack/dufflebag/sec/open(mob/user)
+	. = ..()
+	icon_state = "duffle_secopen"
+
+/obj/item/storage/backpack/dufflebag/sec/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/backpack/dufflebag/eng
 	name = "industrial dufflebag"
 	desc = "A large dufflebag for holding extra tools and supplies."
 	icon_state = "duffle_eng"
 	item_state_slots = list(slot_l_hand_str = "duffle_eng", slot_r_hand_str = "duffle_eng")
+
+/obj/item/storage/backpack/dufflebag/eng/open(mob/user)
+	. = ..()
+	icon_state = "duffle_engopen"
+
+/obj/item/storage/backpack/dufflebag/eng/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/backpack/dufflebag/firefighter
 	name = "firefighter's dufflebag"

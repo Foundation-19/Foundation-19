@@ -101,7 +101,7 @@
 					)
 				else
 					visible_message(SPAN_NOTICE("\The [src] turns off."))
-				playsound(src, "switch", 50)
+				playsound(src, SFX_MACHINE_SWITCH, 50)
 				log_and_message_staff("turned off \the [src] in [A.name]", user, src)
 				investigate_log("turned <font color='red'>off</font> by [key_name_admin(user || usr)] in [A.name]","singulo")
 			else
@@ -116,7 +116,7 @@
 					)
 				else
 					visible_message(SPAN_NOTICE("\The [src] turns on."))
-				playsound(src, "switch", 50)
+				playsound(src, SFX_MACHINE_SWITCH, 50)
 				update_efficiency()
 				shot_number = 0
 				fire_delay = get_initial_fire_delay()
@@ -289,7 +289,7 @@
 		emagged = TRUE
 		req_access.Cut()
 		user.visible_message(SPAN_WARNING("\The [user] messes with \the [src]'s controls."), SPAN_WARNING("You short out the control lock."))
-		user.playsound_local(loc, "sparks", 50, TRUE)
+		user.playsound_local(loc, SFX_SPARK, 50, TRUE)
 		return TRUE
 
 /obj/machinery/power/emitter/proc/get_initial_fire_delay()

@@ -3,6 +3,15 @@
 	desc = "A sleek, sturdy box."
 	icon_state = "box_of_doom"
 
+/obj/item/storage/box/syndie_kit/open(mob/user)
+	. = ..()
+	icon_state = "box_of_doomopen"
+
+/obj/item/storage/box/syndie_kit/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 //For uplink kits that provide bulkier items
 /obj/item/storage/backpack/satchel/syndie_kit
 	desc = "A sleek, sturdy satchel."

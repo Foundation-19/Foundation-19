@@ -118,7 +118,7 @@
 /obj/item/material/proc/shatter()
 	var/turf/T = get_turf(src)
 	T.visible_message(SPAN_DANGER("\The [src] [material.destruction_desc]!"))
-	playsound(src, "shatter", 70, 1)
+	playsound(src, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	if(drops_debris)
 		material.place_shard(T)

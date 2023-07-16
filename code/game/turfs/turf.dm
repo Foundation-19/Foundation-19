@@ -250,7 +250,7 @@ var/const/enterloopsanity = 100
 		if(T.x == src.x || T.y == src.y)
 			. += T
 
-/turf/proc/AdjacentTurfsWithWhitelist(check_blockage = TRUE, list/whitelist)
+/turf/proc/AdjacentTurfsWithWhitelist(list/whitelist, check_blockage = TRUE)
 	. = list()
 	for(var/turf/t in (trange(1,src) - src))
 		if(check_blockage)

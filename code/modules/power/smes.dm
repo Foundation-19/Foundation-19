@@ -10,7 +10,7 @@
 	icon_state = "smes"
 	density = TRUE
 	anchored = TRUE
-	clicksound = "switch"
+	clicksound = SFX_MACHINE_SWITCH
 	core_skill = SKILL_ELECTRICAL
 	power_channel = LOCAL // Draws power from direct connections to powernets.
 	construct_state = /decl/machine_construction/default/panel_closed

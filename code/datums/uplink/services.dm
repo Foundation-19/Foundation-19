@@ -99,7 +99,7 @@
 	disable()
 	state = HAS_BEEN_ACTIVATED
 	update_icon()
-	playsound(loc, "sparks", 50, 1)
+	playsound(loc, SFX_SPARK, 50, 1)
 	visible_message(SPAN_WARNING("\The [src] shuts down with a spark."))
 
 /obj/item/device/uplink_service/on_update_icon()
@@ -188,7 +188,7 @@
 	var/obj/item/card/id/I = user.GetIdCard()
 	if(GLOB.all_crew_records.len)
 		random_record = pick(GLOB.all_crew_records)
-	var/datum/computer_file/report/crew_record/new_record = CreateModularRecord(user)
+	var/datum/computer_file/report/crew_record/new_record = user.CreateModularRecord()
 	if(I)
 		new_record.set_name(I.registered_name)
 		new_record.set_formal_name("[I.formal_name_prefix][I.registered_name][I.formal_name_suffix]")
