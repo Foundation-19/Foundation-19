@@ -13,11 +13,12 @@
 	pass_flags = PASS_FLAG_TABLE
 	density = FALSE
 
-	meat_amount =   0
+	meat_type = null
+	meat_amount = 0
 	skin_material = null
-	skin_amount =   0
+	skin_amount = 0
 	bone_material = null
-	bone_amount =   0
+	bone_amount = 0
 
 	maxHealth = 100
 	health = 100
