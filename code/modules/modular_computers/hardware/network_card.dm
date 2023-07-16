@@ -1,5 +1,3 @@
-var/global/ntnet_card_uid = 1
-
 /obj/item/stock_parts/computer/network_card/
 	name = "basic SCiPnet network card"
 	desc = "A basic network card for usage with standard SCiPnet frequencies."
@@ -17,19 +15,18 @@ var/global/ntnet_card_uid = 1
 
 /obj/item/stock_parts/computer/network_card/diagnostics()
 	. = ..()
-	. += "NIX Unique ID: [identification_id]"
-	. += "NIX User Tag: [identification_string]"
+	. += "SCiP Unique ID: [identification_id]"
+	. += "SCiP User Tag: [identification_string]"
 	. += "Supported protocols:"
-	. += "511.m SFS (Subspace) - Standard Frequency Spread"
+	. += "511.m SFS (Wireless) - Standard Frequency Spread"
 	if(long_range)
-		. += "511.n WFS/HB (Subspace) - Wide Frequency Spread/High Bandiwdth"
+		. += "511.n WFS/HB (Wireless) - Wide Frequency Spread/High Bandwidth"
 	if(ethernet)
 		. += "OpenEth (Physical Connection) - Physical network connection port"
 
 /obj/item/stock_parts/computer/network_card/New(l)
 	..(l)
-	identification_id = ntnet_card_uid
-	ntnet_card_uid++
+	identification_id = ntnet_global.generate_uid()
 
 /obj/item/stock_parts/computer/network_card/advanced
 	name = "advanced SCiPnet network card"
@@ -64,6 +61,7 @@ var/global/ntnet_card_uid = 1
 // 0 - No signal, 1 - Low signal, 2 - High signal. 3 - Wired Connection
 /obj/item/stock_parts/computer/network_card/proc/get_signal(specific_action = 0, list/routed_through)
 	if(!holder2) // Hardware is not installed in anything. No signal. How did this even get called?
+		log_warning("Network card [identification_id] at [loc.x], [loc.y], [loc.z] had get_signal() called but was not installed in a computer!")
 		return 0
 
 	if(!enabled)

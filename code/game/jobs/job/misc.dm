@@ -36,7 +36,7 @@
 /datum/job/officeworker
 	title = "Office Worker"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = CIV|BUR
 	total_positions = 100
 	spawn_positions = 100
 	minimal_player_age = 10
@@ -71,7 +71,7 @@
 /datum/job/qm
 	title = "Logistics Officer"
 	department = "Logistics"
-	department_flag = SUP
+	department_flag = SUP|BUR
 	total_positions = 1
 	spawn_positions = 1
 	//supervisors = "the Site Director"
@@ -79,6 +79,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
+	requirements = list("Logistics Specialist" = 300)
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticsofficer
 	hud_icon = "huddeckchief"
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -114,7 +115,7 @@
 /datum/job/cargo_tech
 	title = "Logistics Specialist"
 	department = "Logistics"
-	department_flag = SUP
+	department_flag = SUP|BUR
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "B4802B"
@@ -158,7 +159,7 @@
 /datum/job/janitor
 	title = "Janitor"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = CIV|SRV
 	selection_color = "#515151"
 	total_positions = 3
 	spawn_positions = 3
@@ -189,7 +190,7 @@
 /datum/job/chef
 	title = "Chef"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = CIV|SRV
 	selection_color = "#515151"
 	total_positions = 1
 	spawn_positions = 1
@@ -221,7 +222,7 @@
 /datum/job/bartender
 	title = "Bartender"
 	department = "Civilian"
-	department_flag = CIV
+	department_flag = CIV|SRV
 	selection_color = "#515151"
 	total_positions = 1
 	spawn_positions = 1
@@ -254,7 +255,7 @@
 	title = "Archivist"
 	department = "Civilian"
 	selection_color = "#2f2f7f"
-	department_flag = CIV
+	department_flag = CIV|BUR
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 9
@@ -263,6 +264,7 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
+	requirements = list("Office Worker" = 120)
 	outfit_type = /decl/hierarchy/outfit/job/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)

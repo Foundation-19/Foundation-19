@@ -1,3 +1,37 @@
 2023-07-05:
   cheesePizza2:
   - code_imp: Weakref code improvements.
+2023-07-12:
+  TheDarkElites:
+  - rscadd: badges for network leads and head maintainer
+  casualspacestation14enjoyer:
+  - rscadd: When storage items such as medkits and dufflebags are opened, they change
+      their sprite to indicate that they are open. (shit explanation)
+  cheesePizza2:
+  - soundadd: 173 degradation announcement is quieter.
+  - sounddel: Old flare sound has been deleted.
+  - soundadd: New flare sounds brazenly stolen from MS13
+2023-07-13:
+  TheDarkElites:
+  - rscadd: Jobtime Tracking and Timelocks for certain roles
+  - server: new SQL table for role_time
+  - code_imp: goirep no longer has the COM flag, and is replaced with the new REP
+      flag
+  - admin: player panel now contains playtime tab
+  - bugfix: icons for nitrile armored and auditor armored gloves not showing up.
+  - balance: phoron spawn chance decreased, bauxite(aluminum) spawn chance increased.
+  casualspacestation14enjoyer:
+  - rscdel: Cyborg alt-titles are now gone.
+  - rscadd: TGUI is now used for AIC and cyborg stuff
+  - rscadd: Adds a new button for AIC to send an emergency message to the O5 Council
+  - admin: You no longer need R_ADMIN to receive O5 emergency messages, now you need
+      R_MOD or above.
+  - rscadd: Some modules are now renamed so new players know what they do now.
+  - rscdel: Useless modules such as the research module and the standard module are
+      now disabled.
+  cheesePizza2:
+  - balance: Protolathe computers don't need access to use anymore.
+  - bugfix: Logistics personnel can now use the protolathe in their department.
+  - rscadd: 527 (Mister Fish) is now playable, and starts with a backpack.
+  projectkepler-ru:
+  - imageadd: 5.7mm ammo box
