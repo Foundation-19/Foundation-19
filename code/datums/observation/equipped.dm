@@ -38,3 +38,6 @@ GLOBAL_DATUM_INIT(item_equipped_event, /decl/observ/item_equipped, new)
 	UNLINT(. = ..())
 	GLOB.mob_equipped_event.raise_event(user, src, slot)
 	GLOB.item_equipped_event.raise_event(src, user, slot)
+	//Observation shit here needs to be gotten rid of but thats cheeses job not mine.
+	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, slot, user)
+	SEND_SIGNAL(user, COMSIG_MOB_EQUIPPED, src, slot)

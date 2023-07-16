@@ -179,6 +179,13 @@ var/debuff_miniscule = 3
 		blink_total = rand(8, 10)
 		blink_current = blink_total
 
+/mob/living/carbon/human/verb/manual_blink()
+	set name = "Blink"
+	set desc = "Your eyes will close for a moment, giving them some rest."
+	set category = "IC"
+
+	cause_blink()
+
 
 
 

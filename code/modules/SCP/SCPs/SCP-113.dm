@@ -45,13 +45,10 @@
 	spawn(210)
 		user.visible_message(SPAN_NOTICE("\The [user] starts to scream and writhe in pain as their bone structure reforms."))
 	spawn(300)
-		if(H.is_blue_lady)
+		if(H.humanStageHandler.getStage("BlueLady"))
 			if(user.gender == MALE)
 				user.gender = FEMALE
-				to_chat(user, SPAN_NOTICE("A vast sense of relief washes over you, as you feel your body reshape itself to be more like hers again."))
-			else if(H.pre_scp013_gender == MALE && H.blue_lady_transitioned == 0)
-				H.blue_lady_transitioned = 1
-				to_chat(user, SPAN_NOTICE("At last, you feel truly at home in your own body. You have become that wistful lady in blue."))
+				to_chat(user, SPAN_NOTICE("A vast sense of relief washes over you, as you feel your body reshape itself to be more like [SPAN_ITALIC("hers")]."))
 			else
 				user.gender = MALE
 				to_chat(user, SPAN_WARNING("There's something you can't see, and it feels unbearably wrong. It's all wrong. You weren't ... she wasn't ... a man."))

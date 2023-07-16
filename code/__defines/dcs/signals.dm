@@ -99,6 +99,8 @@
 
 /// Called when a mob examines something. Target of examine is passed.
 #define COMSIG_MOB_EXAMINED "mobExamined"
+/// Called when a mob equips something. Passes item equipped and slot equipped to.
+#define COMSIG_MOB_EQUIPPED "mobEquipped"
 
 /*
 *	Memetic
@@ -122,3 +124,10 @@
 
 /// Called when a sound is played. Source is the mob recieving the sound and it also passes the source of the sound.
 #define COMSIG_SOUND_PLAYED "soundPlayed"
+
+/*
+*	Item
+*/
+
+/// Called when an item is equipped. Passes the slot its equipped to and the equipper.
+#define COMSIG_ITEM_EQUIPPED "itemEquipped"
