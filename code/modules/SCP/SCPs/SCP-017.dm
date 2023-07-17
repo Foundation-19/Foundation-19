@@ -147,6 +147,10 @@
 			if(prob(80))
 				UnarmedAttack(M, TRUE)
 
-// This dosent actually work since hit_with_weapon isint called correctly. Should be fixed when cheese does signal stuff and we can register the proc to it.
-/mob/living/simple_animal/hostile/scp_017/hit_with_weapon(obj/item/O, mob/living/user, effective_force, hit_zone)
+/mob/living/simple_animal/hostile/scp_017/attackby(obj/item/O, mob/user)
+	. = ..()
 	UnarmedAttack(O, TRUE)
+
+/mob/living/simple_animal/hostile/scp_017/hitby(atom/movable/AM, datum/thrownthing/TT)
+	. = ..()
+	UnarmedAttack(AM, TRUE)
