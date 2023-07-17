@@ -71,6 +71,12 @@ const PAGES = [
       return data.can_have_psionics && hasPermission(data, '_psionics');
     },
   },
+  {
+    title: 'Playtime',
+    component: () => PlaytimeActions,
+    color: 'blue',
+    icon: 'clock',
+  },
 ];
 
 const hasPermission = (data, action) => {
@@ -822,6 +828,44 @@ const PsionicsActions = (props, context) => {
             </Stack.Item>
           ))}
       </Stack>
+    </Section>
+  );
+};
+
+const PlaytimeActions = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    playtime_names = [],
+    playtime_times = [],
+    current_job,
+    current_jobtime,
+  } = data;
+  return (
+    <Section fill>
+      <Section level={2} title="Current Job">
+        <Stack fill>
+          <Stack.Item grow>{current_job}</Stack.Item>
+          {' : '}
+          <Stack.Item grow={1.5}>{current_jobtime} Minutes</Stack.Item>
+        </Stack>
+      </Section>
+      <Section level={2} title="Total Playtime">
+        <Stack vertical justify="space-evenly">
+          {playtime_names.map((playtime, index) => (
+            <Stack fill key={playtime}>
+              {playtime && (
+                <Fragment>
+                  <Stack.Item grow>{playtime}</Stack.Item>
+                  {' : '}
+                  <Stack.Item grow={1.5}>
+                    {playtime_times[index]} Minutes
+                  </Stack.Item>
+                </Fragment>
+              )}
+            </Stack>
+          ))}
+        </Stack>
+      </Section>
     </Section>
   );
 };

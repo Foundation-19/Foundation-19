@@ -17,7 +17,6 @@
 	hard_drive.store_file(new /datum/computer_file/program/crew_manifest())
 	hard_drive.store_file(new /datum/computer_file/program/wordprocessor())
 	hard_drive.store_file(new /datum/computer_file/program/records())
-	hard_drive.store_file(new /datum/computer_file/program/newscast())
 	hard_drive.store_file(new /datum/computer_file/program/uplink())	//harmless tax software
 	set_autorun("emailc")
 

@@ -120,7 +120,7 @@
 	if (security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level))
 		return "Common"
 
-	if(job.department_flag & (COM | CIV | MSC))
+	if(job.department_flag & (COM | CIV | MSC | REP))
 		return "Common"
 	if(job.department_flag & SUP)
 		return "Supply"

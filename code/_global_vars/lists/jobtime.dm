@@ -1,0 +1,2 @@
+GLOBAL_LIST_EMPTY(jobtime_to_update)
+GLOBAL_PROTECT(jobtime_to_update)
