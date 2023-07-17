@@ -145,6 +145,11 @@
 	else
 		return FALSE
 
+// NON-CONTRABAND MOBS : mobs that should be ignored (like robots)
+
+/mob/living/silicon/has_contraband()
+	return FALSE
+
 // CONTRABAND ITEMS : shit that we count as contraband
 
 /obj/item/gun/has_contraband()
