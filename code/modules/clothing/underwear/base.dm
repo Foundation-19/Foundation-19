@@ -92,6 +92,12 @@
 	if(!CanRemoveUnderwear(user, H))
 		return FALSE
 
+	//Get this ERP shit out of here
+	if(istype(src, /obj/item/underwear/top))
+		return FALSE
+	if(istype(src, /obj/item/underwear/bottom))
+		return FALSE
+
 	H.worn_underwear -= src
 	dropInto(H.loc)
 	user.put_in_hands(src)
