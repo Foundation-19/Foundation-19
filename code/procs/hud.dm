@@ -35,11 +35,22 @@ the HUD updates properly! */
 
 	if(isscp173(M)) //Only 173 should have a blink HUD (Also this is neccesary for maintaing the blink HUD while caged)
 		var/mob/living/scp_173/S = M
-		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scp173s)
+		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt)
 		for(var/mob/living/carbon/human/victim in dview(7, istype(S.loc, /obj/structure/scp173_cage) ? S.loc : S))
 			if(victim.stat) //The unconscious cant blink, and therefore do not need to be added to the blink HUD
 				continue
 			P.Client.images += victim.hud_list[BLINK_HUD]
+
+//Pestilence Hud for 049.
+/proc/process_pestilence_hud(mob/M, mob/Alt)
+	if(!can_process_hud(M))
+		return
+
+	if(isscp049(M))
+		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt)
+		for(var/mob/living/carbon/human/H in view(7, M))
+			if(H.humanStageHandler.getStage("Pestilence"))
+				P.Client.images += H.hud_list[PESTILENCE_HUD]
 
 //Security HUDs. Pass a value for the second argument to enable implant viewing or other special features.
 /proc/process_sec_hud(mob/M, advanced_mode, mob/Alt)
@@ -84,7 +95,8 @@ the HUD updates properly! */
 	var/turf/Turf
 
 /proc/arrange_hud_process(mob/M, mob/Alt, list/hud_list)
-	hud_list |= M
+	if(hud_list)
+		hud_list |= M
 	var/datum/arranged_hud_process/P = new
 	P.Client = M.client
 	P.Mob = Alt ? Alt : M

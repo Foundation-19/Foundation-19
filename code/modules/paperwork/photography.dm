@@ -42,6 +42,7 @@ var/global/photo_count = 0
 
 /obj/item/photo/New()
 	id = photo_count++
+	LAZYINITLIST(meta_data)
 
 /obj/item/photo/Destroy()
 	. = ..()
@@ -253,12 +254,13 @@ var/global/photo_count = 0
 	var/z_c	= target.z
 	var/mobs = ""
 	var/list/meta_data
+	LAZYINITLIST(meta_data)
 	for(var/i = 1 to size)
 		for(var/j = 1 to size)
 			var/turf/T = locate(x_c, y_c, z_c)
 			if(user.can_capture_turf(T))
 				mobs += get_mobs(T)
-				for(var/atom/movable/mAtom in T)
+				for(var/atom/movable/mAtom as obj|mob in T)
 					meta_data += mAtom
 			x_c++
 		y_c--

@@ -1,6 +1,6 @@
 /mob/living/carbon/human/say(message, datum/language/speaking = null, whispering)
-	if (isscp049_1(src))
-		src << "<span class = 'warning'>You cannot speak. Use your \"Communicate\" verb instead.</span>"
+	if (humanStageHandler.getStage("049-1"))
+		to_chat(src, SPAN_WARNING("You cannot speak. Use your \"Communicate\" verb instead."))
 		return
 	if(name != GetVoice())
 		if(get_id_name("Unknown") == GetVoice())

@@ -89,8 +89,8 @@
 			species.handle_npc(src)
 
 
-	if (prob(1) && prob(5) && type == /mob/living/carbon/human && !isscp049_1(src) && !pestilence) // a 1 in 2,000 chance every 2 seconds = 66 minutes?
-		pestilence = TRUE
+	if (prob(0.25) && !humanStageHandler.getStage("049-1") && !isscp049(src))
+		humanStageHandler.setStage("Pestilence", 1)
 
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.

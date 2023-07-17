@@ -33,6 +33,11 @@
 	parent = creation
 
 	parent.SetName(name)
+
+	if((vMetaFlags & ROLEPLAY) && ismob(parent))
+		var/mob/pMob = parent
+		pMob.fully_replace_character_name(name)
+
 	onGain()
 
 /datum/scp/Destroy()

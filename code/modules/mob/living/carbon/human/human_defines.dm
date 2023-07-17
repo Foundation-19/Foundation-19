@@ -124,18 +124,6 @@
 	///Stage Handler (so we dont have a billion vars for scps)
 	var/datum/stageHandler/humanStageHandler = new /datum/stageHandler()
 
-	//various stages of becoming an instance of an SCP
-	var/is_scp_instance = FALSE
-	var/scp_049_instance = FALSE
-	var/scp_013_instance = FALSE
-	var/scp_013_stage = 0
-
-	// SCP-049
-	var/pre_scp049_name = ""
-	var/pre_scp049_real_name = ""
-	var/pre_scp049_species = "Human"
-	var/pestilence = FALSE
-
 	// SCP-078
 	var/scp078_status = 0
 

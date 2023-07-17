@@ -41,7 +41,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"strange shadow", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"Strange Shadow", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		KETER, //Obj Class
 		"017", //Numerical Designation
 	)
