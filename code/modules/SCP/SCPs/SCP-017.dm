@@ -68,7 +68,7 @@
 		return ATTACK_FAILED
 	if((Tturf.get_lumcount() > shadow_threshold) || (Tarea.dynamic_lighting == 0))
 		return ATTACK_FAILED
-	return ATTACK_SUCCESSFUL
+	return ..()
 
 /datum/say_list/scp_017
 	emote_hear = list("wooshes","whispers")
@@ -112,12 +112,12 @@
 	var/turf/Tturf = get_turf(A)
 	if(!bypass_checks)
 		if(!ismovable(A) || isSCP(A))
-			return
+			return FALSE
 		var/area/Tarea = get_area(A)
 		if(!Tturf || !Tarea)
-			return
+			return FALSE
 		if((Tturf.get_lumcount() > shadow_threshold) || (Tarea.dynamic_lighting == 0))
-			return
+			return FALSE
 
 	var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
 	S.set_up(3,0,Tturf)

@@ -16,7 +16,7 @@
 	var/decl/appearance_handler/bl_handle = new /decl/appearance_handler()
 
 	///Humans who have smoked 013, helps us prevent it from extinguishing if someone is still undergoing the effects
-	var/list/affected
+	var/list/weakref/affected
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/Initialize()
 	. = ..()

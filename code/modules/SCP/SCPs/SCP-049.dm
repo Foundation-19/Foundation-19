@@ -11,8 +11,7 @@
 
 //Backend Procs
 
-/mob/living/carbon/human/scp049/New(new_loc, new_species)
-	new_species = "SCP-049"
+/mob/living/carbon/human/scp049/New(new_loc, new_species = "SCP-049")
 	return ..()
 
 /mob/living/carbon/human/scp049/Initialize()
