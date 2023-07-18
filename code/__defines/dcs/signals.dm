@@ -97,37 +97,21 @@
 *	Mob
 */
 
-/// Called when a mob examines something. Target of examine is passed.
-#define COMSIG_MOB_EXAMINED "mobExamined"
-/// Called when a mob equips something. Passes item equipped and slot equipped to.
-#define COMSIG_MOB_EQUIPPED "mobEquipped"
-
-/*
-*	Memetic
-*/
-
-/// Called when a memetic atom is seen
-#define COMSIG_MEME_SAW "memeSaw"
+/// Called when an atom is examined. Examining mob is passed.
+#define COMSIG_ATOM_EXAMINED "atomExamined"
 
 /*
 *	Photos
 */
 
-/// Called when a photo is taken, passes the /obj/item/photo that is taken.
-#define COMSIG_PHOTO_TAKEN "photoTaken"
-/// Called when a photo is shown, passes the /obj/item/photo that is shown and the target.
-#define COMSIG_PHOTO_SHOWN "photoShown"
+/// Called when a photo of the atom is taken. Passes the camera and the photo taker.
+#define COMSIG_PHOTO_TAKEN_OF "photoTakenOf"
+/// Called when the photo containing the atom is shown to someone, passes the /obj/item/photo that is shown and the individual viewing the photo.
+#define COMSIG_PHOTO_SHOWN_OF "photoShownOf"
 
 /*
 *	Sound
 */
 
-/// Called when a sound is played. Source is the mob recieving the sound and it also passes the source of the sound.
-#define COMSIG_SOUND_PLAYED "soundPlayed"
-
-/*
-*	Item
-*/
-
-/// Called when an item is equipped. Passes the slot its equipped to and the equipper.
-#define COMSIG_ITEM_EQUIPPED "itemEquipped"
+/// Called when an atom's sound is heard. Passes the mob that heard it.
+#define COMSIG_OBJECT_SOUND_HEARD "atomHeard"

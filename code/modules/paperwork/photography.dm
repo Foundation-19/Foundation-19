@@ -91,7 +91,8 @@ var/global/photo_count = 0
 	output += "[scribble ? "<br>Written on the back:<br><i>[scribble]</i>" : ""]"
 	output += "</body></html>"
 	show_browser(user, output, "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
-	SEND_SIGNAL(src, COMSIG_PHOTO_SHOWN, src, user)
+	for(var/atom/pAtom in meta_data)
+		SEND_SIGNAL(pAtom, COMSIG_PHOTO_SHOWN_OF, src, user)
 	onclose(user, "[name]")
 	return
 
@@ -262,12 +263,12 @@ var/global/photo_count = 0
 				mobs += get_mobs(T)
 				for(var/atom/movable/mAtom as obj|mob in T)
 					meta_data += mAtom
+					SEND_SIGNAL(mAtom, COMSIG_PHOTO_TAKEN_OF, src, user)
 			x_c++
 		y_c--
 		x_c = x_c - size
 
 	var/obj/item/photo/p = createpicture(target, user, mobs, flag, meta_data)
-	SEND_SIGNAL(src, COMSIG_PHOTO_TAKEN, p)
 	printpicture(user, p)
 
 /obj/item/device/camera/proc/createpicture(atom/target, mob/user, mobs, flag, metadata)
