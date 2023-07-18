@@ -34,7 +34,9 @@
 
 	parent.SetName(name)
 
-	if((vMetaFlags & ROLEPLAY) && ismob(parent))
+	set_faction(parent, FACTION_SCPS)
+
+	if(ismob(parent))
 		var/mob/pMob = parent
 		pMob.fully_replace_character_name(name)
 
@@ -49,7 +51,7 @@
 ///Run only after adding appropriate flags for components.
 /datum/scp/proc/compInit() //if more comps are added for SCPs, they can be put here
 	if(metaFlags & MEMETIC)
-		meme_comp = parent.AddComponent(/datum/component/memetic, parent, memeticFlags, memetic_proc)
+		meme_comp = parent.AddComponent(/datum/component/memetic, memeticFlags, memetic_proc)
 
 /datum/scp/proc/isCompatible(atom/A)
 	return 1
