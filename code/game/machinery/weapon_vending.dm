@@ -64,7 +64,8 @@
 	name = "\improper LightCZ E.G. Storage"
 	desc = "An automated gun storage device that can dispense guns on demand, this one houses energy/pulse weapons for LCZ personnel."
 	products = list(
-		/obj/item/gun/energy/plasmastun = 1,
+		/obj/item/gun/energy/stunrevolver/taser = 3,
+		/obj/item/gun/energy/stunrevolver/rifle = 1,
 		/obj/item/gun/energy/ionrifle = 1
 	)
 
