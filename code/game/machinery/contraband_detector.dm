@@ -9,8 +9,6 @@
 	active_power_usage = 150
 
 	req_access = list(list(ACCESS_SECURITY_LVL2))
-	var/id_locked = TRUE
-	var/wrenching = FALSE
 	var/obj/item/device/radio/intercom/announce
 
 	base_type = /obj/machinery/contraband_detector
@@ -44,8 +42,8 @@
 	if(prob(100 - (severity * 20)))
 		set_broken(TRUE)
 
-/obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)	// T isn't used, but it's passed by the signal as first argument so don't remove it
-	if(!wires.is_cut(WIRE_CONTRADETECT_IDENTIFIER) && (((identifier_wire_pulsed_until > world.time) && identifier_wire_pulsed_until != 0) || (istype(A) && A.has_contraband())))
+/obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)	// T isn't used, but it's passed by the signal as first argument
+	if(!emagged && (!wires.is_cut(WIRE_CONTRADETECT_IDENTIFIER) && (((identifier_wire_pulsed_until > world.time) && identifier_wire_pulsed_until != 0) || (istype(A) && A.has_contraband()))))
 		if(ismob(A))
 			if(mob_cooldown < world.time)
 				mob_cooldown = world.time + 1 SECOND
@@ -79,58 +77,9 @@
 	else
 		icon_state = "powered"
 
-/obj/machinery/contraband_detector/attackby(obj/item/I, mob/user)
-	if(isScrewdriver(I))
-		if(id_locked && !panel_open)	// you can close it when ID locked, just not open it
-			to_chat(user, SPAN_NOTICE("\The [src]'s panel is locked!"))
-		else
-			panel_open = !panel_open
-			user.visible_message(SPAN_WARNING("[user] screws the camera's panel [panel_open ? "open" : "closed"]!"),
-			SPAN_NOTICE("You screw the camera's panel [panel_open ? "open" : "closed"]."))
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-	if((isWirecutter(I) || isMultitool(I)) && panel_open)
-		return wires.Interact(user)
-	if(isWrench(I))
-		if(wrenching)
-			to_chat(user, SPAN_WARNING("Someone is already [anchored ? "un" : ""]securing the detector!"))
-			return
-		if(!anchored && isinspace())
-			to_chat(user, SPAN_WARNING("Cannot secure detectors in space!"))
-			return
-
-		user.visible_message(SPAN_WARNING("[user] begins [anchored ? "un" : ""]securing the contraband detector."), \
-			SPAN_NOTICE("You begin [anchored ? "un" : ""]securing the contraband detector."))
-
-		wrenching = TRUE
-		if(do_after(user, 10 SECONDS, src))
-			if(!anchored)
-				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
-				anchored = TRUE
-				update_icon()
-				to_chat(user, SPAN_NOTICE("You secure the exterior bolts on the contraband detector."))
-				RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
-			else if(anchored)
-				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
-				anchored = FALSE
-				to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the contraband detector."))
-				update_icon()
-				UnregisterSignal(loc, COMSIG_ENTERED)
-		wrenching = FALSE
-	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
-		if(emagged)
-			to_chat(user, SPAN_NOTICE("You try to swipe your ID, but \the [src]'s slot seems to be... smoking?"))
-		else
-			if(src.allowed(usr))
-				to_chat(user, SPAN_NOTICE("You [id_locked ? "disable" : "enable"] the ID lock on \the [src]."))
-				id_locked = !id_locked
-			else
-				to_chat(user, SPAN_WARNING("\The [src] denies your ID!"))
-	return ..()
-
 /obj/machinery/contraband_detector/emag_act(remaining_charges, mob/user)
 	if(!emagged)
-		to_chat(user, SPAN_WARNING("You short circuit [src]'s ID locking systems."))
-		id_locked = FALSE
+		to_chat(user, SPAN_WARNING("You short circuit [src]'s contraband detection systems."))
 		emagged = TRUE
 		return 1
 
