@@ -43,3 +43,6 @@
   - imagedel: Deleted newspaper images and old PDA images.
   - spellcheck: Changed some baystation references to SCP references.
   - code_imp: General code cleanup in modcomp files as well as some helper procs.
+2023-07-19:
+  TheDarkElites:
+  - admin: New timelock perm required to bypass timelocks.
