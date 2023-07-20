@@ -9,11 +9,13 @@
 //Meta bitflags
 
 ///Is the SCP playable?
-#define PLAYABLE 	(1<<0)
+#define PLAYABLE 		(1<<0)
 ///Is it a roleplay oriented SCP?
-#define ROLEPLAY	(1<<1)
+#define ROLEPLAY		(1<<1)
 ///Does the scp have memetic properties?
-#define MEMETIC		(1<<2)
+#define MEMETIC			(1<<2)
+///Is this SCP just a placeholder and should be prevented from spawning?
+#define SCP_PLACEHOLDER (1<<3)
 
 //Memetic bitflags
 

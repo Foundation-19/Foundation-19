@@ -40,6 +40,10 @@
 		var/mob/pMob = parent
 		pMob.fully_replace_character_name(name)
 
+	if(metaFlags & SCP_PLACEHOLDER)
+		log_and_message_staff("Placeholder SCP spawned and subsequently deleted! Do not spawn placeholders!")
+		qdel(parent)
+
 	onGain()
 
 /datum/scp/Destroy()

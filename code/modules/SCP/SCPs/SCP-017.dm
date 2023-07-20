@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/scp_017
+/mob/living/simple_animal/hostile/scp017
 	name = "SCP-017"
 	desc = "A weird shambling void. You can see nothing inside."
 	icon = 'icons/SCP/scp-017.dmi'
@@ -30,14 +30,14 @@
 	var/shadow_threshold = 0.35
 
 	///simplemob AI
-	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp_017
+	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp017
 
 	///Saylist for 017
-	say_list_type = /datum/say_list/scp_017
+	say_list_type = /datum/say_list/scp017
 
 	can_bleed = FALSE //its a shadow, they dont usually bleed
 
-/mob/living/simple_animal/hostile/scp_017/Initialize()
+/mob/living/simple_animal/hostile/scp017/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
@@ -47,7 +47,7 @@
 	)
 
 //Datum proc overrides and defines
-/datum/ai_holder/simple_animal/melee/scp_017
+/datum/ai_holder/simple_animal/melee/scp017
 	cooperative = FALSE
 	speak_chance = 1
 	mauling = TRUE
@@ -59,7 +59,7 @@
 	///lumcount required for something to be considered a shadow. Should be identical to mob value.
 	var/shadow_threshold = 0.35
 
-/datum/ai_holder/simple_animal/melee/scp_017/can_attack(atom/movable/the_target, vision_required = TRUE)
+/datum/ai_holder/simple_animal/melee/scp017/can_attack(atom/movable/the_target, vision_required = TRUE)
 	if(!..() || isSCP(the_target))
 		return ATTACK_FAILED
 	var/turf/Tturf = get_turf(the_target)
@@ -70,27 +70,27 @@
 		return ATTACK_FAILED
 	return ..()
 
-/datum/say_list/scp_017
+/datum/say_list/scp017
 	emote_hear = list("wooshes","whispers")
 	emote_see = list("shambles", "shimmers")
 
 //Mob procs
-/mob/living/simple_animal/hostile/scp_017/IMove(turf/newloc, safety = TRUE)
+/mob/living/simple_animal/hostile/scp017/IMove(turf/newloc, safety = TRUE)
 	var/area/Tarea = get_area(newloc)
 	if((newloc.get_lumcount() > shadow_threshold) || (Tarea.dynamic_lighting == 0))
 		return MOVEMENT_FAILED
 	return ..()
 
-/mob/living/simple_animal/hostile/scp_017/gib()
+/mob/living/simple_animal/hostile/scp017/gib()
 	return FALSE
 
-/mob/living/simple_animal/hostile/scp_017/dust()
+/mob/living/simple_animal/hostile/scp017/dust()
 	return FALSE
 
 
 //Death
 
-/mob/living/simple_animal/hostile/scp_017/death(gibbed, deathmessage = "dissapears in a puff of smoke", show_dead_message)
+/mob/living/simple_animal/hostile/scp017/death(gibbed, deathmessage = "dissapears in a puff of smoke", show_dead_message)
 	var/turf/T = get_turf(src)
 
 	var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
@@ -100,7 +100,7 @@
 	ghostize()
 	qdel(src)
 
-/mob/living/simple_animal/hostile/scp_017/bullet_act(obj/item/projectile/Proj)
+/mob/living/simple_animal/hostile/scp017/bullet_act(obj/item/projectile/Proj)
 	if(Proj.damage_type == BRUTE)
 		visible_message(SPAN_WARNING("The [Proj] seems to pass right through it!"))
 		return PROJECTILE_CONTINUE
@@ -108,7 +108,7 @@
 
 //Attack
 
-/mob/living/simple_animal/hostile/scp_017/UnarmedAttack(atom/A, bypass_checks)
+/mob/living/simple_animal/hostile/scp017/UnarmedAttack(atom/A, bypass_checks)
 	var/turf/Tturf = get_turf(A)
 	if(!bypass_checks)
 		if(!ismovable(A) || isSCP(A))
@@ -133,11 +133,11 @@
 	else
 		qdel(A)
 
-/mob/living/simple_animal/hostile/scp_017/attack_target(atom/A)
+/mob/living/simple_animal/hostile/scp017/attack_target(atom/A)
 	return UnarmedAttack(A)
 
 //General Interactions
-/mob/living/simple_animal/hostile/scp_017/attack_hand(mob/living/carbon/human/M)
+/mob/living/simple_animal/hostile/scp017/attack_hand(mob/living/carbon/human/M)
 	. = ..()
 	switch(M.a_intent)
 		if(I_HELP)
@@ -147,10 +147,10 @@
 			if(prob(80))
 				UnarmedAttack(M, TRUE)
 
-/mob/living/simple_animal/hostile/scp_017/attackby(obj/item/O, mob/user)
+/mob/living/simple_animal/hostile/scp017/attackby(obj/item/O, mob/user)
 	. = ..()
 	UnarmedAttack(O, TRUE)
 
-/mob/living/simple_animal/hostile/scp_017/hitby(atom/movable/AM, datum/thrownthing/TT)
+/mob/living/simple_animal/hostile/scp017/hitby(atom/movable/AM, datum/thrownthing/TT)
 	. = ..()
 	UnarmedAttack(AM, TRUE)

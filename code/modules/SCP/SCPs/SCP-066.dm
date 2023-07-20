@@ -1,4 +1,4 @@
-/mob/living/simple_animal/friendly/retaliate/scp_066
+/mob/living/simple_animal/friendly/retaliate/scp066
 	name = "SCP-066"
 	desc = "An amorphous red mass of braided yarn and ribbon."
 	icon = 'icons/SCP/scp-066.dmi'
@@ -18,8 +18,8 @@
 
 	movement_sound = 'sound/scp/066/Roll.ogg'
 
-	ai_holder_type = /datum/ai_holder/simple_animal/retaliate/scp_066
-	say_list_type = /datum/say_list/scp_066
+	ai_holder_type = /datum/ai_holder/simple_animal/retaliate/scp066
+	say_list_type = /datum/say_list/scp066
 
 	///How long until we can do a regular emote
 	var/emote_passive_cooldown = 10 SECONDS
@@ -30,7 +30,7 @@
 	var/emote_harmful_track = 0
 
 
-/mob/living/simple_animal/friendly/retaliate/scp_066/Initialize()
+/mob/living/simple_animal/friendly/retaliate/scp066/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
@@ -41,19 +41,19 @@
 	)
 
 	SCP.memeticFlags = MAUDIBLE
-	SCP.memetic_proc = /mob/living/simple_animal/friendly/retaliate/scp_066/proc/audibleEffect
+	SCP.memetic_proc = /mob/living/simple_animal/friendly/retaliate/scp066/proc/audibleEffect
 	SCP.compInit()
 
 	add_language(LANGUAGE_ENGLISH)
 
 		// emotes
 	add_verb(src, list(
-		/mob/living/simple_animal/friendly/retaliate/scp_066/proc/Eric,
-		/mob/living/simple_animal/friendly/retaliate/scp_066/proc/LoudNoise,
-		/mob/living/simple_animal/friendly/retaliate/scp_066/proc/Noise,
+		/mob/living/simple_animal/friendly/retaliate/scp066/proc/Eric,
+		/mob/living/simple_animal/friendly/retaliate/scp066/proc/LoudNoise,
+		/mob/living/simple_animal/friendly/retaliate/scp066/proc/Noise,
 	))
 
-/datum/say_list/scp_066
+/datum/say_list/scp066
 	speak = list("Eric?")
 	speak_sounds = list('sound/scp/066/Eric1.ogg' = 33, 'sound/scp/066/Eric2.ogg' = 33, 'sound/scp/066/Eric3.ogg' = 33)
 
@@ -61,7 +61,7 @@
 	emote_hear_sounds = list('sound/scp/066/Notes1.ogg' = 16, 'sound/scp/066/Notes2.ogg' = 16, 'sound/scp/066/Notes3.ogg' = 16, 'sound/scp/066/Notes4.ogg' = 16, 'sound/scp/066/Notes5.ogg' = 16, 'sound/scp/066/Notes6.ogg' = 16)
 
 //AI stuff
-/datum/ai_holder/simple_animal/retaliate/scp_066
+/datum/ai_holder/simple_animal/retaliate/scp066
 	//Should be identical to parent simpleanimal
 	var/emote_harmful_cooldown = 2 MINUTES
 	var/emote_harmful_track = 0
@@ -70,24 +70,24 @@
 	can_flee = TRUE
 	violent_breakthrough = FALSE
 
-/datum/ai_holder/simple_animal/retaliate/scp_066/can_attack(atom/movable/the_target, vision_required)
+/datum/ai_holder/simple_animal/retaliate/scp066/can_attack(atom/movable/the_target, vision_required)
 	if((world.time - emote_harmful_track) > emote_harmful_cooldown)
 		return ..(the_target, vision_required)
 	else
 		return ATTACK_ON_COOLDOWN
 
-/mob/living/simple_animal/friendly/retaliate/scp_066/attack_target(atom/A)
+/mob/living/simple_animal/friendly/retaliate/scp066/attack_target(atom/A)
 	LoudNoise()
 
 //Mechanics
-/mob/living/simple_animal/friendly/retaliate/scp_066/proc/audibleEffect(mob/living/carbon/human/target)
+/mob/living/simple_animal/friendly/retaliate/scp066/proc/audibleEffect(mob/living/carbon/human/target)
 	target.Stun(4)
 	target.confused += 10
 	target.ear_damage += rand(10, 20)
 	target.ear_deaf = max(target.ear_deaf,15)
 	shake_camera(target, 18, 5)
 
-/mob/living/simple_animal/friendly/retaliate/scp_066/UnarmedAttack(atom/A, proximity) //Allows 066 to imitate the look of objects.
+/mob/living/simple_animal/friendly/retaliate/scp066/UnarmedAttack(atom/A, proximity) //Allows 066 to imitate the look of objects.
 	if(A == src)
 		icon = new /icon(initial(icon), initial(icon_state))
 		desc = initial(desc)
@@ -112,21 +112,21 @@
 	else
 		to_chat(src, SPAN_WARNING("You cannot imitate [A]!"))
 
-/mob/living/simple_animal/friendly/retaliate/scp_066/proc/imitate(atom/movable/imitate_target as obj|mob)
+/mob/living/simple_animal/friendly/retaliate/scp066/proc/imitate(atom/movable/imitate_target as obj|mob)
 	var/icon/I = new /icon(imitate_target.icon, imitate_target.icon_state)
 	I.ColorTone("#891313")
 	icon = I
 	name = imitate_target.name
 	desc = "It appears to be \a [imitate_target] made out of yarn..."
 
-/mob/living/simple_animal/friendly/retaliate/scp_066/say(message)
+/mob/living/simple_animal/friendly/retaliate/scp066/say(message)
 	message = "Eric?"
 	if((world.time - emote_passive_track) > emote_passive_cooldown) //technically checked twice but this prevents the cooldown message form being spammed to 066's client.
 		Eric()
 	return ..(message)
 
 // SCP-066 emotes
-/mob/living/simple_animal/friendly/retaliate/scp_066/proc/Noise()
+/mob/living/simple_animal/friendly/retaliate/scp066/proc/Noise()
 	set category = "SCP-066"
 	set name = "Make a Noise"
 
@@ -138,7 +138,7 @@
 	else
 		to_chat(usr, SPAN_WARNING("You are on cooldown!"))
 
-/mob/living/simple_animal/friendly/retaliate/scp_066/proc/Eric()
+/mob/living/simple_animal/friendly/retaliate/scp066/proc/Eric()
 	set category = "SCP-066"
 	set name = "Eric?"
 
@@ -150,7 +150,7 @@
 	else
 		to_chat(usr, SPAN_WARNING("You are on cooldown!"))
 
-/mob/living/simple_animal/friendly/retaliate/scp_066/proc/LoudNoise()
+/mob/living/simple_animal/friendly/retaliate/scp066/proc/LoudNoise()
 	set category = "SCP-066"
 	set name = "Deafening Noise"
 
