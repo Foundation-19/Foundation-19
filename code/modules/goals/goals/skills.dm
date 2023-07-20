@@ -37,7 +37,7 @@
 	steps++
 	if(steps >= step_goal)
 		var/datum/mind/M = container.parent
-		UnregisterSignal(M.current, COMSIG_HUMAN_LIFT_WEIGHT)
+		UnregisterSignal(M.current, COMSIG_MOVED)
 		goal_finish(TRUE)
 
 /datum/goal/skills/email

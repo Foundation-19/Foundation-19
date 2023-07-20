@@ -38,41 +38,41 @@
 /// fired when a goal is failed
 #define COMSIG_GOAL_FAILED "goal_failed"
 
-/// fired by a human when it lifts a weight
+/// Called on `/obj/structure/fitness/weightlifter/attack_hand` (/mob/living/carbon/human)
 #define COMSIG_HUMAN_LIFT_WEIGHT "human_lift_weight"
-/// fired by a mob/living when it sends an email via the email client
+/// Called on `/datum/tgui_module/email_client/tgui_act` (/mob/living)
 #define COMSIG_SENT_EMAIL "sent_email"
-/// fired by a human when it gives someone a hug
+/// Called on `/datum/species/hug` (/mob/living/carbon/human, /mob/living)
 #define COMSIG_GAVE_HUG "gave_hug"
-/// fired by a human on check_pulse()
+/// Called on `/mob/living/carbon/human/check_pulse` (/mob/living/carbon/human)
 #define COMSIG_CHECKED_PULSE "checked_pulse"
-/// fired by a human when cutting wires. passes wire color as arg
+/// Called on `/datum/wires/tgui_act` (/mob, text)
 #define COMSIG_CUT_WIRE "cut_wire"
-/// fired by a human during /obj/machinery/reagentgrinder/proc/grind(). passes machine as arg
+/// Called on `/obj/machinery/reagentgrinder/grind` (/mob, /obj/machinery/reagentgrinder)
 #define COMSIG_GRINDING "grinding"
-/// fired by a human on /obj/item/stack/proc/produce_recipe. passes recipe as first arg and constructed atom as second arg
+/// Called on `/obj/item/stack/produce_recipe` (/mob, /datum/stack_recipe, /atom)
 #define COMSIG_PRODUCED_RECIPE "produced_recipe"
-/// fired by a human on /obj/item/evidencebag/MouseDrop. passes bag as first arg and item as second arg
+/// Called on `/obj/item/evidencebag/MouseDrop` (/mob/living/carbon/human, /obj/item/evidencebag, /obj/item)
 #define COMSIG_BAGGED_EVIDENCE "bagged_evidence"
-/// fired by a human on /mob/living/simple_animal/attackby with a /obj/item/material/knife/kitchen/cleaver. passes meat as first arg and cleaver as second
+/// Called on `/mob/living/simple_animal/attackby` (/mob, /mob/living/simple_animal, /obj/item/material/knife/kitchen/cleaver)
 #define COMSIG_BUTCHERED "butchered"
 
-/// fired by a human when it despawns (e.g. by a cryopod)
+/// Called on `/obj/machinery/cryopod/despawn_occupant` (/mob)
 #define COMSIG_HUMAN_DESPAWNED "human_despawned"
 
-/// fired by a mob/living/carbon when it ingests a reagent. IS DYNAMICALLY CONSTRUCTED: append reagent type onto the string
+/// Called on `/mob/living/carbon/ingest` (/mob/living/carbon/, type)
 #define COMSIG_REAGENT_INGESTED "reagent_ingested"
-/// fired by something when it smokes something (as in a cigarette). should pass the object being smoked and the amount of reagents
+/// Called on `/obj/item/clothing/mask/smokable/smoke` (/datum, /obj/item/clothing/mask/smokable, number)
 #define COMSIG_SMOKED_SMOKABLE "smoked_smokable"
 
-/// fired by a bank account when it has money deposited into it
+/// Called on `/datum/money_account/deposit` (/datum/money_account)
 #define COMSIG_MONEY_DEPOSITED "money_deposited"
 
 /*
 * Atom
 */
 
-/// Called in `/atom/movable/Move` and `/atom/movable/proc/forceMove` (/atom/movable, /atom, /atom)
+/// Called on `/atom/movable/Move` and `/atom/movable/proc/forceMove` (/atom/movable, /atom, /atom)
 #define COMSIG_MOVED "moved"
 
 /// Called on `/atom/Entered` (/atom, enterer, old_loc)
