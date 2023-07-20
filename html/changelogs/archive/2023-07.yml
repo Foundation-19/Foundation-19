@@ -35,3 +35,18 @@
   - rscadd: 527 (Mister Fish) is now playable, and starts with a backpack.
   projectkepler-ru:
   - imageadd: 5.7mm ammo box
+2023-07-17:
+  cheesePizza2:
+  - rscadd: Adds new database server and client programs, used to host a basic file
+      browser service.
+  - rscdel: Removed newscaster program and flight program reports
+  - imagedel: Deleted newspaper images and old PDA images.
+  - spellcheck: Changed some baystation references to SCP references.
+  - code_imp: General code cleanup in modcomp files as well as some helper procs.
+2023-07-19:
+  TheDarkElites:
+  - admin: New timelock perm required to bypass timelocks.
+2023-07-20:
+  cheesePizza2:
+  - code_imp: Radial menu code cleaned up.
+  - imageadd: New radial menu icons stolen from VG.
