@@ -3,11 +3,13 @@
 	desc = "A mysterious plague doctor."
 	icon = 'icons/SCP/scp-049.dmi'
 
+	status_flags = NO_ANTAG
+
+	//Mechanical
+
 	var/next_emote = -1
 
 	var/curing = FALSE //we doing gods work or nah?
-
-	status_flags = NO_ANTAG
 
 //Backend Procs
 

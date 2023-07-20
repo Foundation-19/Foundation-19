@@ -23,8 +23,7 @@
 	maxHealth = 100
 	health = 100
 
-	var/obj/item/inventory_head
-	var/obj/item/inventory_mask
+	//Mechanical
 
 	///lumcount required for something to be considered a shadow
 	var/shadow_threshold = 0.35

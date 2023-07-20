@@ -12,6 +12,8 @@
 
 	filling = list(/datum/reagent/medicine/fluff/tobacco = 1)
 
+	//Mechanical
+
 	///Appearance Handler
 	var/decl/appearance_handler/bl_handle = new /decl/appearance_handler()
 

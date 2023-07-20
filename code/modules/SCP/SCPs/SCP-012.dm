@@ -6,8 +6,12 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 	show_title = FALSE
 
+	//Config
+
 	///How long for an effect to happen
 	var/effect_cooldown = 5 SECONDS
+
+	//Mechanical
 
 	///Keeps track of the cooldown
 	var/effect_cooldown_counter

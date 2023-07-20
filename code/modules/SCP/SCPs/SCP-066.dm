@@ -21,10 +21,14 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/retaliate/scp066
 	say_list_type = /datum/say_list/scp066
 
+	//Config
+
 	///How long until we can do a regular emote
 	var/emote_passive_cooldown = 10 SECONDS
 	///How long until we can do a harmful emote
 	var/emote_harmful_cooldown = 2 MINUTES
+
+	//Mechanical
 
 	var/emote_passive_track = 0
 	var/emote_harmful_track = 0
