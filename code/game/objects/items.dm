@@ -759,7 +759,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	RegisterSignal(user, COMSIG_MOVED, /obj/item/proc/unzoom)
 	GLOB.dir_set_event.register(user, src, /obj/item/proc/unzoom)
 	GLOB.item_unequipped_event.register(src, user, /mob/living/proc/unzoom)
-	GLOB.stat_set_event.register(user, src, /obj/item/proc/unzoom)
+	RegisterSignal(user, COMSIG_SET_STAT, /obj/item/proc/unzoom)
 
 	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
 
@@ -782,7 +782,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		crash_with("[log_info_line(src)]: Zoom user lost]")
 		return
 
-	GLOB.stat_set_event.unregister(user, src, /obj/item/proc/unzoom)
+	UnregisterSignal(user, COMSIG_SET_STAT)
 
 	if(!user.client)
 		return

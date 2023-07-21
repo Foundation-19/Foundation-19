@@ -68,6 +68,9 @@
 /// Called on `/datum/money_account/deposit` (/datum/money_account)
 #define COMSIG_MONEY_DEPOSITED "money_deposited"
 
+/// Called on `/mob/set_stat` (/mob, stat)
+#define COMSIG_SET_STAT "set_stat"
+
 /*
 * Atom
 */
