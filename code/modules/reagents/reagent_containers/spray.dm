@@ -93,7 +93,7 @@
 		to_chat(usr, SPAN_NOTICE("You empty \the [src] onto the floor."))
 		reagents.splash(usr.loc, reagents.total_volume)
 
-//space cleaner
+//space cleaner now is hydroxylsan
 /obj/item/reagent_containers/spray/cleaner
 	name = "\improper Sanitech Spray"
 	desc = "BLAM!-brand non-foaming standard-issue spray bottle utilized by SCP Foundation personnel for thorough cleaning and disinfecting! Now with 100% Hydroxylsan!"
