@@ -121,7 +121,7 @@
 
 /obj/item/reagent_containers/spray/pepper
 	name = "pepperspray"
-	desc = "Manufactured by Uhang Inc, it fires a mist of condensed capsaicin to blind and down an opponent quickly."
+	desc = "Manufactured by 'Uhang Inc.', it fires a mist of condensed capsaicin to blind and down an opponent quickly."
 	icon = 'icons/obj/weapons/other.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"
