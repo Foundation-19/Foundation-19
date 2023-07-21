@@ -4,6 +4,7 @@
 	attack_verb = list("attacked")
 	force = 0
 	stun_prob = 0 // No random stuns
+	melee_accuracy_bonus = 50 // Miss less
 	damtype = BRUTE
 	canremove = FALSE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE //for intent of shocking checks, they're right inside the animal

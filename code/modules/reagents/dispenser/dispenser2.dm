@@ -3,7 +3,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dispenser"
 	layer = BELOW_OBJ_LAYER
-	clicksound = "button"
+	clicksound = SFX_MACHINE_BUTTON
 	clickvol = 20
 
 	var/list/disp_reagents = null

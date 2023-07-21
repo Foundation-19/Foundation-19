@@ -54,7 +54,6 @@
 	icon_state = "samak"
 	icon_living = "samak"
 	icon_dead = "samak_dead"
-	move_to_delay = 2
 	maxHealth = 125
 	health = 125
 	movement_cooldown = 4
@@ -80,7 +79,6 @@
 	icon_state = "diyaab"
 	icon_living = "diyaab"
 	icon_dead = "diyaab_dead"
-	move_to_delay = 1
 	maxHealth = 25
 	health = 25
 	movement_cooldown = 3
@@ -98,7 +96,6 @@
 	icon_state = "shantak"
 	icon_living = "shantak"
 	icon_dead = "shantak_dead"
-	move_to_delay = 1
 	maxHealth = 75
 	health = 75
 	movement_cooldown = 4
@@ -155,7 +152,6 @@
 	icon_state = "royalcrab"
 	icon_living = "royalcrab"
 	icon_dead = "royalcrab_dead"
-	move_to_delay = 3
 	maxHealth = 150
 	health = 150
 	movement_cooldown = 4

@@ -87,4 +87,4 @@
 		// Burst the pipe, spewing trash all over
 		bursting_pipe.broken(1)
 		// Make a scary noise
-		playsound(bursting_pipe, get_sfx("explosion"), 40, 0, 0, 5)
+		playsound(bursting_pipe, SFX_EXPLOSION, 40, 0, 0, 5)

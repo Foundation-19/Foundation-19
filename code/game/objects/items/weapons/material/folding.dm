@@ -15,7 +15,7 @@
 	unbreakable = TRUE
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("prodded", "tapped")
-	hitsound = "swing_hit"
+	hitsound = SFX_SWING_HIT
 	edge = FALSE
 	sharp = FALSE
 

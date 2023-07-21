@@ -166,9 +166,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		ACCESS_REGION_SUPPLY = list(ACCESS_CHANGE_IDS)
 	)
 
-	// List of /datum/department types to instantiate at roundstart.
-	var/list/departments
-
 	// List of events specific to a map
 	var/list/map_event_container = list()
 

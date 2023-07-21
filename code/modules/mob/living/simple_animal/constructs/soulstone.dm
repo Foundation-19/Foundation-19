@@ -26,7 +26,7 @@
 	return (full == SOULSTONE_ESSENCE) ? src : FALSE
 
 /obj/item/device/soulstone/proc/shatter()
-	playsound(loc, "shatter", 70, 1)
+	playsound(loc, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	for(var/i=1 to rand(2,5))
 		new /obj/item/material/shard(get_turf(src), MATERIAL_NULLGLASS)

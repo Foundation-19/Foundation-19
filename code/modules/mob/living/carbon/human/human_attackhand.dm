@@ -49,10 +49,7 @@
 			if(MUTATION_HULK in H.mutations)
 				damage += 5
 
-			playsound(loc, "punch", 25, 1, -1)
-
-			update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
-			H.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
+			playsound(loc, SFX_PUNCH, 25, 1, -1)
 
 			visible_message(SPAN_DANGER("[H] has punched \the [src]!"))
 

@@ -70,7 +70,7 @@
 	occupant = L
 	L.Weaken(2)
 	L.visible_message(SPAN_WARNING("\The [L] falls into \the [src]!"))
-	playsound(L, "punch", 25, 1, FALSE)
+	playsound(L, SFX_PUNCH, 25, 1, FALSE)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/adherent_bath/attack_hand(mob/user)

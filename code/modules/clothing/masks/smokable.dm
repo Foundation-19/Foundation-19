@@ -54,6 +54,7 @@
 			environment.remove_by_flag(XGM_GAS_OXIDIZER, gas_consumption)
 			environment.adjust_gas(GAS_CO2, 0.5*gas_consumption,0)
 			environment.adjust_gas(GAS_CO, 0.5*gas_consumption)
+	SEND_SIGNAL(loc, COMSIG_SMOKED_SMOKABLE, src, amount)
 
 /obj/item/clothing/mask/smokable/Process()
 	var/turf/location = get_turf(src)
