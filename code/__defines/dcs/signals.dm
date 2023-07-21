@@ -29,6 +29,9 @@
 /// sent every carbon Life()
 #define COMSIG_CARBON_LIFE "carbon_life"
 
+/// Called on `/mob/set_stat` (/mob, stat)
+#define COMSIG_SET_STAT "set_stat"
+
 /*
 * Atom
 */

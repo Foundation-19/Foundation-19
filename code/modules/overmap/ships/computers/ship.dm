@@ -58,7 +58,7 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 	if(user.client)
 		user.client.view = world.view + extra_view
 	RegisterSignal(user, COMSIG_MOVED, /obj/machinery/computer/ship/proc/unlook)
-	GLOB.stat_set_event.register(user, src, /obj/machinery/computer/ship/proc/unlook)
+	RegisterSignal(user, COMSIG_SET_STAT, /obj/machinery/computer/ship/proc/unlook)
 	LAZYDISTINCTADD(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/unlook(mob/user)
@@ -66,7 +66,7 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 	if(user.client)
 		user.client.view = world.view
 	UnregisterSignal(user, COMSIG_MOVED)
-	GLOB.stat_set_event.unregister(user, src, /obj/machinery/computer/ship/proc/unlook)
+	UnregisterSignal(user, COMSIG_SET_STAT)
 	LAZYREMOVE(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/viewing_overmap(mob/user)

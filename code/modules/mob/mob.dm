@@ -1054,6 +1054,7 @@
 		return
 	. = stat
 	stat = new_stat
+	SEND_SIGNAL(src, COMSIG_SET_STAT, new_stat)
 
 /mob/verb/northfaceperm()
 	set hidden = 1
