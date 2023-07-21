@@ -102,13 +102,13 @@
 		else
 			GLOB.hands_swapped_event.register(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 			GLOB.mob_equipped_event.register(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
-			GLOB.mob_unequipped_event.register(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
+			RegisterSignal(user, COMSIG_MOB_DROPPED_ITEM, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 
 /obj/item/device/paint_sprayer/proc/remove_click_handler(mob/user)
 	if (user.RemoveClickHandler(/datum/click_handler/default/paint_sprayer))
 		GLOB.hands_swapped_event.unregister(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 		GLOB.mob_equipped_event.unregister(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
-		GLOB.mob_unequipped_event.unregister(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
+		UnregisterSignal(user, COMSIG_MOB_DROPPED_ITEM)
 		GLOB.module_deselected_event.unregister(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 		GLOB.module_deactivated_event.unregister(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 
