@@ -6,11 +6,14 @@
 	var/memetic_flags
 	///Proc to run on affected humans
 	var/affected_proc
+	///List of sounds that count as being memetic
+	var/list/memetic_sounds
 
-/datum/component/memetic/Initialize(flags, meme_proc)
+/datum/component/memetic/Initialize(flags, meme_proc, memeticSounds)
 	.=..()
 	memetic_flags = flags
 	affected_proc = meme_proc
+	memetic_sounds = memeticSounds
 
 /datum/component/memetic/Destroy(force, silent)
 	. = ..()
@@ -55,15 +58,23 @@
 		return
 	var/mob/living/carbon/human/H = source
 	if((memetic_flags & MVISUAL) && H.can_see(parent, TRUE))
-		affected_mobs += H
+		if(memetic_flags & MSYNCED)
+			affected_mobs += H
+		else if(H.stat != DEAD)
+			call(parent, affected_proc)(H)
 
-/datum/component/memetic/proc/heard_memetic(datum/source, mob/hearer)
+/datum/component/memetic/proc/heard_memetic(datum/source, mob/hearer, sound)
 	SIGNAL_HANDLER
 	if((!ishuman(hearer)) || (hearer in affected_mobs))
 		return
+	if(LAZYLEN(memetic_sounds) && !(sound in memetic_sounds))
+		return
 	var/mob/living/carbon/human/H = hearer
 	if((memetic_flags & MAUDIBLE) && H.can_hear(parent))
-		affected_mobs += H
+		if(memetic_flags & MSYNCED)
+			affected_mobs += H
+		else if(H.stat != DEAD)
+			call(parent, affected_proc)(H)
 
 /datum/component/memetic/proc/examined_memetic(datum/source, mob/examinee)
 	SIGNAL_HANDLER
@@ -71,7 +82,10 @@
 		return
 	var/mob/living/carbon/human/H = examinee
 	if((memetic_flags & MINSPECT) && H.can_see(visual_memetic = TRUE)) //examine function already checks memetics system but we need to check for protection
-		affected_mobs += examinee
+		if(memetic_flags & MSYNCED)
+			affected_mobs += H
+		else if(H.stat != DEAD)
+			call(parent, affected_proc)(H)
 
 /datum/component/memetic/proc/saw_memetic_photo(datum/source, obj/item/photo/photo_shown, mob/target)
 	SIGNAL_HANDLER
@@ -81,4 +95,7 @@
 	if(!H.can_see(visual_memetic = TRUE))
 		return
 	if(memetic_flags & MSELF_PERPETRAITING)
-		affected_mobs += target
+		if(memetic_flags & MSYNCED)
+			affected_mobs += H
+		else if(H.stat != DEAD)
+			call(parent, affected_proc)(H)

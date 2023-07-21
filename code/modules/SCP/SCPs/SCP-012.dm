@@ -38,7 +38,6 @@
 
 /obj/item/paper/scp012/Process()
 	SCP.meme_comp.check_viewers()
-	SCP.meme_comp.activate_memetic_effects()
 
 /obj/item/paper/scp012/proc/memetic_effect(mob/living/carbon/human/H)
 	if(!H || H.stat == UNCONSCIOUS) //Unconscious individuals cant keep hurting themselves

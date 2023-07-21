@@ -10,17 +10,19 @@
 	///Meta Flags for the SCP
 	var/metaFlags
 
-	///Flags that determine how a memetic scp is detected
-	var/memeticFlags
-
 	///Datum Parent
 	var/atom/parent
 
 	///Components
 	var/datum/component/memetic/meme_comp
 
+	//Memetic Comps
 	///Proc called as an effect from memetic scps
 	var/memetic_proc
+	///Flags that determine how a memetic scp is detected
+	var/memeticFlags
+	///Sounds that are considered memetic
+	var/list/memetic_sounds
 
 /datum/scp/New(atom/creation, vName, vClass = SAFE, vDesg, vMetaFlags)
 	GLOB.SCP_list += creation
@@ -55,7 +57,7 @@
 ///Run only after adding appropriate flags for components.
 /datum/scp/proc/compInit() //if more comps are added for SCPs, they can be put here
 	if(metaFlags & MEMETIC)
-		meme_comp = parent.AddComponent(/datum/component/memetic, memeticFlags, memetic_proc)
+		meme_comp = parent.AddComponent(/datum/component/memetic, memeticFlags, memetic_proc, memetic_sounds)
 
 /datum/scp/proc/isCompatible(atom/A)
 	return 1

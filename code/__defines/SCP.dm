@@ -24,8 +24,10 @@
 #define MINSPECT			(1<<2)
 ///Should memetics still take affect through cameras and pictures?
 #define MSELF_PERPETRAITING	(1<<3)
-///Is the individual still affected after they no longer meet the memetic requirements?
+///Is the individual still affected after they no longer meet the memetic requirements? Only use if the MSYNCED flag is used.
 #define MPERSISTENT			(1<<4)
+///Is the scp memetic effect synced? If this flag is enabled the memetic comp's active_memetic_effect() must be called to enact the memetic effect.
+#define MSYNCED				(1<<5)
 
 
 #define SCP_096 "096"

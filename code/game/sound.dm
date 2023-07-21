@@ -112,7 +112,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 
 	sound_to(src, S)
 	if(Ssource)
-		SEND_SIGNAL(Ssource, COMSIG_OBJECT_SOUND_HEARD, src)
+		SEND_SIGNAL(Ssource, COMSIG_OBJECT_SOUND_HEARD, src, soundin)
 
 /client/proc/playtitlemusic()
 	if (get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)

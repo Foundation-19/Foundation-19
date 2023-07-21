@@ -46,6 +46,7 @@
 
 	SCP.memeticFlags = MAUDIBLE
 	SCP.memetic_proc = /mob/living/simple_animal/friendly/retaliate/scp066/proc/audibleEffect
+	SCP.memetic_sounds = list('sound/scp/066/BeethovenLOUD.ogg')
 	SCP.compInit()
 
 	add_language(LANGUAGE_ENGLISH)
@@ -162,7 +163,6 @@
 		playsound(src, 'sounds/scp/066/BeethovenLOUD.ogg', 40)
 		show_sound_effect(loc, src)
 		emote_harmful_track = world.time
-		SCP.meme_comp.activate_memetic_effects()
 		return TRUE
 	else
 		to_chat(usr, SPAN_WARNING("You are on cooldown!"))
