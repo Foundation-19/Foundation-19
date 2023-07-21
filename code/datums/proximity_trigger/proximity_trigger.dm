@@ -83,9 +83,9 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 		return
 
 	for(var/t in (turfs_in_range - new_turfs))
-		GLOB.opacity_set_event.unregister(t, src, /datum/proximity_trigger/proc/on_turf_visibility_changed)
+		RegisterSignal(t, COMSIG_SET_OPACITY, /datum/proximity_trigger/proc/on_turf_visibility_changed)
 	for(var/t in (new_turfs - turfs_in_range))
-		GLOB.opacity_set_event.register(t, src, /datum/proximity_trigger/proc/on_turf_visibility_changed)
+		RegisterSignal(t, COMSIG_SET_OPACITY, /datum/proximity_trigger/proc/on_turf_visibility_changed)
 
 	turfs_in_range = new_turfs
 	on_turf_visibility_changed()
@@ -96,7 +96,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 	GLOB.dir_set_event.unregister(holder, src, /datum/proximity_trigger/proc/register_turfs)
 
 	for(var/t in turfs_in_range)
-		GLOB.opacity_set_event.unregister(t, src, /datum/proximity_trigger/proc/on_turf_visibility_changed)
+		UnregisterSignal(t, COMSIG_SET_OPACITY)
 	for(var/t in seen_turfs_)
 		GLOB.entered_event.unregister(t, src, /datum/proximity_trigger/proc/on_turf_entered)
 
