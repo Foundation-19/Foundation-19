@@ -31,6 +31,10 @@
 
 /// Called on `/mob/set_stat` (/mob, stat)
 #define COMSIG_SET_STAT "set_stat"
+/// Called on `/obj/item/proc/dropped` (/mob, /obj)
+#define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"
+/// Called on `/obj/item/proc/dropped` (/obj, /mob)
+#define COMSIG_DROPPED_ITEM "dropped_item"
 
 /*
 * Atom

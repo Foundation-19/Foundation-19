@@ -301,6 +301,9 @@
 		if(user.r_hand)
 			user.r_hand.update_twohanding()
 
+	SEND_SIGNAL(src, COMSIG_DROPPED_ITEM, user)
+	SEND_SIGNAL(user, COMSIG_MOB_DROPPED_ITEM, src)
+
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
 	return
@@ -758,7 +761,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	RegisterSignal(src, COMSIG_PARENT_QDELETING, /obj/item/proc/unzoom)
 	RegisterSignal(user, COMSIG_MOVED, /obj/item/proc/unzoom)
 	GLOB.dir_set_event.register(user, src, /obj/item/proc/unzoom)
-	GLOB.item_unequipped_event.register(src, user, /mob/living/proc/unzoom)
+	user.RegisterSignal(src, COMSIG_DROPPED_ITEM, /mob/living/proc/unzoom)
 	RegisterSignal(user, COMSIG_SET_STAT, /obj/item/proc/unzoom)
 
 	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
@@ -775,7 +778,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(user, COMSIG_MOVED)
 	GLOB.dir_set_event.unregister(user, src, /obj/item/proc/unzoom)
-	GLOB.item_unequipped_event.unregister(src, user, /mob/living/proc/unzoom)
+	user.RegisterSignal(src, COMSIG_DROPPED_ITEM)
 
 	user = user == src ? loc : (user || loc)
 	if(!istype(user))
