@@ -244,7 +244,7 @@
 
 /datum/reagent/hydroxylsan
 	name = "Hydroxylsan"
-	description = "A compound used to clean things. The name \"Hydroxylsan\" is derived from \"hydroxyl,\" which is a chemical group consisting of an oxygen and hydrogen atom (OH), often found in cleaning agents and sanitizers, and \"san\" representing \"sanitization\" or \"sanitize.\" holding quaternary ammonium compounds!"
+	description = "A compound used to clean things. The name \"Hydroxylsan\" is derived from \"hydroxyl,\" which is a chemical group consisting of H₂O and NH₃ elements (NH4OH), often found in cleaning agents and sanitizers, and \"san\" representing \"sanitization\" or \"sanitize.\" holding quaternary ammonium compounds!"
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#a5f0ee"
