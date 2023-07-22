@@ -8,8 +8,8 @@
 /datum/addiction/amnestics/WithdrawalStage1Process(mob/living/carbon/victim, delta_time)
 	. = ..()
 	victim.adjust_hallucination(1, 1)
-	if(prob(2) && nostalgia_cooldown >= world.time)
-		nostalgia_cooldown = world.time + 5 SECONDS
+	if(prob(5) && nostalgia_cooldown >= world.time)
+		nostalgia_cooldown = world.time + 10 SECONDS
 		victim.visible_message(SPAN_WARNING("[victim] looks confused for a moment."))
 		to_chat(victim, SPAN_USERDANGER(pick("I forgot something important..?", "Did I just...", "Did I really do that..?", "Was that...")))
 		victim.playsound_local(get_turf(victim), 'sound/effects/nostalgia1.ogg', 10, FALSE)
@@ -19,8 +19,8 @@
 /datum/addiction/amnestics/WithdrawalStage2Process(mob/living/carbon/victim, delta_time)
 	. = ..()
 	victim.adjust_hallucination(2, 2)
-	if(prob(3))
-		nostalgia_cooldown = world.time + 5 SECONDS
+	if(prob(7))
+		nostalgia_cooldown = world.time + 10 SECONDS
 		victim.visible_message(SPAN_WARNING("[victim] looks confused for a moment."))
 		to_chat(victim, SPAN_USERDANGER(pick("My mind feels blank.", "The memories keep flooding in!", "My past is no more!", "My future is... no, that was yesterday..?")))
 		victim.playsound_local(get_turf(victim), pick('sound/effects/nostalgia2.ogg', 'sound/effects/nostalgia3.ogg'), 25, FALSE)
@@ -29,8 +29,8 @@
 /datum/addiction/amnestics/WithdrawalStage3Process(mob/living/carbon/victim, delta_time)
 	. = ..()
 	victim.adjust_hallucination(3, 3)
-	if(prob(4))
-		nostalgia_cooldown = world.time + 5 SECONDS
+	if(prob(9))
+		nostalgia_cooldown = world.time + 10 SECONDS
 		victim.visible_message(SPAN_WARNING("[victim] looks really confused for a moment."))
 		to_chat(victim, SPAN_USERDANGER(pick("Future, past and present, all lie intertwined...", "The memories hold no meaning anymore.", "What did I do today? What will I do tomorrow?", "Nothing really matters anymore.")))
 		victim.playsound_local(get_turf(victim), pick('sound/effects/nostalgia4.ogg', 'sound/effects/nostalgia5.ogg'), 50, FALSE)

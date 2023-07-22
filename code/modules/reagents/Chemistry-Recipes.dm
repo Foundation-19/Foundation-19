@@ -3205,3 +3205,14 @@
 		new /obj/item/reagent_containers/food/snacks/monkeycube/abominationcube(get_turf(holder.my_atom))
 	else
 		new /obj/item/reagent_containers/food/snacks/monkeycube/abominationcube/friendly(get_turf(holder.my_atom))
+
+/datum/chemical_reaction/gottheit
+	name = "Gottheit"
+	result = /datum/reagent/gottheit
+	result_amount = 2
+	required_reagents = list(
+		/datum/reagent/grauel = 1,
+		/datum/reagent/medicine/rezadone = 1,
+		/datum/reagent/medicine/painkiller/tramadol/oxycodone = 1,
+		/datum/reagent/medicine/peridaxon = 1,
+		)
