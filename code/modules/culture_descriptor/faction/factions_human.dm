@@ -1,11 +1,8 @@
 /decl/cultural_info/faction/scg
 	name = FACTION_SOL_CENTRAL
-	description = "The SCP Foundation, or commonly referred to as the Foundation or SCP,\
-	is a high secretive group of people foccused around Securing Containing and Protecting anomalous objects or instances refered to as SCP's.\
-	As it currenlty stands the public does not know of the Foundation and it's duty to protect the public against these SCP's.\
-	Though these SCP's have breached their containment multiple times resulting in a tragic loss of life and the public \
-	needing to undergo serious amnestic treatment."
+	description = "The SCP Foundation, also known as the Foundation or SCP, is a highly secretive organization dedicated to securing, containing, and protecting anomalous items or instances known as SCPs. Its main goal is to shield the public from these anomalies, which have occasionally breached containment, resulting in significant loss of life and requiring amnestic therapy for affected individuals. Operating under strict protocols and employing specialized personnel, the Foundation works diligently to understand and manage these anomalies while keeping its existence hidden from the public eye."
 	language = list(LANGUAGE_ENGLISH)
+	economic_power = null
 
 /decl/cultural_info/faction/scg/fleet
 	name = FACTION_FLEET
