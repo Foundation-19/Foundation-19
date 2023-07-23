@@ -28,6 +28,7 @@
 
 /datum/money_account/proc/deposit(amount, purpose, machine_id)
 	var/datum/transaction/singular/T = new(src, machine_id, amount, purpose)
+	SEND_SIGNAL(src, COMSIG_MONEY_DEPOSITED)
 	return T.perform()
 
 /datum/money_account/proc/withdraw(amount, purpose, machine_id)

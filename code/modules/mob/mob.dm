@@ -1249,3 +1249,14 @@
 
 /mob/keybind_face_direction(direction)
 	facedir(direction)
+
+/mob/verb/open_goals_panel()
+	set category = "IC"
+	set name = "Show Goals"
+	set desc = "Shows your personal goals, antagonist objectives, and so on."
+
+	var/datum/component/goalcontainer = mind.GetComponent(/datum/component/goalcontainer)	// yes yes i know we're not supposed to use GetComponent, but does this really need a signal?
+	if(goalcontainer)
+		goalcontainer.tgui_interact(src)
+	else
+		to_chat(src, SPAN_NOTICE("You have no goals in life!"))
