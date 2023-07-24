@@ -153,6 +153,7 @@
 	return(shock_damage)
 
 /mob/proc/swap_hand()
+	SEND_SIGNAL(src, COMSIG_SWAPPED_HANDS)
 	return
 
 /mob/living/carbon/swap_hand()
