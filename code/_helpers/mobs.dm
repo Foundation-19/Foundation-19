@@ -318,3 +318,21 @@
 	if(damflags & DAM_BIO)
 		res += "bio"
 	return english_list(res)
+
+/mob/proc/set_see_in_dark(new_see_in_dark)
+	var/old_see_in_dark = sight
+	if(old_see_in_dark != new_see_in_dark)
+		see_in_dark = new_see_in_dark
+		SEND_SIGNAL(src, COMSIG_SET_SEE_IN_DARK, old_see_in_dark, new_see_in_dark)
+
+/mob/proc/set_see_invisible(new_see_invisible)
+	var/old_see_invisible = see_invisible
+	if(old_see_invisible != new_see_invisible)
+		see_invisible = new_see_invisible
+		SEND_SIGNAL(src, COMSIG_SET_SEE_INVISIBLE, old_see_invisible, new_see_invisible)
+
+/mob/proc/set_sight(new_sight)
+	var/old_sight = sight
+	if(old_sight != new_sight)
+		sight = new_sight
+		SEND_SIGNAL(src, COMSIG_SET_SIGHT, old_sight, new_sight)

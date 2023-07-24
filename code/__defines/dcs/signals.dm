@@ -81,6 +81,12 @@
 
 /// Called on `/mob/set_stat` (/mob, stat)
 #define COMSIG_SET_STAT "set_stat"
+/// Called on `/mob/set_see_in_dark` (/mob, old value, new value)
+#define COMSIG_SET_SEE_IN_DARK "set_see_in_dark"
+/// Called on `/mob/set_see_invisible` (/mob, old value, new value)
+#define COMSIG_SET_SEE_INVISIBLE "set_see_invisible"
+/// Called on `/mob/set_sight` (/mob, old value, new value)
+#define COMSIG_SET_SIGHT "set_sight"
 
 /// Called on `/obj/item/proc/dropped` (/mob, /obj)
 #define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"
