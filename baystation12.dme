@@ -420,7 +420,6 @@
 #include "code\datums\observation\moved.dm"
 #include "code\datums\observation\name_set.dm"
 #include "code\datums\observation\observation.dm"
-#include "code\datums\observation\set_invisibility.dm"
 #include "code\datums\observation\shuttle_added.dm"
 #include "code\datums\observation\shuttle_moved.dm"
 #include "code\datums\observation\turf_changed.dm"

@@ -87,6 +87,8 @@
 #define COMSIG_SET_SEE_INVISIBLE "set_see_invisible"
 /// Called on `/mob/set_sight` (/mob, old value, new value)
 #define COMSIG_SET_SIGHT "set_sight"
+/// Called on `mob/set_invisibility` (/mob, old value, new value)
+#define COMSIG_SET_INVISIBILITY "set_invisibility"
 
 /// Called on `/obj/item/proc/dropped` (/mob, /obj)
 #define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"

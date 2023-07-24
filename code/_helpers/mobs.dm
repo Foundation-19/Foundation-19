@@ -336,3 +336,9 @@
 	if(old_sight != new_sight)
 		sight = new_sight
 		SEND_SIGNAL(src, COMSIG_SET_SIGHT, old_sight, new_sight)
+
+/atom/proc/set_invisibility(new_invisibility = 0)
+	var/old_invisibility = invisibility
+	if(old_invisibility != new_invisibility)
+		invisibility = new_invisibility
+		SEND_SIGNAL(src, COMSIG_SET_INVISIBILITY, old_invisibility, new_invisibility)
