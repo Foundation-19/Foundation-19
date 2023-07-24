@@ -498,16 +498,6 @@
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/psychiatrist
 
-
-// ARCHIVE
-
-/obj/item/card/id/archivist
-	name = " administration ID"
-	desc = "A black ID. Looks like the person wearing this won't give it up easy."
-	icon_state = "adminlvl5"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/archivist
-
 // RESEARCH
 
 /obj/item/card/id/rd

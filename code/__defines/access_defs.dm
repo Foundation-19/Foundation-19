@@ -56,7 +56,7 @@
 
 #define ACCESS_ADMIN_LVL1 "ACCESS_ADMIN_LEVEL1" //Command Lobby, Logistics, Comms
 #define ACCESS_ADMIN_LVL2 "ACCESS_ADMIN_LEVEL2" //05 Rep, Logistics Officer, Comms Tech
-#define ACCESS_ADMIN_LVL3 "ACCESS_ADMIN_LEVEL3" //AIC Observation, Archivist
+#define ACCESS_ADMIN_LVL3 "ACCESS_ADMIN_LEVEL3" //AIC Observation
 #define ACCESS_ADMIN_LVL4 "ACCESS_ADMIN_LEVEL4" //AIC Upload/Core
 #define ACCESS_ADMIN_LVL5 "ACCESS_ADMIN_LEVEL5" //Site Director
 

@@ -18231,7 +18231,6 @@
 /obj/item/toy/figure/scp/sen_scientist,
 /obj/item/toy/figure/scp/security,
 /obj/item/toy/figure/scp/d_class,
-/obj/item/toy/figure/scp/archivist,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp343room)
 "bbt" = (

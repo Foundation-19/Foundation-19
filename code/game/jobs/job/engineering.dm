@@ -244,3 +244,42 @@
 	    SKILL_ATMOS        = SKILL_MASTER,
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
+
+/datum/job/it_tech
+	title = "IT Technician"
+	department = "Civilian"
+	selection_color = "#5b4d20"
+	department_flag = ENG
+	total_positions = 2
+	spawn_positions = 2
+	//duties = "<big><b>As the IT Technician, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</b></big>"
+	supervisors = "the Chief Engineer"
+	economic_power = 4
+	minimal_player_age = 3
+	ideal_character_age = 30
+	requirements = list("Engineer" = 180, EXP_TYPE_ENGINEERING = 300)
+	outfit_type = /decl/hierarchy/outfit/job/engineering/it_tech
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	hud_icon = "hudittech"
+
+	access = list(
+		ACCESS_ENG_COMMS,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_NETWORK
+	)
+	minimal_access = list()
+
+	min_skill = list(
+		SKILL_COMPUTER     = SKILL_EXPERIENCED,
+	    SKILL_CONSTRUCTION = SKILL_BASIC,
+	    SKILL_ELECTRICAL   = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_COMPUTER     = SKILL_MASTER
+	)

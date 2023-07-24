@@ -8296,7 +8296,7 @@
 /area/site53/lhcz/scp049containment)
 "ta" = (
 /obj/effect/landmark/start{
-	name = "Archivist"
+	name = "IT Technician"
 	},
 /obj/structure/bed/chair/office/comfy{
 	dir = 1
