@@ -555,3 +555,50 @@
 	)
 	skill_points = 17
 
+/datum/job/raisa
+	title = "RAISA Agent"
+	department = "Entrance Zone Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|ECZ|BUR
+	total_positions = 2
+	spawn_positions = 2
+	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
+	supervisors = "the EZ Supervisor"
+	economic_power = 5
+	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_BUR = 60, "IT Technician" = 120)
+	alt_titles = list()
+	minimal_player_age = 7
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/raisa_agent
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	hud_icon = "hudraisa"
+
+	access = list(
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_NETWORK
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+
+	max_skill = list(
+	    SKILL_COMPUTER    = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+	skill_points = 17

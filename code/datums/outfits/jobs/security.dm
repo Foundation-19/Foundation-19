@@ -217,6 +217,20 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
+/decl/hierarchy/outfit/job/security/raisa_agent
+	name = OUTFIT_JOB_NAME("RAISA Agent")
+	uniform = /obj/item/clothing/under/rank/security/corp
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl3ez
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
+	l_pocket = /obj/item/book/manual/scp/secsop
+	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list()
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	gloves = /obj/item/clothing/gloves/tactical/scp
+
 /* Non-SCP security outfits */
 
 /decl/hierarchy/outfit/job/security/officer
