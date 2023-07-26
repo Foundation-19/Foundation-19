@@ -95,7 +95,7 @@
 	if(href_list["print_active"])
 		if(!active_record)
 			return
-		print_text(record_to_html(active_record, get_record_access(usr)), usr)
+		print_text(active_record.record_to_html(get_record_access(usr)), usr)
 		return 1
 	if(href_list["search"])
 		var/field_name = href_list["search"]

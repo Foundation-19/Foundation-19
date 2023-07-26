@@ -167,7 +167,7 @@
 	character.client.init_verbs()
 	if(job.create_record)
 		if(character.mind.assigned_role != "Robot")
-			CreateModularRecord(character)
+			character.CreateModularRecord()
 			SSticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
 			AnnounceArrival(character, job, spawnpoint.msg)
 		else

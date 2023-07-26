@@ -484,6 +484,20 @@
 		.["client_rank"] = targetMob.client.holder ? targetMob.client.holder.rank : "Player"
 		.["client_muted"] = targetMob.client.prefs.muted
 
+		targetMob.client.jobtime?.update_jobtime()
+		var/list/jt_list = targetMob.client.jobtime.jobtime_list ? targetMob.client.jobtime.jobtime_list : list()
+		var/list/jobtime_by_time = list()
+		var/list/jobtime_by_name = list()
+		for(var/job in jt_list)
+			jobtime_by_time += jt_list[job]
+			jobtime_by_name += job
+
+		.["playtime_names"] = jobtime_by_name
+		.["playtime_times"] = jobtime_by_time
+
+		.["current_job"] = targetMob.mind.assigned_job ? targetMob.mind.assigned_job.title : "N/A"
+		.["current_jobtime"] = targetMob.client.jobtime.get_jobtime_by_job(targetMob.mind.assigned_job)
+
 /datum/player_panel/tgui_state(mob/user)
 	return GLOB.admin_tgui_state
 

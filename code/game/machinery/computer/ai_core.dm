@@ -268,14 +268,14 @@ var/global/list/empty_playable_ai_cores = list()
 		return ..()
 
 /client/proc/empty_ai_core_toggle_latejoin()
-	set name = "Toggle AI Core Latejoin"
+	set name = "Toggle AIC Core Latejoin"
 	set category = "Admin"
 
 	var/list/cores = list()
 	for(var/obj/structure/AIcore/deactivated/D in world)
 		cores["[D] ([D.loc.loc])"] = D
 
-	var/id = input("Which core?", "Toggle AI Core Latejoin", null) as null|anything in cores
+	var/id = tgui_input_list(usr, "Which core?", "Toggle AIC  Core Latejoin", cores)
 	if(!id) return
 
 	var/obj/structure/AIcore/deactivated/D = cores[id]

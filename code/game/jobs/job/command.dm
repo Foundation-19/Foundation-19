@@ -21,6 +21,8 @@
 	access = list()				// see get_access() override
 	minimal_access = list()		// see get_access() override
 
+	requirements = list(EXP_TYPE_COMMAND = 1800)
+
 /datum/job/captain/get_access()
 	return get_all_site_access()
 
@@ -28,7 +30,7 @@
 	title = "Human Resources Officer"
 	department = "Command"
 	supervisors = "The Site Director"
-	department_flag = COM|CIV
+	department_flag = COM|CIV|BUR|SRV
 	selection_color = "#2f2f7f"
 	head_position = 1
 	total_positions = 1
@@ -43,6 +45,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudhumanresources"
 	alt_titles = list("Head of Personnel")
+	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_BUR = 300)
 
 	access = list(
 		ACCESS_HOP,
@@ -76,6 +79,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
 	allowed_branches = list(/datum/mil_branch/security)
 	hud_icon = "hudcommsofficer"
+	requirements = list("Communications Technician" = 600)
 	allowed_ranks = list(
 	/datum/mil_rank/security/w5,
 	/datum/mil_rank/security/w6
@@ -134,6 +138,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
+	requirements = list(EXP_TYPE_ENGINEERING = 300)
 	alt_titles = list(
 		"Communications Programmer",
 		"Communications Dispatcher"
@@ -188,6 +193,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
+	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600, EXP_TYPE_BUR = 60)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -210,7 +216,7 @@
 	title = "Ethics Committee Liaison"
 	department = "Civilian"
 	selection_color = "#2f2f7f"
-	department_flag = COM
+	department_flag = COM|BUR
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Ethics Committee"
@@ -218,6 +224,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/o5rep
+	requirements = list(EXP_TYPE_BUR = 300)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -238,7 +245,7 @@
 /datum/job/goirep
 	title = "Global Occult Coalition Representative"
 	department = "Command"
-	department_flag = COM
+	department_flag = REP
 	selection_color = "#2f2f7f"
 	supervisors = "Your respective Group of Interest leaders"
 	total_positions = 1

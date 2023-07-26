@@ -3,45 +3,58 @@
 
 GLOBAL_LIST_EMPTY(radial_menus)
 
-/obj/screen/radial
-	icon = 'icons/mob/radial/menu.dmi'
+/atom/movable/screen/radial
+	icon = 'icons/hud/radial/palletes/default.dmi'
 	layer = ABOVE_HUD_LAYER
 	plane = ABOVE_HUD_PLANE
 	var/datum/radial_menu/parent
 
-/obj/screen/radial/slice
+/atom/movable/screen/radial/proc/set_parent(new_value)
+	if(parent)
+		UnregisterSignal(parent, COMSIG_PARENT_QDELETING)
+	parent = new_value
+	if(parent)
+		icon = parent.icon_pallete
+		RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/handle_parent_del)
+	else
+		icon = initial(icon)
+
+/atom/movable/screen/radial/proc/handle_parent_del()
+	set_parent(null)
+
+/atom/movable/screen/radial/slice
 	icon_state = "radial_slice"
 	var/choice
 	var/next_page = FALSE
 
-/obj/screen/radial/slice/MouseEntered(location, control, params)
+/atom/movable/screen/radial/slice/MouseEntered(location, control, params)
 	. = ..()
 	icon_state = "radial_slice_focus"
 
-/obj/screen/radial/slice/MouseExited(location, control, params)
+/atom/movable/screen/radial/slice/MouseExited(location, control, params)
 	. = ..()
 	icon_state = "radial_slice"
 
-/obj/screen/radial/slice/Click(location, control, params)
+/atom/movable/screen/radial/slice/Click(location, control, params)
 	if(usr.client == parent.current_user)
 		if(next_page)
 			parent.next_page()
 		else
-			parent.element_chosen(choice,usr)
+			parent.element_chosen(choice, usr, params)
 
-/obj/screen/radial/center
+/atom/movable/screen/radial/center
 	name = "Close Menu"
 	icon_state = "radial_center"
 
-/obj/screen/radial/center/MouseEntered(location, control, params)
+/atom/movable/screen/radial/center/MouseEntered(location, control, params)
 	. = ..()
 	icon_state = "radial_center_focus"
 
-/obj/screen/radial/center/MouseExited(location, control, params)
+/atom/movable/screen/radial/center/MouseExited(location, control, params)
 	. = ..()
 	icon_state = "radial_center"
 
-/obj/screen/radial/center/Click(location, control, params)
+/atom/movable/screen/radial/center/Click(location, control, params)
 	if(usr.client == parent.current_user)
 		parent.finished = TRUE
 
@@ -54,7 +67,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 
 	var/selected_choice
 	var/list/obj/screen/elements = list()
-	var/obj/screen/radial/center/close_button
+	var/atom/movable/screen/radial/center/close_button
 	var/client/current_user
 	var/atom/anchor
 	var/image/menu_holder
@@ -76,6 +89,9 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	var/py_shift = 0
 	var/entry_animation = TRUE
 
+	///A .dmi file for icons to be pulled from. Icon states should be same across all palletes.
+	var/icon_pallete = 'icons/hud/radial/palletes/default.dmi'
+
 //If we swap to vis_contens inventory these will need a redo
 /datum/radial_menu/proc/check_screen_border(mob/user)
 	var/atom/movable/AM = anchor
@@ -87,6 +103,8 @@ GLOBAL_LIST_EMPTY(radial_menus)
 		else
 			py_shift = 32
 			restrict_to_dir(NORTH) //I was going to parse screen loc here but that's more effort than it's worth.
+	else if(hudfix_method && AM.loc)
+		anchor = get_atom_on_turf(anchor)
 
 //Sets defaults
 //These assume 45 deg min_angle
@@ -105,7 +123,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 			starting_angle = 180
 			ending_angle = 45
 
-/datum/radial_menu/proc/setup_menu()
+/datum/radial_menu/proc/setup_menu(set_page = 1)
 	if(ending_angle > starting_angle)
 		zone = ending_angle - starting_angle
 	else
@@ -116,8 +134,8 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	if(elements.len < max_elements)
 		var/elements_to_add = max_elements - elements.len
 		for(var/i in 1 to elements_to_add) //Create all elements
-			var/obj/screen/radial/slice/new_element = new /obj/screen/radial/slice
-			new_element.parent = src
+			var/atom/movable/screen/radial/slice/new_element = new /atom/movable/screen/radial/slice
+			new_element.set_parent(src)
 			elements += new_element
 
 	var/page = 1
@@ -140,22 +158,23 @@ GLOBAL_LIST_EMPTY(radial_menus)
 
 	page_data[page] = current
 	pages = page
-	current_page = 1
+	current_page = clamp(set_page, 1, pages)
 	update_screen_objects(anim = entry_animation)
 
 /datum/radial_menu/proc/update_screen_objects(anim = FALSE)
 	var/list/page_choices = page_data[current_page]
 	var/angle_per_element = round(zone / page_choices.len)
 	for(var/i in 1 to elements.len)
-		var/obj/screen/radial/E = elements[i]
-		var/angle = Wrap(starting_angle + (i - 1) * angle_per_element,0,360)
+		var/atom/movable/screen/radial/E = elements[i]
+		var/angle = Wrap(starting_angle + (i - 1) * angle_per_element, 0, 360)
 		if(i > page_choices.len)
 			HideElement(E)
 		else
-			SetElement(E,page_choices[i],angle,anim = anim,anim_order = i)
+			SetElement(E, page_choices[i], angle, anim = anim, anim_order = i)
 
-/datum/radial_menu/proc/HideElement(obj/screen/radial/slice/E)
+/datum/radial_menu/proc/HideElement(atom/movable/screen/radial/slice/E)
 	E.cut_overlays()
+	E.vis_contents.Cut()
 	E.alpha = 0
 	E.name = "None"
 	E.maptext = null
@@ -163,17 +182,17 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	E.choice = null
 	E.next_page = FALSE
 
-/datum/radial_menu/proc/SetElement(obj/screen/radial/slice/E,choice_id,angle,anim,anim_order)
+/datum/radial_menu/proc/SetElement(atom/movable/screen/radial/slice/E, choice_id, angle, anim, anim_order)
 	//Position
 	var/py = round(cos(angle) * radius) + py_shift
 	var/px = round(sin(angle) * radius)
 	if(anim)
 		var/timing = anim_order * 0.5
 		var/matrix/starting = matrix()
-		starting.Scale(0.1,0.1)
+		starting.Scale(0.1, 0.1)
 		E.transform = starting
 		var/matrix/TM = matrix()
-		animate(E,pixel_x = px,pixel_y = py, transform = TM, time = timing)
+		animate(E, pixel_x = px, pixel_y = py, transform = TM, time = timing)
 	else
 		E.pixel_y = py
 		E.pixel_x = px
@@ -182,6 +201,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	E.alpha = 255
 	E.mouse_opacity = MOUSE_OPACITY_ICON
 	E.cut_overlays()
+	E.vis_contents.Cut()
 	if(choice_id == NEXT_PAGE_ID)
 		E.name = "Next Page"
 		E.next_page = TRUE
@@ -200,7 +220,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 
 /datum/radial_menu/New()
 	close_button = new
-	close_button.parent = src
+	close_button.set_parent(src)
 
 /datum/radial_menu/proc/Reset()
 	choices.Cut()
@@ -209,13 +229,13 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	current_page = 1
 	QDEL_NULL(custom_check_callback)
 
-/datum/radial_menu/proc/element_chosen(choice_id,mob/user)
+/datum/radial_menu/proc/element_chosen(choice_id, mob/user)
 	selected_choice = choices_values[choice_id]
 
 /datum/radial_menu/proc/get_next_id()
 	return "c_[choices.len]"
 
-/datum/radial_menu/proc/set_choices(list/new_choices)
+/datum/radial_menu/proc/set_choices(list/new_choices, set_page = 1)
 	if(choices.len)
 		Reset()
 	for(var/E in new_choices)
@@ -226,8 +246,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 			var/I = extract_image(new_choices[E])
 			if(I)
 				choices_icons[id] = I
-	setup_menu()
-
+	setup_menu(set_page)
 
 /datum/radial_menu/proc/extract_image(E)
 	var/mutable_appearance/MA = new /mutable_appearance(E)
@@ -239,7 +258,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 
 /datum/radial_menu/proc/next_page()
 	if(pages > 1)
-		current_page = Wrap(current_page + 1,1,pages+1)
+		current_page = Wrap(current_page + 1, 1, pages + 1)
 		update_screen_objects()
 
 /datum/radial_menu/proc/show_to(mob/M)
@@ -249,7 +268,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 		return
 	current_user = M.client
 	//Blank
-	menu_holder = image(icon='icons/effects/effects.dmi',loc=anchor,icon_state="nothing",layer = ABOVE_HUD_LAYER)
+	menu_holder = image(icon = 'icons/effects/effects.dmi', loc = anchor, icon_state = "nothing", layer = ABOVE_HUD_LAYER)
 	menu_holder.appearance_flags |= KEEP_APART
 	menu_holder.vis_contents += elements + close_button
 	current_user.images += menu_holder
@@ -278,13 +297,16 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	Choices should be a list where list keys are movables or text used for element names and return value
 	and list values are movables/icons/images used for element icons
 */
-/proc/show_radial_menu(mob/user, atom/anchor, list/choices, uniqueid, radius, datum/callback/custom_check, require_near = FALSE)
+/proc/show_radial_menu(mob/user, atom/anchor, list/choices, uniqueid, radius, datum/callback/custom_check, require_near = FALSE, no_repeat_close = FALSE, icon_pallete = 'icons/hud/radial/palletes/default.dmi')
 	if(!user || !anchor || !length(choices))
 		return
 	if(!uniqueid)
 		uniqueid = "defmenu_\ref[user]_\ref[anchor]"
 
 	if(GLOB.radial_menus[uniqueid])
+		if(!no_repeat_close)
+			var/datum/radial_menu/menu = GLOB.radial_menus[uniqueid]
+			menu.finished = TRUE
 		return
 
 	var/datum/radial_menu/menu = new
@@ -294,6 +316,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	if(istype(custom_check))
 		menu.custom_check_callback = custom_check
 	menu.anchor = anchor
+	menu.icon_pallete = icon_pallete
 	menu.check_screen_border(user) //Do what's needed to make it look good near borders or on hud
 	menu.set_choices(choices)
 	menu.show_to(user)
@@ -301,4 +324,9 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	var/answer = menu.selected_choice
 	qdel(menu)
 	GLOB.radial_menus -= uniqueid
+	if(require_near && !in_range(anchor, user))
+		return
+	if(istype(custom_check))
+		if(!custom_check.Invoke())
+			return
 	return answer

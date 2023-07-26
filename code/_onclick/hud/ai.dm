@@ -11,14 +11,14 @@
 	adding = list()
 	adding += new /obj/screen/ai_button(null,
 			ui_ai_core,
-			"AI Core",
+			"AIC Core",
 			"ai_core",
 			/mob/living/silicon/ai/proc/core
 			)
 
 	adding += new /obj/screen/ai_button(null,
 			ui_ai_announcement,
-			"AI Announcement",
+			"AIC Announcement",
 			"announcement",
 			/mob/living/silicon/ai/proc/ai_announcement
 			)
@@ -117,8 +117,15 @@
 			)
 
 	adding += new /obj/screen/ai_button(null,
+			ui_ai_emergency_announc,
+			"Emergency O5 Announcement",
+			"emergency",
+			/mob/living/silicon/ai/proc/ai_emergency_message
+			)
+
+	adding += new /obj/screen/ai_button(null,
 			ui_ai_crew_mon,
-			"Crew Monitor",
+			"Personnel Monitor",
 			"crew_monitor",
 			/mob/living/silicon/ai/proc/show_crew_monitor
 			)
