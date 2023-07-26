@@ -313,7 +313,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	for(var/mob/living/carbon/human/H in dview(14, src)) //Identifies possible human targets. Range is double regular view to allow 173 to pursue tarets outside of world.view to make evading him harder.
 		if(H.SCP || H.stat == DEAD)
 			continue
-		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)))
+		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, id = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)))
 			continue
 		possible_human_targets += H
 
@@ -325,7 +325,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if(!(H in possible_human_targets))
 				clear_target()
 			if(target && (target_pos_last != target_turf_current))
-				steps_to_target = AStar(loc, target_turf_current, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //if our target changes positions we recalculate our path
+				steps_to_target = AStar(loc, target_turf_current, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, id = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //if our target changes positions we recalculate our path
 				target_pos_last = target_turf_current
 		else if(istype(target, /obj/machinery/light))
 			var/obj/machinery/light/L = target
@@ -381,7 +381,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(!new_target)
 		return FALSE
 
-	var/list/temp_steps_to_target = AStar(loc, get_turf(new_target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //Flee distance is used as max_nodes since that should be the farthest that 173's AI will ever attempt to path
+	var/list/temp_steps_to_target = AStar(loc, get_turf(new_target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, id = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //Flee distance is used as max_nodes since that should be the farthest that 173's AI will ever attempt to path
 	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
 		steps_to_target = temp_steps_to_target
 		target = new_target
