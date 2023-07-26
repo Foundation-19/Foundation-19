@@ -27,7 +27,7 @@
 /datum/scp/New(atom/creation, vName, vClass = SAFE, vDesg, vMetaFlags)
 	GLOB.SCP_list += creation
 
-	name = vName
+	name = "\improper [vName]"
 	designation = vDesg
 	classification = vClass
 	metaFlags = vMetaFlags
