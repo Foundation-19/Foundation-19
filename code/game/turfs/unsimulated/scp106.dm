@@ -30,7 +30,8 @@
 				L.adjustFireLoss(3)
 			else if(ishuman(L))
 				var/mob/living/carbon/human/H = L
-				if(++H.pocket_dimension_decay >= 300) // 5 minutes
+				H.humanStageHandler.adjustStage("pocket_dimension_decay", 1)
+				if(H.humanStageHandler.getStage("pocket_dimension_decay") >= 300) // 5 minutes
 					new /obj/effect/decal/cleanable/molten_item(src)
 					qdel(H)
 

@@ -62,7 +62,7 @@
 			endgame_exits += loc
 			delete_me = 1
 		if ("scp106")
-			new /mob/living/carbon/human/scp_106 (loc)
+			new /mob/living/carbon/human/scp106 (loc)
 			delete_me = 1
 			return
 		if ("scp049")

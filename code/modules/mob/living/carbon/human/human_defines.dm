@@ -126,6 +126,3 @@
 
 	// SCP-078
 	var/scp078_status = 0
-
-	// SCP-106
-	var/pocket_dimension_decay = 0
