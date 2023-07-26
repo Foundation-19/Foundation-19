@@ -399,6 +399,7 @@
 
 #define ROBOT_MODULE_TYPE_GROUNDED "grounded"
 #define ROBOT_MODULE_TYPE_FLYING   "flying"
+#define ROBOT_MODULE_DISABLED	"disabled"
 
 #define RADIO_INTERRUPT_DEFAULT 30
 

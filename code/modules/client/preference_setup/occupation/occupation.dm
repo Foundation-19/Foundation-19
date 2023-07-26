@@ -154,6 +154,8 @@
 				var/bad_message = ""
 				if(job.total_positions == 0 && job.spawn_positions == 0)
 					bad_message = "<b>\[UNAVAILABLE]</b>"
+				else if(!job.meets_req(user.client))
+					bad_message = "<b>\[TIMELOCKED]</b>"
 				else if(jobban_isbanned(user, title))
 					bad_message = "<b>\[BANNED]</b>"
 				else if (!job.is_species_whitelist_allowed(user.client))
@@ -205,6 +207,12 @@
 
 				if(bad_message)
 					. += "<del>[title_link]</del>[help_link][skill_link]<td>[bad_message]</td></tr>"
+					if(bad_message == "<b>\[TIMELOCKED]</b>")
+						var/list/req_list = job.get_req(user.client)
+						for(var/jreq in req_list)
+							if(req_list[jreq])
+								. += "<tr bgcolor='[job.selection_color]'>" //HTML for timelock indicators in occupations
+								. += "<td width='30%' align='left'></td><td width='10%' align='left'></td><td>[jreq]</td></td><td></td><td width = '10%' align = 'center'></td><td width='40%' align='left'>[req_list[jreq]] Minutes</td></tr>"
 					continue
 				else if((GLOB.using_map.default_assistant_title in pref.job_low) && (title != GLOB.using_map.default_assistant_title))
 					. += "<font color=grey>[title_link]</font>[help_link][skill_link]<td></td></tr>"

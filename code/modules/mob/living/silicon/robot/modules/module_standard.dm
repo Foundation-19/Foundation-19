@@ -1,6 +1,7 @@
 /obj/item/robot_module/standard
 	name = "standard robot module"
 	display_name = "Standard"
+	module_category = ROBOT_MODULE_DISABLED
 	sprites = list(
 		"Basic" = "robot_old",
 		"Android" = "droid",

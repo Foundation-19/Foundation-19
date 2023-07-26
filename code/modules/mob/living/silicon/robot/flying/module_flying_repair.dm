@@ -2,6 +2,7 @@
 	name = "repair drone module"
 	display_name = "Repair"
 	channels = list ("Engineering" = TRUE)
+	module_category = ROBOT_MODULE_TYPE_FLYING
 	networks = list(NETWORK_ENGINEERING)
 	subsystems = list(
 		/datum/tgui_module/power_monitor/robot,

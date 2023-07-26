@@ -1041,6 +1041,7 @@
 	if(do_after(usr, 6 SECONDS, src))
 		var/message = SPAN_NOTICE("[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].")
 		to_chat(usr, message)
+		SEND_SIGNAL(usr, COMSIG_CHECKED_PULSE)
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
@@ -1815,6 +1816,17 @@
 				B.transform = M.Scale(scale)
 
 				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)
+
+/mob/living/carbon/human/get_exp_list(minutes)
+	. = ..()
+
+	var/list/valid_jobs = SSjobs.job_lists_by_map_name[GLOB.using_map.full_name]
+	valid_jobs = valid_jobs["jobs"]
+
+	if(mind.role_alt_title && istype(mind.assigned_job, /datum/job/goirep)) //We track alt titles for goi rep as they are different reps/jobs and not just renames
+		.[mind.role_alt_title] = minutes
+	else if(mind.assigned_job in valid_jobs)
+		.[mind.assigned_job.title] = minutes
 
 /mob/living/carbon/human/proc/dream()
 	dream_timer = null
