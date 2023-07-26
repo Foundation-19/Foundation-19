@@ -34463,7 +34463,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "rhy" = (
-/mob/living/simple_animal/hostile/scp096,
+/mob/living/scp096,
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
 "riw" = (
