@@ -58,7 +58,7 @@
 	var/datum/species/S = all_species[pref.species]
 
 	if(href_list["rename"])
-		var/raw_name = input(user, "Choose your character's name:", "Character Name")  as text|null
+		var/raw_name = tgui_input_text(user, "Choose your character's name:", "Character Name", "John Doe", MAX_NAME_LEN)
 		if (!isnull(raw_name) && CanUseTopic(user))
 
 			var/decl/cultural_info/check = SSculture.get_culture(pref.cultural_info[TAG_CULTURE])

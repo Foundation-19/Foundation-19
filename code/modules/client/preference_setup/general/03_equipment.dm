@@ -186,7 +186,7 @@
 			set_backpack_metadata(bo, bt, new_metadata)
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	else if(href_list["change_sensor_setting"])
-		var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", pref.sensor_setting) as null | anything in SUIT_SENSOR_MODES
+		var/switchMode = tgui_input_list(user, "Select a sensor mode:", "Suit Sensor Mode", SUIT_SENSOR_MODES, pref.sensor_setting)
 		if(!switchMode || !CanUseTopic(user))
 			return TOPIC_NOACTION
 		pref.sensor_setting = switchMode
