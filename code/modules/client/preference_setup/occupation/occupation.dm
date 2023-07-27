@@ -97,7 +97,7 @@
 			pref.hiding_maps[job_map] = map_data["default_to_hidden"]
 
 		. += "<hr><table width = '100%''><tr>"
-		. += "<td width = '50%' align = 'right'><font size = 3><b><center>[capitalize(job_map)]</center></b></td>"
+		. += "<td width = '50%' align = 'right'><size = 3><b><center>[capitalize(job_map)]</center></b></td>"
 		. += "</tr></table>"
 
 		if(!pref.hiding_maps[job_map])
