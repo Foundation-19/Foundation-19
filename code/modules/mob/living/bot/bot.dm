@@ -285,7 +285,7 @@
 /mob/living/bot/proc/startPatrol()
 	var/turf/T = getPatrolTurf()
 	if(T)
-		patrol_path = get_path_to(get_turf(src), T, max_patrol_dist, id = botcard, exclude = obstacle)
+		patrol_path = get_path_to(src, T, max_patrol_dist, id = botcard, exclude = obstacle)
 		if(!patrol_path)
 			patrol_path = list()
 		obstacle = null
@@ -317,7 +317,7 @@
 	return
 
 /mob/living/bot/proc/calcTargetPath()
-	target_path = get_path_to(get_turf(src), get_turf(target), max_target_dist, id = botcard, exclude = obstacle)
+	target_path = get_path_to(src, target, max_target_dist, id = botcard, exclude = obstacle)
 	if(!target_path)
 		if(target && target.loc)
 			ignore_list |= target

@@ -125,7 +125,7 @@
 				return
 
 /mob/living/bot/farmbot/calcTargetPath()
-	target_path = get_path_to(get_turf(src), get_turf(target), max_target_dist, min_target_dist = 1, id = botcard)	// We need to land NEXT to the tray, because the tray itself is impassable
+	target_path = get_path_to(src, target, max_target_dist, min_target_dist = 1, id = botcard)	// We need to land NEXT to the tray, because the tray itself is impassable
 	if(!target_path)
 		ignore_list |= target
 		target = null

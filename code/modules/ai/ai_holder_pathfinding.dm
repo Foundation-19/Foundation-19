@@ -38,11 +38,11 @@
 
 	ai_log("calculate_path() : Exiting.", AI_LOG_DEBUG)
 
-///A* now, try to a path to a target
+///pathfind now, try to a path to a target
 /datum/ai_holder/proc/get_path(turf/target,get_to = 1, max_distance = world.view*6)
 	ai_log("get_path() : Entering.",AI_LOG_DEBUG)
 	forget_path()
-	var/list/new_path = get_path_to(get_turf(holder), target, max_distance, get_to, holder.IGetID(), exclude = obstacles)
+	var/list/new_path = get_path_to(holder, target, max_distance, get_to, holder.IGetID(), exclude = obstacles)
 
 	if (new_path && new_path.len)
 		path = new_path
