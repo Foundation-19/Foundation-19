@@ -58,7 +58,7 @@
 
 /obj/item/gun/energy/stunrevolver/taser
 	name = "taser"
-	desc = "A modified version of a taser gun built specifically for Site-53. Instead of using cartridges, it launches balls of concentrated electricity straight towards the target."
+	desc = "A modified version of a taser gun built specifically for foundation use. Instead of using cartridges, it launches balls of concentrated electricity straight towards the target."
 	icon = 'icons/obj/guns/taser.dmi'
 	icon_state = "taser"
 	item_state = null
