@@ -155,6 +155,7 @@
 		O.add_fingerprint(user)
 
 		user.put_in_hands(O)
+		SEND_SIGNAL(user, COMSIG_PRODUCED_RECIPE, recipe, O)
 
 /obj/item/stack/Topic(href, href_list)
 	..()

@@ -55,7 +55,6 @@
 		if(I_HELP)
 			if (health > 0)
 				M.visible_message(SPAN_NOTICE("[M] [response_help] \the [src]."))
-				M.update_personal_goal(/datum/goal/achievement/specific_object/pet, type)
 
 		if(I_DISARM)
 			M.visible_message(SPAN_NOTICE("[M] [response_disarm] \the [src]."))
@@ -117,6 +116,7 @@
 					return
 				else
 					harvest(user, user.get_skill_value(SKILL_COOKING))
+					SEND_SIGNAL(user, COMSIG_BUTCHERED, src, O)
 					return
 			else
 				to_chat(user, SPAN_NOTICE("Your hand slips with your movement, and some of the meat is ruined."))

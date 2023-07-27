@@ -161,9 +161,6 @@ var/global/list/sparring_attack_cache = list()
 		user.visible_message(SPAN_DANGER("[user] [pick(attack_verb)] \himself in the [organ]!"))
 		return FALSE
 
-	target.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
-	user.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
-
 	if(!target.lying)
 		switch(zone)
 			if(BP_HEAD, BP_MOUTH, BP_EYES)
