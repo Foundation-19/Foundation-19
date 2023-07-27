@@ -12,7 +12,7 @@
 		G.follow(fh)
 
 /obj/screen/ghost/become_scp
-	name = "Become SCP"
+	name = "Become an SCP"
 	icon_state = "become_scp"
 
 /obj/screen/ghost/become_scp/Click()
