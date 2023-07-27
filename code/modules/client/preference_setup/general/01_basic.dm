@@ -79,7 +79,7 @@
 		return TOPIC_REFRESH
 
 	else if(href_list["gender"])
-		var/new_gender = input(user, "Choose your character's gender:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.gender) as null|anything in S.genders
+		var/new_gender = tgui_input_list(user, "Select your character's gender.", CHARACTER_PREFERENCE_INPUT_TITLE, S.genders, pref.gender)
 		S = all_species[pref.species]
 		if(new_gender && CanUseTopic(user) && (new_gender in S.genders))
 			pref.gender = new_gender
