@@ -16,6 +16,8 @@
 #define FACTION_SERPENT_HAND     "Serpent's Hand"
 #define FACTION_CHAOS_INSURGENCY "Chaos Insurgency"
 #define FACTION_UIU              "Unusual Incidents Unit"
+#define FACTION_OTHER            "Other faction"
+#define FACTION_TEST_SUBJECTS    "Test subjects"
 
 #define HOME_SYSTEM_EARTH      "Earth"
 #define HOME_SYSTEM_LUNA       "Luna"
