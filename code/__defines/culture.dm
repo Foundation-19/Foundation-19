@@ -11,21 +11,11 @@
 	)
 
 // Cultural IDs.
-#define FACTION_SOL_CENTRAL    "The SCP Foundation"
-#define FACTION_TERRAGOV       "Terran Government"
-#define FACTION_NANOTRASEN     "NanoTrasen"
-#define FACTION_FREETRADE      "Free Trade Union"
-#define FACTION_HEPHAESTUS     "Hephaestus Industries"
-#define FACTION_XYNERGY        "Xynergy"
-#define FACTION_FLEET          "SCG Fleet"
-#define FACTION_EXPEDITIONARY  "Expeditionary Corps"
-#define FACTION_PCRC           "Proxima Centauri Risk Control"
-#define FACTION_SAARE          "Strategic Assault and Asset Retention Enterprises"
-#define FACTION_CORPORATE       "Expeditionary Corps Organisation"
-#define FACTION_DAIS           "Deimos Advanced Information Systems"
-#define FACTION_OTHER          "Other Faction"
-#define FACTION_TEST_SUBJECTS  "Test Subjects"
-#define FACTION_SPACECOPS  "Sol Federal Police"
+#define FACTION_SCP_FOUNDATION   "SCP Foundation"
+#define FACTION_GOC			     "Global Occult Coalition"
+#define FACTION_SERPENT_HAND     "Serpent's Hand"
+#define FACTION_CHAOS_INSURGENCY "Chaos Insurgency"
+#define FACTION_UIU              "Unusual Incidents Unit"
 
 #define HOME_SYSTEM_EARTH      "Earth"
 #define HOME_SYSTEM_LUNA       "Luna"
