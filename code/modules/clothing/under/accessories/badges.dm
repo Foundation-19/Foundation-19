@@ -180,7 +180,7 @@
 	icon_state = "agentbadge"
 	slot_flags = SLOT_BELT | SLOT_TIE | SLOT_MASK
 	slot = ACCESSORY_SLOT_INSIGNIA
-	badge_string = FACTION_SPACECOPS
+	badge_string = "Spacecops"
 
 /obj/item/clothing/accessory/badge/tracker
 	name = "\improper Tracker's badge"
@@ -188,7 +188,7 @@
 	icon_state = "trackerbadge"
 	slot_flags = SLOT_BELT | SLOT_TIE
 	slot = ACCESSORY_SLOT_INSIGNIA
-	badge_string = FACTION_SPACECOPS
+	badge_string = "Spacecops"
 
 /obj/item/clothing/accessory/badge/press
 	name = "press badge"
