@@ -18,24 +18,14 @@
 	var/activehand = BP_L_ARM //determine which hand to burn (stolen from 113 code because bay code is messy)
 	if(!U.hand)
 		activehand = BP_R_ARM
-	if(ishuman(user && target))
-		to_chat(T, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
-		U.visible_message(SPAN_DANGER("[U] begins to swing [src] at [T]!"))
-		if(do_after(U, 4 SECONDS, T))
-			var/obj/item/organ/external/E = U.get_organ(activehand)
-			E.fracture()
-			explosion(T, 1, 1, 3, 3, 1)
-			admin_attack_log(U, T, null, null, "[U] has attacked [T] with SCP-2398!")
-			message_staff("[U] (ckey: [U.ckey]) has swung SCP-2398 at [T] ([T.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
-	else
-		if(iscarbon(T))
-			to_chat(T, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
-			U.visible_message(SPAN_DANGER("[U] begins to swing [src] at [T]!"))
-			if(do_after(U, 4 SECONDS, T))
-				var/obj/item/organ/external/E = U.get_organ(activehand)
-				E.fracture()
-				explosion(T, 1, 1, 3, 3, 1)
-				admin_attack_log(U, T, null, null, "[U] has attacked [T] with SCP-2398!")
-				message_staff("[U] (ckey: [U.ckey]) has swung SCP-2398 at [T] ([T.ckey])!")
-				qdel(T) //perhaps a bad solution but i dont want to work with it
+	if(isSCP(target) || ishuman(user))
 		return
+	to_chat(T, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
+	U.visible_message(SPAN_DANGER("[U] begins to swing [src] at [T]!"))
+	if(do_after(U, 4 SECONDS, T))
+		var/obj/item/organ/external/E = U.get_organ(activehand)
+		E.fracture()
+		explosion(T, 1, 1, 3, 3, 1)
+		admin_attack_log(U, T, null, null, "[U] has attacked [T] with SCP-2398!")
+		message_staff("[U] (ckey: [U.ckey]) has swung SCP-2398 at [T] ([T.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
+
