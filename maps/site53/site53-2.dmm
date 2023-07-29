@@ -16070,7 +16070,7 @@
 /area/site53/llcz/scp113)
 "aWN" = (
 /obj/structure/table/reinforced,
-/obj/item/device/scp113,
+/obj/item/scp113,
 /obj/machinery/light,
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor/tiled/monotile,

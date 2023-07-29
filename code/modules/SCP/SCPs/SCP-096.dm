@@ -238,18 +238,10 @@
 			var/turf/next_step = LAZYLEN(current_path) ? current_path[1] : get_step_towards(src, target)
 			//Get rid of obstacles
 			if(next_step.contains_dense_objects())
-				for(var/obj/obstacle in next_step)
+				for(var/atom/obstacle in next_step)
 					if(!obstacle.density)
 						continue
-					UnarmedAttack(obstacle)
-				for(var/turf/simulated/wall/obstacle in next_step)
-					if(!obstacle.density)
-						continue
-					UnarmedAttack(obstacle)
-				for(var/mob/obstacle in next_step)
-					if(!obstacle.density)
-						continue
-					if((obstacle == target) || (obstacle == src))
+					if(isturf(obstacle) && !istype(obstacle, /turf/simulated/wall))
 						continue
 					UnarmedAttack(obstacle)
 				if(!(src in next_step))

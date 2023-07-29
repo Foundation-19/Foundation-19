@@ -6,6 +6,7 @@
  *			angle2dir
  *			angle2text
  *			worldtime2text
+ *			convertatom2type
  */
 
 /proc/text2numlist(text, delimiter="\n")
@@ -215,3 +216,24 @@
 			else
 				return /datum
 	return text2path(copytext(string_type, 1, last_slash))
+
+///Lets us safley attempt to convert an atom to another type. This basically deletes that atom and replaces it with an atom of the new type. Will transfer mind if needed.
+/proc/convertatom2type(atom/target_atom, type)
+	if(!istype(target_atom))
+		return FALSE
+	if(!ispath(type))
+		return FALSE
+
+	var/atom_loc = get_turf(target_atom)
+	var/atom/new_atom = new type(atom_loc)
+
+	if(ismob(target_atom) && (ismob(new_atom)))
+		var/mob/target_mob = target_atom
+		var/mob/new_mob = new_atom
+		if(!target_mob.mind || !new_mob.mind)
+			qdel(target_atom)
+			return TRUE
+		new_mob.ckey = target_mob.ckey
+
+	qdel(target_atom)
+	return TRUE
