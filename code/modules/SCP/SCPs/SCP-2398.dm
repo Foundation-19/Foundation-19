@@ -25,8 +25,8 @@
 			var/obj/item/organ/external/E = U.get_organ(activehand)
 			E.fracture()
 			explosion(T, 1, 1, 3, 3, 1)
-			admin_attack_log(U, H, null, null, "[U] has attacked [T] with SCP-2398!")
-			message_staff("[U] (ckey: [U.ckey]) has swung SCP-2398 at [T] ([H.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
+			admin_attack_log(U, T, null, null, "[U] has attacked [T] with SCP-2398!")
+			message_staff("[U] (ckey: [U.ckey]) has swung SCP-2398 at [T] ([T.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
 	else
 		if(iscarbon(T))
 			to_chat(T, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
