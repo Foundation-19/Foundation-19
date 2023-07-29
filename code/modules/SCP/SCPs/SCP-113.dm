@@ -39,7 +39,7 @@
 			H.gib()
 			return
 		if(prob(20 * H.humanStageHandler.getStage("113_conversions")))
-			H.apply_damage(50, BRUTE, BP_GROIN)
+			H.apply_damage(100, BRUTE, BP_GROIN)
 			H.visible_message(SPAN_WARNING("[H]'s groin suddenly and violently explodes!"), SPAN_DANGER("You feel a horrible pain in your groin area!"))
 			return
 
