@@ -232,12 +232,12 @@
 		var/mob/new_mob = new_atom
 		if(!target_mob.mind)
 			qdel(target_atom)
-			return TRUE
+			return new_atom
 		if(!new_mob.mind)
 			target_mob.ghostize()
 			qdel(target_atom)
-			return TRUE
+			return new_atom
 		new_mob.ckey = target_mob.ckey
 
 	qdel(target_atom)
-	return TRUE
+	return new_atom
