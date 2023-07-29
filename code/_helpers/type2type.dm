@@ -217,8 +217,8 @@
 				return /datum
 	return text2path(copytext(string_type, 1, last_slash))
 
-///Lets us safley attempt to convert an atom to another type. This basically deletes that atom and replaces it with an atom of the new type. Will transfer mind if needed.
-/proc/convertatom2type(atom/target_atom, type)
+///Lets us safley attempt to convert an atom to another type. This basically deletes that atom and replaces it with an atom of the new type. Will transfer mind if needed. convertatom2type(atom/target_atom, type, convert_message)
+/proc/convertatom2type(atom/target_atom, type, convert_message, no_transfer = FALSE, force_mind = FALSE)
 	if(!istype(target_atom))
 		return FALSE
 	if(!ispath(type))
@@ -230,14 +230,24 @@
 	if(ismob(target_atom))
 		var/mob/target_mob = target_atom
 		var/mob/new_mob = new_atom
+
+		for(var/obj/item/W in target_mob)
+			target_mob.drop_from_inventory(W)
+		target_mob.regenerate_icons()
+
 		if(!target_mob.mind)
 			qdel(target_atom)
 			return new_atom
-		if(!new_mob.mind)
+		if(convert_message)
+			to_chat(target_mob, convert_message)
+		if(!new_mob.mind && !force_mind)
 			target_mob.ghostize()
 			qdel(target_atom)
 			return new_atom
-		new_mob.ckey = target_mob.ckey
+		if(!HAS_TRANSFORMATION_MOVEMENT_HANDLER(target_mob))
+			ADD_TRANSFORMATION_MOVEMENT_HANDLER(target_mob)
+		if(!no_transfer)
+			target_mob.mind.transfer_to(new_mob)
 
 	qdel(target_atom)
 	return new_atom
