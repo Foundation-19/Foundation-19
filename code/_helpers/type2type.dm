@@ -240,7 +240,7 @@
 			return new_atom
 		if(convert_message)
 			to_chat(target_mob, convert_message)
-		if(!new_mob.mind && !force_mind)
+		if(!istype(new_mob) || (!new_mob.mind && !force_mind))
 			target_mob.ghostize()
 			qdel(target_atom)
 			return new_atom
