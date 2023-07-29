@@ -227,10 +227,14 @@
 	var/atom_loc = get_turf(target_atom)
 	var/atom/new_atom = new type(atom_loc)
 
-	if(ismob(target_atom) && (ismob(new_atom)))
+	if(ismob(target_atom))
 		var/mob/target_mob = target_atom
 		var/mob/new_mob = new_atom
-		if(!target_mob.mind || !new_mob.mind)
+		if(!target_mob.mind)
+			qdel(target_atom)
+			return TRUE
+		if(!new_mob.mind)
+			target_mob.ghostize()
 			qdel(target_atom)
 			return TRUE
 		new_mob.ckey = target_mob.ckey
