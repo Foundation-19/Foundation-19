@@ -30,7 +30,7 @@
 	else
 		if(iscarbon(T))
 			to_chat(T, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
-			G.visible_message(SPAN_DANGER("[G] begins to swing [src] at [T]!"))
+			G.visible_message(SPAN_DANGER("[U] begins to swing [src] at [T]!"))
 			if(do_after(U, 4 SECONDS, T))
 				var/obj/item/organ/external/E = U.get_organ(activehand)
 				E.fracture()
