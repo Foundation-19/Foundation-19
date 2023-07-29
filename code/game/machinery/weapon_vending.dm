@@ -2,9 +2,10 @@
 	name = "\improper GunDispenser v4.2"
 	desc = "A glorified vending machine for guns, why just not use gun lockers?"
 	icon_state = "weaponry"
-	obj_flags = null //prevents it from being rotated and unanchored
+	obj_flags = OBJ_FLAG_ANCHORABLE //not rotatable because im not making sprites for dat
 	machine_name = "gun dispenser"
 	machine_desc = "Holds an internal stock of guns that can be dispensed on-demand or when a charged ID card is swiped, depending on the brand."
+	product_slogans = list("Kill some commies for me, will ya?;Warcrimes? HA! What's that?;Hotdogs, Horseshoes & Hand Grenades, America, baby.;'Murica.")
 	product_ads = list("Kill some commies for me, will ya?;Warcrimes? HA! What's that?;Hotdogs, Horseshoes & Hand Grenades, America, baby.;'Murica.")
 
 // ## GOC & CI MACHINES //
