@@ -52,7 +52,7 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
-			CULTURE_POSITRONICS
+			CULTURE_OTHER
 		),
 		TAG_HOMEWORLD = list(
 			HOME_SYSTEM_OTHER
