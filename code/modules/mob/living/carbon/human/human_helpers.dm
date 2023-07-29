@@ -368,53 +368,42 @@
 
 ///Checks if a human can make direct contact with another humans bare skin. Uses the select ui to determine where to check.
 /mob/living/carbon/human/proc/can_touch_bare_skin(mob/living/carbon/human/target)
+	var/covered_parts = get_covered_body_parts()
 	switch(zone_sel.selecting)
 		if(BP_R_FOOT)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform, target.shoes))
-				if(cloth.body_parts_covered & FOOT_RIGHT)
-					return FALSE
+			if(covered_parts & FOOT_RIGHT)
+				return FALSE
 		if(BP_L_FOOT)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform, target.shoes))
-				if(cloth.body_parts_covered & FOOT_LEFT)
-					return FALSE
+			if(covered_parts & FOOT_LEFT)
+				return FALSE
 		if(BP_R_LEG)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform))
-				if(cloth.body_parts_covered & LEG_RIGHT)
-					return FALSE
+			if(covered_parts & LEG_RIGHT)
+				return FALSE
 		if(BP_L_LEG)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform))
-				if(cloth.body_parts_covered & LEG_LEFT)
-					return FALSE
+			if(covered_parts & LEG_LEFT)
+				return FALSE
 		if(BP_GROIN)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform))
-				if(cloth.body_parts_covered & LOWER_TORSO)
-					return FALSE
+			if(covered_parts & LOWER_TORSO)
+				return FALSE
 		if(BP_CHEST)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform))
-				if(cloth.body_parts_covered & FULL_TORSO)
-					return FALSE
+			if(covered_parts & FULL_TORSO)
+				return FALSE
 		if(BP_R_HAND)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform, target.gloves))
-				if(cloth.body_parts_covered & HAND_RIGHT)
-					return FALSE
+			if(covered_parts & HAND_RIGHT)
+				return FALSE
 		if(BP_L_HAND)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform, target.gloves))
-				if(cloth.body_parts_covered & HAND_LEFT)
-					return FALSE
+			if(covered_parts & HAND_LEFT)
+				return FALSE
 		if(BP_R_ARM)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform))
-				if(cloth.body_parts_covered & ARM_RIGHT)
-					return FALSE
+			if(covered_parts & ARM_RIGHT)
+				return FALSE
 		if(BP_L_ARM)
-			for(var/obj/item/clothing/cloth in list(target.wear_suit, target.w_uniform))
-				if(cloth.body_parts_covered & ARM_LEFT)
-					return FALSE
+			if(covered_parts & ARM_LEFT)
+				return FALSE
 		if(BP_EYES)
-			for(var/obj/item/clothing/cloth in list(target.head, target.w_uniform))
-				if(cloth.body_parts_covered & EYES)
-					return FALSE
+			if(covered_parts & EYES)
+				return FALSE
 		if(BP_HEAD, BP_MOUTH)
-			for(var/obj/item/clothing/cloth in list(target.head, target.w_uniform))
-				if(cloth.body_parts_covered & FULL_HEAD)
-					return FALSE
+			if(covered_parts & FULL_HEAD)
+				return FALSE
 	return TRUE
