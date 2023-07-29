@@ -28,7 +28,7 @@
 			admin_attack_log(G, H, null, null, "[G] has attacked [H] with SCP-2398!")
 			message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
 	else
-		if(iscarbon(G))
+		if(iscarbon(H))
 			to_chat(H, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
 			G.visible_message(SPAN_DANGER("[G] begins to swing [src] at [H]!"))
 			if(do_after(G, 4 SECONDS, H))
