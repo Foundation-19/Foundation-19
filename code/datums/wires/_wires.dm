@@ -146,6 +146,7 @@
 			playsound(holder, 'sound/items/Wirecutter.ogg', 20, 1)
 			show_sound_effect(holder.loc, soundicon = SFX_ICON_SMALL)
 			cut_color(color)
+			SEND_SIGNAL(user, COMSIG_CUT_WIRE, color)
 			return TRUE
 
 		// Pulse a wire.
