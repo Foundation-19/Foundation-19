@@ -36,7 +36,10 @@
 
 	parent.SetName(name)
 
-	set_faction(parent, FACTION_SCPS)
+	if(classification == SAFE)
+		set_faction(parent, MOB_FACTION_NEUTRAL)
+	else
+		set_faction(parent, FACTION_SCPS)
 
 	if(ismob(parent))
 		var/mob/pMob = parent
