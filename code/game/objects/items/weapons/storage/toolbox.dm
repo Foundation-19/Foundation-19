@@ -45,7 +45,6 @@
 
 /obj/item/storage/toolbox/mechanical
 	name = "mechanical toolbox"
-	desc = "A highly durable and sturdy toolbox designed to provide secure and organized storage for a wide range of tools."
 	icon_state = "blue"
 	item_state = "toolbox_blue"
 	startswith = list(/obj/item/screwdriver, /obj/item/wrench, /obj/item/weldingtool, /obj/item/crowbar, /obj/item/device/scanner/gas, /obj/item/wirecutters)
@@ -61,7 +60,6 @@
 
 /obj/item/storage/toolbox/electrical
 	name = "electrical toolbox"
-	desc = "A highly durable and sturdy toolbox designed to provide secure and organized storage for a wide range of tools."
 	icon_state = "yellow"
 	item_state = "toolbox_yellow"
 	startswith = list(/obj/item/screwdriver, /obj/item/wirecutters, /obj/item/device/t_scanner, /obj/item/crowbar)
