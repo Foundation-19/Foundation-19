@@ -55,7 +55,7 @@
 			else
 				return
 		flick("detected", src)
-		visible_message(SPAN_WARNING("\The [src] detects contraband on \the [A.name]!"))
+		balloon_alert_to_viewers("Contraband detected!")
 		if(!wires.is_cut(WIRE_CONTRADETECT_ALARM))
 			var/area/AR = get_area(src)
 			announce.autosay("Contraband detected on \the [A] at \the [AR.name]!", "Contraband Detection System")
