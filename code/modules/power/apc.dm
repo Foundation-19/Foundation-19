@@ -169,7 +169,7 @@
 		set_dir(ndir)
 
 	if(areastring)
-		area = get_area_name(areastring)
+		area = get_area_by_name(areastring)
 	else
 		var/area/A = get_area(src)
 		//if area isn't specified use current
