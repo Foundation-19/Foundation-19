@@ -18,7 +18,7 @@
 	var/activehand = BP_L_ARM //determine which hand to burn (stolen from 113 code because bay code is messy)
 	if(!U.hand)
 		activehand = BP_R_ARM
-	if(isSCP(target) || ishuman(user))
+	if(isSCP(target) || !ishuman(user))
 		return
 	to_chat(T, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
 	U.visible_message(SPAN_DANGER("[U] begins to swing [src] at [T]!"))
