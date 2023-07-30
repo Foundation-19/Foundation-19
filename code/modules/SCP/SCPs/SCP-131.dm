@@ -133,7 +133,7 @@
 			panic()
 			return
 
-/mob/living/simple_animal/friendly/scp131/proc/update_friend(var/mob/living/carbon/human/new_friend)
+/mob/living/simple_animal/friendly/scp131/proc/update_friend(mob/living/carbon/human/new_friend)
 	if(!istype(new_friend))
 		return
 	if(friend)
