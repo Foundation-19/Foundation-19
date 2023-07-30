@@ -709,7 +709,7 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "aco" = (
 /obj/structure/dogbed,
-/mob/living/simple_animal/scp_131/a,
+/mob/living/simple_animal/friendly/scp131/scp131A,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "acq" = (
@@ -736,7 +736,7 @@
 "acz" = (
 /obj/machinery/light,
 /obj/structure/dogbed,
-/mob/living/simple_animal/scp_131/b,
+/mob/living/simple_animal/friendly/scp131/scp131B,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "acA" = (

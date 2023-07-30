@@ -219,7 +219,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isscp999(A) istype(A, /mob/living/simple_animal/scp_999)
 
-#define isscp131(A) istype(A, /mob/living/simple_animal/scp_131)
+#define isscp131(A) istype(A, /mob/living/simple_animal/friendly/scp131)
 
 #define isscp529(A) istype(A, /mob/living/simple_animal/cat/fluff/scp_529)
 
