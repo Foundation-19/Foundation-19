@@ -1,16 +1,8 @@
-GLOBAL_LIST_EMPTY(scp173s)
-
-/datum/scp/scp_173
-	name = "SCP-173"
-	designation = "173"
-	classification = EUCLID
-
 /mob/living/scp_173
 	name = "SCP-173"
 	desc = "A statue, constructed from concrete and rebar with traces of Krylon brand spray paint."
 	icon = 'icons/SCP/scp-173.dmi'
 	icon_state = "173"
-	SCP = /datum/scp/scp_173
 	status_flags = NO_ANTAG
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
@@ -25,48 +17,52 @@ GLOBAL_LIST_EMPTY(scp173s)
 	a_intent = "harm" // Doesn't switch places with people
 	can_be_buckled = FALSE
 
-	/// Reference to the area we were created in
-	var/area/spawn_area
+	//Config
 
-	/// List of humans under the blinking influence
-	var/list/next_blinks = list()
-	/// List of times at which humans joined the list (Used for HUD calculation)
-	var/list/next_blinks_join_time = list()
-
-	/// Current attack cooldown
-	var/snap_cooldown
 	/// Amount of the attack cooldown
 	var/snap_cooldown_time = 4 SECONDS
-	/// Current light break cooldown
-	var/light_break_cooldown
 	/// Amount of light fixture break cooldown
 	var/light_break_cooldown_time = 3 SECONDS
-	/// Cooldown for defecation...
-	var/defecation_cooldown
 	/// How much time you have to wait before defecating again
 	var/defecation_cooldown_time = 45 SECONDS
 	/// What kind of objects/effects we spawn on defecation. Also used when checking the area
 	var/list/defecation_types = list(/obj/effect/decal/cleanable/blood/gibs/red, /obj/effect/decal/cleanable/vomit, /obj/effect/decal/cleanable/mucus)
 
-	/// Simple cooldown for warning message for passive breach
-	var/warning_cooldown
-	/// Same, but for breaching effect
-	var/breach_cooldown
-
-	/// This one to avoid sound spam when opening doors
-	var/door_cooldown
-
-	///AI Related vars
+	//AI config
 
 	//How many tiles 173 moves in a single run of life
 	var/tile_move_range = 3
 	//How far wander targets can be set
 	var/wander_distance = 8
+	var/flee_distance = 30
 	//How far we can track a target before giving up
 	var/target_track_distance = 14
 	//How far fleeing targets can be set. Used for pathing distance since it should be the farthest that 173's AI will ever attempt to path
-	var/flee_distance = 30
-	//Our current step list (this is to avoid calling pathfinding unless neccesary)
+
+	//Mechanical
+
+	/// Reference to the area we were created in
+	var/area/spawn_area
+	/// List of humans under the blinking influence
+	var/list/next_blinks = list()
+	/// List of times at which humans joined the list (Used for HUD calculation)
+	var/list/next_blinks_join_time = list()
+	/// Current attack cooldown
+	var/snap_cooldown
+	/// Current light break cooldown
+	var/light_break_cooldown
+	/// Cooldown for defecation...
+	var/defecation_cooldown
+	/// Simple cooldown for warning message for passive breach
+	var/warning_cooldown
+	/// Same, but for breaching effect
+	var/breach_cooldown
+	/// This one to avoid sound spam when opening doors
+	var/door_cooldown
+
+	///AI Related vars
+
+	//Our current step list (this is to avoid calling AStar unless neccesary)
 	var/list/steps_to_target = list()
 	//Target's position when pathfinding was last ran (this is also to help avoid calling pathfinding unless neccesary)
 	var/turf/target_pos_last
@@ -74,7 +70,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/atom/movable/target
 
 /mob/living/scp_173/Initialize()
-	GLOB.scp173s += src
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"Weird Statue", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		EUCLID, //Obj Class
+		"173", //Numerical Designation
+	)
+
 	defecation_cooldown = world.time + 10 MINUTES // Give everyone some time to prepare
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_EAL, FALSE)
@@ -91,7 +93,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	next_blinks_join_time = null
 	clear_target()
 
-	GLOB.scp173s -= src
 	return ..()
 
 /mob/living/scp_173/say(message)
@@ -206,7 +207,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(istype(loc, /obj/structure/scp173_cage))
 		A = loc
 	for(var/mob/living/L in dview(7, A))
-		if((istype(L, /mob/living/simple_animal/scp_131)) && (InCone(L, L.dir)))
+		if((istype(L, /mob/living/simple_animal/friendly/scp131)) && (InCone(L, L.dir)))
 			return TRUE
 		if(!istype(L, /mob/living/carbon/human))
 			continue

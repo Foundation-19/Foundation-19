@@ -10,7 +10,6 @@
 	desc = "A human shaped-like mass of darkness."
 	icon = 'icons/SCP/scp-280.dmi'
 	icon_state = "scp_280"
-	SCP = /datum/scp/scp_173
 	status_flags = NO_ANTAG
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
