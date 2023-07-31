@@ -63,7 +63,7 @@
 		if(2)
 			to_chat(user, SPAN_NOTICE("You feel a weird stinging sensation throughout your body."))
 			if(prob(45))
-				user.empty_stomach()
+				user.vomit()
 			addtimer(CALLBACK(src, .proc/effect, user), 20 SECONDS)
 		if(3)
 			to_chat(user, SPAN_WARNING("Bones begin to shift and grind inside of you, and every single one of your nerves seems like it's on fire."))
