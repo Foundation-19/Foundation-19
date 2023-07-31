@@ -38,7 +38,7 @@
 
 // Mechanics
 
-/obj/structure/scp151/proc/effect(var/mob/living/carbon/human/H)
+/obj/structure/scp151/proc/effect(mob/living/carbon/human/H)
 	H.apply_damage(oxy_damage, OXY)
 
 	var/obj/item/organ/internal/lungs/breathe_organ = H.internal_organs_by_name[H.species.breathing_organ]
