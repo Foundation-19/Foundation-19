@@ -88,7 +88,7 @@
 	access_type = ACCESS_TYPE_CONTAINMENT
 	guestpass_access_prerequisites = list(ACCESS_SCIENCE_LVL1, ACCESS_SECURITY_LVL1)
 
-/datum/access/containment_scp_173
+/datum/access/containment_scp173
 	id = ACCESS_CONTAINMENT_SCP_173
 	desc = "SCP-173 Containment"
 	access_type = ACCESS_TYPE_CONTAINMENT

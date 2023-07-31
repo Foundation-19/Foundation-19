@@ -1,4 +1,4 @@
-/mob/living/scp_173
+/mob/living/scp173
 	name = "SCP-173"
 	desc = "A statue, constructed from concrete and rebar with traces of Krylon brand spray paint."
 	icon = 'icons/SCP/scp-173.dmi'
@@ -69,7 +69,7 @@
 	//AI's current target
 	var/atom/movable/target
 
-/mob/living/scp_173/Initialize()
+/mob/living/scp173/Initialize()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"Weird Statue", //Name (Should not be the scp desg, more like what it can be described as to viewers)
@@ -87,7 +87,7 @@
 	add_language(LANGUAGE_ENGLISH, FALSE)
 	return ..()
 
-/mob/living/scp_173/Destroy()
+/mob/living/scp173/Destroy()
 	for(var/mob/living/carbon/human/H in next_blinks)
 		H.disable_blink(src)
 	next_blinks = null
@@ -96,23 +96,23 @@
 
 	return ..()
 
-/mob/living/scp_173/say(message)
+/mob/living/scp173/say(message)
 	return // lol you can't talk
 
-/mob/living/scp_173/Move(a,b,f)
+/mob/living/scp173/Move(a,b,f)
 	if(IsBeingWatched())
 		return FALSE
 	return ..()
 
-/mob/living/scp_173/face_atom(atom/A)
+/mob/living/scp173/face_atom(atom/A)
 	if(IsBeingWatched())
 		return FALSE
 	return ..()
 
-/mob/living/scp_173/movement_delay()
+/mob/living/scp173/movement_delay()
 	return -5
 
-/mob/living/scp_173/UnarmedAttack(atom/A)
+/mob/living/scp173/UnarmedAttack(atom/A)
 	if(IsBeingWatched() || incapacitated())// We can't do anything while being watched
 		return
 	if(ishuman(A))
@@ -176,7 +176,7 @@
 		QDEL_NULL(C)
 	return
 
-/mob/living/scp_173/Life()
+/mob/living/scp173/Life()
 	. = ..()
 	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src) //In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
@@ -196,13 +196,13 @@
 		return
 	handle_AI()
 
-/mob/living/scp_173/ClimbCheck(atom/A)
+/mob/living/scp173/ClimbCheck(atom/A)
 	if(IsBeingWatched())
 		to_chat(src, SPAN_DANGER("You can't climb while being watched."))
 		return FALSE
 	return TRUE
 
-/mob/living/scp_173/proc/IsBeingWatched()
+/mob/living/scp173/proc/IsBeingWatched()
 	// Same as before, cage needs to be used as reference rather than 173
 	var/atom/A = src
 	if(istype(loc, /obj/structure/scp173_cage))
@@ -219,7 +219,7 @@
 			return TRUE
 	return FALSE
 
-/mob/living/scp_173/proc/OpenDoor(obj/machinery/door/A)
+/mob/living/scp173/proc/OpenDoor(obj/machinery/door/A)
 	if(door_cooldown > world.time)
 		return
 
@@ -269,7 +269,7 @@
 	var/check = A.open(1)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
-/mob/living/scp_173/proc/Defecate()
+/mob/living/scp173/proc/Defecate()
 	var/feces_amount = CheckFeces()
 	if(feces_amount >= 30 && length(GLOB.clients) <= 30 && !client) //If we're lowpop we cant breach ourselves
 		return
@@ -290,7 +290,7 @@
 		warning_cooldown = world.time + 2 MINUTES
 		priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sounds/AI/acidic_degredation.ogg')
 
-/mob/living/scp_173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
+/mob/living/scp173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
 	var/area/A = get_area(src)
 	if((A != spawn_area) && containment_zone) // Not in containment zone
 		return 0
@@ -301,13 +301,13 @@
 			continue
 	return feces_amount
 
-/mob/living/scp_173/proc/BreachEffect()
+/mob/living/scp173/proc/BreachEffect()
 	var/area/A = get_area(src)
 	A.full_breach()
 
 // 173 AI procs
 
-/mob/living/scp_173/proc/handle_AI()
+/mob/living/scp173/proc/handle_AI()
 	if(istype(loc, /obj/structure/scp173_cage))
 		loc.relaymove(src, NORTH)
 		return
@@ -385,7 +385,7 @@
 
 	move_to_target()
 
-/mob/living/scp_173/proc/assign_target(atom/movable/new_target) //Assigns a new target for 173
+/mob/living/scp173/proc/assign_target(atom/movable/new_target) //Assigns a new target for 173
 	clear_target()
 
 	if(!new_target)
@@ -398,14 +398,13 @@
 		target_pos_last = get_turf(new_target)
 		return TRUE
 
-/mob/living/scp_173/proc/clear_target()
+/mob/living/scp173/proc/clear_target()
 	target = null
 	target_pos_last = null
 	LAZYCLEARLIST(steps_to_target)
 
-/mob/living/scp_173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
-	if(!target || !LAZYLEN(steps_to_target))
-		clear_target()
+/mob/living/scp173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
+	if(!target || !steps_to_target)
 		return
 
 	var/turf/step_turf = steps_to_target[1]
@@ -438,7 +437,7 @@
 		else
 			LAZYREMOVE(steps_to_target, step_turf)
 
-/mob/living/scp_173/proc/get_viable_light_target() //Gets a viable light bulb target
+/mob/living/scp173/proc/get_viable_light_target() //Gets a viable light bulb target
 	for(var/obj/machinery/light/light_in_view in dview(7, src))
 		if(get_area(light_in_view) == spawn_area)
 			continue
@@ -493,7 +492,7 @@
 		visible_message(SPAN_DANGER("[L] opens \the [src]!"))
 		ReleaseContents()
 
-/obj/structure/scp173_cage/relaymove(mob/living/scp_173/user, direction)
+/obj/structure/scp173_cage/relaymove(mob/living/scp173/user, direction)
 	if(resist_cooldown > world.time)
 		return
 	resist_cooldown = world.time + 5 SECONDS

@@ -34,7 +34,7 @@ the HUD updates properly! */
 		return
 
 	if(isscp173(M)) //Only 173 should have a blink HUD (Also this is neccesary for maintaing the blink HUD while caged)
-		var/mob/living/scp_173/S = M
+		var/mob/living/scp173/S = M
 		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt)
 		for(var/mob/living/carbon/human/victim in dview(7, istype(S.loc, /obj/structure/scp173_cage) ? S.loc : S))
 			if(victim.stat) //The unconscious cant blink, and therefore do not need to be added to the blink HUD
