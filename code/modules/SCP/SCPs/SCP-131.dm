@@ -8,7 +8,6 @@
 	health = 150
 	pass_flags = PASS_FLAG_TABLE
 
-	languages = list(LANGUAGE_EYEPOD)
 	species_language = LANGUAGE_EYEPOD
 	only_species_language = 1
 	universal_understand = 1
@@ -54,6 +53,7 @@
 		SAFE, //Obj Class
 		"131", //Numerical Designation
 	)
+	add_language(LANGUAGE_EYEPOD)
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
 	return ..()
