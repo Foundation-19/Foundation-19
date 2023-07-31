@@ -97,21 +97,21 @@
 *	Mob
 */
 
-/// Called when an atom is examined. Examining mob is passed.
+/// Called in '/mob/verb/examinate' on examined atom (/mob/examinee)
 #define COMSIG_ATOM_EXAMINED "atomExamined"
 
 /*
 *	Photos
 */
 
-/// Called when a photo of the atom is taken. Passes the camera and the photo taker.
+/// Called in '/obj/item/device/camera/proc/captureimage' on the atom taken a picture of (/obj/item/device/camera, mob/living/user)
 #define COMSIG_PHOTO_TAKEN_OF "photoTakenOf"
-/// Called when the photo containing the atom is shown to someone, passes the /obj/item/photo that is shown and the individual viewing the photo.
+/// Called in '/obj/item/photo/proc/show' on the atom that the photo was shown of (/obj/item/photo, mob/user)
 #define COMSIG_PHOTO_SHOWN_OF "photoShownOf"
 
 /*
 *	Sound
 */
 
-/// Called when an atom's sound is heard. Passes the mob that heard it.
+/// Called in '/mob/proc/playsound_local' on the atom that the sound originated from (/mob/hearer, sound)
 #define COMSIG_OBJECT_SOUND_HEARD "atomHeard"
