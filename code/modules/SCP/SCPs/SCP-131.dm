@@ -144,7 +144,7 @@
 
 /mob/living/simple_animal/friendly/scp131/proc/remove_friend()
 	friend = null
-	ai_holder.lose_follow()
+	ai_holder?.lose_follow()
 
 ///Allows 131 to panic when its friend is injured or when a hostile scp is in sight.
 /mob/living/simple_animal/friendly/scp131/proc/panic()
