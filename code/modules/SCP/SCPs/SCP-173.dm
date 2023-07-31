@@ -75,6 +75,7 @@
 		"Weird Statue", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"173", //Numerical Designation
+		PLAYABLE
 	)
 
 	defecation_cooldown = world.time + 10 MINUTES // Give everyone some time to prepare
