@@ -46,7 +46,7 @@
 	var/target_dir = target?.dir
 	var/target_type = target?.type
 
-	var/target_zone = user.zone_sel.selecting
+	var/target_zone = user.zone_sel?.selecting
 
 	if (do_flags & DO_MOVE_CHECKS_TURFS)
 		if (user_loc)
