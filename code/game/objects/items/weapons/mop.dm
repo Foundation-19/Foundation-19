@@ -35,7 +35,7 @@
 				to_chat(user, SPAN_WARNING("There is too much water here to be mopped up."))
 			else
 				user.visible_message(SPAN_NOTICE("\The [user] begins to mop up \the [T]."))
-				if(do_after(user, mopspeed, T, do_flags = DO_DEFAULT | DO_PUBLIC_PROGRESS) && F && !QDELETED(F))
+				if(do_after(user, mopspeed, T) && F && !QDELETED(F))
 					if(F.fluid_amount > FLUID_SHALLOW)
 						to_chat(user, SPAN_WARNING("There is too much water here to be mopped up."))
 					else
@@ -57,7 +57,7 @@
 
 		user.visible_message(SPAN_WARNING("\The [user] begins to clean \the [T]."))
 
-		if(do_after(user, mopspeed, T, do_flags = DO_DEFAULT | DO_PUBLIC_PROGRESS))
+		if(do_after(user, mopspeed, T))
 			if(T)
 				T.clean(src, user)
 			to_chat(user, SPAN_NOTICE("You have finished mopping!"))

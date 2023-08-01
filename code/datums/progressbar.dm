@@ -2,119 +2,135 @@
 #define PROGRESSBAR_ANIMATION_TIME 5
 
 /datum/progressbar
-	var/max_progress
-	var/listindex
-
-/datum/progressbar/proc/update(progress)
-
-
-/datum/progressbar/private
-	var/last_progress = 0
-	var/mob/actor
+	///The progress bar visual element.
 	var/image/bar
-	var/client/client
-	var/visible
-	var/shown
+	///The target where this progress bar is applied and where it is shown.
+	var/atom/bar_loc
+	///The mob whose client sees the progress bar.
+	var/mob/user
+	///The client seeing the progress bar.
+	var/client/user_client
+	///Effectively the number of steps the progress bar will need to do before reaching completion.
+	var/goal = 1
+	///Control check to see if the progress was interrupted before reaching its goal.
+	var/last_progress = 0
+	///Variable to ensure smooth visual stacking on multiple progress bars.
+	var/listindex = 0
 
-/datum/progressbar/private/New(mob/actor, max_progress, atom/actee)
-	actee = actee || actor
-	if (!istype(actee))
-		EXCEPTION("Invalid progressbar/private instance")
-	src.actor = actor
-	src.max_progress = max_progress
-	client = actor.client
-	visible = actor.get_preference_value(/datum/client_preference/show_progress_bar) == GLOB.PREF_SHOW
-	if (!visible)
-		return
-	bar = image('icons/effects/progressbar.dmi', actee, "prog_bar_0", HUD_ABOVE_ITEM_LAYER)
+
+/datum/progressbar/New(mob/User, goal_number, atom/target)
+	. = ..()
+	if (!istype(target))
+		CRASH("Invalid target [target] passed in")
+	if(QDELETED(User) || !istype(User))
+		CRASH("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] user")
+	if(!isnum(goal_number))
+		CRASH("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] goal_number")
+	goal = goal_number
+	bar_loc = target
+	bar = image('icons/effects/progressbar.dmi', bar_loc, "prog_bar_0")
+	bar.plane = ABOVE_HUD_PLANE
 	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	bar.plane = HUD_PLANE
+	user = User
 
-	LAZYINITLIST(actor.progressbars)
-	LAZYINITLIST(actor.progressbars[bar.loc])
-	var/list/bars = actor.progressbars[bar.loc]
-	bars.Add(src)
+	LAZYADDASSOCLIST(user.progressbars, bar_loc, src)
+	var/list/bars = user.progressbars[bar_loc]
 	listindex = bars.len
+
+	if(user.client)
+		user_client = user.client
+		add_prog_bar_image_to_client()
+
+	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
+	RegisterSignal(user, COMSIG_MOB_LOGOUT, .proc/clean_user_client)
+	RegisterSignal(user, COMSIG_MOB_LOGIN, .proc/on_user_login)
+
+
+/datum/progressbar/Destroy()
+	if(user)
+		for(var/pb in user.progressbars[bar_loc])
+			var/datum/progressbar/progress_bar = pb
+			if(progress_bar == src || progress_bar.listindex <= listindex)
+				continue
+			progress_bar.listindex--
+
+			progress_bar.bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.listindex - 1))
+			var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.listindex - 1)) - PROGRESSBAR_HEIGHT
+			animate(progress_bar.bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+
+		LAZYREMOVEASSOC(user.progressbars, bar_loc, src)
+		user = null
+
+	if(user_client)
+		clean_user_client()
+
+	bar_loc = null
+
+	if(bar)
+		QDEL_NULL(bar)
+
+	return ..()
+
+
+///Called right before the user's Destroy()
+/datum/progressbar/proc/on_user_delete(datum/source)
+	SIGNAL_HANDLER
+
+	user.progressbars = null //We can simply nuke the list and stop worrying about updating other prog bars if the user itself is gone.
+	user = null
+	qdel(src)
+
+
+///Removes the progress bar image from the user_client and nulls the variable, if it exists.
+/datum/progressbar/proc/clean_user_client(datum/source)
+	SIGNAL_HANDLER
+
+	if(!user_client) //Disconnected, already gone.
+		return
+	user_client.images -= bar
+	user_client = null
+
+
+///Called by user's Login(), it transfers the progress bar image to the new client.
+/datum/progressbar/proc/on_user_login(datum/source)
+	SIGNAL_HANDLER
+
+	if(user_client)
+		if(user_client == user.client) //If this was not client handling I'd condemn this sanity check. But clients are fickle things.
+			return
+		clean_user_client()
+	if(!user.client) //Clients can vanish at any time, the bastards.
+		return
+	user_client = user.client
+	add_prog_bar_image_to_client()
+
+
+///Adds a smoothly-appearing progress bar image to the player's screen.
+/datum/progressbar/proc/add_prog_bar_image_to_client()
 	bar.pixel_y = 0
 	bar.alpha = 0
+	user_client.images += bar
 	animate(bar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
-/datum/progressbar/private/update(progress)
-	if (!visible || !actor || !actor.client)
-		shown = FALSE
+
+///Updates the progress bar image visually.
+/datum/progressbar/proc/update(progress)
+	progress = clamp(progress, 0, goal)
+	if(progress == last_progress)
 		return
-	if (actor.client != client)
-		client.images.Remove(bar)
-		shown = FALSE
-	client = actor.client
-	progress = Clamp(progress, 0, max_progress)
 	last_progress = progress
-	bar.icon_state = "prog_bar_[round(progress * 100 / max_progress, 5)]"
-	if (!shown)
-		client.images.Add(bar)
-		shown = TRUE
+	bar.icon_state = "prog_bar_[round(((progress / goal) * 100), 5)]"
 
-/datum/progressbar/private/proc/shiftDown()
-	--listindex
-	bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1))
-	var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1)) - PROGRESSBAR_HEIGHT
-	animate(bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
-/datum/progressbar/private/Destroy()
-	for(var/I in actor.progressbars[bar.loc])
-		var/datum/progressbar/private/P = I
-		if(P != src && P.listindex > listindex)
-			P.shiftDown()
-
-	var/list/bars = actor.progressbars[bar.loc]
-	bars.Remove(src)
-	if(!bars.len)
-		LAZYREMOVE(actor.progressbars, bar.loc)
+///Called on progress end, be it successful or a failure. Wraps up things to delete the datum and bar.
+/datum/progressbar/proc/end_progress()
+	if(last_progress != goal)
+		bar.icon_state = "[bar.icon_state]_fail"
 
 	animate(bar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
-	addtimer(CALLBACK(src, .proc/remove_from_client), PROGRESSBAR_ANIMATION_TIME, TIMER_CLIENT_TIME)
-	QDEL_IN(bar, PROGRESSBAR_ANIMATION_TIME * 2) //for garbage collection safety
-	. = ..()
 
-/datum/progressbar/private/proc/remove_from_client()
-	if(client)
-		client.images.Remove(bar)
-		client = null
+	QDEL_IN(src, PROGRESSBAR_ANIMATION_TIME)
 
-/datum/progressbar/public
-	var/atom/movable/actor
-	var/atom/movable/actee
-	var/atom/movable/bar
-
-/datum/progressbar/public/Destroy()
-	if (actor && bar)
-		actor.vis_contents -= bar
-	qdel(bar)
-	. = ..()
-
-/datum/progressbar/public/New(atom/movable/actor, max_progress, atom/movable/actee)
-	actee = actee || actor
-	if (!istype(actee))
-		EXCEPTION("Invalid progressbar/public instance")
-	src.actor = actor
-	src.max_progress = max_progress
-	src.actee = actee
-	bar = new()
-	bar.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	bar.icon = 'icons/effects/progressbar.dmi'
-	bar.icon_state = "prog_bar_0"
-	bar.pixel_x = (actee.x - actor.x) * WORLD_ICON_SIZE
-	bar.pixel_y = (actee.y - actor.y) * WORLD_ICON_SIZE + WORLD_ICON_SIZE
-	bar.layer = ABOVE_HUMAN_LAYER
-	actor.vis_contents += bar
-
-/datum/progressbar/public/update(progress)
-	if (!actor || !actee)
-		return
-	progress = Clamp(progress, 0, max_progress)
-	bar.icon_state = "prog_bar_[round(progress * 100 / max_progress, 5)]"
-	bar.pixel_x = (actee.x - actor.x) * WORLD_ICON_SIZE
-	bar.pixel_y = (actee.y - actor.y) * WORLD_ICON_SIZE + WORLD_ICON_SIZE
 
 #undef PROGRESSBAR_ANIMATION_TIME
 #undef PROGRESSBAR_HEIGHT

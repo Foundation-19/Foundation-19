@@ -403,7 +403,7 @@
 					return
 				var/delay = min(50 * user.skill_delay_mult(SKILL_DEVICES), 50 * user.skill_delay_mult(SKILL_HAULING))
 				visible_message(SPAN_NOTICE("\The [user] starts forcing the \the [src]'s emergency [body.hatch_descriptor] release using \the [thing]."))
-				if(!do_after(user, delay, src, DO_DEFAULT | DO_PUBLIC_PROGRESS))
+				if(!do_after(user, delay, src))
 					return
 				visible_message(SPAN_NOTICE("\The [user] forces \the [src]'s [body.hatch_descriptor] open using the \the [thing]."))
 				playsound(user.loc, 'sound/machines/bolts_up.ogg', 25, 1)

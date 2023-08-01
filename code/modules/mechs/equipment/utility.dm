@@ -681,7 +681,7 @@
 			)
 			new /obj/effect/temporary(get_step(owner.loc, reverse_direction(owner.dir)), 2 SECONDS, 'icons/effects/effects.dmi',"cyan_sparkles")
 			owner.setClickCooldown(2 SECONDS)
-			if (do_after(owner, 2 SECONDS, do_flags = (DO_DEFAULT | DO_PUBLIC_PROGRESS | DO_USER_UNIQUE_ACT) & ~DO_USER_CAN_TURN) && slideCheck(TT))
+			if (do_after(owner, 2 SECONDS, do_flags = DO_DEFAULT & ~DO_USER_CAN_TURN) && slideCheck(TT))
 				owner.visible_message(SPAN_DANGER("Burning hard, \the [owner] thrusts forward!"))
 				owner.throw_at(get_ranged_target_turf(owner, owner.dir, slide_distance), slide_distance, 1, owner, FALSE)
 			else

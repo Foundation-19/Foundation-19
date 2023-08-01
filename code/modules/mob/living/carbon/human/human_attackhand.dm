@@ -324,7 +324,7 @@
 		organ.applied_pressure = user
 
 		//apply pressure as long as they stay still and keep grabbing
-		do_after(user, INFINITY, src, do_flags = (DO_DEFAULT & ~DO_SHOW_PROGRESS) | DO_USER_SAME_ZONE)
+		do_after(user, INFINITY, src, do_flags = (DO_DEFAULT & ~DO_SHOW_USER) | DO_USER_SAME_ZONE)
 
 		organ.applied_pressure = null
 

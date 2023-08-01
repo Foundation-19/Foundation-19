@@ -204,8 +204,6 @@
 
 	var/list/additional_vision_handlers = list() //Basically a list of atoms from which additional vision data is retrieved
 
-	var/list/progressbars = null //for stacking do_after bars
-
 	///Allows a datum to intercept all click calls this mob is the source of
 	var/datum/click_intercept
 
