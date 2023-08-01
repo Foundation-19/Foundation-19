@@ -23,9 +23,9 @@
 	if (!istype(target))
 		CRASH("Invalid target [target] passed in")
 	if(QDELETED(User) || !istype(User))
-		CRASH("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] user")
+		CRASH("a /datum/progressbar was created with [isnull(User) ? "null" : "invalid"] user")
 	if(!isnum(goal_number))
-		CRASH("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] goal_number")
+		CRASH("a /datum/progressbar was created with [isnull(User) ? "null" : "invalid"] goal_number")
 	goal = goal_number
 	bar_loc = target
 	bar = image('icons/effects/progressbar.dmi', bar_loc, "prog_bar_0")
