@@ -123,6 +123,3 @@
 
 	///Stage Handler (so we dont have a billion vars for scps)
 	var/datum/stageHandler/humanStageHandler = new /datum/stageHandler()
-
-	// SCP-078
-	var/scp078_status = 0
