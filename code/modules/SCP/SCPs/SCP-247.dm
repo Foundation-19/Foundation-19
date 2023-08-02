@@ -53,7 +53,7 @@
 		return ..()
 
 /mob/living/simple_animal/hostile/scp247/attack_hand(mob/living/carbon/human/M)
-	if(a_intent == I_HURT)
+	if(M.a_intent == I_HURT)
 		to_chat(M, SPAN_WARNING(SPAN_BOLD("Why would you want to attack such a cute kitty?")))
 		return
 	else
