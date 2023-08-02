@@ -46,7 +46,7 @@
 		pMob.fully_replace_character_name(name)
 
 	if(metaFlags & SCP_PLACEHOLDER)
-		log_and_message_staff("Placeholder SCP spawned and subsequently deleted! Do not spawn placeholders!", location = get_turf(parent))
+		log_and_message_staff("Placeholder SCP-[designation] spawned and subsequently deleted! Do not spawn placeholders!", location = get_turf(parent))
 		qdel(parent)
 
 	onGain()
