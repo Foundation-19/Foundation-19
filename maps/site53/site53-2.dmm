@@ -25875,7 +25875,7 @@
 /turf/simulated/floor,
 /area/site53/ulcz/scp2427_3)
 "hGY" = (
-/mob/living/simple_animal/hostile/scp_263{
+/obj/machinery/scp263{
 	pixel_x = 1
 	},
 /turf/simulated/floor/tiled/monotile,

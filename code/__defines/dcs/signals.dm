@@ -99,6 +99,10 @@
 
 /// Called in '/mob/verb/examinate' on examined atom (/mob/examinee)
 #define COMSIG_ATOM_EXAMINED "atomExamined"
+/// Called in '/mob/living/say' on the mob who heard speech (/mob/living/speaker, message)
+#define COMSIG_MOB_HEARD_SPEECH "mobHeardSpeech"
+/// Called in '/mob/living/say' on the mob who heard the whisper (/mob/living/speaker, message)
+#define COMSIG_MOB_HEARD_WHISPER "mobHeardWhisper"
 
 /*
 *	Photos
