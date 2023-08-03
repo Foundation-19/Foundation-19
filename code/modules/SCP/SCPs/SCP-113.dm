@@ -11,7 +11,7 @@
 
 	var/list/victims = list()
 
-/obj/item/scp113/New()
+/obj/item/scp113/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom

@@ -13,10 +13,7 @@
 
 //Backend Procs
 
-/mob/living/carbon/human/scp049/New(new_loc, new_species = "SCP-049")
-	return ..()
-
-/mob/living/carbon/human/scp049/Initialize()
+/mob/living/carbon/human/scp049/Initialize(mapload, new_species = "SCP-049")
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"Plague Doctor", //Name (Should not be the scp desg, more like what it can be described as to viewers)
