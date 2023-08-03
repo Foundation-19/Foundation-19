@@ -212,3 +212,6 @@
 	var/datum/player_panel/mob_panel
 
 	var/list/datum/action/actions = list()
+
+	/// Contains [/atom/movable/screen/alert] only.	On [/mob] so clientless mobs will throw alerts properly.
+	var/list/alerts = list()
