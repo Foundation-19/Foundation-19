@@ -126,7 +126,6 @@
 		/mob/living/simple_animal/hostile/giant_spider/spitter = 40,
 		)
 
-// Generate random loot for lucky people to find
 /obj/structure/scp_216/Initialize()
 	. = ..()
 	SCP = new /datum/scp(

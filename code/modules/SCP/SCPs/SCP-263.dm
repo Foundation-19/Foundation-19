@@ -126,18 +126,25 @@
 	RegisterSignal(contestant, COMSIG_MOVED, .proc/check_viewer)
 
 /obj/machinery/scp263/proc/reset()
+	current_question = null
+	question_count = 0
+
+	deltimer(question_callback_fail)
+	question_callback_fail = null
+
+	questions_and_answers_copy = questions_and_answers.Copy()
+
+	has_cheated = FALSE
+
+	state = STATE_OFF
+	update_icon()
+	if(!contestant)
+		return
+
 	UnregisterSignal(contestant, COMSIG_MOB_HEARD_SPEECH)
 	UnregisterSignal(contestant, COMSIG_MOB_HEARD_WHISPER)
 	UnregisterSignal(contestant, COMSIG_MOVED)
 	contestant = null
-	current_question = null
-	question_count = 0
-	deltimer(question_callback_fail)
-	question_callback_fail = null
-	questions_and_answers_copy = questions_and_answers.Copy()
-	has_cheated = FALSE
-	state = STATE_OFF
-	update_icon()
 
 /obj/machinery/scp263/proc/ask_question()
 	question_count++

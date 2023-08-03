@@ -4,7 +4,6 @@
 	icon = 'icons/SCP/scp-017.dmi'
 
 	icon_state = "scp-017"
-	turns_per_move = 5
 	response_help = "tries to reach inside"
 	response_disarm = "tries to push away"
 	response_harm = "tries to punch"
@@ -23,18 +22,17 @@
 	maxHealth = 100
 	health = 100
 
-	//Mechanical
+	movement_cooldown = 2
+
+	say_list_type = /datum/say_list/scp017
+	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp017
+
+	can_bleed = FALSE
+
+	//Config
 
 	///lumcount required for something to be considered a shadow
 	var/shadow_threshold = 0.35
-
-	///simplemob AI
-	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp017
-
-	///Saylist for 017
-	say_list_type = /datum/say_list/scp017
-
-	can_bleed = FALSE //its a shadow, they dont usually bleed
 
 /mob/living/simple_animal/hostile/scp017/Initialize()
 	. = ..()
@@ -90,6 +88,7 @@
 //Death
 
 /mob/living/simple_animal/hostile/scp017/death(gibbed, deathmessage = "dissapears in a puff of smoke", show_dead_message)
+	. = ..()
 	var/turf/T = get_turf(src)
 
 	var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
