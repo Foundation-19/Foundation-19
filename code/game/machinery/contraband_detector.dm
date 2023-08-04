@@ -24,13 +24,12 @@
 	announce = new /obj/item/device/radio/intercom(src)
 	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
 	. = ..()
-	if(anchored)
-		RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
-
-/obj/machinery/contraband_detector/Initialize()
-	. = ..()
-	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
 	announce.set_frequency(SEC_LCZ_FREQ)
+	RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
+
+/obj/machinery/contraband_detector/Destroy()
+	UnregisterSignal(loc, COMSIG_ENTERED)
+	return ..()
 
 /obj/machinery/contraband_detector/set_broken(new_state)
 	. = ..()
