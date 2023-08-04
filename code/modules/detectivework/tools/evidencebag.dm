@@ -62,6 +62,8 @@
 	w_class = I.w_class
 	update_icon()
 
+	SEND_SIGNAL(user, COMSIG_BAGGED_EVIDENCE, src, I)
+
 /obj/item/evidencebag/on_update_icon()
 	underlays.Cut()
 	if(stored_item)

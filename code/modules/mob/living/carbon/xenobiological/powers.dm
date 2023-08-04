@@ -76,7 +76,6 @@
 					var/mob/living/carbon/C = M
 					if (C.can_feel_pain())
 						to_chat(M, SPAN_DANGER("[painMes]"))
-				M.update_personal_goal(/datum/goal/achievement/notslimefodder, FALSE)
 
 			gain_nutrition(20 * hazmat)
 			totalDrained += 20 * hazmat

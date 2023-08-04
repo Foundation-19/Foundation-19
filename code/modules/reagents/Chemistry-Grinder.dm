@@ -74,6 +74,8 @@
 	grinding = TRUE
 	update_icon()
 
+	SEND_SIGNAL(user, COMSIG_GRINDING, src)
+
 	addtimer(CALLBACK(src, .proc/reset_machine, user), grind_time)
 	var/skill_multiplier = CLAMP01(0.5 + (user.get_skill_value(skill) - 1) * 0.167)
 	for (var/obj/item/I in items)

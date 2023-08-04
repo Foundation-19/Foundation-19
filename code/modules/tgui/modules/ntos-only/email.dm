@@ -340,6 +340,7 @@
 				return 1
 			else
 				error = "Email successfully sent."
+				SEND_SIGNAL(user, COMSIG_SENT_EMAIL)
 				clear_message()
 				return 1
 
