@@ -20,17 +20,17 @@
 	wires = /datum/wires/contraband_detector
 	var/identifier_wire_pulsed_until = 0	// world time value, since it's only checked in 1 place we don't remove it when time has passed (more optimal than checking every tick)
 
-/obj/machinery/contraband_detector/New()
-	announce = new /obj/item/device/radio/intercom(src)
-	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
-	. = ..()
-	if(anchored)
-		RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
-
 /obj/machinery/contraband_detector/Initialize()
 	. = ..()
+	announce = new /obj/item/device/radio/intercom(src)
 	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
 	announce.set_frequency(SEC_LCZ_FREQ)
+	RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
+
+/obj/machinery/contraband_detector/Destroy()
+	UnregisterSignal(loc, COMSIG_ENTERED)
+	QDEL_NULL(announce)
+	return ..()
 
 /obj/machinery/contraband_detector/set_broken(new_state)
 	. = ..()
