@@ -939,3 +939,17 @@ default behaviour is:
 
 /mob/living/proc/ClimbCheck(atom/A)
 	return TRUE
+
+/mob/living/proc/get_exp_list(minutes)
+	var/list/exp_list = list()
+
+	if(mind && mind.special_role)
+		exp_list[mind.special_role] = minutes
+
+		if(GLOB.antag_names_to_ids_[mind.special_role] in GLOB.all_antag_types_)
+			exp_list[EXP_TYPE_ANTAG] = minutes
+
+	if(src.isSCP())
+		exp_list[EXP_TYPE_SCP] = minutes
+
+	return exp_list

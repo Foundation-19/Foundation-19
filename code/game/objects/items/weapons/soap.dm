@@ -47,24 +47,20 @@
 	if(!proximity) return
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
-	var/cleaned = FALSE
 	if(user.client && (target in user.client.screen))
 		to_chat(user, SPAN_NOTICE("You need to take that [target.name] off before cleaning it."))
 	else if(istype(target,/obj/effect/decal/cleanable/blood))
 		to_chat(user, SPAN_NOTICE("You scrub \the [target.name] out."))
 		target.clean_blood() //Blood is a cleanable decal, therefore needs to be accounted for before all cleanable decals.
-		cleaned = TRUE
 	else if(istype(target,/obj/effect/decal/cleanable))
 		to_chat(user, SPAN_NOTICE("You scrub \the [target.name] out."))
 		qdel(target)
-		cleaned = TRUE
 	else if(istype(target,/turf) || istype(target, /obj/structure/catwalk))
 		var/turf/T = get_turf(target)
 		if(!T)
 			return
 		user.visible_message(SPAN_WARNING("[user] starts scrubbing \the [T]."))
 		T.clean(src, user, 80, SPAN_NOTICE("You scrub \the [target.name] clean."))
-		cleaned = TRUE
 	else if(istype(target,/obj/structure/hygiene/sink))
 		to_chat(user, SPAN_NOTICE("You wet \the [src] in the sink."))
 		wet()
@@ -73,14 +69,9 @@
 		if(reagents)
 			reagents.trans_to(target, reagents.total_volume / 8)
 		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
-		cleaned = TRUE
 	else
 		to_chat(user, SPAN_NOTICE("You clean \the [target.name]."))
 		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
-		cleaned = TRUE
-
-	if(cleaned)
-		user.update_personal_goal(/datum/goal/clean, 1)
 
 //attack_as_weapon
 /obj/item/soap/attack(mob/living/target, mob/living/user, target_zone)

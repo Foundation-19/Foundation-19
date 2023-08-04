@@ -1,64 +1,45 @@
 /datum/goal
+	abstract_type = /datum/goal
+	var/datum/component/goalcontainer/container	// the goal component we're held in
+	var/list/rewards = list()	// all the rewards that we have
 	var/description
-	var/owner
-	var/completion_message
+	var/success_description	// what description we use in the goal history
+	var/success_message		// message is sent to the mob on completion
+	var/failure_description	// ditto, but for failure
 	var/failure_message
-	var/can_reroll = TRUE
-	var/can_abandon = TRUE
+	var/no_duplicates = 1	// whether we can have several of this type of goal
+	var/completed = GOAL_STAT_UNFINISHED
 
-/datum/goal/New(_owner)
-	owner = _owner
-	GLOB.destroyed_event.register(owner, src, /datum/proc/qdel_self)
-	if(istype(owner, /datum/mind))
-		var/datum/mind/mind = owner
-		LAZYADD(mind.goals, src)
-	update_strings()
+/datum/goal/New(_container)
+	container = _container
+	RegisterSignal(container, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
+	return ..()
 
 /datum/goal/Destroy()
-	GLOB.destroyed_event.unregister(owner, src)
-	if(owner)
-		if(istype(owner, /datum/mind))
-			var/datum/mind/mind = owner
-			LAZYREMOVE(mind.goals, src)
-		owner = null
-	. = ..()
+	container = null
+	return ..()
 
-/datum/goal/proc/summarize(show_success = FALSE, allow_modification = FALSE, mob/caller ,position = 1)
-	. = "[description][get_summary_value()]"
-	if(show_success)
-		. += get_success_string()
-	if(allow_modification)
-		if(can_abandon) . += " (<a href='?src=\ref[owner];abandon_goal=[position];abandon_goal_caller=\ref[caller]'>Abandon</a>)"
-		if(can_reroll)  . += " (<a href='?src=\ref[owner];reroll_goal=[position];reroll_goal_caller=\ref[caller]'>Reroll</a>)"
-
-/datum/goal/proc/get_success_string()
-	return check_success() ? " <b><font color='green'>Success!</font></b>" : " <b><font color='red'>Failure.</font></b>"
-
-/datum/goal/proc/get_summary_value()
-	return
-
-/datum/goal/proc/update_strings()
-	return
-
-/datum/goal/proc/update_progress(progress)
-	return
-
-/datum/goal/proc/check_success()
+/datum/goal/proc/is_valid()	// is the goal mechanically viable?
 	return TRUE
 
-/datum/goal/proc/try_initialize()
+/datum/goal/proc/is_autofill_reward_valid()	// is the reward we autofill in valid?
 	return TRUE
 
-/datum/goal/proc/on_completion()
-	if(completion_message && check_success())
-		if(istype(owner, /datum/mind))
-			var/datum/mind/mind = owner
-			to_chat(mind.current, FONT_COLORED("green","<b>[completion_message]</b>"))
+/datum/goal/proc/autofill_rewards()	// override to create the "default" rewards, if desired
+	return FALSE
 
-/datum/goal/proc/on_failure()
-	if(failure_message && !check_success() && istype(owner, /datum/mind))
-		var/datum/mind/mind = owner
-		to_chat(mind.current, SPAN_DANGER(failure_message))
+/datum/goal/proc/goal_finish(success = TRUE)	// if we fail/succeed the goal
+	if(completed != GOAL_STAT_UNFINISHED)	// already finished, return
+		return
 
-/datum/goal/proc/is_valid()
-	return TRUE
+	var/datum/mind/M = container.parent
+	if(success)
+		completed = GOAL_STAT_SUCCEEDED
+		SEND_SIGNAL(src, COMSIG_GOAL_SUCCEEDED)	// reward hooks itself onto these signals when its created
+		to_chat(M.current, success_message)
+	else
+		completed = GOAL_STAT_FAILED
+		SEND_SIGNAL(src, COMSIG_GOAL_FAILED)
+		to_chat(M.current, failure_message)
+
+	container.recalculate_goals()

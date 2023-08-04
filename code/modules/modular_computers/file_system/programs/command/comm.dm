@@ -108,7 +108,7 @@
 
 /datum/nano_module/program/comm/proc/is_autenthicated(mob/user)
 	if(program)
-		return program.has_access(user)
+		return program.program_has_access(user)
 	return 1
 
 /datum/nano_module/program/comm/proc/obtain_message_listener()
