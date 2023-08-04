@@ -39,4 +39,3 @@
 				message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!")
 				qdel(H) //perhaps a bad solution but i dont want to work with it
 		return
-
