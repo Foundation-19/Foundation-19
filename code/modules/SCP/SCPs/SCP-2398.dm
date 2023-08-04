@@ -14,6 +14,7 @@
 
 /obj/item/weapon/twohanded/scp_2398/attack(mob/living/target,	mob/living/carbon/human/user)
 	var/mob/living/carbon/human/T = target
+	var/mob/living/carbon/human/U = user
 	var/activehand = user.hand ? BP_L_HAND : BP_R_HAND
 	if(isSCP(target) || !istype(user) || !istype(target))
 		return
