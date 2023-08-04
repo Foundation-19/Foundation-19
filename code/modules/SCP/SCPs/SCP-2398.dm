@@ -12,13 +12,10 @@
 	slot_flags = SLOT_BACK
 	SCP = /datum/scp/scp_2398
 
-/obj/item/weapon/twohanded/scp_2398/attack(mob/living/target,	mob/living/user)
+/obj/item/weapon/twohanded/scp_2398/attack(mob/living/target,	mob/living/carbon/human/user)
 	var/mob/living/carbon/human/T = target
-	var/mob/living/carbon/human/U = user
-	var/activehand = BP_L_ARM //determine which hand to burn (stolen from 113 code because bay code is messy)
-	if(!U.hand)
-		activehand = BP_R_ARM
-	if(isSCP(target) || !ishuman(user))
+	var/activehand = user.hand ? BP_L_HAND : BP_R_HAND
+	if(isSCP(target) || !istype(user) || !istype(target))
 		return
 	to_chat(T, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
 	U.visible_message(SPAN_DANGER("[U] begins to swing [src] at [T]!"))
