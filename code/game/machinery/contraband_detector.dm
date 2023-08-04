@@ -29,7 +29,7 @@
 
 /obj/machinery/contraband_detector/Destroy()
 	UnregisterSignal(loc, COMSIG_ENTERED)
-	qdel(announce)
+	QDEL_NULL(announce)
 	return ..()
 
 /obj/machinery/contraband_detector/set_broken(new_state)
