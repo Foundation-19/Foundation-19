@@ -16392,7 +16392,7 @@
 	name = "ULCZ Lethal Armoury";
 	pixel_x = 22;
 	req_access = list("ACCESS_SECURITY_LEVEL2");
-	core_skill = /decl/hierarchy/skill/ressssssssearch/devices
+	core_skill = /decl/hierarchy/skill/research/devices
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
