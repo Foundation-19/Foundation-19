@@ -17470,7 +17470,8 @@
 /area/site53/lowertrams/escape)
 "aZy" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	name = "LCZ general armory"
 	},
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -21476,7 +21477,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	name = "LCZ Secure Armory"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory2)
@@ -25880,7 +25882,8 @@
 /area/site53/ulcz/scp999)
 "gZc" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	name = "LCZ general armory"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -34654,7 +34657,8 @@
 /area/site53/surface/bunker)
 "qAg" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	name = "LCZ general armory"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -35630,9 +35634,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/lcz{
-	c_tag = "SCP-529";
 	dir = 8;
-	name = "SCP-529"
+	name = "LCZ general armory"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
@@ -37388,7 +37391,9 @@
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp216)
 "tHU" = (
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	name = "LCZ Secure Armory"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "tII" = (
@@ -40987,7 +40992,8 @@
 /area/site53/llcz/entrance_checkpoint)
 "xET" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	name = "LCZ general armory"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -58082,7 +58088,7 @@ iSt
 uJG
 azA
 aMC
-tHU
+aXh
 aVL
 aXh
 aXh
@@ -58339,7 +58345,7 @@ vXy
 uJG
 azA
 aMC
-aXh
+tHU
 aVL
 qFb
 hbm
@@ -59626,8 +59632,8 @@ azA
 aMC
 fCD
 dSN
-tPi
 rFs
+tPi
 aVM
 xSs
 oZw
