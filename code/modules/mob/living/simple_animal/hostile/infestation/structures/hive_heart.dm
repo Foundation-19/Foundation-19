@@ -1,14 +1,14 @@
 /obj/effect/hive_heart
 	name = "heart of the hive"
 	desc = "A giant pulsating heart-like structure. Just looking at it makes you anxious."
-	icon = 'icons/mob/simple_animal/abominable_infestation/64x64.dmi'
-	icon_state = "placeholder" // TODO: Give sprites
+	icon = 'icons/mob/simple_animal/abominable_infestation/48x48.dmi'
+	icon_state = "heart_beating"
 
-	pixel_x = -16
+	pixel_x = -8
 
-	light_max_bright = 0.8
-	light_inner_range = 5
-	light_outer_range = 20
+	light_max_bright = 1
+	light_inner_range = 7
+	light_outer_range = 24
 	light_color = COLOR_MAROON
 
 	density = TRUE
@@ -77,6 +77,7 @@
 		QDEL_NULL(sound_token)
 		sound_token = null
 		density = FALSE
+		icon_state = "heart"
 		for(var/i = 1 to 10)
 			if(QDELETED(src))
 				return
@@ -86,7 +87,7 @@
 			sleep(20 - i * 2)
 		for(var/ii = 1 to 5)
 			new /obj/effect/gibspawner/human(get_turf(src))
-		playsound(src, 'sound/simple_mob/abominable_infestation/heart_death.ogg', 125, TRUE, 24, 3)
+		playsound(src, 'sound/simple_mob/abominable_infestation/heart_death.ogg', 125, TRUE, 24, 3, ignore_pressure = TRUE)
 		visible_message(SPAN_DANGER("\The [src] explodes in a shower of gore!"))
 		QDEL_NULL(src) // "But why QDEL_NULL? Bwuhuhu" because some moron might delete it in the middle of sick animation
 
@@ -151,6 +152,6 @@
 		F.set_flooring(decls_repository.get_decl(/decl/flooring/flesh/infested))
 
 /obj/effect/hive_heart/proc/AbilityEffect(sound_volume = 75)
-	playsound(src, 'sound/effects/heartbeat_low.ogg', sound_volume, TRUE, 24)
+	playsound(src, 'sound/effects/heartbeat_low.ogg', sound_volume, TRUE, 24, ignore_pressure = TRUE)
 	var/obj/effect/temp_visual/decoy/D = new(get_turf(src), 0, src, 10)
 	animate(D, transform = matrix()*1.5, alpha = 0, time = 10, easing = SINE_EASING)

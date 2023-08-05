@@ -7,6 +7,8 @@
 	point_blank_mult = 1.5
 	can_throw = 1
 	stop_move = 1
+	restrains = 1
+	reverse_facing = 1
 
 	icon_state = "reinforce1"
 

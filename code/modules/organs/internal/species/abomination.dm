@@ -32,11 +32,12 @@
 
 /obj/item/organ/internal/larva_producer/Initialize()
 	. = ..()
-	larva_cooldown = larva_cooldown_time * rand(2, 3)
+	larva_cooldown = larva_cooldown_time
 
 /obj/item/organ/internal/larva_producer/Process()
 	if(owner)
-		larva_cooldown = larva_cooldown <= 0 ? larva_cooldown_time : larva_cooldown - 1
+		var/cooldown_adjustment = 1 + round(owner.nutrition / 10)
+		larva_cooldown = max(0, larva_cooldown - cooldown_adjustment)
 		if(larva_cooldown == round(larva_cooldown_time * 0.3))
 			to_chat(owner, SPAN_WARNING("Your [parent_organ] is vibrating ever so slighty..."))
 		else if(larva_cooldown == round(larva_cooldown_time * 0.2))
