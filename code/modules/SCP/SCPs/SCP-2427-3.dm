@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	icon_dead = "dead"
 	pixel_x = -8
 	default_pixel_x = -8
-	can_rest = FALSE //Nope.
+	can_rest = FALSE
 	SCP = /datum/scp/scp_2427_3
 	status_flags = NO_ANTAG
 
