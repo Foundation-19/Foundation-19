@@ -124,11 +124,8 @@
 				target = source
 				return
 
-/mob/living/bot/farmbot/calcTargetPath() // We need to land NEXT to the tray, because the tray itself is impassable
-	for(var/trayDir in list(NORTH, SOUTH, EAST, WEST))
-		target_path = AStar(get_turf(loc), get_step(get_turf(target), trayDir), /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_target_dist, adjacent_arg = botcard)
-		if(target_path)
-			break
+/mob/living/bot/farmbot/calcTargetPath()
+	target_path = get_path_to(src, target, max_target_dist, min_target_dist = 1, id = botcard)	// We need to land NEXT to the tray, because the tray itself is impassable
 	if(!target_path)
 		ignore_list |= target
 		target = null
