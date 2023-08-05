@@ -19874,7 +19874,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "bhm" = (
-/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory2)
 "bho" = (
@@ -21009,9 +21008,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/controlroom)
-"btv" = (
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory2)
 "btP" = (
 /obj/machinery/door/airlock/glass/science{
 	id_tag = "066";
@@ -21865,6 +21861,10 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
+"ctP" = (
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/armory2)
 "cvv" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -26177,6 +26177,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"hqZ" = (
+/obj/machinery/camera/network/lcz,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "hrk" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Server Farm Control";
@@ -28614,10 +28618,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"jLZ" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/armory2)
 "jML" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -34568,6 +34568,12 @@
 "qvG" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
+"qwB" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory2)
 "qwF" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -35506,7 +35512,6 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "rzY" = (
-/obj/machinery/camera/network/lcz,
 /obj/machinery/door/airlock/highsecurity{
 	name = "ULCZ Secure Armoury";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
@@ -36407,6 +36412,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"szE" = (
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/armory2)
 "szK" = (
 /obj/structure/bed/chair/padded/black,
 /turf/simulated/floor/tiled/dark,
@@ -37504,8 +37514,11 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/machinery/camera/network/lcz{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "tPQ" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Restroom"
@@ -37732,7 +37745,6 @@
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
-/obj/structure/table/rack,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark,
@@ -38727,11 +38739,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/restaurantkitchenarea)
-"vpV" = (
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/armory2)
 "vqG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -39574,12 +39581,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
-"whI" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory2)
 "whL" = (
 /obj/machinery/recharge_station,
 /obj/machinery/camera/network/hcz{
@@ -39618,12 +39619,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
-"wiO" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory2)
 "wiZ" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -39884,6 +39879,13 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"wzZ" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/camera/network/lcz{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory2)
 "wBb" = (
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
@@ -40408,6 +40410,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
+"wZR" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory2)
 "xac" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/reinforced,
@@ -40878,6 +40887,17 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"xzO" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "SCP-529";
+	dir = 8;
+	name = "SCP-529"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "xzQ" = (
 /obj/structure/window/basic/full{
 	name = "Safety Glass"
@@ -57296,10 +57316,10 @@ aMC
 aMC
 aMC
 aMC
-jLZ
-jLZ
-jLZ
-vpV
+ctP
+ctP
+ctP
+szE
 azA
 azA
 azA
@@ -57554,9 +57574,9 @@ wsM
 icU
 aMC
 ugX
-uty
+wzZ
 lgh
-jLZ
+ctP
 azA
 azA
 azA
@@ -57811,9 +57831,9 @@ bde
 bde
 aMC
 duo
-btv
+bhm
 rGF
-jLZ
+ctP
 azA
 azA
 azA
@@ -58061,7 +58081,7 @@ iSt
 uJG
 azA
 aMC
-aXh
+hqZ
 aVL
 aXh
 aXh
@@ -58070,7 +58090,7 @@ aMC
 bWy
 uty
 lgh
-jLZ
+ctP
 azA
 azA
 azA
@@ -58325,9 +58345,9 @@ hbm
 hbm
 aMC
 vgG
-btv
+bhm
 rGF
-jLZ
+ctP
 azA
 azA
 azA
@@ -58584,7 +58604,7 @@ aMC
 iQI
 uty
 lgh
-jLZ
+ctP
 azA
 azA
 azA
@@ -58839,9 +58859,9 @@ aXh
 eqX
 aMC
 maZ
-btv
+bhm
 rGF
-jLZ
+ctP
 azA
 azA
 azA
@@ -59098,7 +59118,7 @@ aMC
 hed
 uty
 lgh
-jLZ
+ctP
 azA
 azA
 azA
@@ -59353,9 +59373,9 @@ aXh
 aXh
 sag
 bhm
-btv
-whI
-jLZ
+bhm
+wZR
+ctP
 azA
 azA
 azA
@@ -59606,13 +59626,13 @@ aMC
 fCD
 dSN
 qBE
-tPi
+xzO
 aVM
 xSs
-wiO
-wiO
+qwB
+tPi
 pKy
-jLZ
+ctP
 azA
 azA
 azA
@@ -59864,12 +59884,12 @@ aMC
 xfK
 aMC
 aMC
-jLZ
-jLZ
-jLZ
-jLZ
-jLZ
-vpV
+ctP
+ctP
+ctP
+ctP
+ctP
+szE
 azA
 azA
 azA
