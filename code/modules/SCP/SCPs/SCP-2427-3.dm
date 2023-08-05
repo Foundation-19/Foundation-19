@@ -117,7 +117,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		CheckPurity(L)
 	AdjustSatiety(-satiety_reduction_per_tick)
 	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
-		adjustBruteLoss(maxHealth * 0.06) //Starvation should kill you way faster.
+		adjustBruteLoss(maxHealth * 0.06)
 
 /mob/living/simple_animal/hostile/scp_2427_3/get_status_tab_items()
 	. = ..()
