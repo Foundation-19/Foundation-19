@@ -96,7 +96,6 @@
 // Mechanics
 
 /obj/machinery/scp263/proc/cheated(datum/source, mob/speaker)
-	SIGNAL_HANDLER
 	if((speaker && ((speaker == current_scp263_1) || (speaker == contestant))) || has_cheated)
 		return
 
@@ -113,7 +112,6 @@
 			reset()
 
 /obj/machinery/scp263/proc/check_viewer(datum/source)
-	SIGNAL_HANDLER
 	if(!(contestant in viewers(world.view, src)))
 		cheated()
 
