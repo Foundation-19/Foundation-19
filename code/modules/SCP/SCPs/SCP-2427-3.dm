@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-	maxHealth = 1000 //500hp reduction.
+	maxHealth = 1000
 	health = 1000
 
 	movement_cooldown = 5
