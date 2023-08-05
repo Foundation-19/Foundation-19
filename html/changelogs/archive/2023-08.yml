@@ -1,0 +1,6 @@
+2023-08-04:
+  cheesePizza2:
+  - rscadd: Adds new contraband detectors! Found in LCZ D-block next to mining, and
+      constructable by engineers, these scanners search personnel that walk through
+      it for contraband (guns, tools, knives, etc). There are also ways for clever
+      D-class to bypass or even abuse them -- check the codex entry for more information.
