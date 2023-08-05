@@ -19876,7 +19876,7 @@
 "bhm" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "bho" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -21009,6 +21009,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/controlroom)
+"btv" = (
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory2)
 "btP" = (
 /obj/machinery/door/airlock/glass/science{
 	id_tag = "066";
@@ -21488,7 +21491,7 @@
 /obj/structure/closet/secure_closet/guard/lethalshotgunammunitionbuckshot,
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "bWR" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -22785,7 +22788,7 @@
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "dvt" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -25987,7 +25990,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "heA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -27758,7 +27761,7 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "iQZ" = (
 /obj/effect/floor_decal/carpet/green{
 	dir = 8
@@ -28611,6 +28614,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"jLZ" = (
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/armory2)
 "jML" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -29805,7 +29812,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "lgn" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_y = 23
@@ -30607,7 +30614,7 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/item/gun/projectile/revolver/rhino,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "mbs" = (
 /obj/machinery/light{
 	dir = 4
@@ -33998,7 +34005,7 @@
 	icon_state = "0-1"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "pKU" = (
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp106containment)
@@ -35613,7 +35620,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "rHa" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -35926,7 +35933,7 @@
 	name = "ULCZ Lethal Armoury"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "sak" = (
 /obj/structure/bed/chair/pew/left/mahogany,
 /turf/simulated/floor/tiled/dark,
@@ -37729,7 +37736,7 @@
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "uhy" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/humanoidcontainment)
@@ -37967,7 +37974,7 @@
 "uty" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "utJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -38556,7 +38563,7 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "vhB" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
@@ -38720,6 +38727,11 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/restaurantkitchenarea)
+"vpV" = (
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/armory2)
 "vqG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -39562,6 +39574,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
+"whI" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory2)
 "whL" = (
 /obj/machinery/recharge_station,
 /obj/machinery/camera/network/hcz{
@@ -39600,6 +39618,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"wiO" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory2)
 "wiZ" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -41128,7 +41152,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/llcz/dclass/armory2)
 "xSP" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -57272,10 +57296,10 @@ aMC
 aMC
 aMC
 aMC
-aMC
-aMC
-aMC
-qSc
+jLZ
+jLZ
+jLZ
+vpV
 azA
 azA
 azA
@@ -57532,7 +57556,7 @@ aMC
 ugX
 uty
 lgh
-aMC
+jLZ
 azA
 azA
 azA
@@ -57787,9 +57811,9 @@ bde
 bde
 aMC
 duo
-aXh
+btv
 rGF
-aMC
+jLZ
 azA
 azA
 azA
@@ -58046,7 +58070,7 @@ aMC
 bWy
 uty
 lgh
-aMC
+jLZ
 azA
 azA
 azA
@@ -58301,9 +58325,9 @@ hbm
 hbm
 aMC
 vgG
-aXh
+btv
 rGF
-aMC
+jLZ
 azA
 azA
 azA
@@ -58560,7 +58584,7 @@ aMC
 iQI
 uty
 lgh
-aMC
+jLZ
 azA
 azA
 azA
@@ -58815,9 +58839,9 @@ aXh
 eqX
 aMC
 maZ
-aXh
+btv
 rGF
-aMC
+jLZ
 azA
 azA
 azA
@@ -59074,7 +59098,7 @@ aMC
 hed
 uty
 lgh
-aMC
+jLZ
 azA
 azA
 azA
@@ -59329,9 +59353,9 @@ aXh
 aXh
 sag
 bhm
-aXh
-bde
-aMC
+btv
+whI
+jLZ
 azA
 azA
 azA
@@ -59585,10 +59609,10 @@ qBE
 tPi
 aVM
 xSs
-tPi
-tPi
+wiO
+wiO
 pKy
-aMC
+jLZ
 azA
 azA
 azA
@@ -59840,12 +59864,12 @@ aMC
 xfK
 aMC
 aMC
-aMC
-aMC
-aMC
-aMC
-aMC
-qSc
+jLZ
+jLZ
+jLZ
+jLZ
+jLZ
+vpV
 azA
 azA
 azA

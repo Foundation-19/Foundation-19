@@ -707,6 +707,11 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
+/area/site53/llcz/dclass/armory2
+	name = "\improper Primary D-Class Checkpoint Armory Two"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
 /area/site53/llcz/dclass/janitorial
 	name = "\improper Janitorial Closet"
 	area_flags = AREA_FLAG_RAD_SHIELDED
