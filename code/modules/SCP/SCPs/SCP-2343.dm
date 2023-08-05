@@ -5,7 +5,6 @@
 GLOBAL_LIST_EMPTY(scp2343s)
 /mob/living/carbon/human/scp2343
 	desc = "A brusk and wiley man."
-	SCP = /datum/scp/scp_343
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 	icon = 'icons/SCP/scp_2343.dmi'
