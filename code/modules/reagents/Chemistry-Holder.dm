@@ -7,6 +7,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	var/atom/my_atom = null
 
 /datum/reagents/New(maximum_volume = 120, atom/my_atom)
+	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(my_atom))
 		CRASH("Invalid reagents holder: [log_info_line(my_atom)]")
 	..()
@@ -14,12 +15,14 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 		build_chemical_reagent_list()
 	src.my_atom = my_atom
 	src.maximum_volume = maximum_volume
+	GLOB.reagents_datums += src
 
 /datum/reagents/Destroy()
 	. = ..()
 	UNQUEUE_REACTIONS(src) // While marking for reactions should be avoided just before deleting if possible, the async nature means it might be impossible.
 	QDEL_NULL_LIST(reagent_list)
 	my_atom = null
+	GLOB.reagents_datums -= src
 
 /* Internal procs */
 /datum/reagents/proc/get_free_space() // Returns free space.
