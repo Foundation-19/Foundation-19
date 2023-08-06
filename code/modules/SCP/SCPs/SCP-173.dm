@@ -62,11 +62,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/tile_move_range = 3
 	//How far wander targets can be set
 	var/wander_distance = 8
-	//How far fleeing targets can be set
+	//How far fleeing targets can be set. Used for pathing distance since it should be the farthest that 173's AI will ever attempt to path
 	var/flee_distance = 30
-	//Our current step list (this is to avoid calling AStar unless neccesary)
+	//Our current step list (this is to avoid calling pathfinding unless neccesary)
 	var/list/steps_to_target = list()
-	//Target's position when AStar was last ran (this is also to help avoid calling AStar unless neccesary)
+	//Target's position when pathfinding was last ran (this is also to help avoid calling pathfinding unless neccesary)
 	var/turf/target_pos_last
 	//AI's current target
 	var/atom/movable/target
@@ -313,7 +313,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	for(var/mob/living/carbon/human/H in dview(14, src)) //Identifies possible human targets. Range is double regular view to allow 173 to pursue tarets outside of world.view to make evading him harder.
 		if(H.SCP || H.stat == DEAD)
 			continue
-		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)))
+		if(!get_path_to(src, H, flee_distance * 2, min_target_dist = 1))
 			continue
 		possible_human_targets += H
 
@@ -325,7 +325,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if(!(H in possible_human_targets))
 				clear_target()
 			if(target && (target_pos_last != target_turf_current))
-				steps_to_target = AStar(loc, target_turf_current, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //if our target changes positions we recalculate our path
+				steps_to_target = get_path_to(src, target_turf_current, flee_distance * 2, min_target_dist = 1)		//if our target changes positions we recalculate our path
 				target_pos_last = target_turf_current
 		else if(istype(target, /obj/machinery/light))
 			var/obj/machinery/light/L = target
@@ -381,7 +381,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(!new_target)
 		return FALSE
 
-	var/list/temp_steps_to_target = AStar(loc, get_turf(new_target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //Flee distance is used as max_nodes since that should be the farthest that 173's AI will ever attempt to path
+	var/list/temp_steps_to_target = get_path_to(src, new_target, flee_distance * 2, min_target_dist = 1)
 	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
 		steps_to_target = temp_steps_to_target
 		target = new_target
@@ -394,7 +394,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	LAZYCLEARLIST(steps_to_target)
 
 /mob/living/scp_173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
-	if(!target || !steps_to_target)
+	if(!target || !LAZYLEN(steps_to_target))
 		return
 
 	var/turf/step_turf = steps_to_target[1]
@@ -433,7 +433,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		if(light_in_view.get_status() != LIGHT_OK)
 			continue
-		if(!AStar(loc, light_in_view.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=15, max_node_depth=7))
+		if(!get_path_to(src, light_in_view, wander_distance))
 			continue
 		return light_in_view
 	return null
