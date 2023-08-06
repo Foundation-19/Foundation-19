@@ -242,19 +242,19 @@
 	name = "Napalm B"
 	taste_description = "burnt plastic and metal"
 
-/datum/reagent/space_cleaner
-	name = "Space cleaner"
-	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
+/datum/reagent/hydroxylsan
+	name = "Hydroxylsan"
+	description = "A compound used to clean things. The name \"Hydroxylsan\" is derived from \"hydroxyl,\" which is a chemical group consisting of H2O and NH3 elements (NH4OH), often found in cleaning agents and sanitizers, and \"san\" representing \"sanitization\" or \"sanitize.\" holding quaternary ammonium compounds!"
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#a5f0ee"
 	touch_met = 50
 	value = 0.7
 
-/datum/reagent/space_cleaner/touch_obj(obj/O)
+/datum/reagent/hydroxylsan/touch_obj(obj/O)
 	O.clean_blood()
 
-/datum/reagent/space_cleaner/touch_turf(turf/T)
+/datum/reagent/hydroxylsan/touch_turf(turf/T)
 	if(volume >= 1)
 		if(istype(T, /turf/simulated))
 			var/turf/simulated/S = T
@@ -267,7 +267,7 @@
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
 
-/datum/reagent/space_cleaner/affect_touch(mob/living/carbon/M, alien, removed)
+/datum/reagent/hydroxylsan/affect_touch(mob/living/carbon/M, alien, removed)
 	if(M.r_hand)
 		M.r_hand.clean_blood()
 	if(M.l_hand)
