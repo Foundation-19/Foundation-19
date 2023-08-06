@@ -10,6 +10,14 @@
 	name = RELIGION_HINDUISM
 	description = "An Indian religion encompassing a variety of traditions, beliefs and spiritual practices. Someone who practices Hinduism is called a Hindu."
 
+/decl/cultural_info/religion/sarkicism
+	name = RELIGION_SARKICISM
+	description = "Sarkicism is a widespread philosophical movement that worships flesh and disease."
+
+/decl/cultural_info/religion/broken_god
+	name = RELIGION_BROKEN_GOD
+	description = "The Church of the Broken God is a religious sect that reveres a fallen mechanical deity, seeking to rebuild and restore its divine power."
+
 /decl/cultural_info/religion/buddhist
 	name = RELIGION_BUDDHISM
 	description = "An Indian religion encompassing a variety of traditions, beliefs and spiritual practices based on the teachings of the Buddha. Someone who practices Buddhism is called a Buddhist."

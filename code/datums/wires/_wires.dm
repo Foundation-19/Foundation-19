@@ -212,7 +212,8 @@
  * Repairs all cut wires.
  */
 /datum/wires/proc/repair()
-	cut_wires.Cut()
+	for(var/wire in cut_wires)
+		cut(wire)
 
 /**
  * Adds in dud wires, which do nothing when cut/pulsed.

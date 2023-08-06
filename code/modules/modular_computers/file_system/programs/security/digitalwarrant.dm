@@ -249,5 +249,5 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	. += "\n\[b]Charges: \[/b]" + warrant.fields["charges"]
 	. += "\n\n\[b]Authorized by: \[/b]" + warrant.fields["auth"]
 	. += "\n\[b]Access authorized by: \[/b]" + warrant.fields["idauth"]
-	. += "\n\n\[small]THIS WARRANT IS ONLY VALID WITH PROPER AUTHORIZATION FROM AN APPROPRIATE HEAD OF STAFF ONBOARD THE VESSEL OR AS EXCEPTED IN SOLGOV LAW. \
+	. += "\n\n\[small]THIS WARRANT IS ONLY VALID WITH PROPER AUTHORIZATION FROM AN APPROPRIATE COMMANDER ON THE SITE OR AS EXCEPTED IN FOUNDATION POLICY. \
 		  THIS PAPER IS DESIGNED FOR RECORDKEEPING PURPOSES ONLY AND SHOULD NOT BE PRESENTED TO THE SUSPECT.\[/small]"
