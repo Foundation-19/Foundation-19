@@ -111,7 +111,7 @@
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/p90 = 8,
 		/obj/item/gun/projectile/automatic/scp/m16 = 2,
-		/obj/item/gun/projectile/revolver/rhino = 1,
+		/obj/item/gun/projectile/revolver/rhino = 2,
 		/obj/item/gun/projectile/pistol/usp45 = 3,
 		/obj/item/gun/projectile/pistol/mk9 = 3,
 		/obj/item/ammo_magazine/box/a57 = 24,
