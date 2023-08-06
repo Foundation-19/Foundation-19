@@ -116,7 +116,7 @@
 		/obj/item/gun/projectile/pistol/mk9 = 3,
 		/obj/item/ammo_magazine/box/a57 = 6,
 		/obj/item/ammo_magazine/box/mk9 = 4,
-		/obj/item/ammo_magazine/box/a357 = 1,
+		/obj/item/ammo_magazine/box/a357 = 6,
 		/obj/item/ammo_magazine/box/a45 = 2
 	)
 
