@@ -79,6 +79,7 @@
 #define SS_INIT_TICKER          -20
 #define SS_INIT_AI              -21
 #define SS_INIT_AIFAST          -22
+#define SS_INIT_PATHFINDER      -50
 #define SS_INIT_EXPLOSIONS      -69
 #define SS_INIT_STATPANELS      -80
 #define SS_INIT_CHAT            -90 // Should be lower to ensure chat remains smooth during init.

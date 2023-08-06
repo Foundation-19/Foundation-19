@@ -53,7 +53,8 @@
 #define SS_PRIORITY_CIRCUIT       30   // Processing Circuit's ticks and all that
 #define SS_PRIORITY_GRAPH         30   // Merging and splitting of graphs
 #define SS_PRIORITY_CHAR_SETUP    25   // Writes player preferences to savefiles.
-#define SS_PRIORITY_DBCORE        23   // Handles database
+#define SS_PRIORITY_PATHFINDER    23   // Processes pathfinding calculations
+#define SS_PRIORITY_DBCORE        22   // Handles database
 #define SS_PRIORITY_GARBAGE       20   // Garbage collection.
 #define SS_PRIORITY_JOBTIME		  15   // Tracks jobtime
 #define SS_PRIORITY_INACTIVITY    10   // Idle kicking.
