@@ -85,7 +85,7 @@
 		/obj/item/gun/projectile/pistol/mk9 = 1,
 		/obj/item/ammo_magazine/box/a357 = 4,
 		/obj/item/ammo_magazine/box/a50 = 4,
-		/obj/item/ammo_magazine/box/a57 = 6,
+		/obj/item/ammo_magazine/box/a57 = 12,
 		/obj/item/ammo_magazine/box/mk9 = 6,
 		/obj/item/ammo_magazine/box/a556 = 8
 	)
