@@ -36,7 +36,7 @@
 		/datum/reagent/coolant =		1,
 		/datum/reagent/slippery_oil =	1,
 		/datum/reagent/oil =			1,
-		/datum/reagent/space_cleaner =	1,
+		/datum/reagent/hydroxylsan =	1,
 		/datum/reagent/napalm =			1,
 		/datum/reagent/napalm/b =		1,
 		/datum/reagent/thermite =		1,
