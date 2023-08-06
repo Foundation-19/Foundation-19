@@ -30,6 +30,8 @@
 	)
 	if (!do_after(user, 1 SECOND))
 		return
+	if(QDELETED(src))
+		return
 	obstruction = T.get_obstruction()
 	if (obstruction)
 		to_chat(user, SPAN_WARNING("\The [english_list(obstruction)] is blocking that spot."))

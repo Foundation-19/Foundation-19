@@ -62,3 +62,6 @@
       sanity.
   - rscadd: Weight lifting machinery added to D-class reward area.
   - refactor: Added some relevant signals. Old goal system hardcoded checks removed.
+2023-07-30:
+  cheesePizza2:
+  - code_imp: Balloon alerts ported from TG.
