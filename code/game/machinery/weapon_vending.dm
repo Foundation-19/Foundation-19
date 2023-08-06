@@ -67,7 +67,7 @@
 	desc = "An automated gun storage device that can dispense guns on demand, this one houses energy/pulse weapons for LCZ personnel."
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
-		/obj/item/gun/energy/stunrevolver/taser = 3,
+		/obj/item/gun/energy/stunrevolver/taser = 6,
 		/obj/item/gun/energy/stunrevolver/rifle = 2,
 		/obj/item/gun/energy/ionrifle = 1
 	)
