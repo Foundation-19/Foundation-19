@@ -1,0 +1,7 @@
+author: KirovClassBattlecruiser
+delete-after: true
+changes:
+  - bugfix: Removed space or ss13 universe references from some objects
+  - rscadd: SCP related factions and religion defines and descriptions for use later
+  - rscdel: Removed unused factions, homeworlds, religions and culture defines and
+      descriptions in the code
