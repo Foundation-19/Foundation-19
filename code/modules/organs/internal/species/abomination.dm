@@ -1,5 +1,23 @@
+// Heals brute damage rapidly, in return for nutrition
 /obj/item/organ/internal/heart/abomination
 	name = "blood pump"
+	var/heal_rate = 5
+
+/obj/item/organ/internal/heart/abomination/Process()
+	. = ..()
+	if(!owner)
+		return
+
+	if(is_broken())
+		return
+
+	var/mob/living/carbon/human/H = owner
+	// Do nothing if nutrition is too low or brute damage isn't high enough
+	if(H.nutrition <= 200 || H.getBruteLoss() < 50)
+		return
+
+	H.adjustBruteLoss(-heal_rate)
+	owner.adjust_nutrition(-heal_rate)
 
 /obj/item/organ/internal/stomach/abomination
 	name = "nutrient refinery"
