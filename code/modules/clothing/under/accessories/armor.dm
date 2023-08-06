@@ -381,3 +381,23 @@
 	icon_state = "null"
 	slot = ACCESSORY_SLOT_HELM_C
 	body_location = HEAD
+
+/obj/item/clothing/accessory/armor/helmcover/blue
+	name = "blue helmet cover"
+	desc = "A fabric cover for armored helmets in a bright blue color."
+	icon_state = "helmcover_blue"
+
+/obj/item/clothing/accessory/armor/helmcover/navy
+	name = "navy blue helmet cover"
+	desc = "A fabric cover for armored helmets. This one is colored navy blue."
+	icon_state = "helmcover_navy"
+
+/obj/item/clothing/accessory/armor/helmcover/green
+	name = "green helmet cover"
+	desc = "A fabric cover for armored helmets. This one has a woodland camouflage pattern."
+	icon_state = "helmcover_green"
+
+/obj/item/clothing/accessory/armor/helmcover/tan
+	name = "tan helmet cover"
+	desc = "A fabric cover for armored helmets. This one has a desert camouflage pattern."
+	icon_state = "helmcover_tan"
