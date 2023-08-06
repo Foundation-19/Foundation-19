@@ -273,10 +273,3 @@
 	to_chat(user, SPAN_NOTICE("You assemble a grille"))
 	ST.in_use = 0
 	F.add_fingerprint(user)
-
-/*
-/obj/structure/grille/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
-	. = !density
-	if(caller)
-		. = . || (caller.pass_flags & PASSGRILLE)
-*/

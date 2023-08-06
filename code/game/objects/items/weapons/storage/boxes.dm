@@ -710,12 +710,3 @@
 
 /obj/item/storage/box/canned/tomato
 	startswith = list(/obj/item/reagent_containers/food/snacks/canned/tomato = 6)
-
-// TODO: read metal from box construction recipe instead of having specialized object
-/obj/item/storage/box/aluminium
-	name = "aluminium box"
-	desc = "The aluminium lining prevents illicit items inside from being detected by metal detectors."
-	foldable = /obj/item/stack/material/aluminium
-
-/obj/item/storage/box/aluminium/has_contraband()
-	return FALSE

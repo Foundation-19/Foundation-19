@@ -282,7 +282,6 @@
 	if(.)
 		SSnano.update_uis(src)
 
-// needs fixes later on, but at least its more optimized
 /obj/item/device/radio/proc/autosay(message, from, channel) //BS12 EDIT
 	var/datum/radio_frequency/connection = null
 	if(channel && channels && channels.len > 0)
@@ -294,13 +293,10 @@
 		channel = null
 	if (!istype(connection))
 		return
-
-	var/turf/position = get_turf(src)
-	Broadcast_Message(connection = connection, M = null,
-						vmask = FALSE, vmessage = message, radio = src,
-						message = message, name = from, job = null, realname = from, vname = from,
-						data = 0, compression = 0, level = GetConnectedZlevels(position.z), freq = connection.frequency, verbage = "states", speaking = null,
-						channel_tag = "[connection.frequency]", channel_color = channel_color_presets["Menacing Maroon"])
+	var/mob/living/silicon/ai/A = new /mob/living/silicon/ai(src, null, null, 1)
+	A.fully_replace_character_name(from)
+	talk_into(A, message, channel,"states")
+	qdel(A)
 
 // Interprets the message mode when talking into a radio, possibly returning a connection datum
 /obj/item/device/radio/proc/handle_message_mode(mob/living/M as mob, message, message_mode)

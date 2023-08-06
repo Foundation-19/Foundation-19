@@ -5,12 +5,12 @@
 
 /decl/poster/atmosia_independence
 	name = "Atmosia Declaration of Independence"
-	desc = "A poster depicting a failed rebellion in some sci-fi universe."
+	desc = "A relic of a failed rebellion."
 	icon_state = "poster2"
 
 /decl/poster/fun_police
 	name = "Fun Police"
-	desc = "A poster condemning the LCZ security forces."
+	desc = "A poster condemning the corporate security forces."
 	icon_state = "poster3"
 
 /decl/poster/lusty_xenomorph
@@ -20,7 +20,7 @@
 
 /decl/poster/syndicate_recruitment
 	name = "Syndicate Recruitment"
-	desc = "A recruitment poster for some sort of sci-fi faction"
+	desc = "See the galaxy! Shatter corrupt megacorporations! Join today!"
 	icon_state = "poster5"
 
 /decl/poster/clown
@@ -35,7 +35,7 @@
 
 /decl/poster/grey_tide
 	name = "Grey Tide"
-	desc = "A poster from a sci-fi universe, encouraging so called 'assistants' to commit mutiny and slip innocent bystanders"
+	desc = "A rebellious poster symbolizing assistant solidarity."
 	icon_state = "poster8"
 
 /decl/poster/missing_gloves

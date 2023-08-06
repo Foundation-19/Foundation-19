@@ -13,8 +13,6 @@
 
 	z_eventually_space = TRUE
 
-	pathing_pass_method = TURF_PATHING_PASS_PROC
-
 /turf/space/proc/build_dust_cache()
 	LAZYINITLIST(dust_cache)
 	for (var/i in 0 to 25)
@@ -122,10 +120,3 @@
 /turf/space/bluespace
 	name = "bluespace"
 	icon_state = "bluespace"
-
-/*
-/turf/open/openspace/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
-	if(caller && !caller.can_z_move(DOWN, src, null , ZMOVE_FALL_FLAGS)) //If we can't fall here (flying/lattice), it's fine to path through
-		return TRUE
-	return FALSE
-*/

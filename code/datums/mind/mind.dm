@@ -464,8 +464,7 @@
 		SSticker.minds += mind
 	if(!mind.name)	mind.name = real_name
 	mind.current = src
-	if(!issilicon(src))
-		mind.AddComponent(/datum/component/goalcontainer)
+	mind.AddComponent(/datum/component/goalcontainer)
 	if(player_is_antag(mind))
 		add_verb(client, /client/proc/aooc)
 

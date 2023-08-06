@@ -177,7 +177,7 @@
 	if(!mob)
 		return // Moved here to avoid nullrefs below
 
-	if (mob.is_scp012_affected())
+	if (mob.is_scp012_affected(n))
 		return
 
 	return mob.SelfMove(direction)

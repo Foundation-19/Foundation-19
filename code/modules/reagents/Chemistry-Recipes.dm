@@ -388,9 +388,9 @@
 	required_reagents = list (/datum/reagent/ammonia = 1, /datum/reagent/ethanol = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/hydroxylsan
-	name = "Hydroxylsan"
-	result = /datum/reagent/hydroxylsan
+/datum/chemical_reaction/space_cleaner
+	name = "Space cleaner"
+	result = /datum/reagent/space_cleaner
 	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/water = 1)
 	result_amount = 2
 
@@ -1316,7 +1316,7 @@
 /datum/chemical_reaction/soap_key
 	name = "Soap Key"
 	result = null
-	required_reagents = list(/datum/reagent/frostoil = 2, /datum/reagent/hydroxylsan = 5)
+	required_reagents = list(/datum/reagent/frostoil = 2, /datum/reagent/space_cleaner = 5)
 	var/strength = 3
 
 /datum/chemical_reaction/soap_key/can_happen(datum/reagents/holder)

@@ -35,7 +35,7 @@
 	update_icon()
 
 /obj/item/soap/proc/wet()
-	reagents.add_reagent(/datum/reagent/hydroxylsan, 15)
+	reagents.add_reagent(/datum/reagent/space_cleaner, 15)
 
 /obj/item/soap/Crossed(mob/living/AM)
 	if (istype(AM))

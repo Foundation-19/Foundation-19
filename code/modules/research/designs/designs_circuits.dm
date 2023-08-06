@@ -853,10 +853,3 @@
 	req_tech = list(TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/shipmap
 	sort_string = "SAAAT"
-
-/datum/design/circuit/contraband_detector
-	name = "contraband detector"
-	id = "contrabanddetector"
-	req_tech = list(TECH_ENGINEERING = 2, TECH_MATERIAL)
-	build_path = /obj/item/stock_parts/circuitboard/contraband_detector
-	sort_string = "QAAAA"

@@ -598,14 +598,6 @@
 		damage_health(damage_per_fire_tick, DAMAGE_FIRE, forced = TRUE)
 	// Don't call parent proc
 
-/obj/structure/window/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
-	if(!density)
-		return TRUE
-	if(is_fulltile() || (dir == to_dir))
-		return FALSE
-
-	return TRUE
-
 /obj/structure/window/basic
 	icon_state = "window"
 	color = GLASS_COLOR

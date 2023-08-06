@@ -127,7 +127,7 @@
 	base_color = "#333333"
 	tail = "farwatail"
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_OTHER,
+		TAG_CULTURE =   CULTURE_FARWA,
 		TAG_HOMEWORLD = HOME_SYSTEM_STATELESS,
 		TAG_FACTION =   FACTION_TEST_SUBJECTS
 	)
@@ -146,7 +146,7 @@
 	reagent_tag = IS_SKRELL
 	tail = null
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_MONKEY,
+		TAG_CULTURE =   CULTURE_NEARA,
 		TAG_HOMEWORLD = HOME_SYSTEM_STATELESS,
 		TAG_FACTION =   FACTION_TEST_SUBJECTS
 	)
@@ -166,7 +166,7 @@
 	base_color = "#066000"
 	reagent_tag = IS_UNATHI
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_MONKEY,
+		TAG_CULTURE =   CULTURE_STOK,
 		TAG_HOMEWORLD = HOME_SYSTEM_STATELESS,
 		TAG_FACTION =   FACTION_TEST_SUBJECTS
 	)

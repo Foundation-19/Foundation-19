@@ -14,7 +14,7 @@
 	limb_blend = ICON_MULTIPLY
 
 	force_cultural_info = list(
-		TAG_CULTURE = CULTURE_OTHER
+		TAG_CULTURE = CULTURE_ALIUM
 	)
 
 	exertion_effect_chance = 10

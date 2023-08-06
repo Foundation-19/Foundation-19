@@ -412,8 +412,8 @@
 		playsound(loc, 'sound/items/zip.ogg', 75, 1)
 
 /obj/item/reagent_containers/spray/cleaner/drone
-	name = "cleaner"
-	desc = "BLAM!-brand non-foaming Hydroxylsan!"
+	name = "space cleaner"
+	desc = "BLAM!-brand non-foaming space cleaner!"
 	volume = 150
 
 /obj/item/robot_rack

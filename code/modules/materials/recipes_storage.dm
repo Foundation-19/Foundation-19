@@ -1,3 +1,4 @@
+
 /datum/stack_recipe/box/box
 	title = "box"
 	result_type = /obj/item/storage/box
@@ -30,11 +31,6 @@
 /datum/stack_recipe/box/pizza
 	title = "pizza box"
 	result_type = /obj/item/pizzabox
-
-/datum/stack_recipe/box/aluminium
-	title = "anti-detection box"
-	result_type = /obj/item/storage/box/aluminium
-	difficulty = 2
 
 /datum/stack_recipe/bag
 	title = "bag"

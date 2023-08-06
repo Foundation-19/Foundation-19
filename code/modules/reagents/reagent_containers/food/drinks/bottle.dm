@@ -229,7 +229,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequilla, served in night clubs across the Earth."
+	desc = "Silver laced tequilla, served in space night clubs across the galaxy."
 	icon_state = "patronbottle"
 	center_of_mass = "x=16;y=6"
 
@@ -339,7 +339,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/herbal
 	name = "Liqueur d'Herbe"
-	desc = "A bottle of the seventh-finest herbal liquor sold under a generic name. The back label has a load of guff about the monks who traditionally made this particular variety."
+	desc = "A bottle of the seventh-finest herbal liquor sold under a generic name in the galaxy. The back label has a load of guff about the monks who traditionally made this particular variety."
 	icon_state = "herbal"
 	center_of_mass = "x=16;y=6"
 

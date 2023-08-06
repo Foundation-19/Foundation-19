@@ -252,10 +252,6 @@
 	electronics = ..()
 	return electronics
 
-//used in the pathing algorithm to determinate if the turf the door is on is passable
-/obj/machinery/door/window/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
-	return !density || (dir != to_dir) || (check_access(ID) && !no_id)
-
 /obj/machinery/door/window/brigdoor
 	name = "secure door"
 	icon = 'icons/obj/doors/windoor.dmi'

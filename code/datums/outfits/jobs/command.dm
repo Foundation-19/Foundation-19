@@ -11,6 +11,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
+	l_hand = /obj/item/storage/briefcase/foundation/jerraman
 
 /decl/hierarchy/outfit/job/command/headofhr
 	name = OUTFIT_JOB_NAME("Head of Human Resources")

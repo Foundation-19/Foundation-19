@@ -76,11 +76,9 @@
 	if(goal_list.len)
 		var/list/goal_list_descriptions = list()
 
-		for(var/cat_name in goal_list)
-			var/list/category = goal_list[cat_name]
-			for(var/thing in category)
-				var/datum/goal/goal = thing
-				goal_list_descriptions += goal.description
+		for(var/thing in goal_list)
+			var/datum/goal/goal = thing
+			goal_list_descriptions += goal.description
 
 		message += "You did not complete the following goals:<br> [jointext(goal_list_descriptions, "<br>")]<br>"
 

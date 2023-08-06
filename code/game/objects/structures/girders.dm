@@ -226,13 +226,6 @@
 		return
 	return ..()
 
-/*
-/obj/structure/girder/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
-	. = !density
-	if(caller)
-		. = . || (caller.pass_flags & PASSGRILLE)
-*/
-
 /obj/structure/girder/cult
 	icon = 'icons/obj/cult.dmi'
 	icon_state = "cultgirder"

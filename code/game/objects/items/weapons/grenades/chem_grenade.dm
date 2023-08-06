@@ -263,7 +263,7 @@
 
 /obj/item/grenade/chem_grenade/cleaner
 	name = "cleaner grenade"
-	desc = "BLAM!-brand foaming hydroxylsan-quats based cleaner, a special applicator for rapid cleaning of wide areas."
+	desc = "BLAM!-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
 	stage = 2
 	path = 1
 
@@ -274,7 +274,7 @@
 
 	B1.reagents.add_reagent(/datum/reagent/surfactant, 40)
 	B2.reagents.add_reagent(/datum/reagent/water, 40)
-	B2.reagents.add_reagent(/datum/reagent/hydroxylsan, 10)
+	B2.reagents.add_reagent(/datum/reagent/space_cleaner, 10)
 
 	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 

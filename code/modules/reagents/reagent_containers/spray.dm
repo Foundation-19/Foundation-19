@@ -93,15 +93,15 @@
 		to_chat(usr, SPAN_NOTICE("You empty \the [src] onto the floor."))
 		reagents.splash(usr.loc, reagents.total_volume)
 
-//space cleaner now is hydroxylsan
+//space cleaner
 /obj/item/reagent_containers/spray/cleaner
-	name = "\improper Sanitech Spray"
-	desc = "BLAM!-brand non-foaming standard-issue spray bottle utilized by SCP Foundation personnel for thorough cleaning and disinfecting! Now with 100% Hydroxylsan!"
+	name = "space cleaner"
+	desc = "BLAM!-brand non-foaming space cleaner!"
 	step_delay = 6
 
 /obj/item/reagent_containers/spray/cleaner/New()
 	..()
-	reagents.add_reagent(/datum/reagent/hydroxylsan, volume)
+	reagents.add_reagent(/datum/reagent/space_cleaner, volume)
 
 /obj/item/reagent_containers/spray/sterilizine
 	name = "sterilizine"
@@ -121,7 +121,7 @@
 
 /obj/item/reagent_containers/spray/pepper
 	name = "pepperspray"
-	desc = "Manufactured by 'Uhang Inc.', it fires a mist of condensed capsaicin to blind and down an opponent quickly."
+	desc = "Manufactured by Uhang Inc., it fires a mist of condensed capsaicin to blind and down an opponent quickly."
 	icon = 'icons/obj/weapons/other.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"

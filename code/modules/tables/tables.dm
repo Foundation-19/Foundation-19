@@ -454,13 +454,6 @@
 
 	connections = dirs_to_corner_states(connection_dirs)
 
-/*
-/obj/structure/table/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
-	. = !density
-	if(caller)
-		. = . || (caller.pass_flags & PASSTABLE)
-*/
-
 #define CORNER_NONE 			0
 #define CORNER_COUNTERCLOCKWISE (1<<0)
 #define CORNER_DIAGONAL 		(1<<1)

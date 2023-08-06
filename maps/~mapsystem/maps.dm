@@ -124,7 +124,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			HOME_SYSTEM_EARTH
 		),
 		TAG_FACTION = list(
-			FACTION_SCP_FOUNDATION
+			FACTION_SOL_CENTRAL
 		),
 		TAG_CULTURE = list(
 			CULTURE_HUMAN_EARTH
@@ -151,7 +151,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/list/default_cultural_info = list(
 		TAG_HOMEWORLD = HOME_SYSTEM_EARTH,
-		TAG_FACTION =   FACTION_SCP_FOUNDATION,
+		TAG_FACTION =   FACTION_SOL_CENTRAL,
 		TAG_CULTURE =   CULTURE_HUMAN_EARTH,
 		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
