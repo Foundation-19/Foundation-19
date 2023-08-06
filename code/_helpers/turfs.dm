@@ -141,6 +141,11 @@
 		return TRUE
 	return FALSE
 
+/proc/is_dark(turf/T, darkness_threshold = 0.3)
+	if(T.get_lumcount() <= 0.3)
+		return TRUE
+	return FALSE
+
 /*
 	Turf manipulation
 */
