@@ -49,15 +49,6 @@
 	armor = list(melee = 45, bullet = 65, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
-/obj/item/clothing/suit/armor/vest/scp/combatexo
-	name = "Combat exosuit"
-	desc = "Another Synthetic armor vest."
-	icon_state = "donor_sec"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 40, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
-	acid_resistance = 1.5
-
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
 	name = "armored vest"
 	desc = "A synthetic armor vest."
@@ -102,11 +93,11 @@
 	desc = "A helmet that protects the head and face from biological comtaminants, heavy acids, high temperatures, and bullets."
 	permeability_coefficient = 0
 	armor = list(
-		melee = 40,
+		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_HANDGUNS,
 		energy = ARMOR_ENERGY_RESISTANT,
-		bomb = 50,
+		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 		)
@@ -134,11 +125,11 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_PHORONGUARD|ITEM_FLAG_AIRTIGHT
 	allowed = list(/obj/item/tank/emergency,/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight,/obj/item/clothing/head/hcz_hazmat,/obj/item/clothing/mask/gas)
 	armor = list(
-		melee = 40,
+		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_HANDGUNS,
 		energy = ARMOR_ENERGY_RESISTANT,
-		bomb = 50,
+		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 		)
