@@ -1786,6 +1786,7 @@
 #include "code\modules\crafting\crafting_zipgun.dm"
 #include "code\modules\culture_descriptor\_culture.dm"
 #include "code\modules\culture_descriptor\culture\_culture.dm"
+#include "code\modules\culture_descriptor\culture\cultures_ascent.dm"
 #include "code\modules\culture_descriptor\culture\cultures_hidden.dm"
 #include "code\modules\culture_descriptor\culture\cultures_human.dm"
 #include "code\modules\culture_descriptor\culture\cultures_serpentid.dm"
