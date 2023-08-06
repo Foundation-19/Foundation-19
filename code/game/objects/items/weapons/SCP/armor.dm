@@ -1,25 +1,8 @@
-/obj/item/clothing/accessory/armorplate/get_fibers()
-	return null	//plates do not shed
-
-/obj/item/clothing/accessory/armorplate/medium
-	name = "medium armor plate"
-	desc = "A plasteel-reinforced synthetic armor plate, providing good protection. Attaches to a plate carrier."
-	icon_state = "armor_medium"
-	armor = list(melee = 40, bullet = 50, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
-
-/obj/item/clothing/accessory/armor_tag/scp
-	name = "\improper SCP tag"
-	desc = "An armor tag with the word SCP printed in white lettering on it."
-	icon_state = "presstag"
-
-/obj/item/clothing/suit/armor/pcarrier/scp
-	name = "plate carrier"
-
 /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp)
 
 /obj/item/clothing/suit/armor/pcarrier/scp/tactical
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards)
 
 
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
@@ -46,15 +29,6 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 50, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
-	acid_resistance = 1.5
-
-/obj/item/clothing/suit/armor/vest/scp/russcom
-	name = "Commander armor vest"
-	desc = "A synthetic armor vest. This one is for Commander."
-	icon_state = "heavy-guard-armor"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 45, bullet = 65, laser = 40, energy = 40, bomb = 40, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm

@@ -97,9 +97,9 @@
 	desc = "A plasteel-reinforced synthetic armor plate, providing good protection. Attaches to a plate carrier."
 	icon_state = "armor_medium"
 	armor = list(
-		melee = ARMOR_MELEE_KNIVES,
+		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
-		laser = ARMOR_LASER_SMALL,
+		laser = ARMOR_LASER_HANDGUNS,
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
@@ -327,26 +327,10 @@
 	slot = ACCESSORY_SLOT_ARMOR_M
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/clothing/accessory/armor/tag/nt
-	name = "\improper CORPORATE SECURITY tag"
-	desc = "An armor tag with the words CORPORATE SECURITY printed in bottle green lettering on it."
-	icon_state = "nanotag"
-
-/obj/item/clothing/accessory/armor/tag/pcrc
-	name = "\improper PCRC tag"
-	desc = "An armor tag with the words PROXIMA CENTAURI RISK CONTROL printed in cyan lettering on it."
-	icon_state = "pcrctag"
-
-/obj/item/clothing/accessory/armor/tag/saare
-	name = "\improper SAARE tag"
-	desc = "An armor tag with the acronym SAARE printed in olive-green lettering on it."
-	icon_state = "saaretag"
-
-/obj/item/clothing/accessory/armor/tag/press
-	name = "\improper PRESS tag"
-	desc = "A tag with the word PRESS printed in white lettering on it."
-	icon_state = "presstag"
-	slot_flags = SLOT_BELT
+/obj/item/clothing/accessory/armor/tag/scp
+	name = "\improper SCP tag"
+	desc = "An armor tag with the acronym SCP printed in white lettering on it."
+	icon_state = "tag_scp"
 
 /obj/item/clothing/accessory/armor/tag/opos
 	name = "\improper O+ blood patch"
@@ -397,38 +381,3 @@
 	icon_state = "null"
 	slot = ACCESSORY_SLOT_HELM_C
 	body_location = HEAD
-
-/obj/item/clothing/accessory/armor/helmcover/blue
-	name = "blue helmet cover"
-	desc = "A fabric cover for armored helmets in a bright blue color."
-	icon_state = "helmcover_blue"
-
-/obj/item/clothing/accessory/armor/helmcover/navy
-	name = "navy blue helmet cover"
-	desc = "A fabric cover for armored helmets. This one is colored navy blue."
-	icon_state = "helmcover_navy"
-
-/obj/item/clothing/accessory/armor/helmcover/green
-	name = "green helmet cover"
-	desc = "A fabric cover for armored helmets. This one has a woodland camouflage pattern."
-	icon_state = "helmcover_green"
-
-/obj/item/clothing/accessory/armor/helmcover/tan
-	name = "tan helmet cover"
-	desc = "A fabric cover for armored helmets. This one has a desert camouflage pattern."
-	icon_state = "helmcover_tan"
-
-/obj/item/clothing/accessory/armor/helmcover/nt
-	name = "white helmet cover"
-	desc = "A fabric cover for armored helmets. This one is white."
-	icon_state = "helmcover_nt"
-
-/obj/item/clothing/accessory/armor/helmcover/pcrc
-	name = "\improper PCRC helmet cover"
-	desc = "A fabric cover for armored helmets. This one is colored navy blue and has a tag in the back with the words PROXIMA CENTAURI RISK CONTROL printed in cyan lettering on it."
-	icon_state = "helmcover_pcrc"
-
-/obj/item/clothing/accessory/armor/helmcover/saare
-	name = "\improper SAARE helmet cover"
-	desc = "A fabric cover for armored helmets. This one has SAARE's colors."
-	icon_state = "helmcover_saare"
