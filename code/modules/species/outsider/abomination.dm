@@ -85,12 +85,14 @@
 	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
 
 /datum/species/human/abomination/handle_post_spawn(mob/living/carbon/human/H)
-	. = ..()
 	H.faction = "abominable_infestation"
 	// Red eyes
-	H.change_eye_color(255, 0, 0)
+	H.r_eyes = 255
+	H.g_eyes = 1
+	H.b_eyes = 1
 	// Pale skin
-	H.change_skin_tone(50)
+	H.s_tone = 35
+	..()
 
 /datum/species/human/abomination/attempt_grab(mob/living/carbon/human/user, mob/living/target)
 	return ..(user, target, GRAB_ABOMINATION)
