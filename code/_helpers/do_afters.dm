@@ -34,25 +34,15 @@
 	if ((do_flags & DO_TARGET_UNIQUE_ACT) && target)
 		target.do_unique_target_user = user
 
-	var/atom/user_loc = do_flags & DO_MOVE_CHECKS_TURFS ? get_turf(user) : user.loc
+	var/atom/user_loc = user.loc
 	var/user_dir = user.dir
 	var/user_hand = user.hand
 	var/holding = user.get_active_hand()
-
-	var/atom/target_loc
-	if(target)
-		target_loc = do_flags & DO_MOVE_CHECKS_TURFS ? get_turf(target) : target.loc
-
-	var/target_dir = target?.dir
-	var/target_type = target?.type
-
 	var/target_zone = user.zone_sel?.selecting
 
-	if (do_flags & DO_MOVE_CHECKS_TURFS)
-		if (user_loc)
-			user_loc = get_turf(user)
-		if (target_loc)
-			target_loc = get_turf(target)
+	var/atom/target_loc = target?.loc
+	var/target_dir = target?.dir
+	var/target_type = target?.type
 
 	var/datum/progressbar/bar
 	if (do_flags & DO_SHOW_USER)
@@ -74,7 +64,7 @@
 		if(QDELETED(user)\
 			|| (target_type && QDELETED(target))\
 			|| user.incapacitated(incapacitation_flags)\
-			|| ((do_flags & DO_USER_CAN_MOVE) && (user_loc != (do_flags & DO_MOVE_CHECKS_TURFS ? get_turf(user) : user.loc)))\
+			|| ((do_flags & DO_USER_CAN_MOVE) && (user_loc != user.loc))\
 			|| ((do_flags & DO_USER_CAN_TURN) && (user_dir != user.dir))\
 			|| (!(do_flags & DO_USER_IGNORE_ITEM) && user.get_active_hand() != holding)\
 			|| ((do_flags & DO_USER_SAME_HAND) && user_hand != user.hand)\
@@ -85,7 +75,7 @@
 
 		// target reliant
 		if(target && (user != target) && (\
-			((do_flags & DO_TARGET_CAN_MOVE) && (target_loc != (do_flags & DO_MOVE_CHECKS_TURFS ? get_turf(target) : target.loc)))\
+			((do_flags & DO_TARGET_CAN_MOVE) && (target_loc != target.loc))\
 			|| ((do_flags & DO_TARGET_CAN_TURN) && target_dir != target.dir)))
 			. = FALSE
 			break
