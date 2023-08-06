@@ -87,6 +87,10 @@
 /datum/species/human/abomination/handle_post_spawn(mob/living/carbon/human/H)
 	. = ..()
 	H.faction = "abominable_infestation"
+	// Red eyes
+	H.change_eye_color(255, 0, 0)
+	// Pale skin
+	H.change_skin_tone(50)
 
 /datum/species/human/abomination/attempt_grab(mob/living/carbon/human/user, mob/living/target)
 	return ..(user, target, GRAB_ABOMINATION)
