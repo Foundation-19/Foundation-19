@@ -97,7 +97,7 @@
 
 /mob/living/silicon/robot/flying/ascent/Initialize()
 	. = ..()
-	name = "[uppertext(pick(GLOB.gyne_geoforms))]-[++ascent_drone_count]"
+	name = "Strange cyborg [rand(0,500)]" // It probably will never get spawned but in case it gets spawned it wont break immersion
 
 // Sorry, you're going to have to actually deal with these guys.
 /mob/living/silicon/robot/flying/ascent/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
