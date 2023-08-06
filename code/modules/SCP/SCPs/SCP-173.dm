@@ -382,7 +382,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return FALSE
 
 	var/list/temp_steps_to_target = get_path_to(src, new_target, flee_distance * 2, min_target_dist = 1)
-	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
+	if(LAZYLEN(temp_steps_to_target)) //Double check to ensure that whatever target we assign we can actually get to
 		steps_to_target = temp_steps_to_target
 		target = new_target
 		target_pos_last = get_turf(new_target)
@@ -395,6 +395,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
 	if(!target || !LAZYLEN(steps_to_target))
+		clear_target()
 		return
 
 	var/turf/step_turf = steps_to_target[1]
