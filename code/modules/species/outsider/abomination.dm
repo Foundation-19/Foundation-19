@@ -84,5 +84,9 @@
 	species_flags = SPECIES_FLAG_NO_SCAN  | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_MINOR_CUT
 	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
 
+/datum/species/human/abomination/handle_post_spawn(mob/living/carbon/human/H)
+	. = ..()
+	H.faction = "abominable_infestation"
+
 /datum/species/human/abomination/attempt_grab(mob/living/carbon/human/user, mob/living/target)
 	return ..(user, target, GRAB_ABOMINATION)

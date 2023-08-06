@@ -36,7 +36,7 @@
 
 /obj/item/organ/internal/larva_producer/Process()
 	if(owner)
-		var/cooldown_adjustment = 1 + round(owner.nutrition / 10)
+		var/cooldown_adjustment = 1 + round(owner.nutrition / 100)
 		larva_cooldown = max(0, larva_cooldown - cooldown_adjustment)
 		if(larva_cooldown == round(larva_cooldown_time * 0.3))
 			to_chat(owner, SPAN_WARNING("Your [parent_organ] is vibrating ever so slighty..."))
@@ -55,4 +55,6 @@
 				stomach.ingested.trans_to_obj(splat, min(15, stomach.ingested.total_volume))
 			visible_message(SPAN_DANGER("\The [owner] throws up, as something crawls out!"),
 							SPAN_DANGER("You throw up, leading \the [L] outside."))
+			larva_cooldown = larva_cooldown_time
+			owner.adjust_nutrition(-100)
 	return ..()

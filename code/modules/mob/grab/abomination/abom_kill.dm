@@ -10,7 +10,6 @@
 	downgrade_on_move = 1
 	stop_move = 1
 	restrains = 1
-	reverse_facing = 1
 	damage_stage = 2
 	point_blank_mult = 3
 
