@@ -1119,6 +1119,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"cz" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "cA" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced,
@@ -2430,6 +2434,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"fq" = (
+/obj/structure/bed/chair/wood{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/site53/lhcz/scp049containment)
 "fr" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Bubble";
@@ -2778,6 +2788,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
+"gf" = (
+/obj/machinery/vending/hydronutrients/generic,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "gh" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
@@ -3214,6 +3228,9 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
+"hu" = (
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "hv" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -4057,7 +4074,7 @@
 /obj/effect/catwalk_plated,
 /obj/machinery/camera/network/lcz{
 	name = "SCP-500";
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy  Containment  Zone  Network")
 	},
 /obj/structure/sign/SecureArealv4mtf{
 	pixel_y = 32
@@ -4502,9 +4519,13 @@
 	name = "vinyl wooden floor"
 	},
 /area/site53/llcz/dclass/luxuryhall)
+"kn" = (
+/obj/machinery/biogenerator,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "ko" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy  Containment  Zone  Network")
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
@@ -6409,7 +6430,9 @@
 	dir = 1;
 	name = "SCP-049 Subject Reception"
 	},
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "oL" = (
@@ -6421,7 +6444,7 @@
 /obj/structure/railing/mapped,
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy  Containment  Zone  Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
@@ -6639,7 +6662,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
 "pr" = (
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
 "ps" = (
@@ -7242,7 +7266,7 @@
 /area/site53/lowertram/archive)
 "qC" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
+	network = list("Heavy  Containment  Zone  Network");
 	name = "SCP-049 Observation 1"
 	},
 /turf/simulated/floor/tiled,
@@ -7466,7 +7490,7 @@
 "qY" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy  Containment  Zone  Network")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7715,6 +7739,11 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"rz" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "rA" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -9360,11 +9389,16 @@
 /area/site53/llcz/dclass/reeducation)
 "vE" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
+"vF" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "vG" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -13161,6 +13195,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"Fa" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "Fb" = (
 /obj/structure/bed/chair/office{
 	dir = 1
@@ -14436,6 +14474,10 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
+"Ip" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "Iq" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -15556,7 +15598,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "KT" = (
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "KU" = (
@@ -16088,6 +16132,10 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"Mk" = (
+/obj/structure/closet/crate/hydroponics/prespawned,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "Ml" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker,
@@ -16219,7 +16267,9 @@
 /obj/effect/landmark{
 	name = "scp049"
 	},
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
 /obj/structure/sign/greencross{
 	pixel_x = 32
 	},
@@ -16423,7 +16473,7 @@
 /area/site53/llcz/dclass/medicalpost)
 "Nj" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
+	network = list("Heavy  Containment  Zone  Network");
 	name = "SCP-049 Observation 2"
 	},
 /turf/simulated/floor/tiled,
@@ -17074,7 +17124,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy  Containment  Zone  Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
@@ -17753,7 +17803,7 @@
 /area/site53/llcz/dclass/kitchen)
 "QG" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "247lockdown";
@@ -17797,6 +17847,10 @@
 	begins_closed = 0
 	},
 /turf/simulated/floor,
+/area/site53/lhcz/scp049containment)
+"QM" = (
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
 "QN" = (
 /obj/structure/cable{
@@ -17843,7 +17897,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-3";
 	dir = 4;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -18224,7 +18278,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
@@ -18745,6 +18799,10 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Tj" = (
+/obj/machinery/vending/hydroseeds/generic,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "Tk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18877,7 +18935,7 @@
 "TB" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
@@ -19068,7 +19126,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-2";
 	dir = 4;
-	network = list("Engineering  Network")
+	network = list("Engineering    Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -19410,7 +19468,7 @@
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy  Containment  Zone  Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -19596,7 +19654,7 @@
 "VA" = (
 /obj/structure/bed/chair,
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -20071,7 +20129,7 @@
 /area/site53/ulcz/scp173)
 "WI" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
@@ -20316,6 +20374,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp049containment)
+"Xn" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "Xo" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -20472,7 +20534,7 @@
 "XG" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
@@ -20672,6 +20734,17 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
+"Yl" = (
+/obj/item/clothing/gloves/thick/botany,
+/obj/item/material/minihoe,
+/obj/item/clothing/mask/bandana/botany,
+/obj/item/clothing/under/rank/hydroponics,
+/obj/item/storage/backpack/hydroponics,
+/obj/structure/closet/secure_closet/hydroponics_torch,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/shovel/spade,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/lhcz/scp049containment)
 "Yn" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -20940,7 +21013,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-1";
 	dir = 4;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247    CCTV    Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -21155,6 +21228,7 @@
 /area/site53/llcz/scp500)
 "Zw" = (
 /obj/structure/curtain/open/shower,
+/obj/structure/hygiene/shower,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lhcz/scp049containment)
 "Zx" = (
@@ -63561,11 +63635,11 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
+SV
+SV
+SV
+SV
+SV
 gq
 gq
 gq
@@ -63818,11 +63892,11 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
+SV
+rz
+Mk
+Yl
+SV
 gq
 gq
 gq
@@ -64075,11 +64149,11 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
+SV
+hu
+hu
+Ip
+SV
 gq
 gq
 gq
@@ -64332,11 +64406,11 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
+SV
+Tj
+Fa
+kn
+SV
 gq
 gq
 gq
@@ -64589,11 +64663,11 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
+SV
+gf
+hu
+QM
+SV
 gq
 gq
 gq
@@ -64847,9 +64921,9 @@ gq
 gq
 gq
 SV
-SV
-SV
-SV
+hu
+hu
+cz
 SV
 gq
 gq
@@ -65104,9 +65178,9 @@ gq
 gq
 gq
 SV
-pr
-pr
-pr
+vF
+hu
+Xn
 SV
 gq
 gq
@@ -65362,8 +65436,8 @@ gq
 gq
 SV
 pr
-pr
-pr
+hu
+Xn
 SV
 SV
 SV
@@ -65618,8 +65692,8 @@ gq
 gq
 gq
 SV
-pr
-pr
+Xn
+hu
 pr
 SV
 Zw
@@ -67678,7 +67752,7 @@ on
 on
 po
 gh
-MB
+fq
 mF
 mF
 PS
