@@ -68,7 +68,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
 		/obj/item/gun/energy/stunrevolver/taser = 3,
-		/obj/item/gun/energy/stunrevolver/rifle = 1,
+		/obj/item/gun/energy/stunrevolver/rifle = 2,
 		/obj/item/gun/energy/ionrifle = 1
 	)
 
