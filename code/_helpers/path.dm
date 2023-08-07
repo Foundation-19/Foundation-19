@@ -422,34 +422,38 @@
  * * parent_node: We should always have a parent node for diagonals
 */
 /datum/pathfind/proc/vertical_scan_spec(turf/original_turf, datum/jps_node/parent_node)
-	var/steps_taken = 0
+	var/steps_taken = 1
 	var/turf/current_turf = original_turf
 
-	if(isopenturf(original_turf))
-		current_turf = GetBelow(original_turf)
-		to_world_log("\[PATHFIND] Found Open turf at [original_turf]!")
-		if(!original_turf.CanZPass(original_turf, DOWN) || !current_turf || !CAN_STEP(original_turf, current_turf))
-			to_world_log("\[PATHFIND] Open turf failed : [!original_turf.CanZPass(original_turf, DOWN)], [!current_turf], [!CAN_STEP(original_turf, current_turf)]")
+	switch(current_turf.canTurfChangeZ())
+		if(OPEN_SPACE_TURF)
+			current_turf = GetBelow(original_turf)
+			if(!original_turf.CanZPass(original_turf, DOWN) || !current_turf || !CAN_STEP(original_turf, current_turf))
+				return
+
+		if(STAIR_TURF)
+			var/obj/structure/stairs/stair = current_turf.get_first_type(/obj/structure/stairs)
+			var/turf/above = GetAbove(current_turf)
+			current_turf = get_step(above, stair.dir)
+
+			if(!current_turf || !above.CanZPass(original_turf, UP) || !current_turf.Enter(caller, stair) || !CAN_STEP(original_turf, current_turf))
+				return
+
+		if(FALSE)
 			return
 
-		steps_taken++
-
-		if(current_turf == end || (min_target_dist && (get_dist(current_turf, end) <= min_target_dist)))
-			var/datum/jps_node/final_node = new(current_turf, parent_node, steps_taken)
-			sources[current_turf] = original_turf
-			unwind_path(final_node)
-			return
-		else if(sources[current_turf]) // already visited, essentially in the closed list
-			return
-		else
-			sources[current_turf] = original_turf
-
-		var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
-		open.insert(newnode)
-		to_world_log("\[PATHFIND] Vertical Node inserted")
+	if(current_turf == end || (min_target_dist && (get_dist(current_turf, end) <= min_target_dist)))
+		var/datum/jps_node/final_node = new(current_turf, parent_node, steps_taken)
+		sources[current_turf] = original_turf
+		unwind_path(final_node)
+		return
+	else if(sources[current_turf]) // already visited, essentially in the closed list
+		return
 	else
-		to_world_log("\[PATHFIND] N.O.T")
-	return
+		sources[current_turf] = original_turf
+
+	var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
+	open.insert(newnode)
 
 /**
  * For seeing if we can actually move between 2 given turfs while accounting for our access and the caller's pass_flags
@@ -515,9 +519,8 @@
 	if(isopenturf(src))
 		return OPEN_SPACE_TURF
 
-	for(var/obj/structure/stairs/stair in contents)
-		if(istype(stair))
-			return STAIR_TURF
+	if(get_first_type(/obj/structure/stairs))
+		return STAIR_TURF
 
 	return FALSE
 
