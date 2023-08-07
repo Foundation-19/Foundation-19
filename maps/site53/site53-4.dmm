@@ -5790,6 +5790,11 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/commandpanicbunker)
+"yz" = (
+/obj/effect/paint_stripe/blue,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/titanium,
+/area/site53/uez/hallway)
 "yB" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 8
@@ -43393,7 +43398,7 @@ cG
 gW
 aI
 ac
-ac
+yz
 ac
 hk
 hk

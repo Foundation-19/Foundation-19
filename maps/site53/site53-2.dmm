@@ -22526,6 +22526,11 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
+"dfp" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/titanium,
+/area/site53/lowertrams/brownline)
 "dgG" = (
 /obj/machinery/photocopier,
 /obj/machinery/alarm{
@@ -22988,6 +22993,11 @@
 "dII" = (
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
+"dIP" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/securitypost)
 "dJG" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -25684,6 +25694,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
+"gRj" = (
+/obj/effect/paint_stripe/mauve,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/prepainted,
+/area/site53/reswing/robotics)
 "gRy" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
@@ -26165,6 +26180,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
+"hsK" = (
+/obj/effect/paint_stripe/yellow,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/engineering/primaryhallway)
 "hsY" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -28540,10 +28560,10 @@
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
 "jKi" = (
-/obj/effect/paint_stripe/gray,
-/obj/structure/closet/hydrant,
-/turf/simulated/wall/prepainted,
-/area/site53/ulcz/office)
+/obj/effect/paint_stripe/red,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/scp2427_3)
 "jKR" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -30273,6 +30293,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/scp2427_3)
+"lMV" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/ulcz/hallways)
 "lNf" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -36445,6 +36470,11 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
+"sJO" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/hallways)
 "sJU" = (
 /obj/machinery/botany/extractor,
 /obj/machinery/light{
@@ -37025,6 +37055,11 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
+"tuf" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "tvF" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/effect/floor_decal/carpet/green{
@@ -37045,6 +37080,11 @@
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"twq" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/closet/hydrant,
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/office)
 "tws" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -37688,6 +37728,11 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"uiG" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/hallways)
 "ujf" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -38125,6 +38170,11 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp247observation)
+"uLM" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/engineering/primaryhallway)
 "uLN" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Corridor";
@@ -38486,6 +38536,11 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose)
+"vjT" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/entrance_checkpoint)
 "vjV" = (
 /obj/structure/table/standard,
 /obj/item/clothing/mask/muzzle,
@@ -38493,6 +38548,11 @@
 /obj/item/clothing/mask/muzzle,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"vkx" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/closet/medical_wall/filled,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/checkequip)
 "vkJ" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -41934,7 +41994,7 @@ azA
 azA
 aVS
 aVS
-aVS
+sJO
 aVS
 aVS
 aVS
@@ -42996,7 +43056,7 @@ aFN
 aFN
 iRC
 bdf
-bdf
+lMV
 bdf
 bdf
 bdf
@@ -45537,7 +45597,7 @@ aGu
 aEt
 aVS
 aVS
-aVS
+sJO
 aVS
 aVS
 apj
@@ -47629,7 +47689,7 @@ aGM
 aVS
 aVS
 aVS
-aVS
+sJO
 aVS
 aVS
 aVS
@@ -47865,7 +47925,7 @@ azA
 azA
 azA
 aVS
-aVS
+sJO
 aVS
 aMW
 aVS
@@ -50957,7 +51017,7 @@ aGM
 aVS
 aVS
 aVS
-aVS
+sJO
 aVS
 aVS
 aVS
@@ -53763,7 +53823,7 @@ bkq
 bkq
 bkq
 azA
-aVS
+sJO
 aGM
 qKl
 cIC
@@ -57361,7 +57421,7 @@ azA
 azA
 azA
 azA
-aVS
+sJO
 aGM
 qKl
 aGM
@@ -59943,7 +60003,7 @@ qhP
 aVb
 lWh
 uJG
-uJG
+vjT
 uJG
 uJG
 uJG
@@ -59958,7 +60018,7 @@ hnt
 aUt
 aUt
 klT
-aVD
+vkx
 xRv
 bks
 aVD
@@ -60179,7 +60239,7 @@ azA
 azA
 azA
 aeS
-jKi
+twq
 aLd
 wSy
 eeH
@@ -61766,7 +61826,7 @@ aMS
 aVr
 aVD
 aVD
-aVD
+vkx
 naI
 aVD
 aVD
@@ -63523,6 +63583,7 @@ bhK
 abI
 aig
 aig
+dfp
 aig
 aig
 aig
@@ -63530,8 +63591,7 @@ aig
 aig
 aig
 aig
-aig
-aig
+dfp
 aig
 aig
 aig
@@ -67846,7 +67906,7 @@ azA
 azA
 azA
 azA
-aax
+hsK
 nWc
 aoh
 avP
@@ -70708,7 +70768,7 @@ aac
 aac
 aac
 aac
-aac
+tuf
 aac
 aac
 iWp
@@ -70951,7 +71011,7 @@ ajq
 ajq
 ajq
 ajq
-ajq
+uLM
 ajq
 ajq
 ajq
@@ -78183,7 +78243,7 @@ aEC
 aEC
 krd
 ass
-ass
+dIP
 ass
 ass
 ass
@@ -78639,7 +78699,7 @@ azA
 azA
 azA
 azA
-aIi
+gRj
 aMp
 ahc
 aCl
@@ -80218,7 +80278,7 @@ bIm
 kxP
 aKM
 aKM
-bIm
+jKi
 azA
 azA
 azA
@@ -82530,7 +82590,7 @@ hkp
 bIm
 bIm
 bIm
-bIm
+jKi
 bIm
 azA
 aBo
@@ -84852,7 +84912,7 @@ azA
 azA
 azA
 aBo
-aBo
+uiG
 aBo
 kJB
 aBo
@@ -90763,7 +90823,7 @@ niQ
 niQ
 aOA
 kPM
-aBo
+uiG
 aBo
 qKq
 aBo
@@ -94374,7 +94434,7 @@ azA
 azA
 azA
 aBo
-aBo
+uiG
 aBo
 aEz
 aBo
