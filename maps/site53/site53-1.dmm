@@ -11090,13 +11090,6 @@
 /obj/item/handcuffs,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
-"zD" = (
-/obj/effect/decal/cleanable/blood/writing{
-	scent_descriptor = "human gore";
-	message = "NO... HOW COULD THIS- I TRAVELLED ??? \[indecipherable\] ???"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "zE" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -62045,7 +62038,7 @@ gq
 gq
 gq
 gq
-zD
+gq
 gq
 gq
 gq
