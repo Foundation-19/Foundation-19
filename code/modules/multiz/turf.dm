@@ -30,7 +30,6 @@
 	icon = 'icons/turf/space.dmi'
 	icon_state = ""
 	density = FALSE
-	pathing_pass_method = TURF_PATHING_PASS_PROC
 
 	z_flags = ZM_MIMIC_DEFAULTS | ZM_MIMIC_OVERWRITE | ZM_MIMIC_NO_AO | ZM_ALLOW_ATMOS
 
