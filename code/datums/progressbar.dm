@@ -4,8 +4,14 @@
 /datum/progressbar
 	///The progress bar visual element.
 	var/image/bar
+	///The progress bar visual element - but for the target.
+	var/image/targetbar
 	///The target where this progress bar is applied and where it is shown.
-	var/atom/bar_loc
+	var/atom/target
+	///Whether the target should be shown a bar as well
+	var/show_target
+	///The target's client, if applicable. Only set if the target is intended to see the progress bar as well.
+	var/client/target_client
 	///The mob whose client sees the progress bar.
 	var/mob/user
 	///The client seeing the progress bar.
@@ -15,56 +21,94 @@
 	///Control check to see if the progress was interrupted before reaching its goal.
 	var/last_progress = 0
 	///Variable to ensure smooth visual stacking on multiple progress bars.
-	var/listindex = 0
+	var/client_listindex = 0
+	///Variable to ensure smooth visual stacking on multiple progress bars - but for the target.
+	var/target_listindex = 0
 
 
-/datum/progressbar/New(mob/User, goal_number, atom/target)
+/datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE)
 	. = ..()
-	if (!istype(target))
-		CRASH("Invalid target [target] passed in")
-	if(QDELETED(User) || !istype(User))
-		CRASH("a /datum/progressbar was created with [isnull(User) ? "null" : "invalid"] user")
+	if (!istype(_target))
+		CRASH("Invalid target [_target] passed in")
+	if(QDELETED(_user) || !istype(_user))
+		CRASH("a /datum/progressbar was created with [isnull(_user) ? "null" : "invalid"] user")
 	if(!isnum(goal_number))
-		CRASH("a /datum/progressbar was created with [isnull(User) ? "null" : "invalid"] goal_number")
+		CRASH("a /datum/progressbar was created with [isnull(goal_number) ? "null" : "invalid"] goal_number")
 	goal = goal_number
-	bar_loc = target
-	bar = image('icons/effects/progressbar.dmi', bar_loc, "prog_bar_0")
+	target = _target
+	show_target = _show_target
+	bar = image('icons/hud/progressbar.dmi', target, "prog_bar_0")
 	bar.plane = ABOVE_HUD_PLANE
 	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	user = User
 
-	LAZYADDASSOCLIST(user.progressbars, bar_loc, src)
-	var/list/bars = user.progressbars[bar_loc]
-	listindex = bars.len
+	user = _user
+
+	LAZYADDASSOCLIST(user.progressbars, target, src)
+	var/list/bars = user.progressbars[target]
+	client_listindex = bars.len
 
 	if(user.client)
 		user_client = user.client
-		add_prog_bar_image_to_client()
+		add_prog_bar_image_to_user()
 
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
 	RegisterSignal(user, COMSIG_MOB_LOGOUT, .proc/clean_user_client)
 	RegisterSignal(user, COMSIG_MOB_LOGIN, .proc/on_user_login)
 
+	if(show_target && (target != user))
+		targetbar = image('icons/hud/progressbar.dmi', target, "prog_bar_0")
+		targetbar.plane = ABOVE_HUD_PLANE
+		targetbar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+
+		LAZYADDASSOCLIST(target.progressbars_recipient, user, src)
+		var/list/targ_bars = target.progressbars_recipient[user]
+		target_listindex = targ_bars.len
+
+		if(target.get_client())
+			target_client = target.get_client()
+			add_prog_bar_image_to_target()
+
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/on_target_delete)
+		RegisterSignal(target, COMSIG_MOB_LOGOUT, .proc/clean_target_client)
+		RegisterSignal(target, COMSIG_MOB_LOGIN, .proc/on_target_login)
+
 
 /datum/progressbar/Destroy()
 	if(user)
-		for(var/pb in user.progressbars[bar_loc])
+		for(var/pb in user.progressbars[target])
 			var/datum/progressbar/progress_bar = pb
-			if(progress_bar == src || progress_bar.listindex <= listindex)
+			if(progress_bar == src || progress_bar.client_listindex <= client_listindex)
 				continue
-			progress_bar.listindex--
+			progress_bar.client_listindex--
 
-			progress_bar.bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.listindex - 1))
-			var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.listindex - 1)) - PROGRESSBAR_HEIGHT
+			progress_bar.bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.client_listindex - 1))
+			var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.client_listindex - 1)) - PROGRESSBAR_HEIGHT
 			animate(progress_bar.bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
-		LAZYREMOVEASSOC(user.progressbars, bar_loc, src)
+		LAZYREMOVEASSOC(user.progressbars, target, src)
 		user = null
+
+	if(target && show_target)
+		for(var/pb in target.progressbars_recipient[user])
+			var/datum/progressbar/progress_bar = pb
+			if(progress_bar == src || progress_bar.target_listindex <= target_listindex)
+				continue
+			progress_bar.target_listindex--
+
+			progress_bar.targetbar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1))
+			var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1)) - PROGRESSBAR_HEIGHT
+			animate(progress_bar.targetbar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+
+		LAZYREMOVEASSOC(target.progressbars_recipient, target, src)
+		target = null
 
 	if(user_client)
 		clean_user_client()
 
-	bar_loc = null
+	if(target_client)
+		clean_target_client()
+
+	target = null
 
 	if(bar)
 		QDEL_NULL(bar)
@@ -102,16 +146,56 @@
 	if(!user.client) //Clients can vanish at any time, the bastards.
 		return
 	user_client = user.client
-	add_prog_bar_image_to_client()
+	add_prog_bar_image_to_user()
 
 
-///Adds a smoothly-appearing progress bar image to the player's screen.
-/datum/progressbar/proc/add_prog_bar_image_to_client()
+///Called right before the target's Destroy()
+/datum/progressbar/proc/on_target_delete(datum/source)
+	SIGNAL_HANDLER
+
+	target.progressbars_recipient = null //We can simply nuke the list and stop worrying about updating other prog bars if the user itself is gone.
+	user = null
+	qdel(src)
+
+
+///Removes the progress bar image from the target_client and nulls the variable, if it exists.
+/datum/progressbar/proc/clean_target_client(datum/source)
+	SIGNAL_HANDLER
+
+	if(!target_client) //Disconnected, already gone.
+		return
+	target_client.images -= targetbar
+	target_client = null
+
+
+///Called by target's Login(), it transfers the progress bar image to the new client.
+/datum/progressbar/proc/on_target_login(datum/source)
+	SIGNAL_HANDLER
+
+	if(target_client)
+		if(target_client == target.get_client()) //If this was not client handling I'd condemn this sanity check. But clients are fickle things.
+			return
+		clean_user_client()
+	if(!target.get_client()) //Clients can vanish at any time, the bastards.
+		return
+	target_client = target.get_client()
+	add_prog_bar_image_to_target()
+
+
+///Adds a smoothly-appearing progress bar image to the user's screen.
+/datum/progressbar/proc/add_prog_bar_image_to_user()
 	bar.pixel_y = 0
 	bar.alpha = 0
 	user_client.images += bar
-	animate(bar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+	animate(bar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (client_listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
+
+///Adds a smoothly-appearing progress bar image to the target's screen.
+/datum/progressbar/proc/add_prog_bar_image_to_target()
+	targetbar.pixel_y = 0
+	targetbar.alpha = 0
+	target_client.images += bar
+	animate(targetbar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (client_listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
 ///Updates the progress bar image visually.
 /datum/progressbar/proc/update(progress)
@@ -120,6 +204,8 @@
 		return
 	last_progress = progress
 	bar.icon_state = "prog_bar_[round(((progress / goal) * 100), 5)]"
+	if(targetbar)
+		targetbar.icon_state = bar.icon_state
 
 
 ///Called on progress end, be it successful or a failure. Wraps up things to delete the datum and bar.
@@ -128,6 +214,11 @@
 		bar.icon_state = "[bar.icon_state]_fail"
 
 	animate(bar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
+
+	if(targetbar)
+		targetbar.icon_state = bar.icon_state
+
+		animate(targetbar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
 
 	QDEL_IN(src, PROGRESSBAR_ANIMATION_TIME)
 

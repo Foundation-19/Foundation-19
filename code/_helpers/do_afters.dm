@@ -3,6 +3,9 @@
 /// List of progress bars this mob is currently seeing for actions, helpful in stacking do_after bars
 /mob/var/list/progressbars = null
 
+/// List of progress bars this atom is currently seeing from other people, helpful in stacking do_after bars
+/atom/var/list/progressbars_recipient = null
+
 /// For storing what do_after's someone has, key = string, value = amount of interactions of that type happening.
 /mob/var/list/do_afters
 
@@ -46,7 +49,7 @@
 
 	var/datum/progressbar/bar
 	if (do_flags & DO_SHOW_USER)
-		bar = new /datum/progressbar(user, delay, target || user)
+		bar = new /datum/progressbar(user, delay, target || user, (do_flags & DO_SHOW_USER))
 
 	SEND_SIGNAL(user, COMSIG_DO_AFTER_BEGAN)
 
