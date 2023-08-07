@@ -168,23 +168,57 @@
 
 /obj/item/reagent_containers/pill/dexalin
 	name = "Dexalin (15u)"
-	desc = "Used to treat oxygen deprivation."
+	desc = "Used to treat oxygen deprivation, allows breathing at 50% oxygenation even if the lungs have failed."
 	icon_state = "pill1"
 /obj/item/reagent_containers/pill/dexalin/New()
 	..()
 	reagents.add_reagent(/datum/reagent/medicine/dexalin, 15)
 	color = reagents.get_color()
 
-
 /obj/item/reagent_containers/pill/dexalin_plus
-	name = "Dexalin Plus (15u)"
-	desc = "Used to treat extreme oxygen deprivation."
-	icon_state = "pill2"
+	name = "Dexalin Plus (5u)"
+	desc = "Used to treat severe oxygen deprivation, allows breathing at 80% oxygenation even if the lungs have failed."
+	icon_state = "pill1"
 /obj/item/reagent_containers/pill/dexalin_plus/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/dexalin_plus, 15)
+	reagents.add_reagent(/datum/reagent/medicine/dexalin_plus, 5)
 	color = reagents.get_color()
 
+/obj/item/reagent_containers/pill/oxycodone
+	name = "Oxycodone (5u)"
+	desc = "Used to treat extreme pain."
+	icon_state = "pill2"
+/obj/item/reagent_containers/pill/oxycodone/New()
+	..()
+	reagents.add_reagent(/datum/reagent/medicine/painkiller/tramadol/oxycodone, 5)
+	color = reagents.get_color()
+
+/obj/item/reagent_containers/pill/arithrazine
+	name = "Arithrazine (7u)"
+	desc = "Used to treat organ damage, causes brute damage as a side effect."
+	icon_state = "pill2"
+/obj/item/reagent_containers/pill/arithrazine/New()
+	..()
+	reagents.add_reagent(/datum/reagent/medicine/arithrazine, 7)
+	color = reagents.get_color()
+
+/obj/item/reagent_containers/pill/alkysine
+	name = "Alkysine (5u)"
+	desc = "Treats brain damage, may cause dizziness, blurred vision, and intermittent blackouts."
+	icon_state = "pill2"
+/obj/item/reagent_containers/pill/alkysine/New()
+	..()
+	reagents.add_reagent(/datum/reagent/medicine/alkysine, 5)
+	color = reagents.get_color()
+
+/obj/item/reagent_containers/pill/stox
+	name = "Soporific (15u)"
+	desc = "Commonly used to treat insomnia."
+	icon_state = "pill3"
+/obj/item/reagent_containers/pill/stox/New()
+	..()
+	reagents.add_reagent(/datum/reagent/soporific, 15)
+	color = reagents.get_color()
 
 /obj/item/reagent_containers/pill/dermaline
 	name = "Dermaline (15u)"

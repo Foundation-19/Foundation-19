@@ -504,10 +504,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "bj" = (
-/obj/structure/sign/directions/medical{
-	dir = 1;
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
@@ -517,7 +513,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light{
-	dir = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -3600,6 +3596,7 @@
 /area/site53/medical/equipstorage)
 "jn" = (
 /obj/effect/paint_stripe/mauve,
+/obj/structure/sign/chemistry,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/chemistry)
 "jo" = (
@@ -4537,6 +4534,11 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
 /area/site53/upper_surface/maincontrolroomstairs)
+"lS" = (
+/obj/effect/paint_stripe/white,
+/obj/structure/sign/directions/med,
+/turf/simulated/wall/titanium,
+/area/site53/medical/infirmreception)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -39382,7 +39384,7 @@ en
 kF
 gP
 jN
-YL
+lS
 bj
 ll
 ec

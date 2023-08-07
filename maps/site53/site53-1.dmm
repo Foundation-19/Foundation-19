@@ -1479,6 +1479,9 @@
 	id_tag = "EMTflashCDZ";
 	name = "Medical Flash"
 	},
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/auto_cpr,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "dm" = (
@@ -1991,10 +1994,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "ew" = (
-/obj/structure/sign/directions/infirmary{
-	dir = 4;
-	pixel_x = 32
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -2263,6 +2262,8 @@
 /obj/structure/closet{
 	name = "Coroner"
 	},
+/obj/item/towel/random,
+/obj/item/towel/random,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/shower)
 "eZ" = (
@@ -4746,6 +4747,7 @@
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
+/obj/item/sticky_pad/random,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "kR" = (
@@ -7776,6 +7778,8 @@
 /obj/structure/closet{
 	name = "Coroner"
 	},
+/obj/item/towel/random,
+/obj/item/towel/random,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/shower)
 "rL" = (
@@ -11014,6 +11018,11 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
+"zG" = (
+/obj/structure/table/reinforced,
+/obj/item/haircomb/random,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "zI" = (
 /obj/item/modular_computer/console/preset/security{
 	dir = 4;
@@ -12232,6 +12241,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "CM" = (
@@ -13462,6 +13472,12 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
+"FN" = (
+/obj/structure/table/reinforced,
+/obj/item/deck/cards,
+/obj/item/haircomb/random,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "FO" = (
 /obj/structure/bed/chair/wheelchair{
 	dir = 8
@@ -15206,6 +15222,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
+"Kc" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/lights/tubes/random,
+/obj/item/storage/box/lights/tubes/random,
+/obj/item/device/lightreplacer,
+/obj/item/soap,
+/obj/item/soap,
+/turf/simulated/floor,
+/area/site53/llcz/dclass/cellbubble)
 "Kd" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17301,6 +17326,8 @@
 /obj/item/defibrillator/loaded,
 /obj/item/auto_cpr,
 /obj/effect/floor_decal/corner/b_green/mono,
+/obj/item/auto_cpr,
+/obj/item/auto_cpr,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "Pw" = (
@@ -19248,6 +19275,8 @@
 /obj/item/device/flashlight/flare,
 /obj/item/clothing/suit/rubber/unathi,
 /obj/item/clothing/mask/rubber/species/unathi,
+/obj/item/clothing/accessory/toggleable/hawaii/random,
+/obj/item/clothing/accessory/toggleable/hawaii/random,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
 "UE" = (
@@ -19880,6 +19909,14 @@
 /obj/machinery/chem_master,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
+"Wl" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/sign/directions/infirmary{
+	dir = 8;
+	pixel_x = -32
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/cells)
 "Wm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -21359,6 +21396,9 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/cowboy_hat,
 /obj/item/clothing/gloves/thick,
+/obj/item/storage/wallet/random,
+/obj/item/storage/wallet/random,
+/obj/item/storage/wallet/random,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 
@@ -30496,7 +30536,7 @@ OW
 lY
 uf
 jV
-tj
+Wl
 st
 vb
 yl
@@ -31285,7 +31325,7 @@ yl
 tj
 yl
 Bc
-uA
+zG
 tj
 vV
 uP
@@ -32553,7 +32593,7 @@ dC
 uf
 uO
 tj
-Zy
+FN
 vb
 yl
 tj
@@ -35377,7 +35417,7 @@ rE
 tS
 sf
 rR
-nF
+Kc
 bg
 jx
 cY

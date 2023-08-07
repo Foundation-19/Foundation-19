@@ -28541,9 +28541,7 @@
 /area/site53/uhcz/hallways)
 "jKi" = (
 /obj/effect/paint_stripe/gray,
-/obj/structure/closet/hydrant{
-	pixel_y = 32
-	},
+/obj/structure/closet/hydrant,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/office)
 "jKR" = (
@@ -60181,7 +60179,7 @@ azA
 azA
 azA
 aeS
-aeS
+jKi
 aLd
 wSy
 eeH
@@ -60440,7 +60438,7 @@ azA
 azA
 aeS
 aeS
-jKi
+aeS
 bhP
 bhP
 bhP
@@ -78682,7 +78680,7 @@ azA
 azA
 azA
 azA
-aec
+abY
 abW
 adU
 adU

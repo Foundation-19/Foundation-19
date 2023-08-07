@@ -938,7 +938,8 @@
 		/obj/item/stack/medical/advanced/bruise_pack = 10,
 		/obj/item/stack/medical/advanced/ointment = 10,
 		/obj/item/stack/medical/splint = 5,
-		/obj/item/reagent_containers/hypospray/autoinjector/pain = 15
+		/obj/item/reagent_containers/hypospray/autoinjector/pain = 15, //tramadol autoinjector
+		/obj/item/storage/box/bodybags = 4
 	)
 
 	contraband = list(
@@ -946,7 +947,7 @@
 		/obj/item/reagent_containers/pill/tox = 3,
 		/obj/item/reagent_containers/pill/stox = 4,
 		/obj/item/reagent_containers/glass/bottle/toxin = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/combatpain = 2
+		/obj/item/reagent_containers/hypospray/autoinjector/combatpain = 2 //oxycodone autoinjector
 	)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
@@ -962,7 +963,7 @@
 
 /obj/machinery/vending/wallmed1
 	name = "\improper NanoMed"
-	desc = "A wall-mounted version of the NanoMed."
+	desc = "A wall-mounted version of the NanoMed, stocked with the equipment necessary for stabilisation and much more."
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
@@ -970,13 +971,14 @@
 	base_type = /obj/machinery/vending/wallmed1
 	density = FALSE //It is wall-mounted, and thus, not dense. --Superxpdude
 	products = list(
-		/obj/item/stack/medical/bruise_pack = 3,
-		/obj/item/stack/medical/ointment = 3,
-		/obj/item/reagent_containers/pill/paracetamol = 4,
-		/obj/item/storage/med_pouch/trauma,
-		/obj/item/storage/med_pouch/burn,
-		/obj/item/storage/med_pouch/oxyloss,
-		/obj/item/storage/med_pouch/toxin
+		/obj/item/stack/medical/bruise_pack = 2,
+		/obj/item/stack/medical/advanced/bruise_pack = 4,
+		/obj/item/stack/medical/ointment = 6,
+		/obj/item/reagent_containers/pill/paracetamol = 8,
+		/obj/item/storage/med_pouch/trauma = 2,
+		/obj/item/storage/med_pouch/burn = 2,
+		/obj/item/storage/med_pouch/oxyloss = 2,
+		/obj/item/storage/med_pouch/toxin = 2,
 		)
 	contraband = list(/obj/item/reagent_containers/syringe/antitoxin = 4,/obj/item/reagent_containers/syringe/antiviral = 4,/obj/item/reagent_containers/pill/tox = 1)
 
@@ -1003,21 +1005,22 @@
 
 /obj/machinery/vending/security
 	name = "\improper SecTech"
-	desc = "A security equipment vendor."
-	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
+	desc = "A security equipment vendor, with some customary donuts; help yourself."
+	product_ads = "Defend yourself!;Help others!;Don't forget - security is a need not a want!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	icon_vend = "sec-vend"
 	vend_delay = 14
 	base_type = /obj/machinery/vending/security
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY,ACCESS_SECURITY_LVL1) //
 	products = list(
-		/obj/item/handcuffs = 8,
-		/obj/item/grenade/flashbang = 4,
-		/obj/item/grenade/chem_grenade/teargas = 4,
-		/obj/item/device/flash = 5,
+		/obj/item/handcuffs = 12,
+		/obj/item/grenade/flashbang = 6,
+		/obj/item/grenade/chem_grenade/teargas = 6,
+		/obj/item/device/flash = 4,
 		/obj/item/reagent_containers/food/snacks/donut/normal = 12,
-		/obj/item/storage/box/evidence = 6)
+		/obj/item/storage/box/evidence = 6,
+		/obj/item/storage/box/bodybags = 4)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/storage/box/donut = 2)
 
 /obj/machinery/vending/hydronutrients
@@ -1030,7 +1033,10 @@
 	icon_vend = "nutri-vend"
 	vend_delay = 26
 	base_type = /obj/machinery/vending/hydronutrients
-	products = list(/obj/item/reagent_containers/glass/bottle/eznutrient = 6,/obj/item/reagent_containers/glass/bottle/left4zed = 4,/obj/item/reagent_containers/glass/bottle/robustharvest = 3,/obj/item/plantspray/pests = 20,
+	products = list(/obj/item/reagent_containers/glass/bottle/eznutrient = 6,
+					/obj/item/reagent_containers/glass/bottle/left4zed = 4,
+					/obj/item/reagent_containers/glass/bottle/robustharvest = 3,
+					/obj/item/plantspray/pests = 20,
 					/obj/item/reagent_containers/syringe = 5,/obj/item/storage/plants = 5)
 	premium = list(/obj/item/reagent_containers/glass/bottle/ammonia = 10,/obj/item/reagent_containers/glass/bottle/diethylamine = 5)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.

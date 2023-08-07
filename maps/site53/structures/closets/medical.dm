@@ -1,5 +1,5 @@
 /*
- * Torch Medical
+ * Torch -/- Medical
  */
 
 /obj/structure/closet/secure_closet/site53/cmo
@@ -22,6 +22,7 @@
 		/obj/item/device/megaphone,
 		/obj/item/reagent_containers/hypospray/vial,
 		/obj/item/storage/fancy/vials,
+		/obj/item/sign/medipolma,
 //		/obj/item/device/healthanalyzer,
 		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/device/flashlight/pen,

@@ -89,7 +89,7 @@
 
 /obj/item/gun/projectile/pistol/throwback
 	name = "pistol"
-	desc = "A product of one of thousands of illegal workshops from around the world. Often replicas of ancient handguns, these guns are usually found in hands of pirates and low-lifes."
+	desc = "A product of one of the world's hundreds of illicit workshops. These firearms, which are frequently reproductions of past handgun blueprints, are typically seen in the hands of smugglers and low-lifes."
 	icon = 'icons/obj/guns/pistol_throwback.dmi'
 	icon_state = "pistol1"
 	magazine_type = /obj/item/ammo_magazine/pistol/throwback

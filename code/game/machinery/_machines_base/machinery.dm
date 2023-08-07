@@ -430,7 +430,7 @@ Class Procs:
 	if(component_parts && hasHUD(user, HUD_SCIENCE))
 		display_parts(user)
 	if(stat & NOSCREEN)
-		to_chat(user, "It is missing a screen, making it hard to interact with.")
+		to_chat(user, "It is missing a screen, making it hard to interact with; but it might not need it.")
 	else if(stat & NOINPUT)
 		to_chat(user, "It is missing any input device.")
 	else if((stat & NOPOWER) && !interact_offline)

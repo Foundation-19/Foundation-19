@@ -200,7 +200,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka
 	name = "Tunguska Triple Distilled Vodka"
-	desc = "Aah, vodka. Prime choice of drink AND fuel by Indies around the galaxy."
+	desc = "Aah, vodka. Prime choice of drink."
 	icon_state = "vodkabottle"
 	center_of_mass = "x=17;y=3"
 
@@ -220,7 +220,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
 	name = "Bottle of Nothing"
-	desc = "A bottle filled with nothing."
+	desc = "A bottle filled with nothing, but probably something."
 	icon_state = "bottleofnothing"
 	center_of_mass = "x=17;y=5"
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing/New()
@@ -229,7 +229,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequilla, served in night clubs across the Earth."
+	desc = "Silver laced tequilla."
 	icon_state = "patronbottle"
 	center_of_mass = "x=16;y=6"
 
@@ -269,7 +269,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
 	name = "Robert Robust's Coffee Liqueur"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK!"
+	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936!"
 	icon_state = "kahluabottle"
 	center_of_mass = "x=17;y=3"
 
@@ -289,7 +289,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/cognac
 	name = "Chateau De Baton Premium Cognac"
-	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. You might as well not scream 'SHITCURITY' this time."
+	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing."
 	icon_state = "cognacbottle"
 	center_of_mass = "x=16;y=6"
 
@@ -339,7 +339,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/herbal
 	name = "Liqueur d'Herbe"
-	desc = "A bottle of the seventh-finest herbal liquor sold under a generic name. The back label has a load of guff about the monks who traditionally made this particular variety."
+	desc = "A bottle of the seventh-finest herbal liquor sold popularly. The back label has a load of guff about the monks who traditionally made this particular variety."
 	icon_state = "herbal"
 	center_of_mass = "x=16;y=6"
 

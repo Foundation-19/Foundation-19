@@ -385,7 +385,7 @@
 	wrapper_color = COLOR_PALE_GREEN_GRAY
 
 /obj/item/storage/pill_bottle/tramadol
-	name = "pill bottle (Tramadol)"
+	name = "\improper pill bottle (Tramadol)"
 	desc = "Contains pills used to relieve pain."
 
 	startswith = list(/obj/item/reagent_containers/pill/tramadol = 14)
@@ -393,42 +393,57 @@
 
 //Baycode specific Psychiatry pills.
 /obj/item/storage/pill_bottle/citalopram
-	name = "pill bottle (Citalopram)"
+	name = "\improper pill bottle (Citalopram)"
 	desc = "Mild antidepressant. For use in individuals suffering from depression or anxiety. 15u dose per pill."
 
 	startswith = list(/obj/item/reagent_containers/pill/citalopram = 21)
 	wrapper_color = COLOR_GRAY
 
 /obj/item/storage/pill_bottle/methylphenidate
-	name = "pill bottle (Methylphenidate)"
+	name = "\improper pill bottle (Methylphenidate)"
 	desc = "Mental stimulant. For use in individuals suffering from ADHD, or general concentration issues. 15u dose per pill."
 
 	startswith = list(/obj/item/reagent_containers/pill/methylphenidate = 21)
 	wrapper_color = COLOR_GRAY
 
 /obj/item/storage/pill_bottle/paroxetine
-	name = "pill bottle (Paroxetine)"
+	name = "\improper pill bottle (Paroxetine)"
 	desc = "High-strength antidepressant. Only for use in severe depression. 10u dose per pill. <span class='warning'>WARNING: side-effects may include hallucinations.</span>"
 
 	startswith = list(/obj/item/reagent_containers/pill/paroxetine = 14)
 	wrapper_color = COLOR_GRAY
 
 /obj/item/storage/pill_bottle/antidexafen
-	name = "pill bottle (cold medicine)"
+	name = "\improper pill bottle (cold medicine)"
 	desc = "All-in-one cold medicine. 15u dose per pill. Safe for babies like you!"
 
 	startswith = list(/obj/item/reagent_containers/pill/antidexafen = 21)
 	wrapper_color = COLOR_VIOLET
 
 /obj/item/storage/pill_bottle/paracetamol
-	name = "pill bottle (Paracetamol)"
+	name = "\improper pill bottle (Paracetamol)"
 	desc = "Mild painkiller, also known as Tylenol. Won't fix the cause of your headache (unlike cyanide), but might make it bearable."
 
 	startswith = list(/obj/item/reagent_containers/pill/paracetamol = 21)
 	wrapper_color = "#a2819e"
 
+/obj/item/storage/pill_bottle/stabilise
+	name = "\improper pill bottle (prescribed stabiliser)"
+	desc = "A pill bottle given primarially to the injured whilst doctors can work on more urgent matters. Take with caution, unless you have a death wish."
+
+	startswith = list(
+			/obj/item/reagent_containers/pill/inaprovaline = 6,
+			/obj/item/reagent_containers/pill/oxycodone = 6,
+			/obj/item/reagent_containers/pill/dexalin_plus = 2,
+			/obj/item/reagent_containers/pill/paracetamol = 2,
+			/obj/item/reagent_containers/pill/dylovene = 2,
+			/obj/item/reagent_containers/pill/alkysine = 2,
+			/obj/item/reagent_containers/pill/arithrazine
+		)
+	wrapper_color = "#d06d33"
+
 /obj/item/storage/pill_bottle/assorted
-	name = "pill bottle (assorted)"
+	name = "\improper pill bottle (assorted)"
 	desc = "Commonly found on paramedics, these assorted pill bottles contain all the basics."
 
 	startswith = list(

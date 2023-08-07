@@ -367,6 +367,7 @@
 /obj/structure/sign/directions/New()
 	..()
 	desc = "A direction sign, pointing out which way \the [src] is."
+	name = "[src] direction sign"
 
 /obj/structure/sign/directions/science
 	name = "\improper Research Division"
@@ -454,7 +455,7 @@
 
 /obj/item/sign/medipolma
 	name = "medical diploma"
-	desc = "A fancy print laminated paper that certifies that its bearer is indeed a Doctor of Medicine, graduated from a medical school in one of fringe systems. You don't recognize the name though, and half of latin words they used do not actually exist."
+	desc = "A fancy print laminated paper that verifies that the bearer is actually a Doctor of Medicine, graduating from an exemplary medical school, but it additionally features some interesting latin inscriptions."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "goldenplaque"
 	sign_state = "goldenplaque"
@@ -466,9 +467,14 @@
 		claimant = user.real_name
 	..()
 
+/obj/item/sign/medipolma/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/tape_roll))
+		user.visible_message(SPAN_WARNING("[user] attaches [W] to the [src]."), SPAN_WARNING("You attach some [W] to the [src]."))
+	return ..()
+
 /obj/item/sign/medipolma/examine(mob/user)
 	. = ..()
 	if(claimant)
-		to_chat(user,"This one belongs to Dr.[claimant], MD.")
+		to_chat(user,"This one belongs to Dr. [claimant], Chief Medical Officer.")
 	else
-		to_chat(user,"The name is left blank for some reason.")
+		to_chat(user,"The signature line is left blank and unsigned.")

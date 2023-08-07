@@ -14,8 +14,8 @@
 
 
 /obj/item/storage/box/bodybags
-	name = "body bags"
-	desc = "This box contains body bags."
+	name = "\improper box of body bags"
+	desc = "This box consists of body bags, each with a written label, this particular box includes wirecutters to remove labels."
 	icon_state = "bodybags"
 /obj/item/storage/box/bodybags/New()
 	..()
