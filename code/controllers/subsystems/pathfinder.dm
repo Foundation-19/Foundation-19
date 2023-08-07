@@ -45,3 +45,37 @@ SUBSYSTEM_DEF(pathfinder)
 		active_pathing += path
 		return TRUE
 	return FALSE
+
+/obj/pathfinder
+	name = "pathfinder"
+	desc = "debug only!"
+	icon = 'icons/obj/projector.dmi'
+	icon_state = "projector1"
+
+	var/list/path = list()
+	var/image/path_overlay
+
+/obj/pathfinder/New(loc, ...)
+	. = ..()
+	path_overlay = new('icons/misc/debug_group.dmi', "red")
+
+/obj/pathfinder/Destroy()
+	if(LAZYLEN(path))
+		for(var/turf/T in path)
+			T.cut_overlay(path_overlay)
+	return ..()
+
+/obj/pathfinder/proc/start_pathfind(atom/target)
+	var/turf/end_turf = get_turf(target)
+	if(LAZYLEN(path))
+		for(var/turf/T in path)
+			T.cut_overlay(path_overlay)
+		LAZYCLEARLIST(path)
+
+	path = get_path_to(src, end_turf)
+	if(!LAZYLEN(path))
+		return "No Path Found!"
+	else
+		for(var/turf/T in path)
+			T.add_overlay(path_overlay)
+	return path

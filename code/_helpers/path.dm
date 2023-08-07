@@ -48,6 +48,10 @@
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 
+//z-level turftype defines
+#define OPEN_SPACE_TURF	(1<<0)
+#define STAIR_TURF		(1<<1)
+
 /// The JPS Node datum represents a turf that we find interesting enough to add to the open list and possibly search for new tiles from
 /datum/jps_node
 	/// The turf associated with this node
@@ -509,6 +513,13 @@
 ///Checks if we are on a turf that is relevant to z-leval pathfinding
 /turf/proc/canTurfChangeZ()
 	if(isopenturf(src))
-		return TRUE
+		return OPEN_SPACE_TURF
+
+	for(var/obj/structure/stairs/stair in contents)
+		if(istype(stair))
+			return STAIR_TURF
 
 	return FALSE
+
+#undef OPEN_SPACE_TURF
+#undef STAIR_TURF
