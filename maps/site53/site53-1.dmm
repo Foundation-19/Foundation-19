@@ -11093,7 +11093,7 @@
 "zD" = (
 /obj/effect/decal/cleanable/blood/writing{
 	scent_descriptor = "human gore";
-	message = "NO... HOW COULD THIS- I TRAVELLED ??? [indecipherable] ???"
+	message = "NO... HOW COULD THIS- I TRAVELLED ??? \[indecipherable\] ???"
 	},
 /turf/unsimulated/mineral,
 /area/space)
