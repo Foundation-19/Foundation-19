@@ -58,6 +58,40 @@
 	return locate(tX, tY, tZ)
 
 /*
+	Z-level Helpers
+*/
+///Like get_step but can handle z-levels
+/proc/get_step_multiz(ref, dir)
+	if(dir & UP)
+		dir &= ~UP
+		return GetAbove(ref)
+	if(dir & DOWN)
+		dir &= ~DOWN
+		return GetBelow(ref)
+	return get_step(ref, dir)
+
+///Like get_dir but works with zlevels
+/proc/get_dir_multiz(turf/us, turf/them)
+	us = get_turf(us)
+	them = get_turf(them)
+	if(!us || !them)
+		return NONE
+	if(us.z == them.z)
+		return get_dir(us, them)
+	else
+		var/turf/T = GetAbove(us)
+		var/dir = NONE
+		if(T && (T.z == them.z))
+			dir = UP
+		else
+			T = GetBelow(us)
+			if(T && (T.z == them.z))
+				dir = DOWN
+			else
+				return get_dir(us, them)
+		return (dir | get_dir(us, them))
+
+/*
 	Predicate helpers
 */
 
