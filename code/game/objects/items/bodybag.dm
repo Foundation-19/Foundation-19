@@ -25,7 +25,7 @@
 	new /obj/item/bodybag(src)
 	new /obj/item/bodybag(src)
 	new /obj/item/bodybag(src)
-	new /obj/item/bodybag(src)
+	new /obj/item/wirecutters(src)
 
 
 /obj/structure/closet/body_bag
