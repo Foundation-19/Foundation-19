@@ -1,5 +1,3 @@
-//Largely beneficial effects go here, even if they have drawbacks.
-
 /datum/status_effect/his_grace
 	id = "his_grace"
 	duration = -1

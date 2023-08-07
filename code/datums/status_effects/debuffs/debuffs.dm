@@ -568,7 +568,7 @@
 	to_chat(owner, span_warning("You snap out of your trance!"))
 
 /datum/status_effect/trance/get_examine_text()
-	return span_warning("[owner.p_They()] seem[owner.p_s()] slow and unfocused.")
+	return span_warning("[owner.p_they()] seem[owner.p_s()] slow and unfocused.")
 
 /datum/status_effect/trance/proc/hypnotize(datum/source, list/hearing_args)
 	SIGNAL_HANDLER
@@ -596,7 +596,7 @@
 		return
 	if(!prob(15))
 		return
-	switch(rand(1,5))
+	switch(rand(1, 5))
 		if(1)
 			if((owner.mobility_flags & MOBILITY_MOVE) && isturf(owner.loc))
 				to_chat(owner, span_warning("Your leg spasms!"))
@@ -811,32 +811,32 @@
 	return COMPONENT_CLEANED
 
 /datum/status_effect/ants/get_examine_text()
-	return span_warning("[owner.p_They()] [owner.p_are()] covered in ants!")
+	return span_warning("[owner.p_they()] [owner.p_are()] covered in ants!")
 
 /datum/status_effect/ants/tick()
 	var/mob/living/carbon/human/victim = owner
 	victim.adjustBruteLoss(max(0.1, round((ants_remaining * 0.004),0.1))) //Scales with # of ants (lowers with time). Roughly 10 brute over 50 seconds.
 	if(victim.stat <= SOFT_CRIT) //Makes sure people don't scratch at themselves while they're in a critical condition
 		if(prob(15))
-			switch(rand(1,2))
+			switch(rand(1, 2))
 				if(1)
 					victim.say(pick(ant_debuff_speech), forced = /datum/status_effect/ants)
 				if(2)
 					victim.emote("scream")
-		if(prob(50)) // Most of the damage is done through random chance. When tested yielded an average 100 brute with 200u ants.
-			switch(rand(1,50))
+		if(prob(50)) // Most of the damage is done through random chance.
+			switch(rand(1, 50))
 				if (1 to 8) //16% Chance
 					var/obj/item/bodypart/head/hed = victim.get_bodypart(BODY_ZONE_HEAD)
 					to_chat(victim, span_danger("You scratch at the ants on your scalp!."))
-					hed.receive_damage(1,0)
+					hed.receive_damage(1, 0)
 				if (9 to 29) //40% chance
-					var/obj/item/bodypart/arm = victim.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_R_ARM))
+					var/obj/item/bodypart/arm = victim.get_bodypart(pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 					to_chat(victim, span_danger("You scratch at the ants on your arms!"))
-					arm.receive_damage(3,0)
+					arm.receive_damage(3, 0)
 				if (30 to 49) //38% chance
-					var/obj/item/bodypart/leg = victim.get_bodypart(pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG))
+					var/obj/item/bodypart/leg = victim.get_bodypart(pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 					to_chat(victim, span_danger("You scratch at the ants on your leg!"))
-					leg.receive_damage(3,0)
+					leg.receive_damage(3, 0)
 				if(50) // 2% chance
 					to_chat(victim, span_danger("You rub some ants away from your eyes!"))
 					victim.set_eye_blur_if_lower(6 SECONDS)
