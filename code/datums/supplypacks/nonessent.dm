@@ -274,7 +274,7 @@
 		/obj/item/storage/candle_box/scented = 3,
 		/obj/item/storage/candle_box/incense = 6,
 		/obj/item/flame/lighter/random)
-	cost = 7 // decor
+	cost = 15
 	containername = "aromatherapy crate"
 
 /decl/hierarchy/supply_pack/nonessent/pins

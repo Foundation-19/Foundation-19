@@ -4534,11 +4534,6 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
 /area/site53/upper_surface/maincontrolroomstairs)
-"lS" = (
-/obj/effect/paint_stripe/white,
-/obj/structure/sign/directions/med,
-/turf/simulated/wall/titanium,
-/area/site53/medical/infirmreception)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -9051,6 +9046,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Vo" = (
+/obj/effect/paint_stripe/white,
+/obj/structure/sign/directions/med,
+/turf/simulated/wall/titanium,
+/area/site53/medical/infirmreception)
 "Vu" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -39384,7 +39384,7 @@ en
 kF
 gP
 jN
-lS
+Vo
 bj
 ll
 ec
