@@ -8548,10 +8548,6 @@
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
-"Vc" = (
-/obj/random,
-/turf/unsimulated/mineral,
-/area/space)
 "Vf" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -33832,7 +33828,7 @@ hk
 hk
 hk
 hk
-Vc
+hk
 hk
 hk
 hk
