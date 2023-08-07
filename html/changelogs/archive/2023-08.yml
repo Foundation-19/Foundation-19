@@ -26,3 +26,6 @@
   - code_imp: General TG optimized code ported.
   - refactor: AStar pathfinding changed to JPS pathfinding, which should work MUCH
       faster (and better and cleaner)
+2023-08-07:
+  TheDarkElites:
+  - bugfix: 173's pathing getting stuck.
