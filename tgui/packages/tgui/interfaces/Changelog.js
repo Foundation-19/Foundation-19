@@ -206,7 +206,7 @@ export class Changelog extends Component {
         <p>
           <b>Coders: </b>
           Lestatanderson, Tsurupeta, HarryOB, ivanmixo, Autisme, DTraitor,
-          TheDarkElites, cheesePizza2, Seven, EgorDinamit
+          TheDarkElites, cheesePizza2, EgorDinamit
         </p>
         <p>
           <b>Spriters: </b>
