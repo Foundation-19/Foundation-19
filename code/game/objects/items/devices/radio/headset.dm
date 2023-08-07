@@ -193,8 +193,8 @@
 	ks1type = /obj/item/device/encryptionkey/merchant
 
 /obj/item/device/radio/headset/heads/captain
-	name = "captain's headset"
-	desc = "The headset of the boss."
+	name = "site director's headset"
+	desc = "The headset of the facility director."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/captain
