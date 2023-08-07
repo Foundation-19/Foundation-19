@@ -1020,7 +1020,8 @@
 		/obj/item/device/flash = 4,
 		/obj/item/reagent_containers/food/snacks/donut/normal = 12,
 		/obj/item/storage/box/evidence = 6,
-		/obj/item/storage/box/bodybags = 4)
+		/obj/item/storage/box/bodybags = 4
+		)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/storage/box/donut = 2)
 
 /obj/machinery/vending/hydronutrients
