@@ -58,7 +58,7 @@
 			. += "<a href='?src=\ref[src];add_special=[ghost_trap.pref_check]'>Yes</a> <span class='linkOn'>No</span></br>"
 
 		. += "</td></tr>"
-	. += "<tr><td>Select All: </td><td><a href='?src=\ref[src];select_all=1'>Yes</a> <a href='?src=\ref[src];select_all=0'>No</a></td></tr>"
+	. += "<font size = 1.5><b><tr><td>Select All: </td><td></b></font><a href='?src=\ref[src];select_all=1'>Yes</a> <a href='?src=\ref[src];select_all=0'>No</a></td></tr>"
 	. += "</table>"
 	. = jointext(.,null)
 

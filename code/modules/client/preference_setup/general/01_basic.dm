@@ -58,7 +58,7 @@
 	var/datum/species/S = all_species[pref.species]
 
 	if(href_list["rename"])
-		var/raw_name = input(user, "Choose your character's name:", "Character Name")  as text|null
+		var/raw_name = tgui_input_text(user, "Choose your character's name:", "Character Name", pref.real_name, MAX_NAME_LEN)
 		if (!isnull(raw_name) && CanUseTopic(user))
 
 			var/decl/cultural_info/check = SSculture.get_culture(pref.cultural_info[TAG_CULTURE])
@@ -79,7 +79,7 @@
 		return TOPIC_REFRESH
 
 	else if(href_list["gender"])
-		var/new_gender = input(user, "Choose your character's gender:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.gender) as null|anything in S.genders
+		var/new_gender = tgui_input_list(user, "Select your character's gender.", CHARACTER_PREFERENCE_INPUT_TITLE, S.genders, pref.gender)
 		S = all_species[pref.species]
 		if(new_gender && CanUseTopic(user) && (new_gender in S.genders))
 			pref.gender = new_gender
@@ -88,7 +88,7 @@
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["age"])
-		var/new_age = input(user, "Choose your character's age:\n([S.min_age]-[S.max_age])", CHARACTER_PREFERENCE_INPUT_TITLE, pref.age) as num|null
+		var/new_age = tgui_input_number(user, "Choose your character's age:\n([S.min_age]-[S.max_age])", CHARACTER_PREFERENCE_INPUT_TITLE, pref.age, S.max_age, S.min_age)
 		if(new_age && CanUseTopic(user))
 			pref.age = max(min(round(text2num(new_age)), S.max_age), S.min_age)
 			pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		// The age may invalidate skill loadouts
@@ -98,7 +98,7 @@
 		var/list/spawnkeys = list()
 		for(var/spawntype in spawntypes())
 			spawnkeys += spawntype
-		var/choice = input(user, "Where would you like to spawn when late-joining?") as null|anything in spawnkeys
+		var/choice = tgui_input_list(user, "Where would you like to spawn when late-joining?", "Late-Join Spawn Area", spawnkeys)
 		if(!choice || !spawntypes()[choice] || !CanUseTopic(user))	return TOPIC_NOACTION
 		pref.spawnpoint = choice
 		return TOPIC_REFRESH
