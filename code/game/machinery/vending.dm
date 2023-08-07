@@ -938,7 +938,7 @@
 		/obj/item/stack/medical/advanced/bruise_pack = 10,
 		/obj/item/stack/medical/advanced/ointment = 10,
 		/obj/item/stack/medical/splint = 5,
-		/obj/item/reagent_containers/hypospray/autoinjector/pain = 15, //tramadol autoinjector
+		/obj/item/reagent_containers/hypospray/autoinjector/pain = 15, //tramadol autoinjector,
 		/obj/item/storage/box/bodybags = 4
 	)
 
