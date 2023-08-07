@@ -919,13 +919,19 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	return "\a [src]"
 
 GLOBAL_LIST_EMPTY(items_by_convert_rating)
+// A list of types that will not be added to the auto-item-generator below;
+GLOBAL_LIST_INIT(items_conversion_blacklist, list(
+	/obj/item/card/id/syndicate/station_access,
+	/obj/item/card/id/captains_spare,
+	/obj/item/spellbook,
+	) + typesof(/obj/item/card/id/centcom))
 
 // BEHOLD! THE TERROR! THE NIGHTMARE!!!
 // tl;dr - We build a path of ALL(yes, all) items by "damage rating" for 1:1 and fine modes
 /obj/item/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	// Generate the BIG LIST!
 	if(!length(GLOB.items_by_convert_rating))
-		for(var/thing in subtypesof(/obj/item))
+		for(var/thing in subtypesof(/obj/item) - GLOB.items_conversion_blacklist)
 			var/obj/item/I = thing
 			if(!initial(I.icon_state) || initial(I.anchored) || !initial(I.mouse_opacity) || (initial(I.w_class) >= ITEM_SIZE_NO_CONTAINER) || (initial(I.w_class) <= 0))
 				continue
@@ -1013,13 +1019,17 @@ GLOBAL_LIST_EMPTY(items_by_convert_rating)
 			rating += "huge "
 	// By force
 	switch(my_force)
-		if(-INFINITY to 5)
+		if(-INFINITY to 4)
 			rating += "very weak "
-		if(5 to 10)
+		if(4 to 8)
 			rating += "weak "
-		if(10 to 16)
+		if(8 to 12)
+			rating += "slightly damaging "
+		if(12 to 14)
 			rating += "damaging "
-		if(16 to 24)
+		if(14 to 18)
+			rating += "somewhat dangerous "
+		if(18 to 24)
 			rating += "dangerous "
 		if(24 to 36)
 			rating += "very dangerous "
