@@ -35,7 +35,7 @@
 	name = "GOC Glock pistol"
 	desc = "Standard issue pistol for GOC personnel. Chambered in 10mm."
 	magazine_type = /obj/item/ammo_magazine/pistol/double
-	allowed_magazines = /obj/item/ammo_magazine/pistol/double 
+	allowed_magazines = /obj/item/ammo_magazine/pistol/double
 	icon = 'icons/obj/guns/military_pistol.dmi'
 	icon_state = "military"
 	item_state = "secgundark"
@@ -89,7 +89,7 @@
 
 /obj/item/gun/projectile/pistol/throwback
 	name = "pistol"
-	desc = "A product of one of thousands of illegal workshops from around the galaxy. Often replicas of ancient Earth handguns, these guns are usually found in hands of frontier colonists and pirates."
+	desc = "A product of one of thousands of illegal workshops from around the world. Often replicas of ancient handguns, these guns are usually found in hands of pirates and low-lifes."
 	icon = 'icons/obj/guns/pistol_throwback.dmi'
 	icon_state = "pistol1"
 	magazine_type = /obj/item/ammo_magazine/pistol/throwback

@@ -340,7 +340,7 @@
 
 /datum/reagent/ethanol/vodka
 	name = "Vodka"
-	description = "Number one drink AND fueling choice for Independents around the galaxy."
+	description = "Number one drink, gets you fucked up!"
 	taste_description = "grain alcohol"
 	color = "#d5eaff" // rgb: 0, 100, 200
 	strength = 15
