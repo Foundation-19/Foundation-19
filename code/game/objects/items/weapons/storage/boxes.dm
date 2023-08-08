@@ -96,7 +96,7 @@
 	foldable = null //special form fitted boxes should not be foldable.
 
 /obj/item/storage/box/survival
-	name = "site survival kit"
+	name = "personal emergency kit"
 	desc = "A survival box containing a variety of supplies. This one contains oxygen, as shown by the red panel and two striped yellow lines."
 	icon_state = "survival"
 	startswith = list(/obj/item/clothing/mask/breath/scba = 1,
