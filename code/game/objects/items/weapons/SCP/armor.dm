@@ -33,20 +33,11 @@
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	name = "Heavy-plated armor vest"
-	desc = "A synthetic armor vest. This one is for Commander."
-	icon_state = "donate_sec"
+	desc = "A synthetic armor vest. This one is for the LCZ Zone Commander."
+	icon_state = "heavy-guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 45, bullet = 65, laser = 40, energy = 40, bomb = 40, bio = 15, rad = 10)
-	acid_resistance = 1.5
-
-/obj/item/clothing/suit/armor/vest/scp/commandervest
-	name = "armored vest"
-	desc = "A synthetic armor vest. This one is for Commander."
-	icon_state = "don_sec"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO
-	cold_protection = UPPER_TORSO | LOWER_TORSO
-	armor = list(melee = 45, bullet = 65, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
