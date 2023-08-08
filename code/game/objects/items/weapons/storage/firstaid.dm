@@ -433,11 +433,11 @@
 
 	startswith = list(
 			/obj/item/reagent_containers/pill/inaprovaline = 6,
-			/obj/item/reagent_containers/pill/oxycodone = 6,
+			/obj/item/reagent_containers/pill/paracetamol = 4,
 			/obj/item/reagent_containers/pill/dexalin_plus = 2,
-			/obj/item/reagent_containers/pill/paracetamol = 2,
 			/obj/item/reagent_containers/pill/dylovene = 2,
 			/obj/item/reagent_containers/pill/alkysine = 2,
+			/obj/item/reagent_containers/pill/oxycodone = 1,
 			/obj/item/reagent_containers/pill/arithrazine
 		)
 	wrapper_color = "#d06d33"
