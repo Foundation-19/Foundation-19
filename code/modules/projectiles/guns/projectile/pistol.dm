@@ -150,6 +150,7 @@
 	magazine_type = /obj/item/ammo_magazine/pistol/small
 	allowed_magazines = /obj/item/ammo_magazine/pistol/small
 	var/obj/item/silencer/silencer
+	item_flags = ITEM_FLAG_CAN_HIDE_IN_SHOES
 
 /obj/item/gun/projectile/pistol/holdout/attack_hand(mob/user)
 	if(user.get_inactive_hand() == src)
