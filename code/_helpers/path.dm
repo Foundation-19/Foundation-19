@@ -432,12 +432,17 @@
 				return
 
 		if(STAIR_TURF)
-			var/obj/structure/stairs/stair = current_turf.get_first_type(/obj/structure/stairs)
+			var/obj/structure/stairs/stair = locate(/obj/structure/stairs) in original_turf
 			var/turf/above = GetAbove(current_turf)
 			current_turf = get_step(above, stair.dir)
 
 			if(!current_turf || !above.CanZPass(original_turf, UP) || !current_turf.Enter(caller, stair) || !CAN_STEP(original_turf, current_turf))
 				return
+
+			//This fuckery is used to handle the diagonal movement upwards stairs. If removed, unwind() will have a stroke and return garbled paths when moving up stairs.
+			var/datum/jps_node/midnode = new(above, parent_node, steps_taken)
+			open.insert(midnode)
+			parent_node = midnode
 
 		if(FALSE)
 			return
@@ -520,7 +525,7 @@
 	if(isopenturf(src))
 		return OPEN_SPACE_TURF
 
-	if(get_first_type(/obj/structure/stairs))
+	if(locate(/obj/structure/stairs) in contents)
 		return STAIR_TURF
 
 	return FALSE
