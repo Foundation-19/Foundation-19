@@ -97,7 +97,7 @@
 
 /obj/item/storage/box/survival
 	name = "site survival kit"
-	desc = "A survival box containing a variety of supplies necessary to ensure survival. This one possesses oxygen, as shown by the red panel and two striped yellow lines."
+	desc = "A survival box containing a variety of supplies. This one contains oxygen, as shown by the red panel and two striped yellow lines."
 	icon_state = "survival"
 	startswith = list(/obj/item/clothing/mask/breath/scba = 1,
 					/obj/item/tank/emergency/oxygen = 1,

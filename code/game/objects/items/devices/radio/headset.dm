@@ -192,15 +192,15 @@
 	frequency = HAIL_FREQ
 	ks1type = /obj/item/device/encryptionkey/merchant
 
-/obj/item/device/radio/headset/heads/captain
+/obj/item/device/radio/headset/heads/sitedirector
 	name = "site director's headset"
 	desc = "The headset of the facility director."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/captain
 
-/obj/item/device/radio/headset/heads/captain/alt
-	name = "captain's bowman headset"
+/obj/item/device/radio/headset/heads/sitedirector/alt
+	name = "site director's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 	max_keys = 3

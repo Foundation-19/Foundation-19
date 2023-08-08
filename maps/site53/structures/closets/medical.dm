@@ -1,7 +1,3 @@
-/*
- * Torch -/- Medical
- */
-
 /obj/structure/closet/secure_closet/site53/cmo
 	name = "chief medical officer's locker"
 	req_access = list(ACCESS_MEDICAL_LVL5)

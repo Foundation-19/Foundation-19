@@ -455,7 +455,7 @@
 
 /obj/item/sign/medipolma
 	name = "medical diploma"
-	desc = "A fancy print laminated paper that verifies that the bearer is actually a Doctor of Medicine, graduating from an exemplary medical school, but it additionally features some interesting latin inscriptions."
+	desc = "A fancy print laminated paper with latin inscripted borders that certificate the holder is actually a Doctor of Medicine, awarded this for graduating the highest of their class."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "goldenplaque"
 	sign_state = "goldenplaque"

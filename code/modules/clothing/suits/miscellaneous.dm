@@ -10,7 +10,7 @@
  */
 /obj/item/clothing/suit/bluetag
 	name = "blue laser tag armour"
-	desc = "Blue Pride, World Wide."
+	desc = "Blue Pride, Worldwide."
 	icon_state = "bluetag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO

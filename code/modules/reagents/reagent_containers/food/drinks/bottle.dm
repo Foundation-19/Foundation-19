@@ -339,7 +339,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/herbal
 	name = "Liqueur d'Herbe"
-	desc = "A bottle of the seventh-finest herbal liquor sold popularly. The back label has a load of guff about the monks who traditionally made this particular variety."
+	desc = "A bottle of the seventh-finest herbal liquor sold since before the invention of alcohol. The back label has a load of guff about the monks who traditionally made this particular variety."
 	icon_state = "herbal"
 	center_of_mass = "x=16;y=6"
 
