@@ -10,11 +10,14 @@ SUBSYSTEM_DEF(pathfinder)
 	var/list/datum/pathfind/currentrun = list()
 	var/static/space_type_cache
 
-	/// List of turfs modified for the purpose of debug_print()
+	/// List of turfs modified for the purpose of debug
 	var/list/debugged_turfs = list()
+	/// Overlay we use for debug path
+	var/image/path_overlay
 
 /datum/controller/subsystem/pathfinder/Initialize()
 	space_type_cache = typecacheof(/turf/space)
+	path_overlay = new('icons/misc/debug_group.dmi', "cyan")
 	. = ..()
 
 /datum/controller/subsystem/pathfinder/stat_entry(msg)
@@ -67,21 +70,18 @@ SUBSYSTEM_DEF(pathfinder)
 		to_chat(usr, SPAN_WARNING("Your marked datum is not a turf!"))
 		return
 
-	var/image/path_overlay = new('icons/misc/debug_group.dmi', "cyan")
 	var/path = list()
-	var/turf/end_turf = current
 
 	if(LAZYLEN(SSpathfinder.debugged_turfs))
 		for(var/turf/T in SSpathfinder.debugged_turfs)
-			T.overlays = initial(T.overlays)
+			T.cut_overlay(SSpathfinder.path_overlay)
 		LAZYCLEARLIST(SSpathfinder.debugged_turfs)
-
-	path = get_path_to(usr, end_turf, 120)
+	LAZYINITLIST(SSpathfinder.debugged_turfs)
+	path = get_path_to(usr, current, 120)
 	if(LAZYLEN(path))
 		for(var/turf/T in path)
 			LAZYADD(SSpathfinder.debugged_turfs, T)
-			T.overlays.Cut()
-			T.add_overlay(path_overlay)
+			T.add_overlay(SSpathfinder.path_overlay)
 	else
 		to_chat(usr, SPAN_NOTICE("No path found!"))
 		return
