@@ -3274,6 +3274,26 @@
 /obj/item/storage/pill_bottle/stabiliser,
 /obj/item/storage/pill_bottle/stabiliser,
 /obj/item/storage/pill_bottle/stabiliser,
+/obj/item/clothing/accessory/armband/med{
+	desc = "An armband, worn by D-Class personnel who are given the responsibility to bring in and stabilize patients. This one is white.";
+	name = "medical transportation armband"
+	},
+/obj/item/clothing/accessory/armband/med{
+	desc = "An armband, worn by D-Class personnel who are given the responsibility to bring in and stabilize patients. This one is white.";
+	name = "medical transportation armband"
+	},
+/obj/item/clothing/accessory/armband/med{
+	desc = "An armband, worn by D-Class personnel who are given the responsibility to bring in and stabilize patients. This one is white.";
+	name = "medical transportation armband"
+	},
+/obj/item/clothing/accessory/armband/medblue{
+	desc = "An armband, worn by trained medical professionals to display which department they're assigned to. This one is white and blue.";
+	name = "medical armband"
+	},
+/obj/item/clothing/accessory/armband/medblue{
+	desc = "An armband, worn by trained medical professionals to display which department they're assigned to. This one is white and blue.";
+	name = "medical armband"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
 "hB" = (
@@ -8408,11 +8428,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
-"tg" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/pill_bottle/stabiliser,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/cells)
 "th" = (
 /obj/item/modular_computer/console/preset/library{
 	dir = 4;
@@ -10440,11 +10455,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
-"xK" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/surgery,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/llcz/dclass/medicalpost/morgue)
 "xL" = (
 /turf/simulated/floor/carpet/green,
 /area/site53/llcz/dclass/luxurylibrary)
@@ -14642,6 +14652,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
+"Iz" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/pill_bottle/stabiliser,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "IB" = (
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -16429,6 +16444,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment)
+"MO" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/surgery,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "MP" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/machinery/light,
@@ -26322,7 +26342,7 @@ ua
 ua
 ua
 Zr
-xK
+MO
 Xw
 NR
 cR
@@ -31483,7 +31503,7 @@ yl
 tj
 yl
 Bc
-tg
+Iz
 tj
 vN
 vP
@@ -32008,7 +32028,7 @@ yl
 tj
 yl
 vv
-tg
+Iz
 tj
 vY
 wa

@@ -460,6 +460,26 @@
 	icon_state = "goldenplaque"
 	sign_state = "goldenplaque"
 	var/claimant
+	var/reverse = 0 //if resulting object faces opposite its dir (like light fixtures)
+
+/obj/item/sign/medipolma/attackby(obj/item/W as obj, mob/user as mob)
+	if(isWrench(W))
+		qdel(src)
+		return
+	..()
+
+/obj/item/sign/medipolma/proc/try_build(turf/on_wall)
+	if (get_dist(on_wall,usr)>1)
+		return
+
+	var/ndir
+	if(reverse)
+		ndir = get_dir(usr,on_wall)
+	else
+		ndir = get_dir(on_wall,usr)
+
+	if (!(ndir in GLOB.cardinal))
+		return
 
 /obj/item/sign/medipolma/attack_self(mob/user)
 	if(!claimant)
