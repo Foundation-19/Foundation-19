@@ -1460,9 +1460,6 @@
 /obj/item/device/flash,
 /obj/item/device/flash,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "di" = (
@@ -2799,10 +2796,11 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/trauma,
 /obj/item/storage/firstaid/trauma,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost)
 "gh" = (
@@ -3273,6 +3271,12 @@
 /area/site53/uhcz/scp8containment)
 "hA" = (
 /obj/structure/closet,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
 "hB" = (
@@ -9949,6 +9953,9 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
 "wF" = (
@@ -11208,6 +11215,9 @@
 /area/site53/llcz/dclass/briefing)
 "zT" = (
 /obj/structure/table/reinforced,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "zU" = (
@@ -12389,6 +12399,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
+"CT" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/pill_bottle/stabiliser,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "CU" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/bodybags,
@@ -14656,6 +14671,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/prep)
 "IF" = (
@@ -18763,9 +18782,6 @@
 /obj/item/device/flash,
 /obj/item/device/flash,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "SR" = (
@@ -19060,12 +19076,18 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
 /obj/item/storage/firstaid/adv,
 /obj/item/defibrillator/loaded,
 /obj/structure/closet/secure_closet/medical_wall,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
+/obj/item/storage/pill_bottle/stabiliser,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost/storage)
 "TE" = (
@@ -20729,13 +20751,6 @@
 "XQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/b_green/mono,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
-/obj/item/storage/pill_bottle/stabilise,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "XR" = (
@@ -31472,7 +31487,7 @@ yl
 tj
 yl
 Bc
-uA
+CT
 tj
 vN
 vP
@@ -31997,7 +32012,7 @@ yl
 tj
 yl
 vv
-uA
+CT
 tj
 vY
 wa
