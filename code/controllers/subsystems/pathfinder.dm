@@ -46,9 +46,11 @@ SUBSYSTEM_DEF(pathfinder)
 		return TRUE
 	return FALSE
 
+//This is a debug tool which can help you ensure that pathfiding is working correctly. To use, simply mark a turf you want to pathfind to, spawn the pathfinder at the start, and simply click on the pathfinder.
+
 /obj/pathfinder
-	name = "pathfinder"
-	desc = "debug only!"
+	name = "Pathfinder"
+	desc = "This is for debugging pathfinding! If you dont understand what that means then you probably shouldent be touching this."
 	icon = 'icons/obj/projector.dmi'
 	icon_state = "projector1"
 
@@ -65,6 +67,25 @@ SUBSYSTEM_DEF(pathfinder)
 			T.cut_overlay(path_overlay)
 	return ..()
 
+/obj/pathfinder/attack_hand(mob/living/user)
+	var/current = user.client.holder.marked_datum()
+	if(!current)
+		to_chat(user, SPAN_WARNING("You have no marked datum to pathfind to!"))
+		return
+	if(!isturf(current))
+		to_chat(user, SPAN_WARNING("Your marked datum is not a turf!"))
+		return
+	start_pathfind(current)
+	if(!LAZYLEN(path))
+		to_chat(user, SPAN_NOTICE("No path found!"))
+		return
+	to_chat(user, SPAN_NOTICE("+----PATH----+"))
+	var/index = 0
+	for(var/item in path)
+		to_chat(user, SPAN_NOTICE("| [index] - [item ? item : "null"]"))
+		index++
+	to_chat(user, SPAN_NOTICE("+--PATH-END--+"))
+
 /obj/pathfinder/proc/start_pathfind(atom/target)
 	var/turf/end_turf = get_turf(target)
 	if(LAZYLEN(path))
@@ -72,10 +93,7 @@ SUBSYSTEM_DEF(pathfinder)
 			T.cut_overlay(path_overlay)
 		LAZYCLEARLIST(path)
 
-	path = get_path_to(src, end_turf)
-	if(!LAZYLEN(path))
-		return "No Path Found!"
-	else
+	path = get_path_to(src, end_turf, 0)
+	if(LAZYLEN(path))
 		for(var/turf/T in path)
 			T.add_overlay(path_overlay)
-	return path
