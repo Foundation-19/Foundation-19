@@ -226,7 +226,7 @@
 
 /obj/item/clothing/under/solgov/utility/fleet
 	name = "utility coveralls"
-	desc = "The utility uniform of the SCP Foundation, made from an insulated material."
+	desc = "The utility uniform of the SCP Foundation, made from a breathable material."
 	icon_state = "navyutility"
 	item_state = "jensensuit"
 	worn_state = "navyutility"
