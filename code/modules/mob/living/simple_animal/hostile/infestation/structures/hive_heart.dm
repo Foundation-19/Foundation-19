@@ -149,6 +149,10 @@
 			return
 
 		var/turf/simulated/floor/F = pick(valid_turfs)
+		// Exoplanet turfs have their own silly update icon procs, so we just replace them entirely
+		if(istype(F, /turf/simulated/floor/exoplanet))
+			F.ChangeTurf(/turf/simulated/floor/exoplanet/flesh)
+			continue
 		F.set_flooring(decls_repository.get_decl(/decl/flooring/flesh/infested))
 
 /obj/effect/hive_heart/proc/AbilityEffect(sound_volume = 75)
