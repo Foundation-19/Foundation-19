@@ -161,7 +161,7 @@
 	if(!start || !get_turf(end))
 		//stack_trace("Invalid A* start or destination") // logging shit we don't have
 		return FALSE
-	if(start == end )
+	if(start == end)
 		return FALSE
 	if(max_distance && (max_distance < get_dist(start, end))) //if start turf is farther than max_distance from end turf, no need to do anything
 		return FALSE
@@ -469,10 +469,6 @@
  * * no_id: When true, doors with public access will count as impassible
 */
 /turf/proc/LinkBlockedWithAccess(turf/destination_turf, atom/movable/caller, ID, no_id = FALSE)
-	if(isopenturf(src)) //Prevents us from pathfinding past open turfs. We cant use canpathingpass because we need to check if we are moving FROM an open turf and not TO an open turf to still make z-level pathfinding viable.
-		if(z == destination_turf.z)
-			return TRUE
-
 	if(destination_turf.x != x && destination_turf.y != y) //diagonal
 		var/in_dir = get_dir(destination_turf,src) // eg. northwest (1+8) = 9 (00001001)
 		var/first_step_direction_a = in_dir & 3 // eg. north   (1+8)&3 (0000 0011) = 1 (0000 0001)
@@ -484,7 +480,7 @@
 			if(!way_blocked)
 				return FALSE
 		return TRUE
-	var/actual_dir = get_dir(src, destination_turf)
+	var/actual_dir = get_dir_multiz(src, destination_turf)
 
 	/// These are generally cheaper than looping contents so they go first
 	switch(destination_turf.pathing_pass_method)
@@ -504,8 +500,13 @@
 		if(!border.CanPathingPass(ID, actual_dir, no_id = no_id))
 			return TRUE
 
+	//TODO: integrate this in a better way
+	if(isopenturf(src) && CanZPass(src, DOWN)) //Prevents us from pathfinding past open turfs. We cant use canpathingpass because we need to check if we are moving FROM an open turf and not TO an open turf to still make z-level pathfinding viable.
+		if(z == destination_turf.z)
+			return TRUE
+
 	// Destination blockers check
-	var/reverse_dir = get_dir(destination_turf, src)
+	var/reverse_dir = get_dir_multiz(destination_turf, src)
 	for(var/obj/iter_object in destination_turf)
 		// This is an optimization because of the massive call count of this code
 		if(!iter_object.density && iter_object.can_astar_pass == CANPATHINGPASS_DENSITY)

@@ -10,6 +10,9 @@ SUBSYSTEM_DEF(pathfinder)
 	var/list/datum/pathfind/currentrun = list()
 	var/static/space_type_cache
 
+	/// List of turfs modified for the purpose of debug_print()
+	var/list/debugged_turfs = list()
+
 /datum/controller/subsystem/pathfinder/Initialize()
 	space_type_cache = typecacheof(/turf/space)
 	. = ..()
@@ -46,54 +49,46 @@ SUBSYSTEM_DEF(pathfinder)
 		return TRUE
 	return FALSE
 
-//This is a debug tool which can help you ensure that pathfiding is working correctly. To use, simply mark a turf you want to pathfind to, spawn the pathfinder at the start, and simply click on the pathfinder.
+//This is a debug tool which can help you ensure that pathfinding is working correctly. To use, simply mark a turf you want to pathfind to, spawn the pathfinder at the start, and simply click on the pathfinder.
 
-/obj/pathfinder
-	name = "Pathfinder"
-	desc = "This is for debugging pathfinding! If you dont understand what that means then you probably shouldent be touching this."
-	icon = 'icons/obj/projector.dmi'
-	icon_state = "projector1"
+/client/verb/pathfind()
+	set name = "Pathfind Debug"
+	set category = "Debug"
+	set desc = "Pathfind to a marked datum with visual debug."
 
-	var/list/path = list()
-	var/image/path_overlay
+	if (!check_rights(R_DEBUG, C = usr?.client))
+		return
 
-/obj/pathfinder/New(loc, ...)
-	. = ..()
-	path_overlay = new('icons/misc/debug_group.dmi', "red")
-
-/obj/pathfinder/Destroy()
-	if(LAZYLEN(path))
-		for(var/turf/T in path)
-			T.cut_overlay(path_overlay)
-	return ..()
-
-/obj/pathfinder/attack_hand(mob/living/user)
-	var/current = user.client.holder.marked_datum()
+	var/current = holder.marked_datum()
 	if(!current)
-		to_chat(user, SPAN_WARNING("You have no marked datum to pathfind to!"))
+		to_chat(usr, SPAN_WARNING("You have no marked datum to pathfind to!"))
 		return
 	if(!isturf(current))
-		to_chat(user, SPAN_WARNING("Your marked datum is not a turf!"))
+		to_chat(usr, SPAN_WARNING("Your marked datum is not a turf!"))
 		return
-	start_pathfind(current)
-	if(!LAZYLEN(path))
-		to_chat(user, SPAN_NOTICE("No path found!"))
+
+	var/image/path_overlay = new('icons/misc/debug_group.dmi', "cyan")
+	var/path = list()
+	var/turf/end_turf = current
+
+	if(LAZYLEN(SSpathfinder.debugged_turfs))
+		for(var/turf/T in SSpathfinder.debugged_turfs)
+			T.overlays = initial(T.overlays)
+		LAZYCLEARLIST(SSpathfinder.debugged_turfs)
+
+	path = get_path_to(usr, end_turf, 120)
+	if(LAZYLEN(path))
+		for(var/turf/T in path)
+			LAZYADD(SSpathfinder.debugged_turfs, T)
+			T.overlays.Cut()
+			T.add_overlay(path_overlay)
+	else
+		to_chat(usr, SPAN_NOTICE("No path found!"))
 		return
-	to_chat(user, SPAN_NOTICE("+----PATH----+"))
+
+	to_chat(usr, SPAN_NOTICE("+----PATH----+"))
 	var/index = 0
 	for(var/item in path)
-		to_chat(user, SPAN_NOTICE("| [index] - [item ? item : "null"]"))
+		to_chat(usr, SPAN_NOTICE("| [index] - [item ? item : "null"]"))
 		index++
-	to_chat(user, SPAN_NOTICE("+--PATH-END--+"))
-
-/obj/pathfinder/proc/start_pathfind(atom/target)
-	var/turf/end_turf = get_turf(target)
-	if(LAZYLEN(path))
-		for(var/turf/T in path)
-			T.cut_overlay(path_overlay)
-		LAZYCLEARLIST(path)
-
-	path = get_path_to(src, end_turf, 0)
-	if(LAZYLEN(path))
-		for(var/turf/T in path)
-			T.add_overlay(path_overlay)
+	to_chat(usr, SPAN_NOTICE("+--PATH-END--+"))
