@@ -290,26 +290,6 @@
 	desc = "Your biological functions have halted. You could live forever this way, but it's pretty boring."
 	icon_state = "stasis"
 
-/datum/status_effect/his_wrath //does minor damage over time unless holding His Grace
-	id = "his_wrath"
-	duration = -1
-	tick_interval = 4
-	alert_type = /atom/movable/screen/alert/status_effect/his_wrath
-
-/atom/movable/screen/alert/status_effect/his_wrath
-	name = "His Wrath"
-	desc = "You fled from His Grace instead of feeding Him, and now you suffer."
-	icon_state = "his_grace"
-	alerttooltipstyle = "hisgrace"
-
-/datum/status_effect/his_wrath/tick()
-	for(var/obj/item/his_grace/HG in owner.held_items)
-		qdel(src)
-		return
-	owner.adjustBruteLoss(0.1)
-	owner.adjustFireLoss(0.1)
-	owner.adjustToxLoss(0.2, TRUE, TRUE)
-
 /datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
 	id = "cult_ghost"
 	duration = -1
@@ -668,29 +648,6 @@
 	name = "Shaky Hands"
 	desc = "You've been zapped with something and your hands can't stop shaking! You can't seem to hold on to anything."
 	icon_state = "convulsing"
-
-/datum/status_effect/dna_melt
-	id = "dna_melt"
-	duration = 600
-	status_type = STATUS_EFFECT_REPLACE
-	alert_type = /atom/movable/screen/alert/status_effect/dna_melt
-	var/kill_either_way = FALSE //no amount of removing mutations is gonna save you now
-
-/datum/status_effect/dna_melt/on_creation(mob/living/new_owner, set_duration)
-	. = ..()
-	to_chat(new_owner, span_boldwarning("My body can't handle the mutations! I need to get my mutations removed fast!"))
-
-/datum/status_effect/dna_melt/on_remove()
-	if(!ishuman(owner))
-		owner.gib() //fuck you in particular
-		return
-	var/mob/living/carbon/human/H = owner
-	INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, something_horrible), kill_either_way)
-
-/atom/movable/screen/alert/status_effect/dna_melt
-	name = "Genetic Breakdown"
-	desc = "I don't feel so good. Your body can't handle the mutations! You have one minute to remove your mutations, or you will be met with a horrible fate."
-	icon_state = "dna_melt"
 
 /datum/status_effect/go_away
 	id = "go_away"

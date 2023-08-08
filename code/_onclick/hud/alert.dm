@@ -109,16 +109,6 @@
 	var/click_master = TRUE
 
 
-/atom/movable/screen/alert/MouseEntered(location,control,params)
-	. = ..()
-	if(!QDELETED(src))
-		openToolTip(usr,src,params,title = name,content = desc,theme = alerttooltipstyle)
-
-
-/atom/movable/screen/alert/MouseExited()
-	closeToolTip(usr)
-
-
 //Gas alerts
 // Gas alerts are continuously thrown/cleared by:
 // * /obj/item/organ/internal/lungs/proc/check_breath()
@@ -126,56 +116,48 @@
 // * /mob/living/carbon/human/check_breath()
 // * /datum/element/atmos_requirements/proc/on_non_stasis_life()
 // * /mob/living/simple_animal/handle_environment()
+// ...
+// no they aren't lol TODO
 
 /atom/movable/screen/alert/not_enough_oxy
 	name = "Choking (No O2)"
 	desc = "You're not getting enough oxygen. Find some good air before you pass out! The box in your backpack has an oxygen tank and breath mask in it."
-	icon_state = ALERT_NOT_ENOUGH_OXYGEN
+	icon_state = "not_enough_oxy"
 
 /atom/movable/screen/alert/too_much_oxy
 	name = "Choking (O2)"
 	desc = "There's too much oxygen in the air, and you're breathing it in! Find some good air before you pass out!"
-	icon_state = ALERT_TOO_MUCH_OXYGEN
+	icon_state = "too_much_oxy"
 
 /atom/movable/screen/alert/not_enough_nitro
 	name = "Choking (No N2)"
 	desc = "You're not getting enough nitrogen. Find some good air before you pass out!"
-	icon_state = ALERT_NOT_ENOUGH_NITRO
+	icon_state = "not_enough_nitro"
 
 /atom/movable/screen/alert/too_much_nitro
 	name = "Choking (N2)"
 	desc = "There's too much nitrogen in the air, and you're breathing it in! Find some good air before you pass out!"
-	icon_state = ALERT_TOO_MUCH_NITRO
+	icon_state = "too_much_nitro"
 
 /atom/movable/screen/alert/not_enough_co2
 	name = "Choking (No CO2)"
 	desc = "You're not getting enough carbon dioxide. Find some good air before you pass out!"
-	icon_state = ALERT_NOT_ENOUGH_CO2
+	icon_state = "not_enough_co2"
 
 /atom/movable/screen/alert/too_much_co2
 	name = "Choking (CO2)"
 	desc = "There's too much carbon dioxide in the air, and you're breathing it in! Find some good air before you pass out!"
-	icon_state = ALERT_TOO_MUCH_CO2
-
-/atom/movable/screen/alert/not_enough_plas
-	name = "Choking (No Plasma)"
-	desc = "You're not getting enough plasma. Find some good air before you pass out! The box in your backpack has a spare plasma tank."
-	icon_state = ALERT_NOT_ENOUGH_PLASMA
-
-/atom/movable/screen/alert/too_much_plas
-	name = "Choking (Plasma)"
-	desc = "There's highly flammable, toxic plasma in the air and you're breathing it in. Find some fresh air. The box in your backpack has an oxygen tank and breath mask in it."
-	icon_state = ALERT_TOO_MUCH_PLASMA
+	icon_state = "too_much_co2"
 
 /atom/movable/screen/alert/not_enough_n2o
 	name = "Choking (No N2O)"
 	desc = "You're not getting enough N2O. Find some good air before you pass out!"
-	icon_state = ALERT_NOT_ENOUGH_N2O
+	icon_state = "not_enough_n2o"
 
 /atom/movable/screen/alert/too_much_n2o
 	name = "Choking (N2O)"
 	desc = "There's sleeping gas in the air and you're breathing it in. Find some fresh air. The box in your backpack has an oxygen tank and breath mask in it."
-	icon_state = ALERT_TOO_MUCH_N2O
+	icon_state = "too_much_n2o"
 
 //End gas alerts
 
@@ -233,13 +215,13 @@
 /atom/movable/screen/alert/hypnosis
 	name = "Hypnosis"
 	desc = "Something's hypnotizing you, but you're not really sure about what."
-	icon_state = ALERT_HYPNOSIS
+	icon_state = "hypnosis"
 	var/phrase
 
 /atom/movable/screen/alert/mind_control
 	name = "Mind Control"
 	desc = "Your mind has been hijacked! Click to view the mind control command."
-	icon_state = ALERT_MIND_CONTROL
+	icon_state = "mind_control"
 	var/command
 
 /atom/movable/screen/alert/mind_control/Click()
@@ -263,32 +245,9 @@
 
 	return carbon_owner.help_shake_act(carbon_owner)
 
-/atom/movable/screen/alert/negative
-	name = "Negative Gravity"
-	desc = "You're getting pulled upwards. While you won't have to worry about falling down anymore, you may accidentally fall upwards!"
-	icon_state = "negative"
-
-/atom/movable/screen/alert/weightless
-	name = "Weightless"
-	desc = "Gravity has ceased affecting you, and you're floating around aimlessly. You'll need something large and heavy, like a \
-wall or lattice, to push yourself off if you want to move. A jetpack would enable free range of motion. A pair of \
-magboots would let you walk around normally on the floor. Barring those, you can throw things, use a fire extinguisher, \
-or shoot a gun to move around via Newton's 3rd Law of Motion."
-	icon_state = "weightless"
-
-/atom/movable/screen/alert/highgravity
-	name = "High Gravity"
-	desc = "You're getting crushed by high gravity, picking up items and movement will be slowed."
-	icon_state = "paralysis"
-
-/atom/movable/screen/alert/veryhighgravity
-	name = "Crushing Gravity"
-	desc = "You're getting crushed by high gravity, picking up items and movement will be slowed. You'll also accumulate brute damage!"
-	icon_state = "paralysis"
-
 /atom/movable/screen/alert/fire
 	name = "On Fire"
-	desc = "You're on fire. Stop, drop and roll to put the fire out or move to a vacuum area."
+	desc = "You're on fire. Stop, drop and roll to put the fire out."
 	icon_state = "fire"
 
 /atom/movable/screen/alert/fire/Click()
@@ -464,35 +423,6 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		living_owner.say("#[last_whisper]")
 	living_owner.succumb(whispered = length(last_whisper) > 0)
 
-//ALIENS
-
-/atom/movable/screen/alert/alien_plas
-	name = "Plasma"
-	desc = "There's flammable plasma in the air. If it lights up, you'll be toast."
-	icon_state = ALERT_XENO_PLASMA
-	alerttooltipstyle = "alien"
-
-/atom/movable/screen/alert/alien_fire
-// This alert is temporarily gonna be thrown for all hot air but one day it will be used for literally being on fire
-	name = "Too Hot"
-	desc = "It's too hot! Flee to space or at least away from the flames. Standing on weeds will heal you."
-	icon_state = ALERT_XENO_FIRE
-	alerttooltipstyle = "alien"
-
-/atom/movable/screen/alert/alien_vulnerable
-	name = "Severed Matriarchy"
-	desc = "Your queen has been killed, you will suffer movement penalties and loss of hivemind. A new queen cannot be made until you recover."
-	icon_state = ALERT_XENO_NOQUEEN
-	alerttooltipstyle = "alien"
-
-//BLOBS
-
-/atom/movable/screen/alert/nofactory
-	name = "No Factory"
-	desc = "You have no factory, and are slowly dying!"
-	icon_state = "blobbernaut_nofactory"
-	alerttooltipstyle = "blob"
-
 // BLOODCULT
 
 /atom/movable/screen/alert/bloodsense
@@ -603,27 +533,6 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	var/matrix/final = matrix(transform)
 	final.Turn(difference)
 	animate(src, transform = final, time = 5, loop = 0)
-
-
-//GUARDIANS
-
-/atom/movable/screen/alert/cancharge
-	name = "Charge Ready"
-	desc = "You are ready to charge at a location!"
-	icon_state = "guardian_charge"
-	alerttooltipstyle = "parasite"
-
-/atom/movable/screen/alert/canstealth
-	name = "Stealth Ready"
-	desc = "You are ready to enter stealth!"
-	icon_state = "guardian_canstealth"
-	alerttooltipstyle = "parasite"
-
-/atom/movable/screen/alert/instealth
-	name = "In Stealth"
-	desc = "You are in stealth and your next attack will do bonus damage!"
-	icon_state = "guardian_instealth"
-	alerttooltipstyle = "parasite"
 
 //SILICONS
 
@@ -849,12 +758,12 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 /atom/movable/screen/alert/shoes/untied
 	name = "Untied Shoes"
 	desc = "Your shoes are untied! Click the alert or your shoes to tie them."
-	icon_state = ALERT_SHOES_KNOT
+	icon_state = "shoealert"
 
 /atom/movable/screen/alert/shoes/knotted
 	name = "Knotted Shoes"
 	desc = "Someone tied your shoelaces together! Click the alert or your shoes to undo the knot."
-	icon_state = ALERT_SHOES_KNOT
+	icon_state = "shoealert"
 
 /atom/movable/screen/alert/shoes/Click()
 	. = ..()
