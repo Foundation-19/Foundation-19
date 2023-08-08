@@ -1,0 +1,4 @@
+author: KirovClassBattlecruiser
+delete-after: true
+changes:
+  - rscdel: deleted empty files

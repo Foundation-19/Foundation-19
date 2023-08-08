@@ -1,0 +1,4 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - bugfix: Stacks of items are no longer duplicated with fractional inputs.
