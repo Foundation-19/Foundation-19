@@ -1,8 +1,0 @@
-author: casualspacestation14enjoyer
-delete-after: true
-changes:
-  - rscadd: Ghosts now have a button for becoming an SCP, the days of navigating the
-      verb tabs is now OVER!
-  - rscdel: The derelict ship shit in character prefs is now gone.
-  - admin: Most admin verbs using the standard BYOND input() are now using TGUI inputs
-      for searching and easier application.
