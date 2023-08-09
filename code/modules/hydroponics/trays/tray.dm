@@ -1,6 +1,6 @@
 /obj/machinery/portable_atmospherics/hydroponics
 	name = "hydroponics tray"
-	desc = "A mechanical basin designed to nurture plants. It has various useful sensors and has slottings for it's flexible polycarbonate lid."
+	desc = "A mechanical basin designed to nurture plants. It has various useful sensors and has slottings for its flexible polycarbonate lid."
 	icon = 'icons/obj/hydroponics_machines.dmi'
 	icon_state = "hydrotray3"
 	density = TRUE

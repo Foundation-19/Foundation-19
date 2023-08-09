@@ -2614,7 +2614,6 @@
 	id_tag = "CDCZ Officer Access";
 	name = "CDCZ Officer Access"
 	},
-/obj/effect/paint_stripe/gray,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "fK" = (
