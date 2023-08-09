@@ -74,12 +74,12 @@
 /proc/get_dir_multiz(turf/us, turf/them)
 	us = get_turf(us)
 	them = get_turf(them)
+	var/dir = NONE
 	if(!us || !them)
 		return NONE
 	if(us.z == them.z)
 		return get_dir(us, them)
 	else
-		var/dir = NONE
 		if(us.z < them.z)
 			dir = UP
 		else if(us.z > them.z)
