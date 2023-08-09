@@ -235,7 +235,8 @@
 		var/dir_goal = get_dir_multiz(iter_turf, unwind_node.previous_node.tile)
 		for(var/i = 1 to unwind_node.jumps)
 			iter_turf = get_step_multiz(iter_turf, dir_goal)
-			path.Add(iter_turf)
+			if(!isopenturf(iter_turf) || iter_turf.z != unwind_node.tile.z || !(locate(/obj/structure/stairs) in GetBelow(iter_turf))) //Removes midpoints from stair travel
+				path.Add(iter_turf)
 		unwind_node = unwind_node.previous_node
 
 /datum/pathfind/proc/diagonal_movement_safety()
