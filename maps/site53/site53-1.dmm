@@ -2284,11 +2284,9 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/structure/closet{
-	name = "Coroner"
-	},
 /obj/item/towel/random,
 /obj/item/towel/random,
+/obj/structure/closet,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/shower)
 "eZ" = (
@@ -7916,11 +7914,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/reeducation)
 "rK" = (
-/obj/structure/closet{
-	name = "Coroner"
-	},
 /obj/item/towel/random,
 /obj/item/towel/random,
+/obj/structure/closet,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/shower)
 "rL" = (
