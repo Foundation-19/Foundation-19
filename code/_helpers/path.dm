@@ -387,28 +387,28 @@
 			if(NORTHWEST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
 					interesting = TRUE
-				else if(canTurfChangeZ(get_step_multiz(current_turf, EAST)) || canTurfChangeZ(get_step_multiz(current_turf, SOUTH))) // Z-Level pathfinding check
+				else if(canTurfChangeZ(get_step_multiz(current_turf, WEST)) || canTurfChangeZ(get_step_multiz(current_turf, NORTH))) // Z-Level pathfinding check
 					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, WEST) || lateral_scan_spec(current_turf, NORTH))
 			if(NORTHEAST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
 					interesting = TRUE
-				else if(canTurfChangeZ(get_step_multiz(current_turf, WEST)) || canTurfChangeZ(get_step_multiz(current_turf, SOUTH))) // Z-Level pathfinding check
+				else if(canTurfChangeZ(get_step_multiz(current_turf, EAST)) || canTurfChangeZ(get_step_multiz(current_turf, NORTH))) // Z-Level pathfinding check
 					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, EAST) || lateral_scan_spec(current_turf, NORTH))
 			if(SOUTHWEST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST))
 					interesting = TRUE
-				else if(canTurfChangeZ(get_step_multiz(current_turf, EAST)) || canTurfChangeZ(get_step_multiz(current_turf, NORTH))) // Z-Level pathfinding check
+				else if(canTurfChangeZ(get_step_multiz(current_turf, SOUTH)) || canTurfChangeZ(get_step_multiz(current_turf, WEST))) // Z-Level pathfinding check
 					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, WEST))
 			if(SOUTHEAST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST))
 					interesting = TRUE
-				else if(canTurfChangeZ(get_step_multiz(current_turf, WEST)) || canTurfChangeZ(get_step_multiz(current_turf, NORTH))) // Z-Level pathfinding check
+				else if(canTurfChangeZ(get_step_multiz(current_turf, SOUTH)) || canTurfChangeZ(get_step_multiz(current_turf, EAST))) // Z-Level pathfinding check
 					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, EAST))
