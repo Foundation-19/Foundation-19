@@ -194,12 +194,12 @@
 	color = reagents.get_color()
 
 /obj/item/reagent_containers/pill/arithrazine
-	name = "Arithrazine (7u)"
+	name = "Arithrazine (5u)"
 	desc = "Used to treat organ damage, causes brute damage as a side effect."
 	icon_state = "pill2"
 /obj/item/reagent_containers/pill/arithrazine/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/arithrazine, 7)
+	reagents.add_reagent(/datum/reagent/medicine/arithrazine, 5)
 	color = reagents.get_color()
 
 /obj/item/reagent_containers/pill/alkysine
