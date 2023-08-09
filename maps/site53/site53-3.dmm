@@ -5713,9 +5713,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
 "rP" = (
-/obj/structure/stairs/west,
 /obj/machinery/light{
-	dir = 8
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6701,9 +6700,6 @@
 	},
 /obj/structure/table/standard,
 /obj/item/book/manual/scp/medsop,
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/glasses/hud/health,
@@ -6720,6 +6716,7 @@
 /obj/item/device/flashlight{
 	pixel_y = 15
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "yz" = (
@@ -32540,7 +32537,7 @@ dA
 dA
 dA
 oV
-rP
+rQ
 rQ
 oV
 dA
@@ -36406,7 +36403,7 @@ qK
 qK
 qK
 oV
-qK
+rP
 qK
 qV
 qK

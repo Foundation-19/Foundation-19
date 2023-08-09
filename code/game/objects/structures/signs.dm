@@ -461,6 +461,7 @@
 	sign_state = "goldenplaque"
 	var/claimant
 	var/reverse = 0 //if resulting object faces opposite its dir (like light fixtures)
+	var/signbuild
 
 /obj/item/sign/medipolma/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
@@ -469,6 +470,9 @@
 	..()
 
 /obj/item/sign/medipolma/proc/try_build(turf/on_wall)
+	if(!signbuild)
+		return
+
 	if (get_dist(on_wall,usr)>1)
 		return
 
@@ -480,6 +484,22 @@
 
 	if (!(ndir in GLOB.cardinal))
 		return
+
+	var/turf/loc = get_turf(usr)
+	var/area/A = loc.loc
+	if (!istype(loc, /turf/simulated/floor))
+		to_chat(usr, SPAN_DANGER("\The [src] cannot be placed on this spot."))
+		return
+	if ((A.requires_power == 0 || A.name == "Space"))
+		to_chat(usr, SPAN_DANGER("\The [src] cannot be placed in this area."))
+		return
+
+	if(gotwallitem(loc, ndir))
+		to_chat(usr, SPAN_DANGER("There's already an item on this wall!"))
+		return
+
+	new signbuild(loc, ndir, src)
+	qdel(src)
 
 /obj/item/sign/medipolma/attack_self(mob/user)
 	if(!claimant)
