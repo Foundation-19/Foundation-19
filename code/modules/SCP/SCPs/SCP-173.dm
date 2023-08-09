@@ -404,7 +404,8 @@
 	LAZYCLEARLIST(steps_to_target)
 
 /mob/living/scp173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
-	if(!target || !steps_to_target)
+	if(!target || !LAZYLEN(steps_to_target))
+		clear_target()
 		return
 
 	var/turf/step_turf = steps_to_target[1]

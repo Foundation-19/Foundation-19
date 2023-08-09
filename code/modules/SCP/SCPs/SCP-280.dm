@@ -70,7 +70,7 @@
 		var/while_loop_timeout = world.time
 		while(!darkness_path || ((world.time - while_loop_timeout) >= 5 SECONDS))
 			shadow_target = pick_turf_in_range(holder.loc, 14, list(/proc/is_dark))
-			darkness_path = AStar(get_turf(holder.loc), shadow_target, /turf/proc/AdjacentTurfs, /turf/proc/Distance, min_target_dist = 1, max_node_depth = 16, adjacent_arg = holder.IGetID(), exclude = obstacles)
+			darkness_path = get_path_to(holder, shadow_target)
 	if(!should_flee() || !shadow_target || !LAZYLEN(darkness_path) || !holder.IMove(darkness_path[1]))
 		ai_log("flee_to_darkness() : Lost target to flee to.", AI_LOG_INFO)
 		shadow_target = null

@@ -28,6 +28,8 @@
 	var/scp096_speed = 0.2
 	///How close we have to be before we can leap at a target
 	var/scp096_leap_range = 4
+	///Maximium JPS distance. Dont fuck with this unless you know what you're doing.
+	var/maxJPSdistance = 240
 
 	//Mechanicial
 
@@ -44,9 +46,9 @@
 	var/scramble_desc
 	///Emote Cooldown tracker
 	var/emote_cooldown_track = 0
-	///096's current AStar path. We store this to avoid calling AStar unnecesarily.
+	///096's current pathing path. We store this to avoid calling JPS unnecesarily.
 	var/list/current_path
-	///Targets previous turf, this is kept in order to avoid calling AStar unnecesarily.
+	///Targets previous turf, this is kept in order to avoid calling JPS unnecesarily.
 	var/weakref/lastTargetTurf
 	///Leaping
 	var/decl/maneuver/leap/leapHandler = new /decl/maneuver/leap()
@@ -208,7 +210,7 @@
 					break
 				target = Ptarget
 				lastTargetTurf = get_turf(target)
-				current_path = AStar(loc, get_turf(target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes = 0, max_node_depth = 0, min_target_dist = 1, adjacent_arg = list(/obj/structure, /obj/machinery/door))
+				current_path = get_path_to(src, target, maxJPSdistance)
 			//If we have no more targets, we go back to idle
 			if(!LAZYLEN(targets))
 				current_state = STATE_096_IDLE
@@ -227,7 +229,7 @@
 				lastTargetTurf = get_turf(target)
 			//If the target moved, we must regenerate the path list
 			if(get_turf(target) != lastTargetTurf)
-				current_path = AStar(loc, get_turf(target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes = 0, max_node_depth = 0, min_target_dist = 1, adjacent_arg = list(/obj/structure, /obj/machinery/door))
+				current_path = get_path_to(src, target, maxJPSdistance)
 				//if we cant path to target we reset the target
 				if(!LAZYLEN(current_path))
 					target = null
