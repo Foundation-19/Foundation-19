@@ -79,17 +79,11 @@
 	if(us.z == them.z)
 		return get_dir(us, them)
 	else
-		var/turf/T = GetAbove(us)
-		var/dir = NONE
-		if(T && (T.z == them.z))
+		if(us.z < them.z)
 			dir = UP
-		else
-			T = GetBelow(us)
-			if(T && (T.z == them.z))
-				dir = DOWN
-			else
-				return get_dir(us, them)
-		return (dir | get_dir(us, them))
+		else if(us.z > them.z)
+			dir = DOWN
+	return (dir | get_dir(us, them))
 
 /*
 	Predicate helpers
