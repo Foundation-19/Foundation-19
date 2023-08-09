@@ -79,6 +79,7 @@
 	if(us.z == them.z)
 		return get_dir(us, them)
 	else
+		var/dir = NONE
 		if(us.z < them.z)
 			dir = UP
 		else if(us.z > them.z)
