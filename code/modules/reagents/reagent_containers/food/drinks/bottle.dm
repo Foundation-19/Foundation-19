@@ -661,7 +661,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/small/hellshenpa
 	name = "Hellshen Pale Ale"
-	desc = "The best ale on Mars... According to the label- allegedly."
+	desc = "According to the label, this is the best Ale on mars."
 	icon_state = "hellshenbeer"
 	center_of_mass = "x=16;y=12"
 
