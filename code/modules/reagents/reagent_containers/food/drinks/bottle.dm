@@ -671,7 +671,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/small/gingerbeer
 	name = "Ginger Beer"
-	desc = "A delicious non-alcoholic beverage enjoyed anywhere at anytime."
+	desc = "A delicious non-alcoholic beverage."
 	icon_state = "gingerbeer"
 	center_of_mass = "x=16;y=12"
 
