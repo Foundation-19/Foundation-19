@@ -492,7 +492,7 @@
 	glass_desc = "Made with love! And cocoa beans."
 
 /datum/reagent/drink/sodawater
-	name = "Soda with water"
+	name = "Soda water"
 	description = "A can of club soda. Why not make a scotch and soda?"
 	taste_description = "carbonated water"
 	color = "#619494"
@@ -500,8 +500,8 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "soda with water"
-	glass_desc = "Soda diluted with water. Why not make a scotch and soda?"
+	glass_name = "soda water"
+	glass_desc = "Soda water. Why not make a scotch and soda?"
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/grapesoda
@@ -729,14 +729,14 @@
 	glass_desc = "Dr. Gibb. Not as dangerous as the name might imply."
 
 /datum/reagent/drink/space_up
-	name = "\improper Spiced-Up"
-	description = "Tastes like a some elevation in your mouth."
-	taste_description = "a vacuum"
+	name = "\improper Seven-up"
+	description = "Tastes just like a regular seven-up would."
+	taste_description = "carbonated"
 	color = "#202800"
 	adj_temp = -8
 
-	glass_name = "Spiced-up"
-	glass_desc = "Is it just me or does something feel spicy?"
+	glass_name = "Seven-up"
+	glass_desc = "Is it just me or does this really spring originality!"
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/lemon_lime
