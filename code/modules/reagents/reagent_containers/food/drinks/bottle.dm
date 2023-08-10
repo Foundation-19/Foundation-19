@@ -220,7 +220,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
 	name = "Bottle of Nothing"
-	desc = "A bottle filled with nothing, but probably something."
+	desc = "A bottle filled with nothing, but there's probably something."
 	icon_state = "bottleofnothing"
 	center_of_mass = "x=17;y=5"
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing/New()

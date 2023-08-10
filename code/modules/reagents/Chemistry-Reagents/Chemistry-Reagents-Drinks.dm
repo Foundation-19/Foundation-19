@@ -807,7 +807,7 @@
 /datum/reagent/drink/nothing
 	name = "Nothing"
 	description = "Absolutely nothing."
-	taste_description = "something you don't even know."
+	taste_description = "something indescribable."
 
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
