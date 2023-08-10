@@ -103,8 +103,8 @@
 	reagents.add_reagent(/datum/reagent/drink/juice/grape, 30)
 
 /obj/item/reagent_containers/food/drinks/cans/tonic
-	name = "t-borg's tonic water"
-	desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	name = "tonic water"
+	desc = "Quinine tastes funny, but at least it'll keep that malaria away."
 	icon_state = "tonic"
 	center_of_mass = "x=16;y=10"
 
@@ -113,7 +113,7 @@
 	reagents.add_reagent(/datum/reagent/drink/tonic, 30)
 
 /obj/item/reagent_containers/food/drinks/cans/sodawater
-	name = "soda water"
+	name = "soda with water"
 	desc = "A can of soda water. Still water's more refreshing cousin."
 	icon_state = "sodawater"
 	center_of_mass = "x=16;y=10"
@@ -222,8 +222,8 @@
 
 
 /obj/item/reagent_containers/food/drinks/cans/cola_diet
-	name = "diet space cola"
-	desc = "Cola... in space! Now with extra self-confidence."
+	name = "diet cola"
+	desc = "Cola... for a lazy diet! Now with extra self-confidence."
 	icon_state = "cola-blue"
 
 /obj/item/reagent_containers/food/drinks/cans/cola_diet/Initialize()

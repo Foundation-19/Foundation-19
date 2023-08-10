@@ -170,7 +170,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/gin
 	name = "Griffeater Gin"
-	desc = "A bottle of high quality gin, produced in the New London Space Station."
+	desc = "A bottle containing an exquisite batch of gin, meticulously crafted within the confines of the New London Expanse."
 	icon_state = "ginbottle"
 	center_of_mass = "x=16;y=4"
 
@@ -200,7 +200,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka
 	name = "Tunguska Triple Distilled Vodka"
-	desc = "Aah, vodka. Prime choice of drink AND fuel by Indies around the galaxy."
+	desc = "Ah, vodka. A favored beverage, renowned for its versatility among various social circles."
 	icon_state = "vodkabottle"
 	center_of_mass = "x=17;y=3"
 
@@ -220,7 +220,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
 	name = "Bottle of Nothing"
-	desc = "A bottle filled with nothing."
+	desc = "A bottle filled with nothing, but probably something."
 	icon_state = "bottleofnothing"
 	center_of_mass = "x=17;y=5"
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing/New()
@@ -269,7 +269,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
 	name = "Robert Robust's Coffee Liqueur"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK!"
+	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936."
 	icon_state = "kahluabottle"
 	center_of_mass = "x=17;y=3"
 
@@ -289,7 +289,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/cognac
 	name = "Chateau De Baton Premium Cognac"
-	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. You might as well not scream 'SHITCURITY' this time."
+	desc = "An ambrosial and robust elixir, born from a succession of meticulous distillations and a maturation process that spans years."
 	icon_state = "cognacbottle"
 	center_of_mass = "x=16;y=6"
 
@@ -358,8 +358,8 @@
 	reagents.add_reagent(/datum/reagent/drink/grenadine, 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/cola
-	name = "\improper Space Cola"
-	desc = "Cola. in space."
+	name = "\improper Coca-Cola"
+	desc = "Cola, made fresh and delivered just to you!"
 	icon_state = "colabottle"
 	center_of_mass = "x=16;y=6"
 
@@ -368,8 +368,8 @@
 	reagents.add_reagent(/datum/reagent/drink/space_cola, 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/space_up
-	name = "\improper Space-Up"
-	desc = "Tastes like a hull breach in your mouth."
+	name = "\improper Mix-Up"
+	desc = "a delightful fusion of flavors that offers a unique and invigorating experience."
 	icon_state = "space-up_bottle"
 	center_of_mass = "x=16;y=6"
 
@@ -409,7 +409,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/sake
 	name = "Takeo Sadow's Combined Sake"
-	desc = "Finest Sake allowed for import in the SCG."
+	desc = "Finest Sake allowed for import in the Foundation."
 	icon_state = "sake"
 	center_of_mass = "x=16;y=4"
 
@@ -641,7 +641,7 @@
 	rag_underlay = "rag_small"
 
 /obj/item/reagent_containers/food/drinks/bottle/small/beer
-	name = "space beer"
+	name = "good ol' normal beer"
 	desc = "Contains only water, malt and hops."
 	icon_state = "beer"
 	center_of_mass = "x=16;y=12"
@@ -661,7 +661,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/small/hellshenpa
 	name = "Hellshen Pale Ale"
-	desc = "The best ale on Mars, according to the label."
+	desc = "The best ale on Mars... According to the label- allegedly."
 	icon_state = "hellshenbeer"
 	center_of_mass = "x=16;y=12"
 
@@ -671,7 +671,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/small/gingerbeer
 	name = "Ginger Beer"
-	desc = "A delicious non-alcoholic beverage enjoyed across Sol space."
+	desc = "A delicious non-alcoholic beverage enjoyed anywhere at anytime."
 	icon_state = "gingerbeer"
 	center_of_mass = "x=16;y=12"
 

@@ -492,7 +492,7 @@
 	glass_desc = "Made with love! And cocoa beans."
 
 /datum/reagent/drink/sodawater
-	name = "Soda Water"
+	name = "Soda with water"
 	description = "A can of club soda. Why not make a scotch and soda?"
 	taste_description = "carbonated water"
 	color = "#619494"
@@ -500,8 +500,8 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "soda water"
-	glass_desc = "Soda water. Why not make a scotch and soda?"
+	glass_name = "soda with water"
+	glass_desc = "Soda diluted with water. Why not make a scotch and soda?"
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/grapesoda
@@ -517,7 +517,7 @@
 
 /datum/reagent/drink/tonic
 	name = "Tonic Water"
-	description = "It tastes strange but at least the quinine keeps the Space Malaria at bay."
+	description = "It tastes strange but at least the quinine keeps the malaria at bay."
 	taste_description = "tart and fresh"
 	color = "#619494"
 	adj_dizzy = -5
@@ -526,7 +526,7 @@
 	adj_temp = -5
 
 	glass_name = "tonic water"
-	glass_desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	glass_desc = "Quinine tastes funny, but at least it'll keep that malaria away."
 
 /datum/reagent/drink/lemonade
 	name = "Lemonade"
@@ -706,15 +706,15 @@
 
 /datum/reagent/drink/spacemountainwind
 	name = "Mountain Wind"
-	description = "Blows right through you like a space wind."
+	description = "a refreshing blend reminiscent of cool alpine breezes and the exhilaration of high-altitude landscapes, offering a rejuvenating experience with every sip."
 	taste_description = "sweet citrus soda"
 	color = "#102000"
 	adj_drowsy = -7
 	adj_sleepy = -1
 	adj_temp = -5
 
-	glass_name = "Space Mountain Wind"
-	glass_desc = "Space Mountain Wind. As you know, there are no mountains in space, only wind."
+	glass_name = "Mountain Wind"
+	glass_desc = "The good and classic feel of that alpine breeze."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/dr_gibb
@@ -807,7 +807,7 @@
 /datum/reagent/drink/nothing
 	name = "Nothing"
 	description = "Absolutely nothing."
-	taste_description = "nothing"
+	taste_description = "something you don't even know."
 
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
