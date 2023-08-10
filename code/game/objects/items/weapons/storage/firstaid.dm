@@ -427,6 +427,21 @@
 	startswith = list(/obj/item/reagent_containers/pill/paracetamol = 21)
 	wrapper_color = "#a2819e"
 
+/obj/item/storage/pill_bottle/stabiliser
+	name = "pill bottle (prescribed stabiliser)"
+	desc = "A pill bottle given primarially to the injured whilst doctors can work on more urgent matters. Take with caution, unless you have a death wish."
+
+	startswith = list(
+			/obj/item/reagent_containers/pill/inaprovaline = 6,
+			/obj/item/reagent_containers/pill/paracetamol = 4,
+			/obj/item/reagent_containers/pill/dexalin_plus = 2,
+			/obj/item/reagent_containers/pill/dylovene = 2,
+			/obj/item/reagent_containers/pill/alkysine = 2,
+			/obj/item/reagent_containers/pill/oxycodone = 1,
+			/obj/item/reagent_containers/pill/arithrazine
+		)
+	wrapper_color = "#d06d33"
+
 /obj/item/storage/pill_bottle/assorted
 	name = "pill bottle (assorted)"
 	desc = "Commonly found on paramedics, these assorted pill bottles contain all the basics."
