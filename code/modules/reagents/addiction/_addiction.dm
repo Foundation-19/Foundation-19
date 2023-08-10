@@ -38,7 +38,6 @@
 	return TRUE
 
 /datum/addiction/proc/LoseAddiction(mob/living/carbon/victim)
-	to_chat(victim, SPAN_NOTICE("You feel like you've gotten over your need for drugs."))
 	LAZYREMOVE(victim.active_addictions, type)
 
 
