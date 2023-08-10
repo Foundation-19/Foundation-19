@@ -775,7 +775,7 @@
 
 /datum/reagent/drink/dry_ramen
 	name = "Dry Ramen"
-	description = "Primal age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
+	description = "Ramen that never spoils! since August 25, 1910. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
 	taste_description = "dry and cheap noodles"
 	reagent_state = SOLID
 	nutrition = 1
