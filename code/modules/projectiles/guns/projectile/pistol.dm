@@ -35,7 +35,7 @@
 	name = "GOC Glock pistol"
 	desc = "Standard issue pistol for GOC personnel. Chambered in 10mm."
 	magazine_type = /obj/item/ammo_magazine/pistol/double
-	allowed_magazines = /obj/item/ammo_magazine/pistol/double 
+	allowed_magazines = /obj/item/ammo_magazine/pistol/double
 	icon = 'icons/obj/guns/military_pistol.dmi'
 	icon_state = "military"
 	item_state = "secgundark"
@@ -150,6 +150,7 @@
 	magazine_type = /obj/item/ammo_magazine/pistol/small
 	allowed_magazines = /obj/item/ammo_magazine/pistol/small
 	var/obj/item/silencer/silencer
+	item_flags = ITEM_FLAG_CAN_HIDE_IN_SHOES
 
 /obj/item/gun/projectile/pistol/holdout/attack_hand(mob/user)
 	if(user.get_inactive_hand() == src)
