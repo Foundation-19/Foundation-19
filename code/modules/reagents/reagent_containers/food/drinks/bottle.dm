@@ -368,8 +368,8 @@
 	reagents.add_reagent(/datum/reagent/drink/space_cola, 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/space_up
-	name = "\improper Mix-Up"
-	desc = "a delightful fusion of flavors that offers a unique and invigorating experience."
+	name = "\improper Spiced-Up"
+	desc = "Some spiced-up. It helps keep your spice buds up to date."
 	icon_state = "space-up_bottle"
 	center_of_mass = "x=16;y=6"
 
