@@ -729,13 +729,13 @@
 	glass_desc = "Dr. Gibb. Not as dangerous as the name might imply."
 
 /datum/reagent/drink/space_up
-	name = "\improper Seven-up"
+	name = "seven-up"
 	description = "Tastes just like a regular seven-up would."
 	taste_description = "carbonated seven-up"
 	color = "#202800"
 	adj_temp = -8
 
-	glass_name = "Seven-up"
+	glass_name = "seven-up"
 	glass_desc = "Is it just me or does this really spring originality!"
 	glass_special = list(DRINK_FIZZ)
 
