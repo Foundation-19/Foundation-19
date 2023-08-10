@@ -113,7 +113,7 @@
 	reagents.add_reagent(/datum/reagent/drink/tonic, 30)
 
 /obj/item/reagent_containers/food/drinks/cans/sodawater
-	name = "soda with water"
+	name = "soda water"
 	desc = "A can of soda water. Still water's more refreshing cousin."
 	icon_state = "sodawater"
 	center_of_mass = "x=16;y=10"
