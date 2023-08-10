@@ -736,7 +736,7 @@
 	adj_temp = -8
 
 	glass_name = "Spiced-up"
-	glass_desc = "Some spiced-up. It helps keep your spice buds up to date."
+	glass_desc = "Is it just me or does something feel spicy?"
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/lemon_lime
