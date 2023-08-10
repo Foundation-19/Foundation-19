@@ -7,8 +7,8 @@
 //DRINKS
 
 /obj/item/reagent_containers/food/drinks/cans/cola
-	name = "space cola"
-	desc = "Cola. in space."
+	name = "Coca-Cola"
+	desc = "Cola, nothing else and nothing more."
 	icon_state = "cola"
 	center_of_mass = "x=16;y=10"
 

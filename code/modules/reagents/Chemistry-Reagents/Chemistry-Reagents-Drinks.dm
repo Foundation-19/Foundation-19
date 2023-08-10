@@ -692,7 +692,7 @@
 		S.handle_sugar(M, src, 0.66)	//Maple syrup is about 2/3 sugar in real life
 
 /datum/reagent/drink/space_cola
-	name = "Space Cola"
+	name = "Coca-Cola"
 	description = "A refreshing beverage."
 	taste_description = "cola"
 	reagent_state = LIQUID
@@ -700,8 +700,8 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "Space Cola"
-	glass_desc = "A glass of refreshing Space Cola"
+	glass_name = "Coca-Cola"
+	glass_desc = "A glass of refreshing normal cola."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/spacemountainwind
@@ -729,14 +729,14 @@
 	glass_desc = "Dr. Gibb. Not as dangerous as the name might imply."
 
 /datum/reagent/drink/space_up
-	name = "Space-Up"
-	description = "Tastes like a hull breach in your mouth."
-	taste_description = "a hull breach"
+	name = "\improper Spiced-Up"
+	description = "Tastes like a some elevation in your mouth."
+	taste_description = "a vacuum"
 	color = "#202800"
 	adj_temp = -8
 
-	glass_name = "Space-up"
-	glass_desc = "Space-up. It helps keep your cool."
+	glass_name = "Spiced-up"
+	glass_desc = "Some spiced-up. It helps keep your spice buds up to date."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/lemon_lime
@@ -775,7 +775,7 @@
 
 /datum/reagent/drink/dry_ramen
 	name = "Dry Ramen"
-	description = "Space age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
+	description = "Primal age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
 	taste_description = "dry and cheap noodles"
 	reagent_state = SOLID
 	nutrition = 1
@@ -973,8 +973,8 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "Space Cola"
-	glass_desc = "A glass of refreshing Space Cola"
+	glass_name = "Coca-Cola"
+	glass_desc = "A glass of refreshing vanilla cola."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/orange_cola
@@ -986,8 +986,8 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "Space Cola"
-	glass_desc = "A glass of refreshing Space Cola"
+	glass_name = "Coca-Cola"
+	glass_desc = "A glass of refreshing orange-flavoured cola."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/cherry_cola
@@ -999,8 +999,8 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "Space Cola"
-	glass_desc = "A glass of refreshing Space Cola"
+	glass_name = "Cherry Cola"
+	glass_desc = "A glass of refreshing cherry-flavoured cola."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/coffee/coffee_cola
@@ -1025,8 +1025,8 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "Space Cola"
-	glass_desc = "A glass of refreshing Space Cola"
+	glass_name = "Diet Cola"
+	glass_desc = "A glass of refreshing diet cola."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/ionbru
