@@ -359,7 +359,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/cola
 	name = "\improper Coca-Cola"
-	desc = "Cola, made fresh and delivered just to you!"
+	desc = "Some coca-cola, made best-quality and delivered just to you!"
 	icon_state = "colabottle"
 	center_of_mass = "x=16;y=6"
 
