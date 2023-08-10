@@ -985,7 +985,7 @@
 /obj/machinery/vending/wallmed2
 	name = "\improper NanoMed Mini"
 	desc = "A wall-mounted version of the NanoMed, containing only vital first aid equipment."
-	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
+	product_ads = "Go save some lives!;The best stuff for you!;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
 	icon_vend = "wallmed-vend"
@@ -995,6 +995,9 @@
 		/obj/item/reagent_containers/hypospray/autoinjector = 5,
 		/obj/item/stack/medical/bruise_pack = 4,
 		/obj/item/stack/medical/ointment = 4,
+		/obj/item/reagent_containers/pill/sugariron = 2,
+		/obj/item/reagent_containers/pill/tramadol = 2,
+		/obj/item/reagent_containers/pill/dexalin = 2,
 		/obj/item/storage/med_pouch/trauma,
 		/obj/item/storage/med_pouch/burn,
 		/obj/item/storage/med_pouch/oxyloss,
