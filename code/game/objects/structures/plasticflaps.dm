@@ -10,6 +10,8 @@
 
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
+	can_astar_pass = CANPATHINGPASS_ALWAYS_PROC
+
 	var/list/mobs_can_pass = list(
 		/mob/living/bot,
 		/mob/living/carbon/slime,
@@ -78,6 +80,21 @@
 		if(istype(T, /turf/simulated/floor))
 			T.blocks_air = 0
 
+/*
+/obj/structure/plasticflaps/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
+	if(isliving(caller))
+		if(isbot(caller))
+			return TRUE
+
+		var/mob/living/living_caller = caller
+		var/ventcrawler = HAS_TRAIT(living_caller, TRAIT_VENTCRAWLER_ALWAYS) || HAS_TRAIT(living_caller, TRAIT_VENTCRAWLER_NUDE)
+		if(!ventcrawler && living_caller.mob_size != MOB_SIZE_TINY)
+			return FALSE
+
+	if(caller?.pulling)
+		return CanAStarPass(ID, to_dir, caller.pulling, no_id = no_id)
+	return TRUE //diseases, stings, etc can pass
+*/
 
 /obj/structure/plasticflaps/airtight // airtight defaults to on
 	airtight = 1

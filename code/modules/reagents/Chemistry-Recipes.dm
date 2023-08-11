@@ -138,6 +138,14 @@
 	minimum_temperature = 50 CELSIUS
 	maximum_temperature = (50 CELSIUS) + 100
 
+/datum/chemical_reaction/serotrotium
+	name = "Serotrotium"
+	result = /datum/reagent/serotrotium
+	required_reagents = list(/datum/reagent/ethanol = 1, /datum/reagent/sugar = 1, /datum/reagent/lithium = 1)
+	result_amount = 3
+	minimum_temperature = 40 CELSIUS
+	maximum_temperature = (40 CELSIUS) + 100
+
 /datum/chemical_reaction/pacid
 	name = "Polytrinic acid"
 	result = /datum/reagent/acid/polytrinic
@@ -250,6 +258,14 @@
 	required_reagents = list(/datum/reagent/medicine/inaprovaline = 1, /datum/reagent/medicine/bicaridine = 1, /datum/reagent/iron = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/ossarepantes
+	name = "Ossarepantes"
+	result = /datum/reagent/medicine/ossarepantes
+	required_reagents = list(/datum/reagent/medicine/bicaridine = 1, /datum/reagent/drink/milk = 1, /datum/reagent/radium = 1)
+	result_amount = 3
+	minimum_temperature = 50 CELSIUS
+	maximum_temperature = (50 CELSIUS) + 100
+
 /datum/chemical_reaction/hyperzine
 	name = "Hyperzine"
 	result = /datum/reagent/medicine/stimulant/hyperzine
@@ -316,6 +332,18 @@
 	name = "Ethylredoxrazine"
 	result = /datum/reagent/medicine/ethylredoxrazine
 	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/medicine/dylovene = 1, /datum/reagent/carbon = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/naltrexone
+	name = "Naltrexone"
+	result = /datum/reagent/medicine/naltrexone
+	required_reagents = list(/datum/reagent/medicine/antidepressant/methylphenidate = 1, /datum/reagent/sugar = 1, /datum/reagent/carbon = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/varenicline
+	name = "Varenicline"
+	result = /datum/reagent/medicine/varenicline
+	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/phosphorus = 1, /datum/reagent/sodium = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/soporific
@@ -388,9 +416,9 @@
 	required_reagents = list (/datum/reagent/ammonia = 1, /datum/reagent/ethanol = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/space_cleaner
-	name = "Space cleaner"
-	result = /datum/reagent/space_cleaner
+/datum/chemical_reaction/hydroxylsan
+	name = "Hydroxylsan"
+	result = /datum/reagent/hydroxylsan
 	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/water = 1)
 	result_amount = 2
 
@@ -1316,7 +1344,7 @@
 /datum/chemical_reaction/soap_key
 	name = "Soap Key"
 	result = null
-	required_reagents = list(/datum/reagent/frostoil = 2, /datum/reagent/space_cleaner = 5)
+	required_reagents = list(/datum/reagent/frostoil = 2, /datum/reagent/hydroxylsan = 5)
 	var/strength = 3
 
 /datum/chemical_reaction/soap_key/can_happen(datum/reagents/holder)
@@ -2348,6 +2376,13 @@
 		/datum/reagent/gold = 10
 	)
 
+/datum/chemical_reaction/mensvir
+	name = "Mensvir"
+	result = /datum/reagent/mensvir
+	result_amount = 1
+	minimum_temperature = 40 CELSIUS
+	required_reagents = list(/datum/reagent/mindbreaker_toxin = 1, /datum/reagent/crystallizing_agent = 1, /datum/reagent/gold = 1)
+
 // tea expansion pack content - black tea drinks
 /datum/chemical_reaction/icetea
 	name = "Iced Tea"
@@ -3170,3 +3205,14 @@
 		new /obj/item/reagent_containers/food/snacks/monkeycube/abominationcube(get_turf(holder.my_atom))
 	else
 		new /obj/item/reagent_containers/food/snacks/monkeycube/abominationcube/friendly(get_turf(holder.my_atom))
+
+/datum/chemical_reaction/gottheit
+	name = "Gottheit"
+	result = /datum/reagent/gottheit
+	result_amount = 2
+	required_reagents = list(
+		/datum/reagent/grauel = 1,
+		/datum/reagent/medicine/rezadone = 1,
+		/datum/reagent/medicine/painkiller/tramadol/oxycodone = 1,
+		/datum/reagent/medicine/peridaxon = 1,
+		)

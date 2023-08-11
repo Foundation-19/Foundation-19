@@ -23,5 +23,9 @@
 	using.screen_loc = ui_ghost_teleport
 	adding += using
 
+	using = new /obj/screen/ghost/become_scp()
+	using.screen_loc = ui_ghost_become_scp
+	adding += using
+
 	G.client.screen = list()
 	G.client.screen += adding
