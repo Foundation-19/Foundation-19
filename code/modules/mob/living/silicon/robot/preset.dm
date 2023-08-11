@@ -97,7 +97,7 @@
 
 /mob/living/silicon/robot/flying/ascent/Initialize()
 	. = ..()
-	name = "[uppertext(pick(GLOB.gyne_geoforms))]-[++ascent_drone_count]"
+	name = "Strange Cyborg [rand(0, 500)]"
 
 // Sorry, you're going to have to actually deal with these guys.
 /mob/living/silicon/robot/flying/ascent/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
