@@ -526,7 +526,7 @@
 	adj_temp = -5
 
 	glass_name = "tonic water"
-	glass_desc = "Quinine tastes funny, but at least it'll keep that malaria away."
+	glass_desc = "Quinine tastes funny, but at least it'll keep that Malaria away."
 
 /datum/reagent/drink/lemonade
 	name = "Lemonade"
