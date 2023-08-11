@@ -25,6 +25,7 @@
 # +RIGHTS (or +PERMISSIONS) = allows you to promote and/or demote people.
 # +SOUND (or +SOUNDS) = allows you to upload and play sounds
 # +SPAWN (or +CREATE) = mob transformations, spawning of most atoms including mobs (high-risk atoms, e.g. blackholes, will require the +FUN flag too)
+# +TIMELOCK = the ability to bypass timelocks for jobs.
 # +EVERYTHING (or +HOST or +ALL) = Simply gives you everything without having to type every flag
 
 RetiredAdmin
@@ -33,13 +34,13 @@ Moderator       +MOD
 TrialModerator  +MOD
 
 TrialAdmin      +@ +ADMIN +STEALTH +SPAWN +REJUV +VAREDIT +BAN +SERVER
-GameAdmin       +@ +DEBUG +FUN +POSSESS +BUILDMODE +SOUND +PERMISSIONS
+GameAdmin       +@ +DEBUG +FUN +POSSESS +BUILDMODE +SOUND +PERMISSIONS +TIMELOCK
 SeniorAdmin     +@
 
 HeadDeveloper   +EVERYTHING
 HeadAdmin       +EVERYTHING
 Host            +EVERYTHING
 
-Developer       +DEBUG +VAREDIT +SERVER +SPAWN +REJUV +POSSESS +BUILDMODE +ADMIN +FUN
-TrialDevAdmin   +DEBUG +VAREDIT +SERVER +SPAWN +REJUV +POSSESS +BUILDMODE +ADMIN +STEALTH +BAN +FUN
-DevAdmin        +DEBUG +VAREDIT +SERVER +SPAWN +REJUV +POSSESS +BUILDMODE +ADMIN +STEALTH +BAN +FUN +SOUND +PERMISSIONS
+Developer       +DEBUG +VAREDIT +SERVER +SPAWN +REJUV +POSSESS +BUILDMODE +ADMIN +FUN +TIMELOCK
+TrialDevAdmin   +DEBUG +VAREDIT +SERVER +SPAWN +REJUV +POSSESS +BUILDMODE +ADMIN +STEALTH +BAN +FUN +TIMELOCK
+DevAdmin        +DEBUG +VAREDIT +SERVER +SPAWN +REJUV +POSSESS +BUILDMODE +ADMIN +STEALTH +BAN +FUN +SOUND +PERMISSIONS +TIMELOCK

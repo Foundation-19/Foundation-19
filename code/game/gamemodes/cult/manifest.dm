@@ -5,7 +5,7 @@
 	burn_mod = 2
 	species_flags = SPECIES_FLAG_NO_SCAN
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_CULTIST,
+		TAG_CULTURE =   CULTURE_HUMAN_OTHER,
 		TAG_HOMEWORLD = HOME_SYSTEM_STATELESS,
 		TAG_FACTION =   FACTION_OTHER
 	)

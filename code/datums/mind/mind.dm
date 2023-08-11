@@ -69,7 +69,6 @@
 
 /datum/mind/Destroy()
 	QDEL_NULL_LIST(memories)
-	QDEL_NULL_LIST(goals)
 	SSticker.minds -= src
 	. = ..()
 
@@ -130,71 +129,16 @@
 		out += "None."
 	out += "<br><a href='?src=\ref[src];obj_add=1'>\[add\]</a><br><br>"
 
-	var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
-	out += "<b>Ambitions:</b> [ambition ? ambition.description : "None"] <a href='?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 	show_browser(usr, out, "window=edit_memory[src]")
-
-/datum/mind/proc/get_goal_from_href(href)
-	var/ind = isnum(href) ? href : text2num(href)
-	if(ind > 0 && ind <= LAZYLEN(goals))
-		return goals[ind]
 
 /datum/mind/Topic(href, href_list)
 
 	var/is_admin =   FALSE
-	var/can_modify = FALSE
 	is_admin = check_rights(R_ADMIN, FALSE)
-	can_modify = is_admin
-
-	if(href_list["add_goal"])
-
-		var/mob/caller = locate(href_list["add_goal_caller"])
-		if(caller && caller == current) can_modify = TRUE
-
-		if(can_modify)
-			if(is_admin)
-				log_admin("[key_name_admin(usr)] added a random goal to [key_name(current)].")
-			var/did_generate_goal = generate_goals(assigned_job, TRUE, 1)
-			if(did_generate_goal)
-				to_chat(current, SPAN_NOTICE("You have received a new goal. Use <b>Show Goals</b> to view it."))
-		return TRUE // To avoid 'you are not an admin' spam.
 
 	if(href_list["remove_memory"])
 		var/memory = locate(href_list["remove_memory"]) in memories
 		RemoveMemory(memory, usr)
-		return TRUE
-
-	if(href_list["abandon_goal"])
-		var/datum/goal/goal = get_goal_from_href(href_list["abandon_goal"])
-
-		var/mob/caller = locate(href_list["abandon_goal_caller"])
-		if(caller && caller == current) can_modify = TRUE
-
-		if(goal && can_modify)
-			if(usr == current)
-				to_chat(current, SPAN_NOTICE("<b>You have abandoned your goal:</b> '[goal.summarize(FALSE, FALSE)]'."))
-			else
-				to_chat(usr, SPAN_NOTICE("<b>You have removed a goal from \the [current]:</b> '[goal.summarize(FALSE, FALSE)]'."))
-				to_chat(current, SPAN_NOTICE("<b>A goal has been removed:</b> '[goal.summarize(FALSE, FALSE)]'."))
-			qdel(goal)
-		return TRUE
-
-	if(href_list["reroll_goal"])
-		var/datum/goal/goal = get_goal_from_href(href_list["reroll_goal"])
-
-		var/mob/caller = locate(href_list["reroll_goal_caller"])
-		if(caller && caller == current) can_modify = TRUE
-
-		if(goal && (goal in goals) && can_modify)
-			qdel(goal)
-			generate_goals(assigned_job, TRUE, 1)
-			if(goals)
-				goal = goals[LAZYLEN(goals)]
-				if(usr == current)
-					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-				else
-					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal for \the [current]. Their new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-					to_chat(current, SPAN_NOTICE("<b>A goal has been re-rolled. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
 		return TRUE
 
 	if(!is_admin) return
@@ -242,31 +186,6 @@
 			role_alt_title = new_role
 			if(current)
 				current.skillset.obtain_from_client(job, current.client)
-
-	else if (href_list["amb_edit"])
-		var/datum/mind/mind = locate(href_list["amb_edit"])
-		if(!mind)
-			return
-
-		var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
-		var/new_ambition = input("Enter a new ambition", "Memory", ambition ? html_decode(ambition.description) : "") as null|message
-		if(isnull(new_ambition))
-			return
-		new_ambition = sanitize(new_ambition)
-		if(mind)
-			if(new_ambition)
-				if(!ambition)
-					ambition = new /datum/goal/ambition(mind)
-				ambition.description = new_ambition
-				to_chat(mind.current, SPAN_WARNING("Your ambitions have been changed by higher powers, they are now: [ambition.description]"))
-				log_and_message_staff("made [key_name(mind.current)]'s ambitions be '[ambition.description]'.")
-			else
-				to_chat(mind.current, SPAN_WARNING("Your ambitions have been unmade by higher powers."))
-				log_and_message_staff("has cleared [key_name(mind.current)]'s ambitions.")
-				if(ambition)
-					qdel(ambition)
-		else
-			to_chat(usr, SPAN_WARNING("The mind has ceased to be."))
 
 	else if (href_list["obj_edit"] || href_list["obj_add"])
 		var/datum/objective/objective
@@ -545,6 +464,8 @@
 		SSticker.minds += mind
 	if(!mind.name)	mind.name = real_name
 	mind.current = src
+	if(!issilicon(src))
+		mind.AddComponent(/datum/component/goalcontainer)
 	if(player_is_antag(mind))
 		add_verb(client, /client/proc/aooc)
 
