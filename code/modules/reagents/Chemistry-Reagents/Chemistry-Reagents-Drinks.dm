@@ -973,7 +973,7 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "Coca-Cola"
+	glass_name = "Vanilla-Cola"
 	glass_desc = "A glass of refreshing Vanilla Cola."
 	glass_special = list(DRINK_FIZZ)
 
