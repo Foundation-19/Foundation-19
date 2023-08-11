@@ -139,7 +139,7 @@
 				if(announcment_cooldown)
 					to_chat(usr, "Please allow at least one minute to pass between announcements")
 					return TRUE
-				var/input = input(usr, "Please write a message to announce to the [station_name()].", "Priority Announcement") as null|message
+				var/input = tgui_input_text(usr, "Please write a message to announce to the [station_name()].", "Priority Announcement")
 				if(!input || !can_still_topic())
 					return 1
 				var/affected_zlevels = GetConnectedZlevels(get_host_z())
