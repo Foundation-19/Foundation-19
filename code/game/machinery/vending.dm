@@ -963,7 +963,7 @@
 
 /obj/machinery/vending/wallmed1
 	name = "\improper NanoMed"
-	desc = "A wall-mounted version of the NanoMed, stocked with the equipment necessary for stabilisation and much more."
+	desc = "A wall-mounted version of the NanoMed, stocked with the equipment necessary for stabilization and much more."
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
