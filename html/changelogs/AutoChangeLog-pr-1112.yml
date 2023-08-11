@@ -1,9 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: Adds new database server and client programs, used to host a basic file
-      browser service.
-  - rscdel: Removed newscaster program and flight program reports
-  - imagedel: Deleted newspaper images and old PDA images.
-  - spellcheck: Changed some baystation references to SCP references.
-  - code_imp: General code cleanup in modcomp files as well as some helper procs.

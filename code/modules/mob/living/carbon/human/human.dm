@@ -1041,6 +1041,7 @@
 	if(do_after(usr, 6 SECONDS, src))
 		var/message = SPAN_NOTICE("[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].")
 		to_chat(usr, message)
+		SEND_SIGNAL(usr, COMSIG_CHECKED_PULSE)
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 

@@ -89,8 +89,6 @@
 			return global.SSgarbage;
 		if("SSghost_images")
 			return global.SSghost_images;
-		if("SSgoals")
-			return global.SSgoals;
 		if("SSgraphs_process")
 			return global.SSgraphs_process;
 		if("SSgraphs_update")
@@ -944,8 +942,6 @@
 			global.SSgarbage=newval;
 		if("SSghost_images")
 			global.SSghost_images=newval;
-		if("SSgoals")
-			global.SSgoals=newval;
 		if("SSgraphs_process")
 			global.SSgraphs_process=newval;
 		if("SSgraphs_update")
@@ -1754,7 +1750,6 @@
 	"SSfluids",
 	"SSgarbage",
 	"SSghost_images",
-	"SSgoals",
 	"SSgraphs_process",
 	"SSgraphs_update",
 	"SSicon_update",
