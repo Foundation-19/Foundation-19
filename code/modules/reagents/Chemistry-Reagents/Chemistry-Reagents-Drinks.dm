@@ -729,7 +729,7 @@
 	glass_desc = "Dr. Gibb. Not as dangerous as the name might imply."
 
 /datum/reagent/drink/space_up
-	name = "seven-up"
+	name = "Seven-Up"
 	description = "Tastes just like a regular 7-up would."
 	taste_description = "carbonated seven-up"
 	color = "#202800"
