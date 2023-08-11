@@ -369,7 +369,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/space_up
 	name = "\improper Seven-up"
-	desc = "Tastes just like a regular seven-up would."
+	desc = "Tastes just like a regular 7 UP would."
 	icon_state = "space-up_bottle"
 	center_of_mass = "x=16;y=6"
 
