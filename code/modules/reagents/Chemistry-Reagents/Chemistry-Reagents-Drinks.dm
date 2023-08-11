@@ -735,7 +735,7 @@
 	color = "#202800"
 	adj_temp = -8
 
-	glass_name = "seven-up"
+	glass_name = "Seven-Up"
 	glass_desc = "Is it just me or does this really spring originality!"
 	glass_special = list(DRINK_FIZZ)
 
