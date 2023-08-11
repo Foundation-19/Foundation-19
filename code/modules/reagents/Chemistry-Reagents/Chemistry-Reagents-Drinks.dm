@@ -517,7 +517,7 @@
 
 /datum/reagent/drink/tonic
 	name = "Tonic Water"
-	description = "It tastes strange but at least the quinine keeps the malaria at bay."
+	description = "It tastes strange but at least the quinine keeps the Malaria at bay."
 	taste_description = "tart and fresh"
 	color = "#619494"
 	adj_dizzy = -5
