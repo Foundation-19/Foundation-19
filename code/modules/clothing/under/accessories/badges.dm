@@ -174,22 +174,6 @@
 	icon_state = "ntbadge"
 	badge_string = "Corporate Executive Body"
 
-/obj/item/clothing/accessory/badge/agent
-	name = "\improper SFP Agent's badge"
-	desc = "A leather-backed gold badge displaying the crest of the Sol Federal Police."
-	icon_state = "agentbadge"
-	slot_flags = SLOT_BELT | SLOT_TIE | SLOT_MASK
-	slot = ACCESSORY_SLOT_INSIGNIA
-	badge_string = FACTION_SPACECOPS
-
-/obj/item/clothing/accessory/badge/tracker
-	name = "\improper Tracker's badge"
-	desc = "A blue leather-backed gold badge displaying the crest of the Sol Federal Police."
-	icon_state = "trackerbadge"
-	slot_flags = SLOT_BELT | SLOT_TIE
-	slot = ACCESSORY_SLOT_INSIGNIA
-	badge_string = FACTION_SPACECOPS
-
 /obj/item/clothing/accessory/badge/press
 	name = "press badge"
 	desc = "A leather-backed plastic badge displaying that the owner is certified press personnel."

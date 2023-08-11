@@ -29,6 +29,8 @@
 		R.clear_reagents()
 	set_nutrition(400)
 	set_hydration(400)
+	for(var/addiction_type in subtypesof(/datum/addiction))
+		RemoveAddictionPoints(addiction_type, MAX_ADDICTION_POINTS) //Remove the addiction!
 	..()
 
 /mob/living/carbon/Move(NewLoc, direct)
@@ -515,3 +517,16 @@
 		to_chat(src, SPAN_WARNING("You are no longer running on internals."))
 	if(internals)
 		internals.icon_state = "internal[!!internal]"
+
+
+/// Adds addiction points to the specified addiction
+/mob/living/carbon/proc/AddAddictionPoints(type, amount)
+	LAZYSET(addiction_points, type, min(LAZYACCESS(addiction_points, type) + amount, MAX_ADDICTION_POINTS))
+	var/datum/addiction/affected_addiction = SSaddiction.all_addictions[type]
+	return affected_addiction.OnGainAddictionPoints(src)
+
+/// Adds addiction points to the specified addiction
+/mob/living/carbon/proc/RemoveAddictionPoints(type, amount)
+	LAZYSET(addiction_points, type, max(LAZYACCESS(addiction_points, type) - amount, 0))
+	var/datum/addiction/affected_addiction = SSaddiction.all_addictions[type]
+	return affected_addiction.OnLoseAddictionPoints(src)
