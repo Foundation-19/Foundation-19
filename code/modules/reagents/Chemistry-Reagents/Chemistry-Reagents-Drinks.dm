@@ -730,7 +730,7 @@
 
 /datum/reagent/drink/space_up
 	name = "Seven-Up"
-	description = "Tastes just like a regular 7-up would."
+	description = "Tastes just like a regular 7 UP would."
 	taste_description = "carbonated seven-up"
 	color = "#202800"
 	adj_temp = -8
