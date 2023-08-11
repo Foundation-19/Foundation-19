@@ -59,7 +59,9 @@
 		/obj/item/ammo_magazine/box/a57 = 6,
 		/obj/item/ammo_magazine/box/a57/rubber = 30,
 		/obj/item/ammo_magazine/box/mk9 = 4,
-		/obj/item/ammo_magazine/box/a357 = 4
+		/obj/item/ammo_magazine/box/a357 = 4,
+		/obj/item/ammo_magazine/scp/mk9 = 8,
+		/obj/item/ammo_magazine/scp/p90_mag = 12
 	)
 
 /obj/machinery/vending/weaponry/lcz/energy
@@ -80,14 +82,16 @@
 	icon_state = "weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/p90 = 3,
-		/obj/item/gun/projectile/revolver/mateba = 1,
-		/obj/item/gun/projectile/pistol/mk9 = 1,
+		/obj/item/gun/projectile/automatic/scp/p90 = 6,
+		/obj/item/gun/projectile/revolver/mateba = 2,
+		/obj/item/gun/projectile/pistol/mk9 = 4,
 		/obj/item/ammo_magazine/box/a357 = 4,
 		/obj/item/ammo_magazine/box/a50 = 4,
 		/obj/item/ammo_magazine/box/a57 = 12,
 		/obj/item/ammo_magazine/box/mk9 = 6,
-		/obj/item/ammo_magazine/box/a556 = 16
+		/obj/item/ammo_magazine/box/a556 = 16,
+		/obj/item/ammo_magazine/scp/mk9 = 8,
+		/obj/item/ammo_magazine/scp/p90_mag = 12
 	)
 
 /obj/machinery/vending/weaponry/hcz/sergeant
@@ -98,7 +102,10 @@
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/m4a1 = 2,
 		/obj/item/gun/projectile/automatic/scp/m16 = 2,
+		/obj/item/ammo_magazine/scp/m16_mag = 8,
+		/obj/item/ammo_magazine/box/a556 = 2,
 		/obj/item/grenade/frag = 2
+
 	)
 
 // ## SINGULAR EZ MACHINE ##
@@ -109,14 +116,16 @@
 	icon_state = "ez_weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/p90 = 8,
-		/obj/item/gun/projectile/automatic/scp/m16 = 2,
+		/obj/item/gun/projectile/automatic/scp/p90 = 6,
 		/obj/item/gun/projectile/revolver/rhino = 2,
 		/obj/item/gun/projectile/pistol/usp45 = 3,
 		/obj/item/gun/projectile/pistol/mk9 = 3,
 		/obj/item/ammo_magazine/box/a57 = 24,
 		/obj/item/ammo_magazine/box/mk9 = 4,
 		/obj/item/ammo_magazine/box/a357 = 6,
-		/obj/item/ammo_magazine/box/a45 = 2
+		/obj/item/ammo_magazine/box/a45 = 2,
+		/obj/item/ammo_magazine/scp/mk9 = 6,
+		/obj/item/ammo_magazine/scp/p90_mag = 12,
+		/obj/item/ammo_magazine/scp/usp45 = 6,
 	)
 
