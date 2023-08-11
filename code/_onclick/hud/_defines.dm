@@ -132,6 +132,7 @@
 #define ui_ghost_orbit "SOUTH:6,CENTER-1"
 #define ui_ghost_reenter_corpse "SOUTH:6,CENTER"
 #define ui_ghost_teleport "SOUTH:6,CENTER+1"
+#define ui_ghost_become_scp "SOUTH:6,CENTER+2"
 
 //pai
 #define ui_pai_software "NORTH,WEST:6"

@@ -97,8 +97,7 @@
 			pref.hiding_maps[job_map] = map_data["default_to_hidden"]
 
 		. += "<hr><table width = '100%''><tr>"
-		. += "<td width = '50%' align = 'right'><font size = 3><b>[capitalize(job_map)]</b></td>"
-		. += "<td width = '50%' align = 'left''><a href='?src=\ref[src];toggle_map=[job_map]'>[pref.hiding_maps[job_map] ? "Show" : "Hide"]</a></font></td>"
+		. += "<td width = '50%' align = 'right'><font size = 3><b><center>[capitalize(job_map)]</center></b></td></font>"
 		. += "</tr></table>"
 
 		if(!pref.hiding_maps[job_map])
@@ -253,11 +252,10 @@
 		if(GET_RANDOM_JOB)
 			. += "<u><a href='?src=\ref[src];job_alternative=1'>Get random job if preferences unavailable</a></u>"
 		if(BE_CLASS_D)
-			. += "<u><a href='?src=\ref[src];job_alternative=1'>Be a Class D if preference unavailable</a></u>"
+			. += "<u><a href='?src=\ref[src];job_alternative=1'>Be a <font color='#E55700'>Class-D</font> if preference unavailable</a></u>"
 		if(RETURN_TO_LOBBY)
 			. += "<u><a href='?src=\ref[src];job_alternative=1'>Return to lobby if preference unavailable</a></u>"
 	. += "<a href='?src=\ref[src];reset_jobs=1'>\[Reset\]</a></center>"
-	. += "<hr/>"
 	. += "</tt><br>"
 	. = jointext(.,null)
 
@@ -323,7 +321,7 @@
 		var/datum/job/job = locate(href_list["select_alt_title"])
 		if (job)
 			var/choices = list(job.title) + job.alt_titles
-			var/choice = input("Choose an title for [job.title].", "Choose Title", pref.GetPlayerAltTitle(job)) as anything in choices|null
+			var/choice = tgui_input_list(user, "Choose a title for [job.title].", "Choose Title", choices, pref.GetPlayerAltTitle(job))
 			if(choice && CanUseTopic(user))
 				SetPlayerAltTitle(job, choice)
 				return (pref.equip_preview_mob ? TOPIC_REFRESH_UPDATE_PREVIEW : TOPIC_REFRESH)
@@ -347,7 +345,7 @@
 		if(istype(job))
 			var/datum/species/S = preference_species()
 			var/list/options = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
-			var/choice = input(user, "Choose your branch of service.", CHARACTER_PREFERENCE_INPUT_TITLE) as null|anything in options
+			var/choice = tgui_input_list(user, "Choose your branch of service.", options, CHARACTER_PREFERENCE_INPUT_TITLE)
 			if(choice && CanUseTopic(user) && mil_branches.is_spawn_branch(choice, S))
 				pref.branches[job.title] = choice
 				pref.ranks -= job.title
@@ -363,7 +361,7 @@
 			var/datum/species/S = preference_species()
 			var/list/branch_rank = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
 			var/list/options = branch_rank[branch.name] || mil_branches.spawn_ranks(branch.name, S)
-			var/choice = input(user, "Choose your rank.", CHARACTER_PREFERENCE_INPUT_TITLE) as null|anything in options
+			var/choice = tgui_input_list(user, "Choose your rank.", options, CHARACTER_PREFERENCE_INPUT_TITLE)
 			if(choice && CanUseTopic(user) && mil_branches.is_spawn_rank(branch.name, choice, preference_species()))
 				pref.ranks[job.title] = choice
 				pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		// Check our skillset is still valid
