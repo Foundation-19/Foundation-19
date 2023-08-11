@@ -32,8 +32,7 @@
 	if(!isturf(loc) || !isturf(M.loc))
 		to_chat(src, SPAN_WARNING("We cannot reach \the [M] with a sting!"))
 		return //One is inside, the other is outside something.
-	// Maximum queued turfs set to 25; I don't *think* anything raises sting_range above 2, but if it does the 25 may need raising
-	if(!AStar(loc, M.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=sting_range)) //If we can't find a path, fail
+	if(!get_path_to(src, M, sting_range))	//If we can't find a path, fail
 		to_chat(src, SPAN_WARNING("We cannot find a path to sting \the [M] by!"))
 		return
 	return TRUE

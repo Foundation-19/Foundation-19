@@ -4,3 +4,40 @@
       constructable by engineers, these scanners search personnel that walk through
       it for contraband (guns, tools, knives, etc). There are also ways for clever
       D-class to bypass or even abuse them -- check the codex entry for more information.
+2023-08-06:
+  HaultyAnonie:
+  - code_imp: Changed the chemical 'Space Cleaner' to "Hydroxylsan" that is derived
+      from 'hydroxyl'.
+  - code_imp: Changed the bottle 'Space Cleaner.' named into 'Sanitech spray.'; connotes
+      sanitisation and janitorial tools similar to 'Jani'
+  - bugfix: fixed https://github.com/Foundation-19/Foundation-19/issues/1210
+  KirovClassBattlecruiser:
+  - bugfix: Removed space or ss13 universe references from some objects
+  - rscadd: SCP related factions and religion defines and descriptions for use later
+  - rscdel: Removed unused factions, homeworlds, religions and culture defines and
+      descriptions in the code
+  TheDarkElites:
+  - admin: Event Manager panel now under "Fun" tab
+  checkraisefold:
+  - bugfix: You can no longer duplicate inflatable doors
+  cheesePizza2:
+  - bugfix: Silicons no longer get goals.
+  - balance: The Site Director no longer starts with a briefcase of Jerraman.
+  - code_imp: General TG optimized code ported.
+  - refactor: AStar pathfinding changed to JPS pathfinding, which should work MUCH
+      faster (and better and cleaner)
+2023-08-07:
+  TheDarkElites:
+  - bugfix: 173's pathing getting stuck.
+2023-08-08:
+  casualspacestation14enjoyer:
+  - rscadd: Ghosts now have a button for becoming an SCP, the days of navigating the
+      verb tabs is now OVER!
+  - rscdel: The derelict ship shit in character prefs is now gone.
+  - admin: Most admin verbs using the standard BYOND input() are now using TGUI inputs
+      for searching and easier application.
+2023-08-09:
+  KirovClassBattlecruiser:
+  - rscdel: deleted empty files
+  cheesePizza2:
+  - bugfix: Stacks of items are no longer duplicated with fractional inputs.

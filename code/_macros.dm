@@ -16,8 +16,6 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isnan(N) (isnum(N) && (N) != (N))
 
-#define get_turf(A) get_step(A,0)
-
 #define get_x(A) (get_step(A, 0)?.x || 0)
 
 #define get_y(A) (get_step(A, 0)?.y || 0)
