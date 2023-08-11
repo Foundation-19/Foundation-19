@@ -104,7 +104,7 @@
 
 /obj/item/reagent_containers/food/drinks/cans/tonic
 	name = "Tonic water"
-	desc = "Quinine tastes funny, but at least it'll keep that malaria away."
+	desc = "Quinine tastes funny, but at least it'll keep that Malaria away."
 	icon_state = "tonic"
 	center_of_mass = "x=16;y=10"
 
