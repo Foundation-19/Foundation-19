@@ -492,7 +492,7 @@
 	glass_desc = "Made with love! And cocoa beans."
 
 /datum/reagent/drink/sodawater
-	name = "Soda water"
+	name = "Soda Water"
 	description = "A can of club soda. Why not make a scotch and soda?"
 	taste_description = "carbonated water"
 	color = "#619494"
