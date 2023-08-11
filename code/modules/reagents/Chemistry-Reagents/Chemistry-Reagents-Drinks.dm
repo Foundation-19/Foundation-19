@@ -1000,7 +1000,7 @@
 	adj_temp = -5
 
 	glass_name = "Cherry Cola"
-	glass_desc = "A glass of refreshing cherry-flavoured cola."
+	glass_desc = "A glass of refreshing cherry-flavoured Cola."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/coffee/coffee_cola
