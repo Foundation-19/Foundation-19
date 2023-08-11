@@ -103,7 +103,7 @@
 	reagents.add_reagent(/datum/reagent/drink/juice/grape, 30)
 
 /obj/item/reagent_containers/food/drinks/cans/tonic
-	name = "tonic water"
+	name = "Tonic water"
 	desc = "Quinine tastes funny, but at least it'll keep that malaria away."
 	icon_state = "tonic"
 	center_of_mass = "x=16;y=10"
