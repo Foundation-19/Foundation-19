@@ -6189,6 +6189,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/landmark/start{
+	name = "EZ Senior Agent"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Bq" = (
@@ -6659,9 +6662,6 @@
 /area/site53/entrancezone/forensics)
 "FQ" = (
 /obj/structure/closet/secure_closet/guard/ez/sergeant,
-/obj/effect/landmark/start{
-	name = "EZ Senior Agent"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "FT" = (
@@ -9151,6 +9151,15 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "ZO" = (
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"ZV" = (
+/obj/structure/bed/chair/office/comfy{
+	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "EZ Senior Agent"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "ZZ" = (
@@ -35677,7 +35686,7 @@ PR
 ZO
 dU
 Jl
-QZ
+ZV
 FQ
 cX
 hk
