@@ -1009,7 +1009,7 @@
 /obj/machinery/vending/security
 	name = "\improper SecTech"
 	desc = "A security equipment vendor, with some customary donuts."
-	product_ads = "Defend yourself!;Help others!;All you need for a secure facility right here!;Your weapons are right here.;Handcuffs!;Did you know that 'Freeze, scumbag!' is the most standardised quote broadcasted by this machine!;Try your best to apprehend all criminals and subject them to the law.;Reminder to always use non-lethals first!;Why not have a donut?"
+	product_ads = "Defend yourself!;Help others!;All you need for a secure facility right here!;Freeze, scumbag!;Your weapons are right here.;Handcuffs!;Did you know that 'Freeze, scumbag!' is the most standardised quote broadcasted by this machine!;Try your best to apprehend all criminals and subject them to the law.;Reminder to always use non-lethals first!;Why not have a donut?"
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	icon_vend = "sec-vend"
