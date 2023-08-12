@@ -70,7 +70,7 @@
 			delete_me = 1
 			return
 		if ("scp457")
-			new /mob/living/scp_457 (loc)
+			new /mob/living/simple_animal/hostile/scp457 (loc)
 			delete_me = 1
 			return
 		if ("scp527")
@@ -91,10 +91,6 @@
 			return
 		if ("scp343")
 			new /mob/living/carbon/human/scp343 (loc)
-			delete_me = 1
-			return
-		if("scp420j")
-			GLOB.possible_420j += loc
 			delete_me = 1
 			return
 		if("JoinLateDclass")
