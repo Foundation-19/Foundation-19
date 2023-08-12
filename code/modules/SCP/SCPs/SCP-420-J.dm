@@ -1,4 +1,4 @@
-/obj/item/clothing/mask/smokable/cigarette/scp_420_j
+/obj/item/clothing/mask/smokable/cigarette/scp420J
 	name = "<i>radical blunt</i>"
 	desc = "<i>Totally radical blunt, dude</i>"
 
@@ -23,7 +23,7 @@
 		/datum/reagent/cryptobiolin,
 		)
 
-/obj/item/clothing/mask/smokable/cigarette/scp_420_j/Initialize()
+/obj/item/clothing/mask/smokable/cigarette/scp420J/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
@@ -32,7 +32,7 @@
 		"420-J" //Numerical Designation
 	)
 
-/obj/item/clothing/mask/smokable/cigarette/scp_420_j/Process()
+/obj/item/clothing/mask/smokable/cigarette/scp420J/Process()
 	. = ..()
 	for(var/reagent_type in refill_reagents)
 		if(!reagents.has_reagent(reagent_type))

@@ -62,7 +62,7 @@
 
 	///AI Related vars
 
-	//Our current step list (this is to avoid calling AStar unless neccesary)
+	//Our current step list (this is to avoid calling pathfinding unless neccesary)
 	var/list/steps_to_target = list()
 	//Target's position when pathfinding was last ran (this is also to help avoid calling pathfinding unless neccesary)
 	var/turf/target_pos_last
