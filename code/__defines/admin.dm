@@ -65,7 +65,7 @@
 #define ADMIN_TP(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];traitor=[REF(user)]'>TP</a>)"
 #define ADMIN_SP(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];skillpanel=[REF(user)]'>SP</a>)"
 #define ADMIN_KICK(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];boot2=[REF(user)]'>KICK</a>)"
-#define ADMIN_CENTCOM_REPLY(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];CentComReply=[REF(user)]'>RPLY</a>)"											// TODO
+#define ADMIN_CENTCOM_REPLY(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];CentcommReply=[REF(user)]'>RPLY</a>)"
 #define ADMIN_SYNDICATE_REPLY(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];SyndicateReply=[REF(user)]'>RPLY</a>)"
 #define ADMIN_SC(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];adminspawncookie=[REF(user)]'>SC</a>)"
 #define ADMIN_SMITE(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];adminsmite=[REF(user)]'>SMITE</a>)"													// TODO
