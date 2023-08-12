@@ -1184,6 +1184,34 @@
 		to_chat(src.owner, "[special_role_description]")
 		to_chat(src.owner, "(<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a>) (<A HREF='?src=\ref[src];adminplayeropts=\ref[M]'>PP</A>) (<A HREF='?_src_=vars;Vars=\ref[M]'>VV</A>) ([admin_jump_link(M, src)]) (<A HREF='?src=\ref[src];secretsadmin=check_antagonist'>CA</A>)")
 
+	else if(href_list["individuallog"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/mob/M = locate(href_list["individuallog"]) in SSmobs.mob_list
+		if(!ismob(M))
+			to_chat(usr, "This can only be used on instances of type /mob.", confidential = TRUE)
+			return
+
+		var/datum/player_action/P = GLOB.pp_actions["check_logs"]
+		if(!P)
+			return
+
+		if(!LAZYLEN(href_list["log_type"]))
+			// oh god i hate this
+			href_list["log_type"] = input(usr, "Choose which log to read from.") in list("say", "emote", "ooc", "dsay", "interact")
+
+		P.act(usr.client, M, list("log_type" = href_list["log_type"]))
+
+	else if(href_list["tag_datum"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/datum/datum_to_tag = locate(href_list["tag_datum"])
+		if(!datum_to_tag || !istype(datum_to_tag))
+			return
+
+		usr.client.holder.marked_datum_weak = weakref(datum_to_tag)
+
 	else if(href_list["adminspawncookie"])
 		if(!check_rights(R_ADMIN|R_FUN))	return
 
