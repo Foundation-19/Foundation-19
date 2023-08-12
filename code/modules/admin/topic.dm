@@ -1250,6 +1250,17 @@
 			M.Weaken(20)
 			M.stuttering = 20
 
+	else if(href_list["adminsmite"])
+		if(!check_rights(R_ADMIN|R_FUN))
+			return
+
+		var/mob/living/carbon/human/H = locate(href_list["adminsmite"]) in GLOB.human_mob_list
+		if(!H || !istype(H))
+			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human", confidential = TRUE)
+			return
+
+		usr.client.smite(H)
+
 	else if(href_list["CentcommReply"])
 		var/mob/living/L = locate(href_list["CentcommReply"])
 		if(!istype(L))
