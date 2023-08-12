@@ -41,7 +41,8 @@
 		src, // Ref to actual SCP atom
 		"humanoid flame", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
-		"457" //Numerical Designation
+		"457", //Numerical Designation
+		PLAYABLE
 	)
 
 	spawn_area = get_area(src)
