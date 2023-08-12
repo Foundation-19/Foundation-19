@@ -24,12 +24,6 @@
 					return TRUE
 	return FALSE
 
-/proc/get_area(O)
-	var/turf/loc = get_turf(O)
-	if(loc)
-		var/area/res = loc.loc
-		.= res
-
 /// Returns the name of the area the atom is in
 /proc/get_area_name(atom/checked_atom)
 	var/area/checked_area = isarea(checked_atom) ? checked_atom : get_area(checked_atom)
