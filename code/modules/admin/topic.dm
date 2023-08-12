@@ -1734,6 +1734,14 @@
 		var/mob/M = locate(href_list["paralyze"])
 		paralyze_mob(M)
 
+	else if(href_list["set_selfdestruct_code"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/code = "[rand(10000, 99999.0)]"
+		for(var/obj/machinery/nuclearbomb/SD as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/nuclearbomb))
+			SD.r_code = code
+		message_admins("[key_name_admin(usr)] has set the self-destruct code to \"[code]\".")
+
 
 	// player info stuff
 
