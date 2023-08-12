@@ -52,7 +52,7 @@
  * Return the modified_char to be reapplied to the message.
  */
 /datum/status_effect/speech/proc/apply_speech(original_char, modified_char)
-	stack_trace("[type] didn't implement apply_speech.")
+	CRASH("[type] didn't implement apply_speech.")
 	return original_char
 
 /datum/status_effect/speech/stutter

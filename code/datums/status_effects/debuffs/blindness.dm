@@ -16,7 +16,7 @@
 	var/overlay_severity = 1
 
 /datum/status_effect/grouped/nearsighted/on_apply()
-	RegisterSignals(owner, update_signals, PROC_REF(update_nearsightedness))
+	RegisterSignals(owner, update_signals, .proc\update_nearsightedness)
 	update_nearsighted_overlay()
 	return ..()
 
@@ -112,13 +112,13 @@
 	// If we should be deleted, give a message letting them know
 	var/mob/living/stored_owner = owner
 	if(remove_duration(2 SECONDS))
-		to_chat(stored_owner, span_green("Your eyes start to feel better!"))
+		to_chat(stored_owner, SPAN_GOOD("Your eyes start to feel better!"))
 		return
 
 	// Otherwise add a chance to let them know that it's working
 	else if(SPT_PROB(5, seconds_per_tick))
 		var/obj/item/thing_covering_eyes = owner.is_eyes_covered()
 		// "Your blindfold soothes your eyes", for example
-		to_chat(owner, span_green("Your [thing_covering_eyes?.name || "eye covering"] soothes your eyes."))
+		to_chat(owner, SPAN_GOOD("Your [thing_covering_eyes?.name || "eye covering"] soothes your eyes."))
 
 #undef CAN_BE_BLIND

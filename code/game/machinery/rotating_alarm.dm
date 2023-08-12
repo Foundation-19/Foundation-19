@@ -63,10 +63,10 @@
 
 	set_color(alarm_light_color)
 
-	set_dir(dir) //Set dir again so offsets update correctly
+	setDir(dir) //Set dir again so offsets update correctly
 
 
-/obj/machinery/rotating_alarm/set_dir(ndir) //Due to effect, offsets cannot be part of sprite, so need to set it for each dir
+/obj/machinery/rotating_alarm/setDir(ndir) //Due to effect, offsets cannot be part of sprite, so need to set it for each dir
 	. = ..()
 	if(dir == NORTH)
 		pixel_y = -13

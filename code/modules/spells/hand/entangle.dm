@@ -38,7 +38,7 @@
 	P.can_buckle = 1
 
 	P.buckle_mob(M)
-	M.set_dir(pick(GLOB.cardinal))
+	M.setDir(pick(GLOB.cardinal))
 	M.visible_message(SPAN_DANGER("[P] appear from the floor, spinning around \the [M] tightly!"))
 	return ..()
 

@@ -83,7 +83,7 @@
 			spawn(0)
 				A.throw_at(pick(targets),1,1)
 
-	set_dir(direction)
+	setDir(direction)
 	if(dir != NORTH)
 		layer = ABOVE_HUMAN_LAYER
 	atom_flags &= ~ATOM_FLAG_CLIMBABLE //flipping tables allows them to be used as makeshift barriers

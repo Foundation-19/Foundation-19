@@ -46,7 +46,7 @@
 				break
 		if (pad)
 			projector.set_computer(src)
-			projector.set_dir(pad_dir)
+			projector.setDir(pad_dir)
 			pad.set_computer(src)
 			projector.queue_icon_update()
 			pad.queue_icon_update()

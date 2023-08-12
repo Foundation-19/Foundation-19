@@ -421,7 +421,7 @@ steam.start() -- spawns the effect
 	src.on = 0
 
 /datum/effect/effect/system/trail/proc/effect(obj/effect/effect/T)
-	T.set_dir(src.holder.dir)
+	T.setDir(src.holder.dir)
 	return
 
 /obj/effect/effect/ion_trails

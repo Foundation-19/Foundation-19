@@ -37,7 +37,7 @@
 	is_spent = TRUE
 	if(projectile_label)
 		proj.SetName("[initial(proj.name)] (\"[projectile_label]\")")
-	set_dir(pick(GLOB.alldirs)) //spin spent casings
+	setDir(pick(GLOB.alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.
 	if(leaves_residue)
@@ -194,7 +194,7 @@
 	to_chat(user, SPAN_NOTICE("You empty [src]."))
 	for(var/obj/item/ammo_casing/C in stored_ammo)
 		C.forceMove(user.loc)
-		C.set_dir(pick(GLOB.alldirs))
+		C.setDir(pick(GLOB.alldirs))
 	stored_ammo.Cut()
 	update_icon()
 

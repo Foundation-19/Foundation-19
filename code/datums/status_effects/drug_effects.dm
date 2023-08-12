@@ -51,8 +51,8 @@
 	duration = amplitude
 	owner.set_jitter_if_lower(100 SECONDS)
 	owner.Paralyze(duration)
-	owner.visible_message(span_warning("[owner] drops to the ground as [owner.p_they()] start seizing up."), \
-	span_warning("[pick("You can't collect your thoughts...", "You suddenly feel extremely dizzy...", "You cant think straight...","You can't move your face properly anymore...")]"))
+	owner.visible_message(SPAN_WARNING("[owner] drops to the ground as [owner.p_they()] start seizing up."), \
+	SPAN_WARNING("[pick("You can't collect your thoughts...", "You suddenly feel extremely dizzy...", "You cant think straight...","You can't move your face properly anymore...")]"))
 	return TRUE
 
 /atom/movable/screen/alert/status_effect/seizure
@@ -74,26 +74,26 @@
 	var/mob/living/carbon/human/human_owner = owner
 	original_eye_color_left = human_owner.eye_color_left
 	original_eye_color_right = human_owner.eye_color_right
-	human_owner.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis) //slows you down
+	//human_owner.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis) //slows you down
 	human_owner.eye_color_left = BLOODCULT_EYE //makes cult eyes less obvious
 	human_owner.eye_color_right = BLOODCULT_EYE //makes cult eyes less obvious
 	human_owner.update_body() //updates eye color
 	human_owner.add_traits(list(TRAIT_CLUMSY, TRAIT_BLOODSHOT_EYES), type) // impairs motor coordination and dilates blood vessels in eyes
-	human_owner.add_mood_event("stoned", /datum/mood_event/stoned) //improves mood
-	human_owner.sound_environment_override = SOUND_ENVIRONMENT_DRUGGED //not realistic but very immersive
+	//human_owner.add_mood_event("stoned", /datum/mood_event/stoned) //improves mood
+	//human_owner.sound_environment_override = SOUND_ENVIRONMENT_DRUGGED //not realistic but very immersive
 	return TRUE
 
 /datum/status_effect/stoned/on_remove()
 	if(!ishuman(owner))
-		stack_trace("[type] status effect being removed from non-human owner: [owner ? owner.type : "null owner"]")
+		CRASH("[type] status effect being removed from non-human owner: [owner ? owner.type : "null owner"]")
 	var/mob/living/carbon/human/human_owner = owner
-	human_owner.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis)
+	//human_owner.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis)
 	human_owner.eye_color_left = original_eye_color_left
 	human_owner.eye_color_right = original_eye_color_right
 	human_owner.update_body()
 	human_owner.remove_traits(list(TRAIT_CLUMSY, TRAIT_BLOODSHOT_EYES), type)
-	human_owner.clear_mood_event("stoned")
-	human_owner.sound_environment_override = SOUND_ENVIRONMENT_NONE
+	//human_owner.clear_mood_event("stoned")
+	//human_owner.sound_environment_override = SOUND_ENVIRONMENT_NONE
 
 /atom/movable/screen/alert/status_effect/stoned
 	name = "Stoned"

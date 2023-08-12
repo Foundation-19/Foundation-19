@@ -61,7 +61,7 @@
 	desc = "A window pane made from [material.display_name][reinf_material ? " and reinforced with [reinf_material.display_name]" : ""]."
 
 	if (start_dir)
-		set_dir(start_dir)
+		setDir(start_dir)
 
 	var/new_max_health = material.integrity
 	if(reinf_material)
@@ -494,14 +494,14 @@
 				return
 
 	update_nearby_tiles(need_rebuild=1) //Compel updates before
-	set_dir(newdir)
+	setDir(newdir)
 	update_nearby_tiles(need_rebuild=1)
 
 /obj/structure/window/Move()
 	var/ini_dir = dir
 	update_nearby_tiles(need_rebuild=1)
 	..()
-	set_dir(ini_dir)
+	setDir(ini_dir)
 	update_nearby_tiles(need_rebuild=1)
 
 //checks if this window is full-tile one

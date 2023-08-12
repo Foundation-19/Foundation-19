@@ -65,7 +65,7 @@
 
 /decl/vv_set_handler/dir_hander
 	handled_type = /atom
-	handled_vars = list("dir" = /atom/proc/set_dir)
+	handled_vars = list("dir" = /atom/proc/setDir)
 	predicates = list(/proc/is_dir_predicate)
 
 /decl/vv_set_handler/ghost_appearance_handler

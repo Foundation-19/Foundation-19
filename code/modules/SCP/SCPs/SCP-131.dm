@@ -94,7 +94,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 		. = 1 //already friends, but show success anyways
 
 	if(.)
-		set_dir(get_dir(src, friend))
+		setDir(get_dir(src, friend))
 		visible_emote(pick("whirrs around [friend]'s legs.",
 							"brushes against [friend].",
 							"stares reverently up at [friend].",
@@ -135,7 +135,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 		// if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc) ))
 
 		if ((movement_target) && (get_dist(src, movement_target) < 2))
-			set_dir(get_dir(src, movement_target))
+			setDir(get_dir(src, movement_target))
 			study_target = movement_target
 			movement_target = null
 			set_AI_busy(FALSE)
@@ -151,7 +151,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 
 		if(study_target)
 			if (get_dist(src, study_target) < 5)
-				set_dir(get_dir(src, study_target))
+				setDir(get_dir(src, study_target))
 				if(prob(25))
 					visible_emote(pick("looks inquisitively at [study_target].","studies [study_target].","observes [study_target]."))
 					if(prob(50)) study_target = null
@@ -206,7 +206,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 	for(var/mob/living/subject in oview(src,5))
 		if (subject.SCP)
 			if(prob(15)) // get curious!
-				set_dir(get_dir(src, subject))
+				setDir(get_dir(src, subject))
 				visible_emote(pick("turns its curious eye towards [subject].","studies [subject].","gazes at [subject] in fascination."))
 
 	turns_since_scan++
@@ -228,7 +228,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 				audible_emote(pick("[verb] in distress.", "[verb] anxiously."))
 		else
 			if (prob(5))
-				set_dir(get_dir(src, friend))
+				setDir(get_dir(src, friend))
 				visible_emote(pick("whirrs around [friend]'s legs.",
 								   "rolls around near [friend].",
 								   "stares briefly up at [friend].",

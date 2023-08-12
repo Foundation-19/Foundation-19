@@ -9,9 +9,9 @@
 	return ..()
 
 /datum/status_effect/drugginess/on_apply()
-	RegisterSignal(owner, COMSIG_LIVING_DEATH, PROC_REF(remove_drugginess))
+	RegisterSignal(owner, COMSIG_LIVING_DEATH, .proc\remove_drugginess)
 
-	owner.add_mood_event(id, /datum/mood_event/high)
+	//owner.add_mood_event(id, /datum/mood_event/high)
 	owner.overlay_fullscreen(id, /atom/movable/screen/fullscreen/high)
 	owner.sound_environment_override = SOUND_ENVIRONMENT_DRUGGED
 	owner.grant_language(/datum/language/beachbum, source = id)

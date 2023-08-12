@@ -156,13 +156,13 @@
 /obj/aura/mechshield/added_to(mob/living/target)
 	. = ..()
 	target.vis_contents += src
-	set_dir()
+	setDir()
 	GLOB.dir_set_event.register(user, src, /obj/aura/mechshield/proc/update_dir)
 
 /obj/aura/mechshield/proc/update_dir(user, old_dir, dir)
-	set_dir(dir)
+	setDir(dir)
 
-/obj/aura/mechshield/set_dir(new_dir)
+/obj/aura/mechshield/setDir(new_dir)
 	. = ..()
 	if(dir == NORTH)
 		layer = north_layer
@@ -403,11 +403,11 @@
 /obj/aura/mech_ballistic/added_to(mob/living/target)
 	. = ..()
 	target.vis_contents += src
-	set_dir()
+	setDir()
 	GLOB.dir_set_event.register(user, src, /obj/aura/mech_ballistic/proc/update_dir)
 
 /obj/aura/mech_ballistic/proc/update_dir(user, old_dir, dir)
-	set_dir(dir)
+	setDir(dir)
 
 /obj/aura/mech_ballistic/Destroy()
 	if (user)

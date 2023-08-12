@@ -18,7 +18,7 @@ var/obj/screen/robot_inventory
 	//Radio
 	using = new /obj/screen()
 	using.SetName("radio")
-	using.set_dir(SOUTHWEST)
+	using.setDir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "radio"
 	using.screen_loc = ui_movi
@@ -28,7 +28,7 @@ var/obj/screen/robot_inventory
 
 	using = new /obj/screen()
 	using.SetName("module1")
-	using.set_dir(SOUTHWEST)
+	using.setDir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv1"
 	using.screen_loc = ui_inv1
@@ -37,7 +37,7 @@ var/obj/screen/robot_inventory
 
 	using = new /obj/screen()
 	using.SetName("module2")
-	using.set_dir(SOUTHWEST)
+	using.setDir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv2"
 	using.screen_loc = ui_inv2
@@ -46,7 +46,7 @@ var/obj/screen/robot_inventory
 
 	using = new /obj/screen()
 	using.SetName("module3")
-	using.set_dir(SOUTHWEST)
+	using.setDir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv3"
 	using.screen_loc = ui_inv3
@@ -58,7 +58,7 @@ var/obj/screen/robot_inventory
 	//Intent
 	using = new /obj/screen()
 	using.SetName("act_intent")
-	using.set_dir(SOUTHWEST)
+	using.setDir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = R.a_intent
 	using.screen_loc = ui_acti

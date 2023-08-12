@@ -176,7 +176,7 @@
 		return INITIALIZE_HINT_QDEL
 	master = loc
 	SetName(master.name)
-	set_dir(master.dir)
+	setDir(master.dir)
 
 	if(istype(master, /atom/movable))
 		GLOB.moved_event.register(master, src, follow_proc)

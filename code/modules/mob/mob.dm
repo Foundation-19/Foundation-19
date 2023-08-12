@@ -790,9 +790,9 @@
 /mob/proc/facedir(ndir)
 	if(!canface() || moving || (buckled && !buckled.buckle_movable))
 		return 0
-	set_dir(ndir)
+	setDir(ndir)
 	if(buckled && buckled.buckle_movable)
-		buckled.set_dir(ndir)
+		buckled.setDir(ndir)
 	SetMoveCooldown(movement_delay())
 	return 1
 
@@ -1026,21 +1026,21 @@
 	if(!isnull(facing_dir) && newdir == facing_dir)
 		facing_dir = null
 	else if(newdir)
-		set_dir(newdir)
+		setDir(newdir)
 		facing_dir = newdir
 	else if(facing_dir)
 		facing_dir = null
 	else
-		set_dir(dir)
+		setDir(dir)
 		facing_dir = dir
 
-/mob/set_dir()
+/mob/setDir()
 	if(facing_dir)
 		if(!canface() || lying || restrained())
 			facing_dir = null
 		else if(buckled)
 			if(buckled.obj_flags & OBJ_FLAG_ROTATABLE)
-				buckled.set_dir(facing_dir)
+				buckled.setDir(facing_dir)
 				return ..(facing_dir)
 			else
 				facing_dir = null

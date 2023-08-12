@@ -503,7 +503,7 @@ SUBSYSTEM_DEF(jobs)
 		// Moving wheelchair if they have one
 		if(H.buckled && istype(H.buckled, /obj/structure/bed/chair/wheelchair))
 			H.buckled.forceMove(H.loc)
-			H.buckled.set_dir(H.dir)
+			H.buckled.setDir(H.dir)
 
 	// If they're head, give them the account info for their department
 	if(H.mind && job.head_position)
@@ -535,7 +535,7 @@ SUBSYSTEM_DEF(jobs)
 			var/obj/structure/bed/chair/wheelchair/W = new /obj/structure/bed/chair/wheelchair(H.loc)
 			H.buckled = W
 			H.UpdateLyingBuckledAndVerbStatus()
-			W.set_dir(H.dir)
+			W.setDir(H.dir)
 			W.buckled_mob = H
 			W.add_fingerprint(H)
 

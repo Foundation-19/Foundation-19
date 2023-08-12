@@ -11,14 +11,14 @@
 
 /datum/status_effect/determined/on_apply()
 	. = ..()
-	owner.visible_message(span_danger("[owner]'s body tenses up noticeably, gritting against [owner.p_their()] pain!"), span_notice("<b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b>"), \
+	owner.visible_message(SPAN_DANGER("[owner]'s body tenses up noticeably, gritting against [owner.p_their()] pain!"), SPAN_NOTICE("<b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b>"), \
 		vision_distance=COMBAT_MESSAGE_RANGE)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		human_owner.physiology.bleed_mod *= WOUND_DETERMINATION_BLEED_MOD
 
 /datum/status_effect/determined/on_remove()
-	owner.visible_message(span_danger("[owner]'s body slackens noticeably!"), span_warning("<b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b>"), vision_distance=COMBAT_MESSAGE_RANGE)
+	owner.visible_message(SPAN_DANGER("[owner]'s body slackens noticeably!"), SPAN_WARNING("<b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b>"), vision_distance=COMBAT_MESSAGE_RANGE)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		human_owner.physiology.bleed_mod /= WOUND_DETERMINATION_BLEED_MOD
@@ -52,8 +52,8 @@
 	left = C.get_bodypart(BODY_ZONE_L_LEG)
 	right = C.get_bodypart(BODY_ZONE_R_LEG)
 	update_limp()
-	RegisterSignal(C, COMSIG_MOVABLE_MOVED, PROC_REF(check_step))
-	RegisterSignals(C, list(COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_LOSE_WOUND, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB), PROC_REF(update_limp))
+	RegisterSignal(C, COMSIG_MOVABLE_MOVED, .proc/check_step)
+	RegisterSignals(C, list(COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_LOSE_WOUND, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB), .proc/update_limp)
 	return TRUE
 
 /datum/status_effect/limp/on_remove()
@@ -154,7 +154,7 @@
 /datum/status_effect/wound/on_apply()
 	if(!iscarbon(owner))
 		return FALSE
-	RegisterSignal(owner, COMSIG_CARBON_LOSE_WOUND, PROC_REF(check_remove))
+	RegisterSignal(owner, COMSIG_CARBON_LOSE_WOUND, .proc\check_remove)
 	return TRUE
 
 /// check if the wound getting removed is the wound we're tied to
@@ -170,7 +170,7 @@
 
 /datum/status_effect/wound/blunt/on_apply()
 	. = ..()
-	RegisterSignal(owner, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
+	RegisterSignal(owner, COMSIG_MOB_SWAP_HANDS, .proc\on_swap_hands)
 	on_swap_hands()
 
 /datum/status_effect/wound/blunt/on_remove()

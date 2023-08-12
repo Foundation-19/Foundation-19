@@ -38,17 +38,17 @@
 	// .01s are used in case the drunk value ends up to be a small decimal.
 	switch(drunk_value)
 		if(11 to 21)
-			return span_warning("[owner.p_They()] [owner.p_are()] slightly flushed.")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] slightly flushed.")
 		if(21.01 to 41)
-			return span_warning("[owner.p_They()] [owner.p_are()] flushed.")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] flushed.")
 		if(41.01 to 51)
-			return span_warning("[owner.p_They()] [owner.p_are()] quite flushed and [owner.p_their()] breath smells of alcohol.")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] quite flushed and [owner.p_their()] breath smells of alcohol.")
 		if(51.01 to 61)
-			return span_warning("[owner.p_They()] [owner.p_are()] very flushed and [owner.p_their()] movements jerky, with breath reeking of alcohol.")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] very flushed and [owner.p_their()] movements jerky, with breath reeking of alcohol.")
 		if(61.01 to 91)
-			return span_warning("[owner.p_They()] look[owner.p_s()] like a drunken mess.")
+			return SPAN_WARNING("[owner.p_They()] look[owner.p_s()] like a drunken mess.")
 		if(91.01 to INFINITY)
-			return span_warning("[owner.p_They()] [owner.p_are()] a shitfaced, slobbering wreck.")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] a shitfaced, slobbering wreck.")
 
 	return null
 
@@ -105,7 +105,7 @@
 /datum/status_effect/inebriated/drunk/on_apply()
 	. = ..()
 	owner.sound_environment_override = SOUND_ENVIRONMENT_PSYCHOTIC
-	owner.add_mood_event(id, /datum/mood_event/drunk)
+	//owner.add_mood_event(id, /datum/mood_event/drunk)
 
 /datum/status_effect/inebriated/drunk/on_remove()
 	clear_effects()
@@ -176,7 +176,7 @@
 	if(drunk_value >= 81)
 		owner.adjustToxLoss(1)
 		if(owner.stat == CONSCIOUS && prob(5))
-			to_chat(owner, span_warning("Maybe you should lie down for a bit..."))
+			to_chat(owner, SPAN_WARNING("Maybe you should lie down for a bit..."))
 
 	// Over 91, we gain even more toxloss, brain damage, and have a chance of dropping into a long sleep
 	if(drunk_value >= 91)
@@ -185,10 +185,10 @@
 		if(owner.stat == CONSCIOUS && prob(20))
 			// Don't put us in a deep sleep if the shuttle's here. QoL, mainly.
 			if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(owner.z))
-				to_chat(owner, span_warning("You're so tired... but you can't miss that shuttle..."))
+				to_chat(owner, SPAN_WARNING("You're so tired... but you can't miss that shuttle..."))
 
 			else
-				to_chat(owner, span_warning("Just a quick nap..."))
+				to_chat(owner, SPAN_WARNING("Just a quick nap..."))
 				owner.Sleeping(90 SECONDS)
 
 	// And finally, over 100 - let's be honest, you shouldn't be alive by now.

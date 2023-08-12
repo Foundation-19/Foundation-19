@@ -137,8 +137,8 @@
 	if(!HAS_TRAIT(owner, TRAIT_SLEEPIMMUNE))
 		ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
 		tick_interval = -1
-	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE), PROC_REF(on_owner_insomniac))
-	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE), PROC_REF(on_owner_sleepy))
+	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE), .proc/on_owner_insomniac)
+	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE), .proc/on_owner_sleepy)
 
 /datum/status_effect/incapacitating/sleeping/on_remove()
 	UnregisterSignal(owner, list(SIGNAL_ADDTRAIT(TRAIT_SLEEPIMMUNE), SIGNAL_REMOVETRAIT(TRAIT_SLEEPIMMUNE)))
@@ -398,7 +398,7 @@
 		owner.emote(pick("gasp", "gag", "choke"))
 
 /datum/status_effect/neck_slice/get_examine_text()
-	return span_warning("[owner.p_Their()] neck is cut and is bleeding profusely!")
+	return SPAN_WARNING("[owner.p_Their()] neck is cut and is bleeding profusely!")
 
 /mob/living/proc/apply_necropolis_curse(set_curse)
 	var/datum/status_effect/necropolis_curse/C = has_status_effect(/datum/status_effect/necropolis_curse)
@@ -499,8 +499,8 @@
 /datum/status_effect/gonbola_pacify/on_apply()
 	. = ..()
 	owner.add_traits(list(TRAIT_PACIFISM, TRAIT_MUTE), CLOTHING_TRAIT)
-	owner.add_mood_event(type, /datum/mood_event/gondola)
-	to_chat(owner, span_notice("You suddenly feel at peace and feel no need to make any sudden or rash actions..."))
+	//owner.add_mood_event(type, /datum/mood_event/gondola)
+	to_chat(owner, SPAN_NOTICE("You suddenly feel at peace and feel no need to make any sudden or rash actions..."))
 
 /datum/status_effect/gonbola_pacify/on_remove()
 	owner.remove_traits(list(TRAIT_PACIFISM, TRAIT_MUTE), CLOTHING_TRAIT)
@@ -528,11 +528,11 @@
 /datum/status_effect/trance/on_apply()
 	if(!iscarbon(owner))
 		return FALSE
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, PROC_REF(hypnotize))
+	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
 	ADD_TRAIT(owner, TRAIT_MUTE, STATUS_EFFECT_TRAIT)
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
-	owner.visible_message("[stun ? span_warning("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \
-	span_warning(pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")))
+	owner.visible_message("[stun ? SPAN_WARNING("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \
+	SPAN_WARNING(pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")))
 	return TRUE
 
 /datum/status_effect/trance/on_creation(mob/living/new_owner, _duration, _stun = TRUE)
@@ -545,10 +545,10 @@
 	REMOVE_TRAIT(owner, TRAIT_MUTE, STATUS_EFFECT_TRAIT)
 	owner.remove_status_effect(/datum/status_effect/dizziness)
 	owner.remove_client_colour(/datum/client_colour/monochrome/trance)
-	to_chat(owner, span_warning("You snap out of your trance!"))
+	to_chat(owner, SPAN_WARNING("You snap out of your trance!"))
 
 /datum/status_effect/trance/get_examine_text()
-	return span_warning("[owner.p_they()] seem[owner.p_s()] slow and unfocused.")
+	return SPAN_WARNING("[owner.p_they()] seem[owner.p_s()] slow and unfocused.")
 
 /datum/status_effect/trance/proc/hypnotize(datum/source, list/hearing_args)
 	SIGNAL_HANDLER
@@ -579,7 +579,7 @@
 	switch(rand(1, 5))
 		if(1)
 			if((owner.mobility_flags & MOBILITY_MOVE) && isturf(owner.loc))
-				to_chat(owner, span_warning("Your leg spasms!"))
+				to_chat(owner, SPAN_WARNING("Your leg spasms!"))
 				step(owner, pick(GLOB.cardinals))
 		if(2)
 			if(owner.incapacitated())
@@ -587,7 +587,7 @@
 			var/obj/item/held_item = owner.get_active_held_item()
 			if(!held_item)
 				return
-			to_chat(owner, span_warning("Your fingers spasm!"))
+			to_chat(owner, SPAN_WARNING("Your fingers spasm!"))
 			owner.log_message("used [held_item] due to a Muscle Spasm", LOG_ATTACK)
 			held_item.attack_self(owner)
 		if(3)
@@ -601,13 +601,13 @@
 			for(var/mob/living/nearby_mobs in oview(owner, range))
 				targets += nearby_mobs
 			if(LAZYLEN(targets))
-				to_chat(owner, span_warning("Your arm spasms!"))
+				to_chat(owner, SPAN_WARNING("Your arm spasms!"))
 				owner.log_message(" attacked someone due to a Muscle Spasm", LOG_ATTACK) //the following attack will log itself
 				owner.ClickOn(pick(targets))
 			owner.set_combat_mode(FALSE)
 		if(4)
 			owner.set_combat_mode(TRUE)
-			to_chat(owner, span_warning("Your arm spasms!"))
+			to_chat(owner, SPAN_WARNING("Your arm spasms!"))
 			owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
 			owner.ClickOn(owner)
 			owner.set_combat_mode(FALSE)
@@ -619,7 +619,7 @@
 			for(var/turf/nearby_turfs in oview(owner, 3))
 				targets += nearby_turfs
 			if(LAZYLEN(targets) && held_item)
-				to_chat(owner, span_warning("Your arm spasms!"))
+				to_chat(owner, SPAN_WARNING("Your arm spasms!"))
 				owner.log_message("threw [held_item] due to a Muscle Spasm", LOG_ATTACK)
 				owner.throw_item(pick(targets))
 
@@ -631,7 +631,7 @@
 
 /datum/status_effect/convulsing/on_creation(mob/living/zappy_boy)
 	. = ..()
-	to_chat(zappy_boy, span_boldwarning("You feel a shock moving through your body! Your hands start shaking!"))
+	to_chat(zappy_boy, SPAN_WARNING("You feel a shock moving through your body! Your hands start shaking!"))
 
 /datum/status_effect/convulsing/tick()
 	var/mob/living/carbon/H = owner
@@ -639,8 +639,8 @@
 		var/obj/item/I = H.get_active_held_item()
 		if(I && H.dropItemToGround(I))
 			H.visible_message(
-				span_notice("[H]'s hand convulses, and they drop their [I.name]!"),
-				span_userdanger("Your hand convulses violently, and you drop what you were holding!"),
+				SPAN_NOTICE("[H]'s hand convulses, and they drop their [I.name]!"),
+				SPAN_USERDANGER("Your hand convulses violently, and you drop what you were holding!"),
 			)
 			H.adjust_jitter(10 SECONDS)
 
@@ -687,27 +687,27 @@
 		if(0 to 300)
 			if(prob(1))
 				fake_msg = pick(
-				span_warning(pick("Your head hurts.", "Your head pounds.")),
-				span_warning(pick("You're having difficulty breathing.", "Your breathing becomes heavy.")),
-				span_warning(pick("You feel dizzy.", "Your head spins.")),
-				span_warning(pick("You swallow excess mucus.", "You lightly cough.")),
-				span_warning(pick("Your head hurts.", "Your mind blanks for a moment.")),
-				span_warning(pick("Your throat hurts.", "You clear your throat.")))
+				SPAN_WARNING(pick("Your head hurts.", "Your head pounds.")),
+				SPAN_WARNING(pick("You're having difficulty breathing.", "Your breathing becomes heavy.")),
+				SPAN_WARNING(pick("You feel dizzy.", "Your head spins.")),
+				SPAN_WARNING(pick("You swallow excess mucus.", "You lightly cough.")),
+				SPAN_WARNING(pick("Your head hurts.", "Your mind blanks for a moment.")),
+				SPAN_WARNING(pick("Your throat hurts.", "You clear your throat.")))
 		if(301 to 600)
 			if(prob(2))
 				fake_msg = pick(
-				span_warning(pick("Your head hurts a lot.", "Your head pounds incessantly.")),
-				span_warning(pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")),
-				span_warning("You feel very [pick("dizzy","woozy","faint")]."),
-				span_warning(pick("You hear a ringing in your ear.", "Your ears pop.")),
-				span_warning("You nod off for a moment."))
+				SPAN_WARNING(pick("Your head hurts a lot.", "Your head pounds incessantly.")),
+				SPAN_WARNING(pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")),
+				SPAN_WARNING("You feel very [pick("dizzy","woozy","faint")]."),
+				SPAN_WARNING(pick("You hear a ringing in your ear.", "Your ears pop.")),
+				SPAN_WARNING("You nod off for a moment."))
 		else
 			if(prob(3))
 				if(prob(50))// coin flip to throw a message or an emote
 					fake_msg = pick(
-					span_userdanger(pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")),
-					span_userdanger(pick("Your lungs hurt!", "It hurts to breathe!")),
-					span_warning(pick("You feel nauseated.", "You feel like you're going to throw up!")))
+					SPAN_USERDANGER(pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")),
+					SPAN_USERDANGER(pick("Your lungs hurt!", "It hurts to breathe!")),
+					SPAN_WARNING(pick("You feel nauseated.", "You feel like you're going to throw up!")))
 				else
 					fake_emote = pick("cough", "sniff", "sneeze")
 
@@ -740,9 +740,9 @@
 /datum/status_effect/ants/on_creation(mob/living/new_owner, amount_left)
 	if(isnum(amount_left) && new_owner.stat < HARD_CRIT)
 		if(new_owner.stat < UNCONSCIOUS) // Unconscious people won't get messages
-			to_chat(new_owner, span_userdanger("You're covered in ants!"))
+			to_chat(new_owner, SPAN_USERDANGER("You're covered in ants!"))
 		ants_remaining += amount_left
-		RegisterSignal(new_owner, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(ants_washed))
+		RegisterSignal(new_owner, COMSIG_COMPONENT_CLEAN_ACT, .proc/ants_washed)
 	. = ..()
 
 /datum/status_effect/ants/refresh(effect, amount_left)
@@ -750,7 +750,7 @@
 	if(isnum(amount_left) && ants_remaining >= 1 && victim.stat < HARD_CRIT)
 		if(victim.stat < UNCONSCIOUS) // Unconscious people won't get messages
 			if(!prob(1)) // 99%
-				to_chat(victim, span_userdanger("You're covered in MORE ants!"))
+				to_chat(victim, SPAN_USERDANGER("You're covered in MORE ants!"))
 			else // 1%
 				victim.say("AAHH! THIS SITUATION HAS ONLY BEEN MADE WORSE WITH THE ADDITION OF YET MORE ANTS!!", forced = /datum/status_effect/ants)
 		ants_remaining += amount_left
@@ -758,7 +758,7 @@
 
 /datum/status_effect/ants/on_remove()
 	ants_remaining = 0
-	to_chat(owner, span_notice("All of the ants are off of your body!"))
+	to_chat(owner, SPAN_NOTICE("All of the ants are off of your body!"))
 	UnregisterSignal(owner, COMSIG_COMPONENT_CLEAN_ACT)
 	. = ..()
 
@@ -768,7 +768,7 @@
 	return COMPONENT_CLEANED
 
 /datum/status_effect/ants/get_examine_text()
-	return span_warning("[owner.p_they()] [owner.p_are()] covered in ants!")
+	return SPAN_WARNING("[owner.p_they()] [owner.p_are()] covered in ants!")
 
 /datum/status_effect/ants/tick()
 	var/mob/living/carbon/human/victim = owner
@@ -784,18 +784,18 @@
 			switch(rand(1, 50))
 				if (1 to 8) //16% Chance
 					var/obj/item/bodypart/head/hed = victim.get_bodypart(BODY_ZONE_HEAD)
-					to_chat(victim, span_danger("You scratch at the ants on your scalp!."))
+					to_chat(victim, SPAN_DANGER("You scratch at the ants on your scalp!."))
 					hed.receive_damage(1, 0)
 				if (9 to 29) //40% chance
 					var/obj/item/bodypart/arm = victim.get_bodypart(pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-					to_chat(victim, span_danger("You scratch at the ants on your arms!"))
+					to_chat(victim, SPAN_DANGER("You scratch at the ants on your arms!"))
 					arm.receive_damage(3, 0)
 				if (30 to 49) //38% chance
 					var/obj/item/bodypart/leg = victim.get_bodypart(pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-					to_chat(victim, span_danger("You scratch at the ants on your leg!"))
+					to_chat(victim, SPAN_DANGER("You scratch at the ants on your leg!"))
 					leg.receive_damage(3, 0)
 				if(50) // 2% chance
-					to_chat(victim, span_danger("You rub some ants away from your eyes!"))
+					to_chat(victim, SPAN_DANGER("You rub some ants away from your eyes!"))
 					victim.set_eye_blur_if_lower(6 SECONDS)
 					ants_remaining -= 5 // To balance out the blindness, it'll be a little shorter.
 	ants_remaining--
@@ -804,18 +804,18 @@
 
 /atom/movable/screen/alert/status_effect/ants
 	name = "Ants!"
-	desc = span_warning("JESUS FUCKING CHRIST! CLICK TO GET THOSE THINGS OFF!")
+	desc = SPAN_WARNING("JESUS FUCKING CHRIST! CLICK TO GET THOSE THINGS OFF!")
 	icon_state = "antalert"
 
 /atom/movable/screen/alert/status_effect/ants/Click()
 	var/mob/living/living = owner
 	if(!istype(living) || !living.can_resist() || living != owner)
 		return
-	to_chat(living, span_notice("You start to shake the ants off!"))
+	to_chat(living, SPAN_NOTICE("You start to shake the ants off!"))
 	if(!do_after(living, 2 SECONDS, target = living))
 		return
 	for (var/datum/status_effect/ants/ant_covered in living.status_effects)
-		to_chat(living, span_notice("You manage to get some of the ants off!"))
+		to_chat(living, SPAN_NOTICE("You manage to get some of the ants off!"))
 		ant_covered.ants_remaining -= 10 // 5 Times more ants removed per second than just waiting in place
 
 /datum/status_effect/stagger

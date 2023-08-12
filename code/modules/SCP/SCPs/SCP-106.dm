@@ -488,7 +488,7 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 	target.pixel_y = target.default_pixel_y
 	target.buckled = src
 	target.facing_dir = null
-	target.set_dir(buckle_dir ? buckle_dir : dir)
+	target.setDir(buckle_dir ? buckle_dir : dir)
 	target.UpdateLyingBuckledAndVerbStatus()
 	target.update_floating()
 	buckled_mob = target

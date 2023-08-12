@@ -81,7 +81,7 @@
 		return 0
 
 	//trap the victim in place
-	set_dir(L.dir)
+	setDir(L.dir)
 	buckle_mob(L)
 	to_chat(L, SPAN_DANGER("The steel jaws of \the [src] bite into you, trapping you in place!"))
 	deployed = 0

@@ -123,7 +123,7 @@ Class Procs:
 /obj/machinery/Initialize(mapload, d=0, populate_parts = TRUE)
 	. = ..()
 	if(d)
-		set_dir(d)
+		setDir(d)
 	if (init_flags & INIT_MACHINERY_PROCESS_ALL)
 		START_PROCESSING_MACHINE(src, init_flags & INIT_MACHINERY_PROCESS_ALL)
 	SSmachines.machinery += src // All machines should remain in this list, always.
@@ -163,7 +163,7 @@ Class Procs:
 		pulse2.icon_state = "empdisable"
 		pulse2.SetName("emp sparks")
 		pulse2.anchored = TRUE
-		pulse2.set_dir(pick(GLOB.cardinal))
+		pulse2.setDir(pick(GLOB.cardinal))
 
 		spawn(10)
 			qdel(pulse2)

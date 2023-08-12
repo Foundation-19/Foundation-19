@@ -39,7 +39,7 @@
 
 	M.buckled = src
 	M.facing_dir = null
-	M.set_dir(buckle_dir ? buckle_dir : dir)
+	M.setDir(buckle_dir ? buckle_dir : dir)
 	M.UpdateLyingBuckledAndVerbStatus()
 	M.update_floating()
 	buckled_mob = M

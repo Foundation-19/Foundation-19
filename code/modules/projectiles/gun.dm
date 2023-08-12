@@ -160,7 +160,7 @@
 	if(!.)
 		clear_autofire()
 	else if(can_autofire())
-		autofiring_by.set_dir(get_dir(src, autofiring_at))
+		autofiring_by.setDir(get_dir(src, autofiring_at))
 		Fire(autofiring_at, autofiring_by, null, (get_dist(autofiring_at, autofiring_by) <= 1), FALSE, FALSE)
 
 /obj/item/gun/update_twohanding()

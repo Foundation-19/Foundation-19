@@ -167,7 +167,7 @@
 	//latch with src as the follower
 	lead = T
 	T.tow = src
-	set_dir(lead.dir)
+	setDir(lead.dir)
 
 	if(user)
 		to_chat(user, SPAN_NOTICE("You hitch \the [src] to \the [T]."))

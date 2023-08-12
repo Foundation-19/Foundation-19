@@ -133,9 +133,9 @@
 			owner.on_fire = TRUE
 
 	if(was_on_fire && !owner.on_fire)
-		owner.clear_alert(ALERT_FIRE)
+		owner.clear_alert("fire")
 	else if(!was_on_fire && owner.on_fire)
-		owner.throw_alert(ALERT_FIRE, /atom/movable/screen/alert/fire)
+		owner.throw_alert("fire", /atom/movable/screen/alert/fire)
 
 /**
  * Used to update owner's effect overlay
@@ -230,7 +230,7 @@
 		return
 
 	victim.adjust_bodytemperature((BODYTEMP_HEATING_MAX + (stacks * 12)) * 0.5 * seconds_per_tick)
-	victim.add_mood_event("on_fire", /datum/mood_event/on_fire)
+	//victim.add_mood_event("on_fire", /datum/mood_event/on_fire)
 	victim.add_mob_memory(/datum/memory/was_burning)
 
 /**
@@ -247,7 +247,7 @@
 
 	on_fire = TRUE
 	if(!silent)
-		owner.visible_message(span_warning("[owner] catches fire!"), span_userdanger("You're set on fire!"))
+		owner.visible_message(SPAN_WARNING("[owner] catches fire!"), SPAN_USERDANGER("You're set on fire!"))
 
 	if(moblight_type)
 		if(moblight)

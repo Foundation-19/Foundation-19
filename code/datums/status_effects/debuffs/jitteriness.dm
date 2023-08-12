@@ -15,8 +15,8 @@
 		owner.do_jitter_animation(duration / 10)
 		return FALSE
 
-	RegisterSignal(owner, COMSIG_LIVING_DEATH, PROC_REF(remove_jitter))
-	owner.add_mood_event(id, /datum/mood_event/jittery)
+	RegisterSignal(owner, COMSIG_LIVING_DEATH, .proc\remove_jitter)
+	//owner.add_mood_event(id, /datum/mood_event/jittery)
 	return TRUE
 
 /datum/status_effect/jitter/on_remove()
@@ -29,11 +29,11 @@
 /datum/status_effect/jitter/get_examine_text()
 	switch(duration - world.time)
 		if(5 MINUTES to INFINITY)
-			return span_boldwarning("[owner.p_They()] [owner.p_are()] convulsing violently!")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] convulsing violently!")
 		if(3 MINUTES to 5 MINUTES)
-			return span_warning("[owner.p_They()] [owner.p_are()] extremely jittery.")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] extremely jittery.")
 		if(1 MINUTES to 3 MINUTES)
-			return span_warning("[owner.p_They()] [owner.p_are()] twitching ever so slightly.")
+			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] twitching ever so slightly.")
 
 	return null
 

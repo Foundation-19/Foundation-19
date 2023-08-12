@@ -1,7 +1,7 @@
 //	Observer Pattern Implementation: Direction Set
 //		Registration type: /atom
 //
-//		Raised when: An /atom changes dir using the set_dir() proc.
+//		Raised when: An /atom changes dir using the setDir() proc.
 //
 //		Arguments that the called proc should expect:
 //			/atom/dir_changer: The instance that changed direction
@@ -25,7 +25,7 @@ GLOBAL_DATUM_INIT(dir_set_event, /decl/observ/dir_set, new)
 * Direction Handling *
 *********************/
 
-/atom/set_dir()
+/atom/setDir()
 	var/old_dir = dir
 	UNLINT(. = ..())
 	if(old_dir != dir)

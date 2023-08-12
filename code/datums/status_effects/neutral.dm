@@ -1,13 +1,5 @@
 //entirely neutral or internal status effects go here
 
-/datum/status_effect/crusher_damage //tracks the damage dealt to this mob by kinetic crushers
-	id = "crusher_damage"
-	duration = -1
-	tick_interval = -1
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = null
-	var/total_damage = 0
-
 /datum/status_effect/syphon_mark
 	id = "syphon_mark"
 	duration = 50
@@ -39,34 +31,6 @@
 	get_kill()
 	. = ..()
 
-/atom/movable/screen/alert/status_effect/in_love
-	name = "In Love"
-	desc = "You feel so wonderfully in love!"
-	icon_state = "in_love"
-
-/datum/status_effect/in_love
-	id = "in_love"
-	duration = -1
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = /atom/movable/screen/alert/status_effect/in_love
-	var/hearts
-
-/datum/status_effect/in_love/on_creation(mob/living/new_owner, mob/living/date)
-	. = ..()
-	if(!.)
-		return
-
-	linked_alert.desc = "You're in love with [date.real_name]! How lovely."
-	hearts = WEAKREF(date.add_alt_appearance(
-		/datum/atom_hud/alternate_appearance/basic/one_person,
-		"in_love",
-		image(icon = 'icons/effects/effects.dmi', icon_state = "love_hearts", loc = date),
-		new_owner,
-	))
-
-/datum/status_effect/in_love/on_remove()
-	QDEL_NULL(hearts)
-
 /datum/status_effect/throat_soothed
 	id = "throat_soothed"
 	duration = 60 SECONDS
@@ -92,7 +56,7 @@
 		rewarded = caster
 
 /datum/status_effect/bounty/on_apply()
-	to_chat(owner, span_boldnotice("You hear something behind you talking... \"You have been marked for death by [rewarded]. If you die, they will be rewarded.\""))
+	to_chat(owner, SPAN_NOTICE("You hear something behind you talking... \"You have been marked for death by [rewarded]. If you die, they will be rewarded.\""))
 	playsound(owner, 'sound/weapons/gun/shotgun/rack.ogg', 75, FALSE)
 	return ..()
 
@@ -103,9 +67,9 @@
 
 /datum/status_effect/bounty/proc/rewards()
 	if(rewarded && rewarded.mind && rewarded.stat != DEAD)
-		to_chat(owner, span_boldnotice("You hear something behind you talking... \"Bounty claimed.\""))
+		to_chat(owner, SPAN_NOTICE("You hear something behind you talking... \"Bounty claimed.\""))
 		playsound(owner, 'sound/weapons/gun/shotgun/shot.ogg', 75, FALSE)
-		to_chat(rewarded, span_greentext("You feel a surge of mana flow into you!"))
+		to_chat(rewarded, SPAN_GOOD("You feel a surge of mana flow into you!"))
 		for(var/datum/action/cooldown/spell/spell in rewarded.actions)
 			spell.reset_spell_cooldown()
 
@@ -184,8 +148,8 @@
 		qdel(src)
 		return
 
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_owner_in_range))
-	RegisterSignals(offered_item, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(dropped_item))
+	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/check_owner_in_range)
+	RegisterSignals(offered_item, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED), .proc/dropped_item)
 
 /datum/status_effect/offering/Destroy()
 	for(var/mob/living/carbon/removed_taker as anything in possible_takers)
@@ -200,7 +164,7 @@
 	if(!G)
 		return
 	LAZYADD(possible_takers, possible_candidate)
-	RegisterSignal(possible_candidate, COMSIG_MOVABLE_MOVED, PROC_REF(check_taker_in_range))
+	RegisterSignal(possible_candidate, COMSIG_MOVABLE_MOVED, .proc/check_taker_in_range)
 	G.setup(possible_candidate, src)
 
 /// Remove the alert and signals for the specified carbon mob. Automatically removes the status effect when we lost the last taker
@@ -217,7 +181,7 @@
 	if(owner.CanReach(taker) && !IS_DEAD_OR_INCAP(taker))
 		return
 
-	to_chat(taker, span_warning("You moved out of range of [owner]!"))
+	to_chat(taker, SPAN_WARNING("You moved out of range of [owner]!"))
 	remove_candidate(taker)
 
 /// The offerer moved, see if anyone is out of range now
@@ -275,11 +239,11 @@
 
 /datum/status_effect/offering/no_item_received/needs_resting/on_creation(mob/living/new_owner, obj/item/offer, give_alert_override, mob/living/carbon/offered)
 	. = ..()
-	RegisterSignal(owner, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(check_owner_standing))
+	RegisterSignal(owner, COMSIG_LIVING_SET_BODY_POSITION, .proc/check_owner_standing)
 
 /datum/status_effect/offering/no_item_received/needs_resting/register_candidate(mob/living/carbon/possible_candidate)
 	. = ..()
-	RegisterSignal(possible_candidate, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(check_candidate_resting))
+	RegisterSignal(possible_candidate, COMSIG_LIVING_SET_BODY_POSITION, .proc/check_candidate_resting)
 
 /datum/status_effect/offering/no_item_received/needs_resting/remove_candidate(mob/living/carbon/removed_candidate)
 	UnregisterSignal(removed_candidate, COMSIG_LIVING_SET_BODY_POSITION)
@@ -415,7 +379,7 @@
 	//These run on specific cycles
 	switch(current_cycle)
 		if(0)
-			to_chat(owner, span_userdanger("You feel like you're being pulled across to somewhere else. You feel empty inside."))
+			to_chat(owner, SPAN_USERDANGER("You feel like you're being pulled across to somewhere else. You feel empty inside."))
 
 		//phase 1
 		if(1 to EIGENSTASIUM_PHASE_1_END)
@@ -425,7 +389,7 @@
 		//phase 2
 		if(EIGENSTASIUM_PHASE_1_END to EIGENSTASIUM_PHASE_2_END)
 			if(current_cycle == 51)
-				to_chat(owner, span_userdanger("You start to convlse violently as you feel your consciousness merges across realities, your possessions flying wildy off your body!"))
+				to_chat(owner, SPAN_USERDANGER("You start to convlse violently as you feel your consciousness merges across realities, your possessions flying wildy off your body!"))
 				owner.set_jitter_if_lower(400 SECONDS)
 				owner.Knockdown(10)
 
@@ -455,13 +419,13 @@
 			switch(phase_3_cycle) //Loops 0 -> 1 -> 2 -> 1 -> 2 -> 1 ...ect.
 				if(0)
 					owner.set_jitter_if_lower(200 SECONDS)
-					to_chat(owner, span_userdanger("Your eigenstate starts to rip apart, drawing in alternative reality versions of yourself!"))
+					to_chat(owner, SPAN_USERDANGER("Your eigenstate starts to rip apart, drawing in alternative reality versions of yourself!"))
 				if(1)
 					var/typepath = owner.type
 					alt_clone = new typepath(owner.loc)
 					alt_clone.appearance = owner.appearance
 					alt_clone.real_name = owner.real_name
-					RegisterSignal(alt_clone, COMSIG_QDELETING, PROC_REF(remove_clone_from_var))
+					RegisterSignal(alt_clone, COMSIG_QDELETING, .proc/remove_clone_from_var)
 					owner.visible_message("[owner] splits into seemingly two versions of themselves!")
 					do_teleport(alt_clone, get_turf(alt_clone), 2, no_effects=TRUE) //teleports clone so it's hard to find the real one!
 					do_sparks(5,FALSE,alt_clone)
@@ -484,7 +448,7 @@
 			do_sparks(5, FALSE, owner)
 			owner.Sleeping(100)
 			owner.set_jitter_if_lower(100 SECONDS)
-			to_chat(owner, span_userdanger("You feel your eigenstate settle, as \"you\" become an alternative version of yourself!"))
+			to_chat(owner, SPAN_USERDANGER("You feel your eigenstate settle, as \"you\" become an alternative version of yourself!"))
 			owner.emote("me",1,"flashes into reality suddenly, gasping as they gaze around in a bewildered and highly confused fashion!",TRUE)
 			owner.log_message("has become an alternative universe version of themselves via EIGENSTASIUM.", LOG_GAME)
 			//new you new stuff
@@ -492,7 +456,7 @@
 			owner.reagents.remove_all(1000)
 			owner.mob_mood.remove_temp_moods() //New you, new moods.
 			var/mob/living/carbon/human/human_mob = owner
-			owner.add_mood_event("Eigentrip", /datum/mood_event/eigentrip)
+			//owner.add_mood_event("Eigentrip", /datum/mood_event/eigentrip)
 			if(QDELETED(human_mob))
 				return
 			if(prob(1))//low chance of the alternative reality returning to monkey

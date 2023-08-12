@@ -175,7 +175,7 @@
 	if(same_tile)
 		affecting.forceMove(assailant.loc)
 		adir = assailant.dir
-		affecting.set_dir(assailant.dir)
+		affecting.setDir(assailant.dir)
 
 	switch(adir)
 		if(NORTH)

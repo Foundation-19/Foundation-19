@@ -160,7 +160,7 @@
 		. = ..()
 		if(direct != olddir)
 			dir = olddir
-			set_dir(direct)
+			setDir(direct)
 
 		src.move_speed = world.time - src.l_move_time
 		src.l_move_time = world.time

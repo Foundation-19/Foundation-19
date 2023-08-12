@@ -177,7 +177,7 @@ default behaviour is:
 						step(G.assailant, get_dir(G.assailant, AM))
 						G.adjust_position()
 				if(saved_dir)
-					AM.set_dir(saved_dir)
+					AM.setDir(saved_dir)
 				now_pushing = 0
 
 /proc/swap_density_check(mob/swapper, mob/swapee)
@@ -554,7 +554,7 @@ default behaviour is:
 			M.UpdateFeed()
 	update_vision_cone()
 
-/mob/living/set_dir()
+/mob/living/setDir()
 	. = ..()
 	update_vision_cone()
 
@@ -616,13 +616,13 @@ default behaviour is:
 		if(isobj(pulling))
 			var/obj/O = pulling
 			if(O.w_class >= ITEM_SIZE_HUGE || O.density)
-				return set_dir(get_dir(src, pulling))
+				return setDir(get_dir(src, pulling))
 		if(isliving(pulling))
 			var/mob/living/L = pulling
 			// If pulled mob was bigger than us, we morelike will turn
 			// I made additional check in case if someone want a hand walk
 			if(L.mob_size > mob_size || L.lying || a_intent != I_HELP)
-				return set_dir(get_dir(src, pulling))
+				return setDir(get_dir(src, pulling))
 
 /mob/living/proc/handle_pull_damage(mob/living/puller)
 	var/area/A = get_area(src)

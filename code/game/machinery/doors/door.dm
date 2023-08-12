@@ -404,11 +404,11 @@
 /obj/machinery/door/proc/update_dir()
 	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
 		if(connections in list(WEST, EAST, EAST|WEST))
-			set_dir(SOUTH)
+			setDir(SOUTH)
 		else
-			set_dir(EAST)
+			setDir(EAST)
 	else
-		set_dir(SOUTH)
+		setDir(SOUTH)
 
 /obj/machinery/door/proc/do_animate(animation)
 	switch(animation)

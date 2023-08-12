@@ -59,7 +59,7 @@
 	else
 		being_used = 1
 		playsound(src.loc, 'sound/effects/weightlifter.ogg', 50, 1)
-		user.set_dir(SOUTH)
+		user.setDir(SOUTH)
 		flick("[icon_state]_[weight]", src)
 		if(do_after(user, 20 + (weight * 10)))
 			playsound(src.loc, 'sound/effects/weightdrop.ogg', 25, 1)

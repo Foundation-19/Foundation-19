@@ -31,7 +31,7 @@
 			return TRUE
 
 //Inertia drift making us face direction makes exosuit flight a bit difficult, plus newtonian flight model yo
-/mob/living/exosuit/set_dir(ndir)
+/mob/living/exosuit/setDir(ndir)
 	if(inertia_dir && inertia_dir == ndir)
 		return ..(dir)
 	return ..(ndir)
@@ -117,7 +117,7 @@
 
 	if(exosuit.dir != moving_dir && !(direction & (UP|DOWN)))
 		playsound(exosuit.loc, exosuit.mech_turn_sound, 40,1)
-		exosuit.set_dir(moving_dir)
+		exosuit.setDir(moving_dir)
 		exosuit.SetMoveCooldown(exosuit.legs.turn_delay)
 	else
 		exosuit.SetMoveCooldown(exosuit.legs ? exosuit.legs.move_delay : 3)

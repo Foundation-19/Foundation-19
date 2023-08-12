@@ -23,10 +23,10 @@
 	if(owner.mob_biotypes & barred_biotypes)
 		return FALSE
 
-	RegisterSignal(owner, COMSIG_LIVING_HEALTHSCAN,  PROC_REF(on_health_scan))
+	RegisterSignal(owner, COMSIG_LIVING_HEALTHSCAN, .proc/on_health_scan)
 	if(iscarbon(owner))
-		RegisterSignal(owner, COMSIG_CARBON_CHECKING_BODYPART, PROC_REF(on_check_bodypart))
-		RegisterSignal(owner, COMSIG_CARBON_BUMPED_AIRLOCK_OPEN, PROC_REF(on_bump_airlock))
+		RegisterSignal(owner, COMSIG_CARBON_CHECKING_BODYPART, .proc/on_check_bodypart)
+		RegisterSignal(owner, COMSIG_CARBON_BUMPED_AIRLOCK_OPEN, .proc/on_bump_airlock)
 
 	return TRUE
 
@@ -113,5 +113,5 @@
 			lower_tick_interval = 2 MINUTES
 
 		else
-			stack_trace("[type] was assigned a mob which was not crazy or insane. (was: [owner.mob_mood.sanity_level])")
+			CRASH("[type] was assigned a mob which was not crazy or insane. (was: [owner.mob_mood.sanity_level])")
 			qdel(src)

@@ -29,9 +29,9 @@
 	freak_out(STACK_TERROR_AMOUNT)
 
 /datum/status_effect/terrified/on_apply()
-	RegisterSignal(owner, COMSIG_CARBON_PRE_MISC_HELP, PROC_REF(comfort_owner))
+	RegisterSignal(owner, COMSIG_CARBON_PRE_MISC_HELP, .proc\comfort_owner)
 	owner.emote("scream")
-	to_chat(owner, span_alert("The darkness closes in around you, shadows dance around the corners of your vision... It feels like something is watching you!"))
+	to_chat(owner, SPAN_ALERT("The darkness closes in around you, shadows dance around the corners of your vision... It feels like something is watching you!"))
 	return TRUE
 
 /datum/status_effect/terrified/on_remove()
@@ -61,18 +61,18 @@
 		if(prob(5)) //We have a little panic attack. Consider it GENTLE ENCOURAGEMENT to start running away.
 			freak_out(PANIC_ATTACK_TERROR_AMOUNT)
 			owner.visible_message(
-				span_warning("[owner] drops to the floor for a moment, clutching their chest."),
-				span_alert("Your heart lurches in your chest. You can't take much more of this!"),
-				span_hear("You hear a grunt."),
+				SPAN_WARNING("[owner] drops to the floor for a moment, clutching their chest."),
+				SPAN_ALERT("Your heart lurches in your chest. You can't take much more of this!"),
+				"You hear a grunt.",
 			)
 	else
 		owner.remove_fov_trait(id, FOV_270_DEGREES)
 
 	if(terror_buildup >= TERROR_HEART_ATTACK_THRESHOLD) //You should only be able to reach this by actively terrorizing someone
 		owner.visible_message(
-			span_warning("[owner] clutches [owner.p_their()] chest for a moment, then collapses to the floor."),
-			span_alert("The shadows begin to creep up from the corners of your vision, and then there is nothing..."),
-			span_hear("You hear something heavy collide with the ground."),
+			SPAN_WARNING("[owner] clutches [owner.p_their()] chest for a moment, then collapses to the floor."),
+			SPAN_ALERT("The shadows begin to creep up from the corners of your vision, and then there is nothing..."),
+			"You hear something heavy collide with the ground.",
 		)
 		var/datum/disease/heart_failure/heart_attack = new(src)
 		heart_attack.stage_prob = 2 //Advances twice as fast
@@ -82,15 +82,15 @@
 
 /datum/status_effect/terrified/get_examine_text()
 	if(terror_buildup > DARKNESS_TERROR_CAP) //If we're approaching a heart attack
-		return span_boldwarning("[owner.p_They()] [owner.p_are()] seizing up, about to collapse in fear!")
+		return SPAN_WARNING("[owner.p_They()] [owner.p_are()] seizing up, about to collapse in fear!")
 
 	if(terror_buildup >= TERROR_PANIC_THRESHOLD)
-		return span_boldwarning("[owner] is visibly trembling and twitching. It looks like [owner.p_theyre()] freaking out!")
+		return SPAN_WARNING("[owner] is visibly trembling and twitching. It looks like [owner.p_theyre()] freaking out!")
 
 	if(terror_buildup >= TERROR_FEAR_THRESHOLD)
-		return span_warning("[owner] looks very worried about something. [owner.p_are(TRUE)] [owner.p_they()] alright?")
+		return SPAN_WARNING("[owner] looks very worried about something. [owner.p_are(TRUE)] [owner.p_they()] alright?")
 
-	return span_notice("[owner] looks rather anxious. [owner.p_They()] could probably use a hug...")
+	return SPAN_NOTICE("[owner] looks rather anxious. [owner.p_They()] could probably use a hug...")
 
 /// If we get a hug from a friend, we calm down! If we get a hug from a nightmare, we FREAK OUT.
 /datum/status_effect/terrified/proc/comfort_owner(datum/source, mob/living/hugger)
@@ -98,18 +98,18 @@
 
 	if(isnightmare(hugger)) //hey wait a minute, that's not a comforting, friendly hug!
 		if(check_surrounding_darkness())
-			addtimer(CALLBACK(src, PROC_REF(freak_out), HUG_TERROR_AMOUNT))
+			addtimer(CALLBACK(src, .proc\freak_out, HUG_TERROR_AMOUNT))
 			owner.visible_message(
-				span_warning("[owner] recoils in fear as [hugger] waves [hugger.p_their()] arms and shrieks at [owner.p_them()]!"),
-				span_boldwarning("The shadows lash out at you, and you drop to the ground in fear!"),
+				SPAN_WARNING("[owner] recoils in fear as [hugger] waves [hugger.p_their()] arms and shrieks at [owner.p_them()]!"),
+				SPAN_WARNING("The shadows lash out at you, and you drop to the ground in fear!"),
 				span_hear("You hear someone shriek in fear. How embarassing!"),
 				)
 			return COMPONENT_BLOCK_MISC_HELP
 
 	terror_buildup -= HUG_TERROR_AMOUNT
 	owner.visible_message(
-		span_notice("[owner] seems to relax as [hugger] gives [owner.p_them()] a comforting hug."),
-		span_nicegreen("You feel yourself calm down as [hugger] gives you a reassuring hug."),
+		SPAN_NOTICE("[owner] seems to relax as [hugger] gives [owner.p_them()] a comforting hug."),
+		SPAN_GOOD("You feel yourself calm down as [hugger] gives you a reassuring hug."),
 		span_hear("You hear shuffling and a sigh of relief."),
 	)
 

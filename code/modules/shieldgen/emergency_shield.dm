@@ -28,7 +28,7 @@
 		return
 
 /obj/machinery/shield/New()
-	src.set_dir(pick(1,2,3,4))
+	src.setDir(pick(1,2,3,4))
 	..()
 	update_nearby_tiles(need_rebuild=1)
 

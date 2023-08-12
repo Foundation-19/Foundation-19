@@ -8,9 +8,9 @@
 	simulated = FALSE
 	var/duration = 10 //in deciseconds
 
-/obj/effect/temp_visual/Initialize(mapload, set_dir)
-	if(set_dir)
-		set_dir(set_dir)
+/obj/effect/temp_visual/Initialize(mapload, setDir)
+	if(setDir)
+		setDir(setDir)
 	. = ..()
 	QDEL_IN(src, duration)
 
@@ -20,8 +20,8 @@
 	layer = LYING_HUMAN_LAYER
 	var/splatter_type = "splatter"
 
-/obj/effect/temp_visual/bloodsplatter/Initialize(mapload, set_dir, _color)
-	if(set_dir in GLOB.cornerdirs)
+/obj/effect/temp_visual/bloodsplatter/Initialize(mapload, setDir, _color)
+	if(setDir in GLOB.cornerdirs)
 		icon_state = "[splatter_type][pick(1, 2, 6)]"
 	else
 		icon_state = "[splatter_type][pick(3, 4, 5)]"
@@ -31,14 +31,14 @@
 
 	var/target_pixel_x = 0
 	var/target_pixel_y = 0
-	if(set_dir & NORTH)
+	if(setDir & NORTH)
 		target_pixel_y = 16
-	if(set_dir & SOUTH)
+	if(setDir & SOUTH)
 		target_pixel_y = -16
 		layer = ABOVE_HUMAN_LAYER
-	if(set_dir & EAST)
+	if(setDir & EAST)
 		target_pixel_x = 16
-	if(set_dir & WEST)
+	if(setDir & WEST)
 		target_pixel_x = -16
 	animate(src, pixel_x = target_pixel_x, pixel_y = target_pixel_y, alpha = 0, time = duration)
 
@@ -79,5 +79,5 @@
 	if(mimiced_atom)
 		name = mimiced_atom.name
 		appearance = mimiced_atom.appearance
-		set_dir(setdir)
+		setDir(setdir)
 		mouse_opacity = 0

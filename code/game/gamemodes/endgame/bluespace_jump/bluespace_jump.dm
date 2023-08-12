@@ -83,7 +83,7 @@
 		qdel(src)
 		return
 	real_one = nreal_one
-	set_dir(real_one.dir)
+	setDir(real_one.dir)
 	appearance = real_one.appearance
 	GLOB.moved_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror)
 	GLOB.dir_set_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror_dir)
@@ -110,7 +110,7 @@
 			real_one.drowsyness = max(real_one.drowsyness, 3)
 
 /obj/effect/bluegoast/proc/mirror_dir(atom/movable/am, old_dir, new_dir)
-	set_dir(GLOB.reverse_dir[new_dir])
+	setDir(GLOB.reverse_dir[new_dir])
 
 /obj/effect/bluegoast/examine()
 	return real_one?.examine(arglist(args))

@@ -80,3 +80,11 @@
 
 /// Called on `/atom/Exited` (/atom, exitee, new_loc)
 #define COMSIG_EXITED "exited"
+
+/// From base of atom/setDir(): (old_dir, new_dir). Called before the direction changes
+#define COMSIG_ATOM_PRE_DIR_CHANGE "atom_pre_face_atom"
+	#define COMPONENT_ATOM_BLOCK_DIR_CHANGE (1<<0)
+/// From base of atom/setDir(): (old_dir, new_dir). Called before the direction changes.
+#define COMSIG_ATOM_DIR_CHANGE "atom_dir_change"
+/// From base of atom/setDir(): (old_dir, new_dir). Called after the direction changes.
+#define COMSIG_ATOM_POST_DIR_CHANGE "atom_dir_change"

@@ -18,7 +18,7 @@
 		return FALSE
 
 	// Refresh the blur when a client jumps into the mob, in case we get put on a clientless mob with no hud
-	RegisterSignal(owner, COMSIG_MOB_LOGIN, PROC_REF(update_blur))
+	RegisterSignal(owner, COMSIG_MOB_LOGIN, .proc\update_blur)
 	// Apply initial blur
 	update_blur()
 	return TRUE

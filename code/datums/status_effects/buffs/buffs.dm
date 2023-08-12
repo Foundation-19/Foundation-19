@@ -4,13 +4,13 @@
 	alert_type = /atom/movable/screen/alert/status_effect/wish_granters_gift
 
 /datum/status_effect/wish_granters_gift/on_apply()
-	to_chat(owner, span_notice("Death is not your end! The Wish Granter's energy suffuses you, and you begin to rise..."))
+	to_chat(owner, SPAN_NOTICE("Death is not your end! The Wish Granter's energy suffuses you, and you begin to rise..."))
 	return ..()
 
 
 /datum/status_effect/wish_granters_gift/on_remove()
 	owner.revive(ADMIN_HEAL_ALL)
-	owner.visible_message(span_warning("[owner] appears to wake from the dead, having healed all wounds!"), span_notice("You have regenerated."))
+	owner.visible_message(SPAN_WARNING("[owner] appears to wake from the dead, having healed all wounds!"), SPAN_NOTICE("You have regenerated."))
 
 
 /atom/movable/screen/alert/status_effect/wish_granters_gift
@@ -68,7 +68,7 @@
 	med_hud.hide_from(owner)
 
 /datum/status_effect/hippocratic_oath/get_examine_text()
-	return span_notice("[owner.p_They()] seem[owner.p_s()] to have an aura of healing and helpfulness about [owner.p_them()].")
+	return SPAN_NOTICE("[owner.p_They()] seem[owner.p_s()] to have an aura of healing and helpfulness about [owner.p_them()].")
 
 /datum/status_effect/hippocratic_oath/tick()
 	if(owner.stat == DEAD)
@@ -105,11 +105,11 @@
 							qdel(L)
 							consume_owner() //see above comment
 							return
-					to_chat(itemUser, span_notice("Your arm suddenly grows back with the Rod of Asclepius still attached!"))
+					to_chat(itemUser, SPAN_NOTICE("Your arm suddenly grows back with the Rod of Asclepius still attached!"))
 				else
 					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
 					itemUser.put_in_hand(newRod, hand, forced = TRUE)
-					to_chat(itemUser, span_notice("The Rod of Asclepius suddenly grows back out of your arm!"))
+					to_chat(itemUser, SPAN_NOTICE("The Rod of Asclepius suddenly grows back out of your arm!"))
 			//Because a servant of medicines stops at nothing to help others, lets keep them on their toes and give them an additional boost.
 			if(itemUser.health < itemUser.maxHealth)
 				new /obj/effect/temp_visual/heal(get_turf(itemUser), "#375637")
@@ -122,7 +122,7 @@
 			itemUser.adjustCloneLoss(-0.5) //Becasue apparently clone damage is the bastion of all health
 
 /datum/status_effect/hippocratic_oath/proc/consume_owner()
-	owner.visible_message(span_notice("[owner]'s soul is absorbed into the rod, relieving the previous snake of its duty."))
+	owner.visible_message(SPAN_NOTICE("[owner]'s soul is absorbed into the rod, relieving the previous snake of its duty."))
 	var/list/chems = list(/datum/reagent/medicine/sal_acid, /datum/reagent/medicine/c2/convermol, /datum/reagent/medicine/oxandrolone)
 	var/mob/living/simple_animal/hostile/retaliate/snake/healSnake = new(owner.loc, pick(chems))
 	healSnake.name = "Asclepius's Snake"
@@ -146,7 +146,7 @@
 		owner.adjust_dizzy(-4 SECONDS)
 		owner.adjust_jitter(-4 SECONDS)
 		owner.adjust_confusion(-1 SECONDS)
-		owner.add_mood_event("goodmusic", /datum/mood_event/goodmusic)
+		//owner.add_mood_event("goodmusic", /datum/mood_event/goodmusic)
 
 /datum/status_effect/lightningorb
 	id = "Lightning Orb"
@@ -156,12 +156,12 @@
 /datum/status_effect/lightningorb/on_apply()
 	. = ..()
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
-	to_chat(owner, span_notice("You feel fast!"))
+	to_chat(owner, SPAN_NOTICE("You feel fast!"))
 
 /datum/status_effect/lightningorb/on_remove()
 	. = ..()
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
-	to_chat(owner, span_notice("You slow down."))
+	to_chat(owner, SPAN_NOTICE("You slow down."))
 
 /atom/movable/screen/alert/status_effect/lightningorb
 	name = "Lightning Orb"
@@ -198,7 +198,7 @@
 		owner.reagents.add_reagent(/datum/reagent/medicine/adminordrazine, 25)
 
 	owner.log_message("entered a blood frenzy", LOG_ATTACK)
-	to_chat(owner, span_warning("KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, KILL THEM ALL!"))
+	to_chat(owner, SPAN_WARNING("KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, KILL THEM ALL!"))
 
 	var/datum/client_colour/colour = owner.add_client_colour(/datum/client_colour/bloodlust)
 	QDEL_IN(colour, 1.1 SECONDS)
@@ -206,7 +206,7 @@
 
 /datum/status_effect/mayhem/on_remove()
 	. = ..()
-	to_chat(owner, span_notice("Your bloodlust seeps back into the bog of your subconscious and you regain self control."))
+	to_chat(owner, SPAN_NOTICE("Your bloodlust seeps back into the bog of your subconscious and you regain self control."))
 	owner.log_message("exited a blood frenzy", LOG_ATTACK)
 	QDEL_NULL(chainsaw)
 
@@ -252,7 +252,7 @@
 	var/health_increase = round(max(fragile_mob_health_buff, historic_max_health * health_buff_modifier))
 	owner.maxHealth += health_increase
 	owner.balloon_alert_to_viewers("health buffed")
-	to_chat(owner, span_nicegreen("You feel healthy, like if your body is little stronger than it was a moment ago."))
+	to_chat(owner, SPAN_GOOD("You feel healthy, like if your body is little stronger than it was a moment ago."))
 
 	if(isanimal(owner))	//dumb animals have their own proc for healing.
 		var/mob/living/simple_animal/healthy_animal = owner
@@ -262,7 +262,7 @@
 
 /datum/status_effect/limited_buff/health_buff/maxed_out()
 	. = ..()
-	to_chat(owner, span_warning("You don't feel any healthier."))
+	to_chat(owner, SPAN_WARNING("You don't feel any healthier."))
 
 /datum/status_effect/nest_sustenance
 	id = "nest_sustenance"

@@ -208,7 +208,7 @@
 /mob/living/exosuit/GetIdCard()
 	return access_card
 
-/mob/living/exosuit/set_dir()
+/mob/living/exosuit/setDir()
 	. = ..()
 	if(.)
 		update_pilots()

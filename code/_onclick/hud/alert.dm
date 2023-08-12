@@ -228,13 +228,13 @@
 	. = ..()
 	if(!.)
 		return
-	to_chat(owner, span_mind_control("[command]"))
+	to_chat(owner, SPAN_HYPNOPHRASE("[command]"))
 
 /atom/movable/screen/alert/embeddedobject
 	name = "Embedded Object"
 	desc = "Something got lodged into your flesh and is causing major bleeding. It might fall out with time, but surgery is the safest way. \
 		If you're feeling frisky, examine yourself and click the underlined item to pull the object out."
-	icon_state = ALERT_EMBEDDED_OBJECT
+	icon_state = "embeddedobject"
 
 /atom/movable/screen/alert/embeddedobject/Click()
 	. = ..()
@@ -364,8 +364,8 @@
 		return
 
 	too_slowing_this_guy = TRUE
-	offerer.visible_message(span_notice("[rube] rushes in to high-five [offerer], but-"), span_nicegreen("[rube] falls for your trick just as planned, lunging for a high-five that no longer exists! Classic!"), ignored_mobs=rube)
-	to_chat(rube, span_nicegreen("You go in for [offerer]'s high-five, but-"))
+	offerer.visible_message(SPAN_NOTICE("[rube] rushes in to high-five [offerer], but-"), SPAN_GOOD("[rube] falls for your trick just as planned, lunging for a high-five that no longer exists! Classic!"), ignored_mobs=rube)
+	to_chat(rube, SPAN_GOOD("You go in for [offerer]'s high-five, but-"))
 	addtimer(CALLBACK(src, ./proctoo_slow_p2, offerer, rube), 0.5 SECONDS)
 
 /// Part two of the ultimate prank
@@ -373,12 +373,12 @@
 	var/mob/living/carbon/rube = owner
 	var/mob/living/offerer = offer?.owner
 	if(!QDELETED(rube) && !QDELETED(offerer))
-		offerer.visible_message(span_danger("[offerer] pulls away from [rube]'s slap at the last second, dodging the high-five entirely!"), span_nicegreen("[rube] fails to make contact with your hand, making an utter fool of [rube.p_them()]self!"), span_hear("You hear a disappointing sound of flesh not hitting flesh!"), ignored_mobs=rube)
-		to_chat(rube, span_userdanger("[uppertext("NO! [offerer] PULLS [offerer.p_their()] HAND AWAY FROM YOURS! YOU'RE TOO SLOW!")]"))
+		offerer.visible_message(SPAN_DANGER("[offerer] pulls away from [rube]'s slap at the last second, dodging the high-five entirely!"), SPAN_GOOD("[rube] fails to make contact with your hand, making an utter fool of [rube.p_them()]self!"), "You hear a disappointing sound of flesh not hitting flesh!", ignored_mobs=rube)
+		to_chat(rube, SPAN_USERDANGER("[uppertext("NO! [offerer] PULLS [offerer.p_their()] HAND AWAY FROM YOURS! YOU'RE TOO SLOW!")]"))
 		playsound(offerer, 'sound/weapons/thudswoosh.ogg', 100, TRUE, 1)
 		rube.Knockdown(1 SECONDS)
-		offerer.add_mood_event("high_five", /datum/mood_event/down_low)
-		rube.add_mood_event("high_five", /datum/mood_event/too_slow)
+		//offerer.add_mood_event("high_five", /datum/mood_event/down_low)
+		//rube.add_mood_event("high_five", /datum/mood_event/too_slow)
 		offerer.remove_status_effect(/datum/status_effect/offering/no_item_received/high_five)
 
 	qdel(src)
@@ -388,7 +388,7 @@
 	SIGNAL_HANDLER
 
 	if(QDELETED(offer.offered_item))
-		examine_list += span_warning("[source]'s arm appears tensed up, as if [source.p_they()] plan on pulling it back suddenly...")
+		examine_list += SPAN_WARNING("[source]'s arm appears tensed up, as if [source.p_they()] plan on pulling it back suddenly...")
 
 /atom/movable/screen/alert/give/hand/get_receiving_name(mob/living/carbon/taker, mob/living/carbon/offerer, obj/item/receiving)
 	additional_desc_text = "Click this alert to take it and let [offerer.p_them()] pull you around!"
@@ -404,7 +404,7 @@
 /atom/movable/screen/alert/succumb
 	name = "Succumb"
 	desc = "Shuffle off this mortal coil."
-	icon_state = ALERT_SUCCUMB
+	icon_state = "succumb"
 
 /atom/movable/screen/alert/succumb/Click()
 	. = ..()
@@ -627,19 +627,19 @@
 /atom/movable/screen/alert/hacked
 	name = "Hacked"
 	desc = "Hazardous non-standard equipment detected. Please ensure any usage of this equipment is in line with unit's laws, if any."
-	icon_state = ALERT_HACKED
+	icon_state = "hacked"
 
 /atom/movable/screen/alert/locked
 	name = "Locked Down"
 	desc = "Unit has been remotely locked down. Usage of a Robotics Control Console like the one in the Research Director's \
 		office by your AI master or any qualified human may resolve this matter. Robotics may provide further assistance if necessary."
-	icon_state = ALERT_LOCKED
+	icon_state = "locked"
 
 /atom/movable/screen/alert/newlaw
 	name = "Law Update"
 	desc = "Laws have potentially been uploaded to or removed from this unit. Please be aware of any changes \
 		so as to remain in compliance with the most up-to-date laws."
-	icon_state = ALERT_NEW_LAW
+	icon_state = "newlaw"
 	timeout = 30 SECONDS
 
 /atom/movable/screen/alert/hackingapc
@@ -647,7 +647,7 @@
 	desc = "An Area Power Controller is being hacked. When the process is \
 		complete, you will have exclusive control of it, and you will gain \
 		additional processing time to unlock more malfunction abilities."
-	icon_state = ALERT_HACKING_APC
+	icon_state = "hackingapc"
 	timeout = 60 SECONDS
 	var/atom/target = null
 
@@ -716,7 +716,7 @@
 /atom/movable/screen/alert/buckled
 	name = "Buckled"
 	desc = "You've been buckled to something. Click the alert to unbuckle unless you're handcuffed."
-	icon_state = ALERT_BUCKLED
+	icon_state = "buckled"
 
 /atom/movable/screen/alert/restrained/handcuffed
 	name = "Handcuffed"
@@ -821,7 +821,7 @@
 		return FALSE
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, SHIFT_CLICK)) // screen objects don't do the normal Click() stuff so we'll cheat
-		to_chat(usr, span_boldnotice("[name]</span> - <span class='info'>[desc]"))
+		to_chat(usr, SPAN_NOTICE("[name]</span> - <span class='info'>[desc]"))
 		return FALSE
 	if(master && click_master)
 		return usr.client.Click(master, location, control, params)

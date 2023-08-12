@@ -172,7 +172,7 @@
 		return 0
 
 	forceMove(get_step(src, src.dir))
-	set_dir(turn(dir, 180))
+	setDir(turn(dir, 180))
 	update_icon()
 
 /obj/structure/railing/CheckExit(atom/movable/O, turf/target)

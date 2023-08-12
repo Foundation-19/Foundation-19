@@ -97,7 +97,7 @@
 	icon = new_icon
 	icon_state = new_iconstate
 	set_overlays(new_overlays)
-	set_dir(O.dir)
+	setDir(O.dir)
 	M.forceMove(src)
 	master = C
 	master.active_dummy = src

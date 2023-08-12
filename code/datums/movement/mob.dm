@@ -31,7 +31,7 @@
 	if(QDELETED(control_object))
 		. |= MOVEMENT_REMOVE
 	else
-		control_object.set_dir(direction)
+		control_object.setDir(direction)
 
 // Death handling
 /datum/movement_handler/mob/death/DoMove()
@@ -54,7 +54,7 @@
 	if(!mob.forceMove(T))
 		return
 
-	mob.set_dir(direction)
+	mob.setDir(direction)
 	mob.PostIncorporealMovement()
 
 /mob/proc/PostIncorporealMovement()
@@ -253,11 +253,11 @@
 	mob.ExtraMoveCooldown(extra_delay)
 
 	var/moved_to = get_dir(old_turf, get_turf(mob))
-	mob.set_dir(moved_to)
+	mob.setDir(moved_to)
 
 	for (var/obj/item/grab/G in mob)
 		if (G.assailant_reverse_facing())
-			mob.set_dir(GLOB.reverse_dir[direction])
+			mob.setDir(GLOB.reverse_dir[direction])
 		G.assailant_moved()
 	for (var/obj/item/grab/G in mob.grabbed_by)
 		G.adjust_position()

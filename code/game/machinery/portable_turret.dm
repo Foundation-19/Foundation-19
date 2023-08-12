@@ -581,7 +581,7 @@ var/list/turret_icons
 		last_target = target
 		spawn()
 			popUp()				//pop the turret up if it's not already up.
-		set_dir(get_dir(src, target))	//even if you can't shoot, follow the target
+		setDir(get_dir(src, target))	//even if you can't shoot, follow the target
 		spawn()
 			shootAt(target)
 		return 1
