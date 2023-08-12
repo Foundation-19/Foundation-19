@@ -61,10 +61,10 @@
 #define ADMIN_FLW(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];adminplayerobservefollow=[REF(user)]'>FLW</a>)"
 #define ADMIN_PP(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];adminplayeropts=[REF(user)]'>PP</a>)"
 #define ADMIN_VV(atom) "(<a href='?_src_=vars;[HrefToken(forceGlobal = TRUE)];Vars=[REF(atom)]'>VV</a>)"
-#define ADMIN_SM(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];subtlemessage=[REF(user)]'>SM</a>)"														// TODO
 #define ADMIN_TP(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];traitor=[REF(user)]'>TP</a>)"
 #define ADMIN_SP(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];skillpanel=[REF(user)]'>SP</a>)"
 #define ADMIN_KICK(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];boot2=[REF(user)]'>KICK</a>)"
+#define ADMIN_NRRT(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];narrateto=[REF(user)]'>NRRT</a>)"
 #define ADMIN_CENTCOM_REPLY(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];CentcommReply=[REF(user)]'>RPLY</a>)"
 #define ADMIN_SYNDICATE_REPLY(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];SyndicateReply=[REF(user)]'>RPLY</a>)"
 #define ADMIN_SC(user) "(<a href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];adminspawncookie=[REF(user)]'>SC</a>)"
