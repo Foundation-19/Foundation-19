@@ -16562,7 +16562,7 @@
 /area/site53/llcz/dclass/assignmentline)
 "MM" = (
 /obj/effect/floor_decal/corner/yellow/mono,
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "MN" = (
