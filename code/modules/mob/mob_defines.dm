@@ -210,3 +210,10 @@
 	var/datum/player_panel/mob_panel
 
 	var/list/datum/action/actions = list()
+
+	/// The calculated mob action speed slowdown based on the modifiers list
+	var/cached_multiplicative_actions_slowdown
+	/// List of action speed modifiers applying to this mob
+	var/list/actionspeed_modification //Lazy list, see mob_movespeed.dm
+	/// List of action speed modifiers ignored by this mob. List -> List (id) -> List (sources)
+	var/list/actionspeed_mod_immunities //Lazy list, see mob_movespeed.dm

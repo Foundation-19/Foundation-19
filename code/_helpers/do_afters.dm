@@ -37,6 +37,9 @@
 	if ((do_flags & DO_TARGET_UNIQUE_ACT) && target)
 		target.do_unique_target_user = user
 
+	if(!(do_flags & IGNORE_SLOWDOWNS))
+		delay *= user.cached_multiplicative_actions_slowdown
+
 	var/atom/user_loc = user.loc
 	var/user_dir = user.dir
 	var/user_hand = user.hand
