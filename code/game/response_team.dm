@@ -46,7 +46,7 @@ var/global/send_emergency_team = 0 // Used for automagic response teams
 
 /client/verb/JoinResponseTeam()
 
-	set name = "Join MTF squad"
+	set name = "Join MTF Squad"
 	set category = "IC"
 
 	if(!MayRespawn(1))
