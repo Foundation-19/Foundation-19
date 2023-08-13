@@ -51,8 +51,8 @@
 	var/target_type = target?.type
 
 	var/datum/progressbar/bar
-	if (do_flags & DO_SHOW_USER)
-		bar = new /datum/progressbar(user, delay, target || user, (do_flags & DO_SHOW_USER))
+	if (do_flags & DO_SHOW_TARGET)
+		bar = new /datum/progressbar(user, delay, target || user, (do_flags & DO_SHOW_TARGET))
 
 	SEND_SIGNAL(user, COMSIG_DO_AFTER_BEGAN)
 
