@@ -5,6 +5,7 @@
 	reagent_state = LIQUID
 	color = "#ff0080"
 	color_weight = 25
+	addiction_types = list(/datum/addiction/amnestics = 5)
 	var/isamnesticized = FALSE //failsafe to make sure players aren't amnesticized twice from the same dosage
 	var/threshold = 5 //threshold for sleep.
 
@@ -15,6 +16,7 @@
 	metabolism = 0.5 //higher metabolism, since class-a's are usually given in higher doses
 	overdose = 30 //30 units * 2 minutes each = maximum of an hour in a single dose.
 	value = 15
+	addiction_types = list(/datum/addiction/amnestics = 5)
 
 /datum/reagent/medicine/amnestics/classa/affect_blood(mob/living/carbon/M, removed)
 
@@ -38,6 +40,7 @@
 	color = "#00D9D9"
 	overdose = 15 //15 units * 1 day each = maximum of 15 days in a single dose
 	value = 20
+	addiction_types = list(/datum/addiction/amnestics = 15)
 
 /datum/reagent/medicine/amnestics/classb/affect_blood(mob/living/carbon/M, removed)
 	if((volume <= 0.25) && !isamnesticized)
@@ -61,6 +64,7 @@
 	overdose = 5
 	threshold = 5
 	value = 25
+	addiction_types = list(/datum/addiction/amnestics = 30)
 
 /datum/reagent/medicine/amnestics/classc/affect_blood(mob/living/carbon/M, removed)
 
@@ -92,6 +96,7 @@
 	color = "#5c1942"
 	overdose = 5
 	value = 65
+	addiction_types = list(/datum/addiction/amnestics = 20)
 
 /datum/reagent/medicine/amnestics/classe/affect_blood(mob/living/carbon/M, removed)
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
@@ -122,6 +127,7 @@
 	overdose = 5
 	threshold = 1
 	value = 75
+	addiction_types = list(/datum/addiction/amnestics = 100)
 
 /datum/reagent/medicine/amnestics/classf/affect_blood(mob/living/carbon/M, removed)
 	M.Weaken(10)
@@ -153,6 +159,7 @@
 	color = "#0ca139"
 	overdose = 5
 	value = 45
+	addiction_types = list(/datum/addiction/amnestics = 30)
 
 /datum/reagent/medicine/amnestics/classg/affect_blood(mob/living/carbon/M, removed)
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
@@ -184,6 +191,7 @@
 	metabolism = 0.025
 	overdose = 20 //20 units * 80 seconds each = maximum of 26.6 minutes in a single dose.
 	value = 35
+	addiction_types = list(/datum/addiction/amnestics = 10)
 
 /datum/reagent/medicine/amnestics/classh/affect_blood(mob/living/carbon/M, removed)
 
@@ -213,6 +221,7 @@
 	metabolism = 0.025
 	overdose = 20 //20 units * 80 seconds each = maximum of 26.6 minutes in a single dose.
 	value = 30
+	addiction_types = list(/datum/addiction/amnestics = 15)
 
 /datum/reagent/medicine/amnestics/classi/affect_blood(mob/living/carbon/M, removed)
 
