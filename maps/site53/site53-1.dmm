@@ -18820,7 +18820,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/item/storage/box/bloodpacks,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "Sz" = (
@@ -20941,6 +20940,7 @@
 "XQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/b_green/mono,
+/obj/item/storage/box/bloodpacks,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "XR" = (
