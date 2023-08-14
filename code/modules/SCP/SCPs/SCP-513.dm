@@ -164,7 +164,7 @@
 				message_cooldown_track = world.time
 			return
 
-	step_away(src, victim, Speed = 0.2)
+	step_away(src, victim)
 
 	if(((victim.stat != UNCONSCIOUS) && !victim.can_see(src)) || (victim.stat == DEAD) || (get_dist(src, victim) <= min_distance))
 		stop_hallucination()
