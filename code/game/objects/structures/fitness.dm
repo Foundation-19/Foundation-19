@@ -61,7 +61,7 @@
 		playsound(src.loc, 'sound/effects/weightlifter.ogg', 50, 1)
 		user.set_dir(SOUTH)
 		flick("[icon_state]_[weight]", src)
-		if(do_after(user, (2 + weight) SECONDS, max_bonus = (1 + 0.5 * weight) SECONDS))
+		if(do_after(user, (2 + weight) SECONDS, bonus_percentage = 35))
 			playsound(src.loc, 'sound/effects/weightdrop.ogg', 25, 1)
 			var/skill = max_weight * user.get_skill_value(SKILL_HAULING)/SKILL_MAX
 			var/message

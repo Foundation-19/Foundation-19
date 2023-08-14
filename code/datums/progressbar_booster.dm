@@ -15,17 +15,25 @@
 	/// Sound played when successfully triggered.
 	var/focus_sound
 	/// How often focuses show up
-	var/focus_frequency = 1 SECOND
+	var/focus_frequency
 
-/obj/screen/progressbar_booster/New(loc, datum/progressbar/target_bar, bonus_time, f_sound)
+/obj/screen/progressbar_booster/New(loc, datum/progressbar/target_bar, bonus_percentage, f_sound, f_frequency)
 	. = ..()
-	var/fastest_possible_time = target_bar.goal - bonus_time
-	var/max_uses = round(fastest_possible_time / focus_frequency, 1)
-	linked_bar = target_bar
-	time_per_click = bonus_time / max_uses
-	focus_sound = f_sound
+	bonus_percentage *= 0.01	// converts from readable values (0-100) to internal values (0-1)
+	var/fastest_possible_time = target_bar.goal - (target_bar.goal * bonus_percentage)
 
-	linked_bar.user.client.screen += src
+	var/max_uses = round(fastest_possible_time / f_frequency, 1)
+
+	if(max_uses <= 0)
+		time_per_click = target_bar.goal
+	else
+		time_per_click = (target_bar.goal * bonus_percentage) / max_uses
+
+	linked_bar = target_bar
+	focus_sound = f_sound
+	focus_frequency = f_frequency
+
+	target_bar.user.client.screen += src
 
 	prog_trap = new /obj/screen/progressbar_trap(get_turf(src), linked_bar, time_per_click)
 

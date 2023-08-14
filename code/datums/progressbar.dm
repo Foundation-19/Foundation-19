@@ -29,7 +29,7 @@
 	///How much bonus progress we've accured from a linked progress booster
 	var/bonus_progress = 0
 
-/datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE, max_bonus, focus_sound)
+/datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE, bonus_percentage, focus_sound, focus_frequency)
 	. = ..()
 	if (!istype(_target))
 		CRASH("Invalid target [_target] passed in")
@@ -53,8 +53,8 @@
 	if(user.client)
 		user_client = user.client
 		add_prog_bar_image_to_user()
-	if(max_bonus)
-		booster = new(get_turf(target), src, max_bonus, focus_sound)
+	if(bonus_percentage)
+		booster = new(get_turf(target), src, bonus_percentage, focus_sound, focus_frequency)
 
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
 	RegisterSignal(user, COMSIG_MOB_LOGOUT, .proc/clean_user_client)
