@@ -74,7 +74,7 @@
 			delete_me = 1
 			return
 		if ("scp527")
-			new /mob/living/carbon/human/scp_527 (loc)
+			new /mob/living/carbon/human/scp527 (loc)
 			delete_me = 1
 			return
 		if ("scp173")

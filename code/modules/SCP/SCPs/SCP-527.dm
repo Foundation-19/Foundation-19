@@ -1,34 +1,25 @@
-GLOBAL_LIST_EMPTY(scp527s)
+/mob/living/carbon/human/scp527
+	name = "Mr.Fish"
+	desc = "A strange fish like man"
 
-/mob/living/carbon/human/scp_527
-	SCP = /datum/scp/scp_527
 	status_flags = NO_ANTAG
 
-/datum/scp/scp_527
-	name = "SCP-527"
-	designation = "527"
-	classification = EUCLID
-
-/mob/living/carbon/human/scp_527/New(new_loc, new_species)
-	new_species = "SCP-527"
-	return ..()
-
-/mob/living/carbon/human/scp_527/Initialize()
-	fully_replace_character_name("Mr. Fish")
+/mob/living/carbon/human/scp527/Initialize(mapload, new_species = "SCP-527")
 	. = ..()
-
-	GLOB.scp527s += src
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"Mr.Fish", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SAFE, //Obj Class
+		"527", //Numerical Designation
+		PLAYABLE|ROLEPLAY
+	)
 
 	init_skills()
 
-	var/decl/hierarchy/outfit/scp_527/outfit = outfit_by_type(/decl/hierarchy/outfit/scp_527)
+	var/decl/hierarchy/outfit/scp527/outfit = outfit_by_type(/decl/hierarchy/outfit/scp527)
 	outfit.equip(src)
 
-/mob/living/carbon/human/scp_527/Destroy()
-	GLOB.scp527s -= src
-	return ..()
-
-/mob/living/carbon/human/scp_527/proc/init_skills()
+/mob/living/carbon/human/scp527/proc/init_skills()
 	skillset.skill_list = list()
 	for(var/decl/hierarchy/skill/S in GLOB.skills)
 		skillset.skill_list[S.type] = SKILL_UNTRAINED
@@ -38,7 +29,7 @@ GLOBAL_LIST_EMPTY(scp527s)
 	skillset.skill_list[SKILL_COOKING] = SKILL_TRAINED
 	skillset.on_levels_change()
 
-/mob/living/carbon/human/scp_527/Login()
+/mob/living/carbon/human/scp527/Login()
 	. = ..()
 	if(client)
 		add_language(LANGUAGE_ENGLISH)
