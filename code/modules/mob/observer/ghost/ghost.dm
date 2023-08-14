@@ -679,7 +679,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /*	for (var/scp131 in GLOB.scp131s)
 		var/mob/M = scp131
 		if (!M.client)
-			scps += M*/
+			scps += M
 	for (var/scp999 in GLOB.scp999s)
 		var/mob/M = scp999
 		if (!M.client)
@@ -704,4 +704,4 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		else
 			to_chat(src, SPAN_WARNING("Someone has already taken control of this SCP."))
 	else
-		to_chat(src, SPAN_WARNING("All playable Safe SCPs are currently being played."))
+		to_chat(src, SPAN_WARNING("All playable Safe SCPs are currently being played.")) */
