@@ -23,17 +23,17 @@
 		if ("pockets")
 			if (stripping)
 				visible_message(SPAN_DANGER("\The [user] is trying to empty [src]'s pockets!"))
-				if (do_after(user, strip_delay, src, do_flags = DO_DEFAULT | DO_SHOW_TARGET))
+				if (do_after(user, strip_delay, src, max_bonus = strip_delay * 0.2, do_flags = DO_DEFAULT | DO_SHOW_TARGET))
 					empty_pockets(user)
 			else
 				visible_message(SPAN_DANGER("\The [user] is trying to stuff \a [held] into \the [src]'s pocket!"))
-				if (do_after(user, strip_delay, src, do_flags = DO_DEFAULT | DO_SHOW_TARGET))
+				if (do_after(user, strip_delay, src, max_bonus = strip_delay * 0.2, do_flags = DO_DEFAULT | DO_SHOW_TARGET))
 					place_in_pockets(held, user)
 			return
 
 		if ("sensors")
 			visible_message(SPAN_DANGER("\The [user] is trying to set \the [src]'s sensors!"))
-			if (do_after(user, strip_delay, src, do_flags = DO_DEFAULT | DO_SHOW_TARGET))
+			if (do_after(user, strip_delay, src, max_bonus = strip_delay * 0.2, do_flags = DO_DEFAULT | DO_SHOW_TARGET))
 				toggle_sensors(user)
 			return
 

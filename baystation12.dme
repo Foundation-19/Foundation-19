@@ -319,6 +319,7 @@
 #include "code\datums\position_point_vector.dm"
 #include "code\datums\powers.dm"
 #include "code\datums\progressbar.dm"
+#include "code\datums\progressbar_booster.dm"
 #include "code\datums\recipe.dm"
 #include "code\datums\reference_tracking.dm"
 #include "code\datums\ruins.dm"

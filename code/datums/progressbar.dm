@@ -24,9 +24,12 @@
 	var/client_listindex = 0
 	///Variable to ensure smooth visual stacking on multiple progress bars - but for the target.
 	var/target_listindex = 0
+	///An optional, clickable object that can be used to speed up progress bars
+	var/obj/screen/progressbar_booster/booster
+	///How much bonus progress we've accured from a linked progress booster
+	var/bonus_progress = 0
 
-
-/datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE)
+/datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE, max_bonus, focus_sound)
 	. = ..()
 	if (!istype(_target))
 		CRASH("Invalid target [_target] passed in")
@@ -50,6 +53,8 @@
 	if(user.client)
 		user_client = user.client
 		add_prog_bar_image_to_user()
+	if(max_bonus)
+		booster = new(get_turf(target), src, max_bonus, focus_sound)
 
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
 	RegisterSignal(user, COMSIG_MOB_LOGOUT, .proc/clean_user_client)
@@ -115,7 +120,6 @@
 
 	return ..()
 
-
 ///Called right before the user's Destroy()
 /datum/progressbar/proc/on_user_delete(datum/source)
 	SIGNAL_HANDLER
@@ -123,7 +127,6 @@
 	user.progressbars = null //We can simply nuke the list and stop worrying about updating other prog bars if the user itself is gone.
 	user = null
 	qdel(src)
-
 
 ///Removes the progress bar image from the user_client and nulls the variable, if it exists.
 /datum/progressbar/proc/clean_user_client(datum/source)
@@ -133,7 +136,6 @@
 		return
 	user_client.images -= bar
 	user_client = null
-
 
 ///Called by user's Login(), it transfers the progress bar image to the new client.
 /datum/progressbar/proc/on_user_login(datum/source)
@@ -148,7 +150,6 @@
 	user_client = user.client
 	add_prog_bar_image_to_user()
 
-
 ///Called right before the target's Destroy()
 /datum/progressbar/proc/on_target_delete(datum/source)
 	SIGNAL_HANDLER
@@ -156,7 +157,6 @@
 	target.progressbars_recipient = null //We can simply nuke the list and stop worrying about updating other prog bars if the user itself is gone.
 	user = null
 	qdel(src)
-
 
 ///Removes the progress bar image from the target_client and nulls the variable, if it exists.
 /datum/progressbar/proc/clean_target_client(datum/source)
@@ -166,7 +166,6 @@
 		return
 	target_client.images -= targetbar
 	target_client = null
-
 
 ///Called by target's Login(), it transfers the progress bar image to the new client.
 /datum/progressbar/proc/on_target_login(datum/source)
@@ -181,14 +180,12 @@
 	target_client = target.get_client()
 	add_prog_bar_image_to_target()
 
-
 ///Adds a smoothly-appearing progress bar image to the user's screen.
 /datum/progressbar/proc/add_prog_bar_image_to_user()
 	bar.pixel_y = 0
 	bar.alpha = 0
 	user_client.images += bar
 	animate(bar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (client_listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
-
 
 ///Adds a smoothly-appearing progress bar image to the target's screen.
 /datum/progressbar/proc/add_prog_bar_image_to_target()
@@ -207,11 +204,16 @@
 	if(targetbar)
 		targetbar.icon_state = bar.icon_state
 
+///Boost the current progress by a specific amount
+/datum/progressbar/proc/boost_progress(amount)
+	bonus_progress += amount
 
 ///Called on progress end, be it successful or a failure. Wraps up things to delete the datum and bar.
 /datum/progressbar/proc/end_progress()
-	if(last_progress != goal)
+	if(last_progress < goal)
 		bar.icon_state = "[bar.icon_state]_fail"
+	if(booster)
+		QDEL_NULL(booster)
 
 	animate(bar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
 
