@@ -15,14 +15,14 @@
 	/// Sound played when successfully triggered.
 	var/focus_sound
 	/// How often focuses show up
-	var/focus_frequency = 5 SECOND
+	var/focus_frequency = 1 SECOND
 
 /obj/screen/progressbar_booster/New(loc, datum/progressbar/target_bar, bonus_time, f_sound)
 	. = ..()
 	var/fastest_possible_time = target_bar.goal - bonus_time
 	var/max_uses = round(fastest_possible_time / focus_frequency, 1)
 	linked_bar = target_bar
-	time_per_click = 0.1 //bonus_time / max_uses
+	time_per_click = bonus_time / max_uses
 	focus_sound = f_sound
 
 	linked_bar.user.client.screen += src
@@ -42,7 +42,7 @@
 	prog_trap.pixel_y = pixel_y
 
 	spawn()
-		stoplag(focus_frequency)
+		sleep(focus_frequency)
 		animate(src, alpha = 255, time = PROGBAR_BOOSTER_FADEIN_TIME)
 		if(prog_trap)
 			animate(prog_trap, alpha = 255, time = PROGBAR_BOOSTER_FADEIN_TIME)
