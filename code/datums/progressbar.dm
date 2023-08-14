@@ -61,7 +61,7 @@
 	RegisterSignal(user, COMSIG_MOB_LOGIN, .proc/on_user_login)
 
 	if(show_target && (target != user))
-		targetbar = image('icons/hud/progressbar.dmi', target, "prog_bar_0")
+		targetbar = image('icons/hud/progressbar_target.dmi', target, "prog_bar_0")
 		targetbar.plane = ABOVE_HUD_PLANE
 		targetbar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 
