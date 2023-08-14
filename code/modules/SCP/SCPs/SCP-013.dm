@@ -83,12 +83,12 @@
 				extinguish()
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/proc/get_bluelady_image(mob/living/carbon/human/H)
-	var/image/I = image('icons/mob/human.dmi', icon_state = "body_f_s", loc = H)
+	var/image/I = image('icons/mob/human.dmi', H, "body_f_s")
 	I.override = 1
-	I.add_overlay(image(icon = 'icons/mob/human_face.dmi', icon_state = "hair_emo2_s"))
-	I.add_overlay(image(icon = 'icons/mob/onmob/uniform.dmi', icon_state = "lady_in_blue_s"))
-	I.add_overlay(image(icon = 'icons/mob/onmob/mask.dmi', icon_state = "ccigon"))
-	I.add_overlay(image(icon = 'icons/mob/onmob/feet.dmi', icon_state = "heels"))
+	I.add_overlay(image('icons/mob/human_face.dmi', icon_state = "hair_emo2_s"))
+	I.add_overlay(image('icons/mob/onmob/uniform.dmi', icon_state = "lady_in_blue_s"))
+	I.add_overlay(image('icons/mob/onmob/mask.dmi', icon_state = "ccigon"))
+	I.add_overlay(image('icons/mob/onmob/feet.dmi', icon_state = "heels"))
 
 	return I
 
