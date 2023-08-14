@@ -1,8 +1,5 @@
-GLOBAL_LIST_EMPTY(scp529s)
-
 /mob/living/simple_animal/friendly/cat/fluff/scp529
-	SCP = /datum/scp/scp_529
-	name = "SCP-529"
+	name = "weird cat"
 	desc = "A friendly tabby cat that seems to be missing half of her body."
 	icon = 'icons/SCP/scp-529.dmi'
 	icon_state = "cat"
@@ -25,7 +22,11 @@ GLOBAL_LIST_EMPTY(scp529s)
 	pass_flags = PASS_FLAG_TABLE
 	density = FALSE
 
-/datum/scp/scp_529
-	name = "SCP-529"
-	designation = "529"
-	classification = SAFE
+/mob/living/simple_animal/friendly/cat/fluff/scp529/Initialize()
+	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"weird cat", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SAFE, //Obj Class
+		"529" //Numerical Designation
+	)
