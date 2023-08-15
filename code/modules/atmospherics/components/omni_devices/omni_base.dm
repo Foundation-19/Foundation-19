@@ -90,7 +90,7 @@
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
 	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
-	if(do_after(user, 40, src))
+	if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \

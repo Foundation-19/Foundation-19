@@ -274,11 +274,7 @@
 		to_chat(user, SPAN_NOTICE("Now welding \the [src]."))
 		playsound(src, 'sound/items/Welder.ogg', 50, 1)
 
-		if(!do_after(user, 20, src))
-			to_chat(user, SPAN_NOTICE("You must remain close to finish this task."))
-			return 1
-
-		if(!src)
+		if(!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) || !src)
 			return 1
 
 		if(!WT.isOn())
@@ -322,7 +318,7 @@
 			return 1
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
-		if (do_after(user, 40, src))
+		if (do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			user.visible_message( \
 				SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 				SPAN_NOTICE("You have unfastened \the [src]."), \

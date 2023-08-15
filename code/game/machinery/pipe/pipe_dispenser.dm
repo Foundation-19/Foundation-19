@@ -101,7 +101,7 @@
 				SPAN_NOTICE("You start [anchored ? "un" : ""]fastening \the [src]."),
 				SPAN_ITALIC("You hear bolts being turned.")
 			)
-			if (!do_after(user, 3 SECONDS, src))
+			if (!do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 				return
 			user.visible_message(
 				SPAN_NOTICE("\The [user] [anchored ? "un" : ""]secures \the [src]."),

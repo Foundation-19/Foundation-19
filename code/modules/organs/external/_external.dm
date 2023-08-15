@@ -385,7 +385,7 @@
 			return 0
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if(!do_after(user, 1 SECOND, owner))
+	if(!do_after(user, 1 SECOND, owner, bonus_percentage = 100))
 		to_chat(user, SPAN_WARNING("You must stand still to do that."))
 		return 0
 

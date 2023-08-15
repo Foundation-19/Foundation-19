@@ -101,7 +101,7 @@
 				return 0
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			if(!do_after(user, 3 SECONDS, M)) return
+			if(!do_after(user, 4 SECONDS, M, bonus_percentage = 25)) return
 
 			if (user.get_active_hand() != src)
 				return

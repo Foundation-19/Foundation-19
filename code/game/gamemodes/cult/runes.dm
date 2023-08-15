@@ -167,7 +167,7 @@
 		showOptions(user)
 	else if(user.loc == get_turf(src))
 		speak_incantation(user, "Sas[pick("'","`")]so c'arta forbici!")
-		if(do_after(user, 30))
+		if(do_after(user, 4 SECONDS, bonus_percentage = 25))
 			user.visible_message(SPAN_WARNING("\The [user] disappears in a flash of red light!"), SPAN_WARNING("You feel as your body gets dragged into the dimension of Nar-Sie!"), "You hear a sickening crunch.")
 			user.forceMove(src)
 			showOptions(user)

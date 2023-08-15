@@ -68,7 +68,7 @@ var/list/solars_list = list()
 	if(isCrowbar(W))
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 		user.visible_message(SPAN_NOTICE("[user] begins to take the glass off the solar panel."))
-		if(do_after(user, 50,src))
+		if(do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 			var/obj/item/solar_assembly/S = locate() in src
 			if(S)
 				S.dropInto(loc)

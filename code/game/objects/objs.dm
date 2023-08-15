@@ -133,13 +133,13 @@
 			return
 	return ..()
 
-/obj/proc/wrench_floor_bolts(mob/user, delay=20)
+/obj/proc/wrench_floor_bolts(mob/user, delay = 2 SECONDS)
 	playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 	if(anchored)
 		user.visible_message("\The [user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
 	else
 		user.visible_message("\The [user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
-	if(do_after(user, delay, src))
+	if(do_after(user, delay, src, bonus_percentage = 25))
 		if(!src) return
 		to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured \the [src]!"))
 		anchored = !anchored

@@ -423,7 +423,7 @@
 			to_chat(user, SPAN_NOTICE("There is no tape left inside."))
 			return
 		to_chat(user, SPAN_NOTICE("You start winding the tape back in..."))
-		if(do_after(user, 120, src))
+		if(do_after(user, 15 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You wound the tape back in."))
 			fix()
 		return

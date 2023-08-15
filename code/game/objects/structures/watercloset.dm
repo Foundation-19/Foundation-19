@@ -35,17 +35,7 @@
 		return
 	being_unclogged = TRUE
 	user.visible_message(SPAN_NOTICE("\The [user] strives valiantly to unclog \the [src] with \the [thing]!"))
-	spawn
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
-	if(do_after(user, 45, src) && clogged > 0)
+	if(do_after(user, 6 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/effects/plunger.ogg') && clogged > 0)
 		visible_message(SPAN_NOTICE("With a loud gurgle, \the [src] begins flowing more freely."))
 		playsound(loc, pick(SSfluids.gurgles), 100, 1)
 		clogged--
@@ -156,7 +146,7 @@
 	if(isCrowbar(I))
 		to_chat(user, SPAN_NOTICE("You start to [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]."))
 		playsound(loc, 'sound/effects/stonedoor_openclose.ogg', 50, 1)
-		if(do_after(user, 30, src))
+		if(do_after(user, 3 SECONDS, src))
 			user.visible_message(SPAN_NOTICE("[user] [cistern ? "replaces the lid on the cistern" : "lifts the lid off the cistern"]!"), SPAN_NOTICE("You [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]!"), "You hear grinding porcelain.")
 			cistern = !cistern
 			update_icon()
@@ -173,7 +163,7 @@
 			if(open && !swirlie)
 				user.visible_message(SPAN_DANGER("\The [user] starts jamming \the [GM]'s face into \the [src]!"))
 				swirlie = GM
-				if(do_after(user, 30, src))
+				if(do_after(user, 3 SECONDS, src))
 					user.visible_message(SPAN_DANGER("\The [user] gives [GM.name] a swirlie!"))
 					GM.adjustOxyLoss(5)
 				swirlie = null
@@ -267,7 +257,7 @@
 		var/newtemp = input(user, "What setting would you like to set the temperature valve to?", "Water Temperature Valve") in temperature_settings
 		to_chat(user,SPAN_NOTICE("You begin to adjust the temperature valve with \the [I]."))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
-		if(do_after(user, 50, src))
+		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Ratchet.ogg'))
 			watertemp = newtemp
 			user.visible_message(SPAN_NOTICE("\The [user] adjusts \the [src] with \the [I]."), SPAN_NOTICE("You adjust the shower with \the [I]."))
 			add_fingerprint(user)
@@ -403,7 +393,7 @@
 	playsound(loc, 'sound/effects/sink_long.ogg', 75, 1)
 
 	busy = 1
-	if(!do_after(user, 40, src))
+	if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 		busy = 0
 		return TRUE
 	busy = 0
@@ -463,7 +453,7 @@
 	playsound(loc, 'sound/effects/sink_long.ogg', 75, 1)
 
 	busy = 1
-	if(!do_after(user, 40, src))
+	if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 		busy = 0
 		return TRUE
 	busy = 0
@@ -507,7 +497,7 @@
 	if (clogged)
 		to_chat(user, SPAN_WARNING("\The [src] is already clogged."))
 		return
-	if (!do_after(user, 3 SECONDS, src))
+	if (!do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 		return
 	if (clogged || QDELETED(I) || !user.unEquip(I))
 		return

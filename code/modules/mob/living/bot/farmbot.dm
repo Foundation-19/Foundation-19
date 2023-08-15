@@ -156,7 +156,7 @@
 				update_icons()
 				visible_message(SPAN_NOTICE("[src] starts [T.dead? "removing the plant from" : "harvesting"] \the [A]."))
 				busy = 1
-				if(do_after(src, 30, A))
+				if(do_after(src, 3 SECONDS, A))
 					visible_message(SPAN_NOTICE("[src] [T.dead? "removes the plant from" : "harvests"] \the [A]."))
 					T.physical_attack_hand(src)
 			if(FARMBOT_WATER)
@@ -164,7 +164,7 @@
 				update_icons()
 				visible_message(SPAN_NOTICE("[src] starts watering \the [A]."))
 				busy = 1
-				if(do_after(src, 30, A))
+				if(do_after(src, 3 SECONDS, A))
 					playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 					visible_message(SPAN_NOTICE("[src] waters \the [A]."))
 					tank.reagents.trans_to(T, 100 - T.waterlevel)
@@ -173,7 +173,7 @@
 				update_icons()
 				visible_message(SPAN_NOTICE("[src] starts uprooting the weeds in \the [A]."))
 				busy = 1
-				if(do_after(src, 30, A))
+				if(do_after(src, 3 SECONDS, A))
 					visible_message(SPAN_NOTICE("[src] uproots the weeds in \the [A]."))
 					T.weedlevel = 0
 			if(FARMBOT_NUTRIMENT)
@@ -181,7 +181,7 @@
 				update_icons()
 				visible_message(SPAN_NOTICE("[src] starts fertilizing \the [A]."))
 				busy = 1
-				if(do_after(src, 30, A))
+				if(do_after(src, 3 SECONDS, A))
 					visible_message(SPAN_NOTICE("[src] fertilizes \the [A]."))
 					T.reagents.add_reagent(/datum/reagent/ammonia, 10)
 		busy = 0
@@ -195,7 +195,7 @@
 		update_icons()
 		visible_message(SPAN_NOTICE("[src] starts refilling its tank from \the [A]."))
 		busy = 1
-		while(do_after(src, 10) && tank.reagents.total_volume < tank.reagents.maximum_volume)
+		while(do_after(src, 1 SECOND, bonus_percentage = 100) && tank.reagents.total_volume < tank.reagents.maximum_volume)
 			tank.reagents.add_reagent(/datum/reagent/water, 100)
 			if(prob(5))
 				playsound(loc, 'sound/effects/slosh.ogg', 25, 1)

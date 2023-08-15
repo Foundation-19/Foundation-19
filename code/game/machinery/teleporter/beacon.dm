@@ -57,7 +57,7 @@
 			)
 			playsound(loc, 'sound/items/Ratchet.ogg', 75, TRUE)
 
-			if (!do_after(user, 3 SECONDS, src, DO_DEFAULT | DO_TARGET_UNIQUE_ACT))
+			if (!do_after(user, 4 SECONDS, src, DO_DEFAULT | DO_TARGET_UNIQUE_ACT, bonus_percentage = 25))
 				return TRUE
 
 			anchored = !anchored

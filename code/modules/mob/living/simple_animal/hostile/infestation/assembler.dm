@@ -125,7 +125,7 @@
 	playsound(src, 'sound/simple_mob/abominable_infestation/assembler/ambient_1.ogg', 50, TRUE)
 	set_AI_busy(TRUE)
 
-	if(!do_after(src, min(10, L.mob_size) SECONDS, L))
+	if(!do_after(src, min(1 SECOND, L.mob_size) SECONDS, L, bonus_percentage = 100))
 		set_AI_busy(FALSE)
 		return FALSE
 
@@ -140,7 +140,7 @@
 	playsound(src, 'sound/simple_mob/abominable_infestation/assembler/ambient_1.ogg', 50, TRUE)
 	set_AI_busy(TRUE)
 
-	if(!do_after(src, 3 SECONDS, H))
+	if(!do_after(src, 4 SECONDS, H, bonus_percentage = 25))
 		set_AI_busy(FALSE)
 		return FALSE
 

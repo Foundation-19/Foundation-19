@@ -147,7 +147,7 @@
 /mob/living/simple_animal/proc/try_reload()
 	set_AI_busy(TRUE)
 
-	if(do_after(src, reload_time, src))
+	if(do_after(src, reload_time, src, bonus_percentage = 25))
 		if(reload_sound)
 			playsound(src, reload_sound, 70, 1)
 		reload_count = 0

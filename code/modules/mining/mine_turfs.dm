@@ -190,7 +190,7 @@ var/list/mining_floors = list()
 	if (istype(W, /obj/item/device/measuring_tape))
 		var/obj/item/device/measuring_tape/P = W
 		user.visible_message(SPAN_NOTICE("\The [user] extends [P] towards [src]."),SPAN_NOTICE("You extend [P] towards [src]."))
-		if(do_after(user,10, src))
+		if(do_after(user, 1 SECOND, src, bonus_percentage = 100))
 			to_chat(user, SPAN_NOTICE("\The [src] has been excavated to a depth of [excavation_level]cm."))
 		return
 
@@ -223,7 +223,7 @@ var/list/mining_floors = list()
 				if(prob(50))
 					artifact_debris()
 
-		if(do_after(user,P.digspeed, src))
+		if(do_after(user, P.digspeed, src, bonus_percentage = 25))
 			if(finds && finds.len)
 				var/datum/find/F = finds[1]
 				if(newDepth == F.excavation_required) // When the pick hits that edge just right, you extract your find perfectly, it's never confined in a rock
@@ -497,7 +497,7 @@ var/list/mining_floors = list()
 		to_chat(user, SPAN_WARNING("You start digging."))
 		playsound(user.loc, 'sound/effects/rustle1.ogg', 50, 1)
 
-		if(!do_after(user,40, src)) return
+		if(!do_after(user, 4 SECONDS, src, bonus_percentage = 25)) return
 
 		to_chat(user, SPAN_NOTICE("You dug a hole."))
 		gets_dug()

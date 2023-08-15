@@ -310,7 +310,7 @@
 				owner.visible_message(SPAN_WARNING("\The [owner] retracts \the [src], preparing to push with it!"), blind_message = SPAN_WARNING("You hear the whine of hydraulics and feel a rush of air!"))
 				owner.setClickCooldown(0.7 SECONDS)
 				last_push = world.time
-				if (do_after(owner, 0.5 SECONDS, get_turf(owner), do_flags = DO_SHOW_USER | DO_TARGET_CAN_TURN) && owner)
+				if (do_after(owner, 0.5 SECONDS, get_turf(owner), do_flags = DO_SHOW_USER | DO_TARGET_CAN_TURN, bonus_percentage = 50) && owner)
 					owner.visible_message(SPAN_WARNING("\The [owner] slams the area in front \the [src]!"), blind_message = SPAN_WARNING("You hear a loud hiss and feel a strong gust of wind!"))
 					playsound(src ,'sound/effects/bang.ogg',35,1)
 					var/list/turfs = list()

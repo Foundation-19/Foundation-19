@@ -28,7 +28,7 @@ var/global/list/empty_playable_ai_cores = list()
 		if(0)
 			if(isWrench(P))
 				playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
-				if(do_after(user, 20, src))
+				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 					to_chat(user, SPAN_NOTICE("You wrench the frame into place."))
 					anchored = TRUE
 					state = 1
@@ -38,7 +38,7 @@ var/global/list/empty_playable_ai_cores = list()
 					to_chat(user, "The welder must be on for this task.")
 					return
 				playsound(loc, 'sound/items/Welder.ogg', 50, 1)
-				if(do_after(user, 20, src))
+				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 					if(!src || !WT.remove_fuel(0, user)) return
 					to_chat(user, SPAN_NOTICE("You deconstruct the frame."))
 					new /obj/item/stack/material/plasteel( loc, 4)
@@ -47,7 +47,7 @@ var/global/list/empty_playable_ai_cores = list()
 		if(1)
 			if(isWrench(P))
 				playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
-				if(do_after(user, 20, src))
+				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 					to_chat(user, SPAN_NOTICE("You unfasten the frame."))
 					anchored = FALSE
 					state = 0
@@ -81,7 +81,7 @@ var/global/list/empty_playable_ai_cores = list()
 					return
 				to_chat(user, SPAN_NOTICE("You start to add cables to the frame."))
 				playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
-				if (do_after(user, 20, src) && state == 2)
+				if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && state == 2)
 					if (C.use(5))
 						state = 3
 						icon_state = "3"
@@ -107,7 +107,7 @@ var/global/list/empty_playable_ai_cores = list()
 						return
 					to_chat(user, SPAN_NOTICE("You start to put in the glass panel."))
 					playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
-					if (do_after(user, 20,src) && state == 3)
+					if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && state == 3)
 						if(RG.use(2))
 							to_chat(user, SPAN_NOTICE("You put in the glass panel."))
 							state = 4
@@ -250,7 +250,7 @@ var/global/list/empty_playable_ai_cores = list()
 	else if(istype(W, /obj/item/wrench))
 		if(anchored)
 			user.visible_message(SPAN_NOTICE("\The [user] starts to unbolt \the [src] from the plating..."))
-			if(!do_after(user,40,src))
+			if(!do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				user.visible_message(SPAN_NOTICE("\The [user] decides not to unbolt \the [src]."))
 				return
 			user.visible_message(SPAN_NOTICE("\The [user] finishes unfastening \the [src]!"))
@@ -258,7 +258,7 @@ var/global/list/empty_playable_ai_cores = list()
 			return
 		else
 			user.visible_message(SPAN_NOTICE("\The [user] starts to bolt \the [src] to the plating..."))
-			if(!do_after(user,40,src))
+			if(!do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				user.visible_message(SPAN_NOTICE("\The [user] decides not to bolt \the [src]."))
 				return
 			user.visible_message(SPAN_NOTICE("\The [user] finishes fastening down \the [src]!"))

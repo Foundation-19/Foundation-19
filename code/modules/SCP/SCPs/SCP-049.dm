@@ -252,17 +252,17 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	src.visible_message("\The [src] begins to pry open \the [A]!")
 
-	if(!do_after(src,120,A))
+	if(!do_after(src, 15 SECONDS, A, bonus_percentage = 25))
 		return
 
 	if(!A.density)
 		return
 
 	A.do_animate("spark")
-	do_after(10)
-	A.set_broken(TRUE)
-	var/check = A.open(1)
-	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
+	if(do_after(1 SECOND, bonus_percentage = 100))
+		A.set_broken(TRUE)
+		var/check = A.open(1)
+		src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
 // special channel that lets SCP-049 and SCP-049-1 communicate
 /mob/living/carbon/human/proc/SCP_049_talk()
@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 				to_chat(src, SPAN_NOTICE("You spend a great deal of time expertly curing this victim's disease."))
 				src.visible_message(SPAN_DANGER("[src] begins performing a horrifying procedure on [target]!"))
 
-		if(!do_after(src, 15 SECONDS, target))
+		if(!do_after(src, 20 SECONDS, target, bonus_percentage = 25))
 			to_chat(src, SPAN_WARNING("Our curing of [target] has been interrupted!"))
 			curing = FALSE
 			return

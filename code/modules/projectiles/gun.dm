@@ -507,7 +507,7 @@
 	mouthshoot = 1
 	admin_attacker_log(user, "is attempting to suicide with \a [src]")
 	M.visible_message(SPAN_DANGER("[user] sticks their gun in their mouth, ready to pull the trigger..."))
-	if(!do_after(user, 40, do_flags = DO_DEFAULT & ~DO_SHOW_USER))
+	if(!do_after(user, 4 SECONDS))
 		M.visible_message(SPAN_NOTICE("[user] decided life was worth living"))
 		mouthshoot = 0
 		return

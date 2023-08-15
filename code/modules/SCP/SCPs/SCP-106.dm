@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 	// Cooldowns and time variables
 	var/phase_cooldown
 	var/phase_cooldown_time = 2 SECONDS
-	var/phase_time = 2 SECONDS
+	var/phase_time = 3 SECONDS
 	var/pocket_dimension_cooldown
 	var/pocket_dimension_cooldown_time = 20 SECONDS
 	var/sound_cooldown
@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 		if(incapacitated())
 			return FALSE
 		pocket_dimension_cooldown = world.time + 50
-		if(!do_after(src, 30, my_turf))
+		if(!do_after(src, 4 SECONDS, my_turf, bonus_percentage = 25))
 			return FALSE
 	var/turf/T = pick_area_turf(pocket_dimension_area_type, list(/proc/not_turf_contains_dense_objects))
 	if(!istype(T))
@@ -294,7 +294,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 
 	playsound(target_object, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 35, FALSE)
 
-	if(do_after(src, phase_time, target_object))
+	if(do_after(src, phase_time, target_object, bonus_percentage = 25))
 		forceMove(get_step(src, dir))
 		visible_message("<span class = 'danger'>[src] phases through \the [target_object].</span>")
 
@@ -340,7 +340,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 	playsound(step_turf, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 35, FALSE)
 
 	var/anim_duration = 20 SECONDS
-	if(do_after(src, phase_time, step_turf))
+	if(do_after(src, phase_time, step_turf, bonus_percentage = 25))
 		WallEye.possess(src)
 		WallEye.forceMove(step_turf)
 		forceMove(WallEye)
@@ -369,7 +369,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 	playsound(exit, pick('sound/scp/106/wall_decay.ogg'), 35, FALSE)
 	animate(exit, color = "#555555", time = 5 SECONDS)
 
-	if(!do_after(src, 5 SECONDS, WallEye))
+	if(!do_after(src, 8 SECONDS, WallEye, bonus_percentage = 25))
 		animate(exit, color = old_color, time = 2 SECONDS)
 		return
 
@@ -479,7 +479,7 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 		return
 
 	visible_message(SPAN_WARNING("[user] starts to put [target] onto the femur breaker..."))
-	if(!do_after(user, 3 SECONDS, target))
+	if(!do_after(user, 5 SECONDS, target, bonus_percentage = 25))
 		return
 
 	// TODO: Rework buckling code to avoid copy-pasta

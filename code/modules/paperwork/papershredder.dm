@@ -122,7 +122,7 @@
 		return
 	user.visible_message(SPAN_WARNING("\The [user] holds \the [P] up to \the [src]. It looks like \he's trying to burn it!"), \
 		SPAN_WARNING("You hold \the [P] up to \the [src], burning it slowly."))
-	if(!do_after(user,20, src))
+	if(!do_after(user, 2 SECONDS, src, bonus_percentage = 25))
 		return
 	user.visible_message(SPAN_DANGER("\The [user] burns right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap."), \
 		SPAN_DANGER("You burn right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap."))

@@ -37,7 +37,7 @@
 	var/min_pilot_size = MOB_SMALL
 	var/max_pilot_size = MOB_LARGE
 	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
-	var/climb_time = 25
+	var/climb_time = 3 SECONDS
 
 /obj/item/mech_component/chassis/New()
 	..()
@@ -169,7 +169,7 @@
 		return ..()
 	if(pilot_coverage < 100)
 		to_chat(user, SPAN_NOTICE("This type of chassis doesn't support internals."))
-	if(!C.anchored && do_after(user, 5, src))
+	if(!C.anchored && do_after(user, 0.5 SECONDS, src, bonus_percentage = 100))
 		if(C.anchored)
 			return
 		to_chat(user, SPAN_NOTICE("You install the canister in the [src]."))

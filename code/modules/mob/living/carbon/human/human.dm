@@ -688,7 +688,7 @@
 			to_chat(src, SPAN_WARNING("You cannot do that right now."))
 			return
 		visible_message(SPAN_DANGER("\The [src] starts sticking a finger down [p_their()] own throat. It looks like [p_they()] [p_are()] trying to throw up!"))
-		if(!do_after(src, 30))
+		if(!do_after(src, 3 SECONDS))
 			return
 		timevomit = max(timevomit, 5)
 
@@ -1038,7 +1038,7 @@
 		return
 
 	to_chat(usr, "You must[self ? "" : " both"] remain still until counting is finished.")
-	if(do_after(usr, 6 SECONDS, src))
+	if(do_after(usr, 10 SECONDS, src))
 		var/message = SPAN_NOTICE("[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].")
 		to_chat(usr, message)
 		SEND_SIGNAL(usr, COMSIG_CHECKED_PULSE)
@@ -1443,7 +1443,7 @@
 		to_chat(src, SPAN_WARNING("You brace yourself to relocate your [current_limb.joint]..."))
 	else
 		to_chat(U, SPAN_WARNING("You begin to relocate [S]'s [current_limb.joint]..."))
-	if(!do_after(U, 30, src))
+	if(!do_after(U, 3 SECONDS, src))
 		return
 	if(!current_limb || !S || !U)
 		return

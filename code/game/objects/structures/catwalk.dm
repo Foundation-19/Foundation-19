@@ -104,7 +104,7 @@
 		if(!ST.in_use)
 			to_chat(user, SPAN_NOTICE("Placing tile..."))
 			ST.in_use = 1
-			if (!do_after(user, 10))
+			if (!do_after(user, 1 SECOND, bonus_percentage = 50))
 				ST.in_use = 0
 				return
 			to_chat(user, SPAN_NOTICE("You plate \the [src]"))

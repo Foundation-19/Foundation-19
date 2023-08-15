@@ -38,14 +38,14 @@
 			return
 
 		if(isScrewdriver(W))
-			if (do_after(user, 20, src))
+			if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 				src.open =! src.open
 				user.show_message(text("<span class='notice'>You [] the service panel.</span>", (src.open ? "open" : "close")))
 			return
 		if(isMultitool(W) && (src.open == 1)&& (!src.l_hacking))
 			user.show_message(SPAN_NOTICE("Now attempting to reset internal memory, please hold."), 1)
 			src.l_hacking = 1
-			if (do_after(usr, 100, src))
+			if (do_after(usr, 12 SECONDS, src, bonus_percentage = 25))
 				if (prob(40))
 					src.l_setshort = 1
 					src.l_set = 0

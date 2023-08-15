@@ -37,7 +37,7 @@
 	item_state = "jackhammer"
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_STEEL = 3750)
-	var/digspeed = 40 //moving the delay to an item var so R&D can make improved picks. --NEO
+	var/digspeed = 4 SECONDS //moving the delay to an item var so R&D can make improved picks. --NEO
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 	var/drill_sound = 'sound/weapons/Genhit.ogg'
@@ -63,7 +63,7 @@
 	name = "advanced mining drill" // Can dig sand as well!
 	icon_state = "handdrill"
 	item_state = "jackhammer"
-	digspeed = 30
+	digspeed = 3 SECONDS
 	origin_tech = list(TECH_MATERIAL = 2, TECH_POWER = 3, TECH_ENGINEERING = 2)
 	desc = "Yours is the drill that will pierce through the rock walls."
 	drill_verb = "drilling"
@@ -81,7 +81,7 @@
 	name = "diamond mining drill"
 	icon_state = "diamonddrill"
 	item_state = "jackhammer"
-	digspeed = 5 //Digs through walls, girders, and can dig up sand
+	digspeed = 0.5 SECONDS //Digs through walls, girders, and can dig up sand
 	origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 4, TECH_ENGINEERING = 5)
 	desc = "Yours is the drill that will pierce the heavens!"
 	drill_verb = "drilling"
@@ -90,7 +90,7 @@
 	name = "cyborg mining drill"
 	icon_state = "diamonddrill"
 	item_state = "jackhammer"
-	digspeed = 15
+	digspeed = 1.5 SECONDS
 	desc = ""
 	drill_verb = "drilling"
 
@@ -100,7 +100,7 @@
 	desc = "This makes no metallurgic sense."
 	icon_state = "pick_preview"
 	item_state = "pickaxe"
-	digspeed = 30
+	digspeed = 3 SECONDS
 	origin_tech = list(TECH_MATERIAL = 3)
 	drill_verb = "picking"
 	sharp = TRUE
@@ -112,7 +112,7 @@
 	desc = "This makes no metallurgic sense."
 	icon_state = "pick_preview"
 	item_state = "pickaxe"
-	digspeed = 20
+	digspeed = 2 SECONDS
 	origin_tech = list(TECH_MATERIAL = 4)
 	drill_verb = "picking"
 	sharp = TRUE
@@ -124,7 +124,7 @@
 	desc = "A pickaxe with a diamond pick head."
 	icon_state = "pick_preview"
 	item_state = "pickaxe"
-	digspeed = 10
+	digspeed = 1 SECOND
 	origin_tech = list(TECH_MATERIAL = 6, TECH_ENGINEERING = 4)
 	drill_verb = "picking"
 	sharp = TRUE
@@ -137,7 +137,7 @@
 	icon_state = "pick_makeshift"
 	item_state = null
 	build_from_parts = FALSE
-	digspeed = 80
+	digspeed = 8 SECONDS
 	drill_verb = "chipping"
 /*****************************Shovel********************************/
 

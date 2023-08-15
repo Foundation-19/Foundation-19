@@ -229,26 +229,26 @@ GLOBAL_LIST_EMPTY(scp173s)
 		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
-	var/open_time = 3 SECONDS
+	var/open_time = 4 SECONDS
 	if(istype(A, /obj/machinery/door/blast))
 		if(get_area(A) == spawn_area)
 			to_chat(src, SPAN_WARNING("You cannot open blast doors in your containment zone."))
 			return
-		open_time = 15 SECONDS
+		open_time = 16 SECONDS
 
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
 		if(AR.locked)
-			open_time += 2 SECONDS
+			open_time += 23 SECONDS
 		if(AR.welded)
-			open_time += 2 SECONDS
+			open_time += 3 SECONDS
 		if(AR.secured_wires)
-			open_time += 2 SECONDS
+			open_time += 3 SECONDS
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
 	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
-	if(!do_after(src, open_time, A))
+	if(!do_after(src, open_time, A, bonus_percentage = 25))
 		return
 
 	if(istype(A, /obj/machinery/door/blast))
@@ -464,7 +464,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(isscp173(dropping))
 		visible_message(SPAN_WARNING("[user] starts to put [dropping] into the cage."))
 		var/oloc = loc
-		if(do_after(user, 10 SECONDS, dropping) && loc == oloc)
+		if(do_after(user, 13 SECONDS, dropping, bonus_percentage = 25) && loc == oloc)
 			dropping.forceMove(src)
 			update_icon()
 			visible_message(SPAN_NOTICE("[user] puts [dropping] in the cage."))
@@ -479,7 +479,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(!LAZYLEN(contents))
 		return ..()
 	visible_message(SPAN_WARNING("[L] attempts to open \the [src]."))
-	if(do_after(L, 5 SECONDS, src))
+	if(do_after(L, 7 SECONDS, src, bonus_percentage = 25))
 		visible_message(SPAN_DANGER("[L] opens \the [src]!"))
 		ReleaseContents()
 
@@ -490,7 +490,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(user.IsBeingWatched())
 		to_chat(user, SPAN_WARNING("Someone is looking at you!"))
 		return
-	if(!do_after(user, 1 SECONDS, src)) // Some moron suggested putting 173 in a conveyor loop.
+	if(!do_after(user, 1 SECOND, src, bonus_percentage = 100)) // Some moron suggested putting 173 in a conveyor loop.
 		return
 	if(user.IsBeingWatched())
 		to_chat(user, SPAN_WARNING("Someone is looking at you!"))
@@ -557,7 +557,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	playsound(src, 'sound/items/Welder2.ogg', 30, TRUE)
 	user.visible_message(SPAN_NOTICE("\The [user] starts repairing sections of \the [src]."))
-	if(!do_after(user, (4 SECONDS) + (damage_state SECONDS), src))
+	if(!do_after(user, (6 SECONDS + damage_state SECONDS), src, bonus_percentage = 25))
 		return FALSE
 	if(!WT.remove_fuel(damage_state, user))
 		return

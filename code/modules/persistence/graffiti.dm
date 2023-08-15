@@ -41,7 +41,7 @@
 /obj/effect/decal/writing/attackby(obj/item/thing, mob/user)
 	if(isWelder(thing))
 		var/obj/item/weldingtool/welder = thing
-		if(welder.isOn() && welder.remove_fuel(0,user) && do_after(user, 5, src) && !QDELETED(src))
+		if(welder.isOn() && welder.remove_fuel(0, user) && do_after(user, 0.6 SECONDS, src, bonus_percentage = 100) && !QDELETED(src))
 			playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
 			user.visible_message(SPAN_NOTICE("\The [user] clears away some graffiti."))
 			qdel(src)
@@ -54,7 +54,7 @@
 		var/_message = sanitize(input("Enter an additional message to engrave.", "Graffiti") as null|text, trim = TRUE)
 		if(_message && loc && user && !user.incapacitated() && user.Adjacent(loc) && thing.loc == user)
 			user.visible_message(SPAN_WARNING("\The [user] begins carving something into \the [loc]."))
-			if(do_after(user, max(20, length(_message)), src) && loc)
+			if(do_after(user, max(2 SECONDS, length(_message)), src, bonus_percentage = 25) && loc)
 				user.visible_message(SPAN_DANGER("\The [user] carves some graffiti into \the [loc]."))
 				message = "[message] [_message]"
 				author = user.ckey

@@ -48,7 +48,7 @@
 			SPAN_WARNING("You hear metal creaking.")
 		)
 		playsound(user, 'sound/items/Crowbar.ogg', 50, TRUE)
-		if (!do_after(user, 10 SECONDS, src) || !loaded_augment)
+		if (!do_after(user, 12 SECONDS, src, bonus_percentage = 25) || !loaded_augment)
 			return
 		user.visible_message(
 			SPAN_WARNING("\The [user] levers \the [loaded_augment] out of \the [src]."),
@@ -104,7 +104,7 @@
 			SPAN_WARNING("\The [user] places \the [src] against \his [affected.name]..."),
 			SPAN_DANGER("You push \the [src] against your [affected.name] and activate it...")
 		)
-		if (!do_after(user, 2 SECONDS))
+		if (!do_after(user, 3 SECONDS, bonus_percentage = 25))
 			working = FALSE
 			return
 		var/robot_part = BP_IS_ROBOTIC(affected)
@@ -124,7 +124,7 @@
 		affected.clamp_organ()
 		affected.open_incision()
 		affected.fracture()
-		if (!do_after(user, 8 SECONDS))
+		if (!do_after(user, 10 SECONDS, bonus_percentage = 25))
 			working = FALSE
 			to_chat(user, SPAN_WARNING("\The [src] falls away from your [affected.name], leaving behind a mangled mess."))
 			return
@@ -137,7 +137,7 @@
 			playsound(user, 'sound/effects/squelch1.ogg', 25, TRUE)
 		else
 			playsound(user, 'sound/items/jaws_pry.ogg', 50, TRUE)
-		if (!do_after(user, 8 SECONDS))
+		if (!do_after(user, 10 SECONDS, bonus_percentage = 25))
 			working = FALSE
 			to_chat(user, SPAN_WARNING("\The [src] falls away from your [affected.name], leaving behind a mangled mess."))
 			return

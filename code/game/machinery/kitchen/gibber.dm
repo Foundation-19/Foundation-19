@@ -122,7 +122,8 @@
 
 	user.visible_message(SPAN_DANGER("\The [user] starts to put \the [victim] into \the [src]!"))
 	src.add_fingerprint(user)
-	if(do_after(user, 30, src) && victim.Adjacent(src) && user.Adjacent(src) && victim.Adjacent(user) && !occupant)
+	// TODO: this should use callbacks
+	if(do_after(user, 4 SECONDS, victim, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25) && victim.Adjacent(src) && user.Adjacent(src) && !occupant)
 		user.visible_message(SPAN_DANGER("\The [user] stuffs \the [victim] into \the [src]!"))
 		if(victim.client)
 			victim.client.perspective = EYE_PERSPECTIVE

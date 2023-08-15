@@ -161,7 +161,7 @@
 								to_chat(user, SPAN_WARNING("You can't tactically reload this gun!"))
 								return
 							//Experienced gets a 1 second delay, master gets a 0.5 second delay
-							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src, bonus_percentage = 25))
 								return
 							if(!user.unEquip(AM, src))
 								return
@@ -174,7 +174,7 @@
 								to_chat(user, SPAN_WARNING("You can't speed reload with this gun!"))
 								return
 							//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
-							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src, bonus_percentage = 25))
 								return
 							if(!user.unEquip(AM, src))
 								return
@@ -236,7 +236,7 @@
 /obj/item/gun/projectile/proc/unload_ammo(mob/user, allow_dump=1)
 	if(is_jammed)
 		user.visible_message("\The [user] begins to unjam [src].", "You clear the jam and unload [src]")
-		if(!do_after(user, 4, src))
+		if(!do_after(user, 0.6 SECONDS, src, bonus_percentage = 100))
 			return
 		is_jammed = 0
 		playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)

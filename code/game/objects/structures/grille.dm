@@ -264,7 +264,7 @@
 		return
 	to_chat(user, SPAN_NOTICE("Assembling grille..."))
 	ST.in_use = 1
-	if (!do_after(user, 10))
+	if (!do_after(user, 1 SECOND, bonus_percentage = 50))
 		ST.in_use = 0
 		return
 	if(!ST.use(2))

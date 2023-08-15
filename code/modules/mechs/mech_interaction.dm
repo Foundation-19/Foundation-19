@@ -236,7 +236,7 @@
 	if(!check_enter(user))
 		return
 	to_chat(user, SPAN_NOTICE("You start climbing into \the [src]..."))
-	if(!body || !do_after(user, body.climb_time))
+	if(!body || !do_after(user, body.climb_time, bonus_percentage = 25))
 		return
 	if(!body)
 		return
@@ -348,8 +348,8 @@
 					return
 
 				visible_message(SPAN_WARNING("\The [user] begins unwrenching the securing bolts holding \the [src] together."))
-				var/delay = 60 * user.skill_delay_mult(SKILL_DEVICES)
-				if(!do_after(user, delay) || !maintenance_protocols)
+				var/delay = 6 SECONDS * user.skill_delay_mult(SKILL_DEVICES)
+				if(!do_after(user, delay, bonus_percentage = 25) || !maintenance_protocols)
 					return
 				visible_message(SPAN_NOTICE("\The [user] loosens and removes the securing bolts, dismantling \the [src]."))
 				dismantle()
@@ -383,8 +383,8 @@
 				if(!body || !body.cell)
 					to_chat(user, SPAN_WARNING("There is no cell here for you to remove!"))
 					return
-				var/delay = 20 * user.skill_delay_mult(SKILL_DEVICES)
-				if(!do_after(user, delay) || !maintenance_protocols || !body || !body.cell)
+				var/delay = 2.5 SECONDS * user.skill_delay_mult(SKILL_DEVICES)
+				if(!do_after(user, delay, bonus_percentage = 25) || !maintenance_protocols || !body || !body.cell)
 					return
 
 				user.put_in_hands(body.cell)
@@ -445,7 +445,7 @@
 		else if(!hatch_closed)
 			var/mob/pilot = pick(pilots)
 			user.visible_message(SPAN_DANGER("\The [user] is trying to pull \the [pilot] out of \the [src]!"))
-			if(do_after(user, 30) && user.Adjacent(src) && (pilot in pilots) && !hatch_closed)
+			if(do_after(user, 3 SECONDS, bonus_percentage = 25) && user.Adjacent(src) && (pilot in pilots) && !hatch_closed)
 				user.visible_message(SPAN_DANGER("\The [user] drags \the [pilot] out of \the [src]!"))
 				eject(pilot, silent=1)
 		else if(hatch_closed)

@@ -487,7 +487,7 @@
 
 	if(isCoil(I))
 		var/obj/item/stack/cable_coil/C = I
-		if(health_damaged() && do_after(user, 10, src) && C.use(1))
+		if(health_damaged() && do_after(user, 1 SECOND, src, bonus_percentage = 100) && C.use(1))
 			user.visible_message("\The [user] patches up \the [src]")
 			restore_health(5)
 		return

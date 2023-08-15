@@ -210,8 +210,8 @@
 
 	var/safety = 1 //if you can zap people with the paddles on harm mode
 	var/combat = 0 //If it can be used to revive people wearing thick clothing (e.g. spacesuits)
-	var/cooldowntime = (6 SECONDS) // How long in deciseconds until the defib is ready again after use.
-	var/chargetime = (2 SECONDS)
+	var/cooldowntime = 6 SECONDS // How long in deciseconds until the defib is ready again after use.
+	var/chargetime = 2 SECONDS
 	var/chargecost = 100 //units of charge
 	var/burn_damage_amt = 5
 
