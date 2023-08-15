@@ -33,7 +33,7 @@
 	focus_sound = f_sound
 	focus_frequency = f_frequency
 
-	target_bar.user?.client.screen += src
+	target_bar.user?.client?.screen += src
 
 	prog_trap = new /obj/screen/progressbar_trap(get_turf(src), linked_bar, time_per_click)
 
@@ -57,7 +57,7 @@
 
 /obj/screen/progressbar_booster/Destroy()
 	. = ..()
-	linked_bar.user?.client.screen -= src
+	linked_bar.user?.client?.screen -= src
 	QDEL_NULL(prog_trap)
 
 /obj/screen/progressbar_trap
@@ -75,7 +75,7 @@
 	linked_bar = target_bar
 	loss_per_click = -1 * time_per_click
 
-	linked_bar.user?.client.screen += src
+	linked_bar.user?.client?.screen += src
 
 /obj/screen/progressbar_trap/Click(location, control, params)
 	. = ..()
@@ -84,6 +84,6 @@
 
 /obj/screen/progressbar_trap/Destroy()
 	. = ..()
-	linked_bar.user?.client.screen -= src
+	linked_bar.user?.client?.screen -= src
 
 #undef PROGBAR_BOOSTER_FADEIN_TIME
