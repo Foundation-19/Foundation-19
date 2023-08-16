@@ -966,10 +966,10 @@ default behaviour is:
 		else
 			to_chat(src, text="You are unable to succumb to death! This life continues.", type=MESSAGE_TYPE_INFO)
 			return
-	log_message("Has [whispered ? "whispered his final words" : "succumbed to death"] with [round(health, 0.1)] points of health!", LOG_ATTACK)
+	log_attack("Has [whispered ? "whispered his final words" : "succumbed to death"] with [round(health, 0.1)] points of health!")
 	adjustOxyLoss(health - 100)	// TODO: use HEALTH_THRESHOLD_DEAD
 	updatehealth()
 	if(!whispered)
-		to_chat(src, span_notice("You have given up life and succumbed to death."))
-	investigate_log("has succumbed to death.", INVESTIGATE_DEATHS)
+		to_chat(src, SPAN_NOTICE("You have given up life and succumbed to death."))
+	//investigate_log("has succumbed to death.", INVESTIGATE_DEATHS) TODO: fix this shit up
 	death()

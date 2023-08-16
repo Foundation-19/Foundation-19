@@ -241,26 +241,6 @@
 	// Lets us "too slow" people, instead of qdeling we just handle the ref
 	offered_item = null
 
-//this effect gives the user an alert they can use to surrender quickly
-/datum/status_effect/grouped/surrender
-	id = "surrender"
-	duration = -1
-	tick_interval = -1
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = /atom/movable/screen/alert/status_effect/surrender
-
-/atom/movable/screen/alert/status_effect/surrender
-	name = "Surrender"
-	desc = "Looks like you're in trouble now, bud. Click here to surrender. (Warning: You will be incapacitated.)"
-	icon_state = "surrender"
-
-/atom/movable/screen/alert/status_effect/surrender/Click(location, control, params)
-	. = ..()
-	if(!.)
-		return
-
-	owner.emote("surrender")
-
 /*
  * A status effect used for preventing caltrop message spam
  *
@@ -420,7 +400,7 @@
 			//new you new stuff
 			SSquirks.randomise_quirks(owner)
 			owner.reagents.remove_all(1000)
-			owner.mob_mood.remove_temp_moods() //New you, new moods.
+			//owner.mob_mood.remove_temp_moods() //New you, new moods.
 			var/mob/living/carbon/human/human_mob = owner
 			//owner.add_mood_event("Eigentrip", /datum/mood_event/eigentrip)
 			if(QDELETED(human_mob))

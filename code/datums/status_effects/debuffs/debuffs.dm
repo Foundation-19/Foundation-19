@@ -10,7 +10,7 @@
 	status_type = STATUS_EFFECT_REPLACE
 	alert_type = null
 	remove_on_fullheal = TRUE
-	heal_flag_necessary = HEAL_CC_STATUS
+	//heal_flag_necessary = HEAL_CC_STATUS
 	var/needs_update_stat = FALSE
 
 /datum/status_effect/incapacitating/on_creation(mob/living/new_owner, set_duration)
@@ -165,7 +165,7 @@
 		var/healing = HEALING_SLEEP_DEFAULT
 
 		// having high spirits helps us recover
-		if(owner.mob_mood)
+		/*if(owner.mob_mood)
 			switch(owner.mob_mood.sanity_level)
 				if(SANITY_LEVEL_GREAT)
 					healing = 0.2
@@ -178,7 +178,7 @@
 				if(SANITY_LEVEL_CRAZY)
 					healing = -0.1
 				if(SANITY_LEVEL_INSANE)
-					healing = -0.2
+					healing = -0.2*/
 
 		var/turf/rest_turf = get_turf(owner)
 		var/is_sleeping_in_darkness = rest_turf.get_lumcount() <= LIGHTING_TILE_IS_DARK
@@ -361,7 +361,7 @@
 
 /datum/status_effect/gonbola_pacify/on_remove()
 	owner.remove_traits(list(TRAIT_PACIFISM, TRAIT_MUTE), CLOTHING_TRAIT)
-	owner.clear_mood_event(type)
+	//owner.clear_mood_event(type)
 	return ..()
 
 /datum/status_effect/trance
@@ -506,29 +506,6 @@
 	desc = "You've been zapped with something and your hands can't stop shaking! You can't seem to hold on to anything."
 	icon_state = "convulsing"
 
-/datum/status_effect/go_away
-	id = "go_away"
-	duration = 100
-	status_type = STATUS_EFFECT_REPLACE
-	tick_interval = 1
-	alert_type = /atom/movable/screen/alert/status_effect/go_away
-	var/direction
-
-/datum/status_effect/go_away/on_creation(mob/living/new_owner, set_duration)
-	. = ..()
-	direction = pick(NORTH, SOUTH, EAST, WEST)
-	new_owner.setDir(direction)
-
-/datum/status_effect/go_away/tick()
-	owner.AdjustStun(1, ignore_canstun = TRUE)
-	var/turf/T = get_step(owner, direction)
-	owner.forceMove(T)
-
-/atom/movable/screen/alert/status_effect/go_away
-	name = "TO THE STARS AND BEYOND!"
-	desc = "I must go, my people need me!"
-	icon_state = "high"
-
 /datum/status_effect/fake_virus
 	id = "fake_virus"
 	duration = 1800//3 minutes
@@ -615,38 +592,6 @@
 /datum/status_effect/discoordinated/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_DISCOORDINATED_TOOL_USER, "[type]")
 	return ..()
-
-///Maddly teleports the victim around all of space for 10 seconds
-/datum/status_effect/teleport_madness
-	id = "teleport_madness"
-	duration = 10 SECONDS
-	status_type = STATUS_EFFECT_REPLACE
-	tick_interval = 0.1 SECONDS
-
-/datum/status_effect/teleport_madness/tick()
-	dump_in_space(owner)
-
-/datum/status_effect/careful_driving
-	id = "careful_driving"
-	alert_type = /atom/movable/screen/alert/status_effect/careful_driving
-	duration = 5 SECONDS
-	status_type = STATUS_EFFECT_REPLACE
-
-/datum/status_effect/careful_driving/on_apply()
-	. = ..()
-	owner.add_movespeed_modifier(/datum/movespeed_modifier/careful_driving, update = TRUE)
-
-/datum/status_effect/careful_driving/on_remove()
-	. = ..()
-	owner.remove_movespeed_modifier(/datum/movespeed_modifier/careful_driving, update = TRUE)
-
-/atom/movable/screen/alert/status_effect/careful_driving
-	name = "Careful Driving"
-	desc = "That was close! You almost ran that one over!"
-	icon_state = "paralysis"
-
-/datum/movespeed_modifier/careful_driving
-	multiplicative_slowdown = 3
 
 #undef HEALING_SLEEP_DEFAULT
 #undef HEALING_SLEEP_ORGAN_MULTIPLIER

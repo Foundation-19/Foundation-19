@@ -465,3 +465,5 @@
 
 /// Returns whether or not the given mob can succumb
 #define CAN_SUCCUMB(target) (HAS_TRAIT(target, TRAIT_CRITICAL_CONDITION) && !HAS_TRAIT(target, TRAIT_NODEATH))
+/// Returns true if the given mob is incapacitated or dead.
+#define IS_DEAD_OR_INCAP(mob) (mob.incapacitated() || mob.stat)

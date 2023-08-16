@@ -649,29 +649,6 @@
 	if(living_owner.last_special <= world.time)
 		return living_owner.resist_buckle()
 
-/atom/movable/screen/alert/shoes/untied
-	name = "Untied Shoes"
-	desc = "Your shoes are untied! Click the alert or your shoes to tie them."
-	icon_state = "shoealert"
-
-/atom/movable/screen/alert/shoes/knotted
-	name = "Knotted Shoes"
-	desc = "Someone tied your shoelaces together! Click the alert or your shoes to undo the knot."
-	icon_state = "shoealert"
-
-/atom/movable/screen/alert/shoes/Click()
-	. = ..()
-	if(!.)
-		return
-
-	var/mob/living/carbon/carbon_owner = owner
-
-	if(!carbon_owner.can_resist() || !carbon_owner.shoes)
-		return
-
-	carbon_owner.changeNext_move(CLICK_CD_RESIST)
-	carbon_owner.shoes.handle_tying(carbon_owner)
-
 // PRIVATE = only edit, use, or override these if you're editing the system as a whole
 
 // Re-render all alerts - also called in /datum/hud/show_hud() because it's needed there
