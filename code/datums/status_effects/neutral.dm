@@ -79,40 +79,6 @@
 		rewarded.adjustOxyLoss(-25)
 		rewarded.adjustCloneLoss(-25)
 
-// heldup is for the person being aimed at
-/datum/status_effect/grouped/heldup
-	id = "heldup"
-	duration = -1
-	tick_interval = -1
-	status_type = STATUS_EFFECT_MULTIPLE
-	alert_type = /atom/movable/screen/alert/status_effect/heldup
-
-/atom/movable/screen/alert/status_effect/heldup
-	name = "Held Up"
-	desc = "Making any sudden moves would probably be a bad idea!"
-	icon_state = "aimed"
-
-/datum/status_effect/grouped/heldup/on_apply()
-	owner.apply_status_effect(/datum/status_effect/grouped/surrender, REF(src))
-	return ..()
-
-/datum/status_effect/grouped/heldup/on_remove()
-	owner.remove_status_effect(/datum/status_effect/grouped/surrender, REF(src))
-	return ..()
-
-// holdup is for the person aiming
-/datum/status_effect/holdup
-	id = "holdup"
-	duration = -1
-	tick_interval = -1
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = /atom/movable/screen/alert/status_effect/holdup
-
-/atom/movable/screen/alert/status_effect/holdup
-	name = "Holding Up"
-	desc = "You're currently pointing a gun at someone."
-	icon_state = "aimed"
-
 // this status effect is used to negotiate the high-fiving capabilities of all concerned parties
 /datum/status_effect/offering
 	id = "offering"

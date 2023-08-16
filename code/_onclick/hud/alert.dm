@@ -366,14 +366,14 @@
 	too_slowing_this_guy = TRUE
 	offerer.visible_message(SPAN_NOTICE("[rube] rushes in to high-five [offerer], but-"), SPAN_GOOD("[rube] falls for your trick just as planned, lunging for a high-five that no longer exists! Classic!"), ignored_mobs=rube)
 	to_chat(rube, SPAN_GOOD("You go in for [offerer]'s high-five, but-"))
-	addtimer(CALLBACK(src, ./proctoo_slow_p2, offerer, rube), 0.5 SECONDS)
+	addtimer(CALLBACK(src, .proc/too_slow_p2, offerer, rube), 0.5 SECONDS)
 
 /// Part two of the ultimate prank
 /atom/movable/screen/alert/give/highfive/proc/too_slow_p2()
 	var/mob/living/carbon/rube = owner
 	var/mob/living/offerer = offer?.owner
 	if(!QDELETED(rube) && !QDELETED(offerer))
-		offerer.visible_message(SPAN_DANGER("[offerer] pulls away from [rube]'s slap at the last second, dodging the high-five entirely!"), SPAN_GOOD("[rube] fails to make contact with your hand, making an utter fool of [rube.p_them()]self!"), "You hear a disappointing sound of flesh not hitting flesh!", ignored_mobs=rube)
+		offerer.visible_message(SPAN_DANGER("[offerer] pulls away from [rube]'s slap at the last second, dodging the high-five entirely!"), SPAN_GOOD("[rube] fails to make contact with your hand, making an utter fool of [rube.p_them()]self!"), "You hear a disappointing sound of flesh not hitting flesh!", exclude_mobs = list(rube))
 		to_chat(rube, SPAN_USERDANGER("[uppertext("NO! [offerer] PULLS [offerer.p_their()] HAND AWAY FROM YOURS! YOU'RE TOO SLOW!")]"))
 		playsound(offerer, 'sound/weapons/thudswoosh.ogg', 100, TRUE, 1)
 		//offerer.add_mood_event("high_five", /datum/mood_event/down_low)
@@ -438,11 +438,14 @@
 	. = ..()
 	update_appearance(updates=UPDATE_DESC)
 
+// TODO: add this maybe?
+/*
 /atom/movable/screen/alert/emptycell/update_desc()
 	. = ..()
 	desc = initial(desc)
 	if(length(GLOB.roundstart_station_borgcharger_areas))
 		desc += " Recharging stations are available in [english_list(GLOB.roundstart_station_borgcharger_areas)]."
+*/
 
 /atom/movable/screen/alert/lowcell
 	name = "Low Charge"
@@ -561,7 +564,7 @@
 
 
 //GHOSTS
-//TODO: expand this system to replace the pollCandidates/CheckAntagonist/"choose quickly"/etc Yes/No messages
+//TODO: do this
 /atom/movable/screen/alert/notify_cloning
 	name = "Revival"
 	desc = "Someone is trying to revive you. Re-enter your corpse if you want to be revived!"

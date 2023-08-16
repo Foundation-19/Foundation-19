@@ -575,106 +575,6 @@
 
 	msg_stage++
 
-//Deals with ants covering someone.
-/datum/status_effect/ants
-	id = "ants"
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = /atom/movable/screen/alert/status_effect/ants
-	duration = 2 MINUTES //Keeping the normal timer makes sure people can't somehow dump 300+ ants on someone at once so they stay there for like 30 minutes. Max w/ 1 dump is 57.6 brute.
-	processing_speed = STATUS_EFFECT_NORMAL_PROCESS
-	/// Will act as the main timer as well as changing how much damage the ants do.
-	var/ants_remaining = 0
-	/// Common phrases people covered in ants scream
-	var/static/list/ant_debuff_speech = list(
-		"GET THEM OFF ME!!",
-		"OH GOD THE ANTS!!",
-		"MAKE IT END!!",
-		"THEY'RE EVERYWHERE!!",
-		"GET THEM OFF!!",
-		"SOMEBODY HELP ME!!"
-	)
-
-/datum/status_effect/ants/on_creation(mob/living/new_owner, amount_left)
-	if(isnum(amount_left) && new_owner.stat < HARD_CRIT)
-		if(new_owner.stat < UNCONSCIOUS) // Unconscious people won't get messages
-			to_chat(new_owner, SPAN_USERDANGER("You're covered in ants!"))
-		ants_remaining += amount_left
-		RegisterSignal(new_owner, COMSIG_COMPONENT_CLEAN_ACT, .proc/ants_washed)
-	. = ..()
-
-/datum/status_effect/ants/refresh(effect, amount_left)
-	var/mob/living/carbon/human/victim = owner
-	if(isnum(amount_left) && ants_remaining >= 1 && victim.stat < HARD_CRIT)
-		if(victim.stat < UNCONSCIOUS) // Unconscious people won't get messages
-			if(!prob(1)) // 99%
-				to_chat(victim, SPAN_USERDANGER("You're covered in MORE ants!"))
-			else // 1%
-				victim.say("AAHH! THIS SITUATION HAS ONLY BEEN MADE WORSE WITH THE ADDITION OF YET MORE ANTS!!", forced = /datum/status_effect/ants)
-		ants_remaining += amount_left
-	. = ..()
-
-/datum/status_effect/ants/on_remove()
-	ants_remaining = 0
-	to_chat(owner, SPAN_NOTICE("All of the ants are off of your body!"))
-	UnregisterSignal(owner, COMSIG_COMPONENT_CLEAN_ACT)
-	. = ..()
-
-/datum/status_effect/ants/proc/ants_washed()
-	SIGNAL_HANDLER
-	owner.remove_status_effect(/datum/status_effect/ants)
-	return COMPONENT_CLEANED
-
-/datum/status_effect/ants/get_examine_text()
-	return SPAN_WARNING("[owner.p_they()] [owner.p_are()] covered in ants!")
-
-/datum/status_effect/ants/tick()
-	var/mob/living/carbon/human/victim = owner
-	victim.adjustBruteLoss(max(0.1, round((ants_remaining * 0.004),0.1))) //Scales with # of ants (lowers with time). Roughly 10 brute over 50 seconds.
-	if(victim.stat <= SOFT_CRIT) //Makes sure people don't scratch at themselves while they're in a critical condition
-		if(prob(15))
-			switch(rand(1, 2))
-				if(1)
-					victim.say(pick(ant_debuff_speech), forced = /datum/status_effect/ants)
-				if(2)
-					victim.emote("scream")
-		if(prob(50)) // Most of the damage is done through random chance.
-			switch(rand(1, 50))
-				if (1 to 8) //16% Chance
-					var/obj/item/bodypart/head/hed = victim.get_bodypart(BODY_ZONE_HEAD)
-					to_chat(victim, SPAN_DANGER("You scratch at the ants on your scalp!."))
-					hed.receive_damage(1, 0)
-				if (9 to 29) //40% chance
-					var/obj/item/bodypart/arm = victim.get_bodypart(pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-					to_chat(victim, SPAN_DANGER("You scratch at the ants on your arms!"))
-					arm.receive_damage(3, 0)
-				if (30 to 49) //38% chance
-					var/obj/item/bodypart/leg = victim.get_bodypart(pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-					to_chat(victim, SPAN_DANGER("You scratch at the ants on your leg!"))
-					leg.receive_damage(3, 0)
-				if(50) // 2% chance
-					to_chat(victim, SPAN_DANGER("You rub some ants away from your eyes!"))
-					victim.set_eye_blur_if_lower(6 SECONDS)
-					ants_remaining -= 5 // To balance out the blindness, it'll be a little shorter.
-	ants_remaining--
-	if(ants_remaining <= 0 || victim.stat >= HARD_CRIT)
-		victim.remove_status_effect(/datum/status_effect/ants) //If this person has no more ants on them or are dead, they are no longer affected.
-
-/atom/movable/screen/alert/status_effect/ants
-	name = "Ants!"
-	desc = SPAN_WARNING("JESUS FUCKING CHRIST! CLICK TO GET THOSE THINGS OFF!")
-	icon_state = "antalert"
-
-/atom/movable/screen/alert/status_effect/ants/Click()
-	var/mob/living/living = owner
-	if(!istype(living) || !living.can_resist() || living != owner)
-		return
-	to_chat(living, SPAN_NOTICE("You start to shake the ants off!"))
-	if(!do_after(living, 2 SECONDS, target = living))
-		return
-	for (var/datum/status_effect/ants/ant_covered in living.status_effects)
-		to_chat(living, SPAN_NOTICE("You manage to get some of the ants off!"))
-		ant_covered.ants_remaining -= 10 // 5 Times more ants removed per second than just waiting in place
-
 /datum/status_effect/stagger
 	id = "stagger"
 	status_type = STATUS_EFFECT_REFRESH
@@ -697,27 +597,6 @@
 	if(ishostile(owner))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
 		simple_owner.ranged_cooldown_time /= 2.5
-
-/datum/status_effect/freezing_blast
-	id = "freezing_blast"
-	alert_type = /atom/movable/screen/alert/status_effect/freezing_blast
-	duration = 5 SECONDS
-	status_type = STATUS_EFFECT_REPLACE
-
-/atom/movable/screen/alert/status_effect/freezing_blast
-	name = "Freezing Blast"
-	desc = "You've been struck by a freezing blast! Your body moves more slowly!"
-	icon_state = "frozen"
-
-/datum/status_effect/freezing_blast/on_apply()
-	owner.add_movespeed_modifier(/datum/movespeed_modifier/freezing_blast, update = TRUE)
-	return ..()
-
-/datum/status_effect/freezing_blast/on_remove()
-	owner.remove_movespeed_modifier(/datum/movespeed_modifier/freezing_blast, update = TRUE)
-
-/datum/movespeed_modifier/freezing_blast
-	multiplicative_slowdown = 1
 
 /datum/status_effect/discoordinated
 	id = "discoordinated"
