@@ -237,59 +237,6 @@
 	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
 	icon_state = "asleep"
 
-//STASIS
-/datum/status_effect/grouped/stasis
-	id = "stasis"
-	duration = -1
-	alert_type = /atom/movable/screen/alert/status_effect/stasis
-	var/last_dead_time
-
-/datum/status_effect/grouped/stasis/proc/update_time_of_death()
-	if(last_dead_time)
-		var/delta = world.time - last_dead_time
-		var/new_timeofdeath = owner.timeofdeath + delta
-		owner.timeofdeath = new_timeofdeath
-		owner.tod = station_time_timestamp(wtime=new_timeofdeath)
-		last_dead_time = null
-	if(owner.stat == DEAD)
-		last_dead_time = world.time
-
-/datum/status_effect/grouped/stasis/on_creation(mob/living/new_owner, set_duration)
-	. = ..()
-	if(.)
-		update_time_of_death()
-		owner.reagents?.end_metabolization(owner, FALSE)
-
-/datum/status_effect/grouped/stasis/on_apply()
-	. = ..()
-	if(!.)
-		return
-	owner.add_traits(list(TRAIT_IMMOBILIZED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
-	owner.add_filter("stasis_status_ripple", 2, list("type" = "ripple", "flags" = WAVE_BOUNDED, "radius" = 0, "size" = 2))
-	var/filter = owner.get_filter("stasis_status_ripple")
-	animate(filter, radius = 0, time = 0.2 SECONDS, size = 2, easing = JUMP_EASING, loop = -1, flags = ANIMATION_PARALLEL)
-	animate(radius = 32, time = 1.5 SECONDS, size = 0)
-	if(iscarbon(owner))
-		var/mob/living/carbon/carbon_owner = owner
-		carbon_owner.update_bodypart_bleed_overlays()
-
-/datum/status_effect/grouped/stasis/tick()
-	update_time_of_death()
-
-/datum/status_effect/grouped/stasis/on_remove()
-	owner.remove_traits(list(TRAIT_IMMOBILIZED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
-	owner.remove_filter("stasis_status_ripple")
-	update_time_of_death()
-	if(iscarbon(owner))
-		var/mob/living/carbon/carbon_owner = owner
-		carbon_owner.update_bodypart_bleed_overlays()
-	return ..()
-
-/atom/movable/screen/alert/status_effect/stasis
-	name = "Stasis"
-	desc = "Your biological functions have halted. You could live forever this way, but it's pretty boring."
-	icon_state = "stasis"
-
 /datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
 	id = "cult_ghost"
 	duration = -1
@@ -400,96 +347,6 @@
 /datum/status_effect/neck_slice/get_examine_text()
 	return SPAN_WARNING("[owner.p_Their()] neck is cut and is bleeding profusely!")
 
-/mob/living/proc/apply_necropolis_curse(set_curse)
-	var/datum/status_effect/necropolis_curse/C = has_status_effect(/datum/status_effect/necropolis_curse)
-	if(!set_curse)
-		set_curse = pick(CURSE_BLINDING, CURSE_SPAWNING, CURSE_WASTING, CURSE_GRASPING)
-	if(QDELETED(C))
-		apply_status_effect(/datum/status_effect/necropolis_curse, set_curse)
-	else
-		C.apply_curse(set_curse)
-		C.duration += 3000 //time added by additional curses
-	return C
-
-/datum/status_effect/necropolis_curse
-	id = "necrocurse"
-	duration = 6000 //you're cursed for 10 minutes have fun
-	tick_interval = 50
-	alert_type = null
-	var/curse_flags = NONE
-	var/effect_last_activation = 0
-	var/effect_cooldown = 100
-	var/obj/effect/temp_visual/curse/wasting_effect = new
-
-/datum/status_effect/necropolis_curse/on_creation(mob/living/new_owner, set_curse)
-	. = ..()
-	if(.)
-		apply_curse(set_curse)
-
-/datum/status_effect/necropolis_curse/Destroy()
-	if(!QDELETED(wasting_effect))
-		qdel(wasting_effect)
-		wasting_effect = null
-	return ..()
-
-/datum/status_effect/necropolis_curse/on_remove()
-	remove_curse(curse_flags)
-
-/datum/status_effect/necropolis_curse/proc/apply_curse(set_curse)
-	curse_flags |= set_curse
-	if(curse_flags & CURSE_BLINDING)
-		owner.overlay_fullscreen("curse", /atom/movable/screen/fullscreen/curse, 1)
-
-/datum/status_effect/necropolis_curse/proc/remove_curse(remove_curse)
-	if(remove_curse & CURSE_BLINDING)
-		owner.clear_fullscreen("curse", 50)
-	curse_flags &= ~remove_curse
-
-/datum/status_effect/necropolis_curse/tick()
-	if(owner.stat == DEAD)
-		return
-	if(curse_flags & CURSE_WASTING)
-		wasting_effect.forceMove(owner.loc)
-		wasting_effect.setDir(owner.dir)
-		wasting_effect.transform = owner.transform //if the owner has been stunned the overlay should inherit that position
-		wasting_effect.alpha = 255
-		animate(wasting_effect, alpha = 0, time = 32)
-		playsound(owner, 'sound/effects/curse5.ogg', 20, TRUE, -1)
-		owner.adjustFireLoss(0.75)
-	if(effect_last_activation <= world.time)
-		effect_last_activation = world.time + effect_cooldown
-		if(curse_flags & CURSE_SPAWNING)
-			var/turf/spawn_turf
-			var/sanity = 10
-			while(!spawn_turf && sanity)
-				spawn_turf = locate(owner.x + pick(rand(10, 15), rand(-10, -15)), owner.y + pick(rand(10, 15), rand(-10, -15)), owner.z)
-				sanity--
-			if(spawn_turf)
-				var/mob/living/simple_animal/hostile/asteroid/curseblob/C = new (spawn_turf)
-				C.set_target = owner
-				C.GiveTarget()
-		if(curse_flags & CURSE_GRASPING)
-			var/grab_dir = turn(owner.dir, pick(-90, 90, 180, 180)) //grab them from a random direction other than the one faced, favoring grabbing from behind
-			var/turf/spawn_turf = get_ranged_target_turf(owner, grab_dir, 5)
-			if(spawn_turf)
-				grasp(spawn_turf)
-
-/datum/status_effect/necropolis_curse/proc/grasp(turf/spawn_turf)
-	set waitfor = FALSE
-	new/obj/effect/temp_visual/dir_setting/curse/grasp_portal(spawn_turf, owner.dir)
-	playsound(spawn_turf, 'sound/effects/curse2.ogg', 80, TRUE, -1)
-	var/obj/projectile/curse_hand/C = new (spawn_turf)
-	C.preparePixelProjectile(owner, spawn_turf)
-	C.fire()
-
-/obj/effect/temp_visual/curse
-	icon_state = "curse"
-
-/obj/effect/temp_visual/curse/Initialize(mapload)
-	. = ..()
-	deltimer(timerid)
-
-
 /datum/status_effect/gonbola_pacify
 	id = "gonbolaPacify"
 	status_type = STATUS_EFFECT_MULTIPLE
@@ -562,8 +419,8 @@
 	// The brain trauma itself does its own set of logging, but this is the only place the source of the hypnosis phrase can be found.
 	hearing_speaker.log_message("hypnotised [key_name(C)] with the phrase '[hearing_args[HEARING_RAW_MESSAGE]]'", LOG_ATTACK, color="red")
 	C.log_message("has been hypnotised by the phrase '[hearing_args[HEARING_RAW_MESSAGE]]' spoken by [key_name(hearing_speaker)]", LOG_VICTIM, color="orange", log_globally = FALSE)
-	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, gain_trauma), /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hearing_args[HEARING_RAW_MESSAGE]), 10)
-	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living, Stun), 60, TRUE, TRUE), 15) //Take some time to think about it
+	addtimer(CALLBACK(C, /mob/living/carbon.proc/gain_trauma, /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hearing_args[HEARING_RAW_MESSAGE]), 10)
+	addtimer(CALLBACK(C, /mob/living.proc/Stun, 60, TRUE, TRUE), 15) //Take some time to think about it
 	qdel(src)
 
 /datum/status_effect/spasms

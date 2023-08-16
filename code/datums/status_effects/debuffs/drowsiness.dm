@@ -28,8 +28,8 @@
 	remove_duration(rand(4 SECONDS, 6 SECONDS))
 
 /datum/status_effect/drowsiness/tick(seconds_per_tick)
-	// You do not feel drowsy while unconscious or in stasis
-	if(owner.stat >= UNCONSCIOUS || IS_IN_STASIS(owner))
+	// You do not feel drowsy while unconscious
+	if(owner.stat >= UNCONSCIOUS)
 		return
 
 	// Resting helps against drowsiness

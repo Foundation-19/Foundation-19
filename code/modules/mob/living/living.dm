@@ -20,6 +20,8 @@
 			H.InitializeHud()
 		ai_status_image = image('icons/misc/buildmode.dmi', src, "ai_0")
 
+	register_init_signals()
+
 /mob/living/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if (admin_paralyzed)
@@ -953,3 +955,21 @@ default behaviour is:
 		exp_list[EXP_TYPE_SCP] = minutes
 
 	return exp_list
+
+/mob/living/verb/succumb(whispered as null)
+	set hidden = TRUE
+	if (!CAN_SUCCUMB(src))
+		if(HAS_TRAIT(src, TRAIT_SUCCUMB_OVERRIDE))
+			if(whispered)
+				to_chat(src, text="You are unable to succumb to death! Unless you just press the UI button.", type=MESSAGE_TYPE_INFO)
+				return
+		else
+			to_chat(src, text="You are unable to succumb to death! This life continues.", type=MESSAGE_TYPE_INFO)
+			return
+	log_message("Has [whispered ? "whispered his final words" : "succumbed to death"] with [round(health, 0.1)] points of health!", LOG_ATTACK)
+	adjustOxyLoss(health - 100)	// TODO: use HEALTH_THRESHOLD_DEAD
+	updatehealth()
+	if(!whispered)
+		to_chat(src, span_notice("You have given up life and succumbed to death."))
+	investigate_log("has succumbed to death.", INVESTIGATE_DEATHS)
+	death()

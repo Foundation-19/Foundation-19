@@ -29,11 +29,11 @@
 /datum/status_effect/jitter/get_examine_text()
 	switch(duration - world.time)
 		if(5 MINUTES to INFINITY)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] convulsing violently!")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] convulsing violently!")
 		if(3 MINUTES to 5 MINUTES)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] extremely jittery.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] extremely jittery.")
 		if(1 MINUTES to 3 MINUTES)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] twitching ever so slightly.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] twitching ever so slightly.")
 
 	return null
 

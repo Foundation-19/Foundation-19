@@ -38,17 +38,17 @@
 	// .01s are used in case the drunk value ends up to be a small decimal.
 	switch(drunk_value)
 		if(11 to 21)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] slightly flushed.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] slightly flushed.")
 		if(21.01 to 41)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] flushed.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] flushed.")
 		if(41.01 to 51)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] quite flushed and [owner.p_their()] breath smells of alcohol.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] quite flushed and [owner.p_their()] breath smells of alcohol.")
 		if(51.01 to 61)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] very flushed and [owner.p_their()] movements jerky, with breath reeking of alcohol.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] very flushed and [owner.p_their()] movements are jerky, and their breath reeks of alcohol.")
 		if(61.01 to 91)
-			return SPAN_WARNING("[owner.p_They()] look[owner.p_s()] like a drunken mess.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] look[owner.p_s()] like a drunken mess.")
 		if(91.01 to INFINITY)
-			return SPAN_WARNING("[owner.p_They()] [owner.p_are()] a shitfaced, slobbering wreck.")
+			return SPAN_WARNING("[owner.p_they(capitalized = TRUE)] [owner.p_are()] a shitfaced, slobbering wreck.")
 
 	return null
 
@@ -62,8 +62,8 @@
 		qdel(src)
 
 /datum/status_effect/inebriated/tick()
-	// Drunk value does not decrease while dead or in stasis
-	if(owner.stat == DEAD || IS_IN_STASIS(owner))
+	// Drunk value does not decrease while dead
+	if(owner.stat == DEAD)
 		return
 
 	// Every tick, the drunk value decrases by
@@ -133,17 +133,6 @@
 		owner.apply_status_effect(/datum/status_effect/inebriated/tipsy, drunk_value)
 
 /datum/status_effect/inebriated/drunk/on_tick_effects()
-	// Handle the Ballmer Peak.
-	// If our owner is a scientist (has the trait "TRAIT_BALLMER_SCIENTIST"), there's a 5% chance
-	// that they'll say one of the special "ballmer message" lines, depending their drunk-ness level.
-	var/obj/item/organ/internal/liver/liver_organ = owner.get_organ_slot(ORGAN_SLOT_LIVER)
-	if(liver_organ && HAS_TRAIT(liver_organ, TRAIT_BALLMER_SCIENTIST) && prob(5))
-		if(drunk_value >= BALLMER_PEAK_LOW_END && drunk_value <= BALLMER_PEAK_HIGH_END)
-			owner.say(pick_list_replacements(VISTA_FILE, "ballmer_good_msg"), forced = "ballmer")
-
-		if(drunk_value > BALLMER_PEAK_WINDOWS_ME) // by this point you're into windows ME territory
-			owner.say(pick_list_replacements(VISTA_FILE, "ballmer_windows_me_msg"), forced = "ballmer")
-
 	// Drunk slurring scales in intensity based on how drunk we are -at 16 you will likely not even notice it,
 	// but when we start to scale up you definitely will
 	if(drunk_value >= 16)

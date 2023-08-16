@@ -126,5 +126,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 //mob traits
 ///TODO: make this work
 #define TRAIT_PACIFISM "pacifism"
-/// cannot be removed without admin intervention TODO
+/// Cannot be removed without admin intervention TODO
 #define ROUNDSTART_TRAIT "roundstart"
+/// Lets the user succumb even if they got NODEATH TODO
+#define TRAIT_SUCCUMB_OVERRIDE "succumb_override"

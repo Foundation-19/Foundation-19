@@ -27,7 +27,7 @@
 	/// Do we self-terminate when a fullheal is called?
 	var/remove_on_fullheal = FALSE
 	/// If remove_on_fullheal is TRUE, what flag do we need to be removed?
-	var/heal_flag_necessary = HEAL_STATUS
+	//var/heal_flag_necessary = HEAL_STATUS // TODO: implement aheal improvements so this is relevant
 
 /datum/status_effect/New(list/arguments)
 	on_creation(arglist(arguments))
