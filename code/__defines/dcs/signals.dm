@@ -119,3 +119,10 @@
 
 /// Called in '/mob/proc/playsound_local' on the atom that the sound originated from (/mob/hearer, sound)
 #define COMSIG_OBJECT_SOUND_HEARD "atomHeard"
+
+/*
+*	Eye
+*/
+
+/// Called in '/mob/proc/reset_view' on every atom in view of new eyeobj (/mob/viewer, /atom/new_view)
+#define COMSIG_ATOM_VIEW_RESET "atomViewReset"

@@ -65,7 +65,7 @@
 		MEMETIC|SCP_PLACEHOLDER //AI needs further rework and cheese is porting stuff so 096 is disabled for now.
 	)
 
-	SCP.memeticFlags = MINSPECT|MSELF_PERPETRAITING
+	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA
 	SCP.memetic_proc = /mob/living/scp096/proc/trigger
 	SCP.compInit()
 
@@ -123,6 +123,9 @@
 /mob/living/scp096/proc/trigger(mob/living/carbon/human/Ptarget)
 	if(Ptarget in targets)
 		return
+
+	if(istype(Ptarget.client.eye, /obj/machinery/camera))
+		to_chat(Ptarget, SPAN_DANGER("You catch a glimpse of [SPAN_BOLD("its face")] through the monitor!"))
 
 	switch(current_state)
 		if(STATE_096_IDLE)

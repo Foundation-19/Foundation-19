@@ -23,12 +23,14 @@
 	RegisterSignal(parent, COMSIG_OBJECT_SOUND_HEARD, .proc/heard_memetic)
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, .proc/examined_memetic)
 	RegisterSignal(parent, COMSIG_PHOTO_SHOWN_OF, .proc/saw_memetic_photo)
+	RegisterSignal(parent, COMSIG_ATOM_VIEW_RESET, .proc/saw_through_camera)
 
 /datum/component/memetic/UnregisterFromParent()
 	UnregisterSignal(parent, list(
 		COMSIG_OBJECT_SOUND_HEARD,
 		COMSIG_ATOM_EXAMINED,
-		COMSIG_PHOTO_SHOWN_OF
+		COMSIG_PHOTO_SHOWN_OF,
+		COMSIG_ATOM_VIEW_RESET
 	))
 
 /datum/component/memetic/proc/check_viewers() //I dont like doing this but since theres no way for us to send a signal upon something being viewed its neccesary
@@ -94,7 +96,22 @@
 	var/mob/living/carbon/human/H = target
 	if(!H.can_see(visual_memetic = TRUE))
 		return
-	if(memetic_flags & MSELF_PERPETRAITING)
+	if(memetic_flags & MPHOTO)
+		if(memetic_flags & MSYNCED)
+			affected_mobs += H
+		else if(H.stat != DEAD)
+			call(parent, affected_proc)(H)
+
+/datum/component/memetic/proc/saw_through_camera(datum/source, mob/target, obj/machinery/camera/C)
+	SIGNAL_HANDLER
+	if(!istype(C))
+		return
+	if((!ishuman(target)) || (target in affected_mobs))
+		return
+	var/mob/living/carbon/human/H = target
+	if(!H.can_see(visual_memetic = TRUE))
+		return
+	if(memetic_flags & MCAMERA)
 		if(memetic_flags & MSYNCED)
 			affected_mobs += H
 		else if(H.stat != DEAD)

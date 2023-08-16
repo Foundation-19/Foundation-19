@@ -383,6 +383,9 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
+
+		for(var/atom/B in view(world.view, A))
+			SEND_SIGNAL(B, COMSIG_ATOM_VIEW_RESET, src, A)
 	return
 
 
