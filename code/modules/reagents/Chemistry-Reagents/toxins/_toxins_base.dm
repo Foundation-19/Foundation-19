@@ -22,7 +22,7 @@
 
 	/// If applicable, a specific organ that this toxin will target, dealing extra damage to it directly.
 	var/target_organ
-	/// How much toxin damage this chemicals deals per unit.
+	/// How much toxin damage this chemical deals per unit.
 	var/strength = 4
 
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, removed)

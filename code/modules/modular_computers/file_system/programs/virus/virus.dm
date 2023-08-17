@@ -44,9 +44,9 @@
 				else if(virus_runvar == 0)
 					var/datum/computer_file/data/autorun = get_data_file("autorun")
 					if(autorun)
-						autorun.stored_data = "programfile"
+						autorun.stored_data = filename
 					else
-						create_data_file("autorun", "programfile")
+						create_data_file("autorun", filename)
 
 					virus_runvar++
 					virus_cooldown = world.time + 1 MINUTE
@@ -114,7 +114,7 @@
 				STAGE 3: this is where the fun begins. do progressively worse things until deleted
 				RUNVAR USE: keeps track of how bad things should be getting
 			*/
-				if((virus_runvar > 15) || prob(virus_runvar))		// delete a random program and replace it with an armed revelation. once this happens you're probably screwed
+				if((virus_runvar > 15) || prob(1.5 * virus_runvar))		// delete a random program and replace it with an armed revelation. once this happens you're probably screwed
 					var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
 					if(!HDD)
 						return
@@ -141,20 +141,23 @@
 
 						virus_cooldown = world.time + rand(5 MINUTES, 10 MINUTES)
 						virus_runvar -= 6			// majorly calm down, chances are the computer is gonna blow soon anyways
-				else if((virus_runvar > 8) || prob(2.5 * virus_runvar))	// cause random component damage
+				else if(((virus_runvar > 8) && prob(40)) || prob(2.5 * virus_runvar))	// cause random component damage
 					var/list/hardware = computer.get_all_components()
 					for(var/obj/item/stock_parts/computer/part in hardware)
-						if(prob(50))
+						if(prob(30))
 							part.damage = max(part.max_damage, (part.damage + rand(10,30)))
 
 						virus_cooldown = world.time + rand(3 MINUTES, 5 MINUTES)
 						virus_runvar -= 2			// pretty serious, drop a little
 				else if((virus_runvar > 4) || prob(5 * virus_runvar) || computer.card_slot?.stored_card)		// burn off access, if possible
 					var/obj/item/card/id/id_card = computer.card_slot.stored_card
-					pick_n_take(id_card.access)
+					if(istype(id_card))		// check if we actually got a valid ID card
+						pick_n_take(id_card.access)
 
-					virus_cooldown = world.time + rand(2 MINUTES, 3 MINUTES)
-					virus_runvar++		// not that bad unless you get unlucky, slight rise
+						virus_cooldown = world.time + rand(2 MINUTES, 3 MINUTES)
+						virus_runvar++		// not that bad unless you get unlucky, slight rise
+					else
+						virus_runvar += 4	// couldn't get an ID, so runvar goes up a LOT (since we didn't even do anything)
 				else if(prob(10 * virus_runvar))	// shuts down computer
 					virus_cooldown = world.time + rand(1 MINUTE, 2 MINUTES)
 					virus_runvar += 3

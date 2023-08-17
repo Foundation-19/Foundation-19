@@ -205,11 +205,12 @@ export class Changelog extends Component {
         <h3>Foundation 19 Development Team</h3>
         <p>
           <b>Coders: </b>
-          Lestatanderson, Tsurupeta, HarryOB, ivanmixo, Autisme, DTraitor
+          Lestatanderson, Tsurupeta, HarryOB, ivanmixo, Autisme, DTraitor,
+          TheDarkElites, cheesePizza2, EgorDinamit
         </p>
         <p>
           <b>Spriters: </b>
-          Zion
+          Zion, INFRARED_BARON
         </p>
         <p>
           <b>Mappers: </b>

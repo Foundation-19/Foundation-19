@@ -1,6 +1,6 @@
 /obj/item/gun/energy/ionrifle
-	name = "ion rifle"
-	desc = "The NT Mk60 EW Halicon is a man portable anti-armor weapon designed to disable mechanical threats, produced by NT. Not the best of its type."
+	name = "electromagnetic-pulse rifle"
+	desc = "The SKiP Mk60 EW Halicon is a man portable anti-armor weapon designed to disable mechanical threats, produced by the SCP Foundation. Not the best of its type."
 	icon = 'icons/obj/guns/ion_rifle.dmi'
 	icon_state = "ionrifle"
 	item_state = "ionrifle"

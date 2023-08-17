@@ -1,6 +1,6 @@
 /datum/game_mode/ninja
 	name = "Ninja"
-	round_description = "An agent of the Spider Clan is onboard!"
+	round_description = "An agent of the Spider Clan is on site!"
 	extended_round_description = "What was that?! Was that a person or did your eyes just play tricks on you? \
 		You have no idea. That slim-suited, cryptic individual is an enigma to you and all of your knowledge. \
 		Their purpose is unknown. Their mission is unknown. How they arrived to this secure and isolated \
