@@ -66,3 +66,6 @@
 	var/image/selected_image = null // Used for buildmode AI control stuff.
 
 	var/datum/spell/ranged_ability ///Any ranged ability the mob has, as a click override
+
+	/// A list of all status effects the mob has
+	var/list/status_effects

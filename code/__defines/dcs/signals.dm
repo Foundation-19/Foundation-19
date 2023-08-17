@@ -65,6 +65,11 @@
 /// Called on `/obj/item/clothing/mask/smokable/smoke` (/datum, /obj/item/clothing/mask/smokable, number)
 #define COMSIG_SMOKED_SMOKABLE "smoked_smokable"
 
+///from base of mob/living/death(): (gibbed)
+#define COMSIG_LIVING_DEATH "living_death"
+/// mob died somewhere : (mob/living, gibbed)
+#define COMSIG_GLOB_MOB_DEATH "!mob_death"
+
 /// Called on `/datum/money_account/deposit` (/datum/money_account)
 #define COMSIG_MONEY_DEPOSITED "money_deposited"
 
@@ -88,3 +93,5 @@
 #define COMSIG_ATOM_DIR_CHANGE "atom_dir_change"
 /// From base of atom/setDir(): (old_dir, new_dir). Called after the direction changes.
 #define COMSIG_ATOM_POST_DIR_CHANGE "atom_dir_change"
+///from base of [/atom/proc/update_desc]: (updates)
+#define COMSIG_ATOM_UPDATE_DESC "atom_update_desc"

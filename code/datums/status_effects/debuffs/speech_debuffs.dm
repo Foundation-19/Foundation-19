@@ -53,7 +53,6 @@
  */
 /datum/status_effect/speech/proc/apply_speech(original_char, modified_char)
 	CRASH("[type] didn't implement apply_speech.")
-	return original_char
 
 /datum/status_effect/speech/stutter
 	id = "stutter"

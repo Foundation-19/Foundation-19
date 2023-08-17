@@ -1,36 +1,5 @@
 //entirely neutral or internal status effects go here
 
-/datum/status_effect/syphon_mark
-	id = "syphon_mark"
-	duration = 50
-	status_type = STATUS_EFFECT_MULTIPLE
-	alert_type = null
-	on_remove_on_mob_delete = TRUE
-	var/obj/item/borg/upgrade/modkit/bounty/reward_target
-
-/datum/status_effect/syphon_mark/on_creation(mob/living/new_owner, obj/item/borg/upgrade/modkit/bounty/new_reward_target)
-	. = ..()
-	if(.)
-		reward_target = new_reward_target
-
-/datum/status_effect/syphon_mark/on_apply()
-	if(owner.stat == DEAD)
-		return FALSE
-	return ..()
-
-/datum/status_effect/syphon_mark/proc/get_kill()
-	if(!QDELETED(reward_target))
-		reward_target.get_kill(owner)
-
-/datum/status_effect/syphon_mark/tick()
-	if(owner.stat == DEAD)
-		get_kill()
-		qdel(src)
-
-/datum/status_effect/syphon_mark/on_remove()
-	get_kill()
-	. = ..()
-
 /datum/status_effect/throat_soothed
 	id = "throat_soothed"
 	duration = 60 SECONDS
@@ -44,40 +13,6 @@
 /datum/status_effect/throat_soothed/on_remove()
 	. = ..()
 	REMOVE_TRAIT(owner, TRAIT_SOOTHED_THROAT, "[STATUS_EFFECT_TRAIT]_[id]")
-
-/datum/status_effect/bounty
-	id = "bounty"
-	status_type = STATUS_EFFECT_UNIQUE
-	var/mob/living/rewarded
-
-/datum/status_effect/bounty/on_creation(mob/living/new_owner, mob/living/caster)
-	. = ..()
-	if(.)
-		rewarded = caster
-
-/datum/status_effect/bounty/on_apply()
-	to_chat(owner, SPAN_NOTICE("You hear something behind you talking... \"You have been marked for death by [rewarded]. If you die, they will be rewarded.\""))
-	playsound(owner, 'sound/weapons/gun/shotgun/rack.ogg', 75, FALSE)
-	return ..()
-
-/datum/status_effect/bounty/tick()
-	if(owner.stat == DEAD)
-		rewards()
-		qdel(src)
-
-/datum/status_effect/bounty/proc/rewards()
-	if(rewarded && rewarded.mind && rewarded.stat != DEAD)
-		to_chat(owner, SPAN_NOTICE("You hear something behind you talking... \"Bounty claimed.\""))
-		playsound(owner, 'sound/weapons/gun/shotgun/shot.ogg', 75, FALSE)
-		to_chat(rewarded, SPAN_GOOD("You feel a surge of mana flow into you!"))
-		for(var/datum/action/cooldown/spell/spell in rewarded.actions)
-			spell.reset_spell_cooldown()
-
-		rewarded.adjustBruteLoss(-25)
-		rewarded.adjustFireLoss(-25)
-		rewarded.adjustToxLoss(-25)
-		rewarded.adjustOxyLoss(-25)
-		rewarded.adjustCloneLoss(-25)
 
 // this status effect is used to negotiate the high-fiving capabilities of all concerned parties
 /datum/status_effect/offering
@@ -114,8 +49,8 @@
 		qdel(src)
 		return
 
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/check_owner_in_range)
-	RegisterSignals(offered_item, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED), .proc/dropped_item)
+	RegisterSignal(owner, COMSIG_MOVED, .proc/check_owner_in_range)
+	RegisterSignals(offered_item, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED), .proc/dropped_item)
 
 /datum/status_effect/offering/Destroy()
 	for(var/mob/living/carbon/removed_taker as anything in possible_takers)
@@ -130,14 +65,14 @@
 	if(!G)
 		return
 	LAZYADD(possible_takers, possible_candidate)
-	RegisterSignal(possible_candidate, COMSIG_MOVABLE_MOVED, .proc/check_taker_in_range)
+	RegisterSignal(possible_candidate, COMSIG_MOVED, .proc/check_taker_in_range)
 	G.setup(possible_candidate, src)
 
 /// Remove the alert and signals for the specified carbon mob. Automatically removes the status effect when we lost the last taker
 /datum/status_effect/offering/proc/remove_candidate(mob/living/carbon/removed_candidate)
 	removed_candidate.clear_alert("[owner]")
 	LAZYREMOVE(possible_takers, removed_candidate)
-	UnregisterSignal(removed_candidate, COMSIG_MOVABLE_MOVED)
+	UnregisterSignal(removed_candidate, COMSIG_MOVED)
 	if(!possible_takers && !QDELING(src))
 		qdel(src)
 
@@ -280,7 +215,7 @@
 
 /datum/status_effect/eigenstasium/Destroy()
 	if(alt_clone)
-		UnregisterSignal(alt_clone, COMSIG_QDELETING)
+		UnregisterSignal(alt_clone, COMSIG_PARENT_QDELETING)
 		QDEL_NULL(alt_clone)
 	return ..()
 
@@ -288,17 +223,17 @@
 	. = ..()
 	//This stuff runs every cycle
 	if(prob(5))
-		do_sparks(5, FALSE, owner)
+		sparks(5, FALSE, owner)
 
 	//If we have a reagent that blocks the effects
 	var/block_effects = FALSE
-	if(owner.has_reagent(/datum/reagent/bluespace))
+	if(owner.reagents?.has_reagent(/datum/reagent/bluespace))
 		current_cycle = max(EIGENSTASIUM_MAX_BUFFER, (current_cycle - (EIGENSTASIUM_STABILISATION_RATE * 1.5))) //cap to -250
 		block_effects = TRUE
-	if(owner.has_reagent(/datum/reagent/stabilizing_agent))
+	if(owner.reagents?.has_reagent(/datum/reagent/stabilizing_agent))
 		current_cycle = max(EIGENSTASIUM_MAX_BUFFER, (current_cycle - EIGENSTASIUM_STABILISATION_RATE))
 		block_effects = TRUE
-	var/datum/reagent/eigen = owner.has_reagent(/datum/reagent/eigenstate)
+	var/datum/reagent/eigen = owner.reagents?.has_reagent(/datum/reagent/eigenstate)
 	if(eigen)
 		if(eigen.overdosed)
 			block_effects = FALSE
@@ -307,7 +242,7 @@
 			block_effects = TRUE
 
 	if(!QDELETED(alt_clone)) //catch any stragglers
-		do_sparks(5, FALSE, alt_clone)
+		sparks(5, FALSE, alt_clone)
 		owner.visible_message("[owner] is snapped across to a different alternative reality!")
 		QDEL_NULL(alt_clone)
 
@@ -355,9 +290,9 @@
 				return ..()
 			var/obj/item/item = pick(items)
 			owner.dropItemToGround(item, TRUE)
-			do_sparks(5,FALSE,item)
-			do_teleport(item, get_turf(item), 3, no_effects=TRUE);
-			do_sparks(5,FALSE,item)
+			sparks(5, FALSE, item)
+			do_teleport(item, get_turf(item), 3, /decl/teleport);
+			sparks(5, FALSE, item)
 
 		//phase 3 - little break to get your items
 		if(EIGENSTASIUM_PHASE_3_START to EIGENSTASIUM_PHASE_3_END)
@@ -371,10 +306,10 @@
 					alt_clone = new typepath(owner.loc)
 					alt_clone.appearance = owner.appearance
 					alt_clone.real_name = owner.real_name
-					RegisterSignal(alt_clone, COMSIG_QDELETING, .proc/remove_clone_from_var)
+					RegisterSignal(alt_clone, COMSIG_PARENT_QDELETING, .proc/remove_clone_from_var)
 					owner.visible_message("[owner] splits into seemingly two versions of themselves!")
-					do_teleport(alt_clone, get_turf(alt_clone), 2, no_effects=TRUE) //teleports clone so it's hard to find the real one!
-					do_sparks(5,FALSE,alt_clone)
+					do_teleport(alt_clone, get_turf(alt_clone), 2, /decl/teleport) //teleports clone so it's hard to find the real one!
+					sparks(5, FALSE, alt_clone)
 					alt_clone.emote("spin")
 					owner.emote("spin")
 					var/list/say_phrases = strings(EIGENSTASIUM_FILE, "lines")
@@ -382,46 +317,42 @@
 				if(2)
 					phase_3_cycle = 0 //counter
 			phase_3_cycle++
-			do_teleport(owner, get_turf(owner), 2, no_effects=TRUE) //Teleports player randomly
-			do_sparks(5, FALSE, owner)
+			do_teleport(owner, get_turf(owner), 2, /decl/teleport) //Teleports player randomly
+			sparks(5, FALSE, owner)
 
 		//phase 4
 		if(EIGENSTASIUM_PHASE_3_END to INFINITY)
 			//clean up and remove status
-			SSblackbox.record_feedback("tally", "chemical_reaction", 1, "Eigenstasium wild rides ridden")
-			do_sparks(5, FALSE, owner)
-			do_teleport(owner, get_turf(owner), 2, no_effects=TRUE) //teleports clone so it's hard to find the real one!
-			do_sparks(5, FALSE, owner)
+			//SSblackbox.record_feedback("tally", "chemical_reaction", 1, "Eigenstasium wild rides ridden")
+			sparks(5, FALSE, owner)
+			do_teleport(owner, get_turf(owner), 2, /decl/teleport) //teleports clone so it's hard to find the real one!
+			sparks(5, FALSE, owner)
 			owner.Sleeping(100)
 			owner.set_jitter_if_lower(100 SECONDS)
 			to_chat(owner, SPAN_USERDANGER("You feel your eigenstate settle, as \"you\" become an alternative version of yourself!"))
 			owner.emote("me",1,"flashes into reality suddenly, gasping as they gaze around in a bewildered and highly confused fashion!",TRUE)
 			owner.log_message("has become an alternative universe version of themselves via EIGENSTASIUM.", LOG_GAME)
 			//new you new stuff
-			SSquirks.randomise_quirks(owner)
+			//SSquirks.randomise_quirks(owner)
 			owner.reagents.remove_all(1000)
-			//owner.mob_mood.remove_temp_moods() //New you, new moods.
+			//owner.mob_mood.remove_temp_moods()
 			var/mob/living/carbon/human/human_mob = owner
 			//owner.add_mood_event("Eigentrip", /datum/mood_event/eigentrip)
 			if(QDELETED(human_mob))
 				return
-			if(prob(1))//low chance of the alternative reality returning to monkey
-				var/obj/item/organ/external/tail/monkey/monkey_tail = new ()
-				monkey_tail.Insert(human_mob, drop_if_replaced = FALSE)
 			var/datum/species/human_species = human_mob.dna?.species
 			if(human_species)
 				human_species.randomize_features(human_mob)
-				human_species.randomize_active_underwear(human_mob)
 
 			owner.remove_status_effect(/datum/status_effect/eigenstasium)
 
 /datum/status_effect/eigenstasium/proc/remove_clone_from_var()
 	SIGNAL_HANDLER
-	UnregisterSignal(alt_clone, COMSIG_QDELETING)
+	UnregisterSignal(alt_clone, COMSIG_PARENT_QDELETING)
 
 /datum/status_effect/eigenstasium/on_remove()
 	if(!QDELETED(alt_clone))//catch any stragilers
-		do_sparks(5, FALSE, alt_clone)
+		sparks(5, FALSE, alt_clone)
 		owner.visible_message("One of the [owner]s suddenly phases out of reality in front of you!")
 		QDEL_NULL(alt_clone)
 	return ..()

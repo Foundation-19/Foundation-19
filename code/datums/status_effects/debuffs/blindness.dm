@@ -16,7 +16,7 @@
 	var/overlay_severity = 1
 
 /datum/status_effect/grouped/nearsighted/on_apply()
-	RegisterSignals(owner, update_signals, .proc\update_nearsightedness)
+	RegisterSignals(owner, update_signals, .proc/update_nearsightedness)
 	update_nearsighted_overlay()
 	return ..()
 

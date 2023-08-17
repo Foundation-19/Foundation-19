@@ -575,7 +575,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/mob/dead/observer/dead_owner = owner
+	var/mob/observer/ghost/dead_owner = owner
 	dead_owner.reenter_corpse()
 
 /atom/movable/screen/alert/notify_action
@@ -592,7 +592,7 @@
 		return
 	if(!target)
 		return
-	var/mob/dead/observer/ghost_owner = owner
+	var/mob/observer/ghost/ghost_owner = owner
 	if(!istype(ghost_owner))
 		return
 	switch(action)

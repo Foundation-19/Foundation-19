@@ -29,7 +29,7 @@
 	freak_out(STACK_TERROR_AMOUNT)
 
 /datum/status_effect/terrified/on_apply()
-	RegisterSignal(owner, COMSIG_CARBON_PRE_MISC_HELP, .proc\comfort_owner)
+	RegisterSignal(owner, COMSIG_CARBON_PRE_MISC_HELP, .proc/comfort_owner)
 	owner.emote("scream")
 	to_chat(owner, SPAN_ALERT("The darkness closes in around you, shadows dance around the corners of your vision... It feels like something is watching you!"))
 	return TRUE
@@ -98,11 +98,11 @@
 
 	if(isnightmare(hugger)) //hey wait a minute, that's not a comforting, friendly hug!
 		if(check_surrounding_darkness())
-			addtimer(CALLBACK(src, .proc\freak_out, HUG_TERROR_AMOUNT))
+			addtimer(CALLBACK(src, .proc/freak_out, HUG_TERROR_AMOUNT))
 			owner.visible_message(
 				SPAN_WARNING("[owner] recoils in fear as [hugger] waves [hugger.p_their()] arms and shrieks at [owner.p_them()]!"),
 				SPAN_WARNING("The shadows lash out at you, and you drop to the ground in fear!"),
-				span_hear("You hear someone shriek in fear. How embarassing!"),
+				"You hear someone shriek in fear. How embarassing!",
 				)
 			return COMPONENT_BLOCK_MISC_HELP
 
@@ -110,7 +110,7 @@
 	owner.visible_message(
 		SPAN_NOTICE("[owner] seems to relax as [hugger] gives [owner.p_them()] a comforting hug."),
 		SPAN_GOOD("You feel yourself calm down as [hugger] gives you a reassuring hug."),
-		span_hear("You hear shuffling and a sigh of relief."),
+		"You hear shuffling and a sigh of relief.",
 	)
 
 /**
@@ -124,7 +124,7 @@
 	var/lit_tiles = 0
 	var/unlit_tiles = 0
 
-	for(var/turf/open/turf_to_check in range(1, owner.loc))
+	for(var/turf/turf_to_check in range(1, owner.loc))
 		var/light_amount = turf_to_check.get_lumcount()
 		if(light_amount > 0.2)
 			lit_tiles++

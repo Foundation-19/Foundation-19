@@ -6,7 +6,7 @@
 
 		SIGNAL_ADDTRAIT(TRAIT_NODEATH),
 		SIGNAL_REMOVETRAIT(TRAIT_NODEATH),
-	), PROC_REF(update_succumb_action))
+	), .proc/update_succumb_action)
 
 /**
  * Called when traits that alter succumbing are added/removed.
@@ -16,6 +16,6 @@
 /mob/living/proc/update_succumb_action()
 	SIGNAL_HANDLER
 	if (CAN_SUCCUMB(src) || HAS_TRAIT(src, TRAIT_SUCCUMB_OVERRIDE))
-		throw_alert(ALERT_SUCCUMB, /atom/movable/screen/alert/succumb)
+		throw_alert("succumb", /atom/movable/screen/alert/succumb)
 	else
-		clear_alert(ALERT_SUCCUMB)
+		clear_alert("succumb")
