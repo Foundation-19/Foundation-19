@@ -176,15 +176,15 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(A in purity_list)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
 		return
-	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list))
+	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list) || !H.isMonkey())
 		var/mob/living/carbon/human/H = A
-		if(H.stat != DEAD && !H.isMonkey())
+		if(H.stat != DEAD)
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
 			return
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if((L.stat == DEAD) || L.isMonkey() || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4)))) //This is an informational comment; but please do not remove the 'ISMONKEY' check due to the fact that unless we recode the purity mechanism, 2427-3 Cannot attack them!
+		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4)))) //This is an informational comment; but please do not remove the 'ISMONKEY' check due to the fact that unless we recode the purity mechanism, 2427-3 Cannot attack them!
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = round(max_satiety * 0.5)
@@ -196,7 +196,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
 			AdjustSatiety(nutr)
-			adjustBruteLoss(-nutr * 1.5) //awhellnaw - PLEASE never set this above 1.5x; else 2427 can easily push through blockades due to how efficient this was before.
+			adjustBruteLoss(-nutr * 1.5) // PLEASE never set this above 1.5x; else 2427 can easily push through blockades due to how efficient this was before.
 			return
 	return ..()
 
