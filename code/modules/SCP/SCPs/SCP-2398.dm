@@ -5,6 +5,11 @@
 	icon = 'icons/SCP/scp-2398.dmi'
 	icon_state = null
 
+	//Config
+
+	//How long our doafter swing is
+	var/swing_time = 4 SECONDS
+
 /obj/item/material/twohanded/baseballbat/scp2398/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
@@ -23,7 +28,7 @@
 	var/hand_used = user.hand ? BP_L_HAND : BP_R_HAND
 
 	visible_message(SPAN_DANGER("[user] begins to swing [src] at [M]!"))
-	if(!do_after(user, 4 SECONDS, M))
+	if(!do_after(user, swing_time, M))
 		visible_message(SPAN_DANGER("[user] misses [M] with \The [src]!"))
 		return
 
