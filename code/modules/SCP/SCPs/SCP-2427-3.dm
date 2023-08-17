@@ -176,7 +176,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(A in purity_list)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
 		return
-	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list) || !A.isMonkey())
+	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list) || !isMonkey(A))
 		var/mob/living/carbon/human/H = A
 		if(H.stat != DEAD)
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
