@@ -679,7 +679,7 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp1102entrance)
 "fx" = (
-/obj/structure/ladder_scp_1102,
+/obj/structure/ladder/scp1102ladder,
 /turf/unsimulated/floor/scp1102,
 /area/site53/lhcz/scp1102entrance)
 "fy" = (
