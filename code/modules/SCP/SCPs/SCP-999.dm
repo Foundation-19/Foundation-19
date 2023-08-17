@@ -25,6 +25,16 @@
 		PLAYABLE|ROLEPLAY
 	)
 
+//Mechanics
+
+/mob/living/scp999/proc/glubbify(match)
+	. = "gl"
+	for(var/i = (max(0, length(match) - 3)), i > 0, i--)
+		. += "u"
+	. += "b"
+
+//Overrides
+
 /mob/living/scp999/handle_autohiss(message, datum/language/speaking)
 
 	var/regex/words = new(@"(\S+)", "ig")
@@ -34,12 +44,6 @@
 		return words.Replace(copytext(message, 1, length(message)), /mob/living/scp999/proc/glubbify) + end_char
 	else
 		return words.Replace(message, /mob/living/scp999/proc/glubbify)
-
-/mob/living/scp999/proc/glubbify(match)
-	. = "gl"
-	for(var/i = (max(0, length(match) - 3)), i > 0, i--)
-		. += "u"
-	. += "b"
 
 /mob/living/scp999/update_icon()
 	if(stat == DEAD)
