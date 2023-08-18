@@ -26,7 +26,7 @@
 		dat += "<tr><td>[al.station_time]</td>"
 
 		if(al.attacker)
-			dat += "<td>[al.attacker.key_name()] <a HREF='?_src_=holder;adminplayeropts=[al.attacker.ref]'>PP</a></td>"
+			dat += "<td>[al.attacker.key_name()] [ADMIN_PP(al.attacker)]</td>"
 		else
 			dat += "<td></td>"
 
@@ -35,14 +35,14 @@
 		dat += "<td>[al.zone_sel]</td>"
 
 		if(al.victim)
-			dat += "<td>[al.victim.key_name()] <a HREF='?_src_=holder;adminplayeropts=[al.victim.ref]'>PP</a></td>"
+			dat += "<td>[al.victim.key_name()] [ADMIN_PP(al.victim)]</td>"
 		else
 			dat += "<td></td>"
 
 		dat += "</tr>"
 		dat += "<tr><td colspan=5>[al.message]"
 		if(al.location)
-			dat += " <a HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[al.location.x];Y=[al.location.y];Z=[al.location.z]'>JMP</a>"
+			dat += " [ADMIN_JMP(al.location)]"
 		dat += "</td></tr>"
 	dat += "</table>"
 

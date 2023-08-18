@@ -19,10 +19,10 @@
 					is_multikeying = 1
 				if(matches)
 					if(M.client)
-						message_staff("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as <A href='?src=\ref[usr];priv_msg=\ref[M]'>[key_name_admin(M)]</A>.</span>", 1)
+						message_staff("[SPAN_DANGER("<B>Notice:</B>")] [SPAN_INFO("[key_name_admin(src)] [ADMIN_PM(src)] has the same [matches] as [key_name_admin(M)] [ADMIN_PM(M)]")]", 1)
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)].")
 					else
-						message_staff("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as [key_name_admin(M)] (no longer logged in).</span>", 1)
+						message_staff("[SPAN_DANGER("<B>Notice:</B>")] [key_name_admin(src)] [ADMIN_PM(src)] has the same [matches] as [key_name_admin(M)] (no longer logged in).</span>", 1)
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)] (no longer logged in).")
 		if(is_multikeying && !client.warned_about_multikeying)
 			client.warned_about_multikeying = 1
