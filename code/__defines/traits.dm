@@ -124,9 +124,18 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 */
 
 //mob traits
-///TODO: make this work
+/// Forces the user to stay unconscious. TODO
+#define TRAIT_KNOCKEDOUT "knockedout"
+/// TODO: make this work
 #define TRAIT_PACIFISM "pacifism"
-/// Cannot be removed without admin intervention TODO
+/// Cannot be removed without admin intervention. TODO
 #define ROUNDSTART_TRAIT "roundstart"
-/// Lets the user succumb even if they got NODEATH TODO
+/// Lets the user succumb even if they've got NODEATH. TODO
 #define TRAIT_SUCCUMB_OVERRIDE "succumb_override"
+/// Prevents voluntary standing or staying up on its own. TODO
+#define TRAIT_FLOORED "floored"
+/// TODO: make this work
+#define TRAIT_INCAPACITATED "incapacitated"
+
+/// A trait given by a specific status effect (not sure why we need both but whatever!)
+#define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"

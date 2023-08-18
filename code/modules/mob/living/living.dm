@@ -730,7 +730,7 @@ default behaviour is:
 		hud_used.rest_button?.icon_state = "rest_[resting]"
 
 //called when the mob receives a bright flash
-/mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(override_blindness_check || can_see())
 		..()
 		overlay_fullscreen("flash", type)

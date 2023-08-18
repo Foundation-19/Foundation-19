@@ -68,11 +68,11 @@
 	// Interface stuff.
 	var/list/hud_elements = list()
 	var/list/hardpoint_hud_elements = list()
-	var/obj/screen/exosuit/health/hud_health
-	var/obj/screen/exosuit/toggle/hatch_open/hud_open
-	var/obj/screen/exosuit/power/hud_power
-	var/obj/screen/exosuit/toggle/power_control/hud_power_control
-	var/obj/screen/exosuit/toggle/camera/hud_camera
+	var/atom/movable/screen/exosuit/health/hud_health
+	var/atom/movable/screen/exosuit/toggle/hatch_open/hud_open
+	var/atom/movable/screen/exosuit/power/hud_power
+	var/atom/movable/screen/exosuit/toggle/power_control/hud_power_control
+	var/atom/movable/screen/exosuit/toggle/camera/hud_camera
 	//POWER
 	var/power = MECH_POWER_OFF
 
@@ -168,7 +168,7 @@
 	QDEL_NULL(body)
 
 	for(var/hardpoint in hardpoint_hud_elements)
-		var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
+		var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
 		H.owner = null
 		H.holding = null
 		qdel(H)

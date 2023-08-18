@@ -13,7 +13,7 @@
 	var/active = TRUE
 	var/activation_sound = 'sound/items/goggles_charge.ogg'
 	var/deactivation_sound // set this if you want a sound on deactivation
-	var/obj/screen/overlay = null
+	var/atom/movable/screen/overlay = null
 	var/obj/item/clothing/glasses/hud/hud = null	// Hud glasses, if any
 	var/electric = FALSE //if the glasses should be disrupted by EMP
 

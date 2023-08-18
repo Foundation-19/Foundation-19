@@ -18,48 +18,6 @@
 		owner.adjust_confusion(-1 SECONDS)
 		//owner.add_mood_event("goodmusic", /datum/mood_event/goodmusic)
 
-/datum/status_effect/mayhem
-	id = "Mayhem"
-	duration = 2 MINUTES
-	/// The chainsaw spawned by the status effect
-	var/obj/item/chainsaw/doomslayer/chainsaw
-
-/datum/status_effect/mayhem/on_apply()
-	. = ..()
-	to_chat(owner, "<span class='reallybig redtext'>RIP AND TEAR</span>")
-	sound_to(owner, sound('sound/hallucinations/veryfar_noise.ogg'))
-	owner.cause_hallucination( \
-		/datum/hallucination/delusion/preset/demon, \
-		"[id] status effect", \
-		duration = duration, \
-		affects_us = FALSE, \
-		affects_others = TRUE, \
-		skip_nearby = FALSE, \
-		play_wabbajack = FALSE, \
-	)
-
-	owner.drop_all_held_items()
-
-	if(iscarbon(owner))
-		chainsaw = new(get_turf(owner))
-		ADD_TRAIT(chainsaw, TRAIT_NODROP, CHAINSAW_FRENZY_TRAIT)
-		owner.put_in_hands(chainsaw, forced = TRUE)
-		chainsaw.attack_self(owner)
-		owner.reagents.add_reagent(/datum/reagent/medicine/adminordrazine, 25)
-
-	owner.log_message("entered a blood frenzy", LOG_ATTACK)
-	to_chat(owner, SPAN_WARNING("KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, KILL THEM ALL!"))
-
-	var/datum/client_colour/colour = owner.add_client_colour(/datum/client_colour/bloodlust)
-	QDEL_IN(colour, 1.1 SECONDS)
-	return TRUE
-
-/datum/status_effect/mayhem/on_remove()
-	. = ..()
-	to_chat(owner, SPAN_NOTICE("Your bloodlust seeps back into the bog of your subconscious and you regain self control."))
-	owner.log_message("exited a blood frenzy", LOG_ATTACK)
-	QDEL_NULL(chainsaw)
-
 /datum/status_effect/speed_boost
 	id = "speed_boost"
 	duration = 2 SECONDS

@@ -134,7 +134,7 @@
 				H.face_atom(target)
 
 				if (!H.zone_sel)
-					H.zone_sel = new /obj/screen/zone_sel(null)
+					H.zone_sel = new /atom/movable/screen/zone_sel(null)
 				H.zone_sel.selecting = BP_CHEST
 				target.attack_hand(H)
 

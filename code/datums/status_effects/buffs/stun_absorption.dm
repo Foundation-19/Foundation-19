@@ -65,7 +65,7 @@
 
 /datum/status_effect/stun_absorption/on_apply()
 	if(owner.mind || owner.client)
-		owner.log_message("gained stun absorption (from: [source || "Unknown"])", LOG_ATTACK)
+		log_attack("[owner] gained stun absorption (from: [source || "Unknown"])")
 
 	RegisterSignals(owner, incapacitation_effect_signals, .proc/try_absorb_incapacitating_effect)
 	RegisterSignal(owner, COMSIG_LIVING_GENERIC_STUN_CHECK, .proc/try_absorb_generic_effect)
@@ -73,7 +73,7 @@
 
 /datum/status_effect/stun_absorption/on_remove()
 	if(owner.mind || owner.client)
-		owner.log_message("lost stun absorption (from: [source || "Unknown"])", LOG_ATTACK)
+		log_attack("[owner] lost stun absorption (from: [source || "Unknown"])")
 
 	UnregisterSignal(owner, incapacitation_effect_signals)
 	UnregisterSignal(owner, COMSIG_LIVING_GENERIC_STUN_CHECK)
@@ -153,7 +153,7 @@
 			// We do this replacement meme, instead of just setting it up in creation,
 			// so that we respect indentity changes done while active
 			var/really_shown_message = replacetext(shown_message, "%EFFECT_OWNER", "[owner]")
-			owner.visible_message(really_shown_message, ignored_mobs = owner)
+			owner.visible_message(really_shown_message, exclude_mobs = list(owner))
 
 		// Send the self message
 		if(self_message)

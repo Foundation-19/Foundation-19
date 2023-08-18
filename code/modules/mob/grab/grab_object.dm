@@ -115,7 +115,7 @@
 /obj/item/grab/on_active_hand()
 	on_target_change(new_sel = assailant.zone_sel.selecting)
 
-/obj/item/grab/proc/on_target_change(obj/screen/zone_sel/zone, old_sel, new_sel)
+/obj/item/grab/proc/on_target_change(atom/movable/screen/zone_sel/zone, old_sel, new_sel)
 	if(src != assailant.get_active_hand())
 		return // Note that because of this condition, there's no guarantee that target_zone = old_sel
 	if(target_zone == new_sel)

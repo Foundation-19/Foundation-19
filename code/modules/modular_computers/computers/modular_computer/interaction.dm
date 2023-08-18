@@ -296,7 +296,7 @@
 
 /obj/item/modular_computer/MouseDrop(atom/over_object)
 	var/mob/M = usr
-	if(!istype(over_object, /obj/screen) && CanMouseDrop(M))
+	if(!istype(over_object, /atom/movable/screen) && CanMouseDrop(M))
 		return attack_self(M)
 
 /obj/item/modular_computer/afterattack(atom/target, mob/user, proximity)

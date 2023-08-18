@@ -52,7 +52,7 @@
 		if(eyes_shielded)
 			to_chat(owner, SPAN_NOTICE("Nearly opaque lenses slide down to shield your eyes."))
 			innate_flash_protection = FLASH_PROTECTION_MAJOR
-			owner.overlay_fullscreen("eyeshield", /obj/screen/fullscreen/blind)
+			owner.overlay_fullscreen("eyeshield", /atom/movable/screen/fullscreen/blind)
 			owner.update_icons()
 		else
 			to_chat(owner, SPAN_NOTICE("Your protective lenses retract out of the way."))

@@ -237,53 +237,6 @@
 	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
 	icon_state = "asleep"
 
-/datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
-	id = "cult_ghost"
-	duration = -1
-	alert_type = null
-
-/datum/status_effect/cultghost/on_apply()
-	owner.set_invis_see(SEE_INVISIBLE_OBSERVER)
-	return TRUE
-
-/datum/status_effect/cultghost/tick()
-	if(owner.reagents)
-		owner.reagents.del_reagent(/datum/reagent/water/holywater) //can't be deconverted
-
-/datum/status_effect/crusher_mark
-	id = "crusher_mark"
-	duration = 300 //if you leave for 30 seconds you lose the mark, deal with it
-	status_type = STATUS_EFFECT_REPLACE
-	alert_type = null
-	var/mutable_appearance/marked_underlay
-	var/obj/item/kinetic_crusher/hammer_synced
-
-
-/datum/status_effect/crusher_mark/on_creation(mob/living/new_owner, obj/item/kinetic_crusher/new_hammer_synced)
-	. = ..()
-	if(.)
-		hammer_synced = new_hammer_synced
-
-/datum/status_effect/crusher_mark/on_apply()
-	if(owner.mob_size >= MOB_SIZE_LARGE)
-		marked_underlay = mutable_appearance('icons/effects/effects.dmi', "shield2")
-		marked_underlay.pixel_x = -owner.pixel_x
-		marked_underlay.pixel_y = -owner.pixel_y
-		owner.underlays += marked_underlay
-		return TRUE
-	return FALSE
-
-/datum/status_effect/crusher_mark/Destroy()
-	hammer_synced = null
-	if(owner)
-		owner.underlays -= marked_underlay
-	QDEL_NULL(marked_underlay)
-	return ..()
-
-/datum/status_effect/crusher_mark/be_replaced()
-	owner.underlays -= marked_underlay //if this is being called, we should have an owner at this point.
-	..()
-
 /datum/status_effect/stacking/saw_bleed
 	id = "saw_bleed"
 	tick_interval = 6
@@ -417,8 +370,8 @@
 	var/mob/living/carbon/C = owner
 	C.cure_trauma_type(/datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY) //clear previous hypnosis
 	// The brain trauma itself does its own set of logging, but this is the only place the source of the hypnosis phrase can be found.
-	hearing_speaker.log_message("hypnotised [key_name(C)] with the phrase '[hearing_args[HEARING_RAW_MESSAGE]]'", LOG_ATTACK, color="red")
-	C.log_message("has been hypnotised by the phrase '[hearing_args[HEARING_RAW_MESSAGE]]' spoken by [key_name(hearing_speaker)]", LOG_VICTIM, color="orange", log_globally = FALSE)
+	log_attack("[hearing_speaker] hypnotised [key_name(C)] with the phrase '[hearing_args[HEARING_RAW_MESSAGE]]'")
+	log_game("[C] has been hypnotised by the phrase '[hearing_args[HEARING_RAW_MESSAGE]]' spoken by [key_name(hearing_speaker)]")
 	addtimer(CALLBACK(C, /mob/living/carbon.proc/gain_trauma, /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hearing_args[HEARING_RAW_MESSAGE]), 10)
 	addtimer(CALLBACK(C, /mob/living.proc/Stun, 60, TRUE, TRUE), 15) //Take some time to think about it
 	qdel(src)
@@ -437,7 +390,7 @@
 		if(1)
 			if((owner.mobility_flags & MOBILITY_MOVE) && isturf(owner.loc))
 				to_chat(owner, SPAN_WARNING("Your leg spasms!"))
-				step(owner, pick(GLOB.cardinals))
+				step(owner, pick(GLOB.cardinal))
 		if(2)
 			if(owner.incapacitated())
 				return
@@ -445,10 +398,10 @@
 			if(!held_item)
 				return
 			to_chat(owner, SPAN_WARNING("Your fingers spasm!"))
-			owner.log_message("used [held_item] due to a Muscle Spasm", LOG_ATTACK)
+			log_attack("[owner] used [held_item] due to a Muscle Spasm")
 			held_item.attack_self(owner)
 		if(3)
-			owner.set_combat_mode(TRUE)
+			owner.a_intent_change(I_HURT)
 
 			var/range = 1
 			if(istype(owner.get_active_held_item(), /obj/item/gun)) //get targets to shoot at
@@ -459,15 +412,15 @@
 				targets += nearby_mobs
 			if(LAZYLEN(targets))
 				to_chat(owner, SPAN_WARNING("Your arm spasms!"))
-				owner.log_message(" attacked someone due to a Muscle Spasm", LOG_ATTACK) //the following attack will log itself
+				log_attack("[owner] attacked someone due to a Muscle Spasm") //the following attack will log itself
 				owner.ClickOn(pick(targets))
-			owner.set_combat_mode(FALSE)
+			owner.a_intent_change(I_HELP)
 		if(4)
-			owner.set_combat_mode(TRUE)
+			owner.a_intent_change(I_HURT)
 			to_chat(owner, SPAN_WARNING("Your arm spasms!"))
-			owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
+			log_attack("[owner] attacked [owner.p_them()]self to a Muscle Spasm")
 			owner.ClickOn(owner)
-			owner.set_combat_mode(FALSE)
+			owner.a_intent_change(I_HELP)
 		if(5)
 			if(owner.incapacitated())
 				return
@@ -477,7 +430,7 @@
 				targets += nearby_turfs
 			if(LAZYLEN(targets) && held_item)
 				to_chat(owner, SPAN_WARNING("Your arm spasms!"))
-				owner.log_message("threw [held_item] due to a Muscle Spasm", LOG_ATTACK)
+				log_attack("[owner] threw [held_item] due to a Muscle Spasm")
 				owner.throw_item(pick(targets))
 
 /datum/status_effect/convulsing

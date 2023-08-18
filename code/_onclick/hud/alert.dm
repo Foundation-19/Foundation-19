@@ -364,7 +364,7 @@
 		return
 
 	too_slowing_this_guy = TRUE
-	offerer.visible_message(SPAN_NOTICE("[rube] rushes in to high-five [offerer], but-"), SPAN_GOOD("[rube] falls for your trick just as planned, lunging for a high-five that no longer exists! Classic!"), ignored_mobs=rube)
+	offerer.visible_message(SPAN_NOTICE("[rube] rushes in to high-five [offerer], but-"), SPAN_GOOD("[rube] falls for your trick just as planned, lunging for a high-five that no longer exists! Classic!"), exclude_mobs = list(rube))
 	to_chat(rube, SPAN_GOOD("You go in for [offerer]'s high-five, but-"))
 	addtimer(CALLBACK(src, .proc/too_slow_p2, offerer, rube), 0.5 SECONDS)
 
@@ -478,21 +478,6 @@
 	desc = initial(desc)
 	if(length(GLOB.roundstart_station_mechcharger_areas))
 		desc += " Power ports are available in [english_list(GLOB.roundstart_station_mechcharger_areas)]."
-
-//Ethereal
-
-/atom/movable/screen/alert/lowcell/ethereal
-	name = "Low Blood Charge"
-	desc = "Your charge is running low, find a source of energy! Use a recharging station, eat some Ethereal-friendly food, or syphon some power from lights, a power cell, or an APC (done by right clicking on combat mode)."
-
-/atom/movable/screen/alert/emptycell/ethereal
-	name = "No Blood Charge"
-	desc = "You are out of juice, find a source of energy! Use a recharging station, eat some Ethereal-friendly food, or syphon some power from lights, a power cell, or an APC (done by right clicking on combat mode)."
-
-/atom/movable/screen/alert/ethereal_overcharge
-	name = "Blood Overcharge"
-	desc = "Your charge is running dangerously high, find an outlet for your energy! Right click an APC while not in combat mode."
-	icon_state = "cell_overcharge"
 
 //MODsuit unique
 /atom/movable/screen/alert/nocore

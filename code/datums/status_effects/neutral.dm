@@ -1,19 +1,5 @@
 //entirely neutral or internal status effects go here
 
-/datum/status_effect/throat_soothed
-	id = "throat_soothed"
-	duration = 60 SECONDS
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = null
-
-/datum/status_effect/throat_soothed/on_apply()
-	. = ..()
-	ADD_TRAIT(owner, TRAIT_SOOTHED_THROAT, "[STATUS_EFFECT_TRAIT]_[id]")
-
-/datum/status_effect/throat_soothed/on_remove()
-	. = ..()
-	REMOVE_TRAIT(owner, TRAIT_SOOTHED_THROAT, "[STATUS_EFFECT_TRAIT]_[id]")
-
 // this status effect is used to negotiate the high-fiving capabilities of all concerned parties
 /datum/status_effect/offering
 	id = "offering"
@@ -331,7 +317,7 @@
 			owner.set_jitter_if_lower(100 SECONDS)
 			to_chat(owner, SPAN_USERDANGER("You feel your eigenstate settle, as \"you\" become an alternative version of yourself!"))
 			owner.emote("me",1,"flashes into reality suddenly, gasping as they gaze around in a bewildered and highly confused fashion!",TRUE)
-			owner.log_message("has become an alternative universe version of themselves via EIGENSTASIUM.", LOG_GAME)
+			log_game("[owner] has become an alternative universe version of themselves via EIGENSTASIUM.")
 			//new you new stuff
 			//SSquirks.randomise_quirks(owner)
 			owner.reagents.remove_all(1000)

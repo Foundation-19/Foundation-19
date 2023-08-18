@@ -63,7 +63,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 
 
 	var/mob/living/deity/connected_god //Do we have this spell based off a boon from a god?
-	var/obj/screen/connected_button
+	var/atom/movable/screen/connected_button
 
 	var/hidden_from_codex = FALSE
 
@@ -92,7 +92,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 			silenced = max(0,silenced-1)
 			sleep(1)
 		if(connected_button)
-			var/obj/screen/ability/spell/S = connected_button
+			var/atom/movable/screen/ability/spell/S = connected_button
 			if(!istype(S))
 				return
 			S.update_charge(1)
