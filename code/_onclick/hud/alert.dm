@@ -463,7 +463,6 @@
 	desc = initial(desc)
 	if(length(GLOB.roundstart_station_borgcharger_areas))
 		desc += " Recharging stations are available in [english_list(GLOB.roundstart_station_borgcharger_areas)]."
-*/
 
 //MECH
 
@@ -478,6 +477,8 @@
 	desc = initial(desc)
 	if(length(GLOB.roundstart_station_mechcharger_areas))
 		desc += " Power ports are available in [english_list(GLOB.roundstart_station_mechcharger_areas)]."
+
+*/
 
 //MODsuit unique
 /atom/movable/screen/alert/nocore
