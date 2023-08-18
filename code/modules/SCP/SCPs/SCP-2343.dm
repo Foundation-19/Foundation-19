@@ -5,7 +5,7 @@
 	icon_state = "americangod"
 	status_flags = NO_ANTAG
 
-/mob/living/carbon/human/scp343/scp2343/Initialize(mapload, new_species)
+/mob/living/carbon/human/scp343/scp2343/Initialize(mapload, new_species = "SCP-2343")
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
