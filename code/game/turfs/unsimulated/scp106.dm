@@ -20,14 +20,7 @@
 			L.adjustCloneLoss(-50)
 		else
 			if(L.stat != DEAD)
-				if(iscarbon(L))
-					var/mob/living/carbon/C = L
-					for(var/organ in shuffle(C.organs))
-						var/obj/item/organ/I = organ
-						if(I.scp106_vulnerable && !(I.status & ORGAN_DEAD) && prob(10))
-							I.scp106_affected = TRUE
-							break
-				L.adjustFireLoss(3)
+				L.adjustToxLoss(3)
 			else if(ishuman(L))
 				var/mob/living/carbon/human/H = L
 				H.humanStageHandler.adjustStage("pocket_dimension_decay", 1)
