@@ -241,7 +241,7 @@ SUBSYSTEM_DEF(bccm)
 		INSERT INTO bccm_ip_cache (ip, response)
 		VALUES (:ip, :raw_response)
 		ON DUPLICATE KEY UPDATE
-		response = VALUES(response)"},
+		response = :raw_response"},
 		list("ip" = ip, "raw_response" = raw_response))
 	_Cache_insert_query.Execute()
 	qdel(_Cache_insert_query)
