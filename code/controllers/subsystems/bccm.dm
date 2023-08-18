@@ -238,8 +238,10 @@ SUBSYSTEM_DEF(bccm)
 		return FALSE
 
 	var/datum/db_query/_Cache_insert_query = SSdbcore.NewQuery({"
-		INSERT INTO bccm_ip_cache (`ip`, `response`)
-		VALUES (:ip, :raw_response)"},
+		INSERT INTO bccm_ip_cache (ip, response)
+		VALUES (:ip, :raw_response)
+		ON DUPLICATE KEY UPDATE
+		response = VALUES(response)"},
 		list("ip" = ip, "raw_response" = raw_response))
 	_Cache_insert_query.Execute()
 	qdel(_Cache_insert_query)
