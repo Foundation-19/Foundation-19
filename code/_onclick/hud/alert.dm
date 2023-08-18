@@ -480,29 +480,6 @@
 
 */
 
-//MODsuit unique
-/atom/movable/screen/alert/nocore
-	name = "Missing Core"
-	desc = "Unit has no core. No modules available until a core is reinstalled. Robotics may provide assistance."
-	icon_state = "no_cell"
-
-/atom/movable/screen/alert/emptycell/plasma
-	name = "Out of Power"
-	desc = "Unit's plasma core has no charge remaining. No modules available until plasma core is recharged. \
-		Unit can be refilled through plasma fuel."
-
-/atom/movable/screen/alert/emptycell/plasma/update_desc()
-	. = ..()
-	desc = initial(desc)
-
-/atom/movable/screen/alert/lowcell/plasma
-	name = "Low Charge"
-	desc = "Unit's plasma core is running low. Unit can be refilled through plasma fuel."
-
-/atom/movable/screen/alert/lowcell/plasma/update_desc()
-	. = ..()
-	desc = initial(desc)
-
 //Need to cover all use cases - emag, illegal upgrade module, malf AI hack, traitor cyborg
 /atom/movable/screen/alert/hacked
 	name = "Hacked"
