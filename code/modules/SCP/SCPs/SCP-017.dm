@@ -63,7 +63,7 @@
 	var/area/Tarea = get_area(the_target)
 	if(!Tturf || !Tarea)
 		return ATTACK_FAILED
-	if((Tturf.get_lumcount() > shadow_threshold) || (Tarea.dynamic_lighting == 0))
+	if(!is_dark(Tturf, shadow_threshold) || (Tarea.dynamic_lighting == 0))
 		return ATTACK_FAILED
 	return ..()
 
@@ -74,7 +74,7 @@
 //Mob procs
 /mob/living/simple_animal/hostile/scp017/IMove(turf/newloc, safety = TRUE)
 	var/area/Tarea = get_area(newloc)
-	if((newloc.get_lumcount() > shadow_threshold) || (Tarea.dynamic_lighting == 0))
+	if(!is_dark(newloc, shadow_threshold) || (Tarea.dynamic_lighting == 0))
 		return MOVEMENT_FAILED
 	return ..()
 
@@ -114,7 +114,7 @@
 		var/area/Tarea = get_area(A)
 		if(!Tturf || !Tarea)
 			return FALSE
-		if((Tturf.get_lumcount() > shadow_threshold) || (Tarea.dynamic_lighting == 0))
+		if(!is_dark(Tturf, shadow_threshold) || (Tarea.dynamic_lighting == 0))
 			return FALSE
 
 	var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()

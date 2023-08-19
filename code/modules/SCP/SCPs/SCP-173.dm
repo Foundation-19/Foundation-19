@@ -366,13 +366,13 @@
 				assign_target(pick_turf_in_range(loc, wander_distance, list(/proc/isfloor)))
 
 		if(1,2) //If we have a manageable amount of targets, we will pursue or try to break a light
-			if((our_turf.get_lumcount() > 0.05) && prob(30))
+			if(!is_dark(our_turf) && prob(30))
 				assign_target(get_viable_light_target())
 			else
 				assign_target(DEFAULTPICK(possible_human_targets, null))
 
 		if(3,INFINITY) //If we have too many targets, we will attempt to flee or break a light
-			if(our_turf.get_lumcount() > 0.05)
+			if(!is_dark(our_turf))
 				if(prob(60))
 					var/while_timeout = world.time + 1 SECONDS //prevent infinity loops
 
