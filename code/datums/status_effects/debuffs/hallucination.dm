@@ -48,7 +48,7 @@
 
 /// Signal proc for [COMSIG_CARBON_CHECKING_BODYPART],
 /// checking bodyparts while hallucinating can cause them to appear more damaged than they are
-/datum/status_effect/hallucination/proc/on_check_bodypart(mob/living/carbon/source, obj/item/bodypart/examined, list/check_list, list/limb_damage)
+/datum/status_effect/hallucination/proc/on_check_bodypart(mob/living/carbon/source, obj/item/organ/external/examined, list/check_list, list/limb_damage)
 	SIGNAL_HANDLER
 
 	if(prob(30))

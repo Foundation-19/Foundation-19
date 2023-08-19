@@ -270,12 +270,14 @@
 /datum/status_effect/neck_slice/on_apply()
 	if(!ishuman(owner))
 		return FALSE
-	if(!owner.get_bodypart(BODY_ZONE_HEAD))
+	var/mob/living/carbon/human/H = owner
+	if(!H.get_organ(BP_HEAD))
 		return FALSE
 	return TRUE
 
 /datum/status_effect/neck_slice/tick()
-	var/obj/item/bodypart/throat = owner.get_bodypart(BODY_ZONE_HEAD)
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/organ/external/throat = H.get_organ(BP_HEAD)
 	if(owner.stat == DEAD || !throat) // they can lose their head while it's going.
 		qdel(src)
 		return

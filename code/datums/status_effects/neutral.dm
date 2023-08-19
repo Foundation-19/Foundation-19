@@ -122,7 +122,7 @@
 /datum/status_effect/offering/no_item_received/needs_resting
 
 /datum/status_effect/offering/no_item_received/needs_resting/additional_taker_check(mob/living/carbon/taker)
-	return taker.body_position == LYING_DOWN
+	return taker.lying
 
 /datum/status_effect/offering/no_item_received/needs_resting/on_creation(mob/living/new_owner, obj/item/offer, give_alert_override, mob/living/carbon/offered)
 	. = ..()
@@ -138,7 +138,7 @@
 
 /// Simple signal handler that ensures that, if the owner stops standing, the offer no longer stands either!
 /datum/status_effect/offering/no_item_received/needs_resting/proc/check_owner_standing(mob/living/carbon/owner)
-	if(src.owner.body_position == STANDING_UP)
+	if(!owner.lying)
 		return
 
 	// This doesn't work anymore if the owner is no longer standing up, sorry!
@@ -148,7 +148,7 @@
 /datum/status_effect/offering/no_item_received/needs_resting/proc/check_candidate_resting(mob/living/carbon/candidate)
 	SIGNAL_HANDLER
 
-	if(candidate.body_position == LYING_DOWN)
+	if(candidate.lying)
 		return
 
 	// No longer lying down? You're no longer eligible to take the offer, sorry!

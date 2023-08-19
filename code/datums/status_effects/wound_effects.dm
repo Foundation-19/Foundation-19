@@ -30,11 +30,11 @@
 	alert_type = /atom/movable/screen/alert/status_effect/limp
 	var/msg_stage = 0//so you dont get the most intense messages immediately
 	/// The left leg of the limping person
-	var/obj/item/bodypart/leg/left/left
+	var/obj/item/organ/external/leg/left/left
 	/// The right leg of the limping person
-	var/obj/item/bodypart/leg/right/right
+	var/obj/item/organ/external/leg/right/right
 	/// Which leg we're limping with next
-	var/obj/item/bodypart/next_leg
+	var/obj/item/organ/external/next_leg
 	/// How many deciseconds we limp for on the left leg
 	var/slowdown_left = 0
 	/// How many deciseconds we limp for on the right leg
@@ -45,14 +45,14 @@
 	var/limp_chance_right = 0
 
 /datum/status_effect/limp/on_apply()
-	if(!iscarbon(owner))
+	if(!ishuman(owner))
 		return FALSE
-	var/mob/living/carbon/C = owner
-	left = C.get_bodypart(BODY_ZONE_L_LEG)
-	right = C.get_bodypart(BODY_ZONE_R_LEG)
+	var/mob/living/carbon/human/H = owner
+	left = H.get_organ(BP_L_LEG)
+	right = H.get_organ(BP_R_LEG)
 	update_limp()
-	RegisterSignal(C, COMSIG_MOVED, .proc/check_step)
-	RegisterSignals(C, list(COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_LOSE_WOUND, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB), .proc/update_limp)
+	RegisterSignal(H, COMSIG_MOVED, .proc/check_step)
+	RegisterSignals(H, list(COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_LOSE_WOUND, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB), .proc/update_limp)
 	return TRUE
 
 /datum/status_effect/limp/on_remove()
@@ -65,7 +65,7 @@
 /datum/status_effect/limp/proc/check_step(mob/whocares, OldLoc, Dir, forced)
 	SIGNAL_HANDLER
 
-	if(!owner.client || owner.body_position == LYING_DOWN || !owner.has_gravity() || (owner.movement_type & FLYING) || forced || owner.buckled)
+	if(!owner.client || owner.lying || (owner.movement_type & FLYING) || forced || owner.buckled)
 		return
 
 	// less limping while we have determination still
@@ -83,12 +83,12 @@
 /datum/status_effect/limp/proc/update_limp()
 	SIGNAL_HANDLER
 
-	var/mob/living/carbon/C = owner
-	left = C.get_bodypart(BODY_ZONE_L_LEG)
-	right = C.get_bodypart(BODY_ZONE_R_LEG)
+	var/mob/living/carbon/human/H = owner
+	left = H.get_organ(BP_L_LEG)
+	right = H.get_organ(BP_R_LEG)
 
 	if(!left && !right)
-		C.remove_status_effect(src)
+		H.remove_status_effect(src)
 		return
 
 	slowdown_left = 0
@@ -111,7 +111,7 @@
 
 	// this handles losing your leg with the limp and the other one being in good shape as well
 	if(!slowdown_left && !slowdown_right)
-		C.remove_status_effect(src)
+		H.remove_status_effect(src)
 		return
 
 
@@ -136,7 +136,7 @@
 /datum/status_effect/wound
 	id = "wound"
 	status_type = STATUS_EFFECT_MULTIPLE
-	var/obj/item/bodypart/linked_limb
+	var/obj/item/organ/external/linked_limb
 	var/datum/wound/linked_wound
 	alert_type = NONE
 

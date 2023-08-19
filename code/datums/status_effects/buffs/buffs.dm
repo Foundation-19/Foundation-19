@@ -1,9 +1,3 @@
-/datum/status_effect/exercised
-	id = "Exercised"
-	duration = 1200
-	alert_type = null
-	processing_speed = STATUS_EFFECT_NORMAL_PROCESS
-
 /datum/status_effect/good_music
 	id = "Good Music"
 	alert_type = null
@@ -59,11 +53,7 @@
 	owner.balloon_alert_to_viewers("health buffed")
 	to_chat(owner, SPAN_GOOD("You feel healthy, like if your body is little stronger than it was a moment ago."))
 
-	if(isanimal(owner))	//dumb animals have their own proc for healing.
-		var/mob/living/simple_animal/healthy_animal = owner
-		healthy_animal.adjustHealth(-(health_increase * healing_modifier))
-	else
-		owner.adjustBruteLoss(-(health_increase * healing_modifier))
+	owner.adjustBruteLoss(-(health_increase * healing_modifier))
 
 /datum/status_effect/limited_buff/health_buff/maxed_out()
 	. = ..()

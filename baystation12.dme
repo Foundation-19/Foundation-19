@@ -321,6 +321,7 @@
 #include "code\datums\hierarchy.dm"
 #include "code\datums\local_network.dm"
 #include "code\datums\mil_ranks.dm"
+#include "code\datums\mutable_appearance.dm"
 #include "code\datums\orbit.dm"
 #include "code\datums\position_point_vector.dm"
 #include "code\datums\powers.dm"
