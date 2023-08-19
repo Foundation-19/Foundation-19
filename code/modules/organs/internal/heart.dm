@@ -115,7 +115,7 @@
 		if(owner.chem_effects[CE_PULSE] > 2)
 			heartbeat++
 
-		if(heartbeat >= ((SCP?.designation == "3349-1") ? (rate * 2) : rate))	// scp3349 heartbeat is long so we play it half as often to prevent overlap
+		if(heartbeat >= (((SCP ? SCP.designation : "") == "3349-1") ? (rate * 2) : rate))	// scp3349 heartbeat is long so we play it half as often to prevent overlap
 			heartbeat = 0
 			sound_to(owner, sound(((SCP.designation = "3349-1") ? 'sounds/effects/heartbeatpurr.ogg' : beat_sound),0,0,0,50))
 		else
