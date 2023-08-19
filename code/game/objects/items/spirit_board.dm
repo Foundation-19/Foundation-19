@@ -50,7 +50,6 @@
 		return 0 //No feedback here, hiding the cooldown a little makes it harder to tell who's really picking letters.
 
 	//lighting check
-	var/light_amount = 0
 	var/turf/T = get_turf(src)
 
 	if(!is_dark(T, 0.2))

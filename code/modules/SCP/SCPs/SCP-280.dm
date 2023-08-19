@@ -143,7 +143,7 @@
 			dark_spot_avalible = TRUE
 			break
 
-	if((!is_dark(Tturf) || (Tarea.dynamic_lighting == 0)) && dark_spot_avalible) //We dont go to turfs which are lit unless we have no choice.
+	if((!is_dark(newloc) || (Tarea.dynamic_lighting == 0)) && dark_spot_avalible) //We dont go to turfs which are lit unless we have no choice.
 		return MOVEMENT_FAILED
 	return ..()
 
