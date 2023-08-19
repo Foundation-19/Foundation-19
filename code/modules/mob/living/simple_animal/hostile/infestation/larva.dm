@@ -110,6 +110,8 @@
 	transformation_time = null // We only evolve after implanting ourselves
 
 /mob/living/simple_animal/hostile/infestation/larva/implant/implanter/attack_target(atom/A)
+	if(!ishuman(A))
+		return
 	var/mob/living/carbon/human/H = A
 	var/list/valid_organs = list()
 	for(var/obj/item/organ/external/O in H.organs)

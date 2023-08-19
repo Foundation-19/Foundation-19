@@ -71,7 +71,7 @@
 
 	target.visible_message(SPAN_DANGER("[user] crushes [target]'s [damaging.name]!"))
 	target.custom_pain("You feel your bones painfuly compress in [damaging.name]!", 50, affecting = damaging)
-	target.apply_damage(4, BRUTE, hit_zone, used_weapon = "crushing")
+	target.apply_damage(4 * damage_stage, BRUTE, hit_zone, used_weapon = "crushing")
 	target.Stun(10)
 	target.Weaken(15)
 	playsound(get_turf(target), 'sound/weapons/pierce.ogg', 25, TRUE, -3)
@@ -100,7 +100,7 @@
 		return
 
 	if(user.get_fullness() > 380) // Just slash them
-		target.apply_damage(rand(16, 24), BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "claws")
+		target.apply_damage(rand(12, 20) * damage_stage, BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "claws")
 		target.visible_message(SPAN_DANGER("[user] slashes [target]'s [damaging.name]!"))
 		playsound(get_turf(target), 'sound/weapons/alien_claw_flesh3.ogg', 25, TRUE)
 	else // Food!
@@ -108,7 +108,7 @@
 		R.add_reagent(/datum/reagent/nutriment, 3)
 		R.trans_to_mob(user, 3, CHEM_INGEST)
 		qdel(R)
-		target.apply_damage(rand(8, 14), BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "fangs")
+		target.apply_damage(rand(5, 10) * damage_stage, BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "fangs")
 		target.visible_message(SPAN_DANGER("[user] eats [target]'s [damaging.name]!"))
 		playsound(get_turf(target), 'sound/weapons/alien_claw_flesh1.ogg', 25, TRUE)
 
