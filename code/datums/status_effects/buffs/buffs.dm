@@ -29,14 +29,11 @@
 	. = ..()
 
 /datum/status_effect/speed_boost/on_apply()
-	owner.add_movespeed_modifier(/datum/movespeed_modifier/status_speed_boost, update = TRUE)
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/speed_boost, update = TRUE)
 	return ..()
 
 /datum/status_effect/speed_boost/on_remove()
-	owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_speed_boost, update = TRUE)
-
-/datum/movespeed_modifier/status_speed_boost
-	multiplicative_slowdown = -1
+	owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/speed_boost, update = TRUE)
 
 ///this buff provides a max health buff and a heal.
 /datum/status_effect/limited_buff/health_buff

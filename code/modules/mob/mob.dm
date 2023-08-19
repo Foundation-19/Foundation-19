@@ -55,6 +55,7 @@
 	START_PROCESSING(SSmobs, src)
 	if(!mob_panel)
 		mob_panel = new(src)
+	update_config_movespeed()
 
 /mob/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(!client)	return
@@ -265,6 +266,7 @@
 	if(lying) //Crawling, it's slower
 		. += (8 + ((weakened * 3) + (confused * 2)))
 	. += move_intent.move_delay
+	. += cached_multiplicative_slowdown
 	. += encumbrance() * (0.5 + 1.5 * (SKILL_MAX - get_skill_value(SKILL_HAULING))/(SKILL_MAX - SKILL_MIN)) //Varies between 0.5 and 2, depending on skill
 
 //How much the stuff the mob is pulling contributes to its movement delay.

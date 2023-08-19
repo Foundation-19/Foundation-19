@@ -44,7 +44,7 @@
 	if(!ishuman(owner))
 		CRASH("[type] status effect added to non-human owner: [owner ? owner.type : "null owner"]")
 	var/mob/living/carbon/human/human_owner = owner
-	//human_owner.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis) //slows you down
+	human_owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/stoned) //slows you down
 	human_owner.update_body() //updates eye color
 	human_owner.add_traits(list(TRAIT_CLUMSY, TRAIT_BLOODSHOT_EYES), type) // impairs motor coordination and dilates blood vessels in eyes
 	//human_owner.add_mood_event("stoned", /datum/mood_event/stoned) //improves mood
@@ -55,7 +55,7 @@
 	if(!ishuman(owner))
 		CRASH("[type] status effect being removed from non-human owner: [owner ? owner.type : "null owner"]")
 	var/mob/living/carbon/human/human_owner = owner
-	//human_owner.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis)
+	human_owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/stoned)
 	human_owner.update_body()
 	human_owner.remove_traits(list(TRAIT_CLUMSY, TRAIT_BLOODSHOT_EYES), type)
 	//human_owner.clear_mood_event("stoned")

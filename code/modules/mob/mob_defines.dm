@@ -215,3 +215,10 @@
 
 	/// Contains [/atom/movable/screen/alert] only.	On [/mob] so clientless mobs will throw alerts properly.
 	var/list/alerts = list()
+
+	/// List of movement speed modifiers applying to this mob
+	var/list/movespeed_modification //Lazy list, see mob_movespeed.dm
+	/// List of movement speed modifiers ignored by this mob. List -> List (id) -> List (sources)
+	var/list/movespeed_mod_immunities //Lazy list, see mob_movespeed.dm
+	/// The calculated mob speed slowdown based on the modifiers list
+	var/cached_multiplicative_slowdown
