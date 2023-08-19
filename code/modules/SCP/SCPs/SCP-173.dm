@@ -78,6 +78,8 @@
 		PLAYABLE
 	)
 
+	SCP.min_playercount = 30
+
 	defecation_cooldown = world.time + 10 MINUTES // Give everyone some time to prepare
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_EAL, FALSE)
@@ -271,7 +273,7 @@
 
 /mob/living/scp173/proc/Defecate()
 	var/feces_amount = CheckFeces()
-	if(feces_amount >= 30 && length(GLOB.clients) <= 30 && !client) //If we're lowpop we cant breach ourselves
+	if(feces_amount >= 30 && length(GLOB.clients) <= SCP.min_playercount && !client) //If we're lowpop we cant breach ourselves
 		return
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time

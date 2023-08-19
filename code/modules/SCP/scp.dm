@@ -1,5 +1,4 @@
 /datum/scp
-
 	///SCP name
 	var/name
 	///SCP Designation (i.e 173 or 096)
@@ -13,10 +12,20 @@
 	///Datum Parent
 	var/atom/parent
 
-	///Components
+	//Playable SCP vars
+
+	///How many players do we need on for this SCP to be playable
+	var/min_playercount = 0
+	///How much time has to have passed for this SCP to become playable
+	var/min_time = 0
+
+	//Components
+
+	///Memetic Component
 	var/datum/component/memetic/meme_comp
 
-	//Memetic Comps
+	//Memetic Comp Vars
+
 	///Proc called as an effect from memetic scps
 	var/memetic_proc
 	///Flags that determine how a memetic scp is detected

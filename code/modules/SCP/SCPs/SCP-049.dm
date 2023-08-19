@@ -22,6 +22,8 @@
 		PLAYABLE|ROLEPLAY
 	)
 
+	SCP.min_time = 10 MINUTES
+
 	add_verb(src, list(
 		/mob/living/carbon/human/proc/SCP_049_talk,
 		/mob/living/carbon/human/scp049/proc/greetings,

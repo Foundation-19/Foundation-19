@@ -1,10 +1,10 @@
 // Classifcations
 
-#define SAFE 1
-#define EUCLID 2
-#define KETER 3
-#define THAUMIEL 4
-#define NEUTRALIZED 5
+#define SAFE		"Safe"
+#define EUCLID		"Euclid"
+#define KETER 		"Keter"
+#define THAUMIEL	"Thaumiel"
+#define NEUTRALIZED "Neutralized"
 
 //Meta bitflags
 

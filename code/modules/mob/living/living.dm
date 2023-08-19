@@ -822,7 +822,6 @@ default behaviour is:
 		return
 
 	to_chat(src, "<b>You are now \the [src]!</b>")
-	to_chat(src, SPAN_NOTICE("Remember to stay in character for a mob of this type!"))
 	return 1
 
 /mob/living/reset_layer()

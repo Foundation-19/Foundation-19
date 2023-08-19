@@ -14,6 +14,9 @@
 		PLAYABLE|ROLEPLAY
 	)
 
+	SCP.min_time = 15 MINUTES
+	SCP.min_playercount = 25
+
 	init_skills()
 
 	var/decl/hierarchy/outfit/scp527/outfit = outfit_by_type(/decl/hierarchy/outfit/scp527)

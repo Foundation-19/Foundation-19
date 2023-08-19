@@ -37,6 +37,9 @@
 		"106", //Numerical Designation
 	)
 
+	SCP.min_time = 40 MINUTES
+	SCP.min_playercount = 20
+
 	spawn_turf = get_turf(src)
 	spawn_area = get_area(src)
 

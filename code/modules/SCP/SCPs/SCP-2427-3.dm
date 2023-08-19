@@ -59,6 +59,9 @@
 		"2427-3", //Numerical Designation
 		PLAYABLE
 	)
+
+	SCP.min_playercount = 20
+
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_ENGLISH, FALSE)
 	set_default_language(all_languages[LANGUAGE_ENGLISH])

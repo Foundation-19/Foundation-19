@@ -25,6 +25,8 @@
 		PLAYABLE|ROLEPLAY
 	)
 
+	SCP.min_time = 5 MINUTES
+
 //Mechanics
 
 /mob/living/scp999/proc/glubbify(match)

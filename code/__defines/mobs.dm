@@ -183,8 +183,9 @@
 #define V_INSL_IMPERFECT 	1
 #define V_INSL_PERFECT 		2
 
-#define ANIMAL_SPAWN_DELAY round(config.respawn_delay / 6)
-#define DRONE_SPAWN_DELAY  round(config.respawn_delay / 3)
+#define ANIMAL_SPAWN_DELAY	round(config.respawn_delay / 6)
+#define DRONE_SPAWN_DELAY	round(config.respawn_delay / 3)
+#define SCP_SPAWN_DELAY		round(config.respawn_delay / 3)
 
 // Incapacitation flags, used by the mob/proc/incapacitated() proc
 #define INCAPACITATION_NONE                 0

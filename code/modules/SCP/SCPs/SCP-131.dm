@@ -53,6 +53,9 @@
 		SAFE, //Obj Class
 		"131", //Numerical Designation
 	)
+
+	SCP.min_time = 5 MINUTES
+
 	add_language(LANGUAGE_EYEPOD)
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
