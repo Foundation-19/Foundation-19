@@ -20,7 +20,7 @@
 	LAZYCLEARLIST(affected_mobs)
 
 /datum/component/memetic/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_OBJECT_SOUND_HEARD, .proc/heard_memetic)
+	RegisterSignal(parent, list(COMSIG_OBJECT_SOUND_HEARD, COMSIG_OBJECT_SOUND_HEARD_LOOPING), .proc/heard_memetic)
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, .proc/examined_memetic)
 	RegisterSignal(parent, COMSIG_PHOTO_SHOWN_OF, .proc/saw_memetic_photo)
 	RegisterSignal(parent, COMSIG_ATOM_VIEW_RESET, .proc/saw_through_camera)
@@ -30,7 +30,8 @@
 		COMSIG_OBJECT_SOUND_HEARD,
 		COMSIG_ATOM_EXAMINED,
 		COMSIG_PHOTO_SHOWN_OF,
-		COMSIG_ATOM_VIEW_RESET
+		COMSIG_ATOM_VIEW_RESET,
+		COMSIG_OBJECT_SOUND_HEARD_LOOPING
 	))
 
 /datum/component/memetic/proc/check_viewers() //I dont like doing this but since theres no way for us to send a signal upon something being viewed its neccesary

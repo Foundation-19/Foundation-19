@@ -119,6 +119,8 @@
 
 /// Called in '/mob/proc/playsound_local' on the atom that the sound originated from (/mob/hearer, sound)
 #define COMSIG_OBJECT_SOUND_HEARD "atomHeard"
+/// Called in '/datum/sound_token/proc/PrivUpdateListener' on the atom that the sound originated from (/mob/hearer, sound)
+#define COMSIG_OBJECT_SOUND_HEARD_LOOPING "atomHeardLooping"
 
 /*
 *	Eye
