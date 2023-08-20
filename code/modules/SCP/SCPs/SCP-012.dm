@@ -59,7 +59,7 @@
 	else if(((world.time - effect_cooldown_counter) > effect_cooldown) || abs((world.time - effect_cooldown_counter) - effect_cooldown) < 0.1 SECONDS) //Last part is so that this can run for all affected humans without worrying about cooldown
 		H.Stun(60)
 		if(prob(60) && H.getBruteLoss())
-			H.visible_message(SPAN_WARNING("[H] smears [H.p_their()] blood on the \"[name]\", writing musical notes..."))
+			H.visible_message(SPAN_WARNING("[H] smears [H.p_their()] blood on \"[name]\", writing musical notes..."))
 		else if(prob(50))
 			H.visible_message(SPAN_DANGER("[H] rips into [H.p_their()] own flesh and covers [H.p_their()] hands in blood!"))
 			H.emote("scream")
