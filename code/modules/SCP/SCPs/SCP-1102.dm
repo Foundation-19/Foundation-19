@@ -35,7 +35,7 @@
 	playsound(enter_point, pick(enter_point.climbsounds), 50)
 	visible_message(SPAN_WARNING("The [user] has opened the [src] and climbed down into it!"))
 
-///////////Ladder
+//Ladder
 
 /obj/structure/ladder/scp1102ladder
 	icon_state = "ladder10"
@@ -55,16 +55,7 @@
 
 //Overrides
 
-/obj/structure/ladder/scp1102ladder/climb(mob/user)
+/obj/structure/ladder/scp1102ladder/getTargetLadder(mob/M)
 	if(!return_point)
 		return_point = locate(/obj/item/storage/briefcase/scp1102ru) in GLOB.SCP_list
-	var/turf/T = get_turf(return_point)
-	if(!T)
-		to_chat(user, SPAN_WARNING("The ladder dosent seem to go anywhere!"))
-		return
-	if(!do_after(user, 2 SECONDS))
-		return
-	user.forceMove(T)
-	playsound(src, pick(climbsounds), 50)
-	playsound(return_point, pick(climbsounds), 50)
-	user.visible_message(SPAN_WARNING("[user] climbs up the ladder!"))
+	return return_point
