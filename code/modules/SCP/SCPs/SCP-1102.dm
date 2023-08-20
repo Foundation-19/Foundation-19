@@ -38,11 +38,7 @@
 //Ladder
 
 /obj/structure/ladder/scp1102ladder
-	icon_state = "ladder10"
-
-	//Mechanical
-
-	var/obj/item/storage/briefcase/scp1102ru/return_point
+	allowed_directions = UP
 
 /obj/structure/ladder/scp1102ladder/Initialize()
 	. = ..()
@@ -56,6 +52,6 @@
 //Overrides
 
 /obj/structure/ladder/scp1102ladder/getTargetLadder(mob/M)
-	if(!return_point)
-		return_point = locate(/obj/item/storage/briefcase/scp1102ru) in GLOB.SCP_list
-	return return_point
+	if(!target_up)
+		target_up = locate(/obj/item/storage/briefcase/scp1102ru) in GLOB.SCP_list //Technically a type mismatch but uhhhhh ladders never check so this works without runtimes
+	return target_up
