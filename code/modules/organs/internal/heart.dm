@@ -100,7 +100,7 @@
 			pulse++
 
 	// So does SCP-3349
-	if(pulse != PULSE_NORM && (SCP.designation == "3349-1"))
+	if(pulse != PULSE_NORM && ((SCP ? SCP.designation : "") == "3349-1"))
 		if(pulse > PULSE_NORM)
 			pulse--
 		else
