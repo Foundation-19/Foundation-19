@@ -117,7 +117,7 @@
 
 		if(heartbeat >= (((SCP ? SCP.designation : "") == "3349-1") ? (rate * 2) : rate))	// scp3349 heartbeat is long so we play it half as often to prevent overlap
 			heartbeat = 0
-			sound_to(owner, sound(((SCP ? SCP.designation : "") == "3349-1") ? 'sounds/effects/heartbeatpurr.ogg' : beat_sound),0,0,0,50)
+			sound_to(owner, sound((((SCP ? SCP.designation : "") == "3349-1") ? 'sounds/effects/heartbeatpurr.ogg' : beat_sound),0,0,0,50))
 		else
 			heartbeat++
 
