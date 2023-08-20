@@ -1,10 +1,3 @@
-/obj/item/storage/fancy/cigarettes/bluelady
-	name = "Pack of 'Blue Lady' cigarettes"
-	icon_state = "BLpacket"
-	desc = "A packet of six Blue Lady cigarettes. The SCP logo is stamped on the paper."
-
-	startswith = list(/obj/item/clothing/mask/smokable/cigarette/bluelady = 6)
-
 /obj/item/clothing/mask/smokable/cigarette/bluelady
 	name = "'Blue Lady' cigarette"
 	brand = "\improper Blue Lady"
@@ -31,20 +24,7 @@
 
 	LAZYINITLIST(affected)
 
-/obj/item/clothing/mask/smokable/cigarette/bluelady/light()
-	. = ..()
-	if(!ishuman(loc))
-		return
-	var/mob/living/carbon/human/H = loc
-	if(H.get_inventory_slot(src) != slot_wear_mask)
-		return
-	effect(H)
-
-/obj/item/clothing/mask/smokable/cigarette/bluelady/equipped(mob/user, slot)
-	. = ..()
-	if(slot != slot_wear_mask || !ishuman(user))
-		return
-	effect(user)
+//Mechanics
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/proc/effect(mob/living/carbon/human/H)
 	if(lit)
@@ -92,9 +72,28 @@
 
 	return I
 
+//Overrides
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady/light()
+	. = ..()
+	if(!ishuman(loc))
+		return
+	var/mob/living/carbon/human/H = loc
+	if(H.get_inventory_slot(src) != slot_wear_mask)
+		return
+	effect(H)
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady/equipped(mob/user, slot)
+	. = ..()
+	if(slot != slot_wear_mask || !ishuman(user))
+		return
+	effect(user)
+
 /obj/item/clothing/mask/smokable/cigarette/bluelady/smoke(amount)
 	. = ..()
 	smoketime += amount //Infite smoke time until 013 can complete its effects
+
+//Human mechanics
 
 /mob/living/carbon/human/proc/bluelady_message() //This is needed since once the cigarette goes out it is no longer an instance of 013 (and callbacks dont work)
 	if(!humanStageHandler.getStage("BlueLady")) //shouldent happen, but if admins do some fuckery with stages mid game then this will account for it
@@ -103,3 +102,12 @@
 		var/bl_message = pick("I miss her...", "Where did she go...", "You spot a glimpse of her in a nearby reflection...", "I know her I just can't remember...", "I love her... Where did she go?")
 		to_chat(src, SPAN_NOTICE(SPAN_ITALIC(bl_message)))
 	addtimer(CALLBACK(src, .proc/bluelady_message), 45 SECONDS)
+
+//Cigarrete Pack
+
+/obj/item/storage/fancy/cigarettes/bluelady
+	name = "Pack of 'Blue Lady' cigarettes"
+	icon_state = "BLpacket"
+	desc = "A packet of six Blue Lady cigarettes. The SCP logo is stamped on the paper."
+
+	startswith = list(/obj/item/clothing/mask/smokable/cigarette/bluelady = 6)
