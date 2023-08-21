@@ -431,13 +431,9 @@
 			to_chat(user, SPAN_WARNING("The plant is dead."))
 			return
 
-		var/needed_skill = seed.mysterious ? SKILL_TRAINED : SKILL_BASIC
-		if(prob(user.skill_fail_chance(SKILL_BOTANY, 90, needed_skill)))
-			to_chat(user, SPAN_WARNING("You failed to get a usable sample."))
-		else
-			// Create a sample.
-			seed.harvest(user,yield_mod,1)
-		health -= (rand(3,5)*10)
+		// Create a sample.
+		seed.harvest(user, yield_mod, 1)
+		health -= (rand(30, 50))
 
 		if(prob(30))
 			sampled = 1
@@ -477,10 +473,8 @@
 			user.visible_message(SPAN_NOTICE("[user] starts uprooting the weeds."), SPAN_NOTICE("You remove the weeds from the [src]."))
 			weedlevel = 0
 			if(seed)
-				var/needed_skill = seed.mysterious ? SKILL_TRAINED : SKILL_BASIC
-				if(!user.skill_check(SKILL_BOTANY, needed_skill))
-					health -= rand(40,60)
-					check_health(1)
+				health -= rand(5, 10)
+				check_health(1)
 		else
 			to_chat(user, SPAN_NOTICE("This plot is completely devoid of weeds. It doesn't need uprooting."))
 
@@ -546,11 +540,6 @@
 	health = (istype(S, /obj/item/seeds/cutting) ? round(seed.get_trait(TRAIT_ENDURANCE)/rand(2,5)) : seed.get_trait(TRAIT_ENDURANCE))
 	lastcycle = world.time
 
-	var/needed_skill = seed.mysterious ? SKILL_TRAINED : SKILL_BASIC
-	if(prob(user.skill_fail_chance(SKILL_BOTANY, 40, needed_skill)))
-		dead = 1
-		health = 0
-
 	qdel(S)
 	check_health()
 
@@ -573,16 +562,15 @@
 
 	to_chat(user, SPAN_NOTICE("\An [seed.display_name] plant is growing here."))
 
-	if(user.skill_check(SKILL_BOTANY, SKILL_BASIC))
-		if(weedlevel >= 5)
-			to_chat(user, "\The [src] is <span class='danger'>infested with weeds</span>!")
-		if(pestlevel >= 5)
-			to_chat(user, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
+	if(weedlevel >= 5)
+		to_chat(user, "\The [src] is <span class='danger'>infested with weeds</span>!")
+	if(pestlevel >= 5)
+		to_chat(user, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
 
-		if(dead)
-			to_chat(user, SPAN_DANGER("The [seed.display_name] plant is dead."))
-		else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
-			to_chat(user, "The [seed.display_name] plant looks <span class='danger'>unhealthy</span>.")
+	if(dead)
+		to_chat(user, SPAN_DANGER("The [seed.display_name] plant is dead."))
+	else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
+		to_chat(user, "The [seed.display_name] plant looks <span class='danger'>unhealthy</span>.")
 
 	if(mechanical && Adjacent(user))
 		var/turf/T = loc

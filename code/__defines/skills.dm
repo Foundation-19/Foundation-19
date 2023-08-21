@@ -17,7 +17,6 @@
 #define SKILL_HAULING       /decl/hierarchy/skill/general/hauling
 #define SKILL_COMPUTER      /decl/hierarchy/skill/general/computer
 #define SKILL_FINANCE       /decl/hierarchy/skill/general/finance
-#define SKILL_BOTANY        /decl/hierarchy/skill/service/botany
 #define SKILL_COOKING       /decl/hierarchy/skill/service/cooking
 #define SKILL_COMBAT        /decl/hierarchy/skill/security/combat
 #define SKILL_WEAPONS       /decl/hierarchy/skill/security/weapons
