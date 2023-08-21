@@ -298,7 +298,6 @@
 	if(href_list["apply_gene"])
 		if(!loaded_disk || !seed) return
 
-		var/mob/user = usr
 		last_action = world.time
 		active = 1
 
