@@ -13889,7 +13889,7 @@
 /obj/machinery/vending/wallmed1{
 	dir = 8;
 	pixel_x = 22;
-	req_access = s
+	req_access = 
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
