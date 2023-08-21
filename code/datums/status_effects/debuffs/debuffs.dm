@@ -196,10 +196,6 @@
 		if(locate(/obj/item/bedsheet) in owner.loc)
 			healing += 0.1
 
-		// you forgot the pillow
-		if(locate(/obj/item/pillow) in owner.loc)
-			healing += 0.1
-
 		if(healing > 0)
 			if(iscarbon(owner))
 				var/mob/living/carbon/carbon_owner = owner

@@ -104,7 +104,7 @@
 
 /datum/status_effect/inebriated/drunk/on_apply()
 	. = ..()
-	owner.sound_environment_override = SOUND_ENVIRONMENT_PSYCHOTIC
+	//owner.sound_environment_override = SOUND_ENVIRONMENT_PSYCHOTIC
 	//owner.add_mood_event(id, /datum/mood_event/drunk)
 
 /datum/status_effect/inebriated/drunk/on_remove()
@@ -120,8 +120,9 @@
 /datum/status_effect/inebriated/drunk/proc/clear_effects()
 	//owner.clear_mood_event(id)
 
-	if(owner.sound_environment_override == SOUND_ENVIRONMENT_PSYCHOTIC)
-		owner.sound_environment_override = SOUND_ENVIRONMENT_NONE
+	// TODO: this is kind of hacky
+	//if(owner.sound_environment_override == SOUND_ENVIRONMENT_PSYCHOTIC)
+	//	owner.sound_environment_override = SOUND_ENVIRONMENT_NONE
 
 /datum/status_effect/inebriated/drunk/set_drunk_value(set_to)
 	. = ..()
