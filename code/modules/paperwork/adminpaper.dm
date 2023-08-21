@@ -13,14 +13,8 @@
 	/// String. The paper's target department.
 	var/department = null
 
-	var/header = null
-	var/headerOn = FALSE
-
 	var/footer = null
 	var/footerOn = FALSE
-
-	var/logo_list = list("admin.png", "o5.png", "isd.png", "dea.png", "int.png", "log.png", "man.png", "trib.png", "sec.png", "med.png", "ethics.png", "scplogo.png", "sci.png", "eng.png", "mtf.png", "ungoc.png", "uiu.pgn", "sh.png", "mcd.png", "ar.png", "ci.png", "cotbg.png")
-	var/logo = ""
 
 	var/unformatedText = ""
 
@@ -39,24 +33,10 @@
 	interactions += "<A href='?src=\ref[src];penmode=1'>Pen mode: [isCrayon ? "Crayon" : "Pen"]</A> "
 	interactions += "<A href='?src=\ref[src];cancel=1'>Cancel fax</A> "
 	interactions += "<BR>"
-	interactions += "<A href='?src=\ref[src];changelogo=1'>Change logo</A> "
 	interactions += "<A href='?src=\ref[src];changelanguage=1'>Change language ([language])</A> "
-	interactions += "<A href='?src=\ref[src];toggleheader=1'>Toggle Header</A> "
 	interactions += "<A href='?src=\ref[src];togglefooter=1'>Toggle Footer</A> "
 	interactions += "<A href='?src=\ref[src];clear=1'>Clear page</A> "
 	interactions += "</center>"
-
-/obj/item/paper/admin/proc/generateHeader()
-	var/originhash = md5("[origin]")
-	var/challengehash = copytext(md5("[game_id]"),1,10) // changed to a hash of the game ID so it's more consistant but changes every round.
-	var/text = null
-	//TODO change logo based on who you're contacting.
-	text = "<center><img src = [logo]></br>"
-	text += "<b>[origin] Quantum Uplink Signed Message</b><br>"
-	text += "<font size = \"1\">Encryption key: [originhash]<br>"
-	text += "Challenge: [challengehash]<br></font></center><hr>"
-
-	header = text
 
 /obj/item/paper/admin/proc/generateFooter()
 	var/text = null
@@ -72,12 +52,11 @@
 
 /obj/item/paper/admin/proc/adminbrowse()
 	updateinfolinks()
-	generateHeader()
 	generateFooter()
 	updateDisplay()
 
 /obj/item/paper/admin/proc/updateDisplay()
-	show_browser(usr, "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[headerOn ? header : ""][info_links][stamps][footerOn ? footer : ""][interactions]</BODY></HTML>", "window=[name];can_close=0")
+	show_browser(usr, "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps][footerOn ? footer : ""][interactions]</BODY></HTML>", "window=[name];can_close=0")
 
 
 
@@ -121,8 +100,6 @@
 	if(href_list["confirm"])
 		switch(alert("Are you sure you want to send the fax as is?",, "Yes", "No"))
 			if("Yes")
-				if(headerOn)
-					info = header + info
 				if(footerOn)
 					info += footer
 				updateinfolinks()
@@ -146,19 +123,8 @@
 		updateDisplay()
 		return
 
-	if(href_list["toggleheader"])
-		headerOn = !headerOn
-		updateDisplay()
-		return
-
 	if(href_list["togglefooter"])
 		footerOn = !footerOn
-		updateDisplay()
-		return
-
-	if(href_list["changelogo"])
-		logo = input(usr, "What logo?", "Choose a logo", "") as null|anything in (logo_list)
-		generateHeader()
 		updateDisplay()
 		return
 
