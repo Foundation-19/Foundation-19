@@ -13,7 +13,7 @@ GLOBAL_PROTECT(href_token)
 	var/rights       = 0
 	var/stealthy_    = STEALTH_OFF
 
-	var/weakref/marked_datum_weak
+	var/weakref/marked_datum_weakref
 
 	var/href_token
 
@@ -25,8 +25,8 @@ GLOBAL_PROTECT(href_token)
 	var/datum/admins/logging/logging
 
 /datum/admins/proc/marked_datum()
-	if(marked_datum_weak)
-		return marked_datum_weak.resolve()
+	if(marked_datum_weakref)
+		return marked_datum_weakref.resolve()
 
 /datum/admins/New(initial_rank = "Temporary Admin", initial_rights = 0, ckey)
 	if(!ckey)

@@ -1210,7 +1210,7 @@
 		if(!datum_to_tag || !istype(datum_to_tag))
 			return
 
-		usr.client.holder.marked_datum_weak = weakref(datum_to_tag)
+		usr.client.holder.marked_datum_weakref = weakref(datum_to_tag)
 
 	else if(href_list["adminsmite"])
 		if(!check_rights(R_ADMIN|R_FUN))
