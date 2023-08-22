@@ -52,9 +52,9 @@
 		else if(prob(breathe_organ.get_oxygen_deprivation() + 15))
 			H.emote("cough")
 	else if(prob(10) && ((world.time - H.humanStageHandler.getStage("151_message_cooldown")) > message_cooldown))
-		to_chat(H, SPAN_NOTICE(pick(list("The taste of seawater permeates your mouth...", "Your lungs feel like they are filling with water..."))))
+		to_chat(H, SPAN_NOTICE(pick("The taste of seawater permeates your mouth...", "Your lungs feel like they are filling with water...")))
 		H.humanStageHandler.setStage("151_message_cooldown", world.time)
 
 	if(prob(breathe_organ.get_oxygen_deprivation() + 30) && (breathe_organ.get_oxygen_deprivation() > 25) && ((world.time - H.humanStageHandler.getStage("151_message_cooldown")) > message_cooldown))
-		to_chat(H, SPAN_WARNING(pick(list("Your lungs feel like they are filled with water!", "You try to breath but your lungs are filled with water!", "You cannot breath!"))))
+		to_chat(H, SPAN_WARNING(pick("Your lungs feel like they are filled with water!", "You try to breath but your lungs are filled with water!", "You cannot breath!")))
 		H.humanStageHandler.setStage("151_message_cooldown", world.time)

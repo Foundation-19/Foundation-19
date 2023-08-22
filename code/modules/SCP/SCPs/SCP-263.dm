@@ -188,7 +188,7 @@
 	spawn(10 SECONDS)
 		state = STATE_IDLE
 		update_icon()
-		current_scp263_1.say("[pick(list("Thats a true pity, I really liked that one.", "A shame, I thought they would fare better.", "Their failure is a real pity."))] Lets hope the next contestant can avoid the ash... and get away with the cash!")
+		current_scp263_1.say("[pick("Thats a true pity, I really liked that one.", "A shame, I thought they would fare better.", "Their failure is a real pity.")] Lets hope the next contestant can avoid the ash... and get away with the cash!")
 		contestant.dust()
 		spawn(8 SECONDS)
 			reset()

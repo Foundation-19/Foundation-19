@@ -171,9 +171,9 @@
 		if(prob(65) && !friend)
 			update_friend(M)
 			face_atom(M)
-			visible_emote(pick(list("whirls around [M]'s legs", "nudges [M] playfully", "rolls around near [M]", "stares briefly up at [M]", "seems to follow [M]'s gaze.")))
+			visible_emote(pick("whirls around [M]'s legs", "nudges [M] playfully", "rolls around near [M]", "stares briefly up at [M]", "seems to follow [M]'s gaze."))
 		else if(friend && (M == friend))
-			visible_emote(pick(list("whirls around [M]'s legs", "nudges [M] playfully", "rolls around near [M]", "stares briefly up at [M]", "seems to follow [M]'s gaze.")))
+			visible_emote(pick("whirls around [M]'s legs", "nudges [M] playfully", "rolls around near [M]", "stares briefly up at [M]", "seems to follow [M]'s gaze."))
 		else
 			to_chat(M, SPAN_NOTICE("[src] seems to ignore you."))
 	else if((M.a_intent == I_HURT) && (M == friend))

@@ -203,7 +203,7 @@
 	switch(current_state)
 		if(STATE_096_IDLE)
 			if(prob(45) && ((world.time - emote_cooldown_track) > emote_cooldown))
-				audible_message(pick(list("[src] cries.", "[src] sobs.", "[src] wails.")))
+				audible_message(pick("[src] cries.", "[src] sobs.", "[src] wails."))
 				playsound(src, 'sound/scp/096/096-idle.ogg', 80, ignore_walls = TRUE)
 				emote_cooldown_track = world.time
 		if(STATE_096_CHASING)
