@@ -2133,7 +2133,6 @@
 #include "code\modules\mob\language\human\russian.dm"
 #include "code\modules\mob\language\human\spanish.dm"
 #include "code\modules\mob\language\human\misc\gutter.dm"
-#include "code\modules\mob\language\human\misc\spacer.dm"
 #include "code\modules\mob\language\human\misc\zombie.dm"
 #include "code\modules\mob\language\scp\eyepod.dm"
 #include "code\modules\mob\language\scp\plaguespeak.dm"

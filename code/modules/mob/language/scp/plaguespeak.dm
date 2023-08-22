@@ -3,7 +3,7 @@
 	desc = "Strange thrall like gargle noises. Presumably used by instances of SCP-049-1 to communicate with SCP-049"
 
 	colour = "zombie_mental"
-	key = "z"
+	key = "u"
 	flags = RESTRICTED | HIVEMIND
 
 	shorthand = "PS"
