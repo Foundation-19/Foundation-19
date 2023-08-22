@@ -88,8 +88,7 @@
 		if(!client && !mind)
 			species.handle_npc(src)
 
-
-	if (prob(0.25) && !humanStageHandler.getStage("049-1") && !isscp049(src))
+	if (prob(0.25) && !isspecies(src, SPECIES_SCP049_1) && !isscp049(src))
 		humanStageHandler.setStage("Pestilence", 1)
 
 	if(!handle_some_updates())

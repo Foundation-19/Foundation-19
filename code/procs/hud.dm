@@ -46,9 +46,9 @@ the HUD updates properly! */
 	if(!can_process_hud(M))
 		return
 
-	if(isscp049(M))
+	if(isscp049(M) || isspecies(M, SPECIES_SCP049_1))
 		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt)
-		for(var/mob/living/carbon/human/H in view(7, M))
+		for(var/mob/living/carbon/human/H in view(world.view, M))
 			if(H.humanStageHandler.getStage("Pestilence"))
 				P.Client.images += H.hud_list[PESTILENCE_HUD]
 

@@ -6,6 +6,7 @@
 	whisper_verb = "babbles quietly"
 	speech_verb = "babbles"
 	shorthand = "Eyepod"
+	flags = RESTRICTED
 
 	syllables = list(
 		"ba", "ab", "abble", "bab", "babb", "lab", "abb", "dab"

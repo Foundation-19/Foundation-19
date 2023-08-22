@@ -1,8 +1,6 @@
 
 //// Zombie Defines
 
-#define SPECIES_ZOMBIE "Zombie"
-#define LANGUAGE_ZOMBIE "Zombie"
 #define ANTAG_ZOMBIE "Zombie"
 
 //// Zombie Globals
@@ -239,23 +237,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 			walk(H, 0) //Clear walking
 			if (prob(33) && isturf(H.loc) && !H.pulledby)
 				H.SelfMove(pick(GLOB.cardinal))
-
-
-/datum/language/zombie
-	name = LANGUAGE_ZOMBIE
-	desc = "A crude form of feral communication utilized by the shuffling horrors. The living only hear guttural wails of agony."
-	colour = "cult"
-	key = "a"
-	speech_verb = "growls"
-	exclaim_verb = "wails"
-	partial_understanding = list(
-		LANGUAGE_HUMAN_GERMAN = 30,
-		LANGUAGE_ENGLISH = 35
-	)
-	syllables = list("mhh..", "grr..", "nnh..")
-	shorthand = "ZM"
-	hidden_from_codex = TRUE
-
 
 /datum/unarmed_attack/bite/sharp/zombie
 	attack_verb = list("slashed", "sunk their teeth into", "bit", "mauled")

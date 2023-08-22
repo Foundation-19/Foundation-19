@@ -39,9 +39,11 @@
 #define LANGUAGE_MANTID_NONVOCAL	"Ascent-Glow"
 #define LANGUAGE_MANTID_VOCAL		"Ascent-Voc"
 #define LANGUAGE_MANTID_BROADCAST	"Worldnet"
+#define LANGUAGE_ZOMBIE 			"Zombie"
 
 //SCP
 #define LANGUAGE_EYEPOD				"Eyepod"
+#define LANGUAGE_PLAGUESPEAK_GLOBAL	"Plaguespeak"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
