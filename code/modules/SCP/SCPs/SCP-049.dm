@@ -212,15 +212,15 @@
 
 	if((world.time - heal_cooldown_track) < heal_cooldown)
 		return
-	var/049instances_count
+	var/SCP049_1_instances_count = 0
 	for(var/mob/living/carbon/human/H in GLOB.SCP_list)
 		if(!isspecies(H, SPECIES_SCP049_1))
 			continue
 		if(H.stat != CONSCIOUS)
 			continue
-		049instances_count++
+		SCP049_1_instances_count++
 
-	var/heal_amount = -max((base_regen * (049instances_count * regen_multiply)), base_regen)
+	var/heal_amount = -max((base_regen * (SCP049_1_instances_count * regen_multiply)), base_regen)
 	adjustBruteLoss(heal_amount)
 
 /mob/living/carbon/human/scp049/UnarmedAttack(atom/target as obj|mob)
