@@ -24,7 +24,7 @@
 	var/amplitude = rand(1 SECONDS, 3 SECONDS)
 	duration = amplitude
 	owner.set_jitter_if_lower(100 SECONDS)
-	owner.Paralyze(duration)
+	owner.SetParalysis(duration)
 	owner.visible_message(SPAN_WARNING("[owner] drops to the ground as [owner.p_they()] start seizing up."), \
 	SPAN_WARNING("[pick("You can't collect your thoughts...", "You suddenly feel extremely dizzy...", "You cant think straight...","You can't move your face properly anymore...")]"))
 	return TRUE
@@ -46,7 +46,7 @@
 	var/mob/living/carbon/human/human_owner = owner
 	human_owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/stoned) //slows you down
 	human_owner.update_body() //updates eye color
-	human_owner.add_traits(list(TRAIT_CLUMSY, TRAIT_BLOODSHOT_EYES), type) // impairs motor coordination and dilates blood vessels in eyes
+	ADD_TRAIT(human_owner, TRAIT_CLUMSY, type) // impairs motor coordination and dilates blood vessels in eyes
 	//human_owner.add_mood_event("stoned", /datum/mood_event/stoned) //improves mood
 	//human_owner.sound_environment_override = SOUND_ENVIRONMENT_DRUGGED //not realistic but very immersive
 	return TRUE
@@ -57,7 +57,7 @@
 	var/mob/living/carbon/human/human_owner = owner
 	human_owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/stoned)
 	human_owner.update_body()
-	human_owner.remove_traits(list(TRAIT_CLUMSY, TRAIT_BLOODSHOT_EYES), type)
+	REMOVE_TRAIT(human_owner, TRAIT_CLUMSY, type)
 	//human_owner.clear_mood_event("stoned")
 	//human_owner.sound_environment_override = SOUND_ENVIRONMENT_NONE
 

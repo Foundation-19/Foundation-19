@@ -138,6 +138,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_INCAPACITATED "incapacitated"
 /// Prevents voluntary movement. TODO
 #define TRAIT_IMMOBILIZED "immobilized"
+/// TODO: implement
+#define TRAIT_CLUMSY "clumsy"
 
 /// A trait given by a specific status effect (not sure why we need both but whatever!)
 #define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"

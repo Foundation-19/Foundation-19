@@ -30,7 +30,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/limp
 	var/msg_stage = 0//so you dont get the most intense messages immediately
 	/// The left leg of the limping person
-	var/obj/item/organ/external/leg/left/left
+	var/obj/item/organ/external/leg/left
 	/// The right leg of the limping person
 	var/obj/item/organ/external/leg/right/right
 	/// Which leg we're limping with next

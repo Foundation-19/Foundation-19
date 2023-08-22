@@ -209,10 +209,9 @@
 					target_organ.apply_organ_damage(-healing_bonus * target_organ.maxHealth)
 
 			if(health_ratio > 0.8) // only heals minor physical damage
-				owner.adjustBruteLoss(-1 * healing, required_bodytype = BODYTYPE_ORGANIC)
-				owner.adjustFireLoss(-1 * healing, required_bodytype = BODYTYPE_ORGANIC)
-				owner.adjustToxLoss(-1 * healing * 0.5, TRUE, TRUE, required_biotype = MOB_ORGANIC)
-		owner.adjust_stamina(min(-1 * healing, -1 * HEALING_SLEEP_DEFAULT))
+				owner.adjustBruteLoss(-1 * healing)
+				owner.adjustFireLoss(-1 * healing)
+				owner.adjustToxLoss(-1 * healing * 0.5)
 	// Drunkenness gets reduced by 0.3% per tick (6% per 2 seconds)
 	owner.set_drunk_effect(owner.get_drunk_amount() * 0.997)
 
@@ -227,88 +226,6 @@
 	name = "Asleep"
 	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
 	icon_state = "asleep"
-
-/datum/status_effect/stacking/saw_bleed
-	id = "saw_bleed"
-	tick_interval = 6
-	delay_before_decay = 5
-	stack_threshold = 10
-	max_stacks = 10
-	overlay_file = 'icons/effects/bleed.dmi'
-	underlay_file = 'icons/effects/bleed.dmi'
-	overlay_state = "bleed"
-	underlay_state = "bleed"
-	var/bleed_damage = 200
-
-/datum/status_effect/stacking/saw_bleed/fadeout_effect()
-	new /obj/effect/temp_visual/bleed(get_turf(owner))
-
-/datum/status_effect/stacking/saw_bleed/threshold_cross_effect()
-	owner.adjustBruteLoss(bleed_damage)
-	var/turf/T = get_turf(owner)
-	new /obj/effect/temp_visual/bleed/explode(T)
-	for(var/d in GLOB.alldirs)
-		new /obj/effect/temp_visual/dir_setting/bloodsplatter(T, d)
-	playsound(T, SFX_DESECRATION, 100, TRUE, -1)
-
-/datum/status_effect/stacking/saw_bleed/bloodletting
-	id = "bloodletting"
-	stack_threshold = 7
-	max_stacks = 7
-	bleed_damage = 20
-
-/datum/status_effect/neck_slice
-	id = "neck_slice"
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = null
-	duration = -1
-
-/datum/status_effect/neck_slice/on_apply()
-	if(!ishuman(owner))
-		return FALSE
-	var/mob/living/carbon/human/H = owner
-	if(!H.get_organ(BP_HEAD))
-		return FALSE
-	return TRUE
-
-/datum/status_effect/neck_slice/tick()
-	var/mob/living/carbon/human/H = owner
-	var/obj/item/organ/external/throat = H.get_organ(BP_HEAD)
-	if(owner.stat == DEAD || !throat) // they can lose their head while it's going.
-		qdel(src)
-		return
-
-	var/still_bleeding = FALSE
-	for(var/datum/wound/bleeding_thing as anything in throat.wounds)
-		if(bleeding_thing.wound_type == WOUND_SLASH && bleeding_thing.severity > WOUND_SEVERITY_MODERATE)
-			still_bleeding = TRUE
-			break
-	if(!still_bleeding)
-		qdel(src)
-		return
-
-	if(prob(10))
-		owner.emote(pick("gasp", "gag", "choke"))
-
-/datum/status_effect/neck_slice/get_examine_text()
-	return SPAN_WARNING("[owner.p_Their()] neck is cut and is bleeding profusely!")
-
-/datum/status_effect/gonbola_pacify
-	id = "gonbolaPacify"
-	status_type = STATUS_EFFECT_MULTIPLE
-	tick_interval = -1
-	alert_type = null
-
-/datum/status_effect/gonbola_pacify/on_apply()
-	. = ..()
-	owner.add_traits(list(TRAIT_PACIFISM, TRAIT_MUTE), CLOTHING_TRAIT)
-	//owner.add_mood_event(type, /datum/mood_event/gondola)
-	to_chat(owner, SPAN_NOTICE("You suddenly feel at peace and feel no need to make any sudden or rash actions..."))
-
-/datum/status_effect/gonbola_pacify/on_remove()
-	owner.remove_traits(list(TRAIT_PACIFISM, TRAIT_MUTE), CLOTHING_TRAIT)
-	//owner.clear_mood_event(type)
-	return ..()
 
 /datum/status_effect/trance
 	id = "trance"

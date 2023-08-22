@@ -3,9 +3,6 @@
 	alert_type = null
 	remove_on_fullheal = TRUE
 
-	var/make_tts_message_original = FALSE
-	var/tts_filter = ""
-
 /datum/status_effect/speech/on_creation(mob/living/new_owner, duration = 10 SECONDS)
 	src.duration = duration
 	return ..()
@@ -29,11 +26,6 @@
 	var/phrase = html_decode(message_args[TREAT_MESSAGE_ARG])
 	if(!length(phrase))
 		return
-
-	if(length(tts_filter) > 0)
-		message_args[TREAT_TTS_FILTER_ARG] += tts_filter
-	if(make_tts_message_original)
-		message_args[TREAT_TTS_MESSAGE_ARG] = message_args[TREAT_MESSAGE_ARG]
 
 	var/final_phrase = ""
 	var/original_char = ""
@@ -61,9 +53,6 @@
 	/// Regex of characters we won't apply a stutter to
 	var/static/regex/no_stutter
 
-	make_tts_message_original = TRUE
-	tts_filter = "tremolo=f=10:d=0.8,rubberband=tempo=0.5"
-
 /datum/status_effect/speech/stutter/on_creation(mob/living/new_owner, ...)
 	. = ..()
 	if(!.)
@@ -83,45 +72,6 @@
 			modified_char = ""
 
 	return modified_char
-
-/datum/status_effect/speech/stutter/derpspeech
-	id = "derp_stutter"
-	/// The probability of making our message entirely uppercase + adding exclamations
-	var/capitalize_prob = 50
-	/// The probability of adding a stutter to the entire message, if we're not already stuttering
-	var/message_stutter_prob = 15
-
-/datum/status_effect/speech/stutter/derpspeech/handle_message(datum/source, list/message_args)
-
-	var/message = html_decode(message_args[TREAT_MESSAGE_ARG])
-
-	message = replacetext(message, " am ", " ")
-	message = replacetext(message, " is ", " ")
-	message = replacetext(message, " are ", " ")
-	message = replacetext(message, "you", "u")
-	message = replacetext(message, "help", "halp")
-	message = replacetext(message, "grief", "grife")
-	message = replacetext(message, "space", "spess")
-	message = replacetext(message, "carp", "crap")
-	message = replacetext(message, "reason", "raisin")
-
-	if(prob(capitalize_prob))
-		var/exclamation = pick("!", "!!", "!!!")
-		message = uppertext(message)
-		message += "[apply_speech(exclamation, exclamation)]"
-
-	message_args[TREAT_MESSAGE_ARG] = message
-
-	var/mob/living/living_source = source
-	if(!isliving(source) || living_source.has_status_effect(/datum/status_effect/speech/stutter))
-		return
-
-	// If we're not stuttering, we have a chance of calling parent here, adding stutter effects
-	if(prob(message_stutter_prob))
-		return ..()
-
-	// Otherwise just return and don't call parent, we already modified our speech
-	return
 
 /datum/status_effect/speech/slurring
 	/// The chance that any given character in a message will be replaced with a common character
@@ -238,8 +188,6 @@
 	replacement_prob = 33
 	doubletext_prob = 0
 	text_modification_file = "slurring_cult_text.json"
-
-	tts_filter = "rubberband=pitch=0.5,vibrato=5"
 
 /datum/status_effect/speech/slurring/heretic
 	id = "heretic_slurring"

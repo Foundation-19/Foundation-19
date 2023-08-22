@@ -76,7 +76,7 @@
 
 /atom/movable/screen/alert/status_effect/blind
 	name = "Blind"
-	desc = "You can't see! This may be caused by a genetic defect, eye trauma, being unconscious, or something covering your eyes."
+	desc = "You can't see! This may be caused by eye trauma, being unconscious, or something covering your eyes."
 	icon_state = "blind"
 
 /// This status effect handles applying a temporary blind to the mob.
@@ -104,21 +104,23 @@
 	if(owner.stat == DEAD)
 		return
 
+	if(!ishuman(owner))
+		return
+
+	var/mob/living/carbon/human/H = owner
+
 	// Temp. blindness heals faster if our eyes are covered
-	if(!owner.is_blind_from(EYES_COVERED))
+	if(H.equipment_tint_total != TINT_BLIND)
 		return
 
 	// Knocks 2 seconds off of our duration
 	// If we should be deleted, give a message letting them know
-	var/mob/living/stored_owner = owner
 	if(remove_duration(2 SECONDS))
-		to_chat(stored_owner, SPAN_GOOD("Your eyes start to feel better!"))
+		to_chat(H, SPAN_GOOD("Your eyes start to feel better!"))
 		return
 
 	// Otherwise add a chance to let them know that it's working
 	else if(SPT_PROB(5, seconds_per_tick))
-		var/obj/item/thing_covering_eyes = owner.is_eyes_covered()
-		// "Your blindfold soothes your eyes", for example
-		to_chat(owner, SPAN_GOOD("Your [thing_covering_eyes?.name || "eye covering"] soothes your eyes."))
+		to_chat(H, SPAN_GOOD("Your eye covering soothes your eyes."))
 
 #undef CAN_BE_BLIND
