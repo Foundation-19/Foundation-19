@@ -9,11 +9,15 @@
 
 	///Emote cooldown
 	var/emote_cooldown = 5 SECONDS
+	///Door force open cooldown
+	var/door_cooldown = 10 SECONDS
 
 	//Mechanical
 
 	///Emote cooldown tracker
 	var/emote_cooldown_track
+	///Door cooldown tracker
+	var/door_cooldown_track
 	///Are we currently curing someone?
 	var/curing = FALSE
 
@@ -75,35 +79,52 @@
 	show_sound_effect(loc, src)
 
 /mob/living/carbon/human/scp049/proc/openDoor(obj/machinery/door/A)
-	if(istype(A, /obj/machinery/door/airlock/highsecurity))
-		to_chat(src, SPAN_WARNING("You cannot open high-security doors."))
+	if((world.time - door_cooldown_track) >= door_cooldown)
+		to_chat(src, SPAN_WARNING("You cant open another door just yet!"))
 		return
 
-	if(istype(A, /obj/machinery/door/blast/regular))
-		to_chat(src, SPAN_WARNING("You cannot open blast doors."))
+	if(!istype(A))
 		return
 
-	if(!istype(A) || incapacitated())
+	if(!A.density)
 		return
 
 	if(!A.Adjacent(src))
 		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
-	if(!A.density)
+	if(istype(A, /obj/machinery/door/blast))
+		to_chat(src, SPAN_WARNING("You cannot open blast doors."))
 		return
 
-	visible_message("\The [src] begins to pry open \the [A]!")
+	var/open_time = 8 SECONDS
 
-	if(!do_after(src,120,A))
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		if(AR.locked)
+			open_time += 4 SECONDS
+		if(AR.welded)
+			open_time += 4 SECONDS
+		if(AR.secured_wires)
+			open_time += 4 SECONDS
+
+	if(istype(A, /obj/machinery/door/airlock/highsecurity))
+		open_time += 8 SECONDS
+
+	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
+	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	door_cooldown_track = world.time + open_time // To avoid sound spam
+
+	if(!do_after(src, open_time, A))
 		return
 
-	if(!A.density)
-		return
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
+		AR.welded = FALSE
 
-	A.do_animate("spark")
 	A.set_broken(TRUE)
-
+	A.do_animate("spark")
 	var/check = A.open(1)
 	visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
