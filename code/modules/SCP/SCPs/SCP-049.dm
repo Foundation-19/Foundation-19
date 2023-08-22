@@ -11,6 +11,12 @@
 	var/emote_cooldown = 5 SECONDS
 	///Door force open cooldown
 	var/door_cooldown = 10 SECONDS
+	///Base regen
+	var/base_regen = 0.05
+	///how much our regen is multiplied by for each instance of 049-1. (be careful this is exponential)
+	var/regen_multiply = 1.5
+	///Heal cooldown
+	var/heal_cooldown = 2 SECONDS
 
 	//Mechanical
 
@@ -18,6 +24,8 @@
 	var/emote_cooldown_track
 	///Door cooldown tracker
 	var/door_cooldown_track
+	///Heal cooldown tracker
+	var/heal_cooldown_track
 	///Are we currently curing someone?
 	var/curing = FALSE
 
@@ -200,6 +208,21 @@
 	handle_regular_hud_updates()
 	process_pestilence_hud(src)
 
+	//Regen (The more zombies we have the more we heal)
+
+	if((world.time - heal_cooldown_track) < heal_cooldown)
+		return
+	var/049instances_count
+	for(var/mob/living/carbon/human/H in GLOB.SCP_list)
+		if(!isspecies(H, SPECIES_SCP049_1))
+			continue
+		if(H.stat != CONSCIOUS)
+			continue
+		049instances_count++
+
+	var/heal_amount = -max((base_regen * (049instances_count * regen_multiply)), base_regen)
+	adjustBruteLoss(heal_amount)
+
 /mob/living/carbon/human/scp049/UnarmedAttack(atom/target as obj|mob)
 	if(!istype(target))
 		return
@@ -232,8 +255,8 @@
 
 	switch(a_intent)
 		if(I_HELP)
-			to_chat(src, SPAN_WARNING("You refrain from curing as your intent is set to help."))
-			return
+			to_chat(src, SPAN_NOTICE("You refrain from curing as your intent is set to help."))
+			return ..()
 		if(I_HURT)
 			if(curing)
 				return
@@ -243,27 +266,25 @@
 			if(can_touch_bare_skin(HTarget))
 				visible_message(SPAN_DANGER(SPAN_ITALIC("[src] reaches towards [target]!")))
 				Attack_Voice_Line()
-				HTarget.death()
+				HTarget.death(deathmessage = "suddenly becomes very still...", show_dead_message = "You have been killed by SCP-[SCP.designation]. Be patient as you may yet be cured...")
 				return
 			else
 				visible_message(SPAN_WARNING(SPAN_ITALIC("[src] reaches towards [target], but fails to find any bare skin.")))
 				to_chat(src, SPAN_WARNING("You must make contact with bare skin to kill!"))
 				return
-	return ..(HTarget)
+	return ..()
 
 /mob/living/carbon/human/scp049/attack_hand(mob/living/carbon/human/M)
 	if((!isspecies(M, SPECIES_SCP049_1) || M.a_intent == I_HELP) && (M != src))
 		M.humanStageHandler.setStage("Pestilence", 1)
 
 	if(isspecies(M, SPECIES_SCP049_1))
-		to_chat(M, SPAN_DANGER(SPAN_BOLD("You cannot attack your master.")))
+		to_chat(M, SPAN_DANGER(SPAN_BOLD("Do not attack your master!")))
 		return
 
 	return ..()
 
 /mob/living/carbon/human/scp049/bullet_act(obj/item/projectile/P, def_zone)
-	if(getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() )
-		return
 	if(P.damage && !P.nodamage && ishuman(P.firer) && (P.firer != src))
 		var/mob/living/carbon/human/H = P.firer
 		H.humanStageHandler.setStage("Pestilence", 1)
