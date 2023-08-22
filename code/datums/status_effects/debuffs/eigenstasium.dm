@@ -33,12 +33,6 @@
 
 	//If we have a reagent that blocks the effects
 	var/block_effects = FALSE
-	if(owner.reagents?.has_reagent(/datum/reagent/bluespace))
-		current_cycle = max(EIGENSTASIUM_MAX_BUFFER, (current_cycle - (EIGENSTASIUM_STABILISATION_RATE * 1.5))) //cap to -250
-		block_effects = TRUE
-	if(owner.reagents?.has_reagent(/datum/reagent/stabilizing_agent))
-		current_cycle = max(EIGENSTASIUM_MAX_BUFFER, (current_cycle - EIGENSTASIUM_STABILISATION_RATE))
-		block_effects = TRUE
 	var/datum/reagent/eigen = owner.reagents?.has_reagent(/datum/reagent/eigenstate)
 	if(eigen)
 		if(eigen.overdosed)

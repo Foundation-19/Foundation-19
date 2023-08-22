@@ -173,13 +173,8 @@
 		owner.adjustToxLoss(1)
 		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4)
 		if(owner.stat == CONSCIOUS && prob(20))
-			// Don't put us in a deep sleep if the shuttle's here. QoL, mainly.
-			if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(owner.z))
-				to_chat(owner, SPAN_WARNING("You're so tired... but you can't miss that shuttle..."))
-
-			else
-				to_chat(owner, SPAN_WARNING("Just a quick nap..."))
-				owner.Sleeping(90 SECONDS)
+			to_chat(owner, SPAN_WARNING("Just a quick nap..."))
+			owner.Sleeping(90 SECONDS)
 
 	// And finally, over 100 - let's be honest, you shouldn't be alive by now.
 	if(drunk_value >= 101)

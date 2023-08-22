@@ -10,8 +10,9 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_PACIFISM" = TRAIT_PACIFISM,
 		"TRAIT_CLUMSY" = TRAIT_CLUMSY,
 		"TRAIT_FLOORED" = TRAIT_FLOORED,
+		"TRAIT_MUTE" = TRAIT_MUTE,
 		"TRAIT_INCAPACITATED" = TRAIT_INCAPACITATED
-	),
+	)
 ))
 
 /// value -> trait name, generated on use from trait_by_type global
