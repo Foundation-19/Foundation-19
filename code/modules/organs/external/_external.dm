@@ -384,7 +384,7 @@
 			to_chat(user, SPAN_WARNING("You can't reach your [src.name] while holding [tool] in your [owner.get_bodypart_name(grasp)]."))
 			return 0
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	if(!do_after(user, 1 SECOND, owner))
 		to_chat(user, SPAN_WARNING("You must stand still to do that."))
 		return 0

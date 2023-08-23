@@ -79,7 +79,7 @@
 /obj/item/grab/resolve_attackby(atom/A, mob/user, click_params)
 	if (QDELETED(src) || !assailant)
 		return TRUE
-	assailant.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	assailant.setClickCooldown(CLICK_CD_ATTACK)
 	if(!A.grab_attack(src))
 		return ..()
 	action_used()

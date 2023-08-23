@@ -60,7 +60,7 @@
 		return
 
 	else
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		damage_health(W.force, W.damtype)
 		..()
 

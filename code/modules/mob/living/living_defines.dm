@@ -21,7 +21,7 @@
 	//var/halloss = 0   //Hallucination damage. 'Fake' damage obtained through hallucinating or the holodeck. Sleeping should cause it to wear off.
 
 	var/last_special = 0 //Used by the resist verb, likely used to prevent players from bypassing next_move by logging in/out.
-	var/base_attack_cooldown = DEFAULT_ATTACK_COOLDOWN
+	var/base_attack_cooldown = CLICK_CD_ATTACK
 
 	var/t_phoron = null
 	var/t_oxygen = null

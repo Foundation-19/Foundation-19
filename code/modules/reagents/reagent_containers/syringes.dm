@@ -164,7 +164,7 @@
 				T.apply_damage(3, BRUTE, target_zone, damage_flags=DAM_SHARP)
 				return
 
-			user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+			user.setClickCooldown(CLICK_CD_QUICK)
 			user.do_attack_animation(target)
 
 			if(!user.do_skilled(time, SKILL_MEDICAL, target))
@@ -258,7 +258,7 @@
 	else
 		to_chat(user, SPAN_NOTICE("You begin injecting yourself with [visible_name]."))
 
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_QUICK)
 	user.do_attack_animation(trackTarget)
 
 	if(!user.do_skilled(time, SKILL_MEDICAL, trackTarget))

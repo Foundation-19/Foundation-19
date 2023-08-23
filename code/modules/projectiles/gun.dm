@@ -312,7 +312,7 @@
 
 	//update timing
 	var/delay = max(burst_delay+1, fire_delay)
-	user.setClickCooldown(min(delay, DEFAULT_QUICK_COOLDOWN))
+	user.setClickCooldown(min(delay, CLICK_CD_QUICK))
 	user.SetMoveCooldown(move_delay)
 	next_fire_time = world.time + delay
 

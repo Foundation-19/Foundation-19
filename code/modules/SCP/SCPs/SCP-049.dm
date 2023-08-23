@@ -183,7 +183,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/UnarmedAttack(mob/living/carbon/human/target)
 	if(!isscp049(target) || isscp049_1(src) || src == target)
 		return ..(target)
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	setClickCooldown(CLICK_CD_ATTACK)
 	if(!target.pestilence)
 		to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
 		return

@@ -55,7 +55,7 @@
 	if(environment_smash >= 1)
 		damage = max(damage, 10)
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+	user.setClickCooldown(CLICK_CD_ATTACK*2)
 	playsound(loc, hitsound, 50, 1)
 	show_sound_effect(loc, user)
 
@@ -324,7 +324,7 @@
 		return FALSE
 	if(I.damtype != BRUTE && I.damtype != BURN)
 		return FALSE
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(src)
 	if(I.force < min_force)
 		visible_message(SPAN_WARNING("\The [user] hits \the [src] with \an [I] to no effect."))

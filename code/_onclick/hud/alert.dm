@@ -257,7 +257,7 @@
 
 	var/mob/living/living_owner = owner
 
-	living_owner.changeNext_move(CLICK_CD_RESIST)
+	living_owner.setClickCooldown(CLICK_CD_RESIST)
 	if(living_owner.mobility_flags & MOBILITY_MOVE)
 		return living_owner.resist_fire()
 
@@ -595,7 +595,7 @@
 	if(!living_owner.can_resist())
 		return
 
-	living_owner.changeNext_move(CLICK_CD_RESIST)
+	living_owner.setClickCooldown(CLICK_CD_RESIST)
 	if((living_owner.mobility_flags & MOBILITY_MOVE) && (living_owner.last_special <= world.time))
 		return living_owner.resist_restraints()
 
@@ -608,7 +608,7 @@
 
 	if(!living_owner.can_resist())
 		return
-	living_owner.changeNext_move(CLICK_CD_RESIST)
+	living_owner.setClickCooldown(CLICK_CD_RESIST)
 	if(living_owner.last_special <= world.time)
 		return living_owner.resist_buckle()
 

@@ -118,7 +118,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
  * This is just for inheritance.
  */
 /mob/proc/get_attack_speed()
-	return DEFAULT_ATTACK_COOLDOWN
+	return CLICK_CD_ATTACK
 
 /**
  * W is the item being used in the attack, if any. modifier is if the attack should be longer or shorter than usual, for whatever reason.

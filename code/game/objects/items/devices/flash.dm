@@ -60,7 +60,7 @@
 			to_chat(user, SPAN_WARNING("*click* *click*"))
 			return 0
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(M)
 
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
@@ -170,7 +170,7 @@
 		else	//can only use it  5 times a minute
 			user.show_message(SPAN_WARNING("*click* *click*"), 2)
 			return 0
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
 	flick("[initial(icon_state)]_on", src)
 	if(user && isrobot(user))

@@ -169,7 +169,7 @@
 		threat_guess += damage_guess
 
 	else
-		var/weapon_attack_speed = DEFAULT_ATTACK_COOLDOWN / (1 SECOND)
+		var/weapon_attack_speed = CLICK_CD_ATTACK / (1 SECOND)
 		var/weapon_damage = I.force
 
 		if(istype(I, /obj/item/gun))

@@ -97,7 +97,7 @@
 			if(health < maxhealth)
 				if(open)
 					adjust_health(10)
-					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+					user.setClickCooldown(CLICK_CD_ATTACK)
 					user.visible_message(SPAN_WARNING("\The [user] repairs \the [src]!"),SPAN_NOTICE("You repair \the [src]!"))
 				else
 					to_chat(user, SPAN_NOTICE("Unable to repair with the maintenance panel closed."))
@@ -106,7 +106,7 @@
 		else
 			to_chat(user, SPAN_NOTICE("Unable to repair while [src] is off."))
 	else if(hasvar(W,"force") && hasvar(W,"damtype"))
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		switch(W.damtype)
 			if("fire")
 				adjust_health(-W.force * fire_dam_coeff)

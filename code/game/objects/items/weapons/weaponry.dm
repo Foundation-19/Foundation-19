@@ -20,7 +20,7 @@
 
 	admin_attack_log(user, M, "Attacked using \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(M)
 	//if(user != M)
 	if(M.mind && LAZYLEN(M.mind.learned_spells))

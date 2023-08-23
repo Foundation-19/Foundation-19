@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(mob_config_movespeed_type_lookup)
 
 /proc/update_config_movespeed_type_lookup(update_mobs = TRUE)
 	var/list/mob_types = list()
-	var/list/entry_value = CONFIG_GET(keyed_list/multiplicative_movespeed)
+	var/list/entry_value = 1 //CONFIG_GET(keyed_list/multiplicative_movespeed) TODO: port and implement config system
 	for(var/path in entry_value)
 		var/value = entry_value[path]
 		if(!value)
@@ -27,3 +27,12 @@ GLOBAL_LIST_EMPTY(mob_config_movespeed_type_lookup)
 	GLOB.mob_config_movespeed_type_lookup = mob_types
 	if(update_mobs)
 		update_mob_config_movespeeds()
+
+/proc/update_mob_config_movespeeds()
+	for(var/i in GLOB.living_mob_list_)
+		var/mob/M = i
+		M.update_config_movespeed()
+
+	for(var/i in GLOB.dead_mob_list_)
+		var/mob/M = i
+		M.update_config_movespeed()

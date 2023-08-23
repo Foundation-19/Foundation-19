@@ -450,7 +450,7 @@
 				eject(pilot, silent=1)
 		else if(hatch_closed)
 			if(MUTATION_FERAL in user.mutations)
-				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+				user.setClickCooldown(CLICK_CD_ATTACK)
 				attack_generic(user, 5)
 		return
 

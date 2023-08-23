@@ -327,7 +327,7 @@
 /atom/attackby(obj/item/W, mob/user, click_params)
 	. = ..()
 	if (user.a_intent == I_HURT && get_max_health())
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		user.do_attack_animation(src)
 		if (!can_damage_health(W.force, W.damtype))
 			playsound(src, damage_hitsound, 35, 1)

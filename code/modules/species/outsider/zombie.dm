@@ -198,7 +198,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 				target = M //For closest target
 				dist = D
 
-	H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+	H.setClickCooldown(CLICK_CD_ATTACK*2)
 	if (target)
 		if (isspecies(target, SPECIES_ZOMBIE))
 			target = null

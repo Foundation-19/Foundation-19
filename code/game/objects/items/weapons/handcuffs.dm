@@ -93,7 +93,7 @@
 	admin_attack_log(user, H, "Attempted to handcuff the victim", "Was target of an attempted handcuff", "attempted to handcuff")
 	SSstatistics.add_field_details("handcuffs","H")
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(H)
 
 	user.visible_message(SPAN_DANGER("\The [user] has put [cuff_type] on \the [H]!"))

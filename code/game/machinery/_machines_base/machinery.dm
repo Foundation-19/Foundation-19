@@ -299,7 +299,7 @@ Class Procs:
 	if((. = ..())) // Buckling, climbers; unlikely to return true.
 		return
 	if(MUTATION_FERAL in user.mutations)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+		user.setClickCooldown(CLICK_CD_ATTACK*2)
 		attack_generic(user, 10, "smashes")
 		return TRUE
 	if(!CanPhysicallyInteract(user))
