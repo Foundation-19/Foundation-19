@@ -33,9 +33,9 @@
 		MEMETIC //Meta Flags, refer to code/_defines/SCP.dm
 	)
 
-	SCP.memeticFlags = MVISUAL|MAUDIBLE //Memetic flags determine required factors for a human to be affected
+	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Memetic flags determine required factors for a human to be affected
 	SCP.memetic_proc = /obj/item/paper/scp012/proc/memetic_effect //proc to be called for the effect an affected individual should recieve
-	SCP.memetic_sounds = list('sound/scp/012/012.ogg') //TODO port better sound hanedling because right now this bugs out with our shitty sound handeling because of how the loop sound function works
+	SCP.memetic_sounds = list('sound/scp/012/012.ogg')
 	SCP.compInit()
 
 	sound_id = "[type]_[sequential_id(type)]"
@@ -78,3 +78,4 @@
 
 /obj/item/paper/scp012/Process()
 	SCP.meme_comp.check_viewers()
+	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound

@@ -104,6 +104,7 @@
 	has_cheated = TRUE
 
 	current_scp263_1.say(pick("My my, cheating are we?", "Trying to get outside help?", "Couldent answer fair and square could you?"))
+	contestant.fire_stacks++
 	contestant?.IgniteMob()
 	spawn(10 SECONDS)
 		current_scp263_1.say(pick("Truly the ethics of the modern generation have gone downhill", "Guess [contestant.client.p_their()] ethics werent as good as we thought", "A shame they were so morally bankrupt."))
@@ -184,6 +185,7 @@
 	deltimer(question_callback_fail)
 	var/list/message_list = is_timeout ? list("It appears you are out of time!", "Clocks run out!", "No more time remaining!", "Too little too late!") : list("Oooh so close!", "Incorrect!", "Thats wrong!", "Nope!", "Nice try!")
 	current_scp263_1.say(pick(message_list))
+	contestant.fire_stacks++
 	contestant?.IgniteMob()
 	spawn(10 SECONDS)
 		state = STATE_IDLE

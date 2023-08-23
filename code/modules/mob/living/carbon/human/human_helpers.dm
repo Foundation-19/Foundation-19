@@ -368,7 +368,7 @@
 
 ///Checks if a human can make direct contact with another humans bare skin. Uses the select ui to determine where to check.
 /mob/living/carbon/human/proc/can_touch_bare_skin(mob/living/carbon/human/target)
-	var/covered_parts = get_covered_body_parts()
+	var/covered_parts = target.get_covered_body_parts()
 	switch(zone_sel.selecting)
 		if(BP_R_FOOT)
 			if(covered_parts & FOOT_RIGHT)
