@@ -85,9 +85,6 @@
 		var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
 		eyes?.handle_blink()
 
-		if(!client && !mind)
-			species.handle_npc(src)
-
 	if (prob(0.25) && !isspecies(src, SPECIES_SCP049_1) && !isscp049(src))
 		humanStageHandler.setStage("Pestilence", 1)
 

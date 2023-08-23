@@ -87,7 +87,7 @@
 	show_sound_effect(loc, src)
 
 /mob/living/carbon/human/scp049/proc/openDoor(obj/machinery/door/A)
-	if((world.time - door_cooldown_track) >= door_cooldown)
+	if((world.time - door_cooldown_track) < door_cooldown)
 		to_chat(src, SPAN_WARNING("You cant open another door just yet!"))
 		return
 

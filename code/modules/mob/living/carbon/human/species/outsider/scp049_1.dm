@@ -102,9 +102,6 @@
 
 /datum/species/scp049_1/handle_npc(mob/living/carbon/human/H)
 	H.resting = FALSE
-	if (H.client || H.stat != CONSCIOUS)
-		walk(H, 0) //Stop dead-walking
-		return
 
 	if (prob(5))
 		H.custom_emote("wails!")
@@ -126,7 +123,7 @@
 /datum/species/scp049_1/proc/handle_action(mob/living/carbon/human/H)
 	var/dist = 128
 	for(var/mob/living/M in hearers(H, 15))
-		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !isspecies(M, SPECIES_SCP049_1) && !isspecies(M, SPECIES_DIONA)) //Don't attack fellow zombies, or diona
+		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !isspecies(M, SPECIES_SCP049_1) && !isspecies(M, SPECIES_DIONA) && !isscp049(M)) //Don't attack fellow zombies, or diona
 			if (istype(M, /mob/living/exosuit))
 				var/mob/living/exosuit/MC = M
 				if (!LAZYLEN(MC.pilots))
@@ -152,8 +149,7 @@
 					obstacle.attack_generic(H, 10, "smashes")
 					break
 
-			walk_to(H, target.loc, 1, H.move_intent.move_delay * 1.25)
-
+			step_towards(H, target.loc)
 		else
 			H.face_atom(target)
 
@@ -169,7 +165,6 @@
 
 	else
 		if (!H.lying)
-			walk(H, 0) //Clear walking
 			if (prob(33) && isturf(H.loc) && !H.pulledby)
 				H.SelfMove(pick(GLOB.cardinal))
 
