@@ -32,11 +32,17 @@
 /datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE, bonus_percentage, focus_sound, focus_frequency)
 	. = ..()
 	if (!istype(_target))
-		CRASH("Invalid target [_target] passed in")
+		crash_with("Invalid target [_target] passed in")
+		qdel(src)
+		return
 	if(QDELETED(_user) || !istype(_user))
-		CRASH("a /datum/progressbar was created with [isnull(_user) ? "null" : "invalid"] user")
+		crash_with("a /datum/progressbar was created with [isnull(_user) ? "null" : "invalid"] user")
+		qdel(src)
+		return
 	if(!isnum(goal_number))
-		CRASH("a /datum/progressbar was created with [isnull(goal_number) ? "null" : "invalid"] goal_number")
+		crash_with("a /datum/progressbar was created with [isnull(goal_number) ? "null" : "invalid"] goal_number")
+		qdel(src)
+		return
 	goal = goal_number
 	target = _target
 	show_target = _show_target
