@@ -2468,9 +2468,6 @@
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp078)
 "aia" = (
-/obj/structure/sign/double/barsign/scp_078{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
