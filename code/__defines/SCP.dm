@@ -14,8 +14,8 @@
 #define ROLEPLAY		(1<<1)
 ///Does the scp have memetic properties?
 #define MEMETIC			(1<<2)
-///Is this SCP just a placeholder and should be prevented from spawning?
-#define SCP_PLACEHOLDER (1<<3)
+///Is this SCP disabled and should be prevented from spawning?
+#define SCP_DISABLED (1<<3)
 
 //Memetic bitflags
 

@@ -62,7 +62,7 @@
 		"????", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		KETER, //Obj Class
 		"096", //Numerical Designation
-		MEMETIC|SCP_PLACEHOLDER //AI needs further rework and cheese is porting stuff so 096 is disabled for now.
+		MEMETIC|SCP_DISABLED //AI needs further rework and cheese is porting stuff so 096 is disabled for now.
 	)
 
 	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA

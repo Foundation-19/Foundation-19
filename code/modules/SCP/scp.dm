@@ -57,8 +57,8 @@
 		if(metaFlags & PLAYABLE)
 			pMob.status_flags += NO_ANTAG
 
-	if(metaFlags & SCP_PLACEHOLDER)
-		log_and_message_staff("Placeholder SCP-[designation] spawned and subsequently deleted! Do not spawn placeholders!", location = get_turf(parent))
+	if(metaFlags & SCP_DISABLED)
+		log_and_message_staff("Disabled SCP-[designation] spawned and subsequently deleted! Do not spawn disabled SCPs!", location = get_turf(parent))
 		qdel(parent)
 		return
 
@@ -72,7 +72,7 @@
 
 ///Run only after adding appropriate flags for components.
 /datum/scp/proc/compInit() //if more comps are added for SCPs, they can be put here
-	if(metaFlags & SCP_PLACEHOLDER)
+	if(metaFlags & SCP_DISABLED)
 		return
 	if(metaFlags & MEMETIC)
 		meme_comp = parent.AddComponent(/datum/component/memetic, memeticFlags, memetic_proc, memetic_sounds)

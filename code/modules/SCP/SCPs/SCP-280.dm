@@ -44,7 +44,7 @@
 		"dark mass", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		KETER, //Obj Class
 		"280", //Numerical Designation
-		SCP_PLACEHOLDER //JPS needs to be ported for this to be finished
+		SCP_DISABLED //JPS needs to be ported for this to be finished
 	)
 
 //AI stuff
