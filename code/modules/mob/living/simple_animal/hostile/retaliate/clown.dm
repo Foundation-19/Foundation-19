@@ -28,7 +28,7 @@
 /obj/item/natural_weapon/clown
 	name = "bike horn"
 	force = 10
-	hitsound = 'sound/items/bikehorn.ogg'
+	hitsound = 'sounds/items/bikehorn.ogg'
 
 /datum/ai_holder/simple_animal/retaliate/clown
 	speak_chance = 1

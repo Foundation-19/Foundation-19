@@ -10,4 +10,4 @@
 /obj/structure/handrail/buckle_mob(mob/living/M)
 	. = ..()
 	if(.)
-		playsound(src, 'sound/effects/buckle.ogg', 20)
+		playsound(src, 'sounds/effects/buckle.ogg', 20)

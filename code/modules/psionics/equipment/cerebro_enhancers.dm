@@ -75,7 +75,7 @@
 		return
 
 	to_chat(H, SPAN_WARNING("You feel a strange tugging sensation as \the [src] begins removing the slave-minds from your brain..."))
-	playsound(H, 'sound/weapons/circsawhit.ogg', 50, 1, -1)
+	playsound(H, 'sounds/weapons/circsawhit.ogg', 50, 1, -1)
 	operating = TRUE
 
 	sleep(80)
@@ -131,7 +131,7 @@
 	canremove = FALSE
 	operating = TRUE
 	to_chat(H, SPAN_WARNING("You feel a series of sharp pinpricks as \the [src] anaesthetises your scalp before drilling down into your brain."))
-	playsound(H, 'sound/weapons/circsawhit.ogg', 50, 1, -1)
+	playsound(H, 'sounds/weapons/circsawhit.ogg', 50, 1, -1)
 
 	sleep(80)
 

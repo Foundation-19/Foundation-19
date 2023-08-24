@@ -10,7 +10,7 @@
 	invocation_type = INVOKE_SHOUT
 	var/reagent_type = /datum/reagent/acid/hydrochloric
 	hud_state = "wiz_acid"
-	cast_sound = 'sound/magic/disintegrate.ogg'
+	cast_sound = 'sounds/magic/disintegrate.ogg'
 
 /datum/spell/acid_spray/choose_targets(mob/user = usr)
 	perform(user, list(holder))

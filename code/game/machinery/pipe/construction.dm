@@ -179,7 +179,7 @@ Buildable meters
 		P.atmos_init()
 		P.build_network()
 
-	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 	user.visible_message( \
 		"[user] fastens the [src].", \
 		SPAN_NOTICE("You have fastened the [src]."), \
@@ -221,7 +221,7 @@ Buildable meters
 	machine.RefreshParts()
 	if(machine.construct_state)
 		machine.construct_state.post_construct(machine)
-	playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
+	playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 	to_chat(user, SPAN_NOTICE("You have fastened the [src]."))
 	qdel(src)
 

@@ -8,7 +8,7 @@
 	filling_color = "#785210"
 	center_of_mass = "x=16;y=8"
 	bitesize = 5
-	eat_sound = list('sound/items/eatfood.ogg', 'sound/items/drink.ogg')
+	eat_sound = list('sounds/items/eatfood.ogg', 'sounds/items/drink.ogg')
 	food_reagents = list(
 		/datum/reagent/nutriment/protein = 8,
 		/datum/reagent/water = 5
@@ -20,7 +20,7 @@
 	icon_state = "slimesoup"//nonexistant?
 	filling_color = "#c4dba0"
 	bitesize = 5
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 	food_reagents = list(
 		/datum/reagent/slime_jelly = 5,
 		/datum/reagent/water = 10
@@ -33,7 +33,7 @@
 	filling_color = "#ff0000"
 	center_of_mass = "x=16;y=7"
 	bitesize = 5
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 	food_reagents = list(
 		/datum/reagent/nutriment/protein = 2,
 		/datum/reagent/blood = 10,
@@ -49,7 +49,7 @@
 	nutriment_desc = list("salt" = 1, "the worst joke" = 3)
 	nutriment_amt = 4
 	bitesize = 5
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 	food_reagents = list(
 		/datum/reagent/drink/juice/banana = 5,
 		/datum/reagent/water = 10
@@ -65,7 +65,7 @@
 	nutriment_desc = list("carrot" = 2, "corn" = 2, "eggplant" = 2, "potato" = 2)
 	nutriment_amt = 8
 	bitesize = 5
-	eat_sound = list('sound/items/eatfood.ogg', 'sound/items/drink.ogg')
+	eat_sound = list('sounds/items/eatfood.ogg', 'sounds/items/drink.ogg')
 	food_reagents = list(/datum/reagent/water = 5)
 
 /obj/item/reagent_containers/food/snacks/nettlesoup
@@ -78,7 +78,7 @@
 	nutriment_desc = list("salad" = 4, "egg" = 2, "potato" = 2)
 	nutriment_amt = 8
 	bitesize = 5
-	eat_sound = list('sound/items/eatfood.ogg', 'sound/items/drink.ogg')
+	eat_sound = list('sounds/items/eatfood.ogg', 'sounds/items/drink.ogg')
 	food_reagents = list(
 		/datum/reagent/water = 5,
 		/datum/reagent/medicine/tricordrazine = 5
@@ -94,7 +94,7 @@
 	nutriment_desc = list("backwash" = 1)
 	nutriment_amt = 1
 	bitesize = 5
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 
 /obj/item/reagent_containers/food/snacks/mysterysoup/Initialize()
 	. = ..()
@@ -142,7 +142,7 @@
 	filling_color = "#d1f4ff"
 	center_of_mass = "x=16;y=11"
 	bitesize = 5
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 	food_reagents = list(/datum/reagent/water = 10)
 
 /obj/item/reagent_containers/food/snacks/wishsoup/Initialize()
@@ -193,7 +193,7 @@
 	nutriment_desc = list("soup" = 5)
 	nutriment_amt = 5
 	bitesize = 3
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 	food_reagents = list(/datum/reagent/drink/juice/tomato = 10)
 
 /obj/item/reagent_containers/food/snacks/stew // stew is a soup in 33XX. blame the CL
@@ -221,7 +221,7 @@
 	nutriment_desc = list("soy" = 8)
 	nutriment_amt = 8
 	bitesize = 4
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 	food_reagents = list(/datum/reagent/water = 5)
 
 /obj/item/reagent_containers/food/snacks/mushroomsoup
@@ -234,7 +234,7 @@
 	nutriment_desc = list("mushroom" = 8, "milk" = 2)
 	nutriment_amt = 8
 	bitesize = 3
-	eat_sound = list('sound/items/eatfood.ogg', 'sound/items/drink.ogg')
+	eat_sound = list('sounds/items/eatfood.ogg', 'sounds/items/drink.ogg')
 
 /obj/item/reagent_containers/food/snacks/beetsoup
 	name = "beet soup"
@@ -246,7 +246,7 @@
 	nutriment_desc = list("tomato" = 4, "beet" = 4)
 	nutriment_amt = 8
 	bitesize = 2
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 
 /obj/item/reagent_containers/food/snacks/beetsoup/Initialize()
 	. = ..()

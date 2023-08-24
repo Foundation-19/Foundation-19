@@ -10,9 +10,9 @@
 	var/always_play = FALSE
 	/// A list of paths to sound files. When `atom_holder` is moved, one of these will play, picked at random.
 	var/list/move_sounds = list(
-		'sound/effects/metalscrape1.ogg',
-		'sound/effects/metalscrape2.ogg',
-		'sound/effects/metalscrape3.ogg'
+		'sounds/effects/metalscrape1.ogg',
+		'sounds/effects/metalscrape2.ogg',
+		'sounds/effects/metalscrape3.ogg'
 	)
 	/// The volume of the sound to be played.
 	var/move_volume = 75

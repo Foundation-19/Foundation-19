@@ -18,7 +18,7 @@
 
 	for(var/client/C in GLOB.admins)
 		if(is_mentor(C))
-			sound_to(C, 'sound/items/bikehorn.ogg')
+			sound_to(C, 'sounds/items/bikehorn.ogg')
 			to_chat(C, mentormsg)
 
 	to_chat(src, SPAN_MENTOR(SPAN_BOLD("PM to mentors: ") + msg))
@@ -124,7 +124,7 @@
 
 		log_mentor("Mentor PM: [SPAN_BOLD(key_name_mentor(src))] -> [SPAN_BOLD(key_name_mentor(C))]: [msg]")
 
-		sound_to(C, 'sound/items/bikehorn.ogg')
+		sound_to(C, 'sounds/items/bikehorn.ogg')
 		to_chat(C, SPAN_NOTICE("Mentor PM from " + SPAN_BOLD(key_name_mentor(src)) + ": [msg]"))
 		to_chat(src, SPAN_NOTICE("Mentor PM to " + SPAN_BOLD(key_name_mentor(C)) + ": [msg]"))
 

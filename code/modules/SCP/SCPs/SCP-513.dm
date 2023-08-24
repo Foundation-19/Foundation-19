@@ -41,7 +41,7 @@
 		if(!M.can_hear(src))
 			continue
 		to_chat(M, SPAN_DANGER("<i>\The [src] rings, sending chills to your very bone.</i>"))
-		M << pick('sound/scp/spook/Bell2.ogg', 'sound/scp/spook/Bell3.ogg')
+		M << pick('sounds/scp/spook/Bell2.ogg', 'sounds/scp/spook/Bell3.ogg')
 		if(!(M in victims))
 			victims += M
 			braindamage_stage[M] = STAGE_WAIT

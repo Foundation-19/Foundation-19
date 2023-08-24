@@ -27,7 +27,7 @@
 	special_attack_cooldown = 10 SECONDS
 
 	var/leap_warmup = 1 SECOND // How long the leap telegraphing is.
-	var/leap_sound = 'sound/weapons/spiderlunge.ogg'
+	var/leap_sound = 'sounds/weapons/spiderlunge.ogg'
 
 // Multiplies damage if the victim is stunned in some form, including a successful leap.
 /mob/living/simple_animal/hostile/giant_spider/hunter/apply_bonus_melee_damage(atom/A, damage_amount)

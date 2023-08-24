@@ -10,7 +10,7 @@
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	fire_sound_text = "a loud whoosh of moving air"
 	fire_delay = 50
-	fire_sound = 'sound/weapons/tablehit1.ogg'
+	fire_sound = 'sounds/weapons/tablehit1.ogg'
 
 	var/fire_pressure                           // Used in fire checks/pressure checks.
 	var/max_w_class = ITEM_SIZE_NORMAL          // Hopper intake size.

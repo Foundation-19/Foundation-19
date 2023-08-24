@@ -75,7 +75,7 @@
 		var/obj/item/stack/material/rods/R = C
 		if(R.use(2))
 			src.alpha = 0
-			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+			playsound(src, 'sounds/weapons/Genhit.ogg', 50, 1)
 			new /obj/structure/catwalk(src.loc)
 			qdel(src)
 			return

@@ -206,7 +206,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 
 /obj/machinery/photocopier/faxmachine/proc/recievefax(obj/item/incoming, origin_department = "Unknown")
 	flick("faxreceive", src)
-	playsound(loc, "sound/machines/dotprinter.ogg", 50, 1)
+	playsound(loc, "sounds/machines/dotprinter.ogg", 50, 1)
 	visible_message(SPAN_NOTICE("\The [src] pings, \"New fax received from [origin_department].\""))
 
 	// give the sprite some time to flick
@@ -263,7 +263,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 	for(var/client/C in GLOB.admins)
 		if(check_rights((R_ADMIN|R_MOD),0,C))
 			to_chat(C, msg)
-			sound_to(C, 'sound/machines/dotprinter.ogg')
+			sound_to(C, 'sounds/machines/dotprinter.ogg')
 
 /// Retrieves a list of all fax machines matching the given department tag.
 /proc/get_fax_machines_by_department(department)

@@ -135,7 +135,7 @@
 	pulse(TRUE)
 
 	if(!holder)
-		playsound(loc, 'sound/machines/twobeep.ogg', 15)
+		playsound(loc, 'sounds/machines/twobeep.ogg', 15)
 	return TRUE
 
 

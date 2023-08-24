@@ -97,11 +97,11 @@
 	var/weight = 20              // Determines blunt damage/throwforce for weapons.
 
 	// Noise when someone is faceplanted onto a table made of this material.
-	var/tableslam_noise = 'sound/weapons/tablehit1.ogg'
+	var/tableslam_noise = 'sounds/weapons/tablehit1.ogg'
 	// Noise made when a simple door made of this material opens or closes.
-	var/dooropen_noise = 'sound/effects/stonedoor_openclose.ogg'
+	var/dooropen_noise = 'sounds/effects/stonedoor_openclose.ogg'
 	// Noise made when you hit structure made of this material.
-	var/hitsound = 'sound/weapons/genhit.ogg'
+	var/hitsound = 'sounds/weapons/genhit.ogg'
 	// Path to resulting stacktype. Todo remove need for this.
 	var/stack_type = /obj/item/stack/material/generic
 	// Wallrot crumble message.

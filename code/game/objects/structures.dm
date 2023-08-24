@@ -71,7 +71,7 @@
 		attack_generic(user,10,"smashes")
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 		attack_animation(user)
-		playsound(loc, 'sound/weapons/tablehit1.ogg', 40, 1)
+		playsound(loc, 'sounds/weapons/tablehit1.ogg', 40, 1)
 	if(breakable)
 		if(MUTATION_HULK in user.mutations)
 			user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ))
@@ -96,7 +96,7 @@
 		if (material)
 			playsound(loc, material.tableslam_noise, 50, 1)
 		else
-			playsound(loc, 'sound/weapons/tablehit1.ogg', 50, 1)
+			playsound(loc, 'sounds/weapons/tablehit1.ogg', 50, 1)
 		damage_health(rand(1, 5), BRUTE)
 		qdel(G)
 	else if(atom_flags & ATOM_FLAG_CLIMBABLE)

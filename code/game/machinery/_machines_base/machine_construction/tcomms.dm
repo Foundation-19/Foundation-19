@@ -18,7 +18,7 @@
 		TRANSFER_STATE(/decl/machine_construction/tcomms/panel_open)
 		machine.panel_open = TRUE
 		to_chat(user, "You unfasten the bolts.")
-		playsound(machine.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+		playsound(machine.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 
 /decl/machine_construction/tcomms/panel_closed/post_construct(obj/machinery/machine)
 	try_change_state(machine, /decl/machine_construction/tcomms/panel_open/no_cable)
@@ -50,12 +50,12 @@
 		TRANSFER_STATE(/decl/machine_construction/tcomms/panel_closed)
 		machine.panel_open = FALSE
 		to_chat(user, "You fasten the bolts.")
-		playsound(machine.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+		playsound(machine.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 		return
 	if(isWrench(I))
 		TRANSFER_STATE(/decl/machine_construction/tcomms/panel_open/unwrenched)
 		to_chat(user, "You dislodge the external plating.")
-		playsound(machine.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		playsound(machine.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 
 /decl/machine_construction/tcomms/panel_open/mechanics_info()
 	. = list()
@@ -66,11 +66,11 @@
 	if(isWrench(I))
 		TRANSFER_STATE(/decl/machine_construction/tcomms/panel_open)
 		to_chat(user, "You secure the external plating.")
-		playsound(machine.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		playsound(machine.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 		return
 	if(isWirecutter(I))
 		TRANSFER_STATE(/decl/machine_construction/tcomms/panel_open/no_cable)
-		playsound(machine.loc, 'sound/items/Wirecutter.ogg', 50, 1)
+		playsound(machine.loc, 'sounds/items/Wirecutter.ogg', 50, 1)
 		to_chat(user, "You remove the cables.")
 		var/obj/item/stack/cable_coil/A = new /obj/item/stack/cable_coil( user.loc )
 		A.amount = 5

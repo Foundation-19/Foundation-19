@@ -22,7 +22,7 @@
 
 /obj/item/reagent_containers/food/snacks/canned/attack_self(mob/user)
 	if(sealed)
-		playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
+		playsound(loc,'sounds/effects/canopen.ogg', rand(10,50), 1)
 		to_chat(user, SPAN_NOTICE("You unseal \the [src] with a crack of metal."))
 		unseal()
 
@@ -63,12 +63,12 @@
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("tomato" = 1)
 	bitesize = 3
-	eat_sound = 'sound/items/drink.ogg'
+	eat_sound = 'sounds/items/drink.ogg'
 	food_reagents = list(/datum/reagent/drink/juice/tomato = 12)
 
 
 /obj/item/reagent_containers/food/snacks/canned/tomato/feed_sound(mob/user)
-	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
+	playsound(user.loc, 'sounds/items/drink.ogg', rand(10, 50), 1)
 
 /obj/item/reagent_containers/food/snacks/canned/spinach
 	name = "spinach"
