@@ -287,7 +287,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 		if(isScrewdriver(held_item))
 			disconnect_all()
 			dropInto(loc)
-			playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
+			playsound(src, 'sounds/items/Crowbar.ogg', 50, 1)
 			to_chat(usr, SPAN_NOTICE("You pop \the [src] out of the case, and slide it out."))
 		else
 			to_chat(usr, SPAN_WARNING("You need a screwdriver to remove components."))

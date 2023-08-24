@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 		if(!the_collective)
 			the_collective = user // Backup for if we're still alive
 		to_chat(the_collective, SPAN_NOTICE(FONT_LARGE("We are ready to rise! Re-use Regenerative Stasis when you are ready to return to life.")))
-		sound_to(the_collective, sound('sound/effects/wind/spooky1.ogg'))
+		sound_to(the_collective, sound('sounds/effects/wind/spooky1.ogg'))
 		state = CHANGELING_STASIS_READY
 
 
@@ -845,7 +845,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	H.adjustToxLoss(-10)
 	H.adjustOxyLoss(-10)
 	H.adjustFireLoss(-10)
-	H.playsound_local(H, 'sound/effects/singlebeat.ogg', 50, FALSE, is_global = TRUE) // Audio feedback to highlight each regen tick
+	H.playsound_local(H, 'sounds/effects/singlebeat.ogg', 50, FALSE, is_global = TRUE) // Audio feedback to highlight each regen tick
 	if(active_ticks)
 		addtimer(CALLBACK(src, .proc/do_regen, H), 1 SECONDS) // Repeat every second until we're fully regenerated
 	else

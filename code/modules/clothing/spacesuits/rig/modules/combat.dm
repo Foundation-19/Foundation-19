@@ -77,7 +77,7 @@
 		return
 
 	to_chat(holder.wearer, SPAN_NOTICE("Your hardsuit gauntlets heat up and lock into place, ready to be used."))
-	playsound(src.loc, 'sound/items/goggles_charge.ogg', 20, 1)
+	playsound(src.loc, 'sounds/items/goggles_charge.ogg', 20, 1)
 	active = 1
 
 /obj/item/rig_module/grenade_launcher

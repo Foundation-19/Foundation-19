@@ -67,7 +67,7 @@
 	icon_state = "[initial(icon_state)]_on"
 	started = world.time
 	threshold = 0
-	playsound(src, 'sound/machines/quiet_beep.ogg', 50, FALSE)
+	playsound(src, 'sounds/machines/quiet_beep.ogg', 50, FALSE)
 
 /obj/machinery/cooker/proc/disable()
 	update_use_power(idle_power_usage)
@@ -181,7 +181,7 @@
 			--index
 		QDEL_NULL_LIST(source)
 		audible_message(SPAN_NOTICE("\The [src] lets out a happy ding."))
-		playsound(src, 'sound/machines/ding.ogg', 50, FALSE)
+		playsound(src, 'sounds/machines/ding.ogg', 50, FALSE)
 		threshold = 1
 	if (!burn_time)
 		empty()

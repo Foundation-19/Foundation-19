@@ -38,7 +38,7 @@
 	else if(istype(C, /obj/item/stack/tile))
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
-			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
+			playsound(src, 'sounds/items/Deconstruct.ogg', 80, 1)
 			ChangeTurf(/turf/simulated/floor, FALSE, FALSE, TRUE)
 	else if (isCrowbar(C) || isWelder(C) || istype(C, /obj/item/gun/energy/plasmacutter))
 		return

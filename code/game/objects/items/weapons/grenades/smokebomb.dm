@@ -15,7 +15,7 @@
 	return ..()
 
 /obj/item/grenade/smokebomb/detonate(mob/living/user)
-	playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+	playsound(src.loc, 'sounds/effects/smoke.ogg', 50, 1, -3)
 	smoke = new /datum/effect/effect/system/smoke_spread/bad
 	smoke.attach(src)
 	smoke.set_up(10, 0, get_turf(src))

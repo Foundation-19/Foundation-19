@@ -9,7 +9,7 @@
 	density = TRUE
 	anchored = TRUE
 	var/death_message = "crumbles!"
-	var/death_sound = 'sound/effects/splat.ogg'
+	var/death_sound = 'sounds/effects/splat.ogg'
 
 /obj/structure/chorus/Initialize(maploading, o)
 	. = ..()

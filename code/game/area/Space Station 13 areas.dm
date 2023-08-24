@@ -52,7 +52,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 //	var/list/lights				// list of all lights on this area
 	var/list/all_doors = null		//Added by Strumpetplaya - Alarm Change - Contains a list of doors adjacent to this area
 	var/air_doors_activated = 0
-	var/list/ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
+	var/list/ambience = list('sounds/ambience/ambigen1.ogg','sounds/ambience/ambigen3.ogg','sounds/ambience/ambigen4.ogg','sounds/ambience/ambigen5.ogg','sounds/ambience/ambigen6.ogg','sounds/ambience/ambigen7.ogg','sounds/ambience/ambigen8.ogg','sounds/ambience/ambigen9.ogg','sounds/ambience/ambigen10.ogg','sounds/ambience/ambigen11.ogg','sounds/ambience/ambigen12.ogg','sounds/ambience/ambigen14.ogg')
 	var/list/forced_ambience = null
 	var/sound_env = STANDARD_STATION
 	var/turf/base_turf //The base turf type of the area, which can be used to override the z-level's base turf
@@ -75,7 +75,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_environ = 0
 	has_gravity = 0
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT
-	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg')
+	ambience = list('sounds/ambience/ambispace1.ogg','sounds/ambience/ambispace2.ogg','sounds/ambience/ambispace3.ogg','sounds/ambience/ambispace4.ogg','sounds/ambience/ambispace5.ogg')
 	secure = FALSE
 
 /area/space/atmosalert()
@@ -137,7 +137,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = /decl/turf_initializer/maintenance
-	forced_ambience = list('sound/ambience/maintambience.ogg')
+	forced_ambience = list('sounds/ambience/maintambience.ogg')
 	req_access = list(ACCESS_MAINT_TUNNELS)
 
 /area/rnd
@@ -212,7 +212,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	..()
 	var/sound/S = new/sound()
 	mysound = S
-	S.file = 'sound/ambience/shore.ogg'
+	S.file = 'sounds/ambience/shore.ogg'
 	S.repeat = 1
 	S.wait = 0
 	S.channel = GLOB.sound_channels.RequestChannel(/area/beach)
@@ -243,7 +243,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/sound/S = null
 	var/sound_delay = 0
 	if(prob(25))
-		S = sound(file=pick('sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag3.ogg'), volume=100)
+		S = sound(file=pick('sounds/ambience/seag1.ogg','sounds/ambience/seag2.ogg','sounds/ambience/seag3.ogg'), volume=100)
 		sound_delay = rand(0, 50)
 
 	for(var/mob/living/carbon/human/H in src)

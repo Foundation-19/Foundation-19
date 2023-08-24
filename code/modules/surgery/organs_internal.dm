@@ -199,9 +199,9 @@
 		affected.implants -= O
 		O.dropInto(target.loc)
 		if(!BP_IS_ROBOTIC(affected))
-			playsound(target.loc, 'sound/effects/squelch1.ogg', 15, 1)
+			playsound(target.loc, 'sounds/effects/squelch1.ogg', 15, 1)
 		else
-			playsound(target.loc, 'sound/items/Ratchet.ogg', 50, 1)
+			playsound(target.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 	if(istype(O, /obj/item/organ/internal/mmi_holder))
 		var/obj/item/organ/internal/mmi_holder/brain = O
 		brain.transfer_and_delete()
@@ -287,7 +287,7 @@
 			log_debug("[user] ([user.ckey]) replaced organ [O], which didn't have ORGAN_CUT_AWAY set, in [target] ([target.ckey])")
 			O.status |= ORGAN_CUT_AWAY
 
-		playsound(target.loc, 'sound/effects/squelch1.ogg', 15, 1)
+		playsound(target.loc, 'sounds/effects/squelch1.ogg', 15, 1)
 
 /decl/surgery_step/internal/replace_organ/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	user.visible_message(SPAN_WARNING("[user]'s hand slips, damaging \the [tool]!"), \

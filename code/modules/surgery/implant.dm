@@ -122,7 +122,7 @@
 	user.visible_message("[user] starts putting \the [tool] inside [target]'s [affected.cavity_name] cavity.", \
 	"You start putting \the [tool] inside [target]'s [affected.cavity_name] cavity." )
 	target.custom_pain("The pain in your chest is living hell!",1,affecting = affected)
-	playsound(target.loc, 'sound/effects/squelch1.ogg', 25, 1)
+	playsound(target.loc, 'sounds/effects/squelch1.ogg', 25, 1)
 	..()
 
 /decl/surgery_step/cavity/place_item/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
@@ -203,7 +203,7 @@
 
 			BITSET(target.hud_updateflag, IMPLOYAL_HUD)
 
-			playsound(target.loc, 'sound/effects/squelch1.ogg', 15, 1)
+			playsound(target.loc, 'sounds/effects/squelch1.ogg', 15, 1)
 		else
 			user.visible_message(SPAN_NOTICE("[user] removes \the [tool] from [target]'s [affected.name]."), \
 			SPAN_NOTICE("There's something inside [target]'s [affected.name], but you just missed it this time.") )
@@ -219,7 +219,7 @@
 		fail_prob += 100 - tool_quality(tool)
 		if (prob(fail_prob))
 			user.visible_message(SPAN_WARNING("Something beeps inside [target]'s [affected.name]!"))
-			playsound(imp.loc, 'sound/items/countdown.ogg', 75, 1, -3)
+			playsound(imp.loc, 'sounds/items/countdown.ogg', 75, 1, -3)
 			spawn(25)
 				imp.activate()
 

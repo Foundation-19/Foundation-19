@@ -476,7 +476,7 @@
 
 		show_content(usr, editable = TRUE)
 
-		playsound(src, pick('sound/effects/pen1.ogg','sound/effects/pen2.ogg'), 10)
+		playsound(src, pick('sounds/effects/pen1.ogg','sounds/effects/pen2.ogg'), 10)
 		update_icon()
 
 
@@ -566,7 +566,7 @@
 		stamped += P.type
 		add_overlay(stampoverlay)
 
-		playsound(src, 'sound/effects/stamp.ogg', 50, 1)
+		playsound(src, 'sounds/effects/stamp.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("You stamp the paper with your [P.name]."))
 
 	else if(istype(P, /obj/item/flame))
