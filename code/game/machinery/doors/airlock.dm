@@ -50,16 +50,16 @@ var/list/airlock_overlays = list()
 	var/hasShocked = 0 //Prevents multiple shocks from happening
 	var/secured_wires = 0
 
-	var/open_sound_powered = 'sound/machines/airlock_open.ogg'
-	var/open_sound_unpowered = 'sound/machines/airlock_open_force.ogg'
-	var/open_failure_access_denied = 'sound/machines/deniedboop.ogg'
+	var/open_sound_powered = 'sounds/machines/airlock_open.ogg'
+	var/open_sound_unpowered = 'sounds/machines/airlock_open_force.ogg'
+	var/open_failure_access_denied = 'sounds/machines/deniedboop.ogg'
 
-	var/close_sound_powered = 'sound/machines/airlock_close.ogg'
-	var/close_sound_unpowered = 'sound/machines/airlock_close_force.ogg'
-	var/close_failure_blocked = 'sound/machines/triple_beep.ogg'
+	var/close_sound_powered = 'sounds/machines/airlock_close.ogg'
+	var/close_sound_unpowered = 'sounds/machines/airlock_close_force.ogg'
+	var/close_failure_blocked = 'sounds/machines/triple_beep.ogg'
 
-	var/bolts_rising = 'sound/machines/bolts_up.ogg'
-	var/bolts_dropping = 'sound/machines/bolts_down.ogg'
+	var/bolts_rising = 'sounds/machines/bolts_up.ogg'
+	var/bolts_dropping = 'sounds/machines/bolts_down.ogg'
 
 	var/door_crush_damage = DOOR_CRUSH_DAMAGE
 	var/obj/item/airlock_brace/brace = null
@@ -168,7 +168,7 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/glass
 	name = "Glass Airlock"
 	icon_state = "preview_glass"
-	hitsound = 'sound/effects/Glasshit.ogg'
+	hitsound = 'sounds/effects/Glasshit.ogg'
 	maxhealth = 300
 	explosion_resistance = 5
 	opacity = 0
@@ -253,7 +253,7 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/external/escapepod/attackby(obj/item/C, mob/user)
 	if(p_open && !arePowerSystemsOn())
 		if(isWrench(C))
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 			user.visible_message(SPAN_WARNING("[user.name] starts frantically pumping the bolt override mechanism!"), SPAN_WARNING("You start frantically pumping the bolt override mechanism!"))
 			if(do_after(user, 160))
 				visible_message("\The [src] bolts [locked ? "disengage" : "engage"]!")
@@ -569,7 +569,7 @@ About the new airlock wires panel:
 	if(feedback && message)
 		to_chat(usr, message)
 	if(.)
-		playsound(src, 'sound/effects/sparks3.ogg', 30, 0, -6)
+		playsound(src, 'sounds/effects/sparks3.ogg', 30, 0, -6)
 
 /obj/machinery/door/airlock/proc/set_idscan(activate, feedback = 0)
 	var/message = ""
@@ -960,13 +960,13 @@ About the new airlock wires panel:
 		if(!WT.remove_fuel(0,user))
 			return 0
 		cut_verb = "cutting"
-		cut_sound = 'sound/items/Welder.ogg'
+		cut_sound = 'sounds/items/Welder.ogg'
 	else if(istype(item,/obj/item/gun/energy/plasmacutter)) //They could probably just shoot them out, but who cares!
 		var/obj/item/gun/energy/plasmacutter/cutter = item
 		if(!cutter.slice(user))
 			return 0
 		cut_verb = "cutting"
-		cut_sound = 'sound/items/Welder.ogg'
+		cut_sound = 'sounds/items/Welder.ogg'
 		cut_delay *= 0.66
 	else if(istype(item,/obj/item/melee/energy/blade) || istype(item,/obj/item/melee/energy/sword))
 		cut_verb = "slicing"
@@ -974,7 +974,7 @@ About the new airlock wires panel:
 		cut_delay *= 0.66
 	else if(istype(item,/obj/item/circular_saw))
 		cut_verb = "sawing"
-		cut_sound = 'sound/weapons/circsawhit.ogg'
+		cut_sound = 'sounds/weapons/circsawhit.ogg'
 		cut_delay *= 1.5
 
 	else if(istype(item,/obj/item/material/twohanded/fireaxe))
@@ -988,7 +988,7 @@ About the new airlock wires panel:
 			SPAN_DANGER("\The [user] smashes the bolt cover open!"),
 			SPAN_WARNING("You smash the bolt cover open!")
 			)
-		playsound(src, 'sound/weapons/smash.ogg', 100, 1)
+		playsound(src, 'sounds/weapons/smash.ogg', 100, 1)
 		show_sound_effect(src.loc, user)
 		src.lock_cut_state = BOLTS_EXPOSED
 		return 0
@@ -1067,13 +1067,13 @@ About the new airlock wires panel:
 		if(!W.remove_fuel(0,user))
 			to_chat(user, SPAN_NOTICE("Your [W.name] doesn't have enough fuel."))
 			return
-		playsound(src, 'sound/items/Welder.ogg', 50, 1)
+		playsound(src, 'sounds/items/Welder.ogg', 50, 1)
 		show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 		user.visible_message(SPAN_WARNING("\The [user] begins welding \the [src] [welded ? "open" : "closed"]!"),
 							SPAN_NOTICE("You begin welding \the [src] [welded ? "open" : "closed"]."))
 		if(do_after(user, (rand(3,5)) SECONDS, src))
 			if(density && !(operating > 0) && !repairing)
-				playsound(src, 'sound/items/Welder2.ogg', 50, 1)
+				playsound(src, 'sounds/items/Welder2.ogg', 50, 1)
 				show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 				welded = !welded
 				update_icon()
@@ -1088,12 +1088,12 @@ About the new airlock wires panel:
 			else
 				src.p_open = 0
 				user.visible_message(SPAN_NOTICE("[user.name] closes the maintenance panel on \the [src]."), SPAN_NOTICE("You close the maintenance panel on \the [src]."))
-				playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
+				playsound(src.loc, "sounds/items/Screwdriver.ogg", 20)
 				show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 		else
 			src.p_open = 1
 			user.visible_message(SPAN_NOTICE("[user.name] opens the maintenance panel on \the [src]."), SPAN_NOTICE("You open the maintenance panel on \the [src]."))
-			playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
+			playsound(src.loc, "sounds/items/Screwdriver.ogg", 20)
 			show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 		src.update_icon()
 	else if(isWirecutter(C))
@@ -1107,7 +1107,7 @@ About the new airlock wires panel:
 		cable.plugin(src, user)
 	else if(!repairing && isCrowbar(C))
 		if(src.p_open && (operating < 0 || (!operating && welded && !src.arePowerSystemsOn() && density && !src.locked)) && !brace)
-			playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 			show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 			user.visible_message("[user] removes the electronics from the airlock assembly.", "You start to remove electronics from the airlock assembly.")
 			if(do_after(user,40,src))
@@ -1130,7 +1130,7 @@ About the new airlock wires panel:
 	else if (istype(C, /obj/item/material/twohanded/fireaxe) && !(stat & BROKEN) && user.a_intent == I_HURT)
 		var/obj/item/material/twohanded/fireaxe/F = C
 		if (F.wielded)
-			playsound(src, 'sound/weapons/smash.ogg', 100, 1)
+			playsound(src, 'sounds/weapons/smash.ogg', 100, 1)
 			show_sound_effect(get_turf(src))
 			health -= F.force_wielded * 2
 			if(health <= 0)

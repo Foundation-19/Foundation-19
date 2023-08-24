@@ -24,7 +24,7 @@
 		return
 	if(isWrench(thing))
 		new /obj/item/drain(src.loc)
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		to_chat(user, SPAN_WARNING("[user] unwrenches the [src]."))
 		qdel(src)
 		return
@@ -54,7 +54,7 @@
 /obj/item/drain/attackby(obj/item/thing, mob/user)
 	if(isWrench(thing))
 		new constructed_type(src.loc)
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		to_chat(user, SPAN_WARNING("[user] wrenches the [src] down."))
 		qdel(src)
 		return

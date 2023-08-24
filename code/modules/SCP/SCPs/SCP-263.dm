@@ -55,10 +55,10 @@
 			if(eye_contact)
 				icon_living = "animation"
 				next_emote = world.time + 30
-//				playsound(src, 'sound/scp/263/263-song.ogg', 30)
+//				playsound(src, 'sounds/scp/263/263-song.ogg', 30)
 //				for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
 //					if(M.is_deaf())
-//						M << pick('sound/scp/263/263-song.ogg')
+//						M << pick('sounds/scp/263/263-song.ogg')
 				sleep(85)
 				icon_living = "on"
 				gaming = 1
@@ -89,10 +89,10 @@
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
 			if(M.can_hear(src))
-//				M << pick('sound/scp/263/263-cursed.ogg')
+//				M << pick('sounds/scp/263/263-cursed.ogg')
 				next_emote = world.time + 30
 //		for(var/mob/living/simple_animal/hostile/scp_263/S in hear(7, get_turf(src)))
-//			S << pick('sound/scp/263/263-cursed.ogg')
+//			S << pick('sounds/scp/263/263-cursed.ogg')
 
 /*
 /mob/living/simple_animal/hostile/scp263/proc/check_los()
