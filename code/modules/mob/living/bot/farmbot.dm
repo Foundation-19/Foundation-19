@@ -164,13 +164,8 @@
 				update_icons()
 				visible_message(SPAN_NOTICE("[src] starts watering \the [A]."))
 				busy = 1
-<<<<<<< HEAD
 				if(do_after(src, 3 SECONDS, A))
 					playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
-=======
-				if(do_after(src, 30, A))
-					playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					visible_message(SPAN_NOTICE("[src] waters \the [A]."))
 					tank.reagents.trans_to(T, 100 - T.waterlevel)
 			if(FARMBOT_UPROOT)

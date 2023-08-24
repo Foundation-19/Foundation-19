@@ -106,13 +106,8 @@
 		return
 	else if(isWrench(thing))
 		visible_message(SPAN_WARNING("\The [user] begins dismantling \the [src]."))
-<<<<<<< HEAD
 		playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25))
-=======
-		playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
-		if(do_after(user, 50, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			visible_message(SPAN_DANGER("\The [user] has dismantled \the [src]!"))
 			dismantle()
 		return

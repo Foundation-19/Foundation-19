@@ -228,13 +228,8 @@
 				SPAN_NOTICE("Slicing \the [src]..."),
 				SPAN_ITALIC("You hear the sound of welding.")
 			)
-<<<<<<< HEAD
 			playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
 			if (!do_after(user, 4 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg'))
-=======
-			playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
-			if (!do_after(user, 3 SECONDS, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				return
 			user.visible_message(
 				SPAN_NOTICE("\The [user] cuts \the [src] free from the floor."),

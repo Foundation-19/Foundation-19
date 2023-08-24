@@ -220,13 +220,8 @@
 	// Dismantle
 	if(isWrench(W))
 		if(!anchored)
-<<<<<<< HEAD
 			playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-=======
-			playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
-			if(do_after(user, 20, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				if(anchored)
 					return
 				user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."), SPAN_NOTICE("You dismantle \the [src]."))
@@ -250,13 +245,8 @@
 			if(!health_damaged())
 				to_chat(user, SPAN_WARNING("\The [src] does not need repairs."))
 				return
-<<<<<<< HEAD
 			playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-=======
-			playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
-			if(do_after(user, 20, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				if(!health_damaged())
 					return
 				user.visible_message(SPAN_NOTICE("\The [user] repairs some damage to \the [src]."), SPAN_NOTICE("You repair some damage to \the [src]."))
@@ -269,13 +259,8 @@
 			to_chat(user, SPAN_NOTICE("You need to wrench \the [src] from back into place first."))
 			return
 		user.visible_message(anchored ? SPAN_NOTICE("\The [user] begins unscrew \the [src].") : SPAN_NOTICE("\The [user] begins fasten \the [src].") )
-<<<<<<< HEAD
 		playsound(loc, 'sounds/items/Screwdriver.ogg', 75, 1)
 		if(do_after(user, 1 SECOND, src, bonus_percentage = 100) && density)
-=======
-		playsound(loc, 'sounds/items/Screwdriver.ogg', 75, 1)
-		if(do_after(user, 10, src) && density)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			to_chat(user, (anchored ? SPAN_NOTICE("You have unfastened \the [src] from the floor.") : SPAN_NOTICE("You have fastened \the [src] to the floor.")))
 			anchored = !anchored
 			update_icon()

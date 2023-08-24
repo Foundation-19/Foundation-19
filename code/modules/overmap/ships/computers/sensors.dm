@@ -147,13 +147,8 @@
 
 		if(WT.remove_fuel(0,user))
 			to_chat(user, SPAN_NOTICE("You start repairing the damage to [src]."))
-<<<<<<< HEAD
 			playsound(src, 'sounds/items/Welder.ogg', 100, 1)
 			if(do_after(user, max(0.5 SECONDS, damage / 5), src, bonus_percentage = 25) && WT && WT.isOn())
-=======
-			playsound(src, 'sounds/items/Welder.ogg', 100, 1)
-			if(do_after(user, max(5, damage / 5), src) && WT && WT.isOn())
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				to_chat(user, SPAN_NOTICE("You finish repairing the damage to [src]."))
 				take_damage(-damage)
 		else

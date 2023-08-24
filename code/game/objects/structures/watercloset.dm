@@ -35,21 +35,7 @@
 		return
 	being_unclogged = TRUE
 	user.visible_message(SPAN_NOTICE("\The [user] strives valiantly to unclog \the [src] with \the [thing]!"))
-<<<<<<< HEAD
 	if(do_after(user, 6 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/effects/plunger.ogg') && clogged > 0)
-=======
-	spawn
-		playsound(loc, 'sounds/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sounds/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sounds/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sounds/effects/plunger.ogg', 75, 1)
-		sleep(5)
-		playsound(loc, 'sounds/effects/plunger.ogg', 75, 1)
-	if(do_after(user, 45, src) && clogged > 0)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 		visible_message(SPAN_NOTICE("With a loud gurgle, \the [src] begins flowing more freely."))
 		playsound(loc, pick(SSfluids.gurgles), 100, 1)
 		clogged--
@@ -159,13 +145,8 @@
 /obj/structure/hygiene/toilet/attackby(obj/item/I as obj, mob/living/user)
 	if(isCrowbar(I))
 		to_chat(user, SPAN_NOTICE("You start to [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]."))
-<<<<<<< HEAD
 		playsound(loc, 'sounds/effects/stonedoor_openclose.ogg', 50, 1)
 		if(do_after(user, 3 SECONDS, src))
-=======
-		playsound(loc, 'sounds/effects/stonedoor_openclose.ogg', 50, 1)
-		if(do_after(user, 30, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			user.visible_message(SPAN_NOTICE("[user] [cistern ? "replaces the lid on the cistern" : "lifts the lid off the cistern"]!"), SPAN_NOTICE("You [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]!"), "You hear grinding porcelain.")
 			cistern = !cistern
 			update_icon()
@@ -275,13 +256,8 @@
 	if(isWrench(I))
 		var/newtemp = input(user, "What setting would you like to set the temperature valve to?", "Water Temperature Valve") in temperature_settings
 		to_chat(user,SPAN_NOTICE("You begin to adjust the temperature valve with \the [I]."))
-<<<<<<< HEAD
 		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
-=======
-		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
-		if(do_after(user, 50, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			watertemp = newtemp
 			user.visible_message(SPAN_NOTICE("\The [user] adjusts \the [src] with \the [I]."), SPAN_NOTICE("You adjust the shower with \the [I]."))
 			add_fingerprint(user)

@@ -280,13 +280,8 @@
 	manipulating = 1
 	user.visible_message(SPAN_NOTICE("\The [user] begins dismantling \the [src]."),
 	                              SPAN_NOTICE("You begin dismantling \the [src]."))
-<<<<<<< HEAD
 	playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 	if(!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-=======
-	playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
-	if(!do_after(user, 20, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 		manipulating = 0
 		return
 	user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."),

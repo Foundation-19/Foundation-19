@@ -109,13 +109,8 @@
 					to_chat(user, SPAN_WARNING("[EA] has irremovable components in the casing, preventing you from emptying it."))
 					return
 			to_chat(user, SPAN_NOTICE("You begin recycling [EA]'s components..."))
-<<<<<<< HEAD
 			playsound(src, 'sounds/items/electronic_assembly_emptying.ogg', 50, TRUE)
 			if(!do_after(user, 4 SECONDS, src, bonus_percentage = 25) || recycling) //short channel so you don't accidentally start emptying out a complex assembly
-=======
-			playsound(src, 'sounds/items/electronic_assembly_emptying.ogg', 50, TRUE)
-			if(!do_after(user, 30, src) || recycling) //short channel so you don't accidentally start emptying out a complex assembly
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				return
 			recycling = TRUE
 			for(var/V in EA.assembly_components)

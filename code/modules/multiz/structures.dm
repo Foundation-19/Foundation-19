@@ -16,13 +16,8 @@
 	var/obj/structure/ladder/target_up
 	var/obj/structure/ladder/target_down
 
-<<<<<<< HEAD
 	var/const/climb_time = 2.5 SECONDS
 	var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/ladder2.ogg','sounds/effects/ladder3.ogg','sounds/effects/ladder4.ogg')
-=======
-	var/const/climb_time = 2 SECONDS
-	var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/ladder2.ogg','sounds/effects/ladder3.ogg','sounds/effects/ladder4.ogg')
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 
 /obj/structure/ladder/Initialize()
 	. = ..()

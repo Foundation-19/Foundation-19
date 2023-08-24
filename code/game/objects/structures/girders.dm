@@ -92,13 +92,8 @@
 		return
 
 	if(istype(W, /obj/item/pickaxe/diamonddrill))
-<<<<<<< HEAD
 		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
 		if(do_after(user, reinf_material ? 8 SECONDS : 5.5 SECONDS, src, bonus_percentage = 25))
-=======
-		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
-		if(do_after(user,reinf_material ? 60 : 40,src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			to_chat(user, SPAN_NOTICE("You drill through the girder!"))
 			if(reinf_material)
 				reinf_material.place_dismantled_product(get_turf(src))
@@ -267,12 +262,7 @@
 			dismantle()
 
 	else if(istype(W, /obj/item/pickaxe/diamonddrill))
-<<<<<<< HEAD
 		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
-=======
-		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
-		if(do_after(user,40,src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			to_chat(user, SPAN_NOTICE("You drill through the girder!"))
 			dismantle()

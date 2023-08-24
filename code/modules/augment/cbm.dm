@@ -47,13 +47,8 @@
 			SPAN_WARNING("You start prying out \the [loaded_augment] from \the [src]..."),
 			SPAN_WARNING("You hear metal creaking.")
 		)
-<<<<<<< HEAD
 		playsound(user, 'sounds/items/Crowbar.ogg', 50, TRUE)
 		if (!do_after(user, 12 SECONDS, src, bonus_percentage = 25) || !loaded_augment)
-=======
-		playsound(user, 'sounds/items/Crowbar.ogg', 50, TRUE)
-		if (!do_after(user, 10 SECONDS, src) || !loaded_augment)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			return
 		user.visible_message(
 			SPAN_WARNING("\The [user] levers \the [loaded_augment] out of \the [src]."),
@@ -141,13 +136,8 @@
 			user.custom_pain("You feel something moving around inside your [affected.name]!", 160)
 			playsound(user, 'sounds/effects/squelch1.ogg', 25, TRUE)
 		else
-<<<<<<< HEAD
 			playsound(user, 'sounds/items/jaws_pry.ogg', 50, TRUE)
 		if (!do_after(user, 10 SECONDS, bonus_percentage = 25))
-=======
-			playsound(user, 'sounds/items/jaws_pry.ogg', 50, TRUE)
-		if (!do_after(user, 8 SECONDS))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			working = FALSE
 			to_chat(user, SPAN_WARNING("\The [src] falls away from your [affected.name], leaving behind a mangled mess."))
 			return

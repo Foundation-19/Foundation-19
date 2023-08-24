@@ -268,13 +268,8 @@
 		if (E)
 			E.setClickCooldown(1.35 SECONDS)
 			E.visible_message(SPAN_DANGER("\The [E] swings \the [src] back, preparing for an attack!"), blind_message = SPAN_DANGER("You hear the loud hissing of hydraulics!"))
-<<<<<<< HEAD
 			playsound(E, 'sounds/mecha/mechmove03.ogg', 35, 1)
 			if (do_after(E, 1.2 SECONDS, get_turf(user), do_flags = DO_SHOW_USER | DO_TARGET_CAN_TURN) && E && MC)
-=======
-			playsound(E, 'sounds/mecha/mechmove03.ogg', 35, 1)
-			if (do_after(E, 1.2 SECONDS, get_turf(user), do_flags = DO_SHOW_PROGRESS | DO_TARGET_CAN_TURN | DO_PUBLIC_PROGRESS | DO_USER_UNIQUE_ACT) && E && MC)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				for (var/mob/living/M in orange(1, E))
 					attack(M, E, E.zone_sel.selecting, FALSE)
 				E.spin(0.65 SECONDS, 0.125 SECONDS)

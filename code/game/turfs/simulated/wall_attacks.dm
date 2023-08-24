@@ -219,13 +219,8 @@
 
 		if(WT.remove_fuel(0,user))
 			to_chat(user, SPAN_NOTICE("You start repairing the damage to [src]."))
-<<<<<<< HEAD
 			playsound(src, 'sounds/items/Welder.ogg', 100, 1)
 			if(do_after(user, max(0.5 SECONDS, damage / 5), src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg') && WT && WT.isOn())
-=======
-			playsound(src, 'sounds/items/Welder.ogg', 100, 1)
-			if(do_after(user, max(5, damage / 5), src) && WT && WT.isOn())
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				to_chat(user, SPAN_NOTICE("You finish repairing the damage to [src]."))
 				restore_health(damage)
 		return
@@ -307,13 +302,8 @@
 			if(5)
 				if(isScrewdriver(W))
 					to_chat(user, SPAN_NOTICE("You begin removing the support lines."))
-<<<<<<< HEAD
 					playsound(src, 'sounds/items/Screwdriver.ogg', 100, 1)
 					if(!do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Screwdriver.ogg') || !istype(src, /turf/simulated/wall) || construction_stage != 5)
-=======
-					playsound(src, 'sounds/items/Screwdriver.ogg', 100, 1)
-					if(!do_after(user,40,src) || !istype(src, /turf/simulated/wall) || construction_stage != 5)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						return
 					construction_stage = 4
 					update_icon()
@@ -342,13 +332,8 @@
 					cut_cover = 1
 				if(cut_cover)
 					to_chat(user, SPAN_NOTICE("You begin slicing through the metal cover."))
-<<<<<<< HEAD
 					playsound(src, 'sounds/items/Welder.ogg', 100, 1)
 					if(!do_after(user, 8 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg') || !istype(src, /turf/simulated/wall) || construction_stage != 4)
-=======
-					playsound(src, 'sounds/items/Welder.ogg', 100, 1)
-					if(!do_after(user, 60, src) || !istype(src, /turf/simulated/wall) || construction_stage != 4)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						return
 					construction_stage = 3
 					update_icon()
@@ -357,13 +342,8 @@
 			if(3)
 				if(isCrowbar(W))
 					to_chat(user, SPAN_NOTICE("You struggle to pry off the cover."))
-<<<<<<< HEAD
 					playsound(src, 'sounds/items/Crowbar.ogg', 100, 1)
 					if(!do_after(user, 12 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg') || !istype(src, /turf/simulated/wall) || construction_stage != 3)
-=======
-					playsound(src, 'sounds/items/Crowbar.ogg', 100, 1)
-					if(!do_after(user,100,src) || !istype(src, /turf/simulated/wall) || construction_stage != 3)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						return
 					construction_stage = 2
 					update_icon()
@@ -372,13 +352,8 @@
 			if(2)
 				if(isWrench(W))
 					to_chat(user, SPAN_NOTICE("You start loosening the anchoring bolts which secure the support rods to their frame."))
-<<<<<<< HEAD
 					playsound(src, 'sounds/items/Ratchet.ogg', 100, 1)
 					if(!do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg') || !istype(src, /turf/simulated/wall) || construction_stage != 2)
-=======
-					playsound(src, 'sounds/items/Ratchet.ogg', 100, 1)
-					if(!do_after(user,40,src) || !istype(src, /turf/simulated/wall) || construction_stage != 2)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						return
 					construction_stage = 1
 					update_icon()
@@ -400,13 +375,8 @@
 					cut_cover = 1
 				if(cut_cover)
 					to_chat(user, SPAN_NOTICE("You begin slicing through the support rods."))
-<<<<<<< HEAD
 					playsound(src, 'sounds/items/Welder.ogg', 100, 1)
 					if(!do_after(user, 9 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg') || !istype(src, /turf/simulated/wall) || construction_stage != 1)
-=======
-					playsound(src, 'sounds/items/Welder.ogg', 100, 1)
-					if(!do_after(user,70,src) || !istype(src, /turf/simulated/wall) || construction_stage != 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						return
 					construction_stage = 0
 					update_icon()
@@ -416,13 +386,8 @@
 			if(0)
 				if(isCrowbar(W))
 					to_chat(user, SPAN_NOTICE("You struggle to pry off the outer sheath."))
-<<<<<<< HEAD
 					playsound(src, 'sounds/items/Crowbar.ogg', 100, 1)
 					if(!do_after(user, 12 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg') || !istype(src, /turf/simulated/wall) || !user || !W || !T )	return
-=======
-					playsound(src, 'sounds/items/Crowbar.ogg', 100, 1)
-					if(!do_after(user,100,src) || !istype(src, /turf/simulated/wall) || !user || !W || !T )	return
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					if(user.loc == T && user.get_active_hand() == W )
 						to_chat(user, SPAN_NOTICE("You pry off the outer sheath."))
 						dismantle_wall()

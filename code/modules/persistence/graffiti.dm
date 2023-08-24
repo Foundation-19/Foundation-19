@@ -41,13 +41,8 @@
 /obj/effect/decal/writing/attackby(obj/item/thing, mob/user)
 	if(isWelder(thing))
 		var/obj/item/weldingtool/welder = thing
-<<<<<<< HEAD
 		if(welder.isOn() && welder.remove_fuel(0, user) && do_after(user, 0.6 SECONDS, src, bonus_percentage = 100) && !QDELETED(src))
 			playsound(src.loc, 'sounds/items/Welder2.ogg', 50, 1)
-=======
-		if(welder.isOn() && welder.remove_fuel(0,user) && do_after(user, 5, src) && !QDELETED(src))
-			playsound(src.loc, 'sounds/items/Welder2.ogg', 50, 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			user.visible_message(SPAN_NOTICE("\The [user] clears away some graffiti."))
 			qdel(src)
 	else if(thing.sharp)

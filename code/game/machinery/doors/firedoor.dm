@@ -212,13 +212,8 @@
 				SPAN_DANGER("You start [!blocked ? "welding \the [src] closed" : "cutting open \the [src]"]."),
 				SPAN_ITALIC("You hear welding.")
 			)
-<<<<<<< HEAD
 			playsound(loc, 'sounds/items/Welder.ogg', 50, TRUE)
 			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-=======
-			playsound(loc, 'sounds/items/Welder.ogg', 50, TRUE)
-			if(do_after(user, 2 SECONDS, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				if(!W.isOn())
 					return
 				blocked = !blocked
@@ -251,13 +246,8 @@
 				SPAN_NOTICE("You start levering out \the [src]'s electronics."),
 				SPAN_ITALIC("You hear metal bumping against metal.")
 			)
-<<<<<<< HEAD
 			playsound(loc, 'sounds/items/Crowbar.ogg', 100, TRUE)
 			if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
-=======
-			playsound(loc, 'sounds/items/Crowbar.ogg', 100, TRUE)
-			if(do_after(user, 30, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				if(blocked && density && hatch_open)
 					playsound(loc, 'sounds/items/Deconstruct.ogg', 100, TRUE)
 					user.visible_message(
@@ -294,13 +284,8 @@
 			SPAN_DANGER("You start forcing \the [src] [density ? "open" : "shut"]."),
 			SPAN_WARNING("You hear metal groaning and grinding!")
 		)
-<<<<<<< HEAD
 		playsound(loc, 'sounds/machines/airlock_creaking.ogg', 100, TRUE)
 		if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
-=======
-		playsound(loc, 'sounds/machines/airlock_creaking.ogg', 100, TRUE)
-		if(do_after(user, 30, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			if(isCrowbar(C))
 				if(stat & (BROKEN|NOPOWER) || !density)
 					user.visible_message(

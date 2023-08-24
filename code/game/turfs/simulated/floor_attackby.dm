@@ -30,13 +30,8 @@
 						SPAN_NOTICE("\The [user] begins prying up \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You begin prying up \the [flooring.descriptor] with \the [C].")
 					)
-<<<<<<< HEAD
 					playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
 					if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg'))
-=======
-					playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
-					if (do_after(user, flooring.remove_timer, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						user.visible_message(
 							SPAN_NOTICE("\The [user] pries up \the [flooring.descriptor] with \the [C]!"),
 							SPAN_NOTICE("You pry up \the [flooring.descriptor] with \the [C].")
@@ -59,13 +54,8 @@
 					SPAN_NOTICE("\The [user] begins unscrewing \the [flooring.descriptor] with \the [C]!"),
 					SPAN_NOTICE("You begin unscrewing \the [flooring.descriptor] with \the [C].")
 				)
-<<<<<<< HEAD
 				playsound(src, 'sounds/items/Screwdriver.ogg', 80, 1)
 				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Screwdriver.ogg'))
-=======
-				playsound(src, 'sounds/items/Screwdriver.ogg', 80, 1)
-				if (do_after(user, flooring.remove_timer, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					user.visible_message(
 						SPAN_NOTICE("\The [user] unscrews \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You unscrew \the [flooring.descriptor] with \the [C].")
@@ -84,13 +74,8 @@
 					SPAN_NOTICE("\The [user] begins unwrenching \the [flooring.descriptor] with \the [C]!"),
 					SPAN_NOTICE("You begin unwrenching \the [flooring.descriptor] with \the [C].")
 				)
-<<<<<<< HEAD
 				playsound(src, 'sounds/items/Ratchet.ogg', 80, 1)
 				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
-=======
-				playsound(src, 'sounds/items/Ratchet.ogg', 80, 1)
-				if (do_after(user, flooring.remove_timer, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					user.visible_message(
 						SPAN_NOTICE("\The [user] unwrench \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You unwrench \the [flooring.descriptor] with \the [C].")

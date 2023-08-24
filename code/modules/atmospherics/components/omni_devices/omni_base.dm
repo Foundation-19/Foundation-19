@@ -89,13 +89,8 @@
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
-<<<<<<< HEAD
 	playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 	if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
-=======
-	playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
-	if(do_after(user, 40, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \

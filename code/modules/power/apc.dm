@@ -539,13 +539,8 @@
 			return TRUE
 		user.visible_message(SPAN_WARNING("\The [user] inserts the power control board into \the [src]."), \
 							"You start to insert the power control board into the frame...")
-<<<<<<< HEAD
 		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 1 SECOND, src, bonus_percentage = 100) && has_electronics == 0 && opened && !(stat & BROKEN))
-=======
-		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
-		if(do_after(user, 10, src) && has_electronics == 0 && opened && !(stat & BROKEN))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			has_electronics = 1
 			reboot() //completely new electronics
 			to_chat(user, SPAN_NOTICE("You place the power control board inside the frame."))
@@ -569,13 +564,8 @@
 		user.visible_message(SPAN_WARNING("\The [user] begins to weld \the [src]."), \
 							"You start welding the APC frame...", \
 							"You hear welding.")
-<<<<<<< HEAD
 		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && has_electronics == 0 && !terminal())
-=======
-		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
-		if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			if(!WT.remove_fuel(3, user))
 				return TRUE
 			if (emagged || (stat & BROKEN) || opened==2)

@@ -27,13 +27,8 @@ var/global/list/empty_playable_ai_cores = list()
 	switch(state)
 		if(0)
 			if(isWrench(P))
-<<<<<<< HEAD
 				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-=======
-				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
-				if(do_after(user, 20, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					to_chat(user, SPAN_NOTICE("You wrench the frame into place."))
 					anchored = TRUE
 					state = 1
@@ -42,13 +37,8 @@ var/global/list/empty_playable_ai_cores = list()
 				if(!WT.isOn())
 					to_chat(user, "The welder must be on for this task.")
 					return
-<<<<<<< HEAD
 				playsound(loc, 'sounds/items/Welder.ogg', 50, 1)
 				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-=======
-				playsound(loc, 'sounds/items/Welder.ogg', 50, 1)
-				if(do_after(user, 20, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					if(!src || !WT.remove_fuel(0, user)) return
 					to_chat(user, SPAN_NOTICE("You deconstruct the frame."))
 					new /obj/item/stack/material/plasteel( loc, 4)
@@ -56,13 +46,8 @@ var/global/list/empty_playable_ai_cores = list()
 					return
 		if(1)
 			if(isWrench(P))
-<<<<<<< HEAD
 				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-=======
-				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
-				if(do_after(user, 20, src))
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					to_chat(user, SPAN_NOTICE("You unfasten the frame."))
 					anchored = FALSE
 					state = 0
@@ -95,13 +80,8 @@ var/global/list/empty_playable_ai_cores = list()
 					to_chat(user, SPAN_WARNING("You need five coils of wire to add them to the frame."))
 					return
 				to_chat(user, SPAN_NOTICE("You start to add cables to the frame."))
-<<<<<<< HEAD
 				playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 				if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && state == 2)
-=======
-				playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
-				if (do_after(user, 20, src) && state == 2)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					if (C.use(5))
 						state = 3
 						icon_state = "3"
@@ -126,13 +106,8 @@ var/global/list/empty_playable_ai_cores = list()
 						to_chat(user, SPAN_WARNING("You need two sheets of glass to put in the glass panel."))
 						return
 					to_chat(user, SPAN_NOTICE("You start to put in the glass panel."))
-<<<<<<< HEAD
 					playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 					if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && state == 3)
-=======
-					playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
-					if (do_after(user, 20,src) && state == 3)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						if(RG.use(2))
 							to_chat(user, SPAN_NOTICE("You put in the glass panel."))
 							state = 4

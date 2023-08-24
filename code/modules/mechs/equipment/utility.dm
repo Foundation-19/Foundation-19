@@ -48,28 +48,17 @@
 					var/obj/machinery/door/firedoor/FD = O
 					if(FD.blocked)
 						FD.visible_message(SPAN_DANGER("\The [owner] begins prying on \the [FD]!"))
-<<<<<<< HEAD
 						if(do_after(owner, 12 SECONDS, FD, bonus_percentage = 25) && FD.blocked)
 							playsound(FD, 'sounds/effects/meteorimpact.ogg', 100, 1)
 							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
-=======
-						if(do_after(owner,10 SECONDS,FD) && FD.blocked)
-							playsound(FD, 'sounds/effects/meteorimpact.ogg', 100, 1)
-							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 							FD.blocked = FALSE
 							addtimer(CALLBACK(FD, /obj/machinery/door/firedoor/.proc/open, TRUE), 0)
 							FD.set_broken(TRUE)
 							FD.visible_message(SPAN_WARNING("\The [owner] tears \the [FD] open!"))
 					else
 						FD.visible_message(SPAN_DANGER("\The [owner] begins forcing \the [FD]!"))
-<<<<<<< HEAD
 						if(do_after(owner, 5 SECONDS, FD, bonus_percentage = 25) && !FD.blocked)
 							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
-=======
-						if(do_after(owner, 4 SECONDS,FD) && !FD.blocked)
-							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 							if(FD.density)
 								FD.visible_message(SPAN_DANGER("\The [owner] forces \the [FD] open!"))
 								addtimer(CALLBACK(FD, /obj/machinery/door/firedoor/.proc/open, TRUE), 0)
@@ -93,13 +82,8 @@
 								return
 						else
 							AD.visible_message(SPAN_DANGER("\The [owner] begins forcing \the [AD]!"))
-<<<<<<< HEAD
 							if((AD.is_broken(NOPOWER) || do_after(owner, 6 SECONDS, AD, bonus_percentage = 25)) && !(AD.operating || AD.welded || AD.locked))
 								playsound(AD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
-=======
-							if((AD.is_broken(NOPOWER) || do_after(owner, 5 SECONDS,AD)) && !(AD.operating || AD.welded || AD.locked))
-								playsound(AD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 								if(AD.density)
 									addtimer(CALLBACK(AD, /obj/machinery/door/airlock/.proc/open, TRUE), 0)
 									if(!AD.is_broken(NOPOWER))

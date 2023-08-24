@@ -161,13 +161,8 @@
 		to_chat(user, SPAN_NOTICE("You start to weld \the [src].."))
 		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 		busy = 1
-<<<<<<< HEAD
 		if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && WT.isOn())
 			playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
-=======
-		if(do_after(user, 20, src) && WT.isOn())
-			playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			busy = 0
 			return 1
 

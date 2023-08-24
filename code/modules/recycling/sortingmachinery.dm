@@ -485,13 +485,8 @@
 		var/obj/item/weldingtool/W = I
 		if(W.remove_fuel(1,user))
 			to_chat(user, "You start slicing the floorweld off the delivery chute.")
-<<<<<<< HEAD
 			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 				playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
-=======
-			if(do_after(user,20, src))
-				playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
->>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				if(!src || !W.isOn()) return
 				to_chat(user, "You sliced the floorweld off the delivery chute.")
 				var/obj/structure/disposalconstruct/C = new (loc, src)
