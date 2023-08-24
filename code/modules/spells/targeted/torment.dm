@@ -18,7 +18,7 @@
 	var/loss = 30
 
 	hud_state = "wiz_horse"
-	cast_sound = 'sound/magic/cowhead_curse.ogg'
+	cast_sound = 'sounds/magic/cowhead_curse.ogg'
 
 /datum/spell/targeted/torment/cast(list/targets, mob/user)
 	gibs(user.loc)

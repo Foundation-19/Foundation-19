@@ -3,7 +3,7 @@
 	desc = "Specially made-to-order by Xenonomix, the XX-1 \"Varmint Catcher\" is designed to trap even the most unruly of creatures for safe transport."
 	icon_state = "netgun"
 	item_state = "netgun"
-	fire_sound = 'sound/weapons/empty.ogg'
+	fire_sound = 'sounds/weapons/empty.ogg'
 	fire_sound_text = "a metallic thunk"
 	release_force = 5
 	var/obj/item/net_shell/chambered

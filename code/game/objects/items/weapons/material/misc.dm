@@ -25,7 +25,7 @@
 	if(spent)
 		return
 	audible_message(SPAN_WARNING("\The [src] emits a long, harsh tone!"))
-	playsound(loc, 'sound/weapons/bombwhine.ogg', 100, 0, -3)
+	playsound(loc, 'sounds/weapons/bombwhine.ogg', 100, 0, -3)
 	addtimer(CALLBACK(src, .proc/harpoon_detonate), 4 SECONDS) //for suspense
 
 /obj/item/material/harpoon/bomb/proc/harpoon_detonate()

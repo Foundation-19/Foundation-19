@@ -1,8 +1,8 @@
 /// Subtype of equipment modules that attempts to equip its item to a specified clothing slot.
 /obj/item/organ/internal/augment/active/simple/equip
 	var/equip_slot
-	deploy_sound = 'sound/items/helmet_close.ogg'
-	retract_sound = 'sound/items/helmet_open.ogg'
+	deploy_sound = 'sounds/items/helmet_close.ogg'
+	retract_sound = 'sounds/items/helmet_open.ogg'
 
 /obj/item/organ/internal/augment/active/simple/equip/deploy()
 	if(owner.equip_to_slot_if_possible(holding, equip_slot))

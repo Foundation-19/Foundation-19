@@ -26,7 +26,7 @@
 	..()
 
 /obj/item/organ/internal/augment/active/nanounit/proc/catastrophic_failure()
-	playsound(owner,'sound/mecha/internaldmgalarm.ogg',25,1)
+	playsound(owner,'sounds/mecha/internaldmgalarm.ogg',25,1)
 	owner.visible_message(SPAN_WARNING("The nanites attempt to harden. But they seem... brittle."))
 	for(var/obj/item/organ/external/E in owner.organs)
 		if(prob(25))
@@ -43,7 +43,7 @@
 	else
 		aura.active = 1
 		to_chat(owner,SPAN_NOTICE("Activation sequence in progress."))
-	playsound(owner,'sound/weapons/flash.ogg',35,1)
+	playsound(owner,'sounds/weapons/flash.ogg',35,1)
 
 
 /obj/item/organ/internal/augment/active/nanounit/Destroy()
@@ -53,7 +53,7 @@
 /obj/aura/nanoaura/Initialize(maploading, obj/item/organ/internal/augment/active/nanounit/holder)
 	. = ..()
 	unit = holder
-	playsound(loc,'sound/weapons/flash.ogg',35,1)
+	playsound(loc,'sounds/weapons/flash.ogg',35,1)
 	to_chat(loc,SPAN_NOTICE("Your skin tingles as the nanites spread over your body."))
 
 /obj/aura/nanoaura/bullet_act(obj/item/projectile/P, def_zone)
@@ -61,7 +61,7 @@
 		return
 	if(unit.charges > 0)
 		user.visible_message(SPAN_WARNING("The nanomachines harden as a response to physical trauma!"))
-		playsound(user,'sound/effects/basscannon.ogg',35,1)
+		playsound(user,'sounds/effects/basscannon.ogg',35,1)
 		unit.charges -= 1
 		if(unit.charges <= 0)
 			to_chat(user, SPAN_DANGER("Warning: Critical damage treshold passed. Shut down unit to avoid further damage"))

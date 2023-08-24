@@ -49,7 +49,7 @@ effective or pretty fucking useless.
 
 	admin_attacker_log_many_victims(user, stun_victims, "Used \a [src] to attempt to knockdown their victim.", "Was subject to a knockdown attempt.", ", using \a [src], attempted to knockdown")
 
-	playsound(src.loc, 'sound/misc/interference.ogg', 50, 1)
+	playsound(src.loc, 'sounds/misc/interference.ogg', 50, 1)
 	to_chat(user, SPAN_NOTICE("You trigger [src]."))
 	times_used += 1
 	if(times_used >= max_uses)

@@ -13,7 +13,7 @@
 	level_max = list(UPGRADE_TOTAL = 4, UPGRADE_SPEED = 4, UPGRADE_POWER = 4)
 	cooldown_min = 5 //4 deciseconds reduction per rank
 	hud_state = "wiz_blink"
-	cast_sound = 'sound/magic/blink.ogg'
+	cast_sound = 'sounds/magic/blink.ogg'
 
 /datum/spell/aoe_turf/blink/cast(list/targets, mob/user)
 	if(!targets.len)

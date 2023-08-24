@@ -1,5 +1,23 @@
+// Heals brute damage rapidly, in return for nutrition
 /obj/item/organ/internal/heart/abomination
 	name = "blood pump"
+	var/heal_rate = 5
+
+/obj/item/organ/internal/heart/abomination/Process()
+	. = ..()
+	if(!owner)
+		return
+
+	if(is_broken())
+		return
+
+	var/mob/living/carbon/human/H = owner
+	// Do nothing if nutrition is too low or brute damage isn't high enough
+	if(H.nutrition <= 200 || H.getBruteLoss() < 50)
+		return
+
+	H.adjustBruteLoss(-heal_rate)
+	owner.adjust_nutrition(-heal_rate)
 
 /obj/item/organ/internal/stomach/abomination
 	name = "nutrient refinery"
@@ -32,11 +50,12 @@
 
 /obj/item/organ/internal/larva_producer/Initialize()
 	. = ..()
-	larva_cooldown = larva_cooldown_time * rand(2, 3)
+	larva_cooldown = larva_cooldown_time
 
 /obj/item/organ/internal/larva_producer/Process()
 	if(owner)
-		larva_cooldown = larva_cooldown <= 0 ? larva_cooldown_time : larva_cooldown - 1
+		var/cooldown_adjustment = 1 + round(owner.nutrition / 100)
+		larva_cooldown = max(0, larva_cooldown - cooldown_adjustment)
 		if(larva_cooldown == round(larva_cooldown_time * 0.3))
 			to_chat(owner, SPAN_WARNING("Your [parent_organ] is vibrating ever so slighty..."))
 		else if(larva_cooldown == round(larva_cooldown_time * 0.2))
@@ -46,7 +65,7 @@
 		else if(larva_cooldown <= 0)
 			var/mob/living/simple_animal/hostile/infestation/larva/L = new(get_turf(owner))
 			owner.Stun(2)
-			playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
+			playsound(L, 'sounds/effects/splat.ogg', 50, TRUE)
 			var/obj/item/organ/internal/stomach/stomach = owner.internal_organs_by_name[BP_STOMACH]
 			var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(get_turf(owner))
 			splat.color = COLOR_MAROON
@@ -54,4 +73,6 @@
 				stomach.ingested.trans_to_obj(splat, min(15, stomach.ingested.total_volume))
 			visible_message(SPAN_DANGER("\The [owner] throws up, as something crawls out!"),
 							SPAN_DANGER("You throw up, leading \the [L] outside."))
+			larva_cooldown = larva_cooldown_time
+			owner.adjust_nutrition(-100)
 	return ..()

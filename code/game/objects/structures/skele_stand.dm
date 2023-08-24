@@ -20,7 +20,7 @@
 	else
 		visible_message("\The [src] rattles on \his stand upon hitting [thingy?"\the [thingy]":"something"].")
 	cooldown = world.time
-	playsound(loc, 'sound/effects/bonerattle.ogg', 40)
+	playsound(loc, 'sounds/effects/bonerattle.ogg', 40)
 
 /obj/structure/skele_stand/attack_hand(mob/user)
 	if(swag.len)

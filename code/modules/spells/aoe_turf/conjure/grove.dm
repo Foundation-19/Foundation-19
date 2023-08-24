@@ -16,7 +16,7 @@
 	var/spread = 0
 	var/datum/seed/seed
 	var/seed_type = /datum/seed/merlin_tear
-	cast_sound = 'sound/magic/repulse.ogg'
+	cast_sound = 'sounds/magic/repulse.ogg'
 
 /datum/spell/aoe_turf/conjure/grove/New()
 	..()

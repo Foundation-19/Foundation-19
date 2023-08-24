@@ -25,7 +25,7 @@
 	icon_state = "box"
 	item_state = "syringe_kit"
 	max_storage_space = DEFAULT_BOX_STORAGE
-	use_sound = 'sound/effects/storage/box.ogg'
+	use_sound = 'sounds/effects/storage/box.ogg'
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
 
 /obj/item/storage/box/open(mob/user)
@@ -207,7 +207,7 @@
 	name = "ammo box"
 	icon_state = "ammo"
 	desc = "A sturdy metal box with several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	use_sound = 'sound/effects/closet_open.ogg'
+	use_sound = 'sounds/effects/closet_open.ogg'
 
 /obj/item/storage/box/ammo/open(mob/user)
 	. = ..()
@@ -453,7 +453,7 @@
 		W.damtype = "burn"
 		W.icon_state = "match_lit"
 		START_PROCESSING(SSobj, W)
-		playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
+		playsound(src.loc, 'sounds/items/match.ogg', 60, 1, -4)
 		user.visible_message(SPAN_NOTICE("[user] strikes the match on the matchbox."))
 	W.update_icon()
 	return

@@ -55,7 +55,7 @@ var/list/sounds_cache = list()
 	set name = "Play Server Sound"
 	if(!check_rights(R_SOUNDS))	return
 
-	var/list/sounds = list("sound/items/bikehorn.ogg","sound/effects/siren.ogg")
+	var/list/sounds = list("sounds/items/bikehorn.ogg","sounds/effects/siren.ogg")
 	sounds += sounds_cache
 
 	var/melody = input("Select a sound from the server to play", "Server sound list") as null|anything in sounds
