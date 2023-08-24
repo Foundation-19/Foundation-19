@@ -3,7 +3,7 @@
 	desc = "A mysterious plague doctor."
 	icon = 'icons/SCP/scp-049.dmi'
 
-	status_flags = NO_ANTAG
+	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED
 
 	//Config
 

@@ -5,7 +5,7 @@
 	icon_state = null
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	status_flags = NO_ANTAG
+	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED
 	var/mob/living/target = null
 	var/last_x = -1
 	var/last_y = -1
