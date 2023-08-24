@@ -112,8 +112,8 @@
 	var/name
 	var/alarm_level = "off"
 
-	var/static/datum/announcement/priority/security/security_announcement_up = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
-	var/static/datum/announcement/priority/security/security_announcement_down = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_up = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_down = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
 
 	// These values are primarily for station alarms and status displays, and which light colors and overlays to use
 	var/light_max_bright = 0.5
