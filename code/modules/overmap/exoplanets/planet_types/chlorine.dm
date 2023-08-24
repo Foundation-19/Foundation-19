@@ -46,7 +46,7 @@
 	large_flora_prob = 0
 
 /area/exoplanet/chlorine
-	ambience = list(/effects/wind/desert0.ogg's/effects/wind/desert1.oggds/effects/wind/desert2.ognds/effects/wind/desert3.ounds/effects/wind/desert4.ounds/effects/wind/desert5.ogg')
+	ambience = list('sounds/effects/wind/desert0.ogg','sounds/effects/wind/desert1.ogg','sounds/effects/wind/desert2.ogg','sounds/effects/wind/desert3.ogg','sounds/effects/wind/desert4.ogg','sounds/effects/wind/desert5.ogg')
 	base_turf = /turf/simulated/floor/exoplanet/chlorine_sand
 
 /turf/simulated/floor/exoplanet/water/shallow/chlorine_liquid

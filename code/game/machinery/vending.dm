@@ -459,7 +459,7 @@
 		else //Just a normal vend, then
 			R.get_product(get_turf(src))
 			src.visible_message("\The [src] clunks as it vends \the [R.item_name].")
-			playsound(src, /machines/vending_machine.ogg', 25, 1)
+			playsound(src, 'sounds/machines/vending_machine.ogg', 25, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 			if(prob(1)) //The vending gods look favorably upon you
 				sleep(3)

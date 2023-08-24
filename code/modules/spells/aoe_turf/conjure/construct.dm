@@ -14,7 +14,7 @@
 	summon_type = list(/obj/structure/constructshell)
 
 	hud_state = "artificer"
-	cast_sound = /items/Deconstruct.ogg'
+	cast_sound = 'sounds/items/Deconstruct.ogg'
 
 /datum/spell/aoe_turf/conjure/construct/lesser
 	charge_max = 1800
@@ -34,7 +34,7 @@
 	summon_type = list(/turf/simulated/floor/cult)
 
 	hud_state = "const_floor"
-	cast_sound = /items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/wall
 	name = "Lesser Construction"
@@ -48,7 +48,7 @@
 	summon_type = list(/turf/simulated/wall/cult)
 
 	hud_state = "const_wall"
-	cast_sound = /items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/wall/reinforced
 	name = "Greater Construction"
@@ -62,7 +62,7 @@
 	cast_delay = 50
 
 	summon_type = list(/turf/simulated/wall/r_wall)
-	cast_sound = /items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/soulstone
 	name = "Summon Soulstone"
@@ -78,7 +78,7 @@
 
 	hud_state = "const_stone"
 	override_base = "const"
-	cast_sound = /items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/pylon
 	name = "Red Pylon"
@@ -93,7 +93,7 @@
 	summon_type = list(/obj/structure/cult/pylon)
 
 	hud_state = "const_pylon"
-	cast_sound = /items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/forcewall/lesser
 	name = "Shield"
@@ -108,7 +108,7 @@
 	duration = 200
 
 	hud_state = "const_juggwall"
-	cast_sound = /magic/forcewall.ogg'
+	cast_sound = 'sounds/magic/forcewall.ogg'
 
 //Code for the Juggernaut construct's forcefield, that seemed like a good place to put it.
 /obj/effect/forcefield/cult

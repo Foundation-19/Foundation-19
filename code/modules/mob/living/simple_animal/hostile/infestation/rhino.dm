@@ -17,7 +17,7 @@
 	maxbodytemp = 1200 // Can survive harsh environments
 
 	movement_cooldown = 5
-	movement_sound = /simple_mob/abominable_infestation/rhino/step.ogg'
+	movement_sound = 'sounds/simple_mob/abominable_infestation/rhino/step.ogg'
 	movement_shake_radius = 3
 
 	meat_type = /obj/item/reagent_containers/food/snacks/abominationmeat
@@ -28,19 +28,19 @@
 	bone_amount = 8
 
 	ai_holder_type = /datum/ai_holder/simple_animal/infestation/rhino
-	death_sounds = list(/simple_mob/abominable_infestation/rhino/death.ogg')
+	death_sounds = list('sounds/simple_mob/abominable_infestation/rhino/death.ogg')
 
 	/// Grants increased movement speed
 	var/enraged = FALSE
 	var/enraged_end_time
 	var/enraged_cooldown
 	var/enraged_cooldown_time = 20 SECONDS
-	var/enraged_movement_sound = /simple_mob/abominable_infestation/rhino/step_angry.ogg'
+	var/enraged_movement_sound = 'sounds/simple_mob/abominable_infestation/rhino/step_angry.ogg'
 
 /obj/item/natural_weapon/hooves/rhino
 	force = 50
 	armor_penetration = 10
-	hitsound = /weapons/heavysmash.ogg'
+	hitsound = 'sounds/weapons/heavysmash.ogg'
 
 /mob/living/simple_animal/hostile/infestation/rhino/Life()
 	. = ..()
@@ -73,5 +73,5 @@
 		R.enraged_cooldown = world.time + R.enraged_cooldown_time
 		R.enraged_end_time = world.time + 10 SECONDS
 		R.enraged = TRUE
-		playsound(holder, /simple_mob/abominable_infestation/rhino/roar.ogg', 75, TRUE, 6)
+		playsound(holder, 'sounds/simple_mob/abominable_infestation/rhino/roar.ogg', 75, TRUE, 6)
 		holder.visible_message(SPAN_DANGER("\The [holder] charges at [new_target]!"))

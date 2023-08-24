@@ -16,8 +16,8 @@
 
 	var/ceiling_type = /turf/unsimulated/floor/shuttle_ceiling
 
-	var/sound_takeoff = /effects/shuttle_takeoff.ogg'
-	var/sound_landing = /effects/shuttle_landing.ogg'
+	var/sound_takeoff = 'sounds/effects/shuttle_takeoff.ogg'
+	var/sound_landing = 'sounds/effects/shuttle_landing.ogg'
 
 	var/knockdown = 1 //whether shuttle downs non-buckled people when it moves
 

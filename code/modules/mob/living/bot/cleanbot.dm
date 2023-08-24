@@ -40,7 +40,7 @@
 	for(var/obj/effect/decal/cleanable/D in view(world.view + 1, src))
 		if(confirmTarget(D))
 			target = D
-			playsound(src, /machines/boop1.ogg', 30)
+			playsound(src, 'sounds/machines/boop1.ogg', 30)
 			return
 
 /mob/living/bot/cleanbot/confirmTarget(obj/effect/decal/cleanable/D)
@@ -78,7 +78,7 @@
 		qdel(D)
 		if(D == target)
 			target = null
-	playsound(src, /machines/boop2.ogg', 30)
+	playsound(src, 'sounds/machines/boop2.ogg', 30)
 	busy = 0
 	update_icons()
 

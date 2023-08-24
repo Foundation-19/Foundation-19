@@ -57,7 +57,7 @@
 
 	if(world.time > last_pump + 15 SECONDS)
 		last_pump = world.time
-		playsound(src, /machines/pump.ogg', 25)
+		playsound(src, 'sounds/machines/pump.ogg', 25)
 		if(!skilled_setup && prob(20))
 			var/obj/item/organ/external/E = H.get_organ(BP_CHEST)
 			E.add_pain(15)
