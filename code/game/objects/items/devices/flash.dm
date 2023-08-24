@@ -63,7 +63,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(M)
 
-	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
 	var/flashfail = 0
 	var/flash_strength = (rand(str_min,str_max))
 
@@ -171,7 +171,7 @@
 			user.show_message(SPAN_WARNING("*click* *click*"), 2)
 			return 0
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
 	flick("[initial(icon_state)]_on", src)
 	if(user && isrobot(user))
 		spawn(0)

@@ -26,7 +26,7 @@
 				qdel(src)
 			return
 		else
-			sound_to(owner, 'sound/effects/psi/power_unlock.ogg')
+			sound_to(owner, 'sounds/effects/psi/power_unlock.ogg')
 			rating = ceil(combined_rank/rank_count)
 			cost_modifier = 1
 			if(rating > 1)

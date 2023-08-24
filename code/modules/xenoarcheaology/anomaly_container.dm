@@ -28,7 +28,7 @@
 	artifact.forceMove(src)
 	underlays += image(artifact)
 	desc = "Used to safely contain and move anomalies. \The [contained] is kept inside."
-	playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
+	playsound(loc, 'sounds/machines/bolts_down.ogg', 50, 1)
 	if(user)
 		user.visible_message(SPAN_NOTICE("[user] puts [artifact] into \the [src]."), SPAN_NOTICE("You put [artifact] into \the [src]."))
 
@@ -39,7 +39,7 @@
 	contained = null
 	underlays.Cut()
 	desc = initial(desc)
-	playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+	playsound(loc, 'sounds/machines/bolts_up.ogg', 50, 1)
 	if(user)
 		user.visible_message(SPAN_NOTICE("[user] opens \the [src]."), SPAN_NOTICE("You open \the [src]."))
 

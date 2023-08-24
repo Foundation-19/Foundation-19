@@ -37,7 +37,7 @@
 		if(prob(failchance))
 			icon_state = "portal1"
 			dangerous = 1
-	playsound(src, 'sound/effects/phasein.ogg', 25, 1)
+	playsound(src, 'sounds/effects/phasein.ogg', 25, 1)
 	target = end
 
 	precision = prec

@@ -8,7 +8,7 @@
 	force = 1
 	w_class = 3
 	slot_flags = SLOT_HEAD | SLOT_MASK
-	hitsound = 'sound/effects/plunger.ogg'
+	hitsound = 'sounds/effects/plunger.ogg'
 	matter = list("steel" = 5000)
 
 /obj/item/device/plunger/robot
@@ -20,4 +20,4 @@
 	attack_verb = list("plunged")
 	force = 1
 	w_class = 3
-	hitsound = 'sound/effects/plunger.ogg'
+	hitsound = 'sounds/effects/plunger.ogg'

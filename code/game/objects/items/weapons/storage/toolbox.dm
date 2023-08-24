@@ -16,7 +16,7 @@
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE //enough to hold all starting contents
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("robusted")
-	use_sound = 'sound/effects/storage/toolbox.ogg'
+	use_sound = 'sounds/effects/storage/toolbox.ogg'
 	matter = list(MATERIAL_STEEL = 5000)
 
 /obj/item/storage/toolbox/open(mob/user)

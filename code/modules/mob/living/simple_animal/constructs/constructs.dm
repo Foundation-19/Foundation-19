@@ -105,7 +105,7 @@
 	name = "armored gauntlet"
 	gender = NEUTER
 	attack_verb = list("smashed", "demolished")
-	hitsound = 'sound/weapons/heavysmash.ogg'
+	hitsound = 'sounds/weapons/heavysmash.ogg'
 	force = 30
 
 /mob/living/simple_animal/construct/armoured/Life()
@@ -166,7 +166,7 @@
 	name = "wicked blade"
 	gender = NEUTER
 	attack_verb = list("slashed", "tore into")
-	hitsound = 'sound/weapons/rapidslice.ogg'
+	hitsound = 'sounds/weapons/rapidslice.ogg'
 	edge = TRUE
 	force = 25
 
@@ -265,7 +265,7 @@
 	name = "malicious spike"
 	gender = NEUTER
 	attack_verb = list("violently stabbed", "ran through")
-	hitsound = 'sound/weapons/pierce.ogg'
+	hitsound = 'sounds/weapons/pierce.ogg'
 	sharp = TRUE
 	force = 25
 

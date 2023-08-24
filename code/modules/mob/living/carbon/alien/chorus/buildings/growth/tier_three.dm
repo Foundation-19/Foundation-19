@@ -27,7 +27,7 @@
 		SPAN_DANGER("\The [src] lunges out and bludgeons you!"),
 		SPAN_WARNING("You hear a whoosh, and then a muffled, heavy thump.")
 	)
-	playsound(src, 'sound/weapons/pierce.ogg', 50, 1)
+	playsound(src, 'sounds/weapons/pierce.ogg', 50, 1)
 	if(istype(L, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = L
 		H.apply_damage(damage, BRUTE, BP_CHEST, armor_pen = penetration)

@@ -115,7 +115,7 @@
 			if(!user.unEquip(thing, src))
 				return
 			cell = thing
-			playsound(loc, 'sound/machines/click.ogg', 10, 1)
+			playsound(loc, 'sounds/machines/click.ogg', 10, 1)
 			user.visible_message(SPAN_NOTICE("\The [user] slots \the [cell] into \the [src]."))
 			update_icon()
 			return
@@ -126,7 +126,7 @@
 				return
 			user.put_in_hands(capacitor)
 			user.visible_message(SPAN_NOTICE("\The [user] unscrews \the [capacitor] from \the [src]."))
-			playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
+			playsound(loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 			capacitor = null
 			update_icon()
 			return
@@ -138,7 +138,7 @@
 			if(!user.unEquip(thing, src))
 				return
 			capacitor = thing
-			playsound(loc, 'sound/machines/click.ogg', 10, 1)
+			playsound(loc, 'sounds/machines/click.ogg', 10, 1)
 			power_per_tick = (power_cost*0.15) * capacitor.rating
 			user.visible_message(SPAN_NOTICE("\The [user] slots \the [capacitor] into \the [src]."))
 			update_icon()
@@ -185,7 +185,7 @@
 			ammo.use(1)
 
 		user.visible_message(SPAN_NOTICE("\The [user] loads \the [src] with \the [loaded]."))
-		playsound(loc, 'sound/weapons/flipblade.ogg', 50, 1)
+		playsound(loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 		update_icon()
 		return
 	. = ..()
@@ -204,7 +204,7 @@
 		if(removing)
 			user.put_in_hands(removing)
 			user.visible_message(SPAN_NOTICE("\The [user] removes \the [removing] from \the [src]."))
-			playsound(loc, 'sound/machines/click.ogg', 10, 1)
+			playsound(loc, 'sounds/machines/click.ogg', 10, 1)
 			update_icon()
 			return
 	. = ..()

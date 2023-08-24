@@ -191,7 +191,7 @@
 	if(affecting.w_uniform)
 		affecting.w_uniform.add_fingerprint(assailant)
 	assailant.do_attack_animation(affecting)
-	playsound(affecting.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+	playsound(affecting.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 	update_icon()
 	return TRUE
 

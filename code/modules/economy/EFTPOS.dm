@@ -131,7 +131,7 @@
 					if(linked_account.deposit(transaction_amount, purpose, machine_id))
 						E.worth -= transaction_amount
 
-						playsound(src, 'sound/machines/chime.ogg', 50, 1)
+						playsound(src, 'sounds/machines/chime.ogg', 50, 1)
 						src.visible_message("[icon2html(src, viewers(get_turf(src)))] \The [src] chimes.")
 						transaction_paid = 1
 					else
@@ -238,7 +238,7 @@
 					if(D)
 						//transfer the money
 						if(D.transfer(linked_account, transaction_amount, "[transaction_purpose] (via [eftpos_name]/[machine_id])"))
-							playsound(src, 'sound/machines/chime.ogg', 50, 1)
+							playsound(src, 'sounds/machines/chime.ogg', 50, 1)
 							src.visible_message("[icon2html(src, viewers(get_turf(src)))] \The [src] chimes.")
 							transaction_paid = 1
 						else
@@ -257,7 +257,7 @@
 				transaction_paid = 0
 			else
 				usr.visible_message(SPAN_INFO("\The [usr] swipes a card through \the [src]."))
-				playsound(src, 'sound/machines/chime.ogg', 50, 1)
+				playsound(src, 'sounds/machines/chime.ogg', 50, 1)
 				src.visible_message("[icon2html(src, usr)] \The [src] chimes.")
 				transaction_paid = 1
 

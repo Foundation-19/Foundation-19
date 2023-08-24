@@ -44,7 +44,7 @@
 			return
 		installed_gun = gun
 		to_chat(user, SPAN_NOTICE("You slide \the [gun] into the firing mechanism."))
-		playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
+		playsound(src, 'sounds/items/Crowbar.ogg', 50, 1)
 		if(installed_gun.fire_delay)
 			cooldown_per_use = installed_gun.fire_delay * 10
 		if(cooldown_per_use < 30)
@@ -64,7 +64,7 @@
 		installed_gun.dropInto(loc)
 		to_chat(user, SPAN_NOTICE("You slide \the [installed_gun] out of the firing mechanism."))
 		size = initial(size)
-		playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
+		playsound(src, 'sounds/items/Crowbar.ogg', 50, 1)
 		installed_gun = null
 		set_pin_data(IC_OUTPUT, 1, weakref(null))
 		push_data()
@@ -564,7 +564,7 @@
 
 	var/turf/depart = get_turf(src)
 	if (!depart || !isPlayerLevel(depart.z))
-		playsound(src, 'sound/effects/sparks2.ogg', 50, 1)
+		playsound(src, 'sounds/effects/sparks2.ogg', 50, 1)
 		return
 
 	var/turf/arrive
@@ -573,7 +573,7 @@
 	else
 		arrive = get_random_turf_in_range(src, 10)
 	if (!arrive || !isPlayerLevel(arrive.z))
-		playsound(src, 'sound/effects/sparks2.ogg', 50, 1)
+		playsound(src, 'sounds/effects/sparks2.ogg', 50, 1)
 		return
 
 	var/step_dir = get_pin_data(IC_INPUT, 2)
@@ -583,7 +583,7 @@
 	depart = get_step(depart, step_dir) || depart
 
 	new /obj/effect/portal(depart, arrive, 30 SECONDS, 33)
-	playsound(src, 'sound/effects/sparks2.ogg', 50, 1)
+	playsound(src, 'sounds/effects/sparks2.ogg', 50, 1)
 
 
 /obj/item/integrated_circuit/manipulation/ai

@@ -6,8 +6,9 @@
 	slots = 1 STORAGE_SLOTS
 	max_w_class = ITEM_SIZE_NORMAL
 	var/list/can_holster = null
-	var/sound_in = 'sound/effects/holster/holsterin.ogg'
-	var/sound_out = 'sound/effects/holster/holsterout.ogg'
+	var/sound_in = 'sounds/effects/holster/holsterin.ogg'
+	var/sound_out = 'sounds/effects/holster/holsterout.ogg'
+  
 	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/holster/Initialize()
@@ -76,8 +77,8 @@
 	name = "thigh holster"
 	desc = "A drop leg holster made of a durable synthetic fiber."
 	icon_state = "holster_thigh"
-	sound_in = 'sound/effects/holster/tactiholsterin.ogg'
-	sound_out = 'sound/effects/holster/tactiholsterout.ogg'
+	sound_in = 'sounds/effects/holster/tactiholsterin.ogg'
+	sound_out = 'sounds/effects/holster/tactiholsterout.ogg'
 	body_location = LEGS
 
 /obj/item/clothing/accessory/storage/holster/machete
@@ -85,8 +86,8 @@
 	desc = "A handsome synthetic leather sheath with matching belt."
 	icon_state = "holster_machete"
 	can_holster = list(/obj/item/material/hatchet/machete)
-	sound_in = 'sound/effects/holster/sheathin.ogg'
-	sound_out = 'sound/effects/holster/sheathout.ogg'
+	sound_in = 'sounds/effects/holster/sheathin.ogg'
+	sound_out = 'sounds/effects/holster/sheathout.ogg'
 	body_location = LEGS
 
 /obj/item/clothing/accessory/storage/holster/knife
@@ -94,8 +95,8 @@
 	desc = "A synthetic leather knife sheath which you can strap on your leg."
 	icon_state = "sheath_leather"
 	can_holster = list(/obj/item/material/knife, /obj/item/melee/energy/knife)
-	sound_in = 'sound/effects/holster/sheathin.ogg'
-	sound_out = 'sound/effects/holster/sheathout.ogg'
+	sound_in = 'sounds/effects/holster/sheathin.ogg'
+	sound_out = 'sounds/effects/holster/sheathout.ogg'
 	body_location = LEGS
 
 /obj/item/clothing/accessory/storage/holster/knife/polymer

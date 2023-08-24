@@ -92,7 +92,7 @@
 	matter = list(MATERIAL_STEEL = 2000)
 	slot_flags = SLOT_BELT
 	silenced = TRUE
-	fire_sound = 'sound/weapons/Genhit.ogg'
+	fire_sound = 'sounds/weapons/Genhit.ogg'
 	projectile_type = /obj/item/projectile/energy/bolt
 	max_shots = 8
 	self_recharge = 1

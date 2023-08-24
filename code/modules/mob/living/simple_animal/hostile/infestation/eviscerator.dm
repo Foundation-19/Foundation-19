@@ -15,7 +15,7 @@
 	maxHealth = 400
 
 	movement_cooldown = 3.5
-	movement_sound = 'sound/simple_mob/abominable_infestation/eviscerator/step.ogg'
+	movement_sound = 'sounds/simple_mob/abominable_infestation/eviscerator/step.ogg'
 
 	meat_type = /obj/item/reagent_containers/food/snacks/abominationmeat
 	meat_amount = 6
@@ -27,8 +27,8 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/infestation/eviscerator
 	//say_list_type = /datum/say_list/infestation_eviscerator
 	death_sounds = list(
-		'sound/simple_mob/abominable_infestation/eviscerator/death_1.ogg',
-		'sound/simple_mob/abominable_infestation/eviscerator/death_2.ogg',
+		'sounds/simple_mob/abominable_infestation/eviscerator/death_1.ogg',
+		'sounds/simple_mob/abominable_infestation/eviscerator/death_2.ogg',
 		)
 
 	transformation_types = list(
@@ -37,7 +37,7 @@
 
 /obj/item/natural_weapon/claws/strong/eviscerator
 	armor_penetration = 10
-	hitsound = 'sound/simple_mob/abominable_infestation/eviscerator/attack.ogg'
+	hitsound = 'sounds/simple_mob/abominable_infestation/eviscerator/attack.ogg'
 
 /datum/ai_holder/simple_animal/infestation/eviscerator
 	returns_home = FALSE
@@ -46,9 +46,9 @@
 	wander = TRUE
 	base_wander_delay = 5
 	var/list/aggro_sounds = list(
-		'sound/simple_mob/abominable_infestation/eviscerator/aggro_1.ogg',
-		'sound/simple_mob/abominable_infestation/eviscerator/aggro_2.ogg',
-		'sound/simple_mob/abominable_infestation/eviscerator/aggro_3.ogg',
+		'sounds/simple_mob/abominable_infestation/eviscerator/aggro_1.ogg',
+		'sounds/simple_mob/abominable_infestation/eviscerator/aggro_2.ogg',
+		'sounds/simple_mob/abominable_infestation/eviscerator/aggro_3.ogg',
 		)
 
 /datum/ai_holder/simple_animal/infestation/eviscerator/give_target(new_target, urgent = FALSE)

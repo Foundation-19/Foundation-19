@@ -223,4 +223,4 @@ var/const/FINGERPRINT_COMPLETE = 6
 			to_chat(src, SPAN_WARNING("You notice faint blood traces on \The [A]."))
 			clue = 1
 		if(clue && has_client_color(/datum/client_color/noir))
-			playsound_local(null, pick('sound/effects/clue1.ogg','sound/effects/clue2.ogg'), 60, is_global = TRUE)
+			playsound_local(null, pick('sounds/effects/clue1.ogg','sounds/effects/clue2.ogg'), 60, is_global = TRUE)

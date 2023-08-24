@@ -19,7 +19,7 @@
 	var/ammo_type = null		//the type of ammo that the gun comes preloaded with
 	var/list/loaded = list()	//stored ammo
 	var/starts_loaded = 1		//whether the gun starts loaded or not, can be overridden for guns crafted in-game
-	var/load_sound = 'sound/weapons/guns/interaction/bullet_insert.ogg'
+	var/load_sound = 'sounds/weapons/guns/interaction/bullet_insert.ogg'
 
 	//For MAGAZINE guns
 	var/magazine_type = null	//the type of magazine that the gun comes preloaded with
@@ -27,8 +27,8 @@
 	var/allowed_magazines		//magazine types that may be loaded. Can be a list or single path
 	var/auto_eject = 0			//if the magazine should automatically eject itself when empty.
 	var/auto_eject_sound = null
-	var/mag_insert_sound = 'sound/weapons/guns/interaction/pistol_magin.ogg'
-	var/mag_remove_sound = 'sound/weapons/guns/interaction/pistol_magout.ogg'
+	var/mag_insert_sound = 'sounds/weapons/guns/interaction/pistol_magin.ogg'
+	var/mag_remove_sound = 'sounds/weapons/guns/interaction/pistol_magout.ogg'
 	var/can_special_reload = TRUE //Whether or not we can tactical/speed reload
 
 	var/is_jammed = 0           //Whether this gun is jammed
@@ -72,7 +72,7 @@
 			else
 				to_chat(user, SPAN_NOTICE("You reflexively clear the jam on \the [src]."))
 				is_jammed = 0
-				playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
+				playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 	if(is_jammed)
 		return null
 	//get the next casing
@@ -207,7 +207,7 @@
 						count++
 				if(count)
 					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
-					playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+					playsound(src.loc, 'sounds/weapons/empty.ogg', 50, 1)
 		AM.update_icon()
 	else if(istype(A, /obj/item/ammo_casing))
 		. = TRUE
@@ -237,7 +237,7 @@
 		if(!do_after(user, 4, src))
 			return
 		is_jammed = 0
-		playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
+		playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
 		user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))

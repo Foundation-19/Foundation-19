@@ -11,7 +11,7 @@
 	var/use_manifest     // This power manifests an item in the user's hands.
 	var/use_description  // A short description of how to use this power, shown via assay.
 	// A sound effect to play when the power is used.
-	var/use_sound = 'sound/effects/psi/power_used.ogg'
+	var/use_sound = 'sounds/effects/psi/power_used.ogg'
 
 /decl/psionic_power/proc/invoke(mob/living/user, atom/target)
 	if(!user.psi)
