@@ -16,7 +16,7 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 3
 
-	movement_sound = 'sound/scp/066/Roll.ogg'
+	movement_sound = 'sounds/scp/066/Roll.ogg'
 
 	ai_holder_type = /datum/ai_holder/simple_animal/retaliate/scp066
 	say_list_type = /datum/say_list/scp066
@@ -46,7 +46,7 @@
 
 	SCP.memeticFlags = MAUDIBLE
 	SCP.memetic_proc = /mob/living/simple_animal/friendly/retaliate/scp066/proc/audibleEffect
-	SCP.memetic_sounds = list('sound/scp/066/BeethovenLOUD.ogg')
+	SCP.memetic_sounds = list('sounds/scp/066/BeethovenLOUD.ogg')
 	SCP.compInit()
 
 	add_language(LANGUAGE_ENGLISH)
@@ -62,10 +62,10 @@
 
 /datum/say_list/scp066
 	speak = list("Eric?")
-	speak_sounds = list('sound/scp/066/Eric1.ogg' = 33, 'sound/scp/066/Eric2.ogg' = 33, 'sound/scp/066/Eric3.ogg' = 33)
+	speak_sounds = list('sounds/scp/066/Eric1.ogg' = 33, 'sounds/scp/066/Eric2.ogg' = 33, 'sounds/scp/066/Eric3.ogg' = 33)
 
 	emote_hear = list("makes a strange sound.", "makes an odd noise.", "plays a strange tune.")
-	emote_hear_sounds = list('sound/scp/066/Notes1.ogg' = 16, 'sound/scp/066/Notes2.ogg' = 16, 'sound/scp/066/Notes3.ogg' = 16, 'sound/scp/066/Notes4.ogg' = 16, 'sound/scp/066/Notes5.ogg' = 16, 'sound/scp/066/Notes6.ogg' = 16)
+	emote_hear_sounds = list('sounds/scp/066/Notes1.ogg' = 16, 'sounds/scp/066/Notes2.ogg' = 16, 'sounds/scp/066/Notes3.ogg' = 16, 'sounds/scp/066/Notes4.ogg' = 16, 'sounds/scp/066/Notes5.ogg' = 16, 'sounds/scp/066/Notes6.ogg' = 16)
 
 /datum/ai_holder/simple_animal/retaliate/scp066
 	//Should be identical to parent simpleanimal

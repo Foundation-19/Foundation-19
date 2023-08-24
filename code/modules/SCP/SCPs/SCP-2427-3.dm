@@ -71,7 +71,7 @@
 /obj/item/natural_weapon/leg_2427_3
 	name = "robotic leg"
 	attack_verb = list("stabbed")
-	hitsound = 'sound/scp/2427/stab.ogg'
+	hitsound = 'sounds/scp/2427/stab.ogg'
 	damtype = BRUTE
 	melee_accuracy_bonus = 200
 	stun_prob = 0 // Only combat!
@@ -115,7 +115,7 @@
 	if(is_sleeping)
 		return
 	wakeup_health = health - 50
-	playsound(src, 'sound/machines/AirlockClose_heavy.ogg', 75, TRUE, 4)
+	playsound(src, 'sounds/machines/AirlockClose_heavy.ogg', 75, TRUE, 4)
 	visible_message(
 		SPAN_NOTICE("[src] falls asleep."),
 		SPAN_NOTICE("You fall asleep."))
@@ -128,7 +128,7 @@
 		return
 	revive()
 	satiety = attacked ? 100 : 400 // If attacked or otherwise forced, it'll be very angry
-	playsound(src, 'sound/mecha/lowpower.ogg', 75, FALSE, 4)
+	playsound(src, 'sounds/mecha/lowpower.ogg', 75, FALSE, 4)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You wake up."))
@@ -140,7 +140,7 @@
 /mob/living/simple_animal/hostile/scp_2427_3/proc/TimeRespawn()
 	if(stat != DEAD)
 		return
-	playsound(src, 'sound/mecha/powerup.ogg', 75, FALSE, 4)
+	playsound(src, 'sounds/mecha/powerup.ogg', 75, FALSE, 4)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You finish the reboot process."))
@@ -167,12 +167,12 @@
 		purity_list |= L
 		to_chat(L, SPAN_GOOD("[src] looks at you surprised. It can grant any wish, right?"))
 		to_chat(src, SPAN_GOOD("[uppertext(src)] IS PURE. IMPOSSIBLE? PURE."))
-		playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE)
+		playsound(src, 'sounds/machines/synth_yes.ogg', 50, TRUE)
 		return
 	impurity_list |= L
 	to_chat(L, SPAN_USERDANGER("You feel unsafe near [src]..."))
 	to_chat(src, SPAN_WARNING("[uppertext(L)] IS IMPURE! IMPURE. IMPURE. IMPURE."))
-	playsound(src, 'sound/machines/synth_no.ogg', 25, TRUE)
+	playsound(src, 'sounds/machines/synth_no.ogg', 25, TRUE)
 
 // Copied my code from 173, because it works the best
 /mob/living/simple_animal/hostile/scp_2427_3/proc/OpenDoor(obj/machinery/door/A)
@@ -209,7 +209,7 @@
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
 	if(open_time > 0.5 SECONDS)
-		playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+		playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
 
 	if(!do_after(src, open_time, A))

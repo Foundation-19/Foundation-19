@@ -120,7 +120,7 @@
 		open_time += 8 SECONDS
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
-	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown_track = world.time + open_time // To avoid sound spam
 
 	if(!do_after(src, open_time, A))
@@ -329,7 +329,7 @@
 	set name = "Greetings"
 	if(!can_special_emote())
 		return
-	playsound(src, 'sound/scp/voice/SCP049_1.ogg', 30)
+	playsound(src, 'sounds/scp/voice/SCP049_1.ogg', 30)
 	show_sound_effect(loc, src)
 
 /mob/living/carbon/human/scp049/verb/yet_another_victim()
@@ -337,7 +337,7 @@
 	set name = "Yet another victim"
 	if(!can_special_emote())
 		return
-	playsound(src, 'sound/scp/voice/SCP049_2.ogg', 30)
+	playsound(src, 'sounds/scp/voice/SCP049_2.ogg', 30)
 	show_sound_effect(loc, src)
 
 /mob/living/carbon/human/scp049/verb/you_are_not_a_doctor()
@@ -345,7 +345,7 @@
 	set name = "You are not a doctor"
 	if(!can_special_emote())
 		return
-	playsound(src, 'sound/scp/voice/SCP049_3.ogg', 30)
+	playsound(src, 'sounds/scp/voice/SCP049_3.ogg', 30)
 	show_sound_effect(loc, src)
 
 /mob/living/carbon/human/scp049/verb/I_sense_the_disease_in_you()
@@ -353,7 +353,7 @@
 	set name = "I sense the disease in you"
 	if(!can_special_emote())
 		return
-	playsound(src, 'sound/scp/voice/SCP049_4.ogg', 30)
+	playsound(src, 'sounds/scp/voice/SCP049_4.ogg', 30)
 	show_sound_effect(loc, src)
 
 /mob/living/carbon/human/scp049/verb/Im_here_to_cure_you()
@@ -361,7 +361,7 @@
 	set name = "I'm here to cure you"
 	if(!can_special_emote())
 		return
-	playsound(src, 'sound/scp/voice/SCP049_5.ogg', 30)
+	playsound(src, 'sounds/scp/voice/SCP049_5.ogg', 30)
 	show_sound_effect(loc, src)
 
 /mob/living/carbon/human/scp049/proc/can_special_emote()

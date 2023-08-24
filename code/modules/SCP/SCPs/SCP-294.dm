@@ -92,7 +92,7 @@
 		return
 
 	uses_tracker++
-	playsound(src, 'sound/scp/294/dispense1.ogg', 35, FALSE)
+	playsound(src, 'sounds/scp/294/dispense1.ogg', 35, FALSE)
 	visible_message(SPAN_NOTICE("[src] dispenses a small paper cup and starts filling it with a liquid."))
 	log_and_message_staff("[user.ckey]/[user.real_name] used SCP-[SCP.designation], dispensing [chosen_reagent]", user, get_turf(src))
 

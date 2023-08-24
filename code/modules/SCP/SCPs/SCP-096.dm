@@ -136,7 +136,7 @@
 			target = Ptarget
 			targets += Ptarget
 
-			playsound(src, 'sound/scp/096/096-rage.ogg', 100, ignore_walls = TRUE)
+			playsound(src, 'sounds/scp/096/096-rage.ogg', 100, ignore_walls = TRUE)
 			addtimer(CALLBACK(src, .proc/finish_screaming), 30 SECONDS)
 		if(STATE_096_SCREAMING, STATE_096_CHASING, STATE_096_SLAUGHTER, STATE_096_STAGGERED)
 			targets += Ptarget
@@ -150,7 +150,7 @@
 /mob/living/scp096/proc/chase_noise()
 	if(current_state == STATE_096_IDLE)
 		return
-	playsound(src, 'sound/scp/096/096-chase.ogg', 100, ignore_walls = TRUE)
+	playsound(src, 'sounds/scp/096/096-chase.ogg', 100, ignore_walls = TRUE)
 	addtimer(CALLBACK(src, .proc/chase_noise), 10 SECONDS)
 
 /mob/living/scp096/proc/OpenDoor(obj/machinery/door/A)
@@ -178,7 +178,7 @@
 			open_time += 0.5 SECONDS
 
 	visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
-	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	if(!do_after(src, open_time, A))
 		return
 
@@ -204,7 +204,7 @@
 		if(STATE_096_IDLE)
 			if(prob(45) && ((world.time - emote_cooldown_track) > emote_cooldown))
 				audible_message(pick("[src] cries.", "[src] sobs.", "[src] wails."))
-				playsound(src, 'sound/scp/096/096-idle.ogg', 80, ignore_walls = TRUE)
+				playsound(src, 'sounds/scp/096/096-idle.ogg', 80, ignore_walls = TRUE)
 				emote_cooldown_track = world.time
 		if(STATE_096_CHASING)
 			//Find path to target
@@ -312,7 +312,7 @@
 		target.anchored = TRUE //Only humans can use grab so we have to do this ugly shit
 		visible_message(SPAN_DANGER("[src] grabs [target] and starts trying to pull [target.p_them()] apart!"))
 
-		playsound(src, 'sound/scp/096/096-kill.ogg', 100)
+		playsound(src, 'sounds/scp/096/096-kill.ogg', 100)
 		target.emote("scream")
 
 		if(!do_after(src, 2 SECONDS, target, DO_DEFAULT | DO_PUBLIC_PROGRESS))

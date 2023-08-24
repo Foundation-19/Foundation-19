@@ -22,7 +22,7 @@
 
 	SCP.memeticFlags = MAUDIBLE|MPERSISTENT|MSYNCED
 	SCP.memetic_proc = /obj/item/scp513/proc/effect
-	SCP.memetic_sounds = list('sound/scp/513/Bell1.ogg', 'sound/scp/513/Bell2.ogg')
+	SCP.memetic_sounds = list('sounds/scp/513/Bell1.ogg', 'sounds/scp/513/Bell2.ogg')
 	SCP.compInit()
 
 	START_PROCESSING(SSobj, src)
@@ -36,7 +36,7 @@
 
 /obj/item/scp513/proc/ring(mob/living/user)
 	visible_message(SPAN_DANGER(SPAN_ITALIC("\The [src] rings, sending chills to your very bone.")))
-	playsound(src, pick('sound/scp/513/Bell1.ogg', 'sound/scp/513/Bell2.ogg'), 50, TRUE)
+	playsound(src, pick('sounds/scp/513/Bell1.ogg', 'sounds/scp/513/Bell2.ogg'), 50, TRUE)
 
 /obj/item/scp513/proc/effect(mob/living/carbon/human/H)
 	if(!H.humanStageHandler.getStage("513_victim"))
@@ -174,7 +174,7 @@
 		return
 
 	to_chat(H, SPAN_DANGER("You are clawed at by [src]!"))
-	sound_to(H, pick('sound/weapons/alien_claw_flesh1.ogg', 'sound/weapons/alien_claw_flesh2.ogg', 'sound/weapons/alien_claw_flesh3.ogg'))
+	sound_to(H, pick('sounds/weapons/alien_claw_flesh1.ogg', 'sounds/weapons/alien_claw_flesh2.ogg', 'sounds/weapons/alien_claw_flesh3.ogg'))
 
 	H.apply_damage(15, BRUTE)
 

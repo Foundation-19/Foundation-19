@@ -17,7 +17,7 @@
 	var/effect_cooldown_counter
 
 	/* Looping sound related stuff, stolen from egor */
-	var/looping_sound = 'sound/scp/012/012.ogg'
+	var/looping_sound = 'sounds/scp/012/012.ogg'
 	var/looping_sound_volume = 50
 	var/sound_id
 	var/datum/sound_token/sound_token
@@ -35,7 +35,7 @@
 
 	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Memetic flags determine required factors for a human to be affected
 	SCP.memetic_proc = /obj/item/paper/scp012/proc/memetic_effect //proc to be called for the effect an affected individual should recieve
-	SCP.memetic_sounds = list('sound/scp/012/012.ogg')
+	SCP.memetic_sounds = list('sounds/scp/012/012.ogg')
 	SCP.compInit()
 
 	sound_id = "[type]_[sequential_id(type)]"
