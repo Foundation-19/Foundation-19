@@ -49,7 +49,7 @@
 	icon = 'icons/obj/guns/crossbow.dmi'
 	icon_state = "crossbow"
 	item_state = "crossbow-solid"
-	fire_sound = 'sound/weapons/punchmiss.ogg' // TODO: Decent THWOK noise.
+	fire_sound = /weapons/punchmiss.ogg' // TODO: Decent THWOK noise.
 	fire_sound_text = "a solid thunk"
 	fire_delay = 25
 	slot_flags = SLOT_BACK
@@ -256,7 +256,7 @@
 		if(cartridge.remaining <= 0)
 			qdel(W)
 		cartridge.matter = list(MATERIAL_STEEL = 500 * cartridge.remaining,MATERIAL_GLASS = 250 * cartridge.remaining)
-		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+		playsound(src.loc, /machines/click.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("The RCD now holds [stored_matter]/[max_stored_matter] matter-units."))
 		update_icon()
 
@@ -267,7 +267,7 @@
 			return
 		stored_matter += 10
 		qdel(A)
-		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+		playsound(src.loc, /machines/click.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("Flashforged bolt reclaimed. The RCD now holds [stored_matter]/[max_stored_matter] matter-units."))
 		update_icon()
 

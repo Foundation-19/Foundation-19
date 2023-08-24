@@ -4,7 +4,7 @@
 	icon = 'icons/obj/inflatable.dmi'
 	health_max = 10
 	health_min_damage = 10
-	damage_hitsound = 'sound/effects/Glasshit.ogg'
+	damage_hitsound = /effects/Glasshit.ogg'
 	var/deploy_path = null
 
 /obj/item/inflatable/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
@@ -41,7 +41,7 @@
 		SPAN_NOTICE("You inflate \the [src]."),
 		range = 5
 	)
-	playsound(loc, 'sound/items/zip.ogg', 75, 1)
+	playsound(loc, /items/zip.ogg', 75, 1)
 	var/obj/structure/inflatable/R = new deploy_path(T)
 	transfer_fingerprints_to(R)
 	R.add_fingerprint(user)
@@ -172,7 +172,7 @@
 	return hand_deflate()
 
 /obj/structure/inflatable/proc/deflate(violent=0)
-	playsound(loc, 'sound/machines/hiss.ogg', 75, 1)
+	playsound(loc, /machines/hiss.ogg', 75, 1)
 	if(violent)
 		visible_message("[src] rapidly deflates!")
 		var/obj/item/inflatable/torn/R = new /obj/item/inflatable/torn(loc)
@@ -293,7 +293,7 @@
 		icon_state = "door_closed"
 
 /obj/structure/inflatable/door/deflate(violent=0)
-	playsound(loc, 'sound/machines/hiss.ogg', 75, 1)
+	playsound(loc, /machines/hiss.ogg', 75, 1)
 	if(violent)
 		visible_message("[src] rapidly deflates!")
 		var/obj/item/inflatable/door/torn/R = new /obj/item/inflatable/door/torn(loc)

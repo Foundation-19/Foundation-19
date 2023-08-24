@@ -28,7 +28,7 @@
 	var/health
 	var/destroy_hits = 10 //How many strong hits it takes to destroy the door
 	var/min_force = 10 //minimum amount of force needed to damage the door with a melee weapon
-	var/hitsound = 'sound/weapons/smash.ogg' //sound door makes when hit with a weapon
+	var/hitsound = /weapons/smash.ogg' //sound door makes when hit with a weapon
 	var/pry_mod = 1 //difficulty scaling for simple animal door prying
 	var/obj/item/stack/material/repairing
 	var/block_air_zones = 1 //If set, air zones cannot merge across the door even when it is opened.
@@ -270,7 +270,7 @@
 		var/obj/item/weldingtool/welder = I
 		if(welder.remove_fuel(0,user))
 			to_chat(user, SPAN_NOTICE("You start to fix dents and weld \the [repairing] into place."))
-			playsound(src, 'sound/items/Welder.ogg', 100, 1)
+			playsound(src, /items/Welder.ogg', 100, 1)
 			if(do_after(user, 5 * repairing.amount, src) && welder && welder.isOn())
 				if(!repairing)
 					return //the materials in the door have been removed before welding was finished.
@@ -284,7 +284,7 @@
 
 	if(repairing && isCrowbar(I))
 		to_chat(user, SPAN_NOTICE("You remove \the [repairing]."))
-		playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+		playsound(src.loc, /items/Crowbar.ogg', 100, 1)
 		repairing.dropInto(user.loc)
 		repairing = null
 		return
@@ -430,7 +430,7 @@
 				flick("door_deny", src)
 				if(world.time > next_clicksound)
 					next_clicksound = world.time + CLICKSOUND_INTERVAL
-					playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 0)
+					playsound(src.loc, /machines/buzz-two.ogg', 50, 0)
 	return
 
 

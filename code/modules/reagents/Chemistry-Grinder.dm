@@ -14,7 +14,7 @@
 	machine_desc = "An industrial grinder with durable blades that shreds objects into their component reagents."
 
 	var/skill = SKILL_CHEMISTRY
-	var/grind_sound = 'sound/machines/grinder.ogg'
+	var/grind_sound = /machines/grinder.ogg'
 	var/list/items = list()
 	var/max_items = 10
 	var/max_item_size = ITEM_SIZE_HUGE
@@ -264,7 +264,7 @@
 	icon_state = "juicer"
 	density = FALSE
 	anchored = FALSE
-	grind_sound = 'sound/machines/juicer.ogg'
+	grind_sound = /machines/juicer.ogg'
 	max_item_size = ITEM_SIZE_NORMAL
 	skill = SKILL_COOKING
 	banned_items = list(

@@ -74,7 +74,7 @@
 	target.apply_damage(4 * damage_stage, BRUTE, hit_zone, used_weapon = "crushing")
 	target.Stun(10)
 	target.Weaken(15)
-	playsound(get_turf(target), 'sound/weapons/pierce.ogg', 25, TRUE, -3)
+	playsound(get_turf(target), /weapons/pierce.ogg', 25, TRUE, -3)
 
 	admin_attack_log(user, target, "Crushed their victim.", "Was crushed.", "crushed")
 
@@ -91,7 +91,7 @@
 
 	if(!damaging.how_open())
 		damaging.createwound(CUT, damaging.min_broken_damage*0.75, 1)
-		playsound(get_turf(target), 'sound/weapons/alien_tail_attack.ogg', 50, TRUE, 5)
+		playsound(get_turf(target), /weapons/alien_tail_attack.ogg', 50, TRUE, 5)
 		target.visible_message(
 			SPAN_DANGER("[user] cuts [target]'s [damaging.name] open!"),
 			SPAN_USERDANGER("[user] cuts your [damaging.name] open!"),
@@ -102,7 +102,7 @@
 	if(user.get_fullness() > 380) // Just slash them
 		target.apply_damage(rand(12, 20) * damage_stage, BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "claws")
 		target.visible_message(SPAN_DANGER("[user] slashes [target]'s [damaging.name]!"))
-		playsound(get_turf(target), 'sound/weapons/alien_claw_flesh3.ogg', 25, TRUE)
+		playsound(get_turf(target), /weapons/alien_claw_flesh3.ogg', 25, TRUE)
 	else // Food!
 		var/datum/reagents/R = new /datum/reagents(3, GLOB.temp_reagents_holder)
 		R.add_reagent(/datum/reagent/nutriment, 3)
@@ -110,6 +110,6 @@
 		qdel(R)
 		target.apply_damage(rand(5, 10) * damage_stage, BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "fangs")
 		target.visible_message(SPAN_DANGER("[user] eats [target]'s [damaging.name]!"))
-		playsound(get_turf(target), 'sound/weapons/alien_claw_flesh1.ogg', 25, TRUE)
+		playsound(get_turf(target), /weapons/alien_claw_flesh1.ogg', 25, TRUE)
 
 	admin_attack_log(user, target, "Devours their victim.", "Was chewed.", "chewed")

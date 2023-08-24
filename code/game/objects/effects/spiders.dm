@@ -38,7 +38,7 @@
 
 		if(WT.remove_fuel(0, user))
 			damage = 15
-			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
+			playsound(loc, /items/Welder.ogg', 100, 1)
 
 	health -= damage
 	healthcheck()

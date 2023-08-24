@@ -24,8 +24,8 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/infestation/larva
 	say_list_type = /datum/say_list/infestation_larva
 	death_sounds = list(
-		'sound/simple_mob/abominable_infestation/larva/death_1.ogg',
-		'sound/simple_mob/abominable_infestation/larva/death_2.ogg',
+		/simple_mob/abominable_infestation/larva/death_1.ogg',
+		/simple_mob/abominable_infestation/larva/death_2.ogg',
 		)
 
 	transformation_types = list(
@@ -41,14 +41,14 @@
 	emote_see = list("wriggles around")
 
 	emote_hear_sounds = list(
-		'sound/simple_mob/abominable_infestation/larva/ambient_1.ogg',
-		'sound/simple_mob/abominable_infestation/larva/ambient_2.ogg',
-		'sound/simple_mob/abominable_infestation/larva/ambient_3.ogg',
+		/simple_mob/abominable_infestation/larva/ambient_1.ogg',
+		/simple_mob/abominable_infestation/larva/ambient_2.ogg',
+		/simple_mob/abominable_infestation/larva/ambient_3.ogg',
 		)
 	emote_see_sounds = list(
-		'sound/simple_mob/abominable_infestation/larva/ambient_1.ogg',
-		'sound/simple_mob/abominable_infestation/larva/ambient_2.ogg',
-		'sound/simple_mob/abominable_infestation/larva/ambient_3.ogg',
+		/simple_mob/abominable_infestation/larva/ambient_1.ogg',
+		/simple_mob/abominable_infestation/larva/ambient_2.ogg',
+		/simple_mob/abominable_infestation/larva/ambient_3.ogg',
 		)
 
 /datum/ai_holder/simple_animal/infestation/larva
@@ -125,7 +125,7 @@
 		return
 
 	visible_message(SPAN_DANGER("[src] bites through [H]'s clothes and skin and wriggles inside!"))
-	playsound(src, 'sound/simple_mob/abominable_infestation/larva/implant.ogg', 50, TRUE)
+	playsound(src, /simple_mob/abominable_infestation/larva/implant.ogg', 50, TRUE)
 	var/obj/item/organ/external/target_organ = pick(valid_organs)
 	target_organ.owner.apply_damage(15, BRUTE, target_organ.organ_tag)
 	forceMove(target_organ)

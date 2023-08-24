@@ -34,7 +34,7 @@ var/list/floor_light_cache = list()
 		if(!WT.remove_fuel(0, user))
 			to_chat(user, SPAN_WARNING("\The [src] must be on to complete this task."))
 			return
-		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+		playsound(src.loc, /items/Welder.ogg', 50, 1)
 		if(!do_after(user, 20, src))
 			return
 		if(!src || !WT.isOn())
@@ -43,7 +43,7 @@ var/list/floor_light_cache = list()
 		set_broken(FALSE)
 		damaged = null
 	else if(isWrench(W))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		playsound(src.loc, /items/Ratchet.ogg', 75, 1)
 		to_chat(user, SPAN_NOTICE("You dismantle the floor light."))
 		new /obj/item/stack/material/steel(src.loc, 1)
 		new /obj/item/stack/material/glass(src.loc, 1)
@@ -61,7 +61,7 @@ var/list/floor_light_cache = list()
 			set_broken(TRUE)
 		else
 			visible_message(SPAN_DANGER("\The [user] attacks \the [src]!"))
-			playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
+			playsound(src.loc, /effects/Glasshit.ogg', 75, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 			if(isnull(damaged)) damaged = 0
 		return TRUE

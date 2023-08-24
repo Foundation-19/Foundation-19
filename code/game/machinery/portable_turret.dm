@@ -138,20 +138,20 @@
 
 		if(/obj/item/gun/energy/taser)
 			eprojectile = /obj/item/projectile/beam
-			eshot_sound = 'sound/weapons/Laser.ogg'
+			eshot_sound = /weapons/Laser.ogg'
 
 		if(/obj/item/gun/energy/stunrevolver)
 			eprojectile = /obj/item/projectile/beam
-			eshot_sound = 'sound/weapons/Laser.ogg'
+			eshot_sound = /weapons/Laser.ogg'
 
 		if(/obj/item/gun/energy/gun)
 			eprojectile = /obj/item/projectile/beam	//If it has, going to kill mode
-			eshot_sound = 'sound/weapons/Laser.ogg'
+			eshot_sound = /weapons/Laser.ogg'
 			egun = 1
 
 		if(/obj/item/gun/energy/gun/nuclear)
 			eprojectile = /obj/item/projectile/beam	//If it has, going to kill mode
-			eshot_sound = 'sound/weapons/Laser.ogg'
+			eshot_sound = /weapons/Laser.ogg'
 			egun = 1
 
 var/list/turret_icons
@@ -314,12 +314,12 @@ var/list/turret_icons
 		if(do_after(user, 50, src))
 			//This code handles moving the turret around. After all, it's a portable turret!
 			if(!anchored)
-				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+				playsound(loc, /items/Ratchet.ogg', 100, 1)
 				anchored = TRUE
 				update_icon()
 				to_chat(user, SPAN_NOTICE("You secure the exterior bolts on the turret."))
 			else if(anchored)
-				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+				playsound(loc, /items/Ratchet.ogg', 100, 1)
 				anchored = FALSE
 				to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 				update_icon()
@@ -674,14 +674,14 @@ var/list/turret_icons
 	switch(build_step)
 		if(0)	//first step
 			if(isWrench(I) && !anchored)
-				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+				playsound(loc, /items/Ratchet.ogg', 100, 1)
 				to_chat(user, SPAN_NOTICE("You secure the external bolts."))
 				anchored = TRUE
 				build_step = 1
 				return
 
 			else if(isCrowbar(I) && !anchored)
-				playsound(loc, 'sound/items/Crowbar.ogg', 75, 1)
+				playsound(loc, /items/Crowbar.ogg', 75, 1)
 				to_chat(user, SPAN_NOTICE("You dismantle the turret construction."))
 				new /obj/item/stack/material/steel( loc, 5)
 				qdel(src)
@@ -699,7 +699,7 @@ var/list/turret_icons
 				return
 
 			else if(istype(I, /obj/item/wrench))
-				playsound(loc, 'sound/items/Ratchet.ogg', 75, 1)
+				playsound(loc, /items/Ratchet.ogg', 75, 1)
 				to_chat(user, SPAN_NOTICE("You unfasten the external bolts."))
 				anchored = FALSE
 				build_step = 0
@@ -708,7 +708,7 @@ var/list/turret_icons
 
 		if(2)
 			if(istype(I, /obj/item/wrench))
-				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+				playsound(loc, /items/Ratchet.ogg', 100, 1)
 				to_chat(user, SPAN_NOTICE("You bolt the metal armor into place."))
 				build_step = 3
 				return
@@ -721,7 +721,7 @@ var/list/turret_icons
 					to_chat(user, SPAN_NOTICE("You need more fuel to complete this task."))
 					return
 
-				playsound(loc, pick('sound/items/Welder.ogg', 'sound/items/Welder2.ogg'), 50, 1)
+				playsound(loc, pick(/items/Welder.ogg',s/items/Welder2.ogg'), 50, 1)
 				if(do_after(user, 20, src))
 					if(!src || !WT.remove_fuel(5, user)) return
 					build_step = 1
@@ -749,7 +749,7 @@ var/list/turret_icons
 				return
 
 			else if(istype(I, /obj/item/wrench))
-				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+				playsound(loc, /items/Ratchet.ogg', 100, 1)
 				to_chat(user, SPAN_NOTICE("You remove the turret's metal armor bolts."))
 				build_step = 2
 				return
@@ -768,7 +768,7 @@ var/list/turret_icons
 
 		if(5)
 			if(isScrewdriver(I))
-				playsound(loc, 'sound/items/Screwdriver.ogg', 100, 1)
+				playsound(loc, /items/Screwdriver.ogg', 100, 1)
 				build_step = 6
 				to_chat(user, SPAN_NOTICE("You close the internal access hatch."))
 				return
@@ -786,7 +786,7 @@ var/list/turret_icons
 				return
 
 			else if(isScrewdriver(I))
-				playsound(loc, 'sound/items/Screwdriver.ogg', 100, 1)
+				playsound(loc, /items/Screwdriver.ogg', 100, 1)
 				build_step = 5
 				to_chat(user, SPAN_NOTICE("You open the internal access hatch."))
 				return
@@ -798,7 +798,7 @@ var/list/turret_icons
 				if(WT.get_fuel() < 5)
 					to_chat(user, SPAN_NOTICE("You need more fuel to complete this task."))
 
-				playsound(loc, pick('sound/items/Welder.ogg', 'sound/items/Welder2.ogg'), 50, 1)
+				playsound(loc, pick(/items/Welder.ogg',s/items/Welder2.ogg'), 50, 1)
 				if(do_after(user, 30, src))
 					if(!src || !WT.remove_fuel(5, user))
 						return
@@ -816,7 +816,7 @@ var/list/turret_icons
 					qdel(src) // qdel
 
 			else if(isCrowbar(I))
-				playsound(loc, 'sound/items/Crowbar.ogg', 75, 1)
+				playsound(loc, /items/Crowbar.ogg', 75, 1)
 				to_chat(user, SPAN_NOTICE("You pry off the turret's exterior armor."))
 				new /obj/item/stack/material/steel(loc, 2)
 				build_step = 6

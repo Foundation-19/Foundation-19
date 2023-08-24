@@ -14,7 +14,7 @@
 	health_resistances = list(
 		BRUTE = 0.1
 	)
-	damage_hitsound = 'sound/effects/grillehit.ogg'
+	damage_hitsound = /effects/grillehit.ogg'
 	var/init_material = MATERIAL_STEEL
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
@@ -81,7 +81,7 @@
 /obj/structure/grille/attack_hand(mob/user as mob)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	playsound(loc, 'sound/effects/grillehit.ogg', 80, 1)
+	playsound(loc, /effects/grillehit.ogg', 80, 1)
 	user.do_attack_animation(src)
 
 	var/damage_dealt = 1
@@ -152,13 +152,13 @@
 		return
 	if(isWirecutter(W))
 		if(!shock(user, 100))
-			playsound(loc, 'sound/items/Wirecutter.ogg', 100, 1)
+			playsound(loc, /items/Wirecutter.ogg', 100, 1)
 			new /obj/item/stack/material/rods(get_turf(src), is_broken() ? 1 : 2, material.name)
 			qdel(src)
 		return
 	if((isScrewdriver(W)) && (istype(loc, /turf/simulated) || anchored))
 		if(!shock(user, 90))
-			playsound(loc, 'sound/items/Screwdriver.ogg', 100, 1)
+			playsound(loc, /items/Screwdriver.ogg', 100, 1)
 			anchored = !anchored
 			user.visible_message(SPAN_NOTICE("[user] [anchored ? "fastens" : "unfastens"] the grille."), \
 								 SPAN_NOTICE("You have [anchored ? "fastened the grille to" : "unfastened the grill from"] the floor."))

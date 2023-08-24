@@ -33,7 +33,7 @@
 	handle_power() // Handles all computer power interaction
 	check_update_ui_need()
 
-	var/static/list/beepsounds = list('sound/effects/compbeep1.ogg','sound/effects/compbeep2.ogg','sound/effects/compbeep3.ogg','sound/effects/compbeep4.ogg','sound/effects/compbeep5.ogg')
+	var/static/list/beepsounds = list(/effects/compbeep1.ogg's/effects/compbeep2.oggds/effects/compbeep3.ognds/effects/compbeep4.ounds/effects/compbeep5.ogg')
 	if(enabled && world.time > ambience_last_played + 60 SECONDS && prob(1))
 		ambience_last_played = world.time
 		playsound(src.loc, pick(beepsounds),15,1,10, is_ambiance = 1)

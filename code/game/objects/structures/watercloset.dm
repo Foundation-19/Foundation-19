@@ -36,15 +36,15 @@
 	being_unclogged = TRUE
 	user.visible_message(SPAN_NOTICE("\The [user] strives valiantly to unclog \the [src] with \the [thing]!"))
 	spawn
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
+		playsound(loc, /effects/plunger.ogg', 75, 1)
 		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
+		playsound(loc, /effects/plunger.ogg', 75, 1)
 		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
+		playsound(loc, /effects/plunger.ogg', 75, 1)
 		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
+		playsound(loc, /effects/plunger.ogg', 75, 1)
 		sleep(5)
-		playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
+		playsound(loc, /effects/plunger.ogg', 75, 1)
 	if(do_after(user, 45, src) && clogged > 0)
 		visible_message(SPAN_NOTICE("With a loud gurgle, \the [src] begins flowing more freely."))
 		playsound(loc, pick(SSfluids.gurgles), 100, 1)
@@ -155,7 +155,7 @@
 /obj/structure/hygiene/toilet/attackby(obj/item/I as obj, mob/living/user)
 	if(isCrowbar(I))
 		to_chat(user, SPAN_NOTICE("You start to [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]."))
-		playsound(loc, 'sound/effects/stonedoor_openclose.ogg', 50, 1)
+		playsound(loc, /effects/stonedoor_openclose.ogg', 50, 1)
 		if(do_after(user, 30, src))
 			user.visible_message(SPAN_NOTICE("[user] [cistern ? "replaces the lid on the cistern" : "lifts the lid off the cistern"]!"), SPAN_NOTICE("You [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]!"), "You hear grinding porcelain.")
 			cistern = !cistern
@@ -266,7 +266,7 @@
 	if(isWrench(I))
 		var/newtemp = input(user, "What setting would you like to set the temperature valve to?", "Water Temperature Valve") in temperature_settings
 		to_chat(user,SPAN_NOTICE("You begin to adjust the temperature valve with \the [I]."))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, /items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 50, src))
 			watertemp = newtemp
 			user.visible_message(SPAN_NOTICE("\The [user] adjusts \the [src] with \the [I]."), SPAN_NOTICE("You adjust the shower with \the [I]."))
@@ -400,7 +400,7 @@
 		return
 
 	to_chat(usr, SPAN_NOTICE("You start washing your hands."))
-	playsound(loc, 'sound/effects/sink_long.ogg', 75, 1)
+	playsound(loc, /effects/sink_long.ogg', 75, 1)
 
 	busy = 1
 	if(!do_after(user, 40, src))
@@ -427,7 +427,7 @@
 	if (istype(RG) && RG.is_open_container() && RG.reagents)
 		RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 		user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
-		playsound(loc, 'sound/effects/sink.ogg', 75, 1)
+		playsound(loc, /effects/sink.ogg', 75, 1)
 		return 1
 
 	else if (istype(O, /obj/item/melee/baton))
@@ -450,7 +450,7 @@
 	else if(istype(O, /obj/item/mop))
 		O.reagents.add_reagent(/datum/reagent/water, 5)
 		to_chat(user, SPAN_NOTICE("You wet \the [O] in \the [src]."))
-		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+		playsound(loc, /effects/slosh.ogg', 25, 1)
 		return
 
 	var/turf/location = user.loc
@@ -460,7 +460,7 @@
 	if(!I || !istype(I,/obj/item)) return
 
 	to_chat(usr, SPAN_NOTICE("You start washing \the [I]."))
-	playsound(loc, 'sound/effects/sink_long.ogg', 75, 1)
+	playsound(loc, /effects/sink_long.ogg', 75, 1)
 
 	busy = 1
 	if(!do_after(user, 40, src))
@@ -569,9 +569,9 @@
 	. = ..()
 	open = !open
 	if(open)
-		playsound(src.loc, 'sound/effects/closet_open.ogg', 20, 1)
+		playsound(src.loc, /effects/closet_open.ogg', 20, 1)
 	else
-		playsound(src.loc, 'sound/effects/closet_close.ogg', 20, 1)
+		playsound(src.loc, /effects/closet_close.ogg', 20, 1)
 
 	user.visible_message(SPAN_NOTICE("\The [user] has [open ? "opened" : "closed"] the faucet."))
 	update_icon()

@@ -359,7 +359,7 @@
 	icon_base = "jaggy"
 	door_icon_base = "metal"
 	icon_reinf = "reinf_metal"
-	hitsound = 'sound/weapons/smash.ogg'
+	hitsound = /weapons/smash.ogg'
 	sheet_singular_name = "chunk"
 	sheet_plural_name = "chunks"
 	stack_type = /obj/item/stack/material/aliumium

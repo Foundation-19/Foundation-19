@@ -13,7 +13,7 @@
 
 /decl/machine_construction/frame/unwrenched/attackby(obj/item/I, mob/user, obj/machinery/machine)
 	if(isWrench(I))
-		playsound(machine.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(machine.loc, /items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20, machine))
 			TRANSFER_STATE(/decl/machine_construction/frame/wrenched)
 			to_chat(user, SPAN_NOTICE("You wrench \the [machine] into place."))
@@ -23,7 +23,7 @@
 		if(!WT.remove_fuel(0, user))
 			to_chat(user, "The welding tool must be on to complete this task.")
 			return TRUE
-		playsound(machine.loc, 'sound/items/Welder.ogg', 50, 1)
+		playsound(machine.loc, /items/Welder.ogg', 50, 1)
 		if(do_after(user, 20, machine))
 			if(!WT.isOn())
 				return TRUE
@@ -50,7 +50,7 @@
 
 /decl/machine_construction/frame/wrenched/attackby(obj/item/I, mob/user, obj/machinery/machine)
 	if(isWrench(I))
-		playsound(machine.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(machine.loc, /items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20, machine))
 			TRANSFER_STATE(/decl/machine_construction/frame/unwrenched)
 			to_chat(user, SPAN_NOTICE("You unfasten \the [machine]."))
@@ -61,7 +61,7 @@
 		if(C.get_amount() < 5)
 			to_chat(user, SPAN_WARNING("You need five lengths of cable to add them to \the [machine]."))
 			return TRUE
-		playsound(machine.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+		playsound(machine.loc, /items/Deconstruct.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("You start to add cables to the frame."))
 		if(do_after(user, 20, machine) && C.use(5))
 			TRANSFER_STATE(/decl/machine_construction/frame/awaiting_circuit)
@@ -93,7 +93,7 @@
 				return FALSE
 			TRANSFER_STATE(/decl/machine_construction/frame/awaiting_parts)
 			user.unEquip(I, machine)
-			playsound(machine.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(machine.loc, /items/Deconstruct.ogg', 50, 1)
 			to_chat(user, SPAN_NOTICE("You add the circuit board to \the [machine]."))
 			machine.circuit = I
 			return
@@ -102,7 +102,7 @@
 			return TRUE
 	if(isWirecutter(I))
 		TRANSFER_STATE(/decl/machine_construction/frame/wrenched)
-		playsound(machine.loc, 'sound/items/Wirecutter.ogg', 50, 1)
+		playsound(machine.loc, /items/Wirecutter.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("You remove the cables."))
 		new /obj/item/stack/cable_coil(machine.loc, 5)
 
@@ -125,13 +125,13 @@
 /decl/machine_construction/frame/awaiting_parts/attackby(obj/item/I, mob/user, obj/machinery/constructable_frame/machine)
 	if(isCrowbar(I))
 		TRANSFER_STATE(/decl/machine_construction/frame/awaiting_circuit)
-		playsound(machine.loc, 'sound/items/Crowbar.ogg', 50, 1)
+		playsound(machine.loc, /items/Crowbar.ogg', 50, 1)
 		machine.circuit.dropInto(machine.loc)
 		machine.circuit = null
 		to_chat(user, SPAN_NOTICE("You remove the circuit board."))
 		return
 	if(isScrewdriver(I))
-		playsound(machine.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+		playsound(machine.loc, /items/Screwdriver.ogg', 50, 1)
 		var/obj/machinery/new_machine = new machine.circuit.build_path(machine.loc, machine.dir, FALSE)
 		machine.circuit.construct(new_machine)
 		new_machine.install_component(machine.circuit, refresh_parts = FALSE)

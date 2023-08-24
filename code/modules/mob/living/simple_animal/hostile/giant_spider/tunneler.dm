@@ -84,7 +84,7 @@
 			continue
 
 		visible_message(SPAN_DANGER("\The [src] erupts from underneath, and hits \the [L]!"))
-		playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+		playsound(src, /weapons/heavysmash.ogg', 75, 1)
 		show_sound_effect(src.loc, src)
 		L.Weaken(3)
 		overshoot = FALSE
@@ -96,7 +96,7 @@
 
 	// Otherwise we need to keep going.
 	to_chat(src, SPAN_WARNING("You overshoot your target!"))
-	playsound(src, 'sound/weapons/punchmiss.ogg', 75, 1)
+	playsound(src, /weapons/punchmiss.ogg', 75, 1)
 	var/dir_to_go = get_dir(starting_turf, destination)
 	for (var/i = 1 to rand(2, 4))
 		destination = get_step(destination, dir_to_go)
@@ -129,7 +129,7 @@
 
 		// Stun anyone in our way.
 		for (var/mob/living/L in T)
-			playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+			playsound(src, /weapons/heavysmash.ogg', 75, 1)
 			show_sound_effect(src.loc, src)
 			L.Weaken(2)
 
@@ -138,7 +138,7 @@
 
 		// Visuals and sound.
 		dig_under_floor(get_turf(src))
-		playsound(src, 'sound/effects/break_stone.ogg', 75, 1)
+		playsound(src, /effects/break_stone.ogg', 75, 1)
 		sleep(tunnel_tile_speed)
 
 // For visuals.

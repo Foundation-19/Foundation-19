@@ -246,7 +246,7 @@
 	user.forceMove(src)
 	LAZYDISTINCTADD(pilots, user)
 	sync_access()
-	playsound(src, 'sound/machines/windowdoor.ogg', 50, 1)
+	playsound(src, /machines/windowdoor.ogg', 50, 1)
 	if(user.client) user.client.screen |= hud_elements
 	LAZYDISTINCTADD(user.additional_vision_handlers, src)
 	update_pilots()
@@ -389,7 +389,7 @@
 
 				user.put_in_hands(body.cell)
 				to_chat(user, SPAN_NOTICE("You remove \the [body.cell] from \the [src]."))
-				playsound(user.loc, 'sound/items/Crowbar.ogg', 50, 1)
+				playsound(user.loc, /items/Crowbar.ogg', 50, 1)
 				visible_message(SPAN_NOTICE("\The [user] pries out \the [body.cell] using \the [thing]."))
 				power = MECH_POWER_OFF
 				hud_power_control.queue_icon_update()
@@ -406,7 +406,7 @@
 				if(!do_after(user, delay, src, DO_DEFAULT | DO_PUBLIC_PROGRESS))
 					return
 				visible_message(SPAN_NOTICE("\The [user] forces \the [src]'s [body.hatch_descriptor] open using the \the [thing]."))
-				playsound(user.loc, 'sound/machines/bolts_up.ogg', 25, 1)
+				playsound(user.loc, /machines/bolts_up.ogg', 25, 1)
 				hatch_locked = FALSE
 				hatch_closed = FALSE
 				for(var/mob/pilot in pilots)
@@ -426,7 +426,7 @@
 					thing.forceMove(body)
 					body.cell = thing
 					to_chat(user, SPAN_NOTICE("You install \the [body.cell] into \the [src]."))
-					playsound(user.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+					playsound(user.loc, /items/Screwdriver.ogg', 50, 1)
 					visible_message(SPAN_NOTICE("\The [user] installs \the [body.cell] into \the [src]."))
 				return
 			else if(istype(thing, /obj/item/device/robotanalyzer))
@@ -461,8 +461,8 @@
 
 /mob/living/exosuit/attack_generic(mob/user, damage, attack_message = "smashes into")
 	if(..())
-		playsound(loc, 'sound/effects/metal_close.ogg', 40, 1)
-		playsound(loc, 'sound/weapons/tablehit1.ogg', 40, 1)
+		playsound(loc, /effects/metal_close.ogg', 40, 1)
+		playsound(loc, /weapons/tablehit1.ogg', 40, 1)
 
 /mob/living/exosuit/proc/attack_self(mob/user)
 	return visible_message("\The [src] pokes itself.")

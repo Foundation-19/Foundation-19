@@ -9,7 +9,7 @@
 	w_class = ITEM_SIZE_LARGE
 	force = 30
 	throwforce = 10
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = /weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
 /obj/item/melee/cultblade/attack(mob/living/M, mob/living/user, target_zone)
@@ -35,7 +35,7 @@
 	if(user.unEquip(src))
 		throw_at(get_edge_target_turf(src, pick(GLOB.alldirs)), rand(1,3), throw_speed)
 
-	var/spooky = pick('sound/hallucinations/growl1.ogg', 'sound/hallucinations/growl2.ogg', 'sound/hallucinations/growl3.ogg', 'sound/hallucinations/wail.ogg')
+	var/spooky = pick(/hallucinations/growl1.ogg',s/hallucinations/growl2.ogg'ds/hallucinations/growl3.oggnds/hallucinations/wail.ogg')
 	playsound(loc, spooky, 50, 1)
 	show_sound_effect(loc, user)
 

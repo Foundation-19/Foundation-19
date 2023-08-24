@@ -87,7 +87,7 @@
 		for(var/mob/pilot in owner.pilots)
 			to_chat(pilot, SPAN_DANGER("Warning: Deflector shield failure detect, shutting down"))
 		toggle()
-		playsound(owner.loc,'sound/mecha/internaldmgalarm.ogg',35,1)
+		playsound(owner.loc,/mecha/internaldmgalarm.ogg',35,1)
 		return difference
 	else return 0
 
@@ -95,7 +95,7 @@
 	if(!aura)
 		return
 	aura.toggle()
-	playsound(owner,'sound/weapons/flash.ogg',35,1)
+	playsound(owner,/weapons/flash.ogg',35,1)
 	update_icon()
 	if(aura.active)
 		START_PROCESSING(SSobj, src)
@@ -201,7 +201,7 @@
 			P.damage = shields.stop_damage(P.damage)
 			user.visible_message(SPAN_WARNING("\The [shields.owner]'s shields flash and crackle."))
 			flick("shield_impact", src)
-			playsound(user,'sound/effects/basscannon.ogg',35,1)
+			playsound(user,/effects/basscannon.ogg',35,1)
 			//light up the night.
 			new /obj/effect/effect/smoke/illumination(user.loc, 5, 4, 1, "#ffffff")
 			if(P.damage <= 0)
@@ -219,7 +219,7 @@
 	if(shields.charge && TT.speed <= 5)
 		user.visible_message(SPAN_WARNING("\The [shields.owner]'s shields flash briefly as they deflect \the [M]."))
 		flick("shield_impact", src)
-		playsound(user,'sound/effects/basscannon.ogg',10,1)
+		playsound(user,/effects/basscannon.ogg',10,1)
 		return AURA_FALSE|AURA_CANCEL
 	//Too fast!
 
@@ -254,7 +254,7 @@
 
 	if (user.a_intent == I_HURT)
 		user.visible_message(SPAN_DANGER("\The [user] swings \the [src] at \the [A]!"))
-		playsound(user, 'sound/mecha/mechmove03.ogg', 35, 1)
+		playsound(user, /mecha/mechmove03.ogg', 35, 1)
 		return ..()
 
 /obj/item/material/hatchet/machete/mech/attack_self(mob/living/user)
@@ -268,12 +268,12 @@
 		if (E)
 			E.setClickCooldown(1.35 SECONDS)
 			E.visible_message(SPAN_DANGER("\The [E] swings \the [src] back, preparing for an attack!"), blind_message = SPAN_DANGER("You hear the loud hissing of hydraulics!"))
-			playsound(E, 'sound/mecha/mechmove03.ogg', 35, 1)
+			playsound(E, /mecha/mechmove03.ogg', 35, 1)
 			if (do_after(E, 1.2 SECONDS, get_turf(user), do_flags = DO_SHOW_PROGRESS | DO_TARGET_CAN_TURN | DO_PUBLIC_PROGRESS | DO_USER_UNIQUE_ACT) && E && MC)
 				for (var/mob/living/M in orange(1, E))
 					attack(M, E, E.zone_sel.selecting, FALSE)
 				E.spin(0.65 SECONDS, 0.125 SECONDS)
-				playsound(E, 'sound/mecha/mechturn.ogg', 40, 1)
+				playsound(E, /mecha/mechturn.ogg', 40, 1)
 
 /obj/item/mech_equipment/mounted_system/melee/mechete
 	icon_state = "mech_blade"
@@ -312,7 +312,7 @@
 				last_push = world.time
 				if (do_after(owner, 0.5 SECONDS, get_turf(owner), do_flags = DO_SHOW_PROGRESS | DO_TARGET_CAN_TURN | DO_PUBLIC_PROGRESS | DO_USER_UNIQUE_ACT) && owner)
 					owner.visible_message(SPAN_WARNING("\The [owner] slams the area in front \the [src]!"), blind_message = SPAN_WARNING("You hear a loud hiss and feel a strong gust of wind!"))
-					playsound(src ,'sound/effects/bang.ogg',35,1)
+					playsound(src ,/effects/bang.ogg',35,1)
 					var/list/turfs = list()
 					var/front = get_step(get_turf(owner), owner.dir)
 					turfs += front
@@ -331,7 +331,7 @@
 	if (.) //FORM A SHIELD WALL!
 		if (last_max_block + 2 SECONDS < world.time)
 			owner.visible_message(SPAN_WARNING("\The [owner] raises \the [src], locking it in place!"), blind_message = SPAN_WARNING("You hear the whir of motors and scratching metal!"))
-			playsound(src ,'sound/effects/bamf.ogg',35,1)
+			playsound(src ,/effects/bamf.ogg',35,1)
 			owner.setClickCooldown(0.8 SECONDS)
 			blocking = TRUE
 			last_max_block = world.time
@@ -434,7 +434,7 @@
 
 		if (prob(shield.block_chance(throw_damage, 0, source = M, attacker = TT.thrower)))
 			user.visible_message(SPAN_WARNING("\The [M] bounces off \the [user]'s [shield]."))
-			playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+			playsound(user.loc, /weapons/Genhit.ogg', 50, 1)
 			return AURA_FALSE|AURA_CANCEL
 
 /obj/aura/mech_ballistic/attackby(obj/item/I, mob/user)
@@ -442,7 +442,7 @@
 	if (shield)
 		if (prob(shield.block_chance(I.force, I.armor_penetration, source = I, attacker = user)))
 			user.visible_message(SPAN_WARNING("\The [I] is blocked by \the [user]'s [shield]."))
-			playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+			playsound(user.loc, /weapons/Genhit.ogg', 50, 1)
 			return AURA_FALSE|AURA_CANCEL
 
 /obj/item/mech_equipment/flash
@@ -458,7 +458,7 @@
 	origin_tech = list(TECH_MAGNET = 2, TECH_COMBAT = 2)
 
 /obj/item/mech_equipment/flash/proc/area_flash()
-	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	playsound(src.loc, /weapons/flash.ogg', 100, 1)
 	var/flash_time = (rand(flash_min,flash_max) - 1)
 
 	var/obj/item/cell/C = owner.get_cell()
@@ -506,7 +506,7 @@
 
 		if(istype(O))
 
-			playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+			playsound(src.loc, /weapons/flash.ogg', 100, 1)
 			var/flash_time = (rand(flash_min,flash_max))
 
 			var/obj/item/cell/C = owner.get_cell()

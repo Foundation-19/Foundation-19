@@ -59,14 +59,14 @@
 /obj/machinery/power/tracker/attackby(obj/item/W, mob/user)
 
 	if(isCrowbar(W))
-		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+		playsound(src.loc, /machines/click.ogg', 50, 1)
 		user.visible_message(SPAN_NOTICE("[user] begins to take the glass off the solar tracker."))
 		if(do_after(user, 50,src))
 			var/obj/item/solar_assembly/S = locate() in src
 			if(S)
 				S.dropInto(loc)
 				S.give_glass()
-			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(src.loc, /items/Deconstruct.ogg', 50, 1)
 			user.visible_message(SPAN_NOTICE("[user] takes the glass off the tracker."))
 			qdel(src)
 		return

@@ -132,7 +132,7 @@
 
 /obj/item/device/lightreplacer/proc/Use(mob/user)
 
-	playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+	playsound(src.loc, /machines/click.ogg', 50, 1)
 	AddUses(-1)
 	return 1
 

@@ -66,14 +66,14 @@ var/list/solars_list = list()
 /obj/machinery/power/solar/attackby(obj/item/W, mob/user)
 
 	if(isCrowbar(W))
-		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+		playsound(src.loc, /machines/click.ogg', 50, 1)
 		user.visible_message(SPAN_NOTICE("[user] begins to take the glass off the solar panel."))
 		if(do_after(user, 50,src))
 			var/obj/item/solar_assembly/S = locate() in src
 			if(S)
 				S.dropInto(loc)
 				S.give_glass()
-			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(src.loc, /items/Deconstruct.ogg', 50, 1)
 			user.visible_message(SPAN_NOTICE("[user] takes the glass off the solar panel."))
 			qdel(src)
 		return
@@ -239,20 +239,20 @@ var/list/solars_list = list()
 			pixel_y = 0
 			pixel_z = 0
 			user.visible_message(SPAN_NOTICE("[user] wrenches the solar assembly into place."))
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+			playsound(src.loc, /items/Ratchet.ogg', 75, 1)
 			return 1
 	else
 		if(isWrench(W))
 			anchored = FALSE
 			user.visible_message(SPAN_NOTICE("[user] unwrenches the solar assembly from it's place."))
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+			playsound(src.loc, /items/Ratchet.ogg', 75, 1)
 			return 1
 
 		if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_GLASS)
 			var/obj/item/stack/material/S = W
 			if(S.use(2))
 				glass_type = W.type
-				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+				playsound(src.loc, /machines/click.ogg', 50, 1)
 				user.visible_message(SPAN_NOTICE("[user] places the glass on the solar assembly."))
 				if(tracker)
 					new /obj/machinery/power/tracker(get_turf(src), src)

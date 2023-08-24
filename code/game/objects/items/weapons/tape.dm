@@ -32,7 +32,7 @@
 			if(!H || !src || !H.organs_by_name[BP_HEAD] || !H.has_eyes() || H.glasses || (H.head && (H.head.body_parts_covered & FACE)))
 				return
 
-			playsound(src, 'sound/effects/tape.ogg',25)
+			playsound(src, /effects/tape.ogg',25)
 			user.visible_message(SPAN_DANGER("\The [user] has taped up \the [H]'s eyes!"))
 			H.equip_to_slot_or_del(new /obj/item/clothing/glasses/blindfold/tape(H), slot_glasses)
 
@@ -49,7 +49,7 @@
 			if(H.head && (H.head.body_parts_covered & FACE))
 				to_chat(user, SPAN_WARNING("Remove their [H.head] first."))
 				return
-			playsound(src, 'sound/effects/tape.ogg',25)
+			playsound(src, /effects/tape.ogg',25)
 			user.visible_message(SPAN_DANGER("\The [user] begins taping up \the [H]'s mouth!"))
 
 			if(!do_after(user, 3 SECONDS, H))
@@ -58,12 +58,12 @@
 			// Repeat failure checks.
 			if(!H || !src || !H.organs_by_name[BP_HEAD] || !H.check_has_mouth() || H.wear_mask || (H.head && (H.head.body_parts_covered & FACE)))
 				return
-			playsound(src, 'sound/effects/tape.ogg',25)
+			playsound(src, /effects/tape.ogg',25)
 			user.visible_message(SPAN_DANGER("\The [user] has taped up \the [H]'s mouth!"))
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/muzzle/tape(H), slot_wear_mask)
 
 		else if(user.zone_sel.selecting == BP_R_HAND || user.zone_sel.selecting == BP_L_HAND)
-			playsound(src, 'sound/effects/tape.ogg',25)
+			playsound(src, /effects/tape.ogg',25)
 			var/obj/item/handcuffs/cable/tape/T = new(user)
 			if(!T.place_handcuffs(H, user))
 				qdel(T)
@@ -140,7 +140,7 @@
 
 	if(!user.unEquip(src, source_turf))
 		return
-	playsound(src, 'sound/effects/tape.ogg',25)
+	playsound(src, /effects/tape.ogg',25)
 
 	layer = ABOVE_WINDOW_LAYER
 

@@ -495,7 +495,7 @@ var/list/mining_floors = list()
 			return
 
 		to_chat(user, SPAN_WARNING("You start digging."))
-		playsound(user.loc, 'sound/effects/rustle1.ogg', 50, 1)
+		playsound(user.loc, /effects/rustle1.ogg', 50, 1)
 
 		if(!do_after(user,40, src)) return
 

@@ -42,7 +42,7 @@
 			SPAN_WARNING("Something bursts out of [M]'s chest!"),
 			SPAN_DANGER(FONT_LARGE("Something bursts out of your chest in a shower of [H.species.get_blood_name()]!"))
 		) // alien (1979)
-		playsound(H, 'sound/effects/splat.ogg', 50, FALSE)
+		playsound(H, /effects/splat.ogg', 50, FALSE)
 		var/datum/reagent/blood/B = locate(/datum/reagent/blood) in H.vessel.reagent_list
 		blood_splatter(H, B, 1)
 		var/obj/item/organ/external/organ = H.get_organ(BP_CHEST)

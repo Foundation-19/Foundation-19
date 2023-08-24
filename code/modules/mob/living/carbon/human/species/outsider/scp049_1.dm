@@ -79,11 +79,11 @@
 /datum/species/scp049_1/handle_environment_special(mob/living/carbon/human/H)
 	if (H.stat == CONSCIOUS)
 		if (prob(5))
-			playsound(H.loc, 'sound/hallucinations/far_noise.ogg', 15, 1)
+			playsound(H.loc, /hallucinations/far_noise.ogg', 15, 1)
 		else if (prob(5))
-			playsound(H.loc, 'sound/hallucinations/veryfar_noise.ogg', 15, 1)
+			playsound(H.loc, /hallucinations/veryfar_noise.ogg', 15, 1)
 		else if (prob(5))
-			playsound(H.loc, 'sound/hallucinations/wail.ogg', 15, 1)
+			playsound(H.loc, /hallucinations/wail.ogg', 15, 1)
 
 	for(var/obj/item/organ/I in H.internal_organs)
 		if (I.damage > 0)
@@ -198,7 +198,7 @@
 	last_special = world.time + 5 SECONDS
 
 	src.visible_message(SPAN_DANGER("\The [src] hunkers down over \the [target], tearing into their flesh."))
-	playsound(loc, 'sound/effects/wounds/bonebreak3.ogg', 20, 1)
+	playsound(loc, /effects/wounds/bonebreak3.ogg', 20, 1)
 	show_sound_effect(loc, src)
 
 	target.adjustHalLoss(50)
@@ -215,7 +215,7 @@
 			else
 				to_chat(src,SPAN_DANGER("You shred and rip apart \the [target]'s remains!."))
 				target.gib()
-				playsound(loc, 'sound/effects/splat.ogg', 40, 1)
+				playsound(loc, /effects/splat.ogg', 40, 1)
 			return
 
 		to_chat(target,SPAN_DANGER("\The [src] scrapes your flesh from your bones!"))
@@ -234,7 +234,7 @@
 		src.adjustBrainLoss(-5)
 		src.adjust_nutrition(40)
 
-		playsound(loc, 'sound/effects/splat.ogg', 20, 1)
+		playsound(loc, /effects/splat.ogg', 20, 1)
 		new /obj/effect/decal/cleanable/blood/splatter(get_turf(src), target.species.blood_color)
 		if (target.getBruteLoss() > target.maxHealth*0.75)
 			if (prob(50))
@@ -266,7 +266,7 @@
 
 	var/turf/T = get_turf(src)
 	new /obj/effect/decal/cleanable/blood(T)
-	playsound(T, 'sound/effects/splat.ogg', 20, 1)
+	playsound(T, /effects/splat.ogg', 20, 1)
 
 	addtimer(CALLBACK(src, .proc/zumbie), 20)
 
@@ -315,4 +315,4 @@
 	species.handle_post_spawn(src)
 
 	var/turf/T = get_turf(src)
-	playsound(T, 'sound/hallucinations/wail.ogg', 25, 1)
+	playsound(T, /hallucinations/wail.ogg', 25, 1)

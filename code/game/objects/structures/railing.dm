@@ -78,7 +78,7 @@
 /obj/structure/railing/handle_death_change(new_death_state)
 	if(new_death_state)
 		visible_message(SPAN_DANGER("\The [src] [material.destruction_desc]!"))
-		playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
+		playsound(loc, /effects/grillehit.ogg', 50, 1)
 		material.place_shard(get_turf(usr))
 		qdel(src)
 
@@ -201,7 +201,7 @@
 			if(G.force_danger())
 				if(user.a_intent == I_HURT)
 					visible_message(SPAN_DANGER("[G.assailant] slams [G.affecting]'s face against \the [src]!"))
-					playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
+					playsound(loc, /effects/grillehit.ogg', 50, 1)
 					var/blocked = G.affecting.get_blocked_ratio(BP_HEAD, BRUTE, damage = 8)
 					if (prob(30 * (1 - blocked)))
 						G.affecting.Weaken(5)
@@ -220,7 +220,7 @@
 	// Dismantle
 	if(isWrench(W))
 		if(!anchored)
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+			playsound(src.loc, /items/Ratchet.ogg', 50, 1)
 			if(do_after(user, 20, src))
 				if(anchored)
 					return
@@ -229,7 +229,7 @@
 				qdel(src)
 	// Wrench Open
 		else
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+			playsound(src.loc, /items/Ratchet.ogg', 50, 1)
 			if(density)
 				user.visible_message(SPAN_NOTICE("\The [user] wrenches \the [src] open."), SPAN_NOTICE("You wrench \the [src] open."))
 				density = FALSE
@@ -245,7 +245,7 @@
 			if(!health_damaged())
 				to_chat(user, SPAN_WARNING("\The [src] does not need repairs."))
 				return
-			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+			playsound(src.loc, /items/Welder.ogg', 50, 1)
 			if(do_after(user, 20, src))
 				if(!health_damaged())
 					return
@@ -259,7 +259,7 @@
 			to_chat(user, SPAN_NOTICE("You need to wrench \the [src] from back into place first."))
 			return
 		user.visible_message(anchored ? SPAN_NOTICE("\The [user] begins unscrew \the [src].") : SPAN_NOTICE("\The [user] begins fasten \the [src].") )
-		playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
+		playsound(loc, /items/Screwdriver.ogg', 75, 1)
 		if(do_after(user, 10, src) && density)
 			to_chat(user, (anchored ? SPAN_NOTICE("You have unfastened \the [src] from the floor.") : SPAN_NOTICE("You have fastened \the [src] to the floor.")))
 			anchored = !anchored
@@ -293,7 +293,7 @@
 		L.forceMove(target_turf)
 		L.visible_message(SPAN_WARNING("\The [L] [pick("falls", "flies")] over \the [src]!"))
 		L.Weaken(2)
-		playsound(L, 'sound/effects/grillehit.ogg', 25, 1, FALSE)
+		playsound(L, /effects/grillehit.ogg', 25, 1, FALSE)
 	else
 		..()
 

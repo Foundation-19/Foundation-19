@@ -75,7 +75,7 @@
 		if(cartridge.remaining <= 0)
 			qdel(W)
 		cartridge.matter = list(MATERIAL_STEEL = 500 * cartridge.remaining,MATERIAL_GLASS = 250 * cartridge.remaining)
-		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+		playsound(src.loc, /machines/click.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("The RCD now holds [stored_matter]/[max_stored_matter] matter-units."))
 		update_icon()
 		return
@@ -96,7 +96,7 @@
 	work_id++
 	work_mode = next_in_list(work_mode, work_modes)
 	to_chat(user, SPAN_NOTICE("Changed mode to '[work_mode]'"))
-	playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
+	playsound(src.loc, /effects/pop.ogg', 50, 0)
 	if(prob(20)) src.spark_system.start()
 
 /obj/item/rcd/afterattack(atom/A, mob/user, proximity)
@@ -206,7 +206,7 @@
 			rcd.lowAmmo(user)
 			return FALSE
 
-		playsound(get_turf(user), 'sound/machines/click.ogg', 50, 1)
+		playsound(get_turf(user), /machines/click.ogg', 50, 1)
 		rcdm.work_message(target, user, rcd)
 
 		if(rcdm.delay)
@@ -215,7 +215,7 @@
 				return FALSE
 
 		rcdm.do_handle_work(target)
-		playsound(get_turf(user), 'sound/items/Deconstruct.ogg', 50, 1)
+		playsound(get_turf(user), /items/Deconstruct.ogg', 50, 1)
 		return TRUE
 
 	return FALSE

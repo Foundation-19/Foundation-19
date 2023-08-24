@@ -44,7 +44,7 @@
 				O.owner.apply_damage(15, BRUTE, O.organ_tag)
 			O.implants -= src
 			forceMove(get_turf(O))
-			playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
+			playsound(src, /effects/splat.ogg', 50, TRUE)
 			return
 		if(icon_state != icon_egg) // Become egg
 			// We're in combat, forget evolving for a moment

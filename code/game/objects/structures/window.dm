@@ -4,7 +4,7 @@
 	icon = 'icons/obj/window.dmi'
 	density = TRUE
 	w_class = ITEM_SIZE_NORMAL
-	damage_hitsound = 'sound/effects/Glasshit.ogg'
+	damage_hitsound = /effects/Glasshit.ogg'
 	layer = SIDE_WINDOW_LAYER
 	anchored = TRUE
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CAN_BE_PAINTED | ATOM_FLAG_CHECKS_BORDER
@@ -225,7 +225,7 @@
 		tforce = I.throwforce
 	if(reinf_material)
 		tforce *= 0.25
-	playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
+	playsound(loc, /effects/Glasshit.ogg', 100, 1)
 	show_sound_effect(get_turf(src))
 	damage_health(tforce, BRUTE)
 	deanchor(AM)
@@ -249,14 +249,14 @@
 				attack_generic(H,25)
 				return
 
-		playsound(src.loc, 'sound/effects/glassbash.ogg', 125, 1) // So as it turns out, glassbash sound is quieter than glassknock
+		playsound(src.loc, /effects/glassbash.ogg', 125, 1) // So as it turns out, glassbash sound is quieter than glassknock
 		show_sound_effect(get_turf(src), soundicon = SFX_ICON_JAGGED)
 		user.do_attack_animation(src)
 		user.visible_message(SPAN_DANGER("\The [user] bangs against \the [src]!"),
 							SPAN_DANGER("You bang against \the [src]!"),
 							"You hear a banging sound.")
 	else
-		playsound(src.loc, 'sound/effects/glassknock.ogg', 50, 1)
+		playsound(src.loc, /effects/glassknock.ogg', 50, 1)
 		show_sound_effect(get_turf(src))
 		user.visible_message("[user.name] knocks on the [src.name].",
 							"You knock on the [src.name].",
@@ -274,7 +274,7 @@
 		return
 	if(can_damage_health(damage, BRUTE))
 		visible_message(SPAN_DANGER("[user] [attack_verb] into [src]!"))
-		playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
+		playsound(loc, /effects/Glasshit.ogg', 100, 1)
 		show_sound_effect(get_turf(src))
 		damage_health(damage, BRUTE)
 	else
@@ -283,7 +283,7 @@
 
 /obj/structure/window/do_simple_ranged_interaction(mob/user)
 	visible_message(SPAN_NOTICE("Something knocks on \the [src]."))
-	playsound(loc, 'sound/effects/Glasshit.ogg', 50, 1)
+	playsound(loc, /effects/Glasshit.ogg', 50, 1)
 	show_sound_effect(get_turf(src))
 	return TRUE
 
@@ -308,25 +308,25 @@
 		if(reinf_material && construction_state >= 1)
 			construction_state = 3 - construction_state
 			update_nearby_icons()
-			playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
+			playsound(loc, /items/Screwdriver.ogg', 75, 1)
 			to_chat(user, (construction_state == 1 ? SPAN_NOTICE("You have unfastened the window from the frame.") : SPAN_NOTICE("You have fastened the window to the frame.")))
 		else if(reinf_material && construction_state == 0)
 			if(!can_install_here(user))
 				return
 			set_anchored(!anchored)
-			playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
+			playsound(loc, /items/Screwdriver.ogg', 75, 1)
 			to_chat(user, (anchored ? SPAN_NOTICE("You have fastened the frame to the floor.") : SPAN_NOTICE("You have unfastened the frame from the floor.")))
 		else
 			if(!can_install_here(user))
 				return
 			set_anchored(!anchored)
-			playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
+			playsound(loc, /items/Screwdriver.ogg', 75, 1)
 			to_chat(user, (anchored ? SPAN_NOTICE("You have fastened the window to the floor.") : SPAN_NOTICE("You have unfastened the window.")))
 		return
 
 	if(isCrowbar(W) && reinf_material && construction_state <= 1 && anchored)
 		construction_state = 1 - construction_state
-		playsound(loc, 'sound/items/Crowbar.ogg', 75, 1)
+		playsound(loc, /items/Crowbar.ogg', 75, 1)
 		to_chat(user, (construction_state ? SPAN_NOTICE("You have pried the window into the frame.") : SPAN_NOTICE("You have pried the window out of the frame.")))
 		return
 
@@ -334,7 +334,7 @@
 		if(!material.stack_type)
 			to_chat(user, SPAN_NOTICE("You're not sure how to dismantle \the [src] properly."))
 		else
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+			playsound(src.loc, /items/Ratchet.ogg', 75, 1)
 			visible_message(SPAN_NOTICE("[user] dismantles \the [src]."))
 			var/obj/item/stack/material/S = material.place_sheet(loc, is_fulltile() ? 4 : 1)
 			if(S && reinf_material)
@@ -347,7 +347,7 @@
 	if(isCoil(W) && !polarized && is_fulltile())
 		var/obj/item/stack/cable_coil/C = W
 		if(C.use(1))
-			playsound(src.loc, 'sound/effects/sparks1.ogg', 75, 1)
+			playsound(src.loc, /effects/sparks1.ogg', 75, 1)
 			polarized = TRUE
 		return
 	if(polarized && isMultitool(W))
@@ -365,11 +365,11 @@
 		var/obj/item/gun/energy/plasmacutter/cutter = W
 		if(!cutter.slice(user))
 			return
-		playsound(src, 'sound/items/Welder.ogg', 80, 1)
+		playsound(src, /items/Welder.ogg', 80, 1)
 		visible_message(SPAN_NOTICE("[user] has started slicing through the window's frame!"))
 		if(do_after(user,20,src))
 			visible_message(SPAN_WARNING("[user] has sliced through the window's frame!"))
-			playsound(src, 'sound/items/Welder.ogg', 80, 1)
+			playsound(src, /items/Welder.ogg', 80, 1)
 			construction_state = 0
 			set_anchored(0)
 		return
@@ -459,12 +459,12 @@
 			SPAN_WARNING("You attack \the [src][weapon_text]!"),
 			SPAN_WARNING("You hear the sound of something hitting a window.")
 		)
-		playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
+		playsound(loc, /effects/Glasshit.ogg', 100, 1)
 		damage_health(damage, damage_type)
 		deanchor(user)
 	else
 		var/weapon_text = weapon ? " with \the [weapon]" : null
-		playsound(loc, 'sound/effects/Glasshit.ogg', 50, 1)
+		playsound(loc, /effects/Glasshit.ogg', 50, 1)
 		user.visible_message(
 			SPAN_WARNING("\The [user] attacks \the [src][weapon_text], but it bounces off!"),
 			SPAN_WARNING("You attack \the [src][weapon_text], but it bounces off! You need something stronger."),

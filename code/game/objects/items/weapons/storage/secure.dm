@@ -33,7 +33,7 @@
 			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 			spark_system.set_up(5, 0, src.loc)
 			spark_system.start()
-			playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
+			playsound(src.loc, /weapons/blade1.ogg', 50, 1)
 			playsound(src.loc, SFX_SPARK, 50, 1)
 			return
 
@@ -155,7 +155,7 @@
 	w_class = ITEM_SIZE_HUGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
-	use_sound = 'sound/effects/storage/briefcase.ogg'
+	use_sound = /effects/storage/briefcase.ogg'
 
 /obj/item/storage/secure/briefcase/attack_hand(mob/user as mob)
 	if ((src.loc == user) && (src.locked == 1))

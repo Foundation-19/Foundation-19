@@ -15,7 +15,7 @@
 /obj/structure/synthesized_instrument/synthesizer/attackby(obj/item/O, mob/user, params)
 	if (istype(O, /obj/item/wrench))
 		if (!anchored && !isinspace())
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+			playsound(src.loc, /items/Ratchet.ogg', 50, 1)
 			to_chat(usr, SPAN_NOTICE(" You begin to tighten \the [src] to the floor..."))
 			if (do_after(user, 20))
 				if(!anchored && !isinspace())
@@ -25,7 +25,7 @@
 						SPAN_CLASS("italics","You hear ratchet."))
 					src.anchored = TRUE
 		else if(anchored)
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+			playsound(src.loc, /items/Ratchet.ogg', 50, 1)
 			to_chat(usr, SPAN_NOTICE(" You begin to loosen \the [src]'s casters..."))
 			if (do_after(user, 40))
 				if(anchored)

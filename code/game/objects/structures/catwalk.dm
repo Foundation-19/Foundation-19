@@ -64,7 +64,7 @@
 		attack_hand(user)
 
 /obj/structure/catwalk/proc/deconstruct(mob/user)
-	playsound(src, 'sound/items/Welder.ogg', 100, 1)
+	playsound(src, /items/Welder.ogg', 100, 1)
 	to_chat(user, SPAN_NOTICE("Slicing \the [src] joints ..."))
 	new /obj/item/stack/material/rods(src.loc)
 	new /obj/item/stack/material/rods(src.loc)
@@ -92,10 +92,10 @@
 			return
 		hatch_open = !hatch_open
 		if(hatch_open)
-			playsound(src, 'sound/items/Crowbar.ogg', 100, 2)
+			playsound(src, /items/Crowbar.ogg', 100, 2)
 			to_chat(user, SPAN_NOTICE("You pry open \the [src]'s maintenance hatch."))
 		else
-			playsound(src, 'sound/items/Deconstruct.ogg', 100, 2)
+			playsound(src, /items/Deconstruct.ogg', 100, 2)
 			to_chat(user, SPAN_NOTICE("You shut \the [src]'s maintenance hatch."))
 		update_icon()
 		return

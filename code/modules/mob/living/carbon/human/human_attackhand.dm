@@ -41,7 +41,7 @@
 			H.do_attack_animation(src)
 			var/damage = rand(0, 9)
 			if(!damage)
-				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				playsound(loc, /weapons/punchmiss.ogg', 25, 1, -1)
 				visible_message(SPAN_DANGER("\The [H] has attempted to punch \the [src]!"))
 				return 0
 			var/obj/item/organ/external/affecting = get_organ(ran_zone(H.zone_sel.selecting))
@@ -230,7 +230,7 @@
 				H.visible_message(SPAN_DANGER("[attack_message]"))
 
 			if(miss_type)
-				playsound(loc, (attack.miss_sound ? attack.miss_sound : 'sound/weapons/thudswoosh.ogg'), 25, 1, -1)
+				playsound(loc, (attack.miss_sound ? attack.miss_sound : /weapons/thudswoosh.ogg'), 25, 1, -1)
 			if (attack.should_attack_log)
 				admin_attack_log(H, src, "[miss_type ? (miss_type == 1 ? "Has missed" : "Was blocked by") : "Has [pick(attack.attack_verb)]"] their victim.", "[miss_type ? (miss_type == 1 ? "Missed" : "Blocked") : "[pick(attack.attack_verb)]"] their attacker", "[miss_type ? (miss_type == 1 ? "has missed" : "was blocked by") : "has [pick(attack.attack_verb)]"]")
 

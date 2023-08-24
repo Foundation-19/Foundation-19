@@ -34,7 +34,7 @@
 	mob_size =                MOB_LARGE
 	strength =                STR_HIGH
 
-	speech_sounds = list('sound/voice/chime.ogg')
+	speech_sounds = list(/voice/chime.ogg')
 	speech_chance = 25
 
 	cold_level_1 = SYNTH_COLD_LEVEL_1

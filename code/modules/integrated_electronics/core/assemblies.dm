@@ -232,7 +232,7 @@
 			to_chat(usr, SPAN_WARNING("There's no power cell to remove from \the [src]."))
 		else
 			battery.dropInto(loc)
-			playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
+			playsound(src, /items/Crowbar.ogg', 50, 1)
 			to_chat(usr, SPAN_NOTICE("You pull \the [battery] out of \the [src]'s power supplier."))
 			battery = null
 
@@ -352,7 +352,7 @@
 		return FALSE
 
 	to_chat(user, SPAN_NOTICE("You slide [IC] inside [src]."))
-	playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
+	playsound(src, /items/Deconstruct.ogg', 50, 1)
 	add_allowed_scanner(user.ckey)
 
 	add_component(IC)
@@ -380,7 +380,7 @@
 	remove_component(IC)
 	if(!silent)
 		to_chat(user, SPAN_NOTICE("You pop \the [IC] out of the case, and slide it out."))
-		playsound(src, 'sound/items/crowbar.ogg', 50, 1)
+		playsound(src, /items/crowbar.ogg', 50, 1)
 		user.put_in_hands(IC)
 	add_allowed_scanner(user.ckey)
 
@@ -415,7 +415,7 @@
 	if(istype(I, /obj/item/wrench))
 		if(istype(loc, /turf) && (IC_FLAG_ANCHORABLE & circuit_flags))
 			user.visible_message("\The [user] wrenches \the [src]'s anchoring bolts [anchored ? "back" : "into position"].")
-			playsound(get_turf(user), 'sound/items/Ratchet.ogg',50)
+			playsound(get_turf(user), /items/Ratchet.ogg',50)
 			if(user.do_skilled(5 SECONDS, SKILL_CONSTRUCTION, src))
 				anchored = !anchored
 		return
@@ -456,7 +456,7 @@
 			user.drop_from_inventory(I, loc)
 			cell.forceMove(src)
 			battery = cell
-			playsound(get_turf(src), 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(get_turf(src), /items/Deconstruct.ogg', 50, 1)
 			to_chat(user, SPAN_NOTICE("You slot \the [cell] inside \the [src]'s power supplier."))
 			return TRUE
 		return FALSE
@@ -479,7 +479,7 @@
 			to_chat(user, SPAN_NOTICE("The screws are covered by a locking mechanism!"))
 			return FALSE
 
-		playsound(src, 'sound/items/Screwdriver.ogg', 25)
+		playsound(src, /items/Screwdriver.ogg', 25)
 		opened = !opened
 		to_chat(user, SPAN_NOTICE("You [opened ? "open" : "close"] the maintenance hatch of [src]."))
 		update_icon()
@@ -740,7 +740,7 @@
 	if(gotwallitem(T, ndir))
 		to_chat(user, SPAN_WARNING("There's already an item on this wall!"))
 		return
-	playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
+	playsound(src.loc, /machines/click.ogg', 75, 1)
 	user.visible_message("[user.name] attaches [src] to the wall.",
 		SPAN_NOTICE("You attach [src] to the wall."),
 		SPAN_CLASS("italics","You hear clicking."))

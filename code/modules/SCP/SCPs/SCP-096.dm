@@ -43,7 +43,7 @@
 	health = 600
 	maxHealth = 600
 
-	var/murder_sound = list('sound/voice/096-kill.ogg')
+	var/murder_sound = list('sounds/voice/096-kill.ogg')
 	var/hibernate = 0 //Disables SCP until toggled back to 0
 	var/scare_played = 0 //Did we use the jumpscare sound yet ?
 
@@ -235,7 +235,7 @@
 	if(current_state == STATE_096_IDLE)
 		dir = SOUTH
 		visible_message(SPAN_DANGER("[src] SCREAMS!"))
-		playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
+		playsound(get_turf(src), 'sounds/voice/096-rage.ogg', 100)
 		current_state = STATE_096_SCREAMING
 		icon_state = "scp-screaming"
 		spawn(290)

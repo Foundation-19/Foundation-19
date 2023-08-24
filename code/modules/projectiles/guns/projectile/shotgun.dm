@@ -18,7 +18,7 @@
 	bulk = 6
 	var/recentpump = 0 // to prevent spammage
 	wielded_item_state = "shotgun-wielded"
-	load_sound = 'sound/weapons/guns/interaction/shotgun_instert.ogg'
+	load_sound = /weapons/guns/interaction/shotgun_instert.ogg'
 
 /obj/item/gun/projectile/shotgun/on_update_icon()
 	..()
@@ -38,7 +38,7 @@
 		recentpump = world.time
 
 /obj/item/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, /weapons/shotgunpump.ogg', 60, 1)
 	show_sound_effect(M.loc, M)
 
 	if(chambered)//We have a shell in the chamber

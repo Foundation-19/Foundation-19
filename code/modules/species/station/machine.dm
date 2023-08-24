@@ -74,7 +74,7 @@
 		/decl/emote/exertion/synthetic,
 		/decl/emote/exertion/synthetic/creak
 	)
-	special_footstep_sounds = list('sound/effects/footstep/special/servostep.ogg')
+	special_footstep_sounds = list(/effects/footstep/special/servostep.ogg')
 
 /datum/species/machine/handle_death(mob/living/carbon/human/H)
 	..()

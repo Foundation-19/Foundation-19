@@ -80,7 +80,7 @@
 		G.action_used()
 		O.jointlock(assailant)
 		assailant.visible_message(SPAN_DANGER("[affecting]'s [O.name] is twisted!"))
-		playsound(assailant.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		playsound(assailant.loc, /weapons/thudswoosh.ogg', 50, 1, -1)
 		return TRUE
 
 	else
@@ -117,7 +117,7 @@
 			G.action_used()
 			O.dislocate(1)
 			assailant.visible_message(SPAN_DANGER("[affecting]'s [O.joint] [pick("gives way","caves in","crumbles","collapses")]!"))
-			playsound(assailant.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			playsound(assailant.loc, /weapons/thudswoosh.ogg', 50, 1, -1)
 			return TRUE
 
 		else

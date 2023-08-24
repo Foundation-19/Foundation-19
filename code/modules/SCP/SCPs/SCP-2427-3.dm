@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /obj/item/natural_weapon/leg_2427_3
 	name = "robotic leg"
 	attack_verb = list("stabbed")
-	hitsound = 'sound/scp/2427/stab.ogg'
+	hitsound = 'sounds/scp/2427/stab.ogg'
 	damtype = BRUTE
 	melee_accuracy_bonus = 60 //As a reminder! Putting the melee accuracy bonus above 100 does not work intended. Infact, it breaks forced dodges from things like shields/etc in many cases! The original value for this was 200, which broke a lot of combat changes we did!
 	stun_prob = 0 // Only combat! Please avoid adding stuns to something which, itself by nature, cannot be stunned!
@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	health = 1000
 
 	movement_cooldown = 5
-	movement_sound = 'sound/mecha/mechmove04.ogg'
+	movement_sound = 'sounds/mecha/mechmove04.ogg'
 
 	a_intent = "harm"
 	can_be_buckled = FALSE
@@ -140,12 +140,12 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 	if(A in impurity_list)
 		to_chat(src, SPAN_USERDANGER("SUBJECT IMPURE! IMPURE. IMPURE. IMPURE."))
-		playsound(src, 'sound/machines/synth_no.ogg', 15, TRUE)
+		playsound(src, 'sounds/machines/synth_no.ogg', 15, TRUE)
 		return
 
 	if(A in purity_list)
 		to_chat(src, SPAN_GOOD("SUBJECT IS PURE..?"))
-		playsound(src, 'sound/machines/synth_yes.ogg', 15, TRUE)
+		playsound(src, 'sounds/machines/synth_yes.ogg', 15, TRUE)
 		return
 
 /mob/living/simple_animal/hostile/scp_2427_3/updatehealth()
@@ -155,7 +155,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 /mob/living/simple_animal/hostile/scp_2427_3/death(gibbed, deathmessage = "falls on the ground, beginning reboot process.", show_dead_message)
 	to_chat(src, SPAN_OCCULT("You begin the reboot process. Avoid leaving the body."))
-	playsound(src, 'sound/mecha/lowpower.ogg', 75, FALSE, 4)
+	playsound(src, 'sounds/mecha/lowpower.ogg', 75, FALSE, 4)
 	addtimer(CALLBACK(src, .proc/TimeRespawn), 5 MINUTES)
 	return ..()
 
@@ -192,7 +192,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 				nutr = round(max_satiety * 0.2)
 			if(L.isMonkey())
 				nutr = round(max_satiety * 0.05)
-			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
+			playsound(src, 'sounds/scp/2427/consume.ogg', rand(15, 35), TRUE)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
 			AdjustSatiety(nutr)
@@ -264,7 +264,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(is_sleeping)
 		return
 	wakeup_health = health - 50
-	playsound(src, 'sound/machines/AirlockClose_heavy.ogg', 75, TRUE, 4)
+	playsound(src, 'sounds/machines/AirlockClose_heavy.ogg', 75, TRUE, 4)
 	visible_message(
 		SPAN_NOTICE("[src] falls asleep."),
 		SPAN_NOTICE("You fall asleep."))
@@ -277,7 +277,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	revive()
 	satiety = attacked ? 100 : 400 // If attacked or otherwise forced, it'll be very angry
-	playsound(src, 'sound/mecha/lowpower.ogg', 75, FALSE, 4)
+	playsound(src, 'sounds/mecha/lowpower.ogg', 75, FALSE, 4)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You wake up."))
@@ -289,7 +289,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /mob/living/simple_animal/hostile/scp_2427_3/proc/TimeRespawn()
 	if(stat != DEAD)
 		return
-	playsound(src, 'sound/mecha/powerup.ogg', 75, FALSE, 4)
+	playsound(src, 'sounds/mecha/powerup.ogg', 75, FALSE, 4)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You finish the reboot process."))
@@ -316,12 +316,12 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		purity_list |= L
 		to_chat(L, SPAN_GOOD("[src] looks at you surprised. It can grant any wish, right?"))
 		to_chat(src, SPAN_GOOD("[uppertext(src)] IS PURE. IMPOSSIBLE? PURE."))
-		playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE)
+		playsound(src, 'sounds/machines/synth_yes.ogg', 50, TRUE)
 		return
 	impurity_list |= L
 	to_chat(L, SPAN_USERDANGER("You feel unsafe near [src]..."))
 	to_chat(src, SPAN_WARNING("[uppertext(L)] IS IMPURE! IMPURE. IMPURE. IMPURE."))
-	playsound(src, 'sound/machines/synth_no.ogg', 25, TRUE)
+	playsound(src, 'sounds/machines/synth_no.ogg', 25, TRUE)
 
 // Copied my code from 173, because it works the best
 /mob/living/simple_animal/hostile/scp_2427_3/proc/OpenDoor(obj/machinery/door/A)
@@ -358,7 +358,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
 	if(open_time > 0.5 SECONDS)
-		playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+		playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
 
 	if(!do_after(src, open_time, A))

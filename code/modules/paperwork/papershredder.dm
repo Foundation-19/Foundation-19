@@ -36,7 +36,7 @@
 				return
 			paperamount += paper_result
 			qdel(W)
-			playsound(src.loc, 'sound/items/pshred.ogg', 75, 1)
+			playsound(src.loc, /items/pshred.ogg', 75, 1)
 			show_sound_effect(src.loc, user, SFX_ICON_SMALL)
 			if(paperamount > max_paper)
 				to_chat(user, SPAN_DANGER("\The [src] was too full, and shredded paper goes everywhere!"))

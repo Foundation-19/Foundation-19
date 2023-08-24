@@ -44,7 +44,7 @@
 	return
 
 /obj/item/reagent_containers/spray/proc/Spray_at(atom/A as mob|obj, mob/user as mob, proximity)
-	playsound(src.loc, 'sound/effects/spray2.ogg', 50, 1, -6)
+	playsound(src.loc, /effects/spray2.ogg', 50, 1, -6)
 	if (reagents.should_admin_log())
 		var/contained = reagents.get_reagents()
 		if (istype(A, /mob))

@@ -127,7 +127,7 @@
 		Setting to 5 or higher can only be done temporarily before the generator overheats.
 	*/
 	power_gen = 20000			//Watts output per power_output level
-	working_sound = 'sound/machines/engine.ogg'
+	working_sound = /machines/engine.ogg'
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
@@ -309,7 +309,7 @@
 			disconnect_from_network()
 			to_chat(user, SPAN_NOTICE("You unsecure the generator from the floor."))
 
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+		playsound(src.loc, /items/Deconstruct.ogg', 50, 1)
 		anchored = !anchored
 	return component_attackby(O, user)
 
@@ -510,10 +510,10 @@
 		if(R.standard_pour_into(src,user))
 			if(reagents.has_reagent("vodka"))
 				audible_message(SPAN_NOTICE("[src] blips happily"))
-				playsound(get_turf(src),'sound/machines/synth_yes.ogg', 50, 0)
+				playsound(get_turf(src),/machines/synth_yes.ogg', 50, 0)
 			else
 				audible_message(SPAN_WARNING("[src] blips in disappointment"))
-				playsound(get_turf(src), 'sound/machines/synth_no.ogg', 50, 0)
+				playsound(get_turf(src), /machines/synth_no.ogg', 50, 0)
 		return
 	..()
 
