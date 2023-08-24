@@ -62,7 +62,7 @@
 		"????", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		KETER, //Obj Class
 		"096", //Numerical Designation
-		MEMETIC|SCP_DISABLED //AI needs further rework and cheese is porting stuff so 096 is disabled for now.
+		MEMETIC|SCP_DISABLED //096 is disabled until traits are ported in as that is neccesary for it to pathfind through doors.
 	)
 
 	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA
@@ -86,38 +86,6 @@
 	..()
 
 //Mechanics
-
-/mob/living/scp096/Life()
-	//Sets the probability of someone seeing 096's face based on its current state
-	var/probability_to_view
-	switch(current_state)
-		if(STATE_096_IDLE, STATE_096_SCREAMING)
-			probability_to_view = idle_view_prob
-		if(STATE_096_CHASING, STATE_096_SLAUGHTER, STATE_096_STAGGERED)
-			probability_to_view = chasing_view_prob
-	//Applies probability to each new viewer
-	for(var/mob/living/carbon/human/viewer in viewers(world.view, src))
-		if(viewer in oldViewers)
-			continue
-		if(!viewer.can_see(src, TRUE))
-			continue
-		var/message = "[SPAN_NOTICE("You notice [src], and instinctively look away ")]"
-		if(prob(probability_to_view))
-			message += "[SPAN_NOTICE("but you catch a glimpse of")] [SPAN_DANGER("its [SPAN_BOLD("face")]!")]"
-			trigger(viewer)
-		else
-			message += "[SPAN_NOTICE("managing to avoid seeing its face.")]"
-
-		to_chat(viewer, message)
-		oldViewers += viewer
-
-	//Now we remove any oldViewers that are no longer looking at 096
-	for(var/mob/living/carbon/human/oldViewer in oldViewers)
-		if(!oldViewer.can_see(src, TRUE))
-			oldViewers -= oldViewer
-
-	adjustBruteLoss(-10)
-	handle_AI()
 
 ///Triggers 096 on a target
 /mob/living/scp096/proc/trigger(mob/living/carbon/human/Ptarget)
@@ -270,6 +238,38 @@
 
 //Overrides
 
+/mob/living/scp096/Life()
+	//Sets the probability of someone seeing 096's face based on its current state
+	var/probability_to_view
+	switch(current_state)
+		if(STATE_096_IDLE, STATE_096_SCREAMING)
+			probability_to_view = idle_view_prob
+		if(STATE_096_CHASING, STATE_096_SLAUGHTER, STATE_096_STAGGERED)
+			probability_to_view = chasing_view_prob
+	//Applies probability to each new viewer
+	for(var/mob/living/carbon/human/viewer in viewers(world.view, src))
+		if(viewer in oldViewers)
+			continue
+		if(!viewer.can_see(src, TRUE))
+			continue
+		var/message = "[SPAN_NOTICE("You notice [src], and instinctively look away ")]"
+		if(prob(probability_to_view))
+			message += "[SPAN_NOTICE("but you catch a glimpse of")] [SPAN_DANGER("its [SPAN_BOLD("face")]!")]"
+			trigger(viewer)
+		else
+			message += "[SPAN_NOTICE("managing to avoid seeing its face.")]"
+
+		to_chat(viewer, message)
+		oldViewers += viewer
+
+	//Now we remove any oldViewers that are no longer looking at 096
+	for(var/mob/living/carbon/human/oldViewer in oldViewers)
+		if(!oldViewer.can_see(src, TRUE))
+			oldViewers -= oldViewer
+
+	adjustBruteLoss(-10)
+	handle_AI()
+
 /mob/living/scp096/examine(mob/user, distance, infix, suffix)
 	if(user in GLOB.scramble_hud_users)
 		to_chat(user, scramble_desc)
@@ -359,6 +359,9 @@
 		else
 			stagger_counter = world.time + 5 SECOND
 			current_state = STATE_096_STAGGERED
+
+/mob/living/scp096/movement_delay()
+	return -2
 
 #undef STATE_096_IDLE
 #undef STATE_096_SCREAMING
