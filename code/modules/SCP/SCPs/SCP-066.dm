@@ -125,14 +125,13 @@
 	else
 		to_chat(src, SPAN_WARNING("You cannot imitate [A]!"))
 
-/mob/living/simple_animal/friendly/retaliate/scp066/say(message)
-	message = "Eric?"
-	if((world.time - emote_passive_track) > emote_passive_cooldown) //technically checked twice but this prevents the cooldown message form being spammed to 066's client.
-		Eric()
-	return ..(message)
-
 /mob/living/simple_animal/friendly/retaliate/scp066/attack_target(atom/A)
 	LoudNoise()
+
+/mob/living/simple_animal/friendly/retaliate/scp066/handle_autohiss(message, datum/language/L)
+	if((world.time - emote_passive_track) > emote_passive_cooldown) //technically checked twice but this prevents the cooldown message form being spammed to 066's client.
+		Eric()
+	return "Eric?"
 
 // SCP-066 emotes
 
