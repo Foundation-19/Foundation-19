@@ -19,7 +19,6 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	min_skill = list(
-		SKILL_PILOT         = SKILL_EXPERIENCED,
 		SKILL_COOKING       = SKILL_EXPERIENCED,
 		SKILL_COMBAT        = SKILL_EXPERIENCED,
 		SKILL_WEAPONS       = SKILL_EXPERIENCED,

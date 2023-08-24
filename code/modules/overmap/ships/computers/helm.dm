@@ -5,7 +5,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	icon_keyboard = "teleport_key"
 	icon_screen = "helm"
 	light_color = "#7faaff"
-	core_skill = SKILL_PILOT
 	silicon_restriction = STATUS_UPDATE
 	machine_name = "helm control console"
 	machine_desc = "A navigation system used to control spacecraft big and small, allowing for configuration of heading and autopilot as well as providing navigational data."
@@ -80,8 +79,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 /obj/machinery/computer/ship/helm/relaymove(mob/user, direction)
 	if(viewing_overmap(user) && linked)
-		if(prob(user.skill_fail_chance(SKILL_PILOT, 50, linked.skill_needed, factor = 1)))
-			direction = turn(direction,pick(90,-90))
 		linked.relaymove(user, direction, accellimit)
 		set_operator(user)
 		return 1
@@ -218,8 +215,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	if (href_list["move"])
 		var/ndir = text2num(href_list["move"])
-		if(prob(user.skill_fail_chance(SKILL_PILOT, 50, linked.skill_needed, factor = 1)))
-			ndir = turn(ndir,pick(90,-90))
 		linked.relaymove(user, ndir, accellimit)
 
 	if (href_list["brake"])
@@ -263,7 +258,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	var/mob/old_operator = current_operator
 	current_operator = user
-	linked.update_operator_skill(current_operator)
 	if (!autopilot && old_operator && viewing_overmap(old_operator))
 		unlook(old_operator)
 

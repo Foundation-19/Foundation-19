@@ -13,7 +13,6 @@
 #define SKILL_AVERAGE  (1<<1)
 #define SKILL_HARD     (1<<2)
 
-#define SKILL_PILOT         /decl/hierarchy/skill/general/pilot
 #define SKILL_HAULING       /decl/hierarchy/skill/general/hauling
 #define SKILL_COMPUTER      /decl/hierarchy/skill/general/computer
 #define SKILL_FINANCE       /decl/hierarchy/skill/general/finance
