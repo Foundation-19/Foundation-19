@@ -23,7 +23,6 @@
 	if(owner.mob_biotypes & barred_biotypes)
 		return FALSE
 
-	RegisterSignal(owner, COMSIG_LIVING_HEALTHSCAN, .proc/on_health_scan)
 	if(iscarbon(owner))
 		RegisterSignal(owner, COMSIG_CARBON_CHECKING_BODYPART, .proc/on_check_bodypart)
 		RegisterSignal(owner, COMSIG_CARBON_BUMPED_AIRLOCK_OPEN, .proc/on_bump_airlock)
@@ -32,19 +31,9 @@
 
 /datum/status_effect/hallucination/on_remove()
 	UnregisterSignal(owner, list(
-		COMSIG_LIVING_HEALTHSCAN,
 		COMSIG_CARBON_CHECKING_BODYPART,
 		COMSIG_CARBON_BUMPED_AIRLOCK_OPEN,
 	))
-
-/// Signal proc for [COMSIG_LIVING_HEALTHSCAN]. Show we're hallucinating to (advanced) scanners.
-/datum/status_effect/hallucination/proc/on_health_scan(datum/source, list/render_list, advanced, mob/user, mode)
-	SIGNAL_HANDLER
-
-	if(!advanced)
-		return
-
-	render_list += "<span class='info ml-1'>Subject is hallucinating.</span>\n"
 
 /// Signal proc for [COMSIG_CARBON_CHECKING_BODYPART],
 /// checking bodyparts while hallucinating can cause them to appear more damaged than they are

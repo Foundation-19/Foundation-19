@@ -16,19 +16,16 @@
 	overdose_threshold = 15
 	metabolization_rate = REM
 	chemical_flags = REAGENT_DEAD_PROCESS //So if you die with it in your body, you still get teleported back to the location as a corpse
-	data = list("location_created" = null, "ingested" = FALSE)//So we retain the target location and creator between reagent instances
-	///The creation point assigned during the reaction
-	var/turf/location_created
+	data = list("ingested" = FALSE)//So we retain the target location and creator between reagent instances
 	///The return point indicator
 	var/obj/effect/overlay/holo_pad_hologram/eigenstate
 	///The point you're returning to after the reagent is removed
-	var/turf/open/location_return = null
+	var/turf/location_return = null
 
 /datum/reagent/eigenstate/on_new(list/data)
 	. = ..()
 	if(!data)
 		return
-	location_created = data["location_created"]
 
 /datum/reagent/eigenstate/expose_mob(mob/living/living_mob, methods, reac_volume, show_message, touch_protection)
 	. = ..()
@@ -61,12 +58,6 @@
 
 	location_return = get_turf(living_mob)	//sets up return point
 	to_chat(living_mob, SPAN_USERDANGER("You feel like part of yourself has split off!"))
-
-	//Teleports you home if it's pure enough
-	if(creation_purity > 0.9 && location_created && data["ingested"])
-		sparks(5, FALSE, living_mob)
-		do_teleport(living_mob, location_created, 0, asoundin = 'sound/effects/phasein.ogg')
-		sparks(5, FALSE, living_mob)
 
 	return ..()
 

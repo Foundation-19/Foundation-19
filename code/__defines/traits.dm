@@ -142,6 +142,18 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CLUMSY "clumsy"
 /// TODO: implement
 #define TRAIT_MUTE "mute"
+/// TODO: implement
+#define TRAIT_DISCOORDINATED_TOOL_USER "discoordinated_tool_user"
+/// TODO: implement
+#define TRAIT_NOFIRE "nofire"
+/// TODO: implement
+#define TRAIT_HANDS_BLOCKED "hands_blocked"
+/// TODO: implement
+#define TRAIT_SLEEPIMMUNE "sleepimmune"
+/// TODO: implement
+#define TRAIT_DEAF "deaf"
 
-/// A trait given by a specific status effect (not sure why we need both but whatever!)
+/// A trait given by any status effect
+#define STATUS_EFFECT_TRAIT "status-effect"
+/// A trait given by a specific status effect
 #define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"

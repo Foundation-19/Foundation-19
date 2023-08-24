@@ -14,8 +14,6 @@
 	return ..()
 
 /datum/status_effect/eye_blur/on_apply()
-	if(owner.mob_biotypes & (MOB_ROBOTIC|MOB_SPIRIT|MOB_EPIC))
-		return FALSE
 
 	// Refresh the blur when a client jumps into the mob, in case we get put on a clientless mob with no hud
 	RegisterSignal(owner, COMSIG_MOB_LOGIN, .proc/update_blur)

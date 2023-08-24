@@ -96,16 +96,6 @@
 /datum/status_effect/terrified/proc/comfort_owner(datum/source, mob/living/hugger)
 	SIGNAL_HANDLER
 
-	if(isnightmare(hugger)) //hey wait a minute, that's not a comforting, friendly hug!
-		if(check_surrounding_darkness())
-			addtimer(CALLBACK(src, .proc/freak_out, HUG_TERROR_AMOUNT))
-			owner.visible_message(
-				SPAN_WARNING("[owner] recoils in fear as [hugger] waves [hugger.p_their()] arms and shrieks at [owner.p_them()]!"),
-				SPAN_WARNING("The shadows lash out at you, and you drop to the ground in fear!"),
-				"You hear someone shriek in fear. How embarassing!",
-				)
-			return COMPONENT_BLOCK_MISC_HELP
-
 	terror_buildup -= HUG_TERROR_AMOUNT
 	owner.visible_message(
 		SPAN_NOTICE("[owner] seems to relax as [hugger] gives [owner.p_them()] a comforting hug."),

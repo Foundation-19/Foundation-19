@@ -168,9 +168,12 @@
 		qdel(src)
 		return TRUE
 
-	var/datum/gas_mixture/air = owner.loc.return_air()
-	if(!air.gases[/datum/gas/oxygen] || air.gases[/datum/gas/oxygen][MOLES] < 1)
-		qdel(src)
+	var/turf/location = get_turf(owner)
+	location.hotspot_expose(fire_burn_temperature(), 50, 1)
+
+	var/datum/gas_mixture/G = location.return_air() // Check if we're standing in an oxygenless environment
+	if(G.get_by_flag(XGM_GAS_OXIDIZER) < 1)
+		qdel(src) // If so, extinguish the fire
 		return TRUE
 
 	deal_damage(seconds_per_tick, times_fired)
@@ -217,16 +220,11 @@
 	var/mob/living/carbon/human/victim = owner
 	var/thermal_protection = victim.get_thermal_protection()
 
-	if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT && !no_protection)
+	if(thermal_protection >= FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE && !no_protection)
 		return
 
-	if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT && !no_protection)
-		victim.adjust_bodytemperature(5.5 * seconds_per_tick)
-		return
-
-	victim.adjust_bodytemperature((BODYTEMP_HEATING_MAX + (stacks * 12)) * 0.5 * seconds_per_tick)
+	victim.bodytemperature += (BODYTEMP_HEATING_MAX + (stacks * 12)) * 0.5 * seconds_per_tick
 	//victim.add_mood_event("on_fire", /datum/mood_event/on_fire)
-	victim.add_mob_memory(/datum/memory/was_burning)
 
 /**
  * Handles mob ignition, should be the only way to set on_fire to TRUE
@@ -249,7 +247,6 @@
 			qdel(moblight)
 		moblight = new moblight_type(owner)
 
-	SEND_SIGNAL(owner, COMSIG_LIVING_IGNITED, owner)
 	cache_stacks()
 	update_overlay()
 	update_particles()
@@ -263,7 +260,6 @@
 	QDEL_NULL(moblight)
 	on_fire = FALSE
 	//owner.clear_mood_event("on_fire")
-	SEND_SIGNAL(owner, COMSIG_LIVING_EXTINGUISHED, owner)
 	cache_stacks()
 	update_overlay()
 	update_particles()

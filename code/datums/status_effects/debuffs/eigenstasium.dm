@@ -134,7 +134,7 @@
 			log_game("[owner] has become an alternative universe version of themselves via EIGENSTASIUM.")
 			//new you new stuff
 			//SSquirks.randomise_quirks(owner)
-			owner.reagents.remove_all(1000)
+			owner.reagents?.reagent_list.Cut()
 			//owner.mob_mood.remove_temp_moods()
 			var/mob/living/carbon/human/human_mob = owner
 			//owner.add_mood_event("Eigentrip", /datum/mood_event/eigentrip)

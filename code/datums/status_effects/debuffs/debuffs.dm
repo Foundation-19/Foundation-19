@@ -178,9 +178,12 @@
 		var/turf/rest_turf = get_turf(owner)
 		var/is_sleeping_in_darkness = rest_turf.get_lumcount() <= LIGHTING_TILE_IS_DARK
 
-		// sleeping with a blindfold or in the dark helps us rest
-		if(owner.is_blind_from(EYES_COVERED) || is_sleeping_in_darkness)
-			healing += 0.1
+		if(ishuman(owner))
+			var/mob/living/carbon/human/H = owner
+
+			// sleeping with a blindfold or in the dark helps us rest
+			if(H.equipment_tint_total != TINT_BLIND || is_sleeping_in_darkness)
+				healing += 0.1
 
 		// sleeping in silence is always better
 		if(HAS_TRAIT(owner, TRAIT_DEAF))
@@ -197,17 +200,6 @@
 			healing += 0.1
 
 		if(healing > 0)
-			if(iscarbon(owner))
-				var/mob/living/carbon/carbon_owner = owner
-				for(var/obj/item/organ/target_organ as anything in carbon_owner.organs)
-					// no healing boost for robotic or dying organs
-					if(IS_ROBOTIC_ORGAN(target_organ) || !target_organ.damage || target_organ.organ_flags & ORGAN_FAILING)
-						continue
-
-					// organ regeneration is very low so we crank up the healing rate to give a good bonus
-					var/healing_bonus = target_organ.healing_factor * healing * HEALING_SLEEP_ORGAN_MULTIPLIER
-					target_organ.apply_organ_damage(-healing_bonus * target_organ.maxHealth)
-
 			if(health_ratio > 0.8) // only heals minor physical damage
 				owner.adjustBruteLoss(-1 * healing)
 				owner.adjustFireLoss(-1 * healing)
@@ -215,11 +207,7 @@
 	// Drunkenness gets reduced by 0.3% per tick (6% per 2 seconds)
 	owner.set_drunk_effect(owner.get_drunk_amount() * 0.997)
 
-	if(iscarbon(owner))
-		var/mob/living/carbon/carbon_owner = owner
-		carbon_owner.handle_dreams()
-
-	if(prob(2) && owner.health > owner.crit_threshold)
+	if(prob(2))
 		owner.emote("snore")
 
 /atom/movable/screen/alert/status_effect/asleep
@@ -304,7 +292,7 @@
 		if(2)
 			if(owner.incapacitated())
 				return
-			var/obj/item/held_item = owner.get_active_held_item()
+			var/obj/item/held_item = owner.get_active_hand()
 			if(!held_item)
 				return
 			to_chat(owner, SPAN_WARNING("Your fingers spasm!"))
@@ -314,7 +302,7 @@
 			owner.a_intent_change(I_HURT)
 
 			var/range = 1
-			if(istype(owner.get_active_held_item(), /obj/item/gun)) //get targets to shoot at
+			if(istype(owner.get_active_hand(), /obj/item/gun)) //get targets to shoot at
 				range = 7
 
 			var/list/mob/living/targets = list()
@@ -334,7 +322,7 @@
 		if(5)
 			if(owner.incapacitated())
 				return
-			var/obj/item/held_item = owner.get_active_held_item()
+			var/obj/item/held_item = owner.get_active_hand()
 			var/list/turf/targets = list()
 			for(var/turf/nearby_turfs in oview(owner, 3))
 				targets += nearby_turfs
@@ -356,7 +344,7 @@
 /datum/status_effect/convulsing/tick()
 	var/mob/living/carbon/H = owner
 	if(prob(40))
-		var/obj/item/I = H.get_active_held_item()
+		var/obj/item/I = H.get_active_hand()
 		if(I && H.dropItemToGround(I))
 			H.visible_message(
 				SPAN_NOTICE("[H]'s hand convulses, and they drop their [I.name]!"),
@@ -424,7 +412,7 @@
 
 /datum/status_effect/stagger/on_apply()
 	owner.next_move_modifier *= 1.5
-	if(ishostile(owner))
+	if(istype(owner, /mob/living/simple_animal/hostile))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
 		simple_owner.ranged_cooldown_time *= 2.5
 	return TRUE
@@ -434,7 +422,7 @@
 	if(QDELETED(owner))
 		return
 	owner.next_move_modifier /= 1.5
-	if(ishostile(owner))
+	if(istype(owner, /mob/living/simple_animal/hostile))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
 		simple_owner.ranged_cooldown_time /= 2.5
 
