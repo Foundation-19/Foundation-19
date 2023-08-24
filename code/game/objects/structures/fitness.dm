@@ -21,7 +21,7 @@
 		if(user.a_intent == I_HURT)
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			flick("[icon_state]_hit", src)
-			playsound(src.loc, 'sound/effects/woodhit.ogg', 25, 1, -1)
+			playsound(src.loc, 'sounds/effects/woodhit.ogg', 25, 1, -1)
 			user.do_attack_animation(src)
 			if(!synth)
 				user.adjust_nutrition(-(5 * DEFAULT_HUNGER_FACTOR))
@@ -39,7 +39,7 @@
 
 /obj/structure/fitness/weightlifter/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 75, 1)
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 75, 1)
 		weight = (weight % max_weight) + 1
 		to_chat(user, "You set the machine's weight level to [weight].")
 
@@ -58,11 +58,11 @@
 		return
 	else
 		being_used = 1
-		playsound(src.loc, 'sound/effects/weightlifter.ogg', 50, 1)
+		playsound(src.loc, 'sounds/effects/weightlifter.ogg', 50, 1)
 		user.set_dir(SOUTH)
 		flick("[icon_state]_[weight]", src)
 		if(do_after(user, 20 + (weight * 10)))
-			playsound(src.loc, 'sound/effects/weightdrop.ogg', 25, 1)
+			playsound(src.loc, 'sounds/effects/weightdrop.ogg', 25, 1)
 			var/skill = max_weight * user.get_skill_value(SKILL_HAULING)/SKILL_MAX
 			var/message
 			if(skill < weight)

@@ -80,11 +80,11 @@
 /datum/spell/targeted/ethereal_jaunt/proc/jaunt_disappear(atom/movable/overlay/animation, mob/living/target)
 	animation.icon_state = "liquify"
 	flick("liquify",animation)
-	playsound(get_turf(target), 'sound/magic/ethereal_enter.ogg', 30)
+	playsound(get_turf(target), 'sounds/magic/ethereal_enter.ogg', 30)
 
 /datum/spell/targeted/ethereal_jaunt/proc/jaunt_reappear(atom/movable/overlay/animation, mob/living/target)
 	flick("reappear",animation)
-	playsound(get_turf(target), 'sound/magic/ethereal_exit.ogg', 30)
+	playsound(get_turf(target), 'sounds/magic/ethereal_exit.ogg', 30)
 
 /datum/spell/targeted/ethereal_jaunt/proc/jaunt_steam(mobloc)
 	var/datum/effect/effect/system/steam_spread/steam = new /datum/effect/effect/system/steam_spread()

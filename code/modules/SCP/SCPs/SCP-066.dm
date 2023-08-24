@@ -40,19 +40,19 @@
 	if (world.time >= next_emote)
 		var/random = rand(1,5)
 		if (random == 1)
-			playsound(src, 'sound/scp/066/066-eric1.ogg', 30)
+			playsound(src, 'sounds/scp/066/066-eric1.ogg', 30)
 			next_emote = world.time + 10
 		if (random == 2)
-			playsound(src, 'sound/scp/066/066-eric2.ogg', 30)
+			playsound(src, 'sounds/scp/066/066-eric2.ogg', 30)
 			next_emote = world.time + 10
 		if (random == 3)
-			playsound(src, 'sound/scp/066/066-eric3.ogg', 30)
+			playsound(src, 'sounds/scp/066/066-eric3.ogg', 30)
 			next_emote = world.time + 10
 		if (random == 4)
-			playsound(src, 'sound/scp/066/066-eric4.ogg', 30)
+			playsound(src, 'sounds/scp/066/066-eric4.ogg', 30)
 			next_emote = world.time + 10
 		if (random == 5)
-			playsound(src, 'sound/scp/066/066-eric5.ogg', 30)
+			playsound(src, 'sounds/scp/066/066-eric5.ogg', 30)
 			next_emote = world.time + 10 */
 	return ..()
 
@@ -65,7 +65,7 @@
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
 			if(M.can_hear(src))
-//				M << pick('sound/scp/066/066-eric5.ogg', 'sound/scp/066/066-eric4.ogg', 'sound/scp/066/066-eric3.ogg', 'sound/scp/066/066-eric2.ogg', 'sound/scp/066/066-5-rape.ogg', 5, )
+//				M << pick('sounds/scp/066/066-eric5.ogg', 'sounds/scp/066/066-eric4.ogg', 'sounds/scp/066/066-eric3.ogg', 'sounds/scp/066/066-eric2.ogg', 'sounds/scp/066/066-5-rape.ogg', 5, )
 				next_emote = world.time + 30
 
 /mob/living/simple_animal/cat/scp_066/proc/Noise()
@@ -74,23 +74,23 @@
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
 			if(M.can_hear(src))
-//				M << pick('sound/scp/066/066-ali.ogg', 'sound/scp/066/066-eric5.ogg', 'sound/scp/066/066-eric4.ogg', 'sound/scp/066/066-eric3.ogg', 'sound/scp/066/066-eric2.ogg', 'sound/scp/066/066-5-rape.ogg')
+//				M << pick('sounds/scp/066/066-ali.ogg', 'sounds/scp/066/066-eric5.ogg', 'sounds/scp/066/066-eric4.ogg', 'sounds/scp/066/066-eric3.ogg', 'sounds/scp/066/066-eric2.ogg', 'sounds/scp/066/066-5-rape.ogg')
 				next_emote = world.time + 100
 
 /mob/living/simple_animal/cat/scp_066/proc/EarRape()
 	set category = "SCP-066"
 	set name = "EarRape"
-//	playsound(src, 'sound/scp/066/066-ali.ogg', 30)
+//	playsound(src, 'sounds/scp/066/066-ali.ogg', 30)
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
 			if(!M.can_hear(src))
 				continue
 			to_chat(M, SPAN_DANGER("<i>\The [src] rings, sending chills to your very bone.</i>"))
-//			M << pick('sound/scp/066/066-1-rape.ogg', 'sound/scp/066/066-2-rape.ogg', 'sound/scp/066/066-3-rape.ogg', 'sound/scp/066/066-4-rape.ogg', 'sound/scp/066/066-5-rape.ogg', 'sound/scp/066/066-ericrape.ogg')
+//			M << pick('sounds/scp/066/066-1-rape.ogg', 'sounds/scp/066/066-2-rape.ogg', 'sounds/scp/066/066-3-rape.ogg', 'sounds/scp/066/066-4-rape.ogg', 'sounds/scp/066/066-5-rape.ogg', 'sounds/scp/066/066-ericrape.ogg')
 			next_emote = world.time + 600
 			M.Stun(2)
 			M.confused += 5
 			M.ear_damage += rand(0, 5)
 			M.ear_deaf = max(M.ear_deaf,15)
 //			if(istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
-//				M << pick('sound/scp/066/066-1-rapeE.ogg', 'sound/scp/066/066-2-rapeE.ogg', 'sound/scp/066/066-3-rapeE.ogg', 'sound/scp/066/066-4-rapeE.ogg', 'sound/scp/066/066-5-rapeE.ogg', 'sound/scp/066/066-ericrapeE.ogg')
+//				M << pick('sounds/scp/066/066-1-rapeE.ogg', 'sounds/scp/066/066-2-rapeE.ogg', 'sounds/scp/066/066-3-rapeE.ogg', 'sounds/scp/066/066-4-rapeE.ogg', 'sounds/scp/066/066-5-rapeE.ogg', 'sounds/scp/066/066-ericrapeE.ogg')

@@ -64,7 +64,7 @@
 		if(M.buckled) //wheelchairs, office chairs, rollerbeds
 			return
 
-		playsound(src.loc, 'sound/effects/glass_step.ogg', 50, 1) // not sure how to handle metal shards with sounds
+		playsound(src.loc, 'sounds/effects/glass_step.ogg', 50, 1) // not sure how to handle metal shards with sounds
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 

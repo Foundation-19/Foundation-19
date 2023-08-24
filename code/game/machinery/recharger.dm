@@ -51,7 +51,7 @@
 			return
 		anchored = !anchored
 		to_chat(user, "You [anchored ? "attached" : "detached"] the recharger.")
-		playsound(loc, 'sound/items/Ratchet.ogg', 75, 1)
+		playsound(loc, 'sounds/items/Ratchet.ogg', 75, 1)
 	else
 		..()
 	update_icon()

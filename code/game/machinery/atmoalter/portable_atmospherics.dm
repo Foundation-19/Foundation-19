@@ -171,7 +171,7 @@
 
 /obj/machinery/portable_atmospherics/powered/dismantle()
 	if(isturf(loc))
-		playsound(loc, 'sound/effects/spray.ogg', 10, 1, -3)
+		playsound(loc, 'sounds/effects/spray.ogg', 10, 1, -3)
 		loc.assume_air(air_contents)
 	. = ..()
 

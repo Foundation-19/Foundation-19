@@ -4,7 +4,7 @@
 	icon = 'icons/obj/items.dmi'
 	icon_state = "fire_extinguisher0"
 	item_state = "fire_extinguisher"
-	hitsound = 'sound/weapons/smash.ogg'
+	hitsound = 'sounds/weapons/smash.ogg'
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	throwforce = 10
 	w_class = ITEM_SIZE_NORMAL
@@ -73,7 +73,7 @@
 		reagents.splash(M, min(reagents.total_volume, spray_amount))
 
 		user.visible_message(SPAN_NOTICE("\The [user] sprays \the [M] with \the [src]."))
-		playsound(src.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+		playsound(src.loc, 'sounds/effects/extinguish.ogg', 75, 1, -3)
 
 		return 1 // No afterattack
 	return ..()
@@ -119,7 +119,7 @@
 		else
 			reagents.add_reagent(/datum/reagent/water, amount)
 		to_chat(user, SPAN_NOTICE("You fill \the [src] with [amount] units from \the [dispenser]."))
-		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
+		playsound(src.loc, 'sounds/effects/refill.ogg', 50, 1, -6)
 		if (istype(target, /obj/structure/reagent_dispensers/acid))
 			to_chat(user, SPAN_WARNING("The acid violently eats away at \the [src]!"))
 			if (prob(50))
@@ -137,7 +137,7 @@
 
 		src.last_use = world.time
 
-		playsound(src.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+		playsound(src.loc, 'sounds/effects/extinguish.ogg', 75, 1, -3)
 
 		var/direction = get_dir(src,target)
 

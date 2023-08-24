@@ -204,13 +204,13 @@
 			return
 
 		else if(!anchored)
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 			to_chat(user, "You secure the external reinforcing bolts to the floor.")
 			src.anchored = TRUE
 			return
 
 		else if(anchored)
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 			to_chat(user, "You undo the external reinforcing bolts.")
 			src.anchored = FALSE
 			return
@@ -298,7 +298,7 @@
 	user.visible_message(SPAN_DANGER("\The [user] hits \the [src] with \the [I]!"))
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
-	playsound(loc, 'sound/weapons/smash.ogg', 75, 1)
+	playsound(loc, 'sounds/weapons/smash.ogg', 75, 1)
 	show_sound_effect(loc, user)
 
 /obj/machinery/shieldwall/Process()

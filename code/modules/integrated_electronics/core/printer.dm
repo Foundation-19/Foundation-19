@@ -38,7 +38,7 @@
 		return
 
 	visible_message(SPAN_NOTICE("[src] has finished printing its assembly!"))
-	playsound(src, 'sound/items/poster_being_created.ogg', 50, TRUE)
+	playsound(src, 'sounds/items/poster_being_created.ogg', 50, TRUE)
 	var/obj/item/device/electronic_assembly/assembly = SScircuit.load_electronic_assembly(get_turf(src), program)
 	assembly.creator = key_name(user)
 	cloning = FALSE
@@ -109,14 +109,14 @@
 					to_chat(user, SPAN_WARNING("[EA] has irremovable components in the casing, preventing you from emptying it."))
 					return
 			to_chat(user, SPAN_NOTICE("You begin recycling [EA]'s components..."))
-			playsound(src, 'sound/items/electronic_assembly_emptying.ogg', 50, TRUE)
+			playsound(src, 'sounds/items/electronic_assembly_emptying.ogg', 50, TRUE)
 			if(!do_after(user, 30, src) || recycling) //short channel so you don't accidentally start emptying out a complex assembly
 				return
 			recycling = TRUE
 			for(var/V in EA.assembly_components)
 				recycle(V, null, EA)
 			to_chat(user, SPAN_NOTICE("You recycle all the components[EA.assembly_components.len ? " you could " : " "]from [EA]!"))
-			playsound(src, 'sound/items/electronic_assembly_empty.ogg', 50, TRUE)
+			playsound(src, 'sounds/items/electronic_assembly_empty.ogg', 50, TRUE)
 			recycling = FALSE
 			return TRUE
 		else
@@ -237,7 +237,7 @@
 			E.opened = TRUE
 			E.update_icon()
 		to_chat(usr, SPAN_NOTICE("[capitalize(built.name)] printed."))
-		playsound(src, 'sound/items/jaws_pry.ogg', 50, TRUE)
+		playsound(src, 'sounds/items/jaws_pry.ogg', 50, TRUE)
 
 	if(href_list["print"])
 		if(!config.allow_ic_printing && !debug)
@@ -304,7 +304,7 @@
 					cloning = TRUE
 					to_chat(usr, "<span class='notice'>You begin printing a custom assembly. This will take approximately [round(cloning_time/10)] seconds. You can still print \
 					off normal parts during this time.</span>")
-					playsound(src, 'sound/items/poster_being_created.ogg', 50, TRUE)
+					playsound(src, 'sounds/items/poster_being_created.ogg', 50, TRUE)
 					addtimer(CALLBACK(src, .proc/print_program, usr), cloning_time)
 
 			if("cancel")

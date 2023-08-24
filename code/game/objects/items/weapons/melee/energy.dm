@@ -40,7 +40,7 @@
 	attack_verb = active_attack_verb
 	update_icon()
 	if(user)
-		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberon.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("\The [src] is now energised."))
 	set_light(0.8, 1, 2, 4, lighting_color)
 
@@ -56,7 +56,7 @@
 	attack_verb = inactive_attack_verb
 	update_icon()
 	if(user)
-		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberoff.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("\The [src] deactivates!"))
 	set_light(0)
 
@@ -134,7 +134,7 @@
 	edge = TRUE
 	base_parry_chance = 50
 	active_attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	hitsound = 'sound/weapons/blade1.ogg'
+	hitsound = 'sounds/weapons/blade1.ogg'
 	var/blade_color
 
 /obj/item/melee/energy/sword/Initialize()
@@ -172,7 +172,7 @@
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
 		spark_system.start()
-		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
+		playsound(user.loc, 'sounds/weapons/blade1.ogg', 50, 1)
 
 /obj/item/melee/energy/sword/get_parry_chance(mob/user)
 	return active ? ..() : 0
@@ -211,7 +211,7 @@
 	w_class = ITEM_SIZE_TINY //technically it's just energy or something, I dunno
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_BLOOD
 	active_attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	hitsound = 'sound/weapons/blade1.ogg'
+	hitsound = 'sounds/weapons/blade1.ogg'
 	var/mob/living/creator
 	var/datum/effect/effect/system/spark_spread/spark_system
 
@@ -268,7 +268,7 @@
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MAGNET = 3)
 	active_attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
-	hitsound = 'sound/weapons/blade1.ogg'
+	hitsound = 'sounds/weapons/blade1.ogg'
 
 /obj/item/melee/energy/knife
 	icon = 'icons/obj/weapons/melee_energy.dmi'
@@ -286,4 +286,4 @@
 	w_class = ITEM_SIZE_SMALL
 	active_attack_verb = list("stabbed", "cut", "seared", "slashed")
 	inactive_attack_verb = list("stabbed", "cut", "slashed")
-	hitsound = 'sound/weapons/blade1.ogg'
+	hitsound = 'sounds/weapons/blade1.ogg'

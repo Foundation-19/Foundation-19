@@ -18,7 +18,7 @@
 	proj_step_delay = 5
 
 	hud_state = "wiz_mm"
-	cast_sound = 'sound/magic/magic_missile.ogg'
+	cast_sound = 'sounds/magic/magic_missile.ogg'
 	amt_paralysis = 3
 	amt_stunned = 3
 
@@ -26,7 +26,7 @@
 
 /datum/spell/targeted/projectile/magic_missile/prox_cast(list/targets, atom/spell_holder)
 	spell_holder.visible_message(SPAN_DANGER("\The [spell_holder] pops with a flash!"))
-	playsound(src, 'sound/magic/mm_hit.ogg', 40)
+	playsound(src, 'sounds/magic/mm_hit.ogg', 40)
 	show_sound_effect(get_turf(spell_holder))
 	for(var/mob/living/M in targets)
 		apply_spell_damage(M)

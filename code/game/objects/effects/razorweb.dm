@@ -12,7 +12,7 @@
 		web.buckle_mob(hit_atom)
 		web.visible_message(SPAN_DANGER("\The [hit_atom] is tangled in \the [web]!"))
 	web.entangle(hit_atom, TRUE)
-	playsound(usr, 'sound/effects/razorweb_twang.ogg', 50)
+	playsound(usr, 'sounds/effects/razorweb_twang.ogg', 50)
 	qdel(src)
 
 // Hey, did you ever see The Cube (1997) directed by Vincenzo Natali?
@@ -73,7 +73,7 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/razorweb/proc/decay()
-	playsound(usr, 'sound/effects/razorweb_break.ogg', 50)
+	playsound(usr, 'sounds/effects/razorweb_break.ogg', 50)
 	qdel_self()
 
 /obj/effect/razorweb/attack_hand(mob/living/user)
@@ -166,8 +166,8 @@
 
 	if(prob(break_chance))
 		visible_message(SPAN_DANGER("\The [src] breaks apart!"))
-		playsound(usr, 'sound/effects/razorweb_break.ogg', 50)
+		playsound(usr, 'sounds/effects/razorweb_break.ogg', 50)
 		qdel(src)
 	else
-		playsound(usr, 'sound/effects/razorweb_twang.ogg', 50)
+		playsound(usr, 'sounds/effects/razorweb_twang.ogg', 50)
 		break_chance = min(break_chance+10, 100)

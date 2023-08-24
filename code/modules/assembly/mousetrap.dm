@@ -46,7 +46,7 @@
 		M.splat()
 	if(!target)
 		return
-	playsound(target.loc, 'sound/effects/snap.ogg', 25, 1)
+	playsound(target.loc, 'sounds/effects/snap.ogg', 25, 1)
 	layer = MOB_LAYER - 0.2
 	armed = 0
 	update_icon()
@@ -69,7 +69,7 @@
 		to_chat(user, SPAN_NOTICE("You disarm [src]."))
 	armed = !armed
 	update_icon()
-	playsound(user.loc, 'sound/weapons/handcuffs.ogg', 25, 1, 6)
+	playsound(user.loc, 'sounds/weapons/handcuffs.ogg', 25, 1, 6)
 
 
 /obj/item/device/assembly/mousetrap/attack_hand(mob/living/user as mob)

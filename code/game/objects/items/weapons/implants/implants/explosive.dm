@@ -117,7 +117,7 @@
 	if(T)
 		T.hotspot_expose(3500,125)
 
-	playsound(loc, 'sound/items/countdown.ogg', 75, 1, -3)
+	playsound(loc, 'sounds/items/countdown.ogg', 75, 1, -3)
 	if(ismob(imp_in))
 		imp_in.audible_message(SPAN_WARNING("Something beeps inside [imp_in][part ? "'s [part.name]" : ""]!"))
 		log_and_message_staff("Explosive implant triggered in [imp_in] ([imp_in.key]). [ADMIN_JMP(imp_in)] ")
