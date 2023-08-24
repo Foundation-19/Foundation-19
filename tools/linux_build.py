@@ -12,7 +12,7 @@ null = open("/dev/null", "wb")
 def wait(p):
     rc = p.wait()
     if rc != 0:
-        p = play("sound/misc/compiler-failure.ogg")
+        p = play("sounds/misc/compiler-failure.ogg")
         p.wait()
         assert p.returncode == 0
         sys.exit(rc)
@@ -25,7 +25,7 @@ def play(soundfile):
 def stage1():
     p = subprocess.Popen("(cd tgui; /bin/bash ./build.sh)", shell=True)
     wait(p)
-    play("sound/misc/compiler-stage1.ogg")
+    play("sounds/misc/compiler-stage1.ogg")
 
 def stage2(map):
     if map:
@@ -39,7 +39,7 @@ def stage2(map):
 
 def stage3(profile_mode=False):
     start_time = time.time()
-    play("sound/misc/compiler-stage2.ogg")
+    play("sounds/misc/compiler-stage2.ogg")
     logfile = open('server.log~','w')
     p = subprocess.Popen(
         "DreamDaemon baystation12.dmb 25001 -trusted",
@@ -48,7 +48,7 @@ def stage3(profile_mode=False):
         while p.returncode is None:
             stdout = p.stdout.readline()
             if "Initializations complete" in stdout:
-                play("sound/misc/server-ready.ogg")
+                play("sounds/misc/server-ready.ogg")
                 time_taken = time.time() - start_time
                 print("{} seconds taken to fully start".format(time_taken))
             if "Map is ready." in stdout:

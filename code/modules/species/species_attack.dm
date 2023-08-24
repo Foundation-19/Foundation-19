@@ -1,6 +1,6 @@
 /datum/unarmed_attack/bite/sharp //eye teeth
 	attack_verb = list("bit", "chomped on")
-	attack_sound = 'sound/weapons/bite.ogg'
+	attack_sound = 'sounds/weapons/bite.ogg'
 	shredding = FALSE
 	sharp = TRUE
 	edge = TRUE
@@ -18,8 +18,8 @@
 	attack_noun = list("claws")
 	eye_attack_text = "claws"
 	eye_attack_text_victim = "sharp claws"
-	attack_sound = 'sound/weapons/slice.ogg'
-	miss_sound = 'sound/weapons/slashmiss.ogg'
+	attack_sound = 'sounds/weapons/slice.ogg'
+	miss_sound = 'sounds/weapons/slashmiss.ogg'
 	sharp = TRUE
 	edge = TRUE
 	attack_name = "claws"
@@ -89,7 +89,7 @@
 	attack_verb = list("eviscerated", "gored")
 	damage = 8
 	attack_name = "terrifying claws"
-	attack_sound = 'sound/weapons/alien_claw_flesh2.ogg'
+	attack_sound = 'sounds/weapons/alien_claw_flesh2.ogg'
 
 /datum/unarmed_attack/bite/strong
 	attack_verb = list("mauled")
@@ -171,8 +171,8 @@
 	eye_attack_text = "a forelimb"
 	eye_attack_text_victim = "a forelimb"
 	attack_name = "forelimb slash"
-	attack_sound = 'sound/weapons/slice.ogg'
-	miss_sound = 'sound/weapons/slashmiss.ogg'
+	attack_sound = 'sounds/weapons/slice.ogg'
+	miss_sound = 'sounds/weapons/slashmiss.ogg'
 
 /datum/unarmed_attack/punch/starborn
 	attack_verb = list("scorched", "burned", "fried")
@@ -184,7 +184,7 @@
 
 /datum/unarmed_attack/bite/venom
 	attack_verb = list("bit", "sank their fangs into")
-	attack_sound = 'sound/weapons/bite.ogg'
+	attack_sound = 'sounds/weapons/bite.ogg'
 	damage = 5
 	delay = 120
 	attack_name = "venomous bite"

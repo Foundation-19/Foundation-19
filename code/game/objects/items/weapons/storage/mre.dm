@@ -10,7 +10,7 @@ MRE Stuff
 	storage_slots = 7
 	max_w_class = ITEM_SIZE_SMALL
 	opened = FALSE
-	open_sound = 'sound/effects/rip1.ogg'
+	open_sound = 'sounds/effects/rip1.ogg'
 	var/main_meal = /obj/item/storage/mrebag
 	var/meal_desc = "This one is menu 1, meat pizza."
 	startswith = list(
@@ -189,7 +189,7 @@ MRE Stuff
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_SMALL
 	opened = FALSE
-	open_sound = 'sound/effects/bubbles.ogg'
+	open_sound = 'sounds/effects/bubbles.ogg'
 	startswith = list(/obj/item/reagent_containers/food/snacks/slice/meatpizza/filled)
 
 /obj/item/storage/mrebag/Initialize()
@@ -239,7 +239,7 @@ MRE Stuff
 	name = "dessert"
 	desc = "A vacuum-sealed bag containing the MRE's dessert."
 	icon_state = "pouch_small"
-	open_sound = 'sound/effects/rip1.ogg'
+	open_sound = 'sounds/effects/rip1.ogg'
 	startswith = list(/obj/random/mre/dessert)
 
 /obj/item/storage/mrebag/dessert/menu9

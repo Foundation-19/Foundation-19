@@ -20,7 +20,7 @@
 	amt_stunned = 6
 
 	hud_state = "wiz_cuff"
-	cast_sound = 'sound/magic/wandodeath.ogg'
+	cast_sound = 'sounds/magic/wandodeath.ogg'
 
 /datum/spell/targeted/projectile/dumbfire/stuncuff/prox_cast(list/targets, spell_holder)
 	for(var/mob/living/M in targets)

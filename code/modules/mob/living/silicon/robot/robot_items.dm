@@ -27,7 +27,7 @@
 			if(confirm == "Yes" && !QDELETED(loaded_item)) //This is pretty copypasta-y
 				to_chat(user, "You activate the analyzer's microlaser, analyzing \the [loaded_item] and breaking it down.")
 				flick("portable_analyzer_scan", src)
-				playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Welder2.ogg', 50, 1)
 				for(var/T in loaded_item.origin_tech)
 					files.UpdateTech(T, loaded_item.origin_tech[T])
 					to_chat(user, "\The [loaded_item] had level [loaded_item.origin_tech[T]] in [CallTechName(T)].")
@@ -62,10 +62,10 @@
 			files.RefreshResearch()
 		if(success)
 			to_chat(user, "You connect to the research server, push your data upstream to it, then pull the resulting merged data from the master branch.")
-			playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 1)
+			playsound(src.loc, 'sounds/machines/twobeep.ogg', 50, 1)
 		else
 			to_chat(user, "Reserch server ping response timed out.  Unable to connect.  Please contact the system administrator.")
-			playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 1)
+			playsound(src.loc, 'sounds/machines/buzz-two.ogg', 50, 1)
 	if(response == "Eject")
 		if(loaded_item)
 			loaded_item.dropInto(loc)
@@ -214,7 +214,7 @@
 	var/choice = input("Would you like to change colour or mode?") as null|anything in list("Colour","Mode")
 	if(!choice) return
 
-	playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
+	playsound(src.loc, 'sounds/effects/pop.ogg', 50, 0)
 
 	switch(choice)
 
@@ -339,7 +339,7 @@
 	if (istype(target, /obj/structure/inflatable))
 		if (!do_after(user, 0.5 SECONDS, target))
 			return
-		playsound(loc, 'sound/machines/hiss.ogg', 75, 1)
+		playsound(loc, 'sounds/machines/hiss.ogg', 75, 1)
 		var/obj/item/inflatable/I
 		if (istype(target, /obj/structure/inflatable/door))
 			if (stored_doors < max_doors)
@@ -409,7 +409,7 @@
 			SPAN_NOTICE("You inflate \an [placed]."),
 			range = 5
 		)
-		playsound(loc, 'sound/items/zip.ogg', 75, 1)
+		playsound(loc, 'sounds/items/zip.ogg', 75, 1)
 
 /obj/item/reagent_containers/spray/cleaner/drone
 	name = "cleaner"

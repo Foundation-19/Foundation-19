@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 
-	fire_sound = 'sound/weapons/empty.ogg'
+	fire_sound = 'sounds/weapons/empty.ogg'
 	fire_sound_text = "a metallic thunk"
 	screen_shake = 0
 	throw_distance = 7
@@ -28,7 +28,7 @@
 
 //revolves the magazine, allowing players to choose between multiple grenade types
 /obj/item/gun/launcher/grenade/proc/pump(mob/M as mob)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, 'sounds/weapons/shotgunpump.ogg', 60, 1)
 	show_sound_effect(M.loc, M)
 
 	var/obj/item/grenade/next
@@ -163,7 +163,7 @@
 	desc = "A single barrel multi-purpose grenade launcher. Durable and reliable, most commonly used by the GOC and the UIU."
 	icon_state = "thumper"
 	item_state = "thumper"
-	fire_sound = 'sound/weapons/gun_thump.ogg'
+	fire_sound = 'sounds/weapons/gun_thump.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	force = 20 //Funny butt-stock melee attack
 	max_grenades = 0 //Forces one in the chamber

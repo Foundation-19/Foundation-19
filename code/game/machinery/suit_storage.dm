@@ -105,7 +105,7 @@
 	if(isScrewdriver(I))
 		if(do_after(user, 50, src))
 			panelopen = !panelopen
-			playsound(loc, 'sound/items/Screwdriver.ogg', 100, 1)
+			playsound(loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("You [panelopen ? "open" : "close"] the unit's maintenance panel."))
 			SSnano.update_uis(src)
 			update_icon()
@@ -283,7 +283,7 @@
 		eject_occupant(user)
 		return  // eject_occupant opens the door, so we need to return
 	isopen = !isopen
-	playsound(src, 'sound/machines/suitstorage_cycledoor.ogg', 50, 0)
+	playsound(src, 'sounds/machines/suitstorage_cycledoor.ogg', 50, 0)
 
 /obj/machinery/suit_storage_unit/proc/toggle_lock(mob/user)
 	if(!is_powered())
@@ -298,7 +298,7 @@
 	if(isopen)
 		return
 	islocked = !islocked
-	playsound(src, 'sound/machines/suitstorage_lockdoor.ogg', 50, 0)
+	playsound(src, 'sounds/machines/suitstorage_lockdoor.ogg', 50, 0)
 
 /obj/machinery/suit_storage_unit/proc/start_UV(mob/user)
 	if(isUV || isopen)

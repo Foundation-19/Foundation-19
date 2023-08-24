@@ -16,12 +16,12 @@
 	melting_point = T0C+300 //okay, not melting in this case, but hot enough to destroy wood
 	ignition_point = T0C+288
 	stack_origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
-	dooropen_noise = 'sound/effects/doorcreaky.ogg'
+	dooropen_noise = 'sounds/effects/doorcreaky.ogg'
 	door_icon_base = "wood"
 	destruction_desc = "splinters"
 	sheet_singular_name = "plank"
 	sheet_plural_name = "planks"
-	hitsound = 'sound/effects/woodhit.ogg'
+	hitsound = 'sounds/effects/woodhit.ogg'
 	conductive = 0
 	construction_difficulty = MATERIAL_NORMAL_DIY
 	chem_products = list(

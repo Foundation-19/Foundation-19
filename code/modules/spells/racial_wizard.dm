@@ -85,8 +85,8 @@
 
 	hud_state = "wiz_vox"
 
-	cast_sound = 'sound/voice/shriek1.ogg'
-	revert_sound = 'sound/voice/shriek1.ogg'
+	cast_sound = 'sounds/voice/shriek1.ogg'
+	revert_sound = 'sounds/voice/shriek1.ogg'
 
 	drop_items = 0
 

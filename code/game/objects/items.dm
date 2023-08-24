@@ -543,7 +543,7 @@ var/list/global/slot_flags_enumeration = list(
 	if(parry_chance)
 		if(default_parry_check(user, attacker, damage_source) && prob(parry_chance))
 			user.visible_message(SPAN_DANGER("\The [user] parries [attack_text] with \the [src]!"))
-			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
+			playsound(user.loc, 'sounds/weapons/punchmiss.ogg', 50, 1)
 			on_parry(damage_source)
 			return 1
 	return 0
@@ -564,7 +564,7 @@ var/list/global/slot_flags_enumeration = list(
 		return 0
 	attacker.apply_damage(force, damtype, attacker.hand ? BP_L_HAND : BP_R_HAND, used_weapon = src)
 	attacker.visible_message(SPAN_DANGER("[attacker] hurts \his hand on [src]!"))
-	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+	playsound(target, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 	playsound(target, hitsound, 50, 1, -1)
 	return 1
 

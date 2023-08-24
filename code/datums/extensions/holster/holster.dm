@@ -2,8 +2,8 @@
 	base_type = /datum/extension/holster
 	var/atom/atom_holder
 	var/obj/item/storage/storage
-	var/sound_in = 'sound/effects/holster/holsterin.ogg'
-	var/sound_out = 'sound/effects/holster/holsterout.ogg'
+	var/sound_in = 'sounds/effects/holster/holsterin.ogg'
+	var/sound_out = 'sounds/effects/holster/holsterout.ogg'
 	var/list/can_holster = null
 	var/obj/item/holstered = null
 

@@ -72,7 +72,7 @@
 				else
 					src.take_organ_damage(d, 0)
 				user.visible_message(SPAN_DANGER("[user] attacks [src]'s stomach wall with the [I.name]!"))
-				playsound(user.loc, 'sound/effects/attackblob.ogg', 50, 1)
+				playsound(user.loc, 'sounds/effects/attackblob.ogg', 50, 1)
 
 				if(prob(src.getBruteLoss() - 50))
 					gib()
@@ -188,7 +188,7 @@
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	if(!is_asystole())
 		if (on_fire)
-			playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			playsound(src.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 			if (M.on_fire)
 				M.visible_message(SPAN_WARNING("[M] tries to pat out [src]'s flames, but to no avail!"),
 				SPAN_WARNING("You try to pat out [src]'s flames, but to no avail! Put yourself out first!"))
@@ -249,7 +249,7 @@
 				AdjustStunned(-3)
 				AdjustWeakened(-3)
 
-			playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			playsound(src.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 
 /mob/living/carbon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
 	if(eyecheck() < intensity || override_blindness_check)
@@ -384,7 +384,7 @@
 		return FALSE
 	stop_pulling()
 	to_chat(src, SPAN_WARNING("You slipped on [slipped_on]!"))
-	playsound(loc, 'sound/misc/slip.ogg', 50, 1, -3)
+	playsound(loc, 'sounds/misc/slip.ogg', 50, 1, -3)
 	Weaken(Floor(stun_duration/2))
 	return TRUE
 
@@ -512,7 +512,7 @@
 		if(!source_string)
 			source_string = source.name
 		to_chat(src, SPAN_NOTICE("You are now running on internals from \the [source_string]."))
-		playsound(src, 'sound/effects/internals.ogg', 50, 0)
+		playsound(src, 'sounds/effects/internals.ogg', 50, 0)
 	if(old_internal && !internal)
 		to_chat(src, SPAN_WARNING("You are no longer running on internals."))
 	if(internals)

@@ -15,7 +15,7 @@
 	var/randomise_selection = 0 //if it lets the usr choose the teleport loc or picks it from the list
 	var/invocation_area = 1 //if the invocation appends the selected area
 
-	cast_sound = 'sound/effects/teleport.ogg'
+	cast_sound = 'sounds/effects/teleport.ogg'
 
 	hud_state = "wiz_tele"
 

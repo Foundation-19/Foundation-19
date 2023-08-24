@@ -5,11 +5,11 @@
 	var/active_portals_max //how many portals can be spawned at each interval
 	var/maximum_mob_count
 	var/target_temp = 500
-	var/activation_sound = 'sound/effects/ghost.ogg'
+	var/activation_sound = 'sounds/effects/ghost.ogg'
 	var/mob_spawn_sounds = list(
-		'sound/magic/mutate.ogg',
-		'sound/effects/squelch1.ogg',
-		'sound/effects/squelch2.ogg'
+		'sounds/magic/mutate.ogg',
+		'sounds/effects/squelch1.ogg',
+		'sounds/effects/squelch2.ogg'
 	)
 	var/activation_messages = list(
 		"lets loose a thousand agonized screams as it forces reality around it to bleed and distort!",

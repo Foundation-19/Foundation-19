@@ -12,9 +12,9 @@
 	ruin_tags_whitelist = RUIN_ALIEN|RUIN_NATURAL|RUIN_WRECK
 	sub_themes = list(/datum/exoplanet_theme/robotic_guardians)
 	var/spooky_ambience = list(
-		'sound/ambience/ominous1.ogg',
-		'sound/ambience/ominous2.ogg',
-		'sound/ambience/ominous3.ogg'
+		'sounds/ambience/ominous1.ogg',
+		'sounds/ambience/ominous2.ogg',
+		'sounds/ambience/ominous3.ogg'
 		)
 
 /datum/exoplanet_theme/ruined_city/before_map_generation(obj/effect/overmap/visitable/sector/exoplanet/E)

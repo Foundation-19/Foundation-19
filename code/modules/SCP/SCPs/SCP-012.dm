@@ -60,10 +60,10 @@ GLOBAL_LIST_EMPTY(scp012s)
 		else if(prob(5))
 			if(prob(50))
 				affecting.visible_message("<span class = \"notice\">[affecting] looks at \"[name]\" and sighs dejectedly.</span>")
-				playsound(affecting, "sound/voice/emotes/sigh_[gender2text(affecting.gender)].ogg", 100)
+				playsound(affecting, "sounds/voice/emotes/sigh_[gender2text(affecting.gender)].ogg", 100)
 			else
 				affecting.visible_message("<span class = \"notice\">[affecting] looks at \"[name]\" and cries.</span>")
-				playsound(affecting, "sound/voice/emotes/[gender2text(affecting.gender)]_cry[pick(1,2)].ogg", 100)
+				playsound(affecting, "sounds/voice/emotes/[gender2text(affecting.gender)]_cry[pick(1,2)].ogg", 100)
 
 /obj/item/paper/scp012/proc/can_affect(mob/living/carbon/human/H)
 	// technically 012 is memetic, but having no counter and being insta-GBJ'd seems dumb

@@ -1,7 +1,7 @@
 /obj/item/projectile/ion
 	name = "ion bolt"
 	icon_state = "ion"
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sounds/weapons/Laser.ogg'
 	damage = 0
 	damage_type = BURN
 	damage_flags = 0
@@ -35,7 +35,7 @@
 /obj/item/projectile/temp
 	name = "freeze beam"
 	icon_state = "ice_2"
-	fire_sound = 'sound/weapons/pulse3.ogg'
+	fire_sound = 'sounds/weapons/pulse3.ogg'
 	damage = 0
 	damage_type = BURN
 	damage_flags = 0
@@ -83,7 +83,7 @@
 		forceMove(A.loc)
 		return
 	A.ex_act(2)
-	playsound(src.loc, 'sound/effects/meteorimpact.ogg', 40, 1)
+	playsound(src.loc, 'sounds/effects/meteorimpact.ogg', 40, 1)
 	for(var/mob/M in range(10, src))
 		if(!M.stat && !istype(M, /mob/living/silicon/ai))
 			shake_camera(M, 3, 1)
@@ -93,7 +93,7 @@
 /obj/item/projectile/energy/floramut
 	name = "alpha somatoray"
 	icon_state = "energy"
-	fire_sound = 'sound/effects/stealthoff.ogg'
+	fire_sound = 'sounds/effects/stealthoff.ogg'
 	damage = 0
 	damage_type = TOX
 	nodamage = TRUE
@@ -126,7 +126,7 @@
 /obj/item/projectile/energy/floramut/gene
 	name = "gamma somatoray"
 	icon_state = "energy2"
-	fire_sound = 'sound/effects/stealthoff.ogg'
+	fire_sound = 'sounds/effects/stealthoff.ogg'
 	damage = 0
 	damage_type = TOX
 	nodamage = TRUE
@@ -135,7 +135,7 @@
 /obj/item/projectile/energy/florayield
 	name = "beta somatoray"
 	icon_state = "energy2"
-	fire_sound = 'sound/effects/stealthoff.ogg'
+	fire_sound = 'sounds/effects/stealthoff.ogg'
 	damage = 0
 	damage_type = TOX
 	nodamage = TRUE

@@ -10,7 +10,7 @@
 	charge_max = 300
 	cooldown_min = 100
 	level_max = list(UPGRADE_TOTAL = 2, UPGRADE_SPEED = 2, UPGRADE_POWER = 0)
-	cast_sound = 'sound/effects/snap.ogg'
+	cast_sound = 'sounds/effects/snap.ogg'
 	duration = 40
 	hud_state = "gen_immolate"
 

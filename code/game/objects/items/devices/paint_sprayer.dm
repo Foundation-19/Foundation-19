@@ -147,7 +147,7 @@
 		. = FALSE
 	if (.)
 		add_fingerprint(user)
-		playsound(get_turf(src), 'sound/effects/spray3.ogg', 30, 1, -6)
+		playsound(get_turf(src), 'sounds/effects/spray3.ogg', 30, 1, -6)
 	return .
 
 /obj/item/device/paint_sprayer/proc/remove_paint(atom/A, mob/user)
@@ -171,7 +171,7 @@
 		. = TRUE
 	if (.)
 		add_fingerprint(user)
-		playsound(get_turf(src), 'sound/effects/spray3.ogg', 30, 1, -6)
+		playsound(get_turf(src), 'sounds/effects/spray3.ogg', 30, 1, -6)
 	return .
 
 /obj/item/device/paint_sprayer/proc/pick_color_from_floor(turf/simulated/floor/F, mob/user)
@@ -295,7 +295,7 @@
 			add_fingerprint(user)
 			to_chat(user, SPAN_NOTICE("You set \the [src] to paint with <span style='color:[paint_color]'>a new color</span>."))
 		update_icon()
-		playsound(src, 'sound/weapons/flipblade.ogg', 30, 1)
+		playsound(src, 'sounds/weapons/flipblade.ogg', 30, 1)
 		return TRUE
 	return FALSE
 
