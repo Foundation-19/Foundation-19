@@ -115,7 +115,7 @@
 				SPAN_WARNING("\The [src] bounces dangerously. Luckily it didn't break."),
 				SPAN_WARNING("You hear the sound of glass hitting something.")
 			)
-		playsound(src.loc, "sound/effects/Glasshit.ogg", 50)
+		playsound(src.loc, "sounds/effects/Glasshit.ogg", 50)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
 	if (!proximity || (target.type in can_be_placed_into) || standard_dispenser_refill(user, target) || standard_pour_into(user, target))

@@ -398,7 +398,7 @@
 			SPAN_DANGER("You hear buzzing coming from the ceiling."),
 			range = 3
 		)
-		playsound(loc, "sound/machines/firedoor.ogg", 50)
+		playsound(loc, "sounds/machines/firedoor.ogg", 50)
 		sleep(2 SECONDS)
 		for(var/turf/turf in locs)
 			for(var/mob/living/M in turf)

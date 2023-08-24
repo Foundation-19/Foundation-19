@@ -1089,12 +1089,12 @@ About the new airlock wires panel:
 			else
 				src.p_open = 0
 				user.visible_message(SPAN_NOTICE("[user.name] closes the maintenance panel on \the [src]."), SPAN_NOTICE("You close the maintenance panel on \the [src]."))
-				playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
+				playsound(src.loc, "sounds/items/Screwdriver.ogg", 20)
 				show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 		else
 			src.p_open = 1
 			user.visible_message(SPAN_NOTICE("[user.name] opens the maintenance panel on \the [src]."), SPAN_NOTICE("You open the maintenance panel on \the [src]."))
-			playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
+			playsound(src.loc, "sounds/items/Screwdriver.ogg", 20)
 			show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 		src.update_icon()
 	else if(isWirecutter(C))
