@@ -4,4 +4,4 @@
 
 /datum/smite/fake_bwoink/effect(client/user, mob/living/target)
 	. = ..()
-	sound_to(target, 'sound/effects/adminhelp.ogg')
+	sound_to(target, 'sounds/effects/adminhelp.ogg')
