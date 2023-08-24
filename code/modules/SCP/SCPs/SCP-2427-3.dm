@@ -10,10 +10,10 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	attack_verb = list("stabbed")
 	hitsound = 'sound/scp/2427/stab.ogg'
 	damtype = BRUTE
-	melee_accuracy_bonus = 200
-	stun_prob = 0 // Only combat!
-	edge = 1
-	force = 36
+	melee_accuracy_bonus = 60 //As a reminder! Putting the melee accuracy bonus above 100 does not work intended. Infact, it breaks forced dodges from things like shields/etc in many cases! The original value for this was 200, which broke a lot of combat changes we did!
+	stun_prob = 0 // Only combat! Please avoid adding stuns to something which, itself by nature, cannot be stunned!
+	edge = 1 //The natural weapon has a sharp edge! Though ideally, it should be 2; 1 is the value we have settled on for balancing reasons. If you need further context. Please look between states 1 & 2 on edged objects (pierce and slash)
+	force = 28
 
 /datum/ai_holder/simple_animal/melee/s2427_3
 	mauling = TRUE
@@ -39,15 +39,15 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	icon_dead = "dead"
 	pixel_x = -8
 	default_pixel_x = -8
-
+	can_rest = FALSE
 	SCP = /datum/scp/scp_2427_3
 	status_flags = NO_ANTAG
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 1000
+	health = 1000
 
 	movement_cooldown = 5
 	movement_sound = 'sound/mecha/mechmove04.ogg'
@@ -67,11 +67,11 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	var/satiety = 300
 	/// How much satiety is reduced per tick
 	var/satiety_reduction_per_tick = 0.5
-	/// Upon going to that point or above - the mob goes into is_sleeping stage and is unable to act/speak/move for some time
+	/// Upon going to that point or above - the mob goes into the is_sleeping stage and is unable to act/speak/move for some time
 	var/max_satiety = 600
-	/// Upon that point, the mob is on rampage, allowing it to escape and to move faster
+	/// Upon that point, the mob is on a rampage, allowing it to escape and move faster
 	var/min_satiety = 0
-	/// When TRUE - it ignores purity list and can attack anything
+	/// When TRUE - it ignores the purity list and can attack anything
 	var/enraged = FALSE
 	var/is_sleeping = FALSE
 	/// If is_sleeping, getting down to that health will wake us up
@@ -117,7 +117,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		CheckPurity(L)
 	AdjustSatiety(-satiety_reduction_per_tick)
 	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
-		adjustBruteLoss(maxHealth * 0.01)
+		adjustBruteLoss(maxHealth * 0.035)
 
 /mob/living/simple_animal/hostile/scp_2427_3/get_status_tab_items()
 	. = ..()
@@ -176,7 +176,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(A in purity_list)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
 		return
-	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list))
+	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list) && !A.isMonkey())
 		var/mob/living/carbon/human/H = A
 		if(H.stat != DEAD)
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
@@ -184,7 +184,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4))))
+		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4)))) //This is an informational comment; but please do not remove the 'ISMONKEY' check due to the fact that unless we recode the purity mechanism, 2427-3 Cannot attack them!
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = round(max_satiety * 0.5)
@@ -196,7 +196,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
 			AdjustSatiety(nutr)
-			adjustBruteLoss(-nutr * 2)
+			adjustBruteLoss(-nutr * 1.5) // PLEASE never set this above 1.5x; else 2427 can easily push through blockades due to how efficient this was before.
 			return
 	return ..()
 
@@ -206,6 +206,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	return ..()
 
 /mob/living/simple_animal/hostile/scp_2427_3/SelfMove(direction)
+	resting = FALSE //2427 is forced to rest on dying... So make them not rest the next time they move.
 	if(is_sleeping)
 		return FALSE
 	return ..()
