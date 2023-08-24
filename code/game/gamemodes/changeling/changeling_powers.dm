@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	var/mob/living/carbon/current = user
 	var/datum/changeling/changeling = mind.changeling
 
-	if(current.isMonkey() && !allow_during_lesser_form)
+	if(ismonkey(current) && !allow_during_lesser_form)
 		to_chat(user, SPAN_WARNING("Our current form is too primitive to do this."))
 		return
 	if(current.stat > max_stat)
@@ -677,7 +677,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	var/mob/living/carbon/human/H = user
 	if(!istype(H))
 		return FALSE
-	if(H.isMonkey()) // Give a warning if they try to use it while existing as a monkey, just so they know
+	if(ismonkey(H)) // Give a warning if they try to use it while existing as a monkey, just so they know
 		to_chat(user, SPAN_WARNING("Use your Transform ability to exit this form."))
 		return FALSE
 	. = ..(user)
