@@ -232,7 +232,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 		var/new_hid = sanitize(input(user, "Select new holopad ID.",,holopad_id) as text|null, 30)
 		if(new_hid)
 			ChangeID(new_hid)
-			playsound(get_turf(src), /effects/pop.ogg', 25)
+			playsound(get_turf(src), 'sounds/effects/pop.ogg', 25)
 			to_chat(user, SPAN_NOTICE("\The [src] ID has been changed to [holopad_id]!"))
 		return
 	return ..()
@@ -242,7 +242,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	targetpad.sourcepad = src //This marks the holopad you are making the call from
 	targetpad.caller_id = user //This marks you as the caller
 	targetpad.incoming_connection = TRUE
-	playsound(targetpad.loc, /machines/chime.ogg', 25, 5)
+	playsound(targetpad.loc, 'sounds/machines/chime.ogg', 25, 5)
 	targetpad.icon_state = "[targetpad.base_icon]1"
 	targetpad.audible_message("<b>\The [src]</b> announces, \"Incoming communications request from [targetpad.sourcepad.loc.loc].\"")
 	to_chat(user, SPAN_NOTICE("Trying to establish a connection to the holopad in [targetpad.loc.loc]... Please await confirmation from recipient."))

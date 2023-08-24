@@ -62,7 +62,7 @@
 		var/mob/living/carbon/human/H = M
 		H.custom_pain(SPAN_WARNING("You feel a tiny prick!"), 1, TRUE, H.get_organ(user.zone_sel.selecting))
 
-	playsound(src, /effects/hypospray.ogg',25)
+	playsound(src, 'sounds/effects/hypospray.ogg',25)
 	user.visible_message(SPAN_WARNING("[user] injects [M] with [src]."))
 
 	if(M.reagents)
@@ -110,7 +110,7 @@
 			return
 		remove_vial(user)
 		update_icon()
-		playsound(loc, /weapons/flipblade.ogg', 50, 1)
+		playsound(loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 		return
 	return ..()
 
@@ -134,7 +134,7 @@
 		loaded_vial.reagents.trans_to_holder(reagents,volume)
 		user.visible_message(SPAN_NOTICE("[user] has loaded [W] into \the [src]."),SPAN_NOTICE("[usermessage]"))
 		update_icon()
-		playsound(src.loc, /weapons/empty.ogg', 50, 1)
+		playsound(src.loc, 'sounds/weapons/empty.ogg', 50, 1)
 		return
 	..()
 

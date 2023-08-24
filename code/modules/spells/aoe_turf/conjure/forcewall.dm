@@ -8,7 +8,7 @@
 	charge_max = 100
 	spell_flags = 0
 	range = 0
-	cast_sound = /magic/forcewall.ogg'
+	cast_sound = 'sounds/magic/forcewall.ogg'
 
 	hud_state = "wiz_shield"
 

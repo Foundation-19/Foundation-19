@@ -15,7 +15,7 @@
 	throw_range = 8
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = DEFAULT_BOX_STORAGE
-	use_sound = /effects/storage/box.ogg'
+	use_sound = 'sounds/effects/storage/box.ogg'
 
 /obj/item/storage/firstaid/open(mob/user)
 	. = ..()
@@ -199,7 +199,7 @@
 	storage_slots = 14
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = null
-	use_sound = /effects/storage/briefcase.ogg'
+	use_sound = 'sounds/effects/storage/briefcase.ogg'
 
 	can_hold = list(
 		/obj/item/bonesetter,
@@ -252,7 +252,7 @@
 	can_hold = list(/obj/item/reagent_containers/pill,/obj/item/dice,/obj/item/paper)
 	allow_quick_gather = 1
 	use_to_pickup = 1
-	use_sound = /effects/storage/pillbottle.ogg'
+	use_sound = 'sounds/effects/storage/pillbottle.ogg'
 	matter = list(MATERIAL_PLASTIC = 250)
 	var/wrapper_color
 	var/label
@@ -266,7 +266,7 @@
 	var/zone = user.zone_sel.selecting
 	if(zone == BP_MOUTH && target.can_eat())
 		user.visible_message(SPAN_NOTICE("[user] pops a pill from \the [src]."))
-		playsound(get_turf(src), /effects/peelz.ogg', 50)
+		playsound(get_turf(src), 'sounds/effects/peelz.ogg', 50)
 		var/list/peelz = filter_list(contents,/obj/item/reagent_containers/pill)
 		if(peelz.len)
 			var/obj/item/reagent_containers/pill/P = pick(peelz)

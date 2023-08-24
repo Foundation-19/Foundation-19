@@ -44,7 +44,7 @@
 	// Matter state data.
 	var/chilling_point
 	var/chilling_message = "crackles and freezes!"
-	var/chilling_sound = /effects/bubbles.ogg'
+	var/chilling_sound = 'sounds/effects/bubbles.ogg'
 	var/chilling_prod_english	// used for codex
 	var/list/chilling_products
 
@@ -52,7 +52,7 @@
 	var/heating_prod_english	// used for codex
 	var/heating_point
 	var/heating_message = "begins to boil!"
-	var/heating_sound = /effects/bubbles.ogg'
+	var/heating_sound = 'sounds/effects/bubbles.ogg'
 
 	var/temperature_multiplier = 1
 	var/value = 1

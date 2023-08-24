@@ -59,7 +59,7 @@
 		new/obj/effect/quicksand(T)
 
 /area/exoplanet/desert
-	ambience = list(/effects/wind/desert0.ogg's/effects/wind/desert1.oggds/effects/wind/desert2.ognds/effects/wind/desert3.ounds/effects/wind/desert4.ounds/effects/wind/desert5.ogg')
+	ambience = list('sounds/effects/wind/desert0.ogg','sounds/effects/wind/desert1.ogg','sounds/effects/wind/desert2.ogg','sounds/effects/wind/desert3.ogg','sounds/effects/wind/desert4.ogg','sounds/effects/wind/desert5.ogg')
 	base_turf = /turf/simulated/floor/exoplanet/desert
 
 /obj/effect/quicksand

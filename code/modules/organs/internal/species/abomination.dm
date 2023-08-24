@@ -65,7 +65,7 @@
 		else if(larva_cooldown <= 0)
 			var/mob/living/simple_animal/hostile/infestation/larva/L = new(get_turf(owner))
 			owner.Stun(2)
-			playsound(L, /effects/splat.ogg', 50, TRUE)
+			playsound(L, 'sounds/effects/splat.ogg', 50, TRUE)
 			var/obj/item/organ/internal/stomach/stomach = owner.internal_organs_by_name[BP_STOMACH]
 			var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(get_turf(owner))
 			splat.color = COLOR_MAROON

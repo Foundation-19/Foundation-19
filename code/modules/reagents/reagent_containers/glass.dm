@@ -296,7 +296,7 @@
 		else
 			reagents.trans_to_obj(D, 5)
 			to_chat(user, SPAN_NOTICE("You wet \the [D] in \the [src]."))
-			playsound(loc, /effects/slosh.ogg', 25, 1)
+			playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
 		return
 	else
 		return ..()

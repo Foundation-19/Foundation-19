@@ -149,8 +149,8 @@
 /decl/security_level/default
 	icon = 'icons/misc/security_state.dmi'
 
-	var/static/datum/announcement/priority/security/security_announcement_up = new(do_log = 0, do_newscast = 1, new_sound = sound(/misc/notice1.ogg'))
-	var/static/datum/announcement/priority/security/security_announcement_down = new(do_log = 0, do_newscast = 1, new_sound = sound(/misc/notice1.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_up = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_down = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
 
 /decl/security_level/default/switching_up_to()
 	notify_station()
@@ -182,7 +182,7 @@
 
 	description = "There is no active threat to the Site."
 
-	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound(/AI/announcer/codegreen.ogg', volume = 150))
+	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codegreen.ogg', volume = 150))
 
 /decl/security_level/default/code_green/switching_down_to()
 	security_announcement_green.Announce("The situation has been resolved. All personnel are to return to their regular duties.", "Attention! Alert level lowered to code green.")
@@ -203,7 +203,7 @@
 
 	description = "A potential threat has been reported but not yet confirmed."
 
-	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound(/misc/notice1.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
 
 /decl/security_level/default/code_yellow/switching_up_to()
 	security_announcement_yellow.Announce("There is an unconfirmed potential threat to the facility. Guards are to cautiously investigate the facility and secure sensitive areas. All personnel are recommended to report unusual behaviour.", "Attention! Code Yellow alert procedures now in effect!")
@@ -228,7 +228,7 @@
 
 	description = "An Euclid SCP is currently uncontained."
 
-	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound(/AI/announcer/codered.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codered.ogg'))
 
 /decl/security_level/default/code_orange/switching_up_to()
 	security_announcement_orange.Announce("An Euclid SCP has broken containment and its current whereabouts are unknown. Security should investigate and focus on recontainment as a first priority, or request an MTF unit to assist.", "Attention! Code Orange alert procedures now in effect!")
@@ -253,7 +253,7 @@
 
 	description = "A Keter SCP is currently uncontained."
 
-	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound(/AI/announcer/codered.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codered.ogg'))
 
 /decl/security_level/default/code_red/switching_up_to()
 	security_announcement_red.Announce("A Keter SCP has broken containment and its current whereabouts are unknown. Security should secure all exit points immediately before recontaining breached anomalies.", "Attention! Code red alert procedures now in effect!")
@@ -278,7 +278,7 @@
 
 	description = "Several Keter and Euclid SCPs are uncontained."
 
-	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound(/AI/announcer/codeblack.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codeblack.ogg'))
 
 /decl/security_level/default/code_black/switching_up_to()
 	security_announcement_black.Announce("The site is experiencing multiple Keter and Euclid level containment breaches. Full site lockdown initiated.", "Attention! Code Black alert procedures now in effect!")
@@ -303,7 +303,7 @@
 
 	description = "A hostile Group of Interest is invading or infiltrating the site."
 
-	var/static/datum/announcement/priority/security/security_announcement_pitchblack = new(do_log = 0, do_newscast = 1, new_sound = sound(/AI/announcer/codeblack.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_pitchblack = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codeblack.ogg'))
 
 /decl/security_level/default/code_pitchblack/switching_up_to()
 	security_announcement_pitchblack.Announce("There have been confirmed reports of a hostile Group of Interest on-site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code pitchblack alert procedures now in effect!")
@@ -332,7 +332,7 @@
 
 	psionic_control_level = PSI_IMPLANT_DISABLED
 
-	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound(/effects/siren.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/effects/siren.ogg'))
 
 /decl/security_level/default/code_delta/switching_up_to()
 	security_announcement_delta.Announce("The destruction of the site is imminent. All personnel are to obey instructions given by administrative staff. Any violation of these orders is punishable by immediate termination. This is not a drill.", "Attention! Code Delta evacuation procedures now in effect!")

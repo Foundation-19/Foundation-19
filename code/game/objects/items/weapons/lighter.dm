@@ -154,19 +154,19 @@
 
 /obj/item/flame/lighter/zippo/light_effects(mob/user)
 	user.visible_message(SPAN_CLASS("rose","Without even breaking stride, [user] flips open and lights [src] in one smooth movement."))
-	playsound(src.loc, /items/zippo_open.ogg', 100, 1, -4)
+	playsound(src.loc, 'sounds/items/zippo_open.ogg', 100, 1, -4)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 
 /obj/item/flame/lighter/zippo/shutoff_effects(mob/user)
 	user.visible_message(SPAN_CLASS("rose","You hear a quiet click, as [user] shuts off [src] without even looking at what they're doing."))
-	playsound(src.loc, /items/zippo_close.ogg', 100, 1, -4)
+	playsound(src.loc, 'sounds/items/zippo_close.ogg', 100, 1, -4)
 
 /obj/item/flame/lighter/zippo/afterattack(obj/O, mob/user, proximity)
 	if(!proximity) return
 	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && !lit)
 		O.reagents.trans_to_obj(src, max_fuel)
 		to_chat(user, SPAN_NOTICE("You refuel [src] from \the [O]"))
-		playsound(src.loc, /effects/refill.ogg', 50, 1, -6)
+		playsound(src.loc, 'sounds/effects/refill.ogg', 50, 1, -6)
 
 /obj/item/flame/lighter/zippo/black
 	color = COLOR_DARK_GRAY

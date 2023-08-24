@@ -311,7 +311,7 @@
 			for(var/mob/M in GLOB.player_list)
 				var/turf/T = get_turf(M)
 				if(T && (T.z in GLOB.using_map.station_levels) && !istype(M,/mob/new_player) && M.can_hear())
-					sound_to(M, /ambience/matteralarm.ogg')
+					sound_to(M, 'sounds/ambience/matteralarm.ogg')
 		else if(safe_warned && public_alert)
 			GLOB.global_announcer.autosay(alert_msg, "Supermatter Monitor")
 			public_alert = 0
@@ -486,7 +486,7 @@
 	if(istype(W, /obj/item/tape_roll))
 		to_chat(user, SPAN_NOTICE("You repair some of the damage to \the [src] with \the [W]."))
 		damage = max(damage - 10, 0)
-		playsound(src, /effects/tape.ogg', 25)
+		playsound(src, 'sounds/effects/tape.ogg', 25)
 		show_sound_effect(src, user, soundicon = SFX_ICON_SMALL)
 
 	user.visible_message(

@@ -272,7 +272,7 @@
 			return 1
 
 		to_chat(user, SPAN_NOTICE("Now welding \the [src]."))
-		playsound(src, /items/Welder.ogg', 50, 1)
+		playsound(src, 'sounds/items/Welder.ogg', 50, 1)
 
 		if(!do_after(user, 20, src))
 			to_chat(user, SPAN_NOTICE("You must remain close to finish this task."))
@@ -287,7 +287,7 @@
 
 		welded = !welded
 		update_icon()
-		playsound(src, /items/Welder2.ogg', 50, 1)
+		playsound(src, 'sounds/items/Welder2.ogg', 50, 1)
 		user.visible_message(SPAN_NOTICE("\The [user] [welded ? "welds \the [src] shut" : "unwelds \the [src]"]."), \
 			SPAN_NOTICE("You [welded ? "weld \the [src] shut" : "unweld \the [src]"]."), \
 			"You hear welding.")
@@ -320,7 +320,7 @@
 			to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it is too exerted due to internal pressure."))
 			add_fingerprint(user)
 			return 1
-		playsound(src.loc, /items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
 		if (do_after(user, 40, src))
 			user.visible_message( \

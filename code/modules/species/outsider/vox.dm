@@ -31,7 +31,7 @@
 	hidden_from_codex = FALSE
 
 	taste_sensitivity = TASTE_DULL
-	speech_sounds = list(/voice/shriek1.ogg')
+	speech_sounds = list('sounds/voice/shriek1.ogg')
 	speech_chance = 20
 
 	warning_low_pressure = 50
@@ -145,7 +145,7 @@
 	damage_mask =     'icons/mob/human_races/species/vox/damage_mask_armalis.dmi'
 	blood_mask =      'icons/mob/human_races/species/vox/blood_mask_armalis.dmi'
 
-	speech_sounds = list(/voice/ashriek.ogg')
+	speech_sounds = list('sounds/voice/ashriek.ogg')
 	speech_chance = 10
 
 	slowdown = 1

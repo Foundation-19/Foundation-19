@@ -5,7 +5,7 @@
 
 	var/material/material
 	var/icon_base
-	hitsound = /weapons/genhit.ogg'
+	hitsound = 'sounds/weapons/genhit.ogg'
 	var/datum/lock/lock
 	var/initial_lock_value //for mapping purposes. Basically if this value is set, it sets the lock to this value.
 	autoset_access = FALSE // Doesn't even use access

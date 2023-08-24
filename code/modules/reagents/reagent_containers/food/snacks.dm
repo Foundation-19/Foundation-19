@@ -15,7 +15,7 @@
 	var/cooks_into_type = null
 	var/nutriment_amt = 0
 	var/list/nutriment_desc = list("food" = 1)
-	var/list/eat_sound = /items/eatfood.ogg'
+	var/list/eat_sound = 'sounds/items/eatfood.ogg'
 	center_of_mass = "x=16;y=16"
 	w_class = ITEM_SIZE_SMALL
 

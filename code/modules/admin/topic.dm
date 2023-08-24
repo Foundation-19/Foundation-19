@@ -1116,7 +1116,7 @@
 		to_chat(ref_client, TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE)
 		to_chat(ref_client, msgplayer)
 		if(ref_client.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
-			sound_to(ref_client, /effects/adminhelp-reply.ogg')
+			sound_to(ref_client, 'sounds/effects/adminhelp-reply.ogg')
 		ticket.close(client_repository.get_lite_client(usr.client))
 
 	else if(href_list["adminplayerobservecoodjump"])

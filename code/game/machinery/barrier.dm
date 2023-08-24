@@ -56,7 +56,7 @@
 				SPAN_WARNING("You whack \the [I] against \the [src]. Nothing happens."),
 				SPAN_WARNING("You hear a soft impact!")
 			)
-			playsound(src, /weapons/tablehit1.ogg', 50, TRUE)
+			playsound(src, 'sounds/weapons/tablehit1.ogg', 50, TRUE)
 			show_sound_effect(src.loc, user)
 			return
 		user.visible_message(
@@ -64,7 +64,7 @@
 			SPAN_DANGER("You slam \the [I] against \the [src]!"),
 			SPAN_WARNING("You hear a violent impact!")
 		)
-		playsound(src, /weapons/smash.ogg', 50, TRUE)
+		playsound(src, 'sounds/weapons/smash.ogg', 50, TRUE)
 		show_sound_effect(src.loc, user)
 		if (I.damtype == BRUTE)
 			modify_health(-I.force * 0.75)

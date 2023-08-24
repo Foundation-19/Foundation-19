@@ -210,7 +210,7 @@
 	on = !on
 	if(on)
 		if(ismob(src.loc))
-			playsound(src.loc, /effects/walkieon.ogg', 40, 0, -1)
+			playsound(src.loc, 'sounds/effects/walkieon.ogg', 40, 0, -1)
 		START_PROCESSING(SSobj, src)
 	else
 		STOP_PROCESSING(SSobj, src)
@@ -348,7 +348,7 @@
 		set_frequency(frequency)
 
 	if(loc == M)
-		playsound(loc, /effects/walkietalkie.ogg', 20, 0, -1)
+		playsound(loc, 'sounds/effects/walkietalkie.ogg', 20, 0, -1)
 
 
 	/* Quick introduction:
@@ -368,7 +368,7 @@
 		return 0
 
 	var/turf/position = get_turf(src)
-	playsound(src, /effects/radiohiss.ogg', 10)
+	playsound(src, 'sounds/effects/radiohiss.ogg', 10)
 
 	//#### Tagging the signal with all appropriate identity values ####//
 

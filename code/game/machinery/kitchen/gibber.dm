@@ -211,7 +211,7 @@
 	occupant.gib()
 	qdel(occupant)
 
-	playsound(loc, /effects/splat.ogg', 50, 1)
+	playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 	for (var/obj/thing in (contents - component_parts))
 		// There's a chance that the gibber will fail to destroy some evidence.
 		if(istype(thing,/obj/item/organ) && prob(80))

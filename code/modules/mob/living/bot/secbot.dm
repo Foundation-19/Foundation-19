@@ -31,8 +31,8 @@
 	var/obj/item/melee/baton/stun_baton
 	var/obj/item/handcuffs/cyborg/handcuffs
 
-	var/list/threat_found_sounds = list(/voice/bcriminal.ogg',s/voice/bjustice.ogg'ds/voice/bfreeze.ogg')
-	var/list/preparing_arrest_sounds = list(/voice/bfreeze.ogg')
+	var/list/threat_found_sounds = list('sounds/voice/bcriminal.ogg', 'sounds/voice/bjustice.ogg', 'sounds/voice/bfreeze.ogg')
+	var/list/preparing_arrest_sounds = list('sounds/voice/bfreeze.ogg')
 
 /mob/living/bot/secbot/beepsky
 	name = "Officer Beepsky"

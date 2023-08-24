@@ -162,14 +162,14 @@
 	name = "beeper circuit"
 	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit has a variety of beeps, boops, and buzzes to choose from."
 	sounds = list(
-		"beep"			= /machines/twobeep.ogg',
-		"chime"			= /machines/chime.ogg',
-		"buzz sigh"		= /machines/buzz-sigh.ogg',
-		"buzz twice"	= /machines/buzz-two.ogg',
-		"ping"			= /machines/ping.ogg',
-		"synth yes"		= /machines/synth_yes.ogg',
-		"synth no"		= /machines/synth_no.ogg',
-		"warning buzz"	= /machines/warning-buzzer.ogg'
+		"beep"			= 'sounds/machines/twobeep.ogg',
+		"chime"			= 'sounds/machines/chime.ogg',
+		"buzz sigh"		= 'sounds/machines/buzz-sigh.ogg',
+		"buzz twice"	= 'sounds/machines/buzz-two.ogg',
+		"ping"			= 'sounds/machines/ping.ogg',
+		"synth yes"		= 'sounds/machines/synth_yes.ogg',
+		"synth no"		= 'sounds/machines/synth_no.ogg',
+		"warning buzz"	= 'sounds/machines/warning-buzzer.ogg'
 		)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
@@ -177,13 +177,13 @@
 	name = "securitron sound circuit"
 	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit is similar to those used in Securitrons."
 	sounds = list(
-		"creep"			= /voice/bcreep.ogg',
-		"criminal"		= /voice/bcriminal.ogg',
-		"freeze"		= /voice/bfreeze.ogg',
-		"god"			= /voice/bgod.ogg',
-		"i am the law"	= /voice/biamthelaw.ogg',
-		"radio"			= /voice/bradio.ogg',
-		"secure day"	= /voice/bsecureday.ogg',
+		"creep"			= 'sounds/voice/bcreep.ogg',
+		"criminal"		= 'sounds/voice/bcriminal.ogg',
+		"freeze"		= 'sounds/voice/bfreeze.ogg',
+		"god"			= 'sounds/voice/bgod.ogg',
+		"i am the law"	= 'sounds/voice/biamthelaw.ogg',
+		"radio"			= 'sounds/voice/bradio.ogg',
+		"secure day"	= 'sounds/voice/bsecureday.ogg',
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 

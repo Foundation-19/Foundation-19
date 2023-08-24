@@ -229,7 +229,7 @@
 			update_icon()
 
 			make_announcement("beeps, \"Unit is re-energized.\"", "notice")
-			playsound(src, /machines/defib_ready.ogg', 50, 0)
+			playsound(src, 'sounds/machines/defib_ready.ogg', 50, 0)
 
 /obj/item/shockpaddles/update_twohanding()
 	var/mob/living/M = loc
@@ -336,12 +336,12 @@
 	if(!user.do_skilled(3 SECONDS, SKILL_MEDICAL, H))
 		return
 	user.visible_message(SPAN_NOTICE("\The [user] places [src] on [H]'s chest."), SPAN_WARNING("You place [src] on [H]'s chest."))
-	playsound(get_turf(src), /machines/defib_charge.ogg', 50, 0)
+	playsound(get_turf(src), 'sounds/machines/defib_charge.ogg', 50, 0)
 
 	var/error = can_defib(H)
 	if(error)
 		make_announcement(error, "warning")
-		playsound(get_turf(src), /machines/defib_failed.ogg', 50, 0)
+		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
 
 	if(check_blood_level(H))
@@ -354,18 +354,18 @@
 	//deduct charge here, in case the base unit was EMPed or something during the delay time
 	if(!checked_use(chargecost))
 		make_announcement("buzzes, \"Insufficient charge.\"", "warning")
-		playsound(get_turf(src), /machines/defib_failed.ogg', 50, 0)
+		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
 
 	H.visible_message(SPAN_WARNING("\The [H]'s body convulses a bit."))
 	playsound(get_turf(src), "bodyfall", 50, 1)
-	playsound(get_turf(src), /machines/defib_zap.ogg', 50, 1, -1)
+	playsound(get_turf(src), 'sounds/machines/defib_zap.ogg', 50, 1, -1)
 	set_cooldown(cooldowntime)
 
 	error = can_revive(H)
 	if(error)
 		make_announcement(error, "warning")
-		playsound(get_turf(src), /machines/defib_failed.ogg', 50, 0)
+		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
 	if(!user.skill_check(SKILL_MEDICAL, SKILL_BASIC) && !lowskill_revive(H, user))
 		return
@@ -377,7 +377,7 @@
 
 	//set oxyloss so that the patient is just barely in crit, if possible
 	make_announcement("pings, \"Resuscitation successful.\"", "notice")
-	playsound(get_turf(src), /machines/defib_success.ogg', 50, 0)
+	playsound(get_turf(src), 'sounds/machines/defib_success.ogg', 50, 0)
 	H.resuscitate()
 	var/obj/item/organ/internal/cell/potato = H.internal_organs_by_name[BP_CELL]
 	if(istype(potato) && potato.cell)
@@ -388,12 +388,12 @@
 
 /obj/item/shockpaddles/proc/lowskill_revive(mob/living/carbon/human/H, mob/living/user)
 	if(prob(60))
-		playsound(get_turf(src), /machines/defib_zap.ogg', 100, 1, -1)
+		playsound(get_turf(src), 'sounds/machines/defib_zap.ogg', 100, 1, -1)
 		H.electrocute_act(burn_damage_amt*4, src, def_zone = BP_CHEST)
 		user.visible_message(SPAN_WARNING("<i>The paddles were misaligned! \The [user] shocks [H] with \the [src]!</i>"), SPAN_WARNING("The paddles were misaligned! You shock [H] with \the [src]!"))
 		return 0
 	if(prob(50))
-		playsound(get_turf(src), /machines/defib_zap.ogg', 100, 1, -1)
+		playsound(get_turf(src), 'sounds/machines/defib_zap.ogg', 100, 1, -1)
 		user.electrocute_act(burn_damage_amt*2, src, def_zone = BP_L_HAND)
 		user.electrocute_act(burn_damage_amt*2, src, def_zone = BP_R_HAND)
 		user.visible_message(SPAN_WARNING("<i>\The [user] shocks themselves with \the [src]!</i>"), SPAN_WARNING("You forget to move your hands away and shock yourself with \the [src]!"))
@@ -414,7 +414,7 @@
 		to_chat(user, SPAN_WARNING("You can't do that while the safety is enabled."))
 		return
 
-	playsound(get_turf(src), /machines/defib_charge.ogg', 50, 0)
+	playsound(get_turf(src), 'sounds/machines/defib_charge.ogg', 50, 0)
 	audible_message(SPAN_WARNING("\The [src] lets out a steadily rising hum..."))
 
 	if(!do_after(user, chargetime, H))
@@ -423,12 +423,12 @@
 	//deduct charge here, in case the base unit was EMPed or something during the delay time
 	if(!checked_use(chargecost))
 		make_announcement("buzzes, \"Insufficient charge.\"", "warning")
-		playsound(get_turf(src), /machines/defib_failed.ogg', 50, 0)
+		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
 
 	user.visible_message(SPAN_DANGER("<i>\The [user] shocks [H] with \the [src]!</i>"), SPAN_WARNING("You shock [H] with \the [src]!"))
-	playsound(get_turf(src), /machines/defib_zap.ogg', 100, 1, -1)
-	playsound(loc, /weapons/Egloves.ogg', 100, 1, -1)
+	playsound(get_turf(src), 'sounds/machines/defib_zap.ogg', 100, 1, -1)
+	playsound(loc, 'sounds/weapons/Egloves.ogg', 100, 1, -1)
 	set_cooldown(cooldowntime)
 
 	H.stun_effect_act(2, 120, target_zone)
@@ -497,10 +497,10 @@
 		safety = new_safety
 		if(safety)
 			make_announcement("beeps, \"Safety protocols enabled!\"", "notice")
-			playsound(get_turf(src), /machines/defib_safetyon.ogg', 50, 0)
+			playsound(get_turf(src), 'sounds/machines/defib_safetyon.ogg', 50, 0)
 		else
 			make_announcement("beeps, \"Safety protocols disabled!\"", "warning")
-			playsound(get_turf(src), /machines/defib_safetyoff.ogg', 50, 0)
+			playsound(get_turf(src), 'sounds/machines/defib_safetyoff.ogg', 50, 0)
 		update_icon()
 	..()
 

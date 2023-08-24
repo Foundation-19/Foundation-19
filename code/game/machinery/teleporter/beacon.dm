@@ -55,7 +55,7 @@
 				SPAN_NOTICE("\The [user] starts to [anchored ? "disconnect" : "connect"] \the [src] [anchored ? "from" : "to"] \the [T]."),
 				SPAN_NOTICE("You start to [anchored ? "disconnect" : "connect"] \the [src] [anchored ? "from" : "to"] \the [T].")
 			)
-			playsound(loc, /items/Ratchet.ogg', 75, TRUE)
+			playsound(loc, 'sounds/items/Ratchet.ogg', 75, TRUE)
 
 			if (!do_after(user, 3 SECONDS, src, DO_DEFAULT | DO_BOTH_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
 				return TRUE
@@ -67,7 +67,7 @@
 				SPAN_NOTICE("\The [user] [anchored ? "connects" : "disconnects"] \the [src] [anchored ? "to" : "from"] \the [T] with \the [I]."),
 				SPAN_NOTICE("You [anchored ? "connect" : "disconnect"] \the [src] [anchored ? "to" : "from"] \the [T] with \the [I].")
 			)
-			playsound(loc, /items/Deconstruct.ogg', 75, TRUE)
+			playsound(loc, 'sounds/items/Deconstruct.ogg', 75, TRUE)
 			update_icon()
 			update_use_power(anchored ? POWER_USE_IDLE : POWER_USE_OFF)
 			if (!anchored)
@@ -202,7 +202,7 @@
 	if(wires.is_cut(WIRE_TELEBEACON_SIGNALLER))
 		return
 	audible_message(SPAN_NOTICE("\The [src] beeps as a new teleporter links to it."))
-	playsound(loc, /machines/twobeep.ogg', 75, TRUE)
+	playsound(loc, 'sounds/machines/twobeep.ogg', 75, TRUE)
 
 
 /// Disconnects a single hub from the beacon.

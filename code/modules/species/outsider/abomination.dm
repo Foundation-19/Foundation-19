@@ -15,14 +15,14 @@
 
 	speech_chance = 50
 	speech_sounds = list(
-		/voice/abomination1.ogg',
-		/voice/abomination2.ogg',
-		/voice/abomination3.ogg',
-		/voice/abomination4.ogg',
-		/voice/abomination5.ogg',
-		/voice/abomination6.ogg',
-		/voice/abomination7.ogg',
-		/voice/abomination8.ogg',
+		'sounds/voice/abomination1.ogg',
+		'sounds/voice/abomination2.ogg',
+		'sounds/voice/abomination3.ogg',
+		'sounds/voice/abomination4.ogg',
+		'sounds/voice/abomination5.ogg',
+		'sounds/voice/abomination6.ogg',
+		'sounds/voice/abomination7.ogg',
+		'sounds/voice/abomination8.ogg',
 	)
 
 	unarmed_types = list(

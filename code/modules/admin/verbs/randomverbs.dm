@@ -490,7 +490,7 @@ Ccomp's first proc.
 
 	var/show_log = alert(src, "Show ion message?", "Message", "Yes", "No")
 	if(show_log == "Yes")
-		command_announcement.Announce("Ion storm detected near the [station_name()]. Please check all AI-controlled equipment for errors.", "Anomaly Alert", new_sound = /AI/ionstorm.ogg')
+		command_announcement.Announce("Ion storm detected near the [station_name()]. Please check all AI-controlled equipment for errors.", "Anomaly Alert", new_sound = 'sounds/AI/ionstorm.ogg')
 	SSstatistics.add_field_details("admin_verb","IONC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_rejuvenate(mob/living/M as mob in SSmobs.mob_list)

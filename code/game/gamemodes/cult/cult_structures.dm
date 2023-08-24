@@ -25,7 +25,7 @@
 	light_color = "#3e0000"
 	health_max = 20
 	health_min_damage = 4
-	damage_hitsound = /effects/Glasshit.ogg'
+	damage_hitsound = 'sounds/effects/Glasshit.ogg'
 
 /obj/structure/cult/pylon/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/natural_weapon/cult_builder))

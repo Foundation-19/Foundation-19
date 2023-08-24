@@ -23,7 +23,7 @@
 			if(owner.hatch_closed || !chosen_obj) return
 			if(user.put_in_active_hand(chosen_obj))
 				owner.visible_message(SPAN_NOTICE("\The [user] carefully grabs \the [chosen_obj] from \the [src]."))
-				playsound(src, /mecha/hydraulic.ogg', 50, 1)
+				playsound(src, 'sounds/mecha/hydraulic.ogg', 50, 1)
 				carrying -= chosen_obj
 	. = ..()
 
@@ -49,8 +49,8 @@
 					if(FD.blocked)
 						FD.visible_message(SPAN_DANGER("\The [owner] begins prying on \the [FD]!"))
 						if(do_after(owner,10 SECONDS,FD) && FD.blocked)
-							playsound(FD, /effects/meteorimpact.ogg', 100, 1)
-							playsound(FD, /machines/airlock_creaking.ogg', 100, 1)
+							playsound(FD, 'sounds/effects/meteorimpact.ogg', 100, 1)
+							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 							FD.blocked = FALSE
 							addtimer(CALLBACK(FD, /obj/machinery/door/firedoor/.proc/open, TRUE), 0)
 							FD.set_broken(TRUE)
@@ -58,7 +58,7 @@
 					else
 						FD.visible_message(SPAN_DANGER("\The [owner] begins forcing \the [FD]!"))
 						if(do_after(owner, 4 SECONDS,FD) && !FD.blocked)
-							playsound(FD, /machines/airlock_creaking.ogg', 100, 1)
+							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 							if(FD.density)
 								FD.visible_message(SPAN_DANGER("\The [owner] forces \the [FD] open!"))
 								addtimer(CALLBACK(FD, /obj/machinery/door/firedoor/.proc/open, TRUE), 0)
@@ -74,8 +74,8 @@
 							if(do_after(owner, 15 SECONDS,AD) && !AD.locked)
 								AD.welded = FALSE
 								AD.update_icon()
-								playsound(AD, /effects/meteorimpact.ogg', 100, 1)
-								playsound(AD, /machines/airlock_creaking.ogg', 100, 1)
+								playsound(AD, 'sounds/effects/meteorimpact.ogg', 100, 1)
+								playsound(AD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 								AD.visible_message(SPAN_DANGER("\The [owner] tears \the [AD] open!"))
 								addtimer(CALLBACK(AD, /obj/machinery/door/airlock/.proc/open, TRUE), 0)
 								AD.set_broken(TRUE)
@@ -83,7 +83,7 @@
 						else
 							AD.visible_message(SPAN_DANGER("\The [owner] begins forcing \the [AD]!"))
 							if((AD.is_broken(NOPOWER) || do_after(owner, 5 SECONDS,AD)) && !(AD.operating || AD.welded || AD.locked))
-								playsound(AD, /machines/airlock_creaking.ogg', 100, 1)
+								playsound(AD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 								if(AD.density)
 									addtimer(CALLBACK(AD, /obj/machinery/door/airlock/.proc/open, TRUE), 0)
 									if(!AD.is_broken(NOPOWER))
@@ -111,7 +111,7 @@
 				O.forceMove(src)
 				carrying += O
 				owner.visible_message(SPAN_NOTICE("\The [owner] loads \the [O] into its cargo compartment."))
-				playsound(src, /mecha/hydraulic.ogg', 50, 1)
+				playsound(src, 'sounds/mecha/hydraulic.ogg', 50, 1)
 
 		//attacking - Cannot be carrying something, cause then your clamp would be full
 		else if(istype(target,/mob/living))
@@ -158,7 +158,7 @@
 				return
 
 	owner.visible_message(SPAN_NOTICE("\The [owner] unloads \the [chosen_obj]."))
-	playsound(src, /mecha/hydraulic.ogg', 50, 1)
+	playsound(src, 'sounds/mecha/hydraulic.ogg', 50, 1)
 	chosen_obj.forceMove(get_turf(src))
 	carrying -= chosen_obj
 
@@ -389,7 +389,7 @@
 	if(.)
 		if(drill_head)
 			owner.visible_message(SPAN_WARNING("[owner] revs the [drill_head], menancingly."))
-			playsound(src, /mecha/mechdrill.ogg', 50, 1)
+			playsound(src, 'sounds/mecha/mechdrill.ogg', 50, 1)
 
 /obj/item/mech_equipment/drill/get_hardpoint_maptext()
 	if(drill_head)
@@ -478,7 +478,7 @@
 		if (5 to 10) delay = 2 SECONDS //plasteel, steel
 	owner.setClickCooldown(delay)
 
-	playsound(src, /mecha/mechdrill.ogg', 50, 1)
+	playsound(src, 'sounds/mecha/mechdrill.ogg', 50, 1)
 	owner.visible_message(
 		SPAN_WARNING("\The [owner] starts to drill \the [target]."),
 		blind_message = SPAN_WARNING("You hear a large motor whirring.")
@@ -674,7 +674,7 @@
 			return FALSE
 		var/turf/TT = get_turf(target)
 		if (slideCheck(TT))
-			playsound(src, /magic/forcewall.ogg', 30, 1)
+			playsound(src, 'sounds/magic/forcewall.ogg', 30, 1)
 			owner.visible_message(
 				SPAN_WARNING("\The [src] charges up in preparation for a slide!"),
 				blind_message = SPAN_WARNING("You hear a loud hum and an intense crackling.")

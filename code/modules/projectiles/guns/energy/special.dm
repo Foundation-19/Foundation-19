@@ -150,7 +150,7 @@
 	icon = 'icons/obj/guns/plasmacutter.dmi'
 	icon_state = "plasmacutter"
 	item_state = "plasmacutter"
-	fire_sound = /weapons/plasma_cutter.ogg'
+	fire_sound = 'sounds/weapons/plasma_cutter.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_NORMAL
 	force = 8

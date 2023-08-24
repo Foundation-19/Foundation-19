@@ -38,13 +38,13 @@
 			to_chat(owner, SPAN_WARNING("You cannot maintain more than [max_webs] razorweb\s."))
 			return
 
-		playsound(user, /effects/razorweb_hiss.ogg', 70)
+		playsound(user, 'sounds/effects/razorweb_hiss.ogg', 70)
 		owner.visible_message(SPAN_WARNING("\The [owner] separates their jaws and begins to weave a web of crystalline filaments..."))
 		cooldown = TRUE
 		refresh_action_button()
 		addtimer(CALLBACK(src, .proc/reset_cooldown), web_weave_time)
 		if(do_after(owner, web_weave_time) && length(existing_webs) < max_webs)
-			playsound(user, /effects/razorweb.ogg', 70, 0)
+			playsound(user, 'sounds/effects/razorweb.ogg', 70, 0)
 			owner.visible_message(SPAN_DANGER("\The [owner] completes a razorweb!"))
 			var/obj/effect/razorweb/web = new(owner.loc)
 			existing_webs += web
@@ -76,7 +76,7 @@
 
 		var/obj/item/razorweb/web = new(get_turf(owner))
 		if(owner.put_in_hands(web))
-			playsound(user, /effects/razorweb.ogg', 100)
+			playsound(user, 'sounds/effects/razorweb.ogg', 100)
 			to_chat(owner, SPAN_WARNING("You spit up a wad of razorweb, ready to throw!"))
 			owner.throw_mode_on()
 			cooldown = TRUE

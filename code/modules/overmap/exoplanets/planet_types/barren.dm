@@ -48,5 +48,5 @@
 
 /area/exoplanet/barren
 	name = "\improper Planetary surface"
-	ambience = list(/effects/wind/wind_2_1.ogg's/effects/wind/wind_2_2.oggds/effects/wind/wind_3_1.ognds/effects/wind/wind_4_1.ounds/effects/wind/wind_4_2.ounds/effects/wind/wind_5_1.ogg')
+	ambience = list('sounds/effects/wind/wind_2_1.ogg','sounds/effects/wind/wind_2_2.ogg','sounds/effects/wind/wind_3_1.ogg','sounds/effects/wind/wind_4_1.ogg','sounds/effects/wind/wind_4_2.ogg','sounds/effects/wind/wind_5_1.ogg')
 	base_turf = /turf/simulated/floor/exoplanet/barren

@@ -33,7 +33,7 @@
 		DAMAGE_OXY       = 0,
 		DAMAGE_BRAIN     = 0
 	)
-	damage_hitsound = /effects/attackblob.ogg'
+	damage_hitsound = 'sounds/effects/attackblob.ogg'
 
 	/* Mob healing effect */
 	var/healing_mobs_range = 7 // Just on the screen
@@ -49,7 +49,7 @@
 	var/convert_turfs_cooldown = 10 SECONDS
 
 	/* Looping sound related stuff */
-	var/looping_sound = /effects/Heart Beat.ogg'
+	var/looping_sound = 'sounds/effects/Heart Beat.ogg'
 	var/looping_sound_volume = 50
 	var/sound_id
 	var/datum/sound_token/sound_token
@@ -87,7 +87,7 @@
 			sleep(20 - i * 2)
 		for(var/ii = 1 to 5)
 			new /obj/effect/gibspawner/human(get_turf(src))
-		playsound(src, /simple_mob/abominable_infestation/heart_death.ogg', 125, TRUE, 24, 3, ignore_pressure = TRUE)
+		playsound(src, 'sounds/simple_mob/abominable_infestation/heart_death.ogg', 125, TRUE, 24, 3, ignore_pressure = TRUE)
 		visible_message(SPAN_DANGER("\The [src] explodes in a shower of gore!"))
 		QDEL_NULL(src) // "But why QDEL_NULL? Bwuhuhu" because some moron might delete it in the middle of sick animation
 
@@ -110,7 +110,7 @@
 			continue
 		L.adjustBruteLoss(-healing_mobs_strength)
 		// Essentially localized AbilityEffect()
-		playsound(L, /effects/heartbeat_low.ogg', 15, TRUE, -6)
+		playsound(L, 'sounds/effects/heartbeat_low.ogg', 15, TRUE, -6)
 		var/obj/effect/temp_visual/decoy/D = new(get_turf(L), 0, L, 5)
 		D.dir = L.dir
 		D.color = COLOR_MAROON
@@ -156,6 +156,6 @@
 		F.set_flooring(decls_repository.get_decl(/decl/flooring/flesh/infested))
 
 /obj/effect/hive_heart/proc/AbilityEffect(sound_volume = 75)
-	playsound(src, /effects/heartbeat_low.ogg', sound_volume, TRUE, 24, ignore_pressure = TRUE)
+	playsound(src, 'sounds/effects/heartbeat_low.ogg', sound_volume, TRUE, 24, ignore_pressure = TRUE)
 	var/obj/effect/temp_visual/decoy/D = new(get_turf(src), 0, src, 10)
 	animate(D, transform = matrix()*1.5, alpha = 0, time = 10, easing = SINE_EASING)

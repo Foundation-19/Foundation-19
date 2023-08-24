@@ -72,7 +72,7 @@
 	var/has_power = TRUE
 	var/spawn_module = null
 
-	var/spawn_sound = /voice/liveagain.ogg'
+	var/spawn_sound = 'sounds/voice/liveagain.ogg'
 	var/pitch_toggle = TRUE
 	var/list/req_access = list(ACCESS_ROBOTICS)
 	var/ident = 0

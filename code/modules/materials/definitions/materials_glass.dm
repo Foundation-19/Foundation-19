@@ -8,7 +8,7 @@
 	opacity = 0.3
 	integrity = 50
 	shard_type = SHARD_SHARD
-	tableslam_noise = /effects/Glasshit.ogg'
+	tableslam_noise = 'sounds/effects/Glasshit.ogg'
 	hardness = MATERIAL_RIGID + 10
 	melting_point = T0C + 100
 	weight = 14
@@ -17,8 +17,8 @@
 	table_icon_base = "solid"
 	destruction_desc = "shatters"
 	window_options = list("One Direction" = 1, "Full Window" = 4, "Windoor" = 5)
-	hitsound = /effects/Glasshit.ogg'
-	dooropen_noise = /machines/windowdoor.ogg'
+	hitsound = 'sounds/effects/Glasshit.ogg'
+	dooropen_noise = 'sounds/machines/windowdoor.ogg'
 	conductive = 0
 	sale_price = 1
 	value = 4

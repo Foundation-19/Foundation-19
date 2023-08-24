@@ -24,7 +24,7 @@
 				to_chat(user, SPAN_NOTICE("You wire \the [src]."))
 
 	else if(isWirecutter(C) && wired )
-		playsound(src.loc, /items/Wirecutter.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		user.visible_message("[user] cuts the wires from \the [src].", "You start to cut the wires from \the [src].")
 
 		if(do_after(user, 40, src))
@@ -35,7 +35,7 @@
 
 	else if(istype(C, /obj/item/airalarm_electronics) && wired)
 		if(anchored)
-			playsound(src.loc, /items/Deconstruct.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 			user.visible_message(SPAN_WARNING("[user] has inserted a circuit into \the [src]!"),
 								  "You have inserted the circuit into \the [src]!")
 			var/obj/machinery/door/firedoor/D = new(src.loc)
@@ -47,7 +47,7 @@
 			to_chat(user, SPAN_WARNING("You must secure \the [src] first!"))
 	else if(isWrench(C) && !wired)
 		anchored = !anchored
-		playsound(src.loc, /items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		user.visible_message(SPAN_WARNING("[user] has [anchored ? "" : "un" ]secured \the [src]!"),
 							  "You have [anchored ? "" : "un" ]secured \the [src]!")
 		update_icon()

@@ -80,8 +80,8 @@
 	screen_shake = 2
 	magazine_type = /obj/item/ammo_magazine/magnum
 	allowed_magazines = /obj/item/ammo_magazine/magnum
-	mag_insert_sound = /weapons/guns/interaction/hpistol_magin.ogg'
-	mag_remove_sound = /weapons/guns/interaction/hpistol_magout.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/interaction/hpistol_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/interaction/hpistol_magout.ogg'
 	accuracy = 2
 	one_hand_penalty = 2
 	bulk = 3
@@ -125,9 +125,9 @@
 	handle_casings = CLEAR_CASINGS	//the projectile is the casing
 	fire_delay = 25
 	auto_eject = 1
-	auto_eject_sound = /weapons/smg_empty_alarm.ogg'
-	mag_insert_sound = /weapons/guns/interaction/hpistol_magin.ogg'
-	mag_remove_sound = /weapons/guns/interaction/hpistol_magout.ogg'
+	auto_eject_sound = 'sounds/weapons/smg_empty_alarm.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/interaction/hpistol_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/interaction/hpistol_magout.ogg'
 	empty_icon = FALSE
 
 /obj/item/gun/projectile/pistol/gyropistol/on_update_icon()
