@@ -667,7 +667,7 @@
 			visible_message(SPAN_WARNING("\The [src] grips \the [H]'s [grabtype]."), SPAN_NOTICE("You grip \the [H]'s [grabtype]."), exclude_mobs = list(H))
 			if(!H.stat)
 				to_chat(H, SPAN_WARNING("\The [src] grips your [grabtype]."))
-		playsound(src.loc, /weapons/thudswoosh.ogg', 15) //Quieter than hugging/grabbing but we still want some audio feedback
+		playsound(src.loc, 'sounds/weapons/thudswoosh.ogg', 15) //Quieter than hugging/grabbing but we still want some audio feedback
 
 		if(H.pull_damage())
 			to_chat(src, SPAN_DANGER("Pulling \the [H] in their current condition would probably be a bad idea."))
