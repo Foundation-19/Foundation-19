@@ -58,6 +58,8 @@
 		/mob/living/simple_animal/friendly/retaliate/scp066/proc/Noise,
 	))
 
+//AI stuff
+
 /datum/say_list/scp066
 	speak = list("Eric?")
 	speak_sounds = list('sound/scp/066/Eric1.ogg' = 33, 'sound/scp/066/Eric2.ogg' = 33, 'sound/scp/066/Eric3.ogg' = 33)
@@ -65,7 +67,6 @@
 	emote_hear = list("makes a strange sound.", "makes an odd noise.", "plays a strange tune.")
 	emote_hear_sounds = list('sound/scp/066/Notes1.ogg' = 16, 'sound/scp/066/Notes2.ogg' = 16, 'sound/scp/066/Notes3.ogg' = 16, 'sound/scp/066/Notes4.ogg' = 16, 'sound/scp/066/Notes5.ogg' = 16, 'sound/scp/066/Notes6.ogg' = 16)
 
-//AI stuff
 /datum/ai_holder/simple_animal/retaliate/scp066
 	//Should be identical to parent simpleanimal
 	var/emote_harmful_cooldown = 2 MINUTES
@@ -81,16 +82,23 @@
 	else
 		return ATTACK_ON_COOLDOWN
 
-/mob/living/simple_animal/friendly/retaliate/scp066/attack_target(atom/A)
-	LoudNoise()
-
 //Mechanics
+
 /mob/living/simple_animal/friendly/retaliate/scp066/proc/audibleEffect(mob/living/carbon/human/target)
 	target.Stun(4)
 	target.confused += 10
 	target.ear_damage += rand(10, 20)
 	target.ear_deaf = max(target.ear_deaf,15)
 	shake_camera(target, 18, 5)
+
+/mob/living/simple_animal/friendly/retaliate/scp066/proc/imitate(atom/movable/imitate_target as obj|mob)
+	var/icon/I = new /icon(imitate_target.icon, imitate_target.icon_state)
+	I.ColorTone("#891313")
+	icon = I
+	name = imitate_target.name
+	desc = "It appears to be \a [imitate_target] made out of yarn..."
+
+//Overrides
 
 /mob/living/simple_animal/friendly/retaliate/scp066/UnarmedAttack(atom/A, proximity) //Allows 066 to imitate the look of objects.
 	if(A == src)
@@ -117,20 +125,17 @@
 	else
 		to_chat(src, SPAN_WARNING("You cannot imitate [A]!"))
 
-/mob/living/simple_animal/friendly/retaliate/scp066/proc/imitate(atom/movable/imitate_target as obj|mob)
-	var/icon/I = new /icon(imitate_target.icon, imitate_target.icon_state)
-	I.ColorTone("#891313")
-	icon = I
-	name = imitate_target.name
-	desc = "It appears to be \a [imitate_target] made out of yarn..."
-
 /mob/living/simple_animal/friendly/retaliate/scp066/say(message)
 	message = "Eric?"
 	if((world.time - emote_passive_track) > emote_passive_cooldown) //technically checked twice but this prevents the cooldown message form being spammed to 066's client.
 		Eric()
 	return ..(message)
 
+/mob/living/simple_animal/friendly/retaliate/scp066/attack_target(atom/A)
+	LoudNoise()
+
 // SCP-066 emotes
+
 /mob/living/simple_animal/friendly/retaliate/scp066/proc/Noise()
 	set category = "SCP-066"
 	set name = "Make a Noise"
