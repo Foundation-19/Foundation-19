@@ -24,7 +24,7 @@
 	if(!damage)
 		return 0
 	attack_animation(user)
-	playsound(loc, 'sound/weapons/tablehit1.ogg', 40, 1)
+	playsound(loc, 'sounds/weapons/tablehit1.ogg', 40, 1)
 	show_sound_effect(loc)
 	visible_message(SPAN_DANGER("[user] [attack_message] [src]!"))
 	if(wallbreaker)
@@ -64,13 +64,13 @@
 		return
 	if(isWrench(W) && state == 0)
 		if(anchored && !reinf_material)
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Now disassembling the girder..."))
 			if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 				to_chat(user, SPAN_NOTICE("You dissasembled the girder!"))
 				dismantle()
 		else if(!anchored)
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Now securing the girder..."))
 			if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				to_chat(user, SPAN_NOTICE("You secured the girder!"))
@@ -82,7 +82,7 @@
 			var/obj/item/gun/energy/plasmacutter/cutter = W
 			if(!cutter.slice(user))
 				return
-		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Welder.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now slicing apart the girder..."))
 		if(do_after(user, reinf_material ? 5 SECONDS : 2.5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You slice apart the girder!"))
@@ -92,8 +92,13 @@
 		return
 
 	if(istype(W, /obj/item/pickaxe/diamonddrill))
-		playsound(src.loc, 'sound/weapons/Genhit.ogg', 100, 1)
+<<<<<<< HEAD
+		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
 		if(do_after(user, reinf_material ? 8 SECONDS : 5.5 SECONDS, src, bonus_percentage = 25))
+=======
+		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
+		if(do_after(user,reinf_material ? 60 : 40,src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			to_chat(user, SPAN_NOTICE("You drill through the girder!"))
 			if(reinf_material)
 				reinf_material.place_dismantled_product(get_turf(src))
@@ -102,19 +107,19 @@
 
 	if(isScrewdriver(W))
 		if(state == 2)
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Now unsecuring support struts..."))
 			if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				to_chat(user, SPAN_NOTICE("You unsecured the support struts!"))
 				state = 1
 		else if(anchored && !reinf_material)
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 			reinforcing = !reinforcing
 			to_chat(user, SPAN_NOTICE("\The [src] can now be [reinforcing? "reinforced" : "constructed"]!"))
 		return
 
 	if(isWirecutter(W) && state == 1)
-		playsound(src.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now removing support struts..."))
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You removed the support struts!"))
@@ -127,7 +132,7 @@
 		return
 
 	if(isCrowbar(W) && state == 0 && anchored)
-		playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now dislodging the girder..."))
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You dislodged the girder!"))
@@ -244,7 +249,7 @@
 
 /obj/structure/girder/cult/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now disassembling the girder..."))
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You dissasembled the girder!"))
@@ -255,14 +260,19 @@
 			var/obj/item/gun/energy/plasmacutter/cutter = W
 			if(!cutter.slice(user))
 				return
-		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Welder.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now slicing apart the girder..."))
 		if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You slice apart the girder!"))
 			dismantle()
 
 	else if(istype(W, /obj/item/pickaxe/diamonddrill))
-		playsound(src.loc, 'sound/weapons/Genhit.ogg', 100, 1)
+<<<<<<< HEAD
+		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
+=======
+		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
+		if(do_after(user,40,src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			to_chat(user, SPAN_NOTICE("You drill through the girder!"))
 			dismantle()

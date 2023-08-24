@@ -28,7 +28,7 @@
 			else
 				to_chat(user, "You set the gas analyzer to Default.")
 				mode = DEFAULT_MODE
-		playsound(src.loc, 'sound/machines/button4.ogg', 30, 0)
+		playsound(src.loc, 'sounds/machines/button4.ogg', 30, 0)
 
 /obj/item/device/scanner/gas/is_valid_scan_target(atom/O)
 	return istype(O)

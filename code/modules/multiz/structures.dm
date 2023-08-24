@@ -16,8 +16,13 @@
 	var/obj/structure/ladder/target_up
 	var/obj/structure/ladder/target_down
 
+<<<<<<< HEAD
 	var/const/climb_time = 2.5 SECONDS
-	var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/ladder2.ogg','sound/effects/ladder3.ogg','sound/effects/ladder4.ogg')
+	var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/ladder2.ogg','sounds/effects/ladder3.ogg','sounds/effects/ladder4.ogg')
+=======
+	var/const/climb_time = 2 SECONDS
+	var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/ladder2.ogg','sounds/effects/ladder3.ogg','sounds/effects/ladder4.ogg')
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 
 /obj/structure/ladder/Initialize()
 	. = ..()
@@ -242,8 +247,8 @@
 			if(ishuman(A))
 				var/mob/living/carbon/human/H = A
 				if(H.has_footsteps())
-					playsound(source, 'sound/effects/stairs_step.ogg', 50)
-					playsound(target, 'sound/effects/stairs_step.ogg', 50)
+					playsound(source, 'sounds/effects/stairs_step.ogg', 50)
+					playsound(target, 'sounds/effects/stairs_step.ogg', 50)
 		else
 			to_chat(A, SPAN_WARNING("Something blocks the path."))
 	else

@@ -19,7 +19,7 @@
 		if(!has_extinguisher && opened && user.unEquip(O, src))
 			has_extinguisher = O
 			to_chat(user, SPAN_NOTICE("You place [O] in [src]."))
-			playsound(src.loc, 'sound/effects/extin.ogg', 50, 0)
+			playsound(src.loc, 'sounds/effects/extin.ogg', 50, 0)
 		else
 			opened = !opened
 	else
@@ -41,7 +41,7 @@
 	if(has_extinguisher)
 		user.put_in_hands(has_extinguisher)
 		to_chat(user, SPAN_NOTICE("You take [has_extinguisher] from [src]."))
-		playsound(src.loc, 'sound/effects/extout.ogg', 50, 0)
+		playsound(src.loc, 'sounds/effects/extout.ogg', 50, 0)
 		has_extinguisher = null
 		opened = 1
 	else

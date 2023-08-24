@@ -143,7 +143,7 @@
 				SPAN_NOTICE("You wrench \the [src] firmly into place."),
 				SPAN_ITALIC("You hear bolts being turned.")
 			)
-		playsound(src, 'sound/items/Ratchet.ogg', 50, TRUE)
+		playsound(src, 'sounds/items/Ratchet.ogg', 50, TRUE)
 		update()
 		update_verbs()
 
@@ -154,7 +154,7 @@
 				to_chat(user, SPAN_WARNING("Turn \the [W] on first."))
 				return
 			else if (W.remove_fuel(0, user))
-				playsound(src, 'sound/items/Welder.ogg', 50, TRUE)
+				playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
 				user.visible_message(
 					SPAN_NOTICE("\The [user] starts welding \the [src] to the underfloor."),
 					SPAN_NOTICE("You start welding \the [src] into place."),
@@ -162,7 +162,7 @@
 				)
 				if (!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 					return
-				playsound(src, 'sound/items/Welder2.ogg', 50, TRUE)
+				playsound(src, 'sounds/items/Welder2.ogg', 50, TRUE)
 				user.visible_message(
 					SPAN_NOTICE("\The [user] firmly secures \the [src] to the underfloor."),
 					SPAN_NOTICE("You tightly weld \the [src] to the floor, and set up its connectors."),

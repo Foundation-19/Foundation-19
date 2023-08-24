@@ -90,7 +90,7 @@
 	if(isWelder(W) && ( (istext(glass)) || (glass == 1) || (!anchored) ))
 		var/obj/item/weldingtool/WT = W
 		if (WT.remove_fuel(0, user))
-			playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Welder2.ogg', 50, 1)
 			if(istext(glass))
 				user.visible_message("[user] welds the [glass] plating off the airlock assembly.", "You start to weld the [glass] plating off the airlock assembly.")
 				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
@@ -118,7 +118,7 @@
 			return
 
 	else if(isWrench(W) && state == 0)
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 		if(anchored)
 			user.visible_message("[user] begins unsecuring the airlock assembly from the floor.", "You begin unsecuring the airlock assembly from the floor.")
 		else
@@ -141,7 +141,7 @@
 				to_chat(user, SPAN_NOTICE("You wire the airlock."))
 
 	else if(isWirecutter(W) && state == 1 )
-		playsound(src.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		user.visible_message("[user] cuts the wires from the airlock assembly.", "You start to cut the wires from airlock assembly.")
 
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
@@ -151,7 +151,7 @@
 			src.state = 0
 
 	else if(istype(W, /obj/item/airlock_electronics) && state == 1)
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 		user.visible_message("[user] installs the electronics into the airlock assembly.", "You start to install electronics into the airlock assembly.")
 
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
@@ -170,7 +170,7 @@
 			src.state = 1
 			return
 
-		playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 		user.visible_message("\The [user] starts removing the electronics from the airlock assembly.", "You start removing the electronics from the airlock assembly.")
 
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
@@ -187,7 +187,7 @@
 		if (S)
 			if (S.get_amount() >= 1)
 				if(material_name == MATERIAL_GLASS && S.reinf_material)
-					playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+					playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 					user.visible_message("[user] adds [S.name] to the airlock assembly.", "You start to install [S.name] into the airlock assembly.")
 					if(do_after(user, 5 SECONDS, src, bonus_percentage = 25) && !glass)
 						if (S.use(1))
@@ -198,7 +198,7 @@
 					return
 				else
 					if(S.get_amount() >= 2)
-						playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+						playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 						user.visible_message("[user] adds [S.name] to the airlock assembly.", "You start to install [S.name] into the airlock assembly.")
 						if(do_after(user, 5 SECONDS, src, bonus_percentage = 25) && !glass)
 							if (S.use(2))
@@ -206,7 +206,7 @@
 								glass = S.get_material_name()
 
 	else if(isScrewdriver(W) && state == 2 )
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now finishing the airlock."))
 
 		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))

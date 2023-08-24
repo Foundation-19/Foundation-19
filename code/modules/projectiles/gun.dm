@@ -65,7 +65,7 @@
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again. Cannot be less than [burst_delay+1]
 	var/burst_delay = 2	//delay between shots, if firing in bursts
 	var/move_delay = 1
-	var/fire_sound = 'sound/weapons/gunshot/gunshot.ogg'
+	var/fire_sound = 'sounds/weapons/gunshot/gunshot.ogg'
 	var/fire_sound_text = "gunshot"
 	var/fire_anim = null
 	var/screen_shake = 0 //shouldn't be greater than 2 unless zoomed
@@ -86,7 +86,7 @@
 
 	var/sel_mode = 1 //index of the currently selected mode
 	var/list/firemodes = list()
-	var/selector_sound = 'sound/weapons/guns/selector.ogg'
+	var/selector_sound = 'sounds/weapons/guns/selector.ogg'
 
 	//aiming system stuff
 	var/keep_aim = 1 	//1 for keep shooting until aim is lowered
@@ -334,7 +334,7 @@
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
 	else
 		src.visible_message("*click click*")
-	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
+	playsound(src.loc, 'sounds/weapons/empty.ogg', 100, 1)
 	show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 
 /obj/item/gun/proc/handle_click_safety(mob/user)
@@ -620,7 +620,7 @@
 	if(user)
 		user.visible_message(SPAN_WARNING("[user] switches the safety of \the [src] [safety_state ? "on" : "off"]."), SPAN_NOTICE("You switch the safety of \the [src] [safety_state ? "on" : "off"]."), range = 3)
 		last_safety_check = world.time
-		playsound(src, 'sound/weapons/flipblade.ogg', 15, 1)
+		playsound(src, 'sounds/weapons/flipblade.ogg', 15, 1)
 
 /obj/item/gun/verb/toggle_safety_verb()
 	set src in usr

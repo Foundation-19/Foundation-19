@@ -124,7 +124,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 		snap_cooldown = world.time + snap_cooldown_time
 		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
-		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
+		playsound(loc, pick('sounds/scp/spook/NeckSnap1.ogg', 'sounds/scp/spook/NeckSnap3.ogg'), 50, 1)
 		show_sound_effect(loc, src)
 		H.death()
 		return
@@ -158,7 +158,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		W.shatter()
 		return
 	if(istype(A,/obj/structure/grille))
-		playsound(get_turf(A), 'sound/effects/grillehit.ogg', 50, 1)
+		playsound(get_turf(A), 'sounds/effects/grillehit.ogg', 50, 1)
 		qdel(A)
 		return
 	if(istype(A, /obj/structure/inflatable))
@@ -246,7 +246,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			open_time += 3 SECONDS
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
-	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
 	if(!do_after(src, open_time, A, bonus_percentage = 25))
 		return
@@ -280,11 +280,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 		breach_cooldown = world.time + 15 MINUTES
 		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
-		priority_announcement.Announce("ALERT! SCP-173's containment zone security measures have shut down due to severe acidic degradation. Security personnel are to report to the location and secure the threat as soon as possible.", "Containment Failure", 'sound/AI/173.ogg')
+		priority_announcement.Announce("ALERT! SCP-173's containment zone security measures have shut down due to severe acidic degradation. Security personnel are to report to the location and secure the threat as soon as possible.", "Containment Failure", 'sounds/AI/173.ogg')
 		BreachEffect()
 	else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
 		warning_cooldown = world.time + 2 MINUTES
-		priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sound/AI/acidic_degredation.ogg')
+		priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sounds/AI/acidic_degredation.ogg')
 
 /mob/living/scp_173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
 	var/area/A = get_area(src)
@@ -468,7 +468,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			dropping.forceMove(src)
 			update_icon()
 			visible_message(SPAN_NOTICE("[user] puts [dropping] in the cage."))
-			playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
+			playsound(loc, 'sounds/machines/bolts_down.ogg', 50, 1)
 			return TRUE
 		return FALSE
 	if(isliving(dropping))
@@ -499,7 +499,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	update_icon()
 	if(damage_state < damage_state_max)
 		visible_message(SPAN_WARNING("[user] damages \the [src]!"))
-		playsound(src, 'sound/effects/grillehit.ogg', 35, TRUE)
+		playsound(src, 'sounds/effects/grillehit.ogg', 35, TRUE)
 		return
 	visible_message(SPAN_DANGER("[user] opens \the [src] from the inside!"))
 	ReleaseContents()
@@ -555,7 +555,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(WT.get_fuel() < damage_state)
 		to_chat(user, SPAN_WARNING("You will need more fuel to repair [src]."))
 		return
-	playsound(src, 'sound/items/Welder2.ogg', 30, TRUE)
+	playsound(src, 'sounds/items/Welder2.ogg', 30, TRUE)
 	user.visible_message(SPAN_NOTICE("\The [user] starts repairing sections of \the [src]."))
 	if(!do_after(user, (6 SECONDS + damage_state SECONDS), src, bonus_percentage = 25))
 		return FALSE
@@ -566,13 +566,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	update_icon()
 	if(damage_state <= 0)
 		visible_message(SPAN_NOTICE("\The [src] is completely repaired!"))
-	playsound(src.loc, 'sound/items/Welder.ogg', 30, 1)
+	playsound(src.loc, 'sounds/items/Welder.ogg', 30, 1)
 	return TRUE
 
 /obj/structure/scp173_cage/proc/ReleaseContents() //Releases cage contents
 	if(!LAZYLEN(contents))
 		return FALSE
-	playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+	playsound(loc, 'sounds/machines/bolts_up.ogg', 50, 1)
 	for(var/mob/living/L in contents)
 		L.forceMove(get_turf(src))
 	update_icon()

@@ -38,7 +38,7 @@
 		else
 			SetName("bookcase ([newname])")
 	else if(isScrewdriver(O))
-		playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
+		playsound(loc, 'sounds/items/Screwdriver.ogg', 75, 1)
 		to_chat(user, SPAN_NOTICE("You begin dismantling \the [src]."))
 		if(do_after(user, 3 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You dismantle \the [src]."))

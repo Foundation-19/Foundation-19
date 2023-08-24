@@ -39,7 +39,7 @@
 			var/datum/mind/M = m
 			remove_follower_spells(M)
 			to_chat(M.current, FONT_LARGE("<span class='danger'>Your connection has been severed! \The [src] is no more!</span>"))
-			sound_to(M.current, 'sound/hallucinations/far_noise.ogg')
+			sound_to(M.current, 'sounds/hallucinations/far_noise.ogg')
 			M.current.Weaken(10)
 		for(var/s in structures)
 			var/obj/structure/deity/S = s

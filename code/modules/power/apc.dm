@@ -215,7 +215,7 @@
 	if(emp_hardened)
 		return
 	failure_timer = max(failure_timer, round(duration))
-	playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
+	playsound(src, 'sounds/machines/apc_nopower.ogg', 75, 0)
 	update()
 
 /obj/machinery/power/apc/proc/init_round_start()
@@ -440,7 +440,7 @@
 				if (terminal())
 					to_chat(user, SPAN_WARNING("Disconnect the wires first."))
 					return TRUE
-				playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				to_chat(user, "You are trying to remove the power control board...")//lpeters - fixed grammar issues
 
 				if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && (has_electronics == 1) && !terminal()) // redo all checks.
@@ -487,13 +487,13 @@
 						return TRUE
 					has_electronics = 2
 					stat &= ~MAINT
-					playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+					playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 					to_chat(user, "You screw the circuit electronics into place.")
 					update_icon()
 				if(2)
 					has_electronics = 1
 					stat |= MAINT
-					playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+					playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 					to_chat(user, "You unfasten the electronics.")
 					update_icon()
 				if(0)
@@ -539,8 +539,13 @@
 			return TRUE
 		user.visible_message(SPAN_WARNING("\The [user] inserts the power control board into \the [src]."), \
 							"You start to insert the power control board into the frame...")
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+<<<<<<< HEAD
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 1 SECOND, src, bonus_percentage = 100) && has_electronics == 0 && opened && !(stat & BROKEN))
+=======
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
+		if(do_after(user, 10, src) && has_electronics == 0 && opened && !(stat & BROKEN))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			has_electronics = 1
 			reboot() //completely new electronics
 			to_chat(user, SPAN_NOTICE("You place the power control board inside the frame."))
@@ -564,8 +569,13 @@
 		user.visible_message(SPAN_WARNING("\The [user] begins to weld \the [src]."), \
 							"You start welding the APC frame...", \
 							"You hear welding.")
-		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+<<<<<<< HEAD
+		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && has_electronics == 0 && !terminal())
+=======
+		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
+		if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			if(!WT.remove_fuel(3, user))
 				return TRUE
 			if (emagged || (stat & BROKEN) || opened==2)
@@ -655,7 +665,7 @@
 					to_chat(user, SPAN_WARNING("There's a nasty sound and \the [src] goes cold..."))
 					set_broken(TRUE)
 			queue_icon_update()
-	playsound(get_turf(src), 'sound/weapons/smash.ogg', 75, 1)
+	playsound(get_turf(src), 'sounds/weapons/smash.ogg', 75, 1)
 	show_sound_effect(get_turf(src))
 
 // attack with hand - remove cell (if cover open) or interact with the APC
@@ -691,7 +701,7 @@
 
 		if(H.species.can_shred(H))
 			user.visible_message(SPAN_WARNING("\The [user] slashes at \the [src]!"), SPAN_NOTICE("You slash at \the [src]!"))
-			playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
+			playsound(src.loc, 'sounds/weapons/slash.ogg', 100, 1)
 
 			var/allcut = wires.is_all_cut()
 
@@ -805,7 +815,7 @@
 	var/obj/item/cell/cell = get_cell()
 	if(!cell || cell.charge <= 0)
 		if(needs_powerdown_sound == TRUE)
-			playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
+			playsound(src, 'sounds/machines/apc_nopower.ogg', 75, 0)
 			needs_powerdown_sound = FALSE
 		else
 			needs_powerdown_sound = TRUE

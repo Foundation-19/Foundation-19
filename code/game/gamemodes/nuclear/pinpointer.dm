@@ -67,7 +67,7 @@
 			freq_mod = min(world.view/distance, 2)
 		else if (distance > 3*world.view)
 			freq_mod = max(3*world.view/distance, 0.6)
-		playsound(loc, 'sound/machines/buttonbeep.ogg', 1, frequency = freq_mod)
+		playsound(loc, 'sounds/machines/buttonbeep.ogg', 1, frequency = freq_mod)
 		if(distance > world.view || here.z != there.z)
 			beeping = initial(beeping)
 	else
@@ -125,7 +125,7 @@
 		locate_shuttle = 0
 		new_mode = "Authentication Disk Locator"
 	if(new_mode)
-		playsound(loc, 'sound/machines/twobeep.ogg', 50, 1)
+		playsound(loc, 'sounds/machines/twobeep.ogg', 50, 1)
 		visible_message(SPAN_NOTICE("[new_mode] active."))
 		target = acquire_target()
 	..()

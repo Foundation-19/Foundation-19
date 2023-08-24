@@ -240,7 +240,7 @@
 		if(!target_breach)
 			to_chat(user, "There are no open breaches to seal with \the [W].")
 		else
-			playsound(src, 'sound/effects/tape.ogg',25)
+			playsound(src, 'sounds/effects/tape.ogg',25)
 			var/mob/living/carbon/human/H = user
 			if(!istype(H)) return
 			if(do_after(user, H.wear_suit == src? 8 SECONDS : 4 SECONDS, istype(loc,/mob/living)? loc : null, bonus_percentage = 25)) //Sealing a breach on your own suit is awkward and time consuming

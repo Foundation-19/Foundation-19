@@ -136,8 +136,13 @@
 			return TRUE
 		user.visible_message(SPAN_WARNING("\The [user] adds cables to the \the [machine]."), \
 							"You start adding cables to \the [machine] frame...")
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+<<<<<<< HEAD
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 2.5 SECONDS, machine, bonus_percentage = 25))
+=======
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
+		if(do_after(user, 20, machine))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			if(C.can_use(10) && !terminal && (machine == loc) && machine.components_are_accessible(type) && !blocking_terminal_at_loc(machine, T, user))
 				var/obj/structure/cable/N = T.get_cable_node()
 				if (prob(50) && electrocute_mob(user, N, N))
@@ -162,8 +167,13 @@
 			return TRUE
 		user.visible_message(SPAN_WARNING("\The [user] dismantles the power terminal from \the [machine]."), \
 							"You begin to cut the cables...")
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+<<<<<<< HEAD
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 7 SECONDS, machine, bonus_percentage = 25))
+=======
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
+		if(do_after(user, 50, machine))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			if(terminal && (machine == loc) && machine.components_are_accessible(type))
 				if (prob(50) && electrocute_mob(user, terminal.powernet, terminal))
 					var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread

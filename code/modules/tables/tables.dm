@@ -136,7 +136,7 @@
 		var/obj/item/weldingtool/F = W
 		if(F.welding)
 			to_chat(user, SPAN_NOTICE("You begin reparing damage to \the [src]."))
-			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 			if(!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) || !F.remove_fuel(1, user))
 				return
 			user.visible_message(SPAN_NOTICE("\The [user] repairs some damage to \the [src]."),
@@ -171,7 +171,7 @@
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, src.loc)
 		spark_system.start()
-		playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
+		playsound(src.loc, 'sounds/weapons/blade1.ogg', 50, 1)
 		playsound(src.loc, SFX_SPARK, 50, 1)
 		show_sound_effect(src.loc, user)
 		user.visible_message(SPAN_DANGER("\The [src] was sliced apart by [user]!"))
@@ -269,10 +269,10 @@
 	return null
 
 /obj/structure/table/proc/remove_reinforced(obj/item/screwdriver/S, mob/user)
-	reinforced = common_material_remove(user, reinforced, 40, "reinforcements", "screws", 'sound/items/Screwdriver.ogg')
+	reinforced = common_material_remove(user, reinforced, 40, "reinforcements", "screws", 'sounds/items/Screwdriver.ogg')
 
 /obj/structure/table/proc/remove_material(obj/item/wrench/W, mob/user)
-	material = common_material_remove(user, material, 20, "plating", "bolts", 'sound/items/Ratchet.ogg')
+	material = common_material_remove(user, material, 20, "plating", "bolts", 'sounds/items/Ratchet.ogg')
 
 /obj/structure/table/proc/dismantle(obj/item/wrench/W, mob/user)
 	reset_mobs_offset()
@@ -280,8 +280,13 @@
 	manipulating = 1
 	user.visible_message(SPAN_NOTICE("\The [user] begins dismantling \the [src]."),
 	                              SPAN_NOTICE("You begin dismantling \the [src]."))
-	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+<<<<<<< HEAD
+	playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 	if(!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
+=======
+	playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
+	if(!do_after(user, 20, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 		manipulating = 0
 		return
 	user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."),

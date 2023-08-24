@@ -26,8 +26,8 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/infestation/assembler
 	//say_list_type = /datum/say_list/infestation_assembler
 	death_sounds = list(
-		'sound/simple_mob/abominable_infestation/eviscerator/death_1.ogg',
-		'sound/simple_mob/abominable_infestation/eviscerator/death_2.ogg',
+		'sounds/simple_mob/abominable_infestation/eviscerator/death_1.ogg',
+		'sounds/simple_mob/abominable_infestation/eviscerator/death_2.ogg',
 		)
 
 	// Organs add 1; Non-human mobs add 5.
@@ -50,7 +50,7 @@
 	attack_verb = list("stabbed", "pierced")
 	force = 20
 	armor_penetration = 10
-	hitsound = 'sound/weapons/rapidslice.ogg'
+	hitsound = 'sounds/weapons/rapidslice.ogg'
 	sharp = TRUE
 	edge = TRUE
 
@@ -122,7 +122,7 @@
 		return
 
 	visible_message(SPAN_DANGER("[src] starts to consume \the [L]!"))
-	playsound(src, 'sound/simple_mob/abominable_infestation/assembler/ambient_1.ogg', 50, TRUE)
+	playsound(src, 'sounds/simple_mob/abominable_infestation/assembler/ambient_1.ogg', 50, TRUE)
 	set_AI_busy(TRUE)
 
 	if(!do_after(src, min(1 SECOND, L.mob_size) SECONDS, L, bonus_percentage = 100))
@@ -137,7 +137,7 @@
 
 /mob/living/simple_animal/hostile/infestation/assembler/proc/ConsumeHuman(mob/living/carbon/human/H)
 	visible_message(SPAN_DANGER("[src] starts to tear [H] apart!"))
-	playsound(src, 'sound/simple_mob/abominable_infestation/assembler/ambient_1.ogg', 50, TRUE)
+	playsound(src, 'sounds/simple_mob/abominable_infestation/assembler/ambient_1.ogg', 50, TRUE)
 	set_AI_busy(TRUE)
 
 	if(!do_after(src, 4 SECONDS, H, bonus_percentage = 25))
@@ -200,6 +200,6 @@
 	L.transformation_time = world.time + 30 SECONDS // Assembled larvas hatch faster
 	L.color = color
 	L.faction = faction
-	playsound(L, 'sound/simple_mob/abominable_infestation/larva/spawn.ogg', rand(35, 50), TRUE)
+	playsound(L, 'sounds/simple_mob/abominable_infestation/larva/spawn.ogg', rand(35, 50), TRUE)
 	visible_message(SPAN_WARNING("[src] assembles a new [L.name]!"))
 	nutrient_stored -= larva_types[target_type]

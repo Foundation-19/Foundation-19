@@ -59,7 +59,7 @@
 			has_friend = TRUE
 			break
 	if(!has_friend)
-		playsound(src, 'sound/machines/chime.ogg', 10)
+		playsound(src, 'sounds/machines/chime.ogg', 10)
 		var/turf/T = get_turf(src)
 		if(T)
 			T.visible_message(SPAN_WARNING("[src] beeps anxiously."), range = 3)

@@ -18,7 +18,7 @@
  * Bonus percentage, if set to something other than 0, is the percentage of the delay that can be "skipped" with a progressbar_booster. Ranges from 0 (not even created) to 100 (one booster will complete the do_after immediately).
  * Focus frequency allows you to have faster/slower progressbar_boosters, while focus_sound lets you use a different sound on a successful hit.
  */
-/proc/do_after(mob/user, delay, atom/target, do_flags = DO_DEFAULT, incapacitation_flags = INCAPACITATION_DEFAULT, datum/callback/extra_checks, interaction_key, max_interact_count = 1, bonus_percentage = 0, focus_sound = 'sound/machines/click.ogg', focus_frequency = 1 SECOND)
+/proc/do_after(mob/user, delay, atom/target, do_flags = DO_DEFAULT, incapacitation_flags = INCAPACITATION_DEFAULT, datum/callback/extra_checks, interaction_key, max_interact_count = 1, bonus_percentage = 0, focus_sound = 'sounds/machines/click.ogg', focus_frequency = 1 SECOND)
 	if(!isnum(delay))
 		CRASH("do_after was passed a non-number delay: [delay || "null"].")
 

@@ -11,7 +11,7 @@
 /obj/item/projectile/energy/flash
 	name = "chemical shell"
 	icon_state = "bullet"
-	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot_pistol.ogg'
 	damage = 5
 	agony = 20
 	life_span = 15 //if the shell hasn't hit anything after travelling this far it just explodes.
@@ -32,7 +32,7 @@
 			M.confused += (brightness / 2)
 
 	//snap pop
-	playsound(src, 'sound/effects/snap.ogg', 50, 1)
+	playsound(src, 'sounds/effects/snap.ogg', 50, 1)
 	src.visible_message(SPAN_WARNING("\The [src] explodes in a bright flash!"))
 
 	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
@@ -46,7 +46,7 @@
 /obj/item/projectile/energy/flash/flare
 	damage = 10
 	agony = 25
-	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	fire_sound = 'sounds/weapons/gunshot/shotgun.ogg'
 	flash_range = 2
 	brightness = 15
 
@@ -79,7 +79,7 @@
 /obj/item/projectile/energy/electrode //has more pain than a beam because it's harder to hit
 	name = "electrode"
 	icon_state = "spark"
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sounds/weapons/Taser.ogg'
 	agony = 50
 	damage = 2
 	damage_type = BURN
@@ -101,7 +101,7 @@
 /obj/item/projectile/energy/declone
 	name = "decloner beam"
 	icon_state = "declone"
-	fire_sound = 'sound/weapons/pulse3.ogg'
+	fire_sound = 'sounds/weapons/pulse3.ogg'
 	damage = 30
 	damage_type = CLONE
 	irradiate = 40
@@ -136,7 +136,7 @@
 /obj/item/projectile/energy/phoron
 	name = "phoron bolt"
 	icon_state = "energy"
-	fire_sound = 'sound/effects/stealthoff.ogg'
+	fire_sound = 'sounds/effects/stealthoff.ogg'
 	damage = 20
 	damage_type = TOX
 	irradiate = 20
@@ -144,7 +144,7 @@
 /obj/item/projectile/energy/plasmastun
 	name = "plasma pulse"
 	icon_state = "plasma_stun"
-	fire_sound = 'sound/weapons/blaster.ogg'
+	fire_sound = 'sounds/weapons/blaster.ogg'
 	armor_penetration = 10
 	life_span = 4
 	damage = 5
@@ -206,7 +206,7 @@
 /obj/item/projectile/energy/plasmastun/sonic
 	name = "sonic pulse"
 	icon_state = "sound"
-	fire_sound = 'sound/effects/basscannon.ogg'
+	fire_sound = 'sounds/effects/basscannon.ogg'
 	damage = 5
 	armor_penetration = 40
 	damage_type = BRUTE
@@ -232,7 +232,7 @@
 /obj/item/projectile/energy/darkmatter
 	name = "dark matter pellet"
 	icon_state = "dark_pellet"
-	fire_sound = 'sound/weapons/eLuger.ogg'
+	fire_sound = 'sounds/weapons/eLuger.ogg'
 	damage = 10
 	armor_penetration = 35
 	damage_type = BRUTE
@@ -242,5 +242,5 @@
 	icon_state = "toxin"
 	damage = 18
 	damage_type = BURN
-	fire_sound = 'sound/weapons/alien_spit.ogg'
+	fire_sound = 'sounds/weapons/alien_spit.ogg'
 	pass_flags = PASS_FLAG_TABLE

@@ -32,7 +32,7 @@
 		return
 
 	if(isnull(insults))
-		playsound(get_turf(src), 'sound/voice/halt.ogg', 100, 1, vary = 0)
+		playsound(get_turf(src), 'sounds/voice/halt.ogg', 100, 1, vary = 0)
 		user.audible_message(SPAN_WARNING("[user]'s [name] rasps, \"[use_message]\""), null, SPAN_WARNING("\The [user] holds up \the [name]."))
 	else
 		to_chat(user, SPAN_DANGER("*BZZZZZZZZT*"))

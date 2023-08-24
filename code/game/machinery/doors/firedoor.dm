@@ -42,8 +42,8 @@
 	var/list/areas_added
 	var/list/users_to_open = new
 	var/next_process_time = 0
-	var/open_sound = 'sound/machines/blastdoor_open.ogg'
-	var/close_sound = 'sound/machines/blastdoor_close.ogg'
+	var/open_sound = 'sounds/machines/blastdoor_open.ogg'
+	var/close_sound = 'sounds/machines/blastdoor_close.ogg'
 
 	power_channel = ENVIRON
 	idle_power_usage = 5
@@ -145,7 +145,7 @@
 	return FALSE
 
 /obj/machinery/door/firedoor/attack_generic(mob/user, damage)
-	playsound(loc, 'sound/weapons/tablehit1.ogg', 50, 1)
+	playsound(loc, 'sounds/weapons/tablehit1.ogg', 50, 1)
 	if(stat & BROKEN)
 		qdel(src)
 	..()
@@ -181,7 +181,7 @@
 			SPAN_NOTICE("\The [src] [density ? "open" : "close"]s."),
 			SPAN_ITALIC("You hear a soft beep, and a door sliding [density ? "open" : "shut"].")
 		)
-		playsound(loc, 'sound/piano/A#6.ogg', 50)
+		playsound(loc, 'sounds/piano/A#6.ogg', 50)
 
 	var/needs_to_close = 0
 	if(density)
@@ -212,8 +212,13 @@
 				SPAN_DANGER("You start [!blocked ? "welding \the [src] closed" : "cutting open \the [src]"]."),
 				SPAN_ITALIC("You hear welding.")
 			)
-			playsound(loc, 'sound/items/Welder.ogg', 50, TRUE)
+<<<<<<< HEAD
+			playsound(loc, 'sounds/items/Welder.ogg', 50, TRUE)
 			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
+=======
+			playsound(loc, 'sounds/items/Welder.ogg', 50, TRUE)
+			if(do_after(user, 2 SECONDS, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				if(!W.isOn())
 					return
 				blocked = !blocked
@@ -222,7 +227,7 @@
 					SPAN_DANGER("You [blocked ? "weld shut" : "undo the welds on"] \the [src]."),
 					SPAN_ITALIC("You hear welding.")
 				)
-				playsound(loc, 'sound/items/Welder2.ogg', 50, TRUE)
+				playsound(loc, 'sounds/items/Welder2.ogg', 50, TRUE)
 				update_icon()
 				return
 
@@ -233,7 +238,7 @@
 			SPAN_NOTICE("You [hatch_open ? "open" : "close"] \the [src]'s maintenance hatch."),
 			SPAN_ITALIC("You hear screws being adjusted.")
 		)
-		playsound(loc, 'sound/items/Screwdriver.ogg', 25, TRUE)
+		playsound(loc, 'sounds/items/Screwdriver.ogg', 25, TRUE)
 		update_icon()
 		return
 
@@ -246,10 +251,15 @@
 				SPAN_NOTICE("You start levering out \the [src]'s electronics."),
 				SPAN_ITALIC("You hear metal bumping against metal.")
 			)
-			playsound(loc, 'sound/items/Crowbar.ogg', 100, TRUE)
+<<<<<<< HEAD
+			playsound(loc, 'sounds/items/Crowbar.ogg', 100, TRUE)
 			if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
+=======
+			playsound(loc, 'sounds/items/Crowbar.ogg', 100, TRUE)
+			if(do_after(user, 30, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				if(blocked && density && hatch_open)
-					playsound(loc, 'sound/items/Deconstruct.ogg', 100, TRUE)
+					playsound(loc, 'sounds/items/Deconstruct.ogg', 100, TRUE)
 					user.visible_message(
 						SPAN_NOTICE("\The [user] removes the electronics from \the [src]!"),
 						SPAN_NOTICE("You pry out \the [src]'s circuit board."),
@@ -284,8 +294,13 @@
 			SPAN_DANGER("You start forcing \the [src] [density ? "open" : "shut"]."),
 			SPAN_WARNING("You hear metal groaning and grinding!")
 		)
-		playsound(loc, 'sound/machines/airlock_creaking.ogg', 100, TRUE)
+<<<<<<< HEAD
+		playsound(loc, 'sounds/machines/airlock_creaking.ogg', 100, TRUE)
 		if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
+=======
+		playsound(loc, 'sounds/machines/airlock_creaking.ogg', 100, TRUE)
+		if(do_after(user, 30, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			if(isCrowbar(C))
 				if(stat & (BROKEN|NOPOWER) || !density)
 					user.visible_message(
@@ -398,7 +413,7 @@
 			SPAN_DANGER("You hear buzzing coming from the ceiling."),
 			range = 3
 		)
-		playsound(loc, "sound/machines/firedoor.ogg", 50)
+		playsound(loc, "sounds/machines/firedoor.ogg", 50)
 		sleep(2 SECONDS)
 		for(var/turf/turf in locs)
 			for(var/mob/living/M in turf)

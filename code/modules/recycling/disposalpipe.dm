@@ -130,7 +130,7 @@
 		else						// otherwise limit to 10 tiles
 			target = get_ranged_target_turf(T, direction, 10)
 
-		playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+		playsound(src, 'sounds/machines/hiss.ogg', 50, 0, 0)
 		if(H)
 			for(var/atom/movable/AM in H)
 				AM.forceMove(T)
@@ -143,7 +143,7 @@
 			// throw out vomit
 			if(H.reagents?.total_volume)
 				visible_message(SPAN_DANGER("Vomit spews out of the disposal pipe!"))
-				playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+				playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 				if(istype(src.loc, /turf/simulated))
 					var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
 					H.reagents.trans_to_obj(splat, min(15, H.reagents.total_volume))
@@ -152,7 +152,7 @@
 			qdel(H)
 
 	else	// no specified direction, so throw in random direction
-		playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+		playsound(src, 'sounds/machines/hiss.ogg', 50, 0, 0)
 		if(H)
 			for(var/atom/movable/AM in H)
 				target = get_offset_target_turf(T, rand(5)-rand(5), rand(5)-rand(5))
@@ -228,15 +228,20 @@
 				SPAN_NOTICE("Slicing \the [src]..."),
 				SPAN_ITALIC("You hear the sound of welding.")
 			)
-			playsound(src, 'sound/items/Welder.ogg', 50, TRUE)
-			if (!do_after(user, 4 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Welder.ogg'))
+<<<<<<< HEAD
+			playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
+			if (!do_after(user, 4 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg'))
+=======
+			playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
+			if (!do_after(user, 3 SECONDS, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				return
 			user.visible_message(
 				SPAN_NOTICE("\The [user] cuts \the [src] free from the floor."),
 				SPAN_NOTICE("You cut \the [src] free from the floor."),
 				SPAN_ITALIC("You hear the sound of welding.")
 			)
-			playsound(src, 'sound/items/Welder2.ogg', 50, TRUE)
+			playsound(src, 'sounds/items/Welder2.ogg', 50, TRUE)
 			welded()
 			return
 		else
@@ -497,7 +502,7 @@
 
 		if(O.currTag)// Tag set
 			sort_tag = O.currTag
-			playsound(src.loc, 'sound/machines/twobeep.ogg', 100, 1)
+			playsound(src.loc, 'sounds/machines/twobeep.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Changed tag to '[sort_tag]'."))
 			updatename()
 			updatedesc()
@@ -571,7 +576,7 @@
 		var/obj/item/disposal_switch_construct/C = I
 		if(C.id_tag)
 			id_tag = C.id_tag
-			playsound(src.loc, 'sound/machines/twobeep.ogg', 100, 1)
+			playsound(src.loc, 'sounds/machines/twobeep.ogg', 100, 1)
 			user.visible_message(SPAN_NOTICE("\The [user] changes \the [src]'s tag."))
 
 
@@ -665,7 +670,7 @@
 
 		if(O.currTag)// Tag set
 			sort_type = O.currTag
-			playsound(src.loc, 'sound/machines/twobeep.ogg', 100, 1)
+			playsound(src.loc, 'sounds/machines/twobeep.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Changed filter to '[sort_type]'."))
 			updatename()
 			updatedesc()
@@ -785,7 +790,7 @@
 		var/obj/item/weldingtool/W = I
 
 		if(W.remove_fuel(0,user))
-			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
 			// check if anything changed over 2 seconds
 			var/turf/uloc = user.loc
 			var/atom/wloc = W.loc

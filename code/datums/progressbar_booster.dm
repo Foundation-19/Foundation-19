@@ -79,7 +79,7 @@
 
 /obj/screen/progressbar_trap/Click(location, control, params)
 	. = ..()
-	sound_to(linked_bar.user, 'sound/machines/buzz-sigh.ogg')
+	sound_to(linked_bar.user, 'sounds/machines/buzz-sigh.ogg')
 	linked_bar.boost_progress(loss_per_click)
 
 /obj/screen/progressbar_trap/Destroy()

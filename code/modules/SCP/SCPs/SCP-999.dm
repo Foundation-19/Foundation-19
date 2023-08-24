@@ -73,8 +73,13 @@ GLOBAL_LIST_EMPTY(scp999s)
 				H.visible_message(SPAN_WARNING("[src] begins to wrap around [a]'s legs!"), SPAN_WARNING("[src] begins wrapping around your legs!"))
 				H.make_reagent(2, /datum/reagent/medicine/antidepressant/anomalous_happiness)
 				H.emote(pick("laugh","giggle"))
+<<<<<<< HEAD
 				if(do_after(src, 1.5 SECONDS, H, bonus_percentage = 100))
-					playsound(loc, 'sound/misc/slip.ogg', 50, 1, -3)
+					playsound(loc, 'sounds/misc/slip.ogg', 50, 1, -3)
+=======
+				if(do_after(src, 15, H))
+					playsound(loc, 'sounds/misc/slip.ogg', 50, 1, -3)
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					H.Weaken(6)
 					H.Stun(3)
 					visible_message(SPAN_WARNING("[src] wraps around [H]'s legs, tripping them!"))

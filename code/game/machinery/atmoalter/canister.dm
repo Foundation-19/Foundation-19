@@ -297,7 +297,7 @@ update_flag
 
 		destroyed = TRUE
 		visible_message(SPAN_DANGER("\The [src] ruptures!"))
-		playsound(src, 'sound/effects/spray.ogg', 10, 1, -3)
+		playsound(src, 'sounds/effects/spray.ogg', 10, 1, -3)
 		set_density(FALSE)
 		update_icon()
 
@@ -359,7 +359,7 @@ update_flag
 		return
 
 	if (P.damage)
-		playsound(src, 'sound/weapons/slice.ogg', 50, TRUE)
+		playsound(src, 'sounds/weapons/slice.ogg', 50, TRUE)
 		health -= round(P.damage / 2)
 		healthcheck()
 	..()
@@ -384,7 +384,7 @@ update_flag
 			SPAN_NOTICE("You start cutting through \the [src], slicing at its weak points."),
 			SPAN_NOTICE("You hear the sound of \a [W].")
 		)
-		playsound(src, 'sound/items/Welder.ogg', 50, TRUE)
+		playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
 		if (!user.do_skilled(6 SECONDS, SKILL_CONSTRUCTION, src))
 			return
 		var/returned_sheets = destroyed ? 5 : 10
@@ -400,7 +400,7 @@ update_flag
 				SPAN_NOTICE("You deconstruct what remains of \the [src], reclaiming some of its material."),
 				SPAN_NOTICE("You hear sheets of metal collapsing.")
 			)
-		playsound(src, 'sound/items/Welder2.ogg', 50, TRUE)
+		playsound(src, 'sounds/items/Welder2.ogg', 50, TRUE)
 		var/turf/location = get_turf(src)
 		if (!destroyed)
 			location.assume_air(air_contents)
@@ -425,7 +425,7 @@ update_flag
 			SPAN_NOTICE("You start sealing the damage to \the [src]."),
 			SPAN_NOTICE("You hear tape being used.")
 		)
-		playsound(src, 'sound/effects/tape.ogg', 25)
+		playsound(src, 'sounds/effects/tape.ogg', 25)
 		if (!user.do_skilled((initial(health) - health) * 0.5, SKILL_CONSTRUCTION, src) || destroyed)
 			return
 		user.visible_message(
@@ -433,7 +433,7 @@ update_flag
 			SPAN_NOTICE("You patch up \the [src], sealing the worst of its damage."),
 			SPAN_NOTICE("You hear tape being used.")
 		)
-		playsound(src, 'sound/effects/tape.ogg', 25)
+		playsound(src, 'sounds/effects/tape.ogg', 25)
 		health = initial(health)
 		return
 
@@ -459,7 +459,7 @@ update_flag
 			healthcheck()
 		user.do_attack_animation(src)
 		user.setClickCooldown(W.attack_cooldown + W.w_class) // Mirror the logic from base attack cooldowns
-		playsound(user, 'sound/weapons/smash.ogg', 50, TRUE)
+		playsound(user, 'sounds/weapons/smash.ogg', 50, TRUE)
 		show_sound_effect(src.loc, user)
 		return
 

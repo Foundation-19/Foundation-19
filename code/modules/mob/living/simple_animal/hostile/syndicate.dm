@@ -78,7 +78,7 @@
 	icon_state = "syndicateranged"
 	icon_living = "syndicateranged"
 	casingtype = /obj/item/ammo_casing/pistol
-	projectilesound = 'sound/weapons/gunshot/smg.ogg'
+	projectilesound = 'sounds/weapons/gunshot/smg.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol
 	loot_list = list(
 		/obj/item/gun/projectile/automatic/merc_smg = 1,
@@ -118,7 +118,7 @@
 /obj/item/natural_weapon/rotating_blade
 	name = "rotating blades"
 	attack_verb = list("sliced", "cut")
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sounds/weapons/bladeslice.ogg'
 	force = 15
 	edge = 1
 	sharp = 1

@@ -25,7 +25,7 @@
 		if(!user.unEquip(SK))
 			return
 		var/obj/structure/bed/chair/e_chair/E = new (src.loc, material.name)
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		E.set_dir(dir)
 		E.part = SK
 		SK.forceMove(E)
@@ -242,7 +242,7 @@
 		occupant.apply_effect(6, WEAKEN, blocked)
 		occupant.apply_effect(6, STUTTER, blocked)
 		occupant.apply_damage(10, BRUTE, def_zone)
-		playsound(src.loc, 'sound/weapons/punch1.ogg', 50, 1, -1)
+		playsound(src.loc, 'sounds/weapons/punch1.ogg', 50, 1, -1)
 		if(istype(A, /mob/living))
 			var/mob/living/victim = A
 			def_zone = ran_zone()
@@ -300,7 +300,7 @@
 	desc = "A comfortable, secure seat. It has a sturdy-looking buckling system for smoother flights."
 	base_icon = "shuttle_chair"
 	icon_state = "shuttle_chair_preview"
-	buckling_sound = 'sound/effects/metal_close.ogg'
+	buckling_sound = 'sounds/effects/metal_close.ogg'
 	buckle_movable = FALSE
 
 /obj/structure/bed/chair/shuttle/post_buckle_mob()

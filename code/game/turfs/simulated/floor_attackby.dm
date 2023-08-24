@@ -30,21 +30,26 @@
 						SPAN_NOTICE("\The [user] begins prying up \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You begin prying up \the [flooring.descriptor] with \the [C].")
 					)
-					playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
-					if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sound/items/Crowbar.ogg'))
+<<<<<<< HEAD
+					playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
+					if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg'))
+=======
+					playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
+					if (do_after(user, flooring.remove_timer, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						user.visible_message(
 							SPAN_NOTICE("\The [user] pries up \the [flooring.descriptor] with \the [C]!"),
 							SPAN_NOTICE("You pry up \the [flooring.descriptor] with \the [C].")
 						)
 						make_plating(TRUE)
-						playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
+						playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
 					return
 				else
 					to_chat(user, SPAN_NOTICE("You lever off the [flooring.descriptor]."))
 					make_plating(TRUE)
 			else
 				return
-			playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
+			playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
 			return
 		else if(isScrewdriver(C) && (flooring.flags & TURF_REMOVE_SCREWDRIVER))
 			if(broken || burnt)
@@ -54,19 +59,24 @@
 					SPAN_NOTICE("\The [user] begins unscrewing \the [flooring.descriptor] with \the [C]!"),
 					SPAN_NOTICE("You begin unscrewing \the [flooring.descriptor] with \the [C].")
 				)
-				playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
-				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sound/items/Screwdriver.ogg'))
+<<<<<<< HEAD
+				playsound(src, 'sounds/items/Screwdriver.ogg', 80, 1)
+				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Screwdriver.ogg'))
+=======
+				playsound(src, 'sounds/items/Screwdriver.ogg', 80, 1)
+				if (do_after(user, flooring.remove_timer, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					user.visible_message(
 						SPAN_NOTICE("\The [user] unscrews \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You unscrew \the [flooring.descriptor] with \the [C].")
 					)
 					make_plating(TRUE)
-					playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
+					playsound(src, 'sounds/items/Screwdriver.ogg', 80, 1)
 				return
 			else
 				to_chat(user, SPAN_NOTICE("You unscrew and remove the [flooring.descriptor]."))
 				make_plating(TRUE)
-				playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
+				playsound(src, 'sounds/items/Screwdriver.ogg', 80, 1)
 			return
 		else if(isWrench(C) && (flooring.flags & TURF_REMOVE_WRENCH))
 			if (flooring.remove_timer)
@@ -74,24 +84,29 @@
 					SPAN_NOTICE("\The [user] begins unwrenching \the [flooring.descriptor] with \the [C]!"),
 					SPAN_NOTICE("You begin unwrenching \the [flooring.descriptor] with \the [C].")
 				)
-				playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
-				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sound/items/Ratchet.ogg'))
+<<<<<<< HEAD
+				playsound(src, 'sounds/items/Ratchet.ogg', 80, 1)
+				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
+=======
+				playsound(src, 'sounds/items/Ratchet.ogg', 80, 1)
+				if (do_after(user, flooring.remove_timer, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					user.visible_message(
 						SPAN_NOTICE("\The [user] unwrench \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You unwrench \the [flooring.descriptor] with \the [C].")
 					)
 					make_plating(TRUE)
-					playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
+					playsound(src, 'sounds/items/Ratchet.ogg', 80, 1)
 				return
 			else
 				to_chat(user, SPAN_NOTICE("You unwrench and remove the [flooring.descriptor]."))
 				make_plating(TRUE)
-				playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
+				playsound(src, 'sounds/items/Ratchet.ogg', 80, 1)
 			return
 		else if(istype(C, /obj/item/shovel) && (flooring.flags & TURF_REMOVE_SHOVEL))
 			to_chat(user, SPAN_NOTICE("You shovel off the [flooring.descriptor]."))
 			make_plating(1)
-			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
+			playsound(src, 'sounds/items/Deconstruct.ogg', 80, 1)
 			return
 		else if(isCoil(C))
 			to_chat(user, SPAN_WARNING("You must remove the [flooring.descriptor] first."))
@@ -108,7 +123,7 @@
 			if (istype(C, /obj/item/stack/material/rods))
 				var/obj/item/stack/material/rods/R = C
 				if (R.use(2))
-					playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+					playsound(src, 'sounds/weapons/Genhit.ogg', 50, 1)
 					new /obj/structure/catwalk(src)
 				return
 			var/obj/item/stack/S = C
@@ -134,17 +149,17 @@
 				return
 			if(S.use(use_flooring.build_cost))
 				set_flooring(use_flooring)
-				playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
+				playsound(src, 'sounds/items/Deconstruct.ogg', 80, 1)
 				return
 		// Repairs and Deconstruction.
 		else if(isCrowbar(C))
 			if(broken || burnt)
-				playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
+				playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
 				visible_message(SPAN_NOTICE("[user] has begun prying off the damaged plating."))
 				var/turf/T = GetBelow(src)
 				if(T)
 					T.visible_message(SPAN_WARNING("The ceiling above looks as if it's being pried off."))
-				if(do_after(user, 12 SECONDS, bonus_percentage = 25, focus_sound = 'sound/items/Crowbar.ogg'))
+				if(do_after(user, 12 SECONDS, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg'))
 					if(!istype(src, /turf/simulated/floor))
 						return
 					if(!broken && !burnt || !(is_plating()))
@@ -152,7 +167,7 @@
 					visible_message(SPAN_WARNING("[user] has pried off the damaged plating."))
 					new /obj/item/stack/tile/floor(src)
 					src.ReplaceWithLattice()
-					playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
+					playsound(src, 'sounds/items/Deconstruct.ogg', 80, 1)
 					if(T)
 						T.visible_message(SPAN_DANGER("The ceiling above has been pried off!"))
 			else
@@ -164,28 +179,28 @@
 				if(broken || burnt)
 					if(welder.remove_fuel(0, user))
 						to_chat(user, SPAN_NOTICE("You fix some dents on the broken plating."))
-						playsound(src, 'sound/items/Welder.ogg', 80, 1)
+						playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 						icon_state = "plating"
 						burnt = null
 						broken = null
 					return
 				else
 					if(welder.remove_fuel(0, user))
-						playsound(src, 'sound/items/Welder.ogg', 80, 1)
+						playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 						visible_message(SPAN_NOTICE("[user] has started melting the plating's reinforcements!"))
-						if(do_after(user, 6 SECONDS, bonus_percentage = 25, focus_sound = 'sound/items/Welder.ogg') && welder.isOn() && welder_melt())
+						if(do_after(user, 6 SECONDS, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg') && welder.isOn() && welder_melt())
 							visible_message(SPAN_WARNING("[user] has melted the plating's reinforcements! It should be possible to pry it off."))
-							playsound(src, 'sound/items/Welder.ogg', 80, 1)
+							playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 					return
 		else if(istype(C, /obj/item/gun/energy/plasmacutter) && (is_plating()) && !broken && !burnt)
 			var/obj/item/gun/energy/plasmacutter/cutter = C
 			if(!cutter.slice(user))
 				return ..()
-			playsound(src, 'sound/items/Welder.ogg', 80, 1)
+			playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 			visible_message(SPAN_NOTICE("[user] has started slicing through the plating's reinforcements!"))
-			if(do_after(user, 4 SECONDS, bonus_percentage = 25, focus_sound = 'sound/items/Welder.ogg') && welder_melt())
+			if(do_after(user, 4 SECONDS, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg') && welder_melt())
 				visible_message(SPAN_WARNING("[user] has sliced through the plating's reinforcements! It should be possible to pry it off."))
-				playsound(src, 'sound/items/Welder.ogg', 80, 1)
+				playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 
 	return ..()
 

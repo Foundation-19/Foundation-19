@@ -108,7 +108,7 @@
 	if (href_list["scan"])
 		var/obj/effect/overmap/O = locate(href_list["scan"])
 		if(istype(O) && !QDELETED(O) && (O in view(7,linked)))
-			playsound(loc, "sound/machines/dotprinter.ogg", 30, 1)
+			playsound(loc, "sounds/machines/dotprinter.ogg", 30, 1)
 			new/obj/item/paper/(get_turf(src), O.get_scan_data(user), "paper (Sensor Scan - [O])", L = print_language)
 		return TOPIC_HANDLED
 
@@ -147,8 +147,13 @@
 
 		if(WT.remove_fuel(0,user))
 			to_chat(user, SPAN_NOTICE("You start repairing the damage to [src]."))
-			playsound(src, 'sound/items/Welder.ogg', 100, 1)
+<<<<<<< HEAD
+			playsound(src, 'sounds/items/Welder.ogg', 100, 1)
 			if(do_after(user, max(0.5 SECONDS, damage / 5), src, bonus_percentage = 25) && WT && WT.isOn())
+=======
+			playsound(src, 'sounds/items/Welder.ogg', 100, 1)
+			if(do_after(user, max(5, damage / 5), src) && WT && WT.isOn())
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 				to_chat(user, SPAN_NOTICE("You finish repairing the damage to [src]."))
 				take_damage(-damage)
 		else

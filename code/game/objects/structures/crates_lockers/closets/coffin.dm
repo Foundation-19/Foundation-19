@@ -20,8 +20,13 @@
 /obj/structure/closet/coffin/attackby(obj/item/W, mob/user)
 	if(!opened && isScrewdriver(W))
 		to_chat(user, SPAN_NOTICE("You begin screwing [src]'s lid [locked ? "open" : "shut"]."))
-		playsound(src, 'sound/items/Screwdriver.ogg', 100, 1)
-		if(do_after(user, screwdriver_time_needed, src, bonus_percentage = 25, focus_sound = 'sound/items/Screwdriver.ogg'))
+<<<<<<< HEAD
+		playsound(src, 'sounds/items/Screwdriver.ogg', 100, 1)
+		if(do_after(user, screwdriver_time_needed, src, bonus_percentage = 25, focus_sound = 'sounds/items/Screwdriver.ogg'))
+=======
+		playsound(src, 'sounds/items/Screwdriver.ogg', 100, 1)
+		if(do_after(user, screwdriver_time_needed, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			locked = !locked
 			to_chat(user, SPAN_NOTICE("You [locked ? "screw down" : "unscrew"] [src]'s lid."))
 	else

@@ -72,9 +72,9 @@
 				var/obj/item/weldingtool/WT = W
 				if (WT.remove_fuel(0,user))
 					user.visible_message("[user] dissassembles the windoor assembly.", "You start to dissassemble the windoor assembly.")
-					playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
+					playsound(src.loc, 'sounds/items/Welder2.ogg', 50, 1)
 
-					if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Welder2.ogg'))
+					if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder2.ogg'))
 						if(!src || !WT.isOn()) return
 						to_chat(user, SPAN_NOTICE("You dissasembled the windoor assembly!"))
 						new /obj/item/stack/material/glass/reinforced(get_turf(src), 5)
@@ -87,10 +87,10 @@
 
 			//Wrenching an unsecure assembly anchors it in place. Step 4 complete
 			if(isWrench(W) && !anchored)
-				playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 				user.visible_message("[user] secures the windoor assembly to the floor.", "You start to secure the windoor assembly to the floor.")
 
-				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Ratchet.ogg'))
+				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
 					if(!src) return
 					to_chat(user, SPAN_NOTICE("You've secured the windoor assembly!"))
 					src.anchored = TRUE
@@ -101,10 +101,10 @@
 
 			//Unwrenching an unsecure assembly un-anchors it. Step 4 undone
 			else if(isWrench(W) && anchored)
-				playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 				user.visible_message("[user] unsecures the windoor assembly to the floor.", "You start to unsecure the windoor assembly to the floor.")
 
-				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Ratchet.ogg'))
+				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
 					if(!src) return
 					to_chat(user, SPAN_NOTICE("You've unsecured the windoor assembly!"))
 					src.anchored = FALSE
@@ -150,10 +150,10 @@
 
 			//Removing wire from the assembly. Step 5 undone.
 			if(isWirecutter(W) && !src.electronics)
-				playsound(src.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 				user.visible_message("[user] cuts the wires from the airlock assembly.", "You start to cut the wires from airlock assembly.")
 
-				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Wirecutter.ogg'))
+				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Wirecutter.ogg'))
 					if(!src) return
 
 					to_chat(user, SPAN_NOTICE("You cut the windoor wires.!"))
@@ -166,10 +166,10 @@
 
 			//Adding airlock electronics for access. Step 6 complete.
 			else if(istype(W, /obj/item/airlock_electronics) && W:icon_state != "door_electronics_smoked")
-				playsound(src.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 				user.visible_message("[user] installs the electronics into the airlock assembly.", "You start to install electronics into the airlock assembly.")
 
-				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Screwdriver.ogg'))
+				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Screwdriver.ogg'))
 					if(!src) return
 					if(!user.unEquip(W, src))
 						return
@@ -181,10 +181,10 @@
 
 			//Screwdriver to remove airlock electronics. Step 6 undone.
 			else if(isScrewdriver(W) && src.electronics)
-				playsound(src.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 				user.visible_message("[user] removes the electronics from the airlock assembly.", "You start to uninstall electronics from the airlock assembly.")
 
-				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Screwdriver.ogg'))
+				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Screwdriver.ogg'))
 					if(!src || !src.electronics) return
 					to_chat(user, SPAN_NOTICE("You've removed the airlock electronics!"))
 					if(src.secure)
@@ -201,10 +201,10 @@
 					to_chat(usr, SPAN_WARNING("The assembly is missing electronics."))
 					return
 				close_browser(usr, "window=windoor_access")
-				playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 				user.visible_message("[user] pries the windoor into the frame.", "You start prying the windoor into the frame.")
 
-				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Crowbar.ogg'))
+				if(do_after(user, 5 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg'))
 					set_density(1) //Shouldn't matter but just incase
 					to_chat(user, SPAN_NOTICE("You finish the windoor!"))
 

@@ -13,7 +13,7 @@
 
 /obj/structure/fireaxecabinet/attack_generic(mob/user, damage, attack_verb, wallbreaker)
 	attack_animation(user)
-	playsound(user, 'sound/effects/Glasshit.ogg', 50, 1)
+	playsound(user, 'sounds/effects/Glasshit.ogg', 50, 1)
 	visible_message(SPAN_DANGER("[user] [attack_verb] \the [src]!"))
 	if(damage_threshold > damage)
 		to_chat(user, SPAN_DANGER("Your strike is deflected by the reinforced glass!"))
@@ -23,7 +23,7 @@
 	shattered = 1
 	unlocked = 1
 	open = 1
-	playsound(user, 'sound/effects/Glassbr3.ogg', 100, 1)
+	playsound(user, 'sounds/effects/Glassbr3.ogg', 100, 1)
 	update_icon()
 
 /obj/structure/fireaxecabinet/on_update_icon()
@@ -128,7 +128,7 @@
 		if(shattered) return
 
 		unlocked = !unlocked
-		playsound(user, 'sound/machines/lockreset.ogg', 50, 1)
+		playsound(user, 'sounds/machines/lockreset.ogg', 50, 1)
 		to_chat(user, "<span class = 'notice'>You [unlocked ? "disable" : "enable"] the maglock.</span>")
 
 	update_icon()

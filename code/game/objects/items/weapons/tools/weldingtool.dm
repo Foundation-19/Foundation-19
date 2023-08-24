@@ -143,7 +143,7 @@
 			return
 		O.reagents.trans_to_obj(tank, tank.max_fuel)
 		to_chat(user, SPAN_NOTICE("You refuel \the [tank]."))
-		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
+		playsound(src.loc, 'sounds/effects/refill.ogg', 50, 1, -6)
 		return
 
 	if(welding)
@@ -342,7 +342,7 @@
 			return
 		O.reagents.trans_to_obj(src, max_fuel)
 		to_chat(user, SPAN_NOTICE("You refuel \the [src]."))
-		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
+		playsound(src.loc, 'sounds/effects/refill.ogg', 50, 1, -6)
 
 /obj/item/welder_tank/mini
 	name = "small welding fuel tank"

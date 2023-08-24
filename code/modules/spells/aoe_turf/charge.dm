@@ -11,7 +11,7 @@
 	cooldown_min = 400 //50 deciseconds reduction per rank
 
 	hud_state = "wiz_charge"
-	cast_sound = 'sound/magic/charge.ogg'
+	cast_sound = 'sounds/magic/charge.ogg'
 
 /datum/spell/aoe_turf/charge/cast(list/targets, mob/user)
 	for(var/turf/T in targets)

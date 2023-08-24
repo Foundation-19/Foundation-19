@@ -47,15 +47,20 @@
 			SPAN_WARNING("You start prying out \the [loaded_augment] from \the [src]..."),
 			SPAN_WARNING("You hear metal creaking.")
 		)
-		playsound(user, 'sound/items/Crowbar.ogg', 50, TRUE)
+<<<<<<< HEAD
+		playsound(user, 'sounds/items/Crowbar.ogg', 50, TRUE)
 		if (!do_after(user, 12 SECONDS, src, bonus_percentage = 25) || !loaded_augment)
+=======
+		playsound(user, 'sounds/items/Crowbar.ogg', 50, TRUE)
+		if (!do_after(user, 10 SECONDS, src) || !loaded_augment)
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			return
 		user.visible_message(
 			SPAN_WARNING("\The [user] levers \the [loaded_augment] out of \the [src]."),
 			SPAN_WARNING("You permanently remove \the [src]'s [loaded_augment.name]."),
 			SPAN_WARNING("You hear a clunk.")
 		)
-		playsound(user, 'sound/items/Deconstruct.ogg', 50, TRUE)
+		playsound(user, 'sounds/items/Deconstruct.ogg', 50, TRUE)
 		loaded_augment.forceMove(get_turf(user))
 		loaded_augment = null
 	..()
@@ -119,7 +124,7 @@
 				SPAN_DANGER("\The [src] whirrs and begins operating on \the [user]'s [affected.name]!"),
 				SPAN_DANGER("\The [src] pries open your [affected.name] and starts rooting through its components.")
 			)
-			playsound(user, 'sound/items/electronic_assembly_emptying.ogg', 50, TRUE)
+			playsound(user, 'sounds/items/electronic_assembly_emptying.ogg', 50, TRUE)
 		affected.createwound(CUT, affected.min_broken_damage / 2, 1)
 		affected.clamp_organ()
 		affected.open_incision()
@@ -134,10 +139,15 @@
 		)
 		if (!robot_part)
 			user.custom_pain("You feel something moving around inside your [affected.name]!", 160)
-			playsound(user, 'sound/effects/squelch1.ogg', 25, TRUE)
+			playsound(user, 'sounds/effects/squelch1.ogg', 25, TRUE)
 		else
-			playsound(user, 'sound/items/jaws_pry.ogg', 50, TRUE)
+<<<<<<< HEAD
+			playsound(user, 'sounds/items/jaws_pry.ogg', 50, TRUE)
 		if (!do_after(user, 10 SECONDS, bonus_percentage = 25))
+=======
+			playsound(user, 'sounds/items/jaws_pry.ogg', 50, TRUE)
+		if (!do_after(user, 8 SECONDS))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 			working = FALSE
 			to_chat(user, SPAN_WARNING("\The [src] falls away from your [affected.name], leaving behind a mangled mess."))
 			return
@@ -156,7 +166,7 @@
 			affected.remove_clamps()
 		affected.update_wounds()
 	to_chat(user, SPAN_WARNING("\icon[src] Operation complete."))
-	playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
+	playsound(src, 'sounds/machines/ping.ogg', 50, FALSE)
 	working = FALSE
 
 

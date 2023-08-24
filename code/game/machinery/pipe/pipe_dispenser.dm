@@ -54,7 +54,7 @@
 	for (var/I = quantity;I > 0;I -= 1)
 		P.Build(P, loc, pipe_colors[pipe_color])
 		use_power_oneoff(500)
-	playsound(src, 'sound/items/Deconstruct.ogg', 50, TRUE)
+	playsound(src, 'sounds/items/Deconstruct.ogg', 50, TRUE)
 
 /obj/machinery/pipedispenser/Topic(href, href_list)
 	if (..())
@@ -95,7 +95,7 @@
 	if (!panel_open)
 		if (isWrench(W))
 			add_fingerprint(user)
-			playsound(src, 'sound/items/Ratchet.ogg', 50, TRUE)
+			playsound(src, 'sounds/items/Ratchet.ogg', 50, TRUE)
 			user.visible_message(
 				SPAN_NOTICE("\The [user] starts [anchored ? "un" : ""]securing \the [src]."),
 				SPAN_NOTICE("You start [anchored ? "un" : ""]fastening \the [src]."),
@@ -108,7 +108,7 @@
 				SPAN_NOTICE("You [anchored ? "undo \the [src]\'s securing bolts" : "fasten \the [src] to the floor"]."),
 				SPAN_ITALIC("You hear bolts being turned.")
 			)
-			playsound(src, 'sound/items/Deconstruct.ogg', 50, TRUE)
+			playsound(src, 'sounds/items/Deconstruct.ogg', 50, TRUE)
 			anchored = !anchored
 			if (!anchored)
 				stat |= MAINT

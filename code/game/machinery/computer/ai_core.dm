@@ -27,8 +27,13 @@ var/global/list/empty_playable_ai_cores = list()
 	switch(state)
 		if(0)
 			if(isWrench(P))
-				playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
+<<<<<<< HEAD
+				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
+=======
+				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
+				if(do_after(user, 20, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					to_chat(user, SPAN_NOTICE("You wrench the frame into place."))
 					anchored = TRUE
 					state = 1
@@ -37,8 +42,13 @@ var/global/list/empty_playable_ai_cores = list()
 				if(!WT.isOn())
 					to_chat(user, "The welder must be on for this task.")
 					return
-				playsound(loc, 'sound/items/Welder.ogg', 50, 1)
+<<<<<<< HEAD
+				playsound(loc, 'sounds/items/Welder.ogg', 50, 1)
 				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
+=======
+				playsound(loc, 'sounds/items/Welder.ogg', 50, 1)
+				if(do_after(user, 20, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					if(!src || !WT.remove_fuel(0, user)) return
 					to_chat(user, SPAN_NOTICE("You deconstruct the frame."))
 					new /obj/item/stack/material/plasteel( loc, 4)
@@ -46,23 +56,28 @@ var/global/list/empty_playable_ai_cores = list()
 					return
 		if(1)
 			if(isWrench(P))
-				playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
+<<<<<<< HEAD
+				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
+=======
+				playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
+				if(do_after(user, 20, src))
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					to_chat(user, SPAN_NOTICE("You unfasten the frame."))
 					anchored = FALSE
 					state = 0
 			if(istype(P, /obj/item/stock_parts/circuitboard/aicore) && !circuit && user.unEquip(P, src))
-				playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+				playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You place the circuit board inside the frame."))
 				icon_state = "1"
 				circuit = P
 			if(isScrewdriver(P) && circuit)
-				playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				playsound(loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You screw the circuit board into place."))
 				state = 2
 				icon_state = "2"
 			if(isCrowbar(P) && circuit)
-				playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+				playsound(loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You remove the circuit board."))
 				state = 1
 				icon_state = "0"
@@ -70,7 +85,7 @@ var/global/list/empty_playable_ai_cores = list()
 				circuit = null
 		if(2)
 			if(isScrewdriver(P) && circuit)
-				playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				playsound(loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You unfasten the circuit board."))
 				state = 1
 				icon_state = "1"
@@ -80,8 +95,13 @@ var/global/list/empty_playable_ai_cores = list()
 					to_chat(user, SPAN_WARNING("You need five coils of wire to add them to the frame."))
 					return
 				to_chat(user, SPAN_NOTICE("You start to add cables to the frame."))
-				playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+<<<<<<< HEAD
+				playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 				if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && state == 2)
+=======
+				playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
+				if (do_after(user, 20, src) && state == 2)
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 					if (C.use(5))
 						state = 3
 						icon_state = "3"
@@ -92,7 +112,7 @@ var/global/list/empty_playable_ai_cores = list()
 				if (brain)
 					to_chat(user, "Get that brain out of there first")
 				else
-					playsound(loc, 'sound/items/Wirecutter.ogg', 50, 1)
+					playsound(loc, 'sounds/items/Wirecutter.ogg', 50, 1)
 					to_chat(user, SPAN_NOTICE("You remove the cables."))
 					state = 2
 					icon_state = "2"
@@ -106,8 +126,13 @@ var/global/list/empty_playable_ai_cores = list()
 						to_chat(user, SPAN_WARNING("You need two sheets of glass to put in the glass panel."))
 						return
 					to_chat(user, SPAN_NOTICE("You start to put in the glass panel."))
-					playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+<<<<<<< HEAD
+					playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 					if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && state == 3)
+=======
+					playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
+					if (do_after(user, 20,src) && state == 3)
+>>>>>>> d6a3b24e475db14fd67551d45b2f31b931db0e02
 						if(RG.use(2))
 							to_chat(user, SPAN_NOTICE("You put in the glass panel."))
 							state = 4
@@ -163,7 +188,7 @@ var/global/list/empty_playable_ai_cores = list()
 				icon_state = "3b"
 
 			if(isCrowbar(P) && brain)
-				playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+				playsound(loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You remove the brain."))
 				brain.dropInto(loc)
 				brain = null
@@ -171,7 +196,7 @@ var/global/list/empty_playable_ai_cores = list()
 
 		if(4)
 			if(isCrowbar(P))
-				playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+				playsound(loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You remove the glass panel."))
 				state = 3
 				if (brain)
@@ -186,7 +211,7 @@ var/global/list/empty_playable_ai_cores = list()
 					to_chat(user, SPAN_WARNING("Core fails to connect to the systems of [GLOB.using_map.full_name]!"))
 					return
 
-				playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				playsound(loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 				to_chat(user, SPAN_NOTICE("You connect the monitor."))
 				if(!brain)
 					var/open_for_latejoin = alert(user, "Would you like this core to be open for latejoining AIs?", "Latejoin", "Yes", "Yes", "No") == "Yes"

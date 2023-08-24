@@ -9,7 +9,7 @@
 	release_force = 80
 	fire_sound_text = "a whoosh and a crisp, papery rustle"
 	fire_delay = 1
-	fire_sound = 'sound/weapons/gunshot/money_launcher.ogg'
+	fire_sound = 'sounds/weapons/gunshot/money_launcher.ogg'
 	var/emagged = FALSE
 	var/max_capacity = 2000
 
@@ -42,11 +42,11 @@
 		vomit_onto.AdjustStunned(3)
 		vomit_onto.AdjustWeakened(3)
 		vomit_onto.visible_message(SPAN_DANGER("\The [vomit_onto] blasts themselves full in the face with \the [src]!"))
-		playsound(T, "sound/weapons/gunshot/money_launcher_jackpot.ogg", 100, 1)
+		playsound(T, "sounds/weapons/gunshot/money_launcher_jackpot.ogg", 100, 1)
 		show_sound_effect(T.loc, SFX_ICON_SMALL)
 	else
 		vomit_onto.visible_message(SPAN_DANGER("\The [vomit_onto] ejects a few [GLOB.using_map.local_currency_name] into their face."))
-		playsound(T, 'sound/weapons/gunshot/money_launcher.ogg', 100, 1)
+		playsound(T, 'sounds/weapons/gunshot/money_launcher.ogg', 100, 1)
 		show_sound_effect(T.loc, SFX_ICON_SMALL)
 
 	receptacle_value = 0

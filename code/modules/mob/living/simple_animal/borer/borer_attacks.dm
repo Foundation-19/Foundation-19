@@ -71,8 +71,8 @@
 			if(M.deflect_psionic_attack())
 				return TRUE
 
-			sound_to(src, sound('sound/effects/psi/power_evoke.ogg'))
-			sound_to(M, sound('sound/effects/psi/power_evoke.ogg'))
+			sound_to(src, sound('sounds/effects/psi/power_evoke.ogg'))
+			sound_to(M, sound('sounds/effects/psi/power_evoke.ogg'))
 
 			if(do_psionics_check(5, src))
 				to_chat(src, SPAN_DANGER("You try to focus on [M], but you cannot expel any psionic power!"))

@@ -5,7 +5,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "hydro"
 	item_state = "analyzer"
-	scan_sound = 'sound/effects/fastbeep.ogg'
+	scan_sound = 'sounds/effects/fastbeep.ogg'
 	printout_color = "#eeffe8"
 	var/global/list/valid_targets = list(
 		/obj/item/reagent_containers/food/snacks/grown,

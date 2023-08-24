@@ -79,9 +79,9 @@
 			else if(istype(S, /obj/structure/grille))
 				to_chat(user, SPAN_NOTICE("There is still a grille on the low wall!"))
 				return
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now disassembling the low wall..."))
-		if(do_after(user, 6 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Ratchet.ogg'))
+		if(do_after(user, 6 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
 			to_chat(user, SPAN_NOTICE("You dissasembled the low wall!"))
 			dismantle()
 		return
@@ -90,9 +90,9 @@
 		var/obj/item/gun/energy/plasmacutter/cutter = W
 		if(!cutter.slice(user))
 			return
-		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Welder.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now slicing through the low wall..."))
-		if(do_after(user, 3 SECONDS, src, bonus_percentage = 25, focus_sound = 'sound/items/Welder.ogg'))
+		if(do_after(user, 3 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg'))
 			to_chat(user, SPAN_WARNING("You have sliced through the low wall!"))
 			dismantle()
 		return

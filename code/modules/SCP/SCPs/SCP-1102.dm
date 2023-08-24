@@ -1,6 +1,6 @@
 GLOBAL_LIST_EMPTY(scp1102)
 
-var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/ladder2.ogg','sound/effects/ladder3.ogg','sound/effects/ladder4.ogg')
+var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/ladder2.ogg','sounds/effects/ladder3.ogg','sounds/effects/ladder4.ogg')
 
 /obj/item/weapon/scp1102ru
 	name = "SCP-1102-RU"
