@@ -346,7 +346,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if((get_dist(loc, get_turf(target)) > 1) || IsBeingWatched())
 			return
 		if(!isturf(target) && (world.time > snap_cooldown)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
-			if(IsBeingWatched)
+			if(IsBeingWatched())
 				return
 			face_atom(target)
 			UnarmedAttack(target)
