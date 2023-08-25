@@ -99,7 +99,7 @@
 		LAZYREMOVEASSOC(user.progressbars, target, src)
 		user = null
 
-	if(target && show_target)
+	if(show_target && (target != user))
 		for(var/pb in target.progressbars_recipient[user])
 			var/datum/progressbar/progress_bar = pb
 			if(progress_bar == src || progress_bar.target_listindex <= target_listindex)

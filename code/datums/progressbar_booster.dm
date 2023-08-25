@@ -43,11 +43,13 @@
 	linked_bar.boost_progress(time_per_click)
 
 	alpha = 0
-	prog_trap.alpha = 0
 	pixel_x = rand(-12,12)
-	prog_trap.pixel_x = pixel_x
 	pixel_y = rand(-12,12)
-	prog_trap.pixel_y = pixel_y
+
+	if(prog_trap)
+		prog_trap.alpha = 0
+		prog_trap.pixel_x = pixel_x
+		prog_trap.pixel_y = pixel_y
 
 	spawn()
 		sleep(focus_frequency)
