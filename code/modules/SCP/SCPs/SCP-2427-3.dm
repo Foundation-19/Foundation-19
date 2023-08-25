@@ -152,6 +152,8 @@
 /mob/living/simple_animal/hostile/scp_2427_3/proc/CheckPurity(mob/living/L)
 	if(L == src)
 		return
+	if(L.SCP)
+		return
 	if(stat == DEAD || is_sleeping)
 		return
 	if((L in impurity_list) || (L in purity_list))
