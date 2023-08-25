@@ -199,7 +199,7 @@
 				pass.SetName("temporary access pass #[number]")
 				pass.assignment = "Guest"
 				addtimer(CALLBACK(pass, /obj/item/card/id/guest/proc/expire), duration MINUTES, TIMER_UNIQUE)
-				playsound(src.loc, 'sound/machines/ping.ogg', 25, 0)
+				playsound(src.loc, 'sounds/machines/ping.ogg', 25, 0)
 				giv_name = GUESTPASS_STRING_UNSPECIFIED
 				reason = GUESTPASS_STRING_UNSPECIFIED
 				accesses.Cut()

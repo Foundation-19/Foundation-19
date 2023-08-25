@@ -49,7 +49,7 @@
 	ammo.remaining--
 	if(ammo.remaining <= 0)
 		spawn(3)
-			playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 1)
+			playsound(src.loc, 'sounds/machines/twobeep.ogg', 50, 1)
 		out_of_ammo()
 
 /obj/item/gun/magnetic/railgun/proc/out_of_ammo()
@@ -93,7 +93,7 @@
 	QDEL_NULL(loaded)
 	loaded = null
 	spawn(3)
-		playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 1)
+		playsound(src.loc, 'sounds/machines/twobeep.ogg', 50, 1)
 	visible_message(SPAN_WARNING("\The [src] beeps, before clanging as the ammunition bank resets."))
 
 /obj/item/gun/magnetic/railgun/tcc/use_ammo()

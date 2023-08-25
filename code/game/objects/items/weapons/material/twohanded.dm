@@ -113,7 +113,7 @@
 	thrown_force_multiplier = 1.5 // 20 when thrown with weight 15 (glass)
 	throw_speed = 3
 	sharp = TRUE
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sounds/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	default_material = MATERIAL_GLASS
 	does_spin = FALSE
@@ -135,7 +135,7 @@
 	w_class = ITEM_SIZE_LARGE
 	throwforce = 7
 	attack_verb = list("smashed", "beaten", "slammed", "smacked", "struck", "battered", "bonked")
-	hitsound = 'sound/weapons/genhit3.ogg'
+	hitsound = 'sounds/weapons/genhit3.ogg'
 	default_material = MATERIAL_MAPLE
 	max_force = 40	//for wielded
 	force_multiplier = 1.1           // 22 when wielded with weight 20 (steel)

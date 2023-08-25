@@ -264,3 +264,29 @@
 		M.immunity = max(M.immunity - 0.75, 0)
 		if (M.chem_doses[type] > M.species.blood_volume / 8) // half of blood was replaced with us, rip white bodies
 			M.immunity = max(M.immunity - 3, 0)
+
+// Fixes broken bones at the cost of dealing brute damage
+/datum/reagent/medicine/ossarepantes
+	name = "Ossarepantes"
+	description = "Used to mend bones when normal means are unavailable. As the process is rather forceful, patient experiences tissue damage and extreme pain."
+	taste_description = "powdery milk"
+	color = "#939e9e"
+
+/datum/reagent/medicine/ossarepantes/affect_blood(mob/living/carbon/human/M, alien, removed)
+	if(!ishuman(M))
+		return
+
+	// Minor brute damage all the time it is in the system
+	M.take_organ_damage(removed * 0.2, 0)
+
+	if(prob(33))
+		return
+
+	var/mob/living/carbon/human/H = M
+	for(var/obj/item/organ/external/E in H.organs)
+		if(E.status & ORGAN_BROKEN)
+			E.status &= ~ORGAN_BROKEN
+			playsound(H, 'sounds/effects/wounds/bonebreak1.ogg', 25, TRUE)
+			E.take_external_damage(35)
+			H.custom_pain(SPAN_WARNING("You feel bones in your [E.name] move!"), 50, TRUE, E)
+			break

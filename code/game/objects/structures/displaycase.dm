@@ -8,7 +8,7 @@
 	acid_resistance = -1
 	alpha = 150
 	health_max = 14
-	damage_hitsound = 'sound/effects/Glasshit.ogg'
+	damage_hitsound = 'sounds/effects/Glasshit.ogg'
 
 /obj/structure/displaycase/Initialize()
 	. = ..()

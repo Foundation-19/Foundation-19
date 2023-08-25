@@ -66,6 +66,6 @@
 		owner.psi.cancel()
 		owner.psi.hide_auras()
 	else
-		sound_to(owner, sound('sound/effects/psi/power_unlock.ogg'))
+		sound_to(owner, sound('sounds/effects/psi/power_unlock.ogg'))
 		owner.psi.show_auras()
 	update_icon()

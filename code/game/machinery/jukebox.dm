@@ -8,7 +8,7 @@
 	power_channel = EQUIP
 	idle_power_usage = 10
 	active_power_usage = 100
-	clicksound = 'sound/machines/buttonbeep.ogg'
+	clicksound = 'sounds/machines/buttonbeep.ogg'
 	pixel_x = -8
 
 	var/jukebox/jukebox

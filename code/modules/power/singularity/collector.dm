@@ -58,7 +58,7 @@ var/global/list/rad_collectors = list()
 				if(world.time > end_time)
 					end_time = world.time + alert_delay
 					visible_message("[icon2html(src, viewers(get_turf(src)))] \the [src] beeps loudly as the radiation reaches dangerous levels, indicating imminent damage.")
-					playsound(src, 'sound/effects/screech.ogg', 100, 1, 1)
+					playsound(src, 'sounds/effects/screech.ogg', 100, 1, 1)
 			receive_pulse(12.5*(last_rads/max_rads)/(0.3+(last_rads/max_rads)))
 
 	if(P)
@@ -112,7 +112,7 @@ var/global/list/rad_collectors = list()
 			if(R != src)
 				to_chat(user, SPAN_WARNING("You cannot install more than one collector on the same spot."))
 				return 1
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 		src.anchored = !src.anchored
 		user.visible_message("[user.name] [anchored? "secures":"unsecures"] the [src.name].", \
 			"You [anchored? "secure":"undo"] the external bolts.", \

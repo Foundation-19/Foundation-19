@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 /obj/item/rpd/OnTopic(user, list/href_list)
 	if(href_list["select"])
 		P = locate(href_list["select"])
-		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+		playsound(src.loc, 'sounds/machines/click.ogg', 50, 1)
 		interact(user)
 		if(prob(10)) src.spark_system.start()
 		return TOPIC_HANDLED
@@ -143,11 +143,11 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 		var/turf/T = get_turf(A)
 		if(!T.Adjacent(src.loc)) return		//checks so it can't pipe through window and such
 
-		playsound(get_turf(user), 'sound/machines/click.ogg', 50, 1)
+		playsound(get_turf(user), 'sounds/machines/click.ogg', 50, 1)
 		if(T.is_wall())	//pipe through walls!
 			if(!do_after(user, 30, T))
 				return
-			playsound(get_turf(user), 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(get_turf(user), 'sounds/items/Deconstruct.ogg', 50, 1)
 
 		P.Build(P, T, pipe_colors[pipe_color])
 		if(prob(20)) src.spark_system.start()
@@ -176,5 +176,5 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 	if(!user.skill_check(SKILL_ATMOS,SKILL_BASIC))
 		user.visible_message("[user] struggles with \the [src], as they futilely jam \the [W] against it")
 		return
-	playsound(src.loc, 'sound/effects/pop.ogg', 50, 1)
+	playsound(src.loc, 'sounds/effects/pop.ogg', 50, 1)
 	qdel(W)

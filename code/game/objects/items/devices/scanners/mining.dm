@@ -13,7 +13,7 @@
 	printout_color = "#fff7f0"
 	var/survey_data = 0
 
-	scan_sound = 'sound/effects/ping.ogg'
+	scan_sound = 'sounds/effects/ping.ogg'
 
 /obj/item/device/scanner/mining/examine(mob/user)
 	. = ..()
@@ -34,7 +34,7 @@
 
 	if(scan_results[2])
 		survey_data += scan_results[2]
-		playsound(loc, 'sound/machines/ping.ogg', 40, 1)
+		playsound(loc, 'sounds/machines/ping.ogg', 40, 1)
 		to_chat(user,SPAN_NOTICE("New survey data stored - [scan_results[2]] GEP."))
 
 /obj/item/device/scanner/mining/proc/put_disk_in_hand(mob/M)

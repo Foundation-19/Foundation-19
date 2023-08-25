@@ -12,7 +12,7 @@
 	collection_mode = 1
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 100
-	var/replace_sound = 'sound/items/rped.ogg'
+	var/replace_sound = 'sounds/items/rped.ogg'
 	var/remote_interaction = FALSE
 	var/remote_distance = 1 // How far it can replace items
 
@@ -40,7 +40,7 @@
 	storage_slots = 400
 	max_storage_space = 200
 
-	replace_sound = 'sound/items/PSHOOM.ogg'
+	replace_sound = 'sounds/items/PSHOOM.ogg'
 	remote_interaction = TRUE
 	remote_distance = 5
 

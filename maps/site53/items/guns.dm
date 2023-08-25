@@ -91,7 +91,7 @@
 	fire_delay = 25
 	slot_flags = SLOT_BELT
 	auto_eject = 1
-	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	auto_eject_sound = 'sounds/weapons/smg_empty_alarm.ogg'
 
 /obj/item/gun/projectile/pistol/gyropistol/update_icon()
 	..()

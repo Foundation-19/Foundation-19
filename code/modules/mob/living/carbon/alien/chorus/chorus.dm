@@ -12,7 +12,7 @@
 	var/attack_text = "smashes"
 	var/icon_living = "blob"
 	var/icon_dead = "blob"
-	var/attack_sound = 'sound/effects/stamp.ogg'
+	var/attack_sound = 'sounds/effects/stamp.ogg'
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 8
 	language = LANGUAGE_CULT_GLOBAL

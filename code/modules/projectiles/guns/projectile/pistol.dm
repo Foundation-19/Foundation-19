@@ -35,7 +35,7 @@
 	name = "GOC Glock pistol"
 	desc = "Standard issue pistol for GOC personnel. Chambered in 10mm."
 	magazine_type = /obj/item/ammo_magazine/pistol/double
-	allowed_magazines = /obj/item/ammo_magazine/pistol/double 
+	allowed_magazines = /obj/item/ammo_magazine/pistol/double
 	icon = 'icons/obj/guns/military_pistol.dmi'
 	icon_state = "military"
 	item_state = "secgundark"
@@ -80,8 +80,8 @@
 	screen_shake = 2
 	magazine_type = /obj/item/ammo_magazine/magnum
 	allowed_magazines = /obj/item/ammo_magazine/magnum
-	mag_insert_sound = 'sound/weapons/guns/interaction/hpistol_magin.ogg'
-	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/interaction/hpistol_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/interaction/hpistol_magout.ogg'
 	accuracy = 2
 	one_hand_penalty = 2
 	bulk = 3
@@ -125,9 +125,9 @@
 	handle_casings = CLEAR_CASINGS	//the projectile is the casing
 	fire_delay = 25
 	auto_eject = 1
-	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	mag_insert_sound = 'sound/weapons/guns/interaction/hpistol_magin.ogg'
-	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
+	auto_eject_sound = 'sounds/weapons/smg_empty_alarm.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/interaction/hpistol_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/interaction/hpistol_magout.ogg'
 	empty_icon = FALSE
 
 /obj/item/gun/projectile/pistol/gyropistol/on_update_icon()

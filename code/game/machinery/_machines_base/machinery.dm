@@ -354,7 +354,7 @@ Class Procs:
 		text = "\The [src] pings."
 
 	state(text, "blue")
-	playsound(src.loc, 'sound/machines/ping.ogg', 50, 0)
+	playsound(src.loc, 'sounds/machines/ping.ogg', 50, 0)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 
 /obj/machinery/proc/shock(mob/user, prb)
@@ -378,7 +378,7 @@ Class Procs:
 	return 0
 
 /obj/machinery/proc/dismantle()
-	playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+	playsound(loc, 'sounds/items/Crowbar.ogg', 50, 1)
 	var/obj/item/stock_parts/circuitboard/circuit = get_component_of_type(/obj/item/stock_parts/circuitboard)
 	if(circuit)
 		circuit.deconstruct(src)

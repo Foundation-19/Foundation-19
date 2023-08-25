@@ -36,9 +36,9 @@
 
 /turf/unsimulated/floor/scp106/get_footstep_sound(mob/caller)
 	return pick(\
-				'sound/effects/footstep/scp106/step1.ogg',
-				'sound/effects/footstep/scp106/step2.ogg',
-				'sound/effects/footstep/scp106/step3.ogg')
+				'sounds/effects/footstep/scp106/step1.ogg',
+				'sounds/effects/footstep/scp106/step2.ogg',
+				'sounds/effects/footstep/scp106/step3.ogg')
 
 // Walls
 /turf/unsimulated/wall/scp106
