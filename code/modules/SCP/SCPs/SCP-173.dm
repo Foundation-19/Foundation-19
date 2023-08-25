@@ -319,7 +319,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		possible_human_targets += H
 
-	possible_human_targets += target
+	if(target)
+		LAZYADD(possible_human_targets, target)
 
 	if(target) //this will handle any invalid targets
 		if(ishuman(target))
@@ -345,6 +346,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if((get_dist(loc, get_turf(target)) > 1) || IsBeingWatched())
 			return
 		if(!isturf(target) && (world.time > snap_cooldown)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
+			if(IsBeingWatched)
+				return
 			face_atom(target)
 			UnarmedAttack(target)
 		else //Otherwise, we just wipe the target turf 173 was wandering to
