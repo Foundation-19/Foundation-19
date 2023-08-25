@@ -54,7 +54,7 @@ SUBSYSTEM_DEF(pathfinder)
 
 //This is a debug tool which can help you ensure that pathfinding is working correctly. To use, simply mark a turf you want to pathfind to, spawn the pathfinder at the start, and simply click on the pathfinder.
 
-/client/verb/pathfind()
+/client/proc/pathfind()
 	set name = "Pathfind Debug"
 	set category = "Debug"
 	set desc = "Pathfind to a marked datum with visual debug."
