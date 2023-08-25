@@ -60,8 +60,6 @@
 			reagent["scannable"] = R.scannable
 			scan["reagents"] += list(reagent)
 
-	scan["addictions"] = H.active_addictions
-
 	scan["external_organs"] = list()
 
 	for(var/obj/item/organ/external/E in H.organs)
@@ -271,9 +269,6 @@
 			dat += subdat
 		if(other_reagent)
 			dat += "<tr><td colspan='2'><span class='average'>Warning: Unknown substance detected in subject's blood.</span></td></tr>"
-
-		for(var/datum/addiction/addiction_type as anything in scan["addictions"])
-			dat += "<tr><td colspan='2'><span class='average'>Subject is addicted to [initial(addiction_type.name)]</span></td></tr>"
 
 	//summary for the medically disinclined.
 	/*

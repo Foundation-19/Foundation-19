@@ -721,9 +721,7 @@ default behaviour is:
 /mob/living/verb/lay_down()
 	set name = "Rest"
 	set category = "IC"
-	if(!can_rest)
-		to_chat(src, SPAN_NOTICE("You cannot rest!"))
-		return
+
 	resting = !resting
 	to_chat(src, SPAN_NOTICE("You are now [resting ? "resting" : "getting up"]"))
 	if(hud_used)

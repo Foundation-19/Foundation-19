@@ -38,7 +38,7 @@ var/global/universe_has_ended = 0
 /datum/universal_state/supermatter_cascade/OnEnter()
 	set background = 1
 	to_world(SPAN_CLASS("sinister' style='font-size:22pt","You are blinded by a brilliant flash of energy."))
-	sound_to(world, sound('sounds/effects/cascade.ogg'))
+	sound_to(world, sound('sound/effects/cascade.ogg'))
 
 	for(var/mob/M in GLOB.player_list)
 		M.flash_eyes()

@@ -40,7 +40,7 @@ var/bomb_set
 /obj/machinery/nuclearbomb/Process(wait)
 	if(timing)
 		timeleft = max(timeleft - (wait / 10), 0)
-		playsound(loc, 'sounds/items/timer.ogg', 50)
+		playsound(loc, 'sound/items/timer.ogg', 50)
 		if(timeleft <= 0)
 			addtimer(CALLBACK(src, .proc/explode), 0)
 		SSnano.update_uis(src)
@@ -53,12 +53,12 @@ var/bomb_set
 				panel_open = 1
 				add_overlay("panel_open")
 				to_chat(user, "You unscrew the control panel of [src].")
-				playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+				playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 			else
 				panel_open = 0
 				cut_overlay("panel_open")
 				to_chat(user, "You screw the control panel of [src] back on.")
-				playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+				playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 		else
 			if(panel_open == 0)
 				to_chat(user, "\The [src] emits a buzzing noise, the panel staying locked in.")
@@ -66,7 +66,7 @@ var/bomb_set
 				panel_open = 0
 				cut_overlay("panel_open")
 				to_chat(user, "You screw the control panel of \the [src] back on.")
-				playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+				playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 			flick("lock", src)
 		return
 

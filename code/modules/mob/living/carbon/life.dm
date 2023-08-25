@@ -29,11 +29,6 @@
 
 		handle_viruses()
 
-		// Handle addictions
-		for(var/key in addiction_points)
-			var/datum/addiction/addiction = SSaddiction.all_addictions[key]
-			addiction.ProcessAddiction(src)
-
 		. = 1
 
 		if(!client && (!mind || ghosted) && species)

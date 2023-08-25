@@ -2,4 +2,4 @@
 	artist = "Nirvana"
 	title = "Lithium"
 	album = "Nevermind"
-	song = 'sounds/music/lithium.ogg'
+	song = 'sound/music/lithium.ogg'

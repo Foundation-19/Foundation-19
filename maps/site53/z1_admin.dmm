@@ -345,15 +345,10 @@
 	},
 /area/centcom)
 "dr" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/structure/closet,
-/obj/item/storage/belt/holster/security,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/ert,
-/obj/item/clothing/glasses/night,
-/obj/item/device/radio/headset/goc,
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/condiment/cornoil,
+/obj/item/reagent_containers/food/condiment/cornoil,
+/obj/item/reagent_containers/food/condiment/cornoil,
 /turf/simulated/floor/wood,
 /area/centcom/goc)
 "dt" = (
@@ -2107,6 +2102,13 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
+"kL" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/adv,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "kM" = (
 /turf/simulated/floor/lino,
 /area/centcom/chaos)
@@ -2165,6 +2167,14 @@
 /obj/structure/table/steel_reinforced,
 /obj/structure/bedsheetbin,
 /turf/simulated/floor/tiled/steel_grid,
+/area/centcom/chaos)
+"le" = (
+/obj/item/gun/projectile/automatic/scp/rpk,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "lj" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -2495,6 +2505,9 @@
 /obj/structure/window/reinforced,
 /obj/item/device/chameleon,
 /obj/item/device/chameleon,
+/obj/item/device/chameleon,
+/obj/item/device/chameleon,
+/obj/item/device/chameleon,
 /obj/machinery/door/window/brigdoor/southright{
 	dir = 4
 	},
@@ -2549,6 +2562,20 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"nt" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/gun/projectile/pistol,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/gun/projectile/shotgun/pump/combat,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "nu" = (
 /obj/machinery/light{
 	dir = 8;
@@ -2567,8 +2594,44 @@
 "nx" = (
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
+"ny" = (
+/obj/item/gun/projectile/automatic/scp/rpk,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/machinery/light,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/centcom/chaos)
 "nz" = (
-/obj/machinery/vending/weaponry/chaos/specialized,
+/obj/item/gun/projectile/automatic/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/centcom/chaos)
+"nA" = (
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nB" = (
@@ -2602,8 +2665,9 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "nJ" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
@@ -2618,14 +2682,19 @@
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/clothing/accessory/storage/black_vest,
 /obj/item/clothing/suit/storage/vest/tactical,
+/obj/item/gun/projectile/automatic/scp/ak74,
 /obj/item/clothing/head/helmet/nt{
 	name = "security helmet"
 	},
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
 /obj/item/clothing/mask/balaclava/tactical,
 /obj/item/storage/backpack/rucksack/tan,
+/obj/item/gun/projectile/pistol,
 /obj/structure/closet,
-/obj/item/clothing/glasses/night,
 /obj/machinery/light,
+/obj/item/clothing/glasses/night,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nN" = (
@@ -2660,7 +2729,15 @@
 	},
 /area/centcom)
 "nW" = (
-/obj/structure/table/reinforced,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nX" = (
@@ -2829,7 +2906,21 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "ox" = (
-/obj/machinery/vending/weaponry/chaos,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/suit/storage/vest/tactical,
+/obj/item/gun/projectile/automatic/scp/ak74,
+/obj/item/clothing/head/helmet/nt{
+	name = "security helmet"
+	},
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/storage/backpack/rucksack/tan,
+/obj/item/gun/projectile/pistol,
+/obj/structure/closet,
+/obj/item/clothing/glasses/night,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "oy" = (
@@ -5215,9 +5306,24 @@
 	},
 /area/centcom)
 "ws" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/combat,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "wt" = (
@@ -5515,6 +5621,20 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"xV" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/gun/projectile/pistol,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "xZ" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 8
@@ -6467,7 +6587,20 @@
 	},
 /area/centcom)
 "Fo" = (
-/obj/structure/ore_box,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "Fp" = (
@@ -7134,6 +7267,19 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"JV" = (
+/obj/structure/table/rack,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "Kf" = (
 /obj/structure/target_stake,
 /obj/item/target,
@@ -7758,10 +7904,20 @@
 	},
 /area/centcom)
 "MO" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/gun/projectile/pistol,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/vending/weaponry/goc,
+/obj/item/device/radio/headset/goc,
+/obj/item/gun/projectile/automatic/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "MW" = (
@@ -8131,14 +8287,7 @@
 	},
 /area/centcom)
 "PW" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/structure/closet,
-/obj/item/storage/belt/holster/security,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/glasses/night,
-/obj/item/device/radio/headset/goc,
+/obj/structure/closet/crate,
 /turf/simulated/floor/wood,
 /area/centcom/goc)
 "PZ" = (
@@ -9115,10 +9264,22 @@
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
 "XQ" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/vending/weaponry/goc,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "XS" = (
@@ -9223,10 +9384,6 @@
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
-"YZ" = (
-/obj/machinery/vending/weaponry/goc,
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom/goc)
 "Ze" = (
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor/techfloor,
@@ -9241,6 +9398,13 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
+"Zu" = (
+/obj/structure/table/rack,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "Zz" = (
 /obj/machinery/vending/cola{
 	dir = 8
@@ -9259,19 +9423,6 @@
 	icon_state = "greygrass"
 	},
 /area/centcom)
-"ZI" = (
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/accessory/storage/black_vest,
-/obj/item/clothing/suit/storage/vest/tactical,
-/obj/item/clothing/head/helmet/nt{
-	name = "security helmet"
-	},
-/obj/item/clothing/mask/balaclava/tactical,
-/obj/item/storage/backpack/rucksack/tan,
-/obj/structure/closet,
-/obj/item/clothing/glasses/night,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/chaos)
 "ZO" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
@@ -26106,7 +26257,7 @@ nd
 nd
 nd
 nd
-ZI
+ox
 di
 cw
 cw
@@ -26510,7 +26661,7 @@ nd
 nd
 nd
 nd
-ZI
+ox
 di
 cw
 cw
@@ -27318,7 +27469,7 @@ nd
 nd
 nd
 nd
-ZI
+ox
 di
 cw
 cw
@@ -27719,10 +27870,10 @@ mK
 nd
 nd
 nd
-Fo
 nd
 nd
-ZI
+nd
+ox
 di
 cw
 cw
@@ -27745,9 +27896,9 @@ xE
 mr
 lI
 XG
-dr
+PW
 Um
-dr
+PW
 XG
 lI
 eL
@@ -27923,7 +28074,7 @@ nd
 nd
 nd
 nd
-nz
+le
 di
 di
 cw
@@ -27933,11 +28084,11 @@ cw
 as
 eL
 lI
-ws
+xV
 kT
+kL
 kT
-kT
-lK
+xV
 lI
 aF
 oz
@@ -28122,10 +28273,10 @@ eU
 di
 nd
 Fo
+Fo
+nA
 nd
-nd
-nd
-ZI
+ny
 di
 cw
 cw
@@ -28135,11 +28286,11 @@ cw
 as
 eL
 lI
-YZ
+nt
 kT
+lK
 kT
-kT
-YZ
+nt
 lI
 sS
 oz
@@ -28149,9 +28300,9 @@ lI
 lI
 lI
 XG
-dr
+PW
 Um
-dr
+PW
 XG
 lI
 eL
@@ -28339,9 +28490,9 @@ eL
 lI
 ws
 kT
-kT
-kT
 lK
+kT
+Zu
 lI
 PR
 oz
@@ -28527,9 +28678,9 @@ di
 nd
 nW
 nW
-nW
 nd
-ZI
+nd
+nz
 di
 cw
 cw
@@ -28543,7 +28694,7 @@ XQ
 kT
 kT
 kT
-XQ
+JV
 lI
 oo
 oz

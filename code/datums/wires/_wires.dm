@@ -143,7 +143,7 @@
 				to_chat(user, SPAN_CLASS("error","You need wirecutters!"))
 				return
 
-			playsound(holder, 'sounds/items/Wirecutter.ogg', 20, 1)
+			playsound(holder, 'sound/items/Wirecutter.ogg', 20, 1)
 			show_sound_effect(holder.loc, soundicon = SFX_ICON_SMALL)
 			cut_color(color)
 			SEND_SIGNAL(user, COMSIG_CUT_WIRE, color)
@@ -156,7 +156,7 @@
 				to_chat(user, SPAN_CLASS("error","You need a multitool!"))
 				return
 
-			playsound(holder, 'sounds/items/multitool_pulse.ogg', 20, 1)
+			playsound(holder, 'sound/items/multitool_pulse.ogg', 20, 1)
 			show_sound_effect(holder.loc, soundicon = SFX_ICON_SMALL)
 			pulse_color(color)
 

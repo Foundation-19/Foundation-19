@@ -68,7 +68,7 @@
 
 /datum/universal_state/nuclear_explosion/proc/start_cinematic_intro()
 	for(var/mob/M in GLOB.player_list) //I guess so that people in the lobby only hear the explosion
-		sound_to(M, sound('sounds/machines/Alarm.ogg'))
+		sound_to(M, sound('sound/machines/Alarm.ogg'))
 
 	sleep(100)
 
@@ -77,7 +77,7 @@
 	sleep(30)
 
 /datum/universal_state/nuclear_explosion/proc/play_cinematic_station_destroyed()
-	sound_to(world, sound('sounds/effects/explosionfar.ogg'))//makes no sense if you're not on the station but whatever
+	sound_to(world, sound('sound/effects/explosionfar.ogg'))//makes no sense if you're not on the station but whatever
 
 	flick("station_explode_fade_red",cinematic)
 	cinematic.icon_state = "summary_selfdes"
@@ -86,7 +86,7 @@
 /datum/universal_state/nuclear_explosion/proc/play_cinematic_station_unaffected()
 	cinematic.icon_state = "station_intact"
 	sleep(5)
-	sound_to(world, sound('sounds/effects/explosionfar.ogg'))//makes no sense if you are on the station but whatever
+	sound_to(world, sound('sound/effects/explosionfar.ogg'))//makes no sense if you are on the station but whatever
 
 
 	sleep(75)
@@ -95,7 +95,7 @@
 //MALF
 /datum/universal_state/nuclear_explosion/malf/start_cinematic_intro()
 	for(var/mob/M in GLOB.player_list) //I guess so that people in the lobby only hear the explosion
-		to_chat(M, sound('sounds/machines/Alarm.ogg'))
+		to_chat(M, sound('sound/machines/Alarm.ogg'))
 
 	sleep(28)
 

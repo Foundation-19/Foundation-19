@@ -36,13 +36,13 @@
 				to_chat(user, "\The [T] has no tank attached!")
 			src.reagents.trans_to_obj(T.tank, T.tank.max_fuel)
 			to_chat(user, SPAN_NOTICE("You refuel \the [W]."))
-			playsound(src.loc, 'sounds/effects/refill.ogg', 50, 1, -6)
+			playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 			return
 	else if(istype(W, /obj/item/welder_tank))
 		var/obj/item/welder_tank/tank = W
 		src.reagents.trans_to_obj(tank, tank.max_fuel)
 		to_chat(user, SPAN_NOTICE("You refuel \the [W]."))
-		playsound(src.loc, 'sounds/effects/refill.ogg', 50, 1, -6)
+		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 
 	to_chat(user, SPAN_WARNING("The tank will accept only a welding tool or cartridge."))
@@ -54,7 +54,7 @@
 	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && src.reagents.total_volume < max_fuel)
 		O.reagents.trans_to_obj(src, max_fuel)
 		to_chat(user, SPAN_NOTICE("You crack the cap off the top of the pack and fill it back up again from the tank."))
-		playsound(src.loc, 'sounds/effects/refill.ogg', 50, 1, -6)
+		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 	else if (istype(O, /obj/structure/reagent_dispensers/fueltank) && src.reagents.total_volume == max_fuel)
 		to_chat(user, SPAN_WARNING("The pack is already full!"))
@@ -226,7 +226,7 @@
 			SPAN_ITALIC("You can hear metal scratching on metal."),
 			range = 5
 		)
-		playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+		playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 		return TRUE
 
 	. = ..()
@@ -239,7 +239,7 @@
 
 /obj/item/scrubpack/proc/set_sound_state(on_off)
 	if (on_off)
-		sound_token = GLOB.sound_player.PlayLoopingSound(src, "\ref[src]", 'sounds/machines/scrubber-active.ogg', 25, 3)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, "\ref[src]", 'sound/machines/scrubber-active.ogg', 25, 3)
 	else
 		QDEL_NULL(sound_token)
 

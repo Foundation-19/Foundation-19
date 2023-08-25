@@ -18,7 +18,7 @@
 
 	skin_material = MATERIAL_SKIN_CHITIN
 	bone_material = null
-	speech_sounds = list('sounds/voice/bug.ogg')
+	speech_sounds = list('sound/voice/bug.ogg')
 	speech_chance = 2
 
 	warning_low_pressure = 50
@@ -298,7 +298,7 @@
 		return 0
 	attacker.last_attack = world.time
 	var/turf/T = get_step(get_turf(target), get_dir(get_turf(attacker), get_turf(target)))
-	playsound(target.loc, 'sounds/weapons/pushhiss.ogg', 50, 1, -1)
+	playsound(target.loc, 'sound/weapons/pushhiss.ogg', 50, 1, -1)
 	if(!T.density)
 		step(target, get_dir(get_turf(attacker), get_turf(target)))
 		target.visible_message(SPAN_DANGER("[pick("[target] was sent flying backward!", "[target] staggers back from the impact!")]"))
@@ -336,7 +336,7 @@
 	grabber.unEquip(grabber.l_hand)
 	grabber.unEquip(grabber.r_hand)
 	to_chat(grabber, SPAN_WARNING("You drop everything as you spring out to nab \the [target]!."))
-	playsound(grabber.loc, 'sounds/weapons/pierce.ogg', 25, 1, -1)
+	playsound(grabber.loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 
 	if(!grabber.is_cloaked())
 		return ..(grabber, target, GRAB_NAB)
@@ -353,7 +353,7 @@
 		target.LAssailant = grabber
 		grabber.visible_message(SPAN_DANGER("\The [grabber] suddenly lunges out and grabs \the [target]!"))
 		grabber.do_attack_animation(target)
-		playsound(grabber.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
+		playsound(grabber.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 		return 1
 	else
 		grabber.visible_message(SPAN_DANGER("\The [grabber] suddenly lunges out, almost grabbing \the [target]!"))

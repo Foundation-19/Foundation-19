@@ -20,6 +20,33 @@
 	M.add_chemical_effect(CE_PAINKILLER, 5)
 	M.add_chemical_effect(CE_ANTIVIRAL, 1)
 
+// We classify nicotine and tobacco as a medicine for ease of coding, and because we can't simulate lung cancer after several years of use.
+/datum/reagent/medicine/fluff/nicotine
+	name = "Nicotine"
+	description = "A sickly yellow liquid sourced from tobacco leaves. Stimulates and relaxes the mind and body."
+	taste_description = "peppery bitterness"
+	color = "#efebaa"
+	overdose = REAGENTS_OVERDOSE / 6
+	data = 0
+	value = 2
+
+/datum/reagent/medicine/fluff/nicotine/affect_blood(mob/living/carbon/M, alien, removed)
+	if (alien == IS_DIONA)
+		return
+	if (prob(volume * 20))
+		M.add_chemical_effect(CE_PULSE, 1)
+	if (volume <= 0.02 && M.chem_doses[type] >= 0.05 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.3)
+		data = world.time
+		to_chat(M, SPAN_WARNING("You feel antsy, your concentration wavers..."))
+	else
+		if (world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.3)
+			data = world.time
+			to_chat(M, SPAN_NOTICE("You feel invigorated and calm."))
+
+/datum/reagent/medicine/fluff/nicotine/overdose(mob/living/carbon/M, alien)
+	..()
+	M.add_chemical_effect(CE_PULSE, 2)
+
 /datum/reagent/medicine/fluff/tobacco
 	name = "Tobacco"
 	description = "Cut and processed tobacco leaves."
@@ -36,7 +63,7 @@
 
 /datum/reagent/medicine/fluff/tobacco/affect_blood(mob/living/carbon/M, alien, removed)
 	..()
-	M.reagents.add_reagent(/datum/reagent/nicotine, nicotine_ratio)
+	M.reagents.add_reagent(/datum/reagent/medicine/fluff/nicotine, nicotine_ratio)
 
 /datum/reagent/medicine/fluff/tobacco/fine
 	name = "Fine Tobacco"

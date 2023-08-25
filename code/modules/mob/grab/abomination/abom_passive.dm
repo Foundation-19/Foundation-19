@@ -7,7 +7,6 @@
 	shift = 8
 
 	point_blank_mult = 1.1
-	reverse_facing = 1
 
 	icon_state = "reinforce"
 

@@ -5,7 +5,7 @@
 	icon_state = "sleeper_0"
 	density = TRUE
 	anchored = TRUE
-	clicksound = 'sounds/machines/buttonbeep.ogg'
+	clicksound = 'sound/machines/buttonbeep.ogg'
 	clickvol = 30
 	base_type = /obj/machinery/sleeper
 	construct_state = /decl/machine_construction/default/panel_closed

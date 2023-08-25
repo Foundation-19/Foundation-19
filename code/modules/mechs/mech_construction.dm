@@ -1,6 +1,6 @@
 /mob/living/exosuit/proc/dismantle()
 
-	playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
+	playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 	var/obj/structure/heavy_vehicle_frame/frame = new(get_turf(src))
 	for(var/hardpoint in hardpoints)
 		remove_system(hardpoint, force = 1)
@@ -92,7 +92,7 @@
 
 		if(user.unEquip(system))
 			to_chat(user, SPAN_NOTICE("You install \the [system] in \the [src]'s [system_hardpoint]."))
-			playsound(user.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
+			playsound(user.loc, 'sound/items/Screwdriver.ogg', 100, 1)
 		else
 			return FALSE
 
@@ -156,6 +156,6 @@
 		system.forceMove(get_turf(user))
 		user.put_in_hands(system)
 		to_chat(user, SPAN_NOTICE("You remove \the [system] from \the [src]'s [system_hardpoint]."))
-		playsound(user.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
+		playsound(user.loc, 'sound/items/Screwdriver.ogg', 100, 1)
 
 	return 1

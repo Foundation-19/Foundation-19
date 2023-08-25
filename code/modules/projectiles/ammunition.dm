@@ -14,7 +14,7 @@
 	var/projectile_type					//The bullet type to create when New() is called
 	var/is_spent = FALSE
 	var/spent_icon = "pistolcasing-spent"
-	var/fall_sounds = list('sounds/weapons/guns/casingfall1.ogg','sounds/weapons/guns/casingfall2.ogg','sounds/weapons/guns/casingfall3.ogg')
+	var/fall_sounds = list('sound/weapons/guns/casingfall1.ogg','sound/weapons/guns/casingfall2.ogg','sound/weapons/guns/casingfall3.ogg')
 	var/projectile_label
 
 /obj/item/ammo_casing/Initialize()
@@ -184,7 +184,7 @@
 		stored_ammo.Insert(1, AC) //add it to the head of our magazine's list
 		L.update_icon()
 		update_icon()
-		playsound(src.loc, 'sounds/weapons/bulletin_mag.wav', 80, 1)
+		playsound(src.loc, 'sound/weapons/bulletin_mag.wav', 80, 1)
 	update_icon()
 
 /obj/item/ammo_magazine/attack_self(mob/user)

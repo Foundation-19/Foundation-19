@@ -1,6 +1,6 @@
 import os
 
-directory = 'sounds/vox'
+directory = 'sound/vox'
 
 folders = next(os.walk(directory))[1]
 

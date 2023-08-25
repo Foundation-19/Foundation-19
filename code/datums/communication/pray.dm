@@ -18,4 +18,4 @@
 
 /decl/communication_channel/pray/receive_communication(mob/communicator, mob/receiver, message)
 	..()
-	sound_to(receiver, 'sounds/effects/ding.ogg')
+	sound_to(receiver, 'sound/effects/ding.ogg')

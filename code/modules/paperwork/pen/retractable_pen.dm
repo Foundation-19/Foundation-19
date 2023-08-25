@@ -42,5 +42,5 @@
 
 /obj/item/pen/retractable/toggle()
 	active = !active
-	playsound(src, 'sounds/items/penclick.ogg', 5, 0, -4)
+	playsound(src, 'sound/items/penclick.ogg', 5, 0, -4)
 	update_icon()

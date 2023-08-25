@@ -14,11 +14,6 @@
 	/// Certain medicines may "ramp up" to maximum strength, which is defined by this value.
 	var/target_painkiller_strength = 10
 
-/datum/reagent/medicine/painkiller/New()
-	if(is_opiate)
-		addiction_types = list(/datum/addiction/opiate = max(0.5, 0.15 * target_painkiller_strength))
-	return ..()
-
 /datum/reagent/medicine/painkiller/affect_blood(mob/living/carbon/M, alien, removed)
 	calculate_strength(M, alien, removed)
 	M.add_chemical_effect(CE_PAINKILLER, current_painkiller_strength)

@@ -9,7 +9,7 @@
 	poison_per_bite = 15
 	ranged = TRUE
 	projectiletype = /obj/item/projectile/venom
-	projectilesound = 'sounds/effects/hypospray.ogg'
+	projectilesound = 'sound/effects/hypospray.ogg'
 	fire_desc = "spits venom"
 	ranged_range = 6
 	pry_time = 7 SECONDS

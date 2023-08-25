@@ -1,5 +1,5 @@
 /lobby_music/hie
-	artist = "Atli ï¿½rvarsson"
+	artist = "Atli Örvarsson"
 	title = "How It Ends"
 	album = "SCP13 OST"
-	song = 'sounds/music/howitends.ogg'
+	song = 'sound/music/howitends.ogg'

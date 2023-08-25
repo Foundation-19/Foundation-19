@@ -8,7 +8,7 @@
 	idcard = /obj/item/card/id/syndicate
 	module = /obj/item/robot_module/syndicate
 	silicon_radio = /obj/item/device/radio/borg/syndicate
-	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
+	spawn_sound = 'sound/mecha/nominalsyndi.ogg'
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
@@ -17,7 +17,7 @@
 	scrambledcodes = TRUE
 	modtype = "Combat"
 	module = /obj/item/robot_module/security/combat
-	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
+	spawn_sound = 'sound/mecha/nominalsyndi.ogg'
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
@@ -35,7 +35,7 @@
 	scrambledcodes = TRUE
 	speed = -2
 	icon_state = "drone-ascent"
-	spawn_sound = 'sounds/voice/ascent1.ogg'
+	spawn_sound = 'sound/voice/ascent1.ogg'
 	cell =   /obj/item/cell/mantid
 //	laws =   /datum/ai_laws/ascent
 	idcard = /obj/item/card/id/ascent

@@ -416,7 +416,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		C.received_irc_pm = world.time
 		C.irc_admin = input["sender"]
 
-		sound_to(C, 'sounds/effects/adminhelp.ogg')
+		sound_to(C, 'sound/effects/adminhelp.ogg')
 		to_chat(C, message)
 
 		for(var/client/A in GLOB.admins)
@@ -464,7 +464,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 /world/Reboot(reason)
 	/*spawn(0)
-		sound_to(world, sound(pick('sounds/AI/newroundsexy.ogg','sounds/misc/apcdestroyed.ogg','sounds/misc/bangindonk.ogg')))// random end sounds!! - LastyBatsy
+		sound_to(world, sound(pick('sound/AI/newroundsexy.ogg','sound/misc/apcdestroyed.ogg','sound/misc/bangindonk.ogg')))// random end sounds!! - LastyBatsy
 
 		*/
 	TgsReboot()

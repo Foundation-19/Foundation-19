@@ -102,7 +102,7 @@
 	. = ..()
 	if(.)
 		user.visible_message(SPAN_DANGER("\The [target] has been struck by \the [user]!"))
-		playsound(user.loc, 'sounds/weapons/Egloves.ogg', 50, 1, -1)
+		playsound(user.loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 		target.stun_effect_act(0, 60, user.zone_sel.selecting)
 		return TRUE
 

@@ -15,14 +15,14 @@
 
 	speech_chance = 50
 	speech_sounds = list(
-		'sounds/voice/abomination1.ogg',
-		'sounds/voice/abomination2.ogg',
-		'sounds/voice/abomination3.ogg',
-		'sounds/voice/abomination4.ogg',
-		'sounds/voice/abomination5.ogg',
-		'sounds/voice/abomination6.ogg',
-		'sounds/voice/abomination7.ogg',
-		'sounds/voice/abomination8.ogg',
+		'sound/voice/abomination1.ogg',
+		'sound/voice/abomination2.ogg',
+		'sound/voice/abomination3.ogg',
+		'sound/voice/abomination4.ogg',
+		'sound/voice/abomination5.ogg',
+		'sound/voice/abomination6.ogg',
+		'sound/voice/abomination7.ogg',
+		'sound/voice/abomination8.ogg',
 	)
 
 	unarmed_types = list(
@@ -69,28 +69,20 @@
 	vision_flags = SEE_SELF | SEE_MOBS
 
 	has_organ = list(
-		BP_HEART =    /obj/item/organ/internal/heart/abomination,
-		BP_STOMACH =  /obj/item/organ/internal/stomach/abomination,
-		BP_LUNGS =    /obj/item/organ/internal/lungs/abomination,
-		BP_LIVER =    /obj/item/organ/internal/liver/abomination,
-		BP_KIDNEYS =  /obj/item/organ/internal/kidneys/abomination,
-		BP_BRAIN =    /obj/item/organ/internal/brain/abomination,
+		BP_HEART =    /obj/item/organ/internal/heart,
+		BP_STOMACH =  /obj/item/organ/internal/stomach,
+		BP_LUNGS =    /obj/item/organ/internal/lungs,
+		BP_LIVER =    /obj/item/organ/internal/liver,
+		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
+		BP_BRAIN =    /obj/item/organ/internal/brain,
 		BP_APPENDIX = /obj/item/organ/internal/appendix,
-		BP_EYES =     /obj/item/organ/internal/eyes/abomination,
+		BP_EYES =     /obj/item/organ/internal/eyes,
 		BP_LARVA =    /obj/item/organ/internal/larva_producer
 		)
 
-	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_NORMAL | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
-	species_flags = SPECIES_FLAG_NO_SCAN  | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_MINOR_CUT | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NEED_DIRECT_ABSORB
+	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_SPCR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
+	species_flags = SPECIES_FLAG_NO_SCAN  | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_MINOR_CUT
 	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
-
-/datum/species/human/abomination/handle_post_spawn(mob/living/carbon/human/H)
-	H.faction = "abominable_infestation"
-	// Red eyes
-	H.change_eye_color(255, 1, 1)
-	// Pale skin
-	H.change_skin_tone(35)
-	..()
 
 /datum/species/human/abomination/attempt_grab(mob/living/carbon/human/user, mob/living/target)
 	return ..(user, target, GRAB_ABOMINATION)

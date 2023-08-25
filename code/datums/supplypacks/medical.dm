@@ -355,19 +355,3 @@
 	containername = "\improper Auto-Compressor crate"
 	containertype = /obj/structure/closet/crate/secure
 	access = ACCESS_MEDICAL_EQUIP
-
-/decl/hierarchy/supply_pack/medical/carpotoxin
-	name = "Chemical Bottle - Carpotoxin"
-	contains = list(/obj/item/reagent_containers/glass/bottle/carpotoxin)
-	cost = 50
-	containertype = /obj/structure/closet/crate/secure
-	containername = "carpotoxin crate"
-	access = ACCESS_CHEMISTRY
-
-/decl/hierarchy/supply_pack/medical/spider_venom
-	name = "Chemical Bottle - Spider Venom"
-	contains = list(/obj/item/reagent_containers/glass/bottle/spider_venom)
-	cost = 30
-	containertype = /obj/structure/closet/crate/secure
-	containername = "spider venom crate"
-	access = ACCESS_CHEMISTRY

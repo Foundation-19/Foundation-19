@@ -44,7 +44,7 @@
 	if (GET_FLAGS(boombox_flags, BOOMBOX_BROKEN))
 		return
 	audible_message(SPAN_WARNING("\The [src]'s speakers pop with a sharp crack!"))
-	playsound(src, 'sounds/effects/snap.ogg', 100, 1)
+	playsound(src, 'sound/effects/snap.ogg', 100, 1)
 	SET_FLAGS(boombox_flags, BOOMBOX_BROKEN)
 	jukebox.Stop()
 
@@ -99,7 +99,7 @@
 				range = 3
 			)
 			SET_FLAGS(boombox_flags, BOOMBOX_PANEL)
-		playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+		playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 		return TRUE
 	if (istype(item, /obj/item/stack/nanopaste))
 		if (!GET_FLAGS(boombox_flags, BOOMBOX_PANEL))

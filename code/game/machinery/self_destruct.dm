@@ -64,7 +64,7 @@
 				density = FALSE
 				user.visible_message("[user] arms [cylinder].", "You arm [cylinder].")
 				flick("loading", src)
-				playsound(src.loc,'sounds/effects/caution.ogg',50,1,5)
+				playsound(src.loc,'sound/effects/caution.ogg',50,1,5)
 		update_icon()
 		src.add_fingerprint(user)
 

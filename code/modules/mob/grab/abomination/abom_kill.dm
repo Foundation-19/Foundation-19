@@ -2,7 +2,8 @@
 	state_name = GRAB_ABOMINATION_KILL
 	downgrab_name = GRAB_ABOMINATION_AGGRESSIVE
 
-	shift = 20
+	shift = 0
+	same_tile = 1
 
 	icon_state = "kill1"
 
@@ -10,8 +11,6 @@
 	downgrade_on_move = 1
 	stop_move = 1
 	restrains = 1
-	damage_stage = 2
-	point_blank_mult = 3
 
 	break_chance_table = list(1, 3, 5, 10, 20, 35, 50)
 

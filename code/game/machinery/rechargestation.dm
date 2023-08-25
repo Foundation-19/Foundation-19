@@ -51,7 +51,7 @@
 	if(!cell || (cell.charge <= 0))
 		go_out()
 		visible_message(SPAN_WARNING("\The [src] has ran out of charge!"))
-		playsound(src.loc, 'sounds/machines/buzz-sigh.ogg', 50, 1)
+		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 		return
 
@@ -212,14 +212,14 @@
 		return
 
 	if(!hascell(M))
-		playsound(src.loc, 'sounds/machines/buzz-sigh.ogg', 50, 1)
+		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 		return
 
 	var/obj/item/cell/cell = get_cell()
 	if(!cell || (cell.charge <= 0))
 		visible_message(SPAN_WARNING("\The [src] is out of charge!"))
-		playsound(src.loc, 'sounds/machines/buzz-sigh.ogg', 50, 1)
+		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 		return
 

@@ -59,15 +59,3 @@
 
 #define HANDLE_REACTIONS(_reagents)  SSchemistry.active_holders[_reagents] = TRUE
 #define UNQUEUE_REACTIONS(_reagents) SSchemistry.active_holders -= _reagents
-
-/// Minimum requirement for addiction buzz to be met
-#define MIN_ADDICTION_REAGENT_AMOUNT 2
-/// Maximum amount of addiction points for any addiction type
-#define MAX_ADDICTION_POINTS 2000
-
-/// Addiction start/ends
-#define WITHDRAWAL_STAGE1_START_CYCLE 50
-#define WITHDRAWAL_STAGE1_END_CYCLE 120
-#define WITHDRAWAL_STAGE2_START_CYCLE 121
-#define WITHDRAWAL_STAGE2_END_CYCLE 200
-#define WITHDRAWAL_STAGE3_START_CYCLE 201

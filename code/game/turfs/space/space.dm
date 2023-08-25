@@ -85,7 +85,7 @@
 		var/obj/item/stack/material/rods/R = C
 		if (R.use(1))
 			to_chat(user, SPAN_NOTICE("Constructing support lattice ..."))
-			playsound(src, 'sounds/weapons/Genhit.ogg', 50, 1)
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 			ReplaceWithLattice(R.material.name)
 		return
 
@@ -96,7 +96,7 @@
 			if (!S.use(1))
 				return
 			qdel(L)
-			playsound(src, 'sounds/weapons/Genhit.ogg', 50, 1)
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 			ChangeTurf(/turf/simulated/floor/airless, keep_air = TRUE)
 			return
 		else

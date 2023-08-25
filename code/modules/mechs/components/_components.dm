@@ -57,9 +57,9 @@
 	damage_state = Clamp(round((total_damage/max_damage) * 4), MECH_COMPONENT_DAMAGE_UNDAMAGED, MECH_COMPONENT_DAMAGE_DAMAGED_TOTAL)
 	if(damage_state > prev_state)
 		if(damage_state == MECH_COMPONENT_DAMAGE_DAMAGED_BAD)
-			playsound(src.loc, 'sounds/mecha/internaldmgalarm.ogg', 40, 1)
+			playsound(src.loc, 'sound/mecha/internaldmgalarm.ogg', 40, 1)
 		if(damage_state == MECH_COMPONENT_DAMAGE_DAMAGED_TOTAL)
-			playsound(src.loc, 'sounds/mecha/critdestr.ogg', 50)
+			playsound(src.loc, 'sound/mecha/critdestr.ogg', 50)
 
 /obj/item/mech_component/proc/ready_to_install()
 	return 1
@@ -107,7 +107,7 @@
 				return
 			user.visible_message(SPAN_NOTICE("\The [user] removes \the [removed] from \the [src]."))
 			removed.forceMove(user.loc)
-			playsound(user.loc, 'sounds/effects/pop.ogg', 50, 0)
+			playsound(user.loc, 'sound/effects/pop.ogg', 50, 0)
 			update_components()
 		else
 			to_chat(user, SPAN_WARNING("There is nothing to remove."))
@@ -146,7 +146,7 @@
 		if(user.do_skilled(10, SKILL_DEVICES , src, 0.6, DO_PUBLIC_PROGRESS | DO_DEFAULT) && brute_damage)
 			repair_brute_damage(repair_value)
 			to_chat(user, SPAN_NOTICE("You mend the damage to \the [src]."))
-			playsound(user.loc, 'sounds/items/Welder.ogg', 25, 1)
+			playsound(user.loc, 'sound/items/Welder.ogg', 25, 1)
 
 /obj/item/mech_component/proc/repair_burn_generic(obj/item/stack/cable_coil/CC, mob/user)
 	if(!istype(CC))
@@ -168,7 +168,7 @@
 
 		repair_burn_damage(25)
 		to_chat(user, SPAN_NOTICE("You mend the damage to \the [src]'s wiring."))
-		playsound(user.loc, 'sounds/items/Deconstruct.ogg', 25, 1)
+		playsound(user.loc, 'sound/items/Deconstruct.ogg', 25, 1)
 	return
 
 /obj/item/mech_component/proc/get_damage_string()

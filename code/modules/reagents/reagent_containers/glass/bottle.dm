@@ -309,21 +309,3 @@
 /obj/item/reagent_containers/glass/bottle/dye/polychromic/strong
 	starting_reagent = /datum/reagent/dye/strong
 	starting_vol = 15
-
-/obj/item/reagent_containers/glass/bottle/carpotoxin
-	name = "carpotoxin bottle"
-	icon_state = "bottle-1"
-
-/obj/item/reagent_containers/glass/bottle/carpotoxin/New()
-	..()
-	reagents.add_reagent(/datum/reagent/toxin/carpotoxin, 60)
-	update_icon()
-
-/obj/item/reagent_containers/glass/bottle/spider_venom
-	name = "spider venom bottle"
-	icon_state = "bottle-1"
-
-/obj/item/reagent_containers/glass/bottle/spider_venom/New()
-	..()
-	reagents.add_reagent(/datum/reagent/toxin/venom, 60)
-	update_icon()

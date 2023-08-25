@@ -51,7 +51,7 @@
 	return FALSE
 
 /obj/machinery/atmospherics/pipe/cap/sparker/proc/ignite()
-	playsound(loc, 'sounds/machines/click.ogg', 10, 1)
+	playsound(loc, 'sound/machines/click.ogg', 10, 1)
 	if (cant_ignite())
 		return
 

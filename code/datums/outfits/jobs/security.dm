@@ -43,7 +43,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl3lcz
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	suit = /obj/item/clothing/suit/armor/vest/scp/lczcomm
+	suit = /obj/item/clothing/suit/armor/vest/scp/russcom
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton

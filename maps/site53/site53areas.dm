@@ -424,20 +424,20 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = LARGE_ENCLOSED
 	ambience = list(
-	'sounds/ambience/lcz/general/Ambient1.ogg',
-	'sounds/ambience/lcz/general/Ambient2.ogg',
-	'sounds/ambience/lcz/general/Ambient3.ogg',
-	'sounds/ambience/lcz/general/Ambient4.ogg',
-	'sounds/ambience/lcz/general/Ambient5.ogg',
-	'sounds/ambience/lcz/general/Ambient6.ogg',
-	'sounds/ambience/lcz/general/Ambient7.ogg',
-	'sounds/ambience/lcz/general/Ambient8.ogg',
-	'sounds/ambience/lcz/general/Ambient9.ogg'
+	'sound/ambience/lcz/general/Ambient1.ogg',
+	'sound/ambience/lcz/general/Ambient2.ogg',
+	'sound/ambience/lcz/general/Ambient3.ogg',
+	'sound/ambience/lcz/general/Ambient4.ogg',
+	'sound/ambience/lcz/general/Ambient5.ogg',
+	'sound/ambience/lcz/general/Ambient6.ogg',
+	'sound/ambience/lcz/general/Ambient7.ogg',
+	'sound/ambience/lcz/general/Ambient8.ogg',
+	'sound/ambience/lcz/general/Ambient9.ogg'
 	)
 //	ambience_crb = list(
-//	'sounds/ambience/lcz/crb/Commotion15.ogg',
-//	'sounds/ambience/lcz/crb/Commotion19.ogg',
-//	'sounds/ambience/lcz/crb/Commotion21.ogg'
+//	'sound/ambience/lcz/crb/Commotion15.ogg',
+//	'sound/ambience/lcz/crb/Commotion19.ogg',
+//	'sound/ambience/lcz/crb/Commotion21.ogg'
 //	)
 
 /area/site53/llcz/entrance_checkpoint
@@ -451,27 +451,27 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = LARGE_ENCLOSED
 	ambience = list(
-	'sounds/ambience/lcz/general/Ambient1.ogg',
-	'sounds/ambience/lcz/general/Ambient2.ogg',
-	'sounds/ambience/lcz/general/Ambient3.ogg',
-	'sounds/ambience/lcz/general/Ambient4.ogg',
-	'sounds/ambience/lcz/general/Ambient5.ogg',
-	'sounds/ambience/lcz/general/Ambient6.ogg',
-	'sounds/ambience/lcz/general/Ambient7.ogg',
-	'sounds/ambience/lcz/general/Ambient8.ogg',
-	'sounds/ambience/lcz/general/Ambient9.ogg'
+	'sound/ambience/lcz/general/Ambient1.ogg',
+	'sound/ambience/lcz/general/Ambient2.ogg',
+	'sound/ambience/lcz/general/Ambient3.ogg',
+	'sound/ambience/lcz/general/Ambient4.ogg',
+	'sound/ambience/lcz/general/Ambient5.ogg',
+	'sound/ambience/lcz/general/Ambient6.ogg',
+	'sound/ambience/lcz/general/Ambient7.ogg',
+	'sound/ambience/lcz/general/Ambient8.ogg',
+	'sound/ambience/lcz/general/Ambient9.ogg'
 	)
 /*	ambience_crb = list(
-	'sounds/ambience/lcz/crb/EmilyScream.ogg',
-	'sounds/ambience/lcz/crb/AnnouncAfter1.ogg',
-	'sounds/ambience/lcz/crb/alarm.ogg',
-	'sounds/ambience/lcz/crb/Commotion3.ogg',
-	'sounds/ambience/lcz/crb/Commotion15.ogg',
-	'sounds/ambience/lcz/crb/Commotion19.ogg',
-	'sounds/ambience/lcz/crb/Commotion21.ogg',
-	'sounds/ambience/lcz/crb/Ambient2.ogg',
-	'sounds/ambience/lcz/crb/Ambient3.ogg',
-	'sounds/ambience/lcz/crb/Ambient8.ogg'
+	'sound/ambience/lcz/crb/EmilyScream.ogg',
+	'sound/ambience/lcz/crb/AnnouncAfter1.ogg',
+	'sound/ambience/lcz/crb/alarm.ogg',
+	'sound/ambience/lcz/crb/Commotion3.ogg',
+	'sound/ambience/lcz/crb/Commotion15.ogg',
+	'sound/ambience/lcz/crb/Commotion19.ogg',
+	'sound/ambience/lcz/crb/Commotion21.ogg',
+	'sound/ambience/lcz/crb/Ambient2.ogg',
+	'sound/ambience/lcz/crb/Ambient3.ogg',
+	'sound/ambience/lcz/crb/Ambient8.ogg'
 	)
 */
 
@@ -893,8 +893,8 @@
 	name = "\improper SCP-049 Containment Chamber"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-	ambience = list('sounds/ambience/hcz/049/Room049.ogg')
-//	ambience_crb = list('sounds/ambience/hcz/049/Room049.ogg')
+	ambience = list('sound/ambience/hcz/049/Room049.ogg')
+//	ambience_crb = list('sound/ambience/hcz/049/Room049.ogg')
 
 /area/site53/lhcz/hallway
 	name = "\improper Lower Heavy Containment Hallways"
@@ -957,13 +957,13 @@
 /area/site53/medical/infirmreception
 	name = "\improper Infirmary Reception"
 	icon_state = "medbay2"
-	ambience = list('sounds/ambience/signal.ogg')
+	ambience = list('sound/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/infirmreception/waiting
 	name = "\improper Infirmary Reception Waiting Area"
 	icon_state = "medbay2"
-	ambience = list('sounds/ambience/signal.ogg')
+	ambience = list('sound/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/infirmary
@@ -999,13 +999,13 @@
 /area/site53/medical/mentalhealth/isolation
 	name = "\improper Mental Health Isolation"
 	icon_state = "medbay3"
-	ambience = list('sounds/ambience/signal.ogg')
+	ambience = list('sound/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/mentalhealth/office
 	name = "\improper Psychiatrist's Office"
 	icon_state = "medbay3"
-	ambience = list('sounds/ambience/signal.ogg')
+	ambience = list('sound/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/morgue
@@ -1021,7 +1021,7 @@
 /area/site53/medical/equipstorage
 	name = "\improper Equipment Storage"
 	icon_state = "medbay4"
-	ambience = list('sounds/ambience/signal.ogg')
+	ambience = list('sound/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/engineering/engine_smes

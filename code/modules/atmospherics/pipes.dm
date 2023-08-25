@@ -55,7 +55,7 @@
 
 /obj/machinery/atmospherics/pipe/proc/update_sound(playing)
 	if(playing && !sound_token)
-		sound_token = GLOB.sound_player.PlayLoopingSound(src, SOUND_ID, "sounds/machines/pipeleak.ogg", volume = 8, range = 3, falloff = 1, prefer_mute = TRUE)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, SOUND_ID, "sound/machines/pipeleak.ogg", volume = 8, range = 3, falloff = 1, prefer_mute = TRUE)
 	else if(!playing && sound_token)
 		QDEL_NULL(sound_token)
 
@@ -130,7 +130,7 @@
 			add_fingerprint(user)
 			return 1
 
-		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
 
 		if (do_after(user, 40, src))
@@ -236,7 +236,7 @@
 	ASSERT(parent)
 	parent.temporarily_store_air()
 	src.visible_message(SPAN_DANGER("\The [src] bursts!"));
-	playsound(src.loc, 'sounds/effects/bang.ogg', 25, 1)
+	playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
 	var/datum/effect/effect/system/smoke_spread/smoke = new
 	smoke.set_up(1,0, src.loc, 0)
 	smoke.start()

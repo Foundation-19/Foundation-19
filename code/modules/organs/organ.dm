@@ -101,11 +101,6 @@ var/list/organ_cache = list()
 	if(owner && vital)
 		owner.death()
 
-/obj/item/organ/proc/revive()
-	damage = 0
-	status &= ~ORGAN_DEAD
-	START_PROCESSING(SSobj, src)
-
 /obj/item/organ/Process()
 
 	if(loc != owner)

@@ -13,7 +13,6 @@
 	overdose = REAGENTS_OVERDOSE
 	value = 2.8
 	should_admin_log = TRUE
-	addiction_types = list(/datum/addiction/hallucinogens = 4)
 
 /datum/reagent/space_drugs/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
@@ -31,36 +30,7 @@
 			M.emote(pick("twitch", "drool", "moan", "giggle"))
 	M.add_chemical_effect(CE_PULSE, -1)
 
-/datum/reagent/nicotine
-	name = "Nicotine"
-	description = "A sickly yellow liquid sourced from tobacco leaves. Stimulates and relaxes the mind and body."
-	taste_description = "peppery bitterness"
-	color = "#efebaa"
-	overdose = REAGENTS_OVERDOSE / 6
-	data = 0
-	value = 2
-	addiction_types = list(/datum/addiction/nicotine = 10)
 
-/datum/reagent/nicotine/affect_blood(mob/living/carbon/M, alien, removed)
-	if (alien == IS_DIONA)
-		return
-	if (prob(volume * 20))
-		M.add_chemical_effect(CE_PULSE, 1)
-	if (volume <= 0.02 && M.chem_doses[type] >= 0.05 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.3)
-		data = world.time
-		to_chat(M, SPAN_WARNING("You feel antsy, your concentration wavers..."))
-	else
-		if (world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.3)
-			data = world.time
-			to_chat(M, SPAN_NOTICE("You feel invigorated and calm."))
-
-/datum/reagent/nicotine/overdose(mob/living/carbon/M, alien)
-	..()
-	M.add_chemical_effect(CE_PULSE, 2)
-	var/obj/item/organ/internal/lungs/L = M.internal_organs_by_name[BP_LUNGS]
-	if(istype(L) && !L.is_bruised(L))
-		var/lung_damage = min(0.2, L.min_broken_damage - L.damage)
-		L.take_general_damage(lung_damage)
 
 /datum/reagent/serotrotium
 	name = "Serotrotium"
@@ -71,16 +41,12 @@
 	metabolism = REM * 0.25
 	overdose = REAGENTS_OVERDOSE
 	value = 2.5
-	addiction_types = list(/datum/addiction/hallucinogens = 4)
 
 /datum/reagent/serotrotium/affect_blood(mob/living/carbon/M, alien, removed)
-	if(alien == IS_DIONA)
+	if (alien == IS_DIONA)
 		return
-	M.adjustToxLoss(2 * removed)
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.3)
-	M.add_chemical_effect(CE_SANITY, 1)
-	if(prob(7))
-		M.emote(pick("twitch", "drool", "moan", "smile", "laugh"))
+	if (prob(7))
+		M.emote(pick("twitch", "drool", "moan", "gasp"))
 	return
 
 
@@ -95,7 +61,6 @@
 	overdose = REAGENTS_OVERDOSE
 	value = 0.6
 	should_admin_log = TRUE
-	addiction_types = list(/datum/addiction/hallucinogens = 10)
 
 /datum/reagent/mindbreaker_toxin/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
@@ -165,7 +130,6 @@
 	metabolism = REM
 	overdose = 25
 	should_admin_log = TRUE
-	addiction_types = list(/datum/addiction/psionics = 40)
 
 	// M A X I M U M C H E E S E
 	var/global/list/dose_messages = list(
@@ -235,7 +199,6 @@
 	color = "#d0ff00"
 	metabolism = 1
 	overdose = 5
-	addiction_types = list(/datum/addiction/psionics = 100) // You usually only take small amount
 
 	var/global/list/dose_messages = list(
 		"Your name is called. It is your time.",
@@ -274,20 +237,3 @@
 		H.seizure()
 	if(prob(10))
 		to_chat(M, SPAN_DANGER("<font size = [rand(3,4)]>[pick(overdose_messages)]</font>"))
-
-/datum/reagent/mensvir
-	name = "Mensvir"
-	taste_description = "brain liquid"
-	description = "A somewhat expensive hallucinogenic drug used by psionic users to either get high or keep addictions in check. Has several benefits, but it is still addictive."
-	reagent_state = LIQUID
-	color = "#d5f29d"
-	addiction_types = list(/datum/addiction/psionics = 4, /datum/addiction/hallucinogens = 2)
-
-/datum/reagent/mensvir/affect_blood(mob/living/carbon/M, alien, removed)
-	if(!M.psi) // Sorry, elitist drug
-		return
-
-	M.hallucination(5, 25)
-	M.add_chemical_effect(CE_PULSE, 1)
-	M.add_chemical_effect(CE_THIRDEYE, 1)
-	M.psi.stamina = min(M.psi.max_stamina, M.psi.stamina + 1)

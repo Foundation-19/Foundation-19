@@ -121,10 +121,6 @@
 	glass_desc = "A well-known alcohol with a variety of applications."
 	value = DISPENSER_REAGENT_VALUE
 
-/datum/reagent/ethanol/New()
-	addiction_types = list(/datum/addiction/alcohol = max(0.5, 50 / strength)) // Higher strength is somehow weaker, go figure
-	return ..()
-
 /datum/reagent/ethanol/touch_mob(mob/living/L, amount)
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 15)

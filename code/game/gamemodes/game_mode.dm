@@ -417,7 +417,7 @@ var/global/list/additional_antag_types = list()
 
 	else
 		sleep(50)
-	sound_to(world, sound('sounds/effects/explosionfar.ogg'))
+	sound_to(world, sound('sound/effects/explosionfar.ogg'))
 
 //////////////////////////
 //Reports player logouts//

@@ -36,7 +36,7 @@
 					to_chat(user, SPAN_NOTICE("[src] is busy creating a hologram."))
 					return
 				if(signs.len < max_signs)
-					playsound(src.loc, 'sounds/machines/click.ogg', 20, 1)
+					playsound(src.loc, 'sound/machines/click.ogg', 20, 1)
 					if(creation_time)
 						holocreator_busy = TRUE
 						if(!do_after(user, creation_time, target))

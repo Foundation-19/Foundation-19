@@ -20,8 +20,8 @@
 	var/breakout = 0 //if someone is currently breaking out. mutex
 	var/storage_capacity = 2 * MOB_MEDIUM //This is so that someone can't pack hundreds of items in a locker/crate
 							  //then open it in a populated area to crash clients.
-	var/open_sound = 'sounds/effects/locker_open.ogg'
-	var/close_sound = 'sounds/effects/locker_close.ogg'
+	var/open_sound = 'sound/effects/locker_open.ogg'
+	var/close_sound = 'sound/effects/locker_close.ogg'
 
 	var/storage_types = CLOSET_STORAGE_ALL
 	var/setup = CLOSET_CAN_BE_WELDED
@@ -292,7 +292,7 @@
 			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 			spark_system.set_up(5, 0, src.loc)
 			spark_system.start()
-			playsound(src.loc, 'sounds/weapons/blade1.ogg', 50, 1)
+			playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
 			playsound(src.loc, SFX_SPARK, 50, 1)
 			open()
 	else if(istype(W, /obj/item/stack/package_wrap))
@@ -435,7 +435,7 @@
 			breakout = 0
 			return
 
-		playsound(src.loc, 'sounds/effects/grillehit.ogg', 100, 1)
+		playsound(src.loc, 'sound/effects/grillehit.ogg', 100, 1)
 		animate_shake()
 		add_fingerprint(escapee)
 
@@ -443,7 +443,7 @@
 	breakout = 0
 	to_chat(escapee, SPAN_WARNING("You successfully break out!"))
 	visible_message(SPAN_DANGER("\The [escapee] successfully broke out of \the [src]!"))
-	playsound(src.loc, 'sounds/effects/grillehit.ogg', 100, 1)
+	playsound(src.loc, 'sound/effects/grillehit.ogg', 100, 1)
 	break_open()
 	animate_shake()
 

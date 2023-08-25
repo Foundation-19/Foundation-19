@@ -33,6 +33,13 @@
 /mob/living/silicon/isSynthetic()
 	return 1
 
+/mob/proc/isMonkey()
+	return 0
+
+/mob/living/carbon/human/isMonkey()
+	return istype(species, /datum/species/monkey)
+
+
 /**
  * Checks if the target has a grab from the user
  */
@@ -540,7 +547,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			perpname = id.registered_name
 
 		var/datum/computer_file/report/crew_record/CR = get_crewmember_record(perpname)
-		if(check_records && !CR && !ismonkey(src))
+		if(check_records && !CR && !isMonkey())
 			threatcount += 4
 
 		if(check_arrest && CR && (CR.get_criminalStatus() == GLOB.arrest_security_status))

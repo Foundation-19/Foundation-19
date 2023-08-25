@@ -599,7 +599,7 @@
 /mob/living/carbon/human/proc/play_xylophone()
 	if(!src.xylophone)
 		visible_message(SPAN_WARNING("\The [src] begins playing \his ribcage like a xylophone. It's quite spooky."),SPAN_NOTICE("You begin to play a spooky refrain on your ribcage."),SPAN_WARNING("You hear a spooky xylophone melody."))
-		var/song = pick('sounds/effects/xylophone1.ogg','sounds/effects/xylophone2.ogg','sounds/effects/xylophone3.ogg')
+		var/song = pick('sound/effects/xylophone1.ogg','sound/effects/xylophone2.ogg','sound/effects/xylophone3.ogg')
 		playsound(loc, song, 50, 1, -1)
 		xylophone = 1
 		spawn(1200)
@@ -652,7 +652,7 @@
 	for(var/obj/structure/hygiene/toilet/T in range(1, src))
 		if(T.open)
 			visible_message(SPAN_DANGER("\The [src] throws up into the toilet!"),SPAN_DANGER("You throw up into the toilet!"))
-			playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
+			playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 			stomach.ingested.remove_any(15)
 			return
 
@@ -660,7 +660,7 @@
 	// see above comment for how vomit reagents are handled
 	for(var/obj/machinery/disposal/D in orange(1, src))
 		visible_message(SPAN_DANGER("\The [src] throws up into the disposal unit!"),SPAN_DANGER("You throw up into the disposal unit!"))
-		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
+		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_holder(D.reagents, 15)
 		return
@@ -668,7 +668,7 @@
 	var/turf/location = loc
 
 	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
-	playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
+	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
 		var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(location)
 		if(stomach.ingested.total_volume)

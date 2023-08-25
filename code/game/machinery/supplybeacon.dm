@@ -51,7 +51,7 @@
 			return
 		anchored = !anchored
 		user.visible_message(SPAN_NOTICE("\The [user] [anchored ? "secures" : "unsecures"] \the [src]."))
-		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 		return
 	return ..()
 

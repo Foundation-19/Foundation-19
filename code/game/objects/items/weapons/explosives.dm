@@ -92,9 +92,9 @@
 	while(T > 0)
 		sleep(1 SECOND)
 		if(target)
-			playsound(target, 'sounds/items/timer.ogg', 50)
+			playsound(target, 'sound/items/timer.ogg', 50)
 		else
-			playsound(loc, 'sounds/items/timer.ogg', 50)
+			playsound(loc, 'sound/items/timer.ogg', 50)
 		T--
 	explode(get_turf(target))
 

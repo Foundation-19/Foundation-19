@@ -35,7 +35,7 @@
 					update_icon()
 				else
 					src.sortTag = O.currTag
-				playsound(src.loc, 'sounds/machines/twobeep.ogg', 50, 1)
+				playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 1)
 			else
 				to_chat(user, SPAN_WARNING("The package is already labeled for [O.currTag]."))
 		else
@@ -160,7 +160,7 @@
 					update_icon()
 				else
 					src.sortTag = O.currTag
-				playsound(src.loc, 'sounds/machines/twobeep.ogg', 50, 1)
+				playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 1)
 			else
 				to_chat(user, SPAN_WARNING("The package is already labeled for [O.currTag]."))
 		else
@@ -366,7 +366,7 @@
 	if(href_list["nextTag"] && (href_list["nextTag"] in GLOB.tagger_locations))
 		src.currTag = href_list["nextTag"]
 		to_chat(user, SPAN_NOTICE("You set [src] to <b>[src.currTag]</b>."))
-		playsound(src.loc, 'sounds/machines/chime.ogg', 50, 1)
+		playsound(src.loc, 'sound/machines/chime.ogg', 50, 1)
 		. = TOPIC_REFRESH
 	if(href_list["nextTag"] == "CUSTOM")
 		var/dest = input(user, "Please enter custom location.", "Location", src.currTag ? src.currTag : "None")
@@ -374,11 +374,11 @@
 			if(dest && lowertext(dest) != "none")
 				src.currTag = dest
 				to_chat(user, SPAN_NOTICE("You designate a custom location on [src], set to <b>[src.currTag]</b>."))
-				playsound(src.loc, 'sounds/machines/chime.ogg', 50, 1)
+				playsound(src.loc, 'sound/machines/chime.ogg', 50, 1)
 			else
 				src.currTag = 0
 				to_chat(user, SPAN_NOTICE("You clear [src]'s custom location."))
-				playsound(src.loc, 'sounds/machines/chime.ogg', 50, 1)
+				playsound(src.loc, 'sound/machines/chime.ogg', 50, 1)
 			. = TOPIC_REFRESH
 		else
 			. = TOPIC_HANDLED
@@ -441,7 +441,7 @@
 	air_contents = new()		// new empty gas resv.
 
 	sleep(10)
-	playsound(src, 'sounds/machines/disposalflush.ogg', 50, 0, 0)
+	playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
 	sleep(5) // wait for animation to finish
 
 	if(prob(35))
@@ -473,12 +473,12 @@
 	if(isScrewdriver(I))
 		if(c_mode==0)
 			c_mode=1
-			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
+			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You remove the screws around the power connection.")
 			return
 		else if(c_mode==1)
 			c_mode=0
-			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
+			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You attach the screws around the power connection.")
 			return
 	else if(isWelder(I) && c_mode==1)
@@ -486,7 +486,7 @@
 		if(W.remove_fuel(1,user))
 			to_chat(user, "You start slicing the floorweld off the delivery chute.")
 			if(do_after(user,20, src))
-				playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
+				playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
 				if(!src || !W.isOn()) return
 				to_chat(user, "You sliced the floorweld off the delivery chute.")
 				var/obj/structure/disposalconstruct/C = new (loc, src)

@@ -16,7 +16,7 @@
 	var/on = 0
 	idle_power_usage = 20
 	active_power_usage = 200
-	clicksound = 'sounds/machines/buttonbeep.ogg'
+	clicksound = 'sound/machines/buttonbeep.ogg'
 	clickvol = 30
 
 	machine_name = "cryo cell"

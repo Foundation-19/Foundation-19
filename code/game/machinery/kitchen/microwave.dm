@@ -235,7 +235,7 @@
 	else if(dirtiness == 100)
 		dat += "<TT><b><i>This microwave is covered in muck. You'll need to wipe it down or clean it out before you can use it again.</i></b></TT>"
 	else
-		playsound(loc, 'sounds/machines/pda_click.ogg', 50, 1)
+		playsound(loc, 'sound/machines/pda_click.ogg', 50, 1)
 		if (!LAZYLEN(ingredients))
 			dat += "<B>The microwave is empty.</B>"
 		else
@@ -327,7 +327,7 @@
 	update_icon()
 
 /obj/machinery/microwave/proc/stop()
-	playsound(loc, 'sounds/machines/ding.ogg', 50, 1)
+	playsound(loc, 'sound/machines/ding.ogg', 50, 1)
 	operating = FALSE // Turn it off again aferwards
 	updateUsrDialog()
 	update_icon()
@@ -344,11 +344,11 @@
 		updateUsrDialog()
 
 /obj/machinery/microwave/proc/muck_start()
-	playsound(loc, 'sounds/effects/splat.ogg', 50, 1) // Play a splat sound
+	playsound(loc, 'sound/effects/splat.ogg', 50, 1) // Play a splat sound
 	update_icon()
 
 /obj/machinery/microwave/proc/muck_finish()
-	playsound(loc, 'sounds/machines/ding.ogg', 50, 1)
+	playsound(loc, 'sound/machines/ding.ogg', 50, 1)
 	visible_message(SPAN_WARNING("Muck splatters over the inside of \the [src]!"))
 	dirtiness = 100 // Make it dirty so it can't be used util cleaned
 	obj_flags = null //So you can't add condiments
@@ -412,7 +412,7 @@
 
 	switch(href_list["action"])
 		if ("cook")
-			playsound(loc, 'sounds/machines/quiet_beep.ogg', 50, 1)
+			playsound(loc, 'sound/machines/quiet_beep.ogg', 50, 1)
 			cook()
 
 		if ("dispose")

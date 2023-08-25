@@ -120,11 +120,11 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/species/zombie/handle_environment_special(mob/living/carbon/human/H)
 	if (H.stat == CONSCIOUS)
 		if (prob(5))
-			playsound(H.loc, 'sounds/hallucinations/far_noise.ogg', 15, 1)
+			playsound(H.loc, 'sound/hallucinations/far_noise.ogg', 15, 1)
 		else if (prob(5))
-			playsound(H.loc, 'sounds/hallucinations/veryfar_noise.ogg', 15, 1)
+			playsound(H.loc, 'sound/hallucinations/veryfar_noise.ogg', 15, 1)
 		else if (prob(5))
-			playsound(H.loc, 'sounds/hallucinations/wail.ogg', 15, 1)
+			playsound(H.loc, 'sound/hallucinations/wail.ogg', 15, 1)
 
 	for(var/obj/item/organ/I in H.internal_organs)
 		if (I.damage > 0)
@@ -141,7 +141,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 /datum/species/zombie/handle_death(mob/living/carbon/human/H)
 	H.stat = DEAD //Gotta confirm death for some odd reason
-	playsound(H, 'sounds/hallucinations/wail.ogg', 30, 1)
+	playsound(H, 'sound/hallucinations/wail.ogg', 30, 1)
 	handle_death_infection(H)
 	return TRUE
 
@@ -361,7 +361,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	var/turf/T = get_turf(src)
 	new /obj/effect/decal/cleanable/vomit(T)
-	playsound(T, 'sounds/effects/splat.ogg', 20, 1)
+	playsound(T, 'sound/effects/splat.ogg', 20, 1)
 
 	addtimer(CALLBACK(src, .proc/transform_zombie), 20)
 
@@ -410,7 +410,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	species.handle_post_spawn(src)
 
 	var/turf/T = get_turf(src)
-	playsound(T, 'sounds/hallucinations/wail.ogg', 25, 1)
+	playsound(T, 'sound/hallucinations/wail.ogg', 25, 1)
 
 
 /mob/living/carbon/proc/consume()
@@ -456,7 +456,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	last_special = world.time + 5 SECONDS
 
 	src.visible_message(SPAN_DANGER("\The [src] hunkers down over \the [target], tearing into their flesh."))
-	playsound(loc, 'sounds/effects/wounds/bonebreak3.ogg', 20, 1)
+	playsound(loc, 'sound/effects/wounds/bonebreak3.ogg', 20, 1)
 
 	target.adjustHalLoss(50)
 
@@ -474,7 +474,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 			else
 				to_chat(src,SPAN_DANGER("You shred and rip apart \the [target]'s remains!."))
 				target.gib()
-				playsound(loc, 'sounds/effects/splat.ogg', 40, 1)
+				playsound(loc, 'sound/effects/splat.ogg', 40, 1)
 			return
 
 		to_chat(target,SPAN_DANGER("\The [src] scrapes your flesh from your bones!"))
@@ -493,7 +493,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		src.adjustBrainLoss(-5)
 		src.adjust_nutrition(40)
 
-		playsound(loc, 'sounds/effects/splat.ogg', 20, 1)
+		playsound(loc, 'sound/effects/splat.ogg', 20, 1)
 		new /obj/effect/decal/cleanable/blood/splatter(get_turf(src), target.species.blood_color)
 		if (target.getBruteLoss() > target.maxHealth*0.75)
 			if (prob(50))

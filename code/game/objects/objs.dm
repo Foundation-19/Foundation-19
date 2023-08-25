@@ -134,7 +134,7 @@
 	return ..()
 
 /obj/proc/wrench_floor_bolts(mob/user, delay=20)
-	playsound(loc, 'sounds/items/Ratchet.ogg', 100, 1)
+	playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 	if(anchored)
 		user.visible_message("\The [user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
 	else

@@ -1211,7 +1211,7 @@
 	name = "puretobacco"
 	seed_name = "succulent tobacco"
 	display_name = "succulent tobacco leaves"
-	chems = list(/datum/reagent/nicotine = list(1,10))
+	chems = list(/datum/reagent/medicine/fluff/nicotine = list(1,10))
 
 /datum/seed/tobacco/puretobacco/New()
 	..()
