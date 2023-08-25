@@ -81,7 +81,7 @@
 	. = ..()
 	SCP.designation = "131-B"
 
-// AI Procs
+// AI Stuff
 
 /datum/say_list/scp131
 	emote_hear = list("babbles")
@@ -105,36 +105,6 @@
 	return FALSE
 
 // Mechanics
-
-/mob/living/simple_animal/friendly/scp131/Life()
-	. = ..()
-
-	if(friend)
-		if(can_see(friend))
-			friend_last_seen = world.time
-		else if((world.time - friend_last_seen) > acceptable_seperation_time)
-			remove_friend()
-			return
-
-		if(friend.stat != CONSCIOUS)
-			panic()
-			if(!delfriend_timer && (friend.stat == DEAD))
-				delfriend_timer = addtimer(CALLBACK(src, .proc/remove_friend), 1 MINUTE)
-			return
-
-	for(var/atom/scpInView in GLOB.SCP_list)
-		if(!can_see(scpInView))
-			continue
-		if(scpInView.SCP.classification == SAFE)
-			continue
-
-		if((isscp173(scpInView)) && friend && can_see(friend))
-			face_atom(scpInView)
-			return
-		else
-			ai_holder.give_target(scpInView)
-			panic()
-			return
 
 /mob/living/simple_animal/friendly/scp131/proc/update_friend(mob/living/carbon/human/new_friend)
 	if(!istype(new_friend))
@@ -165,6 +135,36 @@
 		ai_holder.set_stance(STANCE_FLEE)
 
 // Overrides
+
+/mob/living/simple_animal/friendly/scp131/Life()
+	. = ..()
+
+	if(friend)
+		if(can_see(friend))
+			friend_last_seen = world.time
+		else if((world.time - friend_last_seen) > acceptable_seperation_time)
+			remove_friend()
+			return
+
+		if(friend.stat != CONSCIOUS)
+			panic()
+			if(!delfriend_timer && (friend.stat == DEAD))
+				delfriend_timer = addtimer(CALLBACK(src, .proc/remove_friend), 1 MINUTE)
+			return
+
+	for(var/atom/scpInView in GLOB.SCP_list)
+		if(!can_see(scpInView))
+			continue
+		if(scpInView.SCP.classification == SAFE)
+			continue
+
+		if((isscp173(scpInView)) && friend && can_see(friend))
+			face_atom(scpInView)
+			return
+		else
+			ai_holder.give_target(scpInView)
+			panic()
+			return
 
 /mob/living/simple_animal/friendly/scp131/attack_hand(mob/living/carbon/human/M)
 	if(M.a_intent == I_HELP)
