@@ -20,31 +20,7 @@
 		"113", //Numerical Designation
 	)
 
-/obj/item/scp113/pickup(mob/living/user)
-	if(!ishuman(user))
-		return ..()
-
-	var/mob/living/carbon/human/H = user
-	var/hand_covered = user.hand ? HAND_LEFT : HAND_RIGHT //determines which hand needs to be covered
-
-	if(H.get_covered_body_parts() & hand_covered)
-		return ..()
-
-	if(H.humanStageHandler.getStage("113_conversions") >= 4)
-		convertatom2type(H, /mob/living/simple_animal/hostile/meat/abomination)
-		return
-
-	if(H.humanStageHandler.getStage("113_conversions") >= 1)
-		if(prob(5 * H.humanStageHandler.getStage("113_conversions")))
-			H.gib()
-			return
-		if(prob(20 * H.humanStageHandler.getStage("113_conversions")))
-			H.apply_damage(100, BRUTE, BP_GROIN)
-			H.visible_message(SPAN_WARNING("[H]'s groin suddenly and violently explodes!"), SPAN_DANGER("You feel a horrible pain in your groin area!"))
-			return
-
-	H.humanStageHandler.setStage("113_effect", 0)
-	effect(H)
+//Mechanics
 
 /obj/item/scp113/proc/effect(mob/living/carbon/human/user)
 	if(loc != user)
@@ -82,3 +58,31 @@
 			user.update_body()
 			canremove = 1
 			user.humanStageHandler.adjustStage("113_conversions", 1)
+
+//Overrides
+
+/obj/item/scp113/pickup(mob/living/user)
+	if(!ishuman(user))
+		return ..()
+
+	var/mob/living/carbon/human/H = user
+	var/hand_covered = user.hand ? HAND_LEFT : HAND_RIGHT //determines which hand needs to be covered
+
+	if(H.get_covered_body_parts() & hand_covered)
+		return ..()
+
+	if(H.humanStageHandler.getStage("113_conversions") >= 4)
+		convertatom2type(H, /mob/living/simple_animal/hostile/meat/abomination)
+		return
+
+	if(H.humanStageHandler.getStage("113_conversions") >= 1)
+		if(prob(5 * H.humanStageHandler.getStage("113_conversions")))
+			H.gib()
+			return
+		if(prob(20 * H.humanStageHandler.getStage("113_conversions")))
+			H.apply_damage(100, BRUTE, BP_GROIN)
+			H.visible_message(SPAN_WARNING("[H]'s groin suddenly and violently explodes!"), SPAN_DANGER("You feel a horrible pain in your groin area!"))
+			return
+
+	H.humanStageHandler.setStage("113_effect", 0)
+	effect(H)
