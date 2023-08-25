@@ -55,9 +55,9 @@
 			if(isspecies(instance, SPECIES_ZOMBIE))
 				SCP008_instance_count++
 
-		M.SCP = SCP = new /datum/scp(
+		M.SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"[real_name]", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"[M.real_name]", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"008-[SCP008_instance_count]", //Numerical Designation
 		PLAYABLE

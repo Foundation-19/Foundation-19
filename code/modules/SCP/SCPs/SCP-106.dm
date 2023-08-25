@@ -61,7 +61,7 @@
 	spawn_area = get_area(src)
 
 	add_verb(src, list(
-		/mob/living/carbon/human/scp106/proc/enter_pocket_dimension,
+		/mob/living/carbon/human/scp106/verb/enter_pocket_dimension,
 		/mob/living/carbon/human/scp106/proc/object_phase,
 		/mob/living/carbon/human/scp106/proc/wall_phase,
 		/mob/living/carbon/human/scp106/proc/wall_unphase,
@@ -222,7 +222,7 @@
 	sleep(5) // Le cool visual effects
 	animate(src, alpha = 255, time = 5)
 	forceMove(T)
-	remove_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
+	remove_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
 	add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 	return TRUE
 
@@ -244,7 +244,7 @@
 		stunned = 5
 		animate(src, alpha = 255, time = 5)
 	remove_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
-	add_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
+	add_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
 
 /mob/living/carbon/human/scp106/proc/object_phase()
 	set name = "Phase Through Object"
