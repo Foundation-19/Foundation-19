@@ -96,18 +96,6 @@
 		transform = null
 	return
 
-/mob/living/carbon/human/scp106/IsAdvancedToolUser()
-	return FALSE
-
-/mob/living/carbon/human/scp106/get_pressure_weakness()
-	return 0
-
-/mob/living/carbon/human/scp106/handle_breath()
-	return TRUE
-
-/mob/living/carbon/human/scp106/movement_delay()
-	return 4.0
-
 /mob/living/carbon/human/scp106/say(message, datum/language/speaking = null, whispering)
 	to_chat(src, SPAN_NOTICE("You cannot speak."))
 	return 0
@@ -128,12 +116,14 @@
 	return FALSE
 
 // Cannot get stunned normally, but we need it for the femur sequence
+
 /mob/living/carbon/human/scp106/handle_stunned()
 	if(stunned)
 		stunned = max(0, stunned - 1)
 	return stunned
 
 // So that he isn't as stealthy anymore
+
 /mob/living/carbon/human/scp106/play_special_footstep_sound(turf/T, volume = 30, range = 1)
 	var/play_sound = pick(\
 				'sounds/effects/footstep/scp106/step1.ogg',
@@ -143,6 +133,7 @@
 	return TRUE
 
 // This is us attacking
+
 /mob/living/carbon/human/scp106/UnarmedAttack(atom/A, proximity_flag)
 	var/mob/living/L = A
 	if(!istype(L))
@@ -166,6 +157,7 @@
 	visible_message(SPAN_DANGER("\The [src] knocks [L] down!"))
 
 // This is us GETTING attacked
+
 /mob/living/carbon/human/scp106/attack_hand(mob/living/L)
 	if(L == src)
 		return
@@ -186,6 +178,20 @@
 	last_x = x
 	last_y = y
 	last_z = z
+
+//Util Overrides
+
+/mob/living/carbon/human/scp106/IsAdvancedToolUser()
+	return FALSE
+
+/mob/living/carbon/human/scp106/get_pressure_weakness()
+	return 0
+
+/mob/living/carbon/human/scp106/handle_breath()
+	return TRUE
+
+/mob/living/carbon/human/scp106/movement_delay()
+	return 4.0
 
 /* Abilities */
 // Apparently verbs can't have variables
