@@ -197,11 +197,16 @@
 	new /obj/effect/decal/cleanable/blood(T)
 	playsound(T, 'sounds/effects/splat.ogg', 20, 1)
 
+	var/SCP049_instance_count = 1
+		for(var/mob/living/carbon/human/instance in GLOB.SCP_list)
+			if(isspecies(instance, SPECIES_SCP049_1))
+				SCP049_instance_count++
+
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"[real_name]", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
-		"049-1", //Numerical Designation
+		"049-[SCP049_instance_count]", //Numerical Designation
 		PLAYABLE
 	)
 
