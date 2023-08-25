@@ -21,6 +21,11 @@
 
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 
+	//config
+
+	///minimium distance we have to be away in order to be able to fire on scp 247
+	var/min_fire_distance = 3
+
 /mob/living/simple_animal/hostile/scp247/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
@@ -38,6 +43,7 @@
 	handle_corpse = TRUE
 	home_low_priority = TRUE
 	intelligence_level = AI_SMART
+	use_astar = TRUE
 
 /datum/ai_holder/simple_animal/melee/evasive/scp247/New()
 	. = ..()
@@ -46,7 +52,7 @@
 // Overrides
 
 /mob/living/simple_animal/hostile/scp247/bullet_act(obj/item/projectile/Proj) //This is a little bad but its the best way to keep this localized within 247
-	if(Proj.damage && !Proj.nodamage && ishuman(Proj.firer) && (get_dist(Proj.firer, src) <= 5))
+	if(Proj.damage && !Proj.nodamage && ishuman(Proj.firer) && (get_dist(Proj.firer, src) <= min_fire_distance))
 		to_chat(Proj.firer, SPAN_WARNING(SPAN_BOLD("You cannot bear to fire at [src], and you miss intentionally!")))
 		return PROJECTILE_FORCE_MISS
 	else
