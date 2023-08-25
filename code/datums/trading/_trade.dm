@@ -245,7 +245,7 @@
 	var/type = trading_items[num]
 
 	var/atom/movable/M = new type(location)
-	playsound(location, 'sound/effects/teleport.ogg', 75, 1)
+	playsound(location, 'sounds/effects/teleport.ogg', 75, 1)
 	sparks(3, 1, location)
 
 	disposition += rand(compliment_increase,compliment_increase*3) //Traders like it when you trade with them
@@ -293,7 +293,7 @@
 			return make_response(TRADER_FOUND_UNWANTED, "I don't want one of those items", 0, FALSE)
 		total += get_buy_price(offer, wanted, skill)
 
-	playsound(get_turf(offers[1]), 'sound/effects/teleport.ogg', 75, 1)
+	playsound(get_turf(offers[1]), 'sounds/effects/teleport.ogg', 75, 1)
 	sparks(3, 1, get_turf(offers[1]))
 	for(var/offer in offers)
 		qdel(offer)

@@ -76,7 +76,7 @@
 		OpenDoor(A)
 		return
 	if(istype(A, /obj/structure/grille))
-		playsound(get_turf(A), 'sound/effects/grillehit.ogg', 50, 1)
+		playsound(get_turf(A), 'sounds/effects/grillehit.ogg', 50, 1)
 		qdel(A)
 		return
 	if(istype(A, /obj/structure/inflatable))
@@ -115,7 +115,7 @@
 			open_time += 4 SECONDS
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to melt the control mechanisms on \the [A]!"))
-	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
 	if(!do_after(src, open_time, A))
 		return

@@ -172,7 +172,7 @@
 		return
 	//We throw a laser but it doesnt have to hit for meteor to explode
 	var/obj/item/projectile/beam/pointdefense/beam = new (get_turf(src))
-	playsound(src, 'sound/effects/heavy_cannon_blast.ogg', 75, 1)
+	playsound(src, 'sounds/effects/heavy_cannon_blast.ogg', 75, 1)
 	use_power_oneoff(idle_power_usage * 10)
 	beam.launch(M.loc)
 	M.make_debris()
@@ -256,6 +256,6 @@
 /obj/machinery/pointdefense/proc/Deactivate()
 	if(!active)
 		return FALSE
-	playsound(src, 'sound/machines/apc_nopower.ogg', 50, 0)
+	playsound(src, 'sounds/machines/apc_nopower.ogg', 50, 0)
 	active = FALSE
 	return TRUE

@@ -6,7 +6,7 @@
 		return FALSE
 	if(user.species.get_bodytype(user) != SPECIES_VOX && user.species.get_bodytype(user) != SPECIES_VOX_ARMALIS && user.unEquip(thing))
 		to_chat(user, SPAN_WARNING("\The [thing] hisses and wriggles out of your grasp!"))
-		playsound(user, 'sound/voice/BugHiss.ogg', 50, 1)
+		playsound(user, 'sounds/voice/BugHiss.ogg', 50, 1)
 		return FALSE
 	return TRUE
 

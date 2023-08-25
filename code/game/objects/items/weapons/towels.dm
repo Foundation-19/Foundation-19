@@ -7,12 +7,12 @@
 	force = 0.5
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("whipped")
-	hitsound = 'sound/weapons/towelwhip.ogg'
+	hitsound = 'sounds/weapons/towelwhip.ogg'
 	desc = "A soft cotton towel."
 
 /obj/item/towel/attack_self(mob/living/user as mob)
 	user.visible_message(SPAN_NOTICE("[user] uses [src] to towel themselves off."))
-	playsound(user, 'sound/weapons/towelwipe.ogg', 25, 1)
+	playsound(user, 'sounds/weapons/towelwipe.ogg', 25, 1)
 
 /obj/item/towel/random/New()
 	..()

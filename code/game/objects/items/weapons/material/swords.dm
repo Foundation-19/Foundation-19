@@ -12,7 +12,7 @@
 	sharp = TRUE
 	edge = TRUE
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sounds/weapons/bladeslice.ogg'
 	base_parry_chance = 50
 	melee_accuracy_bonus = 10
 	worth_multiplier = 30
@@ -45,8 +45,8 @@
 	name = "vibrokatana"
 	desc = "A high-tech take on a woefully underpowered weapon. Can't mistake its sound for anything."
 	default_material = MATERIAL_TITANIUM
-	hitsound = 'sound/weapons/anime_sword.wav'
+	hitsound = 'sounds/weapons/anime_sword.wav'
 
 /obj/item/material/sword/katana/vibro/equipped(mob/user, slot)
 	if(slot == slot_l_hand || slot == slot_r_hand)
-		playsound(src, 'sound/weapons/katana_out.wav', 50, 1, -5)
+		playsound(src, 'sounds/weapons/katana_out.wav', 50, 1, -5)

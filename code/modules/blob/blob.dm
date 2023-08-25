@@ -28,7 +28,7 @@
 		DAMAGE_OXY       = 0,
 		DAMAGE_BRAIN     = 0
 	)
-	damage_hitsound = 'sound/effects/attackblob.ogg'
+	damage_hitsound = 'sounds/effects/attackblob.ogg'
 
 	var/regen_rate = 5
 	var/laser_resist = 2	// Special resist for laser based weapons - Emitters or handheld energy weaponry. Damage is divided by this and THEN by fire_resist.
@@ -69,7 +69,7 @@
 /obj/effect/blob/handle_death_change(new_death_state)
 	. = ..()
 	if (new_death_state)
-		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 		qdel(src)
 
 /obj/effect/blob/post_health_change(health_mod, damage_type)
@@ -88,7 +88,7 @@
 	/* SIMULATED walls */
 	if(istype(T, /turf/simulated/wall/))
 		var/turf/simulated/wall/SW = T
-		playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/attackblob.ogg', 50, 1)
 		do_attack_animation(SW)
 		SW.damage_health(damage*2, BRUTE) // Deals twice as much damage because fuck walls
 		return
@@ -103,7 +103,7 @@
 	// Other useless dense objects
 	var/obj/structure/foamedmetal/F = locate() in T
 	if(F)
-		playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/attackblob.ogg', 50, 1)
 		do_attack_animation(F)
 		qdel(F)
 		return
@@ -114,12 +114,12 @@
 	var/obj/vehicle/V = locate() in T
 	if(V)
 		V.adjust_health(-damage)
-		playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/attackblob.ogg', 50, 1)
 		return
 	var/obj/machinery/camera/CA = locate() in T
 	if(CA && !CA.is_broken())
 		CA.take_damage(30)
-		playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/attackblob.ogg', 50, 1)
 		return
 
 	// Above things, we destroy completely and thus can use locate. Mobs are different.
@@ -134,7 +134,7 @@
 		// Catch any dense atoms that use health processing
 		if(A.health_max && A.is_alive() && A.density)
 			visible_message(SPAN_DANGER("A tendril flies out from \the [src] and smashes into \the [A]!"))
-			playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+			playsound(loc, 'sounds/effects/attackblob.ogg', 50, 1)
 			A.damage_health(damage, damage_type)
 			do_attack_animation(A)
 			return
@@ -161,7 +161,7 @@
 		return
 	var/blob_damage = pick(BRUTE, BURN)
 	L.visible_message(SPAN_DANGER("A tendril flies out from \the [src] and smashes into \the [L]!"), SPAN_DANGER("A tendril flies out from \the [src] and smashes into you!"))
-	playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+	playsound(loc, 'sounds/effects/attackblob.ogg', 50, 1)
 	do_attack_animation(L)
 	L.apply_damage(rand(damage_min, damage_max), blob_damage, used_weapon = "blob tendril")
 
@@ -170,7 +170,7 @@
 		return
 	var/damage = rand(damage_min, damage_max)
 	if(play_sound)
-		playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/attackblob.ogg', 50, 1)
 	visible_message(SPAN_DANGER("A tendril flies out from \the [src] and smashes into \the [O]!"))
 	do_attack_animation(O)
 	if(istype(O, /obj/machinery/door/))
@@ -204,7 +204,7 @@
 /obj/effect/blob/attackby(obj/item/W, mob/user)
 	if(user.a_intent == I_HURT)
 		if(isWelder(W))
-			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
+			playsound(loc, 'sounds/items/Welder.ogg', 100, 1)
 		..()
 		return
 

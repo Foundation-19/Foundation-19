@@ -25,7 +25,7 @@
 
 	ai_holder_type = /datum/ai_holder/simple_animal/infestation/floatfly
 	say_list_type = /datum/say_list/infestation_floatfly
-	death_sounds = list('sound/simple_mob/abominable_infestation/floatfly/death.ogg')
+	death_sounds = list('sounds/simple_mob/abominable_infestation/floatfly/death.ogg')
 
 	var/fly_cooldown
 	var/fly_cooldown_time = 5 SECONDS
@@ -34,7 +34,7 @@
 /obj/item/natural_weapon/claws/floatfly
 	force = 14
 	armor_penetration = 10
-	hitsound = 'sound/weapons/alien_claw_flesh1.ogg'
+	hitsound = 'sounds/weapons/alien_claw_flesh1.ogg'
 
 /datum/say_list/infestation_floatfly
 	emote_hear = list("buzzes", "hisses")
@@ -59,7 +59,7 @@
 	if(!density || fly_cooldown >= world.time)
 		return FALSE
 	density = FALSE
-	playsound(src, 'sound/simple_mob/abominable_infestation/floatfly/fly.ogg', 75, TRUE, 6)
+	playsound(src, 'sounds/simple_mob/abominable_infestation/floatfly/fly.ogg', 75, TRUE, 6)
 	visible_message(SPAN_DANGER("\The [src] flies upwards!"))
 	animate(src, pixel_z = 16, time = 5)
 	default_pixel_z = 16

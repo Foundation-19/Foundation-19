@@ -2,8 +2,8 @@
 /datum/shuttle/autodock/ferry/escape_pod/torchpod
 	category = /datum/shuttle/autodock/ferry/escape_pod/torchpod
 	shuttle_area = list(/area/shuttle/escape_pod)
-	sound_takeoff = 'sound/effects/rocket.ogg'
-	sound_landing = 'sound/effects/rocket_backwards.ogg'
+	sound_takeoff = 'sounds/effects/rocket.ogg'
+	sound_landing = 'sounds/effects/rocket_backwards.ogg'
 	name = "Escape Pod"
 	dock_target = "escape_pod"
 	arming_controller = "escape_pod"
@@ -34,7 +34,7 @@
 
 /datum/shuttle/autodock/ferry/heli
 	name = "MTF Helicopter"
-	sound_takeoff = 'sound/effects/helicopter.ogg'
+	sound_takeoff = 'sounds/effects/helicopter.ogg'
 	warmup_time = 14
 	shuttle_area = list(/area/site53/tram/mtf)
 	waypoint_station = "nav_mtf_start"

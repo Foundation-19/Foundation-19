@@ -140,7 +140,7 @@
 		power_drained += drained
 
 	if(power_drained > max_power * 0.95)
-		playsound(src, 'sound/effects/screech.ogg', 100, 1, 1)
+		playsound(src, 'sounds/effects/screech.ogg', 100, 1, 1)
 	if(power_drained >= max_power)
 		STOP_PROCESSING_POWER_OBJECT(src)
 		explosion(src.loc, 3,6,9,12)

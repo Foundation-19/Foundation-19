@@ -1,6 +1,6 @@
 /datum/psi_complexus/proc/cancel(play_sound = TRUE)
 	if(play_sound)
-		sound_to(owner, sound('sound/effects/psi/power_fail.ogg'))
+		sound_to(owner, sound('sounds/effects/psi/power_fail.ogg'))
 	if(LAZYLEN(manifested_items))
 		for(var/thing in manifested_items)
 			owner.drop_from_inventory(thing)
@@ -80,7 +80,7 @@
 	owner.psi.cancel(FALSE)
 	owner.psi.hide_auras()
 
-	sound_to(owner, sound('sound/effects/psi/power_feedback.ogg'))
+	sound_to(owner, sound('sounds/effects/psi/power_feedback.ogg'))
 	to_chat(owner, SPAN_DANGER("<font size=3>Wild energistic feedback blasts across your psyche!</font>"))
 	stunned(value * 2)
 	set_cooldown(value * 100)

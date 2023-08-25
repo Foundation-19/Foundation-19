@@ -19,7 +19,7 @@
 /obj/item/natural_weapon/bite
 	name = "teeth"
 	attack_verb = list("bitten")
-	hitsound = 'sound/weapons/bite.ogg'
+	hitsound = 'sounds/weapons/bite.ogg'
 	force = 10
 	sharp = TRUE
 

@@ -2,7 +2,7 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 	max_w_class = ITEM_SIZE_LARGE
 	storage_slots = 4
-	use_sound = 'sound/effects/storage/toolbox.ogg'
+	use_sound = 'sounds/effects/storage/toolbox.ogg'
 	anchored = TRUE
 
 /obj/item/mech_component/chassis/Adjacent(atom/neighbor, recurse = 1) //For interaction purposes we consider body to be adjacent to whatever holder mob is adjacent

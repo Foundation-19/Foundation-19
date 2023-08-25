@@ -164,7 +164,7 @@
 		if(W.damtype == BRUTE || W.damtype == BURN)
 			hit(W.force, user, W)
 		else
-			playsound(loc, 'sound/effects/Glasshit.ogg', 75, 1)
+			playsound(loc, 'sounds/effects/Glasshit.ogg', 75, 1)
 		..()
 	return
 
@@ -252,7 +252,7 @@
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
 		spark_system.start()
-		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
+		playsound(user.loc, 'sounds/weapons/blade1.ogg', 50, 1)
 
 /obj/item/holo/esword/get_parry_chance(mob/user)
 	return active ? ..() : 0
@@ -266,13 +266,13 @@
 		force = 30
 		icon_state = "sword[item_color]"
 		w_class = ITEM_SIZE_HUGE
-		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberon.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("[src] is now active."))
 	else
 		force = 3
 		icon_state = "sword0"
 		w_class = ITEM_SIZE_SMALL
-		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberoff.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("[src] can now be concealed."))
 
 	update_held_icon()

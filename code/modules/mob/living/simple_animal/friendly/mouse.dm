@@ -43,7 +43,7 @@
 		return FALSE
 	if(prob(ai_holder.speak_chance))
 		for(var/mob/M in view())
-			sound_to(M, 'sound/effects/mousesqueek.ogg')
+			sound_to(M, 'sounds/effects/mousesqueek.ogg')
 
 	if(!ckey && stat == CONSCIOUS && prob(0.5))
 		set_stat(UNCONSCIOUS)
@@ -100,7 +100,7 @@
 		if(!stat)
 			var/mob/M = AM
 			to_chat(M, SPAN_WARNING("[icon2html(src, M)] Squeek!"))
-			sound_to(M, 'sound/effects/mousesqueek.ogg')
+			sound_to(M, 'sounds/effects/mousesqueek.ogg')
 	..()
 
 /*

@@ -6,7 +6,7 @@
 			if(result) { \
 				power.handle_post_power(holder, target); \
 				if(istype(result)) { \
-					sound_to(holder, sound('sound/effects/psi/power_evoke.ogg')); \
+					sound_to(holder, sound('sounds/effects/psi/power_evoke.ogg')); \
 					LAZYADD(holder.psi.manifested_items, result); \
 					holder.put_in_hands(result); \
 				} \

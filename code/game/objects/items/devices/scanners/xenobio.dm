@@ -3,7 +3,7 @@
 	desc = "Multipurpose organic life scanner. With spectral breath analyzer you can find out what snacks Ian had! Or what gasses alien life breathes."
 	icon_state = "xenobio"
 	item_state = "analyzer"
-	scan_sound = 'sound/effects/scanbeep.ogg'
+	scan_sound = 'sounds/effects/scanbeep.ogg'
 	printout_color = "#f3e6ff"
 	origin_tech = list(TECH_MAGNET = 1, TECH_BIO = 1)
 

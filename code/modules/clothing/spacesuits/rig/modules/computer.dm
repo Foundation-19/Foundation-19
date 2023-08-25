@@ -400,7 +400,7 @@
 	drain_loc = interfaced_with.loc
 
 	holder.spark_system.start()
-	playsound(H.loc, 'sound/effects/sparks2.ogg', 50, 1)
+	playsound(H.loc, 'sounds/effects/sparks2.ogg', 50, 1)
 
 	return 1
 
@@ -424,7 +424,7 @@
 		return 0
 
 	holder.spark_system.start()
-	playsound(H.loc, 'sound/effects/sparks2.ogg', 50, 1)
+	playsound(H.loc, 'sounds/effects/sparks2.ogg', 50, 1)
 
 	if(!holder.cell)
 		to_chat(H, "<span class = 'danger'>Your power sink flashes an error; there is no cell in your rig.</span>")

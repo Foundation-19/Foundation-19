@@ -117,7 +117,7 @@
 			SPAN_NOTICE("You run a full-body diagnostic of \the [connected.occupant] using \the [initial(connected.name)]."),
 			SPAN_ITALIC("You hear a series of beeps, followed by a deep humming sound.")
 		)
-		playsound(connected.loc, 'sound/machines/medbayscanner.ogg', 50)
+		playsound(connected.loc, 'sounds/machines/medbayscanner.ogg', 50)
 		return TOPIC_REFRESH
 
 	if (href_list["print"])
