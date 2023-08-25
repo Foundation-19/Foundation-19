@@ -198,9 +198,9 @@
 	playsound(T, 'sounds/effects/splat.ogg', 20, 1)
 
 	var/SCP049_instance_count = 1
-		for(var/mob/living/carbon/human/instance in GLOB.SCP_list)
-			if(isspecies(instance, SPECIES_SCP049_1))
-				SCP049_instance_count++
+	for(var/mob/living/carbon/human/instance in GLOB.SCP_list)
+		if(isspecies(instance, SPECIES_SCP049_1))
+			SCP049_instance_count++
 
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
