@@ -9,7 +9,7 @@
 	return ..()
 
 /datum/status_effect/drowsiness/on_apply()
-	if(HAS_TRAIT(owner, TRAIT_SLEEPIMMUNE) || !(owner.status_flags & CANUNCONSCIOUS))
+	if(HAS_TRAIT(owner, TRAIT_SLEEPIMMUNE))
 		return FALSE
 	// Do robots dream of electric sheep?
 	if(issilicon(owner))

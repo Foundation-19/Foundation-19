@@ -92,15 +92,3 @@
 	return ..()
 
 //FOR ADDICTION-LIKE EFFECTS, SEE datum/status_effect/eigenstasium
-
-///Lets you link lockers together
-/datum/reagent/eigenstate/expose_turf(turf/exposed_turf, reac_volume)
-	. = ..()
-	if(creation_purity < 0.8)
-		return
-	var/list/lockers = list()
-	for(var/obj/structure/closet/closet in exposed_turf.contents)
-		lockers += closet
-	if(!length(lockers))
-		return
-	SSeigenstates.create_new_link(lockers)

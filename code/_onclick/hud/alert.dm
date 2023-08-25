@@ -258,8 +258,7 @@
 	var/mob/living/living_owner = owner
 
 	living_owner.setClickCooldown(CLICK_CD_RESIST)
-	if(living_owner.mobility_flags & MOBILITY_MOVE)
-		return living_owner.resist_fire()
+	return living_owner.resist()
 
 /// Gives the player the option to succumb while in critical condition
 /atom/movable/screen/alert/succumb
@@ -387,49 +386,6 @@
 	desc = "Mech integrity is low."
 	icon_state = "low_mech_integrity"
 
-
-//GHOSTS
-//TODO: do this
-/atom/movable/screen/alert/notify_cloning
-	name = "Revival"
-	desc = "Someone is trying to revive you. Re-enter your corpse if you want to be revived!"
-	icon_state = "template"
-	timeout = 300
-
-/atom/movable/screen/alert/notify_cloning/Click()
-	. = ..()
-	if(!.)
-		return
-	var/mob/observer/ghost/dead_owner = owner
-	dead_owner.reenter_corpse()
-
-/atom/movable/screen/alert/notify_action
-	name = "Body created"
-	desc = "A body was created. You can enter it."
-	icon_state = "template"
-	timeout = 300
-	var/atom/target = null
-	var/action = NOTIFY_JUMP
-
-/atom/movable/screen/alert/notify_action/Click()
-	. = ..()
-	if(!.)
-		return
-	if(!target)
-		return
-	var/mob/observer/ghost/ghost_owner = owner
-	if(!istype(ghost_owner))
-		return
-	switch(action)
-		if(NOTIFY_ATTACK)
-			target.attack_ghost(ghost_owner)
-		if(NOTIFY_JUMP)
-			var/turf/target_turf = get_turf(target)
-			if(target_turf && isturf(target_turf))
-				ghost_owner.abstract_move(target_turf)
-		if(NOTIFY_ORBIT)
-			ghost_owner.ManualFollow(target)
-
 //OBJECT-BASED
 
 /atom/movable/screen/alert/buckled
@@ -454,12 +410,12 @@
 
 	var/mob/living/living_owner = owner
 
-	if(!living_owner.can_resist())
+	if(living_owner.incapacitated(INCAPACITATION_KNOCKOUT))
 		return
 
 	living_owner.setClickCooldown(CLICK_CD_RESIST)
-	if((living_owner.mobility_flags & MOBILITY_MOVE) && (living_owner.last_special <= world.time))
-		return living_owner.resist_restraints()
+	if(living_owner.last_special <= world.time)
+		return living_owner.resist()
 
 /atom/movable/screen/alert/buckled/Click()
 	. = ..()
@@ -468,11 +424,11 @@
 
 	var/mob/living/living_owner = owner
 
-	if(!living_owner.can_resist())
+	if(living_owner.incapacitated(INCAPACITATION_KNOCKOUT))
 		return
 	living_owner.setClickCooldown(CLICK_CD_RESIST)
 	if(living_owner.last_special <= world.time)
-		return living_owner.resist_buckle()
+		return living_owner.resist()
 
 // PRIVATE = only edit, use, or override these if you're editing the system as a whole
 

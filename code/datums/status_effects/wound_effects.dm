@@ -65,7 +65,7 @@
 /datum/status_effect/limp/proc/check_step(mob/whocares, OldLoc, Dir, forced)
 	SIGNAL_HANDLER
 
-	if(!owner.client || owner.lying || (owner.movement_type & FLYING) || forced || owner.buckled)
+	if(!owner.client || owner.lying || forced || owner.buckled)
 		return
 
 	// less limping while we have determination still
@@ -73,11 +73,11 @@
 
 	if(next_leg == left)
 		if(prob(limp_chance_left * determined_mod))
-			owner.client.move_delay += slowdown_left * determined_mod
+			owner.ExtraMoveCooldown(slowdown_left * determined_mod)
 		next_leg = right
 	else
 		if(prob(limp_chance_right * determined_mod))
-			owner.client.move_delay += slowdown_right * determined_mod
+			owner.ExtraMoveCooldown(slowdown_right * determined_mod)
 		next_leg = left
 
 /datum/status_effect/limp/proc/update_limp()

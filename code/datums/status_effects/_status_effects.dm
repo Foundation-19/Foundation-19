@@ -43,7 +43,7 @@
 		return
 	if(owner)
 		LAZYADD(owner.status_effects, src)
-		RegisterSignal(owner, COMSIG_LIVING_POST_FULLY_HEAL, .proc/remove_effect_on_heal)
+		RegisterSignal(owner, COMSIG_LIVING_POST_REVIVE, .proc/remove_effect_on_heal)
 
 	if(duration != -1)
 		duration = world.time + duration
@@ -74,7 +74,7 @@
 		owner.clear_alert(id)
 		LAZYREMOVE(owner.status_effects, src)
 		on_remove()
-		UnregisterSignal(owner, COMSIG_LIVING_POST_FULLY_HEAL)
+		UnregisterSignal(owner, COMSIG_LIVING_POST_REVIVE)
 		owner = null
 	return ..()
 
@@ -144,15 +144,14 @@
 /datum/status_effect/proc/nextmove_adjust()
 	return 0
 
-/// Signal proc for [COMSIG_LIVING_POST_FULLY_HEAL] to remove us on fullheal
-/datum/status_effect/proc/remove_effect_on_heal(datum/source, heal_flags)
+/// Signal proc for [COMSIG_LIVING_POST_REVIVE] to remove us on fullheal
+/datum/status_effect/proc/remove_effect_on_heal(datum/source)
 	SIGNAL_HANDLER
 
 	if(!remove_on_fullheal)
 		return
 
-	//if(!heal_flag_necessary || (heal_flags & heal_flag_necessary))
-	//	qdel(src)
+	qdel(src)
 
 /// Remove [seconds] of duration from the status effect, qdeling / ending if we eclipse the current world time.
 /datum/status_effect/proc/remove_duration(seconds)

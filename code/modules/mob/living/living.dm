@@ -440,6 +440,8 @@ default behaviour is:
 	ExtinguishMob()
 	fire_stacks = 0
 
+	SEND_SIGNAL(src, /mob/living/proc/revive)
+
 /mob/living/proc/rejuvenate()
 	if(reagents)
 		reagents.clear_reagents()

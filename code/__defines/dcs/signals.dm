@@ -32,6 +32,8 @@
 #define COMSIG_CARBON_LIFE "carbon_life"
 /// fire by minds to do post-initialization behaviour
 #define COMSIG_MIND_POST_INIT "mind_post_init"
+/// Called on `/mob/living/proc/revive` (mob/living)
+#define COMSIG_LIVING_POST_REVIVE "living_post_revive"
 
 /// fired when a goal is succeeded
 #define COMSIG_GOAL_SUCCEEDED "goal_succeeded"
@@ -93,5 +95,8 @@
 #define COMSIG_ATOM_DIR_CHANGE "atom_dir_change"
 /// From base of atom/setDir(): (old_dir, new_dir). Called after the direction changes.
 #define COMSIG_ATOM_POST_DIR_CHANGE "atom_dir_change"
-///from base of [/atom/proc/update_desc]: (updates)
+/// From base of [/atom/proc/update_desc]: (updates)
 #define COMSIG_ATOM_UPDATE_DESC "atom_update_desc"
+
+// Called on `/mob/proc/update_movespeed` (/mob)
+#define COMSIG_MOB_MOVESPEED_UPDATED "mob_movespeed_updated"

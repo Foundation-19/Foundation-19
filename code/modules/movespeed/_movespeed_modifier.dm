@@ -39,12 +39,6 @@ Key procs
 	/// Multiplicative slowdown
 	var/multiplicative_slowdown = 0
 
-	/// Movetypes this applies to
-	var/movetypes = ALL
-
-	/// Movetypes this never applies to
-	var/blacklisted_movetypes = NONE
-
 	/// Other modification datums this conflicts with.
 	var/conflicts_with
 
@@ -171,10 +165,6 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 	var/list/conflict_tracker = list()
 	for(var/key in get_movespeed_modifiers())
 		var/datum/movespeed_modifier/M = movespeed_modification[key]
-		if(!(M.movetypes & movement_type)) // We don't affect any of these move types, skip
-			continue
-		if(M.blacklisted_movetypes & movement_type) // There's a movetype here that disables this modifier, skip
-			continue
 		var/conflict = M.conflicts_with
 		var/amt = M.multiplicative_slowdown
 		if(conflict)
