@@ -77,3 +77,13 @@
   - tweak: Heart of the Hive(Abominable Infestation) sprite updated.
   - tweak: Grabs of Abomination species are stronger now(you cannot act while grabbed
       aggressively).
+2023-08-25:
+  DragonFire101:
+  - bugfix: Changed the audio Volume for the some the announcements.
+  Yawet330:
+  - tweak: 2427-3 now no longer counts monkeys as pure (should fix some edge cases)
+  - bugfix: 2427-3 can no longer rest while alive. Prevents combat resting to avoid
+      bullets.
+  - tweak: 2427-3 higher hp loss from hunger. (0.01 -> 0.035)
+  - tweak: 2427-3 HP and hit chance reduced & total damage output reduced (Fixes some
+      dodge interactions + General nerf)
