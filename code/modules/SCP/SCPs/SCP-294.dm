@@ -29,10 +29,10 @@
 		"spider" = /datum/reagent/toxin/venom,
 		"sleep" = /datum/reagent/soporific,
 		"kidnap" = /datum/reagent/chloral_hydrate,
-		"zombie" = /datum/reagent/zombie,
+		"zombie" = /datum/reagent/scp008,
 		"death" = /datum/reagent/toxin/cyanide,
 		"joe" = /datum/reagent/blood,
-		"008" = /datum/reagent/zombie
+		"008" = /datum/reagent/scp008
 	)
 /obj/machinery/scp294/Initialize()
 	. = ..()
