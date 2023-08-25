@@ -2,15 +2,35 @@
 	name = "Rotting Elderly Man"
 	desc = "A rotting, elderly old man."
 	icon = 'icons/SCP/scp-106.dmi'
+
 	icon_state = null
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED
+
+	//Config
+
+	///Our phase cooldown
+	var/phase_cooldown_time = 2 SECONDS
+	///How long it takes us to phase
+	var/phase_time = 2 SECONDS
+	///Cooldown on entering our pocket dimension
+	var/pocket_dimension_cooldown_time = 20 SECONDS
+	///Sound cooldown
+	var/sound_cooldown_time = 4 SECONDS
+
+	//Mechanical
+
+	///Our current target
 	var/mob/living/target = null
+
+	//Last coordinates before phasing
 	var/last_x = -1
 	var/last_y = -1
 	var/last_z = -1
+	///Are we phasing?
 	var/phasing = FALSE
+	///Our walleye for when we travel through walls
 	var/mob/observer/eye/scp106/WallEye
 	/// Turf where we were created
 	var/turf/spawn_turf = null
@@ -18,15 +38,12 @@
 	var/area/spawn_area = null
 	/// Area type of the pocket dimension to look for
 	var/pocket_dimension_area_type = /area/pocketdimension
-
-	// Cooldowns and time variables
+	///Phase cooldown track
 	var/phase_cooldown
-	var/phase_cooldown_time = 2 SECONDS
-	var/phase_time = 3 SECONDS
+	///pocket dimension cooldown track
 	var/pocket_dimension_cooldown
-	var/pocket_dimension_cooldown_time = 20 SECONDS
+	///sound cooldown track
 	var/sound_cooldown
-	var/sound_cooldown_time = 4 SECONDS
 
 /mob/living/carbon/human/scp106/Initialize(mapload, new_species = "SCP-106")
 	. = ..()
@@ -172,7 +189,7 @@
 
 /* Abilities */
 // Apparently verbs can't have variables
-/mob/living/carbon/human/scp106/proc/enter_pocket_dimension()
+/mob/living/carbon/human/scp106/verb/enter_pocket_dimension()
 	set name = "Enter Pocket Dimension"
 	set category = "SCP"
 	set desc = "Enter your pocket dimension."
