@@ -27,8 +27,8 @@
 	var/obj/item/device/radio/exosuit/radio
 
 	var/wreckage_path = /obj/structure/mech_wreckage
-	var/mech_turn_sound = 'sound/mecha/mechturn.ogg'
-	var/mech_step_sound = 'sound/mecha/mechstep.ogg'
+	var/mech_turn_sound = 'sounds/mecha/mechturn.ogg'
+	var/mech_step_sound = 'sounds/mecha/mechstep.ogg'
 
 	// Access updating/container.
 	var/obj/item/card/id/access_card
@@ -217,14 +217,14 @@
 	if(power == MECH_POWER_TRANSITION)
 		to_chat(user, SPAN_NOTICE("Power transition in progress. Please wait."))
 	else if(power == MECH_POWER_ON) //Turning it off is instant
-		playsound(src, 'sound/mecha/mech-shutdown.ogg', 100, 0)
+		playsound(src, 'sounds/mecha/mech-shutdown.ogg', 100, 0)
 		power = MECH_POWER_OFF
 	else if(get_cell(TRUE))
 		//Start power up sequence
 		power = MECH_POWER_TRANSITION
-		playsound(src, 'sound/mecha/powerup.ogg', 50, 0)
+		playsound(src, 'sounds/mecha/powerup.ogg', 50, 0)
 		if(user.do_skilled(1.5 SECONDS, SKILL_ELECTRICAL, src, 0.5) && power == MECH_POWER_TRANSITION)
-			playsound(src, 'sound/mecha/nominal.ogg', 50, 0)
+			playsound(src, 'sounds/mecha/nominal.ogg', 50, 0)
 			power = MECH_POWER_ON
 		else
 			to_chat(user, SPAN_WARNING("You abort the powerup sequence."))

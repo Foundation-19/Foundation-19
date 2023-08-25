@@ -41,7 +41,7 @@
 			else
 				reagents.trans_to_obj(I, I.reagents.maximum_volume)
 				to_chat(user, SPAN_NOTICE("You wet [I] in [src]."))
-				playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+				playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
 				return
 		if(!mymop)
 			if(!user.unEquip(I, src))
@@ -196,7 +196,7 @@
 		if(reagents.total_volume > 1)
 			reagents.trans_to_obj(I, 2)
 			to_chat(user, SPAN_NOTICE("You wet [I] in the [callme]."))
-			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+			playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
 		else
 			to_chat(user, SPAN_NOTICE("This [callme] is out of water!"))
 	else if(istype(I, /obj/item/key))

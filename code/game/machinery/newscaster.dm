@@ -734,15 +734,15 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 			visible_message(SPAN_WARNING("\The [user] uselessly bops \the [src] with \an [I]."))
 		else if (stat & BROKEN)
 			visible_message(SPAN_WARNING("\The [user] further abuses the shattered [name]."))
-			playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 100, 1)
+			playsound(src, 'sounds/effects/hit_on_shattered_glass.ogg', 100, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		else if (++hitstaken < 3)
 			visible_message(SPAN_DANGER("\The [user] slams \the [src] with \an [I], cracking it!"))
-			playsound(src, 'sound/effects/Glassbr3.ogg', 100, 1)
+			playsound(src, 'sounds/effects/Glassbr3.ogg', 100, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		else
 			visible_message(SPAN_DANGER("\The [user] smashes \the [src] with \an [I]!"))
-			playsound(src, 'sound/effects/Glasshit.ogg', 100, 1)
+			playsound(src, 'sounds/effects/Glasshit.ogg', 100, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			set_broken(TRUE)
 			update_icon()
@@ -968,9 +968,9 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 		spawn(300)
 			src.alert = 0
 			src.update_icon()
-		playsound(src.loc, 'sound/machines/twobeep.ogg', 75, 1)
+		playsound(src.loc, 'sounds/machines/twobeep.ogg', 75, 1)
 	else
 		for(var/mob/O in hearers(world.view-1, T))
 			O.show_message(SPAN_CLASS("newscaster","<EM>[src.name]</EM> beeps, \"Attention! Wanted issue distributed!\""),2)
-		playsound(src.loc, 'sound/machines/warning-buzzer.ogg', 75, 1)
+		playsound(src.loc, 'sounds/machines/warning-buzzer.ogg', 75, 1)
 	return

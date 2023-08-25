@@ -21,10 +21,10 @@ SUBSYSTEM_DEF(fluids)
 	var/list/fluid_images = list()
 
 	var/list/gurgles = list(
-		'sound/effects/gurgle1.ogg',
-		'sound/effects/gurgle2.ogg',
-		'sound/effects/gurgle3.ogg',
-		'sound/effects/gurgle4.ogg'
+		'sounds/effects/gurgle1.ogg',
+		'sounds/effects/gurgle2.ogg',
+		'sounds/effects/gurgle3.ogg',
+		'sounds/effects/gurgle4.ogg'
 		)
 
 /datum/controller/subsystem/fluids/stat_entry(msg)
@@ -174,7 +174,7 @@ SUBSYSTEM_DEF(fluids)
 
 			if(F.flow_amount >= 10)
 				if(prob(1))
-					playsound(F.loc, 'sound/effects/slosh.ogg', 25, 1)
+					playsound(F.loc, 'sounds/effects/slosh.ogg', 25, 1)
 					show_sound_effect(F.loc, soundicon = SFX_ICON_SMALL)
 				for(var/atom/movable/AM in F.loc.contents)
 					if(isnull(pushing_atoms[AM]) && AM.is_fluid_pushable(F.flow_amount))

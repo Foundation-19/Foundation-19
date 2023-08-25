@@ -464,7 +464,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(BP_IS_CRYSTAL(src) && (damage >= 15 || prob(1)))
 		type = SHATTER
-		playsound(loc, 'sound/effects/hit_on_shattered_glass.ogg', 40, 1) // Crash!
+		playsound(loc, 'sounds/effects/hit_on_shattered_glass.ogg', 40, 1) // Crash!
 
 	//moved these before the open_wound check so that having many small wounds for example doesn't somehow protect you from taking internal damage (because of the return)
 	//Brute damage can possibly trigger an internal wound, too.

@@ -501,7 +501,7 @@
 		pestlevel -= spray.pest_kill_str
 		weedlevel -= spray.weed_kill_str
 		to_chat(user, "You spray [src] with [O].")
-		playsound(loc, 'sound/effects/spray3.ogg', 50, 1, -6)
+		playsound(loc, 'sounds/effects/spray3.ogg', 50, 1, -6)
 		qdel(O)
 		check_health()
 
@@ -511,7 +511,7 @@
 		if(locate(/obj/machinery/atmospherics/portables_connector/) in loc)
 			return ..()
 
-		playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		anchored = !anchored
 		to_chat(user, "You [anchored ? "wrench" : "unwrench"] \the [src].")
 

@@ -41,3 +41,39 @@
   - rscdel: deleted empty files
   cheesePizza2:
   - bugfix: Stacks of items are no longer duplicated with fractional inputs.
+2023-08-12:
+  Kryson, Qustinnus, EgorDinamit:
+  - rscadd: You may now become addicted to certain drugs if you've been taking them
+      for long enough. Becoming addicted is done by gaining addiction points from
+      doing drugs in a specific category; If you become addicted, you can stop being
+      addicted by lowering your addiction points until it reaches a low enough value(i.e.
+      by not taking drugs). Most addictions will have withdraval effects, however.
+  - rscadd: 'Gottheit(Grauel, Rezadone, Oxycodone, Peridaxon): A heavily addictive
+      drug that essentially fixes everything wrong with your body and organs, among
+      other things. Withdrawal is extremely lethal, however.'
+  - rscadd: 'Ossarepantes(Bicaridine, Milk, Radium at 50C): Mends broken bones while
+      dealing high brute damage and inflicting pain.'
+  - rscadd: 'Mensvir(Mindbreaker toxin, Crystallizing agent, Gold at 40C): A drug
+      that only works on psionic users. Somewhat addictive.'
+  - rscadd: 'Naltrexone(Methylphenidate, Sugar, Carbon): A medication primarily used
+      to manage alcohol, opioid and other minor drug addictions. Should not be taken
+      in cases of liver damage.'
+  - rscadd: 'Varenicline(Acetone, Phosphorous, Sodium): A medication used for smoking
+      cessation and for the treatment of blurry vision.'
+  - tweak: Added recipe for Serotrotium(Ethanol, Sugar, Lithium at 40C) and updated
+      it to have some beneficial effects.
+  - tweak: Most drugs are now addicting. This includes psionic and amnestic reagents.
+  casualspacestation14enjoyer:
+  - rscadd: HCZ, LCZ, EZ and GoI bases now have weaponry vendors in their respective
+      armories.
+  cheesePizza2:
+  - bugfix: Armor shitcode fixed
+  - imagedel: Some old bay armor icons deleted
+2023-08-13:
+  cheesePizza2:
+  - code_imp: Deletes unused graph code.
+2023-08-19:
+  EgorDinamit:
+  - tweak: Heart of the Hive(Abominable Infestation) sprite updated.
+  - tweak: Grabs of Abomination species are stronger now(you cannot act while grabbed
+      aggressively).

@@ -1,6 +1,6 @@
 /datum/spell/aoe_turf/conjure/summon
 	var/name_summon = 0
-	cast_sound = 'sound/weapons/wave.ogg'
+	cast_sound = 'sounds/weapons/wave.ogg'
 
 /datum/spell/aoe_turf/conjure/summon/before_cast()
 	..()

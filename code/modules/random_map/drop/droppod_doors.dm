@@ -30,7 +30,7 @@
 
 /obj/structure/droppod_door/proc/deploy()
 	visible_message(SPAN_DANGER("The explosive bolts on \the [src] detonate, throwing it open!"))
-	playsound(src.loc, 'sound/effects/bang.ogg', 50, 1, 5)
+	playsound(src.loc, 'sounds/effects/bang.ogg', 50, 1, 5)
 	show_sound_effect(src.loc)
 
 	// Overwrite turfs.

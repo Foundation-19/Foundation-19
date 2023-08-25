@@ -35,7 +35,7 @@
 	needs_reload = TRUE
 	reload_max = 5
 	reload_time = 2 SECONDS
-	reload_sound = 'sound/effects/scanbeep.ogg'
+	reload_sound = 'sounds/effects/scanbeep.ogg'
 
 /mob/living/simple_animal/hostile/hivebot/drop_loot()
 	if(prob(25))
@@ -102,14 +102,14 @@ Teleporter beacon, and its subtypes
 	smoke.set_up(5, 0, src.loc)
 	smoke.start()
 	visible_message(SPAN_DANGER("\The [src] warps in!"))
-	playsound(src.loc, 'sound/effects/EMPulse.ogg', 25, 1)
+	playsound(src.loc, 'sounds/effects/EMPulse.ogg', 25, 1)
 
 /mob/living/simple_animal/hostile/hivebot/tele/proc/trigger()
 	if(!activated)
 		visible_message("<span class='danger'>\The [src] sends a signal!</span>")
 		activated = TRUE
 		icon_state = "def_radar"
-		playsound(src.loc, 'sound/effects/caution.ogg', 50, 1)
+		playsound(src.loc, 'sounds/effects/caution.ogg', 50, 1)
 		addtimer(CALLBACK(src, .proc/warpbots), spawn_delay)
 	return
 
@@ -121,7 +121,7 @@ Teleporter beacon, and its subtypes
 		bot_amt--
 		var/mob/M = new bot_type(get_turf(src))
 		M.faction = faction
-	playsound(src.loc, 'sound/effects/teleport.ogg', 50, 1)
+	playsound(src.loc, 'sounds/effects/teleport.ogg', 50, 1)
 	qdel(src)
 	return
 
@@ -186,7 +186,7 @@ The megabot
 	ranged_attack_delay = null
 	needs_reload = FALSE
 
-	movement_sound = 'sound/mecha/mechstep.ogg'
+	movement_sound = 'sounds/mecha/mechstep.ogg'
 	movement_shake_radius = 7
 
 	natural_armor = list(
@@ -202,7 +202,7 @@ The megabot
 /obj/item/natural_weapon/circular_saw
 	name = "giant circular saw"
 	attack_verb = list("sawed", "ripped")
-	hitsound = 'sound/weapons/circsawhit.ogg'
+	hitsound = 'sounds/weapons/circsawhit.ogg'
 	force = 30
 	armor_penetration = 30
 	sharp = TRUE
@@ -235,14 +235,14 @@ The megabot
 	set_AI_busy(TRUE)
 	var/turf/T = get_turf(A)
 	visible_message(SPAN_MFAUNA("\The [src] raises a giant laser cannon, aiming it at \the [A]!"))
-	playsound(src, 'sound/weapons/marauder.ogg', 50, 1)
+	playsound(src, 'sounds/weapons/marauder.ogg', 50, 1)
 	face_atom(A)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc, dir, src)
 	animate(D, alpha = 0, color = "#ff0000", transform = matrix()*2, time = 5)
 	addtimer(CALLBACK(src, .proc/fire_gigabeam, T), 3 SECONDS)
 
 /mob/living/simple_animal/hostile/hivebot/mega/proc/fire_gigabeam(turf/T)
-	playsound(src, 'sound/weapons/lasercannonfire.ogg', 150, 1, 4)
+	playsound(src, 'sounds/weapons/lasercannonfire.ogg', 150, 1, 4)
 	var/obj/item/projectile/P = new gigabeam_type(src.loc)
 	if(istype(P))
 		var/selected_zone = pick(BP_ALL_LIMBS)
@@ -280,16 +280,16 @@ The megabot
 			projectiletype = null
 			num_shots = 0
 			visible_message(SPAN_MFAUNA("\The [src]'s circular saw spins up!"))
-			playsound(src, 'sound/mecha/mechdrill.ogg', 50, 1)
+			playsound(src, 'sounds/mecha/mechdrill.ogg', 50, 1)
 		if(ATTACK_MODE_LASER)
 			attack_mode = ATTACK_MODE_LASER
 			ranged = TRUE
-			projectilesound = 'sound/weapons/Laser.ogg'
+			projectilesound = 'sounds/weapons/Laser.ogg'
 			projectiletype = /obj/item/projectile/beam/smalllaser
 			num_shots = 20
 			fire_desc = "fires a laser"
 			visible_message(SPAN_MFAUNA("\The [src] raises secondary laser cannon!"))
-			playsound(src, 'sound/mecha/hydraulic.ogg', 50, 1)
+			playsound(src, 'sounds/mecha/hydraulic.ogg', 50, 1)
 
 	update_icon()
 
@@ -300,7 +300,7 @@ The megabot
 	var/datum/extension/armor/toggle/armor = get_extension(src, /datum/extension/armor)
 	if(armor)
 		armor.toggle(FALSE)
-	playsound(src, 'sound/mecha/lowpower.ogg', 75, 1)
+	playsound(src, 'sounds/mecha/lowpower.ogg', 75, 1)
 	update_icon()
 	addtimer(CALLBACK(src, .proc/reactivate), 4 SECONDS)
 
@@ -311,7 +311,7 @@ The megabot
 	var/datum/extension/armor/toggle/armor = get_extension(src, /datum/extension/armor)
 	if(armor)
 		armor.toggle(TRUE)
-	playsound(src, 'sound/mecha/powerup.ogg', 75, 1)
+	playsound(src, 'sounds/mecha/powerup.ogg', 75, 1)
 	update_icon()
 
 /mob/living/simple_animal/hostile/hivebot/mega/shoot_target(target_mob)

@@ -37,7 +37,7 @@
 				else
 					A.ex_act(1)
 
-	playsound(start, 'sound/machines/disperser_fire.ogg', 200, 1, 4, ignore_pressure = TRUE) // Big loud sound
+	playsound(start, 'sounds/machines/disperser_fire.ogg', 200, 1, 4, ignore_pressure = TRUE) // Big loud sound
 	var/list/relevant_z = GetConnectedZlevels(start.z)
 	for(var/mob/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
@@ -45,7 +45,7 @@
 			continue
 		shake_camera(M, 25)
 		if(M.can_hear())
-			sound_to(M, sound('sound/effects/explosionfar.ogg', volume=10))
+			sound_to(M, sound('sounds/effects/explosionfar.ogg', volume=10))
 		if(M.can_be_floored())
 			var/shouldstumble = FALSE
 			var/sincelastmove = world.time - M.l_move_time

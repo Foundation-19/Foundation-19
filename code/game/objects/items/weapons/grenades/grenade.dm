@@ -12,7 +12,7 @@
 	var/active = 0
 	var/det_time = 50
 	var/fail_det_time = 5 // If you are clumsy and fail, you get this time.
-	var/arm_sound = 'sound/weapons/armbomb.ogg'
+	var/arm_sound = 'sounds/weapons/armbomb.ogg'
 
 /obj/item/grenade/proc/clown_check(mob/living/user)
 	if((MUTATION_CLUMSY in user.mutations) && prob(50))

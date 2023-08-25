@@ -251,8 +251,8 @@ note dizziness decrements automatically in the mob's Life() proc.
 	if(!T)
 		return
 
-	playsound(T, 'sound/effects/phasein.ogg', 25, 1)
-	playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
+	playsound(T, 'sounds/effects/phasein.ogg', 25, 1)
+	playsound(T, 'sounds/effects/sparks2.ogg', 50, 1)
 	anim(src,'icons/mob/mob.dmi',,"phasein",,dir)
 
 /mob/proc/phase_out(turf/T)

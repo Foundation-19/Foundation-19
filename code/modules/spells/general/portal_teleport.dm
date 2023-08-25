@@ -15,7 +15,7 @@
 
 	var/list/select_areas = list()
 
-	cast_sound = 'sound/effects/teleport.ogg'
+	cast_sound = 'sounds/effects/teleport.ogg'
 
 	hud_state = "wiz_tele"
 

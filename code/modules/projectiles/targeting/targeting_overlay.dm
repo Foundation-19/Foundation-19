@@ -163,8 +163,8 @@
 	aiming_with = thing
 	aiming_at = target
 	if(istype(aiming_with, /obj/item/gun))
-		sound_to(aiming_at, sound('sound/weapons/TargetOn.ogg'))
-		sound_to(owner, sound('sound/weapons/TargetOn.ogg'))
+		sound_to(aiming_at, sound('sounds/weapons/TargetOn.ogg'))
+		sound_to(owner, sound('sounds/weapons/TargetOn.ogg'))
 
 	forceMove(get_turf(target))
 	START_PROCESSING(SSobj, src)
@@ -212,8 +212,8 @@
 	if(!no_message)
 		owner.visible_message(SPAN_NOTICE("\The [owner] lowers \the [aiming_with]."))
 		if(istype(aiming_with, /obj/item/gun))
-			sound_to(aiming_at, sound('sound/weapons/TargetOff.ogg'))
-			sound_to(owner, sound('sound/weapons/TargetOff.ogg'))
+			sound_to(aiming_at, sound('sounds/weapons/TargetOff.ogg'))
+			sound_to(owner, sound('sounds/weapons/TargetOff.ogg'))
 
 	GLOB.moved_event.unregister(owner, src)
 	if(aiming_at)

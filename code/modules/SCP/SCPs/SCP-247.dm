@@ -21,7 +21,7 @@
 	maxHealth = 300
 	health = 300
 	attacktext = list("bitten")
-	attack_sound = 'sound/weapons/bite.ogg'
+	attack_sound = 'sounds/weapons/bite.ogg'
 
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"

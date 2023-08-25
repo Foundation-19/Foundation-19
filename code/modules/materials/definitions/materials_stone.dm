@@ -7,7 +7,7 @@
 	icon_colour = COLOR_DIAMOND
 	opacity = 0.4
 	shard_type = SHARD_SHARD
-	tableslam_noise = 'sound/effects/Glasshit.ogg'
+	tableslam_noise = 'sounds/effects/Glasshit.ogg'
 	hardness = MATERIAL_VERY_HARD + 20
 	brute_armor = 10
 	burn_armor = 50		// Diamond walls are immune to fire, therefore it makes sense for them to be almost undamageable by burn damage type.

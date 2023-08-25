@@ -35,7 +35,7 @@
 		SPAN_WARNING("There is a loud crack and the smell of ozone as you touch \the [src]."),
 		SPAN_WARNING("You hear a loud electric crack, and smell ozone.")
 	)
-	playsound(loc, 'sound/effects/snap.ogg', 50, TRUE)
+	playsound(loc, 'sounds/effects/snap.ogg', 50, TRUE)
 	if (power_cell)
 		power_cell.charge = power_cell.maxcharge
 		to_chat(user, SPAN_NOTICE("<b>Your [power_cell.name] has been charged to capacity.</b>"))

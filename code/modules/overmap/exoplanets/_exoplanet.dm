@@ -339,12 +339,12 @@ GLOBAL_VAR_INIT(number_of_planetoids, 0)
 /area/exoplanet
 	name = "\improper Planetary surface"
 	ambience = list(
-		'sound/effects/wind/wind_2_1.ogg',
-		'sound/effects/wind/wind_2_2.ogg',
-		'sound/effects/wind/wind_3_1.ogg',
-		'sound/effects/wind/wind_4_1.ogg',
-		'sound/effects/wind/wind_4_2.ogg',
-		'sound/effects/wind/wind_5_1.ogg'
+		'sounds/effects/wind/wind_2_1.ogg',
+		'sounds/effects/wind/wind_2_2.ogg',
+		'sounds/effects/wind/wind_3_1.ogg',
+		'sounds/effects/wind/wind_4_1.ogg',
+		'sounds/effects/wind/wind_4_2.ogg',
+		'sounds/effects/wind/wind_5_1.ogg'
 	)
 	always_unpowered = TRUE
 	area_flags = AREA_FLAG_EXTERNAL

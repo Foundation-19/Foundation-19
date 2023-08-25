@@ -70,7 +70,7 @@
 			to_chat(user, SPAN_WARNING("Shut \the [src] off first!"))
 			return
 		anchored = !anchored
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 		if(anchored)
 			user.visible_message("\The [user] secures \the [src] to the floor.")
 		else

@@ -119,7 +119,7 @@ var/global/list/stool_cache = list() //haha stool
 
 /obj/item/stool/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		dismantle()
 		qdel(src)
 	else if(istype(W,/obj/item/stack))
@@ -152,7 +152,7 @@ var/global/list/stool_cache = list() //haha stool
 			to_chat(user, "\The [src] has no padding to remove.")
 			return
 		to_chat(user, "You remove the padding from \the [src].")
-		playsound(src, 'sound/items/Wirecutter.ogg', 100, 1)
+		playsound(src, 'sounds/items/Wirecutter.ogg', 100, 1)
 		remove_padding()
 	else
 		..()

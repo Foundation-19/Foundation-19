@@ -165,7 +165,7 @@
 		set_status(0)
 		user.do_attack_animation(src)
 		visible_message(SPAN_WARNING("\The [user] slashes at [src]!"))
-		playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
+		playsound(src.loc, 'sounds/weapons/slash.ogg', 100, 1)
 		add_hiddenprint(user)
 		destroy()
 		return TRUE
@@ -180,7 +180,7 @@
 		panel_open = !panel_open
 		user.visible_message(SPAN_WARNING("[user] screws the camera's panel [panel_open ? "open" : "closed"]!"),
 		SPAN_NOTICE("You screw the camera's panel [panel_open ? "open" : "closed"]."))
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 
 	else if((isWirecutter(W) || isMultitool(W)) && panel_open)
 		return wires.Interact(user)
@@ -248,7 +248,7 @@
 			visible_message(SPAN_NOTICE(" [user] has deactivated [src]!"))
 		else
 			visible_message(SPAN_NOTICE(" [src] clicks and shuts down. "))
-		playsound(src.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		icon_state = "[initial(icon_state)]1"
 		add_hiddenprint(user)
 	else
@@ -256,7 +256,7 @@
 			visible_message(SPAN_NOTICE(" [user] has reactivated [src]!"))
 		else
 			visible_message(SPAN_NOTICE(" [src] clicks and reactivates itself. "))
-		playsound(src.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		icon_state = initial(icon_state)
 		add_hiddenprint(user)
 
@@ -382,10 +382,10 @@
 
 	if(WT.remove_fuel(0, user))
 		to_chat(user, SPAN_NOTICE("You start to weld \the [src].."))
-		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 		busy = 1
 		if(do_after(user, 100, src) && WT.isOn())
-			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 			busy = 0
 			return 1
 

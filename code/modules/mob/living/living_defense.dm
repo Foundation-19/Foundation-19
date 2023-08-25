@@ -139,7 +139,7 @@
 
 	if(isliving(AM))
 		var/mob/living/M = AM
-		playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+		playsound(loc, 'sounds/weapons/pierce.ogg', 25, 1, -1)
 		if(skill_fail_prob(SKILL_COMBAT, 75))
 			Weaken(rand(3,5))
 		if(M.skill_fail_prob(SKILL_HAULING, 100))
@@ -206,7 +206,7 @@
 //This is called when the mob is thrown into a dense turf
 /mob/living/proc/turf_collision(turf/T, speed)
 	visible_message(SPAN_DANGER("[src] slams into \the [T]"))
-	playsound(T, 'sound/effects/bangtaper.ogg', 50, 1, 1)//so it plays sounds on the turf instead, makes for awesome carps to hull collision and such
+	playsound(T, 'sounds/effects/bangtaper.ogg', 50, 1, 1)//so it plays sounds on the turf instead, makes for awesome carps to hull collision and such
 	apply_damage(speed*2, BRUTE)
 
 /mob/living/proc/near_wall(direction,distance=1)
