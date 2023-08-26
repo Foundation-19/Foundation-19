@@ -77,3 +77,5 @@
 				H.make_reagent(10, /datum/reagent/medicine/antidepressant/anomalous_happiness)
 				H.emote("laugh")
 				H.Weaken(6)
+	else
+		return ..()
