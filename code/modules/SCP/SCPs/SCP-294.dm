@@ -32,7 +32,8 @@
 		"zombie" = /datum/reagent/scp008,
 		"death" = /datum/reagent/toxin/cyanide,
 		"joe" = /datum/reagent/blood,
-		"008" = /datum/reagent/scp008
+		"008" = /datum/reagent/scp008,
+		"health" = /datum/reagent/scp500
 	)
 /obj/machinery/scp294/Initialize()
 	. = ..()
@@ -42,6 +43,39 @@
 		EUCLID, //Obj Class
 		"294", //Numerical Designation
 	)
+//Mechanics
+
+///Cycles through all reagents datums and picks out ones that contain the chemical we are looking for
+/obj/machinery/scp294/proc/find_reagents_to_fill_from(input_path)
+	var/list/datum/reagents/reagents_to_fill_from = list()
+	if(!ispath(input_path))
+		return FALSE
+	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
+		var/amount_contained = reagent_container.get_reagent_amount(input_path)
+		if(!amount_contained)
+			continue
+		LAZYADD(reagents_to_fill_from, reagent_container)
+	return reagents_to_fill_from
+
+///Adds reagent we want to passed cup from list made in find_reagents_to_fill_from
+/obj/machinery/scp294/proc/add_reagent_to_cup(input_path, obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D, reagents_to_fill_from)
+	var/amount_need_filled = D.volume
+	if(!ispath(input_path) || !istype(D) || !islist(reagents_to_fill_from))
+		return
+	for(var/datum/reagents/reagent_container in reagents_to_fill_from)
+		var/amount_contained = reagent_container.get_reagent_amount(input_path)
+
+		amount_contained = Clamp(amount_contained, 0, amount_need_filled)
+		reagent_container.trans_to_obj(D, amount_contained)
+		amount_need_filled -= amount_contained
+
+		if(amount_need_filled <= 0)
+			break
+
+	D.reagents.update_total()
+	D.on_reagent_change()
+
+//Overrides
 
 /obj/machinery/scp294/attack_hand(mob/user)
 	if(user.a_intent != I_HELP)
@@ -101,33 +135,3 @@
 	spawn(3 SECONDS)
 		add_reagent_to_cup(chosen_reagent, D, reagents_to_fill_from)
 		D.anchored = FALSE
-
-///Cycles through all reagents datums and picks out ones that contain the chemical we are looking for
-/obj/machinery/scp294/proc/find_reagents_to_fill_from(input_path)
-	var/list/datum/reagents/reagents_to_fill_from = list()
-	if(!ispath(input_path))
-		return FALSE
-	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
-		var/amount_contained = reagent_container.get_reagent_amount(input_path)
-		if(!amount_contained)
-			continue
-		LAZYADD(reagents_to_fill_from, reagent_container)
-	return reagents_to_fill_from
-
-///Adds reagent we want to passed cup from list made in find_reagents_to_fill_from
-/obj/machinery/scp294/proc/add_reagent_to_cup(input_path, obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D, reagents_to_fill_from)
-	var/amount_need_filled = D.volume
-	if(!ispath(input_path) || !istype(D) || !islist(reagents_to_fill_from))
-		return
-	for(var/datum/reagents/reagent_container in reagents_to_fill_from)
-		var/amount_contained = reagent_container.get_reagent_amount(input_path)
-
-		amount_contained = Clamp(amount_contained, 0, amount_need_filled)
-		reagent_container.trans_to_obj(D, amount_contained)
-		amount_need_filled -= amount_contained
-
-		if(amount_need_filled <= 0)
-			break
-
-	D.reagents.update_total()
-	D.on_reagent_change()
