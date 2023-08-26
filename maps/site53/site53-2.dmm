@@ -27264,7 +27264,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/brownline)
 "jgH" = (
-/obj/structure/scp_216,
+/obj/structure/scp216,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
