@@ -27,6 +27,8 @@
 	var/defecation_cooldown_time = 45 SECONDS
 	/// What kind of objects/effects we spawn on defecation. Also used when checking the area
 	var/list/defecation_types = list(/obj/effect/decal/cleanable/blood/gibs/red, /obj/effect/decal/cleanable/vomit, /obj/effect/decal/cleanable/mucus)
+	/// How much defecation we need to breach
+	var/defication_max = 60
 
 	//AI config
 
@@ -204,6 +206,12 @@
 		return FALSE
 	return TRUE
 
+/mob/living/scp173/get_status_tab_items()
+	. = ..()
+
+	if(get_area(src) == spawn_area)
+		. += "Estimated time until breach: [max(Round(((defication_max - CheckFeces()) * defecation_cooldown_time) / (60 SECONDS)), 0)] minutes."
+
 /mob/living/scp173/proc/IsBeingWatched()
 	// Same as before, cage needs to be used as reference rather than 173
 	var/atom/A = src
@@ -281,7 +289,7 @@
 		var/obj/effect/new_f = new feces(loc)
 		new_f.update_icon()
 	// Breach check
-	if(feces_amount >= 60) // Breach, gonna take ~45 minutes
+	if(feces_amount >= defication_max) // Breach, gonna take ~45 minutes
 		if(breach_cooldown > world.time)
 			return
 		breach_cooldown = world.time + 15 MINUTES
