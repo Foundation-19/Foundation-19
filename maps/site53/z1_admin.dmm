@@ -17,6 +17,12 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
+"ap" = (
+/obj/machinery/igniter{
+	id_tag = "GOC"
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "ar" = (
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 1
@@ -227,6 +233,13 @@
 	},
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
+"ct" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/phoron,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "cu" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/shutters{
@@ -578,6 +591,10 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/lhcz/scp1102entrance)
+"fa" = (
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "ff" = (
 /turf/unsimulated/floor/scp1102,
 /area/site53/lhcz/scp1102entrance)
@@ -674,6 +691,9 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/lhcz/scp1102entrance)
+"fv" = (
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "fw" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/lino,
@@ -2806,6 +2826,12 @@
 	name = "Sleeping Quarters"
 	},
 /area/centcom)
+"os" = (
+/obj/machinery/door/airlock{
+	name = "GOC Burn Chamber"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "ou" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -3394,6 +3420,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/goc1)
+"rr" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "rv" = (
 /obj/structure/bed,
 /turf/unsimulated/floor{
@@ -3884,6 +3914,9 @@
 /obj/structure/flora/pottedplant/unusual,
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
+"tu" = (
+/turf/unsimulated/mineral,
+/area/space)
 "ty" = (
 /obj/structure/table/standard,
 /obj/item/implantcase/death_alarm,
@@ -4481,6 +4514,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"uw" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "uA" = (
 /obj/effect/landmark{
 	name = "Commando"
@@ -4638,6 +4677,10 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"va" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "ve" = (
 /turf/unsimulated/wall{
 	desc = "That looks like it doesn't open easily.";
@@ -6400,6 +6443,13 @@
 /obj/item/clothing/suit/surgicalapron,
 /turf/unsimulated/floor/tile,
 /area/centcom)
+"Ew" = (
+/obj/machinery/button/ignition{
+	dir = 4;
+	id_tag = "GOC"
+	},
+/turf/simulated/wall/titanium,
+/area/centcom/goc)
 "ED" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
@@ -7011,6 +7061,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Je" = (
+/obj/machinery/door/airlock{
+	name = "GOC Burn Chamber"
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "Jg" = (
 /obj/effect/floor_decal/corner/research/bordercorner{
 	dir = 1
@@ -7162,6 +7218,12 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Kq" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "Ks" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -7170,6 +7232,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"KD" = (
+/obj/machinery/atmospherics/binary/pump/high_power/buildable{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "KF" = (
 /obj/machinery/vending/medical{
 	dir = 4;
@@ -8201,6 +8269,11 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Qy" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "Qz" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -8319,6 +8392,12 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
+"QK" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/fancy/cigarettes/professionals,
+/obj/item/flame/lighter/cyan,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "QS" = (
 /obj/machinery/organ_printer/flesh/mapped{
 	max_stored_matter = 9000;
@@ -8504,6 +8583,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Sn" = (
+/obj/item/pipe/injector{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "Sp" = (
 /obj/effect/floor_decal/corner/research/border,
 /turf/unsimulated/floor{
@@ -8533,6 +8618,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"SH" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/belt/utility/atmostech,
+/obj/item/storage/belt/utility/atmostech,
+/obj/item/storage/belt/utility/atmostech,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "SN" = (
 /obj/structure/closet/secure_closet/guard/ntf,
 /obj/item/material/knife/combat,
@@ -8543,6 +8635,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"SU" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "SZ" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
@@ -8732,6 +8831,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Tu" = (
+/obj/machinery/igniter{
+	id_tag = "GOC"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "TB" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	dir = 8
@@ -8760,6 +8865,10 @@
 "TQ" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/chaos)
+"TR" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "TS" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epislon-11 Armory";
@@ -8893,6 +9002,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/goc1)
+"Vi" = (
+/turf/simulated/wall/r_wall,
+/area/centcom/goc)
 "Vo" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/unsimulated/floor{
@@ -28743,7 +28855,7 @@ eL
 lI
 lI
 lI
-lI
+os
 lI
 lI
 lI
@@ -28944,9 +29056,9 @@ as
 eL
 eL
 eL
-eL
-eL
-eL
+lI
+kT
+lI
 eL
 lI
 lI
@@ -29143,17 +29255,17 @@ as
 as
 as
 as
-as
-as
-as
-as
-as
-as
-as
-as
-as
-as
-as
+tu
+tu
+tu
+lI
+kT
+lI
+tu
+tu
+tu
+tu
+tu
 as
 as
 as
@@ -29343,22 +29455,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+lI
+lI
+lI
+os
+Ew
+Vi
+Vi
+Vi
+Vi
+Vi
+Vi
+tu
+as
 ab
 ab
 ab
@@ -29545,22 +29657,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+fa
+kT
+kT
+Tu
+kT
+TR
+ap
+fv
+fv
+fv
+Vi
+tu
+as
 ab
 ab
 ab
@@ -29747,22 +29859,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+va
+kT
+kT
+kT
+kT
+Je
+fv
+fv
+fv
+fv
+Vi
+tu
+as
 ab
 ab
 ab
@@ -29949,22 +30061,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+SH
+kT
+Kq
+uw
+rr
+Qy
+Sn
+fv
+fv
+fv
+Vi
+tu
+as
 ab
 ab
 ab
@@ -30151,22 +30263,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+QK
+kT
+KD
+KD
+kT
+TR
+fv
+fv
+fv
+fv
+Vi
+tu
+as
 ab
 ab
 ab
@@ -30353,22 +30465,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+va
+kT
+SU
+ct
+kT
+TR
+fv
+fv
+fv
+fv
+Vi
+tu
+as
 ab
 ab
 ab
@@ -30555,22 +30667,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+kT
+kT
+kT
+kT
+kT
+TR
+fv
+fv
+fv
+fv
+Vi
+tu
+as
 ab
 ab
 ab
@@ -30757,22 +30869,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+lI
+lI
+lI
+lI
+lI
+lI
+Vi
+Vi
+Vi
+Vi
+Vi
+Vi
+tu
+as
 ab
 ab
 ab
@@ -30959,22 +31071,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+as
 ab
 ab
 ab
@@ -31161,22 +31273,22 @@ as
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
 ab
 ab
 ab
