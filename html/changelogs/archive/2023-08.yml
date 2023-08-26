@@ -87,3 +87,7 @@
   - tweak: 2427-3 higher hp loss from hunger. (0.01 -> 0.035)
   - tweak: 2427-3 HP and hit chance reduced & total damage output reduced (Fixes some
       dodge interactions + General nerf)
+2023-08-26:
+  TheDarkElites:
+  - admin: station blueprints can only be used by admins now.
+  - bugfix: 'fix #1289'
