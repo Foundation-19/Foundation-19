@@ -25872,7 +25872,7 @@
 /turf/simulated/floor,
 /area/site53/ulcz/scp2427_3)
 "hGY" = (
-/obj/machinery/scp263{
+/obj/scp263{
 	pixel_x = 1
 	},
 /turf/simulated/floor/tiled/monotile,

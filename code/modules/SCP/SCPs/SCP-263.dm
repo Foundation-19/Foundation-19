@@ -4,7 +4,7 @@
 #define STATE_ASH				(1<<3)
 #define STATE_CASH				(1<<4)
 
-/obj/machinery/scp263
+/obj/scp263
 	name = "SCP-263"
 	desc = "An old black and white television, but you can't quite tell which model it is. The logo THOMSOM appears at the bottom."
 	icon = 'icons/scp/scp-263.dmi'
@@ -20,11 +20,17 @@
 	var/list/questions_and_answers = list(
 		"What SCP has the consistency of peanut butter?" = list("999","Tickle Monster"),
 		"What SCP can only move when not being looked at?" = list("173","Statue","Peanut"),
-		"What SCP should you never look at?" = list("096","Shy Guy"),
-		"What SCP is the cure?" = list("049", "Plague Doctor", "500"),
+		"What SCP should you never look at?" = list("96","Shy Guy", "151", "painting"),
+		"What SCP is the cure?" = list("49", "Plague Doctor", "500"),
 		"What is the oldest SCP on site?" = list("173", "Statue", "Peanut"),
 		"Where can you find SCP-151?" = list("LCZ", "Light Containment"),
-		"Which SCP can phase through walls?" = list("343", "God", "106", "Old Man")
+		"Which SCP can phase through walls?" = list("343", "God", "106", "Old Man"),
+		"What SCP is a fan of the dark?" = list("106", "Old Man", "280", "Eyes"),
+		"What SCP can get really loud?" = list("66", "ball of yarn"),
+		"What SCP can become your friend?" = list("131", "eyepod"),
+		"Where can you find SCP-096?" = list("HCZ", "Heavy containment"),
+		"What SCP can you climb into?" = list("216", "Safe", "1102", "briefcase"),
+		"What SCP is a bat?" = list("2398")
 	)
 	///Possible rewards (weighted list)
 	var/list/rewards = list(
@@ -33,7 +39,9 @@
 		/obj/item/spacecash/bundle/c20 = 3,
 		/obj/item/spacecash/bundle/c50 = 2,
 		/obj/item/spacecash/bundle/c100 = 2,
-		/obj/item/spacecash/bundle/c1000 = 1
+		/obj/item/spacecash/bundle/c1000 = 1,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/towel/fleece = 1
 	)
 
 	// Mechanics
@@ -62,7 +70,7 @@
 
 	universal_speak = TRUE
 
-/obj/machinery/scp263/Initialize()
+/obj/scp263/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
@@ -74,14 +82,14 @@
 	current_scp263_1 = new /mob/living/carbon/scp263_1(src)
 	questions_and_answers_copy = questions_and_answers.Copy()
 
-/obj/machinery/scp263/Destroy()
+/obj/scp263/Destroy()
 	. = ..()
 	contestant = null
 	qdel(current_scp263_1)
 
 /mob/living/carbon/scp263_1/Initialize()
 	. = ..()
-	if(!istype(loc, /obj/machinery/scp263))
+	if(!istype(loc, /obj/scp263))
 		log_and_message_staff("Instance of SCP-263-1 spawned outside of SCP-263! Queing for deletion!", location = get_turf(src))
 		qdel(src)
 		return
@@ -95,7 +103,7 @@
 
 // Mechanics
 
-/obj/machinery/scp263/proc/cheated(datum/source, mob/speaker)
+/obj/scp263/proc/cheated(datum/source, mob/speaker)
 	if((speaker && ((speaker == current_scp263_1) || (speaker == contestant))) || has_cheated)
 		return
 
@@ -109,14 +117,16 @@
 	spawn(10 SECONDS)
 		current_scp263_1.say(pick("Truly the ethics of the modern generation have gone downhill", "Guess [contestant.client.p_their()] ethics werent as good as we thought", "A shame they were so morally bankrupt."))
 		contestant.dust()
-		spawn(5 SECONDS)
-			reset()
 
-/obj/machinery/scp263/proc/check_viewer(datum/source)
+		reset_target()
+		spawn(5 SECONDS)
+			reset_state()
+
+/obj/scp263/proc/check_viewer(datum/source)
 	if(!(contestant in viewers(world.view, src)))
 		cheated()
 
-/obj/machinery/scp263/proc/add_contestant(mob/living/carbon/human/new_contestant)
+/obj/scp263/proc/add_contestant(mob/living/carbon/human/new_contestant)
 	if(contestant || !istype(new_contestant))
 		return
 	contestant = new_contestant
@@ -124,7 +134,16 @@
 	RegisterSignal(contestant, COMSIG_MOB_HEARD_WHISPER, .proc/cheated)
 	RegisterSignal(contestant, COMSIG_MOVED, .proc/check_viewer)
 
-/obj/machinery/scp263/proc/reset()
+/obj/scp263/proc/reset_target()
+	if(!contestant)
+		return
+
+	UnregisterSignal(contestant, COMSIG_MOB_HEARD_SPEECH)
+	UnregisterSignal(contestant, COMSIG_MOB_HEARD_WHISPER)
+	UnregisterSignal(contestant, COMSIG_MOVED)
+	contestant = null
+
+/obj/scp263/proc/reset_state()
 	current_question = null
 	question_count = 0
 
@@ -137,15 +156,8 @@
 
 	state = STATE_OFF
 	update_icon()
-	if(!contestant)
-		return
 
-	UnregisterSignal(contestant, COMSIG_MOB_HEARD_SPEECH)
-	UnregisterSignal(contestant, COMSIG_MOB_HEARD_WHISPER)
-	UnregisterSignal(contestant, COMSIG_MOVED)
-	contestant = null
-
-/obj/machinery/scp263/proc/ask_question()
+/obj/scp263/proc/ask_question()
 	question_count++
 
 	current_question = pick_n_take(questions_and_answers_copy)
@@ -156,7 +168,7 @@
 
 	question_callback_fail = addtimer(CALLBACK(src, .proc/question_fail, TRUE), 45 SECONDS, TIMER_STOPPABLE)
 
-/obj/machinery/scp263/proc/question_succeed()
+/obj/scp263/proc/question_succeed()
 	state = STATE_IDLE
 	update_icon()
 	if(question_callback_fail)
@@ -176,10 +188,11 @@
 		var/obj/reward = new reward_path(get_turf(contestant))
 		contestant.put_in_active_hand(reward) ? reward.visible_message(SPAN_NOTICE("[reward] materializes right into your hand!")) : reward.visible_message(SPAN_NOTICE("[reward] materializes under you!"))
 
+		reset_target()
 		spawn(5 SECONDS)
-			reset()
+			reset_state()
 
-/obj/machinery/scp263/proc/question_fail(is_timeout = FALSE)
+/obj/scp263/proc/question_fail(is_timeout = FALSE)
 	state = STATE_ASH
 	update_icon()
 	deltimer(question_callback_fail)
@@ -192,12 +205,14 @@
 		update_icon()
 		current_scp263_1.say("[pick("Thats a true pity, I really liked that one.", "A shame, I thought they would fare better.", "Their failure is a real pity.")] Lets hope the next contestant can avoid the ash... and get away with the cash!")
 		contestant.dust()
+
+		reset_target()
 		spawn(8 SECONDS)
-			reset()
+			reset_state()
 
 //Overrides
 
-/obj/machinery/scp263/hear_talk(mob/M, text, verb, datum/language/speaking)
+/obj/scp263/hear_talk(mob/M, text, verb, datum/language/speaking)
 	if((state != STATE_AWAITING_ANSWER) || (M != contestant))
 		return
 	for(var/answer in questions_and_answers[current_question])
@@ -206,7 +221,7 @@
 			return
 	question_fail()
 
-/obj/machinery/scp263/attack_hand(mob/living/carbon/human/M)
+/obj/scp263/attack_hand(mob/living/carbon/human/M)
 	if(!istype(M) || M.a_intent != I_HELP || !is_alive())
 		return ..()
 	state = STATE_IDLE
@@ -223,7 +238,7 @@
 		add_contestant(M)
 		ask_question()
 
-/obj/machinery/scp263/update_icon()
+/obj/scp263/update_icon()
 	switch(state)
 		if(STATE_OFF)
 			icon_state = "off"
@@ -237,7 +252,7 @@
 			icon_state = "cash"
 	return ..()
 
-/obj/machinery/scp263/handle_death_change(new_death_state)
+/obj/scp263/handle_death_change(new_death_state)
 	if(new_death_state)
 		playsound(src, SFX_SHATTER, 70, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
