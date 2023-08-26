@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/scp_2427_3
+/mob/living/simple_animal/hostile/scp2427_3
 	name = "mechanical spider"
 	desc = "An amalgamation of exposed wires and robotic parts. It has 4 spider-like legs and a metal mask in place of the 'head'."
 	icon = 'icons/SCP/scp-2427-3.dmi'
@@ -50,7 +50,7 @@
 	var/list/purity_list = list()
 	var/list/impurity_list = list()
 
-/mob/living/simple_animal/hostile/scp_2427_3/Initialize()
+/mob/living/simple_animal/hostile/scp2427_3/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
@@ -85,7 +85,7 @@
 /datum/ai_holder/simple_animal/melee/s2427_3/can_attack(atom/movable/the_target, vision_required = TRUE)
 	if(!..())
 		return FALSE
-	var/mob/living/simple_animal/hostile/scp_2427_3/O = holder
+	var/mob/living/simple_animal/hostile/scp2427_3/O = holder
 	if(the_target in O.purity_list)
 		return FALSE
 	if(ishuman(the_target) && (O.satiety > O.min_satiety) && !(the_target in O.impurity_list))
@@ -96,12 +96,12 @@
 
 //Mechanics
 
-/mob/living/simple_animal/hostile/scp_2427_3/proc/AdjustSatiety(amount)
+/mob/living/simple_animal/hostile/scp2427_3/proc/AdjustSatiety(amount)
 	satiety = max(0, satiety + amount)
 	if(!is_sleeping && satiety >= max_satiety)
 		FallAsleep()
 
-/mob/living/simple_animal/hostile/scp_2427_3/proc/IsEnraged()
+/mob/living/simple_animal/hostile/scp2427_3/proc/IsEnraged()
 	for(var/mob/living/L in dview(7, src))
 		if(L == src)
 			continue
@@ -111,7 +111,7 @@
 			return FALSE
 	return (satiety <= min_satiety)
 
-/mob/living/simple_animal/hostile/scp_2427_3/proc/FallAsleep()
+/mob/living/simple_animal/hostile/scp2427_3/proc/FallAsleep()
 	if(is_sleeping)
 		return
 	wakeup_health = health - 50
@@ -123,7 +123,7 @@
 	is_sleeping = TRUE
 	addtimer(CALLBACK(src, .proc/WakeUp), rand((2 MINUTES), (4 MINUTES)))
 
-/mob/living/simple_animal/hostile/scp_2427_3/proc/WakeUp(attacked = FALSE)
+/mob/living/simple_animal/hostile/scp2427_3/proc/WakeUp(attacked = FALSE)
 	if(!is_sleeping)
 		return
 	revive()
@@ -137,7 +137,7 @@
 	if(icon_state == "sleep") // If somehow we died before WakeUp got called
 		icon_state = null
 
-/mob/living/simple_animal/hostile/scp_2427_3/proc/TimeRespawn()
+/mob/living/simple_animal/hostile/scp2427_3/proc/TimeRespawn()
 	if(stat != DEAD)
 		return
 	playsound(src, 'sounds/mecha/powerup.ogg', 75, FALSE, 4)
@@ -149,7 +149,7 @@
 	sleep(2 SECONDS) // Give em some warning time
 	icon_state = null
 
-/mob/living/simple_animal/hostile/scp_2427_3/proc/CheckPurity(mob/living/L)
+/mob/living/simple_animal/hostile/scp2427_3/proc/CheckPurity(mob/living/L)
 	if(L == src)
 		return
 	if(L.SCP)
@@ -177,7 +177,7 @@
 	playsound(src, 'sounds/machines/synth_no.ogg', 25, TRUE)
 
 // Copied my code from 173, because it works the best
-/mob/living/simple_animal/hostile/scp_2427_3/proc/OpenDoor(obj/machinery/door/A)
+/mob/living/simple_animal/hostile/scp2427_3/proc/OpenDoor(obj/machinery/door/A)
 	if(door_cooldown > world.time)
 		return
 
@@ -233,7 +233,7 @@
 
 //Overrides
 
-/mob/living/simple_animal/hostile/scp_2427_3/Life()
+/mob/living/simple_animal/hostile/scp2427_3/Life()
 	. = ..()
 	if(!.)
 		return
@@ -259,7 +259,7 @@
 	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
 		adjustBruteLoss(maxHealth * 0.01)
 
-/mob/living/simple_animal/hostile/scp_2427_3/get_status_tab_items()
+/mob/living/simple_animal/hostile/scp2427_3/get_status_tab_items()
 	. = ..()
 	if(stat == DEAD)
 		. += "WE ARE REBOOTING."
@@ -273,7 +273,7 @@
 	else
 		. += "Satiety: [round(satiety)]/[max_satiety]"
 
-/mob/living/simple_animal/hostile/scp_2427_3/examinate(atom/A as mob|obj|turf in view())
+/mob/living/simple_animal/hostile/scp2427_3/examinate(atom/A as mob|obj|turf in view())
 	if(UNLINT(..()))
 		return 1
 
@@ -290,24 +290,24 @@
 		playsound(src, 'sounds/machines/synth_yes.ogg', 15, TRUE)
 		return
 
-/mob/living/simple_animal/hostile/scp_2427_3/updatehealth()
+/mob/living/simple_animal/hostile/scp2427_3/updatehealth()
 	. = ..()
 	if(is_sleeping && stat != DEAD && health < wakeup_health)
 		WakeUp(TRUE)
 
-/mob/living/simple_animal/hostile/scp_2427_3/death(gibbed, deathmessage = "falls on the ground, beginning reboot process.", show_dead_message)
+/mob/living/simple_animal/hostile/scp2427_3/death(gibbed, deathmessage = "falls on the ground, beginning reboot process.", show_dead_message)
 	to_chat(src, SPAN_OCCULT("You begin the reboot process. Avoid leaving the body."))
 	playsound(src, 'sounds/mecha/lowpower.ogg', 75, FALSE, 4)
 	addtimer(CALLBACK(src, .proc/TimeRespawn), 5 MINUTES)
 	return ..()
 
-/mob/living/simple_animal/hostile/scp_2427_3/gib()
+/mob/living/simple_animal/hostile/scp2427_3/gib()
 	return FALSE
 
-/mob/living/simple_animal/hostile/scp_2427_3/dust()
+/mob/living/simple_animal/hostile/scp2427_3/dust()
 	return FALSE
 
-/mob/living/simple_animal/hostile/scp_2427_3/UnarmedAttack(atom/A)
+/mob/living/simple_animal/hostile/scp2427_3/UnarmedAttack(atom/A)
 	if(is_sleeping)
 		return
 	if(istype(A, /obj/machinery/door))
@@ -342,46 +342,46 @@
 			return
 	return ..()
 
-/mob/living/simple_animal/hostile/scp_2427_3/say(message)
+/mob/living/simple_animal/hostile/scp2427_3/say(message)
 	if(is_sleeping)
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/scp_2427_3/SelfMove(direction)
+/mob/living/simple_animal/hostile/scp2427_3/SelfMove(direction)
 	resting = FALSE //2427 is forced to rest on dying... So make them not rest the next time they move.
 	if(is_sleeping)
 		return FALSE
 	return ..()
 
 // Similar checks for the AI
-/mob/living/simple_animal/hostile/scp_2427_3/attack_target(atom/A)
+/mob/living/simple_animal/hostile/scp2427_3/attack_target(atom/A)
 	return UnarmedAttack(A)
 
-/mob/living/simple_animal/hostile/scp_2427_3/IMove(turf/newloc, safety = TRUE)
+/mob/living/simple_animal/hostile/scp2427_3/IMove(turf/newloc, safety = TRUE)
 	if(is_sleeping)
 		return MOVEMENT_ON_COOLDOWN
 	return ..()
 
-/mob/living/simple_animal/hostile/scp_2427_3/movement_delay()
+/mob/living/simple_animal/hostile/scp2427_3/movement_delay()
 	. = ..()
 	. += IsEnraged() ? -2 : 0
 
 // Getting attacked/examined all down here
-/mob/living/simple_animal/hostile/scp_2427_3/examine(mob/living/user)
+/mob/living/simple_animal/hostile/scp2427_3/examine(mob/living/user)
 	. = ..()
 	if(is_sleeping)
 		to_chat(user, SPAN_NOTICE("It is asleep now, but not for long..."))
 	CheckPurity(user)
 
-/mob/living/simple_animal/hostile/scp_2427_3/attack_hand(mob/living/carbon/human/H)
+/mob/living/simple_animal/hostile/scp2427_3/attack_hand(mob/living/carbon/human/H)
 	. = ..()
 	if(H.a_intent == I_HURT)
 		CheckPurity(H)
 
-/mob/living/simple_animal/hostile/scp_2427_3/hit_with_weapon(obj/item/O, mob/living/user, effective_force, hit_zone)
+/mob/living/simple_animal/hostile/scp2427_3/hit_with_weapon(obj/item/O, mob/living/user, effective_force, hit_zone)
 	CheckPurity(user)
 
-/mob/living/simple_animal/hostile/scp_2427_3/bullet_act(obj/item/projectile/Proj)
+/mob/living/simple_animal/hostile/scp2427_3/bullet_act(obj/item/projectile/Proj)
 	. = ..()
 	if(Proj.firer && !Proj.nodamage)
 		CheckPurity(Proj.firer)
