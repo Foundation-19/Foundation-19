@@ -265,7 +265,7 @@
 	item_state = "knife"
 	attack_verb = list("stabbed", "chopped", "cut")
 	applies_material_colour = 1
-//	drawsound = 'sound/items/unholster_knife.ogg'
+//	drawsound = 'sounds/items/unholster_knife.ogg'
 
 /obj/item/gun/projectile/automatic/scp/galil
 	name = "IWI Galil ACE"

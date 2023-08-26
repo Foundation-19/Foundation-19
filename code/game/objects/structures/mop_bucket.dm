@@ -25,4 +25,4 @@
 		else
 			reagents.trans_to_obj(I, 5)
 			to_chat(user, SPAN_NOTICE("You wet \the [I] in \the [src]."))
-			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+			playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)

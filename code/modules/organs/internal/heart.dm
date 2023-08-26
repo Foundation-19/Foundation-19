@@ -6,7 +6,7 @@
 	dead_icon = "heart-off"
 	var/pulse = PULSE_NORM
 	var/heartbeat = 0
-	var/beat_sound = 'sound/effects/singlebeat.ogg'
+	var/beat_sound = 'sounds/effects/singlebeat.ogg'
 	var/tmp/next_blood_squirt = 0
 	damage_reduction = 0.7
 	relative_size = 5
@@ -119,7 +119,7 @@
 
 		if(heartbeat >= (scp3349_induced ? (rate * 2) : rate))	// scp3349 heartbeat is long so we play it half as often to prevent overlap
 			heartbeat = 0
-			sound_to(owner, sound((scp3349_induced ? 'sound/effects/heartbeatpurr.ogg' : beat_sound),0,0,0,50))
+			sound_to(owner, sound((scp3349_induced ? 'sounds/effects/heartbeatpurr.ogg' : beat_sound),0,0,0,50))
 		else
 			heartbeat++
 

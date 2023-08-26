@@ -13,7 +13,7 @@
 			to_chat(A, "<br>")
 
 	if(prob(75))	//Announce most of the time, just not always to give some wiggle room for possible sabotages.
-		command_announcement.Announce(alert, new_sound = sound('sound/misc/interference.ogg', volume=25), zlevels = affecting_z)
+		command_announcement.Announce(alert, new_sound = sound('sounds/misc/interference.ogg', volume=25), zlevels = affecting_z)
 
 
 /datum/event/communications_blackout/start()

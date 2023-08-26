@@ -66,7 +66,7 @@
 				map[current_cell] = 1
 
 /area/exoplanet/volcanic
-	forced_ambience = list('sound/ambience/magma.ogg')
+	forced_ambience = list('sounds/ambience/magma.ogg')
 	base_turf = /turf/simulated/floor/exoplanet/volcanic
 
 /turf/simulated/floor/exoplanet/volcanic

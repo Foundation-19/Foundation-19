@@ -58,7 +58,7 @@
 		force = 3//not so robust now
 		attack_verb = list("hit", "punched")
 
-	playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+	playsound(src.loc, 'sounds/weapons/empty.ogg', 50, 1)
 	add_fingerprint(user)
 	update_icon()
 	update_held_icon()

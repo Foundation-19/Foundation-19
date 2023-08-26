@@ -15,7 +15,7 @@
 
 	action_button_name = "Toggle Flashlight"
 	var/on = FALSE
-	var/activation_sound = 'sound/effects/flashlight.ogg'
+	var/activation_sound = 'sounds/effects/flashlight.ogg'
 	var/flashlight_max_bright = 0.5 //brightness of light when on, must be no greater than 1.
 	var/flashlight_inner_range = 1 //inner range of light when on, can be negative
 	var/flashlight_outer_range = 3 //outer range of light when on, can be negative
@@ -249,9 +249,9 @@
 	action_button_name = null //just pull it manually, neckbeard.
 	var/fuel = 0
 	var/on_damage = 7
-	var/deactivation_sound = 'sound/effects/flare_end.ogg'
+	var/deactivation_sound = 'sounds/effects/flare_end.ogg'
 	var/produce_heat = 1500
-	activation_sound = 'sound/effects/flare_start.ogg'
+	activation_sound = 'sounds/effects/flare_start.ogg'
 	flashlight_flags = FLASHLIGHT_SINGLE_USE
 
 	flashlight_max_bright = 0.8
@@ -329,7 +329,7 @@
 	item_state = "glowstick"
 	randpixel = 12
 	produce_heat = 0
-	activation_sound = 'sound/effects/glowstick.ogg'
+	activation_sound = 'sounds/effects/glowstick.ogg'
 	deactivation_sound = null
 
 	flashlight_max_bright = 0.6

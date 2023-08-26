@@ -125,7 +125,7 @@
 
 /obj/structure/sign/poster/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWirecutter(W))
-		playsound(loc, 'sound/items/Wirecutter.ogg', 100, 1)
+		playsound(loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		if(ruined)
 			to_chat(user, SPAN_NOTICE("You remove the remnants of the poster."))
 			qdel(src)
@@ -146,7 +146,7 @@
 			return
 
 		visible_message(SPAN_WARNING("\The [user] rips \the [src] in a single, decisive motion!") )
-		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/poster_ripped.ogg', 100, 1)
 		ruined = 1
 		icon_state = "poster_ripped"
 		SetName("ripped poster")

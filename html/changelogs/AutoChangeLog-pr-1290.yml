@@ -1,0 +1,5 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - admin: station blueprints can only be used by admins now.
+  - bugfix: 'fix #1289'

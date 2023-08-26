@@ -5,7 +5,7 @@
 	item_icons = null
 	icon_state = "staffofchange"
 	item_state = "staffofchange"
-	fire_sound = 'sound/weapons/emitter.ogg'
+	fire_sound = 'sounds/weapons/emitter.ogg'
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_LARGE
@@ -30,7 +30,7 @@
 		user.visible_message("*fizzle*", SPAN_DANGER("*fizzle*"))
 	else
 		src.visible_message("*fizzle*")
-	playsound(src.loc, 'sound/effects/sparks1.ogg', 100, 1)
+	playsound(src.loc, 'sounds/effects/sparks1.ogg', 100, 1)
 
 /obj/item/gun/energy/staff/animate
 	name = "staff of animation"
