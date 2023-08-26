@@ -8,7 +8,7 @@
 	max_force = 5
 	force_multiplier = 0.8
 	thrown_force_multiplier = 0.3
-	hitsound = 'sound/items/oneding.ogg'
+	hitsound = 'sounds/items/oneding.ogg'
 	default_material = MATERIAL_ALUMINIUM
 
 /obj/item/material/bell/attack_hand(mob/user as mob)
@@ -16,10 +16,10 @@
 		return ..()
 	else if (user.a_intent == I_HURT)
 		user.visible_message(SPAN_WARNING("\The [user] hammers \the [src]!"))
-		playsound(user.loc, 'sound/items/manydings.ogg', 60)
+		playsound(user.loc, 'sounds/items/manydings.ogg', 60)
 	else
 		user.visible_message(SPAN_NOTICE("\The [user] rings \the [src]."))
-		playsound(user.loc, 'sound/items/oneding.ogg', 20)
+		playsound(user.loc, 'sounds/items/oneding.ogg', 20)
 	flick("bell_dingeth", src)
 
 /obj/item/material/bell/apply_hit_effect()

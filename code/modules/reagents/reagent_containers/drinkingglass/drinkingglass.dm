@@ -124,7 +124,7 @@
 				SPAN_WARNING("\The [src] bounces dangerously. Luckily it didn't break."),
 				SPAN_WARNING("You hear the sound of glass hitting something.")
 			)
-		playsound(src.loc, "sound/effects/Glasshit.ogg", 50)
+		playsound(src.loc, "sounds/effects/Glasshit.ogg", 50)
 
 /obj/item/reagent_containers/food/drinks/glass2/proc/can_add_extra(obj/item/glass_extra/GE)
 	if(!("[base_icon]_[GE.glass_addition]left" in icon_states(icon)))
@@ -229,7 +229,7 @@
 			qdel(src)
 			return
 		user.visible_message(SPAN_NOTICE("[user] gently strikes \the [src] with a spoon, calling the room to attention."))
-		playsound(src, "sound/items/wineglass.ogg", 65, 1)
+		playsound(src, "sounds/items/wineglass.ogg", 65, 1)
 	else return ..()
 
 /obj/item/reagent_containers/food/drinks/glass2/ProcessAtomTemperature()

@@ -1,8 +1,0 @@
-author: HaultyAnonie
-delete-after: true
-changes:
-  - code_imp: Changed the chemical 'Space Cleaner' to "Hydroxylsan" that is derived
-      from 'hydroxyl'.
-  - code_imp: Changed the bottle 'Space Cleaner.' named into 'Sanitech spray.'; connotes
-      sanitisation and janitorial tools similar to 'Jani'
-  - bugfix: fixed https://github.com/Foundation-19/Foundation-19/issues/1210

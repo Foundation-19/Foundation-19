@@ -50,7 +50,7 @@
 	update_icon()
 	if (loud)
 		visible_message(SPAN_NOTICE("\The [src] turns on."))
-		playsound(src, 'sound/effects/flashlight.ogg', 50)
+		playsound(src, 'sounds/effects/flashlight.ogg', 50)
 	return TRUE
 
 /// Turns off the floodlight. Doesn't return anything. If loud is defined, it will show a message and play a sound.
@@ -60,7 +60,7 @@
 	update_icon()
 	if (loud)
 		visible_message(SPAN_NOTICE("\The [src] shuts down."))
-		playsound(src, 'sound/effects/flashlight.ogg', 50)
+		playsound(src, 'sounds/effects/flashlight.ogg', 50)
 
 /obj/machinery/floodlight/interface_interact(mob/user)
 	if (!CanInteract(user, DefaultTopicState()))
@@ -70,7 +70,7 @@
 	else
 		if (!turn_on())
 			to_chat(user, SPAN_WARNING("You try to turn on \the [src], but nothing happens."))
-			playsound(loc, 'sound/effects/flashlight.ogg', 50)
+			playsound(loc, 'sounds/effects/flashlight.ogg', 50)
 
 	update_icon()
 	return TRUE

@@ -2,7 +2,7 @@
 	name = "laser"
 	icon_state = "laser"
 	temperature = T0C + 300
-	fire_sound='sound/weapons/Laser.ogg'
+	fire_sound='sounds/weapons/Laser.ogg'
 	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_LASER_MEAT, BULLET_IMPACT_METAL = SOUNDS_LASER_METAL)
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
 	damage = 50
@@ -26,7 +26,7 @@
 	impact_type = /obj/effect/projectile/impact/laser
 
 /obj/item/projectile/beam/practice
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sounds/weapons/Taser.ogg'
 	damage = 0
 	eyeblur = 2
 
@@ -52,7 +52,7 @@
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	fire_sound = 'sounds/weapons/lasercannonfire.ogg'
 	damage = 70
 	armor_penetration = 30
 	distance_falloff = 0.5
@@ -69,7 +69,7 @@
 /obj/item/projectile/beam/xray
 	name = "x-ray beam"
 	icon_state = "xray"
-	fire_sound = 'sound/weapons/laser3.ogg'
+	fire_sound = 'sounds/weapons/laser3.ogg'
 	damage = 45
 	armor_penetration = 30
 	penetration_modifier = 0.8
@@ -97,7 +97,7 @@
 /obj/item/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
-	fire_sound='sound/weapons/pulse.ogg'
+	fire_sound='sounds/weapons/pulse.ogg'
 	damage = 35 //lower damage, but fires in bursts
 	armor_penetration = 25
 	distance_falloff = 1.5
@@ -162,7 +162,7 @@
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
 	icon_state = "emitter"
-	fire_sound = 'sound/weapons/emitter.ogg'
+	fire_sound = 'sounds/weapons/emitter.ogg'
 	damage = 0 // The actual damage is computed in /code/modules/power/singularity/emitter.dm
 
 	muzzle_type = /obj/effect/projectile/muzzle/emitter
@@ -224,7 +224,7 @@
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
 	icon_state = "xray"
-	fire_sound = 'sound/weapons/marauder.ogg'
+	fire_sound = 'sounds/weapons/marauder.ogg'
 	damage = 70
 	armor_penetration = 10
 	stun = 3
@@ -243,7 +243,7 @@
 /obj/item/projectile/beam/stun
 	name = "stun beam"
 	icon_state = "stun"
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sounds/weapons/Taser.ogg'
 	damage_flags = 0
 	sharp = FALSE
 	damage = 1//flavor burn! still not a laser, dmg will be reduce by energy resistance not laser resistances
@@ -285,7 +285,7 @@
 	agony = 0
 	damage = 15
 	damage_type = ELECTROCUTE
-	fire_sound='sound/weapons/pulse.ogg'
+	fire_sound='sounds/weapons/pulse.ogg'
 	distance_falloff = 1.5
 	damage_falloff_list = list(
 		list(3, 0.95),
@@ -314,7 +314,7 @@
 /obj/item/projectile/beam/plasmacutter
 	name = "plasma arc"
 	icon_state = "omnilaser"
-	fire_sound = 'sound/weapons/plasma_cutter.ogg'
+	fire_sound = 'sounds/weapons/plasma_cutter.ogg'
 	damage = 30
 	edge = TRUE
 	damage_type = BURN
@@ -340,7 +340,7 @@
 /obj/item/projectile/beam/confuseray
 	name = "disorientator ray"
 	icon_state = "beam_grass"
-	fire_sound='sound/weapons/confuseray.ogg'
+	fire_sound='sounds/weapons/confuseray.ogg'
 	damage = 2
 	agony = 7
 	sharp = FALSE
@@ -419,7 +419,7 @@
 /obj/item/projectile/beam/incendiary_laser
 	name = "scattered laser blast"
 	icon_state = "beam_incen"
-	fire_sound='sound/weapons/scan.ogg'
+	fire_sound='sounds/weapons/scan.ogg'
 	damage = 30
 	agony = 8
 	eyeblur = 8
@@ -448,7 +448,7 @@
 /obj/item/projectile/beam/gigabeam
 	name = "concentrated energy beam" // Used by mega hivebot
 	icon_state = "emitter"
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	fire_sound = 'sounds/weapons/lasercannonfire.ogg'
 	damage = 35
 	agony = 5
 	eyeblur = 5

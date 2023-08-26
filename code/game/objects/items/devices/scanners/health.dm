@@ -14,7 +14,7 @@
 
 /obj/item/device/scanner/health/scan(atom/A, mob/user)
 	scan_data = medical_scan_action(A, user, src, mode)
-	playsound(src, 'sound/effects/fastbeep.ogg', 20)
+	playsound(src, 'sounds/effects/fastbeep.ogg', 20)
 
 /proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, verbose)
 	if (!user.IsAdvancedToolUser())

@@ -256,6 +256,10 @@
 	if (!amount)
 		return null
 
+	tamount = Floor(tamount)	// sanity check to prevent duping
+	if(tamount <= 0)				// if tamount was rounded to 0 (or below, somehow) just quit here
+		return null
+
 	var/transfer = max(min(tamount, src.amount, initial(max_amount)), 0)
 
 	var/orig_amount = src.amount

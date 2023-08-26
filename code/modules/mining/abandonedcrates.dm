@@ -151,7 +151,7 @@
 		to_chat(user, SPAN_NOTICE("You leave the crate alone."))
 	else if(check_input(input) && locked)
 		to_chat(user, SPAN_NOTICE("The crate unlocks!"))
-		playsound(user, 'sound/machines/lockreset.ogg', 50, 1)
+		playsound(user, 'sounds/machines/lockreset.ogg', 50, 1)
 		..()
 	else
 		visible_message(SPAN_WARNING("A red light on \the [src]'s control panel flashes briefly."))

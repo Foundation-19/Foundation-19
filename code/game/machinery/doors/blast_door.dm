@@ -22,8 +22,8 @@
 	var/icon_state_open_broken = null
 	var/icon_state_closed_broken = null
 
-	var/open_sound = 'sound/machines/blastdoor_open.ogg'
-	var/close_sound = 'sound/machines/blastdoor_close.ogg'
+	var/open_sound = 'sounds/machines/blastdoor_open.ogg'
+	var/close_sound = 'sounds/machines/blastdoor_close.ogg'
 
 	var/open_plane = DEFAULT_PLANE
 	var/closed_plane = OBJ_PLANE
@@ -299,8 +299,8 @@
 	icon_state_open_broken = "shutter_open_broken"
 	icon_state_closed_broken = "shutter_closed_broken"
 
-	open_sound = 'sound/machines/shutters_open.ogg'
-	close_sound = 'sound/machines/shutters_close.ogg'
+	open_sound = 'sounds/machines/shutters_open.ogg'
+	close_sound = 'sounds/machines/shutters_close.ogg'
 	open_plane = OBJ_PLANE
 	plane = OBJ_PLANE
 	min_force = 15

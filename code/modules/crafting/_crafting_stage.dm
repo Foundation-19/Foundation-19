@@ -87,14 +87,14 @@
 
 /decl/crafting_stage/welding/on_progress(mob/user)
 	..()
-	playsound(user.loc, 'sound/items/Welder2.ogg', 100, 1)
+	playsound(user.loc, 'sounds/items/Welder2.ogg', 100, 1)
 
 /decl/crafting_stage/screwdriver
 	consume_completion_trigger = FALSE
 
 /decl/crafting_stage/screwdriver/on_progress(mob/user)
 	..()
-	playsound(user.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+	playsound(user.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 
 /decl/crafting_stage/screwdriver/is_appropriate_tool(obj/item/thing)
 	. = ..() && isScrewdriver(thing)
@@ -104,7 +104,7 @@
 
 /decl/crafting_stage/wirecutter/on_progress(mob/user)
 	..()
-	playsound(user.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+	playsound(user.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 
 /decl/crafting_stage/wirecutter/is_appropriate_tool(obj/item/thing)
 	. = ..() && isWirecutter(thing)
@@ -114,7 +114,7 @@
 
 /decl/crafting_stage/crowbar/on_progress(mob/user)
 	..()
-	playsound(user.loc, 'sound/items/Crowbar.ogg', 100, 1)
+	playsound(user.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 
 /decl/crafting_stage/crowbar/is_appropriate_tool(obj/item/thing)
 	. = ..() && isCrowbar(thing)

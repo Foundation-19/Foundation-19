@@ -7,7 +7,7 @@
 
 	name = "automatic shutoff valve"
 	desc = "An automatic valve with control circuitry and pipe integrity sensor, capable of automatically isolating damaged segments of the pipe network."
-	clicksound = 'sound/machines/buttonbeep.ogg'
+	clicksound = 'sounds/machines/buttonbeep.ogg'
 	clickvol = 20
 	var/close_on_leaks = TRUE	// If false it will be always open
 	var/shutoff_state = 0

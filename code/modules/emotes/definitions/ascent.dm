@@ -1,17 +1,17 @@
 /decl/emote/audible/ascent_purr
 	key = "purr"
 	emote_message_3p = "purrs."
-	emote_sound = 'sound/voice/ascent1.ogg'
+	emote_sound = 'sounds/voice/ascent1.ogg'
 
 /decl/emote/audible/ascent_hiss
 	key ="hiss"
 	emote_message_3p = "hisses."
-	emote_sound = 'sound/effects/razorweb.ogg'
+	emote_sound = 'sounds/effects/razorweb.ogg'
 
 /decl/emote/audible/ascent_snarl
 	key = "snarl"
 	emote_message_3p = "snarls."
-	emote_sound = 'sound/effects/razorweb_hiss.ogg'
+	emote_sound = 'sounds/effects/razorweb_hiss.ogg'
 
 /decl/emote/visible/ascent_flicker
 	key = "flicker"
