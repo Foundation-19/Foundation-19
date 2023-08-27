@@ -232,8 +232,8 @@
 		"Research Officer",
 		"BlackOps Commander",
 		"Supreme Commander",
-		"Emergency Response Team",
-		"Emergency Response Team Leader")
+		"Mobile Task Force",
+		"Mobile Task Force Leader")
 
 /mob/observer/ghost
 	var/static/obj/item/card/id/all_access/ghost_all_access
