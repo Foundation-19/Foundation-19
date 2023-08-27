@@ -458,6 +458,12 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/centcom)
+"ei" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "ek" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/centcom/chaos)
@@ -593,6 +599,9 @@
 /area/site53/lhcz/scp1102entrance)
 "fa" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "ff" = (
@@ -5189,6 +5198,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"wb" = (
+/obj/machinery/light/small/emergency{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "wk" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
@@ -5566,6 +5582,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"yc" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "ye" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner,
 /turf/unsimulated/floor{
@@ -6075,6 +6098,10 @@
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
+"Aw" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "Ay" = (
 /obj/structure/table/rack,
 /obj/item/storage/belt/medical,
@@ -6135,6 +6162,10 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Bh" = (
+/obj/machinery/light/small/emergency,
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "Bo" = (
 /obj/structure/table/rack,
 /obj/item/storage/box/ammo/shotgunshells,
@@ -7935,6 +7966,13 @@
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
+"Oa" = (
+/obj/machinery/light/small/emergency{
+	dir = 8;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/centcom/goc)
 "Ob" = (
 /obj/item/rig/ert/engineer,
 /obj/structure/table/rack,
@@ -9178,6 +9216,12 @@
 /obj/structure/bed/chair,
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
+"WP" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "WR" = (
 /obj/structure/iv_drip,
 /turf/unsimulated/floor/techfloor,
@@ -29664,10 +29708,10 @@ fa
 kT
 kT
 Tu
-kT
+ei
 TR
 ap
-fv
+Oa
 fv
 fv
 Vi
@@ -30073,7 +30117,7 @@ Qy
 Sn
 fv
 fv
-fv
+Bh
 Vi
 tu
 as
@@ -30472,7 +30516,7 @@ va
 kT
 SU
 ct
-kT
+Aw
 TR
 fv
 fv
@@ -30670,14 +30714,14 @@ ab
 as
 tu
 lI
+WP
 kT
 kT
 kT
-kT
-kT
+yc
 TR
 fv
-fv
+wb
 fv
 fv
 Vi
