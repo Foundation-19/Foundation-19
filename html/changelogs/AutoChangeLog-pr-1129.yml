@@ -1,5 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - balance: Requests for Mobile Task Force squads are no longer randomly rejected.
-  - bugfix: References to ERTs replaced with references to MTF squads.

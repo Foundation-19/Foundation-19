@@ -91,3 +91,7 @@
   TheDarkElites:
   - admin: station blueprints can only be used by admins now.
   - bugfix: 'fix #1289'
+2023-08-28:
+  cheesePizza2:
+  - balance: Requests for Mobile Task Force squads are no longer randomly rejected.
+  - bugfix: References to ERTs replaced with references to MTF squads.
