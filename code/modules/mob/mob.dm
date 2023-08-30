@@ -1018,9 +1018,9 @@
 	set_face_dir()
 
 	if(!facing_dir)
-		to_chat(usr, "You are now not facing anything.")
+		balloon_alert(usr, "not facing")
 	else
-		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
+		balloon_alert(usr, "facing [dir2text(facing_dir)]")
 
 /mob/proc/set_face_dir(newdir)
 	if(!isnull(facing_dir) && newdir == facing_dir)
