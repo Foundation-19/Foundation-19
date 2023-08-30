@@ -1,5 +1,5 @@
 /obj/structure/scp216
-	name = "SCP 216"
+	name = "safe"
 	desc = "A metalic safe with multiple-dial combination lock."
 	icon = 'icons/obj/structures.dmi'
 
@@ -130,7 +130,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"strange safe", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"safe", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SAFE, //Obj Class
 		"216", //Numerical Designation
 	)

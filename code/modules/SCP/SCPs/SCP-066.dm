@@ -1,5 +1,5 @@
 /mob/living/simple_animal/friendly/retaliate/scp066
-	name = "SCP-066"
+	name = "ball of yarn"
 	desc = "An amorphous red mass of braided yarn and ribbon."
 	icon = 'icons/SCP/scp-066.dmi'
 
@@ -38,7 +38,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"Ball of Yarn", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"ball of yarn", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"066", //Numerical Designation
 		PLAYABLE|MEMETIC

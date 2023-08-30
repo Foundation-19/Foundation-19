@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/scp017
-	name = "SCP-017"
+	name = "shambling void"
 	desc = "A weird shambling void. You can see nothing inside."
 	icon = 'icons/SCP/scp-017.dmi'
 
@@ -38,7 +38,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"Strange Shadow", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"shambling void", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		KETER, //Obj Class
 		"017", //Numerical Designation
 	)

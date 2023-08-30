@@ -1,5 +1,5 @@
 /mob/living/carbon/human/scp049
-	name = "SCP-049"
+	name = "plauge doctor"
 	desc = "A mysterious plague doctor."
 	icon = 'icons/SCP/scp-049.dmi'
 
@@ -33,7 +33,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"Plague Doctor", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"plague doctor", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"049", //Numerical Designation
 		PLAYABLE|ROLEPLAY

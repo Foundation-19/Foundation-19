@@ -1,5 +1,5 @@
 /mob/living/simple_animal/friendly/scp131
-	name = "Strange Eyepod Creature"
+	name = "eyepod"
 	desc = "A teardrop-shaped creature roughly one foot in height, with a wheel-like protrusion beneath. It stares at things with its curious unblinking eye."
 	icon = 'icons/SCP/scp-131.dmi'
 
@@ -49,7 +49,7 @@
 /mob/living/simple_animal/friendly/scp131/Initialize()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"Strange Eyepod Creature", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"eyepod", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SAFE, //Obj Class
 		"131", //Numerical Designation
 	)

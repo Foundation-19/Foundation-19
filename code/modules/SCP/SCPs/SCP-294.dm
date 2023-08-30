@@ -1,5 +1,5 @@
 /obj/machinery/scp294
-	name = "SCP-294"
+	name = "coffee machine"
 	desc = "A standard coffee vending machine. This one seems to have a QWERTY keyboard."
 	icon = 'icons/SCP/scp294.dmi'
 
@@ -39,7 +39,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"strange coffee machine", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"coffee machine", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"294", //Numerical Designation
 	)

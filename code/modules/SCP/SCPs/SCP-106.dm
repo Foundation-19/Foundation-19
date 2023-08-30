@@ -1,5 +1,5 @@
 /mob/living/carbon/human/scp106
-	name = "Rotting Elderly Man"
+	name = "rotting elderly man"
 	desc = "A rotting, elderly old man."
 	icon = 'icons/SCP/scp-106.dmi'
 
@@ -49,7 +49,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"Rotting Elderly Man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"rotting elderly man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		KETER, //Obj Class
 		"106", //Numerical Designation
 	)

@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/scp247
-	name = "Kitty"
+	name = "cute kitty"
 	desc = "A cute cat."
 	icon = 'icons/scp/scp-247.dmi'
 

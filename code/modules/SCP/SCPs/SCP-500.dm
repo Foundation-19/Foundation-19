@@ -1,13 +1,13 @@
 /obj/item/reagent_containers/pill/scp500
-	name = "Weird Pill"
-	desc = "A pill strange pill."
+	name = "red pill"
+	desc = "A strange red pill."
 	icon_state = "pill9"
 
 /obj/item/reagent_containers/pill/scp500/New()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"weird pill", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"red pill", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SAFE, //Obj Class
 		"500" //Numerical Designation
 	)

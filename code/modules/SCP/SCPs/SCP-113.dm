@@ -1,6 +1,6 @@
 /obj/item/scp113
-	name = "Red Piece of Quartz"
-	desc = "The red piece of quartz gleams with unnatural smoothness."
+	name = "red piece of quartz"
+	desc = "A red piece of quartz that gleams with unnatural smoothness."
 	icon = 'icons/SCP/scp-113.dmi'
 
 	icon_state = "scp113"
@@ -15,7 +15,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"Red Piece of Quartz", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"red piece of quartz", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SAFE, //Obj Class
 		"113", //Numerical Designation
 	)

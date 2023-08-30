@@ -1,5 +1,5 @@
 /mob/living/scp173
-	name = "SCP-173"
+	name = "statue"
 	desc = "A statue, constructed from concrete and rebar with traces of Krylon brand spray paint."
 	icon = 'icons/SCP/scp-173.dmi'
 	icon_state = "173"
@@ -74,7 +74,7 @@
 /mob/living/scp173/Initialize()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"Weird Statue", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"statue", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"173", //Numerical Designation
 		PLAYABLE

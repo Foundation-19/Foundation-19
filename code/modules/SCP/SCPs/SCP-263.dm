@@ -5,7 +5,7 @@
 #define STATE_CASH				(1<<4)
 
 /obj/scp263
-	name = "SCP-263"
+	name = "old telivision"
 	desc = "An old black and white television, but you can't quite tell which model it is. The logo THOMSOM appears at the bottom."
 	icon = 'icons/scp/scp-263.dmi'
 
@@ -74,7 +74,7 @@
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
-		"weird telivision", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"old telivision", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"263", //Numerical Designation
 	)
