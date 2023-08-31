@@ -301,10 +301,20 @@
 /obj/machinery/power/apc/proc/isWireCut(wire)
 	return wires.is_cut(wire)
 
+/obj/machinery/power/apc/proc/reset_wire(wire)
+	switch(wire)
+		if(WIRE_IDSCAN)
+			locked = TRUE
+		if(WIRE_MAIN_POWER1, WIRE_MAIN_POWER2)
+			if(!wires.is_cut(WIRE_MAIN_POWER1) && !wires.is_cut(WIRE_MAIN_POWER2))
+				shorted = FALSE
+		if(WIRE_AI_CONTROL)
+			if(!wires.is_cut(WIRE_AI_CONTROL))
+				aidisabled = FALSE
 
 /obj/machinery/power/apc/CanUseTopic(mob/user, datum/topic_state/state)
 	if(user.lying)
-		to_chat(user, SPAN_WARNING("You must stand to use [src]!"))
+		balloon_alert(user, "can't reach!")
 		return STATUS_CLOSE
 	if(istype(user, /mob/living/silicon))
 		var/permit = 0 // Malfunction variable. If AI hacks APC it can control it even without AI control wire.
@@ -320,7 +330,7 @@
 			return STATUS_CLOSE
 	. = ..()
 	if(user.restrained())
-		to_chat(user, SPAN_WARNING("You must have free hands to use [src]."))
+		balloon_alert(user, "no free hands!")
 		. = min(., STATUS_UPDATE)
 
 /obj/machinery/power/apc/Topic(href, href_list)
@@ -336,7 +346,7 @@
 
 	if(!istype(usr, /mob/living/silicon) && (locked && !emagged))
 		// Shouldn't happen, this is here to prevent href exploits
-		to_chat(usr, "You must unlock the panel to use this!")
+		balloon_alert(usr, "panel locked!")
 		return 1
 
 	if (href_list["lock"])
