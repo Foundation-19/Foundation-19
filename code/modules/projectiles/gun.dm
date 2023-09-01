@@ -274,7 +274,7 @@
 			return
 
 	if(world.time < next_fire_time)
-		balloon_alert(user, "can't fire!")
+		balloon_alert(user, "can't fire yet!")
 		return
 
 	last_safety_check = world.time
