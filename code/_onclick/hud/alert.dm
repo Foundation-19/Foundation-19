@@ -295,12 +295,12 @@
 	desc = "Unit's power cell has no charge remaining. No modules available until power cell is recharged."
 	icon_state = "empty_cell"
 
+// TODO: add this maybe?
+/*
 /atom/movable/screen/alert/emptycell/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	update_appearance(updates=UPDATE_DESC)
 
-// TODO: add this maybe?
-/*
 /atom/movable/screen/alert/emptycell/update_desc()
 	. = ..()
 	desc = initial(desc)
@@ -313,12 +313,12 @@
 	desc = "Unit's power cell is running low."
 	icon_state = "low_cell"
 
+// TODO: add this maybe?
+/*
 /atom/movable/screen/alert/lowcell/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	update_appearance(updates=UPDATE_DESC)
 
-// TODO: add this maybe?
-/*
 /atom/movable/screen/alert/lowcell/update_desc()
 	. = ..()
 	desc = initial(desc)

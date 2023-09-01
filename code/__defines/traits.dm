@@ -152,6 +152,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SLEEPIMMUNE "sleepimmune"
 /// TODO: implement
 #define TRAIT_DEAF "deaf"
+/// TODO: implement
+#define TRAIT_NODEATH "nodeath"
+/// In some kind of critical condition. Is able to succumb. TODO: implement
+#define TRAIT_CRITICAL_CONDITION "critical-condition"
+/// Guarantees the user can hear their own heartbeat
+#define TRAIT_HEAR_HEARTBEAT "hear_heartbeat"
 
 /// A trait given by any status effect
 #define STATUS_EFFECT_TRAIT "status-effect"

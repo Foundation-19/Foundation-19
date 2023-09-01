@@ -431,6 +431,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 		if(H != target)
 			SEND_SIGNAL(H, COMSIG_GAVE_HUG, target)
+			SEND_SIGNAL(target, COMSIG_RECEIVED_HUG, H)
 
 /datum/species/proc/add_base_auras(mob/living/carbon/human/H)
 	if(base_auras)

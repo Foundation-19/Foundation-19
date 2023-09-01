@@ -99,7 +99,7 @@
 
 /// Gets and formats examine text associated with our status effect.
 /// Return 'null' to have no examine text appear (default behavior).
-/datum/status_effect/proc/get_examine_text()
+/datum/status_effect/proc/get_examine_text()	// TODO: implement
 	return null
 
 /// Called every tick from process().

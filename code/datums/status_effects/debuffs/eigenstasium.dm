@@ -72,7 +72,7 @@
 			if(current_cycle == 51)
 				to_chat(owner, SPAN_USERDANGER("You start to convlse violently as you feel your consciousness merges across realities, your possessions flying wildy off your body!"))
 				owner.set_jitter_if_lower(400 SECONDS)
-				owner.Knockdown(10)
+				owner.set_knockdown_if_lower(10)
 
 			var/list/items = list()
 			var/max_loop

@@ -46,6 +46,8 @@
 #define COMSIG_SENT_EMAIL "sent_email"
 /// Called on `/datum/species/hug` (/mob/living/carbon/human, /mob/living)
 #define COMSIG_GAVE_HUG "gave_hug"
+/// Called on `/datum/species/hug` (/mob/living, /mob/living/carbon/human)
+#define COMSIG_RECEIVED_HUG "received_hug"
 /// Called on `/mob/living/carbon/human/check_pulse` (/mob/living/carbon/human)
 #define COMSIG_CHECKED_PULSE "checked_pulse"
 /// Called on `/datum/wires/tgui_act` (/mob, text)

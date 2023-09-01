@@ -109,7 +109,7 @@
 			pulse++
 
 /obj/item/organ/internal/heart/proc/handle_heartbeat()
-	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || is_below_sound_pressure(get_turf(owner)))
+	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || HAS_TRAIT(owner, TRAIT_HEAR_HEARTBEAT) || is_below_sound_pressure(get_turf(owner)))
 		//PULSE_THREADY - maximum value for pulse, currently it 5.
 		//High pulse value corresponds to a fast rate of heartbeat.
 		//Divided by 2, otherwise it is too slow.

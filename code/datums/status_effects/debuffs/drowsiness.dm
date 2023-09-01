@@ -15,17 +15,7 @@
 	if(issilicon(owner))
 		return FALSE
 
-	RegisterSignal(owner, COMSIG_COMPONENT_CLEAN_FACE_ACT, .proc/on_face_clean)
 	return TRUE
-
-/datum/status_effect/drowsiness/on_remove()
-	UnregisterSignal(owner, COMSIG_COMPONENT_CLEAN_FACE_ACT)
-
-/// Signal proc for [COMSIG_COMPONENT_CLEAN_FACE_ACT]. When we wash our face, reduce drowsiness by a bit.
-/datum/status_effect/drowsiness/proc/on_face_clean(datum/source)
-	SIGNAL_HANDLER
-
-	remove_duration(rand(4 SECONDS, 6 SECONDS))
 
 /datum/status_effect/drowsiness/tick(seconds_per_tick)
 	// You do not feel drowsy while unconscious

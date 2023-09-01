@@ -29,14 +29,14 @@
 	freak_out(STACK_TERROR_AMOUNT)
 
 /datum/status_effect/terrified/on_apply()
-	RegisterSignal(owner, COMSIG_CARBON_PRE_MISC_HELP, .proc/comfort_owner)
+	RegisterSignal(owner, COMSIG_RECEIVED_HUG, .proc/comfort_owner)
 	owner.emote("scream")
 	to_chat(owner, SPAN_ALERT("The darkness closes in around you, shadows dance around the corners of your vision... It feels like something is watching you!"))
 	return TRUE
 
 /datum/status_effect/terrified/on_remove()
-	UnregisterSignal(owner, COMSIG_CARBON_HELPED)
-	owner.remove_fov_trait(id, FOV_270_DEGREES)
+	UnregisterSignal(owner, COMSIG_RECEIVED_HUG)
+	//owner.remove_fov_trait(id, FOV_270_DEGREES)
 
 /datum/status_effect/terrified/tick(seconds_per_tick, times_fired)
 	if(check_surrounding_darkness())
@@ -55,8 +55,8 @@
 		owner.adjust_jitter_up_to(10 SECONDS * seconds_per_tick, 10 SECONDS)
 
 	if(terror_buildup >= TERROR_PANIC_THRESHOLD) //If you reach this amount of buildup in an engagement, it's time to start looking for a way out.
-		owner.playsound_local(get_turf(owner), 'sound/health/slowbeat.ogg', 40, 0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
-		owner.add_fov_trait(id, FOV_270_DEGREES) //Terror induced tunnel vision
+		ADD_TRAIT(owner, TRAIT_HEAR_HEARTBEAT, src)
+		//owner.add_fov_trait(id, FOV_270_DEGREES) //Terror induced tunnel vision
 		owner.adjust_eye_blur_up_to(10 SECONDS * seconds_per_tick, 10 SECONDS)
 		if(prob(5)) //We have a little panic attack. Consider it GENTLE ENCOURAGEMENT to start running away.
 			freak_out(PANIC_ATTACK_TERROR_AMOUNT)
@@ -65,8 +65,8 @@
 				SPAN_ALERT("Your heart lurches in your chest. You can't take much more of this!"),
 				"You hear a grunt.",
 			)
-	else
-		owner.remove_fov_trait(id, FOV_270_DEGREES)
+	//else
+		//owner.remove_fov_trait(id, FOV_270_DEGREES)
 
 	if(terror_buildup >= TERROR_HEART_ATTACK_THRESHOLD) //You should only be able to reach this by actively terrorizing someone
 		owner.visible_message(
@@ -74,10 +74,14 @@
 			SPAN_ALERT("The shadows begin to creep up from the corners of your vision, and then there is nothing..."),
 			"You hear something heavy collide with the ground.",
 		)
-		var/datum/disease/heart_failure/heart_attack = new(src)
-		heart_attack.stage_prob = 2 //Advances twice as fast
-		owner.ForceContractDisease(heart_attack)
-		owner.Unconscious(20 SECONDS)
+
+		if(iscarbon(owner))
+			var/mob/living/carbon/C = owner
+		// since we don't have heart attacks, we'll just directly damage the heart
+			var/obj/item/organ/internal/heart/heart = C.internal_organs_by_name[BP_HEART]
+			heart.take_internal_damage(10)
+
+		owner.set_unconscious(20 SECONDS)
 		qdel(src) //Victim passes out from fear, calming them down and permenantly damaging their heart.
 
 /datum/status_effect/terrified/get_examine_text()
@@ -92,14 +96,15 @@
 
 	return SPAN_NOTICE("[owner] looks rather anxious. [owner.p_they(capitalized = TRUE)] could probably use a hug...")
 
-/// If we get a hug from a friend, we calm down! If we get a hug from a nightmare, we FREAK OUT.
-/datum/status_effect/terrified/proc/comfort_owner(datum/source, mob/living/hugger)
+/// If we get a hug from a friend, we calm down!
+/// owner_dupe is equal to owner, we just need it to get to the second argument
+/datum/status_effect/terrified/proc/comfort_owner(owner_dupe, mob/living/carbon/human/hugger)
 	SIGNAL_HANDLER
 
 	terror_buildup -= HUG_TERROR_AMOUNT
 	owner.visible_message(
-		SPAN_NOTICE("[owner] seems to relax as [hugger] gives [owner.p_them()] a comforting hug."),
-		SPAN_GOOD("You feel yourself calm down as [hugger] gives you a reassuring hug."),
+		SPAN_NOTICE("The hug [hugger] gave [owner] seems to help [owner.p_them()] relax."),
+		SPAN_GOOD("You feel [hugger] calm you down with a reassuring hug."),
 		"You hear shuffling and a sigh of relief.",
 	)
 
@@ -126,7 +131,7 @@
 /**
  * Adds to the victim's terror buildup, makes them scream, and knocks them over for a moment.
  *
- * Makes the victm scream and adds the passed amount to their buildup.
+ * Makes the victim scream and adds the passed amount to their buildup.
  * Knocks over the victim for a brief moment.
  *
  * * amount - how much terror buildup this freakout will cause
@@ -134,7 +139,7 @@
 
 /datum/status_effect/terrified/proc/freak_out(amount)
 	terror_buildup += amount
-	owner.Knockdown(0.5 SECONDS)
+	owner.set_knockdown_if_lower(0.5 SECONDS)
 	if(prob(50))
 		owner.emote("scream")
 
