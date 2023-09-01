@@ -20,7 +20,7 @@
 						user.balloon_alert_to_viewers("removed broken PCU")
 					else
 						user.balloon_alert_to_viewers("removed PCU")
-						new /obj/item/module/power_control(loc)
+						new /obj/item/power_control_module(loc)
 				return TRUE
 
 			else if (opened != 2) //cover isn't removed
@@ -30,13 +30,19 @@
 				return TRUE
 
 		if((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden))
-			balloon_alert(user, "cover is broken!")
-			return TRUE
+			playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
+			balloon_alert(user, "prying broken cover...")
+			if(do_after(user, 10 SECONDS, src))
+				opened = 2
+				user.balloon_alert_to_viewers("broken cover removed")
+				update_icon()
+				return TRUE
+
 		if(coverlocked && !(stat & MAINT))
 			balloon_alert(user, "cover is locked!")
 			return TRUE
 		opened = 1
-		user.balloon_alert_to_viewers("APC panel opened")
+		user.balloon_alert_to_viewers("cover opened")
 		update_icon()
 		return TRUE
 
@@ -89,7 +95,7 @@
 		return TRUE
 
 	// Inserting board.
-	if(istype(W, /obj/item/module/power_control))
+	if(istype(W, /obj/item/power_control_module))
 		if(stat & BROKEN)
 			balloon_alert(user, "frame is broken!")
 			return TRUE
@@ -248,7 +254,7 @@
 
 // damage and destruction acts
 /obj/machinery/power/apc/emp_act(severity)
-	if(emp_hardened)
+	if(malf_upgraded)
 		return
 	var/obj/item/cell/cell = get_cell()
 	// Fail for 8-12 minutes (divided by severity)

@@ -19,3 +19,6 @@
 
 /obj/machinery/power/apc/hyper
 	cell_type = /obj/item/cell/hyper
+
+/obj/machinery/power/apc/auto_name
+	auto_name = TRUE

@@ -167,7 +167,7 @@ var/list/worths = list(
 					/obj/item/cane/concealed = 150,
 					/obj/item/cane = 40,
 					/obj/item/caution = 15,
-					/obj/item/module = 100,
+					/obj/item/power_control_module = 100,
 //STOCK PARTS,
 					/obj/item/stock_parts/capacitor/adv = 160,
 					/obj/item/stock_parts/scanning_module/adv = 160,

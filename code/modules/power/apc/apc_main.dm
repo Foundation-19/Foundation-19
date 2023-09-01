@@ -47,7 +47,6 @@
 	var/mob/living/silicon/ai/hacker = null // Malfunction var. If set AI hacked the APC and has full control.
 	var/wiresexposed = FALSE // whether you can access the wires for hacking or not.
 	powernet = 0		 // set so that APCs aren't found as powernet nodes //Hackish, Horrible, was like this before I changed it :(
-	var/debug= 0         // Legacy debug toggle, left in for admin use.
 	var/autoflag= 0		 // 0 = off, 1= eqp and lights off, 2 = eqp off, 3 = all on.
 	var/has_electronics = 0 // 0 - none, 1 - plugged in, 2 - secured by screwdriver
 	var/beenhit = 0 // used for counting how many times it has been hit, used for Aliens at the moment
@@ -60,13 +59,12 @@
 	var/global/status_overlays = 0
 	var/failure_timer = 0               // Cooldown thing for apc outage event
 	var/force_update = 0
-	var/emp_hardened = 0
 	var/global/list/status_overlays_lock
 	var/global/list/status_overlays_charging
 	var/global/list/status_overlays_equipment
 	var/global/list/status_overlays_lighting
 	var/global/list/status_overlays_environ
-	var/autoname = 1
+	var/auto_name = 1
 
 /obj/machinery/power/apc/updateDialog()
 	if (stat & (BROKEN|MAINT))
@@ -106,8 +104,11 @@
 		var/area/A = get_area(src)
 		//if area isn't specified use current
 		area = A
-	if(autoname)
+	if(auto_name)
 		SetName("\improper [area.name] APC")
+
+	if(area.apc)
+		log_debug("Duplicate APC created at [AREACOORD(src)] [area.type]. Original at [AREACOORD(area.apc)] [area.type].")
 	area.apc = src
 
 	. = ..()
@@ -144,7 +145,7 @@
 	return ..()
 
 /obj/machinery/power/apc/proc/energy_fail(duration)
-	if(emp_hardened)
+	if(malf_upgraded)
 		return
 	failure_timer = max(failure_timer, round(duration))
 	playsound(src, 'sounds/machines/apc_nopower.ogg', 75, 0)
@@ -454,9 +455,6 @@
 	else
 		..() // Actual processing happens in here.
 
-		if(debug)
-			log_debug("Status: [main_status] - Excess: [excess] - Last Equip: [lastused_equip] - Last Light: [lastused_light] - Longterm: [longtermpower]")
-
 		//update state
 		var/obj/item/stock_parts/power/battery/power = get_component_of_type(/obj/item/stock_parts/power/battery)
 		lastused_charging = max(power && power.cell && (power.cell.charge - power.last_cell_charge) * CELLRATE, 0)
@@ -588,7 +586,11 @@
 		else
 			return POWERCHAN_OFF
 
-/obj/item/module/power_control
+/obj/machinery/power/apc/proc/update_name(updates)
+	if(auto_name)
+		SetName("\improper [get_area_name(area, TRUE)] APC")
+
+/obj/item/power_control_module
 	name = "power control module"
 	desc = "Heavy-duty switching circuits for power control."
 	icon = 'icons/obj/module.dmi'

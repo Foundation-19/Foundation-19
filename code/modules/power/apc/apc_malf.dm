@@ -11,6 +11,5 @@
 /obj/machinery/power/apc/malf_upgrade(mob/living/silicon/ai/user)
 	..()
 	malf_upgraded = 1
-	emp_hardened = 1
-	to_chat(user, "\The [src] has been upgraded. It is now protected against EM pulses.")
+	to_chat(user, "\The [src] has been upgraded. It is now protected against EMPs.")
 	return 1

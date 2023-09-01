@@ -84,7 +84,7 @@
 								/obj/item/cell/high                               = TRADER_THIS_TYPE,
 								/obj/item/cell/super                              = TRADER_THIS_TYPE,
 								/obj/item/cell/hyper                              = TRADER_THIS_TYPE,
-								/obj/item/module                                  = TRADER_SUBTYPES_ONLY,
+								/obj/item/power_control_module                    = TRADER_THIS_TYPE,
 								/obj/item/tracker_electronics                     = TRADER_THIS_TYPE)
 
 
