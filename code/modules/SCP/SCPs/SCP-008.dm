@@ -57,7 +57,7 @@
 
 		M.SCP = new /datum/scp(
 		M, // Ref to actual SCP atom
-		"[M.real_name]", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		"", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		EUCLID, //Obj Class
 		"008-[SCP008_instance_count]", //Numerical Designation
 		PLAYABLE

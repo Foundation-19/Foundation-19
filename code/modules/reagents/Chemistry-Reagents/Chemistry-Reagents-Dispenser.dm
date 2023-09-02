@@ -326,7 +326,7 @@
 			var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
 			heart.SCP = new /datum/scp(
 				src, // Ref to actual SCP atom
-				"heart", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+				"", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 				KETER, //Obj Class
 				"3349-1" //Numerical Designation
 			)

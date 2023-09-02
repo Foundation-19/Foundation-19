@@ -43,7 +43,8 @@
 
 	parent = creation
 
-	parent.SetName(name)
+	if(LAZYLEN(name))
+		parent.SetName(name)
 
 	if(classification == SAFE)
 		set_faction(parent, MOB_FACTION_NEUTRAL)
@@ -52,7 +53,8 @@
 
 	if(ismob(parent))
 		var/mob/pMob = parent
-		pMob.fully_replace_character_name(name)
+		if(LAZYLEN(name))
+			pMob.fully_replace_character_name(name)
 
 		if(metaFlags & PLAYABLE)
 			pMob.status_flags += NO_ANTAG
