@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - code_imp: Ported admin-related macros from TG.
+  - admin: Ported admin smiting from TG. Turn people into statues with ease!
