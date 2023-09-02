@@ -323,7 +323,8 @@
 		target.anchored = FALSE
 		target.gib()
 
-		log_and_message_staff("[target.ckey] as [target] has been ripped apart by an active instance of SCP-[SCP.designation]")
+		log_admin("[target] ([target.ckey]) has been torn apart by an active SCP-[SCP.designation].")
+		message_staff("ALERT: [target.real_name] [ADMIN_JMP(target)] has been torn apart by an active SCP-[SCP.designation].")
 		targets -= target
 		target = null
 		current_path = null
