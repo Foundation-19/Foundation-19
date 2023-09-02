@@ -121,9 +121,9 @@
 	if(stat & MAINT)
 		update_state |= UPDATE_MAINT
 	if(opened)
-		if(opened==1)
+		if(opened == APC_COVER_OPENED)
 			update_state |= UPDATE_OPENED1
-		if(opened==2)
+		if(opened == APC_COVER_REMOVED)
 			update_state |= UPDATE_OPENED2
 	else if(emagged || (hacker && !hacker.hacked_apcs_hidden) || failure_timer)
 		update_state |= UPDATE_BLUESCREEN

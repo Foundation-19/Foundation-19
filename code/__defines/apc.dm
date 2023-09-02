@@ -30,3 +30,11 @@
 #define APC_UPOVERLAY_CHARGEING2 	(1<<2)
 #define APC_UPOVERLAY_LOCKED 		(1<<3)
 #define APC_UPOVERLAY_OPERATING 	(1<<4)
+
+// APC cover status:
+/// The APCs cover is closed.
+#define APC_COVER_CLOSED 0
+/// The APCs cover is open.
+#define APC_COVER_OPENED 1
+/// The APCs cover is missing.
+#define APC_COVER_REMOVED 2

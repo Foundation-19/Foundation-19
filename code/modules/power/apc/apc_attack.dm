@@ -6,7 +6,7 @@
 		return FALSE // inducer.dm afterattack handles this
 
 	if(isCrowbar(W) && user.a_intent != I_HURT)	//bypass when on harm intent to actually make use of the cover hammer off check further down.
-		if(opened) // Closes or removes board.
+		if(opened)	// equivalent to opened != APC_COVER_CLOSED
 			if (has_electronics == 1)
 				if (terminal())
 					balloon_alert(user, "remove wire connection first!")
@@ -23,8 +23,8 @@
 						new /obj/item/power_control_module(loc)
 				return TRUE
 
-			else if (opened != 2) //cover isn't removed
-				opened = 0 // Closes panel.
+			else if (opened != APC_COVER_REMOVED) //cover isn't removed
+				opened = APC_COVER_CLOSED // Closes panel.
 				user.balloon_alert_to_viewers("APC panel closed")
 				update_icon()
 				return TRUE
@@ -33,7 +33,7 @@
 			playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 			balloon_alert(user, "prying broken cover...")
 			if(do_after(user, 10 SECONDS, src))
-				opened = 2
+				opened = APC_COVER_REMOVED
 				user.balloon_alert_to_viewers("broken cover removed")
 				update_icon()
 				return TRUE
@@ -41,14 +41,14 @@
 		if(coverlocked && !(stat & MAINT))
 			balloon_alert(user, "cover is locked!")
 			return TRUE
-		opened = 1
+		opened = APC_COVER_OPENED
 		user.balloon_alert_to_viewers("cover opened")
 		update_icon()
 		return TRUE
 
 	// Exposes wires for hacking and attaches/detaches the circuit.
 	if(isScrewdriver(W))
-		if(opened)
+		if(opened)	// equivalent to opened != APC_COVER_CLOSED
 			if (get_cell())
 				balloon_alert(user, SPAN_WARNING("power cell in the way!"))
 				return TRUE
@@ -81,7 +81,7 @@
 	if (istype(W, /obj/item/card/id) || istype(W, /obj/item/modular_computer))
 		if(emagged || (stat & (BROKEN|MAINT)))
 			balloon_alert(user, "frame is broken!")
-		else if(opened)
+		else if(opened)	// equivalent to opened != APC_COVER_CLOSED
 			balloon_alert(user, "close cover first!")
 		else if(wiresexposed)
 			balloon_alert(user, "close wire panel first!")
@@ -115,7 +115,7 @@
 
 	// Deconstruction
 	if(isWelder(W))
-		if(!opened)
+		if(!opened)	// equivalent to opened == APC_COVER_CLOSED
 			balloon_alert(user, "open cover first!")
 			return TRUE
 		if(has_electronics != 0)
@@ -133,7 +133,7 @@
 		if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
 			if(!WT.remove_fuel(3, user))
 				return TRUE
-			if (emagged || (stat & BROKEN) || opened==2)
+			if (emagged || (stat & BROKEN) || opened == APC_COVER_CLOSED)
 				new /obj/item/stack/material/steel(loc)
 				user.balloon_alert_to_viewers("broken APC scrapped")
 			else
@@ -144,13 +144,13 @@
 
 	// Panel and frame repair.
 	if (istype(W, /obj/item/frame/apc))
-		if(!opened)
+		if(!opened)	// equivalent to opened == APC_COVER_CLOSED
 			balloon_alert(user, "open cover first!")
 			return TRUE
 		if(emagged)
 			emagged = FALSE
-			if(opened==2)
-				opened = 1
+			if(opened == APC_COVER_REMOVED)
+				opened = APC_COVER_OPENED
 			user.balloon_alert_to_viewers("APC panel replaced")
 			qdel(W)
 			update_icon()
@@ -170,8 +170,8 @@
 				if(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs))
 					hacker.hacked_apcs -= src
 					hacker = null
-				if (opened==2)
-					opened = 1
+				if(opened == APC_COVER_REMOVED)
+					opened = APC_COVER_OPENED
 				queue_icon_update()
 
 	if((. = ..())) // Further interactions are low priority attack stuff.
@@ -182,7 +182,7 @@
 			&& W.force >= 5 \
 			&& W.w_class >= 3.0 \
 			&& prob(W.force) )
-		opened = 2
+		opened = APC_COVER_REMOVED
 		user.balloon_alert_to_viewers("APC cover forced open")
 		update_icon()
 	else
@@ -200,7 +200,7 @@
 					balloon_alert(user, "lock disabled")
 				if(50 to 70)
 					balloon_alert(user, "cover forced open")
-					opened = 1
+					opened = APC_COVER_OPENED
 				if(90 to 100)
 					balloon_alert(user, "APC broken")
 					set_broken(TRUE)
@@ -236,7 +236,7 @@
 // emag act
 /obj/machinery/power/apc/emag_act(remaining_charges, mob/user)
 	if (!(emagged || (hacker && !hacker.hacked_apcs_hidden)))		// trying to unlock with an emag card
-		if(opened)
+		if(opened)	// equivalent to opened != APC_COVER_CLOSED
 			balloon_alert(user, "close cover first!!")
 		else if(wiresexposed)
 			balloon_alert(user, "close wire panel first!")

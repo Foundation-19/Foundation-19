@@ -27,7 +27,8 @@
 	var/area/area
 	var/areastring = null
 	var/cell_type = /obj/item/cell/standard
-	var/opened = 0 //0=closed, 1=opened, 2=cover removed
+	/// State of the cover (closed, opened, removed)
+	var/opened = APC_COVER_CLOSED
 	var/shorted = 0
 	var/lighting = POWERCHAN_ON_AUTO
 	var/equipment = POWERCHAN_ON_AUTO
@@ -107,8 +108,8 @@
 	if(auto_name)
 		SetName("\improper [area.name] APC")
 
-	if(area.apc)
-		log_debug("Duplicate APC created at [AREACOORD(src)] [area.type]. Original at [AREACOORD(area.apc)] [area.type].")
+	//if(area.apc)
+	//	log_debug("Duplicate APC created at [AREACOORD(src)] [area.type]. Original at [AREACOORD(area.apc)] [area.type].")
 	area.apc = src
 
 	. = ..()
@@ -116,7 +117,7 @@
 	if (building==0)
 		init_round_start()
 	else
-		opened = 1
+		opened = APC_COVER_OPENED
 		operating = 0
 		stat |= MAINT
 		queue_icon_update()
@@ -168,24 +169,23 @@
 /obj/machinery/power/apc/examine(mob/user, distance)
 	. = ..()
 	if(distance <= 1)
-		if(stat & BROKEN)
-			to_chat(user, "Looks broken.")
-			return
 		var/terminal = terminal()
-		if(opened)
+		if(stat & BROKEN)
+			if(opened != APC_COVER_REMOVED)
+				to_chat(user, "The cover is broken and can probably be <i>pried</i> off with enough force.")
+				return
+			if(terminal && has_electronics)
+				to_chat(user, "The cover is missing but can be replaced using a new frame.")
+		if(opened)	// equivalent to opened != APC_COVER_CLOSED
 			if(has_electronics && terminal)
-				to_chat(user, "The cover is [opened==2?"removed":"open"] and the power cell is [ get_cell() ? "installed" : "missing"].")
-			else if (!has_electronics && terminal)
-				to_chat(user, "There are some wires but no any electronics.")
-			else if (has_electronics && !terminal)
-				to_chat(user, "Electronics installed but not wired.")
-			else /* if (!has_electronics && !terminal) */
-				to_chat(user, "There is no electronics nor connected wires.")
-
+				to_chat(user, "The cover is [opened == APC_COVER_REMOVED ? "removed" : "open"] and the power cell is [get_cell() ? "installed" : "missing"].")
+			else
+				to_chat(user, "It's [ !terminal ? "not" : "" ] wired up.\
+				\nThe electronics are[!has_electronics?"n't":""] installed.")
 		else
 			if (stat & MAINT)
-				to_chat(user, "The cover is closed. Something wrong with it: it doesn't work.")
-			else if (hacker && !hacker.hacked_apcs_hidden)
+				to_chat(user, "The cover is closed. It doesn't appear to function.")
+			else if (coverlocked || (hacker && !hacker.hacked_apcs_hidden))
 				to_chat(user, "The cover is locked.")
 			else
 				to_chat(user, "The cover is closed.")
