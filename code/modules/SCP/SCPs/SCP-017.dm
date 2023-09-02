@@ -57,7 +57,7 @@
 	var/shadow_threshold = 0.35
 
 /datum/ai_holder/simple_animal/melee/scp017/can_attack(atom/movable/the_target, vision_required = TRUE)
-	if(!..() || isSCP(the_target))
+	if(!..() || the_target.SCP)
 		return ATTACK_FAILED
 	var/turf/Tturf = get_turf(the_target)
 	var/area/Tarea = get_area(the_target)
@@ -109,7 +109,7 @@
 /mob/living/simple_animal/hostile/scp017/UnarmedAttack(atom/A, bypass_checks)
 	var/turf/Tturf = get_turf(A)
 	if(!bypass_checks)
-		if(!ismovable(A) || isSCP(A))
+		if(!ismovable(A) || A.SCP)
 			return FALSE
 		var/area/Tarea = get_area(A)
 		if(!Tturf || !Tarea)

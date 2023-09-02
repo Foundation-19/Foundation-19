@@ -91,7 +91,7 @@
 		return ..()
 
 /datum/ai_holder/simple_animal/melee/scp280/can_attack(atom/movable/the_target, vision_required = TRUE)
-	if(isSCP(the_target))
+	if(the_target.SCP)
 		return ATTACK_FAILED
 	var/turf/Tturf = get_turf(the_target)
 	if(!is_dark(Tturf))

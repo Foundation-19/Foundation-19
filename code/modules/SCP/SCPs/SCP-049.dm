@@ -247,7 +247,7 @@
 		to_chat(src, SPAN_DANGER("They are not infected with the Pestilence."))
 		return
 
-	if(isSCP(HTarget))
+	if(HTarget.SCP)
 		to_chat(src, SPAN_WARNING("This thing...it isnt normal...you cannot cure it."))
 		return
 
