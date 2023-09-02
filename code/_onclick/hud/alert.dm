@@ -54,7 +54,7 @@
 		thealert.add_overlay(new_master)
 		new_master.layer = old_layer
 		new_master.plane = old_plane
-		thealert.icon_state = "template" // We'll set the icon to the client's ui pref in reorganize_alerts()
+		thealert.icon_state = "template" // We'll set the icon to the client's ui pref in reorganize_alerts() // we dont HAVE ui prefs lol
 		thealert.master = new_master
 	else
 		thealert.icon_state = "[initial(thealert.icon_state)][severity]"
@@ -444,8 +444,8 @@
 		return 1
 	for(var/i in 1 to alerts.len)
 		var/atom/movable/screen/alert/alert = alerts[alerts[i]]
-		if(alert.icon_state == "template")
-			alert.icon = ui_style
+		//if(alert.icon_state == "template")		// we don't have ui prefs for this
+		//	alert.icon = ui_style
 		switch(i)
 			if(1)
 				. = ui_alert1
@@ -461,9 +461,6 @@
 				. = ""
 		alert.screen_loc = .
 		screenmob.client.screen |= alert
-	if(!viewmob)
-		for(var/M in mymob.observers)
-			reorganize_alerts(M)
 	return 1
 
 /atom/movable/screen/alert/Click(location, control, params)
