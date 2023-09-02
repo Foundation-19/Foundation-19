@@ -425,6 +425,9 @@ var/const/enterloopsanity = 100
 	LAZYREMOVE(dangerous_objects, O)
 	UNSETEMPTY(dangerous_objects) // This nulls the list var if it's empty.
 
+/turf/AllowDrop()
+	return TRUE
+
 /**
  * Returns adjacent turfs to this turf that are reachable, in all cardinal directions
  *
