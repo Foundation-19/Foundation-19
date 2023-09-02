@@ -108,8 +108,8 @@
 	if(auto_name)
 		SetName("\improper [area.name] APC")
 
-	//if(area.apc)
-	//	log_debug("Duplicate APC created at [AREACOORD(src)] [area.type]. Original at [AREACOORD(area.apc)] [area.type].")
+	if(area.apc)
+		log_debug("Duplicate APC created at [AREACOORD(src)] [area.type]. Original at [AREACOORD(area.apc)] [area.type].")
 	area.apc = src
 
 	. = ..()
