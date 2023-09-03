@@ -43,8 +43,7 @@
 		src, // Ref to actual SCP atom
 		"dark mass", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		KETER, //Obj Class
-		"280", //Numerical Designation
-		SCP_DISABLED //JPS needs to be ported for this to be finished
+		"280" //Numerical Designation
 	)
 
 //AI stuff
@@ -68,7 +67,7 @@
 		LAZYCLEARLIST(darkness_path)
 		LAZYINITLIST(darkness_path)
 		var/while_loop_timeout = world.time
-		while(!darkness_path || ((world.time - while_loop_timeout) >= 5 SECONDS))
+		while(!LAZYLEN(darkness_path) && ((world.time - while_loop_timeout) < 5 SECONDS))
 			shadow_target = pick_turf_in_range(holder.loc, 14, list(/proc/is_dark))
 			darkness_path = get_path_to(holder, shadow_target)
 	if(!should_flee() || !shadow_target || !LAZYLEN(darkness_path) || !holder.IMove(darkness_path[1]))
@@ -80,8 +79,11 @@
 		return
 
 	ai_log("flee_to_darkness() : Stepping to shadow target.", AI_LOG_TRACE)
-	step_towards(holder, darkness_path[1], vision_range)
-	LAZYREMOVE(darkness_path, darkness_path[1])
+	for(var/steps = 0, steps < 5, steps++)
+		step_towards(holder, darkness_path[1], vision_range)
+		if(holder.loc != darkness_path[1])
+			break
+		LAZYREMOVE(darkness_path, darkness_path[1])
 	ai_log("flee_to_darkness() : Exiting.", AI_LOG_DEBUG)
 
 /datum/ai_holder/simple_animal/melee/scp280/flee_from_target()
@@ -155,6 +157,11 @@
 	S.set_up(3,0,T)
 	S.start()
 
-	ghostize()
-	qdel(src)
+	var/turf/new_target_turf = pick_turf_in_range(src, 100, list(/proc/isfloor, /proc/is_dark))
+	if(!new_target_turf)
+		ghostize()
+		qdel_self()
+	else
+		forceMove(new_target_turf)
+		health = maxHealth
 
