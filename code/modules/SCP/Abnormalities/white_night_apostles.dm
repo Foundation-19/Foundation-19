@@ -80,7 +80,7 @@
 /obj/item/natural_weapon/apostle_scythe
 	name = "scythe"
 	attack_verb = list("slashed")
-	hitsound = 'sound/scp/abnormality/white_night/scythe.ogg'
+	hitsound = 'sounds/scp/abnormality/white_night/scythe.ogg'
 	force = 36
 	sharp = TRUE
 	melee_accuracy_bonus = 200
@@ -110,7 +110,7 @@
 				new /obj/effect/gibspawner/generic(get_turf(L))
 				L.apply_damage(scythe_damage * 2, BRUTE, null, DAM_DISPERSED)
 				gibbed = TRUE
-	playsound(get_turf(src), (gibbed ? 'sound/scp/abnormality/white_night/scythe_gib.ogg' : 'sound/scp/abnormality/white_night/scythe_spell.ogg'), (gibbed ? 100 : 75), FALSE, (gibbed ? 12 : 5))
+	playsound(get_turf(src), (gibbed ? 'sounds/scp/abnormality/white_night/scythe_gib.ogg' : 'sounds/scp/abnormality/white_night/scythe_spell.ogg'), (gibbed ? 100 : 75), FALSE, (gibbed ? 12 : 5))
 	SLEEP_CHECK_DEATH(5)
 	can_act = TRUE
 
@@ -141,7 +141,7 @@
 /obj/item/natural_weapon/apostle_spear
 	name = "apostle spear"
 	attack_verb = list("stabbed", "punctured")
-	hitsound = 'sound/scp/abnormality/white_night/spear.ogg'
+	hitsound = 'sounds/scp/abnormality/white_night/spear.ogg'
 	force = 25
 	sharp = TRUE
 	edge = 1
@@ -163,10 +163,10 @@
 			break
 		new /obj/effect/temp_visual/sparkle(T)
 	spear_cooldown = world.time + spear_cooldown_time
-	playsound(get_turf(src), 'sound/scp/abnormality/white_night/spear_charge.ogg', 75, 0, 5)
+	playsound(get_turf(src), 'sounds/scp/abnormality/white_night/spear_charge.ogg', 75, 0, 5)
 	SLEEP_CHECK_DEATH(22)
 	been_hit = list()
-	playsound(get_turf(src), 'sound/scp/abnormality/white_night/spear_dash.ogg', 100, 0, 20)
+	playsound(get_turf(src), 'sounds/scp/abnormality/white_night/spear_dash.ogg', 100, 0, 20)
 	DoDash(dir_to_target, 0)
 
 /mob/living/simple_animal/hostile/apostle/spear/proc/DoDash(move_dir, times_ran)

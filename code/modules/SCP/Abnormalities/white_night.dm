@@ -20,7 +20,7 @@
 	maxHealth = 15000
 
 	movement_cooldown = 8
-	movement_sound = 'sound/scp/abnormality/white_night/apostle_movement.ogg'
+	movement_sound = 'sounds/scp/abnormality/white_night/apostle_movement.ogg'
 
 	status_flags = NO_ANTAG
 
@@ -157,7 +157,7 @@
 
 	apostle_cooldown = world.time + 10 SECONDS
 	H.visible_message(SPAN_WARNING("Holy light envelopes \the [H]..."))
-	playsound(src, 'sound/scp/abnormality/white_night/apostle_convert.ogg', 50, FALSE, 4)
+	playsound(src, 'sounds/scp/abnormality/white_night/apostle_convert.ogg', 50, FALSE, 4)
 	cancel_conversion_effect = FALSE
 	addtimer(CALLBACK(src, .proc/ConversionVisualEffect, H))
 	if(!do_after(src, 7 SECONDS, H))
@@ -258,7 +258,7 @@
 		return
 	charged_field_cooldown = world.time + charged_field_cooldown_time
 
-	playsound(src, 'sound/scp/abnormality/white_night/apostle_charge.ogg', 75, FALSE, 7)
+	playsound(src, 'sounds/scp/abnormality/white_night/apostle_charge.ogg', 75, FALSE, 7)
 	for(var/i = 1 to 2)
 		var/obj/effect/temp_visual/decoy/D = new(get_turf(src), 0, src, 7)
 		D.transform = matrix()*2
@@ -268,7 +268,7 @@
 			return
 
 	// Scare everyone
-	playsound(src, 'sound/scp/abnormality/white_night/apostle_fire.ogg', 100, FALSE, 14)
+	playsound(src, 'sounds/scp/abnormality/white_night/apostle_fire.ogg', 100, FALSE, 14)
 	for(var/mob/living/L in range(src, 10))
 		shake_camera(L, 5, 2)
 
@@ -286,7 +286,7 @@
 					continue
 				if(L.stat == DEAD)
 					continue
-				playsound(L, 'sound/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE)
+				playsound(L, 'sounds/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE)
 				L.adjustFireLoss(charged_field_damage)
 				L.emote("scream")
 				to_chat(L, SPAN_OCCULT("The holy light... IT BURNS!!"))
