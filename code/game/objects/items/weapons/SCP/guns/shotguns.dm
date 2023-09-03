@@ -13,9 +13,9 @@
 	bulk = 6
 	screen_shake = 3
 
-	bolt_back_sound = 'sound/weapons/guns/shotguns/pump_back.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/shotguns/pump_forward.ogg'
-	fire_sound = 'sound/weapons/guns/shotguns/shoot.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/shotguns/pump_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/shotguns/pump_forward.ogg'
+	fire_sound = 'sounds/weapons/guns/shotguns/shoot.ogg'
 	has_bolt_icon = TRUE
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
@@ -40,8 +40,8 @@
 	icon_state = "spas12"
 	item_state = "spas12"
 	max_shells = 7
-	bolt_back_sound = 'sound/weapons/guns/shotguns/spas12_back.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/shotguns/spas12_forward.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/shotguns/spas12_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/shotguns/spas12_forward.ogg'
 	ammo_type = /obj/item/ammo_casing/shotgun
 	load_sound = SFX_SPAS12_SHELL_INSERT
 	manual_action = FALSE

@@ -9,10 +9,10 @@
 	var/action_type = GUN_SINGLE_ACTION
 	/// Side of ejection: left, right or down
 	var/ejection_side = GUN_CASING_EJECTION_RIGHT
-	var/bolt_back_sound = 'sound/weapons/guns/interaction/reload_bolt_back.ogg'
-	var/bolt_forward_sound = 'sound/weapons/guns/interaction/reload_bolt_forward.ogg'
-	var/trigger_click_sound = 'sound/weapons/guns/trigger_click.ogg'
-	var/trigger_empty_sound = 'sound/weapons/guns/trigger_empty.ogg'
+	var/bolt_back_sound = 'sounds/weapons/guns/interaction/reload_bolt_back.ogg'
+	var/bolt_forward_sound = 'sounds/weapons/guns/interaction/reload_bolt_forward.ogg'
+	var/trigger_click_sound = 'sounds/weapons/guns/trigger_click.ogg'
+	var/trigger_empty_sound = 'sounds/weapons/guns/trigger_empty.ogg'
 	/// Determines the need to draw and `update_icon()` of bolt after cycling
 	var/has_bolt_icon = FALSE
 	/// Determines the need for rendering stock. Won't render if null.
@@ -159,7 +159,7 @@
 			else
 				to_chat(user, SPAN_NOTICE("You reflexively clear the jam on \the [src]."))
 				is_jammed = 0
-				playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
+				playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 
 
 /obj/item/gun/projectile/scp/proc/can_fire(mob/user, atom/target)
@@ -542,7 +542,7 @@
 			count++
 	if(count)
 		user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
-		playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+		playsound(src.loc, 'sounds/weapons/empty.ogg', 50, 1)
 		AM.update_icon()
 		update_icon()
 

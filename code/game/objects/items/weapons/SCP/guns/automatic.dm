@@ -10,8 +10,8 @@
 	slot_flags = SLOT_BACK
 	multi_aim = 1
 	burst_delay = 2
-	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
-	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/interaction/smg_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/interaction/smg_magout.ogg'
 
 	//machine pistol, easier to one-hand with
 	firemodes = list(
@@ -39,11 +39,11 @@
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
 
-	bolt_back_sound = 'sound/weapons/guns/m4a1/m4a1_back.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/m4a1/m4a1_forward.ogg'
-	mag_insert_sound = 'sound/weapons/guns/m4a1/m4a1_load.ogg'
-	mag_remove_sound = 'sound/weapons/guns/m4a1/m4a1_unload.ogg'
-	fire_sound = 'sound/weapons/guns/m4a1/shoot.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/m4a1/m4a1_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/m4a1/m4a1_forward.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/m4a1/m4a1_load.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/m4a1/m4a1_unload.ogg'
+	fire_sound = 'sounds/weapons/guns/m4a1/shoot.ogg'
 	has_bolt_icon = TRUE
 	bolt_hold = TRUE
 	bolt_hold_on_empty_mag = TRUE
@@ -78,11 +78,11 @@
 	has_bolt_icon = TRUE
 	bolt_hold = TRUE
 	bolt_hold_on_empty_mag = TRUE
-	bolt_back_sound = 'sound/weapons/guns/t12/bolt_back.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/t12/bolt_forward.ogg'
-	mag_insert_sound = 'sound/weapons/guns/t12/m4a1_load.ogg'
-	mag_remove_sound = 'sound/weapons/guns/t12/m4a1_unload.ogg'
-	fire_sound = 'sound/weapons/guns/t12/fire1.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/t12/bolt_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/t12/bolt_forward.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/t12/m4a1_load.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/t12/m4a1_unload.ogg'
+	fire_sound = 'sounds/weapons/guns/t12/fire1.ogg'
 
 	firemodes = list(
 		list(mode_name="semi auto",      burst=1,    fire_delay=null, one_hand_penalty=8,  burst_accuracy=null, dispersion=null),
@@ -108,11 +108,11 @@
 	bolt_hold = FALSE
 	bolt_hold_on_empty_mag = FALSE
 	has_bolt_icon = TRUE
-	mag_insert_sound = 'sound/weapons/guns/ak12/mag_in.ogg'
-	mag_remove_sound = 'sound/weapons/guns/ak12/mag_out.ogg'
-	fire_sound = 'sound/weapons/guns/ak12/shoot.ogg'
-	bolt_back_sound = 'sound/weapons/guns/ak12/ak74_back.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/ak12/ak74_forward.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/ak12/mag_in.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/ak12/mag_out.ogg'
+	fire_sound = 'sounds/weapons/guns/ak12/shoot.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/ak12/ak74_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/ak12/ak74_forward.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
@@ -228,7 +228,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
 	has_bolt_icon = FALSE
 	ejection_side = GUN_CASING_EJECTION_DOWN
-	fire_sound = 'sound/weapons/guns/p90/shoot.ogg'
+	fire_sound = 'sounds/weapons/guns/p90/shoot.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
@@ -247,7 +247,7 @@
 	item_state = "mp5"
 	force = 10
 	caliber = "9mm"
-	fire_sound = 'sound/weapons/guns/mp5/shoot.ogg'
+	fire_sound = 'sounds/weapons/guns/mp5/shoot.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_LARGE
 	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
@@ -316,7 +316,7 @@
 	item_state = "knife"
 	attack_verb = list("stabbed", "chopped", "cut")
 	applies_material_colour = 1
-//	drawsound = 'sound/items/unholster_knife.ogg'
+//	drawsound = 'sounds/items/unholster_knife.ogg'
 
 
 
@@ -342,11 +342,11 @@
 	bolt_hold = TRUE
 	bolt_hold_on_empty_mag = TRUE
 	has_bolt_icon = TRUE
-	mag_insert_sound = 'sound/weapons/guns/saiga12/mag_in.ogg'
-	mag_remove_sound = 'sound/weapons/guns/saiga12/mag_out.ogg'
-	fire_sound = 'sound/weapons/guns/saiga12/shoot.ogg'
-	bolt_back_sound = 'sound/weapons/guns/ak12/ak74_back.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/ak12/ak74_forward.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/saiga12/mag_in.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/saiga12/mag_out.ogg'
+	fire_sound = 'sounds/weapons/guns/saiga12/shoot.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/ak12/ak74_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/ak12/ak74_forward.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null))

@@ -2,17 +2,17 @@
 	abstract_type = /obj/item/gun/projectile/scp/revolver
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_delay = 4 //Revolvers are naturally slower-firing
-	mag_insert_sound = 'sound/weapons/guns/interaction/rev_magin.ogg'
-	mag_remove_sound = 'sound/weapons/guns/interaction/rev_magout.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/interaction/rev_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/interaction/rev_magout.ogg'
 	bulk = 3
 	accuracy = 2
 	accuracy_power = 8
 	handle_casings = CYCLE_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	action_type = GUN_DOUBLE_ACTION
-	bolt_back_sound = 'sound/weapons/guns/revolvers/revolver_open1.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/revolvers/revolver_close1.ogg'
-	trigger_click_sound = 'sound/weapons/guns/revolvers/revolver_click.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/revolvers/revolver_open1.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/revolvers/revolver_close1.ogg'
+	trigger_click_sound = 'sounds/weapons/guns/revolvers/revolver_click.ogg'
 	has_bolt_icon = TRUE
 	manual_action = TRUE //We cycle action before firing
 	ejection_side = GUN_CASING_EJECTION_DOWN
@@ -68,13 +68,13 @@
 /obj/item/gun/projectile/scp/revolver/AltClick(mob/user)
 	rotate_cylinder()
 	to_chat(user, SPAN_NOTICE("You rotate the cylinder counter-clocwise."))
-	playsound(src, 'sound/weapons/guns/revolvers/cylinder_click.ogg', 75)
+	playsound(src, 'sounds/weapons/guns/revolvers/cylinder_click.ogg', 75)
 	return TRUE
 
 /obj/item/gun/projectile/scp/revolver/MiddleClick(mob/user)
 	rotate_cylinder()
 	to_chat(user, SPAN_NOTICE("You rotate the cylinder counter-clocwise."))
-	playsound(src, 'sound/weapons/guns/revolvers/cylinder_click.ogg', 75)
+	playsound(src, 'sounds/weapons/guns/revolvers/cylinder_click.ogg', 75)
 	return TRUE
 
 /obj/item/gun/projectile/scp/revolver/handle_casing_insertion(obj/item/ammo_casing/C, mob/user)
@@ -186,7 +186,7 @@
 
 	visible_message(SPAN_WARNING("\The [usr] spins the cylinder of \the [src]!"), \
 	SPAN_NOTICE("You hear something metallic spin and click."))
-	playsound(src.loc, 'sound/weapons/revolver_spin.ogg', 100, 1)
+	playsound(src.loc, 'sounds/weapons/revolver_spin.ogg', 100, 1)
 	show_sound_effect(src.loc, src)
 	spin_cylinder()
 
@@ -199,4 +199,4 @@
 	caliber = ".357"
 	max_shells = 6
 	ammo_type = /obj/item/ammo_casing/pistol/a357
-	fire_sound = 'sound/weapons/guns/revolvers/fire_revolver1.ogg'
+	fire_sound = 'sounds/weapons/guns/revolvers/fire_revolver1.ogg'

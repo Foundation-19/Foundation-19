@@ -10,9 +10,9 @@
 	caliber = "12g"
 	max_shells = 2
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	fire_sound = 'sound/weapons/guns/shotguns/shoot.ogg'
-	bolt_back_sound = 'sound/weapons/guns/double_barrel/double_open.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/double_barrel/double_close.ogg'
+	fire_sound = 'sounds/weapons/guns/shotguns/shoot.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/double_barrel/double_open.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/double_barrel/double_close.ogg'
 	w_class = ITEM_SIZE_HUGE
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK

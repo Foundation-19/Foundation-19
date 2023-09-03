@@ -3583,7 +3583,7 @@
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/slug,
 /obj/structure/closet,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "lk" = (

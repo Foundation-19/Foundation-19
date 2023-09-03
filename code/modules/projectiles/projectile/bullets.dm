@@ -310,7 +310,7 @@
 	armor_penetration = 10
 
 /obj/item/projectile/bullet/rifle/a545
-	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot3.ogg'
 	damage = 45
 	armor_penetration = 10
 

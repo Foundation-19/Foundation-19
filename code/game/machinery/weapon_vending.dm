@@ -14,8 +14,8 @@
 	name = "\improper GOCTech Gun Dispenser v1.1"
 	icon_state = "goc_weaponry"
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/fnfal = 6,
-		/obj/item/gun/projectile/shotgun/pump/combat = 6,
+		///obj/item/gun/projectile/automatic/scp/fnfal = 6,
+		/obj/item/gun/projectile/scp/shotgun/spas12 = 6,
 		/obj/item/gun/projectile/pistol = 6,
 		/obj/item/grenade/frag = 12,
 		/obj/item/ammo_magazine/scp/fnfal = 15,
@@ -28,7 +28,7 @@
 	desc = "Has outdated software, the auto-update is also busted... Such is the life of a pirate."
 	icon_state = "ci_weaponry"
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/ak74 = 5,
+		/obj/item/gun/projectile/scp/automatic/ak12 = 5,
 		/obj/item/gun/projectile/pistol = 5,
 		/obj/item/ammo_magazine/scp/ak = 5
 	)
@@ -38,8 +38,8 @@
 	desc = "One of the better devices the Chaos Insurgency has, this one dispenses guns for special operatives."
 	icon_state = "ci_weaponry_special"
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/rpk = 2,
-		/obj/item/gun/projectile/automatic/scp/svd = 2,
+		// /obj/item/gun/projectile/automatic/scp/rpk = 2, // TODO
+		// /obj/item/gun/projectile/automatic/scp/svd = 2, // TODO
 		/obj/item/grenade/frag = 10,
 		/obj/item/ammo_magazine/scp/ak = 30,
 		/obj/item/ammo_magazine/scp/svd = 30
@@ -53,9 +53,9 @@
 	icon_state = "lcz_weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/p90 = 6,
+		/obj/item/gun/projectile/scp/automatic/p90 = 6,
 		/obj/item/gun/projectile/revolver/rhino = 2,
-		/obj/item/gun/projectile/pistol/mk9 = 4,
+		/obj/item/gun/projectile/scp/pistol/mk9 = 4,
 		/obj/item/ammo_magazine/box/a57 = 6,
 		/obj/item/ammo_magazine/box/a57/rubber = 30,
 		/obj/item/ammo_magazine/box/mk9 = 4,
@@ -82,9 +82,9 @@
 	icon_state = "weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/p90 = 6,
+		/obj/item/gun/projectile/scp/automatic/p90 = 6,
 		/obj/item/gun/projectile/revolver/mateba = 2,
-		/obj/item/gun/projectile/pistol/mk9 = 4,
+		/obj/item/gun/projectile/scp/pistol/mk9 = 4,
 		/obj/item/ammo_magazine/box/a357 = 4,
 		/obj/item/ammo_magazine/box/a50 = 4,
 		/obj/item/ammo_magazine/box/a57 = 12,
@@ -100,8 +100,7 @@
 	icon_state = "weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/m4a1 = 2,
-		/obj/item/gun/projectile/automatic/scp/m16 = 2,
+		/obj/item/gun/projectile/scp/automatic/m4a1 = 4,
 		/obj/item/ammo_magazine/scp/m16_mag = 8,
 		/obj/item/ammo_magazine/box/a556 = 2,
 		/obj/item/grenade/frag = 2
@@ -116,10 +115,10 @@
 	icon_state = "ez_weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/p90 = 6,
+		/obj/item/gun/projectile/scp/automatic/p90 = 6,
 		/obj/item/gun/projectile/revolver/rhino = 2,
-		/obj/item/gun/projectile/pistol/usp45 = 3,
-		/obj/item/gun/projectile/pistol/mk9 = 3,
+		/obj/item/gun/projectile/scp/pistol/usp45tac = 3,
+		/obj/item/gun/projectile/scp/pistol/mk9 = 3,
 		/obj/item/ammo_magazine/box/a57 = 24,
 		/obj/item/ammo_magazine/box/mk9 = 4,
 		/obj/item/ammo_magazine/box/a357 = 6,

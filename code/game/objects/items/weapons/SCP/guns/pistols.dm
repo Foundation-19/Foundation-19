@@ -4,8 +4,8 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 	action_type = GUN_DOUBLE_ACTION
-	bolt_back_sound = 'sound/weapons/guns/pistol/grach_bolt_back.ogg'
-	bolt_forward_sound = 'sound/weapons/guns/pistol/grach_bolt_forward.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/pistol/grach_bolt_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/pistol/grach_bolt_forward.ogg'
 	has_bolt_icon = TRUE
 	bolt_hold = TRUE
 	bolt_hold_on_empty_mag = TRUE
@@ -30,7 +30,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp/m1911
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
 	action_type = GUN_SINGLE_ACTION
-	fire_sound = 'sound/weapons/guns/pistol/m1911.ogg'
+	fire_sound = 'sounds/weapons/guns/pistol/m1911.ogg'
 
 /obj/item/gun/projectile/scp/pistol/usp45tac
 	name = "\improper MK45 Tactical pistol"
@@ -43,4 +43,4 @@
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/usp45)
 	bolt_hold = TRUE
 	bolt_hold_on_empty_mag = TRUE
-	fire_sound = 'sound/weapons/guns/pistol/m1911.ogg'
+	fire_sound = 'sounds/weapons/guns/pistol/m1911.ogg'

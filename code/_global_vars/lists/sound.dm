@@ -134,35 +134,35 @@ GLOBAL_LIST_INIT(sfx_list, list(
 		),
 
 	SFX_BULLET_INSERT = list(
-		'sound/weapons/guns/interaction/bullet_insert1.ogg',
-		'sound/weapons/guns/interaction/bullet_insert2.ogg',
-		'sound/weapons/guns/interaction/bullet_insert3.ogg',
-		'sound/weapons/guns/interaction/bullet_insert4.ogg',
-		'sound/weapons/guns/interaction/bullet_insert5.ogg',
-		'sound/weapons/guns/interaction/bullet_insert6.ogg',
-		'sound/weapons/guns/interaction/bullet_insert7.ogg',
-		'sound/weapons/guns/interaction/bullet_insert8.ogg',
-		'sound/weapons/guns/interaction/bullet_insert9.ogg',
-		'sound/weapons/guns/interaction/bullet_insert10.ogg',
-		'sound/weapons/guns/interaction/bullet_insert11.ogg'
+		'sounds/weapons/guns/interaction/bullet_insert1.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert2.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert3.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert4.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert5.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert6.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert7.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert8.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert9.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert10.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert11.ogg'
 		),
 
 	SFX_SHELL_INSERT = list(
-		'sound/weapons/guns/interaction/shell_insert1.ogg',
-		'sound/weapons/guns/interaction/shell_insert2.ogg'
+		'sounds/weapons/guns/interaction/shell_insert1.ogg',
+		'sounds/weapons/guns/interaction/shell_insert2.ogg'
 		),
 
 	SFX_REM870_SHELL_INSERT = list(
-		'sound/weapons/guns/shotguns/mp133_insert1.ogg',
-		'sound/weapons/guns/shotguns/mp133_insert2.ogg',
-		'sound/weapons/guns/shotguns/mp133_insert3.ogg'
+		'sounds/weapons/guns/shotguns/mp133_insert1.ogg',
+		'sounds/weapons/guns/shotguns/mp133_insert2.ogg',
+		'sounds/weapons/guns/shotguns/mp133_insert3.ogg'
 		),
 
 	SFX_SPAS12_SHELL_INSERT = list(
-		'sound/weapons/guns/shotguns/spas12_insert1.ogg',
-		'sound/weapons/guns/shotguns/spas12_insert2.ogg',
-		'sound/weapons/guns/shotguns/spas12_insert3.ogg',
-		'sound/weapons/guns/shotguns/spas12_insert4.ogg'
+		'sounds/weapons/guns/shotguns/spas12_insert1.ogg',
+		'sounds/weapons/guns/shotguns/spas12_insert2.ogg',
+		'sounds/weapons/guns/shotguns/spas12_insert3.ogg',
+		'sounds/weapons/guns/shotguns/spas12_insert4.ogg'
 		),
 
 	SFX_ZOMBIE = list(

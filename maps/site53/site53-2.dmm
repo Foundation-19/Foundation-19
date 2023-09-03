@@ -615,7 +615,7 @@
 "abV" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/closet,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
@@ -35121,7 +35121,7 @@
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /obj/structure/closet,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "rIR" = (
