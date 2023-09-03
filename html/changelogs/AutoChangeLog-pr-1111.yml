@@ -1,6 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscdel: Removed Psi implant automatic alert system.
-  - balance: Code Orange and Code red were merged to reduce bloat.
-  - code_imp: Alarm code cleaned up.

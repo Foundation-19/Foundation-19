@@ -1,9 +1,14 @@
-author: TheDarkElites
-delete-after: true
-changes:
+2023-09-03:
+  TheDarkElites:
   - rscadd: Z-Level Pathfinding
   - rscadd: New pathfinder debug verb to help debug pathfinding.
   - bugfix: 173 now properly stalks individuals through z-levels."
   - bugfix: 173 AI should no longer be able to kill when looked at in certain situations.
   - balance: 173 now stalks targets rather than losing interest once it can no longer
       see them. Min distance to lose 173 is 14.
+  cheesePizza2:
+  - code_imp: Ported admin-related macros from TG.
+  - admin: Ported admin smiting from TG. Turn people into statues with ease!
+  - rscdel: Removed Psi implant automatic alert system.
+  - balance: Code Orange and Code red were merged to reduce bloat.
+  - code_imp: Alarm code cleaned up.
