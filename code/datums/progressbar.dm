@@ -25,7 +25,7 @@
 	///Variable to ensure smooth visual stacking on multiple progress bars - but for the target.
 	var/target_listindex = 0
 	///An optional, clickable object that can be used to speed up progress bars
-	var/obj/screen/progressbar_booster/booster
+	var/obj/effect/client_image_holder/progressbar_booster/booster
 	///How much bonus progress we've accured from a linked progress booster
 	var/bonus_progress = 0
 
@@ -60,7 +60,7 @@
 		user_client = user.client
 		add_prog_bar_image_to_user()
 	if(bonus_percentage)
-		booster = new(get_turf(target), src, bonus_percentage, focus_sound, focus_frequency)
+		booster = new(get_turf(target), user, src, bonus_percentage, focus_sound, focus_frequency)
 
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
 	RegisterSignal(user, COMSIG_MOB_LOGOUT, .proc/clean_user_client)
