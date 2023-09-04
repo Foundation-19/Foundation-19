@@ -282,6 +282,11 @@ its easier to just keep the beam vertical.
 	to_chat(user, desc)
 	if(health_max)
 		examine_damage_state(user)
+	if(SCP && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/datum/job/job = SSjobs.get_by_title(H.job)
+		if(job.department_flag & (COM|SCI|SEC))
+			to_chat(user, SPAN_CLASS("scp", "You know this is SCP-[SCP.designation]!"))
 	return TRUE
 
 // called by mobs when e.g. having the atom as their machine, pulledby, loc (AKA mob being inside the atom) or buckled var set.

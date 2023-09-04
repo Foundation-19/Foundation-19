@@ -126,8 +126,6 @@ h1.alert, h2.alert		{color: #000080;}
 .arabic					{color: #128b11;}
 .spacer					{color: #9c660b;}
 .selenian       		{color: #22228b;}
-.zombie					{color: #800024;}
-.zombie_mental			{color: #800024; font-style: italic;}
 
 .interface				{color: #330033;}
 
