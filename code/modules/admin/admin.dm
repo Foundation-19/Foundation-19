@@ -992,9 +992,9 @@ var/global/floorIsLava = 0
 	out += "<hr>"
 
 	if(SSticker.mode.ert_disabled)
-		out += "<b>Emergency Response Teams:</b> <a href='?src=\ref[SSticker.mode];toggle=ert'>disabled</a>"
+		out += "<b>Mobile Task Forces:</b> <a href='?src=\ref[SSticker.mode];toggle=ert'>disabled</a>"
 	else
-		out += "<b>Emergency Response Teams:</b> <a href='?src=\ref[SSticker.mode];toggle=ert'>enabled</a>"
+		out += "<b>Mobile Task Forces:</b> <a href='?src=\ref[SSticker.mode];toggle=ert'>enabled</a>"
 	out += "<br/>"
 
 	if(SSticker.mode.deny_respawn)
@@ -1146,18 +1146,16 @@ var/global/floorIsLava = 0
 		return "<b>(*not a mob*)</b>"
 	switch(detail)
 		if(0)
-			return "<b>[key_name(C, link, name, highlight_special, ticket)]</b>"
+			return key_name_admin(M)
 
 		if(1)	//Private Messages
-			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>)</b>"
+			return "[ADMIN_LOOKUP(M)]"
 
 		if(2)	//Admins
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>) ([admin_jump_link(M)]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
+			return ADMIN_FULLMONTY(M)
 
 		if(3)	//Devs
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M)])</b>"
+			return "[key_name_admin(M)][ADMIN_VV(M)][ADMIN_JMP(M)]"
 
 /proc/ishost(client/C)
 	return check_rights(R_HOST, 0, C)

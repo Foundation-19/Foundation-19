@@ -48,6 +48,10 @@
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 
+//z-level turftype defines
+#define OPEN_SPACE_TURF	(1<<0)
+#define STAIR_TURF		(1<<1)
+
 /// The JPS Node datum represents a turf that we find interesting enough to add to the open list and possibly search for new tiles from
 /datum/jps_node
 	/// The turf associated with this node
@@ -157,7 +161,7 @@
 	if(!start || !get_turf(end))
 		//stack_trace("Invalid A* start or destination") // logging shit we don't have
 		return FALSE
-	if(start.z != end.z || start == end ) //no pathfinding between z levels
+	if(start == end)
 		return FALSE
 	if(max_distance && (max_distance < get_dist(start, end))) //if start turf is farther than max_distance from end turf, no need to do anything
 		return FALSE
@@ -186,6 +190,8 @@
 
 		for(var/scan_direction in list(NORTHEAST, SOUTHEAST, NORTHWEST, SOUTHWEST))
 			diag_scan_spec(current_turf, scan_direction, current_processed_node)
+
+		vertical_scan_spec(current_turf, current_processed_node)
 
 		// Stable, we'll just be back later
 		if(TICK_CHECK)
@@ -226,10 +232,11 @@
 	path.Add(iter_turf)
 
 	while(unwind_node.previous_node)
-		var/dir_goal = get_dir(iter_turf, unwind_node.previous_node.tile)
+		var/dir_goal = get_dir_multiz(iter_turf, unwind_node.previous_node.tile)
 		for(var/i = 1 to unwind_node.jumps)
-			iter_turf = get_step(iter_turf,dir_goal)
-			path.Add(iter_turf)
+			iter_turf = get_step_multiz(iter_turf, dir_goal)
+			if(!isopenturf(iter_turf) || iter_turf.z != unwind_node.tile.z || !(locate(/obj/structure/stairs) in GetBelow(iter_turf))) //Removes midpoints from stair travel
+				path.Add(iter_turf)
 		unwind_node = unwind_node.previous_node
 
 /datum/pathfind/proc/diagonal_movement_safety()
@@ -309,15 +316,26 @@
 			if(NORTH)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST))
 					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, NORTHWEST)) || canTurfChangeZ(get_step_multiz(current_turf, NORTHEAST))) // Z-Level pathfinding check
+					interesting = TRUE
 			if(SOUTH)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST))
+					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, SOUTHWEST)) || canTurfChangeZ(get_step_multiz(current_turf, SOUTHEAST))) // Z-Level pathfinding check
 					interesting = TRUE
 			if(EAST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
 					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, NORTHEAST)) || canTurfChangeZ(get_step_multiz(current_turf, SOUTHEAST))) // Z-Level pathfinding check
+					interesting = TRUE
 			if(WEST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
 					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, NORTHWEST)) || canTurfChangeZ(get_step_multiz(current_turf, SOUTHWEST))) // Z-Level pathfinding check
+					interesting = TRUE
+
+		if(canTurfChangeZ(current_turf)) //For purposes of Z-Level Pathfinding
+			interesting = TRUE
 
 		if(interesting)
 			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
@@ -370,23 +388,34 @@
 			if(NORTHWEST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
 					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, WEST)) || canTurfChangeZ(get_step_multiz(current_turf, NORTH))) // Z-Level pathfinding check
+					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, WEST) || lateral_scan_spec(current_turf, NORTH))
 			if(NORTHEAST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
+					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, EAST)) || canTurfChangeZ(get_step_multiz(current_turf, NORTH))) // Z-Level pathfinding check
 					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, EAST) || lateral_scan_spec(current_turf, NORTH))
 			if(SOUTHWEST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST))
 					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, SOUTH)) || canTurfChangeZ(get_step_multiz(current_turf, WEST))) // Z-Level pathfinding check
+					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, WEST))
 			if(SOUTHEAST)
 				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST))
 					interesting = TRUE
+				else if(canTurfChangeZ(get_step_multiz(current_turf, SOUTH)) || canTurfChangeZ(get_step_multiz(current_turf, EAST))) // Z-Level pathfinding check
+					interesting = TRUE
 				else
 					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, EAST))
+
+		if(canTurfChangeZ(current_turf)) //For purposes of Z-Level Pathfinding
+			interesting = TRUE
 
 		if(interesting || possible_child_node)
 			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
@@ -397,6 +426,56 @@
 				if(possible_child_node.tile == end || (min_target_dist && (get_dist(possible_child_node.tile, end) <= min_target_dist)))
 					unwind_path(possible_child_node)
 			return
+
+/**
+ * For pathing movement between Z-Levels.
+ *
+ * This only works with stairs and open spaces.
+ * We check if we are on an open or stair turf. If we are open we just enque the turf below us.
+ * If we are on stairs we do a bit of black magic to enque the wall infront of stairs (to get mobs to bump it) and also the turf above that.
+ *
+ * Arguments:
+ * * original_turf: What turf did we start this scan at?
+ * * parent_node: We should always have a parent node for diagonals
+*/
+/datum/pathfind/proc/vertical_scan_spec(turf/original_turf, datum/jps_node/parent_node)
+	var/steps_taken = 1
+	var/turf/current_turf = original_turf
+
+	switch(canTurfChangeZ(current_turf))
+		if(OPEN_SPACE_TURF)
+			current_turf = GetBelow(original_turf)
+			if(!original_turf.CanZPass(original_turf, DOWN) || !current_turf || !CAN_STEP(original_turf, current_turf))
+				return
+
+		if(STAIR_TURF)
+			var/obj/structure/stairs/stair = locate(/obj/structure/stairs) in original_turf
+			var/turf/above = GetAbove(current_turf)
+			current_turf = get_step(above, stair.dir)
+
+			if(!current_turf || !above.CanZPass(original_turf, UP) || !CAN_STEP(original_turf, current_turf))
+				return
+
+			//This fuckery is used to handle the diagonal movement upwards stairs. If removed, unwind() will have a stroke and return garbled paths when moving up stairs.
+			var/datum/jps_node/midnode = new(above, parent_node, steps_taken)
+			open.insert(midnode)
+			parent_node = midnode
+
+		if(FALSE)
+			return
+
+	if(current_turf == end || (min_target_dist && (get_dist(current_turf, end) <= min_target_dist)))
+		var/datum/jps_node/final_node = new(current_turf, parent_node, steps_taken)
+		sources[current_turf] = original_turf
+		unwind_path(final_node)
+		return
+	else if(sources[current_turf]) // already visited, essentially in the closed list
+		return
+	else
+		sources[current_turf] = original_turf
+
+	var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
+	open.insert(newnode)
 
 /**
  * For seeing if we can actually move between 2 given turfs while accounting for our access and the caller's pass_flags
@@ -423,7 +502,7 @@
 			if(!way_blocked)
 				return FALSE
 		return TRUE
-	var/actual_dir = get_dir(src, destination_turf)
+	var/actual_dir = get_dir_multiz(src, destination_turf)
 
 	/// These are generally cheaper than looping contents so they go first
 	switch(destination_turf.pathing_pass_method)
@@ -443,8 +522,13 @@
 		if(!border.CanPathingPass(ID, actual_dir, no_id = no_id))
 			return TRUE
 
+	//TODO: integrate this in a better way
+	if(isopenturf(src) && CanZPass(src, DOWN)) //Prevents us from pathfinding past open turfs. We cant use canpathingpass because we need to check if we are moving FROM an open turf and not TO an open turf to still make z-level pathfinding viable.
+		if(z == destination_turf.z)
+			return TRUE
+
 	// Destination blockers check
-	var/reverse_dir = get_dir(destination_turf, src)
+	var/reverse_dir = get_dir_multiz(destination_turf, src)
 	for(var/obj/iter_object in destination_turf)
 		// This is an optimization because of the massive call count of this code
 		if(!iter_object.density && iter_object.can_astar_pass == CANPATHINGPASS_DENSITY)
@@ -452,3 +536,16 @@
 		if(!iter_object.CanPathingPass(ID, reverse_dir, caller, no_id))
 			return TRUE
 	return FALSE
+
+///Checks if we are on a turf that is relevant to z-leval pathfinding
+/proc/canTurfChangeZ(turf/T)
+	if(isopenturf(T))
+		return OPEN_SPACE_TURF
+
+	if(locate(/obj/structure/stairs) in T.contents)
+		return STAIR_TURF
+
+	return FALSE
+
+#undef OPEN_SPACE_TURF
+#undef STAIR_TURF
