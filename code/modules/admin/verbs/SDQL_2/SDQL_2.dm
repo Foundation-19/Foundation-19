@@ -104,15 +104,15 @@
 				if("select")
 					var/text = ""
 					for(var/datum/t in objs)
-						text += "<A HREF='?_src_=vars;Vars=\ref[t]'>\ref[t]</A>"
+						text += "[ADMIN_VV(t)]"
 						if(istype(t, /atom))
 							var/atom/a = t
 
 							if(a.x)
-								text += ": [t] at <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[a.x];Y=[a.y];Z=[a.z]'>([a.x], [a.y], [a.z])</a><br>"
+								text += ": [t] at [ADMIN_COORDJMP(a)]<br>"
 
 							else if(a.loc && a.loc.x)
-								text += ": [t] in <A HREF='?_src_=vars;Vars=\ref[a.loc]'>[a.loc]</A> at <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[a.loc.x];Y=[a.loc.y];Z=[a.loc.z]'>([a.loc.x], [a.loc.y], [a.loc.z])</a><br>"
+								text += ": [t] in [a.loc] [ADMIN_VV(a.loc)] at [ADMIN_COORDJMP(a)]<br>"
 
 							else
 								text += ": [t]<br>"

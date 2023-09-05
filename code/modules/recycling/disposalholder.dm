@@ -159,3 +159,6 @@
 	active = 0
 	STOP_PROCESSING(SSdisposals, src)
 	return ..()
+
+/obj/structure/disposalholder/AllowDrop()
+	return TRUE

@@ -1,11 +1,11 @@
 #define IS_WEAKREF_OF(thing, potential_weakref) (isdatum(thing) && !isnull(potential_weakref) && thing.weak_reference == potential_weakref)
 
 /datum
-	var/tmp/weakref/weakref
+	var/weakref/weakref
 
 //obtain a weak reference to a datum
 /proc/weakref(datum/D)
-	if(istype(D) & !QDELETED(D))
+	if(istype(D) && !QDELETED(D))
 		if(isweakref(D))
 			return D
 		if(!D.weakref)
@@ -60,15 +60,18 @@
 	var/tmp/ref_type
 
 /weakref/New(datum/D)
-	ref = "\ref[D]"
+	ref = REF(D)
 	ref_name = "[D]"
 	ref_type = D.type
 
-/weakref/Destroy()
-	// A weakref datum should not be manually destroyed as it is a shared resource,
-	//  rather it should be automatically collected by the BYOND GC when all references are gone.
-	SHOULD_CALL_PARENT(FALSE)
-	return QDEL_HINT_IWILLGC
+/weakref/Destroy(force)
+	var/datum/target = resolve()
+	qdel(target)
+
+	if(!force)
+		return QDEL_HINT_LETMELIVE //Let BYOND autoGC this when nothing is using it anymore.
+	target?.weakref = null
+	return ..()
 
 /**
  * Retrieves the datum that this weakref is referencing.

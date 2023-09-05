@@ -52,7 +52,7 @@
 					<td width='50%'>
 						<div align='center'>
 							<a href='?_src_=vars;datumrefresh=\ref[D]'>Refresh</a>
-							[A ? "<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[A.x];Y=[A.y];Z=[A.z]'>Jump To</a>":""]
+							[A ? "[ADMIN_JMP(A)]":""]
 							<form>
 								<select name='file'
 								        size='1'
@@ -171,12 +171,12 @@
 	else if(istype(value, /datum))
 		var/datum/DA = value
 		if("[DA]" == "[DA.type]" || !"[DA]")
-			vtext = "<a href='?_src_=vars;Vars=\ref[DA]'>\ref[DA]</a> - [DA.type]"
+			vtext = "\ref[DA] [ADMIN_VV(DA)] - [DA.type]"
 		else
-			vtext = "<a href='?_src_=vars;Vars=\ref[DA]'>\ref[DA]</a> - [DA] ([DA.type])"
+			vtext = "\ref[DA] [ADMIN_VV(DA)] - [DA] ([DA.type])"
 	else if(istype(value, /client))
 		var/client/C = value
-		vtext = "<a href='?_src_=vars;Vars=\ref[C]'>\ref[C]</a> - [C] ([C.type])"
+		vtext = "\ref[C] [ADMIN_VV(C)] - [C] ([C.type])"
 	else if(islist(value))
 		var/list/L = value
 		vtext = "/list ([L.len])"

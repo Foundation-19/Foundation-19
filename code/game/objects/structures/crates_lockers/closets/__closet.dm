@@ -558,3 +558,6 @@
 	locked = FALSE
 	desc += " It appears to be broken."
 	return TRUE
+
+/obj/structure/closet/AllowDrop()
+	return TRUE

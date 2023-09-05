@@ -64,7 +64,7 @@
 			if(istype(load, /mob/living/carbon/human))
 				var/mob/living/D = load
 				to_chat(D, SPAN_WARNING("You hit [M]!"))
-				msg_admin_attack("[D.name] ([D.ckey]) hit [M.name] ([M.ckey]) with [src]. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+				msg_admin_attack("[D.name] ([D.ckey]) hit [M.name] ([M.ckey]) with [src]. [ADMIN_JMP(src)]")
 
 
 //-------------------------------------------
