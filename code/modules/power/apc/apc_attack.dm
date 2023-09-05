@@ -7,15 +7,15 @@
 
 	if(isCrowbar(W) && user.a_intent != I_HURT)	//bypass when on harm intent to actually make use of the cover hammer off check further down.
 		if(opened)	// equivalent to opened != APC_COVER_CLOSED
-			if (has_electronics == 1)
+			if (has_electronics == APC_PCU_UNSCREWED)
 				if (terminal())
 					balloon_alert(user, "remove wire connection first!")
 					return TRUE
 				playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				balloon_alert(user, "removing PCU...")
 
-				if(do_after(user, 50, src) && opened && (has_electronics == 1) && !terminal()) // redo all checks.
-					has_electronics = 0
+				if(do_after(user, 50, src) && opened && (has_electronics == APC_PCU_UNSCREWED) && !terminal()) // redo all checks.
+					has_electronics = APC_PCU_NONE
 					if ((stat & BROKEN))
 						user.balloon_alert_to_viewers("removed broken PCU")
 					else
@@ -53,7 +53,9 @@
 				balloon_alert(user, SPAN_WARNING("power cell in the way!"))
 				return TRUE
 			switch(has_electronics)
-				if(1)
+				if(APC_PCU_NONE)
+					balloon_alert(user, "PCU missing!")
+				if(APC_PCU_UNSCREWED)
 					if(!terminal())
 						balloon_alert(user, "wire connection missing!")
 						return TRUE
@@ -62,14 +64,12 @@
 					playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 					balloon_alert(user, "PCU screwed")
 					update_icon()
-				if(2)
+				if(APC_PCU_SCREWED)
 					has_electronics = 1
 					stat |= MAINT
 					playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 					balloon_alert(user, "PCU unscrewed")
 					update_icon()
-				if(0)
-					balloon_alert(user, "PCU missing!")
 			return TRUE
 		// Otherwise, if not opened, expose the wires.
 		wiresexposed = !wiresexposed
@@ -102,13 +102,13 @@
 		if(!opened)
 			balloon_alert(user, "cover is closed!")
 			return TRUE
-		if(has_electronics != 0)
+		if(has_electronics)		// equivalent to has_electronics != APC_PCU_NONE
 			balloon_alert(user, "already has a PCU!")
 			return TRUE
 		user.balloon_alert_to_viewers("placing PCU into APC...")
 		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 10, src) && has_electronics == 0 && opened && !(stat & BROKEN))
-			has_electronics = 1
+			has_electronics = APC_PCU_UNSCREWED
 			reboot() //completely new electronics
 			user.balloon_alert_to_viewers(user, "PCU placed in APC")
 			qdel(W)
@@ -118,7 +118,7 @@
 		if(!opened)	// equivalent to opened == APC_COVER_CLOSED
 			balloon_alert(user, "open cover first!")
 			return TRUE
-		if(has_electronics != 0)
+		if(has_electronics)	// equivalent to has_electronics != APC_PCU_NONE
 			balloon_alert(user, "remove PCU first!")
 			return TRUE
 		if(terminal())
@@ -130,7 +130,7 @@
 			return
 		user.balloon_alert_to_viewers("welding APC...")
 		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
-		if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
+		if(do_after(user, 50, src) && opened && !has_electronics && !terminal())
 			if(!WT.remove_fuel(3, user))
 				return TRUE
 			if (emagged || (stat & BROKEN) || opened == APC_COVER_CLOSED)
@@ -304,3 +304,16 @@
 		operating = 0
 		update()
 	return TRUE
+
+// overload the lights in this APC area
+/obj/machinery/power/apc/proc/overload_lighting(chance = 100)
+	if(/* !get_connection() || */ !operating || shorted)
+		return
+	var/amount = use_power_oneoff(20, LOCAL)
+	if(amount <= 0)
+		spawn(0)
+			for(var/obj/machinery/light/L in area)
+				if(prob(chance))
+					L.on = 1
+					L.broken()
+				sleep(1)

@@ -1,12 +1,12 @@
 /obj/machinery/power/apc/inactive
-	lighting = 0
-	equipment = 0
-	environ = 0
-	locked = 0
-	coverlocked = 0
+	lighting = POWERCHAN_OFF
+	equipment = POWERCHAN_OFF
+	environ = POWERCHAN_OFF
+	locked = FALSE
+	coverlocked = FALSE
 
 /obj/machinery/power/apc/critical
-	is_critical = 1
+	is_critical = TRUE
 
 /obj/machinery/power/apc/high
 	cell_type = /obj/item/cell/high
@@ -15,7 +15,7 @@
 	cell_type = /obj/item/cell/super
 
 /obj/machinery/power/apc/super/critical
-	is_critical = 1
+	is_critical = TRUE
 
 /obj/machinery/power/apc/hyper
 	cell_type = /obj/item/cell/hyper

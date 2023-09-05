@@ -38,3 +38,11 @@
 #define APC_COVER_OPENED 1
 /// The APCs cover is missing.
 #define APC_COVER_REMOVED 2
+
+// APC PCU status:
+/// The APC doesn't have a PCU.
+#define APC_PCU_NONE 0
+/// The APC has a PCU, but it isn't screwed in.
+#define APC_PCU_UNSCREWED 1
+/// The APC has a PCU that's screwed in properly.
+#define APC_PCU_SCREWED 2

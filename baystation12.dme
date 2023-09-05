@@ -2736,6 +2736,8 @@
 #include "code\modules\power\apc\apc_main.dm"
 #include "code\modules\power\apc\apc_malf.dm"
 #include "code\modules\power\apc\apc_mapping.dm"
+#include "code\modules\power\apc\apc_power.dm"
+#include "code\modules\power\apc\apc_ui.dm"
 #include "code\modules\power\fusion\_setup.dm"
 #include "code\modules\power\fusion\fusion_circuits.dm"
 #include "code\modules\power\fusion\fusion_particle_catcher.dm"
