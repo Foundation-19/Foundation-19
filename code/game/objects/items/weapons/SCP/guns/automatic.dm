@@ -315,7 +315,7 @@
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0, move_delay=4, burst_delay=1 one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.1, 0.2)),
+		list(mode_name="3-round bursts", burst=3, fire_delay=0, move_delay=4, burst_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.1, 0.2)),
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=0, one_hand_penalty=4, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.1, 0.2), autofire_enabled=1),
 		)
 
