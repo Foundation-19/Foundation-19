@@ -247,13 +247,15 @@
 	item_state = "mp5"
 	force = 10
 	caliber = "9mm"
-	fire_sound = 'sounds/weapons/guns/mp5/shoot.ogg'
+	fire_sound = 'sounds/weapons/guns/mp5/mp5_shoot.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_LARGE
 	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
 	has_bolt_icon = TRUE
 	bolt_hold = TRUE
+	mag_insert_sound = 'sounds/weapons/guns/mp5/mp5_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/mp5/mp5_magout.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),

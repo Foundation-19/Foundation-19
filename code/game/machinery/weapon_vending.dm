@@ -38,10 +38,8 @@
 	desc = "One of the better devices the Chaos Insurgency has, this one dispenses guns for special operatives."
 	icon_state = "ci_weaponry_special"
 	products = list(
-		///obj/item/gun/projectile/automatic/scp/rpk = 2, // TODO
-		///obj/item/gun/projectile/automatic/scp/svd = 2, // TODO
-		/obj/item/grenade/frag = 10,
-		/obj/item/ammo_magazine/scp/ak = 30,
+		/obj/item/grenade/frag = 10,	///obj/item/gun/projectile/automatic/scp/rpk = 2, // TODO
+		/obj/item/ammo_magazine/scp/ak = 30,	///obj/item/gun/projectile/automatic/scp/svd = 2, // TODO
 		/obj/item/ammo_magazine/scp/svd = 30
 	)
 

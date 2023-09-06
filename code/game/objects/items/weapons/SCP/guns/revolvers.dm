@@ -111,7 +111,7 @@
 		count++
 	if(count)
 		user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
-		playsound(src.loc, mag_insert_sound, 50, 1)
+		playsound(src.loc, mag_insert_sound, 80, 1)
 		AM.update_icon()
 		return
 	to_chat(user, SPAN_WARNING("[src] is full!"))

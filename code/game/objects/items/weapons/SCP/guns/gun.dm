@@ -13,6 +13,8 @@
 	var/bolt_forward_sound = 'sounds/weapons/guns/interaction/reload_bolt_forward.ogg'
 	var/trigger_click_sound = 'sounds/weapons/guns/trigger_click.ogg'
 	var/trigger_empty_sound = 'sounds/weapons/guns/trigger_empty.ogg'
+	/// Sound of gun when it's silenced
+	var/sil_sound = 'sounds/weapons/guns/vector45/vector45_shoot_sil.ogg'
 	/// Determines the need to draw and `update_icon()` of bolt after cycling
 	var/has_bolt_icon = FALSE
 	/// Determines the need for rendering stock. Won't render if null.
@@ -68,7 +70,7 @@
 
 	user.visible_message("[user] removes [ammo_magazine] from [src].",
 	SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
-	playsound(src.loc, mag_remove_sound, 70)
+	playsound(src.loc, mag_remove_sound, 80)
 	ammo_magazine.update_icon()
 	ammo_magazine = null
 	update_icon()
@@ -424,13 +426,14 @@
 
 /obj/item/gun/projectile/scp/play_fire_sound(mob/user, obj/item/projectile/P)
 	var/shot_sound = fire_sound? fire_sound : P.fire_sound
+	var/silenced_sound = sil_sound ? sil_sound : shot_sound
 	if(!shot_sound)
 		return
 	if(silenced)
-		playsound(user, shot_sound, 15, 1) //TODO add sil_sound variable
+		playsound(user, silenced_sound, 25, 1) //TODO add sil_sound variable
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 	else
-		playsound(user, shot_sound, 85, 1)
+		playsound(user, shot_sound, 100, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
 
 /obj/item/gun/projectile/scp/proc/get_ammo_count_text()
@@ -505,7 +508,7 @@
 		user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
 							SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
 	ammo_magazine = AM
-	playsound(loc, mag_insert_sound, 75, 1)
+	playsound(loc, mag_insert_sound, 80, 1)
 	show_sound_effect(loc, user, SFX_ICON_SMALL)
 	update_icon()
 	AM.update_icon()
@@ -522,7 +525,7 @@
 		return
 	ammo_magazine = AM
 	user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
-	playsound(loc, mag_insert_sound, 50, 1)
+	playsound(loc, mag_insert_sound, 80, 1)
 	show_sound_effect(loc, user, SFX_ICON_SMALL)
 	update_icon()
 	AM.update_icon()

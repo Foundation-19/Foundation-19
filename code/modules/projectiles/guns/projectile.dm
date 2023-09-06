@@ -177,7 +177,7 @@
 							user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
 												SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
 					ammo_magazine = AM
-					playsound(loc, mag_insert_sound, 75, 1)
+					playsound(loc, mag_insert_sound, 80, 1)
 					show_sound_effect(loc, user, SFX_ICON_SMALL)
 					update_icon()
 					AM.update_icon()
@@ -186,7 +186,7 @@
 					return
 				ammo_magazine = AM
 				user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
-				playsound(loc, mag_insert_sound, 50, 1)
+				playsound(loc, mag_insert_sound, 80, 1)
 				show_sound_effect(loc, user, SFX_ICON_SMALL)
 			if(SPEEDLOADER)
 				if(loaded.len >= max_shells)
@@ -241,7 +241,7 @@
 		else
 			user.put_in_hands(ammo_magazine)
 			user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
-		playsound(src.loc, mag_remove_sound, 50, 1)
+		playsound(src.loc, mag_remove_sound, 80, 1)
 		ammo_magazine.update_icon()
 		ammo_magazine = null
 	else if(loaded.len)
