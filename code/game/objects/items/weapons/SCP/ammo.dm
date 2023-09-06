@@ -107,6 +107,15 @@
 	max_ammo = 45
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/scp/ak/drum
+	name = "drum magazine (5.45)"
+	icon = 'icons/SCP/guns/rifles/rpk16.dmi'
+	icon_state = "mag-drum"
+	gun_mag_icon = "mag-drum"
+	max_ammo = 60
+	multiple_sprites = 1
+	w_class = ITEM_SIZE_NORMAL
+
 /obj/item/ammo_magazine/scp/svd
 	name = "magazine (7.62x54mmR)"
 	icon_state = "7.62x54s"

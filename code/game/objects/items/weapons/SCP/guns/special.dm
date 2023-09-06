@@ -44,25 +44,23 @@
 	to_chat(user, SPAN_NOTICE("You switch the barrel."))
 	return TRUE
 
-/obj/item/gun/projectile/shotgun/doublebarrel
+/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/sawnoff
+	name = "sawn-off shotgun"
+	desc = "Omar's coming!"
+	icon_state = "sawnoff"
+	item_state = "sawnshotgun"
+	foreend_icon = "fore-end-sawn"
+	stock_icon = null
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	bulk = 2
 
-	//SPEEDLOADER because rapid unloading.
-	//In principle someone could make a speedloader for it, so it makes sense.
-	load_method = SINGLE_CASING|SPEEDLOADER
-	handle_casings = CYCLE_CASINGS
-	max_shells = 2
-	w_class = ITEM_SIZE_HUGE
-	force = 10
-	obj_flags =  OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_BACK
-	caliber = CALIBER_SHOTGUN
-	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	one_hand_penalty = 2
-	wielded_item_state = "gun_wielded"
+/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/sawnoff/bolt_back(manual)
+	..()
+	foreend_icon = "fore-end-sawn_open"
+	stock_icon = "stock_open"
 
-	burst_delay = 0
-	firemodes = list(
-		list(mode_name="fire one barrel at a time", burst=1),
-		list(mode_name="fire both barrels at once", burst=2),
-		)
+/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/sawnoff/bolt_forward(manual)
+	..()
+	foreend_icon = "fore-end-sawn"
+	stock_icon = null

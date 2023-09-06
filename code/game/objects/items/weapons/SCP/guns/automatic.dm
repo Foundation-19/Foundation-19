@@ -108,17 +108,31 @@
 	bolt_hold = FALSE
 	bolt_hold_on_empty_mag = FALSE
 	has_bolt_icon = TRUE
-	mag_insert_sound = 'sounds/weapons/guns/ak12/mag_in.ogg'
-	mag_remove_sound = 'sounds/weapons/guns/ak12/mag_out.ogg'
-	fire_sound = 'sounds/weapons/guns/ak12/shoot.ogg'
-	bolt_back_sound = 'sounds/weapons/guns/ak12/ak74_back.ogg'
-	bolt_forward_sound = 'sounds/weapons/guns/ak12/ak74_forward.ogg'
+	mag_insert_sound = 'sounds/weapons/guns/ak12/ak12_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/ak12/ak12_magout.ogg'
+	fire_sound = 'sounds/weapons/guns/ak12/ak12_shoot.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/ak12/ak12_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/ak12/ak12_forward.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
 		)
+
+/obj/item/gun/projectile/scp/automatic/ak12/rpk16
+	name = "\improper RPK-16"
+	desc = "A 5.45x39mm light machine gun, featuring higher rate of fire and lowered recoil compared to it's AK-12 counterpart."
+	icon = 'icons/SCP/guns/rifles/rpk16.dmi'
+	icon_state = "rpk16"
+	magazine_type = /obj/item/ammo_magazine/scp/ak/drum
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, burst_delay =1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=0, one_hand_penalty=4, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8), autofire_enabled=1),
+		)
+
 
 
 // TODO update to new system
