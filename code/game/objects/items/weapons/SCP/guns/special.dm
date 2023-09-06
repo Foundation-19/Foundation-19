@@ -18,6 +18,7 @@
 	slot_flags = SLOT_BACK
 	one_hand_penalty = 2
 	load_sound = SFX_SHELL_INSERT
+	fire_delay = 0
 
 /obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/attack_self()
 	. = ..()
@@ -58,7 +59,7 @@
 /obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/sawnoff/bolt_back(manual)
 	..()
 	foreend_icon = "fore-end-sawn_open"
-	stock_icon = "stock_open"
+	stock_icon = null
 
 /obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/sawnoff/bolt_forward(manual)
 	..()
