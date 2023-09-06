@@ -202,6 +202,15 @@ GLOBAL_LIST_INIT(sfx_list, list(
 		'sounds/scp/1507/attack4.ogg',
 		'sounds/scp/1507/attack5.ogg',
 		'sounds/scp/1507/attack6.ogg'
-	)
+		),
 
+	SFX_CASING_DROP = list(
+		'sounds/weapons/guns/casing_drop1.ogg',
+		'sounds/weapons/guns/casing_drop2.ogg',
+		'sounds/weapons/guns/casing_drop3.ogg',
+		'sounds/weapons/guns/casing_drop4.ogg',
+		'sounds/weapons/guns/casing_drop5.ogg',
+		'sounds/weapons/guns/casing_drop6.ogg',
+		'sounds/weapons/guns/casing_drop7.ogg',
+		)
 ))

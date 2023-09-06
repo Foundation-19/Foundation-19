@@ -14,8 +14,10 @@
 	var/projectile_type					//The bullet type to create when New() is called
 	var/is_spent = FALSE
 	var/spent_icon = "pistolcasing-spent"
-	var/fall_sounds = list('sounds/weapons/guns/casing_drop1.ogg','sounds/weapons/guns/casing_drop2.ogg','sounds/weapons/guns/casing_drop3.ogg','sounds/weapons/guns/casing_drop4.ogg','sounds/weapons/guns/casing_drop5.ogg','sounds/weapons/guns/casing_drop6.ogg','sounds/weapons/guns/casing_drop7.ogg',)
+	var/fall_sounds = SFX_CASING_DROP
 	var/projectile_label
+
+	var/misfire_chance = 1
 
 /obj/item/ammo_casing/Initialize()
 	if(!ispath(projectile_type))
@@ -27,10 +29,13 @@
 	. = ..()
 
 //removes the projectile from the ammo casing
-/obj/item/ammo_casing/proc/expend()
+/obj/item/ammo_casing/proc/expend(mob/user)
 	if(!ispath(projectile_type))
 		return
 	if(is_spent)
+		return
+	if(prob(misfire_chance))
+		balloon_alert(user, "Misfire!")
 		return
 
 	var/obj/item/projectile/proj = new projectile_type(src)
@@ -174,7 +179,7 @@
 
 	var/gun_mag_icon = "mag"
 	var/multiple_gun_mag_icons = FALSE
-	var/misfeed_chance = 0 // TODO
+	var/misfeed_chance = 1
 
 /obj/item/ammo_magazine/box
 	w_class = ITEM_SIZE_NORMAL

@@ -98,25 +98,25 @@
 		return
 	last_bolt_cycle = world.time
 	if(!is_bolt_open)
-		cycle_bolt(manual = TRUE)
+		cycle_bolt(user, manual = TRUE)
 	else
-		bolt_forward(manual = TRUE)
+		bolt_forward(user, manual = TRUE)
 	if(has_bolt_icon)
 		update_icon()
 
 
 /// Moving back backwards and forward, loading cartridge from magazine. Setting manual variable adds cycling sounds and delay between actions
-/obj/item/gun/projectile/scp/proc/cycle_bolt(manual)
-	bolt_back(manual)
+/obj/item/gun/projectile/scp/proc/cycle_bolt(mob/user, manual)
+	bolt_back(user, manual)
 
 	if(check_magazine_empty() && ((ammo_magazine && bolt_hold_on_empty_mag) || (manual && bolt_hold)))
 		return
 
 	if(manual)
 		sleep(5)
-	bolt_forward(manual)
+	bolt_forward(user, manual)
 
-/obj/item/gun/projectile/scp/proc/bolt_back(manual)
+/obj/item/gun/projectile/scp/proc/bolt_back(mob/user, manual)
 	is_bolt_open = TRUE
 	if(manual && bolt_back_sound)
 		playsound(src, bolt_back_sound, 70)
@@ -125,10 +125,10 @@
 	is_cocked = TRUE
 
 
-/obj/item/gun/projectile/scp/proc/bolt_forward(manual)
+/obj/item/gun/projectile/scp/proc/bolt_forward(mob/user, manual)
 	if(manual && bolt_forward_sound)
 		playsound(src, bolt_forward_sound, 70)
-	load_round_from_magazine()
+	load_round_from_magazine(user)
 	is_bolt_open = FALSE
 
 /obj/item/gun/projectile/scp/proc/check_magazine_empty()
@@ -138,7 +138,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/gun/projectile/scp/proc/load_round_from_magazine()
+/obj/item/gun/projectile/scp/proc/load_round_from_magazine(mob/user)
 	if(chambered)
 		return
 	if(length(loaded))
@@ -146,6 +146,9 @@
 		loaded -= chambered
 		return 1
 	if(ammo_magazine && length(ammo_magazine.stored_ammo))
+		if(prob(ammo_magazine.misfeed_chance))
+			balloon_alert(user, "Misfeed!")
+			return
 		chambered = ammo_magazine.stored_ammo[length(ammo_magazine.stored_ammo)]
 		ammo_magazine.stored_ammo -= chambered
 		return 1
@@ -291,12 +294,12 @@
 		Fire(autofiring_at, autofiring_by, null, (get_dist(autofiring_at, autofiring_by) <= 1), FALSE, FALSE, TRUE)
 
 
-/obj/item/gun/projectile/scp/consume_next_projectile()
+/obj/item/gun/projectile/scp/consume_next_projectile(mob/user)
 	if(is_jammed)
 		return
 
 	if(chambered)
-		return chambered.expend()
+		return chambered.expend(user)
 
 // TODO rewrite this piece of shit
 

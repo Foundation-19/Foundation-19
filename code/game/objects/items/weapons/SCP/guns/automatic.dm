@@ -43,7 +43,7 @@
 	bolt_forward_sound = 'sounds/weapons/guns/m4a1/m4a1_forward.ogg'
 	mag_insert_sound = 'sounds/weapons/guns/m4a1/m4a1_load.ogg'
 	mag_remove_sound = 'sounds/weapons/guns/m4a1/m4a1_unload.ogg'
-	fire_sound = 'sounds/weapons/guns/m4a1/shoot.ogg'
+	fire_sound = 'sounds/weapons/guns/m4a1/m4_adar_shoot.ogg'
 	has_bolt_icon = TRUE
 	bolt_hold = TRUE
 	bolt_hold_on_empty_mag = TRUE
@@ -229,7 +229,7 @@
 
 /obj/item/gun/projectile/scp/automatic/p90
 	name = "\improper P90 SMG"
-	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
+	desc = "A bullpup submachine gun featuring vertical magazine feed, developed by FN Herstal in 1990."
 	icon = 'icons/SCP/guns/smgs/p90.dmi'
 	icon_state = "p90"
 	item_state = "p90"
@@ -255,7 +255,7 @@
 
 /obj/item/gun/projectile/scp/automatic/mp5
 	name = "\improper MP5 SMG"
-	desc = "A submachine gun sample of the 2010s"
+	desc = "A submachine gun developed by H&K in 1960s."
 	icon = 'icons/SCP/guns/smgs/mp5.dmi'
 	icon_state = "mp5"
 	item_state = "mp5"
@@ -289,6 +289,23 @@
 	max_ammo = 30
 	multiple_sprites = 1
 
+/obj/item/gun/projectile/scp/automatic/vector45
+	name = "\improper KRISS Vector .45 SMG"
+	desc = "A submachine gun sample of the 2010s"
+	icon = 'icons/SCP/guns/smgs/mp5.dmi'
+	icon_state = "mp5"
+	item_state = "mp5"
+	force = 10
+	caliber = "9mm"
+	fire_sound = 'sounds/weapons/guns/mp5/mp5_shoot.ogg'
+	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEM_SIZE_LARGE
+	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
+	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
+	has_bolt_icon = TRUE
+	bolt_hold = TRUE
+	mag_insert_sound = 'sounds/weapons/guns/mp5/mp5_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/mp5/mp5_magout.ogg'
 
 //TODO finish + update vector
 /obj/item/gun/projectile/automatic/vector

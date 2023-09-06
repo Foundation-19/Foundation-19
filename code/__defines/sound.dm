@@ -66,3 +66,4 @@
 #define SFX_ZOMBIE "zombie_sound"
 #define SFX_SCARY_SOUND "scary_sound"
 #define SFX_SCP1507_ATTACK "1507_attack"
+#define SFX_CASING_DROP "casing_drop"

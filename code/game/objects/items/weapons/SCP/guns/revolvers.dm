@@ -45,13 +45,13 @@
 		update_icon()
 	return TRUE
 
-/obj/item/gun/projectile/scp/revolver/bolt_back(manual)
+/obj/item/gun/projectile/scp/revolver/bolt_back(mob/user, manual)
 	is_bolt_open = TRUE
 	if(manual && bolt_back_sound)
 		playsound(src, bolt_back_sound, 70)
 
 
-/obj/item/gun/projectile/scp/revolver/bolt_forward(manual)
+/obj/item/gun/projectile/scp/revolver/bolt_forward(mob/user, manual)
 	if(manual && bolt_forward_sound)
 		playsound(src, bolt_forward_sound, 70)
 	is_bolt_open = FALSE

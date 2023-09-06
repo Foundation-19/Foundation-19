@@ -25,12 +25,12 @@
 	if(.)
 		update_icon()
 
-/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/bolt_back(manual)
+/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/bolt_back(mob/user, manual)
 	..()
 	foreend_icon = "fore-end_open"
 	stock_icon = "stock_open"
 
-/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/bolt_forward(manual)
+/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/bolt_forward(mob/user, manual)
 	..()
 	foreend_icon = "fore-end"
 	stock_icon = "stock"
