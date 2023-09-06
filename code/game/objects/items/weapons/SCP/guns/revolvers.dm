@@ -191,7 +191,7 @@
 	spin_cylinder()
 
 /obj/item/gun/projectile/scp/revolver/mk27
-	name = "\improper MK27 Revolver"
+	name = "\improper MK7 Revolver"
 	desc = "The SCPF Mk7 Revolver, reminiscent of the S&W Model 27. This weapon, patented and produced by the SCP Foundation is popular among high-ranking security officers. Uses .357 ammo."
 	icon = 'icons/SCP/guns/pistols/sw27.dmi'
 	icon_state = "s&w27"
@@ -199,4 +199,13 @@
 	caliber = ".357"
 	max_shells = 6
 	ammo_type = /obj/item/ammo_casing/pistol/a357
+	fire_sound = 'sounds/weapons/guns/revolvers/fire_revolver1.ogg'
+
+/obj/item/gun/projectile/scp/revolver/mk27/mk44
+	name = "\improper S&W Model 29 Revolver"
+	desc = "S&W Model 29, anniversary edition. Has engraving and golden leaf inlay. Uses .44 ammo."
+	icon = 'icons/SCP/guns/pistols/sw29.dmi'
+	icon_state = "s&w29"
+	caliber = ".44"
+	ammo_type = /obj/item/ammo_casing/pistol/a50
 	fire_sound = 'sounds/weapons/guns/revolvers/fire_revolver1.ogg'

@@ -129,7 +129,7 @@
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, burst_delay =1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, burst_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=0, one_hand_penalty=4, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8), autofire_enabled=1),
 		)
 
@@ -164,8 +164,6 @@
 	else
 		icon_state = "galil-empty"
 	return
-
-//TODO remove it?? Replace with PKM??
 
 /obj/item/gun/projectile/automatic/svd
 	name = "SVD"
@@ -291,67 +289,35 @@
 
 /obj/item/gun/projectile/scp/automatic/vector45
 	name = "\improper KRISS Vector .45 SMG"
-	desc = "A submachine gun sample of the 2010s"
-	icon = 'icons/SCP/guns/smgs/mp5.dmi'
-	icon_state = "mp5"
+	desc = "A submachine gun made by KRISS. Has a suppressor, EOTech holo sight and foregrip mounted."
+	icon = 'icons/SCP/guns/smgs/vector45.dmi'
+	icon_state = "vector45"
 	item_state = "mp5"
 	force = 10
-	caliber = "9mm"
-	fire_sound = 'sounds/weapons/guns/mp5/mp5_shoot.ogg'
+	caliber = ".45 ACP"
+	fire_sound = 'sounds/weapons/guns/mp5/mp5_shoot.ogg' // TODO add unsilenced shot sound
+	silenced = TRUE
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_LARGE
-	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
-	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
-	has_bolt_icon = TRUE
-	bolt_hold = TRUE
-	mag_insert_sound = 'sounds/weapons/guns/mp5/mp5_magin.ogg'
-	mag_remove_sound = 'sounds/weapons/guns/mp5/mp5_magout.ogg'
-
-//TODO finish + update vector
-/obj/item/gun/projectile/automatic/vector
-	name = "Kriss Vector"
-	desc = "A powerful, high stopping power SMG assigned to MTF operatives and certain SD agents."
-	icon = 'icons/obj/gun.dmi'
-	icon_state = "vector-45"
-	item_state = "vector-45"
-	w_class = ITEM_SIZE_HUGE
-	force = 10
-	caliber = ".45 ACP"
-	slot_flags = SLOT_BELT|SLOT_BACK
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/vectormag
 	allowed_magazines = /obj/item/ammo_magazine/scp/vectormag
-	wielded_item_state = "p90-wielded"
+	has_bolt_icon = TRUE
+	bolt_hold = TRUE
+	bolt_hold_on_empty_mag = TRUE
+	foreend_offset = 28
+	stock_icon = "stock"
+	foreend_icon = "fore-end"
+	screen_shake = 0.5
+	mag_insert_sound = 'sounds/weapons/guns/vector45/vector_magin.ogg'
+	mag_remove_sound = 'sounds/weapons/guns/vector45/vector_magout.ogg'
+	bolt_back_sound = 'sounds/weapons/guns/vector45/vector_back.ogg'
+	bolt_forward_sound = 'sounds/weapons/guns/vector45/vector_forward.ogg'
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0, one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
-		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.2, 0.6, 0.8), autofire_enabled=1),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=0, move_delay=4, burst_delay=1 one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.1, 0.2)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=0, one_hand_penalty=4, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.1, 0.2), autofire_enabled=1),
 		)
-
-/obj/item/gun/projectile/automatic/vector/update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "vector-45"
-	else
-		icon_state = "vector-45-empty"
-	return
-
-//WHO THE FUCK ADDED A KNIFE HERE WTF
-// TODO move fucking knife to other place
-/obj/item/material/hatchet/tacknife
-	name = "tactical knife"
-	desc = "You'd be killing loads of people if this was 'Medal of Honor'."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "tacknife"
-	item_state = "knife"
-	attack_verb = list("stabbed", "chopped", "cut")
-	applies_material_colour = 1
-//	drawsound = 'sounds/items/unholster_knife.ogg'
-
-
 
 /obj/item/gun/projectile/scp/automatic/saiga12
 	name = "\improper Saiga12 Tactical Shotgun"

@@ -433,7 +433,7 @@
 	if(!shot_sound)
 		return
 	if(silenced)
-		playsound(user, silenced_sound, 25, 1) //TODO add sil_sound variable
+		playsound(user, silenced_sound, 40, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 	else
 		playsound(user, shot_sound, 100, 1)
