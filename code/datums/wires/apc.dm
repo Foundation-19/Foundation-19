@@ -1,6 +1,6 @@
 /datum/wires/apc
 	holder_type = /obj/machinery/power/apc
-	wire_count = 4
+	wire_count = 6	// 2 duds
 	proper_name = "APC"
 
 /datum/wires/apc/New(atom/_holder)
