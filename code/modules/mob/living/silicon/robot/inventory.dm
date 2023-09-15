@@ -161,7 +161,7 @@
 /mob/living/silicon/robot/proc/deselect_module(module) //Module is 1-3
 	if(module < 1 || module > 3) return
 
-	GLOB.module_deselected_event.raise_event(src, module_active)
+	SEND_SIGNAL(src, COMSIG_ROBOT_DESELECTING_MODULE, module_active)
 	switch(module)
 		if(1)
 			if(module_active == module_state_1)
