@@ -7,7 +7,7 @@
 	var/item_removal_proc
 
 /datum/extension/appearance/New(holder)
-	var/appearance_handler = appearance_manager.get_appearance_handler(appearance_handler_type)
+	var/datum/appearance_handler = appearance_manager.get_appearance_handler(appearance_handler_type)
 	if(!appearance_handler)
 		CRASH("Unable to acquire the [appearance_handler_type] appearance handler.")
 
@@ -16,7 +16,7 @@
 	..()
 
 /datum/extension/appearance/Destroy()
-	var/appearance_handler = appearance_manager.get_appearance_handler(appearance_handler_type)
+	var/datum/appearance_handler = appearance_manager.get_appearance_handler(appearance_handler_type)
 	GLOB.item_equipped_event.unregister(holder, appearance_handler, item_equipment_proc)
 	appearance_handler.UnregisterSignal(holder, COMSIG_DROPPED_ITEM)
 	. = ..()

@@ -23,10 +23,10 @@
 /datum/proc/qdel_self()
 	qdel(src)
 
-/proc/register_all_movement(event_source, listener)
+/proc/register_all_movement(event_source, datum/listener)
 	listener.RegisterSignal(event_source, COMSIG_MOVED, /atom/movable/proc/recursive_move)
 	GLOB.dir_set_event.register(event_source, listener, /atom/proc/recursive_dir_set)
 
-/proc/unregister_all_movement(event_source, listener)
+/proc/unregister_all_movement(event_source, datum/listener)
 	listener.UnregisterSignal(event_source, COMSIG_MOVED)
 	GLOB.dir_set_event.unregister(event_source, listener, /atom/proc/recursive_dir_set)

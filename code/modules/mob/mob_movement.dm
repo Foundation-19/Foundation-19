@@ -121,8 +121,6 @@
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
-	var/old_loc = loc
-
 	if (direct & (direct - 1))
 		if (direct & 1)
 			if (direct & 4)

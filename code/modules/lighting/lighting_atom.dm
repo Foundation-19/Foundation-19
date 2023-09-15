@@ -68,7 +68,7 @@
 		light = null
 	return ..()
 
-/atom/proc/set_opacity()
+/atom/proc/set_opacity(new_opacity)
 	if(new_opacity != opacity)
 		var/old_opacity = opacity
 		opacity = new_opacity

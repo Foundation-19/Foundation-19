@@ -95,14 +95,6 @@
 /// Called on `/mob/swap_hand` (/mob)
 #define COMSIG_SWAPPED_HANDS "swapped_hands"
 
-/// Called on `/obj/item/proc/dropped` (/mob, /obj)
-#define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"
-/// Called on `/obj/item/proc/dropped` (/obj, /mob)
-#define COMSIG_DROPPED_ITEM "dropped_item"
-
-/// Called on `/atom/set_opacity` (/atom, old_opacity, new_opacity)
-#define COMSIG_SET_OPACITY "set_opacity"
-
 /*
 * Atom
 */
