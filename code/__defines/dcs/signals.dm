@@ -76,6 +76,9 @@
 /// Called on `/atom/set_opacity` (/atom, old_opacity, new_opacity)
 #define COMSIG_SET_OPACITY "set_opacity"
 
+/// Called on `/obj/screen/zone_sel/set_selected_zone` (/obj/screen/zone_sel, selecting, old_selecting)
+#define COMSIG_SET_SELECTED_ZONE "set_selected_zone"
+
 /// Called on `/mob/set_stat` (/mob, stat)
 #define COMSIG_SET_STAT "set_stat"
 /// Called on `/mob/set_see_in_dark` (/mob, old value, new value)
