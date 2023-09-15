@@ -84,8 +84,10 @@
 #define COMSIG_SET_SEE_INVISIBLE "set_see_invisible"
 /// Called on `/mob/set_sight` (/mob, old value, new value)
 #define COMSIG_SET_SIGHT "set_sight"
-/// Called on `mob/set_invisibility` (/mob, old value, new value)
+/// Called on `/mob/set_invisibility` (/mob, old value, new value)
 #define COMSIG_SET_INVISIBILITY "set_invisibility"
+/// Called on `/mob/living/add_to_dead_mob_list` (/mob)
+#define COMSIG_ADD_TO_DEAD_MOB_LIST "add_to_dead_mob_list"
 
 /// Called on `/mob/swap_hand` (/mob)
 #define COMSIG_SWAPPED_HANDS "swapped_hands"

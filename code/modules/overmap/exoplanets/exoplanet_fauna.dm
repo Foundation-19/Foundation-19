@@ -35,7 +35,7 @@
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal(mob/M)
 	animals -= M
-	GLOB.death_event.unregister(M, src)
+	UnregisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	UnregisterSignal(M, COMSIG_PARENT_QDELETING)
 	repopulate_types |= M.type
 
@@ -52,7 +52,7 @@
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/track_animal(mob/A)
 	animals += A
-	GLOB.death_event.register(A, src, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
+	RegisterSignal(A, COMSIG_ADD_TO_DEAD_MOB_LIST, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
 	RegisterSignal(A, COMSIG_PARENT_QDELETING, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_random_species_name()

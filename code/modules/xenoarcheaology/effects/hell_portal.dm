@@ -115,13 +115,13 @@
 
 /datum/artifact_effect/hellportal/proc/unregister_mob(mob/M)
 	UnregisterSignal(M, COMSIG_PARENT_QDELETING)
-	GLOB.death_event.unregister(M, src)
+	UnregisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	mobs -= M
 
 /datum/artifact_effect/hellportal/proc/register_mob(mob/M)
 	mobs += M
 	RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/unregister_mob)
-	GLOB.death_event.register(M, src, .proc/unregister_mob)
+	RegisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST, .proc/unregister_mob)
 
 	playsound(M, pick(mob_spawn_sounds), 100)
 

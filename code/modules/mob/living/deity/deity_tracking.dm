@@ -27,12 +27,12 @@
 	following = L
 	RegisterSignal(L, COMSIG_MOVED, /mob/living/deity/proc/keep_following)
 	RegisterSignal(L, COMSIG_PARENT_QDELETING, /mob/living/deity/proc/stop_follow)
-	GLOB.death_event.register(L, src, /mob/living/deity/proc/stop_follow)
+	RegisterSignal(L, COMSIG_ADD_TO_DEAD_MOB_LIST, /mob/living/deity/proc/stop_follow)
 
 /mob/living/deity/proc/stop_follow()
 	UnregisterSignal(following, COMSIG_MOVED)
 	UnregisterSignal(following, COMSIG_PARENT_QDELETING)
-	GLOB.death_event.unregister(following,src)
+	UnregisterSignal(following, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	to_chat(src, SPAN_NOTICE("You stop following \the [following]."))
 	following = null
 

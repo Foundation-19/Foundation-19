@@ -65,13 +65,13 @@
 	update_icon()
 	RegisterSignal(L, COMSIG_PARENT_QDELETING, /obj/structure/deity/altar/proc/remove_target)
 	RegisterSignal(L, COMSIG_MOVED, /obj/structure/deity/altar/proc/remove_target)
-	GLOB.death_event.register(L, src, /obj/structure/deity/altar/proc/remove_target)
+	RegisterSignal(L, COMSIG_ADD_TO_DEAD_MOB_LIST, /obj/structure/deity/altar/proc/remove_target)
 
 /obj/structure/deity/altar/proc/remove_target()
 	STOP_PROCESSING(SSobj, src)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(target, COMSIG_MOVED)
-	GLOB.death_event.unregister(target, src)
+	UnregisterSignal(to_targetarget, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	target = null
 	update_icon()
 
