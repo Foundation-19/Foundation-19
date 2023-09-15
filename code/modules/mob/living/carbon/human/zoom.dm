@@ -1,6 +1,7 @@
 /mob/living/carbon/human
 	var/is_view_shifted = FALSE
 
+/*
 /atom/CtrlRightClick(mob/living/carbon/human/user)
 	if(!istype(user))
 		return
