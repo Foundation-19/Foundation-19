@@ -95,6 +95,12 @@
 /// Called on `/mob/swap_hand` (/mob)
 #define COMSIG_SWAPPED_HANDS "swapped_hands"
 
+///Called on `/datum/shuttle/attempt_move` before moving (/datum/shuttle, destination, old_location)
+#define COMSIG_SHUTTLE_PRE_MOVE "shuttle_pre_move"
+
+/// Called on `/datum/shuttle/attempt_move` after moving (/datum/shuttle, destination, old_location)
+#define COMSIG_SHUTTLE_MOVED "shuttle_moved"
+
 /*
 * Atom
 */

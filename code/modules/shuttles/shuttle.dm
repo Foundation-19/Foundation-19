@@ -157,9 +157,9 @@
 		testing("Moving [A]")
 		translation += get_turf_translation(get_turf(current_location), get_turf(destination), A.contents)
 	var/old_location = current_location
-	GLOB.shuttle_pre_move_event.raise_event(src, old_location, destination)
+	SEND_SIGNAL(src, COMSIG_SHUTTLE_PRE_MOVE, destination, old_location)
 	shuttle_moved(destination, translation)
-	GLOB.shuttle_moved_event.raise_event(src, old_location, destination)
+	SEND_SIGNAL(src, COMSIG_SHUTTLE_MOVED, destination, old_location)
 	destination.shuttle_arrived(src)
 	return TRUE
 
