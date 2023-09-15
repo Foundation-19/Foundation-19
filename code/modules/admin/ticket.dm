@@ -154,12 +154,10 @@ var/list/ticket_panels = list()
 				if(ticket.status != TICKET_CLOSED && (check_rights(R_ADMIN|R_MOD, FALSE, C) || ticket.status == TICKET_OPEN))
 					ticket_dat += " - <a href='byond://?src=\ref[src];action=close;ticket=\ref[ticket]'>CLOSE</a>"
 			if(check_rights(R_ADMIN|R_MOD, FALSE, C))
-				var/ref_mob = ""
-				if(owner_client)
-					ref_mob = "\ref[owner_client.mob]"
-				ticket_dat += " - <A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A> - <A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A> - <A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A> - <A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>[owner_client ? "- [admin_jump_link(owner_client, src)]" : ""]"
-				if(ticket.status != TICKET_CLOSED)
-					ticket_dat +=  " - <a href='?_src_=holder;autoresponse=[ref_mob]'>Autoresponse</a>"
+				if(owner_client && owner_client.mob)
+					ticket_dat += " - [ADMIN_FULLMONTY_NONAME(owner_client.mob)]"
+					if(ticket.status != TICKET_CLOSED)
+						ticket_dat +=  " - <a href='?_src_=holder;autoresponse=[owner_client.mob]'>Autoresponse</a>"
 			if(open_ticket && open_ticket == ticket)
 				ticket_dat += "</i>"
 			ticket_dat += "</li>"
