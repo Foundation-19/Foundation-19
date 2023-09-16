@@ -12,3 +12,6 @@
   - rscdel: Removed Psi implant automatic alert system.
   - balance: Code Orange and Code red were merged to reduce bloat.
   - code_imp: Alarm code cleaned up.
+2023-09-16:
+  TheDarkElites:
+  - bugfix: 'fixes #502'
