@@ -260,8 +260,8 @@
 
 	add_fingerprint(user)
 
-	if(user.client?.get_preference_value(/datum/client_preference/facedir_after_shoot) == GLOB.PREF_YES && !user.facing_dir)	// could be signallified but w/e
-		user.face_direction()
+	if(user.client?.get_preference_value(/datum/client_preference/facedir_after_shoot) == GLOB.PREF_YES)	// could be signallified but w/e
+		user.set_face_dir(get_cardinal_dir(user, target))
 
 	if((!waterproof && submerged()) || !special_check(user))
 		return
