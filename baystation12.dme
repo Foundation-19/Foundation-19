@@ -411,7 +411,6 @@
 #include "code\datums\observation\helpers.dm"
 #include "code\datums\observation\logged_in.dm"
 #include "code\datums\observation\logged_out.dm"
-#include "code\datums\observation\module_activated.dm"
 #include "code\datums\observation\module_deactivated.dm"
 #include "code\datums\observation\module_selected.dm"
 #include "code\datums\observation\moved.dm"

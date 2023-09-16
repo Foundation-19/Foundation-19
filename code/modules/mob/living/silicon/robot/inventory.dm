@@ -240,7 +240,6 @@
 	else
 		to_chat(src, SPAN_NOTICE("You need to disable a module first!"))
 		return
-	GLOB.module_activated_event.raise_event(src, O)
 
 /mob/living/silicon/put_in_hands(obj/item/W) // No hands.
 	if(W.loc)
