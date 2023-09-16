@@ -44,7 +44,7 @@
 
 	var/obj/item/organ/O = get_targeted_organ()
 	SetName("[initial(name)] ([O.name])")
-	GLOB.dismembered_event.register(affecting, src, .proc/on_organ_loss)
+	RegisterSignal(affecting, COMSIG_ORGAN_DISMEMBERED, .proc/on_organ_loss)
 	RegisterSignal(assailant.zone_sel, COMSIG_SET_SELECTED_ZONE, .proc/on_target_change)
 
 /obj/item/grab/examine(mob/user)
@@ -98,7 +98,7 @@
 
 /obj/item/grab/Destroy()
 	if(affecting)
-		GLOB.dismembered_event.unregister(affecting, src)
+		UnregisterSignal(affecting, COMSIG_ORGAN_DISMEMBERED)
 		reset_position()
 		affecting.grabbed_by -= src
 		affecting.reset_plane_and_layer()
