@@ -102,6 +102,8 @@
 
 /// Called on `/mob/living/silicon/robot/deselect_module` (/mob/living/silicon/robot, /obj/item)
 #define COMSIG_ROBOT_DESELECTING_MODULE "robot_deselecting_module"
+/// Called on `/mob/living/silicon/robot/uneq_active` and `/mob/living/silicon/robot/uneq_all` (/mob/living/silicon/robot, /obj/item)
+#define COMSIG_ROBOT_DEACTIVATING_MODULE "robot_deactivating_module"
 
 /*
 * Atom

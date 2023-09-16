@@ -21,7 +21,7 @@
 /mob/living/silicon/robot/proc/uneq_active()
 	if(isnull(module_active))
 		return
-	GLOB.module_deactivated_event.raise_event(src, module_active)
+	SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_active)
 	if(module_state_1 == module_active)
 		if(istype(module_state_1,/obj/item/borg/sight))
 			sight_mode &= ~module_state_1:sight_mode
@@ -56,7 +56,7 @@
 	module_active = null
 
 	if(module_state_1)
-		GLOB.module_deactivated_event.raise_event(src, module_state_1)
+		SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_state_1)
 		if(istype(module_state_1,/obj/item/borg/sight))
 			sight_mode &= ~module_state_1:sight_mode
 		if (client)
@@ -65,7 +65,7 @@
 		module_state_1 = null
 		inv1.icon_state = "inv1"
 	if(module_state_2)
-		GLOB.module_deactivated_event.raise_event(src, module_state_2)
+		SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_state_2)
 		if(istype(module_state_2,/obj/item/borg/sight))
 			sight_mode &= ~module_state_2:sight_mode
 		if (client)
@@ -74,7 +74,7 @@
 		module_state_2 = null
 		inv2.icon_state = "inv2"
 	if(module_state_3)
-		GLOB.module_deactivated_event.raise_event(src, module_state_3)
+		SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_state_3)
 		if(istype(module_state_3,/obj/item/borg/sight))
 			sight_mode &= ~module_state_3:sight_mode
 		if (client)

@@ -98,7 +98,7 @@
 		CH.paint_sprayer = src
 		if (isrobot(user))
 			RegisterSignal(user, COMSIG_ROBOT_DESELECTING_MODULE, /obj/item/device/paint_sprayer/proc/remove_click_handler)
-			GLOB.module_deactivated_event.register(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
+			RegisterSignal(user, COMSIG_ROBOT_DEACTIVATING_MODULE, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 		else
 			RegisterSignal(user, COMSIG_SWAPPED_HANDS, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 			GLOB.mob_equipped_event.register(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
@@ -110,7 +110,7 @@
 		GLOB.mob_equipped_event.unregister(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
 		UnregisterSignal(user, COMSIG_MOB_DROPPED_ITEM)
 		UnregisterSignal(user, COMSIG_ROBOT_DESELECTING_MODULE)
-		GLOB.module_deactivated_event.unregister(user, src, /obj/item/device/paint_sprayer/proc/remove_click_handler)
+		UnregisterSignal(user, COMSIG_ROBOT_DEACTIVATING_MODULE)
 
 /obj/item/device/paint_sprayer/afterattack(atom/A, mob/user, proximity, params)
 	if (!proximity)
