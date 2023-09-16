@@ -1524,7 +1524,7 @@
 	if(bpm >= PULSE_MAX_BPM)
 		return method ? ">[PULSE_MAX_BPM]" : "extremely weak and fast, the artery feels like a thread"
 
-	if(heart_organ.SCP.designation == "3349-1")
+	if(heart_organ.SCP?.designation == "3349-1")
 		return method ? "IRREGULARITY WITH [bpm]" : "a strange purring noise with a BPM of [bpm + rand(-10, 10)]"
 	else
 		return "[method ? bpm : bpm + rand(-10, 10)]"
