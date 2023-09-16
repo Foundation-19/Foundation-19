@@ -155,7 +155,6 @@
 				inv3.icon_state = "inv3 +a"
 				module_active = module_state_3
 	module_active.on_active_hand(src)
-	GLOB.module_selected_event.raise_event(src, module_active)
 
 //deselect_module(module) - Deselects the module slot specified by "module"
 /mob/living/silicon/robot/proc/deselect_module(module) //Module is 1-3
