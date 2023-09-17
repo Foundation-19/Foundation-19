@@ -60,7 +60,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"????", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		KETER, //Obj Class
+		EUCLID, //Obj Class
 		"096", //Numerical Designation
 		MEMETIC|SCP_DISABLED //096 is disabled until traits are ported in as that is neccesary for it to pathfind through doors.
 	)
