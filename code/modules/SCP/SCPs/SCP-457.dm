@@ -138,9 +138,6 @@
 			return
 
 		if(target.weakened)
-			visible_message(SPAN_WARNING("[src] attempts to ignite [A]!"))
-			if(!do_after(src, 3 SECONDS, target, DO_DEFAULT|DO_PUBLIC_PROGRESS))
-				return
 			var/damage_amount = clamp(target.health, 0, 25)
 
 			target.fire_stacks += 1

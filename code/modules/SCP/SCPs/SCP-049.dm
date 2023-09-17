@@ -1,5 +1,5 @@
 /mob/living/carbon/human/scp049
-	name = "plauge doctor"
+	name = "plague doctor"
 	desc = "A mysterious plague doctor."
 	icon = 'icons/SCP/scp-049.dmi'
 
