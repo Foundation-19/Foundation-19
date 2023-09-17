@@ -137,18 +137,23 @@
 
 /mob/living/carbon/human/scp106/UnarmedAttack(atom/A, proximity_flag)
 	var/mob/living/L = A
-	if(!istype(L))
-		return
 	if(!proximity_flag)
 		return
-	if(L == src)
-		return
-	if(L.stat == DEAD)
-		return
-	if(istype(L.buckled, /obj/structure/femur_breaker))
-		return
-	if(istype(get_area(L), pocket_dimension_area_type))
-		return
+	if(istype(L))
+		if(L == src)
+			return
+		if(L.stat == DEAD)
+			return
+		if(istype(L.buckled, /obj/structure/femur_breaker))
+			return
+		if(istype(get_area(L), pocket_dimension_area_type))
+			do_attack_animation(A)
+			playsound(L, pick('sounds/bullets/bullet_impact2.ogg', 'sounds/bullets/bullet_impact3.ogg'), rand(15, 30), TRUE)
+			var/mob/living/target = A
+			target.apply_damage(rand(15,25), TOX, damage_flags = DAM_BIO)
+			return
+	else
+		return ..()
 
 	if(L.weakened || !ishuman(L) || !(L.status_flags & CANWEAKEN))
 		WarpMob(L)

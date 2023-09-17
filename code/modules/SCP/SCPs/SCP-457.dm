@@ -172,10 +172,9 @@
 	return
 
 /mob/living/simple_animal/hostile/scp457/death(gibbed, deathmessage, show_dead_message)
-	. = ..()
 	addtimer(CALLBACK(src, /mob/living/simple_animal/hostile/scp457/proc/respawn), 5 MINUTES)
 	to_chat(src, SPAN_NOTICE(SPAN_BOLD("You will reform in five minutes, avoid leaving your body.")))
-	return .
+	return ..()
 
 /mob/living/simple_animal/hostile/scp457/IAttack(atom/A)
 	if((world.time - aflame_cooldown_track) < aflame_cooldown_time)
