@@ -80,6 +80,8 @@
 
 	ai_log("flee_to_darkness() : Stepping to shadow target.", AI_LOG_TRACE)
 	for(var/steps = 0, steps < 5, steps++)
+		if(!LAZYLEN(darkness_path))
+			break
 		step_towards(holder, darkness_path[1], vision_range)
 		if(holder.loc != darkness_path[1])
 			break
