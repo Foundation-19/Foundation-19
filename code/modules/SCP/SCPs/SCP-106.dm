@@ -214,6 +214,8 @@
 
 	var/turf/my_turf = get_turf(src)
 	if(istype(get_area(my_turf), pocket_dimension_area_type))
+		remove_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
+		add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 		return FALSE
 
 	if(!forced)
@@ -248,6 +250,11 @@
 
 	if(pocket_dimension_cooldown > world.time)
 		to_chat(src, SPAN_WARNING("You are not ready to leave pocket dimension just yet."))
+		return
+
+	if(!istype(get_area(my_turf), pocket_dimension_area_type))
+		add_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
+		remove_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 		return
 
 	if(last_x != -1) // shouldn't be possible but just in case
