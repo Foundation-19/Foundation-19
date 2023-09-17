@@ -48,9 +48,9 @@
 	for(var/obj/item/spacecash/S in src)
 		S.dropInto(loc)
 		if(prob(50))
-			playsound(loc, 'sound/items/polaroid1.ogg', 50, 1)
+			playsound(loc, 'sounds/items/polaroid1.ogg', 50, 1)
 		else
-			playsound(loc, 'sound/items/polaroid2.ogg', 50, 1)
+			playsound(loc, 'sounds/items/polaroid2.ogg', 50, 1)
 		break
 
 /obj/machinery/atm/emag_act(remaining_charges, mob/user)
@@ -93,9 +93,9 @@
 			//deposit the cash
 			if(authenticated_account.deposit(dolla.worth, "Credit deposit", machine_id))
 				if(prob(50))
-					playsound(loc, 'sound/items/polaroid1.ogg', 50, 1)
+					playsound(loc, 'sounds/items/polaroid1.ogg', 50, 1)
 				else
-					playsound(loc, 'sound/items/polaroid2.ogg', 50, 1)
+					playsound(loc, 'sounds/items/polaroid2.ogg', 50, 1)
 
 				to_chat(user, SPAN_INFO("You insert [I] into [src]."))
 				src.attack_hand(user)
@@ -289,7 +289,7 @@
 							if(number_incorrect_tries >= max_pin_attempts)
 								//lock down the atm
 								ticks_left_locked_down = 30
-								playsound(src, 'sound/machines/buzz-two.ogg', 50, 1)
+								playsound(src, 'sounds/machines/buzz-two.ogg', 50, 1)
 
 								//create an entry in the account transaction log
 								var/datum/money_account/failed_account = get_account(tried_account_num)
@@ -298,12 +298,12 @@
 							else
 								to_chat(usr, "[icon2html(src, usr)] <span class='warning'>Incorrect pin/account combination entered, [max_pin_attempts - number_incorrect_tries] attempts remaining.</span>")
 								previous_account_number = tried_account_num
-								playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
+								playsound(src, 'sounds/machines/buzz-sigh.ogg', 50, 1)
 						else
 							to_chat(usr, "[icon2html(src, usr)] <span class='warning'>Unable to log in to account, additional information may be required.</span>")
 							number_incorrect_tries = 0
 					else
-						playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
+						playsound(src, 'sounds/machines/twobeep.ogg', 50, 1)
 						ticks_left_timeout = 120
 						view_screen = NO_SCREEN
 
@@ -322,7 +322,7 @@
 				else if(authenticated_account && amount > 0)
 					//create an entry in the account transaction log
 					if(authenticated_account.withdraw(amount, "Credit withdrawal", machine_id))
-						playsound(src, 'sound/machines/chime.ogg', 50, 1)
+						playsound(src, 'sounds/machines/chime.ogg', 50, 1)
 						spawn_ewallet(amount,get_turf(src),usr)
 					else
 						to_chat(usr, "[icon2html(src, usr)]<span class='warning'>You don't have enough funds to do that!</span>")
@@ -335,7 +335,7 @@
 				else if(authenticated_account && amount > 0)
 					//remove the money
 					if(authenticated_account.withdraw(amount, "Credit withdrawal", machine_id))
-						playsound(src, 'sound/machines/chime.ogg', 50, 1)
+						playsound(src, 'sounds/machines/chime.ogg', 50, 1)
 						spawn_money(amount,get_turf(src),usr)
 					else
 						to_chat(usr, "[icon2html(src, usr)]<span class='warning'>You don't have enough funds to do that!</span>")
@@ -360,7 +360,7 @@
 					R.add_overlay(stampoverlay)
 					R.stamps += "<HR><i>This paper has been stamped by the Automatic Teller Machine.</i>"
 
-					playsound(loc, prob(50) ? 'sound/items/polaroid1.ogg' : 'sound/items/polaroid2.ogg', 50, 1)
+					playsound(loc, prob(50) ? 'sounds/items/polaroid1.ogg' : 'sounds/items/polaroid2.ogg', 50, 1)
 
 			if("print_transaction")
 				if(authenticated_account)
@@ -401,7 +401,7 @@
 					R.add_overlay(stampoverlay)
 					R.stamps += "<HR><i>This paper has been stamped by the Automatic Teller Machine.</i>"
 
-					playsound(loc, prob(50) ? 'sound/items/polaroid1.ogg' : 'sound/items/polaroid2.ogg', 50, 1)
+					playsound(loc, prob(50) ? 'sounds/items/polaroid1.ogg' : 'sounds/items/polaroid2.ogg', 50, 1)
 
 			if("insert_card")
 				if(!held_card)

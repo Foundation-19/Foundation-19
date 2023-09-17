@@ -74,8 +74,8 @@
 	var/obj/item/tank/tank = null              // Deployable tank, if any.
 
 	action_button_name = "Toggle Helmet"
-	var/helmet_deploy_sound = 'sound/items/helmet_close.ogg'
-	var/helmet_retract_sound = 'sound/items/helmet_open.ogg'
+	var/helmet_deploy_sound = 'sounds/items/helmet_close.ogg'
+	var/helmet_retract_sound = 'sounds/items/helmet_open.ogg'
 
 #define VOIDSUIT_INIT_EQUIPMENT(equipment_var, expected_path) \
 if(ispath(##equipment_var, ##expected_path )){\
@@ -227,7 +227,7 @@ else if(##equipment_var) {\
 	H.drop_from_inventory(tank, src)
 	H.put_in_hands(tank)
 	src.tank = null
-	playsound(loc, 'sound/effects/spray3.ogg', 50)
+	playsound(loc, 'sounds/effects/spray3.ogg', 50)
 
 /obj/item/clothing/suit/space/void/attackby(obj/item/W as obj, mob/user as mob)
 
@@ -245,7 +245,7 @@ else if(##equipment_var) {\
 			var/choice = input("What component would you like to remove?") as null|anything in list(helmet,boots,tank)
 			if(!choice) return
 
-			playsound(loc, 'sound/items/Screwdriver.ogg', 50)
+			playsound(loc, 'sounds/items/Screwdriver.ogg', 50)
 			if(choice == tank)	//No, a switch doesn't work here. Sorry. ~Techhead
 				to_chat(user, "You pop \the [tank] out of \the [src]'s storage compartment.")
 				user.put_in_hands(tank)
@@ -272,7 +272,7 @@ else if(##equipment_var) {\
 				return
 			to_chat(user, "You attach \the [W] to \the [src]'s helmet mount.")
 			src.helmet = W
-			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		return
 	else if(istype(W,/obj/item/clothing/shoes/magboots))
 		if(user.get_inventory_slot(src) == slot_wear_suit)
@@ -285,7 +285,7 @@ else if(##equipment_var) {\
 				return
 			to_chat(user, "You attach \the [W] to \the [src]'s boot mounts.")
 			boots = W
-			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		return
 	else if(istype(W,/obj/item/tank))
 		if(user.get_inventory_slot(src) == slot_wear_suit)
@@ -302,7 +302,7 @@ else if(##equipment_var) {\
 				return
 			to_chat(user, "You insert \the [W] into \the [src]'s storage compartment.")
 			tank = W
-			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			playsound(loc, 'sounds/items/Deconstruct.ogg', 50, 1)
 		return
 
 	..()

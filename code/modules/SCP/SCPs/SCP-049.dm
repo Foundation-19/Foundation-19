@@ -95,7 +95,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		add_language(LANGUAGE_HUMAN_FRENCH)
 		add_language(LANGUAGE_HUMAN_GERMAN)
 		add_language(LANGUAGE_HUMAN_SPANISH)
-		priority_announcement.Announce("Motion sensors triggered in the containment chamber of SCP-049, on-site security personnel are to investigate the issue.", "Motion Sensors", 'sound/AI/049.ogg')
+		priority_announcement.Announce("Motion sensors triggered in the containment chamber of SCP-049, on-site security personnel are to investigate the issue.", "Motion Sensors", 'sounds/AI/049.ogg')
 		if(!(MUTATION_XRAY in mutations))
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
@@ -125,7 +125,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 
 /mob/living/carbon/human/scp049/proc/Attack_Voice_Line() //for when we're up to no good!
-	var/voiceline = list('sound/scp/voice/SCP049_1.ogg','sound/scp/voice/SCP049_2.ogg','sound/scp/voice/SCP049_3.ogg','sound/scp/voice/SCP049_4.ogg','sound/scp/voice/SCP049_5.ogg')
+	var/voiceline = list('sounds/scp/voice/SCP049_1.ogg','sounds/scp/voice/SCP049_2.ogg','sounds/scp/voice/SCP049_3.ogg','sounds/scp/voice/SCP049_4.ogg','sounds/scp/voice/SCP049_5.ogg')
 	playsound(src, pick(voiceline), 30)
 	show_sound_effect(src.loc, src)
 
@@ -136,7 +136,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	chasing_sound = FALSE
 	if(target.pestilence && !chasing_sound && !contained)
 		chasing_sound = TRUE
-		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
+		target.playsound_local(src, 'sounds/scp/chase/049_chase.ogg', 50, 0)
 		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
 
 /mob/living/carbon/human/scp049/proc/check_nearby()
@@ -277,7 +277,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set category = "SCP-049"
 	set name = "Greetings"
 	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP049_1.ogg', 30)
+		playsound(src, 'sounds/scp/voice/SCP049_1.ogg', 30)
 		show_sound_effect(src.loc, src)
 		next_emote = world.time + 10
 
@@ -285,7 +285,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set category = "SCP-049"
 	set name = "Yet another victim"
 	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP049_2.ogg', 30)
+		playsound(src, 'sounds/scp/voice/SCP049_2.ogg', 30)
 		show_sound_effect(src.loc, src)
 		next_emote = world.time + 40
 
@@ -293,7 +293,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set category = "SCP-049"
 	set name = "You are not a doctor"
 	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP049_3.ogg', 30)
+		playsound(src, 'sounds/scp/voice/SCP049_3.ogg', 30)
 		show_sound_effect(src.loc, src)
 		next_emote = world.time + 20
 
@@ -301,7 +301,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set category = "SCP-049"
 	set name = "I sense the disease in you"
 	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP049_4.ogg', 30)
+		playsound(src, 'sounds/scp/voice/SCP049_4.ogg', 30)
 		show_sound_effect(src.loc, src)
 		next_emote = world.time + 20
 
@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set category = "SCP-049"
 	set name = "I'm here to cure you"
 	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP049_5.ogg', 30)
+		playsound(src, 'sounds/scp/voice/SCP049_5.ogg', 30)
 		show_sound_effect(src.loc, src)
 		next_emote = world.time + 40
 

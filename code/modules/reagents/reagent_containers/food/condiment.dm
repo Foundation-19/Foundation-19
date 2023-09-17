@@ -82,7 +82,7 @@
 		..()
 
 /obj/item/reagent_containers/food/condiment/feed_sound(mob/user)
-	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
+	playsound(user.loc, 'sounds/items/drink.ogg', rand(10, 50), 1)
 
 /obj/item/reagent_containers/food/condiment/self_feed_message(mob/user)
 	to_chat(user, SPAN_NOTICE("You swallow some of contents of \the [src]."))

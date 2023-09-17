@@ -22,12 +22,12 @@
 
 	ai_holder_type = /datum/ai_holder/simple_animal/infestation/broodling
 	say_list_type = /datum/say_list/infestation_broodling
-	death_sounds = list('sound/simple_mob/abominable_infestation/broodling/death.ogg')
+	death_sounds = list('sounds/simple_mob/abominable_infestation/broodling/death.ogg')
 
 /obj/item/natural_weapon/claws/broodling
 	force = 7
 	armor_penetration = 10
-	hitsound = 'sound/weapons/slashmiss.ogg'
+	hitsound = 'sounds/weapons/slashmiss.ogg'
 	attack_cooldown = 2
 
 /datum/say_list/infestation_broodling
@@ -35,12 +35,12 @@
 	emote_see = list("jumps from place to place")
 
 	emote_hear_sounds = list(
-		'sound/simple_mob/abominable_infestation/broodling/ambient_1.ogg',
-		'sound/simple_mob/abominable_infestation/broodling/ambient_2.ogg',
+		'sounds/simple_mob/abominable_infestation/broodling/ambient_1.ogg',
+		'sounds/simple_mob/abominable_infestation/broodling/ambient_2.ogg',
 		)
 	emote_see_sounds = list(
-		'sound/simple_mob/abominable_infestation/broodling/ambient_1.ogg',
-		'sound/simple_mob/abominable_infestation/broodling/ambient_2.ogg',
+		'sounds/simple_mob/abominable_infestation/broodling/ambient_1.ogg',
+		'sounds/simple_mob/abominable_infestation/broodling/ambient_2.ogg',
 		)
 
 /datum/ai_holder/simple_animal/infestation/broodling

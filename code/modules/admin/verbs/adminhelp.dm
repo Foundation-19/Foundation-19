@@ -52,7 +52,7 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 					if(found)
 						if(!(found in mobs_found))
 							mobs_found += found
-							msg += "<b>[original_word] <A HREF='?_src_=holder;adminmoreinfo=\ref[found]'>(?)</A>"
+							msg += "<b>[original_word] [ADMIN_QUE(found)]"
 							if(!ai_found && isAI(found))
 								ai_found = 1
 								msg += " <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A>"
@@ -123,7 +123,7 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 			if(X.is_afk())
 				admin_number_afk++
 			if(X.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
-				sound_to(X, 'sound/effects/adminhelp.ogg')
+				sound_to(X, 'sounds/effects/adminhelp.ogg')
 			to_chat(X, msg)
 	//show it to the person adminhelping too
 	to_chat(src, FONT_COLORED("blue","PM to-<b>Staff</b> (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>): [original_msg]"))

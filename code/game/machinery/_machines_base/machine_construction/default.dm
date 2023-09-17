@@ -24,7 +24,7 @@
 		return
 	if(isScrewdriver(I))
 		TRANSFER_STATE(down_state)
-		playsound(get_turf(machine), 'sound/items/Screwdriver.ogg', 50, 1)
+		playsound(get_turf(machine), 'sounds/items/Screwdriver.ogg', 50, 1)
 		machine.panel_open = TRUE
 		to_chat(user, SPAN_NOTICE("You open the maintenance hatch of \the [machine]."))
 		machine.update_icon()
@@ -67,7 +67,7 @@
 		return
 	if(isScrewdriver(I))
 		TRANSFER_STATE(up_state)
-		playsound(get_turf(machine), 'sound/items/Screwdriver.ogg', 50, 1)
+		playsound(get_turf(machine), 'sounds/items/Screwdriver.ogg', 50, 1)
 		machine.panel_open = FALSE
 		to_chat(user, SPAN_NOTICE("You close the maintenance hatch of \the [machine]."))
 		machine.update_icon()

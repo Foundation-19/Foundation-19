@@ -16,7 +16,7 @@
 	smoke_amt = 5
 
 	hud_state = "wiz_smoke"
-	cast_sound = 'sound/magic/smoke.ogg'
+	cast_sound = 'sounds/magic/smoke.ogg'
 
 /datum/spell/aoe_turf/smoke/empower_spell()
 	if(!..())

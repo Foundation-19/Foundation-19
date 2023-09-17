@@ -72,3 +72,26 @@
 2023-08-13:
   cheesePizza2:
   - code_imp: Deletes unused graph code.
+2023-08-19:
+  EgorDinamit:
+  - tweak: Heart of the Hive(Abominable Infestation) sprite updated.
+  - tweak: Grabs of Abomination species are stronger now(you cannot act while grabbed
+      aggressively).
+2023-08-25:
+  DragonFire101:
+  - bugfix: Changed the audio Volume for the some the announcements.
+  Yawet330:
+  - tweak: 2427-3 now no longer counts monkeys as pure (should fix some edge cases)
+  - bugfix: 2427-3 can no longer rest while alive. Prevents combat resting to avoid
+      bullets.
+  - tweak: 2427-3 higher hp loss from hunger. (0.01 -> 0.035)
+  - tweak: 2427-3 HP and hit chance reduced & total damage output reduced (Fixes some
+      dodge interactions + General nerf)
+2023-08-26:
+  TheDarkElites:
+  - admin: station blueprints can only be used by admins now.
+  - bugfix: 'fix #1289'
+2023-08-28:
+  cheesePizza2:
+  - balance: Requests for Mobile Task Force squads are no longer randomly rejected.
+  - bugfix: References to ERTs replaced with references to MTF squads.

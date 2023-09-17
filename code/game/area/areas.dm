@@ -250,7 +250,7 @@ var/list/mob/living/forced_ambiance_list = new
 	if(hum)
 		if(!L.client.ambience_playing)
 			L.client.ambience_playing = 1
-			L.playsound_local(T,sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 20, channel = GLOB.ambience_sound_channel))
+			L.playsound_local(T,sound('sounds/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 20, channel = GLOB.ambience_sound_channel))
 	else
 		if(L.client.ambience_playing)
 			L.client.ambience_playing = 0
@@ -347,3 +347,15 @@ var/list/mob/living/forced_ambiance_list = new
 	if (src && src.area_flags & AREA_FLAG_NO_MODIFY)
 		return FALSE
 	return TRUE
+
+/**
+ * Causes a runtime error
+ */
+/area/AllowDrop()
+	CRASH("Bad op: area/AllowDrop() called")
+
+/**
+ * Causes a runtime error
+ */
+/area/drop_location()
+	CRASH("Bad op: area/drop_location() called")

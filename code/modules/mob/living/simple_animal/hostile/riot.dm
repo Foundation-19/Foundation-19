@@ -36,12 +36,12 @@
 	ranged_burst_count = 4
 	ranged_burst_delay = 1.5
 	projectiletype = /obj/item/projectile/bullet/rifle/m16
-	projectilesound = 'sound/weapons/gunshot/m16.ogg'
+	projectilesound = 'sounds/weapons/gunshot/m16.ogg'
 
 	needs_reload = TRUE
 	reload_max = 25
 	reload_time = 2 SECONDS
-	reload_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
+	reload_sound = 'sounds/weapons/guns/interaction/batrifle_magin.ogg'
 	casingtype = /obj/item/ammo_casing/rifle
 	casing_disappears = 5 SECONDS
 	loot_list = list(

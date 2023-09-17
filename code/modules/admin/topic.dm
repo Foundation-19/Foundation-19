@@ -1116,7 +1116,7 @@
 		to_chat(ref_client, TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE)
 		to_chat(ref_client, msgplayer)
 		if(ref_client.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
-			sound_to(ref_client, 'sound/effects/adminhelp-reply.ogg')
+			sound_to(ref_client, 'sounds/effects/adminhelp-reply.ogg')
 		ticket.close(client_repository.get_lite_client(usr.client))
 
 	else if(href_list["adminplayerobservecoodjump"])
@@ -1182,14 +1182,15 @@
 		to_chat(src.owner, "Name = <b>[M.name]</b>; Real_name = [M.real_name]; Mind_name = [M.mind?"[M.mind.name]":""]; Key = <b>[M.key]</b>;")
 		to_chat(src.owner, "Location = [location_description];")
 		to_chat(src.owner, "[special_role_description]")
-		to_chat(src.owner, "(<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a>) (<A HREF='?src=\ref[src];adminplayeropts=\ref[M]'>PP</A>) (<A HREF='?_src_=vars;Vars=\ref[M]'>VV</A>) ([admin_jump_link(M, src)]) (<A HREF='?src=\ref[src];secretsadmin=check_antagonist'>CA</A>)")
+		to_chat(src.owner, "[ADMIN_FULLMONTY(M)]")
 
 	else if(href_list["adminspawncookie"])
-		if(!check_rights(R_ADMIN|R_FUN))	return
+		if(!check_rights(R_ADMIN|R_FUN))
+			return
 
 		var/mob/living/carbon/human/H = locate(href_list["adminspawncookie"])
 		if(!ishuman(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human")
+			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.", confidential = TRUE)
 			return
 
 		H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_l_hand )
@@ -1197,58 +1198,56 @@
 			H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_r_hand )
 			if(!(istype(H.r_hand,/obj/item/reagent_containers/food/snacks/cookie)))
 				log_admin("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(src.owner)].")
-				message_staff("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(src.owner)].")
+				message_admins("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(src.owner)].")
 				return
 			else
 				H.update_inv_r_hand()//To ensure the icon appears in the HUD
 		else
 			H.update_inv_l_hand()
-		log_admin("[key_name(H)] got their cookie, spawned by [key_name(src.owner)]")
-		message_staff("[key_name(H)] got their cookie, spawned by [key_name(src.owner)]")
+
+		log_admin("[key_name(H)] got their cookie, spawned by [key_name(src.owner)].")
+		message_admins("[key_name(H)] got their cookie, spawned by [key_name(src.owner)].")
 		SSstatistics.add_field("admin_cookies_spawned",1)
-		to_chat(H, SPAN_NOTICE("Your prayers have been answered!! You received the <b>best cookie</b>!"))
+		to_chat(H, SPAN_NOTICE("Your prayers have been answered!! You received the <b>best cookie!</b>"))
 
-	else if(href_list["BlueSpaceArtillery"])
-		if(!check_rights(R_ADMIN|R_FUN))	return
-
-		var/mob/living/M = locate(href_list["BlueSpaceArtillery"])
-		if(!isliving(M))
-			to_chat(usr, "This can only be used on instances of type /mob/living")
+	else if(href_list["individuallog"])
+		if(!check_rights(R_ADMIN))
 			return
 
-		if(alert(src.owner, "Are you sure you wish to hit [key_name(M)] with Blue Space Artillery?",  "Confirm Firing?" , "Yes" , "No") != "Yes")
+		var/mob/M = locate(href_list["individuallog"]) in SSmobs.mob_list
+		if(!ismob(M))
+			to_chat(usr, "This can only be used on instances of type /mob.", confidential = TRUE)
 			return
 
-		if(BSACooldown)
-			to_chat(src.owner, "Standby!  Reload cycle in progress!  Gunnary crews ready in five seconds!")
+		var/datum/player_action/P = GLOB.pp_actions["check_logs"]
+		if(!P)
 			return
 
-		BSACooldown = 1
-		spawn(50)
-			BSACooldown = 0
+		if(!LAZYLEN(href_list["log_type"]))
+			// oh god i hate this
+			href_list["log_type"] = input(usr, "Choose which log to read from.") in list("say", "emote", "ooc", "dsay", "interact")
 
-		to_chat(M, "You've been hit by bluespace artillery!")
-		log_admin("[key_name(M)] has been hit by Bluespace Artillery fired by [src.owner]")
-		message_staff("[key_name(M)] has been hit by Bluespace Artillery fired by [src.owner]")
+		P.act(usr.client, M, list("log_type" = href_list["log_type"]))
 
-		var/obj/effect/stop/S
-		S = new /obj/effect/stop(M.loc)
-		S.victim = M
-		spawn(20)
-			qdel(S)
+	else if(href_list["tag_datum"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/datum/datum_to_tag = locate(href_list["tag_datum"])
+		if(!datum_to_tag || !istype(datum_to_tag))
+			return
 
-		var/turf/simulated/floor/T = get_turf(M)
-		if(istype(T))
-			if(prob(80))	T.break_tile_to_plating()
-			else			T.break_tile()
+		usr.client.holder.marked_datum_weakref = weakref(datum_to_tag)
 
-		if(M.health == 1)
-			M.gib()
-		else
-			M.adjustBruteLoss( min( 99 , (M.health - 1) )    )
-			M.Stun(20)
-			M.Weaken(20)
-			M.stuttering = 20
+	else if(href_list["adminsmite"])
+		if(!check_rights(R_ADMIN|R_FUN))
+			return
+
+		var/mob/living/carbon/human/H = locate(href_list["adminsmite"]) in GLOB.human_mob_list
+		if(!H || !istype(H))
+			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human", confidential = TRUE)
+			return
+
+		usr.client.smite(H)
 
 	else if(href_list["CentcommReply"])
 		var/mob/living/L = locate(href_list["CentcommReply"])
@@ -1733,6 +1732,14 @@
 	else if(href_list["paralyze"])
 		var/mob/M = locate(href_list["paralyze"])
 		paralyze_mob(M)
+
+	else if(href_list["set_selfdestruct_code"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/code = "[rand(10000, 99999.0)]"
+		for(var/obj/machinery/nuclearbomb/SD as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/nuclearbomb))
+			SD.r_code = code
+		message_admins("[key_name_admin(usr)] has set the self-destruct code to \"[code]\".")
 
 
 	// player info stuff

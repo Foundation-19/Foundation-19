@@ -26,7 +26,7 @@
 	throw_range = 15
 	attack_verb = list("HONKED")
 	var/spam_flag = 0
-	var/audio_files = list("sound/items/bikehorn.ogg")
+	var/audio_files = list("sounds/items/bikehorn.ogg")
 
 /obj/item/bikehorn/attack_self(mob/user as mob)
 	if (spam_flag == 0)
@@ -42,4 +42,4 @@
 	desc = "A can of compressed air hooked up to an obnoxiously loud horn. SPRING BREAK!"
 	icon_state = "air_horn"
 	item_state = "air_horn"
-	audio_files = list("sound/items/air_horn_1.ogg", "sound/items/air_horn_2.ogg")
+	audio_files = list("sounds/items/air_horn_1.ogg", "sounds/items/air_horn_2.ogg")

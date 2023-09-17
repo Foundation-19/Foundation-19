@@ -39,7 +39,7 @@
 	var/turf/T = get_turf(computer) // Because visible_message is being a butt
 	if(T)
 		T.visible_message(SPAN_NOTICE("[computer] beeps softly, indicating a new email has been received."))
-	playsound(computer, 'sound/misc/server-ready.ogg', 100, 0)
+	playsound(computer, 'sounds/misc/server-ready.ogg', 100, 0)
 
 /datum/computer_file/program/email_client/process_tick()
 	..()

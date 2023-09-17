@@ -21,7 +21,7 @@
 	/// Delay before the explosion
 	var/explosion_delay = 15
 	/// What sound is played on death, before explosion
-	var/explosion_warning_sound = 'sound/effects/bubbles.ogg'
+	var/explosion_warning_sound = 'sounds/effects/bubbles.ogg'
 	var/explosion_devastation_range = -1
 	var/explosion_heavy_range = 1
 	var/explosion_light_range = 2
@@ -63,7 +63,7 @@
 	/// What type of mob it spawns
 	var/mob/living/mitosis_type = /mob/living/simple_animal/hostile/random_monster
 	/// What sound plays on death
-	var/mitosis_sound = 'sound/effects/attackblob.ogg'
+	var/mitosis_sound = 'sounds/effects/attackblob.ogg'
 	/// Minimal maxHealth requirement for mitosis to work
 	var/mitosis_required_health = 25
 

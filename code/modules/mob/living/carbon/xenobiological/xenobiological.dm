@@ -224,11 +224,11 @@
 		if(Victim == M)
 			if(prob(60))
 				visible_message(SPAN_WARNING("\The [M] attempts to wrestle \the [src] off!"))
-				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				playsound(loc, 'sounds/weapons/punchmiss.ogg', 25, 1, -1)
 
 			else
 				visible_message(SPAN_WARNING("\The [M] manages to wrestle \the [src] off!"))
-				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				playsound(loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 
 				confused = max(confused, 2)
 				Feedstop()
@@ -239,11 +239,11 @@
 		else
 			if(prob(30))
 				visible_message(SPAN_WARNING("\The [M] attempts to wrestle \the [src] off \the [Victim]!"))
-				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				playsound(loc, 'sounds/weapons/punchmiss.ogg', 25, 1, -1)
 
 			else
 				visible_message(SPAN_WARNING("\The [M] manages to wrestle \the [src] off \the [Victim]!"))
-				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				playsound(loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 
 				confused = max(confused, 2)
 				Feedstop()
@@ -262,9 +262,9 @@
 			if(success)
 				confused = max(confused, 2)
 				UpdateFace()
-				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				playsound(loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 			else
-				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				playsound(loc, 'sounds/weapons/punchmiss.ogg', 25, 1, -1)
 
 		else
 
@@ -289,7 +289,7 @@
 				adjustBruteLoss(damage)
 				updatehealth()
 			else
-				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				playsound(loc, 'sounds/weapons/punchmiss.ogg', 25, 1, -1)
 				visible_message(SPAN_DANGER("[M] has attempted to punch [src]!"))
 	return
 

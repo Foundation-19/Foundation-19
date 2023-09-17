@@ -48,7 +48,7 @@
 		open = TRUE
 		if(choice == SWISSKNF_LBLADE || choice == SWISSKNF_SBLADE)
 			user.visible_message(SPAN_WARNING("\The [user] opens the [lowertext(choice)]."))
-			playsound(user, 'sound/weapons/flipblade.ogg', 15, 1)
+			playsound(user, 'sounds/weapons/flipblade.ogg', 15, 1)
 		else
 			user.visible_message(SPAN_NOTICE("\The [user] opens the [lowertext(choice)]."))
 

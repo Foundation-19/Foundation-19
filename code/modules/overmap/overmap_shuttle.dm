@@ -137,11 +137,11 @@
 	if(isCrowbar(W))
 		if(opened)
 			to_chat(user, "<spawn class='notice'>You tightly shut \the [src] door.")
-			playsound(src.loc, 'sound/effects/locker_close.ogg', 25, 0, -3)
+			playsound(src.loc, 'sounds/effects/locker_close.ogg', 25, 0, -3)
 			opened = 0
 		else
 			to_chat(user, "<spawn class='notice'>You open up \the [src] door.")
-			playsound(src.loc, 'sound/effects/locker_open.ogg', 15, 1, -3)
+			playsound(src.loc, 'sounds/effects/locker_open.ogg', 15, 1, -3)
 			opened = 1
 	else if(istype(W,/obj/item/tank))
 		if(!opened)

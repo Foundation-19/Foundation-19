@@ -21,7 +21,7 @@
 	var/unidentified_lifesigns_message = "Unidentified lifesigns detected coming aboard the %STATION_NAME%. Please lockdown all exterior access points, including ducting and ventilation."
 	var/unidentified_lifesigns_sound
 
-	var/lifesign_spawn_sound = 'sound/AI/aliens.ogg'
+	var/lifesign_spawn_sound = 'sounds/AI/aliens.ogg'
 
 /datum/map/proc/emergency_shuttle_called_announcement()
 	evacuation_controller.evac_called.Announce(replacetext(emergency_shuttle_called_message, "%ETA%", "[round(evacuation_controller.get_eta()/60)] minute\s."), new_sound = emergency_shuttle_called_sound)

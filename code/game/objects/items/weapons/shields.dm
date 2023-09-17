@@ -69,7 +69,7 @@
 
 /obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
-	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+	if(.) playsound(user.loc, 'sounds/weapons/Genhit.ogg', 50, 1)
 
 /obj/item/shield/riot/get_block_chance(mob/user, damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
@@ -85,7 +85,7 @@
 	if(istype(W, /obj/item/melee/baton))
 		if(cooldown < world.time - 25)
 			user.visible_message(SPAN_WARNING("[user] bashes [src] with [W]!"))
-			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
+			playsound(user.loc, 'sounds/effects/shieldbash.ogg', 50, 1)
 			cooldown = world.time
 	else
 		..()
@@ -123,7 +123,7 @@
 
 /obj/item/shield/buckler/handle_shield(mob/user)
 	. = ..()
-	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+	if(.) playsound(user.loc, 'sounds/weapons/Genhit.ogg', 50, 1)
 
 /obj/item/shield/buckler/get_block_chance(mob/user, damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile/bullet))
@@ -158,7 +158,7 @@
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
 		spark_system.start()
-		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
+		playsound(user.loc, 'sounds/weapons/blade1.ogg', 50, 1)
 
 /obj/item/shield/energy/get_block_chance(mob/user, damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
@@ -176,14 +176,14 @@
 		force = 10
 		update_icon()
 		w_class = ITEM_SIZE_HUGE
-		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberon.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("\The [src] is now active."))
 
 	else
 		force = 3
 		update_icon()
 		w_class = ITEM_SIZE_TINY
-		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberoff.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("\The [src] can now be concealed."))
 
 	if(istype(user,/mob/living/carbon/human))

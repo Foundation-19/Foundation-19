@@ -325,7 +325,7 @@ its easier to just keep the beam vertical.
 
 /atom/proc/lava_act()
 	visible_message(SPAN_DANGER("\The [src] sizzles and melts away, consumed by the lava!"))
-	playsound(src, 'sound/effects/flare_start.ogg', 100, 3)
+	playsound(src, 'sounds/effects/flare_start.ogg', 100, 3)
 	qdel(src)
 	. = TRUE
 
@@ -647,6 +647,17 @@ its easier to just keep the beam vertical.
  */
 /atom/proc/handle_atom_del(atom/deleting_atom)
 	return
+
+/// Return TRUE if things should be dropped onto this atom
+/atom/proc/AllowDrop()
+	return FALSE
+
+///Where atoms should drop if taken from this atom
+/atom/proc/drop_location()
+	var/atom/location = loc
+	if(!location)
+		return null
+	return location.AllowDrop() ? location : location.drop_location()
 
 /**
  * This proc is used for telling whether something can pass by this atom in a given direction, for use by the pathfinding system.

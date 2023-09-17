@@ -127,7 +127,8 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
-	/datum/admins/proc/ai_hologram_set
+	/datum/admins/proc/ai_hologram_set,
+	/client/proc/smite
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -169,6 +170,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/debug_controller,
 	/client/proc/debug_antagonist_template,
+	/client/proc/pathfind,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_admin_delete,
 	/client/proc/cmd_debug_del_all,
@@ -923,7 +925,7 @@ var/list/admin_verbs_mentors = list(
 
 	for (var/mob/T as mob in SSmobs.mob_list)
 		to_chat(T, "<br><center><span class='notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move on.</span></center><br>")
-		sound_to(T, 'sound/voice/ManUp1.ogg')
+		sound_to(T, 'sounds/voice/ManUp1.ogg')
 
 	log_and_message_staff("told everyone to man up and deal with it.")
 

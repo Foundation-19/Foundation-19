@@ -121,7 +121,7 @@
 
 /proc/append_admin_tools(message, mob, turf/location)
 	if(location)
-		message = message + " (<a HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>LOC</a>)"
+		message = message + " [ADMIN_JMP(location)]"
 	if(mob)
 		message = message + " (<a HREF='?_src_=holder;adminplayerobservefollow=\ref[mob]'>MOB</a>)"
 	return message
