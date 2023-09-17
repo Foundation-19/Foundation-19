@@ -30,7 +30,7 @@
 	last_updated_jl = world.time
 
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
-	if(!tjob)
+	if(!tjob?.title)
 		return 0
 	return jobtime_list[tjob.title] ? jobtime_list[tjob.title] : 0
 
