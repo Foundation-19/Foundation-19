@@ -15,3 +15,8 @@
 2023-09-16:
   TheDarkElites:
   - bugfix: 'fixes #502'
+2023-09-17:
+  cheesePizza2:
+  - rscdel: You don't see chat messages for objects you put in your own backpack.
+  - balance: Item insertion message checks slightly improved. The item's size matters
+      a little more and you can't get a message for items you can't see.
