@@ -285,7 +285,7 @@ its easier to just keep the beam vertical.
 	if(SCP && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/datum/job/job = SSjobs.get_by_title(H.job)
-		if(job.department_flag & (COM|SCI|SEC))
+		if(job && (job.department_flag & (COM|SCI|SEC)))
 			to_chat(user, SPAN_CLASS("scp", "You know this is SCP-[SCP.designation]!"))
 	return TRUE
 
