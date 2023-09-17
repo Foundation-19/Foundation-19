@@ -25,11 +25,11 @@
 	///Variable to ensure smooth visual stacking on multiple progress bars - but for the target.
 	var/target_listindex = 0
 	///An optional, clickable object that can be used to speed up progress bars
-	var/obj/effect/client_image_holder/progressbar_booster/booster
+	var/datum/progbar_booster_manager/booster
 	///How much bonus progress we've accured from a linked progress booster
 	var/bonus_progress = 0
 
-/datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE, bonus_percentage, focus_sound, focus_frequency)
+/datum/progressbar/New(mob/_user, goal_number, atom/_target, _show_target = FALSE, bonus_percentage, focus_frequency, focus_sound, focus_fail_sound)
 	. = ..()
 	if (!istype(_target))
 		crash_with("Invalid target [_target] passed in")
@@ -60,7 +60,7 @@
 		user_client = user.client
 		add_prog_bar_image_to_user()
 	if(bonus_percentage)
-		booster = new(get_turf(target), user, src, bonus_percentage, focus_sound, focus_frequency)
+		booster = new(src, bonus_percentage, focus_frequency, focus_sound, focus_fail_sound)
 
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
 	RegisterSignal(user, COMSIG_MOB_LOGOUT, .proc/clean_user_client)
@@ -123,6 +123,8 @@
 
 	if(bar)
 		QDEL_NULL(bar)
+
+	QDEL_NULL(booster)
 
 	return ..()
 
@@ -218,8 +220,7 @@
 /datum/progressbar/proc/end_progress()
 	if(last_progress < goal)
 		bar.icon_state = "[bar.icon_state]_fail"
-	if(booster)
-		QDEL_NULL(booster)
+	QDEL_NULL(booster)
 
 	animate(bar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
 

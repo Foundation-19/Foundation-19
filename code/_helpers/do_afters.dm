@@ -15,10 +15,11 @@
  * Checks that `user` does not move, change hands, get stunned, etc. for the
  * given `delay`. Returns `TRUE` on success or `FALSE` on failure.
  * Interaction_key is the assoc key under which the do_after is capped, with max_interact_count being the cap. Interaction key will default to target if not set.
- * Bonus percentage, if set to something other than 0, is the percentage of the delay that can be "skipped" with a progressbar_booster. Ranges from 0 (not even created) to 100 (one booster will complete the do_after immediately).
- * Focus frequency allows you to have faster/slower progressbar_boosters, while focus_sound lets you use a different sound on a successful hit.
+ * Bonus percentage, if set to something other than 0, is the percentage of the delay that can be "skipped" with a progressbar_booster. Ranges from 0 (not created) to 100 (one booster will complete the do_after immediately).
+ * Focus frequency allows you to have faster/slower progressbar_boosters.
+ * Focus sound and Focus fail sound is played to the user on a successful/unsuccessful hit.
  */
-/proc/do_after(mob/user, delay, atom/target, do_flags = DO_DEFAULT, incapacitation_flags = INCAPACITATION_DEFAULT, datum/callback/extra_checks, interaction_key, max_interact_count = 1, bonus_percentage = 0, focus_sound = 'sounds/machines/click.ogg', focus_frequency = 1 SECOND)
+/proc/do_after(mob/user, delay, atom/target, do_flags = DO_DEFAULT, incapacitation_flags = INCAPACITATION_DEFAULT, datum/callback/extra_checks, interaction_key, max_interact_count = 1, bonus_percentage = 0, focus_frequency = 1 SECOND, focus_sound = 'sounds/machines/click.ogg', focus_fail_sound = 'sounds/machines/buzz-sigh.ogg')
 	if(!isnum(delay))
 		CRASH("do_after was passed a non-number delay: [delay || "null"].")
 
@@ -54,7 +55,7 @@
 
 	var/datum/progressbar/bar
 	if (do_flags & DO_SHOW_USER)
-		bar = new /datum/progressbar(user, delay, target || user, (do_flags & DO_SHOW_TARGET), bonus_percentage, focus_sound, focus_frequency)
+		bar = new /datum/progressbar(user, delay, target || user, (do_flags & DO_SHOW_TARGET), bonus_percentage, focus_frequency, focus_sound, focus_fail_sound)
 
 	SEND_SIGNAL(user, COMSIG_DO_AFTER_BEGAN)
 
