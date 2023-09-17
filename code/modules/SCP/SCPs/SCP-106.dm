@@ -252,7 +252,7 @@
 		to_chat(src, SPAN_WARNING("You are not ready to leave pocket dimension just yet."))
 		return
 
-	if(!istype(get_area(my_turf), pocket_dimension_area_type))
+	if(!istype(get_area(src), pocket_dimension_area_type))
 		add_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
 		remove_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 		return
