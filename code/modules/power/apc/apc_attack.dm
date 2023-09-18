@@ -191,7 +191,6 @@
 		if (!opened && wiresexposed && (isMultitool(W) || isWirecutter(W) || istype(W, /obj/item/device/assembly/signaller)))
 			return wires.Interact(user)
 
-		user.balloon_alert_to_viewers("APC hit")
 		if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
 			var/roulette = rand(1,100)
 			switch(roulette)
