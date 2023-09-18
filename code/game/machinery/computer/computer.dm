@@ -21,7 +21,7 @@
 	var/light_outer_range_on = 2
 	var/overlay_layer
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
-	clicksound = "keyboard"
+	clicksound = SFX_KEYBOARD
 
 /obj/machinery/computer/New()
 	overlay_layer = layer
@@ -68,7 +68,7 @@
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
-	playsound(src, 'sound/weapons/smash.ogg', 25, 1)
+	playsound(src, 'sounds/weapons/smash.ogg', 25, 1)
 	show_sound_effect(src.loc, user)
 	if(I.force)
 		take_damage(I.force)

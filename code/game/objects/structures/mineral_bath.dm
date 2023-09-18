@@ -59,7 +59,7 @@
 	else
 		user.visible_message(SPAN_NOTICE("\The [user] pushes \the [patient] into \the [src]."))
 
-	playsound(loc, 'sound/effects/slosh.ogg', 50, 1)
+	playsound(loc, 'sounds/effects/slosh.ogg', 50, 1)
 	patient.forceMove(src)
 	occupant = patient
 	START_PROCESSING(SSobj, src)
@@ -70,7 +70,7 @@
 	occupant = L
 	L.Weaken(2)
 	L.visible_message(SPAN_WARNING("\The [L] falls into \the [src]!"))
-	playsound(L, "punch", 25, 1, FALSE)
+	playsound(L, SFX_PUNCH, 25, 1, FALSE)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/adherent_bath/attack_hand(mob/user)
@@ -79,7 +79,7 @@
 /obj/structure/adherent_bath/proc/eject_occupant()
 	if(occupant)
 		occupant.dropInto(loc)
-		playsound(loc, 'sound/effects/slosh.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/slosh.ogg', 50, 1)
 		if(occupant.loc != src)
 			if(occupant.client)
 				occupant.client.eye = occupant.client.mob

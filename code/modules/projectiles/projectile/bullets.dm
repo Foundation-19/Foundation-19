@@ -1,7 +1,7 @@
 /obj/item/projectile/bullet
 	name = "bullet"
 	icon_state = "bullet"
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
 	damage = 45
 	damage_type = BRUTE
 	damage_flags = DAM_BULLET | DAM_SHARP
@@ -10,9 +10,9 @@
 	var/mob_passthrough_check = 0
 
 	muzzle_type = /obj/effect/projectile/muzzle/bullet
-	miss_sounds = list('sound/weapons/guns/miss1.ogg','sound/weapons/guns/miss2.ogg','sound/weapons/guns/miss3.ogg','sound/weapons/guns/miss4.ogg')
-	ricochet_sounds = list('sound/weapons/guns/ricochet1.ogg', 'sound/weapons/guns/ricochet2.ogg',
-							'sound/weapons/guns/ricochet3.ogg', 'sound/weapons/guns/ricochet4.ogg')
+	miss_sounds = list('sounds/weapons/guns/miss1.ogg','sounds/weapons/guns/miss2.ogg','sounds/weapons/guns/miss3.ogg','sounds/weapons/guns/miss4.ogg')
+	ricochet_sounds = list('sounds/weapons/guns/ricochet1.ogg', 'sounds/weapons/guns/ricochet2.ogg',
+							'sounds/weapons/guns/ricochet3.ogg', 'sounds/weapons/guns/ricochet4.ogg')
 	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_BULLET_MEAT, BULLET_IMPACT_METAL = SOUNDS_BULLET_METAL)
 
 /obj/item/projectile/bullet/on_hit(atom/target, blocked = 0)
@@ -118,7 +118,7 @@
 					return
 
 /obj/item/projectile/bullet/flechette
-	fire_sound = 'sound/weapons/gunshot/smg.ogg'
+	fire_sound = 'sounds/weapons/gunshot/smg.ogg'
 	damage = 20
 	penetrating = 1
 	armor_penetration = 70
@@ -127,7 +127,7 @@
 
 // Higher damage, less AP
 /obj/item/projectile/bullet/flechette/hp
-	fire_sound = 'sound/weapons/gunshot/smg_alt.ogg'
+	fire_sound = 'sounds/weapons/gunshot/smg_alt.ogg'
 	damage = 36
 	armor_penetration = 20
 
@@ -182,7 +182,7 @@
 //////////////////////////Bullets////////////////
 
 /obj/item/projectile/bullet/pistol
-	fire_sound = 'sound/weapons/gunshot/gunshot_9mm.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot_9mm.ogg'
 	damage = 37 //9mm, .38, etc
 	armor_penetration = 0
 	distance_falloff = 3
@@ -209,19 +209,19 @@
 	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol/medium/revolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
 	damage = 50 //.44 magnum or something
 	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol/strong //matebas
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
 	damage = 52 //.50AE
 	armor_penetration = 0
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
 
 /obj/item/projectile/bullet/pistol/vstrong //tacrevolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
 	damage = 60 //.500 S&W Magnum
 	armor_penetration = 0
 
@@ -231,7 +231,7 @@
 
 // P90 SMG
 /obj/item/projectile/bullet/a57
-	fire_sound = 'sound/weapons/gunshot/p90.ogg'
+	fire_sound = 'sounds/weapons/gunshot/p90.ogg'
 	damage = 35
 	armor_penetration = 10
 	distance_falloff = 3
@@ -260,7 +260,7 @@
 
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
-	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	fire_sound = 'sounds/weapons/gunshot/shotgun.ogg'
 	damage = 60
 	armor_penetration = 5
 
@@ -278,7 +278,7 @@
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
-	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	fire_sound = 'sounds/weapons/gunshot/shotgun.ogg'
 	damage = 16
 	pellets = 9
 	range_step = 1
@@ -297,7 +297,7 @@
 /* "Rifle" rounds */
 
 /obj/item/projectile/bullet/rifle
-	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot3.ogg'
 	damage = 40
 	armor_penetration = 25
 	penetration_modifier = 1.5
@@ -305,27 +305,27 @@
 	distance_falloff = 1.5
 
 /obj/item/projectile/bullet/rifle/a556
-	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot3.ogg'
 	damage = 45
 	armor_penetration = 10
 
 /obj/item/projectile/bullet/rifle/a762
-	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
 	damage = 50
 	armor_penetration = 5
 
 /obj/item/projectile/bullet/rifle/a762x54
-	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
 	damage = 55
 	armor_penetration = 15
 
 /obj/item/projectile/bullet/rifle/a762nato
-	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
 	damage = 55
 	armor_penetration = 15
 
 /obj/item/projectile/bullet/rifle/a145
-	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	fire_sound = 'sounds/weapons/gunshot/sniper.ogg'
 	damage = 150
 	stun = 3
 	weaken = 3
@@ -348,18 +348,22 @@
 /* "Rifle" rounds */
 
 /obj/item/projectile/bullet/rifle/military
-	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
 	damage = 45
 	armor_penetration = 35
 	penetration_modifier = 1
 
 /obj/item/projectile/bullet/rifle/t12
-	fire_sound = "gun_t12"
-	damage = 35
+	fire_sound = SFX_GUN_T12
+	damage = 22 // If you buff the damage I will murder you, it is meant to have high AP low damage
 	armor_penetration = 85
 
+/obj/item/projectile/bullet/rifle/m16
+	fire_sound = 'sounds/weapons/gunshot/m16.ogg'
+	damage = 35
+
 /obj/item/projectile/bullet/rifle/shell
-	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	fire_sound = 'sounds/weapons/gunshot/sniper.ogg'
 	damage = 150
 	stun = 3
 	weaken = 3

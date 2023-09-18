@@ -203,7 +203,7 @@
 		state = BG_PROCESSING
 		SSnano.update_uis(src)
 		update_icon()
-		playsound(src.loc, 'sound/machines/blender.ogg', 50, 1)
+		playsound(src.loc, 'sounds/machines/blender.ogg', 50, 1)
 		show_sound_effect(src.loc)
 		use_power_oneoff(S * 30)
 		sleep((S + 15) / eat_eff)

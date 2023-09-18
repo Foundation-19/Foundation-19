@@ -15,7 +15,7 @@
 
 	action_button_name = "Toggle Flashlight"
 	var/on = FALSE
-	var/activation_sound = 'sound/effects/flashlight.ogg'
+	var/activation_sound = 'sounds/effects/flashlight.ogg'
 	var/flashlight_max_bright = 0.5 //brightness of light when on, must be no greater than 1.
 	var/flashlight_inner_range = 1 //inner range of light when on, can be negative
 	var/flashlight_outer_range = 3 //outer range of light when on, can be negative
@@ -168,7 +168,7 @@
 	force = 10
 	attack_verb = list ("smacked", "thwacked", "thunked")
 	matter = list(MATERIAL_ALUMINIUM = 200, MATERIAL_GLASS = 50)
-	hitsound = "swing_hit"
+	hitsound = SFX_SWING_HIT
 	flashlight_max_bright = 0.5
 	flashlight_outer_range = 5
 
@@ -249,8 +249,9 @@
 	action_button_name = null //just pull it manually, neckbeard.
 	var/fuel = 0
 	var/on_damage = 7
+	var/deactivation_sound = 'sounds/effects/flare_end.ogg'
 	var/produce_heat = 1500
-	activation_sound = 'sound/effects/flare.ogg'
+	activation_sound = 'sounds/effects/flare_start.ogg'
 	flashlight_flags = FLASHLIGHT_SINGLE_USE
 
 	flashlight_max_bright = 0.8
@@ -274,6 +275,8 @@
 	fuel = max(fuel - 1, 0)
 	if (fuel <= 0)
 		on = FALSE
+		if(deactivation_sound)
+			playsound(get_turf(src), deactivation_sound, 75, 1)
 	if(!on)
 		update_damage()
 		set_flashlight()
@@ -326,7 +329,8 @@
 	item_state = "glowstick"
 	randpixel = 12
 	produce_heat = 0
-	activation_sound = 'sound/effects/glowstick.ogg'
+	activation_sound = 'sounds/effects/glowstick.ogg'
+	deactivation_sound = null
 
 	flashlight_max_bright = 0.6
 	flashlight_inner_range = 0.1

@@ -322,7 +322,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 	for(var/obj/item/device/radio/R in radios)
 		if((R.last_radio_sound + 1 SECOND) < world.time && R != radio)
-			playsound(R.loc, 'sound/effects/radio_chatter.ogg', 10, 0, -6)
+			playsound(R.loc, 'sounds/effects/radio_chatter.ogg', 10, 0, -6)
 			R.last_radio_sound = world.time
 
 	// Get a list of mobs who can hear from the radios we collected.

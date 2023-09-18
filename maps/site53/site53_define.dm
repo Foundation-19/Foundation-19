@@ -81,7 +81,7 @@
 
 	available_cultural_info = list(
 		TAG_HOMEWORLD = list(HOME_SYSTEM_EARTH),
-		TAG_FACTION = list(FACTION_SOL_CENTRAL),
+		TAG_FACTION = list(FACTION_SCP_FOUNDATION),
 		TAG_CULTURE = list(
 			CULTURE_HUMAN_EARTH,
 			CULTURE_HUMAN_ARABIC,
@@ -108,7 +108,7 @@
 
 	default_cultural_info = list(
 		TAG_HOMEWORLD = HOME_SYSTEM_EARTH,
-		TAG_FACTION =   FACTION_SOL_CENTRAL,
+		TAG_FACTION =   FACTION_SCP_FOUNDATION,
 		TAG_CULTURE =   CULTURE_HUMAN_EARTH,
 		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
@@ -117,7 +117,7 @@
 /datum/map/torch/setup_map()
 	..()
 	system_name = generate_system_name()
-	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
+	minor_announcement = new(new_sound = sound('sounds/AI/torch/commandreport.ogg', volume = 45))
 
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Sensor Readings:</font><hr />"

@@ -15,7 +15,16 @@
 	throw_range = 8
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = DEFAULT_BOX_STORAGE
-	use_sound = 'sound/effects/storage/box.ogg'
+	use_sound = 'sounds/effects/storage/box.ogg'
+
+/obj/item/storage/firstaid/open(mob/user)
+	. = ..()
+	icon_state = "firstaidopen"
+
+/obj/item/storage/firstaid/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/empty
 	icon_state = "firstaid"
@@ -46,6 +55,15 @@
 	..()
 	icon_state = pick("radfirstaid", "radfirstaid2")
 
+/obj/item/storage/firstaid/trauma/open(mob/user)
+	. = ..()
+	icon_state = "radopen"
+
+/obj/item/storage/firstaid/trauma/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
 	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
@@ -59,6 +77,15 @@
 /obj/item/storage/firstaid/fire/New()
 	..()
 	icon_state = pick("ointment","firefirstaid")
+
+/obj/item/storage/firstaid/fire/open(mob/user)
+	. = ..()
+	icon_state = "fireopen"
+
+/obj/item/storage/firstaid/fire/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/toxin
 	name = "toxin first aid"
@@ -74,6 +101,15 @@
 	..()
 	icon_state = pick("antitoxin","antitoxfirstaid")
 
+/obj/item/storage/firstaid/toxin/open(mob/user)
+	. = ..()
+	icon_state = "toxinopen"
+
+/obj/item/storage/firstaid/toxin/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation first aid"
 	desc = "A box full of oxygen goodies."
@@ -83,6 +119,15 @@
 	startswith = list(
 		/obj/item/storage/med_pouch/oxyloss = 4
 		)
+
+/obj/item/storage/firstaid/o2/open(mob/user)
+	. = ..()
+	icon_state = "o2open"
+
+/obj/item/storage/firstaid/o2/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/adv
 	name = "advanced first-aid kit"
@@ -96,6 +141,15 @@
 		/obj/item/stack/medical/advanced/ointment = 2,
 		/obj/item/stack/medical/splint
 		)
+
+/obj/item/storage/firstaid/adv/open(mob/user)
+	. = ..()
+	icon_state = "doctor-kitopen"
+
+/obj/item/storage/firstaid/adv/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/combat
 	name = "combat medical kit"
@@ -112,6 +166,15 @@
 		/obj/item/storage/pill_bottle/spaceacillin,
 		/obj/item/stack/medical/splint,
 		)
+
+/obj/item/storage/firstaid/combat/open(mob/user)
+	. = ..()
+	icon_state = "bezerkopen"
+
+/obj/item/storage/firstaid/combat/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/stab
 	name = "stabilisation first aid"
@@ -136,7 +199,7 @@
 	storage_slots = 14
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = null
-	use_sound = 'sound/effects/storage/briefcase.ogg'
+	use_sound = 'sounds/effects/storage/briefcase.ogg'
 
 	can_hold = list(
 		/obj/item/bonesetter,
@@ -165,6 +228,15 @@
 		/obj/item/stack/medical/advanced/bruise_pack,
 		)
 
+/obj/item/storage/firstaid/surgery/open(mob/user)
+	. = ..()
+	icon_state = "surgerykitopen"
+
+/obj/item/storage/firstaid/surgery/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /*
  * Pill Bottles
  */
@@ -180,7 +252,7 @@
 	can_hold = list(/obj/item/reagent_containers/pill,/obj/item/dice,/obj/item/paper)
 	allow_quick_gather = 1
 	use_to_pickup = 1
-	use_sound = 'sound/effects/storage/pillbottle.ogg'
+	use_sound = 'sounds/effects/storage/pillbottle.ogg'
 	matter = list(MATERIAL_PLASTIC = 250)
 	var/wrapper_color
 	var/label
@@ -194,7 +266,7 @@
 	var/zone = user.zone_sel.selecting
 	if(zone == BP_MOUTH && target.can_eat())
 		user.visible_message(SPAN_NOTICE("[user] pops a pill from \the [src]."))
-		playsound(get_turf(src), 'sound/effects/peelz.ogg', 50)
+		playsound(get_turf(src), 'sounds/effects/peelz.ogg', 50)
 		var/list/peelz = filter_list(contents,/obj/item/reagent_containers/pill)
 		if(peelz.len)
 			var/obj/item/reagent_containers/pill/P = pick(peelz)

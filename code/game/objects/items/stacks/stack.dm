@@ -155,6 +155,7 @@
 		O.add_fingerprint(user)
 
 		user.put_in_hands(O)
+		SEND_SIGNAL(user, COMSIG_PRODUCED_RECIPE, recipe, O)
 
 /obj/item/stack/Topic(href, href_list)
 	..()
@@ -253,6 +254,10 @@
 //creates a new stack with the specified amount
 /obj/item/stack/proc/split(tamount)
 	if (!amount)
+		return null
+
+	tamount = Floor(tamount)	// sanity check to prevent duping
+	if(tamount <= 0)				// if tamount was rounded to 0 (or below, somehow) just quit here
 		return null
 
 	var/transfer = max(min(tamount, src.amount, initial(max_amount)), 0)

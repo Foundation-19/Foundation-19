@@ -11,7 +11,7 @@
 	var/toggleable = FALSE
 	var/off_state = "degoggles"
 	var/active = TRUE
-	var/activation_sound = 'sound/items/goggles_charge.ogg'
+	var/activation_sound = 'sounds/items/goggles_charge.ogg'
 	var/deactivation_sound // set this if you want a sound on deactivation
 	var/obj/screen/overlay = null
 	var/obj/item/clothing/glasses/hud/hud = null	// Hud glasses, if any
@@ -283,7 +283,7 @@
 	action_button_name = "Toggle zoom"
 	zoomdevicename = "lenses"
 	electric = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/augment_binoculars/attack_self(mob/user)

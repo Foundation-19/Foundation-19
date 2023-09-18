@@ -80,7 +80,7 @@
 		G.action_used()
 		O.jointlock(assailant)
 		assailant.visible_message(SPAN_DANGER("[affecting]'s [O.name] is twisted!"))
-		playsound(assailant.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		playsound(assailant.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 		return TRUE
 
 	else
@@ -117,7 +117,7 @@
 			G.action_used()
 			O.dislocate(1)
 			assailant.visible_message(SPAN_DANGER("[affecting]'s [O.joint] [pick("gives way","caves in","crumbles","collapses")]!"))
-			playsound(assailant.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			playsound(assailant.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 			return TRUE
 
 		else
@@ -196,7 +196,7 @@
 		target.apply_effect(20, PARALYZE)
 		target.visible_message(SPAN_DANGER("[target] [target.species.get_knockout_message(target)]"))
 
-	playsound(attacker.loc, "swing_hit", 25, 1, -1)
+	playsound(attacker.loc, SFX_SWING_HIT, 25, 1, -1)
 
 	admin_attack_log(attacker, target, "Headbutted their victim.", "Was headbutted.", "headbutted")
 	return TRUE

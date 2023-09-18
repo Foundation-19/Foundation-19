@@ -6,7 +6,7 @@
 
 	var/list/matter //Used to store information about the contents of the object.
 	var/w_class // Size of the object.
-	var/unacidable = FALSE //universal "unacidabliness" var, here so you can use it in any obj.
+	var/acid_resistance = 1 // Multiplier for cost of dissolving via acid. Higher values = harder to dissolve. -1 = unacidible
 	var/throwforce = 1
 	var/sharp = FALSE		// whether this object cuts
 	var/edge = FALSE		// whether this object is more likely to dismember
@@ -134,7 +134,7 @@
 	return ..()
 
 /obj/proc/wrench_floor_bolts(mob/user, delay=20)
-	playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+	playsound(loc, 'sounds/items/Ratchet.ogg', 100, 1)
 	if(anchored)
 		user.visible_message("\The [user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
 	else

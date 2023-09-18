@@ -204,11 +204,10 @@ var/global/list/additional_antag_types = list()
 	for(var/datum/antagonist/antag in antag_templates)
 		antag.post_spawn()
 
-	// Update goals, now that antag status and jobs are both resolved.
+	// Post-initialize, now that antag status and jobs are both resolved.
 	for(var/thing in SSticker.minds)
-		var/datum/mind/mind = thing
-		mind.generate_goals(mind.assigned_job, is_spawning=TRUE)
-		mind.current.show_goals()
+		var/datum/mind/M = thing
+		SEND_SIGNAL(M, COMSIG_MIND_POST_INIT)
 
 	if(evacuation_controller && auto_recall_shuttle)
 		evacuation_controller.recall = 1
@@ -304,11 +303,7 @@ var/global/list/additional_antag_types = list()
 	var/text = "<br><br>"
 	text += GLOB.using_map.roundend_summary(data)
 
-	var/departmental_goal_summary = SSgoals.get_roundend_summary()
-	for(var/thing in GLOB.clients)
-		var/client/client = thing
-		if(client.mob && client.mob.mind)
-			client.mob.mind.show_roundend_summary(departmental_goal_summary)
+	SEND_GLOBAL_SIGNAL(COMSIG_ROUND_ENDED)
 
 	to_world(text)
 
@@ -422,7 +417,7 @@ var/global/list/additional_antag_types = list()
 
 	else
 		sleep(50)
-	sound_to(world, sound('sound/effects/explosionfar.ogg'))
+	sound_to(world, sound('sounds/effects/explosionfar.ogg'))
 
 //////////////////////////
 //Reports player logouts//

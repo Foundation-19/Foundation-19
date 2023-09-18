@@ -1,0 +1,67 @@
+2023-07-05:
+  cheesePizza2:
+  - code_imp: Weakref code improvements.
+2023-07-12:
+  TheDarkElites:
+  - rscadd: badges for network leads and head maintainer
+  casualspacestation14enjoyer:
+  - rscadd: When storage items such as medkits and dufflebags are opened, they change
+      their sprite to indicate that they are open. (shit explanation)
+  cheesePizza2:
+  - soundadd: 173 degradation announcement is quieter.
+  - sounddel: Old flare sound has been deleted.
+  - soundadd: New flare sounds brazenly stolen from MS13
+2023-07-13:
+  TheDarkElites:
+  - rscadd: Jobtime Tracking and Timelocks for certain roles
+  - server: new SQL table for role_time
+  - code_imp: goirep no longer has the COM flag, and is replaced with the new REP
+      flag
+  - admin: player panel now contains playtime tab
+  - bugfix: icons for nitrile armored and auditor armored gloves not showing up.
+  - balance: phoron spawn chance decreased, bauxite(aluminum) spawn chance increased.
+  casualspacestation14enjoyer:
+  - rscdel: Cyborg alt-titles are now gone.
+  - rscadd: TGUI is now used for AIC and cyborg stuff
+  - rscadd: Adds a new button for AIC to send an emergency message to the O5 Council
+  - admin: You no longer need R_ADMIN to receive O5 emergency messages, now you need
+      R_MOD or above.
+  - rscadd: Some modules are now renamed so new players know what they do now.
+  - rscdel: Useless modules such as the research module and the standard module are
+      now disabled.
+  cheesePizza2:
+  - balance: Protolathe computers don't need access to use anymore.
+  - bugfix: Logistics personnel can now use the protolathe in their department.
+  - rscadd: 527 (Mister Fish) is now playable, and starts with a backpack.
+  projectkepler-ru:
+  - imageadd: 5.7mm ammo box
+2023-07-17:
+  cheesePizza2:
+  - rscadd: Adds new database server and client programs, used to host a basic file
+      browser service.
+  - rscdel: Removed newscaster program and flight program reports
+  - imagedel: Deleted newspaper images and old PDA images.
+  - spellcheck: Changed some baystation references to SCP references.
+  - code_imp: General code cleanup in modcomp files as well as some helper procs.
+2023-07-19:
+  TheDarkElites:
+  - admin: New timelock perm required to bypass timelocks.
+2023-07-20:
+  cheesePizza2:
+  - code_imp: Radial menu code cleaned up.
+  - imageadd: New radial menu icons stolen from VG.
+2023-07-22:
+  cheesePizza2:
+  - rscdel: Deleted old (shitty) goals system.
+  - rscadd: Added NEW goals/objectives system! Use the "Show Goals" verb in the IC
+      tab to view your goals. These goals are dynamically added, resolved, and rewarded
+      mid-round.
+  - rscadd: Added Skills category for goals. Complete simple skill-related goals to
+      receive a temporary buff in their respective skill.
+  - rscadd: Added Sanity category for goals. Complete some basic RP goals to recover
+      sanity.
+  - rscadd: Weight lifting machinery added to D-class reward area.
+  - refactor: Added some relevant signals. Old goal system hardcoded checks removed.
+2023-07-30:
+  cheesePizza2:
+  - code_imp: Balloon alerts ported from TG.

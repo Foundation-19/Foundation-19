@@ -14,7 +14,7 @@
 	machine_desc = "An industrial grinder with durable blades that shreds objects into their component reagents."
 
 	var/skill = SKILL_CHEMISTRY
-	var/grind_sound = 'sound/machines/grinder.ogg'
+	var/grind_sound = 'sounds/machines/grinder.ogg'
 	var/list/items = list()
 	var/max_items = 10
 	var/max_item_size = ITEM_SIZE_HUGE
@@ -73,6 +73,8 @@
 	playsound(src, grind_sound, 75, 1)
 	grinding = TRUE
 	update_icon()
+
+	SEND_SIGNAL(user, COMSIG_GRINDING, src)
 
 	addtimer(CALLBACK(src, .proc/reset_machine, user), grind_time)
 	var/skill_multiplier = CLAMP01(0.5 + (user.get_skill_value(skill) - 1) * 0.167)
@@ -262,7 +264,7 @@
 	icon_state = "juicer"
 	density = FALSE
 	anchored = FALSE
-	grind_sound = 'sound/machines/juicer.ogg'
+	grind_sound = 'sounds/machines/juicer.ogg'
 	max_item_size = ITEM_SIZE_NORMAL
 	skill = SKILL_COOKING
 	banned_items = list(

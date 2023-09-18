@@ -18,7 +18,6 @@
 	cold_damage_per_tick = 0
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
-	move_to_delay = 3
 	movement_cooldown = 4
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
@@ -60,7 +59,6 @@
 	cold_damage_per_tick = 0
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
-	move_to_delay = 3
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 4 SECONDS
@@ -92,7 +90,6 @@
 	cold_damage_per_tick = 0
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
-	move_to_delay = 3
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -124,7 +121,6 @@
 	cold_damage_per_tick = 0
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
-	move_to_delay = 3
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -158,7 +154,6 @@
 	cold_damage_per_tick = 0
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
-	move_to_delay = 3
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -190,7 +185,6 @@
 	cold_damage_per_tick = 0
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
-	move_to_delay = 3
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -222,7 +216,6 @@
 	cold_damage_per_tick = 0
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
-	move_to_delay = 3
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS

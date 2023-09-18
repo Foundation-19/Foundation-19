@@ -38,6 +38,6 @@
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
-	A.stat |= BROKEN
+	A.set_broken(TRUE)
 	var/check = A.open(TRUE)
 	visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")

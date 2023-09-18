@@ -47,7 +47,7 @@
 
 /obj/structure/chorus/gastric_emitter/activate()
 	flick("growth_gastric_emit", src)
-	playsound(src, 'sound/machines/pump.ogg', 35, 1)
+	playsound(src, 'sounds/machines/pump.ogg', 35, 1)
 	visible_message(SPAN_DANGER("\The [src] exudes a nasty chemical!"))
 	var/turf/cur_turf = get_turf(src)
 	for(var/t in cur_turf.AdjacentTurfs())

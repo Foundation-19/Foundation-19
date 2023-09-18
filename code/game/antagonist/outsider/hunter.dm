@@ -31,8 +31,8 @@ GLOBAL_DATUM_INIT(hunters, /datum/antagonist/hunter, new)
 			if(H.species.get_bodytype() != SPECIES_MANTID_ALATE)
 				H.set_species(SPECIES_MANTID_ALATE)
 			H.gender = MALE
-		var/decl/cultural_info/culture/ascent/ascent_culture = SSculture.get_culture(CULTURE_ASCENT)
-		H.real_name = ascent_culture.get_random_name(H.gender)
+		var/decl/cultural_info/culture/C = SSculture.get_culture(CULTURE_OTHER)
+		H.real_name = C.get_random_name(H.gender)
 		H.name = H.real_name
 
 /datum/antagonist/hunter/equip(mob/living/carbon/human/player)

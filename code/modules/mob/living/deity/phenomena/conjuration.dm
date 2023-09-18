@@ -77,7 +77,7 @@
 /datum/phenomena/banishing_smite/activate(mob/living/L, mob/living/deity/user)
 	..()
 	L.take_overall_damage(rand(5,30),0,0,0,"blunt intrument") //Actual spell does 5d10 but maaaybe too much.
-	playsound(get_turf(L), 'sound/effects/bamf.ogg', 100, 1)
+	playsound(get_turf(L), 'sounds/effects/bamf.ogg', 100, 1)
 	to_chat(L, SPAN_DANGER("Something hard hits you!"))
 	if(L.health < L.maxHealth/2) //If it reduces past 50%
 		var/obj/effect/rift/R = new(get_turf(L))
@@ -91,7 +91,7 @@
 	desc = "a tear in space and time."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "rift"
-	unacidable = 1
+	acid_resistance = -1
 	anchored = TRUE
 	density = FALSE
 

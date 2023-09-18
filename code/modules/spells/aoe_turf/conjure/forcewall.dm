@@ -8,7 +8,7 @@
 	charge_max = 100
 	spell_flags = 0
 	range = 0
-	cast_sound = 'sound/magic/forcewall.ogg'
+	cast_sound = 'sounds/magic/forcewall.ogg'
 
 	hud_state = "wiz_shield"
 
@@ -34,7 +34,7 @@
 	anchored = TRUE
 	opacity = 0
 	density = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 
 /obj/effect/forcefield/bullet_act(obj/item/projectile/Proj, def_zone)
 	var/turf/T = get_turf(src.loc)

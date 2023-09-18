@@ -464,7 +464,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(BP_IS_CRYSTAL(src) && (damage >= 15 || prob(1)))
 		type = SHATTER
-		playsound(loc, 'sound/effects/hit_on_shattered_glass.ogg', 40, 1) // Crash!
+		playsound(loc, 'sounds/effects/hit_on_shattered_glass.ogg', 40, 1) // Crash!
 
 	//moved these before the open_wound check so that having many small wounds for example doesn't somehow protect you from taking internal damage (because of the return)
 	//Brute damage can possibly trigger an internal wound, too.
@@ -834,19 +834,19 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/proc/play_droplimb_sound(droptype, clean)
 	if(BP_IS_CRYSTAL(src))
-		playsound(src, "shatter", 70, 1)
+		playsound(src, SFX_SHATTER, 70, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	else if(!BP_IS_ROBOTIC(src))
 		switch(droptype)
 			if(DROPLIMB_EDGE)
 				if(!clean)
-					playsound(src, "fracture", 70, 1)
+					playsound(src, SFX_BONE_FRACTURE, 70, 1)
 					show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(DROPLIMB_BURN)
-				playsound(src, "sizzle", 70, 1)
+				playsound(src, SFX_WOUND_SIZZLE, 70, 1)
 				show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(DROPLIMB_BLUNT)
-				playsound(src, "crack", 70, 1)
+				playsound(src, SFX_WOUND_CRACK, 70, 1)
 				show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 
 //Handles dismemberment
@@ -1057,7 +1057,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(can_feel_pain())
 			owner.emote("scream")
 
-	playsound(src.loc, "fracture", 100, 1, -2)
+	playsound(src.loc, SFX_BONE_FRACTURE, 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
 
@@ -1234,7 +1234,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			// let actual implants still inside know they're no longer implanted
 			if(istype(I, /obj/item/implant))
 				var/obj/item/implant/imp_device = I
-				imp_device.removed()
+				imp_device.ImplantRemoval()
 		else
 			implants.Remove(implant)
 			implant.forceMove(get_turf(src))

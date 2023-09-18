@@ -65,8 +65,6 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/sync = 1		//If sync = 0, it doesn't show up on Server Control Console
 	var/can_analyze = TRUE //If the console is allowed to use destructive analyzers
 
-	req_access = list(ACCESS_RESEARCH)	//Data and setting manipulation requires scientist access.
-
 /obj/machinery/computer/rdconsole/proc/CallMaterialName(ID)
 	var/return_name = ID
 	switch(return_name)
@@ -150,7 +148,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 
 /obj/machinery/computer/rdconsole/emag_act(remaining_charges, mob/user)
 	if(!emagged)
-		playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
+		playsound(src.loc, 'sounds/effects/sparks4.ogg', 75, 1)
 		emagged = TRUE
 		req_access.Cut()
 		to_chat(user, SPAN_NOTICE("You you disable the security protocols."))

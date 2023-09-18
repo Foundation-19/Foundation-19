@@ -52,35 +52,20 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
-			CULTURE_POSITRONICS
+			CULTURE_OTHER
 		),
 		TAG_HOMEWORLD = list(
-			HOME_SYSTEM_ROOT,
-			HOME_SYSTEM_EARTH,
-			HOME_SYSTEM_LUNA,
-			HOME_SYSTEM_MARS,
-			HOME_SYSTEM_VENUS,
-			HOME_SYSTEM_CERES,
-			HOME_SYSTEM_PLUTO,
-			HOME_SYSTEM_TAU_CETI,
 			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
-			FACTION_POSITRONICS,
-			FACTION_SOL_CENTRAL,
-			FACTION_TERRAGOV,
-			FACTION_NANOTRASEN,
-			FACTION_FREETRADE,
-			FACTION_XYNERGY,
-			FACTION_EXPEDITIONARY,
 			FACTION_OTHER
 		)
 	)
 
 	default_cultural_info = list(
-		TAG_CULTURE = CULTURE_POSITRONICS,
-		TAG_HOMEWORLD = HOME_SYSTEM_ROOT,
-		TAG_FACTION = FACTION_POSITRONICS
+		TAG_CULTURE = CULTURE_OTHER,
+		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
+		TAG_FACTION = FACTION_OTHER
 	)
 
 	exertion_effect_chance = 10
@@ -89,7 +74,7 @@
 		/decl/emote/exertion/synthetic,
 		/decl/emote/exertion/synthetic/creak
 	)
-	special_footstep_sounds = list('sound/effects/footstep/special/servostep.ogg')
+	special_footstep_sounds = list('sounds/effects/footstep/special/servostep.ogg')
 
 /datum/species/machine/handle_death(mob/living/carbon/human/H)
 	..()

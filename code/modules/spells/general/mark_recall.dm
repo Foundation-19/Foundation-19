@@ -14,7 +14,7 @@
 
 	level_max = list(UPGRADE_TOTAL = 4, UPGRADE_SPEED = 4, UPGRADE_POWER = 1)
 
-	cast_sound = 'sound/effects/teleport.ogg'
+	cast_sound = 'sounds/effects/teleport.ogg'
 	hud_state = "wiz_mark"
 	var/mark = null
 
@@ -54,7 +54,7 @@
 	icon_state = "wizard_mark"
 
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	layer = TURF_LAYER
 
 	var/datum/spell/mark_recall/spell

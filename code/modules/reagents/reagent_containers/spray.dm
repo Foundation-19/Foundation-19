@@ -12,7 +12,7 @@
 	throw_speed = 2
 	throw_range = 10
 	amount_per_transfer_from_this = 10
-	unacidable = TRUE
+	acid_resistance = -1
 	possible_transfer_amounts = "5;10" //Set to null instead of list, if there is only one.
 	var/spray_size = 3
 	var/list/spray_sizes = list(1,3)
@@ -44,7 +44,7 @@
 	return
 
 /obj/item/reagent_containers/spray/proc/Spray_at(atom/A as mob|obj, mob/user as mob, proximity)
-	playsound(src.loc, 'sound/effects/spray2.ogg', 50, 1, -6)
+	playsound(src.loc, 'sounds/effects/spray2.ogg', 50, 1, -6)
 	if (reagents.should_admin_log())
 		var/contained = reagents.get_reagents()
 		if (istype(A, /mob))
@@ -93,15 +93,15 @@
 		to_chat(usr, SPAN_NOTICE("You empty \the [src] onto the floor."))
 		reagents.splash(usr.loc, reagents.total_volume)
 
-//space cleaner
+//space cleaner now is hydroxylsan
 /obj/item/reagent_containers/spray/cleaner
-	name = "space cleaner"
-	desc = "BLAM!-brand non-foaming space cleaner!"
+	name = "\improper Sanitech Spray"
+	desc = "BLAM!-brand non-foaming standard-issue spray bottle utilized by SCP Foundation personnel for thorough cleaning and disinfecting! Now with 100% Hydroxylsan!"
 	step_delay = 6
 
 /obj/item/reagent_containers/spray/cleaner/New()
 	..()
-	reagents.add_reagent(/datum/reagent/space_cleaner, volume)
+	reagents.add_reagent(/datum/reagent/hydroxylsan, volume)
 
 /obj/item/reagent_containers/spray/sterilizine
 	name = "sterilizine"
@@ -121,7 +121,7 @@
 
 /obj/item/reagent_containers/spray/pepper
 	name = "pepperspray"
-	desc = "Manufactured by Uhang Inc., it fires a mist of condensed capsaicin to blind and down an opponent quickly."
+	desc = "Manufactured by 'Uhang Inc.', it fires a mist of condensed capsaicin to blind and down an opponent quickly."
 	icon = 'icons/obj/weapons/other.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"

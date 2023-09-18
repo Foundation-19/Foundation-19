@@ -105,7 +105,7 @@
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
 		spark_system.start()
-		playsound(user.loc, "sparks", 50, 1)
+		playsound(user.loc, SFX_SPARK, 50, 1)
 
 		user.forceMove(picked)
 		return PROJECTILE_FORCE_MISS
@@ -281,17 +281,8 @@
 /obj/item/clothing/suit/armor/pcarrier/light
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate)
 
-/obj/item/clothing/suit/armor/pcarrier/light/nt
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate, /obj/item/clothing/accessory/armor/tag/nt)
-
-/obj/item/clothing/suit/armor/pcarrier/light/press
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate, /obj/item/clothing/accessory/armor/tag/press)
-
 /obj/item/clothing/suit/armor/pcarrier/medium
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches)
-
-/obj/item/clothing/suit/armor/pcarrier/medium/nt
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/nt)
 
 /obj/item/clothing/suit/armor/pcarrier/blue
 	name = "blue plate carrier"

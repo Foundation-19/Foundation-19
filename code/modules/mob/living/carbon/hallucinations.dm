@@ -96,26 +96,26 @@
 
 //Playing a random sound
 /datum/hallucination/sound
-	var/list/sounds = list('sound/machines/airlock.ogg','sound/effects/explosionfar.ogg','sound/machines/windowdoor.ogg','sound/machines/twobeep.ogg')
+	var/list/sounds = list('sounds/machines/airlock.ogg','sounds/effects/explosionfar.ogg','sounds/machines/windowdoor.ogg','sounds/machines/twobeep.ogg')
 
 /datum/hallucination/sound/start()
 	var/turf/T = locate(holder.x + rand(6,11), holder.y + rand(6,11), holder.z)
 	holder.playsound_local(T,pick(sounds),70)
 
 /datum/hallucination/sound/tools
-	sounds = list('sound/items/Ratchet.ogg','sound/items/Welder.ogg','sound/items/Crowbar.ogg','sound/items/Screwdriver.ogg')
+	sounds = list('sounds/items/Ratchet.ogg','sounds/items/Welder.ogg','sounds/items/Crowbar.ogg','sounds/items/Screwdriver.ogg')
 
 /datum/hallucination/sound/danger
 	min_power = 30
-	sounds = list('sound/effects/Explosion1.ogg','sound/effects/Explosion2.ogg','sound/effects/Glassbr1.ogg','sound/effects/Glassbr2.ogg','sound/effects/Glassbr3.ogg','sound/weapons/smash.ogg')
+	sounds = list('sounds/effects/Explosion1.ogg','sounds/effects/Explosion2.ogg','sounds/effects/Glassbr1.ogg','sounds/effects/Glassbr2.ogg','sounds/effects/Glassbr3.ogg','sounds/weapons/smash.ogg')
 
 /datum/hallucination/sound/spooky
 	min_power = 50
-	sounds = list('sound/effects/ghost.ogg', 'sound/effects/ghost2.ogg', 'sound/effects/Heart Beat.ogg', 'sound/effects/screech.ogg',\
-	'sound/hallucinations/behind_you1.ogg', 'sound/hallucinations/behind_you2.ogg', 'sound/hallucinations/far_noise.ogg', 'sound/hallucinations/growl1.ogg', 'sound/hallucinations/growl2.ogg',\
-	'sound/hallucinations/growl3.ogg', 'sound/hallucinations/im_here1.ogg', 'sound/hallucinations/im_here2.ogg', 'sound/hallucinations/i_see_you1.ogg', 'sound/hallucinations/i_see_you2.ogg',\
-	'sound/hallucinations/look_up1.ogg', 'sound/hallucinations/look_up2.ogg', 'sound/hallucinations/over_here1.ogg', 'sound/hallucinations/over_here2.ogg', 'sound/hallucinations/over_here3.ogg',\
-	'sound/hallucinations/turn_around1.ogg', 'sound/hallucinations/turn_around2.ogg', 'sound/hallucinations/veryfar_noise.ogg', 'sound/hallucinations/wail.ogg')
+	sounds = list('sounds/effects/ghost.ogg', 'sounds/effects/ghost2.ogg', 'sounds/effects/Heart Beat.ogg', 'sounds/effects/screech.ogg',\
+	'sounds/hallucinations/behind_you1.ogg', 'sounds/hallucinations/behind_you2.ogg', 'sounds/hallucinations/far_noise.ogg', 'sounds/hallucinations/growl1.ogg', 'sounds/hallucinations/growl2.ogg',\
+	'sounds/hallucinations/growl3.ogg', 'sounds/hallucinations/im_here1.ogg', 'sounds/hallucinations/im_here2.ogg', 'sounds/hallucinations/i_see_you1.ogg', 'sounds/hallucinations/i_see_you2.ogg',\
+	'sounds/hallucinations/look_up1.ogg', 'sounds/hallucinations/look_up2.ogg', 'sounds/hallucinations/over_here1.ogg', 'sounds/hallucinations/over_here2.ogg', 'sounds/hallucinations/over_here3.ogg',\
+	'sounds/hallucinations/turn_around1.ogg', 'sounds/hallucinations/turn_around2.ogg', 'sounds/hallucinations/veryfar_noise.ogg', 'sounds/hallucinations/wail.ogg')
 
 //Hearing someone being shot twice
 /datum/hallucination/gunfire
@@ -125,7 +125,7 @@
 	min_power = 30
 
 /datum/hallucination/gunfire/start()
-	gunshot = pick('sound/weapons/gunshot/gunshot_strong.ogg', 'sound/weapons/gunshot/gunshot2.ogg', 'sound/weapons/gunshot/shotgun.ogg', 'sound/weapons/gunshot/gunshot.ogg','sound/weapons/Taser.ogg')
+	gunshot = pick('sounds/weapons/gunshot/gunshot_strong.ogg', 'sounds/weapons/gunshot/gunshot2.ogg', 'sounds/weapons/gunshot/shotgun.ogg', 'sounds/weapons/gunshot/gunshot.ogg','sounds/weapons/Taser.ogg')
 	origin = locate(holder.x + rand(4,8), holder.y + rand(4,8), holder.z)
 	holder.playsound_local(origin,gunshot,50)
 
@@ -253,7 +253,7 @@
 /datum/hallucination/fakeattack/start()
 	for(var/mob/living/M in oview(holder,1))
 		to_chat(holder, SPAN_DANGER("[M] has punched [holder]!"))
-		holder.playsound_local(get_turf(holder),"punch",50)
+		holder.playsound_local(get_turf(holder),SFX_PUNCH,50)
 
 //Fake injection
 /datum/hallucination/fakeattack/hypo

@@ -87,18 +87,13 @@ var/global/list/floating_chat_colors = list()
 	LAZYADD(holder.stored_chat_text, I)
 
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_floating_text, holder, I), duration)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_images_from_clients, I, show_to), duration + CHAT_MESSAGE_SPAWN_TIME)
+	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_clients, I, show_to), duration + CHAT_MESSAGE_SPAWN_TIME)
 
 	return I
 
 /proc/remove_floating_text(atom/movable/holder, image/I)
 	animate(I, CHAT_MESSAGE_EOL_FADE, pixel_z = I.pixel_z + 12, alpha = 0, flags = ANIMATION_PARALLEL)
 	LAZYREMOVE(holder.stored_chat_text, I)
-
-/proc/remove_images_from_clients(image/I, list/show_to)
-	for(var/client/C in show_to)
-		C.images -= I
-		qdel(I)
 
 #undef CHAT_MESSAGE_SPAWN_TIME
 #undef CHAT_MESSAGE_LIFESPAN

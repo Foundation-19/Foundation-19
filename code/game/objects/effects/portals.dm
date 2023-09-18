@@ -4,7 +4,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "portal"
 	density = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	var/obj/item/target = null
 	var/creator = null
 	anchored = TRUE
@@ -37,7 +37,7 @@
 		if(prob(failchance))
 			icon_state = "portal1"
 			dangerous = 1
-	playsound(src, 'sound/effects/phasein.ogg', 25, 1)
+	playsound(src, 'sounds/effects/phasein.ogg', 25, 1)
 	target = end
 
 	precision = prec

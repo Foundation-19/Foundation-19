@@ -132,7 +132,7 @@
 
 /obj/item/device/lightreplacer/proc/Use(mob/user)
 
-	playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+	playsound(src.loc, 'sounds/machines/click.ogg', 50, 1)
 	AddUses(-1)
 	return 1
 
@@ -171,7 +171,7 @@
 
 /obj/item/device/lightreplacer/emag_act(remaining_charges, mob/user)
 	emagged = !emagged
-	playsound(src.loc, "sparks", 100, 1)
+	playsound(src.loc, SFX_SPARK, 100, 1)
 	update_icon()
 	return 1
 

@@ -12,7 +12,7 @@
 	throw_distance = 6
 	accuracy = 1
 	one_hand_penalty = 0
-	fire_sound = 'sound/weapons/foamblaster.ogg'
+	fire_sound = 'sounds/weapons/foamblaster.ogg'
 	fire_sound_text = "a pleasing 'pomp'"
 	matter = list(MATERIAL_PLASTIC = 200)
 
@@ -90,7 +90,7 @@
 /obj/item/foam_dart/Initialize()
 	mix_up()
 	. = ..()
-	
+
 /obj/item/foam_dart/proc/mix_up()
 	pixel_x = rand(-randpixel, randpixel)
 	pixel_y = rand(-randpixel, randpixel)

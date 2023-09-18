@@ -1,5 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - tweak: Holopad's ID is not strictly tied to its area anymore.
-  - tweak: Holopads can now be renamed by using a multitool.

@@ -5,8 +5,8 @@ var/global/list/sparring_attack_cache = list()
 	var/attack_verb = list("attack")	// Empty hand hurt intent verb.
 	var/attack_noun = list("fist")
 	var/damage = 0						// Extra empty hand attack damage.
-	var/attack_sound = "punch"
-	var/miss_sound = 'sound/weapons/punchmiss.ogg'
+	var/attack_sound = SFX_PUNCH
+	var/miss_sound = 'sounds/weapons/punchmiss.ogg'
 	var/shredding = FALSE // Calls the old attack_alien() behavior on objects/mobs when on harm intent.
 	var/sharp = FALSE
 	var/edge = FALSE
@@ -122,7 +122,7 @@ var/global/list/sparring_attack_cache = list()
 
 /datum/unarmed_attack/bite
 	attack_verb = list("bit")
-	attack_sound = 'sound/weapons/bite.ogg'
+	attack_sound = 'sounds/weapons/bite.ogg'
 	damage = 0
 	attack_name = "bite"
 
@@ -161,9 +161,6 @@ var/global/list/sparring_attack_cache = list()
 		user.visible_message(SPAN_DANGER("[user] [pick(attack_verb)] \himself in the [organ]!"))
 		return FALSE
 
-	target.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
-	user.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
-
 	if(!target.lying)
 		switch(zone)
 			if(BP_HEAD, BP_MOUTH, BP_EYES)
@@ -194,7 +191,7 @@ var/global/list/sparring_attack_cache = list()
 /datum/unarmed_attack/kick
 	attack_verb = list("kicked", "kicked", "kicked", "kneed")
 	attack_noun = list("kick", "kick", "kick", "knee strike")
-	attack_sound = "swing_hit"
+	attack_sound = SFX_SWING_HIT
 	damage = 0
 	attack_name = "kick"
 
@@ -233,7 +230,7 @@ var/global/list/sparring_attack_cache = list()
 /datum/unarmed_attack/stomp
 	attack_verb = list("stomped on")
 	attack_noun = list("stomp")
-	attack_sound = "swing_hit"
+	attack_sound = SFX_SWING_HIT
 	damage = 0
 	attack_name = "stomp"
 

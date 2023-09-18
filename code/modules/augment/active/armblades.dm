@@ -7,7 +7,7 @@
 	desc = "A handy utility blade for the discerning augmentee. Warranty void if used for cutting."
 	base_parry_chance = 30
 	unbreakable = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	force_multiplier = 0.2
 	sharp = TRUE
 	edge = TRUE
@@ -52,8 +52,8 @@
 	holding_type = /obj/item/material/armblade/wrist
 	known = FALSE // Specially designed for concealment
 	origin_tech = list(TECH_COMBAT = 3, TECH_ESOTERIC = 4)
-	deploy_sound = 'sound/effects/holster/sheathout.ogg'
-	retract_sound = 'sound/effects/holster/sheathin.ogg'
+	deploy_sound = 'sounds/effects/holster/sheathout.ogg'
+	retract_sound = 'sounds/effects/holster/sheathin.ogg'
 
 /obj/item/material/armblade/wrist
 	name = "wrist blade"

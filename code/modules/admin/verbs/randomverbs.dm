@@ -490,7 +490,7 @@ Ccomp's first proc.
 
 	var/show_log = alert(src, "Show ion message?", "Message", "Yes", "No")
 	if(show_log == "Yes")
-		command_announcement.Announce("Ion storm detected near the [station_name()]. Please check all AI-controlled equipment for errors.", "Anomaly Alert", new_sound = 'sound/AI/ionstorm.ogg')
+		command_announcement.Announce("Ion storm detected near the [station_name()]. Please check all AI-controlled equipment for errors.", "Anomaly Alert", new_sound = 'sounds/AI/ionstorm.ogg')
 	SSstatistics.add_field_details("admin_verb","IONC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_rejuvenate(mob/living/M as mob in SSmobs.mob_list)
@@ -515,24 +515,41 @@ Ccomp's first proc.
 /client/proc/cmd_admin_create_centcom_report()
 	set category = "Special Verbs"
 	set name = "Create Command Report"
+
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
 		return
+
 	var/input = sanitize(input(usr, "Please enter anything you want. Anything. Serious.", "What?", "") as message|null, extra = 0)
 	var/customname = sanitizeSafe(input(usr, "Pick a title for the report.", "Title") as text|null)
 	if(!input)
 		return
+
 	if(!customname)
 		customname = "[GLOB.using_map.boss_name] Update"
+
+	var/selected_sound = GLOB.using_map.command_report_sound
+	switch(alert("Do you wish to set custom announcement sound?",,"Yes","No"))
+		if("Yes")
+			var/S = input("Pick sound:","Sound") as null|sound
+			if(!S)
+				to_chat(usr, SPAN_WARNING("The file hasn't been found!"))
+				return
+			selected_sound = S
+		if("No")
+		else
+			return
 
 	//New message handling
 	post_comm_message(customname, replacetext(input, "\n", "<br/>"))
 
 	switch(alert("Should this be announced to the general population?",,"Yes","No"))
 		if("Yes")
-			command_announcement.Announce(input, customname, new_sound = GLOB.using_map.command_report_sound, msg_sanitized = 1);
+			command_announcement.Announce(input, customname, new_sound = selected_sound, msg_sanitized = 1);
 		if("No")
 			minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
+		else
+			return
 
 	log_admin("[key_name(src)] has created a command report: [input]")
 	message_staff("[key_name_admin(src)] has created a command report", 1)

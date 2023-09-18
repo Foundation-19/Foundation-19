@@ -25,7 +25,7 @@
 	attack_verb = list("prodded", "attacked")
 	desc = "A wood-handled brush with thick metallic wires for clearing away dust and loose scree."
 	excavation_amount = 1
-	drill_sound = 'sound/weapons/thudswoosh.ogg'
+	drill_sound = 'sounds/weapons/thudswoosh.ogg'
 	drill_verb = "brushing"
 	sharp = FALSE
 
@@ -33,31 +33,31 @@
 	name = "2cm pick"
 	icon_state = "pick1"
 	excavation_amount = 2
-	drill_sound = 'sound/items/Screwdriver.ogg'
+	drill_sound = 'sounds/items/Screwdriver.ogg'
 
 /obj/item/pickaxe/xeno/two_pick
 	name = "4cm pick"
 	icon_state = "pick2"
 	excavation_amount = 4
-	drill_sound = 'sound/items/Screwdriver.ogg'
+	drill_sound = 'sounds/items/Screwdriver.ogg'
 
 /obj/item/pickaxe/xeno/three_pick
 	name = "6cm pick"
 	icon_state = "pick3"
 	excavation_amount = 6
-	drill_sound = 'sound/items/Screwdriver.ogg'
+	drill_sound = 'sounds/items/Screwdriver.ogg'
 
 /obj/item/pickaxe/xeno/four_pick
 	name = "8cm pick"
 	icon_state = "pick4"
 	excavation_amount = 8
-	drill_sound = 'sound/items/Screwdriver.ogg'
+	drill_sound = 'sounds/items/Screwdriver.ogg'
 
 /obj/item/pickaxe/xeno/five_pick
 	name = "10cm pick"
 	icon_state = "pick5"
 	excavation_amount = 10
-	drill_sound = 'sound/items/Screwdriver.ogg'
+	drill_sound = 'sounds/items/Screwdriver.ogg'
 
 /obj/item/pickaxe/xeno/six_pick
 	name = "12cm pick"
@@ -71,7 +71,7 @@
 	digspeed = 30
 	desc = "A smaller, more precise version of the pickaxe."
 	excavation_amount = 30
-	drill_sound = 'sound/items/Crowbar.ogg'
+	drill_sound = 'sounds/items/Crowbar.ogg'
 	drill_verb = "clearing"
 	matter = list(MATERIAL_STEEL = 150)
 	w_class = ITEM_SIZE_NORMAL

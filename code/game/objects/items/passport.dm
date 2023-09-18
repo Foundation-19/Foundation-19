@@ -5,7 +5,7 @@
 	force = 0.5
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("whipped")
-	hitsound = 'sound/weapons/towelwhip.ogg'
+	hitsound = 'sounds/weapons/towelwhip.ogg'
 	desc = "A passport. Its origin seems unknown."
 	var/info
 	var/fingerprint

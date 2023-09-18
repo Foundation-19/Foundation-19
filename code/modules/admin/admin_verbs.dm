@@ -64,6 +64,7 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/togglelooc,		//toggles looc on/off for everyone,
 	/datum/admins/proc/toggleoocdead,	//toggles ooc on/off for everyone who is dead,
 	/datum/admins/proc/toggledsay,		//toggles dsay on/off for everyone,
+	/datum/admins/proc/toggletimelocks,	//toggles timelocks on jobs for the server. DOES NOT TURN OFF TIME TRACKING,
 	/client/proc/game_panel,			//game panel, allows to change game-mode etc,
 	/client/proc/cmd_admin_say,			//admin-only ooc chat,
 	/datum/admins/proc/togglehubvisibility, //toggles visibility on the BYOND Hub,
@@ -922,7 +923,7 @@ var/list/admin_verbs_mentors = list(
 
 	for (var/mob/T as mob in SSmobs.mob_list)
 		to_chat(T, "<br><center><span class='notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move on.</span></center><br>")
-		sound_to(T, 'sound/voice/ManUp1.ogg')
+		sound_to(T, 'sounds/voice/ManUp1.ogg')
 
 	log_and_message_staff("told everyone to man up and deal with it.")
 

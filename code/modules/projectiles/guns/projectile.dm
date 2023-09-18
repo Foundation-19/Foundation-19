@@ -19,7 +19,7 @@
 	var/ammo_type = null		//the type of ammo that the gun comes preloaded with
 	var/list/loaded = list()	//stored ammo
 	var/starts_loaded = 1		//whether the gun starts loaded or not, can be overridden for guns crafted in-game
-	var/load_sound = 'sound/weapons/guns/interaction/bullet_insert.ogg'
+	var/load_sound = 'sounds/weapons/guns/interaction/bullet_insert.ogg'
 
 	//For MAGAZINE guns
 	var/magazine_type = null	//the type of magazine that the gun comes preloaded with
@@ -27,8 +27,8 @@
 	var/allowed_magazines		//magazine types that may be loaded. Can be a list or single path
 	var/auto_eject = 0			//if the magazine should automatically eject itself when empty.
 	var/auto_eject_sound = null
-	var/mag_insert_sound = 'sound/weapons/guns/interaction/pistol_magin.ogg'
-	var/mag_remove_sound = 'sound/weapons/guns/interaction/pistol_magout.ogg'
+	var/mag_insert_sound = 'sounds/weapons/guns/interaction/pistol_magin.ogg'
+	var/mag_remove_sound = 'sounds/weapons/guns/interaction/pistol_magout.ogg'
 	var/can_special_reload = TRUE //Whether or not we can tactical/speed reload
 
 	var/is_jammed = 0           //Whether this gun is jammed
@@ -72,7 +72,7 @@
 			else
 				to_chat(user, SPAN_NOTICE("You reflexively clear the jam on \the [src]."))
 				is_jammed = 0
-				playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
+				playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 	if(is_jammed)
 		return null
 	//get the next casing
@@ -86,13 +86,12 @@
 			ammo_magazine.stored_ammo -= chambered
 
 	if (chambered)
-		return chambered.BB
+		return chambered.expend()
 	return null
 
 /obj/item/gun/projectile/handle_post_fire()
 	..()
 	if(chambered)
-		chambered.expend()
 		process_chambered()
 
 /obj/item/gun/projectile/process_point_blank(obj/projectile, mob/user, atom/target)
@@ -159,26 +158,28 @@
 							if(!can_special_reload)
 								to_chat(user, SPAN_WARNING("You can't tactically reload this gun!"))
 								return
+							//Experienced gets a 1 second delay, master gets a 0.5 second delay
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
+								return
 							if(!user.unEquip(AM, src))
 								return
-							//Experienced gets a 1 second delay, master gets a 0.5 second delay
-							if(do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
-								ammo_magazine.update_icon()
-								user.put_in_hands(ammo_magazine)
-								user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),
-													 SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
+							ammo_magazine.update_icon()
+							user.put_in_hands(ammo_magazine)
+							user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+												SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
 						else //Speed reloading
 							if(!can_special_reload)
 								to_chat(user, SPAN_WARNING("You can't speed reload with this gun!"))
 								return
+							//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
+								return
 							if(!user.unEquip(AM, src))
 								return
-							//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
-							if(do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
-								ammo_magazine.update_icon()
-								ammo_magazine.dropInto(user.loc)
-								user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),
-													 SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
+							ammo_magazine.update_icon()
+							ammo_magazine.dropInto(user.loc)
+							user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+												SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
 					ammo_magazine = AM
 					playsound(loc, mag_insert_sound, 75, 1)
 					show_sound_effect(loc, user, SFX_ICON_SMALL)
@@ -206,7 +207,7 @@
 						count++
 				if(count)
 					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
-					playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+					playsound(src.loc, 'sounds/weapons/empty.ogg', 50, 1)
 		AM.update_icon()
 	else if(istype(A, /obj/item/ammo_casing))
 		. = TRUE
@@ -236,7 +237,7 @@
 		if(!do_after(user, 4, src))
 			return
 		is_jammed = 0
-		playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
+		playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
 		user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))

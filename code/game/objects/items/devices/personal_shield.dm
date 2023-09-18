@@ -58,7 +58,7 @@
 			START_PROCESSING(SSobj, src)
 			update_icon()
 	if(isScrewdriver(W))
-		playsound(src, 'sound/items/Screwdriver.ogg', 15, 1)
+		playsound(src, 'sounds/items/Screwdriver.ogg', 15, 1)
 		user.visible_message("\The [user] [open ? "screws" : "unscrews"] the top of \the [src].", SPAN_NOTICE("You [open ? "screw" : "unscrew"] the top of \the [src]."))
 		open = !open
 		update_icon()

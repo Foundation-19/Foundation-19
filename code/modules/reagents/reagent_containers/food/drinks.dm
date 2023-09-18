@@ -25,7 +25,7 @@
 		open(user)
 
 /obj/item/reagent_containers/food/drinks/proc/open(mob/user)
-	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
+	playsound(loc,'sounds/effects/canopen.ogg', rand(10,50), 1)
 	to_chat(user, SPAN_NOTICE("You open \the [src] with an audible pop!"))
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 
@@ -67,12 +67,9 @@
 
 /obj/item/reagent_containers/food/drinks/self_feed_message(mob/user)
 	to_chat(user, SPAN_NOTICE("You swallow a gulp from \the [src]."))
-	if(user.has_personal_goal(/datum/goal/achievement/specific_object/drink))
-		for(var/datum/reagent/R in reagents.reagent_list)
-			user.update_personal_goal(/datum/goal/achievement/specific_object/drink, R.type)
 
 /obj/item/reagent_containers/food/drinks/feed_sound(mob/user)
-	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
+	playsound(user.loc, 'sounds/items/drink.ogg', rand(10, 50), 1)
 
 /obj/item/reagent_containers/food/drinks/examine(mob/user, distance)
 	. = ..()

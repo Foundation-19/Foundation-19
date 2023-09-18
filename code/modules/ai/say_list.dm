@@ -30,9 +30,10 @@
 	var/threaten_sound = null			// Sound file played when the mob's AI calls threaten_target() for the first time.
 	var/stand_down_sound = null			// Sound file played when the mob's AI loses sight of the threatened target.
 
-
-
-
+	// Lists belows are ASSOCIATIVE lists! Sound = Chance. If null is in there - it will not play sound when prompted
+	var/list/speak_sounds = list()		// Sounds that can be played when anything from speak list is said
+	var/list/emote_hear_sounds = list()	// Sounds that can be played when anything from emote_hear is performed
+	var/list/emote_see_sounds = list()	// Sounds that can be played when anything from emote_see is performed
 
 
 
@@ -67,8 +68,8 @@
 	say_stand_down = list("Good.")
 	say_escalate = list("Your funeral!", "Bring it!")
 
-	threaten_sound = 'sound/weapons/TargetOn.ogg'
-	stand_down_sound = 'sound/weapons/TargetOff.ogg'
+	threaten_sound = 'sounds/weapons/TargetOn.ogg'
+	stand_down_sound = 'sounds/weapons/TargetOff.ogg'
 
 /datum/say_list/malf_drone
 	speak = list("ALERT.","Hostile-ile-ile entities dee-twhoooo-wected.","Threat parameterszzzz- szzet.","Bring sub-sub-sub-systems uuuup to combat alert alpha-a-a.")
@@ -82,8 +83,8 @@
 	say_stand_down = list("Visual lost.", "Error: Target not found.")
 	say_escalate = list("Viable target found. Removing.", "Engaging target.", "Target judgement complete. Removal required.")
 
-	threaten_sound = 'sound/effects/turret/move1.wav'
-	stand_down_sound = 'sound/effects/turret/move2.wav'
+	threaten_sound = 'sounds/effects/turret/move1.wav'
+	stand_down_sound = 'sounds/effects/turret/move2.wav'
 
 /datum/say_list/crab
 	emote_hear = list("clicks")

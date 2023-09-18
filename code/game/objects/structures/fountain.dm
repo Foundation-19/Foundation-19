@@ -7,7 +7,7 @@
 	icon_state = "fountain"
 	density = TRUE
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	pixel_x = -16
 	var/used = FALSE
 
@@ -39,7 +39,7 @@
 		L.flash_eyes(3)
 		L.eye_blurry += 9
 	visible_message(SPAN_WARNING("\The [src] erupts in a bright flash of light!"))
-	playsound(src,'sound/items/time.ogg',100)
+	playsound(src,'sounds/items/time.ogg',100)
 
 	var/direction = rand(1,6)
 	if(direction == 1) //become older

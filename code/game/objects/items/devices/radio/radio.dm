@@ -210,7 +210,7 @@
 	on = !on
 	if(on)
 		if(ismob(src.loc))
-			playsound(src.loc, 'sound/effects/walkieon.ogg', 40, 0, -1)
+			playsound(src.loc, 'sounds/effects/walkieon.ogg', 40, 0, -1)
 		START_PROCESSING(SSobj, src)
 	else
 		STOP_PROCESSING(SSobj, src)
@@ -282,6 +282,7 @@
 	if(.)
 		SSnano.update_uis(src)
 
+// needs fixes later on, but at least its more optimized
 /obj/item/device/radio/proc/autosay(message, from, channel) //BS12 EDIT
 	var/datum/radio_frequency/connection = null
 	if(channel && channels && channels.len > 0)
@@ -293,10 +294,13 @@
 		channel = null
 	if (!istype(connection))
 		return
-	var/mob/living/silicon/ai/A = new /mob/living/silicon/ai(src, null, null, 1)
-	A.fully_replace_character_name(from)
-	talk_into(A, message, channel,"states")
-	qdel(A)
+
+	var/turf/position = get_turf(src)
+	Broadcast_Message(connection = connection, M = null,
+						vmask = FALSE, vmessage = message, radio = src,
+						message = message, name = from, job = null, realname = from, vname = from,
+						data = 0, compression = 0, level = GetConnectedZlevels(position.z), freq = connection.frequency, verbage = "states", speaking = null,
+						channel_tag = "[connection.frequency]", channel_color = channel_color_presets["Menacing Maroon"])
 
 // Interprets the message mode when talking into a radio, possibly returning a connection datum
 /obj/item/device/radio/proc/handle_message_mode(mob/living/M as mob, message, message_mode)
@@ -344,7 +348,7 @@
 		set_frequency(frequency)
 
 	if(loc == M)
-		playsound(loc, 'sound/effects/walkietalkie.ogg', 20, 0, -1)
+		playsound(loc, 'sounds/effects/walkietalkie.ogg', 20, 0, -1)
 
 
 	/* Quick introduction:
@@ -364,7 +368,7 @@
 		return 0
 
 	var/turf/position = get_turf(src)
-	playsound(src, 'sound/effects/radiohiss.ogg', 10)
+	playsound(src, 'sounds/effects/radiohiss.ogg', 10)
 
 	//#### Tagging the signal with all appropriate identity values ####//
 
@@ -887,7 +891,7 @@
 /obj/item/device/radio/CouldUseTopic(mob/user)
 	..()
 	if(istype(user, /mob/living/carbon))
-		playsound(src, "button", 10)
+		playsound(src, SFX_MACHINE_BUTTON, 10)
 
 /obj/item/device/radio/intercept
 	name = "bulky radio"

@@ -178,7 +178,7 @@
 		bullets--
 		D.icon_state = "foamdart"
 		D.SetName("foam dart")
-		playsound(user.loc, 'sound/items/syringeproj.ogg', 50, 1)
+		playsound(user.loc, 'sounds/items/syringeproj.ogg', 50, 1)
 
 		for(var/i=0, i<6, i++)
 			if (D)
@@ -226,7 +226,7 @@
 				O.show_message(text("<span class='danger'>\The [] casually lines up a shot with []'s head and pulls the trigger!</span>", user, M), 1, SPAN_WARNING("You hear the sound of foam against skull"), 2)
 				O.show_message(text("<span class='warning'>\The [] was hit in the head by the foam dart!</span>", M), 1)
 
-		playsound(user.loc, 'sound/items/syringeproj.ogg', 50, 1)
+		playsound(user.loc, 'sounds/items/syringeproj.ogg', 50, 1)
 		new /obj/item/toy/ammo/crossbow(M.loc)
 		src.bullets--
 	else if (M.lying && src.bullets == 0)
@@ -274,13 +274,13 @@
 	src.active = !( src.active )
 	if (src.active)
 		to_chat(user, SPAN_NOTICE("You extend the plastic blade with a quick flick of your wrist."))
-		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberon.ogg', 50, 1)
 		src.icon_state = "swordblue"
 		src.item_state = "swordblue"
 		src.w_class = ITEM_SIZE_HUGE
 	else
 		to_chat(user, SPAN_NOTICE("You push the plastic blade back down into the handle."))
-		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
+		playsound(user, 'sounds/weapons/saberoff.ogg', 50, 1)
 		src.icon_state = "sword0"
 		src.item_state = "sword0"
 		src.w_class = initial(w_class)
@@ -320,7 +320,7 @@
 	s.start()
 	new /obj/effect/decal/cleanable/ash(src.loc)
 	src.visible_message(SPAN_WARNING("The [src.name] explodes!"),SPAN_WARNING("You hear a snap!"))
-	playsound(src, 'sound/effects/snap.ogg', 50, 1)
+	playsound(src, 'sounds/effects/snap.ogg', 50, 1)
 	qdel(src)
 
 /obj/item/toy/snappop/Crossed(H as mob|obj)
@@ -334,7 +334,7 @@
 			s.start()
 			new /obj/effect/decal/cleanable/ash(src.loc)
 			src.visible_message(SPAN_WARNING("The [src.name] explodes!"),SPAN_WARNING("You hear a snap!"))
-			playsound(src, 'sound/effects/snap.ogg', 50, 1)
+			playsound(src, 'sounds/effects/snap.ogg', 50, 1)
 			qdel(src)
 
 /*
@@ -353,7 +353,7 @@
 /obj/item/toy/bosunwhistle/attack_self(mob/user as mob)
 	if(cooldown < world.time - 35)
 		to_chat(user, SPAN_NOTICE("You blow on [src], creating an ear-splitting noise!"))
-		playsound(user, 'sound/misc/boatswain.ogg', 20, 1)
+		playsound(user, 'sounds/misc/boatswain.ogg', 20, 1)
 		cooldown = world.time
 
 /*
@@ -369,14 +369,14 @@
 /obj/item/toy/prize/attack_self(mob/user as mob)
 	if(cooldown < world.time - 8)
 		to_chat(user, SPAN_NOTICE("You play with [src]."))
-		playsound(user, 'sound/mecha/mechstep.ogg', 20, 1)
+		playsound(user, 'sounds/mecha/mechstep.ogg', 20, 1)
 		cooldown = world.time
 
 /obj/item/toy/prize/attack_hand(mob/user as mob)
 	if(loc == user)
 		if(cooldown < world.time - 8)
 			to_chat(user, SPAN_NOTICE("You play with [src]."))
-			playsound(user, 'sound/mecha/mechturn.ogg', 20, 1)
+			playsound(user, 'sounds/mecha/mechturn.ogg', 20, 1)
 			cooldown = world.time
 			return
 	..()
@@ -693,7 +693,7 @@
 	var/phrase = "I don't want to exist anymore!"
 
 /obj/structure/plushie/attack_hand(mob/user)
-	playsound(src.loc, 'sound/effects/rustle1.ogg', 100, 1)
+	playsound(src.loc, 'sounds/effects/rustle1.ogg', 100, 1)
 	if(user.a_intent == I_HELP)
 		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> hugs [src]!"),SPAN_NOTICE("You hug [src]!"))
 	else if (user.a_intent == I_HURT)
@@ -718,7 +718,7 @@
 
 /obj/structure/plushie/carp
 	name = "plush carp"
-	desc = "A plushie of an elated carp! Straight from the wilds of the Nyx frontier, now right here in your hands."
+	desc = "A plushie of an elated carp! Straight from the river, now right here in your hands."
 	icon_state = "carpplushie"
 	phrase = "Glorf!"
 
@@ -813,7 +813,7 @@
 	return ..()
 
 /obj/item/marshalling_wand/attack_self(mob/living/user as mob)
-	playsound(src.loc, 'sound/effects/rustle1.ogg', 100, 1)
+	playsound(src.loc, 'sounds/effects/rustle1.ogg', 100, 1)
 	if (user.a_intent == I_HELP)
 		user.visible_message(SPAN_NOTICE("[user] beckons with \the [src], signalling forward motion."),
 							SPAN_NOTICE("You beckon with \the [src], signalling forward motion."))
@@ -847,13 +847,13 @@
 /obj/item/toy/ringbell/attack_hand(mob/user as mob)
 	if (user.a_intent == I_HELP)
 		user.visible_message(SPAN_NOTICE("[user] rings \the [src], signalling the beginning of the contest."))
-		playsound(user.loc, 'sound/items/oneding.ogg', 60)
+		playsound(user.loc, 'sounds/items/oneding.ogg', 60)
 	else if (user.a_intent == I_DISARM)
 		user.visible_message(SPAN_NOTICE("[user] rings \the [src] three times, signalling the end of the contest!"))
-		playsound(user.loc, 'sound/items/threedings.ogg', 60)
+		playsound(user.loc, 'sounds/items/threedings.ogg', 60)
 	else if (user.a_intent == I_HURT)
 		user.visible_message(SPAN_WARNING("[user] rings \the [src] repeatedly, signalling a disqualification!"))
-		playsound(user.loc, 'sound/items/manydings.ogg', 60)
+		playsound(user.loc, 'sounds/items/manydings.ogg', 60)
 
 //Office Desk Toys
 
@@ -862,7 +862,7 @@
 	desc = "A object that does not exist. Parent Item"
 
 	var/on = 0
-	var/activation_sound = 'sound/effects/flashlight.ogg'
+	var/activation_sound = 'sounds/effects/flashlight.ogg'
 
 /obj/item/toy/desk/on_update_icon()
 	if(on)

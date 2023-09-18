@@ -6,7 +6,7 @@
 	density = TRUE
 	opacity = 0
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	var/const/max_health = 200
 	var/health = max_health //The shield can only take so much beating (prevents perma-prisons)
 	var/shield_generate_power = 7500	//how much power we use when regenerating
@@ -51,7 +51,7 @@
 		src.health -= aforce
 
 	//Play a fitting sound
-	playsound(src.loc, 'sound/effects/EMPulse.ogg', 75, 1)
+	playsound(src.loc, 'sounds/effects/EMPulse.ogg', 75, 1)
 
 	check_failure()
 	set_opacity(1)
@@ -106,7 +106,7 @@
 	src.health -= tforce
 
 	//This seemed to be the best sound for hitting a force field.
-	playsound(src.loc, 'sound/effects/EMPulse.ogg', 100, 1)
+	playsound(src.loc, 'sounds/effects/EMPulse.ogg', 100, 1)
 
 	check_failure()
 
@@ -283,7 +283,7 @@
 
 /obj/machinery/shieldgen/attackby(obj/item/W as obj, mob/user as mob)
 	if(isScrewdriver(W))
-		playsound(src.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 		if(is_open)
 			to_chat(user, SPAN_NOTICE("You close the panel."))
 			is_open = 0
@@ -307,7 +307,7 @@
 			to_chat(user, "The bolts are covered, unlocking this would retract the covers.")
 			return
 		if(anchored)
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("'You unsecure the [src] from the floor!"))
 			if(active)
 				to_chat(user, SPAN_NOTICE("The [src] shuts off!"))
@@ -315,7 +315,7 @@
 			anchored = FALSE
 		else
 			if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
 			anchored = TRUE
 

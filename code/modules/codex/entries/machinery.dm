@@ -50,3 +50,9 @@
 	This allows you to send faxes pretending to be from somewhere else on the site, or even an off-site origin like the Foundation Central Office.<br>\
 	<strong>NOTE</strong>: Any new department tags created in this way that do not already exist in the list of targets cannot receive faxes, \
 	as this does not add new departments to the list of valid fax targets."
+
+/datum/codex_entry/contraband_detector
+	associated_paths = list(/obj/machinery/contraband_detector)
+	mechanics_text = "This machine will automatically scan anything that moves through its scanner, reporting any illicit items to the LCZ guard frequency. \
+	With a box made of aluminium, you could pass contraband through without detection. \
+	The detector could also be hacked or destroyed, although this risks the anti-tampering alarm going off."

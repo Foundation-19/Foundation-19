@@ -14,7 +14,7 @@
 	volume = 60
 	w_class = ITEM_SIZE_SMALL
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
-	unacidable = TRUE
+	acid_resistance = -1
 
 
 	var/list/can_be_placed_into = list(
@@ -84,9 +84,6 @@
 
 /obj/item/reagent_containers/glass/self_feed_message(mob/user)
 	to_chat(user, SPAN_NOTICE("You swallow a gulp from \the [src]."))
-	if(user.has_personal_goal(/datum/goal/achievement/specific_object/drink))
-		for(var/datum/reagent/R in reagents.reagent_list)
-			user.update_personal_goal(/datum/goal/achievement/specific_object/drink, R.type)
 
 /obj/item/reagent_containers/glass/throw_impact(atom/hit_atom)
 	if (QDELETED(src))
@@ -103,7 +100,7 @@
 				SPAN_DANGER("\The [src] shatters from the impact!"),
 				SPAN_DANGER("You hear the sound of glass shattering!")
 			)
-		playsound(src.loc, pick(GLOB.shatter_sound), 100)
+		playsound(src.loc, SFX_SHATTER, 100)
 		new /obj/item/material/shard(src.loc)
 		qdel(src)
 	else
@@ -118,7 +115,7 @@
 				SPAN_WARNING("\The [src] bounces dangerously. Luckily it didn't break."),
 				SPAN_WARNING("You hear the sound of glass hitting something.")
 			)
-		playsound(src.loc, "sound/effects/Glasshit.ogg", 50)
+		playsound(src.loc, "sounds/effects/Glasshit.ogg", 50)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
 	if (!proximity || (target.type in can_be_placed_into) || standard_dispenser_refill(user, target) || standard_pour_into(user, target))
@@ -198,7 +195,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = "5;10;15;25;30;60;180"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
-	unacidable = FALSE
+	acid_resistance = 1
 
 /obj/item/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
@@ -282,7 +279,7 @@
 	possible_transfer_amounts = "10;20;30;60;120;150;180"
 	volume = 180
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
-	unacidable = FALSE
+	acid_resistance = 1
 
 /obj/item/reagent_containers/glass/bucket/wood
 	name = "bucket"
@@ -299,7 +296,7 @@
 		else
 			reagents.trans_to_obj(D, 5)
 			to_chat(user, SPAN_NOTICE("You wet \the [D] in \the [src]."))
-			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+			playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
 		return
 	else
 		return ..()

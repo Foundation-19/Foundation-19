@@ -16,7 +16,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/Initialize()
 	. = ..()
 	if (isGlass)
-		unacidable = TRUE
+		acid_resistance = -1
 
 /obj/item/reagent_containers/food/drinks/bottle/Destroy()
 	if(rag)
@@ -62,7 +62,7 @@
 		var/mob/living/L = against
 		L.IgniteMob()
 
-	playsound(src, "shatter", 70, 1)
+	playsound(src, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	transfer_fingerprints_to(B)
 
@@ -163,7 +163,7 @@
 	var/icon/broken_outline = icon('icons/obj/drinks.dmi', "broken")
 
 /obj/item/broken_bottle/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
-	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
+	playsound(loc, 'sounds/weapons/bladeslice.ogg', 50, 1, -1)
 	show_sound_effect(loc, M, soundicon = SFX_ICON_JAGGED)
 	return ..()
 
@@ -229,7 +229,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequilla, served in space night clubs across the galaxy."
+	desc = "Silver laced tequilla, served in night clubs across the Earth."
 	icon_state = "patronbottle"
 	center_of_mass = "x=16;y=6"
 
@@ -339,7 +339,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/herbal
 	name = "Liqueur d'Herbe"
-	desc = "A bottle of the seventh-finest herbal liquor sold under a generic name in the galaxy. The back label has a load of guff about the monks who traditionally made this particular variety."
+	desc = "A bottle of the seventh-finest herbal liquor sold under a generic name. The back label has a load of guff about the monks who traditionally made this particular variety."
 	icon_state = "herbal"
 	center_of_mass = "x=16;y=6"
 

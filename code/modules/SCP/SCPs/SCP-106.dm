@@ -119,9 +119,9 @@ GLOBAL_LIST_EMPTY(scp106s)
 // So that he isn't as stealthy anymore
 /mob/living/carbon/human/scp_106/play_special_footstep_sound(turf/T, volume = 30, range = 1)
 	var/play_sound = pick(\
-				'sound/effects/footstep/scp106/step1.ogg',
-				'sound/effects/footstep/scp106/step2.ogg',
-				'sound/effects/footstep/scp106/step3.ogg')
+				'sounds/effects/footstep/scp106/step1.ogg',
+				'sounds/effects/footstep/scp106/step2.ogg',
+				'sounds/effects/footstep/scp106/step3.ogg')
 	playsound(T, play_sound, max(20, volume), TRUE, range)
 	return TRUE
 
@@ -145,7 +145,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 		WarpMob(L)
 		return
 	L.Weaken(4)
-	playsound(L, pick('sound/bullets/bullet_impact2.ogg', 'sound/bullets/bullet_impact3.ogg'), rand(15, 30), TRUE)
+	playsound(L, pick('sounds/bullets/bullet_impact2.ogg', 'sounds/bullets/bullet_impact3.ogg'), rand(15, 30), TRUE)
 	visible_message(SPAN_DANGER("\The [src] knocks [L] down!"))
 
 // This is us GETTING attacked
@@ -159,7 +159,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 	if(!istype(T)) // Fail-safe
 		T = get_turf(T)
 	visible_message(SPAN_DANGER("[L] is warped away!"))
-	playsound(L, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 50, TRUE)
+	playsound(L, pick('sounds/scp/106/decay1.ogg', 'sounds/scp/106/decay2.ogg', 'sounds/scp/106/decay3.ogg'), 50, TRUE)
 	if(L.buckled)
 		L.buckled.unbuckle_mob()
 	L.forceMove(T)
@@ -292,7 +292,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 		anim_x = -32
 	animate(src, pixel_x = anim_x, pixel_y = anim_y, time = phase_time)
 
-	playsound(target_object, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 35, FALSE)
+	playsound(target_object, pick('sounds/scp/106/decay1.ogg', 'sounds/scp/106/decay2.ogg', 'sounds/scp/106/decay3.ogg'), 35, FALSE)
 
 	if(do_after(src, phase_time, target_object))
 		forceMove(get_step(src, dir))
@@ -337,7 +337,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 
 	animate(src, pixel_x = anim_x, pixel_y = anim_y, time = phase_time)
 	animate(step_turf, color = "#555555", time = phase_time)
-	playsound(step_turf, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 35, FALSE)
+	playsound(step_turf, pick('sounds/scp/106/decay1.ogg', 'sounds/scp/106/decay2.ogg', 'sounds/scp/106/decay3.ogg'), 35, FALSE)
 
 	var/anim_duration = 20 SECONDS
 	if(do_after(src, phase_time, step_turf))
@@ -366,7 +366,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 		return
 
 	var/old_color = exit.color
-	playsound(exit, pick('sound/scp/106/wall_decay.ogg'), 35, FALSE)
+	playsound(exit, pick('sounds/scp/106/wall_decay.ogg'), 35, FALSE)
 	animate(exit, color = "#555555", time = 5 SECONDS)
 
 	if(!do_after(src, 5 SECONDS, WallEye))
@@ -387,7 +387,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 
 	if(world.time < sound_cooldown)
 		return
-	playsound(get_turf(src), 'sound/scp/106/breathing.ogg', rand(35, 65), TRUE)
+	playsound(get_turf(src), 'sounds/scp/106/breathing.ogg', rand(35, 65), TRUE)
 	sound_cooldown = world.time + sound_cooldown_time
 
 /mob/living/carbon/human/scp_106/proc/audible_laugh()
@@ -397,7 +397,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 
 	if(world.time < sound_cooldown)
 		return
-	playsound(get_turf(src), 'sound/scp/106/laugh.ogg', rand(35, 65), TRUE)
+	playsound(get_turf(src), 'sounds/scp/106/laugh.ogg', rand(35, 65), TRUE)
 	sound_cooldown = world.time + sound_cooldown_time
 
 // Special objects
@@ -405,7 +405,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	simulated = FALSE
 	invisibility = 100
 
@@ -424,8 +424,8 @@ GLOBAL_LIST_EMPTY(scp106s)
 			return
 
 		visible_message(SPAN_WARNING("[L] is warped away!"))
-		playsound(L, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 25, TRUE)
-		playsound(T, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 25, TRUE)
+		playsound(L, pick('sounds/scp/106/decay1.ogg', 'sounds/scp/106/decay2.ogg', 'sounds/scp/106/decay3.ogg'), 25, TRUE)
+		playsound(T, pick('sounds/scp/106/decay1.ogg', 'sounds/scp/106/decay2.ogg', 'sounds/scp/106/decay3.ogg'), 25, TRUE)
 		L.forceMove(T)
 		return
 	// 70% chance of going somewhere in the PD
@@ -435,8 +435,8 @@ GLOBAL_LIST_EMPTY(scp106s)
 			return
 
 		visible_message(SPAN_WARNING("[L] is warped away!"))
-		playsound(L, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 25, TRUE)
-		playsound(T, pick('sound/scp/106/decay1.ogg', 'sound/scp/106/decay2.ogg', 'sound/scp/106/decay3.ogg'), 25, TRUE)
+		playsound(L, pick('sounds/scp/106/decay1.ogg', 'sounds/scp/106/decay2.ogg', 'sounds/scp/106/decay3.ogg'), 25, TRUE)
+		playsound(T, pick('sounds/scp/106/decay1.ogg', 'sounds/scp/106/decay2.ogg', 'sounds/scp/106/decay3.ogg'), 25, TRUE)
 		L.alpha = 0
 		L.forceMove(T)
 		animate(L, alpha = 255, time = (2 SECONDS))
@@ -539,13 +539,13 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 	for(var/mob/M in GLOB.player_list)
 		if(!isStationLevel(M.z))
 			continue
-		M.playsound_local(get_turf(M), 'sound/scp/machinery/femur_breaker.ogg', 35, FALSE)
+		M.playsound_local(get_turf(M), 'sounds/scp/machinery/femur_breaker.ogg', 35, FALSE)
 
 	H.Stun(60) // Death
 
 	sleep(3.2 SECONDS)
 
-	playsound(H, "crack", 75, TRUE)
+	playsound(H, SFX_WOUND_CRACK, 75, TRUE)
 	for(var/obj/item/organ/external/leg/L in H.organs)
 		if(!(L.status & BROKEN))
 			L.fracture()
@@ -582,7 +582,7 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 	for(var/mob/M in GLOB.player_list)
 		if(!isStationLevel(M.z))
 			continue
-		M.playsound_local(get_turf(M), 'sound/scp/machinery/femur_breaker_death.ogg', 35, FALSE)
+		M.playsound_local(get_turf(M), 'sounds/scp/machinery/femur_breaker_death.ogg', 35, FALSE)
 	A.stunned = 20
 	sleep(7 SECONDS)
 	for(var/obj/item/organ/external/E in H.organs)
@@ -620,14 +620,14 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 	for(var/mob/M in GLOB.player_list)
 		if(!isStationLevel(M.z))
 			continue
-		M.playsound_local(get_turf(M), 'sound/scp/machinery/magnet_up.ogg', 35, FALSE)
+		M.playsound_local(get_turf(M), 'sounds/scp/machinery/magnet_up.ogg', 35, FALSE)
 
 	sleep(9 SECONDS)
 
 	for(var/mob/M in GLOB.player_list)
 		if(!isStationLevel(M.z))
 			continue
-		M.playsound_local(get_turf(M), 'sound/scp/machinery/femur_breaker_success.ogg', 35, FALSE)
+		M.playsound_local(get_turf(M), 'sounds/scp/machinery/femur_breaker_success.ogg', 35, FALSE)
 
 /obj/machinery/button/femur_breaker
 	name = "Femur Breaker Button"

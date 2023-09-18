@@ -242,19 +242,19 @@
 	name = "Napalm B"
 	taste_description = "burnt plastic and metal"
 
-/datum/reagent/space_cleaner
-	name = "Space cleaner"
-	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
+/datum/reagent/hydroxylsan
+	name = "Hydroxylsan"
+	description = "A compound used to clean things. The name \"Hydroxylsan\" is derived from \"hydroxyl,\" which is a chemical group consisting of H2O and NH3 elements (NH4OH), often found in cleaning agents and sanitizers, and \"san\" representing \"sanitization\" or \"sanitize.\" holding quaternary ammonium compounds!"
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#a5f0ee"
 	touch_met = 50
 	value = 0.7
 
-/datum/reagent/space_cleaner/touch_obj(obj/O)
+/datum/reagent/hydroxylsan/touch_obj(obj/O)
 	O.clean_blood()
 
-/datum/reagent/space_cleaner/touch_turf(turf/T)
+/datum/reagent/hydroxylsan/touch_turf(turf/T)
 	if(volume >= 1)
 		if(istype(T, /turf/simulated))
 			var/turf/simulated/S = T
@@ -267,7 +267,7 @@
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
 
-/datum/reagent/space_cleaner/affect_touch(mob/living/carbon/M, alien, removed)
+/datum/reagent/hydroxylsan/affect_touch(mob/living/carbon/M, alien, removed)
 	if(M.r_hand)
 		M.r_hand.clean_blood()
 	if(M.l_hand)
@@ -655,3 +655,131 @@
 	if (do_giggle && prob(20))
 		M.emote(pick("giggle", "laugh"))
 	M.add_chemical_effect(CE_PULSE, -1)
+
+/* Abominable Infestation reagents */
+
+// Grauel - Basically a healing chem that can implant a larva into its user.
+/datum/reagent/grauel
+	name = "Grauel"
+	description = "Reagent responsible for incubation of unknown lifeforms within its host. Has healing properties, but using it as medicine is a concerning idea."
+	taste_description = "vomit"
+	taste_mult = 1.4
+	reagent_state = LIQUID
+	color = COLOR_MAROON
+	value = 4
+	heating_products = list(/datum/reagent/nutriment/protein, /datum/reagent/laich)
+	heating_point = 120 CELSIUS
+	heating_message = "turns into a fleshy mess."
+
+/datum/reagent/grauel/affect_blood(mob/living/carbon/M, alien, removed)
+	if(alien == IS_DIONA)
+		return
+	var/heal_rate = 4
+	if(M.chem_doses[/datum/reagent/laich] >= 1)
+		heal_rate *= 2.5
+	M.heal_organ_damage(heal_rate * removed, 0) // Effectively weaker bicaridine, just with a tiny issue...
+	M.add_chemical_effect(CE_PAINKILLER, 5)
+
+	var/dosage = M.chem_doses[type]
+	if(dosage < 5) // Only implant larvas on somewhat "high" dose
+		return
+	if(!prob(max(10, dosage*0.5)))
+		return
+
+	var/list/valid_organs = list()
+	for(var/obj/item/organ/external/O in M.organs)
+		if(istype(O, /obj/item/organ/external/stump))
+			continue
+		if(locate(/mob/living/simple_animal/hostile/infestation/larva) in O.implants) // One larva per limb
+			continue
+		valid_organs += O
+	if(!LAZYLEN(valid_organs))
+		return
+	var/obj/item/organ/external/target_organ = pick(valid_organs)
+	var/mob/living/simple_animal/hostile/infestation/larva/implant/L = new(target_organ, TRUE)
+	target_organ.implants += L
+	L.transformation_time = world.time + rand(180 SECONDS, 360 SECONDS)
+	L.ai_holder.speak_chance = 0
+
+// Laich - Reagent needed for creating of larva cube.
+/datum/reagent/laich
+	name = "Laich"
+	description = "An important ingridient in creation of life. Causes mild suffocation. When consumed/injected alongside with Grauel - the later's healing properties were increased."
+	taste_description = "disgusting mess"
+	color = COLOR_ORANGE
+
+/datum/reagent/laich/affect_blood(mob/living/carbon/M, alien, removed)
+	if(alien == IS_DIONA)
+		return
+	if(prob(20))
+		M.adjustOxyLoss(8)
+	if(ishuman(M) && prob(2))
+		var/mob/living/carbon/human/H = M
+		H.vomit(2, 2, rand(2 SECONDS, 4 SECONDS))
+
+// Gottheit - VERY addictive drug that essentially makes you a god. Take it once and there's no coming back.
+/datum/reagent/gottheit
+	name = "Gottheit"
+	description = "An impossibly powerful medicine, which is just as impossibly addictive."
+	taste_description = "pleasantly burning acid"
+	taste_mult = 5
+	reagent_state = LIQUID
+	color = COLOR_YELLOW
+	value = 50
+	metabolism = 0.1
+	addiction_types = list(/datum/addiction/gottheit = 600) // Near instant addiction
+
+/datum/reagent/gottheit/affect_blood(mob/living/carbon/human/M, alien, removed)
+	if(alien == IS_DIONA)
+		return
+
+	// Heal all conventional damage types
+	M.adjustCloneLoss(-40 * removed)
+	M.adjustOxyLoss(-40 * removed)
+	M.heal_organ_damage(80 * removed, 80 * removed)
+	M.adjustToxLoss(-80 * removed)
+
+	// Restore blood
+	M.regenerate_blood(8 * removed)
+
+	// Some useful chem effects, including painkilling
+	M.add_chemical_effect(CE_PAINKILLER, 400)
+	M.add_chemical_effect(CE_SPEEDBOOST, 1)
+
+	// Reduce bad effects
+	M.drowsyness = max(M.drowsyness - 50, 0)
+	M.adjust_hallucination(-50)
+	M.AdjustParalysis(-10)
+	M.AdjustStunned(-10)
+	M.AdjustWeakened(-10)
+
+	// Super low doses won't do cool stuff
+	var/dosage = M.chem_doses[type]
+	if(dosage < 2)
+		return
+
+	// Heal organs
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		for(var/obj/item/organ/internal/I in H.internal_organs)
+			if((I.status & ORGAN_DEAD) && prob(25))
+				I.revive()
+			if(!BP_IS_ROBOTIC(I))
+				I.heal_damage(20 * removed)
+		for(var/obj/item/organ/external/E in H.organs)
+			if(E.status & ORGAN_ARTERY_CUT)
+				E.status &= ~ORGAN_ARTERY_CUT
+			if(E.status & ORGAN_TENDON_CUT)
+				E.status &= ~ORGAN_TENDON_CUT
+			if(E.status & ORGAN_BLEEDING)
+				E.status &= ~ORGAN_BLEEDING
+			if(E.status & ORGAN_BROKEN)
+				E.status &= ~ORGAN_BROKEN
+			if(E.status & ORGAN_DEAD)
+				E.revive()
+
+	/* TODO: Port diseases from Tegu as well
+	// Remove all diseases
+	for(var/datum/disease/D in M.diseases)
+		qdel(D)
+	*/

@@ -64,7 +64,7 @@
 
 	// Make some noise as a clue
 	if(prob(40) && bursting_pipe.get_current_health() < 5)
-		playsound(bursting_pipe, 'sound/machines/hiss.ogg', 40, 0, 0)
+		playsound(bursting_pipe, 'sounds/machines/hiss.ogg', 40, 0, 0)
 
 /datum/event/disposals_explosion/end()
 	if(isnull(bursting_pipe))
@@ -87,4 +87,4 @@
 		// Burst the pipe, spewing trash all over
 		bursting_pipe.broken(1)
 		// Make a scary noise
-		playsound(bursting_pipe, get_sfx("explosion"), 40, 0, 0, 5)
+		playsound(bursting_pipe, SFX_EXPLOSION, 40, 0, 0, 5)

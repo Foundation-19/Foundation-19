@@ -57,7 +57,7 @@
 	active_power_usage = 1000 //For heating/cooling rooms. 1000 joules equates to about 1 degree every 2 seconds for a single tile of air.
 	power_channel = ENVIRON
 	req_access = list(list(ACCESS_SECURITY_LVL1, ACCESS_ATMOSPHERICS, ACCESS_ENGINEERING_LVL2)) //ACCESS_SECURITY_LVL1 added since mapper air alarms have it configured.
-	clicksound = "button"
+	clicksound = SFX_MACHINE_BUTTON
 	clickvol = 30
 
 	layer = ABOVE_WINDOW_LAYER
@@ -195,7 +195,7 @@
 
 	if (old_level != danger_level)
 		if(danger_level == 2)
-			playsound(src.loc, 'sound/machines/airalarm.ogg', 25, 0, 4)
+			playsound(src.loc, 'sounds/machines/airalarm.ogg', 25, 0, 4)
 		apply_danger_level(danger_level)
 
 	if (pressure_dangerlevel != 0)
@@ -817,7 +817,7 @@
 
 			if (wiresexposed && isWirecutter(W))
 				user.visible_message(SPAN_WARNING("[user] has cut the wires inside \the [src]!"), "You have cut the wires inside \the [src].")
-				playsound(src.loc, 'sound/items/Wirecutter.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Wirecutter.ogg', 50, 1)
 				new/obj/item/stack/cable_coil(get_turf(src), 5)
 				buildstage = 1
 				update_icon()
@@ -849,7 +849,7 @@
 
 			else if(isCrowbar(W))
 				to_chat(user, "You start prying out the circuit.")
-				playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				if(do_after(user,20) && buildstage == 1)
 					to_chat(user, "You pry out the circuit!")
 					var/obj/item/airalarm_electronics/circuit = new /obj/item/airalarm_electronics()
@@ -868,7 +868,7 @@
 			else if(isWrench(W))
 				to_chat(user, "You remove the fire alarm assembly from the wall!")
 				new /obj/item/frame/air_alarm(get_turf(user))
-				playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 				qdel(src)
 
 	return ..()
@@ -1003,7 +1003,7 @@ FIRE ALARM
 				else if(isWirecutter(W))
 					user.visible_message(SPAN_NOTICE("\The [user] has cut the wires inside \the [src]!"), SPAN_NOTICE("You have cut the wires inside \the [src]."))
 					new/obj/item/stack/cable_coil(get_turf(src), 5)
-					playsound(src.loc, 'sound/items/Wirecutter.ogg', 50, 1)
+					playsound(src.loc, 'sounds/items/Wirecutter.ogg', 50, 1)
 					buildstage = 1
 					update_icon()
 			if(1)
@@ -1019,7 +1019,7 @@ FIRE ALARM
 						return
 				else if(isCrowbar(W))
 					to_chat(user, "You start prying out the circuit.")
-					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
+					playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 					if (do_after(user,20))
 						to_chat(user, "You pry out the circuit!")
 						var/obj/item/firealarm_electronics/circuit = new /obj/item/firealarm_electronics()
@@ -1036,7 +1036,7 @@ FIRE ALARM
 				else if(isWrench(W))
 					to_chat(user, "You remove the fire alarm assembly from the wall!")
 					new /obj/item/frame/fire_alarm(get_turf(user))
-					playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+					playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 					qdel(src)
 		return
 
@@ -1151,7 +1151,7 @@ FIRE ALARM
 	for(var/obj/machinery/firealarm/FA in area)
 		GLOB.fire_alarm.triggerAlarm(loc, FA, duration)
 	update_icon()
-	playsound(src, 'sound/machines/fire_alarm.ogg', 75, 0)
+	playsound(src, 'sounds/machines/fire_alarm.ogg', 75, 0)
 	return
 
 

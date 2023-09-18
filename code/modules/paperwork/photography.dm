@@ -127,7 +127,7 @@ var/global/photo_count = 0
 		var/mob/M = usr
 		if(!( istype(over_object, /obj/screen) ))
 			return ..()
-		playsound(loc, "rustle", 50, 1, -5)
+		playsound(loc, SFX_RUSTLE, 50, 1, -5)
 		if((!( M.restrained() ) && !( M.stat ) && M.back == src))
 			switch(over_object.name)
 				if("r_hand")
@@ -239,7 +239,7 @@ var/global/photo_count = 0
 	if(!on || !pictures_left || ismob(target.loc)) return
 	captureimage(target, user, flag)
 
-	playsound(loc, pick('sound/items/polaroid1.ogg', 'sound/items/polaroid2.ogg'), 75, 1, -3)
+	playsound(loc, pick('sounds/items/polaroid1.ogg', 'sounds/items/polaroid2.ogg'), 75, 1, -3)
 
 	pictures_left--
 	to_chat(user, SPAN_NOTICE("[pictures_left] photos left."))

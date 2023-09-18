@@ -62,11 +62,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/tile_move_range = 3
 	//How far wander targets can be set
 	var/wander_distance = 8
-	//How far fleeing targets can be set
+	//How far fleeing targets can be set. Used for pathing distance since it should be the farthest that 173's AI will ever attempt to path
 	var/flee_distance = 30
-	//Our current step list (this is to avoid calling AStar unless neccesary)
+	//Our current step list (this is to avoid calling pathfinding unless neccesary)
 	var/list/steps_to_target = list()
-	//Target's position when AStar was last ran (this is also to help avoid calling AStar unless neccesary)
+	//Target's position when pathfinding was last ran (this is also to help avoid calling pathfinding unless neccesary)
 	var/turf/target_pos_last
 	//AI's current target
 	var/atom/movable/target
@@ -124,7 +124,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 		snap_cooldown = world.time + snap_cooldown_time
 		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
-		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
+		playsound(loc, pick('sounds/scp/spook/NeckSnap1.ogg', 'sounds/scp/spook/NeckSnap3.ogg'), 50, 1)
 		show_sound_effect(loc, src)
 		H.death()
 		return
@@ -158,7 +158,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		W.shatter()
 		return
 	if(istype(A,/obj/structure/grille))
-		playsound(get_turf(A), 'sound/effects/grillehit.ogg', 50, 1)
+		playsound(get_turf(A), 'sounds/effects/grillehit.ogg', 50, 1)
 		qdel(A)
 		return
 	if(istype(A, /obj/structure/inflatable))
@@ -246,7 +246,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			open_time += 2 SECONDS
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
-	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
 	if(!do_after(src, open_time, A))
 		return
@@ -261,7 +261,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		var/obj/machinery/door/airlock/AR = A
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
 		AR.welded = FALSE
-	A.stat |= BROKEN
+	A.set_broken(TRUE)
 	var/check = A.open(1)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
@@ -280,11 +280,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 		breach_cooldown = world.time + 15 MINUTES
 		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
-		priority_announcement.Announce("ALERT! SCP-173's containment zone security measures have shut down due to severe acidic degradation. Security personnel are to report to the location and secure the threat as soon as possible.", "Containment Failure", 'sound/AI/173.ogg')
+		priority_announcement.Announce("ALERT! SCP-173's containment zone security measures have shut down due to severe acidic degradation. Security personnel are to report to the location and secure the threat as soon as possible.", "Containment Failure", 'sounds/AI/173.ogg')
 		BreachEffect()
 	else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
 		warning_cooldown = world.time + 2 MINUTES
-		priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sound/AI/acidic_degredation.ogg')
+		priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sounds/AI/acidic_degredation.ogg')
 
 /mob/living/scp_173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
 	var/area/A = get_area(src)
@@ -313,7 +313,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	for(var/mob/living/carbon/human/H in dview(14, src)) //Identifies possible human targets. Range is double regular view to allow 173 to pursue tarets outside of world.view to make evading him harder.
 		if(H.SCP || H.stat == DEAD)
 			continue
-		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)))
+		if(!get_path_to(src, H, flee_distance * 2, min_target_dist = 1))
 			continue
 		possible_human_targets += H
 
@@ -325,7 +325,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if(!(H in possible_human_targets))
 				clear_target()
 			if(target && (target_pos_last != target_turf_current))
-				steps_to_target = AStar(loc, target_turf_current, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //if our target changes positions we recalculate our path
+				steps_to_target = get_path_to(src, target_turf_current, flee_distance * 2, min_target_dist = 1)		//if our target changes positions we recalculate our path
 				target_pos_last = target_turf_current
 		else if(istype(target, /obj/machinery/light))
 			var/obj/machinery/light/L = target
@@ -381,8 +381,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(!new_target)
 		return FALSE
 
-	var/list/temp_steps_to_target = AStar(loc, get_turf(new_target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //Flee distance is used as max_nodes since that should be the farthest that 173's AI will ever attempt to path
-	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
+	var/list/temp_steps_to_target = get_path_to(src, new_target, flee_distance * 2, min_target_dist = 1)
+	if(LAZYLEN(temp_steps_to_target)) //Double check to ensure that whatever target we assign we can actually get to
 		steps_to_target = temp_steps_to_target
 		target = new_target
 		target_pos_last = get_turf(new_target)
@@ -394,7 +394,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	LAZYCLEARLIST(steps_to_target)
 
 /mob/living/scp_173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
-	if(!target || !steps_to_target)
+	if(!target || !LAZYLEN(steps_to_target))
+		clear_target()
 		return
 
 	var/turf/step_turf = steps_to_target[1]
@@ -433,7 +434,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		if(light_in_view.get_status() != LIGHT_OK)
 			continue
-		if(!AStar(loc, light_in_view.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=15, max_node_depth=7))
+		if(!get_path_to(src, light_in_view, wander_distance))
 			continue
 		return light_in_view
 	return null
@@ -467,7 +468,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			dropping.forceMove(src)
 			update_icon()
 			visible_message(SPAN_NOTICE("[user] puts [dropping] in the cage."))
-			playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
+			playsound(loc, 'sounds/machines/bolts_down.ogg', 50, 1)
 			return TRUE
 		return FALSE
 	if(isliving(dropping))
@@ -498,7 +499,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	update_icon()
 	if(damage_state < damage_state_max)
 		visible_message(SPAN_WARNING("[user] damages \the [src]!"))
-		playsound(src, 'sound/effects/grillehit.ogg', 35, TRUE)
+		playsound(src, 'sounds/effects/grillehit.ogg', 35, TRUE)
 		return
 	visible_message(SPAN_DANGER("[user] opens \the [src] from the inside!"))
 	ReleaseContents()
@@ -554,7 +555,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(WT.get_fuel() < damage_state)
 		to_chat(user, SPAN_WARNING("You will need more fuel to repair [src]."))
 		return
-	playsound(src, 'sound/items/Welder2.ogg', 30, TRUE)
+	playsound(src, 'sounds/items/Welder2.ogg', 30, TRUE)
 	user.visible_message(SPAN_NOTICE("\The [user] starts repairing sections of \the [src]."))
 	if(!do_after(user, (4 SECONDS) + (damage_state SECONDS), src))
 		return FALSE
@@ -565,13 +566,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	update_icon()
 	if(damage_state <= 0)
 		visible_message(SPAN_NOTICE("\The [src] is completely repaired!"))
-	playsound(src.loc, 'sound/items/Welder.ogg', 30, 1)
+	playsound(src.loc, 'sounds/items/Welder.ogg', 30, 1)
 	return TRUE
 
 /obj/structure/scp173_cage/proc/ReleaseContents() //Releases cage contents
 	if(!LAZYLEN(contents))
 		return FALSE
-	playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+	playsound(loc, 'sounds/machines/bolts_up.ogg', 50, 1)
 	for(var/mob/living/L in contents)
 		L.forceMove(get_turf(src))
 	update_icon()

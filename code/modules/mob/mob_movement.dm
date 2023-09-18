@@ -121,6 +121,8 @@
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
+	var/old_loc = loc
+
 	if (direct & (direct - 1))
 		if (direct & 1)
 			if (direct & 4)
@@ -166,6 +168,8 @@
 		if ((A != src.loc && A?.z == src.z))
 			src.last_move = get_dir(A, src.loc)
 
+	SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
+
 /client/Move(n, direction)
 	if(!user_acted(src))
 		return
@@ -173,7 +177,7 @@
 	if(!mob)
 		return // Moved here to avoid nullrefs below
 
-	if (mob.is_scp012_affected(n))
+	if (mob.is_scp012_affected())
 		return
 
 	return mob.SelfMove(direction)

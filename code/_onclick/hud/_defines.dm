@@ -132,6 +132,7 @@
 #define ui_ghost_orbit "SOUTH:6,CENTER-1"
 #define ui_ghost_reenter_corpse "SOUTH:6,CENTER"
 #define ui_ghost_teleport "SOUTH:6,CENTER+1"
+#define ui_ghost_become_scp "SOUTH:6,CENTER+2"
 
 //pai
 #define ui_pai_software "NORTH,WEST:6"
@@ -161,6 +162,7 @@
 #define ui_ai_color "RIGHT-1:30,BOTTOM+3:5"
 #define ui_ai_core_icon "RIGHT-1:30,BOTTOM+4:5"
 #define ui_ai_status "RIGHT-1:30,BOTTOM+5:5"
+#define ui_ai_emergency_announc "RIGHT-1:30,BOTTOM+6:5"
 
 // AI: Tools
 #define ui_ai_power_override "LEFT:6,TOP:0"

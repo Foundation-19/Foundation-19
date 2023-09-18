@@ -5,7 +5,7 @@
 	sharp = TRUE
 	var/reagent_amount = 15
 	life_span = 15 //shorter range
-	unacidable = TRUE
+	acid_resistance = -1
 
 	muzzle_type = null
 
@@ -28,6 +28,7 @@
 	leaves_residue = FALSE
 
 /obj/item/ammo_casing/chemdart/expend()
+	. = ..()
 	qdel(src)
 
 /obj/item/ammo_magazine/chemdart
@@ -50,7 +51,7 @@
 	item_state = null
 
 	caliber = CALIBER_DART
-	fire_sound = 'sound/weapons/empty.ogg'
+	fire_sound = 'sounds/weapons/empty.ogg'
 	fire_sound_text = "a metallic click"
 	screen_shake = 0
 	silenced = TRUE

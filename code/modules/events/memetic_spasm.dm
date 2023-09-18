@@ -17,7 +17,7 @@
 /datum/event/memetic_spasm/start()
 	for(var/obj/item/device/radio/radio in GLOB.listening_objects)
 		if(radio.on && radio.listening)
-			sound_tokens[radio] = GLOB.sound_player.PlayLoopingSound(radio, radio.sound_id, "sound/effects/memetic_spasm.ogg", 30, radio.canhear_range)
+			sound_tokens[radio] = GLOB.sound_player.PlayLoopingSound(radio, radio.sound_id, "sounds/effects/memetic_spasm.ogg", 30, radio.canhear_range)
 
 /datum/event/memetic_spasm/tick()
 	var/list/victims = list()
@@ -34,7 +34,7 @@
 						if(prob(25))
 							to_chat(hearing, SPAN_DANGER("You still hear the screeching! MAKE IT STOP!"))
 			if(isnull(sound_tokens[radio]))
-				sound_tokens[radio] = GLOB.sound_player.PlayLoopingSound(radio, radio.sound_id, "sound/effects/memetic_spasm.ogg", 30, radio.canhear_range)
+				sound_tokens[radio] = GLOB.sound_player.PlayLoopingSound(radio, radio.sound_id, "sounds/effects/memetic_spasm.ogg", 30, radio.canhear_range)
 		else
 			if(!(isnull(sound_tokens[radio])))
 				qdel(sound_tokens[radio])

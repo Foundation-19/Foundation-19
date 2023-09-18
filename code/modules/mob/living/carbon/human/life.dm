@@ -126,7 +126,7 @@
 		update_skin(1)
 	if(client && client.is_afk())
 		if(old_stat == UNCONSCIOUS && stat == CONSCIOUS)
-			playsound_local(null, 'sound/effects/bells.ogg', 100, is_global=TRUE)
+			playsound_local(null, 'sounds/effects/bells.ogg', 100, is_global=TRUE)
 
 /mob/living/carbon/human/proc/handle_some_updates()
 	if(life_tick > 5 && timeofdeath && (timeofdeath < 5 || world.time - timeofdeath > 6000))	//We are long dead, or we're junk mobs spawned like the clowns on the clown shuttle
@@ -897,7 +897,7 @@
 	if(isturf(loc) && rand(1,1000) == 1)
 		var/turf/T = loc
 		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			playsound_local(src,pick(GLOB.scarySounds),50, 1, -1)
+			playsound_local(src, SFX_SCARY_SOUND, 50, 1, -1)
 
 	var/area/A = get_area(src)
 	if(client && world.time >= client.played + 600)

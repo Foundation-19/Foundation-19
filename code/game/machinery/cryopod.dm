@@ -240,7 +240,7 @@
 	var/turf/nloc = locate(rand(TRANSITIONEDGE, world.maxx-TRANSITIONEDGE), rand(TRANSITIONEDGE, world.maxy-TRANSITIONEDGE),newz)
 	if(!istype(nloc, /turf/space))
 		explosion(nloc, 1, 2, 3)
-	playsound(loc,'sound/effects/rocket.ogg',100)
+	playsound(loc,'sounds/effects/rocket.ogg',100)
 	forceMove(nloc)
 
 //Don't use these for in-round leaving
@@ -379,6 +379,8 @@
 				W.forceMove(null)
 			else
 				W.forceMove(src.loc)
+
+	SEND_SIGNAL(occupant, COMSIG_HUMAN_DESPAWNED)
 
 	//Update any existing objectives involving this mob.
 	for(var/datum/objective/O in all_objectives)

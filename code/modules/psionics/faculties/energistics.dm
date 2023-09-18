@@ -76,15 +76,15 @@
 			if(PSI_RANK_PARAMOUNT to INFINITY) // In case of admin edits to faculty level
 				pew = new /obj/item/projectile/beam/heavylaser(get_turf(user))
 				pew.name = "gigawatt mental laser"
-				pew_sound = 'sound/weapons/lasercannonfire.ogg'
+				pew_sound = 'sounds/weapons/lasercannonfire.ogg'
 			if(PSI_RANK_GRANDMASTER)
 				pew = new /obj/item/projectile/beam/midlaser(get_turf(user))
 				pew.name = "megawatt mental laser"
-				pew_sound = 'sound/weapons/Laser3.ogg'
+				pew_sound = 'sounds/weapons/Laser3.ogg'
 			if(PSI_RANK_MASTER)
 				pew = new /obj/item/projectile/beam/smalllaser(get_turf(user))
 				pew.name = "mental laser"
-				pew_sound = 'sound/weapons/Laser.ogg'
+				pew_sound = 'sounds/weapons/Laser.ogg'
 
 		if(istype(pew))
 			playsound(pew.loc, pew_sound, 25, 1)
@@ -115,7 +115,7 @@
 		if(istype(target,/obj/item/clothing/mask/smokable/cigarette))
 			var/obj/item/clothing/mask/smokable/cigarette/S = target
 			S.light("[user] snaps \his fingers and \the [S.name] lights up.")
-			playsound(S.loc, "sparks", 50, 1)
+			playsound(S.loc, SFX_SPARK, 50, 1)
 		else
 			var/datum/effect/effect/system/spark_spread/sparks = new ()
 			sparks.set_up(3, 0, get_turf(target))

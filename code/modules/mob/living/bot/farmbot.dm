@@ -124,11 +124,8 @@
 				target = source
 				return
 
-/mob/living/bot/farmbot/calcTargetPath() // We need to land NEXT to the tray, because the tray itself is impassable
-	for(var/trayDir in list(NORTH, SOUTH, EAST, WEST))
-		target_path = AStar(get_turf(loc), get_step(get_turf(target), trayDir), /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_target_dist, adjacent_arg = botcard)
-		if(target_path)
-			break
+/mob/living/bot/farmbot/calcTargetPath()
+	target_path = get_path_to(src, target, max_target_dist, min_target_dist = 1, id = botcard)	// We need to land NEXT to the tray, because the tray itself is impassable
 	if(!target_path)
 		ignore_list |= target
 		target = null
@@ -168,7 +165,7 @@
 				visible_message(SPAN_NOTICE("[src] starts watering \the [A]."))
 				busy = 1
 				if(do_after(src, 30, A))
-					playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+					playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
 					visible_message(SPAN_NOTICE("[src] waters \the [A]."))
 					tank.reagents.trans_to(T, 100 - T.waterlevel)
 			if(FARMBOT_UPROOT)
@@ -201,7 +198,7 @@
 		while(do_after(src, 10) && tank.reagents.total_volume < tank.reagents.maximum_volume)
 			tank.reagents.add_reagent(/datum/reagent/water, 100)
 			if(prob(5))
-				playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+				playsound(loc, 'sounds/effects/slosh.ogg', 25, 1)
 		busy = 0
 		action = ""
 		update_icons()

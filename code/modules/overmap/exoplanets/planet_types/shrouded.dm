@@ -47,7 +47,7 @@
 		new/obj/structure/leech_spawner(T)
 
 /area/exoplanet/shrouded
-	forced_ambience = list("sound/ambience/spookyspace1.ogg", "sound/ambience/spookyspace2.ogg")
+	forced_ambience = list("sounds/ambience/spookyspace1.ogg", "sounds/ambience/spookyspace2.ogg")
 	base_turf = /turf/simulated/floor/exoplanet/shrouded
 
 /turf/simulated/floor/exoplanet/water/shallow/tar

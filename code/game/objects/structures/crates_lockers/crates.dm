@@ -57,7 +57,7 @@
 	else if(isWirecutter(W))
 		if(rigged)
 			to_chat(user, SPAN_NOTICE("You cut away the wiring."))
-			playsound(loc, 'sound/items/Wirecutter.ogg', 100, 1)
+			playsound(loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 			rigged = 0
 			return
 	else
@@ -313,8 +313,8 @@
 	icon_state = "biohazard"
 	icon_opened = "biohazardopen"
 	icon_closed = "biohazard"
-	open_sound = 'sound/items/Deconstruct.ogg'
-	close_sound = 'sound/items/Deconstruct.ogg'
+	open_sound = 'sounds/items/Deconstruct.ogg'
+	close_sound = 'sounds/items/Deconstruct.ogg'
 	req_access = list(ACCESS_XENOBIOLOGY)
 	storage_capacity = 2 * MOB_LARGE
 	storage_types = CLOSET_STORAGE_ITEMS|CLOSET_STORAGE_MOBS|CLOSET_STORAGE_STRUCTURES

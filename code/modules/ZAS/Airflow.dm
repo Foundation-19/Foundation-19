@@ -126,7 +126,7 @@ Contains helper procs for airflow, handled in /connection_group.
 /mob/living/carbon/human/airflow_hit(atom/A)
 //	for(var/mob/M in hearers(src))
 //		M.show_message(SPAN_DANGER("[src] slams into [A]!"),1,SPAN_DANGER("You hear a loud slam!"),2)
-	playsound(src.loc, "punch", 25, 1, -1)
+	playsound(src.loc, SFX_PUNCH, 25, 1, -1)
 	show_sound_effect(src.loc)
 	if (prob(33))
 		loc:add_blood(src)

@@ -5,10 +5,10 @@
 	desc = "A display case for prized possessions. It taunts you to kick it."
 	density = TRUE
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	alpha = 150
 	health_max = 14
-	damage_hitsound = 'sound/effects/Glasshit.ogg'
+	damage_hitsound = 'sounds/effects/Glasshit.ogg'
 
 /obj/structure/displaycase/Initialize()
 	. = ..()
@@ -51,7 +51,7 @@
 		new /obj/item/material/shard(loc)
 		for(var/atom/movable/AM in src)
 			AM.dropInto(loc)
-		playsound(src, "shatter", 70, 1)
+		playsound(src, SFX_SHATTER, 70, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		update_icon()
 

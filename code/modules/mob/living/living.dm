@@ -721,7 +721,9 @@ default behaviour is:
 /mob/living/verb/lay_down()
 	set name = "Rest"
 	set category = "IC"
-
+	if(!can_rest)
+		to_chat(src, SPAN_NOTICE("You cannot rest!"))
+		return
 	resting = !resting
 	to_chat(src, SPAN_NOTICE("You are now [resting ? "resting" : "getting up"]"))
 	if(hud_used)
@@ -939,3 +941,17 @@ default behaviour is:
 
 /mob/living/proc/ClimbCheck(atom/A)
 	return TRUE
+
+/mob/living/proc/get_exp_list(minutes)
+	var/list/exp_list = list()
+
+	if(mind && mind.special_role)
+		exp_list[mind.special_role] = minutes
+
+		if(GLOB.antag_names_to_ids_[mind.special_role] in GLOB.all_antag_types_)
+			exp_list[EXP_TYPE_ANTAG] = minutes
+
+	if(src.isSCP())
+		exp_list[EXP_TYPE_SCP] = minutes
+
+	return exp_list

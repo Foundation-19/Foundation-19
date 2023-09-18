@@ -11,7 +11,7 @@
 	anchored = TRUE
 	density = TRUE
 	obj_flags = OBJ_FLAG_ANCHORABLE | OBJ_FLAG_ROTATABLE
-	clicksound = "button"
+	clicksound = SFX_MACHINE_BUTTON
 	clickvol = 40
 	base_type = /obj/machinery/vending/assist
 	construct_state = /decl/machine_construction/default/panel_closed
@@ -459,7 +459,7 @@
 		else //Just a normal vend, then
 			R.get_product(get_turf(src))
 			src.visible_message("\The [src] clunks as it vends \the [R.item_name].")
-			playsound(src, 'sound/machines/vending_machine.ogg', 25, 1)
+			playsound(src, 'sounds/machines/vending_machine.ogg', 25, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 			if(prob(1)) //The vending gods look favorably upon you
 				sleep(3)
@@ -673,7 +673,7 @@
 /obj/machinery/vending/coffee
 	name = "\improper Hot Drinks machine"
 	desc = "A vending machine which dispenses hot drinks and hot drinks accessories."
-	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our new chocolate!;Admin conspiracies"
+	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the world.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our new chocolate!;Admin conspiracies"
 	icon_state = "coffee"
 	icon_vend = "coffee-vend"
 	icon_deny = "coffee-deny"

@@ -8,7 +8,7 @@
 	anchored = TRUE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
-	use_sound = 'sound/effects/closet_open.ogg'
+	use_sound = 'sounds/effects/closet_open.ogg'
 	startswith = list(
 		/obj/item/haircomb/random,
 		/obj/random/medical/lite,
@@ -37,11 +37,11 @@
 
 /obj/item/storage/mirror/proc/shatter()
 	if (shattered)
-		playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)
+		playsound(src, 'sounds/effects/hit_on_shattered_glass.ogg', 70, 1)
 		return
 	shattered = TRUE
 	icon_state = "mirror_broke"
-	playsound(src, "shatter", 70, 1)
+	playsound(src, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	desc = "Oh no, seven years of bad luck!"
 

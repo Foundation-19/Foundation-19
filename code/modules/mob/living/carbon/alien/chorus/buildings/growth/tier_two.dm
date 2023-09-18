@@ -18,7 +18,7 @@
 
 /obj/structure/chorus/gastrointestional_tract/activate()
 	owner.add_to_resource(/datum/chorus_resource/growth_meat, 1)
-	playsound(src, 'sound/effects/footstep/water2.ogg', 50, 1)
+	playsound(src, 'sounds/effects/footstep/water2.ogg', 50, 1)
 	flick("growth_stomach_exert", src)
 
 /datum/chorus_building/set_to_turf/growth/ossifier
@@ -38,11 +38,11 @@
 	activation_cost_resource = /datum/chorus_resource/growth_nutrients
 	activation_cost_amount = 2
 	death_message = "cracks loudly and falls to pieces."
-	death_sound = "fracture"
+	death_sound = SFX_BONE_FRACTURE
 
 /obj/structure/chorus/ossifier/activate()
 	owner.add_to_resource(/datum/chorus_resource/growth_bones, 1)
-	playsound(src, 'sound/effects/ointment.ogg', 50, 1)
+	playsound(src, 'sounds/effects/ointment.ogg', 50, 1)
 	flick("growth_bone_exert", src)
 
 /datum/chorus_building/set_to_turf/growth/sinoatrial_node
@@ -125,7 +125,7 @@
 	turf_type_to_add = /turf/simulated/floor/scales
 	growth_verb = "bursts"
 	death_message = "fractures loudly in half, its two ends dangling apart."
-	death_sound = "fracture"
+	death_sound = SFX_BONE_FRACTURE
 
 /datum/chorus_building/set_to_turf/growth/bone_shooter
 	desc = "Automatically shoots bone fragments at enemies."
@@ -155,7 +155,7 @@
 	visible_message(SPAN_DANGER("<b>\The [src]</b> fires a small dart at \the [T]"))
 	bs.firer = src
 	bs.launch(T, BP_CHEST)
-	playsound(src, 'sound/effects/hypospray.ogg', 25, 1)
+	playsound(src, 'sounds/effects/hypospray.ogg', 25, 1)
 
 /obj/item/projectile/bone_shard
 	name = "bone shard"

@@ -21,12 +21,12 @@
 
 	speech_chance = 100
 	speech_sounds = list(
-		'sound/voice/ascent1.ogg',
-		'sound/voice/ascent2.ogg',
-		'sound/voice/ascent3.ogg',
-		'sound/voice/ascent4.ogg',
-		'sound/voice/ascent5.ogg',
-		'sound/voice/ascent6.ogg'
+		'sounds/voice/ascent1.ogg',
+		'sounds/voice/ascent2.ogg',
+		'sounds/voice/ascent3.ogg',
+		'sounds/voice/ascent4.ogg',
+		'sounds/voice/ascent5.ogg',
+		'sounds/voice/ascent6.ogg'
 	)
 
 	siemens_coefficient =   0.2 // Crystalline body.
@@ -94,10 +94,10 @@
 	)
 
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_ALATE,
-		TAG_RELIGION =  RELIGION_KHARMAANI
+		TAG_CULTURE =   CULTURE_OTHER,
+		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
+		TAG_FACTION =   FACTION_OTHER,
+		TAG_RELIGION =  RELIGION_OTHER
 	)
 
 	descriptors = list(
@@ -172,10 +172,10 @@
 	)
 
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_GYNE,
-		TAG_RELIGION =  RELIGION_KHARMAANI
+		TAG_CULTURE =   CULTURE_OTHER,
+		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
+		TAG_FACTION =   FACTION_OTHER,
+		TAG_RELIGION =  RELIGION_OTHER
 	)
 
 /datum/species/mantid/gyne/attempt_grab(mob/living/carbon/human/grabber, mob/living/target)
@@ -183,7 +183,7 @@
 		grabber.unEquip(grabber.l_hand)
 		grabber.unEquip(grabber.r_hand)
 		to_chat(grabber, SPAN_WARNING("You drop everything as you seize \the [target]!"))
-		playsound(grabber.loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+		playsound(grabber.loc, 'sounds/weapons/pierce.ogg', 25, 1, -1)
 	. = ..(grabber, target, GRAB_NAB)
 
 /datum/species/mantid/gyne/New()

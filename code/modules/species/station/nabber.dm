@@ -18,7 +18,7 @@
 
 	skin_material = MATERIAL_SKIN_CHITIN
 	bone_material = null
-	speech_sounds = list('sound/voice/bug.ogg')
+	speech_sounds = list('sounds/voice/bug.ogg')
 	speech_chance = 2
 
 	warning_low_pressure = 50
@@ -120,21 +120,13 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
-			CULTURE_NABBER_CMINUS,
-			CULTURE_NABBER_C,
-			CULTURE_NABBER_CPLUS,
-			CULTURE_NABBER_BMINUS,
-			CULTURE_NABBER_B,
-			CULTURE_NABBER_BPLUS,
-			CULTURE_NABBER_AMINUS,
-			CULTURE_NABBER_A,
-			CULTURE_NABBER_APLUS
+			CULTURE_OTHER
 		),
 		TAG_HOMEWORLD = list(
-			HOME_SYSTEM_SERPENTIDS
+			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
-			FACTION_XYNERGY
+			FACTION_OTHER
 		),
 		TAG_RELIGION =  list(
 			RELIGION_OTHER
@@ -306,7 +298,7 @@
 		return 0
 	attacker.last_attack = world.time
 	var/turf/T = get_step(get_turf(target), get_dir(get_turf(attacker), get_turf(target)))
-	playsound(target.loc, 'sound/weapons/pushhiss.ogg', 50, 1, -1)
+	playsound(target.loc, 'sounds/weapons/pushhiss.ogg', 50, 1, -1)
 	if(!T.density)
 		step(target, get_dir(get_turf(attacker), get_turf(target)))
 		target.visible_message(SPAN_DANGER("[pick("[target] was sent flying backward!", "[target] staggers back from the impact!")]"))
@@ -344,7 +336,7 @@
 	grabber.unEquip(grabber.l_hand)
 	grabber.unEquip(grabber.r_hand)
 	to_chat(grabber, SPAN_WARNING("You drop everything as you spring out to nab \the [target]!."))
-	playsound(grabber.loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
+	playsound(grabber.loc, 'sounds/weapons/pierce.ogg', 25, 1, -1)
 
 	if(!grabber.is_cloaked())
 		return ..(grabber, target, GRAB_NAB)
@@ -361,7 +353,7 @@
 		target.LAssailant = grabber
 		grabber.visible_message(SPAN_DANGER("\The [grabber] suddenly lunges out and grabs \the [target]!"))
 		grabber.do_attack_animation(target)
-		playsound(grabber.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		playsound(grabber.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 		return 1
 	else
 		grabber.visible_message(SPAN_DANGER("\The [grabber] suddenly lunges out, almost grabbing \the [target]!"))
@@ -438,10 +430,10 @@
 	)
 
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_SERPENTID,
-		TAG_RELIGION =  RELIGION_KHARMAANI
+		TAG_CULTURE =   CULTURE_OTHER,
+		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
+		TAG_FACTION =   FACTION_OTHER,
+		TAG_RELIGION =  RELIGION_OTHER
 	)
 
 /datum/species/nabber/monarch_worker/get_bodytype(mob/living/carbon/human/H)
@@ -511,10 +503,10 @@
 
 
 	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_SERPENTID,
-		TAG_RELIGION =  RELIGION_KHARMAANI
+		TAG_CULTURE =   CULTURE_OTHER,
+		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
+		TAG_FACTION =   FACTION_OTHER,
+		TAG_RELIGION =  RELIGION_OTHER
 		)
 
 /datum/species/nabber/monarch_queen/New()

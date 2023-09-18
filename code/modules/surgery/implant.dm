@@ -122,7 +122,7 @@
 	user.visible_message("[user] starts putting \the [tool] inside [target]'s [affected.cavity_name] cavity.", \
 	"You start putting \the [tool] inside [target]'s [affected.cavity_name] cavity." )
 	target.custom_pain("The pain in your chest is living hell!",1,affecting = affected)
-	playsound(target.loc, 'sound/effects/squelch1.ogg', 25, 1)
+	playsound(target.loc, 'sounds/effects/squelch1.ogg', 25, 1)
 	..()
 
 /decl/surgery_step/cavity/place_item/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
@@ -153,8 +153,8 @@
 /decl/surgery_step/cavity/implant_removal/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
 	if(affected)
-		for(var/obj/O in affected.implants)
-			if(!istype(O, /obj/item/organ/internal))
+		for(var/atom/movable/A in affected.implants)
+			if(!istype(A, /obj/item/organ/internal))
 				return affected
 	return FALSE
 
@@ -183,36 +183,27 @@
 				loot |= wound.embedded_objects
 			find_prob += 50
 
-	if (loot.len)
+	if(loot.len)
 
-		var/obj/item/obj = pick(loot)
+		var/atom/movable/A = pick(loot)
 
-		if(istype(obj,/obj/item/implant))
-			var/obj/item/implant/imp = obj
+		if(istype(A, /obj/item/implant))
+			var/obj/item/implant/imp = A
 			if (imp.islegal())
-				find_prob +=60
+				find_prob += 60
 			else
-				find_prob +=40
+				find_prob += 40
 		else
-			find_prob +=50
+			find_prob += 50
 
-		if (prob(find_prob))
+		if(prob(find_prob))
 			user.visible_message(SPAN_NOTICE("[user] takes something out of incision on [target]'s [affected.name] with \the [tool]."), \
-			SPAN_NOTICE("You take \the [obj] out of incision on \the [target]'s [affected.name] with \the [tool].") )
-			target.remove_implant(obj, TRUE, affected)
+			SPAN_NOTICE("You take \the [A] out of incision on \the [target]'s [affected.name] with \the [tool].") )
+			target.remove_implant(A, TRUE, affected)
 
 			BITSET(target.hud_updateflag, IMPLOYAL_HUD)
 
-			//Handle possessive brain borers.
-			if(istype(obj,/mob/living/simple_animal/borer))
-				var/mob/living/simple_animal/borer/worm = obj
-				if(worm.controlling)
-					target.release_control()
-				worm.detatch()
-				worm.leave_host()
-
-
-			playsound(target.loc, 'sound/effects/squelch1.ogg', 15, 1)
+			playsound(target.loc, 'sounds/effects/squelch1.ogg', 15, 1)
 		else
 			user.visible_message(SPAN_NOTICE("[user] removes \the [tool] from [target]'s [affected.name]."), \
 			SPAN_NOTICE("There's something inside [target]'s [affected.name], but you just missed it this time.") )
@@ -228,7 +219,7 @@
 		fail_prob += 100 - tool_quality(tool)
 		if (prob(fail_prob))
 			user.visible_message(SPAN_WARNING("Something beeps inside [target]'s [affected.name]!"))
-			playsound(imp.loc, 'sound/items/countdown.ogg', 75, 1, -3)
+			playsound(imp.loc, 'sounds/items/countdown.ogg', 75, 1, -3)
 			spawn(25)
 				imp.activate()
 

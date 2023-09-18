@@ -44,7 +44,7 @@
 	// Matter state data.
 	var/chilling_point
 	var/chilling_message = "crackles and freezes!"
-	var/chilling_sound = 'sound/effects/bubbles.ogg'
+	var/chilling_sound = 'sounds/effects/bubbles.ogg'
 	var/chilling_prod_english	// used for codex
 	var/list/chilling_products
 
@@ -52,7 +52,7 @@
 	var/heating_prod_english	// used for codex
 	var/heating_point
 	var/heating_message = "begins to boil!"
-	var/heating_sound = 'sound/effects/bubbles.ogg'
+	var/heating_sound = 'sounds/effects/bubbles.ogg'
 
 	var/temperature_multiplier = 1
 	var/value = 1
@@ -63,6 +63,9 @@
 	var/scent_range = 1
 
 	var/should_admin_log = FALSE
+
+	/// Assoc list with key type of addiction this reagent feeds, and value amount of addiction points added per unit of reagent metabolzied (which means * removed every life())
+	var/list/addiction_types = null
 
 /datum/reagent/New(datum/reagents/holder)
 	if(!istype(holder))
@@ -108,11 +111,15 @@
 		removed = touch_met
 	removed = M.get_adjusted_metabolism(removed)
 
+	for(var/addiction in addiction_types)
+		M.AddAddictionPoints(addiction, addiction_types[addiction] * removed)
+
 	//adjust effective amounts - removed, dose, and max_dose - for mob size
 	var/effective = removed
 	if(!(flags & IGNORE_MOB_SIZE) && location != CHEM_TOUCH)
 		effective *= (MOB_MEDIUM/M.mob_size)
 
+	effective = min(effective, volume)	// can't metabolize more than what's actually there
 	M.chem_doses[type] = M.chem_doses[type] + effective
 	if(effective >= (metabolism * 0.1) || effective >= 0.1) // If there's too little chemical, don't affect the mob, just remove it
 		switch(location)

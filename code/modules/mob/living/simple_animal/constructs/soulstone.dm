@@ -26,7 +26,7 @@
 	return (full == SOULSTONE_ESSENCE) ? src : FALSE
 
 /obj/item/device/soulstone/proc/shatter()
-	playsound(loc, "shatter", 70, 1)
+	playsound(loc, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	for(var/i=1 to rand(2,5))
 		new /obj/item/material/shard(get_turf(src), MATERIAL_NULLGLASS)
@@ -73,7 +73,7 @@
 	if(I.force >= 5)
 		if(full != SOULSTONE_CRACKED)
 			user.visible_message(SPAN_WARNING("\The [user] hits \the [src] with \the [I], and it breaks.[shade.client ? " You hear a terrible scream!" : ""]"), SPAN_WARNING("You hit \the [src] with \the [I], and it cracks.[shade.client ? " You hear a terrible scream!" : ""]"), shade.client ? "You hear a scream." : null)
-			playsound(loc, 'sound/effects/Glasshit.ogg', 75)
+			playsound(loc, 'sounds/effects/Glasshit.ogg', 75)
 			set_full(SOULSTONE_CRACKED)
 		else
 			user.visible_message(SPAN_DANGER("\The [user] shatters \the [src] with \the [I]!"))

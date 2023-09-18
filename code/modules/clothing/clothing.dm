@@ -339,7 +339,7 @@ BLIND     // can't see anything
 			update_icon()
 			return
 
-		playsound(src.loc, 'sound/items/Wirecutter.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		user.visible_message(SPAN_WARNING("\The [user] modifies \the [src] with \the [W]."),SPAN_WARNING("You modify \the [src] with \the [W]."))
 
 		cut_fingertops() // apply change, so relevant xenos can wear these
@@ -739,7 +739,7 @@ BLIND     // can't see anything
 			to_chat(usr, SPAN_WARNING("You need an empty, unbroken hand to pull the [hidden_item] from the [src]."))
 			return TRUE
 		user.visible_message(SPAN_ITALIC("\The [user] pulls \the [hidden_item] from \the [src]."), range = 1)
-		playsound(get_turf(src), 'sound/effects/holster/tactiholsterout.ogg', 25)
+		playsound(get_turf(src), 'sounds/effects/holster/tactiholsterout.ogg', 25)
 		verbs -= /obj/item/clothing/shoes/proc/remove_hidden
 		hidden_item = null
 	return TRUE

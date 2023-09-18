@@ -6,7 +6,7 @@
 
 /obj/item/integrated_circuit/reagent
 	category_text = "Reagent"
-	unacidable = TRUE
+	acid_resistance = -1
 	cooldown_per_use = 10
 	var/volume = 0
 
@@ -58,7 +58,7 @@
 			var/location = get_turf(src)
 			var/datum/effect/effect/system/smoke_spread/chem/S = new
 			S.attach(location)
-			playsound(location, 'sound/effects/smoke.ogg', 50, 1, -3)
+			playsound(location, 'sounds/effects/smoke.ogg', 50, 1, -3)
 			if(S)
 				S.set_up(reagents, smoke_radius, 0, location)
 				if(!notified)
@@ -510,7 +510,7 @@
 		"on transfer" = IC_PINTYPE_PULSE_OUT
 	)
 
-	unacidable = TRUE
+	acid_resistance = -1
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	complexity = 4
 	power_draw_per_use = 5

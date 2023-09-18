@@ -22,7 +22,10 @@
 	/datum/reagent/jerraman,
 	/datum/reagent/three_eye,
 	/datum/reagent/mutation_toxin,
-	/datum/reagent/advanced_mutation_toxin
+	/datum/reagent/advanced_mutation_toxin,
+	/datum/reagent/grauel,
+	/datum/reagent/laich,
+	/datum/reagent/gottheit,
 	)
 	/// List of name shortcuts for allowed chems: Name = Datum
 	var/list/shortcut_chems = list(
@@ -62,7 +65,7 @@
 		visible_message(SPAN_NOTICE("[src] displays 'NOT READY'."))
 		return
 
-	playsound(src, 'sound/machines/cb_button.ogg', 35, TRUE)
+	playsound(src, 'sounds/machines/cb_button.ogg', 35, TRUE)
 	var/chosen_reagent = replacetext(lowertext(input(user, "Enter the name of any liquid!", "SCP 294") as null|text), " ", "")
 	if(shortcut_chems[chosen_reagent])
 		chosen_reagent = shortcut_chems[chosen_reagent]
@@ -76,13 +79,13 @@
 
 	// Reagent is banned / doesn't exist
 	if(!chosen_reagent || (chosen_reagent in banned_chems))
-		playsound(src, 'sound/machines/cb_button_fail.ogg', 35, TRUE)
+		playsound(src, 'sounds/machines/cb_button_fail.ogg', 35, TRUE)
 		visible_message(SPAN_WARNING("[src] displays 'OUT OF RANGE'."))
 		return
 
 	// Pass
 	usage_cooldown = world.time + usage_cooldown_time
-	playsound(src, 'sound/scp/294/dispense1.ogg', 35, FALSE)
+	playsound(src, 'sounds/scp/294/dispense1.ogg', 35, FALSE)
 	visible_message(SPAN_NOTICE("[src] dispenses a small paper cup and starts filling it with some liquid."))
 	log_and_message_staff("[user.real_name] used [src], dispensing [chosen_reagent]", user, get_turf(src))
 

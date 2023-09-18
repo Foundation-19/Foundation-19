@@ -16,9 +16,8 @@
 	health = 300
 	maxHealth = 300
 	movement_cooldown = 3
-	move_to_delay = 6
 	projectiletype = /obj/item/projectile/beam/drone
-	projectilesound = 'sound/weapons/laser3.ogg'
+	projectilesound = 'sounds/weapons/laser3.ogg'
 	destroy_surroundings = 0
 
 	meat_type =     null
@@ -73,7 +72,7 @@
 	. = ..()
 	if(prob(5))
 		projectiletype = /obj/item/projectile/beam/pulse/drone
-		projectilesound = 'sound/weapons/pulse2.ogg'
+		projectilesound = 'sounds/weapons/pulse2.ogg'
 	ion_trail = new /datum/effect/effect/system/trail/ion()
 	ion_trail.set_up(src)
 	ion_trail.start()

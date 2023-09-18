@@ -9,7 +9,7 @@
 	var/r_speed = 1.0
 	var/burn_point = null
 	var/burning = null
-	var/hitsound = "swing_hit"
+	var/hitsound = SFX_SWING_HIT
 	var/slot_flags = 0		//This is used to determine on which slots an item can fit.
 	var/no_attack_log = FALSE			//If it's an item we don't want to log attack_logs with, set this to 1
 	pass_flags = PASS_FLAG_TABLE
@@ -540,7 +540,7 @@ var/list/global/slot_flags_enumeration = list(
 	if(parry_chance)
 		if(default_parry_check(user, attacker, damage_source) && prob(parry_chance))
 			user.visible_message(SPAN_DANGER("\The [user] parries [attack_text] with \the [src]!"))
-			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
+			playsound(user.loc, 'sounds/weapons/punchmiss.ogg', 50, 1)
 			on_parry(damage_source)
 			return 1
 	return 0
@@ -561,7 +561,7 @@ var/list/global/slot_flags_enumeration = list(
 		return 0
 	attacker.apply_damage(force, damtype, attacker.hand ? BP_L_HAND : BP_R_HAND, used_weapon = src)
 	attacker.visible_message(SPAN_DANGER("[attacker] hurts \his hand on [src]!"))
-	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+	playsound(target, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 	playsound(target, hitsound, 50, 1, -1)
 	return 1
 

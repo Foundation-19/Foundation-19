@@ -13,7 +13,7 @@
 
 	cooldown_reduc = 50
 	hud_state = "heal_minor"
-	cast_sound = 'sound/magic/staff_healing.ogg'
+	cast_sound = 'sounds/magic/staff_healing.ogg'
 
 	amt_dam_brute = -15
 	amt_dam_fire = -5
@@ -138,7 +138,7 @@
 	effect_color = "#ff0000"
 
 	hud_state = "gen_dissolve"
-	cast_sound = 'sound/magic/disintegrate.ogg'
+	cast_sound = 'sounds/magic/disintegrate.ogg'
 
 /datum/spell/targeted/heal_target/sacrifice/empower_spell()
 	if(!..())
@@ -198,7 +198,7 @@
 	desc = "a tear in space and time."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "rift"
-	unacidable = TRUE
+	acid_resistance = -1
 	anchored = TRUE
 	density = FALSE
 

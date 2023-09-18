@@ -31,7 +31,7 @@
 	hidden_from_codex = FALSE
 
 	taste_sensitivity = TASTE_DULL
-	speech_sounds = list('sound/voice/shriek1.ogg')
+	speech_sounds = list('sounds/voice/shriek1.ogg')
 	speech_chance = 20
 
 	warning_low_pressure = 50
@@ -87,22 +87,16 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE =   list(
-			CULTURE_VOX_ARKSHIP,
-			CULTURE_VOX_SALVAGER,
-			CULTURE_VOX_RAIDER
+			CULTURE_OTHER
 		),
 		TAG_HOMEWORLD = list(
-			HOME_SYSTEM_VOX_ARK,
-			HOME_SYSTEM_VOX_SHROUD,
-			HOME_SYSTEM_VOX_SHIP
+			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
-			FACTION_VOX_RAIDER,
-			FACTION_VOX_CREW,
-			FACTION_VOX_APEX
+			FACTION_OTHER
 		),
 		TAG_RELIGION =  list(
-			RELIGION_VOX
+			RELIGION_OTHER
 		)
 	)
 
@@ -151,7 +145,7 @@
 	damage_mask =     'icons/mob/human_races/species/vox/damage_mask_armalis.dmi'
 	blood_mask =      'icons/mob/human_races/species/vox/blood_mask_armalis.dmi'
 
-	speech_sounds = list('sound/voice/ashriek.ogg')
+	speech_sounds = list('sounds/voice/ashriek.ogg')
 	speech_chance = 10
 
 	slowdown = 1
@@ -206,7 +200,7 @@
 	OnCreated(vox, user)
 	data = sanitizeSafe(input(vox, "Enter Name:", "Enter Name", "") as text, MAX_NAME_LEN)
 	if (!length(data))
-		var/decl/cultural_info/culture = SSculture.get_culture(CULTURE_VOX_RAIDER)
+		var/decl/cultural_info/culture = SSculture.get_culture(CULTURE_OTHER)
 		data = culture.get_random_name()
 	vox.real_name = data
 	vox.SetName(data)

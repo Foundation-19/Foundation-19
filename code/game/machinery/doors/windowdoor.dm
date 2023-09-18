@@ -5,7 +5,7 @@
 	icon_state = "left"
 	var/base_state = "left"
 	min_force = 4
-	hitsound = 'sound/effects/Glasshit.ogg'
+	hitsound = 'sounds/effects/Glasshit.ogg'
 	maxhealth = 150 //If you change this, consiter changing ../door/window/brigdoor/ health at the bottom of this .dm file
 	health = 150
 	visible = 0.0
@@ -60,7 +60,7 @@
 		ae.icon_state = "door_electronics_smoked"
 		operating = 0
 	set_density(0)
-	playsound(src, "shatter", 70, 1)
+	playsound(src, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	if(display_message)
 		visible_message("[src] shatters!")
@@ -120,7 +120,7 @@
 
 	icon_state = "[src.base_state]open";
 	flick("[src.base_state]opening", src)
-	playsound(src.loc, 'sound/machines/windowdoor.ogg', 100, 1)
+	playsound(src.loc, 'sounds/machines/windowdoor.ogg', 100, 1)
 	addtimer(CALLBACK(src, .proc/open_final), 1 SECOND, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 	return 1
@@ -139,7 +139,7 @@
 		return 0
 	operating = 1
 	flick(text("[]closing", src.base_state), src)
-	playsound(src.loc, 'sound/machines/windowdoor.ogg', 100, 1)
+	playsound(src.loc, 'sounds/machines/windowdoor.ogg', 100, 1)
 	set_density(1)
 	update_icon()
 	explosion_resistance = initial(explosion_resistance)
@@ -161,7 +161,7 @@
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species.can_shred(H))
-			playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
+			playsound(src.loc, 'sounds/effects/Glasshit.ogg', 75, 1)
 			visible_message(SPAN_DANGER("[user] smashes against the [src.name]."), 1)
 			take_damage(25)
 			return TRUE
@@ -203,14 +203,14 @@
 			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 			spark_system.set_up(5, 0, src.loc)
 			spark_system.start()
-			playsound(src.loc, "sparks", 50, 1)
-			playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
+			playsound(src.loc, SFX_SPARK, 50, 1)
+			playsound(src.loc, 'sounds/weapons/blade1.ogg', 50, 1)
 			visible_message(SPAN_WARNING("The glass door was sliced open by [user]!"))
 		return 1
 
 	//If it's emagged, crowbar can pry electronics out.
 	if (src.operating == -1 && isCrowbar(I))
-		playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
+		playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 		user.visible_message("[user] removes the electronics from the windoor.", "You start to remove electronics from the windoor.")
 		if (do_after(user,40,src))
 			to_chat(user, SPAN_NOTICE("You removed the windoor electronics!"))
@@ -251,6 +251,10 @@
 /obj/machinery/door/window/create_electronics(electronics_type = /obj/item/airlock_electronics)
 	electronics = ..()
 	return electronics
+
+//used in the pathing algorithm to determinate if the turf the door is on is passable
+/obj/machinery/door/window/CanPathingPass(obj/item/card/id/ID, to_dir, atom/movable/caller, no_id = FALSE)
+	return !density || (dir != to_dir) || (check_access(ID) && !no_id)
 
 /obj/machinery/door/window/brigdoor
 	name = "secure door"

@@ -599,7 +599,7 @@
 /mob/living/carbon/human/proc/play_xylophone()
 	if(!src.xylophone)
 		visible_message(SPAN_WARNING("\The [src] begins playing \his ribcage like a xylophone. It's quite spooky."),SPAN_NOTICE("You begin to play a spooky refrain on your ribcage."),SPAN_WARNING("You hear a spooky xylophone melody."))
-		var/song = pick('sound/effects/xylophone1.ogg','sound/effects/xylophone2.ogg','sound/effects/xylophone3.ogg')
+		var/song = pick('sounds/effects/xylophone1.ogg','sounds/effects/xylophone2.ogg','sounds/effects/xylophone3.ogg')
 		playsound(loc, song, 50, 1, -1)
 		xylophone = 1
 		spawn(1200)
@@ -652,7 +652,7 @@
 	for(var/obj/structure/hygiene/toilet/T in range(1, src))
 		if(T.open)
 			visible_message(SPAN_DANGER("\The [src] throws up into the toilet!"),SPAN_DANGER("You throw up into the toilet!"))
-			playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+			playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 			stomach.ingested.remove_any(15)
 			return
 
@@ -660,7 +660,7 @@
 	// see above comment for how vomit reagents are handled
 	for(var/obj/machinery/disposal/D in orange(1, src))
 		visible_message(SPAN_DANGER("\The [src] throws up into the disposal unit!"),SPAN_DANGER("You throw up into the disposal unit!"))
-		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_holder(D.reagents, 15)
 		return
@@ -668,7 +668,7 @@
 	var/turf/location = loc
 
 	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
-	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+	playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
 		var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(location)
 		if(stomach.ingested.total_volume)
@@ -1041,6 +1041,7 @@
 	if(do_after(usr, 6 SECONDS, src))
 		var/message = SPAN_NOTICE("[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].")
 		to_chat(usr, message)
+		SEND_SIGNAL(usr, COMSIG_CHECKED_PULSE)
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
@@ -1815,6 +1816,17 @@
 				B.transform = M.Scale(scale)
 
 				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)
+
+/mob/living/carbon/human/get_exp_list(minutes)
+	. = ..()
+
+	var/list/valid_jobs = SSjobs.job_lists_by_map_name[GLOB.using_map.full_name]
+	valid_jobs = valid_jobs["jobs"]
+
+	if(mind.role_alt_title && istype(mind.assigned_job, /datum/job/goirep)) //We track alt titles for goi rep as they are different reps/jobs and not just renames
+		.[mind.role_alt_title] = minutes
+	else if(mind.assigned_job in valid_jobs)
+		.[mind.assigned_job.title] = minutes
 
 /mob/living/carbon/human/proc/dream()
 	dream_timer = null

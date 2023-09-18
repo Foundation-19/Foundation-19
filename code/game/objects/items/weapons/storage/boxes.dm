@@ -25,8 +25,17 @@
 	icon_state = "box"
 	item_state = "syringe_kit"
 	max_storage_space = DEFAULT_BOX_STORAGE
-	use_sound = 'sound/effects/storage/box.ogg'
+	use_sound = 'sounds/effects/storage/box.ogg'
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
+
+/obj/item/storage/box/open(mob/user)
+	. = ..()
+	icon_state = "boxopen"
+
+/obj/item/storage/box/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/large
 	name = "large box"
@@ -34,6 +43,15 @@
 	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+
+/obj/item/storage/box/large/open(mob/user)
+	. = ..()
+	icon_state = "largeboxopen"
+
+/obj/item/storage/box/large/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/union_cards
 	name = "box of union cards"
@@ -189,7 +207,16 @@
 	name = "ammo box"
 	icon_state = "ammo"
 	desc = "A sturdy metal box with several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	use_sound = 'sound/effects/closet_open.ogg'
+	use_sound = 'sounds/effects/closet_open.ogg'
+
+/obj/item/storage/box/ammo/open(mob/user)
+	. = ..()
+	item_state = "ammoopen"
+
+/obj/item/storage/box/ammo/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/ammo/blanks
 	name = "box of blank shells"
@@ -426,7 +453,7 @@
 		W.damtype = "burn"
 		W.icon_state = "match_lit"
 		START_PROCESSING(SSobj, W)
-		playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
+		playsound(src.loc, 'sounds/items/match.ogg', 60, 1, -4)
 		user.visible_message(SPAN_NOTICE("[user] strikes the match on the matchbox."))
 	W.update_icon()
 	return
@@ -509,6 +536,15 @@
 
 /obj/item/storage/box/freezer/ProcessAtomTemperature()
 	return PROCESS_KILL
+
+/obj/item/storage/box/freezer/open(mob/user)
+	. = ..()
+	icon_state = "portafreezeropen"
+
+/obj/item/storage/box/freezer/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/checkers
 	name = "checkers box"
@@ -674,3 +710,12 @@
 
 /obj/item/storage/box/canned/tomato
 	startswith = list(/obj/item/reagent_containers/food/snacks/canned/tomato = 6)
+
+// TODO: read metal from box construction recipe instead of having specialized object
+/obj/item/storage/box/aluminium
+	name = "aluminium box"
+	desc = "The aluminium lining prevents illicit items inside from being detected by metal detectors."
+	foldable = /obj/item/stack/material/aluminium
+
+/obj/item/storage/box/aluminium/has_contraband()
+	return FALSE

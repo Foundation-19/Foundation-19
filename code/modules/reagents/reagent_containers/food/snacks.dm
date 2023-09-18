@@ -15,7 +15,7 @@
 	var/cooks_into_type = null
 	var/nutriment_amt = 0
 	var/list/nutriment_desc = list("food" = 1)
-	var/list/eat_sound = 'sound/items/eatfood.ogg'
+	var/list/eat_sound = 'sounds/items/eatfood.ogg'
 	center_of_mass = "x=16;y=16"
 	w_class = ITEM_SIZE_SMALL
 
@@ -43,7 +43,6 @@
 	if(!reagents.total_volume)
 		M.visible_message(SPAN_NOTICE("[M] finishes eating \the [src]."),SPAN_NOTICE("You finish eating \the [src]."))
 		M.drop_item()
-		M.update_personal_goal(/datum/goal/achievement/specific_object/food, type)
 		if(trash)
 			if(ispath(trash,/obj/item))
 				var/obj/item/TrashItem = new trash(get_turf(M))

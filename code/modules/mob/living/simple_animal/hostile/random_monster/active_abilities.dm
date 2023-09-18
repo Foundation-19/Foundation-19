@@ -10,7 +10,7 @@
 	overlay_type = "leap"
 	var/leap_delay = 5
 	var/leap_range = 5
-	var/leap_sound = 'sound/weapons/spiderlunge.ogg'
+	var/leap_sound = 'sounds/weapons/spiderlunge.ogg'
 
 /datum/random_ability/active/leap/perform(mob/living/user, atom/target)
 	..()
@@ -65,7 +65,7 @@
 	overlay_type = "spit"
 	var/spit_amount = 3
 	var/spit_delay = 2
-	var/spit_sound = 'sound/effects/splat.ogg'
+	var/spit_sound = 'sounds/effects/splat.ogg'
 	var/obj/item/projectile/spit_type = /obj/item/projectile/energy/plasmastun/weak
 
 /datum/random_ability/active/spit/New()

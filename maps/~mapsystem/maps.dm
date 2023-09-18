@@ -91,7 +91,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/decl/audio/track/lobby_track                     // The track that will play in the lobby screen.
 	var/list/lobby_tracks = list()                  // The list of lobby tracks to pick() from. If left unset will randomly select among all available decl/audio/track subtypes.
-	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
+	var/welcome_sound = 'sounds/AI/welcome.ogg'		// Sound played on roundstart
 
 	var/default_law_type = /datum/ai_laws/foundation_alt  // The default lawset use by synth units, if not overriden by their laws var.
 	var/security_state = /decl/security_state // The default security state system to use.
@@ -124,7 +124,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			HOME_SYSTEM_EARTH
 		),
 		TAG_FACTION = list(
-			FACTION_SOL_CENTRAL
+			FACTION_SCP_FOUNDATION
 		),
 		TAG_CULTURE = list(
 			CULTURE_HUMAN_EARTH
@@ -151,7 +151,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/list/default_cultural_info = list(
 		TAG_HOMEWORLD = HOME_SYSTEM_EARTH,
-		TAG_FACTION =   FACTION_SOL_CENTRAL,
+		TAG_FACTION =   FACTION_SCP_FOUNDATION,
 		TAG_CULTURE =   CULTURE_HUMAN_EARTH,
 		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
@@ -165,9 +165,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		ACCESS_REGION_GENERAL = list(ACCESS_CHANGE_IDS),
 		ACCESS_REGION_SUPPLY = list(ACCESS_CHANGE_IDS)
 	)
-
-	// List of /datum/department types to instantiate at roundstart.
-	var/list/departments
 
 	// List of events specific to a map
 	var/list/map_event_container = list()

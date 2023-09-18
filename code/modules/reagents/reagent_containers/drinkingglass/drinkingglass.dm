@@ -109,7 +109,7 @@
 				SPAN_DANGER("\The [src] shatters from the impact!"),
 				SPAN_DANGER("You hear the sound of glass shattering!")
 			)
-		playsound(src.loc, pick(GLOB.shatter_sound), 100)
+		playsound(src.loc, SFX_SHATTER, 100)
 		new /obj/item/material/shard(src.loc)
 		qdel(src)
 	else
@@ -124,7 +124,7 @@
 				SPAN_WARNING("\The [src] bounces dangerously. Luckily it didn't break."),
 				SPAN_WARNING("You hear the sound of glass hitting something.")
 			)
-		playsound(src.loc, "sound/effects/Glasshit.ogg", 50)
+		playsound(src.loc, "sounds/effects/Glasshit.ogg", 50)
 
 /obj/item/reagent_containers/food/drinks/glass2/proc/can_add_extra(obj/item/glass_extra/GE)
 	if(!("[base_icon]_[GE.glass_addition]left" in icon_states(icon)))
@@ -221,7 +221,7 @@
 	if(istype(W, /obj/item/material/kitchen/utensil/spoon))
 		if(user.a_intent == I_HURT)
 			user.visible_message(SPAN_WARNING("[user] bashes \the [src] with a spoon, shattering it to pieces! What a rube."))
-			playsound(src, "shatter", 30, 1)
+			playsound(src, SFX_SHATTER, 30, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(reagents)
 				user.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [user]!"))
@@ -229,7 +229,7 @@
 			qdel(src)
 			return
 		user.visible_message(SPAN_NOTICE("[user] gently strikes \the [src] with a spoon, calling the room to attention."))
-		playsound(src, "sound/items/wineglass.ogg", 65, 1)
+		playsound(src, "sounds/items/wineglass.ogg", 65, 1)
 	else return ..()
 
 /obj/item/reagent_containers/food/drinks/glass2/ProcessAtomTemperature()

@@ -17,7 +17,7 @@
 			holding.dropInto(loc)
 			to_chat(user, SPAN_NOTICE("You take out \the [holding]."))
 			holding = null
-			playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+			playsound(loc, 'sounds/items/Crowbar.ogg', 50, 1)
 		else to_chat(user, SPAN_WARNING("The augment is empty!"))
 		return
 	if(istype(W, /obj/item/device/electronic_assembly/augment))
@@ -26,7 +26,7 @@
 		else if(user.unEquip(W, src))
 			holding = W
 			holding.canremove = 0
-			playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+			playsound(loc, 'sounds/items/Crowbar.ogg', 50, 1)
 		return
 
 	..()

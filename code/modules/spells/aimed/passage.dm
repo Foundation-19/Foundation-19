@@ -18,7 +18,7 @@
 	deactive_msg = "You decide against using the bolt of passage."
 
 	hud_state = "gen_project"
-	cast_sound = 'sound/magic/lightning_bolt.ogg'
+	cast_sound = 'sounds/magic/lightning_bolt.ogg'
 
 /datum/spell/aimed/passage/prox_cast(list/targets, atom/spell_holder)
 	for(var/mob/living/L in targets)
@@ -30,7 +30,7 @@
 	var/datum/effect/effect/system/smoke_spread/S = new /datum/effect/effect/system/smoke_spread()
 	S.set_up(3,0,T)
 	S.start()
-	playsound(src, 'sound/magic/lightningshock.ogg', 50)
+	playsound(src, 'sounds/magic/lightningshock.ogg', 50)
 	show_sound_effect(T)
 
 /datum/spell/aimed/passage/empower_spell()

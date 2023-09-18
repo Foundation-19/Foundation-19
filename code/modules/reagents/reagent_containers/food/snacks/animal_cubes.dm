@@ -14,6 +14,7 @@
 
 	var/wrapped = FALSE
 	var/monkey_type = /mob/living/carbon/human/monkey
+	var/required_reagent_type = /datum/reagent/water
 
 /obj/item/reagent_containers/food/snacks/monkeycube/attack_self(mob/user)
 	if (wrapped)
@@ -41,7 +42,7 @@
 			SPAN_WARNING("Something bursts out of [M]'s chest!"),
 			SPAN_DANGER(FONT_LARGE("Something bursts out of your chest in a shower of [H.species.get_blood_name()]!"))
 		) // alien (1979)
-		playsound(H, 'sound/effects/splat.ogg', 50, FALSE)
+		playsound(H, 'sounds/effects/splat.ogg', 50, FALSE)
 		var/datum/reagent/blood/B = locate(/datum/reagent/blood) in H.vessel.reagent_list
 		blood_splatter(H, B, 1)
 		var/obj/item/organ/external/organ = H.get_organ(BP_CHEST)
@@ -50,7 +51,7 @@
 	Expand()
 
 /obj/item/reagent_containers/food/snacks/monkeycube/on_reagent_change()
-	if (reagents.has_reagent(/datum/reagent/water))
+	if (reagents.has_reagent(required_reagent_type))
 		Expand()
 
 /obj/item/reagent_containers/food/snacks/monkeycube/wrapped
@@ -91,3 +92,14 @@
 /obj/item/reagent_containers/food/snacks/monkeycube/wrapped/spidercube
 	name = "spider cube"
 	monkey_type = /obj/effect/spider/spiderling
+
+/obj/item/reagent_containers/food/snacks/monkeycube/abominationcube
+	name = "larva cube"
+	desc = "Requires blood to expand."
+	monkey_type = /mob/living/simple_animal/hostile/infestation/larva
+	required_reagent_type = /datum/reagent/blood
+	color = COLOR_MAROON
+	filling_color = COLOR_MAROON
+
+/obj/item/reagent_containers/food/snacks/monkeycube/abominationcube/friendly
+	monkey_type = /mob/living/simple_animal/hostile/infestation/larva/friendly

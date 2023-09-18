@@ -69,12 +69,12 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 				return
 			if(mode==0) // It's off but still not unscrewed
 				mode=-1 // Set it to doubleoff l0l
-				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 				to_chat(user, "You remove the screws around the power connection.")
 				return
 			else if(mode==-1)
 				mode=0
-				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 				to_chat(user, "You attach the screws around the power connection.")
 				return
 		else if(isWelder(I) && mode==-1)
@@ -83,7 +83,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 				return
 			var/obj/item/weldingtool/W = I
 			if(W.remove_fuel(0,user))
-				playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
 				to_chat(user, "You start slicing the floorweld off the disposal unit.")
 
 				if(do_after(user,20,src))
@@ -319,7 +319,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 		AM.pipe_eject(0)
 	if(reagents.total_volume)
 		visible_message(SPAN_DANGER("Vomit spews out of the disposal unit!"))
-		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 		show_sound_effect(loc, soundicon = SFX_ICON_SMALL)
 		if(istype(src.loc, /turf/simulated))
 			var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
@@ -426,7 +426,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 	sleep(10)
 	if(last_sound < world.time + 1)
-		playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
+		playsound(src, 'sounds/machines/disposalflush.ogg', 50, 0, 0)
 		last_sound = world.time
 	sleep(5) // wait for animation to finish
 
@@ -451,7 +451,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 /obj/machinery/disposal/proc/expel(obj/structure/disposalholder/H)
 
 	var/turf/target
-	playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+	playsound(src, 'sounds/machines/hiss.ogg', 50, 0, 0)
 	if(H) // Somehow, someone managed to flush a window which broke mid-transit and caused the disposal to go in an infinite loop trying to expel null, hopefully this fixes it
 		for(var/atom/movable/AM in H)
 			target = get_offset_target_turf(src.loc, rand(5)-rand(5), rand(5)-rand(5))
@@ -484,7 +484,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 /obj/machinery/disposal/slam_into(mob/living/L)
 	L.Weaken(4)
 	L.visible_message(SPAN_WARNING("\The [L] slammed into \the [src]!"))
-	playsound(L, "punch", 25, 1, FALSE)
+	playsound(L, SFX_PUNCH, 25, 1, FALSE)
 	show_sound_effect(L.loc, L)
 
 /obj/machinery/disposal_switch
@@ -590,7 +590,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(H)
 		if(H.reagents?.total_volume)
 			visible_message(SPAN_DANGER("Vomit seeps out of the disposal outlet!"))
-			playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+			playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 			if(istype(src.loc, /turf/simulated))
 				var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
 				H.reagents.trans_to_obj(splat, H.reagents.total_volume)
@@ -609,9 +609,9 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 /obj/structure/disposaloutlet/proc/animate_expel()
 	set waitfor = FALSE
 	flick("outlet-open", src)
-	playsound(src, 'sound/machines/warning-buzzer.ogg', 50, 0, 0)
+	playsound(src, 'sounds/machines/warning-buzzer.ogg', 50, 0, 0)
 	sleep(20)	//wait until correct animation frame
-	playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+	playsound(src, 'sounds/machines/hiss.ogg', 50, 0, 0)
 
 /obj/structure/disposaloutlet/attackby(obj/item/I, mob/user)
 	if(!I || !user)
@@ -620,18 +620,18 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(isScrewdriver(I))
 		if(mode==0)
 			mode=1
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You remove the screws around the power connection.")
 			return
 		else if(mode==1)
 			mode=0
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You attach the screws around the power connection.")
 			return
 	else if(istype(I,/obj/item/weldingtool) && mode==1)
 		var/obj/item/weldingtool/W = I
 		if(W.remove_fuel(0,user))
-			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
 			to_chat(user, "You start slicing the floorweld off the disposal outlet.")
 			if(do_after(user,20, src))
 				if(!src || !W.isOn()) return

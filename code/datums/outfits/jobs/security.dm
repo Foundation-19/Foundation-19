@@ -43,7 +43,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl3lcz
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	suit = /obj/item/clothing/suit/armor/vest/scp/russcom
+	suit = /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
@@ -216,3 +216,24 @@
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/* Non-SCP security outfits */
+
+/decl/hierarchy/outfit/job/security/officer
+	name = "Security Officer"
+	uniform = /obj/item/clothing/under/rank/security
+	l_pocket = /obj/item/device/flash
+	r_pocket = /obj/item/handcuffs
+	id_type = /obj/item/card/id/security
+	pda_type = /obj/item/modular_computer/pda/security
+
+/decl/hierarchy/outfit/job/security/officer/armored
+	name = "Security Officer - Armored"
+	suit = /obj/item/clothing/suit/armor/vest/old/security
+	head = /obj/item/clothing/head/helmet
+
+/decl/hierarchy/outfit/job/security/officer/armored/riot
+	name = "Security Officer - Riot Gear"
+	suit = /obj/item/clothing/suit/armor/riot
+	head = /obj/item/clothing/head/helmet/riot
+	mask = /obj/item/clothing/mask/gas

@@ -10,7 +10,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	name = "effect"
 	icon = 'icons/effects/effects.dmi'
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	unacidable = TRUE
+	acid_resistance = -1
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 
 /datum/effect/effect/system
@@ -103,7 +103,7 @@ steam.start() -- spawns the effect
 
 /obj/effect/sparks/New()
 	..()
-	playsound(src.loc, "sparks", 100, 1)
+	playsound(src.loc, SFX_SPARK, 100, 1)
 	var/turf/T = src.loc
 	if (istype(T, /turf))
 		T.hotspot_expose(1000,100)

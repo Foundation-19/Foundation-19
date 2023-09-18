@@ -16,8 +16,6 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isnan(N) (isnum(N) && (N) != (N))
 
-#define get_turf(A) get_step(A,0)
-
 #define get_x(A) (get_step(A, 0)?.x || 0)
 
 #define get_y(A) (get_step(A, 0)?.y || 0)
@@ -49,6 +47,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define isEye(A) istype(A, /mob/observer/eye)
 
 #define ishuman(A) istype(A, /mob/living/carbon/human)
+
+#define ismonkey(A) isspecies(A, "Monkey")
 
 #define isid(A) istype(A, /obj/item/card/id)
 
@@ -224,6 +224,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define isscp131(A) istype(A, /mob/living/simple_animal/scp_131)
 
 #define isscp529(A) istype(A, /mob/living/simple_animal/cat/fluff/scp_529)
+
+#define isscp527(A) istype(A, /mob/living/carbon/human/scp_527)
 
 #define isscp173(A) istype(A, /mob/living/scp_173)
 
