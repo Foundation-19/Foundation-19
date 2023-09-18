@@ -150,6 +150,8 @@
 	icon_state = null
 
 /mob/living/simple_animal/hostile/scp2427_3/proc/CheckPurity(mob/living/L)
+	if(!istype(L))
+		return
 	if(L == src)
 		return
 	if(L.SCP)
@@ -157,8 +159,6 @@
 	if(stat == DEAD || is_sleeping)
 		return
 	if((L in impurity_list) || (L in purity_list))
-		return
-	if(!istype(L))
 		return
 	if(!(L in dview(7, src)))
 		return
