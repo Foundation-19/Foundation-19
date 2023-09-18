@@ -412,8 +412,6 @@
 #include "code\datums\observation\logged_out.dm"
 #include "code\datums\observation\moved.dm"
 #include "code\datums\observation\observation.dm"
-#include "code\datums\observation\shuttle_added.dm"
-#include "code\datums\observation\turf_changed.dm"
 #include "code\datums\observation\~cleanup.dm"
 #include "code\datums\outfits\_defines.dm"
 #include "code\datums\outfits\misc.dm"

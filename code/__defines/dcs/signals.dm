@@ -105,11 +105,12 @@
 /// Called on `/mob/living/silicon/robot/uneq_active` and `/mob/living/silicon/robot/uneq_all` (/mob/living/silicon/robot, /obj/item)
 #define COMSIG_ROBOT_DEACTIVATING_MODULE "robot_deactivating_module"
 
+
 /// Called on `/obj/item/organ/removed` (/mob/living/carbon/human, /obj/item/organ)
 #define COMSIG_ORGAN_DISMEMBERED "organ_dismembered"
 
 /*
-* Atom
+*	Atom
 */
 
 /// Called on `/atom/movable/Move` and `/atom/movable/proc/forceMove` (/atom/movable, /atom, /atom)
@@ -120,3 +121,10 @@
 
 /// Called on `/atom/Exited` (/atom, exitee, new_loc)
 #define COMSIG_EXITED "exited"
+
+/*
+*	Global
+*/
+
+/// Called on `/datum/controller/subsystem/shuttle/proc/initialize_shuttle` (/datum/ssdcs)
+#define COMSIG_GLOB_SHUTTLE_INITIALIZED "!shuttle_initialized"

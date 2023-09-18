@@ -36,7 +36,7 @@
 	..()
 	src.given_area = given_area
 	register_shuttles()
-	GLOB.shuttle_added.register_global(src, .proc/shuttle_added)
+	RegisterSignal(SSdcs, COMSIG_GLOB_SHUTTLE_INITIALIZED, .proc/shuttle_added)
 
 /datum/extension/event_registration/shuttle_stationary/proc/register_shuttles()
 	if(given_area in SSshuttle.shuttle_areas)
@@ -53,7 +53,7 @@
 		UnregisterSignal(shuttle_datum, COMSIG_SHUTTLE_PRE_MOVE)
 	shuttles_registered = null
 
-/datum/extension/event_registration/shuttle_stationary/proc/shuttle_added(datum/shuttle/shuttle)
+/datum/extension/event_registration/shuttle_stationary/proc/shuttle_added(datum/source, datum/shuttle/shuttle)
 	if(given_area in shuttle.shuttle_area)
 		RegisterSignal(shuttle, COMSIG_SHUTTLE_MOVED, .proc/shuttle_moved)
 		RegisterSignal(shuttle, COMSIG_SHUTTLE_PRE_MOVE, .proc/shuttle_pre_move)
@@ -61,7 +61,7 @@
 
 /datum/extension/event_registration/shuttle_stationary/Destroy()
 	unregister_shuttles()
-	GLOB.shuttle_added.unregister_global(src)
+	UnregisterSignal(SSdcs, COMSIG_GLOB_SHUTTLE_INITIALIZED)
 	. = ..()
 
 /datum/extension/event_registration/shuttle_stationary/proc/shuttle_moved()
