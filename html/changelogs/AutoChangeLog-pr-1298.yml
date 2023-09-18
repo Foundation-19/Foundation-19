@@ -1,0 +1,5 @@
+author: KirovClassBattlecruiser
+delete-after: true
+changes:
+  - rscdel: Camera in the admin panic bunker that was in 049's cell camera network
+  - bugfix: Admin panic bunker is now named administration panic bunker
