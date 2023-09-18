@@ -510,7 +510,7 @@
 	if(user.IsBeingWatched())
 		to_chat(user, SPAN_WARNING("Someone is looking at you!"))
 		return
-	if(!do_after(user, 1 SECOND, src, bonus_percentage = 100)) // Some moron suggested putting 173 in a conveyor loop.
+	if(!do_after(user, 1 SECONDS, src, DO_BOTH_CAN_MOVE|DO_DEFAULT)) // Some moron suggested putting 173 in a conveyor loop.
 		return
 	if(user.IsBeingWatched())
 		to_chat(user, SPAN_WARNING("Someone is looking at you!"))
