@@ -40,7 +40,6 @@
 	var/hidden_from_codex = FALSE
 	var/lore_text
 	var/mechanics_text
-	var/antag_text
 
 /datum/recipe/proc/check_reagents(datum/reagents/avail_reagents)
 	. = 1

@@ -15,8 +15,7 @@
 			return
 
 	var/list/all_entries = SScodex.retrieve_entries_for_string(searching)
-	if(mob && mob.mind && !player_is_antag(mob.mind))
-		all_entries = all_entries.Copy() // So we aren't messing with the codex search cache.
+	all_entries = all_entries.Copy() // So we aren't messing with the codex search cache.
 
 	//Put entries with match in the name first
 	for(var/datum/codex_entry/entry in all_entries)

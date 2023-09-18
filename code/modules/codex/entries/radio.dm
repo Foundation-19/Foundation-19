@@ -7,7 +7,7 @@
 	If a chat message begins with : or . and a specific letter, that message is broadcast along a specific departmental channel. \
 	You can find which keys correspond to which department by examining a headset, or by using the following list:<br>"
 
-/datum/codex_entry/radio/New(_display_name, list/_associated_paths, list/_associated_strings, _lore_text, _mechanics_text, _antag_text)
+/datum/codex_entry/radio/New()
 	associated_paths += typesof(/obj/item/device/radio)
 
 	var/list/minimized_radio_keys = list()

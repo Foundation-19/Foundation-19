@@ -9,9 +9,9 @@
 	associated_paths = list(/obj/machinery/power/emitter)
 	mechanics_text = "You must secure this in place with a <l>wrench</l> and weld it to the floor before using it. \
 	The emitter will only fire if it is installed above a cable endpoint.<br>\
-	Clicking will toggle it on and off, at which point, so long as it remains powered, it will fire in a single direction in bursts of four."
+	Clicking will toggle it on and off, at which point, so long as it remains powered, it will fire in a single direction in bursts of four.<br>\
+	If used incorrectly (or, perhaps, correctly), an emitter is capable of slicing through <span codexlink='wall'>walls</span>, sealed lockers, and people."
 	lore_text = "A recent innovation by the Research team, this device has applications such as mining, cutting, and is often used to power advanced, bulky machinery."
-	antag_text = "This baby is capable of slicing through <span codexlink='wall'>walls</span>, sealed lockers, and people."
 
 /datum/codex_entry/diffuser_machine
 	associated_paths = list(/obj/machinery/shield_diffuser)
@@ -34,22 +34,20 @@
 /datum/codex_entry/tele_beacon
 	associated_paths = list(/obj/machinery/tele_beacon)
 	mechanics_text = "The teleporter beacon can be targeted by teleporter control consoles to allow teleporter pads to send mobs and objects to its location.<br>\
-		It can only be targeted and used while the beacon is powered and anchored to the floor.<br>\
-		While the panel is closed, you can:<br>\
-		<ul><li>Use a <l>wrench</l> to anchor/unanchor the beacon, allowing it to be moved. The beacon is not functional unless anchored.</li>\
-		<li>Use a <l>multitool</l> to rename the beacon. The name will be displayed in teleport control consoles.</li></ul>"
-	antag_text = "If EMP'd, the beacon will lose all established teleporter locks and will be disabled for up to 30 seconds."
+	It can only be targeted and used while the beacon is powered and anchored to the floor.<br>\
+	While the panel is closed, you can:<br>\
+	<ul><li>Use a <l>wrench</l> to anchor/unanchor the beacon, allowing it to be moved. The beacon is not functional unless anchored.</li>\
+	<li>Use a <l>multitool</l> to rename the beacon. The name will be displayed in teleport control consoles.</li></ul><br>\
+	If EMP'd, the beacon will lose all established teleporter locks and will be disabled for up to 30 seconds."
 
 /datum/codex_entry/faxmachine
 	associated_paths = list(/obj/machinery/photocopier/faxmachine)
-	mechanics_text = "The fax machine can be used to transmit paper faxes to other fax machines on the map, or to off-site organizations handled by server administration. \
-	To use the fax machine, you'll need to insert both a paper and your ID card, authenticate, select a destination, the transmit the fax. \
+	mechanics_text = "The fax machine can be used to transmit paper messages to other fax machines on the map, or to off-site organizations handled by server administration.<br>\
+	To use the fax machine, you'll need to insert both a paper and your ID card, authenticate, select a destination, the transmit the fax.<br>\
 	You can also fax paper bundles, including photos, using this machine.<br>\
-	You can check the machine's department origin tag using a <l>multitool</l>."
-	antag_text = "If emagged with a <l>cryptographic sequencer</l>, the fax machine can then have its origin department tag changed using a multitool. \
-	This allows you to send faxes pretending to be from somewhere else on the site, or even an off-site origin like the Foundation Central Office.<br>\
-	<strong>NOTE</strong>: Any new department tags created in this way that do not already exist in the list of targets cannot receive faxes, \
-	as this does not add new departments to the list of valid fax targets."
+	You can check the machine's department origin tag using a <l>multitool</l>.<br>\
+	If emagged with a <l>cryptographic sequencer</l>, multitools will be able to change the department's origin tag.<br>\
+	<strong>NOTE</strong>: Any new department tags created in this way that do not already exist in the list of targets cannot receive faxes, as this does not add new departments to the list of valid fax targets."
 
 /datum/codex_entry/contraband_detector
 	associated_paths = list(/obj/machinery/contraband_detector)

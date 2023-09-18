@@ -12,8 +12,9 @@
 /datum/codex_entry/processor_unit
 	display_name = "processor unit"
 	mechanics_text = "A critical component for <span codexlink='Modular Computer'>modular computers</span>.<br>\
-	This is required to run programs and SCPOS. Stronger processor units allow for more programs to be run simultaneously."
-	antag_text = "Processing speed is also important when hacking."
+	Without one, you can't run the operating system, much less any programs.<br>\
+	Stronger processor units allow for more programs to be run simultaneously.<br>\
+	Processing speed is also important when hacking."
 
 /datum/codex_entry/processor_unit/New()
 	associated_paths = typesof(/obj/item/stock_parts/computer/processor_unit)

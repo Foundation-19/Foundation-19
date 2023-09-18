@@ -10,19 +10,15 @@
 	Radiation helmet and suit, as the supermatter is radioactive.<br>\
 	<br>\
 	Touching the supermatter will result in *instant death*, with no corpse left behind!  You can drag the supermatter, but anything else will kill you."
-	antag_text = "Exposing the supermatter to oxygen or vacuum will cause it to start rapidly heating up.  Sabotaging the supermatter and making it explode will \
-	cause a period of lag as the explosion is processed by the server, as well as irradiating the entire station and causing hallucinations to happen.  \
-	Wearing radiation equipment will protect you from most of the delamination effects sans explosion."
 
 /datum/codex_entry/apc
 	associated_paths = list(/obj/machinery/power/apc)
-	mechanics_text = "An APC (Area Power Controller) regulates and supplies backup power for the area they are in. Their power channels are divided \
-	out into 'environmental' (Items that manipulate airflow and temperature), 'lighting' (the lights), and 'equipment' (Everything else that consumes power).<br>\
-	Power consumption and backup power cell charge can be seen from the interface, further controls (turning a specific channel on, off or automatic, \
-	toggling the APC's ability to charge the backup cell, or toggling power for the entire area via master breaker) first requires the interface to be unlocked \
-	with an ID with Engineering access or by one of the station's robots or the artificial intelligence."
-	antag_text = "This can be <span codexlink='cryptographic sequencer'>emagged</span> to unlock it.  It will cause the APC to have a blue error screen. \
-	Wires can be pulsed remotely with a signaler attached to it.  A powersink will also drain any APCs connected to the same wire the powersink is on."
+	mechanics_text = "An APC (Area Power Controller) regulates and supplies backup power for the area they are in.<br>\
+	Their power channels are divided out into 'environmental' (Items that manipulate airflow and temperature), 'lighting' (Lights), and 'equipment' (Everything else that consumes power).<br>\
+	Power consumption and backup power cell charge can be seen from the interface, further controls (turning a specific channel on, off or automatic, toggling the APC's ability to charge the backup cell, or toggling power for the entire area via master breaker) first requires the interface to be unlocked with an ID with Engineering access or by one of the station's robots or the artificial intelligence.<br>\
+	APCs, if <span codexlink='cryptographic sequencer'>emagged</span>, will be permanently unlocked, with a visible blue error screen.<br>\
+	<span codexlink='Hacking wires'>Wire hacking</l> can be useful when dealing with APCs.<br>\
+	A powersink will also drain any APCs connected to the same wire the powersink is on."
 
 /datum/codex_entry/inflatable_item
 	associated_paths = list(/obj/item/inflatable)
@@ -43,7 +39,6 @@
 	You can use this kit on a fuel tank or appropriate reagent dispenser to replenish its reserves."
 	lore_text = "Incident-065-134 was an industrial accident of note that occurred at Manufacturing Site 065. An apprentice welder failed to properly seal her fuel port, \
 	triggering a chain reaction that vaporized a crew of seven. Don't let this happen to you!"
-	antag_text = "In theory, you could hold an open flame to this pack and produce some pretty catastrophic results. The trick is getting out of the blast radius."
 
 /datum/codex_entry/gripper
 	associated_paths = list(/obj/item/gripper)

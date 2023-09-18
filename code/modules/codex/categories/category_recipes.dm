@@ -33,8 +33,7 @@
 		 _display_name =       "[recipe_name] (recipe)",     \
 		 _associated_strings = list(lowertext(recipe_name)), \
 		 _lore_text =          lore_text,                    \
-		 _mechanics_text =     mechanics_text,               \
-		 _antag_text =         recipe.antag_text             \
+		 _mechanics_text =     mechanics_text
 		)
 		entry.update_links()
 		SScodex.add_entry_by_string(entry.display_name, entry)

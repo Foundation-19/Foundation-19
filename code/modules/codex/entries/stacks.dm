@@ -1,6 +1,6 @@
 /datum/codex_entry/telecrystal
 	associated_paths = list(/obj/item/stack/telecrystal)
-	antag_text = "Telecrystals can be activated by utilizing them on devices with an actively running uplink. They will not activate on unactivated uplinks."
+	mechanics_text = "Telecrystals can be activated by utilizing them on devices with an actively running uplink. They will not activate on unactivated uplinks."
 
 /datum/codex_entry/rods
 	associated_paths = list(/obj/item/stack/material/rods)
