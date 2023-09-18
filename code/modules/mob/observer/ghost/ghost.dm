@@ -649,5 +649,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		if(jobban_isbanned(src,"Non-Safe SCP"))
 			return FALSE
+	if(PossibleSCP.stat == DEAD)
+		return FALSE
 
 	return TRUE
