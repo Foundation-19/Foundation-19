@@ -36,7 +36,7 @@
 	associated_paths = list(/obj/item/crowbar)
 	mechanics_text = "Aside from their use as a blunt weapon, crowbars are effective at prying things out, or open.<br>\
 	Click on floor tiles to pry them loose. Use alongside a <l>screwdriver</l> to install or remove windows. Force open emergency shutters. Open the panel of an unlocked APC. Pry a computer's circuit board free.<br>\
-	Crowbars can be used to bypass doors, even bolted ones, if the power's off. First, if the door is bolted, <span codexlink='welder'>weld</l> it and pry out the electronics. Then, just pry the door open!"
+	Crowbars can be used to bypass doors, even bolted ones, if the power's off. First, if the door is bolted, <span codexlink='welder'>weld</span> it and pry out the electronics. Then, just pry the door open!"
 	lore_text = "As is the case with most standard-issue tools, crowbars are a simple and timeless design, the only difference being that advanced materials like plasteel have made them uncommonly tough."
 
 /datum/codex_entry/toolbelt

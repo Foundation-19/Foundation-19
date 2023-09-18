@@ -17,7 +17,7 @@
 	Their power channels are divided out into 'environmental' (Items that manipulate airflow and temperature), 'lighting' (Lights), and 'equipment' (Everything else that consumes power).<br>\
 	Power consumption and backup power cell charge can be seen from the interface, further controls (turning a specific channel on, off or automatic, toggling the APC's ability to charge the backup cell, or toggling power for the entire area via master breaker) first requires the interface to be unlocked with an ID with Engineering access or by one of the station's robots or the artificial intelligence.<br>\
 	APCs, if <span codexlink='cryptographic sequencer'>emagged</span>, will be permanently unlocked, with a visible blue error screen.<br>\
-	<span codexlink='Hacking wires'>Wire hacking</l> can be useful when dealing with APCs.<br>\
+	<span codexlink='Hacking wires'>Wire hacking</span> can be useful when dealing with APCs.<br>\
 	A powersink will also drain any APCs connected to the same wire the powersink is on."
 
 /datum/codex_entry/inflatable_item
