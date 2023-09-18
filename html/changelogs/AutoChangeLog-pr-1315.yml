@@ -1,0 +1,4 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - bugfix: faulty null check in jobtime tracking
