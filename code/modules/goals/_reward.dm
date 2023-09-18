@@ -18,7 +18,6 @@
 		RegisterSignal(attached_goal, COMSIG_GOAL_FAILED, .proc/handle_behavior)
 
 /datum/reward/Destroy()
-	SHOULD_CALL_PARENT(TRUE)
 
 	attached_goal = null
 	. = ..()

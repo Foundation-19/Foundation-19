@@ -15,7 +15,6 @@
 	return ..()
 
 /datum/goal/Destroy()
-	SHOULD_CALL_PARENT(TRUE)
 
 	container = null
 	QDEL_LIST_NULL(rewards)
