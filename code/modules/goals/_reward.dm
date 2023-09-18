@@ -12,11 +12,16 @@
 	attached_goal = _goal
 
 	on_success = reward_success
-	RegisterSignal(attached_goal, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
 	if(reward_success)
 		RegisterSignal(attached_goal, COMSIG_GOAL_SUCCEEDED, .proc/handle_behavior)
 	else
 		RegisterSignal(attached_goal, COMSIG_GOAL_FAILED, .proc/handle_behavior)
+
+/datum/reward/Destroy()
+	SHOULD_CALL_PARENT(TRUE)
+
+	attached_goal = null
+	. = ..()
 
 /datum/reward/proc/handle_behavior()	// rewards override this, container is so the reward can grab the mob
 	log_and_message_staff("Warning: Reward of type [src.type] called default handle_behaviour().")

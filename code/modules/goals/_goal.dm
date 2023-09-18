@@ -12,11 +12,13 @@
 
 /datum/goal/New(_container)
 	container = _container
-	RegisterSignal(container, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
 	return ..()
 
 /datum/goal/Destroy()
+	SHOULD_CALL_PARENT(TRUE)
+
 	container = null
+	QDEL_LIST_NULL(rewards)
 	return ..()
 
 /datum/goal/proc/is_valid()	// is the goal mechanically viable?
