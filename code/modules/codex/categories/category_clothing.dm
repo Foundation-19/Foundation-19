@@ -1,7 +1,7 @@
 /datum/codex_category/clothing
 	name = "Clothing"
 	desc = "Dress wear, protective suits, and military armor, among other things."
-	var/list/armor_to_descriptive_term = list(
+	/*var/list/armor_to_descriptive_term = list(
 		"melee" = "blunt force",
 		"bullet" = "ballistics",
 		"laser" = "lasers",
@@ -9,7 +9,7 @@
 		"bomb" = "explosions",
 		"bio" = "biohazards",
 		"rad" = "radiation"
-		)	// not the best way to do this, but whatever
+		)*/
 
 /datum/codex_category/clothing/Initialize()
 	for(var/thing in subtypesof(/obj/item/clothing))
@@ -24,7 +24,9 @@
 
 		var/list/traits = list()
 
-		var/obj/item/clothing/temp_obj = new thing()	// this is the only way to get list vars. KILL ME NOW PLEASE
+		/*	TODO: once armor is reworked, make this functional again. Right now, I'm not even sure this is functioning right.
+
+		var/obj/item/clothing/temp_obj = new thing()
 		var/list/armor = temp_obj.armor
 		qdel(temp_obj)
 		for(var/armor_type in armor_to_descriptive_term)
@@ -45,7 +47,7 @@
 					if(71 to 80)
 						traits += "This gives a very robust defense against [armor_to_descriptive_term[armor_type]]."
 					if(81 to 100)
-						traits += "Wearing this would make you nigh-invulerable against [armor_to_descriptive_term[armor_type]]."
+						traits += "Wearing this would make you nigh-invulerable against [armor_to_descriptive_term[armor_type]]."*/
 
 		if(initial(clothing.item_flags) & ITEM_FLAG_AIRTIGHT)
 			traits += "It is airtight."
