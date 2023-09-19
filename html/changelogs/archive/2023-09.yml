@@ -20,3 +20,9 @@
   - rscdel: You don't see chat messages for objects you put in your own backpack.
   - balance: Item insertion message checks slightly improved. The item's size matters
       a little more and you can't get a message for items you can't see.
+2023-09-19:
+  KirovClassBattlecruiser:
+  - rscdel: Camera in the admin panic bunker that was in 049's cell camera network
+  - bugfix: Admin panic bunker is now named administration panic bunker
+  TheDarkElites:
+  - bugfix: faulty null check in jobtime tracking
