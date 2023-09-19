@@ -50,7 +50,7 @@
 	upgradeEmpProof()
 	upgradeXRay()
 
-	to_chat(user, "\The [src] has been upgraded. It now has X-Ray capability and EMP resistance.")
+	to_chat(user, SPAN_NOTICE("The [src] has been upgraded. It now has X-Ray capability and EMP resistance."))
 	return 1
 
 /obj/machinery/camera/apply_visual(mob/living/carbon/human/M)
@@ -178,8 +178,7 @@
 //		to_chat(user, SPAN_NOTICE("You start to [panel_open ? "close" : "open"] the camera's panel."))
 		//if(toggle_panel(user)) // No delay because no one likes screwdrivers trying to be hip and have a duration cooldown
 		panel_open = !panel_open
-		user.visible_message(SPAN_WARNING("[user] screws the camera's panel [panel_open ? "open" : "closed"]!"),
-		SPAN_NOTICE("You screw the camera's panel [panel_open ? "open" : "closed"]."))
+		user.balloon_alert_to_viewers("[user] screws the camera's panel [panel_open ? "open" : "closed"]!", "You screw the camera's panel [panel_open ? "open" : "closed"].")
 		playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 
 	else if((isWirecutter(W) || isMultitool(W)) && panel_open)
@@ -196,11 +195,11 @@
 				assembly.dir = src.dir
 				if(stat & BROKEN)
 					assembly.state = 2
-					to_chat(user, SPAN_NOTICE("You repaired \the [src] frame."))
+					user.balloon_alert(user, "You repaired \the [src] frame.")
 					cancelCameraAlarm()
 				else
 					assembly.state = 1
-					to_chat(user, SPAN_NOTICE("You cut \the [src] free from the wall."))
+					user.balloon_alert(user, "You cut \the [src] free from the wall.")
 					new /obj/item/stack/cable_coil(src.loc, length=2)
 				assembly = null //so qdel doesn't eat it.
 			qdel(src)
@@ -212,12 +211,14 @@
 		var/obj/item/paper/X = W
 		var/itemname = X.name
 		var/info = X.info
-		to_chat(U, "You hold \a [itemname] up to the camera ...")
+		user.balloon_alert(U, "You hold \a [itemname] up to the camera...")
 		for(var/mob/living/silicon/ai/O in GLOB.living_mob_list_)
-			if(!O.client) continue
-			if(U.name == "Unknown") to_chat(O, "<b>[U]</b> holds \a [itemname] up to one of your cameras ...")
-			else to_chat(O, "<b><a href='byond://?src=\ref[O];track2=\ref[O];track=\ref[U];trackname=[U.name]'>[U]</a></b> holds \a [itemname] up to one of your cameras ...")
-			show_browser(O, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
+			if(!O.client)
+				if(U.name == "Unknown")
+					to_chat(O, "<b>[U]</b> holds \a [itemname] up to one of your cameras ...")
+				else
+					to_chat(O, "<b><a href='byond://?src=\ref[O];track2=\ref[O];track=\ref[U];trackname=[U.name]'>[U]</a></b> holds \a [itemname] up to one of your cameras ...")
+					show_browser(O, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
 
 	else if(W?.damtype == BRUTE || W?.damtype == BURN) //bashing cameras
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -245,24 +246,23 @@
 	set_status(!src.status)
 	if (!(src.status))
 		if(user)
-			visible_message(SPAN_NOTICE(" [user] has deactivated [src]!"))
+			balloon_alert_to_viewers("[user] has deactivated [src]!")
 		else
-			visible_message(SPAN_NOTICE(" [src] clicks and shuts down. "))
+			balloon_alert_to_viewers("[src] clicks and shuts down.")
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		icon_state = "[initial(icon_state)]1"
 		add_hiddenprint(user)
 	else
 		if(user)
-			visible_message(SPAN_NOTICE(" [user] has reactivated [src]!"))
+			balloon_alert_to_viewers("[user] has reactivated [src]!")
 		else
-			visible_message(SPAN_NOTICE(" [src] clicks and reactivates itself. "))
+			balloon_alert_to_viewers("[src] clicks and reactivates itself.")
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		icon_state = initial(icon_state)
 		add_hiddenprint(user)
 
 /obj/machinery/camera/proc/take_damage(force, message)
-	//prob(25) gives an average of 3-4 hits
-	if (force >= toughness && (force > toughness*4 || prob(25)))
+	if (force >= toughness && (force > toughness*4))
 		destroy()
 
 //Used when someone breaks a camera
@@ -381,7 +381,7 @@
 		return 0
 
 	if(WT.remove_fuel(0, user))
-		to_chat(user, SPAN_NOTICE("You start to weld \the [src].."))
+		user.balloon_alert(user, "You start to weld \the [src]...")
 		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 		busy = 1
 		if(do_after(user, 100, src) && WT.isOn())
