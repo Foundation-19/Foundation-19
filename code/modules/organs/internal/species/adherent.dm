@@ -67,7 +67,7 @@
 /obj/item/organ/internal/powered/attack_self(mob/user)
 	. = ..()
 	if(.)
-		sound_to(user, sound('sound/effects/ding2.ogg'))
+		sound_to(user, sound('sounds/effects/ding2.ogg'))
 		if(is_broken())
 			to_chat(owner, SPAN_WARNING("\The [src] [gender == PLURAL ? "are" : "is"] too damaged to function."))
 			active = FALSE

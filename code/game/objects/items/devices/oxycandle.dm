@@ -9,7 +9,7 @@
 	var/datum/gas_mixture/air_contents = null
 	var/volume = 4600
 	var/on = 0
-	var/activation_sound = 'sound/effects/flare_start.ogg'
+	var/activation_sound = 'sounds/effects/flare_start.ogg'
 	light_color = "#e58775"
 	light_outer_range = 2
 	light_max_bright = 1
@@ -48,7 +48,7 @@
 		on = 2
 		update_icon()
 		update_held_icon()
-		playsound(get_turf(src), 'sound/effects/flare_end.ogg', 75, 1)
+		playsound(get_turf(src), 'sounds/effects/flare_end.ogg', 75, 1)
 		SetName("burnt oxygen candle")
 		desc += "This tube has exhausted its chemicals."
 		return

@@ -37,7 +37,7 @@
 						users += H
 					var/time = Floor((world.time - start[H])/10)
 					if((time >= 5) && ((time % 51) == 0))
-						H << sound('sound/effects/Heart Beat.ogg', channel = 895, volume = 70)
+						H << sound('sounds/effects/Heart Beat.ogg', channel = 895, volume = 70)
 					H.hallucination_duration = max(H.hallucination_duration, 15)
 					H.hallucination_power = max(H.hallucination_power, 70)
 					if (!cooldown[H] || (world.time >= (cooldown[H] + MESSAGE_COOLDOWN)))

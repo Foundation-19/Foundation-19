@@ -2,4 +2,4 @@
 	artist = "Comrade"
 	title = "Site 64 Perdition"
 	album = "SCP13 OST"
-	song = 'sound/music/perdition.ogg'
+	song = 'sounds/music/perdition.ogg'

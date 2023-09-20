@@ -38,7 +38,7 @@
 		missed = TRUE
 
 	if(missed) // Most likely we have a slow attack and they dodged it or we somehow got moved.
-		playsound(src, 'sound/weapons/punchmiss.ogg', 75, 1)
+		playsound(src, 'sounds/weapons/punchmiss.ogg', 75, 1)
 		visible_message(SPAN_WARNING("\The [src] misses their attack."))
 		return FALSE
 

@@ -12,7 +12,7 @@
 		leave_pylon()
 	pylon = P
 	pylon.add_overlay(pylon_image)
-	playsound(pylon,'sound/effects/phasein.ogg',40,1)
+	playsound(pylon,'sounds/effects/phasein.ogg',40,1)
 
 /mob/living/deity/proc/leave_pylon()
 	if(!pylon)

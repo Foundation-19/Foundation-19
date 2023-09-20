@@ -17,7 +17,7 @@
 		if(panel_open)
 			user.visible_message(SPAN_NOTICE("\The [user] rotates \the [src] with \the [I]."), SPAN_NOTICE("You rotate \the [src] with \the [I]."))
 			set_dir(turn(dir, 90))
-			playsound(src, 'sound/items/jaws_pry.ogg', 50, 1)
+			playsound(src, 'sounds/items/jaws_pry.ogg', 50, 1)
 		else
 			to_chat(user,SPAN_NOTICE("The maintenance panel must be screwed open for this!"))
 	else

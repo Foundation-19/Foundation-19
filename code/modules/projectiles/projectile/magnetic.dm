@@ -6,7 +6,7 @@
 	penetrating = 5
 	armor_penetration = 85
 	penetration_modifier = 1.1
-	fire_sound = 'sound/weapons/railgun.ogg'
+	fire_sound = 'sounds/weapons/railgun.ogg'
 	distance_falloff = 1
 
 /obj/item/projectile/bullet/magnetic/slug
@@ -21,5 +21,5 @@
 	icon_state = "flechette"
 	damage = 50
 	armor_penetration = 100
-	fire_sound = 'sound/weapons/rapidslice.ogg'
+	fire_sound = 'sounds/weapons/rapidslice.ogg'
 	distance_falloff = 0.5

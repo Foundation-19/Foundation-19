@@ -204,7 +204,7 @@
 	O.robotize()
 	O.status |= ORGAN_CUT_AWAY  // robotize() resets status to 0
 	visible_message(SPAN_NOTICE("\The [src] churns for a moment, then spits out \a [O]."))
-	playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
+	playsound(src, 'sounds/machines/ding.ogg', 50, TRUE)
 	return O
 
 /obj/machinery/organ_printer/robot/process_item(obj/item/W, mob/living/user)
@@ -305,7 +305,7 @@
 	O.name = "surrogate [O.name]"
 	O.color = rgb(230, 255, 230, 255) // Give it a greenish tint to show it's artificially grown
 	visible_message(SPAN_NOTICE("\The [src] churns for a moment, injects its stored DNA into the biomass, then spits out \a [O]."))
-	playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
+	playsound(src, 'sounds/machines/ding.ogg', 50, TRUE)
 	return O
 
 /obj/machinery/organ_printer/flesh/get_special_data()

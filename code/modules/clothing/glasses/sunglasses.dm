@@ -39,7 +39,7 @@
 	off_state = "sec_flash"
 	action_button_name = "Toggle Mode"
 	toggleable = TRUE
-	activation_sound = 'sound/effects/pop.ogg'
+	activation_sound = 'sounds/effects/pop.ogg'
 
 	var/on = TRUE
 	var/hud_holder

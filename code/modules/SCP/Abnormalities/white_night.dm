@@ -14,7 +14,7 @@
 	pixel_x = -16
 	pixel_y = -16
 
-	deathsound = 'sound/scp/abnormality/white_night/apostle_death.ogg'
+	deathsound = 'sounds/scp/abnormality/white_night/apostle_death.ogg'
 
 	health = 15000
 	maxHealth = 15000
@@ -116,12 +116,12 @@
 	if(holy_revival_cooldown > world.time)
 		return
 	holy_revival_cooldown = (world.time + holy_revival_cooldown_base)
-	playsound(src, 'sound/scp/abnormality/white_night/apostle_spell.ogg', 100, TRUE, 7)
+	playsound(src, 'sounds/scp/abnormality/white_night/apostle_spell.ogg', 100, TRUE, 7)
 	for(var/turf/T in range(3, src))
 		new /obj/effect/temp_visual/sparkle(T)
 	for(var/mob/living/L in range(3, src))
 		if(L.faction != "apostle")
-			playsound(L, 'sound/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE, -1)
+			playsound(L, 'sounds/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE, -1)
 			L.adjustFireLoss(holy_revival_damage)
 			L.emote("scream")
 			to_chat(L, SPAN_OCCULT("The holy light... IT BURNS!!"))
@@ -163,7 +163,7 @@
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in GetConnectedZlevels(z)) && M.client)
 			to_chat(M, FONT_LARGE(SPAN_OCCULT(apostle_line)))
-			M.playsound_local(get_turf(M), 'sound/scp/abnormality/white_night/apostle_bell.ogg', 75, FALSE)
+			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 75, FALSE)
 			flash_color(M, flash_color = "#ff0000", flash_time = 50)
 	// Allows us to begin rapture
 	if(apostles.len >= 12)
@@ -196,7 +196,7 @@
 				H.adjustBruteLoss(10)
 				H.Weaken(2)
 				shake_camera(H, 2, 1)
-	playsound(T, 'sound/effects/bamf.ogg', 100, 1)
+	playsound(T, 'sounds/effects/bamf.ogg', 100, 1)
 	forceMove(T)
 
 // The beginning of the end
@@ -209,7 +209,7 @@
 	field_range += 1 // Powercrepe
 	for(var/mob/M in GLOB.player_list)
 		if(M.client && !isnewplayer(M)) // Send it to every player currently active(outside of lobby), not just everyone on Z-level
-			M.playsound_local(get_turf(M), 'sound/scp/abnormality/white_night/rapture.ogg', 50)
+			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/rapture.ogg', 50)
 	sleep(3 SECONDS)
 	for(var/i = 1 to apostles.len)
 		var/mob/living/carbon/human/H = apostles[i]
@@ -236,10 +236,10 @@
 				if(findtext(apostle_line, "%PREV%"))
 					apostle_line = replacetext(apostle_line, "%PREV%", apostles[i - 1][2])
 				to_chat(M, FONT_LARGE(SPAN_DANGER(apostle_line)))
-				M.playsound_local(get_turf(M), 'sound/scp/abnormality/white_night/apostle_bell.ogg', 100)
+				M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 100)
 				flash_color(M, flash_color = "#ff0000", flash_time = 30)
 		sleep(6 SECONDS)
 	sleep(30 SECONDS)
 	for(var/mob/M in GLOB.player_list)
 		if(M.z == z && M.client)
-			M.playsound_local(get_turf(M), 'sound/scp/abnormality/white_night/rapture2.ogg', 50)
+			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/rapture2.ogg', 50)

@@ -11,7 +11,7 @@
 	projectile_dispersion = 1
 	projectile_accuracy = -2
 
-	projectilesound = 'sound/weapons/thudswoosh.ogg'
+	projectilesound = 'sounds/weapons/thudswoosh.ogg'
 	projectiletype = /obj/item/projectile/webball
 	base_attack_cooldown = 2 SECONDS
 
@@ -35,7 +35,7 @@
 	set waitfor = FALSE
 	set_AI_busy(TRUE)
 	var/obj/item/projectile/bola/B = new /obj/item/projectile/bola(src.loc)
-	playsound(src, 'sound/weapons/thudswoosh.ogg', 100, 1)
+	playsound(src, 'sounds/weapons/thudswoosh.ogg', 100, 1)
 	if (!B)
 		return
 	set_AI_busy(FALSE)
