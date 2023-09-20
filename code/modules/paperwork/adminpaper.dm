@@ -5,7 +5,6 @@
 	var/datum/admins/admindatum = null
 
 	var/interactions = null
-	var/isCrayon = 0
 	var/origin = null
 	var/mob/sender = null
 	/// List (`/obj/machinery/photocopier/faxmachine`). List of fax machines matching the paper's target department.
@@ -30,7 +29,6 @@
 	//Snapshot is crazy and likes putting each topic hyperlink on a seperate line from any other tags so it's nice and clean.
 	interactions += "<HR><center><font size= \"1\">The fax will transmit everything above this line</font><br>"
 	interactions += "<A href='?src=\ref[src];confirm=1'>Send fax</A> "
-	interactions += "<A href='?src=\ref[src];penmode=1'>Pen mode: [isCrayon ? "Crayon" : "Pen"]</A> "
 	interactions += "<A href='?src=\ref[src];cancel=1'>Cancel fax</A> "
 	interactions += "<BR>"
 	interactions += "<A href='?src=\ref[src];changelanguage=1'>Change language ([language])</A> "
@@ -75,7 +73,7 @@
 
 		//t = html_encode(t)
 		t = replacetext(t, "\n", "<BR>")
-		t = parsepencode(t,,, isCrayon) // Encode everything from pencode to html
+		t = parsepencode(t) // Encode everything from pencode to html
 
 
 		if(fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
@@ -105,12 +103,6 @@
 				updateinfolinks()
 				close_browser(usr, "window=[name]")
 				admindatum.faxCallback(src)
-		return
-
-	if(href_list["penmode"])
-		isCrayon = !isCrayon
-		generateInteractions()
-		updateDisplay()
 		return
 
 	if(href_list["cancel"])
