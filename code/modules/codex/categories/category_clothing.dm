@@ -18,11 +18,11 @@
 			continue
 		var/datum/codex_entry/entry = new( \
 		_display_name = "[initial(clothing.name)] (clothing)", \
-		_associated_paths = list(clothing), \
-		_lore_text = initial(clothing.desc), \
-		_mechanics_text = "")
+		_associated_paths = list(clothing))
 
 		var/list/traits = list()
+
+		traits += initial(clothing.desc)
 
 		/*	TODO: once armor is reworked, make this functional again. Right now, I'm not even sure this is functioning right.
 
@@ -87,7 +87,7 @@
 
 		traits += initial(clothing.codex_special_info)
 
-		entry.mechanics_text += jointext(traits, "<br>")
+		entry.entry_text += jointext(traits, "<br>")
 		entry.update_links()
 		SScodex.add_entry_by_string(entry.display_name, entry)
 		items += entry.display_name

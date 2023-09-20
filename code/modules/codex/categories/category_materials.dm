@@ -7,8 +7,7 @@
 		var/material/mat = thing
 		if(!mat.hidden_from_codex)
 			var/datum/codex_entry/entry = new(_display_name = "[mat.display_name] (material)")
-			entry.lore_text = mat.lore_text
-			var/list/material_info = list(mat.mechanics_text)
+			var/list/material_info = list(mat.codex_desc)
 
 			material_info += "Its melting point is [mat.melting_point] K."
 
@@ -89,7 +88,7 @@
 			if(mat.flags & MATERIAL_PADDING)
 				material_info += "It can be used to pad furniture."
 
-			entry.mechanics_text = jointext(material_info,"<br>")
+			entry.entry_text = jointext(material_info,"<br>")
 			entry.update_links()
 			SScodex.add_entry_by_string(entry.display_name, entry)
 			items += entry.display_name

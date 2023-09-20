@@ -45,13 +45,13 @@
 		var/obj/item/gun/projectile/gun = thing
 		var/datum/codex_entry/entry = new( \
 			_display_name = "[initial(gun.name)] (gun)", \
-			_associated_paths = list(gun), \
-			_lore_text = "This weapon is a ballistic weapon; it fires solid shots using a magazine or loaded rounds of ammunition. You can \
-			unload it by holding it and clicking it with an empty hand, and reload it by clicking it with a magazine, or in the case of \
-			shotguns or some rifles, by opening the breech and clicking it with individual rounds."\
-		)
+			_associated_paths = list(gun))
 
 		var/list/traits = list()
+
+		traits += "This weapon is a ballistic weapon; it fires solid shots using a magazine or loaded rounds of ammunition. You can \
+			unload it by holding it and clicking it with an empty hand, and reload it by clicking it with a magazine, or in the case of \
+			shotguns or some rifles, by opening the breech and clicking it with individual rounds."
 
 		if(initial(gun.codex_special_info))
 			traits += initial(gun.codex_special_info)
@@ -74,7 +74,7 @@
 		if(initial(gun.jam_chance))
 			traits += "It is prone to jamming."
 
-		entry.mechanics_text += jointext(traits, "<br>")
+		entry.entry_text += jointext(traits, "<br>")
 		entry.update_links()
 		SScodex.add_entry_by_string(entry.display_name, entry)
 		items += entry.display_name
@@ -91,14 +91,14 @@
 		var/obj/item/gun/energy/gun = thing
 		var/datum/codex_entry/entry = new( \
 			_display_name = "[initial(gun.name)] (gun)", \
-			_associated_paths = list(gun), \
-			_lore_text = "This weapon is an energy weapon; it runs on battery charge rather than traditional ammunition.<br>\
-			You can recharge it by placing it in a wall-mounted or table-mounted charger, such as those found in the Armory or around the site.<br>\
-			Additionally, as an energy weapon it can go straight through windows and hit whatever is on the other side, \
-			and is hitscan, making it accurate and useful against distant targets."\
-		)
+			_associated_paths = list(gun))
 
 		var/list/traits = list()
+
+		traits += "This weapon is an energy weapon; it runs on battery charge rather than traditional ammunition.<br>\
+			You can recharge it by placing it in a wall-mounted or table-mounted charger, such as those found in the Armory or around the site.<br>\
+			Additionally, as an energy weapon it can go straight through windows and hit whatever is on the other side, \
+			and is hitscan, making it accurate and useful against distant targets."
 
 		if(initial(gun.codex_special_info))
 			traits += initial(gun.codex_special_info)
@@ -110,7 +110,7 @@
 		if(initial(gun.self_recharge))
 			traits += "It recharges itself over time."
 
-		entry.mechanics_text += jointext(traits, "<br>")
+		entry.entry_text += jointext(traits, "<br>")
 		entry.update_links()
 		SScodex.add_entry_by_string(entry.display_name, entry)
 		items += entry.display_name
@@ -127,13 +127,13 @@
 		var/obj/item/gun/magnetic/gun = thing
 		var/datum/codex_entry/entry = new( \
 			_display_name = "[initial(gun.name)] (gun)", \
-			_associated_paths = list(gun), \
-			_lore_text = "This weapon is a magnetic weapon; it fires solid projectiles using a capacitive charge and magnets.<br>\
-			You can unload it by holding it and using it with an empty hand, and reload it by using it with any items the weapon accepts as ammunition.<br>\
-			Each shot not only uses ammunition, but also drains the gun's capacitor. The capacitor recharges from the inserted power cell."\
-		)
+			_associated_paths = list(gun))
 
 		var/list/traits = list()
+
+		traits += "This weapon is a magnetic weapon; it fires solid projectiles using a capacitive charge and magnets.<br>\
+			You can unload it by holding it and using it with an empty hand, and reload it by using it with any items the weapon accepts as ammunition.<br>\
+			Each shot not only uses ammunition, but also drains the gun's capacitor. The capacitor recharges from the inserted power cell."
 
 		if(initial(gun.codex_special_info))
 			traits += initial(gun.codex_special_info)
@@ -150,7 +150,7 @@
 		if (initial(gun.gun_unreliable))
 			traits += "This weapon is unreliable and has a chance of exploding in your hands when you fire it."
 
-		entry.mechanics_text += jointext(traits, "<br>")
+		entry.entry_text += jointext(traits, "<br>")
 		entry.update_links()
 		SScodex.add_entry_by_string(entry.display_name, entry)
 		items += entry.display_name
