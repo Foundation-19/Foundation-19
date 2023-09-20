@@ -18,7 +18,6 @@
 		RegisterSignal(attached_goal, COMSIG_GOAL_FAILED, .proc/handle_behavior)
 
 /datum/reward/Destroy()
-
 	attached_goal = null
 	. = ..()
 

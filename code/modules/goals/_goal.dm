@@ -15,7 +15,6 @@
 	return ..()
 
 /datum/goal/Destroy()
-
 	container = null
 	QDEL_LIST_NULL(rewards)
 	return ..()
