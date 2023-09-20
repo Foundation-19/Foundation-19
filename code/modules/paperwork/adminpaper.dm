@@ -12,15 +12,11 @@
 	/// String. The paper's target department.
 	var/department = null
 
-	var/footer = null
-	var/footerOn = FALSE
-
 	var/unformatedText = ""
 
 /obj/item/paper/admin/New()
 	..()
 	generateInteractions()
-
 
 /obj/item/paper/admin/proc/generateInteractions()
 	//clear first
@@ -32,31 +28,15 @@
 	interactions += "<A href='?src=\ref[src];cancel=1'>Cancel fax</A> "
 	interactions += "<BR>"
 	interactions += "<A href='?src=\ref[src];changelanguage=1'>Change language ([language])</A> "
-	interactions += "<A href='?src=\ref[src];togglefooter=1'>Toggle Footer</A> "
 	interactions += "<A href='?src=\ref[src];clear=1'>Clear page</A> "
 	interactions += "</center>"
 
-/obj/item/paper/admin/proc/generateFooter()
-	var/text = null
-
-	text = "<hr><font size= \"1\">"
-	text += "This transmission is intended only for the addressee and may contain confidential information. Any unauthorized disclosure is strictly prohibited. <br><br>"
-	text += "If this transmission is recieved in error, please notify both the sender and the office of [GLOB.using_map.boss_name] Internal Affairs immediately so that corrective action may be taken."
-	text += "Failure to comply is a breach of regulation and may be prosecuted to the fullest extent of the law, where applicable."
-	text += "</font>"
-
-	footer = text
-
-
 /obj/item/paper/admin/proc/adminbrowse()
 	updateinfolinks()
-	generateFooter()
 	updateDisplay()
 
 /obj/item/paper/admin/proc/updateDisplay()
-	show_browser(usr, "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps][footerOn ? footer : ""][interactions]</BODY></HTML>", "window=[name];can_close=0")
-
-
+	show_browser(usr, "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps][interactions]</BODY></HTML>", "window=[name];can_close=0")
 
 /obj/item/paper/admin/Topic(href, href_list)
 	if(href_list["write"])
@@ -98,8 +78,6 @@
 	if(href_list["confirm"])
 		switch(alert("Are you sure you want to send the fax as is?",, "Yes", "No"))
 			if("Yes")
-				if(footerOn)
-					info += footer
 				updateinfolinks()
 				close_browser(usr, "window=[name]")
 				admindatum.faxCallback(src)
@@ -112,11 +90,6 @@
 
 	if(href_list["clear"])
 		clearpaper()
-		updateDisplay()
-		return
-
-	if(href_list["togglefooter"])
-		footerOn = !footerOn
 		updateDisplay()
 		return
 
