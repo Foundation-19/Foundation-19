@@ -190,7 +190,7 @@ GLOBAL_LIST(end_titles)
 	var/disclaimer = "<br>Sponsored by [GLOB.using_map.company_name].<br>All rights reserved.<br>\
 					 This motion picture is protected under the copyright laws of the United States of America<br> and other nations throughout the world.<br>\
 					 Country of First Publication: [pick("North Korea", "South Korea", "The Russian Federation", "Germany", "the secret nation of aliens on mars that we dont know about yet", "Czech Republic", "United States of Soviet Russia", "United States of America", "The United and Independent States of Texas", "Brazil", "Spain",\
-					 "Portugal", "Vatican City", "Palestine", "Greenland", "Iceland", "Saudi Arabia", "Poland", "Slovakia")].<br>"
+					 "Portugal", "Vatican City", "Palestine", "Greenland", "Iceland", "Saudi Arabia", "Poland", "Slovakia", "Three Portlands", "Backdoor Soho", "The Ikean Senate", "UnLondon Parliament")].<br>"
 	disclaimer += pick("Use for parody prohibited. PROHIBITED.",
 					   "All stunts were performed by underpaid interns. Do NOT try at home.",
 					   "[GLOB.using_map.company_name] does not endorse behaviour depicted. Attempt at your own risk.",
