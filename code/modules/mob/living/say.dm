@@ -149,7 +149,7 @@ var/list/channel_to_radio_key = new
 	if(ending=="!")
 		return pick("exclaims","shouts","yells")
 	if(ending=="?")
-		return "asks"
+		return pick("asks","inquiries","queries")
 	return verb
 
 /mob/living/proc/format_say_message(message = null)

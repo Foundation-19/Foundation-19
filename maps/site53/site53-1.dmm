@@ -2936,7 +2936,8 @@
 /area/site53/llcz/dclass/botany)
 "gC" = (
 /obj/machinery/vending/medical{
-	dir = 4
+	dir = 4;
+	req_access = list()
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)

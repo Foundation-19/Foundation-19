@@ -194,7 +194,7 @@
 
 	var/list/mobs = sortmobs()
 	var/i = 1
-	for(var/mob/living/carbon/human/M as anything in mobs)
+	for(var/mob/living/M as anything in mobs)
 		if(!M.ckey)
 			continue
 
