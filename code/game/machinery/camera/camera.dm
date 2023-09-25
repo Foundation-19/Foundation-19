@@ -211,7 +211,7 @@
 		var/obj/item/paper/X = W
 		var/itemname = X.name
 		var/info = X.info
-		user.balloon_alert(U, "You hold \a [itemname] up to the camera...")
+		user.balloon_alert(U, "item held up to camera")
 		for(var/mob/living/silicon/ai/O in GLOB.living_mob_list_)
 			if(!O.client)
 				if(U.name == "Unknown")
