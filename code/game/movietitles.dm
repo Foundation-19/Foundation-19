@@ -185,7 +185,7 @@ GLOBAL_LIST(end_titles)
 
 	titles += "<center>[jointext(staff,"<br>")]</center>"
 	if(goodboys.len)
-		titles += "<center>STAFF'S GOOD BOYS:<br>[english_list(goodboys)]</center><br>" //wtf are goodboys? what is this fetish shit
+		titles += "<center>STAFF'S GOOD BOYS:<br>[english_list(goodboys)]</center><br>"]
 
 	var/disclaimer = "<br>Sponsored by [GLOB.using_map.company_name].<br>All rights reserved.<br>\
 					 This motion picture is protected under the copyright laws of the United States of America<br> and other nations throughout the world.<br>\
