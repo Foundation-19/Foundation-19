@@ -254,7 +254,7 @@
 		add_hiddenprint(user)
 	else
 		if(user)
-			balloon_alert_to_viewers("[user] has reactivated [src]!")
+			balloon_alert_to_viewers("camera reactived")
 		else
 			balloon_alert_to_viewers("camera self-reactivated")
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
