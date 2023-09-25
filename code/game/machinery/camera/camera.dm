@@ -381,7 +381,7 @@
 		return 0
 
 	if(WT.remove_fuel(0, user))
-		user.balloon_alert(user, "You start to weld \the [src]...")
+		user.balloon_alert(user, "welding...")
 		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
 		busy = 1
 		if(do_after(user, 100, src) && WT.isOn())
