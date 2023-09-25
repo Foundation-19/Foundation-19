@@ -246,7 +246,7 @@
 	set_status(!src.status)
 	if (!(src.status))
 		if(user)
-			balloon_alert_to_viewers("[user] has deactivated [src]!")
+			balloon_alert_to_viewers("camera deactivated")
 		else
 			balloon_alert_to_viewers("[src] clicks and shuts down.")
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
