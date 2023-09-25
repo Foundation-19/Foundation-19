@@ -549,7 +549,7 @@
 	icon_state = "head_quarters"
 
 /area/site53/uez/commandpanicbunker
-	name = "\improper Admin Panic Bunker"
+	name = "\improper Administration Panic Bunker"
 	sound_env = MEDIUM_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
