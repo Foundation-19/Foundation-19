@@ -812,12 +812,14 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 	return copiedobjs
 
-
-
-/proc/get_cardinal_dir(atom/A, atom/B)
-	var/dx = abs(B.x - A.x)
-	var/dy = abs(B.y - A.y)
-	return get_dir(A, B) & (rand() * (dx+dy) < dy ? 3 : 12)
+/// Get the cardinal direction between two atoms
+/proc/get_cardinal_dir(atom/start, atom/end)
+	var/dx = end.x - start.x
+	var/dy = end.y - start.y
+	if(abs(dx) > abs(dy))
+		return (dx > 0) ? EAST : WEST
+	else
+		return (dy > 0) ? NORTH : SOUTH
 
 //chances are 1:value. anyprob(1) will always return true
 /proc/anyprob(value)
