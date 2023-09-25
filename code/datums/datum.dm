@@ -32,6 +32,7 @@
 	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_NOT_SLEEP(TRUE)
 	tag = null
+	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
 	weakref = null // Clear this reference to ensure it's kept for as brief duration as possible.
 
 	SSnano.close_uis(src)

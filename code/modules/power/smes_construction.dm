@@ -117,7 +117,7 @@
 		var/datum/wires/smes/smes_wires = wires
 
 		//yes, I know : operator is ass. No, I can't make this better. Wires is casted to /datum/wires by default by /obj/machinery. :(
-		log_debug("SMES GROUNDING TICK: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+		log_debug("SMES GROUNDING TICK: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick! [ADMIN_JMP(src)]")
 
 	..()
 
@@ -180,7 +180,7 @@
 		var/obj/item/clothing/gloves/G = h_user.gloves
 		if(G.siemens_coefficient == 0)
 			user_protected = 1
-	log_and_message_staff("SMES FAILURE: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>")
+	log_and_message_staff("SMES FAILURE: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - [ADMIN_JMP(src)]")
 
 
 	switch (intensity)
