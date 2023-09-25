@@ -4170,7 +4170,7 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	id_tag = "engineeringcontrolroom";
-	name = "Engineering Control  Room Lockdown button"
+	name = "Engineering Control Room Lockdown button"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
@@ -15783,7 +15783,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation  3";
+	c_tag = "AIC Observation 3";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -24037,7 +24037,7 @@
 /area/site53/uhcz/scp106observ)
 "fdW" = (
 /obj/machinery/door/airlock/science{
-	name = "General Purpose Containment  Chamber";
+	name = "General Purpose Containment Chamber";
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -32987,7 +32987,7 @@
 	pixel_y = -21
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation  9";
+	c_tag = "AIC Observation 9";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -78538,7 +78538,7 @@ azA
 azA
 azA
 azA
-aec
+abY
 abW
 adU
 adU
@@ -79052,8 +79052,8 @@ azA
 azA
 azA
 azA
-aec
-aec
+abY
+abY
 aec
 aec
 bjf
