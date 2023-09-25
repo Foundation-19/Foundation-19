@@ -30,6 +30,8 @@
 
 /// sent every carbon Life()
 #define COMSIG_CARBON_LIFE "carbon_life"
+/// sent every time the security level changes
+#define COMSIG_SECURITY_LEVEL_CHANGED "security_level_change"
 /// fire by minds to do post-initialization behaviour
 #define COMSIG_MIND_POST_INIT "mind_post_init"
 

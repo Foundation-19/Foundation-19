@@ -17,7 +17,7 @@
 /atom/var/health_min_damage = 0
 
 /// Sound effect played when hit
-/atom/var/damage_hitsound = 'sound/weapons/genhit.ogg'
+/atom/var/damage_hitsound = 'sounds/weapons/genhit.ogg'
 
 /**
  * Retrieves the atom's current health, or `null` if not using health

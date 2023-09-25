@@ -29,7 +29,7 @@
 // -- Polymorph
 /obj/item/grenade/flashbang/proc/bang(turf/T , mob/living/carbon/M)
 	to_chat(M, SPAN_DANGER("BANG"))
-	playsound(src, 'sound/weapons/flashbang.ogg', 70, 1, 30)
+	playsound(src, 'sounds/weapons/flashbang.ogg', 70, 1, 30)
 
 	//Checking for protections
 	var/eye_safety = 0
@@ -83,7 +83,7 @@
 			to_chat(M, SPAN_DANGER("Your ears start to ring badly!"))
 
 	if(!ear_safety)
-		sound_to(M, 'sound/weapons/flash_ring.ogg')
+		sound_to(M, 'sounds/weapons/flash_ring.ogg')
 
 /obj/item/grenade/flashbang/Destroy()
 	walk(src, 0) // Because we might have called walk_away, we must stop the walk loop or BYOND keeps an internal reference to us forever.
@@ -112,11 +112,11 @@
 
 	for(,numspawned > 0, numspawned--)
 		new /obj/item/grenade/flashbang/cluster(src.loc)//Launches flashbangs
-		playsound(src.loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
+		playsound(src.loc, 'sounds/weapons/armbomb.ogg', 75, 1, -3)
 
 	for(,again > 0, again--)
 		new /obj/item/grenade/flashbang/clusterbang/segment(src.loc)//Creates a 'segment' that launches a few more flashbangs
-		playsound(src.loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
+		playsound(src.loc, 'sounds/weapons/armbomb.ogg', 75, 1, -3)
 	qdel(src)
 	return
 
@@ -146,7 +146,7 @@
 
 	for(,numspawned > 0, numspawned--)
 		new /obj/item/grenade/flashbang/cluster(src.loc)
-		playsound(src.loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
+		playsound(src.loc, 'sounds/weapons/armbomb.ogg', 75, 1, -3)
 	qdel(src)
 	return
 

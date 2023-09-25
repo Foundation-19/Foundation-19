@@ -51,7 +51,7 @@ code\game\dna\genes\goon_powers.dm
 	amt_eye_blurry = 20
 
 	hud_state = "wiz_blind"
-	cast_sound = 'sound/magic/blind.ogg'
+	cast_sound = 'sounds/magic/blind.ogg'
 
 /datum/spell/targeted/genetic/blind/empower_spell()
 	if(!..())
@@ -80,7 +80,7 @@ code\game\dna\genes\goon_powers.dm
 	cooldown_min = 300
 
 	hud_state = "wiz_hulk"
-	cast_sound = 'sound/magic/mutate.ogg'
+	cast_sound = 'sounds/magic/mutate.ogg'
 	effect_state = "electricity_constant"
 	effect_duration = 5
 	effect_color = "#ff0000"

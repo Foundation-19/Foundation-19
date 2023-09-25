@@ -15,7 +15,7 @@
 /obj/item/grenade/spawnergrenade/detonate(mob/living/user)
 	var/turf/origin = get_turf(src)
 	if (origin)
-		playsound(origin, 'sound/effects/phasein.ogg', 100, 1)
+		playsound(origin, 'sounds/effects/phasein.ogg', 100, 1)
 		for (var/mob/living/living in viewers(origin))
 			if (living.eyecheck() < FLASH_PROTECTION_MODERATE)
 				living.flash_eyes()

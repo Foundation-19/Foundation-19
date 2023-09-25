@@ -25,7 +25,7 @@
 		var/turf/T = get_turf(src)
 		new paper_type(T, text_to_print, paper_title, md, print_language)
 		stored_paper--
-		playsound(T, "sound/machines/dotprinter.ogg", 30)
+		playsound(T, "sounds/machines/dotprinter.ogg", 30)
 		T.visible_message(SPAN_NOTICE("\The [src] prints out a paper."))
 		return 1
 

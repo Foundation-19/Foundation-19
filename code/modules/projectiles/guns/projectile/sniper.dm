@@ -21,7 +21,7 @@
 	scope_zoom = 2
 	var/bolt_open = 0
 	wielded_item_state = "heavysniper-wielded" //sort of placeholder
-	load_sound = 'sound/weapons/guns/interaction/rifle_load.ogg'
+	load_sound = 'sounds/weapons/guns/interaction/rifle_load.ogg'
 	fire_delay = 12
 
 /obj/item/gun/projectile/heavysniper/on_update_icon()
@@ -40,7 +40,7 @@
 /obj/item/gun/projectile/heavysniper/proc/unload_shell()
 	if(chambered)
 		if(!bolt_open)
-			playsound(src.loc, 'sound/weapons/guns/interaction/rifle_boltback.ogg', 50, 1)
+			playsound(src.loc, 'sounds/weapons/guns/interaction/rifle_boltback.ogg', 50, 1)
 			bolt_open = 1
 		chambered.dropInto(src.loc)
 		loaded -= chambered
@@ -56,7 +56,7 @@
 			to_chat(user, SPAN_NOTICE("You work the bolt open."))
 	else
 		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
-		playsound(src.loc, 'sound/weapons/guns/interaction/rifle_boltforward.ogg', 50, 1)
+		playsound(src.loc, 'sounds/weapons/guns/interaction/rifle_boltforward.ogg', 50, 1)
 		bolt_open = 0
 	add_fingerprint(user)
 	update_icon()

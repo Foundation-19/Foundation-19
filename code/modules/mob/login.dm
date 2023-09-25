@@ -19,10 +19,10 @@
 					is_multikeying = 1
 				if(matches)
 					if(M.client)
-						message_staff("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as <A href='?src=\ref[usr];priv_msg=\ref[M]'>[key_name_admin(M)]</A>.</span>", 1)
+						message_staff("[SPAN_DANGER("<B>Notice:</B>")] [SPAN_INFO("[key_name_admin(src)] [ADMIN_PM(src)] has the same [matches] as [key_name_admin(M)] [ADMIN_PM(M)].")]", 1)
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)].")
 					else
-						message_staff("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as [key_name_admin(M)] (no longer logged in).</span>", 1)
+						message_staff("[SPAN_DANGER("<B>Notice:</B>")] [SPAN_INFO("[key_name_admin(src)] [ADMIN_PM(src)] has the same [matches] as [key_name_admin(M)] (no longer logged in).")]", 1)
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)] (no longer logged in).")
 		if(is_multikeying && !client.warned_about_multikeying)
 			client.warned_about_multikeying = 1
@@ -51,7 +51,7 @@
 	if(check_rights((R_ADMIN|R_MOD),0,C))
 		to_chat(C,SPAN_CLASS("staffwarn","StaffWarn: [client.ckey] [action]</span><br><span class='notice'>[client.staffwarn]"))
 		if(noise && C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
-			sound_to(C, 'sound/effects/adminhelp.ogg')
+			sound_to(C, 'sounds/effects/adminhelp.ogg')
 
 /mob
 	var/client/my_client // Need to keep track of this ourselves, since by the time Logout() is called the client has already been nulled

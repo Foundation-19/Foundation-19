@@ -107,7 +107,7 @@
 			SPAN_NOTICE("You hear the click-click <i>fwoosh</i> of a stovetop turning on.")
 		)
 		cooking = TRUE
-		playsound(src, 'sound/machines/stove_on.ogg', 100, FALSE) // 100% volume here because the sound itself is pretty quiet
+		playsound(src, 'sounds/machines/stove_on.ogg', 100, FALSE) // 100% volume here because the sound itself is pretty quiet
 		addtimer(CALLBACK(src, .proc/attempt_cook), cook_time + user_time_modifier)
 		update_icon()
 		interface_interact(user)
@@ -238,7 +238,7 @@
 	if (cooked)
 		cooked.dropInto(loc)
 	visible_message(SPAN_NOTICE("\The [src] finishes a cooking cycle."))
-	playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
+	playsound(src, 'sounds/machines/ding.ogg', 50, TRUE)
 	finish_cook()
 	updateUsrDialog()
 

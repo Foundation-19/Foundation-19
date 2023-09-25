@@ -53,8 +53,8 @@
 	storage_slots = 2
 	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER
 	var/list/can_holster //List of objects which this item can store in the designated holster slot(if unset, it will default to any holsterable items)
-	var/sound_in = 'sound/effects/holster/holsterin.ogg'
-	var/sound_out = 'sound/effects/holster/holsterout.ogg'
+	var/sound_in = 'sounds/effects/holster/holsterin.ogg'
+	var/sound_out = 'sounds/effects/holster/holsterout.ogg'
 	can_hold = list(
 		/obj/item/melee/baton,
 		/obj/item/melee/telebaton
@@ -528,8 +528,8 @@
 		/obj/item/device/flash
 		)
 	can_holster = list(/obj/item/material/hatchet/machete)
-	sound_in = 'sound/effects/holster/sheathin.ogg'
-	sound_out = 'sound/effects/holster/sheathout.ogg'
+	sound_in = 'sounds/effects/holster/sheathin.ogg'
+	sound_out = 'sounds/effects/holster/sheathout.ogg'
 
 /obj/item/storage/belt/soulstone
 	name = "soul stone belt"

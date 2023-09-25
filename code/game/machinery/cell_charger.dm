@@ -57,7 +57,7 @@
 		anchored = !anchored
 		set_power()
 		to_chat(user, "You [anchored ? "attach" : "detach"] the cell charger [anchored ? "to" : "from"] the ground")
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		playsound(src.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 
 /obj/machinery/cell_charger/physical_attack_hand(mob/user)
 	if(charging)

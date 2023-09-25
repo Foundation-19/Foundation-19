@@ -4172,17 +4172,13 @@
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "lj" = (
-/obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/slug,
-/obj/item/ammo_magazine/box/slug,
+/obj/structure/closet,
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "lk" = (
@@ -4347,7 +4343,6 @@
 	dir = 4
 	},
 /obj/structure/table/rack,
-/obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/ionrifle,
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -5111,21 +5106,8 @@
 /area/site53/uez/hallway)
 "sZ" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
 /obj/machinery/light,
+/obj/item/gun/energy/ionrifle,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "tc" = (
@@ -5719,21 +5701,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "xR" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "xX" = (
@@ -6042,20 +6010,9 @@
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
 "As" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/box/a45,
-/obj/item/ammo_magazine/box/a45,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/gun/projectile/pistol/usp45,
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "EZ Rifle Locker";
@@ -6063,7 +6020,6 @@
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
-/obj/item/gun/projectile/pistol/usp45,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "Av" = (
@@ -6189,6 +6145,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/landmark/start{
+	name = "EZ Senior Agent"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Bq" = (
@@ -6299,9 +6258,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "Cy" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a357,
-/obj/item/gun/projectile/revolver/rhino,
+/obj/machinery/vending/weaponry/ez,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "Cz" = (
@@ -6659,9 +6616,6 @@
 /area/site53/entrancezone/forensics)
 "FQ" = (
 /obj/structure/closet/secure_closet/guard/ez/sergeant,
-/obj/effect/landmark/start{
-	name = "EZ Senior Agent"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "FT" = (
@@ -6897,6 +6851,11 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "HN" = (
@@ -7643,6 +7602,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
+"OB" = (
+/obj/structure/bed/chair/office/comfy{
+	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "EZ Senior Agent"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "OC" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -8839,10 +8807,6 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/machinery/camera/network/scp049{
-	dir = 4;
-	name = "SCP-049 Medical Storage"
-	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/uez/commandpanicbunker)
 "XJ" = (
@@ -35663,7 +35627,7 @@ PR
 ZO
 dU
 Jl
-QZ
+OB
 FQ
 cX
 hk

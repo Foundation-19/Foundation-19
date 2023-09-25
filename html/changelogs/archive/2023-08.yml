@@ -26,3 +26,72 @@
   - code_imp: General TG optimized code ported.
   - refactor: AStar pathfinding changed to JPS pathfinding, which should work MUCH
       faster (and better and cleaner)
+2023-08-07:
+  TheDarkElites:
+  - bugfix: 173's pathing getting stuck.
+2023-08-08:
+  casualspacestation14enjoyer:
+  - rscadd: Ghosts now have a button for becoming an SCP, the days of navigating the
+      verb tabs is now OVER!
+  - rscdel: The derelict ship shit in character prefs is now gone.
+  - admin: Most admin verbs using the standard BYOND input() are now using TGUI inputs
+      for searching and easier application.
+2023-08-09:
+  KirovClassBattlecruiser:
+  - rscdel: deleted empty files
+  cheesePizza2:
+  - bugfix: Stacks of items are no longer duplicated with fractional inputs.
+2023-08-12:
+  Kryson, Qustinnus, EgorDinamit:
+  - rscadd: You may now become addicted to certain drugs if you've been taking them
+      for long enough. Becoming addicted is done by gaining addiction points from
+      doing drugs in a specific category; If you become addicted, you can stop being
+      addicted by lowering your addiction points until it reaches a low enough value(i.e.
+      by not taking drugs). Most addictions will have withdraval effects, however.
+  - rscadd: 'Gottheit(Grauel, Rezadone, Oxycodone, Peridaxon): A heavily addictive
+      drug that essentially fixes everything wrong with your body and organs, among
+      other things. Withdrawal is extremely lethal, however.'
+  - rscadd: 'Ossarepantes(Bicaridine, Milk, Radium at 50C): Mends broken bones while
+      dealing high brute damage and inflicting pain.'
+  - rscadd: 'Mensvir(Mindbreaker toxin, Crystallizing agent, Gold at 40C): A drug
+      that only works on psionic users. Somewhat addictive.'
+  - rscadd: 'Naltrexone(Methylphenidate, Sugar, Carbon): A medication primarily used
+      to manage alcohol, opioid and other minor drug addictions. Should not be taken
+      in cases of liver damage.'
+  - rscadd: 'Varenicline(Acetone, Phosphorous, Sodium): A medication used for smoking
+      cessation and for the treatment of blurry vision.'
+  - tweak: Added recipe for Serotrotium(Ethanol, Sugar, Lithium at 40C) and updated
+      it to have some beneficial effects.
+  - tweak: Most drugs are now addicting. This includes psionic and amnestic reagents.
+  casualspacestation14enjoyer:
+  - rscadd: HCZ, LCZ, EZ and GoI bases now have weaponry vendors in their respective
+      armories.
+  cheesePizza2:
+  - bugfix: Armor shitcode fixed
+  - imagedel: Some old bay armor icons deleted
+2023-08-13:
+  cheesePizza2:
+  - code_imp: Deletes unused graph code.
+2023-08-19:
+  EgorDinamit:
+  - tweak: Heart of the Hive(Abominable Infestation) sprite updated.
+  - tweak: Grabs of Abomination species are stronger now(you cannot act while grabbed
+      aggressively).
+2023-08-25:
+  DragonFire101:
+  - bugfix: Changed the audio Volume for the some the announcements.
+  Yawet330:
+  - tweak: 2427-3 now no longer counts monkeys as pure (should fix some edge cases)
+  - bugfix: 2427-3 can no longer rest while alive. Prevents combat resting to avoid
+      bullets.
+  - tweak: 2427-3 higher hp loss from hunger. (0.01 -> 0.035)
+  - tweak: 2427-3 HP and hit chance reduced & total damage output reduced (Fixes some
+      dodge interactions + General nerf)
+2023-08-26:
+  TheDarkElites:
+  - admin: station blueprints can only be used by admins now.
+  - bugfix: 'fix #1289'
+2023-08-28:
+  cheesePizza2:
+  - balance: Requests for Mobile Task Force squads are no longer randomly rejected.
+  - bugfix: References to ERTs replaced with references to MTF squads.

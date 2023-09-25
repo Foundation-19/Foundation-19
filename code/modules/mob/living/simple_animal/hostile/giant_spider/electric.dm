@@ -12,7 +12,7 @@
 
 
 	base_attack_cooldown = 15
-	projectilesound = 'sound/weapons/taser2.ogg'
+	projectilesound = 'sounds/weapons/taser2.ogg'
 	projectiletype = /obj/item/projectile/beam/stun/electric_spider
 
 	poison_chance = 15

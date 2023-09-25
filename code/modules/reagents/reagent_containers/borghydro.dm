@@ -102,7 +102,7 @@
 	if(href_list["reagent_index"])
 		var/index = text2num(href_list["reagent_index"])
 		if(index > 0 && index <= reagent_ids.len)
-			playsound(loc, 'sound/effects/pop.ogg', 50, 0)
+			playsound(loc, 'sounds/effects/pop.ogg', 50, 0)
 			mode = index
 			var/datum/reagent/R = reagent_ids[mode]
 			to_chat(usr, SPAN_NOTICE("Synthesizer is now producing '[initial(R.name)]'."))

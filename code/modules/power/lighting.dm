@@ -71,7 +71,7 @@
 
 		switch(stage)
 			if (LIGHT_STAGE_EMPTY)
-				playsound(loc, 'sound/items/Ratchet.ogg', 50, TRUE)
+				playsound(loc, 'sounds/items/Ratchet.ogg', 50, TRUE)
 				to_chat(user, SPAN_NOTICE("You begin deconstructing [src]."))
 				if (!user.do_skilled(30, SKILL_CONSTRUCTION, src))
 					return
@@ -79,7 +79,7 @@
 				user.visible_message(SPAN_NOTICE("[user] deconstructs [src]."), \
 					SPAN_NOTICE("You deconstruct [src]!"), \
 					SPAN_ITALIC("You hear ratcheting and metal scraping."))
-				playsound(loc, 'sound/items/Deconstruct.ogg', 75, TRUE)
+				playsound(loc, 'sounds/items/Deconstruct.ogg', 75, TRUE)
 				qdel(src)
 				return
 
@@ -100,7 +100,7 @@
 		user.visible_message(SPAN_NOTICE("[user] cuts the wires from [src]."), \
 			SPAN_NOTICE("You cut [src]'s wires and remove them from the frame'."), \
 			SPAN_ITALIC("You hear snipping and cables being cut."))
-		playsound(loc, 'sound/items/Wirecutter.ogg', 50, TRUE)
+		playsound(loc, 'sounds/items/Wirecutter.ogg', 50, TRUE)
 		return
 
 	if(istype(W, /obj/item/stack/cable_coil))
@@ -112,7 +112,7 @@
 			update_icon()
 			user.visible_message(SPAN_NOTICE("[user] adds wires to [src]."), \
 				SPAN_NOTICE("You add wires to [src]."))
-			playsound(loc, 'sound/items/Deconstruct.ogg', 50, TRUE)
+			playsound(loc, 'sounds/items/Deconstruct.ogg', 50, TRUE)
 		return
 
 	if(isScrewdriver(W))
@@ -122,7 +122,7 @@
 			user.visible_message(SPAN_NOTICE("[user] closes [src]'s casing."), \
 				SPAN_NOTICE("You close [src]'s casing."), \
 				SPAN_ITALIC("You hear screws being tightened."))
-			playsound(loc, 'sound/items/Screwdriver.ogg', 50, TRUE)
+			playsound(loc, 'sounds/items/Screwdriver.ogg', 50, TRUE)
 
 			var/obj/machinery/light/newlight = new fixture_type(loc, src)
 			newlight.set_dir(dir)
@@ -415,7 +415,7 @@
 	// attempt to stick weapon into light socket
 	else if(!lightbulb)
 		if(istype(W, /obj/item/screwdriver)) //If it's a screwdriver open it.
-			playsound(loc, 'sound/items/Screwdriver.ogg', 50, TRUE)
+			playsound(loc, 'sounds/items/Screwdriver.ogg', 50, TRUE)
 			user.visible_message(SPAN_NOTICE("[user] opens [src]'s casing."), SPAN_NOTICE("You open up [src]'s casing."), SPAN_ITALIC("You hear screws being loosened."))
 			var/obj/machinery/light_construct/C = new construct_type(loc, dir, src)
 			C.stage = LIGHT_STAGE_WIRED
@@ -518,7 +518,7 @@
 
 	if(!skip_sound_and_sparks)
 		if(lightbulb && !(lightbulb.status == LIGHT_BROKEN))
-			playsound(loc, 'sound/effects/Glasshit.ogg', 50, TRUE)
+			playsound(loc, 'sounds/effects/Glasshit.ogg', 50, TRUE)
 		if(on)
 			s.set_up(3, 1, src)
 			s.start()
@@ -659,7 +659,7 @@
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 4, l_max_bright = 1, l_color = "#da0205"),
 		)
-	sound_on = 'sound/machines/lightson.ogg'
+	sound_on = 'sounds/machines/lightson.ogg'
 
 /obj/item/light/tube/party/Initialize() //Randomly colored light tubes. Mostly for testing, but maybe someone will find a use for them.
 	. = ..()

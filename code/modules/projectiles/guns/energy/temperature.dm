@@ -3,7 +3,7 @@
 	icon = 'icons/obj/guns/freezegun.dmi'
 	icon_state = "freezegun"
 	item_state = "freezegun"
-	fire_sound = 'sound/weapons/pulse3.ogg'
+	fire_sound = 'sounds/weapons/pulse3.ogg'
 	desc = "A gun that fires projectiles that can adjust target's temperature. Can fire heat and freeze beams."
 	charge_cost = 20
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 4, TECH_POWER = 3, TECH_MAGNET = 2)

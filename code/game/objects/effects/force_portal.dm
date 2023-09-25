@@ -34,10 +34,10 @@
 		if(istype(picked, /obj/item/projectile))
 			var/obj/item/projectile/P = picked
 			P.launch(target)
-			playsound(src, P.fire_sound ? P.fire_sound : 'sound/effects/teleport.ogg', 60, 1)
+			playsound(src, P.fire_sound ? P.fire_sound : 'sounds/effects/teleport.ogg', 60, 1)
 		else
 			picked.throw_at(target, 5, 10)
-			playsound(src,'sound/effects/teleport.ogg',60,1)
+			playsound(src,'sounds/effects/teleport.ogg',60,1)
 		sleep(1)
 	qdel(src)
 
@@ -48,7 +48,7 @@
 		var/obj/O = AM
 		if(O.w_class <= ITEM_SIZE_SMALL)
 			return //Dont spam for small stuff
-	playsound(src,'sound/effects/teleport.ogg',40,1)
+	playsound(src,'sounds/effects/teleport.ogg',40,1)
 	return
 
 /obj/effect/force_portal/Bumped(atom/movable/AM)

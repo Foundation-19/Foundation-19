@@ -667,7 +667,7 @@
 			visible_message(SPAN_WARNING("\The [src] grips \the [H]'s [grabtype]."), SPAN_NOTICE("You grip \the [H]'s [grabtype]."), exclude_mobs = list(H))
 			if(!H.stat)
 				to_chat(H, SPAN_WARNING("\The [src] grips your [grabtype]."))
-		playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 15) //Quieter than hugging/grabbing but we still want some audio feedback
+		playsound(src.loc, 'sounds/weapons/thudswoosh.ogg', 15) //Quieter than hugging/grabbing but we still want some audio feedback
 
 		if(H.pull_damage())
 			to_chat(src, SPAN_DANGER("Pulling \the [H] in their current condition would probably be a bad idea."))
@@ -1015,24 +1015,26 @@
 	set category = "IC"
 	set src = usr
 
-	set_face_dir()
+	face_current_direction()
 
+/mob/proc/face_current_direction()
 	if(!facing_dir)
-		to_chat(usr, "You are now not facing anything.")
+		set_face_dir(dir)
 	else
-		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
+		set_face_dir(null)
 
+/// Sets a mobs facing_dir to newdir, and gives an alert
 /mob/proc/set_face_dir(newdir)
-	if(!isnull(facing_dir) && newdir == facing_dir)
-		facing_dir = null
-	else if(newdir)
-		set_dir(newdir)
-		facing_dir = newdir
-	else if(facing_dir)
-		facing_dir = null
+	if(newdir)
+		if(!facing_dir || facing_dir != newdir)
+			facing_dir = newdir
+			set_dir(newdir)
+
+			balloon_alert(src, "facing [dir2text(facing_dir)]")
 	else
-		set_dir(dir)
-		facing_dir = dir
+		facing_dir = null
+
+		balloon_alert(src, "not facing")
 
 /mob/set_dir()
 	if(facing_dir)
@@ -1054,22 +1056,6 @@
 		return
 	. = stat
 	stat = new_stat
-
-/mob/verb/northfaceperm()
-	set hidden = 1
-	set_face_dir(client.client_dir(NORTH))
-
-/mob/verb/southfaceperm()
-	set hidden = 1
-	set_face_dir(client.client_dir(SOUTH))
-
-/mob/verb/eastfaceperm()
-	set hidden = 1
-	set_face_dir(client.client_dir(EAST))
-
-/mob/verb/westfaceperm()
-	set hidden = 1
-	set_face_dir(client.client_dir(WEST))
 
 #define SHIFT_MAX 8
 

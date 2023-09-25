@@ -20,7 +20,7 @@
 
 /obj/item/device/kit/proc/use(amt, mob/user)
 	uses -= amt
-	playsound(get_turf(user), 'sound/items/Screwdriver.ogg', 50, 1)
+	playsound(get_turf(user), 'sounds/items/Screwdriver.ogg', 50, 1)
 	if(uses<1)
 		qdel(src)
 
@@ -91,7 +91,7 @@
 
 // exosuit kits.
 /obj/item/device/kit/paint/use(amt, mob/user)
-	playsound(get_turf(user), 'sound/items/Screwdriver.ogg', 50, 1)
+	playsound(get_turf(user), 'sounds/items/Screwdriver.ogg', 50, 1)
 
 /obj/item/device/kit/paint/flames_red
 	name = "\"Firestarter\" exosuit customisation kit"

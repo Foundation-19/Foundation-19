@@ -170,7 +170,7 @@
 			target.visible_message(SPAN_DANGER("[target] has been prodded in the [affecting.name] with [src]!"))
 		else
 			target.visible_message(SPAN_DANGER("[target] has been prodded with [src][abuser]!"))
-		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
+		playsound(loc, 'sounds/weapons/Egloves.ogg', 50, 1, -1)
 
 	//stun effects
 	if(status)

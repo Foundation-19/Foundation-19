@@ -8,7 +8,7 @@
 	idcard = /obj/item/card/id/syndicate
 	module = /obj/item/robot_module/syndicate
 	silicon_radio = /obj/item/device/radio/borg/syndicate
-	spawn_sound = 'sound/mecha/nominalsyndi.ogg'
+	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
@@ -17,7 +17,7 @@
 	scrambledcodes = TRUE
 	modtype = "Combat"
 	module = /obj/item/robot_module/security/combat
-	spawn_sound = 'sound/mecha/nominalsyndi.ogg'
+	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
@@ -35,7 +35,7 @@
 	scrambledcodes = TRUE
 	speed = -2
 	icon_state = "drone-ascent"
-	spawn_sound = 'sound/voice/ascent1.ogg'
+	spawn_sound = 'sounds/voice/ascent1.ogg'
 	cell =   /obj/item/cell/mantid
 //	laws =   /datum/ai_laws/ascent
 	idcard = /obj/item/card/id/ascent
@@ -97,7 +97,7 @@
 
 /mob/living/silicon/robot/flying/ascent/Initialize()
 	. = ..()
-	name = "[uppertext(pick(GLOB.gyne_geoforms))]-[++ascent_drone_count]"
+	name = "Strange Cyborg [rand(0, 500)]"
 
 // Sorry, you're going to have to actually deal with these guys.
 /mob/living/silicon/robot/flying/ascent/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)

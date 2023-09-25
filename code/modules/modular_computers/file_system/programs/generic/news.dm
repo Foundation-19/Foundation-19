@@ -25,7 +25,7 @@
 		return
 
 	program.computer.visible_message(SPAN_NOTICE(announcement))
-	playsound(program.computer, "sound/machines/twobeep.ogg")
+	playsound(program.computer, "sounds/machines/twobeep.ogg")
 
 /datum/nano_module/program/newscast/Destroy()
 	if (connected_group)

@@ -17,7 +17,7 @@
 				/datum/reagent/toxin/plasticide = 20
 				)
 	sale_price = 1
-	dooropen_noise = 'sound/effects/doorcreaky.ogg'
+	dooropen_noise = 'sounds/effects/doorcreaky.ogg'
 
 /material/plastic/holographic
 	name = "holo" + MATERIAL_PLASTIC
@@ -248,7 +248,7 @@
 	conductive = 0
 	hidden_from_codex = TRUE
 	construction_difficulty = MATERIAL_NORMAL_DIY
-	hitsound = 'sound/weapons/smash.ogg'
+	hitsound = 'sounds/weapons/smash.ogg'
 	integrity = 75
 	hardness = MATERIAL_RIGID
 	weight = 18
