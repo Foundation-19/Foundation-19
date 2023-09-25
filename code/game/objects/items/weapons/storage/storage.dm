@@ -210,12 +210,9 @@
 
 		if(!prevent_warning)
 			for(var/mob/M in viewers(usr, null))
-				if (M == usr)
-					to_chat(usr, SPAN_NOTICE("You put \the [W] into [src]."))
-				else if (M in range(1, src)) //If someone is standing close enough, they can tell what it is... TODO replace with distance check
-					M.show_message(SPAN_NOTICE("\The [usr] puts [W] into [src]."), VISIBLE_MESSAGE)
-				else if (W?.w_class >= ITEM_SIZE_NORMAL) //Otherwise they can only see large or normal items from a distance...
-					M.show_message(SPAN_NOTICE("\The [usr] puts [W] into [src]."), VISIBLE_MESSAGE)
+				// If we aren't the one inserting AND we can see the item AND we're close enough (enough being dependant on the size of the item), we notice the item
+				if (M != usr && M.can_see(src) && (get_dist(M, src) <= W.w_class))
+					M.show_message(SPAN_NOTICE("\The [usr] puts \the [W] into \the [src]."), VISIBLE_MESSAGE)
 
 		if(!NoUpdate)
 			update_ui_after_item_insertion()
@@ -451,3 +448,6 @@
 /obj/item/proc/get_storage_cost()
 	//If you want to prevent stuff above a certain w_class from being stored, use max_w_class
 	return BASE_STORAGE_COST(w_class)
+
+/obj/item/storage/AllowDrop()
+	return FALSE
