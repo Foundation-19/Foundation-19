@@ -129,7 +129,7 @@
 	item_flags = ITEM_FLAG_INVALID_FOR_CHAMELEON
 	matter = list()
 
-	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
+	fire_sound = 'sounds/weapons/gunshot/gunshot_pistol.ogg'
 	projectile_type = /obj/item/projectile/chameleon
 	charge_meter = 0
 	charge_cost = 20 //uses next to no power, since it's just holograms

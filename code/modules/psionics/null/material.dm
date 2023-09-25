@@ -16,12 +16,12 @@
 	opacity = 0.5
 	integrity = 30
 	shard_type = SHARD_SHARD
-	tableslam_noise = 'sound/effects/Glasshit.ogg'
+	tableslam_noise = 'sounds/effects/Glasshit.ogg'
 	hardness = 80
 	weight = 25
 	door_icon_base = "stone"
 	destruction_desc = "shatters"
-	hitsound = 'sound/effects/Glasshit.ogg'
+	hitsound = 'sounds/effects/Glasshit.ogg'
 
 /material/nullglass/generate_recipes()
 	. = ..()

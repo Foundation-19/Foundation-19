@@ -8816,10 +8816,6 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/machinery/camera/network/scp049{
-	dir = 4;
-	name = "SCP-049 Medical Storage"
-	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/uez/commandpanicbunker)
 "XJ" = (

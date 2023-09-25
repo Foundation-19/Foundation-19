@@ -43,7 +43,7 @@
 /obj/item/psychic_power/dropped()
 	..()
 	if(!silent_drop)
-		sound_to(owner, 'sound/effects/psi/power_fail.ogg')
+		sound_to(owner, 'sounds/effects/psi/power_fail.ogg')
 	qdel(src)
 
 /obj/item/psychic_power/Process()

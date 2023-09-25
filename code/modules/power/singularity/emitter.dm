@@ -195,7 +195,7 @@
 		switch(state)
 			if (EMITTER_LOOSE)
 				state = EMITTER_WRENCHED
-				playsound(loc, 'sound/items/Ratchet.ogg', 75, TRUE)
+				playsound(loc, 'sounds/items/Ratchet.ogg', 75, TRUE)
 				user.visible_message(
 					SPAN_NOTICE("\The [user] secures \the [src] to the floor."),
 					SPAN_NOTICE("You drop the external reinforcing bolts and secure them to the floor."),
@@ -204,7 +204,7 @@
 				anchored = TRUE
 			if (EMITTER_WRENCHED)
 				state = EMITTER_LOOSE
-				playsound(loc, 'sound/items/Ratchet.ogg', 75, TRUE)
+				playsound(loc, 'sounds/items/Ratchet.ogg', 75, TRUE)
 				user.visible_message(
 					SPAN_NOTICE("\The [user] unsecures \the [src] from the floor."),
 					SPAN_NOTICE("You undo the external reinforcing bolts."),
@@ -225,7 +225,7 @@
 				to_chat(user, SPAN_WARNING("\The [src] needs to be wrenched to the floor."))
 			if (EMITTER_WRENCHED)
 				if (WT.remove_fuel(0, user))
-					playsound(loc, 'sound/items/Welder.ogg', 50, TRUE)
+					playsound(loc, 'sounds/items/Welder.ogg', 50, TRUE)
 					user.visible_message(
 						SPAN_NOTICE("\The [user] starts to weld \the [src] to the floor."),
 						SPAN_NOTICE("You start to weld \the [src] to the floor."),
@@ -235,7 +235,7 @@
 						if (!WT.isOn())
 							return
 						state = EMITTER_WELDED
-						playsound(loc, 'sound/items/Welder2.ogg', 50, TRUE)
+						playsound(loc, 'sounds/items/Welder2.ogg', 50, TRUE)
 						user.visible_message(
 							SPAN_NOTICE("\The [user] welds \the [src] to the floor."),
 							SPAN_NOTICE("You weld the base of \the [src] to the floor, securing it in place."),
@@ -246,7 +246,7 @@
 					to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 			if (EMITTER_WELDED)
 				if (WT.remove_fuel(0, user))
-					playsound(loc, 'sound/items/Welder.ogg', 50, TRUE)
+					playsound(loc, 'sounds/items/Welder.ogg', 50, TRUE)
 					user.visible_message(
 						SPAN_NOTICE("\The [user] starts to cut \the [src] free from the floor."),
 						SPAN_NOTICE("You start to cut \the [src] free from the floor."),
@@ -256,7 +256,7 @@
 						if (!WT.isOn())
 							return
 						state = EMITTER_WRENCHED
-						playsound(loc, 'sound/items/Welder2.ogg', 50, TRUE)
+						playsound(loc, 'sounds/items/Welder2.ogg', 50, TRUE)
 						user.visible_message(
 							SPAN_NOTICE("\The [user] cuts \the [src] free from the floor."),
 							SPAN_NOTICE("You cut \the [src] free from the floor."),

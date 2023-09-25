@@ -104,8 +104,8 @@
 				"[user] activates \the [src]!", \
 				SPAN_NOTICE("You activate \the [src]."),
 				SPAN_CLASS("italics","You hear a click."))
-			message_staff("Power sink activated by [key_name_admin(user)] at (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
-			log_game("Power sink activated by [key_name(user)] at [get_area_name(src)]")
+			message_staff("Power sink activated by [key_name_admin(user)] at [ADMIN_JMP(src)]")
+			log_game("Power sink activated by [key_name(user)] at [get_area_by_name(src)]")
 			set_mode(OPERATING)
 
 		if(OPERATING)
@@ -140,7 +140,7 @@
 		power_drained += drained
 
 	if(power_drained > max_power * 0.95)
-		playsound(src, 'sound/effects/screech.ogg', 100, 1, 1)
+		playsound(src, 'sounds/effects/screech.ogg', 100, 1, 1)
 	if(power_drained >= max_power)
 		STOP_PROCESSING_POWER_OBJECT(src)
 		explosion(src.loc, 3,6,9,12)

@@ -65,7 +65,7 @@
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again. Cannot be less than [burst_delay+1]
 	var/burst_delay = 2	//delay between shots, if firing in bursts
 	var/move_delay = 1
-	var/fire_sound = 'sound/weapons/gunshot/gunshot.ogg'
+	var/fire_sound = 'sounds/weapons/gunshot/gunshot.ogg'
 	var/fire_sound_text = "gunshot"
 	var/fire_anim = null
 	var/screen_shake = 0 //shouldn't be greater than 2 unless zoomed
@@ -86,7 +86,7 @@
 
 	var/sel_mode = 1 //index of the currently selected mode
 	var/list/firemodes = list()
-	var/selector_sound = 'sound/weapons/guns/selector.ogg'
+	var/selector_sound = 'sounds/weapons/guns/selector.ogg'
 
 	//aiming system stuff
 	var/keep_aim = 1 	//1 for keep shooting until aim is lowered
@@ -200,7 +200,8 @@
 			toggle_safety()
 			return 1
 	if(MUTATION_HULK in M.mutations)
-		to_chat(M, SPAN_DANGER("Your fingers are much too large for the trigger guard!"))
+		balloon_alert(M, "fingers too big!")
+		to_chat(M, SPAN_DANGER("Your fingers are too big for the trigger guard!"))
 		return 0
 	if((MUTATION_CLUMSY in M.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
@@ -259,6 +260,9 @@
 
 	add_fingerprint(user)
 
+	if(user.client?.get_preference_value(/datum/client_preference/facedir_after_shoot) == GLOB.PREF_YES)	// could be signallified but w/e
+		user.set_face_dir(get_cardinal_dir(user, target))
+
 	if((!waterproof && submerged()) || !special_check(user))
 		return
 
@@ -270,8 +274,7 @@
 			return
 
 	if(world.time < next_fire_time)
-		if (world.time % 3) //to prevent spam
-			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
+		balloon_alert(user, "can't fire yet!")
 		return
 
 	last_safety_check = world.time
@@ -334,7 +337,7 @@
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
 	else
 		src.visible_message("*click click*")
-	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
+	playsound(src.loc, 'sounds/weapons/empty.ogg', 100, 1)
 	show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 
 /obj/item/gun/proc/handle_click_safety(mob/user)
@@ -346,13 +349,12 @@
 		flick(fire_anim, src)
 
 	if (user)
-		var/user_message = SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
 		if (silenced)
-			to_chat(user, user_message)
+			to_chat(user, SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"))
 		else
 			user.visible_message(
 				SPAN_DANGER("\The [user] fires \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"),
-				user_message,
+				SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"),
 				SPAN_DANGER("You hear a [fire_sound_text]!")
 			)
 
@@ -530,7 +532,7 @@
 			user.apply_damage(in_chamber.damage*2.5, in_chamber.damage_type, BP_HEAD, in_chamber.damage_flags(), used_weapon = "Point blank shot in the mouth with \a [in_chamber]")
 			user.death()
 		else
-			to_chat(user, "<span class = 'notice'>Ow...</span>")
+			to_chat(user, SPAN_NOTICE("Ow..."))
 			user.apply_effect(110,PAIN,0)
 		qdel(in_chamber)
 		mouthshoot = 0
@@ -609,7 +611,7 @@
 	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
 		new_mode = switch_firemodes(user)
 	if(new_mode)
-		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
+		balloon_alert(user, "set to [new_mode.name]")
 
 /obj/item/gun/proc/toggle_safety(mob/user)
 	if (user?.is_physically_disabled())
@@ -620,7 +622,7 @@
 	if(user)
 		user.visible_message(SPAN_WARNING("[user] switches the safety of \the [src] [safety_state ? "on" : "off"]."), SPAN_NOTICE("You switch the safety of \the [src] [safety_state ? "on" : "off"]."), range = 3)
 		last_safety_check = world.time
-		playsound(src, 'sound/weapons/flipblade.ogg', 15, 1)
+		playsound(src, 'sounds/weapons/flipblade.ogg', 15, 1)
 
 /obj/item/gun/verb/toggle_safety_verb()
 	set src in usr

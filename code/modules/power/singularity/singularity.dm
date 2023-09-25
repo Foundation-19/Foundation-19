@@ -96,7 +96,7 @@
 	var/count = locate(/obj/machinery/containment_field) in orange(30, src)
 
 	if (!count)
-		message_staff("A singulo has been created without containment fields active ([x], [y], [z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>).")
+		message_staff("A singulo has been created without containment fields active [ADMIN_COORDJMP(src)].")
 
 	investigate_log("was created. [count ? "" : FONT_COLORED("red","No containment fields were active.")]", I_SINGULO)
 

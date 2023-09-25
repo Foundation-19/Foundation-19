@@ -19,7 +19,7 @@
 	attack_armor_pen = 5	//It's a horror from beyond, I ain't gotta explain 5 AP
 
 	attacktext = list("gripped")
-	attack_sound = 'sound/hallucinations/growl1.ogg'
+	attack_sound = 'sounds/hallucinations/growl1.ogg'
 
 	ai_holder_type = /datum/ai_holder/simple_animal/melee
 
@@ -30,7 +30,7 @@
 /obj/item/natural_weapon/faithless
 	name = "shadow tendril"
 	attack_verb = list("gripped")
-	hitsound = 'sound/hallucinations/growl1.ogg'
+	hitsound = 'sounds/hallucinations/growl1.ogg'
 	damtype = BURN
 	force = 15
 

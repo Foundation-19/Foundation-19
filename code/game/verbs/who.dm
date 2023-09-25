@@ -49,7 +49,7 @@
 				entry += " - <b><font color='red'>Antagonist</font></b>"
 			if(C.is_afk())
 				entry += " (AFK - [C.inactivity2text()])"
-			entry += " (<A HREF='?_src_=holder;adminmoreinfo=\ref[C.mob]'>?</A>)"
+			entry += " [ADMIN_QUE(C.mob)]"
 			Lines += entry
 	else
 		for(var/client/C in GLOB.clients)
@@ -107,7 +107,5 @@
 		else
 			msg += line
 
-	if(config.admin_irc)
-		to_chat(src, SPAN_INFO("Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond."))
 	to_chat(src, "<b>Current Staff ([active_staff]/[total_staff]):</b>")
 	to_chat(src, jointext(msg,"\n"))

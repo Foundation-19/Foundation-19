@@ -347,7 +347,7 @@
 			to_chat(user, SPAN_NOTICE("There are no seeds in \the [O.name]."))
 		return
 	else if(isWrench(O))
-		playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
+		playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
 		anchored = !anchored
 		to_chat(user, "You [anchored ? "wrench" : "unwrench"] \the [src].")
 

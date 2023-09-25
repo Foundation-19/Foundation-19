@@ -107,7 +107,7 @@
 		else
 			anchored = !anchored
 			visible_message(SPAN_NOTICE("\The [user] [anchored ? "secured" : "unsecured"] \the [src]."))
-			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+			playsound(src.loc, 'sounds/items/Ratchet.ogg', 75, 1)
 		return
 
 	if(thing.reagents)

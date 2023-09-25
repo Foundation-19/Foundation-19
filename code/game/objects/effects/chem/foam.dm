@@ -19,7 +19,7 @@
 	..(loc)
 	icon_state = "[ismetal? "m" : ""]foam"
 	metal = ismetal
-	playsound(src, 'sound/effects/bubbles2.ogg', 80, 1, -3)
+	playsound(src, 'sounds/effects/bubbles2.ogg', 80, 1, -3)
 	spawn(3 + metal * 3)
 		Process()
 		checkReagents()

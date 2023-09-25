@@ -33,7 +33,7 @@
 /obj/item/slugegg/proc/squish()
 	src.visible_message(SPAN_WARNING("\The [src] bursts open!"))
 	new /mob/living/simple_animal/hostile/voxslug(get_turf(src))
-	playsound(src.loc,'sound/effects/attackblob.ogg',100, 1)
+	playsound(src.loc,'sounds/effects/attackblob.ogg',100, 1)
 	qdel(src)
 
 //a slug sling basically launches a small egg that hatches (either on a person or on the floor), releasing a terrible blood thirsty monster.
@@ -45,7 +45,7 @@
 	icon_state = "slugsling"
 	item_state = "spikethrower"
 	fire_sound_text = "a strange noise"
-	fire_sound = 'sound/weapons/towelwhip.ogg'
+	fire_sound = 'sounds/weapons/towelwhip.ogg'
 	release_force = 6
 	ammo_name = "slug"
 	ammo_type = /obj/item/slugegg

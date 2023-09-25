@@ -41,7 +41,7 @@
 	update_icon()
 	if(open)
 		user.visible_message(SPAN_WARNING("\The [user] opens \the [src]."))
-		playsound(user, 'sound/weapons/flipblade.ogg', 15, 1)
+		playsound(user, 'sounds/weapons/flipblade.ogg', 15, 1)
 	else
 		user.visible_message(SPAN_NOTICE("\The [user] closes \the [src]."))
 	add_fingerprint(user)
@@ -50,7 +50,7 @@
 	if(open)
 		edge = TRUE
 		sharp = TRUE
-		hitsound = 'sound/weapons/bladeslice.ogg'
+		hitsound = 'sounds/weapons/bladeslice.ogg'
 		w_class = ITEM_SIZE_NORMAL
 		attack_verb = list("slashed", "stabbed")
 		attack_cooldown_modifier = -1
