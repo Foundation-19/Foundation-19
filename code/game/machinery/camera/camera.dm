@@ -199,7 +199,7 @@
 					cancelCameraAlarm()
 				else
 					assembly.state = 1
-					user.balloon_alert(user, "You cut \the [src] free from the wall.")
+					user.balloon_alert(user, "camera removed from wall")
 					new /obj/item/stack/cable_coil(src.loc, length=2)
 				assembly = null //so qdel doesn't eat it.
 			qdel(src)
