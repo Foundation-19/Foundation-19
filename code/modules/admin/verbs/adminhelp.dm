@@ -52,7 +52,7 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 					if(found)
 						if(!(found in mobs_found))
 							mobs_found += found
-							msg += "<b>[original_word] <A HREF='?_src_=holder;adminmoreinfo=\ref[found]'>(?)</A>"
+							msg += "<b>[original_word] [ADMIN_QUE(found)]"
 							if(!ai_found && isAI(found))
 								ai_found = 1
 								msg += " <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A>"

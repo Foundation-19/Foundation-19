@@ -347,3 +347,15 @@ var/list/mob/living/forced_ambiance_list = new
 	if (src && src.area_flags & AREA_FLAG_NO_MODIFY)
 		return FALSE
 	return TRUE
+
+/**
+ * Causes a runtime error
+ */
+/area/AllowDrop()
+	CRASH("Bad op: area/AllowDrop() called")
+
+/**
+ * Causes a runtime error
+ */
+/area/drop_location()
+	CRASH("Bad op: area/drop_location() called")

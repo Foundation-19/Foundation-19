@@ -293,8 +293,8 @@
 	for(var/mob/M in mobs)
 		if(!M.ckey) continue
 
-		dat += "<tr><td>[(M.client ? "[M.client]" : "No client")]</td>"
-		dat += "<td><a href='?src=\ref[usr];priv_msg=\ref[M]'>[M.name]</a></td>"
+		dat += "<tr><td>[M.client ? "[M.client]" : "No client"]</td>"
+		dat += "<td>[M.name] [ADMIN_PM(M)]]</td>"
 		if(isAI(M))
 			dat += "<td>AI</td>"
 		else if(isrobot(M))
@@ -309,7 +309,7 @@
 			dat += "<td>Unknown</td>"
 
 
-		dat += {"<td align=center><a HREF='?src=\ref[src];adminplayeropts=\ref[M]'>X</a></td>
+		dat += {"<td align=center>[ADMIN_PP(M)]</td>
 		<td>[M.computer_id]</td>
 		<td>[M.lastKnownIP]</td>
 		<td><a href='?src=\ref[src];adminplayerobservejump=\ref[M]'>JMP</a></td>
@@ -355,7 +355,7 @@
 		dat += "Round Duration: <B>[round(world.time / 36000)]:[add_zero(world.time / 600 % 60, 2)]:[world.time / 100 % 6][world.time / 100 % 10]</B><BR>"
 
 		if(check_rights(R_DEBUG, 0))
-			dat += "<br><A HREF='?_src_=vars;Vars=\ref[evacuation_controller]'>VV Evacuation Controller</A><br>"
+			dat += "<br>[ADMIN_VV(evacuation_controller)]<br>"
 
 		if(check_rights(R_ADMIN|R_MOD, 0))
 			dat += "<b>Evacuation:</b> "
@@ -399,19 +399,20 @@
 	var/txt = {"
 		<tr>
 			<td>
-				<a href='?src=\ref[admins];adminplayeropts=\ref[M]'>[M.real_name]</a>
+				[ADMIN_PP(M)]
+				[M.real_name]
 				[M.client ? "" : " <i>(logged out)</i>"]
 				[M.is_dead() ? " <b><font color='red'>(DEAD)</font></b>" : ""]
 			</td>
 			<td>
-				<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a>
+				[ADMIN_PM(M)]
 			</td>
 	"}
 
 	if (show_objectives)
 		txt += {"
 			<td>
-				<a href='?src=\ref[admins];traitor=\ref[M]'>Show Objective</a>
+				[ADMIN_TP(M)]
 			</td>
 		"}
 

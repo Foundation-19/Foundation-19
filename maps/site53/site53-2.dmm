@@ -4170,7 +4170,7 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	id_tag = "engineeringcontrolroom";
-	name = "Engineering Control  Room Lockdown button"
+	name = "Engineering Control Room Lockdown button"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
@@ -12952,7 +12952,8 @@
 /area/site53/ulcz/hallways)
 "aJv" = (
 /obj/machinery/camera/network/hcz{
-	dir = 8
+	dir = 8;
+	name = "SCP-2427-3"
 	},
 /obj/structure/sign/scp/euclid_scp{
 	pixel_x = 32
@@ -15782,7 +15783,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation  3";
+	c_tag = "AIC Observation 3";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -16189,9 +16190,9 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/mre/random,
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
-/obj/machinery/camera/network/hcz{
+/obj/machinery/camera/network/lcz{
 	dir = 1;
-	name = "HCZ Guard Office"
+	name = "LCZ Guard Office"
 	},
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/dark,
@@ -21011,7 +21012,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/camera/network/hcz{
-	dir = 8
+	dir = 8;
+	name = "SCP-2427-3"
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
@@ -22459,7 +22461,8 @@
 /obj/structure/closet/l3closet/scientist,
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/machinery/camera/network/hcz{
-	dir = 8
+	dir = 8;
+	name = "SCP-2427-3"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
@@ -24034,7 +24037,7 @@
 /area/site53/uhcz/scp106observ)
 "fdW" = (
 /obj/machinery/door/airlock/science{
-	name = "General Purpose Containment  Chamber";
+	name = "General Purpose Containment Chamber";
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -30683,7 +30686,8 @@
 "mou" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/network/hcz{
-	dir = 8
+	dir = 8;
+	name = "SCP-2427-3"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
@@ -30922,8 +30926,7 @@
 /obj/structure/sign/warning/nosmoking_2{
 	pixel_x = 30
 	},
-/obj/machinery/camera/network/lcz{
-	c_tag = "SCP-2427-3";
+/obj/machinery/camera/network/hcz{
 	dir = 8;
 	name = "SCP-2427-3"
 	},
@@ -32104,7 +32107,8 @@
 /area/site53/uhcz/scp106containment)
 "nKv" = (
 /obj/machinery/camera/network/hcz{
-	dir = 8
+	dir = 8;
+	name = "SCP-2427-3"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
@@ -32983,7 +32987,7 @@
 	pixel_y = -21
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation  9";
+	c_tag = "AIC Observation 9";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -33565,7 +33569,7 @@
 /obj/item/handcuffs,
 /obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/under/scp/dclass,
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/hcz,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -39300,7 +39304,7 @@
 /area/site53/llcz/checkequip)
 "whL" = (
 /obj/machinery/recharge_station,
-/obj/machinery/camera/network/hcz{
+/obj/machinery/camera/network/lcz{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -78534,7 +78538,7 @@ azA
 azA
 azA
 azA
-aec
+abY
 abW
 adU
 adU
@@ -79048,8 +79052,8 @@ azA
 azA
 azA
 azA
-aec
-aec
+abY
+abY
 aec
 aec
 bjf

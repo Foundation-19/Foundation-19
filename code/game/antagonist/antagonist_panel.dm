@@ -27,11 +27,11 @@
 		var/mob/M = player.current
 		dat += "<tr>"
 		if(M)
-			dat += "<td><a href='?_src_=holder;adminplayeropts=\ref[M]'>[M.real_name]/([player.key])</a>"
+			dat += "<td>[ADMIN_PP(M)] [M.real_name]/([player.key])"
 			if(!M.client)      dat += " <i>(logged out)</i>"
 			if(M.stat == DEAD) dat += " <b><font color=red>(DEAD)</font></b>"
 			dat += "</td>"
-			dat += "<td>\[<A href='?src=\ref[caller];priv_msg=\ref[M]'>PM</A>\]\[<A href='?src=\ref[caller];traitor=\ref[M]'>TP</A>\]</td>"
+			dat += "<td>[ADMIN_PM(M)][ADMIN_TP(M)]</td>"
 		else
 			dat += "<td><i>Mob not found/([player.key])!</i></td>"
 		dat += "</tr>"
