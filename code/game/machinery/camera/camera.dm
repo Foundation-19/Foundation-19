@@ -248,7 +248,7 @@
 		if(user)
 			balloon_alert_to_viewers("camera deactivated")
 		else
-			balloon_alert_to_viewers("[src] clicks and shuts down.")
+			balloon_alert_to_viewers("camera self-deactivated")
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		icon_state = "[initial(icon_state)]1"
 		add_hiddenprint(user)
