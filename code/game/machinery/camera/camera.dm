@@ -256,7 +256,7 @@
 		if(user)
 			balloon_alert_to_viewers("[user] has reactivated [src]!")
 		else
-			balloon_alert_to_viewers("[src] clicks and reactivates itself.")
+			balloon_alert_to_viewers("camera self-reactivated")
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		icon_state = initial(icon_state)
 		add_hiddenprint(user)
