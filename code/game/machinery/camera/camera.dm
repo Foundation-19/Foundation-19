@@ -214,6 +214,7 @@
 		user.balloon_alert(U, "item held up to camera")
 		for(var/mob/living/silicon/ai/O in GLOB.living_mob_list_)
 			if(!O.client)
+				continue
 				if(U.name == "Unknown")
 					to_chat(O, "<b>[U]</b> holds \a [itemname] up to one of your cameras ...")
 				else
