@@ -10,8 +10,14 @@ SUBSYSTEM_DEF(pathfinder)
 	var/list/datum/pathfind/currentrun = list()
 	var/static/space_type_cache
 
+	/// List of turfs modified for the purpose of debug
+	var/list/debugged_turfs = list()
+	/// Overlay we use for debug path
+	var/image/path_overlay
+
 /datum/controller/subsystem/pathfinder/Initialize()
 	space_type_cache = typecacheof(/turf/space)
+	path_overlay = new('icons/misc/debug_group.dmi', "cyan")
 	. = ..()
 
 /datum/controller/subsystem/pathfinder/stat_entry(msg)
@@ -45,3 +51,44 @@ SUBSYSTEM_DEF(pathfinder)
 		active_pathing += path
 		return TRUE
 	return FALSE
+
+//This is a debug tool which can help you ensure that pathfinding is working correctly. To use, simply mark a turf you want to pathfind to, spawn the pathfinder at the start, and simply click on the pathfinder.
+
+/client/proc/pathfind()
+	set name = "Pathfind Debug"
+	set category = "Debug"
+	set desc = "Pathfind to a marked datum with visual debug."
+
+	if (!check_rights(R_DEBUG, C = usr?.client))
+		return
+
+	var/current = holder.marked_datum()
+	if(!current)
+		to_chat(usr, SPAN_WARNING("You have no marked datum to pathfind to!"))
+		return
+	if(!isturf(current))
+		to_chat(usr, SPAN_WARNING("Your marked datum is not a turf!"))
+		return
+
+	var/path = list()
+
+	if(LAZYLEN(SSpathfinder.debugged_turfs))
+		for(var/turf/T in SSpathfinder.debugged_turfs)
+			T.cut_overlay(SSpathfinder.path_overlay)
+		LAZYCLEARLIST(SSpathfinder.debugged_turfs)
+	LAZYINITLIST(SSpathfinder.debugged_turfs)
+	path = get_path_to(usr, current, 120)
+	if(LAZYLEN(path))
+		for(var/turf/T in path)
+			LAZYADD(SSpathfinder.debugged_turfs, T)
+			T.add_overlay(SSpathfinder.path_overlay)
+	else
+		to_chat(usr, SPAN_NOTICE("No path found!"))
+		return
+
+	to_chat(usr, SPAN_NOTICE("+----PATH----+"))
+	var/index = 0
+	for(var/item in path)
+		to_chat(usr, SPAN_NOTICE("| [index] - [item ? item : "null"]"))
+		index++
+	to_chat(usr, SPAN_NOTICE("+--PATH-END--+"))

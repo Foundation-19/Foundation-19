@@ -24,7 +24,7 @@
 	desc = "Blueprints of \the [station_name()]. There is a \"Classified\" stamp and several coffee stains on it."
 
 /obj/item/blueprints/attack_self(mob/M as mob)
-	if (!istype(M,/mob/living/carbon/human))
+	if (!istype(M,/mob/living/carbon/human) || !check_rights(R_ADMIN, FALSE, C = M.client))
 		to_chat(M, "This stack of blue paper means nothing to you.")//monkeys cannot into projecting
 
 		return

@@ -1,0 +1,28 @@
+2023-09-03:
+  TheDarkElites:
+  - rscadd: Z-Level Pathfinding
+  - rscadd: New pathfinder debug verb to help debug pathfinding.
+  - bugfix: 173 now properly stalks individuals through z-levels."
+  - bugfix: 173 AI should no longer be able to kill when looked at in certain situations.
+  - balance: 173 now stalks targets rather than losing interest once it can no longer
+      see them. Min distance to lose 173 is 14.
+  cheesePizza2:
+  - code_imp: Ported admin-related macros from TG.
+  - admin: Ported admin smiting from TG. Turn people into statues with ease!
+  - rscdel: Removed Psi implant automatic alert system.
+  - balance: Code Orange and Code red were merged to reduce bloat.
+  - code_imp: Alarm code cleaned up.
+2023-09-16:
+  TheDarkElites:
+  - bugfix: 'fixes #502'
+2023-09-17:
+  cheesePizza2:
+  - rscdel: You don't see chat messages for objects you put in your own backpack.
+  - balance: Item insertion message checks slightly improved. The item's size matters
+      a little more and you can't get a message for items you can't see.
+2023-09-19:
+  KirovClassBattlecruiser:
+  - rscdel: Camera in the admin panic bunker that was in 049's cell camera network
+  - bugfix: Admin panic bunker is now named administration panic bunker
+  TheDarkElites:
+  - bugfix: faulty null check in jobtime tracking

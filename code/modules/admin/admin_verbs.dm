@@ -127,7 +127,8 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
-	/datum/admins/proc/ai_hologram_set
+	/datum/admins/proc/ai_hologram_set,
+	/client/proc/smite
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -169,6 +170,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/debug_controller,
 	/client/proc/debug_antagonist_template,
+	/client/proc/pathfind,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_admin_delete,
 	/client/proc/cmd_debug_del_all,

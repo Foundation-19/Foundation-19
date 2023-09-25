@@ -200,7 +200,8 @@
 			toggle_safety()
 			return 1
 	if(MUTATION_HULK in M.mutations)
-		to_chat(M, SPAN_DANGER("Your fingers are much too large for the trigger guard!"))
+		balloon_alert(M, "fingers too big!")
+		to_chat(M, SPAN_DANGER("Your fingers are too big for the trigger guard!"))
 		return 0
 	if((MUTATION_CLUMSY in M.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
@@ -259,6 +260,9 @@
 
 	add_fingerprint(user)
 
+	if(user.client?.get_preference_value(/datum/client_preference/facedir_after_shoot) == GLOB.PREF_YES)	// could be signallified but w/e
+		user.set_face_dir(get_cardinal_dir(user, target))
+
 	if((!waterproof && submerged()) || !special_check(user))
 		return
 
@@ -270,8 +274,7 @@
 			return
 
 	if(world.time < next_fire_time)
-		if (world.time % 3) //to prevent spam
-			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
+		balloon_alert(user, "can't fire yet!")
 		return
 
 	last_safety_check = world.time
@@ -346,13 +349,12 @@
 		flick(fire_anim, src)
 
 	if (user)
-		var/user_message = SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
 		if (silenced)
-			to_chat(user, user_message)
+			to_chat(user, SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"))
 		else
 			user.visible_message(
 				SPAN_DANGER("\The [user] fires \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"),
-				user_message,
+				SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"),
 				SPAN_DANGER("You hear a [fire_sound_text]!")
 			)
 
@@ -530,7 +532,7 @@
 			user.apply_damage(in_chamber.damage*2.5, in_chamber.damage_type, BP_HEAD, in_chamber.damage_flags(), used_weapon = "Point blank shot in the mouth with \a [in_chamber]")
 			user.death()
 		else
-			to_chat(user, "<span class = 'notice'>Ow...</span>")
+			to_chat(user, SPAN_NOTICE("Ow..."))
 			user.apply_effect(110,PAIN,0)
 		qdel(in_chamber)
 		mouthshoot = 0
@@ -609,7 +611,7 @@
 	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
 		new_mode = switch_firemodes(user)
 	if(new_mode)
-		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
+		balloon_alert(user, "set to [new_mode.name]")
 
 /obj/item/gun/proc/toggle_safety(mob/user)
 	if (user?.is_physically_disabled())

@@ -40,7 +40,6 @@ var/list/airlock_overlays = list()
 	var/aiHacking = 0
 	var/obj/machinery/door/airlock/closeOther = null
 	var/closeOtherId = null
-	var/lockdownbyai = 0
 	autoclose = 1
 	var/assembly_type = /obj/structure/door_assembly
 	var/mineral = null

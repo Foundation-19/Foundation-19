@@ -900,18 +900,12 @@ FIRE ALARM
 	icon = 'icons/obj/firealarm.dmi'
 	icon_state = "casing"
 	var/detecting = 1.0
-	var/working = 1.0
-	var/time = 10.0
-	var/timing = 0.0
-	var/lockdownbyai = 0
 	anchored = TRUE
 	idle_power_usage = 2
 	active_power_usage = 6
 	power_channel = ENVIRON
-	var/last_process = 0
 	var/wiresexposed = FALSE
 	var/buildstage = 2 // 2 = complete, 1 = no wires,  0 = circuit gone
-	var/seclevel
 	var/global/list/overlays_cache
 
 /obj/machinery/firealarm/examine(mob/user)
@@ -923,6 +917,9 @@ FIRE ALARM
 /obj/machinery/firealarm/Initialize()
 	. = ..()
 	queue_icon_update()
+
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+	RegisterSignal(security_state, COMSIG_SECURITY_LEVEL_CHANGED, /atom/proc/update_icon)
 
 /obj/machinery/firealarm/proc/get_cached_overlay(state)
 	if(!LAZYACCESS(overlays_cache, state))
@@ -1043,70 +1040,34 @@ FIRE ALARM
 	src.alarm()
 	return
 
-/obj/machinery/firealarm/Process()//Note: this processing was mostly phased out due to other code, and only runs when needed
-	if(stat & (NOPOWER|BROKEN))
-		return
-
-	if(src.timing)
-		if(src.time > 0)
-			src.time = src.time - ((world.timeofday - last_process)/10)
-		else
-			src.alarm()
-			src.time = 0
-			src.timing = 0
-			STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
-		src.updateDialog()
-	last_process = world.timeofday
-
-	if(locate(/obj/fire) in loc)
-		alarm()
-
 /obj/machinery/firealarm/interface_interact(mob/user)
 	interact(user)
 	return TRUE
 
 /obj/machinery/firealarm/interact(mob/user)
 	user.set_machine(src)
-	var/area/A = src.loc
+	var/area/A = src.loc.loc
+	var/dat
 	var/d1
-	var/d2
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	if (istype(user, /mob/living/carbon/human) || istype(user, /mob/living/silicon))
-		A = A.loc
-
 		if (A.fire)
 			d1 = text("<A href='?src=\ref[];reset=1'>Reset - Lockdown</A>", src)
 		else
 			d1 = text("<A href='?src=\ref[];alarm=1'>Alarm - Lockdown</A>", src)
-		if (src.timing)
-			d2 = text("<A href='?src=\ref[];time=0'>Stop Time Lock</A>", src)
-		else
-			d2 = text("<A href='?src=\ref[];time=1'>Initiate Time Lock</A>", src)
-		var/second = round(src.time) % 60
-		var/minute = (round(src.time) - second) / 60
-		var/dat = "<HTML><HEAD></HEAD><BODY><TT><B>Fire alarm</B> [d1]\n<HR>The current alert level is <b>[security_state.current_security_level.name]</b><br><br>\nTimer System: [d2]<BR>\nTime Left: [(minute ? "[minute]:" : null)][second] <A href='?src=\ref[src];tp=-30'>-</A> <A href='?src=\ref[src];tp=-1'>-</A> <A href='?src=\ref[src];tp=1'>+</A> <A href='?src=\ref[src];tp=30'>+</A>\n</TT></BODY></HTML>"
-		var/datum/browser/popup = new(user, "firealarm", "Fire Alarm")
-		popup.set_content(dat)
-		popup.open()
-		onclose(user, "firealarm")
+		dat = "<HTML><HEAD></HEAD><BODY><TT><B>Fire alarm</B> [d1]\n<HR>The current alert level is <b>[security_state.current_security_level.name]</b>\n</TT></BODY></HTML>"
 	else
-		A = A.loc
 		if (A.fire)
 			d1 = text("<A href='?src=\ref[];reset=1'>[]</A>", src, stars("Reset - Lockdown"))
 		else
 			d1 = text("<A href='?src=\ref[];alarm=1'>[]</A>", src, stars("Alarm - Lockdown"))
-		if (src.timing)
-			d2 = text("<A href='?src=\ref[];time=0'>[]</A>", src, stars("Stop Time Lock"))
-		else
-			d2 = text("<A href='?src=\ref[];time=1'>[]</A>", src, stars("Initiate Time Lock"))
-		var/second = round(src.time) % 60
-		var/minute = (round(src.time) - second) / 60
-		var/dat = "<HTML><HEAD></HEAD><BODY><TT><B>[stars("Fire alarm")]</B> [d1]\n<HR>The current security level is <b>[security_state.current_security_level.name]</b><br><br>\nTimer System: [d2]<BR>\nTime Left: [(minute ? text("[]:", minute) : null)][second] <A href='?src=\ref[src];tp=-30'>-</A> <A href='?src=\ref[src];tp=-1'>-</A> <A href='?src=\ref[src];tp=1'>+</A> <A href='?src=\ref[src];tp=30'>+</A>\n</TT></BODY></HTML>"
-		var/datum/browser/popup = new(user, "firealarm", "Fire Alarm")
-		popup.set_content(dat)
-		popup.open()
-		onclose(user, "firealarm")
+		dat = "<HTML><HEAD></HEAD><BODY><TT><B>[stars("Fire alarm")]</B> [d1]\n<HR>The current security level is <b>[security_state.current_security_level.name]</b>\n</TT></BODY></HTML>"
+
+	var/datum/browser/popup = new(user, "firealarm", "Fire Alarm")
+	popup.set_content(dat)
+	popup.open()
+	onclose(user, "firealarm")
 	return
 
 /obj/machinery/firealarm/CanUseTopic(user)
@@ -1121,23 +1082,11 @@ FIRE ALARM
 	else if (href_list["alarm"])
 		src.alarm()
 		. = TOPIC_REFRESH
-	else if (href_list["time"])
-		src.timing = text2num(href_list["time"])
-		last_process = world.timeofday
-		START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
-		. = TOPIC_REFRESH
-	else if (href_list["tp"])
-		var/tp = text2num(href_list["tp"])
-		src.time += tp
-		src.time = min(max(round(src.time), 0), 120)
-		. = TOPIC_REFRESH
 
 	if(. == TOPIC_REFRESH)
 		interact(user)
 
 /obj/machinery/firealarm/proc/reset()
-	if (!( src.working ))
-		return
 	var/area/area = get_area(src)
 	for(var/obj/machinery/firealarm/FA in area)
 		GLOB.fire_alarm.clearAlarm(loc, FA)
@@ -1145,16 +1094,12 @@ FIRE ALARM
 	return
 
 /obj/machinery/firealarm/proc/alarm(duration = 0)
-	if (!( src.working))
-		return
 	var/area/area = get_area(src)
 	for(var/obj/machinery/firealarm/FA in area)
 		GLOB.fire_alarm.triggerAlarm(loc, FA, duration)
 	update_icon()
 	playsound(src, 'sounds/machines/fire_alarm.ogg', 75, 0)
 	return
-
-
 
 /obj/machinery/firealarm/New(loc, dir, atom/frame)
 	..(loc)
@@ -1166,7 +1111,7 @@ FIRE ALARM
 		buildstage = 0
 		wiresexposed = TRUE
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -21 : 21)
-		pixel_y = (dir & 3)? (dir ==1 ? -21 : 21) : 0
+		pixel_y = (dir & 3)? (dir == 1 ? -21 : 21) : 0
 		update_icon()
 		frame.transfer_fingerprints_to(src)
 
@@ -1186,97 +1131,3 @@ Just a object used in constructing fire alarms
 	desc = "A circuit. It has a label on it, it says \"Can handle heat levels up to 40 degrees celsius!\"."
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50)
-
-/obj/machinery/partyalarm
-	name = "\improper PARTY BUTTON"
-	desc = "Cuban Pete is in the house!"
-	icon = 'icons/obj/monitors.dmi'
-	icon_state = "fire0"
-	var/detecting = 1.0
-	var/working = 1.0
-	var/time = 10.0
-	var/timing = 0.0
-	var/lockdownbyai = 0
-	anchored = TRUE
-	idle_power_usage = 2
-	active_power_usage = 6
-
-/obj/machinery/partyalarm/interface_interact(mob/user)
-	interact(user)
-	return TRUE
-
-/obj/machinery/partyalarm/interact(mob/user)
-	user.machine = src
-	var/area/A = get_area(src)
-	ASSERT(isarea(A))
-	var/d1
-	var/d2
-	if (istype(user, /mob/living/carbon/human) || istype(user, /mob/living/silicon/ai))
-
-		if (A.party)
-			d1 = text("<A href='?src=\ref[];reset=1'>No Party :(</A>", src)
-		else
-			d1 = text("<A href='?src=\ref[];alarm=1'>PARTY!!!</A>", src)
-		if (timing)
-			d2 = text("<A href='?src=\ref[];time=0'>Stop Time Lock</A>", src)
-		else
-			d2 = text("<A href='?src=\ref[];time=1'>Initiate Time Lock</A>", src)
-		var/second = time % 60
-		var/minute = (time - second) / 60
-		var/dat = text("<HTML><HEAD></HEAD><BODY><TT><B>Party Button</B> []\n<HR>\nTimer System: []<BR>\nTime Left: [][] <A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A>\n</TT></BODY></HTML>", d1, d2, (minute ? text("[]:", minute) : null), second, src, src, src, src)
-		var/datum/browser/popup = new(user, "partyalarm", "Party Alarm")
-		popup.set_content(dat)
-		popup.open()
-		onclose(user, "partyalarm")
-	else
-		if (A.fire)
-			d1 = text("<A href='?src=\ref[];reset=1'>[]</A>", src, stars("No Party :("))
-		else
-			d1 = text("<A href='?src=\ref[];alarm=1'>[]</A>", src, stars("PARTY!!!"))
-		if (timing)
-			d2 = text("<A href='?src=\ref[];time=0'>[]</A>", src, stars("Stop Time Lock"))
-		else
-			d2 = text("<A href='?src=\ref[];time=1'>[]</A>", src, stars("Initiate Time Lock"))
-		var/second = time % 60
-		var/minute = (time - second) / 60
-		var/dat = text("<HTML><HEAD></HEAD><BODY><TT><B>[]</B> []\n<HR>\nTimer System: []<BR>\nTime Left: [][] <A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A>\n</TT></BODY></HTML>", stars("Party Button"), d1, d2, (minute ? text("[]:", minute) : null), second, src, src, src, src)
-		var/datum/browser/popup = new(user, "partyalarm", "Party Alarm")
-		popup.set_content(dat)
-		popup.open()
-		onclose(user, "partyalarm")
-	return
-
-/obj/machinery/partyalarm/proc/reset()
-	if (!( working ))
-		return
-	var/area/A = get_area(src)
-	ASSERT(isarea(A))
-	A.partyreset()
-	return
-
-/obj/machinery/partyalarm/proc/alarm()
-	if (!( working ))
-		return
-	var/area/A = get_area(src)
-	ASSERT(isarea(A))
-	A.partyalert()
-	return
-
-/obj/machinery/partyalarm/OnTopic(user, href_list)
-	if (href_list["reset"])
-		reset()
-		. = TOPIC_REFRESH
-	else if (href_list["alarm"])
-		alarm()
-		. = TOPIC_REFRESH
-	else if (href_list["time"])
-		timing = text2num(href_list["time"])
-		. = TOPIC_REFRESH
-	else if (href_list["tp"])
-		var/tp = text2num(href_list["tp"])
-		time += tp
-		time = min(max(round(time), 0), 120)
-		. = TOPIC_REFRESH
-
-	if(. == TOPIC_REFRESH)
-		interact(user)

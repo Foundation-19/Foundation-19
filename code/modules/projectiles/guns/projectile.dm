@@ -72,7 +72,7 @@
 			if(prob(user.skill_fail_chance(SKILL_WEAPONS, 100, SKILL_MASTER)))
 				return null
 			else
-				to_chat(user, SPAN_NOTICE("You reflexively clear the jam on \the [src]."))
+				balloon_alert(user, "jam cleared")
 				is_jammed = 0
 				playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 	if(is_jammed)
@@ -149,17 +149,14 @@
 		switch(AM.mag_type)
 			if(MAGAZINE)
 				if((ispath(allowed_magazines) && !istype(A, allowed_magazines)) || (islist(allowed_magazines) && !is_type_in_list(A, allowed_magazines)))
-					to_chat(user, SPAN_WARNING("\The [A] won't fit into [src]."))
+					balloon_alert(user, "won't fit!")
 					return
 				if(ammo_magazine)
-					if(user.a_intent == I_HELP || user.a_intent == I_DISARM || !user.skill_check(SKILL_WEAPONS, SKILL_EXPERIENCED))
-						to_chat(user, SPAN_WARNING("[src] already has a magazine loaded."))//already a magazine here
+					if(!can_special_reload || user.a_intent == I_HELP || user.a_intent == I_DISARM || !user.skill_check(SKILL_WEAPONS, SKILL_EXPERIENCED))
+						balloon_alert(user, "already has a magazine!") //already a magazine here
 						return
 					else
 						if(user.a_intent == I_GRAB) //Tactical reloading
-							if(!can_special_reload)
-								to_chat(user, SPAN_WARNING("You can't tactically reload this gun!"))
-								return
 							//Experienced gets a 1 second delay, master gets a 0.5 second delay
 							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src, bonus_percentage = 25))
 								return
@@ -170,9 +167,6 @@
 							user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
 												SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
 						else //Speed reloading
-							if(!can_special_reload)
-								to_chat(user, SPAN_WARNING("You can't speed reload with this gun!"))
-								return
 							//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
 							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src, bonus_percentage = 25))
 								return
@@ -196,7 +190,7 @@
 				show_sound_effect(loc, user, SFX_ICON_SMALL)
 			if(SPEEDLOADER)
 				if(loaded.len >= max_shells)
-					to_chat(user, SPAN_WARNING("[src] is full!"))
+					balloon_alert(user, "full!")
 					return
 				var/count = 0
 				for(var/obj/item/ammo_casing/C in AM.stored_ammo)
@@ -217,7 +211,7 @@
 		if(!(load_method & SINGLE_CASING) || caliber != C.caliber)
 			return //incompatible
 		if(loaded.len >= max_shells)
-			to_chat(user, SPAN_WARNING("[src] is full."))
+			balloon_alert(user, "full!")
 			return
 		if(!user.unEquip(C, src))
 			return
@@ -266,7 +260,7 @@
 			user.put_in_hands(C)
 			user.visible_message("[user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from [src]."))
 	else
-		to_chat(user, SPAN_WARNING("[src] is empty."))
+		balloon_alert(user, "empty!")
 	update_icon()
 
 /obj/item/gun/projectile/attackby(obj/item/A as obj, mob/user as mob)
