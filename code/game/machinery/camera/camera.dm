@@ -195,7 +195,7 @@
 				assembly.dir = src.dir
 				if(stat & BROKEN)
 					assembly.state = 2
-					user.balloon_alert(user, "You repaired \the [src] frame.")
+					user.balloon_alert(user, "camera repaired")
 					cancelCameraAlarm()
 				else
 					assembly.state = 1
