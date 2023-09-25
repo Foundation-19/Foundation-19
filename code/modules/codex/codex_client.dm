@@ -49,7 +49,12 @@
 	if(!mob || !SScodex)
 		return
 
-	var/datum/codex_entry/entry = SScodex.get_codex_entry("nexus")
+	var/datum/codex_entry/entry = SScodex.get_codex_entry("codex")
 	SScodex.present_codex_entry(mob, entry)
+
+/client/proc/codex_topic(href, href_list)
+	if(href_list["codex_search"]) //nano throwing errors
+		search_codex()
+		return TRUE
 
 #undef MAX_CODEX_SEARCH_ENTRIES

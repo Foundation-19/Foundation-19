@@ -1,5 +1,6 @@
 /datum/codex_entry/pen
 	associated_paths = list()
+	associated_strings = list("Paperwork")
 	entry_text = {"Used for writing down your thoughts, on paper or elsewhere. The following special commands are available:<br><br>
 \[br\] : Creates a linebreak.<br>
 \[center\] - \[/center\] : Centers the text.<br>

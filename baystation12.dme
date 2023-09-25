@@ -1736,6 +1736,7 @@
 #include "code\modules\codex\categories\category_cultures.dm"
 #include "code\modules\codex\categories\category_gases.dm"
 #include "code\modules\codex\categories\category_guns.dm"
+#include "code\modules\codex\categories\category_jobs.dm"
 #include "code\modules\codex\categories\category_languages.dm"
 #include "code\modules\codex\categories\category_materials.dm"
 #include "code\modules\codex\categories\category_reagents.dm"

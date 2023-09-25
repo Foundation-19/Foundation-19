@@ -39,6 +39,7 @@
 			Even stranger organizations that possess suitable replacements commonly fall back on traditional weaponry \
 			when the anomalous fails them. Usage of ballistic weaponry is discouraged in non-emergency situations, \
 			as a missed shot or careless use of automatic fire could destroy fundamental infrastructure or injure bystanders with ease."
+	hide_from_homepage = TRUE
 
 /datum/codex_category/gun_cat/projectile/Initialize()
 	for(var/thing in subtypesof(/obj/item/gun/projectile))
@@ -85,6 +86,7 @@
 	name = "Energy Guns"
 	desc = "Mundane lasers produce nowhere near enough energy to cause lasting damage (barring vision loss), but advances\
 	in paratechnology allow organizations with anomalous knowhow to produce specially designed energy-based weaponry."
+	hide_from_homepage = TRUE
 
 /datum/codex_category/gun_cat/energy/Initialize()
 	for(var/thing in subtypesof(/obj/item/gun/energy))
@@ -121,6 +123,7 @@
 	name = "Railguns"
 	desc = "While railguns aren't viable for use in the mundane world, some anomalies require the usage of electromagnetically-delivered payloads. \
 	Thankfully, technological developments have made powerful and (relatively) cheap para-railguns to rival these anomalies."
+	hide_from_homepage = TRUE
 
 /datum/codex_category/gun_cat/magnetic/Initialize()
 	for(var/thing in subtypesof(/obj/item/gun/magnetic))

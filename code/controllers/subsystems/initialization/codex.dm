@@ -77,6 +77,17 @@ SUBSYSTEM_DEF(codex)
 	return entries_by_string[lowertext(trim(string))]
 
 /datum/controller/subsystem/codex/proc/present_codex_entry(mob/presenting_to, datum/codex_entry/entry)
+	var/client/C
+
+	if (!istype(presenting_to))
+		if (istype(presenting_to, /client))
+			C = presenting_to
+			presenting_to = C.mob
+		else
+			return
+	else
+		C = presenting_to.client
+
 	if(entry && istype(presenting_to) && presenting_to.client)
 		var/datum/browser/popup = new(presenting_to, "codex", "Codex", nheight=425)
 		popup.set_content(parse_links(entry.get_text(presenting_to), presenting_to))

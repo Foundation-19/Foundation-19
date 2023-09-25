@@ -29,10 +29,9 @@
 
 /datum/codex_entry/proc/get_header(mob/presenting_to)
 	var/list/dat = list()
-	var/datum/codex_entry/linked_entry = SScodex.get_entry_by_string("nexus")
+	var/datum/codex_entry/linked_entry = SScodex.get_codex_entry("codex")
 	dat += "<a href='?src=\ref[SScodex];show_examined_info=\ref[linked_entry];show_to=\ref[presenting_to]'>Home</a>"
 	dat += "<a href='?src=\ref[presenting_to.client];codex_search=1'>Search Codex</a>"
-	dat += "<a href='?src=\ref[presenting_to.client];codex_index=1'>List All Entries</a>"
 	dat += "<hr><h2>[display_name]</h2>"
 	return jointext(dat, null)
 

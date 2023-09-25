@@ -1,6 +1,8 @@
 /datum/codex_category
 	var/name = "Generic Category"
 	var/desc = "Some description for a category's codex entry."
+	/// If true, this category will not be shown at the codex main page. Useful for subcategories.
+	var/hide_from_homepage = FALSE
 	var/list/items = list()
 
 //Children should call ..() at the end after filling the items list
