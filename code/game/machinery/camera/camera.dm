@@ -178,7 +178,7 @@
 //		to_chat(user, SPAN_NOTICE("You start to [panel_open ? "close" : "open"] the camera's panel."))
 		//if(toggle_panel(user)) // No delay because no one likes screwdrivers trying to be hip and have a duration cooldown
 		panel_open = !panel_open
-		user.balloon_alert_to_viewers("[user] screws the camera's panel [panel_open ? "open" : "closed"]!", "You screw the camera's panel [panel_open ? "open" : "closed"].")
+		user.balloon_alert_to_viewers("camera panel screwed [panel_open ? "open" : "closed"]")
 		playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 
 	else if((isWirecutter(W) || isMultitool(W)) && panel_open)
