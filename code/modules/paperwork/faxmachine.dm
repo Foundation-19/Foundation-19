@@ -263,7 +263,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 
 					switch(action)
 						if("Modify")
-							var/t =  sanitize(ai.input("Enter what you want to write:", "Write", html2pencode(paper_copy.info), null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
+							var/t =  sanitize(input(ai, "Enter what you want to write:", "Write", html2pencode(paper_copy.info), null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
 
 							if(!t)
 								continue
