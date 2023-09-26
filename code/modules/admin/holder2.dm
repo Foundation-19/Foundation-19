@@ -4,13 +4,18 @@
 
 GLOBAL_LIST_EMPTY(admin_datums)
 
+GLOBAL_VAR_INIT(href_token, GenerateToken())
+GLOBAL_PROTECT(href_token)
+
 /datum/admins
 	var/rank         = "Temporary Admin"
 	var/client/owner = null
 	var/rights       = 0
 	var/stealthy_    = STEALTH_OFF
 
-	var/weakref/marked_datum_weak
+	var/weakref/marked_datum_weakref
+
+	var/href_token
 
 	var/admincaster_screen = 0	//See newscaster.dm under machinery for a full description
 	var/datum/feed_message/admincaster_feed_message = new /datum/feed_message   //These two will act as holders.
@@ -20,8 +25,8 @@ GLOBAL_LIST_EMPTY(admin_datums)
 	var/datum/admins/logging/logging
 
 /datum/admins/proc/marked_datum()
-	if(marked_datum_weak)
-		return marked_datum_weak.resolve()
+	if(marked_datum_weakref)
+		return marked_datum_weakref.resolve()
 
 /datum/admins/New(initial_rank = "Temporary Admin", initial_rights = 0, ckey)
 	if(!ckey)
@@ -32,6 +37,7 @@ GLOBAL_LIST_EMPTY(admin_datums)
 	rank = initial_rank
 	rights = initial_rights
 	GLOB.admin_datums[ckey] = src
+	href_token = GenerateToken()
 	if (rights & R_DEBUG)
 		world.SetConfig("APP/admin", ckey, "role=admin")
 
@@ -145,6 +151,28 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		to_chat(src, SPAN_NOTICE("You are no longer stealthed."))
 	log_and_message_staff("has turned stealth mode [holder.stealthy_ ? "ON" : "OFF"]")
 	SSstatistics.add_field_details("admin_verb","SM") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/proc/GenerateToken()
+	. = ""
+	for(var/I in 1 to 32)
+		. += "[rand(10)]"
+
+/proc/RawHrefToken(forceGlobal = FALSE)
+	var/tok = GLOB.href_token
+	if(!forceGlobal && usr)
+		var/client/C = usr.client
+		if(!C)
+			CRASH("No client for HrefToken()!")
+		var/datum/admins/holder = C.holder
+		if(holder)
+			tok = holder.href_token
+	return tok
+
+/proc/HrefToken(forceGlobal = FALSE)
+	return "admin_token=[RawHrefToken(forceGlobal)]"
+
+/proc/HrefTokenFormField(forceGlobal = FALSE)
+	return "<input type='hidden' name='admin_token' value='[RawHrefToken(forceGlobal)]'>"
 
 #undef STEALTH_OFF
 #undef STEALTH_MANUAL

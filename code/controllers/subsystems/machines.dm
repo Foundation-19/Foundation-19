@@ -206,6 +206,18 @@ SUBSYSTEM_DEF(machines)
 			queue.Cut(i)
 			return
 
+/// Gets a list of all machines that are either the passed type or a subtype.
+/datum/controller/subsystem/machines/proc/get_machines_by_type_and_subtypes(obj/machinery/machine_type)
+	if(!ispath(machine_type))
+		machine_type = machine_type.type
+	if(!ispath(machine_type, /obj/machinery))
+		CRASH("called get_machines_by_type_and_subtypes with a non-machine type [machine_type]")
+	var/list/machines = list()
+	for(var/thing in machinery)
+		var/obj/machinery/MC = thing
+		if(istype(MC, machine_type))
+			machines += MC
+	return machines
 
 #undef SSMACHINES_PIPENETS
 #undef SSMACHINES_MACHINERY
