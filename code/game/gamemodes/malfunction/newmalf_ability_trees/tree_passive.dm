@@ -46,7 +46,7 @@
 	..()
 	if(!user)
 		return
-	to_chat(user, SPAN_NOTICE("You have completely overtaken a nearby quantum relay. No remote communications will work."))
+	to_chat(user, SPAN_NOTICE("You have completely overtaken a nearby relay server. You can view any in- or outgoing messages, and modify or block them at will."))
 	user.intercepts_communication = 1
 
 

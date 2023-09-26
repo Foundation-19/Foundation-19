@@ -282,7 +282,7 @@
 				head.forehead_graffiti = null
 				head.graffiti_style = null
 
-/obj/item/paper/proc/addtofield(id, text, links = 0)
+/obj/item/paper/proc/addtofield(id, text, links = FALSE)
 	var/locid = 0
 	var/laststart = 1
 	var/textindex = 1
@@ -322,7 +322,7 @@
 	info_links = info
 	var/i = 0
 	for(i=1,i<=fields,i++)
-		addtofield(i, "<font face=\"[deffont]\"><A href='?src=\ref[src];write=[i]'>write</A></font>", 1)
+		addtofield(i, "<font face=\"[deffont]\"><A href='?src=\ref[src];write=[i]'>write</A></font>", TRUE)
 	info_links = info_links + "<font face=\"[deffont]\"><A href='?src=\ref[src];write=end'>write</A></font>"
 
 
@@ -415,7 +415,6 @@
 
 	if(href_list["write"])
 		var/id = href_list["write"]
-		//var/t = strip_html_simple(input(usr, "What text do you wish to add to " + (id=="end" ? "the end of the paper" : "field "+id) + "?", "[name]", null),8192) as message
 
 		if(free_space <= 0)
 			to_chat(usr, SPAN_INFO("There isn't enough space left on \the [src] to write anything."))

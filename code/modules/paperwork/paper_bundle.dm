@@ -98,7 +98,7 @@
 /obj/item/paper_bundle/examine(mob/user, distance)
 	. = ..()
 	if(distance <= 1)
-		src.show_content(user)
+		show_content(user)
 	else
 		to_chat(user, SPAN_NOTICE("It is too far away."))
 

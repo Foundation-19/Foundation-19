@@ -246,11 +246,76 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		return
 
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
+
+	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
+
+	// this is so fucking ghetto
+	if(intercepters.len)
+		for(var/thing in intercepters)
+			var/mob/living/silicon/ai/ai = thing
+
+			if(tgui_alert(ai, "Outgoing fax from [department] to [destination]!", "Fax intercepted", list("Intercept", "Allow"), timeout = 30 SECONDS) == "Intercept")
+
+				if(istype(rcvdcopy, /obj/item/paper))
+					var/obj/item/paper/paper_copy = rcvdcopy
+					paper_copy.show_content(ai, TRUE)
+					var/action = tgui_alert(ai, "Modify, block, or allow fax?", "Choose action", list("Modify", "Block", "Allow"))
+
+					switch(action)
+						if("Modify")
+							var/t =  sanitize(ai.input("Enter what you want to write:", "Write", html2pencode(paper_copy.info), null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
+
+							if(!t)
+								continue
+
+							t = replacetext(t, "\n", "<BR>")
+							t = paper_copy.parsepencode(t) // Encode everything from pencode to html
+
+							//Count the fields
+							var/field_count = 0
+							var/laststart = 1
+							while(field_count <= 50)
+								var/i = findtext(t, "<span class=\"paper_field\">", laststart)	//</span>
+								if(i==0)
+									break
+								laststart = i + 1
+								field_count++
+
+							if(field_count > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
+								to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
+								continue
+
+							paper_copy.info = t // set the file to the new text
+							paper_copy.updateinfolinks()
+
+							//manualy set freespace
+							paper_copy.free_space = MAX_PAPER_MESSAGE_LEN - length(strip_html_properly(t))
+							paper_copy.update_icon()
+
+						if("Block")
+							paper_copy = null
+							QDEL_NULL(rcvdcopy)
+							return
+				else if(istype(rcvdcopy, /obj/item/photo))
+					var/obj/item/photo/photo_copy = rcvdcopy
+					photo_copy.show(ai)
+
+					if(tgui_alert(ai, "Block or allow fax?", "Choose action", list("Block", "Allow")) == "Block")
+						photo_copy = null
+						QDEL_NULL(rcvdcopy)
+						return
+				else // paper bundle
+					var/obj/item/paper_bundle/bundle_copy = rcvdcopy
+					bundle_copy.show_content(ai)
+
+					if(tgui_alert(ai, "Block or allow fax?", "Choose action", list("Block", "Allow")) == "Block")
+						bundle_copy = null
+						QDEL_NULL(rcvdcopy)
+						return
+
 	GLOB.adminfaxes += rcvdcopy
 
-	var/mob/intercepted = check_for_interception()
-
-	message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination ? destination : "UNKNOWN")
+	message_admins(sender, "[uppertext(destination)] FAX", rcvdcopy, destination)
 	send_fax_loop(copyitem, destination, department) // Forward to any listening fax machines
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
 
