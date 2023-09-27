@@ -9361,7 +9361,7 @@
 /area/site53/llcz/dclass/reeducation)
 "vE" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled,
@@ -17754,7 +17754,7 @@
 /area/site53/llcz/dclass/kitchen)
 "QG" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "247lockdown";
@@ -17844,7 +17844,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-3";
 	dir = 4;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -18225,7 +18225,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
@@ -18878,7 +18878,7 @@
 "TB" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
@@ -19069,7 +19069,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-2";
 	dir = 4;
-	network = list("Engineering  Network")
+	network = list("Engineering Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -19597,7 +19597,7 @@
 "VA" = (
 /obj/structure/bed/chair,
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -20072,7 +20072,7 @@
 /area/site53/ulcz/scp173)
 "WI" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
@@ -20473,7 +20473,7 @@
 "XG" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
@@ -20941,7 +20941,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-1";
 	dir = 4;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
