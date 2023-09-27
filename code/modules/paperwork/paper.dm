@@ -37,12 +37,9 @@
 	var/list/ico[0]      //Icons and
 	var/list/offset_x[0] //offsets stored for later
 	var/list/offset_y[0] //usage by the photocopier
-	var/spam_flag = 0
 	var/last_modified_ckey
 	var/age = 0
 	var/list/metadata
-	var/readable = TRUE  //Paper will not be able to be written on and will not bring up a window upon examine if FALSE
-	var/is_memo = FALSE  //If TRUE, paper will act the same as readable = FALSE, but will also be unrenameable.
 	var/datum/language/language = LANGUAGE_ENGLISH // Language the paper was written in. Editable by users up until something's actually written
 
 	var/const/deffont = "Verdana"
@@ -88,7 +85,7 @@
 	return TRUE
 
 /obj/item/paper/on_update_icon()
-	if(icon_state == "paper_talisman" || is_memo)
+	if(icon_state == "paper_talisman")
 		return
 	else if(info)
 		icon_state = "paper_words"
@@ -101,7 +98,7 @@
 
 /obj/item/paper/examine(mob/user, distance)
 	. = ..()
-	if(!is_memo && name != "sheet of paper")
+	if(name != "sheet of paper")
 		to_chat(user, "It's titled '[name]'.")
 	if(distance <= 1)
 		show_content(usr)
@@ -145,8 +142,6 @@
 
 
 /obj/item/paper/proc/show_content(mob/user, force, editable)
-	if (!readable || is_memo)
-		return
 	if (isclient(user))
 		var/client/C = user
 		user = C.mob
@@ -199,9 +194,7 @@
 	if((MUTATION_CLUMSY in usr.mutations) && prob(50))
 		to_chat(usr, SPAN_WARNING("You cut yourself on the paper."))
 		return
-	else if(is_memo)
-		to_chat(usr, SPAN_NOTICE("You decide not to alter the name of \the [src]."))
-		return
+
 	var/n_name = sanitizeSafe(input(usr, "What would you like to label the paper?", "Paper Labelling", null)  as text, MAX_NAME_LEN)
 
 	// We check loc one level up, so we can rename in clipboards and such. See also: /obj/item/photo/rename()

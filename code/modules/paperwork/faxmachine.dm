@@ -40,11 +40,6 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		GLOB.alldepartments |= department
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/O as obj, mob/user as mob)
-	if(istype(O, /obj/item/paper))
-		var/obj/item/paper/P = O
-		if(!P.readable)
-			to_chat(user, SPAN_NOTICE("\The [src] beeps. Error, invalid document detected."))
-			return
 	if(istype(O, /obj/item/card/id))
 		if(!user.unEquip(O, src))
 			return
