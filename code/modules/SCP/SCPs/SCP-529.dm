@@ -29,6 +29,6 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"mutilated cat", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"529" //Numerical Designation
 	)

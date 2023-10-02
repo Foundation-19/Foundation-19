@@ -28,9 +28,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"On Mount Golgotha", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"012", //Numerical Designation
-		MEMETIC //Meta Flags, refer to code/_defines/SCP.dm
+		SCP_MEMETIC //Meta Flags, refer to code/_defines/SCP.dm
 	)
 
 	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Memetic flags determine required factors for a human to be affected

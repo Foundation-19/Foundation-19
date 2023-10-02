@@ -39,9 +39,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"ball of yarn", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"066", //Numerical Designation
-		PLAYABLE|MEMETIC
+		SCP_PLAYABLE|SCP_MEMETIC
 	)
 
 	SCP.memeticFlags = MAUDIBLE

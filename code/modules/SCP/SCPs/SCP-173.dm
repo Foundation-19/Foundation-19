@@ -75,9 +75,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"statue", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"173", //Numerical Designation
-		PLAYABLE
+		SCP_PLAYABLE
 	)
 
 	SCP.min_playercount = 30

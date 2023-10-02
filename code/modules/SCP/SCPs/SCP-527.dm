@@ -9,9 +9,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"Mr.Fish", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"527", //Numerical Designation
-		PLAYABLE|ROLEPLAY
+		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
 
 	SCP.min_time = 15 MINUTES

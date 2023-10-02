@@ -607,7 +607,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if(!canBecomeSCP(PossibleSCP))
 			continue
 		var/datum/scp/PSCP = PossibleSCP.SCP
-		var/select_string = "SCP-[PSCP.designation] | [PSCP.classification][(PSCP.metaFlags & ROLEPLAY) ? " | Roleplay" : ""]"
+		var/select_string = "SCP-[PSCP.designation] | [PSCP.classification][(PSCP.metaFlags & SCP_ROLEPLAY) ? " | Roleplay" : ""]"
 
 		var/new_select_string = select_string
 		var/count = 1
@@ -623,7 +623,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			return
 
 		var/mob/living/selected_scp = scp_type_ref_list[selected_scp_string]
-		var/agreement = tgui_alert(src, "Warning! SCPs are likley to spend a long amount of time within their containment chamber and are not guaranteed to be let out![(selected_scp.SCP.metaFlags & ROLEPLAY) ? " Additionally, this is a roleplay oriented SCP. That means you are expected to behave like the SCP would in lore, and failing to do so would result in ban from playing roleplay SCPs." : ""]", "Are you sure?", list("Yes","No"))
+		var/agreement = tgui_alert(src, "Warning! SCPs are likley to spend a long amount of time within their containment chamber and are not guaranteed to be let out![(selected_scp.SCP.metaFlags & SCP_ROLEPLAY) ? " Additionally, this is a roleplay oriented SCP. That means you are expected to behave like the SCP would in lore, and failing to do so would result in ban from playing roleplay SCPs." : ""]", "Are you sure?", list("Yes","No"))
 		if(!LAZYLEN(agreement) || (agreement == "No"))
 			return
 		if(!canBecomeSCP(selected_scp)) //This is incase something changes while we are waiting for a response from the ghost
@@ -635,7 +635,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/proc/canBecomeSCP(mob/PossibleSCP)
 	var/datum/scp/PSCP = PossibleSCP.SCP
-	if(!(PSCP.metaFlags & PLAYABLE))
+	if(!(PSCP.metaFlags & SCP_PLAYABLE))
 		return FALSE
 	if(world.time < PSCP.min_time)
 		return FALSE
@@ -643,7 +643,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 	if(PossibleSCP.client)
 		return FALSE
-	if((PSCP.classification == SAFE))
+	if((PSCP.classification == SCP_SAFE))
 		if(jobban_isbanned(src, "Safe SCP"))
 			return FALSE
 	else

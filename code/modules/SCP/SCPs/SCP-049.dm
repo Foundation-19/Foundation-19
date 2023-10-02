@@ -34,9 +34,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"plague doctor", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"049", //Numerical Designation
-		PLAYABLE|ROLEPLAY
+		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
 
 	SCP.min_time = 10 MINUTES

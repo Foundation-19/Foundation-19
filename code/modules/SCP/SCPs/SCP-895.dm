@@ -7,9 +7,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"oak coffin", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"895", //Numerical Designation
-		MEMETIC
+		SCP_MEMETIC
 	)
 	SCP.memeticFlags = MCAMERA
 	SCP.memetic_proc = /obj/structure/closet/coffin/scp895/proc/effect

@@ -16,7 +16,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"red piece of quartz", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"113", //Numerical Designation
 	)
 

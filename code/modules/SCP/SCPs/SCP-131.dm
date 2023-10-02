@@ -50,7 +50,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"eyepod", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"131", //Numerical Designation
 	)
 
@@ -99,7 +99,7 @@
 	for(var/atom/scpInView in GLOB.SCP_list)
 		if(!holder.can_see(scpInView))
 			continue
-		if(scpInView.SCP.classification == SAFE)
+		if(scpInView.SCP.classification == SCP_SAFE)
 			continue
 		return TRUE
 	return FALSE
@@ -155,7 +155,7 @@
 	for(var/atom/scpInView in GLOB.SCP_list)
 		if(!can_see(scpInView))
 			continue
-		if(scpInView.SCP.classification == SAFE)
+		if(scpInView.SCP.classification == SCP_SAFE)
 			continue
 
 		if((isscp173(scpInView)) && friend && can_see(friend))

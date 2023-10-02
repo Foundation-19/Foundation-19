@@ -55,9 +55,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"mechanical spider", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"2427-3", //Numerical Designation
-		PLAYABLE
+		SCP_PLAYABLE
 	)
 
 	SCP.min_playercount = 20

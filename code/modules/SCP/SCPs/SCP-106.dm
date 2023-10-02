@@ -50,9 +50,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"rotting elderly man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		KETER, //Obj Class
+		SCP_KETER, //Obj Class
 		"106", //Numerical Designation
-		PLAYABLE
+		SCP_PLAYABLE
 	)
 
 	SCP.min_time = 40 MINUTES

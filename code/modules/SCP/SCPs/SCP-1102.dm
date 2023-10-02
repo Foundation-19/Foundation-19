@@ -13,7 +13,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"old plastic case", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"1102-RU" //Numerical Designation
 	)
 
@@ -45,7 +45,7 @@
 	SCP = new /datum/scp( //This is here just so we can reference it in the global SCP list
 		src, // Ref to actual SCP atom
 		"ladder", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"1102-RU-1" //Numerical Designation
 	)
 

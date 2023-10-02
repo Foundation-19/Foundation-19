@@ -58,9 +58,9 @@
 		M.SCP = new /datum/scp(
 		M, // Ref to actual SCP atom
 		"", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"008-[SCP008_instance_count]", //Numerical Designation
-		PLAYABLE
+		SCP_PLAYABLE
 	)
 
 	if (true_dose >= 30)

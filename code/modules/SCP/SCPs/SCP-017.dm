@@ -39,7 +39,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"shambling void", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		KETER, //Obj Class
+		SCP_KETER, //Obj Class
 		"017", //Numerical Designation
 	)
 

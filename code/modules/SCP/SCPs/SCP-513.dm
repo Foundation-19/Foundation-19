@@ -15,9 +15,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"rusty cowbell", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"513", //Numerical Designation
-		MEMETIC
+		SCP_MEMETIC
 	)
 
 	SCP.memeticFlags = MAUDIBLE|MPERSISTENT|MSYNCED
@@ -122,7 +122,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"???", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"513-1" //Numerical Designation
 	)
 

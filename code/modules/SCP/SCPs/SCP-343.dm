@@ -27,9 +27,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"strange elderly man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"343", //Numerical Designation
-		PLAYABLE|ROLEPLAY
+		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
 
 	add_language(LANGUAGE_ENGLISH)

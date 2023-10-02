@@ -33,7 +33,7 @@
 	///Sounds that are considered memetic
 	var/list/memetic_sounds
 
-/datum/scp/New(atom/creation, vName, vClass = SAFE, vDesg, vMetaFlags)
+/datum/scp/New(atom/creation, vName, vClass = SCP_SAFE, vDesg, vMetaFlags)
 	GLOB.SCP_list += creation
 
 	name = vName //names are now usually captalized improper descriptors to fit the theme of SCP since people dont just know the scp desg off the bat. As such we need to improper it. TODO: add mental mechanic for foundation workers to see desg instead of name.
@@ -46,7 +46,7 @@
 	if(LAZYLEN(name))
 		parent.SetName(name)
 
-	if(classification == SAFE)
+	if(classification == SCP_SAFE)
 		set_faction(parent, MOB_FACTION_NEUTRAL)
 	else
 		set_faction(parent, FACTION_SCPS)
@@ -56,7 +56,7 @@
 		if(LAZYLEN(name))
 			pMob.fully_replace_character_name(name)
 
-		if(metaFlags & PLAYABLE)
+		if(metaFlags & SCP_PLAYABLE)
 			pMob.status_flags += NO_ANTAG
 
 	if(metaFlags & SCP_DISABLED)
@@ -76,7 +76,7 @@
 /datum/scp/proc/compInit() //if more comps are added for SCPs, they can be put here
 	if(metaFlags & SCP_DISABLED)
 		return
-	if(metaFlags & MEMETIC)
+	if(metaFlags & SCP_MEMETIC)
 		meme_comp = parent.AddComponent(/datum/component/memetic, memeticFlags, memetic_proc, memetic_sounds)
 
 /datum/scp/proc/isCompatible(atom/A)

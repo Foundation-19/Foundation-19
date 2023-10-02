@@ -75,7 +75,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"old telivision", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"263", //Numerical Designation
 	)
 
@@ -97,7 +97,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"strange man in the tv", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"263-1", //Numerical Designation
 	)
 

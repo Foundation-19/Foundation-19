@@ -1,19 +1,19 @@
 // Classifcations
 
-#define SAFE		"Safe"
-#define EUCLID		"Euclid"
-#define KETER 		"Keter"
-#define THAUMIEL	"Thaumiel"
-#define NEUTRALIZED "Neutralized"
+#define SCP_SAFE		"Safe"
+#define SCP_EUCLID		"Euclid"
+#define SCP_KETER 		"Keter"
+#define SCP_THAUMIEL	"Thaumiel"
+#define SCP_NEUTRALIZED "Neutralized"
 
 //Meta bitflags
 
 ///Is the SCP playable?
-#define PLAYABLE 		(1<<0)
+#define SCP_PLAYABLE 		(1<<0)
 ///Is it a roleplay oriented SCP?
-#define ROLEPLAY		(1<<1)
+#define SCP_ROLEPLAY		(1<<1)
 ///Does the scp have memetic properties?
-#define MEMETIC			(1<<2)
+#define SCP_MEMETIC			(1<<2)
 ///Is this SCP disabled and should be prevented from spawning?
 #define SCP_DISABLED (1<<3)
 

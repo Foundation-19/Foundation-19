@@ -8,7 +8,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"red pill", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"500" //Numerical Designation
 	)
 

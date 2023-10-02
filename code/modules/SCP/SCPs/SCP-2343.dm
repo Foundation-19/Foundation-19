@@ -10,7 +10,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"strange american man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"2343", //Numerical Designation
-		PLAYABLE|ROLEPLAY
+		SCP_PLAYABLE|SCP_ROLEPLAY
 	)

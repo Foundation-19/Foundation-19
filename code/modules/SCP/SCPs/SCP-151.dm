@@ -21,9 +21,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"painting", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SAFE, //Obj Class
+		SCP_SAFE, //Obj Class
 		"151", //Numerical Designation
-		MEMETIC
+		SCP_MEMETIC
 	)
 
 	SCP.memeticFlags = MVISUAL|MPERSISTENT|MSYNCED

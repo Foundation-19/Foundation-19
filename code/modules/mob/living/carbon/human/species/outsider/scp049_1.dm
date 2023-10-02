@@ -205,9 +205,9 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"049-[SCP049_instance_count]", //Numerical Designation
-		PLAYABLE
+		SCP_PLAYABLE
 	)
 
 	addtimer(CALLBACK(src, .proc/transform_049_1_instance), 2 SECONDS)

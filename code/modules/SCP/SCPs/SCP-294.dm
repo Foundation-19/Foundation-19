@@ -40,7 +40,7 @@
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"coffee machine", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		EUCLID, //Obj Class
+		SCP_EUCLID, //Obj Class
 		"294", //Numerical Designation
 	)
 //Mechanics
