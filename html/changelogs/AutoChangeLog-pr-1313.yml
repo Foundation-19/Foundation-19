@@ -1,0 +1,5 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - bugfix: No more missing texture of monkeycube open
+  - bugfix: storage items now behave properly (clicking on a storage item closes it).
