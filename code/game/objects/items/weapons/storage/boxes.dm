@@ -26,16 +26,8 @@
 	item_state = "syringe_kit"
 	max_storage_space = DEFAULT_BOX_STORAGE
 	use_sound = 'sounds/effects/storage/box.ogg'
+	open_icon = "boxopen"
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
-
-/obj/item/storage/box/open(mob/user)
-	. = ..()
-	icon_state = "boxopen"
-
-/obj/item/storage/box/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/large
 	name = "large box"
@@ -43,15 +35,7 @@
 	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
-
-/obj/item/storage/box/large/open(mob/user)
-	. = ..()
-	icon_state = "largeboxopen"
-
-/obj/item/storage/box/large/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
+	open_icon = "largeboxopen"
 
 /obj/item/storage/box/union_cards
 	name = "box of union cards"
@@ -208,15 +192,7 @@
 	icon_state = "ammo"
 	desc = "A sturdy metal box with several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
 	use_sound = 'sounds/effects/closet_open.ogg'
-
-/obj/item/storage/box/ammo/open(mob/user)
-	. = ..()
-	item_state = "ammoopen"
-
-/obj/item/storage/box/ammo/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
+	open_icon = "ammoopen"
 
 /obj/item/storage/box/ammo/blanks
 	name = "box of blank shells"
@@ -373,6 +349,7 @@
 	desc = "Drymate brand monkey cubes. Just add water!"
 	icon = 'icons/obj/food.dmi'
 	icon_state = "monkeycubebox"
+	open_icon = null
 	can_hold = list(/obj/item/reagent_containers/food/snacks/monkeycube)
 	startswith = list(/obj/item/reagent_containers/food/snacks/monkeycube/wrapped = 5)
 
@@ -533,18 +510,10 @@
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	use_to_pickup = 1 // for picking up broken bulbs, not that most people will try
 	temperature = -16 CELSIUS
+	open_icon = "portafreezeropen"
 
 /obj/item/storage/box/freezer/ProcessAtomTemperature()
 	return PROCESS_KILL
-
-/obj/item/storage/box/freezer/open(mob/user)
-	. = ..()
-	icon_state = "portafreezeropen"
-
-/obj/item/storage/box/freezer/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/checkers
 	name = "checkers box"

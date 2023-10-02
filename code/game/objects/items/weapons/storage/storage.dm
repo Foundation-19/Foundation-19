@@ -26,8 +26,11 @@
 	//the assoc value can either be the quantity, or a list whose first value is the quantity and the rest are args.
 	var/list/startswith
 	var/datum/storage_ui/storage_ui = /datum/storage_ui/default
-	var/opened = null
+	var/opened = FALSE
 	var/open_sound = null
+
+	///Open Icon (If populated storage icon will change to this on being opened)
+	var/open_icon
 
 /obj/item/storage/Destroy()
 	QDEL_NULL(storage_ui)
@@ -94,14 +97,18 @@
 		storage_ui.hide_from(user)
 
 /obj/item/storage/proc/open(mob/user as mob)
-	if(!opened)
-		playsound(src.loc, src.open_sound, 50, 0, -5)
-		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
-		opened = 1
-		queue_icon_update()
-	if (src.use_sound)
+	if(src.use_sound)
 		playsound(src.loc, src.use_sound, 50, 0, -5)
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
+	if(!opened)
+		if(open_icon)
+			set_icon_state(open_icon)
+		opened = TRUE
+		queue_icon_update()
+	else
+		close(user)
+		opened = FALSE
+		return
 	if (isrobot(user) && user.hud_used)
 		var/mob/living/silicon/robot/robot = user
 		if(robot.shown_robot_modules) //The robot's inventory is open, need to close it first.
@@ -116,6 +123,10 @@
 
 /obj/item/storage/proc/close(mob/user as mob)
 	hide_from(user)
+
+	if(open_icon)
+		set_icon_state(initial(icon_state))
+
 	if(storage_ui)
 		storage_ui.after_close(user)
 
