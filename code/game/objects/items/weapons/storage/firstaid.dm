@@ -16,15 +16,7 @@
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = DEFAULT_BOX_STORAGE
 	use_sound = 'sounds/effects/storage/box.ogg'
-
-/obj/item/storage/firstaid/open(mob/user)
-	. = ..()
-	icon_state = "firstaidopen"
-
-/obj/item/storage/firstaid/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
+	open_icon = "firstaidopen"
 
 /obj/item/storage/firstaid/empty
 	icon_state = "firstaid"
@@ -46,6 +38,7 @@
 	desc = "It's an emergency medical kit for when people brought ballistic weapons to a laser fight."
 	icon_state = "radfirstaid"
 	item_state = "firstaid-ointment"
+	open_icon = "radopen"
 
 	startswith = list(
 		/obj/item/storage/med_pouch/trauma = 4
@@ -55,20 +48,12 @@
 	..()
 	icon_state = pick("radfirstaid", "radfirstaid2")
 
-/obj/item/storage/firstaid/trauma/open(mob/user)
-	. = ..()
-	icon_state = "radopen"
-
-/obj/item/storage/firstaid/trauma/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
-
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
 	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
 	icon_state = "ointment"
 	item_state = "firstaid-ointment"
+	open_icon = "fireopen"
 
 	startswith = list(
 		/obj/item/storage/med_pouch/burn = 4
@@ -78,20 +63,12 @@
 	..()
 	icon_state = pick("ointment","firefirstaid")
 
-/obj/item/storage/firstaid/fire/open(mob/user)
-	. = ..()
-	icon_state = "fireopen"
-
-/obj/item/storage/firstaid/fire/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
-
 /obj/item/storage/firstaid/toxin
 	name = "toxin first aid"
 	desc = "Used to treat when you have a high amount of toxins in your body."
 	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
+	open_icon = "toxinopen"
 
 	startswith = list(
 		/obj/item/storage/med_pouch/toxin = 4
@@ -101,39 +78,23 @@
 	..()
 	icon_state = pick("antitoxin","antitoxfirstaid")
 
-/obj/item/storage/firstaid/toxin/open(mob/user)
-	. = ..()
-	icon_state = "toxinopen"
-
-/obj/item/storage/firstaid/toxin/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
-
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation first aid"
 	desc = "A box full of oxygen goodies."
 	icon_state = "o2"
 	item_state = "firstaid-o2"
+	open_icon = "o2open"
 
 	startswith = list(
 		/obj/item/storage/med_pouch/oxyloss = 4
 		)
-
-/obj/item/storage/firstaid/o2/open(mob/user)
-	. = ..()
-	icon_state = "o2open"
-
-/obj/item/storage/firstaid/o2/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/adv
 	name = "advanced first-aid kit"
 	desc = "Contains advanced medical treatments."
 	icon_state = "doctor-kit"
 	item_state = "firstaid-advanced"
+	open_icon = "doctor-kitopen"
 
 	startswith = list(
 		/obj/item/storage/pill_bottle/assorted,
@@ -142,20 +103,12 @@
 		/obj/item/stack/medical/splint
 		)
 
-/obj/item/storage/firstaid/adv/open(mob/user)
-	. = ..()
-	icon_state = "doctor-kitopen"
-
-/obj/item/storage/firstaid/adv/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
-
 /obj/item/storage/firstaid/combat
 	name = "combat medical kit"
 	desc = "Contains advanced medical treatments."
 	icon_state = "bezerk"
 	item_state = "firstaid-advanced"
+	open_icon = "bezerkopen"
 
 	startswith = list(
 		/obj/item/storage/pill_bottle/bicaridine,
@@ -166,15 +119,6 @@
 		/obj/item/storage/pill_bottle/spaceacillin,
 		/obj/item/stack/medical/splint,
 		)
-
-/obj/item/storage/firstaid/combat/open(mob/user)
-	. = ..()
-	icon_state = "bezerkopen"
-
-/obj/item/storage/firstaid/combat/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/stab
 	name = "stabilisation first aid"
@@ -200,6 +144,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = null
 	use_sound = 'sounds/effects/storage/briefcase.ogg'
+	open_icon = "surgerykitopen"
 
 	can_hold = list(
 		/obj/item/bonesetter,
@@ -227,15 +172,6 @@
 		/obj/item/FixOVein,
 		/obj/item/stack/medical/advanced/bruise_pack,
 		)
-
-/obj/item/storage/firstaid/surgery/open(mob/user)
-	. = ..()
-	icon_state = "surgerykitopen"
-
-/obj/item/storage/firstaid/surgery/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
 
 /*
  * Pill Bottles

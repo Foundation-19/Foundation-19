@@ -26,3 +26,8 @@
   - bugfix: Admin panic bunker is now named administration panic bunker
   TheDarkElites:
   - bugfix: faulty null check in jobtime tracking
+2023-09-26:
+  cheesePizza2:
+  - bugfix: Wall discrepancy near the entrance to HCZ fixed.
+  - bugfix: A few objects with doubled spaces had their names fixed.
+  - spellcheck: Fixes submit/cancel swap button typo.
