@@ -1,0 +1,7 @@
+2023-10-03:
+  K4rlox:
+  - rscadd: 049 botany area
+  - rscadd: 049 shower head
+  TheDarkElites:
+  - bugfix: No more missing texture of monkeycube open
+  - bugfix: storage items now behave properly (clicking on a storage item closes it).
