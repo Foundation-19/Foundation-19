@@ -9880,6 +9880,11 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
 "aBv" = (
@@ -10036,11 +10041,6 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -10077,6 +10077,11 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -30683,8 +30688,8 @@
 	},
 /obj/structure/cable{
 	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
