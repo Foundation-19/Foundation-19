@@ -161,7 +161,6 @@
 	expected_type = /obj/item/card
 	chameleon_choices = list(
 		/obj/item/card/emag,
-		/obj/item/card/union,
 		/obj/item/card/data,
 		/obj/item/card/data/full_color,
 		/obj/item/card/data/disk,
