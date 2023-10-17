@@ -247,11 +247,6 @@
 	icon_state = "checkpoint1"
 //	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
-/area/site53/lowertram/archive
-	name = "\improper Archive"
-	icon_state = "crew_quarters"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 
 
 
@@ -1075,6 +1070,11 @@
 /area/site53/engineering/sleeproom
 	name = "\improper Engineering Sleep Room"
 	icon_state = "engineering_locker"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/engineering/server_room
+	name = "\improper Server Room"
+	icon_state = "crew_quarters"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/securitypost
