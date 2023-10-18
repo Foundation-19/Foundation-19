@@ -59,7 +59,7 @@
 		M.adjustToxLoss(removed * 1.5)
 
 /datum/reagent/ammonia/overdose(mob/living/carbon/M, alien)
-	if(alien != IS_VOX || volume > overdose*6)
+	if(alien != IS_VOX || overdose_percentage() > 6)
 		..()
 
 /datum/reagent/carbon

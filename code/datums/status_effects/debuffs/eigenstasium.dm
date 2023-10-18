@@ -35,7 +35,7 @@
 	var/block_effects = FALSE
 	var/datum/reagent/eigen = owner.reagents?.has_reagent(/datum/reagent/eigenstate)
 	if(eigen)
-		if(eigen.overdosed)
+		if(eigen.overdose_percentage() > 1)
 			block_effects = FALSE
 		else
 			current_cycle = max(EIGENSTASIUM_MAX_BUFFER, (current_cycle - (EIGENSTASIUM_STABILISATION_RATE * 2)))
@@ -65,7 +65,10 @@
 		//phase 1
 		if(1 to EIGENSTASIUM_PHASE_1_END)
 			owner.set_jitter_if_lower(4 SECONDS)
-			owner.adjust_nutrition(-4)
+
+			if(iscarbon(owner))
+				var/mob/living/carbon/C = owner
+				C.adjust_nutrition(-4)
 
 		//phase 2
 		if(EIGENSTASIUM_PHASE_1_END to EIGENSTASIUM_PHASE_2_END)
@@ -74,22 +77,12 @@
 				owner.set_jitter_if_lower(400 SECONDS)
 				owner.set_knockdown_if_lower(10)
 
-			var/list/items = list()
-			var/max_loop
-			if (length(owner.get_contents()) >= 10)
-				max_loop = 10
-			else
-				max_loop = length(owner.get_contents())
-			for (var/i in 1 to max_loop)
-				var/obj/item/item = owner.get_contents()[i]
-				if ((item.item_flags & DROPDEL) || HAS_TRAIT(item, TRAIT_NODROP)) // can't teleport these kinds of items
-					continue
-				items.Add(item)
+			var/obj/item/item = pick(owner.get_contents())
 
-			if(!LAZYLEN(items))
+			if(isnull(item))
 				return ..()
-			var/obj/item/item = pick(items)
-			owner.dropItemToGround(item, TRUE)
+
+			owner.drop_from_inventory(item)
 			sparks(5, FALSE, item)
 			do_teleport(item, get_turf(item), 3, /decl/teleport);
 			sparks(5, FALSE, item)

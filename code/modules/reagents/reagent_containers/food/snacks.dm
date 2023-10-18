@@ -42,7 +42,7 @@
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/M)
 	if(!reagents.total_volume)
 		M.visible_message(SPAN_NOTICE("[M] finishes eating \the [src]."),SPAN_NOTICE("You finish eating \the [src]."))
-		M.drop_item()
+		M.drop_active_hand()
 		if(trash)
 			if(ispath(trash,/obj/item))
 				var/obj/item/TrashItem = new trash(get_turf(M))

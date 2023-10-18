@@ -66,7 +66,7 @@
 			to_chat(user, SPAN_WARNING("\The [src] can't hold \the [W]!"))
 		else
 			to_chat(user, SPAN_NOTICE("You add \the [W] to \the [src]."))
-			user.drop_item()
+			user.drop_active_hand()
 			pickup_item(W)
 		return TRUE
 	else

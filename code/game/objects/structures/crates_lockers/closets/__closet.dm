@@ -280,7 +280,7 @@
 								 SPAN_NOTICE("You hear rustling of clothes."))
 			return
 
-		if(usr.drop_item())
+		if(usr.drop_active_hand())
 			W.forceMove(loc)
 			W.pixel_x = 0
 			W.pixel_y = 0

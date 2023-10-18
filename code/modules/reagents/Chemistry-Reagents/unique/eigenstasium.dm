@@ -6,19 +6,17 @@
  *Then some of your items slowly start teleport around you,
  *then alternative versions of yourself are brought in from a different universe and they yell at you.
  *and finally you yourself get teleported to an alternative universe, and character your playing is replaced with said alternative
- *Spraying this on lockers allows you to create eigenlinked lockers - see the eigenstate subsystem for using this to create your own links
 */
 /datum/reagent/eigenstate
 	name = "Eigenstasium"
-	description = "A strange mixture formed from a controlled reaction of bluespace with plasma, that causes localised eigenstate fluxuations within the patient"
+	description = "A highly anomalous mixture that causes localised eigenstate fluxuations within the patient."
 	taste_description = "wiggly cosmic dust."
 	color = "#5020F4"
-	overdose_threshold = 15
-	metabolization_rate = REM
-	chemical_flags = REAGENT_DEAD_PROCESS //So if you die with it in your body, you still get teleported back to the location as a corpse
+	overdose = 15
+	flags = AFFECTS_DEAD //So if you die with it in your body, you still get teleported back to the location as a corpse
 	data = list("ingested" = FALSE)//So we retain the target location and creator between reagent instances
 	///The return point indicator
-	var/obj/effect/overlay/holo_pad_hologram/eigenstate
+	var/obj/effect/overlay/eigenstate
 	///The point you're returning to after the reagent is removed
 	var/turf/location_return = null
 
@@ -47,14 +45,12 @@
 /datum/reagent/eigenstate/on_mob_add(mob/living/living_mob, amount)
 	//make hologram at return point to indicate where someone will go back to
 	eigenstate = new (living_mob.loc)
-	eigenstate.appearance = living_mob.appearance
-	eigenstate.alpha = 170
-	eigenstate.add_atom_colour(LIGHT_COLOR_LIGHT_CYAN, FIXED_COLOUR_PRIORITY)
+	eigenstate.add_overlay(getHologramIcon(getFlatIcon(living_mob), hologram_color = HOLOPAD_SHORT_RANGE))
 	eigenstate.mouse_opacity = MOUSE_OPACITY_TRANSPARENT//So you can't click on it.
-	eigenstate.layer = FLY_LAYER//Above all the other objects/mobs. Or the vast majority of them.
-	eigenstate.set_anchored(TRUE) //So space wind cannot drag it.
+	eigenstate.layer = ABOVE_HUMAN_LAYER//Above all the other objects/mobs. Or the vast majority of them.
+	eigenstate.anchored = TRUE //So space wind cannot drag it.
 	eigenstate.name = "[living_mob.name]'s Eigenstate"//If someone decides to right click.
-	eigenstate.set_light(2)	//hologram lighting
+	eigenstate.set_light(1, 0.1, 2)	//hologram lighting
 
 	location_return = get_turf(living_mob)	//sets up return point
 	to_chat(living_mob, SPAN_USERDANGER("You feel like part of yourself has split off!"))

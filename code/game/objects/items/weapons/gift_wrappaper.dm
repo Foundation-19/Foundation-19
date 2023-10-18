@@ -35,7 +35,7 @@
 			if(5) icon_state = "gift3"
 
 /obj/item/gift/attack_self(mob/user as mob)
-	user.drop_item()
+	user.drop_active_hand()
 	if(src.gift)
 		user.put_in_active_hand(gift)
 		src.gift.add_fingerprint(user)

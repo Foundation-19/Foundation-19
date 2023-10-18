@@ -203,7 +203,7 @@ var/list/slot_equipment_priority = list( \
 	return drop_from_inventory(r_hand, Target)
 
 //Drops the item in our active hand. TODO: rename this to drop_active_hand or something
-/mob/proc/drop_item(atom/Target)
+/mob/proc/drop_active_hand(atom/Target)
 	if(hand)	return drop_l_hand(Target)
 	else		return drop_r_hand(Target)
 
@@ -272,7 +272,7 @@ var/list/slot_equipment_priority = list( \
 /mob/proc/unequip_item(atom/target)
 	if(!canUnEquip(get_active_hand()))
 		return
-	drop_item(target)
+	drop_active_hand(target)
 	return 1
 
 //Attemps to remove an object on a mob.

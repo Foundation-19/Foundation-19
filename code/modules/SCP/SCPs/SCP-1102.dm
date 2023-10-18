@@ -15,7 +15,7 @@ var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/l
 
 /obj/item/weapon/scp1102ru/attack_self(mob/user)
 	if(do_after(user,20))
-		user.drop_item()
+		user.drop_active_hand()
 		user.forceMove(pick(GLOB.scp1102_floors))
 		playsound(src, pick(climbsounds), 50)
 		user.visible_message(SPAN_WARNING("The [user] has opened the briefcase and climbed down into it!"))

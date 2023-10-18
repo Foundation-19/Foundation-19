@@ -77,7 +77,7 @@
 /mob/living/silicon/proc/show_laws()
 	return
 
-/mob/living/silicon/drop_item()
+/mob/living/silicon/drop_active_hand()
 	return
 
 /mob/living/silicon/emp_act(severity)

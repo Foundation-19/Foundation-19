@@ -345,7 +345,7 @@
 	var/mob/living/carbon/H = owner
 	if(prob(40))
 		var/obj/item/I = H.get_active_hand()
-		if(I && H.dropItemToGround(I))
+		if(I && H.drop_active_hand(I))
 			H.visible_message(
 				SPAN_NOTICE("[H]'s hand convulses, and they drop their [I.name]!"),
 				SPAN_USERDANGER("Your hand convulses violently, and you drop what you were holding!"),
