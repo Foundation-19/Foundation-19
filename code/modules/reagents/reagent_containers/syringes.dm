@@ -474,4 +474,5 @@
 			color = COLOR_BLUE_LIGHT
 			name = "weird [initial(name)]"
 			desc = "[initial(desc)] It has a weird blue tint."
+			return src
 	return ..()

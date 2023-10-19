@@ -1,6 +1,6 @@
 // The structure spawns "auxiliary units" automatically, only spawn this one
 /obj/structure/scp_914
-	name = "SCP 914"
+	name = "SCP-914"
 	desc = "A large clockwork device consisting of numerous parts and sections."
 	icon = 'icons/SCP/SCP-914-64x64.dmi'
 	icon_state = "center"
@@ -196,7 +196,7 @@
 
 // Support structures and effects
 /obj/structure/scp_914_part
-	name = "SCP 914 part"
+	name = "SCP-914 part"
 	desc = "Why did you spawn this thing? It's not for you."
 	anchored = TRUE
 	density = TRUE

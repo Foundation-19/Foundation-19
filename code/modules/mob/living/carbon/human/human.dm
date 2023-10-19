@@ -1894,8 +1894,8 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					var/brute = getBruteLoss() + rand(2, 15)
 					var/burn = getBruteLoss() + rand(2, 15)
 					// Remove all damage
-					adjustBruteLoss(brute)
-					adjustFireLoss(burn)
+					adjustBruteLoss(-brute)
+					adjustFireLoss(-burn)
 					// And then reapply differently
 					adjustBruteLoss(burn)
 					adjustFireLoss(brute)
@@ -1942,7 +1942,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					psi.update()
 					playsound(src, 'sound/effects/psi/power_evoke.ogg', 150, FALSE, 32)
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
-					addtimer(CALLBACK(src, .proc/Callback914PotentialPsiDeath, (total_rank > 12 ? 50 : (80 + total_rank))), rand(160 SECONDS, 300 SECONDS))
+					addtimer(CALLBACK(src, .proc/Callback914PotentialPsiDeath, (total_rank > 12 ? (80 + total_rank) : 50)), rand(160 SECONDS, 300 SECONDS))
 			return src
 
 // The trip is over, you might die, or you might live
