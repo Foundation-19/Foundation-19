@@ -25,7 +25,6 @@ GLOBAL_DATUM_INIT(foundation_agents, /datum/antagonist/foundation, new)
 	initial_spawn_target = 2
 	min_player_age = 14
 	faction = "foundation"
-	id_type = /obj/item/card/id/foundation
 
 /datum/antagonist/foundation/equip(mob/living/carbon/human/player)
 

@@ -203,8 +203,6 @@ var/list/worths = list(
 					/obj/item/autopsy_scanner = 180,
 //CARDS,
 					/obj/item/card/emag = 300,
-					/obj/item/card/id/silver = 200,
-					/obj/item/card/id/gold = 300,
 					/obj/item/card/id/captains_spare = 300,
 					/obj/item/card/id = 30,
 					/obj/item/flame/match = 1,
