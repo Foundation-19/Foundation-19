@@ -5,8 +5,7 @@
 	module_category = ROBOT_MODULE_TYPE_FLYING
 	networks = list(NETWORK_ENGINEERING)
 	subsystems = list(
-		/datum/tgui_module/power_monitor/robot,
-		/datum/tgui_module/supermatter_monitor/robot
+		/datum/tgui_module/power_monitor/robot
 	)
 	sprites = list(
 		"Drone" = "drone-engineer",

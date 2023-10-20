@@ -59,32 +59,6 @@
 				)
 	mob_transfer_message = "<span class='danger'>You are transported to ORIGIN, and with a sickening thud, you fall unconscious, never to wake again.</span>"
 
-
-/datum/trader/ship/unique/rock
-	name = "Bobo"
-	origin = "Floating rock"
-
-	possible_wanted_items  = list(/obj/item/ore                        = TRADER_ALL)
-	possible_trading_items = list(/obj/machinery/power/supermatter            = TRADER_ALL,
-								/obj/item/aiModule                     = TRADER_SUBTYPES_ONLY)
-	want_multiplier = 5000
-
-	speech = list(TRADER_HAIL_GENERIC     = "Blub am MERCHANT. Blub hunger for things. Boo bring them to blub, yes?",
-				TRADER_HAIL_DENY          = "Blub does not want to speak to boo.",
-
-				TRADER_TRADE_COMPLETE     = "Blub likes to trade!",
-				TRADER_NO_MONEY     = "Boo try to give Blub paper. Blub does not want paper.",
-				TRADER_NOT_ENOUGH   = "Blub hungry for bore than that.",
-				TRADER_FOUND_UNWANTED = "Blub only wants bocks. Give bocks.",
-				TRADER_HOW_MUCH           = "Blub wants bocks. Boo give bocks. Blub gives stuff blub found.",
-				TRADER_WHAT_WANT          = "Blub wants bocks. Big bocks, small bocks. Shiny bocks!",
-
-				TRADER_COMPLEMENT_FAILURE    = "Blub is just MERCHANT. What do boo mean?",
-				TRADER_COMPLEMENT_SUCCESS  = "Boo are a bood berson!",
-				TRADER_INSULT_GOOD        = "Blub do not understand. Blub thought we were briends.",
-				TRADER_INSULT_BAD         = "Blub feels bad now.",
-				)
-
 //probably could stick soem Howl references in here but like, eh. Haven't seen it in years.
 /datum/trader/ship/unique/wizard
 	name = "Sorcerer"

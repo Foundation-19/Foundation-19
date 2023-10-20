@@ -248,6 +248,3 @@
 
 /obj/machinery/door/unpowered/simple/cult/New(newloc,material_name,complexity)
 	..(newloc, MATERIAL_CULT, complexity)
-
-/obj/machinery/door/unpowered/simple/supermatter/New(newloc,material_name,complexity)
-	..(newloc, MATERIAL_SUPERMATTER, complexity)

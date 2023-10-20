@@ -326,10 +326,3 @@
 		radio_connection.post_signal(src, signal, radio_filter = RADIO_ATMOSIA)
 
 	..()
-
-/obj/machinery/computer/air_control/supermatter_core
-	icon = 'icons/obj/computer.dmi'
-	frequency = 1438
-	out_pressure_mode = 1
-	machine_name = "core control"
-	machine_desc = "An atmosphere monitoring console, modified for use in a supermatter engine."

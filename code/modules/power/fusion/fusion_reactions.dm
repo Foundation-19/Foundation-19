@@ -36,7 +36,6 @@ var/list/fusion_reactions
 //  deuterium
 //  tritium
 //  phoron
-//  supermatter
 
 // Gaseous/reagent fuels
 // hydrogen
@@ -114,45 +113,6 @@ var/list/fusion_reactions
 	instability = 5
 	products = list("mhydrogen" = 1)
 	minimum_reaction_temperature = 8000
-
-// VERY UNIDEAL REACTIONS.
-/decl/fusion_reaction/phoron_supermatter
-	p_react = "supermatter"
-	s_react = GAS_PHORON
-	energy_consumption = 0
-	energy_production = 5
-	radiation = 40
-	instability = 20
-
-/decl/fusion_reaction/phoron_supermatter/handle_reaction_special(obj/effect/fusion_em_field/holder)
-
-	var/turf/origin = get_turf(holder)
-	holder.Rupture()
-	qdel(holder)
-	var/radiation_level = rand(100, 200)
-
-	// Copied from the SM for proof of concept. //Not any more --Cirra //Use the whole z proc --Leshana
-	SSradiation.z_radiate(locate(1, 1, holder.z), radiation_level, 1)
-
-	for(var/mob/living/mob in GLOB.living_mob_list_)
-		var/turf/T = get_turf(mob)
-		if(T && (holder.z == T.z))
-			if(istype(mob, /mob/living/carbon/human))
-				var/mob/living/carbon/human/H = mob
-				H.hallucination(rand(100,150), 51)
-
-	for(var/obj/machinery/fusion_fuel_injector/I in range(world.view, origin))
-		if(I.cur_assembly && I.cur_assembly.fuel_type == MATERIAL_SUPERMATTER)
-			explosion(get_turf(I), 1, 2, 3)
-			spawn(5)
-				if(I?.loc)
-					qdel(I)
-
-	sleep(5)
-	explosion(origin, 1, 2, 5)
-
-	return 1
-
 
 // High end reactions.
 /decl/fusion_reaction/boron_hydrogen
