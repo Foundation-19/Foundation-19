@@ -355,12 +355,6 @@
 	build_path = /obj/item/stock_parts/circuitboard/solar_control
 	sort_string = "JAAAF"
 
-/datum/design/circuit/supermatter_control
-	name = "core monitoring console"
-	id = "supermatter_control"
-	build_path = /obj/item/stock_parts/circuitboard/air_management/supermatter_core
-	sort_string = "JAAAG"
-
 /datum/design/circuit/injector
 	name = "injector control console"
 	id = "injector"

@@ -53,8 +53,6 @@
 	return 1
 
 /obj/singularity/ex_act(severity)
-	if(current_size == STAGE_SUPER)//IT'S UNSTOPPABLE
-		return
 	switch(severity)
 		if(1.0)
 			if(prob(25))
@@ -111,9 +109,6 @@
 		dissipate_track++
 
 /obj/singularity/proc/expand(force_size = 0, growing = 1)
-	if(current_size == STAGE_SUPER)//if this is happening, this is an error
-		message_staff("expand() was called on a super singulo. This should not happen. Contact a coder immediately!")
-		return
 	var/temp_allowed_size = allowed_size
 
 	if (force_size)
@@ -223,30 +218,11 @@
 				set_overlays(list("emfield_s9"))
 			if(growing)
 				visible_message(SPAN_DANGER(FONT_NORMAL("The singularity has grown out of control!")))
-			else
-				visible_message(SPAN_WARNING("The singularity miraculously reduces in size and loses its supermatter properties."))
-		if(STAGE_SUPER)//SUPERSINGULO
-			SetName("super gravitational singularity")
-			desc = "A gravitational singularity with the properties of supermatter. <b>It has the power to destroy worlds.</b>"
-			current_size = STAGE_SUPER
-			icon = 'icons/effects/352x352.dmi'
-			icon_state = "singularity_s11"//uh, whoever drew that, you know that black holes are supposed to look dark right? What's this, the clown's singulo?
-			pixel_x = -160
-			pixel_y = -160
-			grav_pull = 16
-			consume_range = 5
-			dissipate = 0 //It can't go smaller due to e loss
-			event_chance = 25 //Events will fire off more often.
-			emp_weak_range = 13
-			emp_strong_range = 11
-			if(chained)
-				set_overlays(list("emfield_s11"))
-			visible_message(SPAN_CLASS("sinister",FONT_LARGE("You witness the creation of a destructive force that cannot possibly be stopped by human hands.")))
 
 	if (current_size == allowed_size)
 		investigate_log(FONT_COLORED("red","grew to size [current_size]."), I_SINGULO)
 		return 1
-	else if (current_size < (--temp_allowed_size) && current_size != STAGE_SUPER)
+	else if (current_size < (--temp_allowed_size))
 		expand(temp_allowed_size)
 	else
 		return 0
@@ -266,12 +242,10 @@
 			allowed_size = STAGE_THREE
 		if (1200 to 2499)
 			allowed_size = STAGE_FOUR
-		if(2500 to 499999)
+		if(2500 to INFINITY)
 			allowed_size = STAGE_FIVE
-		if(500000 to INFINITY)
-			allowed_size = STAGE_SUPER
 
-	if (current_size != allowed_size && current_size != STAGE_SUPER)
+	if (current_size != allowed_size)
 		expand(null, current_size < allowed_size)
 	return 1
 
