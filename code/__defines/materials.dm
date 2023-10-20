@@ -31,7 +31,6 @@
 #define MATERIAL_GRAPHITE                "graphite"
 #define MATERIAL_DEUTERIUM               "deuterium"
 #define MATERIAL_TRITIUM                 "tritium"
-#define MATERIAL_SUPERMATTER             "supermatter"
 #define MATERIAL_PITCHBLENDE             "pitchblende"
 #define MATERIAL_HEMATITE                "hematite"
 #define MATERIAL_QUARTZ                  "quartz"

@@ -551,6 +551,6 @@
 	machine_desc = "A powerful and reliable backup generator that provides a hefty amount of electricity from tritium sheets. Rated for 200 kW max safe output."
 
 /obj/machinery/power/port_gen/pacman/mrs/explode()
-	//no special effects, but the explosion is pretty big (same as a supermatter shard).
+	//no special effects, but the explosion is pretty big.
 	explosion(src.loc, 3, 6, 12, 16, 1)
 	qdel(src)

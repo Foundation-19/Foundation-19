@@ -37,16 +37,6 @@
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	open_icon = "largeboxopen"
 
-/obj/item/storage/box/union_cards
-	name = "box of union cards"
-	desc = "A box of spare unsigned union membership cards."
-	startswith = list(/obj/item/card/union = 7)
-
-/obj/item/storage/box/large/union_cards
-	name = "large box of union cards"
-	desc = "A large box of spare unsigned union membership cards."
-	startswith = list(/obj/item/card/union = 14)
-
 // BubbleWrap - A box can be folded up to make card
 /obj/item/storage/box/attack_self(mob/user as mob)
 	if(..()) return
@@ -272,12 +262,6 @@
 	desc = "A box containing 5 experimental photon disruption grenades."
 	icon_state = "flashbang"
 	startswith = list(/obj/item/grenade/anti_photon = 5)
-
-/obj/item/storage/box/supermatters
-	name = "box of supermatter grenades"
-	desc = "A box containing 5 highly experimental supermatter grenades."
-	icon_state = "radbox"
-	startswith = list(/obj/item/grenade/supermatter = 5)
 
 /obj/item/storage/box/trackimp
 	name = "boxed tracking implant kit"

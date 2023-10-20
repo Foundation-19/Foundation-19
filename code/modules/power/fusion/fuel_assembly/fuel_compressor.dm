@@ -34,12 +34,6 @@
 		thing.reagents.remove_reagent(R.type, 100)
 		user.put_in_hands(F)
 		return 1
-	else if(istype(thing, /obj/machinery/power/supermatter/shard))
-		var/obj/item/fuel_assembly/F = new(get_turf(src), MATERIAL_SUPERMATTER)
-		visible_message(SPAN_NOTICE("\The [src] compresses \the [thing] into a new fuel assembly."))
-		qdel(thing)
-		user.put_in_hands(F)
-		return 1
 	else if(istype(thing, /obj/item/stack/material))
 		var/obj/item/stack/material/M = thing
 		var/material/mat = M.get_material()

@@ -7,7 +7,6 @@
 	#include "site_53_ranks.dm"
 	#include "site53shuttles.dm"
 
-	#include "items/cards_ids.dm"
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
 	#include "items/items.dm"
