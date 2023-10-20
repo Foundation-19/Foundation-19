@@ -70,8 +70,5 @@
 /obj/item/fuel_assembly/phoron/New(newloc)
 	..(newloc, MATERIAL_PHORON)
 
-/obj/item/fuel_assembly/supermatter/New(newloc)
-	..(newloc, MATERIAL_SUPERMATTER)
-
 /obj/item/fuel_assembly/hydrogen/New(newloc)
 	..(newloc, MATERIAL_HYDROGEN)

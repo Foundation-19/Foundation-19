@@ -248,16 +248,6 @@
 	sale_price = 5
 	value = 200
 
-/material/phoron/supermatter
-	name = MATERIAL_SUPERMATTER
-	icon_colour = "#ffff00"
-	radioactivity = 20
-	stack_origin_tech = list(TECH_BLUESPACE = 2, TECH_MATERIAL = 6, TECH_PHORON = 4)
-	stack_type = null
-	luminescence = 3
-	ore_compresses_to = null
-	sale_price = null
-
 //Controls phoron and phoron based objects reaction to being in a turf over 200c -- Phoron's flashpoint.
 /material/phoron/combustion_effect(turf/T, temperature, effect_multiplier)
 	if(isnull(ignition_point))

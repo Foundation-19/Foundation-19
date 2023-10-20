@@ -239,7 +239,6 @@ var/global/list/additional_antag_types = list()
 		"wormholes to another dimension",
 		"a telescience mishap",
 		"radiation flares",
-		"supermatter dust",
 		"leaks into a negative reality",
 		"antiparticle clouds",
 		"residual bluespace energy",
