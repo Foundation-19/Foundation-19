@@ -317,8 +317,6 @@
 				steps = 4
 			if(9)
 				steps = 5
-			if(11)
-				steps = 6
 	else
 		steps = step
 	var/list/turfs = list()
@@ -385,8 +383,6 @@
 			mezzer()
 		else
 			return 0
-	if(current_size == 11)
-		smwave()
 	return 1
 
 
@@ -405,30 +401,18 @@
 		if(M.stat == CONSCIOUS)
 			if (istype(M,/mob/living/carbon/human))
 				var/mob/living/carbon/human/H = M
-				if(istype(H.glasses,/obj/item/clothing/glasses/meson) && current_size != 11)
+				if(istype(H.glasses,/obj/item/clothing/glasses/meson))
 					to_chat(H, "<span class=\"notice\">You look directly into The [src.name], good thing you had your protective eyewear on!</span>")
 					return
 				else
 					to_chat(H, "<span class=\"warning\">You look directly into The [src.name], but your eyewear does absolutely nothing to protect you from it!</span>")
-		to_chat(M, SPAN_DANGER("You look directly into The [src.name] and feel [current_size == 11 ? "helpless" : "weak"]."))
+		to_chat(M, SPAN_DANGER("You look directly into The [src.name] and feel weak"))
 		M.apply_effect(3, STUN)
 		for(var/mob/O in viewers(M, null))
 			O.show_message(text("<span class='danger'>[] stares blankly at The []!</span>", M, src), 1)
 
 /obj/singularity/proc/emp_area()
 	empulse(src, emp_strong_range, emp_weak_range)
-
-/obj/singularity/proc/smwave()
-	for(var/mob/living/M in view(10, src.loc))
-		if(prob(67))
-			to_chat(M, "<span class=\"warning\">You hear an unearthly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat.</span>")
-			to_chat(M, "<span class=\"notice\">Miraculously, it fails to kill you.</span>")
-		else
-			to_chat(M, "<span class=\"danger\">You hear an unearthly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat.</span>")
-			to_chat(M, "<span class=\"danger\">You don't even have a moment to react as you are reduced to ashes by the intense radiation.</span>")
-			M.dust()
-	irradiate()
-	return
 
 /obj/singularity/proc/pulse()
 	for(var/obj/machinery/power/rad_collector/R in rad_collectors)
@@ -448,8 +432,6 @@
 			add_overlay(image('icons/effects/224x224.dmi',"emfield_s7"))
 		if(9)
 			add_overlay(image('icons/effects/288x288.dmi',"emfield_s9"))
-		if(11)
-			add_overlay(image('icons/effects/352x352.dmi',"emfield_s11"))
 
 /obj/singularity/proc/on_release()
 	chained = 0
