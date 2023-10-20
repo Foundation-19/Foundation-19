@@ -65,9 +65,10 @@
 	max_ammo = 50
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/m16_mag
+/obj/item/ammo_magazine/scp/stanag_mag
 	name = "magazine (5.56)"
-	icon_state = "m16"
+	icon_state = "mag"
+	icon = 'icons/SCP/guns/rifles/m4carbine.dmi'
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "5.56x45mm"
@@ -76,18 +77,23 @@
 	max_ammo = 30
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/m16_mag/empty
+/obj/item/ammo_magazine/scp/stanag_mag/empty
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/scp/m16_mag/ext
-	name = "magazine (5.56)"
-	icon_state = "m16"
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	caliber = "5.56x45mm"
-	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/rifle/a556
+/obj/item/ammo_magazine/scp/stanag_mag/ext
+	name = "extended magazine (5.56)"
+	//icon_state = "m16"
 	max_ammo = 60
+
+/obj/item/ammo_magazine/t12
+	name = "T12 magazine"
+	icon_state = "mag"
+	icon = 'icons/SCP/guns/rifles/g36c.dmi'
+	mag_type = MAGAZINE
+	caliber = CALIBER_T12
+	matter = list(MATERIAL_STEEL = 2400)
+	ammo_type = /obj/item/ammo_casing/rifle/t12
+	max_ammo = 50
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ak

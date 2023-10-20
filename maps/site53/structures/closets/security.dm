@@ -156,7 +156,7 @@
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/gun/projectile/scp/automatic/m4a1,
 		/obj/item/gun/energy/stunrevolver,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
+		/obj/item/ammo_magazine/scp/stanag_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
@@ -287,7 +287,7 @@
 /obj/structure/closet/secure_closet/guard/breachautomatics/WillContain()
 	return list(
 		/obj/item/gun/projectile/scp/automatic/m4a1 = 4,
-		/obj/item/ammo_magazine/scp/m16_mag = 12,
+		/obj/item/ammo_magazine/scp/stanag_mag = 12,
 		/obj/item/ammo_magazine/box/a556 = 4
 	)
 

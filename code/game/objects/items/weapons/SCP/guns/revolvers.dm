@@ -191,8 +191,8 @@
 	spin_cylinder()
 
 /obj/item/gun/projectile/scp/revolver/mk27
-	name = "\improper MK7 Revolver"
-	desc = "The SCPF Mk7 Revolver, reminiscent of the S&W Model 27. This weapon, patented and produced by the SCP Foundation is popular among high-ranking security officers. Uses .357 ammo."
+	name = "\improper MK27 Revolver"
+	desc = "The SCPF Mk27 Revolver, reminiscent of the S&W Model 27. This weapon, patented and produced by the SCP Foundation is popular among high-ranking security officers. Uses .357 ammo."
 	icon = 'icons/SCP/guns/pistols/sw27.dmi'
 	icon_state = "s&w27"
 	item_state = "revolver"

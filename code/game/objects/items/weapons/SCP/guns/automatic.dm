@@ -34,8 +34,8 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = "5.56x45mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
-	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
+	magazine_type = /obj/item/ammo_magazine/scp/stanag_mag
+	allowed_magazines = /obj/item/ammo_magazine/scp/stanag_mag
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
 
@@ -148,8 +148,8 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = "5.56x45mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
-	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
+	magazine_type = /obj/item/ammo_magazine/scp/stanag_mag
+	allowed_magazines = /obj/item/ammo_magazine/scp/stanag_mag
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),

@@ -1580,9 +1580,9 @@
 /obj/structure/closet/crate/large,
 /obj/item/ammo_magazine/box/a762,
 /obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/stanag_mag,
+/obj/item/ammo_magazine/scp/stanag_mag,
+/obj/item/ammo_magazine/scp/stanag_mag,
 /turf/simulated/floor/plating,
 /area/site53/surface/surface/away/house1)
 "hB" = (

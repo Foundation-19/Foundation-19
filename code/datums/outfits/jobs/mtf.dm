@@ -25,7 +25,7 @@
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
-	belt = /obj/item/storage/belt/holster/security/fullmk9 
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/breacher
@@ -43,7 +43,7 @@
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
-	belt = /obj/item/storage/belt/holster/security/fullmk9 
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2,/obj/item/ammo_magazine/shotholder/shell = 6,/obj/item/clothing/accessory/storage/bandolier = 1,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/leader
@@ -62,7 +62,7 @@
 	r_pocket = null
 	id_type = /obj/item/card/id/mtf/ninetail
 	belt = /obj/item/storage/belt/holster/security/fullmateba
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/m16_mag = 3,/obj/item/ammo_magazine/c44 = 4,/obj/item/clothing/mask/gas = 1)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/stanag_mag = 3,/obj/item/ammo_magazine/c44 = 4,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/medic
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Medic")
@@ -133,7 +133,7 @@
 	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
 	id_type = /obj/item/card/id/mtf/nu_7
 	belt = /obj/item/storage/belt/holster/security/tactical
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/m16_mag = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 1, /obj/item/crowbar/red = 1) //Actual util
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/stanag_mag = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 1, /obj/item/crowbar/red = 1) //Actual util
 
 /decl/hierarchy/outfit/mtf/alpha_1 // Red Right Hand
 	name = OUTFIT_JOB_NAME("MTF Alpha-1 Operative")

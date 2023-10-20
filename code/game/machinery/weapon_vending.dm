@@ -52,14 +52,13 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
 		/obj/item/gun/projectile/scp/automatic/p90 = 6,
-		/obj/item/gun/projectile/revolver/rhino = 2,
 		/obj/item/gun/projectile/scp/pistol/mk9 = 4,
 		/obj/item/ammo_magazine/box/a57 = 6,
 		/obj/item/ammo_magazine/box/a57/rubber = 30,
 		/obj/item/ammo_magazine/box/mk9 = 4,
-		/obj/item/ammo_magazine/box/a357 = 4,
 		/obj/item/ammo_magazine/scp/mk9 = 8,
-		/obj/item/ammo_magazine/scp/p90_mag = 12
+		/obj/item/ammo_magazine/scp/p90_mag = 12,
+		/obj/item/ammo_magazine/scp/p90_mag/rubber = 24
 	)
 
 /obj/machinery/vending/weaponry/lcz/energy
@@ -81,14 +80,16 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	products = list(
 		/obj/item/gun/projectile/scp/automatic/p90 = 6,
-		/obj/item/gun/projectile/revolver/mateba = 2,
+		/obj/item/gun/projectile/scp/revolver/mk27 = 2,
 		/obj/item/gun/projectile/scp/pistol/mk9 = 4,
+		/obj/item/gun/projectile/scp/pistol/usp45tac = 4,
 		/obj/item/ammo_magazine/box/a357 = 4,
-		/obj/item/ammo_magazine/box/a50 = 4,
 		/obj/item/ammo_magazine/box/a57 = 12,
 		/obj/item/ammo_magazine/box/mk9 = 6,
 		/obj/item/ammo_magazine/box/a556 = 16,
-		/obj/item/ammo_magazine/scp/mk9 = 8,
+		/obj/item/ammo_magazine/box/a45 = 4,
+		/obj/item/ammo_magazine/scp/mk9 = 12,
+		/obj/item/ammo_magazine/scp/usp45 = 12,
 		/obj/item/ammo_magazine/scp/p90_mag = 12
 	)
 
@@ -99,7 +100,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	products = list(
 		/obj/item/gun/projectile/scp/automatic/m4a1 = 4,
-		/obj/item/ammo_magazine/scp/m16_mag = 8,
+		/obj/item/ammo_magazine/scp/stanag_mag = 8,
 		/obj/item/ammo_magazine/box/a556 = 2,
 		/obj/item/grenade/frag = 2
 
@@ -114,12 +115,10 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
 		/obj/item/gun/projectile/scp/automatic/p90 = 6,
-		/obj/item/gun/projectile/revolver/rhino = 2,
 		/obj/item/gun/projectile/scp/pistol/usp45tac = 3,
 		/obj/item/gun/projectile/scp/pistol/mk9 = 3,
 		/obj/item/ammo_magazine/box/a57 = 24,
 		/obj/item/ammo_magazine/box/mk9 = 4,
-		/obj/item/ammo_magazine/box/a357 = 6,
 		/obj/item/ammo_magazine/box/a45 = 2,
 		/obj/item/ammo_magazine/scp/mk9 = 6,
 		/obj/item/ammo_magazine/scp/p90_mag = 12,
