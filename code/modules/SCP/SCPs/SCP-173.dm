@@ -255,7 +255,7 @@
 		if(MODE_VERY_FINE) // God has abandoned you
 			playsound(src, 'sounds/effects/screech2.ogg', 150, FALSE, 32)
 			to_chat(src, SPAN_USERDANGER("You are unstoppable, nothing can stand on your path now!"))
-			movement_sound = 'sound/scp/173/rattle.ogg'
+			movement_sound = 'sounds/scp/173/rattle.ogg'
 			bump_attack = TRUE
 			ignore_vision = TRUE
 			snap_cooldown_time = 0

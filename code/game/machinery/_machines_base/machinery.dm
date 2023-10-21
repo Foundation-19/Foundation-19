@@ -490,6 +490,6 @@ Class Procs:
 					explosion(get_turf(src), -1, prob(33), 5, 7, FALSE)
 					return src
 				S.Conversion914(mode, user)
-			playsound(src, 'sound/items/rped.ogg', 75, TRUE, 3)
+			playsound(src, 'sounds/items/rped.ogg', 75, TRUE, 3)
 			return src
 	return ..()

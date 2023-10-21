@@ -23,11 +23,11 @@
 	// Looping sound vars
 	var/datum/sound_token/sound_token
 	var/sound_id
-	var/effect_sound = 'sound/scp/427/effect.ogg'
+	var/effect_sound = 'sounds/scp/427/effect.ogg'
 	// Ugly
 	var/datum/sound_token/sound_token_transform
 	var/sound_id_transform
-	var/transform_sound = 'sound/scp/427/transform.ogg'
+	var/transform_sound = 'sounds/scp/427/transform.ogg'
 
 /obj/item/clothing/accessory/scp_427/Initialize()
 	. = ..()
