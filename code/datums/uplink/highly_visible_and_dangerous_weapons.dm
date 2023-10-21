@@ -131,7 +131,7 @@
 	name = "Sawnoff Shotgun"
 	desc = "A shortened double-barrel shotgun, able to fire either one, or both, barrels at once."
 	item_cost = 45
-	path = /obj/item/gun/projectile/shotgun/doublebarrel/sawn
+	path = /obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/sawnoff
 
 /datum/uplink_item/item/visible_weapons/deagle
 	name = "Magnum Pistol"

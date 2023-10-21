@@ -67,7 +67,7 @@
 
 /obj/item/ammo_magazine/scp/stanag_mag
 	name = "magazine (5.56)"
-	icon_state = "mag"
+	icon_state = "magi"
 	icon = 'icons/SCP/guns/rifles/m4carbine.dmi'
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -87,7 +87,7 @@
 
 /obj/item/ammo_magazine/t12
 	name = "T12 magazine"
-	icon_state = "mag"
+	icon_state = "magi"
 	icon = 'icons/SCP/guns/rifles/g36c.dmi'
 	mag_type = MAGAZINE
 	caliber = CALIBER_T12
@@ -116,7 +116,7 @@
 /obj/item/ammo_magazine/scp/ak/drum
 	name = "drum magazine (5.45)"
 	icon = 'icons/SCP/guns/rifles/rpk16.dmi'
-	icon_state = "mag-drum"
+	icon_state = "magi-drum"
 	gun_mag_icon = "mag-drum"
 	max_ammo = 60
 	multiple_sprites = 1

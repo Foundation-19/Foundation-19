@@ -5310,7 +5310,6 @@
 /area/site53/surface/surface)
 "qx" = (
 /obj/structure/closet/cabinet,
-/obj/item/gun/projectile/shotgun/doublebarrel,
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/ammo_casing/shotgun/buckshot,
@@ -5322,6 +5321,7 @@
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/device/flashlight/lantern,
+/obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "qA" = (

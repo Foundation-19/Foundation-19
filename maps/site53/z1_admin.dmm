@@ -2460,6 +2460,73 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"mV" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/gun/projectile/scp/automatic/vector45,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "mZ" = (
 /obj/structure/table/standard,
 /turf/unsimulated/floor{
@@ -5437,6 +5504,73 @@
 	name = "Mobile Task Force Armory";
 	req_access = list("ACCESS_MTF")
 	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
+"xy" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/gun/projectile/scp/automatic/mp5,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
+/obj/item/ammo_magazine/scp/mp5_mag,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -13568,8 +13702,8 @@ gp
 ue
 ue
 ue
-ue
-ue
+mV
+xy
 zl
 tq
 gp
