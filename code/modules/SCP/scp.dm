@@ -64,12 +64,14 @@
 		qdel(parent)
 		return
 
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, .proc/OnExamine)
 	onGain()
 
 /datum/scp/Destroy()
 	. = ..()
 	if(LAZYLEN(GLOB.SCP_list))
 		GLOB.SCP_list -= src
+	UnregisterSignal(parent, COMSIG_ATOM_EXAMINED)
 	parent = null
 
 ///Run only after adding appropriate flags for components.
@@ -91,6 +93,16 @@
 
 	else
 		qdel(src)
+
+///For when an SCP object is examined, we send the examinee a message about the SCP's designation if they should know what SCP it is.
+/datum/scp/proc/OnExamine(datum/source, mob/examinee)
+	SIGNAL_HANDLER
+	if(!ishuman(examinee))
+		return
+	var/mob/living/carbon/human/H = examinee
+	var/datum/job/job = SSjobs.get_by_title(H.job)
+	if(job && (job.department_flag & (COM|SCI|SEC)))
+		to_chat(examinee, SPAN_CLASS("scp", "You know this is SCP-[designation]!"))
 
 /datum/scp/proc/onGain()
 
