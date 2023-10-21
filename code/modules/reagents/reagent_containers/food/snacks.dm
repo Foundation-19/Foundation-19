@@ -273,12 +273,24 @@ GLOBAL_LIST_EMPTY(mobs_by_meat)
 			if(!LAZYLEN(GLOB.mobs_by_meat))
 				for(var/mob_type in subtypesof(/mob/living))
 					var/mob/living/L = mob_type
-					GLOB.mobs_by_meat[initial(L.meat_type)] = mob_type
+					// Humans don't have meat normally, it is initialized by species
+					if(ispath(mob_type, /mob/living/carbon/human))
+						for(var/specie_type in subtypesof(/datum/species))
+							var/datum/species/S = specie_type
+							GLOB.mobs_by_meat[initial(S.meat_type)] |= specie_type
+						continue
+					if(!(initial(L.meat_type) in GLOB.mobs_by_meat))
+						GLOB.mobs_by_meat[initial(L.meat_type)] = list()
+					GLOB.mobs_by_meat[initial(L.meat_type)] |= mob_type
 			if(!(type in GLOB.mobs_by_meat))
 				// Duplicate!
 				new type(get_turf(src))
 				return src
-			return pick(GLOB.mobs_by_meat[type])
+			var/mob_or_type = pick(GLOB.mobs_by_meat[type])
+			if(ispath(mob_or_type, /datum/species))
+				var/datum/species/S = mob_or_type
+				mob_or_type = new /mob/living/carbon/human(get_turf(src), initial(S.name))
+			return mob_or_type
 	return ..()
 
 //////////////////////////////////////////////////
