@@ -30,7 +30,7 @@
 	if(lit)
 		if(H.humanStageHandler.createStage("BlueLady"))
 			update_013_status(H)
-			affected += H
+			affected += weakref(H)
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/proc/update_013_status(mob/living/carbon/human/H)
 	H.humanStageHandler.adjustStage("BlueLady", 1)
@@ -58,7 +58,7 @@
 			addtimer(CALLBACK(src, .proc/update_013_status, H), 55 SECONDS)
 		if(7)
 			addtimer(CALLBACK(H, /mob/living/carbon/human/proc/bluelady_message), 10 SECONDS)
-			affected -= H
+			removeWeakrefFromList(affected, H)
 			if(!LAZYLEN(affected))
 				extinguish()
 
