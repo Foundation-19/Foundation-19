@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - balance: 2427-3 starvation damage now takes effect a bit more late.
+  - balance: 2427-3 will now more easily consume dying people.
