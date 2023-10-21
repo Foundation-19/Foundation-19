@@ -5,3 +5,11 @@
   TheDarkElites:
   - bugfix: No more missing texture of monkeycube open
   - bugfix: storage items now behave properly (clicking on a storage item closes it).
+2023-10-21:
+  TheDarkElites:
+  - bugfix: storage no longer has to be double clicked to open if closed using the
+      x
+  cheesePizza2:
+  - rscdel: Removed the Supermatter and Supermatter-related things
+  - rscdel: Removed unused ID cards.
+  - bugfix: Spacing bug with ID cards fixed

@@ -1,5 +1,0 @@
-author: TheDarkElites
-delete-after: true
-changes:
-  - bugfix: storage no longer has to be double clicked to open if closed using the
-      x
