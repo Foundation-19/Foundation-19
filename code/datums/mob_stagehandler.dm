@@ -8,14 +8,14 @@
 
 ///Creates a new stage to track
 /datum/stageHandler/proc/createStage(stageID)
-	if(stages[stageID])
-		return 0
-	stages[stageID] = 0
-	return 1
+	if(stages[stageID] == null)
+		stages[stageID] = 0
+		return 1
+	return 0
 
 ///Returns value of a stage
 /datum/stageHandler/proc/getStage(stageID)
-	if(!stages[stageID])
+	if(stages[stageID] == null)
 		createStage(stageID)
 	return stages[stageID]
 

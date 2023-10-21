@@ -233,16 +233,15 @@
 
 		for(var/obj/item/W in target_mob)
 			target_mob.drop_from_inventory(W)
-		target_mob.regenerate_icons()
 
 		if(!target_mob.mind)
-			qdel(target_atom)
+			qdel(target_mob)
 			return new_atom
 		if(convert_message)
 			to_chat(target_mob, convert_message)
 		if(!istype(new_mob) || (!new_mob.mind && !force_mind))
 			target_mob.ghostize()
-			qdel(target_atom)
+			qdel(target_mob)
 			return new_atom
 		if(!HAS_TRANSFORMATION_MOVEMENT_HANDLER(target_mob))
 			ADD_TRANSFORMATION_MOVEMENT_HANDLER(target_mob)

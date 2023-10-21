@@ -10,7 +10,7 @@
 	var/list/memetic_sounds
 
 /datum/component/memetic/Initialize(flags, meme_proc, memeticSounds)
-	.=..()
+	. = ..()
 	memetic_flags = flags
 	affected_proc = meme_proc
 	memetic_sounds = memeticSounds
