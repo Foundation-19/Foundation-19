@@ -82,7 +82,7 @@
 		switch_num = length(available_modes)
 
 	current_mode = available_modes[switch_num]
-	playsound(src, 'sound/machines/lever_flip.ogg', 25, TRUE)
+	playsound(src, 'sounds/machines/lever_flip.ogg', 25, TRUE)
 	user.visible_message(
 		SPAN_NOTICE("\The [user] puts [src] on \"[current_mode]\" mode."),
 		SPAN_NOTICE("You put [src] on \"[current_mode]\" mode."))
@@ -120,7 +120,7 @@
 		return FALSE
 
 	processing = TRUE
-	playsound(src, 'sound/scp/914/refine.ogg', 75, FALSE, 14)
+	playsound(src, 'sounds/scp/914/refine.ogg', 75, FALSE, 14)
 	user.visible_message(
 		SPAN_NOTICE("\The [user] activates \the [src]!"),
 		SPAN_NOTICE("You activate \the [src]!"))
@@ -134,15 +134,15 @@
 
 	sleep(2 SECONDS)
 
-	playsound(input_part, 'sound/scp/914/door_close.ogg', 50, TRUE, -4)
-	playsound(output_part, 'sound/scp/914/door_close.ogg', 50, TRUE, -4)
+	playsound(input_part, 'sounds/scp/914/door_close.ogg', 50, TRUE, -4)
+	playsound(output_part, 'sounds/scp/914/door_close.ogg', 50, TRUE, -4)
 
 	var/list/upgrade_items = list()
 	for(var/atom/movable/A in get_turf(input_part))
 		if(A.anchored)
 			continue
 		if(ismob(A))
-			playsound(src, 'sound/scp/914/mob_use.ogg', 100, TRUE, 24)
+			playsound(src, 'sounds/scp/914/mob_use.ogg', 100, TRUE, 24)
 		upgrade_items += A
 		A.forceMove(src)
 
@@ -191,8 +191,8 @@
 	animate(D2, pixel_z = 16, alpha = 0, time = (1 SECONDS))
 	input_part.set_density(FALSE)
 	output_part.set_density(FALSE)
-	playsound(input_part, 'sound/scp/914/door_open.ogg', 50, TRUE, -4)
-	playsound(output_part, 'sound/scp/914/door_open.ogg', 50, TRUE, -4)
+	playsound(input_part, 'sounds/scp/914/door_open.ogg', 50, TRUE, -4)
+	playsound(output_part, 'sounds/scp/914/door_open.ogg', 50, TRUE, -4)
 
 // Support structures and effects
 /obj/structure/scp_914_part

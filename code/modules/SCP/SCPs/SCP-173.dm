@@ -248,12 +248,12 @@
 			maxHealth = initial(maxHealth)
 			health = clamp(health - maxHealth * 0.5, maxHealth * 0.1, maxHealth)
 		if(MODE_FINE)
-			playsound(src, 'sound/effects/screech.ogg', 75, FALSE, 16)
+			playsound(src, 'sounds/effects/screech.ogg', 75, FALSE, 16)
 			to_chat(src, SPAN_USERDANGER("You are feeling more powerful!"))
-			movement_sound = 'sound/scp/173/rattle.ogg'
+			movement_sound = 'sounds/scp/173/rattle.ogg'
 			bump_attack = TRUE
 		if(MODE_VERY_FINE) // God has abandoned you
-			playsound(src, 'sound/effects/screech2.ogg', 150, FALSE, 32)
+			playsound(src, 'sounds/effects/screech2.ogg', 150, FALSE, 32)
 			to_chat(src, SPAN_USERDANGER("You are unstoppable, nothing can stand on your path now!"))
 			movement_sound = 'sound/scp/173/rattle.ogg'
 			bump_attack = TRUE

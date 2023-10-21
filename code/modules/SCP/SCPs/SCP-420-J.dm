@@ -66,7 +66,7 @@
 				for(var/reagent_type in refill_reagents)
 					H.reagents.add_reagent(reagent_type, 5)
 				to_chat(H, SPAN_GOOD("<i>Holy shit, dude</i>"))
-				H.playsound_local(get_turf(H), 'sound/music/420J.ogg', 50, FALSE)
+				H.playsound_local(get_turf(H), 'sounds/music/420J.ogg', 50, FALSE)
 				flash_color(H, flash_color = "#bfffbf", flash_time = 100)
 			return null
 	return ..()

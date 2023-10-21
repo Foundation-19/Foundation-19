@@ -457,7 +457,7 @@
 			if(volume >= initial(volume) * 2)
 				return src
 			volume = min(volume + round(volume * 0.25), initial(volume) * 2)
-			playsound(src, 'sound/magic/charge.ogg', 25, TRUE)
+			playsound(src, 'sounds/magic/charge.ogg', 25, TRUE)
 			color = COLOR_BLUE_LIGHT
 			name = "weird [initial(name)]"
 			desc = "[initial(desc)] It has a weird blue tint."
@@ -465,12 +465,12 @@
 		if(MODE_VERY_FINE)
 			if(volume >= initial(volume) * 2 && prob(volume * 0.3))
 				visible_message(SPAN_DANGER("[src] dissolves into glowing green goo!"))
-				playsound(src, 'sound/items/Welder.ogg', 50, TRUE)
+				playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
 				new /obj/effect/decal/cleanable/greenglow(get_turf(src))
 				SSradiation.radiate(get_turf(src), volume * 2)
 				return null
 			volume += clamp(round(volume * 0.25), 5, 50)
-			playsound(src, 'sound/magic/charge.ogg', 25, TRUE)
+			playsound(src, 'sounds/magic/charge.ogg', 25, TRUE)
 			color = COLOR_BLUE_LIGHT
 			name = "weird [initial(name)]"
 			desc = "[initial(desc)] It has a weird blue tint."

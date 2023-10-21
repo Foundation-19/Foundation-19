@@ -65,7 +65,7 @@
 			var/list/return_list = list()
 			for(var/i = 1 to initial(L.meat_amount))
 				return_list += initial(L.meat_type)
-			playsound(get_turf(src), 'sound/effects/splat.ogg', 25, TRUE)
+			playsound(get_turf(src), 'sounds/effects/splat.ogg', 25, TRUE)
 			return length(return_list) ? return_list : null
 		if(MODE_ONE_TO_ONE)
 			var/list/potential_return = list()

@@ -279,10 +279,10 @@
 					if(initial(C.maxcharge) < maxcharge)
 						potential_cells += C
 				if(LAZYLEN(potential_cells))
-					playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE)
+					playsound(src, 'sounds/machines/synth_no.ogg', 50, TRUE)
 					return pick(potential_cells)
 			use(maxcharge * pick(0.2, 0.3, 0.4))
-			playsound(src, 'sound/effects/sparks3.ogg', 50, TRUE)
+			playsound(src, 'sounds/effects/sparks3.ogg', 50, TRUE)
 			return src
 		if(MODE_FINE)
 			if(prob(maxcharge * 0.002))
@@ -295,10 +295,10 @@
 					if(initial(C.maxcharge) > maxcharge && initial(C.maxcharge) <= maxcharge * 2)
 						potential_cells += C
 				if(LAZYLEN(potential_cells))
-					playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE)
+					playsound(src, 'sounds/machines/synth_yes.ogg', 50, TRUE)
 					return pick(potential_cells)
 			give(maxcharge * pick(0.3, 0.4, 0.5))
-			playsound(src, 'sound/effects/sparks3.ogg', 50, TRUE)
+			playsound(src, 'sounds/effects/sparks3.ogg', 50, TRUE)
 			return src
 		if(MODE_VERY_FINE)
 			if(prob(maxcharge * 0.01)) // It's a VERY HIGH chance to explode
@@ -311,11 +311,11 @@
 					if(initial(C.maxcharge) > maxcharge && initial(C.maxcharge) <= maxcharge * 4)
 						potential_cells += C
 				if(LAZYLEN(potential_cells))
-					playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE)
+					playsound(src, 'sounds/machines/synth_yes.ogg', 50, TRUE)
 					return pick(potential_cells)
 			if(prob(50)) // Upgrade!
 				maxcharge += clamp(maxcharge * pick(0.25, 0.5), 100, 1000)
-				playsound(src, 'sound/magic/charge.ogg', 50, TRUE, 7)
+				playsound(src, 'sounds/magic/charge.ogg', 50, TRUE, 7)
 				color = COLOR_BLUE_LIGHT
 				name = "weird [initial(name)]"
 				desc = "[initial(desc)] It has a weird blue tint."

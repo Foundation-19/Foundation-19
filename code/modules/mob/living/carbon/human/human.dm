@@ -1924,7 +1924,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 						E.arterial_bleed_severity = 0
 						E.limb_flags = 0
 					skillset.on_levels_change()
-					playsound(src, 'sound/effects/screech2.ogg', 150, FALSE, 32)
+					playsound(src, 'sounds/effects/screech2.ogg', 150, FALSE, 32)
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
 					for(var/i = 1 to 12)
 						addtimer(CALLBACK(src, /mob/living/proc/revive), (10 SECONDS) * i)
@@ -1940,7 +1940,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 						total_rank += psi_rank
 						set_psi_rank(psi, psi_rank, take_larger = TRUE, defer_update = TRUE)
 					psi.update()
-					playsound(src, 'sound/effects/psi/power_evoke.ogg', 150, FALSE, 32)
+					playsound(src, 'sounds/effects/psi/power_evoke.ogg', 150, FALSE, 32)
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
 					addtimer(CALLBACK(src, .proc/Callback914PotentialPsiDeath, (total_rank > 12 ? (80 + total_rank) : 50)), rand(160 SECONDS, 300 SECONDS))
 			return src
@@ -1975,7 +1975,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 	visible_message(
 		SPAN_DANGER("\The [src] falls down on the ground, slowly deteriorating into nothingness"),
 		SPAN_USERDANGER("You can't keep up with such power... It's over."))
-	playsound(src, 'sound/effects/death_heartbeat.ogg', 75, FALSE, -4)
+	playsound(src, 'sounds/effects/death_heartbeat.ogg', 75, FALSE, -4)
 	for(var/i = 1 to 20)
 		adjustFireLoss(50)
 		sleep(3)

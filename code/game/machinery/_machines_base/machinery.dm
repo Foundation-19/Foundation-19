@@ -478,7 +478,7 @@ Class Procs:
 				if(prob(20))
 					continue
 				S.Conversion914(mode, user)
-			playsound(src, 'sound/items/rped.ogg', 50, TRUE)
+			playsound(src, 'sounds/items/rped.ogg', 50, TRUE)
 			return src
 		if(MODE_VERY_FINE)
 			for(var/obj/item/stock_parts/S in component_parts)
