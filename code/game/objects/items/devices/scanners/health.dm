@@ -117,7 +117,7 @@
 	// Pulse rate.
 	var/pulse_result = "normal"
 	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
-	if(H.should_have_organ(BP_HEART) && (heart.SCP.designation != "3349-1"))
+	if(H.should_have_organ(BP_HEART) && (heart.SCP?.designation != "3349-1"))
 		if(H.status_flags & FAKEDEATH)
 			pulse_result = 0
 		else
