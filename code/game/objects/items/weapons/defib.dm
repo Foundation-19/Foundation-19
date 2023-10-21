@@ -372,7 +372,7 @@
 	H.apply_damage(burn_damage_amt, BURN, BP_CHEST)
 
 	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
-	if(heart.SCP.designation == "3349-1")	// part of SCP-3349. electric shocks temporarily stop effect
+	if(heart.SCP?.designation == "3349-1")	// part of SCP-3349. electric shocks temporarily stop effect
 		qdel(SCP)
 		to_chat(H, SPAN_INFO("The euphoric sensation ends."))
 
