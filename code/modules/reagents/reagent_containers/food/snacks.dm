@@ -277,6 +277,8 @@ GLOBAL_LIST_EMPTY(mobs_by_meat)
 					if(ispath(mob_type, /mob/living/carbon/human))
 						for(var/specie_type in subtypesof(/datum/species))
 							var/datum/species/S = specie_type
+							if(!(initial(S.meat_type) in GLOB.mobs_by_meat))
+								GLOB.mobs_by_meat[initial(S.meat_type)] = list()
 							GLOB.mobs_by_meat[initial(S.meat_type)] |= specie_type
 						continue
 					if(!(initial(L.meat_type) in GLOB.mobs_by_meat))
