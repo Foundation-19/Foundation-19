@@ -343,6 +343,7 @@ var/bomb_set
 	update_icon()
 
 	SetUniversalState(/datum/universal_state/nuclear_explosion, arguments=list(src))
+	SSticker.news_report = max(SSticker.news_report, FACILITY_DESTROYED_NUKE)
 
 /obj/machinery/nuclearbomb/on_update_icon()
 	if(lighthack)
@@ -555,3 +556,7 @@ var/bomb_set
 				continue
 			T.icon_state = target_icon_state
 		last_turf_state = target_icon_state
+
+/obj/machinery/nuclearbomb/station/explode()
+	. = ..()
+	SSticker.news_report = max(SSticker.news_report, FACILITY_DESTROYED_SELF_DESTRUCT)
