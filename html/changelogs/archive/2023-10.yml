@@ -13,3 +13,13 @@
   - rscdel: Removed the Supermatter and Supermatter-related things
   - rscdel: Removed unused ID cards.
   - bugfix: Spacing bug with ID cards fixed
+2023-10-22:
+  EgorDinamit:
+  - balance: 2427-3 starvation damage now takes effect a bit more late.
+  - balance: 2427-3 will now more easily consume dying people.
+  cheesePizza2:
+  - rscadd: Engineering has some mineable rocks in places where there's ordinarily
+      impassable rock.
+  - rscdel: Removes the large airlock in the Engineering hallway.
+  - balance: Compactifies Engineering to make it feel a little less overly spacious.
+  - bugfix: Minor improvements in the Engineering area.
