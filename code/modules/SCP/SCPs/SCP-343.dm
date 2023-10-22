@@ -128,7 +128,7 @@
 	return ..()
 
 /mob/living/carbon/human/scp343/IsAdvancedToolUser()
-	return FALSE
+	return TRUE
 
 /mob/living/carbon/human/scp343/get_pressure_weakness()
 	return 0
