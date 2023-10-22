@@ -20332,7 +20332,6 @@
 "btP" = (
 /obj/machinery/door/airlock/glass/science{
 	id_tag = "066";
-	locked = 1;
 	name = "SCP-066 Containment Chamber"
 	},
 /obj/machinery/door/blast/shutters/open{
