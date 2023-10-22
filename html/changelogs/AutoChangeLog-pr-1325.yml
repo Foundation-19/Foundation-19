@@ -1,8 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: Engineering has some mineable rocks in places where there's ordinarily
-      impassable rock.
-  - rscdel: Removes the large airlock in the Engineering hallway.
-  - balance: Compactifies Engineering to make it feel a little less overly spacious.
-  - bugfix: Minor improvements in the Engineering area.
