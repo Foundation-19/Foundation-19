@@ -19239,8 +19239,8 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/table/rack,
 /obj/machinery/recharger/wallcharger{
-	pixel_y = -23;
-	dir = 1
+	dir = 1;
+	pixel_y = -23
 	},
 /obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/dark,
@@ -22039,9 +22039,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -23319,6 +23316,24 @@
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
+"eXU" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/obj/effect/catwalk_plated/white,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "eXV" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 5
@@ -25260,8 +25275,8 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/table/rack,
 /obj/machinery/recharger/wallcharger{
-	pixel_y = -23;
-	dir = 1
+	dir = 1;
+	pixel_y = -23
 	},
 /obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/dark,
@@ -33109,16 +33124,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "pDY" = (
@@ -33674,6 +33685,21 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"qlY" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated/white,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "qnc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -39412,6 +39438,12 @@
 /obj/structure/ladder,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
+"wOB" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/entrance_checkpoint)
 "wPS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/item/device/radio/intercom/locked{
@@ -40098,9 +40130,6 @@
 	pixel_y = -1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -55220,7 +55249,7 @@ fhv
 aVS
 aGM
 aKq
-aPs
+qlY
 aKq
 aGM
 aVS
@@ -55477,7 +55506,7 @@ fhv
 aVS
 qYN
 pSE
-aPs
+qlY
 pSE
 aGM
 aVS
@@ -55734,7 +55763,7 @@ fhv
 aVS
 aVS
 aVS
-aTn
+eXU
 aVS
 aVS
 aVS
@@ -62167,7 +62196,7 @@ rcM
 lKF
 ren
 cYI
-uJG
+wOB
 blf
 tpZ
 fQz
