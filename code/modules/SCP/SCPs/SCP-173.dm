@@ -506,10 +506,10 @@
 /obj/structure/scp173_cage/relaymove(mob/living/scp173/user, direction)
 	if(resist_cooldown > world.time)
 		return
-	resist_cooldown = world.time + 5 SECONDS
 	if(user.IsBeingWatched())
 		to_chat(user, SPAN_WARNING("Someone is looking at you!"))
 		return
+	resist_cooldown = world.time + 5 SECONDS
 	if(!do_after(user, 1 SECONDS, src, DO_BOTH_CAN_MOVE|DO_DEFAULT)) // Some moron suggested putting 173 in a conveyor loop.
 		return
 	if(user.IsBeingWatched())
