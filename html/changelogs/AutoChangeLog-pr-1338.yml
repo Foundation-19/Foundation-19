@@ -1,4 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - bugfix: Fixed broken pipes in the main hub(where all zones connect) level.

@@ -23,3 +23,10 @@
   - rscdel: Removes the large airlock in the Engineering hallway.
   - balance: Compactifies Engineering to make it feel a little less overly spacious.
   - bugfix: Minor improvements in the Engineering area.
+2023-10-23:
+  EgorDinamit:
+  - bugfix: Fixed broken pipes in the main hub(where all zones connect) level.
+  - rscadd: You can now send and receive messages from other servers via communications
+      console/program.
+  TheDarkElites:
+  - bugfix: Improves Checkpoint Manual
