@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: You can now send and receive messages from other servers via communications
+      console/program.
