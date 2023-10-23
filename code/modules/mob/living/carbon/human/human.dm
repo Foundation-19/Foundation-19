@@ -1852,12 +1852,10 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 	switch(mode)
 		if(MODE_ROUGH) // Destroy the child
 			var/list/return_list = list()
-			to_chat(src, SPAN_USERDANGER("Your innars are spilling out... Not all of them though..."))
-			adjustBruteLoss(600)
-			for(var/obj/O in contents)
-				if(prob(66))
-					return_list += O
-			return return_list
+			to_chat(src, SPAN_USERDANGER("Your innards are spilling out... Not all of them though..."))
+			death()
+			adjustBruteLoss(6000)
+			return src
 		if(MODE_COARSE) // Damage them to hell
 			adjustBruteLoss(rand(200, 400))
 			return src
