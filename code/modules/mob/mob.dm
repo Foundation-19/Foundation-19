@@ -4,6 +4,12 @@
 	GLOB.living_mob_list_ -= src
 	GLOB.player_list -= src
 	unset_machine()
+	if(length(progressbars))
+		crash_with("[src] destroyed with elements in its progressbars list")
+		progressbars = null
+	if(length(progressbars_recipient))
+		crash_with("[src] destroyed with elements in its progressbars_recipient list")
+		progressbars_recipient = null
 	QDEL_NULL(hud_used)
 	if(istype(skillset))
 		QDEL_NULL(skillset)

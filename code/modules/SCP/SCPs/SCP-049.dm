@@ -252,14 +252,14 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	src.visible_message("\The [src] begins to pry open \the [A]!")
 
-	if(!do_after(A, 15 SECONDS, A, bonus_percentage = 25))
+	if(!do_after(src, 15 SECONDS, A, bonus_percentage = 25))
 		return
 
 	if(!A.density)
 		return
 
 	A.do_animate("spark")
-	if(do_after(A, 1 SECOND, bonus_percentage = 100))
+	if(do_after(src, 1 SECOND, A, bonus_percentage = 100))
 		A.set_broken(TRUE)
 		var/check = A.open(1)
 		src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")

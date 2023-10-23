@@ -76,8 +76,8 @@
 		if(QDELETED(user)\
 			|| (target_type && QDELETED(target))\
 			|| user.incapacitated(incapacitation_flags)\
-			|| ((do_flags & DO_USER_CAN_MOVE) && (user_loc != user.loc))\
-			|| ((do_flags & DO_USER_CAN_TURN) && (user_dir != user.dir))\
+			|| (!(do_flags & DO_USER_CAN_MOVE) && (user_loc != user.loc))\
+			|| (!(do_flags & DO_USER_CAN_TURN) && (user_dir != user.dir))\
 			|| (!(do_flags & DO_USER_IGNORE_ITEM) && user.get_active_hand() != holding)\
 			|| ((do_flags & DO_USER_SAME_HAND) && user_hand != user.hand)\
 			|| ((do_flags & DO_USER_SAME_ZONE) && user.zone_sel.selecting != target_zone)\
