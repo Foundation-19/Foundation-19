@@ -308,6 +308,7 @@ var/global/list/additional_antag_types = list()
 
 	send2mainirc("A round of [src.name] has ended - [data["surviving_total"]] survivor\s, [data["ghosts"]] ghost\s.")
 	SSwebhooks.send(WEBHOOK_ROUNDEND, data)
+	SSticker.send_news_report()
 
 	return 0
 

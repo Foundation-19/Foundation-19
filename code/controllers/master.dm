@@ -74,6 +74,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		config = new /datum/configuration()
 		config.load("config/config.txt")
 		config.load("config/game_options.txt","game_options")
+		config.load("config/comms.txt", "comms")
 		if (GLOB.using_map?.config_path)
 			config.load(GLOB.using_map.config_path, "using_map")
 		config.load_text("config/motd.txt", "motd")

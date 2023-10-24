@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	var/mob/living/simple_animal/hostile/scp_2427_3/O = holder
 	if(the_target in O.purity_list)
 		return FALSE
-	if(ishuman(the_target) && (O.satiety > O.min_satiety) && !(the_target in O.impurity_list))
+	if(ishuman(the_target) && (O.satiety > O.starvation_satiety) && !(the_target in O.impurity_list))
 		var/mob/living/carbon/human/H = the_target
 		if(H.stat != DEAD)
 			return FALSE
@@ -68,8 +68,10 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	/// How much satiety is reduced per tick
 	var/satiety_reduction_per_tick = 0.5
 	/// Upon going to that point or above - the mob goes into the is_sleeping stage and is unable to act/speak/move for some time
-	var/max_satiety = 600
+	var/max_satiety = 640
 	/// Upon that point, the mob is on a rampage, allowing it to escape and move faster
+	var/starvation_satiety = 40
+	/// Absolute minimum, at which point you start taking damage
 	var/min_satiety = 0
 	/// When TRUE - it ignores the purity list and can attack anything
 	var/enraged = FALSE
@@ -117,7 +119,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		CheckPurity(L)
 	AdjustSatiety(-satiety_reduction_per_tick)
 	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
-		adjustBruteLoss(maxHealth * 0.035)
+		adjustBruteLoss(maxHealth * 0.01)
 
 /mob/living/simple_animal/hostile/scp_2427_3/get_status_tab_items()
 	. = ..()
@@ -127,6 +129,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		. += "WE ARE ASLEEP."
 
 	if(satiety <= min_satiety)
+		. += "Satiety: I AM GOING TO STARVE TO DEATH!!"
+	else if(satiety <= starvation_satiety)
 		. += "Satiety: I NEED MEAT RIGHT NOW!"
 	else
 		. += "Satiety: [round(satiety)]/[max_satiety]"
@@ -176,7 +180,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(A in purity_list)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
 		return
-	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list) && !ismonkey(A))
+	if(ishuman(A) && (satiety > starvation_satiety) && !(A in impurity_list) && !ismonkey(A))
 		var/mob/living/carbon/human/H = A
 		if(H.stat != DEAD)
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
@@ -184,7 +188,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4)))) //This is an informational comment; but please do not remove the 'ISMONKEY' check due to the fact that unless we recode the purity mechanism, 2427-3 Cannot attack them!
+		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2.5)))) //This is an informational comment; but please do not remove the 'ISMONKEY' check due to the fact that unless we recode the purity mechanism, 2427-3 Cannot attack them!
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = round(max_satiety * 0.5)
@@ -258,7 +262,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 			return !L.stat && L.ckey // Conscious and is/was player controlled
 		if(L.stat && istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses around me to breach
 			return FALSE
-	return (satiety <= min_satiety)
+	return (satiety <= starvation_satiety)
 
 /mob/living/simple_animal/hostile/scp_2427_3/proc/FallAsleep()
 	if(is_sleeping)
