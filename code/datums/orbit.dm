@@ -59,6 +59,8 @@
 		orbiter.stop_orbit()
 		return
 	orbiter.loc = targetloc
+	if(istype(orbiting, /atom/movable))
+		orbiter.glide_size = AM.glide_size
 	//TODO-LESH-DEL orbiter.update_parallax_contents()
 	orbiter.update_light()
 	lastloc = orbiter.loc
