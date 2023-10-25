@@ -231,13 +231,13 @@
 /datum/job/proc/get_join_link(client/caller, href_string, show_invalid_jobs)
 	if(!is_available(caller))
 		if(show_invalid_jobs)
-			return "<tr><td><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+			return "<tr bgcolor='[selection_color]'><td style='padding-left:2px;padding-right:2px;'><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td style='padding-left:2px;padding-right:2px;''><center>[current_positions]</center></td><td style='padding-left:2px;padding-right:2px;'><center>(Active: [get_active_count()])</center></td></tr>"
 		return ""
 	if(is_restricted(caller.prefs))
 		if(show_invalid_jobs)
-			return "<tr><td><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+			return "<tr bgcolor='[selection_color]'><td style='padding-left:2px;padding-right:2px;'><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td style='padding-left:2px;padding-right:2px;''><center>[current_positions]</center></td><td style='padding-left:2px;padding-right:2px;'><center>(Active: [get_active_count()])</center></td></tr>"
 	else
-		return "<tr><td><a href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+		return return "<tr bgcolor='[selection_color]'><td style='padding-left:2px;padding-right:2px;'><a href='[href_string]'>[title]</a></td><td style='padding-left:2px;padding-right:2px;'><center>[current_positions]</center></td><td style='padding-left:2px;padding-right:2px;'><center>(Active: [get_active_count()])</center></td></tr>"
 
 // Only players with the job assigned and AFK for less than 10 minutes count as active
 /datum/job/proc/check_is_active(mob/M)
