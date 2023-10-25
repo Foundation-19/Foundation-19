@@ -2,7 +2,7 @@
 "aa" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/northleft{
-	req_access = list("ACCESS_ENGINEERING_LVL3")
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/carpet/purple,
@@ -7482,7 +7482,7 @@
 /area/site53/lhcz/hallway)
 "rs" = (
 /obj/machinery/door/window/brigdoor/southleft{
-	req_access = list("ACCESS_ENGINEERING_LVL3")
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
@@ -8143,7 +8143,7 @@
 /area/site53/engineering/server_room)
 "tc" = (
 /obj/machinery/door/window/brigdoor/southright{
-	req_access = list("ACCESS_ENGINEERING_LVL3")
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
@@ -11570,7 +11570,7 @@
 "Bw" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list("ACCESS_ENGINEERING_LVL3")
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/foundation,
 /turf/simulated/floor/carpet/purple,
@@ -11885,7 +11885,7 @@
 "Cy" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Server Room";
-	req_access = list("ACCESS_ENGINEERING_LVL3")
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/server_room)
