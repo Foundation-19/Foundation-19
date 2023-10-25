@@ -442,10 +442,10 @@
 		return FALSE
 
 	var/obj/P = new /obj/effect/decal/point(T)
+	var/turf/mob_tile = get_turf(src)
 	P.plane = MOB_PLANE
 	P.set_invisibility(invisibility)
-	P.pixel_x = A.pixel_x
-	P.pixel_y = A.pixel_y
+	animate(P, pixel_x = (T.x - mob_tile.x) * world.icon_size + A.pixel_x, pixel_y = (T.y - mob_tile.y) * world.icon_size + A.pixel_y, time = 3, easing = EASE_OUT)
 	face_atom(A)
 	setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	return TRUE
