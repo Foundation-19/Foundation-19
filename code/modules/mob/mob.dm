@@ -430,22 +430,25 @@
 	set name = "Point To"
 	set category = "Object"
 
-	if(!src || !isturf(src.loc) || !(can_see(A)))
-		return 0
+	// Ghosts can point to anything
+	if(isliving(src) && (!isturf(src.loc) || !(A in view(src.loc))))
+		return FALSE
+
 	if(istype(A, /obj/effect/decal/point))
-		return 0
+		return FALSE
 
-	var/tile = get_turf(A)
-	if (!tile)
-		return 0
+	var/turf/T = get_turf(A)
+	if(!istype(T))
+		return FALSE
 
-	var/obj/P = new /obj/effect/decal/point(tile)
+	var/obj/P = new /obj/effect/decal/point(T)
 	P.plane = MOB_PLANE
 	P.set_invisibility(invisibility)
 	P.pixel_x = A.pixel_x
 	P.pixel_y = A.pixel_y
 	face_atom(A)
-	return 1
+	setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	return TRUE
 
 //Gets the mob grab conga line.
 /mob/proc/ret_grab(list/L)
