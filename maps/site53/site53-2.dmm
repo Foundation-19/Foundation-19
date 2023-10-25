@@ -84,7 +84,7 @@
 /area/site53/science/aiccore)
 "aan" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -571,10 +571,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/site53/lowertrams/hub)
-"abN" = (
-/obj/structure/flora/pottedplant/decorative,
-/turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "abO" = (
 /obj/machinery/light{
@@ -1144,26 +1140,13 @@
 "adU" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"adY" = (
-/obj/structure/railing/mapped,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/open,
-/area/site53/lowertrams/hub)
 "adZ" = (
 /obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/lowertrams/hub)
-"aea" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/site53/lowertrams/hub)
 "aeb" = (
 /obj/structure/railing/mapped{
-	dir = 8
+	dir = 1
 	},
 /turf/simulated/open,
 /area/site53/lowertrams/hub)
@@ -2062,7 +2045,7 @@
 /area/site53/llcz/entrance_checkpoint)
 "agV" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
@@ -3089,18 +3072,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/engineering/uppernukeladders)
-"ajP" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/civilian{
-	name = "Archive"
-	},
-/obj/machinery/door/blast/shutters/open{
-	icon_state = "shutter0";
-	id_tag = "archiveshutter";
-	name = "Archive Shutter"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "ajQ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
@@ -4974,7 +4945,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -5888,7 +5859,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "Server Farm Tunnel";
 	dir = 4;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -9295,7 +9266,7 @@
 "azD" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
@@ -10750,7 +10721,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
@@ -10905,11 +10876,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/logistics/logistics)
-"aDX" = (
-/obj/structure/table/standard,
-/obj/item/paper/scp/euclid/scp096,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp096)
 "aDY" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_wall/prepainted,
@@ -12183,7 +12149,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/paper/scp/euclid/scp151,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp151)
@@ -12671,7 +12636,7 @@
 "aKF" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -13327,11 +13292,6 @@
 /obj/effect/floor_decal/corner/yellow/borderfull,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
-"aNn" = (
-/obj/structure/flora/pottedplant/decorative,
-/obj/machinery/camera/network/entrance,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "aNp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -13407,7 +13367,6 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp999,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
 "aNx" = (
@@ -15177,7 +15136,7 @@
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 3";
 	dir = 1;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
@@ -16001,7 +15960,6 @@
 /area/site53/llcz/scp113)
 "aWD" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp113,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp113)
 "aWE" = (
@@ -16027,7 +15985,6 @@
 "aWG" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
-/obj/item/paper/scp/safe/scp013,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp013)
 "aWH" = (
@@ -16162,7 +16119,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp131,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "aXb" = (
@@ -16243,7 +16199,7 @@
 /area/site53/llcz/genstorage1)
 "aXl" = (
 /obj/machinery/camera/autoname{
-	network = list("Light    Containment    Zone    Network")
+	network = list("Light                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
@@ -16262,7 +16218,7 @@
 /area/site53/ulcz/hallways)
 "aXo" = (
 /obj/machinery/camera/autoname{
-	network = list("Light    Containment    Zone    Network")
+	network = list("Light                Containment                Zone                Network")
 	},
 /obj/machinery/light{
 	dir = 1
@@ -17635,10 +17591,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
-"bbw" = (
-/obj/structure/filingcabinet/scp/euclid,
-/turf/simulated/floor/wood,
-/area/site53/lhcz/scp343room)
 "bbx" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -17656,10 +17608,6 @@
 	name = "cat bed";
 	pixel_y = 9
 	},
-/turf/simulated/floor/wood,
-/area/site53/lhcz/scp343room)
-"bbz" = (
-/obj/structure/filingcabinet/scp/keter,
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
 "bbA" = (
@@ -17793,10 +17741,6 @@
 /area/site53/lhcz/scp343room)
 "bcd" = (
 /turf/simulated/floor/lino,
-/area/site53/lhcz/scp343room)
-"bcf" = (
-/obj/structure/filingcabinet/scp/safe,
-/turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
 "bcg" = (
 /obj/structure/bed/chair/wood{
@@ -18049,7 +17993,6 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/item/paper/scp/euclid/scp078,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
@@ -20783,7 +20726,7 @@
 "bTK" = (
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/lino,
 /area/site53/ulcz/humanoidcontainment)
@@ -20823,7 +20766,7 @@
 	},
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
@@ -20894,7 +20837,7 @@
 /area/site53/llcz/entrance_checkpoint)
 "bXP" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/monotile,
@@ -20963,7 +20906,7 @@
 /obj/structure/filingcabinet,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
@@ -21324,7 +21267,7 @@
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 6";
 	dir = 8;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
@@ -21478,7 +21421,7 @@
 "cIC" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Light    Containment    Zone    Network")
+	network = list("Light                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -21700,13 +21643,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
-"cWF" = (
-/obj/structure/filingcabinet/scp/keter,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/lino,
-/area/site53/ulcz/humanoidcontainment)
 "cXy" = (
 /obj/structure/sign/scp/euclid_scp{
 	pixel_x = -32
@@ -21962,7 +21898,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
@@ -22020,11 +21956,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"dqb" = (
-/obj/structure/table/standard,
-/obj/item/paper/scp/keter/scp106,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp106observ)
 "drT" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -22115,7 +22046,7 @@
 /area/site53/surface/bunker)
 "dvV" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
@@ -22509,7 +22440,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
@@ -22757,7 +22688,7 @@
 "emf" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/structure/closet/secure_closet/engineering_personal{
@@ -23259,7 +23190,7 @@
 "eUI" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
@@ -23770,6 +23701,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"fvD" = (
+/obj/machinery/camera/network/entrance,
+/turf/simulated/open,
+/area/site53/lowertrams/hub)
 "fvR" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-247"
@@ -24061,7 +23996,7 @@
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 2";
 	dir = 4;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
@@ -24071,7 +24006,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/effect/floor_decal/corner/red{
 	dir = 6
@@ -24147,7 +24082,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -24288,7 +24223,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/containment_engineer)
@@ -24492,7 +24427,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/table/standard,
 /obj/item/device/radio,
@@ -24639,7 +24574,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "Server Farm Entrance";
 	dir = 4;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/bed/chair{
 	dir = 1
@@ -25214,7 +25149,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -25469,7 +25404,7 @@
 "hrk" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Server Farm Control";
-	network = list("Engineering    Network");
+	network = list("Engineering                Network");
 	pixel_x = 10
 	},
 /obj/machinery/atmospherics/unary/freezer{
@@ -25972,7 +25907,7 @@
 "hOJ" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Light    Containment    Zone    Network")
+	network = list("Light                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -27451,6 +27386,9 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"jrC" = (
+/turf/simulated/open,
+/area/site53/lowertrams/hub)
 "jrM" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -27519,7 +27457,7 @@
 /obj/structure/bookcase/manuals,
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
@@ -28243,7 +28181,7 @@
 /obj/item/hand_labeler,
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
@@ -28265,7 +28203,7 @@
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
@@ -28283,7 +28221,7 @@
 "kmK" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /obj/machinery/cell_charger,
 /obj/item/screwdriver,
@@ -28453,7 +28391,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -28468,7 +28406,7 @@
 "kxG" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/closet/firecloset,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -28539,7 +28477,7 @@
 "kAm" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -28812,7 +28750,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
@@ -29058,7 +28996,7 @@
 	},
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
@@ -29403,7 +29341,7 @@
 	},
 /obj/machinery/camera/motion{
 	c_tag = "AIC Core";
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/greengrid,
 /area/site53/science/aiccore)
@@ -29474,7 +29412,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/effect/floor_decal/corner/yellow/three_quarters{
 	dir = 4
@@ -30094,7 +30032,7 @@
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 4";
 	dir = 8;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
@@ -30272,14 +30210,14 @@
 	},
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
 "mur" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/upperselfdestruct)
@@ -30931,7 +30869,7 @@
 "naq" = (
 /obj/machinery/camera/motion{
 	c_tag = "AIC Entrance";
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
@@ -30970,7 +30908,7 @@
 "ndt" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -31654,7 +31592,7 @@
 /area/site53/ulcz/scp2427_3)
 "nNY" = (
 /obj/machinery/camera/autoname{
-	network = list("Light    Containment    Zone    Network")
+	network = list("Light                Containment                Zone                Network")
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -31684,7 +31622,7 @@
 /obj/machinery/cooker/fryer,
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/humanoidcontainment)
@@ -31703,7 +31641,7 @@
 	},
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
@@ -31978,6 +31916,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lhcz/hczguardgear)
+"okp" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/civilian{
+	name = "IT Department"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "okr" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/legguards/riot,
@@ -32397,7 +32342,7 @@
 	dir = 5
 	},
 /obj/machinery/camera/autoname{
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -32451,7 +32396,7 @@
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 9";
 	dir = 1;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
@@ -32714,7 +32659,7 @@
 	},
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/humanoidcontainment)
@@ -32774,7 +32719,7 @@
 "pcO" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /obj/machinery/power/apc/high{
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
@@ -32909,7 +32854,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
@@ -33049,7 +32994,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower Basement";
 	dir = 4;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/serverfarmtunnel)
@@ -33155,7 +33100,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34233,7 +34178,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
@@ -34290,7 +34235,7 @@
 /area/site53/uhcz/generalpurpose3)
 "qYN" = (
 /obj/machinery/camera/autoname{
-	network = list("Light    Containment    Zone    Network")
+	network = list("Light                Containment                Zone                Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -34603,7 +34548,7 @@
 "roj" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -34676,7 +34621,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "Auxillary Closet";
 	dir = 1;
-	network = list("Engineering    Network    1")
+	network = list("Engineering                Network                1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/auxstorage)
@@ -35091,7 +35036,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/engine_smes)
@@ -35477,7 +35422,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/uppernukeladders)
@@ -35724,7 +35669,6 @@
 /area/site53/uhcz/generalpurpose3)
 "sBC" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/paper/scp012,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "sCI" = (
@@ -35756,7 +35700,7 @@
 /obj/structure/curtain/open/shower/engineering,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/engine)
@@ -35841,7 +35785,7 @@
 "sKc" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/structure/hygiene/sink{
 	dir = 4;
@@ -36024,7 +35968,7 @@
 /obj/structure/closet/l3closet/general,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/engineering/biosupplies)
@@ -36137,7 +36081,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname{
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/breakroom)
@@ -36300,7 +36244,7 @@
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 1";
 	dir = 8;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
@@ -36378,7 +36322,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -36698,6 +36642,15 @@
 "tJR" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"tKa" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/site53/lowertrams/hub)
 "tKB" = (
 /obj/structure/bed/chair/padded/black{
 	dir = 4
@@ -36914,7 +36867,6 @@
 /area/site53/uhcz/scp096)
 "tXq" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp2398,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp2398)
 "tXU" = (
@@ -36924,7 +36876,7 @@
 	},
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 2";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy                Containment                Zone                Network")
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
@@ -38016,7 +37968,7 @@
 "vsb" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /obj/machinery/light{
 	dir = 4
@@ -38403,7 +38355,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -39354,7 +39306,7 @@
 "wLo" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
@@ -39645,7 +39597,7 @@
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 5";
 	dir = 8;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
@@ -39806,7 +39758,7 @@
 "xgc" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance    Zone    Network")
+	network = list("Entrance                Zone                Network")
 	},
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
@@ -40702,7 +40654,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Engineering    Network")
+	network = list("Engineering                Network")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/engine)
@@ -68591,10 +68543,10 @@ icS
 icS
 icS
 env
-aac
-aac
-aac
-aac
+azA
+azA
+azA
+azA
 aac
 adA
 aei
@@ -68848,10 +68800,10 @@ cMK
 cMK
 ngO
 aac
-aac
-aNn
-aea
-aea
+azA
+azA
+azA
+azA
 aac
 uPL
 aej
@@ -69106,10 +69058,10 @@ ryY
 kaF
 aac
 aac
-adY
-aaf
-aaf
-ajP
+aac
+aac
+aac
+aac
 aaf
 aen
 abE
@@ -69362,11 +69314,11 @@ izS
 qzl
 ozi
 aac
+fvD
+tKa
+tKa
+jrC
 aac
-adZ
-aaf
-aaf
-ajP
 aaf
 aen
 abE
@@ -69619,9 +69571,9 @@ pBu
 qzl
 ozi
 aac
-aac
-abN
-aeb
+adZ
+aaf
+aaf
 aeb
 aac
 mPb
@@ -69876,10 +69828,10 @@ qOz
 qzl
 sTX
 aac
-aac
-aac
-aac
-aac
+adZ
+aaf
+aaf
+aeb
 aac
 adD
 aen
@@ -70134,8 +70086,8 @@ wDU
 aac
 aac
 aac
-aac
-aac
+okp
+okp
 aac
 aac
 iWp
@@ -83216,7 +83168,7 @@ urC
 jlN
 dZj
 urC
-cWF
+sbY
 ljb
 tWa
 sbY
@@ -85529,7 +85481,7 @@ urC
 jlN
 dZj
 urC
-cWF
+sbY
 ljb
 tWa
 sbY
@@ -87842,7 +87794,7 @@ urC
 jlN
 dZj
 urC
-cWF
+sbY
 ljb
 tWa
 sbY
@@ -90687,7 +90639,7 @@ azA
 azA
 azA
 aBs
-dqb
+aBf
 ahS
 arr
 pzx
@@ -95115,7 +95067,7 @@ uvn
 tXn
 yij
 iCX
-aDX
+bDp
 bdi
 azA
 azA
@@ -98414,7 +98366,7 @@ bbF
 bbu
 bbu
 bbX
-bcf
+bbu
 bbo
 bcw
 bcd
@@ -99437,7 +99389,7 @@ aki
 aki
 aki
 bbo
-bbw
+bbu
 bbu
 bbu
 bbS
@@ -100208,7 +100160,7 @@ baN
 baN
 baP
 bbo
-bbz
+bbu
 bbu
 bbu
 bbT

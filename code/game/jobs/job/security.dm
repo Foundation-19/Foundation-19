@@ -560,8 +560,8 @@
 	department = "Entrance Zone Personnel"
 	selection_color = "#601c1c"
 	department_flag = SEC|ECZ|BUR
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the EZ Supervisor"
 	economic_power = 5

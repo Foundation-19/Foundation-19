@@ -143,10 +143,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/primary/bridge/fore)
-"be" = (
-/obj/structure/filingcabinet/scp/keter/scp2000to2999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "bh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -858,7 +854,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/engineering/foyer)
 "gX" = (
-/obj/structure/filingcabinet/scp/keter/scp3000to3999,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/server_room)
 "hb" = (
@@ -1540,10 +1535,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/vacant)
-"mZ" = (
-/obj/structure/filingcabinet/scp/safe/scp2000to2999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "nf" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2976,10 +2967,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/conference)
-"zb" = (
-/obj/structure/filingcabinet/scp/euclid/scp2000to2999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "zh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2987,10 +2974,6 @@
 /obj/machinery/door/airlock/engineering,
 /turf/simulated/floor/tiled/old_cargo,
 /area/maintenance/auxsolarbridge)
-"zk" = (
-/obj/structure/filingcabinet/scp/keter/scp1000to1999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "zn" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/steel_grid,
@@ -3022,10 +3005,6 @@
 "zz" = (
 /turf/simulated/floor/tiled/freezer,
 /area/hallway/primary/bridge/fore)
-"zA" = (
-/obj/structure/filingcabinet/scp/keter/scp1to999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "zE" = (
 /obj/machinery/door/airlock/command,
 /obj/structure/cable/green{
@@ -3599,10 +3578,6 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/rdoffice)
-"Ej" = (
-/obj/structure/filingcabinet/scp/safe/scp3000to3999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "Em" = (
 /obj/structure/table/standard,
 /obj/item/rcd,
@@ -4023,10 +3998,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/conference)
-"Hk" = (
-/obj/structure/filingcabinet/scp/safe/scp1to999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "Hl" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -4132,10 +4103,6 @@
 /obj/effect/floor_decal/corner/research/full,
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
-"HL" = (
-/obj/structure/filingcabinet/scp/safe/scp1000to1999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "HO" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -4227,10 +4194,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/site53/engineering/server_room)
-"Jf" = (
-/obj/structure/filingcabinet/scp/euclid/scp1000to1999,
-/turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/server_room)
 "Jh" = (
 /obj/structure/cable{
@@ -4834,10 +4797,6 @@
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/maintenance/auxsolarbridge)
-"NO" = (
-/obj/structure/filingcabinet/scp/euclid/scp3000to3999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "NP" = (
 /obj/structure/window/reinforced/full,
 /turf/simulated/floor/plating,
@@ -5794,10 +5753,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/primary/bridge/fore)
-"VN" = (
-/obj/structure/filingcabinet/scp/euclid/scp1to999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/server_room)
 "VO" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/purple,
@@ -47515,18 +47470,18 @@ au
 au
 au
 KR
-Ej
-mZ
-HL
-Hk
+gX
+gX
+gX
+gX
 KR
 dR
 xj
 OM
 uo
-zA
-zk
-be
+gX
+gX
+gX
 gX
 KR
 Ly
@@ -48286,10 +48241,10 @@ au
 au
 au
 KR
-NO
-zb
-Jf
-VN
+gX
+gX
+gX
+gX
 KR
 lm
 bv
