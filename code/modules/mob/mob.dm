@@ -441,8 +441,8 @@
 	if(!istype(T))
 		return FALSE
 
-	var/obj/P = new /obj/effect/decal/point(T)
 	var/turf/mob_tile = get_turf(src)
+	var/obj/P = new /obj/effect/decal/point(mob_tile)
 	P.plane = MOB_PLANE
 	P.set_invisibility(invisibility)
 	animate(P, pixel_x = (T.x - mob_tile.x) * world.icon_size + A.pixel_x, pixel_y = (T.y - mob_tile.y) * world.icon_size + A.pixel_y, time = 3, easing = EASE_OUT)
