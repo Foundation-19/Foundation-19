@@ -30,3 +30,9 @@
       console/program.
   TheDarkElites:
   - bugfix: Improves Checkpoint Manual
+2023-10-25:
+  EgorDinamit:
+  - bugfix: Ghosts will not longer "jump" while orbiting moving objects.
+  - admin: Dressup can be used on ghosts now. This will spawn in their character from
+      currently selected prefs, if they have one.
+  - admin: Dressup verb is now accessible from right-click menu.

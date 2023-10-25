@@ -1,4 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - bugfix: Ghosts will not longer "jump" while orbiting moving objects.
