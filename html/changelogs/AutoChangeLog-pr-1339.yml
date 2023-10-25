@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: Added Aggegate infestation caste. Currently nothing evolves into it.
+  - tweak: Simple mobs can burn again, and it should deal more damage.
