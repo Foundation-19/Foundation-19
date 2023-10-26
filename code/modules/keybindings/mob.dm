@@ -5,7 +5,7 @@
 	return ismob(user.mob) ? TRUE : FALSE
 
 /datum/keybinding/mob/cycle_intent_right
-	hotkey_keys = list("G", "Insert")
+	hotkey_keys = list("Insert")
 	name = "cycle_intent_right"
 	full_name = "Cycle Intent: Right"
 	description = ""
@@ -16,7 +16,7 @@
 	return TRUE
 
 /datum/keybinding/mob/cycle_intent_left
-	hotkey_keys = list("F")
+	hotkey_keys = list("None")
 	name = "cycle_intent_left"
 	full_name = "Cycle Intent: Left"
 	description = ""
