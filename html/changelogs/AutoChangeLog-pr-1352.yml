@@ -1,0 +1,10 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: Pointing at objects is now animated.
+  - admin: Admins can now return to lobby (respawn) regardless of game's state (i.e.
+      before round started).
+  - tweak: Give hotkey (default "G") now works correctly, and attempts to give an
+      item to random mob in vicinity.
+  - tweak: The late-join menu now has colored background.
+  - bugfix: Ghosts can use ctrl-alt click to point at things.
