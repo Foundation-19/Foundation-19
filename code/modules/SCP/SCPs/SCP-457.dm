@@ -20,6 +20,8 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp457
 	say_list_type = /datum/say_list/scp457
 
+	maxbodytemp = INFINITY
+
 	//Config
 
 	///Attack cooldown
@@ -181,7 +183,3 @@
 /mob/living/simple_animal/hostile/scp457/do_attack(atom/A, turf/T)
 	if(..())
 		UnarmedAttack(A)
-
-/mob/living/simple_animal/hostile/scp457/adjustFireLoss(amount)
-	amount = 0 //immune to fire damage
-	return ..()
