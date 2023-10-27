@@ -146,13 +146,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/engineering/conteng
 	requirements = list("Engineer" = 480, EXP_TYPE_ENGINEERING = 600)
 	allowed_branches = list(
-		/datum/mil_branch/security
+		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/security/e9,
-		/datum/mil_rank/security/w2,
-		/datum/mil_rank/security/w3,
-		/datum/mil_rank/security/w4
+		/datum/mil_rank/civ/classb
 	)
 	hud_icon = "hudcontainmentengineer"
 
@@ -200,10 +197,9 @@
 	minimal_player_age = 20
 	requirements = list("Senior Engineer" = 480, EXP_TYPE_ENGINEERING = 1200)
 	outfit_type = /decl/hierarchy/outfit/job/command/chief_engineer
-	allowed_branches = list(/datum/mil_branch/security)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
-	/datum/mil_rank/security/o2,
-	/datum/mil_rank/security/o3
+		/datum/mil_rank/civ/classa
 	)
 	hud_icon = "hudchiefengineer"
 

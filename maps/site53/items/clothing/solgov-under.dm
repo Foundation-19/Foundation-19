@@ -264,10 +264,6 @@
 /obj/item/clothing/under/solgov/utility/fleet/combat/security
 	accessories = list(/obj/item/clothing/accessory/solgov/department/security/fleet)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/medical
-	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/fleet, /obj/item/clothing/accessory/armband/medblue)
-
-
 /obj/item/clothing/under/solgov/utility/marine
 	name = "security fatigues"
 	desc = "The utility uniform of the Security Branch, made from durable material."
@@ -286,9 +282,6 @@
 
 /obj/item/clothing/under/solgov/utility/marine/medical
 	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/marine)
-
-/obj/item/clothing/under/solgov/utility/marine/medical/banded
-	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/marine, /obj/item/clothing/accessory/armband/medblue)
 
 /obj/item/clothing/under/solgov/utility/marine/supply
 	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/marine)

@@ -12,13 +12,11 @@
 /datum/gear/eyes/eyepatch
 	display_name = "eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
-	denied_roles = null
 
 /datum/gear/eyes/fashionglasses
 	display_name = "non-prescription glasses"
 	path = /obj/item/clothing/glasses
-	denied_roles = null
-	allowed_branches = list(/datum/mil_branch/civilian)
+	blacklist_department_flags = SEC
 
 /datum/gear/eyes/fashionglasses/New()
 	..()
@@ -32,7 +30,7 @@
 /datum/gear/eyes/sciencegoggles
 	display_name = "Science Goggles"
 	path = /obj/item/clothing/glasses/science
-	allowed_branches = list(/datum/mil_branch/civilian)
+	whitelist_department_flags = SCI
 
 /datum/gear/eyes/sciencegoggles/prescription
 	display_name = "Science Goggles, prescription"
@@ -41,42 +39,38 @@
 /datum/gear/eyes/sciencehud
 	display_name = "Science HUD"
 	path = /obj/item/clothing/glasses/hud/science
-	allowed_branches = list(/datum/mil_branch/civilian)
+	whitelist_department_flags = SCI
 
 /datum/gear/eyes/sciencehud/prescription
 	display_name = "Science HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/science/prescription
-	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/security
 	display_name = "Security HUD"
 	path = /obj/item/clothing/glasses/hud/security
-	allowed_branches = list(/datum/mil_branch/security)
+	whitelist_department_flags = SEC
 
 /datum/gear/eyes/security/prescription
 	display_name = "Security HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/security/prescription
-	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/sunglasses
 	display_name = "Security HUD Sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/sechud
-	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/aviators
 	display_name = "Security HUD Aviators"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/toggle
-	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/ipatch
 	display_name = "HUDpatch, Security"
 	path = /obj/item/clothing/glasses/eyepatch/hud/security
 	cost = 2
-	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/medical
 	display_name = "Medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
+	whitelist_department_flags = MED
 
 /datum/gear/eyes/medical/prescription
 	display_name = "Medical HUD, prescription"
@@ -95,25 +89,26 @@
 /datum/gear/eyes/meson
 	display_name = "Meson Goggles"
 	path = /obj/item/clothing/glasses/meson
-	allowed_roles = list(/datum/job/chief_engineer,/datum/job/scientist, /datum/job/rd)
+	whitelist_department_flags = ENG
 
 /datum/gear/eyes/meson/prescription
 	display_name = "Meson Goggles, prescription"
 	path = /obj/item/clothing/glasses/meson/prescription
-
-/datum/gear/eyes/welding
-	display_name = "Welding Goggles"
-	path = /obj/item/clothing/glasses/welding
 
 /datum/gear/eyes/meson/ipatch
 	display_name = "HUDpatch, Meson"
 	path = /obj/item/clothing/glasses/eyepatch/hud/meson
 	cost = 2
 
+/datum/gear/eyes/welding
+	display_name = "Welding Goggles"
+	path = /obj/item/clothing/glasses/welding
+	whitelist_department_flags = ENG | SCI
+
 /datum/gear/eyes/material
 	display_name = "Material Goggles"
 	path = /obj/item/clothing/glasses/material
-	allowed_roles = list(/datum/job/chief_engineer)
+	whitelist_department_flags = ENG
 
 /datum/gear/eyes/shades/
 	display_name = "sunglasses"
@@ -138,7 +133,6 @@
 	display_name = "blindfold"
 	path = /obj/item/clothing/glasses/blindfold
 	flags = GEAR_HAS_COLOR_SELECTION
-	denied_roles = null
 
 /datum/gear/eyes/janitor
 	display_name = "JaniHUD"

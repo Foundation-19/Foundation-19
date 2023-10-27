@@ -77,12 +77,13 @@
 	minimal_player_age = 15
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
-	allowed_branches = list(/datum/mil_branch/security)
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
 	hud_icon = "hudcommsofficer"
 	requirements = list("Communications Technician" = 600)
 	allowed_ranks = list(
-	/datum/mil_rank/security/w5,
-	/datum/mil_rank/security/w6
+		/datum/mil_rank/civ/classb
 	)
 
 	access = list(
