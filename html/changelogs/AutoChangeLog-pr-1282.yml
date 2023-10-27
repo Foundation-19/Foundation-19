@@ -1,0 +1,6 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscdel: Removed botany skill. All related skill checks have been removed.
+  - rscdel: Removed piloting skill. Mech piloting checks have been transferred to
+      weapons skill, and other references have been removed.
