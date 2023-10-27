@@ -1,0 +1,6 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: Players can now succumb if their heart stops(no pulse), dying on the spot,
+      allowing them to skip the grueling time of observing the black screen as they
+      die for the next 10 minutes.
