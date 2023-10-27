@@ -1,0 +1,4 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - bugfix: All effects that were invisible should work now.
