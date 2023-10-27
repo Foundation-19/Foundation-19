@@ -679,7 +679,7 @@
 				SPAN_WARNING("\The [src] charges up in preparation for a slide!"),
 				blind_message = SPAN_WARNING("You hear a loud hum and an intense crackling.")
 			)
-			new /obj/effect/temporary(get_step(owner.loc, reverse_direction(owner.dir)), 2 SECONDS, 'icons/effects/effects.dmi',"cyan_sparkles")
+			new /obj/effect/temp_visual/temporary(get_step(owner.loc, reverse_direction(owner.dir)), 2 SECONDS, 'icons/effects/effects.dmi',"cyan_sparkles")
 			owner.setClickCooldown(2 SECONDS)
 			if (do_after(owner, 2 SECONDS, do_flags = (DO_DEFAULT | DO_PUBLIC_PROGRESS | DO_USER_UNIQUE_ACT) & ~DO_USER_CAN_TURN) && slideCheck(TT))
 				owner.visible_message(SPAN_DANGER("Burning hard, \the [owner] thrusts forward!"))
