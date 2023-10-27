@@ -69,8 +69,7 @@
 
 /datum/scp/Destroy()
 	. = ..()
-	if(LAZYLEN(GLOB.SCP_list))
-		GLOB.SCP_list -= src
+	GLOB.SCP_list -= src
 	UnregisterSignal(parent, COMSIG_ATOM_EXAMINED)
 	parent = null
 
