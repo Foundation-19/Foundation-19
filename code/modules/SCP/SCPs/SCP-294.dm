@@ -52,7 +52,7 @@
 		return FALSE
 	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
 		var/amount_contained = reagent_container.get_reagent_amount(input_path)
-		if(!amount_contained)
+		if(!amount_contained || !reagent_container.my_atom || !(reagent_container.my_atom.z in GetConnectedZlevels(z)))
 			continue
 		LAZYADD(reagents_to_fill_from, reagent_container)
 	return reagents_to_fill_from
