@@ -68,17 +68,3 @@
 	item_cost = 40
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/storage/box/frags
-
-/datum/uplink_item/item/grenades/supermatter
-	name = "1x Supermatter Grenade"
-	desc = "This grenade contains a small supermatter shard which will delaminate upon activation and pull in nearby objects, irradiate lifeforms, and eventually explode."
-	item_cost = 15
-	antag_roles = list(MODE_MERCENARY)
-	path = /obj/item/grenade/supermatter
-
-/datum/uplink_item/item/grenades/supermatters
-	name = "5x Supermatter Grenades"
-	desc = "These grenades contains a small supermatter shard which will delaminate upon activation and pull in nearby objects, irradiate lifeforms, and eventually explode."
-	item_cost = 60
-	antag_roles = list(MODE_MERCENARY)
-	path = /obj/item/storage/box/supermatters

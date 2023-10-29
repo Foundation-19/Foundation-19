@@ -156,18 +156,17 @@
 	<hr>
 	STEP ONE: Check what the current site-wise security level is:<br>
 	<ul><li>CODE GREEN: Testing is to be conducted as normal.<br>
-	<li>CODE YELLOW: Testing can be refused at the discretion of the checkpoint officer.<br>
+	<li>CODE YELLOW: Testing can be refused by the checkpoint officer if there is an imminent threat to staff within the respective zone of the checkpoint. <br>
 	<li>CODE ORANGE and RED: No tests are to be conducted. Currently active tests may be ended at the discretion of the Zone Commander and above.<br>
 	<li>CODE BLACK and PITCHBLACK: No tests are to be conducted. All currently active tests are to be ended as soon as possible.</ul>
 	STEP TWO: Check the legitimacy of given paperwork and credentials. If paper is incorrect or forged, detain all involved personnel and report to your zone's Sargeant.<br>
-	Paperwork must clearly state the SCP(s) and materials involved in the test, the approving personnel, and the testing plan.<br>
-	Testing on a Safe or Euclid SCP requires approval from the Research Director, and testing on a Keter SCP requires approval from the Site Director.<br>
-	STEP THREE: Notify the Site Director of the test. The Site Director has authority to veto all tests.<br>
-	If the test is not vetoed, thoroughly search all personnel and material transferring through the checkpoint.<br>
-	Copy all testing-related paperwork before allowing personnel through.<br>
-	STEP FOUR: Ensure they are escorted throughout the zone, with at least one officer overseeing the test.<br>
-	When returning, all personnel and material must be searched again before transferring through the checkpoint, and testing records must be made.<br>
-	Certain anomalies may have Special Containment Procedures that may impact testing protocol. You are allowed to alter the procedure to maintain these containment procedures.
+	Paperwork must clearly state the SCP(s) and materials involved in the test and the testing plan. If it does not, directly contact the Reaserch Director and do not allow entry.<br>
+	You do not have the right to either authorize or not authorize a test. Regular researchers and up may test on Safe SCPs at their discretion and do not need explicit approval. Senior researchers and up may test on Euclid SCPs at their own discretion and do not require explicit approval. Any researcher may test on any SCP with the permission of the RD, barring restricted SCPs, which are SCP-106 and SCP-096, which require Site Director approval. You may, however, deny a test depending on the site's security level or if the individuals are suspicious. <br>
+	If a test conflicts with the special containment procedures of an SCP, you are to notify the RD. If the RD still approves the test, you may allow entry. Otherwise, the research staff must be held at the checkpoint until sufficient modifications are made.<br>
+	STEP THREE: Notify the Site Director and the Research Director through email of any attempts to pass through checkpoints for research. State the test and target SCP and whether or not they have been cleared to enter by checkpoint personnel. If you denied their entry, state the reason as to why in your email.<br>
+	If all paperwork is acceptable and no objections have been raised by either the Research Director or Site Director, you may allow the personnel to pass the checkpoint.<br>
+	STEP FOUR: If the test is on a Euclid level SCP or higher, or the research has a class D present with them, ensure they are escorted throughout the zone. If the test is on a Keter SCP, an officer should be present at the test as well.<br>
+	When returning, all personnel and material must be searched again before transferring through the checkpoint.
 	<hr>"}
 
 /obj/item/paper/d_class_guide

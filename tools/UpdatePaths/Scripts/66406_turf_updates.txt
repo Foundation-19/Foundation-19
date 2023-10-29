@@ -187,8 +187,6 @@
 /area/engineering/atmos/hfr_room : /area/station/engineering/atmos/hfr_room
 /area/engineering/atmospherics_engine : /area/station/engineering/atmospherics_engine
 /area/engineering/lobby : /area/station/engineering/lobby
-/area/engineering/supermatter : /area/station/engineering/supermatter
-/area/engineering/supermatter/room : /area/station/engineering/supermatter/room
 /area/engineering/break_room : /area/station/engineering/break_room
 /area/engineering/gravity_generator : /area/station/engineering/gravity_generator
 /area/engineering/storage : /area/station/engineering/storage

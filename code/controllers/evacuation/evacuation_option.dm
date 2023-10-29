@@ -7,4 +7,5 @@
 	var/abandon_ship = FALSE
 
 /datum/evacuation_option/proc/execute(mob/user)
+	SSticker.news_report = max(SSticker.news_report, FACILITY_EVACUATED) // TODO: If we ever use more options - move it elsewhere and add more
 	return

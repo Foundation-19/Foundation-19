@@ -149,6 +149,32 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	var/base_throttle = max(throttle[1], world.timeofday)
 	SET_THROTTLE(3 SECONDS, null)
 
+	/* Cross-Comms stuff */
+	if(findtext(T, "Comms_Console") && GLOB.cross_comms_allowed)
+		var/list/input = params2list(T)
+		// Reject comms messages from other servers that are not on our configured network,
+		// if this has been configured. (See CROSS_COMMS_NETWORK in comms.txt)
+		var/configured_network = config.cross_comms_network
+		if(configured_network && configured_network != input["network"])
+			return
+		// Check comms key
+		if(config.comms_key != input["key"])
+			return
+		post_comm_message("Incoming message from [input["message_sender"]]", input["message"])
+		command_announcement.Announce(input["message"], "Incoming message from [input["message_sender"]]")
+		var/sender_ckey = input["message_sender_ckey"] ? input["message_sender_ckey"] : "Unknown"
+		log_and_message_admins("Comms_Console message received from [input["source"]]; Sender ckey: [sender_ckey].")
+
+	else if(findtext(T, "News_Report") && GLOB.cross_comms_allowed)
+		var/list/input = params2list(T)
+		var/configured_network = config.cross_comms_network
+		if(configured_network && configured_network != input["network"])
+			return
+		if(config.comms_key != input["key"])
+			return
+		post_comm_message("Breaking Update From [input["message_sender"]]", input["message"])
+		command_announcement.Announce(input["message"], "Breaking Update From [input["message_sender"]]")
+
 	/* * * * * * * *
 	* Public Topic Calls
 	* The following topic calls are available without a comms secret.
@@ -680,3 +706,50 @@ var/failed_old_db_connections = 0
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
+
+/**
+ * Sends a message to a set of cross-communications-enabled servers using world topic calls
+ *
+ * Arguments:
+ * * source - Who sent this message
+ * * msg - The message body
+ * * type - The type of message, becomes the topic command under the hood
+ * * target_servers - A collection of servers to send the message to, defined in config
+ * * additional_data - An (optional) associated list of extra parameters and data to send with this world topic call
+ */
+/proc/send2otherserver(source, msg, type = "Comms_Console", target_servers, list/additional_data = list())
+	if(!config.comms_key)
+		to_chat(usr, SPAN_WARNING("Lacking comms key. Message was not sent."))
+		return
+
+	var/our_id = config.cross_comms_name
+	additional_data["message_sender"] = source
+	additional_data["message"] = msg
+	additional_data["source"] = "([our_id])"
+	if(!additional_data["message_sender_ckey"])
+		var/sender_ckey = usr ? usr.ckey : "server itself"
+		additional_data["message_sender_ckey"] = sender_ckey
+	additional_data += type
+
+	var/list/servers = config.cross_servers
+	for(var/I in servers)
+		if(I == our_id) //No sending to ourselves
+			continue
+		if(target_servers && !(I in target_servers))
+			continue
+		world.send_cross_comms(I, additional_data)
+
+/// Sends a message to a given cross comms server by name (by name for security).
+/world/proc/send_cross_comms(server_name, list/message, auth = TRUE)
+	set waitfor = FALSE
+	if (auth)
+		var/comms_key = config.comms_key
+		if(!comms_key)
+			to_chat(usr, SPAN_WARNING("Lacking comms key. Message was not sent."))
+			return
+		message["key"] = comms_key
+	var/list/servers = config.cross_servers
+	var/server_url = servers[server_name]
+	if (!server_url)
+		CRASH("Invalid cross comms config: [server_name]")
+	world.Export("[server_url]?[list2params(message)]")

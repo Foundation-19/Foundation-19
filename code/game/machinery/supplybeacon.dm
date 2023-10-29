@@ -7,10 +7,6 @@
 	var/deploy_path = /obj/machinery/power/supply_beacon
 	var/deploy_time = 4 SECONDS
 
-/obj/item/supply_beacon/supermatter
-	name = "inactive supermatter supply beacon"
-	deploy_path = /obj/machinery/power/supply_beacon/supermatter
-
 /obj/item/supply_beacon/attack_self(mob/user)
 	user.visible_message(SPAN_NOTICE("\The [user] begins setting up \the [src]."))
 	if(!do_after(user, deploy_time, src, bonus_percentage = 25))
@@ -39,10 +35,6 @@
 /obj/machinery/power/supply_beacon/New()
 	..()
 	if(!drop_type) drop_type = pick(supply_drop_random_loot_types())
-
-/obj/machinery/power/supply_beacon/supermatter
-	name = "supermatter supply beacon"
-	drop_type = "supermatter"
 
 /obj/machinery/power/supply_beacon/attackby(obj/item/W, mob/user)
 	if(!use_power && isWrench(W))

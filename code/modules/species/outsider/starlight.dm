@@ -112,4 +112,4 @@
 
 /datum/species/starlight/blueforged/handle_death(mob/living/carbon/human/H)
 	..()
-	new /obj/effect/temporary(get_turf(H),11, 'icons/mob/mob.dmi', "liquify")
+	new /obj/effect/temp_visual/temporary(get_turf(H),11, 'icons/mob/mob.dmi', "liquify")

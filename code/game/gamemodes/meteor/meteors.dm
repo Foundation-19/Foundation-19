@@ -58,7 +58,6 @@
 		/obj/effect/meteor/golden=10,\
 		/obj/effect/meteor/silver=10,\
 		/obj/effect/meteor/flaming=10,\
-		/obj/effect/meteor/supermatter=1\
 		)
 
 
@@ -328,31 +327,7 @@
 	..()
 	explosion(src.loc, 3, 6, 9, 20, 0)
 
-// This is the final solution against shields - a single impact can bring down most shield generators.
-/obj/effect/meteor/supermatter
-	name = "supermatter shard"
-	desc = "Oh god, what will be next..?"
-	icon = 'icons/obj/supermatter.dmi'
-	icon_state = "darkmatter_old"
-
-/obj/effect/meteor/supermatter/meteor_effect()
-	..()
-	explosion(src.loc, 1, 2, 3, 4, 0)
-	for(var/obj/machinery/power/apc/A in range(rand(12, 20), src))
-		A.energy_fail(round(10 * rand(8, 12)))
-
-/obj/effect/meteor/supermatter/get_shield_damage()
-	return ..() * rand(80, 120)
-
 //Missiles, for events and so on
-/obj/effect/meteor/supermatter/missile
-	name = "photon torpedo"
-	desc = "An advanded warhead designed to tactically destroy space installations."
-	icon = 'icons/obj/missile.dmi'
-	icon_state = "photon"
-	meteordrop = null
-	ismissile = TRUE
-	dropamt = 0
 
 /obj/effect/meteor/medium/missile
 	name = "missile"

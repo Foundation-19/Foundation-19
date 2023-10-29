@@ -36,7 +36,6 @@ GLOBAL_LIST_EMPTY(scp527s)
 	skillset.skill_list[SKILL_COMPUTER] = SKILL_TRAINED
 	skillset.skill_list[SKILL_HAULING] = SKILL_TRAINED
 	skillset.skill_list[SKILL_COOKING] = SKILL_TRAINED
-	skillset.skill_list[SKILL_BOTANY] = SKILL_EXPERIENCED
 	skillset.on_levels_change()
 
 /mob/living/carbon/human/scp_527/Login()

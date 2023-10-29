@@ -12,15 +12,6 @@
 	var/renamed = 0
 	var/icon_changed = 0
 
-/obj/item/storage/bible/open(mob/user)
-	. = ..()
-	icon_state = "bibleopen"
-
-/obj/item/storage/bible/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
-
 /obj/item/storage/bible/booze
 	name = "bible"
 	desc = "To be applied to the head repeatedly."
@@ -37,6 +28,7 @@
 	desc = "The central religious text of Christianity."
 	renamed = 1
 	icon_changed = 1
+	open_icon = "bibleopen"
 
 /obj/item/storage/bible/tanakh
 	name = "\improper Tanakh"
