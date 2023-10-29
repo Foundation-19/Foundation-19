@@ -5,7 +5,7 @@
 
 /obj/machinery/mineral/processing_unit
 	name = "mineral processor"
-	icon_state = "furnace_0"
+	icon_state = "furnace-off"
 	console = /obj/machinery/computer/mining
 	input_turf =  NORTH
 	output_turf = SOUTH
@@ -176,9 +176,9 @@
 /obj/machinery/mineral/processing_unit/on_update_icon()
 	cut_overlays()
 	if(active)
-		icon_state = "furnace_1"
+		icon_state = "furnace"
 	else
-		icon_state = "furnace_0"
+		icon_state = "furnace-off"
 
 #undef ORE_DISABLED
 #undef ORE_SMELT
