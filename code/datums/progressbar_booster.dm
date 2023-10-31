@@ -53,7 +53,7 @@
 	booster.regenerate_image()
 	trap.regenerate_image()
 
-	INVOKE_ASYNC(src, .proc/handle_fadein())
+	INVOKE_ASYNC(src, .proc/handle_fadein)
 
 /datum/progbar_booster_manager/proc/handle_fadein()
 	sleep(focus_frequency)
