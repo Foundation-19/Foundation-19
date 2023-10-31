@@ -53,10 +53,9 @@
 	booster.regenerate_image()
 	trap.regenerate_image()
 
-	INVOKE_ASYNC(src, .proc/handle_fadein)
+	addtimer(CALLBACK(src, .proc/handle_fadein), focus_frequency)
 
 /datum/progbar_booster_manager/proc/handle_fadein()
-	sleep(focus_frequency)
 	if(booster)
 		animate(booster, alpha = 255, time = PROGBAR_BOOSTER_FADEIN_TIME)
 	if(trap)	// theoretically there shouldn't be a case where one exists and the other one doesn't, but just in case we do two separate checks
