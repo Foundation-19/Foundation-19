@@ -180,19 +180,3 @@
 	// Double texting start out at about 25 and max out at about 60
 	doubletext_prob = clamp((current_drunkness * 0.5) - 12, 0, 20)
 	return ..()
-
-/datum/status_effect/speech/slurring/cult
-	id = "cult_slurring"
-	common_prob = 50
-	uncommon_prob = 25
-	replacement_prob = 33
-	doubletext_prob = 0
-	text_modification_file = "slurring_cult_text.json"
-
-/datum/status_effect/speech/slurring/heretic
-	id = "heretic_slurring"
-	common_prob = 50
-	uncommon_prob = 20
-	replacement_prob = 30
-	doubletext_prob = 5
-	text_modification_file = "slurring_heretic_text.json"

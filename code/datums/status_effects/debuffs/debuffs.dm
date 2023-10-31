@@ -215,65 +215,6 @@
 	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
 	icon_state = "asleep"
 
-/datum/status_effect/trance
-	id = "trance"
-	status_type = STATUS_EFFECT_UNIQUE
-	duration = 300
-	tick_interval = 10
-	var/stun = TRUE
-	alert_type = /atom/movable/screen/alert/status_effect/trance
-
-/atom/movable/screen/alert/status_effect/trance
-	name = "Trance"
-	desc = "Everything feels so distant, and you can feel your thoughts forming loops inside your head..."
-	icon_state = "high"
-
-/datum/status_effect/trance/tick()
-	if(stun)
-		owner.Stun(6 SECONDS, TRUE)
-	owner.set_dizzy(40 SECONDS)
-
-/datum/status_effect/trance/on_apply()
-	if(!iscarbon(owner))
-		return FALSE
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
-	ADD_TRAIT(owner, TRAIT_MUTE, STATUS_EFFECT_TRAIT)
-	owner.add_client_colour(/datum/client_colour/monochrome/trance)
-	owner.visible_message("[stun ? SPAN_WARNING("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \
-	SPAN_WARNING(pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")))
-	return TRUE
-
-/datum/status_effect/trance/on_creation(mob/living/new_owner, _duration, _stun = TRUE)
-	duration = _duration
-	stun = _stun
-	return ..()
-
-/datum/status_effect/trance/on_remove()
-	UnregisterSignal(owner, COMSIG_MOVABLE_HEAR)
-	REMOVE_TRAIT(owner, TRAIT_MUTE, STATUS_EFFECT_TRAIT)
-	owner.remove_status_effect(/datum/status_effect/dizziness)
-	owner.remove_client_colour(/datum/client_colour/monochrome/trance)
-	to_chat(owner, SPAN_WARNING("You snap out of your trance!"))
-
-/datum/status_effect/trance/get_examine_text()
-	return SPAN_WARNING("[owner.p_they()] seem[owner.p_s()] slow and unfocused.")
-
-/datum/status_effect/trance/proc/hypnotize(datum/source, list/hearing_args)
-	SIGNAL_HANDLER
-
-	if(!owner.can_hear() || owner == hearing_args[HEARING_SPEAKER])
-		return
-
-	var/mob/hearing_speaker = hearing_args[HEARING_SPEAKER]
-	var/mob/living/carbon/C = owner
-	C.cure_trauma_type(/datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY) //clear previous hypnosis
-	// The brain trauma itself does its own set of logging, but this is the only place the source of the hypnosis phrase can be found.
-	log_attack("[hearing_speaker] hypnotised [key_name(C)] with the phrase '[hearing_args[HEARING_RAW_MESSAGE]]'")
-	log_game("[C] has been hypnotised by the phrase '[hearing_args[HEARING_RAW_MESSAGE]]' spoken by [key_name(hearing_speaker)]")
-	addtimer(CALLBACK(C, /mob/living/carbon.proc/gain_trauma, /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hearing_args[HEARING_RAW_MESSAGE]), 10)
-	addtimer(CALLBACK(C, /mob/living.proc/Stun, 60, TRUE, TRUE), 15) //Take some time to think about it
-	qdel(src)
-
 /datum/status_effect/spasms
 	id = "spasms"
 	status_type = STATUS_EFFECT_MULTIPLE

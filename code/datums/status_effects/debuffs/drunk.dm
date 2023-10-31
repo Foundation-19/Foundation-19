@@ -24,15 +24,13 @@
 
 /datum/status_effect/inebriated/get_examine_text()
 	// Dead people don't look drunk
-	if(owner.stat == DEAD || HAS_TRAIT(owner, TRAIT_FAKEDEATH))
+	if(owner.stat == DEAD)
 		return null
 
 	// Having your face covered conceals your drunkness
 	if(iscarbon(owner))
 		var/mob/living/carbon/carbon_owner = owner
 		if(carbon_owner.wear_mask?.flags_inv & HIDEFACE)
-			return null
-		if(carbon_owner.head?.flags_inv & HIDEFACE)
 			return null
 
 	// .01s are used in case the drunk value ends up to be a small decimal.
@@ -154,9 +152,9 @@
 		owner.set_dizzy_if_lower(50 SECONDS)
 		if(prob(3))
 			owner.adjust_confusion(15 SECONDS)
-			if(iscarbon(owner))
-				var/mob/living/carbon/carbon_owner = owner
-				carbon_owner.vomit() // Vomiting clears toxloss - consider this a blessing
+			if(ishuman(owner))
+				var/mob/living/carbon/human/human_owner = owner
+				human_owner.vomit() // Vomiting clears toxloss - consider this a blessing
 
 	// Over 71, we will constantly have blurry eyes
 	if(drunk_value >= 71)
@@ -171,7 +169,13 @@
 	// Over 91, we gain even more toxloss, brain damage, and have a chance of dropping into a long sleep
 	if(drunk_value >= 91)
 		owner.adjustToxLoss(1)
-		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4)
+
+
+		if(ishuman(owner))
+			var/mob/living/carbon/human/human_owner = owner
+			var/obj/item/organ/internal/brain/brain = human_owner.internal_organs_by_name[BP_BRAIN]
+			brain.take_general_damage(3, TRUE)
+
 		if(owner.stat == CONSCIOUS && prob(20))
 			to_chat(owner, SPAN_WARNING("Just a quick nap..."))
 			owner.Sleeping(90 SECONDS)
