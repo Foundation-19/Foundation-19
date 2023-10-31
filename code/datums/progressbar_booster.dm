@@ -53,12 +53,14 @@
 	booster.regenerate_image()
 	trap.regenerate_image()
 
-	spawn()
-		sleep(focus_frequency)
-		if(booster)
-			animate(booster, alpha = 255, time = PROGBAR_BOOSTER_FADEIN_TIME)
-		if(trap)	// theoretically there shouldn't be a case where one exists and the other one doesn't, but just in case we do two separate checks
-			animate(trap, alpha = 255, time = PROGBAR_BOOSTER_FADEIN_TIME)
+	INVOKE_ASYNC(src, .proc/handle_fadein())
+
+/datum/progbar_booster_manager/proc/handle_fadein()
+	sleep(focus_frequency)
+	if(booster)
+		animate(booster, alpha = 255, time = PROGBAR_BOOSTER_FADEIN_TIME)
+	if(trap)	// theoretically there shouldn't be a case where one exists and the other one doesn't, but just in case we do two separate checks
+		animate(trap, alpha = 255, time = PROGBAR_BOOSTER_FADEIN_TIME)
 
 ///Special object used to reward mouse accuracy with a slight speed bonus to progressbars. Only used on certain objects.
 /obj/effect/client_image_holder/progressbar_booster

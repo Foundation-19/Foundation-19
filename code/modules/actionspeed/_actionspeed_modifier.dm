@@ -20,6 +20,8 @@ can next move
 
 */
 
+GLOBAL_LIST_EMPTY(actionspeed_modification_cache)
+
 /datum/actionspeed_modifier
 	/// Whether or not this is a variable modifier. Variable modifiers can NOT be ever auto-cached. ONLY CHECKED VIA INITIAL(), EFFECTIVELY READ ONLY (and for very good reason)
 	var/variable = FALSE
@@ -41,8 +43,6 @@ can next move
 	. = ..()
 	if(!id)
 		id = "[type]" //We turn the path into a string.
-
-GLOBAL_LIST_EMPTY(actionspeed_modification_cache)
 
 /// Grabs a STATIC MODIFIER datum from cache. YOU MUST NEVER EDIT THESE DATUMS, OR IT WILL AFFECT ANYTHING ELSE USING IT TOO!
 /proc/get_cached_actionspeed_modifier(modtype)
