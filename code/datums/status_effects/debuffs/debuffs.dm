@@ -227,7 +227,7 @@
 		return
 	switch(rand(1, 5))
 		if(1)
-			if((owner.mobility_flags & MOBILITY_MOVE) && isturf(owner.loc))
+			if(isturf(owner.loc))
 				to_chat(owner, SPAN_WARNING("Your leg spasms!"))
 				step(owner, pick(GLOB.cardinal))
 		if(2)

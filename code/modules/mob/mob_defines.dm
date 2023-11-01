@@ -91,6 +91,8 @@
 	var/atom/movable/pulling = null
 	var/other_mobs = null
 	var/next_move = null
+	/// Multiplies delays by this amount. TODO: move this to a system similar to movespeed/actionspeed
+	var/next_move_modifier = 1
 	var/hand = null
 	var/real_name = null
 

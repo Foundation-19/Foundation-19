@@ -1,8 +1,3 @@
-// Defines for the ballmer peak.
-#define BALLMER_PEAK_LOW_END 12.9
-#define BALLMER_PEAK_HIGH_END 13.8
-#define BALLMER_PEAK_WINDOWS_ME 26
-
 /// The threshld which determine if someone is tipsy vs drunk
 #define TIPSY_THRESHOLD 6
 
@@ -190,9 +185,5 @@
 	desc = "All that alcohol you've been drinking is impairing your speech, \
 		motor skills, and mental cognition. Make sure to act like it."
 	icon_state = "drunk"
-
-#undef BALLMER_PEAK_LOW_END
-#undef BALLMER_PEAK_HIGH_END
-#undef BALLMER_PEAK_WINDOWS_ME
 
 #undef TIPSY_THRESHOLD

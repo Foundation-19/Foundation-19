@@ -20,10 +20,10 @@
  * Iterates over all of the characters in the passed message
  * and calls apply_speech() on each.
  */
-/datum/status_effect/speech/proc/handle_message(datum/source, list/message_args)
+/datum/status_effect/speech/proc/handle_message(datum/source, message)
 	SIGNAL_HANDLER
 
-	var/phrase = html_decode(message_args[TREAT_MESSAGE_ARG])
+	var/phrase = html_decode(message)
 	if(!length(phrase))
 		return
 
@@ -35,7 +35,7 @@
 
 		final_phrase += apply_speech(original_char, original_char)
 
-	message_args[TREAT_MESSAGE_ARG] = sanitize(final_phrase)
+	message = sanitize(final_phrase)
 
 /**
  * Applies the speech effects on the past character, changing

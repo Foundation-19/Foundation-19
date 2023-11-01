@@ -79,6 +79,9 @@
 /// Called on `/datum/money_account/deposit` (/datum/money_account)
 #define COMSIG_MONEY_DEPOSITED "money_deposited"
 
+/// Called on `/mob/living/say` (/mob/living, message)
+#define COMSIG_LIVING_TREAT_MESSAGE "living_treat_message"
+
 /*
 * Atom
 */

@@ -220,6 +220,9 @@ var/list/channel_to_radio_key = new
 	message = format_say_message(message)
 	message = process_chat_markup(message)
 
+	//TODO: move hardcoded checks to this signal
+	SEND_SIGNAL(src, COMSIG_LIVING_TREAT_MESSAGE, message)
+
 	if(speaking && !speaking.can_be_spoken_properly_by(src))
 		message = speaking.muddle(message)
 
