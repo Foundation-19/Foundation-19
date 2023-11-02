@@ -58,7 +58,7 @@
 				SPAN_NOTICE("\The [user] starts to fix part of the microwave."), \
 				SPAN_NOTICE("You start to fix part of the microwave.") \
 			)
-			if (do_after(user, 20, src))
+			if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 				user.visible_message( \
 					SPAN_NOTICE("\The [user] fixes part of the microwave."), \
 					SPAN_NOTICE("You have fixed part of the microwave.") \
@@ -71,7 +71,7 @@
 				SPAN_NOTICE("\The [user] starts to fix part of the microwave."), \
 				SPAN_NOTICE("You start to fix part of the microwave.") \
 			)
-			if (do_after(user, 20, src))
+			if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 				user.visible_message( \
 					SPAN_NOTICE("\The [user] fixes the microwave."), \
 					SPAN_NOTICE("You have fixed the microwave.") \
@@ -101,7 +101,7 @@
 				SPAN_NOTICE("\The [user] starts to clean the microwave."), \
 				SPAN_NOTICE("You start to clean the microwave.") \
 			)
-			if (do_after(user, 20, src))
+			if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 				user.visible_message( \
 					SPAN_NOTICE("\The [user] has cleaned the microwave."), \
 					SPAN_NOTICE("You clean out the microwave.") \
@@ -186,7 +186,7 @@
 			SPAN_NOTICE("\The [user] begins [anchored ? "unsecuring" : "securing"] the microwave."), \
 			SPAN_NOTICE("You attempt to [anchored ? "unsecure" : "secure"] the microwave.")
 			)
-		if (do_after(user,20, src))
+		if (do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 			user.visible_message( \
 			SPAN_NOTICE("\The [user] [anchored ? "unsecures" : "secures"] the microwave."), \
 			SPAN_NOTICE("You [anchored ? "unsecure" : "secure"] the microwave.")

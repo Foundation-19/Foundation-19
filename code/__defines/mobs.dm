@@ -435,30 +435,6 @@
 #define INJECTION_PORT          2
 #define INJECTION_PORT_DELAY    3 SECONDS // used by injectors to apply delay due to searching for a port on the injectee's suit
 
-
-//used by /proc/do_after
-#define DO_USER_CAN_MOVE     (1<<0)
-#define DO_USER_CAN_TURN     (1<<1)
-#define DO_USER_UNIQUE_ACT   (1<<2)
-#define DO_USER_SAME_HAND    (1<<3)
-#define DO_USER_SAME_ZONE    (1<<4)
-#define DO_TARGET_CAN_MOVE   (1<<5)
-#define DO_TARGET_CAN_TURN   (1<<6)
-#define DO_TARGET_UNIQUE_ACT (1<<7)
-#define DO_SHOW_PROGRESS     (1<<8)
-#define DO_PUBLIC_PROGRESS   (1<<9)
-#define DO_MOVE_CHECKS_TURFS (1<<10)
-#define DO_FAIL_FEEDBACK     (1<<11)
-
-#define DO_BOTH_CAN_MOVE     (DO_USER_CAN_MOVE | DO_TARGET_CAN_MOVE)
-#define DO_BOTH_CAN_TURN     (DO_USER_CAN_TURN | DO_TARGET_CAN_TURN)
-#define DO_BOTH_UNIQUE_ACT   (DO_USER_UNIQUE_ACT | DO_TARGET_UNIQUE_ACT)
-#define DO_DEFAULT           (DO_SHOW_PROGRESS | DO_USER_SAME_HAND | DO_BOTH_CAN_TURN | DO_FAIL_FEEDBACK)
-
-#define DO_MISSING_USER      (-1)
-#define DO_MISSING_TARGET    (-2)
-#define DO_INCAPACITATED     (-3)
-
 #define FAKE_INVIS_ALPHA_THRESHOLD 127 // If something's alpha var is at or below this number, certain things will pretend it is invisible.
 
 #define ADJUSTED_GLIDE_SIZE(DELAY) (CEILING((WORLD_ICON_SIZE / max((DELAY), world.tick_lag) * world.tick_lag) - world.tick_lag, 1) + (config.glide_size_delay))

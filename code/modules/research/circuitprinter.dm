@@ -130,7 +130,7 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 
 	var/t = stack.material.name
 	if(t)
-		if(do_after(usr, 16, src))
+		if(do_after(usr, 1 SECOND, src, bonus_percentage = 100))
 			if(stack.use(amount))
 				to_chat(user, SPAN_NOTICE("You add [amount] sheet\s to \the [src]."))
 				materials[t] += amount * SHEET_MATERIAL_AMOUNT

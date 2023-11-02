@@ -19,7 +19,7 @@
 			var/obj/chosen_obj = input(user, "Choose an object to grab.", "Clamp Claw") as null|anything in carrying
 			if(!chosen_obj)
 				return
-			if(!do_after(user, 20, owner)) return
+			if(!do_after(user, 2 SECONDS, owner, bonus_percentage = 25)) return
 			if(owner.hatch_closed || !chosen_obj) return
 			if(user.put_in_active_hand(chosen_obj))
 				owner.visible_message(SPAN_NOTICE("\The [user] carefully grabs \the [chosen_obj] from \the [src]."))
@@ -48,7 +48,7 @@
 					var/obj/machinery/door/firedoor/FD = O
 					if(FD.blocked)
 						FD.visible_message(SPAN_DANGER("\The [owner] begins prying on \the [FD]!"))
-						if(do_after(owner,10 SECONDS,FD) && FD.blocked)
+						if(do_after(owner, 12 SECONDS, FD, bonus_percentage = 25) && FD.blocked)
 							playsound(FD, 'sounds/effects/meteorimpact.ogg', 100, 1)
 							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 							FD.blocked = FALSE
@@ -57,7 +57,7 @@
 							FD.visible_message(SPAN_WARNING("\The [owner] tears \the [FD] open!"))
 					else
 						FD.visible_message(SPAN_DANGER("\The [owner] begins forcing \the [FD]!"))
-						if(do_after(owner, 4 SECONDS,FD) && !FD.blocked)
+						if(do_after(owner, 5 SECONDS, FD, bonus_percentage = 25) && !FD.blocked)
 							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 							if(FD.density)
 								FD.visible_message(SPAN_DANGER("\The [owner] forces \the [FD] open!"))
@@ -71,7 +71,7 @@
 					if(!AD.operating && !AD.locked)
 						if(AD.welded)
 							AD.visible_message(SPAN_DANGER("\The [owner] begins prying on \the [AD]!"))
-							if(do_after(owner, 15 SECONDS,AD) && !AD.locked)
+							if(do_after(owner, 18 SECONDS, AD, bonus_percentage = 25) && !AD.locked)
 								AD.welded = FALSE
 								AD.update_icon()
 								playsound(AD, 'sounds/effects/meteorimpact.ogg', 100, 1)
@@ -82,7 +82,7 @@
 								return
 						else
 							AD.visible_message(SPAN_DANGER("\The [owner] begins forcing \the [AD]!"))
-							if((AD.is_broken(NOPOWER) || do_after(owner, 5 SECONDS,AD)) && !(AD.operating || AD.welded || AD.locked))
+							if((AD.is_broken(NOPOWER) || do_after(owner, 6 SECONDS, AD, bonus_percentage = 25)) && !(AD.operating || AD.welded || AD.locked))
 								playsound(AD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 								if(AD.density)
 									addtimer(CALLBACK(AD, /obj/machinery/door/airlock/.proc/open, TRUE), 0)
@@ -102,7 +102,7 @@
 				return
 
 			owner.visible_message(SPAN_NOTICE("\The [owner] begins loading \the [O]."))
-			if(do_after(owner, 20, O, do_flags = DO_DEFAULT & ~DO_USER_SAME_HAND))
+			if(do_after(owner, 3 SECONDS, O, do_flags = DO_DEFAULT & ~DO_USER_SAME_HAND, bonus_percentage = 25))
 				if(O in carrying || O.buckled_mob || O.anchored || (locate(/mob/living) in O)) //Repeat checks
 					return
 				if(length(carrying) >= carrying_capacity)
@@ -471,11 +471,11 @@
 	var/obj/item/cell/mech_cell = owner.get_cell()
 	mech_cell.use(active_power_use * CELLRATE) //supercall made sure we have one
 
-	var/delay = 3 SECONDS //most things
+	var/delay = 4 SECONDS //most things
 	switch (drill_head.material.brute_armor)
-		if (15 to INFINITY) delay = 0.5 SECONDS //voxalloy on a good roll
-		if (10 to 15) delay = 1 SECOND //titanium, diamond
-		if (5 to 10) delay = 2 SECONDS //plasteel, steel
+		if (15 to INFINITY) delay = 1 SECOND //voxalloy on a good roll
+		if (10 to 15) delay = 2 SECONDS //titanium, diamond
+		if (5 to 10) delay = 3 SECONDS //plasteel, steel
 	owner.setClickCooldown(delay)
 
 	playsound(src, 'sounds/mecha/mechdrill.ogg', 50, 1)
@@ -484,7 +484,7 @@
 		blind_message = SPAN_WARNING("You hear a large motor whirring.")
 	)
 
-	if (!do_after(owner, delay, target, DO_DEFAULT & ~DO_USER_CAN_TURN))
+	if (!do_after(owner, delay, target, DO_DEFAULT & ~DO_USER_CAN_TURN, bonus_percentage = 25))
 		return
 
 	if (src != owner.selected_system)
@@ -681,7 +681,7 @@
 			)
 			new /obj/effect/temp_visual/temporary(get_step(owner.loc, reverse_direction(owner.dir)), 2 SECONDS, 'icons/effects/effects.dmi',"cyan_sparkles")
 			owner.setClickCooldown(2 SECONDS)
-			if (do_after(owner, 2 SECONDS, do_flags = (DO_DEFAULT | DO_PUBLIC_PROGRESS | DO_USER_UNIQUE_ACT) & ~DO_USER_CAN_TURN) && slideCheck(TT))
+			if (do_after(owner, 3 SECONDS, do_flags = DO_DEFAULT & ~DO_USER_CAN_TURN, bonus_percentage = 25) && slideCheck(TT))
 				owner.visible_message(SPAN_DANGER("Burning hard, \the [owner] thrusts forward!"))
 				owner.throw_at(get_ranged_target_turf(owner, owner.dir, slide_distance), slide_distance, 1, owner, FALSE)
 			else
@@ -754,8 +754,8 @@
 		var/network = input("Which network would you like to configure it for?") as null|anything in (all_networks)
 		if(!network)
 			to_chat(user, SPAN_WARNING("You cannot connect to any camera network!."))
-		var/delay = 20 * user.skill_delay_mult(SKILL_DEVICES)
-		if(do_after(user, delay, src) && network)
+		var/delay = 3 SECONDS * user.skill_delay_mult(SKILL_DEVICES)
+		if(do_after(user, delay, src, bonus_percentage = 25) && network)
 			camera.network = list(network)
 			camera.update_coverage(TRUE)
 			to_chat(user, SPAN_NOTICE("You configure the camera for \the [network] network."))

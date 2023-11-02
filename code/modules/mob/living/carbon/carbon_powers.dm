@@ -72,14 +72,14 @@
 	if(!can_eat)
 		return FALSE
 
-	var/eat_speed = 100
+	var/eat_speed = 12 SECONDS
 	if(can_eat == DEVOUR_FAST)
-		eat_speed = 30
+		eat_speed = 4 SECONDS
 	src.visible_message(SPAN_DANGER("\The [src] is attempting to devour \the [victim] whole!"))
 	var/mob/target = victim
 	if(isobj(victim))
 		target = src
-	if(!do_after(src, eat_speed, target))
+	if(!do_after(src, eat_speed, target, bonus_percentage = 25))
 		return FALSE
 	src.visible_message(SPAN_DANGER("\The [src] devours \the [victim] whole!"))
 	if(ismob(victim))

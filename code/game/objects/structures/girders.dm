@@ -66,13 +66,13 @@
 		if(anchored && !reinf_material)
 			playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Now disassembling the girder..."))
-			if(do_after(user, 40,src))
+			if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 				to_chat(user, SPAN_NOTICE("You dissasembled the girder!"))
 				dismantle()
 		else if(!anchored)
 			playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Now securing the girder..."))
-			if(do_after(user, 40,src))
+			if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				to_chat(user, SPAN_NOTICE("You secured the girder!"))
 				reset_girder()
 		return
@@ -84,7 +84,7 @@
 				return
 		playsound(src.loc, 'sounds/items/Welder.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now slicing apart the girder..."))
-		if(do_after(user,reinf_material ? 40: 20,src))
+		if(do_after(user, reinf_material ? 5 SECONDS : 2.5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You slice apart the girder!"))
 			if(reinf_material)
 				reinf_material.place_dismantled_product(get_turf(src))
@@ -93,7 +93,7 @@
 
 	if(istype(W, /obj/item/pickaxe/diamonddrill))
 		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
-		if(do_after(user,reinf_material ? 60 : 40,src))
+		if(do_after(user, reinf_material ? 8 SECONDS : 5.5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You drill through the girder!"))
 			if(reinf_material)
 				reinf_material.place_dismantled_product(get_turf(src))
@@ -104,7 +104,7 @@
 		if(state == 2)
 			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("Now unsecuring support struts..."))
-			if(do_after(user, 40,src))
+			if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				to_chat(user, SPAN_NOTICE("You unsecured the support struts!"))
 				state = 1
 		else if(anchored && !reinf_material)
@@ -116,7 +116,7 @@
 	if(isWirecutter(W) && state == 1)
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now removing support struts..."))
-		if(do_after(user, 40,src))
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You removed the support struts!"))
 
 			if(reinf_material)
@@ -129,7 +129,7 @@
 	if(isCrowbar(W) && state == 0 && anchored)
 		playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now dislodging the girder..."))
-		if(do_after(user, 40,src))
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You dislodged the girder!"))
 			icon_state = "displaced"
 			anchored = FALSE
@@ -166,7 +166,7 @@
 
 	to_chat(user, SPAN_NOTICE("You begin adding the plating..."))
 
-	if(!do_after(user, (8 SECONDS), src) || !S.use(2))
+	if(!do_after(user, 10 SECONDS, src, bonus_percentage = 25) || !S.use(2))
 		return 1 //once we've gotten this far don't call parent attackby()
 
 	if(anchored)
@@ -200,7 +200,7 @@
 		return 0
 
 	to_chat(user, SPAN_NOTICE("Now reinforcing..."))
-	if (!do_after(user, 40,src) || !S.use(2))
+	if (!do_after(user, 5 SECONDS, src, bonus_percentage = 25) || !S.use(2))
 		return 1 //don't call parent attackby() past this point
 	to_chat(user, SPAN_NOTICE("You added reinforcement!"))
 
@@ -246,7 +246,7 @@
 	if(isWrench(W))
 		playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now disassembling the girder..."))
-		if(do_after(user,40,src))
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You dissasembled the girder!"))
 			dismantle()
 
@@ -257,12 +257,12 @@
 				return
 		playsound(src.loc, 'sounds/items/Welder.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now slicing apart the girder..."))
-		if(do_after(user,30,src))
+		if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You slice apart the girder!"))
 			dismantle()
 
 	else if(istype(W, /obj/item/pickaxe/diamonddrill))
 		playsound(src.loc, 'sounds/weapons/Genhit.ogg', 100, 1)
-		if(do_after(user,40,src))
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You drill through the girder!"))
 			dismantle()

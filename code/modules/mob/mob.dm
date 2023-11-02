@@ -4,6 +4,12 @@
 	GLOB.living_mob_list_ -= src
 	GLOB.player_list -= src
 	unset_machine()
+	if(length(progressbars))
+		crash_with("[src] destroyed with elements in its progressbars list")
+		progressbars = null
+	if(length(progressbars_recipient))
+		crash_with("[src] destroyed with elements in its progressbars_recipient list")
+		progressbars_recipient = null
 	QDEL_NULL(hud_used)
 	if(istype(skillset))
 		QDEL_NULL(skillset)
@@ -55,6 +61,7 @@
 	START_PROCESSING(SSmobs, src)
 	if(!mob_panel)
 		mob_panel = new(src)
+	initialize_actionspeed()
 
 /mob/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(!client)	return

@@ -231,8 +231,8 @@
 	if(istype(W) && W.edge && W.w_class >= ITEM_SIZE_NORMAL)
 		visible_message(SPAN_NOTICE("[user] starts chopping down \the [src]."))
 		playsound(, W.hitsound, 100, 1)
-		var/chop_time = (health/W.force) * 0.4 SECONDS
-		if(do_after(user, chop_time, src))
+		var/chop_time = (health/W.force) * 0.66 SECONDS
+		if(do_after(user, chop_time, src, bonus_percentage = 25))
 			visible_message(SPAN_NOTICE("[user] chops down \the [src]."))
 			playsound(get_turf(src), W.hitsound, 100, 1)
 			die_off()

@@ -300,7 +300,7 @@
 		if(!(stat & BROKEN))
 			return SPAN_WARNING("You have to disassemble the terminal[num_terminals > 1 ? "s" : ""] first!")
 		if(user)
-			if(!do_after(user, 5 SECONDS * number_of_components(/obj/item/stock_parts/smes_coil), src) && isCrowbar(user.get_active_hand()))
+			if(!do_after(user, 6 SECONDS * number_of_components(/obj/item/stock_parts/smes_coil), src, bonus_percentage = 25) && isCrowbar(user.get_active_hand()))
 				return MCS_BLOCK
 			if(check_total_system_failure(user))
 				return MCS_BLOCK
@@ -317,7 +317,7 @@
 		if(output_attempt || input_attempt)
 			to_chat(user, SPAN_WARNING("Turn \the [src] off first!"))
 			return FALSE
-		if(!do_after(user, 5 SECONDS, src) || check_total_system_failure(user))
+		if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25) || check_total_system_failure(user))
 			return FALSE
 
 /obj/machinery/power/smes/buildable/remove_part_and_give_to_user(path, mob/user)
@@ -328,7 +328,7 @@
 		if(output_attempt || input_attempt)
 			to_chat(user, SPAN_WARNING("Turn \the [src] off first!"))
 			return
-		if(!do_after(user, 5 SECONDS, src) || check_total_system_failure(user))
+		if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25) || check_total_system_failure(user))
 			return
 	..()
 
