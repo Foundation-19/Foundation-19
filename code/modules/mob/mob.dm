@@ -61,7 +61,7 @@
 	START_PROCESSING(SSmobs, src)
 	if(!mob_panel)
 		mob_panel = new(src)
-    
+
 	update_config_movespeed()
 	initialize_actionspeed()
 
@@ -457,7 +457,7 @@
 	P.set_invisibility(invisibility)
 	animate(P, pixel_x = (T.x - mob_tile.x) * world.icon_size + A.pixel_x, pixel_y = (T.y - mob_tile.y) * world.icon_size + A.pixel_y, time = 3, easing = EASE_OUT)
 	face_atom(A)
-	setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	setClickCooldown(CLICK_CD_QUICK)
 	return TRUE
 
 //Gets the mob grab conga line.

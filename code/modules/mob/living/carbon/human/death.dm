@@ -106,22 +106,3 @@
 		E.status |= ORGAN_DISFIGURED
 	update_body(1)
 	return
-
-/mob/living/carbon/human/verb/succumb()
-	set category = "IC"
-	set name = "Succumb"
-	set desc = "Succumb to your pain and die."
-
-	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
-	if((heart && heart.is_working()) || (getBrainLoss() < 100 && stat != UNCONSCIOUS))
-		to_chat(src, SPAN_WARNING("You can only succumb to your injuries when dying!"))
-		return
-	if(alert("Are you sure you want to succumb?",, "Yes", "No") != "Yes")
-		return
-	// You got fixed while thinking, keep on living!
-	if((heart && heart.is_working()) || (getBrainLoss() < 100 && stat != UNCONSCIOUS))
-		to_chat(src, SPAN_WARNING("You can only succumb to your injuries when dying!"))
-		return
-	to_chat(src, SPAN_NOTICE("You succumb to your injuries and leave the mortal plane."))
-	visible_message(SPAN_DANGER("[src] lets out the final gasp, succumbing to [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] injuries."))
-	death()

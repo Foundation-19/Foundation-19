@@ -81,7 +81,7 @@
 // Status effect process. Handles adjusting its duration and ticks.
 // If you're adding processed effects, put them in [proc/tick]
 // instead of extending / overriding the process() proc.
-/datum/status_effect/process(seconds_per_tick, times_fired)
+/datum/status_effect/Process(seconds_per_tick, times_fired)
 	SHOULD_NOT_OVERRIDE(TRUE)
 	if(QDELETED(owner))
 		qdel(src)

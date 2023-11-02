@@ -103,7 +103,7 @@
 
 /obj/effect/temp_visual/cig_smoke/Initialize()
 	. = ..()
-	set_dir(pick(GLOB.cardinal))
+	setDir(pick(GLOB.cardinal))
 	pixel_x = rand(-12, 12)
 	pixel_y = rand(0, 16)
 	animate(src, alpha = 0, pixel_x = pixel_x + rand(-6, 6), pixel_y = pixel_y + 12, duration, easing = EASE_IN)
