@@ -336,7 +336,7 @@
 		return
 
 	if (istype(target, /obj/structure/inflatable))
-		if (!do_after(user, 0.5 SECONDS, target))
+		if (!do_after(user, 0.5 SECONDS, target, bonus_percentage = 100))
 			return
 		playsound(loc, 'sounds/machines/hiss.ogg', 75, 1)
 		var/obj/item/inflatable/I
@@ -390,7 +390,7 @@
 		if (obstruction)
 			to_chat(user, SPAN_WARNING("\The [english_list(obstruction)] is blocking that spot."))
 			return
-		if (!do_after(user, 0.5 SECONDS))
+		if (!do_after(user, 0.5 SECONDS, bonus_percentage = 100))
 			return
 		obstruction = T.get_obstruction()
 		if (obstruction)

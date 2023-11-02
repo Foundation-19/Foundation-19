@@ -368,7 +368,7 @@
 	if(!hidden) H.visible_message(SPAN_WARNING("\The [H] shifts [H.p_their()] arms."))
 	H.unEquip(H.l_hand)
 	H.unEquip(H.r_hand)
-	if(do_after(H, 30))
+	if(do_after(H, 3 SECONDS, bonus_percentage = 25))
 		arm_swap(H)
 	else
 		to_chat(H, SPAN_NOTICE("You stop adjusting your arms and don't switch between them."))

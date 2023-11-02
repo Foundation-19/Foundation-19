@@ -18,7 +18,7 @@
 			to_chat(user, SPAN_WARNING("You need one length of coil to wire \the [src]."))
 			return
 		user.visible_message("[user] wires \the [src].", "You start to wire \the [src].")
-		if(do_after(user, 40, src) && !wired && anchored)
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25) && !wired && anchored)
 			if (cable.use(1))
 				wired = 1
 				to_chat(user, SPAN_NOTICE("You wire \the [src]."))
@@ -27,7 +27,7 @@
 		playsound(src.loc, 'sounds/items/Wirecutter.ogg', 100, 1)
 		user.visible_message("[user] cuts the wires from \the [src].", "You start to cut the wires from \the [src].")
 
-		if(do_after(user, 40, src))
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			if(!src) return
 			to_chat(user, SPAN_NOTICE("You cut the wires!"))
 			new/obj/item/stack/cable_coil(src.loc, 1)
@@ -56,7 +56,7 @@
 		if(WT.remove_fuel(0, user))
 			user.visible_message(SPAN_WARNING("[user] dissassembles \the [src]."),
 			"You start to dissassemble \the [src].")
-			if(do_after(user, 40, src))
+			if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				if(!src || !WT.isOn()) return
 				user.visible_message(SPAN_WARNING("[user] has dissassembled \the [src]."),
 									"You have dissassembled \the [src].")

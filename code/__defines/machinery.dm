@@ -63,7 +63,6 @@
 #define STAGE_THREE	5
 #define STAGE_FOUR	7
 #define STAGE_FIVE	9
-#define STAGE_SUPER	11
 
 // NanoUI flags
 #define STATUS_INTERACTIVE 2 // GREEN Visability
@@ -98,21 +97,6 @@
 #define TELECOMMS_RECEPTION_SENDER 1
 #define TELECOMMS_RECEPTION_RECEIVER 2
 #define TELECOMMS_RECEPTION_BOTH 3
-
-// These are used by supermatter and supermatter monitor program, mostly for UI updating purposes. Higher should always be worse!
-#define SUPERMATTER_ERROR -1		// Unknown status, shouldn't happen but just in case.
-#define SUPERMATTER_INACTIVE 0		// No or minimal energy
-#define SUPERMATTER_NORMAL 1		// Normal operation
-#define SUPERMATTER_NOTIFY 2		// Ambient temp > 80% of CRITICAL_TEMPERATURE
-#define SUPERMATTER_WARNING 3		// Ambient temp > CRITICAL_TEMPERATURE OR integrity damaged
-#define SUPERMATTER_DANGER 4		// Integrity < 50%
-#define SUPERMATTER_EMERGENCY 5		// Integrity < 25%
-#define SUPERMATTER_DELAMINATING 6	// Pretty obvious.
-
-#define SUPERMATTER_DATA_EER         "Relative EER"
-#define SUPERMATTER_DATA_TEMPERATURE "Temperature"
-#define SUPERMATTER_DATA_PRESSURE    "Pressure"
-#define SUPERMATTER_DATA_EPR         "Chamber EPR"
 
 // Emitter states
 #define EMITTER_LOOSE 0 // the goose is loose

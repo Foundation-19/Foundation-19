@@ -62,6 +62,11 @@
 /// Called on `/obj/machinery/cryopod/despawn_occupant` (/mob)
 #define COMSIG_HUMAN_DESPAWNED "human_despawned"
 
+/// Called on `/mob/login` (/mob)
+#define COMSIG_MOB_LOGIN "mob_login"
+/// Called on `mob/logout` (/mob)
+#define COMSIG_MOB_LOGOUT "mob_logout"
+
 /// Called on `/mob/living/carbon/ingest` (/mob/living/carbon/, type)
 #define COMSIG_REAGENT_INGESTED "reagent_ingested"
 /// Called on `/obj/item/clothing/mask/smokable/smoke` (/datum, /obj/item/clothing/mask/smokable, number)
@@ -110,6 +115,11 @@
 
 /// Called on `/obj/item/organ/removed` (/mob/living/carbon/human, /obj/item/organ)
 #define COMSIG_ORGAN_DISMEMBERED "organ_dismembered"
+
+/// Called on `/proc/do_after` (/user)
+#define COMSIG_DO_AFTER_BEGAN "do_after_began"
+/// Called on `/proc/do_after` (/user)
+#define COMSIG_DO_AFTER_ENDED "do_after_ended"
 
 /*
 *	Atom

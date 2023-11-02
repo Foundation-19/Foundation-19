@@ -527,13 +527,3 @@ meteor_act
 	// distribute the remaining 30% on all limbs equally (including the one already dealt damage)
 	apply_damage(0.3 * b_loss, BRUTE, null, DAM_EXPLODE | DAM_DISPERSED, used_weapon = "Explosive blast")
 	apply_damage(0.3 * f_loss, BURN, null, DAM_EXPLODE | DAM_DISPERSED, used_weapon = "Explosive blast")
-
-/mob/living/carbon/human/verb/succumb()
-	set category = "IC"
-	set name = "Succumb"
-	set desc = "Succumb to your pain, and die."
-
-	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
-	if(!heart.is_working())
-		death()
-

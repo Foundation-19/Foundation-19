@@ -333,7 +333,7 @@
 
 			to_chat(D, SPAN_DANGER("You begin decompiling [M]."))
 
-			if(!do_after(D,50,M))
+			if(!do_after(D, 6 SECONDS, M, bonus_percentage = 25))
 				return
 
 			if(!M || !D) return

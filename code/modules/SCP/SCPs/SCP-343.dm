@@ -94,7 +94,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 	if (H.a_intent == I_HELP)
 		to_chat(H, SPAN_WARNING("You start to heal [src] wounds"))
 		visible_message(SPAN_NOTICE("\The [H] starts to heal [src] wounds"))
-		if( do_after(H, 120) )
+		if(do_after(H, 12 SECONDS, bonus_percentage = 25))
 			src.revive()
 			visible_message(SPAN_NOTICE("\The [H] fully healed [src]!"))
 		return
@@ -165,7 +165,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 			if (WEST)
 				animate(src, pixel_x = -58, time = PHASE_TIME)
 
-		if (do_after(src, PHASE_TIME, O))
+		if (do_after(src, PHASE_TIME, O, bonus_percentage = 25))
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 

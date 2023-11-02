@@ -14,6 +14,14 @@
 	. = ..()
 	QDEL_IN(src, duration)
 
+// Used in place of old /obj/effect/temporary where applicable.
+// Do not use it for new stuff, please
+/obj/effect/temp_visual/temporary/Initialize(mapload, new_dur = 5, new_icon = null, new_icon_state = null)
+	duration = new_dur
+	icon = new_icon
+	icon_state = new_icon_state
+	return ..()
+
 /obj/effect/temp_visual/bloodsplatter
 	icon = 'icons/effects/bloodspatter.dmi'
 	duration = 5
@@ -81,3 +89,39 @@
 		appearance = mimiced_atom.appearance
 		set_dir(setdir)
 		mouse_opacity = 0
+
+/obj/effect/temp_visual/cig_smoke
+	name = "smoke"
+	icon_state = "smallsmoke"
+	icon = 'icons/effects/effects.dmi'
+	opacity = FALSE
+	anchored = TRUE
+	mouse_opacity = FALSE
+	layer = ABOVE_HUMAN_LAYER
+
+	duration = 3 SECONDS
+
+/obj/effect/temp_visual/cig_smoke/Initialize()
+	. = ..()
+	set_dir(pick(GLOB.cardinal))
+	pixel_x = rand(-12, 12)
+	pixel_y = rand(0, 16)
+	animate(src, alpha = 0, pixel_x = pixel_x + rand(-6, 6), pixel_y = pixel_y + 12, duration, easing = EASE_IN)
+
+/obj/effect/temp_visual/bite
+	name = "bite"
+	icon_state = "bite"
+	icon = 'icons/effects/effects.dmi'
+	opacity = FALSE
+	anchored = TRUE
+	mouse_opacity = FALSE
+	layer = ABOVE_HUMAN_LAYER
+
+	duration = 1 SECONDS
+
+/obj/effect/temp_visual/bite/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, .proc/FadeOut), (duration * 0.8))
+
+/obj/effect/temp_visual/bite/proc/FadeOut()
+	animate(src, alpha = 0, (duration * 0.2))

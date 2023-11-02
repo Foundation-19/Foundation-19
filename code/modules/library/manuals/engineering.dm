@@ -340,14 +340,6 @@
 			</html>
 			"}
 
-
-/obj/item/book/manual/supermatter_engine
-	name = "Supermatter Engine Operating Manual"
-	icon_state = "bookSupermatter"
-	author = "Central Engineering Division"
-	title = "Supermatter Engine Operating Manual"
-	url = "Supermatter_Engine"
-
 /obj/item/book/manual/rust_engine
 	name = "R-UST Operating Manual"
 	icon_state = "bookMagazine"

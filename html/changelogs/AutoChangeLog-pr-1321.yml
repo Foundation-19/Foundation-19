@@ -1,5 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - bugfix: Wall discrepancy near the entrance to HCZ fixed.
-  - bugfix: A few objects with doubled spaces had their names fixed.

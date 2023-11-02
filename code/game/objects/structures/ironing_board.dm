@@ -79,7 +79,7 @@
 			var/parsed = parse_zone(zone)
 
 			visible_message(SPAN_DANGER("[user] begins ironing [src.buckled_mob]'s [parsed]!"), SPAN_DANGER("You begin ironing [buckled_mob]'s [parsed]!"))
-			if(!do_after(user, 40, src))
+			if(!do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				return
 			visible_message(SPAN_DANGER("[user] irons [src.buckled_mob]'s [parsed]!"), SPAN_DANGER("You iron [buckled_mob]'s [parsed]!"))
 
@@ -98,7 +98,7 @@
 			return
 
 		visible_message("[user] begins ironing [cloth].")
-		if(!do_after(user, 40, src))
+		if(!do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			return
 
 		visible_message("[user] finishes ironing [cloth].")

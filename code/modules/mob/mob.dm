@@ -4,6 +4,12 @@
 	GLOB.living_mob_list_ -= src
 	GLOB.player_list -= src
 	unset_machine()
+	if(length(progressbars))
+		crash_with("[src] destroyed with elements in its progressbars list")
+		progressbars = null
+	if(length(progressbars_recipient))
+		crash_with("[src] destroyed with elements in its progressbars_recipient list")
+		progressbars_recipient = null
 	QDEL_NULL(hud_used)
 	if(istype(skillset))
 		QDEL_NULL(skillset)
@@ -55,6 +61,7 @@
 	START_PROCESSING(SSmobs, src)
 	if(!mob_panel)
 		mob_panel = new(src)
+	initialize_actionspeed()
 
 /mob/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(!client)	return
@@ -430,22 +437,25 @@
 	set name = "Point To"
 	set category = "Object"
 
-	if(!src || !isturf(src.loc) || !(can_see(A)))
-		return 0
+	// Ghosts can point to anything
+	if(isliving(src) && (!isturf(src.loc) || !(A in view(src.loc))))
+		return FALSE
+
 	if(istype(A, /obj/effect/decal/point))
-		return 0
+		return FALSE
 
-	var/tile = get_turf(A)
-	if (!tile)
-		return 0
+	var/turf/T = get_turf(A)
+	if(!istype(T))
+		return FALSE
 
-	var/obj/P = new /obj/effect/decal/point(tile)
+	var/turf/mob_tile = get_turf(src)
+	var/obj/P = new /obj/effect/decal/point(mob_tile)
 	P.plane = MOB_PLANE
 	P.set_invisibility(invisibility)
-	P.pixel_x = A.pixel_x
-	P.pixel_y = A.pixel_y
+	animate(P, pixel_x = (T.x - mob_tile.x) * world.icon_size + A.pixel_x, pixel_y = (T.y - mob_tile.y) * world.icon_size + A.pixel_y, time = 3, easing = EASE_OUT)
 	face_atom(A)
-	return 1
+	setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	return TRUE
 
 //Gets the mob grab conga line.
 /mob/proc/ret_grab(list/L)

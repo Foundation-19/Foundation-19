@@ -195,7 +195,7 @@
 			else
 				M.visible_message(SPAN_WARNING("[M] tries to pat out [src]'s flames!"),
 				SPAN_WARNING("You try to pat out [src]'s flames! Hot!"))
-				if(do_after(M, 1.5 SECONDS, src))
+				if(do_after(M, 2 SECONDS, src, bonus_percentage = 25))
 					src.fire_stacks -= 0.5
 					if (prob(10) && (M.fire_stacks <= 0))
 						M.fire_stacks += 1

@@ -29,7 +29,7 @@
 		return
 
 	visible_message("\The [src] begins to pry open \the [A]!")
-	if(!do_after(src, 5 SECONDS, A))
+	if(!do_after(src, 8 SECONDS, A, bonus_percentage = 25))
 		return
 
 	if(!A.density)
