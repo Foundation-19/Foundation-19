@@ -971,7 +971,7 @@ default behaviour is:
 			to_chat(src, text="You are unable to succumb to death! This life continues.", type=MESSAGE_TYPE_INFO)
 			return
 	log_attack("Has [whispered ? "whispered his final words" : "succumbed to death"] with [round(health, 0.1)] points of health!")
-	adjustOxyLoss(health - 100)	// TODO: use HEALTH_THRESHOLD_DEAD
+	adjustOxyLoss(health - config.health_threshold_dead)
 	updatehealth()
 	if(!whispered)
 		to_chat(src, SPAN_NOTICE("You have given up life and succumbed to death."))

@@ -16,16 +16,7 @@
 /datum/status_effect/incapacitating/on_creation(mob/living/new_owner, set_duration)
 	if(isnum(set_duration))
 		duration = set_duration
-	. = ..()
-	if(. && (needs_update_stat || issilicon(owner)))
-		owner.update_stat()
-
-
-/datum/status_effect/incapacitating/on_remove()
-	if(needs_update_stat || issilicon(owner)) //silicons need stat updates in addition to normal canmove updates
-		owner.update_stat()
 	return ..()
-
 
 //STUN
 /datum/status_effect/incapacitating/stun
@@ -355,7 +346,7 @@
 	owner.next_move_modifier *= 1.5
 	if(istype(owner, /mob/living/simple_animal/hostile))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
-		simple_owner.ranged_cooldown_time *= 2.5
+		simple_owner.attack_delay *= 2.5
 	return TRUE
 
 /datum/status_effect/stagger/on_remove()
@@ -365,7 +356,7 @@
 	owner.next_move_modifier /= 1.5
 	if(istype(owner, /mob/living/simple_animal/hostile))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
-		simple_owner.ranged_cooldown_time /= 2.5
+		simple_owner.attack_delay /= 2.5
 
 /datum/status_effect/discoordinated
 	id = "discoordinated"
