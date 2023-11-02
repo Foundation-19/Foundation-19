@@ -1,0 +1,9 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: Interactive do_afters! During (most) timed actions, stars will pop up
+      that can be clicked to get extra progress.
+  - rscadd: Actionspeed modifiers ported from TG.
+  - imageadd: do_after sprites ported from TG.
+  - imageadd: Interactive do_after sprites by MrDoomBringer.
+  - refactor: Massive improvements to do_after system (from TG).
