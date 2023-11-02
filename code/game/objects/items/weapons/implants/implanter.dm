@@ -55,7 +55,7 @@
 		if(src.imp.can_implant(M, user, target_zone))
 			var/imp_name = imp.name
 
-			if(do_after(user, 50, M) && src.imp?.implant_in_mob(M, target_zone))
+			if(do_after(user, 7 SECONDS, M, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25) && src.imp?.implant_in_mob(M, target_zone))
 				M.visible_message(SPAN_WARNING("[M] has been implanted by [user]."))
 				admin_attack_log(user, M, "Implanted using \the [src] ([imp_name])", "Implanted with \the [src] ([imp_name])", "used an implanter, \the [src] ([imp_name]), on")
 

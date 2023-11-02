@@ -16,7 +16,7 @@
 	var/obj/structure/ladder/target_up
 	var/obj/structure/ladder/target_down
 
-	var/const/climb_time = 2 SECONDS
+	var/const/climb_time = 2.5 SECONDS
 	var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/ladder2.ogg','sounds/effects/ladder3.ogg','sounds/effects/ladder4.ogg')
 
 /obj/structure/ladder/Initialize()
@@ -117,7 +117,7 @@
 
 	target_ladder.audible_message(SPAN_NOTICE("You hear something coming [direction] \the [src]"))
 
-	if(do_after(M, climb_time, src))
+	if(do_after(M, climb_time, src, bonus_percentage = 25))
 		climbLadder(M, target_ladder, I)
 		for (var/obj/item/grab/G in M)
 			G.adjust_position(force = 1)

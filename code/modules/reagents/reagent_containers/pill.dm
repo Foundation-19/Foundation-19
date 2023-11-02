@@ -36,8 +36,10 @@
 			return
 
 		user.visible_message(SPAN_WARNING("[user] attempts to force [M] to swallow \the [src]."))
+    
 		user.setClickCooldown(CLICK_CD_ATTACK)
-		if(!do_after(user, 3 SECONDS, M))
+    
+		if(!do_after(user, 4 SECONDS, M, bonus_percentage = 25))
 			return
 
 		if (user.get_active_hand() != src)

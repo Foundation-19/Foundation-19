@@ -50,14 +50,13 @@
 			unbuckle_mob()
 	else
 		user.setClickCooldown(100)
-		var/breakouttime = rand(600, 1200) //1 to 2 minutes.
 
 		user.visible_message(
 			"\The [user] attempts to get free from [src]!",
 			SPAN_NOTICE("You attempt to get free from [src].")
 		)
 
-		if(do_after(user, breakouttime, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
+		if(do_after(user, 2 MINUTES, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED, bonus_percentage = 40, focus_frequency = 2.5 SECONDS))
 			if(unbuckle_mob())
 				user.visible_message(
 					"\The [user] manages to escape [src]!",

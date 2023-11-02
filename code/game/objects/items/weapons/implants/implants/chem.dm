@@ -38,7 +38,7 @@
 		if(reagents.total_volume >= reagents.maximum_volume)
 			to_chat(user, SPAN_WARNING("\The [src] is full."))
 		else
-			if(do_after(user,5,src))
+			if(do_after(user, 0.5 SECONDS, src, bonus_percentage = 100))
 				I.reagents.trans_to_obj(src, 5)
 				to_chat(user, SPAN_NOTICE("You inject 5 units of the solution. The syringe now contains [I.reagents.total_volume] units."))
 	else

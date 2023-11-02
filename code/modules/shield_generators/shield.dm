@@ -130,7 +130,7 @@
 
 	damage = round(damage)
 
-	new /obj/effect/temporary(get_turf(src), 2 SECONDS,'icons/obj/machines/shielding.dmi',"shield_impact")
+	new /obj/effect/temp_visual/temporary(get_turf(src), 2 SECONDS,'icons/obj/machines/shielding.dmi',"shield_impact")
 	impact_effect(round(abs(damage * 2)))
 
 	var/list/field_segments = gen.field_segments

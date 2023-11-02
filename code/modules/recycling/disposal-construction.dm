@@ -160,7 +160,7 @@
 					SPAN_NOTICE("You start welding \the [src] into place."),
 					SPAN_ITALIC("You hear the sound of welding.")
 				)
-				if (!do_after(user, 2 SECONDS, src))
+				if (!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 					return
 				playsound(src, 'sounds/items/Welder2.ogg', 50, TRUE)
 				user.visible_message(

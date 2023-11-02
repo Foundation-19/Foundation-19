@@ -61,6 +61,11 @@
 		QDEL_IN(src, (5 SECONDS))
 	return ..()
 
+// While they are "resistant" to high temperatures, they are specifically weak to fire
+/mob/living/simple_animal/hostile/infestation/fire_burn_temperature()
+	. = ..()
+	. *= 3
+
 /mob/living/simple_animal/hostile/infestation/proc/BecomeEgg()
 	name = "egg"
 	desc = "A weird egg..?"
@@ -73,7 +78,7 @@
 	ai_holder = null
 	say_list = null
 	death_sounds = list()
-	maxHealth = max(200, maxHealth * 2)
+	maxHealth = clamp(maxHealth * 2, 100, 2000)
 	health = maxHealth
 	if(isnull(transformation_target_type) && LAZYLEN(transformation_types))
 		transformation_target_type = pick(transformation_types)

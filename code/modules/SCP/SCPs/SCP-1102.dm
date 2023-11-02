@@ -14,7 +14,7 @@ var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/l
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/weapon/scp1102ru/attack_self(mob/user)
-	if(do_after(user,20))
+	if(do_after(user, 2.5 SECONDS, bonus_percentage = 25))
 		user.drop_active_hand()
 		user.forceMove(pick(GLOB.scp1102_floors))
 		playsound(src, pick(climbsounds), 50)
@@ -45,7 +45,7 @@ var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/l
 	climb(M)
 
 /obj/structure/ladder_scp_1102/proc/climb(mob/user)
-	if(do_after(user,20))
+	if(do_after(user, 2.5 SECONDS, bonus_percentage = 25))
 		var/turf/T = get_turf(pick(GLOB.scp1102))
 		user.forceMove(T)
 		playsound(src, pick(climbsounds), 50)

@@ -25,7 +25,7 @@
 				return
 			user.visible_message(SPAN_DANGER("\The [user] begins taping over \the [H]'s eyes!"))
 
-			if(!do_after(user, 3 SECONDS, H))
+			if(!do_after(user, 4 SECONDS, H, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25))
 				return
 
 			// Repeat failure checks.
@@ -52,7 +52,7 @@
 			playsound(src, 'sounds/effects/tape.ogg',25)
 			user.visible_message(SPAN_DANGER("\The [user] begins taping up \the [H]'s mouth!"))
 
-			if(!do_after(user, 3 SECONDS, H))
+			if(!do_after(user, 4 SECONDS, H, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25))
 				return
 
 			// Repeat failure checks.

@@ -85,7 +85,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	button_icon_state = "absorb_dna"
 	genome_cost = 0
 	has_button = TRUE
-	var/stage_time = 15 SECONDS
+	var/stage_time = 18 SECONDS
 
 /datum/power/changeling/absorb_dna/can_activate(mob/living/carbon/human/user)
 	. = ..(user)
@@ -150,7 +150,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 			chomp(target)
 			return
 	SSstatistics.add_field_details("changeling_powers", "A[stage]")
-	if(!do_after(mind.current, stage_time, target) || !can_activate(mind.current))
+	if(!do_after(mind.current, stage_time, target, bonus_percentage = 25) || !can_activate(mind.current))
 		to_chat(mind.current, SPAN_WARNING("Our absorption of \the [target] has been interrupted!"))
 		mind.changeling.is_absorbing = FALSE
 		return FALSE
@@ -255,21 +255,21 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 	var/S_name = chosen_dna.speciesName
 	var/datum/species/S_dat = all_species[S_name]
-	var/changeTime = 2 SECONDS
+	var/changeTime = 3 SECONDS
 
 	if(user.mob_size != S_dat.mob_size)
 		user.visible_message(
 			SPAN_WARNING("\The [user]'s body begins to twist, their mass changing rapidly!"),
 			SPAN_WARNING("We begin to transform, changing our body's size to accommodate our new form.")
 		)
-		changeTime = 8 SECONDS
+		changeTime = 10 SECONDS
 	else
 		user.visible_message(
 			SPAN_WARNING("\The [user]'s body begins to twist, changing rapidly!"),
 			SPAN_WARNING("We begin to transform.")
 		)
 
-	if(!do_after(user, changeTime) || !chosen_dna)
+	if(!do_after(user, changeTime, bonus_percentage = 25) || !chosen_dna)
 		to_chat(user, SPAN_WARNING("We fail to change shape."))
 		return
 

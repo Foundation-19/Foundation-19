@@ -251,7 +251,7 @@
 			return
 
 		to_chat(user, "You begin repairing damage to \the [src]...")
-		if(do_after(user, 9 SECONDS+damage, src))
+		if(do_after(user, 10 SECONDS + damage, src, bonus_percentage = 25))
 
 			damage = 0
 			to_chat(user, "You repair \the [src].")

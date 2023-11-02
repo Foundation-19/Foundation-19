@@ -212,7 +212,7 @@
 	if (src.operating == -1 && isCrowbar(I))
 		playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 		user.visible_message("[user] removes the electronics from the windoor.", "You start to remove electronics from the windoor.")
-		if (do_after(user,40,src))
+		if (do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You removed the windoor electronics!"))
 
 			var/obj/structure/windoor_assembly/wa = new/obj/structure/windoor_assembly(src.loc)

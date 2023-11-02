@@ -147,11 +147,12 @@
 
 /obj/effect/vine/proc/targets_in_range()
 	var/list/mob/targets = list()
+	// TODO what the fuck is going on here
 	for(var/turf/simulated/check_turf in (get_cardinal_neighbors() | get_zlevel_neighbors() | list(loc)))
 		if(!istype(check_turf))
 			continue
 		for(var/mob/living/M in check_turf.contents)
-			if(prob(5) || !M.skill_check(SKILL_BOTANY, SKILL_MASTER))
+			if(prob(5))
 				targets |= M
 	if(targets.len)
 		return targets

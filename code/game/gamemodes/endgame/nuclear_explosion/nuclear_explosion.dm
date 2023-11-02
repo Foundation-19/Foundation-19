@@ -1,3 +1,5 @@
+var/global/universe_has_ended = 0
+
 /datum/universal_state/nuclear_explosion
 	name = "Nuclear Demolition Warhead"
 	var/atom/explosion_source

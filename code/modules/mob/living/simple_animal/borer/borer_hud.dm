@@ -44,7 +44,7 @@
 		return
 
 	to_chat(worm, SPAN_NOTICE("You begin delicately adjusting your connection to the host brain..."))
-	if(!do_after(worm, 100+(worm.host.getBrainLoss()*5) || !worm.host || !worm.can_use_borer_ability()))
+	if(!do_after(worm, 12 SECONDS + (6 * worm.host.getBrainLoss()), bonus_percentage = 25) || !worm.host || !worm.can_use_borer_ability())
 		return
 
 	to_chat(worm, SPAN_DANGER("You plunge your probosci deep into the cortex of the host brain, interfacing directly with their nervous system."))

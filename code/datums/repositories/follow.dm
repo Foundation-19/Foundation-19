@@ -221,10 +221,6 @@
 	followed_type = /obj/effect/blob/core
 	suffix = "Blob"
 
-/datum/follow_holder/supermatter
-	sort_order = 10
-	followed_type = /obj/machinery/power/supermatter
-
 /datum/follow_holder/singularity
 	sort_order = 10
 	followed_type = /obj/singularity

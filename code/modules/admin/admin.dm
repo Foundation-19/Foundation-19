@@ -563,6 +563,17 @@ var/global/floorIsLava = 0
 	log_and_message_staff("toggled LOOC.")
 	SSstatistics.add_field_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/togglecrosscomms()
+	set category = "Server"
+	set desc="Toggle dis bitch"
+	set name="Toggle Cross-Server Communications"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	GLOB.cross_comms_allowed = !GLOB.cross_comms_allowed
+	log_and_message_admins("toggled cross-comms [GLOB.cross_comms_allowed ? "on" : "off"].")
+	SSstatistics.add_field_details("admin_verb", "TCCC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/endnow()
 	set category = "Server"

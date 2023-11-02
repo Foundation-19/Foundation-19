@@ -176,7 +176,8 @@
 			other_feed_message_start(user, target)
 
 			user.setClickCooldown(CLICK_CD_ATTACK)
-			if(!do_after(user, 3 SECONDS, target))
+      
+			if(!do_after(user, 4 SECONDS, target, bonus_percentage = 25))
 				return
 
 			other_feed_message_finish(user, target)

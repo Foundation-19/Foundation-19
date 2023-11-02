@@ -21,11 +21,6 @@
 	name = "Safety Moth - Piping"
 	desc = "This informational poster uses Safety Moth(TM) to advise atmospheric technicians on the efficient usage of pipes. Proper pipe placement prevents poor performance!"
 
-/decl/poster/tegu/t5
-	icon_state ="tposter5"
-	name = "Safety Moth - Supermatter"
-	desc = "This informational poster uses Safety Moth(TM) to promote proper safety equipment when working near a supermatter crystal."
-
 /decl/poster/tegu/t6
 	icon_state ="tposter6"
 	name = "Safety Moth - Mindbreaker"

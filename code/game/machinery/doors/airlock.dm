@@ -255,7 +255,7 @@ var/list/airlock_overlays = list()
 		if(isWrench(C))
 			playsound(src.loc, 'sounds/items/Ratchet.ogg', 50, 1)
 			user.visible_message(SPAN_WARNING("[user.name] starts frantically pumping the bolt override mechanism!"), SPAN_WARNING("You start frantically pumping the bolt override mechanism!"))
-			if(do_after(user, 160))
+			if(do_after(user, 20 SECONDS, bonus_percentage = 35))
 				visible_message("\The [src] bolts [locked ? "disengage" : "engage"]!")
 				locked = !locked
 				return
@@ -951,7 +951,7 @@ About the new airlock wires panel:
 
 //returns 1 on success, 0 on failure
 /obj/machinery/door/airlock/proc/cut_bolts(obj/item/item, mob/user)
-	var/cut_delay = (15 SECONDS)
+	var/cut_delay = 18 SECONDS
 	var/cut_verb
 	var/cut_sound
 
@@ -1005,7 +1005,7 @@ About the new airlock wires panel:
 
 		playsound(src, cut_sound, 100, 1)
 		show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
-		if (do_after(user, cut_delay, src))
+		if (do_after(user, cut_delay, src, bonus_percentage = 25))
 			user.visible_message(
 				SPAN_NOTICE("\The [user] removes the bolt cover from [src]"),
 				SPAN_NOTICE("You remove the cover and expose the door bolts.")
@@ -1020,7 +1020,7 @@ About the new airlock wires panel:
 			)
 		playsound(src, cut_sound, 100, 1)
 		show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
-		if (do_after(user, cut_delay, src))
+		if (do_after(user, cut_delay, src, bonus_percentage = 25))
 			user.visible_message(
 				SPAN_NOTICE("\The [user] severs the door bolts, unlocking [src]."),
 				SPAN_NOTICE("You sever the door bolts, unlocking the door.")
@@ -1043,7 +1043,7 @@ About the new airlock wires panel:
 		if(!length(A.req_access) && (alert("\the [A]'s 'Access Not Set' light is flashing. Install it anyway?", "Access not set", "Yes", "No") == "No"))
 			return
 
-		if(do_after(user, 50, src) && density && A && user.unEquip(A, src))
+		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && density && A && user.unEquip(A, src))
 			to_chat(user, SPAN_NOTICE("You successfully install \the [A]."))
 			brace = A
 			brace.airlock = src
@@ -1071,7 +1071,7 @@ About the new airlock wires panel:
 		show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 		user.visible_message(SPAN_WARNING("\The [user] begins welding \the [src] [welded ? "open" : "closed"]!"),
 							SPAN_NOTICE("You begin welding \the [src] [welded ? "open" : "closed"]."))
-		if(do_after(user, (rand(3,5)) SECONDS, src))
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			if(density && !(operating > 0) && !repairing)
 				playsound(src, 'sounds/items/Welder2.ogg', 50, 1)
 				show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
@@ -1110,7 +1110,7 @@ About the new airlock wires panel:
 			playsound(src.loc, 'sounds/items/Crowbar.ogg', 100, 1)
 			show_sound_effect(get_turf(src), soundicon = SFX_ICON_SMALL)
 			user.visible_message("[user] removes the electronics from the airlock assembly.", "You start to remove electronics from the airlock assembly.")
-			if(do_after(user,40,src))
+			if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				to_chat(user, SPAN_NOTICE("You've removed the airlock electronics!"))
 				deconstruct(user)
 				return
