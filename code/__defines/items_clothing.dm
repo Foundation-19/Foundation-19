@@ -1,4 +1,4 @@
-#define HUMAN_STRIP_DELAY        40   // Takes 40ds = 4s to strip someone.
+#define HUMAN_STRIP_DELAY    5 SECONDS
 
 #define CANDLE_LUM 3 // For how bright candles are.
 

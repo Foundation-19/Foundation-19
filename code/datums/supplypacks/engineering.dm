@@ -173,22 +173,6 @@
 	containername = "shield generator construction kit crate"
 	access = ACCESS_ENGINEERING_LVL2
 
-/decl/hierarchy/supply_pack/engineering/smbig
-	name = "Power - Supermatter core"
-	contains = list(/obj/machinery/power/supermatter)
-	cost = 150
-	containertype = /obj/structure/closet/crate/secure/large/phoron
-	containername = "\improper Supermatter crate (CAUTION)"
-	access = ACCESS_CE
-
-/decl/hierarchy/supply_pack/engineering/smsmall
-	name = "Power - Supermatter shard"
-	contains = list(/obj/machinery/power/supermatter/shard)
-	cost = 75
-	containertype = /obj/structure/closet/crate/secure/large/phoron
-	containername = "\improper Supermatter crate (CAUTION)"
-	access = ACCESS_CE
-
 /decl/hierarchy/supply_pack/engineering/fueltank
 	name = "Liquid - Fuel tank"
 	contains = list(/obj/structure/reagent_dispensers/fueltank)

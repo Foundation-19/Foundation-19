@@ -180,7 +180,6 @@ What is the naming convention for planes or layers?
 #define EFFECTS_ABOVE_LIGHTING_PLANE   5 // For glowy eyes, laser beams, etc. that shouldn't be affected by darkness
 	#define EYE_GLOW_LAYER         1
 	#define BEAM_PROJECTILE_LAYER  2
-	#define SUPERMATTER_WALL_LAYER 3
 	#define OBFUSCATION_LAYER      4
 
 #define FULLSCREEN_PLANE                6 // for fullscreen overlays that do not cover the hud.
@@ -201,6 +200,8 @@ What is the naming convention for planes or layers?
 
 #define HUD_PLANE                    11
 	#define UNDER_HUD_LAYER              0
+	#define HUD_PROGRESS_TRAP_LAYER      0.49
+	#define HUD_PROGRESS_BOOSTER_LAYER   0.5
 	#define HUD_BASE_LAYER               1
 	#define HUD_CLICKABLE_LAYER          2
 	#define HUD_ITEM_LAYER               3

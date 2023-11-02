@@ -12,15 +12,6 @@
 	var/renamed = 0
 	var/icon_changed = 0
 
-/obj/item/storage/bible/open(mob/user)
-	. = ..()
-	icon_state = "bibleopen"
-
-/obj/item/storage/bible/close(mob/user)
-	. = ..()
-	icon_state = initial(icon_state)
-	playsound(src, use_sound, 30)
-
 /obj/item/storage/bible/booze
 	name = "bible"
 	desc = "To be applied to the head repeatedly."
@@ -37,6 +28,7 @@
 	desc = "The central religious text of Christianity."
 	renamed = 1
 	icon_changed = 1
+	open_icon = "bibleopen"
 
 /obj/item/storage/bible/tanakh
 	name = "\improper Tanakh"
@@ -78,7 +70,7 @@
 		return
 	if(user.mind && istype(user.mind.assigned_job, /datum/job/chaplain))
 		user.visible_message(SPAN_NOTICE("\The [user] places \the [src] on \the [M]'s forehead, reciting a prayer..."))
-		if(do_after(user, 5 SECONDS) && user.Adjacent(M))
+		if(do_after(user, 5 SECONDS, do_flags = DO_DEFAULT | DO_SHOW_TARGET) && user.Adjacent(M))
 			user.visible_message("\The [user] finishes reciting \his prayer, removing \the [src] from \the [M]'s forehead.", "You finish reciting your prayer, removing \the [src] from \the [M]'s forehead.")
 			if(user.get_cultural_value(TAG_RELIGION) == M.get_cultural_value(TAG_RELIGION))
 				to_chat(M, SPAN_NOTICE("You feel calm and relaxed, at one with the universe."))
@@ -105,7 +97,7 @@
 		return
 	if(user.mind && istype(user.mind.assigned_job, /datum/job/chaplain))
 		user.visible_message("\The [user] begins to read a passage from \the [src]...", "You begin to read a passage from \the [src]...")
-		if(do_after(user, 5 SECONDS))
+		if(do_after(user, 5 SECONDS, do_flags = DO_DEFAULT | DO_SHOW_TARGET))
 			user.visible_message("\The [user] reads a passage from \the [src].", "You read a passage from \the [src].")
 			for(var/mob/living/carbon/human/H in view(user))
 				if(user.get_cultural_value(TAG_RELIGION) == H.get_cultural_value(TAG_RELIGION))

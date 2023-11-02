@@ -14,7 +14,7 @@
 				playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				balloon_alert(user, "removing PCU...")
 
-				if(do_after(user, 50, src) && opened && (has_electronics == APC_PCU_UNSCREWED) && !terminal()) // redo all checks.
+				if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && (has_electronics == APC_PCU_UNSCREWED) && !terminal()) // redo all checks.
 					has_electronics = APC_PCU_NONE
 					if ((stat & BROKEN))
 						user.balloon_alert_to_viewers("removed broken PCU")
@@ -32,7 +32,7 @@
 		if((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden))
 			playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 			balloon_alert(user, "prying broken cover...")
-			if(do_after(user, 10 SECONDS, src))
+			if(do_after(user, 12 SECONDS, src, bonus_percentage = 25))
 				opened = APC_COVER_REMOVED
 				user.balloon_alert_to_viewers("broken cover removed")
 				update_icon()
@@ -107,7 +107,7 @@
 			return TRUE
 		user.balloon_alert_to_viewers("placing PCU into APC...")
 		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
-		if(do_after(user, 10, src) && has_electronics == 0 && opened && !(stat & BROKEN))
+		if(do_after(user, 1 SECOND, src, bonus_percentage = 100) && has_electronics == 0 && opened && !(stat & BROKEN))
 			has_electronics = APC_PCU_UNSCREWED
 			reboot() //completely new electronics
 			user.balloon_alert_to_viewers(user, "PCU placed in APC")
@@ -130,7 +130,7 @@
 			return
 		user.balloon_alert_to_viewers("welding APC...")
 		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
-		if(do_after(user, 50, src) && opened && !has_electronics && !terminal())
+		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && !has_electronics && !terminal())
 			if(!WT.remove_fuel(3, user))
 				return TRUE
 			if (emagged || (stat & BROKEN) || opened == APC_COVER_CLOSED)
@@ -162,7 +162,7 @@
 				return TRUE
 
 			user.balloon_alert_to_viewers("replacing APC frame...")
-			if(do_after(user, 50, src) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
+			if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
 				user.balloon_alert_to_viewers("APC frame replaced")
 				qdel(W)
 				set_broken(FALSE)
@@ -243,7 +243,7 @@
 			balloon_alert(user, "APC is broken!")
 		else
 			flick("apc-spark", src)
-			if (do_after(user,6,src))
+			if (do_after(user, 0.75 SECONDS, src, bonus_percentage = 25))
 				emagged = TRUE
 				req_access.Cut()
 				locked = 0

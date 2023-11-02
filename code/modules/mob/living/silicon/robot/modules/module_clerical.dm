@@ -41,7 +41,6 @@
 	skills = list(
 		SKILL_COMPUTER            = SKILL_EXPERIENCED,
 		SKILL_COOKING             = SKILL_MASTER,
-		SKILL_BOTANY              = SKILL_MASTER,
 		SKILL_MEDICAL             = SKILL_BASIC,
 		SKILL_CHEMISTRY           = SKILL_TRAINED
 	)

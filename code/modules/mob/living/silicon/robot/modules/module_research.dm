@@ -41,7 +41,6 @@
 		SKILL_DEVICES             = SKILL_MASTER,
 		SKILL_ANATOMY             = SKILL_TRAINED,
 		SKILL_CHEMISTRY           = SKILL_TRAINED,
-		SKILL_BOTANY              = SKILL_EXPERIENCED,
 		SKILL_ELECTRICAL          = SKILL_EXPERIENCED
 	)
 /obj/item/robot_module/research/finalize_equipment()

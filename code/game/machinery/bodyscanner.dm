@@ -155,7 +155,7 @@
 		SPAN_NOTICE("\The [user] begins placing \the [target] into \the [src]."),
 		SPAN_NOTICE("You start placing \the [target] into \the [src].")
 	)
-	if(!do_after(user, 30, src) || !user_can_move_target_inside(target, user))
+	if(!do_after(user, 4 SECONDS, src, bonus_percentage = 25) || !user_can_move_target_inside(target, user))
 		return
 	move_target_inside(target,user)
 
