@@ -244,11 +244,11 @@
 		return
 	to_chat(user, SPAN_NOTICE("You climb into \the [src]."))
 	user.forceMove(src)
-	LAZYDISTINCTADD(pilots, user)
+	LAZYOR(pilots, user)
 	sync_access()
 	playsound(src, 'sounds/machines/windowdoor.ogg', 50, 1)
 	if(user.client) user.client.screen |= hud_elements
-	LAZYDISTINCTADD(user.additional_vision_handlers, src)
+	LAZYOR(user.additional_vision_handlers, src)
 	update_pilots()
 	user.PushClickHandler(/datum/click_handler/default/mech)
 	return 1

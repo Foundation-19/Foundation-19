@@ -3,7 +3,7 @@
 	desc = "A cheap pair of universal* prescription lenses, in an even cheaper frame."
 	icon_state = "glasses"
 	item_state = "glasses"
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/prescription/scanners

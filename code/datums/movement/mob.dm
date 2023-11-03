@@ -14,7 +14,7 @@
 	return MOVEMENT_STOP
 
 /datum/movement_handler/mob/relayed_movement/proc/AddAllowedMover(mover)
-	LAZYDISTINCTADD(allowed_movers, mover)
+	LAZYOR(allowed_movers, mover)
 
 /datum/movement_handler/mob/relayed_movement/proc/RemoveAllowedMover(mover)
 	LAZYREMOVE(allowed_movers, mover)

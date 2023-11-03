@@ -39,6 +39,7 @@
 #include "code\__defines\chat.dm"
 #include "code\__defines\chemistry.dm"
 #include "code\__defines\client.dm"
+#include "code\__defines\clothing.dm"
 #include "code\__defines\colors.dm"
 #include "code\__defines\combat.dm"
 #include "code\__defines\cooldowns.dm"

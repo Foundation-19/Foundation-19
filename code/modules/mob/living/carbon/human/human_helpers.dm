@@ -50,13 +50,9 @@
 	equipment_tint_total = 0
 	equipment_see_invis	= 0
 	equipment_vision_flags = 0
-	equipment_prescription = 0
 	equipment_light_protection = 0
 	equipment_darkness_modifier = 0
 	equipment_overlays.Cut()
-
-	if(istype(glasses, /obj/item/clothing/glasses))
-		process_prescription(glasses)
 
 	var/binoc_check
 	if(client)
@@ -77,10 +73,6 @@
 			add_clothing_protection(r_ear)
 		if(istype(src.l_ear, /obj/item/clothing/ears) && (src.l_ear != src.r_ear)) //Must avoid adding up ear coverings that cover both ears
 			add_clothing_protection(l_ear)
-
-/mob/living/carbon/human/proc/process_prescription(obj/item/clothing/glasses/G)
-	if(G)
-		equipment_prescription += G.prescription
 
 /mob/living/carbon/human/proc/process_glasses(obj/item/clothing/glasses/G)
 	if(G?.active)
@@ -292,7 +284,7 @@
 // Returns true if, and only if, the human has gone from uncloaked to cloaked
 /mob/living/carbon/human/proc/add_cloaking_source(datum/cloaking_source)
 	var/has_uncloaked = clean_cloaking_sources()
-	LAZYDISTINCTADD(cloaking_sources, weakref(cloaking_source))
+	LAZYOR(cloaking_sources, weakref(cloaking_source))
 
 	// We don't present the cloaking message if the human was already cloaked just before cleanup.
 	if(!has_uncloaked && LAZYLEN(cloaking_sources) == 1)

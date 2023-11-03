@@ -67,7 +67,7 @@
 
 /obj/item/ammo_casing/proc/put_residue_on(atom/A)
 	if(A)
-		LAZYDISTINCTADD(A.gunshot_residue, caliber)
+		LAZYOR(A.gunshot_residue, caliber)
 
 /obj/item/ammo_casing/attackby(obj/item/W as obj, mob/user as mob)
 	if(!isScrewdriver(W))

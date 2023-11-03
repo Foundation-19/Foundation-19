@@ -842,7 +842,7 @@ default behaviour is:
 		add_overlay(auras)
 
 /mob/living/proc/add_aura(obj/aura/aura)
-	LAZYDISTINCTADD(auras,aura)
+	LAZYOR(auras,aura)
 	update_icons()
 	return 1
 

@@ -128,8 +128,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_KNOCKEDOUT "knockedout"
 /// TODO: make this work
 #define TRAIT_PACIFISM "pacifism"
-/// Cannot be removed without admin intervention. TODO
-#define ROUNDSTART_TRAIT "roundstart"
 /// Lets the user succumb even if they've got NODEATH. TODO
 #define TRAIT_SUCCUMB_OVERRIDE "succumb_override"
 /// Prevents voluntary standing or staying up on its own. TODO
@@ -158,8 +156,19 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Guarantees the user can hear their own heartbeat
 #define TRAIT_HEAR_HEARTBEAT "hear_heartbeat"
+/// If the user is nearsighted, having this trait stops it from affecting them (e.g. if they have glasses on).
+#define TRAIT_NEARSIGHTED_CORRECTED "nearsighted_corrected"
+
+/**
+ * Trait sources
+ */
 
 /// A trait given by any status effect
 #define STATUS_EFFECT_TRAIT "status-effect"
 /// A trait given by a specific status effect
 #define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"
+
+/// Cannot be removed without admin intervention. TODO
+#define ROUNDSTART_TRAIT "roundstart"
+/// Gained by wearing certain clothing.
+#define CLOTHING_TRAIT "clothing"

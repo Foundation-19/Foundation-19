@@ -294,13 +294,27 @@ var/list/slot_equipment_priority = list( \
 	return 1
 
 
-//Returns the item equipped to the specified slot, if any.
+/// Returns the item equipped to the specified slot, if any.
 /mob/proc/get_equipped_item(slot)
 	switch(slot)
 		if(slot_l_hand) return l_hand
 		if(slot_r_hand) return r_hand
 		if(slot_back) return back
 		if(slot_wear_mask) return wear_mask
+	return null
+
+/// Gets what slot the item on the mob is held in.
+/// Returns null if the item isn't in any slots on our mob.
+/// Does not check if the passed item is null, which may result in unexpected outcomes.
+/mob/proc/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == l_hand)
+		return slot_l_hand
+	if(looking_for == r_hand)
+		return slot_r_hand
+	if(looking_for == back)
+		return slot_back
+	if(looking_for == wear_mask)
+		return slot_wear_mask
 	return null
 
 /mob/proc/get_equipped_items(include_carried = 0)

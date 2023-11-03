@@ -190,7 +190,7 @@
 	if(wires.is_cut(WIRE_TELEBEACON_RELAY))
 		return FALSE
 
-	LAZYDISTINCTADD(connected_computers, computer)
+	LAZYOR(connected_computers, computer)
 	notify_connection()
 	update_icon()
 	update_use_power(POWER_USE_ACTIVE)

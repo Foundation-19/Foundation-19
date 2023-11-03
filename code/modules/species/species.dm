@@ -568,12 +568,12 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	if(!H.client)//no client, no screen to update
 		return 1
 
-	H.set_fullscreen(H.eye_blind && !H.equipment_prescription, "blind", /atom/movable/screen/fullscreen/blind)
+	H.set_fullscreen(H.eye_blind, "blind", /atom/movable/screen/fullscreen/blind)
 	H.set_fullscreen(H.stat == UNCONSCIOUS, "blackout", /atom/movable/screen/fullscreen/blackout)
 
 	if(config.welder_vision)
 		H.set_fullscreen(H.equipment_tint_total, "welder", /atom/movable/screen/fullscreen/impaired, H.equipment_tint_total)
-	var/how_nearsighted = get_how_nearsighted(H)
+	var/how_nearsighted = H.is_nearsighted_currently()
 	H.set_fullscreen(how_nearsighted, "nearsighted", /atom/movable/screen/fullscreen/oxy, how_nearsighted)
 	H.set_fullscreen(H.eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 	H.set_fullscreen(H.druggy, "high", /atom/movable/screen/fullscreen/high)
@@ -582,30 +582,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		H.client.screen |= overlay
 
 	return 1
-
-/datum/species/proc/get_how_nearsighted(mob/living/carbon/human/H)
-	var/prescriptions = short_sighted
-	if(H.disabilities & NEARSIGHTED)
-		prescriptions += 7
-	if(H.equipment_prescription)
-		prescriptions -= H.equipment_prescription
-
-	var/light = light_sensitive
-	if(light)
-		if(H.eyecheck() > FLASH_PROTECTION_NONE)
-			light = 0
-		else
-			var/turf_brightness = 1
-			var/turf/T = get_turf(H)
-			if(T?.lighting_overlay)
-				turf_brightness = min(1, T.get_lumcount())
-			if(turf_brightness < 0.33)
-				light = 0
-			else
-				light = round(light * turf_brightness)
-				if(H.equipment_light_protection)
-					light -= H.equipment_light_protection
-	return Clamp(max(prescriptions, light), 0, 7)
 
 /datum/species/proc/set_default_hair(mob/living/carbon/human/H)
 	H.h_style = H.species.default_h_style

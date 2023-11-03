@@ -7,7 +7,6 @@
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi'
 		)
 	var/hud_type
-	var/prescription = FALSE
 	var/toggleable = FALSE
 	var/off_state = "degoggles"
 	var/active = TRUE
@@ -129,7 +128,7 @@
 /obj/item/clothing/glasses/meson/prescription
 	name = "prescription mesons"
 	desc = "Optical meson scanner with prescription lenses."
-	prescription = 6
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/science
 	name = "science goggles"
@@ -144,7 +143,7 @@
 /obj/item/clothing/glasses/science/prescription
 	name = "prescription science goggles"
 	desc = "Science goggles with prescription lenses."
-	prescription = 6
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/science/Initialize()
 	. = ..()

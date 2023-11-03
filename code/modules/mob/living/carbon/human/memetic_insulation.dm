@@ -105,7 +105,7 @@ var/debuff_miniscule = 3
 	if(!(isobj(origin) || ismob(origin)))
 		return TRUE //if its not an object or mob it can always be identified/read (technically this should never happen but better safe than sorry)
 
-	var/viewdistance = 7 - get_how_nearsighted() //cant read if you're nearsighted and without prescription
+	var/viewdistance = is_nearsighted_currently() ? 7 : 2 //cant read if you're nearsighted
 	var/visual_insulation_calculated = get_visual_insul()
 	if(!visual_memetic) //If not memetic, we should still see objects even if wearing something with memetic insulation but no tint.
 		if((equipment_tint_total == TINT_NONE) && (visual_insulation_calculated != V_INSL_NONE))
@@ -142,14 +142,6 @@ var/debuff_miniscule = 3
 		if(equipment_tint_total >= TINT_BLIND) //Checks tints. Tints are different from insulation in that they graphicaly obstruct your view, whereas insulation just insulates you from memetic hazards without obstructing your view.
 			return V_INSL_PERFECT
 	return visual_insulation
-
-/mob/living/carbon/human/proc/get_how_nearsighted() //Stolen from species.dm
-	var/prescriptions = 0
-	if(disabilities & NEARSIGHTED)
-		prescriptions += 7
-	if(equipment_prescription)
-		prescriptions -= equipment_prescription
-	return clamp(prescriptions,0,7)
 
 // BLINK MECHANICS
 

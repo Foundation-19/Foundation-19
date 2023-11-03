@@ -80,10 +80,10 @@ SUBSYSTEM_DEF(jobs)
 			if(job.department_flag)
 				for (var/I in 1 to GLOB.bitflags.len)
 					if(job.department_flag & GLOB.bitflags[I])
-						LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.title)
-						LAZYDISTINCTADD(distinct_department_positions["[GLOB.bitflags[I]]"], job.title)
+						LAZYOR(positions_by_department["[GLOB.bitflags[I]]"], job.title)
+						LAZYOR(distinct_department_positions["[GLOB.bitflags[I]]"], job.title)
 						if (length(job.alt_titles))
-							LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.alt_titles)
+							LAZYOR(positions_by_department["[GLOB.bitflags[I]]"], job.alt_titles)
 
 	// Set up syndicate phrases.
 	syndicate_code_phrase = generate_code_phrase()
@@ -551,10 +551,7 @@ SUBSYSTEM_DEF(jobs)
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)
-		var/equipped = H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
-		if(equipped)
-			var/obj/item/clothing/glasses/G = H.glasses
-			G.prescription = 7
+		H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
 
 	BITSET(H.hud_updateflag, ID_HUD)
 	BITSET(H.hud_updateflag, IMPLOYAL_HUD)
