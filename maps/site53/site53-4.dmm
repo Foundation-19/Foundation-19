@@ -1281,6 +1281,7 @@
 	id_tag = "EZBrigFlash";
 	name = "EZBrigFlash"
 	},
+/obj/item/storage/fancy/crayons,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "dk" = (
@@ -1463,6 +1464,14 @@
 /obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
+"dJ" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
 "dK" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -4355,6 +4364,8 @@
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
+/obj/item/gun/energy/taser/carbine,
+/obj/item/gun/energy/taser/carbine,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "mM" = (
@@ -4573,6 +4584,13 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"oo" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "ov" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/paper_bin,
@@ -4602,6 +4620,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"oQ" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/door/airlock/glass/security,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "oS" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/machinery/light{
@@ -4617,6 +4640,12 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"pd" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/structure/bed/chair/padded/black,
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "pg" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/hygiene/sink{
@@ -4734,6 +4763,17 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"pU" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/obj/structure/hygiene/toilet{
+	dir = 1
+	},
+/obj/item/contraband/poster,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "pX" = (
 /obj/machinery/light{
 	dir = 1
@@ -4815,6 +4855,17 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"qD" = (
+/obj/machinery/flasher{
+	id_tag = "EZBrigFlash";
+	name = "EZBrigFlash"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/random/trash,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "qE" = (
@@ -5040,6 +5091,9 @@
 	name = "Reeducation Chair";
 	dir = 4
 	},
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "se" = (
@@ -5108,6 +5162,8 @@
 /obj/structure/table/rack,
 /obj/machinery/light,
 /obj/item/gun/energy/ionrifle,
+/obj/item/gun/energy/taser/carbine,
+/obj/item/gun/energy/taser/carbine,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "tc" = (
@@ -5724,6 +5780,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"yj" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/random/contraband,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "yq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -6334,6 +6395,11 @@
 "CT" = (
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
+"CZ" = (
+/obj/effect/catwalk_plated/dark,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
 "De" = (
 /obj/structure/table/steel,
 /obj/item/storage/firstaid/combat,
@@ -6359,6 +6425,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Dh" = (
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
+"Dj" = (
+/obj/structure/closet/l3closet/janitor,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "Dl" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6700,6 +6773,18 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"GH" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/structure/hygiene/toilet{
+	dir = 1
+	},
+/obj/machinery/light/small/red{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/obj/random/contraband,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "GL" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -6822,8 +6907,22 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/teargas,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
+"Hz" = (
+/obj/structure/hygiene/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/item/contraband/poster,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "HE" = (
 /obj/machinery/door/airlock/command{
 	name = "EZ Security Gear Room";
@@ -7499,6 +7598,10 @@
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Nl" = (
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "No" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small/red,
@@ -7589,6 +7692,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"Ok" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/structure/hygiene/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "Op" = (
 /obj/machinery/door/airlock/command{
 	name = "Command Security Compartment"
@@ -7669,6 +7782,47 @@
 /obj/effect/floor_decal/corner/yellow/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"OU" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/closet,
+/obj/item/reagent_containers/ivbag/amnesticsf,
+/obj/item/reagent_containers/ivbag/amnesticsf,
+/obj/item/reagent_containers/ivbag/amnesticsf,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/stack/telecrystal{
+	amount = 300;
+	layer = 2.99;
+	max_amount = 300
+	},
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/reagent_containers/syringe/zombie,
+/obj/item/reagent_containers/syringe/zombie,
+/obj/item/reagent_containers/syringe/zombie,
+/obj/item/reagent_containers/syringe/zombie,
+/obj/item/reagent_containers/syringe/zombie,
+/obj/item/reagent_containers/syringe/zombie,
+/obj/item/storage/box/syndie_kit/imp_uplink{
+	layer = 2.98
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
 "OX" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -7722,6 +7876,23 @@
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
+"Pb" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/mre/random,
+/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Guard Office"
+	},
+/obj/effect/floor_decal/corner/black/full,
+/obj/machinery/flasher{
+	id_tag = "EZBrigFlash";
+	name = "EZBrigFlash"
+	},
+/obj/item/storage/fancy/crayons,
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Ph" = (
 /obj/structure/table/reinforced,
@@ -7923,6 +8094,15 @@
 "QI" = (
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/commandpanicbunker)
+"QJ" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/structure/hygiene/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "QN" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -30
@@ -8087,6 +8267,19 @@
 	id_tag = "EZ Brig Iso Entry";
 	name = "EZ Brig Iso Entry"
 	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"RY" = (
+/obj/item/mop,
+/obj/structure/janitorialcart,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/storage/bag/trash,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"RZ" = (
+/obj/item/trash/beans,
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cheesie,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Sb" = (
@@ -9100,6 +9293,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"ZN" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/structure/bed,
+/obj/random/trash,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "ZO" = (
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -32531,7 +32730,7 @@ hk
 hk
 hk
 cX
-Et
+dJ
 sb
 Et
 cX
@@ -32790,7 +32989,7 @@ hk
 cX
 Cj
 Cj
-Cj
+CZ
 Pv
 cX
 hk
@@ -33046,8 +33245,8 @@ hk
 hk
 cX
 Cj
-Cj
-Cj
+CZ
+CZ
 CD
 cX
 hk
@@ -33550,16 +33749,16 @@ cX
 pg
 FH
 cX
-pg
+Ok
 FH
 cX
 pg
+pU
+cX
+Ok
 FH
 cX
-pg
-FH
-cX
-Cj
+OU
 Cj
 Cj
 Fu
@@ -33813,7 +34012,7 @@ cX
 bR
 dj
 cX
-bR
+pd
 dj
 cX
 xM
@@ -34061,14 +34260,14 @@ hk
 hk
 hk
 cX
-LU
+yj
 Fx
 cX
 LU
 Fx
 cX
 LU
-Fx
+ZN
 cX
 LU
 Fx
@@ -34568,13 +34767,13 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
+Dh
+Dh
+Dh
+Dh
+Dh
 cX
-DJ
+qD
 ZO
 ZO
 Zz
@@ -34825,12 +35024,12 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-cX
+Dh
+Hz
+oo
+Nl
+ZO
+oQ
 ZO
 ZO
 ZO
@@ -34840,7 +35039,7 @@ ZO
 ZO
 zm
 ZO
-ZO
+Nl
 ZO
 ZO
 RV
@@ -35082,11 +35281,11 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
+Dh
+RY
+ZO
+ZO
+ZO
 cX
 TM
 ZO
@@ -35098,7 +35297,7 @@ AN
 mS
 AN
 ZO
-ZO
+Nl
 ZO
 RV
 ZO
@@ -35339,12 +35538,12 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-cX
+Dh
+Dj
+pP
+RZ
+ZO
+oQ
 ZO
 ZO
 ZO
@@ -35596,18 +35795,18 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
+Dh
+Dh
+Dh
+Dh
+Dh
 cX
 pJ
-ZO
-ZO
+Nl
+Nl
 Ty
 ZO
-ZO
+Nl
 pJ
 ds
 cX
@@ -36378,7 +36577,7 @@ bR
 dj
 cX
 bR
-dj
+Pb
 cX
 hk
 cX
@@ -36631,11 +36830,11 @@ hk
 hk
 hk
 cX
-OE
+QJ
 Ku
 cX
 OE
-Ku
+GH
 cX
 hk
 cX
