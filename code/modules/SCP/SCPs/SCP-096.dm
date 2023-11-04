@@ -315,7 +315,7 @@
 		playsound(src, 'sounds/scp/096/096-kill.ogg', 100)
 		target.emote("scream")
 
-		if(!do_after(src, 2 SECONDS, target, DO_DEFAULT | DO_PUBLIC_PROGRESS))
+		if(!do_after(src, 2 SECONDS, target))
 			target.anchored = FALSE
 			return
 
