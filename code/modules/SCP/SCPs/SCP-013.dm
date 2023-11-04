@@ -58,7 +58,7 @@
 			addtimer(CALLBACK(src, .proc/update_013_status, H), 55 SECONDS)
 		if(7)
 			addtimer(CALLBACK(H, /mob/living/carbon/human/proc/bluelady_message), 10 SECONDS)
-			removeWeakrefFromList(affected, H)
+			affected -= weakref(H)
 			if(!LAZYLEN(affected))
 				extinguish()
 

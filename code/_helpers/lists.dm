@@ -792,13 +792,3 @@ Checks if a list has the same entries and values as an element of big.
 		else
 			output_list += item
 	return output_list
-
-///Removes a weakref from a list which references the passed ref.
-/proc/removeWeakrefFromList(list/target_list, reference)
-	for(var/item in target_list)
-		if(isweakref(item))
-			var/weakref/weakrefitem = item
-			if(weakrefitem.resolve() == reference)
-				target_list -= item
-		else
-			continue
