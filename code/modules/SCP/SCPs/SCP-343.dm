@@ -119,7 +119,7 @@
 		var/mob/living/target = A
 		to_chat(src, SPAN_WARNING("You start to heal [target]'s wounds"))
 		visible_message(SPAN_NOTICE("\The [src] starts to heal [target]'s wounds"))
-		if(!do_after(src, 10 SECONDS))
+		if(!do_after(H, 12 SECONDS, bonus_percentage = 25))
 			return
 		target.revive()
 		visible_message(SPAN_NOTICE("\The [src] has fully healed [target]!"))
