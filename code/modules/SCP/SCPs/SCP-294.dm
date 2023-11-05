@@ -35,6 +35,12 @@
 		"008" = /datum/reagent/scp008,
 		"health" = /datum/reagent/scp500
 	)
+
+	///Blacklisted reagents DO NOT USE THIS UNLESS ABSOLUTLEY NECCESARY, I DISLIKE PEOPLE IDIOT PROOFING SCPS - Dark
+	var/list/blacklist = list(
+		/datum/reagent/scp008
+	)
+
 /obj/machinery/scp294/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
@@ -115,7 +121,7 @@
 				chosen_reagent = possible_reagent
 				break
 
-	if(!chosen_reagent)
+	if(!chosen_reagent || chosen_reagent in blacklist)
 		balloon_alert(user, "OUT OF RANGE")
 		playsound(src, 'sounds/machines/cb_button_fail.ogg', 35, TRUE)
 		return
