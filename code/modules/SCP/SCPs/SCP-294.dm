@@ -121,7 +121,7 @@
 				chosen_reagent = possible_reagent
 				break
 
-	if(!chosen_reagent || chosen_reagent in blacklist)
+	if(!chosen_reagent || (chosen_reagent in blacklist))
 		balloon_alert(user, "OUT OF RANGE")
 		playsound(src, 'sounds/machines/cb_button_fail.ogg', 35, TRUE)
 		return
