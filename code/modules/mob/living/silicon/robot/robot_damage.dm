@@ -32,6 +32,11 @@
 	else
 		heal_overall_damage(0, -amount)
 
+/mob/living/silicon/robot/rejuvenate()
+	..()
+	if(src.cell)
+		src.cell.give(src.cell.maxcharge)
+
 /mob/living/silicon/robot/proc/get_damaged_components(brute, burn, destroyed = 0)
 	var/list/datum/robot_component/parts = list()
 	for(var/V in components)
