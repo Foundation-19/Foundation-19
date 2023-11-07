@@ -121,6 +121,9 @@
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
+	if(SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_MOVE, newloc) & COMPONENT_MOVABLE_BLOCK_PRE_MOVE)
+		return
+
 	var/old_loc = loc
 
 	if (direct & (direct - 1))
@@ -170,7 +173,7 @@
 
 	SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
 
-/client/Move(n, direction)
+/client/Move(new_loc, direction)
 	if(!user_acted(src))
 		return
 
@@ -179,6 +182,9 @@
 
 	if (mob.is_scp012_affected())
 		return
+
+	if(SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_PRE_MOVE, new_loc, direction) & COMSIG_MOB_CLIENT_BLOCK_PRE_MOVE)
+		return FALSE
 
 	return mob.SelfMove(direction)
 

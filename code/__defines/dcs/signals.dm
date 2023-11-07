@@ -92,6 +92,20 @@
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_ENDED "do_after_ended"
 
+/// From base of atom/movable/Moved(): (/atom)
+#define COMSIG_MOVABLE_PRE_MOVE "movable_pre_move"
+	/// Return this in a COMSIG_MOVABLE_PRE_MOVE signal proc to block movement.
+	#define COMPONENT_MOVABLE_BLOCK_PRE_MOVE (1<<0)
+
+/// From base of /client/Move(): (new_loc, direction)
+#define COMSIG_MOB_CLIENT_PRE_MOVE "mob_client_pre_move"
+	/// Return this in a COMSIG_MOB_CLIENT_PRE_MOVE signal proc to block movement.
+	#define COMSIG_MOB_CLIENT_BLOCK_PRE_MOVE COMPONENT_MOVABLE_BLOCK_PRE_MOVE
+	/// The argument of move_args which corresponds to the loc we're moving to
+	#define MOVE_ARG_NEW_LOC 1
+	/// The argument of move_args which dictates our movement direction
+	#define MOVE_ARG_DIRECTION 2
+
 /*
 * Atom
 */
