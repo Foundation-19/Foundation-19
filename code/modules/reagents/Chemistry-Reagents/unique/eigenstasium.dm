@@ -75,7 +75,7 @@
 		overdose_tracker = TRUE
 
 	sparks(5, FALSE, living_mob)
-	playsound(living_mob, 'sound/effects/phasein.ogg')
+	playsound(living_mob, 'sounds/effects/phasein.ogg')
 	do_teleport(living_mob, get_turf(living_mob), 10)
 	sparks(5, FALSE, living_mob)
 	return ..()
