@@ -35,14 +35,14 @@
 			if((M in view) && M.client)
 				to_chat(M, SPAN_OCCULT("Your attention is eerily drawn to \the [a]."))
 				M.client.images += arrow
-				GLOB.logged_out_event.register(M, src, /datum/phenomena/point/proc/remove_image)
+				RegisterSignal(M, COMSIG_MOB_LOGOUT, /datum/phenomena/point/proc/remove_image)
 				spawn(20)
 					if(M.client)
 						remove_image(M)
 
 /datum/phenomena/point/proc/remove_image(mob/living/L)
 	L.client.images -= arrow
-	GLOB.logged_out_event.unregister(L, src)
+	UnregisterSignal(L, COMSIG_MOB_LOGOUT)
 
 /datum/phenomena/punish
 	name = "Punish"

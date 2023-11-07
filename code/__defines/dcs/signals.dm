@@ -140,3 +140,8 @@
 
 /// Called on `/datum/controller/subsystem/shuttle/proc/initialize_shuttle` (/datum/ssdcs)
 #define COMSIG_GLOB_SHUTTLE_INITIALIZED "!shuttle_initialized"
+
+/// Called on `/mob/login` (/mob)
+#define COMSIG_GLOB_MOB_LOGIN "!mob_login"
+/// Called on `mob/logout` (/mob)
+#define COMSIG_GLOB_MOB_LOGOUT "!mob_logout"

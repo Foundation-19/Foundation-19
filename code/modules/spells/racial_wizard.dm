@@ -228,14 +228,14 @@
 
 	vision.possess(L)
 	RegisterSignal(L, COMSIG_PARENT_QDELETING, /datum/spell/camera_connection/proc/release)
-	GLOB.logged_out_event.register(L, src, /datum/spell/camera_connection/proc/release)
+	RegisterSignal(L, COMSIG_MOB_LOGOUT, /datum/spell/camera_connection/proc/release)
 	add_verb(L, /mob/living/proc/release_eye)
 
 /datum/spell/camera_connection/proc/release(mob/living/L)
 	vision.release(L)
 	remove_verb(L, /mob/living/proc/release_eye)
 	UnregisterSignal(L, COMSIG_PARENT_QDELETING)
-	GLOB.logged_out_event.unregister(L, src)
+	UnregisterSignal(L, COMSIG_MOB_LOGOUT)
 
 /mob/observer/eye/wizard_eye
 	name_sufix = "Wizard Eye"
