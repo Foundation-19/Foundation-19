@@ -36,7 +36,7 @@
 		sparks(5, FALSE, living_mob)
 		to_chat(living_mob, SPAN_USERDANGER("You feel strangely whole again."))
 
-		playsound(living_mob, 'sound/effects/phasein.ogg')
+		playsound(living_mob, 'sounds/effects/phasein.ogg')
 		do_teleport(living_mob, location_return, 0) //Teleports home
 		sparks(5, FALSE, living_mob)
 

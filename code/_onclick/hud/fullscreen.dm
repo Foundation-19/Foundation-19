@@ -26,7 +26,7 @@
 		client.screen += screen
 	return screen
 
-/mob/proc/clear_fullscreen(category, animated = 10)
+/mob/proc/clear_fullscreen(category, animated = 1 SECOND)
 	var/atom/movable/screen/fullscreen/screen = screens[category]
 	if(!screen)
 		return
