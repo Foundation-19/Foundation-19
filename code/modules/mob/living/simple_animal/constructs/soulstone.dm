@@ -62,7 +62,7 @@
 		icon_state = "soulstone2" //TODO: A spookier sprite. Also unique sprites.
 	if(full == SOULSTONE_CRACKED)
 		icon_state = "soulstone"//TODO: cracked sprite
-		SetName("cracked soulstone")
+		set_name("cracked soulstone")
 
 /obj/item/device/soulstone/attackby(obj/item/I, mob/user)
 	..()

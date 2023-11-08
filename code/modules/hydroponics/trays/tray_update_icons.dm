@@ -7,7 +7,7 @@
 		else
 			name = "[seed.seed_name]"
 	else
-		SetName(initial(name))
+		set_name(initial(name))
 
 	cut_overlays()
 	var/new_overlays = list()

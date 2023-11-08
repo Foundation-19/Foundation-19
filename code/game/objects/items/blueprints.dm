@@ -105,7 +105,7 @@
 		to_chat(usr, SPAN_WARNING("Name too long."))
 		return
 	var/area/A = new
-	A.SetName(str)
+	A.set_name(str)
 	A.power_equip = 0
 	A.power_light = 0
 	A.power_environ = 0
@@ -126,7 +126,7 @@
 		to_chat(usr, SPAN_WARNING("Text too long."))
 		return
 	set_area_machinery_title(A,str,prevname)
-	A.SetName(str)
+	A.set_name(str)
 	to_chat(usr, SPAN_NOTICE("You set the area '[prevname]' title to '[str]'."))
 	interact()
 
@@ -145,15 +145,15 @@
 		return
 
 	for(var/obj/machinery/alarm/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.set_name(replacetext(M.name,oldtitle,title))
 	for(var/obj/machinery/power/apc/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.set_name(replacetext(M.name,oldtitle,title))
 	for(var/obj/machinery/atmospherics/unary/vent_scrubber/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.set_name(replacetext(M.name,oldtitle,title))
 	for(var/obj/machinery/atmospherics/unary/vent_pump/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.set_name(replacetext(M.name,oldtitle,title))
 	for(var/obj/machinery/door/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.set_name(replacetext(M.name,oldtitle,title))
 	//TODO: much much more. Unnamed airlocks, cameras, etc.
 
 /obj/item/blueprints/proc/check_tile_is_border(turf/T2,dir)

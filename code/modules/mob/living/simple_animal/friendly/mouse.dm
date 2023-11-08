@@ -127,7 +127,7 @@
 /mob/living/simple_animal/friendly/mouse/brown/Tom/Initialize()
 	. = ..()
 	// Change my name back, don't want to be named Tom (666)
-	SetName(initial(name))
+	set_name(initial(name))
 	real_name = name
 
 /datum/ai_holder/simple_animal/passive/mouse

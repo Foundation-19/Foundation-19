@@ -70,7 +70,7 @@
 	var/view = 0
 
 /obj/machinery/computer/arcade/orion_trail/proc/newgame(emag = 0)
-	SetName("orion trail[emag ? ": Realism Edition" : ""]")
+	set_name("orion trail[emag ? ": Realism Edition" : ""]")
 	supplies = list("1" = 1, "2" = 1, "3" = 1, "4" = 60, "5" = 20, "6" = 5000)
 	emagged = emag
 	distance = 0

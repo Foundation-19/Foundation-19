@@ -60,7 +60,7 @@
 		return
 	owner = user
 	owner.eyeobj = src
-	SetName("[owner.name] ([name_sufix])") // Update its name
+	set_name("[owner.name] ([name_sufix])") // Update its name
 	if(owner.client)
 		owner.client.eye = src
 	setLoc(owner)
@@ -74,7 +74,7 @@
 	visualnet.remove_eye(src)
 	owner.eyeobj = null
 	owner = null
-	SetName(initial(name))
+	set_name(initial(name))
 
 // Use this when setting the eye's location.
 // It will also stream the chunk that the new loc is in.

@@ -136,7 +136,7 @@
 	if(src && input && !M.incapacitated() && in_range(M,src))
 		if(!findtext(input, "the", 1, 4))
 			input = "\improper [input]"
-		SetName(input)
+		set_name(input)
 		to_chat(M, "Suit naming successful!")
 		verbs -= /obj/item/rig/light/ninja/verb/rename_suit
 		return 1

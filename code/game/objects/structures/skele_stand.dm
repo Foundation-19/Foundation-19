@@ -50,7 +50,7 @@
 	if(istype(W,/obj/item/pen))
 		var/nuname = sanitize(input(user,"What do you want to name this skeleton as?","Skeleton Christening",name) as text|null)
 		if(nuname && CanPhysicallyInteract(user))
-			SetName(nuname)
+			set_name(nuname)
 			return 1
 	if(istype(W,/obj/item/clothing))
 		var/slot

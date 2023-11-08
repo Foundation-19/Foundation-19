@@ -104,7 +104,7 @@ var/global/photo_count = 0
 	//loc.loc check is for making possible renaming photos in clipboards
 	if(!n_name || !CanInteract(usr, GLOB.deep_inventory_state))
 		return
-	SetName("[(n_name ? text("[n_name]") : "photo")]")
+	set_name("[(n_name ? text("[n_name]") : "photo")]")
 	add_fingerprint(usr)
 	return
 
@@ -302,7 +302,7 @@ var/global/photo_count = 0
 /obj/item/photo/proc/copy(copy_id = 0)
 	var/obj/item/photo/p = new/obj/item/photo()
 
-	p.SetName(name) // Do this first, manually, to make sure listeners are alerted properly.
+	p.set_name(name) // Do this first, manually, to make sure listeners are alerted properly.
 	p.appearance = appearance
 
 	p.tiny = new

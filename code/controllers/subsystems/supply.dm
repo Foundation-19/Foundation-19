@@ -154,7 +154,7 @@ SUBSYSTEM_DEF(supply)
 		var/decl/hierarchy/supply_pack/SP = SO.object
 
 		var/obj/A = new SP.containertype(pickedloc)
-		A.SetName("[SP.containername][SO.comment ? " ([SO.comment])":"" ]")
+		A.set_name("[SP.containername][SO.comment ? " ([SO.comment])":"" ]")
 		//supply manifest generation begin
 
 		var/obj/item/paper/manifest/slip

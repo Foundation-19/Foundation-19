@@ -49,7 +49,7 @@
 		update_icon()
 		update_held_icon()
 		playsound(get_turf(src), 'sounds/effects/flare_end.ogg', 75, 1)
-		SetName("burnt oxygen candle")
+		set_name("burnt oxygen candle")
 		desc += "This tube has exhausted its chemicals."
 		return
 	if(pos)

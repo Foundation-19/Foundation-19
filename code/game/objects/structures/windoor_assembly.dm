@@ -95,9 +95,9 @@
 					to_chat(user, SPAN_NOTICE("You've secured the windoor assembly!"))
 					src.anchored = TRUE
 					if(src.secure)
-						src.SetName("Secure Anchored Windoor Assembly")
+						src.set_name("Secure Anchored Windoor Assembly")
 					else
-						src.SetName("Anchored Windoor Assembly")
+						src.set_name("Anchored Windoor Assembly")
 
 			//Unwrenching an unsecure assembly un-anchors it. Step 4 undone
 			else if(isWrench(W) && anchored)
@@ -109,9 +109,9 @@
 					to_chat(user, SPAN_NOTICE("You've unsecured the windoor assembly!"))
 					src.anchored = FALSE
 					if(src.secure)
-						src.SetName("Secure Windoor Assembly")
+						src.set_name("Secure Windoor Assembly")
 					else
-						src.SetName("Windoor Assembly")
+						src.set_name("Windoor Assembly")
 
 			//Adding plasteel makes the assembly a secure windoor assembly. Step 2 (optional) complete.
 			else if(istype(W, /obj/item/stack/material/rods) && !secure)
@@ -126,9 +126,9 @@
 						to_chat(user, SPAN_NOTICE("You reinforce the windoor."))
 						src.secure = "secure_"
 						if(src.anchored)
-							src.SetName("Secure Anchored Windoor Assembly")
+							src.set_name("Secure Anchored Windoor Assembly")
 						else
-							src.SetName("Secure Windoor Assembly")
+							src.set_name("Secure Windoor Assembly")
 
 			//Adding cable to the assembly. Step 5 complete.
 			else if(istype(W, /obj/item/stack/cable_coil) && anchored)
@@ -140,9 +140,9 @@
 						to_chat(user, SPAN_NOTICE("You wire the windoor!"))
 						src.state = "02"
 						if(src.secure)
-							src.SetName("Secure Wired Windoor Assembly")
+							src.set_name("Secure Wired Windoor Assembly")
 						else
-							src.SetName("Wired Windoor Assembly")
+							src.set_name("Wired Windoor Assembly")
 			else
 				..()
 
@@ -160,9 +160,9 @@
 					new/obj/item/stack/cable_coil(get_turf(user), 1)
 					src.state = "01"
 					if(src.secure)
-						src.SetName("Secure Anchored Windoor Assembly")
+						src.set_name("Secure Anchored Windoor Assembly")
 					else
-						src.SetName("Anchored Windoor Assembly")
+						src.set_name("Anchored Windoor Assembly")
 
 			//Adding airlock electronics for access. Step 6 complete.
 			else if(istype(W, /obj/item/airlock_electronics) && W:icon_state != "door_electronics_smoked")
@@ -174,7 +174,7 @@
 					if(!user.unEquip(W, src))
 						return
 					to_chat(user, SPAN_NOTICE("You've installed the airlock electronics!"))
-					src.SetName("Near finished Windoor Assembly")
+					src.set_name("Near finished Windoor Assembly")
 					src.electronics = W
 				else
 					W.dropInto(loc)
@@ -188,9 +188,9 @@
 					if(!src || !src.electronics) return
 					to_chat(user, SPAN_NOTICE("You've removed the airlock electronics!"))
 					if(src.secure)
-						src.SetName("Secure Wired Windoor Assembly")
+						src.set_name("Secure Wired Windoor Assembly")
 					else
-						src.SetName("Wired Windoor Assembly")
+						src.set_name("Wired Windoor Assembly")
 					var/obj/item/airlock_electronics/ae = electronics
 					electronics = null
 					ae.dropInto(loc)

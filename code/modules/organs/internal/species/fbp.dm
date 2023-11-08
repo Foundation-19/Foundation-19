@@ -132,8 +132,8 @@
 		stored_mmi.brainobj = new(stored_mmi)
 		stored_mmi.brainmob.container = stored_mmi
 		stored_mmi.brainmob.real_name = owner.real_name
-		stored_mmi.brainmob.SetName(stored_mmi.brainmob.real_name)
-		stored_mmi.SetName("[initial(stored_mmi.name)] ([owner.real_name])")
+		stored_mmi.brainmob.set_name(stored_mmi.brainmob.real_name)
+		stored_mmi.set_name("[initial(stored_mmi.name)] ([owner.real_name])")
 
 	if(!owner) return
 

@@ -101,9 +101,9 @@
 			return
 		t = sanitizeSafe(t, MAX_NAME_LEN)
 		if (t)
-			src.SetName(text("Morgue- '[]'", t))
+			src.set_name(text("Morgue- '[]'", t))
 		else
-			src.SetName("Morgue")
+			src.set_name("Morgue")
 	src.add_fingerprint(user)
 	return
 
@@ -267,9 +267,9 @@
 			return
 		t = sanitizeSafe(t, MAX_NAME_LEN)
 		if(t)
-			src.SetName(text("Crematorium- '[]'", t))
+			src.set_name(text("Crematorium- '[]'", t))
 		else
-			src.SetName("Crematorium")
+			src.set_name("Crematorium")
 	src.add_fingerprint(user)
 	return
 

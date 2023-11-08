@@ -113,7 +113,7 @@
 
 /decl/vv_set_handler/name_handler
 	handled_type = /atom
-	handled_vars = list("name" = /atom/proc/SetName)
+	handled_vars = list("name" = /atom/proc/set_name)
 	predicates = list(/proc/is_text_predicate)
 
 /decl/vv_set_handler/light_handler

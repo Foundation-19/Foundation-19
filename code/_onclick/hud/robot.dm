@@ -17,7 +17,7 @@ var/obj/screen/robot_inventory
 
 	//Radio
 	using = new /obj/screen()
-	using.SetName("radio")
+	using.set_name("radio")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "radio"
@@ -27,7 +27,7 @@ var/obj/screen/robot_inventory
 	//Module select
 
 	using = new /obj/screen()
-	using.SetName("module1")
+	using.set_name("module1")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv1"
@@ -36,7 +36,7 @@ var/obj/screen/robot_inventory
 	R.inv1 = using
 
 	using = new /obj/screen()
-	using.SetName("module2")
+	using.set_name("module2")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv2"
@@ -45,7 +45,7 @@ var/obj/screen/robot_inventory
 	R.inv2 = using
 
 	using = new /obj/screen()
-	using.SetName("module3")
+	using.set_name("module3")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv3"
@@ -57,7 +57,7 @@ var/obj/screen/robot_inventory
 
 	//Intent
 	using = new /obj/screen()
-	using.SetName("act_intent")
+	using.set_name("act_intent")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = R.a_intent
@@ -69,26 +69,26 @@ var/obj/screen/robot_inventory
 	R.cells = new /obj/screen()
 	R.cells.icon = 'icons/mob/screen1_robot.dmi'
 	R.cells.icon_state = "charge-empty"
-	R.cells.SetName("cell")
+	R.cells.set_name("cell")
 	R.cells.screen_loc = ui_toxin
 
 	//Health
 	R.healths = new /obj/screen()
 	R.healths.icon = 'icons/mob/screen1_robot.dmi'
 	R.healths.icon_state = "health0"
-	R.healths.SetName("health")
+	R.healths.set_name("health")
 	R.healths.screen_loc = ui_borg_health
 
 	//Installed Module
 	R.hands = new /obj/screen()
 	R.hands.icon = 'icons/mob/screen1_robot.dmi'
 	R.hands.icon_state = "nomod"
-	R.hands.SetName("module")
+	R.hands.set_name("module")
 	R.hands.screen_loc = ui_borg_module
 
 	//Module Panel
 	using = new /obj/screen()
-	using.SetName("panel")
+	using.set_name("panel")
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "panel"
 	using.screen_loc = ui_borg_panel
@@ -98,12 +98,12 @@ var/obj/screen/robot_inventory
 	R.throw_icon = new /obj/screen()
 	R.throw_icon.icon = 'icons/mob/screen1_robot.dmi'
 	R.throw_icon.icon_state = "store"
-	R.throw_icon.SetName("store")
+	R.throw_icon.set_name("store")
 	R.throw_icon.screen_loc = ui_borg_store
 
 	//Inventory
 	robot_inventory = new /obj/screen()
-	robot_inventory.SetName("inventory")
+	robot_inventory.set_name("inventory")
 	robot_inventory.icon = 'icons/mob/screen1_robot.dmi'
 	robot_inventory.icon_state = "inventory"
 	robot_inventory.screen_loc = ui_borg_inventory
@@ -112,26 +112,26 @@ var/obj/screen/robot_inventory
 	R.bodytemp = new /obj/screen()
 	R.bodytemp.icon = 'icons/mob/status_indicators.dmi'
 	R.bodytemp.icon_state = "temp0"
-	R.bodytemp.SetName("body temperature")
+	R.bodytemp.set_name("body temperature")
 	R.bodytemp.screen_loc = ui_temp
 
 
 	R.oxygen = new /obj/screen()
 	R.oxygen.icon = 'icons/mob/screen1_robot.dmi'
 	R.oxygen.icon_state = "oxy0"
-	R.oxygen.SetName("oxygen")
+	R.oxygen.set_name("oxygen")
 	R.oxygen.screen_loc = ui_oxygen
 
 	R.pullin = new /obj/screen()
 	R.pullin.icon = 'icons/mob/screen1_robot.dmi'
 	R.pullin.icon_state = "pull0"
-	R.pullin.SetName("pull")
+	R.pullin.set_name("pull")
 	R.pullin.screen_loc = ui_borg_pull
 
 	R.fire = new /obj/screen()
 	R.fire.icon = 'icons/mob/screen1_robot.dmi'
 	R.fire.icon_state = "fire0"
-	R.fire.SetName("fire")
+	R.fire.set_name("fire")
 	R.fire.screen_loc = ui_fire
 
 	R.zone_sel = new /obj/screen/zone_sel()

@@ -760,7 +760,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	RegisterSignal(src, COMSIG_PARENT_QDELETING, /obj/item/proc/unzoom)
 	RegisterSignal(user, COMSIG_MOVED, /obj/item/proc/unzoom)
-	GLOB.dir_set_event.register(user, src, /obj/item/proc/unzoom)
+	RegisterSignal(user, COMSIG_DIR_SET, /obj/item/proc/unzoom)
 	user.RegisterSignal(src, COMSIG_DROPPED_ITEM, /mob/living/proc/unzoom)
 	RegisterSignal(user, COMSIG_SET_STAT, /obj/item/proc/unzoom)
 
@@ -777,7 +777,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(user, COMSIG_MOVED)
-	GLOB.dir_set_event.unregister(user, src, /obj/item/proc/unzoom)
+	UnregisterSignal(user, COMSIG_DIR_SET)
 	user.RegisterSignal(src, COMSIG_DROPPED_ITEM)
 
 	user = user == src ? loc : (user || loc)
@@ -907,7 +907,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/inherit_custom_item_data(datum/custom_item/citem)
 	. = src
 	if(citem.item_name)
-		SetName(citem.item_name)
+		set_name(citem.item_name)
 	if(citem.item_desc)
 		desc = citem.item_desc
 	if(citem.item_icon_state)

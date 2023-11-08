@@ -266,7 +266,7 @@
 	if(scanned_item)
 		//create report
 		var/obj/item/paper/P = new(src)
-		P.SetName("[src] report #[++report_num]: [scanned_item.name]")
+		P.set_name("[src] report #[++report_num]: [scanned_item.name]")
 		P.stamped = list(/obj/item/stamp)
 		P.queue_icon_update()
 

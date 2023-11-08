@@ -113,7 +113,7 @@
 
 		var/mob/M = usr
 		if(src && input && !M.stat && in_range(M,src))
-			SetName(input)
+			set_name(input)
 			to_chat(M, "You name your religious book [input].")
 			renamed = 1
 			return 1

@@ -24,7 +24,7 @@
 	if (P)
 		if (istype(P, /obj/structure/disposalpipe))//Unfortunately a necessary evil since some things are machines and other things are structures
 			var/obj/structure/disposalpipe/D = P
-			SetName(D.name)
+			set_name(D.name)
 			desc = D.desc
 			icon = D.icon
 			built_icon_state = D.icon_state
@@ -37,7 +37,7 @@
 			set_dir(D.dir) // Needs to be set after turn and possibly other state.
 		else if (istype(P, /obj/machinery/disposal))
 			var/obj/machinery/disposal/D = P
-			SetName(D.name)
+			set_name(D.name)
 			desc = D.desc
 			icon = D.icon
 			built_icon_state = D.icon_state

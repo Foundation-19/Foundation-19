@@ -43,7 +43,7 @@
 
 /obj/machinery/vending/dismantle()
 	var/obj/structure/vending_refill/dump = new(loc)
-	dump.SetName("[dump.name] ([name])")
+	dump.set_name("[dump.name] ([name])")
 	dump.expected_type = base_type || type
 	for(var/datum/stored_items/vending_products/R in product_records)
 		R.migrate(dump)

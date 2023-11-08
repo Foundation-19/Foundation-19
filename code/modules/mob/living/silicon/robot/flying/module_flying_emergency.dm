@@ -40,7 +40,7 @@
 /obj/item/robot_module/flying/emergency/finalize_emag()
 	. = ..()
 	emag.reagents.add_reagent(/datum/reagent/acid/polytrinic, 250)
-	emag.SetName("Polyacid spray")
+	emag.set_name("Polyacid spray")
 
 /obj/item/robot_module/flying/emergency/finalize_equipment()
 	. = ..()

@@ -43,7 +43,7 @@ GLOBAL_LIST_EMPTY(scp2343s)
 
 	// fix names
 	real_name = "SCP-2343"
-	SetName(real_name)
+	set_name(real_name)
 	if(mind)
 		mind.name = real_name
 

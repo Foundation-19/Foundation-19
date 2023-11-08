@@ -50,7 +50,7 @@
 		holstered.add_fingerprint(user)
 		storage.w_class = max(storage.w_class, holstered.w_class)
 		user.visible_message(SPAN_NOTICE("\The [user] holsters \the [holstered]."), SPAN_NOTICE("You holster \the [holstered]."))
-		atom_holder.SetName("occupied [initial(atom_holder.name)]")
+		atom_holder.set_name("occupied [initial(atom_holder.name)]")
 		atom_holder.update_icon()
 		RegisterSignal(holstered, COMSIG_MOVED, .proc/check_holster)
 		RegisterSignal(holstered, COMSIG_PARENT_QDELETING, .proc/clear_holster)
@@ -61,7 +61,7 @@
 	UnregisterSignal(holstered, COMSIG_MOVED, .proc/check_holster)
 	UnregisterSignal(holstered, COMSIG_PARENT_QDELETING, .proc/clear_holster)
 	holstered = null
-	atom_holder.SetName(initial(atom_holder.name))
+	atom_holder.set_name(initial(atom_holder.name))
 
 /datum/extension/holster/proc/unholster(mob/user as mob, avoid_intent = FALSE)
 	if(!holstered)

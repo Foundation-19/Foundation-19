@@ -52,7 +52,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 
 	// fix names
 	real_name = "SCP-343"
-	SetName(real_name)
+	set_name(real_name)
 	if(mind)
 		mind.name = real_name
 

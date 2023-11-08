@@ -173,7 +173,7 @@
 			for (var/entry in internal_log)
 				dat += "[entry]<br><hr>"
 			var/obj/item/paper/P = new (loc)
-			P.SetName("activity log")
+			P.set_name("activity log")
 			P.info = dat
 			. = TRUE
 			SStgui.update_user_uis(ui.user)
@@ -196,7 +196,7 @@
 				pass.registered_name = giv_name
 				pass.expiration_time = world.time + duration MINUTES
 				pass.reason = reason
-				pass.SetName("temporary access pass #[number]")
+				pass.set_name("temporary access pass #[number]")
 				pass.assignment = "Guest"
 				addtimer(CALLBACK(pass, /obj/item/card/id/guest/proc/expire), duration MINUTES, TIMER_UNIQUE)
 				playsound(src.loc, 'sounds/machines/ping.ogg', 25, 0)

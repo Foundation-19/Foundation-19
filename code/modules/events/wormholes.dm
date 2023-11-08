@@ -40,4 +40,4 @@
 	var/obj/effect/portal/P = new /obj/effect/portal(enter, exit, lifetime, prec = 0)
 	P.icon = 'icons/obj/objects.dmi'
 	P.icon_state = "anom"
-	P.SetName("wormhole")
+	P.set_name("wormhole")

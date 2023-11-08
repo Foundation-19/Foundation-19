@@ -26,7 +26,7 @@
 /obj/item/gun/launcher/pneumatic/Initialize()
 	. = ..()
 	item_storage = new(src)
-	item_storage.SetName("hopper")
+	item_storage.set_name("hopper")
 	item_storage.max_w_class = max_w_class
 	item_storage.max_storage_space = max_storage_space
 	item_storage.use_sound = null

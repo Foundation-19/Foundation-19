@@ -61,9 +61,9 @@
 
 /obj/item/reagent_containers/proc/update_name_label()
 	if(label_text == "")
-		SetName(initial(name))
+		set_name(initial(name))
 	else
-		SetName("[initial(name)] ([label_text])")
+		set_name("[initial(name)] ([label_text])")
 
 /obj/item/reagent_containers/proc/standard_dispenser_refill(mob/user, obj/structure/reagent_dispensers/target) // This goes into afterattack
 	if(!istype(target))

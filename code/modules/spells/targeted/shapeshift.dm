@@ -42,7 +42,7 @@
 			var/datum/language/L = l
 			trans.add_language(L.name)
 
-		trans.SetName("[trans.name] ([M])")
+		trans.set_name("[trans.name] ([M])")
 		if(istype(M,/mob/living/carbon/human) && drop_items)
 			for(var/obj/item/I in M.contents)
 				M.drop_from_inventory(I)

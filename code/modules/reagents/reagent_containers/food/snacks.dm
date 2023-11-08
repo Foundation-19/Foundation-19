@@ -380,7 +380,7 @@
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6
-	SetName("warm " + name)
+	set_name("warm " + name)
 	addtimer(CALLBACK(src, .proc/cool), 7 MINUTES)
 
 /obj/item/reagent_containers/food/snacks/donkpocket/proc/cool()
@@ -389,7 +389,7 @@
 	warm = 0
 	for(var/reagent in heated_reagents)
 		reagents.del_reagent(reagent)
-	SetName(initial(name))
+	set_name(initial(name))
 
 /obj/item/reagent_containers/food/snacks/omelette
 	name = "cheese omelette"

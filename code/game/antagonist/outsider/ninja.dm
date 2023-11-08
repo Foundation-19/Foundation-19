@@ -86,7 +86,7 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 	var/mob/living/carbon/human/H = player.current
 	if(istype(H))
 		H.real_name = "[ninja_title] [ninja_name]"
-		H.SetName(H.real_name)
+		H.set_name(H.real_name)
 	player.name = H.name
 
 /datum/antagonist/ninja/equip(mob/living/carbon/human/player)

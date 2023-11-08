@@ -18,7 +18,7 @@
 /obj/item/device/camera/siliconcam/proc/injectaialbum(obj/item/photo/p, sufix = "") //stores image information to a list similar to that of the datacore
 	p.forceMove(src)
 	photos_taken++
-	p.SetName("Image [photos_taken][sufix]")
+	p.set_name("Image [photos_taken][sufix]")
 	aipictures += p
 
 /obj/item/device/camera/siliconcam/proc/injectmasteralbum(obj/item/photo/p) //stores image information to a list similar to that of the datacore

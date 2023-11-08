@@ -42,7 +42,7 @@
 /obj/item/clothing/head/helmet/space/void/attackby(obj/item/O, mob/user)
 	if(istype(O,/obj/item/device/kit/suit))
 		var/obj/item/device/kit/suit/kit = O
-		SetName("[kit.new_name] suit helmet")
+		set_name("[kit.new_name] suit helmet")
 		desc = kit.new_desc
 		icon_state = "[kit.new_icon]_helmet"
 		item_state = "[kit.new_icon]_helmet"
@@ -63,7 +63,7 @@
 /obj/item/clothing/suit/space/void/attackby(obj/item/O, mob/user)
 	if(istype(O,/obj/item/device/kit/suit))
 		var/obj/item/device/kit/suit/kit = O
-		SetName("[kit.new_name] voidsuit")
+		set_name("[kit.new_name] voidsuit")
 		desc = kit.new_desc
 		icon_state = "[kit.new_icon]_suit"
 		item_state = "[kit.new_icon]_suit"

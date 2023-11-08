@@ -32,19 +32,19 @@
 		mymob.fire = new /obj/screen()
 		mymob.fire.icon = 'icons/mob/screen1_construct.dmi'
 		mymob.fire.icon_state = "fire0"
-		mymob.fire.SetName("fire")
+		mymob.fire.set_name("fire")
 		mymob.fire.screen_loc = ui_construct_fire
 
 		mymob.healths = new /obj/screen()
 		mymob.healths.icon = 'icons/mob/screen1_construct.dmi'
 		mymob.healths.icon_state = "[constructtype]_health0"
-		mymob.healths.SetName("health")
+		mymob.healths.set_name("health")
 		mymob.healths.screen_loc = ui_construct_health
 
 		mymob.pullin = new /obj/screen()
 		mymob.pullin.icon = 'icons/mob/screen1_construct.dmi'
 		mymob.pullin.icon_state = "pull0"
-		mymob.pullin.SetName("pull")
+		mymob.pullin.set_name("pull")
 		mymob.pullin.screen_loc = ui_construct_pull
 
 		mymob.zone_sel = new /obj/screen/zone_sel()
@@ -55,7 +55,7 @@
 		mymob.purged = new /obj/screen()
 		mymob.purged.icon = 'icons/mob/screen1_construct.dmi'
 		mymob.purged.icon_state = "purge0"
-		mymob.purged.SetName("purged")
+		mymob.purged.set_name("purged")
 		mymob.purged.screen_loc = ui_construct_purge
 
 	mymob.client.screen = list()

@@ -79,7 +79,7 @@
 		if(sample.gunshot_residue)
 			evidence["gunshot_residue"] = sample.gunshot_residue.Copy()
 
-	report.SetName("Forensic report #[++report_num]: [sample.name]")
+	report.set_name("Forensic report #[++report_num]: [sample.name]")
 	report.info = "<b>Scanned item:</b><br>[scaned_object]<br><br>"
 	if("gunshot_residue" in evidence)
 		report.info += "<b>Gunpowder residue analysis report #[report_num]</b>: [scaned_object]<br>"

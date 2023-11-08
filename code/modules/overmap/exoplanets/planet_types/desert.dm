@@ -134,7 +134,7 @@
 	if(exposed)
 		return
 	visible_message(SPAN_WARNING("The upper crust breaks, exposing the treacherous quicksand underneath!"))
-	SetName(initial(name))
+	set_name(initial(name))
 	desc = initial(desc)
 	icon = initial(icon)
 	exposed = 1

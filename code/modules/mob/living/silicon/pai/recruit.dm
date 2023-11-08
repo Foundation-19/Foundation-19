@@ -34,9 +34,9 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 		if(istype(card,/obj/item/device/paicard) && istype(candidate,/datum/paiCandidate))
 			var/mob/living/silicon/pai/pai = new(card)
 			if(!candidate.name)
-				pai.SetName(pick(GLOB.ninja_names))
+				pai.set_name(pick(GLOB.ninja_names))
 			else
-				pai.SetName(candidate.name)
+				pai.set_name(candidate.name)
 			pai.real_name = pai.name
 			pai.key = candidate.key
 			pai.chassis = pai.icon_state = GLOB.possible_chassis[candidate.chassis]

@@ -92,7 +92,7 @@
 
 /obj/effect/shuttle_landmark/visiting_shuttle/Initialize(mapload, obj/effect/shuttle_landmark/ship/master, _name)
 	core_landmark = master
-	SetName(_name)
+	set_name(_name)
 	landmark_tag = master.shuttle_name + _name
 	RegisterSignal(master, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
 	. = ..()
@@ -122,7 +122,7 @@
 		UnregisterSignal(shuttle, COMSIG_SHUTTLE_MOVED)
 		LAZYREMOVE(core_landmark.visitors, src)
 
-/obj/effect/overmap/visitable/ship/landable/proc/on_shuttle_jump(datum/shuttle/given_shuttle, obj/effect/shuttle_landmark/into, obj/effect/shuttle_landmark/frpm)
+/obj/effect/overmap/visitable/ship/landable/proc/on_shuttle_jump(datum/shuttle/given_shuttle, obj/effect/shuttle_landmark/into, obj/effect/shuttle_landmark/from)
 	if(given_shuttle != SSshuttle.shuttles[shuttle])
 		return
 	var/datum/shuttle/autodock/auto = given_shuttle

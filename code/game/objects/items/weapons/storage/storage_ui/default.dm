@@ -16,26 +16,26 @@
 /datum/storage_ui/default/New(storage)
 	..()
 	boxes = new /obj/screen/storage(  )
-	boxes.SetName("storage")
+	boxes.set_name("storage")
 	boxes.master = storage
 	boxes.icon_state = "block"
 	boxes.screen_loc = "7,7 to 10,8"
 	boxes.layer = HUD_BASE_LAYER
 
 	storage_start = new /obj/screen/storage(  )
-	storage_start.SetName("storage")
+	storage_start.set_name("storage")
 	storage_start.master = storage
 	storage_start.icon_state = "storage_start"
 	storage_start.screen_loc = "7,7 to 10,8"
 	storage_start.layer = HUD_BASE_LAYER
 	storage_continue = new /obj/screen/storage(  )
-	storage_continue.SetName("storage")
+	storage_continue.set_name("storage")
 	storage_continue.master = storage
 	storage_continue.icon_state = "storage_continue"
 	storage_continue.screen_loc = "7,7 to 10,8"
 	storage_continue.layer = HUD_BASE_LAYER
 	storage_end = new /obj/screen/storage(  )
-	storage_end.SetName("storage")
+	storage_end.set_name("storage")
 	storage_end.master = storage
 	storage_end.icon_state = "storage_end"
 	storage_end.screen_loc = "7,7 to 10,8"
@@ -207,7 +207,7 @@
 
 	for(var/obj/O in storage.contents)
 		var/obj/screen/storage/box = new()
-		box.SetName(O.name)
+		box.set_name(O.name)
 		box.master = O
 		box.icon_state = "block"
 		box.screen_loc = "[cx]:16,[cy]:16"
@@ -267,7 +267,7 @@
 		container.add_overlay(stored_continue)
 		container.add_overlay(stored_end)
 
-		container.SetName(O.name)
+		container.set_name(O.name)
 		container.master = O
 
 		containers += container

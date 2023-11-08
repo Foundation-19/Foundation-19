@@ -164,7 +164,7 @@
 	copied = replacetext(copied, "<font face=\"[c.crayonfont]\" color=", "<font face=\"[c.crayonfont]\" nocolor=")	//This basically just breaks the existing color tag, which we need to do because the innermost tag takes priority.
 	c.info += copied
 	c.info += "</font>"//</font>
-	c.SetName(copy.name) // -- Doohl
+	c.set_name(copy.name) // -- Doohl
 	c.fields = copy.fields
 	c.stamps = copy.stamps
 	c.stamped = copy.stamped
@@ -228,7 +228,7 @@
 	p.dropInto(loc)
 	p.update_icon()
 	p.icon_state = "paper_words"
-	p.SetName(bundle.name)
+	p.set_name(bundle.name)
 	return p
 
 /obj/item/device/toner

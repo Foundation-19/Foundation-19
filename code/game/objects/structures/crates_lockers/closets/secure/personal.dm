@@ -51,9 +51,9 @@
 /obj/structure/closet/secure_closet/personal/proc/set_owner(registered_name)
 	if (registered_name)
 		src.registered_name = registered_name
-		src.SetName(name + " ([registered_name])")
+		src.set_name(name + " ([registered_name])")
 		src.desc = "Currently used by [registered_name]."
 	else
 		src.registered_name = null
-		src.SetName(initial(name))
+		src.set_name(initial(name))
 		src.desc = initial(desc)

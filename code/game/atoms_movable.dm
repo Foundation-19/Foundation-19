@@ -174,7 +174,7 @@
 		crash_with("[type] created in nullspace.")
 		return INITIALIZE_HINT_QDEL
 	master = loc
-	SetName(master.name)
+	set_name(master.name)
 	set_dir(master.dir)
 
 	if(istype(master, /atom/movable))
@@ -182,7 +182,7 @@
 		SetInitLoc()
 
 	RegisterSignal(master, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
-	GLOB.dir_set_event.register(master, src, /atom/proc/recursive_dir_set)
+	RegisterSignal(master, COMSIG_DIR_SET, /atom/proc/recursive_dir_set)
 
 	. = ..()
 
@@ -193,7 +193,7 @@
 	if(istype(master, /atom/movable))
 		UnregisterSignal(master, COMSIG_MOVED)
 	UnregisterSignal(master, COMSIG_PARENT_QDELETING)
-	GLOB.dir_set_event.unregister(master, src)
+	UnregisterSignal(master, COMSIG_DIR_SET)
 	master = null
 	. = ..()
 

@@ -4,7 +4,7 @@
 		return
 	if(name != GetVoice())
 		if(get_id_name("Unknown") == GetVoice())
-			SetName(get_id_name("Unknown"))
+			set_name(get_id_name("Unknown"))
 
 	//parse the language code and consume it
 	if(!speaking)

@@ -151,11 +151,11 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/fully_replace_character_name(pickedName as text)
 	// Would prefer to call the grandparent proc but this isn't possible, so..
 	real_name = pickedName
-	SetName(real_name)
+	set_name(real_name)
 
 /mob/living/silicon/robot/drone/updatename()
 	real_name = "[initial(name)] ([random_id(type,100,999)])"
-	SetName(real_name)
+	set_name(real_name)
 
 /mob/living/silicon/robot/drone/on_update_icon()
 

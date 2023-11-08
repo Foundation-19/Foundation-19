@@ -55,7 +55,7 @@
 	for(var/obj/effect/decal/writing/W in src)
 		qdel(W)
 
-	SetName(base_name)
+	set_name(base_name)
 	desc = base_desc
 	icon = base_icon
 	icon_state = base_icon_state

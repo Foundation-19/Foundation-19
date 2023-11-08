@@ -102,7 +102,7 @@
 	form = new type(src)
 	to_chat(src, SPAN_NOTICE("You undergo a transformation into your new form!"))
 	spawn(1)
-		SetName(form.name)
+		set_name(form.name)
 		var/newname = sanitize(input(src, "Choose a name for your new form.", "Name change", form.name) as text, MAX_NAME_LEN)
 		if(newname)
 			fully_replace_character_name(newname)

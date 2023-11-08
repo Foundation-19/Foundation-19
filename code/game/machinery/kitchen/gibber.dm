@@ -201,7 +201,7 @@
 			thing.forceMove(src)
 			if(istype(thing, /obj/item/reagent_containers/food/snacks/meat))
 				var/obj/item/reagent_containers/food/snacks/meat/slab = thing
-				slab.SetName("[slab_name] [slab.name]")
+				slab.set_name("[slab_name] [slab.name]")
 				slab.reagents.add_reagent(/datum/reagent/nutriment,slab_nutrition)
 
 /obj/machinery/gibber/proc/finish_gibbing()

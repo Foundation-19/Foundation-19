@@ -156,7 +156,7 @@
 
 	if (!newname)
 		newname = "pet slime"
-	pet.SetName(newname)
+	pet.set_name(newname)
 	pet.real_name = newname
 	qdel(src)
 
@@ -187,7 +187,7 @@
 
 	if (!newname)
 		newname = "pet slime"
-	pet.SetName(newname)
+	pet.set_name(newname)
 	pet.real_name = newname
 	qdel(src)
 

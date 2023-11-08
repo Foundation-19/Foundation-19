@@ -134,6 +134,9 @@
 /// Called on `/atom/Exited` (/atom, exitee, new_loc)
 #define COMSIG_EXITED "exited"
 
+/// Called on `/atom/dir_set` (/atom, new_dir, old_dir)
+#define COMSIG_DIR_SET "dir_set"
+
 /*
 *	Global
 */

@@ -294,6 +294,9 @@ its easier to just keep the beam vertical.
 	var/old_dir = dir
 	if(new_dir == old_dir)
 		return FALSE
+
+	SEND_SIGNAL(src, COMSIG_DIR_SET, new_dir, old_dir)
+
 	dir = new_dir
 	return TRUE
 
@@ -304,6 +307,16 @@ its easier to just keep the beam vertical.
 		update_icon()
 	else
 		icon_state = new_icon_state
+
+/atom/proc/set_name(new_name)
+	var/old_name = name
+	if(old_name != new_name)
+		name = new_name
+
+		//TODO: de-shitcodify
+		if(has_extension(src, /datum/extension/labels))
+			var/datum/extension/labels/L = get_extension(src, /datum/extension/labels)
+			name = L.AppendLabelsToName(name)
 
 /atom/proc/update_icon()
 	on_update_icon(arglist(args))

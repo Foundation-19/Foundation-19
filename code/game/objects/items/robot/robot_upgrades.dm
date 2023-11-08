@@ -69,7 +69,7 @@
 /obj/item/borg/upgrade/rename/action(mob/living/silicon/robot/R)
 	if(..()) return 0
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_NAME, R.name, heldname)
-	R.SetName(heldname)
+	R.set_name(heldname)
 	R.custom_name = heldname
 	R.real_name = heldname
 

@@ -23,7 +23,7 @@
 	if((istype(item, /obj/item/clothing/suit/cardborg) || istype(item, /obj/item/clothing/head/cardborg)) || istype(item, /obj/item/storage/backpack))
 		RemoveAltAppearance(user)
 		if(!appearance_sources.len)
-			UnregisterSignal(SScds, COMSIG_GLOB_MOB_LOGIN)	// Only listen to the logged in event for as long as it's relevant
+			UnregisterSignal(SSdcs, COMSIG_GLOB_MOB_LOGIN)	// Only listen to the logged in event for as long as it's relevant
 
 /decl/appearance_handler/cardborg/proc/mob_joined(mob/user)
 	if(issilicon(user))

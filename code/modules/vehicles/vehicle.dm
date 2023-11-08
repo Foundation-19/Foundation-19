@@ -146,7 +146,7 @@
 	var/obj/effect/overlay/pulse2 = new /obj/effect/overlay(loc)
 	pulse2.icon = 'icons/effects/effects.dmi'
 	pulse2.icon_state = "empdisable"
-	pulse2.SetName("emp sparks")
+	pulse2.set_name("emp sparks")
 	pulse2.anchored = TRUE
 	pulse2.set_dir(pick(GLOB.cardinal))
 

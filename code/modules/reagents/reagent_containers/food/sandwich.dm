@@ -69,8 +69,8 @@
 	T.pixel_y = (ingredients.len * 2)+1
 	add_overlay(T)
 
-	SetName(lowertext("[fullname] sandwich"))
-	if(length(name) > 80) SetName("[pick(list("absurd","colossal","enormous","ridiculous"))] sandwich")
+	set_name(lowertext("[fullname] sandwich"))
+	if(length(name) > 80) set_name("[pick(list("absurd","colossal","enormous","ridiculous"))] sandwich")
 	w_class = Ceiling(Clamp((ingredients.len/2),2,4))
 
 /obj/item/reagent_containers/food/snacks/csandwich/Destroy()
