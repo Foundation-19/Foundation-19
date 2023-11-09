@@ -98,7 +98,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 	for(var/t in turfs_in_range)
 		UnregisterSignal(t, COMSIG_SET_OPACITY)
 	for(var/t in seen_turfs_)
-		GLOB.entered_event.unregister(t, src, /datum/proximity_trigger/proc/on_turf_entered)
+		UnregisterSignal(t, COMSIG_ENTERED)
 
 	call(proc_owner, on_turfs_changed)(seen_turfs_.Copy(), list())
 
@@ -113,9 +113,9 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 	call(proc_owner, on_turfs_changed)(seen_turfs_.Copy(), new_seen_turfs_.Copy())
 
 	for(var/t in (seen_turfs_ - new_seen_turfs_))
-		GLOB.entered_event.unregister(t, src, /datum/proximity_trigger/proc/on_turf_entered)
+		UnregisterSignal(t, COMSIG_ENTERED)
 	for(var/t in (new_seen_turfs_ - seen_turfs_))
-		GLOB.entered_event.register(t, src, /datum/proximity_trigger/proc/on_turf_entered)
+		RegisterSignal(t, COMSIG_ENTERED, /datum/proximity_trigger/proc/on_turf_entered)
 
 	seen_turfs_ = new_seen_turfs_
 

@@ -85,6 +85,22 @@
 	QDEL_NULL(reagents)
 	. = ..()
 
+/**
+ * An atom has entered this atom's contents
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_ENTERED]
+ */
+/atom/Entered(atom/movable/enterer, atom/old_loc)
+	SEND_SIGNAL(src, COMSIG_ENTERED, src, enterer, old_loc)
+
+/**
+ * An atom has exited this atom's contents
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_EXITED]
+ */
+/atom/Exited(atom/movable/exitee, atom/new_loc)
+	SEND_SIGNAL(src, COMSIG_EXITED, src, exitee, new_loc)
+
 /atom/proc/reveal_blood()
 	return
 

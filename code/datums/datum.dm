@@ -95,3 +95,7 @@
 /datum/proc/Process()
 	set waitfor = 0
 	return PROCESS_KILL
+
+/// QDELs yourself. Useful for signals
+/datum/proc/qdel_self()
+	qdel(src)

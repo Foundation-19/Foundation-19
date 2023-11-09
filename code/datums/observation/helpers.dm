@@ -19,10 +19,6 @@
 /atom/proc/recursive_dir_set(atom/a, old_dir, new_dir)
 	set_dir(new_dir)
 
-// Sometimes you just want to end yourself
-/datum/proc/qdel_self()
-	qdel(src)
-
 /proc/register_all_movement(event_source, datum/listener)
 	listener.RegisterSignal(event_source, COMSIG_MOVED, /atom/movable/proc/recursive_move)
 	listener.RegisterSignal(event_source, COMSIG_DIR_SET, /atom/proc/recursive_dir_set)

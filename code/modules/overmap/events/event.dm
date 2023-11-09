@@ -124,13 +124,13 @@
 
 	if(!active_hazards.len)
 		hazard_by_turf -= T
-		GLOB.entered_event.unregister(T, src, /decl/overmap_event_handler/proc/on_turf_entered)
-		GLOB.exited_event.unregister(T, src, /decl/overmap_event_handler/proc/on_turf_exited)
+		UnregisterSignal(T, COMSIG_ENTERED)
+		UnregisterSignal(T, COMSIG_EXITED)
 	else
 		hazard_by_turf |= T
 		hazard_by_turf[T] = active_hazards
-		GLOB.entered_event.register(T, src,/decl/overmap_event_handler/proc/on_turf_entered)
-		GLOB.exited_event.register(T, src, /decl/overmap_event_handler/proc/on_turf_exited)
+		RegisterSignal(T, COMSIG_ENTERED, /decl/overmap_event_handler/proc/on_turf_entered)
+		RegisterSignal(T, COMSIG_EXITED, /decl/overmap_event_handler/proc/on_turf_exited)
 
 	for(var/obj/effect/overmap/visitable/ship/ship in T)
 		for(var/datum/event/E in ship_events[ship])
