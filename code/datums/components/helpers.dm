@@ -1,3 +1,5 @@
+// TODO: look though and clean this up
+
 /atom/movable/proc/recursive_move(atom/movable/am, old_loc, new_loc)
 	SEND_SIGNAL(src, COMSIG_MOVED, old_loc, new_loc)
 
