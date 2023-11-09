@@ -339,6 +339,9 @@
 	if(M.r_hand)
 		M.r_hand.update_twohanding()
 
+	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
+	SEND_SIGNAL(user, COMSIG_MOB_EQUIPPED_ITEM, src, slot)
+
 //Defines which slots correspond to which slot flags
 var/list/global/slot_flags_enumeration = list(
 	"[slot_wear_mask]" = SLOT_MASK,

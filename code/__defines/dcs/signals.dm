@@ -121,6 +121,11 @@
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_ENDED "do_after_ended"
 
+/// An item has just been equipped by a mob. Called on obj/item/equipped(): (obj/item/equipped_item, mob/equipper, slot)
+#define COMSIG_ITEM_EQUIPPED "item_equipped"
+/// A mob has just equipped an item. Called on [/mob] from base of [/obj/item/equipped()]: (mob/equipper, obj/item/equipped_item, slot)
+#define COMSIG_MOB_EQUIPPED_ITEM "mob_equipped_item"
+
 /*
 *	Atom
 */
