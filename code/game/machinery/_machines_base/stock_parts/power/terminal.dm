@@ -74,8 +74,8 @@
 	terminal = new_terminal
 	terminal.master = src
 	RegisterSignal(terminal, COMSIG_PARENT_QDELETING, .proc/unset_terminal)
+	RegisterSignal(machine, COMSIG_MOVED, .proc/machine_moved)
 
-	set_extension(src, /datum/extension/event_registration/shuttle_stationary, GLOB.moved_event, machine, .proc/machine_moved, get_area(src))
 	set_status(machine, PART_STAT_CONNECTED)
 	start_processing(machine)
 
@@ -97,7 +97,7 @@
 	set_terminal(machine, new_terminal)
 
 /obj/item/stock_parts/power/terminal/proc/unset_terminal(obj/machinery/power/old_terminal, obj/machinery/machine)
-	remove_extension(src, /datum/extension/event_registration/shuttle_stationary)
+	UnregisterSignal(machine, COMSIG_MOVED)
 	UnregisterSignal(old_terminal, COMSIG_PARENT_QDELETING)
 	if(!machine && istype(loc, /obj/machinery))
 		machine = loc

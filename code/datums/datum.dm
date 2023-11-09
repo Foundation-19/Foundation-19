@@ -55,9 +55,6 @@
 				qdel(extension)
 		extensions = null
 
-	if (!isturf(src))	// Not great, but the 'correct' way to do it would add overhead for little benefit.
-		cleanup_events(src)
-
 	//BEGIN: ECS SHIT
 	///Only override this if you know what you're doing. You do not know what you're doing
 	///This is a threat
