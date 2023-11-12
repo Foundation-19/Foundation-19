@@ -114,7 +114,7 @@
 	if(!GLOB.cult.can_become_antag(target.mind, 1))
 		to_chat(target, SPAN_DANGER("Are you going insane?"))
 	else
-		to_chat(target, SPAN_OCCULT("Do you want to join the cult of Nar'Sie? You can choose to ignore offer... <a href='?src=\ref[src];join=1'>Join the cult</a>."))
+		to_chat(target, SPAN_OCCULT("Do you want to join the cult of the Scarlet King?? You can choose to ignore offer... <a href='?src=\ref[src];join=1'>Join the cult.</a>."))
 
 	spamcheck = 1
 	spawn(40)
@@ -168,7 +168,7 @@
 	else if(user.loc == get_turf(src))
 		speak_incantation(user, "Sas[pick("'","`")]so c'arta forbici!")
 		if(do_after(user, 4 SECONDS, bonus_percentage = 25))
-			user.visible_message(SPAN_WARNING("\The [user] disappears in a flash of red light!"), SPAN_WARNING("You feel as your body gets dragged into the dimension of Nar-Sie!"), "You hear a sickening crunch.")
+			user.visible_message(SPAN_WARNING("\The [user] disappears in a flash of red light!"), SPAN_WARNING("You feel as your body gets dragged into the dimension the Scarlet King!"), "You hear a sickening crunch.")
 			user.forceMove(src)
 			showOptions(user)
 			var/warning = 0
@@ -179,7 +179,7 @@
 					leaveRune(user)
 					return
 				if(warning == 0)
-					to_chat(user, SPAN_WARNING("You feel the immerse heat of the realm of Nar-Sie..."))
+					to_chat(user, SPAN_WARNING("You feel the immerse heat of the realm of the Scarlet King..."))
 					++warning
 				if(warning == 1 && user.getFireLoss() > 15)
 					to_chat(user, SPAN_WARNING("Your burns are getting worse. You should return to your realm soon..."))
@@ -217,7 +217,7 @@
 	if(user.loc != src)
 		return
 	user.dropInto(loc)
-	user.visible_message(SPAN_WARNING("\The [user] appears in a flash of red light!"), SPAN_WARNING("You feel as your body gets thrown out of the dimension of Nar-Sie!"), "You hear a pop.")
+	user.visible_message(SPAN_WARNING("\The [user] appears in a flash of red light!"), SPAN_WARNING("You feel as your body gets thrown out of the dimension of the Scarlet King!"), "You hear a pop.")
 
 /obj/effect/rune/tome
 	cultname = "summon tome"
@@ -256,8 +256,8 @@
 /obj/effect/cultwall
 	name = "red mist"
 	desc = "A strange red mist emanating from a rune below it."
-	icon = 'icons/effects/effects.dmi'//TODO: better icon
-	icon_state = "smoke"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "shield-old" // havent tested it with the different color, hope it works
 	color = "#ff0000"
 	anchored = TRUE
 	density = TRUE
@@ -769,7 +769,7 @@
 	for(var/mob/living/M in cultists)
 		M.say("Tok-lyr rqa'nap g[pick("'","`")]lt-ulotf!")
 		to_chat(M, SPAN_OCCULT("You are staring to tear the reality to bring Him back... stay around the rune!"))
-	log_and_message_admins_many(cultists, "started summoning Nar-sie.")
+	log_and_message_admins_many(cultists, "started summoning the Scarlet King.")
 
 	var/area/A = get_area(src)
 	command_announcement.Announce("High levels of bluespace interference detected at \the [A]. Suspected wormhole forming. Investigate it immediately.")

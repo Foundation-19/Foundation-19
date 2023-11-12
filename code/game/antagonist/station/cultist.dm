@@ -49,7 +49,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	var/cult_rating = 0
 	var/list/cult_rating_bounds = list(CULT_RUNES_1, CULT_RUNES_2, CULT_RUNES_3, CULT_GHOSTS_1, CULT_GHOSTS_2, CULT_GHOSTS_3)
 	var/max_cult_rating = 0
-	var/conversion_blurb = "You catch a glimpse of the Realm of Nar-Sie, the Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of That Which Waits. Assist your new compatriots in their dark dealings. Their goals are yours, and yours are theirs. You serve the Dark One above all else. Bring It back."
+	var/conversion_blurb = "You catch a glimpse of the Realm of the Scarlet King, the Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of That Which Waits. Assist your new compatriots in their dark dealings. Their goals are yours, and yours are theirs. You serve the Dark One above all else. Bring It back."
 
 	faction = "cult"
 
@@ -156,7 +156,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	if(!iscultist(M) || !M.mind)
 		return
 
-	to_chat(M, SPAN_OCCULT("Do you want to abandon the cult of Nar'Sie? <a href='?src=\ref[src];confirmleave=1'>ACCEPT</a>"))
+	to_chat(M, SPAN_OCCULT("Do you want to abandon the cult of the Scarlet King? <a href='?src=\ref[src];confirmleave=1'>ACCEPT</a>"))
 
 /datum/antagonist/cultist/Topic(href, href_list)
 	if(href_list["confirmleave"])

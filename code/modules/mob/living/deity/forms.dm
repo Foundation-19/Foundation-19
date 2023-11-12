@@ -41,7 +41,7 @@ Each plays slightly different and has different challenges/benefits
 	return ..()
 
 /datum/god_form/narsie
-	name = "Nar-Sie"
+	name = "The Scarlet King"
 	info = {"The Geometer of Blood, you crave blood and destruction.<br>
 	<b>Benefits:</b><br>
 		<font color='blue'>+Can gain power from blood sacrifices.<br>

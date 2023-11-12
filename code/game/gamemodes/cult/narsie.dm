@@ -1,10 +1,10 @@
 var/global/narsie_behaviour = "CultStation13"
 var/global/narsie_cometh = 0
 var/global/list/narsie_list = list()
-/obj/singularity/narsie //Moving narsie to its own file for the sake of being clearer
-	name = "Nar-Sie"
+/obj/singularity/narsie //i couldnt be bothered to change the paths and risk breaking everything so this is what you get.
+	name = "\The Scarlet King"
 	desc = "Your mind begins to bubble and ooze as it tries to comprehend what it sees."
-	icon = 'icons/obj/narsie.dmi'
+	icon = 'icons/obj/narsie.dmi' // not gonna change the sprites too
 	icon_state = "narsie-small"
 	pixel_x = -236
 	pixel_y = -256
@@ -25,7 +25,6 @@ var/global/list/narsie_list = list()
 	..()
 
 /obj/singularity/narsie/large
-	name = "Nar-Sie"
 	icon = 'icons/obj/narsie.dmi'
 	icon_state = "narsie"//mobs perceive the geometer of blood through their see_narsie proc
 
@@ -43,8 +42,18 @@ var/global/list/narsie_list = list()
 /obj/singularity/narsie/large/New()
 	..()
 	if(announce)
-		to_world("<font size='15' color='red'><b>[uppertext(name)] HAS RISEN</b></font>")
+		to_world("<font size='15' color='red'><b>THE [uppertext(name)] HAS RISEN</b></font>")
 		sound_to(world, sound('sounds/effects/wind/wind_5_1.ogg'))
+		for(var/mob/M in GLOB.player_list) // i believe using this puts the echo effects on the sounds so it doesnt sound like trash.
+			switch(narsie_list.len)
+				if(1)
+					sound_to(M, 'sounds/magic/scarlet/rise.ogg')
+				if(2)
+					sound_to(M, 'sounds/magic/scarlet/second_rise.ogg')
+				if(3)
+					sound_to(M, 'sounds/magic/scarlet/third_rise.ogg')
+				else
+					sound_to(M, 'sounds/magic/scarlet/rise.ogg')
 
 	narsie_spawn_animation()
 
@@ -187,7 +196,7 @@ var/global/list/narsie_list = list()
 		if (dist <= consume_range && !istype(A, /turf/space))
 			var/turf/T = A
 			if(T.holy)
-				T.holy = 0 //Nar-Sie doesn't give a shit about sacred grounds.
+				T.holy = 0 //the scarlet king doesn't give a shit about sacred grounds.
 			T.cultify()
 
 /obj/singularity/narsie/proc/old_narsie(const/atom/A)
