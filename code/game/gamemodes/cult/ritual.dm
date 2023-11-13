@@ -162,6 +162,8 @@ var/list/Tier1Runes = list(
 	/mob/proc/defile_rune,
 	/mob/proc/stun_imbue,
 	/mob/proc/emp_imbue,
+	/mob/proc/blind_imbue,
+	/mob/proc/shackle_imbue,
 	/mob/proc/cult_communicate,
 	/mob/proc/obscure,
 	/mob/proc/reveal
@@ -302,6 +304,18 @@ var/list/Tier4Runes = list(
 	set name = "Imbue: EMP"
 
 	make_rune(/obj/effect/rune/imbue/emp)
+
+/mob/proc/blind_imbue()
+	set category = "Cult Magic"
+	set name = "Imbue: Blindness"
+
+	make_rune(/obj/effect/rune/imbue/blindness, cost = 10, tome_required = 1)
+
+/mob/proc/shackle_imbue()
+	set category = "Cult Magic"
+	set name = "Imbue: Shadow Shackles"
+
+	make_rune(/obj/effect/rune/imbue/shackles, cost = 20, tome_required = 1)
 
 /mob/proc/cult_communicate()
 	set category = "Cult Magic"

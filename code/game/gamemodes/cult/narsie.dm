@@ -2,7 +2,7 @@ var/global/narsie_behaviour = "CultStation13"
 var/global/narsie_cometh = 0
 var/global/list/narsie_list = list()
 /obj/singularity/narsie //i couldnt be bothered to change the paths and risk breaking everything so this is what you get.
-	name = "\The Scarlet King"
+	name = "The Scarlet King"
 	desc = "Your mind begins to bubble and ooze as it tries to comprehend what it sees."
 	icon = 'icons/obj/narsie.dmi' // not gonna change the sprites too
 	icon_state = "narsie-small"
@@ -24,7 +24,7 @@ var/global/list/narsie_list = list()
 	narsie_list.Remove(src)
 	..()
 
-/obj/singularity/narsie/large
+/obj/singularity/narsie/large // the nar'sie that actually gets summoned
 	icon = 'icons/obj/narsie.dmi'
 	icon_state = "narsie"//mobs perceive the geometer of blood through their see_narsie proc
 
@@ -42,18 +42,22 @@ var/global/list/narsie_list = list()
 /obj/singularity/narsie/large/New()
 	..()
 	if(announce)
-		to_world("<font size='15' color='red'><b>THE [uppertext(name)] HAS RISEN</b></font>")
+		//to_world("<font size='15' color='red'><b>THE [uppertext(name)] HAS RISEN</b></font>")
 		sound_to(world, sound('sounds/effects/wind/wind_5_1.ogg'))
 		for(var/mob/M in GLOB.player_list) // i believe using this puts the echo effects on the sounds so it doesnt sound like trash.
 			switch(narsie_list.len)
 				if(1)
 					sound_to(M, 'sounds/magic/scarlet/rise.ogg')
+					to_world("<font size='15' color='red'><b>I HAVE RISEN.</b></font>")
 				if(2)
 					sound_to(M, 'sounds/magic/scarlet/second_rise.ogg')
+					to_world("<font size='15' color='red'><b>IT'S EVEN FUNNIER THE SECOND TIME.</b></font>")
 				if(3)
 					sound_to(M, 'sounds/magic/scarlet/third_rise.ogg')
+					to_world("<font size='15' color='red'><b>THIRD TIME'S THE CHARM.</b></font>")
 				else
 					sound_to(M, 'sounds/magic/scarlet/rise.ogg')
+					to_world("<font size='15' color='red'><b>[pick("AND THUS I WEPT, FOR I KNEW I HAD NO MORE WORLDS LEFT TO CONQUER.", "DID YOU EXPECT TO JUST SEE THE THREE OF ME?", "NONE WILL BE LEFT.", "CRY TO YOUR FATHER, GOD.", "I WILL BE YOUR UNDOING.")]</b></font>")
 
 	narsie_spawn_animation()
 

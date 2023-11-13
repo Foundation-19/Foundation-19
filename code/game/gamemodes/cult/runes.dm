@@ -11,6 +11,7 @@
 	var/bcolor
 	var/strokes = 2 // IF YOU EVER SET THIS TO MORE THAN TEN, EVERYTHING WILL BREAK
 	var/cultname = ""
+	var/hint = "" // hint on how cultists can use this rune
 
 /obj/effect/rune/New(loc, blcolor = "#c80000", nblood = "blood")
 	..()
@@ -43,6 +44,7 @@
 	. = ..()
 	if(iscultist(user))
 		to_chat(user, "This is \a [cultname] rune.")
+		to_chat(user, SPAN_NOTICE("[hint]"))
 
 /obj/effect/rune/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/book/tome) && iscultist(user))
@@ -92,6 +94,7 @@
 
 /obj/effect/rune/convert
 	cultname = "convert"
+	hint = "You may use this rune to convert other people to your cause. Put them on the same tile as the rune and then invoke, they should be alive for this."
 	var/spamcheck = 0
 
 /obj/effect/rune/convert/cast(mob/living/user)
@@ -114,7 +117,7 @@
 	if(!GLOB.cult.can_become_antag(target.mind, 1))
 		to_chat(target, SPAN_DANGER("Are you going insane?"))
 	else
-		to_chat(target, SPAN_OCCULT("Do you want to join the cult of the Scarlet King?? You can choose to ignore offer... <a href='?src=\ref[src];join=1'>Join the cult.</a>."))
+		to_chat(target, SPAN_OCCULT("Do you want to join the cult of the Scarlet King? You can choose to ignore offer... <a href='?src=\ref[src];join=1'>Join the cult.</a>."))
 
 	spamcheck = 1
 	spawn(40)
@@ -142,6 +145,7 @@
 
 /obj/effect/rune/teleport
 	cultname = "teleport"
+	hint = "This rune can allow you to teleport across places but only if there is also a teleport rune at the place you wish to teleport to."
 	var/destination
 
 /obj/effect/rune/teleport/New()
@@ -221,6 +225,7 @@
 
 /obj/effect/rune/tome
 	cultname = "summon tome"
+	hint = "When invoked, it summons a tome that allows you to draw runes faster and also allows you to draw some more high level runes."
 
 /obj/effect/rune/tome/cast(mob/living/user)
 	new /obj/item/book/tome(get_turf(src))
@@ -230,6 +235,7 @@
 
 /obj/effect/rune/wall
 	cultname = "wall"
+	hint = "When invoked projects a durable barrier on the same tile as the rune."
 
 	var/obj/effect/cultwall/wall = null
 
@@ -254,10 +260,10 @@
 	to_chat(user, SPAN_WARNING("Your blood flows into the rune, and you feel that the very space over the rune thickens."))
 
 /obj/effect/cultwall
-	name = "red mist"
-	desc = "A strange red mist emanating from a rune below it."
+	name = "strange barrier"
+	desc = "A strange barrier emanating from a rune below it."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "shield-old" // havent tested it with the different color, hope it works
+	icon_state = "shield-old" // its not mist, but its cooler
 	color = "#ff0000"
 	anchored = TRUE
 	density = TRUE
@@ -307,10 +313,12 @@
 
 /obj/effect/rune/ajorney
 	cultname = "astral journey"
+	hint = "Allows you to project yourself to the undead world, giving you the ability to see past walls."
 
 /obj/effect/rune/ajorney/cast(mob/living/user)
 	var/tmpkey = user.key
 	if(user.loc != get_turf(src))
+		to_chat(SPAN_WARNING("You need to be on the rune to invoke this!"))
 		return
 	speak_incantation(user, "Fwe[pick("'","`")]sh mah erl nyag r'ya!")
 	user.visible_message(SPAN_WARNING("\The [user]'s eyes glow blue as \he freezes in place, absolutely motionless."), SPAN_WARNING("The shadow that is your spirit separates itself from your body. You are now in the realm beyond. While this is a great sight, being here strains your mind and body. Hurry..."), "You hear only complete silence for a moment.")
@@ -334,6 +342,7 @@
 
 /obj/effect/rune/defile
 	cultname = "defile"
+	hint = "When invoked the rune will corrupt the surrounding area. While painfully obvious, it gives a buff to making runes."
 
 /obj/effect/rune/defile/cast(mob/living/user)
 	speak_incantation(user, "Ia! Ia! Zasan therium viortia!")
@@ -347,6 +356,7 @@
 
 /obj/effect/rune/obscure
 	cultname = "obscure"
+	hint = "When invoked, this rune hides surrounding runes. They can still be used, but you just can't see them."
 
 /obj/effect/rune/obscure/cast(mob/living/user)
 	var/runecheck = 0
@@ -361,6 +371,7 @@
 
 /obj/effect/rune/reveal
 	cultname = "reveal"
+	hint = "When invoked, this rune shows surrounding hidden runes."
 
 /obj/effect/rune/reveal/cast(mob/living/user)
 	var/irunecheck = 0
@@ -691,6 +702,7 @@
 
 /obj/effect/rune/revive
 	cultname = "revive"
+	hint = "Invoke with a soulshard with the essence of life and the dead body of a fellow cultist to fully revive them."
 	strokes = 4
 
 /obj/effect/rune/revive/cast(mob/living/user)
@@ -717,6 +729,7 @@
 
 /obj/effect/rune/blood_boil
 	cultname = "blood boil"
+	hint = "When invoked with 3 cultists nearby, you'll deal damage to non-cultists able to view the rune."
 	strokes = 4
 
 /obj/effect/rune/blood_boil/cast(mob/living/user)
@@ -772,7 +785,7 @@
 	log_and_message_admins_many(cultists, "started summoning the Scarlet King.")
 
 	var/area/A = get_area(src)
-	command_announcement.Announce("High levels of bluespace interference detected at \the [A]. Suspected wormhole forming. Investigate it immediately.")
+	command_announcement.Announce("High levels of anomalous interference detected at \the [A]. Suspected Class-V Teleportation Anomaly forming. Investigate it immediately.")
 	while(cultists.len > 4 || the_end_comes)
 		cultists = get_cultists()
 		if(cultists.len > 8)
@@ -795,7 +808,7 @@
 	if(the_end_comes >= the_time_has_come)
 		HECOMES = new /obj/singularity/narsie/large(get_turf(src))
 	else
-		command_announcement.Announce("Bluespace anomaly has ceased.")
+		command_announcement.Announce("Class-V Teleportation Anomaly formation has been halted, all is well.")
 		qdel(src)
 
 /obj/effect/rune/tearreality/attack_hand(mob/living/user)
@@ -829,6 +842,7 @@
 
 /obj/effect/rune/imbue
 	cultname = "otherwordly abomination that shouldn't exist and that you should report to your local god as soon as you see it, along with the instructions for making this"
+	hint = "Put some paper on the same tile as the rune and then invoke to be able to use this."
 	var/papertype
 
 /obj/effect/rune/imbue/cast(mob/living/user)
@@ -857,3 +871,11 @@
 /obj/effect/rune/imbue/emp
 	cultname = "destroy technology imbue"
 	papertype = /obj/item/paper/talisman/emp
+
+/obj/effect/rune/imbue/blindness
+	cultname = "blindness imbue"
+	papertype = /obj/item/paper/talisman/blindness
+
+/obj/effect/rune/imbue/shackles
+	cultname = "shadow shackles imbue"
+	papertype = /obj/item/paper/talisman/shackles

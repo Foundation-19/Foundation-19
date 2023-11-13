@@ -15,13 +15,13 @@
 
 /obj/item/paper/talisman/stun/attack_self(mob/living/user)
 	if(iscultist(user))
-		to_chat(user, "This is a stun talisman.")
+		to_chat(user, "This is a stun talisman. It can disable humans, temporarily.")
 	..()
 
 /obj/item/paper/talisman/stun/attack(mob/living/M, mob/living/user)
 	if(!iscultist(user))
 		return
-	user.say("Dream Sign: Evil Sealing Talisman!") //TODO: never change this shit
+	user.say("Dream Sign: Evil Sealing Talisman!", LANGUAGE_CULT) // this is hilarious but muh immersion!!
 	var/obj/item/nullrod/nrod = locate() in M
 	if(nrod)
 		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M], but they are unaffected."), SPAN_DANGER("You invoke \the [src] at [M], but they are unaffected."))
@@ -43,7 +43,7 @@
 
 /obj/item/paper/talisman/emp/attack_self(mob/living/user)
 	if(iscultist(user))
-		to_chat(user, "This is an emp talisman.")
+		to_chat(user, "This is an EMP talisman, it can disable electronics.")
 	..()
 
 /obj/item/paper/talisman/emp/afterattack(atom/target, mob/user, proximity)
@@ -56,3 +56,61 @@
 	target.emp_act(1)
 	user.unEquip(src)
 	qdel(src)
+
+/obj/item/paper/talisman/blindness/attack_self(mob/living/user)
+	. = ..()
+	if(iscultist(user))
+		to_chat(user, "This is a blindness talisman. It can blind a human.")
+	..()
+
+/obj/item/paper/talisman/blindness/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!iscultist(user))
+		return
+	var/obj/item/nullrod/nrod = locate() in M
+	if(nrod)
+		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M], but they are unaffected."), SPAN_DANGER("You invoke \the [src] at [M], but they are unaffected."))
+		return
+	else
+		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
+
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		to_chat(C, SPAN_WARNING("Your eyes burn horrifically!"))
+		C.eye_blind += 20
+		C.eye_blurry += 30
+		C.disabilities |= NEARSIGHTED
+		addtimer(CALLBACK(src, .proc/unblind, C), 30 SECONDS)
+	admin_attack_log(user, M, "Used a blindness talisman.", "Was victim of a blindness talisman.", "used a blindness talisman on")
+	qdel(src)
+	user.unEquip(src)
+
+/obj/item/paper/talisman/blindness/proc/unblind(mob/living/carbon/human/target)
+	if(target)
+		target.disabilities &= ~NEARSIGHTED
+
+/obj/item/paper/talisman/shackles/attack_self(mob/living/user)
+	. = ..()
+	if(iscultist(user))
+		to_chat(user, "This is a shadow shackles talisman. It's able to form handcuffs around the wrists of a target.")
+	..()
+
+/obj/item/paper/talisman/shackles/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!iscultist(user))
+		return
+	var/obj/item/nullrod/nrod = locate() in M
+	if(nrod)
+		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M], but they are unaffected."), SPAN_DANGER("You invoke \the [src] at [M], but they are unaffected."))
+		return
+	else
+		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
+
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/obj/item/handcuffs/shadowshackle/cuffs = new /obj/item/handcuffs/shadowshackle
+		if(do_after(user, 2 SECONDS, C))
+			C.equip_to_slot(cuffs,slot_handcuffed)
+	admin_attack_log(user, M, "Used a shadow shackles talisman.", "Was victim of a shadow shackles talisman.", "used a shadow shackles talisman on")
+	qdel(src)
+	user.unEquip(src)
