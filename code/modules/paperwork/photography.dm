@@ -254,8 +254,7 @@ var/global/photo_count = 0
 	var/y_c = target.y + (size-1)/2
 	var/z_c	= target.z
 	var/mobs = ""
-	var/list/meta_data
-	LAZYINITLIST(meta_data)
+	var/list/meta_data = list()
 	for(var/i = 1 to size)
 		for(var/j = 1 to size)
 			var/turf/T = locate(x_c, y_c, z_c)
