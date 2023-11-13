@@ -233,7 +233,7 @@
 		if(PULSE_THREADY)
 			. += "extremely fast and faint "
 
-	if(SCP.designation == "3349-1")
+	if(SCP?.designation == "3349-1")
 		. += "cat purr"
 	else
 		. += "pulse"
