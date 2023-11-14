@@ -178,3 +178,7 @@ var/last_chew = 0
 	cuff_sound = 'sounds/weapons/cablecuff.ogg'
 	cuff_type = "shadow restraints"
 	health_max = 0
+
+/obj/item/handcuffs/shadowshackle/dropped(mob/user)
+	. = ..()
+	qdel(src)

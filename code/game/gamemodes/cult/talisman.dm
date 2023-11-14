@@ -103,14 +103,15 @@
 	if(nrod)
 		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M], but they are unaffected."), SPAN_DANGER("You invoke \the [src] at [M], but they are unaffected."))
 		return
-	else
-		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		var/obj/item/handcuffs/shadowshackle/cuffs = new /obj/item/handcuffs/shadowshackle
+		user.visible_message(SPAN_DANGER("\The [user] begins invoking \the [src] at [M]."), SPAN_DANGER("You begin invoking \the [src] at [M]."))
+		playsound(user.loc, cuffs.cuff_sound, 30, 1, -2)
 		if(do_after(user, 2 SECONDS, C))
 			C.equip_to_slot(cuffs,slot_handcuffed)
+			user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
 	admin_attack_log(user, M, "Used a shadow shackles talisman.", "Was victim of a shadow shackles talisman.", "used a shadow shackles talisman on")
 	qdel(src)
 	user.unEquip(src)
