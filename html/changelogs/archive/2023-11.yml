@@ -1,6 +1,5 @@
-author: cheesePizza2
-delete-after: true
-changes:
+2023-11-02:
+  cheesePizza2:
   - rscadd: Interactive do_afters! During (most) timed actions, stars will pop up
       that can be clicked to get extra progress.
   - rscadd: Actionspeed modifiers ported from TG.
