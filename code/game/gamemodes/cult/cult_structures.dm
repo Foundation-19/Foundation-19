@@ -11,7 +11,7 @@
 
 /obj/structure/cult/forge
 	name = "Daemon forge"
-	desc = "A forge used in crafting the unholy weapons."
+	desc = "A forge used in crafting the unholy weapons which the forces of the Scarlet King use."
 	icon_state = "forge"
 
 /obj/structure/cult/pylon

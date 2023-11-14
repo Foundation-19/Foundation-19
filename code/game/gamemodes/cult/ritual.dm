@@ -19,7 +19,7 @@
 	if(!iscultist(user))
 		to_chat(user, "An old, dusty tome with frayed edges and a sinister looking cover.")
 	else
-		to_chat(user, "The scriptures of the Scarlet King, The One Who Sees, The Geometer of Blood. Contains the details of every ritual his followers could think of. Most of these are useless, though.")
+		to_chat(user, "The scriptures of the Scarlet King, the Crimson Khan. Contains the details of every ritual His followers could think of. Most of these are useless, though.")
 
 /obj/item/book/tome/attack(mob/living/M, mob/living/user)
 	if (user.a_intent != I_HELP || user.zone_sel.selecting != BP_EYES)

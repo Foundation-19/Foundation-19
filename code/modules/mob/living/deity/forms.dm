@@ -42,7 +42,7 @@ Each plays slightly different and has different challenges/benefits
 
 /datum/god_form/narsie
 	name = "The Scarlet King"
-	info = {"The Geometer of Blood, you crave blood and destruction.<br>
+	info = {"The Scarlet Archon, you crave blood and destruction.<br>
 	<b>Benefits:</b><br>
 		<font color='blue'>+Can gain power from blood sacrifices.<br>
 		+Ability to forge weapons and armor.</font>

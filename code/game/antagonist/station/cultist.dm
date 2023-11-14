@@ -49,7 +49,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	var/cult_rating = 0
 	var/list/cult_rating_bounds = list(CULT_RUNES_1, CULT_RUNES_2, CULT_RUNES_3, CULT_GHOSTS_1, CULT_GHOSTS_2, CULT_GHOSTS_3)
 	var/max_cult_rating = 0
-	var/conversion_blurb = "You catch a glimpse of the Realm of the Scarlet King, the Geometer of Blood. You now see how flimsy the world is, you see that it should be open to the knowledge of That Which Waits. Assist your new compatriots in their dark dealings. Their goals are yours, and yours are theirs. You serve the Dark One above all else. Bring It back."
+	var/conversion_blurb = "You catch a glimpse of the Realm of the Scarlet King. You now see how flimsy the world is, you see that it should be open to the knowledge of Him. Assist your new compatriots in their dark dealings. Their goals are yours, and yours are theirs. You serve the King of the Darkness Below above all else."
 
 	faction = "cult"
 

@@ -263,7 +263,7 @@
 	name = "strange barrier"
 	desc = "A strange barrier emanating from a rune below it."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "shield-old" // its not mist, but its cooler
+	icon_state = "shield-old"
 	color = "#ff0000"
 	anchored = TRUE
 	density = TRUE
@@ -767,7 +767,7 @@
 	cultname = "tear reality"
 	var/the_end_comes = 0
 	var/the_time_has_come = 300
-	var/obj/singularity/narsie/large/HECOMES = null
+	var/obj/singularity/scarletking/large/HECOMES = null
 	strokes = 9
 
 /obj/effect/rune/tearreality/cast(mob/living/user)
@@ -806,7 +806,7 @@
 		sleep(10)
 
 	if(the_end_comes >= the_time_has_come)
-		HECOMES = new /obj/singularity/narsie/large(get_turf(src))
+		HECOMES = new /obj/singularity/scarletking/large(get_turf(src))
 	else
 		command_announcement.Announce("Class-V Teleportation Anomaly formation has been halted, all is well.")
 		qdel(src)

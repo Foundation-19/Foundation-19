@@ -245,7 +245,7 @@
 /mob/living/simple_animal/construct/harvester
 	name = "Harvester"
 	real_name = "Harvester"
-	desc = "The promised reward of the livings who follow the Scarlet King. Obtained by offering their bodies to the geometer of blood."
+	desc = "The promised reward of the livings who follow the Scarlet King. Obtained by offering their bodies to Him."
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "harvester"
 	icon_living = "harvester"
