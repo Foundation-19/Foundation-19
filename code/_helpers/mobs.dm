@@ -198,3 +198,5 @@
 	if(damflags & DAM_BIO)
 		res += "bio"
 	return english_list(res)
+
+#define ISADVANCEDTOOLUSER(mob) (HAS_TRAIT(mob, TRAIT_ADVANCED_TOOL_USER) && !HAS_TRAIT(mob, TRAIT_DISCOORDINATED_TOOL_USER))

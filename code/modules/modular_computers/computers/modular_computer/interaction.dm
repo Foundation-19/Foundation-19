@@ -177,7 +177,7 @@
 
 // On-click handling. Turns on the computer if it's off and opens the GUI.
 /obj/item/modular_computer/attack_self(mob/user)
-	if(user.IsAdvancedToolUser())
+	if(ISADVANCEDTOOLUSER(user))
 		if(enabled && screen_on)
 			tgui_interact(user)
 		else if(!enabled && screen_on)

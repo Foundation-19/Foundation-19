@@ -13,14 +13,13 @@ GLOBAL_LIST_EMPTY(scp343s)
 	status_flags = NO_ANTAG
 	var/mob/living/carbon/human/target = null
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 
 /datum/scp/scp_343
 	name = "SCP-343"
 	designation = "343"
 	classification = SAFE
-
-/mob/living/carbon/human/scp343/IsAdvancedToolUser()
-	return TRUE
 
 /mob/living/carbon/human/scp343/New(new_loc, new_species)
 	new_species = "SCP-343"

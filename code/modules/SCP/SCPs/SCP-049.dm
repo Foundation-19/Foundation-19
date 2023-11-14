@@ -18,13 +18,12 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/angry = FALSE
 	status_flags = NO_ANTAG
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 /datum/scp/scp_049
 	name = "SCP-049"
 	designation = "049"
 	classification = EUCLID
-
-/mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return TRUE
 
 /mob/living/carbon/human/scp049/update_icons()
 	return

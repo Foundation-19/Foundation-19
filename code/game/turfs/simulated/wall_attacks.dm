@@ -156,7 +156,7 @@
 	if(!construction_stage && try_graffiti(user, W))
 		return
 
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return
 

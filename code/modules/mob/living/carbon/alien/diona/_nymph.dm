@@ -43,6 +43,8 @@
 	var/tmp/image/eyes
 	var/tmp/last_glow
 
+	roundstart_traits = list()
+
 /mob/living/carbon/alien/diona/get_jump_distance()
 	return 3
 
@@ -90,9 +92,6 @@
 		to_chat(user, SPAN_NOTICE("It is holding [icon2html(holding_item, user)] \a [holding_item]."))
 	if(hat)
 		to_chat(user, SPAN_NOTICE("It is wearing [icon2html(hat, user)] \a [hat]."))
-
-/mob/living/carbon/alien/diona/IsAdvancedToolUser()
-	return FALSE
 
 /mob/living/carbon/alien/diona/proc/handle_npc(mob/living/carbon/alien/diona/D)
 	if(D.stat != CONSCIOUS)

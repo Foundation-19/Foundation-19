@@ -497,7 +497,7 @@
 	if(!id_card)
 		id_card = user.GetIdCard()
 
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		to_chat(user, FEEDBACK_YOU_LACK_DEXTERITY)
 		return FALSE
 

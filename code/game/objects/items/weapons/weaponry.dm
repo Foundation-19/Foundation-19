@@ -28,7 +28,7 @@
 		to_chat(M, SPAN_DANGER("You've been silenced!"))
 		return
 
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_DANGER("You don't have the dexterity to do this!"))
 		return
 

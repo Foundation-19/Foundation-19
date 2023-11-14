@@ -65,6 +65,8 @@
 	update_config_movespeed()
 	initialize_actionspeed()
 
+	add_traits(roundstart_traits, ROUNDSTART_TRAIT)
+
 /mob/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(!client)	return
 
@@ -828,11 +830,6 @@
 /mob/verb/southface()
 	set hidden = 1
 	return facedir(client.client_dir(SOUTH))
-
-
-//This might need a rename but it should replace the can this mob use things check
-/mob/proc/IsAdvancedToolUser()
-	return 0
 
 /mob/proc/Stun(amount)
 	if(status_flags & CANSTUN)

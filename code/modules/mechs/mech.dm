@@ -76,6 +76,8 @@
 	//POWER
 	var/power = MECH_POWER_OFF
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 /mob/living/exosuit/MayZoom()
 	if(head?.vision_flags)
 		return FALSE
@@ -175,9 +177,6 @@
 	hardpoint_hud_elements.Cut()
 
 	. = ..()
-
-/mob/living/exosuit/IsAdvancedToolUser()
-	return TRUE
 
 /mob/living/exosuit/examine(mob/user)
 	. = ..()

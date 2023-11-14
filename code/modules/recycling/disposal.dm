@@ -228,7 +228,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 // human interact with machine
 /obj/machinery/disposal/physical_attack_hand(mob/user)
 	// Clumsy folks can only flush it.
-	if(!user.IsAdvancedToolUser(1))
+	if(!ISADVANCEDTOOLUSER(user))
 		flush = !flush
 		update_icon()
 		return TRUE

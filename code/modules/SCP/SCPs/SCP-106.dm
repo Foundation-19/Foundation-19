@@ -30,6 +30,8 @@ GLOBAL_LIST_EMPTY(scp106s)
 	var/sound_cooldown
 	var/sound_cooldown_time = 4 SECONDS
 
+	roundstart_traits = list()
+
 /datum/scp/scp_106
 	name = "SCP-106"
 	designation = "106"
@@ -78,9 +80,6 @@ GLOBAL_LIST_EMPTY(scp106s)
 	else
 		transform = null
 	return
-
-/mob/living/carbon/human/scp_106/IsAdvancedToolUser()
-	return FALSE
 
 /mob/living/carbon/human/scp_106/get_pressure_weakness()
 	return 0

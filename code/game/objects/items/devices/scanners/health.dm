@@ -17,7 +17,7 @@
 	playsound(src, 'sounds/effects/fastbeep.ogg', 20)
 
 /proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, verbose)
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return
 

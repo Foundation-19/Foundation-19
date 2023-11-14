@@ -191,7 +191,7 @@
 
 	if(!istype(user, /mob/living))
 		return 0
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		return 0
 
 	var/mob/living/M = user

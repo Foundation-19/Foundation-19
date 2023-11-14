@@ -140,7 +140,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CLUMSY "clumsy"
 /// TODO: implement
 #define TRAIT_MUTE "mute"
-/// TODO: implement
+/// The mob can use complicated tools
+#define TRAIT_ADVANCED_TOOL_USER "advanced_tool_user"
+/// The mob can't use complicated tools, even if they have TRAIT_ADVANCED_TOOL_USER
 #define TRAIT_DISCOORDINATED_TOOL_USER "discoordinated_tool_user"
 /// TODO: implement
 #define TRAIT_NOFIRE "nofire"
@@ -168,7 +170,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// A trait given by a specific status effect
 #define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"
 
-/// Cannot be removed without admin intervention. TODO
+/// Cannot be removed without admin intervention.
 #define ROUNDSTART_TRAIT "roundstart"
 /// Gained by wearing certain clothing.
 #define CLOTHING_TRAIT "clothing"

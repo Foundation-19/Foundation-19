@@ -56,7 +56,7 @@
 	return ..()
 
 /obj/item/organ/internal/posibrain/attack_self(mob/user)
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		return
 	if (user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
 		if (status & ORGAN_DEAD || !brainmob)

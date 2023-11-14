@@ -4,14 +4,13 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 8
 
+	roundstart_traits = list()
+
 
 /datum/scp/scp_966
 	name = "SCP-966"
 	designation = "966"
 	classification = EUCLID
-
-/mob/living/carbon/human/scp966/IsAdvancedToolUser()
-	return FALSE
 
 /mob/living/scp_966/proc/OpenDoor(obj/machinery/door/A)
 	if(!istype(A) || incapacitated())

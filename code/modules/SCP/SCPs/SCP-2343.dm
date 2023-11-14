@@ -12,14 +12,12 @@ GLOBAL_LIST_EMPTY(scp2343s)
 	icon_state = "americangod"
 	status_flags = NO_ANTAG
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
 
 /datum/scp/scp_2343
 	name = "SCP-2343"
 	designation = "2343"
 	classification = SAFE
-
-/mob/living/carbon/human/scp2343/IsAdvancedToolUser()
-	return TRUE
 
 /mob/living/carbon/human/scp2343/Login()
 	. = ..()

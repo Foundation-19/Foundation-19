@@ -40,6 +40,8 @@
 	#define SEC_HUD 1 //Security HUD mode
 	#define MED_HUD 2 //Medical HUD mode
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 /mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list += src
 	. = ..()
@@ -118,9 +120,6 @@
 
 /mob/living/silicon/proc/damage_mob(brute = 0, fire = 0, tox = 0)
 	return
-
-/mob/living/silicon/IsAdvancedToolUser()
-	return 1
 
 /mob/living/silicon/bullet_act(obj/item/projectile/Proj)
 	if(status_flags & GODMODE)

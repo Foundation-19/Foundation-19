@@ -439,7 +439,7 @@
 	set_occupant(null)
 
 /obj/machinery/cryopod/proc/attempt_enter(mob/target, mob/user)
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_WARNING("You're too simple to understand how to do that."))
 		return
 	if (user.incapacitated() || !user.Adjacent(src))
