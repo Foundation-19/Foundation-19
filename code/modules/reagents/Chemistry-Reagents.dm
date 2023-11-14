@@ -173,7 +173,7 @@
 
 /// Returns a percentage based on how close we are to overdosing. 0 means overdosing is impossible, 1 means you're exactly at the overdose limit, 2 means you're twice the overdose limit, and so on.
 /datum/reagent/proc/overdose_percentage()
-	if(isnull(overdose))
+	if(isnull(overdose) || overdose == 0)
 		return 0
 
 	if(holder && istype(holder, /datum/reagents/metabolism))
