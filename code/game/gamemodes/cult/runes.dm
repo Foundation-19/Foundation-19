@@ -251,7 +251,7 @@
 	var/t
 	if(wall)
 		if(!wall.health_damaged())
-			to_chat(user, SPAN_NOTICE("The wall doesn't need mending."))
+			balloon_alert(user, "the wall is undamaged")
 			return
 		t = wall.get_damage_value()
 		wall.restore_health()
@@ -322,7 +322,7 @@
 /obj/effect/rune/ajorney/cast(mob/living/user)
 	var/tmpkey = user.key
 	if(user.loc != get_turf(src))
-		to_chat(SPAN_WARNING("You need to be on the rune to invoke this!"))
+		balloon_alert(user, "be on rune to invoke!")
 		return
 	speak_incantation(user, "Fwe[pick("'","`")]sh mah erl nyag r'ya!")
 	user.visible_message(SPAN_WARNING("\The [user]'s eyes glow blue as \he freezes in place, absolutely motionless."), SPAN_WARNING("The shadow that is your spirit separates itself from your body. You are now in the realm beyond. While this is a great sight, being here strains your mind and body. Hurry..."), "You hear only complete silence for a moment.")
@@ -433,10 +433,10 @@
 /obj/effect/rune/offering/cast(mob/living/user)
 	var/list/mob/living/cultists = get_cultists()
 	if(victim)
-		to_chat(user, SPAN_WARNING("You are already sarcificing \the [victim] on this rune."))
+		balloon_alert(user, "already sacrificing!")
 		return
 	if(cultists.len < 3)
-		to_chat(user, SPAN_WARNING("You need three cultists around this rune to make it work."))
+		balloon_alert(user, "3 cultists required")
 		return fizzle(user)
 	var/turf/T = get_turf(src)
 	for(var/mob/living/M in T)
@@ -466,7 +466,7 @@
 		GLOB.cult.add_cultiness(CULTINESS_PER_SACRIFICE)
 		var/obj/item/device/soulstone/full/F = new(get_turf(src))
 		for(var/mob/M in cultists | get_cultists())
-			to_chat(M, SPAN_WARNING("The Geometer of Blood accepts this offering."))
+			to_chat(M, SPAN_WARNING("The Scarlet King accepts this offering."))
 		visible_message(SPAN_NOTICE("\The [F] appears over \the [src]."))
 		GLOB.cult.sacrificed += victim.mind
 		if(victim.mind == GLOB.cult.sacrifice_target)
@@ -514,7 +514,7 @@
 	if(!victim)
 		return fizzle(user)
 	if(!victim.vessel.has_reagent(/datum/reagent/blood, 20))
-		to_chat(user, SPAN_WARNING("This body has no blood in it."))
+		balloon_alert(user, "no blood!")
 		return fizzle(user)
 	victim.vessel.remove_reagent(/datum/reagent/blood, 20)
 	admin_attack_log(user, victim, "Used a blood drain rune.", "Was victim of a blood drain rune.", "used a blood drain rune on")
@@ -625,7 +625,7 @@
 /obj/effect/rune/massdefile/cast(mob/living/user)
 	var/list/mob/living/cultists = get_cultists()
 	if(cultists.len < 3)
-		to_chat(user, SPAN_WARNING("You need three cultists around this rune to make it work."))
+		balloon_alert(user, "3 cultists required!")
 		return fizzle(user)
 	else
 		for(var/mob/living/M in cultists)
@@ -647,11 +647,11 @@
 
 /obj/effect/rune/weapon/cast(mob/living/user)
 	if(!istype(user.get_equipped_item(slot_head), /obj/item/clothing/head/culthood) || !istype(user.get_equipped_item(slot_wear_suit), /obj/item/clothing/suit/cultrobes) || !istype(user.get_equipped_item(slot_shoes), /obj/item/clothing/shoes/cult))
-		to_chat(user, SPAN_WARNING("You need to be wearing your robes to use this rune."))
+		balloon_alert(user, "robes required!")
 		return fizzle(user)
 	var/turf/T = get_turf(src)
 	if(T.icon_state != "cult" && T.icon_state != "cult-narsie")
-		to_chat(user, SPAN_WARNING("This rune needs to be placed on the defiled ground."))
+		balloon_alert(user, "defiled ground required!")
 		return fizzle(user)
 	speak_incantation(user, "N'ath reth sh'yro eth d[pick("'","`")]raggathnor!")
 	user.put_in_hands(new /obj/item/melee/cultblade(user))
@@ -665,7 +665,7 @@
 /obj/effect/rune/shell/cast(mob/living/user)
 	var/turf/T = get_turf(src)
 	if(T.icon_state != "cult" && T.icon_state != "cult-narsie")
-		to_chat(user, SPAN_WARNING("This rune needs to be placed on the defiled ground."))
+		balloon_alert(user, "defiled ground required!")
 		return fizzle(user)
 
 	var/obj/item/stack/material/steel/target
@@ -675,7 +675,7 @@
 			break
 
 	if(!target)
-		to_chat(user, SPAN_WARNING("You need ten sheets of metal to fold them into a construct shell."))
+		balloon_alert(user, "10 sheets of metal required!")
 		return fizzle(user)
 
 	speak_incantation(user, "Da A[pick("'","`")]ig Osk!")
@@ -867,7 +867,7 @@
 			tainted = 1
 	if(!target)
 		if(tainted)
-			to_chat(user, SPAN_WARNING("The blank is tainted. It is unsuitable."))
+			balloon_alert(user, "it is tainted, it is unsuitable.")
 		return fizzle(user)
 	speak_incantation(user, "H'drak v[pick("'","`")]loso, mir'kanas verbot!")
 	visible_message(SPAN_WARNING("The rune forms into an arcane image on the paper."))
