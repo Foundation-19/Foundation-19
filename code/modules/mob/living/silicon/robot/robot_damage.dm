@@ -34,8 +34,8 @@
 
 /mob/living/silicon/robot/rejuvenate()
 	..()
-	if(src.cell)
-		src.cell.give(src.cell.maxcharge)
+	if(cell)
+		cell.give(cell.maxcharge)
 
 /mob/living/silicon/robot/proc/get_damaged_components(brute, burn, destroyed = 0)
 	var/list/datum/robot_component/parts = list()
