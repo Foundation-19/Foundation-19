@@ -44,7 +44,7 @@
 	. = ..()
 	if(iscultist(user))
 		to_chat(user, "This is \a [cultname] rune.")
-		to_chat(user, SPAN_NOTICE("[hint]"))
+		to_chat(user, SPAN_OCCULT("[hint]"))
 
 /obj/effect/rune/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/book/tome) && iscultist(user))
@@ -117,7 +117,10 @@
 	if(!GLOB.cult.can_become_antag(target.mind, 1))
 		to_chat(target, SPAN_DANGER("Are you going insane?"))
 	else
-		to_chat(target, SPAN_OCCULT("Do you want to join the cult of the Scarlet King? You can choose to ignore offer... <a href='?src=\ref[src];join=1'>Join the cult.</a>."))
+		to_chat(target, SPAN_OCCULT("Do you want to join the cult of the Scarlet King? You can choose to ignore offer..."))
+		var/choice = tgui_alert(target, "Join the cult.", "OFFERING.", list("Join the cult."))
+		if(choice == "Join the cult.")
+			Convert(target)
 
 	spamcheck = 1
 	spawn(40)
@@ -138,10 +141,11 @@
 						to_chat(target, SPAN_OCCULT("Your mind turns to ash as the burning flames engulf your very soul and images of an unspeakable horror begin to bombard the last remnants of mental resistance."))
 						target.take_overall_damage(0, 10)
 
-/obj/effect/rune/convert/Topic(href, href_list)
-	if(href_list["join"])
-		if(usr.loc == loc && !iscultist(usr))
-			GLOB.cult.add_antagonist(usr.mind, ignore_role = 1, do_not_equip = 1)
+/obj/effect/rune/convert/proc/Convert(mob/living/carbon/target)
+	if(target.loc == loc && !iscultist(target))
+		GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
+	else
+		to_chat(target, SPAN_OCCULT("You either already are a cultist or you walked away from the rune!"))
 
 /obj/effect/rune/teleport
 	cultname = "teleport"
@@ -389,6 +393,7 @@
 
 /obj/effect/rune/armor
 	cultname = "summon robes"
+	hint = "When invoked you will gain unholy robes, which give light armor and allow you to invoke more high-level runes."
 	strokes = 3
 
 /obj/effect/rune/armor/cast(mob/living/user)
@@ -497,6 +502,7 @@
 
 /obj/effect/rune/drain
 	cultname = "blood drain"
+	hint = "When invoked with a human on the same tile as the rune, in exchange for the victim's blood your wounds will mend and lost blood will be regained."
 	strokes = 3
 
 /obj/effect/rune/drain/cast(mob/living/user)
@@ -583,7 +589,7 @@
 	return statuses
 
 /datum/reagent/hell_water
-	name = "Hell water"
+	name = "Unholy Water" //renamed because "Hell water" doesnt sound scarlet king-ish
 	reagent_state = LIQUID
 	color = "#0050a1"
 	metabolism = REM * 0.1
@@ -604,6 +610,7 @@
 
 /obj/effect/rune/emp
 	cultname = "emp"
+	hint = "When invoked, the rune will cause an electromagnetic pulse."
 	strokes = 4
 
 /obj/effect/rune/emp/cast(mob/living/user)
@@ -613,6 +620,7 @@
 
 /obj/effect/rune/massdefile //Defile but with a huge range. Bring a buddy for this, you're hitting the floor.
 	cultname = "mass defile"
+	hint = "When invoked with 3 bretheren, it will defile a large amount of ground."
 
 /obj/effect/rune/massdefile/cast(mob/living/user)
 	var/list/mob/living/cultists = get_cultists()
@@ -634,6 +642,7 @@
 
 /obj/effect/rune/weapon
 	cultname = "summon weapon"
+	hint = "When invoked on defiled ground with your unholy apparel, this rune will summon a strong blade for you to defend the knowledge of the Scarlet King."
 	strokes = 4
 
 /obj/effect/rune/weapon/cast(mob/living/user)
@@ -650,6 +659,7 @@
 
 /obj/effect/rune/shell
 	cultname = "summon shell"
+	hint = "When invoked on defiled ground with 10 sheets of steel on the same tile as it, the rune will create the shell of a construct."
 	strokes = 4
 
 /obj/effect/rune/shell/cast(mob/living/user)
@@ -676,6 +686,7 @@
 
 /obj/effect/rune/confuse
 	cultname = "confuse"
+	hint = "When invoked, this rune will confuse the surrounding non-cultists, making their eyes blurry and weakening them."
 	strokes = 4
 
 /obj/effect/rune/confuse/cast(mob/living/user)

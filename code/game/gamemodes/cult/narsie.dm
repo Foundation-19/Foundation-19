@@ -17,7 +17,7 @@ var/global/list/narsie_list = list()
 
 /obj/singularity/narsie/New() //for the oldies out there
 	..()
-	new /obj/singularity/scarletking(get_turf(src))
+	new /obj/singularity/scarletking/large(get_turf(src))
 	return INITIALIZE_HINT_QDEL
 
 /obj/singularity/scarletking/New()
