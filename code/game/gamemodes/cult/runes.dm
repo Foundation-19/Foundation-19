@@ -867,7 +867,7 @@
 			tainted = 1
 	if(!target)
 		if(tainted)
-			balloon_alert(user, "it is tainted, it is unsuitable.")
+			balloon_alert(user, "unsuitable!")
 		return fizzle(user)
 	speak_incantation(user, "H'drak v[pick("'","`")]loso, mir'kanas verbot!")
 	visible_message(SPAN_WARNING("The rune forms into an arcane image on the paper."))

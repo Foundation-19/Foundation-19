@@ -156,10 +156,8 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	if(!iscultist(M) || !M.mind)
 		return
 
-	to_chat(M, SPAN_OCCULT("Do you want to abandon the cult of the Scarlet King? <a href='?src=\ref[src];confirmleave=1'>ACCEPT</a>"))
-
-/datum/antagonist/cultist/Topic(href, href_list)
-	if(href_list["confirmleave"])
+	var/choice = tgui_alert(M, "Do you want to abandon the cult of the Scarlet King?", "Uncult Offer", list("ACCEPT"))
+	if(choice = "ACCEPT")
 		GLOB.cult.remove_antagonist(usr.mind, 1)
 
 /datum/antagonist/cultist/proc/remove_cultiness(amount)

@@ -1,10 +1,10 @@
 var/global/narsie_behaviour = "CultStation13"
 var/global/narsie_cometh = 0
-var/global/list/narsie_list = list()
+var/global/list/scarletking_list = list()
 /obj/singularity/scarletking
 	name = "The Scarlet King"
 	desc = "Your mind begins to bubble and ooze as it tries to comprehend what it sees."
-	icon = 'icons/obj/narsie.dmi' // not gonna change the sprites too
+	icon = 'icons/obj/scarlet-king.dmi' // not gonna change the sprites too
 	icon_state = "narsie-small"
 	pixel_x = -236
 	pixel_y = -256
@@ -22,15 +22,14 @@ var/global/list/narsie_list = list()
 
 /obj/singularity/scarletking/New()
 	..()
-	narsie_list.Add(src)
+	scarletking_list.Add(src)
 
 /obj/singularity/scarletking/Destroy()
-	narsie_list.Remove(src)
+	scarletking_list.Remove(src)
 	..()
 
 /obj/singularity/scarletking/large // the nar'sie that actually gets summoned
-	icon = 'icons/obj/narsie.dmi'
-	icon_state = "narsie"//mobs perceive the geometer of blood through their see_narsie proc
+	icon_state = "scarlet-king"//mobs perceive the geometer of blood through their see_narsie proc
 
 	// Pixel stuff centers Narsie.
 	pixel_x = -236
@@ -46,9 +45,8 @@ var/global/list/narsie_list = list()
 /obj/singularity/scarletking/large/New()
 	..()
 	if(announce)
-		//to_world("<font size='15' color='red'><b>THE [uppertext(name)] HAS RISEN</b></font>")
 		sound_to(world, sound('sounds/effects/wind/wind_5_1.ogg'))
-		switch(narsie_list.len)
+		switch(scarletking_list.len)
 			if(1)
 				sound_to(world, sound('sounds/magic/scarlet/rise.ogg'))
 				to_world("<font size='15' color='red'><b>I HAVE RISEN.</b></font>")
@@ -102,14 +100,14 @@ var/global/list/narsie_list = list()
 /obj/singularity/scarletking/large/Bump(atom/A)
 	if(!cause_hell) return
 	if(isturf(A))
-		narsiewall(A)
+		scarletwall(A)
 	else if(istype(A, /obj/structure/cult))
 		qdel(A)
 
 /obj/singularity/scarletking/large/Bumped(atom/A)
 	if(!cause_hell) return
 	if(isturf(A))
-		narsiewall(A)
+		scarletwall(A)
 	else if(istype(A, /obj/structure/cult))
 		qdel(A)
 
@@ -164,7 +162,7 @@ var/global/list/narsie_list = list()
 			T.icon_state = "cult-narsie"
 			T.set_light(1)
 
-/obj/singularity/scarletking/proc/narsiewall(turf/T)
+/obj/singularity/scarletking/proc/scarletwall(turf/T)
 	T.desc = "An opening has been made on that wall, but who can say if what you seek truly lies on the other side?"
 	T.icon = 'icons/turf/walls.dmi'
 	T.icon_state = "cult-narsie"
@@ -334,17 +332,17 @@ var/global/list/narsie_list = list()
 /obj/singularity/scarletking/on_capture()
 	chained = 1
 	move_self = 0
-	icon_state ="narsie-small-chains"
+	icon_state ="sk-small-chains"
 
 /obj/singularity/scarletking/on_release()
 	chained = 0
 	move_self = 1
-	icon_state ="narsie-small"
+	icon_state ="sk-small"
 
 /obj/singularity/scarletking/large/on_capture()
 	chained = 1
 	move_self = 0
-	icon_state ="narsie-chains"
+	icon_state ="sk-chains"
 	for(var/mob/M in SSmobs.mob_list)//removing the client image of nar-sie while it is chained
 		if(M.client)
 			M.see_narsie(src)
@@ -352,7 +350,7 @@ var/global/list/narsie_list = list()
 /obj/singularity/scarletking/large/on_release()
 	chained = 0
 	move_self = 1
-	icon_state ="narsie"
+	icon_state ="scarlet-king"
 
 /**
  * Wizard narsie.

@@ -21,7 +21,7 @@
 	..()
 
 	var/destination = null
-	for(var/obj/singularity/scarletking/large/N in narsie_list)
+	for(var/obj/singularity/scarletking/large/N in scarletking_list)
 		destination = N.loc
 		break
 	if(destination)
