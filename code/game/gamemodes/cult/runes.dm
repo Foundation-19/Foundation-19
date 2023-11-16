@@ -117,7 +117,7 @@
 	if(!GLOB.cult.can_become_antag(target.mind, 1))
 		to_chat(target, SPAN_DANGER("Are you going insane?"))
 	else
-		to_chat(target, SPAN_OCCULT("Do you want to join the cult of the Scarlet King? You can choose to ignore offer..."))
+		to_chat(target, SPAN_OCCULT("Do you want to join the Children of the Scarlet King? You can choose to ignore the offer..."))
 		var/choice = tgui_alert(target, "Join the cult.", "OFFERING.", list("Join the cult."))
 		if(choice == "Join the cult.")
 			Convert(target)
@@ -176,7 +176,7 @@
 	else if(user.loc == get_turf(src))
 		speak_incantation(user, "Sas[pick("'","`")]so c'arta forbici!")
 		if(do_after(user, 4 SECONDS, bonus_percentage = 25))
-			user.visible_message(SPAN_WARNING("\The [user] disappears in a flash of red light!"), SPAN_WARNING("You feel as your body gets dragged into the dimension the Scarlet King!"), "You hear a sickening crunch.")
+			user.visible_message(SPAN_WARNING("\The [user] disappears in a flash of red light!"), SPAN_WARNING("You feel as your body gets dragged into the dimension of the Scarlet King!"), "You hear a sickening crunch.")
 			user.forceMove(src)
 			showOptions(user)
 			var/warning = 0
@@ -322,7 +322,7 @@
 /obj/effect/rune/ajorney/cast(mob/living/user)
 	var/tmpkey = user.key
 	if(user.loc != get_turf(src))
-		balloon_alert(user, "be on rune to invoke!")
+		balloon_alert(user, "must stand on rune!")
 		return
 	speak_incantation(user, "Fwe[pick("'","`")]sh mah erl nyag r'ya!")
 	user.visible_message(SPAN_WARNING("\The [user]'s eyes glow blue as \he freezes in place, absolutely motionless."), SPAN_WARNING("The shadow that is your spirit separates itself from your body. You are now in the realm beyond. While this is a great sight, being here strains your mind and body. Hurry..."), "You hear only complete silence for a moment.")
@@ -436,7 +436,7 @@
 		balloon_alert(user, "already sacrificing!")
 		return
 	if(cultists.len < 3)
-		balloon_alert(user, "3 cultists required")
+		balloon_alert(user, "3 cultists required!")
 		return fizzle(user)
 	var/turf/T = get_turf(src)
 	for(var/mob/living/M in T)
@@ -589,7 +589,7 @@
 	return statuses
 
 /datum/reagent/hell_water
-	name = "Unholy Water" //renamed because "Hell water" doesnt sound scarlet king-ish
+	name = "Unholy Water"
 	reagent_state = LIQUID
 	color = "#0050a1"
 	metabolism = REM * 0.1
@@ -796,7 +796,7 @@
 	log_and_message_admins_many(cultists, "started summoning the Scarlet King.")
 
 	var/area/A = get_area(src)
-	command_announcement.Announce("High levels of anomalous interference detected at \the [A]. Suspected Class-V Teleportation Anomaly forming. Investigate it immediately.")
+	command_announcement.Announce("Extreme levels of Akiva Radiation detected at \the [A]. Suspected extradimensional Apex-Tier Pluripotent Entity forming. Investigate immediately.", "[station_name()] Scanner Array")
 	while(cultists.len > 4 || the_end_comes)
 		cultists = get_cultists()
 		if(cultists.len > 8)

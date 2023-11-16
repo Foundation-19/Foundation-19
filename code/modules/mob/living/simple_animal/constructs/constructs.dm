@@ -177,7 +177,7 @@
 /mob/living/simple_animal/construct/builder
 	name = "Artificer"
 	real_name = "Artificer"
-	desc = "A bulbous construct dedicated to building and maintaining The Cult of the Scarlet King's armies."
+	desc = "A bulbous construct dedicated to building and maintaining The Children of the Scarlet King's armies."
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "artificer"
 	icon_living = "artificer"
