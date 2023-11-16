@@ -157,7 +157,7 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 		return
 
 	var/choice = tgui_alert(M, "Do you want to abandon the cult of the Scarlet King?", "Uncult Offer", list("ACCEPT"))
-	if(choice = "ACCEPT")
+	if(choice == "ACCEPT")
 		GLOB.cult.remove_antagonist(usr.mind, 1)
 
 /datum/antagonist/cultist/proc/remove_cultiness(amount)
