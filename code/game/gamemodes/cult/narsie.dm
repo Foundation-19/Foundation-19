@@ -4,7 +4,7 @@ var/global/list/scarletking_list = list()
 /obj/singularity/scarletking
 	name = "The Scarlet King"
 	desc = "Your mind begins to bubble and ooze as it tries to comprehend what it sees."
-	icon = 'icons/obj/scarlet-king.dmi' // not gonna change the sprites too
+	icon = 'icons/obj/scarlet-king.dmi'
 	icon_state = "narsie-small"
 	pixel_x = -236
 	pixel_y = -256
