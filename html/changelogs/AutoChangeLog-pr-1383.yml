@@ -1,0 +1,14 @@
+author: casualspacestation14enjoyer
+delete-after: true
+changes:
+  - code_imp: All iterations of Nar'Sie were changed into "The Scarlet King" for LOOOORE
+  - rscadd: Examining most runes as a cult member will now show hints how to utilize
+      them/how they work/what they do.
+  - rscadd: New cult talisman, Shadow Shackles. This talisman will handcuff the target
+      with weak shackles.
+  - rscadd: New cult talisman, Blindness. This talisman will blind the target for
+      a short while.
+  - imageadd: The cult wall now has a better sprite to indicate that it is a barrier.
+  - bugfix: Examining a talisman now actually shows talisman fluff.
+  - soundadd: Added new sounds for the Scarlet King (nar'sie) rising. If some admin
+      tomfoolery happens (caused by me) it will play fun sounds.
