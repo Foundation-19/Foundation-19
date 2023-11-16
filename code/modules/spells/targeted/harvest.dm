@@ -21,7 +21,7 @@
 	..()
 
 	var/destination = null
-	for(var/obj/singularity/narsie/large/N in narsie_list)
+	for(var/obj/singularity/scarletking/large/N in scarletking_list)
 		destination = N.loc
 		break
 	if(destination)
@@ -31,7 +31,7 @@
 				M.forceMove(destination)
 				if(M != user)
 					prey = 1
-		to_chat(user, SPAN_CLASS("sinister","You warp back to Nar-Sie[prey ? " along with your prey":""]."))
+		to_chat(user, SPAN_CLASS("sinister","You warp back to the Scarlet King[prey ? " along with your prey":""]."))
 	else
-		to_chat(user, SPAN_DANGER("...something's wrong!"))//There shouldn't be an instance of Harvesters when Nar-Sie isn't in the world.
+		to_chat(user, SPAN_DANGER("...something's wrong!"))//There shouldn't be an instance of Harvesters when the Scarlet King isn't in the world.
 
