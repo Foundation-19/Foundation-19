@@ -24,10 +24,10 @@
 	user.say("Dream Sign: Evil Sealing Talisman!", LANGUAGE_CULT) // this is hilarious but muh immersion!!
 	var/obj/item/nullrod/nrod = locate() in M
 	if(nrod)
-		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M], but they are unaffected."), SPAN_DANGER("You invoke \the [src] at [M], but they are unaffected."))
+		user.balloon_alert_to_viewers("invokes but unaffected!", "you invoke but they are unaffected!")
 		return
 	else
-		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
+		user.balloon_alert_to_viewers("invokes talisman!", "you invoke stun talisman!")
 
 	if(issilicon(M))
 		M.Weaken(15)
@@ -52,7 +52,7 @@
 	if(!proximity)
 		return
 	user.say("Ta'gh fara[pick("'","`")]qha fel d'amar det!")
-	user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [target]."), SPAN_DANGER("You invoke \the [src] at [target]."))
+	user.balloon_alert_to_viewers("invokes talisman!", "you invoke emp talisman!")
 	target.emp_act(1)
 	user.unEquip(src)
 	qdel(src)
@@ -69,10 +69,10 @@
 		return
 	var/obj/item/nullrod/nrod = locate() in M
 	if(nrod)
-		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M], but they are unaffected."), SPAN_DANGER("You invoke \the [src] at [M], but they are unaffected."))
+		user.balloon_alert_to_viewers("invokes but unaffected!", "you invoke but they are unaffected!")
 		return
 	else
-		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
+		user.balloon_alert_to_viewers("invokes talisman!", "you invoke blindness talisman!")
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
@@ -101,17 +101,17 @@
 		return
 	var/obj/item/nullrod/nrod = locate() in M
 	if(nrod)
-		user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M], but they are unaffected."), SPAN_DANGER("You invoke \the [src] at [M], but they are unaffected."))
+		user.balloon_alert_to_viewers("invokes but unaffected!", "you invoke but they are unaffected!")
 		return
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		var/obj/item/handcuffs/shadowshackle/cuffs = new /obj/item/handcuffs/shadowshackle
-		user.visible_message(SPAN_DANGER("\The [user] begins invoking \the [src] at [M]."), SPAN_DANGER("You begin invoking \the [src] at [M]."))
+		user.balloon_alert_to_viewers("begins invoking talisman!", "you begin invoking shadow shackles...")
 		playsound(user.loc, cuffs.cuff_sound, 30, 1, -2)
 		if(do_after(user, 2.5 SECONDS, C, bonus_percentage = 25))
 			C.equip_to_slot(cuffs,slot_handcuffed)
-			user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
+			user.balloon_alert_to_viewers("invokes talisman!", "you invoke shadow shackles talisman!")
 	admin_attack_log(user, M, "Used a shadow shackles talisman.", "Was victim of a shadow shackles talisman.", "used a shadow shackles talisman on")
 	qdel(src)
 	user.unEquip(src)
