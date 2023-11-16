@@ -819,7 +819,7 @@
 	if(the_end_comes >= the_time_has_come)
 		HECOMES = new /obj/singularity/scarletking/large(get_turf(src))
 	else
-		command_announcement.Announce("Class-V Teleportation Anomaly formation has been halted, all is well.")
+		command_announcement.Announce("Apex-Tier Pluripotent Entity formation has been halted, all is well.", "[station_name()] Scanner Array")
 		qdel(src)
 
 /obj/effect/rune/tearreality/attack_hand(mob/living/user)
