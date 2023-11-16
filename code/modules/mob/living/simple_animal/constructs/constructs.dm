@@ -216,7 +216,7 @@
 /mob/living/simple_animal/construct/behemoth
 	name = "Behemoth"
 	real_name = "Behemoth"
-	desc = "The pinnacle of occult technology, Behemoths are the ultimate weapon in the Cult of the Scarlet King's arsenal."
+	desc = "The pinnacle of occult technology, Behemoths are the ultimate weapon in the Children of the Scarlet King's arsenal."
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "behemoth"
 	icon_living = "behemoth"

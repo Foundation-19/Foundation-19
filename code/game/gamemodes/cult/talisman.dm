@@ -109,7 +109,7 @@
 		var/obj/item/handcuffs/shadowshackle/cuffs = new /obj/item/handcuffs/shadowshackle
 		user.visible_message(SPAN_DANGER("\The [user] begins invoking \the [src] at [M]."), SPAN_DANGER("You begin invoking \the [src] at [M]."))
 		playsound(user.loc, cuffs.cuff_sound, 30, 1, -2)
-		if(do_after(user, 2 SECONDS, C))
+		if(do_after(user, 2.5 SECONDS, C, bonus_percentage = 25))
 			C.equip_to_slot(cuffs,slot_handcuffed)
 			user.visible_message(SPAN_DANGER("\The [user] invokes \the [src] at [M]."), SPAN_DANGER("You invoke \the [src] at [M]."))
 	admin_attack_log(user, M, "Used a shadow shackles talisman.", "Was victim of a shadow shackles talisman.", "used a shadow shackles talisman on")
