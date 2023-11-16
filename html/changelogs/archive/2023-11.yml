@@ -6,3 +6,6 @@
   - imageadd: do_after sprites ported from TG.
   - imageadd: Interactive do_after sprites by MrDoomBringer.
   - refactor: Massive improvements to do_after system (from TG).
+2023-11-16:
+  Saicchi:
+  - bugfix: Rejuvenating robots now gives them charge
