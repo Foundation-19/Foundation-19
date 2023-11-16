@@ -206,8 +206,7 @@
 	if(G.special_target_functional)
 		switch(G.target_zone)
 			if(BP_MOUTH)
-				if(G.affecting.silent < 2)
-					G.affecting.silent = 2
+				G.affecting.set_silence_if_lower(2 SECONDS)
 			if(BP_EYES)
 				if(G.affecting.eye_blind < 2)
 					G.affecting.eye_blind = 2

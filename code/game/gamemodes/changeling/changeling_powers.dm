@@ -559,7 +559,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	allow_during_lesser_form = TRUE
 
 /datum/power/changeling/sting/silence_sting/sting_effects()
-	target.silent += 30
+	target.set_silence_if_lower(30 SECONDS)
 	SSstatistics.add_field_details("changeling_powers", "SS")
 
 

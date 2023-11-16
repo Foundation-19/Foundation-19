@@ -594,14 +594,12 @@
 		Sleeping(2)
 	if(stat == DEAD)	//DEAD. BROWN BREAD. SWIMMING WITH THE SPESS CARP
 		blinded = 1
-		silent = 0
 	else				//ALIVE. LIGHTS ARE ON
 		updatehealth()	//TODO
 
 		if(handle_death_check())
 			death()
 			blinded = 1
-			silent = 0
 			return 1
 
 		if(hallucination_power)

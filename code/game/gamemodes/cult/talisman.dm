@@ -31,10 +31,10 @@
 
 	if(issilicon(M))
 		M.Weaken(15)
-		M.silent += 15
+		M.set_silence_if_lower(15 SECONDS)
 	else if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.silent += 15
+		C.set_silence_if_lower(15 SECONDS)
 		C.Weaken(20)
 		C.Stun(20)
 	admin_attack_log(user, M, "Used a stun talisman.", "Was victim of a stun talisman.", "used a stun talisman on")

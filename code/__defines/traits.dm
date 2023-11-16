@@ -138,7 +138,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_IMMOBILIZED "immobilized"
 /// TODO: implement
 #define TRAIT_CLUMSY "clumsy"
-/// TODO: implement
+/// The mob can't talk
 #define TRAIT_MUTE "mute"
 /// The mob can use complicated tools
 #define TRAIT_ADVANCED_TOOL_USER "advanced_tool_user"
@@ -174,3 +174,5 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define ROUNDSTART_TRAIT "roundstart"
 /// Gained by wearing certain clothing.
 #define CLOTHING_TRAIT "clothing"
+/// Gained by being statue-ified
+#define STATUE_MUTE "statue_mute"

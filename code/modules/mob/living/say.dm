@@ -181,6 +181,9 @@ var/list/channel_to_radio_key = new
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
 		return custom_emote(1, copytext(message,2))
 
+	if(HAS_TRAIT(src, TRAIT_MUTE))
+		return FALSE
+
 	//parse the language code and consume it
 	if(!speaking)
 		speaking = parse_language(message)

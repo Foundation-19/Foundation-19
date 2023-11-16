@@ -143,7 +143,7 @@
 	M.status_flags |= FAKEDEATH
 	M.adjustOxyLoss(3 * removed)
 	M.Weaken(10)
-	M.silent = max(M.silent, 10)
+	M.set_silence_if_lower(10 SECONDS)
 	if (M.chem_doses[type] <= removed) //half-assed attempt to make timeofdeath update only at the onset
 		M.timeofdeath = world.time
 	M.add_chemical_effect(CE_NOPULSE, 1)

@@ -81,7 +81,6 @@
 	handle_weakened()
 	handle_paralysed()
 	handle_stuttering()
-	handle_silent()
 	handle_drugged()
 	handle_slurring()
 	handle_confused()
@@ -104,11 +103,6 @@
 	if(stuttering)
 		stuttering = max(stuttering-1, 0)
 	return stuttering
-
-/mob/living/proc/handle_silent()
-	if(silent)
-		silent = max(silent-1, 0)
-	return silent
 
 /mob/living/proc/handle_drugged()
 	if(druggy)
