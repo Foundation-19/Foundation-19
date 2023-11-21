@@ -173,7 +173,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "ay" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -365,7 +365,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "aV" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/structure/bed/chair/office/comfy,
 /obj/effect/landmark/start{
@@ -704,7 +704,7 @@
 "bS" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/equipmentroom)
@@ -1028,7 +1028,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 3;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/commandpanicbunker)
@@ -1248,7 +1248,7 @@
 /area/site53/uez/hallway)
 "dg" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
@@ -1348,7 +1348,7 @@
 "dt" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -1638,7 +1638,7 @@
 	send_access = list("ACCESS_MEDICAL_LEVEL5")
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1649,7 +1649,7 @@
 	send_access = list("ACCESS_ENGINEERING_LEVEL5")
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
@@ -1671,7 +1671,7 @@
 "eo" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -1761,7 +1761,7 @@
 /area/site53/uez/commandpanicbunker)
 "eB" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -1786,7 +1786,7 @@
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/machinery/requests_console{
 	department = "Administrative";
@@ -2750,7 +2750,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -2834,7 +2834,7 @@
 "hP" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/machinery/requests_console{
 	department = "Logistics";
@@ -3359,7 +3359,7 @@
 /obj/effect/floor_decal/corner/brown/half,
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -3566,7 +3566,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3630,7 +3630,7 @@
 "jF" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/entrancezone/forensics)
@@ -3745,7 +3745,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3792,7 +3792,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3849,7 +3849,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3989,7 +3989,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/bed/chair/office{
@@ -4346,7 +4346,7 @@
 /obj/item/gun/energy/ionrifle,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -4373,7 +4373,7 @@
 "mQ" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -4591,7 +4591,7 @@
 "oD" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/conference)
@@ -4612,7 +4612,7 @@
 "pb" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
@@ -4724,7 +4724,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -4841,7 +4841,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -4866,7 +4866,7 @@
 /area/site53/uez/commandpanicbunker)
 "qK" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network");
+	network = list("Entrance Zone Network");
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4963,7 +4963,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/commandpanicbunker)
@@ -5185,7 +5185,7 @@
 /obj/structure/flora/pottedplant/minitree,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -5595,7 +5595,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -5611,7 +5611,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5781,7 +5781,7 @@
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network");
+	network = list("Entrance Zone Network");
 	dir = 1
 	},
 /turf/simulated/floor/plating,
@@ -6063,7 +6063,7 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/camera/autoname{
 	dir = 3;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
@@ -6288,7 +6288,7 @@
 "CD" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network");
+	network = list("Entrance Zone Network");
 	dir = 1
 	},
 /turf/simulated/floor/plating,
@@ -6381,7 +6381,7 @@
 "Dm" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
@@ -7113,7 +7113,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -7206,7 +7206,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -7279,7 +7279,7 @@
 /obj/structure/filingcabinet,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
@@ -7322,7 +7322,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -7623,7 +7623,7 @@
 "OC" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -7902,7 +7902,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
@@ -7947,12 +7947,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"QZ" = (
-/obj/structure/bed/chair/office/comfy{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "Rb" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
@@ -8069,7 +8063,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /obj/machinery/button/blast_door{
 	anchored = 0;
@@ -8339,7 +8333,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -8849,7 +8843,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -8921,7 +8915,7 @@
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance  Zone  Network")
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -9058,7 +9052,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance  Zone  Network");
+	network = list("Entrance Zone Network");
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
