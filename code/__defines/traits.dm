@@ -126,7 +126,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 //mob traits
 /// Forces the user to stay unconscious. TODO
 #define TRAIT_KNOCKEDOUT "knockedout"
-/// TODO: make this work
+/// Prevents the user from harming others. If you introduce some way to damage others (even indirectly), think about checking this.
 #define TRAIT_PACIFISM "pacifism"
 /// Lets the user succumb even if they've got NODEATH. TODO
 #define TRAIT_SUCCUMB_OVERRIDE "succumb_override"

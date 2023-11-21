@@ -266,6 +266,9 @@
 	if((!waterproof && submerged()) || !special_check(user))
 		return
 
+	if (HAS_TRAIT(user, TRAIT_PACIFISM))
+		return
+
 	if(safety())
 		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERIENCED, 0.5)) //reflex un-safeying
 			toggle_safety(user)
