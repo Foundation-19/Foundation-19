@@ -339,7 +339,7 @@
 		to_chat(user, SPAN_WARNING("Unbuckle the subject before attempting to move them."))
 		return
 	user.visible_message(SPAN_NOTICE("\The [user] begins placing \the [target] into \the [src]."), SPAN_NOTICE("You start placing \the [target] into \the [src]."))
-	if(!do_after(user, 30, src))
+	if(!do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 		return
 	put_mob(target)
 

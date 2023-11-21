@@ -151,7 +151,7 @@
 	if(isCrowbar(C) || (istype(C, /obj/item/material/twohanded/fireaxe) && C:wielded == 1))
 		if(((stat & NOPOWER) || (stat & BROKEN)) && !( operating ))
 			to_chat(user, SPAN_NOTICE("You begin prying at \the [src]..."))
-			if(do_after(user, 2 SECONDS, src))
+			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 				force_toggle()
 		else
 			to_chat(user, SPAN_NOTICE("[src]'s motors resist your effort."))
@@ -166,7 +166,7 @@
 			to_chat(user, SPAN_WARNING("You don't have enough sheets to repair this! You need at least [amt] sheets."))
 			return
 		to_chat(user, SPAN_NOTICE("You begin repairing \the [src]..."))
-		if(do_after(user, 5 SECONDS, src))
+		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25))
 			if(P.use(amt))
 				to_chat(user, SPAN_NOTICE("You have repaired \the [src]."))
 				repair()

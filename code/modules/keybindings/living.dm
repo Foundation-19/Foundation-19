@@ -1,5 +1,5 @@
 /datum/keybinding/living
-	category = CATEGORY_HUMAN
+	category = CATEGORY_LIVING
 
 /datum/keybinding/living/can_use(client/user)
 	return isliving(user.mob)
@@ -54,3 +54,41 @@
 		return
 	L.aiming.toggle_active()
 	return TRUE
+
+/datum/keybinding/living/pixel_shift
+	var/direction = null
+
+/datum/keybinding/living/pixel_shift/down(client/user)
+	if(!direction)
+		return
+	var/mob/living/L = user.mob
+	L.shift(direction)
+	return TRUE
+
+/datum/keybinding/living/pixel_shift/north
+	hotkey_keys = list("CtrlShiftW", "CtrlShiftNorth")
+	name = "Shift North"
+	full_name = "Pixel Shift North"
+	description = "Shifts your character's position to the north."
+	direction = NORTH
+
+/datum/keybinding/living/pixel_shift/south
+	hotkey_keys = list("CtrlShiftS", "CtrlShiftSouth")
+	name = "Shift South"
+	full_name = "Pixel Shift South"
+	description = "Shifts your character's position to the south."
+	direction = SOUTH
+
+/datum/keybinding/living/pixel_shift/west
+	hotkey_keys = list("CtrlShiftA", "CtrlShiftWest")
+	name = "Shift West"
+	full_name = "Pixel Shift West"
+	description = "Shifts your character's position to the west."
+	direction = WEST
+
+/datum/keybinding/living/pixel_shift/east
+	hotkey_keys = list("CtrlShiftD", "CtrlShiftEast")
+	name = "Shift East"
+	full_name = "Pixel Shift East"
+	description = "Shifts your character's position to the east."
+	direction = EAST

@@ -284,14 +284,29 @@
 				B.update_icon()
 
 /mob/living/simple_animal/handle_fire()
-	return
+	. = ..()
+
+	var/burn_temperature = fire_burn_temperature()
+	var/thermal_protection = get_heat_protection(burn_temperature)
+
+	if (thermal_protection < 1 && bodytemperature < burn_temperature)
+		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
+
+	burn_temperature -= maxbodytemp
+
+	if(burn_temperature < 1)
+		return
+
+	// At minimum level of fire stacks and default(350) max body temp it will deal ~5 damage per tick
+	// At "absolute maximum" of around 100.000 burn_temperature it will deal ~80 damage per tick
+	var/burn_damage = round(sqrt(burn_temperature) * 0.25)
+	adjustBruteLoss(burn_damage)
 
 /mob/living/simple_animal/update_fire()
-	return
-/mob/living/simple_animal/IgniteMob()
-	return
-/mob/living/simple_animal/ExtinguishMob()
-	return
+	. = ..()
+	overlays -= image("icon"='icons/mob/OnFire.dmi', "icon_state"="Generic_mob_burning")
+	if(on_fire)
+		overlays += image("icon"='icons/mob/OnFire.dmi', "icon_state"="Generic_mob_burning")
 
 /mob/living/simple_animal/is_burnable()
 	return heat_damage_per_tick
@@ -367,7 +382,7 @@
 /mob/living/simple_animal/proc/pry_door(mob/user, delay, obj/machinery/door/pesky_door)
 	visible_message(SPAN_WARNING("\The [user] begins [pry_desc] at \the [pesky_door]!"))
 	set_AI_busy(TRUE)
-	if(do_after(user, delay, pesky_door))
+	if(do_after(user, delay, pesky_door, bonus_percentage = 25))
 		pesky_door.open(1)
 		ai_holder.prying = FALSE
 		set_AI_busy(FALSE)

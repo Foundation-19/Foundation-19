@@ -85,7 +85,7 @@
 		var/target_text = trans_dest? "\the [trans_dest]" : "\the [user.loc]"
 		user.visible_message(SPAN_DANGER("\The [user] begins to wring out [src] over [target_text]."), SPAN_NOTICE("You begin to wring out [src] over [target_text]."))
 
-		if(do_after(user, reagents.total_volume*5, do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS)) //50 for a fully soaked rag
+		if(do_after(user, 0.66 SECONDS * reagents.total_volume, bonus_percentage = 25))
 			if(trans_dest)
 				reagents.trans_to(trans_dest, reagents.total_volume)
 			else
@@ -100,7 +100,7 @@
 		user.visible_message("\The [user] starts to wipe down [A] with [src]!")
 		reagents.splash(A, 1) //get a small amount of liquid on the thing we're wiping.
 		update_name()
-		if(do_after(user,30))
+		if(do_after(user, 4 SECONDS, bonus_percentage = 25))
 			user.visible_message("\The [user] finishes wiping off the [A]!")
 			if(isturf(A))
 				var/turf/T = A
@@ -134,11 +134,11 @@
 					SPAN_WARNING("You hear some struggling and muffled cries of surprise")
 				)
 
-				var/grab_time = 6 SECONDS
+				var/grab_time = 8 SECONDS
 				if (user.skill_check(SKILL_COMBAT, SKILL_TRAINED))
-					grab_time = 3 SECONDS
+					grab_time = 4 SECONDS
 
-				if (do_after(user, grab_time, target, DO_DEFAULT | DO_USER_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
+				if (do_after(user, grab_time, target, do_flags = DO_DEFAULT | DO_SHOW_TARGET,bonus_percentage = 25))
 					user.visible_message(
 						SPAN_DANGER("\The [user] smothers \the [target] with \the [src]!"),
 						SPAN_DANGER("You smother \the [target] with \the [src]!")

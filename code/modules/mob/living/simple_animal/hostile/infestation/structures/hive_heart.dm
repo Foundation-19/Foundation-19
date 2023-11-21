@@ -38,7 +38,7 @@
 	/* Mob healing effect */
 	var/healing_mobs_range = 7 // Just on the screen
 	/// How much health is restored every HealMobs() proc
-	var/healing_mobs_strength = 20
+	var/healing_mobs_strength = 50
 	var/healing_mobs_cooldown = 5 SECONDS
 	var/healing_mobs_faction = "abominable_infestation"
 

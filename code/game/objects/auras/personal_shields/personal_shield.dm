@@ -8,7 +8,7 @@
 
 /obj/aura/personal_shield/bullet_act(obj/item/projectile/P, def_zone)
 	user.visible_message(SPAN_WARNING("\The [user]'s [src.name] flashes before \the [P] can hit them!"))
-	new /obj/effect/temporary(get_turf(src), 2 SECONDS,'icons/obj/machines/shielding.dmi',"shield_impact")
+	new /obj/effect/temp_visual/temporary(get_turf(src), 2 SECONDS,'icons/obj/machines/shielding.dmi',"shield_impact")
 	playsound(user,'sounds/effects/basscannon.ogg',35,1)
 	return AURA_FALSE|AURA_CANCEL
 

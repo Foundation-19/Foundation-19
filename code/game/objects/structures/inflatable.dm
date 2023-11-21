@@ -28,7 +28,7 @@
 		SPAN_ITALIC("You can hear rushing air."),
 		range = 5
 	)
-	if (!do_after(user, 1 SECOND))
+	if (!do_after(user, 1 SECOND, bonus_percentage = 50))
 		return
 	if(QDELETED(src))
 		return

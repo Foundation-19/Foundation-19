@@ -12,13 +12,13 @@
 		icon_state = "ghost-narsie"
 		cut_overlays()
 		set_invisibility(0)
-		to_chat(src, SPAN_CLASS("sinister","Even as a non-corporal being, you can feel Nar-Sie's presence altering you. You are now visible to everyone."))
+		to_chat(src, SPAN_CLASS("sinister","Even as a non-corporal being, you can feel the Scarlet King's presence altering you. You are now visible to everyone."))
 
 /mob/living/cultify()
 	if(iscultist(src) && client)
 		var/mob/living/simple_animal/construct/harvester/C = new(get_turf(src))
 		mind.transfer_to(C)
-		to_chat(C, SPAN_CLASS("sinister","The Geometer of Blood is overjoyed to be reunited with its followers, and accepts your body in sacrifice. As reward, you have been gifted with the shell of an Harvester.<br>Your tendrils can use and draw runes without need for a tome, your eyes can see beings through walls, and your mind can open any door. Use these assets to serve Nar-Sie and bring him any remaining living human in the world.<br>You can teleport yourself back to Nar-Sie along with any being under yourself at any time using your \"Harvest\" spell."))
+		to_chat(C, SPAN_CLASS("sinister","<i>They</i> accept your body in sacrifice. As reward, you have been gifted with the shell of an Harvester.<br>Your tendrils can use and draw runes without need for a tome, your eyes can see beings through walls, and your mind can open any door. Use these assets to serve the Scarlet King and bring him any remaining living human in the world.<br>You can teleport yourself back to the King along with any being under yourself at any time using your \"Harvest\" spell."))
 		dust()
 	else if(client)
 		var/mob/observer/ghost/G = (ghostize())
@@ -30,7 +30,7 @@
 	else
 		dust()
 
-/mob/proc/see_narsie(obj/singularity/narsie/large/N, dir)
+/mob/proc/see_narsie(obj/singularity/scarletking/large/N, dir)
 	if(N.chained)
 		if(narsimage)
 			qdel(narsimage)
@@ -38,10 +38,10 @@
 		return
 	if((N.z == src.z)&&(get_dist(N,src) <= (N.consume_range+10)) && !can_see(N))
 		if(!narsimage) //Create narsimage
-			narsimage = image('icons/obj/narsie.dmi',src.loc,"narsie",9,1)
+			narsimage = image('icons/obj/scarlet-king.dmi',src.loc,"scarlet-king",9,1)
 			narsimage.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		if(!narglow) //Create narglow
-			narglow = image('icons/obj/narsie.dmi',narsimage.loc,"glow-narsie",12,1)
+			narglow = image('icons/obj/scarlet-king.dmi',narsimage.loc,"glow-narsie",12,1)
 			narglow.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		//Else if no dir is given, simply send them the image of narsie
 		var/new_x = 32 * (N.x - src.x) + N.pixel_x

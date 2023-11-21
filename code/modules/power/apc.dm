@@ -443,7 +443,7 @@
 				playsound(src.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				to_chat(user, "You are trying to remove the power control board...")//lpeters - fixed grammar issues
 
-				if(do_after(user, 50, src) && opened && (has_electronics == 1) && !terminal()) // redo all checks.
+				if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && (has_electronics == 1) && !terminal()) // redo all checks.
 					has_electronics = 0
 					if ((stat & BROKEN))
 						user.visible_message(\
@@ -540,7 +540,7 @@
 		user.visible_message(SPAN_WARNING("\The [user] inserts the power control board into \the [src]."), \
 							"You start to insert the power control board into the frame...")
 		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
-		if(do_after(user, 10, src) && has_electronics == 0 && opened && !(stat & BROKEN))
+		if(do_after(user, 1 SECOND, src, bonus_percentage = 100) && has_electronics == 0 && opened && !(stat & BROKEN))
 			has_electronics = 1
 			reboot() //completely new electronics
 			to_chat(user, SPAN_NOTICE("You place the power control board inside the frame."))
@@ -565,7 +565,7 @@
 							"You start welding the APC frame...", \
 							"You hear welding.")
 		playsound(src.loc, 'sounds/items/Welder.ogg', 50, 1)
-		if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
+		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && has_electronics == 0 && !terminal())
 			if(!WT.remove_fuel(3, user))
 				return TRUE
 			if (emagged || (stat & BROKEN) || opened==2)
@@ -606,7 +606,7 @@
 
 			user.visible_message(SPAN_WARNING("[user.name] replaces the damaged APC frame with a new one."),\
 								"You begin to replace the damaged APC frame...")
-			if(do_after(user, 50, src) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
+			if(do_after(user, 7 SECONDS, src, bonus_percentage = 25) && opened && !has_electronics && ((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)))
 				user.visible_message(\
 					SPAN_NOTICE("[user.name] has replaced the damaged APC frame with new one."),\
 					"You replace the damaged APC frame with new one.")
@@ -670,7 +670,7 @@
 			to_chat(user, "Nothing happens.")
 		else
 			flick("apc-spark", src)
-			if (do_after(user,6,src))
+			if (do_after(user, 0.75 SECONDS, src, bonus_percentage = 100))
 				if(prob(50))
 					emagged = TRUE
 					req_access.Cut()
