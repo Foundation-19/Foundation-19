@@ -65,7 +65,7 @@
 	if(!unlock_power)
 		return 0
 	user.visible_message("\The [user] takes out \the [I], picking \the [holder]'s lock.")
-	if(!do_after(user, 20, holder))
+	if(!do_after(user, 5 SECONDS, holder, bonus_percentage = 50 + 5 * (unlock_power - getComplexity())))
 		return 0
 	if(prob(20*(unlock_power/getComplexity())))
 		to_chat(user, SPAN_NOTICE("You pick open \the [holder]'s lock!"))

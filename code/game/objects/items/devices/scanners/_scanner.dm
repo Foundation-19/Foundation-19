@@ -45,7 +45,7 @@
 		user.visible_message(SPAN_NOTICE("[user] runs \the [src] over \the [A]."), range = 2)
 		if(scan_sound)
 			playsound(src, scan_sound, 30)
-		if(use_delay && !do_after(user, use_delay, A))
+		if(use_delay && !do_after(user, use_delay, A, bonus_percentage = 25))
 			to_chat(user, "You stop scanning \the [A] with \the [src].")
 			return
 		scan(A, user)

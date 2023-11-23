@@ -33,7 +33,6 @@
 	)
 	emag = /obj/item/gun/energy/plasmacutter
 	skills = list(
-		SKILL_PILOT        = SKILL_EXPERIENCED,
 		SKILL_CONSTRUCTION = SKILL_EXPERIENCED
 	)
 	no_slip = 1

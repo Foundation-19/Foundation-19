@@ -50,7 +50,7 @@
 		return
 	if(user != H)
 		visible_message(SPAN_DANGER("\The [user] is trying to remove \the [H]'s [name]!"))
-		if(!do_after(user, HUMAN_STRIP_DELAY, H, do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
+		if(!do_after(user, HUMAN_STRIP_DELAY, H, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25))
 			return FALSE
 	. = RemoveUnderwear(user, H)
 	if(. && user != H)
@@ -62,7 +62,7 @@
 		return
 	if(user != H)
 		user.visible_message(SPAN_WARNING("\The [user] has begun putting on \a [src] on \the [H]."), SPAN_NOTICE("You begin putting on \the [src] on \the [H]."))
-		if(!do_after(user, HUMAN_STRIP_DELAY, H, do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
+		if(!do_after(user, HUMAN_STRIP_DELAY, H, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25))
 			return FALSE
 	. = EquipUnderwear(user, H)
 	if(. && user != H)

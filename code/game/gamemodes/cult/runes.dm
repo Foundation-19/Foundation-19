@@ -11,6 +11,7 @@
 	var/bcolor
 	var/strokes = 2 // IF YOU EVER SET THIS TO MORE THAN TEN, EVERYTHING WILL BREAK
 	var/cultname = ""
+	var/hint = "" // hint on how cultists can use this rune
 
 /obj/effect/rune/New(loc, blcolor = "#c80000", nblood = "blood")
 	..()
@@ -43,6 +44,7 @@
 	. = ..()
 	if(iscultist(user))
 		to_chat(user, "This is \a [cultname] rune.")
+		to_chat(user, SPAN_OCCULT("[hint]"))
 
 /obj/effect/rune/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/book/tome) && iscultist(user))
@@ -92,6 +94,7 @@
 
 /obj/effect/rune/convert
 	cultname = "convert"
+	hint = "You may use this rune to convert other people to your cause. Put them on the same tile as the rune and then invoke, they should be alive for this."
 	var/spamcheck = 0
 
 /obj/effect/rune/convert/cast(mob/living/user)
@@ -114,7 +117,10 @@
 	if(!GLOB.cult.can_become_antag(target.mind, 1))
 		to_chat(target, SPAN_DANGER("Are you going insane?"))
 	else
-		to_chat(target, SPAN_OCCULT("Do you want to join the cult of Nar'Sie? You can choose to ignore offer... <a href='?src=\ref[src];join=1'>Join the cult</a>."))
+		to_chat(target, SPAN_OCCULT("Do you want to join the Children of the Scarlet King? You can choose to ignore the offer..."))
+		var/choice = tgui_alert(target, "Join the cult.", "OFFERING.", list("Join the cult."))
+		if(choice == "Join the cult.")
+			Convert(target)
 
 	spamcheck = 1
 	spawn(40)
@@ -135,13 +141,15 @@
 						to_chat(target, SPAN_OCCULT("Your mind turns to ash as the burning flames engulf your very soul and images of an unspeakable horror begin to bombard the last remnants of mental resistance."))
 						target.take_overall_damage(0, 10)
 
-/obj/effect/rune/convert/Topic(href, href_list)
-	if(href_list["join"])
-		if(usr.loc == loc && !iscultist(usr))
-			GLOB.cult.add_antagonist(usr.mind, ignore_role = 1, do_not_equip = 1)
+/obj/effect/rune/convert/proc/Convert(mob/living/carbon/target)
+	if(target.loc == loc && !iscultist(target))
+		GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
+	else
+		to_chat(target, SPAN_OCCULT("You either already are a cultist or you walked away from the rune!"))
 
 /obj/effect/rune/teleport
 	cultname = "teleport"
+	hint = "This rune can allow you to teleport across places but only if there is also a teleport rune at the place you wish to teleport to."
 	var/destination
 
 /obj/effect/rune/teleport/New()
@@ -167,8 +175,8 @@
 		showOptions(user)
 	else if(user.loc == get_turf(src))
 		speak_incantation(user, "Sas[pick("'","`")]so c'arta forbici!")
-		if(do_after(user, 30))
-			user.visible_message(SPAN_WARNING("\The [user] disappears in a flash of red light!"), SPAN_WARNING("You feel as your body gets dragged into the dimension of Nar-Sie!"), "You hear a sickening crunch.")
+		if(do_after(user, 4 SECONDS, bonus_percentage = 25))
+			user.visible_message(SPAN_WARNING("\The [user] disappears in a flash of red light!"), SPAN_WARNING("You feel as your body gets dragged into the dimension of the Scarlet King!"), "You hear a sickening crunch.")
 			user.forceMove(src)
 			showOptions(user)
 			var/warning = 0
@@ -179,7 +187,7 @@
 					leaveRune(user)
 					return
 				if(warning == 0)
-					to_chat(user, SPAN_WARNING("You feel the immerse heat of the realm of Nar-Sie..."))
+					to_chat(user, SPAN_WARNING("You feel the immerse heat of the realm of the Scarlet King..."))
 					++warning
 				if(warning == 1 && user.getFireLoss() > 15)
 					to_chat(user, SPAN_WARNING("Your burns are getting worse. You should return to your realm soon..."))
@@ -217,10 +225,11 @@
 	if(user.loc != src)
 		return
 	user.dropInto(loc)
-	user.visible_message(SPAN_WARNING("\The [user] appears in a flash of red light!"), SPAN_WARNING("You feel as your body gets thrown out of the dimension of Nar-Sie!"), "You hear a pop.")
+	user.visible_message(SPAN_WARNING("\The [user] appears in a flash of red light!"), SPAN_WARNING("You feel as your body gets thrown out of the dimension of the Scarlet King!"), "You hear a pop.")
 
 /obj/effect/rune/tome
 	cultname = "summon tome"
+	hint = "When invoked, it summons a tome that allows you to draw runes faster and also allows you to draw some more high level runes."
 
 /obj/effect/rune/tome/cast(mob/living/user)
 	new /obj/item/book/tome(get_turf(src))
@@ -230,6 +239,7 @@
 
 /obj/effect/rune/wall
 	cultname = "wall"
+	hint = "When invoked projects a durable barrier on the same tile as the rune."
 
 	var/obj/effect/cultwall/wall = null
 
@@ -241,7 +251,7 @@
 	var/t
 	if(wall)
 		if(!wall.health_damaged())
-			to_chat(user, SPAN_NOTICE("The wall doesn't need mending."))
+			balloon_alert(user, "the wall is undamaged")
 			return
 		t = wall.get_damage_value()
 		wall.restore_health()
@@ -254,10 +264,10 @@
 	to_chat(user, SPAN_WARNING("Your blood flows into the rune, and you feel that the very space over the rune thickens."))
 
 /obj/effect/cultwall
-	name = "red mist"
-	desc = "A strange red mist emanating from a rune below it."
-	icon = 'icons/effects/effects.dmi'//TODO: better icon
-	icon_state = "smoke"
+	name = "strange barrier"
+	desc = "A strange barrier emanating from a rune below it."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "shield-old"
 	color = "#ff0000"
 	anchored = TRUE
 	density = TRUE
@@ -307,10 +317,12 @@
 
 /obj/effect/rune/ajorney
 	cultname = "astral journey"
+	hint = "Allows you to project yourself to the undead world, giving you the ability to see past walls."
 
 /obj/effect/rune/ajorney/cast(mob/living/user)
 	var/tmpkey = user.key
 	if(user.loc != get_turf(src))
+		balloon_alert(user, "must stand on rune!")
 		return
 	speak_incantation(user, "Fwe[pick("'","`")]sh mah erl nyag r'ya!")
 	user.visible_message(SPAN_WARNING("\The [user]'s eyes glow blue as \he freezes in place, absolutely motionless."), SPAN_WARNING("The shadow that is your spirit separates itself from your body. You are now in the realm beyond. While this is a great sight, being here strains your mind and body. Hurry..."), "You hear only complete silence for a moment.")
@@ -334,6 +346,7 @@
 
 /obj/effect/rune/defile
 	cultname = "defile"
+	hint = "When invoked the rune will corrupt the surrounding area. While painfully obvious, it gives a buff to making runes."
 
 /obj/effect/rune/defile/cast(mob/living/user)
 	speak_incantation(user, "Ia! Ia! Zasan therium viortia!")
@@ -347,6 +360,7 @@
 
 /obj/effect/rune/obscure
 	cultname = "obscure"
+	hint = "When invoked, this rune hides surrounding runes. They can still be used, but you just can't see them."
 
 /obj/effect/rune/obscure/cast(mob/living/user)
 	var/runecheck = 0
@@ -361,6 +375,7 @@
 
 /obj/effect/rune/reveal
 	cultname = "reveal"
+	hint = "When invoked, this rune shows surrounding hidden runes."
 
 /obj/effect/rune/reveal/cast(mob/living/user)
 	var/irunecheck = 0
@@ -378,6 +393,7 @@
 
 /obj/effect/rune/armor
 	cultname = "summon robes"
+	hint = "When invoked you will gain unholy robes, which give light armor and allow you to invoke more high-level runes."
 	strokes = 3
 
 /obj/effect/rune/armor/cast(mob/living/user)
@@ -417,10 +433,10 @@
 /obj/effect/rune/offering/cast(mob/living/user)
 	var/list/mob/living/cultists = get_cultists()
 	if(victim)
-		to_chat(user, SPAN_WARNING("You are already sarcificing \the [victim] on this rune."))
+		balloon_alert(user, "already sacrificing!")
 		return
 	if(cultists.len < 3)
-		to_chat(user, SPAN_WARNING("You need three cultists around this rune to make it work."))
+		balloon_alert(user, "3 cultists required!")
 		return fizzle(user)
 	var/turf/T = get_turf(src)
 	for(var/mob/living/M in T)
@@ -450,7 +466,7 @@
 		GLOB.cult.add_cultiness(CULTINESS_PER_SACRIFICE)
 		var/obj/item/device/soulstone/full/F = new(get_turf(src))
 		for(var/mob/M in cultists | get_cultists())
-			to_chat(M, SPAN_WARNING("The Geometer of Blood accepts this offering."))
+			to_chat(M, SPAN_WARNING("The Scarlet King accepts this offering."))
 		visible_message(SPAN_NOTICE("\The [F] appears over \the [src]."))
 		GLOB.cult.sacrificed += victim.mind
 		if(victim.mind == GLOB.cult.sacrifice_target)
@@ -486,6 +502,7 @@
 
 /obj/effect/rune/drain
 	cultname = "blood drain"
+	hint = "When invoked with a human on the same tile as the rune, in exchange for the victim's blood your wounds will mend and lost blood will be regained."
 	strokes = 3
 
 /obj/effect/rune/drain/cast(mob/living/user)
@@ -497,7 +514,7 @@
 	if(!victim)
 		return fizzle(user)
 	if(!victim.vessel.has_reagent(/datum/reagent/blood, 20))
-		to_chat(user, SPAN_WARNING("This body has no blood in it."))
+		balloon_alert(user, "no blood!")
 		return fizzle(user)
 	victim.vessel.remove_reagent(/datum/reagent/blood, 20)
 	admin_attack_log(user, victim, "Used a blood drain rune.", "Was victim of a blood drain rune.", "used a blood drain rune on")
@@ -572,7 +589,7 @@
 	return statuses
 
 /datum/reagent/hell_water
-	name = "Hell water"
+	name = "Unholy Water"
 	reagent_state = LIQUID
 	color = "#0050a1"
 	metabolism = REM * 0.1
@@ -593,6 +610,7 @@
 
 /obj/effect/rune/emp
 	cultname = "emp"
+	hint = "When invoked, the rune will cause an electromagnetic pulse."
 	strokes = 4
 
 /obj/effect/rune/emp/cast(mob/living/user)
@@ -602,11 +620,12 @@
 
 /obj/effect/rune/massdefile //Defile but with a huge range. Bring a buddy for this, you're hitting the floor.
 	cultname = "mass defile"
+	hint = "When invoked with 3 bretheren, it will defile a large amount of ground."
 
 /obj/effect/rune/massdefile/cast(mob/living/user)
 	var/list/mob/living/cultists = get_cultists()
 	if(cultists.len < 3)
-		to_chat(user, SPAN_WARNING("You need three cultists around this rune to make it work."))
+		balloon_alert(user, "3 cultists required!")
 		return fizzle(user)
 	else
 		for(var/mob/living/M in cultists)
@@ -623,15 +642,16 @@
 
 /obj/effect/rune/weapon
 	cultname = "summon weapon"
+	hint = "When invoked on defiled ground with your unholy apparel, this rune will summon a strong blade for you to defend the knowledge of the Scarlet King."
 	strokes = 4
 
 /obj/effect/rune/weapon/cast(mob/living/user)
 	if(!istype(user.get_equipped_item(slot_head), /obj/item/clothing/head/culthood) || !istype(user.get_equipped_item(slot_wear_suit), /obj/item/clothing/suit/cultrobes) || !istype(user.get_equipped_item(slot_shoes), /obj/item/clothing/shoes/cult))
-		to_chat(user, SPAN_WARNING("You need to be wearing your robes to use this rune."))
+		balloon_alert(user, "robes required!")
 		return fizzle(user)
 	var/turf/T = get_turf(src)
 	if(T.icon_state != "cult" && T.icon_state != "cult-narsie")
-		to_chat(user, SPAN_WARNING("This rune needs to be placed on the defiled ground."))
+		balloon_alert(user, "defiled ground required!")
 		return fizzle(user)
 	speak_incantation(user, "N'ath reth sh'yro eth d[pick("'","`")]raggathnor!")
 	user.put_in_hands(new /obj/item/melee/cultblade(user))
@@ -639,12 +659,13 @@
 
 /obj/effect/rune/shell
 	cultname = "summon shell"
+	hint = "When invoked on defiled ground with 10 sheets of steel on the same tile as it, the rune will create the shell of a construct."
 	strokes = 4
 
 /obj/effect/rune/shell/cast(mob/living/user)
 	var/turf/T = get_turf(src)
 	if(T.icon_state != "cult" && T.icon_state != "cult-narsie")
-		to_chat(user, SPAN_WARNING("This rune needs to be placed on the defiled ground."))
+		balloon_alert(user, "defiled ground required!")
 		return fizzle(user)
 
 	var/obj/item/stack/material/steel/target
@@ -654,7 +675,7 @@
 			break
 
 	if(!target)
-		to_chat(user, SPAN_WARNING("You need ten sheets of metal to fold them into a construct shell."))
+		balloon_alert(user, "10 sheets of metal required!")
 		return fizzle(user)
 
 	speak_incantation(user, "Da A[pick("'","`")]ig Osk!")
@@ -665,6 +686,7 @@
 
 /obj/effect/rune/confuse
 	cultname = "confuse"
+	hint = "When invoked, this rune will confuse the surrounding non-cultists, making their eyes blurry and weakening them."
 	strokes = 4
 
 /obj/effect/rune/confuse/cast(mob/living/user)
@@ -691,6 +713,7 @@
 
 /obj/effect/rune/revive
 	cultname = "revive"
+	hint = "Invoke with a soulshard with the essence of life and the dead body of a fellow cultist to fully revive them."
 	strokes = 4
 
 /obj/effect/rune/revive/cast(mob/living/user)
@@ -717,6 +740,7 @@
 
 /obj/effect/rune/blood_boil
 	cultname = "blood boil"
+	hint = "When invoked with 3 cultists nearby, you'll deal damage to non-cultists able to view the rune."
 	strokes = 4
 
 /obj/effect/rune/blood_boil/cast(mob/living/user)
@@ -754,7 +778,7 @@
 	cultname = "tear reality"
 	var/the_end_comes = 0
 	var/the_time_has_come = 300
-	var/obj/singularity/narsie/large/HECOMES = null
+	var/obj/singularity/scarletking/large/HECOMES = null
 	strokes = 9
 
 /obj/effect/rune/tearreality/cast(mob/living/user)
@@ -769,10 +793,10 @@
 	for(var/mob/living/M in cultists)
 		M.say("Tok-lyr rqa'nap g[pick("'","`")]lt-ulotf!")
 		to_chat(M, SPAN_OCCULT("You are staring to tear the reality to bring Him back... stay around the rune!"))
-	log_and_message_admins_many(cultists, "started summoning Nar-sie.")
+	log_and_message_admins_many(cultists, "started summoning the Scarlet King.")
 
 	var/area/A = get_area(src)
-	command_announcement.Announce("High levels of bluespace interference detected at \the [A]. Suspected wormhole forming. Investigate it immediately.")
+	command_announcement.Announce("Extreme levels of Akiva Radiation detected at \the [A]. Suspected extradimensional Apex-Tier Pluripotent Entity forming. Investigate immediately.", "[station_name()] Scanner Array")
 	while(cultists.len > 4 || the_end_comes)
 		cultists = get_cultists()
 		if(cultists.len > 8)
@@ -793,9 +817,9 @@
 		sleep(10)
 
 	if(the_end_comes >= the_time_has_come)
-		HECOMES = new /obj/singularity/narsie/large(get_turf(src))
+		HECOMES = new /obj/singularity/scarletking/large(get_turf(src))
 	else
-		command_announcement.Announce("Bluespace anomaly has ceased.")
+		command_announcement.Announce("Apex-Tier Pluripotent Entity formation has been halted, all is well.", "[station_name()] Scanner Array")
 		qdel(src)
 
 /obj/effect/rune/tearreality/attack_hand(mob/living/user)
@@ -829,6 +853,7 @@
 
 /obj/effect/rune/imbue
 	cultname = "otherwordly abomination that shouldn't exist and that you should report to your local god as soon as you see it, along with the instructions for making this"
+	hint = "Put some paper on the same tile as the rune and then invoke to be able to use this."
 	var/papertype
 
 /obj/effect/rune/imbue/cast(mob/living/user)
@@ -842,7 +867,7 @@
 			tainted = 1
 	if(!target)
 		if(tainted)
-			to_chat(user, SPAN_WARNING("The blank is tainted. It is unsuitable."))
+			balloon_alert(user, "unsuitable!")
 		return fizzle(user)
 	speak_incantation(user, "H'drak v[pick("'","`")]loso, mir'kanas verbot!")
 	visible_message(SPAN_WARNING("The rune forms into an arcane image on the paper."))
@@ -857,3 +882,11 @@
 /obj/effect/rune/imbue/emp
 	cultname = "destroy technology imbue"
 	papertype = /obj/item/paper/talisman/emp
+
+/obj/effect/rune/imbue/blindness
+	cultname = "blindness imbue"
+	papertype = /obj/item/paper/talisman/blindness
+
+/obj/effect/rune/imbue/shackles
+	cultname = "shadow shackles imbue"
+	papertype = /obj/item/paper/talisman/shackles

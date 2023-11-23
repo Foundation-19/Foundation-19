@@ -59,9 +59,9 @@
 	var/tension = 0                         // Current draw on the bow.
 	var/max_tension = 3                     // Highest possible tension.
 	var/release_speed = 10                  // Speed per unit of tension.
-	var/obj/item/cell/cell = null    // Used for firing superheated rods.
+	var/obj/item/cell/cell = null    		// Used for firing superheated rods.
 	var/current_user                        // Used to check if the crossbow has changed hands since being drawn.
-	var/draw_time = 20						// Time needed to draw the bow back by one "tension"
+	var/draw_time = 2.5 SECONDS				// Time needed to draw the bow back by one "tension"
 
 /obj/item/gun/launcher/crossbow/toggle_safety(mob/user)
 	to_chat(user, SPAN_WARNING("There's no safety on \the [src]!"))
@@ -110,7 +110,7 @@
 	tension = 1
 
 	while(bolt && tension && loc == current_user)
-		if(!do_after(user, draw_time, src)) //crossbow strings don't just magically pull back on their own.
+		if(!do_after(user, draw_time, src, bonus_percentage = 25)) //crossbow strings don't just magically pull back on their own.
 			user.visible_message("[usr] stops drawing and relaxes the string of [src].",SPAN_WARNING("You stop drawing back and relax the string of [src]."))
 			tension = 0
 			update_icon()

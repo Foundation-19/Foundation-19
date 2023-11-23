@@ -78,7 +78,7 @@
 
 	user.visible_message(SPAN_DANGER("\The [user] is attempting to put [cuff_type] on \the [H]!"))
 
-	if(!do_after(user,30, target))
+	if(!do_after(user, 4 SECONDS, target, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25))
 		return 0
 
 	if(!target.has_danger_grab(user)) // victim may have resisted out of the grab in the meantime
@@ -170,3 +170,15 @@ var/last_chew = 0
 	breakouttime = 200
 	cuff_type = "duct tape"
 	health_max = 50
+
+/obj/item/handcuffs/shadowshackle
+	name = "shadow shackles"
+	desc = "A shadowy force meant to hold your hands together."
+	breakouttime = 100
+	cuff_sound = 'sounds/weapons/cablecuff.ogg'
+	cuff_type = "shadow restraints"
+	health_max = 0
+
+/obj/item/handcuffs/shadowshackle/dropped(mob/user)
+	. = ..()
+	qdel(src)

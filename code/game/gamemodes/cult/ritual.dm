@@ -19,7 +19,7 @@
 	if(!iscultist(user))
 		to_chat(user, "An old, dusty tome with frayed edges and a sinister looking cover.")
 	else
-		to_chat(user, "The scriptures of Nar-Sie, The One Who Sees, The Geometer of Blood. Contains the details of every ritual his followers could think of. Most of these are useless, though.")
+		to_chat(user, "The scriptures of the Scarlet King, the Crimson Khan. Contains the details of every ritual His followers could think of. Most of these are useless, though.")
 
 /obj/item/book/tome/attack(mob/living/M, mob/living/user)
 	if (user.a_intent != I_HELP || user.zone_sel.selecting != BP_EYES)
@@ -74,36 +74,36 @@
 	if(has_tome)
 		if(has_robes && cult_ground)
 			self = "Feeling greatly empowered, you slice open your finger and make a rune on the engraved floor. It shifts when your blood touches it, and starts vibrating as you begin to chant the ritual that binds your life essence with the dark arcane energies flowing through the surrounding world."
-			timer = 10
+			timer = 1 SECOND
 			damage = 0.2
 		else if(has_robes)
 			self = "Feeling empowered in your robes, you slice open your finger and start drawing a rune, chanting the ritual that binds your life essence with the dark arcane energies flowing through the surrounding world."
-			timer = 30
+			timer = 4 SECONDS
 			damage = 0.8
 		else if(cult_ground)
 			self = "You slice open your finger and slide it over the engraved floor, watching it shift when your blood touches it. It vibrates when you begin to chant the ritual that binds your life essence with the dark arcane energies flowing through the surrounding world." // Sadly, you don't have access to the bell nor the candelbarum
-			timer = 20
+			timer = 2.5 SECONDS
 			damage = 0.8
 		else
 			self = "You slice open one of your fingers and begin drawing a rune on the floor whilst chanting the ritual that binds your life essence with the dark arcane energies flowing through the surrounding world."
-			timer = 40
+			timer = 5 SECONDS
 	else
 		self = "Working without your tome, you try to draw the rune from your memory"
 		if(has_robes && cult_ground)
 			self += ". You feel that you remember it perfectly, finishing it with a few bold strokes. The engraved floor shifts under your touch, and vibrates once you begin your chants."
-			timer = 30
+			timer = 4 SECONDS
 		else if(has_robes)
 			self += ". You don't remember it well, but you feel strangely empowered. You begin chanting, the unknown words slipping into your mind from beyond."
-			timer = 50
+			timer = 6 SECONDS
 		else if(cult_ground)
 			self += ", watching as the floor shifts under your touch, correcting the rune. You begin your chants, and the ground starts to vibrate."
-			timer = 40
+			timer = 5 SECONDS
 		else
 			self += ", having to cut your finger two more times before you make it resemble the pattern in your memory. It still looks a little off."
-			timer = 80
+			timer = 10 SECONDS
 			damage = 2
 	visible_message(SPAN_WARNING("\The [src] slices open a finger and begins to chant and paint symbols on the floor."), SPAN_NOTICE("[self]"), "You hear chanting.")
-	if(do_after(src, timer))
+	if(do_after(src, timer, bonus_percentage = 25))
 		remove_blood_simple(cost * damage)
 		if(locate(/obj/effect/rune) in T)
 			return
@@ -162,6 +162,8 @@ var/list/Tier1Runes = list(
 	/mob/proc/defile_rune,
 	/mob/proc/stun_imbue,
 	/mob/proc/emp_imbue,
+	/mob/proc/blind_imbue,
+	/mob/proc/shackle_imbue,
 	/mob/proc/cult_communicate,
 	/mob/proc/obscure,
 	/mob/proc/reveal
@@ -302,6 +304,18 @@ var/list/Tier4Runes = list(
 	set name = "Imbue: EMP"
 
 	make_rune(/obj/effect/rune/imbue/emp)
+
+/mob/proc/blind_imbue()
+	set category = "Cult Magic"
+	set name = "Imbue: Blindness"
+
+	make_rune(/obj/effect/rune/imbue/blindness, cost = 10, tome_required = 1)
+
+/mob/proc/shackle_imbue()
+	set category = "Cult Magic"
+	set name = "Imbue: Shadow Shackles"
+
+	make_rune(/obj/effect/rune/imbue/shackles, cost = 20, tome_required = 1)
 
 /mob/proc/cult_communicate()
 	set category = "Cult Magic"

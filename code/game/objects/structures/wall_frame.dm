@@ -81,7 +81,7 @@
 				return
 		playsound(src.loc, 'sounds/items/Ratchet.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now disassembling the low wall..."))
-		if(do_after(user, 40,src))
+		if(do_after(user, 6 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
 			to_chat(user, SPAN_NOTICE("You dissasembled the low wall!"))
 			dismantle()
 		return
@@ -92,7 +92,7 @@
 			return
 		playsound(src.loc, 'sounds/items/Welder.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("Now slicing through the low wall..."))
-		if(do_after(user, 20,src))
+		if(do_after(user, 3 SECONDS, src, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg'))
 			to_chat(user, SPAN_WARNING("You have sliced through the low wall!"))
 			dismantle()
 		return
