@@ -124,7 +124,7 @@
 	if (!T)
 		return "The spawn location doesn't seem to exist. Please contact an admin via adminhelp if this error persists."
 
-	if(istype(T, /turf/space)) // Space tiles
+	if(isspaceturf(T)) // Space tiles
 		return "Spawn location is open to space."
 	var/datum/gas_mixture/air = T.return_air()
 	if(!air)

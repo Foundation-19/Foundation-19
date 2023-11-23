@@ -237,7 +237,7 @@
 
 /datum/reagent/lithium/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien != IS_DIONA)
-		if(istype(M.loc, /turf/space))
+		if(isspaceturf(M.loc))
 			M.SelfMove(pick(GLOB.cardinal))
 		if(prob(5))
 			M.emote(pick("twitch", "drool", "moan"))
@@ -252,7 +252,7 @@
 
 /datum/reagent/mercury/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien != IS_DIONA)
-		if(istype(M.loc, /turf/space))
+		if(isspaceturf(M.loc))
 			M.SelfMove(pick(GLOB.cardinal))
 		if(prob(5))
 			M.emote(pick("twitch", "drool", "moan"))

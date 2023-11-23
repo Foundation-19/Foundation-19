@@ -141,7 +141,7 @@ var/global/list/narsie_list = list()
 	return 1
 
 /obj/singularity/narsie/proc/narsiefloor(turf/T)//leaving "footprints"
-	if(!(istype(T, /turf/simulated/wall/cult)||isspaceturf(T)))
+	if(!(istype(T, /turf/simulated/wall/cult) || isspaceturf(T)))
 		if(T.icon_state != "cult-narsie")
 			T.desc = "Something that goes beyond your understanding went this way."
 			T.icon = 'icons/turf/flooring/cult.dmi'
