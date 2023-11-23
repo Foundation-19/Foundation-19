@@ -47,3 +47,13 @@
       item to random mob in vicinity.
   - tweak: The late-join menu now has colored background.
   - bugfix: Ghosts can use ctrl-alt click to point at things.
+2023-10-27:
+  EgorDinamit:
+  - tweak: Players can now succumb if their heart stops(no pulse), dying on the spot,
+      allowing them to skip the grueling time of observing the black screen as they
+      die for the next 10 minutes.
+  - bugfix: All effects that were invisible should work now.
+  cheesePizza2:
+  - rscdel: Removed botany skill. All related skill checks have been removed.
+  - rscdel: Removed piloting skill. Mech piloting checks have been transferred to
+      weapons skill, and other references have been removed.

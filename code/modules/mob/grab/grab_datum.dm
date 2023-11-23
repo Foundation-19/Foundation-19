@@ -40,8 +40,8 @@
 	var/icon
 	var/icon_state
 
-	var/upgrade_cooldown = 40
-	var/action_cooldown = 40
+	var/upgrade_cooldown = 4 SECONDS
+	var/action_cooldown = 4 SECONDS
 
 	var/can_downgrade_on_resist = 1
 	var/list/break_chance_table = list(100)

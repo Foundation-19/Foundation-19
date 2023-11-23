@@ -44,7 +44,7 @@
 	else
 		user.visible_message(SPAN_NOTICE("\The [user] begins pushing \the [patient] into \the [src]."))
 
-	if(!do_after(user, 3 SECONDS, src))
+	if(!do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 		return FALSE
 
 	if(!user.Adjacent(src) || !(self_drop || user.Adjacent(patient)))

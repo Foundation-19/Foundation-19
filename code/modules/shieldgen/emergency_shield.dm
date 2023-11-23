@@ -294,8 +294,8 @@
 	else if(isCoil(W) && malfunction && is_open)
 		var/obj/item/stack/cable_coil/coil = W
 		to_chat(user, SPAN_NOTICE("You begin to replace the wires."))
-		//if(do_after(user, min(60, round( ((maxhealth/health)*10)+(malfunction*10) ))) //Take longer to repair heavier damage
-		if(do_after(user, 30,src))
+		//Take longer to repair heavier damage
+		if(do_after(user, round((max_health - health) + (malfunction * 50)), src, bonus_percentage = 25))
 			if (coil.use(1))
 				health = max_health
 				malfunction = 0

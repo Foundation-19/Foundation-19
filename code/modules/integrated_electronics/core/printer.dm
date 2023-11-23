@@ -110,7 +110,7 @@
 					return
 			to_chat(user, SPAN_NOTICE("You begin recycling [EA]'s components..."))
 			playsound(src, 'sounds/items/electronic_assembly_emptying.ogg', 50, TRUE)
-			if(!do_after(user, 30, src) || recycling) //short channel so you don't accidentally start emptying out a complex assembly
+			if(!do_after(user, 4 SECONDS, src, bonus_percentage = 25) || recycling) //short channel so you don't accidentally start emptying out a complex assembly
 				return
 			recycling = TRUE
 			for(var/V in EA.assembly_components)

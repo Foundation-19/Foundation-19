@@ -172,7 +172,7 @@
 
 /obj/item/clothing/shoes/cult
 	name = "boots"
-	desc = "A pair of boots worn by the followers of Nar-Sie."
+	desc = "A pair of boots worn by the followers of the Scarlet King."
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	icon_state = "cult"
 	item_state = "cult"

@@ -281,7 +281,7 @@
 			return FALSE
 
 		visible_message(SPAN_NOTICE("[src] starts climbing onto \the [A]!"), SPAN_NOTICE("You start climbing onto \the [A]!"))
-		if(do_after(src, 50, A))
+		if(do_after(src, 7 SECONDS, A, bonus_percentage = 25))
 			visible_message(SPAN_NOTICE("[src] climbs onto \the [A]!"), SPAN_NOTICE("You climb onto \the [A]!"))
 			src.Move(T)
 		else

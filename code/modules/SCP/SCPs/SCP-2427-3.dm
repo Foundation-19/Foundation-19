@@ -346,14 +346,14 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		to_chat(src, SPAN_WARNING("You cannot open blast doors in your containment zone unless enraged."))
 		return
 
-	var/open_time = istype(A, /obj/machinery/door/blast) ? 8 SECONDS : 3 SECONDS
+	var/open_time = istype(A, /obj/machinery/door/blast) ? 12 SECONDS : 4 SECONDS
 
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
 		if(AR.locked)
-			open_time += 2 SECONDS
+			open_time += 3 SECONDS
 		if(AR.welded)
-			open_time += 2 SECONDS
+			open_time += 3 SECONDS
 		if(AR.secured_wires)
 			open_time += 2 SECONDS
 
@@ -365,7 +365,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
 
-	if(!do_after(src, open_time, A))
+	if(!do_after(src, open_time, A, bonus_percentage = 25))
 		return
 
 	if(istype(A, /obj/machinery/door/blast))

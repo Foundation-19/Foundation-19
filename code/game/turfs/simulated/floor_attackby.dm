@@ -31,7 +31,7 @@
 						SPAN_NOTICE("You begin prying up \the [flooring.descriptor] with \the [C].")
 					)
 					playsound(src, 'sounds/items/Crowbar.ogg', 80, 1)
-					if (do_after(user, flooring.remove_timer, src))
+					if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg'))
 						user.visible_message(
 							SPAN_NOTICE("\The [user] pries up \the [flooring.descriptor] with \the [C]!"),
 							SPAN_NOTICE("You pry up \the [flooring.descriptor] with \the [C].")
@@ -55,7 +55,7 @@
 					SPAN_NOTICE("You begin unscrewing \the [flooring.descriptor] with \the [C].")
 				)
 				playsound(src, 'sounds/items/Screwdriver.ogg', 80, 1)
-				if (do_after(user, flooring.remove_timer, src))
+				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Screwdriver.ogg'))
 					user.visible_message(
 						SPAN_NOTICE("\The [user] unscrews \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You unscrew \the [flooring.descriptor] with \the [C].")
@@ -75,7 +75,7 @@
 					SPAN_NOTICE("You begin unwrenching \the [flooring.descriptor] with \the [C].")
 				)
 				playsound(src, 'sounds/items/Ratchet.ogg', 80, 1)
-				if (do_after(user, flooring.remove_timer, src))
+				if (do_after(user, flooring.remove_timer, src, bonus_percentage = 25, focus_sound = 'sounds/items/Ratchet.ogg'))
 					user.visible_message(
 						SPAN_NOTICE("\The [user] unwrench \the [flooring.descriptor] with \the [C]!"),
 						SPAN_NOTICE("You unwrench \the [flooring.descriptor] with \the [C].")
@@ -128,7 +128,7 @@
 				to_chat(user, SPAN_WARNING("You require at least [use_flooring.build_cost] [S.name] to complete the [use_flooring.descriptor]."))
 				return
 			// Stay still and focus...
-			if(use_flooring.build_time && !do_after(user, use_flooring.build_time, src))
+			if(use_flooring.build_time && !do_after(user, use_flooring.build_time, src, bonus_percentage = 25))
 				return
 			if(flooring || !S || !user || !use_flooring)
 				return
@@ -144,7 +144,7 @@
 				var/turf/T = GetBelow(src)
 				if(T)
 					T.visible_message(SPAN_WARNING("The ceiling above looks as if it's being pried off."))
-				if(do_after(user, 10 SECONDS))
+				if(do_after(user, 12 SECONDS, bonus_percentage = 25, focus_sound = 'sounds/items/Crowbar.ogg'))
 					if(!istype(src, /turf/simulated/floor))
 						return
 					if(!broken && !burnt || !(is_plating()))
@@ -173,7 +173,7 @@
 					if(welder.remove_fuel(0, user))
 						playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 						visible_message(SPAN_NOTICE("[user] has started melting the plating's reinforcements!"))
-						if(do_after(user, 5 SECONDS) && welder.isOn() && welder_melt())
+						if(do_after(user, 6 SECONDS, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg') && welder.isOn() && welder_melt())
 							visible_message(SPAN_WARNING("[user] has melted the plating's reinforcements! It should be possible to pry it off."))
 							playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 					return
@@ -183,7 +183,7 @@
 				return ..()
 			playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 			visible_message(SPAN_NOTICE("[user] has started slicing through the plating's reinforcements!"))
-			if(do_after(user, 3 SECONDS) && welder_melt())
+			if(do_after(user, 4 SECONDS, bonus_percentage = 25, focus_sound = 'sounds/items/Welder.ogg') && welder_melt())
 				visible_message(SPAN_WARNING("[user] has sliced through the plating's reinforcements! It should be possible to pry it off."))
 				playsound(src, 'sounds/items/Welder.ogg', 80, 1)
 

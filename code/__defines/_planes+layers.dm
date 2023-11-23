@@ -200,6 +200,8 @@ What is the naming convention for planes or layers?
 
 #define HUD_PLANE                    11
 	#define UNDER_HUD_LAYER              0
+	#define HUD_PROGRESS_TRAP_LAYER      0.49
+	#define HUD_PROGRESS_BOOSTER_LAYER   0.5
 	#define HUD_BASE_LAYER               1
 	#define HUD_CLICKABLE_LAYER          2
 	#define HUD_ITEM_LAYER               3

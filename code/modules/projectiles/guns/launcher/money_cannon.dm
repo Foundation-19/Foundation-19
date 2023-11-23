@@ -176,7 +176,7 @@
 	var/mob/living/carbon/human/M = user
 	M.visible_message(SPAN_DANGER("[user] sticks [src] in their mouth, ready to pull the trigger..."))
 
-	if(!do_after(user, 40, do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
+	if(!do_after(user, 4 SECONDS))
 		M.visible_message(SPAN_NOTICE("[user] decided life was worth living."))
 		return
 

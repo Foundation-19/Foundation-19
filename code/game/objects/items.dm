@@ -210,7 +210,7 @@
 	if (!user) return
 	if (anchored)
 		return ..()
-	if (hasorgans(user))
+	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
 		if (user.hand)
@@ -246,7 +246,7 @@
 
 	if(user.put_in_active_hand(src))
 		if (isturf(old_loc))
-			var/obj/effect/temporary/item_pickup_ghost/ghost = new(old_loc, src)
+			var/obj/effect/temp_visual/temporary/item_pickup_ghost/ghost = new(old_loc, src)
 			ghost.animate_towards(user)
 		if(randpixel)
 			pixel_x = rand(-randpixel, randpixel)

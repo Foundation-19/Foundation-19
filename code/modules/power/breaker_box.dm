@@ -51,7 +51,7 @@
 
 	busy = 1
 	to_chat(user, SPAN_GOOD("Updating power settings.."))
-	if(do_after(user, 50, src))
+	if(do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 		set_state(!on)
 		to_chat(user, SPAN_GOOD("Update Completed. New setting:[on ? "on": "off"]"))
 		update_locked = 1
@@ -73,7 +73,7 @@
 	for(var/mob/O in viewers(user))
 		O.show_message(text(SPAN_WARNING("\The [user] started reprogramming \the [src]!")), 1)
 
-	if(do_after(user, 50,src))
+	if(do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 		set_state(!on)
 		user.visible_message(\
 		SPAN_NOTICE("[user.name] [on ? "enabled" : "disabled"] the breaker box!"),\
