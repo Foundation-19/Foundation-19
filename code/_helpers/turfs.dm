@@ -91,10 +91,10 @@
 */
 
 /proc/is_space_turf(turf/T)
-	return istype(T, /turf/space)
+	return isspaceturf(T)
 
 /proc/is_not_space_turf(turf/T)
-	return !is_space_turf(T)
+	return !isspaceturf(T)
 
 /proc/is_open_space(turf/T)
 	return isopenspace(T)
