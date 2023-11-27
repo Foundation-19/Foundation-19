@@ -2179,18 +2179,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"fq" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/sign/directions/evac{
-	pixel_x = -32;
-	pixel_y = -20
-	},
-/turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
 "fr" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -2580,7 +2568,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
 "gE" = (
-/obj/effect/floor_decal/corner/orange/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "gG" = (
@@ -4719,6 +4707,13 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"mE" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/sign/directions/bridge{
+	dir = 1
+	},
+/turf/simulated/wall/titanium,
+/area/site53/medical/isolation)
 "mI" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface)
@@ -4788,7 +4783,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/orange/mono,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mT" = (
@@ -6062,6 +6057,14 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
+"ui" = (
+/obj/structure/railing/mapped,
+/obj/structure/sign/directions/heli{
+	pixel_x = 32;
+	pixel_y = -20
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "uk" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -6477,6 +6480,14 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"vP" = (
+/obj/structure/sign/directions/heli{
+	pixel_x = 32;
+	pixel_y = -20;
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "vY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -6590,19 +6601,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
-"wV" = (
-/obj/structure/sign/directions/evac{
-	pixel_x = -32;
-	pixel_y = -20
-	},
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
 "wW" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
@@ -7506,7 +7504,8 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/sign/directions/evac{
 	pixel_x = 32;
-	pixel_y = -20
+	pixel_y = -20;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroomstairs)
@@ -8457,14 +8456,6 @@
 /obj/item/stool,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"Px" = (
-/obj/structure/sign/directions/evac{
-	dir = 4;
-	pixel_x = 32;
-	pixel_y = -20
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
 "PX" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -8681,13 +8672,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
-"RW" = (
-/obj/structure/sign/directions/evac{
-	dir = 4;
-	pixel_y = -20
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
 "RX" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/effect/wallframe_spawn/reinforced,
@@ -9259,6 +9243,14 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"XE" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/sign/directions/heli{
+	pixel_x = 32;
+	pixel_y = -20
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/maincontrolroomstairs)
 "XH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -38683,7 +38675,7 @@ jg
 oB
 nE
 nE
-nP
+ui
 bn
 cc
 cc
@@ -39168,12 +39160,12 @@ aI
 tO
 uV
 pG
-ay
+XE
 pG
 ay
 ay
 ay
-ay
+XE
 af
 WK
 kC
@@ -39197,7 +39189,7 @@ jg
 oE
 se
 gr
-wV
+gr
 gr
 gr
 gr
@@ -39682,12 +39674,12 @@ aj
 aj
 ar
 qf
-fq
+qf
 aw
 qf
 qf
 qf
-fq
+qf
 vp
 lf
 lf
@@ -39999,7 +39991,7 @@ sE
 sE
 oX
 nE
-nE
+vP
 oG
 rm
 dA
@@ -40256,7 +40248,7 @@ sE
 sE
 oX
 nE
-RW
+nE
 bt
 rm
 dA
@@ -41283,7 +41275,7 @@ nE
 nE
 nE
 nE
-Px
+vP
 nE
 qR
 rm
@@ -42209,7 +42201,7 @@ NE
 lu
 lu
 lu
-lu
+mE
 mM
 mL
 dt
