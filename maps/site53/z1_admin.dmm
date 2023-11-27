@@ -8913,7 +8913,7 @@
 	dir = 1
 	},
 /turf/unsimulated/floor/reinforced,
-/area/centcom)
+/area/supply/dock)
 "UG" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
