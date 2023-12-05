@@ -142,13 +142,9 @@
 				user_outfit = child
 				break
 
-		if(user_rank.sort_order >= 11) //user is an officer
-			if(user_outfit.children[1]) // officer outfit exists
+		if(department & COM) //user is in command of their department
+			if(user_outfit.children[1])// Command outfit exists
 				user_outfit = user_outfit.children[1]
-
-				if(department & COM) //user is in command of their department
-					if(user_outfit.children[1])// Command outfit exists
-						user_outfit = user_outfit.children[1]
 
 	return populate_uniforms(user_outfit) //Generate uniform lists.
 

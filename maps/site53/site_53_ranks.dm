@@ -38,22 +38,15 @@
 
 /datum/mil_rank/civ/classa
 	name = "Class-A"
-	sort_order = 5
 
 /datum/mil_rank/civ/classb
 	name = "Class-B"
-	sort_order = 4
 
 /datum/mil_rank/civ/classc
 	name = "Class-C"
-	sort_order = 3
-
-// class E is kind of above class D, so we swap their sort order
 
 /datum/mil_rank/civ/classd
 	name = "Class-D"
-	sort_order = 1
 
 /datum/mil_rank/civ/classe
 	name = "Class-E"
-	sort_order = 2

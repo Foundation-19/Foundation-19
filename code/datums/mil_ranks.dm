@@ -145,4 +145,3 @@ var/datum/mil_branches/mil_branches = new()
  */
 /datum/mil_rank
 	var/name = "Unknown"
-	var/sort_order = 0 // A numerical equivalent of the rank used to indicate its order when compared to other datums: eg e-1 = 1, o-1 = 11
