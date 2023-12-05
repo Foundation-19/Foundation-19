@@ -192,11 +192,9 @@
 	return
 
 /obj/item/card/id/proc/get_display_name()
-	. = registered_name
+	. = "[formal_name_prefix][registered_name][formal_name_suffix]"
 	if(military_rank)
-		. ="[military_rank.name] [.][formal_name_suffix]"
-	else if(formal_name_prefix || formal_name_suffix)
-		. = "[formal_name_prefix][.][formal_name_suffix]"
+		. ="[military_rank.name] [.]"
 	if(assignment)
 		. += ", [assignment]"
 

@@ -88,8 +88,7 @@ var/datum/mil_branches/mil_branches = new()
 
 	/// Associative list of full rank names to the corresponding /datum/mil_rank objects. These are all ranks available to the branch.
 	var/list/ranks
-
-	/// Ranks which the player can choose for spawning.
+	/// Associative list of full rank names to the corresponding /datum/mil_rank objects. These are ranks players can choose for spawning.
 	var/list/spawn_ranks
 
 	/// A List of paths used to initialize the ranks list.
