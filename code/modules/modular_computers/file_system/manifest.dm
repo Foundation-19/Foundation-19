@@ -48,7 +48,7 @@
 			var/datum/mil_rank/rank_obj = mil_branches.get_rank(CR.get_branch(), CR.get_rank())
 
 			if(branch_obj && rank_obj)
-				mil_ranks[name] = "<abbr title=\"[rank_obj.name], [branch_obj.name]\">[rank_obj.name_short]</abbr> "
+				mil_ranks[name] = "<abbr title=\"[rank_obj.name], [branch_obj.name]\">[rank_obj.name]</abbr> "
 
 		if(OOC)
 			var/active = 0

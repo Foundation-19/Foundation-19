@@ -14,8 +14,7 @@
  */
 
 /datum/mil_branch/civilian
-	name = "Civilian"
-	name_short = "civ"
+	name = "Foundation Personnel"
 
 	rank_types = list(
 		/datum/mil_rank/civ/classa,
@@ -33,37 +32,28 @@
 	)
 
 /*
- *  Civilians
- *  =========
+ *  Ranks
+ *  =====
  */
 
-/datum/mil_rank/civ/civ
-	name = "Civilian"
-	name_short = null
-
 /datum/mil_rank/civ/classa
-	name = "Class A Foundation Personnel"
-	name_short = "Class A"
+	name = "Class-A"
 	sort_order = 5
 
 /datum/mil_rank/civ/classb
-	name = "Class B Foundation Personnel"
-	name_short = "Class B"
+	name = "Class-B"
 	sort_order = 4
 
 /datum/mil_rank/civ/classc
-	name = "Class C Foundation Personnel"
-	name_short = "Class C"
+	name = "Class-C"
 	sort_order = 3
 
 // class E is kind of above class D, so we swap their sort order
 
 /datum/mil_rank/civ/classd
-	name = "Class D Foundation Personnel"
-	name_short = "Class D"
+	name = "Class-D"
 	sort_order = 1
 
 /datum/mil_rank/civ/classe
-	name = "Class E Foundation Personnel"
-	name_short = "Class E"
+	name = "Class-E"
 	sort_order = 2

@@ -84,7 +84,6 @@ var/datum/mil_branches/mil_branches = new()
  */
 /datum/mil_branch
 	var/name = "Unknown"         // Longer name for branch, eg "Sol Central Marine Corps"
-	var/name_short       		// Abbreviation of the name, eg "SCMC"
 
 
 
@@ -146,5 +145,4 @@ var/datum/mil_branches/mil_branches = new()
  */
 /datum/mil_rank
 	var/name = "Unknown"
-	var/name_short // Abbreviation of the name. Should be null if the rank doesn't usually serve as a prefix to the individual's name.
 	var/sort_order = 0 // A numerical equivalent of the rank used to indicate its order when compared to other datums: eg e-1 = 1, o-1 = 11
