@@ -83,21 +83,23 @@ var/datum/mil_branches/mil_branches = new()
  *  A single military branch, such as Fleet or Marines
  */
 /datum/mil_branch
-	var/name = "Unknown"         // Longer name for branch, eg "Sol Central Marine Corps"
+	/// The name of this mil_branch
+	var/name = "Unknown"
 
+	/// Associative list of full rank names to the corresponding /datum/mil_rank objects. These are all ranks available to the branch.
+	var/list/ranks
 
+	/// Ranks which the player can choose for spawning.
+	var/list/spawn_ranks
 
-	var/list/ranks // Associative list of full rank names to the corresponding
-	               // /datum/mil_rank objects. These are all ranks available to the branch.
-
-	var/list/spawn_ranks_            // Ranks which the player can choose for spawning, not including species restrictions
-
-	var/list/rank_types       // list of paths used to init the ranks list
-	var/list/spawn_rank_types // list of paths used to init the spawn_ranks list. Subset of rank_types
+	/// A List of paths used to initialize the ranks list.
+	var/list/rank_types
+	/// A list of paths used to initialize the spawn_ranks list. Should be a subset of rank_types.
+	var/list/spawn_rank_types
 
 /datum/mil_branch/New()
 	ranks = list()
-	spawn_ranks_ = list()
+	spawn_ranks = list()
 
 	for(var/rank_path in rank_types)
 		if(!ispath(rank_path, /datum/mil_rank))
@@ -107,10 +109,10 @@ var/datum/mil_branches/mil_branches = new()
 		ranks[rank.name] = rank
 
 		if(rank_path in spawn_rank_types)
-			spawn_ranks_[rank.name] = rank
+			spawn_ranks[rank.name] = rank
 
 /datum/mil_branch/proc/spawn_ranks(datum/species/S)
-	return spawn_ranks_.Copy()
+	return spawn_ranks.Copy()
 
 
 /**
@@ -144,4 +146,5 @@ var/datum/mil_branches/mil_branches = new()
  *  so this is  "mil_rank" to distinguish it.
  */
 /datum/mil_rank
+	/// The name of this mil_rank
 	var/name = "Unknown"
