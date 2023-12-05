@@ -46,12 +46,9 @@
 	var/goals_count
 
 	var/defer_roundstart_spawn = FALSE // If true, the job will be put off until all other jobs have been populated.
-	var/list/species_branch_rank_cache_ = list()
 	var/list/psi_faculties                // Starting psi faculties, if any.
 	var/psi_latency_chance = 2            // Chance of an additional psi latency, if any.
 	var/give_psionic_implant_on_join = FALSE // If psionic, will be implanted for control.
-
-	var/use_species_whitelist // If set, restricts the job to players with the given species whitelist. This does NOT restrict characters joining as the job to the species itself.
 
 	var/required_language = LANGUAGE_ENGLISH
 
@@ -200,11 +197,6 @@
 /datum/job/proc/is_restricted(datum/preferences/prefs, feedback)
 	var/datum/species/S
 
-	if(!is_species_whitelist_allowed(prefs.client, use_species_whitelist))
-		S = all_species[use_species_whitelist]
-		to_chat(feedback, SPAN_CLASS("boldannounce","\An [S] species whitelist is required for [title]."))
-		return TRUE
-
 	if(!isnull(allowed_branches) && (!prefs.branches[title] || !is_branch_allowed(prefs.branches[title])))
 		to_chat(feedback, SPAN_CLASS("boldannounce","Wrong branch of service for [title]. Valid branches are: [get_branches()]."))
 		return TRUE
@@ -258,22 +250,9 @@
 		return TRUE
 	return LAZYLEN(get_branch_rank(S))
 
-/datum/job/proc/is_species_whitelist_allowed(client/C)
-	if (isnull(use_species_whitelist))
-		return TRUE
-	if (!C?.mob)
-		log_debug("Failed to find a valid client/mob for whitelist checking - Job `[src]` - Client `[C]` - Mob `[C?.mob]`")
-		return FALSE
-	return is_species_whitelisted(C.mob, use_species_whitelist)
-
 // Don't use if the map doesn't use branches but jobs do.
 /datum/job/proc/get_branch_rank(datum/species/S)
-	. = species_branch_rank_cache_[S]
-	if(.)
-		return
-
-	species_branch_rank_cache_[S] = list()
-	. = species_branch_rank_cache_[S]
+	. = list()
 
 	var/spawn_branches = mil_branches.spawn_branches(S)
 	for(var/branch_type in allowed_branches)
@@ -383,8 +362,6 @@
 		reasons["Your branch of service does not allow it."] = TRUE
 	else if(!isnull(allowed_ranks) && (!caller.prefs.ranks[title] || !is_rank_allowed(caller.prefs.branches[title], caller.prefs.ranks[title])))
 		reasons["Your rank choice does not allow it."] = TRUE
-	if (!is_species_whitelist_allowed(caller))
-		reasons["You do not have the required [use_species_whitelist] species whitelist."] = TRUE
 	var/datum/species/S = all_species[caller.prefs.species]
 	if(S)
 		if(!is_species_allowed(S))
