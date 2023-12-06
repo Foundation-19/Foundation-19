@@ -310,7 +310,6 @@
 #include "code\datums\footsteps.dm"
 #include "code\datums\hierarchy.dm"
 #include "code\datums\local_network.dm"
-#include "code\datums\mil_ranks.dm"
 #include "code\datums\orbit.dm"
 #include "code\datums\position_point_vector.dm"
 #include "code\datums\powers.dm"

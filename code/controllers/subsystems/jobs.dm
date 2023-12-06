@@ -425,12 +425,6 @@ SUBSYSTEM_DEF(jobs)
 	var/datum/job/job = get_by_title(rank)
 
 	if(job)
-		if(H.client)
-			if(GLOB.using_map.flags & MAP_HAS_BRANCH)
-				H.char_branch = mil_branches.get_branch(H.client.prefs.branches[rank])
-			if(GLOB.using_map.flags & MAP_HAS_RANK)
-				H.char_rank = mil_branches.get_rank(H.client.prefs.branches[rank], H.client.prefs.ranks[rank])
-
 		// Transfers the skill settings for the job to the mob
 		H.skillset.obtain_from_client(job, H.client)
 
@@ -448,7 +442,7 @@ SUBSYSTEM_DEF(jobs)
 			ntnet_global.create_email(H, addr, "site53.foundation", rank, pass)
 		// END EMAIL GENERATION
 
-		job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
+		job.equip(H, H.mind ? H.mind.role_alt_title : "")
 		job.apply_fingerprints(H)
 		equip_custom_loadout(H, job)
 

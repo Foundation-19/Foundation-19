@@ -50,8 +50,5 @@
 		if("Alt Appearance Manager")
 			debug_variables(appearance_manager)
 			SSstatistics.add_field_details("admin_verb", "DAltAppearanceManager")
-		if("Military Branches")
-			debug_variables(mil_branches)
-			SSstatistics.add_field_details("admin_verb", "DMilBranches")
 	message_staff("Admin [key_name_admin(usr)] is debugging the [controller] controller.")
 	return
