@@ -20,7 +20,7 @@
 		process_queued_alarms()
 	UpdateLyingBuckledAndVerbStatus()
 
-	handle_robot_hud_updates()
+	handle_robot_hud_alerts()
 
 /mob/living/silicon/robot/proc/clamp_values()
 
@@ -325,13 +325,10 @@
 	if(!on_fire) //Silicons don't gain stacks from hotspots, but hotspots can ignite them
 		IgniteMob()
 
-/mob/living/silicon/robot/proc/handle_robot_hud_updates()
+/mob/living/silicon/robot/proc/handle_robot_hud_alerts()
 	if(!client)
 		return
 
-	update_cell_hud_icon()
-
-/mob/living/silicon/robot/proc/update_cell_hud_icon()
 	if(cell)
 		var/cellcharge = cell.charge/cell.maxcharge
 		switch(cellcharge)
@@ -347,3 +344,13 @@
 				throw_alert(ALERT_CHARGE, /atom/movable/screen/alert/emptycell)
 	else
 		throw_alert(ALERT_CHARGE, /atom/movable/screen/alert/nocell)
+
+	if(emagged)
+		throw_alert(ALERT_HACKED, /atom/movable/screen/alert/hacked)
+	else
+		clear_alert(ALERT_HACKED)
+
+	if(locked)
+		throw_alert(ALERT_LOCKED, /atom/movable/screen/alert/locked)
+	else
+		clear_alert(ALERT_LOCKED)

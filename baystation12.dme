@@ -27,6 +27,7 @@
 #include "code\__defines\_tick.dm"
 #include "code\__defines\access_defs.dm"
 #include "code\__defines\admin.dm"
+#include "code\__defines\alerts.dm"
 #include "code\__defines\antagonists.dm"
 #include "code\__defines\ao.dm"
 #include "code\__defines\ao_misc.dm"
