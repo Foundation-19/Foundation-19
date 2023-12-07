@@ -150,7 +150,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HANDS_BLOCKED "hands_blocked"
 /// TODO: implement
 #define TRAIT_SLEEPIMMUNE "sleepimmune"
-/// TODO: implement
+/// The mob can't hear anything. can_hear() always returns FALSE.
 #define TRAIT_DEAF "deaf"
 /// TODO: implement
 #define TRAIT_NODEATH "nodeath"

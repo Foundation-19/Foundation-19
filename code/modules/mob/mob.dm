@@ -321,7 +321,7 @@
 	return TRUE
 
 /mob/proc/can_hear(atom/origin)
-	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
+	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT) || HAS_TRAIT(src, TRAIT_DEAF))
 		return FALSE
 	if(origin)
 		if(isturf(origin.loc))
