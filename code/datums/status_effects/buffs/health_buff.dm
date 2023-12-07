@@ -1,35 +1,4 @@
-/datum/status_effect/good_music
-	id = "Good Music"
-	alert_type = null
-	duration = 6 SECONDS
-	tick_interval = 1 SECONDS
-	status_type = STATUS_EFFECT_REFRESH
-
-/datum/status_effect/good_music/tick()
-	if(owner.can_hear())
-		owner.adjust_dizzy(-4 SECONDS)
-		owner.adjust_jitter(-4 SECONDS)
-		owner.adjust_confusion(-1 SECONDS)
-		//owner.add_mood_event("goodmusic", /datum/mood_event/goodmusic)
-
-/datum/status_effect/speed_boost
-	id = "speed_boost"
-	duration = 2 SECONDS
-	status_type = STATUS_EFFECT_REPLACE
-
-/datum/status_effect/speed_boost/on_creation(mob/living/new_owner, set_duration)
-	if(isnum(set_duration))
-		duration = set_duration
-	. = ..()
-
-/datum/status_effect/speed_boost/on_apply()
-	owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/speed_boost, update = TRUE)
-	return ..()
-
-/datum/status_effect/speed_boost/on_remove()
-	owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/speed_boost, update = TRUE)
-
-///this buff provides a max health buff and a heal.
+/// This buff provides a max health buff and a heal.
 /datum/status_effect/limited_buff/health_buff
 	id = "health_buff"
 	alert_type = null

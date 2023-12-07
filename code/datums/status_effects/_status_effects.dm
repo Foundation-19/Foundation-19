@@ -136,14 +136,6 @@
 		return
 	duration = world.time + original_duration
 
-/// Adds nextmove modifier multiplicatively to the owner while applied
-/datum/status_effect/proc/nextmove_modifier()
-	return 1
-
-/// Adds nextmove adjustment additiviely to the owner while applied
-/datum/status_effect/proc/nextmove_adjust()
-	return 0
-
 /// Signal proc for [COMSIG_LIVING_POST_REVIVE] to remove us on fullheal
 /datum/status_effect/proc/remove_effect_on_heal(datum/source)
 	SIGNAL_HANDLER
