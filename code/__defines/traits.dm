@@ -128,8 +128,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_KNOCKEDOUT "knockedout"
 /// Prevents the user from harming others. If you introduce some way to damage others (even indirectly), think about checking this.
 #define TRAIT_PACIFISM "pacifism"
-/// Lets the user succumb even if they've got NODEATH. TODO
-#define TRAIT_SUCCUMB_OVERRIDE "succumb_override"
 /// Prevents voluntary standing or staying up on its own. TODO
 #define TRAIT_FLOORED "floored"
 /// TODO: make this work
@@ -145,15 +143,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// The mob can't use complicated tools, even if they have TRAIT_ADVANCED_TOOL_USER
 #define TRAIT_DISCOORDINATED_TOOL_USER "discoordinated_tool_user"
 /// TODO: implement
-#define TRAIT_NOFIRE "nofire"
-/// TODO: implement
 #define TRAIT_HANDS_BLOCKED "hands_blocked"
-/// TODO: implement
-#define TRAIT_SLEEPIMMUNE "sleepimmune"
 /// The mob can't hear anything. can_hear() always returns FALSE.
 #define TRAIT_DEAF "deaf"
-/// TODO: implement
-#define TRAIT_NODEATH "nodeath"
 /// In some kind of critical condition. Is able to succumb. TODO: implement
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Guarantees the user can hear their own heartbeat

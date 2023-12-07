@@ -3,9 +3,6 @@
 	RegisterSignals(src, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
 		SIGNAL_REMOVETRAIT(TRAIT_CRITICAL_CONDITION),
-
-		SIGNAL_ADDTRAIT(TRAIT_NODEATH),
-		SIGNAL_REMOVETRAIT(TRAIT_NODEATH),
 	), .proc/update_succumb_action)
 
 /**
@@ -15,7 +12,7 @@
  */
 /mob/living/proc/update_succumb_action()
 	SIGNAL_HANDLER
-	if (CAN_SUCCUMB(src) || HAS_TRAIT(src, TRAIT_SUCCUMB_OVERRIDE))
+	if (CAN_SUCCUMB(src))
 		throw_alert("succumb", /atom/movable/screen/alert/succumb)
 	else
 		clear_alert("succumb")
