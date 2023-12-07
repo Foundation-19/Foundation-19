@@ -146,7 +146,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HANDS_BLOCKED "hands_blocked"
 /// The mob can't hear anything. can_hear() always returns FALSE.
 #define TRAIT_DEAF "deaf"
-/// In some kind of critical condition. Is able to succumb. TODO: implement
+/// In some kind of critical condition. Is able to succumb.
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Guarantees the user can hear their own heartbeat
 #define TRAIT_HEAR_HEARTBEAT "hear_heartbeat"
@@ -162,6 +162,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// A trait given by a specific status effect
 #define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"
 
+/// Trait associated to a stat value or range of
+#define STAT_TRAIT "stat"
 /// Cannot be removed without admin intervention.
 #define ROUNDSTART_TRAIT "roundstart"
 /// Gained by wearing certain clothing.

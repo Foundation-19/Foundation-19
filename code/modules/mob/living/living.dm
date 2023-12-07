@@ -972,3 +972,29 @@ default behaviour is:
 		to_chat(src, SPAN_NOTICE("You have given up life and succumbed to death."))
 	//investigate_log("has succumbed to death.", INVESTIGATE_DEATHS) TODO: fix this shit up
 	death()
+
+/mob/living/set_stat(new_stat)
+	. = ..()
+	if(isnull(.))
+		return
+
+	switch(.) //Previous stat.
+		if(CONSCIOUS)
+			if(stat >= UNCONSCIOUS)
+				ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+			add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_INCAPACITATED, TRAIT_FLOORED), STAT_TRAIT)
+		if(UNCONSCIOUS)
+			cure_blind(STAT_TRAIT)
+			REMOVE_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
+		if(DEAD)
+
+	switch(stat) //Current stat.
+		if(CONSCIOUS)
+			if(. >= UNCONSCIOUS)
+				REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+			remove_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_INCAPACITATED, TRAIT_FLOORED, TRAIT_CRITICAL_CONDITION), STAT_TRAIT)
+		if(UNCONSCIOUS)
+			become_blind(STAT_TRAIT)
+			ADD_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
+		if(DEAD)
+			REMOVE_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)

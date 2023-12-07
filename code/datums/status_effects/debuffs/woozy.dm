@@ -4,9 +4,6 @@
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/woozy
 
-/datum/status_effect/woozy/nextmove_modifier()
-	return 1.5
-
 /datum/status_effect/woozy/on_apply()
 	. = ..()
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/woozy)

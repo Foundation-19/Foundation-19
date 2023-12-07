@@ -231,6 +231,14 @@
 	desc = "Mech integrity is low."
 	icon_state = "low_mech_integrity"
 
+
+/atom/movable/screen/alert/lowcell/mech
+
+/atom/movable/screen/alert/emptycell/mech
+
+/atom/movable/screen/alert/nocell/mech
+
+// TODO: add this maybe?
 /*
 /atom/movable/screen/alert/lowcell/mech/update_desc()
 	. = ..()
