@@ -162,62 +162,74 @@
 //End gas alerts
 
 
+//TODO: implement
 /atom/movable/screen/alert/fat
 	name = "Fat"
 	desc = "You ate too much food, lardass. Run around the station and lose some weight."
 	icon_state = "fat"
 
+//TODO: implement
 /atom/movable/screen/alert/hungry
 	name = "Hungry"
 	desc = "Some food would be good right about now."
 	icon_state = "hungry"
 
+//TODO: implement
 /atom/movable/screen/alert/starving
 	name = "Starving"
 	desc = "You're severely malnourished. The hunger pains make moving around a chore."
 	icon_state = "starving"
 
+//TODO: implement
 /atom/movable/screen/alert/gross
 	name = "Grossed out."
 	desc = "That was kind of gross..."
 	icon_state = "gross"
 
+//TODO: implement
 /atom/movable/screen/alert/verygross
 	name = "Very grossed out."
 	desc = "You're not feeling very well..."
 	icon_state = "gross2"
 
+//TODO: implement
 /atom/movable/screen/alert/disgusted
 	name = "DISGUSTED"
 	desc = "ABSOLUTELY DISGUSTIN'"
 	icon_state = "gross3"
 
+//TODO: implement
 /atom/movable/screen/alert/hot
 	name = "Too Hot"
 	desc = "You're flaming hot! Get somewhere cooler and take off any insulating clothing like a fire suit."
 	icon_state = "hot"
 
+//TODO: implement
 /atom/movable/screen/alert/cold
 	name = "Too Cold"
 	desc = "You're freezing cold! Get somewhere warmer and take off any insulating clothing like a space suit."
 	icon_state = "cold"
 
+//TODO: implement
 /atom/movable/screen/alert/lowpressure
 	name = "Low Pressure"
 	desc = "The air around you is hazardously thin. A space suit would protect you."
 	icon_state = "lowpressure"
 
+//TODO: implement
 /atom/movable/screen/alert/highpressure
 	name = "High Pressure"
 	desc = "The air around you is hazardously thick. A fire suit would protect you."
 	icon_state = "highpressure"
 
+//TODO: implement
 /atom/movable/screen/alert/hypnosis
 	name = "Hypnosis"
 	desc = "Something's hypnotizing you, but you're not really sure about what."
 	icon_state = "hypnosis"
 	var/phrase
 
+//TODO: implement
 /atom/movable/screen/alert/mind_control
 	name = "Mind Control"
 	desc = "Your mind has been hijacked! Click to view the mind control command."
@@ -230,6 +242,7 @@
 		return
 	to_chat(owner, SPAN_HYPNOPHRASE("[command]"))
 
+//TODO: implement
 /atom/movable/screen/alert/embeddedobject
 	name = "Embedded Object"
 	desc = "Something got lodged into your flesh and is causing major bleeding. It might fall out with time, but surgery is the safest way. \
@@ -245,6 +258,7 @@
 
 	return carbon_owner.help_shake_act(carbon_owner)
 
+//TODO: implement
 /atom/movable/screen/alert/fire
 	name = "On Fire"
 	desc = "You're on fire. Stop, drop and roll to put the fire out."
@@ -261,6 +275,7 @@
 	return living_owner.resist()
 
 /// Gives the player the option to succumb while in critical condition
+//TODO: implement
 /atom/movable/screen/alert/succumb
 	name = "Succumb"
 	desc = "Shuffle off this mortal coil."
@@ -341,18 +356,22 @@
 
 */
 
+
 //Need to cover all use cases - emag, illegal upgrade module, malf AI hack, traitor cyborg
+//TODO: implement
 /atom/movable/screen/alert/hacked
 	name = "Hacked"
 	desc = "Hazardous non-standard equipment detected. Please ensure any usage of this equipment is in line with unit's laws, if any."
 	icon_state = "hacked"
 
+//TODO: implement
 /atom/movable/screen/alert/locked
 	name = "Locked Down"
 	desc = "Unit has been remotely locked down. Usage of a Robotics Control Console like the one in the Research Director's \
 		office by your AI master or any qualified human may resolve this matter. Robotics may provide further assistance if necessary."
 	icon_state = "locked"
 
+//TODO: implement
 /atom/movable/screen/alert/newlaw
 	name = "Law Update"
 	desc = "Laws have potentially been uploaded to or removed from this unit. Please be aware of any changes \
@@ -360,6 +379,7 @@
 	icon_state = "newlaw"
 	timeout = 30 SECONDS
 
+//TODO: implement
 /atom/movable/screen/alert/hackingapc
 	name = "Hacking APC"
 	desc = "An Area Power Controller is being hacked. When the process is \
@@ -381,6 +401,7 @@
 
 //MECHS
 
+//TODO: implement
 /atom/movable/screen/alert/low_mech_integrity
 	name = "Mech Damaged"
 	desc = "Mech integrity is low."
@@ -388,16 +409,32 @@
 
 //OBJECT-BASED
 
+//TODO: implement
 /atom/movable/screen/alert/buckled
 	name = "Buckled"
 	desc = "You've been buckled to something. Click the alert to unbuckle unless you're handcuffed."
 	icon_state = "buckled"
 
+/atom/movable/screen/alert/buckled/Click()
+	. = ..()
+	if(!.)
+		return
+
+	var/mob/living/living_owner = owner
+
+	if(living_owner.incapacitated(INCAPACITATION_KNOCKOUT))
+		return
+	living_owner.setClickCooldown(CLICK_CD_RESIST)
+	if(living_owner.last_special <= world.time)
+		return living_owner.resist()
+
+//TODO: implement
 /atom/movable/screen/alert/restrained/handcuffed
 	name = "Handcuffed"
 	desc = "You're handcuffed and can't act. If anyone drags you, you won't be able to move. Click the alert to free yourself."
 	click_master = FALSE
 
+//TODO: implement
 /atom/movable/screen/alert/restrained/legcuffed
 	name = "Legcuffed"
 	desc = "You're legcuffed, which slows you down considerably. Click the alert to free yourself."
@@ -413,19 +450,6 @@
 	if(living_owner.incapacitated(INCAPACITATION_KNOCKOUT))
 		return
 
-	living_owner.setClickCooldown(CLICK_CD_RESIST)
-	if(living_owner.last_special <= world.time)
-		return living_owner.resist()
-
-/atom/movable/screen/alert/buckled/Click()
-	. = ..()
-	if(!.)
-		return
-
-	var/mob/living/living_owner = owner
-
-	if(living_owner.incapacitated(INCAPACITATION_KNOCKOUT))
-		return
 	living_owner.setClickCooldown(CLICK_CD_RESIST)
 	if(living_owner.last_special <= world.time)
 		return living_owner.resist()
