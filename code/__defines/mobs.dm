@@ -118,6 +118,7 @@
 #define CLICK_CD_ATTACK 8 //Default timeout for aggressive actions
 #define CLICK_CD_RESIST 20
 #define CLICK_CD_QUICK  4
+#define CLICK_CD_HANDCUFFED 10
 
 #define FAST_WEAPON_COOLDOWN 3
 #define DEFAULT_WEAPON_COOLDOWN 5

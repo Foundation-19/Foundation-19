@@ -192,6 +192,11 @@ var/list/channel_to_radio_key = new
 		else
 			speaking = get_default_language()
 
+	if (speaking)
+		if (speaking.flags & SIGNLANG && HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+			to_chat(src, SPAN_WARNING("You can't use your hands to sign!"))
+			return
+
 	//parse the radio code and consume it
 	var/message_mode = parse_message_mode(message, "headset")
 	if (message_mode)

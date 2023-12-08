@@ -30,6 +30,11 @@
 	if(!ISADVANCEDTOOLUSER(user))
 		return
 
+	if(iscarbon(user) && (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))) //Clumsy people have a 50% chance to handcuff themselves instead of their target.
+		to_chat(user, span_warning("Uh... how do those things work?!"))
+		place_handcuffs(user,user)
+		return
+
 	if ((MUTATION_CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_WARNING("Uh ... how do those things work?!"))
 		place_handcuffs(user, user)

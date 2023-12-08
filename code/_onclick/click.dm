@@ -58,6 +58,11 @@
 	if(check_click_intercept(params,A))
 		return
 
+	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+		changeNext_move(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
+		UnarmedAttack(A, FALSE, modifiers)
+		return
+
 	var/list/modifiers = params2list(params)
 	if(modifiers["right"] && modifiers["ctrl"])
 		CtrlRightClickOn(A)

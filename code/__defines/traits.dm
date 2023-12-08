@@ -142,7 +142,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ADVANCED_TOOL_USER "advanced_tool_user"
 /// The mob can't use complicated tools, even if they have TRAIT_ADVANCED_TOOL_USER
 #define TRAIT_DISCOORDINATED_TOOL_USER "discoordinated_tool_user"
-/// TODO: implement
+/// Prevents usage of manipulation appendages (picking, holding or using items, manipulating storage). Check for this if you would reasonably need to use your hands to do something.
 #define TRAIT_HANDS_BLOCKED "hands_blocked"
 /// The mob can't hear anything. can_hear() always returns FALSE.
 #define TRAIT_DEAF "deaf"
