@@ -196,7 +196,7 @@
 	set category = "Object"
 	set src in usr
 
-	if((MUTATION_CLUMSY in usr.mutations) && prob(50))
+	if(((MUTATION_CLUMSY in usr.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		to_chat(usr, SPAN_WARNING("You cut yourself on the paper."))
 		return
 	else if(is_memo)

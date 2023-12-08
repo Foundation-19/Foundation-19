@@ -155,7 +155,7 @@ default behaviour is:
 			..()
 			var/saved_dir = AM.dir
 			if (!istype(AM, /atom/movable) || AM.anchored)
-				if ((confused || (MUTATION_CLUMSY in mutations)) && !weakened && !MOVING_DELIBERATELY(src))
+				if ((confused || (MUTATION_CLUMSY in mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && !weakened && !MOVING_DELIBERATELY(src))
 					AM.slam_into(src)
 				return
 			if (!now_pushing)
@@ -872,7 +872,7 @@ default behaviour is:
 		. += 15
 	if(confused)
 		. += 30
-	if(MUTATION_CLUMSY in mutations)
+	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY)))
 		. += 40
 
 /mob/living/proc/ranged_accuracy_mods()
@@ -885,7 +885,7 @@ default behaviour is:
 		. -= 5
 	if(eye_blurry)
 		. -= 1
-	if(MUTATION_CLUMSY in mutations)
+	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY)))
 		. -= 3
 
 /mob/living/can_drown()

@@ -126,7 +126,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 //mob traits
 /// Prevents the user from harming others. If you introduce some way to damage others (even indirectly), think about checking this.
 #define TRAIT_PACIFISM "pacifism"
-/// TODO: implement
+/// The mob is clumsy and liable to mess things up in serious situations.
 #define TRAIT_CLUMSY "clumsy"
 /// The mob can't talk
 #define TRAIT_MUTE "mute"

@@ -203,7 +203,7 @@
 		balloon_alert(M, "fingers too big!")
 		to_chat(M, SPAN_DANGER("Your fingers are too big for the trigger guard!"))
 		return 0
-	if((MUTATION_CLUMSY in M.mutations) && prob(40)) //Clumsy handling
+	if(((MUTATION_CLUMSY in M.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_FOOT, BP_R_FOOT)))

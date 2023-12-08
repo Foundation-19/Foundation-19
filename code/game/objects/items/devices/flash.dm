@@ -17,7 +17,7 @@
 	var/str_max = 7 //how powerful the effect COULD be
 
 /obj/item/device/flash/proc/clown_check(mob/user)
-	if(user && (MUTATION_CLUMSY in user.mutations) && prob(50))
+	if(user && ((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		to_chat(user, SPAN_WARNING("\The [src] slips out of your hand."))
 		user.unequip_item()
 		return 0
