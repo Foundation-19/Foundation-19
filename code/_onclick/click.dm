@@ -58,12 +58,8 @@
 	if(check_click_intercept(params,A))
 		return
 
-	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
-		changeNext_move(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
-		UnarmedAttack(A, FALSE, modifiers)
-		return
-
 	var/list/modifiers = params2list(params)
+
 	if(modifiers["right"] && modifiers["ctrl"])
 		CtrlRightClickOn(A)
 		return 1
@@ -102,8 +98,8 @@
 	if(!canClick()) // in the year 2000...
 		return
 
-	if(restrained())
-		setClickCooldown(10)
+	if(restrained() || HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+		setClickCooldown(CLICK_CD_HANDCUFFED)
 		RestrainedClickOn(A)
 		return 1
 

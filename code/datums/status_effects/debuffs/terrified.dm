@@ -139,7 +139,7 @@
 
 /datum/status_effect/terrified/proc/freak_out(amount)
 	terror_buildup += amount
-	owner.set_knockdown_if_lower(0.5 SECONDS)
+	owner.Weaken(0.5 SECONDS)
 	if(prob(50))
 		owner.emote("scream")
 
