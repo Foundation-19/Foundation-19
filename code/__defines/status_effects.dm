@@ -80,11 +80,6 @@
 #define set_stutter(duration) set_timed_status_effect(duration, /datum/status_effect/speech/stutter)
 #define set_stutter_if_lower(duration) set_timed_status_effect(duration, /datum/status_effect/speech/stutter, TRUE)
 
-#define adjust_unconscious(duration) adjust_timed_status_effect(duration, /datum/status_effect/incapacitating/unconscious)
-#define adjust_unconscious_up_to(duration, up_to) adjust_timed_status_effect(duration, /datum/status_effect/incapacitating/unconscious, up_to)
-#define set_unconscious(duration) set_timed_status_effect(duration, /datum/status_effect/incapacitating/unconscious)
-#define set_unconscious_if_lower(duration) set_timed_status_effect(duration, /datum/status_effect/incapacitating/unconscious, TRUE)
-
 #define adjust_slurring(duration) adjust_timed_status_effect(duration, /datum/status_effect/speech/slurring/generic)
 #define adjust_slurring_up_to(duration, up_to) adjust_timed_status_effect(duration, /datum/status_effect/speech/slurring/generic, up_to)
 #define set_slurring(duration) set_timed_status_effect(duration, /datum/status_effect/speech/slurring/generic)
@@ -137,8 +132,3 @@
 #define adjust_temp_blindness_up_to(duration, up_to) adjust_timed_status_effect(duration, /datum/status_effect/temporary_blindness, up_to)
 #define set_temp_blindness(duration) set_timed_status_effect(duration, /datum/status_effect/temporary_blindness)
 #define set_temp_blindness_if_lower(duration) set_timed_status_effect(duration, /datum/status_effect/temporary_blindness, TRUE)
-
-#define adjust_knockdown(duration) adjust_timed_status_effect(duration, /datum/status_effect/incapacitating/knockdown)
-#define adjust_knockdown_up_to(duration, up_to) adjust_timed_status_effect(duration, /datum/status_effect/incapacitating/knockdown, up_to)
-#define set_knockdown(duration) set_timed_status_effect(duration, /datum/status_effect/incapacitating/knockdown)
-#define set_knockdown_if_lower(duration) set_timed_status_effect(duration, /datum/status_effect/incapacitating/knockdown, TRUE)

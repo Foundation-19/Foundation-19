@@ -25,54 +25,10 @@
 	. = ..()
 	if(!.)
 		return
-	owner.add_traits(list(TRAIT_INCAPACITATED, TRAIT_IMMOBILIZED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
+	owner.add_traits(list(TRAIT_INCAPACITATED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/incapacitating/stun/on_remove()
-	owner.remove_traits(list(TRAIT_INCAPACITATED, TRAIT_IMMOBILIZED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
-	return ..()
-
-//KNOCKDOWN
-/datum/status_effect/incapacitating/knockdown
-	id = "knockdown"
-
-/datum/status_effect/incapacitating/knockdown/on_apply()
-	. = ..()
-	if(!.)
-		return
-	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
-
-/datum/status_effect/incapacitating/knockdown/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
-	return ..()
-
-
-//IMMOBILIZED
-/datum/status_effect/incapacitating/immobilized
-	id = "immobilized"
-
-/datum/status_effect/incapacitating/immobilized/on_apply()
-	. = ..()
-	if(!.)
-		return
-	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
-
-/datum/status_effect/incapacitating/immobilized/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
-	return ..()
-
-
-//PARALYZED
-/datum/status_effect/incapacitating/paralyzed
-	id = "paralyzed"
-
-/datum/status_effect/incapacitating/paralyzed/on_apply()
-	. = ..()
-	if(!.)
-		return
-	owner.add_traits(list(TRAIT_INCAPACITATED, TRAIT_IMMOBILIZED, TRAIT_FLOORED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
-
-/datum/status_effect/incapacitating/paralyzed/on_remove()
-	owner.remove_traits(list(TRAIT_INCAPACITATED, TRAIT_IMMOBILIZED, TRAIT_FLOORED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
+	owner.remove_traits(list(TRAIT_INCAPACITATED, TRAIT_HANDS_BLOCKED), TRAIT_STATUS_EFFECT(id))
 	return ..()
 
 //INCAPACITATED
@@ -90,22 +46,6 @@
 // When the status effect runs out, your TRAIT_INCAPACITATED is removed.
 /datum/status_effect/incapacitating/incapacitated/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_INCAPACITATED, TRAIT_STATUS_EFFECT(id))
-	return ..()
-
-
-//UNCONSCIOUS
-/datum/status_effect/incapacitating/unconscious
-	id = "unconscious"
-	needs_update_stat = TRUE
-
-/datum/status_effect/incapacitating/unconscious/on_apply()
-	. = ..()
-	if(!.)
-		return
-	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
-
-/datum/status_effect/incapacitating/unconscious/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
 	return ..()
 
 //SLEEPING

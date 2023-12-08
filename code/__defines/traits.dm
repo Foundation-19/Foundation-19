@@ -124,16 +124,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 */
 
 //mob traits
-/// Forces the user to stay unconscious. TODO
-#define TRAIT_KNOCKEDOUT "knockedout"
 /// Prevents the user from harming others. If you introduce some way to damage others (even indirectly), think about checking this.
 #define TRAIT_PACIFISM "pacifism"
-/// Prevents voluntary standing or staying up on its own. TODO
-#define TRAIT_FLOORED "floored"
 /// TODO: make this work
 #define TRAIT_INCAPACITATED "incapacitated"
-/// Prevents voluntary movement. TODO
-#define TRAIT_IMMOBILIZED "immobilized"
 /// TODO: implement
 #define TRAIT_CLUMSY "clumsy"
 /// The mob can't talk

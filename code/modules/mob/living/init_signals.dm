@@ -3,9 +3,9 @@
 	RegisterSignals(src, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
 		SIGNAL_REMOVETRAIT(TRAIT_CRITICAL_CONDITION),
+	), .proc/update_succumb_action)
 
 	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_HANDS_BLOCKED), PROC_REF(on_handsblocked_trait_gain))
-	), .proc/update_succumb_action)
 
 /**
  * Called when traits that alter succumbing are added/removed.
