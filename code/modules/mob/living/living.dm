@@ -885,7 +885,7 @@ default behaviour is:
 		. -= 5
 	if(eye_blurry)
 		. -= 1
-	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY)))
+	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY)))
 		. -= 3
 
 /mob/living/can_drown()

@@ -25,7 +25,8 @@
 /// Called when [TRAIT_HANDS_BLOCKED] is added to the mob.
 /mob/living/proc/on_handsblocked_trait_gain(datum/source)
 	SIGNAL_HANDLER
-	drop_all_held_items()
+	drop_l_hand()
+	drop_r_hand()
 
 /// Called when [TRAIT_UI_BLOCKED] is added to the mob.
 /mob/living/proc/on_ui_blocked_trait_gain(datum/source)

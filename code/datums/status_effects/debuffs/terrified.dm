@@ -81,8 +81,8 @@
 			var/obj/item/organ/internal/heart/heart = C.internal_organs_by_name[BP_HEART]
 			heart.take_internal_damage(10)
 
-		owner.set_unconscious(20 SECONDS)
-		qdel(src) //Victim passes out from fear, calming them down and permenantly damaging their heart.
+		owner.Sleeping(20 SECONDS)
+		qdel(src) //Victim passes out from fear, calming them down and permanently damaging their heart.
 
 /datum/status_effect/terrified/get_examine_text()
 	if(terror_buildup > DARKNESS_TERROR_CAP) //If we're approaching a heart attack
