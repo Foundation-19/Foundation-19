@@ -5,7 +5,10 @@
 		SIGNAL_REMOVETRAIT(TRAIT_CRITICAL_CONDITION),
 	), .proc/update_succumb_action)
 
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_HANDS_BLOCKED), PROC_REF(on_handsblocked_trait_gain))
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_HANDS_BLOCKED), .proc/on_handsblocked_trait_gain)
+
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_UI_BLOCKED), .proc/on_ui_blocked_trait_gain)
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_UI_BLOCKED), .proc/on_ui_blocked_trait_loss)
 
 /**
  * Called when traits that alter succumbing are added/removed.
@@ -23,3 +26,14 @@
 /mob/living/proc/on_handsblocked_trait_gain(datum/source)
 	SIGNAL_HANDLER
 	drop_all_held_items()
+
+/// Called when [TRAIT_UI_BLOCKED] is added to the mob.
+/mob/living/proc/on_ui_blocked_trait_gain(datum/source)
+	SIGNAL_HANDLER
+	unset_machine()
+	update_action_buttons()
+
+/// Called when [TRAIT_UI_BLOCKED] is removed from the mob.
+/mob/living/proc/on_ui_blocked_trait_loss(datum/source)
+	SIGNAL_HANDLER
+	update_action_buttons()

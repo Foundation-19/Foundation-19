@@ -126,8 +126,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 //mob traits
 /// Prevents the user from harming others. If you introduce some way to damage others (even indirectly), think about checking this.
 #define TRAIT_PACIFISM "pacifism"
-/// TODO: make this work
-#define TRAIT_INCAPACITATED "incapacitated"
 /// TODO: implement
 #define TRAIT_CLUMSY "clumsy"
 /// The mob can't talk
@@ -146,6 +144,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEAR_HEARTBEAT "hear_heartbeat"
 /// If the user is nearsighted, having this trait stops it from affecting them (e.g. if they have glasses on).
 #define TRAIT_NEARSIGHTED_CORRECTED "nearsighted_corrected"
+/// Inability to access UI hud elements.
+#define TRAIT_UI_BLOCKED "uiblocked"
 
 /**
  * Trait sources

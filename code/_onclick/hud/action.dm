@@ -98,7 +98,7 @@
 	if(!owner)
 		return 0
 	if(check_flags & AB_CHECK_RESTRAINED)
-		if(owner.restrained())
+		if(owner.restrained() || HAS_TRAIT(owner, TRAIT_HANDS_BLOCKED))
 			return 0
 	if(check_flags & AB_CHECK_STUNNED)
 		if(owner.stunned)

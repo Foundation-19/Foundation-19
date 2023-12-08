@@ -980,7 +980,7 @@ default behaviour is:
 
 	switch(.) //Previous stat.
 		if(CONSCIOUS)
-			add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_INCAPACITATED), STAT_TRAIT)
+			ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, STAT_TRAIT)
 		if(UNCONSCIOUS)
 			cure_blind(STAT_TRAIT)
 			REMOVE_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
@@ -988,7 +988,7 @@ default behaviour is:
 
 	switch(stat) //Current stat.
 		if(CONSCIOUS)
-			remove_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_INCAPACITATED), STAT_TRAIT)
+			REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, STAT_TRAIT)
 		if(UNCONSCIOUS)
 			become_blind(STAT_TRAIT)
 			ADD_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
