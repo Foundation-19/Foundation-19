@@ -119,11 +119,3 @@
 /datum/dna/gene/disability/deaf/activate(mob/M, connected, flags)
 	..(M,connected,flags)
 	M.ear_deaf = 1
-
-/datum/dna/gene/disability/nearsighted
-	name="Nearsightedness"
-	activation_message="Your eyes feel weird..."
-	disability=NEARSIGHTED
-
-/datum/dna/gene/disability/nearsighted/New()
-	block=GLOB.GLASSESBLOCK

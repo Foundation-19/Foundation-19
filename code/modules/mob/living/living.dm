@@ -985,6 +985,7 @@ default behaviour is:
 			cure_blind(STAT_TRAIT)
 			REMOVE_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
 		if(DEAD)
+			NOOP
 
 	switch(stat) //Current stat.
 		if(CONSCIOUS)
@@ -993,3 +994,4 @@ default behaviour is:
 			become_blind(STAT_TRAIT)
 			ADD_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
 		if(DEAD)
+			NOOP

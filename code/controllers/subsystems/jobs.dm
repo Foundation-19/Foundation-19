@@ -550,7 +550,7 @@ SUBSYSTEM_DEF(jobs)
 		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
 
 	//Gives glasses to the vision impaired
-	if(H.disabilities & NEARSIGHTED)
+	if(H.is_nearsighted())
 		H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
 
 	BITSET(H.hud_updateflag, ID_HUD)

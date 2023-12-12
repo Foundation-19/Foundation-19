@@ -103,7 +103,7 @@
 			scan["missing_organs"] += organ_name
 	if(H.sdisabilities & BLINDED)
 		scan["blind"] = TRUE
-	if(H.sdisabilities & NEARSIGHTED)
+	if(H.is_nearsighted())
 		scan["nearsight"] = TRUE
 	return scan
 

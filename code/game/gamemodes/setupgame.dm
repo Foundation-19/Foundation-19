@@ -42,7 +42,6 @@
 
 	// UNUSED!
 	//GLOB.COUGHBLOCK         = getAssignedBlock("COUGH",         numsToAssign)
-	//GLOB.GLASSESBLOCK       = getAssignedBlock("GLASSES",       numsToAssign)
 	//GLOB.EPILEPSYBLOCK      = getAssignedBlock("EPILEPSY",      numsToAssign)
 	//GLOB.TWITCHBLOCK        = getAssignedBlock("TWITCH",        numsToAssign)
 	//GLOB.NERVOUSBLOCK       = getAssignedBlock("NERVOUS",       numsToAssign)

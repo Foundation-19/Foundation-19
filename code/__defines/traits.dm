@@ -163,4 +163,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Gained by wearing certain clothing.
 #define CLOTHING_TRAIT "clothing"
 /// Gained by being statue-ified
-#define STATUE_MUTE "statue_mute"
+#define STATUE_MUTE_TRAIT "statue_mute"
+/// Gained by having certain preferences
+#define PREFERENCE_TRAIT "preference"
+/// Gained by having electronic glasses EMPed
+#define GLASSES_EMPED_TRAIT "glasses_emped"
+/// Gained by taking damage from welding without protection
+#define UNSAFE_WELDING_TRAIT "unsafe_welding"
+/// Gained by being stung by a changeling
+#define LING_STUNG_TRAIT "ling_stung"

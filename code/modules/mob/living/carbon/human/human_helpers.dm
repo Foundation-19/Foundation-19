@@ -256,16 +256,16 @@
 			to_chat(src, SPAN_DANGER("Your equipment intensifies the welder's glow. Your eyes itch and burn severely."))
 			eye_blurry += rand(12,20)
 			E.damage += rand(12, 16)
-	if(safety<FLASH_PROTECTION_MAJOR)
+	if(safety < FLASH_PROTECTION_MAJOR)
 		if(E.damage > 10)
 			to_chat(src, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
 		if (E.damage >= E.min_bruised_damage)
 			to_chat(src, SPAN_DANGER("You go blind!"))
 			eye_blind = 5
 			eye_blurry = 5
-			disabilities |= NEARSIGHTED
+			become_nearsighted(UNSAFE_WELDING_TRAIT)
 			spawn(100)
-				disabilities &= ~NEARSIGHTED
+				cure_nearsighted(UNSAFE_WELDING_TRAIT)
 
 /mob/living/carbon/human/proc/make_grab(mob/living/carbon/human/attacker, mob/living/carbon/human/victim, grab_tag)
 	var/obj/item/grab/G
