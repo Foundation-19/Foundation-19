@@ -537,7 +537,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/sting/blind_sting/sting_effects()
 	to_chat(target, SPAN_WARNING("Your eyes burn horrifically!"))
-	target.eye_blind += 10
+	target.adjust_temp_blindness(10 SECONDS)
 	target.eye_blurry += 20
 	target.become_nearsighted(LING_STUNG_TRAIT)
 	addtimer(CALLBACK(src, .proc/unblind, target), 30 SECONDS)

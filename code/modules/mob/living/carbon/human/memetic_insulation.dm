@@ -65,8 +65,6 @@ var/debuff_miniscule = 3
 /mob/living/carbon/human/can_see(atom/origin, visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
 	var/area/origin_area
-	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye_blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as a pre-caution.
-		return FALSE
 	if(stat) //Unconscious humans cant see.
 		return FALSE
 	if(origin)
@@ -136,7 +134,7 @@ var/debuff_miniscule = 3
 	return FALSE
 
 /mob/living/carbon/human/proc/get_visual_insul(include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
-	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT)) // cant see if you're blind.
+	if((is_blind()) || incapacitated(INCAPACITATION_KNOCKOUT)) // cant see if you're blind.
 		return V_INSL_PERFECT
 	if(include_tint)
 		if(equipment_tint_total >= TINT_BLIND) //Checks tints. Tints are different from insulation in that they graphicaly obstruct your view, whereas insulation just insulates you from memetic hazards without obstructing your view.
@@ -160,7 +158,7 @@ var/debuff_miniscule = 3
 		remove_verb(src, /mob/living/carbon/human/verb/manual_blink)
 
 /mob/living/carbon/human/proc/cause_blink() //This cant be handled in the eyes as eye processing and human life() processing are out of sync, causing weird bugs.
-	eye_blind += 2
+	set_temp_blindness_if_lower(2 SECONDS)
 	visible_message(SPAN_NOTICE("[src] blinks."), SPAN_NOTICE("You blink."))
 	to_chat(src, SPAN_NOTICE("You blink.")) //Cant use visible_message's self function as you're technically blind when blinking.
 	BITSET(hud_updateflag, BLINK_HUD)

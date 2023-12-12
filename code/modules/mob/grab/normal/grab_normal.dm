@@ -208,8 +208,7 @@
 			if(BP_MOUTH)
 				G.affecting.set_silence_if_lower(2 SECONDS)
 			if(BP_EYES)
-				if(G.affecting.eye_blind < 2)
-					G.affecting.eye_blind = 2
+				G.affecting.set_temp_blindness_if_lower(2 SECONDS)
 
 // Handles when they change targeted areas and something is supposed to happen.
 /datum/grab/normal/special_target_change(obj/item/grab/G, old_zone, new_zone)

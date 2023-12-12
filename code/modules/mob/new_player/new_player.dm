@@ -323,7 +323,7 @@
 	new_character.dna.b_type = client.prefs.b_type
 	new_character.sync_organ_dna()
 	if(client.prefs.char_nearsighted)
-		new_character.become_nearsighted(PREFERENCE_TRAIT)
+		new_character.become_nearsighted(ROUNDSTART_TRAIT)
 
 	// Do the initial caching of the player's body icons.
 	new_character.force_update_limbs()

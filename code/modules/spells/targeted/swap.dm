@@ -36,6 +36,6 @@
 	if(!..())
 		return 0
 
-	amt_eye_blind += 2
+	amt_eye_blind += 2 SECONDS
 
 	return "This spell will now blind the target."

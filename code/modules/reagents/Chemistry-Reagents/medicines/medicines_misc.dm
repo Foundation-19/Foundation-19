@@ -102,7 +102,7 @@
 
 /datum/reagent/medicine/imidazoline/affect_blood(mob/living/carbon/M, alien, removed)
 	M.eye_blurry = max(M.eye_blurry - 5, 0)
-	M.eye_blind = max(M.eye_blind - 5, 0)
+	M.adjust_temp_blindness(-5 SECONDS)
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]

@@ -101,7 +101,9 @@
 	if(is_bruised())
 		owner.eye_blurry = 20
 	if(is_broken())
-		owner.eye_blind = 20
+		become_blind(DAMAGED_TRAIT)
+	else
+		cure_blind(DAMAGED_TRAIT)
 
 /obj/item/organ/internal/eyes/Initialize()
 	. = ..()

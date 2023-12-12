@@ -164,7 +164,6 @@
 	var/voice_name = "unidentifiable voice"
 
 	var/faction = MOB_FACTION_NEUTRAL //Used for checking whether hostile simple animals will attack you, possibly more stuff later
-	var/blinded = null
 	var/ear_deaf = null		//Carbon
 
 //The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)

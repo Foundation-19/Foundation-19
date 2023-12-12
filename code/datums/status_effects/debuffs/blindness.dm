@@ -1,6 +1,6 @@
 /// Helper macro, for ease of expanding checks for mobs which cannot be blinded
 /// There are no reason why these cannot be blinded, it is simply for "design reasons" (these things shouldn't be blinded)
-#define CAN_BE_BLIND(mob) (!isanimal(mob) && !isbrain(mob))
+#define CAN_BE_BLIND(mob) (!isanimal(mob) && !isghost(mob))
 
 /// Nearsighted
 /datum/status_effect/grouped/nearsighted
@@ -51,6 +51,8 @@
 
 	overlay_severity = to_value
 	update_nearsighted_overlay()
+
+// TODO: temporary nearsightedness
 
 /// Blindness
 /datum/status_effect/grouped/blindness

@@ -123,7 +123,7 @@ var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 		eye_blurry = min(eye_blurry+1.5,50)
 		if (prob(max(0,E.damage - 15) + 1) && can_see())
 			to_chat(src, SPAN_DANGER("You are blinded!"))
-			eye_blind += 20
+			adjust_temp_blindness(20 SECONDS)
 
 /mob/living/carbon/human/proc/pl_head_protected()
 	//Checks if the head is adequately sealed.

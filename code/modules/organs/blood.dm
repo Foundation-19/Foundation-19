@@ -74,7 +74,7 @@
 									break
 						if(blinding)
 							H.eye_blurry = max(H.eye_blurry, 10)
-							H.eye_blind = max(H.eye_blind, 5)
+							set_temp_blindness_if_lower(5 SECONDS)
 							to_chat(H, SPAN_DANGER("You are blinded by a spray of blood!"))
 						else
 							to_chat(H, SPAN_DANGER("You are hit by a spray of blood!"))

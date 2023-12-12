@@ -313,7 +313,7 @@
 	return restrained() ? FULLY_BUCKLED : PARTIALLY_BUCKLED
 
 /mob/proc/can_see(atom/origin)
-	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
+	if((is_blind()) || incapacitated(INCAPACITATION_KNOCKOUT))
 		return FALSE
 	if(origin)
 		if(!(origin in view(7, src)))

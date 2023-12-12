@@ -563,16 +563,19 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 			H.set_see_invisible(max(min(H.see_invisible, H.equipment_see_invis), vision[2]))
 
 	if(H.equipment_tint_total >= TINT_BLIND)
-		H.eye_blind = max(H.eye_blind, 1)
+		H.become_blind(EQUIPMENT_TINT_TOTAL_TRAIT)
+	else
+		H.cure_blind(EQUIPMENT_TINT_TOTAL_TRAIT)
 
 	if(!H.client)//no client, no screen to update
 		return 1
 
-	H.set_fullscreen(H.eye_blind, "blind", /atom/movable/screen/fullscreen/blind)
 	H.set_fullscreen(H.stat == UNCONSCIOUS, "blackout", /atom/movable/screen/fullscreen/blackout)
 
-	if(config.welder_vision)
-		H.set_fullscreen(H.equipment_tint_total, "welder", /atom/movable/screen/fullscreen/impaired, H.equipment_tint_total)
+	if(config.welder_vision && H.equipment_tint_total)
+		H.become_nearsighted(EQUIPMENT_TINT_TOTAL_TRAIT)
+	else
+		H.cure_nearsighted(EQUIPMENT_TINT_TOTAL_TRAIT)
 	var/how_nearsighted = H.is_nearsighted_currently()
 	H.set_fullscreen(how_nearsighted, "nearsighted", /atom/movable/screen/fullscreen/oxy, how_nearsighted)
 	H.set_fullscreen(H.eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)

@@ -462,8 +462,7 @@ default behaviour is:
 	disabilities = 0
 
 	// fix blindness and deafness
-	blinded = 0
-	eye_blind = 0
+	set_temp_blindness(0)
 	eye_blurry = 0
 	ear_deaf = 0
 	ear_damage = 0

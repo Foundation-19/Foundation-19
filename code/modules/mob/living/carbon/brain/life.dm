@@ -91,12 +91,11 @@
 	updatehealth()
 
 	if(stat == DEAD)	//DEAD. BROWN BREAD. SWIMMING WITH THE SPESS CARP
-		blinded = 1
+		become_blind(STAT_TRAIT)
 	else				//ALIVE. LIGHTS ARE ON
-		if( !container && (health < config.health_threshold_dead || ((world.time - timeofhostdeath) > config.revival_brain_life)) )
+		if(!container && (health < config.health_threshold_dead || ((world.time - timeofhostdeath) > config.revival_brain_life)) )
 			death()
-			blinded = 1
-			return 1
+			return
 
 		//Handling EMP effect in the Life(), it's made VERY simply, and has some additional effects handled elsewhere
 		if(emp_damage)			//This is pretty much a damage type only used by MMIs, dished out by the emp_act
@@ -108,8 +107,7 @@
 				if(31 to INFINITY)
 					emp_damage = 30//Let's not overdo it
 				if(21 to 30)//High level of EMP damage, unable to see, hear, or speak
-					eye_blind = 1
-					blinded = 1
+					become_blind(DAMAGED_TRAIT)
 					ear_deaf = 1
 					set_silence_if_lower(1 SECOND)
 					if(!alert)//Sounds an alarm, but only once per 'level'
@@ -120,8 +118,7 @@
 						emp_damage -= 1
 				if(20)
 					alert = 0
-					blinded = 0
-					eye_blind = 0
+					cure_blind(DAMAGED_TRAIT)
 					ear_deaf = 0
 					emp_damage -= 1
 				if(11 to 19)//Moderate level of EMP damage, resulting in nearsightedness and ear damage
@@ -175,10 +172,7 @@
 			healths.icon_state = "health7"
 
 	if(stat != DEAD)
-		if(blinded)
-			overlay_fullscreen("blind", /atom/movable/screen/fullscreen/blind)
-		else
-			clear_fullscreen("blind")
+		if(!is_blind())
 			set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 			set_fullscreen(druggy, "high", /atom/movable/screen/fullscreen/high)
 		if (machine)

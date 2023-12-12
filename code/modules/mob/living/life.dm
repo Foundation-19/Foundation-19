@@ -17,7 +17,6 @@
 	if(environment)
 		handle_environment(environment)
 
-	blinded = 0 // Placing this here just show how out of place it is.
 	// human/handle_regular_status_updates() needs a cleanup, as blindness should be handled in handle_disabilities()
 	handle_regular_status_updates() // Status & health update, are we dead or alive etc.
 
@@ -132,11 +131,7 @@
 
 /mob/living/proc/handle_impaired_vision()
 	//Eyes
-	if(sdisabilities & BLINDED || stat)	//blindness from disability or unconsciousness doesn't get better on its own
-		eye_blind = max(eye_blind, 1)
-	else if(eye_blind)			//blindness, heals slowly over time
-		eye_blind = max(eye_blind-1,0)
-	else if(eye_blurry)			//blurry eyes heal slowly
+	if(eye_blurry && !is_blind() && !stat)			//blurry eyes heal slowly
 		eye_blurry = max(eye_blurry-1, 0)
 
 /mob/living/proc/handle_impaired_hearing()
@@ -164,10 +159,7 @@
 	if(stat == DEAD)
 		return
 
-	if(eye_blind)
-		overlay_fullscreen("blind", /atom/movable/screen/fullscreen/blind)
-	else
-		clear_fullscreen("blind")
+	if(!is_blind())
 		set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 		set_fullscreen(druggy, "high", /atom/movable/screen/fullscreen/high)
 

@@ -261,7 +261,7 @@
 			to_chat(src, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
 		if (E.damage >= E.min_bruised_damage)
 			to_chat(src, SPAN_DANGER("You go blind!"))
-			eye_blind = 5
+			adjust_temp_blindness(5 SECONDS)
 			eye_blurry = 5
 			become_nearsighted(UNSAFE_WELDING_TRAIT)
 			spawn(100)

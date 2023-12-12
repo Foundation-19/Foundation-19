@@ -164,11 +164,17 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define CLOTHING_TRAIT "clothing"
 /// Gained by being statue-ified
 #define STATUE_MUTE_TRAIT "statue_mute"
-/// Gained by having certain preferences
-#define PREFERENCE_TRAIT "preference"
 /// Gained by having electronic glasses EMPed
 #define GLASSES_EMPED_TRAIT "glasses_emped"
 /// Gained by taking damage from welding without protection
 #define UNSAFE_WELDING_TRAIT "unsafe_welding"
 /// Gained by being stung by a changeling
 #define LING_STUNG_TRAIT "ling_stung"
+/// For borers; gained by the host having this trait
+#define BORER_HOST_TRAIT "borer_host"
+/// Gained by missing a relevant organ
+#define MISSING_ORGAN_TRAIT "missing_organ"
+/// Gained by having enough damage
+#define DAMAGED_TRAIT "damaged"
+/// Gained by having a certain equipment_tint_total
+#define EQUIPMENT_TINT_TOTAL_TRAIT "equipment_tint_total"

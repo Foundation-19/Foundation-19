@@ -46,7 +46,7 @@
 		var/mob/living/carbon/human/H = hit_atom
 		if(istype(H) && H.has_eyes() && prob(85))
 			to_chat(H, SPAN_WARNING("Some of \the [src] gets in your eyes!"))
-			H.eye_blind += 5
+			H.adjust_temp_blindness(5 SECONDS)
 			H.eye_blurry += 10
 			QDEL_IN(src, 1)
 

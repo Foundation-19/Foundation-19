@@ -100,14 +100,6 @@
 /datum/dna/gene/disability/nervousness/New()
 	block=GLOB.NERVOUSBLOCK
 
-/datum/dna/gene/disability/blindness
-	name="Blindness"
-	activation_message="You can't seem to see anything."
-	sdisability=BLINDED
-
-/datum/dna/gene/disability/blindness/New()
-	block=GLOB.BLINDBLOCK
-
 /datum/dna/gene/disability/deaf
 	name="Deafness"
 	activation_message="It's kinda quiet."

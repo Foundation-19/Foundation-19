@@ -81,7 +81,7 @@
 			if(M.glasses != src)
 				to_chat(M, SPAN_DANGER("\The [name] malfunction[gender != PLURAL ? "s":""], releasing a small spark."))
 			else
-				M.eye_blind = 2
+				M.adjust_temp_blindness(2 SECONDS)
 				M.eye_blurry = 4
 				to_chat(M, SPAN_DANGER("\The [name] malfunction[gender != PLURAL ? "s":""], blinding you!"))
 
