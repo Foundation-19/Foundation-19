@@ -107,7 +107,6 @@
 			overlay_fullscreen("blind", /atom/movable/screen/fullscreen/blind)
 		else
 			clear_fullscreen("blind")
-			set_fullscreen(is_nearsighted_currently(), "impaired", /atom/movable/screen/fullscreen/impaired, 1)
 			set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 			set_fullscreen(druggy, "high", /atom/movable/screen/fullscreen/high)
 		if(machine)
