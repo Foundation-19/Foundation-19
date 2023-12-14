@@ -43,7 +43,7 @@
 		return
 	if(owner)
 		LAZYADD(owner.status_effects, src)
-		RegisterSignal(owner, COMSIG_LIVING_POST_REVIVE, .proc/remove_effect_on_heal)
+		RegisterSignal(owner, COMSIG_LIVING_REJUVENATE, .proc/remove_effect_on_heal)
 
 	if(duration != -1)
 		duration = world.time + duration
@@ -74,7 +74,7 @@
 		owner.clear_alert(id)
 		LAZYREMOVE(owner.status_effects, src)
 		on_remove()
-		UnregisterSignal(owner, COMSIG_LIVING_POST_REVIVE)
+		UnregisterSignal(owner, COMSIG_LIVING_REJUVENATE)
 		owner = null
 	return ..()
 
@@ -136,7 +136,7 @@
 		return
 	duration = world.time + original_duration
 
-/// Signal proc for [COMSIG_LIVING_POST_REVIVE] to remove us on fullheal
+/// Signal proc for [COMSIG_LIVING_REJUVENATE] to remove us on fullheal
 /datum/status_effect/proc/remove_effect_on_heal(datum/source)
 	SIGNAL_HANDLER
 

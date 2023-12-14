@@ -482,7 +482,7 @@
 			if(O.can_see())
 				O.flash_eyes(FLASH_PROTECTION_MODERATE - protection)
 				O.eye_blurry += flash_time
-				O.confused += (flash_time + 2)
+				O.adjust_confusion((flash_time + 2) SECONDS) // TODO: move the SECONDS further up
 
 /obj/item/mech_equipment/flash/attack_self(mob/user)
 	. = ..()
@@ -528,7 +528,7 @@
 			if(O.can_see())
 				O.flash_eyes(FLASH_PROTECTION_MAJOR - protection)
 				O.eye_blurry += flash_time
-				O.confused += (flash_time + 2)
+				O.adjust_confusion((flash_time + 2) SECONDS) // TODO: move SECONDS further up
 
 				if(isanimal(O)) //Hit animals a bit harder
 					O.Stun(flash_time)

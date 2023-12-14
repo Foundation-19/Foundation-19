@@ -228,7 +228,7 @@
 		var/damage_secondary = damage * 0.20
 		owner.flash_eyes()
 		owner.eye_blurry += damage_secondary
-		owner.confused += damage_secondary
+		owner.adjust_confusion(damage_secondary SECONDS) // TODO: move SECONDS further up
 		if(damage >= 25)
 			owner.Weaken(round(damage_secondary*0.5, 1))
 		if(prob(30))
@@ -238,7 +238,7 @@
 	if (!owner)
 		return
 	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")
-	owner.confused += damage
+	owner.adjust_confusion(damage SECONDS)
 
 /obj/item/organ/internal/brain/proc/handle_disabilities()
 	if(owner.stat)

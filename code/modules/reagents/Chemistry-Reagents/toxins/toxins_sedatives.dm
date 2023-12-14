@@ -59,7 +59,7 @@
 		threshold = 2.4
 
 	if (M.chem_doses[type] >= metabolism * threshold * 0.5)
-		M.confused = max(M.confused, 2)
+		M.set_confusion_if_lower(5 SECONDS)
 		M.add_chemical_effect(CE_VOICELOSS, 1)
 	if (M.chem_doses[type] > threshold * 0.5)
 		M.make_dizzy(3)
@@ -96,7 +96,7 @@
 	M.add_chemical_effect(CE_SEDATE, 1)
 
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
+		M.adjust_confusion(2 SECONDS)
 		M.drowsyness += 2
 
 	if (M.chem_doses[type] < 2 * threshold)

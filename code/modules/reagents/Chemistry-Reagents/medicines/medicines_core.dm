@@ -217,7 +217,7 @@
 			if (!BP_IS_ROBOTIC(I))
 				if (I.organ_tag == BP_BRAIN)
 					// if we have located an organic brain, apply side effects
-					H.confused++
+					H.adjust_confusion(1 SECOND)
 					H.drowsyness++
 					// peridaxon only heals minor brain damage
 					if (I.damage >= I.min_bruised_damage)
@@ -240,7 +240,7 @@
 	M.add_chemical_effect(CE_BRAIN_REGEN, 1)
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.confused++
+		H.adjust_confusion(1 SECOND)
 		H.drowsyness++
 
 

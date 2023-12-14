@@ -47,7 +47,7 @@
 			M.flash_eyes()
 			M.adjust_temp_blindness(3 SECONDS)
 			M.ear_deaf = max(M.ear_deaf,6)
-			M.confused = rand(3,8)
+			M.adjust_confusion(rand(5 SECONDS, 10 SECONDS))
 		return TRUE
 
 /decl/psionic_power/coercion/mindread

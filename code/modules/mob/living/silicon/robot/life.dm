@@ -100,8 +100,6 @@
 		else	//Not stunned.
 			set_stat(CONSCIOUS)
 
-		handle_confused()
-
 	else //Dead.
 		become_blind(STAT_TRAIT)
 		set_stat(DEAD)

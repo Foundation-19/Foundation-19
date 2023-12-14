@@ -74,7 +74,7 @@
 	else
 		cure_blind(MISSING_ORGAN_TRAIT)
 		if(eye_blurry)
-		eye_blurry = max(eye_blurry-1, 0)
+			eye_blurry = max(eye_blurry-1, 0)
 
 		update_icons()
 

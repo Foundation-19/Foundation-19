@@ -26,7 +26,7 @@
 	M.dizziness = max(M.dizziness - 10, 0)
 	M.drowsyness = max(M.drowsyness - 10, 0)
 	M.stuttering = max(M.stuttering - 10, 0)
-	M.confused = max(M.confused - 10, 0)
+	M.adjust_confusion(-5 SECONDS)
 	var/datum/reagents/ingested = M.get_ingested_reagents()
 	if(ingested)
 		for(var/datum/reagent/R in ingested.reagent_list)
@@ -56,7 +56,7 @@
 	if(prob(15))
 		M.dizziness = clamp(M.dizziness + 15, M.dizziness, 50)
 	if(prob(15))
-		M.confused = clamp(M.confused + 15, M.confused, 50)
+		M.adjust_confusion_up_to(5 SECONDS, 50 SECONDS)
 	// With liver damage, it will worsen it
 	var/obj/item/organ/internal/liver/L = M.internal_organs_by_name[BP_LIVER]
 	if(istype(L) && L.damage >= 5)

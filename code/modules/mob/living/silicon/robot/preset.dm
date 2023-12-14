@@ -104,4 +104,4 @@
 	emp_act(2)
 
 /mob/living/silicon/robot/flying/ascent/emp_act(severity)
-	confused = min(confused + rand(3, 5), (severity == 1 ? 40 : 30))
+	adjust_confusion_up_to(rand(3, 5) SECONDS, (severity == 1 ? 40 SECONDS : 30 SECONDS))

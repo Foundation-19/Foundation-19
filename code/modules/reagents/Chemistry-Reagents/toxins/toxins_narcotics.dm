@@ -20,7 +20,7 @@
 	if (alien == IS_SKRELL)
 		drug_strength = drug_strength * 0.8
 	M.make_dizzy(drug_strength)
-	M.confused = max(M.confused, drug_strength * 5)
+	M.set_confusion_if_lower(drug_strength * 3 SECONDS)
 
 
 
@@ -40,7 +40,7 @@
 	M.add_chemical_effect(M.add_chemical_effect(CE_SLOWDOWN, 1))
 
 	if (prob(80))
-		M.confused = max(M.confused, 10)
+		M.set_confusion_if_lower(10 SECONDS)
 	if (prob(50))
 		M.drowsyness = max(M.drowsyness, 3)
 	if (prob(10))

@@ -19,7 +19,7 @@
 			continue
 		to_chat(S, SPAN_WARNING("Your integrated sensors detect an ionospheric anomaly. Your systems will be impacted as you begin a partial restart."))
 		var/ionbug = rand(5, 15)
-		S.confused += ionbug
+		S.adjust_confusion(ionbug SECONDS) // TODO: move the SECONDS further up
 		S.eye_blurry += ionbug-1
 	for(var/mob/living/silicon/S in SSmobs.mob_list)
 		if(is_drone(S) || !(isAI(S) || isrobot(S)))

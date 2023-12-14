@@ -37,7 +37,6 @@
 	handle_impaired_vision()
 	update_power_usage()
 	handle_power_oxyloss()
-	handle_confused()
 	update_sight()
 
 	process_queued_alarms()

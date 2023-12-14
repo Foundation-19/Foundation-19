@@ -75,7 +75,7 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
+		M.adjust_confusion(2 SECONDS)
 		M.drowsyness += 2
 	else
 		M.Weaken(30)
@@ -106,7 +106,7 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
+		M.adjust_confusion(2 SECONDS)
 		M.drowsyness += 2
 	else
 		M.Weaken(30)
@@ -138,7 +138,7 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
+		M.adjust_confusion(2 SECONDS)
 		M.drowsyness += 2
 	if (M.chem_doses[type] < 2 * threshold)
 		M.Weaken(30)
@@ -169,7 +169,7 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
+		M.adjust_confusion(2 SECONDS)
 		M.drowsyness += 2
 	else
 		M.Weaken(30)

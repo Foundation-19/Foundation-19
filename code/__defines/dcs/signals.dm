@@ -34,8 +34,8 @@
 #define COMSIG_SECURITY_LEVEL_CHANGED "security_level_change"
 /// fire by minds to do post-initialization behaviour
 #define COMSIG_MIND_POST_INIT "mind_post_init"
-/// Called on `/mob/living/proc/revive` (mob/living)
-#define COMSIG_LIVING_POST_REVIVE "living_post_revive"
+/// Called on `/mob/living/proc/rejuvenate` (mob/living)
+#define COMSIG_LIVING_REJUVENATE "living_rejuvenate"
 
 /// fired when a goal is succeeded
 #define COMSIG_GOAL_SUCCEEDED "goal_succeeded"

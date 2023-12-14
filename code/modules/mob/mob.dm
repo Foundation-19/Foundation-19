@@ -274,7 +274,7 @@
 	if (drowsyness > 0)
 		. += 6
 	if(lying) //Crawling, it's slower
-		. += (8 + ((weakened * 3) + (confused * 2)))
+		. += (8 + ((weakened * 3) + (has_status_effect(/datum/status_effect/confusion) ? 5 : 0)))
 	. += move_intent.move_delay
 	. += cached_multiplicative_slowdown
 	. += encumbrance() * (0.5 + 1.5 * (SKILL_MAX - get_skill_value(SKILL_HAULING))/(SKILL_MAX - SKILL_MIN)) //Varies between 0.5 and 2, depending on skill

@@ -142,7 +142,7 @@
 	if (prob(75))
 		M.drowsyness++
 	if (prob(25))
-		M.confused++
+		M.adjust_confusion(1 SECOND)
 
 /datum/reagent/medicine/painkiller/deletrathol/overdose(mob/living/carbon/M, alien)
 	..()

@@ -202,12 +202,11 @@
 			cure_blind(MISSING_ORGAN_TRAIT)
 			eye_blurry = 0
 
-		//blindness
-		else if(!(is_blind()))
-			if(equipment_tint_total >= TINT_BLIND)	// Covered eyes, heal faster
-				eye_blurry = max(eye_blurry-2, 0)
+			if(!(is_blind()))
+				if(equipment_tint_total >= TINT_BLIND)	// Covered eyes, heal faster
+					eye_blurry = max(eye_blurry-2, 0)
 
-	else (!species.vision_organ) // Presumably if a species has no vision organs, they see via some other means.
+	else if(!species.vision_organ) // Presumably if a species has no vision organs, they see via some other means.
 		cure_blind(MISSING_ORGAN_TRAIT)
 		eye_blurry = 0
 

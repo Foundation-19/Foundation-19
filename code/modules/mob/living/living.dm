@@ -155,7 +155,7 @@ default behaviour is:
 			..()
 			var/saved_dir = AM.dir
 			if (!istype(AM, /atom/movable) || AM.anchored)
-				if ((confused || (MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY))) && !weakened && !MOVING_DELIBERATELY(src))
+				if ((has_status_effect(/datum/status_effect/confusion) || (MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY))) && !weakened && !MOVING_DELIBERATELY(src))
 					AM.slam_into(src)
 				return
 			if (!now_pushing)
@@ -440,8 +440,6 @@ default behaviour is:
 	ExtinguishMob()
 	fire_stacks = 0
 
-	SEND_SIGNAL(src, /mob/living/proc/revive)
-
 /mob/living/proc/rejuvenate()
 	if(reagents)
 		reagents.clear_reagents()
@@ -461,15 +459,15 @@ default behaviour is:
 	sdisabilities = 0
 	disabilities = 0
 
-	// fix blindness and deafness
-	set_temp_blindness(0)
+	// fix effects // TODO: move all of these to status effects
 	eye_blurry = 0
 	ear_deaf = 0
 	ear_damage = 0
 	drowsyness = 0
 	druggy = 0
 	jitteriness = 0
-	confused = 0
+
+	SEND_SIGNAL(src, COMSIG_LIVING_REJUVENATE)
 
 	heal_overall_damage(getBruteLoss(), getFireLoss())
 
@@ -869,7 +867,7 @@ default behaviour is:
 		. += 75
 	if(eye_blurry)
 		. += 15
-	if(confused)
+	if(has_status_effect(/datum/status_effect/confusion))
 		. += 30
 	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY)))
 		. += 40
@@ -878,7 +876,7 @@ default behaviour is:
 	. = 0
 	if(jitteriness)
 		. -= 2
-	if(confused)
+	if(has_status_effect(/datum/status_effect/confusion))
 		. -= 2
 	if(can_see())
 		. -= 5

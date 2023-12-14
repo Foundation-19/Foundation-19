@@ -11,7 +11,7 @@
 
 /datum/reagent/toxin/venom/affect_blood(mob/living/carbon/M, alien, removed)
 	if (prob(volume*2))
-		M.confused = max(M.confused, 3)
+		M.set_confusion_if_lower(5 SECONDS)
 	..()
 
 /// Amatoxin is a delayed action poison. On its own, all it does is the Amaspores reagent to its holder mob.
@@ -122,7 +122,7 @@
 
 /datum/reagent/toxin/taxine/affect_blood(mob/living/carbon/M, alien, removed)
 	..()
-	M.confused += 1.5
+	M.adjust_confusion(1.5 SECONDS)
 
 /datum/reagent/toxin/taxine/overdose(mob/living/carbon/M, alien)
 	..()

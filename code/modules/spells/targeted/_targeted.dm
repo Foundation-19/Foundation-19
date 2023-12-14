@@ -168,7 +168,7 @@ Targeted spells have two useful flags: INCLUDEUSER and SELECTABLE. These are exp
 	target.adjust_temp_blindness(amt_eye_blind)
 	target.eye_blurry += amt_eye_blurry
 	target.dizziness += amt_dizziness
-	target.confused += amt_confused
+	target.adjust_confusion(amt_confused)
 	target.stuttering += amt_stuttering
 	if(effect_state)
 		var/obj/o = new /obj/effect/temp_visual/temporary(get_turf(target), effect_duration, 'icons/effects/effects.dmi', effect_state)

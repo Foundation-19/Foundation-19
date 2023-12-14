@@ -142,6 +142,8 @@
 	if(alien == IS_DIONA)
 		strength_mod = 0
 
+	// TODO: move this all to alcohol status
+
 	M.add_chemical_effect(CE_ALCOHOL, 1)
 	var/effective_dose = M.chem_doses[type] * strength_mod * (1 + volume/60) //drinking a LOT will make you go down faster
 
@@ -152,7 +154,7 @@
 		M.slurring = max(M.slurring, 30)
 	if(effective_dose >= strength * 3) // Confusion - walking in random directions
 		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
-		M.confused = max(M.confused, 20)
+		M.set_confusion_if_lower(20 SECONDS)
 	if(effective_dose >= strength * 4) // Blurry vision
 		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
 		M.eye_blurry = max(M.eye_blurry, 10)

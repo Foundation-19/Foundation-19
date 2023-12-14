@@ -29,7 +29,7 @@
 		if(M.eyecheck() < FLASH_PROTECTION_MAJOR)
 			M.flash_eyes()
 			M.eye_blurry += (brightness / 2)
-			M.confused += (brightness / 2)
+			M.adjust_confusion(brightness SECONDS) // TODO: move SECONDS higher up
 
 	//snap pop
 	playsound(src, 'sounds/effects/snap.ogg', 50, 1)

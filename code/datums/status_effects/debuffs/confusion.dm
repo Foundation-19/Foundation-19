@@ -2,8 +2,6 @@
 #define CONFUSION_FULL_THRESHOLD 40
 /// A multiplier applied on how much time is left (in seconds) that determines the chance of moving sideways randomly
 #define CONFUSION_SIDEWAYS_MOVE_PROB_PER_SECOND 1.5
-/// A multiplier applied on how much time is left (in seconds) that determines the chance of moving diagonally randomly
-#define CONFUSION_DIAGONAL_MOVE_PROB_PER_SECOND 3
 
 /// A status effect used for adding confusion to a mob.
 /datum/status_effect/confusion
@@ -31,14 +29,13 @@
 	var/direction = move_args[MOVE_ARG_DIRECTION]
 	var/new_dir
 
-	if(time_left > CONFUSION_FULL_THRESHOLD)
-		new_dir = pick(GLOB.alldirs)
+	if(MOVING_DELIBERATELY(owner))	// if we're moving slowly, confusion affects us less
+		time_left *= 0.66
 
+	if(time_left > CONFUSION_FULL_THRESHOLD)
+		new_dir = pick(GLOB.cardinal)
 	else if(prob(time_left * CONFUSION_SIDEWAYS_MOVE_PROB_PER_SECOND))
 		new_dir = angle2dir(dir2angle(direction) + pick(90, -90))
-
-	else if(prob(time_left * CONFUSION_DIAGONAL_MOVE_PROB_PER_SECOND))
-		new_dir = angle2dir(dir2angle(direction) + pick(45, -45))
 
 	if(!isnull(new_dir))
 		move_args[MOVE_ARG_NEW_LOC] = get_step(owner, new_dir)
@@ -46,4 +43,3 @@
 
 #undef CONFUSION_FULL_THRESHOLD
 #undef CONFUSION_SIDEWAYS_MOVE_PROB_PER_SECOND
-#undef CONFUSION_DIAGONAL_MOVE_PROB_PER_SECOND

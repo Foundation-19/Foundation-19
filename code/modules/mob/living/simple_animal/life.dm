@@ -13,7 +13,6 @@
 	handle_stunned()
 	handle_weakened()
 	handle_paralysed()
-	handle_confused()
 	handle_supernatural()
 	handle_impaired_vision()
 

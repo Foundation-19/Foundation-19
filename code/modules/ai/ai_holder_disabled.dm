@@ -29,7 +29,7 @@
 	return FALSE
 
 /datum/ai_holder/proc/is_confused()
-	return holder.confused > 0 && respect_confusion
+	return respect_confusion && holder.has_status_effect(/datum/status_effect/confusion)
 
 // Called by the main loop.
 /datum/ai_holder/proc/handle_disabled()

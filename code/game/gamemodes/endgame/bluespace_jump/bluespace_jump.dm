@@ -53,14 +53,14 @@
 	if(M.client)
 		to_chat(M,SPAN_NOTICE("You feel oddly light, and somewhat disoriented as everything around you shimmers and warps ever so slightly."))
 		M.overlay_fullscreen("bluespace", /atom/movable/screen/fullscreen/bluespace_overlay)
-	M.confused = 20
+	M.set_confusion_if_lower(20 SECONDS)
 	bluegoasts += new/obj/effect/bluegoast/(get_turf(M),M)
 
 /datum/universal_state/bluespace_jump/proc/clear_bluespaced(mob/living/M)
 	if(M.client)
 		to_chat(M,SPAN_NOTICE("You feel rooted in material world again."))
 		M.clear_fullscreen("bluespace")
-	M.confused = 0
+	M.set_confusion(0)
 	for(var/mob/goast in GLOB.ghost_mob_list)
 		goast.mouse_opacity = initial(goast.mouse_opacity)
 		goast.set_invisibility(initial(goast.invisibility))
@@ -105,7 +105,7 @@
 	if(nloc == new_loc)
 		to_chat(real_one, SPAN_WARNING("You feel a bit less real. Which one of you two was original again?.."))
 		if(prob(50))
-			real_one.confused = max(real_one.confused, 10)
+			real_one.set_confusion_if_lower(10 SECONDS)
 		if(prob(20))
 			real_one.drowsyness = max(real_one.drowsyness, 3)
 

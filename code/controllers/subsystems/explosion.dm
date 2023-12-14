@@ -147,7 +147,7 @@ SUBSYSTEM_DEF(explosions)
 	//flash mobs
 	if(flash_range)
 		for(var/mob/living/O in viewers(flash_range, epicenter))
-			var/flash_time = 10
+			var/flash_time = 10 // TODO: SECONDS should be here when all the below uses are status-ized
 			if(istype(O, /mob/living/carbon/human))
 				var/mob/living/carbon/human/H = O
 				if(!H.eyecheck() <= 0)
@@ -164,7 +164,7 @@ SUBSYSTEM_DEF(explosions)
 					return
 				O.flash_eyes()
 				O.eye_blurry += flash_time
-				O.confused += (flash_time + 2)
+				O.adjust_confusion((flash_time + 2) SECONDS)
 				O.Stun(flash_time / 2)
 				O.Weaken(3)
 

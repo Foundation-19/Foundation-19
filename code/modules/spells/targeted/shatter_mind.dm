@@ -22,7 +22,7 @@
 	if(prob(5))
 		to_chat(H, SPAN_WARNING("You feel unhinged."))
 	H.adjust_hallucination(5,5)
-	H.confused += 2
+	H.adjust_confusion(3 SECONDS)
 	H.dizziness += 2
 	if(H.hallucination_power > 50)
 		H.adjustBrainLoss(5)

@@ -646,8 +646,8 @@
 	var/dosage = M.chem_doses[type]
 	if (dosage >= 1)
 		if (prob(5)) M.Sleeping(3)
-		M.dizziness =  max(M.dizziness, 3)
-		M.confused =   max(M.confused, 3)
+		M.dizziness = max(M.dizziness, 3)
+		M.set_confusion_if_lower(4 SECONDS)
 	if (dosage >= 0.3)
 		if (prob(5)) M.Paralyse(1)
 		M.drowsyness = max(M.drowsyness, 3)

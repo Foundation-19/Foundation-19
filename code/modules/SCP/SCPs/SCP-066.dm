@@ -89,7 +89,7 @@
 //			M << pick('sounds/scp/066/066-1-rape.ogg', 'sounds/scp/066/066-2-rape.ogg', 'sounds/scp/066/066-3-rape.ogg', 'sounds/scp/066/066-4-rape.ogg', 'sounds/scp/066/066-5-rape.ogg', 'sounds/scp/066/066-ericrape.ogg')
 			next_emote = world.time + 600
 			M.Stun(2)
-			M.confused += 5
+			M.adjust_confusion(5 SECONDS)
 			M.ear_damage += rand(0, 5)
 			M.ear_deaf = max(M.ear_deaf,15)
 //			if(istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))

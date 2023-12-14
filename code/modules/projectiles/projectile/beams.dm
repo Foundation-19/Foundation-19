@@ -359,13 +359,15 @@
 /obj/item/projectile/beam/confuseray/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
-		var/potency = rand(potency_min, potency_max)
-		L.confused += potency
-		L.eye_blurry += potency
-		if(L.confused >= 10)
+
+		if(L.has_status_effect(/datum/status_effect/confusion))	// if we're already confused
 			L.Stun(1)
 			L.drop_l_hand()
 			L.drop_r_hand()
+
+		var/potency = rand(potency_min, potency_max)
+		L.adjust_confusion(potency SECONDS) // TODO: move SECONDS further up
+		L.eye_blurry += potency
 
 	return 1
 

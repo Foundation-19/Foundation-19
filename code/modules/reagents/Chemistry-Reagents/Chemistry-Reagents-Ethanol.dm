@@ -1221,7 +1221,7 @@
 
 /datum/reagent/ethanol/regrettiforgetti/affect_ingest(mob/living/carbon/M, removed)
 	M.make_dizzy(5)
-	M.confused += 5
+	M.adjust_confusion(6 SECONDS)
 	if (prob(10))
 		to_chat(M, SPAN_WARNING("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
 

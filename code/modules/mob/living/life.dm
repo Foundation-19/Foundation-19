@@ -82,7 +82,6 @@
 	handle_stuttering()
 	handle_drugged()
 	handle_slurring()
-	handle_confused()
 
 /mob/living/proc/handle_stunned()
 	if(stunned)
@@ -123,11 +122,6 @@
 /mob/living/proc/handle_disabilities()
 	handle_impaired_vision()
 	handle_impaired_hearing()
-
-/mob/living/proc/handle_confused()
-	if(confused)
-		confused = max(0, confused - 1)
-	return confused
 
 /mob/living/proc/handle_impaired_vision()
 	//Eyes
