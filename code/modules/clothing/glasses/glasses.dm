@@ -85,9 +85,7 @@
 				M.eye_blurry = 4
 				to_chat(M, SPAN_DANGER("\The [name] malfunction[gender != PLURAL ? "s":""], blinding you!"))
 
-				M.become_nearsighted(GLASSES_EMPED_TRAIT)
-				spawn(10 SECONDS)
-					M.cure_nearsighted(GLASSES_EMPED_TRAIT)
+				M.set_temp_nearsightedness_if_lower(10 SECONDS)
 			if(toggleable)
 				deactivate(M, FALSE)
 

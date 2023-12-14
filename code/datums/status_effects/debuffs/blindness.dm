@@ -52,7 +52,22 @@
 	overlay_severity = to_value
 	update_nearsighted_overlay()
 
-// TODO: temporary nearsightedness
+/// This status effect handles applying temporary nearsightedness to the mob. This nearsightedness can't be corrected with prescription glasses.
+/datum/status_effect/temporary_nearsightedness
+	id = "temporary_nearsightedness"
+	tick_interval = 2 SECONDS
+	alert_type = null
+	remove_on_fullheal = TRUE
+
+/datum/status_effect/temporary_nearsightedness/on_creation(mob/living/new_owner, duration = 10 SECONDS)
+	src.duration = duration
+	return ..()
+
+/datum/status_effect/temporary_nearsightedness/on_apply()
+	owner.overlay_fullscreen(id, /atom/movable/screen/fullscreen/impaired, 1)
+
+/datum/status_effect/temporary_nearsightedness/on_remove()
+	owner.clear_fullscreen(id)
 
 /// Blindness
 /datum/status_effect/grouped/blindness

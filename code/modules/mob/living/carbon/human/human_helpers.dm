@@ -263,9 +263,7 @@
 			to_chat(src, SPAN_DANGER("You go blind!"))
 			adjust_temp_blindness(5 SECONDS)
 			eye_blurry = 5
-			become_nearsighted(UNSAFE_WELDING_TRAIT)
-			spawn(100)
-				cure_nearsighted(UNSAFE_WELDING_TRAIT)
+			adjust_temp_nearsightedness(10 SECONDS)
 
 /mob/living/carbon/human/proc/make_grab(mob/living/carbon/human/attacker, mob/living/carbon/human/victim, grab_tag)
 	var/obj/item/grab/G

@@ -539,13 +539,8 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	to_chat(target, SPAN_WARNING("Your eyes burn horrifically!"))
 	target.adjust_temp_blindness(10 SECONDS)
 	target.eye_blurry += 20
-	target.become_nearsighted(LING_STUNG_TRAIT)
-	addtimer(CALLBACK(src, .proc/unblind, target), 30 SECONDS)
+	target.adjust_temp_nearsightedness(30 SECONDS)
 	SSstatistics.add_field_details("changeling_powers", "BS")
-
-/datum/power/changeling/sting/blind_sting/proc/unblind(mob/living/carbon/human/target)
-	if(target)
-		target.cure_nearsighted(LING_STUNG_TRAIT)
 
 
 /// Silences a target for 30 seconds.
