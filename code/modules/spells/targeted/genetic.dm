@@ -94,7 +94,7 @@ code\game\dna\genes\goon_powers.dm
 	charge_max = 600
 	invocation_type = INVOKE_SHOUT
 	invocation = "Sty Di Kaly!"
-	amt_dizziness = 10
+	amt_dizziness = 10 SECONDS
 	hud_state = "hysteria"
 
 /datum/spell/targeted/genetic/blind/starburst

@@ -23,7 +23,7 @@
 	if(alien == IS_DIONA)
 		return
 
-	M.dizziness = max(M.dizziness - 10, 0)
+	M.adjust_dizzy(-10 SECONDS)
 	M.drowsyness = max(M.drowsyness - 10, 0)
 	M.stuttering = max(M.stuttering - 10, 0)
 	M.adjust_confusion(-5 SECONDS)
@@ -54,7 +54,7 @@
 
 	// Side effects
 	if(prob(15))
-		M.dizziness = clamp(M.dizziness + 15, M.dizziness, 50)
+		M.adjust_dizzy_up_to(15 SECONDS, 50 SECONDS)
 	if(prob(15))
 		M.adjust_confusion_up_to(5 SECONDS, 50 SECONDS)
 	// With liver damage, it will worsen it

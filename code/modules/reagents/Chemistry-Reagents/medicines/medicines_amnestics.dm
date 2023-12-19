@@ -28,8 +28,7 @@
 	if(prob(10))
 		M.drowsyness += 5
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classa/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(14 * removed)
@@ -51,8 +50,7 @@
 	if(prob(15))
 		M.drowsyness += 5
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classb/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
@@ -82,8 +80,7 @@
 		M.eye_blurry = max(M.eye_blurry, 10)
 
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classc/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(25 * removed)
@@ -113,8 +110,7 @@
 		M.eye_blurry = max(M.eye_blurry, 10)
 
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classe/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
@@ -149,8 +145,7 @@
 	if(prob(10))
 		M.adjustBrainLoss(2.5 * removed)
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(10)
+		M.adjust_dizzy_up_to(10 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classg
 	name = "Class-G Amnestics"
@@ -176,8 +171,7 @@
 		M.eye_blurry = max(M.eye_blurry, 10)
 
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classg/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
@@ -208,8 +202,7 @@
 	if(prob(1))
 		M.drowsyness += 2
 	if(prob(2))
-		if(M.dizziness <= 200)
-			M.make_dizzy(7)
+		M.adjust_dizzy_up_to(7 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classh/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(16 * removed)
@@ -238,8 +231,7 @@
 	if(prob(1))
 		M.drowsyness += 2
 	if(prob(2))
-		if(M.dizziness <= 200)
-			M.make_dizzy(7)
+		M.adjust_dizzy_up_to(7 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classi/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(15 * removed)

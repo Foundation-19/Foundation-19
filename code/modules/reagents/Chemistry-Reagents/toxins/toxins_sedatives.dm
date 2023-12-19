@@ -62,7 +62,7 @@
 		M.set_confusion_if_lower(5 SECONDS)
 		M.add_chemical_effect(CE_VOICELOSS, 1)
 	if (M.chem_doses[type] > threshold * 0.5)
-		M.make_dizzy(3)
+		M.adjust_dizzy(3 SECONDS)
 		M.Weaken(2)
 	if (M.chem_doses[type] == round(threshold * 0.5, metabolism))
 		to_chat(M, SPAN_WARNING("Your muscles slacken and cease to obey you."))

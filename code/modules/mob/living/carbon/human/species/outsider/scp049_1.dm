@@ -288,7 +288,7 @@
 
 	Weaken(4)
 	jitteriness = 0
-	dizziness = 0
+	set_dizzy(0)
 	hallucination_power = 0
 	hallucination_duration = 0
 	if (should_have_organ(BP_HEART))

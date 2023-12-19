@@ -61,7 +61,6 @@
 	reset_plane_and_layer()
 	UpdateLyingBuckledAndVerbStatus()
 
-	dizziness = 0
 	jitteriness = 0
 
 	set_sight(sight|SEE_TURFS|SEE_MOBS|SEE_OBJS)

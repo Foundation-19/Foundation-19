@@ -161,7 +161,7 @@
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.dizziness +=5
+	M.adjust_dizzy(5 SECONDS)
 
 /datum/reagent/ethanol/gin
 	name = "Gin"
@@ -192,7 +192,7 @@
 	if(alien == IS_DIONA)
 		return
 	..()
-	M.dizziness = max(0, M.dizziness - 5)
+	M.adjust_dizzy(-5 SECONDS)
 	M.drowsyness = max(0, M.drowsyness - 3)
 	M.sleeping = max(0, M.sleeping - 2)
 	if(M.bodytemperature > 310)
@@ -1220,7 +1220,7 @@
 	)
 
 /datum/reagent/ethanol/regrettiforgetti/affect_ingest(mob/living/carbon/M, removed)
-	M.make_dizzy(5)
+	M.adjust_dizzy(5 SECONDS)
 	M.adjust_confusion(6 SECONDS)
 	if (prob(10))
 		to_chat(M, SPAN_WARNING("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))

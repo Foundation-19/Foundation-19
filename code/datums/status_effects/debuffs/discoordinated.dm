@@ -9,9 +9,9 @@
 	icon_state = "convulsing"
 
 /datum/status_effect/discoordinated/on_apply()
-	ADD_TRAIT(owner, TRAIT_DISCOORDINATED_TOOL_USER, "[type]")
+	ADD_TRAIT(owner, TRAIT_DISCOORDINATED_TOOL_USER, TRAIT_STATUS_EFFECT(id))
 	return ..()
 
 /datum/status_effect/discoordinated/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_DISCOORDINATED_TOOL_USER, "[type]")
+	REMOVE_TRAIT(owner, TRAIT_DISCOORDINATED_TOOL_USER, TRAIT_STATUS_EFFECT(id))
 	return ..()

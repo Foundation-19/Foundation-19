@@ -16,11 +16,11 @@
 /datum/reagent/cryptobiolin/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
-	var/drug_strength = 4
+	var/drug_strength = 4 SECONDS
 	if (alien == IS_SKRELL)
 		drug_strength = drug_strength * 0.8
-	M.make_dizzy(drug_strength)
-	M.set_confusion_if_lower(drug_strength * 3 SECONDS)
+	M.adjust_dizzy(drug_strength)
+	M.set_confusion_if_lower(drug_strength * 3)
 
 
 

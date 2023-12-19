@@ -187,5 +187,5 @@
 		for (var/obj/item/organ/external/E in H.organs)
 			E.status |= ORGAN_DISFIGURED //currently only matters for the head, but might as well disfigure them all.
 	if (M.chem_doses[type] > 10)
-		M.make_dizzy(5)
+		M.adjust_dizzy(5 SECONDS)
 		M.make_jittery(5)

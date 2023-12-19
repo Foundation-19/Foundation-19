@@ -23,7 +23,7 @@
 		to_chat(H, SPAN_WARNING("You feel unhinged."))
 	H.adjust_hallucination(5,5)
 	H.adjust_confusion(3 SECONDS)
-	H.dizziness += 2
+	H.adjust_dizzy(2 SECONDS)
 	if(H.hallucination_power > 50)
 		H.adjustBrainLoss(5)
 		to_chat(H, SPAN_DANGER("You feel your mind tearing apart!"))

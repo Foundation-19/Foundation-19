@@ -23,7 +23,7 @@
 		M.adjust_nutrition(nutrition * removed)
 	if(hydration)
 		M.adjust_hydration(hydration * removed)
-	M.dizziness = max(0, M.dizziness + adj_dizzy)
+	M.adjust_dizzy(adj_dizzy)
 	M.drowsyness = max(0, M.drowsyness + adj_drowsy)
 	M.sleeping = max(0, M.sleeping + adj_sleepy)
 	if(adj_temp > 0 && M.bodytemperature < 310) // 310 is the normal bodytemp. 310.055
@@ -314,7 +314,7 @@
 	taste_description = "bitterness"
 	taste_mult = 1.3
 	color = "#482000"
-	adj_dizzy = -5
+	adj_dizzy = -5 SECONDS
 	adj_drowsy = -3
 	adj_sleepy = -2
 	adj_temp = 25
@@ -496,7 +496,7 @@
 	description = "A can of club soda. Why not make a scotch and soda?"
 	taste_description = "carbonated water"
 	color = "#619494"
-	adj_dizzy = -5
+	adj_dizzy = -5 SECONDS
 	adj_drowsy = -3
 	adj_temp = -5
 
@@ -520,7 +520,7 @@
 	description = "It tastes strange but at least the quinine keeps the Space Malaria at bay."
 	taste_description = "tart and fresh"
 	color = "#619494"
-	adj_dizzy = -5
+	adj_dizzy = -5 SECONDS
 	adj_drowsy = -3
 	adj_sleepy = -2
 	adj_temp = -5
@@ -664,7 +664,7 @@
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
 	M.make_jittery(20)
 	M.druggy = max(M.druggy, 30)
-	M.dizziness += 5
+	M.adjust_dizzy(5 SECONDS)
 	M.drowsyness = 0
 
 /datum/reagent/drink/grenadine
@@ -768,8 +768,7 @@
 	M.adjustOxyLoss(-4 * removed)
 	M.heal_organ_damage(2 * removed, 2 * removed)
 	M.adjustToxLoss(-2 * removed)
-	if(M.dizziness)
-		M.dizziness = max(0, M.dizziness - 15)
+	M.adjust_dizzy(-15 SECONDS)
 
 	M.adjust_confusion(-5 SECONDS)
 
@@ -1110,7 +1109,7 @@
 	description = "Tasty black tea, it has antioxidants, it's good for you!"
 	taste_description = "tart black tea"
 	color = "#101000"
-	adj_dizzy = -2
+	adj_dizzy = -2 SECONDS
 	adj_drowsy = -1
 	adj_sleepy = -3
 	adj_temp = 20

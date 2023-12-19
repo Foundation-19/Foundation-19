@@ -13,12 +13,12 @@
 	if(prob(2) && ishuman(victim))
 		var/mob/living/carbon/human/H = victim
 		H.vomit(2)
-	victim.dizziness = clamp(victim.dizziness + 3 * delta_time, victim.dizziness, 50)
+	victim.adjust_dizzy_up_to(3 SECONDS * delta_time, 50 SECONDS)
 
 /datum/addiction/opiate/WithdrawalStage3Process(mob/living/carbon/victim, delta_time)
 	. = ..()
 	if(prob(5) && ishuman(victim))
 		var/mob/living/carbon/human/H = victim
 		H.vomit(3)
-	victim.dizziness = clamp(victim.dizziness + 5 * delta_time, victim.dizziness, 100)
+	victim.adjust_dizzy_up_to(5 SECONDS * delta_time, 100 SECONDS)
 	victim.jitteriness = clamp(victim.jitteriness + 15 * delta_time, victim.jitteriness, 250)

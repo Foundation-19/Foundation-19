@@ -8,7 +8,7 @@ Targeted spells have two useful flags: INCLUDEUSER and SELECTABLE. These are exp
 	var/max_targets = 1 //leave 0 for unlimited targets in range, more for limited number of casts (can all target one guy, depends on target_ignore_prev) in range
 	var/target_ignore_prev = 1 //only important if max_targets > 1, affects if the spell can be cast multiple times at one person from one cast
 
-
+	// TODO: this should all be moved to each individual spell
 	var/amt_weakened = 0
 	var/amt_paralysis = 0
 	var/amt_stunned = 0
@@ -167,7 +167,7 @@ Targeted spells have two useful flags: INCLUDEUSER and SELECTABLE. These are exp
 			target.buckled = null
 	target.adjust_temp_blindness(amt_eye_blind)
 	target.eye_blurry += amt_eye_blurry
-	target.dizziness += amt_dizziness
+	target.adjust_dizzy(amt_dizziness)
 	target.adjust_confusion(amt_confused)
 	target.stuttering += amt_stuttering
 	if(effect_state)

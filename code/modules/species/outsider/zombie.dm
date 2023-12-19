@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	if (true_dose >= 110)
 		M.adjustHalLoss(5)
-		M.make_dizzy(10)
+		M.adjust_dizzy(10 SECONDS)
 		if (prob(8))
 			to_chat(M, SPAN_DANGER("<font style='font-size:[rand(3,4)]'>[pick(GLOB.zombie_messages["stage3"])]</font>"))
 
@@ -383,7 +383,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	Weaken(4)
 	jitteriness = 0
-	dizziness = 0
+	set_dizzy(0)
 	hallucination_power = 0
 	hallucination_duration = 0
 	if (should_have_organ(BP_HEART))

@@ -138,7 +138,7 @@
 
 /datum/reagent/medicine/painkiller/deletrathol/handle_effects(mob/living/carbon/M, alien, removed)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
-	M.make_dizzy(2)
+	M.adjust_dizzy(2 SECONDS)
 	if (prob(75))
 		M.drowsyness++
 	if (prob(25))

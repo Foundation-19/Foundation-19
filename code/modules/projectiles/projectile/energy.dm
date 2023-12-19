@@ -151,9 +151,9 @@
 	agony = 70
 	damage_type = BURN
 	vacuum_traversal = 0
-	var/min_dizziness_amt = 60
-	var/med_dizziness_amt = 120
-	var/max_dizziness_amt = 300
+	var/min_dizziness_amt = 60 SECONDS
+	var/med_dizziness_amt = 120 SECONDS
+	var/max_dizziness_amt = 300 SECONDS
 
 /obj/item/projectile/energy/plasmastun/proc/bang(mob/living/carbon/M)
 
@@ -173,13 +173,13 @@
 			ear_safety += 1
 
 	if(!ear_safety)
-		M.make_dizzy(max_dizziness_amt)
+		M.adjust_dizzy(max_dizziness_amt)
 		M.ear_damage += rand(1, 10)
 		M.ear_deaf = max(M.ear_deaf,15)
 	else if(ear_safety > 1)
-		M.make_dizzy(min_dizziness_amt)
+		M.adjust_dizzy(min_dizziness_amt)
 	else
-		M.make_dizzy(med_dizziness_amt)
+		M.adjust_dizzy(med_dizziness_amt)
 
 	if(M.ear_damage >= 15)
 		to_chat(M, SPAN_DANGER("Your ears start to ring badly!"))
@@ -199,9 +199,9 @@
 	armor_penetration = 0
 	life_span = 10
 	agony = 5
-	min_dizziness_amt = 5
-	med_dizziness_amt = 15
-	max_dizziness_amt = 20
+	min_dizziness_amt = 5 SECONDS
+	med_dizziness_amt = 15 SECONDS
+	max_dizziness_amt = 20 SECONDS
 
 /obj/item/projectile/energy/plasmastun/sonic
 	name = "sonic pulse"
@@ -213,9 +213,9 @@
 	vacuum_traversal = 0
 	penetration_modifier = 0.2
 	penetrating = 1
-	min_dizziness_amt = 10
-	med_dizziness_amt = 60
-	max_dizziness_amt = 120
+	min_dizziness_amt = 10 SECONDS
+	med_dizziness_amt = 60 SECONDS
+	max_dizziness_amt = 120 SECONDS
 
 /obj/item/projectile/energy/plasmastun/sonic/bang(mob/living/carbon/M)
 	..()

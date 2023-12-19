@@ -148,7 +148,7 @@
 	var/effective_dose = M.chem_doses[type] * strength_mod * (1 + volume/60) //drinking a LOT will make you go down faster
 
 	if(effective_dose >= strength) // Early warning
-		M.make_dizzy(6) // It is decreased at the speed of 3 per tick
+		M.adjust_dizzy(6 SECONDS) // It is decreased at the speed of 3 per tick
 	if(effective_dose >= strength * 2) // Slurring
 		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
 		M.slurring = max(M.slurring, 30)

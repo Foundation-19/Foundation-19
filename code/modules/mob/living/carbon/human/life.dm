@@ -642,11 +642,9 @@
 
 		//Resting
 		if(resting)
-			dizziness = max(0, dizziness - 15)
 			jitteriness = max(0, jitteriness - 15)
 			adjustHalLoss(-3)
 		else
-			dizziness = max(0, dizziness - 3)
 			jitteriness = max(0, jitteriness - 3)
 			adjustHalLoss(-1)
 
