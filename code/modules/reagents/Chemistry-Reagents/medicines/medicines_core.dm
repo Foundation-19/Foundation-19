@@ -20,7 +20,7 @@
 	if (prob(5))
 		M.slurring = max(M.slurring, 10)
 	if (prob(2))
-		M.drowsyness = max(M.drowsyness, 5)
+		M.set_drowsiness_if_lower(5 SECONDS)
 
 
 
@@ -100,7 +100,7 @@
 		return
 
 	if (remove_generic)
-		M.drowsyness = max(0, M.drowsyness - 6 * removed)
+		M.adjust_drowsiness(-6 SECONDS * removed)
 		M.adjust_hallucination(-9 * removed)
 		M.add_up_to_chemical_effect(CE_ANTITOX, 1)
 
@@ -218,7 +218,7 @@
 				if (I.organ_tag == BP_BRAIN)
 					// if we have located an organic brain, apply side effects
 					H.adjust_confusion(1 SECOND)
-					H.drowsyness++
+					H.adjust_drowsiness(1 SECOND)
 					// peridaxon only heals minor brain damage
 					if (I.damage >= I.min_bruised_damage)
 						continue
@@ -241,7 +241,7 @@
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.adjust_confusion(1 SECOND)
-		H.drowsyness++
+		H.adjust_drowsiness(1 SECOND)
 
 
 

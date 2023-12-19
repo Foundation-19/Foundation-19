@@ -195,7 +195,6 @@
 	var/paralysis = 0
 	var/stunned = 0
 	var/weakened = 0
-	var/drowsyness = 0.0//Carbon
 
 	var/flavor_text = ""
 

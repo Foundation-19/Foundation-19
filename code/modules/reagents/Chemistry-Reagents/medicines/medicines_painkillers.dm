@@ -112,7 +112,7 @@
 		M.add_chemical_effect(CE_BREATHLOSS, 0.2) //Don't drink and OD on opiates folks
 	if (prob(1))
 		M.Weaken(2)
-		M.drowsyness = max(M.drowsyness, 5)
+		M.set_drowsiness_if_lower(5 SECONDS)
 
 
 
@@ -140,7 +140,7 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.adjust_dizzy(2 SECONDS)
 	if (prob(75))
-		M.drowsyness++
+		M.adjust_drowsiness(1 SECOND)
 	if (prob(25))
 		M.adjust_confusion(1 SECOND)
 

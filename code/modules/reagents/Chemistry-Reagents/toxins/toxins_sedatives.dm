@@ -30,10 +30,10 @@
 		if (prob(50))
 			M.Weaken(2)
 			M.add_chemical_effect(CE_SEDATE, 1)
-		M.drowsyness = max(M.drowsyness, 20)
+		M.set_drowsiness_if_lower(20 SECONDS)
 	else
 		M.sleeping = max(M.sleeping, 20)
-		M.drowsyness = max(M.drowsyness, 60)
+		M.set_drowsiness_if_lower(60 SECONDS)
 		M.add_chemical_effect(CE_SEDATE, 1)
 	M.add_chemical_effect(CE_PULSE, -1)
 
@@ -97,7 +97,7 @@
 
 	if (M.chem_doses[type] <= metabolism * threshold)
 		M.adjust_confusion(2 SECONDS)
-		M.drowsyness += 2
+		M.adjust_drowsiness(2 SECONDS)
 
 	if (M.chem_doses[type] < 2 * threshold)
 		M.Weaken(30)

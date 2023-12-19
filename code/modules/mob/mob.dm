@@ -271,7 +271,7 @@
 		var/turf/T = loc
 		. += T.movement_delay
 
-	if (drowsyness > 0)
+	if (has_status_effect(/datum/status_effect/drowsiness))
 		. += 6
 	if(lying) //Crawling, it's slower
 		. += (8 + ((weakened * 3) + (has_status_effect(/datum/status_effect/confusion) ? 5 : 0)))

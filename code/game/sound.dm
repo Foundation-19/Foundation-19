@@ -90,7 +90,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 				S.environment = PSYCHOTIC
 			else if (M.druggy)
 				S.environment = DRUGGED
-			else if (M.drowsyness)
+			else if (M.has_status_effect(/datum/status_effect/drowsiness))
 				S.environment = DIZZY
 			else if (M.has_status_effect(/datum/status_effect/confusion))
 				S.environment = DIZZY

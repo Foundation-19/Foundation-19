@@ -193,7 +193,7 @@
 		return
 	..()
 	M.adjust_dizzy(-5 SECONDS)
-	M.drowsyness = max(0, M.drowsyness - 3)
+	M.adjust_drowsiness(-3 SECONDS)
 	M.sleeping = max(0, M.sleeping - 2)
 	if(M.bodytemperature > 310)
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
@@ -311,7 +311,7 @@
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.drowsyness = max(0, M.drowsyness - 7)
+	M.adjust_drowsiness(-7 SECONDS)
 	if (M.bodytemperature > 310)
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
 	M.make_jittery(5)

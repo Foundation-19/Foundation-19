@@ -15,7 +15,7 @@
 		else if(ishuman(toucher) && prob(weakness * 100))
 			var/mob/living/carbon/human/H = toucher
 			to_chat(H, pick(SPAN_NOTICE("You feel like taking a nap."),SPAN_NOTICE("You feel a yawn coming on."),SPAN_NOTICE("You feel a little tired.")))
-			H.drowsyness = min(H.drowsyness + rand(5,25) * weakness, 50 * weakness)
+			H.adjust_drowsiness_up_to(rand(5 SECONDS, 25 SECONDS) * weakness, 50 SECONDS * weakness)
 			H.eye_blurry = min(H.eye_blurry + rand(1,3) * weakness, 50 * weakness)
 			return 1
 
@@ -30,7 +30,7 @@
 			if(prob(weakness * 100))
 				if(prob(10))
 					to_chat(H, pick(SPAN_NOTICE("You feel like taking a nap."),SPAN_NOTICE("You feel a yawn coming on."),SPAN_NOTICE("You feel a little tired.")))
-				H.drowsyness = min(H.drowsyness + 1 * weakness, 25 * weakness)
+				H.adjust_drowsiness_up_to(1 SECOND * weakness, 25 SECONDS * weakness)
 				H.eye_blurry = min(H.eye_blurry + 1 * weakness, 25 * weakness)
 		for (var/mob/living/silicon/robot/R in range(src.effectrange,holder))
 			to_chat(R, SPAN_WARNING("SYSTEM ALERT: CPU cycles slowing down."))
@@ -43,7 +43,7 @@
 			var/weakness = GetAnomalySusceptibility(H)
 			if(prob(weakness * 100))
 				to_chat(H, pick(SPAN_NOTICE("You feel like taking a nap."),SPAN_NOTICE("You feel a yawn coming on."),SPAN_NOTICE("You feel a little tired.")))
-				H.drowsyness = min(H.drowsyness + rand(5,15) * weakness, 50 * weakness)
+				H.adjust_drowsiness(rand(5 SECONDS, 15 SECONDS) * weakness, 50 SECONDS * weakness)
 				H.eye_blurry = min(H.eye_blurry + rand(5,15) * weakness, 50 * weakness)
 		for (var/mob/living/silicon/robot/R in range(src.effectrange,holder))
 			to_chat(R, SPAN_WARNING("SYSTEM ALERT: CPU cycles slowing down."))

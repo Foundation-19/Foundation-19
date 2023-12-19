@@ -648,16 +648,6 @@
 			jitteriness = max(0, jitteriness - 3)
 			adjustHalLoss(-1)
 
-		if (drowsyness > 0)
-			drowsyness = max(0, drowsyness-1)
-			eye_blurry = max(2, eye_blurry)
-			if(drowsyness > 10)
-				var/zzzchance = min(5, 5*drowsyness/30)
-				if((prob(zzzchance) || drowsyness >= 60))
-					if(stat == CONSCIOUS)
-						to_chat(src, SPAN_NOTICE("You are about to fall asleep..."))
-					Sleeping(5)
-
 		// If you're dirty, your gloves will become dirty, too.
 		if(gloves && germ_level > gloves.germ_level && prob(10))
 			gloves.germ_level += 1
@@ -674,11 +664,6 @@
 			adjust_nutrition(-species.hunger_factor)
 		if(hydration > 0)
 			adjust_hydration(-species.thirst_factor)
-
-		if(stasis_value > 1 && drowsyness < stasis_value * 4)
-			drowsyness += min(stasis_value, 3)
-			if(!stat && prob(1))
-				to_chat(src, SPAN_NOTICE("You feel slow and sluggish..."))
 
 	return 1
 

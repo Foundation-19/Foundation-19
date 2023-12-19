@@ -24,7 +24,7 @@
 		return
 
 	M.adjust_dizzy(-10 SECONDS)
-	M.drowsyness = max(M.drowsyness - 10, 0)
+	M.adjust_drowsiness(-10 SECONDS)
 	M.stuttering = max(M.stuttering - 10, 0)
 	M.adjust_confusion(-5 SECONDS)
 	var/datum/reagents/ingested = M.get_ingested_reagents()

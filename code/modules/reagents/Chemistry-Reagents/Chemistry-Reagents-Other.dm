@@ -650,7 +650,7 @@
 		M.set_confusion_if_lower(4 SECONDS)
 	if (dosage >= 0.3)
 		if (prob(5)) M.Paralyse(1)
-		M.drowsyness = max(M.drowsyness, 3)
+		M.set_drowsiness(3 SECONDS)
 		M.slurring =   max(M.slurring, 3)
 	if (do_giggle && prob(20))
 		M.emote(pick("giggle", "laugh"))
@@ -747,7 +747,7 @@
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
 
 	// Reduce bad effects
-	M.drowsyness = max(M.drowsyness - 50, 0)
+	M.adjust_drowsiness(-50 SECONDS)
 	M.adjust_hallucination(-50)
 	M.AdjustParalysis(-10)
 	M.AdjustStunned(-10)

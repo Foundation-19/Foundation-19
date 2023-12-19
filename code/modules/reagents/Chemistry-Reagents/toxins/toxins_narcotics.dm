@@ -42,7 +42,7 @@
 	if (prob(80))
 		M.set_confusion_if_lower(10 SECONDS)
 	if (prob(50))
-		M.drowsyness = max(M.drowsyness, 3)
+		M.set_drowsiness_if_lower(3 SECONDS)
 	if (prob(10))
 		M.emote("drool")
 		M.apply_effect(STUTTER, 3)

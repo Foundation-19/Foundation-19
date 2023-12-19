@@ -158,9 +158,9 @@
 	if(effective_dose >= strength * 4) // Blurry vision
 		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
 		M.eye_blurry = max(M.eye_blurry, 10)
-	if(effective_dose >= strength * 5) // Drowsyness - periodically falling asleep
+	if(effective_dose >= strength * 5) // Drowsiness - periodically falling asleep
 		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
-		M.drowsyness = max(M.drowsyness, 20)
+		M.set_drowsiness_if_lower(20 SECONDS)
 	if(effective_dose >= strength * 6) // Toxic dose
 		M.add_chemical_effect(CE_ALCOHOL_TOXIC, toxicity)
 	if(effective_dose >= strength * 7) // Pass out

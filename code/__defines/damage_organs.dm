@@ -22,7 +22,6 @@
 #define SLUR      "slur"
 #define STUTTER   "stutter"
 #define EYE_BLUR  "eye_blur"
-#define DROWSY    "drowsy"
 
 // Damage flags
 #define DAM_SHARP     (1<<0)

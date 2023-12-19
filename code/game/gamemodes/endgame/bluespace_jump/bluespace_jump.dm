@@ -107,7 +107,7 @@
 		if(prob(50))
 			real_one.set_confusion_if_lower(10 SECONDS)
 		if(prob(20))
-			real_one.drowsyness = max(real_one.drowsyness, 3)
+			real_one.set_drowsiness_if_lower(5 SECONDS)
 
 /obj/effect/bluegoast/proc/mirror_dir(atom/movable/am, old_dir, new_dir)
 	setDir(GLOB.reverse_dir[new_dir])
