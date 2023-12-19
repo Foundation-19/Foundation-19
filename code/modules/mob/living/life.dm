@@ -80,7 +80,6 @@
 	handle_weakened()
 	handle_paralysed()
 	handle_stuttering()
-	handle_drugged()
 	handle_slurring()
 
 /mob/living/proc/handle_stunned()
@@ -101,11 +100,6 @@
 	if(stuttering)
 		stuttering = max(stuttering-1, 0)
 	return stuttering
-
-/mob/living/proc/handle_drugged()
-	if(druggy)
-		druggy = max(druggy-1, 0)
-	return druggy
 
 /mob/living/proc/handle_slurring()
 	if(slurring)
@@ -155,7 +149,6 @@
 
 	if(!is_blind())
 		set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
-		set_fullscreen(druggy, "high", /atom/movable/screen/fullscreen/high)
 
 	set_fullscreen(stat == UNCONSCIOUS, "blackout", /atom/movable/screen/fullscreen/blackout)
 

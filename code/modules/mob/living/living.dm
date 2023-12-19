@@ -463,7 +463,6 @@ default behaviour is:
 	eye_blurry = 0
 	ear_deaf = 0
 	ear_damage = 0
-	druggy = 0
 	jitteriness = 0
 
 	SEND_SIGNAL(src, COMSIG_LIVING_REJUVENATE)

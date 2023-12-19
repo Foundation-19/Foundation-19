@@ -105,7 +105,6 @@
 	if(stat != DEAD)
 		if(!is_blind())
 			set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
-			set_fullscreen(druggy, "high", /atom/movable/screen/fullscreen/high)
 		if(machine)
 			if(machine.check_eye(src) < 0)
 				reset_view(null)

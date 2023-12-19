@@ -98,7 +98,6 @@
 
 	var/bhunger = 0			//Carbon
 
-	var/druggy = 0			//Carbon
 	var/sleeping = 0		//Carbon
 	var/resting = FALSE			//Carbon
 	var/is_shifted = FALSE

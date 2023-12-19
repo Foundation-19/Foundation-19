@@ -112,7 +112,7 @@
 	var/strength = 10 // This is, essentially, units between stages - the lower, the stronger. Less fine tuning, more clarity.
 	var/toxicity = 1
 
-	var/druggy = 0
+	var/adj_druggy = 0
 	var/adj_temp = 0
 	var/targ_temp = 310
 	var/halluci = 0
@@ -167,8 +167,8 @@
 		M.Paralyse(20)
 		M.Sleeping(30)
 
-	if(druggy != 0)
-		M.druggy = max(M.druggy, druggy)
+	if(adj_druggy != 0)
+		M.set_drugginess_if_lower(druggy)
 
 	if(adj_temp > 0 && M.bodytemperature < targ_temp) // 310 is the normal bodytemp. 310.055
 		M.bodytemperature = min(targ_temp, M.bodytemperature + (adj_temp * TEMPERATURE_DAMAGE_COEFFICIENT))

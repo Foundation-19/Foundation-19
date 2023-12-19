@@ -128,8 +128,7 @@
 	if (eye_blurry > 0)
 		eye_blurry = 0
 
-	if (druggy > 0)
-		druggy = 0
+	set_drugginess(0)
 
 	return 1
 

@@ -138,7 +138,7 @@
 	var/effective_dose = efficiency * M.chem_doses[sugar.type]
 	if(effective_dose < 5)
 		return
-	M.druggy = max(M.druggy, 10)
+	M.set_drugginess_if_lower(10 SECONDS)
 	M.add_chemical_effect(CE_PULSE, -1)
 	if(effective_dose > 15 && prob(7))
 		M.emote(pick("twitch", "drool"))

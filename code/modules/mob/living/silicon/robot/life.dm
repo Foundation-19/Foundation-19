@@ -123,10 +123,6 @@
 		eye_blurry--
 		eye_blurry = max(0, eye_blurry)
 
-	if (druggy > 0)
-		druggy--
-		druggy = max(0, druggy)
-
 	//update the state of modules and components here
 	if (stat != CONSCIOUS)
 		uneq_all()
@@ -248,7 +244,6 @@
 	if(stat != DEAD)
 		if(!is_blind())
 			set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
-			set_fullscreen(druggy, "high", /atom/movable/screen/fullscreen/high)
 
 		if (machine)
 			if (machine.check_eye(src) < 0)

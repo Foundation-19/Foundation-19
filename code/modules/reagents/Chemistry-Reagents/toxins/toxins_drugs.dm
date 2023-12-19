@@ -23,7 +23,7 @@
 	if (alien == IS_SKRELL)
 		drug_strength = drug_strength * 0.8
 
-	M.druggy = max(M.druggy, drug_strength)
+	M.set_drugginess_if_lower(drug_strength SECONDS)
 	if (alien != IS_SKRELL)
 		if (prob(10))
 			M.SelfMove(pick(GLOB.cardinal))
@@ -125,7 +125,7 @@
 	if (alien == IS_SKRELL)
 		threshold = 1.2
 
-	M.druggy = max(M.druggy, 30)
+	M.set_drugginess_if_lower(30 SECONDS)
 
 	if (M.chem_doses[type] < 1 * threshold)
 		M.apply_effect(3, STUTTER)
@@ -136,7 +136,7 @@
 		M.apply_effect(3, STUTTER)
 		M.make_jittery(5)
 		M.adjust_dizzy(5 SECONDS)
-		M.druggy = max(M.druggy, 35)
+		M.set_drugginess_if_lower(35 SECONDS)
 		if (prob(10))
 			M.emote(pick("twitch", "giggle"))
 	else
@@ -144,7 +144,7 @@
 		M.apply_effect(3, STUTTER)
 		M.make_jittery(10)
 		M.adjust_dizzy(10 SECONDS)
-		M.druggy = max(M.druggy, 40)
+		M.set_drugginess_if_lower(40 SECONDS)
 		if (prob(15))
 			M.emote(pick("twitch", "giggle"))
 

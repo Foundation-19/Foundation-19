@@ -66,7 +66,7 @@
 
 /datum/reagent/medicine/painkiller/paracetamol/overdose(mob/living/carbon/M, alien)
 	M.add_chemical_effect(CE_TOXIN, 1)
-	M.druggy = max(M.druggy, 2)
+	M.set_drugginess_if_lower(2 SECONDS)
 	M.add_chemical_effect(CE_PAINKILLER, 10)
 
 
@@ -105,7 +105,7 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.slurring = max(M.slurring, 30)
 	M.hallucination(120, 30)
-	M.druggy = max(M.druggy, 10)
+	M.set_drugginess_if_lower(10 SECONDS)
 	M.add_chemical_effect(CE_PAINKILLER, current_painkiller_strength * 0.5) //extra painkilling for extra trouble
 	M.add_chemical_effect(CE_BREATHLOSS, 0.6) // Have trouble breathing, need more air
 	if (is_boozed(M))
@@ -146,5 +146,5 @@
 
 /datum/reagent/medicine/painkiller/deletrathol/overdose(mob/living/carbon/M, alien)
 	..()
-	M.druggy = max(M.druggy, 2)
+	M.set_drugginess_if_lower(2 SECONDS)
 	M.add_chemical_effect(CE_PAINKILLER, 10)

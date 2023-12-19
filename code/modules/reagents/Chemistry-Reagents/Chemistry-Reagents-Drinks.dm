@@ -654,6 +654,7 @@
 	color = "#100800"
 	adj_temp = -5
 	adj_sleepy = -2
+	adj_dizzy = 5 SECONDS
 
 	glass_name = "Nuka-Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland"
@@ -663,8 +664,7 @@
 	..()
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
 	M.make_jittery(20)
-	M.druggy = max(M.druggy, 30)
-	M.adjust_dizzy(5 SECONDS)
+	M.set_drugginess_if_lower(30 SECONDS)
 	M.set_drowsiness(0)
 
 /datum/reagent/drink/grenadine

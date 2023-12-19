@@ -81,7 +81,7 @@
 
 	// Side effects
 	if(prob(15))
-		M.druggy = clamp(M.druggy + 15, M.druggy, 50)
+		M.adjust_drugginess_up_to(15 SECONDS, 50 SECONDS)
 	if(prob(1) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.vomit()

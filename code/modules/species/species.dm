@@ -557,7 +557,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	if(H.stat == DEAD)
 		return 1
 
-	if(!H.druggy)
+	if(!H.has_status_effect(/datum/status_effect/drugginess))
 		H.set_see_in_dark((H.sight == (SEE_TURFS|SEE_MOBS|SEE_OBJS)) ? 8 : min(H.getDarkvisionRange() + H.equipment_darkness_modifier, 8))
 		if(H.equipment_see_invis)
 			H.set_see_invisible(max(min(H.see_invisible, H.equipment_see_invis), vision[2]))
@@ -579,7 +579,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	var/how_nearsighted = H.is_nearsighted_currently()
 	H.set_fullscreen(how_nearsighted, "nearsighted", /atom/movable/screen/fullscreen/oxy, how_nearsighted)
 	H.set_fullscreen(H.eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
-	H.set_fullscreen(H.druggy, "high", /atom/movable/screen/fullscreen/high)
 
 	for(var/overlay in H.equipment_overlays)
 		H.client.screen |= overlay

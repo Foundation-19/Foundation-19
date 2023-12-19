@@ -13,7 +13,6 @@
 
 	//owner.add_mood_event(id, /datum/mood_event/high)
 	owner.overlay_fullscreen(id, /atom/movable/screen/fullscreen/high)
-	//owner.sound_environment_override = SOUND_ENVIRONMENT_DRUGGED
 	return TRUE
 
 /datum/status_effect/drugginess/on_remove()
@@ -21,9 +20,6 @@
 
 	//owner.clear_mood_event(id)
 	owner.clear_fullscreen(id)
-	// TODO: this is kind of hacky
-	//if(owner.sound_environment_override == SOUND_ENVIRONMENT_DRUGGED)
-	//	owner.sound_environment_override = SOUND_ENVIRONMENT_NONE
 
 /// Removes all of our drugginess (self delete) on signal
 /datum/status_effect/drugginess/proc/remove_drugginess(datum/source, admin_revive)

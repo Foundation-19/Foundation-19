@@ -485,7 +485,7 @@
 	reagent_state = LIQUID
 	color = "#666300"
 	strength = 10
-	druggy = 50
+	adj_druggy = 1 MINUTE
 
 	glass_name = "Atomic Bomb"
 	glass_desc = "We cannot take legal responsibility for your actions after imbibing."
@@ -865,7 +865,7 @@
 	reagent_state = LIQUID
 	color = "#ff88ff"
 	strength = 15
-	druggy = 50
+	adj_druggy = 1 MINUTE
 
 	glass_name = "Hippie's Delight"
 	glass_desc = "A drink enjoyed by people during the 1960's."
@@ -992,7 +992,7 @@
 	taste_description = "death, the destroyer of worlds"
 	color = "#c15d00"
 	strength = 10
-	druggy = 30
+	adj_druggy = 30 SECONDS
 
 	glass_name = "Manhattan Project"
 	glass_desc = "A scientist's drink of choice, for pondering ways to blow stuff up."
@@ -1154,7 +1154,7 @@
 	taste_description = "purified alcoholic death"
 	color = "#000000"
 	strength = 10
-	druggy = 50
+	adj_druggy = 1 MINUTE
 	halluci = 10
 
 	glass_name = "???"
@@ -1374,7 +1374,7 @@
 	taste_description = "dry"
 	color = "#666340"
 	strength = 10
-	druggy = 50
+	adj_druggy = 1 MINUTE
 
 	glass_name = "Three Mile Island iced tea"
 	glass_desc = "A glass of this is sure to prevent a meltdown."
@@ -1580,7 +1580,7 @@
 	taste_description = "a thick potion of mushroom, slime, and hard alcohol"
 	color = "#c76c4d"
 	strength = 100
-	druggy = 5
+	adj_druggy = 5 SECONDS
 
 	glass_name = "qokk'hrona"
 	glass_desc = "Delicious Skrellian wine from refined qokk'loa."
