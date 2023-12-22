@@ -25,8 +25,8 @@
 	icon_state = "ano10"
 	update_state = 0 //Don't pixelshift us on wall
 	cell_type = /obj/item/cell/alien
-	autoname = 0
-	
+	auto_name = 0
+
 /obj/machinery/power/apc/alien/on_update_icon()
 	check_updates()
 	if(update_state & APC_UPDATE_ALLGOOD)

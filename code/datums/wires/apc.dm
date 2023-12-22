@@ -1,6 +1,6 @@
 /datum/wires/apc
 	holder_type = /obj/machinery/power/apc
-	wire_count = 4
+	wire_count = 6	// 2 duds
 	proper_name = "APC"
 
 /datum/wires/apc/New(atom/_holder)
@@ -27,25 +27,19 @@
 		if(WIRE_IDSCAN)
 			A.locked = FALSE
 
-			spawn(300)
-				if(A)
-					A.locked = TRUE
+			addtimer(CALLBACK(A, /obj/machinery/power/apc.proc/reset_wire, wire), 30 SECONDS)
 
 		if(WIRE_MAIN_POWER1, WIRE_MAIN_POWER2)
 			if(!A.shorted)
 				A.shorted = TRUE
 
-				spawn(1200)
-					if(A && !is_cut(WIRE_MAIN_POWER1) && !is_cut(WIRE_MAIN_POWER2))
-						A.shorted = FALSE
+				addtimer(CALLBACK(A, /obj/machinery/power/apc.proc/reset_wire, wire), 120 SECONDS)
 
 		if(WIRE_AI_CONTROL)
 			if(!A.aidisabled)
 				A.aidisabled = TRUE
 
-				spawn(10)
-					if(A && !is_cut(WIRE_AI_CONTROL))
-						A.aidisabled = FALSE
+				addtimer(CALLBACK(A, /obj/machinery/power/apc.proc/reset_wire, wire), 1 SECOND)
 
 /datum/wires/apc/on_cut(wire, mend)
 	var/obj/machinery/power/apc/A = holder
