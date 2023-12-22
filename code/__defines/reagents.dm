@@ -1,0 +1,1 @@
+#define ALCOHOL_RATE 0.005

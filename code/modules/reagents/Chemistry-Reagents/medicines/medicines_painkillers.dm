@@ -23,8 +23,8 @@
 	calculate_strength(M, alien, removed)
 	M.add_chemical_effect(CE_PAINKILLER, current_painkiller_strength)
 	handle_effects(M, alien, removed)
-	var/booze_factor = is_boozed(M)
-	if (is_opiate && booze_factor)
+	var/booze_factor = M.get_drunk_amount()
+	if (is_opiate && (booze_factor > 6))
 		handle_alcohol_poisoning(M, alien, removed, booze_factor)
 
 /// Used to adjust the medicine's current strength relative to its target strength. By default, painkillers are instantly at full effectiveness.
@@ -37,8 +37,19 @@
 
 /// Handles adverse effects caused by mixing this painkiller with alcohol.
 /datum/reagent/medicine/painkiller/proc/handle_alcohol_poisoning(mob/living/carbon/M, alien, removed, booze_factor = 1)
-	M.add_chemical_effect(CE_ALCOHOL_TOXIC, 1)
 	M.add_chemical_effect(CE_BREATHLOSS, 0.1 * booze_factor)
+	M.add_chemical_effect(CE_TOXIN, 1)
+
+	// Mathed this out so that the damage "ramps up" a little faster. If this is too expensive, you can replace this with (0.02x + 0.8), although it'd make the effect a lot stronger at low booze levels.
+	var/damage_taken = removed * ((sqrt(booze_factor) / 6) + (0.012 * booze_factor))
+
+	// liver damage
+	var/obj/item/organ/internal/liver/L = M.get_organ(BP_LIVER)
+	if(L)
+		L.take_internal_damage(0.75 * damage_taken, prob(90)) // Chance to warn them
+		M.adjustToxLoss(0.25 * damage_taken)
+	else
+		M.adjustToxLoss(damage_taken)
 
 /// Returns 0 if the patient has no alcohol in their body, 1 if they have some alcohol, and 2 if they have strong alcohol.
 /datum/reagent/medicine/painkiller/proc/is_boozed(mob/living/carbon/M)

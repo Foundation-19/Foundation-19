@@ -45,10 +45,7 @@
 	// If you're not filtering well, you're in trouble. Ammonia buildup to toxic levels and damage from alcohol
 	if(filter_effect < 2)
 		if(owner.chem_effects[CE_ALCOHOL])
-			owner.adjustToxLoss(0.5 * max(2 - filter_effect, 0) * (owner.chem_effects[CE_ALCOHOL_TOXIC] + 0.5 * owner.chem_effects[CE_ALCOHOL]))
-
-	if(owner.chem_effects[CE_ALCOHOL_TOXIC])
-		take_internal_damage(owner.chem_effects[CE_ALCOHOL_TOXIC], prob(90)) // Chance to warn them
+			owner.adjustToxLoss(0.5 * max(2 - filter_effect, 0) * (0.5 * owner.chem_effects[CE_ALCOHOL]))
 
 	// Heal a bit if needed and we're not busy. This allows recovery from low amounts of toxloss.
 	if(!owner.chem_effects[CE_ALCOHOL] && !owner.chem_effects[CE_TOXIN] && !owner.radiation && damage > 0)

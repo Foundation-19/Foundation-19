@@ -43,7 +43,7 @@
 			var/weakness = GetAnomalySusceptibility(H)
 			if(prob(weakness * 100))
 				to_chat(H, pick(SPAN_NOTICE("You feel like taking a nap."),SPAN_NOTICE("You feel a yawn coming on."),SPAN_NOTICE("You feel a little tired.")))
-				H.adjust_drowsiness(rand(5 SECONDS, 15 SECONDS) * weakness, 50 SECONDS * weakness)
+				H.adjust_drowsiness_up_to(rand(5 SECONDS, 15 SECONDS) * weakness, 50 SECONDS * weakness)
 				H.eye_blurry = min(H.eye_blurry + rand(5,15) * weakness, 50 * weakness)
 		for (var/mob/living/silicon/robot/R in range(src.effectrange,holder))
 			to_chat(R, SPAN_WARNING("SYSTEM ALERT: CPU cycles slowing down."))
