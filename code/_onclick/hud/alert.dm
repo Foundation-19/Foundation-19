@@ -205,14 +205,12 @@
 	icon_state = "newlaw"
 	timeout = 30 SECONDS
 
-//TODO: implement
 /atom/movable/screen/alert/hackingapc
 	name = "Hacking APC"
 	desc = "An Area Power Controller is being hacked. When the process is \
 		complete, you will have exclusive control of it, and you will gain \
-		additional processing time to unlock more malfunction abilities."
+		additional processing and storage to unlock more malfunction abilities."
 	icon_state = "hackingapc"
-	timeout = 60 SECONDS
 	var/atom/target = null
 
 /atom/movable/screen/alert/hackingapc/Click()
