@@ -170,3 +170,15 @@ var/last_chew = 0
 	breakouttime = 200
 	cuff_type = "duct tape"
 	health_max = 50
+
+/obj/item/handcuffs/shadowshackle
+	name = "shadow shackles"
+	desc = "A shadowy force meant to hold your hands together."
+	breakouttime = 100
+	cuff_sound = 'sounds/weapons/cablecuff.ogg'
+	cuff_type = "shadow restraints"
+	health_max = 0
+
+/obj/item/handcuffs/shadowshackle/dropped(mob/user)
+	. = ..()
+	qdel(src)

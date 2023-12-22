@@ -1,0 +1,7 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: Using a crowbar on an APC with a broken cover now lets you pry off the
+      broken cover.
+  - balance: APCs have 2 dud wires in addition to the 4 functioning wires.
+  - code_imp: APC code improvements.
