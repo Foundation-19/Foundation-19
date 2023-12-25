@@ -30,7 +30,6 @@
 #define CE_ANTIBIOTIC    "antibiotic"   // Spaceacillin
 #define CE_BLOODRESTORE  "bloodrestore" // Iron/nutriment
 #define CE_PAINKILLER    "painkiller"
-#define CE_ALCOHOL       "alcohol"      // Liver filtering
 #define CE_SPEEDBOOST    "gofast"       // Hyperzine
 #define CE_SLOWDOWN      "goslow"       // Slowdown
 #define CE_PULSE         "xcardic"      // increases or decreases heart rate

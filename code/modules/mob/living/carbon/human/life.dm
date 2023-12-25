@@ -933,8 +933,6 @@
 			vomit_score += 45
 	if(chem_effects[CE_TOXIN] || radiation)
 		vomit_score += 0.5 * getToxLoss()
-	if(chem_effects[CE_ALCOHOL])
-		vomit_score += 10
 	if(stat != DEAD && vomit_score > 25 && prob(10))
 		vomit(vomit_score, vomit_score/25)
 

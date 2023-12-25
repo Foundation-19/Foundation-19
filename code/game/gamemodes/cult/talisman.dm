@@ -79,15 +79,10 @@
 		to_chat(C, SPAN_WARNING("Your eyes burn horrifically!"))
 		C.eye_blind += 20
 		C.eye_blurry += 30
-		C.disabilities |= NEARSIGHTED
-		addtimer(CALLBACK(src, .proc/unblind, C), 30 SECONDS)
+		C.set_temp_blindness_if_lower(30 SECONDS)
 	admin_attack_log(user, M, "Used a blindness talisman.", "Was victim of a blindness talisman.", "used a blindness talisman on")
 	qdel(src)
 	user.unEquip(src)
-
-/obj/item/paper/talisman/blindness/proc/unblind(mob/living/carbon/human/target)
-	if(target)
-		target.disabilities &= ~NEARSIGHTED
 
 /obj/item/paper/talisman/shackles/attack_self(mob/living/user)
 	. = ..()

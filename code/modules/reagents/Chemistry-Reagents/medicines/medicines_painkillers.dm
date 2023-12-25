@@ -44,7 +44,10 @@
 	var/damage_taken = removed * ((sqrt(booze_factor) / 6) + (0.012 * booze_factor))
 
 	// liver damage
-	var/obj/item/organ/internal/liver/L = M.get_organ(BP_LIVER)
+	var/obj/item/organ/internal/liver/L
+	if(ishuman(M))
+		L = M.get_organ(BP_LIVER)
+
 	if(L)
 		L.take_internal_damage(0.75 * damage_taken, prob(90)) // Chance to warn them
 		M.adjustToxLoss(0.25 * damage_taken)

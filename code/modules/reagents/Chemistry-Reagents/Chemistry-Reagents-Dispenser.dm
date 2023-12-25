@@ -161,7 +161,6 @@
 /datum/reagent/ethanol/affect_ingest(mob/living/carbon/M, alien, removed)
 	M.adjust_nutrition(nutriment_factor * removed)
 	M.adjust_hydration(hydration_factor * removed)
-	var/strength_mod = 1
 
 	var/adjusted_boozepower = boozepower
 	if(alien == IS_SKRELL)
@@ -173,8 +172,6 @@
 	if(M.get_drunk_amount() < volume * adjusted_boozepower || adjusted_boozepower < 0)
 		// Volume, power, and server alcohol rate effect how quickly one gets drunk
 		M.adjust_drunk_effect(sqrt(volume) * adjusted_boozepower * removed * ALCOHOL_RATE)
-
-	M.add_chemical_effect(CE_ALCOHOL, 1)
 
 	if(adj_druggy != 0)
 		M.set_drugginess_if_lower(adj_druggy)

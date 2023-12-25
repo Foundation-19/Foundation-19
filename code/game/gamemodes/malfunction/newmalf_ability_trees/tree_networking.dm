@@ -68,7 +68,7 @@
 	log_ability_use(user, "basic encryption hack", A, 0)	// Does not notify admins, but it's still logged for reference.
 
 	var/atom/movable/screen/alert/hackingapc/hacking_apc
-	hacking_apc = throw_alert(ALERT_HACKING_APC, /atom/movable/screen/alert/hackingapc)
+	hacking_apc = user.throw_alert(ALERT_HACKING_APC, /atom/movable/screen/alert/hackingapc)
 	hacking_apc.target = A
 
 	to_chat(user, "Beginning APC system override...")
@@ -78,7 +78,7 @@
 	to_chat(user, "Restarting APC to apply changes..")
 	sleep(10 SECONDS)
 
-	clear_alert(ALERT_HACKING_APC)
+	user.clear_alert(ALERT_HACKING_APC)
 
 	if(A)
 		A.ai_hack(user)
@@ -204,7 +204,7 @@
 	for(var/obj/machinery/power/apc/A in shuffle(remaining_apcs))
 
 		var/atom/movable/screen/alert/hackingapc/hacking_apc
-		hacking_apc = throw_alert(ALERT_HACKING_APC, /atom/movable/screen/alert/hackingapc)
+		hacking_apc = user.throw_alert(ALERT_HACKING_APC, /atom/movable/screen/alert/hackingapc)
 		hacking_apc.target = A
 
 		sleep(10 SECONDS)
@@ -213,7 +213,7 @@
 		if(!A || !istype(A) || A.aidisabled)
 			continue
 
-		clear_alert(ALERT_HACKING_APC)
+		user.clear_alert(ALERT_HACKING_APC)
 
 		A.ai_hack(user)
 		if(A.hacker == user)
