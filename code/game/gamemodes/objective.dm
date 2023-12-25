@@ -424,10 +424,10 @@ var/global/list/all_objectives = list()
 	explanation_text = "Our knowledge must live on. Make sure at least [target_amount] acolytes escape to spread their work."
 
 /datum/objective/cult/eldergod
-	explanation_text = "Summon Nar-Sie via the use of the appropriate rune (Hell join self). It will only work if nine cultists stand on and around it. The convert rune is join blood self."
+	explanation_text = "Summon the Scarlet King via the use of the appropriate rune (Hell join self). It will only work if nine cultists stand on and around it. The convert rune is join blood self."
 
 /datum/objective/cult/sacrifice
-	explanation_text = "Conduct a ritual sacrifice for the glory of Nar-Sie."
+	explanation_text = "Conduct a ritual sacrifice for the glory of the Scarlet King."
 
 /datum/objective/cult/sacrifice/find_target()
 	var/list/possible_targets = list()

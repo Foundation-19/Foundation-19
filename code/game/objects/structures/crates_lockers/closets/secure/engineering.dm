@@ -41,7 +41,7 @@
 	return list(
 		/obj/item/clothing/gloves/insulated = 4,
 		/obj/item/storage/toolbox/electrical = 3,
-		/obj/item/module/power_control = 3,
+		/obj/item/power_control_module = 3,
 		/obj/item/device/multitool = 3
 	)
 
