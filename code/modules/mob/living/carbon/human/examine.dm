@@ -315,6 +315,14 @@
 	var/show_descs = show_descriptors_to(user)
 	if(show_descs)
 		msg += SPAN_NOTICE("[jointext(show_descs, "<br>")]")
+
+	for(var/datum/status_effect/effect as anything in status_effects)
+		var/effect_text = effect.get_examine_text()
+		if(!effect_text)
+			continue
+
+		msg += effect_text
+
 	to_chat(user, jointext(msg, null))
 
 //Helper procedure. Called by /mob/living/carbon/human/examine() and /mob/living/carbon/human/Topic() to determine HUD access to security and medical records.

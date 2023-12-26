@@ -24,6 +24,14 @@
 
 /mob/living/examine(mob/user, distance, infix, suffix)
 	. = ..()
+
+	for(var/datum/status_effect/effect as anything in status_effects)
+		var/effect_text = effect.get_examine_text()
+		if(!effect_text)
+			continue
+
+		to_chat(user, effect_text)
+
 	if (admin_paralyzed)
 		to_chat(user, SPAN_DEBUG("OOC: They have been paralyzed by staff. Please avoid interacting with them unless cleared to do so by staff."))
 
