@@ -1894,6 +1894,7 @@
 #include "code\modules\events\email_spam.dm"
 #include "code\modules\events\event.dm"
 #include "code\modules\events\event_container.dm"
+#include "code\modules\events\fake_virus.dm"
 #include "code\modules\events\grid_check.dm"
 #include "code\modules\events\infestation.dm"
 #include "code\modules\events\ion_storm.dm"

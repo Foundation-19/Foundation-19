@@ -46,7 +46,8 @@
 	// liver damage
 	var/obj/item/organ/internal/liver/L
 	if(ishuman(M))
-		L = M.get_organ(BP_LIVER)
+		var/mob/living/carbon/human/H = M
+		L = H.get_organ(BP_LIVER)
 
 	if(L)
 		L.take_internal_damage(0.75 * damage_taken, prob(90)) // Chance to warn them
