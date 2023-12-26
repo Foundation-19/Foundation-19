@@ -244,9 +244,9 @@
 		if (prob(1) && owner.ear_deaf < 1)
 			to_chat(owner, SPAN_WARNING("Your capacity to differentiate audio signals briefly fails you."))
 			owner.ear_deaf += 6
-		if (prob(1) && owner.slurring < 1)
+		if (prob(1) && !owner.has_status_effect(/datum/status_effect/speech/slurring))
 			to_chat(owner, SPAN_WARNING("Your ability to form coherent speech struggles to keep up."))
-			owner.slurring += 6
+			owner.set_slurring(6 SECONDS)
 		if (damage > min_broken_damage)
 			if (prob(2))
 				if (prob(15) && owner.sleeping < 1)

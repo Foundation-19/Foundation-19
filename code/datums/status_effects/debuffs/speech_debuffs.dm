@@ -3,6 +3,8 @@
 	alert_type = null
 	remove_on_fullheal = TRUE
 
+// TODO: have speech effects change the speech verb
+
 /datum/status_effect/speech/on_creation(mob/living/new_owner, duration = 10 SECONDS)
 	src.duration = duration
 	return ..()
@@ -20,8 +22,11 @@
  * Iterates over all of the characters in the passed message
  * and calls apply_speech() on each.
  */
-/datum/status_effect/speech/proc/handle_message(datum/source, message)
+/datum/status_effect/speech/proc/handle_message(datum/source, message, datum/language/speaking)
 	SIGNAL_HANDLER
+
+	if(speaking.flags & NO_STUTTER)
+		return
 
 	var/phrase = html_decode(message)
 	if(!length(phrase))

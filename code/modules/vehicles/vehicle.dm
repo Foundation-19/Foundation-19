@@ -209,7 +209,7 @@
 	//stuns people who are thrown off a train that has been blown up
 	if(istype(load, /mob/living))
 		var/mob/living/M = load
-		M.apply_effects(5, 5)
+		M.apply_effects(stun = 5, weaken = 5)
 
 	unload()
 

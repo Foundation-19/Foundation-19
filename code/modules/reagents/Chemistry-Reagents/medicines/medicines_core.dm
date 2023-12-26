@@ -18,7 +18,7 @@
 /datum/reagent/medicine/inaprovaline/overdose(mob/living/carbon/M, alien)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	if (prob(5))
-		M.slurring = max(M.slurring, 10)
+		M.set_slurring_if_lower(10 SECONDS)
 	if (prob(2))
 		M.set_drowsiness_if_lower(5 SECONDS)
 

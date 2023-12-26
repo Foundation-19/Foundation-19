@@ -539,7 +539,7 @@
 		return
 	if (prob(10))
 		to_chat(M, SPAN_WARNING("Your tongue feels... fuzzy."))
-	M.slurring = max(M.slurring, 10)
+	M.set_slurring_if_lower(10 SECONDS)
 
 /datum/reagent/hair_dye
 	name = "Hair Dye"
@@ -650,8 +650,8 @@
 		M.set_confusion_if_lower(4 SECONDS)
 	if (dosage >= 0.3)
 		if (prob(5)) M.Paralyse(1)
-		M.set_drowsiness(3 SECONDS)
-		M.slurring =   max(M.slurring, 3)
+		M.set_drowsiness_if_lower(3 SECONDS)
+		M.set_slurring_if_lower(3 SECONDS)
 	if (do_giggle && prob(20))
 		M.emote(pick("giggle", "laugh"))
 	M.add_chemical_effect(CE_PULSE, -1)

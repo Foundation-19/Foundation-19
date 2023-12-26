@@ -45,7 +45,7 @@
 		M.set_drowsiness_if_lower(3 SECONDS)
 	if (prob(10))
 		M.emote("drool")
-		M.apply_effect(STUTTER, 3)
+		M.adjust_stutter(5 SECONDS)
 
 	if (M.getBrainLoss() < 60)
 		M.adjustBrainLoss(14 * removed)

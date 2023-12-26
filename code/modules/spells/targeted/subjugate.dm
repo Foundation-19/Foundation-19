@@ -16,7 +16,7 @@
 
 	amt_dizziness = 20 SECONDS
 	amt_confused = 20 SECONDS
-	amt_stuttering = 100
+	amt_stuttering = 1 MINUTE
 
 	compatible_mobs = list(/mob/living/carbon/human)
 

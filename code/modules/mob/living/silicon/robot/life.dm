@@ -104,9 +104,6 @@
 		become_blind(STAT_TRAIT)
 		set_stat(DEAD)
 
-	if (stuttering)
-		stuttering--
-
 	if (ear_deaf > 0)
 		ear_deaf--
 

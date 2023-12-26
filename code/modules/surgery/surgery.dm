@@ -147,7 +147,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 			. -= 60
 
 	if(delicate)
-		if(user.slurring)
+		if(user.has_status_effect(/datum/status_effect/speech/slurring))
 			. -= 10
 		if(!target.lying)
 			. -= 30

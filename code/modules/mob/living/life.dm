@@ -79,8 +79,6 @@
 	handle_stunned()
 	handle_weakened()
 	handle_paralysed()
-	handle_stuttering()
-	handle_slurring()
 
 /mob/living/proc/handle_stunned()
 	if(stunned)
@@ -95,16 +93,6 @@
 		if(!weakened)
 			update_icons()
 	return weakened
-
-/mob/living/proc/handle_stuttering()
-	if(stuttering)
-		stuttering = max(stuttering-1, 0)
-	return stuttering
-
-/mob/living/proc/handle_slurring()
-	if(slurring)
-		slurring = max(slurring-1, 0)
-	return slurring
 
 /mob/living/proc/handle_paralysed()
 	if(paralysis)

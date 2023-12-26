@@ -85,12 +85,12 @@
 	if (stun_amount)
 		Stun(stun_amount)
 		Weaken(stun_amount)
-		apply_effect(stun_amount, STUTTER)
+		adjust_stutter(stun_amount SECONDS)
 		adjust_eye_blur(stun_amount SECONDS)
 
 	if (agony_amount)
 		apply_damage(agony_amount, PAIN, def_zone, used_weapon)
-		apply_effect(agony_amount/10, STUTTER)
+		adjust_stutter((agony_amount/5) SECONDS)
 		adjust_eye_blur((agony_amount/10) SECONDS)
 
 /mob/living/proc/electrocute_act(shock_damage, obj/source, siemens_coeff = 1.0, def_zone = null)

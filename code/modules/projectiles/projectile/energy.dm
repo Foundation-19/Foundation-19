@@ -119,7 +119,7 @@
 	damage = 10
 	damage_type = TOX
 	agony = 40
-	stutter = 10
+	stutter = 10 SECONDS
 
 /obj/item/projectile/energy/bolt/large
 	name = "largebolt"

@@ -38,7 +38,6 @@
 	var/mob/living/cameraFollow = null
 
 	var/update_slimes = 1
-	var/silent = null 		// Can't talk. Value goes down every life proc.
 	var/on_fire = 0 //The "Are we on fire?" var
 	var/fire_stacks
 
@@ -46,8 +45,6 @@
 	var/possession_candidate // Can be possessed by ghosts if unplayed.
 
 	var/ear_damage = null	//Carbon
-	var/stuttering = null	//Carbon
-	var/slurring = null		//Carbon
 
 	var/job = null//Living
 	var/list/obj/aura/auras = null //Basically a catch-all aura/force-field thing.

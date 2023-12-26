@@ -229,7 +229,7 @@
 	armor_penetration = 10
 	stun = 3
 	weaken = 3
-	stutter = 3
+	stutter = 3 SECONDS
 	damage_falloff_list = list(
 		list(8, 0.97),
 		list(12, 0.94),

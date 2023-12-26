@@ -128,12 +128,12 @@
 	M.set_drugginess_if_lower(30 SECONDS)
 
 	if (M.chem_doses[type] < 1 * threshold)
-		M.apply_effect(3, STUTTER)
+		M.adjust_stutter(5 SECONDS)
 		M.adjust_dizzy(5 SECONDS)
 		if (prob(5))
 			M.emote(pick("twitch", "giggle"))
 	else if (M.chem_doses[type] < 2 * threshold)
-		M.apply_effect(3, STUTTER)
+		M.adjust_stutter(5 SECONDS)
 		M.adjust_jitter(5 SECONDS)
 		M.adjust_dizzy(5 SECONDS)
 		M.set_drugginess_if_lower(35 SECONDS)
@@ -141,7 +141,7 @@
 			M.emote(pick("twitch", "giggle"))
 	else
 		M.add_chemical_effect(CE_HALLUCINATION, -1)
-		M.apply_effect(3, STUTTER)
+		M.adjust_stutter(5 SECONDS)
 		M.adjust_jitter(10 SECONDS)
 		M.adjust_dizzy(10 SECONDS)
 		M.set_drugginess_if_lower(40 SECONDS)

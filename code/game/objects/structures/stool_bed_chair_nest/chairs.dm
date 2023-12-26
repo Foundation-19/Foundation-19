@@ -240,7 +240,7 @@
 		occupant.throw_at(A, 3, propelled)
 		occupant.apply_effect(6, STUN, blocked)
 		occupant.apply_effect(6, WEAKEN, blocked)
-		occupant.apply_effect(6, STUTTER, blocked)
+		occupant.adjust_stutter(6 SECONDS * ((100 - blocked) / 100))
 		occupant.apply_damage(10, BRUTE, def_zone)
 		playsound(src.loc, 'sounds/weapons/punch1.ogg', 50, 1, -1)
 		if(istype(A, /mob/living))
@@ -249,7 +249,7 @@
 			blocked = 100 * victim.get_blocked_ratio(def_zone, BRUTE, damage = 10)
 			victim.apply_effect(6, STUN, blocked)
 			victim.apply_effect(6, WEAKEN, blocked)
-			victim.apply_effect(6, STUTTER, blocked)
+			victim.adjust_stutter(6 SECONDS * ((100 - blocked) / 100))
 			victim.apply_damage(10, BRUTE, def_zone)
 		occupant.visible_message(SPAN_DANGER("[occupant] crashed into \the [A]!"))
 

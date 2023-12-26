@@ -111,9 +111,6 @@
 			lying = 0
 			set_stat(CONSCIOUS)
 
-	if (stuttering)
-		stuttering = 0
-
 	if (ear_deaf > 0)
 		ear_deaf = 0
 

@@ -972,7 +972,7 @@
 		if(shock_stage == 30) visible_message("<b>[src]</b> is having trouble keeping \his eyes open.")
 		if(prob(30))
 			set_eye_blur_if_lower(3 SECONDS)
-			stuttering = max(stuttering, 5)
+			set_stutter_if_lower(5 SECONDS)
 
 	if(shock_stage == 40)
 		custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", 40, nohalloss = TRUE)

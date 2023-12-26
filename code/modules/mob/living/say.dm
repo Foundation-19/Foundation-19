@@ -116,14 +116,6 @@ var/list/channel_to_radio_key = new
 		verb = pick("yells","roars","hollers")
 		message_data[3] = 0
 		. = 1
-	else if(slurring)
-		message = slur(message)
-		verb = pick("slobbers","slurs")
-		. = 1
-	else if(stuttering)
-		message = NewStutter(message)
-		verb = pick("stammers","stutters")
-		. = 1
 	else if(has_chem_effect(CE_SQUEAKY, 1))
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
 		verb = "squeaks"
@@ -229,7 +221,7 @@ var/list/channel_to_radio_key = new
 	message = process_chat_markup(message)
 
 	//TODO: move hardcoded checks to this signal
-	SEND_SIGNAL(src, COMSIG_LIVING_TREAT_MESSAGE, message)
+	SEND_SIGNAL(src, COMSIG_LIVING_TREAT_MESSAGE, message, speaking)
 
 	if(speaking && !speaking.can_be_spoken_properly_by(src))
 		message = speaking.muddle(message)

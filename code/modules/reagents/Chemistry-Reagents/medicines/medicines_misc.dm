@@ -23,10 +23,10 @@
 	if(alien == IS_DIONA)
 		return
 
-	M.adjust_dizzy(-10 SECONDS)
-	M.adjust_drowsiness(-10 SECONDS)
-	M.stuttering = max(M.stuttering - 10, 0)
-	M.adjust_confusion(-5 SECONDS)
+	M.adjust_dizzy(-10 SECONDS * removed)
+	M.adjust_drowsiness(-10 SECONDS * removed)
+	M.adjust_stutter(-10 SECONDS * removed)
+	M.adjust_confusion(-5 SECONDS * removed)
 	var/datum/reagents/ingested = M.get_ingested_reagents()
 	if(ingested)
 		for(var/datum/reagent/R in ingested.reagent_list)

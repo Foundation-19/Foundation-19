@@ -382,7 +382,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	log_admin("[key_name(src)] has transformed into a zombie!")
 
 	Weaken(4)
-	jitteriness = 0
 	set_dizzy(0)
 	hallucination_power = 0
 	hallucination_duration = 0

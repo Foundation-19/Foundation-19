@@ -35,7 +35,7 @@
 			to_chat(owner, SPAN_WARNING("You abruptly feel intensely exhausted as sensation returns."))
 			owner.set_drowsiness_if_lower(15 SECONDS)
 			owner.set_confusion_if_lower(15 SECONDS)
-			owner.slurring = max(owner.slurring, 30)
+			owner.set_slurring_if_lower(30 SECONDS)
 			owner.chem_effects[CE_PAINKILLER] = 0
 			owner.stamina = 0
 			if(MOVING_QUICKLY(owner))
