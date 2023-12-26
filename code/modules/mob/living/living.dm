@@ -460,7 +460,6 @@ default behaviour is:
 	disabilities = 0
 
 	// fix effects // TODO: move all of these to status effects
-	eye_blurry = 0
 	ear_deaf = 0
 	ear_damage = 0
 
@@ -862,7 +861,7 @@ default behaviour is:
 		. += 100
 	if(can_see())
 		. += 75
-	if(eye_blurry)
+	if(has_status_effect(/datum/status_effect/eye_blur))
 		. += 15
 	if(has_status_effect(/datum/status_effect/confusion))
 		. += 30
@@ -877,7 +876,7 @@ default behaviour is:
 		. -= 2
 	if(can_see())
 		. -= 5
-	if(eye_blurry)
+	if(has_status_effect(/datum/status_effect/eye_blur))
 		. -= 1
 	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY)))
 		. -= 3

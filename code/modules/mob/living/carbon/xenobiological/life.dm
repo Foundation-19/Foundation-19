@@ -125,8 +125,7 @@
 	if (disabilities & DEAFENED)
 		ear_deaf = 1
 
-	if (eye_blurry > 0)
-		eye_blurry = 0
+	set_eye_blur(0)
 
 	set_drugginess(0)
 

@@ -89,7 +89,7 @@
 	if(prob(3))
 		to_chat(M, SPAN_WARNING("Your head hurts!"))
 	// Slightly helps fix blurry vision
-	M.eye_blurry = max(M.eye_blurry - 2, 0)
+	M.adjust_eye_blur(-2 SECONDS * removed)
 	// Helps with nicotine addiction
 	M.RemoveAddictionPoints(/datum/addiction/nicotine, removed * 5)
 
@@ -101,7 +101,7 @@
 	value = 4.2
 
 /datum/reagent/medicine/imidazoline/affect_blood(mob/living/carbon/M, alien, removed)
-	M.eye_blurry = max(M.eye_blurry - 5, 0)
+	M.adjust_eye_blur(-5 SECONDS * removed)
 	M.adjust_temp_blindness(-5 SECONDS)
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M

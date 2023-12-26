@@ -618,7 +618,7 @@ var/list/global/slot_flags_enumeration = list(
 				if(M.stat != 2)
 					to_chat(M, SPAN_WARNING("You drop what you're holding and clutch at your eyes!"))
 					M.unequip_item()
-				M.eye_blurry += 10
+				M.adjust_eye_blur(10 SECONDS)
 				M.Paralyse(1)
 				M.Weaken(4)
 			if (eyes.damage >= eyes.min_broken_damage)
@@ -629,7 +629,7 @@ var/list/global/slot_flags_enumeration = list(
 		affecting.take_external_damage(7)
 	else
 		M.take_organ_damage(7, 0)
-	M.eye_blurry += rand(3,4)
+	M.adjust_eye_blur(rand(3 SECONDS, 4 SECONDS))
 	return
 
 /obj/item/clean_blood()

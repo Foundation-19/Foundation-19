@@ -47,7 +47,7 @@
 			to_chat(M, SPAN_DANGER("Everything itches, how uncomfortable!"))
 		if (prob(10))
 			to_chat(M, SPAN_WARNING("Your eyes are watering, it's hard to see!"))
-			M.eye_blurry = max(M.eye_blurry, 10)
+			M.set_eye_blur_if_lower(10 SECONDS)
 		if (prob(10))
 			to_chat(M, SPAN_DANGER("Your throat itches uncomfortably!"))
 			M.custom_emote(2, "coughs!")
@@ -59,7 +59,7 @@
 		M.Weaken(5)
 		M.add_chemical_effect(CE_VOICELOSS, 5)
 	if (prob(30))
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	M.take_organ_damage(3 * removed, 0, ORGAN_DAMAGE_FLESH_ONLY)
 	M.adjustToxLoss(5 * removed, 0, ORGAN_DAMAGE_FLESH_ONLY)

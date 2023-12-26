@@ -70,11 +70,8 @@
 	// Eyes and blindness.
 	if(!has_eyes())
 		become_blind(MISSING_ORGAN_TRAIT)
-		eye_blurry = 1
 	else
 		cure_blind(MISSING_ORGAN_TRAIT)
-		if(eye_blurry)
-			eye_blurry = max(eye_blurry-1, 0)
 
 		update_icons()
 
@@ -103,8 +100,6 @@
 			healths.icon_state = "health7"
 
 	if(stat != DEAD)
-		if(!is_blind())
-			set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 		if(machine)
 			if(machine.check_eye(src) < 0)
 				reset_view(null)

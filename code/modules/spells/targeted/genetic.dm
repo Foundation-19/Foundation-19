@@ -48,7 +48,7 @@ code\game\dna\genes\goon_powers.dm
 	max_targets = 0
 
 	amt_eye_blind = 10 SECONDS
-	amt_eye_blurry = 20
+	amt_eye_blurry = 20 SECONDS
 
 	hud_state = "wiz_blind"
 	cast_sound = 'sounds/magic/blind.ogg'
@@ -109,7 +109,7 @@ code\game\dna\genes\goon_powers.dm
 	spell_flags = 0
 
 	amt_dizziness = 0
-	amt_eye_blurry = 5
+	amt_eye_blurry = 5 SECONDS
 	amt_stunned = 1
 
 	effect_state = "electricity_constant"

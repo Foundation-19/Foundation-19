@@ -120,7 +120,7 @@ var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 	if(E && !E.phoron_guard)
 		if(prob(20)) to_chat(src, SPAN_DANGER("Your eyes burn!"))
 		E.damage += 2.5
-		eye_blurry = min(eye_blurry+1.5,50)
+		adjust_eye_blur_up_to(1.5 SECONDS, 50 SECONDS)
 		if (prob(max(0,E.damage - 15) + 1) && can_see())
 			to_chat(src, SPAN_DANGER("You are blinded!"))
 			adjust_temp_blindness(20 SECONDS)

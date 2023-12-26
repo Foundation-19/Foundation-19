@@ -25,7 +25,7 @@
 		if (M.chem_doses[type] == metabolism * 2 || prob(5))
 			M.emote("yawn")
 	else if (M.chem_doses[type] < 1.5 * threshold)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 	else if (M.chem_doses[type] < 5 * threshold)
 		if (prob(50))
 			M.Weaken(2)
@@ -68,7 +68,7 @@
 		to_chat(M, SPAN_WARNING("Your muscles slacken and cease to obey you."))
 	if (M.chem_doses[type] >= threshold)
 		M.add_chemical_effect(CE_SEDATE, 1)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if (M.chem_doses[type] > 1 * threshold)
 		M.adjustToxLoss(removed)
@@ -101,7 +101,7 @@
 
 	if (M.chem_doses[type] < 2 * threshold)
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 	else
 		M.sleeping = max(M.sleeping, 30)
 

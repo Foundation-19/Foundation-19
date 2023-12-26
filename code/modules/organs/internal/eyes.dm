@@ -99,7 +99,7 @@
 	if(!owner)
 		return
 	if(is_bruised())
-		owner.eye_blurry = 20
+		owner.set_eye_blur_if_lower(3 SECONDS)
 	if(is_broken())
 		owner.become_blind(DAMAGED_TRAIT)
 	else

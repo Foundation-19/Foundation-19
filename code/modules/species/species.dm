@@ -578,7 +578,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		H.cure_nearsighted(EQUIPMENT_TINT_TOTAL_TRAIT)
 	var/how_nearsighted = H.is_nearsighted_currently()
 	H.set_fullscreen(how_nearsighted, "nearsighted", /atom/movable/screen/fullscreen/oxy, how_nearsighted)
-	H.set_fullscreen(H.eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 
 	for(var/overlay in H.equipment_overlays)
 		H.client.screen |= overlay

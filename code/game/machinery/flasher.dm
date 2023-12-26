@@ -68,7 +68,7 @@
 		if (get_dist(src, O) > src.range)
 			continue
 
-		var/flash_time = strength
+		var/flash_time = strength SECONDS
 		if(isliving(O))
 			if(O.eyecheck() > FLASH_PROTECTION_NONE)
 				continue
@@ -89,9 +89,9 @@
 
 /obj/machinery/flasher/proc/do_flash(mob/living/victim, flash_time)
 	victim.flash_eyes()
-	victim.eye_blurry += flash_time
-	victim.adjust_confusion(flash_time + 2 SECONDS) // TODO: move the SECONDS further up
-	victim.Stun(flash_time / 2)
+	victim.adjust_eye_blur(flash_time)
+	victim.adjust_confusion(flash_time * 1.2)
+	victim.Stun(flash_time / 20)
 	victim.Weaken(3)
 
 /obj/machinery/flasher/emp_act(severity)

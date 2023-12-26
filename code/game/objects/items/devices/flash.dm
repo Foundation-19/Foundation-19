@@ -80,8 +80,8 @@
 				if(flash_strength > 0)
 					M.flash_eyes(FLASH_PROTECTION_MODERATE - safety)
 					M.Stun(flash_strength / 2)
-					M.eye_blurry = max(M.eye_blurry, flash_strength)
-					M.set_confusion_if_lower((flash_strength + 2) SECONDS) // TODO: move SECONDS further up
+					M.set_eye_blur_if_lower(flash_strength SECONDS)
+					M.set_confusion_if_lower((flash_strength * 1.2) SECONDS) // TODO: move SECONDS further up
 					if(flash_strength > 3)
 						M.drop_l_hand()
 						M.drop_r_hand()
@@ -98,7 +98,7 @@
 			if(safety < FLASH_PROTECTION_MODERATE)
 				SA.Stun(flash_strength - 2)
 				SA.flash_eyes(2)
-				SA.eye_blurry += flash_strength
+				SA.adjust_eye_blur(flash_strength SECONDS)
 				SA.adjust_confusion(flash_strength SECONDS) // TODO: move SECONDS further up
 		else
 			flashfail = 1
@@ -190,7 +190,7 @@
 		if(safety < FLASH_PROTECTION_MODERATE)
 			if(M.can_see())
 				M.flash_eyes()
-				M.eye_blurry += 2
+				M.adjust_eye_blur(2 SECONDS)
 
 	return 1
 

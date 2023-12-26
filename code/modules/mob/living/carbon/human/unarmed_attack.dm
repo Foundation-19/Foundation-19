@@ -63,7 +63,7 @@ var/global/list/sparring_attack_cache = list()
 			if(BP_HEAD, BP_EYES, BP_MOUTH)
 				// Induce blurriness
 				target.visible_message(SPAN_DANGER("[target] looks momentarily disoriented."), SPAN_DANGER("You see stars."))
-				target.apply_effect(attack_damage*2, EYE_BLUR, armour)
+				target.adjust_eye_blur(attack_damage SECONDS)
 			if(BP_L_ARM, BP_L_HAND)
 				if (target.l_hand)
 					// Disarm left hand

@@ -189,6 +189,7 @@
 	else
 		return ONE_ATMOSPHERE + pressure_difference
 
+// TODO: phase this out
 /mob/living/carbon/human/handle_impaired_vision()
 	..()
 	//Vision
@@ -197,18 +198,11 @@
 
 		if(!vision || (vision && !vision.is_usable()))   // Vision organs cut out or broken? Permablind.
 			become_blind(MISSING_ORGAN_TRAIT)
-			eye_blurry = 1
 		else
 			cure_blind(MISSING_ORGAN_TRAIT)
-			eye_blurry = 0
-
-			if(!(is_blind()))
-				if(equipment_tint_total >= TINT_BLIND)	// Covered eyes, heal faster
-					eye_blurry = max(eye_blurry-2, 0)
 
 	else if(!species.vision_organ) // Presumably if a species has no vision organs, they see via some other means.
 		cure_blind(MISSING_ORGAN_TRAIT)
-		eye_blurry = 0
 
 /mob/living/carbon/human/handle_disabilities()
 	..()
@@ -977,7 +971,7 @@
 	if(shock_stage >= 30)
 		if(shock_stage == 30) visible_message("<b>[src]</b> is having trouble keeping \his eyes open.")
 		if(prob(30))
-			eye_blurry = max(2, eye_blurry)
+			set_eye_blur_if_lower(3 SECONDS)
 			stuttering = max(stuttering, 5)
 
 	if(shock_stage == 40)

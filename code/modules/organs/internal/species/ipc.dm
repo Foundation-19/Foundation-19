@@ -238,9 +238,9 @@
 		if (prob(1) && !owner.has_status_effect(/datum/status_effect/confusion))
 			to_chat(owner, SPAN_WARNING("Your comprehension of spacial positioning goes temporarily awry."))
 			owner.set_confusion(5 SECONDS)
-		if (prob(1) && owner.eye_blurry < 1)
+		if (prob(1) && !owner.has_status_effect(/datum/status_effect/eye_blur))
 			to_chat(owner, SPAN_WARNING("Your optical interpretations become transiently erratic."))
-			owner.eye_blurry += 6
+			owner.set_eye_blur(6 SECONDS)
 		if (prob(1) && owner.ear_deaf < 1)
 			to_chat(owner, SPAN_WARNING("Your capacity to differentiate audio signals briefly fails you."))
 			owner.ear_deaf += 6

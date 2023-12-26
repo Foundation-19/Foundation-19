@@ -115,7 +115,7 @@
 					ear_deaf = 0
 					emp_damage -= 1
 				if(11 to 19)//Moderate level of EMP damage, resulting in nearsightedness and ear damage
-					eye_blurry = 1
+					set_eye_blur_if_lower(3 SECONDS)
 					ear_damage = 1
 					if(!alert)
 						emote("alert")
@@ -125,7 +125,6 @@
 						emp_damage -= 1
 				if(10)
 					alert = 0
-					eye_blurry = 0
 					ear_damage = 0
 					emp_damage -= 1
 				if(2 to 9)//Low level of EMP damage, has few effects(handled elsewhere)
@@ -165,8 +164,6 @@
 			healths.icon_state = "health7"
 
 	if(stat != DEAD)
-		if(!is_blind())
-			set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 		if (machine)
 			if (!( machine.check_eye(src) ))
 				reset_view(null)

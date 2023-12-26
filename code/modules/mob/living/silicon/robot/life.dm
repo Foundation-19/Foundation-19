@@ -119,10 +119,6 @@
 	if ((sdisabilities & DEAFENED))
 		ear_deaf = 1
 
-	if (eye_blurry > 0)
-		eye_blurry--
-		eye_blurry = max(0, eye_blurry)
-
 	//update the state of modules and components here
 	if (stat != CONSCIOUS)
 		uneq_all()
@@ -242,8 +238,6 @@
 			oxygen.icon_state = "oxy1"
 
 	if(stat != DEAD)
-		if(!is_blind())
-			set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 
 		if (machine)
 			if (machine.check_eye(src) < 0)

@@ -77,7 +77,7 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		to_chat(C, SPAN_WARNING("Your eyes burn horrifically!"))
-		C.eye_blurry += 30
+		C.set_eye_blur_if_lower(30 SECONDS)
 		C.set_temp_blindness_if_lower(30 SECONDS)
 	admin_attack_log(user, M, "Used a blindness talisman.", "Was victim of a blindness talisman.", "used a blindness talisman on")
 	qdel(src)

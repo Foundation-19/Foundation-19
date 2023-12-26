@@ -113,7 +113,7 @@
 			to_chat(user, SPAN_NOTICE("\The [H]'s pupils give an eerie glow!"))
 		if(vision.damage)
 			to_chat(user, SPAN_WARNING("There's visible damage to [H]'s [vision.name]!"))
-		else if(H.eye_blurry)
+		else if(H.has_status_effect(/datum/status_effect/eye_blur))
 			to_chat(user, SPAN_NOTICE("\The [H]'s pupils react slower than normally."))
 		if(H.getBrainLoss() > 15)
 			to_chat(user, SPAN_NOTICE("There's visible lag between left and right pupils' reactions."))

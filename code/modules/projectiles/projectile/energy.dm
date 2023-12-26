@@ -28,8 +28,8 @@
 	for (var/mob/living/carbon/M in viewers(T, flash_range))
 		if(M.eyecheck() < FLASH_PROTECTION_MAJOR)
 			M.flash_eyes()
-			M.eye_blurry += (brightness / 2)
-			M.adjust_confusion(brightness SECONDS) // TODO: move SECONDS higher up
+			M.adjust_eye_blur((brightness / 2) SECONDS)
+			M.adjust_confusion(brightness SECONDS)
 
 	//snap pop
 	playsound(src, 'sounds/effects/snap.ogg', 50, 1)
@@ -83,7 +83,7 @@
 	agony = 50
 	damage = 2
 	damage_type = BURN
-	eyeblur = 1//Some feedback that you've been hit
+	eyeblur = 1 SECOND //Some feedback that you've been hit
 	step_delay = 0.7
 	damage_falloff_list = list(
 		list(5, 0.97),

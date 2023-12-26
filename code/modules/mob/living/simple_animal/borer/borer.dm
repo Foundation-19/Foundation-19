@@ -137,7 +137,6 @@
 
 	sdisabilities = 0
 	if(host)
-		eye_blurry = host.eye_blurry
 		if(host.is_blind() && !is_blind_from(BORER_HOST_TRAIT))
 			become_blind(BORER_HOST_TRAIT)
 		else if(!host.is_blind() && is_blind_from(BORER_HOST_TRAIT))
@@ -146,7 +145,6 @@
 			sdisabilities |= DEAFENED
 	else
 		cure_blind(BORER_HOST_TRAIT)
-		eye_blurry = 0
 
 	. = ..()
 	if(!.)

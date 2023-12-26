@@ -21,7 +21,6 @@
 #define IRRADIATE "irradiate"
 #define SLUR      "slur"
 #define STUTTER   "stutter"
-#define EYE_BLUR  "eye_blur"
 
 // Damage flags
 #define DAM_SHARP     (1<<0)

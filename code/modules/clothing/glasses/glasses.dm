@@ -82,7 +82,7 @@
 				to_chat(M, SPAN_DANGER("\The [name] malfunction[gender != PLURAL ? "s":""], releasing a small spark."))
 			else
 				M.adjust_temp_blindness(2 SECONDS)
-				M.eye_blurry = 4
+				M.adjust_eye_blur(4 SECONDS)
 				to_chat(M, SPAN_DANGER("\The [name] malfunction[gender != PLURAL ? "s":""], blinding you!"))
 
 				M.set_temp_nearsightedness_if_lower(10 SECONDS)

@@ -182,7 +182,7 @@
 					if(!past_damage_threshold(2) && prob(damprob))
 						take_internal_damage(1)
 				if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-					owner.eye_blurry = max(owner.eye_blurry,6)
+					owner.set_eye_blur_if_lower(2 SECONDS)
 					damprob = owner.chem_effects[CE_STABLE] ? 40 : 80
 					if(!past_damage_threshold(4) && prob(damprob))
 						take_internal_damage(1)
@@ -190,7 +190,7 @@
 						owner.Paralyse(rand(1,3))
 						to_chat(owner, SPAN_WARNING("You feel very [pick("dizzy","woozy","faint")]..."))
 				if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-					owner.eye_blurry = max(owner.eye_blurry,6)
+					owner.set_eye_blur_if_lower(2 SECONDS)
 					damprob = owner.chem_effects[CE_STABLE] ? 60 : 100
 					if(!past_damage_threshold(6) && prob(damprob))
 						take_internal_damage(1)
@@ -198,7 +198,7 @@
 						owner.Paralyse(3,5)
 						to_chat(owner, SPAN_WARNING("You feel extremely [pick("dizzy","woozy","faint")]..."))
 				if(-(INFINITY) to BLOOD_VOLUME_SURVIVE) // Also see heart.dm, being below this point puts you into cardiac arrest.
-					owner.eye_blurry = max(owner.eye_blurry,6)
+					owner.set_eye_blur_if_lower(2 SECONDS)
 					damprob = owner.chem_effects[CE_STABLE] ? 80 : 100
 					if(prob(damprob))
 						take_internal_damage(1)
@@ -227,10 +227,10 @@
 	if(damage >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
 		var/damage_secondary = damage * 0.20
 		owner.flash_eyes()
-		owner.eye_blurry += damage_secondary
-		owner.adjust_confusion(damage_secondary SECONDS) // TODO: move SECONDS further up
+		owner.adjust_eye_blur(damage_secondary SECONDS)
+		owner.adjust_confusion(damage_secondary SECONDS)
 		if(damage >= 25)
-			owner.Weaken(round(damage_secondary*0.5, 1))
+			owner.Weaken(round(damage_secondary / 2, 1))
 		if(prob(30))
 			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
 
@@ -261,9 +261,9 @@
 		return
 	if(damage > 0 && prob(1))
 		owner.custom_pain("Your head feels numb and painful.",10)
-	if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
+	if(is_bruised() && prob(1) && !owner.has_status_effect(/datum/status_effect/eye_blur))
 		to_chat(owner, SPAN_WARNING("It becomes hard to see for some reason."))
-		owner.eye_blurry = 10
+		owner.set_eye_blur(10 SECONDS)
 	if(damage >= 0.5*max_damage && prob(1) && owner.get_active_hand())
 		to_chat(owner, SPAN_DANGER("Your hand won't respond properly, and you drop what you are holding!"))
 		owner.unequip_item()

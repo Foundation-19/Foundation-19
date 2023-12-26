@@ -118,9 +118,7 @@
 	handle_impaired_hearing()
 
 /mob/living/proc/handle_impaired_vision()
-	//Eyes
-	if(eye_blurry && !is_blind() && !stat)			//blurry eyes heal slowly
-		eye_blurry = max(eye_blurry-1, 0)
+	return
 
 /mob/living/proc/handle_impaired_hearing()
 	//Ears
@@ -146,9 +144,6 @@
 
 	if(stat == DEAD)
 		return
-
-	if(!is_blind())
-		set_fullscreen(eye_blurry, "blurry", /atom/movable/screen/fullscreen/blurry)
 
 	set_fullscreen(stat == UNCONSCIOUS, "blackout", /atom/movable/screen/fullscreen/blackout)
 

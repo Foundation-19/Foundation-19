@@ -26,7 +26,7 @@
 		var/mob/living/carbon/human/M = src.loc
 		to_chat(M, SPAN_DANGER("Your [name] malfunctions, blinding you!"))
 		M.adjust_temp_blindness(4 SECONDS)
-		M.eye_blurry = 8
+		M.adjust_eye_blur(8 SECONDS)
 		take_general_damage(rand(5, 15))
 		if (active)
 			active = FALSE

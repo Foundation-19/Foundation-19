@@ -538,7 +538,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 /datum/power/changeling/sting/blind_sting/sting_effects()
 	to_chat(target, SPAN_WARNING("Your eyes burn horrifically!"))
 	target.adjust_temp_blindness(10 SECONDS)
-	target.eye_blurry += 20
+	target.adjust_eye_blur(20 SECONDS)
 	target.adjust_temp_nearsightedness(30 SECONDS)
 	SSstatistics.add_field_details("changeling_powers", "BS")
 

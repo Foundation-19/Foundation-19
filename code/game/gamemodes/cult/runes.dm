@@ -702,7 +702,7 @@
 		affected |= M
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
-			C.eye_blurry += 50
+			C.adjust_eye_blur(30 SECONDS)
 			C.Weaken(3)
 			C.Stun(5)
 		else if(issilicon(M))

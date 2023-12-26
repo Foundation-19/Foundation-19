@@ -86,12 +86,12 @@
 		Stun(stun_amount)
 		Weaken(stun_amount)
 		apply_effect(stun_amount, STUTTER)
-		apply_effect(stun_amount, EYE_BLUR)
+		adjust_eye_blur(stun_amount SECONDS)
 
 	if (agony_amount)
 		apply_damage(agony_amount, PAIN, def_zone, used_weapon)
 		apply_effect(agony_amount/10, STUTTER)
-		apply_effect(agony_amount/10, EYE_BLUR)
+		adjust_eye_blur((agony_amount/10) SECONDS)
 
 /mob/living/proc/electrocute_act(shock_damage, obj/source, siemens_coeff = 1.0, def_zone = null)
 	  return FALSE //only carbon liveforms have this proc

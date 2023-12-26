@@ -77,7 +77,7 @@
 		M.adjust_drowsiness(2 SECONDS)
 	else
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if(prob(35))
 		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
@@ -107,7 +107,7 @@
 		M.adjust_drowsiness(2 SECONDS)
 	else
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if(prob(35))
 		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
@@ -138,7 +138,7 @@
 		M.adjust_drowsiness(2 SECONDS)
 	if (M.chem_doses[type] < 2 * threshold)
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 	else
 		M.sleeping = max(M.sleeping, 30)
 	M.add_chemical_effect(CE_BREATHLOSS, 1.5)
@@ -168,7 +168,7 @@
 		M.adjust_drowsiness(2 SECONDS)
 	else
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if(prob(35))
 		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
