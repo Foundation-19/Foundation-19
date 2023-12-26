@@ -124,16 +124,6 @@
 	if(buckled)
 		msg += "<span class='warning'>[p_they(TRUE)] [p_are()] [icon2html(buckled, user)] buckled to [buckled]!</span>\n"
 
-	//Jitters
-	if(is_jittery)
-		if(jitteriness >= 300)
-			msg += "<span class='warning'><B>[p_they(TRUE)] [p_are()] convulsing violently!</B></span>\n"
-		else if(jitteriness >= 200)
-			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] extremely jittery.</span>\n"
-		else if(jitteriness >= 100)
-			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] twitching ever so slightly.</span>\n"
-
-
 	//Disfigured face
 	if(!skipface) //Disfigurement only matters for the head currently.
 		var/obj/item/organ/external/head/E = get_organ(BP_HEAD)

@@ -614,7 +614,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/sting/death_sting/sting_effects()
 	to_chat(target, SPAN_DANGER("You feel a lance of pain and your chest becomes tight."))
-	target.make_jittery(400)
+	target.adjust_jitter(40 SECONDS)
 	if(target.reagents)
 		target.reagents.add_reagent(/datum/reagent/lexorin, 40)
 	SSstatistics.add_field_details("changeling_powers", "DS")

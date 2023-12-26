@@ -73,7 +73,7 @@
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.jitteriness = max(M.jitteriness - 3, 0)
+	M.adjust_jitter(-3 SECONDS * removed)
 
 /datum/reagent/ethanol/blackstrap
 	name = "Blackstrap"
@@ -201,7 +201,7 @@
 /datum/reagent/ethanol/coffee/overdose(mob/living/carbon/M, alien)
 	if(alien == IS_DIONA)
 		return
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS)
 
 /datum/reagent/ethanol/coffee/kahlua
 	name = "Kahlua"
@@ -314,7 +314,7 @@
 	M.adjust_drowsiness(-7 SECONDS)
 	if (M.bodytemperature > 310)
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS * removed)
 	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/ethanol/triple_sec

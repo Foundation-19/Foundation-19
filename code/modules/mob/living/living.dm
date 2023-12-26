@@ -463,7 +463,6 @@ default behaviour is:
 	eye_blurry = 0
 	ear_deaf = 0
 	ear_damage = 0
-	jitteriness = 0
 
 	SEND_SIGNAL(src, COMSIG_LIVING_REJUVENATE)
 
@@ -872,7 +871,7 @@ default behaviour is:
 
 /mob/living/proc/ranged_accuracy_mods()
 	. = 0
-	if(jitteriness)
+	if(has_status_effect(/datum/status_effect/jitter))
 		. -= 2
 	if(has_status_effect(/datum/status_effect/confusion))
 		. -= 2
@@ -918,7 +917,7 @@ default behaviour is:
 	if(!paralysis && stat == CONSCIOUS)
 		visible_message(SPAN_DANGER("\The [src] starts having a seizure!"))
 		Paralyse(rand(8,16))
-		make_jittery(rand(150,200))
+		adjust_jitter(rand(15 SECONDS, 20 SECONDS))
 		adjustHalLoss(rand(50,60))
 
 /mob/living/proc/get_digestion_product()

@@ -9,7 +9,7 @@
 
 /datum/reagent/medicine/noexcutite/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien != IS_DIONA)
-		M.make_jittery(-50)
+		M.adjust_jitter(-50 SECONDS * removed)
 
 
 /datum/reagent/medicine/ethylredoxrazine

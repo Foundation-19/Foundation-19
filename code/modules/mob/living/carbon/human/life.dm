@@ -640,14 +640,6 @@
 			if(!embedded_needs_process())
 				embedded_flag = 0
 
-		//Resting
-		if(resting)
-			jitteriness = max(0, jitteriness - 15)
-			adjustHalLoss(-3)
-		else
-			jitteriness = max(0, jitteriness - 3)
-			adjustHalLoss(-1)
-
 		// If you're dirty, your gloves will become dirty, too.
 		if(gloves && germ_level > gloves.germ_level && prob(10))
 			gloves.germ_level += 1

@@ -342,7 +342,7 @@
 /datum/reagent/drink/coffee/overdose(mob/living/carbon/M, alien)
 	if(alien == IS_DIONA)
 		return
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS)
 	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/drink/coffee/icecoffee
@@ -645,7 +645,7 @@
 
 /datum/reagent/drink/rewriter/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS * removed)
 
 /datum/reagent/drink/nuka_cola
 	name = "Nuka Cola"
@@ -663,7 +663,7 @@
 /datum/reagent/drink/nuka_cola/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.make_jittery(20)
+	M.adjust_jitter(20 SECONDS * removed)
 	M.set_drugginess_if_lower(30 SECONDS)
 	M.set_drowsiness(0)
 
@@ -857,7 +857,7 @@
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.make_jittery(2)
+	M.adjust_jitter(2 SECONDS * removed)
 	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/drink/kefir

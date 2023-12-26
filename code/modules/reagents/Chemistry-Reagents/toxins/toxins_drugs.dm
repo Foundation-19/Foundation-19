@@ -134,7 +134,7 @@
 			M.emote(pick("twitch", "giggle"))
 	else if (M.chem_doses[type] < 2 * threshold)
 		M.apply_effect(3, STUTTER)
-		M.make_jittery(5)
+		M.adjust_jitter(5 SECONDS)
 		M.adjust_dizzy(5 SECONDS)
 		M.set_drugginess_if_lower(35 SECONDS)
 		if (prob(10))
@@ -142,7 +142,7 @@
 	else
 		M.add_chemical_effect(CE_HALLUCINATION, -1)
 		M.apply_effect(3, STUTTER)
-		M.make_jittery(10)
+		M.adjust_jitter(10 SECONDS)
 		M.adjust_dizzy(10 SECONDS)
 		M.set_drugginess_if_lower(40 SECONDS)
 		if (prob(15))
@@ -204,7 +204,7 @@
 	M.add_chemical_effect(CE_THIRDEYE, 1)
 	M.add_chemical_effect(CE_HALLUCINATION, -2)
 	M.hallucination(50, 50)
-	M.make_jittery(3)
+	M.adjust_jitter(3 SECONDS)
 	M.adjust_dizzy(3 SECONDS)
 	if (prob(0.1) && ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -267,7 +267,7 @@
 	..()
 	to_chat(M, SPAN_DANGER("You feel like the voices are tearing you apart, you lose control over your body and mind, going into a berserk."))
 	M.hallucination(50, 50)
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS)
 	M.adjustBrainLoss(rand(5, 10))
 	if(ishuman(M) && prob(20))
 		var/mob/living/carbon/human/H = M

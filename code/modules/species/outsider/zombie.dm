@@ -366,7 +366,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	addtimer(CALLBACK(src, .proc/transform_zombie), 20)
 
 /mob/living/carbon/human/proc/transform_zombie()
-	make_jittery(300)
+	adjust_jitter(30 SECONDS)
 	adjustBruteLoss(100)
 	sleep(150)
 

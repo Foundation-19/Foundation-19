@@ -1,36 +1,3 @@
-// jitteriness - copy+paste of dizziness
-/mob/var/is_jittery = 0
-/mob/var/jitteriness = 0//Carbon
-
-/mob/proc/make_jittery(amount)
-	return //Only for living/carbon/human/
-
-/mob/living/carbon/human/make_jittery(amount)
-	if(!istype(src, /mob/living/carbon/human)) // for the moment, only humans get jittery
-		return
-	if(!jittery_damage())
-		return //Robotic hearts don't get jittery.
-	jitteriness = min(1000, jitteriness + amount)	// store what will be new value
-													// clamped to max 1000
-	if(jitteriness > 100 && !is_jittery)
-		spawn(0)
-			jittery_process()
-
-// Typo from the original coder here, below lies the jitteriness process. So make of his code what you will, the previous comment here was just a copypaste of the above.
-/mob/proc/jittery_process()
-	is_jittery = 1
-	while(jitteriness > 100)
-		var/amplitude = min(4, jitteriness / 100)
-		do_jitter(amplitude)
-		sleep(1)
-	//endwhile - reset the pixel offsets to zero
-	is_jittery = 0
-	do_jitter(0)
-
-/mob/proc/do_jitter(amplitude)
-	pixel_x = default_pixel_x + rand(-amplitude, amplitude)
-	pixel_y = default_pixel_y + rand(-amplitude/3, amplitude/3)
-
 //handles up-down floaty effect in space and zero-gravity
 /mob/var/is_floating = 0
 /mob/var/floatiness = 0

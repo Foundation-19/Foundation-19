@@ -36,7 +36,7 @@
 /datum/reagent/impedrezene/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
-	M.jitteriness = max(M.jitteriness - 5, 0)
+	M.adjust_jitter(-5 SECONDS * removed)
 	M.add_chemical_effect(M.add_chemical_effect(CE_SLOWDOWN, 1))
 
 	if (prob(80))

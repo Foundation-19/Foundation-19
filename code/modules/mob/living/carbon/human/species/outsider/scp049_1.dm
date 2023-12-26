@@ -271,9 +271,9 @@
 	addtimer(CALLBACK(src, .proc/zumbie), 20)
 
 /mob/living/carbon/human/proc/zumbie()
-	make_jittery(300)
+	adjust_jitter(15 SECONDS)	// will run out before we transform (not that it matters; the rejuvinate will clear the effect)
 	adjustBruteLoss(100)
-	sleep(150)
+	sleep(15 SECONDS)
 
 	if (QDELETED(src))
 		return
@@ -287,7 +287,6 @@
 	log_admin("[key_name(src)] has transformed into a 049-1!")
 
 	Weaken(4)
-	jitteriness = 0
 	set_dizzy(0)
 	hallucination_power = 0
 	hallucination_duration = 0
