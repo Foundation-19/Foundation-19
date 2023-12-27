@@ -101,7 +101,7 @@
 				return 0
 
 			user.setClickCooldown(CLICK_CD_ATTACK)
-      
+
 			if(!do_after(user, 4 SECONDS, M, bonus_percentage = 25)) return
 
 			if (user.get_active_hand() != src)
