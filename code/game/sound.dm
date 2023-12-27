@@ -27,7 +27,7 @@
 var/const/FALLOFF_SOUNDS = 0.5
 
 /mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, ignore_pressure)
-	if(!src.client || ear_deaf > 0 || can_hear(turf_source))
+	if(!src.client || ear_deaf > 0 || !can_hear(turf_source))
 		return
 	var/sound/S = soundin
 	if(!istype(S))
