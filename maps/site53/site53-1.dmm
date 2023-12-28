@@ -15917,8 +15917,7 @@
 /area/site53/lowertram/archive)
 "LH" = (
 /obj/machinery/vending/medical{
-	dir = 4;
-	req_access = list("ACCESS_MEDICAL_EQUIP","ACCESS_DCLASS_MEDICAL")
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
@@ -21374,7 +21373,8 @@
 /area/site53/lowertram/archive)
 "ZL" = (
 /obj/machinery/vending/medical{
-	req_access = list("ACCESS_MEDICAL_EQUIP","ACCESS_DCLASS_MEDICAL")
+	req_access = list("ACCESS_DCLASS_MEDICAL");
+	name = "D-Block NanoMed Plus"
 	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
