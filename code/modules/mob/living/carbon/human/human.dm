@@ -1851,7 +1851,6 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 /mob/living/carbon/human/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ROUGH) // Destroy the child
-			var/list/return_list = list()
 			to_chat(src, SPAN_USERDANGER("Your innards are spilling out... Not all of them though..."))
 			death()
 			adjustBruteLoss(6000)
