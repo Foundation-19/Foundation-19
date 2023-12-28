@@ -27,6 +27,16 @@ SUBSYSTEM_DEF(offsite)
 		ui = new(user, src, "OffsitePanel", "Offsites")
 		ui.open()
 
+/datum/proc/tgui_data(mob/user)
+	var/list/data = list
+
+	for(var/thing in offsites)
+		var/datum/offsite/OS = thing
+
+		data += list(list(OS.name, OS.received_faxes, OS.sent_faxes, OS.received_messages, OS.sent_messages))
+
+	return data
+
 /datum/controller/subsystem/offsite/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return

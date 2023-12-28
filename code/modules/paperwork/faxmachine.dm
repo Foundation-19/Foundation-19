@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 
 	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
 
-	// this is so fucking ghetto
+	// this is so fucking ghetto // TODO: use alerts to make this more user-friendly
 	if(intercepters.len)
 		for(var/thing in intercepters)
 			var/mob/living/silicon/ai/ai = thing

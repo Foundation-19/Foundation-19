@@ -1,5 +1,6 @@
 import { Window } from '../layouts';
 import { useBackend } from '../backend';
+import { Fragment } from 'inferno';
 import { Box, Section, Table } from '../components';
 
 export const PersonalGoals = (props, context) => {
