@@ -26,7 +26,7 @@
 	if(selected_building.can_build(src, T, TRUE))
 		var/real_construct_speed = 25 * construct_speed / (24 + construct_speed)
 		is_building = TRUE
-		if(do_after(src, round(selected_building.build_time / real_construct_speed), T))
+		if(do_after(src, round(selected_building.build_time / real_construct_speed), T, bonus_percentage = 25))
 			selected_building.build(T, src, TRUE)
 		is_building = FALSE
 

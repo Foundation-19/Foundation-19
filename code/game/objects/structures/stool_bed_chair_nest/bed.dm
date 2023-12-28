@@ -129,7 +129,7 @@
 		var/obj/item/grab/G = W
 		var/mob/living/affecting = G.affecting
 		user.visible_message(SPAN_NOTICE("[user] attempts to buckle [affecting] into \the [src]!"))
-		if(do_after(user, 20, src))
+		if(do_after(user, 3 SECONDS, src, bonus_percentage = 25))
 			if(user_buckle_mob(affecting, user))
 				qdel(W)
 	else

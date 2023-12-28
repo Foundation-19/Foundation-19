@@ -85,7 +85,7 @@ GLOBAL_LIST_EMPTY(scp2343s)
 	if (H.a_intent == I_HELP)
 		to_chat(H, SPAN_WARNING("You start to heal [src] wounds"))
 		visible_message(SPAN_NOTICE("\The [H] starts to heal [src] wounds"))
-		if( do_after(H, 120) )
+		if(do_after(H, 12 SECONDS, bonus_percentage = 25))
 			src.revive()
 			visible_message(SPAN_NOTICE("\The [H] fully healed [src]!"))
 		return
@@ -97,7 +97,8 @@ GLOBAL_LIST_EMPTY(scp2343s)
 			throw_at(throw_target, 200, 4)
 
 
-#define PHASE_TIME (2 SECONDS)
+#define PHASE_TIME 2 SECONDS
+
 /mob/living/carbon/human/scp2343/var/phase_cooldown = -1
 /mob/living/carbon/human/scp2343/proc/phase_through_airlock()
 	set name = "Phase Through Object"
@@ -156,7 +157,7 @@ GLOBAL_LIST_EMPTY(scp2343s)
 			if (WEST)
 				animate(src, pixel_x = -58, time = PHASE_TIME)
 
-		if (do_after(src, PHASE_TIME, O))
+		if (do_after(src, PHASE_TIME, O, bonus_percentage = 25))
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 
@@ -166,4 +167,5 @@ GLOBAL_LIST_EMPTY(scp2343s)
 		pixel_x = 0
 		pixel_y = 0
 		break
+
 #undef PHASE_TIME

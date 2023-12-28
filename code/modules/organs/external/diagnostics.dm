@@ -127,7 +127,7 @@
 		to_chat(user, SPAN_NOTICE("You find no visible wounds."))
 
 	to_chat(user, SPAN_NOTICE("Checking skin now..."))
-	if(!do_after(user, 1 SECOND, owner))
+	if(!do_after(user, 1 SECOND, owner, bonus_percentage = 100))
 		return
 
 	var/list/badness = list()
@@ -142,7 +142,7 @@
 		to_chat(user, SPAN_WARNING("[owner]'s skin is [english_list(badness)]."))
 
 	to_chat(user, SPAN_NOTICE("Checking bones now..."))
-	if(!do_after(user, 1 SECOND, owner))
+	if(!do_after(user, 1 SECOND, owner, bonus_percentage = 100))
 		return
 
 	if(status & ORGAN_BROKEN)

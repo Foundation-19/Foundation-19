@@ -63,14 +63,22 @@
 	return TRUE
 
 /datum/keybinding/human/give
-	hotkey_keys = list("None")
+	hotkey_keys = list("G")
 	name = "give_item"
 	full_name = "Give Item"
 	description = "Give the item you're currently holding"
 
 /datum/keybinding/human/give/down(client/user)
 	var/mob/living/carbon/human/H = user.mob
-	H.give()
+	var/list/valid_mobs = list()
+	for(var/mob/living/carbon/human/target in orange(1, H))
+		if(!istype(target) || target.incapacitated() || target.client == null)
+			continue
+		valid_mobs += target
+	if(!LAZYLEN(valid_mobs))
+		to_chat(H, SPAN_WARNING("There's nobody nearby to give items to."))
+		return
+	H.give(pick(valid_mobs))
 	return TRUE
 
 /datum/keybinding/human/delay_blink

@@ -33,7 +33,7 @@
 			to_chat(user, SPAN_WARNING("You need more rods to build a cheval de frise."))
 			return
 		visible_message(SPAN_NOTICE("\The [user] begins to work on \the [src]."))
-		if(do_after(user, 4 SECONDS, src))
+		if(do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 			if(R.use(5))
 				visible_message(SPAN_NOTICE("\The [user] fastens \the [R] to \the [src]."))
 				var/obj/structure/barricade/spike/CDF = new(loc, material.name, R.material.name)
@@ -52,7 +52,7 @@
 				to_chat(user, SPAN_WARNING("You need one sheet of [material.display_name] to repair \the [src]."))
 				return
 			visible_message(SPAN_NOTICE("[user] begins to repair \the [src]."))
-			if(do_after(user, 2 SECONDS, src) && get_damage_value())
+			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25) && get_damage_value())
 				if(D.use(1))
 					restore_health(get_max_health())
 					visible_message(SPAN_NOTICE("[user] repairs \the [src]."))

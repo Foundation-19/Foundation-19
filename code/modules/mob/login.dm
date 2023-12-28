@@ -57,6 +57,7 @@
 	var/client/my_client // Need to keep track of this ourselves, since by the time Logout() is called the client has already been nulled
 
 /mob/Login()
+	SEND_SIGNAL(src, COMSIG_MOB_LOGIN)
 
 	// Add to player list if missing
 	if (!list_find(GLOB.player_list, src))

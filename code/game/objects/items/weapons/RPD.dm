@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 
 		playsound(get_turf(user), 'sounds/machines/click.ogg', 50, 1)
 		if(T.is_wall())	//pipe through walls!
-			if(!do_after(user, 30, T))
+			if(!do_after(user, 4 SECONDS, T, bonus_percentage = 25))
 				return
 			playsound(get_turf(user), 'sounds/items/Deconstruct.ogg', 50, 1)
 

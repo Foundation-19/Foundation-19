@@ -24,7 +24,7 @@
 			SPAN_NOTICE("You carefully begin to free \the [buckled_mob] from \the [src]."),
 			SPAN_NOTICE("You hear metal creaking.")
 			)
-		if(do_after(user, 60, src))
+		if(do_after(user, 8 SECONDS, src, bonus_percentage = 25))
 			user.visible_message(SPAN_NOTICE("\The [buckled_mob] has been freed from \the [src] by \the [user]."))
 			unbuckle_mob()
 			anchored = FALSE
@@ -38,7 +38,7 @@
 			"You hear the slow creaking of a spring."
 			)
 
-		if (do_after(user, 60, src) && user.unEquip(src))
+		if (do_after(user, 8 SECONDS, src, bonus_percentage = 25) && user.unEquip(src))
 			user.visible_message(
 				SPAN_DANGER("\The [user] has deployed \the [src]."),
 				SPAN_DANGER("You have deployed \the [src]!"),
@@ -58,7 +58,7 @@
 			SPAN_NOTICE("You begin disarming \the [src]!"),
 			"You hear a latch click followed by the slow creaking of a spring."
 			)
-		if(do_after(user, 60, src))
+		if(do_after(user, 8 SECONDS, src, bonus_percentage = 25))
 			user.visible_message(
 				SPAN_DANGER("[user] has disarmed \the [src]."),
 				SPAN_NOTICE("You have disarmed \the [src]!")

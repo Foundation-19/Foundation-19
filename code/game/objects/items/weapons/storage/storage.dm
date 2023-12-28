@@ -107,7 +107,6 @@
 		queue_icon_update()
 	else
 		close(user)
-		opened = FALSE
 		return
 	if (isrobot(user) && user.hud_used)
 		var/mob/living/silicon/robot/robot = user
@@ -122,6 +121,7 @@
 	storage_ui.prepare_ui()
 
 /obj/item/storage/proc/close(mob/user as mob)
+	opened = FALSE
 	hide_from(user)
 
 	if(open_icon)

@@ -186,7 +186,7 @@
 		to_chat(user, SPAN_WARNING("\The [src] is already occupied."))
 		return
 	if(target != user)
-		if(!do_after(user, 20, target))
+		if(!do_after(user, 2.5 SECONDS, target, bonus_percentage = 25))
 			return
 	go_in(target)
 
