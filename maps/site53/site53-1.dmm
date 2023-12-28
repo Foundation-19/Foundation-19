@@ -13270,7 +13270,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "Medbay Secure";
-	req_access = s
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
