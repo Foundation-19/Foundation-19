@@ -27,13 +27,13 @@ SUBSYSTEM_DEF(offsite)
 		ui = new(user, src, "OffsitePanel", "Offsites")
 		ui.open()
 
-/datum/proc/tgui_data(mob/user)
-	var/list/data = list
+/datum/controller/subsystem/offsite/tgui_data(mob/user)
+	var/list/data = list()
 
-	for(var/thing in offsites)
-		var/datum/offsite/OS = thing
+	for(var/key in offsites)
+		var/datum/offsite/OS = offsites[key]
 
-		data += list(list(OS.name, OS.received_faxes, OS.sent_faxes, OS.received_messages, OS.sent_messages))
+		data["offsites"] += list(list(OS.name, OS.received_faxes, OS.sent_faxes, OS.received_messages, OS.sent_messages))
 
 	return data
 
@@ -42,6 +42,8 @@ SUBSYSTEM_DEF(offsite)
 		return
 
 	switch(action)
+		if("pisscum")
+			NOOP
 
 /datum/controller/subsystem/offsite/tgui_state(mob/user)
 	return GLOB.admin_tgui_state

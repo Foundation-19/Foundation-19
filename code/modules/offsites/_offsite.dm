@@ -15,6 +15,8 @@
 	/// A list of lists. Each list represents a message we sent. (sent message, receiving mob, sending admin, time received)
 	var/list/sent_messages = list()
 
+// TODO: use alerts to notify admins
+
 /datum/offsite/proc/recieve_fax(obj/item/ref, origin_department = "Unknown")
 	received_faxes += list(ref, origin_department, world.time)
 
