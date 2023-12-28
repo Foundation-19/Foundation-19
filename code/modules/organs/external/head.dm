@@ -64,7 +64,7 @@
 
 		penman.visible_message(SPAN_WARNING("[penman] begins writing something on [head_name]!"), "You begin writing something on [head_name].")
 
-		if(do_after(penman, 3 SECONDS, target))
+		if(do_after(penman, 4 SECONDS, target, bonus_percentage = 25))
 			if(owner && owner.check_head_coverage())
 				to_chat(penman, SPAN_NOTICE("[head_name] is covered up."))
 				return

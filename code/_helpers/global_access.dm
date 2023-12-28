@@ -577,8 +577,8 @@
 			return global.narsie_behaviour;
 		if("narsie_cometh")
 			return global.narsie_cometh;
-		if("narsie_list")
-			return global.narsie_list;
+		if("scarletking_list")
+			return global.scarletking_list;
 		if("navbeacons")
 			return global.navbeacons;
 		if("news_network")
@@ -1424,8 +1424,8 @@
 			global.narsie_behaviour=newval;
 		if("narsie_cometh")
 			global.narsie_cometh=newval;
-		if("narsie_list")
-			global.narsie_list=newval;
+		if("scarletking_list")
+			global.scarletking_list=newval;
 		if("navbeacons")
 			global.navbeacons=newval;
 		if("news_network")
@@ -1991,7 +1991,7 @@
 	"multi_point_spawns",
 	"narsie_behaviour",
 	"narsie_cometh",
-	"narsie_list",
+	"scarletking_list",
 	"navbeacons",
 	"news_network",
 	"newscaster_standard_feeds",

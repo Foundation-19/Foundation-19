@@ -129,7 +129,7 @@
 
 	busy = 1
 	use_power_oneoff(max(1000, (SHEET_MATERIAL_AMOUNT * amount / 10)))
-	if(do_after(user, 16,src))
+	if(do_after(user, 1 SECOND, src, bonus_percentage = 100))
 		if(stack.use(amount))
 			to_chat(user, SPAN_NOTICE("You add [amount] sheet\s to \the [src]."))
 			materials[stack.material.name] += amount * SHEET_MATERIAL_AMOUNT

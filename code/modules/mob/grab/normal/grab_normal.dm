@@ -253,7 +253,7 @@
 	user.visible_message(SPAN_DANGER("\The [user] begins to slit [affecting]'s throat with \the [W]!"))
 
 	user.next_move = world.time + 20 //also should prevent user from triggering this repeatedly
-	if(!do_after(user, 20 * user.skill_delay_mult(SKILL_COMBAT), do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
+	if(!do_after(user, 2 SECONDS * user.skill_delay_mult(SKILL_COMBAT), do_flags = DO_DEFAULT | DO_SHOW_TARGET))
 		return 0
 	if(!(G?.affecting == affecting)) //check that we still have a grab
 		return 0
@@ -304,7 +304,7 @@
 	user.visible_message(SPAN_DANGER("\The [user] begins to cut \the [affecting]'s [O.tendon_name] with \the [W]!"))
 	user.next_move = world.time + 20
 
-	if(!do_after(user, 20, do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
+	if(!do_after(user, 2 SECONDS, do_flags = DO_DEFAULT | DO_SHOW_TARGET, bonus_percentage = 25))
 		return 0
 	if(!(G?.affecting == affecting)) //check that we still have a grab
 		return 0

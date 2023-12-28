@@ -92,13 +92,10 @@
 
 	min_skill = list(
 		SKILL_FINANCE     = SKILL_BASIC,
-		SKILL_HAULING     = SKILL_BASIC,
-		SKILL_PILOT       = SKILL_BASIC
+		SKILL_HAULING     = SKILL_BASIC
 	)
 
-	max_skill = list(
-		SKILL_PILOT       = SKILL_MASTER
-	)
+	max_skill = list()
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -133,13 +130,10 @@
 
 	min_skill = list(
 		SKILL_FINANCE     = SKILL_BASIC,
-		SKILL_HAULING     = SKILL_BASIC,
-		SKILL_PILOT       = SKILL_BASIC
+		SKILL_HAULING     = SKILL_BASIC
 	)
 
-	max_skill = list(
-		SKILL_PILOT       = SKILL_MASTER
-	)
+	max_skill = list()
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -166,7 +160,8 @@
 		ACCESS_CIV_COMMS,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_MEDICAL_LVL1,
-		ACCESS_DCLASS_JANITORIAL
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
 )
 	minimal_access = list()
 
@@ -200,7 +195,6 @@
 
 	min_skill = list(
 		SKILL_COOKING   = SKILL_EXPERIENCED,
-		SKILL_BOTANY    = SKILL_BASIC,
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)
 
@@ -231,7 +225,6 @@
 
 	min_skill = list(
 		SKILL_COOKING   = SKILL_EXPERIENCED,
-		SKILL_BOTANY    = SKILL_BASIC,
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)
 

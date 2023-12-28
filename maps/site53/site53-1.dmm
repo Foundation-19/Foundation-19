@@ -1078,7 +1078,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	id_tag = "LobbyMedD";
 	name = "Medbay Lobby";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -1559,15 +1559,15 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/machinery/door/airlock/multi_tile/glass/medical{
-	id_tag = "LobbyMedD";
-	name = "Medbay Lobby";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/multi_tile/glass/medical{
+	id_tag = "LobbyMedD";
+	name = "Medbay Lobby";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -4075,7 +4075,7 @@
 /obj/effect/catwalk_plated,
 /obj/machinery/camera/network/lcz{
 	name = "SCP-500";
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy Containment Zone Network")
 	},
 /obj/structure/sign/SecureArealv4mtf{
 	pixel_y = 32
@@ -4527,7 +4527,7 @@
 /area/site53/lhcz/scp049containment)
 "ko" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy Containment Zone Network")
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
@@ -6446,7 +6446,7 @@
 /obj/structure/railing/mapped,
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy Containment Zone Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
@@ -7268,7 +7268,7 @@
 /area/site53/lowertram/archive)
 "qC" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy    Containment    Zone    Network");
+	network = list("Heavy Containment Zone Network");
 	name = "SCP-049 Observation 1"
 	},
 /turf/simulated/floor/tiled,
@@ -7492,7 +7492,7 @@
 "qY" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy Containment Zone Network")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9389,7 +9389,7 @@
 /area/site53/llcz/dclass/reeducation)
 "vE" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled,
@@ -13270,7 +13270,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "Medbay Secure";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -13316,8 +13316,12 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "Fp" = (
 /obj/machinery/light,
-/obj/item/device/megaphone,
 /obj/structure/table/reinforced,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Fq" = (
@@ -13328,6 +13332,7 @@
 /area/site53/llcz/scp500)
 "Fr" = (
 /obj/structure/table/reinforced,
+/obj/item/device/megaphone,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Fs" = (
@@ -14552,12 +14557,10 @@
 /area/site53/llcz/dclass/entrance_checkpoint)
 "Iy" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/northleft{
-	dir = 3;
-	name = "LLCZ Medical Checkpoint";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+/obj/machinery/door/window/northright{
+	name = "LLCZ Medical Checkpoint"
 	},
-/obj/machinery/door/window/northleft{
+/obj/machinery/door/window/southright{
 	name = "LLCZ Medical Checkpoint";
 	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
@@ -16481,7 +16484,7 @@
 /area/site53/llcz/dclass/medicalpost)
 "Nj" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy    Containment    Zone    Network");
+	network = list("Heavy Containment Zone Network");
 	name = "SCP-049 Observation 2"
 	},
 /turf/simulated/floor/tiled,
@@ -16536,7 +16539,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Medbay Secure";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -17132,7 +17135,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy Containment Zone Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
@@ -17819,7 +17822,7 @@
 /area/site53/llcz/dclass/kitchen)
 "QG" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "247lockdown";
@@ -17913,7 +17916,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-3";
 	dir = 4;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -17989,7 +17992,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/medical{
 	name = "Medical Storage";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -18294,7 +18297,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
@@ -18955,7 +18958,7 @@
 "TB" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
@@ -19146,7 +19149,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-2";
 	dir = 4;
-	network = list("Engineering  Network")
+	network = list("Engineering Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -19491,7 +19494,7 @@
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy    Containment    Zone    Network")
+	network = list("Heavy Containment Zone Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -19677,7 +19680,7 @@
 "VA" = (
 /obj/structure/bed/chair,
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -20152,7 +20155,7 @@
 /area/site53/ulcz/scp173)
 "WI" = (
 /obj/machinery/camera/autoname{
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
@@ -20557,7 +20560,7 @@
 "XG" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
@@ -21043,7 +21046,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-1";
 	dir = 4;
-	network = list("SCP-247  CCTV  Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -21371,7 +21374,10 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "ZL" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	req_access = list("ACCESS_DCLASS_MEDICAL");
+	name = "D-Block NanoMed Plus"
+	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)

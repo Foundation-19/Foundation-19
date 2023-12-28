@@ -382,7 +382,7 @@
 /mob/living/simple_animal/proc/pry_door(mob/user, delay, obj/machinery/door/pesky_door)
 	visible_message(SPAN_WARNING("\The [user] begins [pry_desc] at \the [pesky_door]!"))
 	set_AI_busy(TRUE)
-	if(do_after(user, delay, pesky_door))
+	if(do_after(user, delay, pesky_door, bonus_percentage = 25))
 		pesky_door.open(1)
 		ai_holder.prying = FALSE
 		set_AI_busy(FALSE)

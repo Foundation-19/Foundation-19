@@ -31,10 +31,10 @@
 			if(user.a_intent == I_HELP)
 				return
 
-			var/time = 20 //2/3rds the time of a syringe
+			var/time = 2.5 SECONDS
 			user.visible_message(SPAN_WARNING("[user] is trying to squirt something into [target]'s eyes!"))
 
-			if(!do_after(user, time, target))
+			if(!do_after(user, time, target, bonus_percentage = 25))
 				return
 
 			if(istype(target, /mob/living/carbon/human))

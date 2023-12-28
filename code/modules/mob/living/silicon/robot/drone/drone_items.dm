@@ -15,7 +15,7 @@
 		/obj/item/airalarm_electronics,
 		/obj/item/airlock_electronics,
 		/obj/item/tracker_electronics,
-		/obj/item/module/power_control,
+		/obj/item/power_control_module,
 		/obj/item/stock_parts,
 		/obj/item/frame,
 		/obj/item/camera_assembly,
@@ -333,7 +333,7 @@
 
 			to_chat(D, SPAN_DANGER("You begin decompiling [M]."))
 
-			if(!do_after(D,50,M))
+			if(!do_after(D, 6 SECONDS, M, bonus_percentage = 25))
 				return
 
 			if(!M || !D) return

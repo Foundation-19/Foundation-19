@@ -95,7 +95,7 @@
 					continue
 				if(used == amount)
 					break
-				if(!do_after(user, W.damage / 5, M))
+				if(!do_after(user, W.damage / 5, M, bonus_percentage = 25))
 					break
 
 				if (W.current_stage <= W.max_bleeding_stage)
@@ -148,7 +148,7 @@
 			user.visible_message(SPAN_NOTICE("\The [user] starts salving wounds on [M]'s [affecting.name]."), \
 					             SPAN_NOTICE("You start salving the wounds on [M]'s [affecting.name].") )
 			playsound(src, pick(apply_sounds), 25)
-			if(!do_after(user, 1 SECOND, M))
+			if(!do_after(user, 1 SECOND, M, bonus_percentage = 25))
 				return 1
 			user.visible_message(SPAN_NOTICE("[user] salved wounds on [M]'s [affecting.name]."), \
 			                         SPAN_NOTICE("You salved wounds on [M]'s [affecting.name].") )
@@ -186,7 +186,7 @@
 					continue
 				if(used == amount)
 					break
-				if(!do_after(user, W.damage / 5, M))
+				if(!do_after(user, W.damage / 5, M, bonus_percentage = 25))
 					break
 				if (W.current_stage <= W.max_bleeding_stage)
 					user.visible_message(SPAN_NOTICE("\The [user] cleans \a [W.desc] on [M]'s [affecting.name] and seals the edges with bioglue."), \
@@ -239,7 +239,7 @@
 			user.visible_message(SPAN_NOTICE("\The [user] starts salving wounds on [M]'s [affecting.name]."), \
 					             SPAN_NOTICE("You start salving the wounds on [M]'s [affecting.name].") )
 			playsound(src, pick(apply_sounds), 25)
-			if(!do_after(user, 1 SECOND, M))
+			if(!do_after(user, 1 SECOND, M, bonus_percentage = 25))
 				return 1
 			user.visible_message( 	SPAN_NOTICE("[user] covers wounds on [M]'s [affecting.name] with regenerative membrane."), \
 									SPAN_NOTICE("You cover wounds on [M]'s [affecting.name] with regenerative membrane.") )
@@ -353,7 +353,7 @@
 			SPAN_NOTICE("\The [user] starts patching fractures on \the [M]'s [affecting.name]."), \
 			SPAN_NOTICE("You start patching fractures on \the [M]'s [affecting.name].") )
 		playsound(src, pick(apply_sounds), 25)
-		if(!do_after(user, 1 SECOND, M))
+		if(!do_after(user, 1 SECOND, M, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You must stand still to patch fractures."))
 			return 1
 		user.visible_message( \

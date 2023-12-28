@@ -28,5 +28,6 @@
 		"ci.png" = 'html/images/ci.png',
 		"cotbg.png" = 'html/images/cotbg.png',
 		"ar.png" = 'html/images/ar.png',
-		"scp3349_ekg.png" = 'html/images/scp3349_ekg.png'
+		"scp3349_ekg.png" = 'html/images/scp3349_ekg.png',
+		"talisman.png" = 'html/images/talisman.png'
 	)

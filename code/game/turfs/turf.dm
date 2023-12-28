@@ -295,7 +295,7 @@ var/const/enterloopsanity = 100
 //expects an atom containing the reagents used to clean the turf
 /turf/proc/clean(atom/source, mob/user = null, time = null, message = null)
 	if(source.reagents.has_reagent(/datum/reagent/water, 1) || source.reagents.has_reagent(/datum/reagent/hydroxylsan, 1))
-		if(user && time && !do_after(user, time, src))
+		if(user && time && !do_after(user, time, src, bonus_percentage = 25))
 			return
 		clean_blood()
 		remove_cleanables()
@@ -359,7 +359,7 @@ var/const/enterloopsanity = 100
 
 	vandal.visible_message(SPAN_WARNING("\The [vandal] begins carving something into \the [src]."))
 
-	if(!do_after(vandal, max(20, length(message)), src))
+	if(!do_after(vandal, max(3 SECONDS, length(message)), src, bonus_percentage = 25))
 		return FALSE
 
 	vandal.visible_message(SPAN_DANGER("\The [vandal] carves some graffiti into \the [src]."))
