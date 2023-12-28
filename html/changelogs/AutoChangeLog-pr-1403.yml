@@ -1,0 +1,6 @@
+author: K4rlox
+delete-after: true
+changes:
+  - code_imp: dclass medical defines
+  - tweak: adds dclass medical to lcz guards
+  - rscadd: dclass medical assignment cards
