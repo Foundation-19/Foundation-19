@@ -774,6 +774,10 @@
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	access = ACCESS_DCLASS_JANITORIAL
 
+/obj/item/card/id/dmedical
+	name = "Medical Assignment Card"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = ACCESS_DCLASS_MEDICAL
 
 /obj/item/card/id/officeworker
 	name = "Office Staff ID"
