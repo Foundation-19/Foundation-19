@@ -1078,7 +1078,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	id_tag = "LobbyMedD";
 	name = "Medbay Lobby";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -1559,15 +1559,15 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/machinery/door/airlock/multi_tile/glass/medical{
-	id_tag = "LobbyMedD";
-	name = "Medbay Lobby";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/multi_tile/glass/medical{
+	id_tag = "LobbyMedD";
+	name = "Medbay Lobby";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -13270,7 +13270,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "Medbay Secure";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -13316,8 +13316,12 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "Fp" = (
 /obj/machinery/light,
-/obj/item/device/megaphone,
 /obj/structure/table/reinforced,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
+/obj/item/card/id/dmedical,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Fq" = (
@@ -13328,6 +13332,7 @@
 /area/site53/llcz/scp500)
 "Fr" = (
 /obj/structure/table/reinforced,
+/obj/item/device/megaphone,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Fs" = (
@@ -16534,7 +16539,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Medbay Secure";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -17987,7 +17992,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/medical{
 	name = "Medical Storage";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -21369,7 +21374,10 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "ZL" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	req_access = list("ACCESS_DCLASS_MEDICAL");
+	name = "D-Block NanoMed Plus"
+	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)

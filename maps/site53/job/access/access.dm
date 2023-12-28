@@ -31,6 +31,11 @@
 	desc = "D-Class Janitorial"
 	region = ACCESS_REGION_GENERAL
 
+
+/datum/access/dclassmedical
+	id = ACCESS_DCLASS_MEDICAL
+	desc = "D-Class Medical"
+	region = ACCESS_REGION_GENERAL
 // KEYCARD AUTH
 
 /datum/access/keyauth
