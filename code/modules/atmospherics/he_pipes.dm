@@ -60,7 +60,7 @@
 		..()
 	else
 		var/datum/gas_mixture/pipe_air = return_air()
-		if(isspaceturf(loc))
+		if(istype(loc, /turf/simulated/))
 			var/environment_temperature = 0
 			if(loc:blocks_air)
 				environment_temperature = loc:temperature
