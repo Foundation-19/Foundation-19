@@ -1567,7 +1567,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	id_tag = "LobbyMedD";
 	name = "Medbay Lobby";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1","ACCESS_DCLASS_MEDICAL"))s)
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
