@@ -1,11 +1,7 @@
 /datum/codex_entry/changeling_antag
 	display_name = "Changeling"
 	associated_strings = list("changeling", "ling")
-	lore_text = "Changelings are intelligent anomalous creatures with a unique biology that allows them to morph into most organic lifeforms. \
-	They are rare solitary hunters, and have existed for an unknown length of time among the galaxy's civilized races.<br>\
-	They are, ultimately, creatures of stealth - hiding behind the faces of their victims, lurking in distant backwaters and humongous cities, \
-	waiting for their chance to strike."
-	antag_text = "As a changeling, you have almost certainly killed a staff member and replaced them in order to conceal yourself aboard the site. \
+	entry_text = "As a changeling, you have almost certainly killed a staff member and replaced them in order to conceal yourself aboard the site. \
 	You've had time to familiarize yourself with the ins and outs of their identity.<br>\
 	General knowledge of changelings is nearly nonexistent. No public government or institution has any knowledge about changelings' existence, \
 	and the number of changelings in human space, impersonating humans themselves, is unknown, although estimated by the Foundation to be low. \
@@ -31,6 +27,5 @@
 /datum/codex_entry/cryptographic_sequencer
 	display_name = "Cryptographic sequencer"
 	associated_paths = list(/obj/item/card/emag, /obj/item/card/emag/broken)
-	lore_text = "Developed by the Chaos Insurgency after stealing advanced GOC parahacking technology, this strange device can instantly hack into most electronic machines."
-	antag_text = "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. \
+	entry_text = "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. \
 	These actions are irreversible and the card only has a limited number of charges!"

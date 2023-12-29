@@ -38,8 +38,6 @@
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
 
-	general_codex_key = "ballistic weapons"		// for codex
-
 /obj/item/gun/projectile/Initialize()
 	. = ..()
 	if (starts_loaded)

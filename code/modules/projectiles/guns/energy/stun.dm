@@ -98,6 +98,8 @@
 	self_recharge = 1
 	charge_meter = 0
 	combustion = 0
+	codex_special_info = "This is a stealthy weapon which fires poisoned bolts at your target. When it hits someone, they will suffer a stun effect, in \
+	addition to toxins. The energy crossbow recharges itself slowly, and can be concealed in your pocket or bag."
 
 /obj/item/gun/energy/crossbow/ninja
 	name = "energy dart thrower"
