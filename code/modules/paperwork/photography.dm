@@ -37,8 +37,8 @@ var/global/photo_count = 0
 	var/scribble
 	var/image/tiny
 	var/photo_size = 3
-	///Photo data containing mobs and objects.
-	var/list/meta_data
+	///Photo data containing weakrefs to mobs and objects within the photo.
+	var/list/weakref/meta_data
 
 /obj/item/photo/New()
 	id = photo_count++
@@ -91,7 +91,7 @@ var/global/photo_count = 0
 	output += "[scribble ? "<br>Written on the back:<br><i>[scribble]</i>" : ""]"
 	output += "</body></html>"
 	show_browser(user, output, "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
-	for(var/atom/pAtom in meta_data)
+	for(var/atom/pAtom in resolveWeakrefList(meta_data))
 		SEND_SIGNAL(pAtom, COMSIG_PHOTO_SHOWN_OF, src, user)
 	onclose(user, "[name]")
 	return
@@ -254,20 +254,20 @@ var/global/photo_count = 0
 	var/y_c = target.y + (size-1)/2
 	var/z_c	= target.z
 	var/mobs = ""
-	var/list/meta_data = list()
+	var/list/weakref/new_meta_data = list()
 	for(var/i = 1 to size)
 		for(var/j = 1 to size)
 			var/turf/T = locate(x_c, y_c, z_c)
 			if(user.can_capture_turf(T))
 				mobs += get_mobs(T)
 				for(var/atom/movable/mAtom as obj|mob in T)
-					meta_data += mAtom
+					new_meta_data += weakref(mAtom)
 					SEND_SIGNAL(mAtom, COMSIG_PHOTO_TAKEN_OF, src, user)
 			x_c++
 		y_c--
 		x_c = x_c - size
 
-	var/obj/item/photo/p = createpicture(target, user, mobs, flag, meta_data)
+	var/obj/item/photo/p = createpicture(target, user, mobs, flag, new_meta_data)
 	printpicture(user, p)
 
 /obj/item/device/camera/proc/createpicture(atom/target, mob/user, mobs, flag, metadata)
