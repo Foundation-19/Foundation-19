@@ -8,8 +8,7 @@
 		NETWORK_ENGINEERING
 	)
 	subsystems = list(
-		/datum/tgui_module/power_monitor/robot,
-		/datum/tgui_module/supermatter_monitor/robot
+		/datum/tgui_module/power_monitor/robot
 	)
 	supported_upgrades = list(
 		/obj/item/borg/upgrade/rcd

@@ -18,32 +18,6 @@
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 
-/obj/item/card/union
-	name = "union card"
-	desc = "A card showing membership in the local worker's union."
-	icon_state = "union"
-	slot_flags = SLOT_ID
-	var/signed_by
-
-/obj/item/card/union/examine(mob/user)
-	. = ..()
-	if(signed_by)
-		to_chat(user, "It has been signed by [signed_by].")
-	else
-		to_chat(user, "It has a blank space for a signature.")
-
-/obj/item/card/union/attackby(obj/item/thing, mob/user)
-	if(istype(thing, /obj/item/pen))
-		if(signed_by)
-			to_chat(user, SPAN_WARNING("\The [src] has already been signed."))
-		else
-			var/signature = sanitizeSafe(input("What do you want to sign the card as?", "Union Card") as text, MAX_NAME_LEN)
-			if(signature && !signed_by && !user.incapacitated() && Adjacent(user))
-				signed_by = signature
-				user.visible_message(SPAN_NOTICE("\The [user] signs \the [src] with a flourish."))
-		return
-	..()
-
 /obj/item/card/data
 	name = "data card"
 	desc = "A plastic magstripe card for simple and speedy data storage and transfer. This one has a stripe running down the middle."
@@ -121,10 +95,6 @@
 /obj/item/card/emag/Initialize()
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/emag)
-
-/obj/item/card/emag/get_antag_info()
-	. = ..()
-	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
 
 /obj/item/card/emag/broken
 	uses = 0
@@ -361,28 +331,6 @@
 
 	to_chat(client, SPAN_WARNING("Input must be an existing rank belonging to military_branch - [var_value] is invalid"))
 
-/obj/item/card/id/silver
-	name = "identification card"
-	desc = "A silver card which shows honour and dedication."
-	item_state = "silver_id"
-	job_access_type = /datum/job/hop
-
-/obj/item/card/id/gold
-	name = "identification card"
-	desc = "A golden card which shows power and might."
-	job_access_type = /datum/job/captain
-	color = "#d4c780"
-	extra_details = list("goldstripe")
-
-/obj/item/card/id/syndicate_command
-	name = "syndicate ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Overlord"
-	access = list(ACCESS_SYNDICATE, ACCESS_EXTERNAL_AIRLOCKS)
-	color = COLOR_RED_GRAY
-	detail_color = COLOR_GRAY40
-
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"
 	desc = "The spare ID of the High Lord himself."
@@ -431,47 +379,6 @@
 	..()
 	access |= get_all_site_access()
 
-/obj/item/card/id/foundation_civilian
-	name = "operant registration card"
-	desc = "A registration card in a faux-leather case. It marks the named individual as a registered, law-abiding psionic."
-	icon_state = "warrantcard_civ"
-
-/obj/item/card/id/foundation_civilian/on_update_icon()
-	return
-
-/obj/item/card/id/foundation
-	name = "\improper Foundation warrant card"
-	desc = "A warrant card in a handsome leather case."
-	assignment = "Field Agent"
-	icon_state = "warrantcard"
-
-/obj/item/card/id/foundation/examine(mob/user, distance)
-	. = ..()
-	if(distance <= 1 && isliving(user))
-		var/mob/living/M = user
-		if(M.psi)
-			to_chat(user, SPAN_WARNING("There is a psionic compulsion surrounding \the [src], forcing anyone who reads it to perceive it as a legitimate document of authority. The actual text just reads 'I can do what I want.'"))
-		else
-			to_chat(user, SPAN_NOTICE("This is the real deal, stamped by [GLOB.using_map.boss_name]. It gives the holder the full authority to pursue their goals. You believe it implicitly."))
-
-/obj/item/card/id/foundation/attack_self(mob/living/user)
-	. = ..()
-	if(istype(user))
-		for(var/mob/M in viewers(world.view, get_turf(user))-user)
-			if(user.psi && isliving(M))
-				var/mob/living/L = M
-				if(!L.psi)
-					to_chat(L, SPAN_NOTICE("This is the real deal, stamped by [GLOB.using_map.boss_name]. It gives the holder the full authority to pursue their goals. You believe \the [user] implicitly."))
-					continue
-			to_chat(M, SPAN_WARNING("There is a psionic compulsion surrounding \the [src] in a flicker of indescribable light."))
-
-/obj/item/card/id/foundation/on_update_icon()
-	return
-
-/obj/item/card/id/foundation/New()
-	..()
-	access |= get_all_site_access()
-
 /obj/item/card/id/all_access
 	name = "\improper Administrator's spare ID"
 	desc = "The spare ID of the Lord of Lords himself."
@@ -485,29 +392,6 @@
 	..()
 
 // Department-flavor IDs
-/obj/item/card/id/medical
-	name = "identification card"
-	desc = "A card issued to medical staff."
-//	job_access_type = /datum/job/doctor
-	detail_color = COLOR_PALE_BLUE_GRAY
-
-/obj/item/card/id/medical/chemist
-	job_access_type = /datum/job/chemist
-
-/obj/item/card/id/medical/geneticist
-//	job_access_type = /datum/job/geneticist
-
-/obj/item/card/id/medical/psychiatrist
-	job_access_type = /datum/job/psychiatrist
-
-/obj/item/card/id/medical/paramedic
-//	job_access_type = /datum/job/Paramedic
-
-/obj/item/card/id/medical/head
-	name = "identification card"
-	desc = "A card which represents care and compassion."
-	job_access_type = /datum/job/cmo
-	extra_details = list("goldstripe")
 
 /obj/item/card/id/security
 	name = "identification card"
@@ -516,99 +400,401 @@
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_MAROON
 
-/obj/item/card/id/security/warden
-//	job_access_type = /datum/job/warden
-
-/obj/item/card/id/security/detective
-//	job_access_type = /datum/job/detective
-
-/obj/item/card/id/security/head
-	name = "identification card"
-	desc = "A card which represents honor and protection."
-	job_access_type = /datum/job/hos
-	extra_details = list("goldstripe")
-
-/obj/item/card/id/engineering
-	name = "identification card"
-	desc = "A card issued to engineering staff."
-//	job_access_type = /datum/job/engineer
-	detail_color = COLOR_SUN
-
-/obj/item/card/id/engineering/head
-	name = "identification card"
-	desc = "A card which represents creativity and ingenuity."
-	job_access_type = /datum/job/chief_engineer
-	extra_details = list("goldstripe")
-
-/obj/item/card/id/science
-	name = "identification card"
-	desc = "A card issued to science staff."
-	job_access_type = /datum/job/scientist
-	detail_color = COLOR_PALE_PURPLE_GRAY
-
-/obj/item/card/id/science/xenobiologist
-//	job_access_type = /datum/job/xenobiologist
-
-/obj/item/card/id/science/roboticist
-//	job_access_type = /datum/job/roboticist
-
-/obj/item/card/id/science/head
-	name = "identification card"
-	desc = "A card which represents knowledge and reasoning."
-	job_access_type = /datum/job/rd
-	extra_details = list("goldstripe")
-
-/obj/item/card/id/cargo
-	name = "identification card"
-	desc = "A card issued to cargo staff."
-	job_access_type = /datum/job/cargo_tech
-	detail_color = COLOR_BROWN
-
-/obj/item/card/id/cargo/mining
-//	job_access_type = /datum/job/mining
-
-/obj/item/card/id/cargo/head
-	name = "identification card"
-	desc = "A card which represents service and planning."
-	job_access_type = /datum/job/qm
-	extra_details = list("goldstripe")
-
 /obj/item/card/id/civilian
 	name = "identification card"
 	desc = "A card issued to civilian staff."
 	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_CIVIE_GREEN
 
-/obj/item/card/id/civilian/bartender
-	job_access_type = /datum/job/bartender
-
-/obj/item/card/id/civilian/chef
-	job_access_type = /datum/job/chef
-
-/obj/item/card/id/civilian/botanist
-//	job_access_type = /datum/job/hydro
-
-/obj/item/card/id/civilian/janitor
-	job_access_type = /datum/job/janitor
-
-/obj/item/card/id/civilian/librarian
-//	job_access_type = /datum/job/librarian
-
-/obj/item/card/id/civilian/internal_affairs_agent
-//	job_access_type = /datum/job/lawyer
-	detail_color = COLOR_NAVY_BLUE
-
 /obj/item/card/id/civilian/chaplain
 	job_access_type = /datum/job/chaplain
 
-/obj/item/card/id/civilian/head //This is not the HoP. There's no position that uses this right now.
-	name = "identification card"
-	desc = "A card which represents common sense and responsibility."
-	extra_details = list("goldstripe")
+/*
+***************
+***SCP CARDS***
+***************
+*/
 
-/obj/item/card/id/merchant
-	name = "identification card"
-	desc = "A card issued to Merchants, indicating their right to sell and buy goods."
-	access = list(ACCESS_MERCHANT)
-	color = COLOR_OFF_WHITE
-	detail_color = COLOR_BEIGE
+// Currently, cards have to be added for each job and have their own unique identifier if we want access to be made more unique. So that's what we're doing here.
+
+// TEMP CARDS
+
+/obj/item/card/id/seclvl1
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl1"
+	item_state = "Sec_ID1"
+	job_access_type = /datum/job/enlistedofficerlcz
+
+/obj/item/card/id/seclvl2
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/juneng
+
+/obj/item/card/id/seclvl3
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/eng
+
+/obj/item/card/id/seclvl4
+	name = "security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/seneng
+
+//ENGINEERING
+
+/obj/item/card/id/seclvl2eng
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/juneng
+
+/obj/item/card/id/seclvl3eng
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/eng
+
+/obj/item/card/id/seclvl4eng
+	name = "security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/seneng
+
+
+/obj/item/card/id/seclvl5eng
+	name = "security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl5"
+	item_state = "Sec_ID5"
+	job_access_type = /datum/job/chief_engineer
+
+// JUNIOR GUARD ID'S
+
+/obj/item/card/id/junseclvl2lcz
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl1"
+	item_state = "Sec_ID1"
+	job_access_type = /datum/job/enlistedofficerlcz
+
+/obj/item/card/id/junseclvl2ez
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/enlistedofficerez
+
+/obj/item/card/id/junseclvl3hcz
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/enlistedofficerhcz
+
+// GUARD ID'S.
+/obj/item/card/id/seclvl3lcz
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/ncoofficerlcz
+
+/obj/item/card/id/seclvl3ez
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/ncoofficerez
+
+/obj/item/card/id/seclvl3hcz
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/ncoofficerhcz
+
+// ZC ID'S
+
+/obj/item/card/id/zcseclvl4hcz
+	name = "security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/ltofficerhcz
+
+/obj/item/card/id/zcseclvl3lcz
+	name = "security ID"
+	desc = "A teal ID. A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/ltofficerlcz
+
+/obj/item/card/id/zcseclvl4ez
+	name = "security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/ltofficerez
+
+// GC ID.
+
+/obj/item/card/id/gcseclvl5
+	name = "security ID"
+	desc = "A dark purple ID. Looks important."
+	icon_state = "securitylvl5"
+	item_state = "Sec_ID5"
+	job_access_type = /datum/job/hos
+
+// SCIENCE
+
+/obj/item/card/id/sciencelvl1
+	name = "science ID"
+	desc = "A light blue ID. Haven't you seen a janitor with this before?"
+	icon_state = "sciencelvl1"
+	item_state = "Science_ID1"
+	job_access_type = /datum/job/juniorscientist
+
+/obj/item/card/id/sciencelvl2
+	name = "science ID"
+	desc = "A bright yellow ID. Looks ordinary?"
+	icon_state = "sciencelvl2"
+	item_state = "Science_ID2"
+	job_access_type = /datum/job/scientist
+
+/obj/item/card/id/sciencelvl3
+	name = "science ID"
+	desc = "A dark yellow ID. Looks cool, the person wearing it, not so much."
+	icon_state = "sciencelvl3"
+	item_state = "Science_ID3"
+	job_access_type = /datum/job/scientist
+
+/obj/item/card/id/sciencelvl4
+	name = "science ID"
+	desc = "An orange ID. Looks important."
+	icon_state = "sciencelvl4"
+	item_state = "Science_ID4"
+	job_access_type = /datum/job/seniorscientist
+
+/obj/item/card/id/sciencelvl5
+	name = "science ID"
+	desc = "A red ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "sciencelvl5"
+	item_state = "Science_ID5"
+	job_access_type = /datum/job/rd
+
+// ADMIN
+/obj/item/card/id/adminlvl1
+	name = "administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl1"
+	item_state = "Admin_ID"
+//	job_access_type = /datum/job/rd
+
+/obj/item/card/id/adminlvl2
+	name = "administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl2"
+	item_state = "Admin_ID"
+//	job_access_type = /datum/job/rd
+
+/obj/item/card/id/adminlvl3
+	name = "administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl3"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/goirep
+
+/obj/item/card/id/adminlvl4
+	name = "administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl4"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/hop
+
+/obj/item/card/id/adminlvl5
+	name = "administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl5"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/captain
+
+// ERT CARDS
+
+/obj/item/card/id/mtf
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl5"
+	item_state = "Admin_ID"
+
+/obj/item/card/id/mtf/Initialize()
+	. = ..()
+	rank = "Mobile Task Force Operative"
+	access |= get_all_station_access()
+
+
+/obj/item/card/id/physics
+	name = "military ID"
+	desc = "A dark purple ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "securitylvl5"
+	item_state = "Sec_ID5"
+
+/obj/item/card/id/physics/Initialize()
+	. = ..()
+	rank = "UNGOC Physics Operative"
+	access |= get_all_station_access()
+
+// COMMS CARDS
+
+/obj/item/card/id/commslvl1
+	name = "administration ID"
+	desc = "A black ID. A black ID. Looks like the person wearing this won't give it up easy."
+	job_access_type = /datum/job/commeng
+	icon_state = "adminlvl1"
+	item_state = "Admin_ID"
+
+/obj/item/card/id/commslvl4
+	name = "administration ID"
+	desc = "A black ID. A black ID. Looks like the person wearing this won't give it up easy."
+	job_access_type = /datum/job/commsofficer
+	icon_state = "adminlvl4"
+	item_state = "Admin_ID"
+
+// MEDICAL CARDS
+
+/obj/item/card/id/emt
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl1"
+	item_state = "Sec_ID1"
+	job_access_type = /datum/job/emt
+
+/obj/item/card/id/chemist
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/chemist
+
+/obj/item/card/id/doctor
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/medicaldoctor
+
+/obj/item/card/id/chiefmedicalofficer
+	name = "security ID"
+	desc = "A dark purple ID. Looks important."
+	icon_state = "securitylvl5"
+	item_state = "Sec_ID5"
+	job_access_type = /datum/job/cmo
+
+/obj/item/card/id/psychiatrist
+	name = "administration ID"
+	desc = "A light blue card. Seems important."
+	icon_state = "adminlvl3"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/psychiatrist
+
+
+// ARCHIVE
+
+/obj/item/card/id/archivist
+	name = "administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl5"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/archivist
+
+// RESEARCH
+
+/obj/item/card/id/rd
+	name = "science ID"
+	desc = "A red ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "sciencelvl5"
+	item_state = "Science_ID5"
+	job_access_type = /datum/job/rd
+
+// MISC
+
+/obj/item/card/id/chef
+	name = "science ID"
+	desc = "A light blue ID. Haven't you seen a janitor with this before?"
+	icon_state = "sciencelvl1"
+	item_state = "Science_ID1"
+	job_access_type = /datum/job/chef
+
+/obj/item/card/id/bartender
+	name = "science ID"
+	desc = "A light blue ID. Haven't you seen a janitor with this before?"
+	icon_state = "sciencelvl1"
+	item_state = "Science_ID1"
+	job_access_type = /datum/job/bartender
+
+// LOGISTICS
+
+
+/obj/item/card/id/logoff
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/qm
+
+
+/obj/item/card/id/logspec
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/cargo_tech
+
+
+
+/obj/item/card/id/dmining
+	name = "Mining Assignment Card"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = ACCESS_DCLASS_MINING
+/obj/item/card/id/dbotany
+	name = "Botany Assignment Card"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = ACCESS_DCLASS_BOTANY
+
+/obj/item/card/id/dkitchen
+	name = "Kitchen Assignment Card"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = ACCESS_DCLASS_KITCHEN
+
+/obj/item/card/id/djanitorial
+	name = "Janitorial Assignment Card"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = ACCESS_DCLASS_JANITORIAL
+
+/obj/item/card/id/dmedical
+	name = "Medical Assignment Card"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = ACCESS_DCLASS_MEDICAL
+
+/obj/item/card/id/officeworker
+	name = "Office Staff ID"
+	desc = "A low level ID issued to office workers."
+	icon_state = "adminlvl1"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/officeworker
+
+/obj/item/card/id/classd
+	name = "Class-D ID"
+	desc = "An ID card issued to Class-D Foundation personnel."
+	icon_state = "classd"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/classd

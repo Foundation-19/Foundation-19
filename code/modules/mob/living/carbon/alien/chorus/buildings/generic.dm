@@ -26,7 +26,7 @@
 		return
 	last_click = world.time
 	var/turf/T = get_turf(src)
-	new /obj/effect/temporary(T, 2, 'icons/effects/effects.dmi', "green_sparkles")
+	new /obj/effect/temp_visual/temporary(T, 2, 'icons/effects/effects.dmi', "green_sparkles")
 	var/list/adj = orange(1,T)
 	for(var/obj/structure/chorus/chor in adj)
 		chor?.chorus_click()

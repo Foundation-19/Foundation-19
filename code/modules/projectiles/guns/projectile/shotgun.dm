@@ -19,6 +19,7 @@
 	var/recentpump = 0 // to prevent spammage
 	wielded_item_state = "shotgun-wielded"
 	load_sound = 'sounds/weapons/guns/interaction/shotgun_instert.ogg'
+	codex_special_info = "To pump it, use it in hand."
 
 /obj/item/gun/projectile/shotgun/on_update_icon()
 	..()
@@ -126,7 +127,7 @@
 				Fire(user, user)	//will this work? //it will. we call it twice, for twice the FUN
 			user.visible_message(SPAN_DANGER("The shotgun goes off!"), SPAN_DANGER("The shotgun goes off in your face!"))
 			return
-		if(do_after(user, 30, src))	//SHIT IS STEALTHY EYYYYY
+		if(do_after(user, 4 SECONDS, src, bonus_percentage = 25))	//SHIT IS STEALTHY EYYYYY
 			user.unEquip(src)
 			var/obj/item/gun/projectile/shotgun/doublebarrel/sawn/empty/buddy = new(loc)
 			transfer_fingerprints_to(buddy)

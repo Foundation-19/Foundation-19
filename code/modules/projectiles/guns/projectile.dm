@@ -38,8 +38,6 @@
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
 
-	general_codex_key = "ballistic weapons"		// for codex
-
 /obj/item/gun/projectile/Initialize()
 	. = ..()
 	if (starts_loaded)
@@ -158,7 +156,7 @@
 					else
 						if(user.a_intent == I_GRAB) //Tactical reloading
 							//Experienced gets a 1 second delay, master gets a 0.5 second delay
-							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src, bonus_percentage = 25))
 								return
 							if(!user.unEquip(AM, src))
 								return
@@ -168,7 +166,7 @@
 												SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
 						else //Speed reloading
 							//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
-							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
+							if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src, bonus_percentage = 25))
 								return
 							if(!user.unEquip(AM, src))
 								return
@@ -230,7 +228,7 @@
 /obj/item/gun/projectile/proc/unload_ammo(mob/user, allow_dump=1)
 	if(is_jammed)
 		user.visible_message("\The [user] begins to unjam [src].", "You clear the jam and unload [src]")
-		if(!do_after(user, 4, src))
+		if(!do_after(user, 0.6 SECONDS, src, bonus_percentage = 100))
 			return
 		is_jammed = 0
 		playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)

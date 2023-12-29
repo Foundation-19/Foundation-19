@@ -241,7 +241,7 @@
 	else
 		visible_message("\The [user] starts putting [M] into \the [src].")
 
-	if(do_after(user, 20, src))
+	if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 		if(occupant)
 			to_chat(user, SPAN_WARNING("\The [src] is already occupied."))
 			return

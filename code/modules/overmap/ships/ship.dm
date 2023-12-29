@@ -31,8 +31,6 @@
 	var/engines_state = 0 //global on/off toggle for all engines
 	var/thrust_limit = 1  //global thrust limit for all engines, 0..1
 	var/halted = 0        //admin halt or other stop.
-	var/skill_needed = SKILL_TRAINED  //piloting skill needed to steer it without going in random dir
-	var/operator_skill
 
 /obj/effect/overmap/visitable/ship/Initialize()
 	. = ..()
@@ -48,18 +46,6 @@
 
 /obj/effect/overmap/visitable/ship/relaymove(mob/user, direction, accel_limit)
 	accelerate(direction, accel_limit)
-	update_operator_skill(user)
-
-
-/**
- * Updates `operator_skill` to match the current user's skill level, or to null if no user is provided.
- * Will skip observers to avoid allowing unintended external influences on flight.
- */
-/obj/effect/overmap/visitable/ship/proc/update_operator_skill(mob/user)
-	if (isobserver(user))
-		return
-	operator_skill = user?.get_skill_value(SKILL_PILOT)
-
 
 /obj/effect/overmap/visitable/ship/proc/is_still()
 	return !MOVING(speed[1]) && !MOVING(speed[2])
@@ -229,9 +215,6 @@
 	if(istype(A,/turf/unsimulated/map/edge))
 		handle_wraparound()
 	..()
-
-/obj/effect/overmap/visitable/ship/proc/get_helm_skill()//delete this mover operator skill to overmap obj
-	return operator_skill
 
 /obj/effect/overmap/visitable/ship/populate_sector_objects()
 	..()

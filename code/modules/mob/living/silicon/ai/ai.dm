@@ -626,7 +626,7 @@ var/list/ai_verbs_default = list(
 	else if(isWrench(W))
 		if(anchored)
 			user.visible_message(SPAN_NOTICE("\The [user] starts to unbolt \the [src] from the plating..."))
-			if(!do_after(user,40, src))
+			if(!do_after(user, 5 SECONDS, src, bonus_percentage = 25))
 				user.visible_message(SPAN_NOTICE("\The [user] decides not to unbolt \the [src]."))
 				return
 			user.visible_message(SPAN_NOTICE("\The [user] finishes unfastening \the [src]!"))
@@ -634,7 +634,7 @@ var/list/ai_verbs_default = list(
 			return
 		else
 			user.visible_message(SPAN_NOTICE("\The [user] starts to bolt \the [src] to the plating..."))
-			if(!do_after(user,40,src))
+			if(!do_after(user, 4 SECONDS, src, bonus_percentage = 25))
 				user.visible_message(SPAN_NOTICE("\The [user] decides not to bolt \the [src]."))
 				return
 			user.visible_message(SPAN_NOTICE("\The [user] finishes fastening down \the [src]!"))

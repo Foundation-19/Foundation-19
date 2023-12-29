@@ -318,3 +318,9 @@
 
 // Returned by emag_act if object didn't do anything
 #define EMAG_NO_ACT -50
+
+/* Ticker subsystem cross-comms news report */
+// The higher numbers are basically more impactful and will override lower ones
+#define FACILITY_EVACUATED 1
+#define FACILITY_DESTROYED_NUKE 2
+#define FACILITY_DESTROYED_SELF_DESTRUCT 3

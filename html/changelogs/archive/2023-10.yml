@@ -1,0 +1,59 @@
+2023-10-03:
+  K4rlox:
+  - rscadd: 049 botany area
+  - rscadd: 049 shower head
+  TheDarkElites:
+  - bugfix: No more missing texture of monkeycube open
+  - bugfix: storage items now behave properly (clicking on a storage item closes it).
+2023-10-21:
+  TheDarkElites:
+  - bugfix: storage no longer has to be double clicked to open if closed using the
+      x
+  cheesePizza2:
+  - rscdel: Removed the Supermatter and Supermatter-related things
+  - rscdel: Removed unused ID cards.
+  - bugfix: Spacing bug with ID cards fixed
+2023-10-22:
+  EgorDinamit:
+  - balance: 2427-3 starvation damage now takes effect a bit more late.
+  - balance: 2427-3 will now more easily consume dying people.
+  cheesePizza2:
+  - rscadd: Engineering has some mineable rocks in places where there's ordinarily
+      impassable rock.
+  - rscdel: Removes the large airlock in the Engineering hallway.
+  - balance: Compactifies Engineering to make it feel a little less overly spacious.
+  - bugfix: Minor improvements in the Engineering area.
+2023-10-23:
+  EgorDinamit:
+  - bugfix: Fixed broken pipes in the main hub(where all zones connect) level.
+  - rscadd: You can now send and receive messages from other servers via communications
+      console/program.
+  TheDarkElites:
+  - bugfix: Improves Checkpoint Manual
+2023-10-25:
+  EgorDinamit:
+  - bugfix: Ghosts will not longer "jump" while orbiting moving objects.
+  - admin: Dressup can be used on ghosts now. This will spawn in their character from
+      currently selected prefs, if they have one.
+  - admin: Dressup verb is now accessible from right-click menu.
+2023-10-26:
+  EgorDinamit:
+  - rscadd: Added Aggegate infestation caste. Currently nothing evolves into it.
+  - tweak: Simple mobs can burn again, and it should deal more damage.
+  - rscadd: Pointing at objects is now animated.
+  - admin: Admins can now return to lobby (respawn) regardless of game's state (i.e.
+      before round started).
+  - tweak: Give hotkey (default "G") now works correctly, and attempts to give an
+      item to random mob in vicinity.
+  - tweak: The late-join menu now has colored background.
+  - bugfix: Ghosts can use ctrl-alt click to point at things.
+2023-10-27:
+  EgorDinamit:
+  - tweak: Players can now succumb if their heart stops(no pulse), dying on the spot,
+      allowing them to skip the grueling time of observing the black screen as they
+      die for the next 10 minutes.
+  - bugfix: All effects that were invisible should work now.
+  cheesePizza2:
+  - rscdel: Removed botany skill. All related skill checks have been removed.
+  - rscdel: Removed piloting skill. Mech piloting checks have been transferred to
+      weapons skill, and other references have been removed.

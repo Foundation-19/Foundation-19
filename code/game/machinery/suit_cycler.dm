@@ -99,7 +99,7 @@
 
 		visible_message(SPAN_NOTICE("[user] starts putting [G.affecting.name] into the suit cycler."), range = 3)
 
-		if(do_after(user, 20, src))
+		if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 			if(!G || !G.affecting) return
 			var/mob/M = G.affecting
 			if (M.client)

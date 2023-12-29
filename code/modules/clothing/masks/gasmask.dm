@@ -26,6 +26,7 @@
 	var/clogged
 	var/filter_water
 	var/gas_filter_strength = 1			//For gas mask filters
+	hidden_from_codex = FALSE
 
 
 /obj/item/clothing/mask/gas/examine(mob/user)
@@ -39,7 +40,7 @@
 /obj/item/clothing/mask/gas/attack_self(mob/user)
 	if(clogged)
 		user.visible_message(SPAN_NOTICE("\The [user] begins unclogging the intakes of \the [src]."))
-		if(do_after(user, 100) && clogged)
+		if(do_after(user, 12 SECONDS, bonus_percentage = 25) && clogged)
 			user.visible_message(SPAN_NOTICE("\The [user] has unclogged \the [src]."))
 			clogged = FALSE
 		return
