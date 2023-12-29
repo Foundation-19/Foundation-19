@@ -303,33 +303,13 @@
 
 		var/rank = href_list["job_info"]
 		var/datum/job/job = SSjobs.get_by_title(rank)
+    
+		var/datum/codex_entry/c_e = SScodex.get_codex_entry("[job.title] (job)")
 
-		var/dat = list()
-
-		dat += "<p style='background-color: [job.selection_color]'><br><br><p>"
-		if(job.alt_titles)
-			dat += "<i><b>Alternative titles:</b> [english_list(job.alt_titles)].</i>"
-		send_rsc(user, job.get_job_icon(), "job[ckey(rank)].png")
-		dat += "<img src=job[ckey(rank)].png width=96 height=96 style='float:left;'>"
-		if(job.department)
-			dat += "<b>Department:</b> [job.department]."
-			if(job.head_position)
-				dat += "You are in charge of this department."
-
-		dat += "You answer to <b>[job.supervisors]</b> normally."
-
-		dat += "You are the following class: [job.class]"
-
-		dat += "<hr style='clear:left;'>"
-		if(config.wikiurl)
-			dat += "<a href='?src=\ref[src];job_wiki=[rank]'>Open wiki page in browser</a>"
-
-		var/description = job.get_description_blurb()
-		if(description)
-			dat += html_encode(description)
-		var/datum/browser/popup = new(user, "Job Info", "[capitalize(rank)]", 430, 520, src)
-		popup.set_content(jointext(dat,"<br>"))
-		popup.open()
+		if(c_e && istype(c_e))
+			SScodex.present_codex_entry(user, c_e,)
+		else
+			tgui_alert(user, "Could not find codex entry!", timeout = 5 SECONDS)
 
 	else if(href_list["job_wiki"])
 		var/rank = href_list["job_wiki"]

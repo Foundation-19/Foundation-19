@@ -92,6 +92,22 @@
 	/// The required playtime in other jobs or categories to play the role
 	var/list/requirements
 
+	// Information that's only used for specific player-facing information panels (such as the codex)
+	/// If true, the player gets a notification telling him to notify admins before disconnecting. // TODO: make this automatic as well
+	var/req_admin_notify = FALSE
+	/// The higher-ups that the player works directly under.
+	var/supervisors = null
+	/// How much effort the player needs to put in to have a fun round.
+	var/roleplay_difficulty = "Unset - talk to someone about the codex"
+	/// How mechanically complex a job is to play.
+	var/mechanical_difficulty = "Unset - talk to someone about the codex"
+	/// Other guides on the codex that may be relevant. MUST BE LINKS!
+	var/list/codex_guides = list("Unset - talk to someone about the codex")
+	/// Quick overview of what you do as this job.
+	var/duties = "Unset - talk to someone about the codex"
+	/// Text used for the main body of the codex.
+	var/special_codex_text = "Special text unset - talk to someone about the codex"
+
 /datum/job/New()
 
 	if(!hud_icon)

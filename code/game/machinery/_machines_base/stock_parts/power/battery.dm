@@ -191,18 +191,9 @@
 	charge_rate = 0.25
 	charge_wait_counter = 15
 
-/obj/item/stock_parts/power/battery/buildable/crap/get_lore_info()
-	return "The NanoTrasen BAT84's debut on the battery backup market was greeted by universally negative reviews, \
-	highlighting its slow recharge rate and exceptional lack of responsiveness to power changes.\
-	Nevertheless, it has been steadily gaining market share due to rock-bottom prices and a predatory marketing campaign."
-
 /obj/item/stock_parts/power/battery/buildable/stock
 	name = "battery backup (standard)"
 	desc = "The Hephaestus 3006915, or, as this part is colloquially known, model 15, is the workhorse battery backup solution of populated space."
-
-/obj/item/stock_parts/power/battery/buildable/stock/get_lore_info()
-	return "After several failed attempts, Hephaestus hit a best-selling component in the model 15. \
-	Combining tolerable recharge rate and high durability into a conveniently shaped package, it has dominated the market for over three decades."
 
 /obj/item/stock_parts/power/battery/buildable/turbo
 	name = "battery backup (rapid)"
@@ -210,17 +201,9 @@
 	charge_rate = 5
 	matter = list(MATERIAL_STEEL = 1000, MATERIAL_ALUMINIUM = 400, MATERIAL_PLASTIC = 400)
 
-/obj/item/stock_parts/power/battery/buildable/turbo/get_lore_info()
-	return "Ward-Takahashi GMB's latest battery charging technology deploys advanced composites and semiorganic interfaces to attain previously unheard-of charge rates. \
-	Their marketing division, on the other hand, has been engaged in seeminly endless lawsuits over false advertising, having allegedly overstated said rates."
-
 /obj/item/stock_parts/power/battery/buildable/responsive
 	name = "battery backup (responsive)"
 	desc = "The Focal Point FOXUS is a battery backup device marketed for its fast startup time."
 	charge_wait_counter = 2
 	charge_rate = 0.8
 	matter = list(MATERIAL_STEEL = 400, MATERIAL_ALUMINIUM = 400, MATERIAL_PLASTIC = 400)
-
-/obj/item/stock_parts/power/battery/buildable/responsive/get_lore_info()
-	return "Unable to compete on price with the larger conglomerates, Focal Point's FOXUS instead sacrifices a bit of charge rate for drastically better responsiveness. \
-	While an instant cult classic in the high-performance market, the FOXUS's bewildering name, lackluster marketing effort, and steep price have kept it from becoming a household name."

@@ -14,10 +14,6 @@
 	var/badge_string = "Detective"
 	var/stored_name
 
-/obj/item/clothing/accessory/badge/get_lore_info()
-	. = ..()
-	. += "<br>Denotes affiliation to <l>[badge_string]</l>."
-
 /obj/item/clothing/accessory/badge/proc/set_name(new_name)
 	stored_name = new_name
 

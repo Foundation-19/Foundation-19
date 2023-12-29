@@ -1,7 +1,9 @@
 /datum/job/juneng
 	title = "Junior Engineer"
+	department = "Engineering"
 	total_positions = 6
 	spawn_positions = 6
+	department = "Engineering"
 	department_flag = ENG
 	selection_color = "#5b4d20"
 	supervisors = "the Senior Engineers and Chief Engineer"
@@ -32,11 +34,18 @@
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Help with constructions and repairs."
+	codex_guides = list("<l>Hacking Wires</l>")
+
 /datum/job/eng
 	title = "Engineer"
+	department = "Engineering"
 	total_positions = 4
 	spawn_positions = 4
 	selection_color = "#5b4d20"
+	department = "Engineering"
 	department_flag = ENG
 	supervisors = "the Senior Engineers and the Chief Engineer"
 	economic_power = 4
@@ -79,10 +88,17 @@
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
 
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Medium"
+	duties = "Perform constructions and repairs. Guide junior engineers"
+	codex_guides = list("<l>Hacking Wires</l>")
+
 /datum/job/seneng
 	title = "Senior Engineer"
+	department = "Engineering"
 	total_positions = 2
 	spawn_positions = 2
+	department = "Engineering"
 	department_flag = ENG
 	selection_color = "#5b4d20"
 	supervisors = "the Chief Engineer"
@@ -130,10 +146,17 @@
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
 
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Perform constructions and repairs. Manage lower engineers."
+	codex_guides = list("<l>Hacking Wires</l>")
+
 /datum/job/conteng
 	title = "Containment Engineer"
+	department = "Engineering"
 	total_positions = 2
 	spawn_positions = 2
+	department = "Engineering"
 	department_flag = ENG
 	selection_color = "#5b4d20"
 	supervisors = "the Chief Engineer"
@@ -177,9 +200,17 @@
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
 
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Perform constructions and repairs on SCP containment chambers."
+	codex_guides = list("<l>Hacking Wires</l>")
+
 /datum/job/chief_engineer
 	title = "Chief Engineer"
+	department = "Engineering"
 	supervisors = "the Site Director"
+	head_position = TRUE
+	department = "Engineering"
 	department_flag = ENG|COM
 	selection_color = "#5b4d20"
 	total_positions = 1
@@ -229,3 +260,8 @@
 	    SKILL_ATMOS        = SKILL_MASTER,
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Manage the Engineering department. Delegate construction and repair work. Facilitate larger projects."
+	codex_guides = list("<l>Hacking Wires</l>")
