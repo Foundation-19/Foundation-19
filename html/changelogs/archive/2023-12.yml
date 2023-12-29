@@ -7,3 +7,10 @@
 2023-12-26:
   tichys:
   - rscadd: Added new mechanics or gameplay changes
+2023-12-29:
+  K4rlox:
+  - code_imp: dclass medical defines
+  - tweak: adds dclass medical to lcz guards
+  - rscadd: dclass medical assignment cards
+  checkraisefold:
+  - admin: Fixed staffwarn from player panel
