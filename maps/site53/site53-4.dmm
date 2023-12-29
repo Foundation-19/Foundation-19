@@ -4412,11 +4412,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "rJ" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -8583,6 +8578,9 @@
 "ZO" = (
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"ZS" = (
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "ZZ" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/brown/half,
@@ -34700,7 +34698,7 @@ xv
 xv
 xv
 rJ
-fz
+ZS
 fz
 xv
 hZ
