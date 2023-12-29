@@ -41,20 +41,18 @@
 		saw_memetic(H)
 
 /datum/component/memetic/proc/activate_memetic_effects()
+	var/list/affected_mobs = resolveWeakrefList(affected_mobs_weakref)
 	if(!(memetic_flags & MPERSISTENT)) //if we arent a persistent memetic, then affected humans will be removed from effect after they no longer meet the reqs
-
-		for(var/weakref/Hweakref in affected_mobs_weakref)
-			var/mob/living/carbon/human/H = Hweakref.resolve()
+		for(var/mob/living/carbon/human/H in affected_mobs)
 			if((memetic_flags & MVISUAL) && H.can_see(parent, TRUE))
 				continue
 			if((memetic_flags & MAUDIBLE) && H.can_hear(parent))
 				continue
-			affected_mobs_weakref -= Hweakref
+			affected_mobs_weakref -= weakref(H)
 
-	for(var/weakref/Hweakref in affected_mobs_weakref)
-		var/mob/living/carbon/human/H = Hweakref.resolve()
+	for(var/mob/living/carbon/human/H in affected_mobs)
 		if(H.stat == DEAD)
-			affected_mobs_weakref -= Hweakref
+			affected_mobs_weakref -= weakref(H)
 			continue
 		call(parent, affected_proc)(H)
 
