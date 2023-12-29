@@ -1315,6 +1315,7 @@
 	dir = 1
 	},
 /obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
@@ -1324,7 +1325,9 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/hub)
 "aeB" = (
-/turf/simulated/mineral,
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
 /area/space)
 "aeD" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -1621,6 +1624,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/emitter/gyrotron/anchored{
@@ -3054,6 +3058,7 @@
 "ajI" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable{
+	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/smes/buildable/preset/admin,
@@ -4438,6 +4443,7 @@
 /obj/structure/dispenser,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -5720,8 +5726,7 @@
 /area/site53/science/aicobservation)
 "aqD" = (
 /obj/machinery/light{
-	dir = 8;
-	pixel_x = -11
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
@@ -6040,8 +6045,7 @@
 /area/site53/uhcz/scp106maintup)
 "arj" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6277,8 +6281,7 @@
 /area/site53/engineering/auxstorage)
 "arI" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -7835,8 +7838,7 @@
 	dir = 1
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -8187,6 +8189,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -8367,6 +8370,7 @@
 "axb" = (
 /obj/machinery/power/smes/batteryrack,
 /obj/structure/cable{
+	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
@@ -8539,6 +8543,7 @@
 	dir = 6
 	},
 /obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -9428,6 +9433,7 @@
 "aAb" = (
 /obj/machinery/power/smes/buildable/preset/on_full,
 /obj/structure/cable{
+	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
@@ -9443,6 +9449,7 @@
 "aAe" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
+	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc{
@@ -10745,8 +10752,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -12892,8 +12898,7 @@
 /area/site53/uhcz/scp247observation)
 "aLE" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
@@ -14277,8 +14282,7 @@
 /area/site53/lowertrams/escape)
 "aPN" = (
 /obj/machinery/light{
-	dir = 8;
-	pixel_x = -11
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/bed/chair,
@@ -14294,8 +14298,7 @@
 	dir = 4
 	},
 /obj/machinery/light{
-	dir = 8;
-	pixel_x = -11
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile,
@@ -14777,6 +14780,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable{
+	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -15069,7 +15073,9 @@
 /turf/simulated/floor,
 /area/site53/surface/explorers/surrounding)
 "aSK" = (
-/turf/simulated/mineral,
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
 /area/site53/surface/explorers/surrounding)
 "aSL" = (
 /obj/machinery/door/airlock/hatch/maintenance{
@@ -16488,8 +16494,7 @@
 /area/site53/lowertrams/hub)
 "aYl" = (
 /obj/machinery/light{
-	dir = 8;
-	pixel_x = -11
+	dir = 8
 	},
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green/mono,
@@ -18246,6 +18251,7 @@
 	dir = 1
 	},
 /obj/structure/cable{
+	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/closet/l3closet/janitor,
@@ -20160,8 +20166,7 @@
 "bkw" = (
 /obj/machinery/vending/cola,
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -21132,6 +21137,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -22173,6 +22180,8 @@
 /area/site53/ulcz/humanoidcontainment)
 "dBg" = (
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
@@ -23062,6 +23071,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/brown/mono,
@@ -25494,6 +25505,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -26079,18 +26092,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
-"hTc" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8;
-	pixel_x = -11
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "hTe" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white,
@@ -29526,8 +29527,7 @@
 	dir = 4
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/cable{
@@ -30396,6 +30396,7 @@
 	},
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/cable{
+	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -30527,6 +30528,8 @@
 "mEO" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -31414,8 +31417,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -32015,6 +32017,7 @@
 	dir = 1
 	},
 /obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/structure/catwalk,
@@ -33704,6 +33707,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/brown/mono,
@@ -35028,8 +35033,7 @@
 	dir = 4
 	},
 /obj/machinery/light{
-	dir = 8;
-	pixel_x = -11
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -35469,6 +35473,7 @@
 	dir = 10
 	},
 /obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -36288,8 +36293,7 @@
 	dir = 1
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /obj/machinery/camera/network/hcz{
 	dir = 1
@@ -36947,8 +36951,7 @@
 /area/site53/reswing/xenobiology)
 "uaW" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
@@ -39906,7 +39909,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/containment_engineer)
 "xna" = (
-/turf/simulated/mineral,
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
 /area/site53/uhcz/scp247containment)
 "xnq" = (
 /obj/machinery/door/airlock/glass/security{
@@ -40099,8 +40104,7 @@
 	name = "LCZ Junior Guard"
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -40539,8 +40543,7 @@
 	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -40669,8 +40672,7 @@
 	dir = 6
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/primaryhallway)
@@ -70595,7 +70597,7 @@ afd
 nHl
 wDh
 wDh
-hTc
+kCa
 wDh
 wDh
 wDh
