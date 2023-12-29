@@ -1894,7 +1894,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "fC" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -2381,7 +2381,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "hM" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
@@ -2397,7 +2397,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "hP" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -2427,7 +2427,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "hS" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -2439,7 +2439,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "hU" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border{
@@ -2717,7 +2717,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "iI" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -2729,7 +2729,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "iJ" = (
 /obj/machinery/light/small,
 /obj/structure/cable{
@@ -2738,7 +2738,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "iN" = (
 /obj/machinery/vending/coffee,
 /obj/effect/floor_decal/corner/brown/half{
@@ -3497,7 +3497,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
+/area/site53/maintenance/upper_surface)
 "kX" = (
 /obj/machinery/computer/telecomms/server{
 	dir = 1;
@@ -5025,6 +5025,10 @@
 /obj/machinery/microwave,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"xv" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/maintenance/upper_surface)
 "xw" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light{
@@ -5975,6 +5979,14 @@
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/titanium,
 /area/site53/uez/commandpanicbunker)
+"Fn" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "Fo" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -31551,16 +31563,16 @@ hk
 hk
 hk
 hk
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
 ia
 ib
 iy
@@ -31808,16 +31820,16 @@ hk
 hk
 hk
 hk
-fC
+xv
 iH
 hR
-fw
-fw
-fw
+Fn
+Fn
+Fn
 hR
-fw
-fw
-fw
+Fn
+Fn
+Fn
 bB
 ic
 iy
@@ -32065,16 +32077,16 @@ hk
 hk
 hk
 hk
-fC
+xv
 hL
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
 ia
 Sh
 if
@@ -32322,9 +32334,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 kx
 hZ
 hZ
@@ -32579,9 +32591,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -32836,9 +32848,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -33093,9 +33105,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 hL
-fC
+xv
 kx
 hZ
 hZ
@@ -33350,9 +33362,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 kx
 hZ
 hZ
@@ -33607,9 +33619,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 kx
 kx
 kx
@@ -33864,9 +33876,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -34121,9 +34133,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -34378,9 +34390,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -34607,37 +34619,37 @@ hk
 hk
 hk
 hk
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -34864,37 +34876,37 @@ hk
 hk
 hk
 hk
-fC
+xv
 iH
 hN
-fw
-fw
-fw
-fw
-fw
-fw
-fw
+Fn
+Fn
+Fn
+Fn
+Fn
+Fn
+Fn
 hN
-fw
-fw
-fw
-fw
+Fn
+Fn
+Fn
+Fn
 hN
-fw
-fw
-fw
-fw
-fw
-fw
-fw
-fw
+Fn
+Fn
+Fn
+Fn
+Fn
+Fn
+Fn
+Fn
 hN
-fw
-fw
-fw
-fw
+Fn
+Fn
+Fn
+Fn
 kU
-fC
+xv
 hZ
 hZ
 hZ
@@ -35121,20 +35133,20 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
 jH
 jH
 jH
@@ -35151,7 +35163,7 @@ jH
 jH
 jH
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -35378,9 +35390,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 WQ
@@ -35408,7 +35420,7 @@ Oc
 jy
 jH
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -35635,9 +35647,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 WQ
@@ -35665,7 +35677,7 @@ kr
 kO
 jH
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -35892,9 +35904,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 WQ
@@ -35922,7 +35934,7 @@ kr
 Tg
 jH
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -36149,9 +36161,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 hL
-fC
+xv
 WQ
 WQ
 WQ
@@ -36179,7 +36191,7 @@ kr
 jq
 jH
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -36406,9 +36418,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -36436,7 +36448,7 @@ kr
 ko
 jH
 fz
-fC
+xv
 hZ
 hZ
 hZ
@@ -36663,9 +36675,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -36693,7 +36705,7 @@ kr
 kF
 kR
 iJ
-fC
+xv
 hZ
 hZ
 hZ
@@ -36920,9 +36932,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -36949,8 +36961,8 @@ jp
 mn
 kK
 jH
-fC
-fC
+xv
+xv
 hZ
 hZ
 hZ
@@ -37177,9 +37189,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -37434,9 +37446,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -37691,9 +37703,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 hZ
 hZ
@@ -37948,9 +37960,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 hZ
 hZ
@@ -38205,9 +38217,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 hZ
 hZ
@@ -38462,9 +38474,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 hZ
 hZ
@@ -38719,9 +38731,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 hL
-fC
+xv
 WQ
 hZ
 hZ
@@ -38976,9 +38988,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 hZ
 hZ
@@ -39233,9 +39245,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 hZ
 hZ
@@ -39490,9 +39502,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 hZ
 hZ
@@ -39747,9 +39759,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -40004,9 +40016,9 @@ hk
 hk
 hk
 hk
-fC
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -40251,19 +40263,19 @@ ak
 ak
 ak
 ak
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
 fz
-fC
+xv
 WQ
 WQ
 hZ
@@ -40508,19 +40520,19 @@ aa
 gf
 an
 aU
-fw
-fw
-fw
-fw
+Fn
+Fn
+Fn
+Fn
 hS
-fw
-fw
-fw
-fw
-fw
-fw
+Fn
+Fn
+Fn
+Fn
+Fn
+Fn
 iI
-fC
+xv
 WQ
 WQ
 hZ
@@ -40765,19 +40777,19 @@ bu
 hH
 id
 ak
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
-fC
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
 WQ
 WQ
 hZ
