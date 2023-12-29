@@ -9,7 +9,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "ad" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -20,7 +20,7 @@
 "ae" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "af" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -49,10 +49,10 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "aj" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "al" = (
 /obj/structure/disposalpipe/down,
 /obj/structure/lattice,
@@ -85,10 +85,10 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "as" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "at" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -96,7 +96,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "au" = (
 /obj/machinery/light,
 /obj/structure/closet/crate/bin{
@@ -104,7 +104,7 @@
 	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "av" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/multi_tile/glass/medical{
@@ -132,7 +132,7 @@
 	},
 /obj/machinery/door/airlock/multi_tile/glass/civilian,
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "ax" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -140,25 +140,25 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "ay" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "az" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "aA" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "aB" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "aC" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -255,7 +255,7 @@
 "aN" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/prepainted,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "aO" = (
 /obj/structure/cryofeed{
 	dir = 4
@@ -291,7 +291,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "aS" = (
 /obj/structure/cryofeed,
 /obj/machinery/cryopod{
@@ -329,7 +329,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "aW" = (
 /obj/effect/landmark{
 	name = "Observer-Start"
@@ -968,7 +968,7 @@
 "cj" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "ck" = (
 /obj/effect/paint_stripe/gray,
 /turf/unsimulated/mineral,
@@ -1298,12 +1298,12 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "cY" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "cZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1770,7 +1770,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "eq" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Mental Isolation 4";
@@ -2147,7 +2147,7 @@
 	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "fr" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -2462,13 +2462,13 @@
 "gt" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "gu" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "gv" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -2476,7 +2476,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "gw" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/down{
@@ -4420,7 +4420,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "lK" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -4434,7 +4434,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "lM" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -4451,7 +4451,7 @@
 /obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4491,13 +4491,13 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "mb" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "mc" = (
 /obj/effect/paint_stripe/gunmetal,
 /turf/simulated/wall/prepainted,
@@ -4523,11 +4523,11 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "mi" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "mj" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -4537,7 +4537,7 @@
 	name = "scp420j"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "mk" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -4547,7 +4547,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "mm" = (
 /obj/machinery/light,
 /obj/structure/closet,
@@ -4559,7 +4559,7 @@
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "mn" = (
 /obj/structure/hygiene/sink{
 	dir = 1;
@@ -5067,7 +5067,7 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "pb" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/orange/bordercorner{
@@ -5166,7 +5166,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "pr" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/status_display,
@@ -5176,7 +5176,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "pu" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/status_display,
@@ -5225,7 +5225,7 @@
 "pG" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "pH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -5281,7 +5281,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5289,7 +5289,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "qp" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -5502,7 +5502,7 @@
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/marine,
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/marine,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "rp" = (
 /obj/structure/flora/bush,
 /obj/structure/flora/grass/brown,
@@ -5619,7 +5619,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "rN" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
@@ -5959,7 +5959,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "tD" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6153,7 +6153,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "uW" = (
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = -32
@@ -6369,7 +6369,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "vC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
@@ -6378,7 +6378,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/grass,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "vD" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 28
@@ -7451,7 +7451,7 @@
 	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "Fl" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7755,7 +7755,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "HW" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -7822,7 +7822,7 @@
 	},
 /obj/structure/cable,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "Iy" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -7925,7 +7925,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "Kc" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -8071,7 +8071,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "Lm" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8090,7 +8090,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "Lp" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
@@ -8142,7 +8142,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "Mg" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -8449,7 +8449,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/tramhubhallwayentry)
+/area/site53/upper_surface/entrancehallway)
 "Qh" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel_grid,
@@ -9093,7 +9093,7 @@
 "Wl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "Wo" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/machinery/vending/medical{
