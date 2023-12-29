@@ -788,7 +788,9 @@ Checks if a list has the same entries and values as an element of big.
 	for(var/item in input_list)
 		if(isweakref(item))
 			var/weakref/weakrefitem = item
-			output_list += weakrefitem.resolve()
+			var/datum/D = weakrefitem.resolve()
+			if(D)
+				output_list += D
 		else
 			output_list += item
 	return output_list
