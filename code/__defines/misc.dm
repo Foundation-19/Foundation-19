@@ -51,7 +51,7 @@
 #define STATUS_HUD_OOC 	9 // STATUS_HUD without virus DB check for someone being ill.
 #define LIFE_HUD 		10 // STATUS_HUD that only reports dead or alive
 #define BLINK_HUD       11 // A line representing the blink time remaining on a mob.
-#define PESTILENCE_HUD  12 // A visual indicator of the pestilence.
+#define PESTILENCE_HUD  12 // A visual indicator of the pestilence for SCP-049.
 
 // Shuttle moving status.
 #define SHUTTLE_IDLE      0
