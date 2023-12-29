@@ -22,15 +22,14 @@
 		if(L.flags & NO_STUTTER)
 			lang_info += "It will not be affected by speech impediments."
 
-		var/list/lang_lore = list(L.desc)
-		lang_lore += "Shorthand: '[L.shorthand]'"
+		lang_info += L.desc
+		lang_info += "Shorthand: '[L.shorthand]'"
 		if(!(L.flags & (SIGNLANG|NONVERBAL|HIVEMIND)))
-			var/lang_example = L.format_message(L.scramble(example_line), L.speech_verb)
-			lang_lore += "It sounds like this:"
-			lang_lore += ""
-			lang_lore += "<b>CodexBot</b> [lang_example]"
+			lang_info += "It sounds like this:"
+			lang_info += ""
+			lang_info += "<b>CodexBot</b> [L.format_message(L.scramble(example_line), L.speech_verb)]"
 
-		var/datum/codex_entry/entry = new(_display_name = "[L.name] (language)", _lore_text = jointext(lang_lore, "<br>"), _mechanics_text = jointext(lang_info, "<br>"))
+		var/datum/codex_entry/entry = new(_display_name = "[L.name] (language)", _entry_text = jointext(lang_info, "<br>"))
 		entry.associated_strings += L.name
 		entry.associated_strings += L.shorthand
 		SScodex.add_entry_by_string(entry.display_name, entry)

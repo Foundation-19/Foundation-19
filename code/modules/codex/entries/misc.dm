@@ -1,29 +1,26 @@
 /datum/codex_entry/suitcooler
 	associated_paths = list(/obj/item/device/suit_cooling_unit)
-	mechanics_text = "You may wear this instead of your backpack to cool yourself down. It is commonly used by full-body prosthetic users, \
+	entry_text = "You may wear this instead of your backpack to cool yourself down. It is commonly used by full-body prosthetic users, \
 	as it allows them to go into low pressure environments for more than few seconds without overheating. It runs off energy provided by internal power cell. \
 	Remember to turn it on by clicking it when it's your in your hand before you put it on."
 
 /datum/codex_entry/barsign
 	associated_paths = list(/obj/structure/sign/double/barsign)
-	mechanics_text = "If your ID has bar access, you may swipe it on this sign to alter its display."
+	entry_text = "If your ID has bar access, you may swipe it on this sign to alter its display."
 
 /datum/codex_entry/sneakies
 	associated_paths = list(/obj/item/clothing/shoes/laceup/sneakies)
-	lore_text =  "Occasionally used by low-tech criminals to confuse investigations."
+	entry_text =  "The footprints left behind by these will be backwards."
 
 /datum/codex_entry/moneygun
 	associated_paths = list(/obj/item/gun/launcher/money)
-	mechanics_text = "Load money into the cannon by picking it up with the gun, or feeding it directly by hand. Use in your hand to configure how much money you want to fire per shot."
-	lore_text = "These devices were invented several centuries ago and are a distinctly human cultural infection. \
-	They have produced knockoffs as timeless and as insipid as the potato gun and the paddle ball, showing up in places all over the Earth. \
-	The Money Cannon variation is noteworthy for its sturdiness and build quality, but is, at the end of the day, just another knockoff of the ancient originals."
-	antag_text = "Sliding a <l>cryptographic sequencer</l> into the receptacle will short the motors and override their speed. \
-	If you set the cannon to dispense 100 dollars or more, this might make a handy weapon."
+	entry_text = "Load money into the cannon by picking it up with the gun, or feeding it directly by hand.<br>\
+	Use in your hand to configure how much money you want to fire per shot.<br>\
+	Sliding a <l>cryptographic sequencer</l> into the receptacle will short the motors and override their speed, making a powerful (if expensive) weapon."
 
 /datum/codex_entry/ssd
 	display_name = "SSD/S.S.D."
-	mechanics_text = "When a player has disconnected or ghosted, they display a special message when they're examined, colored in purple. \
+	entry_text = "When a player has disconnected or ghosted, they display a special message when they're examined, colored in purple. \
 	If the message indicates something like them staring blankly, being fast asleep, or displaying a SYSTEM OFFLINE message, \
 	it's likely that the player's closed their BYOND client or lost their connection. In such a case, it's possible they'll resume play soon or at a later time. \
 	These players are referred as \"going SSD\" or otherwise being SSD.<br>\

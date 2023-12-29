@@ -14,9 +14,13 @@
 	icon_state = "pipe-c"
 	},
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
@@ -139,8 +143,7 @@
 "av" = (
 /obj/structure/bed/chair,
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -402,6 +405,8 @@
 /obj/machinery/door/firedoor,
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -527,6 +532,8 @@
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -782,6 +789,8 @@
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -854,6 +863,8 @@
 	icon_state = "2-4"
 	},
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
@@ -874,6 +885,8 @@
 	dir = 4
 	},
 /obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/wood/walnut,
@@ -985,16 +998,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
-"cw" = (
-/obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/hallways)
 "cx" = (
 /obj/structure/closet/secure_closet/guard/specialistshotgun,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1075,6 +1078,8 @@
 /area/site53/llcz/dclass/med_checkpoint)
 "cJ" = (
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -1099,8 +1104,7 @@
 /area/site53/llcz/dclass/entrance_checkpoint)
 "cM" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1807,8 +1811,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -1951,12 +1954,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpointoverlook)
-"eB" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/recreationhallway)
 "eC" = (
 /obj/machinery/button/crematorium{
 	id_tag = "Reeducation Cremator";
@@ -2105,6 +2102,8 @@
 "eU" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -2334,6 +2333,8 @@
 	name = "Mining Checkpoint Lockdown"
 	},
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -2615,6 +2616,8 @@
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -2677,8 +2680,7 @@
 "gi" = (
 /obj/machinery/microwave,
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -2787,8 +2789,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -2847,12 +2848,16 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "gH" = (
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/wood/walnut,
@@ -3246,6 +3251,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -3597,8 +3604,7 @@
 /area/site53/llcz/dclass/checkpoint)
 "iy" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/machinery/alarm{
 	dir = 8;
@@ -3896,8 +3902,7 @@
 /area/site53/llcz/hallways)
 "jh" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -4036,6 +4041,8 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/button/blast_door{
@@ -4147,8 +4154,7 @@
 /area/site53/llcz/dclass/kitchen)
 "jM" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/structure/hygiene/sink{
 	dir = 4;
@@ -4251,8 +4257,7 @@
 /area/site53/llcz/dclass/checkpoint)
 "jY" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -4332,8 +4337,7 @@
 /area/site53/llcz/dclass/luxurylibrary)
 "kh" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/lino,
@@ -5839,6 +5843,8 @@
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -6085,6 +6091,8 @@
 "ok" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/highsecurity{
@@ -7285,16 +7293,6 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/reeducation)
-"qW" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "qX" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -7397,6 +7395,8 @@
 /area/site53/llcz/hallways)
 "ri" = (
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/catwalk_plated/dark,
@@ -7404,6 +7404,8 @@
 /area/site53/engineering/maintenance/llczmaint)
 "rj" = (
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/table/standard,
@@ -7495,6 +7497,8 @@
 /area/site53/engineering/server_room)
 "ru" = (
 /obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/wood/walnut,
@@ -7513,6 +7517,8 @@
 "rw" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -8516,6 +8522,8 @@
 "tY" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -9274,6 +9282,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/white,
@@ -9437,6 +9447,8 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/network/hcz,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -10110,6 +10122,8 @@
 "xy" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/glass/civilian{
@@ -10173,6 +10187,8 @@
 /area/site53/llcz/dclass/primaryhallway)
 "xH" = (
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -10367,6 +10383,8 @@
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "yj" = (
 /obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/catwalk_plated/dark,
@@ -10667,6 +10685,8 @@
 "zd" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -11480,8 +11500,7 @@
 	RCon_tag = "Lower Heavy Containment Zone Bypass"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
+	d2 = 6;
 	icon_state = "0-6"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -11764,8 +11783,7 @@
 /area/site53/llcz/dclass/med_checkpointoverlook)
 "BY" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "Shower checkpoint windows";
@@ -11797,6 +11815,8 @@
 	pixel_y = 32
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/white,
@@ -12528,6 +12548,8 @@
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/power/apc{
@@ -12934,6 +12956,8 @@
 "Fc" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -13559,8 +13583,7 @@
 /area/site53/lhcz/scp049containment)
 "GU" = (
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/reeducation)
@@ -14099,8 +14122,7 @@
 "Ie" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/assignment)
@@ -15870,13 +15892,6 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"Mm" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor,
-/area/site53/llcz/dclass/cells)
 "Mo" = (
 /obj/machinery/camera/network/scp049{
 	dir = 1;
@@ -16382,13 +16397,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"NH" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "NI" = (
 /obj/item/device/flashlight/lantern,
 /turf/simulated/floor/exoplanet/grass,
@@ -16616,12 +16624,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/scp173)
-"Ok" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "Ol" = (
 /obj/effect/floor_decal/sign/or1,
 /obj/effect/floor_decal/industrial/firstaid{
@@ -16934,6 +16936,8 @@
 "Pf" = (
 /obj/effect/catwalk_plated,
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -17586,6 +17590,8 @@
 /area/site53/lhcz/scp049containment)
 "QN" = (
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/catwalk_plated/dark,
@@ -17758,6 +17764,8 @@
 /area/site53/llcz/mining/miningops)
 "Rl" = (
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -18056,6 +18064,8 @@
 "RY" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/light{
@@ -18220,6 +18230,8 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
@@ -18614,6 +18626,8 @@
 "Tw" = (
 /obj/machinery/door/airlock/glass/civilian,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/white,
@@ -18869,6 +18883,8 @@
 /area/site53/uhcz/scp8containment)
 "Uh" = (
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/dark,
@@ -19217,6 +19233,8 @@
 "Vg" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/highsecurity{
@@ -19599,6 +19617,8 @@
 "Wd" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/highsecurity{
@@ -19953,6 +19973,8 @@
 "WZ" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/network/hcz,
@@ -19985,18 +20007,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
-"Xd" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "Xe" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -29520,7 +29530,7 @@ Bb
 uf
 uf
 eZ
-Ok
+sj
 uf
 eZ
 uf
@@ -30548,7 +30558,7 @@ yA
 AN
 sM
 tV
-Mm
+yx
 zF
 vK
 sM
@@ -30805,7 +30815,7 @@ Du
 sM
 sM
 ws
-Mm
+yx
 zF
 ws
 sM
@@ -37225,7 +37235,7 @@ wD
 jy
 gG
 fr
-eB
+iR
 uL
 jF
 dg
@@ -37698,7 +37708,7 @@ Eh
 ua
 cQ
 cc
-cw
+fC
 cc
 cQ
 lG
@@ -65951,7 +65961,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -66208,7 +66218,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -66979,7 +66989,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -67493,7 +67503,7 @@ gq
 qn
 pp
 Px
-NH
+qJ
 mK
 qr
 qn
@@ -67750,7 +67760,7 @@ gq
 qn
 mK
 BI
-NH
+qJ
 BI
 mK
 qn
@@ -68007,7 +68017,7 @@ gq
 qn
 BI
 BI
-NH
+qJ
 BI
 BI
 bb
@@ -68264,7 +68274,7 @@ gq
 qn
 Wr
 BI
-NH
+qJ
 BI
 Yr
 qn
@@ -68521,7 +68531,7 @@ gq
 qn
 pp
 mK
-NH
+qJ
 mK
 qr
 qn
@@ -69035,7 +69045,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -69549,7 +69559,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -69806,7 +69816,7 @@ gq
 gq
 gq
 qn
-qW
+qL
 qn
 gq
 gq
@@ -70063,7 +70073,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -70320,7 +70330,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -70577,7 +70587,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -70822,7 +70832,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -70834,7 +70844,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -71079,7 +71089,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -71091,7 +71101,7 @@ gq
 gq
 gq
 qn
-qW
+qL
 qn
 gq
 gq
@@ -71348,7 +71358,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -71850,7 +71860,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -71862,7 +71872,7 @@ gq
 gq
 gq
 qn
-NH
+qJ
 qn
 gq
 gq
@@ -72364,7 +72374,7 @@ gq
 qn
 pp
 Px
-NH
+qJ
 mK
 qr
 qn
@@ -72376,7 +72386,7 @@ gq
 qn
 pp
 oQ
-NH
+qJ
 mK
 qr
 qn
@@ -72621,7 +72631,7 @@ qn
 qn
 Mq
 BI
-NH
+qJ
 BI
 mK
 qn
@@ -72633,7 +72643,7 @@ qn
 qn
 mK
 BI
-NH
+qJ
 BI
 OL
 qn
@@ -72878,7 +72888,7 @@ qo
 od
 td
 qo
-Xd
+nK
 td
 td
 WP
