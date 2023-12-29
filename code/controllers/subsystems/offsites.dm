@@ -33,6 +33,12 @@ SUBSYSTEM_DEF(offsite)
 	for(var/key in offsites)
 		var/datum/offsite/OS = offsites[key]
 
+		// TODO: timesort instead of type categories
+		var/list/timesorted_data = list()
+
+		for(var/thing in OS.received_faxes)
+			var/list/rec_fax = thing
+
 		data["offsites"] += list(list(OS.name, OS.received_faxes, OS.sent_faxes, OS.received_messages, OS.sent_messages))
 
 	return data
