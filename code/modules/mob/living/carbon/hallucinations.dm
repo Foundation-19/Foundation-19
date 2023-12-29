@@ -253,7 +253,7 @@
 		I.color = COLOR_BLOOD_HUMAN
 		return I
 	else
-		var/image/I = image('icons/effects/blood.dmi', "gib[pick("arm", "leg", "torso")]_flesh", layer = BELOW_TABLE_LAYER)
+		var/image/I = image('icons/effects/blood.dmi', "gib[pick("arm", "leg", "torso")]_flesh", layer = BELOW_TABLE_LAYER, dir = pick(GLOB.alldirs), pixel_x = rand(-10,10), pixel_y = rand(-10,10))
 		I.color = WOOD_COLOR_PALE
 		return I
 
