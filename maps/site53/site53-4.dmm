@@ -582,6 +582,8 @@
 	name = "SD Office Outter Lockdown"
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
@@ -761,6 +763,8 @@
 	name = "Administrative Offices Lockdown"
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -771,6 +775,8 @@
 	name = "inner SD lockdown"
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
@@ -916,6 +922,8 @@
 	name = "Administrative Offices Lockdown"
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
@@ -930,6 +938,8 @@
 "cU" = (
 /obj/structure/bed/chair/office,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/carpet/blue,
@@ -947,6 +957,8 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/carpet/blue,
@@ -1015,6 +1027,8 @@
 	name = "Director Office Checkpoint Windows"
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -1102,12 +1116,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
-"do" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "dp" = (
 /obj/structure/bed/chair{
@@ -1207,6 +1215,8 @@
 /area/site53/uez/conference)
 "dG" = (
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -1691,6 +1701,8 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/button/blast_door{
@@ -3617,7 +3629,7 @@
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
@@ -4399,6 +4411,24 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"rJ" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "rN" = (
 /obj/machinery/light{
 	dir = 4
@@ -4723,6 +4753,8 @@
 /area/site53/uez/commandpanicbunker)
 "vj" = (
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
@@ -5929,6 +5961,8 @@
 /area/site53/uez/commandpanicbunker)
 "Ex" = (
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/catwalk_plated/dark,
@@ -6763,6 +6797,19 @@
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"LV" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "LX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7209,6 +7256,8 @@
 "Pt" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
@@ -7289,6 +7338,8 @@
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
@@ -8098,6 +8149,8 @@
 /area/site53/uez/commandpanicbunker)
 "Wq" = (
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/carpet/blue,
@@ -34388,8 +34441,8 @@ hk
 hk
 hk
 hk
-hk
-hk
+xv
+xv
 xv
 fz
 xv
@@ -34646,8 +34699,8 @@ xv
 xv
 xv
 xv
-xv
-xv
+rJ
+fz
 fz
 xv
 hZ
@@ -34903,7 +34956,7 @@ Fn
 hN
 Fn
 Fn
-Fn
+LV
 Fn
 kU
 xv
@@ -41750,7 +41803,7 @@ fT
 bK
 bK
 gQ
-do
+fT
 cn
 bK
 bK

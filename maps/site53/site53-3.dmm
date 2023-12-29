@@ -437,7 +437,7 @@
 	},
 /obj/structure/cable/green{
 	d1 = 4;
-	d2 = 8;
+	d2 = 10;
 	icon_state = "4-10"
 	},
 /obj/machinery/door/blast/regular{
@@ -813,7 +813,7 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 6;
 	d2 = 8;
 	icon_state = "6-8"
 	},
@@ -1024,8 +1024,7 @@
 	RCon_tag = "Medical Substation"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
+	d2 = 10;
 	icon_state = "0-10"
 	},
 /turf/simulated/floor/plating,
@@ -1183,8 +1182,8 @@
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
+	d1 = 5;
+	d2 = 9;
 	icon_state = "5-9"
 	},
 /obj/machinery/light/small,
@@ -4318,8 +4317,8 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
+	d1 = 2;
+	d2 = 5;
 	icon_state = "2-5"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4642,6 +4641,8 @@
 	dir = 6
 	},
 /obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4752,6 +4753,8 @@
 	name = "Ethics Representitive"
 	},
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -5542,6 +5545,8 @@
 /area/site53/surface/surface)
 "rx" = (
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/window/brigdoor/northright,
@@ -7420,11 +7425,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "0-1"
-	},
+/obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
 "ET" = (
@@ -7790,11 +7791,7 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "0-1"
-	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "Ik" = (
@@ -9172,7 +9169,7 @@
 /area/site53/surface/surface)
 "Xb" = (
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
@@ -9376,6 +9373,8 @@
 /area/site53/surface/surface)
 "Zh" = (
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
