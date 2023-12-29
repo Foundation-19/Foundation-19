@@ -1,5 +1,6 @@
 /datum/job/juneng
 	title = "Junior Engineer"
+	department = "Engineering"
 	total_positions = 6
 	spawn_positions = 6
 	department_flag = ENG
@@ -35,6 +36,7 @@
 
 /datum/job/eng
 	title = "Engineer"
+	department = "Engineering"
 	total_positions = 4
 	spawn_positions = 4
 	selection_color = "#5b4d20"
@@ -83,6 +85,7 @@
 
 /datum/job/seneng
 	title = "Senior Engineer"
+	department = "Engineering"
 	total_positions = 2
 	spawn_positions = 2
 	department_flag = ENG
@@ -135,6 +138,7 @@
 
 /datum/job/conteng
 	title = "Containment Engineer"
+	department = "Engineering"
 	total_positions = 2
 	spawn_positions = 2
 	department_flag = ENG
@@ -190,6 +194,7 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
+	department = "Engineering"
 	supervisors = "the Site Director"
 	department_flag = ENG|COM
 	selection_color = "#5b4d20"

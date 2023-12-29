@@ -341,7 +341,7 @@
 
 /datum/job/ncoofficerez
 	title = "EZ Senior Agent"
-	department = "Entrance Zone Personnel"
+	department = "Entrance Personnel"
 	selection_color = "#601c1c"
 	department_flag = SEC|ECZ
 	total_positions = 2
