@@ -1,51 +1,42 @@
 /obj/structure/coatrack
 	name = "coat rack"
-	desc = "Rack that holds coats."
+	desc = "Its a rack that can hold coats, and hats!"
 	icon = 'icons/obj/coatrack.dmi'
-	icon_state = "coatrack0"
+	icon_state = "coatrack"
 	var/obj/item/clothing/suit/coat
-	var/list/allowed = list(/obj/item/clothing/suit/storage/toggle/labcoat, /obj/item/clothing/suit/storage/det_trench)
+	var/obj/item/clothing/head/hat
 
 /obj/structure/coatrack/attack_hand(mob/user as mob)
-	user.visible_message("[user] takes [coat] off \the [src].", "You take [coat] off the \the [src]")
-	if(!user.put_in_active_hand(coat))
-		coat.dropInto(user.loc)
-	coat = null
-	update_icon()
+	if(coat)
+		user.visible_message(SPAN_NOTICE("[user] takes [coat] off \the [src]."), SPAN_NOTICE("You take [coat] off the \the [src]"))
+		if(!user.put_in_active_hand(coat))
+			coat.dropInto(user.loc)
+		coat = null
+		update_icon()
+	else if(hat)
+		user.visible_message(SPAN_NOTICE("[user] takes [hat] off \the [src]."), SPAN_NOTICE("You take [hat] off the \the [src]"))
+		if(!user.put_in_active_hand(hat))
+			hat.dropInto(user.loc)
+		hat = null
+		update_icon()
 
 /obj/structure/coatrack/attackby(obj/item/W as obj, mob/user as mob)
-	var/can_hang = 0
-	for (var/T in allowed)
-		if(istype(W,T))
-			can_hang = 1
-	if (can_hang && !coat && user.unEquip(coat, src))
-		user.visible_message("[user] hangs [W] on \the [src].", "You hang [W] on the \the [src]")
+	if(istype(W, /obj/item/clothing/suit) && user.unEquip(W, src))
+		user.visible_message(SPAN_NOTICE("[user] puts \the [W] on \the [src]."), SPAN_NOTICE("You put \the [W] on \the [src]"))
 		coat = W
+		W.forceMove(src)
+		update_icon()
+	else if(istype(W, /obj/item/clothing/head) && user.unEquip(W, src))
+		user.visible_message(SPAN_NOTICE("[user] puts \the [W] on \the [src]."), SPAN_NOTICE("You put \the [W] on \the [src]"))
+		hat = W
+		W.forceMove(src)
 		update_icon()
 	else
-		to_chat(user, SPAN_NOTICE("You cannot hang [W] on [src]"))
 		return ..()
 
-/obj/structure/coatrack/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	var/can_hang = 0
-	for (var/T in allowed)
-		if(istype(mover,T))
-			can_hang = 1
-
-	if (can_hang && !coat)
-		src.visible_message("[mover] lands on \the [src].")
-		coat = mover
-		coat.forceMove(src)
-		update_icon()
-		return 0
-	else
-		return 1
-
 /obj/structure/coatrack/on_update_icon()
-	cut_overlays()
-	if (istype(coat, /obj/item/clothing/suit/storage/toggle/labcoat))
-		add_overlay(image(icon, icon_state = "coat_lab"))
-	if (istype(coat, /obj/item/clothing/suit/storage/toggle/labcoat/cmo))
-		add_overlay(image(icon, icon_state = "coat_cmo"))
-	if (istype(coat, /obj/item/clothing/suit/storage/det_trench))
-		add_overlay(image(icon, icon_state = "coat_det"))
+	overlays.Cut()
+	if(coat)
+		overlays += image(icon, icon_state = "coat_lab")
+	if(hat)
+		overlays += image(icon, icon_state = "hat")
