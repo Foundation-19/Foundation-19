@@ -13,3 +13,4 @@
 		laser = ARMOR_LASER_MINOR,
 		bio = ARMOR_BIO_STRONG
 		)
+	hidden_from_codex = TRUE

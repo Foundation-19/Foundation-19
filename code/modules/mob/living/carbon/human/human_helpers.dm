@@ -365,3 +365,6 @@
 
 /mob/living/carbon/human/proc/is_in_pocket(obj/item/I)
 	return I in list(l_store, r_store)
+
+/mob/living/carbon/human/get_codex_value()
+	return "[lowertext(species.name)] (species)"

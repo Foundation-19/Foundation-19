@@ -22,10 +22,6 @@
 /obj/item/storage/slide_projector/on_update_icon()
 	icon_state = "projector[!!projection]"
 
-/obj/item/storage/slide_projector/get_mechanics_info()
-	. = ..()
-	. += "Use in hand to open the interface."
-
 /obj/item/storage/slide_projector/remove_from_storage(obj/item/W, atom/new_location, NoUpdate = 0)
 	. = ..()
 	if(. && W == current_slide)
