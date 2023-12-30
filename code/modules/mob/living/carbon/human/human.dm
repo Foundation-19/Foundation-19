@@ -621,20 +621,20 @@
 /mob/living/proc/empty_stomach()
 	return
 
-/mob/living/carbon/human/empty_stomach()
-
+// Blood_count is about of units to put into the vomit, does nothing if bloody_vomit is disabled
+/mob/living/carbon/human/empty_stomach(bloody_vomit = FALSE, blood_count = 5)
 	Stun(3)
 
 	var/obj/item/organ/internal/stomach/stomach = internal_organs_by_name[BP_STOMACH]
 	var/nothing_to_puke = FALSE
-	if(should_have_organ(BP_STOMACH))
+	if(should_have_organ(BP_STOMACH) && !bloody_vomit)
 		if(!istype(stomach) || (stomach.ingested.total_volume <= 5 && stomach.contents.len == 0))
 			nothing_to_puke = TRUE
-	else if(!(locate(/mob) in contents))
+	else if(!(locate(/mob) in contents) && !bloody_vomit)
 		nothing_to_puke = TRUE
 
 	if(nothing_to_puke)
-		custom_emote(1,"dry heaves.")
+		custom_emote(1, "dry heaves.")
 		return
 
 	if(should_have_organ(BP_STOMACH))
@@ -649,32 +649,47 @@
 			if(species.gluttonous & GLUT_PROJECTILE_VOMIT)
 				M.throw_at(get_edge_target_turf(src,dir),7,7,src)
 
-	// vomit into a toilet
+	// Vomit into a toilet
 	for(var/obj/structure/hygiene/toilet/T in range(1, src))
 		if(T.open)
-			visible_message(SPAN_DANGER("\The [src] throws up into the toilet!"),SPAN_DANGER("You throw up into the toilet!"))
-			playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
+			visible_message(
+				SPAN_DANGER("\The [src] throws up[bloody_vomit ? " blood" : ""] into the toilet!"),
+				SPAN_DANGER("You throw up[bloody_vomit ? " blood" : ""] into the toilet!"),
+				)
+			playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 			stomach.ingested.remove_any(15)
+			if(bloody_vomit)
+				vessel.remove_any(blood_count)
 			return
 
-	// check if you can vomit into a disposal unit
-	// see above comment for how vomit reagents are handled
+	// Check if you can vomit into a disposal unit
+	// See above comment for how vomit reagents are handled
 	for(var/obj/machinery/disposal/D in orange(1, src))
-		visible_message(SPAN_DANGER("\The [src] throws up into the disposal unit!"),SPAN_DANGER("You throw up into the disposal unit!"))
-		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
+		visible_message(
+			SPAN_DANGER("\The [src] throws up[bloody_vomit ? " blood" : ""] into the disposal unit!"),
+			SPAN_DANGER("You throw up[bloody_vomit ? " blood" : ""] into the disposal unit!"),
+			)
+		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_holder(D.reagents, 15)
+		if(bloody_vomit)
+			vessel.trans_to_holder(D.reagents, blood_count)
 		return
 
 	var/turf/location = loc
 
-	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
-	playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
+	visible_message(
+		SPAN_DANGER("\The [src] throws up[bloody_vomit ? " blood" : ""]!"),
+		SPAN_DANGER("You throw up[bloody_vomit ? " blood" : ""]!"),
+		)
+	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
 		var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(location)
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_obj(splat, min(15, stomach.ingested.total_volume))
 		handle_additional_vomit_reagents(splat)
+		if(bloody_vomit)
+			vessel.trans_to_obj(splat, blood_count)
 		splat.update_icon()
 
 /mob/living/carbon/human/proc/vomit(timevomit = 1, level = 3, delay = 0, deliberate = FALSE)

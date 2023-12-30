@@ -110,3 +110,7 @@
 /obj/item/stock_parts/circuitboard/guestpass
 	name = T_BOARD("guest pass terminal")
 	build_path = /obj/machinery/computer/guestpass
+
+/obj/item/stock_parts/circuitboard/pandemic
+	name = T_BOARD("PanD.E.M.I.C 2200 console")
+	build_path = /obj/machinery/computer/pandemic
