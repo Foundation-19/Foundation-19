@@ -1,20 +1,27 @@
 Code:
-  code/**/*
+  - changed-files:
+    - any-glob-to-any-file: code/**/*
 
 Mapping:
-  maps/**/*
+  - changed-files:
+    - any-glob-to-any-file: maps/**/*
 
 Github:
-  .github/**/*
+  - changed-files:
+    - any-glob-to-any-file: .github/**/*
 
 Sprites:
-  icons/**/*
+  - changed-files:
+    - any-glob-to-any-file: icons/**/*
 
 Tools:
-  tools/**/*
+  - changed-files:
+    - any-glob-to-any-file: tools/**/*
 
 TGUI:
-  tgui/**/*
+  - changed-files:
+    - any-glob-to-any-file: tgui/**/*
 
 Sounds:
-  sounds/**/*
+  - changed-files:
+    - any-glob-to-any-file: sounds/**/*
