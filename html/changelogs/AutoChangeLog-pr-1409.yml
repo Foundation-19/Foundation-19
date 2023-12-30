@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: Cinematics are now perfectly centered and fade out at the end.
+  - bugfix: Cinematics no longer get stuck on the screen.
