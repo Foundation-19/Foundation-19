@@ -669,7 +669,7 @@
 			SPAN_DANGER("\The [src] throws up[bloody_vomit ? " blood" : ""] into the disposal unit!"),
 			SPAN_DANGER("You throw up[bloody_vomit ? " blood" : ""] into the disposal unit!"),
 			)
-		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_holder(D.reagents, 15)
 		if(bloody_vomit)
@@ -682,7 +682,7 @@
 		SPAN_DANGER("\The [src] throws up[bloody_vomit ? " blood" : ""]!"),
 		SPAN_DANGER("You throw up[bloody_vomit ? " blood" : ""]!"),
 		)
-	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+	playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
 		var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(location)
 		if(stomach.ingested.total_volume)
