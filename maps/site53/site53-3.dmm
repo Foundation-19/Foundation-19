@@ -9207,7 +9207,7 @@
 	pixel_y = -20
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/upper_surface/innerentrancehallway)
 "XH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
