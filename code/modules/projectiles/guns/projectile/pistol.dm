@@ -90,7 +90,7 @@
 
 /obj/item/gun/projectile/pistol/throwback
 	name = "pistol"
-	desc = "A product of one of thousands of illegal workshops from around Eastern Europe. These guns are usually found in hands of terrorists and pirates."
+	desc = "A product of one of thousands of illegal workshops from around Eastern Europe. These guns are usually found in hands of terrorists and criminals."
 	icon = 'icons/obj/guns/pistol_throwback.dmi'
 	icon_state = "pistol1"
 	magazine_type = /obj/item/ammo_magazine/pistol/throwback
