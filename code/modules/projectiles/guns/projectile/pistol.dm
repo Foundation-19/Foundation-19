@@ -56,7 +56,7 @@
 
 /obj/item/gun/projectile/pistol/sec
 	name = "pistol"
-	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a Lockheed Martin subsidiary. Found pretty much everywhere humans are."
+	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a Lockheed Martin subsidiary. Pretty much every military organization uses these to some degree."
 	icon = 'icons/obj/guns/pistol.dmi'
 	icon_state = "secguncomp"
 	safety_icon = "safety"
