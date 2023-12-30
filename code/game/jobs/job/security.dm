@@ -577,7 +577,6 @@
 	department_flag = SEC|ECZ|BUR
 	total_positions = 1
 	spawn_positions = 1
-	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the EZ Supervisor"
 	economic_power = 5
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_BUR = 60, "IT Technician" = 120)
@@ -617,3 +616,7 @@
 	    SKILL_FORENSICS   = SKILL_EXPERIENCED
 	)
 	skill_points = 17
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Track and prevent potential espionage. Control access to classified information. Protect SCP databases from threats, both mundane and anomalous."

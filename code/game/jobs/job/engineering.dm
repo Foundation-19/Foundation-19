@@ -275,7 +275,7 @@
 	    SKILL_ATMOS        = SKILL_MASTER,
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
-  
+
 	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium - Hard"
 	duties = "Manage the Engineering department. Delegate construction and repair work. Facilitate larger projects."
@@ -288,7 +288,6 @@
 	department_flag = ENG
 	total_positions = 2
 	spawn_positions = 2
-	//duties = "<big><b>As the IT Technician, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</b></big>"
 	supervisors = "the Chief Engineer"
 	economic_power = 4
 	minimal_player_age = 3
@@ -320,4 +319,6 @@
 		SKILL_COMPUTER     = SKILL_MASTER
 	)
 
-  // TODO: codex info here
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Maintain and expand the advanced technology behind the site's server infrastructure. Resolve technical problems. Prepare and protect against cybersecurity attacks."
