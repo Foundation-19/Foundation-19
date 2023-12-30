@@ -17,14 +17,10 @@
 	/// How many players currently have this job
 	var/current_positions = 0
 
-	/// Supervisors, who this person answers to directly
-	var/supervisors = null
 	/// Selection screen color
 	var/selection_color = "#515151"
 	/// List of alternate titles, if any. May be an associative list - key = title, value = outfit datum.
 	var/list/alt_titles
-	/// If this is set to TRUE, text is printed to the player when jobs are assigned, telling him that he should let admins know when he has to disconnect.
-	var/req_admin_notify
 	/// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 	/// Does this position have a department tag? // TODO: move to department_flag
