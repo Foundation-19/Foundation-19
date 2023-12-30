@@ -8,6 +8,8 @@
 	var/list/can_holster = null
 	var/sound_in = 'sounds/effects/holster/holsterin.ogg'
 	var/sound_out = 'sounds/effects/holster/holsterout.ogg'
+  
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/holster/Initialize()
 	. = ..()

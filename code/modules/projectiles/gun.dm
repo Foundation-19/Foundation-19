@@ -106,7 +106,7 @@
 	var/mob/autofiring_by
 	var/autofiring_timer
 
-	var/general_codex_key = "guns"	// for codex
+	var/codex_special_info = null	// special info shown in the codex entry
 
 /obj/item/gun/Initialize()
 	. = ..()

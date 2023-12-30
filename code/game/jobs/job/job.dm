@@ -1,24 +1,33 @@
 /datum/job
 
-	//The name of the job
+	/// The name of the job
 	var/title = "NOPE"
 	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
-	var/list/minimal_access = list()      // Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
-	var/list/access = list()              // Useful for servers which either have fewer players, so each person needs to fill more than one role, or servers which like to give more access, so players can't hide forever in their super secure departments (I'm looking at you, chemistry!)
-	var/list/software_on_spawn = list()   // Defines the software files that spawn on tablets and labtops
+	/// The access this job starts with when the server has a lower population, or if dictated by the config.
+	var/list/minimal_access = list()
+	/// The access this job starts with when the server has a higher population.
+	var/list/access = list()
+	/// Defines starting software that's installed on spawned tablets and laptops.
+	var/list/software_on_spawn = list()
+	/// Bitflag for every department this job is involved with.
 	var/department_flag = 0
-	var/total_positions = 0               // How many players can be this job
-	var/spawn_positions = 0               // How many players can spawn in as this job
-	var/current_positions = 0             // How many players have this job
+	/// How many people, in total, can have this job
+	var/total_positions = 0
+	/// How many people can spawn in with this job
+	var/spawn_positions = 0
+	/// How many people currently have this job
+	var/current_positions = 0
 
-	var/supervisors = null                // Supervisors, who this person answers to directly
-	var/selection_color = "#515151"       // Selection screen color
-	var/list/alt_titles                   // List of alternate titles, if any and any potential alt. outfits as assoc values.
-	var/req_admin_notify                  // If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know when he has to disconnect.
-	var/minimal_player_age = 0            // If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
-	var/department = null                 // Does this position have a department tag?
-	var/head_position = 0                 // Is this position Command?
-	var/minimum_character_age			  // List of species = age, if species is not here, it's auto-pass
+	/// Color used to represent this job (e.g. for the selection screen)
+	var/selection_color = "#515151"
+	/// List of alternative titles, if any. May be used as an associative list - the key is the title and the value is an outfit.
+	var/list/alt_titles
+	var/minimal_player_age = 0				// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
+	/// The main department this job is in.
+	var/department = null
+	/// If true, this job is counted as a head of its department
+	var/head_position = FALSE
+	var/minimum_character_age				// List of species = age, if species is not here, it's auto-pass
 	var/ideal_character_age = 30
 	var/create_record = 1                 // Do we announce/make records for people who spawn on this job?
 	var/is_semi_antagonist = FALSE        // Whether or not this job is given semi-antagonist status.
@@ -57,8 +66,24 @@
 
 	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
 
-	///The required playtime in other jobs or categories to play the role
+	/// The required playtime in other jobs or categories to play the role
 	var/list/requirements
+
+	// Information that's only used for specific player-facing information panels (such as the codex)
+	/// If true, the player gets a notification telling him to notify admins before disconnecting. // TODO: make this automatic as well
+	var/req_admin_notify = FALSE
+	/// The higher-ups that the player works directly under.
+	var/supervisors = null
+	/// How much effort the player needs to put in to have a fun round.
+	var/roleplay_difficulty = "Unset - talk to someone about the codex"
+	/// How mechanically complex a job is to play.
+	var/mechanical_difficulty = "Unset - talk to someone about the codex"
+	/// Other guides on the codex that may be relevant. MUST BE LINKS!
+	var/list/codex_guides = list("Unset - talk to someone about the codex")
+	/// Quick overview of what you do as this job.
+	var/duties = "Unset - talk to someone about the codex"
+	/// Text used for the main body of the codex.
+	var/special_codex_text = "Special text unset - talk to someone about the codex"
 
 /datum/job/New()
 
@@ -355,19 +380,6 @@
 			continue
 		res |= initial(R.name)
 	return english_list(res)
-
-/datum/job/proc/get_description_blurb()
-	return ""
-
-/datum/job/proc/get_job_icon()
-	if(!SSjobs.job_icons[title])
-		var/mob/living/carbon/human/dummy/mannequin/mannequin = get_mannequin("#job_icon")
-		dress_mannequin(mannequin)
-		mannequin.dir = SOUTH
-		var/icon/preview_icon = getFlatIcon(mannequin)
-		preview_icon.Scale(preview_icon.Width() * 2, preview_icon.Height() * 2) // Scaling here to prevent blurring in the browser.
-		SSjobs.job_icons[title] = preview_icon
-	return SSjobs.job_icons[title]
 
 /datum/job/proc/get_unavailable_reasons(client/caller)
 	var/list/reasons = list()
