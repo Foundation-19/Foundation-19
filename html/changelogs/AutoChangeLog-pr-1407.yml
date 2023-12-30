@@ -1,9 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: Added more mineable rocks between the outdoor bar and EZ offices.
-  - rscadd: Improved lighting in the walkway between EZ and the main site body.
-  - rscadd: Added more windows to the control room + more mineable rocks and a more
-      open upper outdoors area.
-  - rscdel: Removed the old, unused control room.
-  - bugfix: Faulty roundstart cabling and APCs fixed.

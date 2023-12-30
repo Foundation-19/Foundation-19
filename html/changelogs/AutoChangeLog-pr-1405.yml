@@ -1,5 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Engineering jobs are no longer in 'No Department'
-  - bugfix: All EZ Security jobs have the same department
