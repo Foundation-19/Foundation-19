@@ -5,26 +5,26 @@
 
 	var/name = "Unset - contact a coder!"
 
-	/// A list of lists. Each list represents a fax we received. (received copy, origin department, time received)
+	/// A list of lists. Each list represents a fax we received. (time received, received copy, origin department)
 	var/list/received_faxes = list()
-	/// A list of lists. Each list represents a fax we sent. (sending copy, destination department, time sent)
+	/// A list of lists. Each list represents a fax we sent. (time sent, sending copy, destination department)
 	var/list/sent_faxes = list()
 
-	/// A list of lists. Each list represents a message we received. (received message, sending mob, time received)
+	/// A list of lists. Each list represents a message we received. (time received, received message, sending mob)
 	var/list/received_messages = list()
-	/// A list of lists. Each list represents a message we sent. (sent message, receiving mob, sending admin, time received)
+	/// A list of lists. Each list represents a message we sent. (time sent, sent message, receiving mob)
 	var/list/sent_messages = list()
 
 // TODO: use alerts to notify admins
 
 /datum/offsite/proc/recieve_fax(obj/item/ref, origin_department = "Unknown")
-	received_faxes += list(ref, origin_department, world.time)
+	received_faxes += list(world.time, ref, origin_department)
 
 /datum/offsite/proc/send_fax(obj/item/ref, recieving_department = "Unknown")
-	sent_faxes += list(ref, recieving_department, world.time)
+	sent_faxes += list(world.time, ref, recieving_department)
 
 /datum/offsite/proc/receive_message(message, mob/sender)
-	received_messages += list(message, sender, world.time)
+	received_messages += list(world.time, message, sender)
 
 	var/adjusted_message = SPAN_NOTICE("<b><font color=orange>MESSAGE TO [uppertext(name)] FROM [key_name(sender, 1)] [ADMIN_FULLMONTY(sender)] [ADMIN_CENTCOM_REPLY(sender)]</b></font>: [message]")
 
@@ -35,7 +35,7 @@
 
 /datum/offsite/proc/send_message(message, mob/living/recipient, client/admin)
 	if(recipient.can_centcom_reply())
-		sent_messages += list(message, recipient, admin, world.time)
+		sent_messages += list(world.time, message, recipient)
 
 		log_admin("[admin] sent a message to [key_name(recipient)]: \"[message]\".")
 

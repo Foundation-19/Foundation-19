@@ -38,8 +38,25 @@ SUBSYSTEM_DEF(offsite)
 
 		for(var/thing in OS.received_faxes)
 			var/list/rec_fax = thing
+			rec_fax += "Received fax from"
+			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
 
-		data["offsites"] += list(list(OS.name, OS.received_faxes, OS.sent_faxes, OS.received_messages, OS.sent_messages))
+		for(var/thing in OS.sent_faxes)
+			var/list/sent_fax = thing
+			sent_fax += "Sent fax to"
+			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
+
+		for(var/thing in OS.received_messages)
+			var/list/received_message = thing
+			received_message += "Received message from"
+			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
+
+		for(var/thing in OS.sent_messages)
+			var/list/sent_message = thing
+			sent_message += "Sent message to"
+			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
+
+		data["offsites"] += list(list(OS.name, OS.type, timesorted_data))
 
 	return data
 
@@ -48,8 +65,11 @@ SUBSYSTEM_DEF(offsite)
 		return
 
 	switch(action)
-		if("pisscum")
-			NOOP
+		if("send_fax")
+			var/datum/offsite/cur_os = offsites[params["id"]]
+		if("send_msg")
+			var/datum/offsite/cur_os = offsites[params["id"]]
+
 
 /datum/controller/subsystem/offsite/tgui_state(mob/user)
 	return GLOB.admin_tgui_state
