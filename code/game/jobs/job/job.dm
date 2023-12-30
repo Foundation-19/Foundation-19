@@ -6,7 +6,7 @@
 	var/list/minimal_access = list()
 	/// List of which accesses this job has when config.jobs_have_minimal_access is false.
 	var/list/access = list()
-	// Default software which spawns on spawning tablets and laptops.
+	/// Defines starting software that's installed on spawned tablets and laptops.
 	var/list/software_on_spawn = list()
 	/// Bitflag representing which departments this job is part of.
 	var/department_flag = 0
@@ -14,14 +14,14 @@
 	var/total_positions = 0
 	/// How many players can spawn in as this job
 	var/spawn_positions = 0
-	/// How many players have this job
+	/// How many players currently have this job
 	var/current_positions = 0
 
 	/// Supervisors, who this person answers to directly
 	var/supervisors = null
 	/// Selection screen color
 	var/selection_color = "#515151"
-	/// List of alternate titles, if any. Associative values are outfits.
+	/// List of alternate titles, if any. May be an associative list - key = title, value = outfit datum.
 	var/list/alt_titles
 	/// If this is set to TRUE, text is printed to the player when jobs are assigned, telling him that he should let admins know when he has to disconnect.
 	var/req_admin_notify

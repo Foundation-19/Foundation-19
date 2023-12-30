@@ -303,7 +303,7 @@
 
 		var/rank = href_list["job_info"]
 		var/datum/job/job = SSjobs.get_by_title(rank)
-    
+
 		var/datum/codex_entry/c_e = SScodex.get_codex_entry("[job.title] (job)")
 
 		if(c_e && istype(c_e))
