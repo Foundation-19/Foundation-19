@@ -126,7 +126,7 @@
 		to_chat(user, SPAN_WARNING("You can't set staff warning on admins!"))
 		return
 
-	if(target.client.staffwarn)
+	if(!target.client.staffwarn)
 		if(tgui_alert(user.mob, "Are you sure you want to set staff warn?", "Confirmation", list("Yes","No")) == "Yes")
 			var/reason = tgui_input_text(user, "Staff warn message", "Staff Warn", "Problem Player")
 			if (!reason)

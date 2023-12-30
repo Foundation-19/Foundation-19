@@ -66,6 +66,8 @@
 	desc = "It looks like a pair of gloves, but it seems to have a small dial inside."
 	origin_tech = list(TECH_ESOTERIC = 3)
 	item_flags = ITEM_FLAG_INVALID_FOR_CHAMELEON
+	hidden_from_codex = FALSE
+	codex_special_info = "These gloves can camoflauge themselves as other kinds of gloves."
 
 /obj/item/clothing/gloves/chameleon/Initialize()
 	. = ..()
@@ -78,6 +80,8 @@
 	desc = "It looks like a plain gask mask, but on closer inspection, it seems to have a small dial inside."
 	origin_tech = list(TECH_ESOTERIC = 3)
 	item_flags = ITEM_FLAG_INVALID_FOR_CHAMELEON
+	hidden_from_codex = FALSE
+	codex_special_info = "This mask can camoflauge itself as other kinds of masks."
 
 /obj/item/clothing/mask/chameleon/Initialize()
 	. = ..()
@@ -90,6 +94,7 @@
 	desc = "It looks like a plain set of mesons, but on closer inspection, it seems to have a small dial inside."
 	origin_tech = list(TECH_ESOTERIC = 3)
 	item_flags = ITEM_FLAG_INVALID_FOR_CHAMELEON
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/chameleon/Initialize()
 	. = ..()
@@ -134,6 +139,10 @@
 	charge_meter = 0
 	charge_cost = 20 //uses next to no power, since it's just holograms
 	max_shots = 50
+
+	codex_special_info = "This gun is actually a memetic projector that can alter its appearance to mimick other weapons. To change the appearance, use \
+	the appropriate verb in the object tab. Any beams or projectiles fired from this gun are mental fabrications and useless for actual combat. \
+	Projecting these memes over distance uses a little bit of charge."
 
 /obj/item/gun/energy/chameleon/Initialize()
 	. = ..()

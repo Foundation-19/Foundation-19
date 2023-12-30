@@ -1,0 +1,16 @@
+2023-12-23:
+  cheesePizza2:
+  - rscadd: Using a crowbar on an APC with a broken cover now lets you pry off the
+      broken cover.
+  - balance: APCs have 2 dud wires in addition to the 4 functioning wires.
+  - code_imp: APC code improvements.
+2023-12-26:
+  tichys:
+  - rscadd: Added new mechanics or gameplay changes
+2023-12-29:
+  K4rlox:
+  - code_imp: dclass medical defines
+  - tweak: adds dclass medical to lcz guards
+  - rscadd: dclass medical assignment cards
+  checkraisefold:
+  - admin: Fixed staffwarn from player panel

@@ -18,7 +18,7 @@ jobs:
     - name: Build and Publish Image to Registry
       env:
         BUILD_ARGS: -Icustom-items/inc.dm
-      uses: elgohr/Publish-Docker-Github-Action@6de4ae713b5ddf1534809fe99cb953baee493c7c
+      uses: elgohr/Publish-Docker-Github-Action@d0321869e187cfd3124343ea2b39b1db31f89685
       with:
         name: ${{ secrets.IMAGE_NAME }}
         username: ${{ secrets.REG_USER }}
