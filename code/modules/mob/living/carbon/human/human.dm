@@ -656,7 +656,7 @@
 				SPAN_DANGER("\The [src] throws up[bloody_vomit ? " blood" : ""] into the toilet!"),
 				SPAN_DANGER("You throw up[bloody_vomit ? " blood" : ""] into the toilet!"),
 				)
-			playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+			playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 			stomach.ingested.remove_any(15)
 			if(bloody_vomit)
 				vessel.remove_any(blood_count)

@@ -150,7 +150,7 @@
 		B.name = "[D.name] vaccine bottle"
 		B.reagents.add_reagent(/datum/reagent/vaccine, 15, list(id))
 		vaccine_cooldown = world.time + 30 SECONDS
-		playsound(src, 'sound/machines/ping.ogg', 30, TRUE)
+		playsound(src, 'sounds/machines/ping.ogg', 30, TRUE)
 		return TOPIC_HANDLED
 	if(href_list["remove_beacon"])
 		if(Adjacent(usr))

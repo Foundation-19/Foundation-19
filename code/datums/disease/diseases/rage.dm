@@ -53,7 +53,7 @@
 						return
 					affected_mob.do_attack_animation(target)
 					affected_mob.visible_message(SPAN_DANGER("[affected_mob] violently bites [target]!"))
-					playsound(affected_mob, 'sound/weapons/bite.ogg', 50, TRUE)
+					playsound(affected_mob, 'sounds/weapons/bite.ogg', 50, TRUE)
 					target.adjustBruteLoss(rand(8, 16))
 					if(prob(50))
 						target.ForceContractDisease(src)
