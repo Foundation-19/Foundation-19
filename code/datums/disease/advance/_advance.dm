@@ -16,7 +16,7 @@
 
 	// The order goes from easy to cure to hard to cure. Keep in mind that sentient diseases pick two cures from tier 6 and up, ensure they won't react away in bodies.
 	var/static/list/advance_cures = list(
-		list(/datum/reagent/water, /datum/reagent/copper, /datum/reagent/silver, /datum/reagent/iron),
+		list(/datum/reagent/water, /datum/reagent/copper /datum/reagent/iron),
 		list(/datum/reagent/water/boiling, /datum/reagent/carbon, /datum/reagent/lithium, /datum/reagent/silicon),
 		list(/datum/reagent/acetone, /datum/reagent/ethanol, /datum/reagent/mercury, /datum/reagent/radium),
 		list(/datum/reagent/ammonia, /datum/chemical_reaction/methyl_bromide, /datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/noexcutite),
