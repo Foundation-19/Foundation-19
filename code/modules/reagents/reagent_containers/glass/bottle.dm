@@ -357,7 +357,7 @@
 	update_icon()
 
 /obj/item/reagent_containers/glass/bottle/synaptizine_virus_food
-	name = "synaptizine virus food bottle"
+	name = "virus rations bottle"
 	icon_state = "bottle-1"
 
 /obj/item/reagent_containers/glass/bottle/synaptizine_virus_food/New()
