@@ -286,8 +286,8 @@
 	department = "Civilian"
 	selection_color = "#5b4d20"
 	department_flag = ENG
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Chief Engineer"
 	economic_power = 4
 	minimal_player_age = 3
