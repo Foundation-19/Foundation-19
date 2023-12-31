@@ -3982,12 +3982,12 @@
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
 /obj/effect/floor_decal/corner/purple/mono,
-/obj/item/storage/pill_bottle/spaceacillin{
+/obj/item/storage/pill_bottle/penicillin{
 	pixel_x = -4;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/pill/spaceacillin,
-/obj/item/reagent_containers/pill/spaceacillin{
+/obj/item/reagent_containers/pill/penicillin,
+/obj/item/reagent_containers/pill/penicillin{
 	pixel_x = 7;
 	pixel_y = 6
 	},

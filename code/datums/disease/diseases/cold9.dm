@@ -4,8 +4,8 @@
 	max_stages = 3
 	spread_text = "On contact"
 	spread_flags = DISEASE_SPREAD_BLOOD | DISEASE_SPREAD_CONTACT_SKIN | DISEASE_SPREAD_CONTACT_FLUIDS
-	cure_text = "Common Cold Anti-bodies & Spaceacillin"
-	cures = list(/datum/reagent/medicine/spaceacillin)
+	cure_text = "Common Cold Anti-bodies & Penicillin"
+	cures = list(/datum/reagent/medicine/penicillin)
 	agent = "ICE9-rhinovirus"
 	viable_mobtypes = list(/mob/living/carbon/human)
 	severity = DISEASE_SEVERITY_MINOR

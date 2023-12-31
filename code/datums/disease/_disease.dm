@@ -76,7 +76,7 @@
 			Cure()
 			return FALSE
 
-	// Spaceacillin may slow down the progression of the disease
+	// Penicillin may slow down the progression of the disease
 	else if(AntiViralEffect())
 		// Can decrease the stage slightly
 		if(stage > 3 && prob(15))
@@ -112,7 +112,7 @@
 	if(!(spread_flags & DISEASE_SPREAD_AIRBORNE) && !force_spread)
 		return
 
-	if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/spaceacillin))
+	if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/penicillin))
 		return
 
 	var/spread_range = 2
