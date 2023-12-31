@@ -26,6 +26,7 @@
 /datum/offsite/proc/receive_message(message, mob/sender)
 	received_messages += list(world.time, message, sender)
 
+	// TODO: replace ADMIN_CENTCOM_REPLY with a send_message ref
 	var/adjusted_message = SPAN_NOTICE("<b><font color=orange>MESSAGE TO [uppertext(name)] FROM [key_name(sender, 1)] [ADMIN_FULLMONTY(sender)] [ADMIN_CENTCOM_REPLY(sender)]</b></font>: [message]")
 
 	for(var/client/C in GLOB.admins)

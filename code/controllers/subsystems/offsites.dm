@@ -2,7 +2,7 @@
 * This subsystem populates and manages offsite singletons.
 */
 
-SUBSYSTEM_DEF(offsite)
+SUBSYSTEM_DEF(offsites)
 	name = "Offsites"
 	flags = SS_NO_FIRE
 	/// Associative list. Key is the offsite type, value is the offsite ref
@@ -73,3 +73,21 @@ SUBSYSTEM_DEF(offsite)
 
 /datum/controller/subsystem/offsite/tgui_state(mob/user)
 	return GLOB.admin_tgui_state
+
+// TODO: track interception separately for each offsite + methods that bypass interception?
+/proc/message_offsite(msg, mob/sender, offsite_type)
+	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
+
+	if(intercepters.len)
+		for(var/thing in intercepters)
+			var/mob/living/silicon/ai/ai = thing
+
+			var/action = tgui_alert(ai, "Outgoing message from [sender]:\n", "Message Intercepted", list("Modify", "Block", "Allow"), timeout = 30 SECONDS)
+
+			switch(action)
+				if("Modify")
+					msg = tgui_input_text(ai, "Set new message (from [sender]):", "Modify Message", default = msg)
+				if("Block")
+					return
+
+	var/datum/offsite/os = SSoffsites.offsites[offsite_type]

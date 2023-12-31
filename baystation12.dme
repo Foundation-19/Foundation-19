@@ -2597,6 +2597,7 @@
 #include "code\modules\nano\modules\law_manager.dm"
 #include "code\modules\nano\modules\nano_module.dm"
 #include "code\modules\offsites\_offsite.dm"
+#include "code\modules\offsites\offsites\chaos_insurgency.dm"
 #include "code\modules\offsites\offsites\site-01.dm"
 #include "code\modules\organs\_organ_setup.dm"
 #include "code\modules\organs\blood.dm"
