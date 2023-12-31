@@ -51,7 +51,7 @@
 
 /datum/reagent/medicine/spaceacillin
 	name = "Spaceacillin"
-	description = "An all-purpose antiviral agent."
+	description = "An all-purpose antiviral agent. Prevents most diseases from progressing further."
 	color = "#c1c1c1"
 	metabolism = REM * 0.1
 	overdose = REAGENTS_OVERDOSE * 0.5
@@ -59,18 +59,18 @@
 
 /datum/reagent/medicine/spaceacillin/affect_blood(mob/living/carbon/M, alien, removed)
 	M.immunity = max(M.immunity - 0.1, 0)
-	M.add_chemical_effect(CE_ANTIVIRAL, VIRUS_COMMON)
+	M.add_chemical_effect(CE_ANTIVIRAL, ANTIVIRAL_WEAK)
 	M.add_chemical_effect(CE_ANTIBIOTIC, 1)
 	if (volume > 10)
 		M.immunity = max(M.immunity - 0.3, 0)
-		M.add_chemical_effect(CE_ANTIVIRAL, VIRUS_ENGINEERED)
+		M.add_chemical_effect(CE_ANTIVIRAL, ANTIVIRAL_MEDIUM)
 	if (M.chem_doses[type] > 15)
 		M.immunity = max(M.immunity - 0.25, 0)
 
 /datum/reagent/medicine/spaceacillin/overdose(mob/living/carbon/M, alien)
 	..()
 	M.immunity = max(M.immunity - 0.25, 0)
-	M.add_chemical_effect(CE_ANTIVIRAL, VIRUS_EXOTIC)
+	M.add_chemical_effect(CE_ANTIVIRAL, ANTIVIRAL_STRONG)
 	if (prob(2))
 		M.immunity_norm = max(M.immunity_norm - 1, 0)
 

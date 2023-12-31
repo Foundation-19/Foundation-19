@@ -76,6 +76,12 @@
 			Cure()
 			return FALSE
 
+	// Spaceacillin may slow down the progression of the disease
+	else if(AntiViralEffect())
+		// Can decrease the stage slightly
+		if(stage > 3 && prob(15))
+			UpdateStage(stage - 1)
+
 	else if(prob(stage_prob))
 		UpdateStage(min(stage + 1, max_stages))
 
@@ -94,6 +100,9 @@
 			.--
 	if(!. || (needs_all_cures && . < cures.len))
 		return FALSE
+
+/datum/disease/proc/AntiViralEffect()
+	return prob(affected_mob.has_chem_effect(CE_ANTIVIRAL, round(50 / cure_chance)))
 
 //Airborne spreading
 /datum/disease/proc/Spread(force_spread = 0)

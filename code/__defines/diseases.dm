@@ -35,3 +35,10 @@
 #define DISEASE_SEVERITY_DANGEROUS 	"Dangerous"
 /// Diseases that can quickly kill an unprepared victim (fungal tb, gbs)
 #define DISEASE_SEVERITY_BIOHAZARD	"BIOHAZARD"
+
+// Defines for antiviral chem effects
+#define ANTIVIRAL_WEAK			5
+#define ANTIVIRAL_MEDIUM		10
+#define ANTIVIRAL_STRONG		15
+// Guaranteed to stop diseases from progressing
+#define ANTIVIRAL_OVERPOWERING	100
