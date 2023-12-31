@@ -107,7 +107,7 @@
 	return A
 
 /datum/disease/advance/AntiViralEffect()
-	return prob(affected_mob.has_chem_effect(CE_ANTIVIRAL, properties["resistance"]))
+	return affected_mob.has_chem_effect(CE_ANTIVIRAL, properties["resistance"])
 
 // Mix the symptoms of two diseases (the src and the argument)
 /datum/disease/advance/proc/Mix(datum/disease/advance/D)
