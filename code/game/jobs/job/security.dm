@@ -572,7 +572,7 @@
 
 /datum/job/raisa
 	title = "RAISA Agent"
-	department = "Entrance Zone Personnel"
+	department = "Entrance Personnel"
 	selection_color = "#601c1c"
 	department_flag = SEC|ECZ|BUR
 	total_positions = 1
