@@ -10,15 +10,6 @@
 	symptom_delay_min = 1
 	symptom_delay_max = 1
 	var/passive_message = "" //random message to infected but not actively healing people
-	threshold_descs = list(
-		"Stage Speed 6" = "Doubles healing speed.",
-	)
-
-/datum/symptom/heal/Start(datum/disease/advance/A)
-	if(!..())
-		return
-	if(A.properties["stage_rate"] >= 6) //stronger healing
-		power = 2
 
 /datum/symptom/heal/Activate(datum/disease/advance/A)
 	if(!..())
@@ -146,3 +137,139 @@
 	if(M.getBruteLoss() || M.getFireLoss())
 		return TRUE
 	return FALSE
+
+
+/datum/symptom/heal/organ
+	name = "Autophagic Tissuegrafting"
+	desc = "The virus uses soft tissue of the host's body to regenerate internal organs."
+	stealth = -2
+	resistance = 0
+	stage_speed = 0
+	transmittable = -2
+	level = 7
+	/// Organ damage healed translates to brute damage dealt, multiplied by this coefficient
+	var/damage_coeff = 3
+	threshold_descs = list(
+		"Resistance 7" = "Decreases amount of brute damage done.",
+		"Resistance 14" = "Virus ceases to deal any brute damage.",
+		"Stage Speed 8" = "Increases healing speed.",
+	)
+
+/datum/symptom/heal/organ/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.properties["resistance"] >= 7)
+		damage_coeff = 1.5
+	if(A.properties["resistance"] >= 14)
+		damage_coeff = 0
+	if(A.properties["stage_rate"] >= 8)
+		power = 2
+
+/datum/symptom/heal/organ/CanHeal(datum/disease/advance/A)
+	var/mob/living/carbon/human/H = A.affected_mob
+	for(var/obj/item/organ/internal/I in H.internal_organs)
+		if(BP_IS_ROBOTIC(I))
+			continue
+		if(I.organ_tag == BP_BRAIN)
+			continue
+		if(I.is_broken())
+			continue
+		if(!I.damage)
+			continue
+		return TRUE
+	return FALSE
+
+/datum/symptom/heal/organ/Heal(mob/living/carbon/human/H, datum/disease/advance/A)
+	if(prob(5))
+		to_chat(H, SPAN_WARNING("You feel your innards moving around!"))
+
+	for(var/obj/item/organ/internal/I in H.internal_organs)
+		if(BP_IS_ROBOTIC(I))
+			continue
+		if(I.organ_tag == BP_BRAIN)
+			continue
+		I.heal_damage(power)
+		var/obj/item/organ/external/BP = H.get_organ(I.parent_organ)
+		if(istype(BP))
+			BP.take_external_damage(power * damage_coeff)
+
+	return TRUE
+
+/datum/symptom/heal/organ/PassiveMessageCondition(mob/living/M)
+	return FALSE
+
+
+/datum/symptom/heal/hemostasis
+	name = "Hemostasis"
+	desc = "The virus restores damaged blood vessels, stopping the external bleeding."
+	stealth = 1
+	resistance = -3
+	stage_speed = -2
+	transmittable = -3
+	level = 4
+	symptom_delay_min = 30
+	symptom_delay_max = 40
+	base_message_chance = 20
+	threshold_descs = list(
+		"Resistance 8" = "Restores missing blood volume.",
+		"Stage Speed 6" = "Increases healing speed.",
+		"Stage Speed 12" = "Prevents internal bleeding.",
+	)
+	var/blood_restore = FALSE
+	var/heal_internal = FALSE
+
+/datum/symptom/heal/hemostasis/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.properties["resistance"] >= 8)
+		blood_restore = TRUE
+	if(A.properties["stage_rate"] >= 6)
+		symptom_delay_min = 10
+		symptom_delay_max = 20
+	if(A.properties["stage_rate"] >= 12)
+		heal_internal = TRUE
+
+/datum/symptom/heal/hemostasis/CanHeal(datum/disease/advance/A)
+	. = FALSE
+	var/mob/living/carbon/human/H = A.affected_mob
+	if(LAZYLEN(ListWounds(H)))
+		. = TRUE
+	if(blood_restore && H.vessel.get_reagent_amount(/datum/reagent/blood) < H.species.blood_volume)
+		. = TRUE
+	if(heal_internal && LAZYLEN(ListInternalBleeds(H)))
+		. = TRUE
+
+/datum/symptom/heal/hemostasis/Heal(mob/living/carbon/human/H, datum/disease/advance/A)
+	if(prob(5))
+		to_chat(H, SPAN_NOTICE("The blood stops flowing out from your wounds..."))
+
+	for(var/datum/wound/W in ListWounds(H))
+		W.bleed_timer = max(0, W.bleed_timer - rand(10, 20))
+		W.parent_organ.update_damages()
+
+	if(blood_restore)
+		H.regenerate_blood(round(H.species.blood_volume * 0.05))
+
+	if(heal_internal)
+		for(var/obj/item/organ/external/E in ListInternalBleeds(H))
+			E.status &= ~ORGAN_ARTERY_CUT
+
+	return TRUE
+
+/datum/symptom/heal/hemostasis/PassiveMessageCondition(mob/living/M)
+	return FALSE
+
+/datum/symptom/heal/hemostasis/proc/ListWounds(mob/living/carbon/human/H)
+	. = list()
+	for(var/obj/item/organ/external/E in H.organs)
+		for(var/datum/wound/W in E.wounds)
+			if(!W.bleeding())
+				continue
+			. += W
+
+/datum/symptom/heal/hemostasis/proc/ListInternalBleeds(mob/living/carbon/human/H)
+	. = list()
+	for(var/obj/item/organ/external/E in H.organs)
+		if(!(E.status & ORGAN_ARTERY_CUT))
+			continue
+		. += E
