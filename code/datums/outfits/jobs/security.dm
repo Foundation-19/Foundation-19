@@ -229,6 +229,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list()
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	belt = /obj/item/gun/energy/stunrevolver/taser
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /* Non-SCP security outfits */
