@@ -50,6 +50,7 @@ BONUS
 	var/obj/item/organ/external/BP = M.get_organ(picked_bodypart)
 	if(istype(BP) && !BP_IS_ROBOTIC(BP) && !BP_IS_CRYSTAL(BP) && !BP.is_stump())
 		var/can_scratch = scratch && !M.incapacitated()
-		M.visible_message("[can_scratch ? "<span class='warning'>[M] scratches [M.get_visible_gender() == MALE ? "his" : M.get_visible_gender() == FEMALE ? "her" : "their"] [BP.name].</span>" : ""]", "<span class='warning'>Your [BP.name] itches. [can_scratch ? " You scratch it." : ""]</span>")
+		to_chat(M, SPAN_WARNING("Your [BP.name] itches. [can_scratch ? " You scratch it." : ""]"))
 		if(can_scratch)
+			M.visible_message(SPAN_WARNING("[M] scratches [M.get_visible_gender() == MALE ? "his" : M.get_visible_gender() == FEMALE ? "her" : "their"] [BP.name]."))
 			BP.take_external_damage(rand(1, 2))

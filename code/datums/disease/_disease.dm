@@ -134,6 +134,10 @@
 	for(var/turf/T in getline(start, end)) // Should probably be replaced with something else
 		if(T.density)
 			return FALSE
+		// Shitty check for fulltile windows
+		for(var/obj/structure/window/W in T)
+			if(W.is_fulltile())
+				return FALSE
 	return TRUE
 
 /datum/disease/proc/Cure(add_resistance = TRUE)
