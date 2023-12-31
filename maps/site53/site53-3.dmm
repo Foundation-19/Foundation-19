@@ -5321,7 +5321,8 @@
 	dir = 10
 	},
 /obj/structure/closet/secure_closet/personal/empty{
-	name = "Representative's Locker"
+	name = "Representative's Locker";
+	req_access = list("ACCESS_COMMS_COMMAND", "ACCESS_CHAPEL_STORAGE")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
