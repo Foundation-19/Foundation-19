@@ -114,6 +114,7 @@
 		D.Bumped(H)		//a little hacky, but hey, it works, and respects access rights
 	if(istype(S))
 		S.Bumped(src)
+		H.forceMove(loc)
 
 	..()
 
