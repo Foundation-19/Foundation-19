@@ -30,3 +30,6 @@
       open upper outdoors area.
   - rscdel: Removed the old, unused control room.
   - bugfix: Faulty roundstart cabling and APCs fixed.
+2023-12-31:
+  checkraisefold:
+  - bugfix: comms tech -> engineering department
