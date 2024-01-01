@@ -9,6 +9,7 @@
 	gender = PLURAL
 	slot = ACCESSORY_SLOT_ARMOR_S
 	slots = 2 STORAGE_SLOTS
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/pouches/blue
 	desc = "A collection of blue pouches that can be attached to a plate carrier. Carries up to two items."
