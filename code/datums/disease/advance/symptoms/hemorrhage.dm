@@ -49,9 +49,10 @@ BONUS
 		if(prob(base_message_chance))
 			to_chat(A.affected_mob, SPAN_WARNING("Your skin feels incredibly frail..."))
 		return
-	if(prob(5))
+	if(prob(25))
 		to_chat(A.affected_mob, SPAN_WARNING("The blood drips from every cut on your body..."))
 	var/mob/living/carbon/human/H = A.affected_mob
+	H.drip(rand(1, 3))
 	// Internal bleeding!
 	if(internal_bleed)
 		var/obj/item/organ/external/E = pick(H.organs)
