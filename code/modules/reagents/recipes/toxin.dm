@@ -51,7 +51,8 @@
 	mix_message = "The solution boils violently, shedding wisps of vapor."
 
 /datum/chemical_reaction/formaldehyde
-	result = list(/datum/reagent/toxin/formaldehyde = 3)
-	required_reagents = list(/datum/reagent/ethanol = 1, /datum/reagent/water = 1, /datum/reagent/silver = 1)
+	result = /datum/reagent/toxin/formaldehyde
+	required_reagents = list(/datum/reagent/ethanol = 1, /datum/reagent/water = 1, /datum/reagent/uranium = 1)
+	result_amount = 3
 	minimum_temperature = 70 CELSIUS
 	maximum_temperature = (70 CELSIUS) + 100
