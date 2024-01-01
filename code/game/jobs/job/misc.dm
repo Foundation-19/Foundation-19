@@ -24,7 +24,7 @@
 	duties = "You're a prisoner. You have no duties!"
 
 /datum/job/classd/equip(mob/living/carbon/human/H)
-	H.fully_replace_character_name(random_name(H.gender, H.species.name))
+//	H.fully_replace_character_name(random_name(H.gender, H.species.name))
 	. = ..()
 	var/r = rand(100,9000)
 	while (used_numbers.Find(r))
