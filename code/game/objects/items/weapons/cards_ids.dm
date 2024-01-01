@@ -636,10 +636,35 @@
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 
+/obj/item/card/id/mtf/ninetail
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Epsilon-11 Task Force Operative"
+
+/obj/item/card/id/mtf/nu_7
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Nu-7 Task Force Operative"
+
+/obj/item/card/id/mtf/beta_7
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "beta_7 Task Force Operative"
+
+/obj/item/card/id/mtf/alpha
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Alpha-1 Task Force Operative"
+
+/obj/item/card/id/mtf/omega
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Omega-1 Task Force Operative"
+
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Operative"
-	access |= get_all_station_access()
+	job_access_type = /datum/job/captain
 
 
 /obj/item/card/id/physics
