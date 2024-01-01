@@ -24,8 +24,8 @@ BONUS
 	transmittable = 2
 	level = 4
 	severity = 3
-	symptom_delay_min = 30
-	symptom_delay_max = 40
+	symptom_delay_min = 4
+	symptom_delay_max = 10
 	base_message_chance = 10
 	threshold_descs = list(
 		"Stealth 5" = "Symptom remains hidden until active.",
@@ -49,10 +49,13 @@ BONUS
 		if(prob(base_message_chance))
 			to_chat(A.affected_mob, SPAN_WARNING("Your skin feels incredibly frail..."))
 		return
-	if(prob(25))
+	if(prob(base_message_chance))
 		to_chat(A.affected_mob, SPAN_WARNING("The blood drips from every cut on your body..."))
 	var/mob/living/carbon/human/H = A.affected_mob
 	H.drip(rand(1, 3))
+	if(!prob(10 * A.stage))
+		return
+
 	// Internal bleeding!
 	if(internal_bleed)
 		var/obj/item/organ/external/E = pick(H.organs)
@@ -76,7 +79,7 @@ BONUS
 			return
 
 		var/datum/wound/W = new wound_type(5, E)
-		W.bleed_timer += 50
+		W.bleed_timer += 10
 		//Check whether we can add the wound to an existing wound
 		for(var/datum/wound/other in E.wounds)
 			if(other.can_merge(W))
@@ -88,5 +91,5 @@ BONUS
 
 	// Extend the bleeding of existing wounds
 	for(var/datum/wound/W in valid_wounds)
-		W.bleed_timer += rand(10, 30)
+		W.bleed_timer += rand(5, 10)
 		W.parent_organ.update_damages()
