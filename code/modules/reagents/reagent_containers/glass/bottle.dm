@@ -32,9 +32,9 @@
 	update_icon()
 
 /obj/item/reagent_containers/glass/bottle/New()
-	..()
 	if(!icon_state)
 		icon_state = "bottle-[rand(1,4)]"
+	return ..()
 
 /obj/item/reagent_containers/glass/bottle/update_icon()
 	cut_overlays()
@@ -375,9 +375,19 @@
 	update_icon()
 
 // Bottles with diseases
+/obj/item/reagent_containers/glass/bottle/virus_flu
+	icon_state = "bottle-3"
+	spawned_disease = /datum/disease/advance/flu
+
+/obj/item/reagent_containers/glass/bottle/virus_cold
+	icon_state = "bottle-3"
+	spawned_disease = /datum/disease/advance/cold
+
+// Random ones
 /obj/item/reagent_containers/glass/bottle/virus_random
+	icon_state = "bottle-2"
 	spawned_disease = /datum/disease/advance/random
-	var/max_symptoms = 4
+	var/max_symptoms = 3
 	var/max_severity = 2
 
 /obj/item/reagent_containers/glass/bottle/virus_random/SpawnDisease()

@@ -6963,7 +6963,9 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "Aw" = (
-/obj/machinery/door/airlock/glass/virology,
+/obj/machinery/door/airlock/glass/virology{
+	name = "Virology Laboratory"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -9374,15 +9376,19 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/reagent_containers/glass/bottle/virus_random{
-	pixel_x = 12;
-	pixel_y = -12
-	},
 /obj/item/reagent_containers/dropper{
 	pixel_x = -8
 	},
 /obj/structure/reagent_dispensers/virus_food{
 	pixel_x = 32
+	},
+/obj/item/reagent_containers/glass/bottle/virus_cold{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/virus_flu{
+	pixel_x = 8;
+	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
