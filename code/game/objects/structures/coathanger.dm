@@ -26,13 +26,13 @@
 /obj/structure/coatrack/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/clothing/suit) && user.unEquip(W, src))
 		if(!coat)
-			user.visible_message(SPAN_NOTICE("[user] puts \the [W] on \the [src]."), SPAN_NOTICE("You put \the [W] on \the [src]"))
+			user.balloon_alert_to_viewers("puts a coat on the coat rack", "you put a coat on the coat rack")
 			coat = W
 			update_icon()
 		return
 	if(istype(W, /obj/item/clothing/head) && user.unEquip(W, src))
 		if(!hat)
-			user.visible_message(SPAN_NOTICE("[user] puts \the [W] on \the [src]."), SPAN_NOTICE("You put \the [W] on \the [src]"))
+			user.balloon_alert_to_viewers("puts a hat on the coat rack", "you put a hat on the coat rack")
 			hat = W
 			update_icon()
 		return
