@@ -283,7 +283,7 @@
 
 /datum/job/it_tech
 	title = "IT Technician"
-	department = "Civilian"
+	department = "Engineering"
 	selection_color = "#5b4d20"
 	department_flag = ENG
 	total_positions = 1

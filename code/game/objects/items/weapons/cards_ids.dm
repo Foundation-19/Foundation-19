@@ -478,6 +478,13 @@
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/chief_engineer
 
+/obj/item/card/id/seclvl3it_tech
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/v
+
 // JUNIOR GUARD ID'S
 
 /obj/item/card/id/junseclvl2lcz
@@ -515,6 +522,13 @@
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ncoofficerez
+
+/obj/item/card/id/seclvl3raisa
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/raisa
 
 /obj/item/card/id/seclvl3hcz
 	name = "security ID"
