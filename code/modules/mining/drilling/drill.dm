@@ -276,7 +276,7 @@
 		return TRUE
 	if(isWrench(W))
 
-		if(istype(get_turf(src), /turf/space))
+		if(isspaceturf(get_turf(src)))
 			to_chat(user, SPAN_NOTICE("You can't anchor something to empty space. Idiot."))
 			return
 
