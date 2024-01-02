@@ -5502,7 +5502,8 @@
 /area/site53/uez/commandpanicbunker)
 "AM" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Internal Tribunal Department Representitive"
+	name = "Internal Tribunal Department Representative";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
@@ -6469,7 +6470,8 @@
 /area/site53/uez/commandpanicbunker)
 "JM" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Internal Tribunal Department Representitive"
+	name = "Internal Tribunal Department Representative";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
