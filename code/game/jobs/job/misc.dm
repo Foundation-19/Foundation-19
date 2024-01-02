@@ -5,7 +5,6 @@
 	economic_power = 1
 	total_positions = 999
 	spawn_positions = 999
-	//duties = "<big><b>As a Class D Foundation Employee, you are most likely a former convict who faced a life sentence or the death penalty. You are extremely grateful to have been offered the chance to participate in the Foundation's rapid rehabilitation program, at a facility which aims to release you into the free world in just 30 days.<br> Find a way to show you're ready to re-integrate into society: work in mining, botany, the kitchens, or volunteer yourself as a participant in scientific studies.<br> <span style = 'color:red'>REMEMBER!</span> Rioting as Class D has been prohibited without staff approval, under rule 15. <br>IMPORTANT! Do not try to break out of your cell at game start. You will break your only way out!</b></big>"
 	supervisors = "all Foundation Personnel"
 	access = list()
 	minimal_access = list()
@@ -19,6 +18,10 @@
 		SKILL_COMBAT = SKILL_TRAINED,
 		SKILL_WEAPONS = SKILL_TRAINED
 	)
+
+	roleplay_difficulty = "Variable"
+	mechanical_difficulty = "Variable"
+	duties = "You're a prisoner. You have no duties!"
 
 /datum/job/classd/equip(mob/living/carbon/human/H)
 	H.fully_replace_character_name(random_name(H.gender, H.species.name))
@@ -41,7 +44,6 @@
 	spawn_positions = 100
 	minimal_player_age = 10
 	//supervisors = "the Archivist and administrative staff"
-	//duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you.</big></b>"
 	economic_power = 2
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -66,6 +68,11 @@
 
 	minimal_access = list()
 
+	roleplay_difficulty = "Medium"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Work with, and for, various departments. Fill out forms. Maximize bureaucracy."
+	codex_guides = list("<l>Paperwork</l>")
+
 //LOGISTICS
 
 /datum/job/qm
@@ -74,7 +81,7 @@
 	department_flag = SUP|BUR
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Site Director"
+	supervisors = "the Site Director"
 	selection_color = "#515151"
 	economic_power = 5
 	minimal_player_age = 7
@@ -108,6 +115,10 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							/datum/computer_file/program/reports)
 
+	roleplay_difficulty = "Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Manage the Logistics department. Facilitate logistics throughout the site. Buy supplies."
+
 
 /datum/job/cargo_tech
 	title = "Logistics Specialist"
@@ -116,7 +127,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "B4802B"
-	//supervisors = "the Logistics Officer"
+	supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
@@ -147,6 +158,10 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							/datum/computer_file/program/reports)
 
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Facilitate logistics throughout the site. Buy supplies."
+
 
 // MISC JOBS
 
@@ -173,13 +188,18 @@
 		ACCESS_CIV_COMMS,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_MEDICAL_LVL1,
-		ACCESS_DCLASS_JANITORIAL
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
 )
 	minimal_access = list()
 
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC
 	)
+
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Keep the site clean at all costs."
 
 /datum/job/chef
 	title = "Chef"
@@ -210,6 +230,10 @@
 		SKILL_COOKING   = SKILL_EXPERIENCED,
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)
+
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Cook up delicious meals (or inedible slop). Manage the kitchen."
 
 
 /datum/job/bartender
@@ -242,6 +266,10 @@
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)
 
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Mix up drinks for the staff. Manage the bar."
+
 
 /datum/job/archivist
 	title = "Archivist"
@@ -251,8 +279,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 9
-	//duties = "<big><b>As the Archivist, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</b></big>"
-	//supervisors = "the Research Director"
+	supervisors = "the Site Director and Research Director"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -282,3 +309,7 @@
 		ACCESS_MEDICAL_LVL4
 	)
 	minimal_access = list()
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Work with Research to update the site's SCP documentation. Inform security of how certain SCPs behave."

@@ -1,0 +1,35 @@
+2023-12-23:
+  cheesePizza2:
+  - rscadd: Using a crowbar on an APC with a broken cover now lets you pry off the
+      broken cover.
+  - balance: APCs have 2 dud wires in addition to the 4 functioning wires.
+  - code_imp: APC code improvements.
+2023-12-26:
+  tichys:
+  - rscadd: Added new mechanics or gameplay changes
+2023-12-29:
+  K4rlox:
+  - code_imp: dclass medical defines
+  - tweak: adds dclass medical to lcz guards
+  - rscadd: dclass medical assignment cards
+  checkraisefold:
+  - admin: Fixed staffwarn from player panel
+2023-12-30:
+  EgorDinamit:
+  - tweak: Cinematics are now perfectly centered and fade out at the end.
+  - bugfix: Cinematics no longer get stuck on the screen.
+  checkraisefold:
+  - bugfix: Engineering jobs are no longer in 'No Department'
+  - bugfix: All EZ Security jobs have the same department
+  cheesePizza2:
+  - rscadd: New codex categories and entries.
+  - bugfix: Massive codex improvements.
+  - rscadd: Added more mineable rocks between the outdoor bar and EZ offices.
+  - rscadd: Improved lighting in the walkway between EZ and the main site body.
+  - rscadd: Added more windows to the control room + more mineable rocks and a more
+      open upper outdoors area.
+  - rscdel: Removed the old, unused control room.
+  - bugfix: Faulty roundstart cabling and APCs fixed.
+2023-12-31:
+  checkraisefold:
+  - bugfix: comms tech -> engineering department

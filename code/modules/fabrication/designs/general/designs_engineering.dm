@@ -9,7 +9,7 @@
 	path = /obj/item/firealarm_electronics
 
 /datum/fabricator_recipe/engineering/powermodule
-	path = /obj/item/module/power_control
+	path = /obj/item/power_control_module
 
 /datum/fabricator_recipe/engineering/rcd_ammo
 	path = /obj/item/rcd_ammo

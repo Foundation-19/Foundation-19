@@ -96,10 +96,6 @@
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/emag)
 
-/obj/item/card/emag/get_antag_info()
-	. = ..()
-	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
-
 /obj/item/card/emag/broken
 	uses = 0
 
@@ -640,10 +636,35 @@
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 
+/obj/item/card/id/mtf/ninetail
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Epsilon-11 Task Force Operative"
+
+/obj/item/card/id/mtf/nu_7
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Nu-7 Task Force Operative"
+
+/obj/item/card/id/mtf/beta_7
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "beta_7 Task Force Operative"
+
+/obj/item/card/id/mtf/alpha
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Alpha-1 Task Force Operative"
+
+/obj/item/card/id/mtf/omega
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Omega-1 Task Force Operative"
+
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Operative"
-	access |= get_all_station_access()
+	job_access_type = /datum/job/captain
 
 
 /obj/item/card/id/physics
@@ -784,6 +805,10 @@
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	access = ACCESS_DCLASS_JANITORIAL
 
+/obj/item/card/id/dmedical
+	name = "Medical Assignment Card"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = ACCESS_DCLASS_MEDICAL
 
 /obj/item/card/id/officeworker
 	name = "Office Staff ID"
