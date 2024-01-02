@@ -483,7 +483,7 @@
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
-	job_access_type = /datum/job/v
+	job_access_type = /datum/job/it_tech
 
 // JUNIOR GUARD ID'S
 
