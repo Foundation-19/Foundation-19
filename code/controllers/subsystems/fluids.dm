@@ -156,7 +156,7 @@ SUBSYSTEM_DEF(fluids)
 						SET_FLUID_DEPTH(other, F.equalize_avg_depth)
 						other.temperature = F.equalize_avg_temp
 			F.equalizing_fluids.Cut()
-			if(istype(F.loc, /turf/space))
+			if(isspaceturf(F.loc))
 				LOSE_FLUID(F, max((FLUID_EVAPORATION_POINT-1),F.fluid_amount * 0.5))
 
 		if (MC_TICK_CHECK)

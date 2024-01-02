@@ -8,7 +8,7 @@
 
 /mob/living/exosuit/Move()
 	. = ..()
-	if(. && !istype(loc, /turf/space))
+	if(. && !isspaceturf(loc))
 		playsound(src.loc, mech_step_sound, 40, 1)
 
 /mob/living/exosuit/can_ztravel()

@@ -27,8 +27,10 @@
 	// This makes sure that turfs are not changed to space when one side is part of a zone
 	if(N == /turf/space)
 		var/turf/below = GetBelow(src)
-		if(istype(below) && !istype(below,/turf/space))
+		if(istype(below) && !isspaceturf(below))
 			N = /turf/simulated/open
+		else
+			N = /turf/simulated/floor/asteroid // ghetto solution, we don't want space on earth so we just turn it into sand.
 
 	var/old_air = air
 	var/old_fire = fire

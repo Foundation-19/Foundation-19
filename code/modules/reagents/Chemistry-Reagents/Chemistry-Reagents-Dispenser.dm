@@ -84,7 +84,7 @@
 			ingested.remove_reagent(R.type, removed * effect)
 
 /datum/reagent/carbon/touch_turf(turf/T)
-	if(!istype(T, /turf/space))
+	if(!isspaceturf(T))
 		var/obj/effect/decal/cleanable/dirt/dirtoverlay = locate(/obj/effect/decal/cleanable/dirt, T)
 		if (!dirtoverlay)
 			dirtoverlay = new/obj/effect/decal/cleanable/dirt(T)
@@ -245,7 +245,7 @@
 
 /datum/reagent/lithium/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien != IS_DIONA)
-		if(istype(M.loc, /turf/space))
+		if(isspaceturf(M.loc))
 			M.SelfMove(pick(GLOB.cardinal))
 		if(prob(5))
 			M.emote(pick("twitch", "drool", "moan"))
@@ -260,7 +260,7 @@
 
 /datum/reagent/mercury/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien != IS_DIONA)
-		if(istype(M.loc, /turf/space))
+		if(isspaceturf(M.loc))
 			M.SelfMove(pick(GLOB.cardinal))
 		if(prob(5))
 			M.emote(pick("twitch", "drool", "moan"))
@@ -303,7 +303,7 @@
 
 /datum/reagent/radium/touch_turf(turf/T)
 	if(volume >= 3)
-		if(!istype(T, /turf/space))
+		if(!isspaceturf(T))
 			var/obj/effect/decal/cleanable/greenglow/glow = locate(/obj/effect/decal/cleanable/greenglow, T)
 			if(!glow)
 				new /obj/effect/decal/cleanable/greenglow(T)

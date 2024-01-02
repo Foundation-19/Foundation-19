@@ -478,6 +478,13 @@
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/chief_engineer
 
+/obj/item/card/id/seclvl3it_tech
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/it_tech
+
 // JUNIOR GUARD ID'S
 
 /obj/item/card/id/junseclvl2lcz
@@ -515,6 +522,13 @@
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ncoofficerez
+
+/obj/item/card/id/seclvl3raisa
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/raisa
 
 /obj/item/card/id/seclvl3hcz
 	name = "security ID"
@@ -636,10 +650,35 @@
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 
+/obj/item/card/id/mtf/ninetail
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Epsilon-11 Task Force Operative"
+
+/obj/item/card/id/mtf/nu_7
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Nu-7 Task Force Operative"
+
+/obj/item/card/id/mtf/beta_7
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "beta_7 Task Force Operative"
+
+/obj/item/card/id/mtf/alpha
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Alpha-1 Task Force Operative"
+
+/obj/item/card/id/mtf/omega
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Omega-1 Task Force Operative"
+
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Operative"
-	access |= get_all_station_access()
+	job_access_type = /datum/job/captain
 
 
 /obj/item/card/id/physics
@@ -705,16 +744,6 @@
 	icon_state = "adminlvl3"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/psychiatrist
-
-
-// ARCHIVE
-
-/obj/item/card/id/archivist
-	name = "administration ID"
-	desc = "A black ID. Looks like the person wearing this won't give it up easy."
-	icon_state = "adminlvl5"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/archivist
 
 // RESEARCH
 

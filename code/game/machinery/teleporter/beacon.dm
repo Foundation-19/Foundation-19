@@ -44,7 +44,7 @@
 	if (!panel_open)
 		if (isWrench(I))
 			var/turf/T = get_turf(src)
-			if (is_space_turf(T) || istype(T, /turf/simulated/open))
+			if (isspaceturf(T) || istype(T, /turf/simulated/open))
 				to_chat(user, SPAN_WARNING("You cannot anchor \the [src] to \the [T]. It requires solid plating."))
 				return FALSE
 			if (!T.is_plating())

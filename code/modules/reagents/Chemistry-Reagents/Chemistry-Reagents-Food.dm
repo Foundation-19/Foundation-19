@@ -130,7 +130,7 @@
 	protein_amount = 0.4
 
 /datum/reagent/nutriment/batter/touch_turf(turf/simulated/T)
-	if(!istype(T, /turf/space))
+	if(!isspaceturf(T))
 		new /obj/effect/decal/cleanable/pie_smudge(T)
 		if(T.wet > 1)
 			T.wet = min(T.wet, 1)
@@ -280,7 +280,7 @@
 		return
 
 	var/hotspot = (locate(/obj/fire) in T)
-	if(hotspot && !istype(T, /turf/space))
+	if(hotspot && !isspaceturf(T))
 		var/datum/gas_mixture/lowertemp = T.remove_air(T:air:total_moles)
 		lowertemp.temperature = max(min(lowertemp.temperature-2000, lowertemp.temperature / 2), 0)
 		lowertemp.react()
