@@ -13,11 +13,6 @@
 	desc = "A \"Dr. Razvlechudov\" brand security action figure. There is some kind of stats on the bottom...Laura Joyce, HP:80, Range Weapon: P90(Damage:15, Range: 20 tiles), Melee Weapon: Med-kit(Heals 50 HP)"
 	icon_state = "scp_sec2"
 
-/obj/item/toy/figure/scp/archivist
-	name = "Archivist action figure"
-	desc = "A \"Dr. Razvlechudov\" brand Archivist action figure. There is some kind of stats on the bottom...Mikhail Vorov, HP:80, Melee Weapon: Amnesiac B(Use it on enemy to disable they abilities)"
-	icon_state = "archivist"
-
 /obj/item/toy/figure/scp/sen_scientist
 	name = "Senior Scientist action figure"
 	desc = "A \"Dr. Razvlechudov\" brand Senior Scientist action figure. There is some kind of stats on the bottom...Michael Brown, HP:100, Range Weapon: USP(Damage:10, Range: 10 tiles), Melee Weapon: ID-Card(Use it to open closed on IDs doors)"

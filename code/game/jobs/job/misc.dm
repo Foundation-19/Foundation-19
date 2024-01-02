@@ -43,7 +43,7 @@
 	total_positions = 100
 	spawn_positions = 100
 	minimal_player_age = 10
-	//supervisors = "the Archivist and administrative staff"
+	//supervisors = "administrative staff"
 	economic_power = 2
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -269,47 +269,3 @@
 	roleplay_difficulty = "Easy - Medium"
 	mechanical_difficulty = "Medium"
 	duties = "Mix up drinks for the staff. Manage the bar."
-
-
-/datum/job/archivist
-	title = "Archivist"
-	department = "Civilian"
-	selection_color = "#2f2f7f"
-	department_flag = CIV|BUR
-	total_positions = 1
-	spawn_positions = 1
-	minimal_player_age = 9
-	supervisors = "the Site Director and Research Director"
-	economic_power = 4
-	minimal_player_age = 5
-	ideal_character_age = 30
-	requirements = list("Office Worker" = 120)
-	outfit_type = /decl/hierarchy/outfit/job/civ/archivist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
-	hud_icon = "hudarchivist"
-
-	access = list(
-		ACCESS_CIV_COMMS,
-		ACCESS_SCI_COMMS,
-		ACCESS_MED_COMMS,
-		ACCESS_ADMIN_LVL1,
-		ACCESS_ADMIN_LVL2,
-		ACCESS_ADMIN_LVL3,
-		ACCESS_ADMIN_LVL4,
-		ACCESS_KEYAUTH,
-		ACCESS_RESEARCH,
-		ACCESS_SCIENCE_LVL1,
-		ACCESS_SCIENCE_LVL2,
-		ACCESS_SCIENCE_LVL3,
-		ACCESS_SCIENCE_LVL4,
-		ACCESS_MEDICAL_LVL1,
-		ACCESS_MEDICAL_LVL2,
-		ACCESS_MEDICAL_LVL3,
-		ACCESS_MEDICAL_LVL4
-	)
-	minimal_access = list()
-
-	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium"
-	duties = "Work with Research to update the site's SCP documentation. Inform security of how certain SCPs behave."

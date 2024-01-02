@@ -245,13 +245,6 @@
 	name = "\improper Upper Surface Maintenance"
 	icon_state = "maint_exterior"
 
-/area/site53/lowertram/archive
-	name = "\improper Archive"
-	icon_state = "crew_quarters"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-
-
 
 // Site 53 upper surface area's
 /area/site53/lowertrams/brownline
@@ -1073,6 +1066,11 @@
 /area/site53/engineering/sleeproom
 	name = "\improper Engineering Sleep Room"
 	icon_state = "engineering_locker"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/engineering/server_room
+	name = "\improper Server Room"
+	icon_state = "crew_quarters"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/securitypost
