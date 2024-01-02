@@ -5,6 +5,7 @@
 	economic_power = 1
 	total_positions = 999
 	spawn_positions = 999
+	//duties = "<big><b>As a Class D Foundation Employee, you are most likely a former convict who faced a life sentence or the death penalty. You are extremely grateful to have been offered the chance to participate in the Foundation's rapid rehabilitation program, at a facility which aims to release you into the free world in just 30 days.<br> Find a way to show you're ready to re-integrate into society: work in mining, botany, the kitchens, or volunteer yourself as a participant in scientific studies.<br> <span style = 'color:red'>REMEMBER!</span> Rioting as Class D has been prohibited without staff approval, under rule 15. <br>IMPORTANT! Do not try to break out of your cell at game start. You will break your only way out!</b></big>"
 	supervisors = "all Foundation Personnel"
 	access = list()
 	minimal_access = list()
@@ -18,10 +19,6 @@
 		SKILL_COMBAT = SKILL_TRAINED,
 		SKILL_WEAPONS = SKILL_TRAINED
 	)
-
-	roleplay_difficulty = "Variable"
-	mechanical_difficulty = "Variable"
-	duties = "You're a prisoner. You have no duties!"
 
 /datum/job/classd/equip(mob/living/carbon/human/H)
 	H.fully_replace_character_name(random_name(H.gender, H.species.name))
@@ -68,11 +65,6 @@
 
 	minimal_access = list()
 
-	roleplay_difficulty = "Medium"
-	mechanical_difficulty = "Easy - Medium"
-	duties = "Work with, and for, various departments. Fill out forms. Maximize bureaucracy."
-	codex_guides = list("<l>Paperwork</l>")
-
 //LOGISTICS
 
 /datum/job/qm
@@ -81,7 +73,7 @@
 	department_flag = SUP|BUR
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Site Director"
+	//supervisors = "the Site Director"
 	selection_color = "#515151"
 	economic_power = 5
 	minimal_player_age = 7
@@ -115,10 +107,6 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							/datum/computer_file/program/reports)
 
-	roleplay_difficulty = "Medium"
-	mechanical_difficulty = "Medium"
-	duties = "Manage the Logistics department. Facilitate logistics throughout the site. Buy supplies."
-
 
 /datum/job/cargo_tech
 	title = "Logistics Specialist"
@@ -127,7 +115,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "B4802B"
-	supervisors = "the Logistics Officer"
+	//supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
@@ -157,10 +145,6 @@
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							/datum/computer_file/program/reports)
-
-	roleplay_difficulty = "Easy - Medium"
-	mechanical_difficulty = "Medium"
-	duties = "Facilitate logistics throughout the site. Buy supplies."
 
 
 // MISC JOBS
@@ -197,10 +181,6 @@
 		SKILL_HAULING = SKILL_BASIC
 	)
 
-	roleplay_difficulty = "Easy"
-	mechanical_difficulty = "Easy - Medium"
-	duties = "Keep the site clean at all costs."
-
 /datum/job/chef
 	title = "Chef"
 	department = "Civilian"
@@ -230,10 +210,6 @@
 		SKILL_COOKING   = SKILL_EXPERIENCED,
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)
-
-	roleplay_difficulty = "Easy - Medium"
-	mechanical_difficulty = "Medium"
-	duties = "Cook up delicious meals (or inedible slop). Manage the kitchen."
 
 
 /datum/job/bartender

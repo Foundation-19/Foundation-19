@@ -7,10 +7,12 @@
 		var/material/mat = thing
 		if(!mat.hidden_from_codex)
 			var/datum/codex_entry/entry = new(_display_name = "[mat.display_name] (material)")
-			var/list/material_info = list(mat.codex_desc)
+			entry.lore_text = mat.lore_text
+			entry.antag_text = mat.antag_text
+			var/list/material_info = list(mat.mechanics_text)
 
 			material_info += "Its melting point is [mat.melting_point] K."
-
+	
 			if(mat.brute_armor < 2)
 				material_info += "It is weak to physical impacts."
 			else if(mat.brute_armor > 2)
@@ -29,7 +31,7 @@
 				material_info += "It conducts electricity."
 			else
 				material_info += "It does not conduct electricity."
-
+			
 			if(mat.opacity < 0.5)
 				material_info += "It is transparent."
 
@@ -65,7 +67,7 @@
 					var/datum/reagent/R = chemial
 					chems += "[initial(R.name)] ([mat.chem_products[chemial]]u)"
 				material_info += "The following chemicals can be extracted from it (per [mat.sheet_singular_name]):<br>[english_list(chems)]"
-
+			
 			if(LAZYLEN(mat.alloy_materials))
 				var/parts = list()
 				for(var/alloy_part in mat.alloy_materials)
@@ -88,7 +90,7 @@
 			if(mat.flags & MATERIAL_PADDING)
 				material_info += "It can be used to pad furniture."
 
-			entry.entry_text = jointext(material_info,"<br>")
+			entry.mechanics_text = jointext(material_info,"<br>")
 			entry.update_links()
 			SScodex.add_entry_by_string(entry.display_name, entry)
 			items += entry.display_name
