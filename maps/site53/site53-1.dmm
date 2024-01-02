@@ -4438,6 +4438,7 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /obj/item/storage/box/lights/tubes,
 /obj/item/storage/box/bodybags,
+/obj/item/storage/chewables/candy/medicallollis,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "kw" = (
@@ -17073,6 +17074,25 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/structure/closet{
+	name = "D-Class Medical Storage"
+	},
+/obj/item/clothing/suit/storage/toggle/labcoat,
+/obj/item/clothing/suit/storage/toggle/labcoat,
+/obj/item/clothing/suit/storage/toggle/labcoat,
+/obj/item/clothing/head/nursehat,
+/obj/item/clothing/head/nursehat,
+/obj/item/clothing/head/nursehat,
+/obj/item/clothing/glasses/hud/health/visor,
+/obj/item/clothing/glasses/hud/health/visor,
+/obj/item/clothing/glasses/hud/health/visor,
+/obj/item/device/scanner/health,
+/obj/item/device/scanner/health,
+/obj/item/device/scanner/health,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/belt/medical/emt,
+/obj/item/storage/box/armband/med,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "Pv" = (

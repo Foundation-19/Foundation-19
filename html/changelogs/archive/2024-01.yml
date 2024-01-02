@@ -1,0 +1,14 @@
+2024-01-02:
+  K4rlox:
+  - rscadd: Medical locker in dblock
+  Teragenic:
+  - rscadd: Adds IDs with actual assignments to MTF, so no more guessing which MTF
+      arrived or whomst it came from.
+  - rscadd: Adds pistolbelts to MTF
+  - balance: adds a custom variant of tactical plates for MTF with no slowdown.
+  - bugfix: Fixes GOC uniforms
+  - bugfix: Fixes Ninetailed Fox dressups
+  checkraisefold:
+  - bugfix: Cargo train trolley can go up stairs
+  - bugfix: Spellchecked and re-did access for Ethics Committee Liaison and Internal
+      Tribunal Department Rep offices.

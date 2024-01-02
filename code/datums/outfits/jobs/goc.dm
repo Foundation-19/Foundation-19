@@ -1,5 +1,5 @@
 /decl/hierarchy/outfit/goc
-	uniform = /obj/item/clothing/head/solgov/utility/marine/urban
+	uniform = /obj/item/clothing/under/solgov/utility/marine/urban
 	suit = /obj/item/clothing/suit/armor/goc
 	suit_store = null
 	head = /obj/item/clothing/head/helmet/scp/goc
