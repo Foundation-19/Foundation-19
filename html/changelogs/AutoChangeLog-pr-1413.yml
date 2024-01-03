@@ -1,0 +1,8 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: Diseases! People can now catch and spread viruses that range from helpful
+      to life-threatening.
+  - rscadd: Virology machinery will help medical department cure or create new diseases.
+      Create a bio-weapon or something that'd help everyone onboard.
+  - rscadd: Added numerous reagents that alter advance diseases.
