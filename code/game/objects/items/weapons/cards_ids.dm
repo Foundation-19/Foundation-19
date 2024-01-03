@@ -678,7 +678,7 @@
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Operative"
-	job_access_type = /datum/job/captain
+	access |= get_all_site_access()
 
 
 /obj/item/card/id/physics
