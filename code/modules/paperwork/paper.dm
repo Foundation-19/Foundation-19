@@ -590,6 +590,19 @@
 /obj/item/paper/proc/show_info(mob/user)
 	return info
 
+// Coarse - Cramples the paper
+// 1:1 - Returns random paper type
+/obj/item/paper/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_COARSE)
+			if(icon_state == "scrap")
+				return
+			info = stars(info, 85)
+			icon_state = "scrap"
+			return src
+		if(MODE_ONE_TO_ONE)
+			return pick(typesof(/obj/item/paper))
+	return ..()
 
 //For supply.
 /obj/item/paper/manifest

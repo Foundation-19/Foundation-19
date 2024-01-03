@@ -6,6 +6,13 @@
 #define SCP_THAUMIEL	"Thaumiel"
 #define SCP_NEUTRALIZED "Neutralized"
 
+// SCP 914 defines
+#define MODE_ROUGH "Rough"
+#define MODE_COARSE "Coarse"
+#define MODE_ONE_TO_ONE "1:1"
+#define MODE_FINE "Fine"
+#define MODE_VERY_FINE "Very Fine"
+
 //Meta bitflags
 
 ///Is the SCP playable?

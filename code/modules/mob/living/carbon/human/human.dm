@@ -1846,3 +1846,144 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 	"D-Class Personnel", "a nurse", "The United Nations", "home", "a peaceful meadow", "a haunting forest", "an angry man", "a dead D-Class", "an imposter", "a Nobody", "a Friend", "a Stranger", "an enemy", "the gas prices", "a cat without an back half", "the moon", "the sun", "a strange floating object", "an engineer", "the janitor", "a firearm", "England", "an orange blob", "a demon", "a seven winged creature", "a red haired man in a tophat and red suit trying to sell you a product", "an artifical person", "a mass of flesh with eyes", "France", "Burgundy", "UnLondon",
 	"something moving inside of you", "a red headed doctor with security shades", "a hanged monarch", "a strange city", "a headless man", "the research director", "a pestilence",
 ))
+
+// This is the fun part(I hated coding it)
+/mob/living/carbon/human/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ROUGH) // Destroy the child
+			to_chat(src, SPAN_USERDANGER("Your innards are spilling out... Not all of them though..."))
+			death()
+			adjustBruteLoss(6000)
+			return src
+		if(MODE_COARSE) // Damage them to hell
+			adjustBruteLoss(rand(200, 400))
+			return src
+		if(MODE_ONE_TO_ONE)
+			var/changer = pick("name", "gender", "eyehair_color", "skin_color", "species", "maim")
+			switch(changer)
+				if("name")
+					to_chat(src, SPAN_USERDANGER("You feel different, somehow... What was your name, again..?"))
+					real_name = random_name(gender)
+					name = real_name
+					if(mind)
+						mind.name = real_name
+				if("gender")
+					var/old_gender = gender
+					randomize_gender()
+					if(old_gender != gender)
+						to_chat(src, SPAN_USERDANGER("You feel different... Wait a minute..."))
+					else
+						to_chat(src, SPAN_NOTICE("Nothing changed..?"))
+				if("eyehair_color")
+					if(prob(50))
+						change_eye_color(rand(0, 255), rand(0, 255), rand(0,255))
+						to_chat(src, SPAN_USERDANGER("You feel different, somehow... You'll probably want to get your eyesight checked."))
+					else
+						change_hair_color(rand(0, 255), rand(0, 255), rand(0, 255))
+						to_chat(src, SPAN_USERDANGER("You feel different, somehow... Wait, what's that on your head?"))
+				if("skin_color")
+					change_skin_color(rand(0, 255), rand(0, 255), rand(0, 255))
+					to_chat(src, SPAN_USERDANGER("You feel different, somehow... Wait, what the hell happened!?"))
+				if("species")
+					change_species(pick(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_PROMETHEAN, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_FBP))
+					to_chat(src, SPAN_USERDANGER("You feel different, somehow... Wait, what the hell happened!?"))
+				if("maim")
+					var/brute = getBruteLoss() + rand(2, 15)
+					var/burn = getBruteLoss() + rand(2, 15)
+					// Remove all damage
+					adjustBruteLoss(-brute)
+					adjustFireLoss(-burn)
+					// And then reapply differently
+					adjustBruteLoss(burn)
+					adjustFireLoss(brute)
+					if(brute + burn > 10)
+						to_chat(src, SPAN_USERDANGER("Agh! What's wrong with this machine?"))
+					else
+						to_chat(src, SPAN_NOTICE("Nothing changed..?"))
+			return src
+		if(MODE_FINE, MODE_VERY_FINE) // Do you want to live forever?
+			var/changer = pick("god", "psi")
+			switch(changer)
+				if("god")
+					if((max_stamina > 800) && (status_flags == 0))
+						Callback914Death()
+						return
+					revive()
+					max_stamina += 400
+					damage_multiplier += 2
+					var/old_status_flags = status_flags
+					status_flags = 0 // No stuns or pain
+					if(skillset)
+						for(var/decl/hierarchy/skill/S in GLOB.skills)
+							skillset.skill_list[S.type] = SKILL_MASTER
+					for(var/obj/item/organ/external/E in organs)
+						E.dislocated = -1
+						E.arterial_bleed_severity = 0
+						E.limb_flags = 0
+					skillset.on_levels_change()
+					playsound(src, 'sounds/effects/screech2.ogg', 150, FALSE, 32)
+					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
+					for(var/i = 1 to 12)
+						addtimer(CALLBACK(src, /mob/living/proc/revive), (10 SECONDS) * i)
+					if(mode == MODE_VERY_FINE)
+						addtimer(CALLBACK(src, .proc/Callback914Death), rand(121 SECONDS, 150 SECONDS))
+					else
+						addtimer(CALLBACK(src, .proc/Callback914PotentialDeath, old_status_flags), rand(160 SECONDS, 300 SECONDS))
+				if("psi")
+					// Will kill if you got too good
+					var/total_rank = 0
+					for(var/psi in list(PSI_COERCION, PSI_PSYCHOKINESIS, PSI_REDACTION, PSI_ENERGISTICS))
+						var/psi_rank = rand(PSI_RANK_OPERANT + (mode == MODE_VERY_FINE ? rand(2, 7) : 0), PSI_RANK_PARAMOUNT + (mode == MODE_VERY_FINE ? rand(2, 52) : 0))
+						total_rank += psi_rank
+						set_psi_rank(psi, psi_rank, take_larger = TRUE, defer_update = TRUE)
+					psi.update()
+					playsound(src, 'sounds/effects/psi/power_evoke.ogg', 150, FALSE, 32)
+					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
+					addtimer(CALLBACK(src, .proc/Callback914PotentialPsiDeath, (total_rank > 12 ? (80 + total_rank) : 50)), rand(160 SECONDS, 300 SECONDS))
+			return src
+
+// The trip is over, you might die, or you might live
+/mob/living/carbon/human/proc/Callback914PotentialDeath(old_status_flags)
+	if(prob(50))
+		adjustBruteLoss(rand(50, 150))
+		status_flags = old_status_flags
+		max_stamina -= 450
+		damage_multiplier -= 2.25
+		for(var/decl/hierarchy/skill/S in GLOB.skills)
+			skillset.skill_list[S.type] = SKILL_BASIC
+		for(var/obj/item/organ/external/E in organs)
+			E.dislocated = initial(E.dislocated)
+			E.arterial_bleed_severity = initial(E.arterial_bleed_severity)
+			E.limb_flags = initial(E.limb_flags)
+		to_chat(src, SPAN_USERDANGER("You feel like shit again..."))
+		return
+	return Callback914Death()
+
+/mob/living/carbon/human/proc/Callback914PotentialPsiDeath(safe_chance)
+	if(prob(safe_chance))
+		QDEL_NULL(psi)
+		to_chat(src, SPAN_USERDANGER("You feel like shit again..."))
+		return
+	return Callback914Death()
+
+/mob/living/carbon/human/proc/Callback914Death()
+	status_flags = CANSTUN|CANWEAKEN|CANPARALYSE|CANPUSH
+	Weaken(10000)
+	visible_message(
+		SPAN_DANGER("\The [src] falls down on the ground, slowly deteriorating into nothingness"),
+		SPAN_USERDANGER("You can't keep up with such power... It's over."))
+	playsound(src, 'sounds/effects/death_heartbeat.ogg', 75, FALSE, -4)
+	for(var/i = 1 to 20)
+		adjustFireLoss(50)
+		sleep(3)
+		if(QDELETED(src))
+			return
+	for(var/i = 1 to 5)
+		var/obj/effect/decal/cleanable/ash/A = new(get_turf(src))
+		A.name = "blue ash"
+		A.desc = "A weird looking ash consisting of unknown material."
+		A.color = COLOR_BLUE
+		A.pixel_x = rand(-8, 8)
+		A.pixel_y = rand(-8, 8)
+	death()
+	qdel(src)

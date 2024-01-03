@@ -106,3 +106,56 @@
 		else
 			icon_state = "[initial(icon_state)][ratio]"
 		update_held_icon()
+
+// Coarse - Returns random gun with lower max_shots or damage
+// 1:1 - Returns random gun with similar max_shots value and similar projectile damage
+// Fine or Very Fine - Returns random gun with higher max_shots, higher damage or self-recharging
+/obj/item/gun/energy/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_COARSE)
+			var/list/potential_return
+			for(var/thing in subtypesof(/obj/item/gun/energy))
+				var/obj/item/gun/energy/G = thing
+				if(initial(G.max_shots) < max_shots * 0.8)
+					potential_return += G
+				var/obj/item/projectile/P = initial(G.projectile_type)
+				var/obj/item/projectile/our_proj = projectile_type
+				if(initial(P.damage) < initial(our_proj.damage) * 0.8)
+					potential_return += G
+			if(!LAZYLEN(potential_return))
+				return src
+			return pick(potential_return)
+		if(MODE_ONE_TO_ONE)
+			var/list/potential_return = list()
+			for(var/thing in subtypesof(/obj/item/gun/energy))
+				var/obj/item/gun/energy/G = thing
+				if(initial(G.max_shots) > max_shots * 1.25 || initial(G.max_shots) < max_shots * 0.75)
+					continue
+				var/obj/item/projectile/P = initial(G.projectile_type)
+				var/obj/item/projectile/our_proj = projectile_type
+				if(initial(P.damage) > initial(our_proj.damage) * 1.25 || initial(P.damage) < initial(our_proj.damage) * 0.75)
+					continue
+				potential_return += G
+			if(!LAZYLEN(potential_return))
+				return src
+			return pick(potential_return)
+		if(MODE_FINE, MODE_VERY_FINE)
+			var/mult_mod = (mode == MODE_VERY_FINE ? 2 : 1)
+			if(prob(mult_mod ** 2))
+				empulse(get_turf(src), 2, 5)
+				return null
+			var/list/potential_return = list()
+			for(var/thing in subtypesof(/obj/item/gun/energy))
+				var/obj/item/gun/energy/G = thing
+				if(initial(G.max_shots) > max_shots * 1.25 * mult_mod && initial(G.max_shots) < max_shots * 2 * mult_mod)
+					potential_return += G
+				var/obj/item/projectile/P = initial(G.projectile_type)
+				var/obj/item/projectile/our_proj = projectile_type
+				if(initial(P.damage) > initial(our_proj.damage) * 1.25 * mult_mod && initial(P.damage) < initial(our_proj.damage) * 2 * mult_mod)
+					potential_return += G
+				if(initial(G.self_recharge) && !self_recharge && prob(33))
+					potential_return += G
+			if(!LAZYLEN(potential_return))
+				return src
+			return pick(potential_return)
+	return ..()

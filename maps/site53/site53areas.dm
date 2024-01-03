@@ -403,6 +403,14 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/ulcz/scp914
+	name = "\improper SCP-914"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+	// Looping music
+	forced_ambience = list('sounds/music/914.ogg')
+
 /area/site53/llcz/genstorage1
 	name = "\improper General Storage #1"
 	icon_state = "research"
