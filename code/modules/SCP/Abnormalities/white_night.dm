@@ -216,7 +216,7 @@
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in GetConnectedZlevels(z)) && M.client)
 			to_chat(M, FONT_LARGE(SPAN_OCCULT(apostle_line)))
-			M.playsound_local(get_turf(M), 'sound/scp/abnormality/white_night/apostle_bell.ogg', 75, FALSE)
+			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 75, FALSE)
 			flash_color(M, flash_color = "#ff0000", flash_time = 50)
 	// Allows us to begin rapture
 	if(apostles.len >= 12)
@@ -328,7 +328,7 @@
 	charged_field_range += 1 // Powercrepe
 	for(var/mob/M in GLOB.player_list)
 		if(M.client && !isnewplayer(M)) // Send it to every player currently active(outside of lobby), not just everyone on Z-level
-			M.playsound_local(get_turf(M), 'sounds/scps/abnormality/white_night/rapture.ogg', 50)
+			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/rapture.ogg', 50)
 	SLEEP_CHECK_DEATH(3 SECONDS)
 	for(var/i = 1 to apostles.len)
 		var/apostle_key = apostles[i]
