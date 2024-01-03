@@ -1,0 +1,51 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - refactor: Refactors SCP Backend Code
+  - balance: Memetic system min dark value changed to 0.03 from 0.05
+  - refactor: Refactors SCP 012
+  - refactor: Refactors SCP 013
+  - rscadd: Adds SCP 017 (For the most part, its not mapped in)
+  - refactor: SCP 049 has been refactored and minorly reworked
+  - code_imp: New stageHandler to allow scps to keep track of various stages in humans
+      without explicitly defined vars.
+  - bugfix: desc not showing SCP desc for humanoid SCPs.
+  - code_imp: new memetics component for handling memetic like properties of SCPS
+      (but it can be used for anything).
+  - rscadd: SCP 066 now has actual functionality
+  - refactor: SCP 096 has been refactored and reworked but is currently disabled as
+      it requires AI ports that are still being worked on.
+  - refactor: SCP 106 has been minorly refactored to use new SCP datum and stage handler.
+  - refactor: SCP 113 has been refactored.
+  - refactor: SCP 131 has been refactored and slightly reworked.
+  - refactor: SCP 151 has been refactored and reworked.
+  - refactor: SCP 173 has been minorly refactored.
+  - refactor: SCP 216 has been minorly refactored.
+  - refactor: SCP 247 has been refactored.
+  - refactor: SCP 263 majorly reworked.
+  - rscadd: SCP 280 is no longer a placeholder and now works
+  - refactor: SCP 294 was minorly reworked to take reagents from the world rather
+      than just being a chem dispenser.
+  - refactor: SCP 343 has been refactored
+  - refactor: SCP 420-J has been reworked (credit to @EgorDinamit)
+  - refactor: SCP 457 has been refactored and minorly reworked
+  - refactor: SCP 500 has been refactored
+  - refactor: SCP 513 has been fully reworked.
+  - refactor: SCP 527 minorly refactored.
+  - refactor: SCP 529 minorly refactored.
+  - refactor: SCP 895 reworked.
+  - refactor: SCP 999 refactored.
+  - refactor: SCP 1102RU refactored.
+  - refactor: SCP 2343 refactored (just made a subtype of 343)
+  - refactor: SCP 2398 minorly reworked.
+  - refactor: SCP 2427-3 minorly refactored.
+  - code_imp: new is_dark() turf helper proc to help standardize what is considered
+      dark.
+  - rscadd: new functionality to allow ladder types to be exempt from unit tests.
+  - bugfix: gets rid of duplicate English language
+  - rscdel: gets rid of all placeholder SCP files
+  - bugfix: 'should fix #1141'
+  - bugfix: 'should fix #1190'
+  - bugfix: 'fix #207'
+  - bugfix: SCP 2427-3 no longer checks purity of SCPs.
+  - bugfix: 'fixes #1295'

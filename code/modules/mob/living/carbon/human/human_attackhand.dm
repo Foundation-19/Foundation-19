@@ -31,6 +31,18 @@
 
 	..()
 	remove_cloaking_source(species)
+
+	// Spread diseases
+	for(var/thing in diseases)
+		var/datum/disease/D = thing
+		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+			M.ContactContractDisease(D)
+
+	for(var/thing in M.diseases)
+		var/datum/disease/D = thing
+		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+			ContactContractDisease(D)
+
 	// Should this all be in Touch()?
 	if(istype(H))
 		if(H != src && check_shields(0, null, H, H.zone_sel.selecting, H.name))

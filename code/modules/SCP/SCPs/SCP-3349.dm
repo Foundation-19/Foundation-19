@@ -1,19 +1,14 @@
-/datum/scp/scp_3349
-	name = "SCP-3349"
-	designation = "3349"
-	classification = KETER
-
 // ACTIVITY
 
 /mob/living/carbon/human/proc/handle_3349()
 	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
 	if(stat == DEAD)
-		heart.scp3349_induced = FALSE
+		heart.SCP.Destroy()
 		UnregisterSignal(src, COMSIG_CARBON_LIFE)
 	else
-		if(heart.scp3349_induced)
+		if(heart.SCP.designation == "3349-1")
 			if(prob(0.75))		// about 2-5 minutes after starting, it ends.
-				heart.scp3349_induced = FALSE
+				heart.SCP.Destroy()
 				to_chat(src, SPAN_INFO("The euphoric sensation ends."))
 			if(prob(20))
 				adjustSanityLoss(-1)	// the sensation is comforting
@@ -21,7 +16,12 @@
 				adjust_stamina(-1)		// little harder to run though
 		else
 			if(prob(0.1))	// takes a good 20-30 minutes on average, probably
-				heart.scp3349_induced = TRUE
+				heart.SCP = new /datum/scp(
+					src, // Ref to actual SCP atom
+					"", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+					SCP_KETER, //Obj Class
+					"3349-1" //Numerical Designation
+				)
 				to_chat(src, SPAN_INFO("You feel a sudden euphoric sensation!"))
 
 // SETUP

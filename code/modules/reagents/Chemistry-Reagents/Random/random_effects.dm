@@ -299,7 +299,7 @@
 /decl/random_chem_effect/random_properties/ce_antiviral
 	chem_effect_define = CE_ANTIVIRAL
 	beneficial = 1
-	maximum = VIRUS_EXOTIC
+	maximum = ANTIVIRAL_STRONG
 	mode = RANDOM_CHEM_EFFECT_INT
 	desc = "antiviral action"
 

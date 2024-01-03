@@ -17,7 +17,6 @@
 	var/ignitermes = "USER lights NAME with FLAME"
 	var/brand
 	var/gas_consumption = 0.04
-	hidden_from_codex = TRUE
 
 	// Visual effect variables
 	var/smoke_effect = 0
@@ -190,7 +189,6 @@
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
 	brand = "\improper Trans-Stellar Duty-free"
 	var/list/filling = list(/datum/reagent/medicine/fluff/tobacco = 1)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/smokable/cigarette/New()
 	..()

@@ -11,7 +11,6 @@
 		bio = ARMOR_BIO_MINOR
 		)
 	species_restricted = list(SPECIES_HUMAN)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/champarmor
 	name = "champion's armor"

@@ -1,0 +1,5 @@
+author: casualspacestation14enjoyer
+delete-after: true
+changes:
+  - rscadd: Coat Racks now work correctly, you can hang your hats and suits on them.
+  - bugfix: some magazines now have correct sprites

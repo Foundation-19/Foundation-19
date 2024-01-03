@@ -1,52 +1,57 @@
-GLOBAL_LIST_EMPTY(scp1102)
+/obj/item/storage/briefcase/scp1102ru
+	name = "old plastic case"
+	desc = "A strange plastic case covered in cloth."
 
-var/static/list/climbsounds = list('sounds/effects/ladder.ogg','sounds/effects/ladder2.ogg','sounds/effects/ladder3.ogg','sounds/effects/ladder4.ogg')
-
-/obj/item/weapon/scp1102ru
-	name = "SCP-1102-RU"
-	desc = "Very old plastic case. Looks a bit... off?"
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "briefcase"
-	item_state = "briefcase"
-	force = 8
-	throw_speed = 1
-	throw_range = 4
 	w_class = ITEM_SIZE_HUGE
 
-/obj/item/weapon/scp1102ru/attack_self(mob/user)
-	if(do_after(user, 2.5 SECONDS, bonus_percentage = 25))
-		user.drop_item()
-		user.forceMove(pick(GLOB.scp1102_floors))
-		playsound(src, pick(climbsounds), 50)
-		user.visible_message(SPAN_WARNING("The [user] has opened the briefcase and climbed down into it!"))
+	//Mechanics
 
-/obj/item/weapon/scp1102ru/Initialize()
-	GLOB.scp1102 += src
-	return ..()
+	var/obj/structure/ladder/scp1102ladder/enter_point
 
-/obj/item/weapon/scp1102ru/Destroy()
-	GLOB.scp1102 -= src
-	return ..()
+/obj/item/storage/briefcase/scp1102ru/Initialize()
+	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"old plastic case", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"1102-RU" //Numerical Designation
+	)
 
+//Overrides
 
-///////////Ladder
+/obj/item/storage/briefcase/scp1102ru/open(mob/user)
+	if(!enter_point)
+		enter_point = locate(/obj/structure/ladder/scp1102ladder) in GLOB.SCP_list
+	var/turf/T = get_turf(enter_point)
+	if(!T)
+		to_chat(user, SPAN_WARNING("The suitcase appears empty!"))
+		return
+	user.visible_message(SPAN_NOTICE("\The [user] begins to try to climb into [src]!"))
+	if(!do_after(user, 2 SECONDS))
+		return
+	user.drop_from_inventory(src, get_turf(user))
+	user.forceMove(T)
+	playsound(src, pick(enter_point.climbsounds), 50)
+	playsound(enter_point, pick(enter_point.climbsounds), 50)
+	visible_message(SPAN_WARNING("The [user] has opened the [src] and climbed down into it!"))
 
-/obj/structure/ladder_scp_1102
-	name = "ladder"
-	desc = "A ladder. You can climb it up and down."
-	icon_state = "ladder10"
-	icon = 'icons/obj/structures.dmi'
-	anchored = TRUE
+//Ladder
 
-/obj/structure/ladder_scp_1102/attackby(obj/item/C as obj, mob/user as mob)
-	climb(user)
+/obj/structure/ladder/scp1102ladder
+	allowed_directions = UP
 
-/obj/structure/ladder_scp_1102/attack_hand(mob/M)
-	climb(M)
+/obj/structure/ladder/scp1102ladder/Initialize()
+	. = ..()
+	SCP = new /datum/scp( //This is here just so we can reference it in the global SCP list
+		src, // Ref to actual SCP atom
+		"ladder", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"1102-RU-1" //Numerical Designation
+	)
 
-/obj/structure/ladder_scp_1102/proc/climb(mob/user)
-	if(do_after(user, 2.5 SECONDS, bonus_percentage = 25))
-		var/turf/T = get_turf(pick(GLOB.scp1102))
-		user.forceMove(T)
-		playsound(src, pick(climbsounds), 50)
-		user.visible_message(SPAN_WARNING("[user] climbs up the ladder!"))
+//Overrides
+
+/obj/structure/ladder/scp1102ladder/getTargetLadder(mob/M)
+	if(!target_up)
+		target_up = locate(/obj/item/storage/briefcase/scp1102ru) in GLOB.SCP_list //Technically a type mismatch but uhhhhh ladders never check so this works without runtimes
+	return target_up

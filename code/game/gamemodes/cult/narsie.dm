@@ -155,7 +155,7 @@ var/global/list/scarletking_list = list()
 	return 1
 
 /obj/singularity/scarletking/proc/narsiefloor(turf/T)//leaving "footprints"
-	if(!(istype(T, /turf/simulated/wall/cult)||istype(T, /turf/space)))
+	if(!(istype(T, /turf/simulated/wall/cult) || isspaceturf(T)))
 		if(T.icon_state != "cult-narsie")
 			T.desc = "Something that goes beyond your understanding went this way."
 			T.icon = 'icons/turf/flooring/cult.dmi'
@@ -198,7 +198,7 @@ var/global/list/scarletking_list = list()
 				consume(AM)
 				continue
 
-		if (dist <= consume_range && !istype(A, /turf/space))
+		if (dist <= consume_range && !isspaceturf(A))
 			var/turf/T = A
 			if(T.holy)
 				T.holy = 0 //the scarlet king doesn't give a shit about sacred grounds.

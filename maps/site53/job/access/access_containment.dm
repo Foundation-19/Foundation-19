@@ -10,7 +10,7 @@
 	access_type = ACCESS_TYPE_CONTAINMENT
 	guestpass_access_prerequisites = list(ACCESS_SCIENCE_LVL1, ACCESS_SECURITY_LVL1)
 
-/datum/access/containment_scp_017
+/datum/access/containment_scp017
 	id = ACCESS_CONTAINMENT_SCP_017
 	desc = "SCP-017 Containment"
 	access_type = ACCESS_TYPE_CONTAINMENT
@@ -22,7 +22,7 @@
 	access_type = ACCESS_TYPE_CONTAINMENT
 	guestpass_access_prerequisites = list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3)
 
-/datum/access/containment_scp_066
+/datum/access/containment_scp066
 	id = ACCESS_CONTAINMENT_SCP_066
 	desc = "SCP-066 Containment"
 	access_type = ACCESS_TYPE_CONTAINMENT
@@ -40,7 +40,7 @@
 	access_type = ACCESS_TYPE_CONTAINMENT
 	guestpass_access_prerequisites = list(ACCESS_PLACEHOLDER_YOU_SHOULDNT_HAVE_THIS) // list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL4)
 
-/datum/access/containment_scp_080
+/datum/access/containment_scp080
 	id = ACCESS_CONTAINMENT_SCP_080
 	desc = "SCP-080 Containment"
 	access_type = ACCESS_TYPE_CONTAINMENT
@@ -88,7 +88,7 @@
 	access_type = ACCESS_TYPE_CONTAINMENT
 	guestpass_access_prerequisites = list(ACCESS_SCIENCE_LVL1, ACCESS_SECURITY_LVL1)
 
-/datum/access/containment_scp_173
+/datum/access/containment_scp173
 	id = ACCESS_CONTAINMENT_SCP_173
 	desc = "SCP-173 Containment"
 	access_type = ACCESS_TYPE_CONTAINMENT

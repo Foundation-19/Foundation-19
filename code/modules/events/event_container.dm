@@ -133,7 +133,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brain Expansion",						/datum/event/brain_expansion,			100,	list(ASSIGNMENT_SCIENTIST = -10), 0, 10, 100),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mail Delivery",							/datum/event/mail,						0,		list(ASSIGNMENT_ANY = 5), 1),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Psi Balm",								/datum/event/psi/balm,					20),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Psi Wail",								/datum/event/psi/wail,					20)
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Psi Wail",								/datum/event/psi/wail,					20),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disease Outbreak",						/datum/event/disease_outbreak,			40,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_SCIENCE = 10)),
 	)
 
 /datum/event_container/moderate
@@ -144,12 +145,14 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Communication Blackout",				/datum/event/communications_blackout,	50,		list(ASSIGNMENT_AIC = 100, ASSIGNMENT_ENGINEER = 20)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Electrical Storm",			/datum/event/electrical_storm, 			10,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_JANITOR = 10)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Ion Storm",					/datum/event/ionstorm, 					0,		list(ASSIGNMENT_AIC = 50, ASSIGNMENT_CYBORG = 50, ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SCIENTIST = 5)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Grid Check",							/datum/event/grid_check, 				10,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SECURITY = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Prison Break",							/datum/event/prison_break,				0,		list(ASSIGNMENT_SECURITY = 100)),
 		new /datum/event_meta/extended_removed(EVENT_LEVEL_MODERATE, "Random Antagonist",	/datum/event/random_antag,				2,		list(ASSIGNMENT_SECURITY = 1), 1, 0, 5),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spider Infestation",					/datum/event/spider_infestation, 		25,		list(ASSIGNMENT_SECURITY = 15), 1),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 40)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Memetic Spasm",						/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20))
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Memetic Spasm",						/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Disease Outbreak",						/datum/event/disease_outbreak,			25,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_SCIENCE = 10)),
 	)
 
 /datum/event_container/major
@@ -159,7 +162,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Blob",									/datum/event/blob, 						0,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20), 1),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Vines",									/datum/event/spacevine,					0,		list(ASSIGNMENT_ANY = 5, ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Wormholes",								/datum/event/wormholes,					10,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_SECURITY = 25)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Grid Check",							/datum/event/grid_check, 				40,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SECURITY = 10))
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Disease Outbreak",						/datum/event/disease_outbreak,			0,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_SCIENCE = 10)),
 	)
 
 // Returns how many characters are currently active(not logged out, not AFK for more than 10 minutes)

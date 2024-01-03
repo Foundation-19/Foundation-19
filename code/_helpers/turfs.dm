@@ -91,10 +91,10 @@
 */
 
 /proc/is_space_turf(turf/T)
-	return istype(T, /turf/space)
+	return isspaceturf(T)
 
 /proc/is_not_space_turf(turf/T)
-	return !is_space_turf(T)
+	return !isspaceturf(T)
 
 /proc/is_open_space(turf/T)
 	return isopenspace(T)
@@ -124,7 +124,7 @@
 	if (!T)
 		return "The spawn location doesn't seem to exist. Please contact an admin via adminhelp if this error persists."
 
-	if(istype(T, /turf/space)) // Space tiles
+	if(isspaceturf(T)) // Space tiles
 		return "Spawn location is open to space."
 	var/datum/gas_mixture/air = T.return_air()
 	if(!air)
@@ -138,6 +138,11 @@
 	var/datum/gas_mixture/environment = T ? T.return_air() : null
 	var/pressure =  environment ? environment.return_pressure() : 0
 	if(pressure < SOUND_MINIMUM_PRESSURE)
+		return TRUE
+	return FALSE
+
+/proc/is_dark(turf/T, darkness_threshold = 0.03)
+	if(T.get_lumcount() <= darkness_threshold)
 		return TRUE
 	return FALSE
 

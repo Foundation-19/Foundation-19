@@ -150,7 +150,7 @@
 		list("inaprovaline",  "inaprovaline",  /datum/reagent/medicine/inaprovaline,      80),
 		list("dylovene",      "dylovene",      /datum/reagent/medicine/dylovene,          80),
 		list("hyronalin",     "hyronalin",     /datum/reagent/medicine/hyronalin,         80),
-		list("spaceacillin",  "spaceacillin",  /datum/reagent/medicine/spaceacillin,      80),
+		list("penicillin",    "penicillin",    /datum/reagent/medicine/penicillin,      80),
 		list("tramadol",      "tramadol",      /datum/reagent/medicine/painkiller/tramadol,          80)
 		)
 
@@ -167,7 +167,7 @@
 		list("glucose",       "glucose",       /datum/reagent/nutriment/glucose, 80),
 		list("hyronalin",     "hyronalin",     /datum/reagent/medicine/hyronalin,         20),
 		list("dermaline",     "dermaline",     /datum/reagent/medicine/dermaline,         20),
-		list("spaceacillin",  "spaceacillin",  /datum/reagent/medicine/spaceacillin,      20),
+		list("penicillin",    "penicillin",    /datum/reagent/medicine/penicillin,      20),
 		list("tramadol",      "tramadol",      /datum/reagent/medicine/painkiller/tramadol,          20)
 		)
 

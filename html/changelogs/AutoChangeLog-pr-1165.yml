@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: Added SCP-914. Shove your local class D on "Very Fine" into it to find
+      out what it does!

@@ -32,7 +32,7 @@
 		threatening = TRUE
 		last_threaten_time = world.time
 
-		if (holder.say_list)
+		if(holder.say_list.say_threaten)
 			holder.ISay(pick(holder.say_list.say_threaten))
 			playsound(holder, holder.say_list.threaten_sound, 50, 1) // We do this twice to make the sound -very- noticable to the target.
 			playsound(target, holder.say_list.threaten_sound, 50, 1) // Actual aim-mode also does that so at least it's consistant.
@@ -124,7 +124,7 @@
 // Simply plays a sound chosen out of a list
 /datum/ai_holder/proc/PlayMobSound(list/potential_sounds)
 	if(LAZYLEN(potential_sounds))
-		var/result = pickweight(holder.say_list.emote_see_sounds)
+		var/result = pickweight(potential_sounds)
 		if(result != null)
 			playsound(holder, result, 50, 1)
 

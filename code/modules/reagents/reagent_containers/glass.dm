@@ -236,7 +236,7 @@
 
 /obj/item/reagent_containers/glass/beaker/vial/scp008/New()
 	..()
-	reagents.add_reagent(/datum/reagent/zombie, 30)
+	reagents.add_reagent(/datum/reagent/scp008, 30)
 	update_icon()
 
 /obj/item/reagent_containers/glass/beaker/insulated
