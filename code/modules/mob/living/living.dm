@@ -822,7 +822,6 @@ default behaviour is:
 		return
 
 	to_chat(src, "<b>You are now \the [src]!</b>")
-	to_chat(src, SPAN_NOTICE("Remember to stay in character for a mob of this type!"))
 	return 1
 
 /mob/living/reset_layer()
@@ -951,7 +950,7 @@ default behaviour is:
 		if(GLOB.antag_names_to_ids_[mind.special_role] in GLOB.all_antag_types_)
 			exp_list[EXP_TYPE_ANTAG] = minutes
 
-	if(src.isSCP())
+	if(SCP)
 		exp_list[EXP_TYPE_SCP] = minutes
 
 	return exp_list

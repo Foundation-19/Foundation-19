@@ -34,12 +34,23 @@ the HUD updates properly! */
 		return
 
 	if(isscp173(M)) //Only 173 should have a blink HUD (Also this is neccesary for maintaing the blink HUD while caged)
-		var/mob/living/scp_173/S = M
-		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scp173s)
+		var/mob/living/scp173/S = M
+		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt)
 		for(var/mob/living/carbon/human/victim in dview(7, istype(S.loc, /obj/structure/scp173_cage) ? S.loc : S))
 			if(victim.stat) //The unconscious cant blink, and therefore do not need to be added to the blink HUD
 				continue
 			P.Client.images += victim.hud_list[BLINK_HUD]
+
+//Pestilence Hud for 049.
+/proc/process_pestilence_hud(mob/M, mob/Alt)
+	if(!can_process_hud(M))
+		return
+
+	if(isscp049(M) || isspecies(M, SPECIES_SCP049_1))
+		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt)
+		for(var/mob/living/carbon/human/H in view(world.view, M))
+			if(H.humanStageHandler.getStage("Pestilence"))
+				P.Client.images += H.hud_list[PESTILENCE_HUD]
 
 //Security HUDs. Pass a value for the second argument to enable implant viewing or other special features.
 /proc/process_sec_hud(mob/M, advanced_mode, mob/Alt)
@@ -66,17 +77,15 @@ the HUD updates properly! */
 		P.Client.images += dirtyfloor.hud_overlay
 
 // SCRAMBLE gear.
-/proc/process_scramble_hud(mob/M,faulty_goggles = FALSE, mob/Alt)
+/proc/process_scramble_hud(mob/M, mob/Alt)
 	if(!can_process_hud(M))
 		return
 
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scramble_hud_users)
-	if(!faulty_goggles)
-		GLOB.scramble_hud_protected |= M
 	// The only things that will have scramble hud, or so we assume
 	// is SCP-096 (or, if admin shenanigans were happening, SCP-096s)
-	for(var/mob/living/simple_animal/hostile/scp096/shylad in P.Mob.in_view(P.Turf))
-		P.Client.images += shylad.hud_scramble
+	for(var/mob/living/scp096/shylad in P.Mob.in_view(P.Turf))
+		P.Client.images += new /image/hud_overlay('icons/SCP/hud_scramble.dmi', shylad, "scramble-alive")
 
 /datum/arranged_hud_process
 	var/client/Client
@@ -84,7 +93,8 @@ the HUD updates properly! */
 	var/turf/Turf
 
 /proc/arrange_hud_process(mob/M, mob/Alt, list/hud_list)
-	hud_list |= M
+	if(hud_list)
+		hud_list |= M
 	var/datum/arranged_hud_process/P = new
 	P.Client = M.client
 	P.Mob = Alt ? Alt : M
@@ -109,7 +119,6 @@ the HUD updates properly! */
 	GLOB.sec_hud_users -= src
 	GLOB.jani_hud_users -= src
 	GLOB.scramble_hud_users -= src
-	GLOB.scramble_hud_protected -= src
 
 /mob/proc/in_view(turf/T) //this is kind of stupid - dark
 	return view(T)

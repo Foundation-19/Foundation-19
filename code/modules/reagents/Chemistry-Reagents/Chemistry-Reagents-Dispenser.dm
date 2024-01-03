@@ -324,7 +324,12 @@
 			H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
 
 			var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
-			heart.scp3349_induced = TRUE
+			heart.SCP = new /datum/scp(
+				src, // Ref to actual SCP atom
+				"", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+				SCP_KETER, //Obj Class
+				"3349-1" //Numerical Designation
+			)
 
 /datum/reagent/sugar
 	name = "Sugar"

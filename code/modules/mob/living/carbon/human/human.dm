@@ -5,7 +5,7 @@
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
 
-	var/list/hud_list[11]
+	var/list/hud_list[12]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 	var/obj/item/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_canmove() call.
 	var/list/stance_limbs
@@ -45,6 +45,7 @@
 	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[STATUS_HUD_OOC]  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 	hud_list[BLINK_HUD]       = new /image/hud_overlay('icons/mob/hud_blink.dmi', src, "15") //This is a little janky because the health and blink huds are similiar but I doubt 173 will ever wear health_HUD glasses
+	hud_list[PESTILENCE_HUD]  = new /image/hud_overlay('icons/SCP/scp-049.dmi', src, "pestilence")
 
 	GLOB.human_mob_list |= src
 	. = ..()
@@ -1523,7 +1524,7 @@
 	if(bpm >= PULSE_MAX_BPM)
 		return method ? ">[PULSE_MAX_BPM]" : "extremely weak and fast, the artery feels like a thread"
 
-	if(heart_organ.scp3349_induced)
+	if(heart_organ.SCP?.designation == "3349-1")
 		return method ? "IRREGULARITY WITH [bpm]" : "a strange purring noise with a BPM of [bpm + rand(-10, 10)]"
 	else
 		return "[method ? bpm : bpm + rand(-10, 10)]"

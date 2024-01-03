@@ -155,9 +155,9 @@
 			if (!istype(C) || !(C.body_parts_covered & FACE))
 				S.extinguish()
 
-	if(istype(L, /mob/living/scp_457))
+	if(istype(L, /mob/living/simple_animal/hostile/scp457))
 		L.adjustBruteLoss(amount * 2)
-		to_chat(L,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
+		L.visible_message(SPAN_DANGER("The [L]'s flame sizzles and flickers where the water touches it"), SPAN_DANGER("You are weakend by the water!"))
 		remove_self(amount)
 
 	if(istype(L))

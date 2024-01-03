@@ -198,3 +198,10 @@
 	if(damflags & DAM_BIO)
 		res += "bio"
 	return english_list(res)
+
+///Lets us attempt to set faction of something not explicitly defined as a mob
+/proc/set_faction(mob/M, faction)
+	if(!istype(M))
+		return FALSE
+
+	M.faction = faction

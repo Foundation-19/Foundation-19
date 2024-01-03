@@ -85,12 +85,8 @@
 		var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
 		eyes?.handle_blink()
 
-		if(!client && !mind)
-			species.handle_npc(src)
-
-
-	if (prob(1) && prob(5) && type == /mob/living/carbon/human && !isscp049_1(src) && !pestilence) // a 1 in 2,000 chance every 2 seconds = 66 minutes?
-		pestilence = TRUE
+	if (prob(0.25) && !isspecies(src, SPECIES_SCP049_1) && !isscp049(src))
+		humanStageHandler.setStage("Pestilence", 1)
 
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
@@ -896,7 +892,7 @@
 	//0.1% chance of playing a scary sound to someone who's in complete darkness
 	if(isturf(loc) && rand(1,1000) == 1)
 		var/turf/T = loc
-		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
+		if(is_dark(T, LIGHTING_SOFT_THRESHOLD))
 			playsound_local(src, SFX_SCARY_SOUND, 50, 1, -1)
 
 	var/area/A = get_area(src)

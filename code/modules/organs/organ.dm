@@ -31,9 +31,6 @@ var/list/organ_cache = list()
 	// Bioprinter stats
 	var/can_be_printed = TRUE
 	var/print_cost
-	// SCP-13
-	var/scp106_affected = FALSE
-	var/scp106_vulnerable = TRUE
 
 
 /obj/item/organ/Destroy()

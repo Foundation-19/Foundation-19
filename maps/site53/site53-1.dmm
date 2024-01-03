@@ -19670,7 +19670,7 @@
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/soft/orange,
 /obj/item/clothing/head/soft/yellow,
-/obj/item/clothing/mask/smokable/cigarette/scp_420_j,
+/obj/item/clothing/mask/smokable/cigarette/scp420J,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
 "Wh" = (
@@ -19735,7 +19735,7 @@
 	dir = 8
 	},
 /obj/machinery/door/window/brigdoor/eastleft,
-/obj/item/weapon/scp1102ru,
+/obj/item/storage/briefcase/scp1102ru,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "Wt" = (
