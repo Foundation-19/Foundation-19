@@ -53,7 +53,9 @@
 	var/is_fusion_fuel
 	var/list/chem_products				  //Used with the grinder to produce chemicals.
 	var/hidden_from_codex
-	var/codex_desc
+	var/lore_text
+	var/mechanics_text
+	var/antag_text
 
 	// Shards/tables/structures
 	var/shard_type = SHARD_SHRAPNEL       // Path of debris object.

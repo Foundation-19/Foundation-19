@@ -121,7 +121,6 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/meson/Initialize()
 	. = ..()
@@ -141,7 +140,6 @@
 	toggleable = TRUE
 	action_button_name = "Toggle Goggles"
 	electric = TRUE
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/science/prescription
 	name = "prescription science goggles"
@@ -165,7 +163,6 @@
 	off_state = "denight"
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/night/Initialize()
 	. = ..()
@@ -183,7 +180,6 @@
 	siemens_coefficient = 0.6
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
@@ -191,7 +187,6 @@
 	icon_state = "monocle"
 	item_state = "headset" // lol
 	body_parts_covered = 0
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/material
 	name = "optical material scanner"
@@ -204,7 +199,6 @@
 	toggleable = TRUE
 	vision_flags = SEE_OBJS
 	electric = TRUE
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/threedglasses
 	name = "3D glasses"
@@ -212,7 +206,6 @@
 	icon_state = "3d"
 	item_state = "3d"
 	body_parts_covered = 0
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/welding
 	name = "welding goggles"
@@ -225,7 +218,6 @@
 	var/up = FALSE
 	flash_protection = FLASH_PROTECTION_MAJOR
 	tint = TINT_HEAVY
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/welding/attack_self()
 	toggle()
@@ -272,7 +264,6 @@
 	use_alt_layer = TRUE
 	flash_protection = FLASH_PROTECTION_MAJOR
 	tint = TINT_HEAVY
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/augment_binoculars
 	name = "adaptive binoculars"
@@ -284,7 +275,6 @@
 	zoomdevicename = "lenses"
 	electric = TRUE
 	acid_resistance = -1
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/augment_binoculars/attack_self(mob/user)
 	if(zoom)

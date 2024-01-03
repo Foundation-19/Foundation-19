@@ -16,7 +16,6 @@ GLOBAL_LIST_EMPTY(possible_420j)
 	chem_volume = 100
 	filling = list()
 	SCP = /datum/scp/scp_420_j
-	hidden_from_codex = TRUE
 
 /obj/item/clothing/mask/smokable/cigarette/scp_420_j/Process()
 	. = ..()

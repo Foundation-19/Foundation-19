@@ -5,7 +5,6 @@
 	desc = "It's a hat used by chefs to keep hair out of your food. Judging by the food in the mess, they don't work."
 	icon_state = "chefhat"
 	item_state = "chefhat"
-	hidden_from_codex = FALSE
 
 //Captain
 /obj/item/clothing/head/caphat
@@ -17,7 +16,6 @@
 		slot_r_hand_str = "caphat",
 		)
 	body_parts_covered = 0
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/caphat/cap
 	name = "captain's cap"
@@ -42,7 +40,6 @@
 	icon_state = "chaplain_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
-	hidden_from_codex = FALSE
 
 //Chaplain
 /obj/item/clothing/head/nun_hood
@@ -51,7 +48,6 @@
 	icon_state = "nun_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
-	hidden_from_codex = FALSE
 
 //Medical
 /obj/item/clothing/head/surgery
@@ -59,7 +55,6 @@
 	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs."
 	icon_state = "surgcap"
 	flags_inv = BLOCKHEADHAIR
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/surgery/purple
 	name = "purple surgical cap"
@@ -99,7 +94,6 @@
 	desc = "A beret, an artists favorite headwear."
 	icon_state = "beret"
 	body_parts_covered = 0
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/beret/sec
 	name = "Security Officer Beret"

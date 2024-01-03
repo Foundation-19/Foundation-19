@@ -10,7 +10,6 @@
 	siemens_coefficient = 0.8
 	body_parts_covered = 0
 	wizard_garb = TRUE
-	hidden_from_codex = TRUE
 
 /obj/item/clothing/head/wizard/red
 	name = "red wizard hat"
