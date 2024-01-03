@@ -44,6 +44,13 @@
 	for(var/O in parts_to_spawn)
 		connected_parts += new O(get_turf(src))
 
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"clockwork mechanism", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"914" //Numerical Designation
+	)
+
 /obj/structure/scp_914/Destroy()
 	for(var/obj/O in connected_parts)
 		QDEL_NULL(O)
