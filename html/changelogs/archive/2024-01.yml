@@ -12,3 +12,14 @@
   - bugfix: Cargo train trolley can go up stairs
   - bugfix: Spellchecked and re-did access for Ethics Committee Liaison and Internal
       Tribunal Department Rep offices.
+2024-01-03:
+  cheesePizza2:
+  - rscadd: Adds the IT Technician role, an engineering side-role responsible for
+      keeping the server room operational and safe from malware.
+  - rscadd: Adds the RAISA Agent role, a high-level EZ security role that protects
+      against corporate espionage.
+  - rscadd: Overhauls the archives into a server room. Currently, the only server
+      is a database storing all SCP files.
+  - rscadd: Converts all SCP files into digital files.
+  - rscdel: Removes the Archivist role.
+  - bugfix: Space should (hopefully) stop appearing on Earth.
