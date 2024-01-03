@@ -206,6 +206,17 @@
 	if(LAZYLEN(death_sounds))
 		playsound(src, pick(death_sounds), 50, TRUE)
 
+// Reset icon on revival
+/mob/living/simple_animal/rejuvenate()
+	var/was_dead = stat == DEAD
+	. = ..()
+	if(was_dead && stat != DEAD)
+		icon_state = icon_living
+		switch_from_dead_to_living_mob_list()
+		set_stat(CONSCIOUS)
+		set_density(initial(density))
+		bleed_ticks = 0
+
 /mob/living/simple_animal/proc/drop_loot()
 	if(!LAZYLEN(loot_list))
 		return
