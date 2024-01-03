@@ -52,6 +52,26 @@
 		H.holder = src
 		H.activate()
 
+///This allows us to run specific hallucination effects rather than it being random, pass a list containing the hallucination type paths
+/mob/living/carbon/proc/do_unique_hallucination(hallucination_list)
+	if(!islist(hallucination_list))
+		return
+	for(var/H in hallucination_list)
+		if(!ispath(H, /datum/hallucination))
+			continue
+		var/datum/hallucination/newHallucination = new H
+		if(!newHallucination.allow_duplicates && (locate(newHallucination) in hallucinations))
+			continue
+		newHallucination.holder = src
+		newHallucination.activate()
+
+/mob/living/carbon/proc/end_hallucination(hallucination_list)
+	if(!islist(hallucination_list))
+		return
+	for(var/datum/hallucination/H in hallucinations)
+		if(is_type_in_list(H, hallucination_list))
+			H.end()
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //Hallucination effects datums
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -200,7 +220,7 @@
 
 /datum/hallucination/mirage/start()
 	var/list/possible_points = list()
-	for(var/turf/simulated/floor/F in view(holder, world.view+1))
+	for(var/turf/simulated/floor/F in view(holder.client.eye, world.view+1))
 		possible_points += F
 	if(possible_points.len)
 		for(var/i = 1 to number)
@@ -233,11 +253,8 @@
 		I.color = COLOR_BLOOD_HUMAN
 		return I
 	else
-		var/image/I = image('icons/obj/ammo.dmi', "s-casing-spent", layer = BELOW_TABLE_LAYER)
-		I.layer = BELOW_TABLE_LAYER
-		I.dir = pick(GLOB.alldirs)
-		I.pixel_x = rand(-10,10)
-		I.pixel_y = rand(-10,10)
+		var/image/I = image('icons/effects/blood.dmi', "gib[pick("arm", "leg", "torso")]_flesh", layer = BELOW_TABLE_LAYER, dir = pick(GLOB.alldirs), pixel_x = rand(-10,10), pixel_y = rand(-10,10))
+		I.color = WOOD_COLOR_PALE
 		return I
 
 //Fake attack

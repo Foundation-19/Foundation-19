@@ -595,111 +595,61 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/become_scp()
 	set category = "Ghost"
-	set name = "Become Euclid/Keter SCP"
+	set name = "Become an SCP"
 	set desc = "Take control of a clientless SCP."
 
-	if(jobban_isbanned(src,"Non-Safe SCP"))
-		to_chat(src, SPAN_DANGER("You are banned from playing as Non-Safe SCPs and cannot become one."))
+	if(!MayRespawn(TRUE, SCP_SPAWN_DELAY))
 		return
 
-	if (world.time - timeofdeath >= 10 MINUTES || skip_respawn_timer)
+	var/list/scp_type_ref_list = list()
 
-		// Someone has to rework this garbage, eventually
-		var/list/scps = list()
+	for(var/atom/PossibleSCP in GLOB.SCP_list)
+		if(!canBecomeSCP(PossibleSCP))
+			continue
+		var/datum/scp/PSCP = PossibleSCP.SCP
+		var/select_string = "SCP-[PSCP.designation] | [PSCP.classification][(PSCP.metaFlags & SCP_ROLEPLAY) ? " | Roleplay" : ""]"
 
-		for(var/scp049 in GLOB.scp049s)
-			var/mob/M = scp049
-			if(!M.client)
-				scps += M
+		var/new_select_string = select_string
+		var/count = 1
+		while(scp_type_ref_list[new_select_string])
+			new_select_string = "[select_string] ([count])"
+			count++
 
-		// Requires logistics to buy goats or good security team to subdue
-		for(var/scp2427 in GLOB.scp2427_3s)
-			var/mob/M = scp2427
-			if(!M.client && (length(GLOB.clients) >= 20))
-				scps += M
+		scp_type_ref_list[new_select_string] = PossibleSCP
 
-		// Technically not difficult to recontain, but will easily kill anyone
-		for(var/scp106 in GLOB.scp106s)
-			var/mob/M = scp106
-			if(!M.client && (length(GLOB.clients) >= 20))
-				scps += M
+	if(LAZYLEN(scp_type_ref_list))
+		var/selected_scp_string = tgui_input_list(src, "Which SCP do you want to take control of?", "SCP Select", scp_type_ref_list)
+		if(!LAZYLEN(selected_scp_string))
+			return
 
-		for(var/scp173 in GLOB.scp173s)
-			var/mob/M = scp173
-			if(!M.client && (length(GLOB.clients) >= 30))
-				scps += M
-
-		for(var/scp527 in GLOB.scp527s)
-			var/mob/M = scp527
-			if(!M.client)// && (length(GLOB.clients) >= 25))
-				scps += M
-
-		// add new humanoid SCPs here or they won't be playable - Kachnov
-		if(scps.len)
-			var/mob/living/scp = tgui_input_list(src, "Which Euclid/Keter SCP do you want to take control of?", "Unsafe SCP Select", scps)
-			if(isscp106(scp) && world.time < 40 MINUTES)
-				to_chat(src, "You cannot join as this SCP for [((40 MINUTES) - world.time)/600] more minutes.")
-				return
-			if(isscp049(scp) && world.time < 10 MINUTES) /*&& !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list())¸*/
-				to_chat(src, "You cannot join as this SCP for [((10 MINUTES) - world.time)/600] more minutes.")
-				return
-			if(isscp527(scp) && world.time < 15 MINUTES)
-				to_chat(src, "You cannot join as this SCP for [((15 MINUTES) - world.time)/600] more minutes.")
-				return
-
-			if(scp && !scp.client)
-				to_chat(src, SPAN_WARNING("Keep in mind that you can and will be in your cage for long periods of time and even entire rounds."))
-				scp.do_possession(src)
-			else
-				to_chat(src, "<span class = 'danger'>This SCP has already been taken by someone else.</span>")
-		else
-			to_chat(src, "<span class = 'danger'>There are no available Euclid/Keter SCPs.</span>")
+		var/mob/living/selected_scp = scp_type_ref_list[selected_scp_string]
+		var/agreement = tgui_alert(src, "Warning! SCPs are likley to spend a long amount of time within their containment chamber and are not guaranteed to be let out![(selected_scp.SCP.metaFlags & SCP_ROLEPLAY) ? " Additionally, this is a roleplay oriented SCP. That means you are expected to behave like the SCP would in lore, and failing to do so would result in ban from playing roleplay SCPs." : ""]", "Are you sure?", list("Yes","No"))
+		if(!LAZYLEN(agreement) || (agreement == "No"))
+			return
+		if(!canBecomeSCP(selected_scp)) //This is incase something changes while we are waiting for a response from the ghost
+			to_chat(src, SPAN_WARNING("SCP-[selected_scp.SCP.designation] is no longer avalible!"))
+			return
+		selected_scp.do_possession(src)
 	else
-		to_chat(src, "<span class = 'danger'>You cannot spawn as a Euclid/Keter SCP for [round(((10 MINUTES) - (world.time - timeofdeath))/600)] more minutes.</span>")
+		to_chat(src, SPAN_WARNING("There are no SCPs avalible yet! Keep in mind that not all SCPs are avalible round start and more may become avalible as the round goes on!"))
 
-/mob/observer/ghost/verb/become_safe()
-	set name = "Become Safe SCP"
-	set category = "Ghost"
-
-	// if(config.disable_player_safe_scps)
-	// 	to_chat(src, SPAN_WARNING("Spawning as adorable Safe SCPs is currently disabled."))
-	// 	return
-
-	if(jobban_isbanned(src, "Safe SCP"))
-		to_chat(src, SPAN_DANGER("You are banned from playing as safe SCPs and cannot become one."))
-		return
-
-	if(!MayRespawn(1, ANIMAL_SPAWN_DELAY))
-		return
-
-	//find a viable Safe class candidate
-	var/list/scps = list()
-/*	for (var/scp131 in GLOB.scp131s)
-		var/mob/M = scp131
-		if (!M.client)
-			scps += M*/
-	for (var/scp999 in GLOB.scp999s)
-		var/mob/M = scp999
-		if (!M.client)
-			scps += M
-	for (var/scp529 in GLOB.scp529s)
-		var/mob/M = scp529
-		if (!M.client)
-			scps += M
-	if (scps.len)
-		var/mob/living/scp = tgui_input_list(src, "Which Safe SCP do you want to take control of?", "Safe SCP Select", scps)
-		if (isscp999(scp) && world.time < 5 MINUTES)
-			to_chat(src, "You cannot join as this SCP for [((5 MINUTES) - world.time)/600] more minutes.")
-//		else if (isscp131(scp) && world.time < 5 MINUTES)
-//			to_chat(src, "You cannot join as this SCP for [((5 MINUTES) - world.time)/600] more minutes.")
-//		else if (isscp529(scp) && world.time < 5 MINUTES)
-//			to_chat(src, "You cannot join as this SCP for [((5 MINUTES) - world.time)/600] more minutes.")
-		else if (scp && !scp.client)
-			scp.do_possession(src)
-			announce_ghost_joinleave(src, 0, "They are now a Safe SCP.")
-			if(src)
-				to_chat(src, SPAN_INFO("You are now a Safe SCP. Be sure to read your relevant SCP page and roleplay accordingly!"))
-		else
-			to_chat(src, SPAN_WARNING("Someone has already taken control of this SCP."))
+/mob/observer/ghost/proc/canBecomeSCP(mob/PossibleSCP)
+	var/datum/scp/PSCP = PossibleSCP.SCP
+	if(!(PSCP.metaFlags & SCP_PLAYABLE))
+		return FALSE
+	if(world.time < PSCP.min_time)
+		return FALSE
+	if(LAZYLEN(GLOB.clients) < PSCP.min_playercount)
+		return FALSE
+	if(PossibleSCP.client)
+		return FALSE
+	if((PSCP.classification == SCP_SAFE))
+		if(jobban_isbanned(src, "Safe SCP"))
+			return FALSE
 	else
-		to_chat(src, SPAN_WARNING("All playable Safe SCPs are currently being played."))
+		if(jobban_isbanned(src,"Non-Safe SCP"))
+			return FALSE
+	if(PossibleSCP.stat == DEAD)
+		return FALSE
+
+	return TRUE

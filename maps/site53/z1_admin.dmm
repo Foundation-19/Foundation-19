@@ -694,7 +694,7 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp1102entrance)
 "fx" = (
-/obj/structure/ladder_scp_1102,
+/obj/structure/ladder/scp1102ladder,
 /turf/unsimulated/floor/scp1102,
 /area/site53/lhcz/scp1102entrance)
 "fy" = (
@@ -819,10 +819,6 @@
 /obj/structure/closet,
 /obj/item/stack/material/plastic/ten,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/lino,
-/area/site53/lhcz/scp1102entrance)
-"fX" = (
-/obj/structure/filingcabinet/scp,
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp1102entrance)
 "fY" = (
@@ -5259,7 +5255,6 @@
 /area/centcom/goc)
 "wt" = (
 /obj/structure/scp173_cage,
-/obj/item/paper/scp/euclid/scp173,
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
 	},
@@ -6633,31 +6628,10 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"Gq" = (
-/obj/structure/filingcabinet/scp/safe/scp1000to1999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
 "Gs" = (
 /obj/machinery/door/airlock/vault{
 	name = "Mobile Task Force Base"
 	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"GE" = (
-/obj/structure/filingcabinet/scp/safe/scp1to999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"GI" = (
-/obj/structure/filingcabinet/scp/safe/scp2000to2999,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -6670,13 +6644,6 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "techmaint"
-	},
-/area/centcom)
-"GY" = (
-/obj/structure/filingcabinet/scp/safe/scp3000to3999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
 	},
 /area/centcom)
 "Hn" = (
@@ -7319,34 +7286,6 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"Ll" = (
-/obj/structure/filingcabinet/scp/euclid/scp1000to1999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"Lp" = (
-/obj/structure/filingcabinet/scp/euclid/scp1to999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"Lr" = (
-/obj/structure/filingcabinet/scp/euclid/scp2000to2999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"Ls" = (
-/obj/structure/filingcabinet/scp/euclid/scp3000to3999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
 "Lt" = (
 /obj/structure/table/rack,
 /obj/item/clothing/ears/earmuffs,
@@ -7715,7 +7654,6 @@
 /obj/effect/floor_decal/corner/research/border{
 	dir = 4
 	},
-/obj/item/paper/scp/euclid/scp096,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -7873,20 +7811,6 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"Nt" = (
-/obj/structure/filingcabinet/scp/keter/scp1000to1999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"Nw" = (
-/obj/structure/filingcabinet/scp/keter/scp1to999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
 "Nx" = (
 /turf/unsimulated/mineral,
 /area/centcom)
@@ -7900,20 +7824,6 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/misc.dmi';
 	icon_state = "concrete"
-	},
-/area/centcom)
-"NM" = (
-/obj/structure/filingcabinet/scp/keter/scp2000to2999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"NN" = (
-/obj/structure/filingcabinet/scp/keter/scp3000to3999,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
 	},
 /area/centcom)
 "NO" = (
@@ -8605,7 +8515,6 @@
 /obj/effect/floor_decal/corner/research/border{
 	dir = 6
 	},
-/obj/item/paper/scp/euclid/scp096,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -11925,11 +11834,11 @@ tq
 Du
 Du
 tq
-Gq
 gp
-Ll
 gp
-Nt
+gp
+gp
+gp
 eE
 gp
 gp
@@ -12127,11 +12036,11 @@ tq
 gp
 gp
 tq
-GE
 gp
-Lp
 gp
-Nw
+gp
+gp
+gp
 eE
 gp
 gp
@@ -12329,11 +12238,11 @@ tq
 gp
 gp
 tq
-GI
 gp
-Lr
 gp
-NM
+gp
+gp
+gp
 eE
 gp
 gp
@@ -12531,11 +12440,11 @@ tq
 gp
 gp
 tq
-GY
 gp
-Ls
 gp
-NN
+gp
+gp
+gp
 eE
 gp
 gp
@@ -36466,7 +36375,7 @@ fo
 fw
 fD
 eY
-fX
+eY
 eP
 gx
 eQ

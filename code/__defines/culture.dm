@@ -18,6 +18,7 @@
 #define FACTION_UIU              "Unusual Incidents Unit"
 #define FACTION_OTHER            "Other faction"
 #define FACTION_TEST_SUBJECTS    "Test subjects"
+#define FACTION_SCPS			"SCP Anomalies"
 
 #define HOME_SYSTEM_EARTH      "Earth"
 #define HOME_SYSTEM_STATELESS  "Stateless"

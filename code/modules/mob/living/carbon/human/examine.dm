@@ -9,6 +9,12 @@
 	var/skipeyes = 0
 	var/skipface = 0
 
+	//Skips this for humanoid SCPS
+	if(SCP)
+		to_chat(user, "[icon2html(src, user)] That's \a [src] [suffix]")
+		to_chat(user, desc)
+		return
+
 	//exosuits and helmets obscure our view and stuff.
 	if(wear_suit)
 		skipgloves = wear_suit.flags_inv & HIDEGLOVES
@@ -46,7 +52,7 @@
 			species_name += "[species.cyborg_noun] [species.get_bodytype(src)]"
 		else
 			species_name += "[species.name]"
-		msg += ", <b><font color='[species.get_flesh_colour(src)]'>\a [species_name]!</font></b>[SScodex.get_codex_entry(get_codex_value()) ?  SPAN_NOTICE(" \[<a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>?</a>\]") : ""]"
+		msg += ", <b><font color='[species.get_flesh_colour(src)]'>\a [species_name]!</font></b>[(user.can_use_codex() && SScodex.get_codex_entry(get_codex_value())) ?  SPAN_NOTICE(" \[<a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>?</a>\]") : ""]"
 
 	msg += "<br>"
 

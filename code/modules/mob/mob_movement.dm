@@ -177,9 +177,6 @@
 	if(!mob)
 		return // Moved here to avoid nullrefs below
 
-	if (mob.is_scp012_affected())
-		return
-
 	return mob.SelfMove(direction)
 
 // Checks whether this mob is allowed to move in space
@@ -198,7 +195,7 @@
 //If there's no gravity then there's no up or down so naturally you can't stand on anything.
 //For the same reason lattices in space don't count - those are things you grip, presumably.
 /mob/proc/check_solid_ground()
-	if(istype(loc, /turf/space))
+	if(isspaceturf(loc))
 		return 0
 
 	if(!lastarea)

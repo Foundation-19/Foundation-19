@@ -1,7 +1,6 @@
 /datum/codex_entry/pen
 	associated_paths = list()
-	associated_strings = list("Paperwork")
-	entry_text = {"Used for writing down your thoughts, on paper or elsewhere. The following special commands are available:<br><br>
+	mechanics_text = {"Used for writing down your thoughts, on paper or elsewhere. The following special commands are available:<br><br>
 \[br\] : Creates a linebreak.<br>
 \[center\] - \[/center\] : Centers the text.<br>
 \[h1\] - \[/h1\] : Makes the text a first level heading.<br>
@@ -56,7 +55,3 @@
 /datum/codex_entry/pen/New()
 	associated_paths += typesof(/obj/item/pen)
 	. = ..()
-
-/datum/codex_entry/slide_projector
-	associated_paths = list(/obj/item/storage/slide_projector)
-	entry_text = "Use in hand to open the interface."

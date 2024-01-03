@@ -1,9 +1,10 @@
 /datum/job/hos
 	title = "Guard Commander"
-	head_position = TRUE
+	head_position = 1
 	department = "Command"
 	selection_color = "#8e2929"
 	department_flag = SEC|COM
+	//duties = "<big><b>As the Guard Commander, you have direct say over the Security department. You're not assigned to any zone, but instead should jump in where necessary or requested. You are to speak with your Zone Commanders oftenly, and assign new guards to the right zone, or where it's needed mostly.</b></big>"
 	supervisors = "the Site Director"
 	req_admin_notify = 1
 	economic_power = 10
@@ -63,10 +64,6 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	roleplay_difficulty = "Hard"
-	mechanical_difficulty = "Easy - Medium"
-	duties = "Manage all three Security branches. Keep track of potential and on-going threats (such as containment breaches). Work with other departments to respond to said threats."
-
 //##
 //ZONE COMMANDERS
 //##
@@ -78,6 +75,7 @@
 	department_flag = SEC|LCZ
 	total_positions = 1
 	spawn_positions = 1
+	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	supervisors = "the Guard Commander"
 	economic_power = 4
 	requirements = list("LCZ Sergeant" = 240, EXP_TYPE_LCZ = 900)
@@ -120,10 +118,6 @@
 	)
 	skill_points = 25
 
-	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium"
-	duties = "Manage the Light Containment Zone. Keep track of potential and on-going riots and containment breaches."
-
 /datum/job/ltofficerhcz
 	title = "HCZ Zone Commander"
 	department = "Heavy Containment Personnel"
@@ -131,6 +125,7 @@
 	department_flag = SEC|HCZ
 	total_positions = 1
 	spawn_positions = 1
+	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</b></big>"
 	supervisors = "the Guard Commander"
 	economic_power = 4
 	requirements = list("HCZ Sergeant" = 240, EXP_TYPE_HCZ = 900)
@@ -173,10 +168,6 @@
 	    SKILL_FORENSICS   = SKILL_TRAINED
 	)
 	skill_points = 25
-
-	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium"
-	duties = "Manage the Heavy Containment Zone. Keep track of potential and on-going containment breaches."
 
 /datum/job/ltofficerez
 	title = "EZ Supervisor"
@@ -236,10 +227,6 @@
 	    SKILL_FORENSICS   = SKILL_MASTER
 	)
 	skill_points = 25
-
-	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium"
-	duties = "Manage the Entrance Zone. Ensure safety of all administrative staff, especially during containment breaches."
 
 //##
 // OFFICERS
@@ -570,3 +557,53 @@
 	)
 	skill_points = 17
 
+/datum/job/raisa
+	title = "RAISA Agent"
+	department = "Entrance Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|ECZ|BUR
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the EZ Supervisor"
+	economic_power = 5
+	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_BUR = 60, "IT Technician" = 120)
+	alt_titles = list()
+	minimal_player_age = 7
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/raisa_agent
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	hud_icon = "hudraisa"
+
+	access = list(
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_NETWORK
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+
+	max_skill = list(
+	    SKILL_COMPUTER    = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+	skill_points = 17
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Track and prevent potential espionage. Control access to classified information. Protect SCP databases from threats, both mundane and anomalous."

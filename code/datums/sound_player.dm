@@ -246,6 +246,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	sound.status = status|listener_status[listener]
 	if(update_sound)
 		sound.status |= SOUND_UPDATE
+	SEND_SIGNAL(source, COMSIG_OBJECT_SOUND_HEARD_LOOPING, listener, sound.file) //TODO fix our shitty handeling of sound.
 	sound_to(listener, sound)
 
 /datum/sound_token/proc/PrivGetEnvironment(listener)

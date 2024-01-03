@@ -779,3 +779,18 @@ Checks if a list has the same entries and values as an element of big.
 	else
 		used_key_list[input_key] = 1
 	return input_key
+
+//The following deal with lists of weakrefs
+
+///Takes a list of weakrefs and returns a list containing all the resolved weakrefs.
+/proc/resolveWeakrefList(list/input_list)
+	var/list/output_list
+	for(var/item in input_list)
+		if(isweakref(item))
+			var/weakref/weakrefitem = item
+			var/datum/D = weakrefitem.resolve()
+			if(D)
+				output_list += D
+		else
+			output_list += item
+	return output_list

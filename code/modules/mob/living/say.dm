@@ -305,6 +305,7 @@ var/list/channel_to_radio_key = new
 	for(var/mob/M in listening)
 		if(M && M.can_hear(src))
 			M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
+			SEND_SIGNAL(M, COMSIG_MOB_HEARD_SPEECH, src, message)
 			if(M.client)
 				speech_bubble_recipients += M.client
 
@@ -326,6 +327,7 @@ var/list/channel_to_radio_key = new
 		for(var/mob/M in eavesdroping)
 			if(M && M.can_hear(src))
 				heard_message = M.hear_say(stars(message), verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
+				SEND_SIGNAL(M, COMSIG_MOB_HEARD_WHISPER, src, heard_message)
 				if(M.client)
 					speech_bubble_recipients |= M.client
 					unique[M.client] = heard_message

@@ -4745,7 +4745,8 @@
 /area/site53/logistics/logistics)
 "nr" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Ethics Representitive"
+	name = "Ethics Representative";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/structure/cable/green{
 	d1 = 1;

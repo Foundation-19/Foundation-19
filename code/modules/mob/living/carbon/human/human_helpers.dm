@@ -366,5 +366,44 @@
 /mob/living/carbon/human/proc/is_in_pocket(obj/item/I)
 	return I in list(l_store, r_store)
 
-/mob/living/carbon/human/get_codex_value()
-	return "[lowertext(species.name)] (species)"
+///Checks if a human can make direct contact with another humans bare skin. Uses the select ui to determine where to check.
+/mob/living/carbon/human/proc/can_touch_bare_skin(mob/living/carbon/human/target)
+	var/covered_parts = target.get_covered_body_parts()
+	switch(zone_sel.selecting)
+		if(BP_R_FOOT)
+			if(covered_parts & FOOT_RIGHT)
+				return FALSE
+		if(BP_L_FOOT)
+			if(covered_parts & FOOT_LEFT)
+				return FALSE
+		if(BP_R_LEG)
+			if(covered_parts & LEG_RIGHT)
+				return FALSE
+		if(BP_L_LEG)
+			if(covered_parts & LEG_LEFT)
+				return FALSE
+		if(BP_GROIN)
+			if(covered_parts & LOWER_TORSO)
+				return FALSE
+		if(BP_CHEST)
+			if(covered_parts & FULL_TORSO)
+				return FALSE
+		if(BP_R_HAND)
+			if(covered_parts & HAND_RIGHT)
+				return FALSE
+		if(BP_L_HAND)
+			if(covered_parts & HAND_LEFT)
+				return FALSE
+		if(BP_R_ARM)
+			if(covered_parts & ARM_RIGHT)
+				return FALSE
+		if(BP_L_ARM)
+			if(covered_parts & ARM_LEFT)
+				return FALSE
+		if(BP_EYES)
+			if(covered_parts & EYES)
+				return FALSE
+		if(BP_HEAD, BP_MOUTH)
+			if(covered_parts & FULL_HEAD)
+				return FALSE
+	return TRUE

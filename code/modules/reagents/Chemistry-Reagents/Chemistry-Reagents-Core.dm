@@ -123,7 +123,7 @@
 	var/min_temperature = T20C + rand(0, 20) // Room temperature + some variance. An actual diminishing return would be better, but this is *like* that. In a way. . This has the potential for weird behavior, but I says fuck it. Water grenades for everyone.
 
 	var/hotspot = (locate(/obj/fire) in T)
-	if(hotspot && !istype(T, /turf/space))
+	if(hotspot && !isspaceturf(T))
 		var/datum/gas_mixture/lowertemp = T.remove_air(T:air:total_moles)
 		lowertemp.temperature = max(min(lowertemp.temperature-2000, lowertemp.temperature / 2), 0)
 		lowertemp.react()
@@ -155,9 +155,9 @@
 			if (!istype(C) || !(C.body_parts_covered & FACE))
 				S.extinguish()
 
-	if(istype(L, /mob/living/scp_457))
+	if(istype(L, /mob/living/simple_animal/hostile/scp457))
 		L.adjustBruteLoss(amount * 2)
-		to_chat(L,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
+		L.visible_message(SPAN_DANGER("The [L]'s flame sizzles and flickers where the water touches it"), SPAN_DANGER("You are weakend by the water!"))
 		remove_self(amount)
 
 	if(istype(L))

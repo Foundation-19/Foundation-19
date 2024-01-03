@@ -917,3 +917,137 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/proc/attack_message_name()
 	return "\a [src]"
+
+GLOBAL_LIST_EMPTY(items_by_convert_rating)
+// A list of types that will not be added to the auto-item-generator below;
+GLOBAL_LIST_INIT(items_conversion_blacklist, list(
+	/obj/item/card/id/syndicate/station_access,
+	/obj/item/card/id/captains_spare,
+	/obj/item/spellbook,
+	) + typesof(/obj/item/card/id/centcom))
+
+// BEHOLD! THE TERROR! THE NIGHTMARE!!!
+// tl;dr - We build a path of ALL(yes, all) items by "damage rating" for 1:1 and fine modes
+/obj/item/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	// Generate the BIG LIST!
+	if(!length(GLOB.items_by_convert_rating))
+		for(var/thing in subtypesof(/obj/item) - GLOB.items_conversion_blacklist)
+			var/obj/item/I = thing
+			if(!initial(I.icon_state) || initial(I.anchored) || !initial(I.mouse_opacity) || (initial(I.w_class) >= ITEM_SIZE_NO_CONTAINER) || (initial(I.w_class) <= 0))
+				continue
+			// Holy shit
+			var/rating = ""
+			// By weight
+			switch(initial(I.w_class))
+				if(ITEM_SIZE_TINY)
+					rating += "tiny "
+				if(ITEM_SIZE_SMALL)
+					rating += "small "
+				if(ITEM_SIZE_NORMAL)
+					rating += "normal-sized "
+				if(ITEM_SIZE_LARGE)
+					rating += "large "
+				if(ITEM_SIZE_HUGE)
+					rating += "bulky "
+				if(ITEM_SIZE_HUGE + 1 to INFINITY)
+					rating += "huge "
+			// By force
+			switch(initial(I.force))
+				if(-INFINITY to 5)
+					rating += "very weak "
+				if(5 to 10)
+					rating += "weak "
+				if(10 to 16)
+					rating += "damaging "
+				if(16 to 24)
+					rating += "dangerous "
+				if(24 to 36)
+					rating += "very dangerous "
+				if(36 to 50)
+					rating += "deadly "
+				if(50 to INFINITY)
+					rating += "very deadly "
+			// By attack speed
+			if(initial(I.attack_cooldown) == DEFAULT_WEAPON_COOLDOWN)
+				rating += "normal-speed "
+			else if(initial(I.attack_cooldown) > DEFAULT_WEAPON_COOLDOWN)
+				rating += "low-speed "
+			else
+				rating += "high-speed "
+			// Sharp/Edge
+			if(initial(I.sharp))
+				rating += "sharp "
+			if(initial(I.edge))
+				rating += "edge "
+			rating += "item"
+
+			if(!(rating in GLOB.items_by_convert_rating))
+				GLOB.items_by_convert_rating[rating] = list()
+			GLOB.items_by_convert_rating[rating] += I
+
+	switch(mode)
+		if(MODE_ONE_TO_ONE, MODE_FINE, MODE_VERY_FINE)
+			var/rating = Check914Rating(mode)
+			if(!(rating in GLOB.items_by_convert_rating) || !length(GLOB.items_by_convert_rating[rating]))
+				return src
+			var/item_path = pick(GLOB.items_by_convert_rating[rating])
+			return item_path
+
+	return ..()
+
+/obj/item/proc/Check914Rating(mode = MODE_ONE_TO_ONE)
+	var/rating = ""
+	var/my_force = force
+	switch(mode)
+		if(MODE_FINE)
+			my_force *= (prob(90) ? 1.25 : 0.9)
+		if(MODE_VERY_FINE)
+			my_force *= (prob(50) ? 1.5 : 0.75)
+	// By weight
+	switch(w_class)
+		if(-INFINITY to ITEM_SIZE_TINY)
+			rating += "tiny "
+		if(ITEM_SIZE_SMALL)
+			rating += "small "
+		if(ITEM_SIZE_NORMAL)
+			rating += "normal-sized "
+		if(ITEM_SIZE_LARGE)
+			rating += "large "
+		if(ITEM_SIZE_HUGE)
+			rating += "bulky "
+		if(ITEM_SIZE_HUGE + 1 to INFINITY)
+			rating += "huge "
+	// By force
+	switch(my_force)
+		if(-INFINITY to 4)
+			rating += "very weak "
+		if(4 to 8)
+			rating += "weak "
+		if(8 to 12)
+			rating += "slightly damaging "
+		if(12 to 14)
+			rating += "damaging "
+		if(14 to 18)
+			rating += "somewhat dangerous "
+		if(18 to 24)
+			rating += "dangerous "
+		if(24 to 36)
+			rating += "very dangerous "
+		if(36 to 50)
+			rating += "deadly "
+		if(50 to INFINITY)
+			rating += "very deadly "
+	// By attack speed
+	if(attack_cooldown == DEFAULT_WEAPON_COOLDOWN)
+		rating += "normal-speed "
+	else if(attack_cooldown > DEFAULT_WEAPON_COOLDOWN)
+		rating += "low-speed "
+	else
+		rating += "high-speed "
+	// Sharp/Edge
+	if(sharp)
+		rating += "sharp "
+	if(edge)
+		rating += "edge "
+	rating += "item"
+	return rating

@@ -572,10 +572,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
-"abN" = (
-/obj/structure/flora/pottedplant/decorative,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "abO" = (
 /obj/machinery/light{
 	dir = 4
@@ -713,7 +709,7 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "aco" = (
 /obj/structure/dogbed,
-/mob/living/simple_animal/scp_131/a,
+/mob/living/simple_animal/friendly/scp131/scp131A,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "acq" = (
@@ -740,7 +736,7 @@
 "acz" = (
 /obj/machinery/light,
 /obj/structure/dogbed,
-/mob/living/simple_animal/scp_131/b,
+/mob/living/simple_animal/friendly/scp131/scp131B,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "acA" = (
@@ -1144,26 +1140,13 @@
 "adU" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"adY" = (
-/obj/structure/railing/mapped,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/open,
-/area/site53/lowertrams/hub)
 "adZ" = (
 /obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/lowertrams/hub)
-"aea" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/site53/lowertrams/hub)
 "aeb" = (
 /obj/structure/railing/mapped{
-	dir = 8
+	dir = 1
 	},
 /turf/simulated/open,
 /area/site53/lowertrams/hub)
@@ -2485,9 +2468,6 @@
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp078)
 "aia" = (
-/obj/structure/sign/double/barsign/scp_078{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
@@ -3096,18 +3076,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/engineering/uppernukeladders)
-"ajP" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/civilian{
-	name = "Archive"
-	},
-/obj/machinery/door/blast/shutters/open{
-	icon_state = "shutter0";
-	id_tag = "archiveshutter";
-	name = "Archive Shutter"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "ajQ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
@@ -10915,11 +10883,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/logistics/logistics)
-"aDX" = (
-/obj/structure/table/standard,
-/obj/item/paper/scp/euclid/scp096,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp096)
 "aDY" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_wall/prepainted,
@@ -12193,7 +12156,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/paper/scp/euclid/scp151,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp151)
@@ -13338,11 +13300,6 @@
 /obj/effect/floor_decal/corner/yellow/borderfull,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
-"aNn" = (
-/obj/structure/flora/pottedplant/decorative,
-/obj/machinery/camera/network/entrance,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "aNp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -13418,7 +13375,6 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp999,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
 "aNx" = (
@@ -15058,7 +15014,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/simple_animal/cat/scp_066,
+/mob/living/simple_animal/friendly/retaliate/scp066,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
 "aSG" = (
@@ -16015,7 +15971,6 @@
 /area/site53/llcz/scp113)
 "aWD" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp113,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp113)
 "aWE" = (
@@ -16041,7 +15996,6 @@
 "aWG" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
-/obj/item/paper/scp/safe/scp013,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp013)
 "aWH" = (
@@ -16113,7 +16067,7 @@
 /area/site53/llcz/scp113)
 "aWN" = (
 /obj/structure/table/reinforced,
-/obj/item/device/scp113,
+/obj/item/scp113,
 /obj/machinery/light,
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor/tiled/monotile,
@@ -16176,7 +16130,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp131,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "aXb" = (
@@ -16184,7 +16137,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/weapon/twohanded/scp_2398,
+/obj/item/material/twohanded/baseballbat/scp2398,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp2398)
 "aXd" = (
@@ -17629,7 +17582,6 @@
 /obj/item/toy/figure/scp/sen_scientist,
 /obj/item/toy/figure/scp/security,
 /obj/item/toy/figure/scp/d_class,
-/obj/item/toy/figure/scp/archivist,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp343room)
 "bbt" = (
@@ -17659,10 +17611,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
-"bbw" = (
-/obj/structure/filingcabinet/scp/euclid,
-/turf/simulated/floor/wood,
-/area/site53/lhcz/scp343room)
 "bbx" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -17680,10 +17628,6 @@
 	name = "cat bed";
 	pixel_y = 9
 	},
-/turf/simulated/floor/wood,
-/area/site53/lhcz/scp343room)
-"bbz" = (
-/obj/structure/filingcabinet/scp/keter,
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
 "bbA" = (
@@ -17817,10 +17761,6 @@
 /area/site53/lhcz/scp343room)
 "bcd" = (
 /turf/simulated/floor/lino,
-/area/site53/lhcz/scp343room)
-"bcf" = (
-/obj/structure/filingcabinet/scp/safe,
-/turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
 "bcg" = (
 /obj/structure/bed/chair/wood{
@@ -18073,7 +18013,6 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/item/paper/scp/euclid/scp078,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
@@ -20393,7 +20332,6 @@
 "btP" = (
 /obj/machinery/door/airlock/glass/science{
 	id_tag = "066";
-	locked = 1;
 	name = "SCP-066 Containment Chamber"
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -21727,13 +21665,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
-"cWF" = (
-/obj/structure/filingcabinet/scp/keter,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/lino,
-/area/site53/ulcz/humanoidcontainment)
 "cXy" = (
 /obj/structure/sign/scp/euclid_scp{
 	pixel_x = -32
@@ -22049,11 +21980,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"dqb" = (
-/obj/structure/table/standard,
-/obj/item/paper/scp/keter/scp106,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp106observ)
 "drT" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -23822,6 +23748,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"fvD" = (
+/obj/machinery/camera/network/entrance,
+/turf/simulated/open,
+/area/site53/lowertrams/hub)
 "fvR" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-247"
@@ -25953,7 +25883,7 @@
 /turf/simulated/floor,
 /area/site53/ulcz/scp2427_3)
 "hGY" = (
-/mob/living/simple_animal/hostile/scp_263{
+/obj/scp263{
 	pixel_x = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -27345,7 +27275,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/brownline)
 "jgH" = (
-/obj/structure/scp_216,
+/obj/structure/scp216,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -27489,6 +27419,9 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"jrC" = (
+/turf/simulated/open,
+/area/site53/lowertrams/hub)
 "jrM" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -32025,6 +31958,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lhcz/hczguardgear)
+"okp" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/civilian{
+	name = "IT Department"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "okr" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/legguards/riot,
@@ -34543,7 +34483,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "rhy" = (
-/mob/living/simple_animal/hostile/scp096,
+/mob/living/scp096,
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
 "riw" = (
@@ -35785,7 +35725,6 @@
 /area/site53/uhcz/generalpurpose3)
 "sBC" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/paper/scp012,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "sCI" = (
@@ -36569,7 +36508,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "twW" = (
-/mob/living/simple_animal/hostile/scp_2427_3,
+/mob/living/simple_animal/hostile/scp2427_3,
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
 "txd" = (
@@ -36762,6 +36701,15 @@
 "tJR" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"tKa" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/site53/lowertrams/hub)
 "tKB" = (
 /obj/structure/bed/chair/padded/black{
 	dir = 4
@@ -36967,7 +36915,6 @@
 /area/site53/uhcz/scp096)
 "tXq" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp2398,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp2398)
 "tXU" = (
@@ -68683,10 +68630,10 @@ icS
 icS
 icS
 env
-aac
-aac
-aac
-aac
+azA
+azA
+azA
+azA
 aac
 adA
 aei
@@ -68940,10 +68887,10 @@ cMK
 cMK
 ngO
 aac
-aac
-aNn
-aea
-aea
+azA
+azA
+azA
+azA
 aac
 uPL
 aej
@@ -69198,10 +69145,10 @@ ryY
 kaF
 aac
 aac
-adY
-aaf
-aaf
-ajP
+aac
+aac
+aac
+aac
 aaf
 aen
 abE
@@ -69454,11 +69401,11 @@ izS
 qzl
 ozi
 aac
+fvD
+tKa
+tKa
+jrC
 aac
-adZ
-aaf
-aaf
-ajP
 aaf
 aen
 abE
@@ -69711,9 +69658,9 @@ pBu
 qzl
 ozi
 aac
-aac
-abN
-aeb
+adZ
+aaf
+aaf
 aeb
 aac
 mPb
@@ -69968,10 +69915,10 @@ qOz
 qzl
 sTX
 aac
-aac
-aac
-aac
-aac
+adZ
+aaf
+aaf
+aeb
 aac
 adD
 aen
@@ -70226,8 +70173,8 @@ wDU
 aac
 aac
 aac
-aac
-aac
+okp
+okp
 aac
 aac
 iWp
@@ -83308,7 +83255,7 @@ urC
 jlN
 dZj
 urC
-cWF
+sbY
 ljb
 tWa
 sbY
@@ -85621,7 +85568,7 @@ urC
 jlN
 dZj
 urC
-cWF
+sbY
 ljb
 tWa
 sbY
@@ -87934,7 +87881,7 @@ urC
 jlN
 dZj
 urC
-cWF
+sbY
 ljb
 tWa
 sbY
@@ -90779,7 +90726,7 @@ azA
 azA
 azA
 aBs
-dqb
+aBf
 ahS
 arr
 pzx
@@ -95207,7 +95154,7 @@ uvn
 tXn
 yij
 iCX
-aDX
+bDp
 bdi
 azA
 azA
@@ -98506,7 +98453,7 @@ bbF
 bbu
 bbu
 bbX
-bcf
+bbu
 bbo
 bcw
 bcd
@@ -99529,7 +99476,7 @@ aki
 aki
 aki
 bbo
-bbw
+bbu
 bbu
 bbu
 bbS
@@ -100300,7 +100247,7 @@ baN
 baN
 baP
 bbo
-bbz
+bbu
 bbu
 bbu
 bbT
