@@ -656,6 +656,27 @@
 		M.emote(pick("giggle", "laugh"))
 	M.add_chemical_effect(CE_PULSE, -1)
 
+/datum/reagent/vaccine
+	//data must contain virus type
+	name = "Vaccine"
+	color = "#c81040" // rgb: 200, 16, 64
+	taste_description = "slime"
+
+/datum/reagent/vaccine/affect_blood(mob/living/carbon/M, alien, removed)
+	. = ..()
+	if(!islist(data))
+		return
+
+	for(var/thing in M.diseases)
+		var/datum/disease/infection = thing
+		if(infection.GetDiseaseID() in data)
+			infection.Cure()
+	LAZYOR(M.disease_resistances, data)
+
+/datum/reagent/vaccine/mix_data(list/newdata, newamount)
+	if(istype(newdata))
+		src.data |= newdata.Copy()
+
 /* Abominable Infestation reagents */
 
 // Grauel - Basically a healing chem that can implant a larva into its user.
@@ -778,8 +799,6 @@
 			if(E.status & ORGAN_DEAD)
 				E.revive()
 
-	/* TODO: Port diseases from Tegu as well
 	// Remove all diseases
 	for(var/datum/disease/D in M.diseases)
 		qdel(D)
-	*/
