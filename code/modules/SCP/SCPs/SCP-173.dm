@@ -222,7 +222,7 @@
 		. += "Estimated time until breach: [max(Round(((defication_max - CheckFeces()) * defecation_cooldown_time) / (60 SECONDS)), 0)] minutes."
 
 // Remove it when 173 becomes simple animal subtype
-/mob/living/scp_173/DoMove(direction, mob/mover)
+/mob/living/scp173/DoMove(direction, mob/mover)
 	var/turf/old_turf = get_turf(src)
 	. = ..()
 	if(. & MOVEMENT_HANDLED)
@@ -230,14 +230,14 @@
 			playsound(src, movement_sound, 50, TRUE)
 
 // If bump attack is enabled, we will automaticall kill humans that we bump into
-/mob/living/scp_173/Bump(atom/A)
+/mob/living/scp173/Bump(atom/A)
 	. = ..()
 	if(bump_attack && ishuman(A))
 		UnarmedAttack(A)
 
 // Someone decided to put 173 into it? Good lord, it's over!
 // P.S. Only humans can activate 914, so no powergaming here
-/mob/living/scp_173/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+/mob/living/scp173/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	log_and_message_admins("put [src] through SCP-914 on \"[mode]\" mode.", user, src)
 	switch(mode)
 		if(MODE_COARSE)
@@ -263,7 +263,7 @@
 			health = maxHealth
 	return src
 
-/mob/living/scp_173/proc/IsBeingWatched()
+/mob/living/scp173/proc/IsBeingWatched()
 	if(ignore_vision) // Nobody can stop us now
 		return FALSE
 	// Same as before, cage needs to be used as reference rather than 173
