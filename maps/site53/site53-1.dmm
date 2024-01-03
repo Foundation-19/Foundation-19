@@ -44,13 +44,13 @@
 "ae" = (
 /obj/machinery/light,
 /obj/structure/table/reinforced,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "af" = (
@@ -107,22 +107,22 @@
 /area/site53/engineering/maintenance/llczmaint)
 "an" = (
 /obj/structure/table/reinforced,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "aq" = (
 /obj/structure/table/reinforced,
-/obj/item/card/id/dkitchen,
-/obj/item/card/id/dkitchen,
-/obj/item/card/id/dkitchen,
-/obj/item/card/id/dkitchen,
-/obj/item/card/id/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "as" = (
@@ -191,11 +191,11 @@
 /area/site53/uhcz/scp8containment)
 "aF" = (
 /obj/structure/table/reinforced,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "aG" = (
@@ -8592,6 +8592,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/job_terminal,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "ue" = (
@@ -13134,11 +13136,11 @@
 "Fp" = (
 /obj/machinery/light,
 /obj/structure/table/reinforced,
-/obj/item/card/id/dmedical,
-/obj/item/card/id/dmedical,
-/obj/item/card/id/dmedical,
-/obj/item/card/id/dmedical,
-/obj/item/card/id/dmedical,
+/obj/item/card/id/dassignment/dmedical,
+/obj/item/card/id/dassignment/dmedical,
+/obj/item/card/id/dassignment/dmedical,
+/obj/item/card/id/dassignment/dmedical,
+/obj/item/card/id/dassignment/dmedical,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Fq" = (
@@ -14275,34 +14277,34 @@
 /area/site53/llcz/scp500)
 "Il" = (
 /obj/structure/table/reinforced,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dmining,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/dbotany,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/djanitorial,
-/obj/item/card/id/dkitchen,
-/obj/item/card/id/dkitchen,
-/obj/item/card/id/dkitchen,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/dbotany,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "Im" = (
@@ -16014,6 +16016,11 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"Mm" = (
+/obj/machinery/job_terminal,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "Mo" = (
 /obj/machinery/camera/network/scp049{
 	dir = 1;
@@ -17457,6 +17464,11 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
+"PW" = (
+/obj/machinery/job_terminal/unlocked,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "PX" = (
 /obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/old_tile,
@@ -36510,7 +36522,7 @@ xd
 iK
 xY
 kT
-uf
+Mm
 uf
 EV
 HE
@@ -37024,7 +37036,7 @@ xo
 PP
 Sk
 kT
-uf
+Mm
 uf
 sj
 HI
@@ -37033,7 +37045,7 @@ HX
 uu
 lb
 lS
-rP
+PW
 gM
 ua
 ua
@@ -37290,7 +37302,7 @@ Id
 gM
 lw
 lS
-rb
+rP
 gM
 ua
 ua
@@ -37547,7 +37559,7 @@ HT
 gM
 ln
 lS
-lS
+rb
 gM
 ua
 ua
