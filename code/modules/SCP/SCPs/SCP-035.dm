@@ -132,14 +132,9 @@ GLOBAL_LIST_EMPTY(scp035s)
 	H.name = H.real_name
 	H.faction = "SCP"
 
-	// delete the original mind/brain and transfer SCP-035 mind into body
-	var/datum/mind/original_mind = H.mind
-	original_mind.current.ghostize()
+	H.ghostize()
 
-	H.mind_initialize() // give it a new empty mind
-
-	var/mob/living/scp_035/scp = new(src)
-	H.mind.transfer_to(scp)
+	brain_client.mind.transfer_to(H)
 
 	to_chat(H, "<span class='scp035'>At last, a vessel to inhabit and control! I will make excellent use of this body... Finally, after years of waiting, I have a form to interact with the world once more. This mind is now mine, and I will not waste this opportunity.</span>")
 
