@@ -34,7 +34,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 /obj/item/clothing/mask/scp_035/examine(mob/user)
 	. = ..()
 	var/message
-	if(icon_state)
+	if(!tragedy)
 		message = "An ancient white porcelain comedy mask."
 	else
 		message = "An ancient white porcelain tradegy mask."
