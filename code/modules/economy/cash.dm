@@ -50,7 +50,7 @@
 			// Multiplier to the amount of cash for money to turn into other stuff
 			var/transform_multiplier = (mode == MODE_VERY_FINE) ? 0.02 : 0.008
 			if(prob(worth * transform_multiplier))
-				var/C = pick(/obj/item/spacecash/ewallet, /obj/item/card/id/seclvl1, /obj/item/card/id/sciencelvl1, /obj/item/card/id/commslvl1)
+				var/C = pick(/obj/item/card/id/seclvl1, /obj/item/card/id/sciencelvl1, /obj/item/card/id/commslvl1)
 				C = new C(get_turf(src))
 				if(istype(C, /obj/item/spacecash/ewallet))
 					var/obj/item/spacecash/ewallet/EC = C
