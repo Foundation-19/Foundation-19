@@ -34,7 +34,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 /obj/item/clothing/mask/scp_035/examine(mob/user)
 	. = ..()
 	var/message
-	if(!tragedy)
+	if(!icon_state)
 		message = "An ancient white porcelain comedy mask."
 	else
 		message = "An ancient white porcelain tradegy mask."
@@ -93,7 +93,6 @@ GLOBAL_LIST_EMPTY(scp035s)
 		return
 	var/mob/living/carbon/human/H = user
 	if(H.wear_mask == src)
-		canremove = FALSE
 		corrupt_host(H)
 
 /obj/item/clothing/mask/scp_035/proc/corrupt_host(mob/living/carbon/human/H)
@@ -139,6 +138,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 
 	H.mind_initialize() // give it a new empty mind
 
+	var/mob/living/scp_035/scp = new(src)
 	H.mind.transfer_to(scp)
 
 	to_chat(scp, "<span class='scp035'>At last, a vessel to inhabit and control! I will make excellent use of this body... Finally, after years of waiting, I have a form to interact with the world once more. This mind is now mine, and I will not waste this opportunity.</span>")
