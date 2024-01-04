@@ -924,7 +924,8 @@ GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 	/obj/item/card/id/syndicate/station_access,
 	/obj/item/card/id/captains_spare,
 	/obj/item/spellbook,
-	) + typesof(/obj/item/card/id/centcom))
+	) + typesof(/obj/item/card/id/centcom) \
+	+ typesof(/obj/item/gun))
 
 // BEHOLD! THE TERROR! THE NIGHTMARE!!!
 // tl;dr - We build a path of ALL(yes, all) items by "damage rating" for 1:1 and fine modes
