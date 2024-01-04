@@ -253,8 +253,7 @@
 	ideal_character_age = 30
 	requirements = list("Engineer" = 180, EXP_TYPE_ENGINEERING = 300)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/it_tech
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_B
 	hud_icon = "hudittech"
 
 	access = list(

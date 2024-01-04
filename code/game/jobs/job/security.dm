@@ -510,10 +510,7 @@
 	minimal_player_age = 7
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/raisa_agent
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	class = CLASS_B
 	hud_icon = "hudraisa"
 
 	access = list(
