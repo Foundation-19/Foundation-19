@@ -94,6 +94,7 @@
 	if(ckey) // We're player controlled
 		broodling.ckey = ckey
 	gib()
+	return broodling
 
 // Shared AI behavior
 /datum/ai_holder/simple_animal/infestation
@@ -120,10 +121,12 @@
 				return src
 			return pick(potential_mobs)
 		if(MODE_FINE)
-			if(transformation_target_type)
-				Evolve()
-			else
-				revive()
+			if(!stat) // Alive and well
+				if(isnull(transformation_target_type) && LAZYLEN(transformation_types))
+					transformation_target_type = pick(transformation_types)
+				if(transformation_target_type)
+					return Evolve()
+			revive()
 			return src
 		if(MODE_VERY_FINE)
 			var/turf/T = get_turf(src)
@@ -133,9 +136,9 @@
 				/mob/living/simple_animal/hostile/infestation/floatfly,
 				/mob/living/simple_animal/hostile/infestation/spitter,
 				)
-			for(var/i = 1 to rand(2, 6))
+			for(var/i = 1 to rand(3, 9))
 				new /mob/living/simple_animal/hostile/infestation/larva(T)
-			for(var/i = 1 to rand(2, 6))
+			for(var/i = 1 to rand(3, 9))
 				var/rand_mob = pick(random_mobs)
 				new rand_mob(T)
 			return /obj/effect/hive_heart

@@ -79,3 +79,20 @@
 /obj/item/paper/scp012/Process()
 	SCP.meme_comp.check_viewers()
 	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
+
+// Very Fine - Deletes itself and forces every mob on z level to bleed temporarily while playing the silly music
+/obj/item/paper/scp012/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_VERY_FINE)
+			log_and_message_admins("put [src] through SCP-914 on \"Very Fine\" mode.", user, src)
+			for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+				if(H.z != z)
+					continue
+				H.playsound_local(get_turf(H), looping_sound, 50, FALSE)
+				to_chat(H, SPAN_USERDANGER("The music is bleeding into your body!"))
+				flash_color(H, flash_color = "#ff4444", flash_time = 200)
+				for(var/i = 1 to 30)
+					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/drip, 1), i * rand(2 SECONDS, 10 SECONDS))
+			return null
+	return ..()
+

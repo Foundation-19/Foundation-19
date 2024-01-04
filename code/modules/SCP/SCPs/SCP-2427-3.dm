@@ -50,6 +50,9 @@
 	var/list/purity_list = list()
 	var/list/impurity_list = list()
 
+	/// If TRUE - The mob will automatically trigger attack when bumping a living mob
+	var/bump_attack = FALSE
+
 /mob/living/simple_animal/hostile/scp2427_3/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
@@ -307,6 +310,12 @@
 /mob/living/simple_animal/hostile/scp2427_3/dust()
 	return FALSE
 
+// If bump attack is enabled, we will automaticall attack mobs that we bump into
+/mob/living/simple_animal/hostile/scp2427_3/Bump(atom/A)
+	. = ..()
+	if(bump_attack && isliving(A))
+		UnarmedAttack(A)
+
 /mob/living/simple_animal/hostile/scp2427_3/UnarmedAttack(atom/A)
 	if(is_sleeping)
 		return
@@ -385,3 +394,30 @@
 	. = ..()
 	if(Proj.firer && !Proj.nodamage)
 		CheckPurity(Proj.firer)
+
+// Someone was disappointed that you can't run 2427-3 through 914, so here we are.
+/mob/living/simple_animal/hostile/scp2427_3/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	log_and_message_admins("put [src] through SCP-914 on \"[mode]\" mode.", user, src)
+	switch(mode)
+		if(MODE_ROUGH, MODE_COARSE) // Reset them to normal
+			movement_cooldown = initial(movement_cooldown)
+			bump_attack = FALSE
+			var/obj/item/natural_weapon/leg_2427_3/W = get_natural_weapon()
+			if(istype(W))
+				W.force = initial(W.force)
+			if(MODE_ROUGH) // KILL!!!!
+				death()
+		if(MODE_FINE) // They get a bit stronger
+			playsound(src, 'sounds/effects/screech.ogg', 75, FALSE, 16)
+			to_chat(src, SPAN_USERDANGER("You are feeling more powerful!"))
+			bump_attack = TRUE
+			movement_cooldown = initial(movement_cooldown) - 1
+		if(MODE_VERY_FINE) // I suggest you just end the round here and there
+			playsound(src, 'sounds/effects/screech.ogg', 75, FALSE, 16)
+			to_chat(src, SPAN_USERDANGER("You are unstoppable avatar of justice! PURIFY THEM ALL!!!"))
+			bump_attack = TRUE
+			var/obj/item/natural_weapon/leg_2427_3/W = get_natural_weapon()
+			if(istype(W))
+				W.force = initial(W.force) *= 2
+			movement_cooldown = initial(movement_cooldown) - 2
+	return src
