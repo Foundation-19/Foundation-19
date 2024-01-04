@@ -91,8 +91,8 @@
 				H.playsound_local(get_turf(H), looping_sound, 50, FALSE)
 				to_chat(H, SPAN_USERDANGER("The music is bleeding into your body!"))
 				flash_color(H, flash_color = "#ff4444", flash_time = 200)
-				for(var/i = 1 to 30)
-					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/drip, 1), i * rand(2 SECONDS, 10 SECONDS))
+				for(var/i = 1 to 50)
+					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/drip, 2), i * rand(2 SECONDS, 10 SECONDS))
 			return null
 	return ..()
 
