@@ -75,7 +75,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 /obj/item/clothing/mask/scp_035/proc/output_substance()
 	if(!weeping)
 		return
-	if(prob(100)) //output under the mask 4/5 of the time
+	if(prob(80)) //output under the mask 4/5 of the time
 		//new /obj/effect/fluid/scp_035_substance(src.loc)
 		var/obj/effect/decal/cleanable/blood/drip/scp035/drip = new(get_turf(src))
 		drip.basecolor = bleed_colour
