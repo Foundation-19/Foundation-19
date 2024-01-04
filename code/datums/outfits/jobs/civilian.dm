@@ -38,14 +38,6 @@
 	id_type = /obj/item/card/id/bartender
 	l_ear = /obj/item/device/radio/headset/headset_service
 
-/decl/hierarchy/outfit/job/civ/archivist
-	name = OUTFIT_JOB_NAME("Archivist")
-	uniform = /obj/item/clothing/under/suit_jacket/really_black
-	shoes = /obj/item/clothing/shoes/laceup
-	l_pocket = /obj/item/device/radio
-	id_type = /obj/item/card/id/archivist
-	l_ear = /obj/item/device/radio/headset/headset_arch
-
 /decl/hierarchy/outfit/job/civ/gocrep
 	name = OUTFIT_JOB_NAME("Global Occult Coalition Representative")
 	uniform = /obj/item/clothing/under/rank/head_of_security/navyblue

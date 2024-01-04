@@ -26,6 +26,7 @@
 	if(corpse)
 		corpse.randomize_appearance(src, new_species)
 		corpse.equip_outfit(src)
+		corpse.AdditionalEffects(src)
 		INVOKE_ASYNC(src, /mob/living/proc/adjustBruteLoss, corpse.brute_loss)
 		INVOKE_ASYNC(src, /mob/living/proc/adjustFireLoss, corpse.burn_loss)
 	update_icon()

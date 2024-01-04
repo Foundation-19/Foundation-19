@@ -23,7 +23,7 @@
 		/obj/item/stack/medical/advanced/ointment = 10,
 		/obj/item/storage/pill_bottle/kelotane,
 		/obj/item/storage/pill_bottle/tramadol = 2,
-		/obj/item/storage/pill_bottle/spaceacillin
+		/obj/item/storage/pill_bottle/penicillin
 	)
 
 /obj/structure/closet/crate/med_crate/oxyloss

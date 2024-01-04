@@ -222,7 +222,7 @@
 /obj/item/stack/flag/attack_self(mob/user)
 	var/turf/T = get_turf(src)
 
-	if(istype(T, /turf/space) || istype(T, /turf/simulated/open))
+	if(isspaceturf(T) || istype(T, /turf/simulated/open))
 		to_chat(user, SPAN_WARNING("There's no solid surface to plant \the [singular_name] on."))
 		return
 

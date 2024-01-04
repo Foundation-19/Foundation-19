@@ -49,36 +49,44 @@
 
 
 
-/datum/reagent/medicine/spaceacillin
-	name = "Spaceacillin"
-	description = "An all-purpose antiviral agent."
+/datum/reagent/medicine/penicillin
+	name = "Penicillin"
+	description = "An all-purpose antiviral agent. Prevents most diseases from progressing further."
 	color = "#c1c1c1"
 	metabolism = REM * 0.1
 	overdose = REAGENTS_OVERDOSE * 0.5
 	value = 2.5
+	var/antiviral_multiplier = 1
 
-/datum/reagent/medicine/spaceacillin/affect_blood(mob/living/carbon/M, alien, removed)
+/datum/reagent/medicine/penicillin/affect_blood(mob/living/carbon/M, alien, removed)
 	M.immunity = max(M.immunity - 0.1, 0)
-	M.add_chemical_effect(CE_ANTIVIRAL, VIRUS_COMMON)
+	M.add_chemical_effect(CE_ANTIVIRAL, ANTIVIRAL_WEAK * antiviral_multiplier)
 	M.add_chemical_effect(CE_ANTIBIOTIC, 1)
 	if (volume > 10)
 		M.immunity = max(M.immunity - 0.3, 0)
-		M.add_chemical_effect(CE_ANTIVIRAL, VIRUS_ENGINEERED)
+		M.add_chemical_effect(CE_ANTIVIRAL, ANTIVIRAL_MEDIUM * antiviral_multiplier)
 	if (M.chem_doses[type] > 15)
 		M.immunity = max(M.immunity - 0.25, 0)
 
-/datum/reagent/medicine/spaceacillin/overdose(mob/living/carbon/M, alien)
+/datum/reagent/medicine/penicillin/overdose(mob/living/carbon/M, alien)
 	..()
 	M.immunity = max(M.immunity - 0.25, 0)
-	M.add_chemical_effect(CE_ANTIVIRAL, VIRUS_EXOTIC)
+	M.add_chemical_effect(CE_ANTIVIRAL, ANTIVIRAL_STRONG * antiviral_multiplier)
 	if (prob(2))
 		M.immunity_norm = max(M.immunity_norm - 1, 0)
 
+// Uncraftable silly chemical that stops pretty much every disease
+/datum/reagent/medicine/penicillin/spaceacillin
+	name = "Spaceacillin"
+	description = "A powerful antiviral agent derived from unknown reagents. This seems rather futuristic"
+	color = "#b6d9db"
+	value = 4
+	antiviral_multiplier = 2
 
 
 /datum/reagent/medicine/immunobooster
 	name = "Immunobooster"
-	description = "A drug that helps restore the immune system. Will not replace a normal immunity, and is toxic when taken with spaceacillin."
+	description = "A drug that helps restore the immune system. Will not replace a normal immunity, and is toxic when taken with penicillin."
 	taste_description = "chalk"
 	color = "#ffc0cb"
 	value = 1.5

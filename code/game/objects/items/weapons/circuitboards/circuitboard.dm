@@ -81,3 +81,30 @@
 		build_path = machine.base_type || machine.type
 		var/obj/machinery/thing = build_path
 		SetName(T_BOARD(initial(thing.name)))
+
+// Assoc list of all circuits by their board_type
+GLOBAL_LIST_EMPTY(circuitboards_by_type)
+
+// 1:1 - returns random board with same board_type
+// Fine - has a chance to instantly build the machine, or explode slightly
+/obj/item/stock_parts/circuitboard/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ONE_TO_ONE)
+			if(!length(GLOB.circuitboards_by_type))
+				for(var/thing in subtypesof(/obj/item/stock_parts/circuitboard))
+					var/obj/item/stock_parts/circuitboard/C = thing
+					if(!(initial(C.board_type) in GLOB.circuitboards_by_type))
+						GLOB.circuitboards_by_type[initial(C.board_type)] = list()
+					GLOB.circuitboards_by_type[initial(C.board_type)] += C
+			if(!length(GLOB.circuitboards_by_type[board_type]))
+				return src
+			return pick(GLOB.circuitboards_by_type[board_type])
+		if(MODE_FINE)
+			if(!build_path)
+				return src
+			if(prob(20))
+				explosion(get_turf(src), -1, prob(35), 3, 7, TRUE)
+				return null
+			var/obj/machinery/M = build_path
+			return M
+	return ..()

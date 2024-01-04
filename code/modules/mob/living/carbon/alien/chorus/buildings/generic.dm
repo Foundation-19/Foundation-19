@@ -66,7 +66,7 @@
 	var/growth_verb = "suddenly appears"
 
 /obj/structure/chorus/zleveler/proc/check_turf(turf/T, warning_context, warnings, mob/living/carbon/alien/chorus/C)
-	if(T.density || istype(T, /turf/space))
+	if(T.density || isspaceturf(T))
 		if(warnings && C)
 			to_chat(C, SPAN_WARNING("You can't build [warning_context] there"))
 		return FALSE

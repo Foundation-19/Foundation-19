@@ -1,123 +1,185 @@
-#define STAGE_WAIT		0
-#define STAGE_MESSAGE	1
-#define STAGE_SLEEP		2
-#define STAGE_DAMAGE	3
-
-/datum/scp/scp_513
-	name = "SCP-513"
-	designation = "513"
-	classification = EUCLID
-
 /obj/item/scp513
 	name = "rusty cowbell"
 	desc = "An old cowbell, covered in immense amounts of rust."
 	icon = 'icons/SCP/scp-513.dmi'
+
 	icon_state = "mindfuckcowbell"
-	SCP = /datum/scp/scp_513
-	var/global/list/mob/living/carbon/victims = list()
-	var/global/list/mob/living/carbon/next_braindamage_stage = list()
-	var/global/list/mob/living/carbon/braindamage_stage = list()
-	var/global/list/mob/living/carbon/wake_up_timing = list()
-	var/static/list/paranoia_messages = list("You feel as if something is watching you...", "It feels as if something is stalking you...")
-	var/static/list/assault_messages = list("A horrifying monster attacks you, before running off!", "You are bolted awake by a horrifying entity attacking you!")
-	var/static/list/spook_messages = list("You see a disturbing entity lingering in your peripheral vision.", "You swear you can see an abomination lurking...",
-		"A strange entity stares at you, sending chills to your very core.")
-	var/static/list/insomnia_messages = list("You feel so tired... but you can't sleep.", "You feel like... like.... sleep is.... can't.... sleep....")
+
+	//Config
+
+	///Hallucination Cooldown
+	var/hallucination_cooldown = 5 MINUTES
 
 /obj/item/scp513/Initialize()
 	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"rusty cowbell", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_EUCLID, //Obj Class
+		"513", //Numerical Designation
+		SCP_MEMETIC
+	)
+
+	SCP.memeticFlags = MAUDIBLE|MPERSISTENT|MSYNCED
+	SCP.memetic_proc = /obj/item/scp513/proc/effect
+	SCP.memetic_sounds = list('sounds/scp/513/Bell1.ogg', 'sounds/scp/513/Bell2.ogg')
+	SCP.compInit()
+
 	START_PROCESSING(SSobj, src)
 
+
 /obj/item/scp513/Destroy()
-	victims = null
-	next_braindamage_stage = null
-	braindamage_stage = null
-	wake_up_timing = null
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
+//Mechanics
+
 /obj/item/scp513/proc/ring(mob/living/user)
-	for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-		if(!M.can_hear(src))
-			continue
-		to_chat(M, SPAN_DANGER("<i>\The [src] rings, sending chills to your very bone.</i>"))
-		M << pick('sounds/scp/spook/Bell2.ogg', 'sounds/scp/spook/Bell3.ogg')
-		if(!(M in victims))
-			victims += M
-			braindamage_stage[M] = STAGE_WAIT
-			next_braindamage_stage[M] = world.time + rand(300, 420) //Funnily enough, 420 seconds is 7 minutes. Which makes for good weed jokes.
+	visible_message(SPAN_DANGER(SPAN_ITALIC("\The [src] rings, sending chills to your very bone.")))
+	playsound(src, pick('sounds/scp/513/Bell1.ogg', 'sounds/scp/513/Bell2.ogg'), 50, TRUE)
+
+/obj/item/scp513/proc/effect(mob/living/carbon/human/H)
+	if(!H.humanStageHandler.getStage("513_victim"))
+		H.humanStageHandler.setStage("513_victim", 1)
+		return
+
+	if((world.time - H.humanStageHandler.getStage("513_cooldown")) < hallucination_cooldown)
+		return
+
+	if(prob(60) || H.humanStageHandler.getStage("513_hallucinating")) //Add a little randomness to time between hallucinations/attacks, and avoids us spawning multiple instances of 513-1
+		return
+
+	H.humanStageHandler.setStage("513_hallucinating", 1)
+	var/turf/spawn_turf = pick_turf_in_range(get_turf(H), world.view, list(/proc/isfloor))
+	var/mob/living/scp513_1/new_instance = new(spawn_turf)
+	new_instance.activate(H)
+
+	H.humanStageHandler.setStage("513_cooldown", world.time)
+
+//Overrides
 
 /obj/item/scp513/pickup(mob/living/user)
 	. = ..()
-	if(user.a_intent == I_HURT)
-		to_chat(user, SPAN_DANGER("<b><i>You accidentally ring \the [src]!</i></b>"))
+	if(prob(15))
+		to_chat(user, SPAN_DANGER("You accidentally ring \the [src]!"))
 		ring(user)
 
-/obj/item/scp513/attack_self(mob/living/user)
-	if(user in victims)
-		to_chat(user, SPAN_NOTICE("I rang it once, and I felt terrible. Why the hell would I that again?!"))
+/obj/item/scp513/attack_self(mob/living/carbon/human/user)
+	if(!istype(user))
+		return ..()
+	if(user.humanStageHandler.getStage("513_victim"))
+		to_chat(user, SPAN_WARNING("No no no I-I dont want to."))
 		return
 	ring(user)
+	return ..()
 
 /obj/item/scp513/Process()
-	for(var/mob/living/carbon/M in victims)
-		if(prob(2.5))
-			to_chat(M, SPAN_WARNING("<i>[pick(paranoia_messages)]</i>"))
-		var/next_scare = victims[M]
-		if (M.sleeping >= 100 && !(M in wake_up_timing))
-			wake_up_timing[M] = world.time + rand(100, 150)
-		else if(wake_up_timing[M] && world.time >= wake_up_timing)
-			to_chat(M, SPAN_DANGER("[pick(assault_messages)]"))
-			M.sleeping = 0
-			M.adjustBruteLoss(rand(1,7))
-			display_513_1(get_step(get_turf(src), pick(GLOB.cardinal)), M, 17)
-		else if (world.time >= next_scare)
-			victims[M] = world.time + rand(100,1200)
-			display_513_1(find_safe_spot(get_turf(M), M.client.view), M, 17)
-			to_chat(M, SPAN_WARNING("<i>[pick(spook_messages)]</i>"))
-		else if (next_braindamage_stage[M] && world.time >= next_braindamage_stage[M])
-			if(M in braindamage_stage) //idk why this is needed but it spams runtime despite everyone being in victims and braindamage_stage
-				switch(braindamage_stage[M])
-					if(STAGE_WAIT)
-						braindamage_stage = STAGE_MESSAGE
-					if(STAGE_MESSAGE)
-						next_braindamage_stage[M] = world.time + rand(120, 300)
-						braindamage_stage = STAGE_SLEEP
-					if(STAGE_SLEEP)
-						next_braindamage_stage[M] = world.time + rand(600, 720)
-						braindamage_stage = STAGE_DAMAGE
+	SCP.meme_comp.activate_memetic_effects()
+
+// SCP 513-1
+
+/mob/living/scp513_1
+	name = "???"
+	desc = "You arent sure what that is."
+	icon = 'icons/SCP/scp-513-1.dmi'
+
+	icon_state = "invisible"
+	density = FALSE
+
+	//Config
+
+	///Our message cooldown
+	var/message_cooldown = 45 SECONDS
+	///Possible paranoia messages to pick from
+	var/list/paranoia_messages = list(
+		"You feel like you are being watched...",
+		"Something is staring at you...",
+		"You feel a set of eyes bore deep into your skull...",
+		"There is something out there, just out of sight..."
+	)
+	///Max distance we can be from our victim before dissapearing (this is used in case we spawn in and are never seen by our victim)
+	var/max_distance = 14
+	///Minimium distance we can be from our victim before dissapearing (this is used to avoid our victim actually getting close to us)
+	var/min_distance = 2
+	///Our attack cooldown
+	var/attack_cooldown = 5 SECONDS
+
+	//Mechanics
+
+	///Tracks message cooldown
+	var/message_cooldown_track = 0
+	///Our appearence handler
+	var/decl/appearance_handler/hal_handle = new /decl/appearance_handler()
+	///Our victim
+	var/mob/living/carbon/human/victim
+	///Have we been witnessed by our victim yet?
+	var/was_seen = FALSE
+	///Tracks attack cooldown
+	var/attack_cooldown_track
+
+/mob/living/scp513_1/Initialize()
+	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"???", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_EUCLID, //Obj Class
+		"513-1" //Numerical Designation
+	)
+
+//Mechanics
+
+/mob/living/scp513_1/proc/activate(mob/living/carbon/human/new_victim)
+	var/image/hallucination = image('icons/SCP/scp-513-1.dmi', src, "visual")
+	hal_handle.AddAltAppearance(src, hallucination, list(new_victim))
+	victim = new_victim
+
+/mob/living/scp513_1/proc/stop_hallucination()
+	victim.humanStageHandler.setStage("513_hallucinating", 0)
+	qdel_self()
+
+//Overrides
+
+/mob/living/scp513_1/Life()
+	. = ..()
+	if(!victim)
+		return
+
+	if(get_dist(src, victim) > max_distance)
+		stop_hallucination()
+
+	if(victim.stat == UNCONSCIOUS)
+		if(get_dist(src, victim) > 1)
+			step_towards(src, victim)
+			return
 		else
-			if(M in braindamage_stage) //idk why this is needed but it spams runtime despite everyone being in victims and braindamage_stage
-				switch(braindamage_stage[M])
-					if(STAGE_MESSAGE)
-						if(prob(3.5))
-							to_chat(M, SPAN_WARNING("[pick(insomnia_messages)]"))
-					if(STAGE_SLEEP)
-						if(prob(4))
-							M.sleeping = 500
-/*
-					if(STAGE_DAMAGE)
-						var/obj/item/organ/internal/brain = M.internal_organs_by_name[BP_BRAIN]
-						if(brain)
-							brain.take_damage(rand(4,6))
-*/
-/obj/item/scp513/proc/display_513_1(turf/spot, mob/living/target, length = 20, fade=TRUE)
-	var/image/img = image('icons/SCP/32x64.dmi', spot, "scp_513_1")
-	img.layer = ABOVE_OBJ_LAYER + 0.1
-//	img.plane = OBJ_PLANE
-	target.client.images |= img
-	spawn(length)
-		target.client.images -= img
-		qdel(img)
+			UnarmedAttack(victim)
+			return
 
-/obj/item/scp513/proc/find_safe_spot(turf/spot, range=7, min_dist = 3)
-	var/list/valid_turfs = list()
-	for(var/turf/T in view(spot, range))
-		if(isfloor(T) && get_dist(spot, T) >= min_dist)
-			valid_turfs += T
-	return pick(valid_turfs)
+	if(!was_seen)
+		if(victim.can_see(src))
+			was_seen = TRUE
+		else
+			if((world.time - message_cooldown_track) >= message_cooldown)
+				to_chat(victim, SPAN_NOTICE(pick(paranoia_messages)))
+				message_cooldown_track = world.time
+			return
 
-#undef STAGE_DAMAGE
-#undef STAGE_SLEEP
-#undef STAGE_MESSAGE
-#undef STAGE_WAIT
+	step_away(src, victim)
+
+	if(((victim.stat != UNCONSCIOUS) && !victim.can_see(src)) || (victim.stat == DEAD) || (get_dist(src, victim) <= min_distance))
+		stop_hallucination()
+
+/mob/living/scp513_1/UnarmedAttack(mob/living/carbon/human/H, proximity)
+	if(!istype(H) || (victim != H) || ((world.time - attack_cooldown_track) < attack_cooldown))
+		return
+
+	to_chat(H, SPAN_DANGER("You are clawed at by [src]!"))
+	sound_to(H, pick('sounds/weapons/alien_claw_flesh1.ogg', 'sounds/weapons/alien_claw_flesh2.ogg', 'sounds/weapons/alien_claw_flesh3.ogg'))
+
+	H.apply_damage(15, BRUTE)
+
+	attack_cooldown_track = world.time
+
+/mob/living/scp513_1/Bump(atom/movable/AM, yes) //This makes it so we dont interact with the world since we are supposed to be more of a hallucination
+	return
+

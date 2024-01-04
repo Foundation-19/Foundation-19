@@ -54,4 +54,8 @@
 
 	var/list/area_purity_test_exempt_areas = list()
 
+	var/list/ladder_check_exempt_ladders = list(
+		/obj/structure/ladder/scp1102ladder
+	)
+
 /area/ship

@@ -105,7 +105,7 @@
 
 /obj/item/ammo_magazine/machine_pistol
 	name = "stick magazine"
-	icon_state = "machine_pistol"
+	icon_state = "uzi45"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol
 	matter = list(MATERIAL_STEEL = 1200)

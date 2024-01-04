@@ -255,6 +255,8 @@
 /datum/unit_test/ladder_check/start_test()
 	var/succeeded = TRUE
 	for(var/obj/structure/ladder/L)
+		if(is_type_in_list(L, GLOB.using_map.ladder_check_exempt_ladders))
+			continue
 		if(L.allowed_directions & UP)
 			succeeded = check_direction(L, GetAbove(L), UP, DOWN) && succeeded
 		if(L.allowed_directions & DOWN)

@@ -1,19 +1,14 @@
-/datum/scp/scp_457
-	name = "SCP-457"
-	designation = "457"
-	classification = KETER
-
-/mob/living/scp_457
-	name = "SCP-457"
+/mob/living/simple_animal/hostile/scp457
+	name = "humanoid flame"
 	desc = "A horrible band of fire, it somehow keeps a humanoid shape."
 	icon = 'icons/SCP/scp-457.dmi'
+
 	icon_state = "fireguy"
-	SCP = /datum/scp/scp_457
+	icon_dead = "fireguy_dead"
 	status_flags = NO_ANTAG
-	var/door_cooldown
+
 	health = 500
 	maxHealth = 500
-	var/next_emote = -1
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -22,12 +17,36 @@
 	a_intent = "harm"
 	can_be_buckled = FALSE
 
-	var/aflame_cooldown
-	var/aflame_cooldown_time = 1.8 SECONDS
+	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp457
+	say_list_type = /datum/say_list/scp457
 
+	maxbodytemp = INFINITY
+
+	//Config
+
+	///Attack cooldown
+	var/aflame_cooldown_time = 1.8 SECONDS
+	///Door cooldown
+	var/door_cooldown = 5 SECONDS
+
+	//Mechanical
+
+	///Tracks our door cooldown
+	var/door_cooldow_track = 0
+	///Tracks our attack cooldown
+	var/aflame_cooldown_track = 0
+	///Our spawn area
 	var/area/spawn_area
 
-/mob/living/scp_457/Initialize()
+/mob/living/simple_animal/hostile/scp457/Initialize()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"humanoid flame", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_EUCLID, //Obj Class
+		"457", //Numerical Designation
+		SCP_PLAYABLE
+	)
+
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_EAL, FALSE)
 	add_language(LANGUAGE_SKRELLIAN, FALSE)
@@ -35,57 +54,23 @@
 	add_language(LANGUAGE_SIGN, FALSE)
 	add_language(LANGUAGE_ENGLISH, TRUE)
 	set_light(0.8, 0.3, 5, l_color = COLOR_ORANGE) //makes 457 emit light
-	add_verb(src, list(
-		/mob/living/scp_457/proc/checkhealth
-	))
 
 	return ..()
 
-/mob/living/scp_457/UnarmedAttack(atom/A)
-	if(ishuman(A))
-		var/mob/living/carbon/human/H = A
-		if(H.SCP)
-			to_chat(src, SPAN_WARNING("<I>[H] is a fellow SCP!</I>"))
-			return
-		if(H.stat == DEAD)
-			to_chat(src, SPAN_NOTICE("<I>[H] is dead, it no longer can provide you with fuel.</I>"))
-			return
-		if(aflame_cooldown > world.time)
-			to_chat(src, SPAN_WARNING("You can't attack yet."))
-			return
-		if(prob(35))
-			visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
-			if(do_after(src, 1 SECOND, H, bonus_percentage = 100))
-				H.Weaken(10)
-				H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!"))
-				to_chat(H, SPAN_USERDANGER("IT HURTS!!!"))
-				health += 5
-				aflame_cooldown = world.time + aflame_cooldown_time
-			else
-				visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
-				if(do_after(src, 4 SECONDS, H, bonus_percentage = 25))
-					H.fire_stacks += 1
-					H.IgniteMob()
-					health += 15
-					aflame_cooldown = world.time + aflame_cooldown_time
-					visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
-					to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
-				return
+//Ai Stuff
 
-	if(istype(A, /obj/machinery/door))
-		OpenDoor(A)
-		return
-	if(istype(A, /obj/structure/grille))
-		playsound(get_turf(A), 'sounds/effects/grillehit.ogg', 50, 1)
-		qdel(A)
-		return
-	if(istype(A, /obj/structure/inflatable))
-		var/obj/structure/inflatable/W = A
-		W.deflate(violent=1)
-	return
+/datum/say_list/scp457
+	emote_hear = list("crackles", "pops")
+	emote_see = list("burns")
 
-/mob/living/scp_457/proc/OpenDoor(obj/machinery/door/A)
-	if(door_cooldown > world.time)
+/datum/ai_holder/simple_animal/melee/scp457
+	mauling = TRUE
+
+//Mechanics
+
+/mob/living/simple_animal/hostile/scp457/proc/OpenDoor(obj/machinery/door/A)
+	if((world.time - door_cooldow_track) < door_cooldown)
+		to_chat(src, SPAN_NOTICE("You cant open that right now!"))
 		return
 
 	if(!istype(A))
@@ -134,21 +119,67 @@
 	var/check = A.open(1)
 	visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
-/mob/living/scp_457/Life()
-	if(health <= 0)
-		death(FALSE, "falls on their knees, the flame withering away.")
-
-/mob/living/scp_457/death(gibbed, deathmessage, show_dead_message)
-	if(..())
-		set_icon_state("fireguy_dead")
-		addtimer(CALLBACK(src, /mob/living/scp_457/proc/_respawn), 5 MINUTES)
-
-/mob/living/scp_457/proc/_respawn()
+/mob/living/simple_animal/hostile/scp457/proc/respawn()
 	visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
-	new /mob/living/scp_457(get_turf(src))
-	qdel(src)
+	convertatom2type(src, /mob/living/simple_animal/hostile/scp457, force_mind = TRUE) //better way of handeling respawn since it also transfers mind.
 
-/mob/living/scp_457/proc/checkhealth()
-	set category = "SCP-457"
-	set name = "Check Health"
-	to_chat(src, "HEALTH: [health]")
+//Overrides
+
+/mob/living/simple_animal/hostile/scp457/UnarmedAttack(atom/A)
+	if(A.SCP)
+		to_chat(src, SPAN_WARNING(SPAN_ITALIC("That thing is not like the others. You know better than to mess with it.")))
+		return
+	if(((world.time - aflame_cooldown_track) < aflame_cooldown_time) && ishuman(A))
+		to_chat(src, SPAN_WARNING("You can't attack yet."))
+		return
+	if(ishuman(A))
+		var/mob/living/carbon/human/target = A
+
+		if(target.stat == DEAD)
+			to_chat(src, SPAN_NOTICE(SPAN_ITALIC("[target] is dead, it no longer can provide you with fuel.")))
+			return
+
+		if(target.weakened)
+			var/damage_amount = clamp(target.health, 0, 25)
+
+			target.fire_stacks += 1
+			target.IgniteMob()
+			target.apply_damage(damage_amount, BURN)
+
+			adjustBruteLoss(-damage_amount)
+			visible_message(SPAN_DANGER("[src] sets [A] alight!"))
+		else
+			visible_message(SPAN_DANGER("[src] burns [A]!"))
+			target.Weaken(2)
+			target.apply_damage(15, BURN)
+			adjustBruteLoss(-15)
+		aflame_cooldown_track = world.time
+		return
+
+	if(istype(A, /obj/machinery/door))
+		OpenDoor(A)
+		aflame_cooldown_track = world.time
+		return
+
+	if(istype(A, /obj) && A.can_damage_health(A.health_current, BURN))
+		if(get_area(A) == spawn_area)
+			to_chat(src, SPAN_NOTICE("[A] is too thermally insulated for you to damage."))
+			return
+		else
+			A.attack_generic(src, 50, "melts")
+			aflame_cooldown_track = world.time
+	return
+
+/mob/living/simple_animal/hostile/scp457/death(gibbed, deathmessage, show_dead_message)
+	addtimer(CALLBACK(src, /mob/living/simple_animal/hostile/scp457/proc/respawn), 5 MINUTES)
+	to_chat(src, SPAN_NOTICE(SPAN_BOLD("You will reform in five minutes, avoid leaving your body.")))
+	return ..()
+
+/mob/living/simple_animal/hostile/scp457/IAttack(atom/A)
+	if((world.time - aflame_cooldown_track) < aflame_cooldown_time)
+		return ATTACK_ON_COOLDOWN
+	return ..()
+
+/mob/living/simple_animal/hostile/scp457/do_attack(atom/A, turf/T)
+	if(..())
+		UnarmedAttack(A)

@@ -13,6 +13,8 @@
 #define LAZYREMOVE(L, I) if(L) { L -= I; if(!length(L)) { L = null; } }
 /// Adds I to L, initalizing L if necessary
 #define LAZYADD(L, I) if(!L) { L = list(); } L += I;
+/// Adds I to L if L doesn't already contain I, initializing L if necessary
+#define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
 /// Adds V to L with the key K, initializing L if necessary.
 #define LAZYADDASSOC(L, K, V) if(!L) { L = list(); } L[K] += V;
 /// This is used to add onto lazy assoc list when the value you're adding is a /list/. This one has extra safety over lazyaddassoc because the value could be null (and thus cant be used to += objects)

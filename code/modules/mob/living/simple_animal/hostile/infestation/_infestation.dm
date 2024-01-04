@@ -101,3 +101,42 @@
 	retaliate = TRUE
 	cooperative = TRUE
 	respect_confusion = FALSE
+
+// 1:1 - Replaces the mob with random one with similar characteristics
+// Fine - Instantly evolves, if possible, otherwise gets revived
+// Very fine - Turns into a heart of the hive with a pool of larvas & random infestation mobs
+/mob/living/simple_animal/hostile/infestation/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ONE_TO_ONE)
+			var/list/potential_mobs = list()
+			for(var/infestation_type in subtypesof(/mob/living/simple_animal/hostile/infestation))
+				var/mob/living/simple_animal/hostile/infestation/I = infestation_type
+				if(initial(I.maxHealth) > maxHealth * 2 || initial(I.maxHealth) < maxHealth * 0.5)
+					continue
+				if(initial(I.movement_cooldown) > movement_cooldown + 2 || initial(I.movement_cooldown) < movement_cooldown -2)
+					continue
+				potential_mobs += infestation_type
+			if(!LAZYLEN(potential_mobs))
+				return src
+			return pick(potential_mobs)
+		if(MODE_FINE)
+			if(transformation_target_type)
+				Evolve()
+			else
+				revive()
+			return src
+		if(MODE_VERY_FINE)
+			var/turf/T = get_turf(src)
+			var/list/random_mobs = list(
+				/mob/living/simple_animal/hostile/infestation/larva/implant/implanter,
+				/mob/living/simple_animal/hostile/infestation/broodling,
+				/mob/living/simple_animal/hostile/infestation/floatfly,
+				/mob/living/simple_animal/hostile/infestation/spitter,
+				)
+			for(var/i = 1 to rand(2, 6))
+				new /mob/living/simple_animal/hostile/infestation/larva(T)
+			for(var/i = 1 to rand(2, 6))
+				var/rand_mob = pick(random_mobs)
+				new rand_mob(T)
+			return /obj/effect/hive_heart
+	return ..()

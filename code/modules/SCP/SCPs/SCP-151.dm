@@ -2,40 +2,59 @@
 	name = "painting"
 	desc = "A painting depicting a rising wave."
 	icon = 'icons/obj/structures.dmi'
+
 	icon_state = "great_wave"
 	anchored = TRUE
 	density = TRUE
-	var/last_regen = 0
-	var/gen_time = 100 //how long we wait between hurting victims
-	var/list/victims = list()
 
+	//Config
 
-/obj/structure/scp151/proc/hurt_victims() //simulate drowning
-	for(var/mob/living/user in victims)
-		user.apply_damage(30, OXY)
+	///How much oxygen damage we do per tick
+	var/oxy_damage = 1.5
+	///Message cooldown
+	var/message_cooldown = 15 SECONDS
+	///How much water is ingested per tick
+	var/water_ingest = 2
 
 /obj/structure/scp151/Initialize()
 	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"painting", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"151", //Numerical Designation
+		SCP_MEMETIC
+	)
+
+	SCP.memeticFlags = MVISUAL|MPERSISTENT|MSYNCED
+	SCP.memetic_proc = /obj/structure/scp151/proc/effect
+	SCP.compInit()
+
 	START_PROCESSING(SSobj, src)
-	last_regen = world.time
 
 /obj/structure/scp151/Process()
-	if(world.time > last_regen + gen_time) //hurt victims after time
-		hurt_victims()
-		last_regen = world.time
+	SCP.meme_comp.check_viewers()
+	SCP.meme_comp.activate_memetic_effects()
 
-/obj/structure/scp151/examine(mob/living/user)
-	. = ..()
+// Mechanics
 
-	if(!user.can_see(src, 1))
-		return
-	if(user.stat)
-		return
+/obj/structure/scp151/proc/effect(mob/living/carbon/human/H)
+	H.apply_damage(oxy_damage, OXY)
 
-	if(!(user in victims) && istype(user))
-		victims += user //on examine, adds user into victims list
-	if (user in victims)
-		spawn(2 SECONDS)
-			user.emote("cough")
-		spawn(2 SECONDS)
-			to_chat(user, SPAN_WARNING("Your lungs begin to feel tight, and the briny taste of seawater permeates your mouth."))
+	var/obj/item/organ/internal/lungs/breathe_organ = H.internal_organs_by_name[H.species.breathing_organ]
+	var/obj/item/organ/internal/stomach/stomach_organ = H.internal_organs_by_name[BP_STOMACH]
+
+	stomach_organ.ingested.add_reagent(/datum/reagent/water, water_ingest)
+
+	if((breathe_organ.get_oxygen_deprivation() > 10))
+		if(stomach_organ.ingested.get_free_space() <= 5)
+			H.vomit()
+		else if(prob(breathe_organ.get_oxygen_deprivation() + 15))
+			H.emote("cough")
+	else if(prob(10) && ((world.time - H.humanStageHandler.getStage("151_message_cooldown")) > message_cooldown))
+		to_chat(H, SPAN_NOTICE(pick("The taste of seawater permeates your mouth...", "Your lungs feel like they are filling with water...")))
+		H.humanStageHandler.setStage("151_message_cooldown", world.time)
+
+	if(prob(breathe_organ.get_oxygen_deprivation() + 30) && (breathe_organ.get_oxygen_deprivation() > 25) && ((world.time - H.humanStageHandler.getStage("151_message_cooldown")) > message_cooldown))
+		to_chat(H, SPAN_WARNING(pick("Your lungs feel like they are filled with water!", "You try to breath but your lungs are filled with water!", "You cannot breath!")))
+		H.humanStageHandler.setStage("151_message_cooldown", world.time)

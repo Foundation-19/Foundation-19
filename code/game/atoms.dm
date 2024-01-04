@@ -389,7 +389,7 @@ its easier to just keep the beam vertical.
 	return pass_flags&passflag
 
 /atom/proc/isinspace()
-	if(istype(get_turf(src), /turf/space))
+	if(isspaceturf(get_turf(src)))
 		return 1
 	else
 		return 0

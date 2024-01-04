@@ -3,7 +3,6 @@
 	name = "captain's gloves"
 	icon_state = "captain"
 	item_state = "egloves"
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/cyborg
 	desc = "Beep boop borp!"
@@ -20,7 +19,6 @@
 	item_state = "lgloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/insulated/cheap                             //Cheap Chinese Crap
 	desc = "These gloves are cheap copies of the coveted gloves, no way this can end badly."
@@ -39,7 +37,6 @@
 	item_state = "bgloves"
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
-	hidden_from_codex = FALSE
 
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
@@ -54,7 +51,6 @@
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
 	item_flags = ITEM_FLAG_THICKMATERIAL
-	hidden_from_codex = FALSE
 
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
@@ -115,7 +111,6 @@
 	siemens_coefficient = 1.1 //thin latex gloves, much more conductive than fabric gloves (basically a capacitor for AC)
 	permeability_coefficient = 0.01
 	germ_level = 0
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/latex/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
@@ -184,7 +179,6 @@
 		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_MINOR
 		)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/guards
 	desc = "A pair of synthetic gloves and arm pads reinforced with armor plating."
@@ -202,7 +196,6 @@
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/fire
 	desc = "A pair of Gloves specially design for firefight and damage control."
@@ -220,11 +213,9 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/foundation_service
 	name = "service gloves"
 	desc = "A pair of dark grey Foundation gloves, with soft padding to make them comfortable to wear."
 	icon_state = "black"
 	item_state = "bgloves"
-	hidden_from_codex = TRUE

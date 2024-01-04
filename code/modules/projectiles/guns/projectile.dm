@@ -38,6 +38,8 @@
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
 
+	general_codex_key = "ballistic weapons"		// for codex
+
 /obj/item/gun/projectile/Initialize()
 	. = ..()
 	if (starts_loaded)
@@ -76,7 +78,7 @@
 	if(is_jammed)
 		return null
 	//get the next casing
-	if(loaded.len)
+	if(LAZYLEN(loaded))
 		chambered = loaded[1] //load next casing.
 		if(handle_casings != HOLD_CASINGS)
 			loaded -= chambered
@@ -310,14 +312,53 @@
 		bullets += 1
 	return bullets
 
-/* Unneeded -- so far.
-//in case the weapon has firemodes and can't unload using attack_hand()
-/obj/item/gun/projectile/verb/unload_gun()
-	set name = "Unload Ammo"
-	set category = "Object"
-	set src in usr
-
-	if(usr.stat || usr.restrained()) return
-
-	unload_ammo(usr)
-*/
+// 1:1 - Returns random gun with same caliber and same weight, if it can find one
+// Fine or Very Fine - Returns random gun that either has higher damage with default projectiles, higher ammo capacity, higher penetration
+/obj/item/gun/projectile/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ONE_TO_ONE)
+			var/list/potential_return = list()
+			for(var/thing in subtypesof(/obj/item/gun/projectile))
+				var/obj/item/gun/projectile/G = thing
+				if(initial(G.caliber) != caliber)
+					continue
+				if(initial(G.w_class) != w_class)
+					continue
+				potential_return += G
+			if(!LAZYLEN(potential_return))
+				return src
+			return pick(potential_return)
+		if(MODE_FINE, MODE_VERY_FINE)
+			var/mult_mod = (mode == MODE_VERY_FINE ? 2 : 1)
+			if(prob(mult_mod ** 2))
+				explosion(get_turf(src), -1, prob(35), 3, 7, TRUE)
+				return null
+			var/list/potential_return = list()
+			for(var/thing in subtypesof(/obj/item/gun/projectile))
+				var/obj/item/gun/projectile/G = thing
+				if(!isnull(magazine_type) && !isnull(initial(G.magazine_type)))
+					// Higher capacity magazine
+					var/obj/item/ammo_magazine/M = initial(G.magazine_type)
+					var/obj/item/ammo_magazine/our_mag = magazine_type
+					if(initial(M.max_ammo) > initial(our_mag.max_ammo) * 1.2 * mult_mod && \
+						initial(M.max_ammo) < initial(our_mag.max_ammo) * 2.4 * mult_mod)
+						potential_return += G
+					// Stronger bullets
+					var/obj/item/ammo_casing/C = initial(M.ammo_type)
+					var/obj/item/ammo_casing/our_case = initial(our_mag.ammo_type)
+					var/obj/item/projectile/P = initial(C.projectile_type)
+					var/obj/item/projectile/our_proj = initial(our_case.projectile_type)
+					if(initial(P.damage) > initial(our_proj.damage) * 1.2 * mult_mod && \
+						initial(P.damage) < initial(our_proj.damage) * 2.4 * mult_mod)
+						potential_return += G
+					// Higher penetration
+					if(initial(P.penetration_modifier) > initial(our_proj.penetration_modifier) * 1.2 * mult_mod && \
+						initial(P.penetration_modifier) < initial(our_proj.penetration_modifier) * 2.4 * mult_mod)
+						potential_return += G
+					if(initial(P.penetrating) > initial(our_proj.penetrating) * 1.5 * mult_mod && \
+						initial(P.penetrating) < initial(our_proj.penetrating) * 3 * mult_mod)
+						potential_return += G
+			if(!LAZYLEN(potential_return))
+				return src
+			return pick(potential_return)
+	return ..()

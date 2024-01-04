@@ -258,14 +258,14 @@
 	reagents.add_reagent(/datum/reagent/jerraman, 4)
 	color = reagents.get_color()
 
-/obj/item/reagent_containers/pill/spaceacillin
-	name = "Spaceacillin (10u)"
+/obj/item/reagent_containers/pill/penicillin
+	name = "Penicillin (10u)"
 	desc = "Contains antiviral agents."
 	icon_state = "pill3"
 
-/obj/item/reagent_containers/pill/spaceacillin/New()
+/obj/item/reagent_containers/pill/penicillin/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/spaceacillin, 10)
+	reagents.add_reagent(/datum/reagent/medicine/penicillin, 10)
 	color = reagents.get_color()
 
 /obj/item/reagent_containers/pill/diet
