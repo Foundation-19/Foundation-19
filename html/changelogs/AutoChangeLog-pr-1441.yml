@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - bugfix: When picked up, items will leave behind a tiny effect of the item being
+      taken.
