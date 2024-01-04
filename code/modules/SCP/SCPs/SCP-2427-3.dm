@@ -405,7 +405,7 @@
 			var/obj/item/natural_weapon/leg_2427_3/W = get_natural_weapon()
 			if(istype(W))
 				W.force = initial(W.force)
-			if(MODE_ROUGH) // KILL!!!!
+			if(mode == MODE_ROUGH) // KILL!!!!
 				death()
 		if(MODE_FINE) // They get a bit stronger
 			playsound(src, 'sounds/effects/screech.ogg', 75, FALSE, 16)
