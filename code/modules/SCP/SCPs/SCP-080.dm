@@ -16,6 +16,7 @@
     var/fear_strength = 5 // Strength of the fear effect
     var/list/affected_mobs = list()
     var/fear_message_cooldown = FEAR_MESSAGE_COOLDOWN
+
 /mob/living/scp080/Initialize()
 	. = ..()
 
