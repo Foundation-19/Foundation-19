@@ -141,7 +141,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 	var/mob/living/scp_035/scp = new(src)
 	H.mind.transfer_to(scp)
 
-	to_chat(scp, "<span class='scp035'>At last, a vessel to inhabit and control! I will make excellent use of this body... Finally, after years of waiting, I have a form to interact with the world once more. This mind is now mine, and I will not waste this opportunity.</span>")
+	to_chat(H, "<span class='scp035'>At last, a vessel to inhabit and control! I will make excellent use of this body... Finally, after years of waiting, I have a form to interact with the world once more. This mind is now mine, and I will not waste this opportunity.</span>")
 
 
 //BRAIN AND ABILITIES
