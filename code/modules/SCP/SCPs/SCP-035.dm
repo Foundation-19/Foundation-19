@@ -18,9 +18,8 @@ GLOBAL_LIST_EMPTY(scp035s)
 
 /obj/item/clothing/mask/scp_035/Initialize()
 	. = ..()
-	brain_client = new()
+	brain_client = new(src)
 	brain_client.mask = src
-	contents += brain_client
 	GLOB.scp035s += brain_client
 	weepstart()
 	whisper()
