@@ -42,6 +42,27 @@
 		var/obj/item/gun/launcher/money/L = W
 		L.absorb_cash(src, user)
 
+// Fine - Increase amount of cash in there; Has little chance (depending on amount of cash) to spawn gold or random card.
+// Very Fine - Same as above with increased chances.
+/obj/item/spacecash/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_FINE, MODE_VERY_FINE)
+			// Multiplier to the amount of cash for money to turn into other stuff
+			var/transform_multiplier = (mode == MODE_VERY_FINE) ? 0.01 : 0.002
+			if(prob(worth * transform_multiplier))
+				var/C = pick(/obj/item/spacecash/ewallet, /obj/item/card/id/seclvl1, /obj/item/card/id/sciencelvl1, /obj/item/card/id/commslvl1)
+				C = new C(get_turf(src))
+				if(istype(C, /obj/item/spacecash/ewallet))
+					var/obj/item/spacecash/ewallet/EC = C
+					EC.worth = round(worth * pick(0.75, 0.9, 1.2, 1.5))
+					EC.owner_name = user.real_name
+				return C
+			var/cash_multiplier = (mode == MODE_VERY_FINE) ? rand(2, 5) : pick(1.5, 2)
+			worth += round(worth * cash_multiplier)
+			update_icon()
+			return src
+	return ..()
+
 /obj/item/spacecash/proc/getMoneyImages()
 	if(icon_state)
 		return list(icon_state)
