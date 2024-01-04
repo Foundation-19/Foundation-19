@@ -18,9 +18,8 @@ GLOBAL_LIST_EMPTY(scp035s)
 
 /obj/item/clothing/mask/scp_035/Initialize()
 	. = ..()
-	brain_client = new()
+	brain_client = new(src)
 	brain_client.mask = src
-	contents += brain_client
 	GLOB.scp035s += brain_client
 	weepstart()
 	whisper()
@@ -35,7 +34,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 /obj/item/clothing/mask/scp_035/examine(mob/user)
 	. = ..()
 	var/message
-	if(icon_state)
+	if(!tragedy)
 		message = "An ancient white porcelain comedy mask."
 	else
 		message = "An ancient white porcelain tradegy mask."
