@@ -1,0 +1,4 @@
+author: K4rlox
+delete-after: true
+changes:
+  - bugfix: fixes researcher's accesses
