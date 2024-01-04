@@ -1379,6 +1379,24 @@ but should see their own spawn message even if the player already dropped as USC
 	chosen = matches[chosen]
 	return chosen
 
+//Compare A's dir, the clockwise dir of A and the anticlockwise dir of A
+//To the opposite dir of the dir returned by get_dir(B,A)
+//If one of them is a match, then A is facing B
+/proc/is_A_facing_B(atom/A,atom/B)
+	if(!istype(A) || !istype(B))
+		return FALSE
+	if(isliving(A))
+		var/mob/living/LA = A
+		if(LA.resting)
+			return FALSE
+	var/goal_dir = get_dir(A,B)
+	var/clockwise_A_dir = turn(A.dir, -45)
+	var/anticlockwise_A_dir = turn(A.dir, 45)
+
+	if(A.dir == goal_dir || clockwise_A_dir == goal_dir || anticlockwise_A_dir == goal_dir)
+		return TRUE
+	return FALSE
+
 // Misc. ported from TG
 
 //datum may be null, but it does need to be a typed var

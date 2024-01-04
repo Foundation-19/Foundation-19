@@ -17,11 +17,9 @@
 
 /obj/screen/ghost/become_scp/Click()
 	var/mob/observer/ghost/G = usr
-	var/choice = tgui_alert(G, "Safe or Keter/Euclid SCP?", "Become SCP", list("Safe", "Euclid/Keter", "Cancel"))
-	if(choice == "Safe")
-		G.become_safe()
-	else if (choice == "Euclid/Keter")
-		G.become_scp()
+	if(!istype(G))
+		return
+	G?.become_scp()
 
 /obj/screen/ghost/reenter_corpse
 	name = "Reenter corpse"

@@ -107,6 +107,13 @@
 	id = "roboprinter"
 	req_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/roboprinter
+	sort_string = "FAGAL"
+
+/datum/design/circuit/pandemic
+	name = "Pan.D.E.M.I.C 2200"
+	id = "pandemic"
+	req_tech = list(TECH_BIO = 5)
+	build_path = /obj/item/stock_parts/circuitboard/pandemic
 	sort_string = "FAGAM"
 
 /datum/design/circuit/teleconsole

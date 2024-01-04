@@ -4567,6 +4567,15 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/repoffice/internaltribunal)
+"tr" = (
+/obj/structure/bed/chair/office/comfy{
+	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "RAISA Agent"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "tv" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 4
@@ -5502,7 +5511,8 @@
 /area/site53/uez/commandpanicbunker)
 "AM" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Internal Tribunal Department Representitive"
+	name = "Internal Tribunal Department Representative";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
@@ -6469,7 +6479,8 @@
 /area/site53/uez/commandpanicbunker)
 "JM" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Internal Tribunal Department Representitive"
+	name = "Internal Tribunal Department Representative";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7409,12 +7420,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"QZ" = (
-/obj/structure/bed/chair/office/comfy{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "Rb" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
@@ -37416,10 +37421,10 @@ dU
 ZO
 Kg
 Jl
-QZ
+tr
 Lo
 Jl
-QZ
+tr
 Yi
 cX
 hk

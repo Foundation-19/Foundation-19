@@ -1,40 +1,7 @@
 
 //// Zombie Defines
 
-#define SPECIES_ZOMBIE "Zombie"
-#define LANGUAGE_ZOMBIE "Zombie"
 #define ANTAG_ZOMBIE "Zombie"
-
-//// Zombie Globals
-
-GLOBAL_LIST_INIT(zombie_messages, list(
-	"stage1" = list(
-		"You feel uncomfortably warm.",
-		"You feel rather feverish.",
-		"Your throat is extremely dry...",
-		"Your muscles cramp...",
-		"You feel dizzy.",
-		"You feel slightly fatigued.",
-		"You feel light-headed."
-	),
-	"stage2" = list(
-		"You feel something under your skin!",
-		"Mucus runs down the back of your throat",
-		"Your muscles burn.",
-		"Your skin itches.",
-		"Your bones ache.",
-		"Sweat runs down the side of your neck.",
-		"Your heart races."
-	),
-	"stage3" = list(
-		"Your head feels like it's splitting open!",
-		"Your skin is peeling away!",
-		"Your body stings all over!",
-		"It feels like your insides are squirming!",
-		"You're in agony!"
-	)
-))
-
 
 GLOBAL_LIST_INIT(zombie_species, list(\
 	SPECIES_HUMAN, SPECIES_DIONA, SPECIES_UNATHI, SPECIES_VOX, SPECIES_VOX_ARMALIS,\
@@ -52,7 +19,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	slowdown = 10
 	blood_color = "#700f0f"
 	death_message = "writhes and twitches before falling motionless."
-	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN
+	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_DISEASE
 	spawn_flags = SPECIES_IS_RESTRICTED
 	brute_mod = 0.8
 	burn_mod = 2 //Vulnerable to fire
@@ -162,9 +129,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 /datum/species/zombie/handle_npc(mob/living/carbon/human/H)
 	H.resting = FALSE
-	if (H.client || H.stat != CONSCIOUS)
-		walk(H, 0) //Stop dead-walking
-		return
 
 	if (prob(5))
 		H.custom_emote("wails!")
@@ -172,10 +136,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		H.custom_emote("groans!")
 	if (H.restrained() && prob(8))
 		H.custom_emote("thrashes and writhes!")
-
-	if (H.lying)
-		walk(H, 0)
-		return
 
 	if (H.restrained() || H.buckled())
 		H.resist()
@@ -213,7 +173,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 					obstacle.attack_generic(H, 10, "smashes")
 					break
 
-			walk_to(H, target.loc, 1, H.move_intent.move_delay * 1.25)
+			step_towards(H, target.loc)
 
 		else
 			if (!target.lying) //Subdue meals
@@ -225,7 +185,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 				target.attack_hand(H)
 
 			else //Eat said meals
-				walk_to(H, target.loc, 0, H.move_intent.move_delay * 2.5) //Move over them
+				step_towards(H, target.loc) //Move over them
 				if (H.Adjacent(target)) //Check we're still next to them
 					H.consume()
 
@@ -236,26 +196,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	else
 		if (!H.lying)
-			walk(H, 0) //Clear walking
 			if (prob(33) && isturf(H.loc) && !H.pulledby)
 				H.SelfMove(pick(GLOB.cardinal))
-
-
-/datum/language/zombie
-	name = LANGUAGE_ZOMBIE
-	desc = "A crude form of feral communication utilized by the shuffling horrors. The living only hear guttural wails of agony."
-	colour = "cult"
-	key = "a"
-	speech_verb = "growls"
-	exclaim_verb = "wails"
-	partial_understanding = list(
-		LANGUAGE_HUMAN_GERMAN = 30,
-		LANGUAGE_ENGLISH = 35
-	)
-	syllables = list("mhh..", "grr..", "nnh..")
-	shorthand = "ZM"
-	hidden_from_codex = TRUE
-
 
 /datum/unarmed_attack/bite/sharp/zombie
 	attack_verb = list("slashed", "sunk their teeth into", "bit", "mauled")
@@ -280,72 +222,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	if (vuln > 0.05)
 		if (prob(vuln * 100)) //Protective infection chance
 			if (prob(min(100 - target.get_blocked_ratio(zone, BRUTE) * 100, 100))) //General infection chance
-				target.reagents.add_reagent(/datum/reagent/zombie, 5) //Infect 'em
-
-
-/datum/reagent/zombie
-	name = "008 Prions"
-	description = "An oily substance which slowly churns of its own accord."
-	taste_description = "decaying blood"
-	color = "#540000"
-	taste_mult = 5
-	metabolism = REM
-	overdose = 200
-	hidden_from_codex = TRUE
-	heating_products = null
-	heating_point = null
-	should_admin_log = TRUE
-
-/datum/reagent/zombie/affect_blood(mob/living/carbon/M, alien, removed)
-	if (!ishuman(M))
-		return
-	var/mob/living/carbon/human/H = M
-
-	if (!(H.species.name in GLOB.zombie_species) || isspecies(H, SPECIES_DIONA) || H.isSynthetic())
-		remove_self(volume)
-		return
-	var/true_dose = H.chem_doses[type] + volume
-
-	if (true_dose >= 30)
-		if (M.getBrainLoss() > 140)
-			H.zombify()
-		if (prob(1))
-			to_chat(M, SPAN_WARNING("<font style='font-size:[rand(1,2)]'>[pick(GLOB.zombie_messages["stage1"])]</font>"))
-
-	if (true_dose >= 60)
-		M.bodytemperature += 7.5
-		if (prob(3))
-			to_chat(M, SPAN_WARNING("<font style='font-size:2'>[pick(GLOB.zombie_messages["stage1"])]</font>"))
-		if (M.getBrainLoss() < 20)
-			M.adjustBrainLoss(rand(1, 2))
-
-	if (true_dose >= 90)
-		M.add_chemical_effect(CE_HALLUCINATION, -2)
-		M.hallucination(50, min(true_dose / 2, 50))
-		if (M.getBrainLoss() < 75)
-			M.adjustBrainLoss(rand(1, 2))
-		if (prob(0.5))
-			H.seizure()
-			H.adjustBrainLoss(rand(12, 24))
-		if (prob(5))
-			to_chat(M, SPAN_DANGER("<font style='font-size:[rand(2,3)]'>[pick(GLOB.zombie_messages["stage2"])]</font>"))
-		M.bodytemperature += 9
-
-	if (true_dose >= 110)
-		M.adjustHalLoss(5)
-		M.make_dizzy(10)
-		if (prob(8))
-			to_chat(M, SPAN_DANGER("<font style='font-size:[rand(3,4)]'>[pick(GLOB.zombie_messages["stage3"])]</font>"))
-
-	if (true_dose >= 135)
-		if (prob(3))
-			H.zombify()
-
-	M.reagents.add_reagent(/datum/reagent/zombie, RAND_F(1.5, 3.5))
-
-/datum/reagent/zombie/affect_touch(mob/living/carbon/M, alien, removed)
-	affect_blood(M, alien, removed * 0.5)
-
+				target.reagents.add_reagent(/datum/reagent/scp008, 5) //Infect 'em
 
 //// Zombie Procs
 
@@ -466,7 +343,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		if (!target.lying && target.stat != DEAD) //Check victims are still prone
 			return
 
-		target.reagents.add_reagent(/datum/reagent/zombie, 35) //Just in case they haven't been infected already
+		target.reagents.add_reagent(/datum/reagent/scp008, 35) //Just in case they haven't been infected already
 		if (target.getBruteLoss() > target.maxHealth * 1.5)
 			if (target.stat != DEAD)
 				to_chat(src,SPAN_WARNING("You've scraped \the [target] down to the bones already!."))
@@ -506,16 +383,15 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 //// Zombie Atoms
 
 
-/obj/item/reagent_containers/syringe/zombie
-	name = "Syringe (unknown serum)"
-	desc = "Contains a strange, crimson substance."
+/obj/item/reagent_containers/syringe/scp008
+	name = "Syringe SCP-###"
+	desc = "Contains a strange, crimson substance. The label appears to be partially scratched out."
 
-/obj/item/reagent_containers/syringe/zombie/Initialize()
+/obj/item/reagent_containers/syringe/scp008/Initialize()
 	..()
-	reagents.add_reagent(/datum/reagent/zombie, 15)
+	reagents.add_reagent(/datum/reagent/scp008, 15)
 	mode = SYRINGE_INJECT
 	update_icon()
-
 
 /mob/living/carbon/human/zombie/New(new_loc)
 	..(new_loc, SPECIES_ZOMBIE)

@@ -95,6 +95,16 @@ default behaviour is:
 		if (istype(AM, /mob/living))
 			var/mob/living/tmob = AM
 
+			for(var/thing in diseases)
+				var/datum/disease/D = thing
+				if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+					tmob.ContactContractDisease(D)
+
+			for(var/thing in tmob.diseases)
+				var/datum/disease/D = thing
+				if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+					ContactContractDisease(D)
+
 			for(var/mob/living/M in range(tmob, 1))
 				if(tmob.pinned.len ||  ((M.pulling == tmob && ( tmob.restrained() && !( M.restrained() ) && M.stat == 0)) || locate(/obj/item/grab, tmob.grabbed_by.len)) )
 					if ( !(world.time % 5) )
@@ -473,6 +483,10 @@ default behaviour is:
 	// fix all of our organs
 	restore_all_organs()
 
+	// Remove all diseases
+	for(var/datum/disease/D in diseases)
+		qdel(D)
+
 	// remove the character from the list of the dead
 	if(stat == DEAD)
 		switch_from_dead_to_living_mob_list()
@@ -623,6 +637,21 @@ default behaviour is:
 			// I made additional check in case if someone want a hand walk
 			if(L.mob_size > mob_size || L.lying || a_intent != I_HELP)
 				return set_dir(get_dir(src, pulling))
+
+/mob/living/start_pulling(atom/movable/AM)
+	. = ..()
+	if(isliving(AM))
+		var/mob/living/L = AM
+		//Share diseases that are spread by touch
+		for(var/thing in diseases)
+			var/datum/disease/D = thing
+			if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+				L.ContactContractDisease(D)
+
+		for(var/thing in L.diseases)
+			var/datum/disease/D = thing
+			if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+				ContactContractDisease(D)
 
 /mob/living/proc/handle_pull_damage(mob/living/puller)
 	var/area/A = get_area(src)
@@ -822,7 +851,6 @@ default behaviour is:
 		return
 
 	to_chat(src, "<b>You are now \the [src]!</b>")
-	to_chat(src, SPAN_NOTICE("Remember to stay in character for a mob of this type!"))
 	return 1
 
 /mob/living/reset_layer()
@@ -951,7 +979,7 @@ default behaviour is:
 		if(GLOB.antag_names_to_ids_[mind.special_role] in GLOB.all_antag_types_)
 			exp_list[EXP_TYPE_ANTAG] = minutes
 
-	if(src.isSCP())
+	if(SCP)
 		exp_list[EXP_TYPE_SCP] = minutes
 
 	return exp_list

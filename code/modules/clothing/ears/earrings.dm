@@ -5,7 +5,6 @@
 	icon = 'icons/obj/clothing/obj_ears.dmi'
 	gender = PLURAL
 	species_restricted = list(SPECIES_HUMAN)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/ears/earring/stud
 	name = "pearl stud earrings"

@@ -250,7 +250,7 @@
 				var/turf/neighbor = get_step(T,dir)
 				if(!neighbor || (neighbor in closed_turfs) || (neighbor in open_turfs))
 					continue
-				if(neighbor.density || get_dist(neighbor,origin_turf) > flood_dist || istype(neighbor,/turf/space))
+				if(neighbor.density || get_dist(neighbor,origin_turf) > flood_dist || isspaceturf(neighbor))
 					closed_turfs |= neighbor
 					continue
 				// Check for windows.
@@ -471,10 +471,10 @@
 			/datum/reagent/water/holywater,
 			/datum/reagent/toxin/plant_b_gone,
 			/datum/reagent/chloral_hydrate/beer,
-			/datum/reagent/zombie
+			/datum/reagent/scp008
 			)
 		banned_chems += subtypesof(/datum/reagent/ethanol)
-		banned_chems += subtypesof(/datum/reagent/zombie)
+		banned_chems += subtypesof(/datum/reagent/scp008)
 		banned_chems += subtypesof(/datum/reagent/medicine/fluff/tobacco)
 		banned_chems += typesof(/datum/reagent/drink)
 		banned_chems += typesof(/datum/reagent/nutriment)

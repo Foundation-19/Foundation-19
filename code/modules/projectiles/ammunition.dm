@@ -99,6 +99,51 @@
 	if(is_spent)
 		to_chat(user, "This one is spent.")
 
+// 1:1 - Gives random casing of same caliber
+// Fine - Refills the casing if it's spent, otherwise gives absolutely random casing
+// Very Fine - Shoots the loaded projectile at random people nearby
+/obj/item/ammo_casing/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ONE_TO_ONE)
+			var/list/potential_return = list()
+			for(var/thing in subtypesof(/obj/item/ammo_casing))
+				var/obj/item/ammo_casing/A = thing
+				if(A.caliber != caliber)
+					continue
+				potential_return += A
+			if(!LAZYLEN(potential_return))
+				return src
+			var/casing_type = pick(potential_return)
+			var/obj/item/ammo_casing/new_casing = new casing_type(get_turf(src))
+			new_casing.is_spent = is_spent
+			return new_casing
+		if(MODE_FINE)
+			if(ispath(projectile_type) && is_spent)
+				is_spent = FALSE
+				return src
+			return pick(subtypesof(/obj/item/ammo_casing))
+		if(MODE_VERY_FINE)
+			if(!ispath(projectile_type) || is_spent)
+				return src
+			var/turf/my_turf = get_turf(src)
+			var/list/potential_targets = list()
+			for(var/mob/living/L in view(9, my_turf))
+				if(L.stat == DEAD)
+					continue
+				potential_targets += L
+			if(!LAZYLEN(potential_targets))
+				for(var/turf/T in view(2, my_turf))
+					if(T.density)
+						continue
+					potential_targets += T
+			var/obj/item/projectile/P = new projectile_type(my_turf)
+			var/target = pick(potential_targets)
+			playsound(my_turf, P.fire_sound, 50, TRUE)
+			P.firer = user
+			P.launch(target, pick(BP_ALL_LIMBS))
+			return null
+	return ..()
+
 //An item that holds casings and can be used to put them inside guns
 /obj/item/ammo_magazine
 	name = "magazine"

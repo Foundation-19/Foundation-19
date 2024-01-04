@@ -101,7 +101,7 @@
 			var/area/A = get_area(start_location)
 
 			for (var/mob/M in GLOB.player_list)
-				if (M.client && M.z == A.z && !istype(get_turf(M), /turf/space) && !(get_area(M) in src.shuttle_area))
+				if (M.client && M.z == A.z && !isspaceturf(get_turf(M)) && !(get_area(M) in src.shuttle_area))
 					to_chat(M, SPAN_NOTICE("The rumble of engines are heard as a shuttle lifts off."))
 
 	spawn(warmup_time*10)
@@ -126,7 +126,7 @@
 						var/area/A = get_area(destination)
 
 						for (var/mob/M in GLOB.player_list)
-							if (M.client && M.z == A.z && !istype(get_turf(M), /turf/space) && !(get_area(M) in src.shuttle_area))
+							if (M.client && M.z == A.z && !isspaceturf(get_turf(M)) && !(get_area(M) in src.shuttle_area))
 								to_chat(M, SPAN_NOTICE("The rumble of a shuttle's engines fill the area as a ship manuevers in for a landing."))
 
 				sleep(5)

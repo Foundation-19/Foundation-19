@@ -224,3 +224,10 @@
 	if(old_invisibility != new_invisibility)
 		invisibility = new_invisibility
 		SEND_SIGNAL(src, COMSIG_SET_INVISIBILITY, old_invisibility, new_invisibility)
+
+///Lets us attempt to set faction of something not explicitly defined as a mob
+/proc/set_faction(mob/M, faction)
+	if(!istype(M))
+		return FALSE
+
+	M.faction = faction

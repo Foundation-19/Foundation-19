@@ -8,6 +8,8 @@
 	var/possible_transfer_amounts = "5;10;15;25;30"
 	var/volume = 30
 	var/label_text
+	var/spawned_disease = null
+	var/disease_amount = 20
 
 /obj/item/reagent_containers/proc/cannot_interact(mob/user)
 	if(!CanPhysicallyInteract(user))
@@ -33,6 +35,11 @@
 /obj/item/reagent_containers/New()
 	create_reagents(volume)
 	..()
+	if(spawned_disease)
+		var/datum/disease/F = SpawnDisease()
+		var/list/data = list("viruses"= list(F))
+		reagents.add_reagent(/datum/reagent/blood, disease_amount, data)
+		update_icon()
 	if(!possible_transfer_amounts)
 		src.verbs -= /obj/item/reagent_containers/verb/set_amount_per_transfer_from_this
 
@@ -247,3 +254,15 @@
 		for(var/datum/reagent/R in reagents.reagent_list)
 			R.ex_act(src, severity)
 	..()
+
+// In case we need to somehow modify what exactly happens to it
+/obj/item/reagent_containers/proc/SpawnDisease()
+	return new spawned_disease()
+
+// If used on Fine/Very Fine and contains adminordrazine(SCP 500) - will turn into SCP 427
+/obj/item/reagent_containers/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_FINE, MODE_VERY_FINE)
+			if(reagents.has_reagent(/datum/reagent/adminordrazine, 1))
+				return /obj/item/clothing/accessory/scp_427
+	return ..()

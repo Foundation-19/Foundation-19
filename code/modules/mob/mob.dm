@@ -383,6 +383,9 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
+
+		for(var/atom/B in view(world.view, A))
+			SEND_SIGNAL(B, COMSIG_ATOM_VIEW_RESET, src, A)
 	return
 
 
@@ -430,6 +433,7 @@
 		if(source_turf && source_turf.z == target_turf?.z)
 			distance = get_dist(source_turf, target_turf)
 
+	SEND_SIGNAL(A, COMSIG_ATOM_EXAMINED, src)
 	if(!A.examine(src, distance))
 		crash_with("Improper /examine() override: [log_info_line(A)]")
 
@@ -754,7 +758,7 @@
 
 	// update SCP-106's vis_contents icon
 	if(isscp106(src))
-		var/mob/living/carbon/human/scp_106/H = src
+		var/mob/living/carbon/human/scp106/H = src
 		// H.fix_icons()
 		H.update_vision_cone()
 

@@ -31,16 +31,22 @@ var/global/photo_count = 0
 	randpixel = 10
 	w_class = ITEM_SIZE_TINY
 	var/id
-	var/icon/img	//Big photo image
-	var/scribble	//Scribble on the back.
+	///Big photo image
+	var/icon/img
+	///Scribble on the back.
+	var/scribble
 	var/image/tiny
 	var/photo_size = 3
-	var/anomalous = FALSE //ADD SUPPORT FOR MEMETICS/096/OTHERS TO SPREAD THROUGH PHOTOS
-	var/anomalytype //This has to inherit from the camera
-	var/anomalymob //This has to inherit from the camera
+	///Photo data containing weakrefs to mobs and objects within the photo.
+	var/list/weakref/meta_data
 
 /obj/item/photo/New()
 	id = photo_count++
+	LAZYINITLIST(meta_data)
+
+/obj/item/photo/Destroy()
+	. = ..()
+	LAZYCLEARLIST(meta_data)
 
 /obj/item/photo/attack_self(mob/user as mob)
 	user.examinate(src)
@@ -74,13 +80,6 @@ var/global/photo_count = 0
 	if(distance <= 1)
 		show(user)
 		to_chat(user, desc)
-		if(anomalous)
-			to_chat(user, SPAN_DANGER("You gain a dull headache."))
-			switch(anomalytype)
-				if(SCP_096)
-					var/mob/living/simple_animal/hostile/scp096/A = anomalymob //I hate this but I don't know another way to do it, so, we go the shitcode way!
-					to_chat(user, A.specialexamine(user)) //YOU ARE ALREADY DEAD.
-					return
 	else
 		to_chat(user, SPAN_NOTICE("It is too far away."))
 
@@ -92,6 +91,8 @@ var/global/photo_count = 0
 	output += "[scribble ? "<br>Written on the back:<br><i>[scribble]</i>" : ""]"
 	output += "</body></html>"
 	show_browser(user, output, "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
+	for(var/atom/pAtom in resolveWeakrefList(meta_data))
+		SEND_SIGNAL(pAtom, COMSIG_PHOTO_SHOWN_OF, src, user)
 	onclose(user, "[name]")
 	return
 
@@ -164,9 +165,6 @@ var/global/photo_count = 0
 	var/icon_on = "camera"
 	var/icon_off = "camera_off"
 	var/size = 3
-	var/anomalous = FALSE //ADD SUPPORT FOR MEMETICS/096/OTHERS TO SPREAD THROUGH PHOTOS
-	var/anomalytype
-	var/anomalymob
 
 /obj/item/device/camera/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
@@ -225,14 +223,6 @@ var/global/photo_count = 0
 			mob_detail = "You can see [A] on the photo[(A.health / A.maxHealth) < 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]. "
 		else
 			mob_detail += "You can also see [A] on the photo[(A.health / A.maxHealth)< 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]."
-	for(var/mob/living/simple_animal/hostile/B in the_turf) //Handles making images anomalous
-		if(B.anomalytype)
-			anomalous = TRUE
-			if(B.anomalytype)
-				anomalytype = B.anomalytype
-				anomalymob = B
-			else
-				anomalytype = null
 	return mob_detail
 
 /obj/item/device/camera/afterattack(atom/target as mob|obj|turf|area, mob/user as mob, flag)
@@ -264,19 +254,23 @@ var/global/photo_count = 0
 	var/y_c = target.y + (size-1)/2
 	var/z_c	= target.z
 	var/mobs = ""
+	var/list/weakref/new_meta_data = list()
 	for(var/i = 1 to size)
 		for(var/j = 1 to size)
 			var/turf/T = locate(x_c, y_c, z_c)
 			if(user.can_capture_turf(T))
 				mobs += get_mobs(T)
+				for(var/atom/movable/mAtom as obj|mob in T)
+					new_meta_data += weakref(mAtom)
+					SEND_SIGNAL(mAtom, COMSIG_PHOTO_TAKEN_OF, src, user)
 			x_c++
 		y_c--
 		x_c = x_c - size
 
-	var/obj/item/photo/p = createpicture(target, user, mobs, flag)
+	var/obj/item/photo/p = createpicture(target, user, mobs, flag, new_meta_data)
 	printpicture(user, p)
 
-/obj/item/device/camera/proc/createpicture(atom/target, mob/user, mobs, flag)
+/obj/item/device/camera/proc/createpicture(atom/target, mob/user, mobs, flag, metadata)
 	var/x_c = target.x - (size-1)/2
 	var/y_c = target.y - (size-1)/2
 	var/z_c	= target.z
@@ -287,11 +281,7 @@ var/global/photo_count = 0
 	p.desc = mobs
 	p.photo_size = size
 	p.update_icon()
-
-	if(anomalytype) //Handles making SCP-096 and other anomalies MAD when you see them
-		p.anomalous = TRUE
-		p.anomalytype = anomalytype
-		p.anomalymob = anomalymob
+	p.meta_data = metadata
 
 	return p
 
@@ -311,10 +301,6 @@ var/global/photo_count = 0
 
 	p.photo_size = photo_size
 	p.scribble = scribble
-
-	p.anomalous = anomalous
-	p.anomalymob = anomalymob
-	p.anomalytype = anomalytype
 
 	if(copy_id)
 		p.id = id

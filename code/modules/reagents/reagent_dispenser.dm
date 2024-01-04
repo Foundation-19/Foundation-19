@@ -339,3 +339,12 @@
 	amount_per_transfer_from_this = 10
 	anchored = TRUE
 	initial_reagent_types = list(/datum/reagent/acid/sulphuric = 1)
+
+/obj/structure/reagent_dispensers/virus_food
+	name = "virus food dispenser"
+	desc = "A dispenser of virus food for virology research."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "virusfoodtank"
+	amount_per_transfer_from_this = 10
+	anchored = TRUE
+	initial_reagent_types = list(/datum/reagent/nutriment/virus_food = 1)

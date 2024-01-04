@@ -16,7 +16,6 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	body_parts_covered = HEAD|FACE|EYES
 	siemens_coefficient = 0.9
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"

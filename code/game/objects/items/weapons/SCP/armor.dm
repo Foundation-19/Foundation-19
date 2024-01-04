@@ -4,9 +4,8 @@
 /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards)
 
-
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
-	starting_accessories = list(/obj/item/clothing/accessory/storage/pouches/green)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical/mtf, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards, /obj/item/clothing/accessory/storage/pouches/green)
 
 /obj/item/clothing/suit/armor/vest/scp
 	w_class = ITEM_SIZE_HUGE

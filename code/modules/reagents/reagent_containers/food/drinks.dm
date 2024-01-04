@@ -235,6 +235,30 @@
 	else
 		icon_state = "water_cup_e"
 
+/obj/item/reagent_containers/food/drinks/sillycup/scp294cup
+	name = "A strange cup"
+	desc = "Weird cup seemingly made of styrofoam."
+	icon = 'icons/SCP/scp294.dmi'
+
+	volume = 20
+
+	icon_state = "294_cup_e"
+	acid_resistance = -1
+
+/obj/item/reagent_containers/food/drinks/sillycup/scp294cup/on_reagent_change()
+	. = ..()
+	var/datum/reagent/master_reagent = reagents.get_master_reagent()
+	SetName("A cup of [master_reagent ? master_reagent.name : "nothing"]")
+
+	if(reagents.total_volume)
+		icon_state = "294_cup"
+		underlays.Cut()
+		var/icon/chem_layer = new /icon('icons/SCP/scp294.dmi', "294_reagent")
+		chem_layer.ColorTone(reagents.get_color())
+		underlays += chem_layer
+	else
+		icon_state = "294_cup_e"
+		underlays.Cut()
 
 //////////////////////////pitchers, pots, flasks and cups //
 //Note by Darem: This code handles the mixing of drinks. New drinks go in three places: In Chemistry-Reagents.dm (for the drink

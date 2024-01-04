@@ -45,6 +45,9 @@
 	var/is_memo = FALSE  //If TRUE, paper will act the same as readable = FALSE, but will also be unrenameable.
 	var/datum/language/language = LANGUAGE_ENGLISH // Language the paper was written in. Editable by users up until something's actually written
 
+	///Whether or not title should be show in the desc.
+	var/show_title = TRUE
+
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
@@ -101,7 +104,7 @@
 
 /obj/item/paper/examine(mob/user, distance)
 	. = ..()
-	if(!is_memo && name != "sheet of paper")
+	if(!is_memo && name != "sheet of paper" && show_title)
 		to_chat(user, "It's titled '[name]'.")
 	if(distance <= 1)
 		show_content(usr)
@@ -587,6 +590,19 @@
 /obj/item/paper/proc/show_info(mob/user)
 	return info
 
+// Coarse - Cramples the paper
+// 1:1 - Returns random paper type
+/obj/item/paper/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_COARSE)
+			if(icon_state == "scrap")
+				return
+			info = stars(info, 85)
+			icon_state = "scrap"
+			return src
+		if(MODE_ONE_TO_ONE)
+			return pick(typesof(/obj/item/paper))
+	return ..()
 
 //For supply.
 /obj/item/paper/manifest

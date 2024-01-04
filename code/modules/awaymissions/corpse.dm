@@ -107,6 +107,9 @@
 	var/decl/hierarchy/outfit/corpse_outfit = outfit_by_type(pickweight(corpse_outfits))
 	corpse_outfit.equip(M, equip_adjustments = adjustments)
 
+/obj/effect/landmark/corpse/proc/AdditionalEffects(mob/living/carbon/human/H)
+	return
+
 /obj/effect/landmark/corpse/pirate
 	name = "Pirate"
 	corpse_outfits = list(/decl/hierarchy/outfit/pirate/norm)

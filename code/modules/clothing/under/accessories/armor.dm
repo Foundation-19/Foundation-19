@@ -9,7 +9,6 @@
 	gender = PLURAL
 	slot = ACCESSORY_SLOT_ARMOR_S
 	slots = 2 STORAGE_SLOTS
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/pouches/blue
 	desc = "A collection of blue pouches that can be attached to a plate carrier. Carries up to two items."
@@ -118,6 +117,19 @@
 		)
 	slowdown = 0.5
 
+/obj/item/clothing/accessory/armorplate/tactical/mtf
+	name = "mtf tactical armor plate"
+	desc = "A heavier armor plate with additional ablative coating. Attaches to a plate carrier. This one is specialized for MTF units."
+	icon_state = "armor_tactical"
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED
+		)
+	slowdown = 0
+	
 /obj/item/clothing/accessory/armorplate/merc
 	name = "heavy armor plate"
 	desc = "A ceramics-reinforced synthetic armor plate, providing state of of the art protection. Attaches to a plate carrier."

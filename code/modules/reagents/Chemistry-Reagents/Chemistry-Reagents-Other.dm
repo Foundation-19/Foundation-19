@@ -50,7 +50,7 @@
 	color_weight = 20
 
 /datum/reagent/paint/touch_turf(turf/T)
-	if(istype(T) && !istype(T, /turf/space))
+	if(istype(T) && !isspaceturf(T))
 		T.color = color
 
 /datum/reagent/paint/touch_obj(obj/O)
@@ -145,7 +145,7 @@
 
 /datum/reagent/uranium/touch_turf(turf/T)
 	if(volume >= 3)
-		if(!istype(T, /turf/space))
+		if(!isspaceturf(T))
 			var/obj/effect/decal/cleanable/greenglow/glow = locate(/obj/effect/decal/cleanable/greenglow, T)
 			if(!glow)
 				new /obj/effect/decal/cleanable/greenglow(T)
@@ -346,7 +346,7 @@
 	color = "#000000"
 
 /datum/reagent/oil/touch_turf(turf/simulated/T)
-	if(!istype(T, /turf/space))
+	if(!isspaceturf(T))
 		new /obj/effect/decal/cleanable/blood/oil/streak(T)
 
 /datum/reagent/glycerol
@@ -387,7 +387,7 @@
 	var/min_temperature = 0 // Room temperature + some variance. An actual diminishing return would be better, but this is *like* that. In a way. . This has the potential for weird behavior, but I says fuck it. Water grenades for everyone.
 
 	var/hotspot = (locate(/obj/fire) in T)
-	if(hotspot && !istype(T, /turf/space))
+	if(hotspot && !isspaceturf(T))
 		var/datum/gas_mixture/lowertemp = T.remove_air(T:air:total_moles)
 		lowertemp.temperature = max(min(lowertemp.temperature-2000, lowertemp.temperature / 2), 0)
 		lowertemp.react()
@@ -656,6 +656,27 @@
 		M.emote(pick("giggle", "laugh"))
 	M.add_chemical_effect(CE_PULSE, -1)
 
+/datum/reagent/vaccine
+	//data must contain virus type
+	name = "Vaccine"
+	color = "#c81040" // rgb: 200, 16, 64
+	taste_description = "slime"
+
+/datum/reagent/vaccine/affect_blood(mob/living/carbon/M, alien, removed)
+	. = ..()
+	if(!islist(data))
+		return
+
+	for(var/thing in M.diseases)
+		var/datum/disease/infection = thing
+		if(infection.GetDiseaseID() in data)
+			infection.Cure()
+	LAZYOR(M.disease_resistances, data)
+
+/datum/reagent/vaccine/mix_data(list/newdata, newamount)
+	if(istype(newdata))
+		src.data |= newdata.Copy()
+
 /* Abominable Infestation reagents */
 
 // Grauel - Basically a healing chem that can implant a larva into its user.
@@ -778,8 +799,6 @@
 			if(E.status & ORGAN_DEAD)
 				E.revive()
 
-	/* TODO: Port diseases from Tegu as well
 	// Remove all diseases
 	for(var/datum/disease/D in M.diseases)
 		qdel(D)
-	*/
