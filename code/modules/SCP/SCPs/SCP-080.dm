@@ -27,6 +27,7 @@
 		"080", //Numerical Designation
 		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
+
 /mob/living/scp080/Life(delta_time, times_fired)
     . = ..()
     if(!.)
