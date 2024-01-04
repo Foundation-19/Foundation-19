@@ -122,7 +122,7 @@
 		user.setClickCooldown(10)
 		to_chat(user, SPAN_NOTICE("You begin [unlocked ? "enabling" : "disabling"] \the [src]'s maglock."))
 
-		if(!do_after(user, 20,src))
+		if(!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 			return
 
 		if(shattered) return

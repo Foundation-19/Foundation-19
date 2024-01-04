@@ -50,12 +50,9 @@
 		return 0 //No feedback here, hiding the cooldown a little makes it harder to tell who's really picking letters.
 
 	//lighting check
-	var/light_amount = 0
 	var/turf/T = get_turf(src)
-	light_amount = T.get_lumcount()
 
-
-	if(light_amount > 0.2)
+	if(!is_dark(T, 0.2))
 		to_chat(M, SPAN_WARNING("It's too bright here to use \the [src.name]!"))
 		return 0
 

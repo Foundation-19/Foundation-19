@@ -145,7 +145,7 @@
 	if(kickstand || (world.time <= l_move_time + move_delay)) return
 	//these things like space, not turf. Dragging shouldn't weigh you down.
 	if(!pulledby)
-		if(istype(destination,/turf/space) || pulledby)
+		if(isspaceturf(destination) || pulledby)
 			if(!space_speed)
 				return 0
 			move_delay = space_speed

@@ -389,7 +389,7 @@ its easier to just keep the beam vertical.
 	return pass_flags&passflag
 
 /atom/proc/isinspace()
-	if(istype(get_turf(src), /turf/space))
+	if(isspaceturf(get_turf(src)))
 		return 1
 	else
 		return 0
@@ -560,7 +560,7 @@ its easier to just keep the beam vertical.
 	user.visible_message(SPAN_WARNING("\The [user] starts climbing onto \the [src]!"))
 	LAZYDISTINCTADD(climbers,user)
 
-	if(!do_after(user,(issmall(user) ? MOB_CLIMB_TIME_SMALL : MOB_CLIMB_TIME_MEDIUM) * climb_speed_mult, src))
+	if(!do_after(user,(issmall(user) ? MOB_CLIMB_TIME_SMALL : MOB_CLIMB_TIME_MEDIUM) * climb_speed_mult, src, bonus_percentage = 25))
 		LAZYREMOVE(climbers,user)
 		return 0
 

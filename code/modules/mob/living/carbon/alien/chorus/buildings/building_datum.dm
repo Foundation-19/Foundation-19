@@ -15,7 +15,7 @@
 		if(warnings)
 			to_chat(c, SPAN_WARNING("You cannot build on a wall"))
 		return FALSE
-	if(istype(A, /turf/space) || istype(A, /turf/simulated/open))
+	if(isspaceturf(A) || istype(A, /turf/simulated/open))
 		if(warnings)
 			to_chat(c, SPAN_WARNING("You must build on solid ground"))
 		return FALSE
@@ -119,6 +119,6 @@
 	. = ..()
 	if(.)
 		for(var/turf/T in range(range, target))
-			if(T.density || istype(T, /turf/space))
+			if(T.density || isspaceturf(T))
 				continue
 			T.ChangeTurf(turf_to_change_to)

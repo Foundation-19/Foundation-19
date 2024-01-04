@@ -343,8 +343,6 @@
 			return global.client_preference_stats_;
 		if("client_repository")
 			return global.client_repository;
-		if("climbsounds")
-			return global.climbsounds;
 		if("combatlog")
 			return global.combatlog;
 		if("comm_message_listeners")
@@ -579,8 +577,8 @@
 			return global.narsie_behaviour;
 		if("narsie_cometh")
 			return global.narsie_cometh;
-		if("narsie_list")
-			return global.narsie_list;
+		if("scarletking_list")
+			return global.scarletking_list;
 		if("navbeacons")
 			return global.navbeacons;
 		if("news_network")
@@ -1192,8 +1190,6 @@
 			global.client_preference_stats_=newval;
 		if("client_repository")
 			global.client_repository=newval;
-		if("climbsounds")
-			global.climbsounds=newval;
 		if("combatlog")
 			global.combatlog=newval;
 		if("comm_message_listeners")
@@ -1428,8 +1424,8 @@
 			global.narsie_behaviour=newval;
 		if("narsie_cometh")
 			global.narsie_cometh=newval;
-		if("narsie_list")
-			global.narsie_list=newval;
+		if("scarletking_list")
+			global.scarletking_list=newval;
 		if("navbeacons")
 			global.navbeacons=newval;
 		if("news_network")
@@ -1996,7 +1992,7 @@
 	"multi_point_spawns",
 	"narsie_behaviour",
 	"narsie_cometh",
-	"narsie_list",
+	"scarletking_list",
 	"navbeacons",
 	"news_network",
 	"newscaster_standard_feeds",

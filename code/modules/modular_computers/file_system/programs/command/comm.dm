@@ -3,6 +3,9 @@
 #define STATE_VIEWMESSAGE	3
 #define STATE_STATUSDISPLAY	4
 #define STATE_ALERT_LEVEL	5
+
+#define CROSSCOMMS_COOLDOWN 2 MINUTES
+
 /datum/computer_file/program/comm
 	filename = "comm"
 	filedesc = "Command and Communications Program"
@@ -85,6 +88,8 @@
 	data["message_current_id"] = current_viewing_message_id
 	if(current_viewing_message)
 		data["message_current"] = current_viewing_message
+
+	data["cross_enabled"] = LAZYLEN(config.cross_servers)
 
 	var/list/processed_evac_options = list()
 	if(!isnull(evacuation_controller))
@@ -259,6 +264,34 @@
 			. = TRUE
 			if(is_autenthicated(user) && ntn_comm)
 				post_status("toggle_alert_border")
+		if("cross_comms")
+			. = TRUE
+			if(is_autenthicated(user))
+				if(GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN > world.time)
+					to_chat(user, SPAN_WARNING("A message was sent too recently! Wait for [round((GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN - world.time) / 10)] seconds before trying again!"))
+					return 1
+				var/list/payload = list()
+				var/network_name = config.cross_comms_network
+				if(network_name)
+					payload["network"] = network_name
+				payload["message_sender_ckey"] = user.ckey
+
+				var/destination = input(usr, "Pick destination.", "Priority Announcement") in (config.cross_servers + "all")
+				if(!destination || !can_still_topic())
+					return 1
+
+				var/message = sanitize(input(usr, "Please write a message to announce to the destination.", "Priority Announcement") as null|message, encode = FALSE, extra = FALSE)
+				if(!message || !can_still_topic())
+					return 1
+
+				// Double check to prevent people from "saving" the window with input to ignore the cooldown
+				if(GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN > world.time)
+					to_chat(user, SPAN_WARNING("A message was sent too recently! Wait for [round((GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN - world.time) / 10)] seconds before trying again!"))
+					return 1
+
+				send2otherserver(station_name(), message, "Comms_Console", destination == "all" ? null : list(destination), additional_data = payload)
+				command_announcement.Announce(message, "Outgoing message to allied station")
+				GLOB.last_cross_comms_message_time = world.time
 
 #undef STATE_DEFAULT
 #undef STATE_MESSAGELIST

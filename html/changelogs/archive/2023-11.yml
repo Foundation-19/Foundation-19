@@ -1,0 +1,28 @@
+2023-11-02:
+  cheesePizza2:
+  - rscadd: Interactive do_afters! During (most) timed actions, stars will pop up
+      that can be clicked to get extra progress.
+  - rscadd: Actionspeed modifiers ported from TG.
+  - imageadd: do_after sprites ported from TG.
+  - imageadd: Interactive do_after sprites by MrDoomBringer.
+  - refactor: Massive improvements to do_after system (from TG).
+2023-11-16:
+  Saicchi:
+  - bugfix: Rejuvenating robots now gives them charge
+2023-11-17:
+  Saicchi:
+  - balance: Reduce light replacer recharge time
+  casualspacestation14enjoyer:
+  - code_imp: All iterations of Nar'Sie were changed into "The Scarlet King" for LOOOORE
+  - rscadd: Examining most runes as a cult member will now show hints how to utilize
+      them/how they work/what they do.
+  - rscadd: New cult talisman, Shadow Shackles. This talisman will handcuff the target
+      with weak shackles.
+  - rscadd: New cult talisman, Blindness. This talisman will blind the target for
+      a short while.
+  - imageadd: The cult wall now has a better sprite to indicate that it is a barrier.
+  - bugfix: Examining a talisman now actually shows talisman fluff.
+  - soundadd: Added new sounds for the Scarlet King (nar'sie) rising. If some admin
+      tomfoolery happens (caused by me) it will play fun sounds.
+  cheesePizza2:
+  - bugfix: CDZ medical checkpoint windoor fixed.

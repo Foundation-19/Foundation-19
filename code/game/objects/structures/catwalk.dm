@@ -69,7 +69,7 @@
 	new /obj/item/stack/material/rods(src.loc)
 	new /obj/item/stack/material/rods(src.loc)
 	//Lattice would delete itself, but let's save ourselves a new obj
-	if(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open))
+	if(isspaceturf(loc) || istype(src.loc, /turf/simulated/open))
 		new /obj/structure/lattice/(src.loc)
 	if(plated_tile)
 		new plated_tile.build_type(src.loc)
@@ -104,7 +104,7 @@
 		if(!ST.in_use)
 			to_chat(user, SPAN_NOTICE("Placing tile..."))
 			ST.in_use = 1
-			if (!do_after(user, 10))
+			if (!do_after(user, 1 SECOND, bonus_percentage = 50))
 				ST.in_use = 0
 				return
 			to_chat(user, SPAN_NOTICE("You plate \the [src]"))

@@ -159,3 +159,23 @@
 /obj/effect/landmark/corpse/classdescaped
 	name = "Class D"
 	corpse_outfits = list(/decl/hierarchy/outfit/zombie/classd)
+
+/obj/effect/landmark/corpse/classdescaped/rage_virus/AdditionalEffects(mob/living/carbon/human/H)
+	. = ..()
+	var/datum/disease/rage/D = new()
+	D.TryInfect(H, FALSE)
+
+/obj/effect/landmark/corpse/classdescaped/random_virus_weak/AdditionalEffects(mob/living/carbon/human/H)
+	. = ..()
+	var/datum/disease/advance/random/D = new(5, max_level = 3)
+	D.TryInfect(H, FALSE)
+
+/obj/effect/landmark/corpse/classdescaped/random_virus_medium/AdditionalEffects(mob/living/carbon/human/H)
+	. = ..()
+	var/datum/disease/advance/random/D = new(5, max_level = 6)
+	D.TryInfect(H, FALSE)
+
+/obj/effect/landmark/corpse/classdescaped/random_virus_strong/AdditionalEffects(mob/living/carbon/human/H)
+	. = ..()
+	var/datum/disease/advance/random/D = new(5, max_level = 9)
+	D.TryInfect(H, FALSE)

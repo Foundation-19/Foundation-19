@@ -114,8 +114,6 @@
 	emote_see = list("clacks")
 
 /datum/say_list/parrot
-
-
 	speak = list("Hi","Hello!","Cracker?")
 	emote_hear = list("squawks","bawks")
 	emote_see = list("flutters its wings")

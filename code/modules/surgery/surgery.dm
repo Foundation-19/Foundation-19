@@ -178,7 +178,9 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 		return FALSE
 
 	// Check for multi-surgery drifting.
-	var/zone = user.zone_sel.selecting
+	var/zone = user.zone_sel?.selecting
+	if(!zone)
+		return FALSE
 	if(LAZYACCESS(M.surgeries_in_progress, zone))
 		to_chat(user, SPAN_WARNING("You can't operate on this area while surgery is already in progress."))
 		return TRUE
@@ -227,7 +229,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 				S.begin_step(user, M, zone, src)
 				var/skill_reqs = S.get_skill_reqs(user, M, src, zone)
 				var/duration = user.skill_delay_mult(skill_reqs[1]) * rand(S.min_duration, S.max_duration)
-				if(prob(S.success_chance(user, M, src, zone)) && do_after(user, duration, M))
+				if(prob(S.success_chance(user, M, src, zone)) && do_after(user, duration, M, bonus_percentage = 25))
 					if (S.can_use(user, M, zone, src))
 						S.end_step(user, M, zone, src)
 						handle_post_surgery()

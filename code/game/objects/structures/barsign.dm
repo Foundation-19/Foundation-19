@@ -180,8 +180,8 @@
 	hidden = TRUE
 	rename = FALSE
 
-/datum/barsign/toolate
+/datum/barsign/scp078
 	name = "Too Late to Die Young"
 	icon = "toolate"
-	desc = null
+	desc = "A pink neon sign approximately one and a half meters long that displays the phrase \"TOO LATE TO DIE YOUNG\""
 	hidden = TRUE

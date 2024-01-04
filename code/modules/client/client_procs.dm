@@ -685,3 +685,20 @@
 		winset(usr, "mapwindow.status_bar", "is-visible=true")
 	else
 		winset(usr, "mapwindow.status_bar", "is-visible=false")
+
+// Creates the character out of client's preferences
+/client/proc/SpawnPrefsCharacter(turf/T)
+	var/mob/living/carbon/human/new_character = new(T)
+	new_character.lastarea = get_area(T)
+	prefs.copy_to(new_character)
+	new_character.dna.ready_dna(new_character)
+	new_character.dna.b_type = prefs.b_type
+	new_character.sync_organ_dna()
+	if(prefs.disabilities)
+		new_character.dna.SetSEState(GLOB.GLASSESBLOCK,1,0)
+		new_character.disabilities |= NEARSIGHTED
+	new_character.force_update_limbs()
+	new_character.update_eyes()
+	new_character.regenerate_icons()
+	new_character.ckey = ckey
+	return new_character

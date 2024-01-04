@@ -31,6 +31,18 @@
 
 	..()
 	remove_cloaking_source(species)
+
+	// Spread diseases
+	for(var/thing in diseases)
+		var/datum/disease/D = thing
+		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+			M.ContactContractDisease(D)
+
+	for(var/thing in M.diseases)
+		var/datum/disease/D = thing
+		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
+			ContactContractDisease(D)
+
 	// Should this all be in Touch()?
 	if(istype(H))
 		if(H != src && check_shields(0, null, H, H.zone_sel.selecting, H.name))
@@ -76,12 +88,12 @@
 					return 0
 
 				var/pumping_skill = max(M.get_skill_value(SKILL_MEDICAL),M.get_skill_value(SKILL_ANATOMY))
-				var/cpr_delay = 15 * M.skill_delay_mult(SKILL_ANATOMY, 0.2)
+				var/cpr_delay = 2 SECONDS * M.skill_delay_mult(SKILL_ANATOMY, 0.2)
 				cpr_time = 0
 
 				H.visible_message(SPAN_NOTICE("\The [H] is trying to perform CPR on \the [src]."))
 
-				if(!do_after(H, cpr_delay, src))
+				if(!do_after(H, cpr_delay, src, bonus_percentage = 25))
 					cpr_time = 1
 					return
 				cpr_time = 1
@@ -324,7 +336,7 @@
 		organ.applied_pressure = user
 
 		//apply pressure as long as they stay still and keep grabbing
-		do_after(user, INFINITY, src, do_flags = (DO_DEFAULT & ~DO_SHOW_PROGRESS) | DO_USER_SAME_ZONE)
+		do_after(user, INFINITY, src, do_flags = (DO_DEFAULT & ~DO_SHOW_USER) | DO_USER_SAME_ZONE)
 
 		organ.applied_pressure = null
 

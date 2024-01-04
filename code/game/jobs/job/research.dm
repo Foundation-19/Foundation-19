@@ -16,7 +16,8 @@
 
 	access = list(
 		ACCESS_SCI_COMMS,
-		ACCESS_SCIENCE_LVL1
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2
 	)
 	minimal_access = list()
 
@@ -99,8 +100,10 @@
 
 	access = list(
 	ACCESS_SCI_COMMS,
+	ACCESS_RESEARCH,
 	ACCESS_SCIENCE_LVL1,
-	ACCESS_SCIENCE_LVL2
+	ACCESS_SCIENCE_LVL2,
+	ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 

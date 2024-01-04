@@ -44,7 +44,7 @@
 	if (!panel_open)
 		if (isWrench(I))
 			var/turf/T = get_turf(src)
-			if (is_space_turf(T) || istype(T, /turf/simulated/open))
+			if (isspaceturf(T) || istype(T, /turf/simulated/open))
 				to_chat(user, SPAN_WARNING("You cannot anchor \the [src] to \the [T]. It requires solid plating."))
 				return FALSE
 			if (!T.is_plating())
@@ -57,7 +57,7 @@
 			)
 			playsound(loc, 'sounds/items/Ratchet.ogg', 75, TRUE)
 
-			if (!do_after(user, 3 SECONDS, src, DO_DEFAULT | DO_BOTH_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
+			if (!do_after(user, 4 SECONDS, src, DO_DEFAULT | DO_TARGET_UNIQUE_ACT, bonus_percentage = 25))
 				return TRUE
 
 			anchored = !anchored

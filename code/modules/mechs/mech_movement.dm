@@ -8,7 +8,7 @@
 
 /mob/living/exosuit/Move()
 	. = ..()
-	if(. && !istype(loc, /turf/space))
+	if(. && !isspaceturf(loc))
 		playsound(src.loc, mech_step_sound, 40, 1)
 
 /mob/living/exosuit/can_ztravel()
@@ -100,7 +100,7 @@
 	var/moving_dir = direction
 
 	var/failed = FALSE
-	var/fail_prob = mover != host ? (mover.skill_check(SKILL_PILOT, HAS_PERK) ? 0 : 25) : 0
+	var/fail_prob = mover != host ? (mover.skill_check(SKILL_WEAPONS, HAS_PERK) ? 0 : 25) : 0
 	if(prob(fail_prob))
 		to_chat(mover, SPAN_DANGER("You clumsily fumble with the exosuit joystick."))
 		failed = TRUE

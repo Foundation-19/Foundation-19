@@ -1,0 +1,97 @@
+2024-01-02:
+  K4rlox:
+  - rscadd: Medical locker in dblock
+  Teragenic:
+  - rscadd: Adds IDs with actual assignments to MTF, so no more guessing which MTF
+      arrived or whomst it came from.
+  - rscadd: Adds pistolbelts to MTF
+  - balance: adds a custom variant of tactical plates for MTF with no slowdown.
+  - bugfix: Fixes GOC uniforms
+  - bugfix: Fixes Ninetailed Fox dressups
+  checkraisefold:
+  - bugfix: Cargo train trolley can go up stairs
+  - bugfix: Spellchecked and re-did access for Ethics Committee Liaison and Internal
+      Tribunal Department Rep offices.
+2024-01-03:
+  cheesePizza2:
+  - rscadd: Adds the IT Technician role, an engineering side-role responsible for
+      keeping the server room operational and safe from malware.
+  - rscadd: Adds the RAISA Agent role, a high-level EZ security role that protects
+      against corporate espionage.
+  - rscadd: Overhauls the archives into a server room. Currently, the only server
+      is a database storing all SCP files.
+  - rscadd: Converts all SCP files into digital files.
+  - rscdel: Removes the Archivist role.
+  - bugfix: Space should (hopefully) stop appearing on Earth.
+2024-01-04:
+  EgorDinamit:
+  - tweak: Ossarepantes no longer locks you into a loop of bone-breaking. It is now
+      safe to use for its purpose.
+  - rscadd: Added SCP-914. Shove your local class D on "Very Fine" into it to find
+      out what it does!
+  - bugfix: When picked up, items will leave behind a tiny effect of the item being
+      taken.
+  - rscadd: The White Night(Apostle) mob has been reworked and improved even further.
+  - rscadd: Diseases! People can now catch and spread viruses that range from helpful
+      to life-threatening.
+  - rscadd: Virology machinery will help medical department cure or create new diseases.
+      Create a bio-weapon or something that'd help everyone onboard.
+  - rscadd: Added numerous reagents that alter advance diseases.
+  K4rlox:
+  - bugfix: fixes researcher's accesses
+  TheDarkElites:
+  - refactor: Refactors SCP Backend Code
+  - balance: Memetic system min dark value changed to 0.03 from 0.05
+  - refactor: Refactors SCP 012
+  - refactor: Refactors SCP 013
+  - rscadd: Adds SCP 017 (For the most part, its not mapped in)
+  - refactor: SCP 049 has been refactored and minorly reworked
+  - code_imp: New stageHandler to allow scps to keep track of various stages in humans
+      without explicitly defined vars.
+  - bugfix: desc not showing SCP desc for humanoid SCPs.
+  - code_imp: new memetics component for handling memetic like properties of SCPS
+      (but it can be used for anything).
+  - rscadd: SCP 066 now has actual functionality
+  - refactor: SCP 096 has been refactored and reworked but is currently disabled as
+      it requires AI ports that are still being worked on.
+  - refactor: SCP 106 has been minorly refactored to use new SCP datum and stage handler.
+  - refactor: SCP 113 has been refactored.
+  - refactor: SCP 131 has been refactored and slightly reworked.
+  - refactor: SCP 151 has been refactored and reworked.
+  - refactor: SCP 173 has been minorly refactored.
+  - refactor: SCP 216 has been minorly refactored.
+  - refactor: SCP 247 has been refactored.
+  - refactor: SCP 263 majorly reworked.
+  - rscadd: SCP 280 is no longer a placeholder and now works
+  - refactor: SCP 294 was minorly reworked to take reagents from the world rather
+      than just being a chem dispenser.
+  - refactor: SCP 343 has been refactored
+  - refactor: SCP 420-J has been reworked (credit to @EgorDinamit)
+  - refactor: SCP 457 has been refactored and minorly reworked
+  - refactor: SCP 500 has been refactored
+  - refactor: SCP 513 has been fully reworked.
+  - refactor: SCP 527 minorly refactored.
+  - refactor: SCP 529 minorly refactored.
+  - refactor: SCP 895 reworked.
+  - refactor: SCP 999 refactored.
+  - refactor: SCP 1102RU refactored.
+  - refactor: SCP 2343 refactored (just made a subtype of 343)
+  - refactor: SCP 2398 minorly reworked.
+  - refactor: SCP 2427-3 minorly refactored.
+  - code_imp: new is_dark() turf helper proc to help standardize what is considered
+      dark.
+  - rscadd: new functionality to allow ladder types to be exempt from unit tests.
+  - bugfix: gets rid of duplicate English language
+  - rscdel: gets rid of all placeholder SCP files
+  - bugfix: 'should fix #1141'
+  - bugfix: 'should fix #1190'
+  - bugfix: 'fix #207'
+  - bugfix: SCP 2427-3 no longer checks purity of SCPs.
+  - bugfix: 'fixes #1295'
+  casualspacestation14enjoyer:
+  - rscadd: 'automated D-block: job assignment machines'
+  - code_imp: code cleanup in ID cards
+  - rscadd: Coat Racks now work correctly, you can hang your hats and suits on them.
+  - bugfix: some magazines now have correct sprites
+  checkraisefold:
+  - rscdel: Removed old Shage font leftovers.

@@ -224,8 +224,8 @@ var/global/list/all_objectives = list()
 		"the captain's pinpointer" = /obj/item/pinpointer,
 		"an RCD" = /obj/item/rcd,
 		"SCP-500" = /obj/item/reagent_containers/pill/scp500,
-		"SCP-2398" = /obj/item/weapon/twohanded/scp_2398,
-		"SCP-1102-RU" = /obj/item/weapon/scp1102ru,
+		"SCP-2398" = /obj/item/material/twohanded/baseballbat/scp2398,
+		"SCP-1102-RU" = /obj/item/storage/briefcase/scp1102ru,
 		"SCP-513" = /obj/item/scp513,
 		"SCP-013" = /obj/item/storage/fancy/cigarettes/bluelady
 	)
@@ -424,10 +424,10 @@ var/global/list/all_objectives = list()
 	explanation_text = "Our knowledge must live on. Make sure at least [target_amount] acolytes escape to spread their work."
 
 /datum/objective/cult/eldergod
-	explanation_text = "Summon Nar-Sie via the use of the appropriate rune (Hell join self). It will only work if nine cultists stand on and around it. The convert rune is join blood self."
+	explanation_text = "Summon the Scarlet King via the use of the appropriate rune (Hell join self). It will only work if nine cultists stand on and around it. The convert rune is join blood self."
 
 /datum/objective/cult/sacrifice
-	explanation_text = "Conduct a ritual sacrifice for the glory of Nar-Sie."
+	explanation_text = "Conduct a ritual sacrifice for the glory of the Scarlet King."
 
 /datum/objective/cult/sacrifice/find_target()
 	var/list/possible_targets = list()

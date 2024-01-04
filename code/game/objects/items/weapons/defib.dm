@@ -210,8 +210,8 @@
 
 	var/safety = 1 //if you can zap people with the paddles on harm mode
 	var/combat = 0 //If it can be used to revive people wearing thick clothing (e.g. spacesuits)
-	var/cooldowntime = (6 SECONDS) // How long in deciseconds until the defib is ready again after use.
-	var/chargetime = (2 SECONDS)
+	var/cooldowntime = 6 SECONDS // How long in deciseconds until the defib is ready again after use.
+	var/chargetime = 2 SECONDS
 	var/chargecost = 100 //units of charge
 	var/burn_damage_amt = 5
 
@@ -372,8 +372,9 @@
 	H.apply_damage(burn_damage_amt, BURN, BP_CHEST)
 
 	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
-	heart.scp3349_induced = FALSE	// part of SCP-3349. electric shocks temporarily stop effect
-	to_chat(H, SPAN_INFO("The euphoric sensation ends."))
+	if(heart.SCP?.designation == "3349-1")	// part of SCP-3349. electric shocks temporarily stop effect
+		qdel(SCP)
+		to_chat(H, SPAN_INFO("The euphoric sensation ends."))
 
 	//set oxyloss so that the patient is just barely in crit, if possible
 	make_announcement("pings, \"Resuscitation successful.\"", "notice")

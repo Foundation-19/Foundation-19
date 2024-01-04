@@ -174,7 +174,7 @@
 /obj/structure/reagent_dispensers/fueltank/attack_hand()
 	if (rig)
 		usr.visible_message(SPAN_NOTICE("\The [usr] begins to detach \the [rig] from \the [src]."), SPAN_NOTICE("You begin to detach \the [rig] from \the [src]."))
-		if(do_after(usr, 20, src))
+		if(do_after(usr, 2 SECONDS, src, bonus_percentage = 25))
 			usr.visible_message(SPAN_NOTICE("\The [usr] detaches \the [rig] from \the [src]."), SPAN_NOTICE("You detach [rig] from \the [src]"))
 			rig.dropInto(usr.loc)
 			rig = null
@@ -194,7 +194,7 @@
 			to_chat(user, SPAN_WARNING("There is another device already in the way."))
 			return ..()
 		user.visible_message("\The [user] begins rigging \the [W] to \the [src].", "You begin rigging \the [W] to \the [src]")
-		if(do_after(user, 20, src))
+		if(do_after(user, 2 SECONDS, src, bonus_percentage = 25))
 			if(!user.unEquip(W, src))
 				return
 			user.visible_message(SPAN_NOTICE("\The [user] rigs \the [W] to \the [src]."), SPAN_NOTICE("You rig \the [W] to \the [src]."))
@@ -214,7 +214,7 @@
 			return
 
 		user.visible_message(SPAN_WARNING("\The [user] draws closer to the fuel tank with \the [W]."), SPAN_WARNING("You draw closer to the fuel tank with \the [W]."))
-		if(do_after(user, 50, src))
+		if(do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 			log_and_message_staff("triggered a fuel tank explosion with \the [W].")
 			user.visible_message(SPAN_DANGER("\The [user] puts \the [W] to \the [src]!"), SPAN_DANGER("You put \the [W] to \the [src] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done."))
 			src.explode()
@@ -313,7 +313,7 @@
 		else
 			user.visible_message("\The [user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
 
-		if(do_after(user, 20, src))
+		if(do_after(user, 2 SECONDS, src, bonus_percentage = 25))
 			if(!src) return
 			to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured \the [src]!"))
 			anchored = !anchored
@@ -339,3 +339,12 @@
 	amount_per_transfer_from_this = 10
 	anchored = TRUE
 	initial_reagent_types = list(/datum/reagent/acid/sulphuric = 1)
+
+/obj/structure/reagent_dispensers/virus_food
+	name = "virus food dispenser"
+	desc = "A dispenser of virus food for virology research."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "virusfoodtank"
+	amount_per_transfer_from_this = 10
+	anchored = TRUE
+	initial_reagent_types = list(/datum/reagent/nutriment/virus_food = 1)

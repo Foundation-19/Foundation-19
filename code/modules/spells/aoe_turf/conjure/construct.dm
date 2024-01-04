@@ -66,7 +66,7 @@
 
 /datum/spell/aoe_turf/conjure/soulstone
 	name = "Summon Soulstone"
-	desc = "This spell reaches into Nar-Sie's realm, summoning one of the legendary fragments across time and space."
+	desc = "This spell reaches into the Scarlet King's realm, summoning one of the legendary fragments across time and space."
 
 	charge_max = 3000
 	spell_flags = 0
@@ -82,7 +82,7 @@
 
 /datum/spell/aoe_turf/conjure/pylon
 	name = "Red Pylon"
-	desc = "This spell conjures a fragile crystal from Nar-Sie's realm. Makes for a convenient light source."
+	desc = "This spell conjures a fragile crystal from the Scarlet King's realm. Makes for a convenient light source."
 
 	charge_max = 200
 	spell_flags = CONSTRUCT_CHECK

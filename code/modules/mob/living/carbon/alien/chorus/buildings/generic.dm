@@ -26,7 +26,7 @@
 		return
 	last_click = world.time
 	var/turf/T = get_turf(src)
-	new /obj/effect/temporary(T, 2, 'icons/effects/effects.dmi', "green_sparkles")
+	new /obj/effect/temp_visual/temporary(T, 2, 'icons/effects/effects.dmi', "green_sparkles")
 	var/list/adj = orange(1,T)
 	for(var/obj/structure/chorus/chor in adj)
 		chor?.chorus_click()
@@ -66,7 +66,7 @@
 	var/growth_verb = "suddenly appears"
 
 /obj/structure/chorus/zleveler/proc/check_turf(turf/T, warning_context, warnings, mob/living/carbon/alien/chorus/C)
-	if(T.density || istype(T, /turf/space))
+	if(T.density || isspaceturf(T))
 		if(warnings && C)
 			to_chat(C, SPAN_WARNING("You can't build [warning_context] there"))
 		return FALSE

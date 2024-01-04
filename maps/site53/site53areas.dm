@@ -190,12 +190,6 @@
 
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/upper_surface/tramhubhallwayentry
-	name = "\improper Site 53 Entrance"
-	icon_state = "hallC1"
-//	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/surface/bunker
 	name = "\improper Secure Bunker"
 	icon_state = "centcom"
@@ -215,16 +209,16 @@
 
 // Site 53 upper surface area's
 
-/area/site53/upper_surface/maincontrolroom
-	name = "\improper Main Control Room"
-	icon_state = "bridge"
-//	holomap_color = HOLOMAP_AREACOLOR_COMMAND
+/area/site53/upper_surface/entrancehallway
+	name = "\improper Site 53 Entrance"
+	icon_state = "hallC1"
+//	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/upper_surface/maincontrolroomstairs
-	name = "\improper Main Control Room Stairs"
-	icon_state = "bridge"
-//	holomap_color = HOLOMAP_AREACOLOR_COMMAND
+/area/site53/upper_surface/innerentrancehallway
+	name = "\improper Site 53 Inner Entrance"
+	icon_state = "hallC1"
+//	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/upper_surface/commstower
@@ -247,12 +241,9 @@
 	icon_state = "checkpoint1"
 //	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
-/area/site53/lowertram/archive
-	name = "\improper Archive"
-	icon_state = "crew_quarters"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-
+/area/site53/maintenance/upper_surface
+	name = "\improper Upper Surface Maintenance"
+	icon_state = "maint_exterior"
 
 
 // Site 53 upper surface area's
@@ -411,6 +402,14 @@
 	name = "\improper SCP-263 Research Chamber"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/ulcz/scp914
+	name = "\improper SCP-914"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+	// Looping music
+	forced_ambience = list('sounds/music/914.ogg')
 
 /area/site53/llcz/genstorage1
 	name = "\improper General Storage #1"
@@ -1075,6 +1074,11 @@
 /area/site53/engineering/sleeproom
 	name = "\improper Engineering Sleep Room"
 	icon_state = "engineering_locker"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/engineering/server_room
+	name = "\improper Server Room"
+	icon_state = "crew_quarters"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/securitypost

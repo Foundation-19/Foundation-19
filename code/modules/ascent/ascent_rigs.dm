@@ -210,7 +210,7 @@
 	charges = list(
 		list("bromide",             "bromide",             /datum/reagent/toxin/bromide, 20),
 		list("crystallizing agent", "crystallizing agent", /datum/reagent/crystallizing_agent,       20),
-		list("spaceacillin",        "spaceacillin",        /datum/reagent/medicine/spaceacillin,  20),
+		list("penicillin",          "penicillin",        /datum/reagent/medicine/penicillin,  20),
 		list("tramadol",            "tramadol",            /datum/reagent/medicine/painkiller/tramadol,      20)
 	)
 
@@ -225,7 +225,7 @@
 		list("tramadol",            "tramadol",            /datum/reagent/medicine/painkiller/tramadol,     	  20),
 		list("dexalin plus",        "dexalin plus",        /datum/reagent/medicine/dexalin_plus,     	  20),
 		list("inaprovaline",        "inaprovaline",        /datum/reagent/medicine/inaprovaline,  	  20),
-		list("spaceacillin",  		"spaceacillin",		   /datum/reagent/medicine/spaceacillin,       20),
+		list("penicillin",  		"penicillin",		   /datum/reagent/medicine/penicillin,       20),
 		list("glucose",             "glucose",             /datum/reagent/nutriment/glucose,  20)
 	)
 
