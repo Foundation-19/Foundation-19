@@ -180,6 +180,8 @@
 			for(var/AR_path in CR)
 				var/atom/movable/AR = AR_path
 				if(!isatom(AR))
+					if(!ispath(AR)) // Something went wrong, uh oh
+						continue
 					AR = new AR_path(get_turf(output_part))
 				AR.forceMove(get_turf(output_part))
 				if(isitem(AR))
