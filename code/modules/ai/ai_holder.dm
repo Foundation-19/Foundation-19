@@ -15,7 +15,7 @@
 	/// Which `ai_holder` datum to give to the mob when initialized. If `null`, nothing happens.
 	var/ai_holder_type = null
 	var/image/ai_status_image
-
+	var/is_immune_to_fear = FALSE
 /mob/living/Destroy()
 	if (ai_holder)
 		GLOB.stat_set_event.unregister(src, ai_holder, /datum/ai_holder/proc/holder_stat_change)

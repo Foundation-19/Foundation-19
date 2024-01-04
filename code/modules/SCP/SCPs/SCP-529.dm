@@ -23,6 +23,11 @@
 	see_in_dark = 7
 	pass_flags = PASS_FLAG_TABLE
 	density = FALSE
+	var/last_seen = 0
+
+/mob/living/simple_animal/friendly/cat/fluff/scp529/proc/do_trick()
+	// Do a cute trick like spin around or play dead
+	visible_message("<span class='notice'>[src] does a cute trick!</span>")
 
 /mob/living/simple_animal/friendly/cat/fluff/scp529/Initialize()
 	. = ..()
@@ -32,3 +37,13 @@
 		SCP_SAFE, //Obj Class
 		"529" //Numerical Designation
 	)
+
+/mob/living/simple_animal/friendly/cat/fluff/scp529/Life()
+    ..()
+    if (stat != DEAD && world.time - last_seen > 5 MINUTES)
+        // Josie has a habit of disappearing and reappearing in unexpected places
+        var/turf/new_location = pick(orange(10, get_turf(src)))
+        if (isturf(new_location))
+            forceMove(new_location)
+            last_seen = world.time
+            visible_message("<span class='notice'>[src] suddenly appears out of nowhere!</span>")

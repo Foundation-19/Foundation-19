@@ -26,9 +26,12 @@
 	)
 
 	SCP.min_time = 5 MINUTES
-
 //Mechanics
 
+/mob/living/scp999/Process()
+    . = ..()
+    if(prob(5)) // 5% chance every tick to perform the action
+        emit_joyful_sound()
 /mob/living/scp999/proc/glubbify(match)
 	. = "gl"
 	for(var/i = (max(0, length(match) - 3)), i > 0, i--)
@@ -77,5 +80,27 @@
 				H.make_reagent(10, /datum/reagent/medicine/antidepressant/anomalous_happiness)
 				H.emote("laugh")
 				H.Weaken(6)
+			if(I_GRAB)
+				playful_bounce()
 	else
 		return ..()
+
+/mob/living/scp999/proc/emit_joyful_sound()
+    for(var/mob/living/carbon/human/H in view(src, 7)) // Affects humans within a 7-tile radius
+        if(H.stat != DEAD)
+            H.visible_message(SPAN_NOTICE("[src] emits a delightful sound that fills the air with joy!"), SPAN_NOTICE("You hear [src] emit a delightful sound that makes you feel joyful!"))
+            //H.add_mood_event("scp999_joy", /datum/mood_event/scp999_joy)
+
+/datum/mood_event/scp999_joy
+    //description = "I feel so happy and carefree after hearing that delightful sound!"
+   	//mood_change = 5 // Adds a small mood boost
+    //timeout = 5 MINUTES // Effect lasts for 5 minutes
+/mob/living/scp999/proc/playful_bounce()
+    visible_message(SPAN_NOTICE("[src] starts bouncing around playfully!"))
+    for(var/i = 1 to 5)
+        step(src, pick(dir))
+        sleep(0.5 SECONDS)
+    visible_message(SPAN_NOTICE("[src] stops bouncing and looks at you with a happy gurgle!"))
+
+
+/* Setting up mood event framework for scp 999*/
