@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: Ossarepantes no longer locks you into a loop of bone-breaking. It is now
+      safe to use for its purpose.
