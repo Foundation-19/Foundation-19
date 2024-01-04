@@ -1,70 +1,81 @@
-GLOBAL_LIST_EMPTY(scp012s)
-
 /obj/item/paper/scp012
-	name = "SCP-012"
+	name = "On Mount Golgotha"
 	icon = 'icons/SCP/scp-012.dmi'
 	desc = "An old paper of handwritten sheet music, titled \"On Mount Golgotha\". The writing is in a conspicuous blood red."
-	w_class = ITEM_SIZE_NO_CONTAINER //Quick fix that may need more work in the future.
-//	nothrow = TRUE
-	SCP = /datum/scp/scp_012
-	anchored = TRUE
-	var/ticks = 0
 
-/datum/scp/scp_012
-	name = "SCP-012"
-	designation = "012"
-	classification = EUCLID
+	w_class = ITEM_SIZE_NO_CONTAINER
+	show_title = FALSE
+
+	//Config
+
+	///How long for an effect to happen
+	var/effect_cooldown = 5 SECONDS
+
+	//Mechanical
+
+	///Keeps track of the cooldown
+	var/effect_cooldown_counter
+
+	/* Looping sound related stuff, stolen from egor */
+	var/looping_sound = 'sounds/scp/012/012.ogg'
+	var/looping_sound_volume = 50
+	var/sound_id
+	var/datum/sound_token/sound_token
 
 /obj/item/paper/scp012/Initialize()
 	START_PROCESSING(SSobj, src)
-	GLOB.scp012s += src
+
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"On Mount Golgotha", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_EUCLID, //Obj Class
+		"012", //Numerical Designation
+		SCP_MEMETIC //Meta Flags, refer to code/_defines/SCP.dm
+	)
+
+	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Memetic flags determine required factors for a human to be affected
+	SCP.memetic_proc = /obj/item/paper/scp012/proc/memetic_effect //proc to be called for the effect an affected individual should recieve
+	SCP.memetic_sounds = list('sounds/scp/012/012.ogg')
+	SCP.compInit()
+
+	sound_id = "[type]_[sequential_id(type)]"
+	if(!sound_token)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, looping_sound, looping_sound_volume, 24, 3)
+
 	return ..()
 
 /obj/item/paper/scp012/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	GLOB.scp012s -= src
 	return ..()
 
-/obj/item/paper/scp012/Process()
+//Mechanics
 
-	++ticks
-
-	// find a victim in case the last one is gone
-	var/mob/living/carbon/human/affecting = null
-	for(var/mob/living/carbon/human/H in shuffle(view(2, src)))
-		if(can_affect(H))
-			affecting = H
-			break
-
-	// we're done here
-	if(!affecting)
+/obj/item/paper/scp012/proc/memetic_effect(mob/living/carbon/human/H)
+	if(!H || H.stat == UNCONSCIOUS) //Unconscious individuals cant keep hurting themselves
 		return
-
-	// make the victim come towards us
-	if(!(affecting in view(1, src)))
-		affecting.Move(get_step(affecting, get_dir(affecting, src)))
-
-	// do fun stuff
-	if(affecting in view(1, src))
-
-		// once every 20 seconds
-		if(!(ticks % 20))
-			affecting.visible_message("<span class = \"danger\"><em>[affecting] rips into [affecting.p_their()] own flesh and covers [affecting.p_their()] hands in blood!</em></span>")
-			affecting.emote("scream")
-			affecting.adjustBruteLoss(25)
-			affecting.drip(50)
-		// once every 15 seconds
-		else if(!(ticks % 15) && affecting.getBruteLoss())
-			affecting.visible_message("<span class = \"warning\">[affecting] smears [affecting.p_their()] blood on \"[name]\", writing musical notes...</span>")
-		// otherwise
-		else if(prob(5))
+	if(get_dist(H, src) > 1)
+		step_to(H, src)
+		H.Stun(2)
+	else if(((world.time - effect_cooldown_counter) > effect_cooldown) || abs((world.time - effect_cooldown_counter) - effect_cooldown) < 0.1 SECONDS) //Last part is so that this can run for all affected humans without worrying about cooldown
+		H.Stun(60)
+		if(prob(60) && H.getBruteLoss())
+			H.visible_message(SPAN_WARNING("[H] smears [H.p_their()] blood on \"[name]\", writing musical notes..."))
+		else if(prob(50))
+			H.visible_message(SPAN_DANGER("[H] rips into [H.p_their()] own flesh and covers [H.p_their()] hands in blood!"))
+			H.emote("scream")
+			H.apply_damage(25, BRUTE, prob(50) ? BP_L_ARM : BP_R_ARM)
+			H.drip(50)
+		else if(prob(30))
 			if(prob(50))
-				affecting.visible_message("<span class = \"notice\">[affecting] looks at \"[name]\" and sighs dejectedly.</span>")
-				playsound(affecting, "sounds/voice/emotes/sigh_[gender2text(affecting.gender)].ogg", 100)
+				H.visible_message(SPAN_NOTICE("[H] looks at the \"[name]\" and sighs dejectedly."))
+				playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
 			else
-				affecting.visible_message("<span class = \"notice\">[affecting] looks at \"[name]\" and cries.</span>")
-				playsound(affecting, "sounds/voice/emotes/[gender2text(affecting.gender)]_cry[pick(1,2)].ogg", 100)
+				H.visible_message(SPAN_NOTICE("[H] looks at the \"[name]\" and cries."))
+				playsound(H, "sounds/voice/emotes/[gender2text(H.gender)]_cry[pick(list("1","2"))].ogg", 100)
+		effect_cooldown_counter = world.time
 
-/obj/item/paper/scp012/proc/can_affect(mob/living/carbon/human/H)
-	// technically 012 is memetic, but having no counter and being insta-GBJ'd seems dumb
-	return H.can_see(src) || H.can_hear(src)
+// Overrides
+
+/obj/item/paper/scp012/Process()
+	SCP.meme_comp.check_viewers()
+	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound

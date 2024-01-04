@@ -24,6 +24,8 @@
 	var/power_cost = 950                                       // Cost per fire, should consume almost an entire basic cell.
 	var/power_per_tick                                         // Capacitor charge per process(). Updated based on capacitor rating.
 
+	general_codex_key = "magnetic weapons"		// for codex
+
 /obj/item/gun/magnetic/preloaded
 	cell = /obj/item/cell/high
 	capacitor = /obj/item/stock_parts/capacitor/adv

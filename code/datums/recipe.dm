@@ -38,7 +38,9 @@
 	var/result        // example: = /obj/item/reagent_containers/food/snacks/donut/normal
 	var/time = 100    // 1/10 part of second
 	var/hidden_from_codex = FALSE
-	var/codex_desc
+	var/lore_text
+	var/mechanics_text
+	var/antag_text
 
 /datum/recipe/proc/check_reagents(datum/reagents/avail_reagents)
 	. = 1

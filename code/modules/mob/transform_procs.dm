@@ -178,56 +178,7 @@
 	return
 
 /mob/living/carbon/human/proc/corgize()
-	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
-		return
-	for(var/obj/item/W in src)
-		drop_from_inventory(W)
-	regenerate_icons()
-	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
-	icon = null
-	set_invisibility(101)
-	for(var/t in organs)	//this really should not be necessary
-		qdel(t)
-
-	var/mob/living/simple_animal/friendly/corgi/new_corgi = new /mob/living/simple_animal/friendly/corgi (loc)
-	new_corgi.a_intent = I_HURT
-	new_corgi.key = key
-
-	to_chat(new_corgi, "<B>You are now a Corgi. Yap Yap!</B>")
-	qdel(src)
-	return
-
-/mob/living/carbon/human/Animalize()
-
-	var/list/mobtypes = typesof(/mob/living/simple_animal)
-	var/mobpath = input("Which type of mob should [src] turn into?", "Choose a type") in mobtypes
-
-	if(!safe_animal(mobpath))
-		to_chat(usr, SPAN_WARNING("Sorry but this mob type is currently unavailable."))
-		return
-
-	if(HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
-		return
-	for(var/obj/item/W in src)
-		drop_from_inventory(W)
-
-	regenerate_icons()
-	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
-	icon = null
-	set_invisibility(101)
-
-	for(var/t in organs)
-		qdel(t)
-
-	var/mob/new_mob = new mobpath(src.loc)
-
-	new_mob.key = key
-	new_mob.a_intent = I_HURT
-
-
-	to_chat(new_mob, "You suddenly feel more... animalistic.")
-	spawn()
-		qdel(src)
+	convertatom2type(src, /mob/living/simple_animal/friendly/corgi, SPAN_BOLD("You are now a corgi! Yap Yap!"), force_mind = TRUE)
 	return
 
 /mob/proc/Animalize()
@@ -239,13 +190,7 @@
 		to_chat(usr, SPAN_WARNING("Sorry but this mob type is currently unavailable."))
 		return
 
-	var/mob/new_mob = new mobpath(src.loc)
-
-	new_mob.key = key
-	new_mob.a_intent = I_HURT
-	to_chat(new_mob, "You feel more... animalistic")
-
-	qdel(src)
+	convertatom2type(src, mobpath, "You feel more animalistic...", force_mind = TRUE)
 
 /* Certain mob types have problems and should not be allowed to be controlled by players.
  *

@@ -1,0 +1,5 @@
+author: casualspacestation14enjoyer
+delete-after: true
+changes:
+  - rscadd: 'automated D-block: job assignment machines'
+  - code_imp: code cleanup in ID cards

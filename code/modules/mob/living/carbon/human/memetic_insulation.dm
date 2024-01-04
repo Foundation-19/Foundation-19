@@ -8,13 +8,11 @@ Made by TheDarkElites
 #define AUDIBLE_RANGE_DECREASED  2
 #define AUDIBLE_RANGE_NONE       -1 //Prevent it from being heard even on the same tile
 
-//Maximium lum count before we no longer consider it dark. Should be a value between 0 and 1.
-var/dark_maximium = 0.05
-
 //View distance debuffs for sizes of objects/mobs passed through can_identify
-var/debuff_small = 1
-var/debuff_tiny = 2
-var/debuff_miniscule = 3
+
+#define DEBUFF_SMALL		1
+#define DEBUFF_TINY			2
+#define DEBUFF_MINISCULE	3
 
 // AUDIO MEMETICS
 
@@ -85,7 +83,7 @@ var/debuff_miniscule = 3
 		origin_turf = get_turf(origin)
 		origin_area = get_area(origin)
 
-		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING) && (origin_area.dynamic_lighting != 0)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
+		if((is_dark(origin_turf)) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING) && (origin_area.dynamic_lighting != 0)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
 			return FALSE
 		if(ismob(origin))
 			var/mob/origin_mob = origin
@@ -121,15 +119,15 @@ var/debuff_miniscule = 3
 		var/obj/origin_Obj = origin
 		size_class = origin_Obj.w_class
 		switch(size_class)
-			if(ITEM_SIZE_SMALL) viewdistance -= debuff_small
-			if(ITEM_SIZE_TINY) viewdistance -= debuff_tiny
+			if(ITEM_SIZE_SMALL) viewdistance -= DEBUFF_SMALL
+			if(ITEM_SIZE_TINY) viewdistance -= DEBUFF_TINY
 	else if(ismob(origin))
 		var/mob/origin_Mob = origin
 		size_class = origin_Mob.mob_size
 		switch(size_class)
-			if(MOB_SMALL) viewdistance -= debuff_small
-			if(MOB_TINY) viewdistance -= debuff_tiny
-			if(MOB_MINISCULE) viewdistance -= debuff_miniscule
+			if(MOB_SMALL) viewdistance -= DEBUFF_SMALL
+			if(MOB_TINY) viewdistance -= DEBUFF_TINY
+			if(MOB_MINISCULE) viewdistance -= DEBUFF_MINISCULE
 
 	if(get_dist_euclidian(get_turf(src), get_turf(origin)) <= clamp(viewdistance, 0, 7))
 		if((visual_insulation_calculated == V_INSL_IMPERFECT) && visual_memetic)
@@ -179,6 +177,18 @@ var/debuff_miniscule = 3
 		blink_total = rand(8, 10)
 		blink_current = blink_total
 
+/mob/living/carbon/human/verb/manual_blink()
+	set name = "Blink"
+	set desc = "Your eyes will close for a moment, giving them some rest."
+	set category = "IC"
 
+	cause_blink()
+
+#undef AUDIBLE_RANGE_FULL
+#undef AUDIBLE_RANGE_DECREASED
+#undef AUDIBLE_RANGE_NONE
+#undef DEBUFF_SMALL
+#undef DEBUFF_TINY
+#undef DEBUFF_MINISCULE
 
 

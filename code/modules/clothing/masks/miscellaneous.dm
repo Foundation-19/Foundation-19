@@ -7,7 +7,6 @@
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
 	voicechange = 1
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/muzzle/tape
 	name = "length of tape"
@@ -45,7 +44,6 @@
 	down_body_parts_covered = null
 	down_icon_state = "steriledown"
 	pull_mask = 1
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/fakemoustache
 	name = "fake moustache"
@@ -55,7 +53,6 @@
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
 	visible_name = "Scoundrel"
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/snorkel
 	name = "Snorkel"
@@ -64,7 +61,6 @@
 	item_state = "snorkel"
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
-	hidden_from_codex = FALSE
 
 //scarves (fit in in mask slot)
 //None of these actually have on-mob sprites...
@@ -77,7 +73,6 @@
 	item_flags = ITEM_FLAG_FLEXIBLEMATERIAL
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/redscarf
 	name = "red scarf"
@@ -88,7 +83,6 @@
 	item_flags = ITEM_FLAG_FLEXIBLEMATERIAL
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/greenscarf
 	name = "green scarf"
@@ -99,7 +93,6 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/ninjascarf
 	name = "ninja scarf"
@@ -111,7 +104,6 @@
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
 	siemens_coefficient = 0
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/pig
 	name = "pig mask"
@@ -122,7 +114,6 @@
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/horsehead
 	name = "horse head mask"
@@ -133,7 +124,6 @@
 	body_parts_covered = HEAD|FACE|EYES
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 0.9
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/horsehead/New()
 	..()
@@ -153,7 +143,6 @@
 	origin_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 5)
 	var/active = FALSE
 	var/mob/observer/eye/cameranet/eye
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/ai/New()
 	eye = new(src)
@@ -208,7 +197,6 @@
 	flags_inv = HIDEFACE|BLOCKHAIR
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/rubber/trasen
 	name = "Jack Trasen mask"
@@ -273,7 +261,6 @@
 	item_state = "spirit_mask"
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE|EYES
-	hidden_from_codex = FALSE
 
 // Bandanas below
 /obj/item/clothing/mask/bandana
@@ -286,7 +273,6 @@
 	item_state = "bandblack"
 	item_flags = ITEM_FLAG_FLEXIBLEMATERIAL
 	w_class = ITEM_SIZE_SMALL
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/bandana/equipped(mob/user, slot)
 	switch(slot)

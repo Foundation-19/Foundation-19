@@ -1,82 +1,134 @@
-
-// This code seriously needs some love.
-// TODO: Make this not terrible.
-
-GLOBAL_LIST_EMPTY(scp343s)
 /mob/living/carbon/human/scp343
-	desc = "A mysterious powerful man."
-	SCP = /datum/scp/scp_343
+	name = "strange elderly man"
+	desc = "A mysterious powerful man. He looks a lot like what you would imagine god to look like."
+	icon = 'icons/SCP/scp-343.dmi'
+
+	icon_state = null
+
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	icon = 'icons/SCP/scp-343.dmi'
-	icon_state = null
-	status_flags = NO_ANTAG
-	var/mob/living/carbon/human/target = null
 
+	status_flags = CANPUSH|GODMODE
 
-/datum/scp/scp_343
-	name = "SCP-343"
-	designation = "343"
-	classification = SAFE
+	//Config
+
+	///Cooldown for our phasing ability
+	var/phase_cooldown = 5 SECONDS
+	///How long it takes us to phase
+	var/phase_time = 2 SECONDS
+
+	//Mechanical
+
+	///Cooldow tracker for our phasing ability
+	var/phase_cooldown_track
+
+/mob/living/carbon/human/scp343/Initialize(mapload, new_species = "SCP-343")
+	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"strange elderly man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"343", //Numerical Designation
+		SCP_PLAYABLE|SCP_ROLEPLAY|SCP_DISABLED
+	)
+
+	add_language(LANGUAGE_ENGLISH)
+	add_language(LANGUAGE_HUMAN_FRENCH)
+	add_language(LANGUAGE_HUMAN_GERMAN)
+	add_language(LANGUAGE_HUMAN_SPANISH)
+	if(!(MUTATION_XRAY in mutations))
+		mutations.Add(MUTATION_XRAY)
+		update_mutations()
+		update_sight()
+
+	add_verb(src, /mob/living/carbon/human/scp343/verb/object_phase)
+
+//Mechanics
+
+/mob/living/carbon/human/scp343/verb/object_phase()
+	set name = "Phase Through Object"
+	set category = "SCP"
+	set desc = "Phase through an object in front of you."
+
+	if((world.time - phase_cooldown_track) < phase_cooldown)
+		to_chat(src, SPAN_WARNING("You can't phase again yet."))
+		return
+
+	var/obj/target_object = null
+	for(var/obj/O in get_step(src, dir))
+		// Things that we will ignore
+		if(!isstructure(O) && !ismachinery(O))
+			continue
+
+		if(!O.density)
+			continue
+
+		// Things that will block our phasing
+		if(istype(O, /obj/machinery/shieldwall) || istype(O, /obj/machinery/shieldwallgen))
+			to_chat(src, SPAN_WARNING("You cannot phase through [O]."))
+			return
+
+		// There can be more than one available dense object, but that doesn't matter
+		target_object = O
+
+	if(!istype(target_object))
+		to_chat(src, SPAN_WARNING("There's nothing to phase through in that direction."))
+		return
+
+	var/turf/target_turf = get_step(target_object, dir)
+	if(target_turf.density)
+		to_chat(src, SPAN_WARNING("\The [target_turf] is preventing us from phasing in that direction."))
+		return
+
+	phase_cooldown_track = world.time
+
+	// Mob effects
+	var/old_layer = layer
+	var/anim_x = 0
+	var/anim_y = 0
+	layer = OBSERVER_LAYER
+	alpha = 128
+
+	if(dir in list(NORTH, NORTHEAST, NORTHWEST))
+		anim_y = 32
+	if(dir in list(SOUTH, SOUTHEAST, SOUTHWEST))
+		anim_y = -32
+	if(dir in list(EAST, NORTHEAST, SOUTHEAST))
+		anim_x = 32
+	if(dir in list(WEST, NORTHWEST, SOUTHWEST))
+		anim_x = -32
+	animate(src, pixel_x = anim_x, pixel_y = anim_y, time = phase_time)
+
+	if(do_after(src, phase_time, target_object))
+		forceMove(get_step(src, dir))
+		visible_message(SPAN_NOTICE("[src] silently phases through [target_object]"))
+
+	layer = old_layer
+	alpha = 255
+	pixel_x = 0
+	pixel_y = 0
+
+//Overrides
+
+/mob/living/carbon/human/scp343/UnarmedAttack(atom/A, proximity)
+	if((a_intent == I_HURT) && iscarbon(A))
+		to_chat(src, SPAN_WARNING("You know better than to hurt one of your own children."))
+		return
+
+	if((a_intent == I_HELP) && ismob(A))
+		var/mob/living/target = A
+		to_chat(src, SPAN_WARNING("You start to heal [target]'s wounds"))
+		visible_message(SPAN_NOTICE("\The [src] starts to heal [target]'s wounds"))
+		if(!do_after(src, 12 SECONDS, A, bonus_percentage = 25))
+			return
+		target.revive()
+		visible_message(SPAN_NOTICE("\The [src] has fully healed [target]!"))
+		return
+
+	return ..()
 
 /mob/living/carbon/human/scp343/IsAdvancedToolUser()
 	return TRUE
-
-/mob/living/carbon/human/scp343/New(new_loc, new_species)
-	new_species = "SCP-343"
-	return ..()
-
-/mob/living/carbon/human/scp343/Login()
-	. = ..()
-	if(client)
-		add_language(LANGUAGE_ENGLISH)
-		add_language(LANGUAGE_HUMAN_FRENCH)
-		add_language(LANGUAGE_HUMAN_GERMAN)
-		add_language(LANGUAGE_HUMAN_SPANISH)
-		if(!(MUTATION_XRAY in mutations))
-			mutations.Add(MUTATION_XRAY)
-			update_mutations()
-			update_sight()
-	if(target)
-		target = null
-
-/mob/living/carbon/human/scp343/Logout()
-	. = ..()
-	if(mind)
-		mind = null
-	if(target)
-		target = null
-
-/mob/living/carbon/human/scp343/Initialize()
-	update_icons()
-
-	// fix names
-	real_name = "SCP-343"
-	SetName(real_name)
-	if(mind)
-		mind.name = real_name
-
-	GLOB.scp343s += src
-	add_verb(src, /mob/living/carbon/human/scp343/proc/phase_through_airlock)
-	return ..()
-
-/mob/living/carbon/human/scp343/Destroy()
-	GLOB.scp343s -= src
-	return ..()
-
-/mob/living/carbon/human/scp343/forceMove(destination)
-	. = ..(destination)
-
-/mob/living/carbon/human/scp343/update_icons()
-	return
-
-/mob/living/carbon/human/scp343/on_update_icon()
-	if (lying || resting)
-		var/matrix/M =  matrix()
-		transform = M.Turn(90)
-	else
-		transform = null
-	return
 
 /mob/living/carbon/human/scp343/get_pressure_weakness()
 	return 0
@@ -87,92 +139,14 @@ GLOBAL_LIST_EMPTY(scp343s)
 /mob/living/carbon/human/scp343/movement_delay()
 	return 3.0
 
-/mob/living/carbon/human/attack_hand(mob/living/carbon/M)
-	if (!isscp343(M) || src == M)
-		return ..(M)
-	var/mob/living/carbon/human/scp343/H = M
-	if (H.a_intent == I_HELP)
-		to_chat(H, SPAN_WARNING("You start to heal [src] wounds"))
-		visible_message(SPAN_NOTICE("\The [H] starts to heal [src] wounds"))
-		if(do_after(H, 12 SECONDS, bonus_percentage = 25))
-			src.revive()
-			visible_message(SPAN_NOTICE("\The [H] fully healed [src]!"))
-		return
-	switch (stat)
-		if (CONSCIOUS, UNCONSCIOUS)
-			visible_message("<span class = 'danger'><big>[H] strikes [src], sent it flying away!</big></span>")
-			var/atom/throw_target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
-			Stun(3)
-			throw_at(throw_target, 200, 4)
+//TODO: Change pathing of SCPs to no longer be humans so that we dont have to do this bullshit.
+/mob/living/carbon/human/scp343/update_icons()
+	return
 
-
-#define PHASE_TIME (2 SECONDS)
-/mob/living/carbon/human/scp343/var/phase_cooldown = -1
-/mob/living/carbon/human/scp343/proc/phase_through_airlock()
-	set name = "Phase Through Object"
-	set category = "SCP"
-	set desc = "Phase through an object in front of you."
-
-	if (world.time < phase_cooldown)
-		to_chat(src, "<span class = 'warning'>You can't phase again yet.</span>")
-		return
-
-	for (var/obj/O in get_step(src, dir))
-
-		if (!isstructure(O) && !ismachinery(O))
-			continue
-
-		if (istype(O, /obj/machinery/camera))
-			continue
-
-		if (istype(O, /obj/structure/cable))
-			continue
-
-		if (istype(O, /obj/structure/catwalk))
-			continue
-
-		if (istype(O, /obj/machinery/light))
-			continue
-
-		if (istype(O, /obj/machinery/power/apc))
-			continue
-
-		if (istype(O, /obj/machinery/button))
-			continue
-
-		if (istype(O, /obj/machinery/power/terminal))
-			continue
-
-		var/turf/target = get_turf(O)
-		if (target.density)
-			return
-
-		visible_message("<span class = 'danger'>[src] starts to phase through \the [O].</span>")
-
-		phase_cooldown = world.time + PHASE_TIME + 0.5 SECONDS
-
-		alpha = 128
-
-		layer = OBSERVER_LAYER
-
-		switch(dir)
-			if (NORTH, NORTHEAST, NORTHWEST)
-				animate(src, pixel_y = 58, time = PHASE_TIME)
-			if (SOUTH, SOUTHEAST, SOUTHWEST)
-				animate(src, pixel_y = -58, time = PHASE_TIME)
-			if (EAST)
-				animate(src, pixel_x = 58, time = PHASE_TIME)
-			if (WEST)
-				animate(src, pixel_x = -58, time = PHASE_TIME)
-
-		if (do_after(src, PHASE_TIME, O, bonus_percentage = 25))
-			forceMove(get_step(src, dir))
-			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
-
-
-		alpha = 255
-		layer = MOB_LAYER + 0.1
-		pixel_x = 0
-		pixel_y = 0
-		break
-#undef PHASE_TIME
+/mob/living/carbon/human/scp343/on_update_icon()
+	if(lying || resting)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
+	else
+		transform = null
+	return

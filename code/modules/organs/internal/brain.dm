@@ -25,8 +25,6 @@
 	var/insanity = 0 // higher = bad
 	var/max_insanity = 100
 
-	scp106_vulnerable = FALSE
-
 /obj/item/organ/internal/brain/robotize()
 	replace_self_with(/obj/item/organ/internal/posibrain)
 

@@ -372,8 +372,9 @@
 	H.apply_damage(burn_damage_amt, BURN, BP_CHEST)
 
 	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
-	heart.scp3349_induced = FALSE	// part of SCP-3349. electric shocks temporarily stop effect
-	to_chat(H, SPAN_INFO("The euphoric sensation ends."))
+	if(heart.SCP?.designation == "3349-1")	// part of SCP-3349. electric shocks temporarily stop effect
+		qdel(SCP)
+		to_chat(H, SPAN_INFO("The euphoric sensation ends."))
 
 	//set oxyloss so that the patient is just barely in crit, if possible
 	make_announcement("pings, \"Resuscitation successful.\"", "notice")
