@@ -117,7 +117,7 @@
 	// Pulse rate.
 	var/pulse_result = "normal"
 	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
-	if(H.should_have_organ(BP_HEART) && !(heart.scp3349_induced))
+	if(H.should_have_organ(BP_HEART) && (heart.SCP?.designation != "3349-1"))
 		if(H.status_flags & FAKEDEATH)
 			pulse_result = 0
 		else
@@ -293,6 +293,27 @@
 
 	if(print_reagent_default_message)
 		. += "No results."
+
+	// Diseases
+	if(skill_level >= SKILL_BASIC)
+		var/list/visible_diseases = list()
+		for(var/datum/disease/D in H.diseases)
+			if(D.visibility_flags & HIDDEN_SCANNER)
+				continue
+			visible_diseases += D
+		if(LAZYLEN(visible_diseases))
+			. += "[b]Disease scan:[endb]"
+		for(var/datum/disease/D in visible_diseases)
+			. += "<span class='scan_warning'>[D.agent] detected.</span>"
+			. += "<span class='scan_warning'>[D.desc]</span>"
+			. += "<span class='scan_warning'>Stage: [D.stage]/[D.max_stages].</span>"
+			var/list/potential_cures = list()
+			for(var/cure in D.cures)
+				var/datum/reagent/R = cure
+				potential_cures |= initial(R.name)
+			if(LAZYLEN(potential_cures))
+				. += "<span class='scan_warning'>Cure: [english_list(potential_cures)].</span>"
+			. += "<br>"
 
 	header = jointext(header, null)
 	. = jointext(.,"<br>")

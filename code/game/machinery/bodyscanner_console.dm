@@ -126,8 +126,8 @@
 			return TOPIC_REFRESH
 		var/list/scan = data["scan"]
 		new /obj/item/paper/bodyscan(loc, "Printout error.", "Body scan report - [stored_scan_subject]", scan.Copy())
-		var/obj/item/organ/internal/heart/heart_organ = connected.occupant.internal_organs_by_name[BP_HEART]
-		if(istype(heart_organ) && heart_organ.scp3349_induced)
+		var/obj/item/organ/internal/heart/heart_organ = connected.occupant?.internal_organs_by_name[BP_HEART]
+		if(istype(heart_organ) && (heart_organ.SCP?.designation == "3349-1"))
 			new /obj/item/paper/scp3349_ekg(loc, "<img src = scp3349_ekg.png>", "EKG report - [stored_scan_subject]")
 		return TOPIC_REFRESH
 

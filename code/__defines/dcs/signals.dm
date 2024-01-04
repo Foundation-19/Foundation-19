@@ -129,5 +129,42 @@
 /// From base of [/atom/proc/update_desc]: (updates)
 #define COMSIG_ATOM_UPDATE_DESC "atom_update_desc"
 
-// Called on `/mob/proc/update_movespeed` (/mob)
+/*
+*	Mob
+*/
+
+/// Called in '/mob/verb/examinate' on examined atom (/mob/examinee)
+#define COMSIG_ATOM_EXAMINED "atomExamined"
+
+/// Called in '/mob/living/say' on the mob who heard speech (/mob/living/speaker, message)
+#define COMSIG_MOB_HEARD_SPEECH "mobHeardSpeech"
+/// Called in '/mob/living/say' on the mob who heard the whisper (/mob/living/speaker, message)
+#define COMSIG_MOB_HEARD_WHISPER "mobHeardWhisper"
+
+/// Called on `/mob/proc/update_movespeed` (/mob)
 #define COMSIG_MOB_MOVESPEED_UPDATED "mob_movespeed_updated"
+
+/*
+*	Photos
+*/
+
+/// Called in '/obj/item/device/camera/proc/captureimage' on the atom taken a picture of (/obj/item/device/camera, mob/living/user)
+#define COMSIG_PHOTO_TAKEN_OF "photoTakenOf"
+/// Called in '/obj/item/photo/proc/show' on the atom that the photo was shown of (/obj/item/photo, mob/user)
+#define COMSIG_PHOTO_SHOWN_OF "photoShownOf"
+
+/*
+*	Sound
+*/
+
+/// Called in '/mob/proc/playsound_local' on the atom that the sound originated from (/mob/hearer, sound)
+#define COMSIG_OBJECT_SOUND_HEARD "atomHeard"
+/// Called in '/datum/sound_token/proc/PrivUpdateListener' on the atom that the sound originated from (/mob/hearer, sound)
+#define COMSIG_OBJECT_SOUND_HEARD_LOOPING "atomHeardLooping"
+
+/*
+*	Eye
+*/
+
+/// Called in '/mob/proc/reset_view' on every atom in view of new eyeobj (/mob/viewer, /atom/new_view)
+#define COMSIG_ATOM_VIEW_RESET "atomViewReset"

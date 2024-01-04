@@ -163,3 +163,17 @@
 	..()
 	M.set_drugginess_if_lower(2 SECONDS)
 	M.add_chemical_effect(CE_PAINKILLER, 10)
+
+// Painkillers used by painkilling symptom
+/datum/reagent/medicine/painkiller/tramadol/disease
+	name = "biological painkiller"
+	description = "A product of a virus, which acts as painkiller."
+	target_painkiller_strength = 50
+	is_opiate = FALSE
+
+/datum/reagent/medicine/painkiller/tramadol/disease/two
+	target_painkiller_strength = 100
+
+/datum/reagent/medicine/painkiller/tramadol/disease/three
+	target_painkiller_strength = 150
+

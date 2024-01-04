@@ -206,6 +206,17 @@
 	if(LAZYLEN(death_sounds))
 		playsound(src, pick(death_sounds), 50, TRUE)
 
+// Reset icon on revival
+/mob/living/simple_animal/rejuvenate()
+	var/was_dead = stat == DEAD
+	. = ..()
+	if(was_dead && stat != DEAD)
+		icon_state = icon_living
+		switch_from_dead_to_living_mob_list()
+		set_stat(CONSCIOUS)
+		set_density(initial(density))
+		bleed_ticks = 0
+
 /mob/living/simple_animal/proc/drop_loot()
 	if(!LAZYLEN(loot_list))
 		return
@@ -389,3 +400,28 @@
 	else
 		visible_message(SPAN_NOTICE("\The [user] is interrupted."))
 		set_AI_busy(FALSE)
+
+// Rough - Gibs
+// Coarse - Gibs and spawns a random(50% - 80%) amount of its buchering results
+/mob/living/simple_animal/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ROUGH)
+			gib()
+			return null
+		if(MODE_COARSE)
+			var/turf/T = get_turf(src)
+			var/list/return_items = list()
+			if(meat_type && meat_amount)
+				for(var/i = 1 to rand(round(meat_amount * 0.5), round(meat_amount * 0.8)))
+					return_items += new meat_type(T)
+			if(bone_material && bone_amount)
+				var/bone_count = rand(round(bone_amount * 0.5), round(bone_amount * 0.8))
+				var/material/M = SSmaterials.get_material_by_name(bone_material)
+				return_items += new M.stack_type(T, bone_count, bone_material)
+			if(skin_material && skin_amount)
+				var/skin_count = rand(round(skin_amount * 0.5), round(skin_amount * 0.8))
+				var/material/M = SSmaterials.get_material_by_name(skin_material)
+				return_items += new M.stack_type(T, skin_count, skin_material)
+			gib()
+			return return_items
+	return ..()

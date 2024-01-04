@@ -200,3 +200,10 @@
 	return english_list(res)
 
 #define ISADVANCEDTOOLUSER(mob) (HAS_TRAIT(mob, TRAIT_ADVANCED_TOOL_USER) && !HAS_TRAIT(mob, TRAIT_DISCOORDINATED_TOOL_USER))
+
+///Lets us attempt to set faction of something not explicitly defined as a mob
+/proc/set_faction(mob/M, faction)
+	if(!istype(M))
+		return FALSE
+
+	M.faction = faction

@@ -180,9 +180,6 @@
 	if(!mob)
 		return // Moved here to avoid nullrefs below
 
-	if (mob.is_scp012_affected())
-		return
-
 	if(SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_PRE_MOVE, args) & COMSIG_MOB_CLIENT_BLOCK_PRE_MOVE)
 		return FALSE
 

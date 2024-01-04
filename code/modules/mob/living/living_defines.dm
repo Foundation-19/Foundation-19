@@ -63,5 +63,10 @@
 
 	var/datum/spell/ranged_ability ///Any ranged ability the mob has, as a click override
 
+	/// List of active diseases
+	var/list/diseases = list()
+	/// List of diseases this mob has developed resistance to
+	var/list/disease_resistances = list()
+
 	/// A list of all status effects the mob has
 	var/list/status_effects

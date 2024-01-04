@@ -3571,12 +3571,12 @@
 /area/site53/medical/exam_room)
 "jx" = (
 /obj/effect/paint_stripe/white,
-/obj/machinery/washing_machine,
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/camera/network/medbay{
 	c_tag = "Isolation Observation";
 	dir = 8
 	},
+/obj/machinery/computer/pandemic,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
 "jz" = (
@@ -3645,6 +3645,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
 	icon_state = "shutter0";
+	id_tag = "iso_shutters";
 	name = "Isolation Emergency Shutter"
 	},
 /turf/simulated/floor/plating,
@@ -3653,7 +3654,13 @@
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
 /obj/effect/floor_decal/corner/purple/mono,
-/obj/item/storage/box/syringes,
+/obj/item/storage/box/syringes{
+	pixel_x = 5;
+	pixel_y = 10
+	},
+/obj/item/storage/box/beakers{
+	pixel_x = -6
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
 "jH" = (
@@ -3661,8 +3668,8 @@
 /area/quartermaster/hangar)
 "jI" = (
 /obj/effect/paint_stripe/white,
-/obj/structure/table/glass,
 /obj/effect/floor_decal/corner/purple/mono,
+/obj/machinery/reagentgrinder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
 "jJ" = (
@@ -3982,12 +3989,12 @@
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
 /obj/effect/floor_decal/corner/purple/mono,
-/obj/item/storage/pill_bottle/spaceacillin{
+/obj/item/storage/pill_bottle/penicillin{
 	pixel_x = -4;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/pill/spaceacillin,
-/obj/item/reagent_containers/pill/spaceacillin{
+/obj/item/reagent_containers/pill/penicillin,
+/obj/item/reagent_containers/pill/penicillin{
 	pixel_x = 7;
 	pixel_y = 6
 	},
@@ -5993,6 +6000,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
 	icon_state = "shutter0";
+	id_tag = "iso_shutters";
 	name = "Isolation Emergency Shutter"
 	},
 /turf/simulated/floor/plating,
@@ -6955,8 +6963,9 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "Aw" = (
-/obj/effect/paint_stripe/white,
-/obj/machinery/door/airlock/glass/virology,
+/obj/machinery/door/airlock/glass/virology{
+	name = "Virology Laboratory"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -8014,6 +8023,8 @@
 	pixel_y = 25
 	},
 /obj/machinery/button/blast_door{
+	id_tag = "iso_shutters";
+	name = "Isolation shutters";
 	pixel_y = 34
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -9361,10 +9372,23 @@
 "YV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
-/obj/item/storage/laundry_basket,
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/reagent_containers/dropper{
+	pixel_x = -8
+	},
+/obj/structure/reagent_dispensers/virus_food{
+	pixel_x = 32
+	},
+/obj/item/reagent_containers/glass/bottle/virus_cold{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/virus_flu{
+	pixel_x = 8;
+	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)

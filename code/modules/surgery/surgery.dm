@@ -178,7 +178,9 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 		return FALSE
 
 	// Check for multi-surgery drifting.
-	var/zone = user.zone_sel.selecting
+	var/zone = user.zone_sel?.selecting
+	if(!zone)
+		return FALSE
 	if(LAZYACCESS(M.surgeries_in_progress, zone))
 		to_chat(user, SPAN_WARNING("You can't operate on this area while surgery is already in progress."))
 		return TRUE

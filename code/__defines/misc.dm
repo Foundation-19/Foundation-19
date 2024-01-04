@@ -51,6 +51,7 @@
 #define STATUS_HUD_OOC 	9 // STATUS_HUD without virus DB check for someone being ill.
 #define LIFE_HUD 		10 // STATUS_HUD that only reports dead or alive
 #define BLINK_HUD       11 // A line representing the blink time remaining on a mob.
+#define PESTILENCE_HUD  12 // A visual indicator of the pestilence for SCP-049.
 
 // Shuttle moving status.
 #define SHUTTLE_IDLE      0
@@ -206,12 +207,6 @@
 #define PIXEL_MULTIPLIER WORLD_ICON_SIZE/32
 
 #define DEFAULT_SPAWNPOINT_ID "Default"
-
-//Virus badness defines
-#define VIRUS_MILD			1
-#define VIRUS_COMMON		2	//Random events don't go higher (mutations aside)
-#define VIRUS_ENGINEERED	3
-#define VIRUS_EXOTIC		4	//Usually adminbus only
 
 //Error handler defines
 #define ERROR_USEFUL_LEN 2

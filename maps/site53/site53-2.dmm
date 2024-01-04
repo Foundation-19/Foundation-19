@@ -709,7 +709,7 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "aco" = (
 /obj/structure/dogbed,
-/mob/living/simple_animal/scp_131/a,
+/mob/living/simple_animal/friendly/scp131/scp131A,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "acq" = (
@@ -736,7 +736,7 @@
 "acz" = (
 /obj/machinery/light,
 /obj/structure/dogbed,
-/mob/living/simple_animal/scp_131/b,
+/mob/living/simple_animal/friendly/scp131/scp131B,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "acA" = (
@@ -2468,9 +2468,6 @@
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp078)
 "aia" = (
-/obj/structure/sign/double/barsign/scp_078{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
@@ -15017,7 +15014,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/simple_animal/cat/scp_066,
+/mob/living/simple_animal/friendly/retaliate/scp066,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
 "aSG" = (
@@ -16070,7 +16067,7 @@
 /area/site53/llcz/scp113)
 "aWN" = (
 /obj/structure/table/reinforced,
-/obj/item/device/scp113,
+/obj/item/scp113,
 /obj/machinery/light,
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor/tiled/monotile,
@@ -16140,7 +16137,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/weapon/twohanded/scp_2398,
+/obj/item/material/twohanded/baseballbat/scp2398,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp2398)
 "aXd" = (
@@ -20335,7 +20332,6 @@
 "btP" = (
 /obj/machinery/door/airlock/glass/science{
 	id_tag = "066";
-	locked = 1;
 	name = "SCP-066 Containment Chamber"
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -25875,7 +25871,7 @@
 /turf/simulated/floor,
 /area/site53/ulcz/scp2427_3)
 "hGY" = (
-/mob/living/simple_animal/hostile/scp_263{
+/obj/scp263{
 	pixel_x = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -27267,7 +27263,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/brownline)
 "jgH" = (
-/obj/structure/scp_216,
+/obj/structure/scp216,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -34463,7 +34459,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "rhy" = (
-/mob/living/simple_animal/hostile/scp096,
+/mob/living/scp096,
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
 "riw" = (
@@ -36488,7 +36484,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "twW" = (
-/mob/living/simple_animal/hostile/scp_2427_3,
+/mob/living/simple_animal/hostile/scp2427_3,
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
 "txd" = (

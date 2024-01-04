@@ -11,7 +11,6 @@
 	var/attack_delay = CLICK_CD_ATTACK
 	var/break_stuff_probability = 10
 	var/destroy_surroundings = 1
-	var/anomalytype
 	a_intent = I_HURT
 
 	var/shuttletarget = null

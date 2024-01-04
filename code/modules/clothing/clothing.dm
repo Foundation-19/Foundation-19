@@ -1,5 +1,4 @@
 /obj/item/clothing
-	abstract_type = /obj/item/clothing
 	name = "clothing"
 	siemens_coefficient = 0.9
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
@@ -27,9 +26,6 @@
 	var/list/clothing_traits = list()
 
 	var/move_trail = /obj/effect/decal/cleanable/blood/tracks/footprints // if this item covers the feet, the footprints it should leave
-
-	var/hidden_from_codex = FALSE
-	var/codex_special_info = null
 
 // Updates the icons of the mob wearing the clothing item, if any.
 /obj/item/clothing/proc/update_clothing_icon()
@@ -269,13 +265,11 @@
 ///////////////////////////////////////////////////////////////////////
 // Ears: headsets, earmuffs and tiny objects
 /obj/item/clothing/ears
-	abstract_type = /obj/item/clothing/ears
 	name = "ears"
 	w_class = ITEM_SIZE_TINY
 	throwforce = 2
 	slot_flags = SLOT_EARS
 	var/volume_multiplier = 1
-	hidden_from_codex = TRUE
 
 /obj/item/clothing/ears/update_clothing_icon()
 	if (ismob(src.loc))
@@ -290,7 +284,6 @@
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
 	audio_insulation = A_INSL_PERFECT
 	volume_multiplier = 0.1
-	hidden_from_codex = FALSE
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -305,7 +298,6 @@ SEE_PIXELS// if an object is located on an unlit area, but some of its pixels ar
 BLIND     // can't see anything
 */
 /obj/item/clothing/glasses
-	abstract_type = /obj/item/clothing/glasses
 	name = "glasses"
 	icon = 'icons/obj/clothing/obj_eyes.dmi'
 	w_class = ITEM_SIZE_SMALL
@@ -320,7 +312,6 @@ BLIND     // can't see anything
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_eyes_vox_armalis.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi',
 	)
-	hidden_from_codex = TRUE
 
 /obj/item/clothing/glasses/get_icon_state(mob/user_mob, slot)
 	if(item_state_slots && item_state_slots[slot])
@@ -336,7 +327,6 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Gloves
 /obj/item/clothing/gloves
-	abstract_type = /obj/item/clothing/gloves
 	name = "gloves"
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = ITEM_SIZE_SMALL
@@ -359,7 +349,6 @@ BLIND     // can't see anything
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi',
 		)
 	blood_overlay_type = "bloodyhands"
-	hidden_from_codex = TRUE
 
 /obj/item/clothing/gloves/Initialize()
 	if(item_flags & ITEM_FLAG_PREMODIFIED)
@@ -452,7 +441,6 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Head
 /obj/item/clothing/head
-	abstract_type = /obj/item/clothing/head
 	name = "head"
 	icon = 'icons/obj/clothing/obj_head.dmi'
 	item_icons = list(
@@ -475,7 +463,6 @@ BLIND     // can't see anything
 	var/light_applied
 	var/brightness_on
 	var/on = 0
-	hidden_from_codex = TRUE
 
 /obj/item/clothing/head/equipped(mob/user, slot)
 	light_overlay_image = null
@@ -578,7 +565,6 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Mask
 /obj/item/clothing/mask
-	abstract_type = /obj/item/clothing/mask
 	name = "mask"
 	icon = 'icons/obj/clothing/obj_mask.dmi'
 	slot_flags = SLOT_MASK
@@ -601,7 +587,6 @@ BLIND     // can't see anything
 	var/hanging = 0
 	var/list/filtered_gases
 	blood_overlay_type = "maskblood"
-	hidden_from_codex = TRUE
 
 /obj/item/clothing/mask/proc/filters_water()
 	return FALSE
@@ -658,7 +643,6 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Shoes
 /obj/item/clothing/shoes
-	abstract_type = /obj/item/clothing/shoes
 	name = "shoes"
 	icon = 'icons/obj/clothing/obj_feet.dmi'
 	desc = "Comfortable-looking shoes."
@@ -815,7 +799,6 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Suit
 /obj/item/clothing/suit
-	abstract_type = /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/obj_suit.dmi'
 	name = "suit"
 	var/fire_resist = T0C+100
@@ -862,7 +845,6 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Under clothing
 /obj/item/clothing/under
-	abstract_type = /obj/item/clothing/under
 	icon = 'icons/obj/clothing/obj_under.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_uniforms.dmi',
@@ -1151,7 +1133,6 @@ BLIND     // can't see anything
 //Rings
 
 /obj/item/clothing/ring
-	abstract_type = /obj/item/clothing/ring
 	name = "ring"
 	w_class = ITEM_SIZE_TINY
 	icon = 'icons/obj/clothing/obj_hands_ring.dmi'

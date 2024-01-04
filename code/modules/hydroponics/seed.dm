@@ -471,10 +471,10 @@
 			/datum/reagent/water/holywater,
 			/datum/reagent/toxin/plant_b_gone,
 			/datum/reagent/chloral_hydrate/beer,
-			/datum/reagent/zombie
+			/datum/reagent/scp008
 			)
 		banned_chems += subtypesof(/datum/reagent/ethanol)
-		banned_chems += subtypesof(/datum/reagent/zombie)
+		banned_chems += subtypesof(/datum/reagent/scp008)
 		banned_chems += subtypesof(/datum/reagent/medicine/fluff/tobacco)
 		banned_chems += typesof(/datum/reagent/drink)
 		banned_chems += typesof(/datum/reagent/nutriment)

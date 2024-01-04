@@ -11,7 +11,6 @@
 	deactivation_sound = sound('sounds/effects/compbeep1.ogg', volume = 30)
 
 	species_restricted = list("exclude", SPECIES_DIONA)
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/hud/Initialize()
 	. = ..()
@@ -131,18 +130,18 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	off_state = "denight"
 	electric = TRUE
-	var/faulty = FALSE
+	visual_insulation = V_INSL_PERFECT
 
 /obj/item/clothing/glasses/hud/scramble/Initialize()
 	. = ..()
 	overlay = GLOB.global_hud.scramble
 
 /obj/item/clothing/glasses/hud/scramble/process_hud(mob/M)
-	process_scramble_hud(M, faulty)
+	process_scramble_hud(M)
 
 
 /obj/item/clothing/glasses/hud/scramble/faulty // for admin shenanigans
-	faulty = TRUE
+	visual_insulation = V_INSL_IMPERFECT
 
 /obj/item/clothing/glasses/hud/scramble/experimental
 	name = "experimental SCRAMBLE goggles"
@@ -151,4 +150,5 @@
 /obj/item/clothing/glasses/hud/scramble/experimental/Initialize()
 	. = ..()
 	// 30% chance of being faulty
-	faulty = prob(30)
+	if(prob(30))
+		visual_insulation = V_INSL_IMPERFECT

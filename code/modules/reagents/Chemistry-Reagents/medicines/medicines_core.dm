@@ -285,8 +285,8 @@
 	var/mob/living/carbon/human/H = M
 	for(var/obj/item/organ/external/E in H.organs)
 		if(E.status & ORGAN_BROKEN)
-			E.status &= ~ORGAN_BROKEN
 			playsound(H, 'sounds/effects/wounds/bonebreak1.ogg', 25, TRUE)
-			E.take_external_damage(35)
+			E.take_external_damage(20)
+			E.status &= ~ORGAN_BROKEN
 			H.custom_pain(SPAN_WARNING("You feel bones in your [E.name] move!"), 50, TRUE, E)
 			break

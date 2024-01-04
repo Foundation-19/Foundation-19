@@ -35,7 +35,7 @@
 		"dexalin plus" =   /datum/reagent/medicine/dexalin_plus,
 		"Alkysine" =   /datum/reagent/medicine/alkysine,
 		"peridaxon" =   /datum/reagent/medicine/peridaxon,
-		"spaceacillin" =   /datum/reagent/medicine/spaceacillin,
+		"penicillin" =   /datum/reagent/medicine/penicillin,
 		"iron" =   /datum/reagent/iron,
 		"carbon" =   /datum/reagent/carbon,
 	)

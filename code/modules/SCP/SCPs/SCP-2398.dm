@@ -1,41 +1,48 @@
-/datum/scp/scp_2398
-	name = "SCP-2398"
-	designation = "2398"
-	classification = SAFE
-
-/obj/item/weapon/twohanded/scp_2398
-	name = "SCP-2398"
+/obj/item/material/twohanded/baseballbat/scp2398
+	name = "wooden bat"
 	desc = "A generic wooden bat. The letters 'K.O.' are branded into the wood, just above the handle."
+
 	icon = 'icons/SCP/scp-2398.dmi'
 	icon_state = null
-	w_class = ITEM_SIZE_LARGE //until i find a better solution it will stay like this
-	slot_flags = SLOT_BACK
-	SCP = /datum/scp/scp_2398
 
-/obj/item/weapon/twohanded/scp_2398/attack(mob/living/target,	mob/living/user)
-	var/mob/living/carbon/human/H = target
-	var/mob/living/carbon/human/G = user
-	var/activehand = BP_L_ARM //determine which hand to burn (stolen from 113 code because bay code is messy)
-	if(!G.hand)
-		activehand = BP_R_ARM
-	if(ishuman(user && target))
-		to_chat(H, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
-		G.visible_message(SPAN_DANGER("[G] begins to swing [src] at [H]!"))
-		if(do_after(G, 5 SECONDS, H, bonus_percentage = 25))
-			var/obj/item/organ/external/E = G.get_organ(activehand)
-			E.fracture()
-			explosion(H, 1, 1, 3, 3, 1)
-			admin_attack_log(G, H, null, null, "[G] has attacked [H] with SCP-2398!")
-			message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
-	else
-		if(iscarbon(G))
-			to_chat(H, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
-			G.visible_message(SPAN_DANGER("[G] begins to swing [src] at [H]!"))
-			if(do_after(G, 5 SECONDS, H, bonus_percentage = 25))
-				var/obj/item/organ/external/E = G.get_organ(activehand)
-				E.fracture()
-				explosion(H, 1, 1, 3, 3, 1)
-				admin_attack_log(G, H, null, null, "[G] has attacked [H] with SCP-2398!")
-				message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!")
-				qdel(H) //perhaps a bad solution but i dont want to work with it
+	//Config
+
+	//How long our doafter swing is
+	var/swing_time = 4 SECONDS
+
+/obj/item/material/twohanded/baseballbat/scp2398/Initialize()
+	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"wooden bat", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"2398" //Numerical Designation
+	)
+
+//Overrides
+
+/obj/item/material/twohanded/baseballbat/scp2398/attack(mob/living/M, mob/living/carbon/human/user, target_zone, animate)
+	if(!istype(M) || !istype(user) || M.SCP)
+		return ..()
+
+	var/hand_used = user.hand ? BP_L_HAND : BP_R_HAND
+
+	visible_message(SPAN_DANGER("[user] begins to swing [src] at [M]!"))
+	if(!do_after(user, swing_time, M))
+		visible_message(SPAN_DANGER("[user] misses [M] with \The [src]!"))
 		return
+
+	var/obj/item/organ/external/E = user.get_organ(hand_used)
+	E?.fracture()
+
+	//Calculate explosion power based on mob size
+	var/explosion_size = ceil(clamp(((M.mob_size / 40) * 5), 0, 5)) //40 is used as its the max mob size, and five represents the maximium explosion size
+
+	explosion(M, explosion_size * 0.25, explosion_size * 0.25, explosion_size * 0.5, explosion_size, TRUE)
+	M.gib()
+
+	admin_attack_log(user, M, null, null, "[user] has attacked [M] with an instance of SCP-[SCP.designation]!") //TODO: switch to admin macros once they are ported.
+	log_and_message_staff("[user]/[user.ckey] has swung SCP-2398 at [M]/[M.ckey]!", user, get_turf(user))
+
+/obj/item/material/twohanded/baseballbat/scp2398/ex_act(severity) //We shouldent explode ourselves as a result
+	return

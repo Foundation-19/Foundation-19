@@ -96,6 +96,10 @@
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/emag)
 
+/obj/item/card/emag/get_antag_info()
+	. = ..()
+	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
+
 /obj/item/card/emag/broken
 	uses = 0
 
@@ -678,7 +682,7 @@
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Operative"
-	job_access_type = /datum/job/captain
+	access |= get_all_site_access()
 
 
 /obj/item/card/id/physics
@@ -770,8 +774,21 @@
 	item_state = "Science_ID1"
 	job_access_type = /datum/job/bartender
 
-// LOGISTICS
+/obj/item/card/id/officeworker
+	name = "Office Staff ID"
+	desc = "A low level ID issued to office workers."
+	icon_state = "adminlvl1"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/officeworker
 
+/obj/item/card/id/classd
+	name = "Class-D ID"
+	desc = "An ID card issued to Class-D Foundation personnel."
+	icon_state = "classd"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/classd
+
+// LOGISTICS
 
 /obj/item/card/id/logoff
 	name = "security ID"
@@ -788,42 +805,28 @@
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/cargo_tech
 
+// CD ASSIGNMENT CARDS
 
+/obj/item/card/id/dassignment
+	desc = "A plain ID Card, used for granting access to D-Class personnel so they're able to perform their duties."
 
-/obj/item/card/id/dmining
-	name = "Mining Assignment Card"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+/obj/item/card/id/dassignment/dmining
+	name = "mining assignment card"
 	access = ACCESS_DCLASS_MINING
-/obj/item/card/id/dbotany
-	name = "Botany Assignment Card"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+
+/obj/item/card/id/dassignment/dbotany
+	name = "botany assignment card"
 	access = ACCESS_DCLASS_BOTANY
 
-/obj/item/card/id/dkitchen
-	name = "Kitchen Assignment Card"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+/obj/item/card/id/dassignment/dkitchen
+	name = "kitchen assignment card"
 	access = ACCESS_DCLASS_KITCHEN
 
-/obj/item/card/id/djanitorial
-	name = "Janitorial Assignment Card"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+/obj/item/card/id/dassignment/djanitorial
+	name = "janitorial assignment card"
 	access = ACCESS_DCLASS_JANITORIAL
 
-/obj/item/card/id/dmedical
-	name = "Medical Assignment Card"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+/obj/item/card/id/dassignment/dmedical
+	name = "medical assignment card"
 	access = ACCESS_DCLASS_MEDICAL
 
-/obj/item/card/id/officeworker
-	name = "Office Staff ID"
-	desc = "A low level ID issued to office workers."
-	icon_state = "adminlvl1"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/officeworker
-
-/obj/item/card/id/classd
-	name = "Class-D ID"
-	desc = "An ID card issued to Class-D Foundation personnel."
-	icon_state = "classd"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/classd

@@ -32,7 +32,6 @@
 	var/base_state
 	flash_protection = FLASH_PROTECTION_MAJOR
 	tint = TINT_HEAVY
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/welding/attack_self()
 	if(!base_state)
@@ -119,7 +118,6 @@
 	item_state = "cake0"
 	var/onfire = 0
 	body_parts_covered = HEAD
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/cakehat/Process()
 	if(!onfire)
@@ -162,7 +160,6 @@
 	flags_inv = HIDEEARS|BLOCKHEADHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/ushanka/attack_self(mob/user as mob)
 	if(icon_state == initial(icon_state))
@@ -190,7 +187,6 @@
 	brightness_on = 0.2
 	light_overlay = "helmet_light"
 	w_class = ITEM_SIZE_NORMAL
-	hidden_from_codex = FALSE
 
 /*
  * Kitty ears
@@ -202,7 +198,6 @@
 	body_parts_covered = 0
 	siemens_coefficient = 1.5
 	item_icons = list()
-	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/kitty/update_icon(mob/living/carbon/human/user)
 	if(!istype(user)) return
@@ -218,4 +213,3 @@
 	icon_state = "richard"
 	body_parts_covered = HEAD|FACE
 	flags_inv = BLOCKHAIR
-	hidden_from_codex = FALSE

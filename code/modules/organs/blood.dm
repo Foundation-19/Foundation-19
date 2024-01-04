@@ -24,6 +24,7 @@
 		if(B.type == /datum/reagent/blood)
 			B.data = list(
 				"donor" = weakref(src),
+				"viruses" = null,
 				"species" = species.name,
 				"blood_DNA" = dna.unique_enzymes,
 				"blood_colour" = species.get_blood_colour(src),
@@ -201,6 +202,10 @@
 /mob/living/carbon/proc/get_blood_data()
 	var/data = list()
 	data["donor"] = weakref(src)
+	data["viruses"] = list()
+	for(var/datum/disease/D in diseases)
+		data["viruses"] += D.Copy()
+	data["resistances"] += disease_resistances.Copy()
 	data["blood_DNA"] = dna.unique_enzymes
 	data["blood_type"] = dna.b_type
 	data["species"] = species.name
