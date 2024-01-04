@@ -86,7 +86,7 @@
 
 /mob/living/simple_animal/friendly/retaliate/scp066/proc/audibleEffect(mob/living/carbon/human/target)
 	target.Stun(4)
-	target.confused += 10
+	target.adjust_confusion(10 SECONDS)
 	target.ear_damage += rand(10, 20)
 	target.ear_deaf = max(target.ear_deaf,15)
 	shake_camera(target, 18, 5)

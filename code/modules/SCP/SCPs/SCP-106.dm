@@ -189,9 +189,6 @@
 
 //Util Overrides
 
-/mob/living/carbon/human/scp106/IsAdvancedToolUser()
-	return FALSE
-
 /mob/living/carbon/human/scp106/get_pressure_weakness()
 	return 0
 

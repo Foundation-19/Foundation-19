@@ -7,11 +7,6 @@
 
 	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
 
-/datum/scp/scp_2343
-	name = "SCP-2343"
-	designation = "2343"
-	classification = SAFE
-
 /mob/living/carbon/human/scp343/scp2343/Initialize(mapload, new_species = "SCP-2343")
 	. = ..()
 	SCP = new /datum/scp(

@@ -309,9 +309,6 @@
 
 //Util Overrides
 
-/mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return TRUE
-
 /mob/living/carbon/human/scp049/update_icons()
 	return
 
