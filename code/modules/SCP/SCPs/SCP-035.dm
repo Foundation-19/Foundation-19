@@ -137,7 +137,6 @@ GLOBAL_LIST_EMPTY(scp035s)
 	// delete the original mind/brain and transfer SCP-035 mind into body
 	var/datum/mind/original_mind = H.mind
 	original_mind.current.ghostize()
-	qdel(original_mind)
 
 	H.mind_initialize() // give it a new empty mind
 
