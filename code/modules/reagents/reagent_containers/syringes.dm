@@ -376,12 +376,12 @@
 	update_icon()
 
 /obj/item/reagent_containers/syringe/antiviral
-	name = "Syringe (spaceacillin)"
+	name = "Syringe (penicillin)"
 	desc = "Contains antiviral agents."
 
 /obj/item/reagent_containers/syringe/antiviral/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/spaceacillin, 15)
+	reagents.add_reagent(/datum/reagent/medicine/penicillin, 15)
 	mode = SYRINGE_INJECT
 	update_icon()
 

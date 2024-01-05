@@ -46,7 +46,8 @@
 	ammo_indicator = TRUE
 
 /obj/item/gun/projectile/pistol/military/alt
-	desc = "The HelTek Optimus, best known as the standard-issue sidearm for the ICCG Navy."
+	name = "surplus pistol"
+	desc = "The HelTek Optimus, recalled after demand for it died down due to its infamous usage in many terror strikes across the USA. Some gun shops still sell it a cheap price as surplus, illegaly of course."
 	icon = 'icons/obj/guns/military_pistol2.dmi'
 	icon_state = "military-alt"
 	safety_icon = "safety"
@@ -55,7 +56,7 @@
 
 /obj/item/gun/projectile/pistol/sec
 	name = "pistol"
-	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Found pretty much everywhere humans are."
+	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a Lockheed Martin subsidiary. Pretty much every military organization uses these to some degree."
 	icon = 'icons/obj/guns/pistol.dmi'
 	icon_state = "secguncomp"
 	safety_icon = "safety"
@@ -69,7 +70,7 @@
 
 /obj/item/gun/projectile/pistol/magnum_pistol
 	name = "magnum pistol"
-	desc = "The HelTek Magnus, a robust Terran handgun that uses high-caliber ammo."
+	desc = "The HelTek Magnus, a robust handgun that uses high-caliber ammo."
 	icon = 'icons/obj/guns/magnum_pistol.dmi'
 	icon_state = "magnum"
 	item_state = "magnum"
@@ -89,7 +90,7 @@
 
 /obj/item/gun/projectile/pistol/throwback
 	name = "pistol"
-	desc = "A product of one of thousands of illegal workshops from around the galaxy. Often replicas of ancient Earth handguns, these guns are usually found in hands of frontier colonists and pirates."
+	desc = "A product of one of thousands of illegal workshops from around Eastern Europe. These guns are usually found in hands of terrorists and criminals."
 	icon = 'icons/obj/guns/pistol_throwback.dmi'
 	icon_state = "pistol1"
 	magazine_type = /obj/item/ammo_magazine/pistol/throwback
