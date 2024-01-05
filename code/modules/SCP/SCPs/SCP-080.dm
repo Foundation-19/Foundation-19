@@ -1,21 +1,22 @@
 #define FEAR_MESSAGE_COOLDOWN 30000 // Cooldown in seconds before a player can be affected again
 /mob/living/scp080
-    name = "SCP-080"
-    desc = "A barely visible shadowy figure that instills a deep sense of dread."
-    icon = 'icons/SCP/scp-080.dmi' // Placeholder for the actual icon file
-    icon_state = "scp_080" // Placeholder for the actual icon state
-    maxHealth = 100
-    health = 100
-    invisibility = INVISIBILITY_OBSERVER // SCP-080 is nearly invisible
-    status_flags = GODMODE // SCP-080 cannot be killed or gibbed
-    a_intent = I_HELP // SCP-080 does not have aggressive intent
+	name = "SCP-080"
+	desc = "A barely visible shadowy figure that instills a deep sense of dread."
+	icon = 'icons/SCP/scp-080.dmi' // Placeholder for the actual icon file
+	icon_state = "scp_080" // Placeholder for the actual icon state
+	maxHealth = 100
+	health = 100
+	invisibility = INVISIBILITY_OBSERVER // SCP-080 is nearly invisible
+	see_invisible = SEE_INVISIBLE_OBSERVER // SCP-080 can see invisible people
+	status_flags = GODMODE // SCP-080 cannot be killed or gibbed
+	a_intent = I_HELP // SCP-080 does not have aggressive intent
 
-    // SCP-080 behavior flags
-    var/induce_fear = TRUE // Can SCP-080 induce fear?
-    var/fear_radius = 7 // Radius within which SCP-080 can affect characters
-    var/fear_strength = 5 // Strength of the fear effect
-    var/list/affected_mobs = list()
-    var/fear_message_cooldown = FEAR_MESSAGE_COOLDOWN
+	// SCP-080 behavior flags
+	var/induce_fear = TRUE // Can SCP-080 induce fear?
+	var/fear_radius = 7 // Radius within which SCP-080 can affect characters
+	var/fear_strength = 5 // Strength of the fear effect
+	var/list/affected_mobs = list()
+	var/fear_message_cooldown = FEAR_MESSAGE_COOLDOWN
 
 /mob/living/scp080/Initialize()
 	. = ..()

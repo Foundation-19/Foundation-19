@@ -145,6 +145,20 @@ GLOBAL_LIST_EMPTY(scp035s)
 	name = "SCP-035"
 	var/obj/item/clothing/mask/scp_035/mask
 
+/mob/living/scp_035/Login()
+	. = ..()
+	if(client)
+		add_language(LANGUAGE_ENGLISH)
+		add_language(LANGUAGE_HUMAN_FRENCH)
+		add_language(LANGUAGE_HUMAN_GERMAN)
+		add_language(LANGUAGE_HUMAN_SPANISH)
+		add_language(LANGUAGE_PLAGUESPEAK_GLOBAL)
+		priority_announcement.Announce("Motion sensors triggered in the containment chamber of SCP-049, on-site security personnel are to investigate the issue.", "Motion Sensors", 'sounds/AI/049.ogg')
+		if(!(MUTATION_XRAY in mutations))
+			mutations.Add(MUTATION_XRAY)
+			update_mutations()
+			update_sight()
+
 //THE CORROSIVE LIQUID
 /datum/reagent/blood/scp_035_substance
 	data = null
