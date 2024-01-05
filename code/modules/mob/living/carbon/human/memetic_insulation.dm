@@ -10,9 +10,9 @@ Made by TheDarkElites
 
 //View distance debuffs for sizes of objects/mobs passed through can_identify
 
-#define DEBUFF_SMALL		1
-#define DEBUFF_TINY			2
-#define DEBUFF_MINISCULE	3
+#define DEBUFF_SMALL		0.5
+#define DEBUFF_TINY			1
+#define DEBUFF_MINISCULE	1.5
 
 // AUDIO MEMETICS
 
@@ -34,7 +34,7 @@ Made by TheDarkElites
 				return 100
 			return TRUE
 
-	if(!isturf(origin.loc)) //Are we inside something that may decrease our audio range?
+	if(!isturf(origin) && !isturf(origin.loc)) //Are we inside something that may decrease our audio range?
 		if(hearable_range > AUDIBLE_RANGE_DECREASED)
 			hearable_range = AUDIBLE_RANGE_DECREASED
 
@@ -103,7 +103,7 @@ Made by TheDarkElites
 /mob/living/carbon/human/proc/can_identify(atom/movable/origin, visual_memetic = 0) //Like can_see but takes into account distance, nearsightedness, and other factors. Meant to be used for if you can actually decipher what an object is or read it rather than just see it. visual_memetic is same as in can_see.
 	if(!can_see(origin, visual_memetic)) //cant read or otherwise identify something if you cant see it
 		return FALSE
-	if(!(isobj(origin) || ismob(origin)))
+	if(!isobj(origin) || ismob(origin))
 		return TRUE //if its not an object or mob it can always be identified/read (technically this should never happen but better safe than sorry)
 
 	var/viewdistance = 7 - get_how_nearsighted() //cant read if you're nearsighted and without prescription
@@ -119,15 +119,20 @@ Made by TheDarkElites
 		var/obj/origin_Obj = origin
 		size_class = origin_Obj.w_class
 		switch(size_class)
-			if(ITEM_SIZE_SMALL) viewdistance -= DEBUFF_SMALL
-			if(ITEM_SIZE_TINY) viewdistance -= DEBUFF_TINY
+			if(ITEM_SIZE_SMALL)
+				viewdistance -= DEBUFF_SMALL
+			if(ITEM_SIZE_TINY)
+				viewdistance -= DEBUFF_TINY
 	else if(ismob(origin))
 		var/mob/origin_Mob = origin
 		size_class = origin_Mob.mob_size
 		switch(size_class)
-			if(MOB_SMALL) viewdistance -= DEBUFF_SMALL
-			if(MOB_TINY) viewdistance -= DEBUFF_TINY
-			if(MOB_MINISCULE) viewdistance -= DEBUFF_MINISCULE
+			if(MOB_SMALL)
+				viewdistance -= DEBUFF_SMALL
+			if(MOB_TINY)
+				viewdistance -= DEBUFF_TINY
+			if(MOB_MINISCULE)
+				viewdistance -= DEBUFF_MINISCULE
 
 	if(get_dist_euclidian(get_turf(src), get_turf(origin)) <= clamp(viewdistance, 0, 7))
 		if((visual_insulation_calculated == V_INSL_IMPERFECT) && visual_memetic)
