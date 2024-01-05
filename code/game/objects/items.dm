@@ -999,13 +999,16 @@ GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 /obj/item/proc/Check914Rating(mode = MODE_ONE_TO_ONE)
 	var/rating = ""
 	var/my_force = force
+	var/my_w_class = w_class
 	switch(mode)
 		if(MODE_FINE)
-			my_force *= (prob(90) ? 1.25 : 0.9)
+			my_force *= (prob(90) ? pick(1.25, 1.5) : 0.9)
+			my_w_class += prob(50)
 		if(MODE_VERY_FINE)
-			my_force *= (prob(50) ? 1.5 : 0.75)
+			my_force *= (prob(50) ? pick(1.5, 2) : 0.75)
+			my_w_class += pick(-1, 0, 0, 1)
 	// By weight
-	switch(w_class)
+	switch(my_w_class)
 		if(-INFINITY to ITEM_SIZE_TINY)
 			rating += "tiny "
 		if(ITEM_SIZE_SMALL)
