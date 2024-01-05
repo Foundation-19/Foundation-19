@@ -821,20 +821,21 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 
 /obj/item/card/id/dassignment/dmining
 	name = "mining assignment card"
-	access = ACCESS_DCLASS_MINING
+	access = list(ACCESS_DCLASS_MINING)
 
 /obj/item/card/id/dassignment/dbotany
 	name = "botany assignment card"
-	access = ACCESS_DCLASS_BOTANY
+	access = list(ACCESS_DCLASS_BOTANY)
 
 /obj/item/card/id/dassignment/dkitchen
 	name = "kitchen assignment card"
-	access = ACCESS_DCLASS_KITCHEN
+	access = list(ACCESS_DCLASS_KITCHEN)
 
 /obj/item/card/id/dassignment/djanitorial
 	name = "janitorial assignment card"
-	access = ACCESS_DCLASS_JANITORIAL
+	access = list(ACCESS_DCLASS_JANITORIAL)
 
 /obj/item/card/id/dassignment/dmedical
 	name = "medical assignment card"
-	access = ACCESS_DCLASS_MEDICAL
+	access = list(ACCESS_DCLASS_MEDICAL)
+
