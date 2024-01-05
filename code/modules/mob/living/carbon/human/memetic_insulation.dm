@@ -34,7 +34,7 @@ Made by TheDarkElites
 				return 100
 			return TRUE
 
-	if(!isturf(origin.loc)) //Are we inside something that may decrease our audio range?
+	if(!isturf(origin) && !isturf(origin.loc)) //Are we inside something that may decrease our audio range?
 		if(hearable_range > AUDIBLE_RANGE_DECREASED)
 			hearable_range = AUDIBLE_RANGE_DECREASED
 
