@@ -88,12 +88,12 @@
 /obj/machinery/door/Initialize()
 	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
 	. = ..()
-	if(autoset_access)
 #ifdef UNIT_TEST
+	if(autoset_access)
 		if(length(req_access))
 			crash_with("A door with mapped access restrictions was set to autoinitialize access.")
 #endif
-		return INITIALIZE_HINT_LATELOAD
+	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/door/LateInitialize()
 	..()
