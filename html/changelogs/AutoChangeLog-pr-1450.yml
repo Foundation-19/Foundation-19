@@ -1,7 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - tweak: You can now collect all casings from a turf with a magazine. Click on a
-      turf or casing to do so.
-  - tweak: Fully unloading magazine takes 1 second to prevent accidents. Additionally,
-      it plays casing drop sounds now.

@@ -95,3 +95,11 @@
   - bugfix: some magazines now have correct sprites
   checkraisefold:
   - rscdel: Removed old Shage font leftovers.
+2024-01-05:
+  EgorDinamit:
+  - tweak: You can now collect all casings from a turf with a magazine. Click on a
+      turf or casing to do so.
+  - tweak: Fully unloading magazine takes 1 second to prevent accidents. Additionally,
+      it plays casing drop sounds now.
+  - bugfix: Chemical Dispenser in DCZ medical now has cartridges.
+  - tweak: Defibrilator will now properly display its messages.
