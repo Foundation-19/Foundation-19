@@ -208,7 +208,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 				return pick(/obj/item/card/data, /obj/item/deck/cards, /obj/item/deck/tarot)
 			if(!LAZYLEN(GLOB.conversion_cards))
 				for(var/type_path in GLOB.valid_conversion_cards)
-					GLOB.valid_conversion_cards[type_path] = list()
+					GLOB.conversion_cards[type_path] = list()
 					var/obj/item/card/id/id = new type_path(src)
 					var/must_match = min(1, round(length(id.access) * 0.3))
 					for(var/type_path_again in GLOB.valid_conversion_cards - type_path)
@@ -216,7 +216,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 						// Returns a list of accesses that were in both lists
 						var/list/matches = id.access & new_id.access
 						if(length(matches) >= must_match)
-							GLOB.valid_conversion_cards[type_path] |= type_path_again
+							GLOB.conversion_cards[type_path] |= type_path_again
 						QDEL_NULL(new_id)
 					QDEL_NULL(id)
 			// Let's give it some random shit!
