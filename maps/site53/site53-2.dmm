@@ -36598,6 +36598,13 @@
 /obj/item/folder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"tAC" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/scp2427_3)
 "tBJ" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -79377,7 +79384,7 @@ bIm
 bIm
 bIm
 bIm
-crW
+tAC
 ybV
 aVl
 aKM
@@ -79634,7 +79641,7 @@ ljc
 xGw
 mLD
 icV
-bIm
+crW
 bIm
 bIm
 bIm
