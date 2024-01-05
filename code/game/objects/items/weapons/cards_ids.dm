@@ -199,7 +199,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
 			var/type_path = pick(GLOB.valid_conversion_cards)
-			var/obj/item/card/id/new_id = new type_path
+			var/obj/item/card/id/new_id = new type_path(get_turf(src))
 			new_id.access = access.Copy()
 			CopyInfoToCard(new_id)
 			return new_id
@@ -228,7 +228,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 					visible_message(SPAN_NOTICE("\The [src] glows for a moment, as if something passed into it."))
 				return src
 			var/new_type = pick(GLOB.valid_conversion_cards[type])
-			var/obj/item/card/id/new_id = new new_type
+			var/obj/item/card/id/new_id = new new_type(get_turf(src))
 			return new_id
 	return ..()
 
