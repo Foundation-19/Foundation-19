@@ -46,8 +46,6 @@
         if(prob(50)) // 50% chance to induce fear each tick
             L.visible_message("<span class='warning'>[L] shivers as a cold, unseen presence brushes past them.</span>",
                               "<span class='userdanger'>You feel a terrifying chill down your spine as something unseen whispers your name...</span>")
-            L.confused += 5 // Add confusion to the mob
-            L.dizziness += 5 // Add dizziness to the mob
             #warn "this is for later" //L.add_status_effect(STATUS_EFFECT_FEAR, 10 SECONDS) // Add a custom fear status effect for 10 seconds
             affected_mobs[L] = world.time // Update the cooldown for the affected mob
 
