@@ -210,12 +210,12 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 				for(var/type_path in GLOB.valid_conversion_cards)
 					GLOB.conversion_cards[type_path] = list()
 					var/obj/item/card/id/id = new type_path(src)
-					var/must_match = min(1, round(length(id.access) * 0.3))
+					var/must_match = min(1, round(length(id.access) * 0.5))
 					for(var/type_path_again in GLOB.valid_conversion_cards - type_path)
 						var/obj/item/card/id/new_id = new type_path(id)
 						// Returns a list of accesses that were in both lists
 						var/list/matches = id.access & new_id.access
-						if(length(matches) >= must_match)
+						if(length(matches) >= must_match && length(id.access) > length(access))
 							GLOB.conversion_cards[type_path] |= type_path_again
 						QDEL_NULL(new_id)
 					QDEL_NULL(id)
