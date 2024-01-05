@@ -104,7 +104,7 @@ Made by TheDarkElites
 	if(!(isobj(origin) || ismob(origin)))
 		return TRUE //if its not an object or mob it can always be identified/read (technically this should never happen but better safe than sorry)
 
-	var/viewdistance = is_nearsighted_currently() ? 7 : 2 //cant read if you're nearsighted
+	var/viewdistance = is_nearsighted_currently() ? 2 : 7 //cant read if you're nearsighted
 	var/visual_insulation_calculated = get_visual_insul()
 	if(!visual_memetic) //If not memetic, we should still see objects even if wearing something with memetic insulation but no tint.
 		if((equipment_tint_total == TINT_NONE) && (visual_insulation_calculated != V_INSL_NONE))
