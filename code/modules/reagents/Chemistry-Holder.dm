@@ -7,6 +7,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	var/atom/my_atom = null
 
 /datum/reagents/New(maximum_volume = 120, atom/my_atom)
+	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(my_atom))
 		CRASH("Invalid reagents holder: [log_info_line(my_atom)]")
 	..()
@@ -14,12 +15,14 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 		build_chemical_reagent_list()
 	src.my_atom = my_atom
 	src.maximum_volume = maximum_volume
+	GLOB.reagents_datums += src
 
 /datum/reagents/Destroy()
 	. = ..()
 	UNQUEUE_REACTIONS(src) // While marking for reactions should be avoided just before deleting if possible, the async nature means it might be impossible.
 	QDEL_NULL_LIST(reagent_list)
 	my_atom = null
+	GLOB.reagents_datums -= src
 
 /* Internal procs */
 /datum/reagents/proc/get_free_space() // Returns free space.
@@ -319,7 +322,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 
 	for(var/datum/reagent/current in reagent_list)
 		var/amount_to_transfer = current.volume * part
-		target.add_reagent(current.type, amount_to_transfer * multiplier, current.get_data(), safety = 1) // We don't react until everything is in place
+		target.add_reagent(current.type, amount_to_transfer * multiplier, copy_data(current), safety = 1) // We don't react until everything is in place
 		if(!copy)
 			remove_reagent(current.type, amount_to_transfer, 1)
 		if (current.color_transfer)
@@ -474,6 +477,32 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 		return
 
 	return trans_to_holder(target.reagents, amount, multiplier, copy)
+
+/// Shallow copies (deep copy of viruses) data from the provided reagent into our copy of that reagent
+/datum/reagents/proc/copy_data(datum/reagent/current_reagent)
+	if(!current_reagent || !current_reagent.data)
+		return null
+	if(!istype(current_reagent.data, /list))
+		return current_reagent.get_data()
+
+	var/list/trans_data = current_reagent.get_data()
+
+	// We do this so that introducing a virus to a blood sample
+	// doesn't automagically infect all other blood samples from
+	// the same donor.
+	//
+	// Technically we should probably copy all data lists, but
+	// that could possibly eat up a lot of memory needlessly
+	// if most data lists are read-only.
+	if(trans_data["viruses"])
+		// So, Egor's note time: I have no idea, but I can only imagine that /tg/ modified the list Copy() proc to
+		// also run a Copy() on diseases or something; I am not wasting time replicating it and will resort to this
+		var/list/new_v = list()
+		for(var/datum/disease/D in trans_data["viruses"])
+			new_v |= D.Copy()
+			trans_data["viruses"] = new_v
+
+	return trans_data
 
 /datum/reagents/proc/should_admin_log()
 	for (var/datum/reagent/R in reagent_list)

@@ -99,3 +99,9 @@
 
 /proc/cmp_marking_order(list/A, list/B)
 	return A[1] - B[1][1]
+
+/proc/cmp_typepaths_asc(A, B)
+	return sorttext("[B]","[A]")
+
+/proc/cmp_advdisease_resistance_asc(datum/disease/advance/A, datum/disease/advance/B)
+	return A.TotalResistance() - B.TotalResistance()

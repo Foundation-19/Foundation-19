@@ -177,3 +177,13 @@
 	color = "#837e79"
 	value = 4
 	strength = 7
+
+
+// Mostly used in virology to neuter symptoms of advance diseases
+/datum/reagent/toxin/formaldehyde
+	name = "Formaldehyde"
+	description = "Formaldehyde, on its own, is a fairly weak toxin. It contains trace amounts of Histamine, very rarely making it decay into Histamine."
+	reagent_state = LIQUID
+	color = "#b4004b"
+	metabolism = 0.5 * REM
+	strength = 1

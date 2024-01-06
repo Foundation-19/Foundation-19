@@ -341,7 +341,7 @@
 
 /datum/job/ncoofficerez
 	title = "EZ Senior Agent"
-	department = "Entrance Zone Personnel"
+	department = "Entrance Personnel"
 	selection_color = "#601c1c"
 	department_flag = SEC|ECZ
 	total_positions = 2
@@ -557,3 +557,53 @@
 	)
 	skill_points = 17
 
+/datum/job/raisa
+	title = "RAISA Agent"
+	department = "Entrance Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|ECZ|BUR
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the EZ Supervisor"
+	economic_power = 5
+	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_BUR = 60, "IT Technician" = 120)
+	alt_titles = list()
+	minimal_player_age = 7
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/raisa_agent
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	hud_icon = "hudraisa"
+
+	access = list(
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_NETWORK
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+
+	max_skill = list(
+	    SKILL_COMPUTER    = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+	skill_points = 17
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Track and prevent potential espionage. Control access to classified information. Protect SCP databases from threats, both mundane and anomalous."

@@ -129,6 +129,7 @@
 
 /datum/job/commeng
 	title = "Communications Technician"
+	department = "Engineering"
 	selection_color = "#5b4d20"
 	total_positions = 2
 	spawn_positions = 2

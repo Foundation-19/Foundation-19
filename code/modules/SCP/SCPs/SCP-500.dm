@@ -1,23 +1,35 @@
-/datum/scp/scp_500
-	name = "SCP-500"
-	designation = "500"
-	classification = SAFE
-
 /obj/item/reagent_containers/pill/scp500
-	name = "SCP-500"
-	desc = "A pill."
+	name = "red pill"
+	desc = "A strange red pill."
 	icon_state = "pill9"
-	SCP = /datum/scp/scp_500
 
 /obj/item/reagent_containers/pill/scp500/New()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/adminordrazine, 1)
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"red pill", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"500" //Numerical Designation
+	)
 
-//is this shitcode? kinda. does it work? absolutely.
-//these 2 lines of code make it so you can't dissolve scp 500 in water for multiplication, do not remove it.
-/obj/item/reagent_containers/pill/scp500/afterattack(obj/target, mob/user, proximity)
-	return 0
+	reagents.add_reagent(/datum/reagent/scp500, 1)
 
+/datum/reagent/scp500
+	name = "SCP-500"
+	description = "A strange liquid obtained from inside the pills of SCP-500."
+	taste_description = "vanilla"
+	reagent_state = LIQUID
+	color = "#f3eaf8"
+	flags = AFFECTS_DEAD //This can even heal dead people.
+
+	glass_name = "SCP-500"
+	glass_desc = "A strange ethereal like liquid"
+
+/datum/reagent/scp500/affect_blood(mob/living/carbon/M, alien, removed)
+	//TODO: Implement proper effects (reverting 008 or 049 infection, clearing stage handlers, reseting to origin species)
+	if(M.chem_doses[type] >= 1)
+		M.rejuvenate()
+		remove_self(volume)
 
 /obj/item/storage/pill_bottle/scp500
 	name = "pill bottle (SCP-500)"

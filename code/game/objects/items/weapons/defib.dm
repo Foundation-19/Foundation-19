@@ -183,7 +183,7 @@
 
 /obj/item/defibrillator/compact/combat
 	name = "combat defibrillator"
-	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
+	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can resuscitate through space suits."
 	paddles = /obj/item/shockpaddles/linked/combat
 
 /obj/item/defibrillator/compact/combat/loaded
@@ -209,7 +209,7 @@
 	w_class = ITEM_SIZE_LARGE
 
 	var/safety = 1 //if you can zap people with the paddles on harm mode
-	var/combat = 0 //If it can be used to revive people wearing thick clothing (e.g. spacesuits)
+	var/combat = 0 //If it can be used to resuscitate people wearing thick clothing (e.g. spacesuits)
 	var/cooldowntime = 6 SECONDS // How long in deciseconds until the defib is ready again after use.
 	var/chargetime = 2 SECONDS
 	var/chargecost = 100 //units of charge
@@ -228,7 +228,7 @@
 			cooldown = 0
 			update_icon()
 
-			make_announcement("beeps, \"Unit is re-energized.\"", "notice")
+			MakeAnnouncement("beeps, \"Unit is re-energized.\"", "notice")
 			playsound(src, 'sounds/machines/defib_ready.ogg', 50, 0)
 
 /obj/item/shockpaddles/update_twohanding()
@@ -270,7 +270,7 @@
 	if(!check_contact(H))
 		return "buzzes, \"Patient's chest is obstructed. Operation aborted.\""
 
-/obj/item/shockpaddles/proc/can_revive(mob/living/carbon/human/H) //This is checked right before attempting to revive
+/obj/item/shockpaddles/proc/CanResuscitate(mob/living/carbon/human/H) //This is checked right before attempting to resuscitate
 	if(H.stat == DEAD)
 		return "buzzes, \"Resuscitation failed - Severe neurological decay makes recovery of patient impossible. Further attempts futile.\""
 
@@ -304,7 +304,7 @@
 		busy = 1
 		update_icon()
 
-		do_revive(H, user)
+		DoResuscitate(H, user)
 
 		busy = 0
 		update_icon()
@@ -317,7 +317,7 @@
 		busy = 1
 		update_icon()
 
-		do_electrocute(target, user, hit_zone)
+		DoElectrocute(target, user, hit_zone)
 
 		busy = 0
 		update_icon()
@@ -326,10 +326,10 @@
 
 	return ..()
 
-// This proc is used so that we can return out of the revive process while ensuring that busy and update_icon() are handled
-/obj/item/shockpaddles/proc/do_revive(mob/living/carbon/human/H, mob/living/user)
+// This proc is used so that we can return out of the resuscitation process while ensuring that busy and update_icon() are handled
+/obj/item/shockpaddles/proc/DoResuscitate(mob/living/carbon/human/H, mob/living/user)
 	if(H.ssd_check())
-		to_chat(find_dead_player(H.ckey, 1), SPAN_NOTICE("Someone is attempting to resuscitate you. Re-enter your body if you want to be revived!"))
+		to_chat(find_dead_player(H.ckey, 1), SPAN_NOTICE("Someone is attempting to resuscitate you!"))
 
 	//beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process
 	user.visible_message(SPAN_WARNING("\The [user] begins to place [src] on [H]'s chest."), SPAN_WARNING("You begin to place [src] on [H]'s chest..."))
@@ -340,20 +340,20 @@
 
 	var/error = can_defib(H)
 	if(error)
-		make_announcement(error, "warning")
+		MakeAnnouncement(error, "warning")
 		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
 
 	if(check_blood_level(H))
-		make_announcement("buzzes, \"Warning - Patient is in hypovolemic shock and may require a blood transfusion.\"", "warning") //also includes heart damage
+		MakeAnnouncement("buzzes, \"Warning - Patient is in hypovolemic shock and may require a blood transfusion.\"", "warning") //also includes heart damage
 
-	//placed on chest and short delay to shock for dramatic effect, revive time is 5sec total
+	//placed on chest and short delay to shock for dramatic effect, resusitation time is 5sec total
 	if(!do_after(user, chargetime, H))
 		return
 
 	//deduct charge here, in case the base unit was EMPed or something during the delay time
 	if(!checked_use(chargecost))
-		make_announcement("buzzes, \"Insufficient charge.\"", "warning")
+		MakeAnnouncement("buzzes, \"Insufficient charge.\"", "warning")
 		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
 
@@ -362,21 +362,22 @@
 	playsound(get_turf(src), 'sounds/machines/defib_zap.ogg', 50, 1, -1)
 	set_cooldown(cooldowntime)
 
-	error = can_revive(H)
+	error = CanResuscitate(H)
 	if(error)
-		make_announcement(error, "warning")
+		MakeAnnouncement(error, "warning")
 		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
-	if(!user.skill_check(SKILL_MEDICAL, SKILL_BASIC) && !lowskill_revive(H, user))
+	if(!user.skill_check(SKILL_MEDICAL, SKILL_BASIC) && !LowSkillResuscitate(H, user))
 		return
 	H.apply_damage(burn_damage_amt, BURN, BP_CHEST)
 
 	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
-	heart.scp3349_induced = FALSE	// part of SCP-3349. electric shocks temporarily stop effect
-	to_chat(H, SPAN_INFO("The euphoric sensation ends."))
+	if(heart.SCP?.designation == "3349-1")	// part of SCP-3349. electric shocks temporarily stop effect
+		qdel(SCP)
+		to_chat(H, SPAN_INFO("The euphoric sensation ends."))
 
 	//set oxyloss so that the patient is just barely in crit, if possible
-	make_announcement("pings, \"Resuscitation successful.\"", "notice")
+	MakeAnnouncement("pings, \"Resuscitation successful.\"", "notice")
 	playsound(get_turf(src), 'sounds/machines/defib_success.ogg', 50, 0)
 	H.resuscitate()
 	var/obj/item/organ/internal/cell/potato = H.internal_organs_by_name[BP_CELL]
@@ -384,9 +385,8 @@
 		var/obj/item/cell/C = potato.cell
 		C.give(chargecost)
 	H.AdjustSleeping(-60)
-	log_and_message_staff("used \a [src] to revive [key_name(H)].")
 
-/obj/item/shockpaddles/proc/lowskill_revive(mob/living/carbon/human/H, mob/living/user)
+/obj/item/shockpaddles/proc/LowSkillResuscitate(mob/living/carbon/human/H, mob/living/user)
 	if(prob(60))
 		playsound(get_turf(src), 'sounds/machines/defib_zap.ogg', 100, 1, -1)
 		H.electrocute_act(burn_damage_amt*4, src, def_zone = BP_CHEST)
@@ -400,7 +400,7 @@
 		return 0
 	return 1
 
-/obj/item/shockpaddles/proc/do_electrocute(mob/living/carbon/human/H, mob/user, target_zone)
+/obj/item/shockpaddles/proc/DoElectrocute(mob/living/carbon/human/H, mob/user, target_zone)
 	var/obj/item/organ/external/affecting = H.get_organ(target_zone)
 	if(!affecting)
 		to_chat(user, SPAN_WARNING("They are missing that body part!"))
@@ -422,7 +422,7 @@
 
 	//deduct charge here, in case the base unit was EMPed or something during the delay time
 	if(!checked_use(chargecost))
-		make_announcement("buzzes, \"Insufficient charge.\"", "warning")
+		MakeAnnouncement("buzzes, \"Insufficient charge.\"", "warning")
 		playsound(get_turf(src), 'sounds/machines/defib_failed.ogg', 50, 0)
 		return
 
@@ -442,25 +442,28 @@
 
 	admin_attack_log(user, H, "Electrocuted using \a [src]", "Was electrocuted with \a [src]", "used \a [src] to electrocute")
 
-/obj/item/shockpaddles/proc/make_alive(mob/living/carbon/human/M) //This revives the mob
+// This revives the mob; Currently not used anywhere.
+/obj/item/shockpaddles/proc/ReviveMob(mob/living/carbon/human/M)
 	var/deadtime = world.time - M.timeofdeath
 
 	M.switch_from_dead_to_living_mob_list()
 	M.timeofdeath = 0
-	M.set_stat(UNCONSCIOUS) //Life() can bring them back to consciousness if it needs to.
+	M.set_stat(UNCONSCIOUS) // Life() can bring them back to consciousness if it needs to.
 	M.regenerate_icons()
-	M.failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
+	M.failed_last_breath = 0 // So mobs that died of oxyloss don't revive and have perpetual out of breath.
 	M.reload_fullscreen()
 
 	M.emote("gasp")
 	M.Weaken(rand(10,25))
 	M.updatehealth()
-	apply_brain_damage(M, deadtime)
+	ApplyBrainDamage(M, deadtime)
 
-/obj/item/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, deadtime)
-	if(deadtime < DEFIB_TIME_LOSS) return
+/obj/item/shockpaddles/proc/ApplyBrainDamage(mob/living/carbon/human/H, deadtime)
+	if(deadtime < DEFIB_TIME_LOSS)
+		return
 
-	if(!H.should_have_organ(BP_BRAIN)) return //no brain
+	if(!H.should_have_organ(BP_BRAIN))
+		return //no brain
 
 	var/obj/item/organ/internal/brain/brain = H.internal_organs_by_name[BP_BRAIN]
 	if(!brain) return //no brain
@@ -468,8 +471,8 @@
 	var/brain_damage = Clamp((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.getBrainLoss(), brain.max_damage)
 	H.setBrainLoss(brain_damage)
 
-/obj/item/shockpaddles/proc/make_announcement(message, msg_class)
-	audible_message("<b>\The [src]</b> [message]", "\The [src] vibrates slightly.")
+/obj/item/shockpaddles/proc/MakeAnnouncement(message, msg_class)
+	audible_message("<span class = '[msg_class]'><b>\The [src]</b> [message]</span>", "\The [src] vibrates slightly.")
 
 /obj/item/shockpaddles/emag_act(uses, mob/user, obj/item/defibrillator/base)
 	if(istype(src, /obj/item/shockpaddles/linked))
@@ -496,10 +499,10 @@
 	if(safety != new_safety)
 		safety = new_safety
 		if(safety)
-			make_announcement("beeps, \"Safety protocols enabled!\"", "notice")
+			MakeAnnouncement("beeps, \"Safety protocols enabled!\"", "notice")
 			playsound(get_turf(src), 'sounds/machines/defib_safetyon.ogg', 50, 0)
 		else
-			make_announcement("beeps, \"Safety protocols disabled!\"", "warning")
+			MakeAnnouncement("beeps, \"Safety protocols disabled!\"", "warning")
 			playsound(get_turf(src), 'sounds/machines/defib_safetyoff.ogg', 50, 0)
 		update_icon()
 	..()
@@ -577,7 +580,7 @@
 /obj/item/shockpaddles/linked/checked_use(charge_amt)
 	return (base_unit.bcell && base_unit.bcell.checked_use(charge_amt))
 
-/obj/item/shockpaddles/linked/make_announcement(message, msg_class)
+/obj/item/shockpaddles/linked/MakeAnnouncement(message, msg_class)
 	base_unit.audible_message("<b>\The [base_unit]</b> [message]", "\The [base_unit] vibrates slightly.")
 
 /*

@@ -28,6 +28,9 @@
 			//Mutations and radiation
 			handle_mutations_and_radiation()
 
+	if(!InStasis())
+		handle_diseases()
+
 	//Check if we're on fire
 	handle_fire()
 
@@ -57,6 +60,9 @@
 	return
 
 /mob/living/proc/handle_environment(datum/gas_mixture/environment)
+	return
+
+/mob/living/proc/handle_diseases()
 	return
 
 /mob/living/proc/update_pulling()

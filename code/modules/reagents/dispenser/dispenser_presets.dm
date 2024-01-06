@@ -49,7 +49,7 @@
 		"Rezadone" = /datum/reagent/medicine/rezadone,
 		"Ryetalyn" = /datum/reagent/medicine/ryetalyn,
 		"Soporific" = /datum/reagent/soporific,
-		"Spaceacillin" = /datum/reagent/medicine/spaceacillin,
+		"Penicillin" = /datum/reagent/medicine/penicillin,
 		"Sterilizine" = /datum/reagent/medicine/sterilizine,
 		"Synaptizine" = /datum/reagent/medicine/stimulant/synaptizine,
 		"Tramadol" = /datum/reagent/medicine/painkiller/tramadol,

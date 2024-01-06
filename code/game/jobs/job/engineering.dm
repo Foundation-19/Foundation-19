@@ -1,5 +1,6 @@
 /datum/job/juneng
 	title = "Junior Engineer"
+	department = "Engineering"
 	total_positions = 6
 	spawn_positions = 6
 	department_flag = ENG
@@ -35,6 +36,7 @@
 
 /datum/job/eng
 	title = "Engineer"
+	department = "Engineering"
 	total_positions = 4
 	spawn_positions = 4
 	selection_color = "#5b4d20"
@@ -83,6 +85,7 @@
 
 /datum/job/seneng
 	title = "Senior Engineer"
+	department = "Engineering"
 	total_positions = 2
 	spawn_positions = 2
 	department_flag = ENG
@@ -135,6 +138,7 @@
 
 /datum/job/conteng
 	title = "Containment Engineer"
+	department = "Engineering"
 	total_positions = 2
 	spawn_positions = 2
 	department_flag = ENG
@@ -190,6 +194,7 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
+	department = "Engineering"
 	supervisors = "the Site Director"
 	department_flag = ENG|COM
 	selection_color = "#5b4d20"
@@ -244,3 +249,50 @@
 	    SKILL_ATMOS        = SKILL_MASTER,
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Manage the Engineering department. Delegate construction and repair work. Facilitate larger projects."
+	codex_guides = list("<l>Hacking Wires</l>")
+
+/datum/job/it_tech
+	title = "IT Technician"
+	department = "Engineering"
+	selection_color = "#5b4d20"
+	department_flag = ENG
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Chief Engineer"
+	economic_power = 4
+	minimal_player_age = 3
+	ideal_character_age = 30
+	requirements = list("Engineer" = 180, EXP_TYPE_ENGINEERING = 300)
+	outfit_type = /decl/hierarchy/outfit/job/engineering/it_tech
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	hud_icon = "hudittech"
+
+	access = list(
+		ACCESS_ENG_COMMS,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_NETWORK
+	)
+	minimal_access = list()
+
+	min_skill = list(
+		SKILL_COMPUTER     = SKILL_EXPERIENCED,
+	    SKILL_CONSTRUCTION = SKILL_BASIC,
+	    SKILL_ELECTRICAL   = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_COMPUTER     = SKILL_MASTER
+	)
+
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Maintain and expand the advanced technology behind the site's server infrastructure. Resolve technical problems. Prepare and protect against cybersecurity attacks."

@@ -343,8 +343,6 @@
 			return global.client_preference_stats_;
 		if("client_repository")
 			return global.client_repository;
-		if("climbsounds")
-			return global.climbsounds;
 		if("combatlog")
 			return global.combatlog;
 		if("comm_message_listeners")
@@ -1192,8 +1190,6 @@
 			global.client_preference_stats_=newval;
 		if("client_repository")
 			global.client_repository=newval;
-		if("climbsounds")
-			global.climbsounds=newval;
 		if("combatlog")
 			global.combatlog=newval;
 		if("comm_message_listeners")
