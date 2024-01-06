@@ -1,7 +1,7 @@
 /mob/living/carbon/human/scp082
 	name = "SCP-082"
 	desc = "A hulking figure, its features grotesquely distorted. It wields a large cleaver and has a penchant for conversation... and cannibalism."
-	icon = 'icons/SCP/scp-082.dmi' 
+	icon = 'icons/SCP/scp-082.dmi'
 	icon_state = "082"
 	maxHealth = 300
 	health = 300
@@ -36,8 +36,16 @@
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
 			update_sight()
+
+/mob/living/carbon/human/scp082/update_icons()
+	return
+
+
+/mob/living/carbon/human/scp082/movement_delay()
+	return 3.0
+
 /mob/living/carbon/human/scp082/attack_hand(mob/living/carbon/human/H)
-    if(H.a_intent == "help") // If someone tries to interact peacefully
+    if(H.a_intent == I_HELP) // If someone tries to interact peacefully
         to_chat(H, "<span class='notice'>You attempt to engage SCP-082 in conversation. It seems amused, for now...</span>")
     else // If someone tries to attack
         to_chat(H, "<span class='warning'>SCP-082 laughs off your feeble attempt to harm it!</span>")
