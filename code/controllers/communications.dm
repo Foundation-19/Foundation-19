@@ -117,7 +117,6 @@ var/const/ENT_FREQ	= 1461 //entertainment frequency. This is not a diona exclusi
 
 // department channels
 var/const/PUB_FREQ = 1459
-var/const/HAIL_FREQ = 1463
 var/const/SEC_FREQ = 1359
 var/const/ENG_FREQ = 1357
 var/const/MED_FREQ = 1355
@@ -131,8 +130,8 @@ var/const/MED_I_FREQ = 1485
 var/const/SEC_I_FREQ = 1475
 
 // Away Site Channels
-var/list/AWAY_FREQS_UNASSIGNED = list(1491, 1493, 1495, 1497, 1499, 1501, 1503, 1505, 1507, 1509)
-var/list/AWAY_FREQS_ASSIGNED = list("Hailing" = HAIL_FREQ)
+var/list/AWAY_FREQS_UNASSIGNED = list(1491, 1493, 1495, 1497, 1499, 1501, 1503, 1505, 1507)
+var/list/AWAY_FREQS_ASSIGNED = list(1509)
 
 // Device signal frequencies
 var/const/ATMOS_ENGINE_FREQ = 1438 // Used by atmos monitoring in the engine.
@@ -156,7 +155,6 @@ var/const/SEC_ECZ_FREQ = 1473
 
 var/list/radiochannels = list(
 	"Common"		= PUB_FREQ,
-	"Hailing"		= HAIL_FREQ,
 	"Science"		= SCI_FREQ,
 	"Command"		= COMM_FREQ,
 	"Medical"		= MED_FREQ,
@@ -248,8 +246,6 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ,
 		return "mediradio"
 	if(frequency == SEC_I_FREQ) // Security intercom
 		return "seciradio"
-	if (frequency == HAIL_FREQ) // Hailing frequency
-		return "hailradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
 

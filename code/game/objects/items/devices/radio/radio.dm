@@ -40,10 +40,6 @@
 	var/intercom_handling = FALSE
 	var/sound_id
 
-/obj/item/device/radio/hailing
-	name = "shortwave radio (Hailing)"
-	frequency = HAIL_FREQ
-
 /obj/item/device/radio/proc/set_frequency(new_frequency)
 	radio_controller.remove_object(src, frequency)
 	frequency = new_frequency
@@ -841,10 +837,7 @@
 
 	. = ..()
 
-	internal_channels = list(
-		num2text(frequency) = list(),
-		num2text(HAIL_FREQ) = list(),
-	)
+	internal_channels = list(num2text(frequency) = list())
 	if (use_common)
 		internal_channels += list(num2text(PUB_FREQ) = list())
 
