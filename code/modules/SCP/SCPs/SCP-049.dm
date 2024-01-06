@@ -90,6 +90,7 @@
 	if(!..())
 		return
 	priority_announcement.Announce("Motion sensors triggered in the containment chamber of SCP-049, on-site security personnel are to investigate the issue.", "Motion Sensors", 'sounds/AI/049.ogg')
+	last_interaction_time = world.time + 5 MINUTES
 
 //Mechanics
 
