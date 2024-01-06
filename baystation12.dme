@@ -3076,6 +3076,7 @@
 #include "code\modules\SCP\SCPs\SCP-049.dm"
 #include "code\modules\SCP\SCPs\SCP-066.dm"
 #include "code\modules\SCP\SCPs\SCP-080.dm"
+#include "code\modules\SCP\SCPs\SCP-082.dm"
 #include "code\modules\SCP\SCPs\SCP-096.dm"
 #include "code\modules\SCP\SCPs\SCP-106.dm"
 #include "code\modules\SCP\SCPs\SCP-1102.dm"

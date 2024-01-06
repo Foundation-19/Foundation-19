@@ -22,7 +22,9 @@
 	var/amnestic_cooldown = 300 // Cooldown in seconds before SCP-939 can use its amnestic effect again
 	ai_holder_type = /datum/ai_holder/simple_animal/melee/meat
 	natural_weapon = /obj/item/natural_weapon/bite/medium
-
+	var/last_speech_mimicry = 0 // Timestamp of the last time SCP-939 mimicked speech
+	var/speech_mimicry_cooldown = 120 // Cooldown in seconds before SCP-939 can mimic speech again
+	var/mimicry_chance = 50 // Chance to mimic speech when a human is nearby
 /mob/living/simple_animal/hostile/scp939/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
@@ -48,6 +50,16 @@
 
 var/regen_rate = 1 // Health points regenerated per tick
 var/regen_cooldown = 10 // Cooldown in seconds between each regen tick
+
+/mob/living/simple_animal/hostile/scp939/proc/mimic_speech()
+	if(world.time >= (last_speech_mimicry + speech_mimicry_cooldown * 10))
+		for(var/mob/living/carbon/human/H in view(7, src))
+			if(prob(mimicry_chance))
+				var/message = pick("Help me!", "Over here!", "I'm hurt!", "Follow me!") // Add more phrases as needed
+				H.say(message)
+				last_speech_mimicry = world.time
+				break
+
 
 /mob/living/simple_animal/hostile/scp939/Life()
 	if(health < maxHealth)

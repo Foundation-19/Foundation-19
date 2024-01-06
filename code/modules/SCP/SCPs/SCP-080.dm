@@ -1,4 +1,5 @@
 #define FEAR_MESSAGE_COOLDOWN 30000 // Cooldown in seconds before a player can be affected again
+#define INDUCE_FEAR_COOLDOWN 10 SECONDS // Define a cooldown period of 10 seconds
 /mob/living/scp080
 	name = "SCP-080"
 	desc = "A barely visible shadowy figure that instills a deep sense of dread."
@@ -17,7 +18,7 @@
 	var/fear_strength = 5 // Strength of the fear effect
 	var/list/affected_mobs = list()
 	var/fear_message_cooldown = FEAR_MESSAGE_COOLDOWN
-
+	var/last_fear_induction = 0 // Variable to track the last time induce_fear_aura was called
 /mob/living/scp080/Initialize()
 	. = ..()
 
@@ -34,11 +35,14 @@
     if(!.)
         return
 
-    if(induce_fear)
+    if(induce_fear && world.time >= (last_fear_induction + INDUCE_FEAR_COOLDOWN))
+        last_fear_induction = world.time // Update the last induction time
         induce_fear_aura()
 
 /mob/living/scp080/proc/induce_fear_aura()
     for(var/mob/living/L in view(fear_radius, src))
+        if(L == src) // Check if the living entity is SCP-080 itself
+            continue
         if(L.stat == DEAD || L.is_immune_to_fear==TRUE) // Check if the living entity is dead or immune to fear
             continue
         if(L in affected_mobs && world.time < (affected_mobs[L] + fear_message_cooldown * 10)) // Check if the mob is still on cooldown
@@ -52,9 +56,12 @@
     var/sound/fear_sound = null
     fear_sound.volume = 50
     for(var/mob/living/L in affected_mobs)
+        if(L == src) // Check if the living entity is SCP-080 itself
+            continue
         if(world.time < (affected_mobs[L] + fear_message_cooldown * 10))
             continue
         L.playsound_local(L, fear_sound)
+
 
 /mob/living/scp080/attack_hand(mob/living/carbon/human/H)
     // SCP-080 cannot be interacted with physically in a meaningful way
