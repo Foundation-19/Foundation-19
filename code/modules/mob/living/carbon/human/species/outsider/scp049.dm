@@ -40,3 +40,6 @@
 	H.update_sight()
 	H.set_sight(H.sight|get_vision_flags(H)|H.equipment_vision_flags|vision[1])
 	H.change_light_colour(H.getDarkvisionTint())
+
+/datum/species/scp049/attempt_grab(mob/living/carbon/human/user, mob/living/target)
+	return ..(user, target, GRAB_PLAGUE_DOCTOR)
