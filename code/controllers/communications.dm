@@ -117,7 +117,6 @@ var/const/ENT_FREQ	= 1461 //entertainment frequency. This is not a diona exclusi
 
 // department channels
 var/const/PUB_FREQ = 1459
-var/const/SEC_FREQ = 1359
 var/const/ENG_FREQ = 1357
 var/const/MED_FREQ = 1355
 var/const/SCI_FREQ = 1351
@@ -159,7 +158,6 @@ var/list/radiochannels = list(
 	"Command"		= COMM_FREQ,
 	"Medical"		= MED_FREQ,
 	"Engineering"	= ENG_FREQ,
-	"Security" 		= SEC_FREQ,
 	"Response Team" = ERT_FREQ,
 	"Special Ops" 	= DTH_FREQ,
 	"GOC"			= GOC_FREQ,
@@ -183,7 +181,7 @@ var/list/channel_color_presets = list(
 	"Gastric Green" = COMMS_COLOR_SERVICE,
 	"Global Green" = COMMS_COLOR_COMMON,
 	"Grand Gold" = COMMS_COLOR_COLONY,
-	"Hippin' Hot Pink" = COMMS_COLOR_HAILING,
+	"Hippin' Hot Pink" = "#cc00aa",
 	"Menacing Maroon" = COMMS_COLOR_SYNDICATE,
 	"Operational Orange" = COMMS_COLOR_ENGINEER,
 	"Painful Pink" = COMMS_COLOR_AI,
@@ -191,7 +189,7 @@ var/list/channel_color_presets = list(
 	"Powerful Plum" = COMMS_COLOR_BEARCAT,
 	"Pretty Periwinkle" = COMMS_COLOR_CENTCOMM,
 	"Radical Ruby" = COMMS_COLOR_VOX,
-	"Raging Red" = COMMS_COLOR_SECURITY,
+	"Raging Red" = "#930000",
 	"Spectacular Silver" = COMMS_COLOR_ENTERTAIN,
 	"Tantalizing Turquoise" = COMMS_COLOR_MEDICAL,
 	"Viewable Violet" = COMMS_COLOR_SKRELL,
@@ -207,7 +205,7 @@ var/list/CENT_FREQS = list(ERT_FREQ, DTH_FREQ)
 var/list/ANTAG_FREQS = list(SYND_FREQ, RAID_FREQ)
 
 //Department channels, arranged lexically
-var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ, SEC_FREQ, SEC_HCZ_FREQ, SEC_LCZ_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ, GOC_FREQ)
+var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ, SEC_HCZ_FREQ, SEC_LCZ_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ, GOC_FREQ)
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
@@ -226,8 +224,6 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ,
 	if(frequency == AI_FREQ)
 		return "airadio"
 	// department radio formatting (poorly optimized, ugh)
-	if(frequency == SEC_FREQ)
-		return "secradio"
 	if (frequency == ENG_FREQ)
 		return "engradio"
 	if(frequency == SCI_FREQ)

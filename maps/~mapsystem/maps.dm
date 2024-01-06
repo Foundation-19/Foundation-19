@@ -442,7 +442,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		num2text(ENG_FREQ)   = list(ACCESS_ENGINEERING_LVL2, ACCESS_ATMOSPHERICS),
 		num2text(MED_FREQ)   = list(ACCESS_MEDICAL_EQUIP),
 		num2text(MED_I_FREQ) = list(ACCESS_MEDICAL_EQUIP),
-		num2text(SEC_FREQ)   = list(ACCESS_SECURITY),
 		num2text(SEC_I_FREQ) = list(ACCESS_SECURITY),
 		num2text(SCI_FREQ)   = list(ACCESS_TOX,ACCESS_ROBOTICS,ACCESS_XENOBIOLOGY),
 		num2text(SUP_FREQ)   = list(ACCESS_CARGO),
