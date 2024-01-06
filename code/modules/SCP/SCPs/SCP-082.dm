@@ -1,16 +1,20 @@
 /mob/living/scp082
-    name = "SCP-082"
-    desc = "A hulking figure, its features grotesquely distorted. It wields a large cleaver and has a penchant for conversation... and cannibalism."
-    icon = 'icons/SCP/scp-082.dmi' // Placeholder for the actual icon file
-    icon_state = "082" // Placeholder for the actual icon state
-    maxHealth = 300
-    health = 300
-    status_flags = CANPUSH | CANSTUN | CANWEAKEN | CANPARALYSE // SCP-082 can be affected by certain status effects but is resistant to others
-    a_intent = I_HURT // SCP-082 has aggressive intent
+	name = "SCP-082"
+	desc = "A hulking figure, its features grotesquely distorted. It wields a large cleaver and has a penchant for conversation... and cannibalism."
+	icon = 'icons/SCP/scp-082.dmi' // Placeholder for the actual icon file
+	icon_state = "082" // Placeholder for the actual icon state
+	maxHealth = 300
+	health = 300
+	status_flags = CANPUSH | CANSTUN | CANWEAKEN | CANPARALYSE // SCP-082 can be affected by certain status effects but is resistant to others
+	a_intent = I_HURT // SCP-082 has aggressive intent
 
+/mob/living/scp082/Life()
+	..()
+	for(var/datum/modifier/M in modifiers)
+		M.process(src)
+	environmental_interaction()
 /mob/living/scp082/Initialize(mapload)
 	. = ..()
-
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
 		"fat man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
@@ -32,7 +36,16 @@
             visible_message("<span class='warning'>SCP-082's wounds start to close up at an alarming rate!</span>")
             heal_overall_damage(damage * 0.5, damage * 0.5)
             return
-
+    if(damage > 30)
+        visible_message("<span class='danger'>SCP-082 roars in anger as it suffers a heavy blow!</span>")
+        increase_aggression()
+// New proc to handle environmental interactions
+/mob/living/scp082/proc/environmental_interaction()
+    if(prob(10)) // 10% chance to interact with the environment each tick
+        for(var/obj/O in view(1, src))
+            if(istype(O, /obj/structure/window) || istype(O, /obj/structure/grille))
+                visible_message("<span class='warning'>SCP-082 smashes through [O]!</span>")
+                O.attack_generic(src, rand(120,350), "smashes") // Destroy the object
 
 /mob/living/scp082/proc/special_attack(mob/living/carbon/human/target)
     if(prob(25)) // 25% chance to perform the special attack
@@ -56,3 +69,49 @@
         if(prob(50)) // 50% chance to cause environmental damage
             for(var/obj/O in range(1, target_turf))
             target_turf.add_blood(target) // Add blood splatter to the floor
+
+
+// Define a basic modifier datum
+/datum/modifier/
+    var/name
+    var/duration
+    var/tickdown
+
+    // Constructor for the modifier
+/datum/modifier/New(mob/living/target, new_duration)
+	duration = new_duration
+	tickdown = world.time + duration
+	target.modifiers += src
+	on_apply(target)
+
+    // Called when the modifier is applied
+/datum/modifier/proc/on_apply(mob/living/target)
+	return
+
+    // Called when the modifier is removed
+/datum/modifier/proc/on_remove(mob/living/target)
+	return
+
+    // Called every tick to handle the modifier's effects
+/datum/modifier/proc/process(mob/living/target)
+	if(world.time >= tickdown)
+		on_remove(target)
+		target.modifiers -= src
+		qdel(src)
+
+// Define a berserk modifier
+/datum/modifier/berserk
+    name = "Berserk"
+
+/datum/modifier/berserk/on_apply(mob/living/target)
+	target.a_intent = I_HURT // Change intent to aggressive
+	// Increase damage, speed, or other stats as needed
+
+/datum/modifier/berserk/on_remove(mob/living/target)
+	target.a_intent = I_HELP // Revert intent to normal
+	// Revert any stat changes made in on_apply
+
+
+// Modify the increase_aggression proc to apply the berserk modifier
+/mob/living/scp082/proc/increase_aggression()
+    new /datum/modifier/berserk(src, 10 SECONDS) // Apply the berserk modifier for 10 seconds

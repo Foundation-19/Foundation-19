@@ -72,3 +72,4 @@
 	var/list/diseases = list()
 	/// List of diseases this mob has developed resistance to
 	var/list/disease_resistances = list()
+	var/list/modifiers = list()
