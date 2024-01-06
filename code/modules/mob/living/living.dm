@@ -983,7 +983,3 @@ default behaviour is:
 		exp_list[EXP_TYPE_SCP] = minutes
 
 	return exp_list
-
-/mob/living/proc/add_modifier(datum/modifier/modifier_type, duration)
-    var/datum/modifier/modifier_instance = new modifier_type(src, duration)
-    return modifier_instance

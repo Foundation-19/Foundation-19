@@ -1,3 +1,6 @@
+/mob/living
+	var/list/modifiers = list()
+
 /mob/living/carbon/human/scp082
 	name = "SCP-082"
 	desc = "A hulking figure, its features grotesquely distorted. It wields a large cleaver and has a penchant for conversation... and cannibalism."
@@ -137,3 +140,7 @@
 // Modify the increase_aggression proc to apply the berserk modifier
 /mob/living/carbon/human/scp082/proc/increase_aggression()
     new /datum/modifier/berserk(src, 10 SECONDS) // Apply the berserk modifier for 10 seconds
+
+/mob/living/proc/add_modifier(datum/modifier/modifier_type, duration)
+    var/datum/modifier/modifier_instance = new modifier_type(src, duration)
+    return modifier_instance
