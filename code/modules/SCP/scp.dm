@@ -1,78 +1,111 @@
-#define SAFE 1
-#define EUCLID 2
-#define KETER 3
-#define THAUMIEL 4
-#define NEUTRALIZED 5
-
 /datum/scp
-	var/name = "SCP-NULL"
-	var/designation = "0"
-	var/classification = SAFE
-	var/datum/component/scp/component //You don't have to use this, but it's really nice for smaller SCP's so you can make them SCP whenever you want
-	var/atom/owner
+	///SCP name
+	var/name
+	///SCP Designation (i.e 173 or 096)
+	var/designation
+	///SCP Class (SAFE, EUCLID, ETC.)
+	var/classification
 
-/datum/scp/New(atom/creation)
-	creation.makeSCP()
+	///Meta Flags for the SCP
+	var/metaFlags
+
+	///Datum Parent
+	var/atom/parent
+
+	//Playable SCP vars
+
+	///How many players do we need on for this SCP to be playable
+	var/min_playercount = 0
+	///How much time has to have passed for this SCP to become playable
+	var/min_time = 0
+
+	//Components
+
+	///Memetic Component
+	var/datum/component/memetic/meme_comp
+
+	//Memetic Comp Vars
+
+	///Proc called as an effect from memetic scps
+	var/memetic_proc
+	///Flags that determine how a memetic scp is detected
+	var/memeticFlags
+	///Sounds that are considered memetic
+	var/list/memetic_sounds
+
+/datum/scp/New(atom/creation, vName, vClass = SCP_SAFE, vDesg, vMetaFlags)
+	GLOB.SCP_list += creation
+
+	name = vName //names are now usually captalized improper descriptors to fit the theme of SCP since people dont just know the scp desg off the bat. As such we need to improper it. TODO: add mental mechanic for foundation workers to see desg instead of name.
+	designation = vDesg
+	classification = vClass
+	metaFlags = vMetaFlags
+
+	parent = creation
+
+	if(LAZYLEN(name))
+		parent.SetName(name)
+
+	if(classification == SCP_SAFE)
+		set_faction(parent, MOB_FACTION_NEUTRAL)
+	else
+		set_faction(parent, FACTION_SCPS)
+
+	if(ismob(parent))
+		var/mob/pMob = parent
+		if(LAZYLEN(name))
+			pMob.fully_replace_character_name(name)
+
+		if(metaFlags & SCP_PLAYABLE)
+			pMob.status_flags += NO_ANTAG
+
+	if(metaFlags & SCP_DISABLED)
+		log_and_message_staff("Disabled SCP-[designation] spawned and subsequently deleted! Do not spawn disabled SCPs!", location = get_turf(parent))
+		qdel(parent)
+		return
+
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, .proc/OnExamine)
+	onGain()
 
 /datum/scp/Destroy()
 	. = ..()
-	if(GLOB.SCP_list.len)
-		GLOB.SCP_list -= src
+	GLOB.SCP_list -= src
+	UnregisterSignal(parent, COMSIG_ATOM_EXAMINED)
+	parent = null
 
-/datum/scp/proc/SCPinit(atom/A)
-	if(!isatom(A))
+///Run only after adding appropriate flags for components.
+/datum/scp/proc/compInit() //if more comps are added for SCPs, they can be put here
+	if(metaFlags & SCP_DISABLED)
 		return
-	owner = A
-
-	if(component)
-		component = A.AddComponent(component,src,owner)
+	if(metaFlags & SCP_MEMETIC)
+		meme_comp = parent.AddComponent(/datum/component/memetic, memeticFlags, memetic_proc, memetic_sounds)
 
 /datum/scp/proc/isCompatible(atom/A)
 	return 1
 
 /datum/scp/proc/Remove()
-	if(owner)
+	if(parent)
 		onLose()
-		owner.TakeComponent(component)
-		owner.SCP = null
+		parent.TakeComponent(meme_comp)
+		parent.SCP = null
 		qdel(src)
 
 	else
 		qdel(src)
+
+///For when an SCP object is examined, we send the examinee a message about the SCP's designation if they should know what SCP it is.
+/datum/scp/proc/OnExamine(datum/source, mob/examinee)
+	SIGNAL_HANDLER
+	if(!ishuman(examinee))
+		return
+	var/mob/living/carbon/human/H = examinee
+	var/datum/job/job = SSjobs.get_by_title(H.job)
+	if(job && (job.department_flag & (COM|SCI|SEC)))
+		to_chat(examinee, SPAN_CLASS("scp", "You know this is SCP-[designation]!"))
 
 /datum/scp/proc/onGain()
 
 /datum/scp/proc/onLose()
 
-/atom/proc/makeSCP()
-	GLOB.SCP_list += src
-//	if(ispath(c))
-//		SCP = new SCP()
-	SCP.SCPinit(src)
-	SCP.onGain()
-	return 1
-
 /atom/proc/canBeSCP(datum/scp/SCP_)
 	return SCP_.isCompatible(src)
-
-/atom/proc/isSCP(A)
-	if(A)
-		if(SCP.designation == A)
-			return 1
-	else
-		if(SCP)
-			return 1
-
-/atom/proc/removeSCP(A)
-	if(!SCP)
-		return 0
-	if(A)
-		if(ispath(A) && (SCP.type == A))
-			SCP.Remove()
-			return 1
-		if(ispath(GLOB.SCP_list[A] && (SCP.type == GLOB.SCP_list[A])))
-			SCP.Remove()
-			return 1
-	else
-		SCP.Remove()
-		return 1

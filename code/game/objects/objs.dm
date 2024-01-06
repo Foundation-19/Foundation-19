@@ -191,3 +191,18 @@
 ///returns how much the object blocks an explosion. Used by subtypes.
 /obj/proc/GetExplosionBlock()
 	CRASH("Unimplemented GetExplosionBlock()")
+
+// Objects can be deconstructed into raw materials on coarse mode
+/obj/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_COARSE)
+			var/list/return_list = list()
+			for(var/mat in matter)
+				var/material/material_def = SSmaterials.get_material_by_name(mat)
+				if(!material_def)
+					continue
+				var/matter_amount = round(matter[mat] / rand(SHEET_MATERIAL_AMOUNT, SHEET_MATERIAL_AMOUNT * 1.5))
+				var/obj/item/new_sheet = material_def.place_sheet(src, matter_amount)
+				return_list += new_sheet
+			return return_list
+	return ..()

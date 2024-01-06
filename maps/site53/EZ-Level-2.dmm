@@ -36,7 +36,7 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ar" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/surface)
@@ -58,7 +58,7 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "aG" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -143,10 +143,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/primary/bridge/fore)
-"be" = (
-/obj/structure/filingcabinet/scp/keter/scp2000to2999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "bh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -177,13 +173,13 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "bx" = (
 /obj/machinery/light/spot{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "bA" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
@@ -296,7 +292,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "cE" = (
 /obj/machinery/cryopod,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -364,7 +360,7 @@
 "cY" = (
 /obj/structure/bed/chair/comfy,
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "db" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow/border{
@@ -413,7 +409,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "dw" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -433,12 +429,12 @@
 "dB" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "dC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "dD" = (
 /obj/structure/catwalk,
 /obj/structure/railing/mapped{
@@ -485,7 +481,7 @@
 "dR" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "dU" = (
 /obj/machinery/door/airlock/glass/security,
 /turf/simulated/floor/tiled/monotile,
@@ -496,7 +492,7 @@
 "ea" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "eb" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -517,7 +513,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ef" = (
 /obj/machinery/telecomms/server/presets/medical,
 /obj/effect/floor_decal/corner/paleblue/full,
@@ -584,7 +580,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "eG" = (
 /obj/effect/floor_decal/corner/yellow/diagonal,
 /turf/simulated/floor/tiled,
@@ -628,7 +624,7 @@
 	},
 /obj/item/paper_bin,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "eN" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -858,9 +854,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/engineering/foyer)
 "gX" = (
-/obj/structure/filingcabinet/scp/keter/scp3000to3999,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "hb" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -880,7 +875,7 @@
 "hd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "he" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow/diagonal,
@@ -922,14 +917,14 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "hB" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "hD" = (
 /obj/effect/floor_decal/corner/orange/diagonal,
 /obj/structure/table/standard,
@@ -953,7 +948,7 @@
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/westleft,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "hR" = (
 /obj/effect/floor_decal/corner/orange/bordercorner,
 /turf/simulated/floor/tiled/white,
@@ -1020,7 +1015,7 @@
 "iB" = (
 /obj/machinery/light/spot,
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "iF" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/cable/orange{
@@ -1209,7 +1204,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "kp" = (
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -1281,11 +1276,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "kH" = (
 /obj/item/modular_computer/console/preset/civilian,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "kO" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -1316,7 +1311,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ld" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -1333,7 +1328,7 @@
 "lm" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "lo" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/phoron/ten,
@@ -1373,7 +1368,7 @@
 "lS" = (
 /obj/structure/bookcase,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "lT" = (
 /obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating,
@@ -1540,10 +1535,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/vacant)
-"mZ" = (
-/obj/structure/filingcabinet/scp/safe/scp2000to2999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "nf" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1707,7 +1698,7 @@
 /obj/structure/flora/ausbushes/leafybush,
 /obj/machinery/light/small,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ok" = (
 /obj/structure/table/standard,
 /obj/structure/flora/pottedplant/deskfern,
@@ -1717,7 +1708,7 @@
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "oo" = (
 /obj/machinery/light/spot{
 	dir = 4
@@ -1729,7 +1720,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ot" = (
 /turf/simulated/wall,
 /area/hallway/primary/bridge/aft)
@@ -1820,7 +1811,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "pj" = (
 /obj/structure/cable/green{
 	dir = 1
@@ -1922,7 +1913,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "pL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet/red,
@@ -2101,7 +2092,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ru" = (
 /turf/simulated/floor/plating,
 /area/site53/logistics/logistics)
@@ -2115,7 +2106,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ry" = (
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/heads/office/cmo)
@@ -2138,7 +2129,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "rY" = (
 /obj/machinery/door/airlock/lift,
 /turf/simulated/floor/tiled/old_cargo,
@@ -2170,7 +2161,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "so" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4"
@@ -2255,7 +2246,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "sR" = (
 /obj/effect/floor_decal/corner/yellow/three_quarters,
 /turf/simulated/floor/tiled/techmaint,
@@ -2391,7 +2382,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "tK" = (
 /obj/item/modular_computer/console/preset/engineering{
 	dir = 8
@@ -2438,7 +2429,7 @@
 /area/hallway/primary/bridge/fore)
 "uo" = (
 /turf/simulated/wall,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "us" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec,
 /obj/machinery/light{
@@ -2474,7 +2465,7 @@
 	},
 /obj/machinery/door/window/brigdoor/westleft,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "uI" = (
 /obj/structure/cable/orange{
 	icon_state = "1-8"
@@ -2509,7 +2500,7 @@
 	},
 /obj/machinery/photocopier/faxmachine,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "uQ" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -2574,7 +2565,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "vr" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/cable/orange{
@@ -2590,11 +2581,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "vB" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "vC" = (
 /obj/machinery/light{
 	dir = 1
@@ -2676,7 +2667,7 @@
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "ww" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -2712,7 +2703,7 @@
 /obj/item/gun/energy/taser,
 /obj/item/reagent_containers/spray/pepper,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "wU" = (
 /obj/structure/bed/chair/comfy{
 	dir = 4
@@ -2751,14 +2742,14 @@
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "xj" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "xk" = (
 /obj/item/modular_computer/console/preset/cardslot/command,
 /obj/structure/window/reinforced{
@@ -2768,7 +2759,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "xn" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -2791,7 +2782,7 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "xx" = (
 /obj/structure/bed/chair/office/comfy,
 /turf/simulated/floor/carpet/blue2,
@@ -2925,7 +2916,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "yG" = (
 /obj/machinery/door/airlock/glass/civilian,
 /turf/simulated/floor/tiled/white/monotile,
@@ -2947,7 +2938,7 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "yL" = (
 /obj/machinery/telecomms/server/presets/engineering,
 /obj/effect/floor_decal/corner/orange/full,
@@ -2960,7 +2951,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "yN" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -2976,10 +2967,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/conference)
-"zb" = (
-/obj/structure/filingcabinet/scp/euclid/scp2000to2999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "zh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2987,10 +2974,6 @@
 /obj/machinery/door/airlock/engineering,
 /turf/simulated/floor/tiled/old_cargo,
 /area/maintenance/auxsolarbridge)
-"zk" = (
-/obj/structure/filingcabinet/scp/keter/scp1000to1999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "zn" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/steel_grid,
@@ -3022,10 +3005,6 @@
 "zz" = (
 /turf/simulated/floor/tiled/freezer,
 /area/hallway/primary/bridge/fore)
-"zA" = (
-/obj/structure/filingcabinet/scp/keter/scp1to999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "zE" = (
 /obj/machinery/door/airlock/command,
 /obj/structure/cable/green{
@@ -3038,7 +3017,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "zH" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -3049,7 +3028,7 @@
 "zK" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "zM" = (
 /obj/structure/flora/pottedplant/tall,
 /turf/simulated/floor/carpet/purple,
@@ -3169,7 +3148,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/light/small,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "AX" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 8
@@ -3201,7 +3180,7 @@
 "Bm" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Bs" = (
 /obj/machinery/door/airlock/command,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -3211,7 +3190,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Bx" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -3317,7 +3296,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Cg" = (
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/upper_surface/commstower1)
@@ -3326,7 +3305,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Cj" = (
 /obj/machinery/light{
 	dir = 8
@@ -3368,7 +3347,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Cs" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8"
@@ -3421,7 +3400,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "CG" = (
 /obj/item/modular_computer/console/preset/aislot/research{
 	dir = 8
@@ -3585,7 +3564,7 @@
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Ef" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
@@ -3599,10 +3578,6 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/rdoffice)
-"Ej" = (
-/obj/structure/filingcabinet/scp/safe/scp3000to3999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "Em" = (
 /obj/structure/table/standard,
 /obj/item/rcd,
@@ -3628,7 +3603,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/machinery/light/small,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Et" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -3639,7 +3614,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Eu" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -3701,7 +3676,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "EW" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -3832,7 +3807,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "FK" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -3855,7 +3830,7 @@
 "FU" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "FW" = (
 /obj/structure/catwalk,
 /obj/structure/railing/mapped,
@@ -3920,7 +3895,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Gt" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -3967,14 +3942,14 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "GT" = (
 /obj/structure/table/standard,
 /obj/machinery/chemical_dispenser/bar_coffee/full{
 	dir = 8
 	},
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "GU" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 5
@@ -4009,7 +3984,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "He" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/border{
@@ -4023,10 +3998,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/conference)
-"Hk" = (
-/obj/structure/filingcabinet/scp/safe/scp1to999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "Hl" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -4050,7 +4021,7 @@
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Ht" = (
 /obj/structure/table/rack,
 /obj/item/stock_parts/subspace/amplifier,
@@ -4132,10 +4103,6 @@
 /obj/effect/floor_decal/corner/research/full,
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
-"HL" = (
-/obj/structure/filingcabinet/scp/safe/scp1000to1999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "HO" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -4145,13 +4112,13 @@
 /area/site53/uez/conference)
 "HT" = (
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "HW" = (
 /obj/structure/bed/chair/comfy{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "If" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/surface/surface)
@@ -4176,7 +4143,7 @@
 "Im" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Iq" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -4199,7 +4166,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "IO" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4227,11 +4194,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
-"Jf" = (
-/obj/structure/filingcabinet/scp/euclid/scp1000to1999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Jh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4276,7 +4239,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Jy" = (
 /obj/effect/floor_decal/corner/orange/bordercorner,
 /obj/effect/floor_decal/corner/orange/bordercorner{
@@ -4322,7 +4285,7 @@
 /obj/structure/flora/ausbushes/leafybush,
 /obj/machinery/light/small,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "JS" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
@@ -4470,7 +4433,7 @@
 /area/site53/uez/conference)
 "KR" = (
 /turf/simulated/wall/r_wall,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Lc" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -4495,13 +4458,13 @@
 	opacity = 1
 	},
 /turf/simulated/floor/plating,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Lk" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Lt" = (
 /turf/simulated/floor/tiled,
 /area/site53/surface/surface)
@@ -4574,7 +4537,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Md" = (
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -4711,7 +4674,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "MM" = (
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "MN" = (
 /obj/structure/table/rack,
 /obj/item/stock_parts/circuitboard/telecomms/processor,
@@ -4777,7 +4740,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Nu" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
@@ -4814,7 +4777,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "NF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -4834,10 +4797,6 @@
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/maintenance/auxsolarbridge)
-"NO" = (
-/obj/structure/filingcabinet/scp/euclid/scp3000to3999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "NP" = (
 /obj/structure/window/reinforced/full,
 /turf/simulated/floor/plating,
@@ -4850,7 +4809,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "NR" = (
 /obj/machinery/telecomms/server/presets/service,
 /obj/effect/floor_decal/corner/grey/full,
@@ -4939,7 +4898,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "OO" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/carpet/blue2,
@@ -4968,7 +4927,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Pe" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8"
@@ -4993,7 +4952,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Po" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
@@ -5014,7 +4973,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "PF" = (
 /obj/structure/flora/pottedplant/shoot,
 /turf/simulated/floor/tiled,
@@ -5101,7 +5060,7 @@
 /obj/structure/table/standard,
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Qp" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -5156,7 +5115,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor/westleft,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "QH" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engineering_monitoring)
@@ -5171,7 +5130,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "QK" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -5455,7 +5414,7 @@
 /obj/item/paper_bin,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "SR" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -5514,7 +5473,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Tv" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/engineering_monitoring)
@@ -5683,7 +5642,7 @@
 "UM" = (
 /obj/machinery/door/window/brigdoor/eastright,
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "UN" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/orange,
@@ -5740,7 +5699,7 @@
 	pixel_x = -23
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Vj" = (
 /obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating,
@@ -5794,10 +5753,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/primary/bridge/fore)
-"VN" = (
-/obj/structure/filingcabinet/scp/euclid/scp1to999,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
 "VO" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/purple,
@@ -5850,7 +5805,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Wi" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
@@ -5881,7 +5836,7 @@
 "Wq" = (
 /obj/structure/closet/crate/paper_refill,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Wu" = (
 /obj/machinery/telecomms/receiver/preset_right,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -5895,7 +5850,7 @@
 /obj/structure/flora/ausbushes/pointybush,
 /obj/machinery/light,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Ww" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -5986,7 +5941,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/grass,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "XH" = (
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/structure/table/standard,
@@ -6063,7 +6018,7 @@
 "Yl" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "Ym" = (
 /obj/structure/catwalk,
 /obj/structure/railing/mapped{
@@ -6175,7 +6130,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet,
-/area/site53/lowertram/archive)
+/area/site53/engineering/server_room)
 "YZ" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 1
@@ -47515,18 +47470,18 @@ au
 au
 au
 KR
-Ej
-mZ
-HL
-Hk
+gX
+gX
+gX
+gX
 KR
 dR
 xj
 OM
 uo
-zA
-zk
-be
+gX
+gX
+gX
 gX
 KR
 Ly
@@ -48286,10 +48241,10 @@ au
 au
 au
 KR
-NO
-zb
-Jf
-VN
+gX
+gX
+gX
+gX
 KR
 lm
 bv

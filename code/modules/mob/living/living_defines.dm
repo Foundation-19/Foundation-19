@@ -67,3 +67,8 @@
 	var/image/selected_image = null // Used for buildmode AI control stuff.
 
 	var/datum/spell/ranged_ability ///Any ranged ability the mob has, as a click override
+
+	/// List of active diseases
+	var/list/diseases = list()
+	/// List of diseases this mob has developed resistance to
+	var/list/disease_resistances = list()

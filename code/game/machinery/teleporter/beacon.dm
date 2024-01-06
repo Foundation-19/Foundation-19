@@ -44,7 +44,7 @@
 	if (!panel_open)
 		if (isWrench(I))
 			var/turf/T = get_turf(src)
-			if (is_space_turf(T) || istype(T, /turf/simulated/open))
+			if (isspaceturf(T) || istype(T, /turf/simulated/open))
 				to_chat(user, SPAN_WARNING("You cannot anchor \the [src] to \the [T]. It requires solid plating."))
 				return FALSE
 			if (!T.is_plating())
@@ -167,6 +167,23 @@
 			icon_state += "_locked"
 	else
 		icon_state += "_unpowered"
+
+
+/obj/machinery/tele_beacon/get_mechanics_info()
+	. = ..()
+	. += "<p>\The [src] can be targeted by teleporter control consoles to allow teleporter pads to send mobs and objects to this [src]'s location. \
+		It can only be targeted and used while \the [src] is powered and anchored (wrenched) to the floor.</p>\
+		<p>While the panel is closed:</p>\
+		<ul>\
+			<li>Use a Wrench to anchor/unanchor the beacon, allowing it to be moved. The beacon is not functional unless anchored.</li>\
+			<li>Use a Multitool to rename the beacon. The name will be displayed in teleport control consoles.</li>\
+		</ul>"
+
+
+/obj/machinery/tele_beacon/get_antag_info()
+	. = ..()
+	. += "<p>If EMP'd, \the [src] will lose all established teleporter locks and will be disabled for up to 30 seconds.</p>"
+
 
 /// Connects the beacon to a computer that's locking onto it. Returns TRUE on connection, FALSE if the connection fails.
 /obj/machinery/tele_beacon/proc/connect_computer(obj/machinery/computer/teleporter/computer)

@@ -224,8 +224,8 @@ var/global/list/all_objectives = list()
 		"the captain's pinpointer" = /obj/item/pinpointer,
 		"an RCD" = /obj/item/rcd,
 		"SCP-500" = /obj/item/reagent_containers/pill/scp500,
-		"SCP-2398" = /obj/item/weapon/twohanded/scp_2398,
-		"SCP-1102-RU" = /obj/item/weapon/scp1102ru,
+		"SCP-2398" = /obj/item/material/twohanded/baseballbat/scp2398,
+		"SCP-1102-RU" = /obj/item/storage/briefcase/scp1102ru,
 		"SCP-513" = /obj/item/scp513,
 		"SCP-013" = /obj/item/storage/fancy/cigarettes/bluelady
 	)

@@ -99,6 +99,51 @@
 	if(is_spent)
 		to_chat(user, "This one is spent.")
 
+// 1:1 - Gives random casing of same caliber
+// Fine - Refills the casing if it's spent, otherwise gives absolutely random casing
+// Very Fine - Shoots the loaded projectile at random people nearby
+/obj/item/ammo_casing/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ONE_TO_ONE)
+			var/list/potential_return = list()
+			for(var/thing in subtypesof(/obj/item/ammo_casing))
+				var/obj/item/ammo_casing/A = thing
+				if(A.caliber != caliber)
+					continue
+				potential_return += A
+			if(!LAZYLEN(potential_return))
+				return src
+			var/casing_type = pick(potential_return)
+			var/obj/item/ammo_casing/new_casing = new casing_type(get_turf(src))
+			new_casing.is_spent = is_spent
+			return new_casing
+		if(MODE_FINE)
+			if(ispath(projectile_type) && is_spent)
+				is_spent = FALSE
+				return src
+			return pick(subtypesof(/obj/item/ammo_casing))
+		if(MODE_VERY_FINE)
+			if(!ispath(projectile_type) || is_spent)
+				return src
+			var/turf/my_turf = get_turf(src)
+			var/list/potential_targets = list()
+			for(var/mob/living/L in view(9, my_turf))
+				if(L.stat == DEAD)
+					continue
+				potential_targets += L
+			if(!LAZYLEN(potential_targets))
+				for(var/turf/T in view(2, my_turf))
+					if(T.density)
+						continue
+					potential_targets += T
+			var/obj/item/projectile/P = new projectile_type(my_turf)
+			var/target = pick(potential_targets)
+			playsound(my_turf, P.fire_sound, 50, TRUE)
+			P.firer = user
+			P.launch(target, pick(BP_ALL_LIMBS))
+			return null
+	return ..()
+
 //An item that holds casings and can be used to put them inside guns
 /obj/item/ammo_magazine
 	name = "magazine"
@@ -152,6 +197,38 @@
 	stored_ammo -= A
 	update_icon()
 
+/obj/item/ammo_magazine/afterattack(atom/target, mob/living/user, proximity_flag)
+	if(!proximity_flag || (!istype(target, /turf) && !istype(target, /obj/item/ammo_casing)))
+		return ..()
+
+	var/turf/T = istype(target, /turf) ? target : get_turf(target)
+	if(istype(target, /turf))
+		if(!locate(/obj/item/ammo_casing) in T)
+			return ..()
+
+	var/curr_ammo = length(stored_ammo)
+	if(curr_ammo >= max_ammo)
+		to_chat(user, "<span class='warning'>[src] is full!</span>")
+		return
+
+	to_chat(user, SPAN_NOTICE("You begin inserting casings into \the [src]..."))
+	if(!do_after(user, (max_ammo - curr_ammo) * 2, src))
+		return
+
+	for(var/obj/item/ammo_casing/C in T)
+		if(stored_ammo.len >= max_ammo)
+			break
+		if(C.caliber != caliber)
+			continue
+		stored_ammo.Add(C)
+		C.forceMove(src)
+
+	if(length(stored_ammo) - curr_ammo)
+		to_chat(user, SPAN_NOTICE("You insert [length(stored_ammo) - curr_ammo] casings into \the [src]."))
+		update_icon()
+	else
+		to_chat(user, SPAN_WARNING("You fail to collect any casings!"))
+
 /obj/item/ammo_magazine/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = W
@@ -191,13 +268,19 @@
 	if(!stored_ammo.len)
 		to_chat(user, SPAN_NOTICE("[src] is already empty!"))
 		return
+	if(!do_after(user, 10, src))
+		return
 	to_chat(user, SPAN_NOTICE("You empty [src]."))
+	var/curr_sounds = 0
+	var/max_sounds = clamp(round(length(stored_ammo) * 0.2), 1, 10)
 	for(var/obj/item/ammo_casing/C in stored_ammo)
 		C.forceMove(user.loc)
 		C.set_dir(pick(GLOB.alldirs))
+		if(LAZYLEN(C.fall_sounds) && curr_sounds < max_sounds)
+			playsound(user.loc, pick(C.fall_sounds), 20, TRUE)
+			curr_sounds += 1
 	stored_ammo.Cut()
 	update_icon()
-
 
 /obj/item/ammo_magazine/attack_hand(mob/user)
 	if(user.get_inactive_hand() == src)

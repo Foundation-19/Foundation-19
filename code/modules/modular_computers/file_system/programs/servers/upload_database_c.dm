@@ -9,6 +9,7 @@
 	requires_ntnet = TRUE
 	requires_ntnet_feature = NTNET_PEERTOPEER
 	network_destination = "other device via server-to-client tunnel"
+	usage_flags = PROGRAM_ALL
 	available_on_ntnet = TRUE
 	tgui_id = "SCiPUploadClient"
 

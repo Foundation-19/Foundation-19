@@ -376,12 +376,12 @@
 	update_icon()
 
 /obj/item/reagent_containers/syringe/antiviral
-	name = "Syringe (spaceacillin)"
+	name = "Syringe (penicillin)"
 	desc = "Contains antiviral agents."
 
 /obj/item/reagent_containers/syringe/antiviral/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/spaceacillin, 15)
+	reagents.add_reagent(/datum/reagent/medicine/penicillin, 15)
 	mode = SYRINGE_INJECT
 	update_icon()
 
@@ -430,3 +430,49 @@
 	volume = 20
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_REACT
 	icon_state = "cs"
+
+// Coarse - Spills any reagents inside and breaks
+// 1:1 - Returns random syringe type with same volume. If at the moment of conversion there are no reagents - return itself
+// Fine - Increases maximum volume of the syringe, but no more than by twice of original max volume
+// Very fine - Increases  maximum volume without a limit, but has a chance to disolve and irradiate the area
+/obj/item/reagent_containers/syringe/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_COARSE)
+			reagents.splash(get_turf(src), reagents.total_volume)
+			break_syringe()
+			return src
+		if(MODE_ONE_TO_ONE)
+			if(reagents.total_volume == 0)
+				return src
+			var/list/potential_return = list()
+			for(var/thing in subtypesof(/obj/item/reagent_containers/syringe))
+				var/obj/item/reagent_containers/syringe/S = thing
+				if(initial(S.volume) < volume * 0.8 || initial(S.volume) > volume * 1.2)
+					continue
+				potential_return += S
+			if(!LAZYLEN(potential_return))
+				return src
+			return pick(potential_return)
+		if(MODE_FINE)
+			if(volume >= initial(volume) * 2)
+				return src
+			volume = min(volume + round(volume * 0.25), initial(volume) * 2)
+			playsound(src, 'sounds/magic/charge.ogg', 25, TRUE)
+			color = COLOR_BLUE_LIGHT
+			name = "weird [initial(name)]"
+			desc = "[initial(desc)] It has a weird blue tint."
+			return src
+		if(MODE_VERY_FINE)
+			if(volume >= initial(volume) * 2 && prob(volume * 0.3))
+				visible_message(SPAN_DANGER("[src] dissolves into glowing green goo!"))
+				playsound(src, 'sounds/items/Welder.ogg', 50, TRUE)
+				new /obj/effect/decal/cleanable/greenglow(get_turf(src))
+				SSradiation.radiate(get_turf(src), volume * 2)
+				return null
+			volume += clamp(round(volume * 0.25), 5, 50)
+			playsound(src, 'sounds/magic/charge.ogg', 25, TRUE)
+			color = COLOR_BLUE_LIGHT
+			name = "weird [initial(name)]"
+			desc = "[initial(desc)] It has a weird blue tint."
+			return src
+	return ..()

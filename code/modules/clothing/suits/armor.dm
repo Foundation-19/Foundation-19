@@ -93,7 +93,7 @@
 		user.visible_message(SPAN_DANGER("The reactive teleport system flings [user] clear of the attack!"))
 		var/list/turfs = new/list()
 		for(var/turf/T in orange(6, user))
-			if(istype(T,/turf/space)) continue
+			if(isspaceturf(T)) continue
 			if(T.density) continue
 			if(T.x>world.maxx-6 || T.x<6)	continue
 			if(T.y>world.maxy-6 || T.y<6)	continue
@@ -276,7 +276,6 @@
 	restricted_accessory_slots = list(ACCESSORY_SLOT_ARMOR_C, ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L, ACCESSORY_SLOT_ARMOR_S)
 	blood_overlay_type = "armor"
 	flags_inv = 0
-	codex_special_info = "Its protection is provided by the plate inside, examine it for details on armor."
 
 /obj/item/clothing/suit/armor/pcarrier/light
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate)

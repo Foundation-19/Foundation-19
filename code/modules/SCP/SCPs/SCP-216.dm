@@ -1,11 +1,26 @@
-/obj/structure/scp_216
-	name = "SCP 216"
+/obj/structure/scp216
+	name = "safe"
 	desc = "A metalic safe with multiple-dial combination lock."
 	icon = 'icons/obj/structures.dmi'
+
 	icon_state = "safe"
 	anchored = TRUE
 	density = TRUE
+
+	//Config
+
+	///Max items 216 can contain
+	var/max_items = 10
+	///Chance that items are generated for a code
+	var/generate_chance = 75
+	///Max amount of items that can be generated for a code
+	var/max_items_generated = 9
+
+	//Mechanics
+
+	///Are we open?
 	var/open = FALSE
+	///Our currrent code.
 	var/current_code = 0
 	/// Assoc list of codes in use and items stored in them.
 	var/list/all_codes = list()
@@ -111,33 +126,31 @@
 		/mob/living/simple_animal/hostile/giant_spider/spitter = 40,
 		)
 
-// Generate random loot for lucky people to find
-/obj/structure/scp_216/Initialize()
+/obj/structure/scp216/Initialize()
 	. = ..()
-	for(var/i = 1 to 35)
-		var/code = rand(0, 999999) // Not infinitely impossible to find loot
-		if(code in all_codes)
-			i -= 1
-			continue
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"safe", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"216", //Numerical Designation
+	)
 
-		GenerateRandomItemsAt(code)
-
-/obj/structure/scp_216/Destroy()
-	all_codes = list() // Forever gone
+/obj/structure/scp216/Destroy()
+	LAZYCLEARLIST(all_codes) // Forever gone
 	return ..()
 
-/obj/structure/scp_216/on_update_icon()
+/obj/structure/scp216/on_update_icon()
 	if(open)
 		icon_state = "[initial(icon_state)]-open"
 	else
 		icon_state = initial(icon_state)
 
-/obj/structure/scp_216/attackby(obj/item/I, mob/user)
+/obj/structure/scp216/attackby(obj/item/I, mob/user)
 	if(!open)
 		return ..()
 	InsertItem(user, I, current_code)
 
-/obj/structure/scp_216/attack_hand(mob/user)
+/obj/structure/scp216/attack_hand(mob/user)
 	var/text_code = add_zero(num2text(current_code, 7), 7)
 	var/dat = "<center>"
 	dat += "<a href='?src=\ref[src];open=1'>[open ? "Close" : "Open"] [src]</a><br>"
@@ -151,7 +164,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/obj/structure/scp_216/Topic(href, href_list)
+/obj/structure/scp216/Topic(href, href_list)
 	if(!ishuman(usr))
 		return
 	var/mob/living/carbon/human/user = usr
@@ -183,6 +196,8 @@
 			to_chat(user, SPAN_WARNING("The code can't be lower than zero!"))
 			return
 		current_code = temp_code
+		if(!(num2text(current_code, 7) in all_codes))
+			GenerateRandomItemsAt(current_code)
 		attack_hand(user)
 		return
 
@@ -197,17 +212,19 @@
 			return
 		RetrieveItem(user, A, current_code)
 
-/obj/structure/scp_216/proc/GenerateRandomItemsAt(code)
+/obj/structure/scp216/proc/GenerateRandomItemsAt(code)
 	if(!(num2text(code, 7) in all_codes) || !islist(all_codes[num2text(code, 7)]))
 		all_codes[num2text(code, 7)] = list()
-	for(var/i = 1 to rand(1, 9))
+	if(!(prob(generate_chance)))
+		return
+	for(var/i = 1 to rand(1, max_items_generated))
 		var/chosen_atom = pickweight(random_items)
 		all_codes[num2text(code, 7)] += new chosen_atom(src)
 
-/obj/structure/scp_216/proc/InsertItem(mob/living/carbon/human/user, atom/movable/A, code_loc = 0)
+/obj/structure/scp216/proc/InsertItem(mob/living/carbon/human/user, atom/movable/A, code_loc = 0)
 	if(!(num2text(code_loc, 7) in all_codes) || !islist(all_codes[num2text(code_loc, 7)]))
 		all_codes[num2text(code_loc, 7)] = list()
-	if(length(all_codes[num2text(code_loc, 7)]) >= 10)
+	if(length(all_codes[num2text(code_loc, 7)]) >= max_items)
 		to_chat(user, SPAN_WARNING("There is already too many things in there!"))
 		return
 	if(!user.unEquip(A, src))
@@ -215,7 +232,7 @@
 	all_codes[num2text(code_loc, 7)] += A
 	attack_hand(user)
 
-/obj/structure/scp_216/proc/RetrieveItem(mob/living/carbon/human/user, atom/movable/A, code_loc = 0)
+/obj/structure/scp216/proc/RetrieveItem(mob/living/carbon/human/user, atom/movable/A, code_loc = 0)
 	if(!locate(A) in all_codes[num2text(code_loc, 7)])
 		return
 	all_codes[num2text(code_loc, 7)] -= A

@@ -32,9 +32,9 @@
 	update_icon()
 
 /obj/item/reagent_containers/glass/bottle/New()
-	..()
 	if(!icon_state)
 		icon_state = "bottle-[rand(1,4)]"
+	return ..()
 
 /obj/item/reagent_containers/glass/bottle/update_icon()
 	cut_overlays()
@@ -327,3 +327,77 @@
 	..()
 	reagents.add_reagent(/datum/reagent/toxin/venom, 60)
 	update_icon()
+
+// Disease-engineering reagents
+/obj/item/reagent_containers/glass/bottle/virus_food
+	name = "virus food bottle"
+	icon_state = "bottle-1"
+
+/obj/item/reagent_containers/glass/bottle/virus_food/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment/virus_food, 60)
+	update_icon()
+
+/obj/item/reagent_containers/glass/bottle/mutagen_virus_food
+	name = "mutagenic agar bottle"
+	icon_state = "bottle-1"
+
+/obj/item/reagent_containers/glass/bottle/mutagen_virus_food/New()
+	..()
+	reagents.add_reagent(/datum/reagent/unstable_mutagen/mutagen_virus_food, 60)
+	update_icon()
+
+/obj/item/reagent_containers/glass/bottle/phoron_virus_food
+	name = "virus phoron bottle"
+	icon_state = "bottle-1"
+
+/obj/item/reagent_containers/glass/bottle/phoron_virus_food/New()
+	..()
+	reagents.add_reagent(/datum/reagent/toxin/phoron/phoron_virus_food, 60)
+	update_icon()
+
+/obj/item/reagent_containers/glass/bottle/synaptizine_virus_food
+	name = "virus rations bottle"
+	icon_state = "bottle-1"
+
+/obj/item/reagent_containers/glass/bottle/synaptizine_virus_food/New()
+	..()
+	reagents.add_reagent(/datum/reagent/medicine/stimulant/synaptizine/synaptizine_virus_food, 60)
+	update_icon()
+
+/obj/item/reagent_containers/glass/bottle/uranium_virus_food
+	name = "uranium virus food bottle"
+	icon_state = "bottle-1"
+
+/obj/item/reagent_containers/glass/bottle/uranium_virus_food/New()
+	..()
+	reagents.add_reagent(/datum/reagent/uranium/uranium_virus_food, 60)
+	update_icon()
+
+// Bottles with diseases
+/obj/item/reagent_containers/glass/bottle/virus_flu
+	icon_state = "bottle-3"
+	spawned_disease = /datum/disease/advance/flu
+
+/obj/item/reagent_containers/glass/bottle/virus_cold
+	icon_state = "bottle-3"
+	spawned_disease = /datum/disease/advance/cold
+
+// Random ones
+/obj/item/reagent_containers/glass/bottle/virus_random
+	icon_state = "bottle-2"
+	spawned_disease = /datum/disease/advance/random
+	var/max_symptoms = 3
+	var/max_severity = 2
+
+/obj/item/reagent_containers/glass/bottle/virus_random/SpawnDisease()
+	return new spawned_disease(max_symptoms, max_severity)
+
+/obj/item/reagent_containers/glass/bottle/virus_random/medium
+	max_severity = 6
+
+/obj/item/reagent_containers/glass/bottle/virus_random/high
+	max_severity = 12
+
+/obj/item/reagent_containers/glass/bottle/rage
+	spawned_disease = /datum/disease/rage

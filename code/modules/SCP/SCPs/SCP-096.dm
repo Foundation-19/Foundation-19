@@ -1,436 +1,371 @@
-//SCP-096, nothing more need be said
-#define STATE_096_DEAD -1
-#define STATE_096_IDLE 0
-#define STATE_096_SCREAMING 1
-#define STATE_096_CHASE_START 2
-#define STATE_096_CHASING 3
-#define STATE_096_SLAUGHTER 4
+#define STATE_096_IDLE		(1<<0)
+#define STATE_096_SCREAMING	(1<<1)
+#define STATE_096_CHASING	(1<<2)
+#define STATE_096_SLAUGHTER	(1<<3)
+#define STATE_096_STAGGERED	(1<<4)
 
-#define CHASE_PLAYED (1<<0)
-#define DOOM_PLAYED  (1<<1)
-
-/datum/scp/scp_096
-	name = "SCP-096"
-	designation = "096"
-	classification = EUCLID
-
-/mob/living/simple_animal/hostile/scp096
-	name = "???"
-	desc = "No, no, you know not to look closely at it" //for non-targets
-	SCP = /datum/scp/scp_096
-
-	var/target_desc_1 = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, and its face is......<span class='danger'>no. NO. NO!</span>" //for targets
-	var/target_desc_2 = "<span class='danger'>NO!</span>" //on second examine
-
-	var/scramble_desc = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, its face <span class='info'>censored with several flashing squares.</span>"
+/mob/living/scp096
+	name = "????"
 	icon = 'icons/SCP/scp-096.dmi'
+
 	icon_state = "scp"
-	icon_living = "scp"
-	icon_dead = "scp-dead"
-	var/icon_idle = "scp"
-	var/icon_scream = "scp-screaming"
-	var/icon_chase = "scp-chasing"
-	response_help  = "touches the"
-	response_disarm = "pushes the"
-	response_harm   = "hits the"
-	anomalytype = SCP_096
-	status_flags = NO_ANTAG
-	ai_holder_type = /datum/ai_holder/simple_animal/inert // prevents 096 from moving
+	health = 2000
+	maxHealth = 2000
 
-	// For scramble goggles.
-	var/hud_scramble
+	can_be_buckled = FALSE
 
-	health = 600
-	maxHealth = 600
+	available_maneuvers = list(/decl/maneuver/leap)
 
-	var/murder_sound = list('sounds/voice/096-kill.ogg')
-	var/hibernate = 0 //Disables SCP until toggled back to 0
-	var/scare_played = 0 //Did we use the jumpscare sound yet ?
+	//Config
 
-	var/list/kill_list = list() //list of people this guy is about to murder
-	var/list/examine_urge_list = list() //tracks urge to examine
-	var/list/satisfied_urges = list() // list of people who have satisfied their urge to check out 096's face.
+	///View probability when idle
+	var/idle_view_prob = 20
+	///View probability when chasing
+	var/chasing_view_prob = 40
+	///How long until we can emote again?
+	var/emote_cooldown = 40 SECONDS
+	///Speed at which we move at
+	var/scp096_speed = 0.2
+	///How close we have to be before we can leap at a target
+	var/scp096_leap_range = 4
+	///Maximium JPS distance. Dont fuck with this unless you know what you're doing.
+	var/maxJPSdistance = 240
 
+	//Mechanicial
 
-	var/mob/living/carbon/target //current dude this guy is targeting
-	var/list/target_blacklist = list(/mob/living/carbon/human/scp343) //List of mob types exempt from 096s targetting.
-	var/target_distance_tolerance = 7
+	///Current Target
+	var/mob/living/carbon/human/target
+	///Possible targets we can pick from
+	var/list/mob/living/carbon/human/targets
+	///Individuals who were viewing us
+	var/list/weakref/oldViewers
 
+	///Our current AI state
 	var/current_state = STATE_096_IDLE
+	///Our description to scramblers
+	var/scramble_desc
+	///Emote Cooldown tracker
+	var/emote_cooldown_track = 0
+	///096's current pathing path. We store this to avoid calling JPS unnecesarily.
+	var/list/current_path
+	///Targets previous turf, this is kept in order to avoid calling JPS unnecesarily.
+	var/weakref/lastTargetTurf
+	///Leaping
+	var/decl/maneuver/leap/leapHandler = new /decl/maneuver/leap()
+	///How long 096 is staggered for
+	var/stagger_counter
 
-	var/staggered = 0
+/mob/living/scp096/Initialize()
+	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"????", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_EUCLID, //Obj Class
+		"096", //Numerical Designation
+		SCP_MEMETIC|SCP_DISABLED //096 is disabled until traits are ported in as that is neccesary for it to pathfind through doors.
+	)
 
-	// Play doom / chase message once to each target
-	var/list/message_played_list = list()
+	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA
+	SCP.memetic_proc = /mob/living/scp096/proc/trigger
+	SCP.compInit()
 
-	var/damage_state = 0
+	leapHandler.stamina_cost = 0
+	scramble_desc = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, its face is [SPAN_INFO("censored with several flashing squares.")]"
+	desc = "A pale white figure, with lengthy arms. You slowly scan the creature bottom up, from its skinny atrophied legs to its...face. Its face. Oh god [SPAN_DANGER("its horrible [SPAN_BOLD("face")]!")]"
 
-/datum/say_list/scp096
-	emote_hear = list("makes a faint groaning sound")
-	emote_see = list("shuffles around aimlessly", "shivers")
+	LAZYINITLIST(targets)
+	LAZYINITLIST(oldViewers)
+	LAZYINITLIST(current_path)
 
-/mob/living/simple_animal/hostile/scp096/New()
-	hud_scramble = new /image/hud_overlay('icons/SCP/hud_scramble.dmi', src, "scramble-alive")
+/mob/living/scp096/Destroy()
+	target = null
+	LAZYCLEARLIST(targets)
+	LAZYCLEARLIST(oldViewers)
+	LAZYCLEARLIST(current_path)
+
 	..()
 
-/mob/living/simple_animal/hostile/scp096/update_icon()
-	if(stat == DEAD)
-		icon_state = icon_dead
-	else
-		switch(current_state)
-			if(STATE_096_IDLE)
-				icon_state = icon_idle
-			if(STATE_096_SCREAMING)
-				icon_state = icon_scream
-			if(STATE_096_CHASING, STATE_096_CHASE_START, STATE_096_SLAUGHTER)
-				icon_state = icon_chase
+//Mechanics
 
-	if(hud_scramble)
-		var/image/holder = hud_scramble
-		if(stat == DEAD)
-			holder.icon_state = "scramble-dead"
-		else
-			holder.icon_state = "scramble-alive"
-
-		hud_scramble = holder
-
-/mob/living/simple_animal/hostile/scp096/Destroy()
-	kill_list = null
-	examine_urge_list = null
-	satisfied_urges = null
-	examine_urge_list = null
-	message_played_list = null
-	return ..()
-
-/mob/living/simple_animal/hostile/scp096/Life()
-	if(hibernate)
+///Triggers 096 on a target
+/mob/living/scp096/proc/trigger(mob/living/carbon/human/Ptarget)
+	if(Ptarget in targets)
 		return
 
-	check_los()
-	staggered = max(staggered/8 - 1, 0)
-	adjustBruteLoss(-5)
+	if(istype(Ptarget.client.eye, /obj/machinery/camera))
+		to_chat(Ptarget, SPAN_DANGER("You catch a glimpse of [SPAN_BOLD("its face")] through the monitor!"))
 
-	update_icon()
-
-	if(current_state == STATE_096_SCREAMING) //we're still screaming
-		return
-
-	//Pick the next target
-	if(kill_list.len)
-		// Sets both state and target var
-		select_target()
-	else
-		current_state = STATE_096_IDLE
-		update_icon()
-
-	if(target && current_state == STATE_096_CHASE_START)
-		handle_target(target)
-
-//Check if any carbon mob can see us
-/mob/living/simple_animal/hostile/scp096/proc/check_los()
-	for(var/mob/living/carbon/human/H in viewers(src, null))
-		if(H in kill_list)
-			continue
-		if(H in satisfied_urges)
-			continue
-		if(!H.can_see(src, 1)) //096 technically memetic and therefore memetic blocking apparel should blockout his face
-			continue
-		if(H.type in target_blacklist)
-			continue
-		var/observed = 0
-		var/eye_contact = 0
-
-		var/x_diff = H.x - src.x
-		var/y_diff = H.y - src.y
-		if(y_diff != 0) //If we are not on the same vertical plane (up/down), mob is either above or below src
-			if(y_diff < 0 && H.dir == NORTH) //Mob is below src and looking up
-				observed = 1
-				if(dir == SOUTH) //src is looking down
-					eye_contact = 1
-			else if(y_diff > 0 && H.dir == SOUTH) //Mob is above src and looking down
-				observed = 1
-				if(dir == NORTH) //src is looking up
-					eye_contact = 1
-		if(x_diff != 0) //If we are not on the same horizontal plane (left/right), mob is either left or right of src
-			if(x_diff < 0 && H.dir == EAST) //Mob is left of src and looking right
-				observed = 1
-				if(dir == WEST) //src is looking left
-					eye_contact = 1
-			else if(x_diff > 0 && H.dir == WEST) //Mob is right of src and looking left
-				observed = 1
-				if(dir == EAST) //src is looking right
-					eye_contact = 1
-
-		if(observed)
-			add_examine_urge(H)
-		if(eye_contact)
-			to_chat(H, SPAN_ALERT("You are facing it, and it is facing you..."))
-			add_examine_urge(H)
-
-	return
-
-/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(mob/living/carbon/human/H)
-	if(!(H in examine_urge_list))
-		examine_urge_list[H] = 0
-
-	switch(examine_urge_list[H])
-		if(1)
-			to_chat(H, SPAN_ALERT("You feel the urge to examine it..."))
-		if(3)
-			to_chat(H, SPAN_ALERT("It is becoming difficult to resist the urge to examine it ..."))
-		if(5)
-			to_chat(H, SPAN_ALERT("Unable to resist the urge, you look closely..."))
-			spawn(10)
-				specialexamine(H)
-				satisfied_urges += H
-
-	examine_urge_list[H] = min(examine_urge_list[H]+1, 5)
-	addtimer(CALLBACK(src, .proc/reduce_examine_urge, H), 200 SECONDS)
-
-/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(mob/living/carbon/human/H)
-	if (!(H in examine_urge_list))
-		return
-
-	if (examine_urge_list[H] == 1 && !(H in kill_list))
-		to_chat(H, SPAN_NOTICE("The urge fades away..."))
-
-	examine_urge_list[H] = max(examine_urge_list[H]-1, 0)
-
-/mob/living/simple_animal/hostile/scp096/examine(userguy)
-	if(istype(userguy, /mob/living/carbon))
-		return specialexamine(userguy)
-	return ..()
-
-/mob/living/simple_animal/hostile/scp096/proc/specialexamine(mob/userguy) //Snowflaked.
-	if (!iscarbon(userguy))
-		return
-	// Do not let blind folks examine 096. Doesn't make sense.
-	if(ishuman(userguy))
-		var/mob/living/carbon/human/H = userguy
-		if(!H.can_see(src))
-			return
-	// Do not let unconscious or dead people examine 096.
-	// Dead as in ghost in dead body, not as in ghost
-	if(userguy.stat)
-		return
-
-	satisfied_urges += userguy
-	var/protected = (userguy in GLOB.scramble_hud_protected)
-	var/scramblehud = (userguy in GLOB.scramble_hud_users)
-	if(scramblehud)
-		. = scramble_desc
-		if(protected)
-			return
-	if (!(userguy in kill_list))
-		kill_list += userguy
-		message_played_list[userguy] = 0
-		if(!scramblehud)
-			. = target_desc_1
-		if(userguy)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, SPAN_ALERT("That was a mistake. Run")), 20 SECONDS)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, SPAN_DANGER("RUN")), 30 SECONDS)
-	else if(!scramblehud)
-		. = target_desc_2
-
-	if(current_state == STATE_096_IDLE)
-		dir = SOUTH
-		visible_message(SPAN_DANGER("[src] SCREAMS!"))
-		playsound(get_turf(src), 'sounds/voice/096-rage.ogg', 100)
-		current_state = STATE_096_SCREAMING
-		icon_state = "scp-screaming"
-		spawn(290)
-			icon_state = "scp"
-			current_state = STATE_096_CHASE_START
+	switch(current_state)
+		if(STATE_096_IDLE)
+			icon_state = "scp-screaming"
+			current_state = STATE_096_SCREAMING
 			update_icon()
-	return
 
-/mob/living/simple_animal/hostile/scp096/proc/select_target()
-	var/mob/living/carbon/human/closest_fella
-	var/closest_fella_distance = 1984
-	// Iterate through every mob in the kill list and get dist from them
-	for(var/mob/living/carbon/H in kill_list)
-		if(!H || H.stat == DEAD)
-			kill_list -= H
+			target = Ptarget
+			targets += Ptarget
+
+			playsound(src, 'sounds/scp/096/096-rage.ogg', 100, ignore_walls = TRUE)
+			addtimer(CALLBACK(src, .proc/finish_screaming), 30 SECONDS)
+		if(STATE_096_SCREAMING, STATE_096_CHASING, STATE_096_SLAUGHTER, STATE_096_STAGGERED)
+			targets += Ptarget
+
+/mob/living/scp096/proc/finish_screaming()
+	current_state = STATE_096_CHASING
+	icon_state = "scp-chasing"
+	update_icon()
+	chase_noise()
+
+/mob/living/scp096/proc/chase_noise()
+	if(current_state == STATE_096_IDLE)
+		return
+	playsound(src, 'sounds/scp/096/096-chase.ogg', 100, ignore_walls = TRUE)
+	addtimer(CALLBACK(src, .proc/chase_noise), 10 SECONDS)
+
+/mob/living/scp096/proc/OpenDoor(obj/machinery/door/A)
+	if(!istype(A))
+		return
+
+	if(!A.density)
+		return
+
+	if(!A.Adjacent(src))
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
+		return
+
+	var/open_time = 0.5 SECOND
+	if(istype(A, /obj/machinery/door/blast))
+		open_time = 2.5 SECONDS
+
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		if(AR.locked)
+			open_time += 0.5 SECONDS
+		if(AR.welded)
+			open_time += 0.5 SECONDS
+		if(AR.secured_wires)
+			open_time += 0.5 SECONDS
+
+	visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
+	playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
+	if(!do_after(src, open_time, A))
+		return
+
+	if(istype(A, /obj/machinery/door/blast))
+		var/obj/machinery/door/blast/DB = A
+		DB.visible_message(SPAN_DANGER("\The [src] forcefully opens \the [DB]!"))
+		DB.force_open()
+		return
+
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
+		AR.welded = FALSE
+	A.set_broken(TRUE)
+	var/check = A.open(1)
+	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
+
+// AI procs
+
+///Handles 096 AI
+/mob/living/scp096/proc/handle_AI()
+	switch(current_state)
+		if(STATE_096_IDLE)
+			if(prob(45) && ((world.time - emote_cooldown_track) > emote_cooldown))
+				audible_message(pick("[src] cries.", "[src] sobs.", "[src] wails."))
+				playsound(src, 'sounds/scp/096/096-idle.ogg', 80, ignore_walls = TRUE)
+				emote_cooldown_track = world.time
+		if(STATE_096_CHASING)
+			//Find path to target
+			for(var/mob/living/carbon/human/Ptarget in targets)
+				if(LAZYLEN(current_path))
+					break
+				target = Ptarget
+				lastTargetTurf = get_turf(target)
+				current_path = get_path_to(src, target, maxJPSdistance)
+			//If we have no more targets, we go back to idle
+			if(!LAZYLEN(targets))
+				current_state = STATE_096_IDLE
+				icon_state = "scp"
+				target = null
+				current_path = null
+				//This resets the screaming noise for everyone.
+				for(var/mob/living/carbon/human/hearer in hearers(world.view, src))
+					sound_to(hearer, sound(null))
+				update_icon()
+				return
+			//If we havent found a path for any of our targets, we notify admins and switch ourselves to the first target in our list. Path code will also use byond's inherent pathfinding for this life call.
+			if(!LAZYLEN(current_path))
+				log_and_message_staff("Instance of SCP-[SCP.designation] failed to find paths for targets. Switching to byond pathfinding for current life iteration.", src, loc)
+				target = targets[1]
+				lastTargetTurf = get_turf(target)
+			//If the target moved, we must regenerate the path list
+			if(get_turf(target) != lastTargetTurf)
+				current_path = get_path_to(src, target, maxJPSdistance)
+				//if we cant path to target we reset the target
+				if(!LAZYLEN(current_path))
+					target = null
+					return
+				lastTargetTurf = get_turf(target)
+			//Gets our next step
+			LAZYINITLIST(current_path)
+			var/turf/next_step = LAZYLEN(current_path) ? current_path[1] : get_step_towards(src, target)
+			//Get rid of obstacles
+			if(next_step.contains_dense_objects())
+				for(var/atom/obstacle in next_step)
+					if(!obstacle.density)
+						continue
+					if(isturf(obstacle) && !istype(obstacle, /turf/simulated/wall))
+						continue
+					UnarmedAttack(obstacle)
+				if(!(src in next_step))
+					return
+			//Murder!
+			if(get_dist(src, target) <= 1)
+				UnarmedAttack(target)
+				return
+			else if((get_dist(src, target) <= scp096_leap_range) && leapHandler.can_be_used_by(src, target, TRUE))
+				leapHandler.perform(src, target, 5)
+				return
+			step_towards(src, next_step, scp096_speed)
+			if(get_turf(src) != next_step)
+				target = null
+				current_path = null
+				return
+			current_path -= next_step
+		if(STATE_096_STAGGERED)
+			if(world.time > stagger_counter)
+				current_state = STATE_096_CHASING
+
+//Overrides
+
+/mob/living/scp096/Life()
+	//Sets the probability of someone seeing 096's face based on its current state
+	var/probability_to_view
+	switch(current_state)
+		if(STATE_096_IDLE, STATE_096_SCREAMING)
+			probability_to_view = idle_view_prob
+		if(STATE_096_CHASING, STATE_096_SLAUGHTER, STATE_096_STAGGERED)
+			probability_to_view = chasing_view_prob
+	//Applies probability to each new viewer
+	for(var/mob/living/carbon/human/viewer in viewers(world.view, src))
+		if(viewer in oldViewers)
 			continue
-		var/Hdist = get_dist(src, H)
-		if(Hdist < closest_fella_distance)
-			closest_fella = H
-			closest_fella_distance = Hdist
-	// Set the guy closest to us as target if our target is null, expired or too far away
-	if(!target || target.stat == DEAD || get_dist(target, src) > target_distance_tolerance)
-		target = closest_fella
-	current_state = STATE_096_CHASE_START
+		if(!viewer.can_see(src, TRUE))
+			continue
+		var/message = "[SPAN_NOTICE("You notice [src], and instinctively look away ")]"
+		if(prob(probability_to_view))
+			message += "[SPAN_NOTICE("but you catch a glimpse of")] [SPAN_DANGER("its [SPAN_BOLD("face")]!")]"
+			trigger(viewer)
+		else
+			message += "[SPAN_NOTICE("managing to avoid seeing its face.")]"
 
-/mob/living/simple_animal/hostile/scp096/proc/handle_target(mob/living/carbon/target)
+		to_chat(viewer, message)
+		oldViewers += viewer
 
-	if(!target || current_state >= STATE_096_CHASING) //Sanity
-		return
+	//Now we remove any oldViewers that are no longer looking at 096
+	for(var/mob/living/carbon/human/oldViewer in oldViewers)
+		if(!oldViewer.can_see(src, TRUE))
+			oldViewers -= oldViewer
 
-	if(target.stat == DEAD)
-		target = null
-		return
+	adjustBruteLoss(-10)
+	handle_AI()
 
-	if(buckled)
-		visible_message(SPAN_DANGER("[src] breaks out of its restraints!"))
-//		buckled.resist()
+/mob/living/scp096/examine(mob/user, distance, infix, suffix)
+	if(user in GLOB.scramble_hud_users)
+		to_chat(user, scramble_desc)
+		return TRUE
+	else
+		return ..()
 
-	var/turf/target_turf
-
-	//Send the warning that we are is homing in
-	target_turf = get_turf(target)
-
-	if(!(message_played_list[target] | CHASE_PLAYED))
-		to_chat(target, SPAN_DANGER("You saw its face"))
-		message_played_list[target] |= CHASE_PLAYED
-
-	//Rampage along a path to get to them,
-	var/turf/next_turf = get_step_towards(src, target)
-	var/limit = 100
-	spawn()
-		current_state = STATE_096_CHASING
-		update_icon()
-		while(get_turf(src) != target_turf && limit > 0)
-			if(current_state == STATE_096_CHASING)
-				target_turf = get_turf(target)
-
-				for(var/obj/structure/window/W in next_turf)
-//					W.health -= 1000
-					sleep(5)
-				for(var/turf/simulated/wall/E in next_turf)
-					E.ex_act(1)
-					sleep(5)
-				for(var/obj/structure/table/O in next_turf)
-					O.ex_act(1)
-					sleep(5)
-				for(var/obj/structure/closet/C in next_turf)
-					C.ex_act(1)
-					sleep(5)
-				for(var/obj/structure/grille/G in next_turf)
-					G.ex_act(1)
-					sleep(5)
-				for(var/obj/machinery/door/D in next_turf)
-					if(D.density)
-						D.open()
-						sleep(5)
-				if(!next_turf.CanPass(src, next_turf)) //Once we cleared everything we could, check one last time if we can pass
-					sleep(10)
-
-				if(!(message_played_list[target] | DOOM_PLAYED) && get_dist(src,target) < 7)
-					to_chat(target, SPAN_DANGER("YOU SAW ITS FACE"))
-					message_played_list[target] |= DOOM_PLAYED
-
-				forceMove(next_turf)
-
-				if(is_different_level(target_turf))
-					next_turf = target_turf
-					to_chat(target, SPAN_DANGER("DID YOU THINK YOU COULD HIDE?"))
-				else
-					dir = get_dir(src, target)
-					next_turf = get_step(src, get_dir(next_turf,target))
-			limit--
-			sleep(2 + round(staggered/8))
-		current_state = STATE_096_IDLE
-
-/mob/living/simple_animal/hostile/scp096/proc/is_different_level(turf/target_turf)
-	return target_turf.z != z
-
-//This performs an immediate murder check, meant to avoid people cheesing us by just running faster than Life() refresh
-/mob/living/simple_animal/hostile/scp096/proc/check_murder()
-	//See if we're able to murder anyone
-	for(var/mob/living/carbon/M in get_turf(src))
-		if(M in kill_list)
-			murder(M)
-			break
-
-/mob/living/simple_animal/hostile/scp096/forceMove(atom/destination, no_tp = 0)
+/mob/living/scp096/update_icon()
+	switch(current_state)
+		if(STATE_096_IDLE)
+			icon_state = "scp"
+		if(STATE_096_SCREAMING)
+			icon_state = "scp-screaming"
+		if(STATE_096_CHASING, STATE_096_SLAUGHTER, STATE_096_STAGGERED)
+			icon_state = "scp-chasing"
 	..()
-	if(current_state > STATE_096_SCREAMING)
-		check_murder()
 
-/mob/living/simple_animal/hostile/scp096/proc/murder(mob/living/T)
-	if(T in kill_list)
+//Our leap range
+/mob/living/scp096/get_jump_distance()
+	return scp096_leap_range
+
+/mob/living/scp096/UnarmedAttack(atom/A as obj|mob|turf)
+	if(A == src)
+		return
+
+	else if(isobj(A) || istype(A, /turf/simulated/wall))
+		if(istype(A, /obj/machinery/door))
+			OpenDoor(A)
+			return
+		else
+			A.attack_generic(src, rand(120,350), "smashes")
+	else if(ismob(A) && (A != target))
+		visible_message(SPAN_DANGER("[src] rips [A] apart trying to get at [target]!"))
+		var/mob/obstacle = A
+		obstacle.gib()
+	else if(A == target)
 		current_state = STATE_096_SLAUGHTER
-		T.loc = src.loc
-		visible_message(SPAN_DANGER("[src] grabs [T]!"))
-		dir = 2
-		T.anchored = TRUE
-		var/original_y = T.pixel_y
-		T.pixel_y = 10
 
-		for(var/mob/living/L in viewers(src, null))
-			shake_camera(L, 19, 1)
+		target.loc = loc
+		target.anchored = TRUE //Only humans can use grab so we have to do this ugly shit
+		visible_message(SPAN_DANGER("[src] grabs [target] and starts trying to pull [target.p_them()] apart!"))
 
-		sleep(20)
+		playsound(src, 'sounds/scp/096/096-kill.ogg', 100)
+		target.emote("scream")
 
-		T.anchored = FALSE
-		T.pixel_y = original_y
-		if(ishuman(T))
-			T.emote("scream")
-		playsound(T.loc, pick(murder_sound), 100)
+		if(!do_after(src, 2 SECONDS, target))
+			target.anchored = FALSE
+			return
 
-		//Warn everyone
-		visible_message(SPAN_DANGER("[src] tears [T] apart!"))
+		visible_message(SPAN_DANGER("[src] tears [target] apart!"))
+		target.anchored = FALSE
+		target.gib()
 
-		T.gib()
-
-		//Logging stuff
-		log_admin("[T] ([T.ckey]) has been torn apart by an active [src].")
-		message_staff("ALERT: [T.real_name] [ADMIN_JMP(T)] has been torn apart by an active [src].")
-		kill_list -= T
-
-		if (target == T)
-			target = null
-
+		log_admin("[target] ([target.ckey]) has been torn apart by an active SCP-[SCP.designation].")
+		message_staff("ALERT: [target.real_name] [ADMIN_JMP(target)] has been torn apart by an active SCP-[SCP.designation].")
+		targets -= target
+		target = null
+		current_path = null
 		current_state = STATE_096_CHASING
 
-/mob/living/simple_animal/hostile/scp096/bullet_act(obj/item/projectile/Proj)
+//Lets us attack after a leap
+/mob/living/scp096/post_maneuver()
+	if((get_dist(src, target) <= 1) && (current_state != STATE_096_SLAUGHTER))
+		UnarmedAttack(target)
+
+/mob/living/scp096/bullet_act(obj/item/projectile/Proj)
 	if(!Proj || Proj.damage <= 0)
-		return 0
+		return
+	if(Proj.damage < 100)
+		visible_message(SPAN_DANGER("[src] is hit by [Proj], but the flesh regenerates and [src] seems unaffected!"))
+	else if(current_state != STATE_096_IDLE)
+		visible_message(SPAN_DANGER("[src] is hit by [Proj] blowing a large chunk of flesh off! [src] is momentarily staggered!"))
+		if(current_state == STATE_096_STAGGERED)
+			stagger_counter = stagger_counter + 1 SECOND
+		else
+			stagger_counter = world.time + 1 SECOND
+			current_state = STATE_096_STAGGERED
 
-	visible_message(SPAN_DANGER("[src] is staggered by [Proj]!"))
-	adjustBruteLoss(Proj.damage)
-	return 1
+/mob/living/scp096/adjustBruteLoss(damage)
+	health = clamp((health - damage), 200, maxHealth)
 
-/mob/living/simple_animal/hostile/scp096/adjustBruteLoss(damage)
+/mob/living/scp096/ex_act(severity)
+	. = ..()
+	if(current_state != STATE_096_IDLE)
+		visible_message(SPAN_DANGER("[src] is staggered by the explosion!"))
+		if(current_state == STATE_096_STAGGERED)
+			stagger_counter = stagger_counter + 5 SECOND
+		else
+			stagger_counter = world.time + 5 SECOND
+			current_state = STATE_096_STAGGERED
 
-	health = Clamp(health - damage, 0, maxHealth)
+/mob/living/scp096/movement_delay()
+	return -2
 
-	if(damage > 0)
-		staggered += damage
-
-	var/old_damage_state = damage_state
-	damage_state = round( (1-health/maxHealth) * 3.99 )
-
-	if(old_damage_state < damage_state)
-		visible_message(SPAN_DANGER("Chunks of flesh and bone are torn out of [src]!"))
-	else if(old_damage_state > damage_state)
-		visible_message(SPAN_DANGER("[src] regenerates some of its missing pieces!"))
-
-//You cannot destroy us, fool!
-/mob/living/simple_animal/hostile/scp096/ex_act(severity)
-	var/damage = 0
-	switch (severity)
-		if(1.0)
-			damage = 500
-		if(2.0)
-			damage = 60
-		if(3.0)
-			damage = 30
-	visible_message(SPAN_DANGER("[src] is staggered by the explosion!"))
-	adjustBruteLoss(damage)
-	return 1
-
-/mob/living/simple_animal/hostile/attackby(obj/item/O as obj, mob/user as mob)  //Marker -Agouri
-	..()
-	if(O.force)
-		visible_message(SPAN_DANGER("[src] is staggered by \the [O]!"))
-		adjustBruteLoss(O.force)
-#undef CHASE_PLAYED
-#undef DOOM_PLAYED
-
-#undef STATE_096_DEAD
 #undef STATE_096_IDLE
 #undef STATE_096_SCREAMING
-#undef STATE_096_CHASE_START
 #undef STATE_096_CHASING
 #undef STATE_096_SLAUGHTER
+#undef STATE_096_STAGGERED

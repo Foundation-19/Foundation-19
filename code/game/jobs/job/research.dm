@@ -16,7 +16,8 @@
 
 	access = list(
 		ACCESS_SCI_COMMS,
-		ACCESS_SCIENCE_LVL1
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2
 	)
 	minimal_access = list()
 
@@ -33,10 +34,6 @@
 	)
 
 	skill_points = 10
-
-	roleplay_difficulty = "Easy"
-	mechanical_difficulty = "Easy - Medium"
-	duties = "Assist with experiments and technological developments."
 
 /datum/job/juniorroboticist
 	title = "Junior Robotics Technician"
@@ -76,9 +73,6 @@
 
 	skill_points = 12
 
-	roleplay_difficulty = "Easy"
-	mechanical_difficulty = "Easy - Medium"
-
 /datum/job/scientist
 	title = "Researcher"
 	department = "Science"
@@ -99,8 +93,10 @@
 
 	access = list(
 	ACCESS_SCI_COMMS,
+	ACCESS_RESEARCH,
 	ACCESS_SCIENCE_LVL1,
-	ACCESS_SCIENCE_LVL2
+	ACCESS_SCIENCE_LVL2,
+	ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -117,10 +113,6 @@
 	)
 
 	skill_points = 15
-
-	roleplay_difficulty = "Easy - Medium"
-	mechanical_difficulty = "Medium"
-	duties = "Perform experiments and develop new technologies. Instruct junior researchers."
 
 /datum/job/roboticist
 	title = "Robotics Technician"
@@ -162,9 +154,6 @@
 	)
 
 	skill_points = 14
-
-	roleplay_difficulty = "Easy - Medium"
-	mechanical_difficulty = "Medium"
 
 
 /datum/job/seniorscientist
@@ -210,10 +199,6 @@
 
 	skill_points = 20
 
-	roleplay_difficulty = "Medium"
-	mechanical_difficulty = "Medium"
-	duties = "Perform experiments and develop new technologies. Manage subordinate researchers."
-
 /datum/job/seniorroboticist
 	title = "Senior Robotics Technician"
 	department = "Science"
@@ -256,15 +241,12 @@
 
 	skill_points = 18
 
-	roleplay_difficulty = "Medium"
-	mechanical_difficulty = "Medium"
-
 /datum/job/rd
 	title = "Research Director"
 	department = "Science"
 	department_flag = COM|SCI
 	selection_color = "#ad6bad"
-	head_position = TRUE
+	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 15
@@ -312,7 +294,3 @@
 	)
 
 	skill_points = 25
-
-	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium - Hard"
-	duties = "Manage the Research department. Coordinate experiments and technological developments."
