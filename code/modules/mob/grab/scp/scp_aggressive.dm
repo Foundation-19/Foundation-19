@@ -7,7 +7,6 @@
 	shift = 8
 	grab_slowdown = 5
 
-	stop_move = 1
 	point_blank_mult = 2
 	restrains = 1
 	can_throw = 1

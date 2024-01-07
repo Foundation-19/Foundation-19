@@ -17,7 +17,7 @@
 	ladder_carry = 1
 	force_danger = 1
 	can_grab_self = 0
-	stop_move = 0
+	stop_move = 1
 	reverse_facing = 0
 	same_tile = 0
 
@@ -93,6 +93,7 @@
 	if(isspecies(H, SPECIES_SCP049_1))
 		return
 
+	H.adjustBruteLoss(2)
 	var/obj/effect/temp_visual/bloodsplatter/B = new (get_turf(H), pick(GLOB.alldirs), H.species.blood_color)
 	B.transform *= pick(0.3, 0.5, 0.7, 1)
 	if(prob(20))

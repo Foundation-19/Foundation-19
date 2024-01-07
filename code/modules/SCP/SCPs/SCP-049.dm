@@ -24,6 +24,8 @@
 	var/cured_count = 0
 	/// Amount of ticks left before bonus move speed dissipates. The higher it is - the higher is move speed
 	var/anger_timer = 0
+	/// How high can anger_timer go
+	var/anger_timer_max = 40
 	/// Last speech heard up close
 	var/last_interaction_time = 0
 	/// How much time should pass without interactions to be able to get up and leave
@@ -177,7 +179,7 @@
 	if(world.time > patience_cooldown_track && world.time > last_interaction_time + patience_limit && get_area(src) == home_area)
 		patience_cooldown_track = world.time + 5 MINUTES
 		to_chat(src, SPAN_DANGER("They really abandoned you in here..? Seems like it's time to take a walk."))
-		anger_timer = max(anger_timer + 15, 0)
+		anger_timer = min(anger_timer + 15, anger_timer_max)
 
 	//Regen (The more zombies we have the more we heal)
 	if((world.time - heal_cooldown_track) < heal_cooldown || cured_count < 1)
@@ -228,6 +230,11 @@
 				AttackVoiceLine()
 				H.death(deathmessage = "suddenly becomes very still...", show_dead_message = "You have been killed by SCP-[SCP.designation]. Be patient as you may yet be cured...")
 			else
+				// Crowd control tool!
+				if(anger_timer >= anger_timer_max * 0.75)
+					visible_message(SPAN_DANGER(SPAN_ITALIC("[src] reaches towards [H], making them stumble!")))
+					H.Weaken(10)
+					return
 				visible_message(SPAN_WARNING(SPAN_ITALIC("[src] reaches towards [H], but nothing happens...")))
 				to_chat(src, SPAN_WARNING("\The target's [zone_sel.selecting] is covered. You must make contact with bare skin to kill!"))
 			return
@@ -240,7 +247,7 @@
 
 	if(M.a_intent != I_HELP && M != src)
 		M.humanStageHandler.setStage("Pestilence", 1)
-		anger_timer = min(anger_timer + 2, 30)
+		anger_timer = min(anger_timer + 2, anger_timer_max)
 
 	return ..()
 
@@ -255,7 +262,7 @@
 	if(P.damage && !P.nodamage && (P.firer != src))
 		var/mob/living/carbon/human/H = P.firer
 		H.humanStageHandler.setStage("Pestilence", 1)
-		anger_timer = min(anger_timer + 2, 30)
+		anger_timer = min(anger_timer + 2, anger_timer_max)
 
 	return ..()
 
@@ -267,7 +274,7 @@
 	if((W.force > 0) && ishuman(user) && (user != src))
 		var/mob/living/carbon/human/H = user
 		H.humanStageHandler.setStage("Pestilence", 1)
-		anger_timer = min(anger_timer + 2, 30)
+		anger_timer = min(anger_timer + 2, anger_timer_max)
 
 	return ..()
 
