@@ -140,6 +140,12 @@
 	if(!do_after(src, open_time, A))
 		return
 
+	if(istype(A, /obj/machinery/door/blast))
+		var/obj/machinery/door/blast/DB = A
+		DB.visible_message(SPAN_DANGER("\The [src] forcefully opens \the [DB]!"))
+		DB.force_open()
+		return
+
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
