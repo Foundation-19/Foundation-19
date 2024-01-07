@@ -40,7 +40,6 @@
 	)
 
 	SCP.min_time = 10 MINUTES
-	SCP.min_playercount = 20
 
 	add_verb(src, list(
 		/mob/living/carbon/human/scp049/verb/greetings,
