@@ -355,6 +355,8 @@
 		t = replacetext(t, "\[hr\]", "")
 		t = replacetext(t, "\[small\]", "")
 		t = replacetext(t, "\[/small\]", "")
+		t = replacetext(t, "\[list\]", "")
+		t = replacetext(t, "\[/list\]", "")
 		t = replacetext(t, "\[ulist\]", "")
 		t = replacetext(t, "\[/ulist\]", "")
 		t = replacetext(t, "\[olist\]", "")

@@ -440,6 +440,8 @@
 	t = replacetext(t, "\[/small\]", "</font>")
 	t = replacetext(t, "\[ulist\]", "<ul>")
 	t = replacetext(t, "\[/ulist\]", "</ul>")
+	t = replacetext(t, "\[list\]", "<ul>")		// kept for backwards compatability with pre-existing pencode
+	t = replacetext(t, "\[/list\]", "</ul>")
 	t = replacetext(t, "\[olist\]", "<ol>")
 	t = replacetext(t, "\[/olist\]", "</ol>")
 	t = replacetext(t, "\[table\]", "<table border=1 cellspacing=0 cellpadding=3 style='border: 1px solid black;'>")
