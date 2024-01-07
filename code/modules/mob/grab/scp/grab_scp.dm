@@ -47,6 +47,7 @@
 	stop_effects = FALSE
 	DoEffects(G)
 	for(var/stage = 1, stage<=4, stage++)
+		target.Weaken(10)
 		switch(stage)
 			if(1)
 				to_chat(user, SPAN_NOTICE("The disease has taken hold. We must work quickly..."))
