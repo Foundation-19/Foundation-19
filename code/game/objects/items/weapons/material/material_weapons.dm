@@ -2,7 +2,7 @@
 // This class of weapons takes force and appearance data from a material datum.
 // They are also fragile based on material data and many can break/smash apart.
 /obj/item/material
-	hitsound = 'sounds/weapons/bladeslice.ogg'
+	hitsound = SFX_WOUND_SPLATTER
 	gender = NEUTER
 	throw_speed = 3
 	throw_range = 7

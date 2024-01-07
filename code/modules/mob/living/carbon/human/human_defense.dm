@@ -254,6 +254,16 @@ meteor_act
 			if(BP_CHEST)
 				bloody_body(src)
 
+	//cool splat effect copied from projectile code
+	var/hit_dir = get_dir(attacker.loc, src)
+	var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
+	B.icon_state = pick("dir_splatter_1","dir_splatter_2")
+	var/scale = min(1, round(effective_force / 50, 0.2))
+	var/matrix/M = new()
+	B.transform = M.Scale(scale)
+
+	new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)
+
 /mob/living/carbon/human/proc/projectile_hit_bloody(obj/item/projectile/P, effective_force, hit_zone, obj/item/organ/external/organ)
 	if(P.damage_type != BRUTE || P.nodamage)
 		return

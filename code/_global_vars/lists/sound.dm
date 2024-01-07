@@ -70,6 +70,12 @@ GLOBAL_LIST_INIT(sfx_list, list(
 		'sounds/effects/wounds/crack3.ogg'
 		),
 
+	SFX_WOUND_SPLATTER = list(
+		'sounds/weapons/stab1.ogg',
+		'sounds/weapons/stab2.ogg',
+		'sounds/weapons/stab3.ogg'
+		),
+
 	SFX_WOUND_SIZZLE = list(
 		'sounds/effects/wounds/sizzle1.ogg',
 		'sounds/effects/wounds/sizzle2.ogg'
