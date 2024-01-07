@@ -454,3 +454,9 @@ var/global/list/all_objectives = list()
 	else
 		explanation_text = "Free Objective"
 	return target
+
+/datum/objective/trading
+
+/datum/objective/trading/New(desired_good)
+	..()
+	explanation_text = "End the shift with [desired_good]."
