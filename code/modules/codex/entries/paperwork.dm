@@ -20,7 +20,8 @@
 \[row\] : New table row.<br>
 \[cell\] : New table cell.<br>
 \[hr\] : Adds a horizontal rule.<br>
-\[list\] - \[/list\] : A list. (Does not work with crayons)<br>
+\[ulist\] - \[/ulist\] : An unordered list. (Does not work with crayons)<br>
+\[olist\] - \[/olist\] : An ordered list. (Does not work with crayons)<br>
 \[*\] : A dot used for lists. (Does not work with crayons)<br>
 \[scplogo\] : Inserts the SCP Foundation logo.<br>
 \[ethicslogo\] : Inserts the Ethics Committee logo.<br>

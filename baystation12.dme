@@ -3491,6 +3491,7 @@
 #include "maps\site53\items\bullets.dm"
 #include "maps\site53\items\clothes.dm"
 #include "maps\site53\items\guns.dm"
+#include "maps\site53\items\paperwork_dataserver.dm"
 #include "maps\site53\items\SCP_dataserver.dm"
 #include "maps\site53\items\storage.dm"
 #include "maps\site53\items\toys.dm"
