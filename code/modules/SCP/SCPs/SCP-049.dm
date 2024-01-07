@@ -425,8 +425,8 @@
 	playsound(T, 'sounds/effects/splat.ogg', 20, 1)
 	cured_count++
 
-	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
+	target.SCP = new /datum/scp(
+		target, // Ref to actual SCP atom
 		"plague zombie", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SCP_EUCLID, //Obj Class
 		"049-[cured_count]", //Numerical Designation
