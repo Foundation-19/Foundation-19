@@ -271,6 +271,12 @@
 
 	return ..()
 
+/mob/living/carbon/human/scp049/can_break_cuffs()
+	return TRUE
+
+/mob/living/carbon/human/scp049/GetUnbuckleTime()
+	return 15 SECONDS
+
 /mob/living/carbon/human/scp049/examinate(atom/A)
 	. = ..()
 	if(!ishuman(A))
