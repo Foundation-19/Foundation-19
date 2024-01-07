@@ -193,7 +193,6 @@
 		return
 
 	if(istype(target, /obj/machinery/door))
-		var/obj/machinery/door/D = target
 		setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		OpenDoor(target)
 		return

@@ -7,7 +7,7 @@
 	blood_color = "#622a37"
 	flesh_color = "#442A37"
 	death_message = "writhes and twitches before falling motionless."
-	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN
+	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_DISEASE
 	spawn_flags = SPECIES_IS_RESTRICTED
 	brute_mod = 1
 	burn_mod = 2.5 //Vulnerable to fire

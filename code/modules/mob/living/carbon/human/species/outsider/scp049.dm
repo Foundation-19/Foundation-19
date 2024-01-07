@@ -4,7 +4,7 @@
 	icon_template = 'icons/SCP/scp-049.dmi'
 	has_organ = list()
 	siemens_coefficient = 0
-	species_flags = SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_TANGLE | SPECIES_FLAG_NO_PAIN
+	species_flags = SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_TANGLE | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_MINOR_CUT | SPECIES_FLAG_NO_DISEASE
 	show_ssd = null
 	show_coma = null
 	blood_color = "#622a37"
