@@ -15,8 +15,6 @@
 			// Limits antag status to clients above player age, if the age system is being used.
 			if(C && config.use_age_restriction_for_jobs && isnum(C.player_age) && isnum(min_player_age) && (C.player_age < min_player_age))
 				return 0
-		if(is_type_in_list(player.assigned_job, restricted_jobs))
-			return 0
 		if(player.current && (player.current.status_flags & NO_ANTAG))
 			return 0
 	return 1
