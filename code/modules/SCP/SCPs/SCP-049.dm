@@ -194,11 +194,9 @@
 
 	if(istype(target, /obj/machinery/door))
 		var/obj/machinery/door/D = target
-		if(LAZYLEN(D.req_access) || istype(D, /obj/machinery/door/blast))
-			setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			OpenDoor(target)
-			return
-		return ..()
+		setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		OpenDoor(target)
+		return
 
 	if(!ishuman(target) || isscp049(target))
 		return ..()
