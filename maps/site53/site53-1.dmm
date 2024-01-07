@@ -17333,11 +17333,11 @@
 /area/site53/lhcz/scp049containment)
 "PH" = (
 /obj/item/clothing/gloves/latex/nitrile,
-/obj/item/reagent_containers/spray/cleaner,
 /obj/item/clothing/suit/surgicalapron,
 /obj/item/clothing/mask/surgical,
 /obj/structure/table/rack,
 /obj/item/defibrillator/loaded,
+/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
 "PI" = (
