@@ -9,5 +9,5 @@
 		return
 
 	var/datum/objective/survive/survive_objective = new
-	survive_objective.owner = trader_mind
-	trader_mind.objectives += survive_objective
+	survive_objective.owner = informant_mind
+	informant_mind.objectives += survive_objective
