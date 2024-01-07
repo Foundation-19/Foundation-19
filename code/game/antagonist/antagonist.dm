@@ -1,7 +1,9 @@
 /datum/antagonist
 
 	/// Jobs in this list will NEVER be this antagonist.
-	var/list/blacklisted_jobs =		list(/datum/job/submap)
+	var/list/blacklisted_jobs = list(/datum/job/submap)
+	/// If this list exists, ONLY jobs in this list will be this antagonist.
+	var/list/whitelisted_jobs = null
 
 	// Strings.
 	var/welcome_text = "Cry havoc and let slip the dogs of war!"
