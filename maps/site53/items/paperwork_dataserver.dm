@@ -69,7 +69,7 @@ The entrant issued this permit is granted access to the zone listed.
 [b]Purpose of Entry:[/b] [field]
 [hr][b]Signature of Issuer:[/b]"}
 
-/datum/computer_file/data/text/paperwork/d-class_termination
+/datum/computer_file/data/text/paperwork/d_class_termination
 	filename = "DClassTermination"
 	stored_data = @{"[center][h1]D-Class Termination[/h1]
 [seclogo]
