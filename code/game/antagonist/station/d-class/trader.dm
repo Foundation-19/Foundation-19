@@ -2,6 +2,8 @@
 #define GOOD_CASH	"cash"
 #define GOOD_TAPE	"tape"
 
+GLOBAL_DATUM_INIT(traders, /datum/antagonist/trader, new)
+
 /datum/antagonist/trader
 	id = MODE_DCLASS
 	role_text = "Trader"

@@ -1,3 +1,5 @@
+GLOBAL_DATUM_INIT(gangsters, /datum/antagonist/gangster, new)
+
 /datum/antagonist/gangster
 	id = MODE_DCLASS
 	antaghud_indicator = "hud_gangster"

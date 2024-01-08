@@ -1085,7 +1085,7 @@
 					holder.icon_state = "hudparolled"
 				if("Released")
 					holder.icon_state = "hudreleased"
-		if(holder.icon_state == "hudblank" && special_role == "Trader")		// hacky, but functional
+		if(holder.icon_state == "hudblank" && GLOB.informants.is_antagonist(mind))		// hacky, but functional
 			holder.icon_state = "hudinformant"
 		hud_list[WANTED_HUD] = holder
 

@@ -300,7 +300,7 @@
 			msg += "<span class = 'deptradio'>Criminal status:</span> <a href='?src=\ref[src];criminal=1'>\[[criminal]\]</a>\n"
 			msg += "<span class = 'deptradio'>Security records:</span> <a href='?src=\ref[src];secrecord=`'>\[View\]</a>\n"
 
-			if(check_special_role("Trader"))	// hacky, but functional
+			if(GLOB.informants.is_antagonist(mind))	// hacky, but functional
 				msg += "<span class = 'deptradio'>Special information:</span> This D-class is listed as an INFORMANT. Protect him, but do not blow his cover."
 
 	if(hasHUD(user, HUD_MEDICAL))

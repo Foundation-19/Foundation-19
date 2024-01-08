@@ -1,3 +1,5 @@
+GLOBAL_DATUM_INIT(informants, /datum/antagonist/informant, new)
+
 /datum/antagonist/informant
 	id = MODE_DCLASS
 	role_text = "Informant"
@@ -11,7 +13,7 @@
 		If you are confused or at a loss, always adminhelp, and before taking extreme actions, please try to also contact the administration! \
 		Think through your actions and make the roleplay immersive! \
 		<b>Please remember all rules aside from those without explicit exceptions apply to you.</b>"
-	welcome_text = "You are a Trader! Discretely spy on potential escape plans and riots, and report information to your handlers."
+	welcome_text = "You are an Informant! Discretely spy on potential escape plans and riots, and report information to your handlers."
 
 /datum/antagonist/informant/create_objectives(datum/mind/informant_mind)
 	if(!..())
@@ -22,7 +24,7 @@
 	informant_mind.objectives += survive_objective
 
 // we have a special symbol on the wanted hud
-// TODO: move this all to the crew records system
+// TODO: move this all to the crew records system (and allow guards to organically add/remove informant status)
 
 /datum/antagonist/informant/add_antagonist(datum/mind/player, ignore_role, do_not_equip, move_to_spawn, do_not_announce, preserve_appearance)
 	. = ..()
