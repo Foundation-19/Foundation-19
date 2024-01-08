@@ -450,6 +450,9 @@ Helpers
 			to_world(minions)
 
 	var/dronecount = 0
+	//tell the nice people on discord what went on before the salt cannon happens.
+	world.TgsTargetedChatBroadcast("The current round has ended. Please standby for the Foundation's report!", FALSE)
+	world.TgsTargetedChatBroadcast(send_news_report(),FALSE)
 
 	for (var/mob/living/silicon/robot/robo in SSmobs.mob_list)
 
