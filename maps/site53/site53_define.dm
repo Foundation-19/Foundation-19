@@ -118,3 +118,4 @@
 	..()
 	system_name = generate_system_name()
 	minor_announcement = new(new_sound = sound('sounds/AI/torch/commandreport.ogg', volume = 45))
+*/
