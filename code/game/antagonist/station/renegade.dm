@@ -15,7 +15,7 @@ GLOBAL_DATUM_INIT(renegades, /datum/antagonist/renegade, new)
 		rules aside from those without explicit exceptions apply to antagonists.</b>"
 
 	id = MODE_RENEGADE
-	flags = ANTAG_SUSPICIOUS | ANTAG_IMPLANT_IMMUNE | ANTAG_RANDSPAWN | ANTAG_VOTABLE
+	flags = ANTAG_IMPLANT_IMMUNE | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	hard_cap = 3
 	hard_cap_round = 5
 

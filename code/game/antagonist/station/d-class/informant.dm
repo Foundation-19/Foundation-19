@@ -19,9 +19,9 @@ GLOBAL_DATUM_INIT(informants, /datum/antagonist/informant, new)
 	if(!..())
 		return
 
-	var/datum/objective/survive/survive_objective = new
-	survive_objective.owner = informant_mind
-	informant_mind.objectives += survive_objective
+	var/datum/objective/informant/inform_objective = new
+	inform_objective.owner = informant_mind
+	informant_mind.objectives += inform_objective
 
 // we have a special symbol on the wanted hud
 // TODO: move this all to the crew records system (and allow guards to organically add/remove informant status)

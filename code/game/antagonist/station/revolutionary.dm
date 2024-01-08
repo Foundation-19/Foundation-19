@@ -12,7 +12,7 @@ GLOBAL_DATUM_INIT(revs, /datum/antagonist/revolutionary, new)
 	loss_text = "The heads of staff managed to stop the revolution!"
 	victory_feedback_tag = "win - heads killed"
 	loss_feedback_tag = "loss - rev heads killed"
-	flags = ANTAG_SUSPICIOUS | ANTAG_VOTABLE
+	flags = ANTAG_VOTABLE
 	antaghud_indicator = "hud_rev"
 	skill_setter = /datum/antag_skill_setter/station
 

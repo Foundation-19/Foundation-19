@@ -641,7 +641,6 @@
 #include "code\game\antagonist\station\rogue_ai.dm"
 #include "code\game\antagonist\station\thrall.dm"
 #include "code\game\antagonist\station\traitor.dm"
-#include "code\game\antagonist\station\d-class\gangster.dm"
 #include "code\game\antagonist\station\d-class\informant.dm"
 #include "code\game\antagonist\station\d-class\trader.dm"
 #include "code\game\area\area_access.dm"

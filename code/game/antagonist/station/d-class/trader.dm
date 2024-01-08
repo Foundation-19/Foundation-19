@@ -19,31 +19,31 @@ GLOBAL_DATUM_INIT(traders, /datum/antagonist/trader, new)
 		<b>Please remember all rules aside from those without explicit exceptions apply to you.</b>"
 	welcome_text = "You are a Trader! Trade with other D-class - and willing Foundation staff - for resources."
 
-	/// We keep track of the order of the goods we get, so we aren't given the same goods we're trading for	// TODO: this doesn't work lol
-	var/list/goods_order = null
 
-/datum/antagonist/trader/create_objectives(datum/mind/trader_mind)
+/datum/antagonist/trader/equip(mob/living/carbon/human/trader_mob)
 	if(!..())
-		return
+		return 0
 
-	// we want more of one good than the other
-	var/minor_desired = get_goods_order()
-	var/major_desired = get_goods_order()
+	// we get an objective for a large amount of one good, a small amount of another, as well as a freebie of a third
+	var/list/goods_order = list(GOOD_RODS, GOOD_TAPE, GOOD_CASH)
+
+	// hacky as HELL. we should be getting objectives in create_objectives(), but then it's very difficult to keep track of which goods we're getting and which ones we want.
+
 	var/desired_text
 
-	switch(major_desired)
+	switch(pick_n_take(goods_order))
 		if(GOOD_RODS)
 			desired_text = "[rand(4,6)] iron rods"
 		if(GOOD_CASH)
-			desired_text = "[trader_mind.initial_account.money + rand(150,250)] dollars"
+			desired_text = "[trader_mind.initial_account.money + rand(300,400)] dollars"
 		if(GOOD_TAPE)
 			desired_text = "[rand(2,3)] rolls of tape"
 
-	switch(minor_desired)
+	switch(pick_n_take(goods_order))
 		if(GOOD_RODS)
 			desired_text += "and [rand(2,3)] iron rods"
 		if(GOOD_CASH)
-			desired_text += "and [trader_mind.initial_account.money + rand(50,150)] dollars"
+			desired_text += "and [trader_mind.initial_account.money + rand(100,200)] dollars"
 		if(GOOD_TAPE)
 			desired_text += "and 1 roll of tape"
 
@@ -55,20 +55,14 @@ GLOBAL_DATUM_INIT(traders, /datum/antagonist/trader, new)
 	survive_objective.owner = trader_mind
 	trader_mind.objectives += survive_objective
 
-/datum/antagonist/trader/equip(mob/living/carbon/human/trader_mob)
-	if(!..())
-		return 0
-
-	var/starting_good = get_goods_order()
-
-	switch(starting_good)
+	switch(pick_n_take(goods_order))
 		if(GOOD_RODS)
 			var/obj/item/stack/material/rods/rods = new
-			rods.amount = rand(2,4)
+			rods.amount = rand(3,4)
 			if(!trader_mob.equip_to_storage(rods))
 				trader_mob.put_in_hands(rods)
 		if(GOOD_CASH)
-			trader_mob.mind.initial_account.money += rand(100, 200)
+			trader_mob.mind.initial_account.money += rand(200, 300)
 		if(GOOD_TAPE)
 			var/obj/item/tape_roll/tape = new
 			if(!trader_mob.equip_to_storage(tape))
@@ -79,11 +73,6 @@ GLOBAL_DATUM_INIT(traders, /datum/antagonist/trader, new)
 					trader_mob.put_in_hands(tape2)
 
 	give_codewords(trader_mob)
-
-/datum/antagonist/trader/proc/get_goods_order()
-	if(isnull(goods_order))
-		goods_order = list(GOOD_RODS, GOOD_TAPE, GOOD_CASH)
-	return pick_n_take(goods_order)
 
 /datum/antagonist/trader/proc/give_codewords(mob/living/trader_mob)
 	to_chat(trader_mob, "<u><b>You've discovered some of the code phrases used by enemies of the Foundation; they might be useful for trading:</b></u>")

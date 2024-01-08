@@ -460,3 +460,6 @@ var/global/list/all_objectives = list()
 /datum/objective/trading/New(desired_good)
 	..()
 	explanation_text = "End the shift with [desired_good]."
+
+/datum/objective/informant
+	explanation_text = "Report useful information to the LCZ guards."
