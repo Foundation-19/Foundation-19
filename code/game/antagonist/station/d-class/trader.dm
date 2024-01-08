@@ -35,7 +35,7 @@ GLOBAL_DATUM_INIT(traders, /datum/antagonist/trader, new)
 		if(GOOD_RODS)
 			desired_text = "[rand(4,6)] iron rods"
 		if(GOOD_CASH)
-			desired_text = "[trader_mind.initial_account.money + rand(300,400)] dollars"
+			desired_text = "[trader_mob.mind?.initial_account.money + rand(300,400)] dollars"
 		if(GOOD_TAPE)
 			desired_text = "[rand(2,3)] rolls of tape"
 
@@ -43,17 +43,17 @@ GLOBAL_DATUM_INIT(traders, /datum/antagonist/trader, new)
 		if(GOOD_RODS)
 			desired_text += "and [rand(2,3)] iron rods"
 		if(GOOD_CASH)
-			desired_text += "and [trader_mind.initial_account.money + rand(100,200)] dollars"
+			desired_text += "and [trader_mob.mind?.initial_account.money + rand(100,200)] dollars"
 		if(GOOD_TAPE)
 			desired_text += "and 1 roll of tape"
 
 	var/datum/objective/trading/trading_objective = new(desired_text)
-	trading_objective.owner = trader_mind
-	trader_mind.objectives += trading_objective
+	trading_objective.owner = trader_mob.mind
+	trader_mob.mind?.objectives += trading_objective
 
 	var/datum/objective/survive/survive_objective = new
-	survive_objective.owner = trader_mind
-	trader_mind.objectives += survive_objective
+	survive_objective.owner = trader_mob.mind
+	trader_mob.mind?.objectives += survive_objective
 
 	switch(pick_n_take(goods_order))
 		if(GOOD_RODS)
