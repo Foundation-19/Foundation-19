@@ -533,4 +533,4 @@ Helpers
 		send2otherserver(news_source, news_message, "News_Report", additional_data = payload)
 
 			//role ping for discord
-		news_message += " \n <@&899514330461126656> "
+	news_message += " \n <@&899514330461126656> "
