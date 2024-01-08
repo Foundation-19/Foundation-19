@@ -15,8 +15,9 @@
 		If you are confused or at a loss, always adminhelp, and before taking extreme actions, please try to also contact the administration! \
 		Think through your actions and make the roleplay immersive! \
 		<b>Please remember all rules aside from those without explicit exceptions apply to you.</b>"
+	welcome_text = "You are a Trader! Trade with other D-class - and willing Foundation staff - for resources."
 
-	/// We keep track of the order of the goods we get, so we aren't given the same goods we're trading for
+	/// We keep track of the order of the goods we get, so we aren't given the same goods we're trading for	// TODO: this doesn't work lol
 	var/list/goods_order = null
 
 /datum/antagonist/trader/create_objectives(datum/mind/trader_mind)

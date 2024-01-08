@@ -1069,10 +1069,10 @@
 		var/image/holder = hud_list[WANTED_HUD]
 		holder.icon_state = "hudblank"
 		var/perpname = name
-		if(wear_id)
-			var/obj/item/card/id/I = wear_id.GetIdCard()
-			if(I)
-				perpname = I.registered_name
+
+		var/obj/item/card/id/I = GetIdCard()
+		if(I)
+			perpname = I.registered_name
 
 		var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 		if(E)
@@ -1085,6 +1085,8 @@
 					holder.icon_state = "hudparolled"
 				if("Released")
 					holder.icon_state = "hudreleased"
+		if(holder.icon_state == "hudblank" && special_role == "Trader")		// hacky, but functional
+			holder.icon_state = "hudinformant"
 		hud_list[WANTED_HUD] = holder
 
 	if (  BITTEST(hud_updateflag, IMPLOYAL_HUD) \
