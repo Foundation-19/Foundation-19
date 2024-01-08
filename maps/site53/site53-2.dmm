@@ -2467,10 +2467,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp078)
-"aia" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp078)
 "aib" = (
 /obj/structure/closet/l3closet/scientist/multi,
 /obj/machinery/light{
@@ -35701,6 +35697,7 @@
 /area/site53/uhcz/generalpurpose3)
 "sBC" = (
 /obj/structure/table/steel_reinforced,
+/obj/item/paper/scp012,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "sCI" = (
@@ -44492,7 +44489,7 @@ aVS
 azA
 azA
 ahX
-aia
+aie
 ahg
 aie
 aie
