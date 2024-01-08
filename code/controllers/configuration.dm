@@ -254,7 +254,8 @@ var/list/gamemode_cache = list()
 
 /datum/configuration/New()
 	var/list/L = subtypesof(/datum/game_mode)
-	for (var/T in L)
+	for (var/thing in L)
+		var/datum/game_mode/T = thing
 		if(initial(T.config))
 			var/datum/game_mode/M = new T()
 			gamemode_cache[M.config_tag] = M // So we don't instantiate them repeatedly.
