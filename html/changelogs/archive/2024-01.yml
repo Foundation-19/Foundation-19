@@ -106,3 +106,8 @@
 2024-01-07:
   projectkepler-ru:
   - rscadd: Investigation Agent, Officer now have sunglasses as they should.
+2024-01-09:
+  TheDarkElites:
+  - bugfix: 012 not working
+  - bugfix: 151 not working
+  - bugfix: anything else this broke
