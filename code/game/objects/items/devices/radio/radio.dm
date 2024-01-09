@@ -55,10 +55,12 @@
 	internal_channels = GLOB.using_map.default_internal_channels()
 	GLOB.listening_objects += src
 
-	frequency = pick(channels)
+	if(LAZYLEN(channels))
+		frequency = radiochannels[pick(channels)]
+	else
+		frequency = default_frequency ? default_frequency : (round(rand(PUBLIC_LOW_FREQ, PUBLIC_HIGH_FREQ), 2) + 1)
+	frequency = sanitize_frequency(frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 
-	if(frequency < RADIO_LOW_FREQ || frequency > RADIO_HIGH_FREQ)
-		frequency = sanitize_frequency(frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 	set_frequency(frequency)
 	if (!default_frequency)
 		default_frequency = frequency
