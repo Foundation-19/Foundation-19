@@ -246,7 +246,7 @@
 
 	if(user.put_in_active_hand(src))
 		if (isturf(old_loc))
-			var/obj/effect/temp_visual/temporary/item_pickup_ghost/ghost = new(old_loc, null, null, null, src)	// named arguments don't work since we want this var in Initialize() not New()
+			var/obj/effect/temp_visual/item_pickup_ghost/ghost = new(old_loc, dir, src)	// named arguments don't work since we want this var in Initialize() not New()
 			ghost.animate_towards(user)
 		if(randpixel)
 			pixel_x = rand(-randpixel, randpixel)
