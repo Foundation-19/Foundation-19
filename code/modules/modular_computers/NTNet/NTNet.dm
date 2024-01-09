@@ -207,7 +207,7 @@ var/global/datum/ntnet/ntnet_global = new()
 			return chan
 
 //Used for initial email generation.
-/datum/ntnet/proc/create_email(mob/user, desired_name, domain, assignment, desired_password)
+/datum/ntnet/proc/create_email(mob/user, desired_name, domain, desired_password, department_flags)
 	desired_name = sanitize_for_email(desired_name)
 	var/login = "[desired_name]@[domain]"
 	// It is VERY unlikely that we'll have two players, in the same round, with the same name and branch, but still, this is here.
@@ -219,9 +219,10 @@ var/global/datum/ntnet/ntnet_global = new()
 		to_chat(user, "You were not assigned an email address.")
 		user.StoreMemory("You were not assigned an email address.", /decl/memory_options/system)
 	else
-		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account(login, user.real_name, assignment)
+		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account()
 		EA.password = desired_password ? desired_password : GenerateKey()
 		EA.login = login
+		EA.department_flags = department_flags
 		if(user.mind)
 			user.mind.initial_email_login["login"] = EA.login
 			user.mind.initial_email_login["password"] = EA.password
