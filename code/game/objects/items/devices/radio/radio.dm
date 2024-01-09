@@ -1,4 +1,5 @@
 /obj/item/device/radio
+	abstract_type = /obj/item/device/radio
 	icon = 'icons/obj/radio.dmi'
 	name = "shortwave radio"
 	suffix = "\[3\]"
@@ -7,7 +8,7 @@
 
 	var/on = 1 // 0 for off
 	var/last_transmission
-	var/frequency = PUB_FREQ //common chat
+	var/frequency
 	var/default_frequency
 	var/traitor_frequency = 0 //tune to frequency to unlock traitor supplies
 	var/canhear_range = 3 // the range which mobs can hear this radio from
@@ -53,6 +54,8 @@
 		on = FALSE // start powered off
 	internal_channels = GLOB.using_map.default_internal_channels()
 	GLOB.listening_objects += src
+
+	frequency = pick(channels)
 
 	if(frequency < RADIO_LOW_FREQ || frequency > RADIO_HIGH_FREQ)
 		frequency = sanitize_frequency(frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
@@ -819,7 +822,6 @@
 
 /obj/item/device/radio/map_preset
 	var/preset_name
-	var/use_common = FALSE
 	channels = list()
 
 /obj/item/device/radio/map_preset/Initialize()
@@ -829,17 +831,12 @@
 	name = "[name] ([preset_name])"
 	frequency = assign_away_freq(preset_name)
 	channels += list(
-		preset_name = 1,
-		"Hailing" = 1
+		preset_name = 1
 	)
-	if (use_common)
-		channels += list("Common" = 1)
 
 	. = ..()
 
 	internal_channels = list(num2text(frequency) = list())
-	if (use_common)
-		internal_channels += list(num2text(PUB_FREQ) = list())
 
 /obj/item/device/radio/off
 	listening = 0
@@ -851,7 +848,7 @@
 	anchored = TRUE
 	simulated = FALSE
 	power_usage = 0
-	channels=list("Engineering" = 1, "Security" = 1, "Medical" = 1, "Command" = 1, "Common" = 1, "Science" = 1, "Supply" = 1, "Service" = 1, "Exploration" = 1)
+	channels=list("Engineering" = 1, "LCZ-Security" = 1, "HCZ-Security" = 1, "ECZ-Security" = 1, "Medical" = 1, "Command" = 1, "Science" = 1, "Supply" = 1, "Service" = 1, "Exploration" = 1)
 	cell = null
 
 /obj/item/device/radio/announcer/Destroy()

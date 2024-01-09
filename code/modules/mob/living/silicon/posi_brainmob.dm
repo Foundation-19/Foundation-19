@@ -72,7 +72,6 @@
 	if(!R)	return 0
 
 	var/list/new_channels = list()
-	new_channels["Common"] = ";"
 	for(var/i = 1 to R.channels.len)
 		var/channel = R.channels[i]
 		var/key = get_radio_key_from_channel(channel)

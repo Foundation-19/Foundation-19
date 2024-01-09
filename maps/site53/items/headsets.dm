@@ -54,7 +54,9 @@
 		/obj/item/device/encryptionkey/headset_cargo = 2,
 		/obj/item/device/encryptionkey/headset_service = 2,
 		/obj/item/device/encryptionkey/headset_eng = 2,
-		/obj/item/device/encryptionkey/headset_sec = 2
+		/obj/item/device/encryptionkey/headset_sec_lcz = 2,
+		/obj/item/device/encryptionkey/headset_sec_hcz = 2,
+		/obj/item/device/encryptionkey/headset_sec_ecz = 2
 	)
 
 /obj/item/storage/box/encryptionkeys/sci
@@ -85,7 +87,11 @@
 /obj/item/storage/box/encryptionkeys/sec
 	name = "security encryption keys"
 	desc = "A box full of spare encryption keys."
-	startswith = list(/obj/item/device/encryptionkey/headset_sec = 8)
+	startswith = list(
+		/obj/item/device/encryptionkey/headset_sec_lcz = 4,
+		/obj/item/device/encryptionkey/headset_sec_hcz = 4,
+		/obj/item/device/encryptionkey/headset_sec_ecz = 4
+	)
 
 /obj/item/device/radio/headset/bridgeofficer
 	name = "bridge officer's headset"

@@ -97,7 +97,6 @@
 #define	COMMS_COLOR_DEFAULT    "#ff00ff"
 #define	COMMS_COLOR_ENTERTAIN  "#666666"
 #define	COMMS_COLOR_AI         "#ff00ff"
-#define	COMMS_COLOR_COMMON     "#408010"
 #define	COMMS_COLOR_SERVICE    "#709b00"
 #define	COMMS_COLOR_SUPPLY     "#7f6539"
 #define	COMMS_COLOR_SCIENCE    "#993399"

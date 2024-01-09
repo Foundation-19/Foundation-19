@@ -122,7 +122,7 @@
 					if(Server.freq_listening.len > 0)
 						signal.frequency = Server.freq_listening[1]
 					else
-						signal.frequency = PUB_FREQ
+						signal.frequency = pick(ENG_FREQ, MED_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, SEC_LCZ_FREQ, SEC_HCZ_FREQ, SEC_ECZ_FREQ)
 					signal.data["name"] = ""
 					signal.data["job"] = ""
 					signal.data["reject"] = 0

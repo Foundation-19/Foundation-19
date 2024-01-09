@@ -59,7 +59,6 @@
 		interpreter.SetVar("WEST" 	, 	WEST)			// WEST  (8)
 
 		// Channel macros
-		interpreter.SetVar("$common",	PUB_FREQ)
 		interpreter.SetVar("$science",	SCI_FREQ)
 		interpreter.SetVar("$command",	COMM_FREQ)
 		interpreter.SetVar("$medical",	MED_FREQ)
@@ -236,7 +235,7 @@
 			source = "[html_encode(uppertext(S.id))]"
 			hradio = new // sets the hradio as a radio intercom
 		if(!freq)
-			freq = PUB_FREQ
+			freq = pick(ENG_FREQ, MED_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, SEC_LCZ_FREQ, SEC_HCZ_FREQ, SEC_ECZ_FREQ)
 		if(findtext(num2text(freq), ".")) // if the frequency has been set as a decimal
 			freq *= 10 // shift the decimal one place
 
