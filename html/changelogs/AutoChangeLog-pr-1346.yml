@@ -1,0 +1,4 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - bugfix: Cross-server comms news report on evacuation gets sent properly now.
