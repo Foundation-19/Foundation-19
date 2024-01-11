@@ -922,9 +922,9 @@ GLOBAL_LIST_EMPTY(items_by_convert_rating)
 // A list of types that will not be added to the auto-item-generator below;
 GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 	/obj/item/card/id/syndicate/station_access,
-	/obj/item/card/id/captains_spare,
-	/obj/item/spellbook,
-	) + typesof(/obj/item/card/id/centcom) \
+	/obj/item/card/id/captains_spare) \
+	+ typesof(/obj/item/spellbook) \
+	+ typesof(/obj/item/card/id/centcom) \
 	+ typesof(/obj/item/gun))
 
 // BEHOLD! THE TERROR! THE NIGHTMARE!!!
@@ -1049,9 +1049,9 @@ GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 	else
 		rating += "high-speed "
 	// Sharp/Edge
-	if(sharp)
+	if(sharp || (mode == MODE_VERY_FINE && prob(35)))
 		rating += "sharp "
-	if(edge)
+	if(edge || (mode == MODE_VERY_FINE && prob(35)))
 		rating += "edge "
 	rating += "item"
 	return rating

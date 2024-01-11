@@ -114,12 +114,13 @@
 				var/mob/living/simple_animal/hostile/infestation/I = infestation_type
 				if(initial(I.maxHealth) > maxHealth * 2 || initial(I.maxHealth) < maxHealth * 0.5)
 					continue
-				if(initial(I.movement_cooldown) > movement_cooldown + 2 || initial(I.movement_cooldown) < movement_cooldown -2)
+				if(initial(I.movement_cooldown) > movement_cooldown + 2 || initial(I.movement_cooldown) < movement_cooldown - 2)
 					continue
 				potential_mobs += infestation_type
 			if(!LAZYLEN(potential_mobs))
 				return src
-			return pick(potential_mobs)
+			var/picked_mob = pick(potential_mobs)
+			return picked_mob
 		if(MODE_FINE)
 			if(!stat) // Alive and well
 				if(isnull(transformation_target_type) && LAZYLEN(transformation_types))

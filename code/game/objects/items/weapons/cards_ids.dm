@@ -100,6 +100,16 @@
 	. = ..()
 	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
 
+// Fine - Sets uses to random amount between 5 and 15.
+/obj/item/card/emag/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_FINE)
+			uses = rand(5, 15)
+			visible_message(SPAN_NOTICE("Electricity runs through \the [src] briefly."))
+			playsound(src, 'sounds/effects/sparks3.ogg', 50, TRUE)
+			return src
+	return ..()
+
 /obj/item/card/emag/broken
 	uses = 0
 
