@@ -111,3 +111,6 @@
   - bugfix: 012 not working
   - bugfix: 151 not working
   - bugfix: anything else this broke
+2024-01-12:
+  EgorDinamit:
+  - bugfix: Cross-server comms news report on evacuation gets sent properly now.
