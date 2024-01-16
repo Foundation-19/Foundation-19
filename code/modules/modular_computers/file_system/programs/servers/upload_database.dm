@@ -154,7 +154,7 @@
 				files_required_access[editing_file] += acc
 			return TRUE
 		if("PRG_setname")
-			var/newname = sanitize(tgui_input_text(usr, "Enter new server name. Leave blank to cancel.", "Server settings", ""))
+			var/newname = sanitize(tgui_input_text(usr, "Enter new server name. Leave blank to cancel.", "Server settings", server_name))
 			if(!newname)
 				return
 			server_name = newname

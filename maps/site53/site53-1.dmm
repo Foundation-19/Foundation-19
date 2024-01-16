@@ -12221,6 +12221,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"Df" = (
+/obj/item/modular_computer/console/preset/chatserver{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/engineering/server_room)
 "Dg" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -49575,7 +49581,7 @@ ur
 aZ
 aI
 CA
-CA
+Df
 CA
 aZ
 ua

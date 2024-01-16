@@ -9,7 +9,10 @@ var/global/datum/ntnet/ntnet_global = new()
 	var/list/available_antag_software = list()
 	var/list/available_virus_software = list()
 	var/list/chat_channels = list()
+	/// List of all currently hosting fileservers
 	var/list/fileservers = list()
+	/// List of all currently hosting chatservers
+	var/list/chatservers = list()
 	/// Holds all the email accounts that exists. Hopefully won't exceed 999
 	var/list/email_accounts = list()
 	/// A list containing one of each available report datums, used for the report editor program.

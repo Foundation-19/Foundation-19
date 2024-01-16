@@ -16,9 +16,6 @@
 	var/last_message
 	var/username
 	var/active_channel
-	var/list/channel_history = list()
-	/// Channel operator mode
-	var/operator_mode = FALSE
 	/// Administrator mode (invisible to other users + bypasses passwords)
 	var/netadmin_mode = FALSE
 	usage_flags = PROGRAM_ALL
