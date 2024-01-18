@@ -70,7 +70,7 @@ GLOBAL_LIST_INIT(sfx_list, list(
 		'sounds/effects/wounds/crack3.ogg'
 		),
 
-	SFX_WOUND_SPLATTER = list(
+	SFX_STAB_SPLATTER = list(
 		'sounds/weapons/stab1.ogg',
 		'sounds/weapons/stab2.ogg',
 		'sounds/weapons/stab3.ogg'

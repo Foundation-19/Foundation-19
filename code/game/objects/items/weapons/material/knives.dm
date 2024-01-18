@@ -11,6 +11,7 @@
 	matter = list(MATERIAL_STEEL = 12000)
 	origin_tech = list(TECH_MATERIAL = 1)
 	unbreakable = TRUE
+	hitsound = SFX_STAB_SPLATTER
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	sharp = TRUE
 	edge = TRUE

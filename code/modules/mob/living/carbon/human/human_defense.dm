@@ -258,9 +258,8 @@ meteor_act
 	var/hit_dir = get_dir(attacker.loc, src)
 	var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
 	B.icon_state = pick("dir_splatter_1","dir_splatter_2")
-	var/scale = min(1, round(effective_force / 50, 0.2))
 	var/matrix/M = new()
-	B.transform = M.Scale(scale)
+	B.transform = M.Scale(min(1, round(effective_force / 50, 0.2)))
 
 	new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)
 

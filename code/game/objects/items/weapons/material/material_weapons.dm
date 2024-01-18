@@ -2,12 +2,12 @@
 // This class of weapons takes force and appearance data from a material datum.
 // They are also fragile based on material data and many can break/smash apart.
 /obj/item/material
-	hitsound = SFX_WOUND_SPLATTER
 	gender = NEUTER
 	throw_speed = 3
 	throw_range = 7
 	w_class = ITEM_SIZE_NORMAL
 	health_max = 10
+
 
 	var/default_material = MATERIAL_STEEL
 	var/material/material
