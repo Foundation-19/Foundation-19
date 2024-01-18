@@ -58,7 +58,7 @@
 #define SFX_CHOP "chop"
 #define SFX_GLASS_CRACK "glasscrack"
 #define SFX_TRAY_HIT "tray_hit"
-#define SFX_STAB_SPLATTER "splatter"
+#define SFX_STAB_SPLATTER "stab_splatter"
 #define SFX_GUN_T12 "gun_t12"
 #define SFX_BULLET_INSERT "sfx_bullet_insert"
 #define SFX_SHELL_INSERT "sfx_shell_insert"
