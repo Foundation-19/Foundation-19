@@ -320,7 +320,7 @@
 
 	//actually throw it!
 	visible_message(SPAN_WARNING("[message]"), range = min(itemsize*2,world.view))
-	src.do_attack_animation(target)
+	do_attack_animation(target)
 
 	if(!lastarea)
 		lastarea = get_area(loc)
