@@ -8,6 +8,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	health_max = 10
 
+	abstract_type = /obj/item/material
+
 
 	var/default_material = MATERIAL_STEEL
 	var/material/material
