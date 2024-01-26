@@ -165,10 +165,9 @@
 			can_read = ishuman(user) || issilicon(user)
 			if (can_read)
 				can_read = get_dist(src, user) < PAPER_EYEBALL_DISTANCE
-	var/html = "<html><head><title>[name]</title></head><body bgcolor='[color]'>"
+	var/html = ""
 	if (!can_read)
 		html += PAPER_META_BAD("The paper is too far away or you can't read.")
-		html += "<hr/></body></html>"
 	var/has_content = length(info)
 	var/has_language = force || (language in user.languages)
 	if (has_content && !has_language && !isghost(user))
@@ -188,9 +187,16 @@
 	else if (has_content)
 		html += PAPER_META("The paper is written in [language.name].")
 		html += "<hr/>" + info
-	html += "[stamps]</body></html>"
-	show_browser(user, html, "window=paper_[name]")
-	onclose(user, "paper_[name]")
+	html += "[stamps]"
+
+	// Ported to browser datum for IE11 feature parity
+	var/datum/browser/window = new(user, "paper_[name]")
+	window.stylesheets.Remove("common")
+	window.add_stylesheet("acs", 'html/acs.css')
+	window.add_head_content("<title>[name]</title><style>body { background-color: [color]; }</style>")
+	window.set_content(html)
+	window.open()
+
 	if(isnull(name))
 		crash_with("Paper failed a sanity check. It has no name. Report that! | Type: [type]")
 
