@@ -8,6 +8,8 @@
 
 	server.server_name = "SCiPnet Chatroom"
 
+	server.req_accesses_sysadmin = list(ACCESS_NETWORK)
+
 	for(var/thing in subtypesof(/datum/chatserver_channel/template))
 		var/datum/chatserver_channel/template/channel = new thing()
 
@@ -17,23 +19,7 @@
 
 /*
  * Channel templates
- *
- * Enter IDs into req_accesses_user by name, they're set to the actual access datums on initialization
 */
-
-/datum/chatserver_channel/template/New()
-	var/list/datum/access/accesses_user = list()
-	var/list/datum/access/accesses_admin = list()
-
-	for(var/acc_id in req_accesses_user)
-		accesses_user += get_access_by_id(acc_id)
-
-	for(var/acc_id in req_accesses_admin)
-		accesses_admin += get_access_by_id(acc_id)
-
-	req_accesses_user = accesses_user
-	req_accesses_admin = accesses_admin
-	. = ..()
 
 /datum/chatserver_channel/template/common
 	title = "Site-wide"
@@ -42,5 +28,25 @@
 /datum/chatserver_channel/template/admin
 	title = "Admin"
 	req_accesses_user = list(ACCESS_ADMIN_LVL2)
+	req_accesses_admin = list(ACCESS_NETWORK)
+
+/datum/chatserver_channel/template/engineering
+	title = "Engineering"
+	req_accesses_user = list(ACCESS_ENGINEERING_LVL1)
+	req_accesses_admin = list(ACCESS_NETWORK)
+
+/datum/chatserver_channel/template/medical
+	title = "Medical"
+	req_accesses_user = list(ACCESS_MEDICAL_LVL1)
+	req_accesses_admin = list(ACCESS_NETWORK)
+
+/datum/chatserver_channel/template/science
+	title = "Science"
+	req_accesses_user = list(ACCESS_SCIENCE_LVL1)
+	req_accesses_admin = list(ACCESS_NETWORK)
+
+/datum/chatserver_channel/template/security
+	title = "Security"
+	req_accesses_user = list(ACCESS_SECURITY_LVL1)
 	req_accesses_admin = list(ACCESS_NETWORK)
 

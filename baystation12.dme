@@ -2571,6 +2571,7 @@
 #include "code\modules\modular_computers\file_system\programs\security\digitalwarrant.dm"
 #include "code\modules\modular_computers\file_system\programs\security\forceauthorization.dm"
 #include "code\modules\modular_computers\file_system\programs\servers\sciprc.dm"
+#include "code\modules\modular_computers\file_system\programs\servers\sciprc_c.dm"
 #include "code\modules\modular_computers\file_system\programs\servers\upload_database.dm"
 #include "code\modules\modular_computers\file_system\programs\servers\upload_database_c.dm"
 #include "code\modules\modular_computers\file_system\programs\virus\virus.dm"

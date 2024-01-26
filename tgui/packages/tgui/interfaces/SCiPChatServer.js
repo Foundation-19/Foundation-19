@@ -3,11 +3,13 @@
  * #define PAGE_BASE "base"
  * /// The history panel, shows the history of all channels.
  * #define PAGE_LOGS "logs"
+ * /// The sysadmin access panel, allows editing of required accesses (for global channel administration).
+ * #define PAGE_ACCESS_SYSADMIN "access_sysadmin"
  * /// The base channel panel, shows some channel-specific settings + links.
  * #define PAGE_CHANNEL_BASE "channel_base"
- * /// The access panel, allows editing of required accesses.
+ * /// The user access panel, allows editing of required accesses.
  * #define PAGE_CHANNEL_ACCESS_USER "channel_access_user"
- * /// The access panel, allows editing of required accesses (for admining the channel).
+ * /// The amdmin access panel, allows editing of required accesses (for admining the channel).
  * #define PAGE_CHANNEL_ACCESS_ADMIN "channel_access_admin"
  * /// The messages panel, allows viewing the chatlog and sending system messages.
  * #define PAGE_CHANNEL_MESSAGES "channel_messages"
@@ -29,6 +31,9 @@ export const SCiPChatServer = (props, context) => {
       break;
     case 'logs':
       body = <LogsPage />;
+      break;
+    case 'access_sysadmin':
+      body = <AccessSysadminPage />;
       break;
     case 'channel_base':
       body = <ChannelBasePage />;
@@ -127,6 +132,35 @@ const LogsPage = (props, context) => {
   );
 };
 
+const AccessSysadminPage = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { region_access = [], region_names = [] } = data;
+  return (
+    <Section
+      title={'Global Accesses (Sysadmin)'}
+      buttons={
+        <Button onClick={() => act('PRG_switch_page', { page: 'base' })}>
+          Return
+        </Button>
+      }>
+      {region_access.map((region = [], index) => (
+        <Section title={region_names[index]} key={region_names[index]}>
+          {region.map((access) => (
+            <Button.Checkbox
+              key={access.id}
+              checked={access.required}
+              onClick={() =>
+                act('PRG_change_access_user', { access: access.id })
+              }>
+              {access.desc}
+            </Button.Checkbox>
+          ))}
+        </Section>
+      ))}
+    </Section>
+  );
+};
+
 const ChannelBasePage = (props, context) => {
   const { act, data } = useBackend(context);
   const { editing_channel } = data;
@@ -154,6 +188,9 @@ const ChannelBasePage = (props, context) => {
         <Button
           onClick={() => act('PRG_switch_page', { page: 'channel_messages' })}>
           Messages
+        </Button>
+        <Button onClick={() => act('PRG_rename_channel')}>
+          Rename Channel
         </Button>
         <Button onClick={() => act('PRG_deletechannel')}>Delete Channel</Button>
       </Flex>
@@ -238,6 +275,7 @@ const ChannelMessagesPage = (props, context) => {
           <li key={index}>{message}</li>
         ))}
       </ol>
+      <Button onClick={() => act('PRG_save_log')}>Save log</Button>
     </Section>
   );
 };

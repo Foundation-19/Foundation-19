@@ -6,11 +6,13 @@
 #define PAGE_BASE "base"
 /// The logs panel, shows the history of all channels and the server at large.
 #define PAGE_LOGS "logs"
+/// The sysadmin access panel, allows editing of required accesses (for global channel administration).
+#define PAGE_ACCESS_SYSADMIN "access_sysadmin"
 /// The base channel panel, shows some channel-specific settings + links.
 #define PAGE_CHANNEL_BASE "channel_base"
-/// The access panel, allows editing of required accesses (for joining the channel).
+/// The user access panel, allows editing of required accesses (for joining the channel).
 #define PAGE_CHANNEL_ACCESS_USER "channel_access_user"
-/// The access panel, allows editing of required accesses (for admining the channel).
+/// The admin access panel, allows editing of required accesses (for admining the channel).
 #define PAGE_CHANNEL_ACCESS_ADMIN "channel_access_admin"
 /// The messages panel, allows viewing the chatlog and sending system messages.
 #define PAGE_CHANNEL_MESSAGES "channel_messages"
@@ -30,9 +32,6 @@
 	/// User-set name for easier identification by the client
 	var/server_name = ""
 
-	/// UID of this server
-	var/unique_token
-
 	/// Whether we're currently hosting
 	var/hosting = FALSE
 
@@ -42,7 +41,10 @@
 	/// List of log messages
 	var/list/server_logs = list()
 
-	//used for TGUI
+	/// List of access datums required to be a sysadmin.
+	var/list/req_accesses_sysadmin = list()
+
+	//  TGUI vars
 	/// Which TGUI panel we have open.
 	var/current_page = PAGE_BASE
 
@@ -50,13 +52,12 @@
 	var/editing_channel
 
 /datum/computer_file/program/chatserver/New()
-	unique_token = ntnet_global.generate_uid()
 	if(!server_name)
 		server_name = GenerateKey()
 	..()
 
-/datum/computer_file/program/chatserver/proc/add_log(message)
-	server_logs.Add("[station_time_timestamp("hh:mm")] - [message]")
+/datum/computer_file/program/chatserver/proc/add_log(uid, user, message)
+	server_logs.Add("[station_time_timestamp("hh:mm")] - [user] (uid): [message]")
 
 /datum/computer_file/program/chatserver/proc/set_hosting(new_hosting)
 	if(hosting == new_hosting)
@@ -98,8 +99,8 @@
 	if((current_page == PAGE_CHANNEL_ACCESS_USER) && editing_channel)
 
 		var/list/all_regions = get_all_access_datums_by_region()
-		for(var/r_name in all_regions)
-			var/list/region = all_regions[r_name]
+		for(var/r_index in all_regions)
+			var/list/region = all_regions[r_index]
 
 			var/list/prepared_region = list()
 
@@ -109,17 +110,17 @@
 					prepared_region += list(list(
 						"desc" = acc.desc,
 						"id" = acc.id,
-						"required" = (acc in channel_list[editing_channel].req_accesses_user)
+						"required" = (acc.id in channel_list[editing_channel].req_accesses_user)
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += r_name
+			data["region_names"] += get_region_accesses_name(r_index)
 
 	if((current_page == PAGE_CHANNEL_ACCESS_ADMIN) && editing_channel)
 
 		var/list/all_regions = get_all_access_datums_by_region()
-		for(var/r_name in all_regions)
-			var/list/region = all_regions[r_name]
+		for(var/r_index in all_regions)
+			var/list/region = all_regions[r_index]
 
 			var/list/prepared_region = list()
 
@@ -129,11 +130,31 @@
 					prepared_region += list(list(
 						"desc" = acc.desc,
 						"id" = acc.id,
-						"required" = (acc in channel_list[editing_channel].req_accesses_admin)
+						"required" = (acc.id in channel_list[editing_channel].req_accesses_admin)
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += r_name
+			data["region_names"] += get_region_accesses_name(r_index)
+
+	if(current_page == PAGE_ACCESS_SYSADMIN)
+
+		var/list/all_regions = get_all_access_datums_by_region()
+		for(var/r_index in all_regions)
+			var/list/region = all_regions[r_index]
+
+			var/list/prepared_region = list()
+
+			for(var/thing in region)
+				var/datum/access/acc = thing
+				if(acc.desc)
+					prepared_region += list(list(
+						"desc" = acc.desc,
+						"id" = acc.id,
+						"required" = (acc.id in req_accesses_sysadmin)
+					))
+
+			data["region_access"] += list(prepared_region)
+			data["region_names"] += get_region_accesses_name(r_index)
 
 	return data
 
@@ -147,51 +168,75 @@
 			return TRUE
 		if("PRG_togglehosting")
 			set_hosting(!hosting)
-			add_log("Set hosting to [hosting ? "ON" : "OFF"].")
+			add_log(computer.network_card.identification_id, "ROOT", "Set hosting to [hosting ? "ON" : "OFF"].")
 			return TRUE
 		if("PRG_switch_page_and_channel")
 			current_page = params["page"]
 			editing_channel = params["channel"] + 1 // javascript arrays start at 0 whereas our arrays start at 1, therefore we have to add 1 to get the correct index.
 			return TRUE
+		if("PRG_change_access_sysadmin")
+			if(params["access"] in req_accesses_sysadmin)
+				req_accesses_sysadmin -= params["access"]
+				add_log(computer.network_card.identification_id, "ROOT", "Removed sysadmin requirement of [params["access"]].")
+			else
+				req_accesses_sysadmin += params["access"]
+				add_log(computer.network_card.identification_id, "ROOT", "Added sysadmin requirement of [params["access"]].")
+			return TRUE
 		if("PRG_change_access_user")
-			var/datum/access/acc = get_access_by_id(params["access"])
-			if(acc in channel_list[editing_channel].req_accesses_user)
-				channel_list[editing_channel].req_accesses_user -= acc
-				add_log("Removed user requirement of [acc.id] from channel [channel_list[editing_channel].title].")
-			else
-				channel_list[editing_channel].req_accesses_user += acc
-				add_log("Added user requirement of [acc.id] to channel [channel_list[editing_channel].title].")
-			return TRUE
+			return channel_list[editing_channel].toggle_access(params["access"], FALSE)
 		if("PRG_change_access_admin")
-			var/datum/access/acc = get_access_by_id(params["access"])
-			if(acc in channel_list[editing_channel].req_accesses_admin)
-				channel_list[editing_channel].req_accesses_admin -= acc
-				add_log("Removed admin requirement of [acc.id] from channel [channel_list[editing_channel].title].")
-			else
-				channel_list[editing_channel].req_accesses_admin += acc
-				add_log("Added admin requirement of [acc.id] to channel [channel_list[editing_channel].title].")
-			return TRUE
+			return channel_list[editing_channel].toggle_access(params["access"], TRUE)
 		if("PRG_setname")
 			var/newname = sanitize(tgui_input_text(usr, "Enter new server name. Leave blank to cancel.", "Server settings", server_name))
 			if(!newname)
 				return
-			add_log("Set server name from '[server_name]' to '[newname]'.")
+			add_log(computer.network_card.identification_id, "ROOT", "Set server name from '[server_name]' to '[newname]'.")
 			server_name = newname
 			return TRUE
 		if("PRG_addchannel")
-			var/newname = sanitize(tgui_input_text(usr, "Enter new server name. Leave blank to cancel.", "Add Channel", ""))
+			var/newname = sanitize(tgui_input_text(usr, "Enter new channel name. Leave blank to cancel.", "Add Channel", ""))
 			if(!newname)
 				return
-			add_log("Added channel ('[newname]').")
-			channel_list += new /datum/chatserver_channel/(newname)
+			add_log(computer.network_card.identification_id, "ROOT", "Added channel ('[newname]').")
+			channel_list += new /datum/chatserver_channel/(src, newname)
+			return TRUE
+		if("PRG_rename_channel")
+			var/newname = sanitize(tgui_input_text(usr, "Enter new name for channel [channel_list[editing_channel].title]. Leave blank to cancel.", "Rename Channel", channel_list[editing_channel].title))
+			if(!newname)
+				return
+			add_log(computer.network_card.identification_id, "ROOT", "Renamed channel from '[channel_list[editing_channel].title]' to '[newname]'.")
+			channel_list[editing_channel].title = newname
 			return TRUE
 		if("PRG_deletechannel")
 			var/response = tgui_alert(usr, "Are you sure you want to delete [channel_list[editing_channel].title]?", "Channel Settings", list("Yes", "No"))
 			if(response == "No")
 				return
 			current_page = PAGE_BASE
-			add_log("Deleted channel ('[channel_list[editing_channel].title]').")
+			add_log(computer.network_card.identification_id, "ROOT", "Deleted channel ('[channel_list[editing_channel].title]').")
 			channel_list -= channel_list[editing_channel]
+			qdel(channel_list[editing_channel])
+			return TRUE
+		if("PRG_save_log")
+			var/logname = sanitize(tgui_input_text(usr, "Enter new logfile name. Leave blank to cancel.", "Logfile Name", channel_list[editing_channel].title))
+			if(!logname)
+				return
+
+			var/datum/computer_file/data/logfile = new /datum/computer_file/data/logfile()
+			logfile.filename = logname
+			logfile.stored_data = "\[b\]Logfile dump from SCPRC channel [channel_list[editing_channel].title]\[/b\]\n"
+			for(var/logstring in channel_list[editing_channel].messages)
+				logfile.stored_data += "[logstring]\n"
+			logfile.stored_data += "\[b\]Logfile dump completed.\[/b\]"
+			logfile.calculate_size()
+
+			if(!computer || !computer.hard_drive || !computer.hard_drive.store_file(logfile))
+				if(!computer)
+					// This program shouldn't even be runnable without computer.
+					CRASH("Var computer is null!")
+				if(!computer.hard_drive)
+					computer.visible_message(SPAN_WARNING("\The [computer] shows an \"I/O Error - Hard drive connection error\" warning."))
+				else	// In 99.9% cases this will mean our HDD is full
+					computer.visible_message(SPAN_WARNING("\The [computer] shows an \"I/O Error - Hard drive may be full. Please free some space and try again. Required space: [logfile.size]GQ\" warning."))
 			return TRUE
 
 /*
@@ -199,21 +244,45 @@
 */
 
 /datum/chatserver_channel/
+	/// Reference to the server we're in.
+	var/datum/computer_file/program/chatserver/server
 	var/title = "Untitled Channel"
 	var/list/messages = list()
 	var/list/req_accesses_user = list()
 	var/list/req_accesses_admin = list()
 
-/datum/chatserver_channel/New(_title)
+/datum/chatserver_channel/New(_server, _title)
+	server = _server
 	if(!isnull(_title))
 		title = _title
 	. = ..()
 
-/datum/chatserver_channel/proc/add_message(username, message)
-	messages.Add("[station_time_timestamp("hh:mm")] [username]: [message]")
+/datum/chatserver_channel/proc/add_message(uid, username, message)
+	if(isnull(reject_bad_text(message)))
+		return FALSE
 
-	if(messages.len <= MESSAGES_LIST_CAP)
-		return
-	messages.Cut(1, (messages.len - (MESSAGES_LIST_CAP - 1)))
+	messages.Add("[station_time_timestamp("hh:mm")] - [username] ([uid]): [message]")
+
+	if(!(messages.len <= MESSAGES_LIST_CAP))
+		messages.Cut(1, (messages.len - (MESSAGES_LIST_CAP - 1)))
+	return TRUE
+
+/datum/chatserver_channel/proc/toggle_access(access, admin)
+	if(admin)
+		if(access in req_accesses_admin)
+			req_accesses_admin -= access
+			server.add_log(server.computer.network_card.identification_id, "ROOT", "Removed admin requirement of [access] from channel [title].")
+		else
+			req_accesses_admin += access
+			server.add_log(server.computer.network_card.identification_id, "ROOT", "Added admin requirement of [access] to channel [title].")
+		return TRUE
+	else
+		if(access in req_accesses_user)
+			req_accesses_user -= access
+			server.add_log(server.computer.network_card.identification_id, "ROOT", "Removed user requirement of [access] from channel [title].")
+		else
+			req_accesses_user += access
+			server.add_log(server.computer.network_card.identification_id, "ROOT", "Added user requirement of [access] to channel [title].")
+		return TRUE
 
 #undef MESSAGES_LIST_CAP
