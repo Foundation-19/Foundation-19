@@ -4,13 +4,13 @@ import { NtosWindow } from '../layouts';
 
 export const SCiPChatClient = (props, context) => {
   const { act, data } = useBackend(context);
-  const { error, server_title, editing_access } = data;
+  const { PC_device_theme, error, servername, editing_access } = data;
 
   let body;
 
   if (error) {
     body = <Error />;
-  } else if (!server_title) {
+  } else if (!servername) {
     body = <ServerSelect />;
   } else if (editing_access === 1) {
     body = <UserAccess />;
@@ -72,7 +72,13 @@ const ServerSelect = (props, context) => {
 
 const Messages = (props, context) => {
   const { act, data } = useBackend(context);
-  const { servername, channels = [], sysadmin } = data;
+  const {
+    servername,
+    channels = [],
+    sysadmin,
+    channel_open,
+    messages = [],
+  } = data;
   return (
     <Section height="600px">
       <Table height="580px">
@@ -110,9 +116,9 @@ const Messages = (props, context) => {
           </Table.Cell>
           <Table.Cell>
             <Box height="560px" overflowY="scroll">
-              {in_channel &&
+              {channel_open &&
                 messages.map((message, index) => (
-                  <Box key={index}>{message.msg}</Box>
+                  <Box key={index}>{message}</Box>
                 ))}
             </Box>
             <Input
@@ -131,12 +137,7 @@ const Messages = (props, context) => {
             style={{
               width: '150px',
             }}>
-            <Box height="465px" overflowY="scroll">
-              {clients.map((client) => (
-                <Box key={client.name}>{client.name}</Box>
-              ))}
-            </Box>
-            {in_channel && authorized && (
+            {channel_open && (
               <Button.Input
                 fluid
                 content="Save log..."
@@ -148,7 +149,7 @@ const Messages = (props, context) => {
                 }
               />
             )}
-            {sysadmin && (
+            {channel_open & sysadmin && (
               <Fragment>
                 <Button.Confirm
                   fluid
