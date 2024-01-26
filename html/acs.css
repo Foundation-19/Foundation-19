@@ -1891,16 +1891,16 @@ background-color: rgb(var(--one-color));
      width: -moz-calc(100% - 40vw);
      width: calc(100% - 40vw);
      }
-
+    
      .top-box .top-left-box {
      display: initial;
      }
-
+    
      .top-box > * {
      width: 100%;
      height: auto;
      }
-
+    
      .top-box .top-center-box {
      -webkit-box-flex: 0;
      -webkit-flex-grow: 0;
@@ -1908,6 +1908,6 @@ background-color: rgb(var(--one-color));
      -ms-flex-positive: 0;
      flex-grow: 0;
      }
-
+    
     }
 }
