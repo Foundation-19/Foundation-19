@@ -36,12 +36,7 @@
 
 /datum/computer_file/data/SCP_doc/scp012
 	filename = "SCP-012"
-	stored_data = @{"[center][b]EUCLID: SCP-012[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-012
-
-[b]Object Class:[/b] Euclid
+	stored_data = @{"[acs item_number=012 clearance_level=2 containment_class=euclid disruption_class=vlam risk_class=danger]
 
 [b]Special Containment Procedures:[/b] SCP-012 is to be kept in a darkened room at all times. If the object is exposed to light or seen by personnel using a light frequency other than infrared, remove personnel for mental health screening and immediate physical. Object is to be encased in an iron-shielded box, suspended from the ceiling with a minimum clearance of 2.5 m (8 ft) from the floor, walls, and any openings.
 
@@ -51,12 +46,7 @@ Following initial investigations, multiple test subjects were allowed access to 
 
 /datum/computer_file/data/SCP_doc/scp013
 	filename = "SCP-013"
-	stored_data = @{"[center][b]SAFE: SCP-013[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-013
-
-[b]Object Class:[/b] Safe
+	stored_data = @{"[acs item_number=013 clearance_level=1 containment_class=safe disruption_class=dark risk_class=warning]
 
 [b]Special Containment Procedures:[/b] SCP-013 are to be kept in a Secure Storage Vault at Site-66. Exposed subjects are to be monitored for differences between their symptoms. Exposed subjects are to be interviewed daily, and any changes in perception are to be logged.
 
@@ -70,31 +60,21 @@ Currently, two hundred seventeen instances of SCP-013 cigarettes are contained a
 
 /datum/computer_file/data/SCP_doc/scp049
 	filename = "SCP-049"
-	stored_data = @{"[center][b]EUCLID: SCP-049[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-049
-
-[b]Object Class:[/b] Euclid
+	stored_data = @{"[acs item_number=049 clearance_level=2 containment_class=euclid disruption_class=keneq risk_class=danger]
 
 [b]Special Containment Procedures:[/b] SCP-049 is contained within a Standard Secure Humanoid Containment Cell in Research Sector-02 at Site-19. SCP-049 must be sedated before any attempts to transport it. During transport, SCP-049 must be secured within a Class III Humanoid Restriction Harness (including a locking collar and extension restraints) and monitored by no fewer than two armed guards.
 While SCP-049 is generally cooperative with most Foundation personnel, outbursts or sudden changes in behaviour are to be met with elevated force. Under no circumstances should any personnel come into direct contact with SCP-049 during these outbursts. In the event SCP-049 becomes aggressive, the application of lavender (L. multifida) has been shown to produce a calming effect on the entity. Once calmed, SCP-049 generally becomes compliant, and will return to containment with little resistance.
 In order to facilitate the ongoing containment of SCP-049, the entity is to be provided with the corpse of a recently deceased animal (typically a bovine or other large mammal) once every two weeks for study. Corpses that become instances of SCP-049-2 are to be removed from SCP-049's containment cell and incinerated. SCP-049 is no longer permitted to interact with human subjects, and requests for human subjects are to be denied.
 
 [b]Description:[/b] SCP-049 is a humanoid entity, roughly 1.9 meters in height, which bears the appearance of a medieval plague doctor. While SCP-049 appears to be wearing the thick robes and the ceramic mask indicative of that profession, the garments instead seem to have grown out of SCP-049's body over time1, and are now nearly indistinguishable from whatever form is beneath them. X-rays indicate that despite this, SCP-049 does have a humanoid skeletal structure beneath its outer layer.
-SCP-049 is capable of speech in a variety of languages, though tends to prefer English or medieval French2. While SCP-049 is generally cordial and cooperative with Foundation staff, it can become especially irritated or at times outright aggressive if it feels that it is in the presence of what it calls the "Pestilence". Although the exact nature of this Pestilence is currently unknown to Foundation researchers, it does seem to be an issue of immense concern to SCP-049.
+SCP-049 is capable of speech in a variety of languages, though tends to prefer English or medieval French. While SCP-049 is generally cordial and cooperative with Foundation staff, it can become especially irritated or at times outright aggressive if it feels that it is in the presence of what it calls the "Pestilence". Although the exact nature of this Pestilence is currently unknown to Foundation researchers, it does seem to be an issue of immense concern to SCP-049.
 SCP-049 will become hostile with individuals it sees as being affected by the Pestilence, often having to be restrained should it encounter such. If left unchecked, SCP-049 will generally attempt to kill any such individual; SCP-049 is capable of causing all biological functions of an organism to cease through direct skin contact. How this occurs is currently unknown, and autopsies of SCP-049's victims have invariably been inconclusive. SCP-049 has expressed frustration or remorse after these killings, indicating that they have done little to kill "The Pestilence", though will usually seek to then perform a crude surgery on the corpse using the implements contained within a black doctor's bag it carries on its person at all times3. While these surgeries are not always "successful", they often result in the creation of instances of SCP-049-2.
 SCP-049-2 instances are reanimated corpses that have been operated on by SCP-049. These instances do not seem to retain any of their prior memories or mental functions, having only basic motor skills and response mechanisms. While these instances are generally inactive, moving very little and in a generally ambulatory fashion, they can become extremely aggressive if provoked, or if directed to by SCP-049. SCP-049-2 instances express active biological functions, though these are vastly different from currently understood human physiology. Despite these alterations, SCP-049 often remarks that the subjects have been "cured".
 "}
 
 /datum/computer_file/data/SCP_doc/scp078
 	filename = "SCP-078"
-	stored_data = @{"[center][b]EUCLID: SCP-078[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-078
-
-[b]Object Class:[/b] Euclid
+	stored_data = @{"[acs item_number=078 clearance_level=1 containment_class=safe disruption_class=vlam risk_class=warning]
 
 [b]Special Containment Procedures:[/b]  SCP-078 is to be left hanging on the wall of its containment cell and physically unplugged. The sole outlet in the room should be controlled by a switch, which must be left in the off position at all times unless SCP-078 is undergoing testing. Personnel who enter the containment room should familiarize themselves with the position of the switch so that they can locate it with their eyes closed in the event that SCP-078 is accidentally turned on.
 
@@ -106,12 +86,7 @@ The sole exception to SCP-078's effect is SCP-078 itself: any subject who views 
 
 /datum/computer_file/data/SCP_doc/scp096
 	filename = "SCP-096"
-	stored_data = @{"[center][b]EUCLID: SCP-096[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-096
-
-[b]Object Class:[/b] Euclid
+	stored_data = @{"[acs item_number=096 clearance_level=3 containment_class=euclid disruption_class=keneq risk_class=critical]
 
 [b]Special Containment Procedures:[/b] SCP-096 is to be contained in its cell, a 5 m x 5 m x 5 m airtight steel cube, at all times. Weekly checks for any cracks or holes are mandatory. There are to be absolutely no video surveillance or optical tools of any kind inside SCP-096's cell. Security personnel will use pre-installed pressure sensors and laser detectors to ensure SCP-096's presence inside the cell.
 Any and all photos, video, or recordings of SCP-096's likeness are strictly forbidden without approval from Dr. ¦¦¦ and O5-¦.
@@ -165,12 +140,7 @@ Due to the possibility of a mass chain reaction, including breach of Foundation 
 
 /datum/computer_file/data/SCP_doc/scp106
 	filename = "SCP-106"
-	stored_data = @{"[center][b]KETER: SCP-106[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-106
-
-[b]Object Class:[/b] Keter
+	stored_data = @{"[acs item_number=106 clearance_level=3 containment_class=keter disruption_class=keneq risk_class=danger]
 
 [b]Special Containment Procedures:[/b] SCP-106 is to be contained in a sealed container, comprised of lead-lined steel. The container will be sealed within forty layers of identical material, each layer separated by no less than 36cm of empty space. Support struts between layers are to be randomly spaced. Container is to remain suspended no less than 60cm from any surface by ELO-IID electromagnetic supports.
 Secondary containment area is to be comprised of sixteen spherical "cells", each filled with various fluids and a random assembly of surfaces and supports. Secondary containment is to be fitted with light systems, capable of flooding the entire assembly with no less than 80,000 lumens of light instantly with no direct human involvement. Both containment areas are to remain under 24 hour surveillance.
@@ -185,12 +155,7 @@ Continued research and observation have shown that, when faced with highly compl
 
 /datum/computer_file/data/SCP_doc/scp113
 	filename = "SCP-113"
-	stored_data = @{"[center][b]SAFE: SCP-113[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-113
-
-[b]Object Class:[/b] Safe
+	stored_data = @{"[acs item_number=113 clearance_level=2 containment_class=safe disruption_class=dark risk_class=caution]
 
 [b]Special Contaiment Procedures:[/b] SCP-113 is to be kept in standard storage in Site-23. SCP-113 may be handled with laboratory gloves. No organism may be exposed to SCP-113 without prior approval. Personnel exposed to SCP-113 are to be kept under medical observation for 7 days.
 
@@ -213,12 +178,7 @@ Failure rate can be affected by subjects not coming into contact with SCP-113 fo
 
 /datum/computer_file/data/SCP_doc/scp131
 	filename = "SCP-131"
-	stored_data = @{"[center][b]SAFE: SCP-131[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-131
-
-[b]Object Class:[/b] Safe
+	stored_data = @{"[acs item_number=131 clearance_level=1 containment_class=euclid disruption_class=vlam risk_class=notice]
 
 [b]Special Contaiment Procedures:[/b] No special safety procedures are to be taken with SCP-131-A and SCP-131-B. They are free to travel about Site-19 so long as they do not attempt to enter any restricted areas or attempt to leave the facility. Casual contact with the subjects is permitted, but it is recommended that such contact be kept to a minimum to prevent the creatures from forming an attachment to personnel. Hourly tabs are to be kept on subjects at all times; failure to account for their presence at these times constitutes a level one lock down situation. Any report of abuse or mistreatment of the subjects will result in harsh reprimand.
 
@@ -231,12 +191,7 @@ Subjects SCP-131-A and SCP-131-B were found in a cornfield outside ¦¦¦¦¦¦�
 
 /datum/computer_file/data/SCP_doc/scp151
 	filename = "SCP-151"
-	stored_data = @{"[center][b]EUCLID: SCP-151[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-151
-
-[b]Object Class:[/b] Euclid
+	stored_data = @{"[acs item_number=151 clearance_level=2 containment_class=safe disruption_class=vlam risk_class=critical]
 
 [b]Special Contaiment Procedures:[/b] SCP-151 should be kept in a locked storage compartment, covered by an opaque cloth. The keys to the compartment should be kept in the custody of the site commander when SCP-151 is not being researched. When research is being conducted, SCP-151 may be kept in a locked laboratory, provided it is always covered when not being used.
 
@@ -248,12 +203,7 @@ The painting is not signed, but several names are written on the back.
 
 /datum/computer_file/data/SCP_doc/scp173
 	filename = "SCP-173"
-	stored_data = @{"[center][b]EUCLID: SCP-173[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-173
-
-[b]Object Class:[/b] Euclid
+	stored_data = @{"[acs item_number=173 clearance_level=2 containment_class=euclid disruption_class=keneq risk_class=warning]
 
 [b]Special Contaiment Procedures:[/b] Item SCP-173 is to be kept in a locked container at all times. When personnel must enter SCP-173's container, no fewer than 3 may enter at any time and the door is to be relocked behind them. At all times, two persons must maintain direct eye contact with SCP-173 until all personnel have vacated and relocked the container.
 
@@ -264,12 +214,7 @@ The reddish brown substance on the floor is a combination of feces and blood. Or
 
 /datum/computer_file/data/SCP_doc/scp500
 	filename = "SCP-500"
-	stored_data = @{"[center][b]SAFE: SCP-500[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-500
-
-[b]Object Class:[/b] Safe
+	stored_data = @{"[acs item_number=500 clearance_level=4 containment_class=safe disruption_class=dark risk_class=notice]
 
 [b]Special Contaiment Procedures:[/b] SCP-500 must be stored in a cool and dry place away from bright light. SCP-500 is only allowed to be accessed by personnel with level 4 security clearance to prevent misapplication.
 
@@ -278,12 +223,7 @@ The reddish brown substance on the floor is a combination of feces and blood. Or
 
 /datum/computer_file/data/SCP_doc/scp513
 	filename = "SCP-513"
-	stored_data = @{"[center][b]EUCLID: SCP-513[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-513
-
-[b]Object Class:[/b] EUCLID
+	stored_data = @{"[acs item_number=513 clearance_level=2 containment_class=euclid disruption_class=vlam risk_class=critical]
 
 [b]Special Contaiment Procedures:[/b] SCP-513 is to be suspended in a 1 cubic meter block of gelatin and contained within a soundproofed, climate-controlled cell. The gelatin must be inspected daily for any degradation or loss of integrity. An emergency inspection will be carried out immediately following any earthquake, explosion, or sonic event grade 2 or higher. Personnel performing the inspection are to wear earplugs and active noise-canceling earmuffs at all times while inside SCP-513's cell.
 If the gelatin cube shows any signs of degradation (such as rips, tears, splits, liquefaction, or mold), SCP-513 is to be immediately removed and suspended within a replacement cube by a team of surgically deafened Class-D personnel. No other personnel are to enter the cell during this procedure.
@@ -300,12 +240,7 @@ Descriptions of SCP-513-1's appearance are largely unreliable. Test subjects are
 
 /datum/computer_file/data/SCP_doc/scp895
 	filename = "SCP-895"
-	stored_data = @{"[center][b]EUCLID: SCP-895[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-895
-
-[b]Object Class:[/b] Euclid
+	stored_data = @{"[acs item_number=895 clearance_level=2 containment_class=safe disruption_class=vlam risk_class=warning]
 
 [b]Special Contaiment Procedures:[/b] SCP-895 is sealed closed and stored in an isolated underground containment cell at a depth of approximately 100 meters. No cameras, microphones, or other surveillance equipment may be brought within the 10 meter "Red Zone" radius of SCP-895 without express permission from at least two (2) Level 3 personnel.
 Any on-site personnel exhibiting unusual behavior or signs of psychological trauma are to be screened immediately, and removed from the site or terminated as the situation warrants.
@@ -347,12 +282,7 @@ SCP-895 causes disruptions in video and photographic surveillance equipment with
 
 /datum/computer_file/data/SCP_doc/scp939
 	filename = "SCP-939"
-	stored_data = @{"[center][b]KETER: SCP-939[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-939
-
-[b]Object Class:[/b] KETER
+	stored_data = @{"[acs item_number=939 clearance_level=2 containment_class=keter disruption_class=keneq risk_class=danger]
 
 [b]Special Contaiment Procedures:[/b] SCP-939-1, -3, -19, -53, -89, -96, -98, -99, and -109 are kept in Cell 1163-A or 1163-B, 10 m x 10 m x 3 m containment chambers within Armed Bio-Containment Area-14. Both cells are environmentally regulated and negatively pressurized, with walls constructed of reinforced concrete. Access to these cells is regulated by an outer decontamination chamber and inner gas-tight steel security doors. Observation windows are constructed of laminated ballistics glass 10 cm in thickness protected by a 100kV electrified mesh. Humidity is maintained at 100% at a temperature of 16° C. Specimens are monitored at all times via infrared cameras. Level Four authorization is required to access SCP-939, their containment areas, or the observation chambers.
 SCP-939-101 is dismembered and stored in Cryogenic Preservation Tanks 939-101A to 939-101M within Bio-Research Area-12. Access to SCP-939-101 requires authorization by two Clearance Level 3 personnel, one of which must be present for all research and testing. The contents of only one (1) 939-101 tank may be accessed at any given time. Core temperature of SCP-939-101 tissues must be monitored while removed from cryogenic preservation; should core temperature exceed 10° C, tissues are to be returned to their corresponding tank and all testing suspended for a period of seventy-two (72) hours. Barring core temperature exceeding 10° C, research of SCP-939-101 tissues may continue as long as its ramblings and pleas for release may be tolerated.
@@ -370,12 +300,7 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 
 /datum/computer_file/data/SCP_doc/scp999
 	filename = "SCP-999"
-	stored_data = @{"[center][b]SAFE: SCP-999[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-999
-
-[b]Object Class:[/b] SAFE
+	stored_data = @{"[acs item_number=999 clearance_level=1 containment_class=euclid disruption_class=vlam risk_class=notice]
 
 [b]Special Contaiment Procedures:[/b] SCP-999 is allowed to freely roam the facility should it desire to, but otherwise must stay in its pen. Subject is not allowed out of its pen at night or off facility grounds at any time. Pen is to be kept clean and food replaced twice daily. All personnel are allowed inside SCP-999's holding area, but only if they are not assigned to other tasks at the time, or if they are on break. Subject is to be played with when bored and spoken to in a calm, non-threatening tone.
 
@@ -388,12 +313,7 @@ In addition to its playful behavior, SCP-999 seems to love all animals (especial
 
 /datum/computer_file/data/SCP_doc/scp2398
 	filename = "SCP-2398"
-	stored_data = @{"[center][b]SAFE: SCP-2398[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-2398
-
-[b]Object Class:[/b] SAFE
+	stored_data = @{"[acs item_number=2398 clearance_level=2 containment_class=safe disruption_class=vlam risk_class=danger]
 
 [b]Special Contaiment Procedures:[/b] SCP-2398 is contained in a standard high security containment locker at Site-53. Personnel seeking clearance to test SCP-2398 must submit the proper paperwork to the Site-53 Head of Research Administrations office.
 Personnel testing SCP-2398 are forbidden from swinging SCP-2398 towards any other Foundation personnel.
@@ -404,12 +324,7 @@ SCP-2398 displays no anomalous properties when not in use; however, when swung a
 
 /datum/computer_file/data/SCP_doc/scp2427
 	filename = "SCP-2427"
-	stored_data = @{"[center][b]KETER: SCP-2427[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-2427
-
-[b]Object Class:[/b] KETER
+	stored_data = @{"[acs item_number=2427 clearance_level=3 containment_class=keter disruption_class=keneq risk_class=danger]
 
 [b]Special Contaiment Procedures:[/b] SCP-2427-3 is to be fed one live goat once daily; failure to do so will result in a containment breach. No line of sight is to be established between SCP-2427-3 and any personnel. Direct images of SCP-2427-3 are to be considered lethal cognitohazards, and exposure is to be treated with Class-A amnestics.
 
@@ -430,12 +345,7 @@ Any person who directly observes SCP-2427 will begin to have an overwhelming des
 	var/datum/reagent/precedent = GLOB.scp3349_precedent
 	var/datum/reagent/precedentF = GLOB.scp3349_fake_precedent
 
-	stored_data = @{"[center][b]KETER: SCP-3349[/b]
-[h3]FOUNDATION RESEARCH DIVISION[/h3][/center]
-[hr]
-[b]Item #:[/b] SCP-3349
-
-[b]Object Class:[/b] KETER
+	stored_data = @{"[acs item_number=3349 clearance_level=2 containment_class=keter secondary_class=uncontained disruption_class=dark risk_class=caution]
 
 [b]Special Contaiment Procedures:[/b] Individuals affected by SCP-3349 are to be admitted indefinitely as inpatients under routine care in Foundation Long-Term Acute Care facilities so as to not re-expose SCP-3349 to civilian physicians and the medical community at large. Reports of instances are to be intercepted by field agents, who are to use experiential discretion regarding the use of amnestics.
 The cardiac activity of patients admitted with SCP-3349 is to be monitored at all times by a centralized telemetry unit, continuously staffed with two clerical personnel. Instances of SCP-3349 are to be reported by the clerical staff to the nursing staff promptly via an exclusive telephone line. Electrical manifestations of SCP-3349 are to be captured when possible, the printouts catalogued both in the patient's analog and electronic record.
