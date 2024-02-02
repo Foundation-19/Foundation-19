@@ -489,57 +489,103 @@
 	text = replacetext(text, "\[redacted\]", "<span class=\"redacted\">R E D A C T E D</span>")
 	return pencode2html(text)
 
-// text for testing
-// [acs item_number=2105 include_secondary=yes clearance_level=3 containment_class=euclid secondary_class=apollyon secondary_icon=test disruption_class=vlam risk_class=notice]
-
 /// Scans for and replaces pencode ACS formats with usable HTML versions
 /proc/pencode_acs2html(text)
 	// raw text for regex
-	var/regex/scanner = new(@"\[acs item_number=(\w+) include_secondary=(\w+) clearance_level=(\w+) containment_class=(\w+) secondary_class=(\w+) secondary_icon=(\w+) disruption_class=(\w+) risk_class=(\w+)\]", "g")
+	var/regex/scanner_nosecondary = new(@"\[acs item_number=(\w+) clearance_level=(\w+) containment_class=(\w+) disruption_class=(\w+) risk_class=(\w+)\]", "g")
+	var/regex/scanner_secondary = new(@"\[acs item_number=(\w+) clearance_level=(\w+) containment_class=(\w+) secondary_class=(\w+) disruption_class=(\w+) risk_class=(\w+)\]", "g")
 
-	return scanner.Replace(text,
-@{"<div class="acs-hybrid-text-bar acs-$2 acs-hybrid-version acs-clear-$3 acs-$4 acs-$5 acs-$7 acs-$8">
+	var/newtext = text
+
+	newtext = scanner_nosecondary.Replace(newtext,
+@{"<div class="acs-hybrid-text-bar acs-hybrid-version acs-clear-$2 acs-$3 acs-$4 acs-$5">
 <div class="acs-item">
 <span><strong>Item#:</strong>$1</span>
 </div>
 <div class="acs-clear">
-<strong>Clearance Level $3:</strong> <span class="clearance-level-text">Clearance</span>
+<strong>Clearance Level $2:</strong> <span class="clearance-level-text">Clearance</span>
 </div>
 <div class="acs-contain-container">
 <div class="acs-contain">
 <div class="acs-text">
-<span><strong>Containment Class:</strong></span> <span>$4</span>
+<span><strong>Containment Class:</strong></span> <span>$3</span>
 </div>
 <div class="acs-icon">
-<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$4-icon.svg" alt="">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$3-icon.svg" alt="">
 </div>
 </div>
 <div class="acs-secondary">
 <div class="acs-text">
-<span><strong>Secondary Class:</strong></span> <span>$5</span>
+<span><strong>Secondary Class:</strong></span> <span></span>
 </div>
 <div class="acs-icon">
-<img src="$6" alt="">
+<img>
 </div>
 </div>
 </div>
 <div class="acs-disrupt">
 <div class="acs-text">
-<strong>Disruption Class:</strong> <span class="disruption-class-number">#</span>/$7
+<strong>Disruption Class:</strong> <span class="disruption-class-number">#</span>/$4
 </div>
 <div class="acs-icon">
-<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$7-icon.svg" alt="">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$4-icon.svg" alt="">
 </div>
 </div>
 <div class="acs-risk">
 <div class="acs-text">
-<strong>Risk Class:</strong> <span class="risk-class-number">#</span>/$8
+<strong>Risk Class:</strong> <span class="risk-class-number">#</span>/$5
 </div>
 <div class="acs-icon">
-<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$8-icon.svg" alt="">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$5-icon.svg" alt="">
 </div>
 </div>
 </div>"})
+
+	newtext = scanner_secondary.Replace(newtext,
+@{"<div class="acs-hybrid-text-bar acs-yes acs-hybrid-version acs-clear-$2 acs-$3 acs-$4 acs-$5 acs-$6">
+<div class="acs-item">
+<span><strong>Item#:</strong>$1</span>
+</div>
+<div class="acs-clear">
+<strong>Clearance Level $2:</strong> <span class="clearance-level-text">Clearance</span>
+</div>
+<div class="acs-contain-container">
+<div class="acs-contain">
+<div class="acs-text">
+<span><strong>Containment Class:</strong></span> <span>$3</span>
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$3-icon.svg" alt="">
+</div>
+</div>
+<div class="acs-secondary">
+<div class="acs-text">
+<span><strong>Secondary Class:</strong></span> <span>$4</span>
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$4-icon.svg" alt="">
+</div>
+</div>
+</div>
+<div class="acs-disrupt">
+<div class="acs-text">
+<strong>Disruption Class:</strong> <span class="disruption-class-number">#</span>/$5
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$5-icon.svg" alt="">
+</div>
+</div>
+<div class="acs-risk">
+<div class="acs-text">
+<strong>Risk Class:</strong> <span class="risk-class-number">#</span>/$6
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$6-icon.svg" alt="">
+</div>
+</div>
+</div>"})
+
+	return newtext
 
 //Will kill most formatting; not recommended.
 /proc/html2pencode(t)
