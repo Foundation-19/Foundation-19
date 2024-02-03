@@ -92,10 +92,11 @@
 		crash_with("Attempted to pair an airlock filler with no parent airlock specified!")
 
 	filled_airlock = parent_airlock
-	GLOB.destroyed_event.register(filled_airlock, src, .proc/no_airlock)
+	RegisterSignal(filled_airlock, COMSIG_PARENT_QDELETING, .proc/no_airlock)
 
 /obj/airlock_filler_object/proc/no_airlock()
-	GLOB.destroyed_event.unregister(filled_airlock, src)
+	SIGNAL_HANDLER
+	UnregisterSignal(filled_airlock, COMSIG_PARENT_QDELETING)
 	qdel_self()
 
 /// Multi-tile airlocks (using a filler panel) have special handling for movables with PASS_FLAG_GLASS
