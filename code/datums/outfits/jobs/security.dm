@@ -162,7 +162,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/det/grey
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
@@ -178,7 +178,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/det
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
