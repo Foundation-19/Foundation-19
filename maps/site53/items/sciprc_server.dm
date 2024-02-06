@@ -11,7 +11,7 @@
 	server.req_accesses_sysadmin = list(ACCESS_NETWORK)
 
 	for(var/thing in subtypesof(/datum/chatserver_channel/template))
-		var/datum/chatserver_channel/template/channel = new thing()
+		var/datum/chatserver_channel/template/channel = new thing(server)
 
 		server.channel_list += channel
 

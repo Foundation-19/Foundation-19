@@ -58,7 +58,9 @@ const ServerSelect = (props, context) => {
                 onClick={() =>
                   act('PRG_connect_to_server', { uid: server.uid })
                 }>
-                Connect to Server
+                {server.sysadmin
+                  ? 'Connect to Server (sysadmin)'
+                  : 'Connect to Server'}
               </Button>
             </LabeledList.Item>
           ))}

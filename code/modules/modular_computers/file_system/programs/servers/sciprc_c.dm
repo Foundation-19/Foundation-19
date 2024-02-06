@@ -29,6 +29,24 @@
 	/// 0 normally, 1 if editing user access, 2 if editing admin access
 	var/editing_access = 0
 
+/datum/computer_file/program/chatserver_c/proc/handle_new_message(datum/computer_file/program/chatserver/_server, datum/chatserver_channel/_channel, message)
+	if(_server != server)
+		UnregisterSignal(_server, COMSIG_SCIPRC_MESSAGE_SENT)
+		return
+
+	if(_channel == active_channel)
+		return
+
+	unread_channels |= _channel
+
+/datum/computer_file/program/chatserver_c/proc/handle_crash(datum/computer_file/program/chatserver/_server)
+	UnregisterSignal(_server, COMSIG_SERVER_PROGRAM_OFFLINE)
+
+	if(_server != server)
+		return
+
+	error = "Network Error - Server dropped connection."
+
 /datum/computer_file/program/chatserver_c/process_tick()
 	..()
 	if(program_state != PROGRAM_STATE_KILLED)
@@ -45,12 +63,12 @@
 
 	data["error"] = error
 
+	// We grab this here, since it's used so often
+	var/list/u_access = user.GetAccess()
+
 	if(server)
 		data["servername"] = server.server_name
 		data["channels"] = list()
-
-		// We initialize this here, since it's used so often
-		var/list/u_access = user.GetAccess()
 
 		data["sysadmin"] = has_access(server.req_accesses_sysadmin, u_access)
 
@@ -76,6 +94,9 @@
 				"admin" = (data["sysadmin"] || has_access(channel.req_accesses_admin, u_access))
 			))
 
+		data["region_access"] = list()
+		data["region_names"] = list()
+
 		if(editing_access == 1)
 
 			var/list/all_regions = get_all_access_datums_by_region()
@@ -94,7 +115,7 @@
 						))
 
 				data["region_access"] += list(prepared_region)
-				data["region_names"] += get_region_accesses_name(r_index)
+				data["region_names"] += get_region_accesses_name(text2num(r_index))
 
 		if(editing_access == 2)
 
@@ -114,13 +135,14 @@
 						))
 
 				data["region_access"] += list(prepared_region)
-				data["region_names"] += get_region_accesses_name(r_index)
+				data["region_names"] += get_region_accesses_name(text2num(r_index))
 	else
 		data["servers"] = list()
 		for(var/datum/computer_file/program/chatserver/P in ntnet_global.chatservers)
 			data["servers"] += list(list(
 				"uid" = P.computer.network_card.identification_id,
-				"name" = P.server_name
+				"name" = P.server_name,
+				"sysadmin" = has_access(P.req_accesses_sysadmin, u_access)
 			))
 
 	return data
@@ -130,6 +152,12 @@
 		return
 
 	switch(action)
+		if("PRG_reset")
+			server = null
+			active_channel = null
+			editing_access = 0
+			error = null
+			return TRUE
 		if("PRG_connect_to_server")
 			var/datum/computer_file/program/chatserver/new_server
 			for(var/datum/computer_file/program/chatserver/S in ntnet_global.chatservers)
@@ -139,7 +167,8 @@
 			if(!new_server || !new_server.hosting)
 				return FALSE
 			server = new_server
-			// TODO: on-connect stuff goes here
+			RegisterSignal(server, COMSIG_SCIPRC_MESSAGE_SENT, .proc/handle_new_message)
+			RegisterSignal(server, COMSIG_SERVER_PROGRAM_OFFLINE, .proc/handle_crash)
 			return TRUE
 		if("PRG_post")
 			if(isnull(active_channel))	// sanity check
@@ -190,7 +219,7 @@
 			active_channel.title = newname
 			return TRUE
 		if("PRG_new_channel")
-			var/newname = sanitize(tgui_input_text(usr, "Enter new channel name. Leave blank to cancel.", "Add Channel", ""))
+			var/newname = params["new_channel_name"]
 			if(!newname)
 				return
 
@@ -200,6 +229,7 @@
 			return TRUE
 		if("PRG_open_channel")
 			active_channel = server.channel_list[params["id"]]
+			unread_channels -= server.channel_list[params["id"]]
 			return TRUE
 		if("PRG_change_access_user")
 			return active_channel.toggle_access(params["access"], FALSE)

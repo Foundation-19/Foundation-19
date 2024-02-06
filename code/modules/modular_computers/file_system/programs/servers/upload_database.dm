@@ -115,7 +115,7 @@
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += get_region_accesses_name(r_index)
+			data["region_names"] += get_region_accesses_name(text2num(r_index))
 
 	return data
 
