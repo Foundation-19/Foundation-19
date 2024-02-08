@@ -116,8 +116,7 @@
 
 		var/datum/wires/smes/smes_wires = wires
 
-		//yes, I know : operator is ass. No, I can't make this better. Wires is casted to /datum/wires by default by /obj/machinery. :(
-		log_debug("SMES GROUNDING TICK: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick! [ADMIN_JMP(src)]")
+		log_debug("SMES GROUNDING TICK: <b>[x]X [y]Y [z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick! [ADMIN_JMP(src)]")
 
 	..()
 
