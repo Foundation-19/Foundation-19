@@ -21612,14 +21612,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
-"cXH" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
-/area/site53/engineering/controlroom)
 "cXI" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
@@ -58867,7 +58859,7 @@ apd
 ajV
 ajV
 ajV
-cXH
+ajV
 aaw
 aaw
 aaw
