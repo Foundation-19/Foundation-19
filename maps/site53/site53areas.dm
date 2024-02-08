@@ -1029,6 +1029,12 @@
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/engineering/aux_generators
+	name = "\improper Auxiliary Generators"
+	icon_state = "engine_smes"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/engineering/biosupplies
 	name = "\improper Engineering Bio supplies"
 	icon_state = "engine_smes"
