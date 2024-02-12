@@ -433,7 +433,7 @@
 	target.visible_message(SPAN_DANGER(SPAN_BOLD("The lifeless corpse of [target] begins to convulse violently!")))
 	target.humanStageHandler.setStage("Pestilence", 0)
 
-	target.make_jittery(300)
+	target.adjust_jitter(30 SECONDS)
 	target.adjustBruteLoss(100)
 
 	addtimer(CALLBACK(src, .proc/FinishPlagueDoctorCure, target), 15 SECONDS)
