@@ -14823,9 +14823,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
-"aRW" = (
-/turf/simulated/floor/reinforced,
-/area/space)
 "aRX" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -24287,23 +24284,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmtunnel)
-"gbS" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/structure/closet,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/pistol/military{
-	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC."
-	},
-/obj/item/storage/belt/holster/security,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/storage/backpack/rucksack/blue,
-/obj/item/clothing/under/solgov/utility/marine/tan,
-/obj/item/clothing/shoes/tactical,
-/obj/item/clothing/gloves/tactical,
-/turf/simulated/floor/reinforced,
-/area/space)
 "gci" = (
 /obj/structure/closet/secure_closet/guard/lcz,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -30736,25 +30716,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
-"mVc" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/turf/simulated/floor/reinforced,
-/area/space)
 "mVs" = (
 /obj/machinery/camera/network/hcz{
 	dir = 4
@@ -31047,13 +31008,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
-"nks" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/adv,
-/turf/simulated/floor/reinforced,
-/area/space)
 "nmq" = (
 /obj/structure/table/standard,
 /obj/item/storage/toolbox/mechanical,
@@ -34587,15 +34541,6 @@
 /obj/machinery/vending/games,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
-"rpY" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/turf/simulated/floor/reinforced,
-/area/space)
 "rqf" = (
 /obj/structure/reagent_dispensers/water_cooler{
 	dir = 4
@@ -35652,23 +35597,6 @@
 /obj/structure/bed/chair/padded/black,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
-"sAN" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/structure/closet,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/pistol/military{
-	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC."
-	},
-/obj/item/storage/belt/holster/security,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/storage/backpack/rucksack/blue,
-/obj/item/clothing/under/solgov/utility/marine/tan,
-/obj/item/clothing/shoes/tactical,
-/obj/item/clothing/gloves/tactical,
-/turf/simulated/floor/reinforced,
-/area/space)
 "sAO" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity,
@@ -36398,10 +36326,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
-"tsw" = (
-/obj/machinery/acting/changer,
-/turf/simulated/floor/reinforced,
-/area/space)
 "tsz" = (
 /obj/machinery/light,
 /obj/structure/sign/scp/safe_scp{
@@ -88422,9 +88346,9 @@ azA
 azA
 azA
 azA
-bcV
-bcV
-bcV
+azA
+azA
+azA
 azA
 azA
 azA
@@ -88677,13 +88601,13 @@ azA
 azA
 azA
 azA
-bcV
-bcV
-bcV
-tsw
-bcV
-bcV
-bcV
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -88934,13 +88858,13 @@ aoE
 azA
 azA
 azA
-bcV
-gbS
-aRW
-aRW
-aRW
-gbS
-bcV
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -89191,13 +89115,13 @@ aFC
 azA
 azA
 azA
-bcV
-gbS
-aRW
-aRW
-aRW
-sAN
-bcV
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -89448,13 +89372,13 @@ aFC
 azA
 azA
 azA
-bcV
-gbS
-aRW
-aRW
-aRW
-gbS
-bcV
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -89705,13 +89629,13 @@ aFC
 azA
 azA
 azA
-bcV
-mVc
-rpY
-nks
-rpY
-mVc
-bcV
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -89962,13 +89886,13 @@ aFC
 azA
 azA
 azA
-bcV
-bcV
-bcV
-bcV
-bcV
-bcV
-bcV
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
