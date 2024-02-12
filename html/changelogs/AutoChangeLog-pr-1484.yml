@@ -1,0 +1,7 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: Added a button in the lower right of the UI that shows facing direction.
+      Clicking the button allows you to quickly face a direction (same as if you used
+      the verb).
+  - imageadd: Cleaned up icon folder.

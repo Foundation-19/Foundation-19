@@ -103,3 +103,14 @@
       it plays casing drop sounds now.
   - bugfix: Chemical Dispenser in DCZ medical now has cartridges.
   - tweak: Defibrilator will now properly display its messages.
+2024-01-07:
+  projectkepler-ru:
+  - rscadd: Investigation Agent, Officer now have sunglasses as they should.
+2024-01-09:
+  TheDarkElites:
+  - bugfix: 012 not working
+  - bugfix: 151 not working
+  - bugfix: anything else this broke
+2024-01-12:
+  EgorDinamit:
+  - bugfix: Cross-server comms news report on evacuation gets sent properly now.

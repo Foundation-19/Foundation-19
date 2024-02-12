@@ -3,6 +3,7 @@
 	assets = list(
 		"tgui.bundle.js" = file("tgui/public/tgui.bundle.js"),
 		"tgui.bundle.css" = file("tgui/public/tgui.bundle.css"),
+		"tgui.acs.css" = file("html/acs.css"),
 	)
 
 /datum/asset/simple/tgui_panel

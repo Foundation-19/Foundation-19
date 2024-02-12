@@ -1,5 +1,5 @@
 /atom/movable/screen/psi
-	icon = 'icons/screen/psi.dmi'
+	icon = 'icons/hud/psi.dmi'
 	var/mob/living/owner
 	var/hidden = TRUE
 
