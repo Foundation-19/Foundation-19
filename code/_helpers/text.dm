@@ -413,6 +413,7 @@
 #define strip_improper(input_text) replacetext(replacetext(input_text, "\proper", ""), "\improper", "")
 
 /proc/pencode2html(t)
+	t = pencode_acs2html(t)
 	t = replacetext(t, "\n", "<BR>")
 	t = replacetext(t, "\[center\]", "<center>")
 	t = replacetext(t, "\[/center\]", "</center>")
@@ -438,8 +439,12 @@
 	t = replacetext(t, "\[hr\]", "<HR>")
 	t = replacetext(t, "\[small\]", "<font size = \"1\">")
 	t = replacetext(t, "\[/small\]", "</font>")
-	t = replacetext(t, "\[list\]", "<ul>")
+	t = replacetext(t, "\[ulist\]", "<ul>")
+	t = replacetext(t, "\[/ulist\]", "</ul>")
+	t = replacetext(t, "\[list\]", "<ul>")		// kept for backwards compatability with pre-existing pencode
 	t = replacetext(t, "\[/list\]", "</ul>")
+	t = replacetext(t, "\[olist\]", "<ol>")
+	t = replacetext(t, "\[/olist\]", "</ol>")
 	t = replacetext(t, "\[table\]", "<table border=1 cellspacing=0 cellpadding=3 style='border: 1px solid black;'>")
 	t = replacetext(t, "\[/table\]", "</td></tr></table>")
 	t = replacetext(t, "\[grid\]", "<table>")
@@ -484,6 +489,104 @@
 	text = replacetext(text, "\[redacted\]", "<span class=\"redacted\">R E D A C T E D</span>")
 	return pencode2html(text)
 
+/// Scans for and replaces pencode ACS formats with usable HTML versions
+/proc/pencode_acs2html(text)
+	// raw text for regex
+	var/regex/scanner_nosecondary = new(@"\[acs item_number=(\w+) clearance_level=(\w+) containment_class=(\w+) disruption_class=(\w+) risk_class=(\w+)\]", "g")
+	var/regex/scanner_secondary = new(@"\[acs item_number=(\w+) clearance_level=(\w+) containment_class=(\w+) secondary_class=(\w+) disruption_class=(\w+) risk_class=(\w+)\]", "g")
+
+	var/newtext = text
+
+	newtext = scanner_nosecondary.Replace(newtext,
+@{"<div class="acs-hybrid-text-bar acs-hybrid-version acs-clear-$2 acs-$3 acs-$4 acs-$5">
+<div class="acs-item">
+<span><strong>Item#:</strong>$1</span>
+</div>
+<div class="acs-clear">
+<strong>Clearance Level $2:</strong> <span class="clearance-level-text">Clearance</span>
+</div>
+<div class="acs-contain-container">
+<div class="acs-contain">
+<div class="acs-text">
+<span><strong>Containment Class:</strong></span> <span>$3</span>
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$3-icon.svg" alt="">
+</div>
+</div>
+<div class="acs-secondary">
+<div class="acs-text">
+<span><strong>Secondary Class:</strong></span> <span></span>
+</div>
+<div class="acs-icon">
+<img>
+</div>
+</div>
+</div>
+<div class="acs-disrupt">
+<div class="acs-text">
+<strong>Disruption Class:</strong> <span class="disruption-class-number">#</span>/$4
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$4-icon.svg" alt="">
+</div>
+</div>
+<div class="acs-risk">
+<div class="acs-text">
+<strong>Risk Class:</strong> <span class="risk-class-number">#</span>/$5
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$5-icon.svg" alt="">
+</div>
+</div>
+</div>"})
+
+	newtext = scanner_secondary.Replace(newtext,
+@{"<div class="acs-hybrid-text-bar acs-yes acs-hybrid-version acs-clear-$2 acs-$3 acs-$4 acs-$5 acs-$6">
+<div class="acs-item">
+<span><strong>Item#:</strong>$1</span>
+</div>
+<div class="acs-clear">
+<strong>Clearance Level $2:</strong> <span class="clearance-level-text">Clearance</span>
+</div>
+<div class="acs-contain-container">
+<div class="acs-contain">
+<div class="acs-text">
+<span><strong>Containment Class:</strong></span> <span>$3</span>
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$3-icon.svg" alt="">
+</div>
+</div>
+<div class="acs-secondary">
+<div class="acs-text">
+<span><strong>Secondary Class:</strong></span> <span>$4</span>
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$4-icon.svg" alt="">
+</div>
+</div>
+</div>
+<div class="acs-disrupt">
+<div class="acs-text">
+<strong>Disruption Class:</strong> <span class="disruption-class-number">#</span>/$5
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$5-icon.svg" alt="">
+</div>
+</div>
+<div class="acs-risk">
+<div class="acs-text">
+<strong>Risk Class:</strong> <span class="risk-class-number">#</span>/$6
+</div>
+<div class="acs-icon">
+<img src="http://scp-wiki.wdfiles.com/local--files/component%3Aanomaly-class-bar/$6-icon.svg" alt="">
+</div>
+</div>
+</div>"})
+
+	return newtext
+
 //Will kill most formatting; not recommended.
 /proc/html2pencode(t)
 	t = replacetext(t, "<pre>", "\[pre\]")
@@ -510,8 +613,8 @@
 	t = replacetext(t, "</H3>", "\[/h3\]")
 	t = replacetext(t, "<li>", "\[*\]")
 	t = replacetext(t, "<HR>", "\[hr\]")
-	t = replacetext(t, "<ul>", "\[list\]")
-	t = replacetext(t, "</ul>", "\[/list\]")
+	t = replacetext(t, "<ul>", "\[ulist\]")
+	t = replacetext(t, "</ul>", "\[/ulist\]")
 	t = replacetext(t, "<table>", "\[grid\]")
 	t = replacetext(t, "</table>", "\[/grid\]")
 	t = replacetext(t, "<tr>", "\[row\]")

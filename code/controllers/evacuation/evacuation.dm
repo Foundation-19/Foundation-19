@@ -91,6 +91,8 @@ var/datum/evacuation_controller/evacuation_controller
 		if(!skip_announce)
 			priority_announcement.Announce(replacetext(replacetext(GLOB.using_map.shuttle_called_message, "%dock_name%", "[GLOB.using_map.dock_name]"),  "%ETA%", "[round(get_eta()/60)] minute\s"))
 
+	SSticker.news_report = max(SSticker.news_report, FACILITY_EVACUATED) // TODO: If we ever use more options - move it elsewhere and add more
+
 	return 1
 
 /datum/evacuation_controller/proc/cancel_evacuation()

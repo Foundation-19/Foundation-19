@@ -7,7 +7,7 @@
 	blood_color = "#622a37"
 	flesh_color = "#442A37"
 	death_message = "writhes and twitches before falling motionless."
-	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN
+	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_DISEASE
 	spawn_flags = SPECIES_IS_RESTRICTED
 	brute_mod = 1
 	burn_mod = 2.5 //Vulnerable to fire
@@ -183,81 +183,3 @@
 		to_chat(usr, SPAN_WARNING("They are free from the pestilence!"))
 		return FALSE
 	return TRUE
-
-/mob/living/carbon/human/proc/SCP049_cure()
-	if (!(species.name in GLOB.zombie_species) || isspecies(src, SPECIES_DIONA) || isspecies(src, SPECIES_SCP049_1) || isSynthetic() || !humanStageHandler.getStage("Pestilence"))
-		return
-
-	if (mind)
-		if (mind.special_role == ANTAG_SCP049_1)
-			return
-		mind.special_role = ANTAG_SCP049_1
-
-	var/turf/T = get_turf(src)
-	new /obj/effect/decal/cleanable/blood(T)
-	playsound(T, 'sounds/effects/splat.ogg', 20, 1)
-
-	var/SCP049_instance_count = 1
-	for(var/mob/living/carbon/human/instance in GLOB.SCP_list)
-		if(isspecies(instance, SPECIES_SCP049_1))
-			SCP049_instance_count++
-
-	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_EUCLID, //Obj Class
-		"049-[SCP049_instance_count]", //Numerical Designation
-		SCP_PLAYABLE
-	)
-
-	addtimer(CALLBACK(src, .proc/transform_049_1_instance), 2 SECONDS)
-
-/mob/living/carbon/human/proc/transform_049_1_instance()
-	visible_message(SPAN_DANGER(SPAN_BOLD("The lifeless corpse of [src] begins to convulse violently!")))
-	humanStageHandler.setStage("Pestilence", 0)
-
-	make_jittery(300)
-	adjustBruteLoss(100)
-	sleep(150)
-
-	if (QDELETED(src))
-		return
-
-	if (isspecies(src, SPECIES_SCP049_1))
-		return
-
-	rejuvenate()
-	ChangeToHusk()
-	visible_message(SPAN_DANGER("\The [src]'s skin decays before your very eyes!"), SPAN_DANGER("You feel the last of your mind drift away... You must follow the one who cured you of your wretched disease."))
-	log_admin("[key_name(src)] has transformed into an instance of 049-1!")
-
-	Weaken(4)
-	jitteriness = 0
-	dizziness = 0
-	hallucination_power = 0
-	hallucination_duration = 0
-	if (should_have_organ(BP_HEART))
-		vessel.add_reagent(/datum/reagent/blood, species.blood_volume - vessel.total_volume)
-	for (var/obj/item/organ/organ in organs)
-		organ.vital = 0
-		if (!BP_IS_ROBOTIC(organ))
-			organ.rejuvenate(1)
-			organ.max_damage *= 2
-			organ.min_broken_damage = Floor(organ.max_damage * 0.75)
-
-	resuscitate()
-	set_stat(CONSCIOUS)
-
-	if (skillset && skillset.skill_list)
-		skillset.skill_list = list()
-		for(var/decl/hierarchy/skill/S in GLOB.skills) //Only want trained CQC and athletics
-			skillset.skill_list[S.type] = SKILL_UNTRAINED
-		skillset.skill_list[SKILL_HAULING] = SKILL_TRAINED
-		skillset.skill_list[SKILL_COMBAT] = SKILL_TRAINED
-		skillset.on_levels_change()
-
-	species = all_species[SPECIES_SCP049_1]
-	species.handle_post_spawn(src)
-
-	var/turf/T = get_turf(src)
-	playsound(T, 'sounds/hallucinations/wail.ogg', 25, 1)
