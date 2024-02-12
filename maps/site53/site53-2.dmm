@@ -2490,6 +2490,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
+"aie" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp078)
 "aig" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -36877,13 +36881,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
-"tXl" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/wall/titanium,
-/area/site53/ulcz/scp2427_3)
 "tXn" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -44495,8 +44492,8 @@ azA
 ahX
 aie
 ahg
-aia
-aia
+aie
+aie
 aJN
 aKE
 aFQ
@@ -44750,7 +44747,7 @@ aVS
 azA
 azA
 ahX
-aia
+aie
 hAF
 arD
 avo
