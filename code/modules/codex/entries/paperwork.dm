@@ -20,7 +20,8 @@
 \[row\] : New table row.<br>
 \[cell\] : New table cell.<br>
 \[hr\] : Adds a horizontal rule.<br>
-\[list\] - \[/list\] : A list. (Does not work with crayons)<br>
+\[ulist\] - \[/ulist\] : An unordered list. (Does not work with crayons)<br>
+\[olist\] - \[/olist\] : An ordered list. (Does not work with crayons)<br>
 \[*\] : A dot used for lists. (Does not work with crayons)<br>
 \[scplogo\] : Inserts the SCP Foundation logo.<br>
 \[ethicslogo\] : Inserts the Ethics Committee logo.<br>
@@ -45,6 +46,8 @@
 \[cilogo\] : Inserts the Chaos Insurgency logo.<br>
 \[shlogo\] : Inserts the Serpent's Hand logo.<br>
 \[cotbglogo\] : Inserts the Church of the Broken God logo.<br><br>
+\[acs item_number= clearance_level= containment_class= disruption_class= risk_class=\] : Creates an ACS bar without a secondary class. Put data after the equal signs of their respective entries (e.g. containment_class=keter)
+\[acs item_number= clearance_level= containment_class= secondary_class= disruption_class= risk_class=\] : Creates an ACS bar with a secondary class.
 <b>Digital exclusive commands (NanoWord, emails, reports, text files, etc):</b><br>
 \[pre\] - \[/pre\] : Adds preformatted text, forcing the text to be fixed width.<br>
 \[fontred\] - \[/font\] : Makes the text red.<br>
