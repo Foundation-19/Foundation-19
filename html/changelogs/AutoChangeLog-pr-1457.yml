@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - balance: RAISA Agent has higher security access, matching Senior EZ Agents.
+  - bugfix: RAISA Agent can't be an antagonist anymore.

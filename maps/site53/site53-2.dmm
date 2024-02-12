@@ -2494,10 +2494,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
-"aie" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp078)
 "aig" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -15888,12 +15884,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
-"aWq" = (
-/obj/effect/floor_decal/industrial/fire{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/site53/ulcz/scp2427_3)
 "aWr" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -35701,6 +35691,7 @@
 /area/site53/uhcz/generalpurpose3)
 "sBC" = (
 /obj/structure/table/steel_reinforced,
+/obj/item/paper/scp012,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "sCI" = (
@@ -36883,6 +36874,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"tXl" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/scp2427_3)
 "tXn" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -44494,8 +44492,8 @@ azA
 ahX
 aia
 ahg
-aie
-aie
+aia
+aia
 aJN
 aKE
 aFQ
@@ -44749,7 +44747,7 @@ aVS
 azA
 azA
 ahX
-aie
+aia
 hAF
 arD
 avo
@@ -79123,12 +79121,12 @@ azA
 azA
 azA
 azA
-bIm
-bIm
-bIm
-bIm
-bIm
-bIm
+azA
+azA
+azA
+azA
+azA
+azA
 tNk
 aKN
 xNg
@@ -79379,14 +79377,14 @@ azA
 azA
 azA
 azA
+azA
 bIm
 bIm
-xDM
-ljc
-xGw
-mLD
-icV
-crW
+bIm
+bIm
+bIm
+bIm
+tXl
 ybV
 aVl
 aKM
@@ -79637,13 +79635,13 @@ azA
 azA
 azA
 bIm
-oBp
-dOs
-hzp
-hzp
-hzp
-ube
 bIm
+xDM
+ljc
+xGw
+mLD
+icV
+crW
 bIm
 bIm
 bIm
@@ -79894,12 +79892,12 @@ azA
 azA
 azA
 bIm
-qvi
+oBp
+dOs
 hzp
 hzp
 hzp
-hzp
-wip
+ube
 bIm
 hGF
 mBn
@@ -80151,12 +80149,12 @@ azA
 azA
 azA
 bIm
-aWq
+qvi
 hzp
 hzp
 hzp
 hzp
-ube
+wip
 bIm
 chW
 chW
@@ -80665,12 +80663,12 @@ azA
 azA
 azA
 bIm
-aWq
+qvi
 hzp
 hzp
 hzp
 hzp
-ube
+wip
 bIm
 lMF
 lMF
@@ -80922,12 +80920,12 @@ azA
 azA
 azA
 bIm
-qvi
+eXV
+hRZ
 hzp
 hzp
 hzp
-hzp
-wip
+mOX
 bIm
 xDp
 fte
@@ -81179,12 +81177,12 @@ azA
 azA
 azA
 bIm
-eXV
-hRZ
-hzp
-hzp
-hzp
-mOX
+bIm
+ffJ
+gxR
+mwm
+gxR
+qro
 bIm
 bIm
 nNV
@@ -81435,13 +81433,13 @@ azA
 azA
 azA
 azA
+azA
 bIm
 bIm
-ffJ
-gxR
-mwm
-gxR
-qro
+bIm
+bIm
+bIm
+bIm
 bIm
 xjn
 hAR
@@ -81693,12 +81691,12 @@ azA
 azA
 azA
 azA
-bIm
-bIm
-bIm
-bIm
-bIm
-bIm
+azA
+azA
+azA
+azA
+azA
+azA
 bIm
 nOJ
 sJk

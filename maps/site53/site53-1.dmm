@@ -4404,6 +4404,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkpoint)
+"kq" = (
+/obj/item/modular_computer/console/preset/paperwork_dataserver{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/engineering/server_room)
 "kr" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Library"
@@ -49580,7 +49586,7 @@ Cg
 ur
 aZ
 aI
-CA
+kq
 Df
 CA
 aZ
