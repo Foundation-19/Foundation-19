@@ -20,6 +20,7 @@
 #define GRAB_NAB			"nab"
 #define GRAB_NAB_SPECIAL	"special nab"
 #define GRAB_ABOMINATION	"terrifying grab"
+#define GRAB_PLAGUE_DOCTOR	"plague arm"
 
 // Grab levels.
 #define NORM_PASSIVE    "normal passive"
@@ -35,6 +36,9 @@
 #define GRAB_ABOMINATION_PASSIVE 	"terrifying grab passive"
 #define GRAB_ABOMINATION_AGGRESSIVE "terrifying grab aggressive"
 #define GRAB_ABOMINATION_KILL 		"terrifying grab kill"
+
+#define GRAB_PLAGUE_DOCTOR_PASSIVE		"plague arm passive"
+#define GRAB_PLAGUE_DOCTOR_AGGRESSIVE	"plague arm aggressive"
 
 #define BORGMESON       (1<<0)
 #define BORGTHERM       (1<<1)

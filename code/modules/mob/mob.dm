@@ -1050,6 +1050,13 @@
 
 		balloon_alert(src, "not facing")
 
+	if(hud_used)
+		if(isnull(facing_dir))
+			hud_used.facedir_button?.icon_state = "facedir"
+		else
+			hud_used.facedir_button?.icon_state = "facedir1"
+			hud_used.facedir_button?.dir = facing_dir
+
 /mob/set_dir()
 	if(facing_dir)
 		if(!canface() || lying || restrained())
