@@ -2467,10 +2467,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp078)
-"aia" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp078)
 "aib" = (
 /obj/structure/closet/l3closet/scientist/multi,
 /obj/machinery/light{
@@ -36598,6 +36594,13 @@
 /obj/item/folder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"tAC" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/scp2427_3)
 "tBJ" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -44490,7 +44493,7 @@ aVS
 azA
 azA
 ahX
-aia
+aie
 ahg
 aia
 aia
@@ -79384,7 +79387,7 @@ bIm
 bIm
 bIm
 bIm
-tXl
+tAC
 ybV
 aVl
 aKM
