@@ -242,8 +242,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/canteen)
@@ -322,8 +322,8 @@
 "bb" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -356,8 +356,8 @@
 "bp" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id_tag = "EZ Lobby Outter Lockdown";
-	name = "EZ Lobby Outter Lockdown";
+	id_tag = "EZ Lobby Outer Lockdown";
+	name = "EZ Lobby Outer Lockdown";
 	begins_closed = 0
 	},
 /obj/machinery/door/airlock/multi_tile/glass/security{
@@ -561,8 +561,8 @@
 "bY" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/button/blast_door{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown";
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
@@ -578,8 +578,8 @@
 	name = "Senior Administrative Offices"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -606,8 +606,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk"
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -906,8 +906,8 @@
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk"
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk"
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -1310,8 +1310,8 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/structure/window/reinforced,
 /obj/machinery/button/blast_door{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown";
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/carpet/blue,
@@ -1342,8 +1342,8 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk";
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -1451,12 +1451,12 @@
 "ep" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk"
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -1661,8 +1661,8 @@
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -1685,8 +1685,8 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown";
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -4235,8 +4235,8 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "EZ Lobby Outter Lockdown";
-	name = "EZ Lobby Outter Lockdown";
+	id_tag = "EZ Lobby Outer Lockdown";
+	name = "EZ Lobby Outer Lockdown";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -5162,8 +5162,8 @@
 "yq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id_tag = "EZ Lobby Outter Lockdown";
-	name = "EZ Lobby Outter Lockdown";
+	id_tag = "EZ Lobby Outer Lockdown";
+	name = "EZ Lobby Outer Lockdown";
 	begins_closed = 0
 	},
 /obj/structure/cable/green{
@@ -5264,8 +5264,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Brig CR Access Outter";
-	name = "EZ Brig CR Access Outter";
+	id_tag = "EZ Brig CR Access Outer";
+	name = "EZ Brig CR Access Outer";
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/dark,
@@ -8459,8 +8459,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Brig CR Access Outter";
-	name = "EZ Brig CR Access Outter";
+	id_tag = "EZ Brig CR Access Outer";
+	name = "EZ Brig CR Access Outer";
 	pixel_y = 25;
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
