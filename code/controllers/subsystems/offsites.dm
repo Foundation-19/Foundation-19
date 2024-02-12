@@ -8,12 +8,12 @@ SUBSYSTEM_DEF(offsites)
 	/// Associative list. Key is the offsite type, value is the offsite ref
 	var/list/offsites = list()
 
-/datum/controller/subsystem/offsite/Initialize(timeofday)
+/datum/controller/subsystem/offsites/Initialize(timeofday)
 	initialize_offsites()
 	return ..()
 
 ///Ran on initialize, populates the addiction dictionary
-/datum/controller/subsystem/offsite/proc/initialize_offsites()
+/datum/controller/subsystem/offsites/proc/initialize_offsites()
 	for(var/type in subtypesof(/datum/offsite))
 		if(is_abstract(type))
 			continue
@@ -21,13 +21,13 @@ SUBSYSTEM_DEF(offsites)
 		var/datum/offsite/ref = new type
 		offsites[type] = ref
 
-/datum/controller/subsystem/offsite/tgui_interact(mob/user, datum/tgui/ui)
+/datum/controller/subsystem/offsites/tgui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		ui = new(user, src, "OffsitePanel", "Offsites")
 		ui.open()
 
-/datum/controller/subsystem/offsite/tgui_data(mob/user)
+/datum/controller/subsystem/offsites/tgui_data(mob/user)
 	var/list/data = list()
 
 	for(var/key in offsites)
@@ -60,7 +60,7 @@ SUBSYSTEM_DEF(offsites)
 
 	return data
 
-/datum/controller/subsystem/offsite/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+/datum/controller/subsystem/offsites/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return
 
@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(offsites)
 			var/datum/offsite/cur_os = offsites[params["id"]]
 
 
-/datum/controller/subsystem/offsite/tgui_state(mob/user)
+/datum/controller/subsystem/offsites/tgui_state(mob/user)
 	return GLOB.admin_tgui_state
 
 // TODO: track interception separately for each offsite + methods that bypass interception?
@@ -91,3 +91,4 @@ SUBSYSTEM_DEF(offsites)
 					return
 
 	var/datum/offsite/os = SSoffsites.offsites[offsite_type]
+	os.receive_message(msg, sender)

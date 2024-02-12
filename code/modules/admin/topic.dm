@@ -1271,23 +1271,6 @@
 		else
 			to_chat(src.owner, "The person you are trying to contact does not have functional radio equipment.")
 
-
-	else if(href_list["SyndicateReply"])
-		var/mob/living/carbon/human/H = locate(href_list["SyndicateReply"])
-		if(!istype(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human")
-			return
-		if(!istype(H.l_ear, /obj/item/device/radio/headset) && !istype(H.r_ear, /obj/item/device/radio/headset))
-			to_chat(usr, "The person you are trying to contact is not wearing a headset")
-			return
-
-		var/input = sanitize(input(src.owner, "Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from a shadowy figure...", ""))
-		if(!input)	return
-
-		to_chat(src.owner, "You sent [input] to [H] via a secure channel.")
-		log_admin("[src.owner] replied to [key_name(H)]'s illegal message with the message [input].")
-		to_chat(H, "You hear something crackle in your headset for a moment before a voice speaks.  \"Please stand by for a message from your benefactor.  Message as follows, agent. <b>\"[input]\"</b>  Message ends.\"")
-
 	else if(href_list["AdminFaxView"])
 		var/obj/item/fax = locate(href_list["AdminFaxView"])
 		if (istype(fax, /obj/item/paper))
