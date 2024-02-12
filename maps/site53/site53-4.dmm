@@ -242,8 +242,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown"
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/canteen)
@@ -322,8 +322,8 @@
 "bb" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown"
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -339,8 +339,8 @@
 "be" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Director Office Checkpoint Windowss";
-	name = "Director Office Checkpoint Windowss"
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -356,8 +356,8 @@
 "bp" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id_tag = "EZ Lobby Outer Lockdown";
-	name = "EZ Lobby Outer Lockdown";
+	id_tag = "EZ Lobby Outter Lockdown";
+	name = "EZ Lobby Outter Lockdown";
 	begins_closed = 0
 	},
 /obj/machinery/door/airlock/multi_tile/glass/security{
@@ -417,7 +417,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "facilityLockdown";
+	id_tag = "facilitylockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -561,8 +561,8 @@
 "bY" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/button/blast_door{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown";
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
@@ -578,8 +578,8 @@
 	name = "Senior Administrative Offices"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown"
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -599,15 +599,15 @@
 /area/site53/uez/hallway)
 "cc" = (
 /obj/structure/table/standard,
-/obj/machinery/door/Windows/brigdoor/westleft{
+/obj/machinery/door/window/brigdoor/westleft{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/obj/machinery/door/Windows/brigdoor/eastright{
+/obj/machinery/door/window/brigdoor/eastright{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkpoint Desk";
-	name = "Site Director Office Checkpoint Desk"
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -725,7 +725,7 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
@@ -733,17 +733,17 @@
 "cw" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cx" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/cable/green{
@@ -772,7 +772,7 @@
 "cz" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect2";
-	name = "inner SD Lockdown"
+	name = "inner SD lockdown"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -898,18 +898,18 @@
 /area/site53/uez/mcrsubstation)
 "cQ" = (
 /obj/structure/table/standard,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkpoint Desk";
-	name = "Site Director Office Checkpoint Desk"
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk"
 	},
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "cS" = (
@@ -946,7 +946,7 @@
 /area/site53/uez/hallway)
 "cV" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/door/Windows/holowindoor{
+/obj/machinery/door/window/holowindoor{
 	dir = 4;
 	id_tag = "sitedirect";
 	req_access = list("ACCESS_ADMIN_LEVEL5")
@@ -983,7 +983,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/door/Windows/holowindoor{
+/obj/machinery/door/window/holowindoor{
 	id_tag = "sitedirect";
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
@@ -1007,8 +1007,8 @@
 /area/site53/uez/hallway)
 "db" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/structure/Windows/reinforced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
@@ -1023,8 +1023,8 @@
 "de" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Director Office Checkpoint Windowss";
-	name = "Director Office Checkpoint Windowss"
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1086,12 +1086,12 @@
 "dk" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "facilityLockdown";
+	id_tag = "facilitylockdown";
 	name = "Facility Lockdown button"
 	},
 /obj/structure/table/standard,
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/structure/Windows/basic/full{
+/obj/structure/window/basic/full{
 	name = "Safety Glass"
 	},
 /turf/simulated/floor/tiled,
@@ -1308,10 +1308,10 @@
 /area/site53/uez/hallway)
 "dY" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/machinery/button/blast_door{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown";
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/carpet/blue,
@@ -1342,15 +1342,15 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "Site Director Office Checkpoint Desk";
+	id_tag = "Site Director Office Checkkpoint Desk";
 	name = "Site Director Office Checkpoint Desk";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "Director Office Checkpoint Windowss";
-	name = "Director Office Checkpoint Windowss";
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -1451,12 +1451,12 @@
 "ep" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkpoint Desk";
-	name = "Site Director Office Checkpoint Desk"
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown"
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -1474,7 +1474,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "facilityLockdown";
+	id_tag = "facilitylockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -1502,7 +1502,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "facilityLockdown";
+	id_tag = "facilitylockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -1635,7 +1635,7 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
-/obj/structure/Windows/basic/full{
+/obj/structure/window/basic/full{
 	anchored = 0;
 	health_current = 5;
 	name = "Safety Glass"
@@ -1643,7 +1643,7 @@
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/button/blast_door{
 	anchored = 0;
-	id_tag = "facilityLockdown";
+	id_tag = "facilitylockdown";
 	name = "Facility Lockdown button";
 	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
@@ -1661,8 +1661,8 @@
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown"
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -1685,8 +1685,8 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown";
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -1726,8 +1726,8 @@
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Bridge Windowss Shutter";
-	name = "EZ Bridge Windowss Shutter";
+	id_tag = "EZ Bridge Windows Shutter";
+	name = "EZ Bridge Windows Shutter";
 	pixel_y = 2;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -2003,7 +2003,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id_tag = "facilityLockdown";
+	id_tag = "facilitylockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -2770,16 +2770,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
-"iS" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/flasher{
-	id_tag = "EZBrigFlash";
-	name = "EZBrigFlash"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "iT" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Logistics Breakroom";
@@ -3553,7 +3543,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "lc" = (
-/obj/machinery/door/Windows/holowindoor{
+/obj/machinery/door/window/holowindoor{
 	req_access = list("ACCESS_ADMIN_LEVEL3");
 	dir = 4
 	},
@@ -3677,10 +3667,10 @@
 /area/site53/uez/equipmentroom)
 "mf" = (
 /obj/structure/bed/chair/padded/black,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/red,
@@ -3971,7 +3961,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "on" = (
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/photocopier/faxmachine{
 	department = "Site Director's Office";
@@ -4035,7 +4025,7 @@
 "ph" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/red,
@@ -4236,14 +4226,14 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "EZ Lobby Outer Lockdown";
+	id_tag = "EZ Lobby Outter Lockdown";
 	name = "EZ Lobby Outer Lockdown";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Lobby Windowss";
-	name = "EZ Lobby Windowss";
+	id_tag = "EZ Lobby Windows";
+	name = "EZ Lobby Windows";
 	pixel_y = 25;
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
@@ -4326,15 +4316,15 @@
 /area/site53/uez/commandpanicbunker)
 "rs" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/Windows/brigdoor/northleft{
+/obj/machinery/door/window/brigdoor/northleft{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
-/obj/machinery/door/Windows/brigdoor/southright{
+/obj/machinery/door/window/brigdoor/southright{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Brig CR Windowss";
-	name = "EZ Brig CR Windowss"
+	id_tag = "EZ Brig CR Windows";
+	name = "EZ Brig CR Windows"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -4366,7 +4356,7 @@
 "rD" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
@@ -4470,10 +4460,10 @@
 /area/site53/uez/equipmentroom)
 "sj" = (
 /obj/structure/bed/chair/padded/black,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/orange,
@@ -4585,7 +4575,7 @@
 "tC" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/machinery/light,
@@ -4619,7 +4609,7 @@
 /area/site53/uez/hallway)
 "ua" = (
 /obj/structure/table/steel,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/item/device/flashlight/lamp,
@@ -4638,10 +4628,10 @@
 /area/site53/uez/commandpanicbunker)
 "us" = (
 /obj/structure/bed/chair/padded/black,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/purple,
@@ -4700,7 +4690,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "uZ" = (
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
@@ -4764,7 +4754,7 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "vn" = (
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "vp" = (
@@ -4830,13 +4820,13 @@
 /area/site53/uez/hallway)
 "vK" = (
 /obj/structure/table/reinforced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 0
 	},
 /obj/machinery/button/flasher{
@@ -4846,8 +4836,8 @@
 	name = "EZBrigFlash"
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Brig CR Windowss";
-	name = "EZ Brig CR Windowss"
+	id_tag = "EZ Brig CR Windows";
+	name = "EZ Brig CR Windows"
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -4876,7 +4866,7 @@
 /area/site53/uez/hallway)
 "vU" = (
 /obj/structure/table/steel,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/item/paper_bin,
@@ -4891,7 +4881,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "vY" = (
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/light{
 	dir = 4
@@ -4977,17 +4967,17 @@
 /area/site53/uez/hallway)
 "wP" = (
 /obj/structure/table/steel,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/Windows/reinforced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Brig CR Windowss";
-	name = "EZ Brig CR Windowss"
+	id_tag = "EZ Brig CR Windows";
+	name = "EZ Brig CR Windows"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -5051,7 +5041,7 @@
 "xq" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/green,
@@ -5079,7 +5069,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/equipmentroom)
 "xG" = (
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5121,15 +5111,15 @@
 /area/site53/uez/equipmentroom)
 "xQ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/Windows/brigdoor/northleft{
+/obj/machinery/door/window/brigdoor/northleft{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
-/obj/machinery/door/Windows/brigdoor/southright{
+/obj/machinery/door/window/brigdoor/southright{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Lobby Windowss";
-	name = "EZ Lobby Windowss";
+	id_tag = "EZ Lobby Windows";
+	name = "EZ Lobby Windows";
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5161,8 +5151,8 @@
 "yq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id_tag = "EZ Lobby Outer Lockdown";
-	name = "EZ Lobby Outer Lockdown";
+	id_tag = "EZ Lobby Outter Lockdown";
+	name = "EZ Lobby Outter Lockdown";
 	begins_closed = 0
 	},
 /obj/structure/cable/green{
@@ -5263,8 +5253,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Brig CR Access Outer";
-	name = "EZ Brig CR Access Outer";
+	id_tag = "EZ Brig CR Access Outter";
+	name = "EZ Brig CR Access Outter";
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5287,10 +5277,10 @@
 "zp" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Director Office Checkpoint Windowss";
-	name = "Director Office Checkpoint Windowss"
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows"
 	},
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "zq" = (
@@ -5521,15 +5511,15 @@
 /area/site53/uez/equipmentroom)
 "AO" = (
 /obj/structure/table/steel,
-/obj/machinery/door/Windows/brigdoor/westleft{
+/obj/machinery/door/window/brigdoor/westleft{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/obj/machinery/door/Windows/brigdoor/eastright{
+/obj/machinery/door/window/brigdoor/eastright{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Brig CR Windowss";
-	name = "EZ Brig CR Windowss"
+	id_tag = "EZ Brig CR Windows";
+	name = "EZ Brig CR Windows"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -5572,7 +5562,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
 "Ba" = (
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -5613,18 +5603,18 @@
 /area/site53/uez/commandpanicbunker)
 "Bz" = (
 /obj/structure/table/reinforced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 0
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Lobby Windowss";
-	name = "EZ Lobby Windowss";
+	id_tag = "EZ Lobby Windows";
+	name = "EZ Lobby Windows";
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5657,10 +5647,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "BS" = (
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/filingcabinet,
@@ -5770,7 +5760,7 @@
 /area/site53/entrancezone/forensics)
 "CL" = (
 /obj/structure/bed/chair/padded/black,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/brown,
@@ -6242,10 +6232,10 @@
 /area/site53/uez/commandpanicbunker)
 "Hp" = (
 /obj/structure/bed/chair/padded/black,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/green,
@@ -6291,7 +6281,7 @@
 /area/site53/entrancezone/forensics)
 "HF" = (
 /obj/effect/paint_stripe/blue,
-/obj/machinery/button/Windowstint{
+/obj/machinery/button/windowtint{
 	id = "sitedirect";
 	id_tag = "sitedirect";
 	pixel_y = -5
@@ -6441,17 +6431,10 @@
 /obj/machinery/dnaforensics,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
-"Jf" = (
-/obj/machinery/flasher{
-	id_tag = "EZBrigFlash";
-	name = "EZBrigFlash"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "Jl" = (
 /obj/structure/table/steel,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -6527,7 +6510,7 @@
 /area/site53/logistics/logisticsofficer)
 "Ke" = (
 /obj/structure/table/steel,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/item/paper_bin,
@@ -6681,7 +6664,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Lq" = (
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -6696,7 +6679,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/commandpanicbunker)
 "Ls" = (
-/obj/machinery/door/Windows/holowindoor{
+/obj/machinery/door/window/holowindoor{
 	id_tag = "sitedirect";
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
@@ -6721,7 +6704,7 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purple,
@@ -6886,8 +6869,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "Panic Room CR Windows";
-	name = "Panic Room CR Windows";
+	id_tag = "Panic Room CR Window";
+	name = "Panic Room CR Window";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -6998,8 +6981,8 @@
 "Nt" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
-	id_tag = "Panic Room CR Windows";
-	name = "Panic Room CR Windows"
+	id_tag = "Panic Room CR Window";
+	name = "Panic Room CR Window"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
@@ -7376,7 +7359,7 @@
 /obj/item/folder/white,
 /obj/item/folder/yellow,
 /obj/item/folder,
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("Entrance Zone Network")
@@ -7416,7 +7399,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "QP" = (
-/obj/machinery/door/Windows/southleft,
+/obj/machinery/door/window/southleft,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "QU" = (
@@ -7545,11 +7528,11 @@
 /obj/machinery/button/blast_door{
 	anchored = 0;
 	dir = 4;
-	id_tag = "facilityLockdown";
+	id_tag = "facilitylockdown";
 	name = "Facility Lockdown button";
 	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
-/obj/structure/Windows/basic/full{
+/obj/structure/window/basic/full{
 	anchored = 0;
 	health_current = 5;
 	name = "Safety Glass"
@@ -7787,7 +7770,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Tv" = (
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -7824,10 +7807,10 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "TC" = (
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/filingcabinet,
@@ -7835,7 +7818,7 @@
 /area/site53/uez/equipmentroom)
 "TG" = (
 /obj/structure/table/steel,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/item/device/flashlight/lamp,
@@ -7843,10 +7826,10 @@
 /area/site53/uez/equipmentroom)
 "TL" = (
 /obj/structure/bed/chair/padded/black,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
@@ -8088,6 +8071,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"VP" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/flasher{
+	id_tag = "EZBrigFlash";
+	name = "EZBrigFlash"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "VS" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/techmaint,
@@ -8162,21 +8155,21 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "WA" = (
-/obj/structure/Windows/reinforced,
+/obj/structure/window/reinforced,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "WD" = (
 /obj/structure/table/standard,
-/obj/machinery/door/Windows/brigdoor/westleft{
+/obj/machinery/door/window/brigdoor/westleft{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/obj/machinery/door/Windows/brigdoor/eastright{
+/obj/machinery/door/window/brigdoor/eastright{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Lobby Windowss";
-	name = "EZ Lobby Windowss";
+	id_tag = "EZ Lobby Windows";
+	name = "EZ Lobby Windows";
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -8193,18 +8186,18 @@
 /area/site53/uez/hallway)
 "WP" = (
 /obj/structure/table/standard,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/Windows/reinforced,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Lobby Windowss";
-	name = "EZ Lobby Windowss";
+	id_tag = "EZ Lobby Windows";
+	name = "EZ Lobby Windows";
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/dark,
@@ -8245,7 +8238,7 @@
 /area/site53/uez/commandpanicbunker)
 "WZ" = (
 /obj/structure/table/steel,
-/obj/structure/Windows/reinforced{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/item/paper_bin,
@@ -8455,14 +8448,14 @@
 /obj/structure/table/steel,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "EZ Brig CR Windowss";
-	name = "EZ Brig CR Windowss";
+	id_tag = "EZ Brig CR Windows";
+	name = "EZ Brig CR Windows";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Brig CR Access Outer";
-	name = "EZ Brig CR Access Outer";
+	id_tag = "EZ Brig CR Access Outter";
+	name = "EZ Brig CR Access Outter";
 	pixel_y = 25;
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
@@ -8495,6 +8488,13 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"Zs" = (
+/obj/machinery/flasher{
+	id_tag = "EZBrigFlash";
+	name = "EZBrigFlash"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -33547,14 +33547,14 @@ hk
 cX
 LU
 Fx
-Jf
-Jf
+Zs
+Zs
 Fx
 cX
 LU
-Jf
+Zs
 cX
-Jf
+Zs
 Fx
 cX
 OZ
@@ -34064,7 +34064,7 @@ ZO
 Zz
 ZO
 ZO
-iS
+VP
 ZO
 ZO
 DJ
@@ -35601,10 +35601,10 @@ hk
 hk
 hk
 cX
-Jf
+Zs
 Fx
 cX
-Jf
+Zs
 Fx
 cX
 hk
