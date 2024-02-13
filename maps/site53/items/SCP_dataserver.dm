@@ -311,6 +311,31 @@ While the creature will interact with anyone, it seems to have a special interes
 In addition to its playful behavior, SCP-999 seems to love all animals (especially humans), refusing to eat any meat and even risking its own life to save others, on one occasion leaping in front of a person to take a bullet fired at them (subject's intellect is still up for debate: though its behavior is infantile, it seems to understand human speech and most modern technology, including guns). The creature's diet consists entirely of candy and sweets, with M&M's and Necco wafers being its favorites. Its eating methods are similar to those of an amoeba.
 "}
 
+/datum/computer_file/data/SCP_doc/scp1507
+	filename = "SCP-1507"
+	stored_data = @{"[acs item_number=1507 clearance_level=1 containment_class=euclid disruption_class=vlam risk_class=caution]
+	stored_data = {"
+	<tt><center><b><font color='orange'>EUCLID: SCP-1507</font></b>
+	<h3>FOUNDATION RESEARCH DIVISION</h3>
+	</center>
+
+<b>Item #:</b> SCP-1507<br>
+
+<b>Object Class:</b> Euclid<br>
+
+<b>Special Containment Procedures:</b> Instances of SCP-1507 are to be housed within Site-77's Wilderness Observation Deck. In the event that Foundation staff need to interact with SCP-1507, PoI-1507 is to accompany them into the chamber. Staff must be a minimum of 5 meters away of PoI-1507 when in the presence of SCP-1507. <br>
+
+Any requests PoI-1507 has in relation to SCP-1507 are to be reviewed by the current research head. PoI-1507 is allowed to and encouraged to have daily interactions with SCP-1507.<br>
+
+<b>Description:</b> SCP-1507 is the collective designation given to thirty plastic lawn flamingos of unknown make or manufacturer. Instances of SCP-1507 bear no notable behavioral differences from the average American Flamingo, save for an increase in territorial behavior and lack of vocalization. Said behavior often results in attacks targeted towards Foundation staff. The only individual known to circumvent their behaviors is PoI-1507, otherwise known as Leroy Day. <br>
+
+Hume level testing performed on PoI-1507 suggest reality bending abilities, though all conversations with him have come back as unclear of his awareness of his abilities.<br>
+
+<b>Discovery:</b> On 8/03/2012, a series of 911 calls were received in the Clay county area. The calls were noted to have a male crying and uttering various unidentifiable phrases. Due to the nature of the call it was flagged for scanning and a Foundation agent was sent out to the call. When arriving on scene the agent reported PoI-1507 attempting to unsuccessfully resuscitate another man, who was later identified as Mark Farman, that had multiple stab wounds presumably caused by SCP-1507.<br>
+
+PoI-1507, after being taken into Foundation custody, was amnesticized following an Ethics Committee Order.</tt>
+"}
+
 /datum/computer_file/data/SCP_doc/scp2398
 	filename = "SCP-2398"
 	stored_data = @{"[acs item_number=2398 clearance_level=2 containment_class=safe disruption_class=vlam risk_class=danger]
