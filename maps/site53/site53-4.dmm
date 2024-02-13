@@ -2435,6 +2435,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 /turf/simulated/floor/plating)
 "hS" = (
 /obj/machinery/light/small{
@@ -4226,7 +4228,7 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "EZ Lobby Outter Lockdown";
+	id_tag = "EZ Lobby Outer Lockdown";
 	name = "EZ Lobby Outer Lockdown";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
