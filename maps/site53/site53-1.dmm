@@ -10071,7 +10071,8 @@
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "xl" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell1";
@@ -10081,7 +10082,8 @@
 /area/site53/llcz/dclass/isolation)
 "xm" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell2";
@@ -10142,7 +10144,8 @@
 /area/site53/llcz/mine/unexplored)
 "xu" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell3";
@@ -12896,7 +12899,8 @@
 /area/site53/llcz/dclass/luxuryhall)
 "EF" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell5";
@@ -12906,7 +12910,8 @@
 /area/site53/llcz/dclass/isolation)
 "EG" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell6";
@@ -12916,7 +12921,8 @@
 /area/site53/llcz/dclass/isolation)
 "EH" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell7";
