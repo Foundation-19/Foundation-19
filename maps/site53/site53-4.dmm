@@ -1905,7 +1905,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "fC" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -2391,7 +2392,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "hM" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
@@ -2406,7 +2408,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "hP" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -2447,7 +2450,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "hU" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border{
@@ -2724,7 +2728,8 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "iI" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -2735,7 +2740,8 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "iJ" = (
 /obj/machinery/light/small,
 /obj/structure/cable{
@@ -2743,7 +2749,8 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "iN" = (
 /obj/machinery/vending/coffee,
 /obj/effect/floor_decal/corner/brown/half{
@@ -3501,7 +3508,8 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "kX" = (
 /obj/machinery/computer/telecomms/server{
 	dir = 1;
@@ -4414,7 +4422,8 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "rN" = (
 /obj/machinery/light{
 	dir = 4
@@ -4923,15 +4932,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
-"wm" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 8;
-	id_tag = cell6;
-	name = "Cell 6 Bolts"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
 "wn" = (
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/carpet/blue,
@@ -4954,6 +4954,15 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"wF" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 8;
+	id_tag = "cell6";
+	name = "Cell 6 Bolts"
+	},
+/turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "wI" = (
 /obj/machinery/door/airlock/security{
@@ -5063,7 +5072,8 @@
 /area/site53/uez/commandpanicbunker)
 "xv" = (
 /obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted)
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/maintenance/upper_surface)
 "xw" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light{
@@ -5158,6 +5168,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"yi" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	name = "Cell 3 Bolts";
+	id_tag = "cell3"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "yq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -5307,15 +5326,6 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
-"zz" = (
-/obj/structure/hygiene/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/effect/floor_decal/corner/black/full,
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "zA" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/mre/random,
@@ -5764,6 +5774,13 @@
 /obj/item/folder/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"CI" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 2";
+	id_tag = "cell2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "CJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -5866,13 +5883,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
-"Dv" = (
-/obj/machinery/door/airlock/glass{
-	name = "EZ Brig Cell 6";
-	id_tag = cell6
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "Dy" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/steel,
@@ -5934,13 +5944,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"Ed" = (
-/obj/machinery/door/airlock/glass{
-	name = "EZ Brig Cell 3";
-	id_tag = cell3
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "Ee" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/monotile,
@@ -5968,13 +5971,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"En" = (
-/obj/machinery/door/airlock/glass{
-	name = "EZ Brig Cell 2";
-	id_tag = cell2
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "Eq" = (
 /obj/machinery/keycard_auth{
 	pixel_x = 28;
@@ -6053,7 +6049,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "Fo" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -6069,6 +6066,13 @@
 "Fx" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/bed,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"Fy" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 5";
+	id_tag = "cell5"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Fz" = (
@@ -6356,15 +6360,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"HO" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	name = "Cell 3 Bolts";
-	id_tag = cell3
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
 "HP" = (
 /obj/structure/table/standard,
 /obj/item/folder/blue,
@@ -6383,15 +6378,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"HU" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = cell2;
-	name = "Cell 2 Bolts"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
 "Ia" = (
 /obj/structure/table/standard,
 /obj/item/pen,
@@ -6406,15 +6392,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/conference)
-"Ij" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = cell4;
-	name = "Cell 4 Bolts"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
 "In" = (
 /obj/structure/table/standard,
 /obj/machinery/button/holosign{
@@ -6532,6 +6509,15 @@
 /obj/structure/mopbucket,
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
+"JL" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	name = "Cell 2 Bolts";
+	id_tag = "cell2"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "JM" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Internal Tribunal Department Representative";
@@ -6776,6 +6762,13 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"Lx" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 1";
+	id_tag = "cell1"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "LA" = (
 /obj/machinery/light{
 	dir = 1
@@ -6856,8 +6849,8 @@
 /area/site53/uez/hallway)
 "LU" = (
 /obj/machinery/door/airlock/glass{
-	name = "EZ Brig Cell 5";
-	id_tag = cell5
+	name = "EZ Brig Cell 3";
+	id_tag = "cell3"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -6872,7 +6865,8 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "LX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7037,6 +7031,15 @@
 /obj/machinery/light/small/red,
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
+"Nq" = (
+/obj/structure/hygiene/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/effect/floor_decal/corner/black/full,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "Nr" = (
 /obj/structure/bed/chair/padded/black{
 	dir = 4
@@ -7073,6 +7076,13 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"NA" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 4";
+	id_tag = "cell4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "NF" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow/mono,
@@ -7301,6 +7311,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
+"Pn" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "cell4";
+	name = "Cell 4 Bolts"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "Pp" = (
 /obj/machinery/door/airlock/command{
 	name = "EZ Security Gear Room";
@@ -7436,6 +7455,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"QB" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 8;
+	id_tag = "cell5";
+	name = "Cell 5 Bolts"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "QE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -7629,15 +7657,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
-"Se" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	name = "Cell 1 Bolts";
-	id_tag = cell1
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
 "Sf" = (
 /obj/structure/filingcabinet/chestdrawer{
 	pixel_x = 6
@@ -7746,15 +7765,6 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"SM" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 8;
-	id_tag = cell5;
-	name = "Cell 5 Bolts"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
 "SW" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable/green{
@@ -8155,8 +8165,8 @@
 /area/site53/uez/equipmentroom)
 "VK" = (
 /obj/machinery/door/airlock/glass{
-	name = "EZ Brig Cell 1";
-	id_tag = cell1
+	name = "EZ Brig Cell 6";
+	id_tag = "cell6"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -8262,13 +8272,6 @@
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
-"WH" = (
-/obj/machinery/door/airlock/glass{
-	name = "EZ Brig Cell 4";
-	id_tag = cell4
-	},
-/turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "WK" = (
 /obj/structure/table/steel,
@@ -8528,6 +8531,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"YR" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	name = "Cell 1 Bolts";
+	id_tag = "cell1"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "YW" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood,
@@ -8683,7 +8695,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "ZS" = (
-/turf/simulated/floor/plating)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "ZZ" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/brown/half,
@@ -33131,7 +33144,7 @@ cX
 pg
 FH
 cX
-zz
+Nq
 FH
 cX
 pg
@@ -33898,17 +33911,17 @@ hk
 hk
 hk
 cX
-Ij
-WH
+Pn
+NA
 MZ
-HO
-Ed
+yi
+LU
 MZ
-HU
-En
+JL
+CI
 MZ
-Se
-VK
+YR
+Lx
 MZ
 cX
 cX
@@ -35441,12 +35454,12 @@ hk
 hk
 cX
 cX
-LU
+Fy
 MZ
-SM
-Dv
+QB
+VK
 MZ
-wm
+wF
 cX
 cX
 Ei
