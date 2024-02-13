@@ -4845,12 +4845,12 @@
 	pixel_y = 32;
 	name = "EZBrigFlash"
 	},
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/machinery/door/blast/shutters{
 	id_tag = "EZ Brig CR Windows";
 	name = "EZ Brig CR Windows"
 	},
-/obj/item/paper_bin,
-/obj/item/pen,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "vM" = (
@@ -6038,6 +6038,15 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"Fb" = (
+/obj/machinery/button/alternate/door{
+	dir = 1;
+	id_tag = "EZBrig";
+	name = "EZ Brig Cells";
+	pixel_y = -22
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "Ff" = (
 /obj/effect/paint_stripe/blue,
 /obj/effect/paint_stripe/blue,
@@ -8622,12 +8631,6 @@
 	name = "EZ Brig Iso Exit";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/button/alternate/door{
-	dir = 1;
-	id_tag = "EZBrig";
-	name = "EZ Brig Cells";
-	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -44942,7 +44945,7 @@ hk
 "}
 (142,1,1) = {"
 hk
-hk
+Fb
 hk
 hk
 hk
@@ -45198,7 +45201,7 @@ hk
 hk
 "}
 (143,1,1) = {"
-hk
+Fb
 hk
 hk
 hk
