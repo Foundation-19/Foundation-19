@@ -6038,15 +6038,6 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"Fb" = (
-/obj/machinery/button/alternate/door{
-	dir = 1;
-	id_tag = "EZBrig";
-	name = "EZ Brig Cells";
-	pixel_y = -22
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "Ff" = (
 /obj/effect/paint_stripe/blue,
 /obj/effect/paint_stripe/blue,
@@ -44945,7 +44936,7 @@ hk
 "}
 (142,1,1) = {"
 hk
-Fb
+hk
 hk
 hk
 hk
@@ -45201,7 +45192,7 @@ hk
 hk
 "}
 (143,1,1) = {"
-Fb
+hk
 hk
 hk
 hk
