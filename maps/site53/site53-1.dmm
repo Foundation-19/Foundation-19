@@ -1762,7 +1762,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -2921,7 +2922,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 0
 	},
 /obj/machinery/door/window/brigdoor{
 	dir = 8;
@@ -8592,7 +8594,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/job_terminal,
+/obj/machinery/job_terminal{
+	locked = 0
+	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -10310,7 +10314,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 0
 	},
 /obj/item/boombox,
 /turf/simulated/floor/tiled/monotile/white,
@@ -16023,7 +16028,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "Mm" = (
-/obj/machinery/job_terminal,
+/obj/machinery/job_terminal{
+	locked = 0
+	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -17778,7 +17785,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -19782,7 +19790,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -19801,7 +19810,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -20099,7 +20109,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 0
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
