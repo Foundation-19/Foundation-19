@@ -11839,6 +11839,10 @@
 	id_tag = "LobbyMedD";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDZMedbaywin";
+	name = "CDZ Medbay Window Shutters"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
 "BY" = (
@@ -14427,6 +14431,10 @@
 /obj/machinery/door/window/southright{
 	name = "LLCZ Medical Checkpoint";
 	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDZMedbaywin";
+	name = "CDZ Medbay Window Shutters"
 	},
 /obj/machinery/door/blast/shutters/open{
 	begins_closed = 1;
@@ -17802,7 +17810,7 @@
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/med_checkpoint)
+/area/site53/maintenance/upper_surface)
 "QK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
@@ -19827,7 +19835,7 @@
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/med_checkpoint)
+/area/site53/maintenance/upper_surface)
 "VT" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Maintenance Closet";
