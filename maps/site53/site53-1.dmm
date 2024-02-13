@@ -14437,7 +14437,6 @@
 	name = "CDZ Medbay Window Shutters"
 	},
 /obj/machinery/door/blast/shutters/open{
-	begins_closed = 1;
 	id_tag = "CDZMedbaywin";
 	name = "CDZ Medbay Window Shutters"
 	},
