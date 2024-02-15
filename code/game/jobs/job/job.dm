@@ -173,7 +173,7 @@
 
 	// Apply other mods.
 	money_amount *= GLOB.using_map.salary_modifier
-	money_amount *= 1 + 2 * H.get_skill_value(SKILL_FINANCE)/(SKILL_MAX - SKILL_MIN)
+	money_amount *= 1.2 ^ (H.get_skill_value(SKILL_FINANCE) - SKILL_MIN)	// exponential multiplier based on finance skill.
 	money_amount = round(money_amount)
 
 	if(money_amount <= 0)
