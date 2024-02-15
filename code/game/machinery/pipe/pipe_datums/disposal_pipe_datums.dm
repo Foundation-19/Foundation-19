@@ -98,7 +98,7 @@
 	build_icon = 'icons/obj/pipes/disposal.dmi'
 	build_icon_state = "intake"
 	build_path = /obj/structure/disposalconstruct/machine
-	constructed_path = /obj/machinery/disposal/deliveryChute
+	constructed_path = /obj/machinery/disposal/delivery_chute
 
 /datum/pipe/disposal_dispenser/device/sorting
 	name = "disposal sorter"
