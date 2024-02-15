@@ -623,7 +623,6 @@
 
 /datum/unit_test/networked_disposals_shall_deliver_tagged_packages/proc/spawn_package(start_tag, target_tag)
 	var/obj/structure/disposalholder/unit_test/package = new()
-	package.tomail = 1
 	package.destinationTag = target_tag
 	package.start(all_tagged_bins[start_tag])
 	package.test = src
