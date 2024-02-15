@@ -445,7 +445,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 		return
 
 	for(var/atom/movable/AM in H)
-		var/turf/target = get_offset_target_turf(get_turf(src), 1 + rand(2) + rand(2), 1 + rand(2) + rand(2))
+		var/turf/target = get_offset_target_turf(get_turf(src), rand(5) - rand(5), rand(5) - rand(5))
 
 		AM.forceMove(get_turf(src))
 		AM.pipe_eject(0)
@@ -658,14 +658,6 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	return
 
 /obj/effect/decal/cleanable/blood/gibs/pipe_eject(direction)
-	var/list/dirs
-	if(direction)
-		dirs = list( direction, turn(direction, -45), turn(direction, 45))
-	else
-		dirs = GLOB.alldirs.Copy()
-	addtimer(CALLBACK(src, .proc/streak, dirs), 0)
-
-/obj/effect/decal/cleanable/blood/gibs/robot/pipe_eject(direction)
 	var/list/dirs
 	if(direction)
 		dirs = list( direction, turn(direction, -45), turn(direction, 45))
