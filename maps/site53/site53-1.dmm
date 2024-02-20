@@ -12092,6 +12092,11 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/scp914)
+"Cq" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/scp/euclid_scp,
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/hallway)
 "Cu" = (
 /obj/item/modular_computer/console/preset/paperwork_dataserver{
 	dir = 4
@@ -19250,13 +19255,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
-"TD" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/sign/scp/safe_scp{
-	pixel_x = -32
-	},
-/turf/simulated/wall/titanium,
-/area/site53/lhcz/hallway)
 "TE" = (
 /obj/machinery/light{
 	dir = 8;
@@ -68936,7 +68934,7 @@ qn
 qn
 qn
 qn
-qn
+Cq
 Wr
 BI
 qJ
@@ -69193,7 +69191,7 @@ gq
 gq
 gq
 gq
-TD
+qn
 pp
 mK
 qJ
