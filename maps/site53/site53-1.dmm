@@ -116,6 +116,13 @@
 /obj/item/card/id/dassignment/djanitorial,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"ao" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "aq" = (
 /obj/structure/table/reinforced,
 /obj/item/card/id/dassignment/dkitchen,
@@ -140,6 +147,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"au" = (
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "av" = (
 /obj/structure/bed/chair,
 /obj/machinery/light{
@@ -189,6 +202,9 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
+"aE" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "aF" = (
 /obj/structure/table/reinforced,
 /obj/item/card/id/dassignment/dmining,
@@ -284,6 +300,21 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"aV" = (
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/machinery/light/small/emergency{
+	icon_state = "bulb1";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
+"aW" = (
+/obj/structure/window/reinforced{
+	dir = 0
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "aZ" = (
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/r_wall/prepainted,
@@ -2080,6 +2111,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"eQ" = (
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "eR" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -4404,6 +4439,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkpoint)
+"kq" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "kr" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Library"
@@ -4952,6 +4991,12 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
+"lC" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "lD" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -7131,6 +7176,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/hallway)
+"qB" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "qC" = (
 /obj/machinery/camera/autoname{
 	name = "SCP-049 Observation 1";
@@ -7877,6 +7932,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"sk" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "sl" = (
 /obj/structure/sign/directions/medical{
 	dir = 8;
@@ -8036,6 +8097,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"sL" = (
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/hallway)
 "sM" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -8242,6 +8308,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"to" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "tp" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -8396,6 +8466,19 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"tG" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-294";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/scp294)
 "tH" = (
 /obj/machinery/camera/network/lcz{
 	dir = 4
@@ -8674,6 +8757,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"uo" = (
+/obj/structure/window/reinforced{
+	dir = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "up" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/lino,
@@ -8944,6 +9037,11 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"uW" = (
+/obj/structure/closet/crate/bin,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "uX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10868,6 +10966,10 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/plating,
 /area/site53/ulcz/scp173)
+"zz" = (
+/obj/machinery/chemical_dispenser/full,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "zA" = (
 /obj/machinery/light{
 	dir = 1
@@ -10895,6 +10997,14 @@
 /obj/item/handcuffs,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"zD" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/reagent_temperature,
+/obj/machinery/camera{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "zE" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -10907,6 +11017,19 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
+"zH" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "zI" = (
 /obj/item/modular_computer/console/preset/security{
 	dir = 4;
@@ -11537,6 +11660,13 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/scp500)
+"Bj" = (
+/obj/machinery/reagentgrinder,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Bk" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Lower Heavy Containment Zone Bypass"
@@ -11738,6 +11868,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"BO" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "BP" = (
 /obj/effect/catwalk_plated,
 /obj/structure/railing/mapped{
@@ -12227,6 +12364,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"Df" = (
+/obj/item/device/scanner/reagent,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Dg" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -12255,6 +12397,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
+"Dj" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-249 Observation";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Dk" = (
 /obj/structure/closet/secure_closet/freezer/kitchen/mining,
 /turf/simulated/floor/tiled/monotile/white,
@@ -12319,6 +12468,12 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
+"Dt" = (
+/obj/structure/closet/l3closet/scientist{
+	anchored = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Du" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -12772,6 +12927,18 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
+"Eq" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-294"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "Er" = (
 /turf/unsimulated/mineral,
 /area/site53/surface)
@@ -13049,6 +13216,20 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/maintenance)
+"Fe" = (
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
+"Ff" = (
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/scp294)
 "Fg" = (
 /obj/structure/table/standard,
 /obj/machinery/door/blast/regular{
@@ -13180,6 +13361,18 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
+"Fv" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "Fw" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -13444,6 +13637,11 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/reeducation)
+"Gc" = (
+/obj/structure/filingcabinet,
+/obj/machinery/camera,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Gd" = (
 /obj/machinery/door/window/northleft{
 	name = "Reeducation Separator";
@@ -13622,6 +13820,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/reeducation)
+"GJ" = (
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/scp294)
+"GK" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "GL" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -14417,6 +14629,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
+"Iz" = (
+/obj/structure/bed/chair/office/dark,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "IA" = (
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/white,
@@ -14454,6 +14670,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/prep)
+"IE" = (
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/machinery/door/window/brigdoor/eastleft,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "IF" = (
 /obj/item/modular_computer/console/preset/security,
 /obj/structure/cable/green{
@@ -14978,6 +15199,16 @@
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"JQ" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "JR" = (
 /obj/structure/table/standard,
 /obj/machinery/door/blast/regular{
@@ -15232,6 +15463,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
+"Kn" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Ko" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -15493,6 +15728,10 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/uhcz/scp106parts)
+"KX" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "KZ" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -15784,6 +16023,14 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
+"LG" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "LH" = (
 /obj/machinery/vending/medical{
 	dir = 4
@@ -15987,6 +16234,12 @@
 /obj/item/material/knife/table/plastic,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
+"Mg" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Mh" = (
 /obj/machinery/sleeper{
 	dir = 4
@@ -16076,6 +16329,25 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
+"Mu" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "Mv" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -16260,6 +16532,14 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
+"MU" = (
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/machinery/light/small/emergency{
+	icon_state = "bulb1";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "MV" = (
 /obj/machinery/bodyscanner{
 	dir = 8
@@ -16802,6 +17082,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
+"Oo" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/box/beakers,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Op" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/regular/open{
@@ -16815,6 +17103,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment)
+"Or" = (
+/obj/machinery/camera,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Os" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/cable/green{
@@ -16830,6 +17122,11 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/scp914)
+"Ou" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/reagent_temperature/cooler,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Ov" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -17834,6 +18131,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"QR" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "QS" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
@@ -18448,6 +18750,13 @@
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Sr" = (
+/obj/machinery/door/airlock/highsecurity{
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"));
+	name = "SCP-294 Secure Containment Cell"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Ss" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
@@ -18941,6 +19250,13 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
+"TD" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/scp/safe_scp{
+	pixel_x = -32
+	},
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/hallway)
 "TE" = (
 /obj/machinery/light{
 	dir = 8;
@@ -19013,6 +19329,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
+"TP" = (
+/obj/structure/window/reinforced{
+	dir = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "TQ" = (
 /obj/effect/floor_decal/corner/purple/bordercorner{
 	dir = 1
@@ -19829,6 +20155,20 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"VY" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 0
+	},
+/obj/machinery/door/window/brigdoor/eastleft,
+/obj/machinery/scp294,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "VZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20279,6 +20619,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
+"Xd" = (
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/machinery/door/window/brigdoor/westleft,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp294)
 "Xe" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -20393,6 +20738,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"Xs" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Xt" = (
 /obj/machinery/button/crematorium{
 	id_tag = "scp8crem";
@@ -21146,6 +21495,14 @@
 	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/engineering/maintenance/llczmaint)
+"Zf" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Zg" = (
 /obj/structure/table/rack,
 /obj/item/instrument/guitar,
@@ -21173,6 +21530,17 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"Zm" = (
+/obj/structure/closet,
+/obj/item/device/camera,
+/obj/item/device/camera_film,
+/obj/item/device/camera_film,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp294)
 "Zn" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -61383,13 +61751,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+sJ
+sJ
+sJ
+sJ
+sJ
+sJ
 gq
 gq
 gq
@@ -61640,13 +62008,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+AF
+AU
+Bv
+AU
+AF
+sJ
 gq
 gq
 gq
@@ -61897,13 +62265,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+AG
+AW
+Bx
+BK
+BP
+sJ
 gq
 gq
 gq
@@ -62154,13 +62522,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+AH
+AX
+Ws
+BL
+BQ
+sJ
 gq
 gq
 gq
@@ -62411,13 +62779,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+AG
+AZ
+Bz
+BM
+BP
+sJ
 gq
 gq
 gq
@@ -62668,13 +63036,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+AF
+Ba
+BA
+Ba
+AF
+sJ
 gq
 gq
 gq
@@ -62922,16 +63290,16 @@ NP
 Zv
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+sJ
+sJ
+sJ
+sJ
+sJ
+Sl
+sJ
+sJ
+sJ
 gq
 gq
 gq
@@ -63178,16 +63546,16 @@ wU
 nX
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+sJ
+zj
+cH
+TU
+sJ
+Bm
+zo
+zo
+sJ
 gq
 gq
 gq
@@ -63435,16 +63803,16 @@ Vw
 RX
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+QX
+TQ
+zo
+Av
+AI
+zo
+zo
+zo
+sJ
 gq
 gq
 gq
@@ -63692,16 +64060,16 @@ Vw
 As
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+OJ
+zo
+zo
+Aw
+sJ
+Bp
+zo
+BN
+sJ
 gq
 gq
 gq
@@ -63949,16 +64317,16 @@ Zv
 xv
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+pf
+zo
+Af
+Ax
+AK
+Bq
+Bq
+Bq
+sJ
 gq
 gq
 gq
@@ -64206,16 +64574,16 @@ CS
 Hj
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+XV
+zo
+zo
+Ay
+sJ
+BJ
+BJ
+BJ
+sJ
 gq
 gq
 gq
@@ -64463,16 +64831,16 @@ OB
 MP
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+Xf
+Ss
+Af
+Av
+AK
+Bs
+Bs
+Bs
+sJ
 gq
 gq
 gq
@@ -64720,16 +65088,16 @@ oz
 ye
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+XV
+zo
+zo
+AA
+sJ
+Wp
+Wp
+Wp
+sJ
 gq
 gq
 gq
@@ -64977,16 +65345,16 @@ Zv
 ks
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+pf
+zo
+Af
+AB
+AK
+Bu
+Bu
+Bu
+sJ
 gq
 gq
 gq
@@ -65234,16 +65602,16 @@ Vw
 yt
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+Wh
+zo
+zo
+AC
+sJ
+Bp
+zo
+BN
+sJ
 gq
 gq
 gq
@@ -65491,16 +65859,16 @@ Vw
 ZB
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+XD
+zg
+Ar
+AD
+AT
+Ar
+BC
+zo
+sJ
 gq
 gq
 gq
@@ -65748,16 +66116,16 @@ Ik
 WY
 Zv
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+sJ
+LT
+Xa
+Sw
+sJ
+zo
+Mp
+zo
+sJ
 gq
 gq
 gq
@@ -65981,18 +66349,18 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
 gq
 gq
 gq
@@ -66006,15 +66374,15 @@ Zv
 Zv
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sJ
+sJ
+sJ
+sJ
+sJ
+sJ
+Wd
+sJ
+sJ
 gq
 gq
 gq
@@ -66238,18 +66606,18 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-sJ
-sJ
-sJ
-sJ
-sJ
-sJ
-sJ
+Ff
+KX
+aE
+Mg
+to
+kq
+aV
+aE
+aE
+aE
+aV
+Ff
 gq
 gq
 gq
@@ -66268,9 +66636,9 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
+qn
+qJ
+qn
 gq
 gq
 gq
@@ -66495,18 +66863,18 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-sJ
-AF
-AU
-Bv
-AU
-AF
-sJ
+Ff
+Xs
+aE
+Iz
+QR
+kq
+aE
+JQ
+Xd
+TP
+aE
+Ff
 gq
 gq
 gq
@@ -66525,9 +66893,9 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
+qn
+qJ
+qn
 gq
 gq
 gq
@@ -66752,18 +67120,18 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-sJ
-AG
-AW
-Bx
-BK
-BP
-sJ
+Ff
+Gc
+aE
+aE
+lC
+kq
+aE
+BO
+VY
+aW
+au
+Ff
 gq
 gq
 gq
@@ -66782,9 +67150,9 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
+qn
+WZ
+qn
 gq
 gq
 gq
@@ -67009,18 +67377,18 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-sJ
-AH
-AX
-Ws
-BL
-BQ
-sJ
+Ff
+Kn
+aE
+Iz
+to
+kq
+aE
+qB
+IE
+uo
+aE
+Ff
 gq
 gq
 gq
@@ -67039,9 +67407,9 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
+qn
+RY
+qn
 gq
 gq
 gq
@@ -67266,18 +67634,18 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-sJ
-AG
-AZ
-Bz
-BM
-BP
-sJ
+Ff
+Zm
+aE
+aE
+to
+kq
+MU
+aE
+aE
+aE
+MU
+Ff
 gq
 gq
 gq
@@ -67296,9 +67664,9 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
+qn
+qJ
+qn
 gq
 gq
 gq
@@ -67523,18 +67891,18 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-sJ
-AF
-Ba
-BA
-Ba
-AF
-sJ
+Ff
+Ff
+aE
+aE
+uW
+GJ
+Ff
+Ff
+Sr
+Ff
+Ff
+Ff
 gq
 gq
 gq
@@ -67551,13 +67919,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+qn
+qn
+qn
+Vg
+qn
+qn
+qn
 gq
 gq
 gq
@@ -67781,17 +68149,17 @@ gq
 gq
 gq
 gq
-gq
-sJ
-sJ
-sJ
-sJ
-sJ
-sJ
-Sl
-sJ
-sJ
-sJ
+Ff
+Or
+aE
+to
+Ff
+ao
+eQ
+aE
+Df
+Oo
+Ff
 gq
 gq
 gq
@@ -67808,13 +68176,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+qn
+pp
+Px
+qJ
+mK
+qr
+qn
 gq
 gq
 gq
@@ -68038,22 +68406,22 @@ gq
 gq
 gq
 gq
-sJ
-sJ
-zj
-cH
-TU
-sJ
-Bm
-zo
-zo
-sJ
-gq
-gq
-gq
-gq
-gq
-gq
+Ff
+aE
+Iz
+to
+kq
+to
+aE
+aE
+aE
+zz
+Ff
+qn
+qn
+qn
+qn
+qn
 qn
 mK
 BI
@@ -68066,11 +68434,11 @@ qn
 qn
 qn
 qn
-qn
-qn
-qn
-qn
-qn
+mK
+BI
+qJ
+BI
+mK
 qn
 qn
 qn
@@ -68295,40 +68663,40 @@ gq
 gq
 gq
 gq
-sJ
-QX
-TQ
-zo
-Av
-AI
-zo
-zo
-zo
-sJ
-gq
-gq
-gq
-gq
-gq
-gq
-qn
-BI
-BI
-qJ
+Ff
+aE
+aE
+to
+kq
+Dt
+Zf
+LG
+LG
+LG
+tG
+td
+td
+Fv
+td
+td
+Eq
+td
+td
+Mu
+td
+td
+WP
+td
+td
+zH
+td
+YE
+td
+td
+GK
 BI
 BI
 bb
-WD
-BI
-BI
-BI
-Tf
-WD
-BI
-BI
-BI
-BI
-WD
 BI
 BI
 BI
@@ -68552,22 +68920,22 @@ gq
 gq
 gq
 gq
-sJ
-OJ
-zo
-zo
-Aw
-sJ
-Bp
-zo
-BN
-sJ
-gq
-gq
-gq
-gq
-gq
-gq
+Ff
+aE
+sk
+aE
+Dj
+sk
+Fe
+zD
+Ou
+Bj
+Ff
+qn
+qn
+qn
+qn
+qn
 qn
 Wr
 BI
@@ -68580,11 +68948,11 @@ qn
 qn
 qn
 qn
-qn
-qn
-qn
-qn
-qn
+Wr
+BI
+BI
+BI
+mK
 qn
 qn
 qn
@@ -68809,23 +69177,23 @@ gq
 gq
 gq
 gq
-sJ
-pf
-zo
-Af
-Ax
-AK
-Bq
-Bq
-Bq
-sJ
+GJ
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
+Ff
 gq
 gq
 gq
 gq
 gq
-gq
-qn
+TD
 pp
 mK
 qJ
@@ -68836,13 +69204,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+qn
+pp
+mK
+BI
+mK
+qr
+qn
 gq
 gq
 gq
@@ -69066,16 +69434,16 @@ gq
 gq
 gq
 gq
-sJ
-XV
-zo
-zo
-Ay
-sJ
-BJ
-BJ
-BJ
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -69093,13 +69461,13 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+sL
+qn
+qn
+qn
+qn
+qn
+qn
 gq
 gq
 gq
@@ -69323,16 +69691,16 @@ gq
 gq
 gq
 gq
-sJ
-Xf
-Ss
-Af
-Av
-AK
-Bs
-Bs
-Bs
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -69580,16 +69948,16 @@ gq
 gq
 gq
 gq
-sJ
-XV
-zo
-zo
-AA
-sJ
-Wp
-Wp
-Wp
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -69837,16 +70205,16 @@ gq
 gq
 gq
 gq
-sJ
-pf
-zo
-Af
-AB
-AK
-Bu
-Bu
-Bu
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -70094,16 +70462,16 @@ SV
 SV
 SV
 gq
-sJ
-Wh
-zo
-zo
-AC
-sJ
-Bp
-zo
-BN
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -70351,16 +70719,16 @@ UJ
 ux
 SV
 gq
-sJ
-XD
-zg
-Ar
-AD
-AT
-Ar
-BC
-zo
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -70608,16 +70976,16 @@ ZH
 RR
 SV
 gq
-sJ
-sJ
-LT
-Xa
-Sw
-sJ
-zo
-Mp
-zo
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -70866,15 +71234,15 @@ RR
 SV
 gq
 gq
-sJ
-sJ
-sJ
-sJ
-sJ
-sJ
-Wd
-sJ
-sJ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 gq
 gq
 gq
@@ -71128,9 +71496,9 @@ gq
 gq
 gq
 gq
-qn
-qJ
-qn
+gq
+gq
+gq
 gq
 gq
 gq
@@ -71385,9 +71753,9 @@ gq
 gq
 gq
 gq
-qn
-qJ
-qn
+gq
+gq
+gq
 gq
 gq
 gq
@@ -71642,9 +72010,9 @@ gq
 gq
 gq
 gq
-qn
-WZ
-qn
+gq
+gq
+gq
 gq
 gq
 gq
@@ -71899,9 +72267,9 @@ gq
 gq
 gq
 gq
-qn
-RY
-qn
+gq
+gq
+gq
 gq
 gq
 gq
@@ -72156,9 +72524,9 @@ gq
 gq
 gq
 gq
-qn
-qJ
-qn
+gq
+gq
+gq
 gq
 gq
 gq
@@ -72414,10 +72782,10 @@ gq
 qn
 qn
 qn
-Vg
 qn
 qn
 qn
+sL
 gq
 gq
 gq
@@ -72670,8 +73038,8 @@ gq
 gq
 qn
 pp
-Px
-qJ
+mK
+BI
 mK
 qr
 qn

@@ -2241,7 +2241,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/commandpanicbunker)
 "gO" = (
-/obj/machinery/scp294,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "gQ" = (
