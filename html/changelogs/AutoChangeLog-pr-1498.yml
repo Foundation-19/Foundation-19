@@ -1,0 +1,4 @@
+author: Coxswain-Navigator
+delete-after: true
+changes:
+  - rscadd: Added scp-1507 containment
