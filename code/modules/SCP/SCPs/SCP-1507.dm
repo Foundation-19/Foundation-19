@@ -14,6 +14,7 @@
 
 	faction = "scp1507" //They team up with one another
 	harm_intent_damage = 3
+	holder_type = /obj/item/holder/flamingo1507
 	var/enrage_potency = 4
 	var/max_damage = 8
 	var/static/spawn_count = 1 //Keeps track of how many have been spawned
@@ -46,7 +47,8 @@
 		src, // Ref to actual SCP atom
 		"pink plastic flamingo", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SCP_EUCLID, //Obj Class
-		"1507" //Numerical Designation
+		"1507", //Numerical Designation
+		SCP_PLAYABLE
 	)
 	name += " ([spawn_count])"
 	spawn_count += 1
