@@ -135,9 +135,7 @@
 		..()
 	else
 		setClickCooldown(100)
-		unbuckle_time = 2 MINUTES
-		if(psi && psi.can_use())
-			unbuckle_time = max(0, unbuckle_time - ((25 SECONDS) * psi.get_rank(PSI_PSYCHOKINESIS)))
+		unbuckle_time = GetUnbuckleTime()
 
 		visible_message(
 			SPAN_DANGER("[src] attempts to unbuckle themself!"),
@@ -168,3 +166,8 @@
 			)
 		buckled.user_unbuckle_mob(src)
 		return
+
+/mob/living/carbon/proc/GetUnbuckleTime()
+	. = 2 MINUTES
+	if(psi && psi.can_use())
+		. = max(0, . - ((25 SECONDS) * psi.get_rank(PSI_PSYCHOKINESIS)))

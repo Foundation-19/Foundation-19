@@ -1,0 +1,15 @@
+author: cheesePizza2, checkraisefold
+delete-after: true
+changes:
+  - rscadd: Ordered lists were added to pencode. Check the codex for more info.
+  - rscadd: A new database was added to the server room - the Paperwork Database.
+      Quickly download useful forms from the (relative) safety of your laptop! Office
+      workers, consider sending the IT Tech new forms to add to the download list.
+  - rscadd: ACS is here! SCP articles now have a special ACS bar that displays info.
+      Check the Pencode codex entry for details on usage.
+  - bugfix: SCP articles actually use pencode now - you can edit them without breaking
+      them.
+  - bugfix: Downloaded files are now *copies* of the server's file, not actual references
+      to their file. Whoops!
+  - code_imp: Paper uses /datum/browser, allowing for compatibility with newer Internet
+      Explorer versions.

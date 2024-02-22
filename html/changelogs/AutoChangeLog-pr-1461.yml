@@ -1,0 +1,7 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: SCP-049 now cures people by upgrading its grab far enough.
+  - tweak: SCP-049 may breach if left alone for too long. Make sure it has someone
+      to talk to!
+  - tweak: SCP-049 will receive temporary speed buff when attacked. Avoid fast weapons!

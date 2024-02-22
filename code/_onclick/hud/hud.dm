@@ -71,6 +71,7 @@
 	var/obj/screen/move_intent
 	var/obj/screen/stamina/stamina_bar
 	var/obj/screen/rest_button
+	var/obj/screen/facedir_button = null
 
 	var/list/adding
 	var/list/other
@@ -96,6 +97,7 @@
 	other = null
 	hotkeybuttons = null
 	rest_button = null
+	facedir_button = null
 	mymob = null
 
 /datum/hud/proc/update_stamina()
