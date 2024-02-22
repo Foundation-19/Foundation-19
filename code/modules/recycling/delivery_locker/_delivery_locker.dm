@@ -8,17 +8,22 @@
 	base_type = /obj/machinery/delivery_locker	// god i LOVE machines having two different variables that contain base types
 	name = "delivery locker"
 	desc = "Someone forgot to write a description - contact a coder!"
-	icon = 'icons/obj/pipes/delivery.dmi'	// TODO: create sprites for this
-	icon_state = "base"
+	icon = 'icons/obj/pipes/delivery.dmi'	// TODO: create GOOD sprites for this
+	icon_state = "template"
 	anchored = TRUE
 	density = TRUE
 	/// The attached pipe trunk. Flushed contents get put in a disposalholder that starts here.
 	var/obj/structure/disposalpipe/trunk/trunk = null
 	/// Set to true while flushing.
 	var/flushing = FALSE
+	// A list of types. Items may only be stored if they're one of these types
+	var/list/acceptable_items = list()
 
 /obj/machinery/delivery_locker/Initialize()
 	. = ..()
+	if(!length(acceptable_items))
+		log_debug("Delivery locker of type [type] has an empty acceptable_items list!")
+
 	spawn(0.5 SECONDS)
 		trunk = locate() in get_turf(src)
 		if(!trunk)
@@ -47,7 +52,8 @@
 			return
 
 		if(handle_id_card(I))
-		// TODO: ID card code here
+			flush()
+		return
 
 	/* TODO: construction code here
 	if(mode<=0) // It's off
@@ -87,23 +93,17 @@
 				return
 	*/
 
-	if(istype(I, /obj/item/melee/energy/blade))
-		to_chat(user, "You can't place that item inside the disposal unit.")
-		return
-
-	if(istype(I, /obj/item/storage/bag/trash))
-		var/obj/item/storage/bag/trash/T = I
-		to_chat(user, SPAN_NOTICE("You empty the bag."))
-		for(var/obj/item/O in T.contents)
-			T.remove_from_storage(O, src, TRUE)
-		T.finish_bulk_removal()
-		update_icon()
-		return
-
-	if(istype(I, /obj/item/grab))
-		return
-
 	if(isrobot(user))
+		return
+
+	var/valid = FALSE
+	for(var/type in acceptable_items)
+		if(istype(I, type))
+			valid = TRUE
+			break
+
+	if(!valid)
+		display_error("invalid item!")
 		return
 
 	if(!user.unEquip(I, src))
@@ -125,7 +125,7 @@
 		AM.pipe_eject(0)
 	update_icon()
 
-/// Handles ID card behavior. Return TRUE if contents should be flushed, FALSE otherwise. This should be overridden by subtypes.
+/// Handles ID card behavior. Return TRUE if locker should flush. Subtypes must override this.
 /obj/machinery/delivery_locker/proc/handle_id_card(obj/item/card/id/id_card)
 	crash_with("Delivery locker of type [type] doesn't override handle_id_card().")
 
@@ -143,23 +143,26 @@
 
 	H.init(contents - component_parts)	// copy the contents of disposer to holder
 
-	if(!H.start(trunk)) // start the holder processing movement
-		expel(H)
+	if(!H.start(trunk))
+		// we couldn't get started, error out and undo everything
+		display_error("cannot send!")
+
+		if(!H)
+			return
+
+		for(var/atom/movable/AM in H)
+			AM.forceMove(src)
+
+		qdel(H)
 
 	flushing = 0
 
 	update_icon()
 	return
 
-/// Called when a disposal holder is expelled from a locker. We just shove everything back into our contents.
-/obj/machinery/delivery_locker/proc/expel(obj/structure/disposalholder/H)
-	playsound(src, 'sounds/machines/hiss.ogg', 50, 0, 0)
+/// Flash an error icon and display a message.
+/obj/machinery/delivery_locker/proc/display_error(error)
+	playsound(src, 'sounds/machines/buzz-two.ogg', 50, 0, 0)
 	flick("[icon_state]-error", src)
-
-	if(!H)
-		return
-
-	for(var/atom/movable/AM in H)
-		AM.forceMove(src)
-
-	qdel(H)
+	if(error)
+		balloon_alert_to_viewers(error)

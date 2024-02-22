@@ -2,7 +2,7 @@
 	name = "delivery chute"
 	desc = "A chute for big and small packages alike!"
 	density = TRUE
-	icon_state = "intake-payout"
+	icon_state = "intake"
 
 	var/c_mode = 0
 
