@@ -63,3 +63,4 @@
 #define SFX_SHELL_INSERT "sfx_shell_insert"
 #define SFX_ZOMBIE "zombie_sound"
 #define SFX_SCARY_SOUND "scary_sound"
+#define SFX_SCP1507_ATTACK "1507_attack"
