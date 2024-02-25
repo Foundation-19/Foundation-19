@@ -502,7 +502,7 @@ var/global/floorIsLava = 0
 
 
 /datum/admins/proc/announce()
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "Announce"
 	set desc="Announce your desires to the world"
 	if(!check_rights(0))	return
@@ -1211,7 +1211,7 @@ var/global/floorIsLava = 0
 	return 1
 
 /datum/admins/proc/force_antag_latespawn()
-	set category = "Admin"
+	set category = "Debug"
 	set name = "Force Template Spawn"
 	set desc = "Force an antagonist template to spawn."
 
@@ -1236,7 +1236,7 @@ var/global/floorIsLava = 0
 	antag.attempt_auto_spawn()
 
 /datum/admins/proc/force_mode_latespawn()
-	set category = "Admin"
+	set category = "Fun"
 	set name = "Force Mode Spawn"
 	set desc = "Force autotraitor to proc."
 
@@ -1280,7 +1280,7 @@ var/global/floorIsLava = 0
 
 
 /datum/admins/proc/sendFax()
-	set category = "Special Verbs"
+	set category = "Fun"
 	set name = "Send Fax"
 	set desc = "Sends a fax to this machine"
 
@@ -1318,7 +1318,7 @@ var/global/floorIsLava = 0
 
 
 /client/proc/check_fax_history()
-	set category = "Special Verbs"
+	set category = "Fun"
 	set name = "Check Fax History"
 	set desc = "Look up the faxes sent this round."
 
