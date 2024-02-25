@@ -734,7 +734,7 @@ var/list/admin_verbs_mentors = list(
 	SSstatistics.add_field_details("admin_verb","CMAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/change_security_level()
-	set name = "Fun"
+	set name = "Set security level"
 	set desc = "Sets the security level"
 	set category = "Fun"
 
