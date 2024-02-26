@@ -32,8 +32,7 @@
 		"desc" = H.desc,
 		"enabled" = H.enabled,
 		"critical" = H.critical,
-		"powerusage" = H.power_usage,
-		"specialinfo" = H.get_special_info()
+		"powerusage" = H.power_usage
 		)))
 
 	data["hardware"] = all_entries
@@ -47,4 +46,12 @@
 			var/obj/item/stock_parts/computer/H = movable.find_hardware_by_name(params["name"])
 			if(H && istype(H))
 				H.enabled = !H.enabled
-			. = TRUE
+			return TRUE
+		if("PC_component_diagnostic")
+			var/obj/item/stock_parts/computer/H = movable.find_hardware_by_name(params["name"])
+			if(H && istype(H))
+				to_chat(usr, "***** DIAGNOSTICS REPORT *****")
+				to_chat(usr, jointext(H.diagnostics(), "\n"))
+				to_chat(usr, "******************************")
+			return
+

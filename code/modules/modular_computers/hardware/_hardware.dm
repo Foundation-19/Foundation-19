@@ -50,10 +50,6 @@
 /obj/item/stock_parts/computer/proc/diagnostics()
 	return list("Hardware Integrity Test... (Corruption: [damage]/[max_damage]) [damage > damage_failure ? "FAIL" : damage > damage_malfunction ? "WARN" : "PASS"]")
 
-/// Special information/data related to this component.
-/obj/item/stock_parts/computer/proc/get_special_info()
-	return list("Corruption: [damage]/[max_damage][damage > damage_failure ? " - FAILED" : damage > damage_malfunction ? " - MALF" : ""]")
-
 /obj/item/stock_parts/computer/Initialize()
 	. = ..()
 	w_class = hardware_size

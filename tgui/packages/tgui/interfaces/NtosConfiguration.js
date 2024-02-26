@@ -1,6 +1,6 @@
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, List, LabeledList, ProgressBar, Section } from '../components';
+import { Box, Button, LabeledList, ProgressBar, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosConfiguration = (props, context) => {
@@ -15,7 +15,7 @@ export const NtosConfiguration = (props, context) => {
     hardware = [],
   } = data;
   return (
-    <NtosWindow theme={PC_device_theme} width={520} height={630} resizable>
+    <NtosWindow theme={PC_device_theme} width={600} height={630} resizable>
       <NtosWindow.Content scrollable>
         <Section
           title="Power Supply"
@@ -75,17 +75,19 @@ export const NtosConfiguration = (props, context) => {
                       }
                     />
                   )}
+                  <Button
+                    mr={1}
+                    onClick={() =>
+                      act('PC_component_diagnostic', { name: component.name })
+                    }>
+                    Scan
+                  </Button>
                   <Box inline bold mr={1}>
                     Power Usage: {component.powerusage}W
                   </Box>
                 </Fragment>
               }>
               {component.desc}
-              <List>
-                {component.specialinfo.map((line, index) => (
-                  <List.Item key={index}>{line}</List.Item>
-                ))}
-              </List>
             </Section>
           ))}
         </Section>
