@@ -15,7 +15,7 @@
 
 /obj/item/stock_parts/computer/network_card/diagnostics()
 	. = ..()
-	. += "SCiP Unique ID: [identification_id]"
+	. += "SCiP Network ID: [identification_id]"
 	. += "SCiP User Tag: [identification_string]"
 	. += "Supported protocols:"
 	. += "511.m SFS (Wireless) - Standard Frequency Spread"
@@ -23,6 +23,10 @@
 		. += "511.n WFS/HB (Wireless) - Wide Frequency Spread/High Bandwidth"
 	if(ethernet)
 		. += "OpenEth (Physical Connection) - Physical network connection port"
+
+/obj/item/stock_parts/computer/network_card/get_special_info()
+	. = ..()
+	. += "Network ID: [identification_id]"
 
 /obj/item/stock_parts/computer/network_card/New(l)
 	..(l)

@@ -16152,24 +16152,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"aXg" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/site53/ulcz/hallways)
 "aXh" = (
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
@@ -20580,6 +20562,9 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
+"bJx" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "bKj" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -21623,6 +21608,19 @@
 /obj/item/device/radio/phone,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"cRf" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "cRs" = (
 /obj/machinery/icecream_vat,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -23604,6 +23602,20 @@
 /obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp1507observation)
+"fmG" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/ulcz/hallways)
 "fnj" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -32008,14 +32020,23 @@
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "oei" = (
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
 "oeP" = (
 /obj/machinery/power/apc{
@@ -32960,6 +32981,10 @@
 "pge" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
+"pgf" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/scp5295)
 "pgW" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34168,6 +34193,11 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
+"qGV" = (
+/obj/machinery/light,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "qHF" = (
 /obj/machinery/light{
 	dir = 1
@@ -36361,6 +36391,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
+"tdN" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "tex" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -38244,6 +38282,18 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
+"vst" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/science{
+	name = "General Storage";
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "vsx" = (
 /obj/effect/catwalk_plated,
 /obj/structure/cable{
@@ -38626,6 +38676,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
+"vNc" = (
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/computer/storage/portable_drive/scp5295,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "vNf" = (
 /obj/effect/paint_stripe/gray,
 /obj/structure/sign/directions/ez{
@@ -51932,7 +51987,6 @@ azA
 aWs
 aWs
 aWs
-aWs
 aWT
 aWT
 aWT
@@ -51940,6 +51994,7 @@ aWT
 bON
 bON
 bON
+azA
 azA
 azA
 azA
@@ -52189,7 +52244,6 @@ azA
 aWs
 aWx
 aWG
-aWs
 aWT
 aco
 acz
@@ -52197,6 +52251,7 @@ aWT
 hGY
 iIJ
 bON
+azA
 azA
 azA
 azA
@@ -52446,7 +52501,6 @@ azA
 aWs
 dDY
 aWy
-aWs
 aWT
 lGJ
 aWW
@@ -52454,6 +52508,7 @@ aWT
 wxi
 xWw
 bON
+azA
 azA
 azA
 azA
@@ -52703,7 +52758,6 @@ azA
 aWs
 aWz
 aWH
-aWs
 aWT
 aWY
 aXd
@@ -52713,15 +52767,16 @@ nsF
 bON
 azA
 azA
-aXp
-aXp
-aXp
-aXp
-aXp
-aXp
-aXp
 azA
 azA
+azA
+aXp
+aXp
+aXp
+aXp
+aXp
+aXp
+aXp
 azA
 azA
 azA
@@ -52960,13 +53015,15 @@ aVS
 aWs
 aWs
 aWI
-aWs
 aWT
 aWT
 aXe
 aWT
 bON
 aPv
+bON
+aVS
+aVS
 aXp
 aXp
 aXp
@@ -52977,8 +53034,6 @@ bdc
 kiO
 bim
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -53218,12 +53273,14 @@ aWt
 dVb
 aWJ
 aGM
-aGM
 gWp
 aWJ
 aXf
 gWp
 aWJ
+aGM
+aXf
+aGM
 aXp
 bix
 bcZ
@@ -53234,8 +53291,6 @@ bix
 aXD
 sgZ
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -53477,10 +53532,12 @@ aWK
 afp
 afp
 oei
-aXg
 aXn
 aXn
 jBT
+aXn
+aXn
+fmG
 hSj
 aXq
 bda
@@ -53491,8 +53548,6 @@ bRG
 bix
 xaC
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -53731,12 +53786,14 @@ aVS
 aGM
 nLr
 aWJ
-aGM
-aGM
+vWZ
 frk
 aWJ
 pSE
+frk
+aWJ
 aGM
+pSE
 aWJ
 aXp
 bcY
@@ -53748,8 +53805,6 @@ aXz
 aXz
 aXz
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -53988,11 +54043,13 @@ aVS
 aWv
 aWv
 aWL
-aWv
 aXi
 aXi
 gkq
 aXi
+pgf
+vst
+pgf
 ffp
 iCc
 aXp
@@ -54005,8 +54062,6 @@ bix
 bix
 bix
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -54245,11 +54300,13 @@ azA
 aWv
 aWB
 aWM
-aWv
 aXi
 huZ
 nXs
 aXi
+cRf
+tdN
+pgf
 aXj
 otI
 aXp
@@ -54262,8 +54319,6 @@ bim
 bix
 big
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -54502,11 +54557,13 @@ azA
 aWv
 ebb
 aWC
-aWv
 aXi
 qUx
 qUx
 aXi
+bJx
+bJx
+pgf
 iHI
 iHI
 ffp
@@ -54519,8 +54576,6 @@ rMC
 bix
 bix
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -54759,11 +54814,13 @@ azA
 aWv
 aWD
 aWN
-aWv
 aXi
 aXb
 tXq
 aXi
+vNc
+qGV
+pgf
 aXk
 dmf
 ffp
@@ -54776,8 +54833,6 @@ aXp
 aXp
 aXp
 aXp
-azA
-azA
 azA
 azA
 azA
@@ -55016,16 +55071,16 @@ azA
 aWv
 aWv
 aWv
-aWv
 aXi
 aXi
 aXi
 aXi
+pgf
+pgf
+pgf
 ffp
 ffp
 ffp
-azA
-azA
 azA
 azA
 azA

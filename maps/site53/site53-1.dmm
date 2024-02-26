@@ -8662,6 +8662,9 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
+/obj/item/stock_parts/computer/storage/portable_drive,
+/obj/item/stock_parts/computer/storage/portable_drive,
+/obj/item/stock_parts/computer/storage/portable_drive,
 /turf/simulated/floor/carpet/purple,
 /area/site53/engineering/server_room)
 "un" = (

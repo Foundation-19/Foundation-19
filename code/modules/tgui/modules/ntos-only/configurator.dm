@@ -32,7 +32,8 @@
 		"desc" = H.desc,
 		"enabled" = H.enabled,
 		"critical" = H.critical,
-		"powerusage" = H.power_usage
+		"powerusage" = H.power_usage,
+		"specialinfo" = H.get_special_info()
 		)))
 
 	data["hardware"] = all_entries
