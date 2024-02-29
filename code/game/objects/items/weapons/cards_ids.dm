@@ -152,6 +152,7 @@
 		if(j)
 			rank = j.title
 			assignment = rank
+			class = j.class
 			access |= j.get_access()
 			if(!detail_color)
 				detail_color = j.selection_color

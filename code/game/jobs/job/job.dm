@@ -26,7 +26,7 @@
 	/// Does this position have a department tag? // TODO: move to department_flag
 	var/department = null
 	/// Is this position a head position (i.e. part of Command)?
-	var/head_position = 0
+	var/head_position = FALSE
 	/// The minimum age your character has to be (to be this job).
 	var/minimum_character_age
 	/// The "ideal" age for characters with this job. Affects candidate weighting.area
