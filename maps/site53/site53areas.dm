@@ -1128,6 +1128,51 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/reswing/psionic
+	name = "\improper Psionic Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/researchanddevelopment
+	name = "\improper Research and Development"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/researchwing
+	name = "\improper Research Wing"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/Anomaly
+	name = "\improper Anomaly Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/Lowerresearchwing
+	name = "\improper Lower Research Wing"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/researchmaint
+	name = "\improper Research Maintenance Tunnels"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/researchoffices
+	name = "\improper Research Offices"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/xenoarchaeology
+	name = "\improper Xenoarchaeology Storage"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/xenobotany
+	name = "\improper Botanical Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/logistics/logistics
 	name = "\improper Logistics"
 	icon_state = "quart"
@@ -1139,7 +1184,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/logistics/logisticsbreak
-	name = "\improper Logistics Break Area"
+	name = "\improper Logistics Surface Area"
+	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/logistics/understorage
+	name = "\improper Logistics Underground Storage"
 	icon_state = "quart"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -1207,6 +1257,7 @@
 /area/quartermaster/hangar
 	name ="\improper Logistics Hangar"
 	icon_state = "quart"
+
 
 //SCP-106's realm
 /area/pocketdimension
