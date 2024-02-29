@@ -8,16 +8,6 @@
 /obj/item/clothing/ring/engagement/attack_self(mob/user)
 	user.visible_message(SPAN_WARNING("\The [user] gets down on one knee, presenting \the [src]."),SPAN_WARNING("You get down on one knee, presenting \the [src]."))
 
-/obj/item/clothing/ring/cti
-	name = "CTI ring"
-	desc = "A ring commemorating graduation from CTI."
-	icon_state = "cti-grad"
-
-/obj/item/clothing/ring/mariner
-	name = "Mariner University ring"
-	desc = "A ring commemorating graduation from Mariner University."
-	icon_state = "mariner-grad"
-
 /obj/item/clothing/ring/fleet
 	name = "Fleet ring"
 	desc = "A ring commemorating honorable service with the Sol Government's Fleet."
