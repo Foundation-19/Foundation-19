@@ -360,9 +360,7 @@ SUBSYSTEM_DEF(jobs)
 	for(var/mob/new_player/player in unassigned_roundstart)
 		if(player.client.prefs.alternate_option == BE_CLASS_D)
 			var/datum/job/ass = DEFAULT_JOB_TYPE
-			if((GLOB.using_map.flags & MAP_HAS_BRANCH) && player.client.prefs.branches[initial(ass.title)])
-				var/datum/mil_branch/branch = mil_branches.get_branch(player.client.prefs.branches[initial(ass.title)])
-				ass = branch.assistant_job
+
 			assign_role(player, initial(ass.title), mode = mode)
 	//For ones returning to lobby
 	for(var/mob/new_player/player in unassigned_roundstart)
@@ -391,25 +389,20 @@ SUBSYSTEM_DEF(jobs)
 		for(var/thing in H.client.prefs.Gear())
 			var/datum/gear/G = gear_datums[thing]
 			if(G)
-				var/permitted = 0
-				if(G.allowed_branches)
-					if(H.char_branch && (H.char_branch.type in G.allowed_branches))
-						permitted = 1
-				else
-					permitted = 1
+				var/permitted = 1
 
-				if(permitted && G.denied_roles)
+				if(G.whitelist_department_flags && !(job.department_flag & G.whitelist_department_flags))
+					permitted = 0
+
+				if(G.blacklist_department_flags && (job.department_flag & G.blacklist_department_flags))
+					permitted = 0
+
+				if(G.denied_roles)
 					if(job.type in G.denied_roles)
 						permitted = 0
 
-				if(permitted)
-					if(G.allowed_roles)
-						if(job.type in G.allowed_roles)
-							permitted = 1
-						else
-							permitted = 0
-					else
-						permitted = 1
+				if(G.allowed_roles && !(job.type in G.allowed_roles))
+					permitted = 0
 
 				if(permitted && G.allowed_skills)
 					for(var/required in G.allowed_skills)
@@ -425,20 +418,6 @@ SUBSYSTEM_DEF(jobs)
 
 				G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
-	// do accessories last so they don't attach to a suit that will be replaced
-	if(H.char_rank && H.char_rank.accessory)
-		for(var/accessory_path in H.char_rank.accessory)
-			var/list/accessory_data = H.char_rank.accessory[accessory_path]
-			if(islist(accessory_data))
-				var/amt = accessory_data[1]
-				var/list/accessory_args = accessory_data.Copy()
-				accessory_args[1] = src
-				for(var/i in 1 to amt)
-					H.equip_to_slot_or_store_or_drop(new accessory_path(arglist(accessory_args)), slot_tie)
-			else
-				for(var/i in 1 to (isnull(accessory_data)? 1 : accessory_data))
-					H.equip_to_slot_or_store_or_drop(new accessory_path(src), slot_tie)
-
 /datum/controller/subsystem/jobs/proc/equip_rank(mob/living/carbon/human/H, rank, joined_late = 0)
 	if(!H)
 		return
@@ -446,12 +425,6 @@ SUBSYSTEM_DEF(jobs)
 	var/datum/job/job = get_by_title(rank)
 
 	if(job)
-		if(H.client)
-			if(GLOB.using_map.flags & MAP_HAS_BRANCH)
-				H.char_branch = mil_branches.get_branch(H.client.prefs.branches[rank])
-			if(GLOB.using_map.flags & MAP_HAS_RANK)
-				H.char_rank = mil_branches.get_rank(H.client.prefs.branches[rank], H.client.prefs.ranks[rank])
-
 		// Transfers the skill settings for the job to the mob
 		H.skillset.obtain_from_client(job, H.client)
 
@@ -460,23 +433,16 @@ SUBSYSTEM_DEF(jobs)
 
 		// EMAIL GENERATION
 		if(rank != "Robot" && rank != "AIC")		//These guys get their emails later.
-			var/domain
 			var/addr = H.real_name
 			var/pass
-			if(H.char_branch)
-				if(H.char_branch.email_domain)
-					domain = H.char_branch.email_domain
-				if (H.char_branch.allow_custom_email && H.client.prefs.email_addr)
-					addr = H.client.prefs.email_addr
-			else
-				domain = "freemail.net"
+
 			if (H.client.prefs.email_pass)
 				pass = H.client.prefs.email_pass
-			if(domain)
-				ntnet_global.create_email(H, addr, domain, rank, pass)
+
+			ntnet_global.create_email(H, addr, "site53.foundation", rank, pass)
 		// END EMAIL GENERATION
 
-		job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
+		job.equip(H, H.mind ? H.mind.role_alt_title : "")
 		job.apply_fingerprints(H)
 		equip_custom_loadout(H, job)
 

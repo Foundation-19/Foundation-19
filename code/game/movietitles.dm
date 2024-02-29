@@ -128,10 +128,9 @@ GLOBAL_LIST(end_titles)
 			job = ", [uppertext(H.get_assignment())]"
 		var/used_name = H.real_name
 		var/datum/computer_file/report/crew_record/R = get_crewmember_record(H.real_name)
-		if(R?.get_rank())
-			var/datum/mil_rank/rank = mil_branches.get_rank(R.get_branch(), R.get_rank())
-			if(rank.name_short)
-				used_name = "[rank.name_short] [used_name]"
+		if(R?.get_job())
+			var/datum/job/j = R.get_job()
+			used_name = "[j.class] [used_name]"
 		var/showckey = 0
 		if(H.ckey && H.client)
 			if(H.client.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW)

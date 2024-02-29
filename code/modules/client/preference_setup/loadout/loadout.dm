@@ -187,36 +187,36 @@ var/list/gear_datums = list()
 		var/list/bad_jobs = list()
 		var/list/jobchecks = list()
 
-		var/is_blacklist = FALSE
-		var/is_whitelist = FALSE
-		var/is_mil_branch = FALSE
-
 		for(var/datum/job/J in jobs)
-			var/datum/mil_branch/player_branch
-			var/branch
 
-			if(pref.branches[J.title])
-				branch = pref.branches[J.title]
-				player_branch = mil_branches.get_branch(branch)
-
-			// If a branch permission is set, we'll work downwards
-			// We'll add all roles in a branch, and any allowed_roles, to our "allowed" list, and then remove the denied_roles
+			// If a department permission is set, we'll work downwards
+			// We'll add all roles with a tag, and any allowed_roles, to our "allowed" list, and then remove the denied_roles
 			// Every other role is disallowed
-			if (G.allowed_branches)
-				is_mil_branch = TRUE
-				if (player_branch.type in G.allowed_branches)
-					if (!(J.type in G.denied_roles))
-						good_jobs |= J
-					else
+
+			if (G.whitelist_department_flags)
+				if(J.department_flag & G.whitelist_department_flags)
+					if(J.type in G.denied_roles)
 						bad_jobs |= J
+					else
+						good_jobs |= J
 				else if (J.type in G.allowed_roles)
 					good_jobs |= J
 				else
 					bad_jobs |= J
 
+			else if (G.blacklist_department_flags)
+				if(J.department_flag & G.blacklist_department_flags)
+					if(J.type in G.allowed_roles)
+						good_jobs |= J
+					else
+						bad_jobs |= J
+				else if (J.type in G.denied_roles)
+					bad_jobs |= J
+				else
+					good_jobs |= J
+
 			// Otherwise, if a specific allow role permission is set, we'll check that it isn't in an overriding denied_roles list
 			else if (G.allowed_roles)
-				is_whitelist = TRUE
 				if (J.type in G.denied_roles)
 					bad_jobs |= J
 				else if (J.type in G.allowed_roles)
@@ -226,7 +226,6 @@ var/list/gear_datums = list()
 
 			// And if we only have deny role permissions, we'll set everyone else to allow
 			else if (G.denied_roles)
-				is_blacklist = TRUE
 				if (J.type in G.denied_roles)
 					bad_jobs |= J
 				else
@@ -236,7 +235,7 @@ var/list/gear_datums = list()
 			else
 				good_jobs |= J
 
-		if (is_mil_branch || is_whitelist)
+		if (length(bad_jobs))
 			for(var/datum/job/J in bad_jobs)
 				jobchecks += "<font color=cc5555>[J.title]</font>"
 				allowed = 0
@@ -245,17 +244,8 @@ var/list/gear_datums = list()
 				jobchecks += "<font color=55cc55>[J.title]</font>"
 				allowed = 1
 
-		else if (is_blacklist)
-			entry += "Permitted for every role except: "
-			for(var/datum/job/J in bad_jobs)
-				jobchecks += "<font color=cc5555>[J.title]</font>"
-				allowed = 0
-
-			if(length(good_jobs))
-				allowed = 1
-
-		if (length(jobchecks))
-			entry += "[english_list(jobchecks)]</i>"
+			if (length(jobchecks))
+				entry += "[english_list(jobchecks)]</i>"
 
 		if(allowed && G.allowed_skills)
 			var/list/skills_required = list()//make it into instances? instead of path
@@ -399,8 +389,10 @@ var/list/gear_datums = list()
 	var/list/denied_roles
 	/// A whitelist of roles that can spawn with this item. If blank, it's valid for all roles.
 	var/list/allowed_roles
-	/// A whitelist of service branches that can spawn with this item. If blank, it's valid for all branches.
-	var/list/allowed_branches
+	/// A whitelist of department bitflags that can spawn with this item. If null, all departments are allowed.
+	var/whitelist_department_flags
+	/// A blacklist of department bitflags that can spawn with this item. If null, all departments are allowed.
+	var/blacklist_department_flags
 	/// Skills required to spawn with this item. If blank, no skills are required.
 	var/list/allowed_skills
 	/// The species whitelist required to spawn with this item. Can be a single value or a list of valid options.

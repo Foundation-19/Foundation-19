@@ -1,3 +1,37 @@
 2024-02-05:
   DragonFire101:
   - bugfix: fixed show logs command.
+2024-02-13:
+  Coxswain-Navigator:
+  - rscadd: SCP-1507
+  DragonFire101:
+  - rscdel: Removed unused GOC Room.
+  EgorDinamit:
+  - tweak: SCP-049 now cures people by upgrading its grab far enough.
+  - tweak: SCP-049 may breach if left alone for too long. Make sure it has someone
+      to talk to!
+  - tweak: SCP-049 will receive temporary speed buff when attacked. Avoid fast weapons!
+  cheesePizza2:
+  - tweak: Slightly shrunk 2427's containment chamber.
+  - rscadd: Added a button in the lower right of the UI that shows facing direction.
+      Clicking the button allows you to quickly face a direction (same as if you used
+      the verb).
+  - imageadd: Cleaned up icon folder.
+  - balance: RAISA Agent has higher security access, matching Senior EZ Agents.
+  - bugfix: RAISA Agent can't be an antagonist anymore.
+  cheesePizza2, checkraisefold:
+  - rscadd: Ordered lists were added to pencode. Check the codex for more info.
+  - rscadd: A new database was added to the server room - the Paperwork Database.
+      Quickly download useful forms from the (relative) safety of your laptop! Office
+      workers, consider sending the IT Tech new forms to add to the download list.
+  - rscadd: ACS is here! SCP articles now have a special ACS bar that displays info.
+      Check the Pencode codex entry for details on usage.
+  - bugfix: SCP articles actually use pencode now - you can edit them without breaking
+      them.
+  - bugfix: Downloaded files are now *copies* of the server's file, not actual references
+      to their file. Whoops!
+  - code_imp: Paper uses /datum/browser, allowing for compatibility with newer Internet
+      Explorer versions.
+2024-02-21:
+  Coxswain-Navigator:
+  - rscadd: Added scp-1507 containment
