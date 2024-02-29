@@ -120,6 +120,9 @@ var/list/holder_mob_icon_cache = list()
 /obj/item/holder/borer
 	origin_tech = list(TECH_BIO = 6)
 
+/obj/item/holder/flamingo1507
+	origin_tech = list(TECH_BIO = 6)
+
 //need own subtype to work with recipies
 /obj/item/holder/corgi
 	origin_tech = list(TECH_BIO = 4)

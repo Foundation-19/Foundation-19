@@ -14,14 +14,7 @@
 	minimal_player_age = 15
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/command/cos
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o3,
-		/datum/mil_rank/security/o4,
-		/datum/mil_rank/security/o5
-	)
+	class = CLASS_A
 	hud_icon = "hudguardcommander"
 
 	access = list(
@@ -84,12 +77,7 @@
 	minimal_player_age = 10
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/security/lcz_zone_commander
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o1
-	)
+	class = CLASS_B
 	hud_icon = "hudlczcommander"
 
 	access = list(
@@ -137,12 +125,7 @@
 	minimal_player_age = 10
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/security/hcz_zone_commander
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o2
-	)
+	class = CLASS_B
 	hud_icon = "hudhczcommander"
 
 	access = list(
@@ -192,12 +175,7 @@
 	minimal_player_age = 10
 	ideal_character_age = 27
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_zone_commander
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/w5
-	)
+	class = CLASS_B
 	hud_icon = "hudezcommander"
 
 	access = list(
@@ -261,15 +239,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/lcz_sergeant
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e2,
-		/datum/mil_rank/security/e3,
-		/datum/mil_rank/security/e4,
-		/datum/mil_rank/security/e5
-	)
+	class = CLASS_C
 	hud_icon = "hudlczsarge"
 
 	access = list(
@@ -316,14 +286,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/hcz_sergeant
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e4,
-		/datum/mil_rank/security/e5,
-		/datum/mil_rank/security/e6
-	)
+	class = CLASS_C
 	hud_icon = "hudhczsarge"
 
 	access = list(
@@ -367,13 +330,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_sergeant
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e7,
-		/datum/mil_rank/security/e8
-	)
+	class = CLASS_C
 	hud_icon = "hudezsarge"
 
 	access = list(
@@ -427,13 +384,7 @@
 	ideal_character_age = 25
 	balance_limited = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/security/lcz_guard
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e1,
-		/datum/mil_rank/security/e2
-	)
+	class = CLASS_C
 	hud_icon = "hudlczsenior"
 
 	access = list(
@@ -480,13 +431,7 @@
 //	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/hcz_guard
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e3,
-		/datum/mil_rank/security/e4
-	)
+	class = CLASS_C
 	hud_icon = "hudhczsenior"
 
 	access = list(
@@ -531,13 +476,7 @@
 	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_guard
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e4,
-		/datum/mil_rank/security/e5
-	)
+	class = CLASS_C
 	hud_icon = "hudezsenior"
 
 	access = list(
@@ -584,10 +523,7 @@
 	minimal_player_age = 7
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/raisa_agent
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	class = CLASS_B
 	hud_icon = "hudraisa"
 
 	access = list(
@@ -599,6 +535,7 @@
 		ACCESS_ENGINEERING_LVL2,
 		ACCESS_SECURITY_LVL1,
 		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
 		ACCESS_ADMIN_LVL3,

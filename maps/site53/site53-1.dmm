@@ -11955,6 +11955,12 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/scp914)
+"Cu" = (
+/obj/item/modular_computer/console/preset/paperwork_dataserver{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/engineering/server_room)
 "Cy" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Server Room";
@@ -16209,7 +16215,7 @@
 /area/site53/llcz/dclass/assignmentline)
 "MM" = (
 /obj/effect/floor_decal/corner/yellow/mono,
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "MN" = (
@@ -49574,7 +49580,7 @@ Cg
 ur
 aZ
 aI
-CA
+Cu
 CA
 CA
 aZ

@@ -269,6 +269,25 @@
 		mymob.sanity_icon.screen_loc = ui_sanity
 		hud_elements |= mymob.sanity_icon
 
+	if(hud_data.has_facedir)
+		using = new /obj/screen/facedir()
+		using.icon = ui_style
+		using.icon_state = "facedir"
+		using.SetName("facedir")
+		using.screen_loc = ui_facedir
+		src.adding += using
+		facedir_button = using
+
+		using = new /obj/screen()
+		using.SetName("rest")
+		using.icon = ui_style
+		using.icon_state = "rest_[mymob.resting]"
+		using.screen_loc = ui_rest_act
+		using.color = ui_color
+		using.alpha = ui_alpha
+		src.adding += using
+		rest_button = using
+
 	if(hud_data.has_blink)
 		mymob.blink_icon = new /obj/screen/blink()
 		mymob.blink_icon.icon = 'icons/mob/status_blink.dmi'
@@ -482,6 +501,9 @@
 				to_chat(usr, SPAN_WARNING("Im about to blink!"))
 			if("blink_1")
 				to_chat(usr, SPAN_NOTICE("I blinked."))
+
+/obj/screen/facedir/Click(location, control, params)
+	usr?.face_direction()
 
 /mob/living/carbon/human/InitializePlanes()
 	..()

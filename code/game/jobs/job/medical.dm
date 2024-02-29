@@ -7,11 +7,7 @@
 	ideal_character_age = 48
 	alt_titles = list("Medical Director")
 	outfit_type = /decl/hierarchy/outfit/job/command/cmo
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(
-						/datum/mil_rank/civ/classb,
-						/datum/mil_rank/civ/classa
-						)
+	class = CLASS_A
 	hud_icon = "hudchiefmedicalofficer"
 	department = "Medical"
 	department_flag = MED|COM
@@ -69,11 +65,7 @@
 	alt_titles = list("Pharmacist")
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(
-						/datum/mil_rank/civ/classc,
-						/datum/mil_rank/civ/classb
-						)
+	class = CLASS_C
 	hud_icon = "hudpharmacist"
 
 	access = list(
@@ -115,9 +107,7 @@
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list("Counselor")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
-	allowed_branches = list(
-	/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	class = CLASS_C
 	hud_icon = "hudcounselor"
 
 	access = list(
@@ -158,11 +148,7 @@
 	economic_power = 5
 	alt_titles = list("Coroner")
 	outfit_type = /decl/hierarchy/outfit/job/medical/medicaldoctor
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(
-						/datum/mil_rank/civ/classc,
-						/datum/mil_rank/civ/classb
-						)
+	class = CLASS_C
 	hud_icon = "hudphysician"
 
 	access = list(
@@ -207,8 +193,7 @@
 	supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
 	outfit_type = /decl/hierarchy/outfit/job/medical/surgeon
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	class = CLASS_B
 	hud_icon = "hudsurgeon"
 
 	access = list(
@@ -252,8 +237,7 @@
 	requirements = list("Medical Doctor" = 480)
 	supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/medical/emt
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudemt"
 
 	access = list(

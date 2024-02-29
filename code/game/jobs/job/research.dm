@@ -10,8 +10,7 @@
 	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher")
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/science/juniorscientist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudresearchassistant"
 
 	access = list(
@@ -51,8 +50,7 @@
 	alt_titles = list("Junior Exoskeleton Technician", "Junior Hardsuit Technician")
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/science/juniorroboticist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudresearchassistant"
 
 	access = list(
@@ -94,8 +92,7 @@
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	class = CLASS_C
 	hud_icon = "hudscientist"
 
 	access = list(
@@ -139,8 +136,7 @@
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudscientist"
 
 	access = list(
@@ -184,8 +180,7 @@
 	minimal_player_age = 7
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/science/seniorscientist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	class = CLASS_B
 	hud_icon = "hudseniorresearcher"
 
 	access = list(
@@ -231,8 +226,7 @@
 	minimal_player_age = 7
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/science/seniorroboticist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
+	class = CLASS_B
 	hud_icon = "hudseniorresearcher"
 
 	access = list(
@@ -279,8 +273,7 @@
 	ideal_character_age = 40
 	spawn_positions = 6
 	outfit_type = /decl/hierarchy/outfit/job/command/researchdirector
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	class = CLASS_A
 	hud_icon = "hudchiefscienceofficer"
 
 	access = list(
