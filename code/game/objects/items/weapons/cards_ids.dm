@@ -111,7 +111,8 @@
 	slot_flags = SLOT_ID
 
 	var/list/access = list()
-	var/registered_name = "Unknown" // The name registered_name on the card
+	/// The name registered on the card
+	var/registered_name = "Unknown"
 	var/associated_account_number = 0
 	var/list/associated_email_login = list("login" = "", "password" = "")
 
@@ -124,14 +125,19 @@
 	var/icon/side
 
 	//alt titles are handled a bit weirdly in order to unobtrusively integrate into existing ID system
-	var/assignment = null	//can be alt title or the actual job
-	var/rank = null			//actual job
-	var/dorm = 0			// determines if this ID has claimed a dorm already
+	// Alt-title if applicable, otherwise actual job name.
+	var/assignment = null
+	/// Actual job name, ignoring the alt-title
+	var/rank = null
 
-	var/job_access_type     // Job type to acquire access rights from, if any
+	/// determines if this ID has claimed a dorm already // TODO: delete this
+	var/dorm = 0
 
-	var/datum/mil_branch/military_branch = null //Vars for tracking branches and ranks on multi-crewtype maps
-	var/datum/mil_rank/military_rank = null
+	/// Job type to acquire access rights from, if any
+	var/job_access_type
+
+	/// What class this ID card represents.
+	var/class = CLASS_C
 
 	var/formal_name_prefix
 	var/formal_name_suffix
@@ -146,6 +152,7 @@
 		if(j)
 			rank = j.title
 			assignment = rank
+			class = j.class
 			access |= j.get_access()
 			if(!detail_color)
 				detail_color = j.selection_color
@@ -192,11 +199,9 @@
 	return
 
 /obj/item/card/id/proc/get_display_name()
-	. = registered_name
-	if(military_rank && military_rank.name_short)
-		. ="[military_rank.name_short] [.][formal_name_suffix]"
-	else if(formal_name_prefix || formal_name_suffix)
-		. = "[formal_name_prefix][.][formal_name_suffix]"
+	. = "[formal_name_prefix][registered_name][formal_name_suffix]"
+	if(class)
+		. ="[class] [.]"
 	if(assignment)
 		. += ", [assignment]"
 
@@ -231,22 +236,13 @@
 /mob/living/carbon/human/set_id_info(obj/item/card/id/id_card)
 	..()
 	id_card.age = age
-	if(GLOB.using_map.flags & MAP_HAS_BRANCH)
-		id_card.military_branch = char_branch
-	if(GLOB.using_map.flags & MAP_HAS_RANK)
-		id_card.military_rank = char_rank
 
 /obj/item/card/id/proc/dat()
 	var/list/dat = list("<table><tr><td>")
 	dat += text("Name: []</A><BR>", "[formal_name_prefix][registered_name][formal_name_suffix]")
 	dat += text("Sex: []</A><BR>\n", sex)
 	dat += text("Age: []</A><BR>\n", age)
-
-	if(GLOB.using_map.flags & MAP_HAS_BRANCH)
-		dat += text("Branch: []</A><BR>\n", military_branch ? military_branch.name : "\[UNSET\]")
-	if(GLOB.using_map.flags & MAP_HAS_RANK)
-		dat += text("Rank: []</A><BR>\n", military_rank ? military_rank.name : "\[UNSET\]")
-
+	dat += text("Class: []</A><BR>\n", class)
 	dat += text("Assignment: []</A><BR>\n", assignment)
 	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
 	dat += text("Blood Type: []<BR>\n", blood_type)
@@ -279,61 +275,6 @@
 	to_chat(usr, "The DNA hash on the card is [dna_hash].")
 	to_chat(usr, "The fingerprint hash on the card is [fingerprint_hash].")
 	return
-
-/decl/vv_set_handler/id_card_military_branch
-	handled_type = /obj/item/card/id
-	handled_vars = list("military_branch")
-
-/decl/vv_set_handler/id_card_military_branch/handle_set_var(obj/item/card/id/id, variable, var_value, client)
-	if(!var_value)
-		id.military_branch = null
-		id.military_rank = null
-		return
-
-	if(istype(var_value, /datum/mil_branch))
-		if(var_value != id.military_branch)
-			id.military_branch = var_value
-			id.military_rank = null
-		return
-
-	if(ispath(var_value, /datum/mil_branch) || istext(var_value))
-		var/datum/mil_branch/new_branch = mil_branches.get_branch(var_value)
-		if(new_branch)
-			if(new_branch != id.military_branch)
-				id.military_branch = new_branch
-				id.military_rank = null
-			return
-
-	to_chat(client, SPAN_WARNING("Input, must be an existing branch - [var_value] is invalid"))
-
-/decl/vv_set_handler/id_card_military_rank
-	handled_type = /obj/item/card/id
-	handled_vars = list("military_rank")
-
-/decl/vv_set_handler/id_card_military_rank/handle_set_var(obj/item/card/id/id, variable, var_value, client)
-	if(!var_value)
-		id.military_rank = null
-		return
-
-	if(!id.military_branch)
-		to_chat(client, SPAN_WARNING("military_branch not set - No valid ranks available"))
-		return
-
-	if(ispath(var_value, /datum/mil_rank))
-		var/datum/mil_rank/rank = var_value
-		var_value = initial(rank.name)
-
-	if(istype(var_value, /datum/mil_rank))
-		var/datum/mil_rank/rank = var_value
-		var_value = rank.name
-
-	if(istext(var_value))
-		var/new_rank = mil_branches.get_rank(id.military_branch.name, var_value)
-		if(new_rank)
-			id.military_rank = new_rank
-			return
-
-	to_chat(client, SPAN_WARNING("Input must be an existing rank belonging to military_branch - [var_value] is invalid"))
 
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"
@@ -829,4 +770,3 @@
 /obj/item/card/id/dassignment/dmedical
 	name = "medical assignment card"
 	access = ACCESS_DCLASS_MEDICAL
-

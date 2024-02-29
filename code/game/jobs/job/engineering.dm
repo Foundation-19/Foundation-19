@@ -16,8 +16,7 @@
 		"Junior Electrician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/juneng
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudengineertrainee"
 
 	access = list(
@@ -53,8 +52,7 @@
 		"Electrician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/eng
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudengineer"
 
 	access = list(
@@ -102,8 +100,7 @@
 		"Senior Electrician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/seneng
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudseniorengineer"
 
 	access = list(
@@ -149,15 +146,7 @@
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/engineering/conteng
 	requirements = list("Engineer" = 480, EXP_TYPE_ENGINEERING = 600)
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e9,
-		/datum/mil_rank/security/w2,
-		/datum/mil_rank/security/w3,
-		/datum/mil_rank/security/w4
-	)
+	class = CLASS_B
 	hud_icon = "hudcontainmentengineer"
 
 	access = list(
@@ -241,11 +230,7 @@
 	minimal_player_age = 20
 	requirements = list("Senior Engineer" = 480, EXP_TYPE_ENGINEERING = 1200)
 	outfit_type = /decl/hierarchy/outfit/job/command/chief_engineer
-	allowed_branches = list(/datum/mil_branch/security)
-	allowed_ranks = list(
-	/datum/mil_rank/security/o2,
-	/datum/mil_rank/security/o3
-	)
+	class = CLASS_A
 	hud_icon = "hudchiefengineer"
 
 	access = list(
@@ -304,8 +289,7 @@
 	ideal_character_age = 30
 	requirements = list("Engineer" = 180, EXP_TYPE_ENGINEERING = 300)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/it_tech
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_B
 	hud_icon = "hudittech"
 
 	access = list(

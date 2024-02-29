@@ -4,7 +4,6 @@
 	#include "site53areas.dm"
 	#include "site53elevators.dm"
 	#include "site53_presets.dm"
-	#include "site_53_ranks.dm"
 	#include "site53shuttles.dm"
 
 	#include "items/encryption_keys.dm"

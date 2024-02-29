@@ -198,11 +198,6 @@
 		new_record.set_fingerprint(I.fingerprint_hash)
 		new_record.set_bloodtype(I.blood_type)
 		new_record.set_dna(I.dna_hash)
-		if(I.military_branch)
-			new_record.set_branch(I.military_branch.name)
-			if(I.military_rank)
-				new_record.set_rank(I.military_rank.name)
-				new_record.set_formal_name("[I.registered_name][I.formal_name_suffix]") // Rank replaces formal name prefix in real manifest entries
 	if(random_record)
 		COPY_VALUE(faction)
 		COPY_VALUE(religion)

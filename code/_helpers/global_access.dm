@@ -553,8 +553,6 @@
 			return global.message_delay;
 		if("message_servers")
 			return global.message_servers;
-		if("mil_branches")
-			return global.mil_branches;
 		if("mimic_defines")
 			return global.mimic_defines;
 		if("mining_floors")
@@ -1400,8 +1398,6 @@
 			global.message_delay=newval;
 		if("message_servers")
 			global.message_servers=newval;
-		if("mil_branches")
-			global.mil_branches=newval;
 		if("mimic_defines")
 			global.mimic_defines=newval;
 		if("mining_floors")
@@ -1980,7 +1976,6 @@
 	"meteors_moderate",
 	"meteors_normal",
 	"meteors_threatening",
-	"mil_branches",
 	"mimic_defines",
 	"mining_floors",
 	"mining_walls",
