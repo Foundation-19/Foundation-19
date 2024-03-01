@@ -1,4 +1,4 @@
-#define  COAST_VALUE  cell_range + 1
+#define COAST_VALUE (cell_range + 1)
 /datum/random_map/noise/exoplanet
 	descriptor = "exoplanet"
 	smoothing_iterations = 1

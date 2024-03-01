@@ -1,6 +1,9 @@
-#define SECBOT_WAIT_TIME	5		//number of in-game seconds to wait for someone to surrender
-#define SECBOT_THREAT_ARREST 4		//threat level at which we decide to arrest someone
-#define SECBOT_THREAT_ATTACK 8		//threat level at which was assume immediate danger and attack right away
+/// Number of in-game seconds to wait for someone to surrender
+#define SECBOT_WAIT_TIME	5
+/// Threat level at which we decide to arrest someone
+#define SECBOT_THREAT_ARREST 4
+/// Threat level at which was assume immediate danger and attack right away
+#define SECBOT_THREAT_ATTACK 8
 
 /mob/living/bot/secbot
 	name = "Securitron"
