@@ -270,7 +270,7 @@
 /obj/effect/paint_stripe/yellow,
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "asI" = (
 /obj/machinery/light{
 	dir = 4
@@ -349,7 +349,7 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "ayA" = (
 /obj/machinery/vending/wallmed1{
 	name = "Emergency NanoMed";
@@ -636,7 +636,7 @@
 "aNd" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "aNW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -1943,6 +1943,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"cjC" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/prepainted,
+/area/site53/reswing/lowres/researchmaint2)
 "cjJ" = (
 /obj/machinery/firealarm{
 	name = "emergency alarm";
@@ -4786,6 +4790,11 @@
 /obj/structure/table/standard,
 /obj/item/device/taperecorder,
 /obj/item/device/camera,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/xenoarchaeology)
 "fcw" = (
@@ -4858,6 +4867,23 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"feS" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	pixel_y = 18
+	},
+/turf/simulated/floor,
+/area/site53/reswing/lowres/researchmaint2)
 "feX" = (
 /obj/machinery/light{
 	dir = 1
@@ -7435,7 +7461,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "hLf" = (
 /obj/machinery/button/blast_door{
 	id_tag = "Reeducation Lockdown";
@@ -7649,7 +7675,7 @@
 "hYS" = (
 /obj/machinery/light/small,
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "hZo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8695,7 +8721,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "jbR" = (
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
 	RCon_tag = "Lower Heavy Containment Substation"
@@ -9511,6 +9537,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"jRi" = (
+/obj/structure/ladder/up,
+/turf/simulated/floor,
+/area/site53/reswing/lowres/researchmaint2)
 "jRu" = (
 /obj/machinery/atmospherics/unary/freezer{
 	dir = 8
@@ -13133,7 +13163,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "nxx" = (
 /obj/machinery/door/airlock/multi_tile/glass/research{
 	req_access = list("ACCESS_SCIENCE_LEVEL1")
@@ -13376,6 +13406,20 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchen)
+"nLY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/reswing/lowres/researchmaint2)
 "nMa" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -16436,7 +16480,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "qOS" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -18418,6 +18462,11 @@
 /obj/effect/floor_decal/corner/research/border{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/xenoarchaeology)
 "sVA" = (
@@ -19474,8 +19523,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "udm" = (
 /obj/machinery/bodyscanner{
 	dir = 4
@@ -19839,6 +19893,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
+"uwt" = (
+/turf/simulated/floor,
+/area/site53/reswing/lowres/researchmaint2)
 "uxf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20151,7 +20208,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "uND" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Bubble";
@@ -20757,6 +20814,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignment)
+"vqn" = (
+/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/prepainted,
+/area/site53/reswing/lowres/researchmaint2)
 "vqs" = (
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile/white,
@@ -23110,6 +23172,11 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/xenoarchaeology)
@@ -51260,10 +51327,10 @@ ahc
 ahc
 ahc
 ahc
-rFl
-ppB
-ppB
-ppB
+vqn
+cjC
+cjC
+cjC
 aNd
 aNd
 aNd
@@ -51517,14 +51584,14 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 jbD
 nxr
 nxr
 hLb
 nxr
 qOE
-eav
+uwt
 aNd
 ahc
 kxX
@@ -51774,13 +51841,13 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
-ppB
+cjC
+cjC
 aNd
-eav
-eav
+uwt
+uwt
 hYS
 aNd
 ahc
@@ -52031,14 +52098,14 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
-ppB
-fDM
-eav
-eav
+cjC
+jRi
+uwt
+uwt
 aNd
 ahc
 kxX
@@ -52288,9 +52355,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 aNd
 aNd
@@ -52545,9 +52612,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -52802,9 +52869,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -53059,9 +53126,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -53316,9 +53383,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -53573,9 +53640,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -53830,9 +53897,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -54087,9 +54154,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 uNo
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -54344,9 +54411,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -54601,9 +54668,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
+cjC
 axS
-ppB
+cjC
 ahc
 ahc
 ahc
@@ -54858,9 +54925,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
-axS
-ppB
+cjC
+feS
+cjC
 ahc
 ahc
 ahc
@@ -55115,9 +55182,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
-axS
-ppB
+cjC
+nLY
+cjC
 ahc
 ahc
 ahc
@@ -55372,9 +55439,9 @@ ahc
 ahc
 ahc
 ahc
-ppB
-axS
-ppB
+cjC
+nLY
+cjC
 ahc
 ahc
 ahc

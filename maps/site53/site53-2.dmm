@@ -6008,13 +6008,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
-"arg" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "arh" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -8999,15 +8992,6 @@
 	icon_state = "railing0-1"
 	},
 /obj/machinery/camera/network/entrance{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
-"ayT" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/disposalpipe/up{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -12557,7 +12541,9 @@
 	dir = 5
 	},
 /obj/item/integrated_circuit/output/video_camera,
-/obj/machinery/camera/network/reswing,
+/obj/machinery/camera/network/reswing{
+	c_tag = "Robotics Lab"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "aKH" = (
@@ -13036,7 +13022,7 @@
 "aMB" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "aMC" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -14131,11 +14117,6 @@
 	},
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/bed/chair,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/escape)
 "aPO" = (
@@ -20034,7 +20015,7 @@
 	dir = 10
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "bqI" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -20797,7 +20778,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "cfk" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 9
@@ -21329,7 +21310,7 @@
 /obj/effect/paint_stripe/yellow,
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "cFC" = (
 /obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning,
@@ -25207,7 +25188,7 @@
 	dir = 6
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "gJN" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/simulated/floor/tiled/white,
@@ -28266,7 +28247,7 @@
 	dir = 1
 	},
 /turf/simulated/open,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "jGl" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/bed/chair/padded/black{
@@ -31067,15 +31048,15 @@
 /turf/simulated/open,
 /area/site53/reswing/lowres/researchmaint)
 "mqA" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
+	},
+/obj/machinery/power/apc{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -31938,10 +31919,7 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/green{
-	d1 = 32;
-	icon_state = "32-1"
-	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
 "ngF" = (
@@ -32231,6 +32209,9 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
+"nxu" = (
+/turf/simulated/floor,
+/area/site53/reswing/lowres/researchmaint2)
 "nxE" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -34115,13 +34096,10 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/green{
-	d1 = 32;
-	icon_state = "32-1"
-	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "psc" = (
@@ -35735,7 +35713,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "rcc" = (
-/obj/machinery/camera/network/reswing,
+/obj/machinery/camera/network/reswing{
+	c_tag = "Robotics Operating Room"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
 "rcp" = (
@@ -35847,7 +35827,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
-/area/site53/reswing/lowres/researchmaint)
+/area/site53/reswing/lowres/researchmaint2)
 "riw" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -37641,6 +37621,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "tcK" = (
@@ -40832,6 +40813,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"wve" = (
+/obj/structure/ladder,
+/turf/simulated/floor,
+/area/site53/reswing/lowres/researchmaint2)
 "wwJ" = (
 /obj/machinery/camera/autoname{
 	name = "SCP-247 Observation"
@@ -70718,7 +70703,7 @@ azA
 aMB
 gJr
 jFO
-oGd
+nxu
 aax
 amW
 asd
@@ -71230,9 +71215,9 @@ azA
 azA
 azA
 aMB
-bSs
-oGd
-oGd
+wve
+nxu
+nxu
 aax
 lSO
 rbO
@@ -73332,8 +73317,8 @@ agp
 aac
 bBS
 qdk
-arg
-ayT
+rgb
+rgb
 aac
 clO
 aOt

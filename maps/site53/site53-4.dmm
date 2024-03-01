@@ -3129,11 +3129,6 @@
 /obj/machinery/light/small,
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
@@ -3516,6 +3511,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"nA" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "nB" = (
 /obj/machinery/chemical_dispenser/bar_alc/full,
 /obj/machinery/light{
@@ -5169,6 +5170,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"AH" = (
+/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/maintenance/upper_surface)
 "AL" = (
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
@@ -7869,6 +7875,10 @@
 /obj/machinery/vending/snack,
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
+"WM" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "WP" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -33067,17 +33077,17 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+AH
 hk
 hk
 hk
@@ -33324,17 +33334,17 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+xv
+ZS
+ZS
+ZS
+ZS
+nA
+ZS
+ZS
+ZS
+ZS
+xv
 hk
 hk
 hk
@@ -33581,17 +33591,17 @@ hk
 hk
 hk
 hk
-hk
-hk
-nm
-nm
-nm
-nm
-nm
-nm
-nm
-hk
-hk
+xv
+ZS
+xv
+xv
+xv
+xv
+xv
+xv
+xv
+ZS
+xv
 hk
 hk
 hk
@@ -33838,17 +33848,17 @@ hk
 hk
 hk
 hk
-hk
-hk
-nm
+xv
+ZS
+xv
 yA
 Ja
 Ja
 iy
 yA
-nm
-hk
-hk
+xv
+ZS
+xv
 hk
 hk
 hk
@@ -34095,17 +34105,17 @@ hk
 hk
 hk
 hk
-hk
-hk
-nm
+xv
+WM
+xv
 Sw
 iy
 iy
 iy
 iy
-nm
-hk
-hk
+xv
+WM
+xv
 hk
 hk
 hk
@@ -34352,16 +34362,16 @@ hk
 hk
 hk
 hk
-hk
-hk
-nm
+xv
+ZS
+xv
 Yu
 iy
 iy
 iy
 iy
-nm
 xv
+ZS
 xv
 xv
 xv
@@ -34383,7 +34393,7 @@ xv
 xv
 rJ
 ZS
-fz
+ZS
 xv
 hk
 hk
@@ -34609,9 +34619,9 @@ hk
 hk
 hk
 hk
-hk
-hk
-nm
+xv
+ZS
+xv
 iH
 mP
 ih
@@ -34866,9 +34876,9 @@ hk
 hk
 hk
 hk
-hk
-hk
-nm
+xv
+ZS
+xv
 wx
 nm
 UG
@@ -35123,9 +35133,9 @@ hk
 hk
 hk
 hk
-hk
-hk
 xv
+ZS
+ZS
 fz
 xv
 hX
@@ -35380,8 +35390,8 @@ hk
 hk
 hk
 hk
-hk
-hk
+xv
+xv
 xv
 fz
 xv

@@ -1154,7 +1154,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/reswing/lowres/researchmaint
-	name = "\improper Research Maintenance Tunnels"
+	name = "\improper Research Maintenance Tunnel 1"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/researchmaint2
+	name = "\improper Research Maintenance Tunnel 2"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
