@@ -32,3 +32,6 @@
       to their file. Whoops!
   - code_imp: Paper uses /datum/browser, allowing for compatibility with newer Internet
       Explorer versions.
+2024-02-21:
+  Coxswain-Navigator:
+  - rscadd: Added scp-1507 containment

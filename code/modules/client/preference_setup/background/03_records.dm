@@ -4,7 +4,6 @@
 	var/sec_record = ""
 	var/gen_record = ""
 	var/memory = ""
-	var/email_addr = ""
 	var/email_pass = ""
 
 /datum/category_item/player_setup_item/background/records
@@ -17,7 +16,6 @@
 	pref.sec_record = R.read("sec_record")
 	pref.gen_record = R.read("gen_record")
 	pref.memory = R.read("memory")
-	pref.email_addr = R.read("email_addr")
 	pref.email_pass = R.read("email_pass")
 
 /datum/category_item/player_setup_item/background/records/save_character(datum/pref_record_writer/W)
@@ -26,11 +24,7 @@
 	W.write("sec_record", pref.sec_record)
 	W.write("gen_record", pref.gen_record)
 	W.write("memory", pref.memory)
-	W.write("email_addr", pref.email_addr)
 	W.write("email_pass", pref.email_pass)
-
-/datum/category_item/player_setup_item/background/records/proc/allow_email_branch_check(datum/mil_branch/B)
-	return B.allow_custom_email
 
 /datum/category_item/player_setup_item/background/records/content(mob/user)
 	. = list()
@@ -46,11 +40,6 @@
 		.+= UIBUTTON("set_memory", TextPreview(pref.memory, 40), "Memory")
 
 	. += "<br><b>Other</b>:"
-	var/set_addr_button = UIBUTTON("set_email_addr", pref.email_addr ? pref.email_addr : "(default)", "Email Address")
-	var/list/branches = pref.for_each_selected_branch(CALLBACK(src, .proc/allow_email_branch_check))
-	for (var/name in branches)
-		set_addr_button += "  " + (branches[name] ? UI_FONT_GOOD(name) : UI_FONT_BAD(name))
-	. += set_addr_button
 
 	. += UIBUTTON("set_email_pass", pref.email_pass ? pref.email_pass : "(random)", "Email Password")
 	. = jointext(., "<br>")
@@ -98,20 +87,6 @@
 				return TOPIC_NOACTION
 			value = clean
 		pref.email_pass = value
-		return TOPIC_REFRESH
-
-	else if (href_list["set_email_addr"])
-		var/value = input(user, "Enter email username:", "Email Address", pref.email_addr) as text
-		if (isnull(value) || !CanUseTopic(user))
-			return TOPIC_NOACTION
-		if (value != "")
-			var/clean = sanitize_for_email(value)
-			var/chars = length(clean)
-			if (chars < 4 || chars > 24)
-				to_chat(user, SPAN_WARNING("Invalid Email Username '[clean]': must be 4..24 glyphs from /a-z0-9./"))
-				return TOPIC_NOACTION
-			value = clean
-		pref.email_addr = value
 		return TOPIC_REFRESH
 
 	. =  ..()

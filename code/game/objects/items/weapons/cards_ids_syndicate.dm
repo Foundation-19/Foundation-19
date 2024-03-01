@@ -50,10 +50,7 @@
 	entries[++entries.len] = list("name" = "Suffix", 			"value" = formal_name_suffix)
 	entries[++entries.len] = list("name" = "Appearance",		"value" = "Set")
 	entries[++entries.len] = list("name" = "Assignment",		"value" = assignment)
-	if(GLOB.using_map.flags & MAP_HAS_BRANCH)
-		entries[++entries.len] = list("name" = "Branch",		"value" = military_branch ? military_branch.name : "N/A")
-	if(military_branch && (GLOB.using_map.flags & MAP_HAS_RANK))
-		entries[++entries.len] = list("name" = "Rank",			"value" = military_rank ? military_rank.name : "N/A")
+	entries[++entries.len] = list("name" = "Class",				"value" = class)
 	entries[++entries.len] = list("name" = "Blood Type",		"value" = blood_type)
 	entries[++entries.len] = list("name" = "DNA Hash", 			"value" = dna_hash)
 	entries[++entries.len] = list("name" = "Fingerprint Hash",	"value" = fingerprint_hash)
@@ -207,21 +204,15 @@
 					registered_name = initial(registered_name)
 					unset_registered_user()
 					sex = initial(sex)
-					military_branch = initial(military_branch)
-					military_rank = initial(military_rank)
+					class = initial(class)
 					to_chat(user, SPAN_NOTICE("All information has been deleted from \the [src]."))
 					. = 1
-			if("Branch")
-				var/new_branch = sanitize(input(user,"What branch of service would you like to put on this card?","Agent Card Branch") as null|anything in mil_branches.spawn_branches())
-				if(!isnull(new_branch) && CanUseTopic(user, state))
-					src.military_branch =  mil_branches.spawn_branches()[new_branch]
-					to_chat(user, SPAN_NOTICE("Branch changed to '[military_branch.name]'."))
-					. = 1
-			if("Rank")
-				var/new_rank = sanitize(input(user,"What rank would you like to put on this card?","Agent Card Rank") as null|anything in mil_branches.spawn_ranks(military_branch.name))
-				if(!isnull(new_rank) && CanUseTopic(user, state))
-					src.military_rank = mil_branches.spawn_ranks(military_branch.name)[new_rank]
-					to_chat(user, SPAN_NOTICE("Rank changed to '[military_rank.name]'."))
+			if("Class")
+				var/list/classes = list(CLASS_A, CLASS_B, CLASS_C, CLASS_D, CLASS_E)
+				var/new_class = sanitize(input(user,"What class would you like to put on this card?","Agent Card Branch") as null|anything in classes)
+				if(!isnull(new_class) && CanUseTopic(user, state))
+					class = new_class
+					to_chat(user, SPAN_NOTICE("Class changed to '[class]'."))
 					. = 1
 
 	// Always update the UI, or buttons will spin indefinitely

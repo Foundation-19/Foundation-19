@@ -49,3 +49,10 @@
 #define HCZ			(1<<14)
 #define BUR			(1<<15)
 #define REP			(1<<16)
+
+// Class rank defines
+#define CLASS_A "Class-A"
+#define CLASS_B "Class-B"
+#define CLASS_C "Class-C"
+#define CLASS_D "Class-D"
+#define CLASS_E "Class-E"
