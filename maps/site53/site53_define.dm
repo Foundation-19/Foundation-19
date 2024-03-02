@@ -76,7 +76,12 @@
 		/decl/audio/track/perdition,
 		/decl/audio/track/ajoura,
 		/decl/audio/track/days,
-		/decl/audio/track/hie
+		/decl/audio/track/hie,
+		/decl/audio/track/chaos,
+		/decl/audio/track/bookburners,
+		/decl/audio/track/dread,
+		/decl/audio/track/animosity,
+		/decl/audio/track/main_astowo,
 	)
 
 	available_cultural_info = list(
