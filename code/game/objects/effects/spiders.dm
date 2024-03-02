@@ -20,6 +20,21 @@
 				qdel(src)
 	return
 
+/obj/effect/spider/spiderling/attack_hand(mob/living/carbon/human/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+
+	if(user.a_intent == I_HURT)
+		if(prob(50))
+			user.visible_message(SPAN_WARNING("\the [user] has missed \the [src]"))
+			disturbed()
+		else
+			user.visible_message(SPAN_WARNING("\the [src] has been squashed by \the [user]"))
+			die()
+		return
+	return
+
+
+
 /obj/effect/spider/attackby(obj/item/W, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
