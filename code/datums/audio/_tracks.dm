@@ -305,7 +305,6 @@
 	url = "https://ghyti.bandcamp.com/"
 
 // SCPRP Tracks
-//TODO: Many of these tracks in code need proper sources!
 /decl/audio/track/dieinthedark
 	source = 'sounds/music/foundation.ogg'
 	title = "Frostpunk Theme"
@@ -376,3 +375,38 @@
 	author = "Astowo"
 	license = /decl/license/cc_by_sa_3_0
 	url = "https://www.youtube.com/watch?v=41xdWeUjR_8"
+
+/decl/audio/track/final_flash
+	source = 'sounds/music/final_flash_of_existence.ogg'
+	title = "The Final Flash of Existence (SCP:SL)"
+	author = "Jacek 'Fragik' Rogal"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=CiJDfcadZMk"
+
+/decl/audio/track/duplicity_and_disillusion
+	source = 'sounds/music/duplicity_and_disillusion.ogg'
+	title = "Duplicity and Disillusion - The Rise of the Chaos Insurgency"
+	author = "Polaroid Iris Productions"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=boU3xBYcJm4"
+
+/decl/audio/track/battle_for_ganzir
+	source = 'sounds/music/battle_for_ganzir.ogg'
+	title = "Battle for Ganzir - Last Stand of the UNGOC"
+	author = "Polaroid Iris Productions"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=PLKH-_mSiCE"
+
+/decl/audio/track/purge_protocol
+	source = 'sounds/music/purge_protocol.ogg'
+	title = "Purge Protocol - Global Occult Coalition Theme"
+	author = "ksho"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=BecKecHBOdc"
+
+/decl/audio/track/uiu_spawn_theme
+	source = 'sounds/music/uiu_spawn.ogg'
+	title = "rBreach UIU/FBI Spawn Theme"
+	author = "VarieZ"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=kEPP_pEpEMU"
