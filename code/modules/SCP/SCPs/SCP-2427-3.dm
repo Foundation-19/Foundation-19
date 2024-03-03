@@ -32,7 +32,7 @@
 
 	var/satiety = 300
 	/// How much satiety is reduced per tick
-	var/satiety_reduction_per_tick = 0.5
+	var/satiety_reduction_per_tick = 0.4
 	/// Upon going to that point or above - the mob goes into the is_sleeping stage and is unable to act/speak/move for some time
 	var/max_satiety = 640
 	/// Upon that point, the mob is on a rampage, allowing it to escape and move faster
