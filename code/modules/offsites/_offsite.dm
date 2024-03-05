@@ -20,8 +20,31 @@
 /datum/offsite/proc/recieve_fax(obj/item/ref, origin_department = "Unknown")
 	received_faxes += list(world.time, ref, origin_department)
 
-/datum/offsite/proc/send_fax(obj/item/ref, recieving_department = "Unknown")
-	sent_faxes += list(world.time, ref, recieving_department)
+// TODO
+/datum/offsite/proc/send_fax(client/admin)
+	var/datum/admins/admin_datum = admin.holder
+
+	if (!istype(admin_datum, /datum/admins))
+		to_chat(admin, "Error: you are not an admin!")
+		return
+
+	// Destination
+	var/department = tgui_input_list(admin, "Choose a destination fax", "Fax Target", GLOB.alldepartments)
+
+	// Generate the fax
+	var/obj/item/paper/admin/P = new /obj/item/paper/admin( null ) //hopefully the null loc won't cause trouble for us
+	admin_datum.faxreply = P
+	P.admindatum = admin_datum
+	P.origin = name
+	P.department = department
+	P.destinations = get_fax_machines_by_department(department)
+	P.adminbrowse()
+
+	var/ref = P // TODO: copy P instead of a direct ref
+
+	sent_faxes += list(world.time, ref, department)
+
+	log_admin("[admin] sent a fax to [department].")
 
 /datum/offsite/proc/receive_message(message, mob/sender)
 	received_messages += list(world.time, message, sender)
@@ -34,8 +57,19 @@
 			to_chat(C, adjusted_message)
 			sound_to(C, 'sounds/machines/signal.ogg')
 
-/datum/offsite/proc/send_message(message, mob/living/recipient, client/admin)
+/datum/offsite/proc/send_message(client/admin, mob/living/recipient = null)
+	var/datum/admins/admin_datum = admin.holder
+
+	if (!istype(admin_datum, /datum/admins))
+		to_chat(admin, "Error: you are not an admin!")
+		return
+
+	if(!recipient)
+		recipient = input(admin, "Choose the recipient of your message.", "Choose Recipient") in GLOB.living_mob_list_
+
 	if(recipient.can_centcom_reply())
+		var/message = tgui_input_text(admin, message = "Enter a message to be sent to the recipient.", title = "Message Input", multiline = TRUE)
+
 		sent_messages += list(world.time, message, recipient)
 
 		log_admin("[admin] sent a message to [key_name(recipient)]: \"[message]\".")

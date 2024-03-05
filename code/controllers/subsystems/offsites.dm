@@ -67,8 +67,10 @@ SUBSYSTEM_DEF(offsites)
 	switch(action)
 		if("send_fax")
 			var/datum/offsite/cur_os = offsites[params["id"]]
+			cur_os.send_fax() // TODO
 		if("send_msg")
 			var/datum/offsite/cur_os = offsites[params["id"]]
+			cur_os.send_message(usr)
 
 
 /datum/controller/subsystem/offsites/tgui_state(mob/user)

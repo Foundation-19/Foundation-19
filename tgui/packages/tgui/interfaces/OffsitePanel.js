@@ -39,8 +39,8 @@ export const OffsitePanel = (props, context) => {
   );
 };
 
-// TODO: timesort instead of type categories
-const OffsitePage = (current_offsite_data = []) => {
+const OffsitePage = (current_offsite_data = [], context) => {
+  const { act, data } = useBackend(context);
   const name = current_offsite_data[0];
   const type = current_offsite_data[1];
   const comms_data = current_offsite_data[2];
@@ -48,13 +48,14 @@ const OffsitePage = (current_offsite_data = []) => {
   return (
     <Section>
       <h1>{name}</h1>
-      {comms_data.map((c_data = [], i) => {
-        return (
-          <Button key={i}>
-            {c_data[3]} {c_data[2]} at world time {c_data[0]}.
-          </Button>
-        );
-      })}
+      {comms_data &&
+        comms_data.map((c_data = [], i) => {
+          return (
+            <Button key={i}>
+              {c_data[3]} {c_data[2]} at world time {c_data[0]}.
+            </Button>
+          );
+        })}
       <Button onClick={() => act('send_fax', { id: type })}>Send fax</Button>
       <Button onClick={() => act('send_msg', { id: type })}>
         Send message
