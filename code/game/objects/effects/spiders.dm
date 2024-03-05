@@ -25,6 +25,9 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(user.a_intent == I_HURT)
 		user.visible_message(SPAN_WARNING("\the [user] attacked \the [src]"))
+		disturbed()
+		health -= 1
+		healthcheck()
 	return
 
 /obj/effect/spider/attackby(obj/item/W, mob/user)
