@@ -1762,7 +1762,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -2921,7 +2922,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 0
 	},
 /obj/machinery/door/window/brigdoor{
 	dir = 8;
@@ -8324,7 +8326,8 @@
 	name = "Cell 2"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -8527,7 +8530,8 @@
 	name = "Cell 1"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -8537,7 +8541,8 @@
 	name = "Cell 4"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -8592,7 +8597,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/job_terminal,
+/obj/machinery/job_terminal{
+	locked = 0
+	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -8670,7 +8677,8 @@
 	name = "Cell 3"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -9281,7 +9289,8 @@
 	name = "Cell 6"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -9384,7 +9393,8 @@
 	name = "Cell 5"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -9394,7 +9404,8 @@
 	name = "Cell 8"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -9404,7 +9415,8 @@
 	name = "Cell 7"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -9588,7 +9600,8 @@
 	name = "Cell 9"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -9639,7 +9652,8 @@
 /area/site53/llcz/dclass/primaryhallway)
 "ws" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -10057,7 +10071,8 @@
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "xl" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell1";
@@ -10067,7 +10082,8 @@
 /area/site53/llcz/dclass/isolation)
 "xm" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell2";
@@ -10128,7 +10144,8 @@
 /area/site53/llcz/mine/unexplored)
 "xu" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell3";
@@ -10217,13 +10234,15 @@
 	name = "Assignments & Recreation"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "xG" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -10310,7 +10329,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 0
 	},
 /obj/item/boombox,
 /turf/simulated/floor/tiled/monotile/white,
@@ -11083,7 +11103,8 @@
 	name = "Cell 10"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -11820,6 +11841,10 @@
 /obj/machinery/button/alternate/door{
 	id_tag = "LobbyMedD";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDZMedbaywin";
+	name = "CDZ Medbay Window Shutters"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
@@ -12874,7 +12899,8 @@
 /area/site53/llcz/dclass/luxuryhall)
 "EF" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell5";
@@ -12884,7 +12910,8 @@
 /area/site53/llcz/dclass/isolation)
 "EG" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell6";
@@ -12894,7 +12921,8 @@
 /area/site53/llcz/dclass/isolation)
 "EH" = (
 /obj/machinery/door/blast/regular{
-	id_tag = "dclasscells"
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
 /obj/machinery/door/airlock/glass/medical{
 	id_tag = "isolationcell7";
@@ -14411,7 +14439,10 @@
 	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/machinery/door/blast/shutters/open{
-	begins_closed = 1;
+	id_tag = "CDZMedbaywin";
+	name = "CDZ Medbay Window Shutters"
+	},
+/obj/machinery/door/blast/shutters/open{
 	id_tag = "CDZMedbaywin";
 	name = "CDZ Medbay Window Shutters"
 	},
@@ -16023,7 +16054,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "Mm" = (
-/obj/machinery/job_terminal,
+/obj/machinery/job_terminal{
+	locked = 0
+	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -17778,7 +17811,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -19782,7 +19816,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -19801,7 +19836,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbay";
-	name = "CDZ Medbay"
+	name = "CDZ Medbay";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
@@ -20099,7 +20135,8 @@
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 0
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
