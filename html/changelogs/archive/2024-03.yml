@@ -7,3 +7,8 @@
   - rscdel: Deleted some jobcode related to species.
   - rscdel: Deletes various items that are not lore-relevant/which are unused.
   - refactor: All code relating to branches/ranks has been refactored.
+2024-03-06:
+  Cheesepizza2, Costco Security:
+  - soundadd: Added 10 new tracks to the title screen!
+  RandomLad645:
+  - bugfix: fixed SCP-420-J name
