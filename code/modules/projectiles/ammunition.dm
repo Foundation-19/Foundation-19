@@ -17,6 +17,18 @@
 	var/fall_sounds = list('sounds/weapons/guns/casingfall1.ogg','sounds/weapons/guns/casingfall2.ogg','sounds/weapons/guns/casingfall3.ogg')
 	var/projectile_label
 
+
+/obj/item/ammo_magazine/proc/create_initial_contents()
+	if(contents_initialized || !initial_ammo || !ammo_type)
+		return
+	for(var/i in 1 to initial_ammo)
+		stored_ammo += new ammo_type(src)
+
+/obj/item/ammo_magazine/proc/get_stored_ammo_count()
+	. = length(stored_ammo)
+	if(!contents_initialized)
+		. += initial_ammo
+
 /obj/item/ammo_casing/Initialize()
 	if(!ispath(projectile_type))
 		is_spent = TRUE
@@ -172,6 +184,10 @@
 	//because BYOND doesn't support numbers as keys in associative lists
 	var/list/icon_keys = list()		//keys
 	var/list/ammo_states = list()	//values
+	/// Determines whether or not we wait until the first time our contents are gotten to initialize contents. May lead to icon bugs if not handled delicately.
+	var/lazyload_contents = TRUE
+	/// Whether or not our contents have been initialized or not, used in lazyloaded contents.
+	var/contents_initialized = FALSE
 
 /obj/item/ammo_magazine/box
 	w_class = ITEM_SIZE_NORMAL
@@ -183,6 +199,9 @@
 
 	if(isnull(initial_ammo))
 		initial_ammo = max_ammo
+
+	if(!lazyload_contents)
+		create_initial_contents()
 
 	if(initial_ammo)
 		for(var/i in 1 to initial_ammo)
@@ -216,8 +235,9 @@
 		return
 
 	for(var/obj/item/ammo_casing/C in T)
-		if(stored_ammo.len >= max_ammo)
-			break
+		if(get_stored_ammo_count() >= max_ammo)
+			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			return
 		if(C.caliber != caliber)
 			continue
 		stored_ammo.Add(C)
@@ -265,6 +285,7 @@
 	update_icon()
 
 /obj/item/ammo_magazine/attack_self(mob/user)
+	create_initial_contents()
 	if(!stored_ammo.len)
 		to_chat(user, SPAN_NOTICE("[src] is already empty!"))
 		return
@@ -297,19 +318,22 @@
 		return
 
 /obj/item/ammo_magazine/on_update_icon()
+	. = ..()
 	if(multiple_sprites)
-		//find the lowest key greater than or equal to stored_ammo.len
+		//find the lowest key greater than or equal to our ammo count
 		var/new_state = null
+		var/self_ammo_count = get_stored_ammo_count()
 		for(var/idx in 1 to icon_keys.len)
-			var/ammo_count = icon_keys[idx]
-			if (ammo_count >= stored_ammo.len)
+			var/icon_ammo_count = icon_keys[idx]
+			if (icon_ammo_count >= self_ammo_count)
 				new_state = ammo_states[idx]
 				break
 		icon_state = (new_state)? new_state : initial(icon_state)
 
 /obj/item/ammo_magazine/examine(mob/user)
 	. = ..()
-	to_chat(user, "There [(stored_ammo.len == 1)? "is" : "are"] [stored_ammo.len] round\s left!")
+	var/self_ammo_count = get_stored_ammo_count()
+	to_chat(user, "There [(self_ammo_count == 1)? "is" : "are"] [self_ammo_count] round\s left!")
 
 //magazine icon state caching
 /var/global/list/magazine_icondata_keys = list()
