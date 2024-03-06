@@ -4,7 +4,7 @@
 	category = /datum/gear/clothing/
 	slot = slot_tie
 	denied_roles = list(/datum/job/classd)
-	allowed_branches = list(/datum/mil_branch/civilian)
+	blacklist_department_flags = SEC
 
 	//No reason for guards to wear hawaian shirts, is there? Researchers and office staff.. I mean, maybe.
 
@@ -19,7 +19,7 @@
 	path = /obj/item/clothing/accessory/scarf
 	flags = GEAR_HAS_COLOR_SELECTION
 	denied_roles = null
-	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
+	blacklist_department_flags = NONE
 
 /datum/gear/clothing/hawaii
 	display_name = "hawaii shirt"

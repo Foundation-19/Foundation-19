@@ -24,10 +24,6 @@
 	if(job && job.min_skill)
 		. = job.min_skill[S.type]
 	if(!.)
-		var/datum/mil_branch/branch = mil_branches.get_branch(branches[job.title])
-		if(branch && branch.min_skill)
-			. = branch.min_skill[S.type]
-	if(!.)
 		. = SKILL_MIN
 
 /datum/preferences/proc/get_spent_points(datum/job/job, decl/hierarchy/skill/S)

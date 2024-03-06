@@ -32,7 +32,7 @@
 			all_records.Add(list(list(
 				"name" = R.get_name(),
 				"rank" = R.get_job(),
-				"milrank" = R.get_rank(),
+				"class" = R.get_class(),
 				"id" = R.uid
 			)))
 		data["all_records"] = all_records

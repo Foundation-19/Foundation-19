@@ -1,0 +1,14 @@
+2024-03-01:
+  cheesePizza2:
+  - balance: The Containment Engineer now has access to the LCZ and HCZ areas, as
+      well as to all SCP chambers. He can also access LCZ and HCZ security comms.
+  - rscadd: All classes (security included) use SCP classes instead of bay ones.
+  - rscdel: Deletes military branches/ranks and replaces them with simpler classes.
+  - rscdel: Deleted some jobcode related to species.
+  - rscdel: Deletes various items that are not lore-relevant/which are unused.
+  - refactor: All code relating to branches/ranks has been refactored.
+2024-03-06:
+  Cheesepizza2, Costco Security:
+  - soundadd: Added 10 new tracks to the title screen!
+  RandomLad645:
+  - bugfix: fixed SCP-420-J name
