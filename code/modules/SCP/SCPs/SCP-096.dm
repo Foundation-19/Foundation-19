@@ -105,7 +105,7 @@
 			targets += Ptarget
 
 			playsound(src, 'sounds/scp/096/096-rage.ogg', 100, ignore_walls = TRUE)
-			addtimer(CALLBACK(src, .proc/finish_screaming), 30 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(finish_screaming)), 30 SECONDS)
 		if(STATE_096_SCREAMING, STATE_096_CHASING, STATE_096_SLAUGHTER, STATE_096_STAGGERED)
 			targets += Ptarget
 
@@ -119,7 +119,7 @@
 	if(current_state == STATE_096_IDLE)
 		return
 	playsound(src, 'sounds/scp/096/096-chase.ogg', 100, ignore_walls = TRUE)
-	addtimer(CALLBACK(src, .proc/chase_noise), 10 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(chase_noise)), 10 SECONDS)
 
 /mob/living/scp096/proc/OpenDoor(obj/machinery/door/A)
 	if(!istype(A))

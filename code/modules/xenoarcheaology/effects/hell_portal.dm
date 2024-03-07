@@ -120,8 +120,8 @@
 
 /datum/artifact_effect/hellportal/proc/register_mob(mob/M)
 	mobs += M
-	GLOB.destroyed_event.register(M, src, .proc/unregister_mob)
-	GLOB.death_event.register(M, src, .proc/unregister_mob)
+	GLOB.destroyed_event.register(M, src, PROC_REF(unregister_mob))
+	GLOB.death_event.register(M, src, PROC_REF(unregister_mob))
 
 	playsound(M, pick(mob_spawn_sounds), 100)
 
@@ -132,7 +132,7 @@
 
 /obj/effect/gateway/active/artifact/New()
 	..()
-	addtimer(CALLBACK(src, .proc/create_and_delete), rand(15,30) SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(create_and_delete)), rand(15,30) SECONDS)
 
 /obj/effect/gateway/active/artifact/create_and_delete()
 	var/mob/living/simple_animal/T = pickweight(spawnable)

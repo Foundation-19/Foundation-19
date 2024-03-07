@@ -86,7 +86,7 @@
 	update_nearby_tiles(need_rebuild=1)
 
 /obj/machinery/door/Initialize()
-	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
+	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, PROC_REF(CheckPenetration))
 	. = ..()
 #ifdef UNIT_TEST
 	if(autoset_access)

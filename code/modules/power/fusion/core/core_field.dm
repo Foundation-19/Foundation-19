@@ -84,7 +84,7 @@
 
 /obj/effect/fusion_em_field/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/update_light_colors), 10 SECONDS, TIMER_LOOP)
+	addtimer(CALLBACK(src, PROC_REF(update_light_colors)), 10 SECONDS, TIMER_LOOP)
 
 /obj/effect/fusion_em_field/proc/update_light_colors()
 	var/use_range

@@ -176,7 +176,7 @@ BONUS
 	var/repeats = rand(1, params[1])
 	for(var/i = 1 to repeats)
 		var/delay = rand(params[2], params[3])
-		addtimer(CALLBACK(src, .proc/PlayDelayedSound, M, T, S), delay)
+		addtimer(CALLBACK(src, PROC_REF(PlayDelayedSound), M, T, S), delay)
 
 /datum/symptom/paranoia/proc/PlayDelayedSound(mob/living/M, turf/T, S, vol)
 	if(QDELETED(M) || QDELETED(T))

@@ -445,7 +445,7 @@ About the new airlock wires panel:
 			if(!src.justzap)
 				if(src.shock(user, 100))
 					src.justzap = TRUE
-					addtimer(CALLBACK(src, .proc/set_justzap, FALSE), 1 SECOND)
+					addtimer(CALLBACK(src, PROC_REF(set_justzap), FALSE), 1 SECOND)
 					return
 			else
 				return

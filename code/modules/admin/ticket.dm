@@ -16,7 +16,7 @@ var/list/ticket_panels = list()
 	tickets |= src
 	id = tickets.len
 	opened_time = world.time
-	addtimer(CALLBACK(src, .proc/timeoutcheck), 5 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(timeoutcheck)), 5 MINUTES)
 
 /datum/ticket/proc/timeoutcheck()
 	if(status == TICKET_OPEN)

@@ -132,7 +132,7 @@
 
 /mob/proc/slip_handler(dir, dist, delay)
 	if (dist > 0)
-		addtimer(CALLBACK(src, .proc/slip_handler, dir, dist - 1, delay), delay)
+		addtimer(CALLBACK(src, PROC_REF(slip_handler), dir, dist - 1, delay), delay)
 	step(src, dir)
 
 //returns 1 if made bloody, returns 0 otherwise
