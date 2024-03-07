@@ -276,7 +276,7 @@
 // "designed" such that 120u of Citalopram are needed
 // to go from full insanity to complete sanity.
 // I forgot how I did the math for this, so trust me bro
-#define CHEM_SANITY_MULTIPLIER 5/6
+#define CHEM_SANITY_MULTIPLIER (5/6)
 
 /obj/item/organ/internal/brain/proc/handle_sanity_effects()
 	if(owner.stat) // Dead => Don't change sanity

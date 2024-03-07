@@ -4,7 +4,7 @@
 #define STATE_STATUSDISPLAY	4
 #define STATE_ALERT_LEVEL	5
 
-#define CROSSCOMMS_COOLDOWN 2 MINUTES
+#define CROSSCOMMS_COOLDOWN (2 MINUTES)
 
 /datum/computer_file/program/comm
 	filename = "comm"

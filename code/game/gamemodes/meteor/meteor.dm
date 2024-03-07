@@ -1,5 +1,6 @@
 // The following four defines can be used to tweak the difficulty of the gamemode
-#define METEOR_FAILSAFE_THRESHOLD 45 MINUTES	// Failsafe that guarantees Severity will be at least 15 when the round hits this time.
+/// Failsafe that guarantees Severity will be at least 15 when the round hits this time.
+#define METEOR_FAILSAFE_THRESHOLD (45 MINUTES)
 
 // In general, a PVE oriented game mode. A middle ground between Extended and actual antagonist based rounds.
 /datum/game_mode/meteor

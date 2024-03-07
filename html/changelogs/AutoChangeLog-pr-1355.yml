@@ -1,8 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: All classes (security included) use SCP classes instead of bay ones.
-  - rscdel: Deletes military branches/ranks and replaces them with simpler classes.
-  - rscdel: Deleted some jobcode related to species.
-  - rscdel: Deletes various items that are not lore-relevant/which are unused.
-  - refactor: All code relating to branches/ranks has been refactored.
