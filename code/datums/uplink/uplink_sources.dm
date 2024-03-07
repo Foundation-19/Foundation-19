@@ -1,4 +1,4 @@
-#define NO_GUARANTEE_NO_EXTRA_COST_DESC(X) "Installs an uplink into " + X + " if, and only if, found on your person. Has no TC cost."
+#define NO_GUARANTEE_NO_EXTRA_COST_DESC(X) ("Installs an uplink into " + X + " if, and only if, found on your person. Has no TC cost.")
 
 #define SETUP_FAILED TRUE
 
