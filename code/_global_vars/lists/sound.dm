@@ -161,5 +161,15 @@ GLOBAL_LIST_INIT(sfx_list, list(
 		'sounds/machines/airlock.ogg',
 		'sounds/effects/clownstep1.ogg',
 		'sounds/effects/clownstep2.ogg'
-		)
+		),
+
+	SFX_SCP1507_ATTACK = list(
+		'sounds/scp/1507/attack1.ogg',
+		'sounds/scp/1507/attack2.ogg',
+		'sounds/scp/1507/attack3.ogg',
+		'sounds/scp/1507/attack4.ogg',
+		'sounds/scp/1507/attack5.ogg',
+		'sounds/scp/1507/attack6.ogg'
+	)
+
 ))

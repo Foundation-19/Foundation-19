@@ -3,7 +3,7 @@
 	slot = slot_head
 	category = /datum/gear/head
 	denied_roles = list(/datum/job/classd)
-	allowed_branches = list(/datum/mil_branch/civilian)
+	blacklist_department_flags = SEC
 
 	//Same idea, eats the helmet slot which guards spawn with. Will selectively allow certain headgear that would fit security like beanies, hwoever
 
@@ -12,12 +12,13 @@
 	path = /obj/item/clothing/head/beret/plaincolor
 	flags = GEAR_HAS_COLOR_SELECTION
 	description = "A simple, solid color beret. This one has no emblems or insignia on it."
-	allowed_branches = list(/datum/mil_branch/security)
+	whitelist_department_flags = SEC
+	blacklist_department_flags = NONE
 
 /datum/gear/head/bandana
 	display_name = "bandana selection"
 	path = /obj/item/clothing
-	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
+	blacklist_department_flags = NONE
 
 /datum/gear/head/bandana/New()
 	..()
@@ -28,7 +29,7 @@
 	path = /obj/item/clothing/head/beanie
 	flags = GEAR_HAS_COLOR_SELECTION
 	denied_roles = null
-	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
+	blacklist_department_flags = NONE
 
 /datum/gear/head/bow
 	display_name = "hair bow, colour select"
@@ -41,12 +42,6 @@
 	path = /obj/item/clothing/head/flatcap
 	flags = GEAR_HAS_COLOR_SELECTION
 	denied_roles = null
-
-/datum/gear/head/mariner
-	display_name = "mariner's cap, colour select"
-	path = /obj/item/clothing/head/mariner
-	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/head/orange_cap
 	display_name = "orange cap"
@@ -79,7 +74,8 @@
 /datum/gear/head/capuniform
 	display_name = "Uniform cap"
 	path = /obj/item/clothing/head
-	allowed_branches = list(/datum/mil_branch/security)
+	whitelist_department_flags = SEC
+	blacklist_department_flags = NONE
 
 /datum/gear/head/capuniform/New()
 	..()

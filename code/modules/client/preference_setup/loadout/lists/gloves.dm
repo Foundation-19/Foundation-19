@@ -9,14 +9,13 @@
 	display_name = "gloves, colored"
 	flags = GEAR_HAS_COLOR_SELECTION
 	path = /obj/item/clothing/gloves/color
-	allowed_branches = list(/datum/mil_branch/civilian)
-
+	blacklist_department_flags = SEC
 
 /datum/gear/gloves/latex
 	display_name = "gloves, latex"
 	path = /obj/item/clothing/gloves/latex
 	cost = 3
-	allowed_branches = list(/datum/mil_branch/civilian)
+	blacklist_department_flags = SEC
 
 /datum/gear/gloves/nitrile
 	display_name = "gloves, nitrile"
@@ -26,15 +25,13 @@
 /datum/gear/gloves/rainbow
 	display_name = "gloves, rainbow"
 	path = /obj/item/clothing/gloves/rainbow
-	allowed_branches = list(/datum/mil_branch/civilian)
-
+	blacklist_department_flags = SEC
 
 /datum/gear/gloves/evening
 	display_name = "gloves, evening, colour select"
 	path = /obj/item/clothing/gloves/color/evening
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_branches = list(/datum/mil_branch/civilian)
-
+	blacklist_department_flags = SEC
 
 /datum/gear/ring
 	display_name = "ring"
@@ -44,8 +41,6 @@
 /datum/gear/ring/New()
 	..()
 	var/ringtype = list()
-	ringtype["CTI ring"] = /obj/item/clothing/ring/cti
-	ringtype["Mariner University ring"] = /obj/item/clothing/ring/mariner
 	ringtype["engagement ring"] = /obj/item/clothing/ring/engagement
 	ringtype["signet ring"] = /obj/item/clothing/ring/seal/signet
 	ringtype["masonic ring"] = /obj/item/clothing/ring/seal/mason
@@ -64,11 +59,9 @@
 	display_name = "gloves, botany"
 	path = /obj/item/clothing/gloves/thick/botany
 	cost = 3
-	allowed_branches = list(/datum/mil_branch/civilian)
+	whitelist_department_flags = CIV
 
-//guards can wear these
 /datum/gear/gloves/work
 	display_name = "gloves, work"
 	path = /obj/item/clothing/gloves/thick
 	cost = 3
-	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)

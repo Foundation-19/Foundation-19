@@ -3,7 +3,7 @@
 #define SKILL_TRAINED     3
 #define SKILL_EXPERIENCED 4
 #define SKILL_MASTER      5
-#define HAS_PERK          SKILL_UNTRAINED + 1
+#define HAS_PERK          (SKILL_UNTRAINED + 1)
 
 #define SKILL_MIN      1 // Min skill value selectable
 #define SKILL_MAX      5 // Max skill value selectable

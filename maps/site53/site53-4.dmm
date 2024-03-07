@@ -242,8 +242,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/canteen)
@@ -322,8 +322,8 @@
 "bb" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -356,8 +356,8 @@
 "bp" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id_tag = "EZ Lobby Outter Lockdown";
-	name = "EZ Lobby Outter Lockdown";
+	id_tag = "EZ Lobby Outer Lockdown";
+	name = "EZ Lobby Outer Lockdown";
 	begins_closed = 0
 	},
 /obj/machinery/door/airlock/multi_tile/glass/security{
@@ -417,7 +417,7 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
+	id_tag = "facilityLockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -561,8 +561,8 @@
 "bY" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/button/blast_door{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown";
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
@@ -578,8 +578,8 @@
 	name = "Senior Administrative Offices"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -606,8 +606,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk"
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -772,7 +772,7 @@
 "cz" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect2";
-	name = "inner SD lockdown"
+	name = "Inner SD Lockdown"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -906,8 +906,8 @@
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk"
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk"
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -1086,7 +1086,7 @@
 "dk" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "facilitylockdown";
+	id_tag = "facilityLockdown";
 	name = "Facility Lockdown button"
 	},
 /obj/structure/table/standard,
@@ -1310,8 +1310,8 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/structure/window/reinforced,
 /obj/machinery/button/blast_door{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown";
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/carpet/blue,
@@ -1342,8 +1342,8 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk";
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -1451,12 +1451,12 @@
 "ep" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk"
+	id_tag = "Site Director Office Checkpoint Desk";
+	name = "Site Director Office Checkpoint Desk"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -1474,7 +1474,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
+	id_tag = "facilityLockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -1502,7 +1502,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
+	id_tag = "facilityLockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -1643,7 +1643,7 @@
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/button/blast_door{
 	anchored = 0;
-	id_tag = "facilitylockdown";
+	id_tag = "facilityLockdown";
 	name = "Facility Lockdown button";
 	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
@@ -1661,8 +1661,8 @@
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown"
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -1685,15 +1685,15 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "SD Office Outter Lockdown";
-	name = "SD Office Outter Lockdown";
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "ECZ Security Lockdown";
-	name = "Lower ECZ lockdown";
+	name = "Lower ECZ Lockdown";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -2004,7 +2004,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
+	id_tag = "facilityLockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
@@ -4235,8 +4235,8 @@
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "EZ Lobby Outter Lockdown";
-	name = "EZ Lobby Outter Lockdown";
+	id_tag = "EZ Lobby Outer Lockdown";
+	name = "EZ Lobby Outer Lockdown";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -4845,12 +4845,12 @@
 	pixel_y = 32;
 	name = "EZBrigFlash"
 	},
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/machinery/door/blast/shutters{
 	id_tag = "EZ Brig CR Windows";
 	name = "EZ Brig CR Windows"
 	},
-/obj/item/paper_bin,
-/obj/item/pen,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "vM" = (
@@ -4954,6 +4954,15 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"wF" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 8;
+	id_tag = "cell6";
+	name = "Cell 6 Bolts"
+	},
+/turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "wI" = (
 /obj/machinery/door/airlock/security{
@@ -5159,11 +5168,20 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"yi" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	name = "Cell 3 Bolts";
+	id_tag = "cell3"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "yq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id_tag = "EZ Lobby Outter Lockdown";
-	name = "EZ Lobby Outter Lockdown";
+	id_tag = "EZ Lobby Outer Lockdown";
+	name = "EZ Lobby Outer Lockdown";
 	begins_closed = 0
 	},
 /obj/structure/cable/green{
@@ -5264,8 +5282,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "EZ Brig CR Access Outter";
-	name = "EZ Brig CR Access Outter";
+	id_tag = "EZ Brig CR Access Outer";
+	name = "EZ Brig CR Access Outer";
 	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5756,6 +5774,13 @@
 /obj/item/folder/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"CI" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 2";
+	id_tag = "cell2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "CJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6041,6 +6066,13 @@
 "Fx" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/bed,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"Fy" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 5";
+	id_tag = "cell5"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Fz" = (
@@ -6477,6 +6509,15 @@
 /obj/structure/mopbucket,
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
+"JL" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	name = "Cell 2 Bolts";
+	id_tag = "cell2"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "JM" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Internal Tribunal Department Representative";
@@ -6721,6 +6762,13 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"Lx" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 1";
+	id_tag = "cell1"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "LA" = (
 /obj/machinery/light{
 	dir = 1
@@ -6800,7 +6848,10 @@
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "LU" = (
-/obj/effect/floor_decal/corner/black/full,
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 3";
+	id_tag = "cell3"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "LV" = (
@@ -6882,8 +6933,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "Panic Room CR Window";
-	name = "Panic Room CR Window";
+	id_tag = "Panic Room CR window";
+	name = "Panic Room CR window";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -6980,6 +7031,15 @@
 /obj/machinery/light/small/red,
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
+"Nq" = (
+/obj/structure/hygiene/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/effect/floor_decal/corner/black/full,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "Nr" = (
 /obj/structure/bed/chair/padded/black{
 	dir = 4
@@ -6994,8 +7054,8 @@
 "Nt" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
-	id_tag = "Panic Room CR Window";
-	name = "Panic Room CR Window"
+	id_tag = "Panic Room CR window";
+	name = "Panic Room CR window"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
@@ -7016,6 +7076,13 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"NA" = (
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 4";
+	id_tag = "cell4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "NF" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow/mono,
@@ -7244,6 +7311,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
+"Pn" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "cell4";
+	name = "Cell 4 Bolts"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "Pp" = (
 /obj/machinery/door/airlock/command{
 	name = "EZ Security Gear Room";
@@ -7379,6 +7455,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"QB" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 8;
+	id_tag = "cell5";
+	name = "Cell 5 Bolts"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "QE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -7541,7 +7626,7 @@
 /obj/machinery/button/blast_door{
 	anchored = 0;
 	dir = 4;
-	id_tag = "facilitylockdown";
+	id_tag = "facilityLockdown";
 	name = "Facility Lockdown button";
 	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
@@ -8079,10 +8164,19 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "VK" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "EZ Brig Cell";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
-	id_tag = "EZBrig"
+/obj/machinery/door/airlock/glass{
+	name = "EZ Brig Cell 6";
+	id_tag = "cell6"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
+"VP" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/flasher{
+	id_tag = "EZBrigFlash";
+	name = "EZBrigFlash"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -8437,6 +8531,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"YR" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	name = "Cell 1 Bolts";
+	id_tag = "cell1"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "YW" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood,
@@ -8459,8 +8562,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Brig CR Access Outter";
-	name = "EZ Brig CR Access Outter";
+	id_tag = "EZ Brig CR Access Outer";
+	name = "EZ Brig CR Access Outer";
 	pixel_y = 25;
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
@@ -8496,6 +8599,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"Zs" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/machinery/flasher{
+	id_tag = "EZBrigFlash";
+	name = "EZBrigFlash"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "Zu" = (
 /obj/structure/table/steel,
 /obj/machinery/button/blast_door{
@@ -8511,12 +8622,6 @@
 	name = "EZ Brig Iso Exit";
 	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/button/alternate/door{
-	dir = 1;
-	id_tag = "EZBrig";
-	name = "EZ Brig Cells";
-	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -33033,7 +33138,7 @@ cX
 pg
 FH
 cX
-pg
+Nq
 FH
 cX
 pg
@@ -33544,16 +33649,16 @@ hk
 hk
 hk
 cX
-LU
+Zs
 Fx
 cX
-LU
+Zs
 Fx
 cX
-LU
+Zs
 Fx
 cX
-LU
+Zs
 Fx
 cX
 OZ
@@ -33800,17 +33905,17 @@ hk
 hk
 hk
 cX
-cX
-VK
+Pn
+NA
 MZ
-cX
-VK
+yi
+LU
 MZ
-cX
-VK
+JL
+CI
 MZ
-cX
-VK
+YR
+Lx
 MZ
 cX
 cX
@@ -34063,12 +34168,12 @@ ZO
 Zz
 ZO
 ZO
-DJ
+VP
 ZO
 ZO
 DJ
 ZO
-mx
+ZO
 cX
 ZE
 ZO
@@ -34839,7 +34944,7 @@ ZO
 OC
 lU
 ZO
-ZO
+mx
 mr
 ZO
 ZO
@@ -35342,10 +35447,10 @@ hk
 hk
 hk
 cX
-cX
-VK
+QB
+Fy
 MZ
-cX
+wF
 VK
 MZ
 cX
@@ -35600,10 +35705,10 @@ hk
 hk
 hk
 cX
-LU
+Zs
 Fx
 cX
-LU
+Zs
 Fx
 cX
 hk

@@ -386,7 +386,7 @@
 			if(covered_parts & LOWER_TORSO)
 				return FALSE
 		if(BP_CHEST)
-			if(covered_parts & FULL_TORSO)
+			if(covered_parts & UPPER_TORSO)
 				return FALSE
 		if(BP_R_HAND)
 			if(covered_parts & HAND_RIGHT)
@@ -404,6 +404,6 @@
 			if(covered_parts & EYES)
 				return FALSE
 		if(BP_HEAD, BP_MOUTH)
-			if(covered_parts & FULL_HEAD)
+			if((covered_parts & HEAD) && (covered_parts & FACE))
 				return FALSE
 	return TRUE

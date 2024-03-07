@@ -16,8 +16,7 @@
 	hud_icon = "hudblank"
 	skill_points = 0
 	no_skill_buffs = TRUE
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	class = CLASS_A
 	min_skill = list(
 		SKILL_COOKING       = SKILL_EXPERIENCED,
 		SKILL_COMBAT        = SKILL_EXPERIENCED,
@@ -61,8 +60,7 @@
 	hud_icon = "hudblank"
 	skill_points = 0
 	no_skill_buffs = TRUE
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	class = CLASS_A
 
 /datum/job/cyborg/handle_variant_join(mob/living/carbon/human/H, alt_title)
 	return H && H.Robotize(SSrobots.get_mob_type_by_title(alt_title || title))

@@ -1,4 +1,4 @@
-#define UPDATE_BUFFER 25 // 2.5 seconds
+#define UPDATE_BUFFER (2.5 SECONDS)
 
 // CHUNK
 //

@@ -30,7 +30,7 @@
 	last_updated_jl = world.time
 
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
-	if(!tjob?.title)
+	if(!tjob?.title || !istype(jobtime_list))
 		return 0
 	return jobtime_list[tjob.title] ? jobtime_list[tjob.title] : 0
 
@@ -52,7 +52,7 @@
 	set name = "See Playtime"
 	set category = "OOC"
 
-	var/datum/jobtime/jb = src.client.jobtime
+	var/datum/jobtime/jb = client.jobtime
 	if(!jb || !SSdbcore.IsConnected())
 		to_chat(src, SPAN_WARNING("Player time tracking data could not be retrieved!"))
 		return
