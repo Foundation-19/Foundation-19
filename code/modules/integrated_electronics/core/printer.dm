@@ -1,4 +1,5 @@
-#define MAX_CIRCUIT_CLONE_TIME 3 MINUTES //circuit slow-clones can only take up this amount of time to complete
+/// Circuit slow-clones can only take up this amount of time to complete
+#define MAX_CIRCUIT_CLONE_TIME (3 MINUTES)
 
 /obj/item/device/integrated_circuit_printer
 	name = "integrated circuit printer"

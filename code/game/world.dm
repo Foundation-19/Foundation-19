@@ -129,7 +129,7 @@ GLOBAL_VAR(href_logfile)
 GLOBAL_LIST_EMPTY(world_topic_throttle)
 GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 #define SET_THROTTLE(TIME, REASON) throttle[1] = base_throttle + (TIME); throttle[2] = (REASON);
-#define THROTTLE_MAX_BURST 15 SECONDS
+#define THROTTLE_MAX_BURST (15 SECONDS)
 
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC
