@@ -226,7 +226,7 @@
 
 			if("click on atom")
 				waiting_for_click = 1
-				C.verbs += /client/proc/cancel_callproc_select
+				C.verbs += TYPE_PROC_REF(/client, cancel_callproc_select)
 				to_chat(C, "Click an atom to select it. Click an atom then click 'cancel', or use the Cancel-Callproc-Select verb to cancel selecting a target by click.")
 				return WAITING
 
@@ -239,7 +239,7 @@
 	set name = "Cancel Callproc Select"
 	set category = "Admin"
 
-	verbs -= /client/proc/cancel_callproc_select
+	verbs -= TYPE_PROC_REF(/client, cancel_callproc_select)
 	if(holder && holder.callproc && holder.callproc.waiting_for_click)
 		holder.callproc.waiting_for_click = 0
 		holder.callproc.do_args()

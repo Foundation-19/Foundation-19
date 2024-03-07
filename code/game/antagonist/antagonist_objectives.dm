@@ -20,7 +20,7 @@
 	set desc = "Recieve optional objectives."
 	set category = "OOC"
 
-	remove_verb(src, /mob/proc/add_objectives)
+	remove_verb(src, TYPE_PROC_REF(/mob, add_objectives))
 
 	if(!mind)
 		return

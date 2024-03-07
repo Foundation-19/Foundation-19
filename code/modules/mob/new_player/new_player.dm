@@ -17,7 +17,7 @@
 	var/show_invalid_jobs = 0
 
 /mob/new_player/Initialize()
-	add_verb(src, /mob/proc/toggle_antag_pool)
+	add_verb(src, TYPE_PROC_REF(/mob, toggle_antag_pool))
 	if(length(GLOB.new_player))
 		forceMove(pick(GLOB.new_player))
 	return ..()

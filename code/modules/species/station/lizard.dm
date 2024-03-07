@@ -80,7 +80,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/carbon/human/proc/diona_heal_toggle
+		TYPE_PROC_REF(/mob/living/carbon/human, diona_heal_toggle)
 		)
 
 	override_organ_types = list(

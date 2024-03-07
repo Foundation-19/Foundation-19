@@ -77,7 +77,7 @@
 		to_world_log("## DEBUG: transfer_to(): Some idiot has tried to transfer_to() a non mob/living mob. Please inform Carn.")
 	if(current)					//remove ourself from our old body's mind variable
 		if(changeling)
-			remove_verb(current, /datum/changeling/proc/EvolutionMenu)
+			remove_verb(current, TYPE_PROC_REF(/datum/changeling, EvolutionMenu))
 		current.mind = null
 
 		SSnano.user_transferred(current, new_character) // transfer active NanoUI instances to new user
@@ -467,7 +467,7 @@
 	if(!issilicon(src))
 		mind.AddComponent(/datum/component/goalcontainer)
 	if(player_is_antag(mind))
-		add_verb(client, /client/proc/aooc)
+		add_verb(client, TYPE_PROC_REF(/client, aooc))
 
 //HUMAN
 /mob/living/carbon/human/mind_initialize()

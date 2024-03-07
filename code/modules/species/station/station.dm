@@ -19,7 +19,7 @@
 
 	sexybits_location = BP_GROIN
 
-	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair)
+	inherent_verbs = list(TYPE_PROC_REF(/mob/living/carbon/human, tie_hair))
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
@@ -293,7 +293,7 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/carbon/human/proc/diona_heal_toggle
+		TYPE_PROC_REF(/mob/living/carbon/human, diona_heal_toggle)
 		)
 
 	warning_low_pressure = 50
@@ -334,7 +334,7 @@
 	var/mob/living/carbon/alien/diona/nymph = new (target)
 	var/datum/ghosttrap/trap = get_ghost_trap("living plant")
 	trap.request_player(nymph, "A diona nymph has split from its gestalt.", 30 SECONDS)
-	addtimer(CALLBACK(nymph, /mob/living/carbon/alien/diona/proc/check_spawn_death), 30 SECONDS)
+	addtimer(CALLBACK(nymph, TYPE_PROC_REF(/mob/living/carbon/alien/diona, check_spawn_death)), 30 SECONDS)
 
 /mob/living/carbon/alien/diona/proc/check_spawn_death()
 	if (QDELETED(src))

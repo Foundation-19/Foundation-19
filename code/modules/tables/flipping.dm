@@ -75,7 +75,7 @@
 	if(!do_after(usr, 1 SECOND, src, bonus_percentage = 100))
 		return FALSE
 	verbs -=/obj/structure/table/verb/do_flip
-	verbs +=/obj/structure/table/proc/do_put
+	verbs +=TYPE_PROC_REF(/obj/structure/table, do_put)
 
 	var/list/targets = list(get_step(src,dir),get_step(src,turn(dir, 45)),get_step(src,turn(dir, -45)))
 	for (var/atom/movable/A in get_turf(src))
@@ -102,7 +102,7 @@
 /obj/structure/table/proc/unflip()
 	if(!do_after(usr, 1 SECOND, src, bonus_percentage = 100))
 		return FALSE
-	verbs -=/obj/structure/table/proc/do_put
+	verbs -=TYPE_PROC_REF(/obj/structure/table, do_put)
 	verbs +=/obj/structure/table/verb/do_flip
 
 	reset_plane_and_layer()

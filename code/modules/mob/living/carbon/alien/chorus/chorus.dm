@@ -35,7 +35,7 @@
 	add_language(LANGUAGE_CULT)
 	var/datum/language/l = all_languages[LANGUAGE_CULT]
 	name = l.get_random_name()
-	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, TYPE_PROC_REF(/mob/living, ventcrawl))
 
 /mob/living/carbon/alien/chorus/Destroy()
 	if(chorus_type)

@@ -17,7 +17,7 @@
 		return
 
 	if(!LAZYLEN(labels))
-		atom_holder.verbs += /atom/proc/RemoveLabel
+		atom_holder.verbs += TYPE_PROC_REF(/atom, RemoveLabel)
 	LAZYADD(labels, label)
 
 	user.visible_message(SPAN_NOTICE("\The [user] attaches a label to \the [atom_holder]."), \
@@ -33,7 +33,7 @@
 
 	LAZYREMOVE(labels, label)
 	if(!LAZYLEN(labels))
-		atom_holder.verbs -= /atom/proc/RemoveLabel
+		atom_holder.verbs -= TYPE_PROC_REF(/atom, RemoveLabel)
 
 	var/full_label = " ([label])"
 	var/index = findtextEx(atom_holder.name, full_label)

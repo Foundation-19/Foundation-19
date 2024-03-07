@@ -56,7 +56,7 @@
 	if(activated)
 		activated = FALSE
 	else
-		addtimer(CALLBACK(src, /datum/artifact_effect/proc/toggle_off), on_time)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/artifact_effect, toggle_off)), on_time)
 		activated = TRUE
 		toggled = TRUE
 	if(reveal_toggle && holder)

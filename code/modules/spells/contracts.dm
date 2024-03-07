@@ -86,7 +86,7 @@
 	if (mRemotetalk in H.mutations)
 		return 0
 	H.mutations.Add(mRemotetalk)
-	add_verb(H, /mob/living/carbon/human/proc/remotesay)
+	add_verb(H, TYPE_PROC_REF(/mob/living/carbon/human, remotesay))
 	to_chat(H, SPAN_NOTICE("You expand your mind outwards."))
 	return 1
 
@@ -152,4 +152,3 @@
 /obj/item/contract/boon/wizard/charge
 	path = /datum/spell/aoe_turf/charge
 	desc = "This contract is made of 100% post-consumer wizard."
-

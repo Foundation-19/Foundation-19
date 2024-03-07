@@ -45,7 +45,7 @@
 	)
 
 	SCP.memeticFlags = MAUDIBLE
-	SCP.memetic_proc = /mob/living/simple_animal/friendly/retaliate/scp066/proc/audibleEffect
+	SCP.memetic_proc = TYPE_PROC_REF(/mob/living/simple_animal/friendly/retaliate/scp066, audibleEffect)
 	SCP.memetic_sounds = list('sounds/scp/066/BeethovenLOUD.ogg')
 	SCP.compInit()
 
@@ -53,9 +53,9 @@
 
 		// emotes
 	add_verb(src, list(
-		/mob/living/simple_animal/friendly/retaliate/scp066/proc/Eric,
-		/mob/living/simple_animal/friendly/retaliate/scp066/proc/LoudNoise,
-		/mob/living/simple_animal/friendly/retaliate/scp066/proc/Noise,
+		TYPE_PROC_REF(/mob/living/simple_animal/friendly/retaliate/scp066, Eric),
+		TYPE_PROC_REF(/mob/living/simple_animal/friendly/retaliate/scp066, LoudNoise),
+		TYPE_PROC_REF(/mob/living/simple_animal/friendly/retaliate/scp066, Noise),
 	))
 
 //AI stuff

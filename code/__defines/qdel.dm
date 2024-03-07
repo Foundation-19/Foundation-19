@@ -37,8 +37,8 @@
 #define QDESTROYING(X) (!X || X.gc_destroyed == GC_CURRENTLY_BEING_QDELETED)
 
 //Qdel helper macros.
-#define QDEL_IN(item, time) if(!isnull(item)) {addtimer(CALLBACK(item, /datum/proc/qdel_self), time, TIMER_STOPPABLE)}
-#define QDEL_IN_CLIENT_TIME(item, time) if(!isnull(item)) {addtimer(CALLBACK(item, /datum/proc/qdel_self), time, TIMER_STOPPABLE | TIMER_CLIENT_TIME)}
+#define QDEL_IN(item, time) if(!isnull(item)) {addtimer(CALLBACK(item, TYPE_PROC_REF(/datum, qdel_self)), time, TIMER_STOPPABLE)}
+#define QDEL_IN_CLIENT_TIME(item, time) if(!isnull(item)) {addtimer(CALLBACK(item, TYPE_PROC_REF(/datum, qdel_self)), time, TIMER_STOPPABLE | TIMER_CLIENT_TIME)}
 #define QDEL_NULL(item) if(item) {qdel(item); item = null}
 #define QDEL_NULL_LIST QDEL_LIST_NULL
 #define QDEL_LIST_NULL(x) if(x) { for(var/y in x) { qdel(y) } ; x = null }

@@ -61,10 +61,10 @@ var/datum/species/shapeshifter/promethean/prometheans
 	cold_discomfort_strings = list("You feel too cool.")
 
 	inherent_verbs = list(
-		/mob/living/carbon/human/proc/shapeshifter_select_shape,
-		/mob/living/carbon/human/proc/shapeshifter_select_colour,
-		/mob/living/carbon/human/proc/shapeshifter_select_hair,
-		/mob/living/carbon/human/proc/shapeshifter_select_gender
+		TYPE_PROC_REF(/mob/living/carbon/human, shapeshifter_select_shape),
+		TYPE_PROC_REF(/mob/living/carbon/human, shapeshifter_select_colour),
+		TYPE_PROC_REF(/mob/living/carbon/human, shapeshifter_select_hair),
+		TYPE_PROC_REF(/mob/living/carbon/human, shapeshifter_select_gender)
 		)
 
 	valid_transform_species = list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_MANTID_ALATE, SPECIES_MONKEY)
@@ -82,7 +82,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	H.apply_stored_shock_to(target)
 
 /datum/species/shapeshifter/promethean/handle_death(mob/living/carbon/human/H)
-	addtimer(CALLBACK(H, /mob/proc/gib),0)
+	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, gib)),0)
 
 /datum/species/shapeshifter/promethean/handle_environment_special(mob/living/carbon/human/H)
 

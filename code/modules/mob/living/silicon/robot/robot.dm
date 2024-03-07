@@ -90,8 +90,8 @@
 	var/flash_protected = FALSE
 
 	var/list/robot_verbs_default = list(
-		/mob/living/silicon/robot/proc/sensor_mode,
-		/mob/living/silicon/robot/proc/robot_checklaws
+		TYPE_PROC_REF(/mob/living/silicon/robot, sensor_mode),
+		TYPE_PROC_REF(/mob/living/silicon/robot, robot_checklaws)
 	)
 
 /mob/living/silicon/robot/Initialize()
@@ -911,7 +911,7 @@
 	if(R)
 		R.UnlinkSelf()
 		to_chat(R, "Buffers flushed and reset. Camera system shutdown.  All systems operational.")
-		remove_verb(src, /mob/living/silicon/robot/proc/ResetSecurityCodes)
+		remove_verb(src, TYPE_PROC_REF(/mob/living/silicon/robot, ResetSecurityCodes))
 
 /mob/living/silicon/robot/proc/SetLockdown(state = 1)
 	// They stay locked down if their wire is cut.

@@ -25,7 +25,7 @@ var/list/ventcrawl_machinery = list(
 /mob/living/proc/can_ventcrawl()
 	if(!client)
 		return FALSE
-	if(!(/mob/living/proc/ventcrawl in verbs))
+	if(!(TYPE_PROC_REF(/mob/living, ventcrawl) in verbs))
 		to_chat(src, SPAN_WARNING("You don't possess the ability to ventcrawl!"))
 		return FALSE
 	if(incapacitated())

@@ -119,7 +119,7 @@
 
 /obj/item/organ/internal/eyes/adherent/Initialize()
 	. = ..()
-	verbs |= /obj/item/organ/internal/eyes/proc/change_eye_color
+	verbs |= TYPE_PROC_REF(/obj/item/organ/internal/eyes, change_eye_color)
 
 /obj/item/organ/internal/cell/adherent
 	name = "piezoelectric core"

@@ -306,12 +306,12 @@
 /obj/item/rig_module/voice/installed()
 	..()
 	holder.speech = src
-	holder.verbs |= /obj/item/rig/proc/alter_voice
+	holder.verbs |= TYPE_PROC_REF(/obj/item/rig, alter_voice)
 
 /obj/item/rig_module/voice/removed()
 	..()
 	holder.speech = null
-	holder.verbs -= /obj/item/rig/proc/alter_voice
+	holder.verbs -= TYPE_PROC_REF(/obj/item/rig, alter_voice)
 
 /obj/item/rig_module/voice/engage()
 

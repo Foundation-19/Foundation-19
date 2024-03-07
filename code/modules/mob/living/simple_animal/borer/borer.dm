@@ -93,8 +93,8 @@
 	. = ..()
 
 	add_language(LANGUAGE_BORER_GLOBAL)
-	add_verb(src, /mob/living/proc/ventcrawl)
-	add_verb(src, /mob/living/proc/hide)
+	add_verb(src, TYPE_PROC_REF(/mob/living, ventcrawl))
+	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
 
 	generation = gen
 	set_borer_name()
@@ -209,9 +209,9 @@
 	controlling = 0
 
 	host.remove_language(LANGUAGE_BORER_GLOBAL)
-	remove_verb(host, /mob/living/carbon/proc/release_control)
-	remove_verb(host, /mob/living/carbon/proc/punish_host)
-	remove_verb(host, /mob/living/carbon/proc/spawn_larvae)
+	remove_verb(host, TYPE_PROC_REF(/mob/living/carbon, release_control))
+	remove_verb(host, TYPE_PROC_REF(/mob/living/carbon, punish_host))
+	remove_verb(host, TYPE_PROC_REF(/mob/living/carbon, spawn_larvae))
 
 	if(host_brain)
 
@@ -253,7 +253,7 @@
 	last_special = world.time + amt
 	for(var/obj/thing in hud_elements)
 		thing.color = COLOR_BORER_RED
-	addtimer(CALLBACK(src, /mob/living/simple_animal/borer/proc/reset_ui_callback), amt)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/simple_animal/borer, reset_ui_callback)), amt)
 #undef COLOR_BORER_RED
 
 /mob/living/simple_animal/borer/proc/leave_host()

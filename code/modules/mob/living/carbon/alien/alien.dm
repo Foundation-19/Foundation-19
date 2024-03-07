@@ -11,8 +11,8 @@
 	var/instance_num
 
 /mob/living/carbon/alien/Initialize()
-	add_verb(src, /mob/living/proc/ventcrawl)
-	add_verb(src, /mob/living/proc/hide)
+	add_verb(src, TYPE_PROC_REF(/mob/living, ventcrawl))
+	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
 
 	instance_num = rand(1, 1000)
 	name = "[initial(name)] ([instance_num])"

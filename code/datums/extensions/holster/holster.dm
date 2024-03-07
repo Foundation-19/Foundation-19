@@ -15,11 +15,11 @@
 	src.sound_out = sound_out || src.sound_out
 	src.can_holster = can_holster
 
-	atom_holder.verbs += /atom/proc/holster_verb
+	atom_holder.verbs += TYPE_PROC_REF(/atom, holster_verb)
 
 /datum/extension/holster/Destroy()
 	. = ..()
-	atom_holder.verbs -= /atom/proc/holster_verb
+	atom_holder.verbs -= TYPE_PROC_REF(/atom, holster_verb)
 
 /datum/extension/holster/proc/can_holster(obj/item/I)
 	if(can_holster)

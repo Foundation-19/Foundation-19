@@ -117,7 +117,7 @@
 		scoped_accuracy = accuracy
 
 	if(scope_zoom)
-		verbs += /obj/item/gun/proc/scope
+		verbs += TYPE_PROC_REF(/obj/item/gun, scope)
 
 /obj/item/gun/Destroy()
 	// autofire timer is automatically cleaned up

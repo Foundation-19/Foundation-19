@@ -6,7 +6,7 @@
 		else
 			A.SetName("alien creature")
 			A.real_name = "alien creature"
-			add_verb(A, /mob/living/simple_animal/proc/name_species)
+			add_verb(A, TYPE_PROC_REF(/mob/living/simple_animal, name_species))
 	if (atmosphere)
 		//Set up gases for living things
 		if (!LAZYLEN(breathgas))
@@ -52,8 +52,8 @@
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/track_animal(mob/A)
 	animals += A
-	GLOB.death_event.register(A, src, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
-	GLOB.destroyed_event.register(A, src, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
+	GLOB.death_event.register(A, src, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
+	GLOB.destroyed_event.register(A, src, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_random_species_name()
 	return pick("nol","shan","can","fel","xor")+pick("a","e","o","t","ar")+pick("ian","oid","ac","ese","inian","rd")
@@ -68,7 +68,7 @@
 		if (istype(A,species_type))
 			A.SetName(newname)
 			A.real_name = newname
-			remove_verb(A, /mob/living/simple_animal/proc/name_species)
+			remove_verb(A, TYPE_PROC_REF(/mob/living/simple_animal, name_species))
 	return TRUE
 
 /obj/effect/landmark/exoplanet_spawn

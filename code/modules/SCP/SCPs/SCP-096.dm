@@ -66,7 +66,7 @@
 	)
 
 	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA
-	SCP.memetic_proc = /mob/living/scp096/proc/trigger
+	SCP.memetic_proc = TYPE_PROC_REF(/mob/living/scp096, trigger)
 	SCP.compInit()
 
 	leapHandler.stamina_cost = 0

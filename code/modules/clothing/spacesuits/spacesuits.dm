@@ -46,9 +46,9 @@
 /obj/item/clothing/head/helmet/space/Initialize()
 	. = ..()
 	if(camera)
-		verbs += /obj/item/clothing/head/helmet/space/proc/toggle_camera
+		verbs += TYPE_PROC_REF(/obj/item/clothing/head/helmet/space, toggle_camera)
 	if(!isnull(tinted))
-		verbs += /obj/item/clothing/head/helmet/space/proc/toggle_tint
+		verbs += TYPE_PROC_REF(/obj/item/clothing/head/helmet/space, toggle_tint)
 		update_tint()
 
 /obj/item/clothing/head/helmet/space/proc/toggle_camera()

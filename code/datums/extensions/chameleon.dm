@@ -107,7 +107,7 @@
 		var/datum/extension/chameleon/C = get_extension(src, /datum/extension/chameleon)
 		C.change(usr)
 	else
-		src.verbs -= /atom/proc/chameleon_appearance
+		src.verbs -= TYPE_PROC_REF(/atom, chameleon_appearance)
 
 /datum/extension/chameleon/proc/change(mob/user)
 	var/choice = input(user, "Select a new appearance", "Select appearance") as null|anything in chameleon_choices

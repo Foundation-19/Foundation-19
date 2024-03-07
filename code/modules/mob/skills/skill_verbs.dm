@@ -57,7 +57,7 @@ The Instruct verb. buffs untrained -> basic and requires skill in the skill trai
 Robots and antags can instruct.
 */
 /datum/skill_verb/instruct
-	the_verb = /mob/proc/instruct
+	the_verb = TYPE_PROC_REF(/mob, instruct)
 	cooldown = 15 MINUTES
 
 /datum/skill_verb/instruct/should_have_verb(datum/skillset/given_skillset)
@@ -135,7 +135,7 @@ Robots and antags can instruct.
 The Appraise verb. Used on objects to estimate their value.
 */
 /datum/skill_verb/appraise
-	the_verb = /mob/proc/appraise
+	the_verb = TYPE_PROC_REF(/mob, appraise)
 
 /datum/skill_verb/appraise/should_have_verb(datum/skillset/given_skillset)
 	if(!..())
@@ -189,7 +189,7 @@ The Appraise verb. Used on objects to estimate their value.
 			return 50
 
 /datum/skill_verb/noirvision
-	the_verb = /mob/proc/noirvision
+	the_verb = TYPE_PROC_REF(/mob, noirvision)
 
 /datum/skill_verb/noirvision/should_have_verb(datum/skillset/given_skillset)
 	if(!..())

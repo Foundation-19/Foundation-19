@@ -35,7 +35,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 /mob/observer/ghost/Initialize(mapload)
 	see_in_dark = 100
-	add_verb(src, /mob/proc/toggle_antag_pool)
+	add_verb(src, TYPE_PROC_REF(/mob, toggle_antag_pool))
 
 	var/mob/body = loc
 	var/turf/T

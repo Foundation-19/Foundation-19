@@ -45,10 +45,10 @@
 		add_verb(player.current, faction_verb)
 
 	if(config.objectives_disabled == CONFIG_OBJECTIVE_VERB)
-		add_verb(player.current, /mob/proc/add_objectives)
+		add_verb(player.current, TYPE_PROC_REF(/mob, add_objectives))
 
 	if(player.current.client)
-		add_verb(player.current.client, /client/proc/aooc)
+		add_verb(player.current.client, TYPE_PROC_REF(/client, aooc))
 
 	// Handle only adding a mind and not bothering with gear etc.
 	if(nonstandard_role_type)
@@ -81,6 +81,6 @@
 		if(!is_special_character(player))
 			if(player.current)
 				if(player.current.client)
-					remove_verb(player.current.client, /client/proc/aooc)
+					remove_verb(player.current.client, TYPE_PROC_REF(/client, aooc))
 		return 1
 	return 0

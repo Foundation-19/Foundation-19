@@ -57,8 +57,8 @@
 	SCP.min_time = 5 MINUTES
 
 	add_language(LANGUAGE_EYEPOD)
-	add_verb(src, /mob/living/proc/ventcrawl)
-	add_verb(src, /mob/living/proc/hide)
+	add_verb(src, TYPE_PROC_REF(/mob/living, ventcrawl))
+	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
 	return ..()
 
 /mob/living/simple_animal/friendly/scp131/Destroy()

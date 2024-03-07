@@ -57,7 +57,7 @@
 			to_chat(H, SPAN_NOTICE(SPAN_ITALIC("I can't live without her...")))
 			addtimer(CALLBACK(src, PROC_REF(update_013_status), H), 55 SECONDS)
 		if(7)
-			addtimer(CALLBACK(H, /mob/living/carbon/human/proc/bluelady_message), 10 SECONDS)
+			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, bluelady_message)), 10 SECONDS)
 			affected -= weakref(H)
 			if(!LAZYLEN(affected))
 				extinguish()

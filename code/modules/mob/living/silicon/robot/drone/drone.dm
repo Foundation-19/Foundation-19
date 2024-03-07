@@ -65,7 +65,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/Initialize()
 	. = ..()
 
-	add_verb(src, /mob/living/proc/hide)
+	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
 	remove_language(LANGUAGE_ROBOT_GLOBAL)
 	add_language(LANGUAGE_ROBOT_GLOBAL, 0)
 	add_language(LANGUAGE_DRONE_GLOBAL, 1)
@@ -81,13 +81,13 @@ var/list/mob_hat_cache = list()
 	remove_verb(src, /mob/living/silicon/robot/verb/Namepick)
 	update_icon()
 
-	GLOB.moved_event.register(src, src, /mob/living/silicon/robot/drone/proc/on_moved)
+	GLOB.moved_event.register(src, src, TYPE_PROC_REF(/mob/living/silicon/robot/drone, on_moved))
 
 /mob/living/silicon/robot/drone/Destroy()
 	if(hat)
 		hat.dropInto(loc)
 		hat = null
-	GLOB.moved_event.unregister(src, src, /mob/living/silicon/robot/drone/proc/on_moved)
+	GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/mob/living/silicon/robot/drone, on_moved))
 	. = ..()
 
 /mob/living/silicon/robot/drone/proc/on_moved(atom/movable/am, turf/old_loc, turf/new_loc)

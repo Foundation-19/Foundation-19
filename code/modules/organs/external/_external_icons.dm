@@ -53,7 +53,7 @@ var/list/limb_icon_cache = list()
 	update_icon(1)
 	if(owner)
 		SetName("[owner.real_name]'s head")
-		addtimer(CALLBACK(owner, /mob/living/carbon/human/proc/update_hair), 1, TIMER_UNIQUE)
+		addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob/living/carbon/human, update_hair)), 1, TIMER_UNIQUE)
 	..()
 
 	var/list/sorted = list()

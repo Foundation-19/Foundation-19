@@ -122,7 +122,7 @@
 	description = "A selection of passports."
 	path = /obj/item/passport
 	flags = GEAR_HAS_SUBTYPE_SELECTION
-	custom_setup_proc = /obj/item/passport/proc/set_info
+	custom_setup_proc = TYPE_PROC_REF(/obj/item/passport, set_info)
 
 /datum/gear/mirror
 	display_name = "handheld mirror"

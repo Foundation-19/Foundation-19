@@ -154,39 +154,39 @@
 	return species.blood_color
 
 var/list/Tier1Runes = list(
-	/mob/proc/convert_rune,
-	/mob/proc/teleport_rune,
-	/mob/proc/tome_rune,
-	/mob/proc/wall_rune,
-	/mob/proc/ajorney_rune,
-	/mob/proc/defile_rune,
-	/mob/proc/stun_imbue,
-	/mob/proc/emp_imbue,
-	/mob/proc/blind_imbue,
-	/mob/proc/shackle_imbue,
-	/mob/proc/cult_communicate,
-	/mob/proc/obscure,
-	/mob/proc/reveal
+	TYPE_PROC_REF(/mob, convert_rune),
+	TYPE_PROC_REF(/mob, teleport_rune),
+	TYPE_PROC_REF(/mob, tome_rune),
+	TYPE_PROC_REF(/mob, wall_rune),
+	TYPE_PROC_REF(/mob, ajorney_rune),
+	TYPE_PROC_REF(/mob, defile_rune),
+	TYPE_PROC_REF(/mob, stun_imbue),
+	TYPE_PROC_REF(/mob, emp_imbue),
+	TYPE_PROC_REF(/mob, blind_imbue),
+	TYPE_PROC_REF(/mob, shackle_imbue),
+	TYPE_PROC_REF(/mob, cult_communicate),
+	TYPE_PROC_REF(/mob, obscure),
+	TYPE_PROC_REF(/mob, reveal)
 	)
 
 var/list/Tier2Runes = list(
-	/mob/proc/armor_rune,
-	/mob/proc/offering_rune,
-	/mob/proc/drain_rune,
-	/mob/proc/emp_rune,
-	/mob/proc/massdefile_rune
+	TYPE_PROC_REF(/mob, armor_rune),
+	TYPE_PROC_REF(/mob, offering_rune),
+	TYPE_PROC_REF(/mob, drain_rune),
+	TYPE_PROC_REF(/mob, emp_rune),
+	TYPE_PROC_REF(/mob, massdefile_rune)
 	)
 
 var/list/Tier3Runes = list(
-	/mob/proc/weapon_rune,
-	/mob/proc/shell_rune,
-	/mob/proc/bloodboil_rune,
-	/mob/proc/confuse_rune,
-	/mob/proc/revive_rune
+	TYPE_PROC_REF(/mob, weapon_rune),
+	TYPE_PROC_REF(/mob, shell_rune),
+	TYPE_PROC_REF(/mob, bloodboil_rune),
+	TYPE_PROC_REF(/mob, confuse_rune),
+	TYPE_PROC_REF(/mob, revive_rune)
 )
 
 var/list/Tier4Runes = list(
-	/mob/proc/tearreality_rune
+	TYPE_PROC_REF(/mob, tearreality_rune)
 	)
 
 /mob/proc/convert_rune()

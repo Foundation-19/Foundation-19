@@ -27,8 +27,8 @@
 	req_access = list(ACCESS_ROBOTICS)
 
 	var/list/shackled_verbs = list(
-		/obj/item/organ/internal/posibrain/proc/show_laws_brain,
-		/obj/item/organ/internal/posibrain/proc/brain_checklaws
+		TYPE_PROC_REF(/obj/item/organ/internal/posibrain, show_laws_brain),
+		TYPE_PROC_REF(/obj/item/organ/internal/posibrain, brain_checklaws)
 		)
 	var/shackle = 0
 
