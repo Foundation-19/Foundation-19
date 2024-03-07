@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - bugfix: A bug with some internal defines was fixed, potentially affecting some
+      values (e.g. atmos)
