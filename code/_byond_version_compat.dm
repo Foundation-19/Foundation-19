@@ -47,7 +47,7 @@
 #define TYPE_VERB_REF(TYPE, X) (##TYPE.verb/##X)
 
 /// Call by name proc reference, checks if the proc is an existing global proc
-#define GLOBAL_PROC_REF(X) (##X)
+#define GLOBAL_PROC_REF(X) (/proc/##X)
 
 #else
 

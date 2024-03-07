@@ -129,7 +129,7 @@
 	icon = 'icons/obj/robot_component.dmi'
 	icon_state = "camera"
 	dead_icon = "camera_broken"
-	verbs |= TYPE_PROC_REF(/obj/item/organ/internal/eyes, change_eye_color)
+	verbs |= /obj/item/organ/internal/eyes/proc/change_eye_color
 	update_colour()
 	flash_mod = 1
 	darksight_range = 2

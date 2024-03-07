@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(secure_weapons, list())
 		user.visible_message("[user] swipes an ID through \the [src].", range = 3)
 		if(!registered_owner)
 			var/obj/item/card/id/id = W
-			verbs += TYPE_PROC_REF(/obj/item/gun, reset_registration)
+			verbs += /obj/item/gun/proc/reset_registration
 			registered_owner = id.registered_name
 			to_chat(user, SPAN_NOTICE("\The [src] chimes quietly as it registers to \"[registered_owner]\"."))
 		else
@@ -44,7 +44,7 @@ GLOBAL_LIST_INIT(secure_weapons, list())
 
 	if(is_secure_gun())
 		registered_owner = null
-		verbs -= TYPE_PROC_REF(/obj/item/gun, reset_registration)
+		verbs -= /obj/item/gun/proc/reset_registration
 		req_access.Cut()
 		GLOB.secure_weapons -= src
 		to_chat(user, SPAN_NOTICE("\The [src]'s authorization chip fries, giving you full access."))
@@ -69,7 +69,7 @@ GLOBAL_LIST_INIT(secure_weapons, list())
 
 	to_chat(usr, SPAN_NOTICE("\The [src] chimes quietly as its registration resets."))
 	registered_owner = null
-	verbs -= TYPE_PROC_REF(/obj/item/gun, reset_registration)
+	verbs -= /obj/item/gun/proc/reset_registration
 
 
 /obj/item/gun/proc/authorize(mode, authorized)

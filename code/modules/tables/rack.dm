@@ -12,7 +12,7 @@
 /obj/structure/table/rack/New()
 	..()
 	verbs -= /obj/structure/table/verb/do_flip
-	verbs -= TYPE_PROC_REF(/obj/structure/table, do_put)
+	verbs -= /obj/structure/table/proc/do_put
 
 /obj/structure/table/rack/Initialize()
 	auto_align()

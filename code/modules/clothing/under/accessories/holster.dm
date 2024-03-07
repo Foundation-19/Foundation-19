@@ -34,7 +34,7 @@
 
 /obj/item/clothing/accessory/storage/holster/on_attached(obj/item/clothing/under/S, mob/user as mob)
 	..()
-	has_suit.verbs += TYPE_PROC_REF(/atom, holster_verb)
+	has_suit.verbs += /atom/proc/holster_verb
 
 /obj/item/clothing/accessory/storage/holster/on_removed(mob/user as mob)
 	if(has_suit)
@@ -49,7 +49,7 @@
 				remove_verb = FALSE
 
 		if(remove_verb)
-			has_suit.verbs -= TYPE_PROC_REF(/atom, holster_verb)
+			has_suit.verbs -= /atom/proc/holster_verb
 	..()
 
 /obj/item/clothing/accessory/storage/holster/armpit

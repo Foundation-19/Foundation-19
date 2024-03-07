@@ -151,18 +151,18 @@
 		air_supply = new air_type(src)
 	if(glove_type)
 		gloves = new glove_type(src)
-		module_verbs |= TYPE_PROC_REF(/obj/item/rig, toggle_gauntlets)
+		module_verbs |= /obj/item/rig/proc/toggle_gauntlets
 	if(helm_type)
 		helmet = new helm_type(src)
-		module_verbs |= TYPE_PROC_REF(/obj/item/rig, toggle_helmet)
+		module_verbs |= /obj/item/rig/proc/toggle_helmet
 	if(boot_type)
 		boots = new boot_type(src)
-		module_verbs |= TYPE_PROC_REF(/obj/item/rig, toggle_boots)
+		module_verbs |= /obj/item/rig/proc/toggle_boots
 	if(chest_type)
 		chest = new chest_type(src)
 		if(allowed)
 			chest.allowed = allowed
-		module_verbs |= TYPE_PROC_REF(/obj/item/rig, toggle_chest)
+		module_verbs |= /obj/item/rig/proc/toggle_chest
 
 	for(var/module_verb in module_verbs)
 		verbs |= module_verb

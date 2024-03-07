@@ -539,7 +539,7 @@ BLIND     // can't see anything
 /obj/item/clothing/mask/New()
 	if(pull_mask)
 		action_button_name = "Adjust Mask"
-		verbs += TYPE_PROC_REF(/obj/item/clothing/mask, adjust_mask)
+		verbs += /obj/item/clothing/mask/proc/adjust_mask
 	..()
 
 /obj/item/clothing/mask/update_clothing_icon()
@@ -656,7 +656,7 @@ BLIND     // can't see anything
 		if(!user.unEquip(cuffs, src))
 			return
 		user.visible_message(SPAN_ITALIC("\The [user] attaches \the [cuffs] to \the [src]."), range = 2)
-		verbs |= TYPE_PROC_REF(/obj/item/clothing/shoes, remove_cuffs)
+		verbs |= /obj/item/clothing/shoes/proc/remove_cuffs
 		slowdown_per_slot[slot_shoes] += cuffs.elastic ? 10 : 15
 		attached_cuffs = cuffs
 
@@ -680,7 +680,7 @@ BLIND     // can't see anything
 		user.visible_message(SPAN_ITALIC("\The [user] removes \the [attached_cuffs] from \the [src]."), range = 2)
 		attached_cuffs.add_fingerprint(user)
 		slowdown_per_slot[slot_shoes] -= attached_cuffs.elastic ? 10 : 15
-		verbs -= TYPE_PROC_REF(/obj/item/clothing/shoes, remove_cuffs)
+		verbs -= /obj/item/clothing/shoes/proc/remove_cuffs
 		attached_cuffs = null
 
 /obj/item/clothing/shoes/proc/add_hidden(obj/item/I, mob/user)
@@ -700,7 +700,7 @@ BLIND     // can't see anything
 		if(!user.unEquip(I, src))
 			return
 		user.visible_message(SPAN_ITALIC("\The [user] shoves \the [I] into \the [src]."), range = 1)
-		verbs |= TYPE_PROC_REF(/obj/item/clothing/shoes, remove_hidden)
+		verbs |= /obj/item/clothing/shoes/proc/remove_hidden
 		hidden_item = I
 
 /obj/item/clothing/shoes/proc/remove_hidden(mob/user)
@@ -724,14 +724,14 @@ BLIND     // can't see anything
 			return TRUE
 		user.visible_message(SPAN_ITALIC("\The [user] pulls \the [hidden_item] from \the [src]."), range = 1)
 		playsound(get_turf(src), 'sounds/effects/holster/tactiholsterout.ogg', 25)
-		verbs -= TYPE_PROC_REF(/obj/item/clothing/shoes, remove_hidden)
+		verbs -= /obj/item/clothing/shoes/proc/remove_hidden
 		hidden_item = null
 	return TRUE
 
 /obj/item/clothing/shoes/proc/handle_movement(turf/walking, running)
 	if(running && attached_cuffs?.damage_health(1))
 		visible_message(SPAN_WARNING("\The [attached_cuffs] attached to \the [src] snap and fall away!"), range = 1)
-		verbs -= TYPE_PROC_REF(/obj/item/clothing/shoes, remove_cuffs)
+		verbs -= /obj/item/clothing/shoes/proc/remove_cuffs
 		slowdown_per_slot[slot_shoes] -= attached_cuffs.elastic ? 10 : 15
 		QDEL_NULL(attached_cuffs)
 	return

@@ -22,7 +22,7 @@
 
 /obj/item/clothing/head/helmet/space/psi_amp/Initialize()
 	. = ..()
-	verbs += TYPE_PROC_REF(/obj/item/clothing/head/helmet/space/psi_amp, integrate)
+	verbs += /obj/item/clothing/head/helmet/space/psi_amp/proc/integrate
 
 /obj/item/clothing/head/helmet/space/psi_amp/attack_self(mob/user)
 	if(operating)
@@ -88,8 +88,8 @@
 	canremove = TRUE
 	operating = FALSE
 
-	verbs -= TYPE_PROC_REF(/obj/item/clothing/head/helmet/space/psi_amp, deintegrate)
-	verbs |= TYPE_PROC_REF(/obj/item/clothing/head/helmet/space/psi_amp, integrate)
+	verbs -= /obj/item/clothing/head/helmet/space/psi_amp/proc/deintegrate
+	verbs |= /obj/item/clothing/head/helmet/space/psi_amp/proc/integrate
 
 	action_button_name = "Integrate Psionic Amplifier"
 	H.update_action_buttons()
@@ -146,8 +146,8 @@
 		H.psi.update(force = TRUE)
 
 	to_chat(H, SPAN_NOTICE("You experience a brief but powerful wave of deja vu as \the [src] finishes modifying your brain."))
-	verbs |= TYPE_PROC_REF(/obj/item/clothing/head/helmet/space/psi_amp, deintegrate)
-	verbs -= TYPE_PROC_REF(/obj/item/clothing/head/helmet/space/psi_amp, integrate)
+	verbs |= /obj/item/clothing/head/helmet/space/psi_amp/proc/deintegrate
+	verbs -= /obj/item/clothing/head/helmet/space/psi_amp/proc/integrate
 	operating = FALSE
 	action_button_name = "Remove Psionic Amplifier"
 	H.update_action_buttons()

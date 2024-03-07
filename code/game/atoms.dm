@@ -43,7 +43,7 @@
 			created[src] = argument_list
 
 	if(atom_flags & ATOM_FLAG_CLIMBABLE)
-		verbs += TYPE_PROC_REF(/atom, climb_on)
+		verbs += /atom/proc/climb_on
 
 //Called after New if the map is being loaded. mapload = TRUE
 //Called from base of New if the map is not being loaded. mapload = FALSE

@@ -32,7 +32,7 @@
 		to_chat(src, FONT_COLORED("red","Error: giveruntimelog(): Client not found."))
 		return
 
-	target.verbs |= TYPE_PROC_REF(/client, getruntimelog)
+	target.verbs |= /client/proc/getruntimelog
 	to_chat(target, FONT_COLORED("red","You have been granted access to runtime logs. Please use them responsibly or risk being banned."))
 	return
 

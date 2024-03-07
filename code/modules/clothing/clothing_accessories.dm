@@ -107,7 +107,7 @@
 	accessories += A
 	A.on_attached(src, user)
 	if(A.removable)
-		src.verbs |= TYPE_PROC_REF(/obj/item/clothing, removetie_verb)
+		src.verbs |= /obj/item/clothing/proc/removetie_verb
 	update_accessory_slowdown()
 	update_clothing_icon()
 
@@ -139,7 +139,7 @@
 	src.remove_accessory(usr,A)
 	removables -= A
 	if(!removables.len)
-		src.verbs -= TYPE_PROC_REF(/obj/item/clothing, removetie_verb)
+		src.verbs -= /obj/item/clothing/proc/removetie_verb
 
 /obj/item/clothing/emp_act(severity)
 	if(accessories.len)

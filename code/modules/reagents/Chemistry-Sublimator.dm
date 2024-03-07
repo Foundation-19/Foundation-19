@@ -50,9 +50,9 @@
 /obj/machinery/portable_atmospherics/reagent_sublimator/New()
 	. = ..()
 	if(holding)
-		verbs |= TYPE_PROC_REF(/obj/machinery/portable_atmospherics/reagent_sublimator, remove_tank)
+		verbs |= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_tank
 	if(container)
-		verbs |= TYPE_PROC_REF(/obj/machinery/portable_atmospherics/reagent_sublimator, remove_container)
+		verbs |= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_container
 	update_icon()
 
 // Coded this before realizing base type didn't support tank mixing, leaving it in just in case someone decides to add it.
@@ -70,7 +70,7 @@
 		user.put_in_hands(holding)
 		user.visible_message(SPAN_NOTICE("\The [user] removes \the [holding] from \the [src]."))
 		holding = null
-		verbs -= TYPE_PROC_REF(/obj/machinery/portable_atmospherics/reagent_sublimator, remove_tank)
+		verbs -= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_tank
 		update_icon()
 	else
 		to_chat(user, SPAN_WARNING("\The [src] has no gas tank loaded."))
@@ -89,7 +89,7 @@
 		user.put_in_hands(container)
 		user.visible_message(SPAN_NOTICE("\The [user] removes \the [container] from \the [src]."))
 		container = null
-		verbs -= TYPE_PROC_REF(/obj/machinery/portable_atmospherics/reagent_sublimator, remove_container)
+		verbs -= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_container
 		if(use_power >= POWER_USE_ACTIVE)
 			update_use_power(POWER_USE_IDLE)
 		update_icon()
@@ -111,7 +111,7 @@
 		else if(user.unEquip(thing, src))
 			container = thing
 			user.visible_message(SPAN_NOTICE("\The [user] loads \the [thing] into \the [src]."))
-			verbs |= TYPE_PROC_REF(/obj/machinery/portable_atmospherics/reagent_sublimator, remove_container)
+			verbs |= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_container
 		update_icon()
 	else
 		. = ..()

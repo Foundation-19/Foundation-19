@@ -294,7 +294,7 @@
 
 	dislocated = 1
 	if(owner)
-		add_verb(owner, TYPE_PROC_REF(/mob/living/carbon/human, undislocate))
+		add_verb(owner, /mob/living/carbon/human/proc/undislocate)
 
 /obj/item/organ/external/proc/undislocate()
 	if(dislocated == -1)
@@ -1190,7 +1190,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	LAZYADD(supplied_wound.embedded_objects, W)
 	implants += W
 	owner.embedded_flag = 1
-	add_verb(owner, TYPE_PROC_REF(/mob, yank_out_object))
+	add_verb(owner, /mob/proc/yank_out_object)
 	W.add_blood(owner)
 	if(ismob(W.loc))
 		var/mob/living/H = W.loc

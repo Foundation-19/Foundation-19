@@ -79,7 +79,7 @@
 	stored_card = null
 
 	holder2?.active_program?.event_idremoved()
-	loc.verbs -= TYPE_PROC_REF(/obj/item/stock_parts/computer/card_slot, verb_eject_id)
+	loc.verbs -= /obj/item/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE
 
 /obj/item/stock_parts/computer/card_slot/proc/insert_id(obj/item/card/id/I, mob/user, suppress_message = FALSE)
@@ -98,7 +98,7 @@
 	if(!suppress_message)
 		to_chat(user, "You insert [I] into [src].")
 	if(isobj(loc))
-		loc.verbs |= TYPE_PROC_REF(/obj/item/stock_parts/computer/card_slot, verb_eject_id)
+		loc.verbs |= /obj/item/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE
 
 /obj/item/stock_parts/computer/card_slot/attackby(obj/item/card/id/I, mob/living/user)
@@ -116,7 +116,7 @@
 	usage_flags = PROGRAM_PDA
 
 /obj/item/stock_parts/computer/card_slot/Destroy()
-	loc.verbs -= TYPE_PROC_REF(/obj/item/stock_parts/computer/card_slot, verb_eject_id)
+	loc.verbs -= /obj/item/stock_parts/computer/card_slot/proc/verb_eject_id
 	if(stored_card)
 		QDEL_NULL(stored_card)
 	return ..()

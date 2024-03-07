@@ -51,9 +51,9 @@
 
 /obj/structure/disposalconstruct/proc/update_verbs()
 	if (anchored)
-		verbs -= TYPE_PROC_REF(/obj/structure/disposalconstruct, flip)
+		verbs -= /obj/structure/disposalconstruct/proc/flip
 	else
-		verbs += TYPE_PROC_REF(/obj/structure/disposalconstruct, flip)
+		verbs += /obj/structure/disposalconstruct/proc/flip
 
 // update iconstate and dpdir due to dir and type
 /obj/structure/disposalconstruct/proc/update()
