@@ -158,8 +158,8 @@
 
 /mob/living/simple_animal/familiar/pet/mouse/Initialize()
 	. = ..()
-	add_verb(src, TYPE_PROC_REF(/mob/living, ventcrawl))
-	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
+	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, /mob/living/proc/hide)
 
 /mob/living/simple_animal/familiar/pet/cat
 	name = "black cat"

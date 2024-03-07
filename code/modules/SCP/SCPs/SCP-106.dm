@@ -63,11 +63,11 @@
 
 	add_verb(src, list(
 		/mob/living/carbon/human/scp106/verb/enter_pocket_dimension,
-		TYPE_PROC_REF(/mob/living/carbon/human/scp106, object_phase),
-		TYPE_PROC_REF(/mob/living/carbon/human/scp106, wall_phase),
-		TYPE_PROC_REF(/mob/living/carbon/human/scp106, wall_unphase),
-		TYPE_PROC_REF(/mob/living/carbon/human/scp106, audible_breathe),
-		TYPE_PROC_REF(/mob/living/carbon/human/scp106, audible_laugh),
+		/mob/living/carbon/human/scp106/proc/object_phase,
+		/mob/living/carbon/human/scp106/proc/wall_phase,
+		/mob/living/carbon/human/scp106/proc/wall_unphase,
+		/mob/living/carbon/human/scp106/proc/audible_breathe,
+		/mob/living/carbon/human/scp106/proc/audible_laugh,
 	))
 
 	add_language(LANGUAGE_EAL, FALSE)
@@ -215,7 +215,7 @@
 	var/turf/my_turf = get_turf(src)
 	if(istype(get_area(my_turf), pocket_dimension_area_type))
 		remove_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
-		add_verb(src, TYPE_PROC_REF(/mob/living/carbon/human/scp106, go_back))
+		add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 		return FALSE
 
 	if(!forced)
@@ -237,7 +237,7 @@
 	animate(src, alpha = 255, time = 5)
 	forceMove(T)
 	remove_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
-	add_verb(src, TYPE_PROC_REF(/mob/living/carbon/human/scp106, go_back))
+	add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 	return TRUE
 
 /mob/living/carbon/human/scp106/proc/go_back()
@@ -254,7 +254,7 @@
 
 	if(!istype(get_area(src), pocket_dimension_area_type))
 		add_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human/scp106, go_back))
+		remove_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 		return
 
 	if(last_x != -1) // shouldn't be possible but just in case
@@ -262,7 +262,7 @@
 		forceMove(locate(last_x, last_y, last_z))
 		stunned = 5
 		animate(src, alpha = 255, time = 5)
-	remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human/scp106, go_back))
+	remove_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 	add_verb(src, /mob/living/carbon/human/scp106/verb/enter_pocket_dimension)
 
 /mob/living/carbon/human/scp106/proc/object_phase()

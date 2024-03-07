@@ -32,7 +32,7 @@ GLOBAL_LIST(end_titles)
 				sound_to(mob, sound(GLOB.end_credits_song, wait = 0, volume = 40, channel = GLOB.lobby_sound_channel))
 	sleep(50)
 	var/list/_credits = credits
-	add_verb(src, TYPE_PROC_REF(/client, ClearCredits))
+	add_verb(src, /client/proc/ClearCredits)
 	for(var/I in GLOB.end_titles)
 		if(!credits)
 			return

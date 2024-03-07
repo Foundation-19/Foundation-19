@@ -251,17 +251,17 @@
 /decl/public_access/public_method/open_valve
 	name = "open valve"
 	desc = "Sets the valve to open."
-	call_proc = TYPE_PROC_REF(/obj/machinery/atmospherics/valve, open)
+	call_proc = /obj/machinery/atmospherics/valve/proc/open
 
 /decl/public_access/public_method/close_valve
 	name = "open valve"
 	desc = "Sets the valve to open."
-	call_proc = TYPE_PROC_REF(/obj/machinery/atmospherics/valve, close)
+	call_proc = /obj/machinery/atmospherics/valve/proc/close
 
 /decl/public_access/public_method/toggle_valve
 	name = "toggle valve"
 	desc = "Toggles whether the valve is open or closed."
-	call_proc = TYPE_PROC_REF(/obj/machinery/atmospherics/valve, toggle)
+	call_proc = /obj/machinery/atmospherics/valve/proc/toggle
 
 /obj/machinery/atmospherics/valve/digital		// can be controlled by AI
 	name = "digital valve"

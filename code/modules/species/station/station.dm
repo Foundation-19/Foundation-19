@@ -19,7 +19,7 @@
 
 	sexybits_location = BP_GROIN
 
-	inherent_verbs = list(TYPE_PROC_REF(/mob/living/carbon/human, tie_hair))
+	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair)
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
@@ -293,7 +293,7 @@
 		)
 
 	inherent_verbs = list(
-		TYPE_PROC_REF(/mob/living/carbon/human, diona_heal_toggle)
+		/mob/living/carbon/human/proc/diona_heal_toggle
 		)
 
 	warning_low_pressure = 50

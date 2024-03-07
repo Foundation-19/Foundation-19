@@ -42,11 +42,11 @@
 	H.add_language(LANGUAGE_BORER_GLOBAL)
 
 	if(host.stat == DEAD)
-		add_verb(H, TYPE_PROC_REF(/mob/living/carbon/human, jumpstart))
+		add_verb(H, /mob/living/carbon/human/proc/jumpstart)
 
-	add_verb(H, TYPE_PROC_REF(/mob/living/carbon/human, psychic_whisper))
+	add_verb(H, /mob/living/carbon/human/proc/psychic_whisper)
 	if(!neutered)
-		add_verb(H, TYPE_PROC_REF(/mob/living/carbon, spawn_larvae))
+		add_verb(H, /mob/living/carbon/proc/spawn_larvae)
 
 	if(H.client)
 		H.ghostize(0)

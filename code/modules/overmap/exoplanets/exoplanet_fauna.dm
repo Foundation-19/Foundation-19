@@ -6,7 +6,7 @@
 		else
 			A.SetName("alien creature")
 			A.real_name = "alien creature"
-			add_verb(A, TYPE_PROC_REF(/mob/living/simple_animal, name_species))
+			add_verb(A, /mob/living/simple_animal/proc/name_species)
 	if (atmosphere)
 		//Set up gases for living things
 		if (!LAZYLEN(breathgas))

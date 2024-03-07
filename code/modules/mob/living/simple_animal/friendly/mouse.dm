@@ -66,8 +66,8 @@
 /mob/living/simple_animal/friendly/mouse/Initialize()
 	. = ..()
 
-	add_verb(src, TYPE_PROC_REF(/mob/living, ventcrawl))
-	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
+	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, /mob/living/proc/hide)
 
 	if(name == initial(name))
 		name = "[name] ([sequential_id(/mob/living/simple_animal/friendly/mouse)])"

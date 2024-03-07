@@ -34,7 +34,7 @@
 	)
 
 	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Memetic flags determine required factors for a human to be affected
-	SCP.memetic_proc = TYPE_PROC_REF(/obj/item/paper/scp012, memetic_effect) //proc to be called for the effect an affected individual should recieve
+	SCP.memetic_proc = /obj/item/paper/scp012/proc/memetic_effect //proc to be called for the effect an affected individual should recieve
 	SCP.memetic_sounds = list('sounds/scp/012/012.ogg')
 	SCP.compInit()
 

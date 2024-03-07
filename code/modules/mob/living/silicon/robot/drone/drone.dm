@@ -65,7 +65,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/Initialize()
 	. = ..()
 
-	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
+	add_verb(src, /mob/living/proc/hide)
 	remove_language(LANGUAGE_ROBOT_GLOBAL)
 	add_language(LANGUAGE_ROBOT_GLOBAL, 0)
 	add_language(LANGUAGE_DRONE_GLOBAL, 1)

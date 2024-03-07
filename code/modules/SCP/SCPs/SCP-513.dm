@@ -21,7 +21,7 @@
 	)
 
 	SCP.memeticFlags = MAUDIBLE|MPERSISTENT|MSYNCED
-	SCP.memetic_proc = TYPE_PROC_REF(/obj/item/scp513, effect)
+	SCP.memetic_proc = /obj/item/scp513/proc/effect
 	SCP.memetic_sounds = list('sounds/scp/513/Bell1.ogg', 'sounds/scp/513/Bell2.ogg')
 	SCP.compInit()
 

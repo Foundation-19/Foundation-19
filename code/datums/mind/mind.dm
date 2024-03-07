@@ -467,7 +467,7 @@
 	if(!issilicon(src))
 		mind.AddComponent(/datum/component/goalcontainer)
 	if(player_is_antag(mind))
-		add_verb(client, TYPE_PROC_REF(/client, aooc))
+		add_verb(client, /client/proc/aooc)
 
 //HUMAN
 /mob/living/carbon/human/mind_initialize()

@@ -307,7 +307,7 @@
 /decl/public_access/public_method/toggle_emitter
 	name = "toggle emitter"
 	desc = "Toggles whether or not the emitter is active. It must be unlocked to work."
-	call_proc = TYPE_PROC_REF(/obj/machinery/power/emitter, activate)
+	call_proc = /obj/machinery/power/emitter/proc/activate
 
 /decl/public_access/public_variable/emitter_active
 	expected_type = /obj/machinery/power/emitter

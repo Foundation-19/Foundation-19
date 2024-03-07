@@ -6,9 +6,9 @@ var/list/wrapped_species_by_ref = list()
 /datum/species/shapeshifter
 
 	inherent_verbs = list(
-		TYPE_PROC_REF(/mob/living/carbon/human, shapeshifter_select_shape),
-		TYPE_PROC_REF(/mob/living/carbon/human, shapeshifter_select_hair),
-		TYPE_PROC_REF(/mob/living/carbon/human, shapeshifter_select_gender)
+		/mob/living/carbon/human/proc/shapeshifter_select_shape,
+		/mob/living/carbon/human/proc/shapeshifter_select_hair,
+		/mob/living/carbon/human/proc/shapeshifter_select_gender
 		)
 
 	var/list/valid_transform_species = list()

@@ -64,7 +64,7 @@
 /decl/public_access/public_method/igniter_toggle
 	name = "igniter toggle"
 	desc = "Toggle the igniter on or off."
-	call_proc = TYPE_PROC_REF(/obj/machinery/igniter, ignite)
+	call_proc = /obj/machinery/igniter/proc/ignite
 
 /decl/stock_part_preset/radio/receiver/igniter
 	frequency = BUTTON_FREQ
@@ -151,7 +151,7 @@
 /decl/public_access/public_method/sparker_spark
 	name = "spark"
 	desc = "Creates sparks to ignite nearby gases."
-	call_proc = TYPE_PROC_REF(/obj/machinery/sparker, ignite)
+	call_proc = /obj/machinery/sparker/proc/ignite
 
 /decl/stock_part_preset/radio/receiver/sparker
 	frequency = BUTTON_FREQ

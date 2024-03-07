@@ -6,7 +6,7 @@
 		mind.changeling = new /datum/changeling(gender)
 		mind.changeling.owner_mind = mind
 
-	add_verb(src, TYPE_PROC_REF(/datum/changeling, EvolutionMenu))
+	add_verb(src, /datum/changeling/proc/EvolutionMenu)
 	add_language(LANGUAGE_CHANGELING_GLOBAL)
 
 	// Code to auto-purchase free powers.

@@ -229,7 +229,7 @@
 	vision.possess(L)
 	GLOB.destroyed_event.register(L, src, TYPE_PROC_REF(/datum/spell/camera_connection, release))
 	GLOB.logged_out_event.register(L, src, TYPE_PROC_REF(/datum/spell/camera_connection, release))
-	add_verb(L, TYPE_PROC_REF(/mob/living, release_eye))
+	add_verb(L, /mob/living/proc/release_eye)
 
 /datum/spell/camera_connection/proc/release(mob/living/L)
 	vision.release(L)

@@ -93,8 +93,8 @@
 	. = ..()
 
 	add_language(LANGUAGE_BORER_GLOBAL)
-	add_verb(src, TYPE_PROC_REF(/mob/living, ventcrawl))
-	add_verb(src, TYPE_PROC_REF(/mob/living, hide))
+	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, /mob/living/proc/hide)
 
 	generation = gen
 	set_borer_name()

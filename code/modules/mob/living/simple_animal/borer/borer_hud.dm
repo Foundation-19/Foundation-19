@@ -76,9 +76,9 @@
 	if(!worm.host.lastKnownIP)
 		worm.host.lastKnownIP = s2h_ip
 	worm.controlling = TRUE
-	add_verb(worm.host, TYPE_PROC_REF(/mob/living/carbon, release_control))
-	add_verb(worm.host, TYPE_PROC_REF(/mob/living/carbon, punish_host))
-	add_verb(worm.host, TYPE_PROC_REF(/mob/living/carbon, spawn_larvae))
+	add_verb(worm.host, /mob/living/carbon/proc/release_control)
+	add_verb(worm.host, /mob/living/carbon/proc/punish_host)
+	add_verb(worm.host, /mob/living/carbon/proc/spawn_larvae)
 
 	return TRUE
 

@@ -51,7 +51,7 @@
 /decl/public_access/public_method/holosign_toggle
 	name = "holosign toggle"
 	desc = "Toggle the holosign's active state."
-	call_proc = TYPE_PROC_REF(/obj/machinery/holosign, toggle)
+	call_proc = /obj/machinery/holosign/proc/toggle
 
 /decl/stock_part_preset/radio/receiver/holosign
 	frequency = BUTTON_FREQ
