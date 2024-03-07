@@ -90,7 +90,7 @@
 	// We could lose our loc, and still need to talk to our client, so they are done seperately
 
 	//addtimer(CALLBACK(balloon_alert.loc, .proc/forget_balloon_alert, balloon_alert), BALLOON_TEXT_TOTAL_LIFETIME(length_mult))
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_client, balloon_alert, viewer_client), BALLOON_TEXT_TOTAL_LIFETIME(length_mult))
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_image_from_client), balloon_alert, viewer_client), BALLOON_TEXT_TOTAL_LIFETIME(length_mult))
 
 /*/atom/proc/forget_balloon_alert(image/balloon_alert)
 	LAZYREMOVE(update_on_z, balloon_alert)*/
