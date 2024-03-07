@@ -73,7 +73,7 @@
 /obj/machinery/washing_machine/proc/wash()
 	for(var/atom/A in (contents - component_parts))
 		if(detergent)
-			A.clean_blood()
+			A.clean()
 		if(isitem(A))
 			var/obj/item/I = A
 			if(detergent)
@@ -119,7 +119,7 @@
 /obj/machinery/washing_machine/on_update_icon()
 	icon_state = "wm_[state][panel_open]"
 
-/obj/machinery/washing_machine/clean_blood()
+/obj/machinery/washing_machine/clean()
 	. = ..()
 	state &= ~WASHER_STATE_BLOODY
 	update_icon()
