@@ -39,7 +39,7 @@
 	if(clean_forensics)
 		qdel(src)
 		return TRUE
-	. = ..()
+	return ..()
 
 /obj/effect/decal/cleanable/proc/set_cleanable_scent()
 	if(cleanable_scent)
