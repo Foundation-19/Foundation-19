@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(is_station_but_not_space_or_shuttle_area, list(GLOBAL_PROC_REF(
 
 GLOBAL_LIST_INIT(is_contact_but_not_space_or_shuttle_area, list(GLOBAL_PROC_REF(is_contact_area), GLOBAL_PROC_REF(is_not_space_area), GLOBAL_PROC_REF(is_not_shuttle_area)))
 
-GLOBAL_LIST_INIT(is_player_but_not_space_or_shuttle_area, list(GLOBAL_PROC_REF(is_player_area), GLOBAL_PROC_REF(is_not_space_area), GLOBAL_PROC_REF(is_not_shuttle_area)uttle_area)))
+GLOBAL_LIST_INIT(is_player_but_not_space_or_shuttle_area, list(GLOBAL_PROC_REF(is_player_area), GLOBAL_PROC_REF(is_not_space_area), GLOBAL_PROC_REF(is_not_shuttle_area)))
 
 GLOBAL_LIST_INIT(is_station_area, list(GLOBAL_PROC_REF(is_station_area)))
 
