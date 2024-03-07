@@ -68,7 +68,7 @@
 		LAZYINITLIST(darkness_path)
 		var/while_loop_timeout = world.time
 		while(!LAZYLEN(darkness_path) && ((world.time - while_loop_timeout) < 5 SECONDS))
-			shadow_target = pick_turf_in_range(holder.loc, 14, list(/proc/is_dark))
+			shadow_target = pick_turf_in_range(holder.loc, 14, list(GLOBAL_PROC_REF(is_dark)))
 			darkness_path = get_path_to(holder, shadow_target)
 	if(!should_flee() || !shadow_target || !LAZYLEN(darkness_path) || !holder.IMove(darkness_path[1]))
 		ai_log("flee_to_darkness() : Lost target to flee to.", AI_LOG_INFO)
@@ -159,11 +159,10 @@
 	S.set_up(3,0,T)
 	S.start()
 
-	var/turf/new_target_turf = pick_turf_in_range(src, 100, list(/proc/isfloor, /proc/is_dark))
+	var/turf/new_target_turf = pick_turf_in_range(src, 100, list(GLOBAL_PROC_REF(isfloor), GLOBAL_PROC_REF(is_dark)))
 	if(!new_target_turf)
 		ghostize()
 		qdel_self()
 	else
 		forceMove(new_target_turf)
 		health = maxHealth
-

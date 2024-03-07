@@ -23,7 +23,7 @@
 /proc/get_path_to(atom/movable/caller, atom/end, max_distance = 30, min_target_dist, id=null, simulated_only = TRUE, turf/exclude, skip_first=TRUE, diagonal_safety=TRUE)
 	var/list/path = list()
 	// We're guarenteed that list will be the first list in pathfinding_finished's argset because of how callback handles the arguments list
-	var/datum/callback/await = CALLBACK(GLOBAL_PROC, /proc/pathfinding_finished, path)
+	var/datum/callback/await = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(pathfinding_finished), path)
 	if(!SSpathfinder.pathfind(caller, end, max_distance, min_target_dist, id, simulated_only, exclude, skip_first, diagonal_safety, await))
 		return list()
 

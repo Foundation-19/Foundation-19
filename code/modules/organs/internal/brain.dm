@@ -23,7 +23,6 @@
 	var/healed_threshold = 1
 	var/oxygen_reserve = 6
 	var/insanity = 0 // higher = bad
-	var/max_insanity = 100
 
 /obj/item/organ/internal/brain/robotize()
 	replace_self_with(/obj/item/organ/internal/posibrain)
@@ -205,17 +204,17 @@
 	..()
 
 /obj/item/organ/internal/brain/proc/take_sanity_damage(damage, silent)
-	insanity = Clamp(damage, insanity + damage, max_insanity)
+	insanity = Clamp(damage, insanity + damage, BRAIN_MAX_INSANITY)
 
 /obj/item/organ/internal/brain/proc/get_sanity_level()
 	switch(insanity)
-		if(-INFINITY to 0.4*max_insanity)
+		if(-INFINITY to 0.4*BRAIN_MAX_INSANITY)
 			return SL_SANE
-		if(0.4*max_insanity to 0.7*max_insanity) // Stressed.
+		if(0.4*BRAIN_MAX_INSANITY to 0.7*BRAIN_MAX_INSANITY) // Stressed.
 			return SL_STRESSED
-		if(0.7*max_insanity to 0.9*max_insanity) // Starting to go insane.
+		if(0.7*BRAIN_MAX_INSANITY to 0.9*BRAIN_MAX_INSANITY) // Starting to go insane.
 			return SL_DISTRESSED
-		if(0.9*max_insanity to INFINITY) // Schizophrenic med student.
+		if(0.9*BRAIN_MAX_INSANITY to INFINITY) // Schizophrenic med student.
 			return SL_INSANE
 	return SL_SANE // something went wrong.
 

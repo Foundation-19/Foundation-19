@@ -188,7 +188,7 @@ var/global/list/additional_antag_types = list()
 
 	refresh_event_modifiers()
 
-	addtimer(CALLBACK(null, /proc/display_roundstart_logout_report), ROUNDSTART_LOGOUT_REPORT_TIME)
+	addtimer(CALLBACK(null, GLOBAL_PROC_REF(display_roundstart_logout_report)), ROUNDSTART_LOGOUT_REPORT_TIME)
 
 	var/welcome_delay = rand(waittime_l, waittime_h)
 	addtimer(CALLBACK(GLOB.using_map, /datum/map/proc/send_welcome), welcome_delay)
