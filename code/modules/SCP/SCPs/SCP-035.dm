@@ -6,15 +6,17 @@ GLOBAL_LIST_EMPTY(scp035s)
 	item_state = "scp035_0"
 	randpixel = FALSE
 	var/weeping = FALSE
-	var/tradegy = FALSE
+	var/tragedy = FALSE
 	var/mob/living/scp_035/brain_client
 	var/bleed_colour = "#1f081b9f"
 	//035_whispers_0.ogg Copyright 2013 Iwan Gabovitch, CC-BY3 license.
-	var/list/whispering_sounds = list(	'sounds/hallucinations/035_whispers_0.ogg',
-										'sounds/hallucinations/035_whispers_1.ogg',
-										'sounds/hallucinations/035_whispers_2.ogg',
-										'sounds/hallucinations/035_whispers_3.ogg',
-										'sounds/hallucinations/035_whispers_4.ogg')
+	var/list/whispering_sounds = list(
+		'sounds/hallucinations/035_whispers_0.ogg',
+		'sounds/hallucinations/035_whispers_1.ogg',
+		'sounds/hallucinations/035_whispers_2.ogg',
+		'sounds/hallucinations/035_whispers_3.ogg',
+		'sounds/hallucinations/035_whispers_4.ogg'
+		)
 
 /obj/item/clothing/mask/scp_035/Initialize()
 	. = ..()
