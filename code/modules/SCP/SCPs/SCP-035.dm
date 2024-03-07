@@ -36,8 +36,8 @@ GLOBAL_LIST_EMPTY(scp035s)
 /obj/item/clothing/mask/scp_035/examine(mob/user)
 	. = ..()
 	var/message
-	if(!icon_state)
-		message = "An ancient white porcelain comedy mask."
+	if(!tragedy)
+		message = "An ancient white porcelain tragedy mask."
 	else
 		message = "An ancient white porcelain tradegy mask."
 	if(weeping)
@@ -47,7 +47,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 /obj/item/clothing/mask/scp_035/update_icon()
 	. = ..()
 	cut_overlays()
-	icon_state = "scp035_[tradegy]"
+	icon_state = "scp035_[tragedy]"
 	item_state = icon_state
 	if(weeping)
 		add_overlay("weeping")
@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 	update_icon()
 	addtimer(CALLBACK(src, .proc/weepstart), rand(9.5, 114) SECONDS) //only 2 min max downtime, it outputs alot
 	if(prob(5))
-		tradegy = !tradegy
+		tragedy = !tragedy
 
 /obj/item/clothing/mask/scp_035/proc/output_substance()
 	if(!weeping)
@@ -105,7 +105,7 @@ GLOBAL_LIST_EMPTY(scp035s)
 		return
 
 	to_chat(H, "<span class='danger'>You feel an ominous presence prodding at the edges of your consciousness...</span>")
-
+	// Add Sleep Here
 	if(H.resist())
 		to_chat(H, "<span class='danger'>You struggle to resist the intrusion, but it pries into your mind relentlessly! You can feel it worming its way through your thoughts, prying open your memories. You try to hold on to who you are, but the sinister will behind this mental attack is too strong!</span>")
 	else if(prob(50))
