@@ -318,7 +318,7 @@
 	name = "Corpse Delivery (Danger: Deadly)";
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	desc = "A note read: Dispose of bodies here";
 	dir = 1;
 	name = "Termination Disposal";
@@ -4525,7 +4525,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
 "kD" = (
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 4;
 	name = "Smelted Mineral Delivery Chute"
 	},
@@ -6503,7 +6503,7 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "pm" = (
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	desc = "A note read: Dispose of bodies here";
 	name = "Termination Disposal"
 	},
@@ -7693,7 +7693,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 8
 	},
 /turf/simulated/floor,
@@ -11135,12 +11135,6 @@
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"Ag" = (
-/obj/item/modular_computer/console/preset/paperwork_dataserver{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/engineering/server_room)
 "Ah" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -11986,6 +11980,12 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/scp914)
+"Cu" = (
+/obj/item/modular_computer/console/preset/paperwork_dataserver{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/engineering/server_room)
 "Cy" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Server Room";
@@ -49617,7 +49617,7 @@ Cg
 ur
 aZ
 aI
-Ag
+Cu
 CA
 CA
 aZ

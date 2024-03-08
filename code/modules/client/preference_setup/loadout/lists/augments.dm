@@ -42,7 +42,7 @@
 	display_name = "integrated security HUD (head)"
 	cost = 4
 	path = /obj/item/organ/internal/augment/active/hud/security
-	allowed_branches = list(/datum/mil_branch/security)
+	whitelist_department_flags = SEC
 
 /datum/gear/augment/integrated_janitor_hud
 	display_name = "integrated filth HUD (head)"

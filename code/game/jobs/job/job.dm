@@ -2,69 +2,88 @@
 
 	/// The name of the job
 	var/title = "NOPE"
-	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
-	/// The access this job starts with when the server has a lower population, or if dictated by the config.
+	/// List of which accesses this job has when config.jobs_have_minimal_access is true.
 	var/list/minimal_access = list()
-	/// The access this job starts with when the server has a higher population.
+	/// List of which accesses this job has when config.jobs_have_minimal_access is false.
 	var/list/access = list()
 	/// Defines starting software that's installed on spawned tablets and laptops.
 	var/list/software_on_spawn = list()
-	/// Bitflag for every department this job is involved with.
+	/// Bitflag representing which departments this job is part of.
 	var/department_flag = 0
-	/// How many people, in total, can have this job
+	/// How many players can be this job
 	var/total_positions = 0
-	/// How many people can spawn in with this job
+	/// How many players can spawn in as this job
 	var/spawn_positions = 0
-	/// How many people currently have this job
+	/// How many players currently have this job
 	var/current_positions = 0
 
-	/// Color used to represent this job (e.g. for the selection screen)
+	/// Selection screen color
 	var/selection_color = "#515151"
-	/// List of alternative titles, if any. May be used as an associative list - the key is the title and the value is an outfit.
+	/// List of alternate titles, if any. May be an associative list - key = title, value = outfit datum.
 	var/list/alt_titles
-	var/minimal_player_age = 0				// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
-	/// The main department this job is in.
+	/// If you have use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
+	var/minimal_player_age = 0
+	/// Does this position have a department tag? // TODO: move to department_flag
 	var/department = null
-	/// If true, this job is counted as a head of its department
+	/// Is this position a head position (i.e. part of Command)?
 	var/head_position = FALSE
-	var/minimum_character_age				// List of species = age, if species is not here, it's auto-pass
+	/// The minimum age your character has to be (to be this job).
+	var/minimum_character_age
+	/// The "ideal" age for characters with this job. Affects candidate weighting.area
 	var/ideal_character_age = 30
-	var/create_record = 1                 // Do we announce/make records for people who spawn on this job?
-	var/is_semi_antagonist = FALSE        // Whether or not this job is given semi-antagonist status.
-	var/account_allowed = 1               // Does this job type come with a station account?
-	var/economic_power = 2             // With how much does this job modify the initial account amount?
+	/// Do we make records for people who spawn with this job?
+	var/create_record = 1
+	/// Whether or not this job is given semi-antagonist status.
+	var/is_semi_antagonist = FALSE
+	/// Does this job type come with a station account?
+	var/account_allowed = TRUE
+	/// With how much does this job modify the initial account amount?
+	var/economic_power = 2
 
-	var/outfit_type                       // The outfit the employee will be dressed in, if any
+	/// The outfit the employee will be dressed in, if any
+	var/outfit_type
 
-	var/loadout_allowed = TRUE            // Whether or not loadout equipment is allowed and to be created when joining.
-	var/list/allowed_branches             // For maps using branches and ranks, also expandable for other purposes
-	var/list/allowed_ranks                // Ditto
+	/// Whether or not loadout equipment is allowed and to be created when joining.
+	var/loadout_allowed = TRUE
 
-	var/announced = TRUE                  //If their arrival is announced on radio
-	var/latejoin_at_spawnpoints           //If this job should use roundstart spawnpoints for latejoin (offstation jobs etc)
+	/// What class we are. Uses defines ranging from CLASS_A to CLASS_E.
+	var/class = CLASS_C
 
-	var/hud_icon						  //icon used for Sec HUD overlay
+	/// If true, someone with this job arriving will be announced over radio
+	var/announced = TRUE
+	/// If this job should use roundstart spawnpoints for latejoin (offstation jobs etc)
+	var/latejoin_at_spawnpoints
 
-	var/min_skill = list()				  //Minimum skills allowed for the job. List should contain skill (as in /decl/hierarchy/skill path), with values which are numbers.
-	var/max_skill = list()				  //Maximum skills allowed for the job.
-	var/skill_points = 16				  //The number of unassigned skill points the job comes with (on top of the minimum skills).
-	var/no_skill_buffs = FALSE			  //Whether skills can be buffed by age/species modifiers.
+	/// What icon shows up for SecHUDs.
+	var/hud_icon
+
+	/// Minimum skills employees start with. List should contain skill (as in /decl/hierarchy/skill path), with values which are numbers.
+	var/min_skill = list()
+	/// Maximum skills allowed for the job. List should contain skill (as in /decl/hierarchy/skill path), with values which are numbers.
+	var/max_skill = list()
+	/// The number of unassigned skill points the job comes with (on top of the minimum skills).
+	var/skill_points = 16
+	/// If true, age doesn't buff skill. // TODO: age shouldn't buff skill at all lol
+	var/no_skill_buffs = FALSE
+	/// If false, you can't join as this role roundstart
 	var/available_by_default = TRUE
 
 	var/list/possible_goals = list()
 	var/goals_count
 
-	var/defer_roundstart_spawn = FALSE // If true, the job will be put off until all other jobs have been populated.
-	var/list/species_branch_rank_cache_ = list()
-	var/list/psi_faculties                // Starting psi faculties, if any.
-	var/psi_latency_chance = 2            // Chance of an additional psi latency, if any.
-	var/give_psionic_implant_on_join = FALSE // If psionic, will be implanted for control.
-
-	var/use_species_whitelist // If set, restricts the job to players with the given species whitelist. This does NOT restrict characters joining as the job to the species itself.
+	/// If true, this job will be filled only after all non-defered jobs.
+	var/defer_roundstart_spawn = FALSE
+	/// Starting psi faculties, if any.
+	var/list/psi_faculties
+	/// Chance of an additional psi latency, if any.
+	var/psi_latency_chance = 2
+	/// If psionic, will be implanted for control.
+	var/give_psionic_implant_on_join = FALSE
 
 	var/required_language = LANGUAGE_ENGLISH
 
-	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
+	/// Is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
+	var/balance_limited = FALSE
 
 	/// The required playtime in other jobs or categories to play the role
 	var/list/requirements
@@ -95,7 +114,7 @@
 /datum/job/dd_SortValue()
 	return title
 
-/datum/job/proc/equip(mob/living/carbon/human/H, alt_title, datum/mil_branch/branch, datum/mil_rank/grade)
+/datum/job/proc/equip(mob/living/carbon/human/H, alt_title)
 
 	if (required_language)
 		H.add_language(required_language)
@@ -124,16 +143,12 @@
 				imp.part = affected
 			to_chat(H, SPAN_DANGER("As a registered psionic, you are fitted with a psi-dampening control implant. Using psi-power while the implant is active will result in neural shocks and your violation being reported."))
 
-	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
+	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title)
 	if(outfit) . = outfit.equip(H, title, alt_title)
 
-/datum/job/proc/get_outfit(mob/living/carbon/human/H, alt_title, datum/mil_branch/branch, datum/mil_rank/grade)
+/datum/job/proc/get_outfit(mob/living/carbon/human/H, alt_title)
 	if(alt_title && alt_titles)
 		. = alt_titles[alt_title]
-	if(allowed_branches && branch)
-		. = allowed_branches[branch.type] || .
-	if(allowed_ranks && grade)
-		. = allowed_ranks[grade.type] || .
 	. = . || outfit_type
 	. = outfit_by_type(.)
 
@@ -179,8 +194,8 @@
 		H.mind.initial_account = M
 
 // overrideable separately so AIs/borgs can have cardborg hats without unneccessary new()/qdel()
-/datum/job/proc/equip_preview(mob/living/carbon/human/H, alt_title, datum/mil_branch/branch, datum/mil_rank/grade, additional_skips)
-	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
+/datum/job/proc/equip_preview(mob/living/carbon/human/H, alt_title, additional_skips)
+	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title)
 	if(!outfit)
 		return FALSE
 	. = outfit.equip(H, title, alt_title, OUTFIT_ADJUSTMENT_SKIP_POST_EQUIP|OUTFIT_ADJUSTMENT_SKIP_ID_PDA|additional_skips)
@@ -225,23 +240,7 @@
 /datum/job/proc/is_restricted(datum/preferences/prefs, feedback)
 	var/datum/species/S
 
-	if(!is_species_whitelist_allowed(prefs.client, use_species_whitelist))
-		S = all_species[use_species_whitelist]
-		to_chat(feedback, SPAN_CLASS("boldannounce","\An [S] species whitelist is required for [title]."))
-		return TRUE
-
-	if(!isnull(allowed_branches) && (!prefs.branches[title] || !is_branch_allowed(prefs.branches[title])))
-		to_chat(feedback, SPAN_CLASS("boldannounce","Wrong branch of service for [title]. Valid branches are: [get_branches()]."))
-		return TRUE
-
-	if(!isnull(allowed_ranks) && (!prefs.ranks[title] || !is_rank_allowed(prefs.branches[title], prefs.ranks[title])))
-		to_chat(feedback, SPAN_CLASS("boldannounce","Wrong rank for [title]. Valid ranks in [prefs.branches[title]] are: [get_ranks(prefs.branches[title])]."))
-		return TRUE
-
 	S = all_species[prefs.species]
-	if(!is_species_allowed(S))
-		to_chat(feedback, SPAN_CLASS("boldannounce","Restricted species, [S], for [title]."))
-		return TRUE
 
 	if(LAZYACCESS(minimum_character_age, S.get_bodytype()) && (prefs.age < minimum_character_age[S.get_bodytype()]))
 		to_chat(feedback, SPAN_CLASS("boldannounce","Not old enough. Minimum character age is [minimum_character_age[S.get_bodytype()]]."))
@@ -275,111 +274,18 @@
 			active++
 	return active
 
-/datum/job/proc/is_species_allowed(datum/species/S)
-	if(GLOB.using_map.is_species_job_restricted(S, src))
-		return FALSE
-	// We also make sure that there is at least one valid branch-rank combo for the species.
-	if(!allowed_branches || !GLOB.using_map || !(GLOB.using_map.flags & MAP_HAS_BRANCH))
-		return TRUE
-	return LAZYLEN(get_branch_rank(S))
+/datum/job/proc/get_description_blurb()
+	return ""
 
-/datum/job/proc/is_species_whitelist_allowed(client/C)
-	if (isnull(use_species_whitelist))
-		return TRUE
-	if (!C?.mob)
-		log_debug("Failed to find a valid client/mob for whitelist checking - Job `[src]` - Client `[C]` - Mob `[C?.mob]`")
-		return FALSE
-	return is_species_whitelisted(C.mob, use_species_whitelist)
-
-// Don't use if the map doesn't use branches but jobs do.
-/datum/job/proc/get_branch_rank(datum/species/S)
-	. = species_branch_rank_cache_[S]
-	if(.)
-		return
-
-	species_branch_rank_cache_[S] = list()
-	. = species_branch_rank_cache_[S]
-
-	var/spawn_branches = mil_branches.spawn_branches(S)
-	for(var/branch_type in allowed_branches)
-		var/datum/mil_branch/branch = mil_branches.get_branch_by_type(branch_type)
-		if(branch.name in spawn_branches)
-			if(!allowed_ranks || !(GLOB.using_map.flags & MAP_HAS_RANK))
-				LAZYADD(., branch.name)
-				continue // Screw this rank stuff, we're good.
-			var/spawn_ranks = branch.spawn_ranks(S)
-			for(var/rank_type in allowed_ranks)
-				var/datum/mil_rank/rank = rank_type
-				if(initial(rank.name) in spawn_ranks)
-					LAZYADD(.[branch.name], initial(rank.name))
-
-/**
- *  Check if members of the given branch are allowed in the job
- *
- *  This proc should only be used after the global branch list has been initialized.
- *
- *  branch_name - String key for the branch to check
- */
-/datum/job/proc/is_branch_allowed(branch_name)
-	if(!allowed_branches || !GLOB.using_map || !(GLOB.using_map.flags & MAP_HAS_BRANCH))
-		return 1
-	if(branch_name == "None")
-		return 0
-
-	var/datum/mil_branch/branch = mil_branches.get_branch(branch_name)
-
-	if(!branch)
-		crash_with("unknown branch \"[branch_name]\" passed to is_branch_allowed()")
-		return 0
-
-	if(is_type_in_list(branch, allowed_branches))
-		return 1
-	else
-		return 0
-
-/**
- *  Check if people with given rank are allowed in this job
- *
- *  This proc should only be used after the global branch list has been initialized.
- *
- *  branch_name - String key for the branch to which the rank belongs
- *  rank_name - String key for the rank itself
- */
-/datum/job/proc/is_rank_allowed(branch_name, rank_name)
-	if(!allowed_ranks || !GLOB.using_map || !(GLOB.using_map.flags & MAP_HAS_RANK))
-		return 1
-	if(branch_name == "None" || rank_name == "None")
-		return 0
-
-	var/datum/mil_rank/rank = mil_branches.get_rank(branch_name, rank_name)
-
-	if(!rank)
-		crash_with("unknown rank \"[rank_name]\" in branch \"[branch_name]\" passed to is_rank_allowed()")
-		return 0
-
-	if(is_type_in_list(rank, allowed_ranks))
-		return 1
-	else
-		return 0
-
-//Returns human-readable list of branches this job allows.
-/datum/job/proc/get_branches()
-	var/list/res = list()
-	for(var/T in allowed_branches)
-		var/datum/mil_branch/B = mil_branches.get_branch_by_type(T)
-		res += B.name
-	return english_list(res)
-
-//Same as above but ranks
-/datum/job/proc/get_ranks(branch)
-	var/list/res = list()
-	var/datum/mil_branch/B = mil_branches.get_branch(branch)
-	for(var/T in allowed_ranks)
-		var/datum/mil_rank/R = T
-		if(B && !(initial(R.name) in B.ranks))
-			continue
-		res |= initial(R.name)
-	return english_list(res)
+/datum/job/proc/get_job_icon()
+	if(!SSjobs.job_icons[title])
+		var/mob/living/carbon/human/dummy/mannequin/mannequin = get_mannequin("#job_icon")
+		dress_mannequin(mannequin)
+		mannequin.dir = SOUTH
+		var/icon/preview_icon = getFlatIcon(mannequin)
+		preview_icon.Scale(preview_icon.Width() * 2, preview_icon.Height() * 2) // Scaling here to prevent blurring in the browser.
+		SSjobs.job_icons[title] = preview_icon
+	return SSjobs.job_icons[title]
 
 /datum/job/proc/get_unavailable_reasons(client/caller)
 	var/list/reasons = list()
@@ -391,16 +297,8 @@
 		reasons["Your player age is too low."] = TRUE
 	if(!is_position_available())
 		reasons["There are no positions left."] = TRUE
-	if(!isnull(allowed_branches) && (!caller.prefs.branches[title] || !is_branch_allowed(caller.prefs.branches[title])))
-		reasons["Your branch of service does not allow it."] = TRUE
-	else if(!isnull(allowed_ranks) && (!caller.prefs.ranks[title] || !is_rank_allowed(caller.prefs.branches[title], caller.prefs.ranks[title])))
-		reasons["Your rank choice does not allow it."] = TRUE
-	if (!is_species_whitelist_allowed(caller))
-		reasons["You do not have the required [use_species_whitelist] species whitelist."] = TRUE
 	var/datum/species/S = all_species[caller.prefs.species]
 	if(S)
-		if(!is_species_allowed(S))
-			reasons["Your species choice does not allow it."] = TRUE
 		if(!S.check_background(src, caller.prefs))
 			reasons["Your background choices do not allow it."] = TRUE
 	if(!meets_req(caller))

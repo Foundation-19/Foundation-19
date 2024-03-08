@@ -1,4 +1,4 @@
-#define JAMMER_MAX_RANGE world.view*2
+#define JAMMER_MAX_RANGE (world.view*2)
 #define JAMMER_POWER_CONSUMPTION(tick_delay) ((max(0.75, range)**2 * jammer_method.energy_cost * tick_delay) / 20)
 
 /obj/item/device/suit_sensor_jammer

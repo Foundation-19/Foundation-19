@@ -1,0 +1,5 @@
+author: KingSuperBOB
+delete-after: true
+changes:
+  - rscadd: Added a damp rag to 049's medical storage.
+  - rscdel: Removed reagent spray bottle from 049's medical storage.
