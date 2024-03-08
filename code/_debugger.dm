@@ -9,8 +9,7 @@
 /datum/debugger/proc/enable_debugger()
 	var/dll = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if(dll)
-		world.log << ("[dll]")
-		world.log << ("[LIBCALL("debug_server.dll", "auxtools_init")()]")
+		LIBCALL("debug_server.dll", "auxtools_init")()
 		enable_debugging()
 
 /proc/auxtools_stack_trace(msg)

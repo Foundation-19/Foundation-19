@@ -27,7 +27,7 @@
 	)
 
 	SCP.memeticFlags = MVISUAL|MPERSISTENT|MSYNCED
-	SCP.memetic_proc = /obj/structure/scp151/proc/effect
+	SCP.memetic_proc = TYPE_PROC_REF(/obj/structure/scp151, effect)
 	SCP.compInit()
 
 	START_PROCESSING(SSobj, src)

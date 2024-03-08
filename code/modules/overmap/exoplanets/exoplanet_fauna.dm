@@ -68,7 +68,7 @@
 		if (istype(A,species_type))
 			A.SetName(newname)
 			A.real_name = newname
-			remove_verb(A, TYPE_PROC_REF(/mob/living/simple_animal, name_species))
+			remove_verb(A, /mob/living/simple_animal/proc/name_species)
 	return TRUE
 
 /obj/effect/landmark/exoplanet_spawn

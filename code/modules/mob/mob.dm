@@ -917,7 +917,7 @@
 
 /mob/proc/remove_implant(atom/movable/implant, surgical_removal = FALSE)
 	if(!LAZYLEN(get_visible_implants(0))) //Yanking out last object - removing verb.
-		remove_verb(src, TYPE_PROC_REF(/mob, yank_out_object))
+		remove_verb(src, /mob/proc/yank_out_object)
 	for(var/obj/item/O in pinned)
 		if(O == implant)
 			pinned -= O

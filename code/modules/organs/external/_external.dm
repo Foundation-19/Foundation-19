@@ -308,7 +308,7 @@
 		for(var/obj/item/organ/external/limb in owner.organs)
 			if(limb.dislocated == 1)
 				return
-		remove_verb(owner, TYPE_PROC_REF(/mob/living/carbon/human, undislocate))
+		remove_verb(owner, /mob/living/carbon/human/proc/undislocate)
 
 /obj/item/organ/external/update_health()
 	damage = min(max_damage, (brute_dam + burn_dam))

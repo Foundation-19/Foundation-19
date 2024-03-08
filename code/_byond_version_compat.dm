@@ -2,17 +2,17 @@
 
 //Update this whenever you need to take advantage of more recent byond features
 #define MIN_COMPILER_VERSION 514
-#define MIN_COMPILER_BUILD 1588
+#define MIN_COMPILER_BUILD 1584
 #if (DM_VERSION < MIN_COMPILER_VERSION || DM_BUILD < MIN_COMPILER_BUILD) && !defined(SPACEMAN_DMM) && !defined(OPENDREAM)
 //Don't forget to update this part
 #error Your version of BYOND is too out-of-date to compile this project. Go to https://secure.byond.com/download/build/514 and update.
-#error You need version 514.1588 or higher
+#error You need version 514.1584 or higher
 #endif
 
 
 #if (DM_VERSION == 515 && DM_BUILD >= 1624)
-#error Your version of BYOND is currently not supported by debugger.
-#error Please consider downgrading to 515.1623 or lower, or wait for auxtools to support latest BYOND builds.
+#warn Your version of BYOND is currently not supported by debugger.
+#warn Please consider downgrading to 515.1623 or lower, or wait for auxtools to support latest BYOND builds.
 #endif
 
 

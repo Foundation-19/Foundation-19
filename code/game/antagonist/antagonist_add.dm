@@ -81,6 +81,6 @@
 		if(!is_special_character(player))
 			if(player.current)
 				if(player.current.client)
-					remove_verb(player.current.client, TYPE_PROC_REF(/client, aooc))
+					remove_verb(player.current.client, /client/proc/aooc)
 		return 1
 	return 0

@@ -12,9 +12,9 @@
 
 		B.detatch()
 
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon, release_control))
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon, punish_host))
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon, spawn_larvae))
+		remove_verb(src, /mob/living/carbon/proc/release_control)
+		remove_verb(src, /mob/living/carbon/proc/punish_host)
+		remove_verb(src, /mob/living/carbon/proc/spawn_larvae)
 
 	else
 		to_chat(src, SPAN_DANGER("ERROR NO BORER OR BRAINMOB DETECTED IN THIS MOB, THIS IS A BUG !"))

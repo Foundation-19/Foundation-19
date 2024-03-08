@@ -84,7 +84,7 @@
 		to_chat(usr, SPAN_WARNING("Your host is already alive."))
 		return
 
-	remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human, jumpstart))
+	remove_verb(src, /mob/living/carbon/human/proc/jumpstart)
 	visible_message(SPAN_DANGER("With a hideous, rattling moan, [src] shudders back to life!"))
 
 	rejuvenate()

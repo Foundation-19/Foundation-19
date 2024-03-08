@@ -209,9 +209,9 @@
 	controlling = 0
 
 	host.remove_language(LANGUAGE_BORER_GLOBAL)
-	remove_verb(host, TYPE_PROC_REF(/mob/living/carbon, release_control))
-	remove_verb(host, TYPE_PROC_REF(/mob/living/carbon, punish_host))
-	remove_verb(host, TYPE_PROC_REF(/mob/living/carbon, spawn_larvae))
+	remove_verb(host, /mob/living/carbon/proc/release_control)
+	remove_verb(host, /mob/living/carbon/proc/punish_host)
+	remove_verb(host, /mob/living/carbon/proc/spawn_larvae)
 
 	if(host_brain)
 

@@ -734,7 +734,7 @@
 		return
 
 	if(!(mMorph in mutations))
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human, morph))
+		remove_verb(src, /mob/living/carbon/human/proc/morph)
 		return
 
 	var/new_facial = input("Please select facial hair color.", "Character Generation",rgb(r_facial,g_facial,b_facial)) as color
@@ -816,7 +816,7 @@
 		return
 
 	if(!(mRemotetalk in src.mutations))
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human, remotesay))
+		remove_verb(src, /mob/living/carbon/human/proc/remotesay)
 		return
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
@@ -847,7 +847,7 @@
 	if(!(mRemote in src.mutations))
 		remoteview_target = null
 		reset_view(0)
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human, remoteobserve))
+		remove_verb(src, /mob/living/carbon/human/proc/remoteobserve)
 		return
 
 	if(client.eye != client.mob)
@@ -1026,7 +1026,7 @@
 		user.visible_message(SPAN_DANGER("\The [user] removes \the [src]'s splints!"))
 	else
 		to_chat(user, SPAN_WARNING("\The [src] has no splints that can be removed."))
-	remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human, remove_splints))
+	remove_verb(src, /mob/living/carbon/human/proc/remove_splints)
 
 
 /mob/living/carbon/human/verb/check_pulse()
@@ -1284,7 +1284,7 @@
 		return 0 //something is terribly wrong
 
 	if (!bloody_hands)
-		remove_verb(src, TYPE_PROC_REF(/mob/living/carbon/human, bloody_doodle))
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 
 	if (src.gloves)
 		to_chat(src, SPAN_WARNING("Your [src.gloves] are getting in the way."))

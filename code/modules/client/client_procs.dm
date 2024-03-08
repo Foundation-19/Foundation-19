@@ -594,7 +594,7 @@
 			holder.callproc.arguments += A
 
 		holder.callproc.waiting_for_click = 0
-		remove_verb(src, TYPE_PROC_REF(/client, cancel_callproc_select))
+		remove_verb(src, /client/proc/cancel_callproc_select)
 		holder.callproc.do_args()
 		return
 

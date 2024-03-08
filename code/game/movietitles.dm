@@ -43,12 +43,12 @@ GLOBAL_LIST(end_titles)
 	sleep(CREDIT_ROLL_SPEED - CREDIT_SPAWN_SPEED)
 
 	ClearCredits()
-	remove_verb(src, TYPE_PROC_REF(/client, ClearCredits))
+	remove_verb(src, /client/proc/ClearCredits)
 
 /client/proc/ClearCredits()
 	set name = "Stop End Titles"
 	set category = "OOC"
-	remove_verb(src, TYPE_PROC_REF(/client, ClearCredits))
+	remove_verb(src, /client/proc/ClearCredits)
 	QDEL_NULL_LIST(credits)
 	mob.clear_fullscreen("fishbed")
 	mob.clear_fullscreen("fadeout")

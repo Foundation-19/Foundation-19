@@ -77,7 +77,7 @@
 		to_world_log("## DEBUG: transfer_to(): Some idiot has tried to transfer_to() a non mob/living mob. Please inform Carn.")
 	if(current)					//remove ourself from our old body's mind variable
 		if(changeling)
-			remove_verb(current, TYPE_PROC_REF(/datum/changeling, EvolutionMenu))
+			remove_verb(current, /datum/changeling/proc/EvolutionMenu)
 		current.mind = null
 
 		SSnano.user_transferred(current, new_character) // transfer active NanoUI instances to new user

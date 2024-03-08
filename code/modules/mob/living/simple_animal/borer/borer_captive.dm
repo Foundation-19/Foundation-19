@@ -52,9 +52,9 @@
 			to_chat(H, SPAN_DANGER("With an immense exertion of will, you regain control of your body!"))
 			to_chat(B.host, SPAN_DANGER("You feel control of the host brain ripped from your grasp, and retract your probosci before the wild neural impulses can damage you."))
 			B.detatch()
-			remove_verb(src, TYPE_PROC_REF(/mob/living/carbon, release_control))
-			remove_verb(src, TYPE_PROC_REF(/mob/living/carbon, punish_host))
-			remove_verb(src, TYPE_PROC_REF(/mob/living/carbon, spawn_larvae))
+			remove_verb(src, /mob/living/carbon/proc/release_control)
+			remove_verb(src, /mob/living/carbon/proc/punish_host)
+			remove_verb(src, /mob/living/carbon/proc/spawn_larvae)
 
 		return
 

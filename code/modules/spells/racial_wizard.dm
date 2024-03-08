@@ -233,7 +233,7 @@
 
 /datum/spell/camera_connection/proc/release(mob/living/L)
 	vision.release(L)
-	remove_verb(L, TYPE_PROC_REF(/mob/living, release_eye))
+	remove_verb(L, /mob/living/proc/release_eye)
 	GLOB.destroyed_event.unregister(L, src)
 	GLOB.logged_out_event.unregister(L, src)
 
@@ -249,7 +249,7 @@
 	set desc = "Return your sight to your body."
 	set category = "Abilities"
 
-	remove_verb(src, TYPE_PROC_REF(/mob/living, release_eye)) //regardless of if we have an eye or not we want to get rid of this verb.
+	remove_verb(src, /mob/living/proc/release_eye) //regardless of if we have an eye or not we want to get rid of this verb.
 
 	if(!eyeobj)
 		return
