@@ -1,4 +1,4 @@
-#define PROGBAR_BOOSTER_FADEIN_TIME 0.5 SECONDS
+#define PROGBAR_BOOSTER_FADEIN_TIME (0.5 SECONDS)
 
 /datum/progbar_booster_manager
 	/// The progressbar that created us
