@@ -9,7 +9,7 @@
 	if(is_type_in_list(player.assigned_job, blacklisted_jobs))
 		return FALSE
 
-	if(!isnull(whitelisted_jobs) && is_type_in_list(player.assigned_job, whitelisted_jobs))
+	if(!isnull(whitelisted_jobs) && !is_type_in_list(player.assigned_job, whitelisted_jobs))
 		return FALSE
 
 	if(!ignore_role)
