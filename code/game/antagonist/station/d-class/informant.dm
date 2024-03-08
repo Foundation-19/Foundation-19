@@ -1,7 +1,7 @@
 GLOBAL_DATUM_INIT(informants, /datum/antagonist/informant, new)
 
 /datum/antagonist/informant
-	id = MODE_DCLASS
+	id = MODE_INFORMANT
 	role_text = "Informant"
 	role_text_plural = "Informants"
 	antaghud_indicator = "hud_informant"

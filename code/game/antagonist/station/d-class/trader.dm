@@ -5,7 +5,7 @@
 GLOBAL_DATUM_INIT(traders, /datum/antagonist/trader, new)
 
 /datum/antagonist/trader
-	id = MODE_DCLASS
+	id = MODE_TRADER
 	role_text = "Trader"
 	role_text_plural = "Traders"
 	antaghud_indicator = "hud_trader"
