@@ -39,4 +39,12 @@
 
 	return TRUE
 
-// TODO: offloading entire ore boxes
+/obj/machinery/delivery_locker/MouseDrop_T(atom/movable/AM, mob/user)
+	if(istype(AM, /obj/structure/ore_box))
+		var/obj/structure/ore_box/OB = AM
+		for(var/obj/item/ore/ore in OB)
+			attackby(ore, user)
+		OB.update_ore_count()
+		return
+
+	return ..()
