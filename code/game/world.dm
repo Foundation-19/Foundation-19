@@ -512,7 +512,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 /world/Del()
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
-		LIBCALL(debug_server, "auxtools_shutdown")()
+		LIBCALL("debug_server.dll", "auxtools_shutdown")() //! FIXME515 hacky solution till auxtools and sdmm come out with support ~Tsuru
 	callHook("shutdown")
 	return ..()
 
