@@ -12,3 +12,10 @@
   - soundadd: Added 10 new tracks to the title screen!
   RandomLad645:
   - bugfix: fixed SCP-420-J name
+2024-03-08:
+  KingSuperBOB:
+  - rscadd: Added a damp rag to 049's medical storage.
+  - rscdel: Removed reagent spray bottle from 049's medical storage.
+  cheesePizza2:
+  - bugfix: A bug with some internal defines was fixed, potentially affecting some
+      values (e.g. atmos)
