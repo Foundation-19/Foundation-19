@@ -150,16 +150,3 @@
 
 	update_icon()
 	return
-
-/// Called when a disposal holder is expelled from a locker. We just shove everything back into our contents.
-/obj/machinery/delivery_locker/proc/expel(obj/structure/disposalholder/H)
-	playsound(src, 'sounds/machines/hiss.ogg', 50, 0, 0)
-	flick("[icon_state]-error", src)
-
-	if(!H)
-		return
-
-	for(var/atom/movable/AM in H)
-		AM.forceMove(src)
-
-	qdel(H)
