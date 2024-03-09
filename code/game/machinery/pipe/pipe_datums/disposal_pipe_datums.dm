@@ -100,14 +100,6 @@
 	build_path = /obj/structure/disposalconstruct/machine
 	constructed_path = /obj/machinery/disposal/delivery_chute
 
-/datum/pipe/disposal_dispenser/device/ore_locker
-	name = "material delivery locker"
-	desc = "A locker to put ores into a disposal network."
-	build_icon = 'icons/obj/pipes/delivery.dmi'
-	build_icon_state = "materials"
-	build_path = /obj/structure/disposalconstruct/machine
-	constructed_path = /obj/machinery/delivery_locker/materials
-
 /datum/pipe/disposal_dispenser/device/sorting
 	name = "disposal sorter"
 	desc = "Sorts things in a disposal system"

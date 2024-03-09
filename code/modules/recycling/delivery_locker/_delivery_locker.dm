@@ -18,8 +18,6 @@
 	var/flushing = FALSE
 	// A list of types. Items may only be stored if they're one of these types
 	var/list/acceptable_items = list()
-	/// Var used to track deconstruction
-	var/decon_step = 0
 
 /obj/machinery/delivery_locker/Initialize()
 	. = ..()
@@ -29,7 +27,7 @@
 	spawn(0.5 SECONDS)
 		trunk = locate() in get_turf(src)
 		if(!trunk)
-			log_debug("Delivery Locker created with no trunk at [AREACOORD(src)].")
+			// TODO: disable here
 		else
 			trunk.linked = src	// link the pipe trunk to self
 
@@ -49,66 +47,51 @@
 	add_fingerprint(user, FALSE, I)
 
 	if(isid(I))
-		if(decon_step != 0)
-			display_error("partially deconstructed!")
-			return
-
 		if(flushing)
-			display_error("busy!")
+			balloon_alert(user, "busy!")
 			return
 
 		if(handle_id_card(I))
 			flush()
 		return
 
-	// deconstruction start
-	if(isScrewdriver(I))
-		if(decon_step == 0)
-			playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
-			balloon_alert(user, "screws removed")
-			decon_step = 1
-			return
-		if(decon_step == 1)
-			playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
-			balloon_alert(user, "screws attached")
-			decon_step = 0
-			return
+	/* TODO: construction code here
+	if(mode<=0) // It's off
+		if(isScrewdriver(I))
+			if(contents.len > LAZYLEN(component_parts))
+				to_chat(user, "Eject the items first!")
+				return
+			if(mode==0) // It's off but still not unscrewed
+				mode=-1 // Set it to doubleoff l0l
+				playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+				to_chat(user, "You remove the screws around the power connection.")
+				return
+			else if(mode==-1)
+				mode=0
+				playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+				to_chat(user, "You attach the screws around the power connection.")
+				return
+		else if(isWelder(I) && mode==-1)
+			if(contents.len > LAZYLEN(component_parts))
+				to_chat(user, "Eject the items first!")
+				return
+			var/obj/item/weldingtool/W = I
+			if(W.remove_fuel(0,user))
+				playsound(src, 'sounds/items/Welder2.ogg', 100, 1)
+				to_chat(user, "You start slicing the floorweld off the disposal unit.")
 
-	if(isWelder(I))
-		if(decon_step != 1)
-			balloon_alert(user, "unscrew first!")
-			return
-
-		var/obj/item/weldingtool/W = I
-		if(!W.isOn())
-			balloon_alert(user, "turn welder on!")
-			return
-
-		if(!W.remove_fuel(0.5, user))
-			balloon_alert(user, "out of fuel!")
-			return
-
-		playsound(src, 'sounds/items/Welder2.ogg', 100, 1)
-		balloon_alert(user, "deconstructing...")
-
-		if(!do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
-			balloon_alert(user, "stopped deconstructing!")
-			return
-
-		if(!src)
-			return
-
-		if(!W.isOn())
-			balloon_alert(user, "keep welder on!")
-			return
-		var/obj/structure/disposalconstruct/machine/C = new (loc, src)
-		transfer_fingerprints_to(C)
-		C.constructed_path = type
-		C.update()
-		eject()
-		qdel(src)
-		return
-	// deconstruction end
+				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
+					if(!src || !W.isOn()) return
+					to_chat(user, "You sliced the floorweld off the disposal unit.")
+					var/obj/structure/disposalconstruct/machine/C = new (loc, src)
+					src.transfer_fingerprints_to(C)
+					C.update()
+					qdel(src)
+				return
+			else
+				to_chat(user, "You need more welding fuel to complete this task.")
+				return
+	*/
 
 	if(isrobot(user))
 		return
@@ -131,16 +114,6 @@
 	update_icon()
 
 /obj/machinery/delivery_locker/MouseDrop_T(atom/movable/AM, mob/user)
-	// TODO: when we port TGs storage components, make this more general behavior
-	if (istype(AM, /obj/item/storage))
-		var/obj/item/storage/S = AM
-		S.hide_from(usr)
-		for(var/obj/item/I in S.contents)
-			attackby(I, user)
-		S.finish_bulk_removal()
-		to_chat(user, SPAN_NOTICE("You empty \the [S] into \the [src]."))
-		return
-
 	if(istype(AM, /obj/item))
 		attackby(AM, user)
 		return
