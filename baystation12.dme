@@ -3034,7 +3034,6 @@
 #include "code\modules\recycling\disposalpipe.dm"
 #include "code\modules\recycling\sortingmachinery.dm"
 #include "code\modules\recycling\delivery_locker\_delivery_locker.dm"
-#include "code\modules\recycling\delivery_locker\mining_mats.dm"
 #include "code\modules\research\circuitprinter.dm"
 #include "code\modules\research\destructive_analyzer.dm"
 #include "code\modules\research\message_server.dm"
