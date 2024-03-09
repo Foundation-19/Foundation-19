@@ -32,7 +32,7 @@
 
 	ai_holder_type = /datum/ai_holder/simple_animal/infestation/lurker
 	say_list_type = /datum/say_list/infestation_lurker
-	death_sounds = list('sound/simple_mob/abominable_infestation/lurker/death.ogg')
+	death_sounds = list('sounds/simple_mob/abominable_infestation/lurker/death.ogg')
 
 	var/spike_damage = 35
 	/// Sleep time between each new spike
@@ -41,13 +41,13 @@
 /obj/item/natural_weapon/claws/abomination_lurker
 	force = 10
 	armor_penetration = 10
-	hitsound = 'sound/simple_mob/abominable_infestation/eviscerator/attack.ogg'
+	hitsound = 'sounds/simple_mob/abominable_infestation/eviscerator/attack.ogg'
 
 /datum/say_list/infestation_lurker
 	emote_hear = list("gurgles")
 
 	emote_hear_sounds = list(
-		'sound/simple_mob/abominable_infestation/lurker/ambient_1.ogg',
+		'sounds/simple_mob/abominable_infestation/lurker/ambient_1.ogg',
 		)
 
 /datum/ai_holder/simple_animal/infestation/lurker

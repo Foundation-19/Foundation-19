@@ -6,7 +6,6 @@
 	opacity = 1
 	anchored = TRUE
 	mouse_opacity = 2
-	unacidable = TRUE
 
 	damage_hitsound = 'sounds/effects/attackblob.ogg'
 

@@ -150,5 +150,5 @@
 			for(var/i = 1 to rand(2, 6))
 				var/rand_mob = pick(random_mobs)
 				new rand_mob(T)
-			return /obj/effect/hive_heart
+			return /obj/infestation_structure/hive_heart
 	return ..()
