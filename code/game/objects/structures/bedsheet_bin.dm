@@ -102,7 +102,7 @@ LINEN BINS
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "linenbin-full"
 	anchored = TRUE
-	var/amount = 20
+	var/amount = BEDSHEET_BIN_MAX_CAPACITY
 	var/list/sheets = list()
 	var/obj/item/hidden = null
 
@@ -172,3 +172,5 @@ LINEN BINS
 		hidden.dropInto(loc)
 		visible_message(SPAN_NOTICE("\The [hidden] falls out!"))
 		hidden = null
+
+#undef BEDSHEET_BIN_MAX_CAPACITY
