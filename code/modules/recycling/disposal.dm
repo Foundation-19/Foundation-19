@@ -21,12 +21,11 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	var/datum/gas_mixture/air_contents	// internal reservoir
 	var/mode = 1	// item mode 0=off 1=charging 2=charged
 	var/flush = 0	// true if flush handle is pulled
-	/// The attached pipe trunk. Flushed contents get put in a disposalholder that starts here.
-	var/obj/structure/disposalpipe/trunk/trunk = null
-	/// Set to true while flushing.
-	var/flushing = FALSE
+	var/obj/structure/disposalpipe/trunk/trunk = null // the attached pipe trunk
+	var/flushing = 0	// true if flushing in progress
 	var/flush_every_ticks = 30 //Every 30 ticks it will look whether it is ready to flush
 	var/flush_count = 0 //this var adds 1 once per tick. When it reaches flush_every_ticks it resets and tries to flush.
+	var/last_sound = 0
 	var/list/allowed_objects = list(/obj/structure/closet)
 	active_power_usage = 2200	//the pneumatic pump power. 3 HP ~ 2200W
 	idle_power_usage = 100
@@ -39,8 +38,8 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 // initializes the reagents datum for storing vomit reagents
 /obj/machinery/disposal/Initialize()
 	. = ..()
-	spawn(0.5 SECONDS)
-		trunk = locate() in get_turf(src)
+	spawn(5)
+		trunk = locate() in src.loc
 		if(!trunk)
 			mode = 0
 			flush = 0
@@ -49,7 +48,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 		air_contents = new/datum/gas_mixture(PRESSURE_TANK_VOLUME)
 		update_icon()
-	create_reagents(500)
+	src.create_reagents(500)
 
 /obj/machinery/disposal/Destroy()
 	eject()
@@ -62,7 +61,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(stat & BROKEN || !I || !user)
 		return
 
-	add_fingerprint(user, FALSE, I)
+	add_fingerprint(user, 0, I)
 	if(mode<=0) // It's off
 		if(isScrewdriver(I))
 			if(contents.len > LAZYLEN(component_parts))
@@ -70,12 +69,12 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 				return
 			if(mode==0) // It's off but still not unscrewed
 				mode=-1 // Set it to doubleoff l0l
-				playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 				to_chat(user, "You remove the screws around the power connection.")
 				return
 			else if(mode==-1)
 				mode=0
-				playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+				playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 				to_chat(user, "You attach the screws around the power connection.")
 				return
 		else if(isWelder(I) && mode==-1)
@@ -84,7 +83,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 				return
 			var/obj/item/weldingtool/W = I
 			if(W.remove_fuel(0,user))
-				playsound(src, 'sounds/items/Welder2.ogg', 100, 1)
+				playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
 				to_chat(user, "You start slicing the floorweld off the disposal unit.")
 
 				if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
@@ -207,7 +206,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 // attempt to move while inside
 /obj/machinery/disposal/relaymove(mob/user as mob)
-	if (user.incapacitated() || flushing)
+	if (user.incapacitated() || src.flushing)
 		return
 	if(user.loc == src)
 		src.go_out(user)
@@ -219,7 +218,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if (user.client)
 		user.client.eye = user.client.mob
 		user.client.perspective = MOB_PERSPECTIVE
-	user.forceMove(get_turf(src))
+	user.forceMove(src.loc)
 	update_icon()
 	return
 
@@ -313,17 +312,17 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(. == TOPIC_REFRESH)
 		interact(user)
 
-/// Ejects the contents of the disposal unit (both items and reagents).
+// eject the contents of the disposal unit
 /obj/machinery/disposal/proc/eject()
 	for(var/atom/movable/AM in (contents - component_parts))
-		AM.forceMove(get_turf(src))
+		AM.forceMove(src.loc)
 		AM.pipe_eject(0)
 	if(reagents.total_volume)
 		visible_message(SPAN_DANGER("Vomit spews out of the disposal unit!"))
 		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
 		show_sound_effect(loc, soundicon = SFX_ICON_SMALL)
-		if(istype(get_turf(src), /turf/simulated))
-			var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(get_turf(src))
+		if(istype(src.loc, /turf/simulated))
+			var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
 			reagents.trans_to_obj(splat, reagents.total_volume)
 			splat.update_icon()
 	reagents.clear_reagents()
@@ -403,8 +402,10 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 // perform a flush
 /obj/machinery/disposal/proc/flush()
 
-	flushing = TRUE
+	flushing = 1
 	flick("[icon_state]-flush", src)
+
+	var/wrapcheck = 0
 	var/obj/structure/disposalholder/H = new()	// virtual holder object which actually
 												// travels through the pipes.
 
@@ -413,23 +414,31 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	reagents.trans_to_holder(H.create_reagents(500), reagents.total_volume)
 
 	var/list/stuff = contents - component_parts
+	//Hacky test to get drones to mail themselves through disposals.
+	for(var/mob/living/silicon/robot/drone/D in stuff)
+		wrapcheck = 1
 
-	sleep(1 SECOND)
-	playsound(src, 'sounds/machines/disposalflush.ogg', 50, 0, 0)
-	sleep(0.5 SECONDS) // wait for animation to finish
+	for(var/obj/item/smallDelivery/O in stuff)
+		wrapcheck = 1
+
+	if(wrapcheck == 1)
+		H.tomail = 1
+
+	sleep(10)
+	if(last_sound < world.time + 1)
+		playsound(src, 'sounds/machines/disposalflush.ogg', 50, 0, 0)
+		last_sound = world.time
+	sleep(5) // wait for animation to finish
 
 
-	H.init(contents - component_parts, air_contents)	// copy the contents of disposer to holder
+	H.init(src, air_contents)	// copy the contents of disposer to holder
 	air_contents = new(PRESSURE_TANK_VOLUME)	// new empty gas resv.
 
 	for (var/mob/M in H.check_mob(stuff))
 		if (M.ckey)
 			admin_attack_log(null, M, null, "Was flushed down [src].", "has been flushed down [src].")
-
-	if(!H.start(trunk)) // start the holder processing movement
-		expel(H)
-
-	flushing = FALSE
+	H.start(src) // start the holder processing movement
+	flushing = 0
 	// now reset disposal state
 	flush = 0
 	if(mode == 2)	// if was ready,
@@ -437,26 +446,26 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	update_icon()
 	return
 
-/// Called when a disposal holder is expelled from a disposal.
+// called when holder is expelled from a disposal
+// should usually only occur if the pipe network is modified
 /obj/machinery/disposal/proc/expel(obj/structure/disposalholder/H)
+
+	var/turf/target
 	playsound(src, 'sounds/machines/hiss.ogg', 50, 0, 0)
+	if(H) // Somehow, someone managed to flush a window which broke mid-transit and caused the disposal to go in an infinite loop trying to expel null, hopefully this fixes it
+		for(var/atom/movable/AM in H)
+			target = get_offset_target_turf(src.loc, rand(5)-rand(5), rand(5)-rand(5))
 
-	if(!H)
-		return
+			AM.forceMove(src.loc)
+			AM.pipe_eject(0)
+			// Poor drones kept smashing windows and taking system damage being fired out of disposals.
+			if(!istype(AM,/mob/living/silicon/robot/drone))
+				spawn(1)
+					if(AM)
+						AM.throw_at(target, 5, 1)
 
-	for(var/atom/movable/AM in H)
-		var/turf/target = get_offset_target_turf(get_turf(src), 1 + rand(2) + rand(2), 1 + rand(2) + rand(2))
-
-		AM.forceMove(get_turf(src))
-		AM.pipe_eject(0)
-		// Poor drones kept smashing windows and taking system damage being fired out of disposals.
-		if(!istype(AM,/mob/living/silicon/robot/drone))
-			spawn(1)
-				if(AM)
-					AM.throw_at(target, 5, 1)
-
-	H.vent_gas(loc)
-	qdel(H)
+		H.vent_gas(loc)
+		qdel(H)
 
 /obj/machinery/disposal/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if (istype(mover,/obj/item) && mover.throwing)
@@ -502,7 +511,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 /obj/machinery/disposal_switch/attackby(obj/item/I, mob/user, params)
 	if(isCrowbar(I))
-		var/obj/item/disposal_switch_construct/C = new/obj/item/disposal_switch_construct(get_turf(src), id_tag)
+		var/obj/item/disposal_switch_construct/C = new/obj/item/disposal_switch_construct(src.loc, id_tag)
 		transfer_fingerprints_to(C)
 		user.visible_message(SPAN_NOTICE("\The [user] deattaches \the [src]"))
 		qdel(src)
@@ -570,7 +579,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	. = ..()
 	spawn(1)
 	target = get_ranged_target_turf(src, dir, 10)
-	var/obj/structure/disposalpipe/trunk/trunk = locate() in get_turf(src)
+	var/obj/structure/disposalpipe/trunk/trunk = locate() in src.loc
 	if(trunk)
 		trunk.linked = src	// link the pipe trunk to self
 
@@ -582,19 +591,19 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 		if(H.reagents?.total_volume)
 			visible_message(SPAN_DANGER("Vomit seeps out of the disposal outlet!"))
 			playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
-			if(istype(get_turf(src), /turf/simulated))
-				var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(get_turf(src))
+			if(istype(src.loc, /turf/simulated))
+				var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
 				H.reagents.trans_to_obj(splat, H.reagents.total_volume)
 				splat.update_icon()
 
 		for(var/atom/movable/AM in H)
-			AM.forceMove(get_turf(src))
+			AM.forceMove(src.loc)
 			AM.pipe_eject(dir)
 			// Drones keep smashing windows from being fired out of chutes.
 			if(!istype(AM,/mob/living/silicon/robot/drone))
 				spawn(5)
 					AM.throw_at(target, 3, 1)
-		H.vent_gas(get_turf(src))
+		H.vent_gas(src.loc)
 		qdel(H)
 
 /obj/structure/disposaloutlet/proc/animate_expel()
@@ -611,18 +620,18 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(isScrewdriver(I))
 		if(mode==0)
 			mode=1
-			playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You remove the screws around the power connection.")
 			return
 		else if(mode==1)
 			mode=0
-			playsound(src, 'sounds/items/Screwdriver.ogg', 50, 1)
+			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You attach the screws around the power connection.")
 			return
 	else if(istype(I,/obj/item/weldingtool) && mode==1)
 		var/obj/item/weldingtool/W = I
 		if(W.remove_fuel(0,user))
-			playsound(src, 'sounds/items/Welder2.ogg', 100, 1)
+			playsound(src.loc, 'sounds/items/Welder2.ogg', 100, 1)
 			to_chat(user, "You start slicing the floorweld off the disposal outlet.")
 			if(do_after(user, 2.5 SECONDS, src, bonus_percentage = 25))
 				if(!src || !W.isOn()) return

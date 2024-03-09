@@ -318,7 +318,7 @@
 	name = "Corpse Delivery (Danger: Deadly)";
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
-/obj/machinery/disposal/delivery_chute{
+/obj/machinery/disposal/deliveryChute{
 	desc = "A note read: Dispose of bodies here";
 	dir = 1;
 	name = "Termination Disposal";
@@ -4525,7 +4525,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
 "kD" = (
-/obj/machinery/disposal/delivery_chute{
+/obj/machinery/disposal/deliveryChute{
 	dir = 4;
 	name = "Smelted Mineral Delivery Chute"
 	},
@@ -6503,7 +6503,7 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "pm" = (
-/obj/machinery/disposal/delivery_chute{
+/obj/machinery/disposal/deliveryChute{
 	desc = "A note read: Dispose of bodies here";
 	name = "Termination Disposal"
 	},
@@ -7693,7 +7693,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/disposal/delivery_chute{
+/obj/machinery/disposal/deliveryChute{
 	dir = 8
 	},
 /turf/simulated/floor,

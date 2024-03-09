@@ -11,12 +11,13 @@
 	dir = 0
 	var/count = 2048	//*** can travel 2048 steps before going inactive (in case of loops)
 	var/destinationTag = "" // changes if contains a delivery container
+	var/tomail = 0 //changes if contains wrapped package
 	var/hasmob = 0 //If it contains a mob
 	var/speed = 2
 
 	var/partialTag = "" //set by a partial tagger the first time round, then put in destinationTag if it goes through again.
 
-// initialize a holder from the contents of a disposal unit
+	// initialize a holder from the contents of a disposal unit
 /obj/structure/disposalholder/proc/check_mob(list/stuff, max_depth = 2)
 	. = list()
 	if (max_depth > 0)
@@ -25,10 +26,10 @@
 				. += M
 		for (var/obj/O in stuff)
 			. += check_mob(O.contents, max_depth - 1)
-
-/obj/structure/disposalholder/proc/init(list/stuff, datum/gas_mixture/flush_gas)
+/obj/structure/disposalholder/proc/init(obj/machinery/disposal/D, datum/gas_mixture/flush_gas)
 
 	gas = flush_gas// transfer gas resv. into holder object -- let's be explicit about the data this proc consumes, please.
+	var/stuff = D.contents - D.component_parts
 	//Check for any living mobs trigger hasmob.
 	//hasmob effects whether the package goes to cargo or its tagged destination.
 	hasmob = length(check_mob(stuff))
@@ -49,19 +50,19 @@
 			src.destinationTag = drone.mail_destination
 
 
-// start the movement process
-// argument is the disposal unit the holder started in
-/obj/structure/disposalholder/proc/start(obj/structure/disposalpipe/trunk/trunk)
-	if(!trunk)
-		return FALSE
+	// start the movement process
+	// argument is the disposal unit the holder started in
+/obj/structure/disposalholder/proc/start(obj/machinery/disposal/D)
+	if(!D.trunk)
+		D.expel(src)	// no trunk connected, so expel immediately
+		return
 
-	forceMove(trunk)
+	forceMove(D.trunk)
 	active = 1
 	set_dir(DOWN)
 	START_PROCESSING(SSdisposals, src)
-	return TRUE
 
-// movement process, persists while holder is moving through pipes
+	// movement process, persists while holder is moving through pipes
 /obj/structure/disposalholder/Process()
 	for (var/i in 1 to speed)
 		if(!(count--))
@@ -89,7 +90,7 @@
 		if(!curr)
 			last.expel(src, loc, dir)
 
-// find the turf which should contain the next pipe
+	// find the turf which should contain the next pipe
 /obj/structure/disposalholder/proc/nextloc()
 	return get_step(loc,dir)
 
@@ -139,11 +140,14 @@
 	if (U.stat || U.last_special <= world.time)
 		return
 
-	U.last_special = world.time + 10 SECONDS
+	U.last_special = world.time+100
 
-	balloon_alert_to_viewers(src, "CLONG")
-	playsound(loc, 'sounds/effects/clang.ogg', 50, 0, 0)
-	show_sound_effect(get_turf(src), user)
+	if (src.loc)
+		for (var/mob/M in hearers(src.loc.loc))
+			to_chat(M, "<FONT size=[max(0, 5 - get_dist(src, M))]>CLONG, clong!</FONT>")
+
+	playsound(src.loc, 'sounds/effects/clang.ogg', 50, 0, 0)
+	show_sound_effect(src.loc, user)
 
 // called to vent all gas in holder to a location
 /obj/structure/disposalholder/proc/vent_gas(atom/location)

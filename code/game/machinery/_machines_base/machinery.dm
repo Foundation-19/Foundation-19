@@ -85,12 +85,10 @@ Class Procs:
 
 	var/stat = 0
 	var/reason_broken = 0
-	/// The machine will never set stat to these flags.
-	var/stat_immune = NOSCREEN | NOINPUT
+	var/stat_immune = NOSCREEN | NOINPUT // The machine will never set stat to these flags.
 	var/emagged = FALSE
 	var/malf_upgraded = 0
-	/// wire datum, if any. If you place a type path, it will be autoinitialized.
-	var/datum/wires/wires
+	var/datum/wires/wires //wire datum, if any. If you place a type path, it will be autoinitialized.
 	var/use_power = POWER_USE_IDLE
 		//0 = dont run the auto
 		//1 = run auto, use idle
@@ -98,14 +96,10 @@ Class Procs:
 	var/idle_power_usage = 0
 	var/active_power_usage = 0
 	var/power_channel = EQUIP //EQUIP, ENVIRON or LIGHT
-	/// Helps with bookkeeping when initializing atoms. Don't modify.
-	var/power_init_complete = FALSE
-	/// List of component instances. Expected type: /obj/item/stock_parts
-	var/list/component_parts
-	/// List of component paths which have delayed init. Indeces = number of components.
-	var/list/uncreated_component_parts = list(/obj/item/stock_parts/power/apc)
-	/// null - no max. list(part type = number max).
-	var/list/maximum_component_parts = list(/obj/item/stock_parts = 10)
+	var/power_init_complete = FALSE // Helps with bookkeeping when initializing atoms. Don't modify.
+	var/list/component_parts           //List of component instances. Expected type: /obj/item/stock_parts
+	var/list/uncreated_component_parts = list(/obj/item/stock_parts/power/apc) //List of component paths which have delayed init. Indeces = number of components.
+	var/list/maximum_component_parts = list(/obj/item/stock_parts = 10)         //null - no max. list(type part = number max).
 	var/uid
 	var/panel_open = 0
 	var/global/gl_uid = 1

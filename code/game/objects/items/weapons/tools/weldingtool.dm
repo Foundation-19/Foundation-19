@@ -207,7 +207,7 @@
 
 //Returns whether or not the welding tool is currently on.
 /obj/item/weldingtool/proc/isOn()
-	return welding
+	return src.welding
 
 /obj/item/weldingtool/get_storage_cost()
 	if(isOn())
