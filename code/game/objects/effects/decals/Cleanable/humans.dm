@@ -287,7 +287,7 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/mucus/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/set_dry), DRYING_TIME * 2)
+	addtimer(CALLBACK(src, PROC_REF(set_dry)), DRYING_TIME * 2)
 
 /obj/effect/decal/cleanable/mucus/proc/set_dry()
 	dry = TRUE

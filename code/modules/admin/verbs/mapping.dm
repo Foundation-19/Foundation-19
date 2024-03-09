@@ -119,35 +119,35 @@ var/intercom_range_display_status = 0
 	SSstatistics.add_field_details("admin_verb","mIRD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 var/list/debug_verbs = list (
-		/client/proc/do_not_use_these
-		,/client/proc/camera_view
-		,/client/proc/sec_camera_report
-		,/client/proc/intercom_view
-		,/client/proc/Cell
-		,/client/proc/atmosscan
-		,/client/proc/powerdebug
-		,/client/proc/count_objects_on_z_level
-		,/client/proc/count_objects_all
-		,/client/proc/cmd_assume_direct_control
-		,/client/proc/startSinglo
-		,/client/proc/ticklag
-		,/client/proc/cmd_admin_grantfullaccess
-		,/client/proc/cmd_admin_areatest
-		,/client/proc/cmd_admin_rejuvenate
-		,/datum/admins/proc/show_traitor_panel
-		,/client/proc/print_jobban_old
-		,/client/proc/print_jobban_old_filter
-		,/client/proc/forceEvent
-		,/client/proc/Zone_Info
-		,/client/proc/Test_ZAS_Connection
-		,/client/proc/rebootAirMaster
-		,/client/proc/hide_debug_verbs
-		,/client/proc/testZAScolors
-		,/client/proc/testZAScolors_remove
-		,/client/proc/atmos_toggle_debug
-		,/client/proc/spawn_tanktransferbomb
-		,/client/proc/find_leaky_pipes
-		,/client/proc/analyze_openturf
+		/client/proc/do_not_use_these,
+		/client/proc/camera_view,
+		/client/proc/sec_camera_report,
+		/client/proc/intercom_view,
+		/client/proc/Cell,
+		/client/proc/atmosscan,
+		/client/proc/powerdebug,
+		/client/proc/count_objects_on_z_level,
+		/client/proc/count_objects_all,
+		/client/proc/cmd_assume_direct_control,
+		/client/proc/startSinglo,
+		/client/proc/ticklag,
+		/client/proc/cmd_admin_grantfullaccess,
+		/client/proc/cmd_admin_areatest,
+		/client/proc/cmd_admin_rejuvenate,
+		/datum/admins/proc/show_traitor_panel,
+		/client/proc/print_jobban_old,
+		/client/proc/print_jobban_old_filter,
+		/client/proc/forceEvent,
+		/client/proc/Zone_Info,
+		/client/proc/Test_ZAS_Connection,
+		/client/proc/rebootAirMaster,
+		/client/proc/hide_debug_verbs,
+		/client/proc/testZAScolors,
+		/client/proc/testZAScolors_remove,
+		/client/proc/atmos_toggle_debug,
+		/client/proc/spawn_tanktransferbomb,
+		/client/proc/find_leaky_pipes,
+		/client/proc/analyze_openturf
 	)
 
 

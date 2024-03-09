@@ -40,7 +40,7 @@
 	if (prob(1))
 		desc += " Does not hold GAS." // huhuhu
 	if (!mapload) // Call gas creation after normal init if we're midround - otherwise, we'll runtime and have no gases
-		addtimer(CALLBACK(src, .proc/create_initial_gases), 0)
+		addtimer(CALLBACK(src, PROC_REF(create_initial_gases)), 0)
 	else
 		create_initial_gases()
 

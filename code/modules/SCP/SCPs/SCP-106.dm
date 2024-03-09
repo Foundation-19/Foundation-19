@@ -170,7 +170,7 @@
 	WarpMob(L)
 
 /mob/living/carbon/human/scp106/proc/WarpMob(mob/living/L)
-	var/turf/T = pick_area_turf(pocket_dimension_area_type, list(/proc/not_turf_contains_dense_objects))
+	var/turf/T = pick_area_turf(pocket_dimension_area_type, list(GLOBAL_PROC_REF(not_turf_contains_dense_objects)))
 	if(!istype(T)) // Fail-safe
 		T = get_turf(T)
 	visible_message(SPAN_DANGER("[L] is warped away!"))
@@ -227,7 +227,7 @@
 		pocket_dimension_cooldown = world.time + 50
 		if(!do_after(src, 4 SECONDS, my_turf, bonus_percentage = 25))
 			return FALSE
-	var/turf/T = pick_area_turf(pocket_dimension_area_type, list(/proc/not_turf_contains_dense_objects))
+	var/turf/T = pick_area_turf(pocket_dimension_area_type, list(GLOBAL_PROC_REF(not_turf_contains_dense_objects)))
 	if(!istype(T))
 		return FALSE
 	pocket_dimension_cooldown = world.time + pocket_dimension_cooldown_time
@@ -455,7 +455,7 @@
 		return
 	// 15% chance of getting back to the station
 	if(prob(15))
-		var/turf/T = pick_subarea_turf(/area, list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects))
+		var/turf/T = pick_subarea_turf(/area, list(GLOBAL_PROC_REF(is_station_turf), GLOBAL_PROC_REF(not_turf_contains_dense_objects)))
 		if(!istype(T))
 			return
 
@@ -466,7 +466,7 @@
 		return
 	// 70% chance of going somewhere in the PD
 	if(prob(70))
-		var/turf/T = pick_area_turf(/area/pocketdimension, list(/proc/not_turf_contains_dense_objects))
+		var/turf/T = pick_area_turf(/area/pocketdimension, list(GLOBAL_PROC_REF(not_turf_contains_dense_objects)))
 		if(!istype(T))
 			return
 

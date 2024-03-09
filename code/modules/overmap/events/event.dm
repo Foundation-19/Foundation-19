@@ -12,7 +12,7 @@
 /decl/overmap_event_handler/proc/create_events(z_level, overmap_size, number_of_events)
 	// Acquire the list of not-yet utilized overmap turfs on this Z-level
 	var/list/candidate_turfs = block(locate(OVERMAP_EDGE, OVERMAP_EDGE, z_level),locate(overmap_size - OVERMAP_EDGE, overmap_size - OVERMAP_EDGE,z_level))
-	candidate_turfs = where(candidate_turfs, /proc/can_not_locate, /obj/effect/overmap/visitable)
+	candidate_turfs = where(candidate_turfs, GLOBAL_PROC_REF(can_not_locate), /obj/effect/overmap/visitable)
 
 	for(var/i = 1 to number_of_events)
 		if(!candidate_turfs.len)
@@ -124,13 +124,13 @@
 
 	if(!active_hazards.len)
 		hazard_by_turf -= T
-		GLOB.entered_event.unregister(T, src, /decl/overmap_event_handler/proc/on_turf_entered)
-		GLOB.exited_event.unregister(T, src, /decl/overmap_event_handler/proc/on_turf_exited)
+		GLOB.entered_event.unregister(T, src, TYPE_PROC_REF(/decl/overmap_event_handler, on_turf_entered))
+		GLOB.exited_event.unregister(T, src, TYPE_PROC_REF(/decl/overmap_event_handler, on_turf_exited))
 	else
 		hazard_by_turf |= T
 		hazard_by_turf[T] = active_hazards
-		GLOB.entered_event.register(T, src,/decl/overmap_event_handler/proc/on_turf_entered)
-		GLOB.exited_event.register(T, src, /decl/overmap_event_handler/proc/on_turf_exited)
+		GLOB.entered_event.register(T, src,TYPE_PROC_REF(/decl/overmap_event_handler, on_turf_entered))
+		GLOB.exited_event.register(T, src, TYPE_PROC_REF(/decl/overmap_event_handler, on_turf_exited))
 
 	for(var/obj/effect/overmap/visitable/ship/ship in T)
 		for(var/datum/event/E in ship_events[ship])

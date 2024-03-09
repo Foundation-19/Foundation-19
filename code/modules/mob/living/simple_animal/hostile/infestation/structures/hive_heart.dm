@@ -57,8 +57,8 @@
 /obj/effect/hive_heart/Initialize()
 	. = ..()
 	// The abilities operate on timers, so we must fire them once at the start
-	addtimer(CALLBACK(src, .proc/HealMobs), healing_mobs_cooldown)
-	addtimer(CALLBACK(src, .proc/ConvertTurfs), convert_turfs_cooldown)
+	addtimer(CALLBACK(src, PROC_REF(HealMobs)), healing_mobs_cooldown)
+	addtimer(CALLBACK(src, PROC_REF(ConvertTurfs)), convert_turfs_cooldown)
 	if(!looping_sound)
 		return
 	sound_id = "[type]_[sequential_id(type)]"
@@ -96,7 +96,7 @@
 	if(QDELETED(src) || !is_alive())
 		return
 
-	addtimer(CALLBACK(src, .proc/HealMobs), healing_mobs_cooldown)
+	addtimer(CALLBACK(src, PROC_REF(HealMobs)), healing_mobs_cooldown)
 
 	// Also heals itself slightly
 	restore_health(20)
@@ -120,7 +120,7 @@
 	if(QDELETED(src) || !is_alive())
 		return
 
-	addtimer(CALLBACK(src, .proc/ConvertTurfs), convert_turfs_cooldown)
+	addtimer(CALLBACK(src, PROC_REF(ConvertTurfs)), convert_turfs_cooldown)
 
 	var/list/valid_turfs = list()
 	for(var/turf/T in spiral_range_turfs(convert_turfs_range, src))

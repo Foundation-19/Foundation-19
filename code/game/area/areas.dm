@@ -308,7 +308,7 @@ var/list/mob/living/forced_ambiance_list = new
 	for(var/obj/machinery/door/temp_door in src)
 		if(istype(temp_door, /obj/machinery/door/blast))
 			var/obj/machinery/door/blast/BD = temp_door
-			INVOKE_ASYNC(BD, /obj/machinery/door/blast/proc/force_open)
+			INVOKE_ASYNC(BD, TYPE_PROC_REF(/obj/machinery/door/blast, force_open))
 			continue
 		temp_door.open(TRUE) // Forced
 	for(var/obj/machinery/power/apc/temp_apc in src)

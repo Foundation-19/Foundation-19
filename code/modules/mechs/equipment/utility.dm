@@ -52,7 +52,7 @@
 							playsound(FD, 'sounds/effects/meteorimpact.ogg', 100, 1)
 							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 							FD.blocked = FALSE
-							addtimer(CALLBACK(FD, /obj/machinery/door/firedoor/.proc/open, TRUE), 0)
+							addtimer(CALLBACK(FD, TYPE_PROC_REF(/obj/machinery/door/firedoor, open), TRUE), 0)
 							FD.set_broken(TRUE)
 							FD.visible_message(SPAN_WARNING("\The [owner] tears \the [FD] open!"))
 					else
@@ -61,10 +61,10 @@
 							playsound(FD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 							if(FD.density)
 								FD.visible_message(SPAN_DANGER("\The [owner] forces \the [FD] open!"))
-								addtimer(CALLBACK(FD, /obj/machinery/door/firedoor/.proc/open, TRUE), 0)
+								addtimer(CALLBACK(FD, TYPE_PROC_REF(/obj/machinery/door/firedoor, open), TRUE), 0)
 							else
 								FD.visible_message(SPAN_WARNING("\The [owner] forces \the [FD] closed!"))
-								addtimer(CALLBACK(FD, /obj/machinery/door/firedoor/.proc/close, TRUE), 0)
+								addtimer(CALLBACK(FD, TYPE_PROC_REF(/obj/machinery/door/firedoor, close), TRUE), 0)
 					return
 				else if(istype(O, /obj/machinery/door/airlock))
 					var/obj/machinery/door/airlock/AD = O
@@ -77,7 +77,7 @@
 								playsound(AD, 'sounds/effects/meteorimpact.ogg', 100, 1)
 								playsound(AD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 								AD.visible_message(SPAN_DANGER("\The [owner] tears \the [AD] open!"))
-								addtimer(CALLBACK(AD, /obj/machinery/door/airlock/.proc/open, TRUE), 0)
+								addtimer(CALLBACK(AD, TYPE_PROC_REF(/obj/machinery/door/airlock, open), TRUE), 0)
 								AD.set_broken(TRUE)
 								return
 						else
@@ -85,12 +85,12 @@
 							if((AD.is_broken(NOPOWER) || do_after(owner, 6 SECONDS, AD, bonus_percentage = 25)) && !(AD.operating || AD.welded || AD.locked))
 								playsound(AD, 'sounds/machines/airlock_creaking.ogg', 100, 1)
 								if(AD.density)
-									addtimer(CALLBACK(AD, /obj/machinery/door/airlock/.proc/open, TRUE), 0)
+									addtimer(CALLBACK(AD, TYPE_PROC_REF(/obj/machinery/door/airlock, open), TRUE), 0)
 									if(!AD.is_broken(NOPOWER))
 										AD.set_broken(TRUE)
 									AD.visible_message(SPAN_DANGER("\The [owner] forces \the [AD] open!"))
 								else
-									addtimer(CALLBACK(AD, /obj/machinery/door/airlock/.proc/close, TRUE), 0)
+									addtimer(CALLBACK(AD, TYPE_PROC_REF(/obj/machinery/door/airlock, close), TRUE), 0)
 									if(!AD.is_broken(NOPOWER))
 										AD.set_broken(TRUE)
 									AD.visible_message(SPAN_DANGER("\The [owner] forces \the [AD] closed!"))

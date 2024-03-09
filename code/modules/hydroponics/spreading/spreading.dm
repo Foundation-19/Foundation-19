@@ -8,7 +8,7 @@
 		/area/site53/llcz/hallways,
 		/area/site53/uhcz/hallways,
 		/area/site53/lhcz/hallway),
-			list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects)
+			list(GLOBAL_PROC_REF(is_station_turf), GLOBAL_PROC_REF(not_turf_contains_dense_objects))
 		)
 		if(T)
 			var/datum/seed/seed = SSplants.create_random_seed(1)

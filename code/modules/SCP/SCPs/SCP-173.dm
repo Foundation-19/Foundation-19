@@ -424,7 +424,7 @@
 	switch(LAZYLEN(possible_human_targets))
 		if(0)
 			if(prob(50)) //If we have no targets, 50% chance we will choose a wander target
-				assign_target(pick_turf_in_range(loc, wander_distance, list(/proc/isfloor)))
+				assign_target(pick_turf_in_range(loc, wander_distance, list(GLOBAL_PROC_REF(isfloor))))
 
 		if(1,2) //If we have a manageable amount of targets, we will pursue or try to break a light
 			if(!is_dark(our_turf) && prob(30))
@@ -438,7 +438,7 @@
 					var/while_timeout = world.time + 1 SECONDS //prevent infinity loops
 
 					while(!target)
-						assign_target(pick_turf_in_range(loc, flee_distance, list(/proc/isfloor)))
+						assign_target(pick_turf_in_range(loc, flee_distance, list(GLOBAL_PROC_REF(isfloor))))
 						if(world.time > while_timeout)
 							break
 				else
