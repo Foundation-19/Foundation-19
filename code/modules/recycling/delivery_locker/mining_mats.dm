@@ -2,8 +2,8 @@
  * Delivery locker for mining, earns cash for materials sent.
  */
 /obj/machinery/delivery_locker/materials
-	name = "ore delivery locker"
-	desc = "Drop ores in here; get paid!"
+	name = "material delivery locker"
+	desc = "Drop materials in here; get paid!"
 	icon = 'icons/obj/pipes/delivery.dmi'
 	icon_state = "materials"
 	acceptable_items = list(/obj/item/ore)
