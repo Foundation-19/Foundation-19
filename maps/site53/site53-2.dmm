@@ -11740,7 +11740,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -16361,7 +16361,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "aXM" = (
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 4;
 	name = "Food delivery"
 	},
@@ -26185,7 +26185,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 8
 	},
 /obj/machinery/door/window{
@@ -37184,7 +37184,7 @@
 /area/site53/uhcz/scp1507observation)
 "ugr" = (
 /obj/machinery/light,
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 4;
 	name = "Food delivery"
 	},
@@ -38376,7 +38376,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "vyb" = (
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 1;
 	name = "Trash Outlet"
 	},
