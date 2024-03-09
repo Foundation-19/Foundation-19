@@ -15,7 +15,7 @@
 			I.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)), rand(1,3), round(30/I.w_class))
 
 	..(species.gibbed_anim)
-	gibs(loc, dna, null, species.get_flesh_colour(src), species.get_blood_colour(src))
+	gibs(loc, dna, null, species.get_flesh_colour(src), GetBloodColor())
 
 /mob/living/carbon/human/dust()
 	if(species)

@@ -1,3 +1,5 @@
+// Medium damage, Low health, Medium mobility.
+// Recommended strategy is to rush it, as its melee damage is subpar and has no armor penetration.
 /mob/living/simple_animal/hostile/infestation/spitter
 	name = "spitter"
 	desc = "A weird wriggling creature. Some sort of corrosive substance is dripping from its maw."

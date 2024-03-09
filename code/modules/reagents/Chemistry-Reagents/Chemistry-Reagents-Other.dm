@@ -707,6 +707,13 @@
 	if(!prob(max(10, dosage*0.5)))
 		return
 
+	var/obj/item/organ/internal/larva_producer/I = M.internal_organs_by_name[BP_LARVA]
+	if(istype(I))
+		I.larva_cooldown_time -= 2
+		return
+	if(alien == IS_ABOMINATION)
+		return
+
 	var/list/valid_organs = list()
 	for(var/obj/item/organ/external/O in M.organs)
 		if(istype(O, /obj/item/organ/external/stump))
@@ -732,6 +739,14 @@
 /datum/reagent/laich/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien == IS_DIONA)
 		return
+
+	var/obj/item/organ/internal/larva_producer/I = M.internal_organs_by_name[BP_LARVA]
+	if(istype(I))
+		I.larva_cooldown_time -= 5
+		return
+	if(alien == IS_ABOMINATION)
+		return
+
 	if(prob(20))
 		M.adjustOxyLoss(8)
 	if(ishuman(M) && prob(2))

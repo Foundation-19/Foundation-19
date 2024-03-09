@@ -1,3 +1,8 @@
+// Enormous damage, Very high health, Very low mobility.
+// Spawns small "meat chips" when damaged.
+// Constantly regenerates health.
+// Recommended strategy is using flamethrower and stay AT LEAST 4-5 tiles away from it.
+// DO NOT stop fighting it, as it will inevitably regenerate all health if you leave it alone for too long.
 /mob/living/simple_animal/hostile/infestation/aggregate
 	name = "aggregate"
 	desc = "A repulsive mass of flesh that is constantly regenerating itself."
@@ -8,7 +13,7 @@
 	mob_size = MOB_LARGE
 	default_pixel_x = -8
 	pixel_x = -8
-	movement_cooldown = 7
+	movement_cooldown = 8
 
 	// A giant fuck-off bite attack; Don't come close to this thing
 	natural_weapon = /obj/item/natural_weapon/bite/aggregate
@@ -29,7 +34,7 @@
 	var/regeneration_speed = 0.005
 	/// How much health should we have before throwing a new meatchip
 	var/spawn_health = 0
-	/// How much percents of max HP is reduced from damage_to_spawn on each new meatchip spawn
+	/// How much percents of max HP is reduced from spawn_health on each new meatchip spawn
 	var/spawn_health_reduction = 0.03
 
 /obj/item/natural_weapon/bite/aggregate
@@ -95,4 +100,5 @@
 	var/mob/living/simple_animal/hostile/infestation/meatchip/M = new(get_turf(src))
 	if(!throw_target)
 		throw_target = pick(getcircle(get_turf(src), 3))
-	M.throw_at(get_turf(throw_target), 3, 6)
+	M.throw_at(get_turf(throw_target), 3, 1, src)
+	addtimer(CALLBACK(M, /mob/living/simple_animal/hostile/infestation/meatchip/proc/TimedDeath), 15 SECONDS)

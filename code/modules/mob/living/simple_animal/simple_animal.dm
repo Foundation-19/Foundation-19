@@ -271,7 +271,7 @@
 			meat.SetName("[src.name] [meat.name]")
 			if(can_bleed)
 				var/obj/effect/decal/cleanable/blood/splatter/splat = new(get_turf(src))
-				splat.basecolor = bleed_colour
+				splat.basecolor = GetBloodColor()
 				splat.update_icon()
 			qdel(src)
 
@@ -288,7 +288,7 @@
 				var/hit_dir = get_dir(P.starting, src)
 				var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
 				B.icon_state = pick("dir_splatter_1","dir_splatter_2")
-				B.basecolor = bleed_colour
+				B.basecolor = GetBloodColor()
 				var/scale = min(1, round(mob_size / MOB_MEDIUM, 0.1))
 				var/matrix/M = new()
 				B.transform = M.Scale(scale)
@@ -341,7 +341,7 @@
 	adjustBruteLoss(1)
 
 	var/obj/effect/decal/cleanable/blood/drip/drip = new(get_turf(src))
-	drip.basecolor = bleed_colour
+	drip.basecolor = GetBloodColor()
 	drip.update_icon()
 
 /mob/living/simple_animal/get_digestion_product()
@@ -425,3 +425,6 @@
 			gib()
 			return return_items
 	return ..()
+
+/mob/living/simple_animal/GetBloodColor()
+	return bleed_colour
