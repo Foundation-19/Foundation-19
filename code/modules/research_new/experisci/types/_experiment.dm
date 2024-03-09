@@ -7,6 +7,7 @@
  * proc stubs should be implemented in whole.
  */
 /datum/experiment
+	abstract_type = /datum/experiment
 	/// Name that distinguishes the experiment
 	var/name = "Experiment"
 	/// A brief description of the experiment to be shown as details
