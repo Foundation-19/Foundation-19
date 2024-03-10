@@ -80,7 +80,7 @@
 		if(istype(bot))
 			if(density && src.check_access(bot.botcard))
 				open()
-				addtimer(CALLBACK(src, .proc/close), 5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+				addtimer(CALLBACK(src, PROC_REF(close)), 5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 		return
 	var/mob/M = AM // we've returned by here if M is not a mob
 	if (src.operating)
@@ -92,7 +92,7 @@
 			open_timer = 5 SECONDS
 		else //secure doors close faster
 			open_timer = 2 SECONDS
-		addtimer(CALLBACK(src, .proc/close), open_timer, TIMER_UNIQUE | TIMER_OVERRIDE)
+		addtimer(CALLBACK(src, PROC_REF(close)), open_timer, TIMER_UNIQUE | TIMER_OVERRIDE)
 	return
 
 /obj/machinery/door/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
@@ -121,7 +121,7 @@
 	icon_state = "[src.base_state]open";
 	flick("[src.base_state]opening", src)
 	playsound(src.loc, 'sounds/machines/windowdoor.ogg', 100, 1)
-	addtimer(CALLBACK(src, .proc/open_final), 1 SECOND, TIMER_UNIQUE | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(open_final)), 1 SECOND, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 	return 1
 
@@ -145,7 +145,7 @@
 	explosion_resistance = initial(explosion_resistance)
 	update_nearby_tiles()
 
-	addtimer(CALLBACK(src, .proc/close_final), 1 SECOND, TIMER_UNIQUE | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(close_final)), 1 SECOND, TIMER_UNIQUE | TIMER_OVERRIDE)
 	return TRUE
 
 /obj/machinery/door/window/proc/close_final()
@@ -179,7 +179,7 @@
 	to_chat(user, SPAN_NOTICE("You short out \the [src]'s internal circuitry, locking it open!"))
 	if (density)
 		flick("[base_state]spark", src)
-		addtimer(CALLBACK(src, .proc/open), 6, TIMER_UNIQUE | TIMER_OVERRIDE)
+		addtimer(CALLBACK(src, PROC_REF(open)), 6, TIMER_UNIQUE | TIMER_OVERRIDE)
 	return TRUE
 
 /obj/machinery/door/emp_act(severity)

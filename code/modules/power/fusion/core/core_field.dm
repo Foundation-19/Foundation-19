@@ -84,7 +84,7 @@
 
 /obj/effect/fusion_em_field/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/update_light_colors), 10 SECONDS, TIMER_LOOP)
+	addtimer(CALLBACK(src, PROC_REF(update_light_colors)), 10 SECONDS, TIMER_LOOP)
 
 /obj/effect/fusion_em_field/proc/update_light_colors()
 	var/use_range
@@ -405,7 +405,7 @@
 				continue
 
 			/// Sort based on reaction priority to avoid deut-deut eating all the deut before deut-trit can run etc.
-			sortTim(possible_reactions, /proc/cmp_fusion_reaction_des)
+			sortTim(possible_reactions, GLOBAL_PROC_REF(cmp_fusion_reaction_des))
 
 			//split up the reacting atoms between the possible reactions
 			while(possible_reactions.len)

@@ -110,7 +110,7 @@ Teleporter beacon, and its subtypes
 		activated = TRUE
 		icon_state = "def_radar"
 		playsound(src.loc, 'sounds/effects/caution.ogg', 50, 1)
-		addtimer(CALLBACK(src, .proc/warpbots), spawn_delay)
+		addtimer(CALLBACK(src, PROC_REF(warpbots)), spawn_delay)
 	return
 
 /mob/living/simple_animal/hostile/hivebot/tele/proc/warpbots()
@@ -239,7 +239,7 @@ The megabot
 	face_atom(A)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc, dir, src)
 	animate(D, alpha = 0, color = "#ff0000", transform = matrix()*2, time = 5)
-	addtimer(CALLBACK(src, .proc/fire_gigabeam, T), 3 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(fire_gigabeam), T), 3 SECONDS)
 
 /mob/living/simple_animal/hostile/hivebot/mega/proc/fire_gigabeam(turf/T)
 	playsound(src, 'sounds/weapons/lasercannonfire.ogg', 150, 1, 4)
@@ -302,7 +302,7 @@ The megabot
 		armor.toggle(FALSE)
 	playsound(src, 'sounds/mecha/lowpower.ogg', 75, 1)
 	update_icon()
-	addtimer(CALLBACK(src, .proc/reactivate), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(reactivate)), 4 SECONDS)
 
 /mob/living/simple_animal/hostile/hivebot/mega/proc/reactivate()
 	set_AI_busy(FALSE)
@@ -319,7 +319,7 @@ The megabot
 		if(attack_mode == ATTACK_MODE_LASER)
 			if(prob(50))
 				switch_mode(ATTACK_MODE_MELEE)
-				addtimer(CALLBACK(src, .proc/switch_mode, ATTACK_MODE_LASER), 10 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(switch_mode), ATTACK_MODE_LASER), 10 SECONDS)
 			else
 				deactivate()
 		return

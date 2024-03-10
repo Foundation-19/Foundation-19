@@ -110,7 +110,7 @@
 		stat |= EMPED
 		disconnect_computers()
 		var/emp_time = rand(15 SECONDS, 30 SECONDS) / severity
-		addtimer(CALLBACK(src, .proc/emp_act_end), emp_time, TIMER_UNIQUE | TIMER_OVERRIDE)
+		addtimer(CALLBACK(src, PROC_REF(emp_act_end)), emp_time, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 
 /obj/machinery/tele_beacon/proc/emp_act_end()

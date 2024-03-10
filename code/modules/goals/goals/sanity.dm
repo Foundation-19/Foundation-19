@@ -20,7 +20,7 @@
 	success_description = "Drank \a [initial(D.name)]."
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_REAGENT_INGESTED, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_REAGENT_INGESTED, PROC_REF(handle_progress))
 
 /datum/goal/sanity/drink/proc/handle_progress(mob/living/carbon/M, datum/reagent/R)
 	if(R == drink_type)
@@ -35,7 +35,7 @@
 /datum/goal/sanity/give_hug/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_GAVE_HUG, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_GAVE_HUG, PROC_REF(handle_progress))
 
 /datum/goal/sanity/give_hug/proc/handle_progress(mob/living/carbon/human/H, mob/living/target)
 	success_description = "Gave \the [target.name] a hug."
@@ -51,7 +51,7 @@
 /datum/goal/sanity/smoke/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_SMOKED_SMOKABLE, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_SMOKED_SMOKABLE, PROC_REF(handle_progress))
 
 /datum/goal/sanity/smoke/proc/handle_progress(smoker, obj/item/clothing/mask/smokable/smokable, amount)
 	success_description = "Smoke a [smokable.name]."

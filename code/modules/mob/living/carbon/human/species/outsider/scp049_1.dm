@@ -118,7 +118,7 @@
 		H.resist()
 		return
 
-	addtimer(CALLBACK(src, .proc/handle_action, H), rand(10, 20))
+	addtimer(CALLBACK(src, PROC_REF(handle_action), H), rand(10, 20))
 
 /datum/species/scp049_1/proc/handle_action(mob/living/carbon/human/H)
 	var/dist = 128

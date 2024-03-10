@@ -72,7 +72,7 @@
 	if (active)	return 0
 	src.active = 1
 
-	addtimer(CALLBACK(src, .proc/handle_events), 0)
+	addtimer(CALLBACK(src, PROC_REF(handle_events)), 0)
 
 
 
@@ -89,4 +89,3 @@
 
 /datum/musical_event_manager/proc/is_overloaded()
 	return src.events.len > GLOB.musical_config.max_events
-	

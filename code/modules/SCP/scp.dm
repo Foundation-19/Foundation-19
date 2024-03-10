@@ -64,7 +64,7 @@
 		qdel(parent)
 		return
 
-	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, .proc/OnExamine)
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, PROC_REF(OnExamine))
 	onGain()
 
 /datum/scp/Destroy()

@@ -25,7 +25,7 @@
 	announce = new /obj/item/device/radio/intercom(src)
 	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
 	announce.set_frequency(SEC_LCZ_FREQ)
-	RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
+	RegisterSignal(loc, COMSIG_ENTERED, PROC_REF(detect_contraband))
 
 /obj/machinery/contraband_detector/Destroy()
 	UnregisterSignal(loc, COMSIG_ENTERED)

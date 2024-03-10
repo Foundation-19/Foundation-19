@@ -47,7 +47,7 @@
 	. = ..()
 
 /datum/artifact_effect/proc/ToggleActivate(reveal_toggle = 1)
-	addtimer(CALLBACK(src, .proc/DoActivation, reveal_toggle), 0)
+	addtimer(CALLBACK(src, PROC_REF(DoActivation), reveal_toggle), 0)
 
 /datum/artifact_effect/proc/DoActivation(reveal_toggle = 1)
 	if (toggled && activated)
@@ -56,7 +56,7 @@
 	if(activated)
 		activated = FALSE
 	else
-		addtimer(CALLBACK(src, /datum/artifact_effect/proc/toggle_off), on_time)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/artifact_effect, toggle_off)), on_time)
 		activated = TRUE
 		toggled = TRUE
 	if(reveal_toggle && holder)

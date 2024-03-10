@@ -16,7 +16,7 @@
 
 /datum/event/wormholes/proc/get_viable_turfs()
 
-	var/list/location = get_filtered_areas(list(/proc/is_not_space_area, /proc/is_station_area, /proc/is_not_maint_area))
+	var/list/location = get_filtered_areas(list(GLOBAL_PROC_REF(is_not_space_area), GLOBAL_PROC_REF(is_station_area), GLOBAL_PROC_REF(is_not_maint_area)))
 
 	if(!location)
 		log_debug("Wormhole event failed to find a viable area. Aborting.")
@@ -26,7 +26,7 @@
 	var/list/turfs = list()
 
 	for(var/area/A in location)
-		turfs |= get_area_turfs(A, list(/proc/not_turf_contains_dense_objects, /proc/IsTurfAtmosSafe))
+		turfs |= get_area_turfs(A, list(GLOBAL_PROC_REF(not_turf_contains_dense_objects), GLOBAL_PROC_REF(IsTurfAtmosSafe)))
 
 	if(!turfs.len)
 		log_debug("Wormhole event failed to find viable turfs after finding areas.")

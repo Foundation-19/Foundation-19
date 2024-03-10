@@ -23,7 +23,7 @@
 /proc/get_path_to(atom/movable/caller, atom/end, max_distance = 30, min_target_dist, id=null, simulated_only = TRUE, turf/exclude, skip_first=TRUE, diagonal_safety=TRUE)
 	var/list/path = list()
 	// We're guarenteed that list will be the first list in pathfinding_finished's argset because of how callback handles the arguments list
-	var/datum/callback/await = CALLBACK(GLOBAL_PROC, /proc/pathfinding_finished, path)
+	var/datum/callback/await = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(pathfinding_finished), path)
 	if(!SSpathfinder.pathfind(caller, end, max_distance, min_target_dist, id, simulated_only, exclude, skip_first, diagonal_safety, await))
 		return list()
 
@@ -134,7 +134,7 @@
 /datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, min_target_dist, simulated_only, avoid, skip_first, diagonal_safety, datum/callback/on_finish)
 	src.caller = caller
 	end = get_turf(goal)
-	open = new /datum/heap(/proc/HeapPathWeightCompare)
+	open = new /datum/heap(GLOBAL_PROC_REF(HeapPathWeightCompare))
 	sources = new()
 	src.id = id
 	src.max_distance = max_distance
