@@ -437,7 +437,7 @@
 	target.make_jittery(300)
 	target.adjustBruteLoss(100)
 
-	addtimer(CALLBACK(src, .proc/FinishPlagueDoctorCure, target), 15 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(FinishPlagueDoctorCure), target), 15 SECONDS)
 
 /mob/living/carbon/human/proc/FinishPlagueDoctorCure(mob/living/carbon/human/target)
 	if(QDELETED(target))

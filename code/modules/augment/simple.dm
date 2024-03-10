@@ -36,7 +36,7 @@
 	else if(limb.organ_tag in list(BP_R_ARM, BP_R_HAND))
 		slot = slot_r_hand
 	if(owner.equip_to_slot_if_possible(holding, slot))
-		GLOB.item_unequipped_event.register(holding, src, /obj/item/organ/internal/augment/active/simple/proc/holding_dropped )
+		GLOB.item_unequipped_event.register(holding, src, TYPE_PROC_REF(/obj/item/organ/internal/augment/active/simple, holding_dropped) )
 		owner.visible_message(
 			SPAN_WARNING("\The [owner] extends \his [holding.name] from \his [limb.name]."),
 			SPAN_NOTICE("You extend your [holding.name] from your [limb.name].")

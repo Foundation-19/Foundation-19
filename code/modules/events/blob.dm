@@ -12,7 +12,7 @@
 		/area/site53/lhcz/maintenance,
 		/area/site53/uez/maintenance,
 		/area/site53/lhcz/maintenance),
-		list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects)
+		list(GLOBAL_PROC_REF(is_station_turf), GLOBAL_PROC_REF(not_turf_contains_dense_objects))
 	)
 	if(!T)
 		log_and_message_staff("Blob failed to find a viable turf.")

@@ -8,9 +8,9 @@ on:
     branches:
       - dev
 env:
-  BYOND_MAJOR: "514"
-  BYOND_MINOR: "1584"
-  SPACEMAN_DMM_VERSION: suite-1.7.2
+  BYOND_MAJOR: "515"
+  BYOND_MINOR: "1623"
+  SPACEMAN_DMM_VERSION: suite-1.8
 
 jobs:
   DreamChecker:

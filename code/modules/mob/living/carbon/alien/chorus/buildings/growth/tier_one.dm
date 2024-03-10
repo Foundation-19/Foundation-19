@@ -44,7 +44,7 @@
 
 /obj/structure/chorus/biter/Initialize(maploading, o)
 	. = ..()
-	GLOB.entered_event.register(get_turf(src), src, .proc/bite_victim)
+	GLOB.entered_event.register(get_turf(src), src, PROC_REF(bite_victim))
 
 /obj/structure/chorus/biter/Destroy()
 	GLOB.entered_event.unregister(get_turf(src), src)

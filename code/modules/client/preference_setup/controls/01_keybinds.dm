@@ -32,7 +32,7 @@
 			notadded += kb
 
 	if(length(notadded))
-		addtimer(CALLBACK(src, .proc/announce_conflict, notadded), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(announce_conflict), notadded), 5 SECONDS)
 
 /datum/preferences/proc/announce_conflict(list/notadded)
 	to_chat(client, SPAN_DANGER("KEYBINDING CONFLICT.\n\
