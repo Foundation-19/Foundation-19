@@ -101,7 +101,7 @@
 /mob/living/simple_animal/hostile/retaliate/parrot/Initialize()
 	. = ..()
 	if(!ears)
-		var/headset = pick(/obj/item/device/radio/headset/headset_sec_ecz, \
+		var/headset = pick(/obj/item/device/radio/headset/headset_sec, \
 						/obj/item/device/radio/headset/headset_eng, \
 						/obj/item/device/radio/headset/headset_med, \
 						/obj/item/device/radio/headset/headset_sci, \
@@ -212,6 +212,8 @@
 									available_channels.Add(":e")
 								if("Command")
 									available_channels.Add(":c")
+								if("Security")
+									available_channels.Add(":s")
 								if("Science")
 									available_channels.Add(":n")
 								if("Medical")

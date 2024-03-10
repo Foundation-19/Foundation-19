@@ -434,6 +434,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 // This list needs to be purged but people insist on adding more cruft to the radio.
 /datum/map/proc/default_internal_channels()
 	return list(
+		num2text(PUB_FREQ)   = list(),
 		num2text(AI_FREQ)    = list(ACCESS_SYNTH),
 		num2text(ENT_FREQ)   = list(),
 		num2text(ERT_FREQ)   = list(ACCESS_CENT_SPECOPS),

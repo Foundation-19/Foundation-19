@@ -8,6 +8,7 @@ var/list/department_radio_keys = list(
 	  ":n" = "Science",		".n" = "Science",
 	  ":m" = "Medical",		".m" = "Medical",
 	  ":e" = "Engineering", ".e" = "Engineering",
+	  ":s" = "Security",	".s" = "Security",
 	  ":w" = "whisper",		".w" = "whisper",
 	  ":t" = "Mercenary",	".t" = "Mercenary",
 	  ":x" = "Raider",		".x" = "Raider",
@@ -17,6 +18,7 @@ var/list/department_radio_keys = list(
 	  ":z" = "Entertainment",".z" = "Entertainment",
 	  ":y" = "Exploration",		".y" = "Exploration",
 	  ":o" = "Response Team",".o" = "Response Team", //ERT
+	  ":j" = "Hailing", ".j" = "Hailing",
 
 	  ":R" = "right ear",	".R" = "right ear",
 	  ":L" = "left ear",	".L" = "left ear",
@@ -26,6 +28,7 @@ var/list/department_radio_keys = list(
 	  ":N" = "Science",		".N" = "Science",
 	  ":M" = "Medical",		".M" = "Medical",
 	  ":E" = "Engineering",	".E" = "Engineering",
+	  ":S" = "Security",	".S" = "Security",
 	  ":W" = "whisper",		".W" = "whisper",
 	  ":T" = "Mercenary",	".T" = "Mercenary",
 	  ":X" = "Raider",		".X" = "Raider",
@@ -35,6 +38,7 @@ var/list/department_radio_keys = list(
 	  ":Z" = "Entertainment",".Z" = "Entertainment",
 	  ":Y" = "Exploration",		".Y" = "Exploration",
 	  ":O" = "Response Team", ".O" = "Response Team",
+	  ":J" = "Hailing", ".J" = "Hailing",
 
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
@@ -46,6 +50,7 @@ var/list/department_radio_keys = list(
 	  ":ò" = "Science",		".ò" = "Science",
 	  ":ü" = "Medical",		".ü" = "Medical",
 	  ":ó" = "Engineering",	".ó" = "Engineering",
+	  ":û" = "Security",	".û" = "Security",
 	  ":ö" = "whisper",		".ö" = "whisper",
 	  ":å" = "Mercenary",	".å" = "Mercenary",
 	  ":é" = "Supply",		".é" = "Supply",
