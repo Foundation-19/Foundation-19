@@ -21,7 +21,7 @@
 	)
 
 	SCP.memeticFlags = MAUDIBLE|MPERSISTENT|MSYNCED
-	SCP.memetic_proc = /obj/item/scp513/proc/effect
+	SCP.memetic_proc = TYPE_PROC_REF(/obj/item/scp513, effect)
 	SCP.memetic_sounds = list('sounds/scp/513/Bell1.ogg', 'sounds/scp/513/Bell2.ogg')
 	SCP.compInit()
 
@@ -50,7 +50,7 @@
 		return
 
 	H.humanStageHandler.setStage("513_hallucinating", 1)
-	var/turf/spawn_turf = pick_turf_in_range(get_turf(H), world.view, list(/proc/isfloor))
+	var/turf/spawn_turf = pick_turf_in_range(get_turf(H), world.view, list(GLOBAL_PROC_REF(isfloor)))
 	var/mob/living/scp513_1/new_instance = new(spawn_turf)
 	new_instance.activate(H)
 
@@ -182,4 +182,3 @@
 
 /mob/living/scp513_1/Bump(atom/movable/AM, yes) //This makes it so we dont interact with the world since we are supposed to be more of a hallucination
 	return
-

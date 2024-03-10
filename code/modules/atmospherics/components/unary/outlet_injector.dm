@@ -195,10 +195,10 @@
 		volume_rate = between(0, number, air_contents.volume)
 
 	if(signal.data["status"])
-		addtimer(CALLBACK(src, .proc/broadcast_status), 2, TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(broadcast_status)), 2, TIMER_UNIQUE)
 		return
 
-	addtimer(CALLBACK(src, .proc/broadcast_status), 2, TIMER_UNIQUE)
+	addtimer(CALLBACK(src, PROC_REF(broadcast_status)), 2, TIMER_UNIQUE)
 
 /obj/machinery/atmospherics/unary/outlet_injector/hide(i)
 	update_underlays()

@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(jobtime)
 			"job" = jtype,
 			"ckey" = tclient.ckey,
 			"minutes" = jvalue)))
-	addtimer(CALLBACK(SSjobtime, /datum/controller/subsystem/jobtime/proc/update_jobtime_db),20,TIMER_OVERRIDE|TIMER_UNIQUE)
+	addtimer(CALLBACK(SSjobtime, TYPE_PROC_REF(/datum/controller/subsystem/jobtime, update_jobtime_db)),20,TIMER_OVERRIDE|TIMER_UNIQUE)
 
 /datum/controller/subsystem/jobtime/proc/get_jobtime_list_db(client/tclient)
 	if(!SSdbcore.Connect())

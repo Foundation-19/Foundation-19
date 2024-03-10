@@ -19,3 +19,6 @@
   cheesePizza2:
   - bugfix: A bug with some internal defines was fixed, potentially affecting some
       values (e.g. atmos)
+2024-03-10:
+  Tsurupeta:
+  - code_imp: Adds support for byond version 515

@@ -130,7 +130,7 @@
 
 /obj/effect/temp_visual/bite/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/FadeOut), (duration * 0.8))
+	addtimer(CALLBACK(src, PROC_REF(FadeOut)), (duration * 0.8))
 
 /obj/effect/temp_visual/bite/proc/FadeOut()
 	animate(src, alpha = 0, (duration * 0.2))

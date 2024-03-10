@@ -38,12 +38,12 @@
 	if(!islist(mobs_which_see_us))
 		mobs_which_see_us = list(mobs_which_see_us)
 
-	RegisterSignal(src, COMSIG_MOVED, .proc/regenerate_image)
+	RegisterSignal(src, COMSIG_MOVED, PROC_REF(regenerate_image))
 
 	who_sees_us = list()
 	for(var/mob/seer as anything in mobs_which_see_us)
-		RegisterSignal(seer, COMSIG_MOB_LOGIN, .proc/show_image_to)
-		RegisterSignal(seer, COMSIG_PARENT_QDELETING, .proc/remove_seer)
+		RegisterSignal(seer, COMSIG_MOB_LOGIN, PROC_REF(show_image_to))
+		RegisterSignal(seer, COMSIG_PARENT_QDELETING, PROC_REF(remove_seer))
 		// If we move for some reason, regenerate our image
 		who_sees_us += seer
 		show_image_to(seer)

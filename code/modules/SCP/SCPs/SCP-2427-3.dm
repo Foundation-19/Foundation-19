@@ -121,7 +121,7 @@
 		SPAN_NOTICE("You fall asleep."))
 	icon_state = "sleep"
 	is_sleeping = TRUE
-	addtimer(CALLBACK(src, .proc/WakeUp), rand((2 MINUTES), (4 MINUTES)))
+	addtimer(CALLBACK(src, PROC_REF(WakeUp)), rand((2 MINUTES), (4 MINUTES)))
 
 /mob/living/simple_animal/hostile/scp2427_3/proc/WakeUp(attacked = FALSE)
 	if(!is_sleeping)
@@ -298,7 +298,7 @@
 /mob/living/simple_animal/hostile/scp2427_3/death(gibbed, deathmessage = "falls on the ground, beginning reboot process.", show_dead_message)
 	to_chat(src, SPAN_OCCULT("You begin the reboot process. Avoid leaving the body."))
 	playsound(src, 'sounds/mecha/lowpower.ogg', 75, FALSE, 4)
-	addtimer(CALLBACK(src, .proc/TimeRespawn), 5 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(TimeRespawn)), 5 MINUTES)
 	return ..()
 
 /mob/living/simple_animal/hostile/scp2427_3/gib()

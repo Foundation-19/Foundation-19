@@ -86,8 +86,8 @@ var/global/list/floating_chat_colors = list()
 		animate(old, CHAT_MESSAGE_SPAWN_TIME, pixel_z = pixel_z_new)
 	LAZYADD(holder.stored_chat_text, I)
 
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_floating_text, holder, I), duration)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_clients, I, show_to), duration + CHAT_MESSAGE_SPAWN_TIME)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_floating_text), holder, I), duration)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_image_from_clients), I, show_to), duration + CHAT_MESSAGE_SPAWN_TIME)
 
 	return I
 

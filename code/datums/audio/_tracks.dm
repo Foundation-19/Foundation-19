@@ -410,3 +410,11 @@
 	author = "VarieZ"
 	license = /decl/license/cc_by_sa_3_0
 	url = "https://www.youtube.com/watch?v=kEPP_pEpEMU"
+
+/decl/audio/track/surface_area
+	source = 'sounds/music/melancholy.ogg'
+	title = "SCP:SL Surface Zone Theme (Extended)"
+	author = "Jacek 'Fragik' Rogal"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=jpxIVDVoa2I"
+

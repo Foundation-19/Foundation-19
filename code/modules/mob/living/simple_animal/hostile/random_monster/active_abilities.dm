@@ -15,7 +15,7 @@
 /datum/random_ability/active/leap/perform(mob/living/user, atom/target)
 	..()
 	user.do_windup_animation(target, leap_delay)
-	addtimer(CALLBACK(src, .proc/do_leap, user, target), leap_delay)
+	addtimer(CALLBACK(src, PROC_REF(do_leap), user, target), leap_delay)
 
 /datum/random_ability/active/leap/proc/do_leap(mob/living/user, atom/target)
 	// Do the actual leap.
@@ -24,7 +24,7 @@
 	user.throw_at(get_step(get_turf(target), get_turf(user)), leap_range, 1, user)
 	playsound(user, leap_sound, 75, 1)
 
-	addtimer(CALLBACK(src, .proc/end_leap, user, target), 5)
+	addtimer(CALLBACK(src, PROC_REF(end_leap), user, target), 5)
 
 /datum/random_ability/active/leap/proc/end_leap(mob/living/user, atom/target)
 	if(user.status_flags & LEAPING)
@@ -78,7 +78,7 @@
 	..()
 	user.visible_message(SPAN_DANGER("\The [user] spits at \the [target]!"))
 	for(var/i=1 to spit_amount)
-		addtimer(CALLBACK(src, .proc/do_spit, user, target), i*spit_delay)
+		addtimer(CALLBACK(src, PROC_REF(do_spit), user, target), i*spit_delay)
 
 /datum/random_ability/active/spit/proc/do_spit(mob/living/user, atom/target)
 	playsound(user, spit_sound, 75, 1)
@@ -136,4 +136,4 @@
 /datum/random_ability/active/teleport/rapid/perform(mob/living/user, atom/target)
 	..()
 	for(var/i=2 to teleport_amount)
-		addtimer(CALLBACK(src, .proc/do_teleport, user, target), i*teleport_delay)
+		addtimer(CALLBACK(src, PROC_REF(do_teleport), user, target), i*teleport_delay)

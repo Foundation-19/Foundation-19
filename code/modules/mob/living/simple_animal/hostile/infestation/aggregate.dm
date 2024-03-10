@@ -45,7 +45,7 @@
 /obj/item/natural_weapon/bite/aggregate/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	. = ..()
 	for(var/i = 1 to 3)
-		addtimer(CALLBACK(src, .proc/SpawnBiteEffect, target), i-1)
+		addtimer(CALLBACK(src, PROC_REF(SpawnBiteEffect), target), i-1)
 
 /obj/item/natural_weapon/bite/aggregate/proc/SpawnBiteEffect(mob/living/target)
 	if(QDELETED(target))
@@ -74,7 +74,7 @@
 		return
 	if(health > spawn_health)
 		return
-	addtimer(CALLBACK(src, .proc/SpawnMeatChip), rand(1, 4))
+	addtimer(CALLBACK(src, PROC_REF(SpawnMeatChip)), rand(1, 4))
 
 /mob/living/simple_animal/hostile/infestation/aggregate/proc/SpawnMeatChip()
 	if(stat == DEAD || health <= 0)

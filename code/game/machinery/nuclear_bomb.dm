@@ -42,7 +42,7 @@ var/bomb_set
 		timeleft = max(timeleft - (wait / 10), 0)
 		playsound(loc, 'sounds/items/timer.ogg', 50)
 		if(timeleft <= 0)
-			addtimer(CALLBACK(src, .proc/explode), 0)
+			addtimer(CALLBACK(src, PROC_REF(explode)), 0)
 		SSnano.update_uis(src)
 
 /obj/machinery/nuclearbomb/attackby(obj/item/O as obj, mob/user as mob, params)
@@ -371,21 +371,21 @@ var/bomb_set
 	. = ..()
 	nuke_disks |= src
 	// Can never be quite sure that a game mode has been properly initiated or not at this point, so always register
-	GLOB.moved_event.register(src, src, /obj/item/disk/nuclear/proc/check_z_level)
+	GLOB.moved_event.register(src, src, TYPE_PROC_REF(/obj/item/disk/nuclear, check_z_level))
 
 /obj/item/disk/nuclear/proc/check_z_level()
 	if(!(istype(SSticker.mode, /datum/game_mode/nuclear)))
-		GLOB.moved_event.unregister(src, src, /obj/item/disk/nuclear/proc/check_z_level) // However, when we are certain unregister if necessary
+		GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/item/disk/nuclear, check_z_level)) // However, when we are certain unregister if necessary
 		return
 	var/turf/T = get_turf(src)
 	if(!T || isNotStationLevel(T.z))
 		qdel(src)
 
 /obj/item/disk/nuclear/Destroy()
-	GLOB.moved_event.unregister(src, src, /obj/item/disk/nuclear/proc/check_z_level)
+	GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/item/disk/nuclear, check_z_level))
 	nuke_disks -= src
 	if(!nuke_disks.len)
-		var/turf/T = pick_area_turf(/area/maintenance, list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects))
+		var/turf/T = pick_area_turf(/area/maintenance, list(GLOBAL_PROC_REF(is_station_turf), GLOBAL_PROC_REF(not_turf_contains_dense_objects)))
 		if(T)
 			var/obj/D = new /obj/item/disk/nuclear(T)
 			log_and_message_staff("[src], the last authentication disk, has been destroyed. Spawning [D] at ([D.x], [D.y], [D.z]).", location = T)
