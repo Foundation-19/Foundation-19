@@ -130,9 +130,9 @@
 	if(contestant || !istype(new_contestant))
 		return
 	contestant = new_contestant
-	RegisterSignal(contestant, COMSIG_MOB_HEARD_SPEECH, .proc/cheated)
-	RegisterSignal(contestant, COMSIG_MOB_HEARD_WHISPER, .proc/cheated)
-	RegisterSignal(contestant, COMSIG_MOVED, .proc/check_viewer)
+	RegisterSignal(contestant, COMSIG_MOB_HEARD_SPEECH, PROC_REF(cheated))
+	RegisterSignal(contestant, COMSIG_MOB_HEARD_WHISPER, PROC_REF(cheated))
+	RegisterSignal(contestant, COMSIG_MOVED, PROC_REF(check_viewer))
 
 /obj/scp263/proc/reset_target()
 	if(!contestant)
@@ -166,7 +166,7 @@
 	state = STATE_AWAITING_ANSWER
 	update_icon()
 
-	question_callback_fail = addtimer(CALLBACK(src, .proc/question_fail, TRUE), 45 SECONDS, TIMER_STOPPABLE)
+	question_callback_fail = addtimer(CALLBACK(src, PROC_REF(question_fail), TRUE), 45 SECONDS, TIMER_STOPPABLE)
 
 /obj/scp263/proc/question_succeed()
 	state = STATE_IDLE

@@ -57,6 +57,11 @@
 	icon_state = "eng_cypherkey"
 	channels = list("Engineering" = 1)
 
+/obj/item/device/encryptionkey/conteng
+	name = "containment engineer's encryption key"
+	icon_state = "eng_cypherkey"
+	channels = list("Engineering" = 1, "HCZ-Security" = 1, "LCZ-Security" = 1)
+
 /obj/item/device/encryptionkey/headset_rob
 	name = "robotics radio encryption key"
 	icon_state = "rob_cypherkey"

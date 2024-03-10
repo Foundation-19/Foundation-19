@@ -31,7 +31,7 @@
 	success_description = "Walked for [step_goal] steps."
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_MOVED, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_MOVED, PROC_REF(handle_progress))
 
 /datum/goal/skills/walk/proc/handle_progress()
 	steps++
@@ -51,7 +51,7 @@
 /datum/goal/skills/email/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_SENT_EMAIL, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_SENT_EMAIL, PROC_REF(handle_progress))
 
 /datum/goal/skills/email/proc/handle_progress()
 	var/datum/mind/M = container.parent
@@ -69,7 +69,7 @@
 /datum/goal/skills/deposit/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.initial_account, COMSIG_MONEY_DEPOSITED, .proc/handle_progress)
+	RegisterSignal(M.initial_account, COMSIG_MONEY_DEPOSITED, PROC_REF(handle_progress))
 
 /datum/goal/skills/deposit/proc/handle_progress()
 	var/datum/mind/M = container.parent
@@ -89,7 +89,7 @@
 /datum/goal/skills/butcher/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.initial_account, COMSIG_BUTCHERED, .proc/handle_progress)
+	RegisterSignal(M.initial_account, COMSIG_BUTCHERED, PROC_REF(handle_progress))
 
 /datum/goal/skills/butcher/proc/handle_progress()
 	var/datum/mind/M = container.parent
@@ -112,7 +112,7 @@
 	success_description = "Lifted weights [rep_goal] times."
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_HUMAN_LIFT_WEIGHT, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_HUMAN_LIFT_WEIGHT, PROC_REF(handle_progress))
 
 /datum/goal/skills/weights/proc/handle_progress()
 	reps++
@@ -132,7 +132,7 @@
 /datum/goal/skills/evidence_bagging/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_BAGGED_EVIDENCE, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_BAGGED_EVIDENCE, PROC_REF(handle_progress))
 
 /datum/goal/skills/evidence_bagging/proc/handle_progress()
 	var/datum/mind/M = container.parent
@@ -152,7 +152,7 @@
 /datum/goal/skills/construct_recipe/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_PRODUCED_RECIPE, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_PRODUCED_RECIPE, PROC_REF(handle_progress))
 
 /datum/goal/skills/construct_recipe/proc/handle_progress()
 	var/datum/mind/M = container.parent
@@ -170,7 +170,7 @@
 /datum/goal/skills/cut_wires/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_CUT_WIRE, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_CUT_WIRE, PROC_REF(handle_progress))
 
 /datum/goal/skills/cut_wires/proc/handle_progress()
 	var/datum/mind/M = container.parent
@@ -192,7 +192,7 @@
 /datum/goal/skills/check_pulse/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_CHECKED_PULSE, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_CHECKED_PULSE, PROC_REF(handle_progress))
 
 /datum/goal/skills/check_pulse/proc/handle_progress()
 	var/datum/mind/M = container.parent
@@ -210,7 +210,7 @@
 /datum/goal/skills/grinding/New()
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_GRINDING, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_GRINDING, PROC_REF(handle_progress))
 
 /datum/goal/skills/grinding/proc/handle_progress()
 	var/datum/mind/M = container.parent

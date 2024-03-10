@@ -1,4 +1,5 @@
-#define MAX_CIRCUIT_CLONE_TIME 3 MINUTES //circuit slow-clones can only take up this amount of time to complete
+/// Circuit slow-clones can only take up this amount of time to complete
+#define MAX_CIRCUIT_CLONE_TIME (3 MINUTES)
 
 /obj/item/device/integrated_circuit_printer
 	name = "integrated circuit printer"
@@ -305,7 +306,7 @@
 					to_chat(usr, "<span class='notice'>You begin printing a custom assembly. This will take approximately [round(cloning_time/10)] seconds. You can still print \
 					off normal parts during this time.</span>")
 					playsound(src, 'sounds/items/poster_being_created.ogg', 50, TRUE)
-					addtimer(CALLBACK(src, .proc/print_program, usr), cloning_time)
+					addtimer(CALLBACK(src, PROC_REF(print_program), usr), cloning_time)
 
 			if("cancel")
 				if(!cloning || !program)

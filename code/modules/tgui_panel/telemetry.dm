@@ -12,7 +12,7 @@
 /**
  * Maximum time allocated for sending a telemetry packet.
  */
-#define TGUI_TELEMETRY_RESPONSE_WINDOW 30 SECONDS
+#define TGUI_TELEMETRY_RESPONSE_WINDOW (30 SECONDS)
 
 /// Time of telemetry request
 /datum/tgui_panel/var/telemetry_requested_at

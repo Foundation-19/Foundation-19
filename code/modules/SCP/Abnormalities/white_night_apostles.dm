@@ -183,7 +183,7 @@
 		W.shatter()
 	for(var/obj/machinery/door/D in T)
 		if(D.density)
-			addtimer(CALLBACK (D, .obj/machinery/door/proc/open))
+			addtimer(CALLBACK (D, TYPE_PROC_REF(/obj/machinery/door, open)))
 	if(stop_charge)
 		can_act = TRUE
 		return
@@ -201,5 +201,4 @@
 			L.apply_damage(spear_damage, BRUTE, null, DAM_DISPERSED)
 			new /obj/effect/temp_visual/bloodsplatter(get_turf(L), pick(GLOB.alldirs))
 			been_hit |= L
-	addtimer(CALLBACK(src, .proc/DoDash, move_dir, (times_ran + 1)), 0.5) // SPEED
-
+	addtimer(CALLBACK(src, PROC_REF(DoDash), move_dir, (times_ran + 1)), 0.5) // SPEED

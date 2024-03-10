@@ -59,8 +59,7 @@
 	display_name = "bandolier"
 	path = /obj/item/clothing/accessory/storage/bandolier
 	cost = 3
-	allowed_branches = list(/datum/mil_branch/security)
-	//tactical gear
+	whitelist_department_flags = SEC
 
 /datum/gear/storage/waistpack
 	display_name = "waist pack"

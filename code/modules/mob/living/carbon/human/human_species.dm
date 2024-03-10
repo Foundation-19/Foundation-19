@@ -17,7 +17,7 @@
 /mob/living/carbon/human/corpse/Initialize(mapload, new_species, obj/effect/landmark/corpse/corpse)
 	. = ..(mapload, new_species)
 
-	INVOKE_ASYNC(src, /mob/proc/death)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/mob, death))
 	adjustOxyLoss(maxHealth)
 	setBrainLoss(maxHealth)
 	var/obj/item/organ/internal/heart/corpse_heart = internal_organs_by_name[BP_HEART]
@@ -27,8 +27,8 @@
 		corpse.randomize_appearance(src, new_species)
 		corpse.equip_outfit(src)
 		corpse.AdditionalEffects(src)
-		INVOKE_ASYNC(src, /mob/living/proc/adjustBruteLoss, corpse.brute_loss)
-		INVOKE_ASYNC(src, /mob/living/proc/adjustFireLoss, corpse.burn_loss)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/mob/living, adjustBruteLoss), corpse.brute_loss)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/mob/living, adjustFireLoss), corpse.burn_loss)
 	update_icon()
 
 /mob/living/carbon/human/dummy/mannequin/add_to_living_mob_list()

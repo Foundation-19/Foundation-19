@@ -53,7 +53,7 @@
 	if(should_have_organ(BP_BRAIN))
 		var/obj/item/organ/internal/brain/sponge = internal_organs_by_name[BP_BRAIN]
 		if(sponge)
-			sponge.insanity = Clamp(amount, 0, sponge.max_insanity)
+			sponge.insanity = Clamp(amount, 0, BRAIN_MAX_INSANITY)
 			updatehealth()
 
 /mob/living/carbon/human/getSanityLoss()

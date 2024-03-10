@@ -15,9 +15,7 @@
 
 	minimal_access = list()
 	outfit_type = /decl/hierarchy/outfit/job/chaplain
-
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 
 /datum/job/chaplain/equip(mob/living/carbon/human/H, alt_title, ask_questions = TRUE)
 	. = ..()

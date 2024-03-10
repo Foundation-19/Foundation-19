@@ -4,10 +4,10 @@
 
 /datum/component/goalcontainer/New()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_ROUND_ENDED, .proc/goal_recap)
+	RegisterSignal(SSdcs, COMSIG_ROUND_ENDED, PROC_REF(goal_recap))
 
 /datum/component/goalcontainer/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MIND_POST_INIT, .proc/recalculate_goals)
+	RegisterSignal(parent, COMSIG_MIND_POST_INIT, PROC_REF(recalculate_goals))
 
 /datum/component/goalcontainer/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MIND_POST_INIT)

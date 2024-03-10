@@ -617,7 +617,7 @@
 			adjustHalLoss(-3)
 			if(sleeping)
 				if (!dream_timer && client)
-					dream_timer = addtimer(CALLBACK(src, .proc/dream), 10 SECONDS, TIMER_STOPPABLE)
+					dream_timer = addtimer(CALLBACK(src, PROC_REF(dream)), 10 SECONDS, TIMER_STOPPABLE)
 				if (mind)
 					//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
 					if(client || sleeping > 3)

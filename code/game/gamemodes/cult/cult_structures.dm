@@ -85,7 +85,7 @@
 
 /obj/effect/gateway/active/New()
 	..()
-	addtimer(CALLBACK(src, .proc/create_and_delete), rand(30,60) SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(create_and_delete)), rand(30,60) SECONDS)
 
 
 /obj/effect/gateway/active/proc/create_and_delete()
@@ -131,4 +131,3 @@
 			new_mob.key = M.key
 
 		to_chat(new_mob, "<B>Your form morphs into that of a corgi.</B>")//Because we don't have cluwnes
-

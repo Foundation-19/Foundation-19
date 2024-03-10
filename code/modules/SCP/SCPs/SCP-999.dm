@@ -43,9 +43,9 @@
 
 	var/end_char = copytext(message, length(message), length(message) + 1)
 	if(end_char in list(".", "?", "!", "-", "~", ":"))
-		return words.Replace(copytext(message, 1, length(message)), /mob/living/scp999/proc/glubbify) + end_char
+		return words.Replace(copytext(message, 1, length(message)), TYPE_PROC_REF(/mob/living/scp999, glubbify)) + end_char
 	else
-		return words.Replace(message, /mob/living/scp999/proc/glubbify)
+		return words.Replace(message, TYPE_PROC_REF(/mob/living/scp999, glubbify))
 
 /mob/living/scp999/update_icon()
 	if(stat == DEAD)

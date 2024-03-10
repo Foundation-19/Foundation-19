@@ -38,7 +38,7 @@
 	if(!plural_name)
 		plural_name = "[singular_name]s"
 	if (!mapload && isturf(loc))
-		addtimer(CALLBACK(src, .proc/stack_new), 0)
+		addtimer(CALLBACK(src, PROC_REF(stack_new)), 0)
 
 /obj/item/stack/proc/stack_new()
 	for (var/obj/item/stack/S in loc)
@@ -328,7 +328,7 @@
 		. = ceil(. * amount / max_amount)
 
 /obj/item/stack/Crossed(obj/o)
-	addtimer(CALLBACK(src, .proc/stack_crossed, o), 0)
+	addtimer(CALLBACK(src, PROC_REF(stack_crossed), o), 0)
 	. = ..()
 
 /obj/item/stack/proc/stack_crossed(obj/o)
