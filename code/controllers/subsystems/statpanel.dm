@@ -125,7 +125,7 @@ SUBSYSTEM_DEF(statpanels)
 			var/turf_content_ref = REF(turf_content)
 			if(!(turf_content_ref in cached_images))
 				cached_images += turf_content_ref
-				GLOB.destroyed_event.register(turf_content, turf_content, /atom/.proc/remove_from_cache) // we reset cache if anything in it gets deleted
+				GLOB.destroyed_event.register(turf_content, turf_content, TYPE_PROC_REF(/atom, remove_from_cache)) // we reset cache if anything in it gets deleted
 
 				if(ismob(turf_content) || length(turf_content.overlays) > 2)
 					turfitems[++turfitems.len] = list("[turf_content.name]", turf_content_ref, costly_icon2html(turf_content, target, sourceonly=TRUE))

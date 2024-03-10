@@ -253,7 +253,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(src, "No area available.")
 		return
 
-	var/list/area_turfs = get_area_turfs(thearea, shall_check_if_holy() ? list(/proc/is_not_holy_turf) : list())
+	var/list/area_turfs = get_area_turfs(thearea, shall_check_if_holy() ? list(GLOBAL_PROC_REF(is_not_holy_turf)) : list())
 	if(!area_turfs.len)
 		to_chat(src, SPAN_WARNING("This area has been entirely made into sacred grounds, you cannot enter it while you are in this plane of existence!"))
 		return

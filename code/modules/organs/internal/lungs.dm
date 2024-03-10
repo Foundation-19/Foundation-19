@@ -247,13 +247,12 @@
 		if(breath.temperature <= species.cold_level_1)
 			if(prob(20))
 				to_chat(owner, SPAN_DANGER("You feel your face freezing and icicles forming in your lungs!"))
-			switch(breath.temperature)
-				if(species.cold_level_3 to species.cold_level_2)
-					damage = COLD_GAS_DAMAGE_LEVEL_3
-				if(species.cold_level_2 to species.cold_level_1)
-					damage = COLD_GAS_DAMAGE_LEVEL_2
-				else
-					damage = COLD_GAS_DAMAGE_LEVEL_1
+			if(breath.temperature >= species.cold_level_2 && breath.temperature <= species.cold_level_1)
+				damage = COLD_GAS_DAMAGE_LEVEL_1
+			else if(breath.temperature >= species.cold_level_3 && breath.temperature <= species.cold_level_2)
+				damage = COLD_GAS_DAMAGE_LEVEL_2
+			else
+				damage = COLD_GAS_DAMAGE_LEVEL_3
 
 			if(prob(20))
 				owner.apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Cold")
@@ -264,13 +263,12 @@
 			if(prob(20))
 				to_chat(owner, SPAN_DANGER("You feel your face burning and a searing heat in your lungs!"))
 
-			switch(breath.temperature)
-				if(species.heat_level_1 to species.heat_level_2)
-					damage = HEAT_GAS_DAMAGE_LEVEL_1
-				if(species.heat_level_2 to species.heat_level_3)
-					damage = HEAT_GAS_DAMAGE_LEVEL_2
-				else
-					damage = HEAT_GAS_DAMAGE_LEVEL_3
+			if(breath.temperature >= species.heat_level_1 && breath.temperature <= species.heat_level_2)
+				damage = HEAT_GAS_DAMAGE_LEVEL_1
+			else if(breath.temperature >= species.heat_level_2 && breath.temperature <= species.heat_level_3)
+				damage = HEAT_GAS_DAMAGE_LEVEL_2
+			else
+				damage = HEAT_GAS_DAMAGE_LEVEL_3
 
 			if(prob(20))
 				owner.apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Heat")

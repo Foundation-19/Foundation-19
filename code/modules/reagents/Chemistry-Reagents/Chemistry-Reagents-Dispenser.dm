@@ -321,7 +321,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if((H.chem_doses[GLOB.scp3349_precedent] > 4.4) && (H.chem_doses[GLOB.scp3349_fake_precedent] < 0.6))
-			H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
+			H.RegisterSignal(H, COMSIG_CARBON_LIFE, TYPE_PROC_REF(/mob/living/carbon/human, handle_3349), TRUE)
 
 			var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
 			heart.SCP = new /datum/scp(

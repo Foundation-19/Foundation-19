@@ -1941,9 +1941,9 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					for(var/i = 1 to 12)
 						addtimer(CALLBACK(src, /mob/living/proc/revive), (10 SECONDS) * i)
 					if(mode == MODE_VERY_FINE)
-						addtimer(CALLBACK(src, .proc/Callback914Death), rand(121 SECONDS, 150 SECONDS))
+						addtimer(CALLBACK(src, PROC_REF(Callback914Death)), rand(121 SECONDS, 150 SECONDS))
 					else
-						addtimer(CALLBACK(src, .proc/Callback914PotentialDeath, old_status_flags), rand(160 SECONDS, 300 SECONDS))
+						addtimer(CALLBACK(src, PROC_REF(Callback914PotentialDeath), old_status_flags), rand(160 SECONDS, 300 SECONDS))
 				if("psi")
 					// Will kill if you got too good
 					var/total_rank = 0
@@ -1954,7 +1954,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					psi.update()
 					playsound(src, 'sounds/effects/psi/power_evoke.ogg', 150, FALSE, 32)
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
-					addtimer(CALLBACK(src, .proc/Callback914PotentialPsiDeath, (total_rank > 12 ? (80 + total_rank) : 50)), rand(160 SECONDS, 300 SECONDS))
+					addtimer(CALLBACK(src, PROC_REF(Callback914PotentialPsiDeath), (total_rank > 12 ? (80 + total_rank) : 50)), rand(160 SECONDS, 300 SECONDS))
 			return src
 
 // The trip is over, you might die, or you might live

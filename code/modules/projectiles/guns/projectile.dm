@@ -128,10 +128,10 @@
 	if(handle_casings != HOLD_CASINGS)
 		chambered = null
 
-#define EXP_TAC_RELOAD 1 SECOND
-#define PROF_TAC_RELOAD 0.5 SECONDS
-#define EXP_SPD_RELOAD 0.5 SECONDS
-#define PROF_SPD_RELOAD 0.25 SECONDS
+#define EXP_TAC_RELOAD (1 SECOND)
+#define PROF_TAC_RELOAD (0.5 SECONDS)
+#define EXP_SPD_RELOAD (0.5 SECONDS)
+#define PROF_SPD_RELOAD (0.25 SECONDS)
 
 
 

@@ -111,4 +111,4 @@
 		playsound(get_turf(H), sound_path, rand(15, 35), TRUE)
 		show_sound_effect(get_turf(H), H)
 
-	addtimer(CALLBACK(src, .proc/DoEffects, G), rand(3, 8))
+	addtimer(CALLBACK(src, PROC_REF(DoEffects), G), rand(3, 8))

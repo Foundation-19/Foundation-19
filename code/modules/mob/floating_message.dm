@@ -2,11 +2,11 @@
 var/global/list/floating_chat_colors = list()
 
 /// How long the chat message's spawn-in animation will occur for
-#define CHAT_MESSAGE_SPAWN_TIME 0.2 SECONDS
+#define CHAT_MESSAGE_SPAWN_TIME (0.2 SECONDS)
 /// How long the chat message will exist prior to any exponential decay
-#define CHAT_MESSAGE_LIFESPAN 5 SECONDS
+#define CHAT_MESSAGE_LIFESPAN (5 SECONDS)
 /// How long the chat message's end of life fading animation will occur for
-#define CHAT_MESSAGE_EOL_FADE 0.7 SECONDS
+#define CHAT_MESSAGE_EOL_FADE (0.7 SECONDS)
 /// Max width of chat message in pixels
 #define CHAT_MESSAGE_WIDTH 128
 /// Max width of chat message in pixels
@@ -86,8 +86,8 @@ var/global/list/floating_chat_colors = list()
 		animate(old, CHAT_MESSAGE_SPAWN_TIME, pixel_z = pixel_z_new)
 	LAZYADD(holder.stored_chat_text, I)
 
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_floating_text, holder, I), duration)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_clients, I, show_to), duration + CHAT_MESSAGE_SPAWN_TIME)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_floating_text), holder, I), duration)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_image_from_clients), I, show_to), duration + CHAT_MESSAGE_SPAWN_TIME)
 
 	return I
 

@@ -54,7 +54,7 @@
 		var/turf/T = t
 		if(T.density)
 			continue
-		addtimer(CALLBACK(src, .proc/emit_acid, T), 0)
+		addtimer(CALLBACK(src, PROC_REF(emit_acid), T), 0)
 
 /obj/structure/chorus/gastric_emitter/proc/emit_acid(turf/T)
 	var/obj/effect/effect/water/chempuff/chem = new(get_turf(src))
