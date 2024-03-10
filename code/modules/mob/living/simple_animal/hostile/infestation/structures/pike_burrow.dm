@@ -52,7 +52,7 @@
 			break
 		nearby_targets += L
 
-	addtimer(CALLBACK(src, .proc/PerformAttack), attack_cooldown_time)
+	addtimer(CALLBACK(src, PROC_REF(PerformAttack)), attack_cooldown_time)
 
 	if(!LAZYLEN(nearby_targets))
 		return FALSE
@@ -63,7 +63,7 @@
 	D.transform = matrix()*1.5
 	D.alpha = 125
 	animate(D, transform = matrix(), color = COLOR_RED, alpha = 0, time = attack_delay)
-	addtimer(CALLBACK(src, .proc/SpikeTurf, T), attack_delay)
+	addtimer(CALLBACK(src, PROC_REF(SpikeTurf), T), attack_delay)
 
 	return TRUE
 
