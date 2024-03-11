@@ -248,10 +248,6 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 		return
 
 	new_id.assignment = assignment
-	if(GLOB.using_map.flags & MAP_HAS_BRANCH)
-		new_id.military_branch = military_branch
-	if(GLOB.using_map.flags & MAP_HAS_RANK)
-		new_id.military_rank = military_rank
 	new_id.age = age
 	new_id.front = front
 	new_id.side = side
