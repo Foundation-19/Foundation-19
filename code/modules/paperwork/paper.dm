@@ -620,8 +620,8 @@
 				if(istype(user))
 					to_chat(user, SPAN_DANGER("You feel thousands of paper cuts appearing on your skin..."))
 					for(var/i = 1 to 10)
-						addtimer(CALLBACK(user, /mob/living/proc/apply_damage, rand(3, 9), BRUTE, pick(BP_ALL_LIMBS), DAM_SHARP), i * (2 SECONDS))
-						addtimer(CALLBACK(GLOBAL_PROC, /proc/playsound, get_turf(user), 'sounds/weapons/bladeslice.ogg', rand(25, 50), TRUE), i * (2 SECONDS))
+						addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, apply_damage), rand(3, 9), BRUTE, pick(BP_ALL_LIMBS), DAM_SHARP), i * (2 SECONDS))
+						addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), get_turf(user), 'sounds/weapons/bladeslice.ogg', rand(25, 50), TRUE), i * (2 SECONDS))
 				return null
 			empulse(get_turf(src), rand(0, 2), rand(2, 7))
 			return /obj/item/paper/self_writing

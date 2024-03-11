@@ -1954,7 +1954,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
 					var/duration = rand(120, 200) SECONDS
 					for(var/i = 1 to round(duration / 10 SECONDS))
-						addtimer(CALLBACK(src, /mob/living/proc/revive), (10 SECONDS) * i)
+						addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living, revive)), (10 SECONDS) * i)
 					addtimer(CALLBACK(src, PROC_REF(Callback914Death)), duration)
 				if("psi")
 					// Will kill if you got too good
