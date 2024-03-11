@@ -5408,9 +5408,11 @@
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "zQ" = (
-/obj/machinery/vending/security,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/vending/security{
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
