@@ -2753,6 +2753,12 @@
 /obj/item/storage/box/gloves,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op1)
+"hm" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/logistics/logistics)
 "hn" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 6
@@ -3922,6 +3928,10 @@
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/medical/chemistry)
+"km" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 "kn" = (
 /obj/structure/table/standard,
 /obj/item/stack/material/phoron/ten,
@@ -5193,6 +5203,12 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/bridge)
+"pw" = (
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "pz" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/cable{
@@ -5793,7 +5809,6 @@
 	name = "Logistics";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -5812,100 +5827,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
-"sn" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"so" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/logistics/logistics)
-"sp" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"sq" = (
-/obj/machinery/door/airlock/glass/mining{
-	name = "Loading Docks";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"sr" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"ss" = (
-/obj/machinery/door/airlock/glass/mining{
-	name = "Loading Docks";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"st" = (
-/obj/machinery/door/airlock/glass/mining{
-	name = "Primary Storage";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"su" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"sv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "sw" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment,
 /obj/machinery/conveyor_switch/oneway{
 	id = "cargofromstorage";
 	id_tag = "cargofromstorage"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"sx" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "sD" = (
@@ -6009,6 +5939,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
+"ug" = (
+/obj/effect/floor_decal/corner/brown/half,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "uk" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -6132,15 +6066,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
-"uP" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "cargofromstorage";
-	id_tag = "cargofromstorage"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "uQ" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/logistics/logistics)
@@ -6239,12 +6164,6 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"vf" = (
-/obj/effect/floor_decal/corner/brown/half{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "vg" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/corner/brown/half{
@@ -6447,6 +6366,17 @@
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
+"wl" = (
+/obj/structure/disposaloutlet{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/disposalpipe/trunk,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "wp" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
@@ -6560,6 +6490,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
+"xc" = (
+/obj/machinery/conveyor{
+	id = "mining_internal";
+	id_tag = "mining_internal";
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 "xd" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -6996,6 +6934,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
+"AL" = (
+/obj/machinery/light,
+/obj/machinery/conveyor_switch/oneway{
+	id = "mining_internal";
+	id_tag = "mining_internal";
+	name = "mining conveyor"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "AN" = (
 /obj/machinery/atmospherics/unary/tank{
 	dir = 4
@@ -7241,6 +7189,11 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"Dy" = (
+/obj/structure/closet/crate,
+/obj/effect/floor_decal/corner/brown/half,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "DD" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable{
@@ -7447,6 +7400,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
+"Fb" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "mining_internal";
+	id_tag = "mining_internal"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 "Fe" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -7601,6 +7562,26 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Gx" = (
+/obj/machinery/conveyor{
+	id = "mining_internal";
+	id_tag = "mining_internal";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
+"GC" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
 "GH" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
@@ -7978,6 +7959,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"Ku" = (
+/obj/machinery/conveyor{
+	id = "mining_internal";
+	id_tag = "mining_internal";
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 "Kv" = (
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/camera/network/medbay{
@@ -8053,6 +8042,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
+"KR" = (
+/obj/machinery/door/airlock/glass/mining{
+	name = "Manufacturing";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
 "Lb" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
@@ -8103,6 +8102,13 @@
 "Lp" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
+"Lu" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Lv" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -8251,6 +8257,10 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"No" = (
+/obj/machinery/computer/mining,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/logistics/logistics)
 "NA" = (
 /obj/effect/floor_decal/carpet/orange{
 	dir = 1
@@ -8368,6 +8378,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"ON" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor/plating,
+/area/site53/logistics/logistics)
+"OS" = (
+/obj/structure/plasticflaps,
+/obj/machinery/conveyor{
+	id = "mining_internal";
+	id_tag = "mining_internal";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 "OW" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood/walnut,
@@ -8668,6 +8691,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"Sb" = (
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 1
+	},
+/obj/structure/ore_box,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Sd" = (
 /obj/machinery/light{
 	dir = 8
@@ -8984,6 +9014,11 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"UR" = (
+/obj/machinery/mineral/unloading_machine,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
@@ -9200,6 +9235,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
+"Xl" = (
+/obj/machinery/conveyor{
+	id = "mining_internal";
+	id_tag = "mining_internal"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 "Xp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9369,6 +9411,10 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
 /area/site53/medical/infirmreception)
+"YP" = (
+/obj/effect/floor_decal/industrial/loading,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/logistics/logistics)
 "YV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -9408,6 +9454,15 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/uez/repoffice/ethics)
+"Zr" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Zt" = (
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/titanium,
@@ -9441,6 +9496,9 @@
 /area/site53/medical/infirmary)
 "Zy" = (
 /obj/machinery/hologram/holopad,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "ZG" = (
@@ -9488,6 +9546,11 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
+"ZW" = (
+/obj/machinery/mineral/processing_unit,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/logistics/logistics)
 
 (1,1,1) = {"
 dA
@@ -30207,14 +30270,14 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+oV
+oV
+oV
+oV
+oV
+oV
+oV
 kG
 jp
 ju
@@ -30464,14 +30527,14 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+Sb
+qK
+hm
+OS
+Gx
+Gx
+xc
 kG
 jp
 ju
@@ -30721,14 +30784,14 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+pw
+qK
+qK
+oV
+ON
+ON
+Fb
 kG
 jp
 aq
@@ -30978,14 +31041,14 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+Zr
+qK
+qK
+qM
+qK
+ON
+Fb
 kG
 jH
 jH
@@ -31235,14 +31298,14 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+pw
+qK
+qK
+qK
+qK
+No
+ZW
 kG
 jt
 jH
@@ -31492,14 +31555,14 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+pw
+qK
+qK
+qK
+qK
+ON
+km
 kG
 kG
 kG
@@ -31749,15 +31812,15 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+pw
+qK
+qK
+AL
+oV
+ON
+Fb
+oV
 dA
 dA
 dA
@@ -32006,15 +32069,15 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+pw
+qK
+qK
+YP
+UR
+Xl
+Ku
+oV
 dA
 dA
 dA
@@ -32263,13 +32326,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+Zr
+qK
+ug
+oV
+oV
+oV
 oV
 oV
 oV
@@ -32520,13 +32583,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oV
+wl
+Lu
+Dy
+oV
+xP
+xP
 oV
 rP
 rQ
@@ -32779,7 +32842,7 @@ bt
 uv
 oV
 oV
-qE
+KR
 oV
 oV
 oV
@@ -33036,7 +33099,7 @@ qB
 qC
 XN
 qQ
-vf
+my
 Pw
 Pt
 rS
@@ -33293,7 +33356,7 @@ qB
 qE
 qJ
 qK
-qK
+my
 qK
 Ed
 qK
@@ -33807,16 +33870,16 @@ si
 rW
 po
 po
-po
-po
+GC
+MN
 sl
-po
-po
-po
-po
-po
-po
-so
+MN
+MN
+MN
+MN
+MN
+MN
+MN
 MN
 sg
 TU
@@ -34073,7 +34136,7 @@ Ic
 Sn
 qK
 qK
-my
+nk
 nk
 oV
 qK
@@ -34330,7 +34393,7 @@ vg
 vh
 Uc
 QA
-my
+nk
 nk
 oV
 ul
@@ -34587,7 +34650,7 @@ qV
 qV
 oV
 oV
-sq
+rI
 rI
 oV
 oV
@@ -34844,7 +34907,7 @@ qK
 qM
 qK
 qM
-sp
+qK
 qK
 rI
 qM
@@ -34855,10 +34918,10 @@ qK
 qK
 qM
 rL
-su
-uP
+qM
+ur
 sw
-sx
+qM
 qK
 uX
 oV
@@ -35101,18 +35164,18 @@ qK
 qK
 qK
 qK
-sr
-sn
-ss
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-st
-sv
+qK
+qK
+rI
+qK
+qK
+qK
+qK
+qK
+qK
+qK
+rL
+qK
 uC
 qK
 qK

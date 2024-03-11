@@ -147,6 +147,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"aw" = (
+/obj/machinery/delivery_locker/materials,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/site53/llcz/mining/miningops)
 "aA" = (
 /obj/machinery/power/apc/hyper{
 	dir = 8
@@ -455,14 +462,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
-"bs" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "mining_internal";
-	id_tag = "mining_internal"
-	},
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "bt" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -852,7 +851,7 @@
 /area/site53/llcz/hallways)
 "ci" = (
 /obj/effect/paint_stripe/gray,
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment/reinforced,
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/hallways)
 "cj" = (
@@ -1041,14 +1040,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
-"cD" = (
-/obj/machinery/conveyor{
-	dir = 6;
-	id = "mining_internal";
-	id_tag = "mining_internal"
-	},
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "cF" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1267,25 +1258,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/reeducation)
-"dc" = (
-/obj/machinery/conveyor_switch/oneway{
-	id = "mining_internal";
-	id_tag = "mining_internal";
-	name = "mining conveyor"
-	},
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
-"dd" = (
-/obj/machinery/conveyor{
-	id = "mining_internal";
-	id_tag = "mining_internal"
-	},
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "de" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
@@ -1562,10 +1534,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/prep)
-"dF" = (
-/obj/machinery/computer/mining,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/mining/miningops)
 "dG" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
@@ -1993,15 +1961,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpointoverlook)
-"eE" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "mining_internal";
-	id_tag = "mining_internal"
-	},
-/obj/structure/plasticflaps,
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "eF" = (
 /obj/item/device/megaphone,
 /obj/structure/table/reinforced,
@@ -2194,9 +2153,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "fc" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "Mining Lockdown";
@@ -2207,6 +2163,10 @@
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "fd" = (
@@ -2440,14 +2400,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
-"fE" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "mining_internal";
-	id_tag = "mining_internal"
-	},
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "fF" = (
 /obj/structure/flora/pottedplant/decorative,
 /turf/simulated/floor/wood/walnut,
@@ -3012,6 +2964,7 @@
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
 "hf" = (
@@ -3040,12 +2993,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/old_tile,
-/area/site53/llcz/mining/miningops)
-"hj" = (
-/obj/effect/paint_stripe/orange,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
 "hk" = (
 /obj/effect/paint_stripe/orange,
@@ -3084,16 +3033,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "ho" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
+/obj/structure/disposalpipe/segment/reinforced{
+	icon_state = "pipe-c";
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
-"hp" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/mining/miningops)
 "hq" = (
 /obj/machinery/power/apc{
 	dir = 8
@@ -3101,33 +3046,9 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
-"hr" = (
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
-"hs" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
-"ht" = (
-/obj/machinery/camera/network/lcz,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "hu" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
-"hv" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
-"hw" = (
-/obj/machinery/mineral/unloading_machine,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled,
-/area/site53/llcz/mining/miningops)
 "hx" = (
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/dark,
@@ -3241,15 +3162,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
-"hM" = (
-/obj/machinery/door/airlock/multi_tile/glass/civilian{
-	dir = 8;
-	icon_state = "closed";
-	name = "Mining Factory"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/mining/miningops)
 "hN" = (
 /obj/structure/sign/directions/infirmary{
 	dir = 1;
@@ -3868,9 +3780,6 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
-"iX" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/mining/miningops)
 "iZ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -4026,10 +3935,6 @@
 /obj/item/tape_roll,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
-"ju" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor/plating,
-/area/site53/llcz/mining/miningops)
 "jv" = (
 /obj/effect/floor_decal/corner/beige/mono,
 /obj/machinery/door/airlock/glass/civilian{
@@ -4071,23 +3976,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
-"jz" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/site53/llcz/mining/miningops)
 "jA" = (
 /obj/item/tape_roll,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/mine/unexplored)
-"jB" = (
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
-"jC" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "jD" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4473,11 +4365,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"kx" = (
-/obj/machinery/mineral/processing_unit,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "ky" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "Mining";
@@ -4503,14 +4390,6 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
-"kA" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/mining/miningops)
 "kB" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/monotile/white,
@@ -4524,25 +4403,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
-"kD" = (
-/obj/machinery/disposal/delivery_chute{
-	dir = 4;
-	name = "Smelted Mineral Delivery Chute"
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/machinery/door/window{
-	dir = 4;
-	name = "Interior Door";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "kE" = (
 /obj/structure/sign/directions/infirmary{
 	dir = 1;
@@ -4576,7 +4436,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "kH" = (
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment/reinforced,
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
@@ -4682,12 +4542,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/canteenbubble)
-"kX" = (
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "kY" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4698,10 +4552,6 @@
 /obj/machinery/barrier,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
-"kZ" = (
-/obj/machinery/status_display,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/mining/miningops)
 "la" = (
 /obj/machinery/light{
 	dir = 8
@@ -4784,13 +4634,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
-"li" = (
-/obj/structure/closet/crate,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "lj" = (
 /obj/machinery/door/airlock/security{
 	name = "D-Class Assignments";
@@ -4940,10 +4783,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
-"lA" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "lB" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1;
@@ -5008,12 +4847,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/reeducation)
-"lL" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "lM" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -5124,11 +4957,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/prep)
-"mb" = (
-/obj/machinery/mineral/stacking_machine,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor,
-/area/site53/llcz/mining/miningops)
 "mc" = (
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
@@ -11980,6 +11808,13 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/scp914)
+"Cs" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/old_tile,
+/area/site53/llcz/mining/miningops)
 "Cu" = (
 /obj/item/modular_computer/console/preset/paperwork_dataserver{
 	dir = 4
@@ -12122,10 +11957,10 @@
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "CP" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/item/taperoll/engineering/applied,
+/obj/structure/disposalpipe/segment/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "CQ" = (
@@ -12453,14 +12288,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"DF" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/mining/miningops)
 "DG" = (
 /obj/structure/sign/dclass{
 	pixel_y = 32
@@ -12719,8 +12546,8 @@
 	},
 /area/site53/llcz/dclass/luxuryhall)
 "Eh" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/disposalpipe/segment/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
@@ -16863,13 +16690,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/scp914)
-"Ov" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/scarybat,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "Ow" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -19823,8 +19643,8 @@
 /area/site53/llcz/dclass/med_checkpoint)
 "VR" = (
 /obj/effect/paint_stripe/white,
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/disposalpipe/segment/reinforced{
+	dir = 8
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/engineering/maintenance/llczmaint)
@@ -41941,7 +41761,7 @@ hk
 hk
 hk
 hk
-pC
+ua
 ua
 ua
 ua
@@ -42187,18 +42007,18 @@ gQ
 gQ
 Rk
 fc
-TX
+Cs
 he
 hi
-gu
+aw
 gu
 gu
 kc
-ju
-jB
-li
 hk
-pC
+ua
+ua
+ua
+ua
 Fh
 Fh
 ua
@@ -42443,19 +42263,19 @@ ua
 ua
 ua
 hk
-DF
-hj
-hj
-hj
-hp
-hM
-jz
-hj
-kA
-jB
-jB
 hk
-pC
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+ua
+ua
+ua
+ua
 ua
 ua
 ua
@@ -42699,20 +42519,20 @@ ua
 ua
 Fh
 ua
-pC
-pC
-pC
-pC
-hk
-hr
-hr
-hr
-hr
-kD
-hr
-hr
-hk
-pC
+ua
+ua
+ua
+ua
+ua
+ua
+Fh
+Fh
+ua
+ua
+Fh
+ua
+ua
+ua
 ua
 ua
 ua
@@ -42959,17 +42779,17 @@ ua
 ua
 ua
 ua
-pC
-hk
-hs
-hr
-hr
-hr
-hr
-hr
-lA
-hk
-pC
+Fh
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 ua
@@ -43216,17 +43036,17 @@ ua
 ua
 Fh
 ua
-pC
-hk
-ht
-hr
-hr
-hr
-hr
-hr
-hr
-hk
-pC
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 ua
@@ -43473,17 +43293,17 @@ ua
 ua
 ua
 ua
-pC
-hk
-hv
-dc
-hr
-hr
-hr
-kX
-lL
-hk
-pC
+ua
+ua
+Fh
+Fh
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 Fh
 ua
 ua
@@ -43730,17 +43550,17 @@ ua
 ua
 FW
 ua
-pC
-hk
-hw
-dF
-jB
-hr
-hr
-kZ
-eE
-hk
-pC
+ua
+ua
+Fh
+Fh
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 ua
@@ -43987,17 +43807,17 @@ ua
 FW
 FW
 FW
-pC
-hk
-bs
-ju
-jB
-hr
-hr
-dF
-fE
-hk
-pC
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 Fh
@@ -44206,7 +44026,7 @@ Fh
 Nz
 FW
 FW
-Ov
+Eh
 FW
 ua
 ua
@@ -44244,17 +44064,17 @@ ua
 FW
 FW
 ua
-pC
-hk
-bs
-iX
-ju
-dF
-ju
-ju
-mb
-hk
-pC
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 Fh
@@ -44501,17 +44321,17 @@ Fh
 ua
 FW
 ua
-pC
-hk
-cD
-dd
-jC
-kx
-dd
-dd
-jC
-hk
-pC
+Fh
+ua
+ua
+Fh
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 ua
@@ -44758,17 +44578,17 @@ ua
 ua
 ua
 ua
-pC
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-pC
+ua
+ua
+Fh
+ua
+ua
+Fh
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 ua
@@ -45015,18 +44835,18 @@ Fh
 Fh
 ua
 ua
-pC
-pC
-pC
-pC
-pC
-pC
-pC
-pC
-pC
-pC
-pC
-Fh
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
+ua
 ua
 ua
 Fh
@@ -45276,7 +45096,7 @@ ua
 ua
 ua
 ua
-Fh
+ua
 ua
 ua
 ua
@@ -45530,10 +45350,10 @@ ua
 ua
 ua
 Fh
-Fh
 ua
 ua
 Fh
+ua
 ua
 ua
 ua

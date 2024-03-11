@@ -304,6 +304,13 @@
 /obj/structure/disposalpipe/segment/bent
 	icon_state = "pipe-c"
 
+// Reinforced disposal pipes
+
+/obj/structure/disposalpipe/segment/reinforced
+	name = "reinforced disposal pipe"
+	health_max = 100
+	health_min_damage = 20
+
 ///// Z-Level stuff
 /obj/structure/disposalpipe/up
 	icon_state = "pipe-u"
