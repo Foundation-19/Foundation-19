@@ -63,7 +63,7 @@
 		else if(prob(50))
 			H.visible_message(SPAN_DANGER("[H] rips into [H.p_their()] own flesh and covers [H.p_their()] hands in blood!"))
 			H.emote("scream")
-			H.apply_damage(25, BRUTE, prob(50) ? BP_L_ARM : BP_R_ARM)
+			H.apply_damage(50, BRUTE, prob(75) ? BP_L_ARM : BP_R_ARM)
 			H.drip(50)
 		else if(prob(30))
 			if(prob(50))
