@@ -21599,7 +21599,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/science{
 	name = "SCP-012 Containment Chamber";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"));
+	id_tag = "012"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -24858,6 +24859,9 @@
 /area/site53/uhcz/securitypost)
 "gEl" = (
 /obj/structure/table/standard,
+/obj/machinery/button/alternate/door{
+	id_tag = "012"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "gEm" = (
