@@ -87,7 +87,7 @@
 	spawn_gifts()
 
 /obj/item/storage/backpack/santabag/proc/spawn_gifts()
-	addtimer(CALLBACK(src, .proc/spawn_gifts), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(spawn_gifts)), 30 SECONDS)
 
 	var/mob/M = get(loc, /mob)
 	if(!istype(M))
@@ -521,4 +521,3 @@
 	name = "corporate security messenger bag"
 	desc = "A small, tactical backpack worn over one shoulder. This one is in EXO colors."
 	icon_state = "courierbagsec_exo"
-

@@ -663,4 +663,4 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 		dirs = list( direction, turn(direction, -45), turn(direction, 45))
 	else
 		dirs = GLOB.alldirs.Copy()
-	addtimer(CALLBACK(src, .proc/streak, dirs), 0)
+	addtimer(CALLBACK(src, PROC_REF(streak), dirs), 0)

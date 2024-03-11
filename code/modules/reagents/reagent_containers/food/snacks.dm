@@ -407,7 +407,7 @@ GLOBAL_LIST_EMPTY(mobs_by_meat)
 		return
 	has_been_heated = 1
 	user.visible_message(SPAN_NOTICE("[user] crushes \the [src] package."), "You crush \the [src] package and feel a comfortable heat build up.")
-	addtimer(CALLBACK(src, .proc/heat, weakref(user)), 20 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(heat), weakref(user)), 20 SECONDS)
 
 /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket/heat(weakref/message_to)
 	..()
@@ -442,7 +442,7 @@ GLOBAL_LIST_EMPTY(mobs_by_meat)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6
 	SetName("warm " + name)
-	addtimer(CALLBACK(src, .proc/cool), 7 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(cool)), 7 MINUTES)
 
 /obj/item/reagent_containers/food/snacks/donkpocket/proc/cool()
 	if(!warm)

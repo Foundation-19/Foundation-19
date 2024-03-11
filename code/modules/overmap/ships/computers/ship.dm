@@ -57,16 +57,16 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 		user.reset_view(linked)
 	if(user.client)
 		user.client.view = world.view + extra_view
-	GLOB.moved_event.register(user, src, /obj/machinery/computer/ship/proc/unlook)
-	GLOB.stat_set_event.register(user, src, /obj/machinery/computer/ship/proc/unlook)
+	GLOB.moved_event.register(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
+	GLOB.stat_set_event.register(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
 	LAZYDISTINCTADD(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/unlook(mob/user)
 	user.reset_view(null, FALSE)
 	if(user.client)
 		user.client.view = world.view
-	GLOB.moved_event.unregister(user, src, /obj/machinery/computer/ship/proc/unlook)
-	GLOB.stat_set_event.unregister(user, src, /obj/machinery/computer/ship/proc/unlook)
+	GLOB.moved_event.unregister(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
+	GLOB.stat_set_event.unregister(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
 	LAZYREMOVE(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/viewing_overmap(mob/user)

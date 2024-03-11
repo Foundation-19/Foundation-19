@@ -10,6 +10,7 @@
 #define DEBUG
 // END_PREFERENCES
 // BEGIN_INCLUDE
+#include "code\_byond_version_compat.dm"
 #include "code\_debugger.dm"
 #include "code\_macros.dm"
 #include "code\_version.dm"

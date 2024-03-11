@@ -26,7 +26,7 @@
 	src.actual_instrument = where
 	src.echo = GLOB.musical_config.echo_default.Copy()
 	src.env = GLOB.musical_config.env_default.Copy()
-	src.proxy_listener = new(src.actual_instrument, /datum/sound_player/proc/on_turf_entered_relay, /datum/sound_player/proc/on_turfs_changed_relay, range, proc_owner = src)
+	src.proxy_listener = new(src.actual_instrument, TYPE_PROC_REF(/datum/sound_player, on_turf_entered_relay), TYPE_PROC_REF(/datum/sound_player, on_turfs_changed_relay), range, proc_owner = src)
 	proxy_listener.register_turfs()
 
 /datum/sound_player/Destroy()
@@ -81,6 +81,3 @@
 		return D.shouldStopPlaying(user)
 
 	return 1 //Well if you got this far you did something very wrong
-
-
-

@@ -30,7 +30,7 @@
 		return
 	to_chat(L, SPAN_NOTICE("You place your hands on \the [src], feeling yourself intune to its vibrations."))
 	intuned += L
-	GLOB.destroyed_event.register(L,src,/obj/structure/deity/pylon/proc/remove_intuned)
+	GLOB.destroyed_event.register(L,src,TYPE_PROC_REF(/obj/structure/deity/pylon, remove_intuned))
 
 /obj/structure/deity/pylon/proc/remove_intuned(mob/living/L)
 	if(!(L in intuned))
