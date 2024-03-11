@@ -152,6 +152,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
 "aA" = (
