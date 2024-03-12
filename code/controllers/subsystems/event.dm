@@ -156,7 +156,7 @@ SUBSYSTEM_DEF(event)
 		html += "<table[table_options]>"
 		html += "<tr><td[row_options2]>Name</td><td[row_options2]>Type</td><td[row_options1]>Weight</td><td[row_options1]>OneShot</td></tr>"
 		html += "<tr>"
-		html += "<td><A align='right' href='?src=\ref[src];SetName=\ref[new_event]'>[new_event.name ? new_event.name : "Enter Event"]</A></td>"
+		html += "<td><A align='right' href='?src=\ref[src];set_name=\ref[new_event]'>[new_event.name ? new_event.name : "Enter Event"]</A></td>"
 		html += "<td><A align='right' href='?src=\ref[src];set_type=\ref[new_event]'>[new_event.event_type ? new_event.event_type : "Select Type"]</A></td>"
 		html += "<td><A align='right' href='?src=\ref[src];set_weight=\ref[new_event]'>[new_event.weight ? new_event.weight : 0]</A></td>"
 		html += "<td><A align='right' href='?src=\ref[src];toggle_oneshot=\ref[new_event]'>[new_event.one_shot]</A></td>"
@@ -283,10 +283,10 @@ SUBSYSTEM_DEF(event)
 		selected_event_container = locate(href_list["view_events"])
 	else if(href_list["back"])
 		selected_event_container = null
-	else if(href_list["SetName"])
+	else if(href_list["set_name"])
 		var/name = sanitize(input("Enter event name.", "Set Name") as text|null)
 		if(name)
-			var/datum/event_meta/EM = locate(href_list["SetName"])
+			var/datum/event_meta/EM = locate(href_list["set_name"])
 			EM.name = name
 	else if(href_list["set_type"])
 		var/type = input("Select event type.", "Select") as null|anything in all_events
