@@ -51,7 +51,7 @@
 				user.visible_message("\The [user] titles \the [src] with \a [W], marking down: \"[str]\"",\
 				SPAN_NOTICE("You title \the [src]: \"[str]\""),\
 				"You hear someone scribbling a note.")
-				("[name] ([str])")
+				SetName("[name] ([str])")
 				if(!examtext && !nameset)
 					nameset = 1
 					update_icon()
@@ -176,7 +176,7 @@
 				user.visible_message("\The [user] titles \the [src] with \a [W], marking down: \"[str]\"",\
 				SPAN_NOTICE("You title \the [src]: \"[str]\""),\
 				"You hear someone scribbling a note.")
-				("[name] ([str])")
+				SetName("[name] ([str])")
 				if(!examtext && !nameset)
 					nameset = 1
 					update_icon()
@@ -282,16 +282,16 @@
 			if(i in list(1,2,3,4,5))
 				P.icon_state = "deliverycrate[i]"
 				switch(i)
-					if(1) P.("tiny parcel")
-					if(3) P.("normal-sized parcel")
-					if(4) P.("large parcel")
-					if(5) P.("huge parcel")
+					if(1) P.SetName("tiny parcel")
+					if(3) P.SetName("normal-sized parcel")
+					if(4) P.SetName("large parcel")
+					if(5) P.SetName("huge parcel")
 			if(i < 1)
 				P.icon_state = "deliverycrate1"
-				P.("tiny parcel")
+				P.SetName("tiny parcel")
 			if(i > 5)
 				P.icon_state = "deliverycrate5"
-				P.("huge parcel")
+				P.SetName("huge parcel")
 			P.add_fingerprint(usr)
 			O.add_fingerprint(usr)
 			src.add_fingerprint(usr)

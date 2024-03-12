@@ -50,15 +50,15 @@
 			return
 		t = sanitizeSafe(t, MAX_NAME_LEN)
 		if (t)
-			src.("body bag - ")
+			src.SetName("body bag - ")
 			src.name += t
 			has_label = TRUE
 		else
-			src.("body bag")
+			src.SetName("body bag")
 		src.update_icon()
 		return
 	else if(isWirecutter(W))
-		src.("body bag")
+		src.SetName("body bag")
 		has_label = FALSE
 		to_chat(user, "You cut the tag off \the [src].")
 		src.update_icon()

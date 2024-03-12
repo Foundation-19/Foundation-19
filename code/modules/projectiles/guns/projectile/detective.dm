@@ -56,7 +56,7 @@
 		icon_state = choice.icon_state
 		unique_reskin = choice
 		if(!unique_name)
-			(choice.name)
+			SetName(choice.name)
 		to_chat(M, "Your gun is now skinned as \a [choice]. Say hello to your new friend.")
 		return 1
 

@@ -154,7 +154,7 @@
 	alarm_area = get_area(src)
 	area_uid = alarm_area.uid
 	if (name == "alarm")
-		("[alarm_area.name] Air Alarm")
+		SetName("[alarm_area.name] Air Alarm")
 
 	// breathable air according to human/Life()
 	TLV[GAS_OXYGEN] =			list(16, 19, 135, 140) // Partial pressure, kpa

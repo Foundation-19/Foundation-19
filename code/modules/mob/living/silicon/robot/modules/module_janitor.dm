@@ -26,7 +26,7 @@
 /obj/item/robot_module/janitor/finalize_emag()
 	. = ..()
 	emag.reagents.add_reagent(/datum/reagent/slippery_oil, 250)
-	emag.("Slippery oil spray")
+	emag.SetName("Slippery oil spray")
 
 /obj/item/robot_module/janitor/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()

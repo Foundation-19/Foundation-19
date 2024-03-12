@@ -379,7 +379,7 @@
 		import_key_data(ekey)
 	for (var/ch_name in channels)
 		if(!radio_controller)
-			src.("broken radio headset")
+			src.SetName("broken radio headset")
 			return
 		secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
 

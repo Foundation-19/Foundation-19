@@ -3,23 +3,23 @@
 	var/obj/screen/using
 
 	using = new /obj/screen/pai/software()
-	using.("Software Interface")
+	using.SetName("Software Interface")
 	adding += using
 
 	using = new /obj/screen/pai/subsystems()
-	using.("Subsystems")
+	using.SetName("Subsystems")
 	adding += using
 
 	using = new /obj/screen/pai/shell()
-	using.("Toggle Chassis")
+	using.SetName("Toggle Chassis")
 	adding += using
 
 	using = new /obj/screen/pai/rest()
-	using.("Rest")
+	using.SetName("Rest")
 	adding += using
 
 	using = new /obj/screen/pai/light()
-	using.("Toggle Light")
+	using.SetName("Toggle Light")
 	adding += using
 
 	mymob.client.screen = list()

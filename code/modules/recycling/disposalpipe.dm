@@ -476,9 +476,9 @@
 
 /obj/structure/disposalpipe/tagger/proc/updatename()
 	if(sort_tag)
-		("[initial(name)] ([sort_tag])")
+		SetName("[initial(name)] ([sort_tag])")
 	else
-		(initial(name))
+		SetName(initial(name))
 
 /obj/structure/disposalpipe/tagger/Initialize()
 	. = ..()
@@ -626,9 +626,9 @@
 
 /obj/structure/disposalpipe/sortjunction/proc/updatename()
 	if(sort_type)
-		("[initial(name)] ([sort_type])")
+		SetName("[initial(name)] ([sort_type])")
 	else
-		(initial(name))
+		SetName(initial(name))
 
 /obj/structure/disposalpipe/sortjunction/proc/updatedir()
 	posdir = dir

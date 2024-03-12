@@ -93,7 +93,7 @@ Public vars at /obj/machinery level. Just because they are here does not mean th
 /decl/public_access/public_variable/name/write_var(obj/machinery/machine, new_value)
 	. = ..()
 	if(.)
-		machine.(new_value)
+		machine.SetName(new_value)
 
 /decl/public_access/public_method/toggle_power
 	name = "toggle power"

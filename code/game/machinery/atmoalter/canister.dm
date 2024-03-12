@@ -539,7 +539,7 @@ update_flag
 		if (label && CanUseTopic(user, state))
 			canister_color = colors[label]
 			icon_state = colors[label]
-			("gas canister [label]")
+			SetName("gas canister [label]")
 		update_icon()
 		. = TOPIC_REFRESH
 

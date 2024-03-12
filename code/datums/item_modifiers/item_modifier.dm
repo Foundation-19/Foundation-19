@@ -14,7 +14,7 @@
 	if(!type_setup)
 		return FALSE
 
-	I.(type_setup[SETUP_NAME])
+	I.SetName(type_setup[SETUP_NAME])
 	I.icon_state = type_setup[SETUP_ICON_STATE]
 
 	var/item_state = type_setup[SETUP_ITEM_STATE]

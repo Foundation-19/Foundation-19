@@ -104,9 +104,9 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 /datum/antagonist/raider/update_access(mob/living/player)
 	for(var/obj/item/storage/wallet/W in player.contents)
 		for(var/obj/item/card/id/id in W.contents)
-			id.("[player.real_name]'s Passport")
+			id.SetName("[player.real_name]'s Passport")
 			id.registered_name = player.real_name
-			W.("[initial(W.name)] ([id.name])")
+			W.SetName("[initial(W.name)] ([id.name])")
 
 /datum/antagonist/raider/create_global_objectives()
 
@@ -173,7 +173,7 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 		equip_weapons(player)
 
 	var/obj/item/card/id/id = create_id("Visitor", player, equip = 0)
-	id.("[player.real_name]'s Passport")
+	id.SetName("[player.real_name]'s Passport")
 	id.assignment = "Visitor"
 	var/obj/item/storage/wallet/W = new(player)
 	W.handle_item_insertion(id)

@@ -160,7 +160,7 @@
 				return
 			to_chat(user, SPAN_NOTICE("You installed the airlock electronics!"))
 			src.state = 2
-			src.("Near finished Airlock Assembly")
+			src.SetName("Near finished Airlock Assembly")
 			src.electronics = W
 
 	else if(isCrowbar(W) && state == 2 )
@@ -177,7 +177,7 @@
 			if(!src) return
 			to_chat(user, SPAN_NOTICE("You removed the airlock electronics!"))
 			src.state = 1
-			src.("Wired Airlock Assembly")
+			src.SetName("Wired Airlock Assembly")
 			electronics.dropInto(loc)
 			electronics = null
 
@@ -246,6 +246,6 @@
 			final_name = "Near Finished "
 			panel_overlay = image(panel_icon, "construction1")
 	final_name += "[glass == 1 ? "Window " : ""][istext(glass) ? "[glass] Airlock" : base_name] Assembly"
-	(final_name)
+	SetName(final_name)
 	add_overlay(filling_overlay)
 	add_overlay(panel_overlay)

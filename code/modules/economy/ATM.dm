@@ -343,7 +343,7 @@
 			if("balance_statement")
 				if(authenticated_account)
 					var/obj/item/paper/R = new(get_turf(src))
-					R.("Account balance: [authenticated_account.owner_name]")
+					R.SetName("Account balance: [authenticated_account.owner_name]")
 					R.info = "<b>Automated Teller Account Statement</b><br><br>"
 					R.info += "<i>Account holder:</i> [authenticated_account.owner_name]<br>"
 					R.info += "<i>Account number:</i> [authenticated_account.account_number]<br>"
@@ -365,7 +365,7 @@
 			if("print_transaction")
 				if(authenticated_account)
 					var/obj/item/paper/R = new(get_turf(src))
-					R.("Transaction logs: [authenticated_account.owner_name]")
+					R.SetName("Transaction logs: [authenticated_account.owner_name]")
 					R.info = "<b>Transaction logs</b><br>"
 					R.info += "<i>Account holder:</i> [authenticated_account.owner_name]<br>"
 					R.info += "<i>Account number:</i> [authenticated_account.account_number]<br>"

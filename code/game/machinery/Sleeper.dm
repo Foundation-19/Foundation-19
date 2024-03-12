@@ -272,7 +272,7 @@
 	src.occupant = occupant
 	update_icon()
 	if(!occupant)
-		(initial(name))
+		SetName(initial(name))
 		update_use_power(POWER_USE_IDLE)
 		return
 	occupant.forceMove(src)
@@ -280,7 +280,7 @@
 	if(occupant.client)
 		occupant.client.perspective = EYE_PERSPECTIVE
 		occupant.client.eye = src
-	("[name] ([occupant])")
+	SetName("[name] ([occupant])")
 	update_use_power(POWER_USE_ACTIVE)
 
 /obj/machinery/sleeper/proc/remove_beaker()

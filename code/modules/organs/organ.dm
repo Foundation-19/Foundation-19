@@ -316,7 +316,7 @@ var/list/organ_cache = list()
 	if(!user.unEquip(src))
 		return
 	var/obj/item/reagent_containers/food/snacks/organ/O = new(get_turf(src))
-	O.(name)
+	O.SetName(name)
 	O.appearance = src
 	if(reagents && reagents.total_volume)
 		reagents.trans_to(O, reagents.total_volume)

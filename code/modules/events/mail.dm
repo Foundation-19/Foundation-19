@@ -60,11 +60,11 @@
 /datum/event/mail/proc/spawn_mail()
 	// Create a crate for all the gifts
 	var/obj/structure/closet/crate/gift_crate = new()
-	gift_crate.("mail crate")
+	gift_crate.SetName("mail crate")
 
 	for(var/name in to_receive)
 		var/obj/item/documents/letter = new()
-		letter.("letter to [name]")
+		letter.SetName("letter to [name]")
 		letter.desc = "A letter from home."
 		letter.description_antag = "It's a letter from someone back home. This one is addressed to [name]."
 		letter.icon_state = "paper_words"
@@ -78,7 +78,7 @@
 
 		// Wrap it all up in a parcel
 		var/obj/item/smallDelivery/parcel = new /obj/item/smallDelivery()
-		parcel.("normal-sized parcel (to [name])")
+		parcel.SetName("normal-sized parcel (to [name])")
 		letter.forceMove(parcel)
 		gift.forceMove(parcel)
 

@@ -170,7 +170,7 @@
 				var/text
 				var/obj/item/paper/P = new(loc)
 				if (detailed_account_view)
-					P.("account #[detailed_account_view.account_number] details")
+					P.SetName("account #[detailed_account_view.account_number] details")
 					var/title = "Account #[detailed_account_view.account_number] Details"
 					text = {"
 						[accounting_letterhead(title)]
@@ -208,7 +208,7 @@
 						"}
 
 				else
-					P.("financial account list")
+					P.SetName("financial account list")
 					text = {"
 						[accounting_letterhead("Financial Account List")]
 

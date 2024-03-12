@@ -39,7 +39,7 @@
 				owner.real_name = "[newname] [res]"
 				if(owner.mind)
 					owner.mind.name = owner.real_name
-				owner.(owner.real_name)
+				owner.SetName(owner.real_name)
 				to_chat(user, SPAN_NOTICE("You are now designated <b>[owner.real_name]</b>."))
 
 /obj/item/organ/internal/powered

@@ -1367,9 +1367,9 @@ About the new airlock wires panel:
 
 		//get the name from the assembly
 		if(assembly.created_name)
-			(assembly.created_name)
+			SetName(assembly.created_name)
 		else
-			("[istext(assembly.glass) ? "[assembly.glass] airlock" : assembly.base_name]")
+			SetName("[istext(assembly.glass) ? "[assembly.glass] airlock" : assembly.base_name]")
 
 		//get the dir from the assembly
 		set_dir(assembly.dir)

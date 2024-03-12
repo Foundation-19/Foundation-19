@@ -95,8 +95,8 @@
 
 	// Grab all the supplied components.
 	if(source_frame)
-		if(source_frame.)
-			name = source_frame.
+		if(source_frame.SetName)
+			name = source_frame.SetName
 		if(source_frame.arms)
 			source_frame.arms.forceMove(src)
 			arms = source_frame.arms

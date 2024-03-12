@@ -108,7 +108,7 @@
 	if(A && !A.air_scrub_names[id_tag])
 		var/new_name = "[A.name] Vent Scrubber #[A.air_scrub_names.len+1]"
 		A.air_scrub_names[id_tag] = new_name
-		(new_name)
+		SetName(new_name)
 	. = ..()
 
 

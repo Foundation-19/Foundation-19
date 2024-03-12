@@ -61,7 +61,7 @@
 	if(.)
 		if(W == front_id)
 			front_id = null
-			(initial(name))
+			SetName(initial(name))
 			update_icon()
 
 /obj/item/storage/wallet/handle_item_insertion(obj/item/W as obj, prevent_warning = 0)

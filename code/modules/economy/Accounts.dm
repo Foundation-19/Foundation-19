@@ -67,7 +67,7 @@
 
 		var/obj/item/paper/R = new /obj/item/paper(P)
 		P.wrapped = R
-		R.("Account information: [M.account_name]")
+		R.SetName("Account information: [M.account_name]")
 		R.info = "<b>Account details (confidential)</b><br><hr><br>"
 		R.info += "<i>Account holder:</i> [M.owner_name]<br>"
 		R.info += "<i>Account number:</i> [M.account_number]<br>"

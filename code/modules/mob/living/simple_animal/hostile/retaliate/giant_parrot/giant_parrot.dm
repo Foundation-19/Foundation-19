@@ -44,7 +44,7 @@
 		icon_set = ps.icon_set
 		skin_material = ps.feathers
 		if(get_subspecies_name)
-			(ps.name)
+			SetName(ps.name)
 	var/matrix/M = new
 	M.Scale(2)
 	transform = M

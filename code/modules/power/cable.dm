@@ -543,16 +543,16 @@ By design, d1 is the smallest direction and d2 is the highest
 		color = GLOB.possible_cable_colours[pick(GLOB.possible_cable_colours)]
 	if(amount == 1)
 		icon_state = "coil1"
-		("cable piece")
+		SetName("cable piece")
 	else if(amount == 2)
 		icon_state = "coil2"
-		("cable piece")
+		SetName("cable piece")
 	else if(amount > 2 && amount != max_amount)
 		icon_state = "coil"
-		(initial(name))
+		SetName(initial(name))
 	else
 		icon_state = "coil-max"
-		(initial(name))
+		SetName(initial(name))
 
 /obj/item/stack/cable_coil/proc/set_cable_color(selected_color, user)
 	if(!selected_color)

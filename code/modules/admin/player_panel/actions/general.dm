@@ -134,11 +134,11 @@
 	return TRUE
 
 // SET NAME/CKEY
-/datum/player_action/
-	action_tag = ""
+/datum/player_action/SetName
+	action_tag = "SetName"
 	name = "Set Name"
 
-/datum/player_action//act(client/user, mob/target, list/params)
+/datum/player_action/SetName/act(client/user, mob/target, list/params)
 	if(target.name != params["name"])
 		target.fully_replace_character_name(params["name"])
 		message_staff("[key_name_admin(user)] set [key_name_admin(target)]'s name to [params["name"]]")

@@ -99,7 +99,7 @@
 
 	ai.carded = 1
 	admin_attack_log(user, ai, "Carded with [src.name]", "Was carded with [src.name]", "used the [src.name] to card")
-	src.("[initial(name)] - [ai.name]")
+	src.SetName("[initial(name)] - [ai.name]")
 
 	ai.forceMove(src)
 	ai.destroy_eyeobj(src)
@@ -120,7 +120,7 @@
 /obj/item/aicard/proc/clear()
 	if(carded_ai && istype(carded_ai.loc, /turf))
 		carded_ai.carded = 0
-	(initial(name))
+	SetName(initial(name))
 	carded_ai.calculate_power_usage()
 	carded_ai = null
 	update_icon()

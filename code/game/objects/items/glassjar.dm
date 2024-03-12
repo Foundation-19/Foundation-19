@@ -85,10 +85,10 @@
 	cut_overlays()
 	switch(contains)
 		if(0)
-			(initial(name))
+			SetName(initial(name))
 			desc = initial(desc)
 		if(1)
-			("tip jar")
+			SetName("tip jar")
 			desc = "A small jar with money inside."
 			for(var/obj/item/spacecash/S in src)
 				var/list/moneyImages = S.getMoneyImages()
@@ -103,12 +103,12 @@
 				var/image/victim = image(M.icon, M.icon_state)
 				victim.pixel_y = 6
 				underlays += victim
-				("glass jar with [M]")
+				SetName("glass jar with [M]")
 				desc = "A small jar with [M] inside."
 		if(3)
 			for(var/obj/effect/spider/spiderling/S in src)
 				var/image/victim = image(S.icon, S.icon_state)
 				underlays += victim
-				("glass jar with [S]")
+				SetName("glass jar with [S]")
 				desc = "A small jar with [S] inside."
 	return

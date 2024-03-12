@@ -93,7 +93,7 @@
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
 
 	//Update our name based on whether our face is obscured/disfigured
-	(get_visible_name())
+	SetName(get_visible_name())
 
 /mob/living/carbon/human/get_stamina()
 	return stamina

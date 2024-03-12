@@ -20,7 +20,7 @@
 		model_info = model
 		var/datum/robolimb/R = all_robolimbs[model]
 		if(R)
-			("[R.company] [initial(name)]")
+			SetName("[R.company] [initial(name)]")
 			desc = "[R.desc]"
 			if(icon_state in icon_states(R.icon))
 				icon = R.icon
@@ -28,7 +28,7 @@
 		SetDefaultName()
 
 /obj/item/robot_parts/proc/SetDefaultName()
-	("robot [initial(name)]")
+	SetName("robot [initial(name)]")
 
 /obj/item/robot_parts/proc/can_install(mob/user)
 	return TRUE
@@ -136,7 +136,7 @@
 				return
 			var/name = sanitizeSafe(input(user,"Set a name for the new prosthetic."), MAX_NAME_LEN)
 			if(!name)
-				("prosthetic ([random_id("prosthetic_id", 1, 999)])")
+				SetName("prosthetic ([random_id("prosthetic_id", 1, 999)])")
 
 			// Create a new, nonliving human.
 			var/mob/living/carbon/human/H = new /mob/living/carbon/human(get_turf(loc))

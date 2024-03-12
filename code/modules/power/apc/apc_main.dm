@@ -81,7 +81,7 @@
 		//if area isn't specified use current
 		area = A
 	if(auto_name)
-		("\improper [area.name] APC")
+		SetName("\improper [area.name] APC")
 
 	if(area.apc)
 		log_debug("Duplicate APC created at [AREACOORD(src)] [area.type]. Original at [AREACOORD(area.apc)] [area.type].")
@@ -239,7 +239,7 @@
 
 /obj/machinery/power/apc/proc/update_name(updates)
 	if(auto_name)
-		("\improper [get_area_name(area, TRUE)] APC")
+		SetName("\improper [get_area_name(area, TRUE)] APC")
 
 /obj/item/power_control_module
 	name = "power control module"

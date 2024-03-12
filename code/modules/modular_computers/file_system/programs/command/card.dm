@@ -243,7 +243,7 @@
 								id_card.access += access_type
 							break
 	if(id_card)
-		id_card.(text("[id_card.registered_name]'s ID Card ([id_card.assignment])"))
+		id_card.SetName(text("[id_card.registered_name]'s ID Card ([id_card.assignment])"))
 
 	SSnano.update_uis(NM)
 	return 1

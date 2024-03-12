@@ -529,7 +529,7 @@
 		new /obj/effect/decal/cleanable/ash(location)
 		smoketime = 0
 		reagents.clear_reagents()
-		("empty [initial(name)]")
+		SetName("empty [initial(name)]")
 
 /obj/item/clothing/mask/smokable/pipe/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/melee/energy/sword))
@@ -548,7 +548,7 @@
 		smoketime = 1000
 		if(G.reagents)
 			G.reagents.trans_to_obj(src, G.reagents.total_volume)
-		("[G.name]-packed [initial(name)]")
+		SetName("[G.name]-packed [initial(name)]")
 		qdel(G)
 
 	else if(istype(W, /obj/item/flame/lighter))

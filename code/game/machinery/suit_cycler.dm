@@ -385,5 +385,5 @@
 	target_modification.RefitItem(helmet)
 	target_modification.RefitItem(suit)
 
-	if(helmet) helmet.("refitted [helmet.name]")
-	if(suit) suit.("refitted [suit.name]")
+	if(helmet) helmet.SetName("refitted [helmet.name]")
+	if(suit) suit.SetName("refitted [suit.name]")

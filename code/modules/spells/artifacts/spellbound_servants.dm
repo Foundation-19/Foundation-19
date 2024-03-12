@@ -22,7 +22,7 @@
 	set_antag(H.mind, master)
 	var/name_choice = sanitize(input(H, "Choose a name. If you leave this blank, it will be defaulted to your current characters.", "Name change") as null|text, MAX_NAME_LEN)
 	if(name_choice)
-		H.(name_choice)
+		H.SetName(name_choice)
 		H.real_name = name_choice
 
 /datum/spellbound_type/proc/equip_servant(mob/living/carbon/human/H)

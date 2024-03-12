@@ -71,7 +71,7 @@
 
 /obj/item/paper/proc/set_content(text,title)
 	if(title)
-		(title)
+		SetName(title)
 	info = html_encode(text)
 	info = parsepencode(text)
 	update_icon()
@@ -216,7 +216,7 @@
 	// We check loc one level up, so we can rename in clipboards and such. See also: /obj/item/photo/rename()
 	if(!n_name || !CanInteract(usr, GLOB.deep_inventory_state))
 		return
-	(n_name)
+	SetName(n_name)
 	add_fingerprint(usr)
 
 /obj/item/paper/attack_self(mob/living/user as mob)
@@ -518,9 +518,9 @@
 				return
 		var/obj/item/paper_bundle/B = new(src.loc)
 		if (name != "paper")
-			B.(name)
+			B.SetName(name)
 		else if (P.name != "paper" && P.name != "photo")
-			B.(P.name)
+			B.SetName(P.name)
 
 		if(!user.unEquip(P, B) || !user.unEquip(src, B))
 			return

@@ -74,7 +74,7 @@ GLOBAL_LIST_EMPTY(all_disposal_pipe_datums_by_category)
 			new_item.color = pipe_color
 		else if (D.pipe_color != null)
 			new_item.color = D.pipe_color
-		new_item.(D.name)
+		new_item.SetName(D.name)
 		new_item.desc = D.desc
 		new_item.set_dir(D.dir)
 		new_item.icon = D.build_icon
@@ -83,7 +83,7 @@ GLOBAL_LIST_EMPTY(all_disposal_pipe_datums_by_category)
 /datum/pipe/disposal_dispenser/Build(datum/pipe/disposal_dispenser/D, loc, pipe_color = PIPE_COLOR_GREY)
 	if(D.build_path)
 		var/obj/structure/disposalconstruct/new_item = new build_path(loc)
-		new_item.(D.name)
+		new_item.SetName(D.name)
 		new_item.desc = D.desc
 		new_item.set_dir(D.dir)
 		new_item.icon = D.build_icon

@@ -29,7 +29,7 @@ Buildable meters
 		set_dir(SOUTH)
 	else
 		set_dir(P.dir)
-	(P.name)
+	SetName(P.name)
 	desc = P.desc
 
 	connect_types = P.connect_types

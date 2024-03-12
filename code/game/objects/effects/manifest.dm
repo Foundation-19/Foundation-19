@@ -15,7 +15,7 @@
 		dat += text("    <B>[]</B> -  []<BR>", M.name, M.get_assignment())
 	var/obj/item/paper/P = new /obj/item/paper( src.loc )
 	P.info = dat
-	P.("paper- 'Crew Manifest'")
+	P.SetName("paper- 'Crew Manifest'")
 	//SN src = null
 	qdel(src)
 	return

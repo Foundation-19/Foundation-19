@@ -18,7 +18,7 @@
 	material = SSmaterials.get_material_by_name("[material_name]")
 	if(!material)
 		return INITIALIZE_HINT_QDEL
-	("[material.display_name] barricade")
+	SetName("[material.display_name] barricade")
 	desc = "A heavy, solid barrier made of [material.display_name]."
 	color = material.icon_colour
 	set_max_health(material.integrity)
@@ -99,7 +99,7 @@
 	if(!rod_material_name)
 		rod_material_name = MATERIAL_WOOD
 	rod_material = SSmaterials.get_material_by_name("[rod_material_name]")
-	("cheval-de-frise")
+	SetName("cheval-de-frise")
 	desc = "A rather simple [material.display_name] barrier. It menaces with spikes of [rod_material.display_name]."
 	damage = (rod_material.hardness * 0.85)
 	add_overlay(overlay_image(icon, spike_overlay, color = rod_material.icon_colour, flags = RESET_COLOR))

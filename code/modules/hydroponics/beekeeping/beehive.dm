@@ -293,7 +293,7 @@ var/global/list/datum/stack_recipe/wax_recipes = list(
 
 /obj/item/bee_pack/proc/fill()
 	full = initial(full)
-	(initial(name))
+	SetName(initial(name))
 	desc = initial(desc)
 	cut_overlays()
 	add_overlay("beepack-full")

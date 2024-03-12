@@ -48,7 +48,7 @@
 /obj/item/reagent_containers/food/snacks/grown/dried_tobacco/Initialize()
 	. = ..()
 	dry = TRUE
-	("dried [name]")
+	SetName("dried [name]")
 	color = "#a38463"
 /obj/item/reagent_containers/food/snacks/grown/dried_tobacco/bad
 	plantname = "badtobacco"
@@ -67,7 +67,7 @@
 		if(user.unEquip(I))
 			to_chat(user, SPAN_NOTICE("You stick [I] into \the [src]"))
 			filter = 1
-			("filtered [name]")
+			SetName("filtered [name]")
 			brand = "[brand] with a filter"
 			update_icon()
 			qdel(I)

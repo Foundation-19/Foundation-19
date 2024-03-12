@@ -65,7 +65,7 @@
 
 		brainobj = O
 
-		("[initial(name)]: ([brainmob.real_name])")
+		SetName("[initial(name)]: ([brainmob.real_name])")
 		update_icon()
 
 		locked = 1
@@ -108,16 +108,16 @@
 		brainmob = null//Set mmi brainmob var to null
 
 		update_icon()
-		(initial(name))
+		SetName(initial(name))
 
 /obj/item/device/mmi/proc/transfer_identity(mob/living/carbon/human/H)//Same deal as the regular brain proc. Used for human-->robot people.
 	brainmob = new(src)
-	brainmob.(H.real_name)
+	brainmob.SetName(H.real_name)
 	brainmob.real_name = H.real_name
 	brainmob.dna = H.dna
 	brainmob.container = src
 
-	("[initial(name)]: [brainmob.real_name]")
+	SetName("[initial(name)]: [brainmob.real_name]")
 	update_icon()
 	locked = 1
 	return

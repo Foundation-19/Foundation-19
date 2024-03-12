@@ -162,7 +162,7 @@
 	update_icon()
 
 /obj/item/robot_parts/robot_suit/SetDefaultName()
-	(initial(name))
+	SetName(initial(name))
 
 /obj/item/robot_parts/robot_suit/flyer
 	name = "flying robot frame"

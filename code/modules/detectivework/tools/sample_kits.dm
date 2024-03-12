@@ -32,7 +32,7 @@
 	if(!supplied.evidence || !supplied.evidence.len)
 		return 0
 	evidence |= supplied.evidence
-	("[initial(name)] (combined)")
+	SetName("[initial(name)] (combined)")
 	object = supplied.object + ", " + object
 	to_chat(user, SPAN_NOTICE("You transfer the contents of \the [supplied] into \the [src]."))
 	return 1
@@ -45,7 +45,7 @@
 			evidence[print] = stringmerge(evidence[print],supplied.evidence[print])
 		else
 			evidence[print] = supplied.evidence[print]
-	("[initial(name)] (combined)")
+	SetName("[initial(name)] (combined)")
 	object = supplied.object + ", " + object
 	to_chat(user, SPAN_NOTICE("You overlay \the [src] and \the [supplied], combining the print records."))
 	return 1
@@ -86,7 +86,7 @@
 	to_chat(user, SPAN_NOTICE("You firmly press your fingertips onto the card."))
 	var/fullprint = H.get_full_print()
 	evidence[fullprint] = fullprint
-	("[initial(name)] (\the [H])")
+	SetName("[initial(name)] (\the [H])")
 	icon_state = "fingerprint1"
 
 /obj/item/sample/print/attack(mob/living/M, mob/user)
@@ -123,7 +123,7 @@
 		var/fullprint = H.get_full_print()
 		evidence[fullprint] = fullprint
 		copy_evidence(src)
-		("[initial(name)] (\the [H])")
+		SetName("[initial(name)] (\the [H])")
 		icon_state = "fingerprint1"
 		return 1
 	return 0

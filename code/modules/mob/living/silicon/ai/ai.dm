@@ -286,7 +286,7 @@ var/list/ai_verbs_default = list(
 	..()
 	announcement.announcer = pickedName
 	if(eyeobj)
-		eyeobj.("[pickedName] (AI Eye)")
+		eyeobj.SetName("[pickedName] (AI Eye)")
 
 	setup_icon()
 
