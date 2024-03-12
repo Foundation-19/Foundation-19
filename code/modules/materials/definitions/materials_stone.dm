@@ -86,3 +86,16 @@
 
 /material/stone/concrete/get_wall_texture()
 	return texture
+
+/material/ceramic
+	name = MATERIAL_CERAMIC
+	lore_text = "A hard, brittle, heat- and corrosion-resistant material made by firing clay."
+	flags = MATERIAL_BRITTLE
+	shard_type = SHARD_SHARD
+	icon_colour = "#ffb350"
+	weight = 20
+	hardness = MATERIAL_HARD
+	integrity = 100
+	construction_difficulty = MATERIAL_HARD_DIY
+	sale_price = 3
+	value = 15

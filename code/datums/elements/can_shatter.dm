@@ -4,19 +4,19 @@
  */
 /datum/element/can_shatter
 	element_flags = ELEMENT_BESPOKE
-	argument_hash_start_idx = 2
+	id_arg_index = 2
 
-	/// What type of item is spawned as a 'shard' once the shattering happens
-	var/obj/item/shard_type
+	/// What material is given to the spawned shards once the shattering happens
+	var/shard_material
 	/// How many shards total are made when the thing we're attached to shatters
 	var/number_of_shards
 	/// What sound plays when the thing we're attached to shatters
 	var/shattering_sound
 
 /datum/element/can_shatter/Attach(datum/target,
-	shard_type = /obj/item/plate_shard,
+	shard_material = MATERIAL_CERAMIC,
 	number_of_shards = 5,
-	shattering_sound = 'sound/items/ceramic_break.ogg',
+	shattering_sound = 'sounds/items/ceramic_break.ogg',
 	shatters_as_weapon = FALSE,
 	)
 	. = ..()
@@ -24,7 +24,7 @@
 	if(!ismovable(target))
 		return ELEMENT_INCOMPATIBLE
 
-	src.shard_type = shard_type
+	src.shard_material = shard_material
 	src.number_of_shards = number_of_shards
 	src.shattering_sound = shattering_sound
 
@@ -52,7 +52,7 @@
 
 /// Handles the actual shattering part, throwing shards of whatever is defined on the component everywhere
 /datum/element/can_shatter/proc/shatter(atom/movable/source, atom/hit_atom)
-	var/generator/scatter_gen = generator(GEN_CIRCLE, 0, 48, NORMAL_RAND)
+	var/generator/scatter_gen = generator("circle", 0, 48, NORMAL_RAND)
 	var/scatter_turf = get_turf(hit_atom)
 
 	for(var/obj/item/scattered_item as anything in source.contents)
@@ -62,9 +62,8 @@
 		scattered_item.pixel_y = scatter_vector[2]
 
 	for(var/iteration in 1 to number_of_shards)
-		var/obj/item/shard = new shard_type(scatter_turf)
-		shard.pixel_x = rand(-6, 6)
-		shard.pixel_y = rand(-6, 6)
+		var/obj/item/material/shard/shard = new (scatter_turf, shard_material)
+
 	playsound(scatter_turf, shattering_sound, 60, TRUE)
 	if(isobj(source))
 		var/obj/obj_source = source
