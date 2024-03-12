@@ -36,8 +36,8 @@
 	jukebox.ui_interact(user)
 
 
-/obj/item/boombox/MouseDrop(mob/user)
-	jukebox.ui_interact(user)
+/obj/item/boombox/MouseDrop(atom/over)
+	jukebox.ui_interact(usr)
 
 
 /obj/item/boombox/emp_act(severity)

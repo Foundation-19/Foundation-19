@@ -77,7 +77,7 @@ GLOBAL_VAR(href_logfile)
 	to_file(diary, "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]")
 
 	if(config && config.log_runtime)
-		var/runtime_log = file("data/logs/runtime/[date_string]_[time2text(world.timeofday, "hh:mm")]_[game_id].log")
+		var/runtime_log = file("data/logs/runtime/[date_string]_[time2text(world.timeofday, "hh-mm")]_[game_id].log")
 		to_file(runtime_log, "Game [game_id] starting up at [time2text(world.timeofday, "hh:mm.ss")]")
 		log = runtime_log // Note that, as you can see, this is misnamed: this simply moves world.log into the runtime log file.
 
@@ -512,7 +512,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 /world/Del()
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
-		call(debug_server, "auxtools_shutdown")()
+		LIBCALL("debug_server.dll", "auxtools_shutdown")() //! FIXME515 hacky solution till auxtools and sdmm come out with support ~Tsuru
 	callHook("shutdown")
 	return ..()
 

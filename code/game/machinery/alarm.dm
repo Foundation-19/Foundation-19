@@ -318,7 +318,7 @@
 //disables breach detection temporarily
 /obj/machinery/alarm/proc/breach_start_cooldown()
 	breach_cooldown = TRUE
-	addtimer(CALLBACK(src,/obj/machinery/alarm/proc/breach_end_cooldown), 10 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src,TYPE_PROC_REF(/obj/machinery/alarm, breach_end_cooldown)), 10 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
 	return
 
 /obj/machinery/alarm/proc/get_danger_level(current_value, list/danger_levels)
@@ -919,7 +919,7 @@ FIRE ALARM
 	queue_icon_update()
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	RegisterSignal(security_state, COMSIG_SECURITY_LEVEL_CHANGED, /atom/proc/update_icon)
+	RegisterSignal(security_state, COMSIG_SECURITY_LEVEL_CHANGED, TYPE_PROC_REF(/atom, update_icon))
 
 /obj/machinery/firealarm/proc/get_cached_overlay(state)
 	if(!LAZYACCESS(overlays_cache, state))

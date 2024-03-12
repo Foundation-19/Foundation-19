@@ -6684,8 +6684,8 @@
 /area/site53/uez/senioragentoffice)
 "KS" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "Guard Commander's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL5")
+	department = "EZ Commander's Office";
+	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,

@@ -4,6 +4,8 @@ BEDSHEETS
 LINEN BINS
 */
 
+#define BEDSHEET_BIN_MAX_CAPACITY 20
+
 /obj/item/bedsheet
 	name = "bedsheet"
 	desc = "A surprisingly soft linen bedsheet."
@@ -100,7 +102,7 @@ LINEN BINS
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "linenbin-full"
 	anchored = TRUE
-	var/amount = 20
+	var/amount = BEDSHEET_BIN_MAX_CAPACITY
 	var/list/sheets = list()
 	var/obj/item/hidden = null
 
@@ -119,9 +121,12 @@ LINEN BINS
 
 /obj/structure/bedsheetbin/on_update_icon()
 	switch(amount)
-		if(0)				icon_state = "linenbin-empty"
-		if(1 to amount / 2)	icon_state = "linenbin-half"
-		else				icon_state = "linenbin-full"
+		if(0)
+			icon_state = "linenbin-empty"
+		if(1 to BEDSHEET_BIN_MAX_CAPACITY / 2)
+			icon_state = "linenbin-half"
+		else
+			icon_state = "linenbin-full"
 
 
 /obj/structure/bedsheetbin/attackby(obj/item/I as obj, mob/user as mob)
@@ -167,3 +172,5 @@ LINEN BINS
 		hidden.dropInto(loc)
 		visible_message(SPAN_NOTICE("\The [hidden] falls out!"))
 		hidden = null
+
+#undef BEDSHEET_BIN_MAX_CAPACITY

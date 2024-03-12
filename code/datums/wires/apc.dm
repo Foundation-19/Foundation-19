@@ -27,19 +27,19 @@
 		if(WIRE_IDSCAN)
 			A.locked = FALSE
 
-			addtimer(CALLBACK(A, /obj/machinery/power/apc.proc/reset_wire, wire), 30 SECONDS)
+			addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/power/apc, reset_wire), wire), 30 SECONDS)
 
 		if(WIRE_MAIN_POWER1, WIRE_MAIN_POWER2)
 			if(!A.shorted)
 				A.shorted = TRUE
 
-				addtimer(CALLBACK(A, /obj/machinery/power/apc.proc/reset_wire, wire), 120 SECONDS)
+				addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/power/apc, reset_wire), wire), 120 SECONDS)
 
 		if(WIRE_AI_CONTROL)
 			if(!A.aidisabled)
 				A.aidisabled = TRUE
 
-				addtimer(CALLBACK(A, /obj/machinery/power/apc.proc/reset_wire, wire), 1 SECOND)
+				addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/power/apc, reset_wire), wire), 1 SECOND)
 
 /datum/wires/apc/on_cut(wire, mend)
 	var/obj/machinery/power/apc/A = holder

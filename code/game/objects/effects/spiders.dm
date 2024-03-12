@@ -20,6 +20,16 @@
 				qdel(src)
 	return
 
+//allows spiderlings to be killed with hands, harm intent on
+/obj/effect/spider/spiderling/attack_hand(mob/living/carbon/human/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(user.a_intent == I_HURT)
+		user.visible_message(SPAN_WARNING("\the [user] attacked \the [src]"))
+		disturbed()
+		health -= 1
+		healthcheck()
+	return
+
 /obj/effect/spider/attackby(obj/item/W, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
@@ -130,7 +140,6 @@
 	var/travelling_in_vent = 0
 	var/dormant = FALSE    // If dormant, does not add the spiderling to the process list unless it's also growing
 	var/growth_chance = 50 // % chance of beginning growth, and eventually become a beautiful death machine
-
 	var/shift_range = 6
 	var/castes = list(/mob/living/simple_animal/hostile/giant_spider = 2,
 						/mob/living/simple_animal/hostile/giant_spider/guard = 2,
@@ -149,7 +158,7 @@
 		dormant = FALSE
 
 	if(dormant)
-		GLOB.moved_event.register(src, src, /obj/effect/spider/spiderling/proc/disturbed)
+		GLOB.moved_event.register(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
 	else
 		START_PROCESSING(SSobj, src)
 
@@ -164,7 +173,7 @@
 
 /obj/effect/spider/spiderling/Destroy()
 	if(dormant)
-		GLOB.moved_event.unregister(src, src, /obj/effect/spider/spiderling/proc/disturbed)
+		GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
 	STOP_PROCESSING(SSobj, src)
 	walk(src, 0) // Because we might have called walk_to, we must stop the walk loop or BYOND keeps an internal reference to us forever.
 	. = ..()
@@ -183,7 +192,7 @@
 		return
 	dormant = FALSE
 
-	GLOB.moved_event.unregister(src, src, /obj/effect/spider/spiderling/proc/disturbed)
+	GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/spider/spiderling/Bump(atom/user)
@@ -213,7 +222,7 @@
 	if(prob(50))
 		src.visible_message(SPAN_NOTICE("You hear something squeezing through the ventilation ducts."),2)
 	forceMove(exit_vent)
-	addtimer(CALLBACK(src, .proc/end_vent_moving, exit_vent), travel_time)
+	addtimer(CALLBACK(src, PROC_REF(end_vent_moving), exit_vent), travel_time)
 
 /obj/effect/spider/spiderling/proc/end_vent_moving(obj/machinery/atmospherics/unary/vent_pump/exit_vent)
 	if(check_vent(exit_vent))
@@ -247,7 +256,7 @@
 
 				forceMove(entry_vent)
 				var/travel_time = round(get_dist(loc, exit_vent.loc) / 2)
-				addtimer(CALLBACK(src, .proc/start_vent_moving, exit_vent, travel_time), travel_time + rand(20,60))
+				addtimer(CALLBACK(src, PROC_REF(start_vent_moving), exit_vent, travel_time), travel_time + rand(20,60))
 				travelling_in_vent = TRUE
 				return
 			else

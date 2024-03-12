@@ -129,7 +129,7 @@
 	var/list/targetareas = finaltarget.get_areas()
 	targetareas -= locate(/area/space)
 	var/area/finalarea = pick(targetareas)
-	var/turf/targetturf = pick_area_turf(finalarea.type, list(/proc/is_not_space_turf))
+	var/turf/targetturf = pick_area_turf(finalarea.type, list(GLOBAL_PROC_REF(is_not_space_turf)))
 
 	log_and_message_staff("Disperser beam hit sector at [get_area(targetturf)].", location=targetturf)
 	if(chargetype == OVERMAP_WEAKNESS_DROPPOD)

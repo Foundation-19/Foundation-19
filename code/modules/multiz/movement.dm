@@ -145,7 +145,7 @@
 // Entered() which is part of Move(), by spawn()ing we let that complete.  But we want to preserve if we were in client movement
 // or normal movement so other move behavior can continue.
 /atom/movable/proc/begin_falling(lastloc, below)
-	INVOKE_ASYNC(src, /atom/movable/proc/fall_callback, below)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, fall_callback), below)
 
 /atom/movable/proc/fall_callback(turf/below)
 	var/mob/M = src
@@ -317,7 +317,7 @@
 	. = ..()
 	owner = user
 	follow()
-	GLOB.moved_event.register(owner, src, /atom/movable/z_observer/proc/follow)
+	GLOB.moved_event.register(owner, src, TYPE_PROC_REF(/atom/movable/z_observer, follow))
 
 /atom/movable/z_observer/proc/follow()
 
@@ -341,7 +341,7 @@
 	qdel(src)
 
 /atom/movable/z_observer/Destroy()
-	GLOB.moved_event.unregister(owner, src, /atom/movable/z_observer/proc/follow)
+	GLOB.moved_event.unregister(owner, src, TYPE_PROC_REF(/atom/movable/z_observer, follow))
 	owner = null
 	. = ..()
 

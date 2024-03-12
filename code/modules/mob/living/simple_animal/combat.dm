@@ -90,7 +90,7 @@
 	shoot(A)
 	if(ranged_burst_count > 1)
 		for(var/i = 1 to ranged_burst_count)
-			addtimer(CALLBACK(src, .proc/shoot, A), i * ranged_burst_delay)
+			addtimer(CALLBACK(src, PROC_REF(shoot), A), i * ranged_burst_delay)
 			if(needs_reload)
 				if(reload_count >= reload_max)
 					break
