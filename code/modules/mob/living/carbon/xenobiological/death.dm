@@ -12,7 +12,7 @@
 		revive()
 		if (!client) rabid = 1
 		number = rand(1, 1000)
-		set_name("[colour] [is_adult ? "adult" : "baby"] slime ([number])")
+		setName("[colour] [is_adult ? "adult" : "baby"] slime ([number])")
 		return
 
 	. = ..(gibbed, deathmessage, show_dead_message)

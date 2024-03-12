@@ -128,7 +128,7 @@
 		else
 			//create a new sample bag which we'll fill with rock samples
 			filled_bag = new /obj/item/evidencebag(src)
-			filled_bag.set_name("sample bag")
+			filled_bag.setName("sample bag")
 			filled_bag.desc = "a bag for holding research samples."
 
 			icon_state = "sampler1"

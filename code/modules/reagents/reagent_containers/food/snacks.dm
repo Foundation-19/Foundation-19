@@ -441,7 +441,7 @@ GLOBAL_LIST_EMPTY(mobs_by_meat)
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6
-	set_name("warm " + name)
+	setName("warm " + name)
 	addtimer(CALLBACK(src, .proc/cool), 7 MINUTES)
 
 /obj/item/reagent_containers/food/snacks/donkpocket/proc/cool()
@@ -450,7 +450,7 @@ GLOBAL_LIST_EMPTY(mobs_by_meat)
 	warm = 0
 	for(var/reagent in heated_reagents)
 		reagents.del_reagent(reagent)
-	set_name(initial(name))
+	setName(initial(name))
 
 /obj/item/reagent_containers/food/snacks/omelette
 	name = "cheese omelette"

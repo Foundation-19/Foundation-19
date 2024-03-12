@@ -61,7 +61,7 @@
 
 /obj/item/robot_module/drone/finalize_emag()
 	. = ..()
-	emag.set_name("Plasma Cutter")
+	emag.setName("Plasma Cutter")
 
 /obj/item/robot_module/drone/finalize_synths()
 	. = ..()

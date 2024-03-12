@@ -175,7 +175,7 @@
 		//if area isn't specified use current
 		area = A
 	if(autoname)
-		set_name("\improper [area.name] APC")
+		setName("\improper [area.name] APC")
 	area.apc = src
 
 	. = ..()

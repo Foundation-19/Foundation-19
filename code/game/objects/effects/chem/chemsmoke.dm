@@ -205,7 +205,7 @@
 
 /datum/effect/effect/system/smoke_spread/chem/spores/spawnSmoke(turf/T, icon/I, smoke_duration, dist = 1)
 	var/obj/effect/effect/smoke/chem/spores = new /obj/effect/effect/smoke/chem(location)
-	spores.set_name("cloud of [seed.seed_name] [seed.seed_noun]")
+	spores.setName("cloud of [seed.seed_name] [seed.seed_noun]")
 	..(T, I, smoke_duration, dist, passed_smoke=spores)
 
 

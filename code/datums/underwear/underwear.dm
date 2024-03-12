@@ -65,7 +65,7 @@
 		return
 
 	var/obj/item/underwear/UW = new underwear_type()
-	UW.set_name(underwear_name)
+	UW.setName(underwear_name)
 	UW.gender = underwear_gender
 	UW.icon = icon
 	UW.icon_state = icon_state

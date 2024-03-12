@@ -41,7 +41,7 @@
 			copycontents = replacetext(copycontents, "<font face=\"[c.crayonfont]\" color=", "<font face=\"[c.crayonfont]\" nocolor=")	//This basically just breaks the existing color tag, which we need to do because the innermost tag takes priority.
 			copy.info += copycontents
 			copy.info += "</font>"
-			copy.set_name("Copy - " + c.name)
+			copy.setName("Copy - " + c.name)
 			copy.fields = c.fields
 			copy.updateinfolinks()
 		to_chat(usr, SPAN_NOTICE("You tear off the carbon-copy!"))

@@ -43,7 +43,7 @@
 		return INITIALIZE_HINT_QDEL
 
 	var/obj/item/organ/O = get_targeted_organ()
-	set_name("[initial(name)] ([O.name])")
+	setName("[initial(name)] ([O.name])")
 	RegisterSignal(affecting, COMSIG_ORGAN_DISMEMBERED, .proc/on_organ_loss)
 	RegisterSignal(assailant.zone_sel, COMSIG_SET_SELECTED_ZONE, .proc/on_target_change)
 
@@ -128,7 +128,7 @@
 		to_chat(assailant, SPAN_WARNING("You fail to grab \the [affecting] there as they do not have that bodypart!"))
 		return
 
-	set_name("[initial(name)] ([O.name])")
+	setName("[initial(name)] ([O.name])")
 	to_chat(assailant, SPAN_NOTICE("You are now holding \the [affecting] by \the [O]."))
 	if(!istype(get_targeted_organ(), /obj/item/organ))
 		current_grab.let_go(src)

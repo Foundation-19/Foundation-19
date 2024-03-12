@@ -174,7 +174,7 @@
 		crash_with("[type] created in nullspace.")
 		return INITIALIZE_HINT_QDEL
 	master = loc
-	set_name(master.name)
+	setName(master.name)
 	set_dir(master.dir)
 
 	if(istype(master, /atom/movable))

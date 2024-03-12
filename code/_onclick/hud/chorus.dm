@@ -54,7 +54,7 @@
 	adding += new /obj/screen/chorus_build()
 
 	mymob.healths = new /obj/screen()
-	mymob.healths.set_name("health")
+	mymob.healths.setName("health")
 	mymob.healths.icon = 'icons/mob/screen1_Midnight.dmi'
 	mymob.healths.icon_state = "health0"
 	mymob.healths.screen_loc = ui_construct_health

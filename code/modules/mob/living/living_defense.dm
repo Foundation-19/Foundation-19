@@ -359,7 +359,7 @@
 
 		B.UpdateIcon()
 
-		B.set_name(A.UpdateName())
+		B.setName(A.UpdateName())
 
 		client.screen += B
 

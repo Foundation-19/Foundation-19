@@ -34,7 +34,7 @@
 				if(istype(B))
 					beakers -= B
 					user.put_in_hands(B)
-		set_name("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
+		setName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
 	if(stage > 1 && !active && clown_check(user))
 		to_chat(user, SPAN_WARNING("You prime \the [name]!"))
 
@@ -69,18 +69,18 @@
 			var/obj/item/device/assembly/timer/T = detonator.a_right
 			det_time = T.time
 		icon_state = initial(icon_state) +"_ass"
-		set_name("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
+		setName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
 		stage = 1
 	else if(isScrewdriver(W) && path != 2)
 		if(stage == 1)
 			path = 1
 			if(beakers.len)
 				to_chat(user, SPAN_NOTICE("You lock the assembly."))
-				set_name("grenade")
+				setName("grenade")
 			else
 //				to_chat(user, SPAN_WARNING("You need to add at least one beaker before locking the assembly."))
 				to_chat(user, SPAN_NOTICE("You lock the empty assembly."))
-				set_name("fake grenade")
+				setName("fake grenade")
 			playsound(src.loc, 'sounds/items/Screwdriver.ogg', 25, -3)
 			icon_state = initial(icon_state) +"_locked"
 			stage = 2
@@ -92,7 +92,7 @@
 			else
 				to_chat(user, SPAN_NOTICE("You unlock the assembly."))
 				playsound(src.loc, 'sounds/items/Screwdriver.ogg', 25, -3)
-				set_name("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
+				setName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
 				icon_state = initial(icon_state) + (detonator?"_ass":"")
 				stage = 1
 				active = 0
@@ -108,7 +108,7 @@
 				to_chat(user, SPAN_NOTICE("You add \the [W] to the assembly."))
 				beakers += W
 				stage = 1
-				set_name("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
+				setName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
 			else
 				to_chat(user, SPAN_WARNING("\The [W] is empty."))
 

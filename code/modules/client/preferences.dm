@@ -294,7 +294,7 @@
 				O.robotize()
 		else //normal organ
 			O.force_icon = initial(O.force_icon)
-			O.set_name(initial(O.name))
+			O.setName(initial(O.name))
 			O.desc = initial(O.desc)
 
 	//For species that don't care about your silly prefs

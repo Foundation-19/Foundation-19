@@ -25,8 +25,8 @@
 
 	frame.is_wired = FRAME_WIRED_ADJUSTED
 	frame.is_reinforced = FRAME_REINFORCED_WELDED
-	frame.set_name = name
-	frame.name = "frame of \the [frame.set_name]"
+	frame.setName = name
+	frame.name = "frame of \the [frame.setName]"
 	frame.material = material
 	frame.queue_icon_update()
 

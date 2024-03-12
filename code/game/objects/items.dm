@@ -910,7 +910,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/inherit_custom_item_data(datum/custom_item/citem)
 	. = src
 	if(citem.item_name)
-		set_name(citem.item_name)
+		setName(citem.item_name)
 	if(citem.item_desc)
 		desc = citem.item_desc
 	if(citem.item_icon_state)

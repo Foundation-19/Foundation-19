@@ -71,7 +71,7 @@
 					return
 			locked = 1
 			registered_name = null
-			set_name(initial(name))
+			setName(initial(name))
 			desc = initial(desc)
 
 // LCZ - Guard

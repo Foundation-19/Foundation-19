@@ -1,10 +1,10 @@
 /obj/effect/overmap/visitable/sector/exoplanet/proc/adapt_animal(mob/living/simple_animal/A, setname = TRUE)
 	if (setname)
 		if (species[A.type])
-			A.set_name(species[A.type])
+			A.setName(species[A.type])
 			A.real_name = species[A.type]
 		else
-			A.set_name("alien creature")
+			A.setName("alien creature")
 			A.real_name = "alien creature"
 			add_verb(A, /mob/living/simple_animal/proc/name_species)
 	if (atmosphere)
@@ -66,7 +66,7 @@
 	log_and_message_staff("renamed [species_type] to [newname]")
 	for (var/mob/living/simple_animal/A in animals)
 		if (istype(A,species_type))
-			A.set_name(newname)
+			A.setName(newname)
 			A.real_name = newname
 			remove_verb(A, /mob/living/simple_animal/proc/name_species)
 	return TRUE

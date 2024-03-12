@@ -13,10 +13,10 @@
 /obj/item/reagent_containers/food/drinks/jar/on_reagent_change()
 	if (reagents.reagent_list.len > 0)
 		icon_state ="jar_what"
-		set_name("jar of something")
+		setName("jar of something")
 		desc = "You can't really tell what this is."
 	else
 		icon_state = initial(icon_state)
-		set_name(initial(name))
+		setName(initial(name))
 		desc = "A jar. You're not sure what it's supposed to hold."
 		return

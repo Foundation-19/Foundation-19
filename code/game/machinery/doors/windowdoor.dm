@@ -218,9 +218,9 @@
 			var/obj/structure/windoor_assembly/wa = new/obj/structure/windoor_assembly(src.loc)
 			if (istype(src, /obj/machinery/door/window/brigdoor))
 				wa.secure = "secure_"
-				wa.set_name("Secure Wired Windoor Assembly")
+				wa.setName("Secure Wired Windoor Assembly")
 			else
-				wa.set_name("Wired Windoor Assembly")
+				wa.setName("Wired Windoor Assembly")
 			if (src.base_state == "right" || src.base_state == "rightsecure")
 				wa.facing = "r"
 			wa.set_dir(src.dir)

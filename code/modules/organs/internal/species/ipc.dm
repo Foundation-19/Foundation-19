@@ -46,7 +46,7 @@
 	brainmob = new(src)
 
 	if(istype(H))
-		brainmob.set_name(H.real_name)
+		brainmob.setName(H.real_name)
 		brainmob.real_name = H.real_name
 		brainmob.dna = H.dna.Clone()
 		brainmob.add_language(LANGUAGE_EAL)
@@ -111,7 +111,7 @@
 			var/sneaky = sanitizeSafe(input(brainmob, "You're safe. Pick a new name as cover? Leave blank to skip.", "Get Sneaky?", brainmob.real_name) as text, MAX_NAME_LEN)
 			if (sneaky)
 				brainmob.real_name = sneaky
-				brainmob.set_name(brainmob.real_name)
+				brainmob.setName(brainmob.real_name)
 				UpdateNames()
 		else
 			to_chat(brainmob, SPAN_NOTICE("You're safe! Your brain didn't manage to replace you. This time."))
@@ -187,7 +187,7 @@
 	..()
 
 /obj/item/organ/internal/posibrain/proc/PickName()
-	src.brainmob.set_name("[pick(list("PBU","HIU","SINA","ARMA","OSI"))]-[random_id(type,100,999)]")
+	src.brainmob.setName("[pick(list("PBU","HIU","SINA","ARMA","OSI"))]-[random_id(type,100,999)]")
 	src.brainmob.real_name = src.brainmob.name
 
 /obj/item/organ/internal/posibrain/proc/shackle(given_lawset)
@@ -217,7 +217,7 @@
 	if(H?.mind)
 		brainmob.set_stat(CONSCIOUS)
 		H.mind.transfer_to(brainmob)
-		brainmob.set_name(H.real_name)
+		brainmob.setName(H.real_name)
 		brainmob.real_name = H.real_name
 		brainmob.dna = H.dna.Clone()
 		brainmob.show_laws(brainmob)
@@ -281,10 +281,10 @@
 	var/new_name = owner ? owner.real_name : (brainmob ? brainmob.real_name : "")
 	if (new_name)
 		if (brainmob)
-			brainmob.set_name(new_name)
-		set_name("\the [new_name]'s [initial(name)]")
+			brainmob.setName(new_name)
+		setName("\the [new_name]'s [initial(name)]")
 		return
-	set_name("\the [initial(name)]")
+	setName("\the [initial(name)]")
 
 /obj/item/organ/internal/posibrain/replaced(mob/living/target)
 

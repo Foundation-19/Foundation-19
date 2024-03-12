@@ -21,7 +21,7 @@
 	if(W.sharp && W.edge && !sharp)
 		user.visible_message(SPAN_WARNING("[user] sharpens [src] with [W]."), SPAN_WARNING("You sharpen [src] using [W]."))
 		sharp = TRUE
-		set_name("sharpened " + name)
+		setName("sharpened " + name)
 		update_force()
 	return ..()
 

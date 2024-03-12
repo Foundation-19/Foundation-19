@@ -59,7 +59,7 @@
 	qdel(worm.host_brain)
 	worm.host_brain = new(worm)
 	worm.host_brain.ckey = worm.host.ckey
-	worm.host_brain.set_name(worm.host.name)
+	worm.host_brain.setName(worm.host.name)
 	if(!worm.host_brain.computer_id)
 		worm.host_brain.computer_id = h2b_id
 	if(!worm.host_brain.lastKnownIP)

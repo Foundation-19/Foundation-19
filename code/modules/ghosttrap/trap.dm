@@ -126,7 +126,7 @@ var/list/ghost_traps
 		var/newname = sanitizeSafe(input(target, "Enter a name, or leave blank for the default name.", "Name change", target.real_name) as text, MAX_NAME_LEN)
 		if (newname)
 			target.real_name = newname
-			target.set_name(target.real_name)
+			target.setName(target.real_name)
 			return TRUE
 	return FALSE
 

@@ -69,7 +69,7 @@ Right Click       - List/Create Area
 		if (!new_name)
 			return
 		var/area/new_area = new
-		new_area.set_name(new_name)
+		new_area.setName(new_name)
 		new_area.power_equip = 0
 		new_area.power_light = 0
 		new_area.power_environ = 0

@@ -840,7 +840,7 @@
 	if(prob(30))
 		icon_state = "donut2"
 		overlay_state = "box-donut2"
-		set_name("frosted donut")
+		setName("frosted donut")
 	center_of_mass = "x=19;y=16"
 
 /obj/item/reagent_containers/food/snacks/donut/chaos
@@ -868,7 +868,7 @@
 	if(prob(30))
 		icon_state = "donut2"
 		overlay_state = "box-donut2"
-		set_name("frosted chaos donut")
+		setName("frosted chaos donut")
 
 /obj/item/reagent_containers/food/snacks/donut/jelly
 	name = "jelly donut"
@@ -888,7 +888,7 @@
 	if(prob(30))
 		icon_state = "jdonut2"
 		overlay_state = "box-donut2"
-		set_name("frosted jelly donut")
+		setName("frosted jelly donut")
 
 /obj/item/reagent_containers/food/snacks/donut/slimejelly
 	name = "jelly donut"
@@ -908,7 +908,7 @@
 	if(prob(30))
 		src.icon_state = "jdonut2"
 		src.overlay_state = "box-donut2"
-		src.set_name("frosted jelly donut")
+		src.setName("frosted jelly donut")
 
 /obj/item/reagent_containers/food/snacks/donut/cherryjelly
 	name = "jelly donut"
@@ -928,7 +928,7 @@
 	if(prob(30))
 		icon_state = "jdonut2"
 		overlay_state = "box-donut2"
-		set_name("frosted jelly donut")
+		setName("frosted jelly donut")
 
 // jellied toast is a pastry as a stone axe is a piece of scientific equipment, but it has nowhere better to go
 /obj/item/reagent_containers/food/snacks/jelliedtoast

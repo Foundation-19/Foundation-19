@@ -314,7 +314,7 @@
 	else if(istype(thing, /obj/item/device/kit/paint))
 		user.visible_message(SPAN_NOTICE("\The [user] opens \the [thing] and spends some quality time customising \the [src]."))
 		var/obj/item/device/kit/paint/P = thing
-		set_name(P.new_name)
+		setName(P.new_name)
 		desc = P.new_desc
 		for(var/obj/item/mech_component/comp in list(arms, legs, head, body))
 			comp.decal = P.new_icon
@@ -473,7 +473,7 @@
 	var/new_name = sanitize(input("Enter a new exosuit designation.", "Exosuit Name") as text|null, max_length = MAX_NAME_LEN)
 	if(!new_name || new_name == name || (user != src && !(user in pilots)))
 		return
-	set_name(new_name)
+	setName(new_name)
 	to_chat(user, SPAN_NOTICE("You have redesignated this exosuit as \the [name]."))
 
 /mob/living/exosuit/get_inventory_slot(obj/item/I)

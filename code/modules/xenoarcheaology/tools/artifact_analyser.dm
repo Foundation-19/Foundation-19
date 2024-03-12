@@ -72,7 +72,7 @@
 
 		src.visible_message("<b>[name]</b> states, \"Scanning complete.\"")
 		var/obj/item/paper/P = new(src.loc)
-		P.set_name("[src] report #[++report_num]")
+		P.setName("[src] report #[++report_num]")
 		P.info = "<b>[src] analysis report #[report_num]</b><br>"
 		P.info += "<br>"
 		P.info += "\icon[scanned_object] [results]"

@@ -70,7 +70,7 @@
 		var/datum/mind/minion = m
 		to_chat(minion.current, "Your master is now known as [new_name]")
 		minion.special_role = "Servant of [new_name]"
-	eyeobj.set_name("[src] ([eyeobj.name_sufix])")
+	eyeobj.setName("[src] ([eyeobj.name_sufix])")
 	return 1
 
 //Whether we are near an important structure.

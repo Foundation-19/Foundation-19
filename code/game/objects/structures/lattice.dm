@@ -25,7 +25,7 @@
 	if(!istype(material))
 		return INITIALIZE_HINT_QDEL
 
-	set_name("[material.display_name] lattice")
+	setName("[material.display_name] lattice")
 	desc = "A lightweight support [material.display_name] lattice."
 	color =  material.icon_colour
 

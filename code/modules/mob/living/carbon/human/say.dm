@@ -1,7 +1,7 @@
 /mob/living/carbon/human/say(message, datum/language/speaking = null, whispering)
 	if(name != GetVoice())
 		if(get_id_name("Unknown") == GetVoice())
-			set_name(get_id_name("Unknown"))
+			setName(get_id_name("Unknown"))
 
 	//parse the language code and consume it
 	if(!speaking)

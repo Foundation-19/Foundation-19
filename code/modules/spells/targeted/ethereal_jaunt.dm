@@ -39,7 +39,7 @@
 			var/mobloc = get_turf(target.loc)
 			jaunt_holder = new/obj/effect/dummy/spell_jaunt(mobloc)
 			animation = new/atom/movable/overlay(mobloc)
-			animation.set_name("residue")
+			animation.setName("residue")
 			animation.set_density(FALSE)
 			animation.anchored = TRUE
 			animation.icon = 'icons/mob/mob.dmi'

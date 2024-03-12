@@ -324,7 +324,7 @@ its easier to just keep the beam vertical.
 	else
 		icon_state = new_icon_state
 
-/atom/proc/set_name(new_name)
+/atom/proc/setName(new_name)
 	var/old_name = name
 	if(old_name != new_name)
 		name = new_name

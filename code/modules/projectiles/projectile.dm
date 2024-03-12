@@ -363,7 +363,7 @@
 /obj/item/projectile/proc/get_shrapnel()
 	if(shrapnel_type)
 		var/obj/item/SP = new shrapnel_type()
-		SP.set_name((name != "shrapnel")? "[name] shrapnel" : "shrapnel")
+		SP.setName((name != "shrapnel")? "[name] shrapnel" : "shrapnel")
 		SP.desc += " It looks like it was fired from \the [shot_from]."
 		return SP
 

@@ -87,7 +87,7 @@
 		desc = "This item is completely [pick("alien","bizarre")]."
 
 	//icon and icon_state should have already been set
-	I.set_name(name)
+	I.setName(name)
 	I.desc = desc
 
 	if(prob(5))
@@ -161,7 +161,7 @@
 		//new_item = new /obj/item/vampiric(loc)
 	else
 		new_item = new(loc)
-	new_item.set_name("statuette")
+	new_item.setName("statuette")
 	new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 	new_item.icon_state = "statuette"
 
@@ -177,7 +177,7 @@
 
 /obj/item/archaeological_find/instrument/spawn_item()
 	var/obj/item/new_item = new(loc)
-	new_item.set_name("instrument")
+	new_item.setName("instrument")
 	new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 	new_item.icon_state = "instrument"
 	if(prob(30))

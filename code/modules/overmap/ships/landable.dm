@@ -92,7 +92,7 @@
 
 /obj/effect/shuttle_landmark/visiting_shuttle/Initialize(mapload, obj/effect/shuttle_landmark/ship/master, _name)
 	core_landmark = master
-	set_name(_name)
+	setName(_name)
 	landmark_tag = master.shuttle_name + _name
 	RegisterSignal(master, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
 	. = ..()

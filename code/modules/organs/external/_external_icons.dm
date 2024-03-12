@@ -52,7 +52,7 @@ var/list/limb_icon_cache = list()
 /obj/item/organ/external/head/removed()
 	update_icon(1)
 	if(owner)
-		set_name("[owner.real_name]'s head")
+		setName("[owner.real_name]'s head")
 		addtimer(CALLBACK(owner, /mob/living/carbon/human/proc/update_hair), 1, TIMER_UNIQUE)
 	..()
 

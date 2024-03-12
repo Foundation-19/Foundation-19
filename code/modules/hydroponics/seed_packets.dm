@@ -51,10 +51,10 @@ var/global/list/plant_seed_sprites = list()
 	add_overlay(seed_overlay)
 
 	if(is_seeds)
-		src.set_name("packet of [seed.seed_name] [seed.seed_noun]")
+		src.setName("packet of [seed.seed_name] [seed.seed_noun]")
 		src.desc = "It has a picture of [seed.display_name] on the front."
 	else
-		src.set_name("sample of [seed.seed_name] [seed.seed_noun]")
+		src.setName("sample of [seed.seed_name] [seed.seed_noun]")
 		src.desc = "It's labelled as coming from [seed.display_name]."
 
 /obj/item/seeds/examine(mob/user)
@@ -68,7 +68,7 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/cutting/update_appearance()
 	..()
-	src.set_name("packet of [seed.seed_name] cuttings")
+	src.setName("packet of [seed.seed_name] cuttings")
 
 /obj/item/seeds/random
 	seed_type = null

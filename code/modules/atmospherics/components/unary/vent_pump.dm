@@ -242,7 +242,7 @@
 		if(A && !A.air_vent_names[id_tag])
 			var/new_name = "[A.name] Vent Pump #[A.air_vent_names.len+1]"
 			A.air_vent_names[id_tag] = new_name
-			set_name(new_name)
+			setName(new_name)
 	. = ..()
 
 /obj/machinery/atmospherics/unary/vent_pump/proc/purge()

@@ -283,7 +283,7 @@
 	current_heat_capacity = initial(current_heat_capacity)
 	update_use_power(POWER_USE_IDLE)
 	update_icon()
-	set_name(initial(name))
+	setName(initial(name))
 	return
 
 /obj/machinery/atmospherics/unary/cryo_cell/AltClick(mob/user)
@@ -326,7 +326,7 @@
 	update_use_power(POWER_USE_ACTIVE)
 	add_fingerprint(usr)
 	update_icon()
-	set_name("[name] ([occupant])")
+	setName("[name] ([occupant])")
 	return 1
 
 	//Like grab-putting, but for mouse-dropping.

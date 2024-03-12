@@ -113,7 +113,7 @@
 		if(!icon_state)
 			icon = holding.icon
 			icon_state = holding.icon_state
-		set_name(holding.name)
+		setName(holding.name)
 		desc = "[holding.desc] This one is suitable for installation on an exosuit."
 
 

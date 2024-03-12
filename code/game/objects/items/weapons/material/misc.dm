@@ -37,7 +37,7 @@
 
 /obj/item/material/harpoon/bomb/proc/handle_afterbomb()
 	spent = TRUE
-	set_name("broken harpoon")
+	setName("broken harpoon")
 	desc = "A short spear with just a barb - if it once had a spearhead, it doesn't any more."
 	icon_state = "harpoon_bomb_spent"
 	force_multiplier = 0.1

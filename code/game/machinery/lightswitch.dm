@@ -22,7 +22,7 @@
 		src.connected_area = get_area(src)
 
 	if(name == initial(name))
-		set_name("light switch ([connected_area.name])")
+		setName("light switch ([connected_area.name])")
 
 	connected_area.set_lightswitch(on)
 	update_icon()

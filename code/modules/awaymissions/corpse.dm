@@ -91,9 +91,9 @@
 
 	var/decl/cultural_info/culture = M.get_cultural_value(TAG_CULTURE)
 	if(culture && CORPSE_SPAWNER_RANDOM_NAME & spawn_flags)
-		M.set_name(culture.get_random_name(M.gender))
+		M.setName(culture.get_random_name(M.gender))
 	else
-		M.set_name(name)
+		M.setName(name)
 	M.real_name = M.name
 
 #undef HEX_COLOR_TO_RGB_ARGS

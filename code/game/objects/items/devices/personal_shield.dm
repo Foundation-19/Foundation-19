@@ -174,6 +174,6 @@
 
 /obj/item/device/personal_shield/proc/update_name()
 	if(shield)
-		set_name("activated [initial(name)]")
+		setName("activated [initial(name)]")
 	else
-		set_name(initial(name))
+		setName(initial(name))

@@ -15,10 +15,10 @@
 		explosion_resistance = reinf_material.explosion_resistance
 
 	if(reinf_material)
-		set_name("reinforced [material.display_name] [material.wall_name]")
+		setName("reinforced [material.display_name] [material.wall_name]")
 		desc = "It seems to be a section of hull reinforced with [reinf_material.display_name] and plated with [material.display_name]."
 	else
-		set_name("[material.display_name] [material.wall_name]")
+		setName("[material.display_name] [material.wall_name]")
 		desc = "It seems to be a section of hull plated with [material.display_name]."
 
 	set_opacity(material.opacity >= 0.5)

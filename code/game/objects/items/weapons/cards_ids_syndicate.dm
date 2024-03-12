@@ -203,7 +203,7 @@
 					color = initial(color)
 					detail_color = initial(detail_color)
 					extra_details = initial(extra_details)
-					set_name(initial(name))
+					setName(initial(name))
 					registered_name = initial(registered_name)
 					unset_registered_user()
 					sex = initial(sex)

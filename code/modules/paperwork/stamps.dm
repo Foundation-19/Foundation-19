@@ -67,5 +67,5 @@
 		var/obj/item/stamp/chosen_stamp = stamps[capitalize(input_stamp)]
 
 		if(chosen_stamp)
-			set_name(chosen_stamp.name)
+			setName(chosen_stamp.name)
 			icon_state = chosen_stamp.icon_state

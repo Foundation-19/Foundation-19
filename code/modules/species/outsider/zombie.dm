@@ -397,7 +397,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	..(new_loc, SPECIES_ZOMBIE)
 
 	var/decl/cultural_info/culture = get_cultural_value(TAG_CULTURE)
-	set_name(culture.get_random_name(gender))
+	setName(culture.get_random_name(gender))
 	real_name = name
 
 	var/decl/hierarchy/outfit/outfit = pick(

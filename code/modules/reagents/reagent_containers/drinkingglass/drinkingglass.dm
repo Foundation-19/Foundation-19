@@ -151,7 +151,7 @@
 
 	if (length(reagents?.reagent_list))
 		var/datum/reagent/R = reagents.get_master_reagent()
-		set_name("[base_name] of [R.glass_name ? R.glass_name : "something"]")
+		setName("[base_name] of [R.glass_name ? R.glass_name : "something"]")
 		desc = R.glass_desc || custom_desc || initial(desc)
 
 		var/list/under_liquid = list()
@@ -186,7 +186,7 @@
 		add_overlay(over_liquid)
 
 	else
-		set_name(custom_name || initial(name))
+		setName(custom_name || initial(name))
 		desc = custom_desc || initial(desc)
 
 	var/side = "left"

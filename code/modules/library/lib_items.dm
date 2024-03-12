@@ -36,7 +36,7 @@
 		if(!newname)
 			return
 		else
-			set_name("bookcase ([newname])")
+			setName("bookcase ([newname])")
 	else if(isScrewdriver(O))
 		playsound(loc, 'sounds/items/Screwdriver.ogg', 75, 1)
 		to_chat(user, SPAN_NOTICE("You begin dismantling \the [src]."))
@@ -193,7 +193,7 @@
 					to_chat(usr, "The title is invalid.")
 					return
 				else
-					src.set_name(newtitle)
+					src.setName(newtitle)
 					src.title = newtitle
 			if("Contents")
 				var/content = sanitize(input("Write your book's contents (HTML NOT allowed):") as message|null, MAX_BOOK_MESSAGE_LEN)

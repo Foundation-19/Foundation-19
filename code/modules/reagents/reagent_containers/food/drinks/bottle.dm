@@ -547,7 +547,7 @@
 	reagents.add_reagent(/datum/reagent/ethanol/lunabrandy, 100)
 	var/namepick = pick("Selenian","New Vegas","Yueliang","Gideon","New Amsterdam","Saurian")
 	var/typepick = pick("Deluxe Brandy","Premium Brandy","Luxury Brandy","Expensive Brandy","Special Brandy")
-	set_name("[namepick] [typepick]")
+	setName("[namepick] [typepick]")
 
 //////////////////////////JUICES AND STUFF ///////////////////////
 

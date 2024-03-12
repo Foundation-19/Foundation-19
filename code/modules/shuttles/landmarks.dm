@@ -36,7 +36,7 @@
 	else
 		base_area = locate(base_area || world.area)
 
-	set_name(name + " ([x],[y])")
+	setName(name + " ([x],[y])")
 	SSshuttle.register_landmark(landmark_tag, src)
 
 /obj/effect/shuttle_landmark/LateInitialize()
@@ -106,7 +106,7 @@
 
 /obj/effect/shuttle_landmark/automatic/sector_set(obj/effect/overmap/visitable/O)
 	..()
-	set_name("[O.name] - [initial(name)] ([x],[y])")
+	setName("[O.name] - [initial(name)] ([x],[y])")
 
 //Subtype that calls explosion on init to clear space for shuttles
 /obj/effect/shuttle_landmark/automatic/clearing
@@ -146,7 +146,7 @@
 	anchored = TRUE
 
 	var/obj/effect/shuttle_landmark/automatic/mark = new(T)
-	mark.set_name("Beacon signal ([T.x],[T.y])")
+	mark.setName("Beacon signal ([T.x],[T.y])")
 	T.hotspot_expose(1500, 5)
 	update_icon()
 

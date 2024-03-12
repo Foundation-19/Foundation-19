@@ -44,7 +44,7 @@
 	parent = creation
 
 	if(LAZYLEN(name))
-		parent.set_name(name)
+		parent.setName(name)
 
 	if(classification == SCP_SAFE)
 		set_faction(parent, MOB_FACTION_NEUTRAL)

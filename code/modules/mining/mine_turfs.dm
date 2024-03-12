@@ -78,10 +78,10 @@ var/list/mining_floors = list()
 
 /turf/simulated/mineral/on_update_icon(update_neighbors)
 	if(!istype(mineral))
-		set_name(initial(name))
+		setName(initial(name))
 		icon_state = "rock"
 	else
-		set_name("[mineral.ore_name] deposit")
+		setName("[mineral.ore_name] deposit")
 
 	cut_overlays()
 
