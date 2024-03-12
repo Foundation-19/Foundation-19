@@ -22,7 +22,7 @@
 
 //allows spiderlings to be killed with hands, harm intent on
 /obj/effect/spider/spiderling/attack_hand(mob/living/carbon/human/user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	if(user.a_intent == I_HURT)
 		user.visible_message(SPAN_WARNING("\the [user] attacked \the [src]"))
 		disturbed()
