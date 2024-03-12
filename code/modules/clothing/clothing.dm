@@ -229,6 +229,7 @@
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
 	audio_insulation = A_INSL_PERFECT
 	volume_multiplier = 0.1
+	matter = list(MATERIAL_PLASTIC = 25)
 
 
 ///////////////////////////////////////////////////////////////////////
