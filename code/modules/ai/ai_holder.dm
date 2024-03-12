@@ -80,7 +80,7 @@
 	holder = new_holder
 	home_turf = get_turf(holder)
 	manage_processing(AI_PROCESSING)
-	RegisterSignal(holder, COMSIG_SET_STAT, .proc/holder_stat_change)
+	RegisterSignal(holder, COMSIG_SET_STAT, PROC_REF(holder_stat_change))
 	..()
 
 /datum/ai_holder/Destroy()

@@ -81,7 +81,7 @@
 
 /obj/item/paper/sticky/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_MOVED, /obj/item/paper/sticky/proc/reset_persistence_tracking)
+	RegisterSignal(src, COMSIG_MOVED, TYPE_PROC_REF(/obj/item/paper/sticky, reset_persistence_tracking))
 
 /obj/item/paper/sticky/proc/reset_persistence_tracking()
 	SSpersistence.forget_value(src, /datum/persistent/paper/sticky)

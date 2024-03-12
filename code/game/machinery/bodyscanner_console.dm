@@ -42,7 +42,7 @@
 		connected = locate(/obj/machinery/bodyscanner, get_step(src, D))
 		if(connected)
 			break
-		RegisterSignal(connected, COMSIG_PARENT_QDELETING, .proc/unlink_scanner)
+		RegisterSignal(connected, COMSIG_PARENT_QDELETING, PROC_REF(unlink_scanner))
 
 /obj/machinery/body_scanconsole/proc/unlink_scanner(obj/machinery/bodyscanner/scanner)
 	UnregisterSignal(scanner, COMSIG_PARENT_QDELETING)
@@ -52,7 +52,7 @@
 	for(var/obj/machinery/body_scan_display/D in SSmachines.machinery)
 		if (AreConnectedZLevels(D.z, z))
 			connected_displays += D
-			RegisterSignal(D, COMSIG_PARENT_QDELETING, .proc/remove_display)
+			RegisterSignal(D, COMSIG_PARENT_QDELETING, PROC_REF(remove_display))
 	return !!connected_displays.len
 
 /obj/machinery/body_scanconsole/attack_hand(mob/user)

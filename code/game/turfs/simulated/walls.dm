@@ -43,7 +43,7 @@
 	hitsound = material.hitsound
 
 /turf/simulated/wall/Initialize()
-	set_extension(src, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
+	set_extension(src, /datum/extension/penetration/proc_call, PROC_REF(CheckPenetration))
 	START_PROCESSING(SSturf, src) //Used for radiation.
 	. = ..()
 
@@ -249,7 +249,7 @@
 	if(!can_melt())
 		return
 	var/obj/effect/overlay/O = new/obj/effect/overlay( src )
-	O.setName("Thermite")
+	O.("Thermite")
 	O.desc = "Looks hot."
 	O.icon = 'icons/effects/fire.dmi'
 	O.icon_state = "2"

@@ -44,7 +44,7 @@
 	parent = creation
 
 	if(LAZYLEN(name))
-		parent.setName(name)
+		parent.(name)
 
 	if(classification == SCP_SAFE)
 		set_faction(parent, MOB_FACTION_NEUTRAL)
@@ -64,7 +64,7 @@
 		qdel(parent)
 		return
 
-	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, .proc/OnExamine)
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, PROC_REF(OnExamine))
 	onGain()
 
 /datum/scp/Destroy()

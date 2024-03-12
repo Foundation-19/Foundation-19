@@ -44,7 +44,7 @@
 
 /obj/structure/chorus/biter/Initialize(maploading, o)
 	. = ..()
-	RegisterSignal(get_turf(src), COMSIG_ENTERED, .proc/bite_victim)
+	RegisterSignal(get_turf(src), COMSIG_ENTERED, PROC_REF(bite_victim))
 
 /obj/structure/chorus/biter/Destroy()
 	UnregisterSignal(get_turf(src), COMSIG_ENTERED)

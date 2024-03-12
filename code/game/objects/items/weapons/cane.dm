@@ -47,10 +47,10 @@
 
 /obj/item/cane/concealed/on_update_icon()
 	if(concealed_blade)
-		setName(initial(name))
+		(initial(name))
 		icon_state = initial(icon_state)
 		item_state = initial(item_state)
 	else
-		setName("cane shaft")
+		("cane shaft")
 		icon_state = "cane_noknife"
 		item_state = "foldcane"

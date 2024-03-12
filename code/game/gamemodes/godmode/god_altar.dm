@@ -63,9 +63,9 @@
 	START_PROCESSING(SSobj, src)
 	target = L
 	update_icon()
-	RegisterSignal(L, COMSIG_PARENT_QDELETING, /obj/structure/deity/altar/proc/remove_target)
-	RegisterSignal(L, COMSIG_MOVED, /obj/structure/deity/altar/proc/remove_target)
-	RegisterSignal(L, COMSIG_ADD_TO_DEAD_MOB_LIST, /obj/structure/deity/altar/proc/remove_target)
+	RegisterSignal(L, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
+	RegisterSignal(L, COMSIG_MOVED, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
+	RegisterSignal(L, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
 
 /obj/structure/deity/altar/proc/remove_target()
 	STOP_PROCESSING(SSobj, src)

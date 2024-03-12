@@ -83,7 +83,7 @@
 	occupant = null
 	update_use_power(POWER_USE_IDLE)
 	update_icon()
-	setName(initial(name))
+	(initial(name))
 
 /obj/machinery/bodyscanner/state_transition(decl/machine_construction/default/new_state)
 	. = ..()
@@ -125,7 +125,7 @@
 	update_use_power(POWER_USE_ACTIVE)
 	update_icon()
 	drop_contents()
-	setName("[name] ([occupant])")
+	("[name] ([occupant])")
 
 	add_fingerprint(user)
 

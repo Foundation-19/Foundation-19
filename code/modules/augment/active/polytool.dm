@@ -55,7 +55,7 @@
 		if(owner.equip_to_slot_if_possible(item, slot))
 			items -= item
 			//Keep track of it, make sure it returns
-			RegisterSignal(item, COMSIG_DROPPED_ITEM, /obj/item/organ/internal/augment/active/simple/proc/holding_dropped)
+			RegisterSignal(item, COMSIG_DROPPED_ITEM, TYPE_PROC_REF(/obj/item/organ/internal/augment/active/simple, holding_dropped))
 			owner.visible_message(
 				SPAN_WARNING("[owner] extends \his [item.name] from [limb]."),
 				SPAN_NOTICE("You extend your [item.name] from [limb].")

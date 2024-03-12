@@ -26,7 +26,7 @@
 		return
 	audible_message(SPAN_WARNING("\The [src] emits a long, harsh tone!"))
 	playsound(loc, 'sounds/weapons/bombwhine.ogg', 100, 0, -3)
-	addtimer(CALLBACK(src, .proc/harpoon_detonate), 4 SECONDS) //for suspense
+	addtimer(CALLBACK(src, PROC_REF(harpoon_detonate)), 4 SECONDS) //for suspense
 
 /obj/item/material/harpoon/bomb/proc/harpoon_detonate()
 	audible_message(SPAN_DANGER("\The [src] detonates!")) //an actual sound will be handled by explosion()
@@ -37,7 +37,7 @@
 
 /obj/item/material/harpoon/bomb/proc/handle_afterbomb()
 	spent = TRUE
-	setName("broken harpoon")
+	("broken harpoon")
 	desc = "A short spear with just a barb - if it once had a spearhead, it doesn't any more."
 	icon_state = "harpoon_bomb_spent"
 	force_multiplier = 0.1

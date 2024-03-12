@@ -33,7 +33,7 @@
 	ClearDestination()
 
 	destination = A
-	RegisterSignal(destination, COMSIG_PARENT_QDELETING, /datum/build_mode/move_into/proc/ClearDestination)
+	RegisterSignal(destination, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/build_mode/move_into, ClearDestination))
 	to_chat(user, SPAN_NOTICE("Will now move targets into \the [destination]."))
 
 /datum/build_mode/move_into/proc/ClearDestination(feedback)

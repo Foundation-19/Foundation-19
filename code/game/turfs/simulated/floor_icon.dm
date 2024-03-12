@@ -13,7 +13,7 @@ var/list/flooring_cache = list()
 
 	if(flooring)
 		// Set initial icon and strings.
-		setName(flooring.name)
+		(flooring.name)
 		desc = flooring.desc
 		icon = flooring.icon
 		color = flooring.color

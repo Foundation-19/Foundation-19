@@ -10,7 +10,7 @@
 	if(source in appearance_sources)
 		return FALSE
 	appearance_sources[source] = new/datum/appearance_data(images, viewers, priority)
-	RegisterSignal(source, COMSIG_PARENT_QDELETING, /decl/appearance_handler/proc/RemoveAltAppearance)
+	RegisterSignal(source, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/decl/appearance_handler, RemoveAltAppearance))
 
 /decl/appearance_handler/proc/RemoveAltAppearance(source)
 	var/datum/appearance_data/ad = appearance_sources[source]

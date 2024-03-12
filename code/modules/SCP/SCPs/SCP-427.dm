@@ -52,7 +52,7 @@
 
 	if(!(user in time_used))
 		time_used[user] = 0
-		RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/RemoveDeletedMob)
+		RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(RemoveDeletedMob))
 
 	time_used[user] += 1
 

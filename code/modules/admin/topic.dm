@@ -1497,13 +1497,13 @@
 						var/turf/N = O.ChangeTurf(path)
 						if(N)
 							if(obj_name)
-								N.setName(obj_name)
+								N.(obj_name)
 					else
 						var/atom/O = new path(target)
 						if(O)
 							O.set_dir(obj_dir)
 							if(obj_name)
-								O.setName(obj_name)
+								O.(obj_name)
 								if(istype(O, /mob))
 									var/mob/M = O
 									M.real_name = obj_name

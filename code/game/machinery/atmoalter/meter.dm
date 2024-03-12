@@ -32,7 +32,7 @@
 /obj/machinery/meter/proc/set_target(atom/new_target)
 	clear_target()
 	target = new_target
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/clear_target)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(clear_target))
 
 /obj/machinery/meter/proc/clear_target()
 	if(target)

@@ -97,14 +97,14 @@
 	if(reagents.reagent_list.len > 0)
 		if(base_name)
 			var/datum/reagent/R = reagents.get_master_reagent()
-			setName("[base_name] of [R.glass_name ? R.glass_name : "something"]")
+			("[base_name] of [R.glass_name ? R.glass_name : "something"]")
 			desc = R.glass_desc ? R.glass_desc : initial(desc)
 		if(filling_states)
 			var/image/filling = image(icon, src, "[base_icon][get_filling_state()]")
 			filling.color = reagents.get_color()
 			add_overlay(filling)
 	else
-		setName(initial(name))
+		(initial(name))
 		desc = initial(desc)
 
 
@@ -248,7 +248,7 @@
 /obj/item/reagent_containers/food/drinks/sillycup/scp294cup/on_reagent_change()
 	. = ..()
 	var/datum/reagent/master_reagent = reagents.get_master_reagent()
-	setName("A cup of [master_reagent ? master_reagent.name : "nothing"]")
+	("A cup of [master_reagent ? master_reagent.name : "nothing"]")
 
 	if(reagents.total_volume)
 		icon_state = "294_cup"

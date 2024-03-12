@@ -118,8 +118,8 @@
 	if(source in sources)
 		return FALSE
 	sources += source
-	RegisterSignal(source, COMSIG_MOVED, /datum/visualnet/proc/source_moved)
-	RegisterSignal(source, COMSIG_PARENT_QDELETING, /datum/visualnet/proc/remove_source)
+	RegisterSignal(source, COMSIG_MOVED, TYPE_PROC_REF(/datum/visualnet, source_moved))
+	RegisterSignal(source, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/visualnet, remove_source))
 	for_all_chunks_in_range(source, /datum/chunk/proc/add_source, list(source))
 	if(update_visibility)
 		update_visibility(source, opacity_check)

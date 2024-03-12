@@ -85,9 +85,9 @@
 
 	src.desc = "It's worth [worth][GLOB.using_map.local_currency_name_short]."
 	if(worth in denominations)
-		src.setName("[worth] [GLOB.using_map.local_currency_name]")
+		src.("[worth] [GLOB.using_map.local_currency_name]")
 	else
-		src.setName("pile of [GLOB.using_map.local_currency_name]")
+		src.("pile of [GLOB.using_map.local_currency_name]")
 
 	if(overlays.len <= 2)
 		w_class = ITEM_SIZE_TINY

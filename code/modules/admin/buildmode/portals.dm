@@ -51,7 +51,7 @@ Right Click + Ctrl  - Delete all portals
 			ttl = ttl SECONDS
 
 			var/obj/effect/portal/P = new /obj/effect/portal(entrance, exit, ttl)
-			P.setName(name)
+			P.(name)
 			portals += P
 
 			entrance = null

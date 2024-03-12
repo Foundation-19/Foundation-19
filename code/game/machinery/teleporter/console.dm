@@ -64,7 +64,7 @@
 		return
 	clear_projector()
 	projector = _projector
-	RegisterSignal(projector, COMSIG_PARENT_QDELETING, /obj/machinery/computer/teleporter/proc/lost_projector)
+	RegisterSignal(projector, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_projector))
 
 /obj/machinery/computer/teleporter/proc/clear_pad()
 	if (!pad)
@@ -82,7 +82,7 @@
 		return
 	clear_pad()
 	pad = _pad
-	RegisterSignal(pad, COMSIG_PARENT_QDELETING, /obj/machinery/computer/teleporter/proc/lost_pad)
+	RegisterSignal(pad, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_pad))
 
 /obj/machinery/computer/teleporter/proc/clear_target()
 	if (!target)
@@ -108,7 +108,7 @@
 		if (!beacon.connect_computer(src))
 			return FALSE
 	target = _target
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, /obj/machinery/computer/teleporter/proc/lost_target)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_target))
 	return TRUE
 
 /obj/machinery/computer/teleporter/proc/set_active(_active, notify)

@@ -157,7 +157,7 @@
 	. = ..()
 	target.vis_contents += src
 	set_dir()
-	RegisterSignal(user, COMSIG_DIR_SET, /obj/aura/mechshield/proc/update_dir)
+	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
 
 /obj/aura/mechshield/proc/update_dir(user, old_dir, dir)
 	set_dir(dir)
@@ -404,7 +404,7 @@
 	. = ..()
 	target.vis_contents += src
 	set_dir()
-	RegisterSignal(user, COMSIG_DIR_SET, /obj/aura/mech_ballistic/proc/update_dir)
+	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
 
 /obj/aura/mech_ballistic/proc/update_dir(user, old_dir, dir)
 	set_dir(dir)

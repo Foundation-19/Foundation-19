@@ -5,7 +5,7 @@
 
 /obj/item/organ/external/stump/Initialize(mapload, internal, obj/item/organ/external/limb)
 	if(istype(limb))
-		setName("stump of \a [limb.name]")
+		("stump of \a [limb.name]")
 		organ_tag = limb.organ_tag
 		body_part = limb.body_part
 		amputation_point = limb.amputation_point

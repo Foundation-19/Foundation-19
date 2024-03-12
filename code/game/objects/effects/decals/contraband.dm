@@ -119,7 +119,7 @@
 
 /obj/structure/sign/poster/proc/set_poster(poster_type)
 	var/decl/poster/design = decls_repository.get_decl(poster_type)
-	setName("[initial(name)] - [design.name]")
+	("[initial(name)] - [design.name]")
 	desc = "[initial(desc)] [design.desc]"
 	icon_state = design.icon_state
 
@@ -149,7 +149,7 @@
 		playsound(src.loc, 'sounds/items/poster_ripped.ogg', 100, 1)
 		ruined = 1
 		icon_state = "poster_ripped"
-		setName("ripped poster")
+		("ripped poster")
 		desc = "You can't make out anything from the poster's original print. It's ruined."
 		add_fingerprint(user)
 

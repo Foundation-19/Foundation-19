@@ -9,7 +9,7 @@
 
 	usr.forceMove(O)
 	usr.real_name = O.name
-	usr.setName(O.name)
+	usr.(O.name)
 	usr.client.eye = O
 	usr.control_object = O
 	usr.ReplaceMovementHandler(/datum/movement_handler/mob/admin_possess)
@@ -23,10 +23,10 @@
 	if(usr.control_object && usr.name_archive) //if you have a name archived and if you are actually relassing an object
 		usr.RemoveMovementHandler(/datum/movement_handler/mob/admin_possess)
 		usr.real_name = usr.name_archive
-		usr.setName(usr.real_name)
+		usr.(usr.real_name)
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
-			H.setName(H.get_visible_name())
+			H.(H.get_visible_name())
 //		usr.regenerate_icons() //So the name is updated properly
 
 	usr.forceMove(O.loc) // Appear where the object you were controlling is -- TLE

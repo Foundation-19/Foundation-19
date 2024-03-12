@@ -76,7 +76,18 @@
 		/decl/audio/track/perdition,
 		/decl/audio/track/ajoura,
 		/decl/audio/track/days,
-		/decl/audio/track/hie
+		/decl/audio/track/hie,
+		/decl/audio/track/chaos,
+		/decl/audio/track/bookburners,
+		/decl/audio/track/dread,
+		/decl/audio/track/animosity,
+		/decl/audio/track/main_astowo,
+		/decl/audio/track/final_flash,
+		/decl/audio/track/duplicity_and_disillusion,
+		/decl/audio/track/battle_for_ganzir,
+		/decl/audio/track/purge_protocol,
+		/decl/audio/track/uiu_spawn_theme,
+		/decl/audio/track/surface_area,
 	)
 
 	available_cultural_info = list(

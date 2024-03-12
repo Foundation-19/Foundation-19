@@ -22,7 +22,7 @@
 
 /datum/spell/targeted/equip_item/dyrnwyn/summon_item(new_type)
 	var/obj/item/W = new new_type (null, material)
-	W.setName("\improper Dyrnwyn")
+	W.("\improper Dyrnwyn")
 	W.damtype = BURN
 	W.hitsound = 'sounds/items/welder2.ogg'
 	W.slowdown_per_slot[slot_l_hand] = 1

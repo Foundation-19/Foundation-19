@@ -22,7 +22,7 @@
 /obj/machinery/tele_pad/proc/clear_computer()
 	if (!computer)
 		return
-	UnregisterSignal(computer, COMSIG_PARENT_QDELETING, /obj/machinery/tele_pad/proc/lost_computer)
+	UnregisterSignal(computer, COMSIG_PARENT_QDELETING)
 	computer = null
 
 
@@ -36,7 +36,7 @@
 		return
 	clear_computer()
 	computer = _computer
-	RegisterSignal(computer, COMSIG_PARENT_QDELETING, /obj/machinery/tele_pad/proc/lost_computer)
+	RegisterSignal(computer, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/tele_pad, lost_computer))
 
 
 /obj/machinery/tele_pad/Bumped(atom/movable/AM)

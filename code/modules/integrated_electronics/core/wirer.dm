@@ -81,7 +81,7 @@
 	if(selected_io)
 		unselect_io(selected_io)
 	selected_io = io
-	RegisterSignal(selected_io, COMSIG_PARENT_QDELETING, .proc/unselect_io)
+	RegisterSignal(selected_io, COMSIG_PARENT_QDELETING, PROC_REF(unselect_io))
 	switch(mode)
 		if(UNWIRE)
 			mode = UNWIRING

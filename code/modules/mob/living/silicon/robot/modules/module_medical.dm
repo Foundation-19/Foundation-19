@@ -70,7 +70,7 @@
 /obj/item/robot_module/medical/surgeon/finalize_emag()
 	. = ..()
 	emag.reagents.add_reagent(/datum/reagent/acid/polytrinic, 250)
-	emag.setName("Polyacid spray")
+	emag.("Polyacid spray")
 
 /obj/item/robot_module/medical/surgeon/finalize_synths()
 	. = ..()
@@ -140,7 +140,7 @@
 /obj/item/robot_module/medical/crisis/finalize_emag()
 	. = ..()
 	emag.reagents.add_reagent(/datum/reagent/acid/polytrinic, 250)
-	emag.setName("Polyacid spray")
+	emag.("Polyacid spray")
 
 /obj/item/robot_module/medical/crisis/finalize_synths()
 	. = ..()

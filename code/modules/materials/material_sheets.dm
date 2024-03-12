@@ -77,15 +77,15 @@
 		plural_name = material.sheet_plural_name
 
 	if(amount>1)
-		setName("[material.use_name] [plural_name]")
+		("[material.use_name] [plural_name]")
 		desc = "A stack of [material.use_name] [plural_name]."
 		gender = PLURAL
 	else
-		setName("[material.use_name] [singular_name]")
+		("[material.use_name] [singular_name]")
 		desc = "A [singular_name] of [material.use_name]."
 		gender = NEUTER
 	if(reinf_material)
-		setName("reinforced [name]")
+		("reinforced [name]")
 		desc = "[desc]\nIt is reinforced with the [reinf_material.use_name] lattice."
 
 /obj/item/stack/material/use(used)

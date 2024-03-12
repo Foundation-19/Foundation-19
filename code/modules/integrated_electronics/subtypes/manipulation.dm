@@ -207,7 +207,7 @@
 			dt = Clamp(detonation_time.data, 1, 12)*10
 		else
 			dt = 15
-		addtimer(CALLBACK(attached_grenade, /obj/item/grenade.proc/activate), dt)
+		addtimer(CALLBACK(attached_grenade, TYPE_PROC_REF(/obj/item/grenade, activate)), dt)
 		var/atom/holder = loc
 		log_and_message_staff("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")
 
@@ -420,9 +420,9 @@
 					set_pin_data(IC_OUTPUT, 1, TRUE)
 					pulling = to_pull
 					acting_object.visible_message("\The [acting_object] starts pulling \the [to_pull] around.")
-					RegisterSignal(to_pull, COMSIG_MOVED, .proc/check_pull)	//Whenever the target moves, make sure we can still pull it!
-					RegisterSignal(to_pull, COMSIG_PARENT_QDELETING, .proc/stop_pulling)
-					RegisterSignal(acting_object, COMSIG_MOVED, .proc/pull)	//Make sure we actually pull it.
+					RegisterSignal(to_pull, COMSIG_MOVED, PROC_REF(check_pull))	//Whenever the target moves, make sure we can still pull it!
+					RegisterSignal(to_pull, COMSIG_PARENT_QDELETING, PROC_REF(stop_pulling))
+					RegisterSignal(acting_object, COMSIG_MOVED, PROC_REF(pull))	//Make sure we actually pull it.
 			push_data()
 		if(3)
 			if(pulling)

@@ -127,7 +127,7 @@
 	strobe_effect = new(T)
 
 	// Make the light effect follow this party light object.
-	strobe_effect.RegisterSignal(src, COMSIG_MOVED, /atom/movable/proc/move_to_turf_or_null)
+	strobe_effect.RegisterSignal(src, COMSIG_MOVED, TYPE_PROC_REF(/atom/movable, move_to_turf_or_null))
 
 	update_icon()
 
@@ -242,7 +242,7 @@
 
 	//n_name = copytext(n_name, 1, 32)
 	if(( get_dist(user,paper) <= 1  && user.stat == 0))
-		paper.setName("paper[(n_name ? text("- '[n_name]'") : null)]")
+		paper.SetName("paper[(n_name ? text("- '[n_name]'") : null)]")
 		paper.last_modified_ckey = user.ckey
 	add_fingerprint(user)
 	return

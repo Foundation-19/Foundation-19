@@ -1,5 +1,6 @@
 // The following four defines can be used to tweak the difficulty of the gamemode
-#define METEOR_FAILSAFE_THRESHOLD 45 MINUTES	// Failsafe that guarantees Severity will be at least 15 when the round hits this time.
+/// Failsafe that guarantees Severity will be at least 15 when the round hits this time.
+#define METEOR_FAILSAFE_THRESHOLD (45 MINUTES)
 
 // In general, a PVE oriented game mode. A middle ground between Extended and actual antagonist based rounds.
 /datum/game_mode/meteor
@@ -31,8 +32,8 @@
 /decl/vv_set_handler/meteor_severity_handler
 	handled_type = /datum/game_mode/meteor
 	handled_vars = list(
-		"meteor_severity" = /datum/game_mode/meteor/proc/set_meteor_severity,
-		"meteor_wave_delay" = /datum/game_mode/meteor/proc/set_meteor_wave_delay
+		"meteor_severity" = TYPE_PROC_REF(/datum/game_mode/meteor, set_meteor_severity),
+		"meteor_wave_delay" = TYPE_PROC_REF(/datum/game_mode/meteor, set_meteor_wave_delay)
 	)
 
 /datum/game_mode/meteor/proc/set_meteor_severity(value)

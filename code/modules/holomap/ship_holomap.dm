@@ -112,8 +112,8 @@
 			user.client.images |= holomap_datum.station_map
 
 			watching_mob = user
-			RegisterSignal(watching_mob, COMSIG_MOVED, /obj/machinery/ship_map/proc/checkPosition)
-			RegisterSignal(watching_mob, COMSIG_PARENT_QDELETING, /obj/machinery/ship_map/proc/stopWatching)
+			RegisterSignal(watching_mob, COMSIG_MOVED, TYPE_PROC_REF(/obj/machinery/ship_map, checkPosition))
+			RegisterSignal(watching_mob, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/ship_map, stopWatching))
 			update_use_power(POWER_USE_ACTIVE)
 
 			if(bogus)
@@ -137,7 +137,7 @@
 		if(watching_mob.client)
 			animate(holomap_datum.station_map, alpha = 0, time = 5, easing = LINEAR_EASING)
 			var/mob/M = watching_mob
-			addtimer(CALLBACK(src, .proc/clear_image, M, holomap_datum.station_map), 5, TIMER_CLIENT_TIME)//we give it time to fade out
+			addtimer(CALLBACK(src, PROC_REF(clear_image), M, holomap_datum.station_map), 5, TIMER_CLIENT_TIME)//we give it time to fade out
 		UnregisterSignal(watching_mob, COMSIG_MOVED)
 		UnregisterSignal(watching_mob, COMSIG_PARENT_QDELETING)
 	watching_mob = null

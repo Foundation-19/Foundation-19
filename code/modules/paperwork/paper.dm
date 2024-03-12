@@ -71,7 +71,7 @@
 
 /obj/item/paper/proc/set_content(text,title)
 	if(title)
-		setName(title)
+		(title)
 	info = html_encode(text)
 	info = parsepencode(text)
 	update_icon()
@@ -165,10 +165,9 @@
 			can_read = ishuman(user) || issilicon(user)
 			if (can_read)
 				can_read = get_dist(src, user) < PAPER_EYEBALL_DISTANCE
-	var/html = "<html><head><title>[name]</title></head><body bgcolor='[color]'>"
+	var/html = ""
 	if (!can_read)
 		html += PAPER_META_BAD("The paper is too far away or you can't read.")
-		html += "<hr/></body></html>"
 	var/has_content = length(info)
 	var/has_language = force || (language in user.languages)
 	if (has_content && !has_language && !isghost(user))
@@ -188,9 +187,16 @@
 	else if (has_content)
 		html += PAPER_META("The paper is written in [language.name].")
 		html += "<hr/>" + info
-	html += "[stamps]</body></html>"
-	show_browser(user, html, "window=paper_[name]")
-	onclose(user, "paper_[name]")
+	html += "[stamps]"
+
+	// Ported to browser datum for IE11 feature parity
+	var/datum/browser/window = new(user, "paper_[name]")
+	window.stylesheets.Remove("common")
+	window.add_stylesheet("acs", 'html/acs.css')
+	window.add_head_content("<title>[name]</title><style>body { background-color: [color]; }</style>")
+	window.set_content(html)
+	window.open()
+
 	if(isnull(name))
 		crash_with("Paper failed a sanity check. It has no name. Report that! | Type: [type]")
 
@@ -210,7 +216,7 @@
 	// We check loc one level up, so we can rename in clipboards and such. See also: /obj/item/photo/rename()
 	if(!n_name || !CanInteract(usr, GLOB.deep_inventory_state))
 		return
-	setName(n_name)
+	(n_name)
 	add_fingerprint(usr)
 
 /obj/item/paper/attack_self(mob/living/user as mob)
@@ -357,6 +363,10 @@
 		t = replacetext(t, "\[/small\]", "")
 		t = replacetext(t, "\[list\]", "")
 		t = replacetext(t, "\[/list\]", "")
+		t = replacetext(t, "\[ulist\]", "")
+		t = replacetext(t, "\[/ulist\]", "")
+		t = replacetext(t, "\[olist\]", "")
+		t = replacetext(t, "\[/olist\]", "")
 		t = replacetext(t, "\[table\]", "")
 		t = replacetext(t, "\[/table\]", "")
 		t = replacetext(t, "\[row\]", "")
@@ -508,9 +518,9 @@
 				return
 		var/obj/item/paper_bundle/B = new(src.loc)
 		if (name != "paper")
-			B.setName(name)
+			B.(name)
 		else if (P.name != "paper" && P.name != "photo")
-			B.setName(P.name)
+			B.(P.name)
 
 		if(!user.unEquip(P, B) || !user.unEquip(src, B))
 			return

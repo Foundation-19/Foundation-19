@@ -148,7 +148,7 @@
 	var/all_patched = TRUE
 
 	if(!can_breach || !breaches || !breaches.len)
-		setName(initial(name))
+		(initial(name))
 		return 0
 
 	for(var/datum/breach/B in breaches)
@@ -167,15 +167,15 @@
 
 	if(damage >= 3)
 		if(brute_damage >= 3 && brute_damage > burn_damage)
-			setName("punctured [initial(name)]")
+			("punctured [initial(name)]")
 		else if(burn_damage >= 3 && burn_damage > brute_damage)
-			setName("scorched [initial(name)]")
+			("scorched [initial(name)]")
 		else
-			setName("damaged [initial(name)]")
+			("damaged [initial(name)]")
 	else if(all_patched)
-		setName("patched [initial(name)]")
+		("patched [initial(name)]")
 	else
-		setName(initial(name))
+		(initial(name))
 
 	return damage
 

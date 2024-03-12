@@ -1,10 +1,10 @@
 /obj/effect/overmap/visitable/sector/exoplanet/proc/adapt_animal(mob/living/simple_animal/A, setname = TRUE)
 	if (setname)
 		if (species[A.type])
-			A.setName(species[A.type])
+			A.SetName(species[A.type])
 			A.real_name = species[A.type]
 		else
-			A.setName("alien creature")
+			A.SetName("alien creature")
 			A.real_name = "alien creature"
 			add_verb(A, /mob/living/simple_animal/proc/name_species)
 	if (atmosphere)
@@ -42,7 +42,7 @@
 /obj/effect/overmap/visitable/sector/exoplanet/proc/handle_repopulation()
 	for (var/i = 1 to round(max_animal_count - animals.len))
 		if (prob(10))
-			var/turf/simulated/T = pick_area_turf(planetary_area, list(/proc/not_turf_contains_dense_objects))
+			var/turf/simulated/T = pick_area_turf(planetary_area, list(GLOBAL_PROC_REF(not_turf_contains_dense_objects)))
 			var/mob_type = pick(repopulate_types)
 			var/mob/S = new mob_type(T)
 			track_animal(S)
@@ -52,8 +52,8 @@
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/track_animal(mob/A)
 	animals += A
-	RegisterSignal(A, COMSIG_ADD_TO_DEAD_MOB_LIST, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
-	RegisterSignal(A, COMSIG_PARENT_QDELETING, /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal)
+	RegisterSignal(A, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
+	RegisterSignal(A, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_random_species_name()
 	return pick("nol","shan","can","fel","xor")+pick("a","e","o","t","ar")+pick("ian","oid","ac","ese","inian","rd")
@@ -66,7 +66,7 @@
 	log_and_message_staff("renamed [species_type] to [newname]")
 	for (var/mob/living/simple_animal/A in animals)
 		if (istype(A,species_type))
-			A.setName(newname)
+			A.SetName(newname)
 			A.real_name = newname
 			remove_verb(A, /mob/living/simple_animal/proc/name_species)
 	return TRUE

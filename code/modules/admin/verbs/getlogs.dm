@@ -75,7 +75,7 @@
 		return
 
 	message_staff("[key_name_admin(src)] accessed file: [path]")
-	to_target(src, run(file(path)))
+	to_target(src, ftp(file(path)))
 	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
 	return
 
@@ -92,7 +92,7 @@
 		return
 
 	if( diary )
-		to_target(src, run(diary))
+		to_target(src, ftp(diary))
 	else
 		to_chat(src, FONT_COLORED("red","Error: view_txt_log(): diary global is null."))
 		return
@@ -106,9 +106,9 @@
 
 	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM-Month/DD-Day")] Attack.log"
 	if( fexists(path) )
-		src << run(file(path))
+		src << ftp(file(path))
 	else
 		to_chat(src, FONT_COLORED("red","Error: view_atk_log(): File not found/Invalid path([path])."))
 		return
-	usr << run(file(path))
+	usr << ftp(file(path))
 	return

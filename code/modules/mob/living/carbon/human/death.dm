@@ -51,7 +51,7 @@
 			if(B.host_brain.ckey)
 				ckey = B.host_brain.ckey
 				B.host_brain.ckey = null
-				B.host_brain.setName("host brain")
+				B.host_brain.("host brain")
 				B.host_brain.real_name = "host brain"
 
 			remove_verb(src, /mob/living/carbon/proc/release_control)

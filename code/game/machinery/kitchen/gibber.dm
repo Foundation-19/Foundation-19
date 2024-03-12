@@ -170,7 +170,7 @@
 
 	admin_attack_log(user, occupant, "Gibbed the victim", "Was gibbed", "gibbed")
 	src.occupant.ghostize()
-	addtimer(CALLBACK(src, .proc/finish_gibbing), gib_time)
+	addtimer(CALLBACK(src, PROC_REF(finish_gibbing)), gib_time)
 
 	var/list/gib_products = shuffle(occupant.harvest_meat() | occupant.harvest_skin() | occupant.harvest_bones())
 	if(length(gib_products) <= 0)
@@ -201,7 +201,7 @@
 			thing.forceMove(src)
 			if(istype(thing, /obj/item/reagent_containers/food/snacks/meat))
 				var/obj/item/reagent_containers/food/snacks/meat/slab = thing
-				slab.setName("[slab_name] [slab.name]")
+				slab.("[slab_name] [slab.name]")
 				slab.reagents.add_reagent(/datum/reagent/nutriment,slab_nutrition)
 
 /obj/machinery/gibber/proc/finish_gibbing()

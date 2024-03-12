@@ -35,7 +35,7 @@
 			if((M in view) && M.client)
 				to_chat(M, SPAN_OCCULT("Your attention is eerily drawn to \the [a]."))
 				M.client.images += arrow
-				RegisterSignal(M, COMSIG_MOB_LOGOUT, /datum/phenomena/point/proc/remove_image)
+				RegisterSignal(M, COMSIG_MOB_LOGOUT, TYPE_PROC_REF(/datum/phenomena/point, remove_image))
 				spawn(20)
 					if(M.client)
 						remove_image(M)

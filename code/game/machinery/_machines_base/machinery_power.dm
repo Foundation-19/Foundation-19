@@ -83,7 +83,7 @@ This is /obj/machinery level code to properly manage power usage from the area.
 // Do not do power stuff in New/Initialize until after ..()
 /obj/machinery/Initialize()
 	REPORT_POWER_CONSUMPTION_CHANGE(0, get_power_usage())
-	RegisterSignal(src, COMSIG_MOVED, .proc/update_power_on_move)
+	RegisterSignal(src, COMSIG_MOVED, PROC_REF(update_power_on_move))
 	power_init_complete = TRUE
 	. = ..()
 

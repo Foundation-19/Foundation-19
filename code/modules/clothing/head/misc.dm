@@ -147,13 +147,6 @@
 		)
 	siemens_coefficient = 0.9
 
-
-/obj/item/clothing/head/mariner
-	name = "mariner's cap"
-	desc = "A cap loved by farmers, sailors and rabblerousers in the whole galaxy."
-	icon_state = "mariner_white"
-	siemens_coefficient = 0.9
-
 /obj/item/clothing/head/pirate
 	name = "pirate hat"
 	desc = "Yarr."

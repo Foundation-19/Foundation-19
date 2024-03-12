@@ -25,9 +25,9 @@
 	eyeobj.setLoc(get_turf(L))
 	to_chat(src, SPAN_NOTICE("You begin to follow \the [L]."))
 	following = L
-	RegisterSignal(L, COMSIG_MOVED, /mob/living/deity/proc/keep_following)
-	RegisterSignal(L, COMSIG_PARENT_QDELETING, /mob/living/deity/proc/stop_follow)
-	RegisterSignal(L, COMSIG_ADD_TO_DEAD_MOB_LIST, /mob/living/deity/proc/stop_follow)
+	RegisterSignal(L, COMSIG_MOVED, TYPE_PROC_REF(/mob/living/deity, keep_following))
+	RegisterSignal(L, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/mob/living/deity, stop_follow))
+	RegisterSignal(L, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/mob/living/deity, stop_follow))
 
 /mob/living/deity/proc/stop_follow()
 	UnregisterSignal(following, COMSIG_MOVED)

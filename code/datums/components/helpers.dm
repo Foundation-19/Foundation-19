@@ -22,8 +22,8 @@
 	set_dir(new_dir)
 
 /proc/register_all_movement(event_source, datum/listener)
-	listener.RegisterSignal(event_source, COMSIG_MOVED, /atom/movable/proc/recursive_move)
-	listener.RegisterSignal(event_source, COMSIG_DIR_SET, /atom/proc/recursive_dir_set)
+	listener.RegisterSignal(event_source, COMSIG_MOVED, TYPE_PROC_REF(/atom/movable, recursive_move))
+	listener.RegisterSignal(event_source, COMSIG_DIR_SET, TYPE_PROC_REF(/atom, recursive_dir_set))
 
 /proc/unregister_all_movement(event_source, datum/listener)
 	listener.UnregisterSignal(event_source, COMSIG_MOVED)

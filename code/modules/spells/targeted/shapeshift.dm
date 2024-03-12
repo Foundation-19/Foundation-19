@@ -42,7 +42,7 @@
 			var/datum/language/L = l
 			trans.add_language(L.name)
 
-		trans.setName("[trans.name] ([M])")
+		trans.SetName("[trans.name] ([M])")
 		if(istype(M,/mob/living/carbon/human) && drop_items)
 			for(var/obj/item/I in M.contents)
 				M.drop_from_inventory(I)
@@ -55,9 +55,9 @@
 		M.forceMove(trans) //move inside the new dude to hide him.
 		M.status_flags |= GODMODE //don't want him to die or breathe or do ANYTHING
 		transformed_dudes[trans] = M
-		RegisterSignal(trans, COMSIG_ADD_TO_DEAD_MOB_LIST, /datum/spell/targeted/shapeshift/proc/stop_transformation)
-		RegisterSignal(trans, COMSIG_PARENT_QDELETING, /datum/spell/targeted/shapeshift/proc/stop_transformation)
-		RegisterSignal(M, COMSIG_PARENT_QDELETING, /datum/spell/targeted/shapeshift/proc/destroyed_transformer)
+		RegisterSignal(trans, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/datum/spell/targeted/shapeshift, stop_transformation))
+		RegisterSignal(trans, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/spell/targeted/shapeshift, stop_transformation))
+		RegisterSignal(M, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/spell/targeted/shapeshift, destroyed_transformer))
 		if(duration)
 			spawn(duration)
 				stop_transformation(trans)

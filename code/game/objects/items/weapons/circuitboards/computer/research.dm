@@ -6,11 +6,11 @@
 	if(isScrewdriver(I))
 		user.visible_message(SPAN_NOTICE("\The [user] adjusts the jumper on \the [src]'s access protocol pins."), SPAN_NOTICE("You adjust the jumper on the access protocol pins."))
 		if(src.build_path == /obj/machinery/computer/rdconsole/core)
-			src.setName(T_BOARD("RD Console - Robotics"))
+			src.(T_BOARD("RD Console - Robotics"))
 			src.build_path = /obj/machinery/computer/rdconsole/robotics
 			to_chat(user, SPAN_NOTICE("Access protocols set to robotics."))
 		else
-			src.setName(T_BOARD("RD Console"))
+			src.(T_BOARD("RD Console"))
 			src.build_path = /obj/machinery/computer/rdconsole/core
 			to_chat(user, SPAN_NOTICE("Access protocols set to default."))
 	return

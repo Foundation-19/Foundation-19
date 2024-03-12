@@ -27,7 +27,7 @@
 		var/number_of_underwear = LAZYACCESS(amount_of_underwear_by_id_card, id) - 1
 		if(number_of_underwear)
 			LAZYSET(amount_of_underwear_by_id_card, id, number_of_underwear)
-			RegisterSignal(id, COMSIG_PARENT_QDELETING, /obj/structure/undies_wardrobe/proc/remove_id_card)
+			RegisterSignal(id, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/structure/undies_wardrobe, remove_id_card))
 		else
 			remove_id_card(id)
 

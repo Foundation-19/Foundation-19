@@ -25,8 +25,8 @@
 
 	frame.is_wired = FRAME_WIRED_ADJUSTED
 	frame.is_reinforced = FRAME_REINFORCED_WELDED
-	frame.setName = name
-	frame.name = "frame of \the [frame.setName]"
+	frame.SetName = name
+	frame.name = "frame of \the [frame.SetName]"
 	frame.material = material
 	frame.queue_icon_update()
 
@@ -45,7 +45,7 @@
 	if(target == selected_hardpoint)
 		clear_selected_hardpoint()
 
-	UnregisterSignal(module_to_forget, COMSIG_PARENT_QDELETING, .proc/forget_module)
+	UnregisterSignal(module_to_forget, COMSIG_PARENT_QDELETING)
 
 	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[target]
 	H.holding = null
@@ -96,7 +96,7 @@
 		else
 			return FALSE
 
-	RegisterSignal(system, COMSIG_PARENT_QDELETING, .proc/forget_module)
+	RegisterSignal(system, COMSIG_PARENT_QDELETING, PROC_REF(forget_module))
 
 	system.forceMove(src)
 	hardpoints[system_hardpoint] = system
@@ -138,7 +138,7 @@
 	system.forceMove(get_turf(src))
 	system.screen_loc = null
 	system.layer = initial(system.layer)
-	UnregisterSignal(system, COMSIG_PARENT_QDELETING, .proc/forget_module)
+	UnregisterSignal(system, COMSIG_PARENT_QDELETING)
 
 	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
 	H.holding = null

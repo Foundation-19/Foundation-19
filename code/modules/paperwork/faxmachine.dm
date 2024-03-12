@@ -214,13 +214,13 @@ GLOBAL_LIST_EMPTY(admin_departments)
 
 	if(istype(incoming, /obj/item/paper))
 		var/obj/item/paper/newcopy = copy(incoming, FALSE)
-		newcopy.setName("[origin_department] - [newcopy.name]")
+		newcopy.("[origin_department] - [newcopy.name]")
 	else if(istype(incoming, /obj/item/photo))
 		var/obj/item/photo/newcopy = photocopy(incoming, FALSE)
-		newcopy.setName("[origin_department] - [newcopy.name]")
+		newcopy.("[origin_department] - [newcopy.name]")
 	else if(istype(incoming, /obj/item/paper_bundle))
 		var/obj/item/paper_bundle/newcopy = bundlecopy(incoming, FALSE)
-		newcopy.setName("[origin_department] - [newcopy.name]")
+		newcopy.("[origin_department] - [newcopy.name]")
 	else
 		return
 

@@ -32,7 +32,7 @@
 	if(cell)
 		return
 	cell = new_cell
-	RegisterSignal(cell, COMSIG_PARENT_QDELETING, .proc/remove_cell)
+	RegisterSignal(cell, COMSIG_PARENT_QDELETING, PROC_REF(remove_cell))
 	if(!machine)
 		machine = loc
 	if(istype(machine))

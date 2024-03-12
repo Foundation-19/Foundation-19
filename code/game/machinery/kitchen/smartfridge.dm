@@ -180,7 +180,7 @@
 					continue
 				if(S.dried_type == S.type)
 					S.dry = 1
-					S.setName("dried [S.name]")
+					S.("dried [S.name]")
 					S.color = "#a38463"
 					stock_item(S)
 					I.instances -= thing

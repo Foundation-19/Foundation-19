@@ -92,7 +92,7 @@
 			break
 	projection = new projection_type(target)
 	projection.set_source(current_slide)
-	RegisterSignal(src, COMSIG_MOVED, .proc/check_projections)
+	RegisterSignal(src, COMSIG_MOVED, PROC_REF(check_projections))
 	set_light(0.1, 0.1, 1, 2, COLOR_WHITE) //Bit of light
 	update_icon()
 

@@ -19,7 +19,7 @@
 	if(!atom_cache_list)
 		atom_cache_list = list()
 		image_cache_for_atoms[holder] = atom_cache_list
-		RegisterSignal(holder, COMSIG_PARENT_QDELETING, /repository/images/proc/atom_destroyed)
+		RegisterSignal(holder, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/repository/images, atom_destroyed))
 
 	var/cache_key = "[icon]-[icon_state]-[plane]-[layer]"
 	. = atom_cache_list[cache_key]

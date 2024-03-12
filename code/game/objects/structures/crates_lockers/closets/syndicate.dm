@@ -78,7 +78,7 @@
 	//Sad trombone
 	if(pickednum == 1)
 		var/obj/item/paper/P = new /obj/item/paper(src)
-		P.setName("IOU")
+		P.("IOU")
 		P.info = "Sorry man, we needed the money so we sold your stash. It's ok, we'll double our money for sure this time!"
 
 	//Metal (common ore)

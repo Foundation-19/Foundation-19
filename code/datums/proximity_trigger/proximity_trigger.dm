@@ -75,24 +75,24 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 
 /datum/proximity_trigger/proc/register_turfs()
 	if(ismovable(holder))
-		RegisterSignal(holder, COMSIG_MOVED, /datum/proximity_trigger/proc/on_holder_moved)
-	RegisterSignal(holder, COMSIG_DIR_SET, /datum/proximity_trigger/proc/register_turfs) // Changing direction might alter the relevant turfs
+		RegisterSignal(holder, COMSIG_MOVED, TYPE_PROC_REF(/datum/proximity_trigger, on_holder_moved))
+	RegisterSignal(holder, COMSIG_DIR_SET, TYPE_PROC_REF(/datum/proximity_trigger, register_turfs)) // Changing direction might alter the relevant turfs
 
 	var/list/new_turfs = acquire_relevant_turfs()
 	if(listequal(turfs_in_range, new_turfs))
 		return
 
 	for(var/t in (turfs_in_range - new_turfs))
-		RegisterSignal(t, COMSIG_SET_OPACITY, /datum/proximity_trigger/proc/on_turf_visibility_changed)
+		RegisterSignal(t, COMSIG_SET_OPACITY, TYPE_PROC_REF(/datum/proximity_trigger, on_turf_visibility_changed))
 	for(var/t in (new_turfs - turfs_in_range))
-		RegisterSignal(t, COMSIG_SET_OPACITY, /datum/proximity_trigger/proc/on_turf_visibility_changed)
+		RegisterSignal(t, COMSIG_SET_OPACITY, TYPE_PROC_REF(/datum/proximity_trigger, on_turf_visibility_changed))
 
 	turfs_in_range = new_turfs
 	on_turf_visibility_changed()
 
 /datum/proximity_trigger/proc/unregister_turfs()
 	if(ismovable(holder))
-		UnregisterSignal(holder, COMSIG_MOVED, /datum/proximity_trigger/proc/on_holder_moved)
+		UnregisterSignal(holder, COMSIG_MOVED)
 	UnregisterSignal(holder, COMSIG_DIR_SET)
 
 	for(var/t in turfs_in_range)
@@ -115,7 +115,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 	for(var/t in (seen_turfs_ - new_seen_turfs_))
 		UnregisterSignal(t, COMSIG_ENTERED)
 	for(var/t in (new_seen_turfs_ - seen_turfs_))
-		RegisterSignal(t, COMSIG_ENTERED, /datum/proximity_trigger/proc/on_turf_entered)
+		RegisterSignal(t, COMSIG_ENTERED, TYPE_PROC_REF(/datum/proximity_trigger, on_turf_entered))
 
 	seen_turfs_ = new_seen_turfs_
 
@@ -163,7 +163,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 /obj/item/proxy_debug/New()
 	..()
 	overlay = image('icons/misc/mark.dmi', icon_state = "x3")
-	var/datum/proximity_trigger/a = new proxy_type(src, /obj/item/proxy_debug/proc/turf_entered, /obj/item/proxy_debug/proc/update_turfs)
+	var/datum/proximity_trigger/a = new proxy_type(src, TYPE_PROC_REF(/obj/item/proxy_debug, turf_entered), TYPE_PROC_REF(/obj/item/proxy_debug, update_turfs))
 	a.register_turfs()
 
 /obj/item/proxy_debug/proc/turf_entered(atom/A)

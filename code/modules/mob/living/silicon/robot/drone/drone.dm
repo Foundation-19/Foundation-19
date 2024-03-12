@@ -81,7 +81,7 @@ var/list/mob_hat_cache = list()
 	remove_verb(src, /mob/living/silicon/robot/verb/Namepick)
 	update_icon()
 
-	RegisterSignal(src, COMSIG_MOVED, /mob/living/silicon/robot/drone/proc/on_moved)
+	RegisterSignal(src, COMSIG_MOVED, TYPE_PROC_REF(/mob/living/silicon/robot/drone, on_moved))
 
 /mob/living/silicon/robot/drone/Destroy()
 	if(hat)
@@ -151,11 +151,11 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/fully_replace_character_name(pickedName as text)
 	// Would prefer to call the grandparent proc but this isn't possible, so..
 	real_name = pickedName
-	setName(real_name)
+	SetName(real_name)
 
 /mob/living/silicon/robot/drone/updatename()
 	real_name = "[initial(name)] ([random_id(type,100,999)])"
-	setName(real_name)
+	SetName(real_name)
 
 /mob/living/silicon/robot/drone/on_update_icon()
 

@@ -63,7 +63,7 @@
 	visible_message(SPAN_DANGER("\The [src] flies upwards!"))
 	animate(src, pixel_z = 16, time = 5)
 	default_pixel_z = 16
-	addtimer(CALLBACK(src, .proc/EndFlight), fly_duration)
+	addtimer(CALLBACK(src, PROC_REF(EndFlight)), fly_duration)
 
 /mob/living/simple_animal/hostile/infestation/floatfly/proc/EndFlight()
 	if(QDELETED(src) || stat == DEAD)

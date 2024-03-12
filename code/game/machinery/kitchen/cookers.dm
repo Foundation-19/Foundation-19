@@ -226,7 +226,7 @@
 	if (flags & COOKER_STRIP_RAW)
 		if (text_starts_with(result_name, "raw"))
 			result_name = trim(copytext(result_name, 4))
-	result.setName("[prefix ? "[prefix] " : ""][result_name][suffix ? " [suffix]" : ""]")
+	result.("[prefix ? "[prefix] " : ""][result_name][suffix ? " [suffix]" : ""]")
 	result.desc = "[result_desc] It has been [cook_modes[cook_mode]["desc"] || cook_mode]."
 
 /obj/machinery/cooker/proc/modify_result_appearance(obj/item/reagent_containers/food/snacks/result, obj/item/reagent_containers/food/snacks/source, flags)

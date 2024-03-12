@@ -22,8 +22,8 @@
 	H.AddMovementHandler(/datum/movement_handler/mob/incorporeal)
 	if(H.add_cloaking_source(src))
 		H.visible_message(SPAN_WARNING("\The [H] shrinks from view!"))
-	RegisterSignal(H, COMSIG_MOVED, .proc/check_light)
-	timer_id = addtimer(CALLBACK(src,.proc/cancel_veil),duration, TIMER_STOPPABLE)
+	RegisterSignal(H, COMSIG_MOVED, PROC_REF(check_light))
+	timer_id = addtimer(CALLBACK(src, PROC_REF(cancel_veil)), duration, TIMER_STOPPABLE)
 
 /datum/spell/veil_of_shadows/proc/cancel_veil()
 	var/mob/living/carbon/human/H = holder
@@ -35,7 +35,7 @@
 		drop_cloak()
 	else
 		UnregisterSignal(H, COMSIG_MOVED)
-		RegisterSignal(H, COMSIG_MOVED, .proc/drop_cloak)
+		RegisterSignal(H, COMSIG_MOVED, PROC_REF(drop_cloak))
 
 /datum/spell/veil_of_shadows/proc/drop_cloak()
 	var/mob/living/carbon/human/H = holder

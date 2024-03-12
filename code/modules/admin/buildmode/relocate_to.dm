@@ -34,7 +34,7 @@
 	ClearRelocator()
 
 	to_relocate = new_relocator
-	RegisterSignal(to_relocate, COMSIG_PARENT_QDELETING, /datum/build_mode/relocate_to/proc/ClearRelocator)
+	RegisterSignal(to_relocate, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/build_mode/relocate_to, ClearRelocator))
 	to_chat(user, SPAN_NOTICE("Will now be relocating \the [to_relocate]."))
 
 /datum/build_mode/relocate_to/proc/ClearRelocator(feedback)

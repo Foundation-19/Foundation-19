@@ -5,7 +5,7 @@
 
 /obj/structure/deity/trap/New()
 	..()
-	RegisterSignal(get_turf(src), COMSIG_ENTERED, /obj/structure/deity/trap/proc/trigger)
+	RegisterSignal(get_turf(src), COMSIG_ENTERED, TYPE_PROC_REF(/obj/structure/deity/trap, trigger))
 
 /obj/structure/deity/trap/Destroy()
 	UnregisterSignal(get_turf(src), COMSIG_ENTERED)
@@ -14,7 +14,7 @@
 /obj/structure/deity/trap/Move()
 	UnregisterSignal(get_turf(src), COMSIG_ENTERED)
 	. = ..()
-	RegisterSignal(get_turf(src), COMSIG_ENTERED, /obj/structure/deity/trap/proc/trigger)
+	RegisterSignal(get_turf(src), COMSIG_ENTERED, TYPE_PROC_REF(/obj/structure/deity/trap, trigger))
 
 /obj/structure/deity/trap/attackby(obj/item/W as obj, mob/user as mob)
 	trigger(user)

@@ -50,10 +50,8 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 		if(H.client && H.client.prefs)
 			for(var/culturetag in H.client.prefs.cultural_info)
 				var/decl/cultural_info/culture = SSculture.get_culture(H.client.prefs.cultural_info[culturetag])
-				if(H.char_rank && H.char_rank.name_short)
-					formal_name = "[formal_name][culture.get_formal_name_suffix()]"
-				else
-					formal_name = "[culture.get_formal_name_prefix()][formal_name][culture.get_formal_name_suffix()]"
+
+				formal_name = "[culture.get_formal_name_prefix()][formal_name][culture.get_formal_name_suffix()]"
 
 	// Generic record
 	set_name(H ? H.real_name : "Unset")
@@ -63,8 +61,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_age(H ? H.age : 30)
 	set_status(GLOB.default_physical_status)
 	set_species(H ? H.get_species() : SPECIES_HUMAN)
-	set_branch(H ? (H.char_branch?.name) : "None")
-	set_rank(H ? (H.char_rank?.name) : "None")
+	set_class(H?.mind?.assigned_job.class)
 	set_public_record(H?.public_record && !jobban_isbanned(H, "Records") ? html_decode(H.public_record) : "No record supplied")
 
 	// Medical record
@@ -180,7 +177,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || ACCESS_BRIDGE)}
 
 // Fear not the preprocessor, for it is a friend. To add a field, use one of these, depending on value type and if you need special access to see it.
-// It will also create getter/setter procs for record datum, named like /get_[key here]() /set_[key_here](value) e.g. get_name() setName(value)
+// It will also create getter/setter procs for record datum, named like /get_[key here]() /set_[key_here](value) e.g. get_name() (value)
 // Use getter setters to avoid errors caused by typoing the string key.
 #define FIELD_SHORT(NAME, KEY, ACCESS, ACCESS_EDIT) SETUP_FIELD(NAME, KEY, simple_text/crew_record, ACCESS, ACCESS_EDIT)
 #define FIELD_LONG(NAME, KEY, ACCESS, ACCESS_EDIT) SETUP_FIELD(NAME, KEY, pencode_text/crew_record, ACCESS, ACCESS_EDIT)
@@ -197,9 +194,8 @@ FIELD_SHORT("Sex", sex, null, ACCESS_ADMIN_LVL5)
 FIELD_NUM("Age", age, null, ACCESS_CHANGE_IDS)
 FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, ACCESS_MEDICAL_LVL2)
 
-FIELD_SHORT("Species",species, null, ACCESS_ADMIN_LVL5)
-FIELD_LIST("Branch", branch, record_branches(), null, ACCESS_ADMIN_LVL5)
-FIELD_LIST("Rank", rank, record_ranks(), null, ACCESS_ADMIN_LVL5)
+FIELD_SHORT("Species", species, null, ACCESS_ADMIN_LVL5)
+FIELD_LIST("Class", class, list(CLASS_A, CLASS_B, CLASS_C, CLASS_D, CLASS_E), null, ACCESS_ADMIN_LVL5)
 FIELD_SHORT("Religion", religion, ACCESS_CHAPEL_OFFICE, ACCESS_ADMIN_LVL5)
 
 FIELD_LONG("General Notes (Public)", public_record, null, ACCESS_ADMIN_LVL2)
@@ -223,25 +219,6 @@ FIELD_LONG("Qualifications", skillset, ACCESS_ADMIN_LVL5, ACCESS_ADMIN_LVL5)
 
 // ANTAG RECORDS
 FIELD_LONG("Exploitable Information", antagRecord, ACCESS_SYNDICATE, ACCESS_SYNDICATE)
-
-//Options builderes
-/datum/report_field/options/crew_record/rank/proc/record_ranks()
-	var/datum/computer_file/report/crew_record/record = owner
-	var/datum/mil_branch/branch = mil_branches.get_branch(record.get_branch())
-	if(!branch)
-		return
-	. = list()
-	. |= "Unset"
-	for(var/rank in branch.ranks)
-		var/datum/mil_rank/RA = branch.ranks[rank]
-		. |= RA.name
-
-/datum/report_field/options/crew_record/branch/proc/record_branches()
-	. = list()
-	. |= "Unset"
-	for(var/B in mil_branches.branches)
-		var/datum/mil_branch/BR = mil_branches.branches[B]
-		. |= BR.name
 
 #undef GETTER_SETTER
 #undef SETUP_FIELD

@@ -36,11 +36,11 @@
 	if(!holstered && storage.storage_slots != null && storage.contents.len >= storage.storage_slots - 1)
 		if(!can_holster(I))
 			to_chat(user, SPAN_NOTICE("\The [I] won't fit in \the [atom_holder]'s holster!."))
-			return 1
+			return TRUE
 	if(can_holster(I))
 		if(holstered && istype(user))
 			to_chat(user, SPAN_WARNING("There is already \a [holstered] holstered here!"))
-			return 1
+			return TRUE
 		if(sound_in)
 			playsound(get_turf(atom_holder), sound_in, 50)
 		if(istype(user))
@@ -50,18 +50,18 @@
 		holstered.add_fingerprint(user)
 		storage.w_class = max(storage.w_class, holstered.w_class)
 		user.visible_message(SPAN_NOTICE("\The [user] holsters \the [holstered]."), SPAN_NOTICE("You holster \the [holstered]."))
-		atom_holder.setName("occupied [initial(atom_holder.name)]")
+		atom_holder.("occupied [initial(atom_holder.name)]")
 		atom_holder.update_icon()
-		RegisterSignal(holstered, COMSIG_MOVED, .proc/check_holster)
-		RegisterSignal(holstered, COMSIG_PARENT_QDELETING, .proc/clear_holster)
-		return 1
-	return 0
+		RegisterSignal(holstered, COMSIG_MOVED, PROC_REF(check_holster))
+		RegisterSignal(holstered, COMSIG_PARENT_QDELETING, PROC_REF(clear_holster))
+		return TRUE
+	return FALSE
 
 /datum/extension/holster/proc/clear_holster()
-	UnregisterSignal(holstered, COMSIG_MOVED, .proc/check_holster)
-	UnregisterSignal(holstered, COMSIG_PARENT_QDELETING, .proc/clear_holster)
+	UnregisterSignal(holstered, COMSIG_MOVED)
+	UnregisterSignal(holstered, COMSIG_PARENT_QDELETING)
 	holstered = null
-	atom_holder.setName(initial(atom_holder.name))
+	atom_holder.(initial(atom_holder.name))
 
 /datum/extension/holster/proc/unholster(mob/user as mob, avoid_intent = FALSE)
 	if(!holstered)

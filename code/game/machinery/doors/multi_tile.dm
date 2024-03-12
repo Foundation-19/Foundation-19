@@ -92,7 +92,7 @@
 		crash_with("Attempted to pair an airlock filler with no parent airlock specified!")
 
 	filled_airlock = parent_airlock
-	RegisterSignal(filled_airlock, COMSIG_PARENT_QDELETING, .proc/no_airlock)
+	RegisterSignal(filled_airlock, COMSIG_PARENT_QDELETING, PROC_REF(no_airlock))
 
 /obj/airlock_filler_object/proc/no_airlock()
 	SIGNAL_HANDLER

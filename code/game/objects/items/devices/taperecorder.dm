@@ -336,7 +336,7 @@
 			printedmessage = "\[[time2text(mytape.timestamp[i]*10,"mm:ss")]\] (Unrecognized sound)"
 		t1 += "[printedmessage]<BR>"
 	P.info = t1
-	P.setName("Transcript")
+	P.("Transcript")
 	canprint = 0
 	sleep(300)
 	canprint = 1
@@ -433,10 +433,10 @@
 			if(isnull(new_name)) return
 			new_name = sanitizeSafe(new_name)
 			if(new_name)
-				setName("tape - '[new_name]'")
+				("tape - '[new_name]'")
 				to_chat(user, SPAN_NOTICE("You label the tape '[new_name]'."))
 			else
-				setName("tape")
+				("tape")
 				to_chat(user, SPAN_NOTICE("You scratch off the label."))
 		return
 	else if(isWirecutter(I))

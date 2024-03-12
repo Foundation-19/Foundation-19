@@ -46,7 +46,7 @@ Listener registration. You must unregister yourself if you are destroyed; the ow
 		return // Can try and register, but updates aren't coming
 	if(!listeners[owner])
 		listeners[owner] = list()
-		RegisterSignal(owner, COMSIG_PARENT_QDELETING, .proc/owner_destroyed)
+		RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_destroyed))
 	LAZYADD(listeners[owner][listener], registered_proc)
 	return TRUE
 

@@ -48,7 +48,7 @@
 	var/obj/effect/portal/P = new(get_turf(a), null, 0)
 	P.failchance = 0
 	portals += P
-	RegisterSignal(P, COMSIG_PARENT_QDELETING, /datum/phenomena/portals/proc/remove_portal)
+	RegisterSignal(P, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/phenomena/portals, remove_portal))
 	if(portals.len > 2)
 		var/removed = portals[1]
 		remove_portal(removed)

@@ -73,8 +73,8 @@
 		unset_terminal(machine, terminal)
 	terminal = new_terminal
 	terminal.master = src
-	RegisterSignal(terminal, COMSIG_PARENT_QDELETING, .proc/unset_terminal)
-	RegisterSignal(machine, COMSIG_MOVED, .proc/machine_moved)
+	RegisterSignal(terminal, COMSIG_PARENT_QDELETING, PROC_REF(unset_terminal))
+	RegisterSignal(machine, COMSIG_MOVED, PROC_REF(machine_moved))
 
 	set_status(machine, PART_STAT_CONNECTED)
 	start_processing(machine)

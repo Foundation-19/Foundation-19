@@ -17,10 +17,10 @@ var/decl/appearance_manager/appearance_manager = new()
 /decl/appearance_manager/proc/add_appearance(mob/viewer, datum/appearance_data/ad)
 	var/PriorityQueue/pq = appearances_[viewer]
 	if(!pq)
-		pq = new/PriorityQueue(/proc/cmp_appearance_data)
+		pq = new/PriorityQueue(GLOBAL_PROC_REF(cmp_appearance_data))
 		appearances_[viewer] = pq
-		RegisterSignal(viewer, COMSIG_MOB_LOGIN, /decl/appearance_manager/proc/apply_appearance_images)
-		RegisterSignal(viewer, COMSIG_PARENT_QDELETING, /decl/appearance_manager/proc/remove_appearances)
+		RegisterSignal(viewer, COMSIG_MOB_LOGIN, TYPE_PROC_REF(/decl/appearance_manager, apply_appearance_images))
+		RegisterSignal(viewer, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/decl/appearance_manager, remove_appearances))
 	pq.Enqueue(ad)
 	reset_appearance_images(viewer)
 

@@ -80,7 +80,7 @@
 	if(buildtype_select && machine)
 		build_path = machine.base_type || machine.type
 		var/obj/machinery/thing = build_path
-		setName(T_BOARD(initial(thing.name)))
+		(T_BOARD(initial(thing.name)))
 
 // Assoc list of all circuits by their board_type
 GLOBAL_LIST_EMPTY(circuitboards_by_type)

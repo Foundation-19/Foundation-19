@@ -54,7 +54,7 @@
 	mymob.healths = new /obj/screen()
 	mymob.healths.icon = 'icons/mob/gestalt.dmi'
 	mymob.healths.icon_state = "health0"
-	mymob.healths.setName("health")
+	mymob.healths.("health")
 	mymob.healths.screen_loc = DIONA_SCREEN_LOC_HEALTH
 
 	mymob.client.screen = list(mymob.healths)

@@ -125,7 +125,7 @@ SUBSYSTEM_DEF(statpanels)
 			var/turf_content_ref = REF(turf_content)
 			if(!(turf_content_ref in cached_images))
 				cached_images += turf_content_ref
-				turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, /atom/.proc/remove_from_cache)
+				turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/atom, remove_from_cache))
 
 				if(ismob(turf_content) || length(turf_content.overlays) > 2)
 					turfitems[++turfitems.len] = list("[turf_content.name]", turf_content_ref, costly_icon2html(turf_content, target, sourceonly=TRUE))

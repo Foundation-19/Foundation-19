@@ -936,7 +936,7 @@
 	T.Uses--
 	if(T.Uses <= 0)
 		T.visible_message("[icon2html(T, viewers(get_turf(T)))]<span class='notice'>\The [T]'s power is consumed in the reaction.</span>")
-		T.setName("used slime extract")
+		T.("used slime extract")
 		T.desc = "This extract has been used up."
 
 //Grey

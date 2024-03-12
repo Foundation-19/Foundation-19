@@ -14,7 +14,7 @@
 		return
 
 	if(get_id_name("Unknown") == GetVoice())
-		setName(get_id_name("Unknown"))
+		(get_id_name("Unknown"))
 
 	whisper_say(message)
 

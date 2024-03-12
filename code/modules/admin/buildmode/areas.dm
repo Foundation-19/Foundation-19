@@ -69,7 +69,7 @@ Right Click       - List/Create Area
 		if (!new_name)
 			return
 		var/area/new_area = new
-		new_area.setName(new_name)
+		new_area.SetName(new_name)
 		new_area.power_equip = 0
 		new_area.power_light = 0
 		new_area.power_environ = 0
@@ -83,7 +83,7 @@ Right Click       - List/Create Area
 		return
 	UnselectArea()
 	selected_area = A
-	RegisterSignal(selected_area, COMSIG_PARENT_QDELETING, .proc/UnselectArea)
+	RegisterSignal(selected_area, COMSIG_PARENT_QDELETING, PROC_REF(UnselectArea))
 
 /datum/build_mode/areas/proc/UnselectArea()
 	if(!selected_area)

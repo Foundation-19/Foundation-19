@@ -56,7 +56,7 @@
 
 	if (A && yes)
 		A.last_bumped = world.time
-		INVOKE_ASYNC(A, /atom/proc/Bumped, src) // Avoids bad actors sleeping or unexpected side effects, as the legacy behavior was to spawn here
+		INVOKE_ASYNC(A, TYPE_PROC_REF(/atom, Bumped), src) // Avoids bad actors sleeping or unexpected side effects, as the legacy behavior was to spawn here
 	..()
 
 /atom/movable/proc/forceMove(atom/destination)
@@ -165,7 +165,7 @@
 //Overlays
 /atom/movable/overlay
 	var/atom/master = null
-	var/follow_proc = /atom/movable/proc/move_to_loc_or_null
+	var/follow_proc = TYPE_PROC_REF(/atom/movable, move_to_loc_or_null)
 	anchored = TRUE
 	simulated = FALSE
 
@@ -174,15 +174,15 @@
 		crash_with("[type] created in nullspace.")
 		return INITIALIZE_HINT_QDEL
 	master = loc
-	setName(master.name)
+	(master.name)
 	set_dir(master.dir)
 
 	if(istype(master, /atom/movable))
 		RegisterSignal(master, COMSIG_MOVED, follow_proc)
 		SetInitLoc()
 
-	RegisterSignal(master, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
-	RegisterSignal(master, COMSIG_DIR_SET, /atom/proc/recursive_dir_set)
+	RegisterSignal(master, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
+	RegisterSignal(master, COMSIG_DIR_SET, TYPE_PROC_REF(/atom, recursive_dir_set))
 
 	. = ..()
 

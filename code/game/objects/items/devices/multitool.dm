@@ -46,7 +46,7 @@
 			unregister_buffer(buffer_object)
 			buffer_object = buffer
 			if(buffer_object)
-				RegisterSignal(buffer_object, COMSIG_PARENT_QDELETING, /obj/item/device/multitool/proc/unregister_buffer)
+				RegisterSignal(buffer_object, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/item/device/multitool, unregister_buffer))
 
 /obj/item/device/multitool/proc/unregister_buffer(atom/buffer_to_unregister)
 	// Only remove the buffered object, don't reset the name

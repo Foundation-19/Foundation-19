@@ -1336,7 +1336,7 @@ var/global/floorIsLava = 0
 /datum/admins/proc/faxCallback(obj/item/paper/admin/P)
 	var/customname = tgui_input_text(src.owner, "Pick a title for the report", "Title")
 
-	P.setName("[customname]")
+	P.("[customname]")
 
 	var/shouldStamp = TRUE
 	if(!P.sender) // admin initiated

@@ -67,7 +67,7 @@ var/list/ghost_traps
 /datum/ghosttrap/proc/request_player(mob/target, request_string, request_timeout)
 	if(request_timeout)
 		request_timeouts[target] = world.time + request_timeout
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, /datum/ghosttrap/proc/unregister_target)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/ghosttrap, unregister_target))
 	else
 		unregister_target(target)
 
@@ -126,7 +126,7 @@ var/list/ghost_traps
 		var/newname = sanitizeSafe(input(target, "Enter a name, or leave blank for the default name.", "Name change", target.real_name) as text, MAX_NAME_LEN)
 		if (newname)
 			target.real_name = newname
-			target.setName(target.real_name)
+			target.SetName(target.real_name)
 			return TRUE
 	return FALSE
 

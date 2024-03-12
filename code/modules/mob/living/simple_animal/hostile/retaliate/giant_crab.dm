@@ -111,7 +111,7 @@
 				return
 
 		if(!C.victim && C.can_special_attack(H))
-			C.RegisterSignal(C.victim, COMSIG_PARENT_QDELETING, /mob/living/simple_animal/hostile/retaliate/giant_crab/proc/release_grab)
+			C.RegisterSignal(C.victim, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/mob/living/simple_animal/hostile/retaliate/giant_crab, release_grab))
 			C.victim = H
 			H.Weaken(C.grab_duration)
 			H.Stun(C.grab_duration)

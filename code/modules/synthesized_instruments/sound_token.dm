@@ -32,7 +32,7 @@
 	listeners = list()
 	listener_status = list()
 
-	RegisterSignal(source, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
+	RegisterSignal(source, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
 
 	player.subscribe(src)
 
@@ -69,4 +69,3 @@
 /datum/sound_token/instrument/Destroy()
 	. = ..()
 	player = null
-

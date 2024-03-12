@@ -22,7 +22,7 @@
 /obj/item/stock_parts/circuitboard/air_management/construct(obj/machinery/computer/air_control/C)
 	if (..(C))
 		if(console_name)
-			C.setName(console_name)
+			C.(console_name)
 		C.set_frequency(frequency)
 		C.sensor_tag = sensor_tag
 		C.sensor_name = sensor_name

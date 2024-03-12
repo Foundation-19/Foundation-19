@@ -100,7 +100,7 @@
 
 /obj/item/mech_equipment/mounted_system/proc/forget_holding()
 	if(holding) //It'd be strange for this to be called with this var unset
-		UnregisterSignal(holding, COMSIG_PARENT_QDELETING, .proc/forget_holding)
+		UnregisterSignal(holding, COMSIG_PARENT_QDELETING)
 		holding = null
 		qdel(src)
 
@@ -108,12 +108,12 @@
 	. = ..()
 	if(holding_type)
 		holding = new holding_type(src)
-		RegisterSignal(holding, COMSIG_PARENT_QDELETING, .proc/forget_holding)
+		RegisterSignal(holding, COMSIG_PARENT_QDELETING, PROC_REF(forget_holding))
 	if(holding)
 		if(!icon_state)
 			icon = holding.icon
 			icon_state = holding.icon_state
-		setName(holding.name)
+		SetName(holding.name)
 		desc = "[holding.desc] This one is suitable for installation on an exosuit."
 
 

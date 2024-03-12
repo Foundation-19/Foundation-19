@@ -226,7 +226,7 @@
 			while (count-- && count >= 0)
 				var/obj/item/reagent_containers/pill/P = new/obj/item/reagent_containers/pill(loc)
 				if(!name) name = reagents.get_master_reagent_name()
-				P.setName("[name] pill")
+				P.("[name] pill")
 				P.icon_state = "pill"+pillsprite
 				if(P.icon_state in list("pill1", "pill2", "pill3", "pill4", "pill5")) // if using greyscale, take colour from reagent
 					P.color = reagents.get_color()
@@ -275,7 +275,7 @@
 	if (!name)
 		return
 	var/obj/item/reagent_containers/glass/bottle/P = new/obj/item/reagent_containers/glass/bottle(loc)
-	P.setName("[name] bottle")
+	P.("[name] bottle")
 	P.icon_state = bottlesprite
 	reagents.trans_to_obj(P, bottle_dosage)
 	P.update_icon()

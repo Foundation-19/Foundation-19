@@ -40,10 +40,10 @@
 			return
 		t = sanitizeSafe(t, MAX_NAME_LEN)
 		if(t)
-			setName("glass case - '[t]'")
+			("glass case - '[t]'")
 			desc = "A case containing \a [t] implant."
 		else
-			setName(initial(name))
+			(initial(name))
 			desc = "A case containing an implant."
 	else if(istype(I, /obj/item/reagent_containers/syringe))
 		if(istype(imp,/obj/item/implant/chem))

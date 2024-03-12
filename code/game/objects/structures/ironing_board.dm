@@ -66,7 +66,7 @@
 
 		if(user.unEquip(I, src))
 			cloth = I
-			RegisterSignal(I, COMSIG_PARENT_QDELETING, /obj/structure/bed/roller/ironingboard/proc/remove_item)
+			RegisterSignal(I, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/structure/bed/roller/ironingboard, remove_item))
 			update_icon()
 		return
 	else if(istype(I,/obj/item/ironingiron))
@@ -91,7 +91,7 @@
 		if(!cloth)
 			if(!holding && !R.enabled && user.unEquip(I, src))
 				holding = R
-				RegisterSignal(I, COMSIG_PARENT_QDELETING, /obj/structure/bed/roller/ironingboard/proc/remove_item)
+				RegisterSignal(I, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/structure/bed/roller/ironingboard, remove_item))
 				update_icon()
 				return
 			to_chat(user, SPAN_NOTICE("There isn't anything on the ironing board."))

@@ -40,7 +40,7 @@
 	outfit.equip(src)
 	var/obj/item/clothing/head/helmet/facecover/F = locate() in src
 	if(F)
-		F.setName("[F.name] ([number])")
+		F.("[F.name] ([number])")
 
 /mob/living/carbon/human/blank/ssd_check()
 	return FALSE

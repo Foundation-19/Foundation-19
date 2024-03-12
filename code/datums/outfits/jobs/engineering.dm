@@ -18,7 +18,7 @@
 	id_type = /obj/item/card/id/seclvl4eng
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
-	l_ear = /obj/item/device/radio/headset/heads/ce
+	l_ear = /obj/item/device/radio/headset/conteng
 
 /decl/hierarchy/outfit/job/engineering/seneng
 	name = OUTFIT_JOB_NAME("Senior Engineer")

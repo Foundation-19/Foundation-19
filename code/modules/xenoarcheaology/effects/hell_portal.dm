@@ -87,7 +87,7 @@
 			if (length(portals) >= active_portals_max)
 				return
 
-			var/turf/T = pick(pick_turf_in_range(get_turf(holder), effectrange, list(/proc/not_turf_contains_dense_objects, /proc/is_not_space_turf, /proc/is_not_holy_turf, /proc/is_not_open_space)))
+			var/turf/T = pick(pick_turf_in_range(get_turf(holder), effectrange, list(GLOBAL_PROC_REF(not_turf_contains_dense_objects), GLOBAL_PROC_REF(is_not_space_turf), GLOBAL_PROC_REF(is_not_holy_turf), GLOBAL_PROC_REF(is_not_open_space))))
 
 			if (!T)
 				return
@@ -97,7 +97,7 @@
 			gate.parent = src
 			portals += gate
 
-			RegisterSignal(gate, COMSIG_PARENT_QDELETING, /datum/artifact_effect/hellportal/proc/reduce_portal_count)
+			RegisterSignal(gate, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/artifact_effect/hellportal, reduce_portal_count))
 
 /datum/artifact_effect/hellportal/proc/hurt_players()
 	for (var/mob/living/carbon/human/H in range(src.effectrange,get_turf(holder)))
@@ -120,8 +120,8 @@
 
 /datum/artifact_effect/hellportal/proc/register_mob(mob/M)
 	mobs += M
-	RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/unregister_mob)
-	RegisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST, .proc/unregister_mob)
+	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(unregister_mob))
+	RegisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST, PROC_REF(unregister_mob))
 
 	playsound(M, pick(mob_spawn_sounds), 100)
 
@@ -132,7 +132,7 @@
 
 /obj/effect/gateway/active/artifact/New()
 	..()
-	addtimer(CALLBACK(src, .proc/create_and_delete), rand(15,30) SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(create_and_delete)), rand(15,30) SECONDS)
 
 /obj/effect/gateway/active/artifact/create_and_delete()
 	var/mob/living/simple_animal/T = pickweight(spawnable)

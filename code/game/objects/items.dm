@@ -761,11 +761,11 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	user.client.view = viewsize
 	zoom = 1
 
-	RegisterSignal(src, COMSIG_PARENT_QDELETING, /obj/item/proc/unzoom)
-	RegisterSignal(user, COMSIG_MOVED, /obj/item/proc/unzoom)
-	RegisterSignal(user, COMSIG_DIR_SET, /obj/item/proc/unzoom)
-	user.RegisterSignal(src, COMSIG_DROPPED_ITEM, /mob/living/proc/unzoom)
-	RegisterSignal(user, COMSIG_SET_STAT, /obj/item/proc/unzoom)
+	RegisterSignal(src, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/item, unzoom))
+	user.RegisterSignal(src, COMSIG_DROPPED_ITEM, TYPE_PROC_REF(/mob/living, unzoom))
 
 	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
 
@@ -781,7 +781,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(user, COMSIG_MOVED)
 	UnregisterSignal(user, COMSIG_DIR_SET)
-	user.RegisterSignal(src, COMSIG_DROPPED_ITEM)
+	user.UnregisterSignal(src, COMSIG_DROPPED_ITEM)
 
 	user = user == src ? loc : (user || loc)
 	if(!istype(user))
@@ -910,7 +910,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/inherit_custom_item_data(datum/custom_item/citem)
 	. = src
 	if(citem.item_name)
-		setName(citem.item_name)
+		(citem.item_name)
 	if(citem.item_desc)
 		desc = citem.item_desc
 	if(citem.item_icon_state)

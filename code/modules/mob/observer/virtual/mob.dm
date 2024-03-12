@@ -4,9 +4,9 @@
 /mob/observer/virtual/mob/New(location, mob/host)
 	..()
 
-	RegisterSignal(host, COMSIG_SET_SIGHT, /mob/observer/virtual/mob/proc/sync_sight)
-	RegisterSignal(host, COMSIG_SET_SEE_INVISIBLE, /mob/observer/virtual/mob/proc/sync_sight)
-	RegisterSignal(host, COMSIG_SET_SEE_IN_DARK, /mob/observer/virtual/mob/proc/sync_sight)
+	RegisterSignal(host, COMSIG_SET_SIGHT, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
+	RegisterSignal(host, COMSIG_SET_SEE_INVISIBLE, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
+	RegisterSignal(host, COMSIG_SET_SEE_IN_DARK, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
 
 	sync_sight(host)
 

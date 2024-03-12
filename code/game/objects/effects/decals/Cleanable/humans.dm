@@ -89,10 +89,10 @@ var/global/list/image/splatter_cache=list()
 	if(basecolor == "rainbow") basecolor = get_random_colour(1)
 	color = basecolor
 	if(basecolor == SYNTH_BLOOD_COLOUR)
-		setName("oil")
+		("oil")
 		desc = "It's black and greasy."
 	else
-		setName(initial(name))
+		(initial(name))
 		desc = initial(desc)
 
 /obj/effect/decal/cleanable/blood/Crossed(mob/living/carbon/human/perp)
@@ -287,7 +287,7 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/mucus/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/set_dry), DRYING_TIME * 2)
+	addtimer(CALLBACK(src, PROC_REF(set_dry)), DRYING_TIME * 2)
 
 /obj/effect/decal/cleanable/mucus/proc/set_dry()
 	dry = TRUE

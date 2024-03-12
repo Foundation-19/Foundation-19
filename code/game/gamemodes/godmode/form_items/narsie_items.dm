@@ -57,7 +57,7 @@
 	if(ismob(a))
 		var/mob/M = a
 		if(M.stat != DEAD)
-			RegisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST, /obj/item/weapon/material/twohanded/fireaxe/cult/proc/gain_power)
+			RegisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/obj/item/weapon/material/twohanded/fireaxe/cult, gain_power))
 		spawn(30)
 			UnregisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	return ..()

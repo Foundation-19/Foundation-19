@@ -86,7 +86,7 @@
 		var/obj/item/reagent_containers/food/snacks/fortunecookie/cookie = new(location)
 		var/obj/item/paper/paper = new(cookie)
 		cookie.trash = paper
-		paper.setName("Fortune")
+		paper.("Fortune")
 		paper.info = pick(fortunes)
 
 /datum/trader/grocery

@@ -24,7 +24,7 @@
 		move_volume = volume_override
 	if (sounds_override)
 		move_sounds = sounds_override
-	RegisterSignal(atom_holder, COMSIG_MOVED, .proc/DoMoveSound)
+	RegisterSignal(atom_holder, COMSIG_MOVED, PROC_REF(DoMoveSound))
 
 /datum/extension/play_sound_on_moved/Destroy()
 	UnregisterSignal(atom_holder, COMSIG_MOVED)

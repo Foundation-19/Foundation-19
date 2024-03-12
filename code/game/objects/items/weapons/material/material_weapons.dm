@@ -77,7 +77,7 @@
 			obj_flags &= (~OBJ_FLAG_CONDUCTIBLE)
 		update_force()
 		if(applies_material_name)
-			setName("[material.display_name] [initial(name)]")
+			("[material.display_name] [initial(name)]")
 		update_icon()
 
 /obj/item/material/on_update_icon()

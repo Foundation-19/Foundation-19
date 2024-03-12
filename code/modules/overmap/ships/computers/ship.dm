@@ -57,8 +57,8 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 		user.reset_view(linked)
 	if(user.client)
 		user.client.view = world.view + extra_view
-	RegisterSignal(user, COMSIG_MOVED, /obj/machinery/computer/ship/proc/unlook)
-	RegisterSignal(user, COMSIG_SET_STAT, /obj/machinery/computer/ship/proc/unlook)
+	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
+	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
 	LAZYDISTINCTADD(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/unlook(mob/user)

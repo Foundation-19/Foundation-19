@@ -40,7 +40,7 @@
 	else if(istype(W, /obj/item/pen))
 		var/n_name = sanitizeSafe(input(usr, "What would you like to label the folder?", "Folder Labelling", null)  as text, MAX_NAME_LEN)
 		if((loc == usr && usr.stat == 0))
-			setName("folder[(n_name ? text("- '[n_name]'") : null)]")
+			("folder[(n_name ? text("- '[n_name]'") : null)]")
 	return
 
 /obj/item/folder/attack_self(mob/user as mob)

@@ -40,7 +40,7 @@
 	if(product)
 		if(ismob(product) && label_name)
 			var/mob/M = product
-			M.setName(label_name)
+			M.(label_name)
 		if(ismob(src.loc))
 			var/mob/M = src.loc
 			M.drop_from_inventory(src)

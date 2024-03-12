@@ -27,7 +27,7 @@
 
 #define INFINITY	1.#INF
 
-#define TICKS_IN_DAY 		24*60*60*10
+#define TICKS_IN_DAY 		(24*60*60*10)
 #define TICKS_IN_SECOND 	10
 
 #define SIMPLE_SIGN(X) ((X) < 0 ? -1 : 1)

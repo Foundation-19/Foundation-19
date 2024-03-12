@@ -177,7 +177,7 @@
 		var/obj/effect/foam_dart_dummy/D = new/obj/effect/foam_dart_dummy(get_turf(src))
 		bullets--
 		D.icon_state = "foamdart"
-		D.setName("foam dart")
+		D.("foam dart")
 		playsound(user.loc, 'sounds/items/syringeproj.ogg', 50, 1)
 
 		for(var/i=0, i<6, i++)

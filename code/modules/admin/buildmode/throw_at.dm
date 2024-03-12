@@ -33,7 +33,7 @@
 	ClearThrowable()
 
 	to_throw = new_throwable
-	RegisterSignal(to_throw, COMSIG_PARENT_QDELETING, /datum/build_mode/throw_at/proc/ClearThrowable)
+	RegisterSignal(to_throw, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/build_mode/throw_at, ClearThrowable))
 	to_chat(user, SPAN_NOTICE("Will now be throwing \the [to_throw]."))
 
 /datum/build_mode/throw_at/proc/ClearThrowable(feedback)

@@ -31,10 +31,10 @@
 		return
 
 	if( istext(new_name) )
-		M.setName(new_name)
+		M.(new_name)
 		M.real_name = new_name
 	else
-		M.setName(src.name)
+		M.(src.name)
 		M.real_name = src.real_name
 
 	if(src.dna)

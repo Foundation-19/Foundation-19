@@ -56,11 +56,11 @@
 
 /obj/effect/landmark/delete_on_shuttle/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_SHUTTLE_INITIALIZED, .proc/check_shuttle)
+	RegisterSignal(SSdcs, COMSIG_GLOB_SHUTTLE_INITIALIZED, PROC_REF(check_shuttle))
 
 /obj/effect/landmark/delete_on_shuttle/proc/check_shuttle(datum/source, shuttle)
 	if(SSshuttle.shuttles[shuttle_name] == shuttle)
-		RegisterSignal(shuttle, COMSIG_SHUTTLE_MOVED, .proc/delete_everything)
+		RegisterSignal(shuttle, COMSIG_SHUTTLE_MOVED, PROC_REF(delete_everything))
 		shuttle_datum = shuttle
 
 /obj/effect/landmark/delete_on_shuttle/proc/delete_everything()

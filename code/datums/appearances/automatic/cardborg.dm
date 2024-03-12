@@ -17,7 +17,7 @@
 
 	var/image/I = get_image_from_backpack(H)
 	AddAltAppearance(H, I, GLOB.silicon_mob_list+H) //you look like a robot to robots! (including yourself because you're totally a robot)
-	RegisterSignal(SSdcs, COMSIG_GLOB_MOB_LOGIN, /decl/appearance_handler/cardborg/proc/mob_joined)	// Duplicate registration request are handled for us
+	RegisterSignal(SSdcs, COMSIG_GLOB_MOB_LOGIN, TYPE_PROC_REF(/decl/appearance_handler/cardborg, mob_joined))	// Duplicate registration request are handled for us
 
 /decl/appearance_handler/cardborg/proc/item_removed(obj/item/item, mob/user)
 	if((istype(item, /obj/item/clothing/suit/cardborg) || istype(item, /obj/item/clothing/head/cardborg)) || istype(item, /obj/item/storage/backpack))

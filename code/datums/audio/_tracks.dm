@@ -305,14 +305,14 @@
 	url = "https://ghyti.bandcamp.com/"
 
 // SCPRP Tracks
-//TODO: Many of these tracks in code need proper sources!
 /decl/audio/track/dieinthedark
 	source = 'sounds/music/foundation.ogg'
-	title = "We Die In The Dark, So You Can Live In The Light"
+	title = "Frostpunk Theme"
 	author = "Piotr Musial"
 	license = /decl/license/grandfathered
-	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	url = "https://www.youtube.com/watch?v=kQFaMAAdDSE"
 
+// no url for this one, TODO: find where the fuck this is from
 /decl/audio/track/perdition
 	source = 'sounds/music/perdition.ogg'
 	title = "Site 64 Perdition"
@@ -325,21 +325,21 @@
 	title = "The SCP Foundation Main Theme"
 	author = "Ajoura"
 	url = "https://www.youtube.com/watch?v=YJaeH8ffl_M"
-	license = /decl/license/grandfathered
+	license = /decl/license/cc_by_sa_3_0
 
 /decl/audio/track/days
 	source = 'sounds/music/days.ogg'
-	title = "30 Days"
-	author = "Buffalowing/Various Artists"
+	title = "Hungarian Rhapsodies"
+	author = "Artur Pizarro"
 	license = /decl/license/grandfathered
-	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	url = "https://www.youtube.com/watch?v=_PaVZyrCLSY"
 
 /decl/audio/track/hie
 	source = 'sounds/music/howitends.ogg'
-	title = "How It Ends"
+	title = "Sonogram"
 	author = "Atli Orvarsson"
 	license = /decl/license/grandfathered
-	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	url = "https://www.youtube.com/watch?v=YNehn7jzuxU"
 
 /decl/audio/track/chaos
 	source = 'sounds/music/chaos_insurgency.ogg'
@@ -347,3 +347,74 @@
 	author = "Jacek 'Fragik' Rogal"
 	license = /decl/license/cc_by_sa_4_0
 	url = "https://www.youtube.com/watch?v=hZ3HS_ANyak"
+
+/decl/audio/track/bookburners
+	source = 'sounds/music/bookburners.ogg'
+	title = "The Bookburners"
+	author = "Astowo"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=OyZlUOK2E1A"
+
+/decl/audio/track/dread
+	source = 'sounds/music/dread.ogg'
+	title = "Dread"
+	author = "Astowo"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=1ytRHNcgxQI"
+
+/decl/audio/track/animosity
+	source = 'sounds/music/animosity.ogg'
+	title = "Animosity"
+	author = "Astowo"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=A-08jERq8E0"
+
+/decl/audio/track/main_astowo
+	source = 'sounds/music/main_astowo.ogg'
+	title = "The SCP Foundation Main Theme (Astowo's Remix)"
+	author = "Astowo"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=41xdWeUjR_8"
+
+/decl/audio/track/final_flash
+	source = 'sounds/music/final_flash_of_existence.ogg'
+	title = "The Final Flash of Existence (SCP:SL)"
+	author = "Jacek 'Fragik' Rogal"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=CiJDfcadZMk"
+
+/decl/audio/track/duplicity_and_disillusion
+	source = 'sounds/music/duplicity_and_disillusion.ogg'
+	title = "Duplicity and Disillusion - The Rise of the Chaos Insurgency"
+	author = "Polaroid Iris Productions"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=boU3xBYcJm4"
+
+/decl/audio/track/battle_for_ganzir
+	source = 'sounds/music/battle_for_ganzir.ogg'
+	title = "Battle for Ganzir - Last Stand of the UNGOC"
+	author = "Polaroid Iris Productions"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=PLKH-_mSiCE"
+
+/decl/audio/track/purge_protocol
+	source = 'sounds/music/purge_protocol.ogg'
+	title = "Purge Protocol - Global Occult Coalition Theme"
+	author = "ksho"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=BecKecHBOdc"
+
+/decl/audio/track/uiu_spawn_theme
+	source = 'sounds/music/uiu_spawn.ogg'
+	title = "rBreach UIU/FBI Spawn Theme"
+	author = "VarieZ"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=kEPP_pEpEMU"
+
+/decl/audio/track/surface_area
+	source = 'sounds/music/melancholy.ogg'
+	title = "SCP:SL Surface Zone Theme (Extended)"
+	author = "Jacek 'Fragik' Rogal"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=jpxIVDVoa2I"
+

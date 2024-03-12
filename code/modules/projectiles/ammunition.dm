@@ -36,7 +36,7 @@
 	var/obj/item/projectile/proj = new projectile_type(src)
 	is_spent = TRUE
 	if(projectile_label)
-		proj.setName("[initial(proj.name)] (\"[projectile_label]\")")
+		proj.("[initial(proj.name)] (\"[projectile_label]\")")
 	set_dir(pick(GLOB.alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.

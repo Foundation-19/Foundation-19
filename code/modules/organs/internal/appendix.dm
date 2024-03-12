@@ -9,7 +9,7 @@
 	..()
 	if(inflamed)
 		icon_state = "appendixinflamed"
-		setName("inflamed appendix")
+		("inflamed appendix")
 
 /obj/item/organ/internal/appendix/Process()
 	..()

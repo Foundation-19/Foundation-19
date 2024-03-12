@@ -294,7 +294,7 @@
 				O.robotize()
 		else //normal organ
 			O.force_icon = initial(O.force_icon)
-			O.setName(initial(O.name))
+			O.(initial(O.name))
 			O.desc = initial(O.desc)
 
 	//For species that don't care about your silly prefs
@@ -430,22 +430,6 @@
 			continue
 		.[title] = job
 
-/datum/preferences/proc/selected_branches_list(priority = JOB_PRIORITY_PICKED)
-	. = list()
-	for (var/datum/job/job in selected_jobs_list(priority))
-		var/name = branches[job.title]
-		if (!name)
-			continue
-		. |= mil_branches.get_branch(name)
-
-/datum/preferences/proc/selected_branches_assoc(priority = JOB_PRIORITY_PICKED)
-	. = list()
-	for (var/datum/job/job in selected_jobs_list(priority))
-		var/name = branches[job.title]
-		if (!name || .[name])
-			continue
-		.[name] = mil_branches.get_branch(name)
-
 /datum/preferences/proc/for_each_selected_job(datum/callback/callback, priority = JOB_PRIORITY_LIKELY)
 	. = list()
 	if (!islist(priority))
@@ -460,18 +444,3 @@
 		priority = selected_jobs_assoc(priority)
 	for (var/callback in callbacks)
 		. += for_each_selected_job(callback, priority)
-
-/datum/preferences/proc/for_each_selected_branch(datum/callback/callback, priority = JOB_PRIORITY_LIKELY)
-	. = list()
-	if (!islist(priority))
-		priority = selected_branches_assoc(priority)
-	for (var/name in priority)
-		var/datum/mil_branch/branch = priority[name]
-		.[name] = callback.Invoke(branch)
-
-/datum/preferences/proc/for_each_selected_branch_multi(list/callbacks, priority = JOB_PRIORITY_LIKELY)
-	. = list()
-	if (!islist(priority))
-		priority = selected_branches_assoc(priority)
-	for (var/callback in callbacks)
-		. += for_each_selected_branch(callback, priority)

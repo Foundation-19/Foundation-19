@@ -235,10 +235,10 @@
 	var/mob/living/M = loc
 	if(istype(M) && is_held_twohanded(M))
 		wielded = 1
-		setName("[initial(name)] (wielded)")
+		("[initial(name)] (wielded)")
 	else
 		wielded = 0
-		setName(initial(name))
+		(initial(name))
 	update_icon()
 	..()
 

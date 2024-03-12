@@ -80,7 +80,7 @@
 		C.eye_blind += 20
 		C.eye_blurry += 30
 		C.disabilities |= NEARSIGHTED
-		addtimer(CALLBACK(src, .proc/unblind, C), 30 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(unblind), C), 30 SECONDS)
 	admin_attack_log(user, M, "Used a blindness talisman.", "Was victim of a blindness talisman.", "used a blindness talisman on")
 	qdel(src)
 	user.unEquip(src)

@@ -15,9 +15,7 @@
 
 	minimal_access = list()
 	outfit_type = /decl/hierarchy/outfit/job/chaplain
-
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 
 /datum/job/chaplain/equip(mob/living/carbon/human/H, alt_title, ask_questions = TRUE)
 	. = ..()
@@ -36,27 +34,27 @@
 			new_religion = religion_name
 		switch(lowertext(new_religion))
 			if("christianity")
-				B.setName("The Holy Bible")
+				B.("The Holy Bible")
 			if("satanism")
-				B.setName("The Unholy Bible")
+				B.("The Unholy Bible")
 			if("cthulu")
-				B.setName("The Necronomicon")
+				B.("The Necronomicon")
 			if("islam")
-				B.setName("Quran")
+				B.("Quran")
 			if("scientology")
-				B.setName(pick("The Biography of L. Ron Hubbard","Dianetics"))
+				B.(pick("The Biography of L. Ron Hubbard","Dianetics"))
 			if("chaos")
-				B.setName("The Book of Lorgar")
+				B.("The Book of Lorgar")
 			if("imperium")
-				B.setName("Uplifting Primer")
+				B.("Uplifting Primer")
 			if("toolboxia")
-				B.setName("Toolbox Manifesto")
+				B.("Toolbox Manifesto")
 			if("homosexuality")
-				B.setName("Guys Gone Wild")
+				B.("Guys Gone Wild")
 			if("science")
-				B.setName(pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition"))
+				B.(pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition"))
 			else
-				B.setName("The Holy Book of [new_religion]")
+				B.("The Holy Book of [new_religion]")
 		SSstatistics.set_field_details("religion_name","[new_religion]")
 
 	spawn(1)

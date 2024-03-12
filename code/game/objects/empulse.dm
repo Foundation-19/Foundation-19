@@ -17,7 +17,7 @@
 		var/obj/effect/overlay/pulse = new/obj/effect/overlay(epicenter)
 		pulse.icon = 'icons/effects/effects.dmi'
 		pulse.icon_state = "emppulse"
-		pulse.setName("emp pulse")
+		pulse.("emp pulse")
 		pulse.anchored = TRUE
 		spawn(20)
 			qdel(pulse)

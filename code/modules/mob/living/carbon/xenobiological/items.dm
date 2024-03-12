@@ -156,7 +156,7 @@
 
 	if (!newname)
 		newname = "pet slime"
-	pet.setName(newname)
+	pet.(newname)
 	pet.real_name = newname
 	qdel(src)
 
@@ -187,7 +187,7 @@
 
 	if (!newname)
 		newname = "pet slime"
-	pet.setName(newname)
+	pet.(newname)
 	pet.real_name = newname
 	qdel(src)
 

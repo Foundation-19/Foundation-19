@@ -53,9 +53,9 @@
 		middle = M
 		back = B
 		if(is_valid_setup())
-			RegisterSignal(F, COMSIG_PARENT_QDELETING, .proc/release_links)
-			RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/release_links)
-			RegisterSignal(B, COMSIG_PARENT_QDELETING, .proc/release_links)
+			RegisterSignal(F, COMSIG_PARENT_QDELETING, PROC_REF(release_links))
+			RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(release_links))
+			RegisterSignal(B, COMSIG_PARENT_QDELETING, PROC_REF(release_links))
 			return TRUE
 	return FALSE
 

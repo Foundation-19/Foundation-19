@@ -203,7 +203,7 @@
 		var/decl/cultural_info/culture = SSculture.get_culture(CULTURE_OTHER)
 		data = culture.get_random_name()
 	vox.real_name = data
-	vox.setName(data)
+	vox.(data)
 	OnReady(vox)
 	qdel(user)
 

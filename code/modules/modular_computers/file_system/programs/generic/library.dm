@@ -95,7 +95,7 @@ The answer was five and a half years -ZeroBits
 			error_message = "Interface Error: Cached book is copy-protected."
 			return 1
 
-		B.setName(input(usr, "Enter Book Title", "Title", B.name) as text|null)
+		B.(input(usr, "Enter Book Title", "Title", B.name) as text|null)
 		B.author = input(usr, "Enter Author Name", "Author", B.author) as text|null
 
 		if(!B.author)
@@ -144,7 +144,7 @@ The answer was five and a half years -ZeroBits
 			var/obj/machinery/bookbinder/bndr = locate(/obj/machinery/bookbinder, get_step(nano_host(), d))
 			if(bndr && bndr.anchored)
 				var/obj/item/book/B = new(bndr.loc)
-				B.setName(current_book["title"])
+				B.(current_book["title"])
 				B.title = current_book["title"]
 				B.author = current_book["author"]
 				B.dat = current_book["content"]

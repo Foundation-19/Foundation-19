@@ -227,8 +227,8 @@
 	var/mob/living/L = targets[1]
 
 	vision.possess(L)
-	RegisterSignal(L, COMSIG_PARENT_QDELETING, /datum/spell/camera_connection/proc/release)
-	RegisterSignal(L, COMSIG_MOB_LOGOUT, /datum/spell/camera_connection/proc/release)
+	RegisterSignal(L, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/spell/camera_connection, release))
+	RegisterSignal(L, COMSIG_MOB_LOGOUT, TYPE_PROC_REF(/datum/spell/camera_connection, release))
 	add_verb(L, /mob/living/proc/release_eye)
 
 /datum/spell/camera_connection/proc/release(mob/living/L)

@@ -115,10 +115,10 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	listeners = list()
 	listener_status = list()
 
-	RegisterSignal(source, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
+	RegisterSignal(source, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
 
 	if(ismovable(source))
-		proxy_listener = new(source, /datum/sound_token/proc/PrivAddListener, /datum/sound_token/proc/PrivLocateListeners, range, proc_owner = src)
+		proxy_listener = new(source, TYPE_PROC_REF(/datum/sound_token, PrivAddListener), TYPE_PROC_REF(/datum/sound_token, PrivLocateListeners), range, proc_owner = src)
 		proxy_listener.register_turfs()
 
 /datum/sound_token/Destroy()
@@ -200,8 +200,8 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 
 	listeners += listener
 
-	RegisterSignal(listener, COMSIG_MOVED, /datum/sound_token/proc/PrivUpdateListenerLoc)
-	RegisterSignal(listener, COMSIG_PARENT_QDELETING, /datum/sound_token/proc/PrivRemoveListener)
+	RegisterSignal(listener, COMSIG_MOVED, TYPE_PROC_REF(/datum/sound_token, PrivUpdateListenerLoc))
+	RegisterSignal(listener, COMSIG_PARENT_QDELETING, src, TYPE_PROC_REF(/datum/sound_token, PrivRemoveListener))
 
 	PrivUpdateListenerLoc(listener, FALSE)
 
@@ -209,7 +209,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	null_sound = null_sound || new(channel = sound.channel)
 	sound_to(listener, null_sound)
 	UnregisterSignal(listener, COMSIG_MOVED)
-	UnregisterSignal(listener, COMSIG_PARENT_QDELETING, /datum/sound_token/proc/PrivRemoveListener)
+	UnregisterSignal(listener, COMSIG_PARENT_QDELETING)
 	listeners -= listener
 
 /datum/sound_token/proc/PrivUpdateListenerLoc(atom/listener, update_sound = TRUE)

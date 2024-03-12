@@ -130,7 +130,7 @@
 	melt()
 
 /turf/simulated/floor/exoplanet/snow/melt()
-	setName("permafrost")
+	("permafrost")
 	icon_state = "permafrost"
 	footstep_type = /decl/footsteps/asteroid
 
@@ -162,7 +162,7 @@
 		melt()
 
 /turf/simulated/floor/exoplanet/grass/melt()
-	setName("scorched ground")
+	("scorched ground")
 	icon_state = "scorched"
 	footstep_type = /decl/footsteps/asteroid
 	color = null
@@ -183,7 +183,7 @@
 		melt()
 
 /turf/simulated/floor/exoplanet/desert/melt()
-	setName("molten silica")
+	("molten silica")
 	desc = "A glassed patch of sand."
 	icon_state = "sandglass"
 	diggable = 0
@@ -223,7 +223,7 @@
 		melt()
 
 /turf/simulated/floor/exoplanet/flesh/melt()
-	setName("scorched flesh")
+	("scorched flesh")
 	footstep_type = /decl/footsteps/asteroid
 	color = "#70353a"
 

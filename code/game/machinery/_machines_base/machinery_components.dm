@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(machine_path_to_circuit_type, cache_circuits_by_build_path())
 	if(istype(part))
 		LAZYADD(component_parts, part)
 		part.on_install(src)
-		RegisterSignal(part, COMSIG_PARENT_QDELETING, .proc/component_destroyed)
+		RegisterSignal(part, COMSIG_PARENT_QDELETING, PROC_REF(component_destroyed))
 	else if(ispath(part))
 		LAZYINITLIST(uncreated_component_parts)
 		uncreated_component_parts[part] += 1

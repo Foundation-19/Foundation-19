@@ -1,4 +1,5 @@
-#define ALARM_RESET_DELAY 100 // How long will the alarm/trigger remain active once origin/source has been found to be gone?
+/// How long will the alarm/trigger remain active once origin/source has been found to be gone?
+#define ALARM_RESET_DELAY (10 SECONDS)
 
 /datum/alarm_source
 	var/source		= null	// The source trigger

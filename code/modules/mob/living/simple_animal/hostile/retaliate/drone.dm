@@ -241,52 +241,52 @@
 
 		if(spawnees & 1)
 			C = new(src.loc)
-			C.setName("Drone CPU motherboard")
+			C.("Drone CPU motherboard")
 			C.origin_tech = list(TECH_DATA = rand(3, 6))
 
 		if(spawnees & 2)
 			C = new(src.loc)
-			C.setName("Drone neural interface")
+			C.("Drone neural interface")
 			C.origin_tech = list(TECH_BIO = rand(3,6))
 
 		if(spawnees & 4)
 			C = new(src.loc)
-			C.setName("Drone suspension processor")
+			C.("Drone suspension processor")
 			C.origin_tech = list(TECH_MAGNET = rand(3,6))
 
 		if(spawnees & 8)
 			C = new(src.loc)
-			C.setName("Drone shielding controller")
+			C.("Drone shielding controller")
 			C.origin_tech = list(TECH_BLUESPACE = rand(3,6))
 
 		if(spawnees & 16)
 			C = new(src.loc)
-			C.setName("Drone power capacitor")
+			C.("Drone power capacitor")
 			C.origin_tech = list(TECH_POWER = rand(3,6))
 
 		if(spawnees & 32)
 			C = new(src.loc)
-			C.setName("Drone hull reinforcer")
+			C.("Drone hull reinforcer")
 			C.origin_tech = list(TECH_MATERIAL = rand(3,6))
 
 		if(spawnees & 64)
 			C = new(src.loc)
-			C.setName("Drone auto-repair system")
+			C.("Drone auto-repair system")
 			C.origin_tech = list(TECH_ENGINEERING = rand(3,6))
 
 		if(spawnees & 128)
 			C = new(src.loc)
-			C.setName("Drone phoron overcharge counter")
+			C.("Drone phoron overcharge counter")
 			C.origin_tech = list(TECH_PHORON = rand(3,6))
 
 		if(spawnees & 256)
 			C = new(src.loc)
-			C.setName("Drone targetting circuitboard")
+			C.("Drone targetting circuitboard")
 			C.origin_tech = list(TECH_COMBAT = rand(3,6))
 
 		if(spawnees & 512)
 			C = new(src.loc)
-			C.setName("Corrupted drone morality core")
+			C.("Corrupted drone morality core")
 			C.origin_tech = list(TECH_ESOTERIC = rand(3,6))
 
 	..()

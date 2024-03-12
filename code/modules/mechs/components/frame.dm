@@ -22,7 +22,7 @@
 	var/obj/item/mech_component/chassis/body
 	var/is_wired = 0
 	var/is_reinforced = 0
-	var/setName
+	var/
 	dir = SOUTH
 
 /obj/structure/heavy_vehicle_frame/set_color(new_colour)

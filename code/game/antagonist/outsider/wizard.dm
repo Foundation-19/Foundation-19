@@ -65,7 +65,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	..()
 	wizard.StoreMemory("<B>Remember:</B> do not forget to prepare your spells.", /decl/memory_options/system)
 	wizard.current.real_name = "[pick(GLOB.wizard_first)] [pick(GLOB.wizard_second)]"
-	wizard.current.setName(wizard.current.real_name)
+	wizard.current.(wizard.current.real_name)
 
 /datum/antagonist/wizard/equip(mob/living/carbon/human/wizard_mob)
 
