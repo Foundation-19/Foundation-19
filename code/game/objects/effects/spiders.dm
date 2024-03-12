@@ -20,6 +20,16 @@
 				qdel(src)
 	return
 
+//allows spiderlings to be killed with hands, harm intent on
+/obj/effect/spider/spiderling/attack_hand(mob/living/carbon/human/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(user.a_intent == I_HURT)
+		user.visible_message(SPAN_WARNING("\the [user] attacked \the [src]"))
+		disturbed()
+		health -= 1
+		healthcheck()
+	return
+
 /obj/effect/spider/attackby(obj/item/W, mob/user)
 	user.setClickCooldown(CLICK_CD_ATTACK)
 
@@ -130,7 +140,6 @@
 	var/travelling_in_vent = 0
 	var/dormant = FALSE    // If dormant, does not add the spiderling to the process list unless it's also growing
 	var/growth_chance = 50 // % chance of beginning growth, and eventually become a beautiful death machine
-
 	var/shift_range = 6
 	var/castes = list(/mob/living/simple_animal/hostile/giant_spider = 2,
 						/mob/living/simple_animal/hostile/giant_spider/guard = 2,

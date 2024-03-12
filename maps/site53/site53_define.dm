@@ -87,6 +87,7 @@
 		/decl/audio/track/battle_for_ganzir,
 		/decl/audio/track/purge_protocol,
 		/decl/audio/track/uiu_spawn_theme,
+		/decl/audio/track/surface_area,
 	)
 
 	available_cultural_info = list(
