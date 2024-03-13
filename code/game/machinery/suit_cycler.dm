@@ -296,13 +296,13 @@
 			if(radiation_level > 2)
 				helmet.decontaminate()
 			if(radiation_level > 1)
-				helmet.clean_blood()
+				helmet.clean()
 
 		if(suit)
 			if(radiation_level > 2)
 				suit.decontaminate()
 			if(radiation_level > 1)
-				suit.clean_blood()
+				suit.clean()
 
 	updateUsrDialog()
 

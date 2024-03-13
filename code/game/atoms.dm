@@ -356,7 +356,8 @@ its easier to just keep the beam vertical.
 /mob/living/proc/handle_additional_vomit_reagents(obj/effect/decal/cleanable/vomit/vomit)
 	vomit.reagents.add_reagent(/datum/reagent/acid/stomach, 5)
 
-/atom/proc/clean_blood()
+/atom/proc/clean(clean_forensics = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
 	if(!simulated)
 		return
 	fluorescent = 0
@@ -365,8 +366,8 @@ its easier to just keep the beam vertical.
 	gunshot_residue = null
 	if(istype(blood_DNA, /list))
 		blood_DNA = null
-		return 1
-
+		return TRUE
+	return FALSE
 /atom/proc/get_global_map_pos()
 	if (!islist(GLOB.global_map) || !length(GLOB.global_map))
 		return
