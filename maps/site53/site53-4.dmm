@@ -3528,6 +3528,9 @@
 /obj/structure/bed/chair/office/comfy{
 	dir = 8
 	},
+/obj/effect/landmark/start{
+	name = "Internal Tribunal Department Officer"
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/repoffice/internaltribunal)
 "na" = (
@@ -3577,7 +3580,7 @@
 /area/site53/uez/equipmentroom)
 "nr" = (
 /obj/effect/landmark/start{
-	name = "EZ Junior Agent"
+	name = "EZ Agent"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -4928,6 +4931,9 @@
 /obj/structure/bed/chair/office/comfy{
 	dir = 8
 	},
+/obj/effect/landmark/start{
+	name = "Communications Technician"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "yC" = (
@@ -5121,9 +5127,11 @@
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "zQ" = (
-/obj/machinery/vending/security,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/vending/security{
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -5721,6 +5729,9 @@
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
 	},
+/obj/effect/landmark/start{
+	name = "Communications Technician"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "EC" = (
@@ -6303,15 +6314,15 @@
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "Ko" = (
-/obj/effect/landmark/start{
-	name = "EZ Junior Agent"
-	},
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("Entrance Zone Network")
+	},
+/obj/effect/landmark/start{
+	name = "EZ Agent"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -7274,11 +7285,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "RF" = (
-/obj/effect/landmark/start{
-	name = "EZ Junior Agent"
-	},
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
+	},
+/obj/effect/landmark/start{
+	name = "EZ Agent"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -7683,6 +7694,9 @@
 "Uj" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "EZ Supervisor"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
