@@ -20,14 +20,13 @@
 		list(/datum/reagent/carbon, /datum/reagent/lithium, /datum/reagent/silicon),
 		list(/datum/reagent/acetone, /datum/reagent/ethanol, /datum/reagent/mercury, /datum/reagent/radium, /datum/reagent/ammonia),
 		list(/datum/reagent/ethanol/beer, /datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/noexcutite),
-		list(/datum/reagent/medicine/fluff/antidexafen, /datum/reagent/toxin/methyl_bromide),
+		list(/datum/reagent/medicine/fluff/antidexafen),
 		list(/datum/reagent/medicine/cryogenic/cryoxadone, /datum/reagent/hydrazine, /datum/reagent/medicine/sterilizine, /datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/alkysine),
 		list(/datum/reagent/medicine/bicaridine, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/ethylredoxrazine, /datum/reagent/medicine/imidazoline),
 		list(/datum/reagent/medicine/meraline, /datum/reagent/medicine/dermaline, /datum/reagent/medicine/hyronalin, /datum/reagent/medicine/peridaxon),
 		list(/datum/reagent/medicine/dylovene/venaxilin),
 		list(/datum/reagent/medicine/arithrazine),
 		list(/datum/reagent/medicine/rezadone),
-		list(/datum/reagent/toxin/zombie_powder)
 	)
 
 /datum/disease/advance/New()
