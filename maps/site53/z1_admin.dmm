@@ -7934,7 +7934,7 @@
 /area/centcom)
 "NY" = (
 /obj/machinery/door/airlock/glass/command{
-	req_access = list("ACCESS_ADMIN_LVL4")
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
