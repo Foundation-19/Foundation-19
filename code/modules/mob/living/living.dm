@@ -983,3 +983,6 @@ default behaviour is:
 		exp_list[EXP_TYPE_SCP] = minutes
 
 	return exp_list
+
+/mob/living/proc/GetBloodColor()
+	return COLOR_BLOOD_HUMAN
