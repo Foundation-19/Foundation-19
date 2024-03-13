@@ -2002,3 +2002,8 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 		A.pixel_y = rand(-8, 8)
 	death()
 	qdel(src)
+
+/mob/living/carbon/human/GetBloodColor()
+	if(istype(species))
+		return species.get_blood_colour(src)
+	return COLOR_BLOOD_HUMAN

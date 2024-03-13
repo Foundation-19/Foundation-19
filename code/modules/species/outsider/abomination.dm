@@ -68,6 +68,8 @@
 	sexybits_location = null
 	vision_flags = SEE_SELF | SEE_MOBS
 
+	reagent_tag = IS_ABOMINATION
+
 	has_organ = list(
 		BP_HEART =    /obj/item/organ/internal/heart/abomination,
 		BP_STOMACH =  /obj/item/organ/internal/stomach/abomination,

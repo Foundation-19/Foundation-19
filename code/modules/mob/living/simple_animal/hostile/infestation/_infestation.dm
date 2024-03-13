@@ -25,6 +25,8 @@
 	var/transformation_target_type = null
 	/// If TRUE - will evolve despite having a target mob
 	var/ignore_combat = FALSE
+	/// Speed buff when on flesh turfs
+	var/flesh_movement_bonus = 0.3
 
 /mob/living/simple_animal/hostile/infestation/Life()
 	. = ..()
@@ -60,6 +62,16 @@
 		animate(src, alpha = 0, time = (5 SECONDS))
 		QDEL_IN(src, (5 SECONDS))
 	return ..()
+
+// Infestation moves faster on their territory
+/mob/living/simple_animal/hostile/infestation/movement_delay()
+	. = ..()
+	var/turf/simulated/floor/F = get_turf(src)
+	if(!istype(F))
+		return
+
+	if(istype(F, /turf/simulated/floor/exoplanet/flesh) || istype(F.flooring, /decl/flooring/flesh))
+		. -= flesh_movement_bonus
 
 // While they are "resistant" to high temperatures, they are specifically weak to fire
 /mob/living/simple_animal/hostile/infestation/fire_burn_temperature()
@@ -138,5 +150,5 @@
 			for(var/i = 1 to rand(2, 6))
 				var/rand_mob = pick(random_mobs)
 				new rand_mob(T)
-			return /obj/effect/hive_heart
+			return /obj/infestation_structure/hive_heart
 	return ..()
