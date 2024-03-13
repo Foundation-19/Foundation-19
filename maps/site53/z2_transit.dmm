@@ -190,6 +190,23 @@
 "J" = (
 /turf/space/transit/north,
 /area/space)
+"M" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	pixel_x = 7
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	pixel_x = -7
+	},
+/turf/unsimulated/floor/reinforced_impassable,
+/area/site53/tram/maintrain/Tunnel)
 "P" = (
 /turf/unsimulated/floor/plating_impassable,
 /area/site53/tram/maintrain/Tunnel)
@@ -220,7 +237,7 @@
 	dir = 4;
 	pixel_x = -7
 	},
-/turf/unsimulated/floor/reinforced_impassable,
+/turf/simulated/floor/reinforced,
 /area/site53/tram/maintrain/Tunnel)
 
 (1,1,1) = {"
@@ -7161,12 +7178,12 @@ V
 V
 S
 u
-W
-W
-W
-W
-W
-W
+M
+M
+M
+M
+M
+M
 j
 j
 j
@@ -7199,17 +7216,17 @@ j
 j
 j
 W
-W
-W
-W
-W
-W
-W
-W
-W
-W
-W
-W
+M
+M
+M
+M
+M
+M
+M
+M
+M
+M
+M
 q
 S
 V
@@ -7969,12 +7986,12 @@ V
 V
 S
 u
-W
-W
-W
-W
-W
-W
+M
+M
+M
+M
+M
+M
 j
 j
 j
@@ -8007,17 +8024,17 @@ j
 j
 j
 W
-W
-W
-W
-W
-W
-W
-W
-W
-W
-W
-W
+M
+M
+M
+M
+M
+M
+M
+M
+M
+M
+M
 q
 S
 V
