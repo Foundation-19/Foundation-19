@@ -12,7 +12,6 @@
 #define ATM_P       6 // Phoron.
 #define ATM_N2O     7 // Nitrous oxide.
 #define ATM_H2      8 // Hydrogen.
-#define ATM_CH3BR   9 // Methyl bromide.
 #define ATM_GAS_MAX 9 // Upper bound for gas mode iteration.
 
 //--------------------------------------------

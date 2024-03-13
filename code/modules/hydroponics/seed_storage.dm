@@ -50,7 +50,6 @@
 	scanner = list("stats")
 	icon_state = "seeds_generic"
 	starting_seeds = list(
-		/obj/item/seeds/algaeseed = 15,
 		/obj/item/seeds/affelerin = 15,
 		/obj/item/seeds/ambrosiavulgarisseed = 15,
 		/obj/item/seeds/appleseed = 15,
@@ -171,7 +170,6 @@
 		/obj/item/seeds/watermelonseed = 15,
 		/obj/item/seeds/wheatseed = 15,
 		/obj/item/seeds/whitebeetseed = 15,
-		/obj/item/seeds/algaeseed = 15,
 		/obj/item/seeds/gukhe = 15,
 		/obj/item/seeds/hrukhza = 15,
 		/obj/item/seeds/aghrassh = 15,

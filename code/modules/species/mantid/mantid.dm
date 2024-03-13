@@ -42,7 +42,7 @@
 	gluttonous =              2
 	body_temperature =        null
 
-	breath_type =             GAS_METHYL_BROMIDE
+	breath_type =             GAS_NITROGEN
 	exhale_type =             GAS_METHANE
 	poison_types =            list(GAS_PHORON)
 

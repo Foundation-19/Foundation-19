@@ -156,15 +156,6 @@
 		GAS_HELIUM = -1
 	)
 
-/obj/machinery/portable_atmospherics/canister/methyl_bromide
-	name = "gas canister \[Methyl Bromide\]"
-	icon_state = "black"
-	canister_color = "black"
-	can_label = FALSE
-	initial_gases = list(
-		GAS_METHYL_BROMIDE = -1
-	)
-
 /obj/machinery/portable_atmospherics/canister/chlorine
 	name = "gas canister \[Chlorine\]"
 	icon_state = "black"

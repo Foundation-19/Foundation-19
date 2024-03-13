@@ -36,13 +36,6 @@
 	result_amount = 3
 	mix_message = "The solution thins out and emits an acrid smell."
 
-/datum/chemical_reaction/methyl_bromide
-	name = "Methyl Bromide"
-	required_reagents = list(/datum/reagent/toxin/bromide = 1, /datum/reagent/ethanol = 1, /datum/reagent/hydrazine = 1)
-	result_amount = 3
-	result = /datum/reagent/toxin/methyl_bromide
-	mix_message = "The solution begins to bubble, emitting a dark vapor."
-
 /datum/chemical_reaction/oxyphoron
 	name = "Oxyphoron"
 	result = /datum/reagent/toxin/phoron/oxygen

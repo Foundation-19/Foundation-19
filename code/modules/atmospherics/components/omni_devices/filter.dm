@@ -10,7 +10,6 @@ GLOBAL_LIST_INIT(filter_gas_to_mode, list(    \
 	"Phoron" =         ATM_P,                 \
 	"Nitrous Oxide" =  ATM_N2O,               \
 	"Hydrogen" =       ATM_H2,                \
-	"Methyl Bromide" = ATM_CH3BR              \
 ))
 
 GLOBAL_LIST_INIT(filter_mode_to_gas, list(    \
@@ -20,7 +19,6 @@ GLOBAL_LIST_INIT(filter_mode_to_gas, list(    \
 	"[ATM_P]" =        "Phoron",              \
 	"[ATM_N2O]" =      "Nitrous Oxide",       \
 	"[ATM_H2]" =       "Hydrogen",            \
-	"[ATM_CH3BR]" =    "Methyl Bromide"       \
 ))
 
 GLOBAL_LIST_INIT(filter_mode_to_gas_id, list( \
@@ -30,7 +28,6 @@ GLOBAL_LIST_INIT(filter_mode_to_gas_id, list( \
 	"[ATM_P]" =        "[GAS_PHORON]",        \
 	"[ATM_N2O]" =      "[GAS_N2O]",           \
 	"[ATM_H2]" =       "[GAS_HYDROGEN]",      \
-	"[ATM_CH3BR]" =    "[GAS_METHYL_BROMIDE]" \
 ))
 
 //--------------------------------------------

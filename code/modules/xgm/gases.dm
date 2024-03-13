@@ -25,15 +25,6 @@
 	symbol_html = "CO<sub>2</sub>"
 	symbol = "CO2"
 
-/decl/xgm_gas/methyl_bromide
-	id = GAS_METHYL_BROMIDE
-	name = "Methyl Bromide"
-	specific_heat = 42.59 // J/(mol*K)
-	molar_mass = 0.095	  // kg/mol
-	breathed_product = /datum/reagent/toxin/methyl_bromide
-	symbol_html = "CH<sub>3</sub>Br"
-	symbol = "CH3Br"
-
 /decl/xgm_gas/phoron
 	id = GAS_PHORON
 	name = "Phoron"

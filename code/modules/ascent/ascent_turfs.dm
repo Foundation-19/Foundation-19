@@ -12,7 +12,7 @@
 /turf/simulated/floor/ascent
 	name = "mantid plating"
 	color = COLOR_GRAY20
-	initial_gas = list(GAS_METHYL_BROMIDE = MOLES_CELLSTANDARD * 0.5, GAS_OXYGEN = MOLES_CELLSTANDARD * 0.5)
+	initial_gas = list(GAS_NITROGEN = MOLES_CELLSTANDARD * 0.5, GAS_OXYGEN = MOLES_CELLSTANDARD * 0.5)
 	icon_state = "curvy"
 	footstep_type = /decl/footsteps/tiles
 	icon = 'icons/turf/flooring/alium.dmi'

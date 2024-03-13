@@ -233,12 +233,6 @@
 
 /obj/effect/spider/spiderling/Process()
 
-	if(loc)
-		var/datum/gas_mixture/environment = loc.return_air()
-		if(environment && environment.gas[GAS_METHYL_BROMIDE] > 0)
-			die()
-			return
-
 	if(travelling_in_vent)
 		if(istype(src.loc, /turf))
 			travelling_in_vent = 0

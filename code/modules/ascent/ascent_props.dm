@@ -33,7 +33,7 @@
 	maxHealth = 50
 	movement_cooldown = 2
 	density = FALSE
-	min_gas = list(GAS_METHYL_BROMIDE = 5)
+	min_gas = list(GAS_NITROGEN = 5)
 	mob_size = MOB_MINISCULE
 	can_escape = TRUE
 	pass_flags = PASS_FLAG_TABLE

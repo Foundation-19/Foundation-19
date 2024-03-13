@@ -1228,32 +1228,6 @@
 	mutants = list("tobacco")
 	chems = list(/datum/reagent/medicine/fluff/tobacco/bad = list(1,10))
 
-/datum/seed/algae
-	name = "algae"
-	seed_name = "algae"
-	display_name = "algae"
-	chems = list(
-		/datum/reagent/nutriment = list(2,12),
-		/datum/reagent/toxin/bromide = list(3,8)
-	)
-	kitchen_tag = "algae"
-	exude_gasses = list(GAS_METHYL_BROMIDE = 3)
-
-/datum/seed/algae/New()
-	..()
-	set_trait(TRAIT_HARVEST_REPEAT,1)
-	set_trait(TRAIT_MATURATION,3)
-	set_trait(TRAIT_PRODUCTION,5)
-	set_trait(TRAIT_YIELD,4)
-	set_trait(TRAIT_POTENCY,10)
-	set_trait(TRAIT_PRODUCT_ICON,"algae")
-	set_trait(TRAIT_PRODUCT_COLOUR,"#84bd82")
-	set_trait(TRAIT_PLANT_COLOUR,"#6d9c6b")
-	set_trait(TRAIT_PLANT_ICON,"algae")
-	set_trait(TRAIT_IDEAL_LIGHT, 6)
-	set_trait(TRAIT_WATER_CONSUMPTION, 6)
-	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
-
 /datum/seed/bamboo
 	name = "bamboo"
 	seed_name = "bamboo"
@@ -1499,28 +1473,6 @@
 
 
 // Exotic Edibles
-
-/datum/seed/gukhe
-	name = "gukhe"
-	seed_name = "gukhe bloom"
-	display_name = "gukhe bloom"
-	chems = list(/datum/reagent/nutriment = list(2,12), /datum/reagent/capsaicin = list(10,10))
-	kitchen_tag = "algae"
-
-/datum/seed/gukhe/New()
-	..()
-	set_trait(TRAIT_HARVEST_REPEAT,1)
-	set_trait(TRAIT_MATURATION,3)
-	set_trait(TRAIT_PRODUCTION,5)
-	set_trait(TRAIT_YIELD,4)
-	set_trait(TRAIT_POTENCY,10)
-	set_trait(TRAIT_PRODUCT_ICON,"algae")
-	set_trait(TRAIT_PRODUCT_COLOUR,"#e93e1c")
-	set_trait(TRAIT_PLANT_COLOUR,"#6d9c6b")
-	set_trait(TRAIT_PLANT_ICON,"algae")
-	set_trait(TRAIT_IDEAL_LIGHT, 6)
-	set_trait(TRAIT_WATER_CONSUMPTION, 6)
-	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
 /datum/seed/hrukhza
 	name = "hrukhza"

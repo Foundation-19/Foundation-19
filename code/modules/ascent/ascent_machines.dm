@@ -10,7 +10,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	base_type = /obj/machinery/optable
 
 /obj/machinery/portable_atmospherics/hydroponics/ascent
-	name = "mantid algae vat"
+	name = "mantid vat"
 	desc = "Some kind of strange alien hydroponics technology."
 	icon = 'icons/obj/machines/mantid_hydroponics.dmi'
 	closed_system = TRUE
@@ -22,9 +22,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	if(dead)
 		seed = null
 		update_icon()
-	if(!seed)
-		seed = SSplants.seeds["algae"]
-		update_icon()
+
 	waterlevel = 100
 	nutrilevel = 10
 	pestlevel = 0
@@ -36,7 +34,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/reset_scrubbing()
 	. = ..()
-	remove_from_scrubbing(GAS_METHYL_BROMIDE)
+	remove_from_scrubbing(GAS_NITROGEN)
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/shuttle
 	stock_part_presets = list(

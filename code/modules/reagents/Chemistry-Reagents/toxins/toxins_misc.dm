@@ -1,4 +1,4 @@
-// Things that are toxic enough to be considered toxins but have niche uses go here, such as plasticide and methyl bromide's reagent form.
+// Things that are toxic enough to be considered toxins but have niche uses go here, such as plasticide and phoron's reagent form.
 
 /datum/reagent/toxin/plasticide
 	name = "Plasticide"
@@ -120,39 +120,6 @@
 		. = ..()
 
 
-
-/datum/reagent/toxin/methyl_bromide
-	name = "Methyl Bromide"
-	description = "A fumigant derived from bromide."
-	taste_description = "pestkiller"
-	reagent_state = LIQUID
-	color = "#4c3b34"
-	strength = 5
-	heating_products = null
-	heating_point = null
-
-/datum/reagent/toxin/methyl_bromide/affect_touch(mob/living/carbon/M, alien, removed)
-	. = (alien != IS_MANTID && alien != IS_NABBER && ..())
-
-/datum/reagent/toxin/methyl_bromide/affect_ingest(mob/living/carbon/M, alien, removed)
-	. = (alien != IS_MANTID && alien != IS_NABBER && ..())
-
-/datum/reagent/toxin/methyl_bromide/touch_turf(turf/simulated/T)
-	if (istype(T))
-		T.assume_gas(GAS_METHYL_BROMIDE, volume, T20C)
-		remove_self(volume)
-
-/datum/reagent/toxin/methyl_bromide/affect_blood(mob/living/carbon/M, alien, removed)
-	. = (alien != IS_MANTID && alien != IS_NABBER && ..())
-	if (istype(M))
-		for(var/obj/item/organ/external/E in M.organs)
-			if (LAZYLEN(E.implants))
-				for(var/obj/effect/spider/spider in E.implants)
-					if (prob(25))
-						E.implants -= spider
-						M.visible_message(SPAN_NOTICE("The dying form of \a [spider] emerges from inside \the [M]'s [E.name]."))
-						qdel(spider)
-						break
 
 
 

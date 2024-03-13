@@ -29,7 +29,7 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 
-	max_gas = list(GAS_PHORON = 1, GAS_CO2 = 5, GAS_METHYL_BROMIDE = 1)
+	max_gas = list(GAS_PHORON = 1, GAS_CO2 = 5)
 	bleed_colour = "#0d5a71"
 
 	response_harm   = "punches"

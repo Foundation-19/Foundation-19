@@ -45,17 +45,17 @@
 /obj/item/clothing/mask/gas/ascent/monarch
 	name = "serpentid facemask"
 	desc = "An alien facemask with chunky gas filters and a breathing valve."
-	filtered_gases = list(GAS_PHORON,GAS_N2O,GAS_CHLORINE,GAS_AMMONIA,GAS_CO,GAS_METHYL_BROMIDE,GAS_METHANE)
+	filtered_gases = list(GAS_PHORON,GAS_N2O,GAS_CHLORINE,GAS_AMMONIA,GAS_CO,GAS_NITROGEN,GAS_METHANE)
 	species_restricted = list(SPECIES_NABBER, SPECIES_MONARCH_QUEEN)
 
 /obj/item/clothing/mask/gas/ascent_captive
 	name = "humanoid filter mask"
-	desc = "A small gas filter designed to enable long-term survival in a methyl bromide atmosphere. It has an input port for food and water."
+	desc = "A small gas filter designed to enable long-term survival in a nitrogen rich atmosphere. It has an input port for food and water."
 	icon_state = "halfgas"
 	item_state = "halfgas"
 	flags_inv = 0
 	body_parts_covered = 0
-	filtered_gases = list(GAS_METHYL_BROMIDE)
+	filtered_gases = list(GAS_NITROGEN)
 
 /obj/item/clothing/shoes/magboots/ascent
 	name = "mantid mag-claws"
