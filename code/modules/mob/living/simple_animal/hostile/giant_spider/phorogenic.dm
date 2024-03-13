@@ -23,10 +23,10 @@
 	poison_type = /datum/reagent/toxin/phoron
 
 	var/exploded = FALSE
-	var/explosion_dev_range		= 1
-	var/explosion_heavy_range	= 2
-	var/explosion_light_range	= 4
-	var/explosion_flash_range	= 6
+	var/explosion_dev_range		= 0
+	var/explosion_heavy_range	= 1
+	var/explosion_light_range	= 3
+	var/explosion_flash_range	= 4
 
 	/// Lower bound for explosion delay.
 	var/explosion_delay_lower	= 3 SECONDS
@@ -34,7 +34,8 @@
 	var/explosion_delay_upper	= 5 SECONDS
 
 /mob/living/simple_animal/hostile/giant_spider/phorogenic/Initialize()
-	scale(1.25)
+	var/matrix/M = matrix()
+	M.Scale(1.25,1.25)
 	return ..()
 
 /mob/living/simple_animal/hostile/giant_spider/phorogenic/death()

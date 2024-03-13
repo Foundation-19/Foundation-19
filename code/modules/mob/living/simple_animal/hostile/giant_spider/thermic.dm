@@ -15,4 +15,4 @@
 
 	poison_chance = 30
 	poison_per_bite = 1
-	poison_type = /datum/reagent/toxin/pyrotoxin
+	poison_type = /datum/reagent/capsaicin/condensed //We do a little bit of pain damage
