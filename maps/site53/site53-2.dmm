@@ -23587,6 +23587,11 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"fjU" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/sign/directions/heli,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "fkM" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -24029,6 +24034,13 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
+"fJs" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "fKV" = (
 /obj/structure/bed/chair{
 	dir = 1;
@@ -31994,6 +32006,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"oda" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/sign/directions/evac{
+	dir = 4
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "odC" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -32635,6 +32654,11 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/site53/science/aiccore)
+"oKk" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/directions/evac,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/redline)
 "oLe" = (
 /obj/effect/paint_stripe/red,
 /obj/structure/sign/directions/ez{
@@ -37477,6 +37501,14 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"uvI" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "uvX" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -40752,7 +40784,8 @@
 /obj/structure/sign/directions/ez{
 	pixel_x = -30
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "xZB" = (
 /obj/structure/bed/chair/office/comfy,
@@ -46488,10 +46521,10 @@ azA
 azA
 azA
 aVS
-aGM
+aVS
 xZp
-aXf
-aGM
+fJs
+aKq
 aVS
 agK
 afG
@@ -46745,7 +46778,7 @@ azA
 azA
 azA
 aVS
-aGM
+aKq
 aGM
 aJt
 aJt
@@ -47002,7 +47035,7 @@ azA
 azA
 azA
 aVS
-aGM
+aKq
 aIo
 aGM
 aGM
@@ -47259,7 +47292,7 @@ azA
 azA
 azA
 aVS
-aGM
+aKq
 aIo
 aGM
 aGM
@@ -47516,7 +47549,7 @@ azA
 azA
 azA
 aVS
-aGM
+aKq
 aGM
 aGM
 aGM
@@ -47773,7 +47806,7 @@ azA
 azA
 azA
 aVS
-aGM
+uvI
 aGM
 pSE
 aGM
@@ -49839,15 +49872,15 @@ afQ
 aKW
 afQ
 aGM
-aVS
+vNf
 aHQ
 aLl
 aGM
 aGM
 aGM
 aEt
-aVS
-aWt
+vNf
+aGM
 aKq
 aLv
 aKq
@@ -50361,7 +50394,7 @@ aGM
 aTo
 aGq
 aVS
-aGM
+aWt
 aKq
 aKq
 aKq
@@ -70897,7 +70930,7 @@ aae
 aae
 hCY
 agp
-aac
+fjU
 bBS
 qdk
 aqO
@@ -71925,7 +71958,7 @@ aMo
 aio
 hCY
 aPF
-aac
+oda
 aaf
 aPL
 aRF
@@ -74500,7 +74533,7 @@ aah
 aap
 lxM
 lbn
-abY
+oKk
 abY
 abY
 aPK
