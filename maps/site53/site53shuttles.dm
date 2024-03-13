@@ -1,46 +1,12 @@
-//Some helpers because so much copypasta for pods
-/datum/shuttle/autodock/ferry/escape_pod/torchpod
-	category = /datum/shuttle/autodock/ferry/escape_pod/torchpod
-	shuttle_area = list(/area/shuttle/escape_pod)
-	sound_takeoff = 'sounds/effects/rocket.ogg'
-	sound_landing = 'sounds/effects/rocket_backwards.ogg'
-	name = "Escape Pod"
-	dock_target = "escape_pod"
-	arming_controller = "escape_pod"
-	waypoint_station = "escape_pod_start"
-	landmark_transition = "escape_pod_internim"
-	waypoint_offsite = "escape_pod_out"
-
-/obj/effect/shuttle_landmark/escape_pod/start
-	name = "Docked"
-	landmark_tag = "escape_pod_start"
-
-/obj/effect/shuttle_landmark/escape_pod/transit
-	name = "In transit"
-	landmark_tag = "escape_pod_internim"
-
-/obj/effect/shuttle_landmark/escape_pod/out
-	name = "Escaped"
-	landmark_tag = "escape_pod_out"
-
-//Pod
-
-/obj/effect/shuttle_landmark/escape_pod/start
-
-/obj/effect/shuttle_landmark/escape_pod/out
-
-/obj/effect/shuttle_landmark/escape_pod/transit
-
-
 /datum/shuttle/autodock/ferry/heli
 	name = "MTF Helicopter"
 	sound_takeoff = 'sounds/effects/helicopter.ogg'
 	warmup_time = 14
 	shuttle_area = list(/area/site53/tram/mtf)
 	waypoint_station = "nav_mtf_start"
-	//landmark_transition = "nav_mtf_transition"
+	landmark_transition = "nav_mtf_transition"
 	waypoint_offsite = "nav_mtf_out"
-	//move_time = 39
+	move_time = 15
 
 /obj/effect/shuttle_landmark/heli/start
 	name = "MTF Base"
@@ -54,13 +20,44 @@
 	base_turf = /turf/simulated/floor/reinforced
 	base_area = /area/site53/surface/surface
 
-/* commented out because fuck you it no work
-/obj/effect/shuttle_landmark/heli/transit
+/obj/effect/shuttle_landmark/transit/helitransit
 	name = "In transit"
 	landmark_tag = "nav_mtf_transition"
 	base_turf = /turf/unsimulated/floor/plating
 	base_area = /area/space
-*/
+
+/datum/shuttle/autodock/ferry/emergency/train //The transfer/escape train
+	name = "Foundation Main Train"
+	sound_takeoff = 'sounds/effects/TrainLeavingSite.ogg'
+	warmup_time = 10 //Low while I test it back and forth
+	location = 1 //At area offsite
+	shuttle_area = list(/area/site53/tram/maintrain)
+	waypoint_station = "nav_train_onsite"
+	landmark_transition = "nav_train_transition"
+	waypoint_offsite = "nav_train_central"
+	sound_landing = 'sounds/effects/TrainLeavingSite.ogg'
+	landing_message = "A train whistle is heard in the distance. Clear the tunnel!"
+	takeoff_message = "A train whistle is heard as the trains pistons kick into motion."
+
+
+/obj/effect/shuttle_landmark/train/central
+	name = "Central Command"
+	landmark_tag = "nav_train_central"
+	base_turf = /turf/simulated/floor
+	base_area = /area/site53/lowertrams/escape
+
+/obj/effect/shuttle_landmark/transit/trainsition
+	name = "Train Tunnel"
+	landmark_tag = "nav_train_transition"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/tram/maintrain/Tunnel
+
+/obj/effect/shuttle_landmark/train/onsite
+	name = "Site-53"
+	landmark_tag = "nav_train_onsite"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/lowertrams/escape
+
 
 /datum/shuttle/autodock/ferry/chaos1
 	name = "Chaos Car 1"

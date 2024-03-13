@@ -23,7 +23,7 @@
 
 	station_name  = "Foundation Site 53"
 	station_short = "Site 53"
-	dock_name     = "TBD"
+	dock_name     = "Central Command Depo"
 	boss_name     = "O5 Foundation Council"
 	boss_short    = "O5 Council"
 	company_name  = "SCP Foundation"
@@ -41,7 +41,7 @@
 	emergency_shuttle_called_message = "An emergency evacuation has been ordered for this facility. All authorized evacuees must proceed to the outbound Train Station within %ETA%."
 	emergency_shuttle_recall_message = "The emergency evacuation has been cancelled. Return to your post."
 
-//	evac_controller_type = /datum/evacuation_controller/site
+	evac_controller_type = /datum/evacuation_controller/shuttle //The evacuation controller that the map uses, this MUST be defined else the train will not function.
 
 	default_law_type = /datum/ai_laws/foundation
 	use_overmap = 0
@@ -60,7 +60,6 @@
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/uhcz = NO_APC,
 		/area/turbolift/site53/lhcz = NO_APC,
-		/area/shuttle/escape_pod = NO_APC,
 		/area/site53/tram/scpcar = NO_APC,
 		/area/turbolift/site53/commstower = NO_APC,
 		/area/turbolift/site53/scp106cont = NO_APC,

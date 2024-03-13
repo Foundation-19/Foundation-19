@@ -3,7 +3,6 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/site53/surface/bunker,
-		/area/shuttle/escape_pod
 		)
 
 /area/turbolift
@@ -132,12 +131,20 @@
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod
-	name = "Transfer Tram"
+/area/site53/tram/maintrain
+	name = "Foundation Train"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/tram/maintrain/Tunnel
+	name = "Train Tunnel"
+	icon_state = "shuttle"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	forced_ambience = list('sounds/effects/Traininmotion.ogg')
 
 /area/supply/dock
 	name = "Supply Dock"
