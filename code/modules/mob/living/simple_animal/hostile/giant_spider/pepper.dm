@@ -1,11 +1,11 @@
 // Pepper spiders inject condensed capsaicin into their victims.
 
 /mob/living/simple_animal/hostile/giant_spider/pepper
-	desc = "Red and brown, it makes you shudder to look at it. This one has glinting red eyes, and a dusty coat of 'fur'."
+	desc = "Brown and Fuzzy, it makes you shudder to look at it. This one has glinting red eyes, and a dusty coat of 'fur'."
 
-	icon_state = "pepper"
-	icon_living = "pepper"
-	icon_dead = "pepper_dead"
+	icon_state = "burrowing"
+	icon_living = "burrowing"
+	icon_dead = "burrowing_dead"
 
 	maxHealth = 210
 	health = 210

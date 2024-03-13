@@ -4,9 +4,9 @@
 /mob/living/simple_animal/hostile/giant_spider/phorogenic
 	desc = "Crystalline and purple, it makes you shudder to look at it. This one has haunting purple eyes."
 
-	icon_state = "phoron"
-	icon_living = "phoron"
-	icon_dead = "phoron_dead"
+	icon_state = "purple"
+	icon_living = "purple"
+	icon_dead = "purple_dead"
 
 	maxHealth = 225
 	health = 225

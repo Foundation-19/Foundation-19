@@ -1,11 +1,11 @@
 // Frost spiders inject cryotoxin, slowing people down (which is very bad if trying to run from spiders).
 
 /mob/living/simple_animal/hostile/giant_spider/frost
-	desc = "Icy and blue, it makes you shudder to look at it. This one has brilliant blue eyes, and flashes with unstable potential..."
+	desc = "Bright Orange and Red, it makes you shudder to look at it. This one has brilliant eyes full of power, and flashes with unstable potential..."
 
-	icon_state = "frost"
-	icon_living = "frost"
-	icon_dead = "frost_dead"
+	icon_state = "pit"
+	icon_living = "pit"
+	icon_dead = "pit_dead"
 
 	maxHealth = 175
 	health = 175
