@@ -106,7 +106,7 @@
 				var/turf/T = A
 				T.clean(src, user)
 			else
-				A.clean_blood()
+				A.clean()
 
 /obj/item/reagent_containers/glass/rag/attack(atom/target as obj|turf|area, mob/user as mob , flag)
 	if(isliving(target))

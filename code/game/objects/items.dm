@@ -632,7 +632,7 @@ var/list/global/slot_flags_enumeration = list(
 	M.eye_blurry += rand(3,4)
 	return
 
-/obj/item/clean_blood()
+/obj/item/clean()
 	. = ..()
 	if(blood_overlay)
 		cut_overlay(blood_overlay)

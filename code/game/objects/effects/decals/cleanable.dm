@@ -35,11 +35,11 @@
 	..()
 	qdel(src)
 
-/obj/effect/decal/cleanable/clean_blood(ignore = 0)
-	if(!ignore)
+/obj/effect/decal/cleanable/clean(clean_forensics = TRUE)
+	if(clean_forensics)
 		qdel(src)
-		return
-	..()
+		return TRUE
+	return ..()
 
 /obj/effect/decal/cleanable/proc/set_cleanable_scent()
 	if(cleanable_scent)

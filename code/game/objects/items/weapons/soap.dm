@@ -51,7 +51,7 @@
 		to_chat(user, SPAN_NOTICE("You need to take that [target.name] off before cleaning it."))
 	else if(istype(target,/obj/effect/decal/cleanable/blood))
 		to_chat(user, SPAN_NOTICE("You scrub \the [target.name] out."))
-		target.clean_blood() //Blood is a cleanable decal, therefore needs to be accounted for before all cleanable decals.
+		target.clean() //Blood is a cleanable decal, therefore needs to be accounted for before all cleanable decals.
 	else if(istype(target,/obj/effect/decal/cleanable))
 		to_chat(user, SPAN_NOTICE("You scrub \the [target.name] out."))
 		qdel(target)
@@ -68,10 +68,10 @@
 		to_chat(user, SPAN_NOTICE("You clean \the [target.name]."))
 		if(reagents)
 			reagents.trans_to(target, reagents.total_volume / 8)
-		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
+		target.clean() //Clean bloodied atoms. Blood decals themselves need to be handled above.
 	else
 		to_chat(user, SPAN_NOTICE("You clean \the [target.name]."))
-		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
+		target.clean() //Clean bloodied atoms. Blood decals themselves need to be handled above.
 
 //attack_as_weapon
 /obj/item/soap/attack(mob/living/target, mob/living/user, target_zone)

@@ -928,10 +928,10 @@
 	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 	return 1 //we applied blood to the item
 
-/mob/living/carbon/human/clean_blood(clean_feet)
+/mob/living/carbon/human/clean(clean_feet)
 	.=..()
 	if(gloves)
-		if(gloves.clean_blood())
+		if(gloves.clean())
 			update_inv_gloves(1)
 		gloves.germ_level = 0
 	else
