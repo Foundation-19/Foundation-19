@@ -1,4 +1,6 @@
 /obj/infestation_structure
+	abstract_type = /obj/infestation_structure
+
 	name = "infestation structure base"
 	desc = "You are not meant to see this."
 
@@ -6,7 +8,6 @@
 	opacity = 1
 	anchored = TRUE
 	mouse_opacity = 2
-	abstract_type = /obj/infestation_structure
 
 	damage_hitsound = 'sounds/effects/attackblob.ogg'
 
