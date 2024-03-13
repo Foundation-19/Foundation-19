@@ -922,9 +922,10 @@ GLOBAL_LIST_EMPTY(items_by_convert_rating)
 // A list of types that will not be added to the auto-item-generator below;
 GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 	/obj/item/card/id/syndicate/station_access,
-	/obj/item/card/id/captains_spare,
-	/obj/item/spellbook,
-	) + typesof(/obj/item/card/id/centcom))
+	/obj/item/card/id/captains_spare) \
+	+ typesof(/obj/item/spellbook) \
+	+ typesof(/obj/item/card/id/centcom) \
+	+ typesof(/obj/item/gun))
 
 // BEHOLD! THE TERROR! THE NIGHTMARE!!!
 // tl;dr - We build a path of ALL(yes, all) items by "damage rating" for 1:1 and fine modes
@@ -998,13 +999,16 @@ GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 /obj/item/proc/Check914Rating(mode = MODE_ONE_TO_ONE)
 	var/rating = ""
 	var/my_force = force
+	var/my_w_class = w_class
 	switch(mode)
 		if(MODE_FINE)
-			my_force *= (prob(90) ? 1.25 : 0.9)
+			my_force *= (prob(90) ? pick(1.25, 1.5) : 0.9)
+			my_w_class += prob(50)
 		if(MODE_VERY_FINE)
-			my_force *= (prob(50) ? 1.5 : 0.75)
+			my_force *= (prob(50) ? pick(1.5, 2) : 0.75)
+			my_w_class += pick(-1, 0, 0, 1)
 	// By weight
-	switch(w_class)
+	switch(my_w_class)
 		if(-INFINITY to ITEM_SIZE_TINY)
 			rating += "tiny "
 		if(ITEM_SIZE_SMALL)
@@ -1045,9 +1049,9 @@ GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 	else
 		rating += "high-speed "
 	// Sharp/Edge
-	if(sharp)
+	if(sharp || (mode == MODE_VERY_FINE && prob(35)))
 		rating += "sharp "
-	if(edge)
+	if(edge || (mode == MODE_VERY_FINE && prob(35)))
 		rating += "edge "
 	rating += "item"
 	return rating

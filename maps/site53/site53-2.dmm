@@ -20561,6 +20561,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
+"bHh" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/structure/sign/scp/safe_scp{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "bHN" = (
 /obj/machinery/vending/hydronutrients/generic{
 	dir = 4
@@ -20851,6 +20861,15 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
+"bWN" = (
+/obj/structure/table/steel_reinforced,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "bWR" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -22249,6 +22268,9 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
+"dCo" = (
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "dCs" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -22480,6 +22502,17 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
+"dQf" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable/green,
+/obj/random/tool,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "dQS" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/wallframe_spawn/reinforced,
@@ -23244,6 +23277,14 @@
 /obj/item/storage/pill_bottle/dice,
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
+"eLl" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "eMM" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/cable{
@@ -24347,6 +24388,15 @@
 /obj/structure/disposalpipe/segment,
 /turf/unsimulated/mineral,
 /area/space)
+"fXD" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/sign/scp/safe_scp{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "fXE" = (
 /obj/structure/table/standard,
 /obj/item/folder/nt/rd,
@@ -27723,6 +27773,12 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
+"jyY" = (
+/obj/effect/floor_decal/industrial/loading{
+	name = "Exit Line"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "jzT" = (
 /obj/effect/paint_stripe/red,
 /obj/structure/sign/monkey_painting,
@@ -28833,6 +28889,13 @@
 /obj/machinery/light/small/red,
 /turf/simulated/floor,
 /area/site53/llcz/scp012)
+"kHx" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1;
+	name = "Entry Line"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "kIy" = (
 /obj/machinery/r_n_d/server/robotics,
 /obj/machinery/light{
@@ -28880,6 +28943,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"kKj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "kLa" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 9
@@ -29071,6 +29140,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"kZC" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "laQ" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -29161,8 +29236,8 @@
 /area/site53/uhcz/scp247observation)
 "ldL" = (
 /obj/machinery/door/blast/regular/open{
-	id_tag = "1507containment";
-	icon_state = "pdoor0"
+	icon_state = "pdoor0";
+	id_tag = "1507containment"
 	},
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -30244,6 +30319,17 @@
 /obj/item/storage/mre/random,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"mlk" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/stock_parts/capacitor{
+	pixel_x = 10
+	},
+/obj/item/stock_parts/keyboard,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "mlt" = (
 /obj/machinery/r_n_d/server,
 /obj/machinery/camera/motion{
@@ -30519,6 +30605,11 @@
 /mob/living/simple_animal/hostile/retaliate/scp1507,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp1507containment)
+"mxl" = (
+/obj/effect/paint_stripe/gray,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "mxN" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -30637,6 +30728,13 @@
 /obj/item/device/toner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"mDt" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "mDz" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078";
@@ -31121,6 +31219,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"ncp" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "ndr" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light{
@@ -31552,6 +31662,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/engineering/bathrooms)
+"nBE" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light,
+/obj/random/toy,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "nBV" = (
 /obj/machinery/light{
 	dir = 1
@@ -31798,6 +31915,9 @@
 "nNp" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/structure/sign/scp/safe_scp{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -32104,6 +32224,13 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"ofA" = (
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/hallways)
+"ofR" = (
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/hallways)
 "ogF" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp1507containment)
@@ -32232,6 +32359,15 @@
 /obj/item/toy/plushie/kitten,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
+"ont" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/paper/dclass_orientation,
+/obj/item/paper/dclass_orientation,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "onR" = (
 /obj/machinery/door/airlock/chaplain{
 	name = "Chapel Morgue";
@@ -32356,6 +32492,21 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/explorers/surrounding)
+"otd" = (
+/obj/machinery/door/airlock/multi_tile/glass/research{
+	dir = 8;
+	name = "SCP-914";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	secured_wires = 1
+	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/hallways)
 "ote" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/orange/border{
@@ -32589,6 +32740,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
+"oEk" = (
+/obj/structure/table/steel_reinforced,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "oFR" = (
 /obj/machinery/washing_machine,
 /turf/simulated/floor/tiled/techmaint,
@@ -32761,6 +32921,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"oPR" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "oQu" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -32895,6 +33061,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
+"oWV" = (
+/obj/machinery/light,
+/obj/structure/sign/scp/safe_scp{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "oXy" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4;
@@ -33257,6 +33430,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"pxY" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "pyn" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine,
@@ -33843,6 +34026,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"qiE" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/structure/table/steel_reinforced,
+/obj/item/spacecash/bundle/c10,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "qje" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -34344,8 +34533,8 @@
 "qNc" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/button/blast_door{
-	name = "SCP-1507 Containment Lockdown";
-	id_tag = "1507containment"
+	id_tag = "1507containment";
+	name = "SCP-1507 Containment Lockdown"
 	},
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/scp1507containment)
@@ -34961,6 +35150,13 @@
 /obj/item/stack/material/steel,
 /turf/simulated/floor,
 /area/site53/surface/explorers/surrounding)
+"rsF" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/scp_914,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "rsO" = (
 /obj/machinery/atmospherics/pipe/cap/hidden{
 	dir = 8
@@ -35223,6 +35419,22 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"rKR" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "rLz" = (
 /obj/machinery/papershredder,
 /obj/machinery/camera/network/entrance{
@@ -35327,6 +35539,16 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"rQx" = (
+/obj/machinery/door/airlock/multi_tile/glass/research{
+	dir = 8;
+	name = "SCP-914";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	secured_wires = 1
+	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/hallways)
 "rQA" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -35443,6 +35665,14 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"rZA" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/soap,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "rZL" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -36196,6 +36426,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/controlroom)
+"sTx" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	pixel_y = -6
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "sTF" = (
 /obj/structure/sign/directions/ez{
 	dir = 8;
@@ -37156,6 +37399,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"tXp" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/tool,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "tXq" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -37536,6 +37787,12 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp247containment)
+"uvg" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "uvn" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/highsecurity{
@@ -38024,6 +38281,19 @@
 /obj/structure/bed/chair/pew/mahogany,
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"vbw" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light,
+/obj/item/stock_parts/micro_laser{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/matter_bin{
+	pixel_x = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "vck" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -38373,6 +38643,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"vuC" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "vuH" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/orange/border{
@@ -38586,6 +38860,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"vJw" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "vJF" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Evacuation Bunker"
@@ -38687,6 +38970,20 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp1507containment)
+"vMt" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 8;
+	pixel_y = 6
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "vNb" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
@@ -38962,6 +39259,14 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"vZj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/stock_parts/circuitboard/arcade/orion_trail,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "vZp" = (
 /obj/machinery/light{
 	dir = 8
@@ -39629,6 +39934,12 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
+"wJP" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/table/steel_reinforced,
+/obj/random/snack,
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "wJT" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -39899,6 +40210,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"wVB" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp914)
 "wVD" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
@@ -47087,7 +47406,7 @@ aUA
 afS
 agL
 aVS
-apj
+fXD
 aGM
 aGM
 aGM
@@ -47342,13 +47661,13 @@ aff
 aff
 glY
 aff
-aff
 aVS
 aVS
 aVS
-aVS
-aVS
-aVS
+mxl
+ofR
+rQx
+mxl
 aVS
 aVS
 aGM
@@ -47600,13 +47919,13 @@ sYT
 exB
 aVS
 aVS
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
+oPR
+kZC
+vJw
+kZC
+kZC
+sTx
+ont
 aVS
 aVS
 aVS
@@ -47856,15 +48175,15 @@ aVS
 aIQ
 aUA
 aXf
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+ofA
+kKj
+kHx
+dCo
+dCo
+dCo
+dCo
+tXp
+mlk
 aVS
 aIQ
 aLv
@@ -48113,15 +48432,15 @@ aVS
 aJE
 aUh
 aGM
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aMd
+kKj
+dCo
+dCo
+dCo
+dCo
+dCo
+dCo
+vbw
 aVS
 aJE
 aNd
@@ -48370,15 +48689,15 @@ aGM
 aGM
 aUA
 aGM
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+ofA
+rsF
+dCo
+dCo
+vuC
+bWN
+eLl
+eLl
+dQf
 aVS
 aGM
 aLv
@@ -48627,15 +48946,15 @@ aHI
 aHI
 aKg
 aGM
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+ofA
+kKj
+dCo
+dCo
+vuC
+oEk
+dCo
+dCo
+wJP
 aVS
 aLu
 aNp
@@ -48884,15 +49203,15 @@ aVS
 aHJ
 qCZ
 aHq
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aMd
+kKj
+dCo
+dCo
+dCo
+wVB
+dCo
+dCo
+nBE
 aVS
 aHJ
 aNv
@@ -49141,15 +49460,15 @@ aVS
 pSE
 fRx
 aMw
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+ofA
+kKj
+jyY
+dCo
+dCo
+wVB
+dCo
+qiE
+rZA
 aVS
 pSE
 aLv
@@ -49399,13 +49718,13 @@ aVS
 aKh
 aVS
 aVS
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
+uvg
+mDt
+vMt
+mDt
+ncp
+pxY
+vZj
 aVS
 aVS
 aVS
@@ -49655,13 +49974,13 @@ aWt
 aXf
 aKW
 aXf
-aGM
 aVS
 aVS
 aVS
-aVS
-aVS
-aVS
+mxl
+ofR
+otd
+mxl
 aVS
 aVS
 aGM
@@ -49914,12 +50233,12 @@ aKW
 afQ
 aGM
 aVS
-aHQ
+bHh
 aLl
 aGM
+aWJ
 aGM
-aGM
-aEt
+oWV
 aVS
 aWt
 aKq
@@ -50174,7 +50493,7 @@ aMJ
 aMe
 aMM
 aMe
-aMe
+rKR
 aMO
 aMe
 aMJ
