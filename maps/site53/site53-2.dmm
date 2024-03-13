@@ -91,7 +91,7 @@
 	},
 /obj/machinery/cryopod/robot,
 /obj/effect/landmark/start{
-	name = "Cyborg"
+	name = "Robot"
 	},
 /obj/effect/landmark{
 	name = "JoinLateCyborg"
@@ -12758,6 +12758,9 @@
 /area/site53/lowertrams/hub)
 "aLb" = (
 /obj/structure/bed/chair/office/light,
+/obj/effect/landmark/start{
+	name = "Office Worker"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
 "aLc" = (
@@ -12864,6 +12867,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/bed/chair/office/light,
+/obj/effect/landmark/start{
+	name = "Office Worker"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
 "aLD" = (
@@ -20312,6 +20318,16 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"bua" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/landmark/start{
+	name = "Robotics Technician"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "buA" = (
 /obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning{
@@ -20450,7 +20466,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start{
-	name = "LCZ Guard"
+	name = "LCZ Sergeant"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
@@ -20768,6 +20784,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"bUV" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Senior Robotics Technician"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "bVj" = (
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
@@ -22741,7 +22766,7 @@
 "ejX" = (
 /obj/structure/bed/chair/office/light,
 /obj/effect/landmark/start{
-	name = "LCZ Guard"
+	name = "LCZ Sergeant"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
@@ -22946,6 +22971,12 @@
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
+"euF" = (
+/obj/effect/landmark/start{
+	name = "Chaplain"
+	},
+/turf/simulated/floor/carpet/green,
+/area/chapel)
 "euW" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/techmaint,
@@ -23573,6 +23604,12 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"fkA" = (
+/obj/effect/landmark/start{
+	name = "Junior Robotics Technician"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "fkM" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -24716,6 +24753,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
+"grd" = (
+/obj/effect/landmark/start{
+	name = "Researcher Associate"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/robotics)
 "grA" = (
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/white,
@@ -24948,6 +24991,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"gKM" = (
+/obj/effect/landmark/start{
+	name = "HCZ Sergeant"
+	},
+/obj/structure/bed/chair/office/comfy,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "gKT" = (
 /obj/effect/floor_decal/chapel,
 /obj/machinery/light,
@@ -25217,7 +25267,7 @@
 /area/site53/uhcz/scp106containment)
 "gWM" = (
 /obj/effect/landmark/start{
-	name = "HCZ Junior Guard"
+	name = "HCZ Guard"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
@@ -27310,10 +27360,10 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
 "jdL" = (
-/obj/effect/landmark/start{
-	name = "HCZ Guard"
-	},
 /obj/structure/bed/chair/office/comfy,
+/obj/effect/landmark/start{
+	name = "HCZ Sergeant"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "jee" = (
@@ -27454,7 +27504,7 @@
 /area/site53/llcz/scp066)
 "jnd" = (
 /obj/effect/landmark/start{
-	name = "LCZ Junior Guard"
+	name = "LCZ Guard"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
@@ -27979,6 +28029,15 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
+"jQH" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Researcher Associate"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/robotics)
 "jQI" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/structure/cable{
@@ -30715,6 +30774,12 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
+"mNa" = (
+/obj/effect/landmark/start{
+	name = "Office Worker"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/office)
 "mNl" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -34765,6 +34830,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
+"rqh" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Robot"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "rqk" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -37432,11 +37506,8 @@
 /turf/simulated/floor,
 /area/site53/uhcz/scp106containment)
 "uza" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/landmark{
-	name = "JoinLateCyborg"
+/obj/effect/landmark/start{
+	name = "Robot"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -39280,6 +39351,9 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 4
 	},
+/obj/effect/landmark/start{
+	name = "Chaplain"
+	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "wBb" = (
@@ -39752,15 +39826,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "wVp" = (
-/obj/effect/landmark/start{
-	name = "LCZ Junior Guard"
-	},
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
 	pixel_x = 20
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "LCZ Guard"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
@@ -40275,14 +40349,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
 "xxz" = (
-/obj/effect/landmark/start{
-	name = "LCZ Junior Guard"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "LCZ Guard"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
@@ -57486,7 +57560,7 @@ azA
 azA
 aeS
 aeS
-aLd
+mNa
 mNs
 rFI
 tAh
@@ -58006,7 +58080,7 @@ aLJ
 aLb
 brU
 aLd
-aLd
+mNa
 aPH
 pkC
 aGM
@@ -58777,7 +58851,7 @@ aLx
 aLz
 fRi
 aLd
-aLd
+mNa
 aPB
 pkC
 pSE
@@ -59805,7 +59879,7 @@ eeH
 aLd
 eeH
 wSy
-aLd
+mNa
 dIs
 aMd
 aGM
@@ -67495,7 +67569,7 @@ uYC
 iPU
 tws
 txj
-dDB
+euF
 iDx
 env
 azA
@@ -75165,7 +75239,7 @@ aIi
 nvb
 aJn
 aKy
-aJn
+uza
 aeY
 aIi
 aJn
@@ -75420,16 +75494,16 @@ azA
 azA
 aIi
 aan
-uza
 abC
-obm
+abC
+rqh
 aJd
 aIi
 afg
 aeQ
 taz
-abC
-abC
+bUV
+bUV
 obm
 aJA
 aMp
@@ -75443,7 +75517,7 @@ aaS
 aaS
 vNo
 aMp
-aMp
+grd
 aMp
 aMp
 afz
@@ -76213,7 +76287,7 @@ rcp
 mXU
 gRy
 vNo
-cMi
+jQH
 aMp
 azD
 cMi
@@ -76456,8 +76530,8 @@ aIi
 gfP
 vZy
 adJ
-adJ
-adJ
+bua
+bua
 ewr
 aJA
 aMp
@@ -77482,8 +77556,8 @@ azA
 azA
 aIi
 adK
-aJn
-aJn
+fkA
+fkA
 aKt
 aJn
 aJn
@@ -84502,7 +84576,7 @@ atV
 azA
 gID
 oLR
-jdL
+gKM
 hSN
 rrU
 rrU
