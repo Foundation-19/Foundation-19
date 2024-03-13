@@ -365,7 +365,7 @@
 
 	update_icon()
 
-/obj/item/gun/projectile/scp/proc/ejectCasing(manual, obj/item/ammo_casing/C)
+/obj/item/gun/projectile/scp/ejectCasing(manual, obj/item/ammo_casing/C)
 	var/obj/item/ammo_casing/casing
 	if(C)
 		casing = C
