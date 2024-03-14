@@ -1,6 +1,17 @@
 /*
  * Science
  */
+/obj/item/clothing/under/rank/research_director/alt
+	desc = "It's a dull black comfortable turtleneck which shows no emotion, and smells slightly of chemicals, and lacks morales. It's paired with some black jeans."
+	name = "Chief Science Officer's turtleneck"
+	icon_state = "rdclothes"
+	item_state = "bl_suit"
+	worn_state = "rdclothes"
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /obj/item/clothing/under/rank/research_director
 	desc = "It's a jumpsuit worn by those with the know-how to achieve the position of \"Chief Science Officer\". Its fabric provides minor protection from biological contaminants."
 	name = "chief science officer's jumpsuit"

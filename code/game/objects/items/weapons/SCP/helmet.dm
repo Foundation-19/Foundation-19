@@ -3,7 +3,7 @@
 	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back lettering."
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
-	armor = list(melee = 40, bullet = 60, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 60, bullet = 40, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 	action_button_name = "Toggle Visor"
@@ -12,7 +12,7 @@
 	name = "\improper Heavy-plated foundation security helmet"
 	desc = "A helmet with 'ZONE COMMANDER' printed on the back lettering, with an added golden badge on the front of the helmet."
 	icon_state = "heavy-guard-helm"
-	armor = list(melee = 45, bullet = 65, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 65, bullet = 45, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 
 /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	name = "\improper Tactical Security Officer Helmet"

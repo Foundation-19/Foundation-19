@@ -51,7 +51,7 @@
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security/lczcom
 	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
 /decl/hierarchy/outfit/job/security/ez_zone_commander
 	name = OUTFIT_JOB_NAME("EZ Supervisor")
@@ -83,7 +83,7 @@
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
 
 /decl/hierarchy/outfit/job/security/hcz_sergeant
@@ -199,7 +199,7 @@
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
 /decl/hierarchy/outfit/job/security/hcz_guard
 	name = OUTFIT_JOB_NAME("HCZ Guard")
