@@ -12,10 +12,10 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 1200
+	health = 1200
 
-	movement_cooldown = 5
+	movement_cooldown = 4.5
 	movement_sound = 'sounds/mecha/mechmove04.ogg'
 
 	a_intent = "harm"
@@ -36,9 +36,11 @@
 	/// Upon going to that point or above - the mob goes into the is_sleeping stage and is unable to act/speak/move for some time
 	var/max_satiety = 640
 	/// Upon that point, the mob is on a rampage, allowing it to escape and move faster
-	var/starvation_satiety = 40
+	var/starvation_satiety = 80
 	/// Absolute minimum, at which point you start taking damage
 	var/min_satiety = 0
+	/// Percentage of max HP dealt in damage when at minimum satiety
+	var/starvation_damage = 0.005
 	/// When TRUE - it ignores the purity list and can attack anything
 	var/enraged = FALSE
 	var/is_sleeping = FALSE
@@ -49,6 +51,9 @@
 	// Upon encountering a mob, they are added in one of these
 	var/list/purity_list = list()
 	var/list/impurity_list = list()
+
+	/// If TRUE - The mob will automatically trigger attack when bumping a living mob
+	var/bump_attack = TRUE
 
 /mob/living/simple_animal/hostile/scp2427_3/Initialize()
 	. = ..()
@@ -107,9 +112,12 @@
 			continue
 		if(L in impurity_list)
 			return !L.stat && L.ckey // Conscious and is/was player controlled
-		if(L.stat && istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses around me to breach
-			return FALSE
-	return (satiety <= min_satiety)
+		if(istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses and goats around me to breach
+			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat))
+				return FALSE
+			if(L.stat)
+				return FALSE
+	return (satiety <= starvation_satiety)
 
 /mob/living/simple_animal/hostile/scp2427_3/proc/FallAsleep()
 	if(is_sleeping)
@@ -141,13 +149,12 @@
 	if(stat != DEAD)
 		return
 	playsound(src, 'sounds/mecha/powerup.ogg', 75, FALSE, 4)
+	sleep(2 SECONDS) // Give em some warning time
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You finish the reboot process."))
 	revive()
 	satiety = 100
-	sleep(2 SECONDS) // Give em some warning time
-	icon_state = null
 
 /mob/living/simple_animal/hostile/scp2427_3/proc/CheckPurity(mob/living/L)
 	if(!istype(L))
@@ -257,7 +264,7 @@
 		CheckPurity(L)
 	AdjustSatiety(-satiety_reduction_per_tick)
 	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
-		adjustBruteLoss(maxHealth * 0.01)
+		adjustBruteLoss(maxHealth * starvation_damage)
 
 /mob/living/simple_animal/hostile/scp2427_3/get_status_tab_items()
 	. = ..()
@@ -267,9 +274,9 @@
 		. += "WE ARE ASLEEP."
 
 	if(satiety <= min_satiety)
-		. += "Satiety: I AM GOING TO STARVE TO DEATH!!"
+		. += "Satiety: I AM GOING TO STARVE TO DEATH!! ([round(satiety)]/[max_satiety])"
 	else if(satiety <= starvation_satiety)
-		. += "Satiety: I NEED MEAT RIGHT NOW!"
+		. += "Satiety: I NEED MEAT RIGHT NOW! ([round(satiety)]/[max_satiety])"
 	else
 		. += "Satiety: [round(satiety)]/[max_satiety]"
 
@@ -307,6 +314,12 @@
 /mob/living/simple_animal/hostile/scp2427_3/dust()
 	return FALSE
 
+// If bump attack is enabled, we will automaticall attack mobs that we bump into
+/mob/living/simple_animal/hostile/scp2427_3/Bump(atom/A)
+	. = ..()
+	if(bump_attack && isliving(A) && canClick())
+		UnarmedAttack(A)
+
 /mob/living/simple_animal/hostile/scp2427_3/UnarmedAttack(atom/A)
 	if(is_sleeping)
 		return
@@ -318,7 +331,7 @@
 	if(A in purity_list)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
 		return
-	if(ishuman(A) && (satiety > starvation_satiety) && !(A in impurity_list) && !ismonkey(A))
+	if(ishuman(A) && (satiety >= starvation_satiety) && !(A in impurity_list) && !ismonkey(A))
 		var/mob/living/carbon/human/H = A
 		if(H.stat != DEAD)
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
@@ -326,7 +339,7 @@
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2.5)))) //This is an informational comment; but please do not remove the 'ISMONKEY' check due to the fact that unless we recode the purity mechanism, 2427-3 Cannot attack them!
+		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2))))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = round(max_satiety * 0.5)
@@ -385,3 +398,27 @@
 	. = ..()
 	if(Proj.firer && !Proj.nodamage)
 		CheckPurity(Proj.firer)
+
+// Someone was disappointed that you can't run 2427-3 through 914, so here we are.
+/mob/living/simple_animal/hostile/scp2427_3/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	log_and_message_admins("put [src] through SCP-914 on \"[mode]\" mode.", user, src)
+	switch(mode)
+		if(MODE_ROUGH, MODE_COARSE) // Reset them to normal
+			movement_cooldown = initial(movement_cooldown)
+			var/obj/item/natural_weapon/leg_2427_3/W = get_natural_weapon()
+			if(istype(W))
+				W.force = initial(W.force)
+			if(mode == MODE_ROUGH) // KILL!!!!
+				death()
+		if(MODE_FINE) // They get a bit stronger
+			playsound(src, 'sounds/effects/screech.ogg', 75, FALSE, 16)
+			to_chat(src, SPAN_USERDANGER("You are feeling more powerful!"))
+			movement_cooldown = initial(movement_cooldown) - 1
+		if(MODE_VERY_FINE) // I suggest you just end the round here and there
+			playsound(src, 'sounds/effects/screech.ogg', 75, FALSE, 16)
+			to_chat(src, SPAN_USERDANGER("You are unstoppable avatar of justice! PURIFY THEM ALL!!!"))
+			var/obj/item/natural_weapon/leg_2427_3/W = get_natural_weapon()
+			if(istype(W))
+				W.force = initial(W.force) *= 2
+			movement_cooldown = initial(movement_cooldown) - 2
+	return src

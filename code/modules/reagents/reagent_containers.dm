@@ -259,10 +259,23 @@
 /obj/item/reagent_containers/proc/SpawnDisease()
 	return new spawned_disease()
 
-// If used on Fine/Very Fine and contains adminordrazine(SCP 500) - will turn into SCP 427
+// Fine:
+// - If contains SCP 500 - will turn into SCP 427
+// - If has a blood with disease - will evolve it
 /obj/item/reagent_containers/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
-		if(MODE_FINE, MODE_VERY_FINE)
-			if(reagents.has_reagent(/datum/reagent/adminordrazine, 1))
+		if(MODE_FINE)
+			if(reagents.has_reagent(/datum/reagent/scp500, 1))
 				return /obj/item/clothing/accessory/scp_427
+			if(reagents.has_reagent(/datum/reagent/blood))
+				var/datum/reagent/blood/B = reagents.get_reagent(/datum/reagent/blood)
+				var/datum/disease/advance/D = locate(/datum/disease/advance) in B.data["viruses"]
+				if(istype(D))
+					var/list/generated_symptoms = D.GenerateSymptoms(1, 12, 4)
+					if(length(generated_symptoms))
+						var/datum/symptom/S = pick(generated_symptoms)
+						D.AddSymptom(S)
+						D.Refresh(TRUE)
+					playsound(src, 'sounds/effects/bubbles.ogg', 50, TRUE)
+				return src
 	return ..()

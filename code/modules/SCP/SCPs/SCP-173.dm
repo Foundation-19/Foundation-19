@@ -240,7 +240,7 @@
 /mob/living/scp173/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	log_and_message_admins("put [src] through SCP-914 on \"[mode]\" mode.", user, src)
 	switch(mode)
-		if(MODE_COARSE)
+		if(MODE_ROUGH, MODE_COARSE)
 			movement_sound = null
 			bump_attack = FALSE
 			ignore_vision = FALSE
