@@ -130,6 +130,35 @@
 	desc = "Issued to SD senior guards, agents and NCO's"
 	icon_state = "beret_corporate_warden"
 
+// STARTING NEW SECURITY BERETS //
+
+/obj/item/clothing/head/beret/sec/guard
+	name = "Guard Beret"
+	desc = "A black beret with a red badge, in the shape of two chevrons, it feels durable due to the materials it's been made from."
+	icon_state = "beret_guard"
+
+/obj/item/clothing/head/beret/sec/sergeant
+	name = "Non-Commissioned Officer Beret"
+	desc = "A black beret with a silver badge, in the shape of three chevrons, it feels durable due to the materials it's been made from."
+	icon_state = "beret_sergeant"
+
+/obj/item/clothing/head/beret/sec/commander
+	name = "Zone Commander Beret"
+	desc = "A black beret with a golden badge in the shape of a shield, it feels durable due to the materials it's been made from."
+	icon_state = "beret_commander"
+
+/obj/item/clothing/head/beret/sec/guardcom
+	name = "Guard Commander Beret"
+	desc = "A white beret with a golden badge in the shape of a shield, it feels durable due to the materials it's been made from."
+	icon_state = "beret_guardcom"
+
+// ENDING NEW SECURITY BERETS //
+
+/obj/item/clothing/head/beret/goc
+	name = "Global Occult Coalition Beret"
+	desc = "A cyan beret with a golden Global Occult Coalition badge on the front, smells of lead."
+	icon_state = "goc-beret"
+
 /obj/item/clothing/head/beret/engineering
 	name = "corporate engineering beret"
 	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."
