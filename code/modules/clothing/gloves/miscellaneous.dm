@@ -151,6 +151,13 @@
 /obj/item/clothing/gloves/latex/nitrile/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
 
+/obj/item/clothing/gloves/thick/swat/lcz
+	name = "heavy riot gloves"
+	desc = "These black heavy tactical gloves are made from a durable fabric, woven with durathread alloy, and have hardened knuckles. Extremely resistant to impacts."
+	item_state = "lczgloves"
+	force = 5
+	armor = list(melee = 80, bullet = 15, laser = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+
 /obj/item/clothing/gloves/thick/duty
 	desc = "These brown duty gloves are made from a durable synthetic."
 	name = "work gloves"

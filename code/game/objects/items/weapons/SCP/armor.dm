@@ -27,16 +27,16 @@
 	icon_state = "guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 40, bullet = 50, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = 60, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
-	name = "Heavy-plated armor vest"
+	name = "Heavy-plated armored vest"
 	desc = "A synthetic armor vest. This one is for the LCZ Zone Commander."
 	icon_state = "heavy-guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 45, bullet = 65, laser = 40, energy = 40, bomb = 40, bio = 15, rad = 10)
+	armor = list(melee = 65, bullet = 45, laser = 30, energy = 40, bomb = 40, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos

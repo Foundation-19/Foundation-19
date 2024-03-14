@@ -27,6 +27,7 @@
 /decl/hierarchy/outfit/goc/machinegunner
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Machinegunner") //I am heavy weapons guy
 	head = /obj/item/clothing/head/helmet/scp/security/goc
+	suit = /obj/item/clothing/suit/armor/goc/heavy
 	r_hand = /obj/item/gun/projectile/automatic/l6_saw //and THIS... is my weapon
 	l_hand = null
 	l_pocket = /obj/item/grenade/frag
@@ -36,6 +37,7 @@
 /decl/hierarchy/outfit/goc/grenadier
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Grenadier")
 	head = /obj/item/clothing/head/helmet/scp/security/goc
+	suit = /obj/item/clothing/suit/armor/goc/heavy
 	r_hand = /obj/item/gun/launcher/grenade/thumper // LEEEET'S DO IIIT
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/plastique
