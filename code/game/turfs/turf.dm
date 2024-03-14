@@ -43,6 +43,9 @@
 
 	var/list/explosion_throw_details
 
+	/// Reference to the turf fire on the turf
+	var/obj/effect/turf_fire/turf_fire
+
 /turf/Initialize(mapload, ...)
 	. = ..()
 	if(dynamic_lighting)
@@ -448,3 +451,6 @@ var/const/enterloopsanity = 100
 		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, caller, ID, no_id = no_id))
 			continue
 		. += turf_to_check
+
+/turf/proc/IgniteTurf(power, fire_colour)
+	return
