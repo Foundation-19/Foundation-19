@@ -22,3 +22,11 @@
 2024-03-10:
   Tsurupeta:
   - code_imp: Adds support for byond version 515
+2024-03-14:
+  EgorDinamit:
+  - tweak: Putting SCP 2427-3 through SCP 914 on "Fine" or "Very Fine" will, obviously,
+      buff it.
+  - tweak: Putting SCP 012 through SCP 914 on "Very Fine" will net interesting results.
+  - tweak: Putting ID cards through SCP 914 will have unique results now.
+  - tweak: Putting cash through SCP 914 will have unique results now.
+  - bugfix: Fixed SCP 914 interaction with infestation mobs on "Fine" setting.
