@@ -40,9 +40,9 @@
 
 /decl/hierarchy/outfit/job/civ/gocrep
 	name = OUTFIT_JOB_NAME("Global Occult Coalition Representative")
-	uniform = /obj/item/clothing/under/rank/head_of_security/navyblue
-	suit = /obj/item/clothing/suit/security/navyhos
-	head = /obj/item/clothing/head/beret/scp/goc
+	uniform = /obj/item/clothing/under/rank/civilian/goc
+	suit = /obj/item/clothing/suit/gocjacket
+	head = /obj/item/clothing/head/beret/goc
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
@@ -54,10 +54,11 @@
 
 /decl/hierarchy/outfit/job/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
-	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	uniform = /obj/item/clothing/under/rank/civilian/uiu
+	suit = /obj/item/clothing/suit/uiucoat
 	shoes = /obj/item/clothing/shoes/dress
 	glasses = /obj/item/clothing/glasses/sunglasses
-	gloves = /obj/item/clothing/gloves/thick/combat
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	l_pocket = /obj/item/device/radio
 	id_type = /obj/item/card/id/adminlvl3
 	l_ear = /obj/item/device/radio/headset/heads/uiu

@@ -74,10 +74,10 @@
 		bio = ARMOR_BIO_MINOR)
 
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
-	desc = "These tactical gloves are somewhat fire and impact resistant."
+	desc = "These tactical gloves are somewhat fire and impact resistant, usually seen worn by Representatives."
 	name = "combat gloves"
-	icon_state = "work"
-	item_state = "wgloves"
+	icon_state = "workgoc"
+	item_state = "wgocgloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	force = 5

@@ -8,6 +8,12 @@
 	flags_inv = HIDEEARS
 	action_button_name = "Toggle Visor"
 
+/obj/item/clothing/head/helmet/scp/security/lczcom
+	name = "\improper Heavy-plated foundation security helmet"
+	desc = "A helmet with 'ZONE COMMANDER' printed on the back lettering, with an added golden badge on the front of the helmet."
+	icon_state = "heavy-guard-helm"
+	armor = list(melee = 45, bullet = 65, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+
 /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	name = "\improper Tactical Security Officer Helmet"
 	desc = "The markings on this helmet indicate that it belongs to a SD zone commander."

@@ -6,7 +6,7 @@
 	name = OUTFIT_JOB_NAME("Facility Director")
 	uniform = /obj/item/clothing/under/scp/suittie
 	shoes = /obj/item/clothing/shoes/dress
-	suit = /obj/item/clothing/suit/storage/toggle/suit/black
+	suit = /obj/item/clothing/suit/armor/director_coat
 	id_type = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
