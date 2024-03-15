@@ -26,6 +26,27 @@
 	idcard = /obj/item/card/id/centcom/ERT
 	silicon_radio = /obj/item/device/radio/borg/ert
 
+/mob/living/silicon/robot/anomaly
+	lawupdate = FALSE
+	scrambledcodes = TRUE
+	modtype = "Combat"
+	lawchannel = "State"
+	idcard = /obj/item/card/id/syndicate
+	cell = /obj/item/cell/infinite
+	pitch_toggle = FALSE
+
+//TODO: Name?, SCP-914 procs
+/mob/living/silicon/robot/anomaly/scp1370
+	icon_state = "pesterbot"
+	laws = /datum/ai_laws/anomaly/scp1370
+	module = /obj/item/robot_module/anomaly/scp1370
+
+//TODO: The stuff from earlier + A controller for startup and operation (Mostly non-functional, for roleplay reasons)
+/mob/living/silicon/robot/anomaly/scp846
+	icon_state = "robodude"
+	laws = /datum/ai_laws/anomaly/scp846
+	module = /obj/item/robot_module/anomaly/scp846
+
 /mob/living/silicon/robot/flying/ascent
 	desc = "A small, sleek, dangerous-looking hover-drone."
 	speak_statement = "clicks"

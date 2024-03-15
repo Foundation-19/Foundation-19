@@ -2384,6 +2384,7 @@
 #include "code\modules\mob\living\silicon\robot\modules\module_medical.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_miner.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_research.dm"
+#include "code\modules\mob\living\silicon\robot\modules\module_SCP.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_security.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_standard.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_uncertified.dm"
