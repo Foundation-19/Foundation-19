@@ -40,9 +40,9 @@
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
-	name = "armored vest"
-	desc = "A synthetic armor vest."
-	icon_state = "chaos-armor"
+	name = "Chaos Insurgency armored vest"
+	desc = "A heavy tan russian type ballistic vest, mainly protecting against bullets, and not much else. It's usually used by russian military forces, but is used by the Chaos Insurgency."
+	icon_state = "ci-vest"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 85, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)

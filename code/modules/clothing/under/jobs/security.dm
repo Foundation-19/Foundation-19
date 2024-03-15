@@ -292,6 +292,13 @@
 	flags_inv = HIDEJUMPSUIT
 	siemens_coefficient = 0.6
 
+/obj/item/clothing/under/syndicate/ci
+	name = "Chaos Insurgency field uniform"
+	desc = "Heavy green field military garbs from an unknown group of interest, you'd assume it's from the Chaos Insurgency."
+	icon_state = "ci_jumpsuit"
+	item_state = "g_suit"
+	worn_state = "ci_jumpsuit"
+
 /obj/item/clothing/under/rank/cargotech/utility
 	name = "Logistics Specialist utility uniform"
 	desc = "A heavy utility jumpsuit used by the Logistics Department."
