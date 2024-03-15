@@ -1,8 +1,6 @@
 /datum/spell/targeted/glimpse_of_eternity
 	name = "Glimpse of Eternity"
 	desc = "Show the non-believers what enlightenment truely means."
-	feedback = "GE"
-	school = "illusion"
 	invocation = "Ghe Tar Yet!"
 	invocation_type = INVOKE_SHOUT
 	spell_flags = INCLUDEUSER
@@ -12,7 +10,10 @@
 
 	hud_state = "wiz_glimpse"
 
-/datum/spell/targeted/glimpse_of_eternity/cast(list/targets, mob/user)
+	spell_cost = 2
+	mana_cost = 10
+
+/datum/spell/targeted/glimpse_of_eternity/cast(var/list/targets, var/mob/user)
 	for(var/t in targets)
 		var/mob/living/L = t
 		if(L.faction != user.faction) //Worse for non-allies

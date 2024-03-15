@@ -1,8 +1,6 @@
 /datum/spell/aoe_turf/drain_blood
 	name = "Drain Blood"
 	desc = "this spell allows the caster to borrow blood from those around them. Sharing is caring!"
-	feedback = "DB"
-	school = "transmutation"
 	charge_max = 600
 	invocation = "whispers something darkly"
 	invocation_type = INVOKE_EMOTE
@@ -11,10 +9,13 @@
 
 	time_between_channels = 100
 	number_of_channels = 3
-	cast_sound = 'sounds/effects/squelch2.ogg'
+	cast_sound = 'sound/effects/squelch2.ogg'
 	hud_state = "const_rune"
 
-/datum/spell/aoe_turf/drain_blood/cast(list/targets, mob/user)
+	spell_cost = 3
+	mana_cost = 20
+
+/datum/spell/aoe_turf/drain_blood/cast(var/list/targets, var/mob/user)
 	for(var/t in targets)
 		for(var/mob/living/L in t)
 			if(L.stat == DEAD || L == user)
@@ -25,7 +26,7 @@
 				H.vessel.remove_reagent(/datum/reagent/blood, 10)
 			else
 				L.adjustBruteLoss(10)
-			to_chat(L, SPAN_DANGER("You feel your lifeforce being ripping out of your body!"))
+			to_chat(L, "<span class='danger'>You feel your lifeforce being ripping out of your body!</span>")
 
 			//Do effect
 			var/obj/item/projectile/beam/blood_effect/effect = new(get_turf(user))
@@ -54,7 +55,7 @@
 	tracer_type = /obj/effect/projectile/blood
 	impact_type = /obj/effect/projectile/blood
 
-/obj/item/projectile/beam/blood_effect/Bump(atom/a, forced=0)
+/obj/item/projectile/beam/blood_effect/Bump(var/atom/a, forced=0)
 	if(a == original)
 		on_impact(a)
 		qdel(src)

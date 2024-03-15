@@ -452,5 +452,5 @@ var/const/enterloopsanity = 100
 			continue
 		. += turf_to_check
 
-/turf/proc/IgniteTurf(power, fire_colour)
+/turf/proc/IgniteTurf(power, fire_colour, fire_type = /obj/effect/turf_fire)
 	return

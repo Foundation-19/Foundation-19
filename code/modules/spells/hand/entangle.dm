@@ -1,8 +1,6 @@
 /datum/spell/hand/charges/entangle
 	name = "Entangle"
 	desc = "This spell creates vines that immediately entangle a nearby victim."
-	feedback = "ET"
-	school = "transmutation"
 	charge_max = 600
 	spell_flags = NEEDSCLOTHES | SELECTABLE | IGNOREPREV
 	invocation = "Bu-Ekel'Inas!"
@@ -16,9 +14,12 @@
 	compatible_targets = list(/mob)
 
 	hud_state = "wiz_entangle"
-	cast_sound = 'sounds/magic/staff_door.ogg'
+	cast_sound = 'sound/magic/staff_door.ogg'
 	show_message = " points towards the ground, causing plants to erupt"
 	var/datum/seed/seed
+
+	spell_cost = 2
+	mana_cost = 10
 
 /datum/spell/hand/charges/entangle/New()
 	..()
@@ -32,17 +33,20 @@
 	seed.display_name = "vines"
 	seed.chems = list(/datum/reagent/nutriment = list(1,20))
 
-/datum/spell/hand/charges/entangle/cast_hand(mob/M,mob/user)
+/datum/spell/hand/charges/entangle/cast_hand(mob/M, mob/user)
+	. = ..()
+	if(!.)
+		return
+
 	var/turf/T = get_turf(M)
 	var/obj/effect/vine/single/P = new(T,seed, start_matured =1)
 	P.can_buckle = 1
 
 	P.buckle_mob(M)
 	M.set_dir(pick(GLOB.cardinal))
-	M.visible_message(SPAN_DANGER("[P] appear from the floor, spinning around \the [M] tightly!"))
-	return ..()
+	M.visible_message("<span class='danger'>[P] appear from the floor, spinning around \the [M] tightly!</span>")
 
-/datum/spell/hand/charges/entangle/empower_spell()
+/datum/spell/hand/charges/entangle/ImproveSpellPower()
 	if(!..())
 		return 0
 

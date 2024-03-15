@@ -6,8 +6,6 @@ If the spell_projectile is seeking, it will update its target every process and 
 */
 
 /datum/spell/targeted/projectile
-	name = "projectile spell"
-
 	range = 7
 
 	var/proj_type = /obj/item/projectile/spell_projectile //use these. They are very nice
@@ -37,7 +35,7 @@ If the spell_projectile is seeking, it will update its target every process and 
 		projectile.launch(target)
 	return
 
-/datum/spell/targeted/projectile/proc/choose_prox_targets(mob/user = usr, atom/movable/spell_holder)
+/datum/spell/targeted/projectile/proc/choose_prox_targets(mob/user = usr, var/atom/movable/spell_holder)
 	var/list/targets = list()
 	for(var/mob/living/M in range(spell_holder, cast_prox_range))
 		if(M == user && !(spell_flags & INCLUDEUSER))
@@ -45,5 +43,5 @@ If the spell_projectile is seeking, it will update its target every process and 
 		targets += M
 	return targets
 
-/datum/spell/targeted/projectile/proc/prox_cast(list/targets, atom/movable/spell_holder)
+/datum/spell/targeted/projectile/proc/prox_cast(var/list/targets, var/atom/movable/spell_holder)
 	return targets

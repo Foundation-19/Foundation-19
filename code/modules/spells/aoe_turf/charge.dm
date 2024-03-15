@@ -2,7 +2,6 @@
 	name = "Charge"
 	desc = "This spell can be used to charge up spent magical artifacts, among other things."
 
-	school = "transmutation"
 	charge_max = 600
 	spell_flags = 0
 	invocation = "DIRI CEL"
@@ -11,31 +10,34 @@
 	cooldown_min = 400 //50 deciseconds reduction per rank
 
 	hud_state = "wiz_charge"
-	cast_sound = 'sounds/magic/charge.ogg'
+	cast_sound = 'sound/magic/charge.ogg'
 
-/datum/spell/aoe_turf/charge/cast(list/targets, mob/user)
+	spell_cost = 2
+	mana_cost = 25
+
+/datum/spell/aoe_turf/charge/cast(var/list/targets, mob/user)
 	for(var/turf/T in targets)
 		depth_cast(T)
 
-/datum/spell/aoe_turf/charge/proc/depth_cast(list/targets)
+/datum/spell/aoe_turf/charge/proc/depth_cast(var/list/targets)
 	for(var/atom/A in targets)
 		if(A.contents.len)
 			depth_cast(A.contents)
 		cast_charge(A)
 
-/datum/spell/aoe_turf/charge/proc/mob_charge(mob/living/M)
+/datum/spell/aoe_turf/charge/proc/mob_charge(var/mob/living/M)
 	if(!M.mind)
 		return
 	if(M.mind.learned_spells.len != 0)
 		for(var/datum/spell/S in M.mind.learned_spells)
 			if(!istype(S, /datum/spell/aoe_turf/charge))
 				S.charge_counter = S.charge_max
-		to_chat(M, SPAN_NOTICE("You feel raw magic flowing through you, it feels good!"))
+		to_chat(M, "<span class='notice'>You feel raw magic flowing through you, it feels good!</span>")
 	else
-		to_chat(M, SPAN_NOTICE("You feel very strange for a moment, but then it passes."))
+		to_chat(M, "<span class='notice'>You feel very strange for a moment, but then it passes.</span>")
 	return M
 
-/datum/spell/aoe_turf/charge/proc/cast_charge(atom/target)
+/datum/spell/aoe_turf/charge/proc/cast_charge(var/atom/target)
 	var/atom/charged_item
 
 	if(istype(target, /mob/living))
@@ -59,7 +61,7 @@
 	if(!charged_item)
 		return 0
 	else
-		charged_item.visible_message(SPAN_NOTICE("[charged_item] suddenly sparks with energy!"))
+		charged_item.visible_message("<span class='notice'>[charged_item] suddenly sparks with energy!</span>")
 		return 1
 
 
