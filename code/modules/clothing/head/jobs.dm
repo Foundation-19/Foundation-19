@@ -159,6 +159,11 @@
 	desc = "A cyan beret with a golden Global Occult Coalition badge on the front, smells of lead."
 	icon_state = "goc-beret"
 
+/obj/item/clothing/head/beret/goc/lead
+	name = "Global Occult Coalition Leader Beret"
+	desc = "A dark blue beret with a white United Nations badge on the front, smells of bad decisions."
+	icon_state = "goc_lead_beret"
+
 /obj/item/clothing/head/beret/engineering
 	name = "corporate engineering beret"
 	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."
