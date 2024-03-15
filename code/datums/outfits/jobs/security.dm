@@ -9,7 +9,7 @@
 	id_type = /obj/item/card/id/gcseclvl5
 	r_pocket = /obj/item/book/manual/scp/secsop
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	suit = /obj/item/clothing/suit/armor/hos/jensen
+	suit = /obj/item/clothing/suit/armor/hos/coat
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)

@@ -244,3 +244,17 @@
 		bio = ARMOR_BIO_STRONG,
 		rad = ARMOR_RAD_SMALL
 		)
+
+/obj/item/clothing/mask/gas/goc
+	name = "GOC tactical gas mask"
+	desc = "A glass gas mask that block all vision towards the person's identity. Can be connected to an air supply, this one is designed for the Global Occult Coalition."
+	icon_state = "goc-mask"
+	item_state = "goc-mask"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_SMALL,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)

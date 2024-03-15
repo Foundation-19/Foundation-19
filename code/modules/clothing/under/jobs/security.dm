@@ -292,6 +292,39 @@
 	flags_inv = HIDEJUMPSUIT
 	siemens_coefficient = 0.6
 
+/obj/item/clothing/under/rank/cargotech/utility
+	name = "Logistics Specialist utility uniform"
+	desc = "A heavy utility jumpsuit used by the Logistics Department."
+	icon_state = "gorka_cargo"
+	item_state = "bl_suit"
+	worn_state = "gorka_cargo"
+
+/obj/item/clothing/under/rank/cargotech/utility/qm
+	name = "Logistics Officer utility uniform"
+	desc = "A heavy utility jumpsuit used by the Logistics Department. This one has silver markings, and is for the Officer of Logistics."
+	icon_state = "gorka_qm"
+	item_state = "bl_suit"
+	worn_state = "gorka_qm"
+
+/obj/item/clothing/under/rank/engineer/comms
+	name = "Communications Technician jumpsuit"
+	desc = "A heavy duty pair of a tactical engineering high-vis jumpsuit. It's assumed to be mainly used by Communications Techs."
+	icon_state = "comms_tech"
+	item_state = "bl_suit"
+	worn_state = "comms_tech"
+
+/obj/item/clothing/under/rank/security/comms
+	name = "Communications Officer suit"
+	desc = "A pair of black trousers along with a white dress shirt. It has some golden patches on the shoulders denoting the rank of Communications Officer."
+	icon_state = "comms_officer"
+	item_state = "bl_suit"
+	worn_state = "comms_officer"
+
+/obj/item/clothing/suit/armor/comms
+	name = "Communications Officer jacket"
+	desc = "A luxurious suit jacket worn by the Communications Officer, it has the same gold patches on the shoulders."
+	icon_state = "co_coat"
+
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/head_of_security/jensen
 	desc = "You never asked for anything that stylish."
@@ -303,10 +336,22 @@
 
 /obj/item/clothing/suit/armor/hos/jensen
 	name = "Guard Commander Coat"
-	desc = "Trenchcoat issued to the SD commander of a Foundation site or area."
+	desc = "A long trenchcoat issued to the Highest Ranking security officer of the SCP Foundation."
 	icon_state = "hostrench"
 	flags_inv = 0
 	siemens_coefficient = 0.6
+
+/obj/item/clothing/suit/armor/hos/vest
+	name = "Guard Commander's armored vest"
+	desc = "A slim tactical vest with a golden badge on it. You feel like a marine wearing this somehow."
+	icon_state = "gc_vest"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+
+/obj/item/clothing/suit/armor/hos/coat
+	name = "Guard Commander's padded coat"
+	desc = "A black coat with a nameplate, and rank badge on the chest, it feels thick, and armored unlike most coats. This makes you feel the sense of style."
+	icon_state = "gc_coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /*
  * Navy uniforms
