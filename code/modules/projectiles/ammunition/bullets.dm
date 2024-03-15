@@ -132,8 +132,8 @@
 	fall_sounds = list()
 
 /obj/item/ammo_casing/rocket/expend()
+	. = new projectile_type(src)
 	QDEL_NULL(src)
-	return
 
 /obj/item/ammo_casing/rocket/heavy
 	name = "heavy rocket shell"

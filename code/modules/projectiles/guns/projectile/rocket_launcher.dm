@@ -11,9 +11,11 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 4)
 	matter = list(MATERIAL_STEEL = 4000)
 
+	ammo_type = /obj/item/ammo_casing/rocket
 	caliber = CALIBER_ROCKET
 	load_method = SINGLE_CASING
 	max_shells = 1
+	starts_loaded = FALSE
 	load_sound = 'sounds/weapons/guns/interaction/launcher_reload.ogg'
 
 /obj/item/gun/projectile/rocket_launcher/handle_click_empty()
@@ -26,4 +28,4 @@
 		to_chat(user, "\A [loaded[1]] is chambered.")
 
 /obj/item/gun/projectile/rocket_launcher/loaded
-	ammo_type = /obj/item/ammo_casing/rocket
+	starts_loaded = TRUE
