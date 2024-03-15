@@ -152,7 +152,7 @@
 						/mob/living/simple_animal/hostile/giant_spider/lurker = 0.5,
 						/mob/living/simple_animal/hostile/giant_spider/thermic = 2)
 
-                               //^UPDATE THIS WHENEVER ADDING NEW SPODERS^\\
+						//^UPDATE THIS WHENEVER ADDING NEW SPODERS^\\
 
 /obj/effect/spider/spiderling/Initialize(mapload, atom/parent)
 	greater_form = pickweight(castes)
