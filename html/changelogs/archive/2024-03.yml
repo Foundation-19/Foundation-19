@@ -30,3 +30,11 @@
   - tweak: Putting ID cards through SCP 914 will have unique results now.
   - tweak: Putting cash through SCP 914 will have unique results now.
   - bugfix: Fixed SCP 914 interaction with infestation mobs on "Fine" setting.
+2024-03-15:
+  EgorDinamit, CrimsonShrike:
+  - rscadd: Prebuilt flamethrowers have new icon.
+  - rscadd: Flamethrower sounds.
+  - tweak: Flamethrowers now use chems as fire source.
+  - rscadd: Turf fires -> Very hot atmos fires, flamethrowers and fuel decals will
+      generate these fires.
+  - tweak: Simple mobs now can take fire damage from burning.
