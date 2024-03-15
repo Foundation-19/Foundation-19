@@ -48,14 +48,14 @@
 
 /obj/item/gun/projectile/revolver/military
 	name = "military revolver"
-	desc = "A standard-issue revolver of many militaries in the known human space."
+	desc = "A standard-issue revolver of many militaries in the world."
 	icon_state = "military"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
 
 /obj/item/gun/projectile/revolver/military/heavy
 	name = "heavy revolver"
-	desc = "A heavy revolver used mostly by officers or special forces of human worlds."
+	desc = "A heavy revolver used mostly by military officers or special forces."
 	icon_state = "tp44"
 	caliber = CALIBER_REVOLVER_HEAVY
 	ammo_type = /obj/item/ammo_casing/revolver/heavy
@@ -70,11 +70,11 @@
 
 /obj/item/gun/projectile/revolver/medium
 	name = "revolver"
+	desc = "The Lumoco Arms' Solid is a rugged revolver for people who don't keep their guns well-maintained."
 	icon_state = "medium"
 	safety_icon = "medium_safety"
 	caliber = CALIBER_REVOLVER_MEDIUM
 	ammo_type = /obj/item/ammo_casing/revolver/medium
-	desc = "The Lumoco Arms' Solid is a rugged revolver for people who don't keep their guns well-maintained."
 	accuracy = 1
 	bulk = 0
 	fire_delay = 7
