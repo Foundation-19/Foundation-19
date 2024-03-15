@@ -26,7 +26,7 @@
 	on = !on
 	if(on)
 		if(H.add_cloaking_source(src))
-			playsound(get_turf(H), 'sound/effects/teleport.ogg', 90, 1)
+			playsound(get_turf(H), 'sounds/effects/teleport.ogg', 90, 1)
 			H.mutations |= MUTATION_CLUMSY
 			charge_counter = charge_max
 			addtimer(CALLBACK(src, .proc/ToggleOffTimed, H), duration * 0.9)
@@ -41,7 +41,7 @@
 
 /datum/spell/invisibility/proc/ToggleOff(mob/living/carbon/human/H)
 	if(H.remove_cloaking_source(src))
-		playsound(get_turf(H), 'sound/effects/stealthoff.ogg', 90, 1)
+		playsound(get_turf(H), 'sounds/effects/stealthoff.ogg', 90, 1)
 		H.mutations -= MUTATION_CLUMSY
 		on = FALSE
 		charge_counter = 0
@@ -54,4 +54,3 @@
 	duration += 10 SECONDS
 
 	return "The [src] spell now lasts for a maximum of [round(duration / 10)] seconds."
-

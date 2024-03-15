@@ -53,7 +53,7 @@
 	spell_book_visible = FALSE
 
 	hud_state = "const_wall"
-	cast_sound = 'sound/items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/soulstone
 	name = "Summon Soulstone"
@@ -71,7 +71,7 @@
 
 	hud_state = "const_stone"
 	override_base = "const"
-	cast_sound = 'sound/items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/pylon
 	name = "Red Pylon"
@@ -88,7 +88,7 @@
 	spell_book_visible = FALSE
 
 	hud_state = "const_pylon"
-	cast_sound = 'sound/items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/forcewall/lesser
 	name = "Shield"

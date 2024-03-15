@@ -32,7 +32,7 @@
 		return FALSE
 
 	A.restore_health(restore_amount)
-	playsound(get_turf(A), 'sound/items/Welder.ogg', 35, TRUE)
+	playsound(get_turf(A), 'sounds/items/Welder.ogg', 35, TRUE)
 	to_chat(user, SPAN_NOTICE("You manage to repair some damage on [A]."))
 
 	return TRUE

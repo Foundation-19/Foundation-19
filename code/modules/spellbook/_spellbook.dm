@@ -130,7 +130,7 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 			SPAN_NOTICE("<b>You've engraved <i>[S.name]</i> spell in \the [src]!</b>"),
 			SPAN_NOTICE("You hear someone writing in a book."),
 			)
-		playsound(get_turf(user),'sound/effects/pen1.ogg', 50, 1)
+		playsound(get_turf(user),'sounds/effects/pen1.ogg', 50, 1)
 		return
 
 /obj/item/spellbook/CanUseTopic(mob/M)
@@ -175,7 +175,7 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 			var/obj/O = new path(get_turf(user))
 			to_chat(user, SPAN_NOTICE("You have purchased \a [O]."))
 			//finally give it a bit of an oomf
-			playsound(get_turf(user),'sound/effects/phasein.ogg',50,1)
+			playsound(get_turf(user),'sounds/effects/phasein.ogg',50,1)
 
 	else if(href_list["upgrade"])
 		var/spell_path = text2path(href_list["upgrade"])
