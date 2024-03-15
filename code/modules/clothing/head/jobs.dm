@@ -164,6 +164,16 @@
 	desc = "A dark blue beret with a white United Nations badge on the front, smells of bad decisions."
 	icon_state = "goc_lead_beret"
 
+/obj/item/clothing/head/beret/isd
+	name = "Internal Security field cap"
+	desc = "A dull black cap. It has ISD in white printed on it on the front. Used by the Internal Security Department."
+	icon_state = "isd_cap"
+
+/obj/item/clothing/head/beret/isd/fedora
+	name = "Internal Security fedora"
+	desc = "A fancy black fedora with a red strap along it. Used by the Internal Security Department."
+	icon_state = "isd_fedora"
+
 /obj/item/clothing/head/beret/engineering
 	name = "corporate engineering beret"
 	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."

@@ -259,6 +259,20 @@
 		rad = ARMOR_RAD_SMALL
 		)
 
+/obj/item/clothing/mask/gas/isd
+	name = "ISD tactical gas mask"
+	desc = "A glass gas mask that block all vision towards the person's identity. Can be connected to an air supply, this one is designed for the Internal Security Department."
+	icon_state = "isd-mask"
+	item_state = "isd-mask"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_SMALL,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)
+
 /obj/item/clothing/mask/gas/ci
 	name = "CI tactical gas mask"
 	desc = "A tactical gas mask than can strike fear through those it who see it. Can be connected to an air supply, this one is designed for the Chaos Insurgency."

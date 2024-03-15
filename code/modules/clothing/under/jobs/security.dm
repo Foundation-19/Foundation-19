@@ -331,6 +331,20 @@
 	desc = "A luxurious suit jacket worn by the Communications Officer, it has the same gold patches on the shoulders."
 	icon_state = "co_coat"
 
+/obj/item/clothing/under/rank/security/isd
+	name = "Internal Security field uniform"
+	desc = "A smooth black, yet comfortable turtleneck. There isn't much to note about it, atop of some dark grey trousers. Worn by Internal Security Department's goons."
+	icon_state = "isd_field"
+	item_state = "bl_suit"
+	worn_state = "isd_field"
+
+/obj/item/clothing/under/rank/security/isd/suit
+	name = "Internal Security formal uniform"
+	desc = "A pair of formal slacks, with a dark grey dress shirt. It's covered by a black formal vest, and a snazzy red tie. Only worn by the executives of the Internal Security Department."
+	icon_state = "isd_suit"
+	item_state = "bl_suit"
+	worn_state = "isd_suit"
+
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/head_of_security/jensen
 	desc = "You never asked for anything that stylish."
