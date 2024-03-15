@@ -252,7 +252,7 @@
 	value = 0.7
 
 /datum/reagent/hydroxylsan/touch_obj(obj/O)
-	O.clean_blood()
+	O.clean()
 
 /datum/reagent/hydroxylsan/touch_turf(turf/T)
 	if(volume >= 1)
@@ -261,7 +261,7 @@
 			S.dirt = 0
 			if(S.wet > 1)
 				S.unwet_floor(FALSE)
-		T.clean_blood()
+		T.clean()
 
 
 		for(var/mob/living/carbon/slime/M in T)
@@ -269,31 +269,31 @@
 
 /datum/reagent/hydroxylsan/affect_touch(mob/living/carbon/M, alien, removed)
 	if(M.r_hand)
-		M.r_hand.clean_blood()
+		M.r_hand.clean()
 	if(M.l_hand)
-		M.l_hand.clean_blood()
+		M.l_hand.clean()
 	if(M.wear_mask)
-		if(M.wear_mask.clean_blood())
+		if(M.wear_mask.clean())
 			M.update_inv_wear_mask(0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.head)
-			if(H.head.clean_blood())
+			if(H.head.clean())
 				H.update_inv_head(0)
 		if(H.wear_suit)
-			if(H.wear_suit.clean_blood())
+			if(H.wear_suit.clean())
 				H.update_inv_wear_suit(0)
 		else if(H.w_uniform)
-			if(H.w_uniform.clean_blood())
+			if(H.w_uniform.clean())
 				H.update_inv_w_uniform(0)
 		if(H.shoes)
-			if(H.shoes.clean_blood())
+			if(H.shoes.clean())
 				H.update_inv_shoes(0)
 		else
-			H.clean_blood(1)
+			H.clean(1)
 			return
 	M.update_icons()
-	M.clean_blood()
+	M.clean()
 
 /datum/reagent/medicine/sterilizine
 	name = "Sterilizine"

@@ -64,9 +64,8 @@
 // Assoc list of all stock parts by their rating
 GLOBAL_LIST_EMPTY(stock_parts_by_rating)
 
-// 1:1 - returns absolutely random stock part with same rating
-// Fine - returns its own base type of higher rating
-// Very fine - returns even higher rating of same base type
+// 1:1 - Returns absolutely random stock part with same rating
+// Fine - Returns its own base type of higher rating
 /obj/item/stock_parts/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
@@ -86,18 +85,7 @@ GLOBAL_LIST_EMPTY(stock_parts_by_rating)
 				var/obj/item/stock_parts/S = thing
 				if(initial(S.rating) > rating + 1)
 					continue
-				if(initial(S.rating) <= rating && prob(75))
-					continue
-				return S
-			return src
-		if(MODE_VERY_FINE)
-			if(!base_type)
-				return src
-			for(var/thing in typesof(base_type))
-				var/obj/item/stock_parts/S = thing
-				if(initial(S.rating) > rating + 2 && prob(75))
-					continue
-				if(initial(S.rating) <= rating + 1 && prob(25))
+				if(initial(S.rating) <= rating)
 					continue
 				return S
 			return src

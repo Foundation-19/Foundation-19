@@ -402,13 +402,15 @@
 		set_AI_busy(FALSE)
 
 // Rough - Gibs
-// Coarse - Gibs and spawns a random(50% - 80%) amount of its buchering results
+// Coarse - Spawns a random(50% - 80%) amount of its buchering results
 /mob/living/simple_animal/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ROUGH)
 			gib()
 			return null
 		if(MODE_COARSE)
+			death()
+			ghostize()
 			var/turf/T = get_turf(src)
 			var/list/return_items = list()
 			if(meat_type && meat_amount)
@@ -422,7 +424,6 @@
 				var/skin_count = rand(round(skin_amount * 0.5), round(skin_amount * 0.8))
 				var/material/M = SSmaterials.get_material_by_name(skin_material)
 				return_items += new M.stack_type(T, skin_count, skin_material)
-			gib()
 			return return_items
 	return ..()
 

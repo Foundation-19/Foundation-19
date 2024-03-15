@@ -928,10 +928,10 @@
 	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 	return 1 //we applied blood to the item
 
-/mob/living/carbon/human/clean_blood(clean_feet)
+/mob/living/carbon/human/clean(clean_feet)
 	.=..()
 	if(gloves)
-		if(gloves.clean_blood())
+		if(gloves.clean())
 			update_inv_gloves(1)
 		gloves.germ_level = 0
 	else
@@ -1862,17 +1862,32 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 	"something moving inside of you", "a red headed doctor with security shades", "a hanged monarch", "a strange city", "a headless man", "the research director", "a pestilence",
 ))
 
-// This is the fun part(I hated coding it)
+// Rough - Destroys the mob, as expected
+// Coarse - Neatly disassembles the mob
+// 1:1 - Random effects, including new name, new gender, new skin or eye color, new species, etc
+// Fine - Random upgrade!
+// Very Fine - Gives random anomalous effect
 /mob/living/carbon/human/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ROUGH) // Destroy the child
-			to_chat(src, SPAN_USERDANGER("Your innards are spilling out... Not all of them though..."))
+			to_chat(src, SPAN_USERDANGER("You feel as if thousands of lasers and knives pass through you!"))
 			death()
+			ghostize()
 			adjustBruteLoss(6000)
+			adjustFireLoss(6000)
 			return src
-		if(MODE_COARSE) // Damage them to hell
-			adjustBruteLoss(rand(200, 400))
-			return src
+		if(MODE_COARSE)
+			to_chat(src, SPAN_USERDANGER("Your innards are spilling out!"))
+			death()
+			ghostize()
+			for(var/obj/item/I in contents)
+				I.forceMove(get_turf(src))
+				if(istype(I, /obj/item/organ))
+					var/obj/item/organ/O = I
+					O.removed(src)
+			organs = null
+			internal_organs = null
+			return null
 		if(MODE_ONE_TO_ONE)
 			var/changer = pick("name", "gender", "eyehair_color", "skin_color", "species", "maim")
 			switch(changer)
@@ -1916,7 +1931,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					else
 						to_chat(src, SPAN_NOTICE("Nothing changed..?"))
 			return src
-		if(MODE_FINE, MODE_VERY_FINE) // Do you want to live forever?
+		if(MODE_VERY_FINE) // Do you want to live forever?
 			var/changer = pick("god", "psi")
 			switch(changer)
 				if("god")
@@ -1926,7 +1941,6 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					revive()
 					max_stamina += 400
 					damage_multiplier += 2
-					var/old_status_flags = status_flags
 					status_flags = 0 // No stuns or pain
 					if(skillset)
 						for(var/decl/hierarchy/skill/S in GLOB.skills)
@@ -1938,17 +1952,15 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					skillset.on_levels_change()
 					playsound(src, 'sounds/effects/screech2.ogg', 150, FALSE, 32)
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
-					for(var/i = 1 to 12)
-						addtimer(CALLBACK(src, /mob/living/proc/revive), (10 SECONDS) * i)
-					if(mode == MODE_VERY_FINE)
-						addtimer(CALLBACK(src, PROC_REF(Callback914Death)), rand(121 SECONDS, 150 SECONDS))
-					else
-						addtimer(CALLBACK(src, PROC_REF(Callback914PotentialDeath), old_status_flags), rand(160 SECONDS, 300 SECONDS))
+					var/duration = rand(120, 200) SECONDS
+					for(var/i = 1 to round(duration / 10 SECONDS))
+						addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living, revive)), (10 SECONDS) * i)
+					addtimer(CALLBACK(src, PROC_REF(Callback914Death)), duration)
 				if("psi")
 					// Will kill if you got too good
 					var/total_rank = 0
 					for(var/psi in list(PSI_COERCION, PSI_PSYCHOKINESIS, PSI_REDACTION, PSI_ENERGISTICS))
-						var/psi_rank = rand(PSI_RANK_OPERANT + (mode == MODE_VERY_FINE ? rand(2, 7) : 0), PSI_RANK_PARAMOUNT + (mode == MODE_VERY_FINE ? rand(2, 52) : 0))
+						var/psi_rank = rand(PSI_RANK_PARAMOUNT, 52)
 						total_rank += psi_rank
 						set_psi_rank(psi, psi_rank, take_larger = TRUE, defer_update = TRUE)
 					psi.update()
@@ -1956,23 +1968,6 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
 					addtimer(CALLBACK(src, PROC_REF(Callback914PotentialPsiDeath), (total_rank > 12 ? (80 + total_rank) : 50)), rand(160 SECONDS, 300 SECONDS))
 			return src
-
-// The trip is over, you might die, or you might live
-/mob/living/carbon/human/proc/Callback914PotentialDeath(old_status_flags)
-	if(prob(50))
-		adjustBruteLoss(rand(50, 150))
-		status_flags = old_status_flags
-		max_stamina -= 450
-		damage_multiplier -= 2.25
-		for(var/decl/hierarchy/skill/S in GLOB.skills)
-			skillset.skill_list[S.type] = SKILL_BASIC
-		for(var/obj/item/organ/external/E in organs)
-			E.dislocated = initial(E.dislocated)
-			E.arterial_bleed_severity = initial(E.arterial_bleed_severity)
-			E.limb_flags = initial(E.limb_flags)
-		to_chat(src, SPAN_USERDANGER("You feel like shit again..."))
-		return
-	return Callback914Death()
 
 /mob/living/carbon/human/proc/Callback914PotentialPsiDeath(safe_chance)
 	if(prob(safe_chance))
