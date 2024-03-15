@@ -28,11 +28,11 @@
 	head = /obj/item/clothing/head/helmet/scp/security/chaos
 	suit_store = /obj/item/gun/projectile/automatic/scp/rpk
 	belt = /obj/item/storage/belt/ci/rig
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak/big = 5,/obj/item/clothing/mask/gas = 1,/obj/item/grenade/frag = 1,/obj/item/gun/projectile/shotgun/doublebarrel/sawn)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak/big = 5,/obj/item/grenade/frag = 1,/obj/item/gun/projectile/shotgun/doublebarrel/sawn)
 
 /decl/hierarchy/outfit/chaos/leader
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Squad Leader")
 	head = /obj/item/clothing/head/helmet/scp/chaos/officer
 	suit_store = /obj/item/gun/projectile/automatic/scp/ak47
 	belt = /obj/item/storage/belt/ci/rig
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 3,/obj/item/grenade/smokebomb = 1)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 5,/obj/item/grenade/smokebomb = 1)
