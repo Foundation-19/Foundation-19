@@ -1,9 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - tweak: Putting SCP 2427-3 through SCP 914 on "Fine" or "Very Fine" will, obviously,
-      buff it.
-  - tweak: Putting SCP 012 through SCP 914 on "Very Fine" will net interesting results.
-  - tweak: Putting ID cards through SCP 914 will have unique results now.
-  - tweak: Putting cash through SCP 914 will have unique results now.
-  - bugfix: Fixed SCP 914 interaction with infestation mobs on "Fine" setting.
