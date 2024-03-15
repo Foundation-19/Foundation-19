@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver
 	name = "Mk7 Revolver"
 	desc = "The SCPF Mk7 Revolver, reminiscent of the Colt Python. This weapon, patented and produced by the SCP Foundation is popular among high-ranking security officers. Uses .357 ammo."
-	icon = 'icons/obj/gun.dmi'
+	icon = 'icons/obj/guns/revolvers.dmi'
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = CALIBER_REVOLVER
