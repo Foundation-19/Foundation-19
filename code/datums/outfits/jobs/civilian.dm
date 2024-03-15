@@ -50,7 +50,7 @@
 	id_type = /obj/item/card/id/adminlvl3
 	l_ear = /obj/item/device/radio/headset/heads/goc
 	backpack_contents = list(/obj/item/ammo_magazine/scp/usp45 = 1)
-	belt = /obj/item/gun/projectile/pistol/usp45
+	belt = /obj/item/gun/projectile/scp/pistol/usp45tac
 
 /decl/hierarchy/outfit/job/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
@@ -62,7 +62,7 @@
 	id_type = /obj/item/card/id/adminlvl3
 	l_ear = /obj/item/device/radio/headset/heads/uiu
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911
+	belt = /obj/item/gun/projectile/scp/pistol/m1911
 
 /decl/hierarchy/outfit/job/civ/thirep
 	name = OUTFIT_JOB_NAME("thirep")
@@ -71,7 +71,7 @@
 	id_type = /obj/item/card/id/adminlvl3
 	pda_type = /obj/item/modular_computer/pda/medical
 	l_ear = /obj/item/device/radio/headset/heads/thi
-	belt = /obj/item/gun/projectile/pistol/m1911
+	belt = /obj/item/gun/projectile/scp/pistol/m1911
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 
 /decl/hierarchy/outfit/job/civ/MCDRep
@@ -95,7 +95,7 @@
 	id_type = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911
+	belt = /obj/item/gun/projectile/scp/pistol/m1911
 
 /decl/hierarchy/outfit/job/civ/tribunal
 	name = OUTFIT_JOB_NAME("Tribunal Officer")
@@ -105,7 +105,7 @@
 	id_type = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911
+	belt = /obj/item/gun/projectile/scp/pistol/m1911
 
 /decl/hierarchy/outfit/job/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain")

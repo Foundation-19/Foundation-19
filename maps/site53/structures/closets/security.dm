@@ -154,9 +154,9 @@
 		/obj/item/melee/telebaton,
 		/obj/item/material/knife/combat,
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/scp/automatic/m4a1,
 		/obj/item/gun/energy/stunrevolver,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
+		/obj/item/ammo_magazine/scp/stanag_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
@@ -173,7 +173,7 @@
 /obj/structure/closet/secure_closet/guard/ez/WillContain()
 	return ..() | list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/p90,
+		/obj/item/gun/projectile/scp/automatic/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 3,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
 		/obj/item/ammo_magazine/box/a57,
@@ -202,7 +202,7 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/p90,
+		/obj/item/gun/projectile/scp/automatic/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 3,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
 		/obj/item/ammo_magazine/box/a57,
@@ -237,7 +237,7 @@
 		/obj/item/clothing/accessory/armor/tag/solgov/com/guardcomm,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
-		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/gun/projectile/scp/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9,
 		/obj/item/gun/energy/taser/carbine,
@@ -270,7 +270,7 @@
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/storage/pill_bottle/amnesticsa,
-		/obj/item/gun/projectile/pistol/usp45,
+		/obj/item/gun/projectile/scp/pistol/usp45tac,
 		/obj/item/ammo_magazine/scp/usp45 = 3,
 		/obj/item/ammo_magazine/box/acp45,
 	)
@@ -286,11 +286,8 @@
 
 /obj/structure/closet/secure_closet/guard/breachautomatics/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/gun/projectile/automatic/scp/m4a1,
-		/obj/item/gun/projectile/automatic/scp/m4a1,
-		/obj/item/ammo_magazine/scp/m16_mag = 12,
+		/obj/item/gun/projectile/scp/automatic/m4a1 = 4,
+		/obj/item/ammo_magazine/scp/stanag_mag = 12,
 		/obj/item/ammo_magazine/box/a556 = 4
 	)
 
@@ -306,7 +303,7 @@
 
 /obj/structure/closet/secure_closet/guard/breachshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/saiga12 = 2,
+		/obj/item/gun/projectile/scp/automatic/saiga12 = 2,
 		/obj/item/ammo_magazine/box/buckshot = 4,
 		/obj/item/ammo_magazine/box/slug = 4,
 		/obj/item/ammo_magazine/box/emp = 2,
@@ -327,7 +324,7 @@
 
 /obj/structure/closet/secure_closet/guard/riotshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 2,
+		/obj/item/gun/projectile/scp/automatic/saiga12/beanbag = 2,
 		/obj/item/ammo_magazine/scp/saiga12/beanbag = 8,
 		/obj/item/ammo_magazine/box/beanbag = 4,
 		/obj/item/clothing/accessory/storage/bandolier = 2,
@@ -463,7 +460,7 @@
 		/obj/item/clothing/glasses/night,
 		/obj/item/clothing/accessory/ubac,
 		/obj/item/storage/backpack/rucksack,
-		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/gun/projectile/scp/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9,
 		/obj/item/storage/belt/holster/security/tactical,

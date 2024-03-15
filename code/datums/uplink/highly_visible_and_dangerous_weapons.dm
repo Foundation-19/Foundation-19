@@ -122,16 +122,16 @@
 
 /datum/uplink_item/item/visible_weapons/combat_shotgun
 	name = "Combat Shotgun"
-	desc = "A high compacity, pump-action shotgun regularly used for repelling boarding parties in close range scenarios."
+	desc = "A high compacity, automatic shotgun regularly used for repelling boarding parties in close range scenarios."
 	item_cost = 52
-	path = /obj/item/gun/projectile/shotgun/pump/combat
+	path = /obj/item/gun/projectile/scp/shotgun/spas12
 	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/visible_weapons/sawnoff
 	name = "Sawnoff Shotgun"
 	desc = "A shortened double-barrel shotgun, able to fire either one, or both, barrels at once."
 	item_cost = 45
-	path = /obj/item/gun/projectile/shotgun/doublebarrel/sawn
+	path = /obj/item/gun/projectile/scp/revolver/doublebarrel_shotgun/sawnoff
 
 /datum/uplink_item/item/visible_weapons/deagle
 	name = "Magnum Pistol"

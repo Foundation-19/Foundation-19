@@ -171,7 +171,7 @@
 
 /obj/item/ammo_casing/pistol/c45
 	desc = "A .45 bullet casing."
-	caliber = ".45"
+	caliber = ".45 ACP"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium
 
 /obj/item/ammo_casing/pistol/c45/practice
@@ -217,8 +217,9 @@
 	caliber = CALIBER_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
+	fall_sounds = list('sounds/weapons/guns/shotgun_fall.ogg')
 
-/obj/item/ammo_casing/shotgun/pellet
+/obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
 	desc = "A 12 gauge 00 buck shell."
 	icon_state = "shell-pellet"
@@ -287,6 +288,11 @@
 	desc = "A 5.56mm NATO bullet casing."
 	caliber = "5.56x45mm"
 	projectile_type = /obj/item/projectile/bullet/rifle/a556
+
+/obj/item/ammo_casing/rifle/a545
+	desc = "A 5.45mm bullet casing."
+	caliber = "5.45x39mm"
+	projectile_type = /obj/item/projectile/bullet/rifle/a545
 
 /obj/item/ammo_casing/rifle/a762
 	desc = "A 7.62x39mm bullet casing."

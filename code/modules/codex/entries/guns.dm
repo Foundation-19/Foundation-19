@@ -32,7 +32,11 @@
 		traits += "It has a magnifying optical scope. It can be toggled with Use Scope verb."
 
 	if(LAZYLEN(firemodes) > 1)
-		traits += "It has multiple firemodes. Click it in hand to cycle them."
+		traits += "It has multiple firemodes. Click it in hand (alt-click) to cycle them, or alternatively use Middle Mouse Button."
+
+	traits += "To operate bolt, Click it in hand."
+
+	traits += "To unload the weapon, you can drag it into any of your 2 hands. If the hand is full, magazine will be ejected on the floor. Revolvers just eject all rounds."
 
 	return jointext(traits, "<br>")
 
@@ -70,7 +74,7 @@
 
 	. += jointext(traits, "<br>")
 
-/obj/item/gun/projectile/shotgun/pump/get_mechanics_info()
+/obj/item/gun/projectile/scp/shotgun/rem870/get_mechanics_info()
 	. = ..()
 	. += "<br>To pump it, click it in hand.<br>"
 

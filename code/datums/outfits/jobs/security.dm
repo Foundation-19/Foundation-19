@@ -13,7 +13,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmateba
+	belt = /obj/item/storage/belt/holster/security/fullmk44
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/beret/solgov/marcom
 	mask = /obj/item/clothing/mask/balaclava
@@ -160,7 +160,7 @@
 	suit = /obj/item/clothing/suit/storage/det_trench/grey
 	id_type = /obj/item/card/id/zcseclvl4ez
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	belt = /obj/item/storage/belt/holster/security/fullrhino
+	belt = /obj/item/storage/belt/holster/security/fullmk27
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/det/grey
@@ -176,7 +176,7 @@
 	suit = /obj/item/clothing/suit/storage/det_trench
 	id_type = /obj/item/card/id/zcseclvl4ez
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	belt = /obj/item/storage/belt/holster/security/fullrhino
+	belt = /obj/item/storage/belt/holster/security/fullmk27
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/det

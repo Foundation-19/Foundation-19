@@ -208,8 +208,8 @@
 /area/map_template/rescue_base/base)
 "aE" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
+/obj/item/gun/projectile/scp/shotgun/spas12,
+/obj/item/gun/projectile/scp/shotgun/spas12,
 /obj/item/device/radio/intercom/specops{
 	dir = 2;
 	pixel_y = 22

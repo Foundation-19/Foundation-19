@@ -9,26 +9,6 @@
 	max_ammo = 10
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/ierichon
-	name = "Jericho-114 magazine (.45)"
-	icon_state = "9mmds"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/pistol/c45
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
-	max_ammo = 20
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/scp/ierichon/rubber
-	name = "Jericho-114 magazine (.45 rubber)"
-	icon_state = "R9mmds"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/pistol/c45/rubber
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
-	max_ammo = 20
-	multiple_sprites = 1
-
 /obj/item/ammo_magazine/scp/mk9
 	name = "MK9 magazine (9mm)"
 	icon_state = "9mmds"
@@ -85,9 +65,10 @@
 	max_ammo = 50
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/m16_mag
+/obj/item/ammo_magazine/scp/stanag_mag
 	name = "magazine (5.56)"
-	icon_state = "m16"
+	icon_state = "magi"
+	icon = 'icons/SCP/guns/rifles/m4carbine.dmi'
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "5.56x45mm"
@@ -96,36 +77,50 @@
 	max_ammo = 30
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/m16_mag/empty
+/obj/item/ammo_magazine/scp/stanag_mag/empty
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/scp/m16_mag/ext
-	name = "magazine (5.56)"
-	icon_state = "m16"
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	caliber = "5.56x45mm"
-	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/rifle/a556
+/obj/item/ammo_magazine/scp/stanag_mag/ext
+	name = "extended magazine (5.56)"
+	//icon_state = "m16"
 	max_ammo = 60
+
+/obj/item/ammo_magazine/t12
+	name = "T12 magazine"
+	icon_state = "magi"
+	icon = 'icons/SCP/guns/rifles/g36c.dmi'
+	mag_type = MAGAZINE
+	caliber = CALIBER_T12
+	matter = list(MATERIAL_STEEL = 2400)
+	ammo_type = /obj/item/ammo_casing/rifle/t12
+	max_ammo = 50
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ak
-	name = "magazine (7.62)"
+	name = "magazine (5.45)"
 	icon_state = "7.62x39mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "7.62x39mm"
+	caliber = "5.45x39mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/rifle/a762
+	ammo_type = /obj/item/ammo_casing/rifle/a545
 	max_ammo = 30
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ak/big
-	name = "big magazine (7.62)"
+	name = "big magazine (5.45)"
 	icon_state = "7.62x39mm2"
 	max_ammo = 45
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/ak/drum
+	name = "drum magazine (5.45)"
+	icon = 'icons/SCP/guns/rifles/rpk16.dmi'
+	icon_state = "magi-drum"
+	gun_mag_icon = "mag-drum"
+	max_ammo = 60
+	multiple_sprites = 1
+	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/ammo_magazine/scp/svd
 	name = "magazine (7.62x54mmR)"
@@ -195,7 +190,7 @@
 	name = "ammunition box (.45acp)"
 	icon_state = "ammobox"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 100
@@ -254,7 +249,7 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 30
 
 
@@ -319,7 +314,7 @@
 	name = "ammunition box (.45)"
 	icon_state = "ammobox"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 100
@@ -330,7 +325,7 @@
 /obj/item/storage/box/mtf/pelletammo
 	name = "pellet ammunition"
 	desc = "Contains pellet ammunition for a shotgun."
-	startswith = list(/obj/item/ammo_casing/shotgun/pellet = 7)
+	startswith = list(/obj/item/ammo_casing/shotgun/buckshot = 7)
 
 /obj/item/storage/box/mtf/empammo
 	name = "emp ammunition"
@@ -347,7 +342,7 @@
 	icon_state = "4mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = ".45"
+	caliber = ".45 ACP"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 30
@@ -359,7 +354,7 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	max_ammo = 12
 	multiple_sprites = 1
 
@@ -369,7 +364,7 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	max_ammo = 7
 	multiple_sprites = 1
 
@@ -395,7 +390,7 @@
 	name = "Saiga12 Magazine (Buckshot)"
 	icon_state = "saiga12-buckshot"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 8
@@ -439,3 +434,14 @@
 /obj/item/ammo_magazine/scp/saiga12/empty
 	initial_ammo = 0
 
+
+/obj/item/ammo_casing/shotgun/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_MOVED, TYPE_PROC_REF(/atom, update_icon))
+
+/obj/item/ammo_casing/shotgun/on_update_icon()
+	if(spent_icon && is_spent)
+		icon_state = spent_icon
+	else
+		icon_state = initial(icon_state)
+	icon_state = "[icon_state][isturf(loc)? "-world" : ""]"

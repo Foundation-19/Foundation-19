@@ -18,7 +18,7 @@
 	bulk = 6
 	var/recentpump = 0 // to prevent spammage
 	wielded_item_state = "shotgun-wielded"
-	load_sound = 'sounds/weapons/guns/interaction/shotgun_instert.ogg'
+	load_sound = SFX_SHELL_INSERT
 
 /obj/item/gun/projectile/shotgun/on_update_icon()
 	..()
@@ -103,7 +103,7 @@
 		)
 
 /obj/item/gun/projectile/shotgun/doublebarrel/pellet
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/gun/projectile/shotgun/doublebarrel/flare
 	name = "signal shotgun"
@@ -142,7 +142,7 @@
 	item_state = "sawnshotgun"
 	wielded_item_state = "sawnshotgun-wielded"
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	w_class = ITEM_SIZE_NORMAL
 	force = 5
 	one_hand_penalty = 4

@@ -81,7 +81,7 @@
 
 /obj/item/ammo_magazine/shotholder/shell
 	name = "shotgun shell holder"
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/ammo_magazine/shotholder/beanbag
 	name = "beanbag shell holder"
@@ -289,6 +289,9 @@
 	max_ammo = 100
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/box/machinegun/debug
+	max_ammo = 1000
+
 /obj/item/ammo_magazine/box/machinegun/empty
 	initial_ammo = 0
 
@@ -328,14 +331,4 @@
 	ammo_type = /obj/item/ammo_casing/cap
 	matter = list(MATERIAL_STEEL = 600)
 	max_ammo = 7
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/t12
-	name = "T12 magazine"
-	icon_state = "c762" //untill someone has a better sprite
-	mag_type = MAGAZINE
-	caliber = CALIBER_T12
-	matter = list(MATERIAL_STEEL = 2400)
-	ammo_type = /obj/item/ammo_casing/rifle/t12
-	max_ammo = 50
 	multiple_sprites = 1

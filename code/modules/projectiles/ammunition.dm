@@ -14,8 +14,10 @@
 	var/projectile_type					//The bullet type to create when New() is called
 	var/is_spent = FALSE
 	var/spent_icon = "pistolcasing-spent"
-	var/fall_sounds = list('sounds/weapons/guns/casingfall1.ogg','sounds/weapons/guns/casingfall2.ogg','sounds/weapons/guns/casingfall3.ogg')
+	var/fall_sounds = SFX_CASING_DROP
 	var/projectile_label
+
+	var/misfire_chance = 1
 
 /obj/item/ammo_casing/Initialize()
 	if(!ispath(projectile_type))
@@ -27,17 +29,19 @@
 	. = ..()
 
 //removes the projectile from the ammo casing
-/obj/item/ammo_casing/proc/expend()
+/obj/item/ammo_casing/proc/expend(mob/user)
 	if(!ispath(projectile_type))
 		return
 	if(is_spent)
+		return
+	if(prob(misfire_chance))
+		balloon_alert(user, "Misfire!")
 		return
 
 	var/obj/item/projectile/proj = new projectile_type(src)
 	is_spent = TRUE
 	if(projectile_label)
 		proj.SetName("[initial(proj.name)] (\"[projectile_label]\")")
-	set_dir(pick(GLOB.alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.
 	if(leaves_residue)
@@ -173,6 +177,10 @@
 	var/list/icon_keys = list()		//keys
 	var/list/ammo_states = list()	//values
 
+	var/gun_mag_icon = "mag"
+	var/multiple_gun_mag_icons = FALSE
+	var/misfeed_chance = 1
+
 /obj/item/ammo_magazine/box
 	w_class = ITEM_SIZE_NORMAL
 
@@ -241,6 +249,7 @@
 		if(!user.unEquip(C, src))
 			return
 		stored_ammo.Add(C)
+		playsound(user, SFX_BULLET_INSERT, rand(45, 60), FALSE)
 		update_icon()
 	else ..()
 
@@ -261,7 +270,8 @@
 		stored_ammo.Insert(1, AC) //add it to the head of our magazine's list
 		L.update_icon()
 		update_icon()
-		playsound(src.loc, 'sounds/weapons/bulletin_mag.wav', 80, 1)
+		playsound(user, SFX_BULLET_INSERT, rand(45, 60), FALSE)
+		//playsound(src.loc, 'sounds/weapons/bulletin_mag.wav', 80, 1)
 	update_icon()
 
 /obj/item/ammo_magazine/attack_self(mob/user)

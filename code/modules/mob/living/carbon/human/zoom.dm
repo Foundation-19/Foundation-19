@@ -1,11 +1,13 @@
 /mob/living/carbon/human
 	var/is_view_shifted = FALSE
 
+/*
 /atom/CtrlRightClick(mob/living/carbon/human/user)
 	if(!istype(user))
 		return
 
 	user.shift_view_to_turf(get_turf(src))
+*/
 
 /mob/living/carbon/human/proc/shift_view_to_turf(turf/T)
 	if(!is_view_shifted)

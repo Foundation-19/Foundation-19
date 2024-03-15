@@ -276,7 +276,7 @@
 /obj/random/projectile/spawn_choices()
 	return list(/obj/item/gun/projectile/automatic/battlerifle = 4,
 				/obj/item/gun/projectile/automatic/semistrip = 4,
-				/obj/item/gun/projectile/shotgun/pump = 3,
+				/obj/item/gun/projectile/scp/shotgun/rem870 = 3,
 				/obj/item/gun/projectile/automatic/merc_smg = 2,
 				/obj/item/gun/projectile/automatic/assault_rifle = 2,
 				/obj/item/gun/projectile/automatic/bullpup_rifle = 2,
@@ -291,7 +291,7 @@
 				/obj/item/gun/projectile/shotgun/doublebarrel = 4,
 				/obj/item/gun/projectile/shotgun/doublebarrel/sawn = 3,
 				/obj/item/gun/projectile/heavysniper = 1,
-				/obj/item/gun/projectile/shotgun/pump/combat = 2,
+				/obj/item/gun/projectile/scp/shotgun/spas12 = 2,
 				/obj/item/gun/projectile/pistol/throwback = 1)
 
 /obj/random/handgun
