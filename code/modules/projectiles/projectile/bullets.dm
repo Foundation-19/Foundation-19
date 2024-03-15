@@ -131,7 +131,7 @@
 	distance_falloff = 4
 
 /obj/item/projectile/bullet/pistol/strong
-	fire_sound = 'sound/weapons/gunshot/revolver.ogg'
+	fire_sound = 'sounds/weapons/gunshot/revolver.ogg'
 	damage = 45
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
@@ -149,7 +149,7 @@
 
 // Revolvers
 /obj/item/projectile/bullet/revolver
-	fire_sound = 'sound/weapons/gunshot/revolver.ogg'
+	fire_sound = 'sounds/weapons/gunshot/revolver.ogg'
 	damage = 50
 	distance_falloff = 3
 
@@ -161,7 +161,7 @@
 	embed = FALSE
 
 /obj/item/projectile/bullet/revolver/small
-	fire_sound = 'sound/weapons/gunshot/revolver_light.ogg'
+	fire_sound = 'sounds/weapons/gunshot/revolver_light.ogg'
 	damage = 40
 	penetration_modifier = 1.2
 	distance_falloff = 4
@@ -170,7 +170,7 @@
 	damage = 45
 
 /obj/item/projectile/bullet/revolver/heavy
-	fire_sound = 'sound/weapons/gunshot/revolver_heavy.ogg'
+	fire_sound = 'sounds/weapons/gunshot/revolver_heavy.ogg'
 	damage = 60
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
@@ -243,7 +243,7 @@
 /obj/item/projectile/bullet/rocket
 	name = "missile"
 	icon_state = "missile"
-	fire_sound = 'sound/weapons/gunshot/launcher.ogg'
+	fire_sound = 'sounds/weapons/gunshot/launcher.ogg'
 	var/exp_devastation = -1
 	var/exp_heavy_impact = 2
 	var/exp_light_impact = 4

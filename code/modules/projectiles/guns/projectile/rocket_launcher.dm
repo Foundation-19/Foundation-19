@@ -14,11 +14,11 @@
 	caliber = CALIBER_ROCKET
 	load_method = SINGLE_CASING
 	max_shells = 1
-	load_sound = 'sound/weapons/guns/interaction/launcher_reload.ogg'
+	load_sound = 'sounds/weapons/guns/interaction/launcher_reload.ogg'
 
 /obj/item/gun/projectile/rocket_launcher/handle_click_empty()
 	. = ..()
-	playsound(loc, 'sound/weapons/gunshot/launcher_empty.ogg', 50, 1)
+	playsound(loc, 'sounds/weapons/gunshot/launcher_empty.ogg', 50, 1)
 
 /obj/item/gun/projectile/rocket_launcher/examine(mob/user, distance)
 	. = ..()
