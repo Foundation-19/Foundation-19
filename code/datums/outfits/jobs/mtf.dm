@@ -25,7 +25,7 @@
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
-	belt = /obj/item/storage/belt/holster/security/fullmk9 
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/breacher
@@ -43,7 +43,7 @@
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
-	belt = /obj/item/storage/belt/holster/security/fullmk9 
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2,/obj/item/ammo_magazine/shotholder/shell = 6,/obj/item/clothing/accessory/storage/bandolier = 1,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/leader
@@ -152,3 +152,39 @@
 	id_type = /obj/item/card/id/mtf/alpha
 	belt = /obj/item/storage/belt/holster/security/tactical
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/t12 = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 5, /obj/item/crowbar/red = 1) //Breach and clear.
+
+/decl/hierarchy/outfit/mtf/isd
+	name = OUTFIT_JOB_NAME("Internal Security Department Field Uniform")
+	uniform = /obj/item/clothing/under/rank/security/isd
+	suit = null
+	mask = /obj/item/clothing/mask/gas/isd
+	head = /obj/item/clothing/head/beret/isd
+	gloves = /obj/item/clothing/gloves/tactical
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/dutyboots
+	suit_store = null
+	r_hand = /obj/random/clipboard
+	l_hand = null
+	l_pocket = /obj/item/reagent_containers/spray/pepper
+	r_pocket = /obj/item/handcuffs
+	id_type = /obj/item/card/id/mtf
+	belt = /obj/item/gun/projectile/automatic/machine_pistol
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/crowbar/red = 1,/obj/item/stamp/scp/o5rep = 1,/obj/item/melee/baton/loaded = 1)
+
+/decl/hierarchy/outfit/mtf/isd/formal
+	name = OUTFIT_JOB_NAME("Internal Security Department Formal Uniform")
+	uniform = /obj/item/clothing/under/rank/security/isd/suit
+	suit = /obj/item/clothing/suit/armor/vest/scp/isd
+	mask = /obj/item/clothing/mask/gas/isd
+	head = /obj/item/clothing/head/beret/isd/fedora
+	gloves = /obj/item/clothing/gloves/tactical
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/dutyboots
+	suit_store = null
+	r_hand = /obj/random/clipboard
+	l_hand = null
+	l_pocket = /obj/item/reagent_containers/spray/pepper
+	r_pocket = /obj/item/handcuffs
+	id_type = /obj/item/card/id/mtf
+	belt = /obj/item/gun/energy/pulse_rifle/pistol
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/crowbar/red = 1,/obj/item/stamp/scp/o5rep = 1,/obj/item/melee/baton/loaded = 1)

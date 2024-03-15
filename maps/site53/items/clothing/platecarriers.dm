@@ -77,7 +77,7 @@
 /obj/item/clothing/suit/armor/goc/heavy
 	name = "Global Occult Coalition heavy-plating armored vest"
 	desc = "A black heavily armored vest, denoting the initials of the United Nations, but of course they're the Global Occult Coalition."
-	icon_state = "goc-heavy-vest"
-	item_state = "goc-heavy-vest"
+	icon_state = "goc_heavy_vest"
+	item_state = "goc_heavy_vest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor = list(melee = 95, bullet = 95, laser = 65, energy = 15, bomb = 90)

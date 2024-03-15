@@ -30,6 +30,15 @@
 	armor = list(melee = 60, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
+/obj/item/clothing/suit/armor/vest/scp/isd
+	name = "Internal Security trenchcoat"
+	desc = "A durable coat used by the Internal Security Department, there isn't much to note about it except for the golden SCP logo on the shoulder, and wrist designs."
+	icon_state = "isd_trenchcoat"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | ARMS
+	armor = list(melee = 40, bullet = 60, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
+	acid_resistance = 1.5
+
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	name = "Heavy-plated armored vest"
 	desc = "A synthetic armor vest. This one is for the LCZ Zone Commander."
