@@ -141,7 +141,7 @@
 	health = 125
 	faction = "syndicate"
 	ranged = 1
-	rapid = 3
+	rapid = 0
 	casingtype = /obj/item/ammo_casing/flechette
 	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
 	projectiletype = /obj/item/projectile/bullet/flechette
@@ -159,7 +159,7 @@
 	health = 175
 	faction = "syndicate"
 	ranged = 1
-	rapid = 4
+	rapid = 1
 	casingtype = /obj/item/ammo_casing/flechette
 	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
 	projectiletype = /obj/item/projectile/bullet/flechette
@@ -177,7 +177,7 @@
 	health = 150
 	faction = "syndicate"
 	ranged = 1
-	rapid = 3
+	rapid = 1
 	casingtype = /obj/item/ammo_casing/flechette
 	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
 	projectiletype = /obj/item/projectile/bullet/flechette
