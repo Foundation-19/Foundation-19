@@ -145,9 +145,9 @@
 	casingtype = /obj/item/ammo_casing/flechette
 	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
 	projectiletype = /obj/item/projectile/bullet/flechette
+	corpse = /obj/effect/landmark/corpse/chaos
 	loot_list = list(
 		/obj/item/gun/projectile/automatic/scp/ak47 = 1,
-		/obj/effect/gibspawner/human = 1,
 	)
 
 /mob/living/simple_animal/hostile/syndicate/chaos/heavy
@@ -163,9 +163,9 @@
 	casingtype = /obj/item/ammo_casing/flechette
 	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
 	projectiletype = /obj/item/projectile/bullet/flechette
+	corpse = /obj/effect/landmark/corpse/chaos/heavy
 	loot_list = list(
 		/obj/item/gun/projectile/automatic/scp/rpk = 1,
-		/obj/effect/gibspawner/human = 1,
 	)
 
 /mob/living/simple_animal/hostile/syndicate/chaos/officer
@@ -181,7 +181,7 @@
 	casingtype = /obj/item/ammo_casing/flechette
 	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
 	projectiletype = /obj/item/projectile/bullet/flechette
+	corpse = /obj/effect/landmark/corpse/chaos/officer
 	loot_list = list(
 		/obj/item/gun/projectile/automatic/scp/ak47 = 1,
-		/obj/effect/gibspawner/human = 1,
 	)
