@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - bugfix: You will no longer be sent to nullspace if an object/mob you are orbiting
+      gets deleted.
