@@ -1010,4 +1010,4 @@ default behaviour is:
 		to_chat(src, SPAN_WARNING("[S] has been dispelled and put on cooldown!"))
 		play_sound = TRUE
 	if(play_sound)
-		playsound(get_turf(src), 'sound/magic/blind.ogg', 50, TRUE)
+		playsound(get_turf(src), 'sounds/magic/blind.ogg', 50, TRUE)

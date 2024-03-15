@@ -15,7 +15,7 @@
 	spell_book_visible = FALSE
 
 	hud_state = "artificer"
-	cast_sound = 'sound/items/Deconstruct.ogg'
+	cast_sound = 'sounds/items/Deconstruct.ogg'
 
 /datum/spell/aoe_turf/conjure/construct/lesser
 	charge_max = 1800
@@ -37,7 +37,7 @@
 	spell_book_visible = FALSE
 
 	hud_state = "const_floor"
-	cast_sound = 'sound/items/Welder.ogg'
+	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/wall
 	name = "Lesser Construction"
@@ -105,7 +105,7 @@
 	spell_book_visible = FALSE
 
 	hud_state = "const_juggwall"
-	cast_sound = 'sound/magic/forcewall.ogg'
+	cast_sound = 'sounds/magic/forcewall.ogg'
 
 //Code for the Juggernaut construct's forcefield, that seemed like a good place to put it.
 /obj/effect/forcefield/cult

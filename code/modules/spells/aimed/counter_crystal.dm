@@ -20,7 +20,7 @@
 
 	hud_state = "wiz_counter_crystal"
 
-	cast_sound = 'sound/magic/blink.ogg'
+	cast_sound = 'sounds/magic/blink.ogg'
 
 	spell_cost = 6
 	mana_cost = 20
@@ -131,8 +131,8 @@
 	M *= 2
 	animate(D, alpha = 0, transform = M, time = 5)
 
-	playsound(get_turf(caster), 'sound/magic/lightningshock.ogg', 50, TRUE)
-	playsound(get_turf(src), 'sound/magic/lightningshock.ogg', 50, TRUE)
+	playsound(get_turf(caster), 'sounds/magic/lightningshock.ogg', 50, TRUE)
+	playsound(get_turf(src), 'sounds/magic/lightningshock.ogg', 50, TRUE)
 
 	visible_message(SPAN_DANGER("Rays of powerful electricity dart from \the [src] towards \the [caster]!"))
 	to_chat(caster, SPAN_USERDANGER("The [src] strikes you with powerful blast of electricity!"))

@@ -14,7 +14,7 @@
 
 	level_max = list(UPGRADE_TOTAL = 4, UPGRADE_SPEED = 3, UPGRADE_POWER = 3)
 	hud_state = "wiz_blink_random"
-	cast_sound = 'sound/magic/blink.ogg'
+	cast_sound = 'sounds/magic/blink.ogg'
 
 	categories = list(SPELL_CATEGORY_MOBILITY)
 	spell_cost = 1

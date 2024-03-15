@@ -17,7 +17,7 @@
 	deactive_msg = "You decide against using the bolt of dispell."
 
 	hud_state = "wiz_dispell_proj"
-	cast_sound = 'sound/magic/staff_healing.ogg'
+	cast_sound = 'sounds/magic/staff_healing.ogg'
 
 	categories = list(SPELL_CATEGORY_ANTIMAGIC)
 	spell_cost = 2
@@ -36,7 +36,7 @@
 	else if(istype(A))
 		A.Dispell()
 
-	playsound(A, 'sound/magic/smoke.ogg', min(100, 25 * amt_range))
+	playsound(A, 'sounds/magic/smoke.ogg', min(100, 25 * amt_range))
 
 /datum/spell/aimed/dispell_projectile/ImproveSpellPower()
 	if(!..())

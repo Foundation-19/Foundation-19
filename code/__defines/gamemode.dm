@@ -60,46 +60,6 @@
 #define DEFAULT_TELECRYSTAL_AMOUNT 130
 #define IMPLANT_TELECRYSTAL_AMOUNT(x) (round(x * 0.49)) // If this cost is ever greater than half of DEFAULT_TELECRYSTAL_AMOUNT then it is possible to buy more TC than you spend
 
-/////////////////
-////WIZARD //////
-/////////////////
-
-/*		WIZARD SPELL FLAGS		*/
-#define GHOSTCAST       (1<<0)  //can a ghost cast it?
-#define NEEDSCLOTHES    (1<<1)  //does it need the wizard garb to cast? Nonwizard spells should not have this
-#define NEEDSHUM        (1<<2)  //does it require the caster to be human?
-#define Z2NOCAST        (1<<3)  //if this is added, the spell can't be cast at centcomm
-#define NO_SOMATIC	    (1<<4)	//spell will go off if the person is incapacitated or stunned
-#define IGNOREPREV	    (1<<5)	//if set, each new target does not overlap with the previous one
-//The following flags only affect different types of spell, and therefore overlap
-//Targeted spells
-#define INCLUDEUSER	    (1<<6)	//does the spell include the caster in its target selection?
-#define SELECTABLE	    (1<<7)	//can you select each target for the spell?
-#define NOFACTION		(1<<8)  //Don't do the same as our faction
-#define NONONFACTION	(1<<9)  //Don't do people other than our faction
-//AOE spells
-#define IGNOREDENSE     (1<<10)	//are dense turfs ignored in selection?
-#define IGNORESPACE	    (1<<11)	//are space turfs ignored in selection?
-//End split flags
-#define CONSTRUCT_CHECK	(1<<12)	    //used by construct spells - checks for nullrods
-#define NO_BUTTON		(1<<13)	    //spell won't show up in the HUD with this
-
-//invocation
-#define INVOKE_SHOUT	"shout"
-#define INVOKE_WHISPER	"whisper"
-#define INVOKE_EMOTE	"emote"
-#define INVOKE_NONE		"none"
-
-//upgrading
-#define UPGRADE_SPEED	"speed"
-#define UPGRADE_POWER	"power"
-#define UPGRADE_TOTAL	"total"
-
-//casting costs
-#define SPELL_RECHARGE	"recharge"
-#define SPELL_CHARGES	"charges"
-#define SPELL_HOLDVAR	"holdervar"
-
 //Voting-related
 #define VOTE_PROCESS_ABORT    1
 #define VOTE_PROCESS_COMPLETE 2

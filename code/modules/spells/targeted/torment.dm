@@ -21,7 +21,7 @@
 	spell_cost = 2
 	mana_cost = 10
 
-/datum/spell/targeted/torment/cast(var/list/targets, var/mob/user)
+/datum/spell/targeted/torment/cast(list/targets, mob/user)
 	gibs(user.loc)
 	for(var/mob/living/carbon/human/H in targets)
 		H.adjustHalLoss(loss)

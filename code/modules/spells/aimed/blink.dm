@@ -15,7 +15,7 @@
 
 	range = 4
 	hud_state = "wiz_blink"
-	cast_sound = 'sound/magic/blink.ogg'
+	cast_sound = 'sounds/magic/blink.ogg'
 
 	categories = list(SPELL_CATEGORY_MOBILITY)
 	spell_cost = 2

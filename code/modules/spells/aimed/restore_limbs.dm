@@ -12,7 +12,7 @@
 	level_max = list(UPGRADE_TOTAL = 2, UPGRADE_SPEED = 1, UPGRADE_POWER = 2)
 
 	hud_state = "wiz_restore_limbs"
-	cast_sound = 'sound/magic/staff_healing.ogg'
+	cast_sound = 'sounds/magic/staff_healing.ogg'
 
 	range = 1
 

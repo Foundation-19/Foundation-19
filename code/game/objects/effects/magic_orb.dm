@@ -7,7 +7,7 @@
 	particles = new /particles/magic_orb
 	var/datum/sound_token/sound_token
 	var/sound_id
-	var/ambient_sound = 'sound/magic/orb_ambience.ogg'
+	var/ambient_sound = 'sounds/magic/orb_ambience.ogg'
 
 /obj/effect/magic_orb/Initialize()
 	. = ..()
@@ -27,7 +27,7 @@
 	if(!CanUseOrb(user))
 		return
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_ORB_PICKUP, src, user)
-	playsound(src, 'sound/magic/orb_pickup.ogg', 100, FALSE, 10, 3)
+	playsound(src, 'sounds/magic/orb_pickup.ogg', 100, FALSE, 10, 3)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc, dir, src, 10)
 	animate(D, alpha = 0, color = "#aaaaff", transform = matrix()*1.5, time = 10)
 	OrbEffect(user)

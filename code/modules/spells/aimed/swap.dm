@@ -14,7 +14,7 @@
 
 	hud_state = "wiz_swap"
 
-	cast_sound = 'sound/magic/blink.ogg'
+	cast_sound = 'sounds/magic/blink.ogg'
 
 	spell_cost = 1
 	mana_cost = 5

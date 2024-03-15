@@ -7,7 +7,7 @@
 	show_message = " snaps their fingers."
 	spell_delay = 50
 	hud_state = "gen_ice"
-	cast_sound = 'sound/magic/summonitems_generic.ogg'
+	cast_sound = 'sounds/magic/summonitems_generic.ogg'
 
 	spell_cost = 1
 	mana_cost = 2

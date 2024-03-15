@@ -16,7 +16,7 @@
 	spell_cost = 1
 	mana_cost = 5
 
-/datum/spell/targeted/shatter/cast(var/list/targets, var/mob/user)
+/datum/spell/targeted/shatter/cast(list/targets, mob/user)
 	var/mob/living/carbon/human/H = targets[1]
 	if(prob(50))
 		sound_to(user, get_sfx("swing_hit"))

@@ -11,7 +11,7 @@
 	max_casts = 2
 	compatible_targets = list(/atom)
 	hud_state = "wiz_bshard"
-	cast_sound = 'sound/magic/demon_attack1.ogg'
+	cast_sound = 'sounds/magic/demon_attack1.ogg'
 
 	spell_cost = 2
 	mana_cost = 10
@@ -33,7 +33,7 @@
 	damage_type = BRUTE
 	damage_flags = 0
 
-/obj/item/projectile/blood_shard/on_hit(var/atom/movable/target, var/blocked = 0)
+/obj/item/projectile/blood_shard/on_hit(atom/movable/target, blocked = 0)
 	if(..())
 		if(istype(target, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = target

@@ -11,7 +11,7 @@
 	spell_cost = 1
 	mana_cost = 1
 
-/datum/spell/targeted/exhude_pleasantness/cast(var/list/targets, var/mob/user)
+/datum/spell/targeted/exhude_pleasantness/cast(list/targets, mob/user)
 	for(var/m in targets)
 		var/mob/living/L = m
 		if(L.mind && L.mind.special_role == ANTAG_SERVANT)

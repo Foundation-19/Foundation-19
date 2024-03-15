@@ -16,7 +16,7 @@
 
 	hud_state = "wiz_mana_burn"
 
-	cast_sound = 'sound/magic/blind.ogg'
+	cast_sound = 'sounds/magic/blind.ogg'
 
 	spell_cost = 3
 	mana_cost = 15
@@ -43,7 +43,7 @@
 		return
 
 	to_chat(target, SPAN_USERDANGER("You feel burning sensation as the energy leaves your body!"))
-	playsound(target, 'sound/magic/blind.ogg', 50, TRUE)
+	playsound(target, 'sounds/magic/blind.ogg', 50, TRUE)
 	target.adjustFireLoss(min(M.mana_level, max_mana_burnt))
 	M.UseMana(target, min(M.mana_level, max_mana_burnt))
 	for(var/i = 1 to 12)

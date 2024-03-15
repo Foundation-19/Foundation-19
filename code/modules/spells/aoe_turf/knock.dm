@@ -10,7 +10,7 @@
 	cooldown_min = 20 //20 deciseconds reduction per rank
 
 	hud_state = "wiz_knock"
-	cast_sound = 'sound/magic/knock.ogg'
+	cast_sound = 'sounds/magic/knock.ogg'
 
 	spell_cost = 1
 	mana_cost = 5

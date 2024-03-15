@@ -14,7 +14,7 @@
 	smoke_amt = 5
 
 	hud_state = "wiz_smoke"
-	cast_sound = 'sound/magic/smoke.ogg'
+	cast_sound = 'sounds/magic/smoke.ogg'
 
 	spell_cost = 1
 	mana_cost = 5
