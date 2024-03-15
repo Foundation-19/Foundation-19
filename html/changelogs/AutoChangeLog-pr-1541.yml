@@ -1,0 +1,6 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: Adds rocket launcher.
+  - tweak: Adds combat & heavy revolvers.
+  - soundadd: Revolver gunshot sound is updated.
