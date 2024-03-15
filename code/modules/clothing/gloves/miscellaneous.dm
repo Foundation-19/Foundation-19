@@ -77,7 +77,7 @@
 	desc = "These tactical gloves are somewhat fire and impact resistant, usually seen worn by Representatives."
 	name = "combat gloves"
 	icon_state = "workgoc"
-	item_state = "wgocgloves"
+	item_state = "workgoc"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	force = 5
@@ -155,6 +155,7 @@
 	name = "heavy riot gloves"
 	desc = "These black heavy tactical gloves are made from a durable fabric, woven with durathread alloy, and have hardened knuckles. Extremely resistant to impacts."
 	item_state = "lczgloves"
+	icon_state = "lczgloves"
 	force = 5
 	armor = list(melee = 80, bullet = 15, laser = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
@@ -162,7 +163,7 @@
 	desc = "These brown duty gloves are made from a durable synthetic."
 	name = "work gloves"
 	icon_state = "work"
-	item_state = "wgloves"
+	item_state = "work"
 	armor = list(
 		melee = ARMOR_MELEE_MINOR,
 		bullet = ARMOR_BALLISTIC_MINOR,
@@ -175,8 +176,8 @@
 /obj/item/clothing/gloves/tactical
 	desc = "These brown tactical gloves are made from a durable synthetic, and have hardened knuckles."
 	name = "tactical gloves"
-	icon_state = "work"
-	item_state = "wgloves"
+	icon_state = "jungle"
+	item_state = "jungle"
 	force = 5
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	siemens_coefficient = 0.50
@@ -186,6 +187,12 @@
 		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_MINOR
 		)
+
+/obj/item/clothing/gloves/tactical/ci
+	desc = "These tan tactical gloves are made from a durable synthetic, and have hardened knuckles."
+	name = "tactical gloves"
+	icon_state = "cigloves"
+	item_state = "cigloves"
 
 /obj/item/clothing/gloves/guards
 	desc = "A pair of synthetic gloves and arm pads reinforced with armor plating."

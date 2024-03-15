@@ -58,13 +58,25 @@
 
 
 /obj/item/clothing/head/helmet/scp/chaos
-	name = "\improper chaos helmet"
-	desc = "A helmet with 'CHAOS INSURGENCY' symbol printed on the back lettering."
-	icon_state = "chaos-helm"
+	name = "Chaos Insurgency helmet"
+	desc = "A russian type of helmet usually seen worn by modern russian military forces, this one is colored tan and is used by the Chaos Insurgency."
+	icon_state = "ci-helmet"
 	body_parts_covered = HEAD //face shield
 	armor = list(melee = 50, bullet = 83, laser = 50,energy = 25, bomb = 40, bio = 10, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/helmet/scp/security/chaos
+	name = "Heavy-plated Chaos Insurgency helmet"
+	desc = "A heavy russian type of helmet usually seen worn by modern russian military forces, this one has a face shield and is used by heavy soldiers, this one is colored tan and is used by the Chaos Insurgency."
+	icon_state = "ci-heavy-helmet"
+	armor = list(melee = 65, bullet = 90, laser = 50,energy = 35, bomb = 45, bio = 20, rad = 10)
+
+/obj/item/clothing/head/helmet/scp/chaos/officer
+	name = "Chaos Insurgency field cap"
+	desc = "A russian type of field cap used by mainly officers of the russian military forces, this one is colored tan and is used by the Chaos Insurgency."
+	icon_state = "ci-officer"
+	armor = list(melee = 65, bullet = 90, laser = 25,energy = 15, bomb = 15, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/scp/donor
 	name = "\improper tactical helmet"

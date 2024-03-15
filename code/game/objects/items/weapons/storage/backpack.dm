@@ -521,3 +521,8 @@
 	name = "corporate security messenger bag"
 	desc = "A small, tactical backpack worn over one shoulder. This one is in EXO colors."
 	icon_state = "courierbagsec_exo"
+
+/obj/item/storage/backpack/rucksack/ci
+	name = "military rucksack"
+	desc = "A heavy rucksack that can carry more than the conventional rucksacks, usually used by the russian military forces, but this one is used by the Chaos Insurgency."
+	icon_state = "ci_rucksack"
