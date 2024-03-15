@@ -289,7 +289,6 @@
 		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_PADDED
 		)
-	flags_inv = HIDEJUMPSUIT
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/under/syndicate/ci
