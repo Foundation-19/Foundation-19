@@ -312,7 +312,7 @@
 		bullets += 1
 	return bullets
 
-GLOB_LIST_INIT(banned_914_projectile_guns, list(
+GLOBAL_LIST_INIT(banned_914_projectile_guns, list(
 	/obj/item/gun/projectile/automatic/scp/svd,
 	))
 

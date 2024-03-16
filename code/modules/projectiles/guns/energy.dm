@@ -107,7 +107,7 @@
 			icon_state = "[initial(icon_state)][ratio]"
 		update_held_icon()
 
-GLOB_LIST_INIT(banned_914_energy_guns, list(
+GLOBAL_LIST_INIT(banned_914_energy_guns, list(
 	/obj/item/gun/energy/pulse_rifle/destroyer,
 	))
 
