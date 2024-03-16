@@ -10,8 +10,6 @@
 	if(!isAI(usr))
 		return TRUE
 	var/mob/living/silicon/ai/A = usr
-	if(!(ai_verb in A.verbs))
-		return TRUE
 
 	var/input_arguments = list()
 	for(var/input_proc in input_procs)
