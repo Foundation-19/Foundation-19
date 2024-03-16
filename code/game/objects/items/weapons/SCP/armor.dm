@@ -25,8 +25,8 @@
 	name = "armored vest"
 	desc = "A synthetic armor vest."
 	icon_state = "guard-armor"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
 	armor = list(melee = 60, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
