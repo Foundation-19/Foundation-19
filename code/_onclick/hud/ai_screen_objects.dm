@@ -25,7 +25,7 @@
 			if(!input_arg)
 				return // We assume a null-input means the user cancelled
 
-		if(!(ai_verb in A.verbs) || A.incapacitated())
+		if(A.incapacitated())
 			return
 
 		input_arguments += input_arg
