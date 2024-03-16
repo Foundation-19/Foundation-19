@@ -25,10 +25,10 @@
 			if(!input_arg)
 				return // We assume a null-input means the user cancelled
 
-		if(A.incapacitated())
-			return
-
 		input_arguments += input_arg
+
+	if(A.incapacitated())
+		return
 
 	if(length(input_args))
 		input_arguments |= input_args
