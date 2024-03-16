@@ -1,3 +1,5 @@
+/* We're not using this code -15.03.24 #1536
+
 #define EVAC_OPT_ABANDON_SHIP "abandon_ship"
 #define EVAC_OPT_CANCEL_ABANDON_SHIP "cancel_abandon_ship"
 
@@ -26,3 +28,4 @@
 
 #undef EVAC_OPT_ABANDON_SHIP
 #undef EVAC_OPT_CANCEL_ABANDON_SHIP
+*/

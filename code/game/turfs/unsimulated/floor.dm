@@ -21,17 +21,15 @@
 	desc = "Oh boy, that's high..."
 	density = TRUE
 
-/turf/unsimulated/floor/reinforced_impassable
+/turf/unsimulated/floor/reinforced_animated
 	name = "reinforced floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
-	icon_state = "reinforced"
-	density = TRUE
+	icon_state = "reinforced_animated"
 
-/turf/unsimulated/floor/plating_impassable
+/turf/unsimulated/floor/plating_animated
 	name = "plating"
-	icon_state = "plating"
-	density = TRUE
-
+	icon = 'icons/turf/flooring/plating.dmi'
+	icon_state = "plating_animated"
 
 /turf/unsimulated/mask
 	name = "mask"

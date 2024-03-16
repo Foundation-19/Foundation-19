@@ -5,6 +5,7 @@
 	var/stopper = 1 // stops throwers
 	invisibility = 101 // nope cant see this shit
 	anchored = TRUE
+	icon = 'icons/effects/effects.dmi'
 
 /obj/effect/step_trigger/proc/Trigger(atom/movable/A)
 	return 0
@@ -31,6 +32,7 @@
 	var/facedir = 0 // if 1: atom faces the direction of movement
 	var/nostop = 0 // if 1: will only be stopped by teleporters
 	var/list/affecting = list()
+	icon_state = "ThrowerMarker"
 
 /obj/effect/step_trigger/thrower/Trigger(atom/movable/AM)
 	if(!AM || !istype(AM) || !AM.simulated)
@@ -83,6 +85,11 @@
 		if(immobilize)
 			M.RemoveMovementHandler(/datum/movement_handler/no_move/toss)
 
+/obj/effect/step_trigger/thrower/train/north
+	direction = NORTH
+	tiles = 0
+	speed = 3
+
 /* Stops things thrown by a thrower, doesn't do anything */
 
 /obj/effect/step_trigger/stopper
@@ -113,3 +120,26 @@
 	var/turf/T = locate(rand(teleport_x, teleport_x_offset), rand(teleport_y, teleport_y_offset), rand(teleport_z, teleport_z_offset))
 	if(T)
 		A.forceMove(T)
+
+
+//Death triggers
+
+/obj/effect/step_trigger/death
+	var/deathmessage = "You feel the life leaving your body as the realization of what just happened sets in..."
+	var/deathalert = "stepped on a death trigger"
+	icon_state = "DeathMarker"
+
+/obj/effect/step_trigger/death/train/Trigger(mob/living/A)
+	if(isliving(A))
+		to_chat(A, "<span class='danger'>[deathmessage]</span>")
+		log_and_message_admins("[A] [deathalert]")
+		A.gib() // Well what did you think would happen if you climbed off a high speed train???
+
+
+/obj/effect/step_trigger/death/train/lost
+	deathmessage = "You spiral down the tunnel at incredible speed feeling your body shatter as it collides with the ground multiple times.."
+	deathalert = "was violently ejected from the transfer train!"
+
+/obj/effect/step_trigger/death/train/crushed
+	deathmessage = "You scream in pain as the feeling of metal races over you again and again crushing every bone in your body."
+	deathalert = "was viscerally crushed to pieces by the transfer train!"

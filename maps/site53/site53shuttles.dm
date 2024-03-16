@@ -49,7 +49,7 @@
 /obj/effect/shuttle_landmark/transit/trainsition
 	name = "Train Tunnel"
 	landmark_tag = "nav_train_transition"
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/unsimulated/floor/reinforced_animated
 	base_area = /area/site53/tram/maintrain/Tunnel
 
 /obj/effect/shuttle_landmark/train/onsite
