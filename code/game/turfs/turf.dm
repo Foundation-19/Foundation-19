@@ -43,6 +43,9 @@
 
 	var/list/explosion_throw_details
 
+	/// Reference to the turf fire on the turf
+	var/obj/effect/turf_fire/turf_fire
+
 /turf/Initialize(mapload, ...)
 	. = ..()
 	if(dynamic_lighting)
@@ -293,18 +296,19 @@ var/const/enterloopsanity = 100
 	return FALSE
 
 //expects an atom containing the reagents used to clean the turf
+/* CODED OUT FOR NOW
 /turf/proc/clean(atom/source, mob/user = null, time = null, message = null)
 	if(source.reagents.has_reagent(/datum/reagent/water, 1) || source.reagents.has_reagent(/datum/reagent/hydroxylsan, 1))
 		if(user && time && !do_after(user, time, src, bonus_percentage = 25))
 			return
-		clean_blood()
+		clean()
 		remove_cleanables()
 		if(message)
 			to_chat(user, message)
 	else
 		to_chat(user, SPAN_WARNING("\The [source] is too dry to wash that."))
 	source.reagents.trans_to_turf(src, 1, 10)	//10 is the multiplier for the reaction effect. probably needed to wet the floor properly.
-
+*/
 /turf/proc/remove_cleanables()
 	for(var/obj/effect/O in src)
 		if(istype(O,/obj/effect/rune) || istype(O,/obj/effect/decal/cleanable))
@@ -447,3 +451,6 @@ var/const/enterloopsanity = 100
 		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, caller, ID, no_id = no_id))
 			continue
 		. += turf_to_check
+
+/turf/proc/IgniteTurf(power, fire_colour)
+	return

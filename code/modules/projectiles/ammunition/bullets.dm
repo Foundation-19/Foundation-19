@@ -43,6 +43,32 @@
 	desc = "An antique pistol bullet casing. Somewhere between 9 and 11 mm in caliber."
 	caliber = CALIBER_PISTOL_ANTIQUE
 
+/obj/item/ammo_casing/revolver
+	desc = "A revolver bullet casing."
+	icon_state = "magnumcasing"
+	spent_icon = "magnumcasing-spent"
+	caliber = CALIBER_REVOLVER
+	projectile_type = /obj/item/projectile/bullet/revolver
+
+/obj/item/ammo_casing/revolver/rubber
+	desc = "A small rubber pellet."
+	caliber = CALIBER_REVOLVER
+	projectile_type = /obj/item/projectile/bullet/revolver/rubber
+
+/obj/item/ammo_casing/revolver/small
+	desc = "A small revolver bullet casing."
+	caliber = CALIBER_REVOLVER_SMALL
+	projectile_type = /obj/item/projectile/bullet/revolver/small
+
+/obj/item/ammo_casing/revolver/medium
+	caliber = CALIBER_REVOLVER_MEDIUM
+	projectile_type = /obj/item/projectile/bullet/revolver/medium
+
+/obj/item/ammo_casing/revolver/heavy
+	desc = "A high-power revolver bullet casing."
+	caliber = CALIBER_REVOLVER_HEAVY
+	projectile_type = /obj/item/projectile/bullet/revolver/heavy
+
 /obj/item/ammo_casing/gyrojet
 	desc = "A minirocket casing."
 	caliber = CALIBER_GYROJET
@@ -99,10 +125,20 @@
 
 /obj/item/ammo_casing/rocket
 	name = "rocket shell"
+	desc = "An explosive designed to be fired from a launcher."
+	icon_state = "shell_he"
+	projectile_type = /obj/item/projectile/bullet/rocket
+	caliber = CALIBER_ROCKET
+	fall_sounds = list()
+
+/obj/item/ammo_casing/rocket/expend()
+	. = new projectile_type(src)
+	QDEL_NULL(src)
+
+/obj/item/ammo_casing/rocket/heavy
+	name = "heavy rocket shell"
 	desc = "A high explosive designed to be fired from a launcher."
-	icon_state = "rocketshell"
-	projectile_type = /obj/item/missile
-	caliber = "rocket"
+	projectile_type = /obj/item/projectile/bullet/rocket/heavy
 
 /obj/item/ammo_casing/cap
 	name = "cap"

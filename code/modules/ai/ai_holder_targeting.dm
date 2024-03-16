@@ -28,7 +28,12 @@
 	. = ohearers(vision_range, holder)
 	. -= GLOB.dview_mob // Not the dview mob!
 
-	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /mob/living/exosuit, /obj/effect/blob))
+	var/static/hostile_machines = typecacheof(list(
+		/obj/machinery/porta_turret,
+		/mob/living/exosuit,
+		/obj/effect/blob,
+		/obj/infestation_structure/pike_burrow,
+		))
 
 	for (var/HM in typecache_filter_list(range(vision_range, holder), hostile_machines))
 		if (can_see_by_step(holder, HM, vision_range))
@@ -147,6 +152,12 @@
 			return FALSE // Don't shoot allied turrets.
 		if (!P.raised && !P.raising)
 			return FALSE // Turrets won't get hurt if they're still in their cover.
+		return TRUE
+
+	if(istype(the_target, /obj/infestation_structure))
+		var/obj/infestation_structure/IS = the_target
+		if(IS.faction == holder.faction)
+			return FALSE
 		return TRUE
 
 	return TRUE
