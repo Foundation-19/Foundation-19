@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(banned_914_energy_guns, list(
 	switch(mode)
 		if(MODE_COARSE)
 			var/list/potential_return
-			for(var/thing in (subtypesof(/obj/item/gun/energy) - banned_914_energy_guns))
+			for(var/thing in (subtypesof(/obj/item/gun/energy) - GLOB.banned_914_energy_guns))
 				var/obj/item/gun/energy/G = thing
 				if(initial(G.max_shots) < max_shots * 0.8)
 					potential_return += G
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(banned_914_energy_guns, list(
 			return pick(potential_return)
 		if(MODE_ONE_TO_ONE)
 			var/list/potential_return = list()
-			for(var/thing in (subtypesof(/obj/item/gun/energy) - banned_914_energy_guns))
+			for(var/thing in (subtypesof(/obj/item/gun/energy) - GLOB.banned_914_energy_guns))
 				var/obj/item/gun/energy/G = thing
 				if(initial(G.max_shots) > max_shots * 1.25 || initial(G.max_shots) < max_shots * 0.75)
 					continue
@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(banned_914_energy_guns, list(
 				empulse(get_turf(src), 2, 5)
 				return null
 			var/list/potential_return = list()
-			for(var/thing in (subtypesof(/obj/item/gun/energy) - banned_914_energy_guns))
+			for(var/thing in (subtypesof(/obj/item/gun/energy) - GLOB.banned_914_energy_guns))
 				var/obj/item/gun/energy/G = thing
 				if(initial(G.max_shots) > max_shots * 1.25 * mult_mod && initial(G.max_shots) < max_shots * 2 * mult_mod)
 					potential_return += G

@@ -322,7 +322,7 @@ GLOBAL_LIST_INIT(banned_914_projectile_guns, list(
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
 			var/list/potential_return = list()
-			for(var/thing in (subtypesof(/obj/item/gun/projectile) - banned_914_projectile_guns))
+			for(var/thing in (subtypesof(/obj/item/gun/projectile) - GLOB.banned_914_projectile_guns))
 				var/obj/item/gun/projectile/G = thing
 				if(initial(G.caliber) != caliber)
 					continue
@@ -338,7 +338,7 @@ GLOBAL_LIST_INIT(banned_914_projectile_guns, list(
 				explosion(get_turf(src), -1, prob(35), 3, 7, TRUE)
 				return null
 			var/list/potential_return = list()
-			for(var/thing in (subtypesof(/obj/item/gun/projectile) - banned_914_projectile_guns))
+			for(var/thing in (subtypesof(/obj/item/gun/projectile) - GLOB.banned_914_projectile_guns))
 				var/obj/item/gun/projectile/G = thing
 				if(!isnull(magazine_type) && !isnull(initial(G.magazine_type)))
 					// Higher capacity magazine
