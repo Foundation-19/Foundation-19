@@ -1,6 +1,9 @@
-#define SECBOT_WAIT_TIME	5		//number of in-game seconds to wait for someone to surrender
-#define SECBOT_THREAT_ARREST 4		//threat level at which we decide to arrest someone
-#define SECBOT_THREAT_ATTACK 8		//threat level at which was assume immediate danger and attack right away
+/// Number of in-game seconds to wait for someone to surrender
+#define SECBOT_WAIT_TIME	5
+/// Threat level at which we decide to arrest someone
+#define SECBOT_THREAT_ARREST 4
+/// Threat level at which was assume immediate danger and attack right away
+#define SECBOT_THREAT_ATTACK 8
 
 /mob/living/bot/secbot
 	name = "Securitron"
@@ -140,7 +143,7 @@
 	say("Down on the floor, [suspect_name]! You have [SECBOT_WAIT_TIME] seconds to comply.")
 	if(preparing_arrest_sounds.len)
 		playsound(src.loc, pick(preparing_arrest_sounds), 50)
-	GLOB.moved_event.register(target, src, /mob/living/bot/secbot/proc/target_moved)
+	GLOB.moved_event.register(target, src, TYPE_PROC_REF(/mob/living/bot/secbot, target_moved))
 
 /mob/living/bot/secbot/proc/target_moved(atom/movable/moving_instance, atom/old_loc, atom/new_loc)
 	if(get_dist(get_turf(src), get_turf(target)) >= 1)

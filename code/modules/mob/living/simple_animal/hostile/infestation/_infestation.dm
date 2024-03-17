@@ -25,6 +25,8 @@
 	var/transformation_target_type = null
 	/// If TRUE - will evolve despite having a target mob
 	var/ignore_combat = FALSE
+	/// Speed buff when on flesh turfs
+	var/flesh_movement_bonus = 0.3
 
 /mob/living/simple_animal/hostile/infestation/Life()
 	. = ..()
@@ -61,6 +63,16 @@
 		QDEL_IN(src, (5 SECONDS))
 	return ..()
 
+// Infestation moves faster on their territory
+/mob/living/simple_animal/hostile/infestation/movement_delay()
+	. = ..()
+	var/turf/simulated/floor/F = get_turf(src)
+	if(!istype(F))
+		return
+
+	if(istype(F, /turf/simulated/floor/exoplanet/flesh) || istype(F.flooring, /decl/flooring/flesh))
+		. -= flesh_movement_bonus
+
 // While they are "resistant" to high temperatures, they are specifically weak to fire
 /mob/living/simple_animal/hostile/infestation/fire_burn_temperature()
 	. = ..()
@@ -94,6 +106,7 @@
 	if(ckey) // We're player controlled
 		broodling.ckey = ckey
 	gib()
+	return broodling
 
 // Shared AI behavior
 /datum/ai_holder/simple_animal/infestation
@@ -113,17 +126,20 @@
 				var/mob/living/simple_animal/hostile/infestation/I = infestation_type
 				if(initial(I.maxHealth) > maxHealth * 2 || initial(I.maxHealth) < maxHealth * 0.5)
 					continue
-				if(initial(I.movement_cooldown) > movement_cooldown + 2 || initial(I.movement_cooldown) < movement_cooldown -2)
+				if(initial(I.movement_cooldown) > movement_cooldown + 2 || initial(I.movement_cooldown) < movement_cooldown - 2)
 					continue
 				potential_mobs += infestation_type
 			if(!LAZYLEN(potential_mobs))
 				return src
-			return pick(potential_mobs)
+			var/picked_mob = pick(potential_mobs)
+			return picked_mob
 		if(MODE_FINE)
-			if(transformation_target_type)
-				Evolve()
-			else
-				revive()
+			if(!stat) // Alive and well
+				if(isnull(transformation_target_type) && LAZYLEN(transformation_types))
+					transformation_target_type = pick(transformation_types)
+				if(transformation_target_type)
+					return Evolve()
+			revive()
 			return src
 		if(MODE_VERY_FINE)
 			var/turf/T = get_turf(src)
@@ -133,10 +149,10 @@
 				/mob/living/simple_animal/hostile/infestation/floatfly,
 				/mob/living/simple_animal/hostile/infestation/spitter,
 				)
-			for(var/i = 1 to rand(2, 6))
+			for(var/i = 1 to rand(3, 9))
 				new /mob/living/simple_animal/hostile/infestation/larva(T)
-			for(var/i = 1 to rand(2, 6))
+			for(var/i = 1 to rand(3, 9))
 				var/rand_mob = pick(random_mobs)
 				new rand_mob(T)
-			return /obj/effect/hive_heart
+			return /obj/infestation_structure/hive_heart
 	return ..()

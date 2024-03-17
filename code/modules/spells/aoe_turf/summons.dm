@@ -3,17 +3,19 @@
 	desc = "This spell dispenses wizard justice."
 
 	summon_type = list(/mob/living/bot/secbot/ed209)
-	summon_amt = 10
+	summon_amt = 8
 	range = 3
 	newVars = list("emagged" = 1,"name" = "Wizard's Justicebot")
 
 	hud_state = "wiz_ed"
 
+	spell_cost = 10
+	mana_cost = 100
+
 /datum/spell/aoe_turf/conjure/carp
 	name = "Summon Carp"
 	desc = "This spell conjures a simple carp."
 
-	school = "conjuration"
 	charge_max = 1200
 	spell_flags = NEEDSCLOTHES
 	invocation = "Nouk Fhumm Sacp Risska!"
@@ -25,11 +27,13 @@
 
 	hud_state = "wiz_carp"
 
+	spell_cost = 2
+	mana_cost = 10
+
 /datum/spell/aoe_turf/conjure/creature
 	name = "Summon Creature Swarm"
 	desc = "This spell tears the fabric of reality, allowing horrific daemons to spill forth"
 
-	school = "conjuration"
 	charge_max = 1200
 	spell_flags = 0
 	invocation = "Ia-Ia! Naomesnalia!"
@@ -41,11 +45,12 @@
 
 	hud_state = "wiz_creature"
 
+	spell_cost = 5
+	mana_cost = 50
+
 /datum/spell/aoe_turf/conjure/mirage
 	name = "Summon Mirage"
 	desc = "This spell summons a harmless carp mirage for a few seconds."
-	feedback = "MR"
-	school = "illusion"
 	charge_max = 1200
 	spell_flags = NEEDSCLOTHES
 	invocation = "Nouk Fhunhm Sacp Risska!"
@@ -63,7 +68,10 @@
 
 	newVars = list("melee_damage_lower" = 0, "melee_damage_upper" = 0, "break_stuff_probability" = 0)
 
-/datum/spell/aoe_turf/conjure/mirage/empower_spell()
+	spell_cost = 1
+	mana_cost = 5
+
+/datum/spell/aoe_turf/conjure/mirage/ImproveSpellPower()
 	if(!..())
 		return 0
 

@@ -1,0 +1,8 @@
+author: Yawet330
+delete-after: true
+changes:
+  - bugfix: Fixes a missing line of code
+  - rscdel: Removes old and OP reagents and exchanges them with ""new and interactive""
+      spider venoms.
+  - admin: Adds better admin-abuse options.
+  - rscadd: Spoders

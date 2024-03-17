@@ -1,4 +1,4 @@
-#define JAMMER_MAX_RANGE world.view*2
+#define JAMMER_MAX_RANGE (world.view*2)
 #define JAMMER_POWER_CONSUMPTION(tick_delay) ((max(0.75, range)**2 * jammer_method.energy_cost * tick_delay) / 20)
 
 /obj/item/device/suit_sensor_jammer
@@ -20,7 +20,7 @@
 	suit_sensor_jammer_methods = list()
 	suit_sensor_jammer_methods_by_type = list()
 	for(var/jammer_method_type in subtypesof(/suit_sensor_jammer_method))
-		var/new_method = new jammer_method_type(src, /obj/item/device/suit_sensor_jammer/proc/may_process_crew_data)
+		var/new_method = new jammer_method_type(src, TYPE_PROC_REF(/obj/item/device/suit_sensor_jammer, may_process_crew_data))
 		dd_insertObjectList(suit_sensor_jammer_methods, new_method)
 		suit_sensor_jammer_methods_by_type[jammer_method_type] = new_method
 	jammer_method = suit_sensor_jammer_methods[1]

@@ -22,8 +22,9 @@
 					Friends -= null
 
 	handle_targets()
-	if (!AIproc)
-		addtimer(CALLBACK(src, .proc/handle_AI), 0)
+	if(!AIproc)
+		AIproc = 1
+		addtimer(CALLBACK(src, PROC_REF(handle_AI)), 1)
 	handle_speech_and_mood()
 
 /mob/living/carbon/slime/proc/handle_targets()
@@ -109,6 +110,7 @@
 	return 0
 
 /mob/living/carbon/slime/proc/handle_AI()  // the master AI process
+	AIproc = 1
 	if(QDELETED(src) || stat == DEAD || client || Victim)
 		AIproc = 0
 		return // If we're dead or have a client, we don't need AI, if we're feeding, we continue feeding
@@ -117,7 +119,6 @@
 		AIproc = 0
 		return
 
-	AIproc = 1
 	var/addedDelay = 0
 
 	if(amount_grown >= SLIME_EVOLUTION_THRESHOLD && !Target)
@@ -179,7 +180,7 @@
 			UnarmedAttack(frenemy)
 
 	var/sleeptime = max(movement_delay(), 5) + addedDelay // Maximum one action per half a second
-	addtimer(CALLBACK(src, .proc/handle_AI), sleeptime)
+	addtimer(CALLBACK(src, PROC_REF(handle_AI)), sleeptime)
 
 
 /mob/living/carbon/slime/proc/UpdateFace()

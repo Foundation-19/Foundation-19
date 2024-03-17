@@ -131,6 +131,18 @@
 	icon_state = "eng_headset_alt"
 	item_state = "eng_headset_alt"
 
+/obj/item/device/radio/headset/conteng
+	name = "containment engineer's headset"
+	desc = "The headset of the guy who cleans up after morons."
+	icon_state = "eng_headset"
+	item_state = "headset"
+	ks1type = /obj/item/device/encryptionkey/conteng
+
+/obj/item/device/radio/headset/conteng/alt
+	name = "containment engineer's bowman headset"
+	icon_state = "eng_headset_alt"
+	item_state = "eng_headset_alt"
+
 /obj/item/device/radio/headset/headset_rob
 	name = "robotics radio headset"
 	desc = "Made specifically for the roboticists who cannot decide between departments."

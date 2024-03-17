@@ -1,0 +1,8 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: Every human now has spell points and mana level. By default everyone has
+      2 points and 10 mana.
+  - rscadd: Spell books were reworked entirely.
+  - rscadd: Multiple new spells were added (around 20), with a lot of old ones(around
+      30) reworked and updated.

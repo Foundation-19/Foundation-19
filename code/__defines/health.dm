@@ -58,3 +58,7 @@
 	DAMAGE_OXY = 0,\
 	DAMAGE_BRAIN = 0\
 )
+
+
+/// Max insanity value of brain for calculationsB
+#define BRAIN_MAX_INSANITY 100

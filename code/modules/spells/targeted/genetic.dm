@@ -12,6 +12,7 @@ code\game\dna\genes\goon_powers.dm
 	var/list/mutations = list() //mutation strings
 	duration = 100 //deciseconds
 
+	spell_book_visible = FALSE
 
 /datum/spell/targeted/genetic/cast(list/targets)
 	..()
@@ -30,9 +31,7 @@ code\game\dna\genes\goon_powers.dm
 /datum/spell/targeted/genetic/blind
 	name = "Blind"
 	desc = "This spell inflicts a target with temporary blindness. Does not require wizard garb."
-	feedback = "BD"
 	disabilities = 1
-	school = "illusion"
 	duration = 300
 
 	charge_max = 300
@@ -53,7 +52,7 @@ code\game\dna\genes\goon_powers.dm
 	hud_state = "wiz_blind"
 	cast_sound = 'sounds/magic/blind.ogg'
 
-/datum/spell/targeted/genetic/blind/empower_spell()
+/datum/spell/targeted/genetic/blind/ImproveSpellPower()
 	if(!..())
 		return 0
 	duration += 100
@@ -63,8 +62,6 @@ code\game\dna\genes\goon_powers.dm
 /datum/spell/targeted/genetic/mutate
 	name = "Mutate"
 	desc = "This spell causes you to turn into a hulk and gain laser vision for a short while."
-	feedback = "MU"
-	school = "transmutation"
 	charge_max = 400
 	spell_flags = Z2NOCAST | NEEDSCLOTHES | INCLUDEUSER
 	invocation = "BIRUZ BENNAR"
@@ -88,8 +85,6 @@ code\game\dna\genes\goon_powers.dm
 /datum/spell/targeted/genetic/blind/hysteria
 	name = "Hysteria"
 	desc = "A spell used to make someone look like a blind fool, and also makes them a blind fool."
-	feedback = "HY"
-	school = "illusion"
 	spell_flags = SELECTABLE
 	charge_max = 600
 	invocation_type = INVOKE_SHOUT
@@ -100,8 +95,6 @@ code\game\dna\genes\goon_powers.dm
 /datum/spell/targeted/genetic/blind/starburst
 	name = "Starburst"
 	desc = "Send a jolt of electricity through everyone's nerve center, blinding and stunning them."
-	feedback = "SB"
-	school = "transmutation"
 	invocation = "Tid Caeh Yor!"
 	spell_flags = NOFACTION
 	invocation_type = INVOKE_SHOUT

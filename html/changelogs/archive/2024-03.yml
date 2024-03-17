@@ -1,0 +1,47 @@
+2024-03-01:
+  cheesePizza2:
+  - balance: The Containment Engineer now has access to the LCZ and HCZ areas, as
+      well as to all SCP chambers. He can also access LCZ and HCZ security comms.
+  - rscadd: All classes (security included) use SCP classes instead of bay ones.
+  - rscdel: Deletes military branches/ranks and replaces them with simpler classes.
+  - rscdel: Deleted some jobcode related to species.
+  - rscdel: Deletes various items that are not lore-relevant/which are unused.
+  - refactor: All code relating to branches/ranks has been refactored.
+2024-03-06:
+  Cheesepizza2, Costco Security:
+  - soundadd: Added 10 new tracks to the title screen!
+  RandomLad645:
+  - bugfix: fixed SCP-420-J name
+2024-03-08:
+  KingSuperBOB:
+  - rscadd: Added a damp rag to 049's medical storage.
+  - rscdel: Removed reagent spray bottle from 049's medical storage.
+  cheesePizza2:
+  - bugfix: A bug with some internal defines was fixed, potentially affecting some
+      values (e.g. atmos)
+2024-03-10:
+  Tsurupeta:
+  - code_imp: Adds support for byond version 515
+2024-03-14:
+  EgorDinamit:
+  - tweak: Putting SCP 2427-3 through SCP 914 on "Fine" or "Very Fine" will, obviously,
+      buff it.
+  - tweak: Putting SCP 012 through SCP 914 on "Very Fine" will net interesting results.
+  - tweak: Putting ID cards through SCP 914 will have unique results now.
+  - tweak: Putting cash through SCP 914 will have unique results now.
+  - bugfix: Fixed SCP 914 interaction with infestation mobs on "Fine" setting.
+2024-03-15:
+  EgorDinamit, CrimsonShrike:
+  - rscadd: Prebuilt flamethrowers have new icon.
+  - rscadd: Flamethrower sounds.
+  - tweak: Flamethrowers now use chems as fire source.
+  - rscadd: Turf fires -> Very hot atmos fires, flamethrowers and fuel decals will
+      generate these fires.
+  - tweak: Simple mobs now can take fire damage from burning.
+2024-03-16:
+  EgorDinamit:
+  - tweak: Adds rocket launcher.
+  - tweak: Adds combat & heavy revolvers.
+  - soundadd: Revolver gunshot sound is updated.
+  - bugfix: You will no longer be sent to nullspace if an object/mob you are orbiting
+      gets deleted.

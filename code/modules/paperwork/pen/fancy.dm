@@ -10,4 +10,5 @@
 /obj/item/pen/fancy/quill
 	name = "dire goose quill"
 	desc = "A quill fashioned from a feather of the dire goose makes an excellent writing instrument, as well as a valuable trophy."
+	icon_state = "quill"
 	matter = null

@@ -2976,6 +2976,9 @@
 /obj/structure/bed/chair/office/comfy/black{
 	dir = 8
 	},
+/obj/effect/landmark/start{
+	name = "Psychiatrist"
+	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
 "hW" = (
@@ -3945,6 +3948,9 @@
 /obj/structure/bed/chair/office/comfy/black{
 	dir = 1
 	},
+/obj/effect/landmark/start{
+	name = "Chemist"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
 "kq" = (
@@ -4073,6 +4079,9 @@
 /area/site53/medical/chemistry)
 "kL" = (
 /obj/structure/bed/chair/office/comfy/black,
+/obj/effect/landmark/start{
+	name = "Chemist"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
 "kM" = (
@@ -4199,6 +4208,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
+	},
+/obj/effect/landmark/start{
+	name = "Medical Doctor"
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
@@ -4640,6 +4652,12 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"mC" = (
+/obj/effect/landmark/start{
+	name = "Surgeon"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/op1)
 "mI" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface)
@@ -5570,6 +5588,9 @@
 "rz" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Ethics Committee Liaison"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
@@ -6709,6 +6730,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/landmark/start{
+	name = "Medical Doctor"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
 "yJ" = (
@@ -7407,6 +7431,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
+"EH" = (
+/obj/effect/landmark/start{
+	name = "Medical Doctor"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/equipstorage)
 "EO" = (
 /obj/machinery/door/airlock/glass/virology{
 	id_tag = "iso1";
@@ -7767,6 +7797,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
+"HV" = (
+/obj/effect/landmark/start{
+	name = "Medical Doctor"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/exam_room)
 "HW" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -7797,9 +7833,8 @@
 /obj/effect/paint_stripe/paleblue,
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
+	dir = 4;
+	name = "west bump"
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
@@ -8251,6 +8286,12 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"Nh" = (
+/obj/effect/landmark/start{
+	name = "Surgeon"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/op2)
 "NA" = (
 /obj/effect/floor_decal/carpet/orange{
 	dir = 1
@@ -8510,6 +8551,12 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"Qw" = (
+/obj/effect/landmark/start{
+	name = "Janitor"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/janitor)
 "QA" = (
 /obj/machinery/light{
 	dir = 4
@@ -8850,6 +8897,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
+"TN" = (
+/obj/effect/landmark/start{
+	name = "Emergency Medical Technician"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/equipstorage)
 "TP" = (
 /obj/machinery/button/blast_door{
 	dir = 8;
@@ -9013,6 +9066,9 @@
 "Vn" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Global Occult Coalition Representative"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -31655,7 +31711,7 @@ jP
 Wo
 vH
 vH
-vH
+EH
 vH
 Br
 jP
@@ -33450,7 +33506,7 @@ gb
 dM
 fg
 vH
-vH
+TN
 vH
 dQ
 iX
@@ -38588,7 +38644,7 @@ iw
 iw
 hU
 hq
-iw
+HV
 iw
 ig
 ia
@@ -38863,7 +38919,7 @@ bp
 TQ
 cv
 sJ
-eT
+Qw
 gI
 ec
 bU
@@ -43981,11 +44037,11 @@ Vm
 ko
 hy
 el
-hy
+mC
 hP
 Vm
 zx
-ew
+Nh
 hH
 ew
 dx

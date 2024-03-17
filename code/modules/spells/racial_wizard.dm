@@ -70,7 +70,6 @@
 	name = "True Form"
 	desc = "Pay respect to your heritage. Become what you once were."
 
-	school = "racial"
 	spell_flags = INCLUDEUSER
 	invocation_type = INVOKE_EMOTE
 	range = -1
@@ -96,7 +95,6 @@
 	name = "Moghes Blessing"
 	desc = "Imbue your weapon with memories of Moghes."
 
-	school = "racial"
 	spell_flags = 0
 	invocation_type = INVOKE_EMOTE
 	invocation = "whispers something."
@@ -139,7 +137,6 @@
 	name = "Convert Gestalt"
 	desc = "Converts the surrounding area into a diona gestalt."
 
-	school = "racial"
 	spell_flags = 0
 	invocation_type = INVOKE_EMOTE
 	invocation = "rumbles as strange alien growth quickly overtakes their surroundings."
@@ -184,7 +181,6 @@
 /obj/item/contract/apprentice/skrell/contract_effect(mob/user as mob)
 	. = ..()
 	if(.)
-		linked.uses += 0.5
 		var/obj/item/I = new /obj/item/contract/apprentice/skrell(get_turf(src),linked,contract_master)
 		user.put_in_hands(I)
 		new /obj/item/contract/apprentice/skrell(get_turf(src),linked,contract_master)
@@ -193,8 +189,6 @@
 /datum/spell/camera_connection
 	name = "Camera Connection"
 	desc = "This spell allows the wizard to connect to the local camera network and see what it sees."
-
-	school = "racial"
 
 	invocation_type = INVOKE_EMOTE
 	invocation = "emits a beeping sound before standing very, very still."
@@ -227,8 +221,8 @@
 	var/mob/living/L = targets[1]
 
 	vision.possess(L)
-	GLOB.destroyed_event.register(L, src, /datum/spell/camera_connection/proc/release)
-	GLOB.logged_out_event.register(L, src, /datum/spell/camera_connection/proc/release)
+	GLOB.destroyed_event.register(L, src, TYPE_PROC_REF(/datum/spell/camera_connection, release))
+	GLOB.logged_out_event.register(L, src, TYPE_PROC_REF(/datum/spell/camera_connection, release))
 	add_verb(L, /mob/living/proc/release_eye)
 
 /datum/spell/camera_connection/proc/release(mob/living/L)
