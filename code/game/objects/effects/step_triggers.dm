@@ -76,8 +76,6 @@
 			if(!facedir)
 				AM.set_dir(predir)
 
-
-
 	affecting.Remove(AM)
 
 	if(ismob(AM))
@@ -88,7 +86,7 @@
 /obj/effect/step_trigger/thrower/train/north
 	direction = NORTH
 	tiles = 0
-	speed = 3
+	speed = 1
 
 /* Stops things thrown by a thrower, doesn't do anything */
 
@@ -129,12 +127,27 @@
 	var/deathalert = "stepped on a death trigger"
 	icon_state = "DeathMarker"
 
-/obj/effect/step_trigger/death/train/Trigger(mob/living/A)
+/obj/effect/step_trigger/death/train/crushed/Trigger(atom/movable/A)
 	if(isliving(A))
 		to_chat(A, "<span class='danger'>[deathmessage]</span>")
 		log_and_message_admins("[A] [deathalert]")
-		A.gib() // Well what did you think would happen if you climbed off a high speed train???
+		var/mob/living/B = A
+		B.gib() // Well what did you think would happen if you climbed off a high speed train???
+		visible_message("<span class='warning'>[B] screams in agony as the trains wheels race over them!</span>")
+		playsound(loc, 'sounds/effects/metalhit.ogg', 10, 0, 25) //Huh, I wonder what that was? Probably nothing..
+	else
+		visible_message("<span class=`warning`>[A] churns up as the train swallows it whole!</span>")
+		playsound(loc, 'sounds/effects/metalscrape1.ogg', 10, 0, 4)
+		qdel(A) //We don't want to qdel people, but we do want to clear their remains or items as those are much easier to churn up under a train.
 
+/obj/effect/step_trigger/death/train/lost/Trigger(atom/movable/A) //No messages or sounds for lost triggers, as they're far enough away that it shouldn't matter.
+	if(isliving(A))
+		to_chat(A, "<span class='danger'>[deathmessage]</span>")
+		log_and_message_admins("[A] [deathalert]")
+		var/mob/living/B = A
+		B.gib()
+	else
+		qdel(A)
 
 /obj/effect/step_trigger/death/train/lost
 	deathmessage = "You spiral down the tunnel at incredible speed feeling your body shatter as it collides with the ground multiple times.."
