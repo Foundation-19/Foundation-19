@@ -38,7 +38,7 @@
 	var/obj/item/handcuffs/HC = handcuffed
 
 	//A default in case you are somehow handcuffed with something that isn't an obj/item/handcuffs type
-	var/breakouttime = istype(HC) ? HC.breakouttime : handcuffs_breakout_time
+	var/breakouttime = istype(HC) ? HC.breakouttime * handcuffs_breakout_modifier : 2 MINUTES * handcuffs_breakout_modifier
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H) && H.gloves && istype(H.gloves,/obj/item/clothing/gloves/rig))
