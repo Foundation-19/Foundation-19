@@ -66,13 +66,3 @@
 /datum/ai_holder/simple_animal/retaliate/cooperative/scp1507 //A customized AI with shorter view range
 	vision_range = 4
 	hostile = TRUE
-
-/obj/effect/mobspawner/scp1507
-	var/interval = 300 //interval to spawn mobs on (in seconds)
-	var/next_spawn_time = 0 //internal
-	var/variation = 0 //random variation added to the interval (in seconds)
-	var/spawn_count = 0 //how many mobs to spawn (0 is infinite)
-	var/radius = 1 //radius from around the selected origin to spawn mobs (0 is no radius)
-	var/list/mob/living/mobs = list(mob/living/simple_animal/hostile/retaliate/scp1507)
-	var/paused = FALSE
-	var/faction = scp1507 //faction of the mob, null = default faction
