@@ -57,7 +57,6 @@
 		/obj/item/handcuffs/cyborg,
 		/obj/item/melee/baton/robot,
 		/obj/item/gun/energy/gun/secure/mounted,
-		/obj/item/taperoll/police,
 		/obj/item/device/megaphone,
 		/obj/item/device/holowarrant,
 		/obj/item/crowbar,
@@ -65,10 +64,8 @@
 		/obj/item/gun/energy/laser/mounted
 		/obj/item/pen/robopen,
 		/obj/item/form_printer,
-		/obj/item/gripper/clerical,
 		/obj/item/hand_labeler,
 		/obj/item/stamp,
 		/obj/item/stamp/denied,
 		/obj/item/device/destTagger,
-		/obj/item/stack/package_wrap/cyborg
 	)
