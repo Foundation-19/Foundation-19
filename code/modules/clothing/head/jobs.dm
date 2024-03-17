@@ -170,24 +170,24 @@
 	desc = "A dull black cap. It has ISD in white printed on it on the front. Used by the Internal Security Department. It's padded with some extreme armor."
 	icon_state = "isd_cap"
 	armor = list(melee = 50, bullet = 60, laser = 50,energy = 25, bomb = 50, bio = 50, rad = 60)
+	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret/isd/fedora
 	name = "Internal Security fedora"
 	desc = "A fancy black fedora with a red strap along it. Used by the Internal Security Department. It's padded with some extreme armor."
 	icon_state = "isd_fedora"
-	armor = list(melee = 50, bullet = 60, laser = 50,energy = 25, bomb = 50, bio = 50, rad = 60)
 
 /obj/item/clothing/head/beret/mtf
 	name = "'Nine Tailed Fox' tactical beret"
 	desc = "A heavy padded beret used by MTF Epsilon-11, it's quite armored, more than traditional helmets."
 	icon_state = "beret_epsilon11"
 	armor = list(melee = 90, bullet = 90, laser = 50,energy = 25, bomb = 50, bio = 50, rad = 60)
+	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret/mtf/alpha
 	name = "'Red Right Hand' tactical beret"
 	desc = "A heavy padded beret used by MTF Alpha-1, it's quite armored, more than traditional helmets."
 	icon_state = "beret_alpha1"
-	armor = list(melee = 90, bullet = 90, laser = 90,energy = 50, bomb = 50, bio = 100, rad = 60)
 
 /obj/item/clothing/head/beret/engineering
 	name = "corporate engineering beret"

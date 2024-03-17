@@ -248,3 +248,14 @@
 	armor = list(
 		bio = ARMOR_BIO_MINOR
 		)
+
+/obj/item/clothing/under/rank/medical_skirt
+	desc = "a futuristic medical skirt made from nylon"
+	name = "Medical skirt"
+	icon_state = "med_skirt"
+	item_state = "w_suit"
+	worn_state = "med_skirt"
+	permeability_coefficient = 0.50
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
