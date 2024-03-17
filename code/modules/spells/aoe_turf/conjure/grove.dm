@@ -4,7 +4,6 @@
 
 	spell_flags = IGNOREDENSE | IGNORESPACE | NEEDSCLOTHES | Z2NOCAST | IGNOREPREV
 	charge_max = 1200
-	school = "transmutation"
 
 	range = 1
 	cooldown_min = 600
@@ -17,6 +16,9 @@
 	var/datum/seed/seed
 	var/seed_type = /datum/seed/merlin_tear
 	cast_sound = 'sounds/magic/repulse.ogg'
+
+	spell_cost = 2
+	mana_cost = 15
 
 /datum/spell/aoe_turf/conjure/grove/New()
 	..()
@@ -34,7 +36,6 @@
 /datum/spell/aoe_turf/conjure/grove/sanctuary
 	name = "Sanctuary"
 	desc = "Creates a sanctuary of nature around the wizard as well as creating a healing plant."
-	feedback = "SY"
 	invocation = "Bo K'Iitan!"
 	invocation_type = INVOKE_SHOUT
 	spell_flags = IGNOREDENSE | IGNORESPACE | NEEDSCLOTHES | Z2NOCAST | IGNOREPREV
@@ -47,7 +48,10 @@
 
 	hud_state = "wiz_grove"
 
-/datum/spell/aoe_turf/conjure/grove/sanctuary/empower_spell()
+	spell_cost = 4
+	mana_cost = 30
+
+/datum/spell/aoe_turf/conjure/grove/sanctuary/ImproveSpellPower()
 	if(!..())
 		return 0
 

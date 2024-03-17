@@ -17,7 +17,7 @@
 
 	poison_chance = 15
 	poison_per_bite = 3
-	poison_type = "stimm"
+	poison_type = /datum/reagent/medicine/stimulant/hyperzine
 
 	shock_resist = 0.75
 

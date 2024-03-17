@@ -986,3 +986,28 @@ default behaviour is:
 
 /mob/living/proc/GetBloodColor()
 	return COLOR_BLOOD_HUMAN
+
+// If mob has an aimed spell prepared to cast - deactivates it.
+// Additionally, puts random spells on cooldown.
+/mob/living/Dispell(dispell_strength = DISPELL_WEAK)
+	. = ..()
+	if(!.)
+		return
+	if(!mind || !LAZYLEN(mind.learned_spells))
+		return
+	var/play_sound = FALSE
+	// It could also be non-aimed, but we should add the deactivation part to other spells then
+	if(istype(ranged_ability, /datum/spell/aimed))
+		var/datum/spell/aimed/AS = ranged_ability
+		AS.remove_ranged_ability(SPAN_DANGER("[ranged_ability] has been dispelled!"))
+		AS.on_deactivation(src)
+		play_sound = TRUE
+	for(var/datum/spell/S in mind.learned_spells)
+		if(!prob(dispell_strength * 25))
+			continue
+		S.charge_counter = min(S.charge_counter, S.charge_max * (rand(2, 5) * 0.1))
+		S.process()
+		to_chat(src, SPAN_WARNING("[S] has been dispelled and put on cooldown!"))
+		play_sound = TRUE
+	if(play_sound)
+		playsound(get_turf(src), 'sounds/magic/blind.ogg', 50, TRUE)
