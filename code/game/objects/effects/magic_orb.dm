@@ -4,7 +4,7 @@
 	icon = 'icons/effects/magic_orb.dmi'
 	icon_state = "orb"
 	anchored = TRUE
-	particles = new /particles/magic_orb
+	//particles = new /particles/magic_orb
 	var/datum/sound_token/sound_token
 	var/sound_id
 	var/ambient_sound = 'sounds/magic/orb_ambience.ogg'
