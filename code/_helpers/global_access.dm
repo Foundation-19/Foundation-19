@@ -291,8 +291,6 @@
 			return global.appearance_manager;
 		if("area_repository")
 			return global.area_repository;
-		if("artefact_feedback")
-			return global.artefact_feedback;
 		if("ascii_esc")
 			return global.ascii_esc;
 		if("ascii_green")
@@ -715,8 +713,6 @@
 			return global.sounds_cache;
 		if("sparring_attack_cache")
 			return global.sparring_attack_cache;
-		if("spells")
-			return global.spells;
 		if("splatter_cache")
 			return global.splatter_cache;
 		if("sqladdress")
@@ -1138,8 +1134,6 @@
 			global.appearance_manager=newval;
 		if("area_repository")
 			global.area_repository=newval;
-		if("artefact_feedback")
-			global.artefact_feedback=newval;
 		if("ascii_esc")
 			global.ascii_esc=newval;
 		if("ascii_green")
@@ -1562,8 +1556,6 @@
 			global.sounds_cache=newval;
 		if("sparring_attack_cache")
 			global.sparring_attack_cache=newval;
-		if("spells")
-			global.spells=newval;
 		if("splatter_cache")
 			global.splatter_cache=newval;
 		if("sqladdress")
@@ -1839,7 +1831,6 @@
 	"antag_add_finished",
 	"appearance_manager",
 	"area_repository",
-	"artefact_feedback",
 	"ascii_esc",
 	"ascii_green",
 	"ascii_red",
@@ -2061,7 +2052,6 @@
 	"sortInstance",
 	"sounds_cache",
 	"sparring_attack_cache",
-	"spells",
 	"splatter_cache",
 	"sqladdress",
 	"sqldb",

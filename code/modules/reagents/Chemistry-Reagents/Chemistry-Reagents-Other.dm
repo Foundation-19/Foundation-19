@@ -818,3 +818,18 @@
 	// Remove all diseases
 	for(var/datum/disease/D in M.diseases)
 		qdel(D)
+
+/datum/reagent/concentrated_mana
+	name = "Concentrated Mana"
+	description = "A mysterious liquid used by magic-fluent people to restore their internal mana reserves. \
+		Can also be used in certain tools that utilize magic phenomenon."
+	taste_description = "cool air"
+	reagent_state = LIQUID
+	color = COLOR_MANA
+
+/datum/reagent/concentrated_mana/affect_blood(mob/living/carbon/human/H, alien, removed)
+	if(!ishuman(H))
+		return
+	if(!H.mind || !H.mind?.mana)
+		return
+	H.mind.mana.AddMana(2)
