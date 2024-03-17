@@ -12,7 +12,7 @@
 
 /decl/hierarchy/outfit/mtf/epsilon_11/agent
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Agent")
-	uniform = /obj/item/clothing/under/ert
+	uniform = /obj/item/clothing/under/ert/epsilon11
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/ballistic
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -30,7 +30,7 @@
 
 /decl/hierarchy/outfit/mtf/epsilon_11/breacher
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Breacher")
-	uniform = /obj/item/clothing/under/ert
+	uniform = /obj/item/clothing/under/ert/epsilon11
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/ballistic
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -48,9 +48,9 @@
 
 /decl/hierarchy/outfit/mtf/epsilon_11/leader
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Team Leader")
-	uniform = /obj/item/clothing/under/ert
+	uniform = /obj/item/clothing/under/ert/epsilon11
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
-	head = /obj/item/clothing/head/helmet/ballistic
+	head = /obj/item/clothing/head/beret/mtf
 	mask = /obj/item/clothing/mask/balaclava
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -66,7 +66,7 @@
 
 /decl/hierarchy/outfit/mtf/epsilon_11/medic
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Medic")
-	uniform = /obj/item/clothing/under/ert
+	uniform = /obj/item/clothing/under/ert/epsilon11
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/ballistic
 	mask = /obj/item/clothing/mask/balaclava
@@ -84,7 +84,7 @@
 
 /decl/hierarchy/outfit/mtf/eta_10 // See No Evil
 	name = OUTFIT_JOB_NAME("MTF Eta-10 Agent Alpha")
-	uniform = /obj/item/clothing/under/ert
+	uniform = /obj/item/clothing/under/ert/eta10
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
 	head = /obj/item/clothing/head/helmet/scp/eta
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -101,7 +101,7 @@
 
 /decl/hierarchy/outfit/mtf/beta_7 // Maz Hatters
 	name = OUTFIT_JOB_NAME("MTF Beta-7 Agent Alpha")
-	uniform = /obj/item/clothing/under/tactical
+	uniform = /obj/item/clothing/under/ert/beta7
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
 	head = /obj/item/clothing/head/helmet/scp/beta
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -119,7 +119,7 @@
 
 /decl/hierarchy/outfit/mtf/nu_7 // Hammer Down
 	name = OUTFIT_JOB_NAME("MTF Nu-7 Soldier")
-	uniform = /obj/item/clothing/under/tactical
+	uniform = /obj/item/clothing/under/ert/nu7
 	suit = /obj/item/clothing/suit/armor/mtfheavy
 	mask = /obj/item/clothing/mask/gas
 	head = /obj/item/clothing/head/helmet/mtfheavy
@@ -137,10 +137,10 @@
 
 /decl/hierarchy/outfit/mtf/alpha_1 // Red Right Hand
 	name = OUTFIT_JOB_NAME("MTF Alpha-1 Operative")
-	uniform = /obj/item/clothing/under/scp/alpha
+	uniform = /obj/item/clothing/under/ert/alpha1
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
 	mask = /obj/item/clothing/mask/gas/alpha
-	head = /obj/item/clothing/head/beret/scp/alpha
+	head = /obj/item/clothing/head/beret/mtf/alpha
 	gloves = /obj/item/clothing/gloves/tactical/alpha
 	glasses = /obj/item/clothing/glasses/night
 	shoes = /obj/item/clothing/shoes/combat

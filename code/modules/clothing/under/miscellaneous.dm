@@ -92,8 +92,8 @@
 	displays_id = 0
 
 /obj/item/clothing/under/ert
-	name = "ERT tactical uniform"
-	desc = "A short-sleeved black uniform, paired with grey digital-camo cargo pants. It looks very tactical."
+	name = "MTF tactical uniform"
+	desc = "A shortsleeved turtleneck dark blue in color, paired with grey digital-camo cargo pants. It looks very tactical."
 	icon_state = "ert_uniform"
 	item_state = "bl_suit"
 	worn_state = "ert_uniform"
@@ -101,6 +101,50 @@
 		melee = ARMOR_MELEE_SMALL
 		)
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/under/ert/beta7
+	name = "'Maz Hatters' tactical uniform"
+	desc = "A shortsleeved turtleneck yellow in color, paired with grey digital-camo cargo pants. It looks very tactical."
+	icon_state = "mtf_beta7"
+	worn_state = "mtf_beta7"
+
+/obj/item/clothing/under/ert/epsilon9
+	name = "'Fire Eaters' tactical uniform"
+	desc = "A shortsleeved turtleneck dark orange in color, paired with grey digital-camo cargo pants, they look like they're covered in soot. It looks very tactical."
+	icon_state = "mtf_epsilon9"
+	worn_state = "mtf_epsilon9"
+
+/obj/item/clothing/under/ert/eta10
+	name = "'See No Evil' tactical uniform"
+	desc = "A shortsleeved turtleneck cyan in color, paired with grey digital-camo cargo pants. It looks very tactical."
+	icon_state = "mtf_eta10"
+	worn_state = "mtf_eta10"
+
+/obj/item/clothing/under/ert/nu7
+	name = "'Hammer Down' tactical uniform"
+	desc = "A shortsleeved turtleneck green in color, paired with grey digital-camo cargo pants. It looks very tactical."
+	icon_state = "mtf_nu7"
+	worn_state = "mtf_nu7"
+
+/obj/item/clothing/under/ert/epsilon11
+	name = "'Nine Tailed Fox' tactical uniform"
+	desc = "A shortsleeved turtleneck orange in color, paired with grey digital-camo cargo pants. It looks very tactical."
+	icon_state = "mtf_epsilon11"
+	worn_state = "mtf_epsilon11"
+
+/obj/item/clothing/under/ert/omega1
+	name = "'Laws Left Hand' tactical uniform"
+	desc = "A shortsleeved turtleneck white in color, paired with grey digital-camo cargo pants, this one has a gold belt buckle. It looks very tactical."
+	icon_state = "mtf_omega1"
+	worn_state = "mtf_omega1"
+
+/obj/item/clothing/under/ert/alpha1
+	name = "'Red Right Hand' tactical uniform"
+	desc = "A shortsleeved turtleneck red in color, paired with grey digital-camo cargo pants, this one has a gold belt buckle. It looks very tactical."
+	icon_state = "mtf_alpha1"
+	worn_state = "mtf_alpha1"
+
+
 
 /obj/item/clothing/under/space
 	name = "\improper NASA jumpsuit"
