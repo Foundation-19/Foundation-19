@@ -564,7 +564,7 @@
 	},
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "bD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1022,7 +1022,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "cB" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/button/blast_door{
@@ -5224,7 +5224,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "mm" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -8664,7 +8664,7 @@
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "uj" = (
 /obj/machinery/smartfridge,
 /turf/simulated/floor/tiled/monotile/white,
@@ -10283,7 +10283,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "xO" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Reading Room 1"
@@ -13098,12 +13098,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"Fj" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
 "Fk" = (
 /obj/item/device/megaphone,
 /obj/structure/table/reinforced,
@@ -13203,7 +13197,7 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Fy" = (
 /obj/item/stack/tile/floor,
 /turf/simulated/floor/plating,
@@ -13372,7 +13366,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "FU" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -13514,9 +13508,6 @@
 "Gr" = (
 /turf/unsimulated/mineral,
 /area/site53/llcz/mine/explored)
-"Gs" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
 "Gt" = (
 /mob/living/simple_animal/yithian,
 /turf/simulated/floor/exoplanet/grass,
@@ -13753,7 +13744,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Hc" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -15513,10 +15504,6 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"Lh" = (
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
 "Li" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
@@ -15776,7 +15763,7 @@
 	},
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "LN" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/door/window/brigdoor/eastleft{
@@ -16055,7 +16042,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Mz" = (
 /obj/machinery/light/spot{
 	dir = 4
@@ -16680,7 +16667,7 @@
 	},
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Oc" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled,
@@ -16697,7 +16684,7 @@
 	},
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Of" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost/chem)
@@ -16753,6 +16740,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
+"Oo" = (
+/obj/machinery/door/airlock/security{
+	name = "D-Class Assignments";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled,
+/area/site53/llcz/dclass/luxuryhall)
 "Op" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/regular/open{
@@ -16858,7 +16852,7 @@
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "OE" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17083,7 +17077,7 @@
 "Pi" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Pk" = (
 /obj/structure/table/rack,
 /obj/item/device/flashlight,
@@ -17537,10 +17531,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"Qm" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/assignmentbubble)
 "Qn" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -18118,7 +18108,7 @@
 	dir = 8
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "RH" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost)
@@ -18166,7 +18156,7 @@
 	},
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "RN" = (
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
@@ -18239,7 +18229,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "RW" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/exoplanet/desert,
@@ -18523,7 +18513,7 @@
 "SE" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "SF" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters/open{
@@ -18638,7 +18628,7 @@
 "ST" = (
 /obj/structure/fitness/punchingbag,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "SU" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/flasher{
@@ -19272,7 +19262,7 @@
 "UA" = (
 /obj/structure/fitness/weightlifter,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "UB" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -19324,7 +19314,7 @@
 /obj/structure/closet/boxinggloves,
 /obj/item/clothing/gloves/boxing,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "UL" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Local Virology";
@@ -19378,10 +19368,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
-"UT" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/assignmentbubble)
 "UU" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19411,7 +19397,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "UX" = (
 /obj/structure/morgue{
 	dir = 2
@@ -19608,12 +19594,6 @@
 /obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
-"Vv" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
 "Vw" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -19621,7 +19601,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/window/holowindoor,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Vy" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -20356,7 +20336,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Xp" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Janitoral Equipment";
@@ -20849,7 +20829,7 @@
 "Yz" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "YA" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -21033,7 +21013,7 @@
 	name = "D-Class Yard"
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "YU" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters/open{
@@ -21077,7 +21057,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "Za" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -21375,7 +21355,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/luxuryhall)
 "ZP" = (
 /obj/machinery/light{
 	dir = 1
@@ -31653,18 +31633,18 @@ qu
 qu
 qu
 qu
-UT
-UT
-UT
-UT
+yo
+yo
+yo
+yo
 YT
-UT
-UT
-UT
-UT
-UT
-UT
-UT
+yo
+yo
+yo
+yo
+yo
+yo
+yo
 ua
 Fh
 ua
@@ -31910,18 +31890,18 @@ qu
 wT
 vW
 qu
-UT
+yo
 UK
-Fj
-Gs
-Gs
-Gs
+xS
+xT
+xT
+xT
 ST
 Yz
 UA
-Fj
+xS
 Hb
-UT
+yo
 ua
 ua
 ua
@@ -32167,18 +32147,18 @@ EH
 Hz
 wQ
 qu
-UT
+yo
 UK
-Gs
-Gs
-Gs
-Gs
-Gs
-Gs
-Gs
-Gs
+xT
+xT
+xT
+xT
+xT
+xT
+xT
+xT
 Pi
-UT
+yo
 ua
 ua
 ua
@@ -32424,18 +32404,18 @@ qu
 qu
 qu
 qu
-UT
-UT
+yo
+yo
 UW
-Gs
+xT
 LM
 RG
 RG
 Oe
 ui
-Gs
+xT
 ZO
-UT
+yo
 ua
 ua
 ua
@@ -32682,17 +32662,17 @@ gq
 gq
 gq
 gq
-UT
+yo
 YZ
-Gs
+xT
 RM
-Lh
-Lh
+ya
+ya
 ml
 Vx
-Gs
-Gs
-UT
+xT
+xT
+yo
 ua
 ua
 ua
@@ -32939,17 +32919,17 @@ gq
 gq
 gq
 gq
-UT
+yo
 UW
-Gs
+xT
 RM
-Lh
-Lh
+ya
+ya
 ml
 cA
-Gs
+xT
 My
-UT
+yo
 ua
 ua
 Fh
@@ -33196,17 +33176,17 @@ gq
 gq
 gq
 gq
-UT
-Gs
-Gs
+yo
+xT
+xT
 RV
-Lh
-Lh
+ya
+ya
 ml
 cA
-Gs
-Gs
-UT
+xT
+xT
+yo
 ua
 ua
 ua
@@ -33453,17 +33433,17 @@ gM
 gM
 gM
 gM
-UT
-UT
-Gs
+yo
+yo
+xT
 Ob
 Fx
 Fx
 bC
 OD
-Gs
+xT
 Pi
-UT
+yo
 ua
 ua
 Fh
@@ -33711,16 +33691,16 @@ xn
 Yq
 xx
 xq
-UT
+yo
 Xo
-Gs
-Gs
-Gs
-Gs
-Gs
-Gs
+xT
+xT
+xT
+xT
+xT
+xT
 ZO
-UT
+yo
 ua
 ua
 ua
@@ -33968,16 +33948,16 @@ lS
 Lv
 EZ
 lS
-lk
-Qm
+Oo
+Kt
 xN
 SE
 Pi
 FS
 UA
-Vv
-Gs
-UT
+Kx
+xT
+yo
 ua
 Fh
 ua
@@ -34225,16 +34205,16 @@ gM
 gM
 gM
 gM
-UT
-UT
-UT
-UT
-UT
-UT
-UT
-UT
-UT
-UT
+yo
+yo
+yo
+yo
+yo
+yo
+yo
+yo
+yo
+yo
 ua
 ua
 ua
