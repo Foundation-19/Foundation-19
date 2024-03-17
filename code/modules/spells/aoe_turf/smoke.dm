@@ -1,10 +1,8 @@
 /datum/spell/aoe_turf/smoke
 	name = "Smoke"
-	desc = "This spell spawns a cloud of choking smoke at your location and does not require wizard garb."
-	feedback = "SM"
-	school = "transmutation"
+	desc = "This spell spawns a cloud of choking smoke at your location."
 	charge_max = 120
-	spell_flags = 0
+	spell_flags = NO_SOMATIC
 	invocation = "none"
 	invocation_type = INVOKE_NONE
 	range = 1
@@ -18,12 +16,12 @@
 	hud_state = "wiz_smoke"
 	cast_sound = 'sounds/magic/smoke.ogg'
 
-/datum/spell/aoe_turf/smoke/empower_spell()
+	spell_cost = 1
+	mana_cost = 5
+
+/datum/spell/aoe_turf/smoke/ImproveSpellPower()
 	if(!..())
 		return 0
 	smoke_amt += 2
 
 	return "[src] will now create more smoke."
-
-/datum/spell/aoe_turf/smoke/tower
-	charge_max = 2

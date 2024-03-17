@@ -1968,6 +1968,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					to_chat(src, SPAN_USERDANGER(pick("POWER! UNLIMITED POWER!!!", "I AM UNSTOPPABLE!", "HAHAHAHAHA!!!", "FEAR ME MORTALS!")))
 					addtimer(CALLBACK(src, PROC_REF(Callback914PotentialPsiDeath), (total_rank > 12 ? (80 + total_rank) : 50)), rand(160 SECONDS, 300 SECONDS))
 			return src
+	return src
 
 /mob/living/carbon/human/proc/Callback914PotentialPsiDeath(safe_chance)
 	if(prob(safe_chance))
