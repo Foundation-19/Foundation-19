@@ -157,34 +157,25 @@
 	name = OUTFIT_JOB_NAME("Internal Security Department Field Uniform")
 	uniform = /obj/item/clothing/under/rank/security/isd
 	suit = null
-	mask = /obj/item/clothing/mask/gas/isd
+	mask = null
 	head = /obj/item/clothing/head/beret/isd
-	gloves = /obj/item/clothing/gloves/tactical
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/dutyboots
 	suit_store = null
-	r_hand = /obj/random/clipboard
-	l_hand = null
-	l_pocket = /obj/item/reagent_containers/spray/pepper
-	r_pocket = /obj/item/handcuffs
-	id_type = /obj/item/card/id/mtf
+	r_hand = null
+	l_hand = /obj/random/clipboard
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/ammo_magazine/machine_pistol
+	id_type = /obj/item/card/id/mtf/isd
 	belt = /obj/item/gun/projectile/automatic/machine_pistol
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/crowbar/red = 1,/obj/item/stamp/scp/o5rep = 1,/obj/item/melee/baton/loaded = 1)
+	back = /obj/item/storage/backpack/satchel/leather/black
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/crowbar/emergency_forcing_tool = 1,/obj/item/stamp/scp/o5rep = 1,/obj/item/melee/baton/loaded = 1,/obj/item/clothing/mask/gas/isd = 1)
 
 /decl/hierarchy/outfit/mtf/isd/formal
 	name = OUTFIT_JOB_NAME("Internal Security Department Formal Uniform")
 	uniform = /obj/item/clothing/under/rank/security/isd/suit
 	suit = /obj/item/clothing/suit/armor/vest/scp/isd
-	mask = /obj/item/clothing/mask/gas/isd
 	head = /obj/item/clothing/head/beret/isd/fedora
-	gloves = /obj/item/clothing/gloves/tactical
-	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/dutyboots
-	suit_store = null
-	r_hand = /obj/random/clipboard
-	l_hand = null
 	l_pocket = /obj/item/reagent_containers/spray/pepper
-	r_pocket = /obj/item/handcuffs
-	id_type = /obj/item/card/id/mtf
 	belt = /obj/item/gun/energy/pulse_rifle/pistol
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/crowbar/red = 1,/obj/item/stamp/scp/o5rep = 1,/obj/item/melee/baton/loaded = 1)
