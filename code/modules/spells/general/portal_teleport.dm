@@ -1,8 +1,6 @@
 /datum/spell/portal_teleport
 	name = "Create Portal"
 	desc = "This spell creates a long lasting portal to an area of your selection."
-	feedback = "TP"
-	school = "conjuration"
 	charge_max = 600
 	spell_flags = NEEDSCLOTHES
 	invocation = "Scyar Peranda!"
@@ -18,6 +16,9 @@
 	cast_sound = 'sounds/effects/teleport.ogg'
 
 	hud_state = "wiz_tele"
+
+	spell_cost = 4
+	mana_cost = 25
 
 /datum/spell/portal_teleport/before_cast()
 	return

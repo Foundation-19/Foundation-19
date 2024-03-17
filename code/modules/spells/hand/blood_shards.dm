@@ -13,12 +13,18 @@
 	hud_state = "wiz_bshard"
 	cast_sound = 'sounds/magic/demon_attack1.ogg'
 
-/datum/spell/hand/charges/blood_shard/cast_hand(atom/A,mob/user)
+	spell_cost = 2
+	mana_cost = 10
+
+/datum/spell/hand/charges/blood_shard/cast_hand(atom/A, mob/user)
+	. = ..()
+	if(!.)
+		return
+
 	var/obj/item/projectile/blood_shard/B = new(get_turf(user))
 	B.firer = user
 	B.launch(A, BP_CHEST)
-	user.visible_message(SPAN_DANGER("\The [user] shoots out a deep red shard from their hand!"))
-	return ..()
+	user.visible_message("<span class='danger'>\The [user] shoots out a deep red shard from their hand!</span>")
 
 /obj/item/projectile/blood_shard
 	name = "bloodshard"
@@ -32,7 +38,7 @@
 		if(istype(target, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = target
 			H.vessel.remove_reagent(/datum/reagent/blood, 30)
-			H.visible_message(SPAN_DANGER("Tiny red shards burst from \the [H]'s skin!"))
+			H.visible_message("<span class='danger'>Tiny red shards burst from \the [H]'s skin!</span>")
 			fragmentate(get_turf(src), 30, 5, list(/obj/item/projectile/bullet/pellet/blood))
 
 /obj/item/projectile/bullet/pellet/blood

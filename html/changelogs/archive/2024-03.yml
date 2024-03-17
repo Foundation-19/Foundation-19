@@ -22,3 +22,26 @@
 2024-03-10:
   Tsurupeta:
   - code_imp: Adds support for byond version 515
+2024-03-14:
+  EgorDinamit:
+  - tweak: Putting SCP 2427-3 through SCP 914 on "Fine" or "Very Fine" will, obviously,
+      buff it.
+  - tweak: Putting SCP 012 through SCP 914 on "Very Fine" will net interesting results.
+  - tweak: Putting ID cards through SCP 914 will have unique results now.
+  - tweak: Putting cash through SCP 914 will have unique results now.
+  - bugfix: Fixed SCP 914 interaction with infestation mobs on "Fine" setting.
+2024-03-15:
+  EgorDinamit, CrimsonShrike:
+  - rscadd: Prebuilt flamethrowers have new icon.
+  - rscadd: Flamethrower sounds.
+  - tweak: Flamethrowers now use chems as fire source.
+  - rscadd: Turf fires -> Very hot atmos fires, flamethrowers and fuel decals will
+      generate these fires.
+  - tweak: Simple mobs now can take fire damage from burning.
+2024-03-16:
+  EgorDinamit:
+  - tweak: Adds rocket launcher.
+  - tweak: Adds combat & heavy revolvers.
+  - soundadd: Revolver gunshot sound is updated.
+  - bugfix: You will no longer be sent to nullspace if an object/mob you are orbiting
+      gets deleted.

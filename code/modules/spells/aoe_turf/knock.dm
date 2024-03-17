@@ -1,8 +1,6 @@
 /datum/spell/aoe_turf/knock
 	name = "Knock"
 	desc = "This spell opens nearby doors and does not require wizard garb."
-	feedback = "KN"
-	school = "transmutation"
 	charge_max = 100
 	spell_flags = 0
 	invocation = "Aulie Oxin Fiera."
@@ -13,6 +11,9 @@
 
 	hud_state = "wiz_knock"
 	cast_sound = 'sounds/magic/knock.ogg'
+
+	spell_cost = 1
+	mana_cost = 5
 
 /datum/spell/aoe_turf/knock/cast(list/targets)
 	for(var/turf/T in targets)
@@ -25,7 +26,7 @@
 	return
 
 
-/datum/spell/aoe_turf/knock/empower_spell()
+/datum/spell/aoe_turf/knock/ImproveSpellPower()
 	if(!..())
 		return 0
 	range *= 2
@@ -35,6 +36,3 @@
 /datum/spell/aoe_turf/knock/slow
 	name = "Slow Knock"
 	charge_max = 200
-
-/datum/spell/aoe_turf/knock/tower
-	charge_max = 2
