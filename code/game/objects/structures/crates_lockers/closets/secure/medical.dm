@@ -65,6 +65,7 @@
 	return list(
 		new/datum/atom_creator/weighted(list(/obj/item/storage/backpack/medic, /obj/item/storage/backpack/satchel/med)),
 		new/datum/atom_creator/simple(/obj/item/storage/backpack/dufflebag/med, 50),
+		/obj/item/clothing/under/rank/medical_skirt,
 		/obj/item/clothing/under/rank/nursesuit,
 		/obj/item/clothing/head/nursehat,
 		/obj/item/clothing/under/rank/medical,
