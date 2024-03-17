@@ -89,6 +89,9 @@
 
 	var/attack_ignore_harm_check = FALSE
 
+	// Certain items may have mana stored in them, i.e. wands and mana crystals
+	var/datum/mana/mana = null
+
 /obj/item/New()
 	..()
 	if(randpixel && (!pixel_x && !pixel_y) && isturf(loc)) //hopefully this will prevent us from messing with mapper-set pixel_x/y

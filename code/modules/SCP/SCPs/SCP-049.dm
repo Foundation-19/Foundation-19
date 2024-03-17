@@ -5,7 +5,7 @@
 
 	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED
 
-	handcuffs_breakout_time = 20 SECONDS
+	handcuffs_breakout_modifier = 0.2
 
 	//Config
 
