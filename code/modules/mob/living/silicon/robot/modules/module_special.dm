@@ -61,7 +61,7 @@
 		/obj/item/device/holowarrant,
 		/obj/item/crowbar,
 		/obj/item/device/hailer
-		/obj/item/gun/energy/laser/mounted
+		/obj/item/gun/energy/laser/mounted,
 		/obj/item/pen/robopen,
 		/obj/item/form_printer,
 		/obj/item/hand_labeler,
