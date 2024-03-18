@@ -8447,6 +8447,19 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"yZ" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#561919";
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 26
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "ze" = (
 /obj/structure/bed/chair/office/comfy/red{
 	dir = 8
@@ -12745,6 +12758,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
 	dir = 4
+	},
+/mob/living/silicon/robot/combat/isd{
+	icon = 'icons/mob/robots_custom.dmi'
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -18538,7 +18554,7 @@ ab
 ab
 ab
 tq
-Ab
+yZ
 gp
 qZ
 xU
@@ -18740,7 +18756,7 @@ ab
 ab
 ab
 tq
-Ab
+yZ
 gp
 CB
 tq

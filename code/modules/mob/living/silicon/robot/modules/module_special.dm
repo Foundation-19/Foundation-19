@@ -3,7 +3,7 @@
 	icon = 'icons/mob/robots_custom.dmi'
 	icon_state = "isdrobot"
 	module_category = ROBOT_MODULE_TYPE_GROUNDED
-	speed = -2 // nyoom
+	speed = -1 // nyoom
 
 /obj/item/robot_module/special
 	channels = list(
@@ -36,9 +36,9 @@
 	if(B?.bcell)
 		B.bcell.give(amount)
 
-/obj/item/robot_module/special/general
+/obj/item/robot_module/tall/special/general
 	name = "internal security borg module"
-	display_name = "Internal Security"
+	display_name = "DATA EXPUNGED"
 	crisis_locked = TRUE
 	sprites = list(
 		"Basic" = "isdrobot"
@@ -56,6 +56,8 @@
 		/obj/item/device/hailer,
 		/obj/item/hand_labeler,
 		/obj/item/stamp,
+		/obj/item/stamp/denied,
+		/obj/item/material/sword/sabre
 		/obj/item/stamp/denied,
 		/obj/item/weldingtool/electric,
 		/obj/item/reagent_containers/borghypo/crisis,
