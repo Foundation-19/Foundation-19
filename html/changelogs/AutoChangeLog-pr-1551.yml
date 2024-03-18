@@ -1,0 +1,6 @@
+author: quadbium
+delete-after: true
+changes:
+  - bugfix: fixed "animosity V2" title screen music label.
+  - bugfix: fixed "animosity V2" title screen music link.
+  - rscadd: adds "animosity" title screen music.
