@@ -2508,10 +2508,7 @@
 	dir = 1;
 	color = "#635636"
 	},
-/obj/machinery/computer{
-	name = "Dispatch Center Inventory";
-	desc = "A computer used to view the inventory stash of the dispatch center."
-	},
+/obj/machinery/computer/telecomms/monitor,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -12820,10 +12817,8 @@
 	color = "#635636";
 	dir = 8
 	},
-/obj/machinery/computer{
-	dir = 4;
-	name = "Logistics Order Manifest";
-	desc = "A computer used to view the orders the facilities have made."
+/obj/machinery/computer/shuttle_control/mining{
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
