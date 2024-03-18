@@ -52,7 +52,7 @@
 		/obj/item/gun/energy/gun/secure/mounted,
 		/obj/item/device/megaphone,
 		/obj/item/crowbar,
-		/obj/item/device/hailer
+		/obj/item/device/hailer,
 		/obj/item/hand_labeler,
 		/obj/item/stamp,
 		/obj/item/stamp/denied
