@@ -83,7 +83,7 @@
 	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/clothing/mask/gas = 1,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/pill_bottle/zoom = 1)
 
 /decl/hierarchy/outfit/mtf/eta_10 // See No Evil
-	name = OUTFIT_JOB_NAME("MTF Eta-10 Agent Alpha")
+	name = OUTFIT_JOB_NAME("MTF Eta-10 Operative")
 	uniform = /obj/item/clothing/under/ert/eta10
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
 	head = /obj/item/clothing/head/helmet/scp/eta
@@ -100,7 +100,7 @@
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/mtf/beta_7 // Maz Hatters
-	name = OUTFIT_JOB_NAME("MTF Beta-7 Agent Alpha")
+	name = OUTFIT_JOB_NAME("MTF Beta-7 Operative")
 	uniform = /obj/item/clothing/under/ert/beta7
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
 	head = /obj/item/clothing/head/helmet/scp/beta
@@ -118,7 +118,7 @@
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/mtf/nu_7 // Hammer Down
-	name = OUTFIT_JOB_NAME("MTF Nu-7 Soldier")
+	name = OUTFIT_JOB_NAME("MTF Nu-7 Operative")
 	uniform = /obj/item/clothing/under/ert/nu7
 	suit = /obj/item/clothing/suit/armor/mtfheavy
 	mask = /obj/item/clothing/mask/gas
@@ -152,6 +152,24 @@
 	id_type = /obj/item/card/id/mtf/alpha
 	belt = /obj/item/storage/belt/holster/security/tactical
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/t12 = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 5, /obj/item/crowbar/red = 1) //Breach and clear.
+
+/decl/hierarchy/outfit/mtf/omega1 // Laws Left Hand
+	name = OUTFIT_JOB_NAME("MTF Omega-1 Enforcement")
+	uniform = /obj/item/clothing/under/ert/omega1
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
+	mask = /obj/item/clothing/mask/gas/syndicate
+	head = /obj/item/clothing/head/beret/mtf/omega
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	shoes = /obj/item/clothing/shoes/combat
+	suit_store = null
+	r_hand = /obj/item/gun/projectile/automatic/scp/vector
+	l_hand = null
+	l_pocket = /obj/item/grenade/frag
+	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
+	id_type = /obj/item/card/id/mtf/omega
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/vectormag = 5, /obj/item/storage/box/handcuffs = 1, /obj/item/melee/baton/loaded = 1, /obj/item/crowbar/red = 1) //Breach and clear.
 
 /decl/hierarchy/outfit/mtf/isd
 	name = OUTFIT_JOB_NAME("Internal Security Department Field Uniform")

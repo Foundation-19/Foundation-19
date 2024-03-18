@@ -6,7 +6,7 @@
 
 /obj/item/robot_module/special
 	channels = list(
-		"Security" = TRUE
+		"Security" = TRUE,
 		"Service" = TRUE,
 		"Supply" = TRUE
 	)

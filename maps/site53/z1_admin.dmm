@@ -888,10 +888,7 @@
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 8
 	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
+/turf/simulated/floor/carpet/red,
 /area/centcom)
 "dS" = (
 /obj/machinery/door/airlock/vault{
@@ -3380,6 +3377,9 @@
 "mv" = (
 /obj/structure/table/standard,
 /obj/item/device/megaphone,
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#272B5B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -4177,6 +4177,9 @@
 /obj/structure/bed/chair/padded/blue{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#272B5B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -4185,6 +4188,9 @@
 "ok" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#272B5B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -5638,6 +5644,9 @@
 /obj/item/crowbar/prybar,
 /obj/item/crowbar/prybar,
 /obj/item/crowbar/prybar,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#E5511B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -6181,6 +6190,9 @@
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#272B5B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -6427,6 +6439,9 @@
 /obj/item/storage/box/smokes,
 /obj/item/storage/box/smokes,
 /obj/item/storage/box/smokes,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#E5511B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -6455,6 +6470,9 @@
 /obj/item/implanter,
 /obj/item/implanter,
 /obj/item/implanter,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#E5511B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -6477,10 +6495,7 @@
 /area/centcom)
 "tu" = (
 /obj/structure/bed/chair/padded,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
+/turf/simulated/floor/carpet/red,
 /area/centcom)
 "tw" = (
 /obj/machinery/door/airlock/glass/command{
@@ -6509,6 +6524,9 @@
 /obj/item/device/flashlight/upgraded,
 /obj/item/device/flashlight/upgraded,
 /obj/item/device/flashlight/upgraded,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#E5511B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -8085,6 +8103,9 @@
 /obj/item/grenade/frag,
 /obj/item/grenade/frag,
 /obj/item/grenade/frag,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#E5511B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -8852,6 +8873,17 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Ck" = (
+/obj/structure/table/standard,
+/obj/random/mre/dessert,
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#272B5B"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "Cp" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/white/border{
@@ -9564,6 +9596,15 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"EH" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#272B5B"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "EI" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/secure/weapon,
@@ -10173,6 +10214,13 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"Hm" = (
+/obj/effect/floor_decal/corner/white/diagonal,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "Hn" = (
 /obj/machinery/door/airlock,
 /turf/simulated/floor/wood,
@@ -10409,10 +10457,7 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
+/turf/simulated/floor/carpet/red,
 /area/centcom)
 "Ie" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
@@ -11612,6 +11657,9 @@
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain,
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain,
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#E5511B"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -12714,10 +12762,7 @@
 "PI" = (
 /obj/structure/table/standard,
 /obj/item/stamp/chameleon,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
+/turf/simulated/floor/carpet/red,
 /area/centcom)
 "PJ" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -13547,10 +13592,7 @@
 	name = "Internal Security Holding Cells Lockdown Control";
 	req_access = list("ACCESS_MTF")
 	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
+/turf/simulated/floor/carpet/red,
 /area/centcom)
 "Sh" = (
 /obj/machinery/computer/shuttle_control{
@@ -13622,10 +13664,7 @@
 "St" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
+/turf/simulated/floor/carpet/red,
 /area/centcom)
 "Sw" = (
 /obj/structure/table/rack,
@@ -13771,7 +13810,7 @@
 /area/centcom)
 "SV" = (
 /obj/machinery/door/airlock/vault{
-	name = "Storage";
+	name = "Auxiliary Armory";
 	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
@@ -14536,6 +14575,16 @@
 	},
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#2B0F42"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
+"Ww" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#272B5B"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -15575,23 +15624,23 @@ IT
 qc
 Lh
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
 tq
 np
 LZ
@@ -15777,23 +15826,23 @@ SG
 nt
 yG
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+XD
 tq
 PJ
 sJ
@@ -15979,23 +16028,23 @@ Oh
 lW
 sD
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+XD
 tq
 OJ
 oU
@@ -16181,23 +16230,23 @@ mN
 QI
 vm
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+XD
 tq
 cO
 RW
@@ -16383,23 +16432,23 @@ tq
 pf
 tq
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+XD
 tq
 PJ
 uK
@@ -16585,23 +16634,23 @@ ev
 VG
 iv
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+XD
 tq
 PJ
 sJ
@@ -16787,23 +16836,23 @@ AZ
 gp
 eE
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+XD
 tq
 OJ
 oU
@@ -16989,23 +17038,23 @@ QO
 gp
 eE
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+Hm
+XD
 tq
 cO
 RW
@@ -17191,23 +17240,23 @@ xd
 gp
 eE
 tq
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
-Us
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
 tq
 cR
 Ks
@@ -33150,9 +33199,9 @@ tq
 En
 mv
 ok
-mZ
-of
-mZ
+Ww
+Ck
+Ww
 vX
 tq
 ab
@@ -33350,11 +33399,11 @@ ab
 ab
 tq
 En
-mZ
-gp
+Ww
+EH
 sV
-gp
-mZ
+EH
+Ww
 vX
 tq
 ab
