@@ -1,9 +1,0 @@
-author: ChromeFoxxity
-delete-after: true
-changes:
-  - rscadd: Added new types of clothing for fluff use, as well as a O5 Council coat,
-      and a Site Director coat.
-  - bugfix: Fixed several clothing issues.
-  - imageadd: Added a few useful things.
-  - imagedel: Deleted a few useless things.
-  - code_imp: Added new clothing code.

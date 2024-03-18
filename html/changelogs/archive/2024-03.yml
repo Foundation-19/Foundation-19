@@ -45,3 +45,32 @@
   - soundadd: Revolver gunshot sound is updated.
   - bugfix: You will no longer be sent to nullspace if an object/mob you are orbiting
       gets deleted.
+2024-03-18:
+  ChromeFoxxity:
+  - rscadd: Added new types of clothing for fluff use, as well as a O5 Council coat,
+      and a Site Director coat.
+  - bugfix: Fixed several clothing issues.
+  - imageadd: Added a few useful things.
+  - imagedel: Deleted a few useless things.
+  - code_imp: Added new clothing code.
+  EgorDinamit:
+  - rscadd: Every human now has spell points and mana level. By default everyone has
+      2 points and 10 mana.
+  - rscadd: Spell books were reworked entirely.
+  - rscadd: Multiple new spells were added (around 20), with a lot of old ones(around
+      30) reworked and updated.
+  KingSuperBOB:
+  - rscadd: Added armor piercing to flamingo natural weapon
+  - tweak: Doubled flamingo vision range
+  Saicchi:
+  - rscadd: Add French to robots
+  Yawet330:
+  - bugfix: Fixes a missing line of code
+  - rscdel: Removes old and OP reagents and exchanges them with ""new and interactive""
+      spider venoms.
+  - admin: Adds better admin-abuse options.
+  - rscadd: Spoders
+  quadbium:
+  - bugfix: fixed "animosity V2" title screen music label.
+  - bugfix: fixed "animosity V2" title screen music link.
+  - rscadd: adds "animosity" title screen music.
