@@ -12657,9 +12657,8 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
 	},
-/obj/item/integrated_circuit/output/video_camera,
 /obj/machinery/camera/network/reswing{
-	c_tag = "Robotics Lab"
+	c_tag = "Robotics Lab #1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -21913,7 +21912,7 @@
 /area/site53/uhcz/hallways)
 "cWi" = (
 /obj/machinery/door/airlock/glass/research{
-	name = "General Purpose Laboratory";
+	name = "Psionics Lab";
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/structure/cable/green{
@@ -23621,11 +23620,11 @@
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
 "eNJ" = (
-/obj/structure/bed/chair/office/dark{
+/obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logistics)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/researchwing)
 "eOZ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -31806,8 +31805,8 @@
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
 "mPb" = (
-/obj/effect/floor_decal/corner/purple/bordercorner{
-	dir = 4
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
@@ -33263,10 +33262,10 @@
 /obj/structure/sign/warning/secure_area{
 	pixel_y = 32
 	},
-/obj/machinery/camera/motion,
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1
 	},
+/obj/machinery/camera/network/reswing,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchwing)
 "omi" = (
@@ -39472,12 +39471,6 @@
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
-"uPL" = (
-/obj/effect/floor_decal/corner/purple/bordercorner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "uQr" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "SCP-529 Containment Chamber";
@@ -71081,7 +71074,7 @@ azA
 azA
 azA
 aac
-uPL
+mPb
 aej
 agj
 aag
@@ -71338,7 +71331,7 @@ aac
 aac
 aac
 aac
-aaf
+mPb
 aen
 abE
 aaf
@@ -71595,7 +71588,7 @@ tKa
 tKa
 jrC
 aac
-aaf
+mPb
 aen
 abE
 aaf
@@ -71866,7 +71859,7 @@ aQG
 hbt
 aOC
 ykA
-eNJ
+bdC
 bdC
 bdC
 nDl
@@ -73903,10 +73896,10 @@ aMo
 iXE
 aMo
 aMo
+aMo
+aMo
+aMo
 adE
-aMo
-aMo
-aMo
 aMo
 aio
 hCY
@@ -73922,7 +73915,7 @@ aOt
 aae
 aQh
 abB
-aac
+aeA
 azA
 azA
 azA
@@ -74179,7 +74172,7 @@ aaf
 aae
 aQh
 abB
-aac
+aeA
 azA
 azA
 azA
@@ -80035,7 +80028,7 @@ azA
 azA
 azA
 bdN
-aPL
+eNJ
 aPL
 bdP
 bUV

@@ -1,0 +1,5 @@
+author: KingSuperBOB
+delete-after: true
+changes:
+  - rscadd: Added armor piercing to flamingo natural weapon
+  - tweak: Doubled flamingo vision range

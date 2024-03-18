@@ -34,7 +34,7 @@
 
 /obj/item/clothing/shoes/combat //Basically SWAT shoes combined with galoshes.
 	name = "combat boots"
-	desc = "When you REALLY want to turn up the heat."
+	desc = "When you REALLY want to turn up the heat, sometimes seen worn by Representatives."
 	icon_state = "jungle"
 	force = 5
 	armor = list(
