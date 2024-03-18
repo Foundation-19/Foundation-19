@@ -49,7 +49,7 @@
 	display_name = "Internal Security"
 	crisis_locked = TRUE
 	sprites = list(
-		"Basic" = "isdrobot",
+		"Basic" = "isdrobot"
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -61,7 +61,6 @@
 		/obj/item/device/holowarrant,
 		/obj/item/crowbar,
 		/obj/item/device/hailer
-		/obj/item/gun/energy/laser/mounted,
 		/obj/item/pen/robopen,
 		/obj/item/form_printer,
 		/obj/item/hand_labeler,
