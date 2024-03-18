@@ -53,18 +53,16 @@
 	)
 	equipment = list(
 		/obj/item/device/flash,
+		/obj/item/pen/robopen,
+		/obj/item/form_printer,
 		/obj/item/borg/sight/hud/sec,
 		/obj/item/handcuffs/cyborg,
 		/obj/item/melee/baton/robot,
 		/obj/item/gun/energy/gun/secure/mounted,
 		/obj/item/device/megaphone,
-		/obj/item/device/holowarrant,
 		/obj/item/crowbar,
 		/obj/item/device/hailer
-		/obj/item/pen/robopen,
-		/obj/item/form_printer,
 		/obj/item/hand_labeler,
 		/obj/item/stamp,
-		/obj/item/stamp/denied,
-		/obj/item/device/destTagger,
+		/obj/item/stamp/denied
 	)
