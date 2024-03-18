@@ -21,15 +21,6 @@
 	supported_upgrades = list(
 		/obj/item/borg/upgrade/weaponcooler
 	)
-	skills = list(
-		SKILL_COMBAT      = SKILL_EXPERIENCED,
-		SKILL_WEAPONS     = SKILL_EXPERIENCED,
-		SKILL_FORENSICS   = SKILL_EXPERIENCED,
-		SKILL_COMPUTER            = SKILL_EXPERIENCED,
-		SKILL_FINANCE             = SKILL_MASTER,
-		SKILL_SCIENCE             = SKILL_EXPERIENCED,
-		SKILL_DEVICES             = SKILL_EXPERIENCED
-	)
 
 /obj/item/robot_module/special/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()
@@ -65,4 +56,14 @@
 		/obj/item/hand_labeler,
 		/obj/item/stamp,
 		/obj/item/stamp/denied
+	)
+	emag = /obj/item/gun/energy/lasercannon/mounted
+	skills = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+		SKILL_WEAPONS     = SKILL_EXPERIENCED,
+		SKILL_FORENSICS   = SKILL_EXPERIENCED,
+		SKILL_COMPUTER            = SKILL_EXPERIENCED,
+		SKILL_FINANCE             = SKILL_MASTER,
+		SKILL_SCIENCE             = SKILL_EXPERIENCED,
+		SKILL_DEVICES             = SKILL_EXPERIENCED
 	)
