@@ -4602,7 +4602,6 @@
 	dir = 4
 	},
 /obj/structure/window/phoronreinforced,
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "pd" = (
@@ -7605,7 +7604,6 @@
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ws" = (
@@ -14199,7 +14197,6 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "Tx" = (
