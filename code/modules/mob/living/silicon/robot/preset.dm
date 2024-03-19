@@ -12,7 +12,7 @@
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
-/mob/living/silicon/robot/combat/isd
+/mob/living/silicon/robot/tall/isd
 	lawupdate = FALSE
 	scrambledcodes = TRUE
 	modtype = "Internal Security"

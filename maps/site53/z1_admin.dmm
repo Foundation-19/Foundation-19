@@ -12566,8 +12566,9 @@
 	color = "#561919";
 	dir = 4
 	},
-/obj/structure/table/standard,
-/obj/machinery/recharger,
+/mob/living/silicon/robot/tall/isd{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"

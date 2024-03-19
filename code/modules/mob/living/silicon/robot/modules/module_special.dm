@@ -8,7 +8,7 @@
 	channels = list(
 		"Security" = TRUE,
 		"Service" = TRUE,
-		"Supply" = TRUE
+		"Response Team" = TRUE
 	)
 	networks = list(
 		NETWORK_SECURITY
@@ -55,9 +55,15 @@
 		/obj/item/device/hailer,
 		/obj/item/hand_labeler,
 		/obj/item/stamp,
-		/obj/item/stamp/denied
+		/obj/item/stamp/denied,
+		/obj/item/weldingtool/electric,
+		/obj/item/reagent_containers/borghypo/crisis,
+		/obj/item/material/sword/sabre
 	)
-	emag = /obj/item/gun/energy/lasercannon/mounted
+	emag = list(
+		/obj/item/gun/energy/pulse_rifle/destroyer,
+		/obj/item/melee/energy/sword
+	)
 	skills = list(
 		SKILL_COMBAT      = SKILL_EXPERIENCED,
 		SKILL_WEAPONS     = SKILL_EXPERIENCED,
