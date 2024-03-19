@@ -2,7 +2,7 @@
 	name = "railing"
 	desc = "A simple bar railing designed to protect against careless trespass."
 	icon = 'icons/obj/railing.dmi'
-	icon_state = "railing_preview"
+	icon_state = "railing"
 	density = TRUE
 	throwpass = 1
 	layer = OBJ_LAYER
@@ -14,6 +14,9 @@
 
 	var/broken =    FALSE
 	var/neighbor_status = 0
+
+/obj/structure/railing/mapped/corner
+	icon_state = "railing_corner"
 
 /obj/structure/railing/mapped
 	color = COLOR_GUNMETAL

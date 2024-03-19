@@ -117,6 +117,69 @@
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
+/obj/item/stack/tile/horizontal
+	name = "steel horizontal tile"
+	singular_name = "steel mono tile"
+	icon_state = "tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/vertical
+	name = "steel vertical tile"
+	singular_name = "steel mono tile"
+	icon_state = "tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/horizontal/white
+	name = "white horizontal tile"
+	singular_name = "steel mono tile"
+	icon_state = "tile_white"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/vertical/white
+	name = "white vertical tile"
+	singular_name = "steel mono tile"
+	icon_state = "tile_white"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/horizontal/dark
+	name = "dark horizontal tile"
+	singular_name = "steel mono tile"
+	icon_state = "fr_tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/vertical/dark
+	name = "dark vertical tile"
+	singular_name = "steel mono tile"
+	icon_state = "fr_tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/small
+	name = "steel small tile"
+	singular_name = "steel mono tile"
+	icon_state = "tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/small/white
+	name = "white small tile"
+	singular_name = "steel mono tile"
+	icon_state = "tile_white"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/small/dark
+	name = "dark vertical tile"
+	singular_name = "steel mono tile"
+	icon_state = "fr_tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
 /obj/item/stack/tile/mono/dark
 	name = "dark mono tile"
 	singular_name = "dark mono tile"

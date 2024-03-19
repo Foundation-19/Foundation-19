@@ -179,6 +179,8 @@
 
 //Tiled floor + sub-types
 
+// STEEL FLOOR
+
 /turf/simulated/floor/tiled
 	name = "steel floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
@@ -190,28 +192,13 @@
 	icon_state = "dark"
 	initial_flooring = /decl/flooring/tiling/dark
 
-/turf/simulated/floor/tiled/dark/monotile
-	name = "floor"
-	icon_state = "monotiledark"
-	initial_flooring = /decl/flooring/tiling/mono/dark
-
-/turf/simulated/floor/tiled/dark/airless
-	initial_gas = null
-
 /turf/simulated/floor/tiled/white
 	name = "white floor"
 	icon_state = "white"
 	initial_flooring = /decl/flooring/tiling/white
 
-/turf/simulated/floor/tiled/white/monotile
-	name = "floor"
-	icon_state = "monotile"
-	initial_flooring = /decl/flooring/tiling/mono/white
-
-/turf/simulated/floor/tiled/monofloor
-	name = "floor"
-	icon_state = "steel_monofloor"
-	initial_flooring = /decl/flooring/tiling/mono
+/turf/simulated/floor/tiled/dark/airless
+	initial_gas = null
 
 /turf/simulated/floor/tiled/white/airless
 	name = "airless floor"
@@ -229,21 +216,87 @@
 	icon_state = "techmaint"
 	initial_flooring = /decl/flooring/tiling/new_tile/techmaint
 
-/turf/simulated/floor/tiled/monofloor
-	name = "floor"
-	icon_state = "monofloor"
-	initial_flooring = /decl/flooring/tiling/new_tile/monofloor
-
 /turf/simulated/floor/tiled/techfloor
 	name = "floor"
 	icon = 'icons/turf/flooring/techfloor.dmi'
 	icon_state = "techfloor_gray"
 	initial_flooring = /decl/flooring/tiling/tech
 
+// SIDED
+
+/turf/simulated/floor/tiled/horizontal
+	name = "floor"
+	icon_state = "steel_horizontal"
+	initial_flooring = /decl/flooring/tiling/horizontal
+
+/turf/simulated/floor/tiled/vertical
+	name = "floor"
+	icon_state = "steel_vertical"
+	initial_flooring = /decl/flooring/tiling/vertical
+
+/turf/simulated/floor/tiled/white/horizontal
+	name = "floor"
+	icon_state = "white_horizontal"
+	initial_flooring = /decl/flooring/tiling/horizontal/white
+
+/turf/simulated/floor/tiled/white/vertical
+	name = "floor"
+	icon_state = "white_vertical"
+	initial_flooring = /decl/flooring/tiling/vertical/white
+
+/turf/simulated/floor/tiled/dark/horizontal
+	name = "floor"
+	icon_state = "dark_horizontal"
+	initial_flooring = /decl/flooring/tiling/horizontal/dark
+
+/turf/simulated/floor/tiled/dark/vertical
+	name = "floor"
+	icon_state = "dark_vertical"
+	initial_flooring = /decl/flooring/tiling/vertical/dark
+
+/turf/simulated/floor/tiled/small
+	name = "floor"
+	icon_state = "steel_small"
+	initial_flooring = /decl/flooring/tiling/small
+
+/turf/simulated/floor/tiled/white/small
+	name = "floor"
+	icon_state = "white_small"
+	initial_flooring = /decl/flooring/tiling/small/white
+
+/turf/simulated/floor/tiled/dark/small
+	name = "floor"
+	icon_state = "dark_small"
+	initial_flooring = /decl/flooring/tiling/small/dark
+
+// MONOTILES
+
 /turf/simulated/floor/tiled/monotile
 	name = "floor"
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	initial_flooring = /decl/flooring/tiling/mono
+
+/turf/simulated/floor/tiled/dark/monotile
+	name = "floor"
+	icon_state = "monotiledark"
+	initial_flooring = /decl/flooring/tiling/mono/dark
+
+/turf/simulated/floor/tiled/white/monotile
+	name = "floor"
+	icon_state = "monotilewhite"
+	initial_flooring = /decl/flooring/tiling/mono/white
+
+/turf/simulated/floor/tiled/monofloor
+	name = "floor"
+	icon_state = "steel_monofloor"
+	initial_flooring = /decl/flooring/tiling/mono
+
+/turf/simulated/floor/tiled/monofloor2
+	name = "floor"
+	icon_state = "monofloor"
+	initial_flooring = /decl/flooring/tiling/new_tile/monofloor
+
+// DESIGNED
 
 /turf/simulated/floor/tiled/steel_grid
 	name = "floor"

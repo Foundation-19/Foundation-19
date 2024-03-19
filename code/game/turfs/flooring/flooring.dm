@@ -172,6 +172,42 @@
 	can_paint = 1
 	footstep_type = /decl/footsteps/tiles
 
+/decl/flooring/tiling/vertical
+	icon_base = "steel_vertical"
+	build_type = /obj/item/stack/tile/vertical
+
+/decl/flooring/tiling/horizontal
+	icon_base = "steel_horizontal"
+	build_type = /obj/item/stack/tile/horizontal
+
+/decl/flooring/tiling/vertical/white
+	icon_base = "white_vertical"
+	build_type = /obj/item/stack/tile/vertical/white
+
+/decl/flooring/tiling/horizontal/white
+	icon_base = "white_horizontal"
+	build_type = /obj/item/stack/tile/horizontal/white
+
+/decl/flooring/tiling/vertical/dark
+	icon_base = "dark_vertical"
+	build_type = /obj/item/stack/tile/vertical/dark
+
+/decl/flooring/tiling/horizontal/dark
+	icon_base = "dark_horizontal"
+	build_type = /obj/item/stack/tile/horizontal/dark
+
+/decl/flooring/tiling/small
+	icon_base = "steel_small"
+	build_type = /obj/item/stack/tile/small
+
+/decl/flooring/tiling/small/white
+	icon_base = "white_small"
+	build_type = /obj/item/stack/tile/small/white
+
+/decl/flooring/tiling/small/dark
+	icon_base = "dark_small"
+	build_type = /obj/item/stack/tile/small/dark
+
 /decl/flooring/tiling/mono
 	icon_base = "monotile"
 	build_type = /obj/item/stack/tile/mono
