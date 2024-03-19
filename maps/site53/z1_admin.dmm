@@ -7665,9 +7665,7 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
 	},
-/obj/item/reagent_containers/glass/beaker/bluespace{
-	reagents = /datum/reagent/napalm
-	},
+/obj/item/reagent_containers/glass/beaker/bluespace,
 /obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -8594,6 +8592,16 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
+	},
+/area/centcom)
+"zG" = (
+/obj/machinery/chem_master,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#b95a00"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
 	},
 /area/centcom)
 "zH" = (
@@ -10808,10 +10816,10 @@
 	},
 /area/centcom)
 "ID" = (
-/obj/machinery/portable_atmospherics/canister/phoron,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -11243,9 +11251,7 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
 	},
-/obj/item/reagent_containers/glass/beaker/bluespace{
-	reagents = /datum/reagent/napalm
-	},
+/obj/item/reagent_containers/glass/beaker/bluespace,
 /obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -13258,6 +13264,16 @@
 /obj/effect/floor_decal/corner/white/border{
 	color = "#E5511B";
 	dir = 6
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
+"QF" = (
+/obj/machinery/chemical_dispenser/ert,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#b95a00"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -23442,8 +23458,8 @@ ur
 AN
 ep
 SS
-gp
-gp
+QF
+zG
 gp
 Jp
 tq
