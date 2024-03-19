@@ -3465,6 +3465,13 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"mD" = (
+/obj/effect/floor_decal/corner/red/bordercorner,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "mE" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
@@ -7116,6 +7123,9 @@
 	color = "#d5a66e"
 	},
 /area/centcom)
+"ur" = (
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "uu" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -7261,7 +7271,7 @@
 /obj/item/clothing/under/ert,
 /obj/item/clothing/under/ert,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 8
+	dir = 10
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -7294,7 +7304,7 @@
 /obj/item/clothing/under/ert,
 /obj/item/clothing/under/ert,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 4
+	dir = 6
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -7658,7 +7668,7 @@
 	dir = 6
 	},
 /obj/item/reagent_containers/glass/beaker/bluespace{
-	reagents = /datum/chemical_reaction/napalm
+	reagents = /datum/reagent/napalm
 	},
 /obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
@@ -11236,7 +11246,7 @@
 	dir = 4
 	},
 /obj/item/reagent_containers/glass/beaker/bluespace{
-	reagents = /datum/chemical_reaction/napalm
+	reagents = /datum/reagent/napalm
 	},
 /obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
@@ -13383,6 +13393,15 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
+	},
+/area/centcom)
+"Rd" = (
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
 	},
 /area/centcom)
 "Rh" = (
@@ -22404,7 +22423,7 @@ gp
 gp
 gp
 gp
-gp
+Ba
 wF
 xr
 gp
@@ -22606,7 +22625,7 @@ gp
 gp
 gp
 gp
-gp
+Rd
 XX
 jK
 gp
@@ -23422,7 +23441,7 @@ zg
 Vg
 Ie
 gp
-gp
+ur
 AN
 ep
 SS
@@ -23616,7 +23635,7 @@ gp
 gp
 gp
 gp
-gp
+mD
 XX
 jK
 gp
@@ -23818,7 +23837,7 @@ gp
 gp
 gp
 gp
-gp
+Ba
 IK
 xr
 gp
