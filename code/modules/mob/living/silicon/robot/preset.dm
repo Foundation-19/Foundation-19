@@ -17,7 +17,7 @@
 	scrambledcodes = TRUE
 	modtype = "Internal Security Captain"
 	module = /obj/item/robot_module/tall/special/general
-	silicon_radio = /obj/item/device/encryptionkey/ert
+	silicon_radio = /obj/item/device/radio/borg/syndicate
 	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
 	cell = /obj/item/cell/infinite
 	pitch_toggle = FALSE
