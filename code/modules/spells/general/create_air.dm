@@ -10,8 +10,13 @@
 	number_of_channels = 0
 	time_between_channels = 200
 	hud_state = "wiz_air"
-	var/list/air_change = list(GAS_OXYGEN = ONE_ATMOSPHERE)
+
 	number_of_channels = 0
+
+	spell_cost = 1
+	mana_cost = 5
+
+	var/list/air_change = list(GAS_OXYGEN = ONE_ATMOSPHERE)
 
 /datum/spell/create_air/choose_targets(mob/user = usr)
 	var/air = holder.return_air()
@@ -23,6 +28,3 @@
 	var/datum/gas_mixture/environment = targets[1]
 	for(var/gas in air_change)
 		environment.adjust_gas(gas, air_change[gas])
-
-/datum/spell/create_air/tower
-	charge_max = 5

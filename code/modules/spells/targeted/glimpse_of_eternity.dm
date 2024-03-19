@@ -1,8 +1,6 @@
 /datum/spell/targeted/glimpse_of_eternity
 	name = "Glimpse of Eternity"
 	desc = "Show the non-believers what enlightenment truely means."
-	feedback = "GE"
-	school = "illusion"
 	invocation = "Ghe Tar Yet!"
 	invocation_type = INVOKE_SHOUT
 	spell_flags = INCLUDEUSER
@@ -11,6 +9,9 @@
 	range = 3
 
 	hud_state = "wiz_glimpse"
+
+	spell_cost = 2
+	mana_cost = 10
 
 /datum/spell/targeted/glimpse_of_eternity/cast(list/targets, mob/user)
 	for(var/t in targets)

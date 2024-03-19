@@ -88,9 +88,9 @@ h1.alert, h2.alert		{color: #000080;}
 .italic				{font-style: italic;}
 .bold					{font-weight: bold;}
 .danger					{color: #ff0000; font-weight: bold;}
-.bigdanger					{color: #ff0000; font-weight: bold; font-size: 115%;}
-.warning				{color: #ff0000; font-style: italic;}
-.bigwarning				{color: #ff0000; font-style: italic; font-size: 115%;}
+.userdanger				{color: #ff0000; font-weight: bold; font-size: 115%;}
+.warning				{color: #ff3300; font-style: italic;}
+.bigwarning				{color: #ff3300; font-style: italic; font-size: 115%;}
 .boldannounce			{color: #ff0000; font-weight: bold;}
 .rose					{color: #ff5050;}
 .info					{color: #0000cc;}

@@ -1,8 +1,6 @@
 /datum/spell/targeted/equip_item/party_hardy
 	name = "Summon Party"
 	desc = "This spell was invented for the sole purpose of getting crunked at 11am on a Tuesday. Does not require wizard garb."
-	feedback = "PY"
-	school = "conjuration"
 	charge_type = SPELL_RECHARGE
 	charge_max = 900
 	cooldown_min = 600
@@ -19,7 +17,7 @@
 	compatible_mobs = list(/mob/living/carbon/human)
 	equipped_summons = list("active hand" = /obj/item/reagent_containers/food/drinks/bottle/small/beer)
 
-/datum/spell/targeted/equip_item/party_hardy/empower_spell()
+/datum/spell/targeted/equip_item/party_hardy/ImproveSpellPower()
 	if(!..())
 		return 0
 	switch(spell_levels[UPGRADE_POWER])

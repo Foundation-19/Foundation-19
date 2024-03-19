@@ -1,6 +1,17 @@
 /*
  * Science
  */
+/obj/item/clothing/under/rank/research_director/alt
+	desc = "It's a dull black comfortable turtleneck which shows no emotion, and smells slightly of chemicals, and lacks morales. It's paired with some black jeans."
+	name = "Chief Science Officer's turtleneck"
+	icon_state = "rdclothes"
+	item_state = "bl_suit"
+	worn_state = "rdclothes"
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /obj/item/clothing/under/rank/research_director
 	desc = "It's a jumpsuit worn by those with the know-how to achieve the position of \"Chief Science Officer\". Its fabric provides minor protection from biological contaminants."
 	name = "chief science officer's jumpsuit"
@@ -129,39 +140,42 @@
 		)
 
 /obj/item/clothing/under/rank/medical/paramedic
-	name = "short sleeve medical jumpsuit"
-	desc = "It's made of a special fiber that provides minor protection against biohazards. This one has a cross on the chest denoting that the wearer is trained medical personnel."
+	name = "medical utility jumpsuit"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one has a medical cross on the back denoting that the wearer is trained medical personnel."
 	icon_state = "medical"
 	item_state = "medical_short"
 	worn_state = "medical_short"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/rank/medical/scrubs
-	name = "scrubs"
-	desc = "A loose-fitting garment designed to provide minor protection against biohazards."
+	name = "white scrubs"
+	desc = "A sterile pair of scrubs, usually helpful in the case of biohazardous spills."
 	icon_state = "scrubs"
 	worn_state = "scrubs"
-	gender_icons = 1
 
 /obj/item/clothing/under/rank/medical/scrubs/blue
 	name = "blue scrubs"
-	color = "#4891e1"
+	icon_state = "scrubsblue"
+	worn_state = "scrubsblue"
 
 /obj/item/clothing/under/rank/medical/scrubs/green
 	name = "green scrubs"
-	color = "#255a3e"
+	icon_state = "scrubsgreen"
+	worn_state = "scrubsgreen"
 
 /obj/item/clothing/under/rank/medical/scrubs/purple
 	name = "purple scrubs"
-	color = "#7a1b3f"
+	icon_state = "scrubspurple"
+	worn_state = "scrubspurple"
 
 /obj/item/clothing/under/rank/medical/scrubs/black
 	name = "black scrubs"
-	color = "#242424"
+	icon_state = "scrubsblack"
+	worn_state = "scrubsblack"
 
 /obj/item/clothing/under/rank/medical/scrubs/navyblue
 	name = "navy blue scrubs"
-	color = "#1f3a69"
+	icon_state = "scrubsnavyblue"
+	worn_state = "scrubsnavyblue"
 
 /obj/item/clothing/under/rank/medical/scrubs/lilac
 	name = "lilac scrubs"
@@ -233,6 +247,17 @@
 	icon_state = "virologist_new"
 	item_state = "w_suit"
 	worn_state = "virologist_new"
+	permeability_coefficient = 0.50
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+
+/obj/item/clothing/under/rank/medical_skirt
+	desc = "a futuristic medical skirt made from nylon"
+	name = "Medical skirt"
+	icon_state = "med_skirt"
+	item_state = "w_suit"
+	worn_state = "med_skirt"
 	permeability_coefficient = 0.50
 	armor = list(
 		bio = ARMOR_BIO_MINOR

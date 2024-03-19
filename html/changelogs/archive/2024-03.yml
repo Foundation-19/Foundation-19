@@ -19,3 +19,58 @@
   cheesePizza2:
   - bugfix: A bug with some internal defines was fixed, potentially affecting some
       values (e.g. atmos)
+2024-03-10:
+  Tsurupeta:
+  - code_imp: Adds support for byond version 515
+2024-03-14:
+  EgorDinamit:
+  - tweak: Putting SCP 2427-3 through SCP 914 on "Fine" or "Very Fine" will, obviously,
+      buff it.
+  - tweak: Putting SCP 012 through SCP 914 on "Very Fine" will net interesting results.
+  - tweak: Putting ID cards through SCP 914 will have unique results now.
+  - tweak: Putting cash through SCP 914 will have unique results now.
+  - bugfix: Fixed SCP 914 interaction with infestation mobs on "Fine" setting.
+2024-03-15:
+  EgorDinamit, CrimsonShrike:
+  - rscadd: Prebuilt flamethrowers have new icon.
+  - rscadd: Flamethrower sounds.
+  - tweak: Flamethrowers now use chems as fire source.
+  - rscadd: Turf fires -> Very hot atmos fires, flamethrowers and fuel decals will
+      generate these fires.
+  - tweak: Simple mobs now can take fire damage from burning.
+2024-03-16:
+  EgorDinamit:
+  - tweak: Adds rocket launcher.
+  - tweak: Adds combat & heavy revolvers.
+  - soundadd: Revolver gunshot sound is updated.
+  - bugfix: You will no longer be sent to nullspace if an object/mob you are orbiting
+      gets deleted.
+2024-03-18:
+  ChromeFoxxity:
+  - rscadd: Added new types of clothing for fluff use, as well as a O5 Council coat,
+      and a Site Director coat.
+  - bugfix: Fixed several clothing issues.
+  - imageadd: Added a few useful things.
+  - imagedel: Deleted a few useless things.
+  - code_imp: Added new clothing code.
+  EgorDinamit:
+  - rscadd: Every human now has spell points and mana level. By default everyone has
+      2 points and 10 mana.
+  - rscadd: Spell books were reworked entirely.
+  - rscadd: Multiple new spells were added (around 20), with a lot of old ones(around
+      30) reworked and updated.
+  KingSuperBOB:
+  - rscadd: Added armor piercing to flamingo natural weapon
+  - tweak: Doubled flamingo vision range
+  Saicchi:
+  - rscadd: Add French to robots
+  Yawet330:
+  - bugfix: Fixes a missing line of code
+  - rscdel: Removes old and OP reagents and exchanges them with ""new and interactive""
+      spider venoms.
+  - admin: Adds better admin-abuse options.
+  - rscadd: Spoders
+  quadbium:
+  - bugfix: fixed "animosity V2" title screen music label.
+  - bugfix: fixed "animosity V2" title screen music link.
+  - rscadd: adds "animosity" title screen music.

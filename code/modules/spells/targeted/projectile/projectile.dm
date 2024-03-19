@@ -6,8 +6,6 @@ If the spell_projectile is seeking, it will update its target every process and 
 */
 
 /datum/spell/targeted/projectile
-	name = "projectile spell"
-
 	range = 7
 
 	var/proj_type = /obj/item/projectile/spell_projectile //use these. They are very nice
