@@ -124,13 +124,13 @@
 	NeighborsCheck(update_neighbors)
 	cut_overlays()
 	if (!neighbor_status || !anchored)
-		icon_state = "railing0-[density]"
+		icon_state = "railing"
 		if (density)//walking over a railing which is above you is really weird, do not do this if density is 0
-			add_overlay(image(icon, "_railing0-1", layer = ABOVE_HUMAN_LAYER))
+			add_overlay(image(icon, "railing", layer = ABOVE_HUMAN_LAYER))
 	else
-		icon_state = "railing1-[density]"
+		icon_state = "railing"
 		if (density)
-			add_overlay(image(icon, "_railing1-1", layer = ABOVE_HUMAN_LAYER))
+			add_overlay(image(icon, "railing", layer = ABOVE_HUMAN_LAYER))
 		if (neighbor_status & 32)
 			add_overlay(image(icon, "corneroverlay[density]"))
 		if ((neighbor_status & 16) || !(neighbor_status & 32) || (neighbor_status & 64))
