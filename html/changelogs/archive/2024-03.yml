@@ -74,3 +74,25 @@
   - bugfix: fixed "animosity V2" title screen music label.
   - bugfix: fixed "animosity V2" title screen music link.
   - rscadd: adds "animosity" title screen music.
+2024-03-19:
+  quadbium:
+  - balance: Moved logistics down to the hub, moved logistics hanger next to the site
+      entrance.
+  - rscadd: Added cameras to logistics.
+  - rscadd: Added stairwell and lower floor to research wing
+  - rscadd: Added psionics lab.
+  - rscadd: Added xenoarchaeology storage
+  - rscadd: Added xenobotany lab
+  - rscadd: Added anomaly lab
+  - rscadd: Added anomaly storage
+  - rscadd: Added added 1 anomaly to anomaly storage
+  - rscadd: Added added research offices accessible by lower ranking researchers
+  - rscadd: Added maintinence tunnles to get air and power into lower research wing
+  - rscadd: Added research wing camera network
+  - balance: Moved cameras in research wing to research wing network
+  - rscadd: Added lower LCZ camera network
+  - balance: Moved cameras in lower LCZ into lower LCZ network
+  - rscadd: Added detail to the floors in research
+  - rscadd: Added detail to the floors in logistics
+  - rscadd: Added laptop to Logistics officers office
+  - rscadd: Added mining access to lower research wing
