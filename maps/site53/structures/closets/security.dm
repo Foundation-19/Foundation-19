@@ -83,7 +83,7 @@
 	return ..() | list(
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-		/obj/item/clothing/head/beret/sec/corporate/officer,
+		/obj/item/clothing/head/beret/sec/guard,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -109,7 +109,7 @@
 		/obj/item/clothing/accessory/storage/bandolier,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/head/beret/sec/sergeant,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -129,7 +129,7 @@
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/beret/sec/corporate/officer,
+		/obj/item/clothing/head/beret/sec/guard,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -161,7 +161,7 @@
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/head/beret/sec/sergeant,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -234,9 +234,11 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
-		/obj/item/clothing/accessory/armor/tag/solgov/com/guardcomm,
+		/obj/item/clothing/head/beret/sec/guardcom,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+		/obj/item/clothing/under/rank/head_of_security/guardcom,
+		/obj/item/clothing/under/rank/head_of_security/guardcom/alt,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9,
