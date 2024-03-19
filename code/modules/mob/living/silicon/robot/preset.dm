@@ -15,11 +15,18 @@
 /mob/living/silicon/robot/tall/isd
 	lawupdate = FALSE
 	scrambledcodes = TRUE
-	modtype = "Internal Security"
+	modtype = "Internal Security Captain"
 	module = /obj/item/robot_module/special/general
+	silicon_radio = /obj/item/device/encryptionkey/ert
 	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
 	cell = /obj/item/cell/infinite
 	pitch_toggle = FALSE
+	req_access = list(ACCESS_MTF)
+
+/mob/living/silicon/robot/tall/isd/yawet
+	modtype = "Internal Security Agent"
+	module = /obj/item/robot_module/special/general/yawet
+	icon_state = "isdyrobot"
 
 /mob/living/silicon/robot/combat
 	lawupdate = FALSE

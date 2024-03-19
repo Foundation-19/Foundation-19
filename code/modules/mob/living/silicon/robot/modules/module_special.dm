@@ -73,3 +73,11 @@
 		SKILL_SCIENCE             = SKILL_EXPERIENCED,
 		SKILL_DEVICES             = SKILL_EXPERIENCED
 	)
+
+/obj/item/robot_module/tall/special/general/yawet
+	name = "internal security borg module"
+	display_name = "DATA EXPUNGED"
+	crisis_locked = TRUE
+	sprites = list(
+		"Basic" = "isdyrobot"
+	)

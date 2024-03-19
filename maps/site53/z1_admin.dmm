@@ -303,7 +303,9 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "bC" = (
-/obj/machinery/door/window/southright,
+/obj/machinery/door/window/southright{
+	req_access = list("ACCESS_MTF")
+	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "bF" = (
@@ -353,6 +355,17 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"bO" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "bU" = (
 /obj/item/clothing/under/scp/dclass,
@@ -1128,6 +1141,9 @@
 	dir = 9;
 	color = "#272B5B"
 	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = -32
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -1553,6 +1569,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
 	color = "#272B5B"
+	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -3107,7 +3126,9 @@
 /turf/simulated/floor/lino,
 /area/centcom/chaos)
 "lv" = (
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -3536,8 +3557,7 @@
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "mtfext";
-	name = "Dispatch Center External Lockdown Control";
-	req_access = list("ACCESS_MTF")
+	name = "Dispatch Center External Lockdown Control"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
@@ -3609,6 +3629,13 @@
 	name = "Council Offices Blast Door"
 	},
 /obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
 /turf/simulated/floor,
 /area/centcom)
 "nh" = (
@@ -3998,8 +4025,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "epsilon9";
 	name = "Epsilon-9 Armory Access Shutters Control";
-	pixel_y = 23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = 23
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -4239,6 +4265,14 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/green,
 /area/centcom)
+"ot" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "ou" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/m16_mag/ext,
@@ -4363,6 +4397,9 @@
 	dir = 10;
 	color = "#272B5B"
 	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = -32
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -4428,6 +4465,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 6;
 	color = "#272B5B"
+	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -4534,6 +4574,29 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"pb" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/machinery/door/blast/regular{
+	id_tag = "theadmin";
+	name = "The Administrator's Office Lockdown Blast Door"
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "pd" = (
 /obj/machinery/vending/medical{
@@ -5032,6 +5095,17 @@
 "qr" = (
 /turf/unsimulated/beach/coastline,
 /area/beach)
+"qu" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "qy" = (
 /obj/structure/closet/crate/secure/biohazard{
 	req_access = null
@@ -6098,6 +6172,13 @@
 	name = "Internal Security Lockdown Shutters"
 	},
 /obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "sH" = (
@@ -6648,25 +6729,10 @@
 	color = "#561919";
 	dir = 5
 	},
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
+/mob/living/silicon/robot/tall/isd/yawet{
+	dir = 8;
+	req_access = list("ACCESS_MTF")
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -7402,6 +7468,19 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
+"wb" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "we" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#2B0F42";
@@ -7504,6 +7583,19 @@
 	id_tag = "theadmin";
 	name = "The Administrator's Office Lockdown Blast Door"
 	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ws" = (
@@ -7558,17 +7650,17 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "wy" = (
-/obj/item/rig/ert/engineer,
 /obj/structure/table/rack,
-/obj/item/storage/backpack/dufflebag/firefighter,
 /obj/item/storage/firstaid/fire,
 /obj/item/material/twohanded/fireaxe,
-/obj/item/flamethrower/full,
-/obj/item/tank/phoron,
 /obj/item/grenade/chem_grenade/incendiary,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
 	},
+/obj/item/reagent_containers/glass/beaker/bluespace{
+	reagents = /datum/chemical_reaction/napalm
+	},
+/obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -7581,6 +7673,30 @@
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
 	},
+/area/centcom)
+"wE" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#561919";
+	dir = 4
+	},
+/obj/machinery/turretid/lethal{
+	pixel_x = 32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
+"wF" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "wG" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -7615,7 +7731,11 @@
 	},
 /area/centcom)
 "wY" = (
-/obj/effect/wingrille_spawn/reinforced/full,
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "mtfext";
 	name = "Dispatch Center External Lockdown"
@@ -7699,7 +7819,7 @@
 /area/centcom)
 "xy" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "MTF Base"
+	department = "Mobile Task Force Dispatch Control Center"
 	},
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/border,
@@ -7766,6 +7886,12 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"xS" = (
+/obj/structure/sign/greencross{
+	pixel_y = 4
+	},
+/turf/unsimulated/wall,
 /area/centcom)
 "xT" = (
 /obj/structure/window/basic,
@@ -8273,8 +8399,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "omega1";
 	name = "Omega-1 Armory Access Shutters Control";
-	pixel_y = 23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = 23
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -8574,6 +8699,29 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"AF" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
+"AH" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "AK" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -8796,8 +8944,8 @@
 /area/centcom)
 "BW" = (
 /obj/structure/table/standard,
-/obj/item/paper_bin{
-	pixel_y = 3
+/obj/machinery/photocopier/faxmachine{
+	department = "Internal Tribunal Department"
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
@@ -8814,7 +8962,9 @@
 	color = "#561919";
 	dir = 1
 	},
-/obj/item/clothing/head/beret/isd,
+/obj/machinery/photocopier/faxmachine{
+	department = "Internal Security Department"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -8965,8 +9115,7 @@
 	dir = 1;
 	id_tag = "isdarm";
 	name = "Internal Security Armory Access Control";
-	pixel_y = -23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = -23
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -9239,6 +9388,8 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
+/obj/item/rig/ert/engineer/e9,
+/obj/item/extinguisher/mini,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -9267,6 +9418,15 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"DD" = (
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_y = -32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "DI" = (
@@ -9531,25 +9691,25 @@
 /area/centcom)
 "Eu" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5
 	},
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -10242,9 +10402,6 @@
 	prices = list();
 	dir = 4
 	},
-/obj/structure/sign/greencross{
-	pixel_y = 32
-	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -10603,11 +10760,6 @@
 /obj/item/reagent_containers/glass/bottle/chloralhydrate,
 /obj/item/storage/box/syringegun,
 /obj/item/storage/box/syringes,
-/obj/machinery/button/blast_door{
-	id_tag = "omega1";
-	name = "Omega-1 Armory Access Shutters Control";
-	pixel_y = 23
-	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
 	},
@@ -10678,6 +10830,17 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"IK" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "IL" = (
 /obj/structure/closet{
@@ -10767,8 +10930,7 @@
 	dir = 4;
 	id_tag = "epsilon11";
 	name = "Epsilon-11 Armory Access Shutters Control";
-	pixel_x = -23;
-	req_access = list("ACCESS_MTF")
+	pixel_x = -23
 	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -10950,6 +11112,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"JG" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "JM" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -11044,17 +11215,17 @@
 	},
 /area/centcom)
 "Ki" = (
-/obj/item/rig/ert/engineer,
 /obj/structure/table/rack,
-/obj/item/storage/backpack/dufflebag/firefighter,
 /obj/item/storage/firstaid/fire,
 /obj/item/material/twohanded/fireaxe,
-/obj/item/flamethrower/full,
-/obj/item/tank/phoron,
 /obj/item/grenade/chem_grenade/incendiary,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
 	},
+/obj/item/reagent_containers/glass/beaker/bluespace{
+	reagents = /datum/chemical_reaction/napalm
+	},
+/obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -11504,8 +11675,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "eta10";
 	name = "Eta-10 Armory Access Shutters Control";
-	pixel_y = 23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = 23
 	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
@@ -12210,19 +12380,10 @@
 	color = "#561919";
 	dir = 6
 	},
-/obj/structure/table/rack,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/telebaton,
-/obj/item/melee/telebaton,
-/obj/item/melee/telebaton,
-/obj/item/melee/telebaton,
+/mob/living/silicon/robot/tall/isd{
+	dir = 8;
+	req_access = list("ACCESS_MTF")
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -12562,12 +12723,28 @@
 	},
 /area/centcom)
 "OO" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
 	dir = 4
-	},
-/mob/living/silicon/robot/tall/isd{
-	dir = 8
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -12584,6 +12761,24 @@
 	icon = 'icons/turf/jungle.dmi';
 	icon_state = "greygrass"
 	},
+/area/centcom)
+"OV" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "mtfext";
+	name = "Dispatch Center External Lockdown"
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "OX" = (
 /obj/effect/floor_decal/corner/b_green/border{
@@ -12813,6 +13008,17 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"PP" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "PQ" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#635636";
@@ -12879,6 +13085,14 @@
 /area/centcom)
 "PZ" = (
 /turf/simulated/floor,
+/area/centcom)
+"Qa" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/wood.dmi';
+	icon_state = "wood";
+	color = "#543c30"
+	},
 /area/centcom)
 "Qb" = (
 /obj/machinery/door/airlock/vault{
@@ -13149,7 +13363,10 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "Rc" = (
-/obj/structure/reagent_dispensers/water_cooler,
+/obj/machinery/photocopier/faxmachine{
+	department = "Ethics Committee Department"
+	},
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
@@ -13287,80 +13504,60 @@
 /turf/simulated/floor,
 /area/supply/dock)
 "Ru" = (
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
 	},
 /obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -13379,6 +13576,23 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"Rx" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "05blastdoor2";
+	name = "Council Offices Blast Door"
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor,
 /area/centcom)
 "Ry" = (
 /obj/structure/table/standard,
@@ -13491,9 +13705,6 @@
 	dir = 10;
 	color = "#272B5B"
 	},
-/obj/structure/sign/greencross{
-	pixel_y = -25
-	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -13579,6 +13790,21 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"Sb" = (
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "isdlock";
+	name = "Internal Security Lockdown Shutters"
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Sf" = (
 /obj/structure/table/standard,
@@ -13917,6 +14143,33 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Tv" = (
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/machinery/door/blast/regular{
+	id_tag = "theadmin";
+	name = "The Administrator's Office Lockdown Blast Door"
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "Tx" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#00BCBC";
@@ -13971,6 +14224,9 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = 32
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -14015,6 +14271,21 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"TY" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "mtfext";
+	name = "Dispatch Center External Lockdown"
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Ua" = (
 /obj/effect/floor_decal/spline/fancy/black,
@@ -14135,6 +14406,8 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 10
 	},
+/obj/item/rig/ert/engineer/e9,
+/obj/item/extinguisher/mini,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -14271,7 +14544,8 @@
 /area/centcom)
 "Vo" = (
 /obj/machinery/door/airlock/vault{
-	name = "Workshop"
+	name = "Workshop";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/techfloor.dmi';
@@ -14559,6 +14833,16 @@
 	dir = 1;
 	color = "#272B5B"
 	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
+"Wt" = (
+/obj/structure/reagent_dispensers/fueltank{
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -14852,6 +15136,20 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"XC" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/white/border{
+	color = "#561919";
+	dir = 1
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Administrative Department"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "XD" = (
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -14949,6 +15247,21 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "tile_full"
 	},
+/area/centcom)
+"Yj" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "mtfext";
+	name = "Dispatch Center External Lockdown"
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Yq" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -16215,10 +16528,10 @@ eI
 tq
 zz
 uV
-sG
+Sb
 Ab
 JU
-sG
+Sb
 zz
 uV
 tq
@@ -16462,7 +16775,7 @@ uK
 uK
 uK
 uO
-xB
+wF
 tF
 ON
 PX
@@ -16866,7 +17179,7 @@ KZ
 uK
 KZ
 Uo
-xB
+IK
 Fm
 ON
 PX
@@ -17068,7 +17381,7 @@ Cx
 uK
 zK
 Uo
-xB
+ot
 oM
 yI
 XD
@@ -17270,7 +17583,7 @@ uK
 uK
 uK
 uK
-xB
+ot
 oM
 ON
 HN
@@ -17457,21 +17770,21 @@ tq
 tq
 tq
 tq
-xB
-xB
+AF
+PP
 Cr
-xB
-xB
+wb
+AF
 tq
 tq
-xB
+PP
 In
-xB
-xB
-xB
+wb
+AF
+PP
 XK
-xB
-xB
+wb
+AF
 tq
 tq
 yx
@@ -17620,7 +17933,7 @@ ab
 ab
 tq
 Ry
-Ej
+wE
 dR
 Id
 OD
@@ -17639,7 +17952,7 @@ tq
 xd
 gp
 eE
-xB
+qu
 ev
 Jb
 Jb
@@ -17657,7 +17970,7 @@ Jb
 Jb
 Jb
 Ci
-xB
+wF
 np
 LZ
 LZ
@@ -18043,7 +18356,7 @@ tq
 xd
 gp
 eE
-xB
+IK
 nc
 QA
 QA
@@ -18061,7 +18374,7 @@ QA
 QA
 QA
 zv
-xB
+IK
 cR
 Jh
 Jh
@@ -18835,9 +19148,9 @@ tq
 tq
 tq
 tq
-wr
+pb
 Mr
-wr
+Tv
 tq
 wu
 gp
@@ -19054,7 +19367,7 @@ xd
 gp
 eE
 Mi
-Dv
+XC
 gp
 gp
 gp
@@ -20466,7 +20779,7 @@ tq
 tq
 ne
 Gk
-ne
+Rx
 tq
 FF
 Ju
@@ -21866,7 +22179,7 @@ Rr
 Rr
 tq
 sd
-qE
+Wt
 sv
 mB
 na
@@ -22079,7 +22392,7 @@ gp
 gp
 gp
 gp
-Mi
+wF
 xr
 gp
 Ba
@@ -22483,7 +22796,7 @@ rY
 rY
 Nf
 uj
-Mi
+IK
 xr
 gp
 Ba
@@ -22685,7 +22998,7 @@ gp
 gp
 gp
 gp
-Mi
+ot
 xr
 gp
 Ba
@@ -22887,7 +23200,7 @@ gp
 gp
 gp
 gp
-Mi
+ot
 xr
 gp
 Ay
@@ -23089,7 +23402,7 @@ AW
 AW
 DN
 DN
-Mi
+wF
 xr
 gp
 zg
@@ -23493,7 +23806,7 @@ gp
 gp
 gp
 gp
-Mi
+IK
 xr
 gp
 Ba
@@ -24491,12 +24804,12 @@ Rr
 Rr
 Rr
 tq
-tq
+xS
 Mi
 Mi
 Ns
 Mi
-tq
+xS
 tq
 UZ
 gp
@@ -24691,7 +25004,7 @@ Uk
 uA
 Rr
 Rr
-Rr
+DD
 tq
 tq
 Hp
@@ -24721,7 +25034,7 @@ SQ
 Vp
 PV
 tq
-Ob
+Qa
 Ob
 Ob
 Ob
@@ -24894,7 +25207,7 @@ LY
 Rr
 Rr
 Rr
-wY
+Yj
 eN
 yB
 gp
@@ -25103,7 +25416,7 @@ gp
 gp
 gp
 vX
-xB
+wF
 xo
 yH
 yH
@@ -25130,7 +25443,7 @@ yH
 Li
 yH
 ED
-Mi
+wF
 En
 gp
 gp
@@ -25298,7 +25611,7 @@ Rr
 Rr
 Rr
 Rr
-wY
+OV
 En
 gp
 gp
@@ -25507,7 +25820,7 @@ gp
 gp
 gp
 vX
-xB
+IK
 dG
 qP
 eB
@@ -25534,7 +25847,7 @@ qP
 qP
 Fj
 FU
-Mi
+IK
 En
 gp
 gp
@@ -25702,7 +26015,7 @@ pr
 Rr
 Rr
 Rr
-wY
+TY
 gs
 lc
 gp
@@ -25716,9 +26029,9 @@ SV
 tq
 tq
 tq
-xB
+bO
 oO
-xB
+AH
 tq
 tq
 tq
@@ -25903,7 +26216,7 @@ Uk
 uA
 es
 Rr
-Rr
+DD
 tq
 tq
 bX
@@ -26108,9 +26421,9 @@ Rr
 Rr
 tq
 tq
-xB
+bO
 Cu
-xB
+AH
 tq
 tq
 tq
@@ -27522,9 +27835,9 @@ Rr
 Rr
 tq
 MV
+JG
 TO
-TO
-TO
+JG
 Wl
 uo
 tq
@@ -30164,9 +30477,9 @@ tq
 tq
 tq
 tq
-xB
+bO
 vJ
-xB
+AH
 tq
 tq
 tq
@@ -31577,11 +31890,11 @@ tq
 tq
 tq
 tq
-xB
-xB
+AF
+bO
 dS
-xB
-xB
+AH
+AF
 tq
 tq
 tq
