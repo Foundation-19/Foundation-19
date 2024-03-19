@@ -213,27 +213,29 @@
 	build_type = /obj/item/stack/tile/mono
 
 /decl/flooring/tiling/mono/dark
+	icon_base = "monotiledark"
 	color = COLOR_DARK_GRAY
 	build_type = /obj/item/stack/tile/mono/dark
 
 /decl/flooring/tiling/mono/white
-	icon_base = "monotile_light"
+	icon_base = "monotilewhite"
 	color = COLOR_OFF_WHITE
 	build_type = /obj/item/stack/tile/mono/white
 
 /decl/flooring/tiling/white
-	icon_base = "tiled_light"
+	icon_base = "tiled_white"
 	desc = "How sterile."
 	color = COLOR_OFF_WHITE
 	build_type = /obj/item/stack/tile/floor_white
 
 /decl/flooring/tiling/dark
+	icon_base = "tiled_dark"
 	desc = "How ominous."
 	color = COLOR_DARK_GRAY
 	build_type = /obj/item/stack/tile/floor_dark
 
 /decl/flooring/tiling/dark/mono
-	icon_base = "monotile"
+	icon_base = "monotiledark"
 	build_type = null
 
 /decl/flooring/tiling/freezer
@@ -276,16 +278,16 @@
 	build_type = /obj/item/stack/tile/techmaint
 
 /decl/flooring/tiling/new_tile/monofloor
-	icon_base = "monofloor"
+	icon_base = "monotile"
 	color = COLOR_GUNMETAL
 
 /decl/flooring/tiling/new_tile/steel_grid
-	icon_base = "grid"
+	icon_base = "steel_grid"
 	color = COLOR_GUNMETAL
 	build_type = /obj/item/stack/tile/grid
 
 /decl/flooring/tiling/new_tile/steel_ridged
-	icon_base = "ridged"
+	icon_base = "steel_ridged"
 	color = COLOR_GUNMETAL
 	build_type = /obj/item/stack/tile/ridge
 

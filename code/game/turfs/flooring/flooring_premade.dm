@@ -288,12 +288,12 @@
 
 /turf/simulated/floor/tiled/monofloor
 	name = "floor"
-	icon_state = "steel_monofloor"
+	icon_state = "monotile"
 	initial_flooring = /decl/flooring/tiling/mono
 
 /turf/simulated/floor/tiled/monofloor2
 	name = "floor"
-	icon_state = "monofloor"
+	icon_state = "monotile"
 	initial_flooring = /decl/flooring/tiling/new_tile/monofloor
 
 // DESIGNED
