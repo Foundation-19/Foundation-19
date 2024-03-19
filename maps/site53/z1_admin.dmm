@@ -236,12 +236,13 @@
 /turf/simulated/floor/shuttle/black,
 /area/centcom)
 "bk" = (
-/obj/structure/railing/mapped,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/floor/grass{
-	color = "#799c4b";
-	icon = 'icons/turf/jungle.dmi';
-	icon_state = "greygrass"
+/obj/machinery/door/airlock/glass/mining{
+	name = "Logistics Hangar";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "bm" = (
@@ -357,7 +358,6 @@
 	},
 /area/centcom)
 "bO" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
@@ -365,6 +365,11 @@
 	dir = 4
 	},
 /obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "bU" = (
@@ -511,7 +516,7 @@
 "cz" = (
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom)
 "cB" = (
@@ -2636,7 +2641,10 @@
 	},
 /area/centcom/chaos)
 "jN" = (
-/obj/structure/grille,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/tram/car1)
 "jO" = (
@@ -2650,7 +2658,10 @@
 	},
 /area/site53/tram/car1)
 "jP" = (
-/obj/structure/grille,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/tram/car1)
 "jQ" = (
@@ -2917,7 +2928,7 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "kF" = (
@@ -3017,6 +3028,18 @@
 "kT" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
+"kU" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "kW" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "chaos1"
@@ -3240,7 +3263,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lO" = (
@@ -3252,7 +3275,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lP" = (
@@ -3265,7 +3288,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lS" = (
@@ -3297,7 +3320,7 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lZ" = (
@@ -3335,7 +3358,7 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "mj" = (
@@ -3413,7 +3436,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "mx" = (
@@ -3635,7 +3658,6 @@
 	id_tag = "05blastdoor2";
 	name = "Council Offices Blast Door"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
@@ -3643,6 +3665,18 @@
 	dir = 4
 	},
 /obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/simulated/floor,
 /area/centcom)
 "nh" = (
@@ -4070,13 +4104,19 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "nW" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/structure/window/phoronreinforced{
+	dir = 1
 	},
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "nX" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -4273,11 +4313,15 @@
 /turf/simulated/floor/carpet/green,
 /area/centcom)
 "ot" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ou" = (
@@ -4583,7 +4627,6 @@
 	},
 /area/centcom)
 "pb" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/machinery/door/blast/regular{
 	id_tag = "theadmin";
 	name = "The Administrator's Office Lockdown Blast Door"
@@ -4602,6 +4645,16 @@
 	dir = 4
 	},
 /obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "pd" = (
@@ -5059,10 +5112,8 @@
 	},
 /area/centcom)
 "qg" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 10
 	},
 /turf/unsimulated/floor/grass{
 	color = "#799c4b";
@@ -5102,7 +5153,6 @@
 /turf/unsimulated/beach/coastline,
 /area/beach)
 "qu" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 4
@@ -5110,6 +5160,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "qy" = (
@@ -5127,10 +5182,6 @@
 /area/centcom)
 "qz" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /turf/unsimulated/floor/grass{
 	color = "#799c4b";
 	icon = 'icons/turf/jungle.dmi';
@@ -5346,6 +5397,14 @@
 	color = "#d5a66e"
 	},
 /area/centcom)
+"rs" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon_state = "snow"
+	},
+/area/centcom)
 "ru" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
@@ -5447,9 +5506,12 @@
 	},
 /area/centcom)
 "rB" = (
-/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/unsimulated/floor{
-	icon_state = "snow"
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "rC" = (
@@ -6177,7 +6239,6 @@
 	id_tag = "isdlock";
 	name = "Internal Security Lockdown Shutters"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
@@ -6185,6 +6246,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "sH" = (
@@ -7426,6 +7492,21 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"vS" = (
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "vT" = (
 /obj/structure/bed,
 /obj/effect/floor_decal/corner/orange/border{
@@ -7478,7 +7559,6 @@
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
 "wb" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
@@ -7488,6 +7568,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "we" = (
@@ -7587,7 +7672,6 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "wr" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/machinery/door/blast/regular{
 	id_tag = "theadmin";
 	name = "The Administrator's Office Lockdown Blast Door"
@@ -7604,6 +7688,16 @@
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ws" = (
@@ -7694,7 +7788,6 @@
 	},
 /area/centcom)
 "wF" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -7702,6 +7795,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "wG" = (
@@ -7714,6 +7812,24 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"wN" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "wT" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -7737,7 +7853,6 @@
 	},
 /area/centcom)
 "wY" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -7746,6 +7861,11 @@
 	id_tag = "mtfext";
 	name = "Dispatch Center External Lockdown"
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "wZ" = (
@@ -7835,7 +7955,20 @@
 	},
 /area/centcom)
 "xB" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "xD" = (
@@ -8249,8 +8382,7 @@
 "yO" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 9
 	},
 /turf/unsimulated/floor{
 	icon_state = "snow"
@@ -8729,17 +8861,20 @@
 	},
 /area/centcom)
 "AF" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "AH" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
@@ -8749,6 +8884,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "AK" = (
@@ -10069,6 +10209,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Fh" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "snow"
+	},
+/area/centcom)
 "Fj" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#272B5B";
@@ -10093,6 +10242,15 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
+	},
+/area/centcom)
+"Fl" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "Fm" = (
@@ -10609,11 +10767,21 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "HW" = (
-/obj/effect/wingrille_spawn/reinforced/full,
 /obj/machinery/door/blast/shutters{
 	id_tag = "adarch";
 	name = "Archive Lockdown Shutters";
 	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
 /turf/unsimulated/floor/plating,
 /area/centcom)
@@ -10861,7 +11029,6 @@
 	},
 /area/centcom)
 "IK" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -10869,6 +11036,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "IL" = (
@@ -12460,6 +12632,26 @@
 	icon_state = "greygrass"
 	},
 /area/centcom)
+"NH" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "adarch";
+	name = "Archive Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "NK" = (
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 1
@@ -12731,16 +12923,26 @@
 	},
 /area/centcom)
 "OM" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/machinery/door/blast/shutters{
+	id_tag = "adarch";
+	name = "Archive Lockdown Shutters";
+	dir = 4
 	},
-/turf/unsimulated/floor/grass{
-	color = "#799c4b";
-	icon = 'icons/turf/jungle.dmi';
-	icon_state = "greygrass"
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
 	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "ON" = (
 /obj/effect/floor_decal/corner/red/mono,
@@ -12780,13 +12982,11 @@
 /area/centcom)
 "OQ" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 9
 	},
-/turf/unsimulated/floor/grass{
-	color = "#799c4b";
-	icon = 'icons/turf/jungle.dmi';
-	icon_state = "greygrass"
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "OV" = (
@@ -12794,7 +12994,6 @@
 	id_tag = "mtfext";
 	name = "Dispatch Center External Lockdown"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -12805,6 +13004,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "OX" = (
@@ -12931,8 +13135,7 @@
 /area/centcom)
 "PC" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 8
 	},
 /turf/unsimulated/floor/grass{
 	color = "#799c4b";
@@ -13036,7 +13239,6 @@
 	},
 /area/centcom)
 "PP" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 8
@@ -13044,6 +13246,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "PQ" = (
@@ -13240,7 +13447,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom)
 "QC" = (
@@ -13628,7 +13835,6 @@
 	id_tag = "05blastdoor2";
 	name = "Council Offices Blast Door"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
@@ -13638,6 +13844,20 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/simulated/floor,
 /area/centcom)
 "Ry" = (
@@ -13842,7 +14062,6 @@
 	id_tag = "isdlock";
 	name = "Internal Security Lockdown Shutters"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
@@ -13850,6 +14069,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "Sf" = (
@@ -13933,6 +14157,21 @@
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/carpet/red,
+/area/centcom)
+"Sv" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Sw" = (
 /obj/structure/table/rack,
@@ -14086,6 +14325,20 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"SW" = (
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "SZ" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Logistics Hangar";
@@ -14190,7 +14443,6 @@
 	},
 /area/centcom)
 "Tv" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/machinery/door/blast/regular{
 	id_tag = "theadmin";
 	name = "The Administrator's Office Lockdown Blast Door"
@@ -14213,6 +14465,16 @@
 /obj/structure/window/phoronreinforced{
 	dir = 1
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "Tx" = (
@@ -14322,7 +14584,6 @@
 	id_tag = "mtfext";
 	name = "Dispatch Center External Lockdown"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -14330,6 +14591,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "Ua" = (
@@ -14523,7 +14789,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom)
 "UW" = (
@@ -14739,8 +15005,7 @@
 /area/centcom)
 "VT" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 8
 	},
 /turf/unsimulated/floor{
 	icon_state = "snow"
@@ -14768,6 +15033,9 @@
 	},
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -15281,12 +15549,11 @@
 	},
 /area/centcom)
 "Yg" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /obj/effect/floor_decal/corner/orange{
 	dir = 6
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -15298,7 +15565,6 @@
 	id_tag = "mtfext";
 	name = "Dispatch Center External Lockdown"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -15306,6 +15572,11 @@
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "Yq" = (
@@ -15356,7 +15627,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "YB" = (
@@ -19007,7 +19278,7 @@ tq
 xd
 gp
 eE
-Mi
+kU
 nE
 gp
 wx
@@ -19042,7 +19313,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+tq
 ab
 ab
 ab
@@ -19209,7 +19480,7 @@ tq
 xd
 gp
 eE
-Mi
+kU
 Dv
 gp
 et
@@ -19411,7 +19682,7 @@ tq
 xd
 gp
 eE
-Mi
+kU
 XC
 gp
 gp
@@ -19613,7 +19884,7 @@ tq
 vV
 gp
 eE
-Mi
+Sv
 cI
 gp
 Ph
@@ -19841,15 +20112,15 @@ Nx
 Nx
 Nx
 Nn
-OQ
-OM
+ZC
+WT
 qz
-OQ
-OQ
-nW
-nW
-nW
-nW
+ZC
+ZC
+ZA
+ZA
+ZA
+ZA
 tq
 ab
 ab
@@ -20017,7 +20288,7 @@ tq
 xd
 gp
 eE
-Mi
+wN
 NZ
 gp
 Pm
@@ -20042,16 +20313,16 @@ ab
 Nx
 Nx
 ZC
-NC
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+ZC
+OQ
+Fl
+Fl
+Fl
+Fl
+Fl
+Fl
+Fl
+Fl
 tq
 ab
 ab
@@ -20244,8 +20515,8 @@ Nx
 Nx
 ZA
 ZA
+ZA
 rB
-Rr
 Uk
 Uk
 Uk
@@ -20421,7 +20692,7 @@ tq
 ay
 gp
 eE
-Mi
+nW
 It
 NO
 ME
@@ -20446,8 +20717,8 @@ Nx
 ZA
 ZC
 ZA
-bk
-Rr
+WT
+rB
 Uk
 Uk
 Uk
@@ -20624,18 +20895,18 @@ nc
 ug
 zv
 tq
-HW
+NH
 Lq
-HW
+OM
 HW
 HW
 tq
 tq
 tw
 tq
-Mi
-Mi
-Mi
+SW
+SW
+SW
 tq
 tq
 ab
@@ -20648,8 +20919,8 @@ Nx
 ZC
 ZA
 WT
-NC
-Rr
+ZC
+rB
 Uk
 Uk
 Uk
@@ -20850,8 +21121,8 @@ Nx
 ZC
 ZA
 ZA
+ZA
 rB
-Rr
 Uk
 Uk
 Uk
@@ -21052,8 +21323,8 @@ Nx
 Nx
 Nx
 Nn
+ZA
 rB
-Rr
 Rr
 Rr
 Rr
@@ -21254,13 +21525,13 @@ ab
 Nx
 Nx
 ZA
+ZA
 rB
-kO
 yO
 VT
 PC
 VT
-yO
+Fh
 qg
 Rr
 Rr
@@ -21456,16 +21727,16 @@ ab
 ab
 Nx
 Nx
+ZA
 rB
-kO
-ZA
+rs
 ZC
 ZA
 ZC
 ZC
-ZC
-PC
-PC
+NC
+Rr
+Rr
 tq
 ab
 ab
@@ -21666,8 +21937,8 @@ tq
 tq
 tq
 tq
-tq
-tq
+bk
+bk
 tq
 tq
 tq
@@ -22656,7 +22927,7 @@ AD
 Mz
 tq
 tq
-xB
+vS
 oT
 xB
 tq
@@ -24850,10 +25121,10 @@ Rr
 Rr
 tq
 xS
-Mi
-Mi
+SW
+vS
 Ns
-Mi
+xB
 xS
 tq
 UZ
@@ -25282,9 +25553,9 @@ tq
 tq
 tq
 tq
-Mi
+vS
 pz
-Mi
+xB
 tq
 tq
 WZ
