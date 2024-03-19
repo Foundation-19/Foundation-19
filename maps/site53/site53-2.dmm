@@ -18606,7 +18606,6 @@
 /area/site53/reswing/robotics)
 "bgb" = (
 /obj/machinery/camera/network/entrance{
-	c_tag = "Hub 1";
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
