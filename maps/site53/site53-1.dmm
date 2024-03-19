@@ -1359,8 +1359,7 @@
 /area/site53/llcz/dclass/medicalpost/morgue)
 "blY" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignment)
@@ -2117,8 +2116,7 @@
 /area/site53/llcz/dclass/cellbubble)
 "bYs" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/briefing)
@@ -3485,8 +3483,7 @@
 /area/site53/llcz/dclass/reeducation)
 "duI" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
@@ -4484,8 +4481,7 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "evs" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -5743,8 +5739,7 @@
 /area/site53/llcz/dclass/kitchen)
 "fOv" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/grass,
 /area/site53/llcz/dclass/botany)
@@ -5835,8 +5830,7 @@
 /area/site53/llcz/dclass/luxurysleep)
 "fTB" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -5907,8 +5901,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -6109,8 +6102,7 @@
 /area/site53/llcz/dclass/checkpoint)
 "geP" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6523,8 +6515,7 @@
 	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
@@ -8832,8 +8823,7 @@
 "iZs" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -10019,8 +10009,7 @@
 /area/site53/llcz/dclass/canteenbubble)
 "kop" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 8
@@ -12276,8 +12265,7 @@
 "mAQ" = (
 /obj/effect/catwalk_plated,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/machinery/light/small/emergency{
 	dir = 8;
@@ -14056,8 +14044,7 @@
 /area/site53/ulcz/scp173)
 "onW" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -16087,8 +16074,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
@@ -16232,8 +16218,7 @@
 /area/site53/llcz/dclass/briefing)
 "qBh" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
@@ -17586,8 +17571,7 @@
 	icon_state = "warning"
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/sign/dclass{
 	pixel_y = 32
@@ -17640,8 +17624,7 @@
 /area/site53/llcz/dclass/luxuryhall)
 "rYA" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -22956,8 +22939,7 @@
 "xPI" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 1

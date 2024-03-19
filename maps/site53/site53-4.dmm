@@ -25,8 +25,7 @@
 	},
 /obj/structure/flora/pottedplant/decorative,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -58,8 +57,7 @@
 /area/site53/uez/mcrsubstation)
 "al" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -106,15 +104,13 @@
 	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "as" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -131,8 +127,7 @@
 /area/site53/uez/bridge)
 "au" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile,
@@ -148,8 +143,7 @@
 /area/site53/uez/hallway)
 "az" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -171,8 +165,7 @@
 /area/site53/uez/bridge)
 "aC" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -185,15 +178,13 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "aE" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 8
@@ -811,8 +802,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/machinery/camera/autoname{
 	dir = 3;
@@ -2663,8 +2653,7 @@
 /obj/effect/floor_decal/corner/orange/borderfull,
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 8
@@ -3846,8 +3835,7 @@
 /area/site53/uez/commandpanicbunker)
 "pN" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -5534,8 +5522,7 @@
 /area/site53/uez/commandpanicbunker)
 "CV" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /obj/machinery/light{
 	dir = 4
@@ -7429,8 +7416,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/commandpanicbunker)

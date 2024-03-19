@@ -598,8 +598,7 @@
 "by" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/surface/surface)
@@ -750,11 +749,7 @@
 /area/site53/surface/surface)
 "bP" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
+	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 273.15
@@ -762,18 +757,15 @@
 /area/site53/surface/surface)
 "bQ" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 273.15
 	},
 /area/site53/surface/surface)
 "bR" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 273.15
@@ -1471,11 +1463,10 @@
 /area/space)
 "dB" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 1
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/surface/surface)
@@ -1683,8 +1674,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/uez/bridge)
@@ -1853,8 +1843,7 @@
 /area/site53/uez/bridge)
 "eF" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/uez/bridge)
@@ -2161,8 +2150,7 @@
 /area/site53/medical/mentalhealth/office)
 "fv" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/surface/surface)
@@ -3329,8 +3317,7 @@
 "iW" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -3660,27 +3647,25 @@
 /area/site53/medical/isolation)
 "jJ" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/railing/mapped{
 	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "jK" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -3858,8 +3843,7 @@
 /area/site53/medical/infirmreception/waiting)
 "kh" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -4701,20 +4685,12 @@
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"nj" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
 "nl" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -4931,11 +4907,10 @@
 /area/site53/entrancezone/substation)
 "oy" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -4973,14 +4948,6 @@
 /obj/structure/flora/tree/dead,
 /obj/structure/railing/mapped{
 	dir = 1
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
-"oF" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -5319,11 +5286,10 @@
 /turf/simulated/wall/prepainted,
 /area/site53/uez/bridge)
 "qF" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /obj/structure/flora/ausbushes/pointybush,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "qG" = (
@@ -6074,8 +6040,7 @@
 /area/site53/upper_surface/innerentrancehallway)
 "uW" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -6592,8 +6557,7 @@
 /area/site53/medical/surgery/hall)
 "yV" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
@@ -6864,8 +6828,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
@@ -7529,8 +7492,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
@@ -8205,11 +8167,10 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Pt" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Pv" = (
@@ -8222,11 +8183,10 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Pw" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "Px" = (
@@ -9259,8 +9219,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -38200,7 +38159,7 @@ kh
 kh
 kh
 Pw
-nj
+Rx
 iz
 sw
 nE
@@ -39229,7 +39188,7 @@ nl
 nl
 oy
 oy
-oF
+NB
 sm
 nE
 nE
@@ -42859,8 +42818,8 @@ RG
 jg
 jg
 sd
-nj
-nj
+Rx
+Rx
 Rx
 Rx
 Rx
@@ -44854,9 +44813,9 @@ Rx
 qp
 Rx
 bO
-nj
-nj
-nj
+Rx
+Rx
+Rx
 jg
 lE
 nE
