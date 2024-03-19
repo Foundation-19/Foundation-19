@@ -57,8 +57,6 @@
 		/obj/item/hand_labeler,
 		/obj/item/stamp,
 		/obj/item/stamp/denied,
-		/obj/item/material/sword/sabre
-		/obj/item/stamp/denied,
 		/obj/item/weldingtool/electric,
 		/obj/item/reagent_containers/borghypo/crisis,
 		/obj/item/material/sword/sabre
