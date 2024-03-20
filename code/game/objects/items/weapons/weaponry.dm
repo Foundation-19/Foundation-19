@@ -103,16 +103,15 @@
 	var/mob/living/carbon/captured = null
 	var/min_free_time = 6 SECONDS
 	var/max_free_time = 9 SECONDS
-
 /obj/effect/energy_net/safari
 	name = "animal net"
 	desc = "An energized net meant to subdue animals."
 
 	anchored = FALSE
-	health = 5
+	health = 20
 	temporary = 0
-	min_free_time = 5
-	max_free_time = 10
+	min_free_time = 20
+	max_free_time = 35
 
 /obj/effect/energy_net/teleport
 	countdown = 60
