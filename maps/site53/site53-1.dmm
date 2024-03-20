@@ -7158,7 +7158,7 @@
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "heQ" = (
 /obj/machinery/smartfridge/chemistry,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost/chem)
 "hfu" = (
 /obj/effect/wallframe_spawn/reinforced,
