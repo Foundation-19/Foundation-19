@@ -4415,12 +4415,14 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/innerentrancehallway)
 "lM" = (
-/obj/effect/floor_decal/industrial/hatch/orange,
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 2;
 	id_tag = "EZ Checkpoint South";
 	name = "South Checkpoint Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#ceb689"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -4521,11 +4523,11 @@
 /area/site53/upper_surface/entrancehallway)
 "mm" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 5
-	},
 /obj/structure/bed/chair/padded/green{
 	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/entrancehallway)
@@ -5639,8 +5641,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "rQ" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "rR" = (
 /obj/machinery/light/spot{
@@ -5762,6 +5766,13 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green{
 	dir = 10
+	},
+/obj/machinery/button/blast_door{
+	name = "Cryogenics Emergency Lockdown Control";
+	id_tag = "cryogen";
+	pixel_y = 2;
+	dir = 1;
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
@@ -5890,12 +5901,18 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
 "tb" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/titanium,
-/area/site53/maintenance/surfacewest)
+/obj/structure/bed/chair/padded/green{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/upper_surface/entrancehallway)
 "td" = (
 /obj/structure/closet/secure_closet/personal/empty{
-	name = "Representative's Locker"
+	name = "Representative's Locker";
+	req_access = null
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
@@ -6009,6 +6026,9 @@
 /obj/structure/cryofeed{
 	dir = 4
 	},
+/obj/structure/window/basic{
+	dir = 8
+	},
 /turf/simulated/floor/greengrid,
 /area/site53/surface/cryogenicsprimary)
 "uC" = (
@@ -6084,7 +6104,7 @@
 "uO" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/wall/prepainted,
 /area/site53/entrancezone/hallway)
 "uP" = (
 /obj/structure/window/reinforced,
@@ -7690,11 +7710,14 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
 "GH" = (
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 4
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/cryogenicsprimary)
 "GJ" = (
 /obj/structure/railing/mapped{
@@ -7706,13 +7729,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/surface)
 "GL" = (
-/obj/machinery/computer/cryopod{
-	icon = 'icons/obj/computer.dmi';
-	icon_state = "console";
-	dir = 8
-	},
 /obj/effect/floor_decal/corner/green{
 	dir = 6
+	},
+/obj/item/modular_computer/console/preset/security{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
@@ -7819,8 +7840,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
 "HG" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_titanium,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "HH" = (
 /obj/structure/bed/roller,
@@ -8035,12 +8058,12 @@
 /turf/simulated/floor/greengrid,
 /area/site53/surface/cryogenicsprimary)
 "Jk" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -8057,6 +8080,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/window/basic{
+	dir = 8
 	},
 /turf/simulated/floor/greengrid,
 /area/site53/surface/cryogenicsprimary)
@@ -8272,6 +8298,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
@@ -9677,9 +9706,11 @@
 /turf/simulated/floor/grass,
 /area/site53/medical/mentalhealth/office)
 "XJ" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/titanium,
-/area/site53/uez/bridge)
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "XK" = (
 /obj/machinery/vending/coffee{
 	dir = 4
@@ -39073,7 +39104,7 @@ XH
 XH
 XH
 XH
-tb
+bk
 Gg
 bk
 xP
@@ -39330,7 +39361,7 @@ XH
 XH
 XH
 XH
-tb
+bk
 di
 bk
 xP
@@ -39587,7 +39618,7 @@ XH
 XH
 XH
 XH
-tb
+bk
 Gg
 bk
 xP
@@ -39622,7 +39653,7 @@ qW
 gt
 Ci
 gt
-ml
+tb
 ep
 nE
 nE
@@ -39844,7 +39875,7 @@ XH
 XH
 XH
 XH
-XJ
+hp
 dp
 hp
 hp
@@ -39871,7 +39902,7 @@ aj
 Td
 oD
 Lu
-GH
+Lu
 Lu
 Lu
 Vn
@@ -40097,11 +40128,11 @@ XH
 XH
 XH
 XH
-rQ
-rQ
-rQ
-rQ
-rQ
+ur
+ur
+ur
+ur
+ur
 dq
 pY
 dD
@@ -40129,7 +40160,7 @@ qf
 vp
 aT
 aT
-aT
+GH
 aT
 aT
 aT
@@ -40354,11 +40385,11 @@ Az
 Az
 mk
 XH
-rQ
+ur
 Ip
 rS
 We
-rQ
+ur
 dr
 lg
 dD
@@ -40611,10 +40642,10 @@ Gv
 Gv
 mk
 uO
-HG
-HG
+ur
+ur
 Wb
-HG
+ur
 ur
 dC
 lg
@@ -40867,7 +40898,7 @@ Pv
 UJ
 Gv
 mk
-HG
+ur
 sg
 vj
 zO
@@ -41124,7 +41155,7 @@ al
 CW
 vD
 mk
-HG
+ur
 lf
 zO
 zO
@@ -41381,7 +41412,7 @@ Rc
 Rc
 Rc
 mk
-HG
+ur
 xq
 zO
 zO
@@ -41638,7 +41669,7 @@ Kr
 mi
 td
 mk
-HG
+ur
 uA
 rV
 Si
@@ -41895,7 +41926,7 @@ rt
 Bl
 mk
 mk
-HG
+ur
 Pc
 uP
 wF
@@ -42155,8 +42186,8 @@ mp
 va
 CI
 lY
-lY
-mp
+HG
+rQ
 lM
 am
 lg
@@ -42413,7 +42444,7 @@ uY
 lZ
 Uc
 Jk
-mx
+XJ
 lM
 am
 lg
@@ -42666,11 +42697,11 @@ Zv
 Zp
 tM
 tM
-rQ
-rQ
-rQ
-rQ
-rQ
+ur
+ur
+ur
+ur
+ur
 ur
 am
 lg
