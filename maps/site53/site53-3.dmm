@@ -4,11 +4,11 @@
 /turf/unsimulated/mineral,
 /area/site53/uez/bridge)
 "ac" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/entrancehallway)
@@ -50,7 +50,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "aj" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -90,11 +90,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "as" = (
-/obj/effect/floor_decal/spline/fancy/wood/corner{
-	dir = 4
-	},
 /obj/structure/bed/chair/padded/green{
 	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/black/corner{
+	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/entrancehallway)
@@ -152,7 +152,7 @@
 /area/site53/upper_surface/innerentrancehallway)
 "az" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
@@ -184,7 +184,7 @@
 	name = "Cryogenics Storage"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -1879,7 +1879,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "eK" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
@@ -3995,7 +3995,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
 "kC" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
@@ -4407,10 +4407,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "lL" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/structure/bed/chair/padded/green{
 	dir = 8
 	},
-/obj/structure/bed/chair/padded/green{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
@@ -4448,15 +4448,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"lX" = (
-/obj/structure/bed/chair/padded/green{
-	dir = 1
-	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/upper_surface/entrancehallway)
 "lY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -4494,6 +4485,16 @@
 /obj/item/clothing/suit/surgicalapron,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
+"mg" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "mi" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/wood/walnut,
@@ -4507,10 +4508,10 @@
 /turf/simulated/wall/titanium,
 /area/site53/uez/goirepoffice)
 "ml" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/structure/bed/chair/padded/green{
 	dir = 1
 	},
-/obj/structure/bed/chair/padded/green{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
@@ -4520,7 +4521,7 @@
 /obj/structure/bed/chair/padded/green{
 	dir = 1
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
@@ -4561,7 +4562,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mr" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -5404,7 +5405,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "qT" = (
-/obj/effect/floor_decal/spline/fancy/wood,
+/obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/cryogenicsprimary)
 "qU" = (
@@ -5476,11 +5477,11 @@
 /area/site53/surface/surface)
 "ro" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 9
-	},
 /obj/structure/bed/chair/padded/green{
 	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 9
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/entrancehallway)
@@ -5629,11 +5630,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "rQ" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 6
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower External North";
+	network = list("Entrance Zone Network");
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "rR" = (
 /obj/machinery/light/spot{
 	dir = 1
@@ -5889,15 +5892,11 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
 "tb" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
 	},
-/obj/effect/floor_decal/industrial/outline,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "td" = (
 /obj/structure/closet/secure_closet/personal/empty{
 	name = "Representative's Locker";
@@ -5909,7 +5908,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -6967,7 +6966,7 @@
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
@@ -7090,7 +7089,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
 "Bv" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 10
 	},
 /turf/simulated/floor/wood/walnut,
@@ -7546,10 +7545,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "Fo" = (
-/obj/effect/floor_decal/spline/fancy/wood/corner{
+/obj/structure/bed/chair/padded/green{
 	dir = 1
 	},
-/obj/structure/bed/chair/padded/green{
+/obj/effect/floor_decal/spline/fancy/black/corner{
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
@@ -7683,12 +7682,6 @@
 "Gv" = (
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
-"GH" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "GJ" = (
 /obj/structure/railing/mapped{
 	dir = 10
@@ -7810,6 +7803,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
+"HG" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "HH" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -7849,11 +7848,11 @@
 /obj/machinery/power/apc/hyper{
 	dir = 1
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/entrancehallway)
@@ -7950,14 +7949,6 @@
 /obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uez/goirepoffice)
-"ID" = (
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower External North";
-	network = list("Entrance Zone Network");
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
 "IF" = (
 /obj/structure/barricade,
 /turf/simulated/floor/exoplanet/snow,
@@ -8090,7 +8081,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
@@ -8284,7 +8275,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
 "Lu" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -8560,7 +8551,7 @@
 	name = "Cryogenics Overwatch Office";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -9101,7 +9092,7 @@
 /area/site53/medical/chemistry)
 "Td" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
@@ -9122,6 +9113,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
+"Tp" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "Tq" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9370,7 +9367,7 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/surgery/op1)
 "Vn" = (
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 6
 	},
 /turf/simulated/floor/wood/walnut,
@@ -9643,12 +9640,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/medical/mentalhealth/office)
-"XJ" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "XK" = (
 /obj/machinery/vending/coffee{
 	dir = 4
@@ -9843,7 +9834,7 @@
 	name = "Cryogenics Storage"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/floor_decal/spline/fancy/wood{
+/obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -37547,7 +37538,7 @@ jt
 sv
 jR
 vO
-ID
+rQ
 Lm
 Lm
 Lm
@@ -39591,7 +39582,7 @@ qW
 gt
 Ci
 gt
-lX
+ml
 ep
 nE
 nE
@@ -40098,7 +40089,7 @@ qf
 vp
 aT
 aT
-tb
+mg
 aT
 aT
 aT
@@ -42124,8 +42115,8 @@ mp
 va
 CI
 lY
-GH
-XJ
+Tp
+tb
 lM
 am
 lg
@@ -42382,7 +42373,7 @@ uY
 lZ
 Uc
 Jk
-rQ
+HG
 lM
 am
 lg
