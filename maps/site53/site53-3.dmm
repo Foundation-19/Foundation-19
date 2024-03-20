@@ -1274,7 +1274,6 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
 "cX" = (
-/obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/green{
 	dir = 5
 	},
@@ -4639,11 +4638,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mL" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 6
+/obj/structure/bed/chair/padded/green{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/upper_surface/entrancehallway)
 "mM" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6385,10 +6387,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
 "vO" = (
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Entrance Zone Network")
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -7721,7 +7719,7 @@
 /area/site53/uez/goirepoffice)
 "GH" = (
 /obj/effect/floor_decal/corner/beige/border{
-	dir = 10
+	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -7779,6 +7777,7 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 9
 	},
+/obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
 "GV" = (
@@ -7846,14 +7845,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
 "HG" = (
-/obj/structure/bed/chair/padded/green{
-	dir = 1
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/upper_surface/entrancehallway)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "HH" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -8301,7 +8297,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
 "Lg" = (
-/obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/green{
 	dir = 5
 	},
@@ -8311,6 +8306,7 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
 	},
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
 "Lm" = (
@@ -8723,6 +8719,10 @@
 /obj/effect/floor_decal/corner/orange{
 	dir = 1
 	},
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower External South";
+	network = list("Entrance Zone Network")
+	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 1
 	},
@@ -8742,6 +8742,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
 "PS" = (
@@ -9715,6 +9716,14 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/medical/mentalhealth/office)
+"XJ" = (
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower External North";
+	network = list("Entrance Zone Network");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "XK" = (
 /obj/machinery/vending/coffee{
 	dir = 4
@@ -37613,7 +37622,7 @@ jt
 sv
 jR
 vO
-nE
+XJ
 Lm
 Lm
 Lm
@@ -39657,7 +39666,7 @@ qW
 gt
 Ci
 gt
-HG
+mL
 ep
 nE
 nE
@@ -42191,7 +42200,7 @@ va
 CI
 lY
 tb
-GH
+HG
 lM
 am
 lg
@@ -42448,7 +42457,7 @@ uY
 lZ
 Uc
 Jk
-mL
+GH
 lM
 am
 lg
