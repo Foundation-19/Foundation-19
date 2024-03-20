@@ -17,7 +17,6 @@
 		/datum/nano_module/crew_monitor,
 		/datum/nano_module/program/digitalwarrant
 	)
-	can_be_pushed = FALSE
 	supported_upgrades = list(
 		/obj/item/borg/upgrade/weaponcooler
 	)

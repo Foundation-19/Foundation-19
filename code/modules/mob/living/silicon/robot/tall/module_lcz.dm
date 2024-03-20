@@ -9,6 +9,17 @@
 		"Security" = TRUE,
 		"LCZ-Security" = TRUE
 	)
+	networks = list(
+		NETWORK_SECURITY
+	)
+	subsystems = list(
+		/datum/nano_module/crew_monitor,
+		/datum/nano_module/program/digitalwarrant
+	)
+	can_be_pushed = FALSE
+	supported_upgrades = list(
+		/obj/item/borg/upgrade/weaponcooler
+	)
 	skills = list(
 		SKILL_COMBAT      = SKILL_EXPERIENCED,
 		SKILL_WEAPONS     = SKILL_EXPERIENCED,
