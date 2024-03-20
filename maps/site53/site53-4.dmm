@@ -2677,12 +2677,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower)
 "ju" = (
@@ -2902,12 +2903,13 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "jW" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/upper_surface/commstower)
 "jX" = (
@@ -2922,12 +2924,12 @@
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/upper_surface/commstower)
 "jY" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "commtower";
 	name = "Communications Tower Lockdown Blast Door"
 	},
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower)
 "jZ" = (
@@ -3034,7 +3036,7 @@
 	id_tag = "commtower";
 	name = "Communications Tower Lockdown Blast Door"
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/upper_surface/commstower)
 "kr" = (
@@ -3140,7 +3142,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "kF" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/upper_surface/commstower)
 "kG" = (
@@ -3250,13 +3252,14 @@
 	name = "Communications Center";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor{
+	name = "Communications Tower Lockdown Blast Door";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -3285,11 +3288,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "la" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor{
 	dir = 4
@@ -3297,6 +3295,12 @@
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Center";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/commstower)
@@ -8343,6 +8347,16 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
+"Xz" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/commstower)
 "XB" = (
 /obj/machinery/vitals_monitor,
 /turf/simulated/floor/tiled/white,
@@ -34537,19 +34551,19 @@ hZ
 hZ
 hZ
 hZ
-jY
+Xz
 aY
-jY
-jY
+Xz
+Xz
 aY
-jY
+Xz
 jr
-jY
+Xz
 aY
-jY
-jY
+Xz
+Xz
 aY
-jY
+Xz
 hZ
 hZ
 hZ
@@ -34807,7 +34821,7 @@ sA
 xI
 yo
 jY
-jY
+Xz
 hZ
 hZ
 hZ
@@ -35049,7 +35063,7 @@ hZ
 hZ
 hZ
 hZ
-jY
+Xz
 jY
 TE
 kS
@@ -35322,7 +35336,7 @@ Nw
 jy
 OT
 hN
-jY
+Xz
 jY
 hZ
 hZ
@@ -35568,13 +35582,13 @@ Ts
 jJ
 nz
 kR
-kq
+jW
 gK
-kq
+jW
 kT
-kq
+jW
 gK
-kq
+jW
 MA
 Nw
 jy
@@ -36081,7 +36095,7 @@ jK
 jJ
 QS
 kq
-kq
+jW
 Wk
 jQ
 jQ
@@ -36089,7 +36103,7 @@ iJ
 jQ
 jQ
 kP
-kq
+jW
 kq
 jV
 jU
@@ -37623,7 +37637,7 @@ kj
 jJ
 QS
 kq
-kq
+jW
 kl
 jT
 jT
@@ -37631,7 +37645,7 @@ nD
 jT
 jT
 ki
-kq
+jW
 kq
 HT
 jJ
@@ -38138,13 +38152,13 @@ EA
 jJ
 OT
 jo
-kq
+jW
 gK
-kq
+jW
 la
-kq
+jW
 gK
-kq
+jW
 LG
 Ts
 jJ
@@ -38406,7 +38420,7 @@ Ts
 jJ
 kU
 kZ
-jY
+Xz
 jY
 hZ
 hZ
@@ -38647,7 +38661,7 @@ hZ
 hZ
 hZ
 hZ
-jY
+Xz
 jY
 rJ
 nj
@@ -38919,7 +38933,7 @@ ju
 lY
 EH
 jY
-jY
+Xz
 hZ
 hZ
 hZ
@@ -39163,19 +39177,19 @@ hZ
 hZ
 hZ
 hZ
-jY
+Xz
 aY
-jY
-jY
+Xz
+Xz
 aY
 jW
 jW
 jW
 aY
-jY
-jY
+Xz
+Xz
 aY
-jY
+Xz
 hZ
 hZ
 hZ

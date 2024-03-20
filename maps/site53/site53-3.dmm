@@ -5027,6 +5027,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"pc" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway)
 "pd" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
@@ -5228,12 +5236,13 @@
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/innerentrancehallway)
 "qh" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower)
 "qp" = (
@@ -6947,6 +6956,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
+"Bv" = (
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway)
 "BO" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -7878,6 +7896,15 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
+"Ky" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/commstower)
 "KB" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/paper_bin,
@@ -37088,7 +37115,7 @@ Cr
 bn
 oJ
 vt
-qh
+Ky
 YT
 gr
 cb
@@ -37602,7 +37629,7 @@ bn
 bn
 oJ
 vt
-qh
+Ky
 YT
 gr
 cb
@@ -38116,7 +38143,7 @@ DY
 bn
 oJ
 vt
-qh
+Ky
 YT
 gr
 cb
@@ -38350,7 +38377,7 @@ af
 rM
 rM
 rM
-rM
+Bv
 ae
 kh
 kh
@@ -38608,7 +38635,7 @@ as
 as
 as
 as
-sx
+pc
 qF
 Pt
 iW

@@ -16711,9 +16711,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/scpcar)
 "aZc" = (
-/obj/item/blueprints{
-	pixel_y = 5
-	},
 /obj/item/clothing/accessory/armband/bluegold,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/scpcar)
@@ -38932,11 +38929,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "ubg" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/serverfarmtunnel)
@@ -38999,14 +38997,15 @@
 /area/site53/zonecommanderoffice)
 "ufy" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
-	},
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Tower Basement";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/serverfarmtunnel)
@@ -73043,12 +73042,12 @@ aRh
 aRh
 aRh
 aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+sGF
+sGF
+sGF
+sGF
+sGF
+sGF
 aQP
 aQP
 aQP
