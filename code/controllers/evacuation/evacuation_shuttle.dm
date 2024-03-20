@@ -42,7 +42,7 @@
 	// Announcements, state changes and such are handled by the shuttle itself to prevent desync.
 
 /datum/evacuation_controller/shuttle/finish_preparing_evac()
-	departed = 1
+	departed = 1 //The escape shuttle has departed from Central Command.
 	evac_launch_time = world.time + evac_launch_delay
 
 	. = ..()
@@ -74,7 +74,7 @@
 
 /datum/evacuation_controller/shuttle/get_status_panel_eta()
 	if(has_eta() && waiting_to_leave())
-		return "Launching..."
+		return "Departing..."
 	return ..()
 
 // This is largely handled by the emergency shuttle datum.
