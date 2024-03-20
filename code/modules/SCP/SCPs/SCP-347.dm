@@ -14,8 +14,8 @@
 		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
 
-	SCP.min_time = 1 MINUTES
-	SCP.min_playercount = 0
+	SCP.min_time = 15 MINUTES
+	SCP.min_playercount = 20
 
 	init_skills()
 
