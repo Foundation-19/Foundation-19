@@ -1359,14 +1359,12 @@
 /area/site53/lowertrams/escape)
 "aeL" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1";
-	pixel_x = 7
+	dir = 4;
+	pixel_x = -5
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	pixel_x = -7
+	dir = 8;
+	pixel_x = 5
 	},
 /obj/effect/shuttle_landmark/train/onsite,
 /turf/simulated/floor/reinforced,
@@ -2427,14 +2425,12 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	pixel_x = -7
+	dir = 8;
+	pixel_x = 5
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1";
-	pixel_x = 7
+	dir = 4;
+	pixel_x = -5
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
@@ -3648,14 +3644,12 @@
 /area/site53/engineering/locker_room)
 "alg" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1";
-	pixel_x = 7
+	dir = 4;
+	pixel_x = -5
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	pixel_x = -7
+	dir = 8;
+	pixel_x = 5
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)

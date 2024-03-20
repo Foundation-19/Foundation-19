@@ -147,6 +147,21 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
+"aN" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "aP" = (
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
@@ -196,10 +211,8 @@
 /turf/simulated/floor,
 /area/supply/dock)
 "bc" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 6
 	},
 /obj/structure/flora/pottedplant/minitree{
 	pixel_x = -2;
@@ -944,13 +957,11 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 4;
-	icon_state = "railing0-1";
-	pixel_x = -7
+	pixel_x = -5
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	pixel_x = 7
+	pixel_x = 5
 	},
 /turf/simulated/floor,
 /area/centcom)
@@ -5215,8 +5226,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/site53/tram/maintrain)
@@ -7090,23 +7100,19 @@
 	},
 /area/centcom)
 "tU" = (
-/obj/effect/floor_decal/industrial/warning{
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/warning{
+/obj/structure/window/phoronreinforced{
 	dir = 8
 	},
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1";
-	pixel_x = 7
-	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	pixel_x = -7
-	},
-/turf/simulated/floor,
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "tV" = (
 /obj/structure/bed/chair{
@@ -8125,6 +8131,28 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"xM" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "mtfext";
+	name = "Dispatch Center External Lockdown"
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "xO" = (
 /obj/effect/floor_decal/corner/green/bordercorner,
@@ -10107,6 +10135,21 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Ey" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "EA" = (
 /obj/machinery/door/airlock/vault{
 	name = "Internal Tribunal Courtroom";
@@ -10417,6 +10460,23 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Fe" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "Ff" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#00BCBC";
@@ -10706,6 +10766,24 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Gz" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "GL" = (
 /obj/structure/bed/chair/office/comfy/green{
 	dir = 4
@@ -10734,14 +10812,12 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	pixel_x = -7
+	dir = 8;
+	pixel_x = 5
 	},
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1";
-	pixel_x = 7
+	dir = 4;
+	pixel_x = -5
 	},
 /turf/simulated/floor/reinforced,
 /area/centcom)
@@ -10804,18 +10880,16 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	pixel_x = -7
+/obj/machinery/light{
+	dir = 1
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
-	icon_state = "railing0-1";
-	pixel_x = 7
+	pixel_x = 5
 	},
-/obj/machinery/light{
-	dir = 1
+/obj/structure/railing/mapped{
+	dir = 4;
+	pixel_x = -5
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/tram/maintrain)
@@ -12968,6 +13042,21 @@
 	icon_state = "greygrass"
 	},
 /area/centcom)
+"NF" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "NK" = (
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 1
@@ -14831,6 +14920,21 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
+"Tv" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "Tx" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#00BCBC";
@@ -14883,13 +14987,27 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /obj/machinery/light/small,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/simulated/floor,
 /area/site53/tram/maintrain)
+"TL" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "TN" = (
 /turf/simulated/floor,
 /area/supply/dock)
@@ -17957,7 +18075,7 @@ KZ
 uK
 KZ
 Uo
-IK
+TL
 Fm
 ON
 PX
@@ -19134,7 +19252,7 @@ tq
 xd
 gp
 eE
-IK
+TL
 nc
 QA
 QA
@@ -19152,7 +19270,7 @@ QA
 QA
 QA
 zv
-IK
+TL
 cR
 Jh
 Jh
@@ -19926,9 +20044,9 @@ tq
 tq
 tq
 tq
-pb
+tU
 Mr
-Tv
+Fe
 tq
 wu
 gp
@@ -21154,7 +21272,7 @@ tq
 ay
 gp
 eE
-Ub
+TL
 It
 NO
 ME
@@ -23574,7 +23692,7 @@ rY
 rY
 Nf
 uj
-IK
+Tv
 xr
 gp
 Ba
@@ -24584,7 +24702,7 @@ gp
 gp
 gp
 Ba
-IK
+TL
 xr
 gp
 Ba
@@ -26389,7 +26507,7 @@ Rr
 Rr
 Rr
 Rr
-OV
+xM
 En
 gp
 gp
@@ -26598,7 +26716,7 @@ gp
 gp
 gp
 vX
-IK
+aN
 dG
 qP
 eB
@@ -26625,7 +26743,7 @@ qP
 qP
 Fj
 FU
-IK
+Ey
 En
 gp
 gp
@@ -26807,7 +26925,7 @@ SV
 tq
 tq
 tq
-bO
+NF
 oO
 AH
 tq
@@ -27199,7 +27317,7 @@ Rr
 Rr
 tq
 tq
-bO
+Gz
 Cu
 AH
 tq
@@ -29648,7 +29766,7 @@ tq
 tq
 tq
 ve
-tU
+dN
 XS
 XS
 Wa
@@ -31255,7 +31373,7 @@ tq
 tq
 tq
 tq
-bO
+NF
 vJ
 AH
 tq
@@ -32669,7 +32787,7 @@ tq
 tq
 tq
 AF
-bO
+NF
 dS
 AH
 AF
