@@ -752,17 +752,6 @@
 	},
 /turf/simulated/open,
 /area/site53/surface/surface)
-"bR" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 8;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/upper_surface/commstower)
 "bS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/snow,
@@ -852,7 +841,8 @@
 	id_tag = "commtower";
 	name = "Communications Tower Lockdown Blast Door"
 	},
-/turf/simulated/floor/tiled/dark/horizontal,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/commstower)
 "cb" = (
 /obj/structure/railing/mapped{
@@ -2361,11 +2351,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
 "gf" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/corner,
-/area/site53/surface/surface)
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "gg" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/boombox,
@@ -4062,6 +4051,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"kQ" = (
+/obj/structure/railing/mapped{
+	dir = 10
+	},
+/turf/simulated/open,
+/area/site53/surface/surface)
 "kS" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Psychiatrist's Office"
@@ -4483,12 +4478,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
-"mh" = (
-/obj/structure/railing/mapped{
-	dir = 10
-	},
-/turf/simulated/open,
 /area/site53/surface/surface)
 "mi" = (
 /obj/structure/bed/chair,
@@ -4969,8 +4958,8 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "oJ" = (
-/obj/effect/floor_decal/corner/orange/mono,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/orange/half,
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/upper_surface/commstower)
 "oN" = (
 /obj/structure/disposaloutlet{
@@ -6171,12 +6160,8 @@
 	anchored = 1;
 	name = "trash bin"
 	},
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 4;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "vr" = (
 /obj/machinery/photocopier,
@@ -6185,15 +6170,21 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/hallway)
 "vs" = (
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/upper_surface/commstower)
 "vt" = (
-/obj/effect/floor_decal/corner/paleblue/half,
-/turf/simulated/floor/tiled/horizontal,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
+"vv" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/surface/surface)
 "vw" = (
 /obj/structure/railing/mapped/corner{
 	dir = 4
@@ -6497,14 +6488,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"yt" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
-/area/site53/surface/surface)
 "yu" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6896,15 +6879,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
 "Bi" = (
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 8;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
 /obj/machinery/vending/soda{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "Bj" = (
 /obj/structure/table/standard{
@@ -7036,12 +7015,8 @@
 /obj/machinery/vending/snack{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 8;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "Cn" = (
 /obj/structure/table/woodentable{
@@ -7136,12 +7111,8 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 8;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "DD" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -7207,6 +7178,12 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"DY" = (
+/obj/item/device/radio/intercom{
+	pixel_y = 20
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "Ea" = (
 /obj/structure/table/standard,
 /obj/item/paper,
@@ -7619,15 +7596,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"HM" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 4;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/upper_surface/commstower)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -7685,6 +7653,12 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
 /area/site53/medical/infirmreception/waiting)
+"If" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "Ig" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -7866,11 +7840,11 @@
 /area/site53/uez/repoffice/ethics)
 "Km" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/vertical,
+/turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
 "Kq" = (
 /obj/effect/floor_decal/corner/orange{
@@ -7974,7 +7948,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "Lm" = (
-/obj/effect/paint_stripe/paleblue,
+/obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "Ln" = (
@@ -8137,11 +8111,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
 "Np" = (
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 4
-	},
 /obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/vertical,
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
 "NA" = (
 /obj/effect/floor_decal/carpet/orange{
@@ -8211,11 +8185,9 @@
 /area/site53/uez/goirepoffice)
 "Oe" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 8
-	},
 /obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/vertical,
+/obj/effect/floor_decal/corner/orange/three_quarters,
+/turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
 "Of" = (
 /obj/structure/disposalpipe/segment{
@@ -8278,11 +8250,11 @@
 /turf/simulated/open,
 /area/site53/surface/surface)
 "OS" = (
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/vertical,
+/turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
 "OW" = (
 /obj/machinery/hologram/holopad,
@@ -8325,10 +8297,12 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Pw" = (
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/effect/floor_decal/corner/orange{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white/horizontal,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
 /area/site53/surface/surface)
 "Px" = (
 /obj/structure/sign/directions/evac{
@@ -8544,12 +8518,8 @@
 "RC" = (
 /obj/structure/table/standard,
 /obj/item/storage/mre/menu3,
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 4;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "RG" = (
 /obj/structure/railing/mapped{
@@ -8698,12 +8668,8 @@
 "SQ" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/food/snacks/hamburger,
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 4;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "SW" = (
 /obj/structure/table/rack,
@@ -9058,7 +9024,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
 "Wi" = (
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/vertical,
@@ -9091,15 +9057,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
 "Wz" = (
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 8;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "WC" = (
 /obj/structure/cable/green{
@@ -9341,11 +9303,11 @@
 /turf/simulated/wall/titanium,
 /area/site53/medical/infirmreception)
 "YT" = (
-/obj/item/device/radio/intercom{
-	pixel_y = 20
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/surface/surface)
 "YV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -34822,7 +34784,7 @@ fw
 fw
 fw
 fw
-mh
+kQ
 nE
 nE
 rm
@@ -36605,11 +36567,11 @@ nE
 Ay
 Lm
 Lm
-HM
+gf
 RC
 vq
 SQ
-HM
+If
 Lm
 Lm
 sc
@@ -36870,7 +36832,7 @@ Wi
 Oe
 Lm
 Lm
-gf
+vv
 gr
 cb
 sE
@@ -37124,10 +37086,10 @@ Lm
 Lm
 Cr
 bn
-bn
+oJ
 vt
 qh
-Pw
+YT
 gr
 cb
 sE
@@ -37380,11 +37342,11 @@ cc
 cc
 Lm
 ZF
-oJ
 bn
+oJ
 vt
 ca
-Pw
+YT
 gr
 cb
 sE
@@ -37637,11 +37599,11 @@ cc
 cc
 cc
 bn
-oJ
+bn
 oJ
 vt
 qh
-Pw
+YT
 gr
 cb
 sE
@@ -37894,11 +37856,11 @@ cc
 cc
 Lm
 bn
-oJ
 bn
+oJ
 vt
 ca
-Pw
+YT
 gr
 cb
 sE
@@ -38150,12 +38112,12 @@ Lm
 Lm
 Lm
 Lm
-YT
+DY
 bn
-bn
+oJ
 vt
 qh
-Pw
+YT
 gr
 cb
 sE
@@ -38412,7 +38374,7 @@ vs
 Km
 Lm
 Lm
-yt
+Pw
 gr
 cb
 sE
@@ -38662,7 +38624,7 @@ nP
 Lm
 Lm
 Bi
-bR
+Wz
 DB
 Wz
 Cm

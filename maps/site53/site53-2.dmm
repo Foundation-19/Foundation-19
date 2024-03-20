@@ -14684,13 +14684,13 @@
 	c_tag = "Comms Tower Basement";
 	network = list("Entrance Zone Network")
 	},
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 1
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 20
 	},
-/turf/simulated/floor/tiled/horizontal,
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
 "aRz" = (
 /obj/machinery/suit_storage_unit/engineering{
@@ -14752,8 +14752,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
 "aRH" = (
-/obj/effect/floor_decal/corner/paleblue/half,
-/turf/simulated/floor/tiled/horizontal,
+/obj/effect/floor_decal/corner/orange/half,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
 "aRI" = (
 /obj/structure/bed/chair/office/light,
@@ -21386,10 +21386,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "ctX" = (
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
 "cvv" = (
 /obj/structure/table/standard,
@@ -21910,9 +21910,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "cUG" = (
-/obj/effect/floor_decal/corner/paleblue/half,
 /obj/machinery/light/small,
-/turf/simulated/floor/tiled/horizontal,
+/obj/effect/floor_decal/corner/orange/half,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
 "cVc" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -23828,6 +23828,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp895)
+"fbm" = (
+/obj/turbolift_map_holder/commstower,
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/serverfarmtunnel)
 "fbx" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -24020,14 +24024,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
-"fkI" = (
-/obj/effect/floor_decal/corner/paleblue/half,
-/obj/machinery/vending/wallmed2{
-	dir = 1;
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site53/upper_surface/serverfarmtunnel)
 "fkM" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -29224,6 +29220,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"kmR" = (
+/obj/machinery/vending/wallmed2{
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/effect/floor_decal/corner/orange/half,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/upper_surface/serverfarmtunnel)
 "koq" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/spray/cleaner,
@@ -34709,11 +34713,11 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
 "pFz" = (
 /obj/structure/dogbed{
@@ -35668,16 +35672,7 @@
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
 "qJO" = (
-/obj/effect/floor_decal/corner/paleblue/half,
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 4;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/serverfarmtunnel)
 "qKl" = (
 /obj/structure/cable/green{
@@ -36669,14 +36664,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
 "rFH" = (
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 1
-	},
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb1"
 	},
-/turf/simulated/floor/tiled/horizontal,
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
 "rFI" = (
 /obj/structure/table/standard,
@@ -37653,7 +37648,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "sGF" = (
-/obj/effect/paint_stripe/paleblue,
+/obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/serverfarmtunnel)
 "sGR" = (
@@ -38937,18 +38932,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "ubg" = (
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 1
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
 	},
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 4;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/plating,
 /area/site53/upper_surface/serverfarmtunnel)
 "ubt" = (
 /obj/machinery/light{
@@ -39008,16 +38998,17 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/zonecommanderoffice)
 "ufy" = (
-/obj/effect/floor_decal/industrial/traffic{
-	dir = 4;
-	detail_color = "#30A0CC";
-	name = "command hazard stripes"
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
 	},
-/obj/machinery/door/window/brigdoor/eastright{
+/obj/machinery/door/airlock/glass/command{
 	name = "Communications Tower Basement";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/serverfarmtunnel)
 "ufP" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -41528,7 +41519,7 @@
 	id_tag = "commtower";
 	name = "Communications Tower Lockdown Blast Door"
 	},
-/turf/simulated/floor/tiled/dark/horizontal,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/serverfarmtunnel)
 "wJD" = (
 /obj/machinery/camera/network/lcz{
@@ -41603,9 +41594,9 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/horizontal,
+/obj/effect/floor_decal/corner/orange/half,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
 "wMy" = (
 /obj/structure/cable/green{
@@ -42586,10 +42577,6 @@
 /obj/machinery/r_n_d/protolathe,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"xJw" = (
-/obj/turbolift_map_holder/commstower,
-/turf/simulated/floor/tiled,
-/area/site53/upper_surface/serverfarmtunnel)
 "xJI" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -42821,10 +42808,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
 "xXk" = (
-/obj/structure/table/rack,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/toolcloset,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/serverfarmtunnel)
 "xXC" = (
@@ -70998,11 +70985,11 @@ sGF
 aQL
 aQL
 aQL
-xJw
+fbm
 sGF
 wJo
 pFm
-aQP
+qJO
 wMi
 sGF
 pze
@@ -71259,7 +71246,7 @@ aQL
 nUH
 wJo
 ctX
-aQP
+qJO
 aRH
 sGF
 pze
@@ -71516,8 +71503,8 @@ aQL
 sGF
 wJo
 ctX
-aQP
-fkI
+qJO
+kmR
 sGF
 pze
 aYL
@@ -71773,7 +71760,7 @@ sGF
 sGF
 sGF
 aRx
-aQP
+qJO
 aRH
 sGF
 pze
@@ -72030,7 +72017,7 @@ dFd
 xXk
 sGF
 rFH
-aQP
+qJO
 cUG
 sGF
 pze
@@ -72287,7 +72274,7 @@ kEG
 sfX
 bEn
 ctX
-aQP
+qJO
 aRH
 sGF
 pze
@@ -72545,7 +72532,7 @@ sGF
 sGF
 ubg
 ufy
-qJO
+ubg
 sGF
 sGF
 aQP

@@ -38,11 +38,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "ah" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
-/obj/item/modular_computer/console/preset/cardslot/command,
-/turf/simulated/floor/tiled/white,
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "ai" = (
 /obj/effect/paint_stripe/white,
@@ -1548,6 +1548,8 @@
 /obj/effect/floor_decal/corner/orange{
 	dir = 4
 	},
+/obj/structure/table/standard,
+/obj/item/folder/blue,
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/upper_surface/commstower)
 "eI" = (
@@ -2145,8 +2147,13 @@
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
-/obj/machinery/computer/telecomms/server{
-	network = "tcommsat"
+/obj/structure/table/standard,
+/obj/item/material/knife/kitchen,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/closet/hydrant{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
@@ -2196,22 +2203,14 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
 "gJ" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/machinery/microwave,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/white/horizontal,
+/obj/machinery/vending/cola,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "gK" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/structure/table/standard,
-/obj/item/storage/fancy/cigarettes/luckystars,
-/obj/item/flame/lighter/zippo{
-	pixel_x = 11;
-	pixel_y = 1
-	},
-/turf/simulated/floor/tiled/white/horizontal,
+/obj/effect/paint_stripe/orange,
+/obj/machinery/status_display,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "gL" = (
 /obj/machinery/light,
@@ -2380,6 +2379,7 @@
 /area/site53/surface/surface)
 "hN" = (
 /obj/effect/floor_decal/corner/orange/three_quarters,
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "hP" = (
@@ -2395,12 +2395,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
 "hQ" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 4
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 8
 	},
 /obj/structure/table/standard,
 /obj/item/folder/blue,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
 "hR" = (
 /obj/structure/cable{
@@ -2598,16 +2598,18 @@
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
 "iJ" = (
-/obj/effect/floor_decal/corner/orange/three_quarters,
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
-"iK" = (
-/obj/effect/paint_stripe/paleblue,
-/obj/machinery/status_display,
-/turf/simulated/wall/r_wall/prepainted,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower West";
+	network = list("Entrance Zone Network");
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/upper_surface/commstower)
 "iR" = (
 /obj/effect/landmark/start{
@@ -2651,126 +2653,46 @@
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
 "jo" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/item/device/radio/intercom{
-	dir = 1;
-	pixel_y = -31
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jp" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/effect/floor_decal/corner/orange/three_quarters,
 /obj/structure/table/standard,
-/obj/item/boombox,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
-"jq" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/upper_surface/commstower)
-"jr" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/structure/table/standard,
-/obj/item/device/flashlight/lamp,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"ju" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 1
-	},
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
-/area/site53/upper_surface/commstower)
-"jv" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/corner,
-/area/site53/upper_surface/commstower)
-"jx" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jy" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jB" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
-	},
-/obj/structure/table/standard,
-/obj/item/storage/toolbox/mechanical,
-/turf/simulated/floor/tiled/white/vertical,
-/area/site53/upper_surface/commstower)
-"jC" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/machinery/computer/message_monitor,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jD" = (
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	id_tag = "EZ Rifle Locker";
-	name = "EZ Rifle Locker"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
-"jE" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jF" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/entrancezone/forensics)
-"jG" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 1
-	},
-/obj/structure/flora/pottedplant/large,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
-"jH" = (
+"jp" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
+"jq" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/machinery/cooker/fryer,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"jr" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/maintenance/upper_surface)
-"jI" = (
+/area/site53/upper_surface/commstower)
+"ju" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
+"jv" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 8
 	},
@@ -2797,170 +2719,21 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
-"jJ" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/upper_surface/commstower)
-"jK" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 8
-	},
-/obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/cans/cherrycola{
-	pixel_y = 8;
-	pixel_x = 7
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/site53/upper_surface/commstower)
-"jL" = (
+"jx" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/material/knife/kitchen,
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
-"jM" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin"
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jN" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
-"jO" = (
-/turf/unsimulated/mask,
-/area/site53/upper_surface/commstower)
-"jQ" = (
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site53/upper_surface/commstower)
-"jT" = (
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site53/upper_surface/commstower)
-"jU" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/machinery/cooker/oven,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jV" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 1
-	},
-/obj/item/modular_computer/console/preset/aislot/sysadmin{
-	dir = 8
-	},
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 20
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
-"jW" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/machinery/cooker/fryer,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"jX" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "Communications Center";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
-	},
+"jy" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/upper_surface/commstower)
-"jY" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/commstower)
-"jZ" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/maintenance/upper_surface)
-"kb" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/item/device/radio/intercom{
-	dir = 1;
-	pixel_y = -31
-	},
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower North";
-	network = list("Entrance Zone Network");
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
-"kc" = (
-/obj/effect/floor_decal/corner/orange/three_quarters,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
-"kd" = (
-/obj/effect/floor_decal/corner/orange/three_quarters,
-/obj/machinery/requests_console{
-	department = "Comms Officer";
-	departmentType = 5;
-	pixel_y = -32
-	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -20
-	},
-/obj/structure/table/standard,
-/obj/item/trash/plate{
-	pixel_y = 1
-	},
-/obj/item/reagent_containers/food/snacks/superbiteburger{
-	pixel_y = 13
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
-"ke" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
-"ki" = (
-/obj/effect/floor_decal/corner/paleblue/three_quarters{
-	dir = 4
-	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled,
-/area/site53/upper_surface/commstower)
-"kj" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/upper_surface/commstower)
-"kk" = (
+"jB" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
@@ -2969,35 +2742,284 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
-"kl" = (
-/obj/effect/floor_decal/corner/paleblue/three_quarters{
-	dir = 1
-	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled,
-/area/site53/upper_surface/commstower)
-"kn" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
+"jC" = (
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 8
 	},
-/obj/item/modular_computer/console/preset/aislot/sysadmin{
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 4
 	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -20
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
-"ko" = (
+"jD" = (
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "EZ Rifle Locker";
+	name = "EZ Rifle Locker"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
+"jE" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 4
 	},
 /obj/structure/table/standard,
+/obj/item/folder/blue,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
+"jF" = (
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/entrancezone/forensics)
+"jG" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 8
+	},
+/obj/structure/table/standard,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "dchecknorth";
+	name = "North CDZ Blastdoors";
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "dchecksouth";
+	name = "South CDZ Blastdoors";
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
+"jH" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/upper_surface/commstower)
+"jI" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
+"jJ" = (
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/upper_surface/commstower)
+"jK" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/machinery/computer/power_monitor,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"jL" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 8
+	},
+/obj/structure/table/standard,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "hczwest";
+	name = "West HCZ Entry Blast Doors";
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "hczeast";
+	name = "East HCZ Entry Blast Doors";
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
+"jM" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 8
+	},
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
+"jN" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
+"jO" = (
+/turf/unsimulated/mask,
+/area/site53/upper_surface/commstower)
+"jQ" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
+"jT" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
+"jU" = (
+/obj/structure/bed/chair/office/comfy/brown,
+/obj/effect/landmark/start{
+	name = "Communications Technician"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/upper_surface/commstower)
+"jV" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"jW" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/turf/simulated/floor,
+/area/site53/upper_surface/commstower)
+"jX" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/upper_surface/commstower)
+"jY" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/commstower)
+"jZ" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/machinery/computer/station_alert/all,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"kb" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"kc" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
+"kd" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Control"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"ke" = (
+/obj/machinery/vending/snack,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
+"ki" = (
+/obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/commstower)
+"kj" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/machinery/computer/telecomms/server{
+	network = "tcommsat"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"kk" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/machinery/light,
+/obj/machinery/requests_console{
+	department = "Comms Officer";
+	departmentType = 5;
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
+"kl" = (
+/obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/commstower)
+"kn" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/maintenance/upper_surface)
+"ko" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4;
+	icon_state = "warningcorner"
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
 "kp" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -3007,12 +3029,19 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "kq" = (
-/obj/effect/paint_stripe/paleblue,
-/turf/simulated/wall/r_wall/prepainted,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/turf/simulated/floor,
 /area/site53/upper_surface/commstower)
 "kr" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "kt" = (
@@ -3081,12 +3110,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "kB" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/white/vertical,
-/area/site53/upper_surface/commstower)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "kC" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/computer/station_alert/all{
@@ -3095,9 +3125,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "kD" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/vending/snack,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#b95a00"
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/upper_surface/commstower)
 "kE" = (
 /obj/machinery/light,
@@ -3108,29 +3140,29 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "kF" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced_phoron,
 /turf/simulated/floor,
 /area/site53/upper_surface/commstower)
 "kG" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/vending/cola,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/machinery/computer/message_monitor,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "kH" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 8
 	},
-/obj/structure/table/standard,
-/obj/machinery/photocopier{
-	pixel_y = 4
-	},
-/turf/simulated/floor/tiled/white/vertical,
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "kI" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/effect/floor_decal/corner/orange/half,
 /obj/structure/table/standard,
-/obj/item/storage/toolbox/emergency,
-/turf/simulated/floor/tiled/monotile,
+/obj/item/folder/red,
+/obj/item/pen,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "kJ" = (
 /obj/effect/floor_decal/corner/blue/border,
@@ -3140,18 +3172,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "kK" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 1
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 4
 	},
-/obj/structure/bed/chair/office/comfy/brown{
-	dir = 8
-	},
-/obj/effect/landmark/start{
-	name = "Communications Technician"
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "kL" = (
 /obj/effect/floor_decal/corner/blue/border,
@@ -3170,92 +3195,59 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "kN" = (
-/obj/effect/floor_decal/corner/paleblue/half,
+/obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/upper_surface/commstower)
 "kO" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 8
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "kP" = (
-/obj/effect/floor_decal/corner/paleblue/three_quarters,
 /obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/orange/three_quarters,
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
 "kQ" = (
-/obj/effect/floor_decal/corner/orange/half{
+/obj/effect/floor_decal/corner/orange{
 	dir = 1
 	},
-/obj/machinery/computer/power_monitor,
-/turf/simulated/floor/tiled/white/horizontal,
+/obj/structure/table/standard,
+/obj/item/folder/blue,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
 /area/site53/upper_surface/commstower)
 "kR" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
+/obj/machinery/telecomms/allinone{
+	on = 0;
+	name = "Emergency Communications Mainframe"
 	},
-/obj/machinery/computer/station_alert/all,
-/turf/simulated/floor/tiled/white/horizontal,
+/obj/structure/railing/mapped{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/commstower)
 "kS" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 1
+	},
+/obj/structure/bed/chair/office/comfy/brown{
+	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Communications Technician"
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 1
 	},
 /area/site53/upper_surface/commstower)
 "kT" = (
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower East";
-	network = list("Entrance Zone Network");
-	dir = 4
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site53/upper_surface/commstower)
-"kU" = (
-/obj/effect/floor_decal/corner/orange,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 8
-	},
-/area/site53/upper_surface/commstower)
-"kX" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 8
-	},
-/obj/machinery/telecomms/allinone,
-/obj/effect/floor_decal/industrial/outline/red,
-/obj/structure/railing/mapped{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/site53/upper_surface/commstower)
-"kY" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
-	},
-/turf/simulated/floor,
-/area/site53/upper_surface/commstower)
-"kZ" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
-"la" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Communications Tower";
+	name = "Communications Center";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/machinery/door/blast/regular/open{
@@ -3264,7 +3256,49 @@
 	name = "Communications Tower Lockdown Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/commstower)
+"kU" = (
+/obj/effect/floor_decal/corner/orange,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/upper_surface/commstower)
+"kX" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
+"kY" = (
+/obj/structure/table/standard,
+/obj/item/boombox,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
+"kZ" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 4
+	},
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
+"la" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/airlock/glass/command{
+	name = "Communications Center";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/commstower)
 "lc" = (
 /obj/machinery/door/window/holowindoor{
@@ -3389,6 +3423,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"lY" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
 "mf" = (
 /obj/structure/bed/chair/padded/black,
 /obj/structure/window/reinforced{
@@ -3404,25 +3445,24 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "mh" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "ml" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/site53/uez/conference)
 "mn" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/bed/chair/office/comfy/brown{
+	dir = 1
 	},
-/turf/simulated/floor/plating,
+/obj/effect/landmark/start{
+	name = "Communications Technician"
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/upper_surface/commstower)
 "mp" = (
 /obj/structure/closet/crate/bin{
@@ -3484,9 +3524,12 @@
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uez/commandpanicbunker)
 "mQ" = (
-/obj/effect/paint_stripe/orange,
-/obj/machinery/status_display,
-/turf/simulated/wall/r_wall/prepainted,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/upper_surface/commstower)
 "mS" = (
 /obj/structure/table/reinforced,
@@ -3537,6 +3580,18 @@
 /obj/structure/bed/chair/padded/black,
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
+"nj" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 4
+	},
+/obj/structure/bed/chair/office/comfy/brown{
+	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Communications Technician"
+	},
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/upper_surface/commstower)
 "nk" = (
 /obj/structure/table/steel,
 /obj/machinery/photocopier,
@@ -3574,6 +3629,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"nz" = (
+/obj/effect/floor_decal/corner/orange,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/upper_surface/commstower)
 "nB" = (
 /obj/machinery/chemical_dispenser/bar_alc/full,
 /obj/machinery/light{
@@ -3583,11 +3645,18 @@
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "nD" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 1
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/white,
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower East";
+	network = list("Entrance Zone Network");
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/upper_surface/commstower)
 "nF" = (
 /obj/machinery/door/airlock/glass/command{
@@ -3727,6 +3796,12 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"pd" = (
+/obj/effect/floor_decal/corner/orange/three_quarters,
+/obj/structure/table/rack,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
 "pg" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/hygiene/sink{
@@ -3888,6 +3963,14 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"qn" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 4
+	},
+/obj/structure/table/rack,
+/obj/item/storage/toolbox/mechanical,
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
 "qr" = (
 /obj/structure/table/woodentable/ebony,
 /obj/machinery/button/blast_door{
@@ -3968,9 +4051,9 @@
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
 	},
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
 "qI" = (
@@ -4006,6 +4089,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
+"qU" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/glass/command{
+	name = "Communications Living Quarters";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/commstower)
 "qZ" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -4033,8 +4124,8 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/hallway)
 "rh" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/bed/chair/armchair/blue{
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/bed/chair/armchair/brown{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4123,20 +4214,32 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
 "rI" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower South";
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "rJ" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
 	},
-/turf/simulated/floor/plating,
-/area/site53/maintenance/upper_surface)
+/obj/item/modular_computer/console/preset/cardslot/command,
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
 "rN" = (
 /obj/machinery/light{
 	dir = 4
@@ -4203,12 +4306,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "su" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/administration/commsofficer,
-/obj/item/clothing/accessory/storage/webbing_large,
-/turf/simulated/floor/tiled/white/vertical,
+/obj/effect/floor_decal/corner/orange/half,
+/obj/machinery/cooker/oven,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "sy" = (
 /obj/machinery/door/blast/regular{
@@ -4233,6 +4333,15 @@
 	},
 /obj/structure/flora/pottedplant/large,
 /turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
+"sB" = (
+/obj/effect/floor_decal/corner/orange,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
 /area/site53/upper_surface/commstower)
 "sC" = (
 /obj/structure/cable{
@@ -4286,13 +4395,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
-"to" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/structure/closet/secure_closet/freezer/fridge,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
 "tp" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/cable/green{
@@ -4317,6 +4419,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"tz" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
 "tC" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -4470,11 +4581,18 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
 "vh" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -31
 	},
-/turf/simulated/floor/plating,
-/area/site53/maintenance/upper_surface)
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower North";
+	network = list("Entrance Zone Network");
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/orange/half,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
 "vi" = (
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
 	RCon_tag = "Evacuation Bunker Substation"
@@ -4668,6 +4786,13 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
+"wt" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/machinery/computer/rcon,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
 "wv" = (
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -4822,6 +4947,17 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"xI" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 8
+	},
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/drinks/cans/cherrycola{
+	pixel_y = 8;
+	pixel_x = 7
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/upper_surface/commstower)
 "xK" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/techfloor,
@@ -4906,21 +5042,22 @@
 /turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "yo" = (
-/obj/effect/floor_decal/corner/paleblue/half,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/horizontal,
-/area/site53/upper_surface/commstower)
-"yp" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 4
+/obj/effect/floor_decal/corner/orange/three_quarters,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
 	},
-/obj/structure/bed/chair/office/comfy/brown{
-	dir = 4
+/obj/structure/table/standard,
+/obj/item/trash/plate{
+	pixel_y = 1
 	},
-/obj/effect/landmark/start{
-	name = "Communications Technician"
+/obj/item/reagent_containers/food/snacks/superbiteburger{
+	pixel_y = 13
 	},
-/turf/simulated/floor/tiled/white/corner,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "yq" = (
 /obj/machinery/door/blast/regular{
@@ -4957,13 +5094,21 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/commandpanicbunker)
 "yB" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/site53/maintenance/upper_surface)
+/obj/item/modular_computer/console/preset/aislot/sysadmin{
+	dir = 4
+	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
 "yC" = (
 /obj/structure/closet,
 /obj/effect/catwalk_plated/dark,
@@ -4991,6 +5136,13 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
+"yL" = (
+/obj/effect/paint_stripe/yellow,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/maintenance/upper_surface)
 "yN" = (
 /obj/structure/table/steel,
 /obj/item/storage/mre/random,
@@ -5045,15 +5197,12 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "zl" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 4
+/obj/effect/floor_decal/corner/orange/half,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/white/corner,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "zm" = (
 /obj/structure/bed/chair/padded/black{
@@ -5112,6 +5261,22 @@
 /obj/item/storage/mre/random,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"zB" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
+	},
+/obj/item/modular_computer/console/preset/aislot/sysadmin{
+	dir = 8
+	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
 "zC" = (
 /obj/machinery/photocopier,
 /obj/structure/table/woodentable/ebony,
@@ -5226,13 +5391,6 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
-"Am" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 8
-	},
-/obj/item/modular_computer/console/preset/cardslot/command,
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
 "Ar" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5340,7 +5498,6 @@
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
 	},
-/obj/machinery/papershredder,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
 "AZ" = (
@@ -5371,7 +5528,8 @@
 	name = "Communications Center";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
-/turf/simulated/floor/tiled/dark/horizontal,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/commstower)
 "Bc" = (
 /obj/machinery/keycard_auth{
@@ -5479,20 +5637,34 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
+"Ch" = (
+/obj/machinery/door/airlock/glass/command{
+	name = "Communications Living Quarters";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/commstower)
 "Cj" = (
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
 "Cq" = (
-/obj/effect/floor_decal/corner/orange/three_quarters,
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/white,
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "Ct" = (
 /obj/effect/floor_decal/corner/orange/half,
-/obj/structure/table/standard,
-/obj/item/folder/red,
-/obj/item/pen,
+/obj/structure/closet/secure_closet/administration/commsofficer,
+/obj/item/clothing/accessory/storage/webbing_large,
+/obj/item/clothing/under/rank/security/comms,
+/obj/item/clothing/suit/armor/comms,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "Cy" = (
@@ -5653,13 +5825,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
-"Dv" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 4
-	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
 "Dy" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/steel,
@@ -5695,15 +5860,9 @@
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "DH" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	id_tag = "commtower";
-	name = "Communications Tower Lockdown Control"
-	},
-/turf/simulated/floor/tiled/white/horizontal,
+/obj/effect/floor_decal/corner/orange/three_quarters,
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "DJ" = (
 /obj/machinery/flasher{
@@ -5757,6 +5916,10 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/equipmentroom)
+"Er" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/upper_surface/commstower)
 "Et" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small/red{
@@ -5787,24 +5950,27 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "EA" = (
-/obj/structure/bed/chair/office/comfy/brown{
-	dir = 1
+/obj/effect/floor_decal/corner/orange{
+	dir = 4
 	},
-/obj/effect/landmark/start{
-	name = "Communications Technician"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white/corner,
 /area/site53/upper_surface/commstower)
 "EC" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "EH" = (
-/obj/effect/floor_decal/corner/orange{
+/obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 4
 	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
 /obj/structure/table/standard,
-/obj/item/folder/blue,
-/turf/simulated/floor/tiled/white/corner,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "EI" = (
 /obj/structure/closet,
@@ -5817,11 +5983,6 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"EM" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
 "Ff" = (
 /obj/effect/paint_stripe/blue,
 /obj/effect/paint_stripe/blue,
@@ -5860,17 +6021,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Fz" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Communications Tower"
-	},
+/obj/structure/flora/pottedplant/large,
 /obj/machinery/light{
-	dir = 4
+	dir = 1
 	},
-/turf/simulated/floor/tiled/white/vertical,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "FH" = (
 /obj/effect/floor_decal/corner/black/full,
@@ -5889,13 +6047,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
-"FM" = (
-/obj/structure/bed/chair/office/comfy/brown,
-/obj/effect/landmark/start{
-	name = "Communications Technician"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/upper_surface/commstower)
 "FQ" = (
 /obj/structure/closet/secure_closet/guard/ez/sergeant,
 /turf/simulated/floor/tiled/dark,
@@ -5974,13 +6125,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
-"GC" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 1
-	},
-/obj/machinery/vending/tool,
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
 "GE" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -6169,29 +6313,24 @@
 /obj/item/folder/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"HT" = (
-/obj/effect/floor_decal/corner/orange/half{
+"HS" = (
+/obj/effect/floor_decal/corner/orange{
 	dir = 8
 	},
 /obj/structure/table/standard,
-/obj/structure/railing/mapped{
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "hczwest";
-	name = "West HCZ Entry Blast Doors";
-	pixel_x = -5;
-	pixel_y = 3
+/area/site53/upper_surface/commstower)
+"HT" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
 	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "hczeast";
-	name = "East HCZ Entry Blast Doors";
-	pixel_x = 5;
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/white/vertical,
+/obj/structure/table/standard,
+/obj/item/material/kitchen/rollingpin,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "Ia" = (
 /obj/structure/table/standard,
@@ -6375,14 +6514,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
-"Kc" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 8
-	},
-/obj/structure/table/standard,
-/obj/item/folder/blue,
-/turf/simulated/floor/tiled/white/vertical,
-/area/site53/upper_surface/commstower)
 "Ke" = (
 /obj/structure/table/steel,
 /obj/structure/window/reinforced{
@@ -6671,18 +6802,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "LV" = (
-/obj/effect/floor_decal/corner/paleblue/half{
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower West";
-	network = list("Entrance Zone Network");
-	dir = 8
-	},
-/turf/simulated/floor/tiled/vertical,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
 "LX" = (
 /obj/structure/cable/green{
@@ -6844,13 +6967,6 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
-"Ne" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 8
-	},
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/white,
-/area/site53/upper_surface/commstower)
 "Nk" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -6862,13 +6978,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
 "Np" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
-	},
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/vertical,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "Nq" = (
 /obj/structure/hygiene/sink{
@@ -6906,21 +7016,23 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "Nw" = (
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/orange{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/corner,
 /area/site53/upper_surface/commstower)
 "Ny" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 4
-	},
+/obj/effect/floor_decal/corner/orange/half,
 /obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 20
+	dir = 1;
+	pixel_y = -31
 	},
-/obj/structure/table/standard,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "NA" = (
 /obj/machinery/door/airlock/glass{
@@ -6956,14 +7068,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Oc" = (
-/obj/effect/floor_decal/corner/orange{
+/obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
+/obj/machinery/microwave,
 /obj/structure/table/standard,
-/obj/item/folder/blue,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "Od" = (
 /turf/simulated/floor/carpet/orange,
@@ -7067,15 +7177,11 @@
 	},
 /area/site53/upper_surface/commstower)
 "OX" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 8
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 4
-	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "OZ" = (
 /obj/structure/table/steel,
@@ -7237,8 +7343,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "PU" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/bed/chair/armchair/blue{
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/bed/chair/armchair/brown{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -7385,26 +7491,6 @@
 /obj/item/stamp/scp/facdir,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
-"Rf" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/hyper{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower South";
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
 "Rv" = (
 /obj/structure/closet,
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
@@ -7489,12 +7575,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "RU" = (
-/obj/effect/paint_stripe/yellow,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/orange/half,
+/obj/structure/table/standard,
+/obj/item/storage/fancy/cigarettes/luckystars,
+/obj/item/flame/lighter/zippo{
+	pixel_x = 11;
+	pixel_y = 1
 	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/maintenance/upper_surface)
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
 "RV" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -7557,25 +7646,14 @@
 /area/site53/uez/commandpanicbunker)
 "Sv" = (
 /obj/effect/floor_decal/corner/orange/half{
-	dir = 8
-	},
-/obj/structure/table/standard,
-/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "dchecknorth";
-	name = "North CDZ Blastdoors";
-	pixel_x = -5;
-	pixel_y = 3
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "Communications Tower"
 	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "dchecksouth";
-	name = "South CDZ Blastdoors";
-	pixel_x = 5;
-	pixel_y = 3
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
@@ -7628,6 +7706,10 @@
 /obj/effect/landmark/start{
 	name = "Communications Technician"
 	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#b95a00"
+	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "SL" = (
@@ -7677,12 +7759,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Tg" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/orange/three_quarters,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "Th" = (
 /obj/structure/cable/green{
@@ -7724,11 +7803,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "Ts" = (
-/obj/effect/floor_decal/corner/orange/three_quarters{
-	dir = 8
+/obj/effect/floor_decal/corner/orange{
+	dir = 1
 	},
-/obj/structure/flora/pottedplant/large,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
 /area/site53/upper_surface/commstower)
 "Tt" = (
 /obj/machinery/camera/network/entrance{
@@ -7783,6 +7863,13 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"TE" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 8
+	},
+/obj/item/modular_computer/console/preset/cardslot/command,
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
 "TG" = (
 /obj/structure/table/steel,
 /obj/structure/window/reinforced{
@@ -7791,6 +7878,12 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"TJ" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/structure/table/standard,
+/obj/item/device/flashlight/lamp,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
 "TL" = (
 /obj/structure/bed/chair/padded/black,
 /obj/structure/window/reinforced{
@@ -7889,6 +7982,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
+"Uz" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
+	},
+/obj/machinery/vending/tool,
+/turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
 "UF" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -8077,6 +8177,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Wg" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/machinery/cooker/grill,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/commstower)
 "Wi" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -8089,10 +8194,10 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/commandpanicbunker)
 "Wk" = (
-/obj/effect/floor_decal/corner/paleblue/three_quarters{
+/obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/large,
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
 "Wm" = (
@@ -8139,15 +8244,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"WG" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 8
-	},
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/site53/upper_surface/commstower)
 "WK" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin,
@@ -8188,6 +8284,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uez/commandpanicbunker)
+"WT" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 1
+	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/upper_surface/commstower)
 "WV" = (
 /obj/structure/bed/chair/padded/black{
 	dir = 8
@@ -8355,12 +8460,22 @@
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "Yr" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/machinery/computer/rcon,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "YA" = (
 /obj/machinery/door/airlock/command{
 	name = "EZ Security Gear Room";
@@ -8415,11 +8530,6 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
-"Zb" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/machinery/cooker/grill,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
 "Zd" = (
 /obj/structure/table/steel,
 /obj/machinery/photocopier,
@@ -8428,14 +8538,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
-"Ze" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 1
-	},
-/obj/structure/table/standard,
-/obj/item/material/kitchen/rollingpin,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/commstower)
 "Zj" = (
 /obj/structure/table/steel,
 /obj/machinery/button/blast_door{
@@ -33655,22 +33757,22 @@ jm
 ZS
 ZS
 ZS
-rJ
-RU
-vh
-vh
-vh
-vh
-vh
-vh
-vh
-vh
-vh
-vh
-vh
-vh
-vh
-jH
+Yr
+yL
+kc
+kc
+kc
+kc
+kc
+kc
+kc
+kc
+kc
+kc
+kc
+kc
+kc
+kB
 xv
 hk
 hk
@@ -33927,7 +34029,7 @@ xv
 xv
 xv
 xv
-jZ
+kn
 xv
 hk
 hk
@@ -34441,7 +34543,7 @@ jY
 jY
 aY
 jY
-mn
+jr
 jY
 aY
 jY
@@ -34693,17 +34795,17 @@ hZ
 hZ
 jY
 jY
-kn
-WG
+yB
+jC
 sA
 kF
-Sv
-jI
-HT
+jG
+jv
+jL
 kF
 sA
-jK
-kd
+xI
+yo
 jY
 jY
 hZ
@@ -34940,7 +35042,7 @@ ih
 iG
 hR
 ZZ
-yB
+kO
 xv
 hZ
 hZ
@@ -34949,19 +35051,19 @@ hZ
 hZ
 jY
 jY
-Am
-kK
-kj
-kj
+TE
+kS
+jJ
+jJ
 Bb
-kj
-mh
-jq
-jX
-jq
-Tg
+jJ
+mQ
+jH
+Ch
+jH
+jy
 OT
-hN
+pd
 jY
 jY
 hZ
@@ -35205,19 +35307,19 @@ hZ
 hZ
 jY
 jY
-Ne
-Oc
-kj
-kU
-qG
+mh
+kQ
+Er
+sB
+ko
 kF
-eH
-kj
+EA
+jJ
 kU
 kF
-su
-zl
-Tg
+AY
+Nw
+jy
 OT
 hN
 jY
@@ -35460,25 +35562,25 @@ hZ
 hZ
 hZ
 hZ
-aY
+gK
+jM
 Ts
-kS
-kj
-kU
-ko
-kY
-aY
-kY
-la
-kY
-aY
-kY
+jJ
+nz
+kR
+kq
+gK
+kq
+kT
+kq
+gK
+kq
 MA
-zl
-Tg
+Nw
+jy
 OT
-Cq
-aY
+DH
+gK
 hZ
 hZ
 hZ
@@ -35718,23 +35820,23 @@ hZ
 hZ
 hZ
 jY
-jy
-kj
+kb
+jJ
 kU
-hQ
-kY
-kY
-kG
-ke
-ke
+jE
+kq
+kq
+gJ
+kX
+kX
 PU
 PU
-kY
-kY
-GC
-jv
-kj
-jr
+kq
+kq
+Uz
+jX
+jJ
+TJ
 jY
 hZ
 hZ
@@ -35975,23 +36077,23 @@ hZ
 hZ
 hZ
 jY
-kQ
-kj
+jK
+jJ
 QS
-kY
-kY
+kq
+kq
 Wk
 jQ
 jQ
-LV
+iJ
 jQ
 jQ
 kP
-kY
-kY
-jE
-FM
-gK
+kq
+kq
+jV
+jU
+RU
 jY
 hZ
 hZ
@@ -36232,23 +36334,23 @@ hZ
 hZ
 hZ
 jY
-kR
-EA
-EM
-iK
-kq
-kq
-kq
-kq
-kq
+jZ
+mn
+kk
+aY
+aY
+aY
+aY
+aY
+aY
 Zy
-Nw
+Np
 kN
-jp
-mQ
-Rf
-kj
-Ct
+kY
+aY
+rI
+jJ
+kI
 jY
 hZ
 hZ
@@ -36489,23 +36591,23 @@ hZ
 hZ
 hZ
 jY
-Yr
-kj
-jo
-kq
+wt
+jJ
+Ny
+aY
 jO
 jO
 jO
 jO
-kq
-Nw
-Nw
+aY
+Np
+Np
 kN
-kr
-kY
+Cq
+kq
 jx
-kj
-QS
+jJ
+Ct
 jY
 hZ
 hZ
@@ -36746,23 +36848,23 @@ hZ
 hZ
 hZ
 jY
-DH
-jJ
-kb
-kq
+kd
+kD
+vh
+aY
 jO
 jO
 jO
 jO
 jO
-Nw
+Np
 SJ
-yo
+kN
 jN
-kY
-to
-jJ
-jM
+kq
+ah
+kD
+zl
 jY
 hZ
 hZ
@@ -37003,23 +37105,23 @@ hZ
 hZ
 hZ
 jY
-jC
-kj
-jo
-kq
+kG
+jJ
+Ny
+aY
 jO
 jO
 jO
 jO
-kq
-Nw
-Nw
+aY
+Np
+Np
 kN
-rI
-kY
-gJ
-kj
-Zb
+kr
+kq
+Oc
+jJ
+Wg
 jY
 hZ
 hZ
@@ -37260,23 +37362,23 @@ hZ
 hZ
 hZ
 jY
-kk
-EA
-EM
-iK
-kq
-kq
-kq
-kq
-kq
+jB
+mn
+tz
+aY
+aY
+aY
+aY
+aY
+aY
 Du
-Nw
+Np
 kN
-kI
-mQ
-jL
-kj
-jU
+Cq
+aY
+gx
+jJ
+su
 jY
 hZ
 hZ
@@ -37517,23 +37619,23 @@ hZ
 hZ
 hZ
 jY
-gx
 kj
+jJ
 QS
-kY
-kY
+kq
+kq
 kl
 jT
 jT
-kT
+nD
 jT
 jT
 ki
-kY
-kY
-Ze
-kj
-jW
+kq
+kq
+HT
+jJ
+jq
 jY
 hZ
 hZ
@@ -37774,22 +37876,22 @@ hZ
 hZ
 hZ
 jY
-jy
-kj
+kb
+jJ
 OT
-kc
-kY
-kY
-kD
+Tg
+kq
+kq
 ke
-ke
+kX
+kX
 rh
 rh
-kY
-kY
-kO
-kS
-kj
+kq
+kq
+kH
+Ts
+jJ
 QS
 jY
 hZ
@@ -38030,25 +38132,25 @@ hZ
 hZ
 hZ
 hZ
-aY
-jG
-eH
-kj
+gK
+Fz
+EA
+jJ
 OT
-iJ
-kY
-aY
-kY
+jo
+kq
+gK
+kq
 la
-kY
-aY
-kY
+kq
+gK
+kq
 LG
-kS
-kj
+Ts
+jJ
 kU
-Dv
-aY
+kK
+gK
 hZ
 hZ
 hZ
@@ -38289,19 +38391,19 @@ hZ
 hZ
 jY
 jY
-nD
-EH
-kj
-OT
-Kc
-kF
-ju
-kj
 OX
+eH
+jJ
+OT
+hQ
 kF
-kX
-kS
-kj
+WT
+jJ
+HS
+kF
+LV
+Ts
+jJ
 kU
 kZ
 jY
@@ -38547,19 +38649,19 @@ hZ
 hZ
 jY
 jY
-ah
-yp
-kj
-kj
+rJ
+nj
+jJ
+jJ
 Bb
-kj
-kj
-kj
-Bb
-kj
-kj
+jJ
+jJ
+jJ
+qU
+jJ
+jJ
 kU
-kZ
+qn
 jY
 jY
 hZ
@@ -38805,17 +38907,17 @@ hZ
 hZ
 jY
 jY
-jV
-Np
-kB
+zB
+qG
+ju
 kF
-kH
-Fz
-AY
+jI
+Sv
+jp
 kF
-kB
-jB
-Ny
+ju
+lY
+EH
 jY
 jY
 hZ
@@ -39066,9 +39168,9 @@ aY
 jY
 jY
 aY
-kF
-kF
-kF
+jW
+jW
+jW
 aY
 jY
 jY
