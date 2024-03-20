@@ -15942,6 +15942,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"qgV" = (
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "049 East Section Medical";
+	name = "049 East Section Medical";
+	pixel_y = 9;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/site53/lhcz/scp049containment)
 "qhn" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "D-Class Breakroom"
@@ -16547,6 +16557,13 @@
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 8
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "049 East Section Medical";
+	name = "049 East Section Medical";
+	pixel_y = 9;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
@@ -72009,7 +72026,7 @@ tiC
 tiC
 pkT
 pkT
-bky
+fQu
 pkT
 pkT
 pkT
@@ -73551,7 +73568,7 @@ tiC
 tiC
 pkT
 pkT
-fQu
+bky
 pkT
 pkT
 pkT
@@ -74578,7 +74595,7 @@ tiC
 tiC
 qKJ
 qTN
-psp
+qgV
 psp
 psp
 eif
