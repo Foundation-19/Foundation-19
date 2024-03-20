@@ -501,8 +501,7 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "bn" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "bo" = (
 /obj/structure/bed/chair{
@@ -751,26 +750,19 @@
 /obj/structure/railing/mapped{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/surface/surface)
-"bQ" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/open,
 /area/site53/surface/surface)
 "bR" = (
-/obj/structure/railing/mapped{
-	dir = 6
+/obj/structure/bed/chair{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 8;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
 	},
-/area/site53/surface/surface)
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "bS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/snow,
@@ -851,11 +843,16 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/securitypost)
 "ca" = (
-/obj/machinery/door/airlock/security{
+/obj/machinery/door/airlock/glass/command{
 	name = "Communications Tower";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/commstower)
 "cb" = (
 /obj/structure/railing/mapped{
@@ -2230,10 +2227,7 @@
 /area/site53/medical/equipstorage)
 "fJ" = (
 /obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 8
+	dir = 9
 	},
 /turf/simulated/open,
 /area/site53/surface/surface)
@@ -2366,6 +2360,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
+"gf" = (
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/surface/surface)
 "gg" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/boombox,
@@ -3315,9 +3315,8 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
 "iW" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4
+	dir = 6
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -3499,9 +3498,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
 "jp" = (
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
+/obj/structure/railing/mapped/corner{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "jq" = (
 /obj/machinery/optable,
 /obj/item/clothing/suit/surgicalapron,
@@ -3647,35 +3648,25 @@
 /area/site53/medical/isolation)
 "jJ" = (
 /obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 9
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "jK" = (
 /obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	dir = 4
+	dir = 5
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "jL" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
+	dir = 10
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -4435,12 +4426,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "lX" = (
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin"
+/obj/structure/railing/mapped{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/commstower)
+/obj/structure/railing/mapped/corner{
+	dir = 1
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "lY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -4484,18 +4477,19 @@
 /obj/item/clothing/suit/surgicalapron,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
+"mg" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped/corner{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "mh" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass/civilian{
-	name = "Hub"
+/obj/structure/railing/mapped{
+	dir = 10
 	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway)
+/turf/simulated/open,
+/area/site53/surface/surface)
 "mi" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
@@ -4732,8 +4726,11 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
 "nP" = (
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/flora/tree/dead,
+/turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "nQ" = (
 /obj/effect/paint_stripe/green,
@@ -4972,7 +4969,8 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "oJ" = (
-/turf/simulated/floor/tiled/techmaint,
+/obj/effect/floor_decal/corner/orange/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "oN" = (
 /obj/structure/disposaloutlet{
@@ -5240,6 +5238,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/innerentrancehallway)
+"qh" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/commstower)
 "qp" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -5299,10 +5306,7 @@
 /area/site53/surface/surface)
 "qH" = (
 /obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 8
+	dir = 9
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -5667,10 +5671,7 @@
 /area/site53/surface/surface)
 "sd" = (
 /obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/structure/railing/mapped{
-	dir = 1
+	dir = 5
 	},
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6163,10 +6164,19 @@
 /turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "vq" = (
-/obj/structure/bed/chair{
+/obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 4;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/commstower)
 "vr" = (
 /obj/machinery/photocopier,
@@ -6175,31 +6185,21 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/hallway)
 "vs" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/techmaint,
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/upper_surface/commstower)
 "vt" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/commstower)
-"vv" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/obj/machinery/vending/snack{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/corner/paleblue/half,
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/upper_surface/commstower)
 "vw" = (
-/obj/machinery/vending/fitness{
-	dir = 8
+/obj/structure/railing/mapped/corner{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/commstower)
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "vx" = (
 /turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
@@ -6218,6 +6218,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"vA" = (
+/obj/structure/railing/mapped{
+	dir = 6
+	},
+/turf/simulated/open,
+/area/site53/surface/surface)
 "vB" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/light{
@@ -6383,15 +6389,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
-"wV" = (
-/obj/structure/sign/directions/evac{
-	pixel_x = -32;
-	pixel_y = -20
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/turf/simulated/floor/tiled/white/monotile,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
 "wW" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
@@ -6457,11 +6454,24 @@
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"xy" = (
+/obj/structure/railing/mapped/corner{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/site53/surface/surface)
 "xP" = (
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/space)
+"xW" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "yg" = (
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/light{
@@ -6487,6 +6497,21 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"yt" = (
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/surface/surface)
+"yu" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/pointybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "yv" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 8
@@ -6650,9 +6675,8 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "zu" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 4
+	dir = 6
 	},
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
@@ -6713,10 +6737,7 @@
 /area/site53/medical/infirmary)
 "zU" = (
 /obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
+	dir = 9
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -6813,6 +6834,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"Ay" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "Az" = (
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile/white,
@@ -6867,6 +6895,17 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
+"Bi" = (
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 8;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
+	},
+/obj/machinery/vending/soda{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "Bj" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -6910,6 +6949,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Bs" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/sign/directions/evac{
+	pixel_y = -32
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Bt" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -6983,6 +7032,17 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
 /area/site53/maintenance/surfaceeast)
+"Cm" = (
+/obj/machinery/vending/snack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 8;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "Cn" = (
 /obj/structure/table/woodentable{
 	dir = 5
@@ -7015,6 +7075,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Cr" = (
+/obj/machinery/vending/wallmed2{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "CC" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/structure/sign/warning/nosmoking_2,
@@ -7062,6 +7128,21 @@
 "Do" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/bridge)
+"DB" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 8;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "DD" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable{
@@ -7124,15 +7205,6 @@
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
-"DY" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Ea" = (
@@ -7420,9 +7492,8 @@
 /area/site53/surface/cryogenicsprimary)
 "GJ" = (
 /obj/structure/railing/mapped{
-	dir = 8
+	dir = 10
 	},
-/obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "GK" = (
@@ -7549,12 +7620,14 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "HM" = (
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/structure/table/standard,
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 4;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
 	},
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -7660,6 +7733,15 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"ID" = (
+/obj/structure/railing/mapped{
+	dir = 10
+	},
+/obj/structure/railing/mapped/corner{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "IF" = (
 /obj/structure/barricade,
 /turf/simulated/floor/exoplanet/snow,
@@ -7731,6 +7813,16 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"JQ" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/sign/directions/evac{
+	pixel_y = 32
+	},
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "JU" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -7772,6 +7864,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
+"Km" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 4
+	},
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
 "Kq" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 6
@@ -7874,12 +7974,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "Lm" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/obj/effect/paint_stripe/paleblue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/commstower)
 "Ln" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Cryo";
@@ -7908,6 +8005,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
+"LA" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "LC" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /turf/simulated/floor/tiled/white,
@@ -8029,6 +8136,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
+"Np" = (
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 4
+	},
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
 "NA" = (
 /obj/effect/floor_decal/carpet/orange{
 	dir = 1
@@ -8039,6 +8153,9 @@
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/structure/railing/mapped/corner{
+	dir = 1
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -8092,6 +8209,14 @@
 /obj/structure/filingcabinet/wallcabinet,
 /turf/simulated/wall/titanium,
 /area/site53/uez/goirepoffice)
+"Oe" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 8
+	},
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
 "Of" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -8148,6 +8273,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"OO" = (
+/obj/structure/railing/mapped/corner,
+/turf/simulated/open,
+/area/site53/surface/surface)
+"OS" = (
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 8
+	},
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
 "OW" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood/walnut,
@@ -8162,6 +8298,15 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"Pn" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/sign/directions/evac{
+	pixel_y = 32
+	},
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "Pr" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
@@ -8174,21 +8319,17 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Pv" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Pw" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/surface/surface)
 "Px" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
@@ -8196,6 +8337,12 @@
 	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
+"PS" = (
+/obj/structure/railing/mapped/corner{
+	dir = 1
+	},
+/turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "PX" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
@@ -8359,6 +8506,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"QY" = (
+/obj/structure/railing/mapped/corner,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Ra" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -8390,11 +8541,27 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
+"RC" = (
+/obj/structure/table/standard,
+/obj/item/storage/mre/menu3,
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 4;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "RG" = (
 /obj/structure/railing/mapped{
-	dir = 4
+	dir = 6
 	},
-/obj/structure/railing/mapped,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
+"RJ" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "RK" = (
@@ -8514,11 +8681,30 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/surface)
+"SM" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "SN" = (
 /obj/effect/paint_stripe/green,
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor/plating,
 /area/site53/medical/surgery/op1)
+"SQ" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/snacks/hamburger,
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 4;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "SW" = (
 /obj/structure/table/rack,
 /obj/machinery/light/small{
@@ -8549,6 +8735,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
+"Tp" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped/corner{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Tq" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -8656,6 +8851,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Uj" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/sign/directions/evac{
+	pixel_y = -32
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Uk" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/syringes,
@@ -8750,6 +8955,12 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Vi" = (
+/obj/structure/railing/mapped/corner{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Vm" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -8846,6 +9057,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"Wi" = (
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
 "Wl" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8873,6 +9090,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"Wz" = (
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 8;
+	detail_color = "#30A0CC";
+	name = "command hazard stripes"
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/commstower)
 "WC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9112,6 +9340,12 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
 /area/site53/medical/infirmreception)
+"YT" = (
+/obj/item/device/radio/intercom{
+	pixel_y = 20
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "YV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -9191,6 +9425,13 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"ZF" = (
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower Lobby";
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "ZG" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -9216,10 +9457,7 @@
 /area/site53/medical/surgery/op1)
 "ZR" = (
 /obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 4
+	dir = 5
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -34062,17 +34300,17 @@ dA
 dA
 oS
 rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 rm
 oS
 dA
@@ -34329,7 +34567,7 @@ nE
 nE
 nE
 nE
-rm
+nE
 rm
 oS
 dA
@@ -34563,17 +34801,17 @@ uX
 uX
 uX
 rI
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 oS
 bt
 nE
@@ -34584,9 +34822,9 @@ fw
 fw
 fw
 fw
-ad
+mh
 nE
-rm
+nE
 rm
 oS
 dA
@@ -34820,18 +35058,18 @@ uX
 uX
 uX
 rI
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-oS
+bt
+bt
+bt
+bt
+bt
+bt
+bt
+bt
+bt
+bt
+bt
+bt
 bt
 nE
 nE
@@ -34843,7 +35081,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -35077,19 +35315,19 @@ uX
 uX
 uX
 rI
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 oS
-bt
+oS
+oS
+oS
+bO
+bm
+bm
+bO
+bX
+bO
+bO
+bO
+ic
 nE
 gr
 cb
@@ -35100,7 +35338,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -35334,19 +35572,19 @@ uX
 uX
 uX
 rI
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 oS
-bt
+nZ
+nZ
+Rx
+Pt
+nZ
+xW
+nZ
+nZ
+nZ
+Rx
+xW
+iW
 nE
 gr
 cb
@@ -35357,7 +35595,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -35591,19 +35829,19 @@ rI
 rI
 rI
 rI
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-oS
-bt
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 nE
 gr
 cb
@@ -35614,7 +35852,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -35847,20 +36085,20 @@ sq
 Fz
 jH
 kG
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 oS
-bt
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 nE
 gr
 cb
@@ -35871,7 +36109,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -36104,20 +36342,20 @@ uI
 Gq
 jH
 kG
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 oS
-bt
+nE
+nE
+qH
+Uj
+Lm
+qh
+qh
+Lm
+qh
+qh
+Lm
+JQ
+jL
 nE
 gr
 cb
@@ -36128,7 +36366,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -36361,20 +36599,20 @@ jH
 ua
 jQ
 kG
-oS
-oS
-oS
-oS
-oS
-oS
-dA
-dA
-dA
-dA
-dA
-dA
-oS
-bt
+ic
+nE
+nE
+Ay
+Lm
+Lm
+HM
+RC
+vq
+SQ
+HM
+Lm
+Lm
+sc
 nE
 gr
 cb
@@ -36385,7 +36623,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -36618,21 +36856,21 @@ jH
 ua
 jD
 kG
-bt
-bt
-bt
-bt
-bt
-oS
-dA
-dA
-dA
-dA
-dA
-dA
-oS
-bt
+iW
 nE
+nE
+Lm
+Lm
+OS
+Wi
+Wi
+Wi
+Wi
+Wi
+Oe
+Lm
+Lm
+gf
 gr
 cb
 sE
@@ -36642,7 +36880,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -36878,18 +37116,18 @@ sv
 jR
 vO
 nE
-nE
+Lm
+Lm
+Lm
+Lm
+Lm
+Lm
+Cr
 bn
 bn
-bn
-bn
-bn
-bn
-bn
-bn
-bn
-bn
-nE
+vt
+qh
+Pw
 gr
 cb
 sE
@@ -36899,7 +37137,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -37135,18 +37373,18 @@ oV
 nE
 sw
 nE
-nE
-ca
+Lm
+cc
+cc
+cc
+cc
+Lm
+ZF
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+bn
 vt
 ca
-nE
+Pw
 gr
 cb
 sE
@@ -37156,7 +37394,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -37387,23 +37625,23 @@ jH
 jH
 jH
 uG
-jp
-fK
-oz
+jH
+zU
+GJ
 sw
 nE
-nE
+Lm
+cc
+cc
+cc
+cc
+cc
 bn
-vv
-vq
-vq
-vw
-lX
 oJ
-bn
-bn
-bn
-nE
+oJ
+vt
+qh
+Pw
 gr
 cb
 sE
@@ -37413,7 +37651,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -37644,23 +37882,23 @@ jH
 jH
 jH
 ul
-jp
-bO
+jH
+oG
 ic
 sw
 nE
-nP
-bn
-bn
-bn
-bn
-bn
+Lm
+cc
+cc
+cc
+cc
+Lm
 bn
 oJ
 bn
-rm
-sc
-nE
+vt
+ca
+Pw
 gr
 cb
 sE
@@ -37670,7 +37908,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -37901,23 +38139,23 @@ uJ
 uJ
 uJ
 uN
-jp
-bm
+jH
+qR
 iz
 sw
 nE
-nP
+Lm
+Lm
+Lm
+Lm
+Lm
+Lm
+YT
 bn
-cc
-cc
-cc
-cc
 bn
-oJ
-bn
-rm
-qD
-nE
+vt
+qh
+Pw
 gr
 cb
 sE
@@ -37927,7 +38165,7 @@ sE
 sE
 oX
 nE
-rm
+nE
 rm
 oS
 dA
@@ -38158,23 +38396,23 @@ kh
 kh
 kh
 kh
-Pw
-Rx
-iz
+kh
+SM
+mg
 sw
 nE
-nP
-bn
-cc
-cc
-cc
-cc
-cc
+Lm
+Lm
+Np
 vs
-bn
-rm
-qD
-nE
+vs
+vs
+vs
+vs
+Km
+Lm
+Lm
+yt
 gr
 cb
 sE
@@ -38184,7 +38422,7 @@ sE
 sE
 oX
 nE
-Lm
+nE
 rm
 rm
 oS
@@ -38421,15 +38659,15 @@ oB
 sw
 nE
 nP
-bn
-cc
-cc
-cc
-cc
-bn
-oJ
-bn
-rm
+Lm
+Lm
+Bi
+bR
+DB
+Wz
+Cm
+Lm
+Lm
 ic
 nE
 gr
@@ -38441,8 +38679,8 @@ sE
 sE
 oX
 nE
-HM
-bO
+nE
+RJ
 rm
 rm
 rm
@@ -38677,29 +38915,29 @@ jg
 oB
 sw
 nE
-nP
-bn
-bn
-bn
-bn
-bn
-bn
-bn
-bn
-Rx
+ZR
+Bs
+Lm
+qh
+qh
+Lm
+qh
+qh
+Lm
+Pn
 zu
 nE
 gr
 bP
-bQ
-bQ
-bQ
-bQ
-bQ
-bR
+fv
+fv
+fv
+fv
+fv
+vA
+nE
 nE
 bt
-Rx
 Rx
 Fu
 DX
@@ -38934,7 +39172,6 @@ jg
 oE
 se
 gr
-wV
 gr
 gr
 gr
@@ -38947,6 +39184,8 @@ gr
 gr
 gr
 gr
+gr
+nE
 nE
 nE
 nE
@@ -38955,7 +39194,6 @@ nE
 nE
 nE
 bG
-nE
 nE
 nE
 nE
@@ -39183,7 +39421,7 @@ ep
 nE
 nE
 jJ
-oy
+LA
 nl
 nl
 oy
@@ -39707,7 +39945,7 @@ nE
 nE
 bL
 bL
-sE
+xy
 sE
 sE
 sE
@@ -39959,7 +40197,7 @@ nl
 nl
 nl
 oy
-oz
+ID
 nE
 nE
 nE
@@ -40207,7 +40445,7 @@ qa
 as
 as
 ml
-ep
+sx
 nE
 nE
 jg
@@ -40464,7 +40702,7 @@ HU
 as
 as
 as
-mh
+sx
 nE
 nE
 jg
@@ -40473,7 +40711,7 @@ nm
 nG
 oi
 jg
-oG
+Tp
 ZG
 oI
 nE
@@ -40482,7 +40720,7 @@ cb
 sE
 sE
 sE
-sE
+OO
 fv
 fv
 fv
@@ -40721,9 +40959,9 @@ as
 as
 as
 as
-mh
-nE
-nE
+sx
+fL
+yu
 jL
 jg
 jg
@@ -40980,7 +41218,7 @@ rM
 rM
 ae
 Pv
-fL
+bm
 jW
 jg
 jg
@@ -41020,8 +41258,8 @@ nE
 nE
 nE
 nE
-Px
 nE
+Px
 qR
 rm
 dA
@@ -41278,8 +41516,8 @@ jg
 zU
 fK
 fK
+fL
 bt
-bm
 rm
 dA
 dA
@@ -41755,7 +41993,7 @@ bO
 ic
 jg
 jg
-DY
+zU
 fK
 fK
 bm
@@ -41790,7 +42028,7 @@ iz
 jg
 jg
 ZR
-bO
+Vi
 bO
 bO
 bm
@@ -42810,7 +43048,7 @@ jg
 jg
 bK
 bS
-bO
+QY
 Rx
 Rx
 Rx
@@ -42818,13 +43056,13 @@ RG
 jg
 jg
 sd
+lX
 Rx
 Rx
 Rx
 Rx
 Rx
-Rx
-bm
+vw
 bm
 bm
 rm
@@ -43066,8 +43304,8 @@ bO
 jg
 jg
 bO
-bO
-NB
+QY
+RG
 AT
 AT
 AT
@@ -43082,7 +43320,7 @@ AT
 AT
 AT
 ZR
-bm
+vw
 bm
 rm
 dA
@@ -43566,7 +43804,7 @@ dB
 fv
 fv
 fv
-by
+vA
 nE
 nE
 qR
@@ -43802,19 +44040,19 @@ bm
 bO
 bO
 bS
-bO
-bO
-bO
+bm
+ru
 bm
 bm
+bm
 bO
 bO
 jg
 jg
-jg
-jg
-jg
-jg
+bm
+bO
+bO
+bO
 bO
 oe
 nE
@@ -44061,17 +44299,17 @@ bO
 bm
 bm
 bm
-bO
 bm
 bm
+bm
 bO
 bO
 jg
 jg
-jg
-jg
-jg
-jg
+bm
+bO
+bO
+bO
 bO
 iz
 nE
@@ -44321,16 +44559,16 @@ bm
 bm
 bm
 bm
-bm
-bm
-bm
 ru
 bm
-bO
 jg
 jg
+bm
+bm
 bO
 bO
+bO
+jp
 fK
 fK
 fK
@@ -44340,7 +44578,7 @@ fK
 fK
 fK
 fK
-bO
+PS
 bO
 bO
 bO
@@ -44570,22 +44808,22 @@ bO
 bO
 bO
 bO
+bS
 bO
-bO
 bm
 bm
-bm
-bK
-bI
-bm
+ru
 bm
 bm
 bm
 bm
 bm
-bO
 jg
 jg
+bm
+bm
+bO
+bO
 bO
 bO
 bO
@@ -44832,15 +45070,15 @@ bO
 bm
 bm
 bm
-bO
-bm
-bm
-bm
-bm
-bm
-bm
 bm
 bO
+bO
+bO
+bO
+jg
+jg
+jg
+jg
 jg
 jg
 jg
@@ -45086,10 +45324,6 @@ bm
 bm
 bO
 bO
-bO
-bI
-bm
-bm
 bm
 bm
 bm
@@ -45121,8 +45355,12 @@ jg
 jg
 jg
 jg
+jg
+jg
+jg
+jg
 bO
-bO
+jp
 GJ
 AT
 AT
@@ -45138,7 +45376,7 @@ AT
 AT
 AT
 zU
-bO
+PS
 rm
 dA
 dA
@@ -45342,21 +45580,21 @@ bm
 bm
 bm
 bO
-bO
-bO
-bO
-bm
-ru
 bm
 bm
 bm
 bO
 bO
+fx
+bO
+bO
+bO
+bO
+bO
 bm
 bm
 bm
 bm
-ru
 bm
 bJ
 bO
@@ -45380,7 +45618,7 @@ bO
 bO
 bK
 bO
-bO
+jp
 fK
 fK
 fK
@@ -45394,7 +45632,7 @@ fK
 fK
 fK
 fK
-bO
+PS
 bO
 rm
 dA
@@ -45599,21 +45837,21 @@ bm
 bm
 bm
 bO
+bm
+bm
+bm
 bO
 bO
 bO
-bI
-bI
+bO
+bK
+bO
+bO
+bO
+bO
 bO
 bm
-bm
-bm
-bm
-bm
-bm
-bm
-bm
-bm
+ru
 bm
 ru
 bO
@@ -45856,21 +46094,21 @@ bm
 bm
 bm
 bm
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
 bm
 bm
 bm
-bm
-bm
-bm
-bm
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
 bm
 bO
 bO
@@ -46117,6 +46355,7 @@ bm
 bm
 bO
 bO
+bS
 bO
 bO
 bO
@@ -46124,9 +46363,8 @@ bO
 bm
 bm
 bm
-ru
 bm
-bm
+bO
 bm
 bm
 bO
@@ -46373,7 +46611,7 @@ bO
 bm
 bm
 bO
-bK
+bO
 bO
 bO
 bO
@@ -46636,11 +46874,11 @@ bO
 bO
 bO
 bO
-fx
-bO
-bO
-bO
-bO
+bm
+bm
+ru
+bm
+bm
 bO
 bO
 bO
@@ -46885,10 +47123,6 @@ bm
 bO
 bm
 bO
-bO
-bO
-bO
-bO
 be
 bO
 bO
@@ -46897,6 +47131,10 @@ bO
 bO
 bO
 bO
+bO
+bm
+bm
+bm
 bm
 bO
 bO
@@ -47658,7 +47896,7 @@ bO
 rm
 rm
 rm
-rm
+bO
 bm
 bm
 rm
@@ -47914,7 +48152,7 @@ rm
 rm
 rm
 oS
-oS
+rm
 rm
 rm
 rm

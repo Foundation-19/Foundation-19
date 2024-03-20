@@ -224,6 +224,21 @@
 
 // SIDED
 
+/turf/simulated/floor/tiled/corner
+	name = "floor"
+	icon_state = "steel_corner"
+	initial_flooring = /decl/flooring/tiling/corner
+
+/turf/simulated/floor/tiled/white/corner
+	name = "floor"
+	icon_state = "white_corner"
+	initial_flooring = /decl/flooring/tiling/corner/white
+
+/turf/simulated/floor/tiled/dark/corner
+	name = "floor"
+	icon_state = "dark_corner"
+	initial_flooring = /decl/flooring/tiling/corner/dark
+
 /turf/simulated/floor/tiled/horizontal
 	name = "floor"
 	icon_state = "steel_horizontal"

@@ -171,6 +171,18 @@
 	can_paint = 1
 	footstep_type = /decl/footsteps/tiles
 
+/decl/flooring/tiling/corner
+	icon_base = "steel_corner"
+	build_type = /obj/item/stack/tile/corner
+
+/decl/flooring/tiling/corner/white
+	icon_base = "white_corner"
+	build_type = /obj/item/stack/tile/corner/white
+
+/decl/flooring/tiling/corner/dark
+	icon_base = "dark_corner"
+	build_type = /obj/item/stack/tile/corner/dark
+
 /decl/flooring/tiling/vertical
 	icon_base = "steel_vertical"
 	build_type = /obj/item/stack/tile/vertical

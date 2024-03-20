@@ -117,65 +117,86 @@
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
+/obj/item/stack/tile/corner
+	name = "steel corner tiles"
+	singular_name = "steel corner tile"
+	icon_state = "tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/corner/white
+	name = "white corner tiles"
+	singular_name = "white corner tile"
+	icon_state = "tile_white"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/corner/dark
+	name = "dark corner tiles"
+	singular_name = "dark corner tile"
+	icon_state = "fr_tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
 /obj/item/stack/tile/horizontal
-	name = "steel horizontal tile"
-	singular_name = "steel mono tile"
+	name = "steel horizontal tiles"
+	singular_name = "steel horizontal tile"
 	icon_state = "tile"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/vertical
-	name = "steel vertical tile"
-	singular_name = "steel mono tile"
+	name = "steel vertical tiles"
+	singular_name = "steel vertical tile"
 	icon_state = "tile"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/horizontal/white
-	name = "white horizontal tile"
-	singular_name = "steel mono tile"
+	name = "white horizontal tiles"
+	singular_name = "white horizontal tile"
 	icon_state = "tile_white"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/vertical/white
-	name = "white vertical tile"
-	singular_name = "steel mono tile"
+	name = "white vertical tiles"
+	singular_name = "white vertical tile"
 	icon_state = "tile_white"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/horizontal/dark
-	name = "dark horizontal tile"
-	singular_name = "steel mono tile"
+	name = "dark horizontal tiles"
+	singular_name = "dark horizontal tile"
 	icon_state = "fr_tile"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/vertical/dark
 	name = "dark vertical tile"
-	singular_name = "steel mono tile"
+	singular_name = "dark vertical tile"
 	icon_state = "fr_tile"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/small
-	name = "steel small tile"
-	singular_name = "steel mono tile"
+	name = "steel small tiles"
+	singular_name = "steel small tile"
 	icon_state = "tile"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/small/white
-	name = "white small tile"
-	singular_name = "steel mono tile"
+	name = "white small tiles"
+	singular_name = "white small tile"
 	icon_state = "tile_white"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/small/dark
-	name = "dark vertical tile"
-	singular_name = "steel mono tile"
+	name = "dark vertical tiles"
+	singular_name = "dark small tile"
 	icon_state = "fr_tile"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
