@@ -1072,6 +1072,8 @@
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/sugar,
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
 "aZm" = (
@@ -18427,7 +18429,7 @@
 /area/site53/engineering/server_room)
 "sOV" = (
 /obj/structure/table/reinforced,
-/obj/machinery/chemical_dispenser/bar_soft/full,
+/obj/machinery/chemical_dispenser/bar_coffee/full,
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
 "sPd" = (
