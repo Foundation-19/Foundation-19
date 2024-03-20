@@ -8,13 +8,8 @@
 
 	genders = list(FEMALE)
 
-
-
-
 	//organ override
-	override_organ_types = list(
-		BP_EYES = /obj/item/organ/internal/eyes/scp347
-	)
+	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/scp347)
 
 	// icon overrides
 	icobase = 'icons/SCP/scp347/scp-347.dmi'
