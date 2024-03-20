@@ -28955,6 +28955,9 @@
 /area/site53/engineering/primaryhallway)
 "kAB" = (
 /obj/machinery/computer/arcade/battle,
+/obj/structure/sign/scp/euclid_scp{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/humanoidcontainment)
 "kAL" = (
@@ -29639,6 +29642,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"lkO" = (
+/obj/effect/landmark{
+	name = "scp347"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/ulcz/humanoidcontainment)
 "lmp" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/dartgun,
@@ -88185,7 +88194,7 @@ azA
 azA
 urC
 cBj
-hyr
+lkO
 urC
 hoI
 oFR
