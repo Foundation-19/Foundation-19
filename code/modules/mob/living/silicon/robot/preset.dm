@@ -32,6 +32,11 @@
 	modtype = "Light Containment Security"
 	module = /obj/item/robot_module/tall/special/general/lcz
 	icon_state = "lczrobot"
+	silicon_radio = /obj/item/device/radio/borg
+	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
+	cell = /obj/item/cell/hyper
+	pitch_toggle = FALSE
+	req_access = list(ACCESS_ROBOTICS)
 
 /mob/living/silicon/robot/tall/lcz/captain
 	modtype = "Light Containment Security Captain"

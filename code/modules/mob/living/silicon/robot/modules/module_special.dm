@@ -5,7 +5,7 @@
 	module_category = ROBOT_MODULE_TYPE_GROUNDED
 	speed = -1 // nyoom
 
-/obj/item/robot_module/special
+/obj/item/robot_module/tall/special
 	channels = list(
 		"Security" = TRUE,
 		"Service" = TRUE,
@@ -23,7 +23,7 @@
 		/obj/item/borg/upgrade/weaponcooler
 	)
 
-/obj/item/robot_module/special/respawn_consumable(mob/living/silicon/robot/R, amount)
+/obj/item/robot_module/tall/special/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()
 	for(var/obj/item/gun/energy/T in equipment)
 		if(T?.power_supply)
@@ -114,6 +114,23 @@
 		SKILL_COMBAT      = SKILL_EXPERIENCED,
 		SKILL_WEAPONS     = SKILL_EXPERIENCED,
 		SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+
+	/obj/item/robot_module/tall/special/general/lcz
+	channels = list(
+		"Security" = TRUE,
+		"LCZ-Security" = TRUE
+	)
+	networks = list(
+		NETWORK_SECURITY
+	)
+	subsystems = list(
+		/datum/nano_module/crew_monitor,
+		/datum/nano_module/program/digitalwarrant
+	)
+	can_be_pushed = FALSE
+	supported_upgrades = list(
+		/obj/item/borg/upgrade/weaponcooler
 	)
 
 /obj/item/robot_module/tall/special/general/lcz/captain
