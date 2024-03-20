@@ -6916,10 +6916,7 @@
 	color = "#561919";
 	dir = 5
 	},
-/mob/living/silicon/robot/tall/isd/yawet{
-	dir = 8;
-	req_access = list("ACCESS_MTF")
-	},
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -12989,10 +12986,7 @@
 	color = "#561919";
 	dir = 6
 	},
-/mob/living/silicon/robot/tall/isd{
-	dir = 8;
-	req_access = list("ACCESS_MTF")
-	},
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"

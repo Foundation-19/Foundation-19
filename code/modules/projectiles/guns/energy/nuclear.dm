@@ -61,6 +61,55 @@
 	use_external_power = 1
 	has_safety = FALSE
 
+/obj/item/gun/energy/gun/mounted/mk9/mounted
+	name = "MK9 Foundation Pistol"
+	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the HK VP9. This one is shaped for cyborgs. Chambered in lethal bullets."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "MK9"
+	modifystate = null
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/pistol
+	fire_delay = 2
+	self_recharge = 1
+	use_external_power = 1
+	has_safety = FALSE
+	firemodes = null
+
+/obj/item/gun/energy/gun/mounted/mk9/mounted/on_update_icon()
+	..()
+
+/obj/item/gun/energy/gun/mounted/mk9/mounted/rubber
+	name = "MK9 Foundation Pistol"
+	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the HK VP9. This one is shaped for cyborgs. Chambered in rubber bullets."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "MK9"
+	modifystate = null
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	fire_delay = 2
+	self_recharge = 1
+	use_external_power = 1
+	has_safety = FALSE
+
+/obj/item/gun/energy/gun/mounted/p90/mounted
+	name = "P90 SMG"
+	desc = "A submachine gun sample of the 2010s, with a scope mounted on top. This one is shaped for cyborgs."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "p90"
+	modifystate = null
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/a57
+	force = 10
+	one_hand_penalty = 1
+	self_recharge = 1
+	use_external_power = 1
+	has_safety = FALSE
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
+		)
+
 /obj/item/gun/energy/gun/nuclear
 	name = "advanced energy gun"
 	desc = "An energy gun with an experimental miniaturized reactor."

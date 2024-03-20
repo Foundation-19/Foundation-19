@@ -5629,13 +5629,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "rQ" = (
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower External North";
-	network = list("Entrance Zone Network");
-	dir = 1
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
 	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "rR" = (
 /obj/machinery/light/spot{
 	dir = 1
@@ -5890,6 +5888,16 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
+"tb" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "td" = (
 /obj/structure/closet/secure_closet/personal/empty{
 	name = "Representative's Locker";
@@ -6579,16 +6587,6 @@
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"xy" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/industrial/outline,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
 "xP" = (
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
@@ -7952,6 +7950,14 @@
 /obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uez/goirepoffice)
+"ID" = (
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower External North";
+	network = list("Entrance Zone Network");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "IF" = (
 /obj/structure/barricade,
 /turf/simulated/floor/exoplanet/snow,
@@ -8853,12 +8859,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"QY" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "Ra" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -9365,12 +9365,6 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Vi" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "Vm" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -9649,6 +9643,12 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/medical/mentalhealth/office)
+"XJ" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "XK" = (
 /obj/machinery/vending/coffee{
 	dir = 4
@@ -37547,7 +37547,7 @@ jt
 sv
 jR
 vO
-rQ
+ID
 Lm
 Lm
 Lm
@@ -39573,8 +39573,8 @@ xP
 qL
 aI
 tO
-uV
-ai
+tC
+It
 oD
 oU
 oU
@@ -39830,8 +39830,8 @@ pu
 qL
 fa
 tO
-tC
-It
+uV
+ai
 au
 to
 aj
@@ -40098,7 +40098,7 @@ qf
 vp
 aT
 aT
-xy
+tb
 aT
 aT
 aT
@@ -42125,7 +42125,7 @@ va
 CI
 lY
 GH
-Vi
+XJ
 lM
 am
 lg
@@ -42382,7 +42382,7 @@ uY
 lZ
 Uc
 Jk
-QY
+rQ
 lM
 am
 lg

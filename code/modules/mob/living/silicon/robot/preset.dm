@@ -15,22 +15,23 @@
 /mob/living/silicon/robot/tall/isd
 	lawupdate = FALSE
 	scrambledcodes = TRUE
-	modtype = "Internal Security Captain"
-	module = /obj/item/robot_module/tall/special/general
+	modtype = "Internal Security"
+	module = /obj/item/robot_module/tall/isd
+	icon_state = "isdrobot"
 	silicon_radio = /obj/item/device/radio/borg/syndicate
 	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
 	cell = /obj/item/cell/infinite
 	pitch_toggle = FALSE
 	req_access = list(ACCESS_MTF)
 
-/mob/living/silicon/robot/tall/isd/yawet
-	modtype = "Internal Security Agent"
-	module = /obj/item/robot_module/tall/special/general/yawet
-	icon_state = "isdyrobot"
+/mob/living/silicon/robot/tall/isd/googly
+	modtype = "Internal Security Captain"
+	module = /obj/item/robot_module/tall/isd/googly
+	icon_state = "isdgrobot"
 
 /mob/living/silicon/robot/tall/lcz
 	modtype = "Light Containment Security"
-	module = /obj/item/robot_module/tall/special/general/lcz
+	module = /obj/item/robot_module/tall/lcz
 	icon_state = "lczrobot"
 	silicon_radio = /obj/item/device/radio/borg
 	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
@@ -40,7 +41,7 @@
 
 /mob/living/silicon/robot/tall/lcz/captain
 	modtype = "Light Containment Security Captain"
-	module = /obj/item/robot_module/tall/special/general/lcz/captain
+	module = /obj/item/robot_module/tall/lcz/captain
 	icon_state = "lczcrobot"
 
 /mob/living/silicon/robot/combat
