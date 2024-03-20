@@ -187,6 +187,11 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 8;
+	name = "Cryogenics Lockdown Shutters";
+	id_tag = "cryogen"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/surface/cryogenicsprimary)
 "aE" = (
@@ -6263,7 +6268,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/multi_tile/glass/civilian,
+/obj/machinery/door/airlock/multi_tile/glass/civilian{
+	name = "Hub Access"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/surface/cryogenicsprimary)
 "vq" = (
@@ -6525,6 +6532,15 @@
 "xb" = (
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/white/horizontal,
+/area/site53/surface/cryogenicsprimary)
+"xc" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 8;
+	name = "Cryogenics Lockdown Shutters";
+	id_tag = "cryogen"
+	},
+/turf/simulated/floor/plating,
 /area/site53/surface/cryogenicsprimary)
 "xd" = (
 /obj/machinery/floodlight{
@@ -9836,6 +9852,11 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 8;
+	name = "Cryogenics Lockdown Shutters";
+	id_tag = "cryogen"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/surface/cryogenicsprimary)
@@ -39317,9 +39338,9 @@ GL
 aB
 oD
 oD
-oU
+xc
 Zx
-oU
+xc
 oD
 oD
 ac
@@ -39567,11 +39588,11 @@ tO
 tC
 It
 oD
-oU
-oU
+xc
+xc
 On
-oU
-oU
+xc
+xc
 oD
 WK
 lO
@@ -41116,9 +41137,9 @@ ps
 cj
 oD
 oD
-oU
+xc
 aD
-oU
+xc
 oD
 oD
 HU
