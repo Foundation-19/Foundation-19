@@ -82,3 +82,44 @@
 	sprites = list(
 		"Basic" = "isdyrobot"
 	)
+
+/obj/item/robot_module/tall/special/general/lcz
+	name = "LCZ security borg module"
+	display_name = "security"
+	crisis_locked = TRUE
+	sprites = list(
+		"Basic" = "lczrobot"
+	)
+	equipment = list(
+		/obj/item/device/flash,
+		/obj/item/pen/robopen,
+		/obj/item/form_printer,
+		/obj/item/borg/sight/hud/sec,
+		/obj/item/handcuffs/cyborg,
+		/obj/item/melee/baton/robot,
+		/obj/item/gun/energy/gun/secure/mounted,
+		/obj/item/device/megaphone,
+		/obj/item/crowbar,
+		/obj/item/device/hailer,
+		/obj/item/device/holowarrant,
+		/obj/item/taperoll/police,
+		/obj/item/hand_labeler,
+		/obj/item/stamp,
+		/obj/item/stamp/denied,
+	)
+	emag = list(
+		/obj/item/gun/energy/laser/mounted
+	)
+	skills = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+		SKILL_WEAPONS     = SKILL_EXPERIENCED,
+		SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+
+/obj/item/robot_module/tall/special/general/lcz/captain
+	name = "LCZ security captain borg module"
+	display_name = "security"
+	crisis_locked = TRUE
+	sprites = list(
+		"Basic" = "lczcrobot"
+	)

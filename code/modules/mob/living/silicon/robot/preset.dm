@@ -28,6 +28,16 @@
 	module = /obj/item/robot_module/tall/special/general/yawet
 	icon_state = "isdyrobot"
 
+/mob/living/silicon/robot/tall/lcz
+	modtype = "Light Containment Security"
+	module = /obj/item/robot_module/tall/special/general/lcz
+	icon_state = "lczrobot"
+
+/mob/living/silicon/robot/tall/captain
+	modtype = "Light Containment Security Captain"
+	module = /obj/item/robot_module/tall/special/general/lcz/captain
+	icon_state = "lczcrobot"
+
 /mob/living/silicon/robot/combat
 	lawupdate = FALSE
 	scrambledcodes = TRUE
