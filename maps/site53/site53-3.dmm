@@ -208,6 +208,10 @@
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
+/obj/effect/landmark{
+	name = "JoinLateCryo"
+	},
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/surface/cryogenicsprimary)
 "aG" = (
@@ -262,6 +266,10 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
+/obj/effect/landmark{
+	name = "JoinLateCryo"
+	},
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/white/corner{
 	dir = 1
 	},
@@ -4631,11 +4639,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mL" = (
-/obj/effect/landmark{
-	name = "JoinLateCryo"
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
 	},
-/turf/simulated/floor/carpet/green,
-/area/site53/surface/cryogenicsprimary)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "mM" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5641,11 +5649,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "rQ" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 10
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "rR" = (
 /obj/machinery/light/spot{
 	dir = 1
@@ -5901,14 +5913,11 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
 "tb" = (
-/obj/structure/bed/chair/padded/green{
-	dir = 1
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
 	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/upper_surface/entrancehallway)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "td" = (
 /obj/structure/closet/secure_closet/personal/empty{
 	name = "Representative's Locker";
@@ -6545,9 +6554,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
 "xb" = (
-/obj/effect/landmark{
-	name = "JoinLateCryo"
-	},
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
@@ -7158,6 +7164,10 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
+/obj/effect/landmark{
+	name = "JoinLateCryo"
+	},
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
@@ -7710,15 +7720,11 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
 "GH" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
 	},
-/obj/effect/floor_decal/industrial/outline,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "GJ" = (
 /obj/structure/railing/mapped{
 	dir = 10
@@ -7840,11 +7846,14 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
 "HG" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 8
+/obj/structure/bed/chair/padded/green{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/upper_surface/entrancehallway)
 "HH" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -8476,9 +8485,6 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "Nc" = (
-/obj/effect/landmark{
-	name = "JoinLateCryo"
-	},
 /obj/effect/floor_decal/corner/green/border{
 	dir = 1
 	},
@@ -9306,6 +9312,10 @@
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
+/obj/effect/landmark{
+	name = "JoinLateCryo"
+	},
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/white/corner{
 	dir = 8
 	},
@@ -9705,12 +9715,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/medical/mentalhealth/office)
-"XJ" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "XK" = (
 /obj/machinery/vending/coffee{
 	dir = 4
@@ -38874,9 +38878,9 @@ mb
 sk
 oU
 xb
-mL
-mL
-mL
+mb
+mb
+mb
 Nc
 oD
 rM
@@ -39653,7 +39657,7 @@ qW
 gt
 Ci
 gt
-tb
+HG
 ep
 nE
 nE
@@ -40160,7 +40164,7 @@ qf
 vp
 aT
 aT
-GH
+rQ
 aT
 aT
 aT
@@ -41701,9 +41705,9 @@ au
 au
 oD
 xb
-mL
-mL
-mL
+mb
+mb
+mb
 Nc
 oD
 rM
@@ -42186,8 +42190,8 @@ mp
 va
 CI
 lY
-HG
-rQ
+tb
+GH
 lM
 am
 lg
@@ -42444,7 +42448,7 @@ uY
 lZ
 Uc
 Jk
-XJ
+mL
 lM
 am
 lg
