@@ -4,7 +4,7 @@
 	crisis_locked = TRUE
 	sprites = list(
 		"Basic" = "isdrobot"
-    )
+	)
 	channels = list(
 		"Security" = TRUE,
 		"Service" = TRUE,
@@ -89,4 +89,4 @@
 	emag = list(
 		/obj/item/gun/energy/pulse_rifle/destroyer,
 		/obj/item/melee/energy/sword
-    )
+	)
