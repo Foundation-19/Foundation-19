@@ -20,6 +20,15 @@
 	supported_upgrades = list(
 		/obj/item/borg/upgrade/weaponcooler
 	)
+	skills = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+		SKILL_WEAPONS     = SKILL_EXPERIENCED,
+		SKILL_FORENSICS   = SKILL_EXPERIENCED,
+		SKILL_COMPUTER            = SKILL_EXPERIENCED,
+		SKILL_FINANCE             = SKILL_MASTER,
+		SKILL_SCIENCE             = SKILL_EXPERIENCED,
+		SKILL_DEVICES             = SKILL_EXPERIENCED
+	)
 	equipment = list(
 		/obj/item/device/flash,
 		/obj/item/pen/robopen,
@@ -38,15 +47,6 @@
 		/obj/item/reagent_containers/borghypo/crisis,
 	)
 	emag = /obj/item/gun/energy/pulse_rifle/destroyer
-	skills = list(
-		SKILL_COMBAT      = SKILL_EXPERIENCED,
-		SKILL_WEAPONS     = SKILL_EXPERIENCED,
-		SKILL_FORENSICS   = SKILL_EXPERIENCED,
-		SKILL_COMPUTER            = SKILL_EXPERIENCED,
-		SKILL_FINANCE             = SKILL_MASTER,
-		SKILL_SCIENCE             = SKILL_EXPERIENCED,
-		SKILL_DEVICES             = SKILL_EXPERIENCED
-	)
 
 /obj/item/robot_module/tall/isd/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()
