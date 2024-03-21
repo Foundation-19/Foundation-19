@@ -13081,7 +13081,7 @@
 "aMd" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/site53/ulcz/hallways)
+/area/site53/ulcz/office)
 "aMe" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -33479,10 +33479,6 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/entrance_checkpoint)
-"nyh" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/ulcz/hallways)
 "nyL" = (
 /obj/effect/paint_stripe/gray,
 /obj/structure/noticeboard,
@@ -35441,7 +35437,7 @@
 "pkC" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
+/area/site53/ulcz/office)
 "pkF" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/folder/red,
@@ -43590,7 +43586,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/hallways)
+/area/site53/ulcz/office)
 "wVB" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -61271,7 +61267,7 @@ aeS
 aeS
 aeS
 aeS
-aVS
+aeS
 aGM
 qKl
 aGM
@@ -61528,7 +61524,7 @@ tIS
 wTN
 aLd
 aLd
-aVS
+aeS
 qHF
 qKl
 aEt
@@ -61785,7 +61781,7 @@ aLd
 aLd
 aLd
 rZd
-aVS
+aeS
 aGM
 qKl
 aGM
@@ -63070,7 +63066,7 @@ oJR
 aLd
 aLd
 aPI
-aVS
+aeS
 aVS
 tjj
 aVS
@@ -64098,7 +64094,7 @@ bhP
 bhP
 bhP
 bhP
-nyh
+bhP
 nTU
 xpX
 nTU
