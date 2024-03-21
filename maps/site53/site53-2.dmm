@@ -20493,7 +20493,17 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/red/mono,
+/obj/item/paper/dclass_orientation{
+	name = "SCP-914 Testing Regulations";
+	info = "<small>Good afternoon devoted Scientist.<br><br><b>SCP-914 Testing Regulations<b><br><br>Testing is to be kept reasonable, biological testing is restricted to O5 Command permission. Normal testing is limited, any misuse of the equipment retrieved from SCP-914 ranges to self-benefit, and purposefully keeping strong items to yourself. Report any odd, or severely dangerous items to the Security Guards.<br></small>"
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "bWR" = (
 /obj/machinery/power/terminal{
@@ -21392,6 +21402,17 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
+"cSZ" = (
+/obj/structure/sign/electrical{
+	pixel_x = 32;
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES."
+	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "cTj" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -21792,6 +21813,14 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/hallways)
+"dpf" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/scp914)
 "dpg" = (
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
@@ -22048,7 +22077,11 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
 "dCo" = (
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/half,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp914)
 "dCs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -22328,7 +22361,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
 "dQf" = (
-/obj/effect/floor_decal/industrial/warning,
 /obj/structure/table/steel_reinforced,
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -22336,7 +22368,10 @@
 	},
 /obj/structure/cable/green,
 /obj/random/tool,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp914)
 "dQS" = (
 /obj/effect/paint_stripe/gray,
@@ -23147,7 +23182,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "eMM" = (
 /obj/effect/floor_decal/corner/orange/mono,
@@ -23381,6 +23418,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
+"fcq" = (
+/obj/effect/floor_decal/industrial/fire{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "fcU" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/red/mono,
@@ -24295,6 +24338,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/janitorial)
+"fVr" = (
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "fVH" = (
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/monotile,
@@ -24313,6 +24362,7 @@
 /obj/structure/sign/scp/safe_scp{
 	pixel_x = 32
 	},
+/obj/effect/floor_decal/industrial/fire/corner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "fXE" = (
@@ -26095,6 +26145,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
+"hLR" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "hLU" = (
 /obj/machinery/botany/extractor,
 /obj/machinery/light{
@@ -26840,6 +26901,18 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"iqh" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/half,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/ulcz/scp914)
 "iqN" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -26948,6 +27021,20 @@
 "iyl" = (
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
+"iym" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "iyT" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -27918,10 +28005,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
 "jyY" = (
+/obj/effect/floor_decal/corner/red/mono,
 /obj/effect/floor_decal/industrial/loading{
 	name = "Exit Line"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "jzT" = (
 /obj/effect/paint_stripe/red,
@@ -29134,11 +29222,12 @@
 /turf/simulated/floor,
 /area/site53/llcz/scp012)
 "kHx" = (
+/obj/effect/floor_decal/corner/red/mono,
 /obj/effect/floor_decal/industrial/loading{
 	dir = 1;
 	name = "Entry Line"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "kHM" = (
 /obj/effect/paint_stripe/red,
@@ -29192,10 +29281,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "kKj" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp914)
 "kKu" = (
 /obj/effect/paint_stripe/yellow,
@@ -29410,10 +29497,23 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "kZC" = (
-/obj/effect/floor_decal/industrial/warning{
+/obj/effect/floor_decal/corner/red/half{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/industrial/fire/corner{
 	dir = 8
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/scp914)
 "laQ" = (
 /obj/structure/cable{
@@ -30697,15 +30797,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "mlk" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 10
-	},
 /obj/structure/table/steel_reinforced,
 /obj/item/stock_parts/capacitor{
 	pixel_x = 10
 	},
 /obj/item/stock_parts/keyboard,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner,
 /area/site53/ulcz/scp914)
 "mlt" = (
 /obj/machinery/r_n_d/server,
@@ -30985,8 +31085,12 @@
 "mxl" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor,
-/area/site53/ulcz/hallways)
+/area/site53/ulcz/scp914)
 "mxN" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -31121,11 +31225,18 @@
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "mDt" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
+/obj/effect/floor_decal/corner/red/half{
+	dir = 8
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/scp914)
 "mDz" = (
 /obj/machinery/door/airlock/science{
@@ -31632,16 +31743,26 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
 "ncp" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/industrial/fire/corner,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/scp914)
 "ndr" = (
 /obj/structure/filingcabinet,
@@ -32128,11 +32249,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/engineering/bathrooms)
 "nBE" = (
-/obj/effect/floor_decal/industrial/warning,
 /obj/structure/table/steel_reinforced,
 /obj/machinery/light,
 /obj/random/toy,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp914)
 "nBV" = (
 /obj/machinery/light{
@@ -32405,6 +32528,9 @@
 	},
 /obj/structure/sign/scp/safe_scp{
 	pixel_x = 32
+	},
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -32744,12 +32870,12 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/escape)
 "ofA" = (
+/obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/ulcz/hallways)
+/area/site53/ulcz/scp914)
 "ofR" = (
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/turf/simulated/floor/reinforced,
-/area/site53/ulcz/hallways)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp914)
 "ogF" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp1507containment)
@@ -32902,13 +33028,16 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
 "ont" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 10
-	},
 /obj/structure/table/steel_reinforced,
 /obj/item/paper/dclass_orientation,
 /obj/item/paper/dclass_orientation,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner,
 /area/site53/ulcz/scp914)
 "onR" = (
 /obj/machinery/door/airlock/chaplain{
@@ -32953,6 +33082,20 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"ooQ" = (
+/obj/effect/floor_decal/corner/red/half{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/ulcz/scp914)
 "opm" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -33053,14 +33196,13 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2");
 	secured_wires = 1
 	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
-/area/site53/ulcz/hallways)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp914)
 "ote" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/orange/border{
@@ -33307,7 +33449,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "oFR" = (
 /obj/machinery/washing_machine,
@@ -33495,11 +33638,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "oPR" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 9
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/ulcz/scp914)
+/obj/effect/floor_decal/industrial/fire/corner,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "oQu" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -33638,6 +33779,9 @@
 /obj/machinery/light,
 /obj/structure/sign/scp/safe_scp{
 	pixel_x = -32
+	},
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -34024,14 +34168,21 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
 "pxY" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/scp914)
 "pyn" = (
 /obj/structure/table/standard,
@@ -34460,6 +34611,15 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/generalpurpose3)
+"pQx" = (
+/obj/effect/paint_stripe/gray,
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/scp914)
 "pQN" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -34704,10 +34864,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "qiE" = (
-/obj/effect/floor_decal/industrial/warning/corner,
 /obj/structure/table/steel_reinforced,
 /obj/item/spacecash/bundle/c10,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/three_quarters{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/ulcz/scp914)
 "qje" = (
 /obj/structure/bed/chair{
@@ -34770,6 +34932,11 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"qlB" = (
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/scp914)
 "qlY" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35242,6 +35409,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"qOZ" = (
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/scp914)
 "qPI" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -35705,6 +35876,15 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"riZ" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/ulcz/scp914)
 "rjr" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -35917,11 +36097,9 @@
 /turf/simulated/floor,
 /area/site53/surface/explorers/surrounding)
 "rsF" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
 /obj/structure/scp_914,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp914)
 "rsO" = (
 /obj/machinery/atmospherics/pipe/cap/hidden{
@@ -36367,9 +36545,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2");
 	secured_wires = 1
 	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/turf/simulated/floor/reinforced,
-/area/site53/ulcz/hallways)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp914)
 "rQA" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -36492,12 +36669,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
 "rZA" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
-	},
 /obj/structure/table/steel_reinforced,
 /obj/random/soap,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
 /area/site53/ulcz/scp914)
 "rZL" = (
 /obj/structure/hygiene/toilet{
@@ -36741,6 +36920,20 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
+"sjm" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/structure/sign/electrical{
+	pixel_x = -32;
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES."
+	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "sjI" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -36809,6 +37002,12 @@
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/prepainted,
 /area/site53/reswing/xenobiology)
+"snh" = (
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "snm" = (
 /obj/machinery/door/airlock/security{
 	name = "UHCZ Checkpoint";
@@ -36959,6 +37158,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"svg" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/scp914)
 "svB" = (
 /obj/effect/wallframe_spawn/reinforced_phoron,
 /turf/simulated/floor/greengrid,
@@ -37296,17 +37503,22 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/controlroom)
 "sTx" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	pixel_y = -6
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/scp914)
 "sTF" = (
 /obj/structure/sign/directions/ez{
@@ -38105,6 +38317,14 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp216)
+"tIB" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/scp914)
 "tII" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Booth";
@@ -38329,12 +38549,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "tXp" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 8
-	},
 /obj/structure/table/steel_reinforced,
 /obj/random/tool,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/ulcz/scp914)
 "tXq" = (
 /obj/structure/table/reinforced,
@@ -38756,10 +38976,13 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp247containment)
 "uvg" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 5
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "uvn" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -39229,7 +39452,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
 "vbw" = (
-/obj/effect/floor_decal/industrial/warning,
 /obj/structure/table/steel_reinforced,
 /obj/machinery/light,
 /obj/item/stock_parts/micro_laser{
@@ -39239,7 +39461,10 @@
 /obj/item/stock_parts/matter_bin{
 	pixel_x = 4
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp914)
 "vbS" = (
 /turf/simulated/mineral{
@@ -39602,8 +39827,7 @@
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
 "vuC" = (
-/obj/structure/table/steel_reinforced,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "vuH" = (
 /obj/structure/table/standard,
@@ -39837,12 +40061,20 @@
 /area/site53/llcz/scp263research)
 "vJw" = (
 /obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/floor_decal/industrial/fire{
 	dir = 8
 	},
-/obj/machinery/light{
+/turf/simulated/floor/tiled/white/corner{
 	dir = 8
 	},
-/turf/simulated/floor/reinforced,
 /area/site53/ulcz/scp914)
 "vJF" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -39949,10 +40181,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp1507containment)
 "vMt" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -39960,7 +40188,23 @@
 	dir = 8;
 	pixel_y = 6
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
 /area/site53/ulcz/scp914)
 "vNb" = (
 /obj/effect/floor_decal/corner/yellow{
@@ -40139,6 +40383,11 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"vWw" = (
+/obj/effect/floor_decal/corner/red/mono,
+/obj/effect/floor_decal/industrial/fire/corner,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/scp914)
 "vWZ" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -40237,12 +40486,17 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "vZj" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
-	},
 /obj/structure/table/steel_reinforced,
 /obj/item/stock_parts/circuitboard/arcade/orion_trail,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
 /area/site53/ulcz/scp914)
 "vZp" = (
 /obj/machinery/light{
@@ -40943,10 +41197,12 @@
 	requires_power = 0
 	})
 "wJP" = (
-/obj/effect/floor_decal/industrial/warning,
 /obj/structure/table/steel_reinforced,
 /obj/random/snack,
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp914)
 "wJT" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -41242,7 +41498,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp914)
 "wVD" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -42036,6 +42297,13 @@
 /obj/machinery/vending/weaponry/lcz/energy,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
+"xOj" = (
+/obj/effect/floor_decal/corner/red/mono,
+/obj/effect/floor_decal/industrial/fire/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/scp914)
 "xOp" = (
 /obj/item/flame/lighter/zippo,
 /turf/simulated/floor,
@@ -42100,6 +42368,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"xRo" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "xRv" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
@@ -48520,10 +48797,10 @@ afS
 agL
 aVS
 fXD
-aGM
-aGM
-aGM
-aTo
+cSZ
+fVr
+oPR
+xRo
 nNp
 pSE
 aGM
@@ -48774,15 +49051,15 @@ aff
 aff
 glY
 aff
-aVS
-aVS
-aVS
+ofA
+ofA
+ofA
 mxl
 ofR
 rQx
 mxl
-aVS
-aVS
+ofA
+ofA
 aGM
 aGM
 aLv
@@ -49031,16 +49308,16 @@ aVS
 sYT
 exB
 aVS
-aVS
-oPR
-kZC
+ofA
+kKj
+xOj
 vJw
-kZC
+ooQ
 kZC
 sTx
 ont
-aVS
-aVS
+ofA
+ofA
 aVS
 aMW
 aVS
@@ -49287,17 +49564,17 @@ aVS
 aVS
 aIQ
 aUA
-aXf
+hLR
 ofA
 kKj
 kHx
 dCo
-dCo
-dCo
-dCo
+vuC
+svg
+vuC
 tXp
 mlk
-aVS
+ofA
 aIQ
 aLv
 aXf
@@ -49545,16 +49822,16 @@ aVS
 aJE
 aUh
 aGM
-aMd
-kKj
-dCo
-dCo
-dCo
-dCo
-dCo
-dCo
+dpf
+riZ
+uvg
+iqh
+tIB
+wVB
+vuC
+vuC
 vbw
-aVS
+ofA
 aJE
 aNd
 aGM
@@ -49804,14 +50081,14 @@ aUA
 aGM
 ofA
 rsF
-dCo
+qOZ
 dCo
 vuC
 bWN
 eLl
-eLl
+tIB
 dQf
-aVS
+ofA
 aGM
 aLv
 aGM
@@ -50061,14 +50338,14 @@ aKg
 aGM
 ofA
 kKj
-dCo
+qOZ
 dCo
 vuC
 oEk
-dCo
-dCo
+qlB
+vuC
 wJP
-aVS
+ofA
 aLu
 aNp
 aGM
@@ -50316,16 +50593,16 @@ aVS
 aHJ
 qCZ
 aHq
-aMd
-kKj
-dCo
-dCo
-dCo
+dpf
+riZ
+uvg
+iqh
+tIB
 wVB
-dCo
-dCo
+vuC
+vuC
 nBE
-aVS
+ofA
 aHJ
 aNv
 aHq
@@ -50572,17 +50849,17 @@ aiD
 aVS
 pSE
 fRx
-aMw
+iym
 ofA
 kKj
 jyY
 dCo
-dCo
-wVB
-dCo
+vuC
+svg
+vuC
 qiE
 rZA
-aVS
+ofA
 pSE
 aLv
 aMw
@@ -50830,16 +51107,16 @@ aVS
 aVS
 aKh
 aVS
-aVS
-uvg
-mDt
+ofA
+kKj
+vWw
 vMt
 mDt
 ncp
 pxY
 vZj
-aVS
-aVS
+ofA
+ofA
 aVS
 aMW
 aVS
@@ -51087,15 +51364,15 @@ aWt
 aXf
 aKW
 aXf
-aVS
-aVS
-aVS
-mxl
+ofA
+ofA
+ofA
+pQx
 ofR
 otd
-mxl
-aVS
-aVS
+pQx
+ofA
+ofA
 aGM
 aGM
 aLv
@@ -51347,10 +51624,10 @@ afQ
 aGM
 aVS
 bHh
-aLl
-aGM
+sjm
+snh
 aWJ
-aGM
+fcq
 oWV
 aVS
 aWt
