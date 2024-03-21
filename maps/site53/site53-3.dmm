@@ -87,6 +87,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "as" = (
@@ -103,6 +106,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
@@ -138,6 +144,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "ax" = (
@@ -145,6 +154,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
@@ -342,6 +354,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -1052,14 +1067,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "cv" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/corner/beige/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "cx" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "surgeon's locker";
@@ -1656,16 +1666,28 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
+"eb" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "ec" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
 /area/site53/uez/janitor)
 "ed" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
+/obj/effect/floor_decal/corner/beige/bordercorner,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "ee" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -2204,6 +2226,17 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
+"fA" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "fB" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
@@ -2460,6 +2493,9 @@
 /turf/simulated/floor/plating,
 /area/site53/surface/surface)
 "gt" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
 "gu" = (
@@ -2733,6 +2769,7 @@
 	pixel_x = 32;
 	pixel_y = -20
 	},
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "hi" = (
@@ -4461,6 +4498,19 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
+"lT" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/sign/directions/evac{
+	pixel_x = -32;
+	pixel_y = -20
+	},
+/obj/effect/floor_decal/corner/beige/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4513,8 +4563,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/industrial/outline,
 /obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/cryogenicsprimary)
 "mi" = (
@@ -4930,6 +4983,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
+"ox" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "oy" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -5282,6 +5346,9 @@
 	pixel_x = -32;
 	pixel_y = -20
 	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "qh" = (
@@ -5447,6 +5514,9 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/bridge)
 "qW" = (
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/cryogenicsprimary)
 "qZ" = (
@@ -5949,6 +6019,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "tD" = (
@@ -6168,6 +6241,9 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "uW" = (
@@ -6381,6 +6457,12 @@
 "vH" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
+"vL" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "vO" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6543,6 +6625,9 @@
 /obj/item/pen{
 	pixel_y = 2;
 	pixel_x = 2
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
@@ -7048,6 +7133,12 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
+"Bb" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "Bi" = (
 /obj/machinery/vending/soda{
 	dir = 8
@@ -7126,6 +7217,12 @@
 	dir = 10
 	},
 /turf/simulated/floor/wood/walnut,
+/area/site53/surface/cryogenicsprimary)
+"BN" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/cryogenicsprimary)
 "BO" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -7213,6 +7310,9 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green{
 	pixel_y = 9
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
@@ -7549,10 +7649,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
-"Fc" = (
-/obj/effect/floor_decal/corner/beige/bordercorner,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "Fe" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -7840,6 +7936,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
+"HD" = (
+/obj/machinery/camera/autoname{
+	c_tag = "Cryo";
+	dir = 8;
+	network = list("Entrance Zone Network 1")
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "HG" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
@@ -7866,6 +7973,17 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"HP" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -7971,6 +8089,9 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "Iy" = (
@@ -8049,6 +8170,12 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/site53/surface/cryogenicsprimary)
+"Jj" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "Jk" = (
 /obj/machinery/light{
 	dir = 4;
@@ -8301,16 +8428,18 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "Ln" = (
-/obj/machinery/camera/autoname{
-	c_tag = "Cryo";
-	dir = 8;
-	network = list("Entrance Zone Network 1")
-	},
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "Lp" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
+"Lq" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "Lu" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
@@ -8344,6 +8473,16 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"LB" = (
+/obj/structure/sign/directions/evac{
+	pixel_x = 32;
+	pixel_y = -20
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "LC" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /turf/simulated/floor/tiled/white,
@@ -8351,6 +8490,15 @@
 "LG" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/infirmary)
+"LJ" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "LL" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -8360,6 +8508,12 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"LN" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "LW" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/table/standard,
@@ -8939,17 +9093,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"RI" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "RJ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/mapped{
@@ -9045,6 +9188,17 @@
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/bridge)
+"Sp" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "Sq" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/grass,
@@ -9079,6 +9233,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
+"SF" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "SG" = (
 /obj/machinery/camera/network/entrance{
 	name = "Surface Bar"
@@ -9410,6 +9570,10 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Vj" = (
+/obj/effect/floor_decal/corner/beige/bordercorner,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Vm" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -9620,6 +9784,12 @@
 /obj/structure/bed/chair/wood/ebony,
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface)
+"WZ" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Xb" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9641,6 +9811,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
+"Xm" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "Xp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9655,6 +9836,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Xv" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "Xy" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -9828,6 +10015,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
+"YW" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "Za" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/wood/maple,
@@ -39631,8 +39829,8 @@ lO
 lO
 lO
 qT
-qW
-gt
+LN
+Jj
 Ci
 gt
 ml
@@ -39875,7 +40073,7 @@ qL
 fa
 tO
 uV
-ai
+Ln
 au
 to
 aj
@@ -39888,10 +40086,10 @@ Lu
 Lu
 Lu
 Vn
-qW
+Lq
 mj
 JE
-gt
+cv
 mm
 ep
 nE
@@ -40116,7 +40314,7 @@ ur
 ur
 ur
 dq
-ed
+WZ
 pY
 dD
 dD
@@ -40132,23 +40330,23 @@ fa
 ai
 ai
 ar
-qf
+lT
 fq
-aw
+HP
 aw
 aw
 aw
 qf
 vp
-aT
+fA
 aT
 mg
 aT
 aT
-aT
+Sp
 JU
 aR
-at
+Xm
 at
 pq
 jR
@@ -40373,7 +40571,7 @@ rS
 We
 ur
 dr
-Fc
+Vj
 RR
 dD
 dD
@@ -40391,22 +40589,22 @@ ai
 ax
 hh
 Ff
-ai
-ai
-ai
-ai
-hh
+SF
+vL
+vL
+vL
+LB
 vx
-qW
-qW
-qW
-qW
-qW
+BN
+Bb
+Bb
+Bb
+Bb
 qW
 Qg
 bN
-gt
-gt
+ed
+Xv
 ma
 qZ
 qZ
@@ -40646,7 +40844,7 @@ qL
 fa
 tO
 uV
-ai
+Ln
 au
 JZ
 lL
@@ -40659,10 +40857,10 @@ kC
 kC
 kC
 Bv
-qW
+Lq
 Lf
 JE
-gt
+cv
 ro
 ep
 nE
@@ -40862,7 +41060,7 @@ hs
 hs
 hs
 Ie
-RI
+ox
 um
 cd
 cB
@@ -40902,8 +41100,8 @@ gs
 qL
 aI
 tO
-uV
-Ln
+eb
+HD
 au
 ay
 ay
@@ -40916,10 +41114,10 @@ lO
 lO
 lO
 qT
-qW
-Qg
+BN
+YW
 xa
-gt
+Xv
 ml
 sx
 nE
@@ -41120,7 +41318,7 @@ aP
 Vu
 lu
 Tq
-cv
+LJ
 ce
 hZ
 vE
