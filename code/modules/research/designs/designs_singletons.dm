@@ -57,6 +57,26 @@
 	build_path = /obj/item/borg/upgrade/uncertified/party
 	category = "Cyborg Upgrade Modules"
 
+/datum/design/item/lcz
+	name = "Security module: LCZ"
+	desc = "Schematics for a robotic module, a highly classified model, not commonly given to robots."
+	id = "borg_lcz_module"
+	req_tech = list(TECH_COMBAT = 3)
+	build_type = MECHFAB
+	materials = list(MATERIAL_STEEL = 7500, MATERIAL_ALUMINIUM = 5000, MATERIAL_DIAMOND = 2000)
+	build_path = /obj/item/borg/upgrade/uncertified/lcz
+	category = "Cyborg Upgrade Modules"
+
+/datum/design/item/hcz
+	name = "Security module: HCZ"
+	desc = "Schematics for a robotic module, a highly classified model, not commonly given to robots."
+	id = "borg_hcz_module"
+	req_tech = list(TECH_COMBAT = 8)
+	build_type = MECHFAB
+	materials = list(MATERIAL_STEEL = 12500, MATERIAL_ALUMINIUM = 10000, MATERIAL_DIAMOND = 6000)
+	build_path = /obj/item/borg/upgrade/uncertified/hcz
+	category = "Cyborg Upgrade Modules"
+
 /datum/design/item/plant_scanner
 	name = "Plant Analyzer"
 	desc = "A hand-held botanical scanner used to analyze plants."
