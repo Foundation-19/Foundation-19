@@ -28955,6 +28955,9 @@
 /area/site53/engineering/primaryhallway)
 "kAB" = (
 /obj/machinery/computer/arcade/battle,
+/obj/structure/sign/scp/euclid_scp{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/humanoidcontainment)
 "kAL" = (
@@ -29639,6 +29642,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"lkO" = (
+/obj/effect/landmark{
+	name = "scp347"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/ulcz/humanoidcontainment)
 "lmp" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/dartgun,
@@ -33189,6 +33198,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
+"oBd" = (
+/obj/structure/closet/cabinet,
+/obj/item/storage/mre/random,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/shoes/orange,
+/obj/item/clothing/mask/gas/mime,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/ulcz/humanoidcontainment)
 "oBp" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 9
@@ -34923,6 +34942,10 @@
 	name = "Humanoid Western Observation Window";
 	pixel_y = 9;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health{
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
@@ -42365,6 +42388,12 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"ylO" = (
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Humanoid Containment Cell"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/ulcz/humanoidcontainment)
 
 (1,1,1) = {"
 azA
@@ -88185,7 +88214,7 @@ azA
 azA
 urC
 cBj
-hyr
+lkO
 urC
 hoI
 oFR
@@ -88441,14 +88470,14 @@ azA
 azA
 azA
 urC
-pOU
+oBd
 hyr
 ikk
 hUN
 hyr
 hyr
 hUN
-xPT
+ylO
 hUN
 sZn
 hMF
