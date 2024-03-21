@@ -2009,6 +2009,19 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"hv" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 5;
+	color = "#272B5B"
+	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_x = 32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "hw" = (
 /obj/structure/closet,
 /obj/random/medical,
@@ -8028,7 +8041,11 @@
 	dir = 4
 	},
 /obj/machinery/turretid/lethal{
-	pixel_x = 32
+	pixel_x = 32;
+	req_access = list("ACCESS_MTF")
+	},
+/obj/effect/floor_decal/spline/plain/red{
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -9139,6 +9156,23 @@
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
+"AB" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8;
+	color = "#272B5B"
+	},
+/obj/machinery/turretid/lethal{
+	pixel_x = -32;
+	req_access = list("ACCESS_MTF")
+	},
+/obj/effect/floor_decal/spline/plain/red{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "AD" = (
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta,
 /obj/item/clothing/head/helmet/scp/eta,
@@ -11774,6 +11808,9 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_x = 32
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -13944,6 +13981,19 @@
 "Qi" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
+"Qk" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 9;
+	color = "#272B5B"
+	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_x = -32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "Ql" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1;
@@ -26439,8 +26489,8 @@ gp
 gp
 vX
 wF
-xo
-yH
+Qk
+AB
 yH
 yH
 yH
@@ -26843,7 +26893,7 @@ gp
 gp
 vX
 aN
-dG
+hv
 qP
 eB
 qP
