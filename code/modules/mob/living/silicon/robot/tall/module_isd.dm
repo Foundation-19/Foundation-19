@@ -46,7 +46,7 @@
 		/obj/item/weldingtool/electric,
 		/obj/item/reagent_containers/borghypo/crisis,
 	)
-	emag = /obj/item/gun/energy/pulse_rifle/destroyer
+	emag = /obj/item/melee/energy/sword
 
 /obj/item/robot_module/tall/isd/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()
@@ -86,7 +86,4 @@
 		/obj/item/reagent_containers/borghypo/crisis,
 		/obj/item/material/sword/sabre
 	)
-	emag = list(
-		/obj/item/gun/energy/pulse_rifle/destroyer,
-		/obj/item/melee/energy/sword
-	)
+	emag = /obj/item/gun/energy/pulse_rifle/destroyer

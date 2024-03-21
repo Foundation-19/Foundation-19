@@ -127,7 +127,9 @@
 	id_tag = "ECZ Security Lockdown";
 	name = "ECZ Security Lockdown"
 	},
-/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#ceb689"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception/waiting)
 "aw" = (
@@ -176,7 +178,9 @@
 	id_tag = "ECZ Security Lockdown";
 	name = "ECZ Security Lockdown"
 	},
-/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#ceb689"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception/waiting)
 "aD" = (
@@ -430,8 +434,8 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 9
+/obj/effect/floor_decal/corner/beige/bordercee{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -441,8 +445,8 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 5
+/obj/effect/floor_decal/corner/beige/bordercee{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -471,7 +475,9 @@
 	id_tag = "EZ Checkpoint East";
 	name = "EZ Checkpoint East"
 	},
-/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#ceb689"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "bi" = (
@@ -502,7 +508,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/beige/border{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -691,7 +697,9 @@
 	id_tag = "EZ Checkpoint East";
 	name = "EZ Checkpoint East"
 	},
-/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#ceb689"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "bF" = (
@@ -727,7 +735,9 @@
 	id_tag = "EZ Checkpoint Staircase";
 	name = "EZ Checkpoint Staircase"
 	},
-/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#ceb689"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "bI" = (
@@ -1042,9 +1052,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "cv" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/janitor)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "cx" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "surgeon's locker";
@@ -1646,9 +1661,11 @@
 /turf/simulated/wall/titanium,
 /area/site53/uez/janitor)
 "ed" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/maintenance/surfaceeast)
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "ee" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -3248,7 +3265,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/beige/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4257,7 +4274,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/beige/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4283,7 +4300,7 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "ln" = (
@@ -4297,7 +4314,7 @@
 	d2 = 5;
 	icon_state = "2-5"
 	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/beige/border{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -5044,7 +5061,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/beige/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -5152,7 +5169,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
 /area/site53/maintenance/surfaceeast)
 "pA" = (
@@ -5996,7 +6013,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/beige/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -7532,6 +7549,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
+"Fc" = (
+/obj/effect/floor_decal/corner/beige/bordercorner,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Fe" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -8918,6 +8939,17 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"RI" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "RJ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/mapped{
@@ -9136,9 +9168,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "Tq" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 1
-	},
 /obj/structure/sign/directions/science{
 	dir = 4;
 	pixel_y = 32;
@@ -9148,6 +9177,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -39547,7 +39579,7 @@ hz
 YL
 pz
 bD
-cv
+ec
 kM
 eT
 gM
@@ -39804,11 +39836,11 @@ jN
 YL
 bj
 ll
-cv
+ec
 kN
-cv
-cv
-cv
+ec
+ec
+ec
 bW
 cI
 MX
@@ -40065,7 +40097,7 @@ bH
 bc
 gh
 cR
-ed
+MX
 cp
 ES
 MX
@@ -40084,8 +40116,8 @@ ur
 ur
 ur
 dq
+ed
 pY
-dD
 dD
 dD
 hp
@@ -40322,7 +40354,7 @@ bH
 bd
 gh
 cR
-ed
+MX
 MX
 MX
 mk
@@ -40341,8 +40373,8 @@ rS
 We
 ur
 dr
-lg
-dD
+Fc
+RR
 dD
 dD
 hp
@@ -40614,7 +40646,7 @@ qL
 fa
 tO
 uV
-Ln
+ai
 au
 JZ
 lL
@@ -40830,7 +40862,7 @@ hs
 hs
 hs
 Ie
-gN
+RI
 um
 cd
 cB
@@ -40871,7 +40903,7 @@ qL
 aI
 tO
 uV
-ai
+Ln
 au
 ay
 ay
@@ -41088,7 +41120,7 @@ aP
 Vu
 lu
 Tq
-tD
+cv
 ce
 hZ
 vE

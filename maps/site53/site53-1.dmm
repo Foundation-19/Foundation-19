@@ -11615,11 +11615,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
-"lTa" = (
-/obj/structure/ladder/up,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/llczmaint)
 "lTl" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -17391,13 +17386,13 @@
 	},
 /area/site53/uhcz/scp106parts)
 "rOF" = (
-/obj/structure/ladder/up,
-/obj/effect/floor_decal/industrial/warning/full,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/ladder/up,
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
 "rOM" = (
@@ -22422,6 +22417,7 @@
 	},
 /obj/structure/cable,
 /obj/effect/catwalk_plated/dark,
+/obj/structure/ladder/up,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/llczmaint)
 "xrA" = (
@@ -31608,8 +31604,8 @@ hIH
 hIH
 hIH
 pso
-pPd
 rOF
+pPd
 rNL
 pso
 xlb
@@ -49333,7 +49329,7 @@ wll
 wll
 wll
 wll
-wll
+tMO
 xRT
 xRT
 xRT
@@ -49589,8 +49585,8 @@ uNm
 sJC
 sJC
 xqH
-lTa
 wll
+tMO
 xRT
 xRT
 xRT
@@ -49847,7 +49843,7 @@ wll
 wll
 wll
 wll
-wll
+tMO
 xRT
 xRT
 emk

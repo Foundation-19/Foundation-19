@@ -32,8 +32,7 @@
 		/obj/item/borg/sight/hud/sec,
 		/obj/item/handcuffs/cyborg,
 		/obj/item/melee/baton/robot,
-		/obj/item/gun/energy/gun/mounted/mk9/mounted/rubber,
-		/obj/item/gun/energy/taser/mounted,
+		/obj/item/gun/energy/taser/mounted/cyborg,
 		/obj/item/device/megaphone,
 		/obj/item/crowbar,
 		/obj/item/device/hailer,
@@ -43,7 +42,7 @@
 		/obj/item/stamp,
 		/obj/item/stamp/denied,
 	)
-	emag = /obj/item/gun/energy/gun/mounted/p90/mounted
+	emag = /obj/item/gun/energy/gun/mounted/mk9/mounted
 
 /obj/item/robot_module/tall/lcz/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()
@@ -72,7 +71,7 @@
 		/obj/item/handcuffs/cyborg,
 		/obj/item/melee/baton/robot,
 		/obj/item/gun/energy/gun/mounted/mk9/mounted,
-		/obj/item/gun/energy/taser/carbine/mounted,
+		/obj/item/gun/energy/taser/carbine,
 		/obj/item/device/megaphone,
 		/obj/item/crowbar,
 		/obj/item/device/hailer,
