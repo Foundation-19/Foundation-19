@@ -4866,6 +4866,9 @@
 "nz" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/surgery/hall)
+"nA" = (
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/entrancezone/hallway)
 "nE" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -6859,7 +6862,7 @@
 /obj/effect/floor_decal/corner/purple/bordercee{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/hallway)
 "yo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -9011,7 +9014,7 @@
 /obj/effect/floor_decal/corner/purple/bordercee{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/hallway)
 "Oq" = (
 /obj/effect/floor_decal/corner/paleblue/half,
@@ -43425,8 +43428,8 @@ hS
 tD
 cl
 Op
-gh
-gh
+nA
+nA
 cD
 lo
 mB
@@ -43682,8 +43685,8 @@ mN
 mO
 aJ
 yg
-gh
-gh
+nA
+nA
 cD
 lo
 mB
