@@ -22242,7 +22242,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /turf/simulated/floor,
 /area/site53/ulcz/scp914)
 "dpg" = (
@@ -22962,15 +22962,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp113)
 "ebm" = (
-/obj/machinery/door/airlock/vault{
-	name = "SCP-914 Security Station";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/structure/cable/green,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/security{
+	name = "SCP-914 Security Station";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
@@ -32038,7 +32038,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
 "mpB" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -32048,6 +32047,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "mpH" = (
@@ -32282,7 +32282,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /turf/simulated/floor,
 /area/site53/ulcz/scp914)
 "mxN" = (
@@ -35643,11 +35643,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp216)
 "puS" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "pvh" = (
@@ -36119,7 +36119,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /turf/simulated/floor,
 /area/site53/ulcz/scp914)
 "pQD" = (
@@ -36624,8 +36624,8 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "qpO" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/structure/cable/green,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "qpQ" = (
@@ -43043,7 +43043,6 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
 "wBH" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -43058,6 +43057,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "wCB" = (
