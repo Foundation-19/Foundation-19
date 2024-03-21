@@ -9473,7 +9473,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/entrance{
-	c_tag = "West Cryogenics";
+	c_tag = "East Cryogenics";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/corner{
