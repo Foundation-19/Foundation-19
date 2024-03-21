@@ -1,13 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
 	},
-/obj/effect/floor_decal/corner/beige/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "ac" = (
 /obj/machinery/light{
 	dir = 1
@@ -112,8 +109,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 10
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
@@ -278,19 +275,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
 "aI" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/infirmreception/waiting)
+/area/site53/uez/mcrsubstation)
 "aJ" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -298,7 +286,7 @@
 	name = "Entrance Zone Lockdown Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch{
-	color = "#a2819e"
+	color = "#6a97b0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -834,19 +822,6 @@
 	},
 /turf/simulated/open,
 /area/site53/surface/surface)
-"bR" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/sign/directions/evac{
-	pixel_x = -32;
-	pixel_y = -20
-	},
-/obj/effect/floor_decal/corner/beige/border,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "bS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/snow,
@@ -1120,10 +1095,33 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"ct" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 1
+	},
+/obj/machinery/button/blast_door{
+	name = "Emergency Cryo Lockdown Control";
+	id_tag = "ecryogen";
+	pixel_y = -25;
+	dir = 1;
+	req_access = list("ACCESS_ADMIN_LEVEL2")
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/surface/cryogenicsprimary)
 "cv" = (
-/obj/effect/paint_stripe/paleblue,
-/turf/simulated/wall/titanium,
-/area/site53/medical/isolation)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "cx" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "surgeon's locker";
@@ -1424,10 +1422,9 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/surgery/hall)
 "dm" = (
-/obj/effect/paint_stripe/green,
-/obj/machinery/status_display,
+/obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
-/area/site53/surface/cryogenicsprimary)
+/area/site53/medical/mentalhealth/isolation)
 "dn" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/door/airlock/multi_tile/glass/medical{
@@ -1518,10 +1515,6 @@
 /obj/item/reagent_containers/dropper,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
-"dy" = (
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
 "dz" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -1728,9 +1721,16 @@
 /turf/simulated/wall/titanium,
 /area/site53/uez/janitor)
 "ed" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 4
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
+/obj/structure/sign/directions/evac{
+	pixel_x = -32;
+	pixel_y = -20
+	},
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "ee" = (
@@ -1940,9 +1940,9 @@
 /turf/simulated/open,
 /area/site53/uez/bridge)
 "eG" = (
-/obj/effect/paint_stripe/paleblue,
-/turf/simulated/wall/prepainted,
-/area/site53/medical/mentalhealth/isolation)
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/titanium,
+/area/site53/entrancezone/hallway)
 "eH" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -2026,10 +2026,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/isolation)
 "eS" = (
-/obj/effect/paint_stripe/yellow,
-/obj/machinery/status_display,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/bridge)
+/obj/structure/bed/chair/armchair/brown{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/orange,
+/area/site53/logistics/logisticsbreak)
 "eT" = (
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
@@ -2290,11 +2291,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
 "fD" = (
-/obj/machinery/light{
-	dir = 1
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
 	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "fE" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor/plating,
@@ -2529,9 +2530,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "gt" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 10
-	},
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
 "gu" = (
@@ -2573,11 +2572,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
-"gz" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp,
-/turf/simulated/floor/carpet/orange,
-/area/site53/logistics/logisticsbreak)
 "gB" = (
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled/techfloor,
@@ -2812,9 +2806,7 @@
 	pixel_x = 32;
 	pixel_y = -20
 	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 6
-	},
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "hi" = (
@@ -3186,11 +3178,16 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "in" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "io" = (
 /obj/item/device/flashlight/pen,
 /obj/item/clothing/accessory/stethoscope,
@@ -3760,8 +3757,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
 "jH" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 8
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
@@ -4464,9 +4461,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "lu" = (
-/obj/effect/paint_stripe/blue,
+/obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/titanium,
-/area/site53/entrancezone/hallway)
+/area/site53/medical/isolation)
 "lv" = (
 /obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
@@ -4500,9 +4497,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
 "lD" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/uez/mcrsubstation)
+/turf/unsimulated/mask,
+/area/site53/logistics/logisticsbreak)
 "lE" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -4516,6 +4512,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"lI" = (
+/obj/effect/floor_decal/corner/brown/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "lJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -4694,12 +4694,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/entrancehallway)
-"mt" = (
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logisticsbreak)
 "mx" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -4815,6 +4809,15 @@
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"ne" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "nl" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4828,6 +4831,12 @@
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
+"np" = (
+/obj/machinery/camera/network/entrance{
+	c_tag = "Logistics Hangar Hallway"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "nq" = (
 /obj/machinery/light{
 	dir = 1
@@ -4849,11 +4858,6 @@
 "nz" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/surgery/hall)
-"nD" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/uez/mcrsubstation)
 "nE" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -4903,6 +4907,12 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"od" = (
+/obj/machinery/vending/fitness{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/logistics/logisticsbreak)
 "oe" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -4956,12 +4966,6 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
-"oj" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "ok" = (
 /obj/structure/bed/chair/comfy/red,
 /turf/simulated/floor/carpet/green,
@@ -5155,11 +5159,16 @@
 /turf/simulated/floor/plating,
 /area/site53/surface/cryogenicsprimary)
 "oV" = (
-/obj/effect/floor_decal/corner/beige/bordercorner{
-	dir = 4
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/status_display,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/bridge)
+"oW" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "oX" = (
 /obj/structure/railing/mapped,
 /turf/simulated/open,
@@ -5285,9 +5294,14 @@
 /turf/simulated/floor/grass,
 /area/site53/upper_surface/innerentrancehallway)
 "pu" = (
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/titanium,
-/area/site53/entrancezone/hallway)
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/medical/exam_room)
 "pz" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -5397,6 +5411,23 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/innerentrancehallway)
+"qc" = (
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "Entrance Zone Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#a2819e"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/entrancezone/hallway)
+"qe" = (
+/obj/structure/bed/chair/padded/green{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/upper_surface/innerentrancehallway)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5429,6 +5460,9 @@
 /obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"qv" = (
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/logistics/logisticsbreak)
 "qx" = (
 /obj/structure/closet/cabinet,
 /obj/item/gun/projectile/shotgun/doublebarrel,
@@ -5510,19 +5544,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/bridge)
-"qM" = (
-/obj/effect/floor_decal/corner/green/border{
-	dir = 1
-	},
-/obj/machinery/button/blast_door{
-	name = "Emergency Cryo Lockdown Control";
-	id_tag = "ecryogen";
-	pixel_y = -25;
-	dir = 1;
-	req_access = list("ACCESS_ADMIN_LEVEL2")
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/surface/cryogenicsprimary)
 "qN" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -5572,8 +5593,8 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/cryogenicsprimary)
 "qU" = (
-/obj/machinery/camera/network/entrance{
-	c_tag = "Logistics Hangar Hallway"
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -5585,8 +5606,8 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/bridge)
 "qW" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 5
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -5608,17 +5629,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"rc" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/corner/beige/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/entrancehallway)
 "rg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 8
@@ -5689,6 +5699,15 @@
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"rw" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 8;
+	name = "Cryogenics Overwatch Office Shutters";
+	id_tag = "ocryogen"
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/innerentrancehallway)
 "rx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5812,11 +5831,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "rR" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logisticsbreak)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "rS" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/light{
@@ -5927,6 +5946,12 @@
 /obj/item/clothing/under/kilt,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/bridge)
+"sj" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/infirmreception/waiting)
 "sk" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green{
@@ -5998,17 +6023,20 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/light/spot{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
 "su" = (
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/bridge)
 "sv" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 4
+/obj/structure/bed/chair/armchair/brown{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
+/turf/simulated/floor/carpet/orange,
+/area/site53/logistics/logisticsbreak)
 "sw" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6026,6 +6054,15 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/entrancehallway)
+"sA" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 8;
+	name = "Cryogenics Lockdown Shutters";
+	id_tag = "ecryogen"
+	},
+/turf/simulated/floor/plating,
+/area/site53/surface/cryogenicsprimary)
 "sD" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -6038,17 +6075,12 @@
 "sE" = (
 /turf/simulated/open,
 /area/site53/surface/surface)
-"sG" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door"
+"sH" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
 	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#6a97b0"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "sJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6082,12 +6114,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
-"sU" = (
-/obj/machinery/vending/coffee{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
 "tb" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 10
@@ -6101,15 +6127,17 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
-"ti" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 5
+"tl" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/camera/network/entrance{
-	c_tag = "Cryogenics Overwatch Office"
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/upper_surface/innerentrancehallway)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "to" = (
 /obj/machinery/light{
 	dir = 1
@@ -6158,11 +6186,11 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
 "tO" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
-"tW" = (
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/logistics/logisticsbreak)
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "tZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -6178,17 +6206,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
-"ug" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/site53/uez/bridge)
 "uk" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -6260,30 +6282,36 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/innerentrancehallway)
 "uG" = (
-/obj/machinery/light{
-	dir = 1
+/obj/structure/railing/mapped{
+	dir = 4
 	},
-/turf/simulated/open,
-/area/site53/uez/bridge)
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "uH" = (
 /turf/simulated/floor/reinforced,
 /area/quartermaster/hangar)
 "uI" = (
-/obj/effect/floor_decal/corner/beige/bordercorner,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"uJ" = (
-/turf/unsimulated/mask,
-/area/site53/logistics/logisticsbreak)
-"uK" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
-"uL" = (
+"uJ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
+"uK" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
+"uL" = (
+/obj/effect/floor_decal/corner/brown/bordercorner,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "uM" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 10
@@ -6342,6 +6370,12 @@
 "uS" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
+/area/site53/uez/bridge)
+"uT" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/open,
 /area/site53/uez/bridge)
 "uV" = (
 /obj/structure/cable{
@@ -6571,14 +6605,17 @@
 "vH" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
-"vI" = (
-/obj/structure/railing/mapped{
-	dir = 4
+"vK" = (
+/obj/machinery/light/spot{
+	dir = 1
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
+"vN" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/donkpockets,
+/turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsbreak)
 "vO" = (
 /obj/structure/cable{
@@ -6612,6 +6649,17 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"wb" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "wj" = (
 /obj/structure/table/woodentable/ebony,
 /obj/machinery/photocopier,
@@ -6717,11 +6765,12 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "wR" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 5
+/obj/effect/floor_decal/industrial/outline{
+	color = "#b95a00"
 	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "wS" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -6745,14 +6794,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"wY" = (
-/obj/structure/sign/directions/evac{
-	pixel_x = 32;
-	pixel_y = -20
-	},
-/obj/effect/floor_decal/corner/beige/border,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "xa" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/paper_bin,
@@ -6773,11 +6814,11 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
 	dir = 8;
-	name = "Cryogenics Overwatch Office Shutters";
-	id_tag = "ocryogen"
+	name = "Cryogenics Lockdown Shutters";
+	id_tag = "wcryogen"
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/surface/cryogenicsprimary)
 "xd" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -6838,6 +6879,14 @@
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"xD" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/mentalhealth/isolation)
 "xP" = (
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
@@ -6877,6 +6926,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"yr" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/wood/walnut,
+/area/site53/upper_surface/innerentrancehallway)
 "yu" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6921,6 +6974,13 @@
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"yB" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/machinery/light/spot{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "yD" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/fire,
@@ -6974,11 +7034,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
 "ze" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/entrancehallway)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood/walnut,
+/area/site53/logistics/logisticsbreak)
 "zf" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -7443,12 +7501,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
-"Cj" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/infirmreception/waiting)
 "Cm" = (
 /obj/machinery/vending/snack{
 	dir = 8
@@ -7494,12 +7546,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
-"Cz" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/logistics/logisticsbreak)
 "CC" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/structure/sign/warning/nosmoking_2,
@@ -7545,23 +7591,29 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
+"CV" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Cryogenics Overwatch Office"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/upper_surface/innerentrancehallway)
 "CW" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
-"De" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"Dc" = (
+/obj/structure/table/standard,
+/obj/item/storage/mre/menu5,
+/obj/machinery/camera/network/entrance{
+	c_tag = "Cryogenics Food Court"
 	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
+/turf/simulated/floor/wood/walnut,
+/area/site53/upper_surface/innerentrancehallway)
 "Dg" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Staff Area";
@@ -7577,6 +7629,17 @@
 "Do" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/bridge)
+"Dq" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "DB" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -7706,13 +7769,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
-"Ek" = (
-/obj/effect/floor_decal/industrial/outline{
-	color = "#b95a00"
-	},
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
 "Em" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -7745,6 +7801,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
+"Eq" = (
+/obj/structure/sign/directions/evac{
+	pixel_x = 32;
+	pixel_y = -20
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "Ew" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -7806,30 +7872,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
-"EX" = (
-/obj/structure/bed/chair/armchair/brown{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/orange,
-/area/site53/logistics/logisticsbreak)
-"Fb" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
-"Fd" = (
-/obj/effect/floor_decal/industrial/warning/corner,
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
+"EY" = (
+/obj/effect/paint_stripe/green,
+/obj/machinery/status_display,
+/turf/simulated/wall/prepainted,
+/area/site53/surface/cryogenicsprimary)
 "Fe" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -8057,6 +8104,17 @@
 /obj/machinery/camera/autoname,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"GX" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "GZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -8069,14 +8127,6 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
-"Hb" = (
-/obj/structure/table/standard,
-/obj/item/storage/mre/menu5,
-/obj/machinery/camera/network/entrance{
-	c_tag = "Cryogenics Food Court"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/upper_surface/innerentrancehallway)
 "Hc" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -8094,6 +8144,12 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
+"Hg" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/logistics/logisticsbreak)
 "Hl" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/white,
@@ -8122,17 +8178,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
-"HC" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light/spot{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "HG" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
@@ -8159,6 +8204,11 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"HM" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp,
+/turf/simulated/floor/carpet/orange,
+/area/site53/logistics/logisticsbreak)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -8234,13 +8284,6 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"Ii" = (
-/obj/structure/table/standard,
-/obj/machinery/microwave{
-	pixel_y = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
 "Ik" = (
 /obj/structure/sign/warning/nosmoking_2,
 /obj/effect/paint_stripe/paleblue,
@@ -8362,12 +8405,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Jo" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
 "Js" = (
 /obj/effect/paint_stripe/green,
 /obj/structure/table/standard,
@@ -8387,12 +8424,6 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/site53/surface/cryogenicsprimary)
-"JC" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
 "JE" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap{
@@ -8406,6 +8437,15 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"JP" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/beige/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "JQ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -8429,13 +8469,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
-"JX" = (
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "JZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -8462,14 +8495,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Kh" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	dir = 8;
-	name = "Cryogenics Lockdown Shutters";
-	id_tag = "wcryogen"
-	},
-/turf/simulated/floor/plating,
-/area/site53/surface/cryogenicsprimary)
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/titanium,
+/area/site53/entrancezone/hallway)
 "Kj" = (
 /obj/structure/table/woodentable/ebony,
 /obj/machinery/button/blast_door{
@@ -8586,6 +8614,12 @@
 /obj/structure/flora/pottedplant/fern,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
+"KG" = (
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "KN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8600,14 +8634,24 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
+"KS" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/infirmreception/waiting)
 "Lb" = (
 /obj/structure/closet/wardrobe/white,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/bridge)
-"Lc" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/wood/walnut,
-/area/site53/upper_surface/innerentrancehallway)
 "Lf" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8681,6 +8725,17 @@
 "LG" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/infirmary)
+"LI" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "LL" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -8690,6 +8745,14 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"LO" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "LW" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/table/standard,
@@ -8733,10 +8796,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"Mq" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/carpet/orange,
-/area/site53/logistics/logisticsbreak)
 "Mu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -8763,12 +8822,6 @@
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
-"MM" = (
-/obj/machinery/vending/fitness{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
 "MN" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/freezer,
@@ -8781,11 +8834,6 @@
 /obj/item/storage/pill_bottle/amnesticsi,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"MS" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/donkpockets,
-/turf/simulated/floor/wood/walnut,
-/area/site53/logistics/logisticsbreak)
 "MU" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/closet/crate/freezer,
@@ -8852,16 +8900,8 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "NE" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/wood/walnut,
+/area/site53/logistics/logisticsbreak)
 "NF" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -8891,24 +8931,11 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "NX" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1
-	},
-/obj/machinery/door/airlock/multi_tile/glass/mining{
-	req_access = list("ACCESS_ADMIN_LEVEL1");
-	name = "Logistics Breakroom"
-	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsbreak)
-"Oa" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/exam_room)
 "Ob" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -8993,17 +9020,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/innerentrancehallway)
-"Ot" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "OC" = (
 /obj/item/modular_computer/console/preset/security{
 	dir = 4
@@ -9022,28 +9038,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
-"OH" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/corner/beige/bordercorner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
-"OJ" = (
-/obj/machinery/camera/autoname{
-	c_tag = "Cryo";
-	dir = 8;
-	network = list("Entrance Zone Network 1")
-	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "OK" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9138,6 +9132,12 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/innerentrancehallway)
+"PG" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "PX" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -9164,6 +9164,17 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/surface/surface)
+"Qc" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "Qe" = (
 /turf/simulated/wall/wood,
 /area/site53/surface/surface)
@@ -9220,10 +9231,12 @@
 "Qn" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"Qo" = (
-/obj/effect/floor_decal/corner/brown/bordercorner,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logisticsbreak)
+"Qp" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "Qq" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9313,10 +9326,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "Rb" = (
-/obj/structure/filingcabinet/wallcabinet,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/ethics)
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/site53/uez/bridge)
 "Rc" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
@@ -9331,12 +9345,12 @@
 /obj/structure/ladder,
 /turf/simulated/open,
 /area/site53/maintenance/surfacewest)
-"Ru" = (
-/obj/structure/bed/chair/armchair/brown{
-	dir = 8
+"Rr" = (
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/simulated/floor/carpet/orange,
-/area/site53/logistics/logisticsbreak)
+/turf/simulated/open,
+/area/site53/uez/bridge)
 "Rx" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9348,10 +9362,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
-"RB" = (
-/obj/effect/floor_decal/corner/beige/bordercorner,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/entrancehallway)
 "RC" = (
 /obj/structure/table/standard,
 /obj/item/storage/mre/menu3,
@@ -9393,15 +9403,6 @@
 /obj/structure/sign/warning/nosmoking_1,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/exam_room)
-"RQ" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	dir = 8;
-	name = "Cryogenics Lockdown Shutters";
-	id_tag = "ecryogen"
-	},
-/turf/simulated/floor/plating,
-/area/site53/surface/cryogenicsprimary)
 "RR" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
@@ -9438,6 +9439,13 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"Sh" = (
+/obj/structure/table/standard,
+/obj/machinery/microwave{
+	pixel_y = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/logistics/logisticsbreak)
 "Si" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/bed/chair/office/dark{
@@ -9494,8 +9502,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "SB" = (
-/turf/simulated/floor/carpet/green,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/structure/filingcabinet/wallcabinet,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/ethics)
 "SC" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -9521,12 +9531,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/surface)
-"SI" = (
-/obj/machinery/vending/mredispenser{
-	dir = 8
-	},
-/turf/simulated/floor/carpet/green,
-/area/site53/upper_surface/innerentrancehallway)
 "SM" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9779,6 +9783,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
+"Uz" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/uez/mcrsubstation)
 "UC" = (
 /obj/effect/floor_decal/corner/green/bordercorner{
 	dir = 1
@@ -9801,6 +9809,10 @@
 /obj/effect/shuttle_landmark/heli/out,
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
+"UH" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/carpet/orange,
+/area/site53/logistics/logisticsbreak)
 "UI" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -9823,18 +9835,18 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"UQ" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/cryogenicsprimary)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
 /obj/item/device/scanner/spectrometer,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
+"Va" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/surface/cryogenicsprimary)
 "Vb" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9845,6 +9857,12 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Vg" = (
+/obj/machinery/vending/coffee{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/logistics/logisticsbreak)
 "Vm" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -9855,6 +9873,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/cryogenicsprimary)
+"Vq" = (
+/obj/effect/floor_decal/corner/beige/bordercorner,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Vu" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -9942,6 +9964,17 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"VU" = (
+/obj/machinery/camera/autoname{
+	c_tag = "Cryo";
+	dir = 8;
+	network = list("Entrance Zone Network 1")
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "Wb" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post Storage Closet";
@@ -9969,6 +10002,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"Wm" = (
+/obj/effect/floor_decal/corner/beige/bordercorner,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "Wo" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/machinery/vending/medical{
@@ -9987,6 +10024,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"Wx" = (
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/machinery/door/airlock/multi_tile/glass/mining{
+	req_access = list("ACCESS_ADMIN_LEVEL1");
+	name = "Logistics Breakroom"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/logistics/logisticsbreak)
 "Wz" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -9994,6 +10041,12 @@
 /obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
+"WB" = (
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/logistics/logisticsbreak)
 "WC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10129,14 +10182,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"XL" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/mentalhealth/isolation)
 "XO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -10155,20 +10200,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
-"XV" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "XZ" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -10200,10 +10231,6 @@
 /obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"Yl" = (
-/obj/effect/floor_decal/corner/beige/border,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/entrancehallway)
 "Yo" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -10231,17 +10258,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
-"YF" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/entrancehallway)
 "YH" = (
 /obj/structure/morgue,
 /obj/machinery/light{
@@ -10271,21 +10287,15 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/titanium,
 /area/site53/medical/infirmreception)
+"YM" = (
+/turf/simulated/floor/carpet/green,
+/area/site53/upper_surface/innerentrancehallway)
 "YT" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/surface)
-"YU" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logisticsbreak)
 "YV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -10309,6 +10319,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
+"YZ" = (
+/obj/machinery/vending/mredispenser{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/green,
+/area/site53/upper_surface/innerentrancehallway)
 "Za" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/wood/maple,
@@ -10325,12 +10341,6 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/uez/repoffice/ethics)
-"Zq" = (
-/obj/structure/bed/chair/padded/green{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/upper_surface/innerentrancehallway)
 "Zt" = (
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/titanium,
@@ -10388,6 +10398,12 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/logistics/logisticsbreak)
+"Zz" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/entrancehallway)
 "ZF" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower Lobby";
@@ -10404,12 +10420,6 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"ZJ" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/site53/uez/bridge)
 "ZL" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -10442,16 +10452,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
-"ZX" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/entrancehallway)
-"ZZ" = (
-/obj/effect/floor_decal/corner/brown/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logisticsbreak)
 
 (1,1,1) = {"
 dA
@@ -35003,11 +35003,11 @@ uX
 uX
 lK
 rI
-uJ
-uJ
-uJ
-uJ
-uJ
+lD
+lD
+lD
+lD
+lD
 rI
 dA
 dA
@@ -35203,7 +35203,7 @@ Kc
 Kc
 AP
 Kc
-eG
+dm
 nU
 nU
 dA
@@ -35246,10 +35246,10 @@ dA
 dA
 dA
 rI
-EX
-EX
-tO
-Jo
+eS
+eS
+NE
+NX
 rI
 qS
 uM
@@ -35259,12 +35259,12 @@ rI
 uX
 uX
 Wl
-uJ
-uJ
-uJ
-uJ
-uJ
-uJ
+lD
+lD
+lD
+lD
+lD
+lD
 rI
 dA
 dA
@@ -35503,25 +35503,25 @@ dA
 dA
 dA
 rI
-Mq
-gz
-tO
-dy
+UH
+HM
+NE
+ze
 rI
 sa
-ZZ
+lI
 uX
 uX
 rI
 uX
 uX
 Wl
-uJ
-uJ
-uJ
-uJ
-uJ
-uJ
+lD
+lD
+lD
+lD
+lD
+lD
 rI
 dA
 dA
@@ -35704,7 +35704,7 @@ QV
 Dg
 iR
 kj
-XL
+xD
 eZ
 ZS
 fC
@@ -35760,25 +35760,25 @@ dA
 dA
 dA
 rI
-Ru
-Ru
-tO
-tO
-NX
-rR
-mt
-YU
+sv
+sv
+NE
+NE
+Wx
+qU
+KG
+ne
 kP
 TU
 uX
 uX
 Wl
-uJ
-uJ
-uJ
-uJ
-uJ
-uJ
+lD
+lD
+lD
+lD
+lD
+lD
 rI
 oS
 oS
@@ -35974,7 +35974,7 @@ mc
 mc
 mc
 mc
-eG
+dm
 nU
 nU
 dA
@@ -36017,25 +36017,25 @@ dA
 dA
 dA
 rI
-fD
-tO
-tO
-tO
-Cz
-rR
-Qo
-vI
+Hg
+NE
+NE
+NE
+WB
+qU
+uL
+uG
 uW
-tW
+qv
 uX
 uX
 Wl
-uJ
-uJ
-uJ
-uJ
-uJ
-uJ
+lD
+lD
+lD
+lD
+lD
+lD
 rI
 bt
 bt
@@ -36274,25 +36274,25 @@ dA
 dA
 dA
 rI
-tO
-tO
-tO
-tO
+NE
+NE
+NE
+NE
 rI
 sa
-ZZ
+lI
 uX
 vf
 rI
-qU
+np
 uX
 Wl
-uJ
-uJ
-uJ
-uJ
-uJ
-uJ
+lD
+lD
+lD
+lD
+lD
+lD
 rI
 oS
 oS
@@ -36531,10 +36531,10 @@ dA
 dA
 dA
 rI
-MM
-sU
-MS
-Ii
+od
+Vg
+vN
+Sh
 rI
 po
 qQ
@@ -36545,11 +36545,11 @@ uX
 uX
 bA
 rI
-uJ
-uJ
-uJ
-uJ
-uJ
+lD
+lD
+lD
+lD
+lD
 rI
 oS
 nZ
@@ -37051,18 +37051,18 @@ dA
 dA
 dA
 kG
-uK
+uI
 jb
-uK
-uK
-uK
-uK
+uI
+uI
+uI
+uI
 vb
+LO
 sq
-HC
-sq
+LO
 Fz
-uK
+uI
 kG
 oS
 nE
@@ -37308,18 +37308,18 @@ dA
 dA
 dA
 kG
-uK
-uK
-uK
-uK
-uK
-uK
-uK
-uK
-uK
-uK
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
+uI
 Gq
-uK
+uI
 kG
 oS
 nE
@@ -37565,17 +37565,17 @@ dA
 dA
 dA
 kG
-Fd
-in
-in
-in
-in
-in
-in
-in
-in
-in
-Ot
+yB
+jH
+jH
+jH
+jH
+jH
+jH
+jH
+jH
+jH
+ua
 jQ
 kG
 ic
@@ -37832,7 +37832,7 @@ uH
 uH
 uH
 uH
-ua
+GX
 jD
 kG
 iW
@@ -38347,7 +38347,7 @@ uH
 uH
 uH
 ul
-uK
+uI
 nE
 nE
 sw
@@ -38593,7 +38593,7 @@ Jf
 af
 af
 oD
-JX
+vK
 uH
 uH
 uH
@@ -38604,7 +38604,7 @@ uH
 uH
 uH
 ul
-uK
+uI
 zU
 GJ
 sw
@@ -38616,7 +38616,7 @@ cc
 cc
 cc
 bn
-Ek
+wR
 oJ
 vt
 Ky
@@ -38861,7 +38861,7 @@ uH
 uH
 uH
 ul
-uK
+uI
 oG
 ic
 sw
@@ -39096,8 +39096,8 @@ Gg
 EA
 au
 cX
-SB
-SB
+YM
+YM
 vB
 qa
 oU
@@ -39107,18 +39107,18 @@ OD
 OD
 ws
 oD
-jH
-uL
-uL
+oW
+uJ
+uJ
 sp
-uL
-uL
-uL
-uL
-uL
-uL
+uJ
+uJ
+uJ
+uJ
+uJ
+uJ
 uN
-uK
+uI
 qR
 iz
 sw
@@ -39353,9 +39353,9 @@ Gg
 aN
 au
 Lg
-SB
-SB
-SB
+YM
+YM
+YM
 sk
 oU
 xb
@@ -39368,7 +39368,7 @@ rM
 rM
 rM
 ae
-uK
+uI
 kh
 kh
 kh
@@ -39609,9 +39609,9 @@ gm
 Gg
 gm
 au
-ti
-SB
-SB
+CV
+YM
+YM
 vB
 Os
 oU
@@ -39872,11 +39872,11 @@ lR
 GL
 aB
 oD
-dm
-Kh
+EY
+xc
 Zx
-Kh
-dm
+xc
+EY
 oD
 ac
 mr
@@ -40112,32 +40112,32 @@ xP
 hp
 fa
 fa
-ug
+Rb
 fa
 fa
 hp
-eS
-uG
+oV
+Rr
 fa
 fa
 tC
 It
 au
-xc
-xc
+rw
+rw
 On
-xc
-xc
+rw
+rw
 oD
 WK
 lO
 lO
 lO
 qT
-JC
-ze
+Qp
+Zz
 Ci
-gt
+PG
 ml
 ep
 nE
@@ -40391,10 +40391,10 @@ Lu
 Lu
 Lu
 Vn
-UQ
+Va
 mj
 JE
-Yl
+gt
 mm
 ep
 nE
@@ -40592,7 +40592,7 @@ kg
 lp
 lp
 lp
-aI
+KS
 av
 pb
 lm
@@ -40619,7 +40619,7 @@ ur
 ur
 ur
 dq
-oj
+tO
 pY
 dD
 dD
@@ -40635,24 +40635,24 @@ fa
 ai
 ai
 ar
-bR
+ed
 fq
-Fb
+Qc
 aw
 aw
 aw
 qf
 vp
-De
+in
 aT
 mg
 aT
 aT
-OH
+tl
 JU
 aR
-rc
 at
+LI
 pq
 jR
 jR
@@ -40840,8 +40840,8 @@ aH
 aH
 aH
 hv
-Oa
-Oa
+pu
+pu
 Sw
 Aa
 pI
@@ -40849,7 +40849,7 @@ iB
 jS
 jS
 jS
-Cj
+sj
 aC
 iI
 ln
@@ -40876,7 +40876,7 @@ rS
 We
 ur
 dr
-uI
+Vq
 RR
 dD
 dD
@@ -40892,24 +40892,24 @@ fa
 ai
 ai
 ax
-wY
-Ff
-wR
-ed
-ed
-ed
 hh
+Ff
+uK
+sH
+sH
+sH
+Eq
 vx
+rR
+fD
+fD
+fD
+fD
 qW
-sv
-sv
-sv
-sv
-oV
 Qg
 bN
-RB
-ZX
+Wm
+aa
 ma
 qZ
 qZ
@@ -41162,10 +41162,10 @@ kC
 kC
 kC
 Bv
-UQ
+Va
 Lf
 JE
-Yl
+gt
 ro
 ep
 nE
@@ -41365,7 +41365,7 @@ hs
 hs
 hs
 Ie
-NE
+wb
 um
 cd
 cB
@@ -41397,32 +41397,32 @@ fa
 hp
 fa
 fa
-ZJ
+uT
 fa
 fa
 hp
-eS
-uG
+oV
+Rr
 fa
 fa
-XV
-OJ
+cv
+VU
 au
-Hb
-SB
-SB
-SB
-Lc
+Dc
+YM
+YM
+YM
+yr
 oD
 aE
 lO
 lO
 lO
 qT
-qW
-YF
+rR
+Dq
 xa
-ZX
+aa
 ml
 sx
 nE
@@ -41621,9 +41621,9 @@ kZ
 tZ
 aP
 Vu
-cv
+lu
 Tq
-aa
+JP
 ce
 hZ
 vE
@@ -41665,17 +41665,17 @@ hp
 aV
 pG
 au
-Zq
-SB
-SI
-SB
-Zq
+qe
+YM
+YZ
+YM
+qe
 oD
-dm
-RQ
+EY
+sA
 aD
-RQ
-dm
+sA
+EY
 oD
 HU
 eK
@@ -41878,7 +41878,7 @@ yX
 tZ
 gC
 jE
-cv
+lu
 bi
 tD
 cf
@@ -42135,7 +42135,7 @@ tZ
 Vy
 jB
 jF
-cv
+lu
 mN
 mO
 cg
@@ -42171,7 +42171,7 @@ qI
 CT
 qC
 gs
-nD
+aI
 gs
 TZ
 gq
@@ -42189,7 +42189,7 @@ xb
 mb
 mb
 mb
-qM
+ct
 oD
 rM
 rM
@@ -42392,7 +42392,7 @@ Lp
 Lp
 hM
 jG
-cv
+lu
 bl
 bF
 ux
@@ -42428,7 +42428,7 @@ Do
 vl
 qC
 gs
-nD
+aI
 gs
 fF
 gB
@@ -42649,7 +42649,7 @@ Ry
 Ry
 yo
 jI
-cv
+lu
 gN
 lk
 ch
@@ -42906,7 +42906,7 @@ pV
 jx
 YV
 kz
-cv
+lu
 lh
 lw
 ci
@@ -42942,7 +42942,7 @@ dD
 dD
 DP
 gs
-nD
+aI
 gs
 fF
 gq
@@ -43159,18 +43159,18 @@ hf
 eO
 Vy
 Vy
-lu
-lu
-lu
-lu
-lu
+Kh
+Kh
+Kh
+Kh
+Kh
 mM
 tD
-pu
+eG
 bw
 bw
 bw
-pu
+eG
 lo
 mB
 Zp
@@ -43199,7 +43199,7 @@ Do
 Bq
 qC
 gs
-nD
+aI
 gs
 fF
 fF
@@ -43416,7 +43416,7 @@ iX
 YJ
 vo
 HR
-lu
+Kh
 jz
 gh
 gE
@@ -43458,7 +43458,7 @@ qC
 gs
 gs
 gs
-lD
+Uz
 rm
 rm
 rm
@@ -43673,14 +43673,14 @@ hf
 pH
 vo
 eU
-lu
+Kh
 jz
 gh
 mP
-sG
+aJ
 mN
 mO
-aJ
+qc
 yg
 gh
 gh
@@ -43930,18 +43930,18 @@ UC
 zR
 is
 is
-lu
-lu
-lu
-lu
-lu
+Kh
+Kh
+Kh
+Kh
+Kh
 nS
 og
-pu
-pu
-pu
-pu
-pu
+eG
+eG
+eG
+eG
+eG
 GV
 mB
 ri
@@ -45233,8 +45233,8 @@ Zp
 Zp
 Zp
 Zp
-Rb
-Rb
+SB
+SB
 Zp
 bO
 ru
