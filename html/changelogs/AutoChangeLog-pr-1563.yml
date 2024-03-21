@@ -1,0 +1,4 @@
+author: Saicchi
+delete-after: true
+changes:
+  - rscadd: Modifiable keybind 'F' to lock facing direction
