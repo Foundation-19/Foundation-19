@@ -158,6 +158,11 @@
 		return
 	return
 
+/obj/structure/m_tray/attack_robot(mob/user)
+	if(Adjacent(user))
+		return attack_hand(user)
+	else return ..()
+
 /obj/structure/m_tray/MouseDrop_T(atom/movable/O as mob|obj, mob/user as mob)
 	if ((!( istype(O, /atom/movable) ) || O.anchored || get_dist(user, src) > 1 || get_dist(user, O) > 1 || list_find(user.contents, src) || list_find(user.contents, O)))
 		return
@@ -257,6 +262,11 @@
 			src.connected = null
 	src.add_fingerprint(user)
 	update()
+
+/obj/structure/crematorium/attack_robot(mob/user)
+	if(Adjacent(user))
+		return attack_hand(user)
+	else return ..()
 
 /obj/structure/crematorium/attackby(P as obj, mob/user as mob)
 	if(istype(P, /obj/item/pen))
@@ -410,6 +420,11 @@
 		qdel(src)
 		return
 	return
+
+/obj/structure/c_tray/attack_robot(mob/user)
+	if(Adjacent(user))
+		return attack_hand(user)
+	else return ..()
 
 /obj/structure/c_tray/MouseDrop_T(atom/movable/O as mob|obj, mob/user as mob)
 	if ((!( istype(O, /atom/movable) ) || O.anchored || get_dist(user, src) > 1 || get_dist(user, O) > 1 || list_find(user.contents, src) || list_find(user.contents, O)))
