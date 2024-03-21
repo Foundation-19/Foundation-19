@@ -23698,7 +23698,7 @@
 /area/site53/ulcz/scp914)
 "eLV" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/r_titanium,
 /area/site53/ulcz/hallways)
 "eMM" = (
 /obj/structure/cable{
@@ -34231,8 +34231,8 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/escape)
 "ofA" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
 /area/site53/ulcz/scp914)
 "ofR" = (
 /obj/machinery/door/blast/shutters{
