@@ -723,6 +723,21 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
+"cZ" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "da" = (
 /obj/structure/sign/warning/secure_area/armory{
 	pixel_x = 30;
@@ -779,6 +794,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
+"dm" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "dn" = (
 /turf/simulated/floor/carpet/green,
 /area/centcom)
@@ -1246,6 +1273,20 @@
 "eS" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/centcom/goc)
+"eT" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "eU" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
@@ -4018,6 +4059,20 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"nM" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "nN" = (
 /obj/effect/landmark{
 	name = "endgame_exit"
@@ -4970,6 +5025,21 @@
 	},
 /obj/item/stamp/chameleon,
 /turf/simulated/floor/carpet/purple,
+/area/centcom)
+"py" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "pz" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -6182,6 +6252,21 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"sw" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "sy" = (
 /obj/structure/table/standard,
 /obj/item/folder/blue,
@@ -7141,6 +7226,21 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"tX" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "tZ" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -9523,6 +9623,18 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"CC" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "CH" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -12620,7 +12732,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
 "Mi" = (
-/obj/effect/wingrille_spawn/reinforced/full,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "Mo" = (
@@ -15034,6 +15154,18 @@
 	icon_state = "wood";
 	color = "#543c30"
 	},
+/area/centcom)
+"TU" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "TV" = (
 /obj/structure/table/woodentable,
@@ -24535,10 +24667,10 @@ Rr
 Wc
 Rr
 Rr
-Mi
-Mi
-Mi
-Mi
+eT
+nM
+nM
+nM
 tq
 tq
 ab
@@ -24736,8 +24868,8 @@ uh
 Rr
 Ji
 Rr
-Mi
-Mi
+eT
+TU
 Hu
 PQ
 EL
@@ -24938,7 +25070,7 @@ xX
 Rr
 vC
 Rr
-Mi
+dm
 rU
 BL
 zL
@@ -25140,7 +25272,7 @@ aA
 Rr
 uh
 Rr
-Mi
+dm
 jA
 WU
 gp
@@ -25342,7 +25474,7 @@ uh
 Rr
 aw
 Rr
-Mi
+dm
 Dx
 gp
 gp
@@ -26333,14 +26465,14 @@ yH
 Li
 yH
 ED
-wF
+cZ
 En
 gp
 gp
 gp
 gp
 Ye
-Mi
+sw
 jW
 gp
 Ye
@@ -26744,7 +26876,7 @@ gp
 gp
 gp
 Ye
-Mi
+py
 jW
 gp
 Ye
@@ -26753,9 +26885,9 @@ Eb
 Eb
 Eb
 GR
-Mi
+CC
 Vt
-Mi
+CC
 Ds
 gp
 PG
@@ -26955,9 +27087,9 @@ Eb
 Eb
 Eb
 up
-Mi
+CC
 ZC
-Mi
+CC
 QS
 gp
 qn
@@ -27960,7 +28092,7 @@ UN
 yF
 cz
 VQ
-Mi
+tX
 qJ
 gp
 gp
