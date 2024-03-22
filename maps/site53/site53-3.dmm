@@ -5959,7 +5959,7 @@
 	},
 /obj/machinery/button/blast_door{
 	name = "Cryogenics Overwatch Office Lockdown Control";
-	id_tag = "wcryogen";
+	id_tag = "ocryogen";
 	dir = 1;
 	pixel_y = 7
 	},
