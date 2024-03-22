@@ -437,6 +437,7 @@
 /obj/structure/sign/warning/lethal_turrets{
 	pixel_y = 32
 	},
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "bH" = (
@@ -2311,16 +2312,17 @@
 /obj/machinery/power/apc/hyper{
 	dir = 1
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "UEZ Checkpoint Access Point";
-	name = "Administrative Checkpoint Access Shutters Control";
-	pixel_y = 25;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/closet/secure_closet{
 	name = "confiscated weapons closet";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "UEZ Checkpoint Access Point";
+	name = "Administrative Checkpoint Access Shutters Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
