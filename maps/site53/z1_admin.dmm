@@ -8040,12 +8040,12 @@
 	color = "#561919";
 	dir = 4
 	},
-/obj/machinery/turretid/lethal{
-	pixel_x = 32;
-	req_access = list("ACCESS_MTF")
-	},
 /obj/effect/floor_decal/spline/plain/red{
 	dir = 4
+	},
+/obj/machinery/turretid/stun{
+	req_access = list("ACCESS_MTF");
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -9161,12 +9161,12 @@
 	dir = 8;
 	color = "#272B5B"
 	},
-/obj/machinery/turretid/lethal{
-	pixel_x = -32;
-	req_access = list("ACCESS_MTF")
-	},
 /obj/effect/floor_decal/spline/plain/red{
 	dir = 8
+	},
+/obj/machinery/turretid/stun{
+	req_access = list("ACCESS_MTF");
+	pixel_x = -32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
