@@ -22805,6 +22805,10 @@
 /obj/machinery/power/apc,
 /obj/structure/cable,
 /obj/effect/floor_decal/corner/brown/border,
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
 "dsV" = (
@@ -23235,6 +23239,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"dKm" = (
+/obj/effect/floor_decal/corner/brown/border,
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/stamp/cargo,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "dKX" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -24525,6 +24537,14 @@
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
+"eXH" = (
+/obj/effect/floor_decal/corner/brown/border,
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "Logistics Department"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "eXU" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -29857,6 +29877,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"jwQ" = (
+/obj/effect/floor_decal/corner/brown/border,
+/obj/structure/filingcabinet/filingcabinet,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "jwV" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/network/hcz{
@@ -36667,8 +36692,7 @@
 "oWB" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "SCP-066 Observation";
-	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	department = "SCP-066 Observation"
 	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
@@ -46749,6 +46773,12 @@
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/hallways)
+"xKY" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/brown/border,
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "xLV" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -76544,7 +76574,7 @@ sOy
 bem
 xDt
 bdW
-rYT
+xKY
 aYJ
 azA
 azA
@@ -76801,7 +76831,7 @@ bdW
 bdW
 bdW
 bdW
-csb
+eXH
 aYJ
 azA
 azA
@@ -77058,7 +77088,7 @@ bdW
 bdW
 bdW
 bdW
-csb
+dKm
 aYJ
 azA
 azA
@@ -77572,7 +77602,7 @@ mrN
 bdW
 bdW
 bdW
-csb
+jwQ
 aYJ
 azA
 azA

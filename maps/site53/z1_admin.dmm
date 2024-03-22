@@ -9453,7 +9453,7 @@
 "BW" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "Internal Tribunal Department"
+	department = "Internal Tribunal Department Headquarters"
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
@@ -9471,7 +9471,7 @@
 	dir = 1
 	},
 /obj/machinery/photocopier/faxmachine{
-	department = "Internal Security Department"
+	department = "Internal Security Department Headquarters"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -14260,7 +14260,7 @@
 /area/centcom)
 "Rc" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "Ethics Committee Department"
+	department = "Ethics Committee Headquarters"
 	},
 /obj/structure/table/standard,
 /turf/unsimulated/floor{
@@ -16185,7 +16185,7 @@
 	dir = 1
 	},
 /obj/machinery/photocopier/faxmachine{
-	department = "Administrative Department"
+	department = "Administrative Department Headquarters"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
