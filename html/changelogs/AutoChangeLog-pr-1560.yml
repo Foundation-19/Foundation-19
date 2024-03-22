@@ -1,0 +1,9 @@
+author: quadbium
+delete-after: true
+changes:
+  - rscadd: Added SCP-347
+  - rscadd: Added a set of SCP-347 eyeballs
+  - rscadd: Added a SCP-347 file
+  - rscadd: Added SCP-347 to humanoid containment
+  - rscadd: Added a pair of medhuds to humanoid containment observation
+  - imageadd: added SCP-347 icons

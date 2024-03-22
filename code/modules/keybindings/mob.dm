@@ -118,6 +118,17 @@
 	M.stop_pulling()
 	return TRUE
 
+/datum/keybinding/mob/lock_facing_direction
+	hotkey_keys = list("F")
+	name = "lock_facing_direction"
+	full_name = "Face Direction"
+	description = "Move without changing facing direction"
+
+/datum/keybinding/mob/lock_facing_direction/down(client/user)
+	var/mob/M = user.mob
+	M.face_current_direction()
+	return TRUE
+
 /datum/keybinding/mob/prevent_movement
 	hotkey_keys = list("Ctrl")
 	name = "block_movement"
