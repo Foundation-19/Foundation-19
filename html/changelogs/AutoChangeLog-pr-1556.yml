@@ -1,0 +1,4 @@
+author: Saicchi
+delete-after: true
+changes:
+  - bugfix: Robots can now use the crematorium
