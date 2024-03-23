@@ -169,11 +169,11 @@
 /area/site53/upper_surface/innerentrancehallway)
 "az" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 8
-	},
 /obj/structure/bed/chair/padded/green{
 	dir = 4
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/innerentrancehallway)
@@ -206,13 +206,13 @@
 	name = "Cryogenics Storage"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 8
-	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 8;
 	name = "Cryogenics Lockdown Shutters";
 	id_tag = "ecryogen"
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/surface/cryogenicsprimary)
@@ -1300,7 +1300,15 @@
 /area/site53/surface/surface)
 "cP" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/closet,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscated items locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
 "cQ" = (
@@ -5432,6 +5440,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
+"qg" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "qh" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -6043,6 +6060,15 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/entrancehallway)
+"sz" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "sD" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -6585,6 +6611,17 @@
 "vH" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
+"vK" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 9
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/black,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "vM" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6968,6 +7005,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
+"yK" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "yN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7262,11 +7311,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "AI" = (
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 8
-	},
 /obj/machinery/camera/network/entrance{
 	c_tag = "Cryogenics Central Hall"
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/cryogenicsprimary)
@@ -7393,6 +7442,14 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/cryogenicsprimary)
+"BD" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "BO" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -8056,6 +8113,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"GP" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "GQ" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/table/standard,
@@ -8158,6 +8222,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
+"Hy" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/bridge)
 "HB" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8175,6 +8248,15 @@
 "HG" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network");
+	c_tag = "EZ Checkpoint"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -8364,6 +8446,16 @@
 /obj/effect/landmark/corpse/classdescaped,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"IP" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "IQ" = (
 /obj/machinery/door/airlock/command{
 	name = "GOI Representative's Office"
@@ -8402,10 +8494,6 @@
 /turf/simulated/floor/greengrid,
 /area/site53/surface/cryogenicsprimary)
 "Jk" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 4
 	},
@@ -8481,11 +8569,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 8
-	},
 /obj/structure/bed/chair/padded/green{
 	dir = 4
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/innerentrancehallway)
@@ -8797,6 +8885,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"Mv" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/bridge)
 "Mx" = (
 /obj/effect/floor_decal/corner/orange,
 /obj/structure/closet/crate/bin{
@@ -9000,13 +9098,13 @@
 	name = "Cryogenics Overwatch Office";
 	req_access = list("ACCESS_ADMIN_LEVEL2")
 	},
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 4
-	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 8;
 	name = "Cryogenics Overwatch Office Shutters";
 	id_tag = "ocryogen"
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/surface/cryogenicsprimary)
@@ -9032,6 +9130,16 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
+"Oz" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/obj/machinery/chemical_dispenser/bar_coffee{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "OC" = (
 /obj/item/modular_computer/console/preset/security{
 	dir = 4
@@ -9070,6 +9178,10 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"OX" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/entrancezone/hallway)
 "Pa" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -9197,6 +9309,16 @@
 "Qe" = (
 /turf/simulated/wall/wood,
 /area/site53/surface/surface)
+"Qf" = (
+/obj/structure/table/standard,
+/obj/machinery/microwave{
+	pixel_y = 8
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Qg" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -9268,12 +9390,23 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"Qr" = (
+/obj/machinery/door/airlock/civilian{
+	name = "Lounge"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/bridge)
 "Qw" = (
 /obj/effect/landmark/start{
 	name = "Janitor"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
+"Qy" = (
+/obj/effect/floor_decal/corner/beige/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Qz" = (
 /obj/machinery/vending/coffee{
 	dir = 8
@@ -9390,6 +9523,14 @@
 /obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
+"RD" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 8
+	},
+/obj/item/storage/box/donkpockets,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "RG" = (
 /obj/structure/railing/mapped{
 	dir = 6
@@ -9663,6 +9804,9 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
+"TB" = (
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/bridge)
 "TF" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/walnut,
@@ -9744,16 +9888,12 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "Uc" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network");
-	c_tag = "EZ Checkpoint"
+/obj/structure/closet/crate/bin,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/bridge)
 "Ug" = (
 /obj/machinery/light{
 	dir = 8
@@ -9874,6 +10014,13 @@
 /obj/item/device/scanner/spectrometer,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
+"UX" = (
+/obj/structure/bed/chair,
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Vb" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10384,13 +10531,13 @@
 	name = "Cryogenics Storage"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 4
-	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 8;
 	name = "Cryogenics Lockdown Shutters";
 	id_tag = "wcryogen"
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/surface/cryogenicsprimary)
@@ -42929,8 +43076,8 @@ uk
 uk
 mx
 uY
-lZ
-Uc
+IP
+uk
 Jk
 HG
 lM
@@ -43187,8 +43334,8 @@ tM
 tM
 ur
 ur
-ur
-ur
+OX
+OX
 ur
 ur
 am
@@ -43442,11 +43589,11 @@ wj
 Zp
 bm
 bm
-rm
-rm
-rm
-rm
-rm
+Hy
+vK
+Oz
+RD
+Qf
 hp
 am
 lg
@@ -43699,14 +43846,14 @@ rF
 Zp
 bO
 bm
-rm
-rm
-rm
-rm
-rm
-hp
-sl
+Hy
+am
+TB
+TB
 lg
+Qr
+sl
+Qy
 hp
 qC
 qC
@@ -43956,13 +44103,13 @@ rE
 Zp
 bO
 bO
-rm
-rm
-rm
-rm
-rm
-hp
-qK
+Hy
+sz
+TB
+TB
+lg
+uS
+am
 lg
 uZ
 su
@@ -44213,12 +44360,12 @@ VF
 Zp
 bO
 bO
-rm
-rm
-rm
-rm
-rm
-hp
+Hy
+BD
+TB
+TB
+lg
+Qr
 am
 lg
 hp
@@ -44470,11 +44617,11 @@ rC
 Zp
 bO
 bO
-rm
-rm
-rm
-rm
-rm
+Hy
+qg
+TB
+TB
+lg
 hp
 qy
 RR
@@ -44727,11 +44874,11 @@ Go
 Zp
 bO
 bm
-rm
-rm
-rm
-rm
-rm
+Hy
+Uc
+UX
+GP
+yK
 hp
 hp
 hp
@@ -44984,12 +45131,12 @@ rG
 Zp
 bS
 bm
-bm
-rm
-rm
-rm
-rm
-rm
+Mv
+Mv
+hp
+hp
+hp
+hp
 rm
 rm
 qL
@@ -45242,7 +45389,7 @@ Zp
 bO
 ru
 bO
-rm
+bm
 rm
 rm
 rm
@@ -45499,7 +45646,7 @@ bm
 bO
 bO
 bm
-rm
+bO
 rm
 rm
 rm
@@ -45755,7 +45902,7 @@ bC
 bK
 bO
 bO
-rm
+bO
 rm
 rm
 rm
@@ -46012,7 +46159,7 @@ bI
 bO
 bO
 bS
-rm
+bO
 rm
 rm
 rm

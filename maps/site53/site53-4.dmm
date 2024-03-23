@@ -2325,7 +2325,8 @@
 	icon_off = "secoff";
 	icon_locked = "sec1";
 	icon_closed = "sec";
-	name = "confiscated weapons"
+	name = "confiscated weapons storage locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/item/gun/projectile/pistol/usp45,
 /turf/simulated/floor/tiled/dark,
