@@ -18,6 +18,12 @@
 	flags_inv = HIDEEARS
 	action_button_name = null
 
+/obj/item/clothing/head/helmet/scp/security/riot
+	name = "riot security helmet"
+	desc = "A helmet with 'RIOT CONTROL UNIT' printed on the back lettering, it looks extremely durable."
+	icon_state = "guardriothelm"
+	armor = list(melee = 80, bullet = 25, laser = 25,energy = 25, bomb = 25, bio = 10, rad = 10)
+
 /obj/item/clothing/head/helmet/scp/security/lczcom
 	name = "\improper Heavy-plated foundation security helmet"
 	desc = "A helmet with 'ZONE COMMANDER' printed on the back lettering, with an added golden badge on the front of the helmet."

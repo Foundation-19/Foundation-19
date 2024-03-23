@@ -207,7 +207,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/card/id/junseclvl3lczdivision
+	id_type = /obj/item/card/id/junseclvl2lczdivision
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
@@ -216,6 +216,22 @@
 	head = /obj/item/clothing/head/helmet/scp/security/medic
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
+
+/decl/hierarchy/outfit/job/security/lcz_riot
+	name = OUTFIT_JOB_NAME("LCZ Riot Control Guard")
+	uniform = /obj/item/clothing/under/rank/security/lcz/riot
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/junseclvl3lczdivision2
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/handcuffs = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	head = /obj/item/clothing/head/helmet/scp/security/riot
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
 /decl/hierarchy/outfit/job/security/hcz_guard
 	name = OUTFIT_JOB_NAME("HCZ Guard")

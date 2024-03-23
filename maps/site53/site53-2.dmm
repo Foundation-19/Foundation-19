@@ -1195,7 +1195,7 @@
 "adT" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Combat Medic Division";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters{
 	name = "Combat Medic Division Shutters";
@@ -1256,7 +1256,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ RCU";
 	name = "Riot Control Unit Division Armory Shutters Control";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_ARMORY");
 	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark,
@@ -20992,7 +20992,7 @@
 "bPr" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Riot Control Unit Division";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_ARMORY")
 	},
 /obj/machinery/door/blast/shutters{
 	name = "Riot Control Unit Division Shutters";
@@ -21958,6 +21958,19 @@
 "cBb" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/accessory/solgov/department/security/marine{
+	name = "combat medic insignia"
+	},
+/obj/item/clothing/accessory/solgov/department/security/marine{
+	name = "combat medic insignia"
+	},
+/obj/item/clothing/accessory/solgov/department/security/marine{
+	name = "combat medic insignia"
+	},
+/obj/item/clothing/accessory/solgov/department/security/marine{
+	name = "combat medic insignia"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -23034,7 +23047,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ CM";
 	name = "Combat Medic Division Armory Shutters Control";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_MEDICAL_LEVEL1"));
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1");
 	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark,
@@ -23506,7 +23519,23 @@
 /area/site53/ulcz/scp2427_3)
 "dPA" = (
 /obj/effect/floor_decal/corner/grey/mono,
-/obj/structure/closet/secure_closet/guard/riotshotguns,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "riot shotgun locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "dPF" = (
@@ -23535,7 +23564,18 @@
 /area/site53/llcz/scp513)
 "dPU" = (
 /obj/structure/table/reinforced,
-/obj/item/ammo_magazine/box/stunshell,
+/obj/item/clothing/accessory/solgov/department/medical/marine{
+	name = "riot control unit insignia"
+	},
+/obj/item/clothing/accessory/solgov/department/medical/marine{
+	name = "riot control unit insignia"
+	},
+/obj/item/clothing/accessory/solgov/department/medical/marine{
+	name = "riot control unit insignia"
+	},
+/obj/item/clothing/accessory/solgov/department/medical/marine{
+	name = "riot control unit insignia"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "dPZ" = (
@@ -26862,7 +26902,7 @@
 /area/site53/science/seniorresearcherb)
 "gOM" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/projectile/shotgun/pump,
+/obj/item/storage/box/handcuffs,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "gOV" = (
@@ -27195,7 +27235,7 @@
 /area/site53/uhcz/securitypost)
 "haw" = (
 /obj/structure/table/reinforced,
-/obj/item/ammo_magazine/box/flash,
+/obj/item/storage/box/flashbangs,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "hbe" = (
@@ -31410,6 +31450,13 @@
 	},
 /obj/effect/floor_decal/corner/grey/bordercorner{
 	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "LCZ RCU";
+	name = "Riot Control Unit Division Armory Shutters Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_ARMORY");
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -36268,7 +36315,31 @@
 /area/site53/uhcz/scp1507containment)
 "oiZ" = (
 /obj/effect/floor_decal/corner/grey/mono,
-/obj/structure/closet/secure_closet/guard/specialistshotgun,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "okj" = (
@@ -41147,14 +41218,18 @@
 /area/site53/uhcz/scp247observation)
 "sdE" = (
 /obj/structure/table/reinforced,
-/obj/item/ammo_magazine/box/beanbag,
+/obj/item/storage/box/teargas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "sdM" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/vending/medical{
 	dir = 1;
-	req_access = list("ACCESS_MEDICAL_LEVEL1")
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -42461,7 +42536,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ CM";
 	name = "Combat Medic Division Armory Shutters Control";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_MEDICAL_LEVEL1"));
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1");
 	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark,
@@ -43809,7 +43884,9 @@
 /area/site53/uhcz/generalpurpose3)
 "uno" = (
 /obj/effect/floor_decal/corner/grey/mono,
-/obj/machinery/vending/weaponry/lcz/energy,
+/obj/machinery/vending/weaponry/lcz/energy{
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_ARMORY"))
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "uoj" = (
@@ -63296,8 +63373,8 @@ aVb
 mnG
 bPr
 pts
+bUd
 haw
-gOM
 mnG
 uJG
 azA

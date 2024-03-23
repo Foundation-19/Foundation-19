@@ -33,6 +33,12 @@
 	icon_state = "lczmed_guard"
 	worn_state = "lczmed_guard"
 
+/obj/item/clothing/under/rank/security/lcz/riot
+	name = "LCZ Riot Control Unit Jumpsuit"
+	desc = "A white tactical jumpsuit, with black shoulder and blue wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits."
+	icon_state = "lczriot_guard"
+	worn_state = "lczriot_guard"
+
 /obj/item/clothing/under/rank/security/lcz
 	name = "LCZ Security Jumpsuit"
 	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
