@@ -7645,10 +7645,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
-"FO" = (
-/obj/item/storage/briefcase/foundation/jerraman,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/cryogenicsprimary)
 "FR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -40567,7 +40563,7 @@ az
 af
 AI
 kC
-FO
+kC
 kC
 kC
 oU
