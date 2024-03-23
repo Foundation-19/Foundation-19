@@ -7333,9 +7333,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = list("ACCESS_ENGINEERING_LEVEL1")
-	},
+/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
 "aug" = (
@@ -10876,9 +10874,6 @@
 	},
 /obj/item/pen,
 /obj/item/paper_bin,
-/obj/item/stamp/cmo{
-	name = "LCZ Entry Checkpoint Stamp"
-	},
 /obj/machinery/button/flasher{
 	id_tag = "ULCZ Checkpoint Flash";
 	name = "ULCZ Checkpoint Flash";
@@ -10891,6 +10886,9 @@
 	dir = 4
 	},
 /obj/item/paper/sec_ctp,
+/obj/item/stamp/ce{
+	name = "LCZ Security Stamp"
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "aDR" = (
@@ -22934,6 +22932,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
+"dvi" = (
+/obj/machinery/door/airlock/civilian{
+	name = "Restroom"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/checkequip)
 "dvt" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -23321,7 +23325,9 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/item/stamp/cargo,
+/obj/item/stamp/cargo{
+	name = "Logistics Stamp"
+	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
 "dKX" = (
@@ -31102,14 +31108,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "klT" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -34000,12 +34001,13 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/stamp/cmo{
-	name = "HCZ Entry Checkpoint Stamp"
-	},
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/item/paper/sec_ctp,
+/obj/item/stamp{
+	icon_state = "stamp-cos";
+	name = "HCZ Security Stamp"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/securitypost)
 "mCO" = (
@@ -34623,13 +34625,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
-"mZG" = (
-/obj/effect/floor_decal/corner/blue/bordercorner{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/red/bordercorner,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
 "mZS" = (
 /obj/structure/bed/roller/ironingboard,
 /turf/simulated/floor/tiled/techmaint,
@@ -35553,10 +35548,16 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
 "nMp" = (
-/obj/structure/closet{
-	name = "Confiscated items"
-	},
 /obj/effect/floor_decal/corner/red/mono,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
 "nMT" = (
@@ -37401,6 +37402,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/item/stamp{
+	icon_state = "stamp-brig";
+	name = "SCP-914 Testing Approval Stamp"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
 "plx" = (
@@ -38054,9 +38059,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = list("ACCESS_ENGINEERING_LEVEL1")
-	},
+/obj/structure/closet/secure_closet/engineering_electrical,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -40279,6 +40282,18 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp066)
+"rFg" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "rFH" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -43463,12 +43478,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
-"ume" = (
-/obj/machinery/door/airlock/civilian{
-	name = "Restroom"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/llcz/checkequip)
 "umq" = (
 /obj/structure/closet,
 /obj/item/device/radio,
@@ -43732,9 +43741,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = list("ACCESS_ENGINEERING_LEVEL1")
-	},
+/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/ulcz/hallways)
 "uBK" = (
@@ -44314,6 +44321,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
+"vgW" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/bordercorner,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "vhB" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
@@ -45066,7 +45080,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
 "vNe" = (
-/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/reagent_dispensers/fueltank{
+	anchored = 1
+	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -45265,13 +45281,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/horizontal,
-/area/site53/llcz/entrance_checkpoint)
-"vUl" = (
-/obj/effect/floor_decal/corner/blue/bordercorner,
-/obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "vVl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -66557,9 +66566,9 @@ aXT
 vSL
 uJG
 hcV
-vUl
 klT
-mZG
+rFg
+vgW
 aXT
 vCX
 aXT
@@ -70161,7 +70170,7 @@ azA
 aVD
 aVD
 aVD
-ume
+dvi
 aVD
 aVD
 aVD
