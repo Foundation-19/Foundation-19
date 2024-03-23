@@ -11289,7 +11289,7 @@
 /area/site53/ulcz/hallways)
 "aFg" = (
 /obj/machinery/papershredder,
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -20190,7 +20190,7 @@
 	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -20712,7 +20712,7 @@
 /area/site53/llcz/checkequip)
 "bBM" = (
 /obj/machinery/camera/network/lcz,
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -20865,7 +20865,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "bKj" = (
-/obj/effect/floor_decal/corner/red/border,
+/obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice)
 "bKK" = (
@@ -25033,8 +25033,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logistics)
 "foR" = (
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/blue,
 /turf/simulated/wall/titanium,
 /area/site53/zonecommanderoffice)
 "foW" = (
@@ -28946,8 +28945,11 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/mre/menu2,
 /obj/machinery/camera/network/lcz,
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/checkequip)
@@ -31100,9 +31102,17 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "klT" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/zonecommanderoffice)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "kmC" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -34613,6 +34623,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
+"mZG" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/bordercorner,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "mZS" = (
 /obj/structure/bed/roller/ironingboard,
 /turf/simulated/floor/tiled/techmaint,
@@ -38780,7 +38797,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
@@ -41462,7 +41479,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
 "sBj" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -42311,7 +42328,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -42953,7 +42970,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
@@ -43201,7 +43218,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
 "udU" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
@@ -43446,6 +43463,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"ume" = (
+/obj/machinery/door/airlock/civilian{
+	name = "Restroom"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/checkequip)
 "umq" = (
 /obj/structure/closet,
 /obj/item/device/radio,
@@ -45243,6 +45266,13 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/entrance_checkpoint)
+"vUl" = (
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "vVl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -45431,7 +45461,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -45523,7 +45553,10 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -45545,7 +45578,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "wic" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -45612,7 +45645,7 @@
 /area/site53/llcz/entrance_checkpoint)
 "wkx" = (
 /obj/structure/filingcabinet,
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
@@ -66524,9 +66557,9 @@ aXT
 vSL
 uJG
 hcV
-aXT
-qhP
-aXT
+vUl
+klT
+mZG
 aXT
 vCX
 aXT
@@ -66780,12 +66813,12 @@ uJG
 pDY
 uJG
 cqF
-klT
+foR
 aUt
 hnt
 aUt
 aUt
-klT
+foR
 aVD
 xRv
 aVD
@@ -67037,7 +67070,7 @@ mgZ
 bhO
 gcN
 cqF
-klT
+foR
 qst
 tmC
 wic
@@ -67294,7 +67327,7 @@ orD
 aVb
 wkv
 cqF
-klT
+foR
 wdh
 neg
 acs
@@ -67551,7 +67584,7 @@ gjx
 aVb
 kVF
 cqF
-klT
+foR
 bBM
 acs
 acs
@@ -67808,7 +67841,7 @@ orD
 aVb
 wkv
 cqF
-klT
+foR
 asA
 rzX
 aUy
@@ -68065,7 +68098,7 @@ orD
 aVb
 wkv
 cqF
-klT
+foR
 jXr
 wLF
 hbV
@@ -68322,7 +68355,7 @@ orD
 aVb
 wkv
 cqF
-klT
+foR
 ihR
 lhd
 tMm
@@ -68579,7 +68612,7 @@ aTy
 aVb
 wkv
 cqF
-klT
+foR
 tOa
 bko
 aFg
@@ -68837,11 +68870,11 @@ aVb
 kVF
 cqF
 foR
-klT
-klT
-klT
-klT
-klT
+foR
+foR
+foR
+foR
+foR
 aTL
 wVj
 nPZ
@@ -70128,7 +70161,7 @@ azA
 aVD
 aVD
 aVD
-aTE
+ume
 aVD
 aVD
 aVD
