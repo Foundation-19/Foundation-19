@@ -99,3 +99,18 @@
 2024-03-21:
   Saicchi:
   - rscadd: keybinds for pointing as a robot
+2024-03-22:
+  Saicchi:
+  - rscadd: Modifiable keybind 'F' to lock facing direction
+  - bugfix: Robots can now use the crematorium
+  - rscadd: Add missing tools to the Surgery Robot toolkit
+  - bugfix: robot surgeons can now do organ surgery
+  Tsurupeta:
+  - bugfix: fixed AI interface buttons.
+  quadbium:
+  - rscadd: Added SCP-347
+  - rscadd: Added a set of SCP-347 eyeballs
+  - rscadd: Added a SCP-347 file
+  - rscadd: Added SCP-347 to humanoid containment
+  - rscadd: Added a pair of medhuds to humanoid containment observation
+  - imageadd: added SCP-347 icons
