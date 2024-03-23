@@ -482,7 +482,7 @@
 	)
 
 /obj/structure/closet/secure_closet/guard/ntf
-	name = "NTF Agent's locker"
+	name = "Task Force Agent's locker"
 	req_access = list(ACCESS_SECURITY_LVL3)
 	icon_state = "mtf1"
 	icon_closed = "mtf"
