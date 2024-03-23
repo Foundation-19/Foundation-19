@@ -12770,7 +12770,7 @@
 	},
 /obj/machinery/door/airlock/external{
 	name = "Decontamination";
-	id_tag = "lczdecon"
+	id_tag = "lczdeconinterior"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
@@ -14408,15 +14408,6 @@
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/hallways)
-"aPr" = (
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "lczdecon";
-	name = "Decontamination Cycle Button";
-	dir = 8;
-	pixel_x = 25
-	},
-/turf/simulated/open,
 /area/site53/ulcz/hallways)
 "aPs" = (
 /obj/structure/cable/green{
@@ -24316,9 +24307,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/external/bolted{
-	id_tag = "lczdecon";
-	name = "Decontamination"
+/obj/machinery/door/airlock/external{
+	name = "Decontamination";
+	id_tag = "lczdeconexterior"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
@@ -28797,21 +28788,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchwing)
-"ihb" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 8
-	},
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "lczdecon";
-	name = "Decontamination Cycle Button";
-	dir = 4;
-	pixel_x = -25
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "ihv" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -45543,11 +45519,11 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
 	},
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "lczdecon";
-	name = "Decontamination Cycle Button";
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 4;
-	pixel_x = -25
+	pixel_x = -20;
+	tag_exterior_door = "lczdeconexterior";
+	tag_interior_door = "lczdeconinterior"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
@@ -54868,7 +54844,7 @@ aPf
 aff
 aff
 glY
-aPr
+aff
 raR
 raR
 raR
@@ -57181,7 +57157,7 @@ aeP
 aWt
 uUQ
 ian
-ihb
+gNK
 raR
 raR
 raR
