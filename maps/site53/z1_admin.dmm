@@ -2212,6 +2212,8 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10
 	},
+/obj/item/gun/projectile/silenced,
+/obj/item/ammo_magazine/c45m,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -3306,6 +3308,17 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
+"ly" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/table/standard,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "lz" = (
 /obj/machinery/light/small,
 /obj/structure/table/reinforced,
@@ -9102,6 +9115,8 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
+/obj/item/gun/projectile/silenced,
+/obj/item/ammo_magazine/c45m,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -10855,8 +10870,6 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
-/obj/structure/table/standard,
-/obj/item/folder/blue,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -12851,8 +12864,32 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
-/obj/structure/table/standard,
-/obj/item/book/manual/scp/fra,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -13249,8 +13286,12 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9
 	},
-/obj/structure/table/standard,
-/obj/random/clipboard,
+/obj/structure/table/rack,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -14702,17 +14743,23 @@
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
 "Sa" = (
-/obj/structure/closet/secure_closet/guard/ntf,
-/obj/item/clothing/head/beret/scp,
-/obj/item/gun/projectile/revolver/mateba,
+/obj/structure/closet/secure_closet/guard/ntf{
+	icon_locked = "mtfsenior1";
+	icon_off = "mtfsenioroff";
+	icon_state = "mtfsenior1";
+	icon_closed = "mtfsenior";
+	name = "Task Force Leader's locker"
+	},
 /obj/item/melee/baton/loaded,
 /obj/item/material/knife/combat,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/clothing/head/beret/mtf/omega,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -14932,7 +14979,7 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
-/obj/item/book/manual/scp/fra,
+/obj/random/clipboard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -15653,6 +15700,15 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "tile_full"
+	},
+/area/centcom)
+"VJ" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/table/standard,
+/obj/item/folder/blue,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
 	},
 /area/centcom)
 "VK" = (
@@ -25709,8 +25765,8 @@ gp
 Hb
 Xv
 SL
-gp
-gp
+ly
+VJ
 gp
 TB
 lh
