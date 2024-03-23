@@ -11516,10 +11516,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
 "IL" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
-	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/shoes/swat,
@@ -11536,6 +11532,13 @@
 /obj/effect/floor_decal/corner/white/border{
 	color = "#32441C";
 	dir = 1
+	},
+/obj/structure/closet{
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -12407,10 +12410,6 @@
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
 "Lb" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
-	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/shoes/swat,
@@ -12427,6 +12426,13 @@
 /obj/effect/floor_decal/corner/white/border{
 	color = "#32441C";
 	dir = 9
+	},
+/obj/structure/closet{
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -14005,10 +14011,6 @@
 	},
 /area/centcom)
 "Qm" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
-	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/shoes/swat,
@@ -14024,6 +14026,13 @@
 /obj/item/material/knife/combat,
 /obj/effect/floor_decal/corner/white/border{
 	color = "#32441C"
+	},
+/obj/structure/closet{
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -15407,8 +15416,11 @@
 /area/centcom)
 "UP" = (
 /obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,

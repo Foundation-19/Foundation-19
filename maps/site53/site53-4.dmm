@@ -223,7 +223,7 @@
 /area/site53/uez/maintenance)
 "aI" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/r_titanium,
 /area/site53/uez/hallway)
 "aJ" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -274,7 +274,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "aU" = (
 /obj/structure/cable{
@@ -413,7 +413,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "bE" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -438,7 +438,7 @@
 	pixel_y = 32
 	},
 /obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "bH" = (
 /obj/structure/closet,
@@ -466,7 +466,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "bL" = (
 /obj/machinery/button/alternate/door{
@@ -600,7 +600,7 @@
 	name = "'ELECTRICAL GRILLE' Sign";
 	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES."
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/r_titanium,
 /area/site53/uez/hallway)
 "cd" = (
 /turf/simulated/floor/carpet/purple,
@@ -638,7 +638,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "ci" = (
 /turf/simulated/floor/wood/mahogany,
@@ -671,7 +671,7 @@
 /area/site53/uez/hallway)
 "cn" = (
 /obj/effect/floor_decal/corner/blue/border,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "co" = (
 /obj/item/device/flashlight/lamp/green,
@@ -723,10 +723,6 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/turretid/stun{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_x = -32
-	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cw" = (
@@ -749,6 +745,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/turretid{
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -862,7 +861,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "cI" = (
 /obj/structure/cable/green{
@@ -1003,7 +1002,7 @@
 	desc = "A warning sign which reads: CAUTION, NO FIREARMS BEYOND THIS POINT.";
 	pixel_x = -32
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "cX" = (
 /obj/effect/paint_stripe/red,
@@ -1048,7 +1047,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "de" = (
 /obj/structure/cable/green{
@@ -1072,7 +1071,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "dg" = (
 /obj/effect/floor_decal/corner/brown/border,
@@ -1093,7 +1092,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "dj" = (
 /obj/structure/table/reinforced,
@@ -1234,7 +1233,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "dF" = (
 /obj/effect/paint_stripe/blue,
@@ -1356,14 +1355,13 @@
 /obj/effect/floor_decal/corner/blue/bordercee{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "ea" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uez/hallway)
 "eb" = (
-/obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "SD Office Outer Lockdown";
@@ -1394,6 +1392,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "ec" = (
@@ -1490,7 +1489,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "ep" = (
 /turf/simulated/floor/tiled/dark/monotile,
@@ -2002,7 +2001,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "fU" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -2160,7 +2159,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "gx" = (
 /obj/effect/floor_decal/corner/orange/half{
@@ -2213,7 +2212,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "gF" = (
 /obj/machinery/keycard_auth{
@@ -2242,7 +2241,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "gL" = (
-/obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "Command Checkpoint Windows";
@@ -2255,9 +2253,10 @@
 	id_tag = "Admin Turret";
 	name = "Emergency Administrative Turret Blast Doors Control";
 	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL4");
 	dir = 1
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "gN" = (
@@ -2273,7 +2272,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "gQ" = (
 /obj/machinery/light{
@@ -2282,7 +2281,7 @@
 /obj/effect/floor_decal/corner/blue/bordercee{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "gT" = (
 /turf/simulated/floor/tiled,
@@ -2313,10 +2312,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/closet/secure_closet{
-	name = "confiscated weapons closet";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/machinery/button/blast_door{
 	id_tag = "UEZ Checkpoint Access Point";
 	name = "Administrative Checkpoint Access Shutters Control";
@@ -2324,6 +2319,15 @@
 	pixel_x = 25;
 	dir = 8
 	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscated weapons"
+	},
+/obj/item/gun/projectile/pistol/usp45,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "gX" = (
@@ -2334,7 +2338,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "ha" = (
 /obj/structure/table/standard,
@@ -2778,10 +2782,12 @@
 "jl" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Administrative Checkpoint Desk"
 	},
 /obj/machinery/door/window/brigdoor/eastright{
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Administrative Checkpoint Desk"
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "Command Checkpoint Windows";
@@ -3218,7 +3224,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "kv" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -3481,7 +3487,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "lj" = (
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
@@ -3691,7 +3697,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "mM" = (
 /obj/machinery/hologram/holopad,
@@ -3737,7 +3743,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "mX" = (
 /obj/structure/filingcabinet,
@@ -3947,7 +3953,7 @@
 	name = "Checkpoint Rules plaque";
 	desc = "Check in weaponry with the officer at this checkpoint, you may recieve your weapon before the departure of the Administrative Section. Illegal weaponry, and illegal ownership of a weapon will result in permanent confiscation."
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "on" = (
 /obj/structure/window/reinforced,
@@ -4347,7 +4353,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "ra" = (
 /obj/structure/bed/padded,
@@ -4543,7 +4549,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/blue/border,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "sr" = (
 /obj/structure/bed/chair/comfy/yellow{
@@ -4880,7 +4886,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "vh" = (
 /obj/item/device/radio/intercom{
@@ -5267,7 +5273,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "xx" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -5485,7 +5491,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "yK" = (
 /obj/structure/cable/green{
@@ -5496,7 +5502,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "yL" = (
 /obj/effect/paint_stripe/yellow,
@@ -5575,7 +5581,7 @@
 "zp" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "zq" = (
 /obj/structure/railing/mapped{
@@ -5797,7 +5803,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "AF" = (
 /obj/structure/bed/chair/comfy/red{
@@ -6188,13 +6194,13 @@
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
 "Dm" = (
-/obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/turretid/stun{
-	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/structure/table/reinforced,
+/obj/machinery/turretid{
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "Dn" = (
@@ -6233,7 +6239,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "DB" = (
 /obj/effect/catwalk_plated/dark,
@@ -6453,7 +6459,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "FQ" = (
 /obj/structure/closet/secure_closet/guard/ez/sergeant,
@@ -6537,7 +6543,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "GB" = (
 /obj/machinery/door/airlock/glass/command{
@@ -6868,9 +6874,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "Ji" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier,
-/obj/item/device/toner,
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/blast_door{
 	id_tag = "EZ Security Upper Maintenance Hatch";
@@ -6879,6 +6882,10 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2");
 	dir = 8;
 	pixel_x = 25
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier{
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
@@ -7001,7 +7008,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "Ko" = (
 /obj/structure/reagent_dispensers/peppertank{
@@ -7063,7 +7070,6 @@
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
 "Kz" = (
-/obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "Upper Administrative";
@@ -7081,6 +7087,7 @@
 	pixel_y = 3
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "KB" = (
@@ -7223,7 +7230,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "LD" = (
 /obj/structure/cable/green{
@@ -7336,7 +7343,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
 "Mp" = (
-/obj/structure/closet/secure_closet/guard/zone_commander,
+/obj/structure/closet/secure_closet/guard/zone_commander/ez,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "Ms" = (
@@ -8263,6 +8270,10 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"SP" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_titanium,
+/area/site53/uez/hallway)
 "SW" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable/green{
@@ -8398,8 +8409,13 @@
 /area/site53/uez/equipmentroom)
 "Tz" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/boombox,
 /obj/structure/table/rack,
+/obj/item/boombox,
+/obj/machinery/requests_console{
+	department = "Administrative Security";
+	departmentType = 5;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "TB" = (
@@ -8618,18 +8634,19 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
 "Va" = (
-/obj/structure/table/standard,
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/item/stamp/approved{
-	pixel_y = 4;
-	pixel_x = 13
-	},
 /obj/item/stamp/denied{
-	pixel_y = -1;
-	pixel_x = 13
+	pixel_y = 13;
+	pixel_x = -5
+	},
+/obj/structure/table/reinforced,
+/obj/item/stamp/boss{
+	pixel_y = 13;
+	pixel_x = 5;
+	name = "Administrative Security Stamp"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
@@ -8859,7 +8876,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "WP" = (
 /obj/structure/table/standard,
@@ -42049,14 +42066,14 @@ bb
 bb
 bZ
 bb
-ac
-ac
-ac
+SP
+SP
+SP
 lQ
 GF
-ac
-ac
-ac
+SP
+SP
+SP
 cA
 cK
 cK
@@ -42313,7 +42330,7 @@ cH
 yK
 ep
 ep
-ac
+SP
 cI
 cM
 cO
@@ -42570,7 +42587,7 @@ bK
 gZ
 ep
 ep
-ac
+SP
 ft
 cJ
 fL
@@ -42826,8 +42843,8 @@ be
 jl
 Ah
 aI
-ac
-ac
+SP
+SP
 cK
 cK
 cK
