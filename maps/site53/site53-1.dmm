@@ -296,11 +296,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
 "amY" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/site53/reswing/lowres/Anomaly)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "anP" = (
 /obj/machinery/light,
 /obj/structure/ore_box,
@@ -983,6 +980,22 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
+"aVG" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/research/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/lowres/Lowerresearchwing)
 "aWm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1800,6 +1813,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cellbubble)
+"bId" = (
+/obj/machinery/portable_atmospherics/canister/phoron,
+/turf/simulated/floor,
+/area/site53/reswing/lowres/Anomaly)
 "bIz" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -2132,6 +2149,21 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignment)
+"bYN" = (
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 23
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "bYV" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -2642,6 +2674,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/luxuryhall)
+"cyG" = (
+/obj/item/modular_computer/console/preset/cardslot/command{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "cyW" = (
 /obj/effect/catwalk_plated,
 /obj/structure/closet/crate/bin,
@@ -2678,6 +2719,9 @@
 /area/site53/uhcz/scp8containment)
 "czy" = (
 /obj/effect/wallframe_spawn,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
+	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/Lowerresearchwing)
 "cAc" = (
@@ -3028,8 +3072,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/xenoarchaeology)
 "cRC" = (
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
+/obj/machinery/camera/motion{
+	c_tag = "Xenoarchaeology external";
+	network = list("Research CCTV Network")
 	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/Lowerresearchwing)
@@ -3633,7 +3678,7 @@
 /obj/effect/paint_stripe/mauve,
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/reswing/lowres/Anomaly)
+/area/site53/science/seniorresearcherc)
 "dCw" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -3877,12 +3922,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"dOa" = (
-/obj/machinery/door/airlock/glass/research{
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
-	},
-/turf/simulated/floor,
-/area/site53/reswing/lowres/Anomaly)
 "dOh" = (
 /obj/machinery/icecream_vat,
 /turf/simulated/floor/tiled/monotile,
@@ -4511,9 +4550,6 @@
 /area/site53/llcz/dclass/checkpoint)
 "exZ" = (
 /obj/structure/bed/chair/office/light,
-/obj/effect/landmark/start{
-	name = "Robotics Technician"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "eyu" = (
@@ -4799,6 +4835,18 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
+"eKK" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/glass/research{
+	name = "Senior Researcher Office C";
+	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/science/seniorresearcherc)
 "eLd" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
@@ -5021,7 +5069,10 @@
 /obj/effect/floor_decal/corner/research{
 	dir = 6
 	},
-/obj/machinery/camera/network/reswing,
+/obj/machinery/camera/network/reswing{
+	c_tag = "Anomaly Lab";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Anomaly)
 "feU" = (
@@ -5266,7 +5317,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/reswing{
-	dir = 4
+	dir = 4;
+	c_tag = "Xenoarchaeology airlock"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Lowerresearchwing)
@@ -5551,6 +5603,10 @@
 /obj/item/stack/material/plasteel/fifty,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
+"fDV" = (
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/prepainted,
+/area/site53/science/seniorresearcherc)
 "fEM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -5961,12 +6017,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
 "fXJ" = (
-/obj/machinery/portable_atmospherics/canister/phoron,
-/obj/machinery/camera/network/reswing{
-	c_tag = "anomaly gas storage"
-	},
-/turf/simulated/floor,
-/area/site53/reswing/lowres/Anomaly)
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "fXM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -6075,6 +6128,13 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/shower)
+"gbO" = (
+/obj/machinery/door/airlock/glass/research{
+	req_access = list("ACCESS_SCIENCE_LEVEL3");
+	name = "Anomaly gas storage"
+	},
+/turf/simulated/floor,
+/area/site53/reswing/lowres/Anomaly)
 "gbQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -6463,6 +6523,15 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
+"gzx" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "gzy" = (
 /obj/effect/floor_decal/industrial/traffic{
 	dir = 8
@@ -6557,10 +6626,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp1102room)
-"gEw" = (
-/obj/structure/ore_box,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "gEA" = (
 /obj/effect/landmark/start{
 	name = "IT Technician"
@@ -7009,7 +7074,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/reswing{
-	dir = 8
+	dir = 8;
+	c_tag = "Botany Lab"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/xenobotany)
@@ -7506,6 +7572,10 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
+"hCD" = (
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/reswing/lowres/researchoffices)
 "hCG" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -8009,6 +8079,10 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
+"ijW" = (
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/seniorresearcherc)
 "ikf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8051,6 +8125,15 @@
 "ilE" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hallway)
+"ima" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/lowres/Lowerresearchwing)
 "imL" = (
 /obj/machinery/camera/network/scp049{
 	dir = 1;
@@ -8677,6 +8760,22 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/assignmentbubble)
+"iSB" = (
+/obj/structure/bed/chair/office/light{
+	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Senior Researcher"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
+"iSI" = (
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/machinery/camera/network/reswing{
+	c_tag = "Anomaly gas storage"
+	},
+/turf/simulated/floor,
+/area/site53/reswing/lowres/Anomaly)
 "iTq" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable/green{
@@ -8691,7 +8790,7 @@
 "iTO" = (
 /obj/machinery/camera/network/reswing{
 	dir = 4;
-	c_tag = "anomaly bay #1"
+	c_tag = "Anomaly bay #1"
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/lowres/Anomaly)
@@ -9315,7 +9414,8 @@
 "jzP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /obj/machinery/door/airlock/multi_tile/glass/research{
-	req_access = list("ACCESS_SCIENCE_LEVEL2")
+	req_access = list("ACCESS_SCIENCE_LEVEL2");
+	name = "Anomaly Lab"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Lowerresearchwing)
@@ -9813,6 +9913,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"kcy" = (
+/obj/item/modular_computer/console/preset/aislot/research{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "kcG" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -9970,7 +10079,9 @@
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1
 	},
-/obj/machinery/camera/network/reswing,
+/obj/machinery/camera/network/reswing{
+	c_tag = "Lower Research East"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Lowerresearchwing)
 "kmv" = (
@@ -10195,9 +10306,17 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
+"kwX" = (
+/obj/effect/floor_decal/corner/research/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/lowres/Lowerresearchwing)
 "kxh" = (
 /obj/machinery/door/airlock/multi_tile/glass/research{
 	req_access = list("ACCESS_SCIENCE_LEVEL1")
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Lowerresearchwing)
@@ -10572,6 +10691,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/janitorial)
+"kRb" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "kSg" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -10992,6 +11117,11 @@
 	department = "Research Offices";
 	send_access = list("ACCESS_ADMIN_LEVEL1")
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "lnl" = (
@@ -11051,6 +11181,12 @@
 /obj/structure/closet,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"lpi" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "lpC" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Bubble";
@@ -11223,6 +11359,22 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"lxP" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "lyh" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
@@ -12263,6 +12415,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
+"mAj" = (
+/obj/structure/filingcabinet/wallcabinet{
+	pixel_y = 24
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "mAq" = (
 /obj/machinery/light{
 	dir = 4
@@ -12848,7 +13009,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/reswing{
-	dir = 4
+	dir = 4;
+	c_tag = "Xenoarchaeology Storage"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/xenoarchaeology)
@@ -12889,6 +13051,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/briefing)
+"niP" = (
+/obj/structure/closet/secure_closet/scientist,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "niR" = (
 /obj/machinery/button/blast_door{
 	id_tag = "Security Bubble Lockdown";
@@ -12983,6 +13152,17 @@
 /obj/effect/floor_decal/corner/beige/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"npH" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/lowres/researchoffices)
 "npW" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -13030,6 +13210,10 @@
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"nrI" = (
+/obj/structure/barricade/spike,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "nrN" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1
@@ -13095,6 +13279,26 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/luxuryhall)
+"nuL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/research/border{
+	dir = 1
+	},
+/obj/machinery/camera/network/reswing{
+	c_tag = "Lower Research West"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/lowres/Lowerresearchwing)
 "nuU" = (
 /turf/simulated/floor/grass,
 /area/site53/llcz/dclass/botany)
@@ -13804,6 +14008,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
+"nXZ" = (
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/lowres/Lowerresearchwing)
 "nYp" = (
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -13822,11 +14032,10 @@
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
 "nZi" = (
-/obj/machinery/camera/network/reswing{
-	dir = 4;
-	c_tag = "anomaly bay #3"
+/obj/machinery/light{
+	dir = 8
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor,
 /area/site53/reswing/lowres/Anomaly)
 "nZk" = (
 /obj/machinery/light/small{
@@ -15789,6 +15998,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
+"pYR" = (
+/obj/structure/table/standard,
+/obj/item/folder/nt/rd,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/lowres/researchoffices)
 "pZx" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 10
@@ -16022,6 +16241,14 @@
 "qqz" = (
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
+"qqS" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
+	},
+/turf/simulated/floor,
+/area/site53/reswing/lowres/researchoffices)
 "qsq" = (
 /obj/structure/dispenser/oxygen,
 /turf/simulated/floor/tiled/monotile,
@@ -16417,20 +16644,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
-"qIN" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/corner/research/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/lowres/Lowerresearchwing)
 "qJb" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/research/border{
@@ -18042,6 +18255,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpointoverlook)
+"svi" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "svF" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -18388,6 +18610,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"sSo" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 3
+	},
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "sUp" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -18645,6 +18875,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"tmr" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/lowres/Anomaly)
 "tmt" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/valve/shutoff/supply{
@@ -18699,6 +18934,10 @@
 "tqa" = (
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
+"tqi" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/science/seniorresearcherc)
 "tqE" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -18805,12 +19044,6 @@
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
-"txJ" = (
-/obj/effect/landmark/start{
-	name = "Junior Robotics Technician"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/reswing/lowres/researchoffices)
 "tyi" = (
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/machinery/chemical_dispenser/full,
@@ -19599,6 +19832,15 @@
 /area/site53/llcz/dclass/checkpoint)
 "unC" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
+	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchoffices)
 "unJ" = (
@@ -19763,6 +20005,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/xenobotany)
+"usc" = (
+/obj/structure/table/standard,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/lowres/researchoffices)
 "uth" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -20035,6 +20286,13 @@
 /area/site53/engineering/maintenance/llczmaint)
 "uNK" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
+	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/Lowerresearchwing)
 "uOZ" = (
@@ -20451,6 +20709,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Anomaly)
+"vql" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "vqu" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -21153,6 +21417,18 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"wcg" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 8
+	},
+/obj/machinery/door/airlock/multi_tile/glass/research{
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "xenoaccess"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/lowres/Lowerresearchwing)
 "wcx" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -21164,7 +21440,7 @@
 "wcB" = (
 /obj/machinery/camera/network/reswing{
 	dir = 4;
-	c_tag = "anomaly bay #2"
+	c_tag = "Anomaly bay #2"
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/lowres/Anomaly)
@@ -22207,14 +22483,6 @@
 /obj/effect/floor_decal/corner/research/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/xenobotany)
-"xfn" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/lowres/Anomaly)
 "xft" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -22340,13 +22608,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "xlT" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible/red,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Anomaly)
 "xmw" = (
@@ -22947,6 +23217,11 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "xPE" = (
@@ -22964,6 +23239,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
+"xPS" = (
+/obj/machinery/papershredder,
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/science/seniorresearcherc)
 "xQB" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/structure/window/reinforced{
@@ -56769,7 +57049,7 @@ hSj
 bVy
 bVy
 bVy
-gEw
+hSj
 emk
 emk
 emk
@@ -57019,9 +57299,9 @@ cuQ
 rBR
 jwV
 uij
-cre
-cre
-cre
+gOS
+gOS
+gOS
 cRC
 bVy
 bVy
@@ -57278,13 +57558,13 @@ cre
 rqB
 qsq
 opP
-cre
+gOS
 lSS
 bVy
 bVy
 bVy
 bVy
-bVy
+hSj
 emk
 emk
 emk
@@ -57531,7 +57811,7 @@ wDo
 dfZ
 pej
 jWe
-xjw
+wcg
 fnu
 xjw
 mYX
@@ -57541,7 +57821,7 @@ bVy
 bVy
 bVy
 bVy
-bVy
+hSj
 emk
 emk
 emk
@@ -57788,11 +58068,11 @@ oxW
 cre
 umM
 bPl
-fTS
+ima
 fTS
 rnW
 lTo
-bPl
+nXZ
 eET
 bVy
 bVy
@@ -58051,7 +58331,7 @@ cre
 cre
 cre
 uNK
-hSj
+nrI
 bVy
 bVy
 bVy
@@ -58306,9 +58586,9 @@ cre
 rwn
 ubg
 jaM
-bkk
+pYR
 unC
-hSj
+nrI
 dWn
 bVy
 bVy
@@ -58561,11 +58841,11 @@ iqG
 vHT
 czy
 gip
-txJ
+oIO
 exZ
-ttz
-unC
-hSj
+npH
+qqS
+nrI
 bVy
 bVy
 bVy
@@ -58814,15 +59094,15 @@ uaa
 uaa
 oDN
 rqB
-umM
+nuL
 vHT
 czy
 eMC
 oIO
 oIO
-ubg
-unC
-bVy
+usc
+qqS
+nrI
 bVy
 bVy
 emk
@@ -59066,20 +59346,20 @@ pHy
 iOy
 wcB
 ktv
-pHy
-iOy
+knD
+mXN
 nZi
-ktv
+azA
 cre
 gNB
 bQS
 eCZ
 yfY
 xPs
-oIO
+yfY
 lmj
-mwR
-emk
+hCD
+lam
 emk
 emk
 emk
@@ -59323,10 +59603,10 @@ mrG
 ben
 ben
 ktv
-mrG
-ben
-ben
-ktv
+iSI
+mXN
+mXN
+xRp
 cre
 umM
 vHT
@@ -59335,8 +59615,8 @@ jKS
 xff
 oIO
 ubg
-mwR
-emk
+hCD
+lam
 emk
 emk
 emk
@@ -59580,10 +59860,10 @@ bqw
 gbQ
 ben
 ktv
-bqw
-gbQ
-ben
-ktv
+bId
+mXN
+mXN
+bId
 cre
 umM
 vHT
@@ -59592,8 +59872,8 @@ fgd
 iYw
 bfS
 ttz
-mwR
-emk
+hCD
+lam
 emk
 emk
 emk
@@ -59837,9 +60117,9 @@ wYi
 jRU
 dEF
 ktv
-wYi
-jRU
-dEF
+ktv
+ktv
+gbO
 ktv
 cre
 umM
@@ -59849,8 +60129,8 @@ wsD
 nVP
 bHr
 bkk
-mwR
-emk
+hCD
+lam
 emk
 emk
 emk
@@ -60094,8 +60374,8 @@ qPQ
 nIL
 vLO
 jGM
-qPQ
-nIL
+vLO
+vLO
 vLO
 rhA
 cre
@@ -60106,8 +60386,8 @@ mwR
 mwR
 sWX
 mwR
-mwR
-emk
+hCD
+lam
 emk
 emk
 emk
@@ -60351,8 +60631,8 @@ qNn
 hoU
 iuE
 iuE
-qNn
-xfn
+tmr
+iuE
 ozP
 eXy
 jzP
@@ -60362,9 +60642,9 @@ xjw
 bPl
 mHZ
 cre
-emk
-emk
-emk
+lam
+lam
+lam
 emk
 emk
 emk
@@ -60619,9 +60899,9 @@ fTS
 bPl
 mHZ
 cre
-emk
-emk
-emk
+lam
+lam
+lam
 emk
 emk
 emk
@@ -60877,8 +61157,8 @@ cre
 cre
 rqB
 cre
-emk
-emk
+lam
+lam
 emk
 emk
 emk
@@ -61134,14 +61414,14 @@ ftP
 abb
 hFP
 cre
-emk
-emk
-emk
-emk
-emk
-emk
-emk
-emk
+lam
+lam
+lam
+lam
+lam
+lam
+lam
+lam
 emk
 emk
 emk
@@ -61391,8 +61671,8 @@ bPl
 bPl
 qMz
 cre
-emk
-emk
+lam
+lam
 wvp
 vQI
 vQI
@@ -61634,13 +61914,13 @@ rnQ
 rnQ
 rnQ
 rnQ
-rnQ
-rnQ
+fDV
+fDV
 dCe
-ktv
-dOa
-ktv
-gOS
+ijW
+ijW
+ijW
+fDV
 lXB
 vHT
 cre
@@ -61648,8 +61928,8 @@ ftP
 abb
 hFP
 cre
-emk
-emk
+lam
+lam
 vQI
 uKq
 uKq
@@ -61891,13 +62171,13 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-ktv
-knD
-mXN
-azA
-gOS
+fDV
+vql
+kRb
+svi
+kRb
+niP
+tqi
 lXB
 vHT
 cre
@@ -61905,8 +62185,8 @@ cre
 cre
 cre
 cre
-emk
-emk
+lam
+lam
 vQI
 lpI
 mkD
@@ -62148,13 +62428,13 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-ktv
+fDV
+lpi
+fXJ
 fXJ
 amY
-xRp
-gOS
+sSo
+tqi
 lXB
 vHT
 cre
@@ -62162,8 +62442,8 @@ nJJ
 nJJ
 bTq
 cre
-emk
-emk
+lam
+lam
 vQI
 wFY
 uKq
@@ -62405,22 +62685,22 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-dCe
-ktv
-ktv
-ktv
-gOS
-qIN
+fDV
+mAj
+iSB
+fXJ
+amY
+xPS
+tqi
+lXB
 vHT
 owp
 wvB
 wvB
 aRa
 cre
-emk
-emk
+lam
+lam
 vQI
 hHn
 sPs
@@ -62662,22 +62942,22 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-cre
-lXB
-vHT
+fDV
+cyG
+kcy
+gzx
+lxP
+bYN
+eKK
+aVG
+kwX
 cre
 nJJ
 nJJ
 nJJ
 cre
-emk
-emk
+lam
+lam
 vQI
 wFY
 vQI
@@ -62919,13 +63199,13 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-cre
+fDV
+fDV
+fDV
+fDV
+fDV
+fDV
+fDV
 lXB
 vHT
 cre
