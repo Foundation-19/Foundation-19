@@ -1294,7 +1294,7 @@
 /area/site53/uez/hallway)
 "dQ" = (
 /obj/structure/filingcabinet,
-/turf/simulated/floor/wood/ebony,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
 "dS" = (
 /obj/structure/cable/green{
@@ -4608,19 +4608,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"sG" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/wood/ebony,
-/area/site53/uez/hallway)
 "sO" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
 "sX" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/wood/ebony,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
 "sY" = (
 /obj/structure/table/standard,
@@ -4956,7 +4950,7 @@
 "vE" = (
 /obj/machinery/papershredder,
 /obj/machinery/light,
-/turf/simulated/floor/wood/ebony,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
 "vF" = (
 /obj/effect/catwalk_plated/dark,
@@ -4976,9 +4970,6 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/hallway)
-"vG" = (
-/turf/simulated/floor/wood/ebony,
 /area/site53/uez/hallway)
 "vH" = (
 /obj/structure/cable/green{
@@ -5187,6 +5178,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"wQ" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "wS" = (
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
@@ -7120,6 +7117,9 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
+"KR" = (
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "KS" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "EZ Commander's Office";
@@ -7350,7 +7350,7 @@
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
 	},
-/turf/simulated/floor/wood/ebony,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
 "MA" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
@@ -8101,7 +8101,7 @@
 /obj/item/folder/yellow,
 /obj/item/reagent_containers/syringe/amnesticsc,
 /obj/item/reagent_containers/syringe/amnesticsc,
-/turf/simulated/floor/wood/ebony,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
 "RL" = (
 /obj/structure/bed,
@@ -37187,7 +37187,7 @@ ac
 ut
 dl
 hG
-vG
+KR
 dQ
 ac
 hk
@@ -37444,7 +37444,7 @@ ac
 Pr
 dm
 dD
-vG
+KR
 dQ
 ac
 hk
@@ -37701,7 +37701,7 @@ ac
 lM
 dn
 uM
-vG
+KR
 vE
 ac
 hk
@@ -37956,9 +37956,9 @@ ac
 hk
 ac
 Ms
-sG
+wQ
 sX
-vG
+KR
 RI
 ac
 hk
@@ -38212,11 +38212,11 @@ pr
 ac
 hk
 ac
-vG
-vG
-vG
-vG
-vG
+KR
+KR
+KR
+KR
+KR
 ac
 hk
 hk
