@@ -3987,10 +3987,10 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "oB" = (
-/obj/structure/bed/chair/office/dark{
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/bed/chair/office/comfy/red{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "oC" = (
@@ -8658,7 +8658,7 @@
 	pixel_x = -5
 	},
 /obj/structure/table/reinforced,
-/obj/item/stamp/boss{
+/obj/item/stamp/rd{
 	pixel_y = 13;
 	pixel_x = 5;
 	name = "Administrative Security Stamp"
