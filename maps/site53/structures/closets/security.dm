@@ -14,7 +14,7 @@
 	icon_state = "lczjunior1"
 	icon_closed = "lczjunior"
 	icon_locked = "lczjunior1"
-	icon_opened = "lczjunioropen"
+	icon_opened = "lczopen"
 	icon_off = "lczjunioroff"
 	anchored = TRUE
 	req_access = list(ACCESS_SECURITY_LVL1)
@@ -81,7 +81,7 @@
 	icon_state = "lczjunior1"
 	icon_closed = "lczjunior"
 	icon_locked = "lczjunior1"
-	icon_opened = "lczjunioropen"
+	icon_opened = "lczopen"
 	icon_off = "lczjunioroff"
 
 /obj/structure/closet/secure_closet/guard/lcz/WillContain()
@@ -99,7 +99,7 @@
 	icon_state = "lczguard1"
 	icon_closed = "lczguard"
 	icon_locked = "lczguard1"
-	icon_opened = "lczguardopen"
+	icon_opened = "lczopen"
 	icon_off = "lczguardoff"
 
 /obj/structure/closet/secure_closet/guard/lcz/sergeant/WillContain()
@@ -125,7 +125,7 @@
 	icon_state = "hczjunior1"
 	icon_closed = "hczjunior"
 	icon_locked = "hczjunior1"
-	icon_opened = "hczjunioropen"
+	icon_opened = "hczopen"
 	icon_off = "hczjunioroff"
 
 /obj/structure/closet/secure_closet/guard/hcz/WillContain()
@@ -149,7 +149,7 @@
 	icon_state = "hczguard1"
 	icon_closed = "hczguard"
 	icon_locked = "hczguard1"
-	icon_opened = "hczguardopen"
+	icon_opened = "hczopen"
 	icon_off = "hczguardoff"
 
 /obj/structure/closet/secure_closet/guard/hcz/sergeant/WillContain()
@@ -182,7 +182,7 @@
 	icon_state = "ezjunior1"
 	icon_closed = "ezjunior"
 	icon_locked = "ezjunior1"
-	icon_opened = "ezjunioropen"
+	icon_opened = "ezopen"
 	icon_off = "ezjunioroff"
 
 /obj/structure/closet/secure_closet/guard/ez/WillContain()
@@ -204,7 +204,7 @@
 	icon_state = "ezguard1"
 	icon_closed = "ezguard"
 	icon_locked = "ezguard1"
-	icon_opened = "ezguardopen"
+	icon_opened = "ezopen"
 	icon_off = "ezguardoff"
 
 /obj/structure/closet/secure_closet/guard/ez/sergeant/WillContain()
@@ -267,7 +267,7 @@
 	icon_state = "lczcomm1"
 	icon_closed = "lczcomm"
 	icon_locked = "lczcomm1"
-	icon_opened = "lczcommopen"
+	icon_opened = "lczopen"
 	icon_off = "lczcommoff"
 
 /obj/structure/closet/secure_closet/guard/zone_commander/WillContain()
@@ -298,7 +298,7 @@
 	icon_state = "hczcomm1"
 	icon_closed = "hczcomm"
 	icon_locked = "hczcomm1"
-	icon_opened = "hczcommopen"
+	icon_opened = "hczopen"
 	icon_off = "hczcommoff"
 
 /obj/structure/closet/secure_closet/guard/zone_commander/ez
@@ -307,7 +307,7 @@
 	icon_state = "ezcomm1"
 	icon_closed = "ezcomm"
 	icon_locked = "ezcomm1"
-	icon_opened = "ezcommopen"
+	icon_opened = "ezopen"
 	icon_off = "ezcommoff"
 
 /obj/structure/closet/secure_closet/guard/breachautomatics
