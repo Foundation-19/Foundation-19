@@ -3730,11 +3730,13 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "dwA" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/catwalk_plated/white,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "dwM" = (
 /obj/machinery/light{
@@ -8660,13 +8662,6 @@
 /obj/item/material/knife/table/plastic,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
-"ivN" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/hallways)
 "ivT" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity,
@@ -38761,11 +38756,11 @@ bOp
 xBf
 hNJ
 rYK
-ivN
-nwa
+bOp
+bOp
 dwA
-nwa
-klP
+bOp
+bOp
 rYK
 lrE
 qEQ
