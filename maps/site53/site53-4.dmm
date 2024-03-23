@@ -510,6 +510,11 @@
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
+/obj/machinery/turretid{
+	req_access = list("ACCESS_SECURITY_LEVEL4");
+	pixel_x = 32;
+	name = "Administrative Hallway turret control panel"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/equipmentroom)
 "bT" = (
@@ -747,7 +752,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/turretid{
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL4");
+	name = "Administrative Hallway turret control panel"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -4366,6 +4372,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"rd" = (
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/hallway)
 "rf" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Meeting Room"
@@ -6196,8 +6210,9 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /obj/machinery/turretid{
-	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL4");
+	name = "Administrative Hallway turret control panel";
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
@@ -6568,13 +6583,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "Lower Administrative";
-	name = "West Administrative Checkpoint Blast Door";
-	dir = 4
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/obj/effect/floor_decal/industrial/hatch/blue,
-/turf/simulated/floor/tiled/dark/small,
+/turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "GL" = (
 /obj/structure/table/standard,
@@ -42329,7 +42343,7 @@ om
 cW
 cH
 yK
-ep
+rd
 ep
 SP
 cI
