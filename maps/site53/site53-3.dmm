@@ -658,13 +658,13 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
 "bw" = (
-/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 4;
 	id_tag = "ECZ Security Lockdown";
 	name = "ECZ Security Lockdown"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
 "bx" = (
@@ -897,7 +897,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/surface)
 "bZ" = (
-/obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -908,6 +907,7 @@
 	name = "North EZ Checkpoint Bubble";
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/securitypost)
 "ca" = (
@@ -982,11 +982,11 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/securitypost)
 "cg" = (
-/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "UEZ Checkpoint Bubble";
 	name = "North EZ Checkpoint Bubble"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/securitypost)
 "ch" = (
@@ -1171,12 +1171,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
 "cD" = (
-/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	id_tag = "ECZ Security Lockdown";
 	name = "Entrance Zone Lockdown Blast Door"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
 "cE" = (
@@ -4732,12 +4732,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "my" = (
-/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "UEZ Checkpoint Bubble";
 	name = "North EZ Checkpoint Bubble";
 	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/securitypost)
 "mz" = (
@@ -5650,12 +5650,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
 "ri" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
 	id_tag = "ethicsrep";
 	name = "Privacy Shutters"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/plating,
 /area/site53/uez/repoffice/ethics)
 "rj" = (
 /obj/machinery/light{
@@ -5702,10 +5702,6 @@
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
-"rt" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/uez/goirepoffice)
 "ru" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
@@ -6188,13 +6184,13 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsbreak)
 "tM" = (
-/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "facilitylockdown";
 	name = "Exterior Lockdown Blast Door"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
 "tO" = (
@@ -7377,8 +7373,8 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "Bl" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/space,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
 "Bq" = (
 /obj/machinery/washing_machine,
@@ -10514,13 +10510,13 @@
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
 "Zv" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
 	id_tag = "ethicsrep";
 	name = "Privacy Shutters";
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/plating,
 /area/site53/uez/repoffice/ethics)
 "Zw" = (
 /obj/machinery/vending/cola,
@@ -42555,9 +42551,9 @@ ux
 mk
 mk
 IQ
-rt
-rt
-rt
+Bl
+Bl
+Bl
 Bl
 mk
 mk
