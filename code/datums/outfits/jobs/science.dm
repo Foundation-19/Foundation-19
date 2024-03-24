@@ -83,5 +83,5 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/black
 	id_type = /obj/item/card/id/sciencelvlp
-	l_pocket = /obj/item/book/manual/scp/scisop
+	l_pocket = /obj/item/material/coin/nullglass
 	l_ear = /obj/item/device/radio/headset/headset_sci

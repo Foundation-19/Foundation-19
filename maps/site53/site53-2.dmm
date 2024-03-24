@@ -48631,8 +48631,9 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/effect/landmark/start{
-	name = "Junior Robotics Technician"
+/obj/machinery/computer/rdconsole/robotics{
+	req_access = list();
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
