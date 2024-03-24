@@ -51,8 +51,8 @@
 	exosuit_desc_string = "reinforced hydraulic legs"
 	desc = "Wide and stable but not particularly fast."
 	max_damage = 80
-	move_delay = 1
-	turn_delay = 1
+	move_delay = 3
+	turn_delay = 4
 	power_use = 10
 
 /obj/item/mech_component/sensors/powerloader
@@ -163,4 +163,4 @@
 /mob/living/exosuit/premade/powerloader/old/spawn_mech_equipment()
 	install_system(new /obj/item/mech_equipment/light(src), HARDPOINT_HEAD)
 	install_system(new /obj/item/mech_equipment/clamp(src), HARDPOINT_LEFT_HAND)
-	install_system(new /obj/item/mech_equipment/mounted_system/taser/plasma(src), HARDPOINT_RIGHT_HAND)
+	install_system(new /obj/item/mech_equipment/clamp(src), HARDPOINT_RIGHT_HAND)
