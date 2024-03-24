@@ -21935,7 +21935,8 @@
 	name = "combat medic insignia"
 	},
 /obj/item/clothing/accessory/solgov/department/security/marine{
-	name = "combat medic insignia"
+	name = "combat medic insignia";
+	desc = "Insignia denoting assignment to the Combat Medics of the LCZ Security Department. These fit Security uniforms."
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -23520,16 +23521,20 @@
 "dPU" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia"
+	name = "riot control unit insignia";
+	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
 	},
 /obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia"
+	name = "riot control unit insignia";
+	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
 	},
 /obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia"
+	name = "riot control unit insignia";
+	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
 	},
 /obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia"
+	name = "riot control unit insignia";
+	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
