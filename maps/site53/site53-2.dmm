@@ -23019,17 +23019,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
 "dwq" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 8
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "LCZ CM";
-	name = "Combat Medic Division Armory Shutters Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1");
-	pixel_y = 25
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/b_green/bordercorner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -28569,7 +28566,7 @@
 /area/site53/lhcz/hczguardgear)
 "hXG" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "LCZ Security Sub-Divisions";
+	name = "LCZ Security Divisions";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -32729,10 +32726,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/redline)
 "lzp" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/b_green/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -33844,6 +33838,14 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/red,
 /area/site53/uhcz/commanderoffice)
+"moZ" = (
+/obj/machinery/door/airlock/glass/security{
+	name = "Recontainment Unit Division";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/item/taperoll/engineering/applied,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/entrance_checkpoint)
 "mpo" = (
 /obj/structure/closet/l3closet/general,
 /turf/simulated/floor/tiled/white,
@@ -36942,9 +36944,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/vending/coffee{
-	dir = 1
-	},
+/obj/machinery/vending/coffee,
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
 	},
@@ -39792,6 +39792,15 @@
 "qZg" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/maple,
+/area/site53/llcz/entrance_checkpoint)
+"qZh" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/b_green/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "qZr" = (
 /obj/effect/catwalk_plated/dark,
@@ -43411,6 +43420,16 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/grey/bordercorner,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "LCZ CM";
+	name = "Combat Medic Division Armory Shutters Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1");
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "tSr" = (
@@ -62340,13 +62359,6 @@ uUQ
 hOR
 gNK
 jBT
-aVS
-aVS
-aVS
-aVS
-aVS
-aVS
-aVS
 mMC
 mMC
 mMC
@@ -62354,6 +62366,13 @@ mMC
 mMC
 mMC
 mMC
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 uJG
 cBb
@@ -62597,13 +62616,6 @@ aGM
 aWF
 aGM
 qZT
-aVS
-sfJ
-fSm
-fSm
-fSm
-fSm
-cNO
 mMC
 hnr
 sad
@@ -62612,6 +62624,13 @@ cMc
 rsr
 mMC
 azA
+azA
+azA
+uJG
+uJG
+uJG
+uJG
+uJG
 uJG
 tcV
 mWd
@@ -62854,13 +62873,6 @@ dDl
 pCH
 afp
 tNo
-abZ
-tNo
-aPp
-aPp
-aPp
-aPp
-cRl
 jsp
 hZq
 hUb
@@ -62869,6 +62881,13 @@ pUs
 mDz
 mMC
 azA
+azA
+azA
+uJG
+eQq
+eQq
+eQq
+eQq
 uJG
 sBw
 adT
@@ -63111,13 +63130,6 @@ aGM
 qlY
 aGM
 uis
-aVS
-mQD
-aIT
-aIT
-aIT
-aIT
-mCO
 mMC
 bho
 qFs
@@ -63126,6 +63138,13 @@ aGi
 nOe
 mMC
 azA
+azA
+azA
+uJG
+eQq
+aVb
+aVb
+eQq
 uJG
 dwq
 fWm
@@ -63368,13 +63387,6 @@ ePq
 hKZ
 ezX
 aXj
-aVS
-aVS
-aVS
-aVS
-aVS
-aVS
-aVS
 mMC
 myw
 myw
@@ -63383,7 +63395,14 @@ myw
 uQr
 mMC
 azA
+azA
+azA
 uJG
+eQq
+aVb
+aVb
+eQq
+moZ
 lzp
 aVb
 aVb
@@ -63625,13 +63644,6 @@ aVS
 eXU
 aVS
 aVS
-aVS
-azA
-azA
-azA
-azA
-azA
-azA
 mMC
 dpg
 dpg
@@ -63639,9 +63651,16 @@ dpg
 dpg
 dpg
 mMC
+azA
+azA
 azA
 uJG
-vel
+eQq
+aVb
+aVb
+eQq
+uJG
+qZh
 aXT
 aXT
 kuy
@@ -63882,13 +63901,6 @@ aXf
 hOR
 sTZ
 aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
 mMC
 nBV
 dpg
@@ -63897,6 +63909,13 @@ aJj
 dpg
 mMC
 azA
+azA
+azA
+uJG
+eQq
+eQq
+eQq
+eQq
 uJG
 aTD
 hXG
@@ -64139,13 +64158,6 @@ mCP
 qKl
 afQ
 aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
 mMC
 pFz
 dpg
@@ -64154,6 +64166,13 @@ rdt
 dpg
 mMC
 azA
+azA
+azA
+uJG
+uJG
+uJG
+uJG
+uJG
 uJG
 vTy
 hgr
@@ -64396,13 +64415,6 @@ mCP
 qKl
 afQ
 aVS
-azA
-azA
-azA
-azA
-azA
-azA
-azA
 tpr
 mMC
 mMC
@@ -64410,6 +64422,13 @@ mMC
 mMC
 mMC
 mMC
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 uJG
 oCP
