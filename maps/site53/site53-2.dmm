@@ -27477,7 +27477,7 @@
 /area/site53/ulcz/humanoidcontainment)
 "iNy" = (
 /obj/structure/backup_server{
-	name = "Auxillary AIC Server"
+	name = "Expremental AIC Server"
 	},
 /obj/machinery/door/window/southleft,
 /turf/simulated/floor/bluegrid,
@@ -28453,6 +28453,7 @@
 	name = "SCP-2427-3 Delivery"
 	},
 /obj/structure/disposalpipe/trunk,
+/obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
 "jIl" = (
@@ -31560,7 +31561,6 @@
 	},
 /obj/structure/table/standard,
 /obj/item/stack/cable_coil,
-/obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "mzz" = (
@@ -38486,6 +38486,13 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
+"tlp" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/industrial/loading{
+	name = "Exit line"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/ulcz/scp2427_3)
 "tmq" = (
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1
@@ -43182,7 +43189,7 @@
 /area/site53/engineering/storage)
 "xZJ" = (
 /obj/structure/backup_server{
-	name = "Auxillary AIC Server"
+	name = "Expremental AIC Server"
 	},
 /obj/machinery/door/window/southright,
 /turf/simulated/floor/bluegrid,
@@ -85411,7 +85418,7 @@ azA
 azA
 bIm
 jHX
-xNg
+tlp
 wKn
 aKM
 aKM
