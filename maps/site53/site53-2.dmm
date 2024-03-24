@@ -42713,10 +42713,7 @@
 	pixel_y = 25
 	},
 /obj/structure/table/reinforced,
-/obj/item/device/encryptionkey/headset_med,
-/obj/item/device/encryptionkey/headset_med,
-/obj/item/device/encryptionkey/headset_med,
-/obj/item/device/encryptionkey/headset_med,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "tdc" = (
@@ -44194,10 +44191,10 @@
 /area/site53/ulcz/scp151)
 "usV" = (
 /obj/structure/table/reinforced,
-/obj/item/device/encryptionkey/headset_sec_hcz,
-/obj/item/device/encryptionkey/headset_sec_hcz,
-/obj/item/device/encryptionkey/headset_sec_hcz,
-/obj/item/device/encryptionkey/headset_sec_hcz,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "uty" = (
@@ -44233,11 +44230,6 @@
 "uvl" = (
 /obj/structure/closet/crate/bin,
 /obj/item/storage/pill_bottle/happy,
-/obj/item/reagent_containers/pill/scp500{
-	desc = "It's marked 'KCN'. Smells vaguely of.. Wait.. What is this?";
-	icon_state = "pillC";
-	name = "discarded pill"
-	},
 /obj/item/trash/candy,
 /obj/item/trash/cigbutt,
 /obj/item/trash/croutons,
@@ -47616,7 +47608,7 @@
 /area/site53/uhcz/scp247containment)
 "xnq" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "LCZ Security Offices";
+	name = "LCZ Security Offices & Divisions";
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/small,
