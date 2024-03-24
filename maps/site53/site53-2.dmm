@@ -2105,11 +2105,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/psionic)
 "ahc" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/psi_meter,
 /obj/machinery/door/window/brigdoor/westleft{
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
@@ -14921,11 +14916,6 @@
 /obj/effect/floor_decal/corner/research{
 	dir = 5
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchanddevelopment)
 "aSF" = (
@@ -18544,11 +18534,6 @@
 /obj/machinery/atmospherics/pipe/zpipe/down/supply{
 	dir = 1
 	},
-/obj/structure/cable{
-	d1 = 32;
-	icon_state = "32-1"
-	},
-/obj/structure/cable,
 /turf/simulated/open,
 /area/site53/reswing/lowres/researchmaint2)
 "bfo" = (
@@ -19987,15 +19972,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp247observation)
-"bvL" = (
-/obj/effect/floor_decal/corner/yellow{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/engineering/primaryhallway)
 "bwx" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20610,15 +20586,6 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
-"ccr" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/prepainted,
-/area/site53/reswing/psionic)
 "ccW" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 8
@@ -21306,14 +21273,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"cLZ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/reswing/researchanddevelopment)
 "cMc" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -22181,15 +22140,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp216)
-"dES" = (
-/obj/effect/floor_decal/corner/research/border,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/reswing/researchanddevelopment)
 "dFf" = (
 /obj/machinery/light{
 	dir = 4
@@ -27084,11 +27034,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint2)
 "ipm" = (
@@ -28644,11 +28589,6 @@
 /obj/effect/floor_decal/corner/research/border{
 	dir = 4
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -29057,11 +28997,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/researchanddevelopment)
@@ -32379,15 +32314,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp096)
-"nnE" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/wallframe_spawn/reinforced/polarized/full,
-/turf/simulated/floor,
-/area/site53/reswing/psionic)
 "noL" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -32409,11 +32335,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
@@ -34989,14 +34910,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
-"pMw" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/researchanddevelopment)
 "pME" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
@@ -36825,9 +36738,6 @@
 "rDs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint2)
 "rDz" = (
@@ -40539,9 +40449,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint2)
 "vxS" = (
@@ -41098,11 +41005,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint2)
@@ -71765,7 +71667,7 @@ vYK
 rDs
 rDs
 vxy
-bvL
+amW
 npa
 auA
 arz
@@ -75884,7 +75786,7 @@ bdA
 qGP
 ppJ
 ahb
-ccr
+bdA
 jcv
 iPm
 amG
@@ -76145,7 +76047,7 @@ bdA
 bdA
 bdA
 fww
-nnE
+nFV
 nFV
 aId
 aKr
@@ -78451,11 +78353,11 @@ beA
 bXP
 tmq
 kkt
-cLZ
-cLZ
-dES
+bes
+bes
+dwN
 aSC
-pMw
+lkj
 ftn
 aaP
 aLc
