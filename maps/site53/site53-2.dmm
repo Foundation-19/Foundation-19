@@ -12917,11 +12917,6 @@
 /obj/machinery/light/spot{
 	dir = 4
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
 	},
@@ -21549,14 +21544,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
-"cfG" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/reswing/psionic)
 "chf" = (
 /obj/structure/closet/bombcloset,
 /turf/simulated/floor/tiled/white,
@@ -21770,16 +21757,11 @@
 	},
 /area/site53/lowertrams/redline)
 "coH" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/psi_meter,
 /obj/machinery/door/window/brigdoor/westleft{
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/psionic)
 "coK" = (
 /obj/effect/floor_decal/corner/green/border{
@@ -23900,6 +23882,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
+"dWV" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "dYk" = (
 /obj/structure/bed/chair/office{
 	dir = 4
@@ -24109,7 +24099,7 @@
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/psionic)
 "ehq" = (
 /obj/structure/table/reinforced,
@@ -24985,6 +24975,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"eUG" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "eUI" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -25373,10 +25371,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "fkA" = (
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
 	},
@@ -25391,6 +25385,10 @@
 /obj/machinery/camera/network/reswing{
 	c_tag = "Lower Robotics Lab #2";
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -30403,6 +30401,23 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertrams/restaurantkitchenarea)
+"jfj" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/research/border,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/researchwing)
 "jfA" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
@@ -32097,9 +32112,9 @@
 	dir = 10
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -34726,11 +34741,6 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/redline)
 "mzp" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
 	},
@@ -39983,17 +39993,6 @@
 "qCb" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
-"qCl" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/corner/research/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/researchwing)
 "qCX" = (
 /obj/machinery/light{
 	dir = 8
@@ -40764,6 +40763,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
+"rgC" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/research/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/researchwing)
 "rgI" = (
 /obj/structure/bed/chair/office{
 	dir = 8;
@@ -40967,11 +40980,6 @@
 "rqh" = (
 /obj/effect/floor_decal/corner/yellow/three_quarters{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /obj/structure/table/standard,
 /obj/item/stock_parts/matter_bin{
@@ -42704,6 +42712,11 @@
 /obj/machinery/door/airlock/glass/research{
 	name = "Mechanical Laboratory";
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -81822,7 +81835,7 @@ bdA
 aeZ
 aLU
 uHA
-cfG
+bdA
 rzp
 ieK
 rGo
@@ -85920,13 +85933,13 @@ aSD
 aJn
 afi
 aJn
-aJn
-aJn
-aJn
+dWV
+eUG
+eUG
 kzZ
 sDw
-afK
-ahc
+rgC
+jfj
 aJA
 fwd
 uPv
@@ -86182,8 +86195,8 @@ aKt
 mzp
 rqh
 bef
-qCl
-omL
+beo
+ahc
 aJA
 ogX
 rCk
