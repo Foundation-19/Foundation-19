@@ -12224,15 +12224,15 @@
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint)
 "aIt" = (
-/obj/structure/plasticflaps,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/corner/brown/mono,
+/obj/structure/plasticflaps/airtight,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
 "aIu" = (
-/obj/structure/plasticflaps,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/corner/brown/mono,
+/obj/structure/plasticflaps/airtight,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
 "aIv" = (
@@ -12368,9 +12368,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp151)
 "aIQ" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
 	},
@@ -15657,13 +15654,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
-"aUh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/hallways)
 "aUj" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/techmaint,
@@ -29244,9 +29234,6 @@
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
 "iym" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/structure/sign/electrical{
 	name = "'ELECTRICAL GRILLE' Sign";
 	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
@@ -38509,13 +38496,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp012)
-"pQV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/brown/border,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/hallways)
 "pSg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -38615,9 +38595,6 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
 "pXt" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
 	},
@@ -39316,13 +39293,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -55678,7 +55655,7 @@ aVS
 aVS
 aVS
 pXt
-aUh
+aRT
 oPR
 dpf
 riZ
@@ -56450,7 +56427,7 @@ aVS
 aVS
 jLD
 qCZ
-pQV
+oPR
 dpf
 riZ
 uvg
