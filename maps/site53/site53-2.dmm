@@ -40762,9 +40762,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
 "rgC" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1
 	},
@@ -48633,7 +48630,8 @@
 	},
 /obj/machinery/computer/rdconsole/robotics{
 	req_access = list();
-	dir = 8
+	dir = 8;
+	name = "lower robotics fabrication console"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -86194,7 +86192,7 @@ aKt
 mzp
 rqh
 bef
-beo
+azK
 ahc
 aJA
 ogX

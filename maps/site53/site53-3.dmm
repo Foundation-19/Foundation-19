@@ -9188,7 +9188,8 @@
 "LQ" = (
 /obj/machinery/computer/rdconsole/robotics{
 	req_access = list();
-	dir = 8
+	dir = 8;
+	name = "upper robotics fabrication console"
 	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
