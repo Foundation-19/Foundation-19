@@ -24730,9 +24730,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/yellow{
-	dir = 6
-	},
 /obj/machinery/camera/network/reswing{
 	c_tag = "Lower Robotics Lab #1";
 	dir = 8
@@ -24740,6 +24737,7 @@
 /obj/effect/landmark/start{
 	name = "Junior Robotics Technician"
 	},
+/obj/effect/floor_decal/corner/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "eJY" = (
