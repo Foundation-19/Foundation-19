@@ -549,6 +549,44 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/raisa
 
+/obj/item/card/id/seclvl2lczdivision
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
+	)
+
+/obj/item/card/id/seclvl3lczdivision2
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ARMORY,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
+	)
+
 /obj/item/card/id/seclvl3hcz
 	name = "security ID"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
@@ -673,6 +711,11 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	name = "mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	assignment = "Epsilon-11 Task Force Operative"
+
+/obj/item/card/id/mtf/epsilon
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Epsilon-9 Task Force Operative"
 
 /obj/item/card/id/mtf/nu_7
 	name = "mobile task force ID"

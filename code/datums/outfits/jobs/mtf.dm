@@ -117,6 +117,24 @@
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
+/decl/hierarchy/outfit/mtf/epsilon_9
+	name = OUTFIT_JOB_NAME("MTF Epsilon-9 Operative")
+	uniform = /obj/item/clothing/under/ert/epsilon9
+	suit = null
+	head = null
+	mask = /obj/item/clothing/mask/balaclava
+	glasses = /obj/item/clothing/glasses/night
+	gloves = /obj/item/clothing/gloves/tactical/scp
+	shoes = /obj/item/clothing/shoes/dutyboots
+	suit_store = null
+	r_hand = null
+	l_hand = null
+	l_pocket = /obj/item/grenade/smokebomb
+	r_pocket = /obj/item/grenade/chem_grenade/incendiary
+	id_type = /obj/item/card/id/mtf/epsilon
+	belt = /obj/item/storage/belt/holster/security/tactical
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/clothing/mask/gas = 1)
+
 /decl/hierarchy/outfit/mtf/nu_7 // Hammer Down
 	name = OUTFIT_JOB_NAME("MTF Nu-7 Operative")
 	uniform = /obj/item/clothing/under/ert/nu7

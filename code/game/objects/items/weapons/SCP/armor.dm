@@ -30,6 +30,24 @@
 	armor = list(melee = 60, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
+/obj/item/clothing/suit/armor/vest/scp/medarmor/medic
+	name = "medical armored vest"
+	desc = "A synthetic armor vest, with a medical pauldron."
+	icon_state = "combatmedic"
+	body_parts_covered = UPPER_TORSO | ARMS
+	cold_protection = UPPER_TORSO | ARMS
+	armor = list(melee = 50, bullet = 35, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
+	acid_resistance = 1.5
+
+/obj/item/clothing/suit/armor/vest/scp/medarmor/riot
+	name = "riot armored vest"
+	desc = "A synthetic armor vest, with a Riot Control Unit insignia on the chestplate."
+	icon_state = "riotguard"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | ARMS
+	armor = list(melee = 80, bullet = 25, laser = 25, energy = 25, bomb = 30, bio = 15, rad = 10)
+	acid_resistance = 1.5
+
 /obj/item/clothing/suit/armor/vest/scp/isd
 	name = "Internal Security trenchcoat"
 	desc = "A durable coat used by the Internal Security Department, there isn't much to note about it except for the golden SCP logo on the shoulder, and wrist designs."
