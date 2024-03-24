@@ -164,7 +164,6 @@
 	desc = "A solid, heavy set of flooring plates."
 	icon = 'icons/turf/flooring/tiles.dmi'
 	icon_base = "tiled"
-	color = COLOR_DARK_GUNMETAL
 	has_damage_range = 4
 	damage_temperature = T0C+1400
 	flags = TURF_REMOVE_CROWBAR | TURF_CAN_BREAK | TURF_CAN_BURN
@@ -172,32 +171,78 @@
 	can_paint = 1
 	footstep_type = /decl/footsteps/tiles
 
+/decl/flooring/tiling/corner
+	icon_base = "steel_corner"
+	build_type = /obj/item/stack/tile/corner
+
+/decl/flooring/tiling/corner/white
+	icon_base = "white_corner"
+	build_type = /obj/item/stack/tile/corner/white
+
+/decl/flooring/tiling/corner/dark
+	icon_base = "dark_corner"
+	build_type = /obj/item/stack/tile/corner/dark
+
+/decl/flooring/tiling/vertical
+	icon_base = "steel_vertical"
+	build_type = /obj/item/stack/tile/vertical
+
+/decl/flooring/tiling/horizontal
+	icon_base = "steel_horizontal"
+	build_type = /obj/item/stack/tile/horizontal
+
+/decl/flooring/tiling/vertical/white
+	icon_base = "white_vertical"
+	build_type = /obj/item/stack/tile/vertical/white
+
+/decl/flooring/tiling/horizontal/white
+	icon_base = "white_horizontal"
+	build_type = /obj/item/stack/tile/horizontal/white
+
+/decl/flooring/tiling/vertical/dark
+	icon_base = "dark_vertical"
+	build_type = /obj/item/stack/tile/vertical/dark
+
+/decl/flooring/tiling/horizontal/dark
+	icon_base = "dark_horizontal"
+	build_type = /obj/item/stack/tile/horizontal/dark
+
+/decl/flooring/tiling/small
+	icon_base = "steel_small"
+	build_type = /obj/item/stack/tile/small
+
+/decl/flooring/tiling/small/white
+	icon_base = "white_small"
+	build_type = /obj/item/stack/tile/small/white
+
+/decl/flooring/tiling/small/dark
+	icon_base = "dark_small"
+	build_type = /obj/item/stack/tile/small/dark
+
 /decl/flooring/tiling/mono
 	icon_base = "monotile"
 	build_type = /obj/item/stack/tile/mono
 
 /decl/flooring/tiling/mono/dark
-	color = COLOR_DARK_GRAY
+	icon_base = "monotiledark"
 	build_type = /obj/item/stack/tile/mono/dark
 
 /decl/flooring/tiling/mono/white
-	icon_base = "monotile_light"
-	color = COLOR_OFF_WHITE
+	icon_base = "monotilewhite"
 	build_type = /obj/item/stack/tile/mono/white
 
 /decl/flooring/tiling/white
-	icon_base = "tiled_light"
+	icon_base = "tiled_white"
 	desc = "How sterile."
-	color = COLOR_OFF_WHITE
 	build_type = /obj/item/stack/tile/floor_white
 
 /decl/flooring/tiling/dark
+	icon_base = "tiled_dark"
 	desc = "How ominous."
-	color = COLOR_DARK_GRAY
 	build_type = /obj/item/stack/tile/floor_dark
 
 /decl/flooring/tiling/dark/mono
-	icon_base = "monotile"
+	icon_base = "monotiledark"
 	build_type = null
 
 /decl/flooring/tiling/freezer
@@ -240,17 +285,14 @@
 	build_type = /obj/item/stack/tile/techmaint
 
 /decl/flooring/tiling/new_tile/monofloor
-	icon_base = "monofloor"
-	color = COLOR_GUNMETAL
+	icon_base = "monotile"
 
 /decl/flooring/tiling/new_tile/steel_grid
-	icon_base = "grid"
-	color = COLOR_GUNMETAL
+	icon_base = "steel_grid"
 	build_type = /obj/item/stack/tile/grid
 
 /decl/flooring/tiling/new_tile/steel_ridged
-	icon_base = "ridged"
-	color = COLOR_GUNMETAL
+	icon_base = "steel_ridged"
 	build_type = /obj/item/stack/tile/ridge
 
 /decl/flooring/wood
