@@ -1,6 +1,6 @@
 /obj/item/clothing/head/helmet/scp/security
 	name = "\improper foundation security helmet"
-	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back lettering."
+	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back."
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 60, bullet = 40, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
@@ -10,7 +10,7 @@
 
 /obj/item/clothing/head/helmet/scp/security/medic
 	name = "medical security helmet"
-	desc = "A helmet with 'COMBAT MEDIC' printed on the back lettering."
+	desc = "A helmet with 'COMBAT MEDIC' printed on the back."
 	icon_state = "medichelm"
 	body_parts_covered = HEAD|EYES
 	armor = list(melee = 40, bullet = 35, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
@@ -18,15 +18,25 @@
 	flags_inv = HIDEEARS
 	action_button_name = null
 
+/obj/item/clothing/head/helmet/scp/security/recon
+	name = "response security helmet"
+	desc = "An extremely durable helmet with 'RECONTAINMENT UNIT' printed on the back."
+	icon_state = "reconhelm"
+	body_parts_covered = HEAD|EYES
+	armor = list(melee = 75, bullet = 75, laser = 75,energy = 25, bomb = 30, bio = 10, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS
+	action_button_name = null
+
 /obj/item/clothing/head/helmet/scp/security/riot
 	name = "riot security helmet"
-	desc = "A helmet with 'RIOT CONTROL UNIT' printed on the back lettering, it looks extremely durable."
+	desc = "A helmet with 'RIOT CONTROL UNIT' printed on the back, it looks extremely durable."
 	icon_state = "guardriothelm"
 	armor = list(melee = 80, bullet = 25, laser = 25,energy = 25, bomb = 25, bio = 10, rad = 10)
 
 /obj/item/clothing/head/helmet/scp/security/lczcom
 	name = "\improper Heavy-plated foundation security helmet"
-	desc = "A helmet with 'ZONE COMMANDER' printed on the back lettering, with an added golden badge on the front of the helmet."
+	desc = "A helmet with 'ZONE COMMANDER' printed on the back, with an added golden badge on the front of the helmet."
 	icon_state = "heavy-guard-helm"
 	armor = list(melee = 65, bullet = 45, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 

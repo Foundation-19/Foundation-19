@@ -568,7 +568,26 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 		ACCESS_DCLASS_MEDICAL
 	)
 
-/obj/item/card/id/seclvl3lczdivision2
+/obj/item/card/id/seclvl2lczdivision2
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ARMORY,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
+	)
+
+/obj/item/card/id/seclvl3lczdivision3
 	name = "security ID"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
@@ -577,9 +596,10 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 		ACCESS_SEC_COMMS,
 		ACCESS_SECURITY_LVL1,
 		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
-		ACCESS_ARMORY,
+		ACCESS_BRIG,
 		ACCESS_DCLASS_KITCHEN,
 		ACCESS_DCLASS_BOTANY,
 		ACCESS_DCLASS_MINING,

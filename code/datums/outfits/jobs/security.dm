@@ -204,11 +204,11 @@
 /decl/hierarchy/outfit/job/security/lcz_medic
 	name = OUTFIT_JOB_NAME("LCZ Combat Medic")
 	uniform = /obj/item/clothing/under/rank/security/lcz/medic
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	glasses = /obj/item/clothing/glasses/hud/health/visor
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl2lczdivision
-	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/medic
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
@@ -218,12 +218,12 @@
 	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
 
 /decl/hierarchy/outfit/job/security/lcz_riot
-	name = OUTFIT_JOB_NAME("LCZ Riot Control Guard")
+	name = OUTFIT_JOB_NAME("LCZ Riot Control Unit")
 	uniform = /obj/item/clothing/under/rank/security/lcz/riot
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/card/id/seclvl3lczdivision2
+	id_type = /obj/item/card/id/seclvl2lczdivision2
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
@@ -231,6 +231,22 @@
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security/riot
 	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
+
+/decl/hierarchy/outfit/job/security/lcz_recon
+	name = OUTFIT_JOB_NAME("LCZ Recontainment Unit")
+	uniform = /obj/item/clothing/under/rank/security/lcz/recon
+	glasses = /obj/item/clothing/glasses/night
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/recon
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl3lczdivision3
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/recon
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/handcuffs = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	head = /obj/item/clothing/head/helmet/scp/security/recon
+	mask = /obj/item/clothing/mask/gas
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
 /decl/hierarchy/outfit/job/security/hcz_guard

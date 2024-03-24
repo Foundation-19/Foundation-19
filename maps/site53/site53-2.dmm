@@ -12670,14 +12670,16 @@
 /turf/simulated/floor,
 /area/site53/reswing/xenobiology)
 "aKa" = (
-/obj/structure/table/rack,
-/obj/item/reagent_containers/spray/chemsprayer,
-/obj/item/reagent_containers/spray/chemsprayer,
 /obj/machinery/recharger/wallcharger{
 	pixel_y = 23
 	},
-/obj/item/reagent_containers/spray/chemsprayer,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/table/rack,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/handcuffs,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "aKb" = (
@@ -20881,6 +20883,19 @@
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice)
+"bKJ" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 8
+	},
+/obj/structure/table/rack,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "bKK" = (
 /obj/structure/sign/directions/lcz{
 	dir = 8
@@ -21097,21 +21112,19 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
 "bTG" = (
-/obj/structure/table/rack,
 /obj/machinery/light,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/table/rack,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "bTH" = (
@@ -21759,14 +21772,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/generalpurpose)
 "cta" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/vest/scp/medarmor,
+/obj/item/clothing/suit/armor/vest/scp/medarmor,
+/obj/item/clothing/suit/armor/vest/scp/medarmor,
+/obj/item/clothing/suit/armor/vest/scp/medarmor,
+/obj/item/clothing/suit/armor/vest/scp/medarmor,
+/obj/item/clothing/suit/armor/vest/scp/medarmor,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "cti" = (
@@ -21889,6 +21902,20 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
+"czc" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "LCZ CM";
+	name = "Combat Medic Division Armory Shutters Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1");
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/floor_decal/corner/grey/bordercorner,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "czj" = (
 /obj/machinery/light{
 	dir = 1
@@ -21943,19 +21970,13 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/clothing/accessory/solgov/department/security/marine{
-	name = "combat medic insignia"
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
 	},
-/obj/item/clothing/accessory/solgov/department/security/marine{
-	name = "combat medic insignia"
-	},
-/obj/item/clothing/accessory/solgov/department/security/marine{
-	name = "combat medic insignia"
-	},
-/obj/item/clothing/accessory/solgov/department/security/marine{
-	name = "combat medic insignia";
-	desc = "Insignia denoting assignment to the Combat Medics of the LCZ Security Department. These fit Security uniforms."
-	},
+/obj/item/clothing/glasses/hud/health/visor,
+/obj/item/clothing/glasses/hud/health/visor,
+/obj/item/clothing/glasses/hud/health/visor,
+/obj/item/clothing/glasses/hud/health/visor,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "cBj" = (
@@ -23019,16 +23040,20 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
 "dwq" = (
-/obj/effect/floor_decal/corner/paleblue/bordercorner{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/b_green/bordercorner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "LCZ RU";
+	name = "Recontainment Unit Division Armory Shutters Control";
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG");
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "dwJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -23507,25 +23532,30 @@
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
 "dPA" = (
-/obj/effect/floor_decal/corner/grey/mono,
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 4
+	},
 /obj/structure/closet/secure_closet{
 	icon_state = "sec1";
 	icon_opened = "secopen";
 	icon_off = "secoff";
 	icon_locked = "sec1";
 	icon_closed = "sec";
-	name = "riot shotgun locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	name = "recontainment unit locker";
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG")
 	},
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump/combat,
 /obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/ammo_magazine/box/a454,
+/obj/item/ammo_magazine/speedloader/heavy,
+/obj/item/ammo_magazine/speedloader/heavy,
+/obj/item/gun/projectile/revolver/military/heavy,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/stunshell,
+/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "dPF" = (
 /turf/simulated/wall/titanium,
@@ -23552,24 +23582,22 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
 "dPU" = (
-/obj/structure/table/reinforced,
-/obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia";
-	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
+/obj/structure/table/rack,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/trauma,
+/obj/item/storage/firstaid/trauma,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
 	},
-/obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia";
-	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia";
-	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
-	},
-/obj/item/clothing/accessory/solgov/department/medical/marine{
-	name = "riot control unit insignia";
-	desc = "Insignia denoting assignment to the Riot Control Unit of the LCZ Security department. These fit Security uniforms."
-	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "dPZ" = (
 /obj/machinery/camera/network/lcz{
@@ -25231,6 +25259,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
+"fqQ" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "frk" = (
 /obj/structure/sign/scp/safe_scp{
 	pixel_x = 32
@@ -25449,6 +25483,14 @@
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
+"fyE" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/glasses/hud/scramble,
+/obj/item/clothing/glasses/hud/scramble,
+/obj/item/clothing/glasses/hud/scramble,
+/obj/item/clothing/glasses/hud/scramble,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "fyO" = (
 /obj/structure/morgue{
 	dir = 2
@@ -26017,7 +26059,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "fXC" = (
 /obj/machinery/door/airlock/maintenance{
@@ -27345,13 +27387,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
 "hft" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/item/defibrillator/loaded,
-/obj/item/defibrillator/loaded,
-/obj/item/defibrillator/loaded,
-/obj/item/defibrillator/loaded,
-/obj/structure/table/rack,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/b_green/border,
+/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "hgq" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -27394,6 +27431,15 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
+"hjP" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "hkp" = (
 /obj/structure/table/reinforced,
@@ -31466,7 +31512,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "kvW" = (
 /obj/item/device/taperecorder,
@@ -31572,6 +31618,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
+"kyI" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
+	},
+/obj/structure/scp173_cage,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "kyV" = (
 /obj/item/clothing/gloves/thick/botany,
 /obj/item/material/hatchet,
@@ -31663,13 +31719,13 @@
 /area/site53/llcz/scp066)
 "kDr" = (
 /obj/structure/table/rack,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/item/clothing/head/helmet/scp/security,
+/obj/item/clothing/head/helmet/scp/security,
+/obj/item/clothing/head/helmet/scp/security,
+/obj/item/clothing/head/helmet/scp/security,
+/obj/item/clothing/head/helmet/scp/security,
+/obj/item/clothing/head/helmet/scp/security,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "kDy" = (
@@ -33682,13 +33738,9 @@
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
 "mjO" = (
-/obj/effect/floor_decal/corner/grey/border,
-/obj/structure/sign/double/map/left{
-	pixel_y = -32;
-	dir = 1
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/teargas,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "mkg" = (
 /obj/structure/table/rack,
@@ -33841,9 +33893,12 @@
 "moZ" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Recontainment Unit Division";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG")
 	},
-/obj/item/taperoll/engineering/applied,
+/obj/machinery/door/blast/shutters{
+	name = "Recontainment Unit Division Shutters";
+	id_tag = "LCZ RU"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
 "mpo" = (
@@ -34889,7 +34944,7 @@
 "naI" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "LCZ Shotgun Storage";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/checkequip)
@@ -35212,17 +35267,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "nqj" = (
-/obj/effect/floor_decal/corner/grey/mono,
-/obj/structure/table/rack,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "nrM" = (
 /obj/item/modular_computer/console/preset/aislot/research{
@@ -35551,6 +35602,36 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logistics)
+"nDw" = (
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "nDL" = (
 /obj/machinery/light{
 	dir = 1
@@ -35862,7 +35943,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "nNV" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -35899,6 +35980,35 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"nOD" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 5
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "recontainment unit locker";
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG")
+	},
+/obj/item/gun/projectile/shotgun/pump/combat,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/ammo_magazine/box/a454,
+/obj/item/ammo_magazine/speedloader/heavy,
+/obj/item/ammo_magazine/speedloader/heavy,
+/obj/item/gun/projectile/revolver/military/heavy,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/stunshell,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "nOJ" = (
 /obj/item/device/radio/intercom{
 	canhear_range = 7;
@@ -36346,31 +36456,31 @@
 /area/site53/uhcz/scp1507containment)
 "oiZ" = (
 /obj/effect/floor_decal/corner/grey/mono,
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/stunshell,
-/obj/item/ammo_magazine/box/stunshell,
-/obj/item/ammo_magazine/box/stunshell,
-/obj/item/ammo_magazine/box/flash,
-/obj/item/ammo_magazine/box/flash,
-/obj/item/ammo_magazine/box/flash,
-/obj/item/ammo_magazine/box/rubbershot,
-/obj/item/ammo_magazine/box/rubbershot,
-/obj/item/ammo_magazine/box/rubbershot,
-/obj/item/ammo_magazine/box/emp,
-/obj/item/ammo_magazine/box/emp,
-/obj/item/ammo_magazine/box/emp,
-/obj/item/ammo_magazine/shotholder/beanbag,
-/obj/item/ammo_magazine/shotholder/beanbag,
-/obj/item/ammo_magazine/shotholder/beanbag,
-/obj/item/ammo_magazine/shotholder/flash,
-/obj/item/ammo_magazine/shotholder/flash,
-/obj/item/ammo_magazine/shotholder/flash,
-/obj/item/ammo_magazine/shotholder/stun,
-/obj/item/ammo_magazine/shotholder/stun,
-/obj/item/ammo_magazine/shotholder/stun,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "riot shotgun locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/gun/projectile/shotgun/pump/combat{
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	},
+/obj/item/gun/projectile/shotgun/pump/combat{
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	},
+/obj/item/gun/projectile/shotgun/pump/combat{
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	},
+/obj/item/gun/projectile/shotgun/pump/combat{
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "okj" = (
@@ -36774,6 +36884,13 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/scp247containment)
+"ovE" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 6
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "owg" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -37224,6 +37341,15 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"oSi" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/table/rack,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "oSz" = (
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/tiled/monotile,
@@ -38211,9 +38337,6 @@
 /obj/item/modular_computer/console/preset/medical{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "pFH" = (
@@ -38594,6 +38717,12 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
+"pXb" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "pXt" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
@@ -38637,15 +38766,12 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "pZa" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 10
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	name = "Recontainment Unit Division Shutters";
+	id_tag = "LCZ RU"
 	},
-/obj/item/storage/belt/medical,
-/obj/item/storage/belt/medical,
-/obj/item/storage/belt/medical,
-/obj/item/storage/belt/medical,
-/obj/structure/table/rack,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor,
 /area/site53/llcz/entrance_checkpoint)
 "pZJ" = (
 /obj/machinery/door/airlock/civilian{
@@ -38777,6 +38903,10 @@
 /obj/item/pen,
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/hallways)
+"qfT" = (
+/obj/effect/floor_decal/corner/grey/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "qgn" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
@@ -39021,6 +39151,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
+"qob" = (
+/obj/effect/floor_decal/corner/grey/border,
+/obj/structure/sign/double/map/left{
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "qoe" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -39800,7 +39938,7 @@
 /obj/effect/floor_decal/corner/b_green/bordercorner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "qZr" = (
 /obj/effect/catwalk_plated/dark,
@@ -41063,6 +41201,12 @@
 /obj/effect/floor_decal/corner/lightgrey/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"rZw" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/item/gun/energy/taser/carbine,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "rZA" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/soap,
@@ -41226,7 +41370,6 @@
 /area/site53/uhcz/scp247observation)
 "sdE" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/teargas,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
@@ -41237,7 +41380,7 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/vending/medical{
 	dir = 1;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -41662,6 +41805,32 @@
 	pixel_x = 3
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/vending/wallmed2{
+	pixel_y = 32
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
+"ssS" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 10
+	},
+/obj/structure/table/rack,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/machinery/button/blast_door{
+	id_tag = "LCZ RU";
+	name = "Recontainment Unit Division Armory Shutters Control";
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG");
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "stq" = (
@@ -42543,6 +42712,11 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1");
 	pixel_y = 25
 	},
+/obj/structure/table/reinforced,
+/obj/item/device/encryptionkey/headset_med,
+/obj/item/device/encryptionkey/headset_med,
+/obj/item/device/encryptionkey/headset_med,
+/obj/item/device/encryptionkey/headset_med,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "tdc" = (
@@ -43416,21 +43590,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
 "tRA" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/grey/bordercorner,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "LCZ CM";
-	name = "Combat Medic Division Armory Shutters Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1");
-	dir = 4;
-	pixel_x = -25
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/structure/table/rack,
+/obj/item/shield/riot/metal,
+/obj/item/shield/riot/metal,
+/obj/item/shield/riot/metal,
+/obj/item/shield/riot/metal,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "tSr" = (
 /obj/machinery/vending/wallmed1{
@@ -43916,7 +44086,7 @@
 "uno" = (
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/machinery/vending/weaponry/lcz/energy{
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_ARMORY"))
+	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_ARMORY")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -44022,6 +44192,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp151)
+"usV" = (
+/obj/structure/table/reinforced,
+/obj/item/device/encryptionkey/headset_sec_hcz,
+/obj/item/device/encryptionkey/headset_sec_hcz,
+/obj/item/device/encryptionkey/headset_sec_hcz,
+/obj/item/device/encryptionkey/headset_sec_hcz,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "uty" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/closet/secure_closet/guard/riotshotguns,
@@ -46506,9 +46684,29 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/securitypost)
 "wDC" = (
-/obj/effect/floor_decal/corner/grey/border{
+/obj/effect/floor_decal/corner/b_green/border{
 	dir = 6
 	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "recontainment unit locker";
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG")
+	},
+/obj/item/gun/projectile/shotgun/pump/combat,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/ammo_magazine/box/a454,
+/obj/item/ammo_magazine/speedloader/heavy,
+/obj/item/ammo_magazine/speedloader/heavy,
+/obj/item/gun/projectile/revolver/military/heavy,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/stunshell,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "wDE" = (
@@ -47203,6 +47401,19 @@
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"xfp" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 8
+	},
+/obj/structure/table/rack,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "xfG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -48130,6 +48341,18 @@
 /obj/effect/floor_decal/corner/yellow/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"xTB" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 9
+	},
+/obj/machinery/vending/weaponry/lcz/energy{
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG")
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "xUj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -61865,7 +62088,7 @@ uJG
 uJG
 uJG
 uJG
-aVS
+uJG
 aVS
 aVS
 aVS
@@ -62120,7 +62343,8 @@ azA
 uJG
 ssq
 pFC
-pZa
+pFC
+dPU
 uJG
 uJG
 uJG
@@ -62128,7 +62352,6 @@ uJG
 uJG
 uJG
 uJG
-azA
 azA
 azA
 azA
@@ -62377,15 +62600,15 @@ azA
 uJG
 cBb
 aVb
+aVb
 bVF
-hft
+oSi
 uJG
-nqj
+tRA
 uno
-dPA
 oiZ
+nDw
 uJG
-azA
 azA
 azA
 azA
@@ -62634,6 +62857,7 @@ uJG
 uJG
 tcV
 mWd
+mWd
 nSM
 sdM
 uJG
@@ -62642,7 +62866,6 @@ hiU
 hiU
 qGc
 uJG
-azA
 azA
 azA
 azA
@@ -62884,10 +63107,11 @@ azA
 azA
 azA
 uJG
-eQq
-eQq
-eQq
-eQq
+xTB
+xfp
+bKJ
+ssS
+uJG
 uJG
 sBw
 adT
@@ -62896,10 +63120,9 @@ uJG
 uJG
 aef
 gOM
-bUd
+rZw
 qXs
 uJG
-azA
 azA
 azA
 azA
@@ -63141,22 +63364,22 @@ azA
 azA
 azA
 uJG
-eQq
+lzp
 aVb
 aVb
-eQq
-uJG
+hft
+pZa
 dwq
+nqj
 fWm
 nND
-tRA
+czc
 sAJ
 pts
-dPU
 sdE
 mjO
+qob
 uJG
-azA
 azA
 azA
 azA
@@ -63398,22 +63621,22 @@ azA
 azA
 azA
 uJG
-eQq
-aVb
-aVb
-eQq
+kyI
+fyE
+usV
+hft
 moZ
-lzp
-aVb
-aVb
-mnG
+pXb
+hgr
+hgr
+hgr
+qfT
 bPr
 pts
 bUd
 haw
 mnG
 uJG
-azA
 azA
 azA
 azA
@@ -63655,22 +63878,22 @@ azA
 azA
 azA
 uJG
-eQq
+lzp
 aVb
 aVb
-eQq
-uJG
+hft
+pZa
 qZh
-aXT
-aXT
+fqQ
+fqQ
+hjP
 kuy
 sAJ
 cjj
 oqd
 oqd
-wDC
+ovE
 uJG
-azA
 azA
 azA
 azA
@@ -63912,10 +64135,10 @@ azA
 azA
 azA
 uJG
-eQq
-eQq
-eQq
-eQq
+nOD
+dPA
+dPA
+wDC
 uJG
 aTD
 hXG

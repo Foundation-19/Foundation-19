@@ -38,6 +38,20 @@
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_sec_lcz
 
+/obj/item/device/radio/headset/headset_sec_lcz/medic
+	name = "LCZ combat medic security radio headset"
+	desc = "This is used by your elite security force."
+	icon_state = "sec_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/headset_sec_lcz/medic
+
+/obj/item/device/radio/headset/headset_sec_lcz/recon
+	name = "LCZ recontainment unit security radio headset"
+	desc = "This is used by your elite security force."
+	icon_state = "sec_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/headset_sec_lcz/recon
+
 /obj/item/device/radio/headset/headset_sec_ecz
 	name = "EZ security radio headset"
 	desc = "This is used by your elite security force."
@@ -54,6 +68,16 @@
 	name = "LCZ security radio encryption key"
 	icon_state = "sec_cypherkey"
 	channels = list("LCZ-Security" = 1, "Security" = 1)
+
+/obj/item/device/encryptionkey/headset_sec_lcz/medic
+	name = "LCZ combat medic security radio encryption key"
+	icon_state = "sec_cypherkey"
+	channels = list("LCZ-Security" = 1, "Security" = 1, "Medical" = 1)
+
+/obj/item/device/encryptionkey/headset_sec_lcz/recon
+	name = "LCZ recontainment unit security radio encryption key"
+	icon_state = "sec_cypherkey"
+	channels = list("LCZ-Security" = 1, "Security" = 1, "HCZ-Security" = 1)
 
 /obj/item/device/encryptionkey/headset_sec_ecz
 	name = "ECZ security radio encryption key"
