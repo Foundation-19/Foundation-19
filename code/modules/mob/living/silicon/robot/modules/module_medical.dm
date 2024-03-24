@@ -44,6 +44,7 @@
 		/obj/item/crowbar,
 		/obj/item/stack/nanopaste,
 		/obj/item/stack/medical/advanced/bruise_pack,
+		/obj/item/stack/medical/advanced/ointment,
 		/obj/item/reagent_containers/dropper
 	)
 	synths = list(

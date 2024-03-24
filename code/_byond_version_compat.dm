@@ -10,11 +10,6 @@
 #endif
 
 
-#if (DM_VERSION == 515 && DM_BUILD >= 1624)
-#warn Your version of BYOND is currently not supported by debugger.
-#warn Please consider downgrading to 515.1623 or lower, or wait for auxtools to support latest BYOND builds.
-#endif
-
 
 /*
 // Keep savefile compatibilty at minimum supported level
