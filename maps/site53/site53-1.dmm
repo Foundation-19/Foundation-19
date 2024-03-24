@@ -6252,7 +6252,9 @@
 /area/site53/lhcz/maintenance)
 "gip" = (
 /obj/structure/table/standard,
-/obj/machinery/chemical_dispenser/bar_coffee/full,
+/obj/machinery/chemical_dispenser/bar_coffee/full{
+	pixel_y = 7
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "giA" = (
@@ -11612,7 +11614,7 @@
 "lJe" = (
 /obj/structure/noticeboard/anomaly,
 /obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/reswing/lowres/Lowerresearchwing)
 "lJv" = (
 /obj/structure/cable/green{
@@ -13160,11 +13162,6 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
@@ -16060,7 +16057,7 @@
 "qei" = (
 /obj/effect/paint_stripe/mauve,
 /obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/reswing/lowres/Anomaly)
 "qep" = (
 /obj/effect/floor_decal/industrial/loading{
@@ -17186,10 +17183,6 @@
 /obj/structure/bed/roller/ironingboard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
-"rnQ" = (
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/prepainted,
-/area/site53/reswing/lowres/Anomaly)
 "rnW" = (
 /obj/machinery/light{
 	dir = 4
@@ -20017,11 +20010,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "uth" = (
@@ -20795,6 +20783,11 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
+"vsU" = (
+/obj/effect/paint_stripe/mauve,
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/reswing/lowres/Lowerresearchwing)
 "vth" = (
 /obj/effect/catwalk_plated,
 /obj/structure/railing/mapped,
@@ -59103,7 +59096,7 @@ uaa
 uaa
 uaa
 oDN
-rqB
+vsU
 nuL
 vHT
 czy
@@ -59360,7 +59353,7 @@ knD
 mXN
 nZi
 azA
-cre
+gOS
 gNB
 bQS
 eCZ
@@ -59617,7 +59610,7 @@ iSI
 mXN
 mXN
 xRp
-cre
+gOS
 umM
 vHT
 czy
@@ -59874,7 +59867,7 @@ bId
 mXN
 mXN
 bId
-cre
+gOS
 umM
 vHT
 czy
@@ -60131,7 +60124,7 @@ ktv
 ktv
 gbO
 ktv
-cre
+gOS
 umM
 rTU
 cre
@@ -60375,7 +60368,7 @@ hIH
 hIH
 hIH
 hIH
-rnQ
+ktv
 dka
 bIz
 vLO
@@ -60388,7 +60381,7 @@ vLO
 vLO
 vLO
 rhA
-cre
+gOS
 gNB
 rTF
 rqB
@@ -60632,7 +60625,7 @@ hIH
 hIH
 hIH
 hIH
-rnQ
+ktv
 tMe
 sUp
 iuE
@@ -60889,7 +60882,7 @@ hIH
 hIH
 hIH
 hIH
-rnQ
+ktv
 nXa
 vEk
 lYE
@@ -61146,7 +61139,7 @@ hIH
 hIH
 hIH
 hIH
-rnQ
+ktv
 fMK
 tvj
 hmy
@@ -61403,7 +61396,7 @@ hIH
 hIH
 hIH
 hIH
-rnQ
+ktv
 pyD
 eEV
 oIk
@@ -61416,7 +61409,7 @@ vpW
 fbQ
 hcU
 vMG
-cre
+gOS
 lXB
 rTU
 cre
@@ -61660,7 +61653,7 @@ hIH
 hIH
 hIH
 hIH
-rnQ
+ktv
 lqR
 qNM
 eaR
@@ -61673,7 +61666,7 @@ ejc
 ejc
 tCV
 kgA
-cre
+gOS
 kms
 vHT
 dfZ
@@ -61918,19 +61911,19 @@ hIH
 hIH
 hIH
 qei
-rnQ
-rnQ
-rnQ
-rnQ
-rnQ
-rnQ
-fDV
-fDV
+ktv
+ktv
+ktv
+ktv
+ktv
+ktv
+ijW
+ijW
 dCe
 ijW
 ijW
 ijW
-fDV
+ijW
 lXB
 vHT
 cre
