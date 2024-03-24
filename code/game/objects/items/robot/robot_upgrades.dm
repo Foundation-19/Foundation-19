@@ -52,16 +52,6 @@
 	desc = "A weird-looking chip with third-party additions crudely soldered in. It feels cheap and chintzy in the hand. Inscribed into the cheap-feeling circuit is the logo of Madhouse Productions, a group that arranges parties and entertainment venues."
 	new_module = "Party"
 
-/obj/item/borg/upgrade/uncertified/lcz
-	name = "Light Containment Zone module"
-	desc = "A chip of circuitry, seems to be used to give a robot a new module."
-	new_module = "Light Containment Security"
-
-/obj/item/borg/upgrade/uncertified/hcz
-	name = "Heavy Containment Zone module"
-	desc = "A chip of circuitry, seems to be used to give a robot a new module."
-	new_module = "Heavy Containment Security"
-
 /obj/item/borg/upgrade/uncertified/combat
 	name = "ancient module"
 	desc = "A well-made but somewhat archaic looking bit of circuitry. The chip is stamped with an insignia: a gun protruding from a stylized fist."

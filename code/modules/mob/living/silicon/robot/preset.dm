@@ -12,48 +12,6 @@
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
-/mob/living/silicon/robot/tall/isd
-	lawupdate = FALSE
-	scrambledcodes = TRUE
-	modtype = "Internal Security"
-	module = /obj/item/robot_module/tall/isd
-	icon_state = "isdrobot"
-	silicon_radio = /obj/item/device/radio/borg/syndicate
-	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
-	cell = /obj/item/cell/infinite
-	pitch_toggle = FALSE
-	req_access = list(ACCESS_MTF)
-
-/mob/living/silicon/robot/tall/isd/googly
-	modtype = "Internal Security Captain"
-	module = /obj/item/robot_module/tall/isd/googly
-	icon_state = "isdgrobot"
-
-/mob/living/silicon/robot/tall/lcz
-	modtype = "Light Containment Security"
-	module = /obj/item/robot_module/tall/lcz
-	icon_state = "lczrobot"
-	silicon_radio = /obj/item/device/radio/borg
-	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
-	cell = /obj/item/cell/high
-	pitch_toggle = FALSE
-	req_access = list(ACCESS_ROBOTICS)
-
-/mob/living/silicon/robot/tall/lcz/captain
-	modtype = "Light Containment Security Captain"
-	module = /obj/item/robot_module/tall/lcz/captain
-	icon_state = "lczcrobot"
-
-/mob/living/silicon/robot/tall/hcz
-	modtype = "Heavy Containment Security"
-	module = /obj/item/robot_module/tall/hcz
-	icon_state = "hczrobot"
-	silicon_radio = /obj/item/device/radio/borg
-	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
-	cell = /obj/item/cell/hyper
-	pitch_toggle = FALSE
-	req_access = list(ACCESS_ROBOTICS)
-
 /mob/living/silicon/robot/combat
 	lawupdate = FALSE
 	scrambledcodes = TRUE
