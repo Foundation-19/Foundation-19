@@ -1244,9 +1244,6 @@
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ RCU";
 	name = "Riot Control Unit Division Armory Shutters Control";
@@ -16194,22 +16191,14 @@
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/scp113)
 "aWw" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+/obj/effect/floor_decal/corner/grey/border{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor,
-/area/site53/ulcz/hallways)
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "aWx" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/cigarettes/bluelady,
@@ -20636,6 +20625,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"bwC" = (
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/bordercorner,
+/obj/structure/sign/scp/safe_scp{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "bwI" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -25393,7 +25392,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
 "fvD" = (
 /obj/machinery/camera/network/entrance,
@@ -30218,14 +30217,13 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/entrance_checkpoint)
 "jsp" = (
-/obj/machinery/door/airlock/science{
-	name = "SCP-529";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/glass/research{
+	name = "SCP-529"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp500{
@@ -35629,7 +35627,6 @@
 /obj/item/ammo_magazine/shotholder/stun,
 /obj/item/ammo_magazine/shotholder/stun,
 /obj/item/ammo_magazine/shotholder/stun,
-/obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "nDL" = (
@@ -36888,7 +36885,6 @@
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 6
 	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "owg" = (
@@ -39495,6 +39491,7 @@
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 10
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "qGl" = (
@@ -40008,6 +40005,9 @@
 "rbl" = (
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 9
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -41830,6 +41830,9 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG");
 	dir = 1;
 	pixel_y = -25
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -46699,6 +46702,9 @@
 /obj/item/gun/projectile/revolver/military/heavy,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/stunshell,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "wDE" = (
@@ -47179,6 +47185,13 @@
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
+"wVf" = (
+/obj/effect/floor_decal/corner/brown/bordercorner,
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "wVg" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -47491,6 +47504,9 @@
 "xgn" = (
 /obj/structure/scp216,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp216)
 "xgI" = (
@@ -53859,7 +53875,7 @@ azA
 aVS
 aVS
 aVS
-aWw
+roz
 aVS
 aVS
 bdf
@@ -62830,7 +62846,7 @@ cFl
 aGM
 aWF
 aGM
-qZT
+bwC
 mMC
 hnr
 sad
@@ -63087,7 +63103,7 @@ bmk
 dDl
 pCH
 afp
-tNo
+cRl
 jsp
 hZq
 hUb
@@ -63344,7 +63360,7 @@ aWe
 aGM
 qlY
 aGM
-uis
+wVf
 mMC
 bho
 qFs
@@ -63882,7 +63898,7 @@ hjP
 kuy
 sAJ
 cjj
-oqd
+aWw
 oqd
 ovE
 uJG
