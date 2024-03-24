@@ -549,7 +549,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/raisa
 
-/obj/item/card/id/junseclvl2lczdivision
+/obj/item/card/id/seclvl2lczdivision
 	name = "security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl2"
@@ -568,7 +568,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 		ACCESS_DCLASS_MEDICAL
 	)
 
-/obj/item/card/id/junseclvl3lczdivision2
+/obj/item/card/id/seclvl3lczdivision2
 	name = "security ID"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"

@@ -207,7 +207,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/card/id/junseclvl2lczdivision
+	id_type = /obj/item/card/id/seclvl2lczdivision
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
@@ -223,7 +223,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/card/id/junseclvl3lczdivision2
+	id_type = /obj/item/card/id/seclvl3lczdivision2
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
