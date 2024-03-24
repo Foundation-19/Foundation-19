@@ -4888,6 +4888,10 @@
 "np" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
+/obj/machinery/camera/network/medbay{
+	c_tag = "Operating Room 3";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
 "nq" = (
@@ -5443,10 +5447,6 @@
 	pixel_x = 24
 	},
 /obj/structure/cable/green,
-/obj/machinery/camera/network/medbay{
-	c_tag = "Operating Room 3";
-	dir = 8
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
 "pM" = (
@@ -7228,6 +7228,13 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
+"zd" = (
+/obj/structure/hygiene/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/medical/surgery/op3)
 "zf" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -10658,10 +10665,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
 "VR" = (
-/obj/structure/hygiene/sink{
-	dir = 4;
-	pixel_x = 11
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
@@ -45947,7 +45950,7 @@ dZ
 pe
 Jh
 KM
-MM
+zd
 VR
 pL
 Mp

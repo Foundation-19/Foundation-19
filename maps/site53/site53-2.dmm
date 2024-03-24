@@ -25571,7 +25571,6 @@
 "ftn" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
-/obj/item/storage/box/beakers/insulated,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchanddevelopment)
 "ftz" = (
@@ -28449,6 +28448,7 @@
 /area/site53/ulcz/maintenance)
 "hGB" = (
 /obj/structure/table/standard,
+/obj/item/storage/box/beakers/insulated,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchanddevelopment)
 "hGF" = (
