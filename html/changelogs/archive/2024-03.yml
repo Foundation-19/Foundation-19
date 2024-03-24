@@ -114,3 +114,7 @@
   - rscadd: Added SCP-347 to humanoid containment
   - rscadd: Added a pair of medhuds to humanoid containment observation
   - imageadd: added SCP-347 icons
+2024-03-24:
+  ChromeFoxxity:
+  - rscadd: Adds Epsilon-9 hardsuits. Adds more flooring, adds another ISD borg, adds
+      a few more fixes.
