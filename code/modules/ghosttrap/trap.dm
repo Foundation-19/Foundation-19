@@ -72,7 +72,7 @@ var/list/ghost_traps
 	else
 		unregister_target(target)
 	
-	valid_targets += target
+	valid_targets |= target
 	for(var/mob/observer/ghost/O in GLOB.player_list)
 		if(!assess_candidate(O, target, FALSE))
 			return
