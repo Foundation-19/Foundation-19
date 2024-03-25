@@ -20818,6 +20818,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
+"bGY" = (
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
+/area/site53/llcz/entrance_checkpoint)
 "bHh" = (
 /obj/machinery/light{
 	dir = 1
@@ -35525,6 +35529,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
+"nAL" = (
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network")
+	},
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "nBh" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/techmaint,
@@ -36387,7 +36400,7 @@
 /area/site53/lowertrams/escape)
 "ofA" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/scp914)
 "ofR" = (
 /obj/machinery/door/blast/shutters{
@@ -40027,7 +40040,7 @@
 /area/site53/lowertrams/maintenance)
 "raR" = (
 /obj/effect/paint_stripe/gray,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/scp914)
 "rbl" = (
 /obj/effect/floor_decal/corner/grey/border{
@@ -61363,7 +61376,7 @@ abZ
 tNo
 afp
 yjA
-afp
+aPp
 tNo
 abZ
 tNo
@@ -61617,7 +61630,7 @@ aIT
 aIT
 rfq
 aVS
-ahO
+nAL
 aGM
 aKq
 aGM
@@ -61874,7 +61887,7 @@ aVS
 aVS
 aVS
 aVS
-qYN
+cQr
 bhq
 aIT
 bhq
@@ -62125,12 +62138,12 @@ evx
 evx
 evx
 azA
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
 aVS
 aVS
 aVS
@@ -62382,18 +62395,18 @@ azA
 azA
 azA
 azA
-uJG
+bGY
 ssq
 pFC
 pFC
 dPU
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
 azA
 azA
 azA
@@ -62639,18 +62652,18 @@ azA
 azA
 azA
 azA
-uJG
+bGY
 cBb
 aVb
 aVb
 bVF
 oSi
-uJG
+bGY
 tRA
 uno
 oiZ
 nDw
-uJG
+bGY
 azA
 azA
 azA
@@ -62891,23 +62904,23 @@ mMC
 azA
 azA
 azA
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
 tcV
 mWd
 mWd
 nSM
 sdM
-uJG
+bGY
 rbl
 hiU
 hiU
 qGc
-uJG
+bGY
 azA
 azA
 azA
@@ -63148,23 +63161,23 @@ mMC
 azA
 azA
 azA
-uJG
+bGY
 xTB
 xfp
 bKJ
 ssS
-uJG
-uJG
+bGY
+bGY
 sBw
 adT
 sBw
-uJG
-uJG
+bGY
+bGY
 aef
 gOM
 rZw
 qXs
-uJG
+bGY
 azA
 azA
 azA
@@ -63405,7 +63418,7 @@ mMC
 azA
 azA
 azA
-uJG
+bGY
 lzp
 aVb
 aVb
@@ -63421,7 +63434,7 @@ pts
 sdE
 mjO
 qob
-uJG
+bGY
 azA
 azA
 azA
@@ -63662,7 +63675,7 @@ mMC
 azA
 azA
 azA
-uJG
+bGY
 kyI
 fyE
 usV
@@ -63678,7 +63691,7 @@ pts
 bUd
 haw
 mnG
-uJG
+bGY
 azA
 azA
 azA
@@ -63919,7 +63932,7 @@ mMC
 azA
 azA
 azA
-uJG
+bGY
 lzp
 aVb
 aVb
@@ -63935,7 +63948,7 @@ cjj
 aWw
 oqd
 ovE
-uJG
+bGY
 azA
 azA
 azA
@@ -64176,23 +64189,23 @@ mMC
 azA
 azA
 azA
-uJG
+bGY
 nOD
 dPA
 dPA
 wDC
-uJG
+bGY
 aTD
 hXG
 aTD
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
 uJG
 uJG
 uJG
@@ -64433,12 +64446,12 @@ mMC
 azA
 azA
 azA
-uJG
-uJG
-uJG
-uJG
-uJG
-uJG
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
 vTy
 hgr
 jOb
