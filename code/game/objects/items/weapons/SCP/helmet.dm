@@ -20,10 +20,10 @@
 
 /obj/item/clothing/head/helmet/scp/security/recon
 	name = "response security helmet"
-	desc = "An extremely durable helmet with 'RECONTAINMENT UNIT' printed on the back."
+	desc = "An extremely durable, and thickened helmet with 'RECONTAINMENT UNIT' printed on the back."
 	icon_state = "reconhelm"
 	body_parts_covered = HEAD|EYES
-	armor = list(melee = 75, bullet = 75, laser = 75,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 45, bullet = 65, laser = 65,energy = 25, bomb = 30, bio = 10, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 	action_button_name = null

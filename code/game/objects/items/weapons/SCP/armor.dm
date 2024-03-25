@@ -45,7 +45,7 @@
 	icon_state = "reconguard"
 	body_parts_covered = UPPER_TORSO
 	cold_protection = UPPER_TORSO
-	armor = list(melee = 75, bullet = 75, laser = 75, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = 45, bullet = 65, laser = 65, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
