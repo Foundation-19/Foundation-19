@@ -163,7 +163,7 @@
 	spawn_positions = 3
 	supervisors = "the Research Director"
 	economic_power = 4
-	requirements = list("Researcher" = 480)
+	requirements = list(EXP_TYPE_SCIENCE = 120)
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist", "Mentalist")
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -206,7 +206,7 @@
 	spawn_positions = 2
 	supervisors = "the Research Director"
 	economic_power = 4
-	requirements = list("Robotics Technician" = 480)
+	requirements = list(EXP_TYPE_SCIENCE = 120)
 	alt_titles = list("Senior Exoskeleton Technician", "Senior Hardsuit Technician")
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -248,7 +248,7 @@
 	spawn_positions = 1
 	supervisors = "the Research Director"
 	economic_power = 4
-	requirements = list("Researcher" = 480)
+	requirements = list(EXP_TYPE_SCIENCE = 120)
 	alt_titles = list("Senior Mentalist")
 	minimal_player_age = 10
 	ideal_character_age = 35
@@ -296,7 +296,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 15
-	requirements = list("Senior Researcher" = 240, EXP_TYPE_SCIENCE = 900)
+	requirements = list(EXP_TYPE_SCIENCE = 840)
 	req_admin_notify = 1
 	supervisors = "the Site Director"
 	alt_titles = list("Chief Science Officer", "Head Researcher")

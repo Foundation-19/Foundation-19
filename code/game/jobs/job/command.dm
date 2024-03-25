@@ -20,7 +20,7 @@
 	access = list()				// see get_access() override
 	minimal_access = list()		// see get_access() override
 
-	requirements = list(EXP_TYPE_COMMAND = 1800)
+	requirements = list(EXP_TYPE_COMMAND = 1200)
 
 /datum/job/captain/get_access()
 	return get_all_site_access()
@@ -77,7 +77,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
 	class = CLASS_B
 	hud_icon = "hudcommsofficer"
-	requirements = list("Communications Technician" = 600)
+	requirements = list(EXP_TYPE_ENGINEERING = 600)
 
 	access = list(
 		ACCESS_SCIENCE_LVL1,
@@ -133,7 +133,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
-	requirements = list(EXP_TYPE_ENGINEERING = 300)
+	requirements = list(EXP_TYPE_ENGINEERING = 120)
 	alt_titles = list(
 		"Communications Programmer",
 		"Communications Dispatcher"
@@ -187,7 +187,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
-	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600, EXP_TYPE_BUR = 60)
+	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600)
 	class = CLASS_B
 	hud_icon = "hud05rep"
 	access = list(
