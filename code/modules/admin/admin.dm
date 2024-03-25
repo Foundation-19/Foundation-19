@@ -101,7 +101,7 @@ var/global/floorIsLava = 0
 			p_age = C.player_age
 			break
 
-	if(!p_age)
+	if(p_age == null)
 		p_age = get_player_age(key)
 
 	dat += "<b>Player age: [p_age ? p_age : "unknown"]</b><br><ul id='notes'>"
