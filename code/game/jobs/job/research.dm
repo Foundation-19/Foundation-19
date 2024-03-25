@@ -7,7 +7,7 @@
 	spawn_positions = 10
 	supervisors = "the Senior Researchers and Research Director"
 	economic_power = 4
-	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher")
+	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Junior Xenobotanist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher")
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/science/juniorscientist
 	class = CLASS_C
@@ -52,7 +52,8 @@
 	access = list(
 		ACCESS_SCI_COMMS,
 		ACCESS_SCIENCE_LVL1,
-		ACCESS_SCIENCE_LVL2
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ROBOTICS
 	)
 	minimal_access = list()
 
@@ -81,7 +82,7 @@
 	supervisors = "the Senior Researchers and Research Director"
 	economic_power = 4
 	requirements = list(EXP_TYPE_SCIENCE = 60)
-	alt_titles = list("Xenobiologist", "Xenoarcheologist")
+	alt_titles = list("Xenobiologist", "Xenoarcheologist", "Xenobotanist", "Junior Mentalist")
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
@@ -132,7 +133,8 @@
 		ACCESS_SCI_COMMS,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
-		ACCESS_SCIENCE_LVL3
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_ROBOTICS
 	)
 	minimal_access = list()
 
@@ -162,7 +164,7 @@
 	supervisors = "the Research Director"
 	economic_power = 4
 	requirements = list("Researcher" = 480)
-	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
+	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist", "Mentalist")
 	minimal_player_age = 7
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/science/seniorscientist
@@ -176,7 +178,8 @@
 		ACCESS_SCIENCE_LVL3,
 		ACCESS_SCIENCE_LVL4,
 		ACCESS_SECURITY_LVL1,
-		ACCESS_RESEARCH
+		ACCESS_RESEARCH,
+		ACCESS_ROBOTICS
 	)
 	minimal_access = list()
 
@@ -216,7 +219,8 @@
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_SCIENCE_LVL3,
-		ACCESS_SCIENCE_LVL4
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_ROBOTICS
 	)
 	minimal_access = list()
 
@@ -234,6 +238,54 @@
 	)
 
 	skill_points = 18
+
+/datum/job/seniormentalist
+	title = "Senior Psychotronics Researcher"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#ad6bad"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Research Director"
+	economic_power = 4
+	requirements = list("Researcher" = 480)
+	alt_titles = list("Senior Mentalist")
+	minimal_player_age = 10
+	ideal_character_age = 35
+	outfit_type = /decl/hierarchy/outfit/job/science/seniormentalist
+	class = CLASS_B
+	hud_icon = "hudseniorresearcher"
+
+	access = list(
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_RESEARCH
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_CHEMISTRY	  = SKILL_TRAINED,
+		SKILL_MEDICAL	  = SKILL_TRAINED,
+	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	)
+
+	max_skill = list(
+		SKILL_CHEMISTRY   = SKILL_MASTER,
+	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
+
+	skill_points = 20
+
+/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
+	if (H.mind?.role_alt_title == "Senior Mentalist")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
+	return ..()
 
 /datum/job/rd
 	title = "Research Director"
@@ -270,7 +322,8 @@
 		ACCESS_ADMIN_LVL3,
 		ACCESS_ADMIN_LVL4,
 		ACCESS_KEYAUTH,
-		ACCESS_RESEARCH
+		ACCESS_RESEARCH,
+		ACCESS_ROBOTICS
 	)
 	minimal_access = list()
 

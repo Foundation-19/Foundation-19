@@ -79,10 +79,26 @@
 	dynamic_lighting = 1
 
 /area/turbolift/site53/logistics
-	name = "lift (Logistics)"
+	name = "lift (Logistics Loading Pad)"
 	lift_floor_label = "Logistics"
 	lift_floor_name = "Logistics"
-	lift_announce_str = "Arriving at Logistics: Locker Rooms, Lobby, Loading Docks."
+	lift_announce_str = "Arriving at Logistics Loading pad: Loading Docks."
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/turbolift/site53/robotlwr
+	name = "lift (Lower Robotics)"
+	lift_floor_label = "Lower Robotics"
+	lift_floor_name = "Lower Robotics"
+	lift_announce_str = "Arriving at Lower Robotics."
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/turbolift/site53/robotupr
+	name = "lift (Upper Robotics)"
+	lift_floor_label = "Upper Robotics"
+	lift_floor_name = "Upper Robotics"
+	lift_announce_str = "Arriving at Upper Robotics."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -999,6 +1015,11 @@
 	icon_state = "surgery"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/medical/surgery/op3
+	name = "\improper Operating Theatre #3"
+	icon_state = "surgery"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/medical/surgery/hall
 	name = "\improper Surgical Hallway"
 	icon_state = "surgery"
@@ -1135,8 +1156,13 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/reswing/roboticsupr
+	name = "\improper Upper Robotics Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/reswing/psionic
-	name = "\improper Psionic Laboratory"
+	name = "\improper Psionic Divison"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -1263,6 +1289,10 @@
 
 /area/site53/science/seniorresearcherb
 	name = "\improper Senior Researcher's Office B"
+	icon_state = "research"
+
+/area/site53/science/seniorresearcherc
+	name = "\improper Senior Researcher's Office C"
 	icon_state = "research"
 
 //Logistics

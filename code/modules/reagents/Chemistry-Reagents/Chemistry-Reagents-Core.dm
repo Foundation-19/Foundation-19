@@ -30,7 +30,7 @@
 
 	heating_products = list(/datum/reagent/coagulated_blood)
 	heating_prod_english = "<span codexlink='coagulated blood (chemical)'>coagulated blood</span>"
-	heating_point = 318
+	heating_point = 51 CELSIUS
 	heating_message = "coagulates and clumps together."
 
 /datum/reagent/blood/initialize_data(newdata)
