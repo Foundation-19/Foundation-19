@@ -20,7 +20,7 @@
 	access = list()				// see get_access() override
 	minimal_access = list()		// see get_access() override
 
-	requirements = list(EXP_TYPE_COMMAND = 1200)
+	requirements = list(EXP_TYPE_COMMAND = 1800)
 
 /datum/job/captain/get_access()
 	return get_all_site_access()
@@ -77,7 +77,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
 	class = CLASS_B
 	hud_icon = "hudcommsofficer"
-	requirements = list(EXP_TYPE_ENGINEERING = 600)
+	requirements = list("Communications Technician" = 360)
 
 	access = list(
 		ACCESS_SCIENCE_LVL1,
@@ -133,7 +133,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
-	requirements = list(EXP_TYPE_ENGINEERING = 120)
+	requirements = list(EXP_TYPE_ENGINEERING = 300)
 	alt_titles = list(
 		"Communications Programmer",
 		"Communications Dispatcher"
@@ -179,7 +179,7 @@
 	title = "Internal Tribunal Department Officer"
 	department = "Civilian"
 	selection_color = "#2f2f7f"
-	department_flag = COM
+	department_flag = COM|BUR
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Tribunal Department"
@@ -187,7 +187,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
-	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600)
+	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600, EXP_TYPE_BUR = 60)
 	class = CLASS_B
 	hud_icon = "hud05rep"
 	access = list(
@@ -229,7 +229,7 @@
 /datum/job/goirep
 	title = "Global Occult Coalition Representative"
 	department = "Command"
-	department_flag = REP
+	department_flag = REP|BUR
 	selection_color = "#2f2f7f"
 	supervisors = "Your respective Group of Interest leaders"
 	total_positions = 1
@@ -242,6 +242,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/civ/gocrep
 	class = CLASS_A
 	hud_icon = "hudgoi"
+	requirements = list(EXP_TYPE_BUR = 30)
 
 	access = list(
 		ACCESS_COM_COMMS,
