@@ -45029,6 +45029,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp012)
+"vkf" = (
+/obj/structure/bed/chair/office/comfy/teal{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "vkJ" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -62654,7 +62660,7 @@ azA
 azA
 bGY
 cBb
-aVb
+vkf
 aVb
 bVF
 oSi
