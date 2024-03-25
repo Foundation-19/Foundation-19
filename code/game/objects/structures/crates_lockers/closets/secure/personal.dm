@@ -44,7 +44,7 @@
 			id_card = istype(id_card) ? id_card : user.GetIdCard()
 			if (id_card)
 				var/list/id_acc = id_card.GetAccess()
-				req_access = id_acc.Copy() | ACCESS_ALL_PERSONAL_LOCKERS
+				req_access = id_acc.Copy()
 				set_owner(id_card.registered_name)
 		else
 			req_access = list()
