@@ -97,7 +97,7 @@ var/global/floorIsLava = 0
 	var/p_age
 	var/key_c = ckey(key)
 	for(var/client/C in GLOB.clients)
-		if(C.ckey == ckey(key_c))
+		if(C.ckey == key_c)
 			p_age = C.player_age
 			break
 
