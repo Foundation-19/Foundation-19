@@ -510,11 +510,6 @@
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
-/obj/machinery/turretid{
-	req_access = list("ACCESS_SECURITY_LEVEL4");
-	pixel_x = 32;
-	name = "Administrative Hallway turret control panel"
-	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/equipmentroom)
 "bT" = (
@@ -750,10 +745,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/machinery/turretid{
-	req_access = list("ACCESS_SECURITY_LEVEL4");
-	name = "Administrative Hallway turret control panel"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
