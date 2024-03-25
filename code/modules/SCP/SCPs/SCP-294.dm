@@ -56,10 +56,18 @@
 	var/list/datum/reagents/reagents_to_fill_from = list()
 	if(!ispath(input_path))
 		return FALSE
+	var/list/datum/globalReagents = list()
+	//Creats a list of reagents by distance
 	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
+		if(!istype(reagent_container.my_atom))
+			continue
+		ADD_SORTED(globalReagents, reagent_container, cmp_distance_reagents_asc)
+
+	//Iterates through that list
+	for(var/datum/reagents/reagent_container in globalReagents)
 		var/amount_contained = reagent_container.get_reagent_amount(input_path)
 		var/turf/reagent_turf = get_turf(reagent_container.my_atom)
-		if(!amount_contained || !reagent_turf || !(reagent_turf.z in GetConnectedZlevels(src.z)))
+		if(!(amount_contained || reagent_container.my_atom.name|| !reagent_turf || !(reagent_turf.z in GetConnectedZlevels(src.z)))
 			continue
 		LAZYADD(reagents_to_fill_from, reagent_container)
 	return reagents_to_fill_from
