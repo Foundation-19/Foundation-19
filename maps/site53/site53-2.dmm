@@ -17123,11 +17123,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/escape)
 "aZy" = (
-/obj/machinery/camera/network/lcz{
-	dir = 8
-	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -20602,6 +20602,11 @@
 	dir = 6
 	},
 /obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light_switch{
+	dir = 1;
+	on = 1;
+	pixel_y = -23
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
 "bwo" = (
@@ -21962,6 +21967,7 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/gun/energy/taser,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "cBb" = (
@@ -26157,6 +26163,7 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/gun/energy/taser,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "gcN" = (
@@ -29175,7 +29182,7 @@
 	id_tag = "SCP914Lock";
 	name = "SCP-914 Containment Chamber Access Shutters Control";
 	pixel_y = 25;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
@@ -35871,7 +35878,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "Confiscationcloset";
 	name = "Confiscation Closet Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	dir = 4;
 	pixel_x = -25
 	},
@@ -38713,6 +38720,26 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
+"pWS" = (
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "Confiscationcloset";
+	name = "Confiscation Closet Lockdown Control";
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/ulcz/scp914)
 "pXb" = (
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 1
@@ -45081,6 +45108,7 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/gun/energy/taser,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "vnK" = (
@@ -45512,6 +45540,7 @@
 	id_tag = "Confiscationcloset";
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
 "vIL" = (
@@ -46638,6 +46667,7 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/gun/energy/taser,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "wDh" = (
@@ -48445,6 +48475,10 @@
 	dir = 10
 	},
 /obj/structure/filingcabinet/chestdrawer,
+/obj/structure/sign/warning/secure_area{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
 "xYA" = (
@@ -52830,7 +52864,7 @@ ofA
 ofA
 nMp
 sct
-nMp
+pWS
 ofA
 azA
 azA
