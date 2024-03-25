@@ -28,6 +28,7 @@ var/list/ghost_traps
 	var/ghost_trap_role = "default ghost trap"
 	var/can_set_own_name = TRUE
 	var/list_as_special_role = FALSE	// If true, this entry will be listed as a special role in the character setup
+	var/list/valid_targets = list()
 
 	var/list/request_timeouts
 	var/datum/species/species_whitelist // If defined, this is the species whitelist required to join
@@ -70,7 +71,8 @@ var/list/ghost_traps
 		GLOB.destroyed_event.register(target, src, TYPE_PROC_REF(/datum/ghosttrap, unregister_target))
 	else
 		unregister_target(target)
-
+	
+	valid_targets |= target
 	for(var/mob/observer/ghost/O in GLOB.player_list)
 		if(!assess_candidate(O, target, FALSE))
 			return
@@ -91,6 +93,10 @@ var/list/ghost_traps
 		var/mob/observer/ghost/candidate = locate(href_list["candidate"]) // BYOND magic.
 		var/mob/target = locate(href_list["target"])                     // So much BYOND magic.
 		if(!target || !candidate)
+			return
+		if(!list_find(valid_targets, target))
+			message_staff("[key_name_admin(usr)] tried to enter a ghost trap with an invalid target ([target]). Possibly href exploiting?")
+			log_admin("[key_name(usr)] tried to enter a ghost trap with an invalid target ([target]). Possibly href exploiting?")
 			return
 		if(candidate != usr)
 			return
