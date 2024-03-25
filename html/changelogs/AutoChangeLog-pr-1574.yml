@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Fix ghost trap href exploit
