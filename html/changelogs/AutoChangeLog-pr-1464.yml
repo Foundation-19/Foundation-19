@@ -1,0 +1,11 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: 'Added a new D-class exclusive antag: The TRADER, who starts off with
+      some (hopefully) valuable goods (sofar cash, duct tape rolls, and iron rods),
+      and desires to barter/work for for other goods.'
+  - rscadd: "Added a new D-class exclusive antag: The INFORMANT, who's secretly trying\
+      \ to rat other prisoners out to the guards."
+  - balance: As a byproduct of the new D-class antags, the likelihood of "regular"
+      antags (e.g. traitors, changelings) spawning is lower
+  - code_imp: General code cleanup in the antag spawning system.
