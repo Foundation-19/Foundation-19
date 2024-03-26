@@ -8,5 +8,5 @@
 	auto_recall_shuttle = FALSE
 	end_on_antag_death = FALSE
 	shuttle_delay = 2
-	antag_tags = list(MODE_REVOLUTIONARY, MODE_LOYALIST)
+	antag_tags = list(MODE_TRADER, MODE_INFORMANT, MODE_REVOLUTIONARY, MODE_LOYALIST)
 	require_all_templates = TRUE
