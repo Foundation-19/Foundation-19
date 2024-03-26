@@ -1,0 +1,5 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - admin: Show Player Info verb/notes should no longer show player age 'unknown'
+      for connected clients

@@ -17,7 +17,7 @@
 		return
 
 	var/mob/living/L = A
-	if(!L.ckey)
+	if(!L.ckey || !L.client)
 		return
 
 	if(area_blurb[L.ckey] > world.time)
@@ -26,7 +26,7 @@
 	if(isnull(L.lastarea) || istype(L.lastarea, type))
 		return
 
-	show_blurb(L, 3 SECONDS, name)
+	show_blurb(L.client, 3 SECONDS, name)
 	area_blurb[L.ckey] = world.time + 600 SECONDS
 	return ..()
 

@@ -74,3 +74,47 @@
   - bugfix: fixed "animosity V2" title screen music label.
   - bugfix: fixed "animosity V2" title screen music link.
   - rscadd: adds "animosity" title screen music.
+2024-03-19:
+  quadbium:
+  - balance: Moved logistics down to the hub, moved logistics hanger next to the site
+      entrance.
+  - rscadd: Added cameras to logistics.
+  - rscadd: Added stairwell and lower floor to research wing
+  - rscadd: Added psionics lab.
+  - rscadd: Added xenoarchaeology storage
+  - rscadd: Added xenobotany lab
+  - rscadd: Added anomaly lab
+  - rscadd: Added anomaly storage
+  - rscadd: Added added 1 anomaly to anomaly storage
+  - rscadd: Added added research offices accessible by lower ranking researchers
+  - rscadd: Added maintinence tunnles to get air and power into lower research wing
+  - rscadd: Added research wing camera network
+  - balance: Moved cameras in research wing to research wing network
+  - rscadd: Added lower LCZ camera network
+  - balance: Moved cameras in lower LCZ into lower LCZ network
+  - rscadd: Added detail to the floors in research
+  - rscadd: Added detail to the floors in logistics
+  - rscadd: Added laptop to Logistics officers office
+  - rscadd: Added mining access to lower research wing
+2024-03-21:
+  Saicchi:
+  - rscadd: keybinds for pointing as a robot
+2024-03-22:
+  Saicchi:
+  - rscadd: Modifiable keybind 'F' to lock facing direction
+  - bugfix: Robots can now use the crematorium
+  - rscadd: Add missing tools to the Surgery Robot toolkit
+  - bugfix: robot surgeons can now do organ surgery
+  Tsurupeta:
+  - bugfix: fixed AI interface buttons.
+  quadbium:
+  - rscadd: Added SCP-347
+  - rscadd: Added a set of SCP-347 eyeballs
+  - rscadd: Added a SCP-347 file
+  - rscadd: Added SCP-347 to humanoid containment
+  - rscadd: Added a pair of medhuds to humanoid containment observation
+  - imageadd: added SCP-347 icons
+2024-03-24:
+  ChromeFoxxity:
+  - rscadd: Adds Epsilon-9 hardsuits. Adds more flooring, adds another ISD borg, adds
+      a few more fixes.

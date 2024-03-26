@@ -147,6 +147,21 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
+"aN" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "aP" = (
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
@@ -195,6 +210,19 @@
 	},
 /turf/simulated/floor,
 /area/supply/dock)
+"bc" = (
+/obj/structure/railing/mapped{
+	dir = 6
+	},
+/obj/structure/flora/pottedplant/minitree{
+	pixel_x = -2;
+	pixel_y = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "be" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -236,13 +264,19 @@
 /turf/simulated/floor/shuttle/black,
 /area/centcom)
 "bk" = (
-/obj/structure/railing/mapped,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/floor/grass{
-	color = "#799c4b";
-	icon = 'icons/turf/jungle.dmi';
-	icon_state = "greygrass"
+/obj/structure/window/phoronreinforced{
+	dir = 1
 	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "bm" = (
 /obj/structure/table/standard,
@@ -303,7 +337,9 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "bC" = (
-/obj/machinery/door/window/southright,
+/obj/machinery/door/window/southright{
+	req_access = list("ACCESS_MTF")
+	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "bF" = (
@@ -354,6 +390,25 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"bT" = (
+/obj/machinery/light,
+/obj/structure/closet/crate/internals,
+/obj/item/tank/emergency/oxygen,
+/obj/item/tank/emergency/oxygen,
+/obj/item/tank/emergency/oxygen,
+/obj/item/tank/emergency/oxygen,
+/obj/item/tank/emergency/oxygen,
+/obj/item/tank/emergency/oxygen,
+/obj/item/tank/emergency/oxygen,
+/obj/item/clothing/mask/breath/emergency,
+/obj/item/clothing/mask/breath/emergency,
+/obj/item/clothing/mask/breath/emergency,
+/obj/item/clothing/mask/breath/emergency,
+/obj/item/clothing/mask/breath/emergency,
+/obj/item/clothing/mask/breath/emergency,
+/obj/item/clothing/mask/breath/emergency,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "bU" = (
 /obj/item/clothing/under/scp/dclass,
 /obj/structure/closet{
@@ -498,7 +553,7 @@
 "cz" = (
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom)
 "cB" = (
@@ -637,6 +692,28 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
+"cW" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "adarch";
+	name = "Archive Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "cY" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -646,6 +723,21 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
+"cZ" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "da" = (
 /obj/structure/sign/warning/secure_area/armory{
 	pixel_x = 30;
@@ -702,6 +794,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
+"dm" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "dn" = (
 /turf/simulated/floor/carpet/green,
 /area/centcom)
@@ -870,6 +974,23 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"dN" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	pixel_x = -5
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	pixel_x = 5
+	},
+/turf/simulated/floor,
 /area/centcom)
 "dO" = (
 /obj/structure/table/reinforced,
@@ -1128,6 +1249,9 @@
 	dir = 9;
 	color = "#272B5B"
 	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = -32
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -1149,6 +1273,20 @@
 "eS" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/centcom/goc)
+"eT" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "eU" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
@@ -1554,6 +1692,9 @@
 	dir = 5;
 	color = "#272B5B"
 	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = 32
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -1868,6 +2009,19 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"hv" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 5;
+	color = "#272B5B"
+	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_x = 32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "hw" = (
 /obj/structure/closet,
 /obj/random/medical,
@@ -2058,6 +2212,8 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10
 	},
+/obj/item/gun/projectile/silenced,
+/obj/item/ammo_magazine/c45m,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -2123,8 +2279,7 @@
 /area/site53/lhcz/scp1102entrance)
 "ij" = (
 /obj/structure/railing/mapped{
-	dir = 1;
-	icon_state = "railing0"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp1102entrance)
@@ -2617,7 +2772,10 @@
 	},
 /area/centcom/chaos)
 "jN" = (
-/obj/structure/grille,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/tram/car1)
 "jO" = (
@@ -2631,7 +2789,10 @@
 	},
 /area/site53/tram/car1)
 "jP" = (
-/obj/structure/grille,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/tram/car1)
 "jQ" = (
@@ -2841,19 +3002,24 @@
 /area/centcom)
 "kx" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/turf/simulated/floor/lino,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "ky" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "kz" = (
 /obj/machinery/button/blast_door{
@@ -2869,10 +3035,9 @@
 /area/site53/tram/car1)
 "kA" = (
 /obj/structure/coatrack,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "kB" = (
@@ -2898,7 +3063,7 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "kF" = (
@@ -2915,18 +3080,16 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "kJ" = (
 /obj/machinery/vending/coffee,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "kK" = (
@@ -2940,7 +3103,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
 "kM" = (
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "kN" = (
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -2970,10 +3136,9 @@
 /area/centcom)
 "kQ" = (
 /obj/structure/bed/chair/office/light,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "kR" = (
@@ -3009,35 +3174,42 @@
 /area/site53/tram/car1)
 "kX" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "kY" = (
 /obj/structure/table/woodentable,
 /obj/random/snack,
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "kZ" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
 	},
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "la" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/flashlight/lamp,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "lb" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/bedsheetbin,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "lc" = (
@@ -3088,26 +3260,29 @@
 /obj/structure/table/steel_reinforced,
 /obj/random/drinkbottle,
 /obj/item/device/megaphone,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "lo" = (
 /obj/structure/table/steel_reinforced,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "lu" = (
 /obj/machinery/light,
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "lv" = (
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -3119,22 +3294,31 @@
 	dir = 8;
 	icon_state = "officechair_white_preview"
 	},
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "lx" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/snack,
 /obj/random/snack,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
+"ly" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/table/standard,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "lz" = (
 /obj/machinery/light/small,
 /obj/structure/table/reinforced,
@@ -3219,7 +3403,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lO" = (
@@ -3231,7 +3415,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lP" = (
@@ -3244,7 +3428,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lS" = (
@@ -3276,7 +3460,7 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "lZ" = (
@@ -3314,7 +3498,7 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "mj" = (
@@ -3325,10 +3509,9 @@
 /obj/effect/landmark{
 	name = "Nuclear-Code"
 	},
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "mk" = (
@@ -3392,7 +3575,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "mx" = (
@@ -3439,6 +3622,13 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
+"mD" = (
+/obj/effect/floor_decal/corner/red/bordercorner,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -3536,8 +3726,7 @@
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "mtfext";
-	name = "Dispatch Center External Lockdown Control";
-	req_access = list("ACCESS_MTF")
+	name = "Dispatch Center External Lockdown Control"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
@@ -3608,8 +3797,45 @@
 	id_tag = "05blastdoor2";
 	name = "Council Offices Blast Door"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/simulated/floor,
+/area/centcom)
+"nf" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "adarch";
+	name = "Archive Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "nh" = (
 /obj/structure/table/standard,
@@ -3845,10 +4071,9 @@
 /obj/random/smokes,
 /obj/random/smokes,
 /obj/random/smokes,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "nL" = (
@@ -3859,6 +4084,20 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"nM" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "nN" = (
 /obj/effect/landmark{
@@ -3998,8 +4237,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "epsilon9";
 	name = "Epsilon-9 Armory Access Shutters Control";
-	pixel_y = 23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = 23
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -4038,11 +4276,11 @@
 /area/centcom)
 "nW" = (
 /obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+	dir = 1
 	},
 /turf/unsimulated/floor{
-	icon_state = "snow"
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "nX" = (
@@ -4210,7 +4448,10 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 4
 	},
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "on" = (
 /obj/structure/table/standard,
@@ -4238,6 +4479,18 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/carpet/green,
+/area/centcom)
+"ot" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "ou" = (
 /obj/structure/table/rack,
@@ -4322,10 +4575,9 @@
 /area/centcom)
 "ow" = (
 /obj/machinery/vending/cigarette,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "ox" = (
@@ -4362,6 +4614,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10;
 	color = "#272B5B"
+	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = -32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -4428,6 +4683,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 6;
 	color = "#272B5B"
+	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -4535,6 +4793,10 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"pc" = (
+/obj/machinery/door/airlock/glass/command,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "pd" = (
 /obj/machinery/vending/medical{
 	dir = 4;
@@ -4790,6 +5052,21 @@
 /obj/item/stamp/chameleon,
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
+"py" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "pz" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -4801,6 +5078,24 @@
 	icon = 'icons/turf/flooring/techfloor.dmi';
 	icon_state = "techfloor_grid"
 	},
+/area/centcom)
+"pD" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "pE" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -4990,10 +5285,8 @@
 	},
 /area/centcom)
 "qg" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 10
 	},
 /turf/unsimulated/floor/grass{
 	color = "#799c4b";
@@ -5023,6 +5316,16 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"qp" = (
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/tram/maintrain)
 "qq" = (
 /turf/unsimulated/beach/coastline{
 	density = 1;
@@ -5032,6 +5335,21 @@
 "qr" = (
 /turf/unsimulated/beach/coastline,
 /area/beach)
+"qu" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "qy" = (
 /obj/structure/closet/crate/secure/biohazard{
 	req_access = null
@@ -5047,10 +5365,6 @@
 /area/centcom)
 "qz" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /turf/unsimulated/floor/grass{
 	color = "#799c4b";
 	icon = 'icons/turf/jungle.dmi';
@@ -5251,6 +5565,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"rl" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "snow"
+	},
+/area/centcom)
 "rp" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/unsimulated/floor{
@@ -5367,9 +5690,12 @@
 	},
 /area/centcom)
 "rB" = (
-/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /turf/unsimulated/floor{
-	icon_state = "snow"
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "rC" = (
@@ -5477,6 +5803,16 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"rF" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/obj/structure/handrail{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "rG" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/t12,
@@ -5942,6 +6278,21 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"sw" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "sy" = (
 /obj/structure/table/standard,
 /obj/item/folder/blue,
@@ -6086,6 +6437,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"sB" = (
+/obj/structure/window/reinforced/polarized,
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "sD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/proteinbar,
@@ -6097,7 +6455,18 @@
 	id_tag = "isdlock";
 	name = "Internal Security Lockdown Shutters"
 	},
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "sH" = (
@@ -6183,6 +6552,16 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"sU" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/item/device/radio/intercom{
+	pixel_x = 20;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "sV" = (
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 8
@@ -6648,25 +7027,7 @@
 	color = "#561919";
 	dir = 5
 	},
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/box/machinegun,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -6846,6 +7207,35 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"tU" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
+"tV" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/obj/structure/handrail{
+	dir = 4
+	},
+/obj/structure/sign/warning/moving_parts{
+	dir = 4;
+	pixel_x = -35
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "tW" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -6862,6 +7252,21 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"tX" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "tZ" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -7050,6 +7455,9 @@
 	color = "#d5a66e"
 	},
 /area/centcom)
+"ur" = (
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "uu" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -7075,6 +7483,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
+"uB" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "uC" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier{
@@ -7087,17 +7499,19 @@
 	},
 /area/centcom)
 "uG" = (
-/obj/effect/floor_decal/borderfloor{
+/obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "uJ" = (
 /obj/structure/closet/crate,
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "uK" = (
@@ -7146,6 +7560,11 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"vh" = (
+/obj/machinery/door/airlock/hatch,
+/obj/effect/shuttle_landmark/train/central,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "vi" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#C40000"
@@ -7195,7 +7614,7 @@
 /obj/item/clothing/under/ert,
 /obj/item/clothing/under/ert,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 8
+	dir = 10
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -7228,7 +7647,7 @@
 /obj/item/clothing/under/ert,
 /obj/item/clothing/under/ert,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 4
+	dir = 6
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -7254,6 +7673,17 @@
 	name = "water"
 	},
 /area/space)
+"vt" = (
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor,
+/area/site53/tram/maintrain)
 "vu" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/scp/m4a1,
@@ -7402,6 +7832,23 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
+"wb" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "we" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#2B0F42";
@@ -7499,11 +7946,32 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "wr" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
 /obj/machinery/door/blast/regular{
 	id_tag = "theadmin";
 	name = "The Administrator's Office Lockdown Blast Door"
 	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ws" = (
@@ -7558,17 +8026,15 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "wy" = (
-/obj/item/rig/ert/engineer,
 /obj/structure/table/rack,
-/obj/item/storage/backpack/dufflebag/firefighter,
 /obj/item/storage/firstaid/fire,
 /obj/item/material/twohanded/fireaxe,
-/obj/item/flamethrower/full,
-/obj/item/tank/phoron,
 /obj/item/grenade/chem_grenade/incendiary,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
 	},
+/obj/item/reagent_containers/glass/beaker/bluespace,
+/obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -7581,6 +8047,38 @@
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
 	},
+/area/centcom)
+"wE" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#561919";
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/plain/red{
+	dir = 4
+	},
+/obj/machinery/turretid/stun{
+	req_access = list("ACCESS_MTF");
+	pixel_x = 32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
+"wF" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "wG" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -7615,11 +8113,19 @@
 	},
 /area/centcom)
 "wY" = (
-/obj/effect/wingrille_spawn/reinforced/full,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "mtfext";
 	name = "Dispatch Center External Lockdown"
 	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "wZ" = (
@@ -7699,7 +8205,7 @@
 /area/centcom)
 "xy" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "MTF Base"
+	department = "Mobile Task Force Dispatch Control Center"
 	},
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/border,
@@ -7709,8 +8215,22 @@
 	},
 /area/centcom)
 "xB" = (
-/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
+/area/centcom)
+"xC" = (
+/turf/simulated/floor/reinforced,
 /area/centcom)
 "xD" = (
 /obj/structure/bed/chair/padded/blue,
@@ -7739,6 +8259,28 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"xM" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "mtfext";
+	name = "Dispatch Center External Lockdown"
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "xO" = (
 /obj/effect/floor_decal/corner/green/bordercorner,
 /turf/unsimulated/floor{
@@ -7766,6 +8308,12 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"xS" = (
+/obj/structure/sign/greencross{
+	pixel_y = 4
+	},
+/turf/unsimulated/wall,
 /area/centcom)
 "xT" = (
 /obj/structure/window/basic,
@@ -8117,8 +8665,7 @@
 "yO" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 9
 	},
 /turf/unsimulated/floor{
 	icon_state = "snow"
@@ -8273,8 +8820,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "omega1";
 	name = "Omega-1 Armory Access Shutters Control";
-	pixel_y = 23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = 23
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -8314,6 +8860,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"yX" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CabinShutters"
+	},
+/turf/unsimulated/floor/plating,
+/area/site53/tram/maintrain)
 "yY" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/paper_bin{
@@ -8321,6 +8874,19 @@
 	},
 /obj/item/pen,
 /turf/simulated/floor/carpet/red,
+/area/centcom)
+"yZ" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#561919";
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 26
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
 /area/centcom)
 "ze" = (
 /obj/structure/bed/chair/office/comfy/red{
@@ -8347,6 +8913,23 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"zk" = (
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "zl" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -8450,6 +9033,16 @@
 	icon_state = "lino"
 	},
 /area/centcom)
+"zG" = (
+/obj/machinery/chem_master,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#b95a00"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "zH" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/folder/red,
@@ -8522,6 +9115,8 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
+/obj/item/gun/projectile/silenced,
+/obj/item/ammo_magazine/c45m,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -8541,6 +9136,22 @@
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
+"As" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 8
+	},
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/machinery/conveyor_switch{
+	desc = "A control switch which you assume operates some part of the train...but you're not sure...";
+	name = "Control Switch"
+	},
+/obj/item/device/radio/phone{
+	pixel_y = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Av" = (
 /obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/carpet/blue2,
@@ -8560,6 +9171,23 @@
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
+"AB" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8;
+	color = "#272B5B"
+	},
+/obj/effect/floor_decal/spline/plain/red{
+	dir = 8
+	},
+/obj/machinery/turretid/stun{
+	req_access = list("ACCESS_MTF");
+	pixel_x = -32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "AD" = (
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta,
 /obj/item/clothing/head/helmet/scp/eta,
@@ -8573,6 +9201,37 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"AF" = (
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
+"AH" = (
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "AK" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -8659,7 +9318,10 @@
 /area/centcom)
 "AU" = (
 /obj/structure/closet/crate/bin,
-/turf/simulated/floor/lino,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/linoleum.dmi';
+	icon_state = "lino"
+	},
 /area/centcom/chaos)
 "AW" = (
 /obj/structure/table/rack,
@@ -8717,6 +9379,15 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet/green,
 /area/centcom/chaos)
+"BA" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "BB" = (
 /obj/structure/sign/warning/secure_area/armory{
 	pixel_x = -30;
@@ -8796,8 +9467,8 @@
 /area/centcom)
 "BW" = (
 /obj/structure/table/standard,
-/obj/item/paper_bin{
-	pixel_y = 3
+/obj/machinery/photocopier/faxmachine{
+	department = "Internal Tribunal Department Headquarters"
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
@@ -8814,7 +9485,9 @@
 	color = "#561919";
 	dir = 1
 	},
-/obj/item/clothing/head/beret/isd,
+/obj/machinery/photocopier/faxmachine{
+	department = "Internal Security Department Headquarters"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -8902,6 +9575,15 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"Cs" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/handrail{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Ct" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/white/border{
@@ -8957,6 +9639,25 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"CA" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 4
+	},
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/machinery/conveyor_switch{
+	pixel_y = 10;
+	desc = "A control switch which you assume operates some part of the train...but you're not sure...";
+	name = "Control Switch"
+	},
+/obj/machinery/conveyor_switch{
+	pixel_y = 3;
+	desc = "A control switch which you assume operates some part of the train...but you're not sure...";
+	name = "Control Switch"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "CB" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919"
@@ -8965,13 +9666,24 @@
 	dir = 1;
 	id_tag = "isdarm";
 	name = "Internal Security Armory Access Control";
-	pixel_y = -23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = -23
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
+/area/centcom)
+"CC" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "CH" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -9239,6 +9951,8 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
+/obj/item/rig/ert/engineer/e9,
+/obj/item/extinguisher/mini,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -9258,6 +9972,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"DB" = (
+/obj/machinery/status_display{
+	pixel_y = 30
+	},
+/obj/structure/handrail,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "DC" = (
 /obj/machinery/vending/coffee,
 /obj/effect/floor_decal/corner/white/border{
@@ -9267,6 +9988,15 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"DD" = (
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_y = -32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "DI" = (
@@ -9499,10 +10229,9 @@
 	},
 /area/centcom)
 "Es" = (
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "Et" = (
@@ -9531,25 +10260,25 @@
 /area/centcom)
 "Eu" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5
 	},
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
+/obj/item/gun/projectile/automatic/scp/vector,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -9563,6 +10292,21 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"Ey" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "EA" = (
 /obj/machinery/door/airlock/vault{
@@ -9860,6 +10604,10 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Fb" = (
+/obj/machinery/door/airlock/hatch,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Fc" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#ADA493";
@@ -9869,6 +10617,23 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"Fe" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Ff" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -9938,6 +10703,27 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Fs" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 4
+	},
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/machinery/button/blast_door{
+	pixel_y = -10;
+	id_tag = "CabinShutters";
+	name = "Cabin Shutters"
+	},
+/obj/machinery/button/blast_door{
+	name = "Rear Shutters";
+	id_tag = "RearShutters"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Fu" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
@@ -9951,10 +10737,9 @@
 /obj/structure/skele_stand{
 	dir = 8
 	},
-/turf/simulated/floor/lino{
+/turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotile_light";
-	color = "#555E6B"
+	icon_state = "monotiledark"
 	},
 /area/centcom/chaos)
 "FA" = (
@@ -10085,8 +10870,6 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
-/obj/structure/table/standard,
-/obj/item/folder/blue,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -10139,6 +10922,24 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Gz" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "GL" = (
 /obj/structure/bed/chair/office/comfy/green{
 	dir = 4
@@ -10158,6 +10959,23 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"GP" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	pixel_x = 5
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	pixel_x = -5
+	},
+/turf/simulated/floor/reinforced,
 /area/centcom)
 "GR" = (
 /obj/machinery/vending/cola{
@@ -10211,6 +11029,26 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"Hj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	pixel_x = 5
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	pixel_x = -5
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/tram/maintrain)
 "Hm" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/unsimulated/floor{
@@ -10242,9 +11080,6 @@
 	prices = list();
 	dir = 4
 	},
-/obj/structure/sign/greencross{
-	pixel_y = 32
-	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -10275,7 +11110,6 @@
 	},
 /area/centcom)
 "Hv" = (
-/turf/unsimulated/floor/sky,
 /area/space)
 "Hw" = (
 /obj/structure/table/rack,
@@ -10423,11 +11257,22 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "HW" = (
-/obj/effect/wingrille_spawn/reinforced/full,
 /obj/machinery/door/blast/shutters{
 	id_tag = "adarch";
 	name = "Archive Lockdown Shutters";
 	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
 /turf/unsimulated/floor/plating,
 /area/centcom)
@@ -10603,11 +11448,6 @@
 /obj/item/reagent_containers/glass/bottle/chloralhydrate,
 /obj/item/storage/box/syringegun,
 /obj/item/storage/box/syringes,
-/obj/machinery/button/blast_door{
-	id_tag = "omega1";
-	name = "Omega-1 Armory Access Shutters Control";
-	pixel_y = 23
-	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
 	},
@@ -10635,10 +11475,10 @@
 	},
 /area/centcom)
 "ID" = (
-/obj/machinery/portable_atmospherics/canister/phoron,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -10679,11 +11519,16 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"IL" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
+"IJ" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 4
 	},
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
+"IL" = (
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/shoes/swat,
@@ -10700,6 +11545,13 @@
 /obj/effect/floor_decal/corner/white/border{
 	color = "#32441C";
 	dir = 1
+	},
+/obj/structure/closet{
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -10727,6 +11579,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"IO" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Transfer Train"
+	},
+/turf/unsimulated/floor/plating,
+/area/site53/tram/maintrain)
 "IP" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/food/drinks/bottle/small/alcoholfreebeer,
@@ -10767,8 +11625,7 @@
 	dir = 4;
 	id_tag = "epsilon11";
 	name = "Epsilon-11 Armory Access Shutters Control";
-	pixel_x = -23;
-	req_access = list("ACCESS_MTF")
+	pixel_x = -23
 	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -10825,6 +11682,13 @@
 	icon_state = "concrete"
 	},
 /area/centcom)
+"Jj" = (
+/obj/structure/fireaxecabinet{
+	pixel_y = 30
+	},
+/obj/structure/handrail,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Jk" = (
 /obj/structure/bed/chair/office/comfy/green,
 /turf/unsimulated/floor{
@@ -10890,6 +11754,12 @@
 	},
 /turf/simulated/floor,
 /area/supply/dock)
+"Jt" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Ju" = (
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/linoleum.dmi';
@@ -10944,6 +11814,18 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/effect/floor_decal/corner/green/border{
 	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
+"JG" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -11012,6 +11894,10 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"JW" = (
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor,
+/area/site53/tram/maintrain)
 "JZ" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#E5511B";
@@ -11044,22 +11930,29 @@
 	},
 /area/centcom)
 "Ki" = (
-/obj/item/rig/ert/engineer,
 /obj/structure/table/rack,
-/obj/item/storage/backpack/dufflebag/firefighter,
 /obj/item/storage/firstaid/fire,
 /obj/item/material/twohanded/fireaxe,
-/obj/item/flamethrower/full,
-/obj/item/tank/phoron,
 /obj/item/grenade/chem_grenade/incendiary,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
 	},
+/obj/item/reagent_containers/glass/beaker/bluespace,
+/obj/item/flamethrower/full/loaded,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
 /area/centcom)
+"Kk" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 8
+	},
+/obj/item/modular_computer/console/preset/security{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Km" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/mk9,
@@ -11504,8 +12397,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "eta10";
 	name = "Eta-10 Armory Access Shutters Control";
-	pixel_y = 23;
-	req_access = list("ACCESS_MTF")
+	pixel_y = 23
 	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
@@ -11531,10 +12423,6 @@
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
 "Lb" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
-	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/shoes/swat,
@@ -11551,6 +12439,13 @@
 /obj/effect/floor_decal/corner/white/border{
 	color = "#32441C";
 	dir = 9
+	},
+/obj/structure/closet{
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -11662,6 +12557,32 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Ln" = (
+/obj/machinery/light,
+/obj/structure/closet/crate,
+/obj/item/device/flashlight/flare,
+/obj/item/device/flashlight/flare,
+/obj/item/device/flashlight/flare,
+/obj/item/device/flashlight/flare,
+/obj/item/device/flashlight/flare,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/random/powercell,
+/obj/random/powercell,
+/obj/random/powercell,
+/obj/item/bedsheet,
+/obj/item/bedsheet,
+/obj/item/bedsheet,
+/obj/item/bedsheet,
+/obj/item/book{
+	name = "Crisis Management 101";
+	desc = "Overall pretty uninformative, the back cover summed it up pretty well with Step 1: Don't panic."
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Lq" = (
 /obj/machinery/door/airlock/vault{
 	name = "Archive";
@@ -11778,6 +12699,14 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"LQ" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon_state = "snow"
+	},
+/area/centcom)
 "LV" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/unsimulated/floor{
@@ -11848,8 +12777,26 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"Mf" = (
+/obj/machinery/light,
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/handrail{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Mi" = (
-/obj/effect/wingrille_spawn/reinforced/full,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "Mo" = (
@@ -11917,13 +12864,42 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
-/obj/structure/table/standard,
-/obj/item/book/manual/scp/fra,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/c45m,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
 /area/centcom)
+"MB" = (
+/obj/structure/closet/crate/bin,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "ME" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -12210,19 +13186,7 @@
 	color = "#561919";
 	dir = 6
 	},
-/obj/structure/table/rack,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/baton/loaded,
-/obj/item/melee/telebaton,
-/obj/item/melee/telebaton,
-/obj/item/melee/telebaton,
-/obj/item/melee/telebaton,
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -12272,12 +13236,39 @@
 	icon_state = "greygrass"
 	},
 /area/centcom)
+"NF" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "NK" = (
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
+"NL" = (
+/obj/machinery/status_display{
+	pixel_y = 30
+	},
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "NO" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#561919";
@@ -12295,8 +13286,12 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9
 	},
-/obj/structure/table/standard,
-/obj/random/clipboard,
+/obj/structure/table/rack,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
+/obj/item/book/manual/scp/fra,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -12456,6 +13451,15 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"Oq" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/handrail{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Os" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 8
@@ -12466,6 +13470,19 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"Ot" = (
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/sign/warning/moving_parts{
+	pixel_y = 32
+	},
+/turf/simulated/floor,
+/area/site53/tram/maintrain)
 "Ow" = (
 /obj/structure/closet/secure_closet/guard/scout/sergeant,
 /obj/effect/floor_decal/corner/white/border{
@@ -12490,6 +13507,13 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"OE" = (
+/obj/structure/window/reinforced/polarized,
+/obj/machinery/computer/station_alert/all{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "OG" = (
 /obj/machinery/door/airlock/vault{
 	name = "Omega-1 Preperations";
@@ -12543,16 +13567,16 @@
 	},
 /area/centcom)
 "OM" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/structure/window/phoronreinforced{
+	dir = 1
 	},
-/turf/unsimulated/floor/grass{
-	color = "#799c4b";
-	icon = 'icons/turf/jungle.dmi';
-	icon_state = "greygrass"
+/obj/structure/window/phoronreinforced,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "ON" = (
 /obj/effect/floor_decal/corner/red/mono,
@@ -12562,28 +13586,70 @@
 	},
 /area/centcom)
 "OO" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/box/machinegun,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
 	dir = 4
 	},
-/obj/structure/table/standard,
-/obj/machinery/recharger,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
 /area/centcom)
 "OQ" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/machinery/door/airlock/glass/mining{
+	name = "Logistics Hangar";
+	req_access = list("ACCESS_MTF")
 	},
-/turf/unsimulated/floor/grass{
-	color = "#799c4b";
-	icon = 'icons/turf/jungle.dmi';
-	icon_state = "greygrass"
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
+"OW" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/closet/crate,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/device/gps,
+/obj/item/device/gps,
+/obj/item/storage/mrebag/menu5,
+/obj/item/storage/mrebag/menu5,
+/obj/item/storage/mrebag/menu4,
+/obj/item/storage/mrebag/menu4,
+/obj/item/storage/mrebag/menu3,
+/obj/item/storage/mrebag/menu3,
+/obj/item/storage/mrebag/menu2,
+/obj/item/storage/mrebag/menu2,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "OX" = (
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 10
@@ -12647,6 +13713,26 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Pj" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 8
+	},
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/machinery/button/windowtint{
+	pixel_y = 8
+	},
+/obj/machinery/pager{
+	pixel_y = -2;
+	name = "Rear Connector Lock";
+	desc = "A button that connects something to the rear? It's probably not in use."
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Pl" = (
 /obj/structure/table/standard,
 /obj/item/folder/red,
@@ -12708,8 +13794,7 @@
 /area/centcom)
 "PC" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 8
 	},
 /turf/unsimulated/floor/grass{
 	color = "#799c4b";
@@ -12812,6 +13897,21 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"PP" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "PQ" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#635636";
@@ -12847,6 +13947,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
+"PU" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "PV" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 6
@@ -12879,6 +13985,14 @@
 "PZ" = (
 /turf/simulated/floor,
 /area/centcom)
+"Qa" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/wood.dmi';
+	icon_state = "wood";
+	color = "#543c30"
+	},
+/area/centcom)
 "Qb" = (
 /obj/machinery/door/airlock/vault{
 	name = "Internal Tribunal Court Security";
@@ -12890,6 +14004,15 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/techfloor.dmi';
 	icon_state = "techfloor_grid"
+	},
+/area/centcom)
+"Qe" = (
+/obj/structure/railing/mapped{
+	dir = 9
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "Qg" = (
@@ -12905,6 +14028,19 @@
 "Qi" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
+"Qk" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 9;
+	color = "#272B5B"
+	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_x = -32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "Ql" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1;
@@ -12916,10 +14052,6 @@
 	},
 /area/centcom)
 "Qm" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
-	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/shoes/swat,
@@ -12935,6 +14067,13 @@
 /obj/item/material/knife/combat,
 /obj/effect/floor_decal/corner/white/border{
 	color = "#32441C"
+	},
+/obj/structure/closet{
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -12998,7 +14137,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom)
 "QC" = (
@@ -13022,6 +14161,16 @@
 /obj/effect/floor_decal/corner/white/border{
 	color = "#E5511B";
 	dir = 6
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
+"QF" = (
+/obj/machinery/chemical_dispenser/ert,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#b95a00"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -13132,6 +14281,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
+"QU" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_burned{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "QZ" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#635636";
@@ -13148,10 +14309,22 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "Rc" = (
-/obj/structure/reagent_dispensers/water_cooler,
+/obj/machinery/photocopier/faxmachine{
+	department = "Ethics Committee Headquarters"
+	},
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
+	},
+/area/centcom)
+"Rd" = (
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
 	},
 /area/centcom)
 "Rh" = (
@@ -13286,80 +14459,60 @@
 /turf/simulated/floor,
 /area/supply/dock)
 "Ru" = (
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/scp/m16_mag/ext,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
 	},
 /obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/scp/vectormag,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -13378,6 +14531,36 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"Rx" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "05blastdoor2";
+	name = "Council Offices Blast Door"
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/simulated/floor,
 /area/centcom)
 "Ry" = (
 /obj/structure/table/standard,
@@ -13490,9 +14673,6 @@
 	dir = 10;
 	color = "#272B5B"
 	},
-/obj/structure/sign/greencross{
-	pixel_y = -25
-	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -13563,21 +14743,46 @@
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
 "Sa" = (
-/obj/structure/closet/secure_closet/guard/ntf,
-/obj/item/clothing/head/beret/scp,
-/obj/item/gun/projectile/revolver/mateba,
+/obj/structure/closet/secure_closet/guard/ntf{
+	icon_locked = "mtfsenior1";
+	icon_off = "mtfsenioroff";
+	icon_state = "mtfsenior1";
+	icon_closed = "mtfsenior";
+	name = "Task Force Leader's locker"
+	},
 /obj/item/melee/baton/loaded,
 /obj/item/material/knife/combat,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/clothing/head/beret/mtf/omega,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"Sb" = (
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "isdlock";
+	name = "Internal Security Lockdown Shutters"
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Sf" = (
 /obj/structure/table/standard,
@@ -13774,7 +14979,7 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
-/obj/item/book/manual/scp/fra,
+/obj/random/clipboard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -13803,6 +15008,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"ST" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 8
+	},
+/obj/item/modular_computer/console/preset/aislot/research{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "SV" = (
 /obj/machinery/door/airlock/vault{
 	name = "Auxiliary Armory";
@@ -13916,6 +15130,31 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Tp" = (
+/obj/structure/window/reinforced/polarized,
+/obj/machinery/computer/shuttle_control/emergency{
+	dir = 1;
+	name = "Train Control System";
+	machine_desc = "A simple control system for small train systems, allowing automated movement from one navigation point to another.";
+	shuttle_tag = "Foundation Main Train"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
+"Tv" = (
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "Tx" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#00BCBC";
@@ -13963,12 +15202,41 @@
 /obj/effect/shuttle_landmark/supply/centcom,
 /turf/simulated/floor,
 /area/supply/dock)
+"TI" = (
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/tram/maintrain)
+"TL" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "TN" = (
 /turf/simulated/floor,
 /area/supply/dock)
 "TO" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
+	},
+/obj/machinery/porta_turret/crescent{
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -13993,6 +15261,18 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"TU" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "TV" = (
 /obj/structure/table/woodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -14015,10 +15295,32 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"TY" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "mtfext";
+	name = "Dispatch Center External Lockdown"
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom)
 "Ua" = (
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/unsimulated/wall,
 /area/centcom)
+"Ub" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Uk" = (
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
@@ -14134,6 +15436,8 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 10
 	},
+/obj/item/rig/ert/engineer/e9,
+/obj/item/extinguisher/mini,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -14159,8 +15463,11 @@
 /area/centcom)
 "UP" = (
 /obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "mobile task force wardrobe"
+	icon_state = "tacticalarm";
+	name = "mobile task force wardrobe";
+	icon_closed = "tacticalarm";
+	icon_locked = "tacticalarm1";
+	icon_off = "tacticalarmoff"
 	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
@@ -14204,7 +15511,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom)
 "UW" = (
@@ -14226,6 +15533,25 @@
 	icon_state = "techfloor_grid"
 	},
 /area/site53/tram/goc1)
+"UY" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/closet/crate/med_crate,
+/obj/item/stack/medical/advanced/ointment,
+/obj/item/stack/medical/advanced/ointment,
+/obj/item/stack/medical/advanced/ointment,
+/obj/item/stack/medical/advanced/ointment,
+/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/splint,
+/obj/item/stack/medical/splint,
+/obj/item/storage/pill_bottle/paracetamol,
+/obj/item/storage/pill_bottle/paracetamol,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "UZ" = (
 /obj/structure/table/rack,
 /obj/item/device/binoculars,
@@ -14270,7 +15596,8 @@
 /area/centcom)
 "Vo" = (
 /obj/machinery/door/airlock/vault{
-	name = "Workshop"
+	name = "Workshop";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/techfloor.dmi';
@@ -14375,6 +15702,15 @@
 	icon_state = "tile_full"
 	},
 /area/centcom)
+"VJ" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/table/standard,
+/obj/item/folder/blue,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "VK" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#C40000";
@@ -14419,8 +15755,7 @@
 /area/centcom)
 "VT" = (
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 8
 	},
 /turf/unsimulated/floor{
 	icon_state = "snow"
@@ -14449,11 +15784,21 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
 	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "tile_full"
 	},
 /area/centcom)
+"Wa" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "RearShutters"
+	},
+/turf/unsimulated/floor/plating,
+/area/site53/tram/maintrain)
 "Wb" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 6
@@ -14558,6 +15903,16 @@
 	dir = 1;
 	color = "#272B5B"
 	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
+"Wt" = (
+/obj/structure/reagent_dispensers/fueltank{
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
@@ -14698,6 +16053,16 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"WX" = (
+/obj/machinery/light,
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/handrail{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "WY" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -14779,6 +16144,18 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Xg" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/handrail{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Xi" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9;
@@ -14807,6 +16184,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Xp" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Xs" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/hydroponics,
@@ -14815,6 +16199,17 @@
 	icon_state = "concrete"
 	},
 /area/centcom)
+"Xu" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table/standard,
+/obj/item/toy/plushie/kitten{
+	name = "Conductor Whiskers";
+	desc = "A plushie of a cute kitten! This one means business. Tickets please!"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "Xv" = (
 /obj/structure/table/standard,
 /obj/item/implantcase/death_alarm,
@@ -14851,6 +16246,20 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"XC" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/white/border{
+	color = "#561919";
+	dir = 1
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Administrative Department Headquarters"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
 "XD" = (
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -14880,6 +16289,10 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"XL" = (
+/obj/machinery/vending/soda,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "XO" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/unsimulated/floor{
@@ -14905,9 +16318,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "XS" = (
-/obj/effect/shuttle_landmark/escape_pod/out,
-/turf/simulated/floor,
-/area/centcom)
+/obj/effect/paint_stripe/green,
+/turf/simulated/wall/prepainted,
+/area/site53/tram/maintrain)
 "XU" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
@@ -14937,17 +16350,35 @@
 	},
 /area/centcom)
 "Yg" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /obj/effect/floor_decal/corner/orange{
 	dir = 6
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "tile_full"
 	},
+/area/centcom)
+"Yj" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "mtfext";
+	name = "Dispatch Center External Lockdown"
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Yq" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -14962,6 +16393,20 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
+/area/centcom)
+"Yr" = (
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "Yt" = (
 /obj/structure/table/standard,
@@ -14997,7 +16442,7 @@
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "steel_monotile"
+	icon_state = "monotile"
 	},
 /area/centcom/chaos)
 "YB" = (
@@ -15036,6 +16481,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"YJ" = (
+/obj/structure/window/reinforced/polarized{
+	dir = 4
+	},
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/maintrain)
 "YL" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -15781,24 +17235,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
 tq
 tq
 tq
@@ -15983,24 +17437,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Xa
 dJ
@@ -16185,24 +17639,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 dU
 gp
@@ -16214,10 +17668,10 @@ eI
 tq
 zz
 uV
-sG
+Sb
 Ab
 JU
-sG
+Sb
 zz
 uV
 tq
@@ -16387,24 +17841,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 so
 rS
@@ -16461,7 +17915,7 @@ uK
 uK
 uK
 uO
-xB
+wF
 tF
 ON
 PX
@@ -16589,24 +18043,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 tq
 Gt
@@ -16791,24 +18245,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 FK
 ks
@@ -16865,7 +18319,7 @@ KZ
 uK
 KZ
 Uo
-xB
+TL
 Fm
 ON
 PX
@@ -16993,24 +18447,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Tm
 gp
@@ -17067,7 +18521,7 @@ Cx
 uK
 zK
 Uo
-xB
+ot
 oM
 yI
 XD
@@ -17195,24 +18649,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Cb
 gp
@@ -17269,7 +18723,7 @@ uK
 uK
 uK
 uK
-xB
+ot
 oM
 ON
 HN
@@ -17397,24 +18851,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Tm
 gp
@@ -17456,21 +18910,21 @@ tq
 tq
 tq
 tq
-xB
-xB
+AF
+PP
 Cr
-xB
-xB
+wb
+AF
 tq
 tq
-xB
+PP
 In
-xB
-xB
-xB
+wb
+AF
+PP
 XK
-xB
-xB
+wb
+AF
 tq
 tq
 yx
@@ -17599,27 +19053,27 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Ry
-Ej
+wE
 dR
 Id
 OD
@@ -17638,7 +19092,7 @@ tq
 xd
 gp
 eE
-xB
+qu
 ev
 Jb
 Jb
@@ -17656,7 +19110,7 @@ Jb
 Jb
 Jb
 Ci
-xB
+wF
 np
 LZ
 LZ
@@ -17801,24 +19255,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 tq
 tq
@@ -18003,24 +19457,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 rw
 Ng
@@ -18042,7 +19496,7 @@ tq
 xd
 gp
 eE
-xB
+TL
 nc
 QA
 QA
@@ -18060,7 +19514,7 @@ QA
 QA
 QA
 zv
-xB
+TL
 cR
 Jh
 Jh
@@ -18205,26 +19659,26 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 tq
-Ab
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+tq
+yZ
 gp
 qZ
 xU
@@ -18407,26 +19861,26 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 tq
-Ab
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+tq
+yZ
 gp
 CB
 tq
@@ -18609,24 +20063,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 tG
 OO
@@ -18648,7 +20102,7 @@ tq
 xd
 gp
 eE
-Mi
+OM
 nE
 gp
 wx
@@ -18683,7 +20137,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+tq
 ab
 ab
 ab
@@ -18811,22 +20265,6 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 tq
 tq
 tq
@@ -18834,9 +20272,25 @@ tq
 tq
 tq
 tq
-wr
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tU
 Mr
-wr
+Fe
 tq
 wu
 gp
@@ -18850,7 +20304,7 @@ tq
 xd
 gp
 eE
-Mi
+OM
 Dv
 gp
 et
@@ -19013,22 +20467,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Ra
 DY
@@ -19052,8 +20506,8 @@ tq
 xd
 gp
 eE
-Mi
-Dv
+OM
+XC
 gp
 gp
 gp
@@ -19215,22 +20669,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 tO
 Sp
@@ -19254,7 +20708,7 @@ tq
 vV
 gp
 eE
-Mi
+bk
 cI
 gp
 Ph
@@ -19417,22 +20871,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Sp
 kN
@@ -19482,15 +20936,15 @@ Nx
 Nx
 Nx
 Nn
-OQ
-OM
+ZC
+WT
 qz
-OQ
-OQ
-nW
-nW
-nW
-nW
+ZC
+ZC
+ZA
+ZA
+ZA
+ZA
 tq
 ab
 ab
@@ -19619,22 +21073,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Sp
 xf
@@ -19658,7 +21112,7 @@ tq
 xd
 gp
 eE
-Mi
+pD
 NZ
 gp
 Pm
@@ -19683,16 +21137,16 @@ ab
 Nx
 Nx
 ZC
-NC
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+ZC
+Qe
+rB
+rB
+rB
+rB
+rB
+rB
+rB
+rB
 tq
 ab
 ab
@@ -19821,22 +21275,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 HO
 FN
@@ -19885,8 +21339,8 @@ Nx
 Nx
 ZA
 ZA
-rB
-Rr
+ZA
+nW
 Uk
 Uk
 Uk
@@ -20023,22 +21477,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Xy
 Ob
@@ -20062,7 +21516,7 @@ tq
 ay
 gp
 eE
-Mi
+TL
 It
 NO
 ME
@@ -20087,8 +21541,8 @@ Nx
 ZA
 ZC
 ZA
-bk
-Rr
+WT
+nW
 Uk
 Uk
 Uk
@@ -20225,22 +21679,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Op
 Sp
@@ -20267,16 +21721,16 @@ zv
 tq
 HW
 Lq
-HW
-HW
-HW
+cW
+nf
+nf
 tq
 tq
 tw
 tq
-Mi
-Mi
-Mi
+Yr
+Yr
+Yr
 tq
 tq
 ab
@@ -20289,8 +21743,8 @@ Nx
 ZC
 ZA
 WT
-NC
-Rr
+ZC
+nW
 Uk
 Uk
 Uk
@@ -20427,22 +21881,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
 Mp
 Sp
@@ -20465,7 +21919,7 @@ tq
 tq
 ne
 Gk
-ne
+Rx
 tq
 FF
 Ju
@@ -20491,8 +21945,8 @@ Nx
 ZC
 ZA
 ZA
-rB
-Rr
+ZA
+nW
 Uk
 Uk
 Uk
@@ -20629,22 +22083,22 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
 tq
 vE
 vP
@@ -20693,8 +22147,8 @@ Nx
 Nx
 Nx
 Nn
-rB
-Rr
+ZA
+nW
 Rr
 Rr
 Rr
@@ -20895,13 +22349,13 @@ ab
 Nx
 Nx
 ZA
-rB
-kO
+ZA
+nW
 yO
 VT
 PC
 VT
-yO
+rl
 qg
 Rr
 Rr
@@ -21097,16 +22551,16 @@ ab
 ab
 Nx
 Nx
-rB
-kO
+ZA
+nW
+LQ
+ZC
 ZA
 ZC
-ZA
 ZC
-ZC
-ZC
-PC
-PC
+NC
+Rr
+Rr
 tq
 ab
 ab
@@ -21307,8 +22761,8 @@ tq
 tq
 tq
 tq
-tq
-tq
+OQ
+OQ
 tq
 tq
 tq
@@ -21865,7 +23319,7 @@ Rr
 Rr
 tq
 sd
-qE
+Wt
 sv
 mB
 na
@@ -22077,8 +23531,8 @@ gp
 gp
 gp
 gp
-gp
-Mi
+Ba
+wF
 xr
 gp
 Ba
@@ -22279,7 +23733,7 @@ gp
 gp
 gp
 gp
-gp
+Rd
 XX
 jK
 gp
@@ -22299,7 +23753,7 @@ tq
 tq
 xB
 oT
-xB
+zk
 tq
 tq
 tq
@@ -22482,7 +23936,7 @@ rY
 rY
 Nf
 uj
-Mi
+Tv
 xr
 gp
 Ba
@@ -22684,7 +24138,7 @@ gp
 gp
 gp
 gp
-Mi
+ot
 xr
 gp
 Ba
@@ -22886,7 +24340,7 @@ gp
 gp
 gp
 gp
-Mi
+ot
 xr
 gp
 Ay
@@ -23088,19 +24542,19 @@ AW
 AW
 DN
 DN
-Mi
+wF
 xr
 gp
 zg
 Vg
 Ie
 gp
-gp
+ur
 AN
 ep
 SS
-gp
-gp
+QF
+zG
 gp
 Jp
 tq
@@ -23289,7 +24743,7 @@ gp
 gp
 gp
 gp
-gp
+mD
 XX
 jK
 gp
@@ -23331,10 +24785,10 @@ Rr
 Wc
 Rr
 Rr
-Mi
-Mi
-Mi
-Mi
+eT
+nM
+nM
+nM
 tq
 tq
 ab
@@ -23491,8 +24945,8 @@ gp
 gp
 gp
 gp
-gp
-Mi
+Ba
+TL
 xr
 gp
 Ba
@@ -23532,8 +24986,8 @@ uh
 Rr
 Ji
 Rr
-Mi
-Mi
+eT
+TU
 Hu
 PQ
 EL
@@ -23734,7 +25188,7 @@ xX
 Rr
 vC
 Rr
-Mi
+dm
 rU
 BL
 zL
@@ -23936,7 +25390,7 @@ aA
 Rr
 uh
 Rr
-Mi
+dm
 jA
 WU
 gp
@@ -24138,7 +25592,7 @@ uh
 Rr
 aw
 Rr
-Mi
+dm
 Dx
 gp
 gp
@@ -24311,8 +25765,8 @@ gp
 Hb
 Xv
 SL
-gp
-gp
+ly
+VJ
 gp
 TB
 lh
@@ -24490,12 +25944,12 @@ Rr
 Rr
 Rr
 tq
-tq
-Mi
-Mi
+xS
+Yr
+xB
 Ns
-Mi
-tq
+zk
+xS
 tq
 UZ
 gp
@@ -24556,29 +26010,6 @@ ab
 ab
 ab
 ab
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
 ab
 ab
 ab
@@ -24589,6 +26020,29 @@ ab
 ab
 ab
 ab
+ab
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
 ab
 ab
 ab
@@ -24690,7 +26144,7 @@ Uk
 uA
 Rr
 Rr
-Rr
+DD
 tq
 tq
 Hp
@@ -24720,7 +26174,7 @@ SQ
 Vp
 PV
 tq
-Ob
+Qa
 Ob
 Ob
 Ob
@@ -24758,6 +26212,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -24780,17 +26245,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -24893,7 +26347,7 @@ LY
 Rr
 Rr
 Rr
-wY
+Yj
 eN
 yB
 gp
@@ -24923,9 +26377,9 @@ tq
 tq
 tq
 tq
-Mi
+xB
 pz
-Mi
+zk
 tq
 tq
 WZ
@@ -24960,6 +26414,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -24982,17 +26447,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -25102,9 +26556,9 @@ gp
 gp
 gp
 vX
-xB
-xo
-yH
+wF
+Qk
+AB
 yH
 yH
 yH
@@ -25129,14 +26583,14 @@ yH
 Li
 yH
 ED
-Mi
+cZ
 En
 gp
 gp
 gp
 gp
 Ye
-Mi
+sw
 jW
 gp
 Ye
@@ -25162,6 +26616,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -25184,17 +26649,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -25297,7 +26751,7 @@ Rr
 Rr
 Rr
 Rr
-wY
+xM
 En
 gp
 gp
@@ -25364,6 +26818,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -25386,17 +26851,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -25506,8 +26960,8 @@ gp
 gp
 gp
 vX
-xB
-dG
+aN
+hv
 qP
 eB
 qP
@@ -25533,14 +26987,14 @@ qP
 qP
 Fj
 FU
-Mi
+Ey
 En
 gp
 gp
 gp
 gp
 Ye
-Mi
+py
 jW
 gp
 Ye
@@ -25549,9 +27003,9 @@ Eb
 Eb
 Eb
 GR
-Mi
+CC
 Vt
-Mi
+CC
 Ds
 gp
 PG
@@ -25566,6 +27020,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -25588,17 +27053,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -25701,7 +27155,7 @@ pr
 Rr
 Rr
 Rr
-wY
+TY
 gs
 lc
 gp
@@ -25715,9 +27169,9 @@ SV
 tq
 tq
 tq
-xB
+NF
 oO
-xB
+AH
 tq
 tq
 tq
@@ -25751,9 +27205,9 @@ Eb
 Eb
 Eb
 up
-Mi
+CC
 ZC
-Mi
+CC
 QS
 gp
 qn
@@ -25768,6 +27222,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -25790,17 +27255,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -25902,7 +27356,7 @@ Uk
 uA
 es
 Rr
-Rr
+DD
 tq
 tq
 bX
@@ -25970,6 +27424,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -25992,17 +27457,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -26107,9 +27561,9 @@ Rr
 Rr
 tq
 tq
-xB
+Gz
 Cu
-xB
+AH
 tq
 tq
 tq
@@ -26172,6 +27626,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -26194,17 +27659,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -26374,6 +27828,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -26396,17 +27861,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -26576,6 +28030,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -26598,17 +28063,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -26756,7 +28210,7 @@ UN
 yF
 cz
 VQ
-Mi
+tX
 qJ
 gp
 gp
@@ -26778,6 +28232,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -26800,17 +28265,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -26980,6 +28434,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -27002,17 +28467,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27182,6 +28636,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -27204,17 +28669,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27384,6 +28838,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -27406,17 +28871,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27521,9 +28975,9 @@ Rr
 Rr
 tq
 MV
+JG
 TO
-TO
-TO
+JG
 Wl
 uo
 tq
@@ -27586,6 +29040,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -27608,17 +29073,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27783,6 +29237,17 @@ tq
 tq
 tq
 tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+ab
+ab
 ab
 ab
 ab
@@ -27810,17 +29275,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27985,6 +29439,17 @@ tq
 tq
 tq
 tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+ab
+ab
 ab
 ab
 ab
@@ -28012,17 +29477,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28186,12 +29640,23 @@ PZ
 PZ
 PZ
 PZ
+PZ
+PZ
+PZ
+PZ
+xC
+xC
+xC
+xC
+xC
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -28214,17 +29679,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28388,12 +29842,23 @@ PZ
 PZ
 PZ
 PZ
+PZ
+PZ
+PZ
+PZ
+xC
+xC
+xC
+xC
+xC
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -28416,17 +29881,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28556,46 +30010,57 @@ tq
 tq
 tq
 ve
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+dN
+XS
+XS
+Wa
+Wa
+XS
+XS
 XS
 PZ
 PZ
+XS
+XS
+XS
+IO
+XS
+XS
+XS
+XS
+XS
+IO
+XS
+XS
+XS
+XS
+yX
+yX
+yX
+XS
+XS
 PZ
 PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+XS
+XS
+Pj
+As
+ST
+Kk
+XS
+Hj
+GP
+GP
+GP
+GP
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -28618,17 +30083,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28759,45 +30213,56 @@ yE
 tq
 ve
 PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+Wa
+bc
+Jt
+Xp
+Oq
+WX
+XS
+Ot
+vt
+XS
+NL
+tV
+Ub
+Xg
+WX
+XS
+NL
+rF
+Ub
+UY
+bT
+XS
+NL
+Jt
+Jt
+Jt
+WX
+XS
+Ot
+vt
+XS
+DB
+Ub
+Ub
+PU
+Ub
+sB
+xC
+xC
+xC
+xC
+xC
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -28820,17 +30285,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28961,45 +30415,56 @@ ys
 tq
 ve
 PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+Wa
+XL
+Ub
+Ub
+Ub
+Ub
+Fb
+JW
+JW
+Fb
+Ub
+Ub
+Ub
+Ub
+Ub
+vh
+Ub
+Ub
+Ub
+Ub
+Ub
+Fb
+Ub
+Ub
+Ub
+Ub
+Ub
+Fb
+JW
+JW
+pc
+Ub
+Ub
+Ub
+Ub
+uB
+Tp
+xC
+xC
+xC
+xC
+xC
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -29022,17 +30487,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -29163,45 +30617,56 @@ yE
 tq
 ve
 PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+Wa
+Xu
+PU
+MB
+Cs
+Mf
+XS
+qp
+TI
+XS
+QU
+PU
+sU
+PU
+Mf
+XS
+BA
+PU
+sU
+OW
+Ln
+XS
+BA
+PU
+sU
+PU
+Mf
+XS
+qp
+TI
+XS
+Jj
+Ub
+Ub
+Jt
+Ub
+OE
+xC
+xC
+xC
+xC
+xC
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -29224,17 +30689,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -29364,46 +30818,57 @@ tq
 tq
 tq
 ve
+dN
+XS
+XS
+Wa
+Wa
+XS
+XS
+XS
 PZ
 PZ
+XS
+XS
+yX
+XS
+yX
+XS
+XS
+XS
+yX
+XS
+yX
+XS
+XS
+XS
+yX
+XS
+yX
+XS
+XS
 PZ
 PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+XS
+XS
+Fs
+CA
+IJ
+YJ
+XS
+Hj
+GP
+GP
+GP
+GP
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -29426,17 +30891,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -29600,12 +31054,23 @@ PZ
 PZ
 PZ
 PZ
+PZ
+PZ
+PZ
+PZ
+xC
+xC
+xC
+xC
+xC
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -29628,17 +31093,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -29802,12 +31256,23 @@ PZ
 PZ
 PZ
 PZ
+PZ
+PZ
+PZ
+PZ
+xC
+xC
+xC
+xC
+xC
 ve
 ab
 ab
 ab
 ab
 ab
+ab
+ab
 UQ
 vj
 vj
@@ -29830,17 +31295,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -30005,6 +31459,17 @@ tq
 tq
 tq
 tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+ab
+ab
 ab
 ab
 ab
@@ -30032,17 +31497,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -30163,9 +31617,9 @@ tq
 tq
 tq
 tq
-xB
+NF
 vJ
-xB
+AH
 tq
 tq
 tq
@@ -30207,6 +31661,17 @@ tq
 tq
 tq
 tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+ab
+ab
 ab
 ab
 ab
@@ -30234,17 +31699,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -30414,6 +31868,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -30436,17 +31901,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -30616,6 +32070,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -30638,17 +32103,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -30818,6 +32272,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -30840,17 +32305,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -31020,6 +32474,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -31042,17 +32507,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -31222,6 +32676,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -31244,17 +32709,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -31424,6 +32878,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -31446,17 +32911,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -31576,11 +33030,11 @@ tq
 tq
 tq
 tq
-xB
-xB
+AF
+NF
 dS
-xB
-xB
+AH
+AF
 tq
 tq
 tq
@@ -31626,6 +33080,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -31648,17 +33113,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -31828,6 +33282,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -31850,17 +33315,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -32030,6 +33484,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -32052,17 +33517,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -32232,6 +33686,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -32254,17 +33719,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -32434,6 +33888,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -32456,17 +33921,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -32636,6 +34090,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -32658,17 +34123,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -32838,6 +34292,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -32860,17 +34325,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -33040,6 +34494,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -33062,17 +34527,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -33242,6 +34696,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -33264,17 +34729,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -33444,6 +34898,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 UQ
 vj
 vj
@@ -33466,17 +34931,6 @@ vj
 vj
 vj
 vj
-UQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -33646,29 +35100,6 @@ ab
 ab
 ab
 ab
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
-UQ
 ab
 ab
 ab
@@ -33679,6 +35110,29 @@ ab
 ab
 ab
 ab
+ab
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
+UQ
 ab
 ab
 ab

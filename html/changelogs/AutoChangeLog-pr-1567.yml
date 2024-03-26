@@ -1,0 +1,30 @@
+author: quadbium
+delete-after: true
+changes:
+  - rscadd: Adds shutters to lower research mining access, controllable from R&D or
+      the RD's office
+  - rscadd: Electrifies the lower research external windows
+  - rscadd: Adds third Senior Researcher's office
+  - balance: Moved anomaly storage to underneath the robotics elevator
+  - rscadd: Adds windoor/tables to most labs
+  - rscadd: Expands psionics division
+  - rscadd: Expands AIC lab, with a place to build AIC units
+  - rscadd: Adds chem fridge and closet to research Chemistry
+  - rscadd: Adds elevator and ladder to robotics
+  - rscadd: Adds two robo-tech deluxe vending machines to robotics
+  - rscadd: Slightly enlarges robotics OR, adds holopad and IV drip
+  - rscadd: Adds 3 cell chargers to robotics
+  - rscadd: Adds shutters to robotics charging to improve ease of access
+  - rscadd: Adds temporary access terminal to robotics
+  - rscadd: Adds a vending machine and water cooler to research lobby
+  - rscadd: adds a pneumatic disposals pipe leading from xenobio to SCP-2347-3 deliveries
+      room
+  - rscadd: adds Disposals pipe leading from logistics storage to SCP-2347-3 deliveries
+      room
+  - balance: Moves robotics R&D to upper robotics
+  - rscdel: Removes destructive analyzer from robotics
+  - rscadd: Adds third OR to medical, with attached robotics access
+  - rscadd: Replaces command NutriMax with sweetMAX
+  - rscadd: Adds xenobotany job alt titles
+  - rscadd: Adds junior mentalist (without guaranteed latency) for researcher
+  - rscadd: Adds mentalist (without guaranteed latency) for Senior researcher
