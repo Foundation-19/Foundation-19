@@ -23564,6 +23564,7 @@
 /obj/item/gun/projectile/revolver/military/heavy,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/stunshell,
+/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "dPF" = (
@@ -36024,6 +36025,7 @@
 /obj/item/gun/projectile/revolver/military/heavy,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/stunshell,
+/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "nOJ" = (
@@ -44234,10 +44236,7 @@
 /area/site53/ulcz/scp151)
 "usV" = (
 /obj/structure/table/reinforced,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "uty" = (
@@ -46754,6 +46753,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "wDE" = (
