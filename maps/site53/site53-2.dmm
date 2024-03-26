@@ -15991,11 +15991,6 @@
 /area/site53/lhcz/hczguardgear)
 "aVy" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -34935,6 +34930,14 @@
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/site53/surface/bunker)
+"mvO" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/checkequip)
 "mvZ" = (
 /obj/machinery/light{
 	dir = 4
@@ -37534,11 +37537,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
 "oni" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
@@ -38352,6 +38350,11 @@
 "oTb" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/red,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "oTj" = (
@@ -42165,6 +42168,19 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"rQj" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/checkequip)
 "rQx" = (
 /obj/machinery/door/airlock/multi_tile/glass/research{
 	dir = 8;
@@ -45496,6 +45512,11 @@
 /area/site53/llcz/entrance_checkpoint)
 "uty" = (
 /obj/effect/floor_decal/corner/red/border,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "utJ" = (
@@ -48940,11 +48961,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
 "xjd" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
@@ -70531,14 +70547,14 @@ tMm
 bKj
 aUt
 isA
-wVj
+rQj
 oTb
-aMS
-aMS
-aMS
-aMS
-aMS
-aMS
+mvO
+mvO
+mvO
+mvO
+mvO
+mvO
 uty
 xfQ
 pox
