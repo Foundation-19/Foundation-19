@@ -953,6 +953,11 @@
 	icon_state = "atmos"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/engineering/atmosext
+	name = "\improper External Atmospherics"
+	icon_state = "atmos"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/engineering/primaryhallway
 	name = "\improper Engineering Hallway"
 	icon_state = "engineering_foyer"

@@ -1220,7 +1220,7 @@
 "dA" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "dB" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood/mahogany,
@@ -3521,7 +3521,7 @@
 	use_power = 1
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "lj" = (
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
@@ -3809,7 +3809,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "nh" = (
 /obj/structure/closet/secure_closet/guard/ez,
 /turf/simulated/floor/tiled/dark,
@@ -3988,6 +3988,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
 "om" = (
@@ -4055,7 +4060,7 @@
 /area/site53/uez/conference)
 "oG" = (
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "oH" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -4075,7 +4080,7 @@
 	dir = 8
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "pb" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -4334,7 +4339,7 @@
 	dir = 8
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "qE" = (
 /obj/structure/table/steel,
 /obj/machinery/button/blast_door{
@@ -4764,6 +4769,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"tu" = (
+/obj/machinery/power/apc{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "tv" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 4
@@ -4881,6 +4896,12 @@
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
+"uD" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "uH" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -5042,7 +5063,7 @@
 	dir = 1
 	},
 /turf/simulated/open,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "vE" = (
 /obj/machinery/papershredder,
 /obj/machinery/light,
@@ -5909,13 +5930,18 @@
 	dir = 9
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "AB" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/scrubbers{
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 8
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "AC" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -6591,7 +6617,7 @@
 /obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "FT" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light{
@@ -7008,7 +7034,7 @@
 	dir = 6
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "Ji" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/blast_door{
@@ -7051,7 +7077,7 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "JE" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small/red{
@@ -7099,13 +7125,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uez/commandpanicbunker)
-"JV" = (
-/obj/structure/railing/mapped,
-/obj/machinery/atmospherics/valve{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/site53/surface/surface)
 "JY" = (
 /obj/structure/bed,
 /obj/structure/curtain/open/bed,
@@ -7318,7 +7337,7 @@
 	dir = 5
 	},
 /turf/simulated/open,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "Lq" = (
 /obj/structure/window/reinforced,
 /obj/machinery/light{
@@ -7527,7 +7546,7 @@
 "MC" = (
 /obj/machinery/atmospherics/unary/vent_pump/siphon/on,
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "MG" = (
 /obj/structure/bed/chair/comfy/red{
 	dir = 1;
@@ -7913,6 +7932,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
+"Pd" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "Ph" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -8267,11 +8295,15 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "RH" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/scrubbers{
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 1
 	},
+/obj/machinery/alarm{
+	pixel_y = 23;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "RI" = (
 /obj/structure/closet/secure_closet/scpscience/directorofscience,
 /obj/item/folder,
@@ -8574,9 +8606,9 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "Tx" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/obj/machinery/atmospherics/valve,
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "Ty" = (
 /obj/machinery/flasher{
 	id_tag = "EZBrigFlash";
@@ -8938,6 +8970,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"VM" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "VP" = (
 /obj/machinery/light{
 	dir = 8
@@ -9070,10 +9108,15 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "WM" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Maintenance"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor,
 /area/site53/maintenance/upper_surface)
 "WP" = (
@@ -9194,11 +9237,11 @@
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower)
 "XA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 10
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/site53/engineering/atmosext)
 "XB" = (
 /obj/machinery/vitals_monitor,
 /turf/simulated/floor/tiled/white,
@@ -39008,7 +39051,7 @@ hk
 xv
 fz
 xv
-oG
+VM
 MC
 FS
 hZ
@@ -39779,9 +39822,9 @@ hk
 xv
 hL
 xv
-oG
-oG
-JV
+tu
+MC
+FS
 hZ
 hZ
 hZ
@@ -40807,7 +40850,7 @@ hk
 xv
 wx
 xv
-RH
+Pd
 lh
 dA
 hZ
@@ -41064,7 +41107,7 @@ hk
 xv
 wx
 xv
-RH
+uD
 lh
 Jg
 hZ
@@ -47018,8 +47061,8 @@ qY
 hZ
 hZ
 hZ
-hZ
-hZ
+qY
+qY
 WQ
 WQ
 WQ
