@@ -17,7 +17,7 @@ var/list/nuke_disks = list()
 	end_on_antag_death = FALSE
 	var/nuke_off_station = 0 //Used for tracking if the syndies actually haul the nuke to the station
 	var/syndies_didnt_escape = 0 //Used for tracking if the syndies got the shuttle off of the z-level
-	antag_tags = list(MODE_MERCENARY)
+	antag_tags = list(MODE_TRADER, MODE_INFORMANT, MODE_MERCENARY)
 	cinematic_icon_states = list(
 		"intro_nuke" = 35,
 		"summary_nukewin",
