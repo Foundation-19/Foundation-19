@@ -1091,6 +1091,11 @@
 	icon_state = "engineering_storage"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/engineering/secstorage
+	name = "\improper Secure Engineering Storage"
+	icon_state = "engineering_storage"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/engineering/janitorial
 	name = "\improper Auxiliary Engineering Storage"
 	icon_state = "janitor"
