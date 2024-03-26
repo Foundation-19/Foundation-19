@@ -1528,11 +1528,11 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/reswing/psionic)
 "aeZ" = (
-/obj/structure/table/standard,
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1
 	},
 /obj/machinery/cell_charger,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/psionic)
 "afb" = (
@@ -23031,7 +23031,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "dqe" = (
-)
+,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/uhcz/hallways)
 "dre" = (
 /obj/structure/ladder,
 /turf/simulated/floor,
@@ -24975,6 +24980,15 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
+"eRn" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "eSG" = (
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/dice,
@@ -33482,12 +33496,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "lFb" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 5
-	},
 /obj/structure/filingcabinet,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
@@ -34164,6 +34178,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/hallways)
+"mgC" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 8
+	},
+/obj/structure/table/rack,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/obj/item/grenade/light,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/entrance_checkpoint)
 "mgZ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -44527,12 +44554,12 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/ulcz/scp999)
 "tUf" = (
-/obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/floor_decal/corner/research/border{
 	dir = 5
 	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/psionic)
 "tUq" = (
@@ -64165,7 +64192,7 @@ azA
 bGY
 xTB
 xfp
-bKJ
+mgC
 ssS
 bGY
 bGY
@@ -64942,7 +64969,7 @@ pZa
 qZh
 fqQ
 fqQ
-hjP
+eRn
 kuy
 sAJ
 cjj
