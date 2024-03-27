@@ -200,7 +200,7 @@
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
 	if (H.mind?.role_alt_title == "Mentalist")
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
-		supervisors = "the Research Director and the Senior Senior Mentalist"
+		supervisors = "the Research Director and the Senior Mentalist"
 	return ..()
 
 /datum/job/seniorroboticist
