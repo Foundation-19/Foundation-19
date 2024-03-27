@@ -67,10 +67,13 @@
 	for(var/datum/reagents/reagent_container in globalReagents)
 		var/amount_contained = reagent_container.get_reagent_amount(input_path)
 		var/turf/reagent_turf = get_turf(reagent_container.my_atom)
-		if(!(amount_contained || reagent_container.my_atom.name|| !reagent_turf || !(reagent_turf.z in GetConnectedZlevels(src.z)))
+		if(!amount_contained || !reagent_turf || !(reagent_turf.z in GetConnectedZlevels(src.z)))
 			continue
 		LAZYADD(reagents_to_fill_from, reagent_container)
 	return reagents_to_fill_from
+
+/obj/machinery/scp294/proc/find_reagents_to_fill_from(container_name)
+	//todo
 
 ///Adds reagent we want to passed cup from list made in find_reagents_to_fill_from
 /obj/machinery/scp294/proc/add_reagent_to_cup(input_path, obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D, reagents_to_fill_from)
@@ -128,6 +131,9 @@
 			if(findtext(chosen_reagen_text, chem_name))
 				chosen_reagent = possible_reagent
 				break
+
+	var/list/reagents_to_fill_from = list();
+	if(!chosen_reagent)
 
 	if(!chosen_reagent || (chosen_reagent in blacklist))
 		balloon_alert(user, "OUT OF RANGE")
