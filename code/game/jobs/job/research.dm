@@ -197,6 +197,12 @@
 
 	skill_points = 20
 
+/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
+	if (H.mind?.role_alt_title == "Mentalist")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
+		supervisors = "the Research Director and the Senior Senior Mentalist"
+	return ..()
+
 /datum/job/seniorroboticist
 	title = "Senior Robotics Technician"
 	department = "Science"
@@ -240,16 +246,16 @@
 	skill_points = 18
 
 /datum/job/seniormentalist
-	title = "Senior Psychotronics Researcher"
+	title = "Senior Mentalist"
 	department = "Science"
 	department_flag = SCI
-	selection_color = "#ad6bad"
+	selection_color = "#633d63"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Research Director"
 	economic_power = 4
 	requirements = list(EXP_TYPE_SCIENCE = 480)
-	alt_titles = list("Senior Mentalist")
+	alt_titles = list("Senior Mentalist-R", "Senior Mentalist-C")
 	minimal_player_age = 10
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/science/seniormentalist
@@ -283,8 +289,14 @@
 	skill_points = 20
 
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist")
-		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
+	if (H.mind?.role_alt_title == "Senior Mentalist-R")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
+		outfit_type = /decl/hierarchy/outfit/job/science/seniormentalist/redaction
+		supervisors = "the Research Director and the Chief Medical Officer"
+	if (H.mind?.role_alt_title == "Senior Mentalist-C")
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+		outfit_type = /decl/hierarchy/outfit/job/science/seniormentalist/coercion
+		supervisors = "the Research Director and the EZ Supervisor"
 	return ..()
 
 /datum/job/rd

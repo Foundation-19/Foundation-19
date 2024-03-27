@@ -176,6 +176,13 @@
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/headset_medsci
 
+/obj/item/device/radio/headset/headset_secsci
+	name = "security research radio headset"
+	desc = "A headset that is a result of the mating between security and science."
+	icon_state = "com_headset"
+	item_state = "headset"
+	ks1type = /obj/item/device/encryptionkey/headset_secsci
+
 /obj/item/device/radio/headset/headset_com
 	name = "command radio headset"
 	desc = "A headset with a commanding channel."
