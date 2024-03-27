@@ -78,7 +78,7 @@
 	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 /decl/hierarchy/outfit/job/science/seniormentalist
-	name = OUTFIT_JOB_NAME("Senior Mentalist")
+	name = OUTFIT_JOB_NAME("Senior Psychotronics Researcher")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/black

@@ -246,7 +246,7 @@
 	skill_points = 18
 
 /datum/job/seniormentalist
-	title = "Senior Mentalist"
+	title = "Senior Psychotronics Researcher"
 	department = "Science"
 	department_flag = SCI
 	selection_color = "#633d63"
