@@ -221,7 +221,7 @@
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the LCZ Zone Commander"
 	economic_power = 4
-	requirements = list("LCZ Guard" = 480)
+	requirements = list("EXP_TYPE_LCZ" = 480)
 	alt_titles = list("LCZ Senior Containment Response Agent" = /decl/hierarchy/outfit/job/security/lcz_recon, "LCZ Containment Response Sergeant" = /decl/hierarchy/outfit/job/security/lcz_recon, "LCZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Riot Control Sergeant" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Senior Riot Control Agent" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
