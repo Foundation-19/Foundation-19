@@ -2,9 +2,9 @@
 	name = "Veil of Shadows"
 	desc = "Become intangable, invisible. Like a ghost."
 	charge_max = 400
+	spell_flags = NEEDSCLOTHES | Z2NOCAST
 	invocation_type = INVOKE_EMOTE
 	invocation = "flickers out of existance"
-	school = "Divine" //Means that it doesn't proc the deity's spell cost.
 	spell_flags = 0
 	duration = 100
 	var/timer_id
@@ -12,9 +12,17 @@
 
 	hud_state = "wiz_statue"
 
+	spell_cost = 3
+	mana_cost = 20
+
+/datum/spell/veil_of_shadows/cast_check(skipcharge = FALSE, mob/user = usr, list/targets)
+	if(!ishuman(user))
+		return FALSE
+	if(user.GetMovementHandler(/datum/movement_handler/mob/incorporeal))
+		return FALSE
+	return ..()
+
 /datum/spell/veil_of_shadows/choose_targets(mob/user = usr)
-	if(!timer_id && istype(holder, /mob/living/carbon/human))
-		perform(user, list(holder))
 	perform(user, null)
 
 /datum/spell/veil_of_shadows/cast(list/targets, mob/user)
@@ -54,4 +62,4 @@
 /datum/spell/veil_of_shadows/Destroy()
 	deltimer(timer_id)
 	cancel_veil()
-	.= ..()
+	return ..()

@@ -211,7 +211,7 @@
 							level_link = FONT_COLORED("#55cc55","High")
 						else
 							level_link = "<font color=black>Never</font>"
-					. += "<a href='?src=\ref[src];set_job=[title];inc_level=-1'>[level_link]</a>"
+					. += {"<a href='?src=\ref[src];set_job=[title];inc_level=-1' oncontextmenu='window.location.href="?src=\ref[src];set_job=[title];inc_level=1"; return false'>[level_link]</a>"}
 				. += "</td></tr>"
 			. += "</td></tr></table>"
 			. += "</center></table><center>"

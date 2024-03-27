@@ -17,6 +17,9 @@
 		/mob/living/simple_animal/hostile/faithless/cult
 		)
 
+	spell_cost = 5
+	mana_cost = 35
+
 /datum/spell/tear_veil/choose_targets(mob/user = usr)
 	var/turf/T = get_turf(holder)
 	holder.visible_message(SPAN_NOTICE("A strange portal rips open underneath \the [holder]!"))

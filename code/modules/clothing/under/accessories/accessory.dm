@@ -16,7 +16,6 @@
 	sprite_sheets = list(
 		SPECIES_ADHERENT = 'icons/mob/species/adherent/onmob_accessories_adherent.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_accessories_gas.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_accessories_unathi.dmi'
 		)
 	var/list/on_rolled = list()	//used when jumpsuit sleevels are rolled ("rolled" entry) or it's rolled down ("down"). Set to "none" to hide in those states.
 	var/high_visibility	//if it should appear on examine without detailed view

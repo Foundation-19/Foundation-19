@@ -257,6 +257,7 @@
 				src.damtype = BURN
 			welding = 1
 			update_icon()
+			playsound(loc, 'sounds/items/welderactivate.ogg', 35, TRUE)
 			START_PROCESSING(SSobj, src)
 		else
 			if(M)
@@ -276,6 +277,7 @@
 		src.damtype = BRUTE
 		src.welding = 0
 		update_icon()
+		playsound(loc, 'sounds/items/welderdeactivate.ogg', 35, TRUE)
 
 /obj/item/weldingtool/attack(mob/living/M, mob/living/user, target_zone)
 	if(ishuman(M))

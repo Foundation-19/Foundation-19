@@ -218,6 +218,13 @@
 	// Always update the UI, or buttons will spin indefinitely
 	SSnano.update_uis(src)
 
+// Fine - Turns into emag.
+/obj/item/card/id/syndicate/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_FINE)
+			return /obj/item/card/emag
+	return ..()
+
 /var/global/list/id_card_states
 /proc/id_card_states()
 	if(!id_card_states)

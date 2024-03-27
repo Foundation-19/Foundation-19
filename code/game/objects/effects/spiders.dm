@@ -141,11 +141,18 @@
 	var/dormant = FALSE    // If dormant, does not add the spiderling to the process list unless it's also growing
 	var/growth_chance = 50 // % chance of beginning growth, and eventually become a beautiful death machine
 	var/shift_range = 6
-	var/castes = list(/mob/living/simple_animal/hostile/giant_spider = 2,
-						/mob/living/simple_animal/hostile/giant_spider/guard = 2,
-						/mob/living/simple_animal/hostile/giant_spider/nurse = 2,
-						/mob/living/simple_animal/hostile/giant_spider/spitter = 2,
-						/mob/living/simple_animal/hostile/giant_spider/hunter = 1)
+	var/castes = list(/mob/living/simple_animal/hostile/giant_spider = 4,
+						/mob/living/simple_animal/hostile/giant_spider/guard = 3,
+						/mob/living/simple_animal/hostile/giant_spider/nurse = 3,
+						/mob/living/simple_animal/hostile/giant_spider/spitter = 3,
+						/mob/living/simple_animal/hostile/giant_spider/hunter = 1,
+						/mob/living/simple_animal/hostile/giant_spider/phorogenic = 0.5,
+						/mob/living/simple_animal/hostile/giant_spider/frost = 0.5,
+						/mob/living/simple_animal/hostile/giant_spider/pepper = 1.5,
+						/mob/living/simple_animal/hostile/giant_spider/lurker = 0.5,
+						/mob/living/simple_animal/hostile/giant_spider/thermic = 2)
+
+						//^UPDATE THIS WHENEVER ADDING NEW SPODERS^\\
 
 /obj/effect/spider/spiderling/Initialize(mapload, atom/parent)
 	greater_form = pickweight(castes)

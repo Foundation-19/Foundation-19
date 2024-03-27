@@ -28,6 +28,19 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = 0
 
+/obj/item/clothing/suit/armor/director_coat
+	name = "Site Director Coat"
+	desc = "A heavy, black long coat with synthetic fur on it. It isn't very distinguishable except for the initials on the collar's tag, S.D."
+	icon_state = "director_coat"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/armor/overseer
+	name = "Overwatch Command's Coat"
+	desc = "A heavy, black long coat with golden markings along the wrists, as well as real genuine bear fur on it. It's woven from the finest cotton, and alloyed with durathread, to make the user comfortable, but durable to many kinds of damage."
+	icon_state = "o5_coat"
+	body_parts_covered = UPPER_TORSO|ARMS
+	armor = list(melee = 80, bullet = 85, laser = 65, energy = 15, bomb = 80, bio = 40, rad = 60)
+
 //Chaplain
 /obj/item/clothing/suit/chaplain_hoodie
 	name = "chaplain hoodie"
