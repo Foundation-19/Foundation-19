@@ -47,10 +47,10 @@
 	visuals.icon_state = icon_state
 	Draw()
 	//Register for movement events
-	GLOB.moved_event.register(origin, src, .proc/redrawing)
-	GLOB.moved_event.register(target, src, .proc/redrawing)
-	GLOB.destroyed_event.register(origin, src, .proc/redrawing)
-	GLOB.destroyed_event.register(target, src, .proc/redrawing)
+	RegisterSignal(origin, COMSIG_MOVED, PROC_REF(redrawing))
+	RegisterSignal(target, COMSIG_MOVED, PROC_REF(redrawing))
+	RegisterSignal(origin, COMSIG_PARENT_QDELETING, PROC_REF(redrawing))
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(redrawing))
 
 /**
  * Triggered by events set up when the beam is set up. If it's still sane to create a beam, it removes the old beam, creates a new one. Otherwise it kills the beam.
@@ -70,10 +70,10 @@
 /datum/beam/Destroy()
 	QDEL_NULL_LIST(elements)
 	QDEL_NULL(visuals)
-	GLOB.moved_event.unregister(origin, src, .proc/redrawing)
-	GLOB.moved_event.unregister(target, src, .proc/redrawing)
-	GLOB.destroyed_event.unregister(origin, src, .proc/redrawing)
-	GLOB.destroyed_event.unregister(target, src, .proc/redrawing)
+	UnregisterSignal(origin, COMSIG_MOVED, .proc/redrawing)
+	UnregisterSignal(target, COMSIG_MOVED, .proc/redrawing)
+	UnregisterSignal(origin, COMSIG_PARENT_QDELETING, .proc/redrawing)
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING, .proc/redrawing)
 	target = null
 	origin = null
 	return ..()
