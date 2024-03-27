@@ -8043,10 +8043,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/secstorage)
 "awF" = (
@@ -23574,6 +23570,9 @@
 	},
 /obj/item/aicard,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/secstorage)
 "egb" = (
@@ -29380,6 +29379,9 @@
 /obj/item/device/flash,
 /obj/item/device/flash,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/secstorage)
 "iuh" = (
@@ -38336,6 +38338,10 @@
 /obj/item/airlock_electronics,
 /obj/item/airlock_electronics,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/secstorage)
 "oVt" = (
@@ -48367,9 +48373,6 @@
 /obj/random/powercell,
 /obj/item/cell/high,
 /obj/item/cell/high,
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/secstorage)
