@@ -107,7 +107,7 @@
 	return A.TotalResistance() - B.TotalResistance()
 
 /proc/cmp_distance_asc(atom/a, atom/b)
-	return get_dist(get_turf(A), get_turf(B))
+	return get_dist(get_turf(a), get_turf(b))
 
-proc/cmp_distance_reagents_asc(datum/reagents/A, datum/reagents/B)
+/proc/cmp_distance_reagents_asc(datum/reagents/A, datum/reagents/B)
 	return cmp_distance_asc(A.my_atom, B.my_atom)

@@ -52,7 +52,7 @@
 //Mechanics
 
 ///Cycles through all reagents datums and picks out ones that contain the chemical we are looking for
-/obj/machinery/scp294/proc/find_reagents_to_fill_from(input_path)
+/obj/machinery/scp294/proc/find_reagents_to_fill_from_path(input_path)
 	var/list/datum/reagents/reagents_to_fill_from = list()
 	if(!ispath(input_path))
 		return FALSE
@@ -72,8 +72,23 @@
 		LAZYADD(reagents_to_fill_from, reagent_container)
 	return reagents_to_fill_from
 
-/obj/machinery/scp294/proc/find_reagents_to_fill_from(container_name)
-	//todo
+/obj/machinery/scp294/proc/find_reagents_to_fill_from_cont_name(container_name)
+	var/list/datum/reagents/reagents_to_fill_from = list()
+	var/list/datum/globalReagents = list()
+	//Creats a list of reagents by distance
+	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
+		if(!istype(reagent_container.my_atom))
+			continue
+		ADD_SORTED(globalReagents, reagent_container, cmp_distance_reagents_asc)
+
+	//Iterates through that list
+	for(var/datum/reagents/reagent_container in globalReagents)
+		var/turf/reagent_turf = get_turf(reagent_container.my_atom)
+		if(!(findtext(reagent_container.my_atom.name, container_name,1, length(reagent_container.my_atom.name) + 1)) || !reagent_turf || !(reagent_turf.z in GetConnectedZlevels(src.z)))
+			continue
+		LAZYADD(reagents_to_fill_from, reagent_container)
+	return reagents_to_fill_from
+
 
 ///Adds reagent we want to passed cup from list made in find_reagents_to_fill_from
 /obj/machinery/scp294/proc/add_reagent_to_cup(input_path, obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D, reagents_to_fill_from)
@@ -111,14 +126,14 @@
 		return
 
 	playsound(src, 'sounds/machines/cb_button.ogg', 35, TRUE)
-	var/chosen_reagen_text = tgui_input_text(user, "Please type in your preffered beverage.", "[src] Keyboard")
-	if(!chosen_reagen_text)
+	var/chosen_reagent_text = tgui_input_text(user, "Please type in your preffered beverage.", "[src] Keyboard")
+	if(!chosen_reagent_text)
 		return
 
 	var/datum/reagent/chosen_reagent
 
 	for(var/reagent_name in shortcut_chems)
-		if(findtext(chosen_reagen_text, reagent_name, 1, length(chosen_reagen_text) + 1))
+		if(findtext(chosen_reagent_text, reagent_name, 1, length(chosen_reagent_text) + 1))
 			chosen_reagent = shortcut_chems[reagent_name]
 			break
 
@@ -128,19 +143,21 @@
 				continue
 			var/datum/reagent/possible_reagent = possible
 			var/chem_name = initial(possible_reagent.name) //It dosent work if we dont do this black magic
-			if(findtext(chosen_reagen_text, chem_name))
+			if(findtext(chosen_reagent_text, chem_name))
 				chosen_reagent = possible_reagent
 				break
 
 	var/list/reagents_to_fill_from = list();
 	if(!chosen_reagent)
+		reagents_to_fill_from = find_reagents_to_fill_from_cont_name(chosen_reagent_text)
 
-	if(!chosen_reagent || (chosen_reagent in blacklist))
+	if(!(chosen_reagent || length(reagents_to_fill_from)) || (chosen_reagent in blacklist))
 		balloon_alert(user, "OUT OF RANGE")
 		playsound(src, 'sounds/machines/cb_button_fail.ogg', 35, TRUE)
 		return
 
-	var/list/reagents_to_fill_from = find_reagents_to_fill_from(chosen_reagent)
+	if(!length(reagents_to_fill_from))
+		reagents_to_fill_from = find_reagents_to_fill_from_path(chosen_reagent)
 	if(!LAZYLEN(reagents_to_fill_from))
 		balloon_alert(user, "OUT OF RANGE")
 		playsound(src, 'sounds/machines/cb_button_fail.ogg', 35, TRUE)
