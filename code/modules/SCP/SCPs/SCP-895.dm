@@ -12,7 +12,7 @@
 		SCP_MEMETIC
 	)
 	SCP.memeticFlags = MCAMERA
-	SCP.memetic_proc = /obj/structure/closet/coffin/scp895/proc/effect
+	SCP.memetic_proc = TYPE_PROC_REF(/obj/structure/closet/coffin/scp895, effect)
 	SCP.compInit()
 
 /obj/structure/closet/coffin/scp895/proc/effect(mob/living/carbon/human/target)

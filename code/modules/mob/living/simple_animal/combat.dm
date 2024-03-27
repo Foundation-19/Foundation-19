@@ -25,6 +25,12 @@
 	if(melee_attack_delay)
 		melee_post_animation(A)
 
+// Override for special effects after a successful attack, like injecting poison or stunning the target.
+/mob/living/simple_animal/proc/apply_melee_effects(atom/A)
+	return
+
+//F19 EDIT: LINE 54 & LINE 31/32 - FIXES AFTERATTACK CODE THANKS BAY
+
 // This does the actual attack.
 // This is a seperate proc for the purposes of attack animations.
 // A is the thing getting attacked, T is the turf A is/was on when attack_target was called.
@@ -44,12 +50,9 @@
 
 	var/obj/item/natural_weapon/weapon = get_natural_weapon()
 	weapon?.resolve_attackby(A, src)
+	src.apply_melee_effects(A)
 
 	return TRUE
-
-// Override for special effects after a successful attack, like injecting poison or stunning the target.
-/mob/living/simple_animal/proc/apply_melee_effects(atom/A)
-	return
 
 // Override to modify the amount of damage the mob does conditionally.
 // This must return the amount of outgoing damage.
@@ -90,7 +93,7 @@
 	shoot(A)
 	if(ranged_burst_count > 1)
 		for(var/i = 1 to ranged_burst_count)
-			addtimer(CALLBACK(src, .proc/shoot, A), i * ranged_burst_delay)
+			addtimer(CALLBACK(src, PROC_REF(shoot), A), i * ranged_burst_delay)
 			if(needs_reload)
 				if(reload_count >= reload_max)
 					break

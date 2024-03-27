@@ -1,3 +1,4 @@
+/*
 #define EVAC_OPT_ABANDON_SITE "abandon_site"
 #define EVAC_OPT_END_SHIFT "end_shift"
 #define EVAC_OPT_CANCEL_ABANDON_SITE "cancel_abandon_site"
@@ -138,3 +139,4 @@
 #undef EVAC_OPT_END_SHIFT
 #undef EVAC_OPT_CANCEL_ABANDON_SITE
 #undef EVAC_OPT_CANCEL_END_SHIFT
+*/

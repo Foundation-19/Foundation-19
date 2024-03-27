@@ -1,19 +1,23 @@
 /datum/spell/targeted/ethereal_jaunt
 	name = "Ethereal Jaunt"
 	desc = "This spell creates your ethereal form, temporarily making you invisible and able to pass through walls."
-	feedback = "EJ"
-	school = "transmutation"
-	charge_max = 30 SECONDS
+
 	spell_flags = Z2NOCAST | NEEDSCLOTHES | INCLUDEUSER
 	invocation = "none"
 	invocation_type = INVOKE_NONE
 	range = 0
 	max_targets = 1
-	level_max = list(UPGRADE_TOTAL = 4, UPGRADE_SPEED = 4, UPGRADE_POWER = 3)
-	cooldown_min = 10 SECONDS //50 deciseconds reduction per rank
+	level_max = list(UPGRADE_TOTAL = 4, UPGRADE_SPEED = 2, UPGRADE_POWER = 3)
+
+	charge_max = 30 SECONDS
+	cooldown_min = 10 SECONDS
+	cooldown_reduc = 5 SECONDS
 	duration = 5 SECONDS
 
 	hud_state = "wiz_jaunt"
+
+	spell_cost = 2
+	mana_cost = 7
 
 	var/reappear_duration = 5
 	var/obj/effect/dummy/spell_jaunt/jaunt_holder
@@ -50,7 +54,7 @@
 			jaunt_disappear(animation, target)
 			jaunt_steam(mobloc)
 			target.forceMove(jaunt_holder)
-			addtimer(CALLBACK(src, .proc/start_reappear, target), duration)
+			addtimer(CALLBACK(src, PROC_REF(start_reappear), target), duration)
 
 /datum/spell/targeted/ethereal_jaunt/proc/start_reappear(mob/living/user)
 	var/mob_loc = jaunt_holder.last_valid_turf
@@ -58,7 +62,7 @@
 	jaunt_steam(mob_loc)
 	jaunt_reappear(animation, user)
 	animation.forceMove(mob_loc)
-	addtimer(CALLBACK(src, .proc/reappear, mob_loc, user), reappear_duration)
+	addtimer(CALLBACK(src, PROC_REF(reappear), mob_loc, user), reappear_duration)
 
 /datum/spell/targeted/ethereal_jaunt/proc/reappear(mob_loc, mob/living/user)
 	if(!user.forceMove(mob_loc))
@@ -70,7 +74,7 @@
 	QDEL_NULL(animation)
 	QDEL_NULL(jaunt_holder)
 
-/datum/spell/targeted/ethereal_jaunt/empower_spell()
+/datum/spell/targeted/ethereal_jaunt/ImproveSpellPower()
 	if(!..())
 		return 0
 	duration += 2 SECONDS
@@ -122,7 +126,7 @@
 	else
 		to_chat(user, SPAN_WARNING("Some strange aura is blocking the way!"))
 	canmove = 0
-	addtimer(CALLBACK(src, .proc/allow_move), 2)
+	addtimer(CALLBACK(src, PROC_REF(allow_move)), 2)
 
 /obj/effect/dummy/spell_jaunt/proc/allow_move()
 	canmove = TRUE
@@ -131,7 +135,3 @@
 	return
 /obj/effect/dummy/spell_jaunt/bullet_act(blah)
 	return
-
-/datum/spell/targeted/ethereal_jaunt/tower
-	charge_max = 2
-	spell_flags = Z2NOCAST | INCLUDEUSER

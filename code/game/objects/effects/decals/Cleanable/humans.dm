@@ -34,14 +34,14 @@ var/global/list/image/splatter_cache=list()
 		basecolor = COLOR_LUMINOL
 		update_icon()
 
-/obj/effect/decal/cleanable/blood/clean_blood()
-	fluorescent = 0
-	if(invisibility != 100)
-		set_invisibility(100)
+/obj/effect/decal/cleanable/blood/clean(clean_forensics = TRUE)
+	fluorescent = FALSE
+	if(invisibility != INVISIBILITY_ABSTRACT)
+		set_invisibility(INVISIBILITY_ABSTRACT)
 		amount = 0
 		STOP_PROCESSING(SSobj, src)
 		remove_extension(src, /datum/extension/scent)
-	..(ignore=1)
+	return ..(clean_forensics = FALSE)
 
 /obj/effect/decal/cleanable/blood/hide()
 	return
@@ -287,7 +287,7 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/mucus/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/set_dry), DRYING_TIME * 2)
+	addtimer(CALLBACK(src, PROC_REF(set_dry)), DRYING_TIME * 2)
 
 /obj/effect/decal/cleanable/mucus/proc/set_dry()
 	dry = TRUE

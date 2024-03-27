@@ -1,8 +1,6 @@
 /datum/spell/targeted/equip_item/shield
 	name = "Summon Shield"
 	desc = "Summons the most holy of shields, the riot shield. Commonly used during wizard riots."
-	feedback = "SH"
-	school = "conjuration"
 	invocation = "Sia helda!"
 	invocation_type = INVOKE_SHOUT
 	spell_flags = INCLUDEUSER | NEEDSCLOTHES
@@ -31,7 +29,7 @@
 	I.base_block_chance = block_chance
 	return I
 
-/datum/spell/targeted/equip_item/shield/empower_spell()
+/datum/spell/targeted/equip_item/shield/ImproveSpellPower()
 	if(!..())
 		return 0
 
@@ -39,6 +37,3 @@
 	block_chance = 60
 
 	return "Your summoned shields will now block more often."
-
-/datum/spell/targeted/equip_item/shield/tower
-	charge_max = 1

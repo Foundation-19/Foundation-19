@@ -3,7 +3,7 @@
 	sort_category = "Suits and Overwear"
 	category = /datum/gear/suit
 	denied_roles = list(/datum/job/classd)
-	allowed_branches = list(/datum/mil_branch/civilian)
+	blacklist_department_flags = SEC | COM
 	//Reasoning : None of these options fits security. Too flashy, too visible, uniformity would be broken. Exception is trenchcoat for command roles To note: some guards have access to vest options at their lockers.
 
 /datum/gear/suit/poncho
@@ -12,10 +12,6 @@
 	cost = 1
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/*/datum/gear/suit/security_poncho
-	display_name = "poncho, security"
-	path = /obj/item/clothing/suit/poncho/roles/security
-*/
 /datum/gear/suit/medical_poncho
 	display_name = "poncho, medical"
 	path = /obj/item/clothing/suit/poncho/roles/medical
@@ -28,11 +24,6 @@
 	display_name = "poncho, science"
 	path = /obj/item/clothing/suit/poncho/roles/science
 
-//NT descriptions
-/*/datum/gear/suit/nanotrasen_poncho
-	display_name = "poncho, NanoTrasen"
-	path = /obj/item/clothing/suit/poncho/roles/science/nanotrasen
-*/
 /datum/gear/suit/cargo_poncho
 	display_name = "poncho, supply"
 	path = /obj/item/clothing/suit/poncho/roles/cargo
@@ -155,15 +146,15 @@
 /datum/gear/suit/trenchcoat
 	display_name = "trenchcoat selection"
 	path = /obj/item/clothing/suit
+	description = "A rugged canvas trenchcoat."
 	cost = 3
-	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
-	denied_roles = list(/datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ncoofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/enlistedofficerez)
+	blacklist_department_flags = SEC
 
 /datum/gear/suit/trenchcoat/New()
 	..()
 	var/trenchcoats = list()
-	trenchcoats += /obj/item/clothing/suit/storage/det_trench
-	trenchcoats += /obj/item/clothing/suit/storage/det_trench/grey
+	trenchcoats += /obj/item/clothing/suit/storage/det_trench/ft
+	trenchcoats += /obj/item/clothing/suit/storage/det_trench/ft/grey
 	trenchcoats += /obj/item/clothing/suit/leathercoat
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(trenchcoats)
 

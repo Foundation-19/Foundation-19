@@ -23,7 +23,7 @@
 		center.rot()
 
 		for(var/i = (severity * rand(5, 10)), i > 0, i--)
-			var/turf/simulated/wall/W = pick_turf_in_range(center, (3 + (2 * severity)), list(/proc/is_station_turf, /proc/is_randomly_rottable_turf))
+			var/turf/simulated/wall/W = pick_turf_in_range(center, (3 + (2 * severity)), list(GLOBAL_PROC_REF(is_station_turf), GLOBAL_PROC_REF(is_randomly_rottable_turf)))
 			if(W)
 				W.rot()
 			else

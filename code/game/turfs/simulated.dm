@@ -25,12 +25,12 @@
 		wet_overlay = image('icons/effects/water.dmi',src,overlay_state)
 		add_overlay(wet_overlay)
 
-	timer_id = addtimer(CALLBACK(src,/turf/simulated/proc/unwet_floor, TRUE, dissipate_time), dissipate_time, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
+	timer_id = addtimer(CALLBACK(src,TYPE_PROC_REF(/turf/simulated, unwet_floor), TRUE, dissipate_time), dissipate_time, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
 
 /turf/simulated/proc/unwet_floor(check_very_wet = TRUE, dissipate_timer = 8 SECONDS)
 	if(check_very_wet && wet >= 2)
 		wet--
-		timer_id = addtimer(CALLBACK(src,/turf/simulated/proc/unwet_floor, check_very_wet, dissipate_timer), dissipate_timer, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
+		timer_id = addtimer(CALLBACK(src,TYPE_PROC_REF(/turf/simulated, unwet_floor), check_very_wet, dissipate_timer), dissipate_timer, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
 		return
 
 	wet = 0
@@ -38,9 +38,9 @@
 		cut_overlay(wet_overlay)
 		wet_overlay = null
 
-/turf/simulated/clean_blood()
+/turf/simulated/clean()
 	for(var/obj/effect/decal/cleanable/blood/B in contents)
-		B.clean_blood()
+		B.clean()
 	..()
 
 /turf/simulated/New()
@@ -124,7 +124,7 @@
 				slip_stun = 3
 
 			if(M.slip("the [floor_type] floor", slip_stun))
-				addtimer(CALLBACK(M, /mob/proc/slip_handler, M.dir, slip_dist - 1, 1), 1)
+				addtimer(CALLBACK(M, TYPE_PROC_REF(/mob, slip_handler), M.dir, slip_dist - 1, 1), 1)
 			else
 				M.inertia_dir = 0
 		else
@@ -132,7 +132,7 @@
 
 /mob/proc/slip_handler(dir, dist, delay)
 	if (dist > 0)
-		addtimer(CALLBACK(src, .proc/slip_handler, dir, dist - 1, delay), delay)
+		addtimer(CALLBACK(src, PROC_REF(slip_handler), dir, dist - 1, delay), delay)
 	step(src, dir)
 
 //returns 1 if made bloody, returns 0 otherwise

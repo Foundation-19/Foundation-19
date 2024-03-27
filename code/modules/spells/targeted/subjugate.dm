@@ -1,8 +1,6 @@
 /datum/spell/targeted/subjugation
 	name = "Subjugation"
 	desc = "This spell temporarily subjugates a target's mind and does not require wizard garb."
-	feedback = "SJ"
-	school = "illusion"
 	charge_max = 500
 	spell_flags = NOFACTION
 	invocation = "Dii Oda Baji."
@@ -22,7 +20,10 @@
 
 	hud_state = "wiz_subj"
 
-/datum/spell/targeted/subjugation/empower_spell()
+	spell_cost = 3
+	mana_cost = 25
+
+/datum/spell/targeted/subjugation/ImproveSpellPower()
 	if(!..())
 		return 0
 

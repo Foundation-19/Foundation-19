@@ -9,7 +9,7 @@
 	var/delete_old = 1 //if the item previously in the slot is deleted - otherwise, it's dropped
 
 /datum/spell/targeted/equip_item/cast(list/targets, mob/user = usr)
-	..()
+	. = ..()
 	var/list/summoned_items = list()
 	for(var/mob/living/L in targets)
 		for(var/slot_id in equipped_summons)
