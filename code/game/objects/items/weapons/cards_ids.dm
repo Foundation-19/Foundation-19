@@ -656,6 +656,13 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	item_state = "Science_ID4"
 	job_access_type = /datum/job/seniorscientist
 
+/obj/item/card/id/sciencelvlp
+	name = "science ID"
+	desc = "An orange ID. Looks important."
+	icon_state = "sciencelvl4"
+	item_state = "Science_ID4"
+	job_access_type = /datum/job/seniormentalist
+
 /obj/item/card/id/sciencelvl5
 	name = "science ID"
 	desc = "A red ID. Looks like the person wearing this won't give it up easy."

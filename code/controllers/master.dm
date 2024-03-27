@@ -75,8 +75,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		config.load("config/config.txt")
 		config.load("config/game_options.txt","game_options")
 		config.load("config/comms.txt", "comms")
-		if (GLOB.using_map?.config_path)
-			config.load(GLOB.using_map.config_path, "using_map")
 		config.load_text("config/motd.txt", "motd")
 		config.load_text("config/event.txt", "event")
 		config.loadsql("config/dbconfig.txt")
@@ -97,6 +95,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 	if(!GLOB)
 		new /datum/controller/global_vars
+	if (GLOB.using_map?.config_path)
+		config.load(GLOB.using_map.config_path, "using_map")
 
 /datum/controller/master/Destroy()
 	..()

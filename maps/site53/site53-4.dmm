@@ -4226,7 +4226,7 @@
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/repoffice/internaltribunal)
 "qs" = (
-/obj/machinery/vending/hydronutrients,
+/obj/machinery/vending/fitness,
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "qt" = (
@@ -7822,6 +7822,11 @@
 /obj/machinery/photocopier/faxmachine{
 	department = "Research Director's Office";
 	send_access = list("ACCESS_SCIENCE_LEVEL5")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "xenoaccess";
+	name = "Xenoarchaeology Lockdown Shutters";
+	pixel_y = 24
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
