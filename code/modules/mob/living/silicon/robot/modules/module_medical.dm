@@ -85,6 +85,12 @@
 		stack.synths = list(medicine)
 
 /obj/item/robot_module/medical/surgeon/respawn_consumable(mob/living/silicon/robot/R, amount)
+	var/obj/item/reagent_containers/syringe/S = locate() in equipment
+	if(S.mode == 2)
+		S.reagents.clear_reagents()
+		S.mode = initial(S.mode)
+		S.desc = initial(S.desc)
+		S.update_icon()
 	if(emag)
 		var/obj/item/reagent_containers/spray/PS = emag
 		PS.reagents.add_reagent(/datum/reagent/acid/polytrinic, 2 * amount)
