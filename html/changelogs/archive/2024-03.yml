@@ -163,3 +163,9 @@
   - rscadd: Adds xenobotany job alt titles
   - rscadd: Adds junior mentalist (without guaranteed latency) for researcher
   - rscadd: Adds mentalist (without guaranteed latency) for Senior researcher
+2024-03-27:
+  TheDarkElites:
+  - balance: SD now requires 20 hours of command gameplay instead of 30.
+  checkraisefold:
+  - balance: Timelock requirements for all jobs have been significantly re-tuned.
+  - bugfix: Rocket launcher now works
