@@ -62,7 +62,8 @@
 	. = ..()
 	for(var/thing in list(
 		 /obj/item/stack/nanopaste,
-		 /obj/item/stack/medical/advanced/bruise_pack
+		 /obj/item/stack/medical/advanced/bruise_pack,
+		 /obj/item/stack/medical/advanced/ointment
 		))
 		var/obj/item/stack/medical/stack = locate(thing) in equipment
 		stack.uses_charge = 1
