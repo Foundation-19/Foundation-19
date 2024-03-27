@@ -48,7 +48,7 @@
 	if(!holder)
 		visible_message("[icon2html(src, hearers(src))] *beep* *beep*", "*beep* *beep*")
 	cooldown = 2
-	addtimer(CALLBACK(src, .proc/process_cooldown), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(process_cooldown)), 1 SECONDS)
 	STOP_PROCESSING(SSobj, src)
 	return
 

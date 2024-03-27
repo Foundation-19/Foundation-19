@@ -65,6 +65,7 @@
 	return list(
 		new/datum/atom_creator/weighted(list(/obj/item/storage/backpack/medic, /obj/item/storage/backpack/satchel/med)),
 		new/datum/atom_creator/simple(/obj/item/storage/backpack/dufflebag/med, 50),
+		/obj/item/clothing/under/rank/medical/skirt,
 		/obj/item/clothing/under/rank/nursesuit,
 		/obj/item/clothing/head/nursehat,
 		/obj/item/clothing/under/rank/medical,
@@ -132,6 +133,7 @@
 		/obj/item/clothing/head/bio_hood/cmo,
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/under/rank/chief_medical_officer,
+		/obj/item/clothing/under/rank/chief_medical_officer/skirt,
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmo,
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt,
 		/obj/item/clothing/gloves/latex,

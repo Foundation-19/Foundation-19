@@ -149,7 +149,7 @@
 		if(friend.stat != CONSCIOUS)
 			panic()
 			if(!delfriend_timer && (friend.stat == DEAD))
-				delfriend_timer = addtimer(CALLBACK(src, .proc/remove_friend), 1 MINUTE)
+				delfriend_timer = addtimer(CALLBACK(src, PROC_REF(remove_friend)), 1 MINUTE)
 			return
 
 	for(var/atom/scpInView in GLOB.SCP_list)

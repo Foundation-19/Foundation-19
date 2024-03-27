@@ -1,0 +1,171 @@
+2024-03-01:
+  cheesePizza2:
+  - balance: The Containment Engineer now has access to the LCZ and HCZ areas, as
+      well as to all SCP chambers. He can also access LCZ and HCZ security comms.
+  - rscadd: All classes (security included) use SCP classes instead of bay ones.
+  - rscdel: Deletes military branches/ranks and replaces them with simpler classes.
+  - rscdel: Deleted some jobcode related to species.
+  - rscdel: Deletes various items that are not lore-relevant/which are unused.
+  - refactor: All code relating to branches/ranks has been refactored.
+2024-03-06:
+  Cheesepizza2, Costco Security:
+  - soundadd: Added 10 new tracks to the title screen!
+  RandomLad645:
+  - bugfix: fixed SCP-420-J name
+2024-03-08:
+  KingSuperBOB:
+  - rscadd: Added a damp rag to 049's medical storage.
+  - rscdel: Removed reagent spray bottle from 049's medical storage.
+  cheesePizza2:
+  - bugfix: A bug with some internal defines was fixed, potentially affecting some
+      values (e.g. atmos)
+2024-03-10:
+  Tsurupeta:
+  - code_imp: Adds support for byond version 515
+2024-03-14:
+  EgorDinamit:
+  - tweak: Putting SCP 2427-3 through SCP 914 on "Fine" or "Very Fine" will, obviously,
+      buff it.
+  - tweak: Putting SCP 012 through SCP 914 on "Very Fine" will net interesting results.
+  - tweak: Putting ID cards through SCP 914 will have unique results now.
+  - tweak: Putting cash through SCP 914 will have unique results now.
+  - bugfix: Fixed SCP 914 interaction with infestation mobs on "Fine" setting.
+2024-03-15:
+  EgorDinamit, CrimsonShrike:
+  - rscadd: Prebuilt flamethrowers have new icon.
+  - rscadd: Flamethrower sounds.
+  - tweak: Flamethrowers now use chems as fire source.
+  - rscadd: Turf fires -> Very hot atmos fires, flamethrowers and fuel decals will
+      generate these fires.
+  - tweak: Simple mobs now can take fire damage from burning.
+2024-03-16:
+  EgorDinamit:
+  - tweak: Adds rocket launcher.
+  - tweak: Adds combat & heavy revolvers.
+  - soundadd: Revolver gunshot sound is updated.
+  - bugfix: You will no longer be sent to nullspace if an object/mob you are orbiting
+      gets deleted.
+2024-03-18:
+  ChromeFoxxity:
+  - rscadd: Added new types of clothing for fluff use, as well as a O5 Council coat,
+      and a Site Director coat.
+  - bugfix: Fixed several clothing issues.
+  - imageadd: Added a few useful things.
+  - imagedel: Deleted a few useless things.
+  - code_imp: Added new clothing code.
+  EgorDinamit:
+  - rscadd: Every human now has spell points and mana level. By default everyone has
+      2 points and 10 mana.
+  - rscadd: Spell books were reworked entirely.
+  - rscadd: Multiple new spells were added (around 20), with a lot of old ones(around
+      30) reworked and updated.
+  KingSuperBOB:
+  - rscadd: Added armor piercing to flamingo natural weapon
+  - tweak: Doubled flamingo vision range
+  Saicchi:
+  - rscadd: Add French to robots
+  Yawet330:
+  - bugfix: Fixes a missing line of code
+  - rscdel: Removes old and OP reagents and exchanges them with ""new and interactive""
+      spider venoms.
+  - admin: Adds better admin-abuse options.
+  - rscadd: Spoders
+  quadbium:
+  - bugfix: fixed "animosity V2" title screen music label.
+  - bugfix: fixed "animosity V2" title screen music link.
+  - rscadd: adds "animosity" title screen music.
+2024-03-19:
+  quadbium:
+  - balance: Moved logistics down to the hub, moved logistics hanger next to the site
+      entrance.
+  - rscadd: Added cameras to logistics.
+  - rscadd: Added stairwell and lower floor to research wing
+  - rscadd: Added psionics lab.
+  - rscadd: Added xenoarchaeology storage
+  - rscadd: Added xenobotany lab
+  - rscadd: Added anomaly lab
+  - rscadd: Added anomaly storage
+  - rscadd: Added added 1 anomaly to anomaly storage
+  - rscadd: Added added research offices accessible by lower ranking researchers
+  - rscadd: Added maintinence tunnles to get air and power into lower research wing
+  - rscadd: Added research wing camera network
+  - balance: Moved cameras in research wing to research wing network
+  - rscadd: Added lower LCZ camera network
+  - balance: Moved cameras in lower LCZ into lower LCZ network
+  - rscadd: Added detail to the floors in research
+  - rscadd: Added detail to the floors in logistics
+  - rscadd: Added laptop to Logistics officers office
+  - rscadd: Added mining access to lower research wing
+2024-03-21:
+  Saicchi:
+  - rscadd: keybinds for pointing as a robot
+2024-03-22:
+  Saicchi:
+  - rscadd: Modifiable keybind 'F' to lock facing direction
+  - bugfix: Robots can now use the crematorium
+  - rscadd: Add missing tools to the Surgery Robot toolkit
+  - bugfix: robot surgeons can now do organ surgery
+  Tsurupeta:
+  - bugfix: fixed AI interface buttons.
+  quadbium:
+  - rscadd: Added SCP-347
+  - rscadd: Added a set of SCP-347 eyeballs
+  - rscadd: Added a SCP-347 file
+  - rscadd: Added SCP-347 to humanoid containment
+  - rscadd: Added a pair of medhuds to humanoid containment observation
+  - imageadd: added SCP-347 icons
+2024-03-24:
+  ChromeFoxxity:
+  - rscadd: Adds Epsilon-9 hardsuits. Adds more flooring, adds another ISD borg, adds
+      a few more fixes.
+2024-03-26:
+  checkraisefold:
+  - bugfix: Map config actually loads now
+  - admin: Show Player Info verb/notes should no longer show player age 'unknown'
+      for connected clients
+  - bugfix: Fix ghost trap href exploit
+  - admin: Player age in notes is actually fully fixed
+  - bugfix: Blurbs are now functional
+  cheesePizza2:
+  - rscadd: 'Added a new D-class exclusive antag: The TRADER, who starts off with
+      some (hopefully) valuable goods (sofar cash, duct tape rolls, and iron rods),
+      and desires to barter/work for for other goods.'
+  - rscadd: 'Added a new D-class exclusive antag: The INFORMANT, who''s secretly trying
+      to rat other prisoners out to the guards.'
+  - balance: As a byproduct of the new D-class antags, the likelihood of "regular"
+      antags (e.g. traitors, changelings) spawning is lower
+  - code_imp: General code cleanup in the antag spawning system.
+  quadbium:
+  - rscadd: Adds shutters to lower research mining access, controllable from R&D or
+      the RD's office
+  - rscadd: Electrifies the lower research external windows
+  - rscadd: Adds third Senior Researcher's office
+  - balance: Moved anomaly storage to underneath the robotics elevator
+  - rscadd: Adds windoor/tables to most labs
+  - rscadd: Expands psionics division
+  - rscadd: Expands AIC lab, with a place to build AIC units
+  - rscadd: Adds chem fridge and closet to research Chemistry
+  - rscadd: Adds elevator and ladder to robotics
+  - rscadd: Adds two robo-tech deluxe vending machines to robotics
+  - rscadd: Slightly enlarges robotics OR, adds holopad and IV drip
+  - rscadd: Adds 3 cell chargers to robotics
+  - rscadd: Adds shutters to robotics charging to improve ease of access
+  - rscadd: Adds temporary access terminal to robotics
+  - rscadd: Adds a vending machine and water cooler to research lobby
+  - rscadd: adds a pneumatic disposals pipe leading from xenobio to SCP-2347-3 deliveries
+      room
+  - rscadd: adds Disposals pipe leading from logistics storage to SCP-2347-3 deliveries
+      room
+  - balance: Moves robotics R&D to upper robotics
+  - rscdel: Removes destructive analyzer from robotics
+  - rscadd: Adds third OR to medical, with attached robotics access
+  - rscadd: Replaces command NutriMax with sweetMAX
+  - rscadd: Adds xenobotany job alt titles
+  - rscadd: Adds junior mentalist (without guaranteed latency) for researcher
+  - rscadd: Adds mentalist (without guaranteed latency) for Senior researcher
+2024-03-27:
+  TheDarkElites:
+  - balance: SD now requires 20 hours of command gameplay instead of 30.
+  checkraisefold:
+  - balance: Timelock requirements for all jobs have been significantly re-tuned.
+  - bugfix: Rocket launcher now works

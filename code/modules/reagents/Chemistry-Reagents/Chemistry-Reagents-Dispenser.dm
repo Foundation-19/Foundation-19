@@ -8,6 +8,7 @@
 	color = "#808080"
 	metabolism = REM * 0.2
 	value = DISPENSER_REAGENT_VALUE
+	accelerant_quality = 3
 
 /datum/reagent/acetone/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien == IS_NABBER)
@@ -120,6 +121,7 @@
 	glass_name = "ethanol"
 	glass_desc = "A well-known alcohol with a variety of applications."
 	value = DISPENSER_REAGENT_VALUE
+	accelerant_quality = 5
 
 /datum/reagent/ethanol/New()
 	addiction_types = list(/datum/addiction/alcohol = max(0.5, 50 / strength)) // Higher strength is somehow weaker, go figure
@@ -321,7 +323,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if((H.chem_doses[GLOB.scp3349_precedent] > 4.4) && (H.chem_doses[GLOB.scp3349_fake_precedent] < 0.6))
-			H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
+			H.RegisterSignal(H, COMSIG_CARBON_LIFE, TYPE_PROC_REF(/mob/living/carbon/human, handle_3349), TRUE)
 
 			var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
 			heart.SCP = new /datum/scp(

@@ -144,7 +144,7 @@
 	var/mob/user = usr
 	if(user && istype(user))
 		//Here to prevent programs sleeping in destroy
-		INVOKE_ASYNC(src, /datum/proc/tgui_interact, usr) // Re-open the UI on this computer. It should show the main screen now.
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/datum, tgui_interact), usr) // Re-open the UI on this computer. It should show the main screen now.
 	update_icon()
 
 // Returns 0 for No Signal, 1 for Low Signal and 2 for Good Signal. 3 is for wired connection (always-on)

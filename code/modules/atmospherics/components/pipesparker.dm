@@ -30,7 +30,7 @@
 /decl/public_access/public_method/pipe_sparker_spark
 	name = "pipespark"
 	desc = "Ignites gas in a pipeline."
-	call_proc = /obj/machinery/atmospherics/pipe/cap/sparker/proc/ignite
+	call_proc = TYPE_PROC_REF(/obj/machinery/atmospherics/pipe/cap/sparker, ignite)
 
 /decl/stock_part_preset/radio/receiver/sparker/pipe
 	frequency = BUTTON_FREQ

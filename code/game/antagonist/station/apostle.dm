@@ -6,7 +6,6 @@ GLOBAL_LIST_EMPTY(apostles)
 	role_text = "Apostle"
 	role_text_plural = "Apostles"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep, /datum/job/raisa)
-	flags = ANTAG_SUSPICIOUS
 	antaghud_indicator = "hudchangeling"
 	faction = "apostle"
 
@@ -30,14 +29,14 @@ GLOBAL_LIST_EMPTY(apostles)
 	H.visible_message(SPAN_DANGER("[H.real_name] briefly looks above..."), SPAN_DANGER("You see the light above..."))
 	H.emote("scream")
 	H.Stun(200)
-	addtimer(CALLBACK(src, .proc/soundd_in, H), (6)) // ADD NUMBER LATER
+	addtimer(CALLBACK(src, PROC_REF(soundd_in), H), (6)) // ADD NUMBER LATER
 
 /datum/antagonist/apostle/proc/soundd_in(mob/living/carbon/human/H)
 	var/turf/T = get_turf(H)
 	playsound(H, 'sounds/scp/abnormality/white_night/apostle_death_final.ogg', 100, TRUE, TRUE)
 	show_sound_effect(H.loc, H)
 	new /obj/effect/temp_visual/sparkle(T)
-	addtimer(CALLBACK(src, .proc/drop_dust, H, T), 25)
+	addtimer(CALLBACK(src, PROC_REF(drop_dust), H, T), 25)
 
 /datum/antagonist/apostle/proc/drop_dust(mob/living/carbon/human/H, turf/T)
 	new /obj/effect/temp_visual/runeconvert(T)

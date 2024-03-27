@@ -13,11 +13,23 @@
 	icon_state = "bluespace"
 	desc = "Looks like infinity."
 
-/turf/unsimulated/floor/sky
+//Impassables used for open areas that the player should not be travelling in.
+
+/turf/unsimulated/floor/sky_impassable
 	name = "\improper the sky"
 	icon_state = "sky"
 	desc = "Oh boy, that's high..."
 	density = TRUE
+
+/turf/unsimulated/floor/reinforced_animated
+	name = "reinforced floor"
+	icon = 'icons/turf/flooring/tiles.dmi'
+	icon_state = "reinforced_animated"
+
+/turf/unsimulated/floor/plating_animated
+	name = "plating"
+	icon = 'icons/turf/flooring/plating.dmi'
+	icon_state = "plating_animated"
 
 /turf/unsimulated/mask
 	name = "mask"

@@ -1,3 +1,8 @@
+// Enormous damage, Very high health, Very low mobility.
+// Spawns small "meat chips" when damaged.
+// Constantly regenerates health.
+// Recommended strategy is using flamethrower and stay AT LEAST 4-5 tiles away from it.
+// DO NOT stop fighting it, as it will inevitably regenerate all health if you leave it alone for too long.
 /mob/living/simple_animal/hostile/infestation/aggregate
 	name = "aggregate"
 	desc = "A repulsive mass of flesh that is constantly regenerating itself."
@@ -8,7 +13,7 @@
 	mob_size = MOB_LARGE
 	default_pixel_x = -8
 	pixel_x = -8
-	movement_cooldown = 7
+	movement_cooldown = 8
 
 	// A giant fuck-off bite attack; Don't come close to this thing
 	natural_weapon = /obj/item/natural_weapon/bite/aggregate
@@ -29,7 +34,7 @@
 	var/regeneration_speed = 0.005
 	/// How much health should we have before throwing a new meatchip
 	var/spawn_health = 0
-	/// How much percents of max HP is reduced from damage_to_spawn on each new meatchip spawn
+	/// How much percents of max HP is reduced from spawn_health on each new meatchip spawn
 	var/spawn_health_reduction = 0.03
 
 /obj/item/natural_weapon/bite/aggregate
@@ -45,7 +50,7 @@
 /obj/item/natural_weapon/bite/aggregate/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	. = ..()
 	for(var/i = 1 to 3)
-		addtimer(CALLBACK(src, .proc/SpawnBiteEffect, target), i-1)
+		addtimer(CALLBACK(src, PROC_REF(SpawnBiteEffect), target), i-1)
 
 /obj/item/natural_weapon/bite/aggregate/proc/SpawnBiteEffect(mob/living/target)
 	if(QDELETED(target))
@@ -74,7 +79,7 @@
 		return
 	if(health > spawn_health)
 		return
-	addtimer(CALLBACK(src, .proc/SpawnMeatChip), rand(1, 4))
+	addtimer(CALLBACK(src, PROC_REF(SpawnMeatChip)), rand(1, 4))
 
 /mob/living/simple_animal/hostile/infestation/aggregate/proc/SpawnMeatChip()
 	if(stat == DEAD || health <= 0)
@@ -95,4 +100,5 @@
 	var/mob/living/simple_animal/hostile/infestation/meatchip/M = new(get_turf(src))
 	if(!throw_target)
 		throw_target = pick(getcircle(get_turf(src), 3))
-	M.throw_at(get_turf(throw_target), 3, 6)
+	M.throw_at(get_turf(throw_target), 3, 1, src)
+	addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/simple_animal/hostile/infestation/meatchip, TimedDeath)), 15 SECONDS)

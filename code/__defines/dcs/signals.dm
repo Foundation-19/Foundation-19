@@ -5,6 +5,19 @@
 // global signals
 // These are signals which can be listened to by any component on any parent
 
+/// Called after an explosion happened : (epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range)
+#define COMSIG_GLOB_EXPLOSION "!explosion"
+/// Mob was created somewhere : (mob)
+#define COMSIG_GLOB_MOB_CREATED "!mob_created"
+/// Mob died somewhere : (mob/living, gibbed)
+#define COMSIG_GLOB_MOB_DEATH "!mob_death"
+/// A magic orb was picked up by a mob: (orb, mob/living)
+#define COMSIG_GLOB_ORB_PICKUP "!orb_picked"
+/// When spell is cast; (user, spell, targets)
+#define COMSIG_GLOB_SPELL_CAST "!spell_cast"
+/// When hand type spell cast_hand is called; (user, spell, target)
+#define COMSIG_GLOB_SPELL_CAST_HAND "!spell_cast_hand"
+
 //////////////////////////////////////////////////////////////////
 
 #define SIGNAL_HANDLER SHOULD_NOT_SLEEP(TRUE)
@@ -39,6 +52,17 @@
 #define COMSIG_GOAL_SUCCEEDED "goal_succeeded"
 /// fired when a goal is failed
 #define COMSIG_GOAL_FAILED "goal_failed"
+
+// /atom/movable signals
+/// When an atom's Dispell() proc is called; Passes dispell strength as argument.
+#define COMSIG_ATOM_MOVABLE_DISPELL "atom_dispell"
+// Return value of a signal handler if dispell should be blocked
+#define COMPONENT_DISPELL_BLOCKED (1 << 0)
+
+/// When spell is cast; (user, spell, targets)
+#define COMSIG_SPELL_CAST "spell_cast"
+/// When hand type spell cast_hand is called; (user, spell, target)
+#define COMSIG_SPELL_CAST_HAND "spell_cast_hand"
 
 /// Called on `/obj/structure/fitness/weightlifter/attack_hand` (/mob/living/carbon/human)
 #define COMSIG_HUMAN_LIFT_WEIGHT "human_lift_weight"

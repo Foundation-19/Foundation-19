@@ -617,7 +617,7 @@
 			adjustHalLoss(-3)
 			if(sleeping)
 				if (!dream_timer && client)
-					dream_timer = addtimer(CALLBACK(src, .proc/dream), 10 SECONDS, TIMER_STOPPABLE)
+					dream_timer = addtimer(CALLBACK(src, PROC_REF(dream)), 10 SECONDS, TIMER_STOPPABLE)
 				if (mind)
 					//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
 					if(client || sleeping > 3)
@@ -1069,10 +1069,10 @@
 		var/image/holder = hud_list[WANTED_HUD]
 		holder.icon_state = "hudblank"
 		var/perpname = name
-		if(wear_id)
-			var/obj/item/card/id/I = wear_id.GetIdCard()
-			if(I)
-				perpname = I.registered_name
+
+		var/obj/item/card/id/I = GetIdCard()
+		if(I)
+			perpname = I.registered_name
 
 		var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 		if(E)
@@ -1085,6 +1085,8 @@
 					holder.icon_state = "hudparolled"
 				if("Released")
 					holder.icon_state = "hudreleased"
+		if(holder.icon_state == "hudblank" && GLOB.informants.is_antagonist(mind))		// hacky, but functional
+			holder.icon_state = "hudinformant"
 		hud_list[WANTED_HUD] = holder
 
 	if (  BITTEST(hud_updateflag, IMPLOYAL_HUD) \

@@ -159,7 +159,7 @@
 	H.visible_message(SPAN_WARNING("Holy light envelopes \the [H]..."))
 	playsound(src, 'sounds/scp/abnormality/white_night/apostle_convert.ogg', 50, FALSE, 4)
 	cancel_conversion_effect = FALSE
-	addtimer(CALLBACK(src, .proc/ConversionVisualEffect, H))
+	addtimer(CALLBACK(src, PROC_REF(ConversionVisualEffect), H))
 	if(!do_after(src, 7 SECONDS, H))
 		to_chat(src, SPAN_WARNING("The ritual has been interrupted!"))
 		cancel_conversion_effect = TRUE

@@ -2064,13 +2064,6 @@
 	icon_state = "dark"
 	},
 /area/map_template/rescue_base/base)
-"dT" = (
-/obj/structure/table/steel,
-/obj/item/stamp/solgov,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/map_template/rescue_base/base)
 "dU" = (
 /obj/structure/table/steel,
 /obj/item/storage/fancy/cigar,
@@ -2214,7 +2207,6 @@
 "el" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/pcarrier/medium/command,
-/obj/item/clothing/head/helmet/solgov/command,
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
@@ -2267,13 +2259,6 @@
 /obj/item/card/id/centcom,
 /turf/unsimulated/floor{
 	icon_state = "dark"
-	},
-/area/map_template/rescue_base/base)
-"es" = (
-/obj/structure/closet/secure_closet/cos,
-/turf/unsimulated/floor{
-	dir = 1;
-	icon_state = "vault"
 	},
 /area/map_template/rescue_base/base)
 "et" = (
@@ -2678,7 +2663,6 @@
 	},
 /area/map_template/rescue_base/base)
 "eU" = (
-/obj/effect/paint/hull,
 /turf/simulated/wall/titanium,
 /area/map_template/rescue_base/start)
 "eV" = (
@@ -2690,7 +2674,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "eW" = (
@@ -2702,7 +2685,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "eX" = (
@@ -2916,7 +2898,6 @@
 /area/map_template/rescue_base/start)
 "fx" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "fy" = (
@@ -2929,7 +2910,6 @@
 "fz" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "fA" = (
@@ -2957,7 +2937,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "fD" = (
@@ -3021,7 +3000,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "fK" = (
@@ -3145,12 +3123,6 @@
 /obj/machinery/door/airlock/centcom{
 	name = "Crew Area";
 	opacity = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/map_template/rescue_base/start)
-"ga" = (
-/obj/structure/sign/poster/bay_9{
-	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/map_template/rescue_base/start)
@@ -3469,7 +3441,6 @@
 	name = "Blast Shutters";
 	opacity = 0
 	},
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "gV" = (
@@ -3523,7 +3494,6 @@
 	name = "Blast Shutters";
 	opacity = 0
 	},
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "hc" = (
@@ -4342,7 +4312,7 @@ dv
 bg
 ar
 dO
-dT
+ef
 eg
 ar
 ad
@@ -4408,7 +4378,7 @@ ao
 ao
 dU
 ao
-es
+dP
 ad
 ac
 ac
@@ -5066,7 +5036,7 @@ eQ
 eQ
 eU
 fT
-ga
+fn
 fn
 fn
 eU

@@ -2,7 +2,7 @@
 	name = "railing"
 	desc = "A simple bar railing designed to protect against careless trespass."
 	icon = 'icons/obj/railing.dmi'
-	icon_state = "railing_preview"
+	icon_state = "railing"
 	density = TRUE
 	throwpass = 1
 	layer = OBJ_LAYER
@@ -14,6 +14,9 @@
 
 	var/broken =    FALSE
 	var/neighbor_status = 0
+
+/obj/structure/railing/mapped/corner
+	icon_state = "railing_corner"
 
 /obj/structure/railing/mapped
 	color = COLOR_GUNMETAL
@@ -121,13 +124,13 @@
 	NeighborsCheck(update_neighbors)
 	cut_overlays()
 	if (!neighbor_status || !anchored)
-		icon_state = "railing0-[density]"
+		icon_state = "railing"
 		if (density)//walking over a railing which is above you is really weird, do not do this if density is 0
-			add_overlay(image(icon, "_railing0-1", layer = ABOVE_HUMAN_LAYER))
+			add_overlay(image(icon, "railing", layer = ABOVE_HUMAN_LAYER))
 	else
-		icon_state = "railing1-[density]"
+		icon_state = "railing"
 		if (density)
-			add_overlay(image(icon, "_railing1-1", layer = ABOVE_HUMAN_LAYER))
+			add_overlay(image(icon, "railing", layer = ABOVE_HUMAN_LAYER))
 		if (neighbor_status & 32)
 			add_overlay(image(icon, "corneroverlay[density]"))
 		if ((neighbor_status & 16) || !(neighbor_status & 32) || (neighbor_status & 64))
@@ -283,7 +286,7 @@
 			kill_health() // Fatboy
 
 		user.jump_layer_shift()
-		addtimer(CALLBACK(user, /mob/living/proc/jump_layer_shift_end), 2)
+		addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, jump_layer_shift_end)), 2)
 
 /obj/structure/railing/slam_into(mob/living/L)
 	var/turf/target_turf = get_turf(src)

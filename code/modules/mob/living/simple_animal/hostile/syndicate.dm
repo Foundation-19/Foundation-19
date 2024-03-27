@@ -129,3 +129,59 @@
 
 /mob/living/simple_animal/hostile/viscerator/hive
 	faction = "hivebot"
+
+// Chaos Insurgency
+
+/mob/living/simple_animal/hostile/syndicate/chaos
+	name = "Chaos Insurgency Trooper"
+	desc = "A man in russian military gear, wielding an AK-47. You feel them observe you angrily. Death to The Foundation."
+	icon_state = "citrooper"
+	icon_living = "citrooper"
+	maxHealth = 125
+	health = 125
+	faction = "syndicate"
+	ranged = 1
+	rapid = 0
+	casingtype = /obj/item/ammo_casing/flechette
+	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
+	projectiletype = /obj/item/projectile/bullet/flechette
+	corpse = /obj/effect/landmark/corpse/chaos
+	loot_list = list(
+		/obj/item/gun/projectile/automatic/scp/ak47 = 1,
+	)
+
+/mob/living/simple_animal/hostile/syndicate/chaos/heavy
+	name = "Chaos Insurgency Heavy Trooper"
+	desc = "A man in heavy russian military gear, wielding an RPK-74. You feel them observe you angrily. Death to The Foundation."
+	icon_state = "ciheavytrooper"
+	icon_living = "ciheavytrooper"
+	maxHealth = 175
+	health = 175
+	faction = "syndicate"
+	ranged = 1
+	rapid = 1
+	casingtype = /obj/item/ammo_casing/flechette
+	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
+	projectiletype = /obj/item/projectile/bullet/flechette
+	corpse = /obj/effect/landmark/corpse/chaos/heavy
+	loot_list = list(
+		/obj/item/gun/projectile/automatic/scp/rpk = 1,
+	)
+
+/mob/living/simple_animal/hostile/syndicate/chaos/officer
+	name = "Chaos Insurgency Team Leader"
+	desc = "A man in russian military gear, alongside an officer cap, wielding an AK-47. You feel them observe you angrily. Death to The Foundation."
+	icon_state = "cileader"
+	icon_living = "cileader"
+	maxHealth = 150
+	health = 150
+	faction = "syndicate"
+	ranged = 1
+	rapid = 1
+	casingtype = /obj/item/ammo_casing/flechette
+	projectilesound = 'sounds/weapons/gunshot/gunshot.ogg'
+	projectiletype = /obj/item/projectile/bullet/flechette
+	corpse = /obj/effect/landmark/corpse/chaos/officer
+	loot_list = list(
+		/obj/item/gun/projectile/automatic/scp/ak47 = 1,
+	)
