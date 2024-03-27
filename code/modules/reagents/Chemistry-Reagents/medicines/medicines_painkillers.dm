@@ -177,3 +177,29 @@
 /datum/reagent/medicine/painkiller/tramadol/disease/three
 	target_painkiller_strength = 150
 
+// Powerful painkiller made out of grauel with potential side-effects
+/datum/reagent/medicine/painkiller/sinlor
+	name = "sinlor"
+	description = "A powerful painkiller manufactured from infestation by-products."
+	taste_description = "sickness"
+	color = COLOR_RED
+	// Keep it the same as effective_dose
+	overdose = 10
+	target_painkiller_strength = 400
+	var/effective_dose = 10
+
+/datum/reagent/medicine/painkiller/sinlor/overdose(mob/living/carbon/M, alien)
+	M.set_drugginess_if_lower(10)
+	M.reagents.add_reagent(/datum/reagent/grauel, metabolism * 2)
+
+/datum/reagent/medicine/painkiller/sinlor/calculate_strength(mob/living/carbon/M, alien, removed)
+	if(alien == IS_ABOMINATION)
+		current_painkiller_strength = target_painkiller_strength
+		return
+
+	var/effectiveness = 1
+	if(M.chem_doses[type] < effective_dose)
+		effectiveness = M.chem_doses[type] / effective_dose
+	else if(volume < effective_dose)
+		effectiveness = volume / effective_dose
+	current_painkiller_strength = (target_painkiller_strength * effectiveness)

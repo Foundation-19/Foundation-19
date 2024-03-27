@@ -7,6 +7,8 @@
 
 	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
 
+	handcuffs_breakout_modifier = 0.2
+
 	//Config
 
 	/// Emote cooldown
@@ -278,9 +280,6 @@
 
 	return ..()
 
-/mob/living/carbon/human/scp049/can_break_cuffs()
-	return TRUE
-
 /mob/living/carbon/human/scp049/GetUnbuckleTime()
 	return 15 SECONDS
 
@@ -438,7 +437,7 @@
 
 	addtimer(CALLBACK(src, PROC_REF(FinishPlagueDoctorCure), target), 15 SECONDS)
 
-/mob/living/carbon/human/proc/FinishPlagueDoctorCure(mob/living/carbon/human/target)
+/mob/living/carbon/human/scp049/proc/FinishPlagueDoctorCure(mob/living/carbon/human/target)
 	if(QDELETED(target))
 		return
 

@@ -256,7 +256,7 @@
 				user.visible_message("[user] unloads [src].", SPAN_NOTICE("You unload [count] round\s from [src]."))
 		else if(load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
-			loaded.len--
+			loaded -= C
 			user.put_in_hands(C)
 			user.visible_message("[user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from [src]."))
 	else
@@ -312,13 +312,17 @@
 		bullets += 1
 	return bullets
 
+GLOBAL_LIST_INIT(banned_914_projectile_guns, list(
+	/obj/item/gun/projectile/automatic/scp/svd,
+	))
+
 // 1:1 - Returns random gun with same caliber and same weight, if it can find one
 // Fine or Very Fine - Returns random gun that either has higher damage with default projectiles, higher ammo capacity, higher penetration
 /obj/item/gun/projectile/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
 			var/list/potential_return = list()
-			for(var/thing in subtypesof(/obj/item/gun/projectile))
+			for(var/thing in (subtypesof(/obj/item/gun/projectile) - GLOB.banned_914_projectile_guns))
 				var/obj/item/gun/projectile/G = thing
 				if(initial(G.caliber) != caliber)
 					continue
@@ -334,7 +338,7 @@
 				explosion(get_turf(src), -1, prob(35), 3, 7, TRUE)
 				return null
 			var/list/potential_return = list()
-			for(var/thing in subtypesof(/obj/item/gun/projectile))
+			for(var/thing in (subtypesof(/obj/item/gun/projectile) - GLOB.banned_914_projectile_guns))
 				var/obj/item/gun/projectile/G = thing
 				if(!isnull(magazine_type) && !isnull(initial(G.magazine_type)))
 					// Higher capacity magazine

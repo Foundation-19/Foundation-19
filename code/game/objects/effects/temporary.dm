@@ -89,14 +89,14 @@
 	desc = "It's a decoy!"
 	duration = 15
 
-/obj/effect/temp_visual/decoy/Initialize(mapload, setdir, atom/mimiced_atom, modified_duration = 15)
+/obj/effect/temp_visual/decoy/Initialize(mapload, set_dir, atom/mimiced_atom, modified_duration = 15)
 	duration = modified_duration
 	. = ..()
 	alpha = initial(alpha)
 	if(mimiced_atom)
 		name = mimiced_atom.name
 		appearance = mimiced_atom.appearance
-		setDir(setdir)
+		setDir(set_dir)
 		mouse_opacity = 0
 
 /obj/effect/temp_visual/cig_smoke
@@ -134,3 +134,44 @@
 
 /obj/effect/temp_visual/bite/proc/FadeOut()
 	animate(src, alpha = 0, (duration * 0.2))
+
+// Used by pestilence spell
+/obj/effect/temp_visual/pestilence_glow
+	name = "pestilence"
+	icon_state = "greenglow"
+	icon = 'icons/effects/effects.dmi'
+	alpha = 125
+	opacity = FALSE
+	anchored = TRUE
+	mouse_opacity = FALSE
+	layer = ABOVE_HUMAN_LAYER
+
+	duration = 1 SECONDS
+
+	var/max_spread_pixels = 16
+
+/obj/effect/temp_visual/pestilence_glow/Initialize()
+	. = ..()
+	pixel_x = rand(-4, 4)
+	pixel_y = rand(-4, 4)
+	animate(src, alpha = 0, pixel_x = pixel_x + rand(-max_spread_pixels, max_spread_pixels), pixel_y = pixel_y + rand(-max_spread_pixels, max_spread_pixels), duration, easing = EASE_IN)
+
+// The one spreading from the user
+/obj/effect/temp_visual/pestilence_glow/self
+	duration = 5 SECONDS
+	max_spread_pixels = 64
+
+/obj/effect/temp_visual/slash
+	name = "slash"
+	icon_state = "slash"
+	icon = 'icons/effects/effects.dmi'
+	alpha = 25
+	opacity = FALSE
+	anchored = TRUE
+	mouse_opacity = FALSE
+	layer = ABOVE_HUMAN_LAYER
+
+	duration = 1 SECONDS
+
+/obj/effect/temp_visual/slash/proc/FadeOut()
+	animate(src, alpha = 0, time = 5)

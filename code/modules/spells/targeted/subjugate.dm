@@ -1,8 +1,6 @@
 /datum/spell/targeted/subjugation
 	name = "Subjugation"
 	desc = "This spell temporarily subjugates a target's mind and does not require wizard garb."
-	feedback = "SJ"
-	school = "illusion"
 	charge_max = 500
 	spell_flags = NOFACTION
 	invocation = "Dii Oda Baji."
@@ -14,15 +12,18 @@
 
 	level_max = list(UPGRADE_TOTAL = 3, UPGRADE_SPEED = 0, UPGRADE_POWER = 3)
 
-	amt_dizziness = 20 SECONDS
-	amt_confused = 20 SECONDS
-	amt_stuttering = 1 MINUTE
+	amt_dizziness = 20
+	amt_confused = 20
+	amt_stuttering = 75
 
 	compatible_mobs = list(/mob/living/carbon/human)
 
 	hud_state = "wiz_subj"
 
-/datum/spell/targeted/subjugation/empower_spell()
+	spell_cost = 3
+	mana_cost = 25
+
+/datum/spell/targeted/subjugation/ImproveSpellPower()
 	if(!..())
 		return 0
 

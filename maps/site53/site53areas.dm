@@ -3,7 +3,6 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/site53/surface/bunker,
-		/area/shuttle/escape_pod
 		)
 
 /area/turbolift
@@ -80,10 +79,26 @@
 	dynamic_lighting = 1
 
 /area/turbolift/site53/logistics
-	name = "lift (Logistics)"
+	name = "lift (Logistics Loading Pad)"
 	lift_floor_label = "Logistics"
 	lift_floor_name = "Logistics"
-	lift_announce_str = "Arriving at Logistics: Locker Rooms, Lobby, Loading Docks."
+	lift_announce_str = "Arriving at Logistics Loading pad: Loading Docks."
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/turbolift/site53/robotlwr
+	name = "lift (Lower Robotics)"
+	lift_floor_label = "Lower Robotics"
+	lift_floor_name = "Lower Robotics"
+	lift_announce_str = "Arriving at Lower Robotics."
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/turbolift/site53/robotupr
+	name = "lift (Upper Robotics)"
+	lift_floor_label = "Upper Robotics"
+	lift_floor_name = "Upper Robotics"
+	lift_announce_str = "Arriving at Upper Robotics."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -132,12 +147,20 @@
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod
-	name = "Transfer Tram"
+/area/site53/tram/maintrain
+	name = "Foundation Train"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/tram/maintrain/Tunnel
+	name = "Train Tunnel"
+	icon_state = "shuttle"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	forced_ambience = list('sounds/effects/Traininmotion.ogg')
 
 /area/supply/dock
 	name = "Supply Dock"
@@ -992,6 +1015,11 @@
 	icon_state = "surgery"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/medical/surgery/op3
+	name = "\improper Operating Theatre #3"
+	icon_state = "surgery"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/medical/surgery/hall
 	name = "\improper Surgical Hallway"
 	icon_state = "surgery"
@@ -1128,6 +1156,61 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/reswing/roboticsupr
+	name = "\improper Upper Robotics Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/psionic
+	name = "\improper Psionic Divison"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/researchanddevelopment
+	name = "\improper Research and Development"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/researchwing
+	name = "\improper Research Wing"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/Anomaly
+	name = "\improper Anomaly Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/Lowerresearchwing
+	name = "\improper Lower Research Wing"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/researchmaint
+	name = "\improper Research Maintenance Tunnel 1"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/researchmaint2
+	name = "\improper Research Maintenance Tunnel 2"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/researchoffices
+	name = "\improper Research Offices"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/xenoarchaeology
+	name = "\improper Xenoarchaeology Storage"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/lowres/xenobotany
+	name = "\improper Botanical Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/logistics/logistics
 	name = "\improper Logistics"
 	icon_state = "quart"
@@ -1139,7 +1222,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/logistics/logisticsbreak
-	name = "\improper Logistics Break Area"
+	name = "\improper Logistics Surface Area"
+	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/logistics/understorage
+	name = "\improper Logistics Underground Storage"
 	icon_state = "quart"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -1203,10 +1291,15 @@
 	name = "\improper Senior Researcher's Office B"
 	icon_state = "research"
 
+/area/site53/science/seniorresearcherc
+	name = "\improper Senior Researcher's Office C"
+	icon_state = "research"
+
 //Logistics
 /area/quartermaster/hangar
 	name ="\improper Logistics Hangar"
 	icon_state = "quart"
+
 
 //SCP-106's realm
 /area/pocketdimension

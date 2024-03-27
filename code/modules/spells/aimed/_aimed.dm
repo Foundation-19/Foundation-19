@@ -1,8 +1,7 @@
 /datum/spell/aimed
-	name = "aimed projectile spell"
 	hud_state = "projectile"
 
-	var/projectile_type = /obj/item/projectile
+	var/projectile_type = null
 	var/deactive_msg = "You discharge your projectile..."
 	var/active_msg = "You charge your projectile!"
 	var/active_icon_state = "projectile"
@@ -25,6 +24,7 @@
 		if(charge_type == "recharge")
 			var/refund_percent = current_amount/projectile_amount
 			charge_counter = charge_max * refund_percent
+			process()
 		remove_ranged_ability(msg)
 		on_deactivation(user)
 	else
@@ -35,18 +35,35 @@
 
 /datum/spell/aimed/proc/on_activation(mob/user)
 	active = TRUE
+	if(connected_button)
+		var/atom/movable/screen/ability/spell/S = connected_button
+		if(!istype(S))
+			return
+		S.update_charge(1)
 	return
 
 /datum/spell/aimed/proc/on_deactivation(mob/user)
 	active = FALSE
+	if(connected_button)
+		var/atom/movable/screen/ability/spell/S = connected_button
+		if(!istype(S))
+			return
+		S.update_charge(1)
 	return
+
+// Additional checks when there's a target
+/datum/spell/aimed/proc/TargetCastCheck(mob/living/user, atom/target)
+	return TRUE
 
 /datum/spell/aimed/InterceptClickOn(mob/living/caller, params, atom/target)
 	if(..())
 		return FALSE
 	var/ran_out = (current_amount <= 0)
-	if(!cast_check(!ran_out, ranged_ability_user))
+	if(!cast_check(!ran_out, ranged_ability_user, list(target)))
 		remove_ranged_ability()
+		return FALSE
+	// The targeted check does not remove the ranged ability, allowing you to pick another target
+	if(!TargetCastCheck(ranged_ability_user, target))
 		return FALSE
 	var/list/targets = list(target)
 	perform(ranged_ability_user, targets)
@@ -66,16 +83,17 @@
 
 /datum/spell/aimed/proc/fire_projectile(mob/living/user, atom/target)
 	current_amount--
-	for(var/i in 1 to projectiles_per_fire)
-		var/obj/item/projectile/P = new projectile_type(user.loc)
-		if(istype(P, /obj/item/projectile/spell_projectile))
-			var/obj/item/projectile/spell_projectile/SP = P
-			SP.carried = src //casting is magical
-		P.original = target
-		P.current = target
-		P.starting = get_turf(user)
-		P.shot_from = user
-		P.launch(target, user.zone_sel.selecting, user)
+	if(projectile_type)
+		for(var/i in 1 to projectiles_per_fire)
+			var/obj/item/projectile/P = new projectile_type(user.loc)
+			if(istype(P, /obj/item/projectile/spell_projectile))
+				var/obj/item/projectile/spell_projectile/SP = P
+				SP.carried = src //casting is magical
+			P.original = target
+			P.current = target
+			P.starting = get_turf(user)
+			P.shot_from = user
+			P.launch(target, user.zone_sel.selecting, user)
 	return TRUE
 
 // For spell_projectile types

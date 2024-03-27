@@ -33,13 +33,19 @@
 			N = /turf/simulated/floor/asteroid // ghetto solution, we don't want space on earth so we just turn it into sand.
 
 	var/old_air = air
-	var/old_fire = fire
+	var/old_hotspot = hotspot
+	var/old_turf_fire = null
 	var/old_opacity = opacity
 	var/old_dynamic_lighting = dynamic_lighting
 	var/old_affecting_lights = affecting_lights
 	var/old_lighting_overlay = lighting_overlay
 	var/old_corners = corners
 	var/old_ao_neighbors = ao_neighbors
+
+	if(isspaceturf(N) || isopenspace(N))
+		QDEL_NULL(turf_fire)
+	else
+		old_turf_fire = turf_fire
 
 //	log_debug("Replacing [src.type] with [N]")
 
@@ -72,12 +78,12 @@
 		W.air = old_air
 
 	if(ispath(N, /turf/simulated))
-		if(old_fire)
-			fire = old_fire
+		if(old_hotspot)
+			hotspot = old_hotspot
 		if (istype(W,/turf/simulated/floor))
 			W.RemoveLattice()
-	else if(old_fire)
-		qdel(old_fire)
+	else if(hotspot)
+		qdel(hotspot)
 
 	if(tell_universe)
 		GLOB.universe.OnTurfChange(W)
@@ -105,6 +111,12 @@
 
 	for(var/turf/T in RANGE_TURFS(src, 1))
 		T.update_icon()
+
+
+	if(!density)
+		turf_fire = old_turf_fire
+	else if(old_turf_fire)
+		QDEL_NULL(old_turf_fire)
 
 /turf/proc/transport_properties_from(turf/other)
 	if(!istype(other, src.type))

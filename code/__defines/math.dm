@@ -16,6 +16,9 @@
 /// Value or the nearest multiple of divisor in either direction
 #define Roundm(value, divisor) round((value), (divisor))
 
+#define ATAN2(x, y) ( !(x) && !(y) ? 0 : (y) >= 0 ? arccos((x) / sqrt((x)*(x) + (y)*(y))) : -arccos((x) / sqrt((x)*(x) + (y)*(y))) )
+
+
 // round() acts like floor(x, 1) by default but can't handle other values
 #define FLOOR(x, y) ( round((x) / (y)) * (y) )
 

@@ -23,6 +23,10 @@ var/list/mining_floors = list()
 /turf/unsimulated/mineral/get_roof_turf()
 	return /turf/simulated/floor/asteroid
 
+/turf/unsimulated/mineral/animated
+	icon_state = "rock-dark-animated"
+
+
 /turf/simulated/mineral
 	name = "rock"
 	icon = 'icons/turf/walls.dmi'

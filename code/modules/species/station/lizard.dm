@@ -51,11 +51,11 @@
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_ROBOTIC_INTERNAL_ORGANS
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
 
-	flesh_color = "#34af10"
+	flesh_color = "#383838"
 
 	reagent_tag = IS_UNATHI
-	base_color = "#066000"
-	blood_color = "#f24b2e"
+	base_color = "#383838"
+	blood_color = "#9beea2"
 	organs_icon = 'icons/mob/human_races/species/unathi/organs.dmi'
 
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/claw

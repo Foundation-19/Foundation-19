@@ -8,6 +8,7 @@
 	color = "#808080"
 	metabolism = REM * 0.2
 	value = DISPENSER_REAGENT_VALUE
+	accelerant_quality = 3
 
 /datum/reagent/acetone/affect_blood(mob/living/carbon/M, alien, removed)
 	if(alien == IS_NABBER)
@@ -145,6 +146,7 @@
 	glass_name = "ethanol"
 	glass_desc = "A well-known alcohol with a variety of applications."
 	value = DISPENSER_REAGENT_VALUE
+	accelerant_quality = 5
 
 /datum/reagent/ethanol/New()
 	addiction_types = list(/datum/addiction/alcohol = max(0.5, 50 / strength)) // Higher strength is somehow weaker, go figure

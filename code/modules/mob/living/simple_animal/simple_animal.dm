@@ -271,7 +271,7 @@
 			meat.SetName("[src.name] [meat.name]")
 			if(can_bleed)
 				var/obj/effect/decal/cleanable/blood/splatter/splat = new(get_turf(src))
-				splat.basecolor = bleed_colour
+				splat.basecolor = GetBloodColor()
 				splat.update_icon()
 			qdel(src)
 
@@ -288,7 +288,7 @@
 				var/hit_dir = get_dir(P.starting, src)
 				var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
 				B.icon_state = pick("dir_splatter_1","dir_splatter_2")
-				B.basecolor = bleed_colour
+				B.basecolor = GetBloodColor()
 				var/scale = min(1, round(mob_size / MOB_MEDIUM, 0.1))
 				var/matrix/M = new()
 				B.transform = M.Scale(scale)
@@ -341,7 +341,7 @@
 	adjustBruteLoss(1)
 
 	var/obj/effect/decal/cleanable/blood/drip/drip = new(get_turf(src))
-	drip.basecolor = bleed_colour
+	drip.basecolor = GetBloodColor()
 	drip.update_icon()
 
 /mob/living/simple_animal/get_digestion_product()
@@ -402,13 +402,15 @@
 		set_AI_busy(FALSE)
 
 // Rough - Gibs
-// Coarse - Gibs and spawns a random(50% - 80%) amount of its buchering results
+// Coarse - Spawns a random(50% - 80%) amount of its buchering results
 /mob/living/simple_animal/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ROUGH)
 			gib()
 			return null
 		if(MODE_COARSE)
+			death()
+			ghostize()
 			var/turf/T = get_turf(src)
 			var/list/return_items = list()
 			if(meat_type && meat_amount)
@@ -422,6 +424,8 @@
 				var/skin_count = rand(round(skin_amount * 0.5), round(skin_amount * 0.8))
 				var/material/M = SSmaterials.get_material_by_name(skin_material)
 				return_items += new M.stack_type(T, skin_count, skin_material)
-			gib()
 			return return_items
 	return ..()
+
+/mob/living/simple_animal/GetBloodColor()
+	return bleed_colour

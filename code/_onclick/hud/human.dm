@@ -270,7 +270,7 @@
 		hud_elements |= mymob.sanity_icon
 
 	if(hud_data.has_facedir)
-		using = new /obj/screen/facedir()
+		using = new /atom/movable/screen/facedir()
 		using.icon = ui_style
 		using.icon_state = "facedir"
 		using.SetName("facedir")
@@ -278,7 +278,7 @@
 		src.adding += using
 		facedir_button = using
 
-		using = new /obj/screen()
+		using = new /atom/movable/screen()
 		using.SetName("rest")
 		using.icon = ui_style
 		using.icon_state = "rest_[mymob.resting]"
@@ -502,7 +502,7 @@
 			if("blink_1")
 				to_chat(usr, SPAN_NOTICE("I blinked."))
 
-/obj/screen/facedir/Click(location, control, params)
+/atom/movable/screen/facedir/Click(location, control, params)
 	usr?.face_direction()
 
 /mob/living/carbon/human/InitializePlanes()

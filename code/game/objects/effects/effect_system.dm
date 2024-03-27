@@ -310,6 +310,30 @@ steam.start() -- spawns the effect
 	return
 
 /////////////////////////////////////////////
+// Corpse Explosion Bloody Smoke
+/////////////////////////////////////////////
+
+/obj/effect/effect/smoke/bloody
+	name = "bloody mist"
+	color = "#c80000"
+
+/obj/effect/effect/smoke/bloody/Move()
+	..()
+	for(var/mob/living/carbon/human/R in get_turf(src))
+		affect(R)
+
+/obj/effect/effect/smoke/bloody/affect(mob/living/carbon/human/R)
+	if(!..())
+		return FALSE
+	if(R.wear_mask != null)
+		return FALSE
+
+	R.set_confusion_if_lower(3)
+	if(prob(25))
+		R.vomit(rand(2, 15), 5)
+	return
+
+/////////////////////////////////////////////
 // Smoke spread
 /////////////////////////////////////////////
 
@@ -367,6 +391,9 @@ steam.start() -- spawns the effect
 /datum/effect/effect/system/smoke_spread/mustard
 	smoke_type = /obj/effect/effect/smoke/mustard
 
+
+/datum/effect/effect/system/smoke_spread/bloody
+	smoke_type = /obj/effect/effect/smoke/bloody
 
 /////////////////////////////////////////////
 //////// Attach an Ion trail to any object, that spawns when it moves (like for the jetpack)
