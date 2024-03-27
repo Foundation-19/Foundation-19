@@ -6,6 +6,7 @@
 	icon_locked = "secure1"
 	icon_opened = "secureopen"
 	icon_off = "secureoff"
+	req_access = list(ACCESS_ALL_PERSONAL_LOCKERS)
 	locked = TRUE
 	var/registered_name = null
 
@@ -43,11 +44,8 @@
 		if(locked)
 			id_card = istype(id_card) ? id_card : user.GetIdCard()
 			if (id_card)
-				var/list/id_acc = id_card.GetAccess()
-				req_access = id_acc.Copy()
 				set_owner(id_card.registered_name)
 		else
-			req_access = list()
 			set_owner(null)
 
 /obj/structure/closet/secure_closet/personal/proc/set_owner(registered_name)
