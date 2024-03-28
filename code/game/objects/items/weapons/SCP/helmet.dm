@@ -5,7 +5,7 @@
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 60, bullet = 40, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 	acid_resistance = 1.5
-	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
+	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = "Toggle Visor"
 
 /obj/item/clothing/head/helmet/scp/security/medic
@@ -15,6 +15,7 @@
 	body_parts_covered = HEAD|EYES
 	armor = list(melee = 40, bullet = 35, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 	acid_resistance = 1.5
+	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/recontain
@@ -24,6 +25,7 @@
 	body_parts_covered = HEAD|EYES
 	armor = list(melee = 45, bullet = 65, laser = 65,energy = 25, bomb = 30, bio = 10, rad = 10)
 	acid_resistance = 1.5
+	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/riot
