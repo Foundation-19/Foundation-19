@@ -167,6 +167,15 @@
 	. = ..()
 	overlay = GLOB.global_hud.nvg
 
+/obj/item/clothing/glasses/night/security
+	name = "security night vision goggles"
+	desc = "You can totally see in the dark now, AND see criminals!"
+	icon_state = "securityhudnight"
+	hud_type = HUD_SECURITY
+	body_parts_covered = 0
+	var/global/list/jobs[0]
+	req_access = list(ACCESS_SECURITY_LVL1)
+
 /obj/item/clothing/glasses/tacgoggles
 	name = "tactical goggles"
 	desc = "Self-polarizing goggles with light amplification for dark environments. Made from durable synthetic."
