@@ -186,7 +186,7 @@ var/global/list/additional_antag_types = list()
 	refresh_event_modifiers()
 
 	addtimer(CALLBACK(null, GLOBAL_PROC_REF(display_roundstart_logout_report)), ROUNDSTART_LOGOUT_REPORT_TIME)
-  
+
 	addtimer(CALLBACK(src, PROC_REF(announce_ert_disabled)), rand(70 SECONDS, 190 SECONDS))
 
 	//Assign all antag types for this game mode. Any players spawned as antags earlier should have been removed from the pending list, so no need to worry about those.
@@ -273,6 +273,10 @@ var/global/list/additional_antag_types = list()
 
 /datum/game_mode/proc/declare_completion()
 	set waitfor = FALSE
+
+	for(var/datum/callback/roundend_callbacks as anything in SSticker.round_end_events)
+		roundend_callbacks.InvokeAsync()
+	LAZYCLEARLIST(SSticker.round_end_events)
 
 	sleep(2)
 

@@ -61,12 +61,12 @@
 		scattered_item.pixel_y = scatter_vector[2]
 
 	for(var/iteration in 1 to number_of_shards)
-		var/obj/item/material/shard/shard = new (scatter_turf, shard_material)
+		new /obj/item/material/shard(scatter_turf, shard_material)
 
 	playsound(scatter_turf, shattering_sound, 60, TRUE)
 	if(isobj(source))
 		var/obj/obj_source = source
-		obj_source.deconstruct(FALSE)
+		obj_source.decons(FALSE)
 		return
 	else
 		qdel(source)

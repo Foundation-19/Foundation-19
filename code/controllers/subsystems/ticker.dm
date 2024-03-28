@@ -7,25 +7,36 @@ SUBSYSTEM_DEF(ticker)
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
 	var/pregame_timeleft = 3 MINUTES
-	var/start_ASAP = FALSE          //the game will start as soon as possible, bypassing all pre-game nonsense
-	var/list/gamemode_vote_results  //Will be a list, in order of preference, of form list(config_tag = number of votes).
-	var/bypass_gamemode_vote = TRUE    //Intended for use with admin tools. Will avoid voting and ignore any results.
+	/// The game will start as soon as possible, bypassing all pre-game nonsense
+	var/start_ASAP = FALSE
+	/// Will be a list, in order of preference, of form list (config_tag = number of votes).
+	var/list/gamemode_vote_results
+	/// Intended for use with admin tools. Will avoid voting and ignore any results.
+	var/bypass_gamemode_vote = TRUE
 
-	var/master_mode = "extended"    //The underlying game mode (so "secret" or the voted mode). Saved to default back to previous round's mode in case the vote failed. This is a config_tag.
-	var/datum/game_mode/mode        //The actual gamemode, if selected.
-	var/round_progressing = 1       //Whether the lobby clock is ticking down.
+	/// The underlying game mode (so "secret" or the voted mode). Saved to default back to previous round's mode in case the vote failed. This is a config_tag.
+	var/master_mode = "extended"
+	/// The actual gamemode, if selected.
+	var/datum/game_mode/mode
+	/// Whether the lobby clock is ticking down.
+	var/round_progressing = 1
 
-	var/list/bad_modes = list()     //Holds modes we tried to start and failed to.
-	var/revotes_allowed = 0         //How many times a game mode revote might be attempted before giving up.
+	/// Holds modes we tried to start and failed to.
+	var/list/bad_modes = list()
+	/// How many times a game mode revote might be attempted before giving up.
+	var/revotes_allowed = 0
 
 	var/list/round_start_events
 
 	var/end_game_state = END_GAME_NOT_OVER
-	var/delay_end = 0               //Can be set true to postpone restart.
-	var/delay_notified = 0          //Spam prevention.
+	/// Can be set true to postpone restart.
+	var/delay_end = 0
+	/// Spam prevention.
+	var/delay_notified = 0
 	var/restart_timeout = 1 MINUTE
 
-	var/list/minds = list()         //Minds of everyone in the game.
+	/// Minds of everyone in the game.
+	var/list/minds = list()
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
 
@@ -34,11 +45,16 @@ SUBSYSTEM_DEF(ticker)
 	///Set to TRUE when an admin forcibly ends round.
 	var/forced_end = FALSE
 
-	var/gametime_offset = 432000 //Deciseconds to add to world.time for station time.
-	var/station_time_rate_multiplier = 12 //factor of station time progressal vs real time.
+	/// Deciseconds to add to world.time for station time.
+	var/gametime_offset = 432000
+	/// Factor of station time progressal vs real time.
+	var/station_time_rate_multiplier = 12
 	var/round_start_time = 0
 
 	var/news_report
+
+	/// Callbacks ran on round end
+	var/list/round_end_events
 
 /datum/controller/subsystem/ticker/Initialize()
 	if(start_ASAP)
@@ -528,3 +544,10 @@ Helpers
 		if(network_name)
 			payload["network"] = network_name
 		send2otherserver(news_source, news_message, "News_Report", additional_data = payload)
+
+/// Callbacks given will be fired on roundend, or immediately if we're already ending
+/datum/controller/subsystem/ticker/proc/OnRoundend(datum/callback/cb)
+	if(GAME_STATE >= RUNLEVEL_POSTGAME)
+		cb.InvokeAsync()
+	else
+		LAZYADD(round_end_events, cb)

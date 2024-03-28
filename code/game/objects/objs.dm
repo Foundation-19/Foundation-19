@@ -206,3 +206,8 @@
 				return_list += new_sheet
 			return return_list
 	return ..()
+
+// TODO: this is supposed to be named deconstruct() but that proc name is already used by some subtypes and i can't be assed to rename them.
+/// The obj is deconstructed into pieces, whether through careful disassembly or when destroyed.
+/obj/proc/decons(disassembled = TRUE)
+	qdel(src)

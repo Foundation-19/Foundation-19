@@ -51,11 +51,11 @@
 		persistence_cb = null
 	return ..()
 
-/obj/item/piggy_bank/deconstruct(disassembled = TRUE)
+/obj/item/piggy_bank/decons(disassembled = TRUE)
 	for(var/obj/item/thing as anything in contents)
 		thing.forceMove(loc)
 	//Smashing the piggy after the round is over doesn't count.
-	if(persistence_id && SSticker.current_state < GAME_STATE_FINISHED)
+	if(persistence_id && GAME_STATE < RUNLEVEL_POSTGAME)
 		LAZYADD(SSpersistence.queued_broken_piggy_ids, persistence_id)
 	return ..()
 
@@ -66,7 +66,7 @@
 	balloon_alert(user, "rattle rattle...")
 	if(!do_after(user, 0.5 SECONDS, src))
 		return
-	var/percentile = round(calculate_dosh_amount()/maximum_value * 100, 1)
+	var/percentile = round(calculate_dosh_amount() / maximum_value * 100, 1)
 	if(percentile >= 10)
 		playsound(src, SFX_RATTLE, percentile * 0.5, FALSE, FALSE)
 	switch(percentile)

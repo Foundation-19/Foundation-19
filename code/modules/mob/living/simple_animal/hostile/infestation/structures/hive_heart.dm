@@ -51,23 +51,29 @@
 /obj/infestation_structure/hive_heart/handle_death_change(new_death_state)
 	. = ..()
 	if(new_death_state)
-		visible_message(SPAN_DANGER("\The [src] starts beating faster as cracks appear at its surface!"))
-		QDEL_NULL(sound_token)
-		sound_token = null
-		density = FALSE
-		icon_state = "heart"
-		for(var/i = 1 to 5)
-			if(QDELETED(src))
-				return
-			AbilityEffect(50 + i*20)
-			if(prob(i * 10))
-				new /obj/effect/gibspawner/human(get_turf(src))
-			sleep(10 - i * 2)
-		for(var/ii = 1 to 5)
+		INVOKE_ASYNC(src, PROC_REF(death_sequence))
+
+/obj/infestation_structure/hive_heart/proc/death_sequence()
+	visible_message(SPAN_DANGER("\The [src] starts beating faster as cracks appear at its surface!"))
+	QDEL_NULL(sound_token)
+	sound_token = null
+	density = FALSE
+	icon_state = "heart"
+
+	for(var/i = 1 to 5)
+		if(QDELETED(src))
+			return
+		AbilityEffect(50 + i*20)
+		if(prob(i * 10))
 			new /obj/effect/gibspawner/human(get_turf(src))
-		playsound(src, 'sounds/simple_mob/abominable_infestation/heart_death.ogg', 125, TRUE, 24, 3, ignore_pressure = TRUE)
-		visible_message(SPAN_DANGER("\The [src] explodes in a shower of gore!"))
-		QDEL_NULL(src) // "But why QDEL_NULL? Bwuhuhu" because some moron might delete it in the middle of sick animation
+		sleep(10 - i * 2)
+
+	for(var/ii = 1 to 5)
+		new /obj/effect/gibspawner/human(get_turf(src))
+
+	playsound(src, 'sounds/simple_mob/abominable_infestation/heart_death.ogg', 125, TRUE, 24, 3, ignore_pressure = TRUE)
+	visible_message(SPAN_DANGER("\The [src] explodes in a shower of gore!"))
+	QDEL_NULL(src)
 
 /* Abilities */
 /obj/infestation_structure/hive_heart/proc/HealMobs()
