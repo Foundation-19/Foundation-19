@@ -153,7 +153,11 @@
 	icon_locked = "sec1";
 	icon_closed = "sec";
 	name = "confiscation locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
@@ -1541,10 +1545,11 @@
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint2)
 "bqP" = (
-/obj/machinery/suspension_gen,
-/obj/item/wrench,
-/turf/simulated/floor/tiled/old_tile,
-/area/site53/llcz/mining/miningops)
+/obj/effect/floor_decal/corner/black/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "bqX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -3296,8 +3301,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/suspension_gen,
-/obj/item/wrench,
+/obj/structure/ore_box,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
 "cWh" = (
@@ -4798,6 +4802,12 @@
 	},
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkpoint)
+"ewk" = (
+/obj/effect/floor_decal/corner/black/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "exZ" = (
 /obj/structure/bed/chair/office/light,
 /obj/effect/landmark/start{
@@ -9034,7 +9044,11 @@
 	icon_locked = "sec1";
 	icon_closed = "sec";
 	name = "confiscation locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
@@ -9091,7 +9105,11 @@
 	icon_locked = "sec1";
 	icon_closed = "sec";
 	name = "confiscation locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
@@ -9416,13 +9434,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/mine/unexplored)
 "iYr" = (
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "iYw" = (
 /obj/structure/cable/green{
@@ -13913,13 +13930,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "nuK" = (
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/bordercorner,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "nuU" = (
 /turf/simulated/floor/grass,
@@ -14862,6 +14879,10 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"okm" = (
+/obj/structure/ore_box,
+/turf/simulated/floor/tiled/old_tile,
+/area/site53/llcz/mining/miningops)
 "olE" = (
 /obj/structure/filingcabinet/wallcabinet{
 	pixel_y = 24
@@ -14914,7 +14935,11 @@
 	icon_locked = "sec1";
 	icon_closed = "sec";
 	name = "confiscation locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
@@ -16656,12 +16681,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "pUL" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/civilian{
 	id_tag = "sec7";
 	name = "Sector 7"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/luxuryhall)
 "pUV" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -19567,8 +19591,9 @@
 /area/site53/lhcz/scp049containment)
 "sYg" = (
 /obj/machinery/smartfridge,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/botany)
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/kitchen)
 "sZh" = (
 /obj/structure/bed/chair,
 /obj/machinery/camera/network/lcz{
@@ -19641,7 +19666,11 @@
 	icon_locked = "sec1";
 	icon_closed = "sec";
 	name = "confiscation locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
@@ -20801,7 +20830,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "unJ" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -20810,7 +20838,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "unP" = (
 /obj/machinery/button/blast_door{
@@ -21143,7 +21171,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
 "uGM" = (
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -21153,7 +21180,7 @@
 	id_tag = "sec7";
 	name = "Sector 7"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/luxuryhall)
 "uHS" = (
 /obj/effect/catwalk_plated/white,
@@ -21830,7 +21857,11 @@
 	icon_locked = "sec1";
 	icon_closed = "sec";
 	name = "confiscation locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	anchored = 1
+	},
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
@@ -22521,11 +22552,10 @@
 /turf/simulated/floor/beach/sand,
 /area/site53/llcz/dclass/luxuryhall)
 "wiD" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/light{
-	dir = 1
+/obj/effect/floor_decal/corner/black/bordercorner{
+	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "wiF" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -22618,14 +22648,11 @@
 /turf/simulated/wall/titanium,
 /area/site53/ulcz/scp173)
 "wmM" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/black/border{
+	dir = 4
 	},
-/turf/simulated/floor,
-/area/site53/llcz/dclass/primaryhallway)
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/luxuryhall)
 "wnu" = (
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 4
@@ -23016,9 +23043,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
 "wHJ" = (
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor,
-/area/site53/llcz/dclass/primaryhallway)
+/obj/effect/floor_decal/corner/black/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "wIo" = (
 /obj/machinery/light{
 	dir = 8
@@ -23701,11 +23730,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "xnk" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "xnV" = (
 /obj/structure/cable/green{
@@ -30020,12 +30048,12 @@ vXg
 vXg
 vXg
 tlE
-scT
-scT
-scT
-scT
-scT
-scT
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
 kkC
 xHN
 hIH
@@ -30276,13 +30304,13 @@ bYA
 bYA
 srm
 bYA
-tlE
-scT
-scT
-scT
-scT
-scT
-scT
+xHN
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
 bYA
 xHN
 hIH
@@ -30538,8 +30566,8 @@ duI
 duI
 duI
 bYA
-scT
-scT
+bYA
+bYA
 bYA
 xHN
 hIH
@@ -30795,8 +30823,8 @@ dyp
 dyp
 dyp
 adD
-scT
-scT
+bYA
+bYA
 bYA
 xHN
 hIH
@@ -31052,8 +31080,8 @@ dyp
 dyp
 dyp
 adD
-scT
-scT
+bYA
+bYA
 kkC
 sAE
 xHN
@@ -31309,9 +31337,9 @@ buA
 jzk
 dyp
 bYA
-scT
-scT
-scT
+bYA
+bYA
+bYA
 scT
 scT
 scT
@@ -31566,9 +31594,9 @@ buA
 jzk
 dyp
 bYA
-scT
-scT
-scT
+bYA
+bYA
+bYA
 scT
 scT
 scT
@@ -31823,8 +31851,8 @@ dyp
 dyp
 dyp
 adD
-scT
-scT
+bYA
+bYA
 mHG
 xHN
 xHN
@@ -32080,8 +32108,8 @@ sZP
 oKp
 dyp
 xHN
-wiD
-scT
+dzI
+bYA
 kkC
 xHN
 hIH
@@ -32337,8 +32365,8 @@ pdQ
 dyp
 leT
 xHN
-scT
-scT
+bYA
+bYA
 bYA
 xHN
 hIH
@@ -32594,8 +32622,8 @@ sWD
 sWD
 sWD
 xHN
-scT
-scT
+bYA
+bYA
 bYA
 xHN
 hIH
@@ -32847,12 +32875,12 @@ dFL
 woX
 dFL
 dFL
-wmM
+dFL
 unJ
-wmM
+dFL
 uGM
 iYr
-scT
+bYA
 bYA
 xHN
 hIH
@@ -33104,13 +33132,13 @@ nzF
 aWG
 wun
 nzF
-wHJ
+nzF
 xnk
-wHJ
+nzF
 pUL
 nuK
-scT
-bYA
+wmM
+wiD
 xHN
 hIH
 hIH
@@ -36449,9 +36477,9 @@ trp
 trp
 trp
 pLY
-hnY
-hnY
-hnY
+bqP
+wHJ
+ewk
 pLY
 hIH
 hIH
@@ -45154,7 +45182,7 @@ sVS
 sVS
 sVS
 sVS
-bqP
+sVS
 vaS
 vaS
 vaS
@@ -45410,7 +45438,7 @@ gkX
 gIX
 sVS
 sVS
-sVS
+okm
 cVt
 wJw
 ghd

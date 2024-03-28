@@ -56,7 +56,7 @@
 /obj/item/clothing/shoes/combat/lcz
 	name = "heavy riot boots"
 	desc = "When you REALLY want to turn up the heat. Resistant to slippery surfaces, and melee damage."
-	icon_state = "jungle"
+	icon_state = "lcz_boots"
 	force = 5
 	armor = list(melee = 80, bullet = 15, laser = 10,energy = 5, bomb = 5, bio = 0, rad = 0)
 	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_THICKMATERIAL
