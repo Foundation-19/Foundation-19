@@ -68,9 +68,16 @@
 		light = null
 	return ..()
 
-/atom/set_opacity()
-	. = ..()
-	if(.)
+/atom/proc/set_opacity(new_opacity)
+	if(new_opacity != opacity)
+		var/old_opacity = opacity
+		opacity = new_opacity
+
 		var/turf/T = loc
 		if(istype(T))
 			T.RecalculateOpacity()
+
+		SEND_SIGNAL(src, COMSIG_SET_OPACITY, old_opacity, new_opacity)
+		return TRUE
+	else
+		return FALSE

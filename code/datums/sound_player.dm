@@ -115,7 +115,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	listeners = list()
 	listener_status = list()
 
-	GLOB.destroyed_event.register(source, src, TYPE_PROC_REF(/datum, qdel_self))
+	RegisterSignal(source, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
 
 	if(ismovable(source))
 		proxy_listener = new(source, TYPE_PROC_REF(/datum/sound_token, PrivAddListener), TYPE_PROC_REF(/datum/sound_token, PrivLocateListeners), range, proc_owner = src)
@@ -156,7 +156,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	listeners = null
 	listener_status = null
 
-	GLOB.destroyed_event.unregister(source, src, TYPE_PROC_REF(/datum, qdel_self))
+	UnregisterSignal(source, COMSIG_PARENT_QDELETING)
 	QDEL_NULL(proxy_listener)
 	source = null
 
@@ -200,16 +200,16 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 
 	listeners += listener
 
-	GLOB.moved_event.register(listener, src, TYPE_PROC_REF(/datum/sound_token, PrivUpdateListenerLoc))
-	GLOB.destroyed_event.register(listener, src, TYPE_PROC_REF(/datum/sound_token, PrivRemoveListener))
+	RegisterSignal(listener, COMSIG_MOVED, TYPE_PROC_REF(/datum/sound_token, PrivUpdateListenerLoc))
+	RegisterSignal(listener, COMSIG_PARENT_QDELETING, src, TYPE_PROC_REF(/datum/sound_token, PrivRemoveListener))
 
 	PrivUpdateListenerLoc(listener, FALSE)
 
 /datum/sound_token/proc/PrivRemoveListener(atom/listener, sound/null_sound)
 	null_sound = null_sound || new(channel = sound.channel)
 	sound_to(listener, null_sound)
-	GLOB.moved_event.unregister(listener, src, TYPE_PROC_REF(/datum/sound_token, PrivUpdateListenerLoc))
-	GLOB.destroyed_event.unregister(listener, src, TYPE_PROC_REF(/datum/sound_token, PrivRemoveListener))
+	UnregisterSignal(listener, COMSIG_MOVED)
+	UnregisterSignal(listener, COMSIG_PARENT_QDELETING)
 	listeners -= listener
 
 /datum/sound_token/proc/PrivUpdateListenerLoc(atom/listener, update_sound = TRUE)

@@ -23,9 +23,7 @@
 	user.visible_message(SPAN_NOTICE("\The [user] attaches a label to \the [atom_holder]."), \
 						 SPAN_NOTICE("You attach a label, '[label]', to \the [atom_holder]."))
 
-	var/old_name = atom_holder.name
 	atom_holder.name = "[atom_holder.name] ([label])"
-	GLOB.name_set_event.raise_event(src, old_name, atom_holder.name)
 
 /datum/extension/labels/proc/RemoveLabel(mob/user, label)
 	if(!(label in labels))
@@ -43,10 +41,8 @@
 	user.visible_message(SPAN_NOTICE("\The [user] removes a label from \the [atom_holder]."), \
 						 SPAN_NOTICE("You remove a label, '[label]', from \the [atom_holder]."))
 
-	var/old_name = atom_holder.name
 	// We find and replace the first instance, since that's the one we removed from the list
 	atom_holder.name = replacetext(atom_holder.name, full_label, "", index, index + length(full_label))
-	GLOB.name_set_event.raise_event(src, old_name, atom_holder.name)
 
 // We may have to do something more complex here
 // in case something appends strings to something that's labelled rather than replace the name outright

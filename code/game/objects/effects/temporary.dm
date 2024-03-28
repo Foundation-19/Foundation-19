@@ -6,7 +6,7 @@
 	layer = ABOVE_HUMAN_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	simulated = FALSE
-	var/duration = 10 //in deciseconds
+	var/duration = 1 SECOND
 
 /obj/effect/temp_visual/Initialize(mapload, set_dir)
 	if(set_dir)
@@ -17,7 +17,8 @@
 // Used in place of old /obj/effect/temporary where applicable.
 // Do not use it for new stuff, please
 /obj/effect/temp_visual/temporary/Initialize(mapload, new_dur = 5, new_icon = null, new_icon_state = null)
-	duration = new_dur
+	if(!isnull(new_dur))
+		duration = new_dur
 	icon = new_icon
 	icon_state = new_icon_state
 	return ..()

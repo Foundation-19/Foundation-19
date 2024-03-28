@@ -174,9 +174,9 @@
 	locked = 0
 	update_icon()
 	lock_time = world.time + 35
-	GLOB.moved_event.register(owner, src, TYPE_PROC_REF(/obj/aiming_overlay, update_aiming))
-	GLOB.moved_event.register(aiming_at, src, TYPE_PROC_REF(/obj/aiming_overlay, target_moved))
-	GLOB.destroyed_event.register(aiming_at, src, TYPE_PROC_REF(/obj/aiming_overlay, cancel_aiming))
+	RegisterSignal(owner, COMSIG_MOVED, TYPE_PROC_REF(/obj/aiming_overlay, update_aiming))
+	RegisterSignal(aiming_at, COMSIG_MOVED, TYPE_PROC_REF(/obj/aiming_overlay, target_moved))
+	RegisterSignal(aiming_at, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/aiming_overlay, cancel_aiming))
 
 /obj/aiming_overlay/on_update_icon()
 	if(locked)
@@ -215,10 +215,10 @@
 			sound_to(aiming_at, sound('sounds/weapons/TargetOff.ogg'))
 			sound_to(owner, sound('sounds/weapons/TargetOff.ogg'))
 
-	GLOB.moved_event.unregister(owner, src)
+	UnregisterSignal(owner, COMSIG_MOVED)
 	if(aiming_at)
-		GLOB.moved_event.unregister(aiming_at, src)
-		GLOB.destroyed_event.unregister(aiming_at, src)
+		UnregisterSignal(aiming_at, COMSIG_MOVED)
+		UnregisterSignal(aiming_at, COMSIG_PARENT_QDELETING)
 		aiming_at.aimed -= src
 		aiming_at = null
 

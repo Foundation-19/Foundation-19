@@ -57,9 +57,9 @@
 	if(ismob(a))
 		var/mob/M = a
 		if(M.stat != DEAD)
-			GLOB.death_event.register(M,src,TYPE_PROC_REF(/obj/item/weapon/material/twohanded/fireaxe/cult, gain_power))
+			RegisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/obj/item/weapon/material/twohanded/fireaxe/cult, gain_power))
 		spawn(30)
-			GLOB.death_event.unregister(M,src)
+			UnregisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	return ..()
 
 /obj/item/weapon/material/twohanded/fireaxe/cult/proc/gain_power()

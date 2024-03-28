@@ -56,11 +56,11 @@
 
 /obj/effect/landmark/delete_on_shuttle/Initialize()
 	. = ..()
-	GLOB.shuttle_added.register_global(src, PROC_REF(check_shuttle))
+	RegisterSignal(SSdcs, COMSIG_GLOB_SHUTTLE_INITIALIZED, PROC_REF(check_shuttle))
 
-/obj/effect/landmark/delete_on_shuttle/proc/check_shuttle(shuttle)
+/obj/effect/landmark/delete_on_shuttle/proc/check_shuttle(datum/source, shuttle)
 	if(SSshuttle.shuttles[shuttle_name] == shuttle)
-		GLOB.shuttle_moved_event.register(shuttle, src, PROC_REF(delete_everything))
+		RegisterSignal(shuttle, COMSIG_SHUTTLE_MOVED, PROC_REF(delete_everything))
 		shuttle_datum = shuttle
 
 /obj/effect/landmark/delete_on_shuttle/proc/delete_everything()
@@ -70,7 +70,6 @@
 	qdel(src)
 
 /obj/effect/landmark/delete_on_shuttle/Destroy()
-	GLOB.shuttle_added.unregister_global(src, PROC_REF(check_shuttle))
-	if(shuttle_datum)
-		GLOB.shuttle_moved_event.unregister(shuttle_datum, src, PROC_REF(delete_everything))
+	UnregisterSignal(SSdcs, COMSIG_GLOB_SHUTTLE_INITIALIZED)
+	UnregisterSignal(shuttle_datum, COMSIG_SHUTTLE_MOVED)
 	. = ..()

@@ -1077,6 +1077,7 @@
 		return
 	. = stat
 	stat = new_stat
+	SEND_SIGNAL(src, COMSIG_SET_STAT, new_stat)
 
 #define SHIFT_MAX 8
 

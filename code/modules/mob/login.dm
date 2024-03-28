@@ -58,6 +58,7 @@
 
 /mob/Login()
 	SEND_SIGNAL(src, COMSIG_MOB_LOGIN)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MOB_LOGIN, src)
 
 	// Add to player list if missing
 	if (!list_find(GLOB.player_list, src))

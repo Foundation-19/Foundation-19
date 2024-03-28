@@ -81,7 +81,7 @@
 	if(selected_io)
 		unselect_io(selected_io)
 	selected_io = io
-	GLOB.destroyed_event.register(selected_io, src, PROC_REF(unselect_io))
+	RegisterSignal(selected_io, COMSIG_PARENT_QDELETING, PROC_REF(unselect_io))
 	switch(mode)
 		if(UNWIRE)
 			mode = UNWIRING
@@ -91,7 +91,7 @@
 /obj/item/device/integrated_electronics/wirer/proc/unselect_io(datum/integrated_io/io)
 	if(selected_io != io)
 		return
-	GLOB.destroyed_event.unregister(selected_io, src)
+	UnregisterSignal(selected_io, COMSIG_PARENT_QDELETING)
 	selected_io = null
 	switch(mode)
 		if(UNWIRING)

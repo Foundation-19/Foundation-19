@@ -44,8 +44,8 @@
 
 	var/obj/item/organ/O = get_targeted_organ()
 	SetName("[initial(name)] ([O.name])")
-	GLOB.dismembered_event.register(affecting, src, PROC_REF(on_organ_loss))
-	GLOB.zone_selected_event.register(assailant.zone_sel, src, PROC_REF(on_target_change))
+	RegisterSignal(affecting, COMSIG_ORGAN_DISMEMBERED, PROC_REF(on_organ_loss))
+	RegisterSignal(assailant.zone_sel, COMSIG_SET_SELECTED_ZONE, PROC_REF(on_target_change))
 
 /obj/item/grab/examine(mob/user)
 	. = ..()
@@ -98,13 +98,13 @@
 
 /obj/item/grab/Destroy()
 	if(affecting)
-		GLOB.dismembered_event.unregister(affecting, src)
+		UnregisterSignal(affecting, COMSIG_ORGAN_DISMEMBERED)
 		reset_position()
 		affecting.grabbed_by -= src
 		affecting.reset_plane_and_layer()
 		affecting = null
 	if(assailant)
-		GLOB.zone_selected_event.unregister(assailant.zone_sel, src)
+		UnregisterSignal(assailant.zone_sel, COMSIG_SET_SELECTED_ZONE)
 		assailant = null
 	return ..()
 
@@ -115,7 +115,7 @@
 /obj/item/grab/on_active_hand()
 	on_target_change(new_sel = assailant.zone_sel.selecting)
 
-/obj/item/grab/proc/on_target_change(obj/screen/zone_sel/zone, old_sel, new_sel)
+/obj/item/grab/proc/on_target_change(obj/screen/zone_sel/zone, new_sel, old_sel)
 	if(src != assailant.get_active_hand())
 		return // Note that because of this condition, there's no guarantee that target_zone = old_sel
 	if(target_zone == new_sel)

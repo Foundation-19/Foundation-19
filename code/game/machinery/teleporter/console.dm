@@ -12,7 +12,6 @@
 	var/active
 	var/id
 
-
 /obj/machinery/computer/teleporter/Destroy()
 	clear_target()
 	if (projector)
@@ -23,14 +22,12 @@
 	clear_pad()
 	. = ..()
 
-
 /obj/machinery/computer/teleporter/Initialize()
 	. = ..()
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
 	id = "[random_id(/obj/machinery/computer/teleporter, 1000, 9999)]"
 	update_refs()
-
 
 /obj/machinery/computer/teleporter/proc/update_refs()
 	for (var/dir in GLOB.cardinal)
@@ -51,65 +48,56 @@
 			projector.queue_icon_update()
 			pad.queue_icon_update()
 
-
 /obj/machinery/computer/teleporter/proc/clear_projector()
 	if (!projector)
 		return
-	GLOB.destroyed_event.unregister(projector, src, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_projector))
+	UnregisterSignal(projector, COMSIG_PARENT_QDELETING)
 	projector = null
 	set_active(FALSE)
-
 
 /obj/machinery/computer/teleporter/proc/lost_projector()
 	audible_message(SPAN_WARNING("\The [src] buzzes, \"Projector missing.\""))
 	clear_projector()
-
 
 /obj/machinery/computer/teleporter/proc/set_projector(obj/machinery/tele_projector/_projector)
 	if (projector == _projector)
 		return
 	clear_projector()
 	projector = _projector
-	GLOB.destroyed_event.register(projector, src, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_projector))
-
+	RegisterSignal(projector, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_projector))
 
 /obj/machinery/computer/teleporter/proc/clear_pad()
 	if (!pad)
 		return
-	GLOB.destroyed_event.unregister(pad, src, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_pad))
+	UnregisterSignal(pad, COMSIG_PARENT_QDELETING)
 	pad = null
 	set_active(FALSE)
-
 
 /obj/machinery/computer/teleporter/proc/lost_pad()
 	audible_message(SPAN_WARNING("\The [src] buzzes, \"Pad missing.\""))
 	clear_pad()
-
 
 /obj/machinery/computer/teleporter/proc/set_pad(obj/machinery/tele_pad/_pad)
 	if (pad == _pad)
 		return
 	clear_pad()
 	pad = _pad
-	GLOB.destroyed_event.register(pad, src, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_pad))
-
+	RegisterSignal(pad, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_pad))
 
 /obj/machinery/computer/teleporter/proc/clear_target()
 	if (!target)
 		return
 	var/old_target = target
-	GLOB.destroyed_event.unregister(target, src, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_target))
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	target = null
 	if (istype(old_target, /obj/machinery/tele_beacon))
 		var/obj/machinery/tele_beacon/beacon = old_target
 		beacon.disconnect_computer(src)
 	set_active(FALSE)
 
-
 /obj/machinery/computer/teleporter/proc/lost_target()
 	audible_message(SPAN_WARNING("\The [src] buzzes, \"Target lost.\""))
 	clear_target()
-
 
 /obj/machinery/computer/teleporter/proc/set_target(atom/_target)
 	if (target == _target)
@@ -120,9 +108,8 @@
 		if (!beacon.connect_computer(src))
 			return FALSE
 	target = _target
-	GLOB.destroyed_event.register(target, src, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_target))
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/machinery/computer/teleporter, lost_target))
 	return TRUE
-
 
 /obj/machinery/computer/teleporter/proc/set_active(_active, notify)
 	var/effective = _active && target && projector && pad
@@ -138,7 +125,6 @@
 		projector.queue_icon_update()
 	if (pad)
 		pad.queue_icon_update()
-
 
 /obj/machinery/computer/teleporter/proc/get_targets()
 	var/list/ids = list()
@@ -161,14 +147,12 @@
 		result["[M.name] \[[++ids[M.name]]\]"] = T
 	return result
 
-
 /obj/machinery/computer/teleporter/power_change()
 	. = ..()
 	if (!.)
 		return
 	if (stat & NOPOWER)
 		clear_target()
-
 
 /obj/machinery/computer/teleporter/interface_interact(mob/user)
 	if (!projector || !pad)

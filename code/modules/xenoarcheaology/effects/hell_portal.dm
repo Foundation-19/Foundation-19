@@ -45,7 +45,7 @@
 		unregister_mob(M)
 
 	for (var/P in portals)
-		GLOB.destroyed_event.unregister(P, src)
+		UnregisterSignal(P, COMSIG_PARENT_QDELETING)
 
 	..()
 
@@ -97,7 +97,7 @@
 			gate.parent = src
 			portals += gate
 
-			GLOB.destroyed_event.register(gate, src, TYPE_PROC_REF(/datum/artifact_effect/hellportal, reduce_portal_count))
+			RegisterSignal(gate, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/artifact_effect/hellportal, reduce_portal_count))
 
 /datum/artifact_effect/hellportal/proc/hurt_players()
 	for (var/mob/living/carbon/human/H in range(src.effectrange,get_turf(holder)))
@@ -110,18 +110,18 @@
 			to_chat(H, SPAN_DANGER("Searing pain strikes your body as you briefly find yourself in a burning hellscape!"))
 
 /datum/artifact_effect/hellportal/proc/reduce_portal_count(obj/effect/gateway/active/artifact/P)
-	GLOB.destroyed_event.unregister(P, src)
+	UnregisterSignal(P, COMSIG_PARENT_QDELETING)
 	portals -= P
 
 /datum/artifact_effect/hellportal/proc/unregister_mob(mob/M)
-	GLOB.destroyed_event.unregister(M, src)
-	GLOB.death_event.unregister(M, src)
+	UnregisterSignal(M, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	mobs -= M
 
 /datum/artifact_effect/hellportal/proc/register_mob(mob/M)
 	mobs += M
-	GLOB.destroyed_event.register(M, src, PROC_REF(unregister_mob))
-	GLOB.death_event.register(M, src, PROC_REF(unregister_mob))
+	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(unregister_mob))
+	RegisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST, PROC_REF(unregister_mob))
 
 	playsound(M, pick(mob_spawn_sounds), 100)
 

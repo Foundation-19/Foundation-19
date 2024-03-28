@@ -122,6 +122,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(initial(shuttle.category) != shuttle_type)
 		shuttle = new shuttle()
 		shuttle_areas |= shuttle.shuttle_area
+		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_SHUTTLE_INITIALIZED, shuttle)
 		return shuttle
 
 /datum/controller/subsystem/shuttle/proc/hook_up_motherships(shuttles_list)

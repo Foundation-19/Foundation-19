@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(machine_path_to_circuit_type, cache_circuits_by_build_path())
 	if(istype(part))
 		LAZYADD(component_parts, part)
 		part.on_install(src)
-		GLOB.destroyed_event.register(part, src, PROC_REF(component_destroyed))
+		RegisterSignal(part, COMSIG_PARENT_QDELETING, PROC_REF(component_destroyed))
 	else if(ispath(part))
 		LAZYINITLIST(uncreated_component_parts)
 		uncreated_component_parts[part] += 1
@@ -155,7 +155,7 @@ GLOBAL_LIST_INIT(machine_path_to_circuit_type, cache_circuits_by_build_path())
 		if(QDELETED(part)) // unremovable stuff
 			return
 		part.dropInto(loc)
-		GLOB.destroyed_event.unregister(part, src)
+		UnregisterSignal(part, COMSIG_PARENT_QDELETING)
 		return part
 
 /obj/machinery/proc/replace_part(mob/user, obj/item/storage/part_replacer/R, obj/item/stock_parts/old_part, obj/item/stock_parts/new_part)
@@ -170,7 +170,7 @@ GLOBAL_LIST_INIT(machine_path_to_circuit_type, cache_circuits_by_build_path())
 	to_chat(user, SPAN_NOTICE("[old_part.name] replaced with [new_part.name]."))
 
 /obj/machinery/proc/component_destroyed(obj/item/component)
-	GLOB.destroyed_event.unregister(component, src)
+	UnregisterSignal(component, COMSIG_PARENT_QDELETING)
 	LAZYREMOVE(component_parts, component)
 	LAZYREMOVE(processing_parts, component)
 	power_components -= component
