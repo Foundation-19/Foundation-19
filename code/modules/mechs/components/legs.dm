@@ -7,6 +7,8 @@
 	var/obj/item/robot_parts/robot_component/actuator/motivator
 	power_use = 50
 	var/max_fall_damage = 30
+	var/mech_turn_sound = 'sounds/mecha/mechturn.ogg'
+	var/mech_step_sound = 'sounds/mecha/mechstep.ogg'
 
 /obj/item/mech_component/propulsion/Destroy()
 	QDEL_NULL(motivator)
