@@ -22,6 +22,8 @@
 	var/uses_tracker
 	///Have we started restock?
 	var/started_restock = FALSE
+	///Our currently maintained list of global reagent datums
+	var/list/weakref/globalReagents = list();
 	///Reagent types
 
 	///Shortcut names for things like "poision" or "death" where it dosent match a reagent name exactly
@@ -41,6 +43,11 @@
 		/datum/reagent/scp008
 	)
 
+	///Blacklisted containers to take from
+	var/list/container_blacklist = list(
+
+	)
+
 /obj/machinery/scp294/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
@@ -56,15 +63,9 @@
 	var/list/datum/reagents/reagents_to_fill_from = list()
 	if(!ispath(input_path))
 		return FALSE
-	var/list/datum/globalReagents = list()
-	//Creats a list of reagents by distance
-	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
-		if(!istype(reagent_container.my_atom))
-			continue
-		ADD_SORTED(globalReagents, reagent_container, cmp_distance_reagents_asc)
 
 	//Iterates through that list
-	for(var/datum/reagents/reagent_container in globalReagents)
+	for(var/datum/reagents/reagent_container in resolveWeakrefList(globalReagents))
 		var/amount_contained = reagent_container.get_reagent_amount(input_path)
 		var/turf/reagent_turf = get_turf(reagent_container.my_atom)
 		if(!amount_contained || !reagent_turf || !(reagent_turf.z in GetConnectedZlevels(src.z)))
@@ -72,31 +73,40 @@
 		LAZYADD(reagents_to_fill_from, reagent_container)
 	return reagents_to_fill_from
 
+///Cycles through all reagents datums and picks out the one that contains the given name
 /obj/machinery/scp294/proc/find_reagents_to_fill_from_cont_name(container_name)
 	var/list/datum/reagents/reagents_to_fill_from = list()
-	var/list/datum/globalReagents = list()
-	//Creats a list of reagents by distance
-	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
-		if(!istype(reagent_container.my_atom))
-			continue
-		ADD_SORTED(globalReagents, reagent_container, cmp_distance_reagents_asc)
 
-	//Iterates through that list
-	for(var/datum/reagents/reagent_container in globalReagents)
+	//Iterates through global reagents
+	for(var/datum/reagents/reagent_container in resolveWeakrefList(globalReagents))
 		var/turf/reagent_turf = get_turf(reagent_container.my_atom)
 		if(!(findtext(reagent_container.my_atom.name, container_name,1, length(reagent_container.my_atom.name) + 1)) || !reagent_turf || !(reagent_turf.z in GetConnectedZlevels(src.z)))
 			continue
 		LAZYADD(reagents_to_fill_from, reagent_container)
 	return reagents_to_fill_from
 
+///Updates our global_reagents
+/obj/machinery/scp294/proc/update_global_reagents()
+	//Creats a list of reagents by distance
+	for(var/datum/reagents/reagent_container in GLOB.reagents_datums)
+		if(!istype(reagent_container.my_atom))
+			continue
+		if(reagent_container.total_volume <= 0)
+			continue
+		if(reagent_container.my_atom.type in container_blacklist)
+			continue
+		if(weakref(reagent_container) in globalReagents)
+			continue
+		ADD_SORTED(globalReagents, weakref(reagent_container), GLOBAL_PROC_REF(cmp_distance_reagents_weakref_asc))
+	addtimer(CALLBACK(src, PROC_REF(update_global_reagents)), 5 MINUTES, TIMER_UNIQUE)
 
 ///Adds reagent we want to passed cup from list made in find_reagents_to_fill_from
-/obj/machinery/scp294/proc/add_reagent_to_cup(input_path, obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D, reagents_to_fill_from)
+/obj/machinery/scp294/proc/add_reagent_to_cup(input_path, obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D, reagents_to_fill_from, getMaster = FALSE)
 	var/amount_need_filled = D.volume
-	if(!ispath(input_path) || !istype(D) || !islist(reagents_to_fill_from))
+	if(!(ispath(input_path) || getMaster) || !istype(D) || !islist(reagents_to_fill_from))
 		return
 	for(var/datum/reagents/reagent_container in reagents_to_fill_from)
-		var/amount_contained = reagent_container.get_reagent_amount(input_path)
+		var/amount_contained = reagent_container.get_reagent_amount(getMaster ? reagent_container.get_master_reagent_type() : input_path)
 
 		amount_contained = Clamp(amount_contained, 0, amount_need_filled)
 		reagent_container.trans_to_obj(D, amount_contained)
@@ -109,6 +119,9 @@
 	D.on_reagent_change()
 
 //Overrides
+/obj/machinery/scp294/Initialize()
+	. = ..()
+	update_global_reagents()
 
 /obj/machinery/scp294/attack_hand(mob/user)
 	if(user.a_intent != I_HELP)
@@ -151,12 +164,12 @@
 	if(!chosen_reagent)
 		reagents_to_fill_from = find_reagents_to_fill_from_cont_name(chosen_reagent_text)
 
-	if(!(chosen_reagent || length(reagents_to_fill_from)) || (chosen_reagent in blacklist))
+	if(!(chosen_reagent || LAZYLEN(reagents_to_fill_from)) || (chosen_reagent in blacklist))
 		balloon_alert(user, "OUT OF RANGE")
 		playsound(src, 'sounds/machines/cb_button_fail.ogg', 35, TRUE)
 		return
 
-	if(!length(reagents_to_fill_from))
+	if(!LAZYLEN(reagents_to_fill_from))
 		reagents_to_fill_from = find_reagents_to_fill_from_path(chosen_reagent)
 	if(!LAZYLEN(reagents_to_fill_from))
 		balloon_alert(user, "OUT OF RANGE")
@@ -171,5 +184,5 @@
 	var/obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D = new /obj/item/reagent_containers/food/drinks/sillycup/scp294cup(get_turf(src))
 	D.anchored = TRUE
 	spawn(3 SECONDS)
-		add_reagent_to_cup(chosen_reagent, D, reagents_to_fill_from)
+		add_reagent_to_cup(chosen_reagent, D, reagents_to_fill_from, chosen_reagent ? FALSE : TRUE) //if we are taking by container name we wouldent have chosen reagent set
 		D.anchored = FALSE
