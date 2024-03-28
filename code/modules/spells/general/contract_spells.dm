@@ -5,7 +5,6 @@
 	name = "Contract Spell"
 	desc = "A spell perfecting the techniques of keeping a servant happy and obedient."
 
-	school = "transmutation"
 	spell_flags = 0
 	invocation = "none"
 	invocation_type = INVOKE_NONE

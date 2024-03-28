@@ -369,6 +369,13 @@
 	license = /decl/license/cc_by_sa_3_0
 	url = "https://www.youtube.com/watch?v=A-08jERq8E0"
 
+/decl/audio/track/animosity_v2
+	source = 'sounds/music/animosity_v2.ogg'
+	title = "Animosity V2"
+	author = "Astowo"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=ql5uSen18uo"
+
 /decl/audio/track/main_astowo
 	source = 'sounds/music/main_astowo.ogg'
 	title = "The SCP Foundation Main Theme (Astowo's Remix)"

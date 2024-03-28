@@ -13,4 +13,4 @@
 		colony of sizable population and considerable wealth causes it to often be the target of various \
 		attempts of robbery, fraud and other malicious actions."
 	end_on_antag_death = FALSE
-	antag_tags = list(MODE_RAIDER)
+	antag_tags = list(MODE_TRADER, MODE_INFORMANT, MODE_RAIDER)

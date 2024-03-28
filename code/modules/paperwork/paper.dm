@@ -602,7 +602,8 @@
 
 // Coarse - Cramples the paper
 // 1:1 - Returns random paper type
-/obj/item/paper/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+// Very Fine - Returns anomalous paper with various effects and blasts an EMP
+/obj/item/paper/Conversion914(mode = MODE_ONE_TO_ONE, mob/living/user = usr)
 	switch(mode)
 		if(MODE_COARSE)
 			if(icon_state == "scrap")
@@ -612,6 +613,18 @@
 			return src
 		if(MODE_ONE_TO_ONE)
 			return pick(typesof(/obj/item/paper))
+		if(MODE_VERY_FINE)
+			// You think you can just shove a shit-ton of paper in there? Fuck you, that's what you get
+			if(locate(/obj/item/paper/self_writing) in get_turf(src))
+				empulse(get_turf(src), 7, 14)
+				if(istype(user))
+					to_chat(user, SPAN_DANGER("You feel thousands of paper cuts appearing on your skin..."))
+					for(var/i = 1 to 10)
+						addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, apply_damage), rand(3, 9), BRUTE, pick(BP_ALL_LIMBS), DAM_SHARP), i * (2 SECONDS))
+						addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), get_turf(user), 'sounds/weapons/bladeslice.ogg', rand(25, 50), TRUE), i * (2 SECONDS))
+				return null
+			empulse(get_turf(src), rand(0, 2), rand(2, 7))
+			return /obj/item/paper/self_writing
 	return ..()
 
 //For supply.

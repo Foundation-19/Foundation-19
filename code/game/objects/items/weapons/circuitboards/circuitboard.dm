@@ -85,8 +85,9 @@
 // Assoc list of all circuits by their board_type
 GLOBAL_LIST_EMPTY(circuitboards_by_type)
 
-// 1:1 - returns random board with same board_type
-// Fine - has a chance to instantly build the machine, or explode slightly
+// 1:1 - Returns random board with same board_type
+// Fine - Has a chance to instantly build the machine, or explode slightly
+// Very Fine - Turns into an item that allows its user to instantly build the target machine
 /obj/item/stock_parts/circuitboard/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
@@ -102,9 +103,10 @@ GLOBAL_LIST_EMPTY(circuitboards_by_type)
 		if(MODE_FINE)
 			if(!build_path)
 				return src
-			if(prob(20))
-				explosion(get_turf(src), -1, prob(35), 3, 7, TRUE)
-				return null
-			var/obj/machinery/M = build_path
-			return M
+			playsound(src, 'sounds/items/rped.ogg', 50, TRUE)
+			return build_path
+		if(MODE_VERY_FINE)
+			var/obj/item/machine_builder/MB = new(get_turf(src))
+			MB.machine_type = build_path
+			return MB
 	return ..()

@@ -15,6 +15,8 @@
 	/// When higher than world.time - cannot be operated
 	var/activation_cooldown = 0
 	var/activation_cooldown_time = 10 SECONDS
+	/// Limit on how many atoms can go into 914 at once
+	var/item_limit = 10
 	// Disgusting list I needed for the "knob" to work
 	var/list/available_modes = list(
 		MODE_ROUGH,
@@ -43,6 +45,13 @@
 	// Misc parts
 	for(var/O in parts_to_spawn)
 		connected_parts += new O(get_turf(src))
+
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"clockwork mechanism", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"914" //Numerical Designation
+	)
 
 /obj/structure/scp_914/Destroy()
 	for(var/obj/O in connected_parts)
@@ -138,13 +147,17 @@
 	playsound(output_part, 'sounds/scp/914/door_close.ogg', 50, TRUE, -4)
 
 	var/list/upgrade_items = list()
+	var/current_count = 0
 	for(var/atom/movable/A in get_turf(input_part))
+		if(current_count >= item_limit)
+			break
 		if(A.anchored)
 			continue
 		if(ismob(A))
 			playsound(src, 'sounds/scp/914/mob_use.ogg', 100, TRUE, 24)
 		upgrade_items += A
 		A.forceMove(src)
+		current_count += 1
 
 	input_part.set_density(TRUE)
 	output_part.set_density(TRUE)
@@ -167,6 +180,8 @@
 			for(var/AR_path in CR)
 				var/atom/movable/AR = AR_path
 				if(!isatom(AR))
+					if(!ispath(AR)) // Something went wrong, uh oh
+						continue
 					AR = new AR_path(get_turf(output_part))
 				AR.forceMove(get_turf(output_part))
 				if(isitem(AR))
