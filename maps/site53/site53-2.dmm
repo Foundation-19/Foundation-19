@@ -13735,7 +13735,7 @@
 "aNG" = (
 /obj/structure/scp173_cage,
 /obj/effect/floor_decal/industrial/outline{
-	color = "#C40000"
+	color = "#57967f"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -20793,10 +20793,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/red/bordercee{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/hallways)
 "bGo" = (
 /obj/effect/floor_decal/corner/green/border{
@@ -22026,7 +22024,7 @@
 /obj/machinery/vending/wallmed1{
 	pixel_y = 32
 	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "cBj" = (
@@ -32628,17 +32626,16 @@
 "kHS" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	dir = 3;
-	id_tag = "Lower LCZ Checkpoint Windows";
-	name = "Lower LCZ Checkpoint Windows";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 7
+	id_tag = "ULCZ Checkpoint Lockdown Upper";
+	name = "LCZ Northern Entrance Checkpoint Lockdown Control";
+	pixel_y = 7;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
-	id_tag = "ULCZ Checkpoint Lockdown Upper";
-	name = "ULCZ Checkpoint Lockdown Upper";
-	pixel_y = -2;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	id_tag = "ULCZ Checkpoint Lockdown Lower";
+	name = "LCZ Southern Entrance Checkpoint Lockdown Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
@@ -32725,13 +32722,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "kLF" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/hallways)
 "kLR" = (
 /obj/machinery/door/window{
@@ -35571,11 +35565,13 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/hub)
 "mOw" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/structure/flora/pottedplant/minitree,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/structure/railing/mapped,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
 "mOX" = (
 /obj/effect/floor_decal/industrial/fire,
@@ -38937,12 +38933,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "phB" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
 /obj/item/modular_computer/console/preset/security,
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/hallways)
 "phJ" = (
 /obj/machinery/light{
@@ -40746,11 +40739,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
 "qCK" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/structure/flora/pottedplant/minitree,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/dark/vertical,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
 "qCX" = (
 /obj/machinery/light{
@@ -43822,9 +43817,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
-"sRP" = (
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/hallways)
 "sRV" = (
 /obj/effect/landmark{
 	name = "scp106"
@@ -45025,9 +45017,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
 "tHF" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
 	id_tag = "LCZControl";
@@ -45036,7 +45025,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/hallways)
 "tIB" = (
 /obj/structure/cable/green{
@@ -45779,10 +45768,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/red/bordercee{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/hallways)
 "uoM" = (
 /obj/structure/closet{
@@ -45878,7 +45865,13 @@
 /area/site53/ulcz/scp151)
 "usV" = (
 /obj/structure/table/reinforced,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#57967f"
+	},
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "uty" = (
@@ -60947,11 +60940,11 @@ pwn
 rRb
 kgn
 uow
-sRP
+kIt
 kIt
 iiD
 kIt
-sRP
+kIt
 ndv
 fFr
 aXf
@@ -62232,11 +62225,11 @@ aES
 lAA
 kgn
 bFr
-sRP
+kIt
 kIt
 eeB
 kIt
-sRP
+kIt
 svA
 fFr
 aVZ
