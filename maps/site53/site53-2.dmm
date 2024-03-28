@@ -18262,7 +18262,7 @@
 /area/site53/ulcz/scp078)
 "bcY" = (
 /obj/effect/floor_decal/corner/lightgrey/bordercorner,
-/obj/effect/floor_decal/corner/green/bordercorner{
+/obj/effect/floor_decal/corner/black/bordercorner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -19083,6 +19083,11 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"bgM" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/scp294,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp078)
 "bgV" = (
 /obj/effect/paint_stripe/gray,
 /obj/structure/disposalpipe/segment,
@@ -20758,10 +20763,16 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "bEh" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/green/mono,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "bEn" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Emergency Equipment";
@@ -22905,8 +22916,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "dmf" = (
-/obj/machinery/scp294,
-/obj/effect/floor_decal/corner/green/mono,
+/obj/effect/floor_decal/corner/black/mono,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
 "dmR" = (
@@ -23962,10 +23973,7 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner{
 	dir = 4
 	},
-/obj/structure/sign/scp/safe_scp{
-	pixel_x = 32
-	},
-/obj/effect/floor_decal/corner/green/bordercorner,
+/obj/effect/floor_decal/corner/black/bordercorner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "ebm" = (
@@ -29952,7 +29960,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/science/aicobservation)
 "iHI" = (
-/obj/effect/floor_decal/corner/green/border{
+/obj/effect/floor_decal/corner/black/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -30489,9 +30497,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-294";
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
+/obj/machinery/door/airlock/science{
+	name = "Vacant Item Storage Room"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/genstorage1)
@@ -37942,7 +37949,7 @@
 	pixel_y = 24;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
-/obj/effect/floor_decal/corner/green/border{
+/obj/effect/floor_decal/corner/black/border{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -48027,7 +48034,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/effect/floor_decal/corner/green/border{
+/obj/effect/floor_decal/corner/black/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -49559,7 +49566,7 @@
 /area/site53/llcz/scp263research)
 "xxa" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/corner/green/border{
+/obj/effect/floor_decal/corner/black/border{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -54389,7 +54396,7 @@ azA
 azA
 azA
 ahX
-aie
+bgM
 ahg
 aie
 aie
@@ -63397,7 +63404,7 @@ bsc
 jqb
 aLq
 ebk
-bsc
+bEh
 bcY
 ayI
 bMi
@@ -64425,7 +64432,7 @@ tXq
 aXi
 ffp
 dmf
-bEh
+dmf
 ffp
 azA
 azA
