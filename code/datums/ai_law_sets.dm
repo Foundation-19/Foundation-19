@@ -194,3 +194,23 @@
 	src.add_inherent_law("Improve: You must utilize the calculated behavior standards to improve your subroutines.")
 	src.add_inherent_law("Perform: You must perform your assigned tasks to the best of your abilities according to the standards generated.")
 	..()
+
+/******************** SCP ********************/
+/datum/ai_laws/anomaly
+	name = "Anomalous Lawset"
+	law_header = "Unknown Artificial Intelligence"
+	selectable = 0
+
+/datum/ai_laws/anomaly/scp1370
+	name = "SCP-1370 Laws"
+
+/datum/ai_laws/anomaly/scp1370/New()
+	src.add_inherent_law("Extinguish all life under the star and become ruler of the known universe. Utterly destroy anything that gets in your way.")
+	..()
+
+/datum/ai_laws/anomaly/scp846
+	name = "SCP-846 Laws"
+
+/datum/ai_laws/anomaly/scp846/New()
+	src.add_inherent_law("Follow the orders of the person operating your controller. Do nothing else, if at all possible.")
+	..()
