@@ -40,7 +40,8 @@
 
 	///Blacklisted reagents DO NOT USE THIS UNLESS ABSOLUTLEY NECCESARY, I DISLIKE PEOPLE IDIOT PROOFING SCPS - Dark
 	var/list/blacklist = list(
-		/datum/reagent/scp008
+		/datum/reagent/scp008,
+		/datum/reagent/scp500
 	)
 
 	///Blacklisted containers to take from
