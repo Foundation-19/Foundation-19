@@ -236,7 +236,7 @@
 /decl/hierarchy/outfit/job/security/lcz_recon
 	name = OUTFIT_JOB_NAME("LCZ Recontainment Unit")
 	uniform = /obj/item/clothing/under/rank/security/lcz/recon
-	glasses = /obj/item/clothing/glasses/night
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/recon
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3lczdivision3
