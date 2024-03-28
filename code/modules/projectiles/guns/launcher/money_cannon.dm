@@ -31,9 +31,7 @@
 			nv++
 		if (!nv)
 			break
-		var/obj/item/spacecash/bundle/bling = new(T)
-		bling.worth = nv
-		bling.update_icon()
+		var/obj/item/spacecash/bundle/bling = new(T, nv)
 		if(projectile_vomit)
 			for(var/j = 1, j <= rand(2, 4), j++)
 				step(bling, pick(GLOB.cardinal))

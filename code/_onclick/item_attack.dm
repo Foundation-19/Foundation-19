@@ -27,6 +27,9 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /obj/item/proc/resolve_attackby(atom/A, mob/user, click_params)
 	if(!(item_flags & ITEM_FLAG_NO_PRINT))
 		add_fingerprint(user)
+
+	SEND_SIGNAL(src, COMSIG_ITEM_POST_ATTACK_ATOM, A, user)
+
 	return A.attackby(src, user, click_params)
 
 // No comment
