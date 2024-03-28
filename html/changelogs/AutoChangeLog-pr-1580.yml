@@ -1,7 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Personal lockers can now only be opened by someone with the same or higher
-      access as the person who owns them!
-  - bugfix: Lockers will actually say 'Access Denied' when you have invalid access
-      to use them.
