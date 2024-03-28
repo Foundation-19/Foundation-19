@@ -42,6 +42,34 @@
 		var/obj/item/gun/launcher/money/L = W
 		L.absorb_cash(src, user)
 
+// 1:1 - Spawns gold, depending on the amount of cash
+// Fine - Increase amount of cash in there; Has little chance (depending on amount of cash) to spawn random card.
+/obj/item/spacecash/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ONE_TO_ONE)
+			var/material/material_def = SSmaterials.get_material_by_name(MATERIAL_GOLD)
+			if(!material_def)
+				return
+			var/matter_amount = round(max(1, worth / 2000))
+			material_def.place_sheet(get_turf(src), matter_amount)
+			return null
+		if(MODE_FINE)
+			// Multiplier to the amount of cash for money to turn into other stuff
+			var/transform_multiplier = 0.008
+			if(prob(worth * transform_multiplier))
+				var/C = pick(/obj/item/card/id/sciencelvl1, /obj/item/card/id/commslvl1)
+				C = new C(get_turf(src))
+				if(istype(C, /obj/item/spacecash/ewallet))
+					var/obj/item/spacecash/ewallet/EC = C
+					EC.worth = round(worth * pick(0.75, 0.9, 1.2, 1.5))
+					EC.owner_name = user.real_name
+				return C
+			var/cash_multiplier = pick(1.5, 2)
+			worth += round(worth * cash_multiplier)
+			update_icon()
+			return src
+	return ..()
+
 /obj/item/spacecash/proc/getMoneyImages()
 	if(icon_state)
 		return list(icon_state)

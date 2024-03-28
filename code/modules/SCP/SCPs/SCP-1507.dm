@@ -35,6 +35,7 @@
 	force = 4
 	sharp = TRUE
 	damtype = BRUTE
+	armor_penetration = 100
 	hitsound = SFX_SCP1507_ATTACK
 
 /datum/say_list/scp1507
@@ -63,5 +64,5 @@
 		W.force = min((W.force + potency), max_damage)
 
 /datum/ai_holder/simple_animal/retaliate/cooperative/scp1507 //A customized AI with shorter view range
-	vision_range = 2
+	vision_range = 4
 	hostile = TRUE

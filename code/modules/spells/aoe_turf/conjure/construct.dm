@@ -4,7 +4,6 @@
 	name = "Artificer"
 	desc = "This spell conjures a construct which may be controlled by Shades."
 
-	school = "conjuration"
 	charge_max = 600
 	spell_flags = 0
 	invocation = "none"
@@ -12,6 +11,8 @@
 	range = 0
 
 	summon_type = list(/obj/structure/constructshell)
+
+	spell_book_visible = FALSE
 
 	hud_state = "artificer"
 	cast_sound = 'sounds/items/Deconstruct.ogg'
@@ -33,6 +34,8 @@
 	range = 0
 	summon_type = list(/turf/simulated/floor/cult)
 
+	spell_book_visible = FALSE
+
 	hud_state = "const_floor"
 	cast_sound = 'sounds/items/Welder.ogg'
 
@@ -47,26 +50,14 @@
 	range = 0
 	summon_type = list(/turf/simulated/wall/cult)
 
+	spell_book_visible = FALSE
+
 	hud_state = "const_wall"
-	cast_sound = 'sounds/items/Welder.ogg'
-
-/datum/spell/aoe_turf/conjure/wall/reinforced
-	name = "Greater Construction"
-	desc = "This spell constructs a reinforced metal wall."
-
-	charge_max = 300
-	spell_flags = Z2NOCAST
-	invocation = "none"
-	invocation_type = INVOKE_NONE
-	range = 0
-	cast_delay = 50
-
-	summon_type = list(/turf/simulated/wall/r_wall)
 	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/soulstone
 	name = "Summon Soulstone"
-	desc = "This spell reaches into the Scarlet King's realm, summoning one of the legendary fragments across time and space."
+	desc = "This spell reaches into Nar-Sie's realm, summoning one of the legendary fragments across time and space."
 
 	charge_max = 3000
 	spell_flags = 0
@@ -76,13 +67,15 @@
 
 	summon_type = list(/obj/item/device/soulstone)
 
+	spell_book_visible = FALSE
+
 	hud_state = "const_stone"
 	override_base = "const"
 	cast_sound = 'sounds/items/Welder.ogg'
 
 /datum/spell/aoe_turf/conjure/pylon
 	name = "Red Pylon"
-	desc = "This spell conjures a fragile crystal from the Scarlet King's realm. Makes for a convenient light source."
+	desc = "This spell conjures a fragile crystal from Nar-Sie's realm. Makes for a convenient light source."
 
 	charge_max = 200
 	spell_flags = CONSTRUCT_CHECK
@@ -91,6 +84,8 @@
 	range = 0
 
 	summon_type = list(/obj/structure/cult/pylon)
+
+	spell_book_visible = FALSE
 
 	hud_state = "const_pylon"
 	cast_sound = 'sounds/items/Welder.ogg'
@@ -106,6 +101,8 @@
 	range = 0
 	summon_type = list(/obj/effect/forcefield/cult)
 	duration = 200
+
+	spell_book_visible = FALSE
 
 	hud_state = "const_juggwall"
 	cast_sound = 'sounds/magic/forcewall.ogg'

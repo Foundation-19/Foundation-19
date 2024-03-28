@@ -15,8 +15,8 @@
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 	movement_cooldown = 1.5
 
-	health = 20
-	maxHealth = 20
+	health = 10
+	maxHealth = 10
 
 	meat_type = /obj/item/reagent_containers/food/snacks/abominationmeat
 	meat_amount = 1
@@ -30,6 +30,7 @@
 
 	transformation_types = list(
 		/mob/living/simple_animal/hostile/infestation/broodling = 30 SECONDS,
+		/mob/living/simple_animal/hostile/infestation/floatfly = 40 SECONDS,
 		/mob/living/simple_animal/hostile/infestation/spitter = 45 SECONDS,
 		/mob/living/simple_animal/hostile/infestation/eviscerator = 60 SECONDS,
 		/mob/living/simple_animal/hostile/infestation/assembler = 75 SECONDS,
@@ -111,6 +112,8 @@
 
 /mob/living/simple_animal/hostile/infestation/larva/implant/implanter/attack_target(atom/A)
 	if(!ishuman(A))
+		return
+	if(on_fire)
 		return
 	var/mob/living/carbon/human/H = A
 	var/list/valid_organs = list()

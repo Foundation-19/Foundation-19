@@ -30,8 +30,8 @@
 
 /obj/structure/closet/secure_closet/administration/commsofficer/WillContain()
 	return list(
-		/obj/item/clothing/under/scp/utility/communications/officerfem,
-		/obj/item/clothing/under/scp/utility/communications/officer,
+		/obj/item/clothing/under/rank/security/comms,
+		/obj/item/clothing/suit/armor/comms,
 		/obj/item/device/radio,
 		/obj/item/device/megaphone,
 		/obj/item/storage/box/headset,
@@ -44,7 +44,7 @@
 		/obj/item/storage/box/encryptionkeys/service,
 		/obj/item/storage/box/encryptionkeys/eng,
 		/obj/item/storage/box/encryptionkeys/sec,
-		/obj/item/clothing/shoes/dutyboots,
+		/obj/item/clothing/shoes/jackboots,
 		/obj/item/paper/monitorkey,
 	)
 
@@ -61,9 +61,10 @@
 /obj/structure/closet/secure_closet/administration/commstech/WillContain()
 	return list(
 		/obj/item/device/radio,
+		/obj/item/clothing/under/rank/engineer/comms,
 		/obj/item/clothing/gloves/foundation_service,
 		/obj/item/material/clipboard,
 		/obj/item/folder/blue,
-		/obj/item/clothing/shoes/dutyboots,
+		/obj/item/clothing/shoes/jackboots,
 		/obj/item/storage/belt/utility/full,
 	)

@@ -10,12 +10,12 @@
 
 /obj/structure/closet/secure_closet/guard
 	name = "Guard Locker - NO USE, ONLY FOR CODE."
-	icon = 'icons/obj/sec-lockers.dmi'
-	icon_state = "junior-locked"
-	icon_closed = "junior-unlocked"
-	icon_locked = "junior-locked"
-	icon_opened = "junior-open"
-	icon_off = "junior-off"
+	icon = 'icons/obj/sec-lockers_new.dmi'
+	icon_state = "lczjunior1"
+	icon_closed = "lczjunior"
+	icon_locked = "lczjunior1"
+	icon_opened = "lczopen"
+	icon_off = "lczjunioroff"
 	anchored = TRUE
 	req_access = list(ACCESS_SECURITY_LVL1)
 	var/registered_name = null
@@ -78,12 +78,17 @@
 /obj/structure/closet/secure_closet/guard/lcz
 	name = "LCZ Guard's Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
+	icon_state = "lczjunior1"
+	icon_closed = "lczjunior"
+	icon_locked = "lczjunior1"
+	icon_opened = "lczopen"
+	icon_off = "lczjunioroff"
 
 /obj/structure/closet/secure_closet/guard/lcz/WillContain()
 	return ..() | list(
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-		/obj/item/clothing/head/beret/sec/corporate/officer,
+		/obj/item/clothing/head/beret/sec/guard,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -91,11 +96,11 @@
 /obj/structure/closet/secure_closet/guard/lcz/sergeant
 	name = "LCZ Sergeant's Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "guard-locked"
-	icon_closed = "guard-unlocked"
-	icon_locked = "guard-locked"
-	icon_opened = "guard-open"
-	icon_off = "guard-off"
+	icon_state = "lczguard1"
+	icon_closed = "lczguard"
+	icon_locked = "lczguard1"
+	icon_opened = "lczopen"
+	icon_off = "lczguardoff"
 
 /obj/structure/closet/secure_closet/guard/lcz/sergeant/WillContain()
 	return list(
@@ -109,7 +114,7 @@
 		/obj/item/clothing/accessory/storage/bandolier,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/head/beret/sec/sergeant,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -117,6 +122,11 @@
 /obj/structure/closet/secure_closet/guard/hcz
 	name = "HCZ Guard's Locker"
 	req_access = list(ACCESS_SECURITY_LVL3)
+	icon_state = "hczjunior1"
+	icon_closed = "hczjunior"
+	icon_locked = "hczjunior1"
+	icon_opened = "hczopen"
+	icon_off = "hczjunioroff"
 
 /obj/structure/closet/secure_closet/guard/hcz/WillContain()
 	return ..() | list(
@@ -129,18 +139,18 @@
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/beret/sec/corporate/officer,
+		/obj/item/clothing/head/beret/sec/guard,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
 // HCZ - Sergeant
 /obj/structure/closet/secure_closet/guard/hcz/sergeant
 	name = "HCZ Sergeant's Locker"
-	icon_state = "guard-locked"
-	icon_closed = "guard-unlocked"
-	icon_locked = "guard-locked"
-	icon_opened = "guard-open"
-	icon_off = "guard-off"
+	icon_state = "hczguard1"
+	icon_closed = "hczguard"
+	icon_locked = "hczguard1"
+	icon_opened = "hczopen"
+	icon_off = "hczguardoff"
 
 /obj/structure/closet/secure_closet/guard/hcz/sergeant/WillContain()
 	return list(
@@ -161,7 +171,7 @@
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/head/beret/sec/sergeant,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -169,6 +179,11 @@
 /obj/structure/closet/secure_closet/guard/ez
 	name = "EZ Agent's Locker"
 	req_access = list(ACCESS_SECURITY_LVL3)
+	icon_state = "ezjunior1"
+	icon_closed = "ezjunior"
+	icon_locked = "ezjunior1"
+	icon_opened = "ezopen"
+	icon_off = "ezjunioroff"
 
 /obj/structure/closet/secure_closet/guard/ez/WillContain()
 	return ..() | list(
@@ -186,11 +201,11 @@
 // EZ - Sergeant
 /obj/structure/closet/secure_closet/guard/ez/sergeant
 	name = "EZ Senior Agent's Locker"
-	icon_state = "guard-locked"
-	icon_closed = "guard-unlocked"
-	icon_locked = "guard-locked"
-	icon_opened = "guard-open"
-	icon_off = "guard-off"
+	icon_state = "ezguard1"
+	icon_closed = "ezguard"
+	icon_locked = "ezguard1"
+	icon_opened = "ezopen"
+	icon_off = "ezguardoff"
 
 /obj/structure/closet/secure_closet/guard/ez/sergeant/WillContain()
 	return list(
@@ -217,11 +232,11 @@
 /obj/structure/closet/secure_closet/guard/guard_commander
 	name = "Guard Commander Locker"
 	req_access = list(ACCESS_SECURITY_LVL5)
-	icon_state = "gc-locked"
-	icon_closed = "gc-unlocked"
-	icon_locked = "gc-locked"
-	icon_opened = "gc-open"
-	icon_off = "gc-off"
+	icon_state = "gc1"
+	icon_closed = "gc"
+	icon_locked = "gc1"
+	icon_opened = "gcopen"
+	icon_off = "gcoff"
 
 /obj/structure/closet/secure_closet/guard/guard_commander/WillContain()
 	return list(
@@ -234,9 +249,11 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
-		/obj/item/clothing/accessory/armor/tag/solgov/com/guardcomm,
+		/obj/item/clothing/head/beret/sec/guardcom,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+		/obj/item/clothing/under/rank/head_of_security/guardcom,
+		/obj/item/clothing/under/rank/head_of_security/guardcom/alt,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9,
@@ -247,11 +264,11 @@
 /obj/structure/closet/secure_closet/guard/zone_commander
 	name = "Zone Commander Locker"
 	req_access = list(ACCESS_SECURITY_LVL4)
-	icon_state = "co-locked"
-	icon_closed = "co-unlocked"
-	icon_locked = "co-locked"
-	icon_opened = "co-open"
-	icon_off = "co-off"
+	icon_state = "lczcomm1"
+	icon_closed = "lczcomm"
+	icon_locked = "lczcomm1"
+	icon_opened = "lczopen"
+	icon_off = "lczcommoff"
 
 /obj/structure/closet/secure_closet/guard/zone_commander/WillContain()
 	return list(
@@ -275,14 +292,32 @@
 		/obj/item/ammo_magazine/box/acp45,
 	)
 
+/obj/structure/closet/secure_closet/guard/zone_commander/hcz
+	name = "Zone Commander Locker"
+	req_access = list(ACCESS_SECURITY_LVL4)
+	icon_state = "hczcomm1"
+	icon_closed = "hczcomm"
+	icon_locked = "hczcomm1"
+	icon_opened = "hczopen"
+	icon_off = "hczcommoff"
+
+/obj/structure/closet/secure_closet/guard/zone_commander/ez
+	name = "Zone Commander Locker"
+	req_access = list(ACCESS_SECURITY_LVL4)
+	icon_state = "ezcomm1"
+	icon_closed = "ezcomm"
+	icon_locked = "ezcomm1"
+	icon_opened = "ezopen"
+	icon_off = "ezcommoff"
+
 /obj/structure/closet/secure_closet/guard/breachautomatics
 	name = "Assault rifle locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "gun-locked"
-	icon_closed = "gun-unlocked"
-	icon_locked = "gun-locked"
-	icon_opened = "gun-open"
-	icon_off = "gun-off"
+	icon_state = "tactical1"
+	icon_closed = "tactical"
+	icon_locked = "tactical1"
+	icon_opened = "gunopen"
+	icon_off = "tacticaloff"
 
 /obj/structure/closet/secure_closet/guard/breachautomatics/WillContain()
 	return list(
@@ -298,11 +333,11 @@
 /obj/structure/closet/secure_closet/guard/breachshotguns
 	name = "Tactical Shotgun Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "gun-locked"
-	icon_closed = "gun-unlocked"
-	icon_locked = "gun-locked"
-	icon_opened = "gun-open"
-	icon_off = "gun-off"
+	icon_state = "gun1"
+	icon_closed = "gun"
+	icon_locked = "gun1"
+	icon_opened = "gunopen"
+	icon_off = "gunoff"
 
 /obj/structure/closet/secure_closet/guard/breachshotguns/WillContain()
 	return list(
@@ -319,11 +354,11 @@
 /obj/structure/closet/secure_closet/guard/riotshotguns
 	name = "Riot Shotgun Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "gun-locked"
-	icon_closed = "gun-unlocked"
-	icon_locked = "gun-locked"
-	icon_opened = "gun-open"
-	icon_off = "gun-off"
+	icon_state = "gun1"
+	icon_closed = "gun"
+	icon_locked = "gun1"
+	icon_opened = "gunopen"
+	icon_off = "gunoff"
 
 /obj/structure/closet/secure_closet/guard/riotshotguns/WillContain()
 	return list(
@@ -336,11 +371,11 @@
 /obj/structure/closet/secure_closet/guard/specialistshotgun
 	name = "Specialized Shotgun Crowd Control Gear"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "gun-locked"
-	icon_closed = "gun-unlocked"
-	icon_locked = "gun-locked"
-	icon_opened = "gun-open"
-	icon_off = "gun-off"
+	icon_state = "gun1"
+	icon_closed = "gun"
+	icon_locked = "gun1"
+	icon_opened = "gunopen"
+	icon_off = "gunoff"
 
 /obj/structure/closet/secure_closet/guard/specialistshotgun/WillContain()
 	return list(
@@ -357,11 +392,11 @@
 /obj/structure/closet/secure_closet/guard/lethalshotgunammunitionbuckshot
 	name = "Buckshot Storage Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "gun-locked"
-	icon_closed = "gun-unlocked"
-	icon_locked = "gun-locked"
-	icon_opened = "gun-open"
-	icon_off = "gun-off"
+	icon_state = "gun1"
+	icon_closed = "gun"
+	icon_locked = "gun1"
+	icon_opened = "gunopen"
+	icon_off = "gunoff"
 
 /obj/structure/closet/secure_closet/guard/lethalshotgunammunitionbuckshot/WillContain()
 	return list(
@@ -372,11 +407,11 @@
 /obj/structure/closet/secure_closet/guard/riotgear
 	name = "riot gear locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "gun-locked"
-	icon_closed = "gun-unlocked"
-	icon_locked = "gun-locked"
-	icon_opened = "gun-open"
-	icon_off = "gun-off"
+	icon_state = "armor1"
+	icon_closed = "armor"
+	icon_locked = "armor1"
+	icon_opened = "gunopen"
+	icon_off = "armoroff"
 
 /obj/structure/closet/secure_closet/guard/riotgear/WillContain()
 	return list(
@@ -389,11 +424,11 @@
 /obj/structure/closet/secure_closet/guard/scout
 	name = "Scout's Locker"
 	req_access = list(ACCESS_SECURITY_LVL3)
-	icon_state = "agent-locked"
-	icon_closed = "agent-unlocked"
-	icon_locked = "agent-locked"
-	icon_opened = "agent-open"
-	icon_off = "agent-off"
+	icon_state = "mtf1"
+	icon_closed = "mtf"
+	icon_locked = "mtf1"
+	icon_opened = "mtfopen"
+	icon_off = "mtfoff"
 
 /obj/structure/closet/secure_closet/guard/scout/WillContain()
 	return list(
@@ -419,11 +454,11 @@
 /obj/structure/closet/secure_closet/guard/scout/sergeant
 	name = "Scout's Leader Locker"
 	req_access = list(ACCESS_SECURITY_LVL5)
-	icon_state = "cm-locked"
-	icon_closed = "cm-unlocked"
-	icon_locked = "cm-locked"
-	icon_opened = "cm-open"
-	icon_off = "cm-off"
+	icon_state = "mtfsenior1"
+	icon_closed = "mtfsenior"
+	icon_locked = "mtfsenior1"
+	icon_opened = "mtfsenioropen"
+	icon_off = "mtfsenioroff"
 
 /obj/structure/closet/secure_closet/guard/scout/sergeant/WillContain()
 	return list(
@@ -447,13 +482,13 @@
 	)
 
 /obj/structure/closet/secure_closet/guard/ntf
-	name = "NTF Agent's locker"
+	name = "Task Force Agent's locker"
 	req_access = list(ACCESS_SECURITY_LVL3)
-	icon_state = "agent-locked"
-	icon_closed = "agent-unlocked"
-	icon_locked = "agent-locked"
-	icon_opened = "agent-open"
-	icon_off = "agent-off"
+	icon_state = "mtf1"
+	icon_closed = "mtf"
+	icon_locked = "mtf1"
+	icon_opened = "mtfopen"
+	icon_off = "mtfoff"
 
 /obj/structure/closet/secure_closet/guard/ntf/WillContain()
 	return list(
