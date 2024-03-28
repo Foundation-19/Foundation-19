@@ -40,10 +40,6 @@
 	var/intercom_handling = FALSE
 	var/sound_id
 
-/obj/item/device/radio/hailing
-	name = "shortwave radio (Hailing)"
-	frequency = HAIL_FREQ
-
 /obj/item/device/radio/proc/set_frequency(new_frequency)
 	radio_controller.remove_object(src, frequency)
 	frequency = new_frequency
@@ -58,8 +54,7 @@
 	internal_channels = GLOB.using_map.default_internal_channels()
 	GLOB.listening_objects += src
 
-	if(frequency < RADIO_LOW_FREQ || frequency > RADIO_HIGH_FREQ)
-		frequency = sanitize_frequency(frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
+	frequency = sanitize_frequency(frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 	set_frequency(frequency)
 	if (!default_frequency)
 		default_frequency = frequency
@@ -841,10 +836,7 @@
 
 	. = ..()
 
-	internal_channels = list(
-		num2text(frequency) = list(),
-		num2text(HAIL_FREQ) = list(),
-	)
+	internal_channels = list(num2text(frequency) = list())
 	if (use_common)
 		internal_channels += list(num2text(PUB_FREQ) = list())
 

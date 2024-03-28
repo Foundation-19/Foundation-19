@@ -22,7 +22,6 @@
 	var/preset_name
 	var/use_common = FALSE
 	channels = list()
-	var/default_hailing = FALSE
 
 /obj/item/device/radio/intercom/map_preset/Initialize()
 	if (!preset_name)
@@ -31,8 +30,6 @@
 	var/name_lower = lowertext(preset_name)
 	name = "[name_lower] intercom"
 	frequency = assign_away_freq(preset_name)
-	if (default_hailing)
-		frequency = HAIL_FREQ
 	channels += list(
 		preset_name = 1,
 		"Hailing" = 1
@@ -42,10 +39,7 @@
 
 	. = ..()
 
-	internal_channels = list(
-		num2text(assign_away_freq(preset_name)) = list(),
-		num2text(HAIL_FREQ) = list(),
-	)
+	internal_channels = list(num2text(assign_away_freq(preset_name)) = list())
 	if (use_common)
 		internal_channels += list(num2text(PUB_FREQ) = list())
 
@@ -53,10 +47,6 @@
 	name = "intercom (Custom)"
 	broadcasting = 0
 	listening = 0
-
-/obj/item/device/radio/intercom/hailing
-	name = "intercom (Hailing)"
-	frequency = HAIL_FREQ
 
 /obj/item/device/radio/intercom/interrogation
 	name = "intercom (Interrogation)"
@@ -79,10 +69,6 @@
 	name = "intercom (Medbay)"
 	frequency = MED_I_FREQ
 
-/obj/item/device/radio/intercom/department/security
-	name = "intercom (Security)"
-	frequency = SEC_I_FREQ
-
 /obj/item/device/radio/intercom/entertainment
 	name = "entertainment intercom"
 	frequency = ENT_FREQ
@@ -91,14 +77,6 @@
 /obj/item/device/radio/intercom/department/medbay/Initialize()
 	. = ..()
 	internal_channels = GLOB.default_medbay_channels.Copy()
-
-/obj/item/device/radio/intercom/department/security/Initialize()
-	. = ..()
-	internal_channels = list(
-		num2text(PUB_FREQ) = list(),
-		num2text(SEC_FREQ) = list(ACCESS_SECURITY),
-		num2text(SEC_I_FREQ) = list(ACCESS_SECURITY)
-	)
 
 /obj/item/device/radio/intercom/entertainment/Initialize()
 	. = ..()

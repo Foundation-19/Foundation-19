@@ -18,6 +18,7 @@
 	hard_drive.store_file(new /datum/computer_file/program/records())
 	hard_drive.store_file(new /datum/computer_file/program/uplink())	//harmless tax software
 	hard_drive.store_file(new /datum/computer_file/program/upload_database_c())
+	hard_drive.store_file(new /datum/computer_file/program/chatserver_c())
 	set_autorun("emailc")
 
 	var/mob/living/carbon/human/H = get_holder_of_type(src, /mob)

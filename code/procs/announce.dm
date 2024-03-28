@@ -109,6 +109,7 @@
 	if(character.mind.role_alt_title)
 		rank = character.mind.role_alt_title
 
+	// TODO: broadcast emails as well
 	AnnounceArrivalSimple(character.real_name, rank, join_message, get_announcement_frequency(job))
 
 /proc/AnnounceArrivalSimple(name, rank = "visitor", join_message = "has arrived on the [station_name()]", frequency)

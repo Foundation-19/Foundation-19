@@ -16891,6 +16891,12 @@
 "qqz" = (
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
+"qrp" = (
+/obj/item/modular_computer/console/preset/chatserver{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/engineering/server_room)
 "qsq" = (
 /obj/structure/dispenser/oxygen,
 /turf/simulated/floor/tiled/monotile,
@@ -52678,7 +52684,7 @@ vty
 xPE
 bne
 dby
-aHT
+qrp
 aHT
 xPE
 xRT

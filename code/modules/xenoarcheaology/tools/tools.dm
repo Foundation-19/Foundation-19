@@ -302,9 +302,7 @@
 
 	else if(href_list["freq"])
 		var/new_frequency = (tracking_freq + text2num(href_list["freq"]))
-		if (new_frequency < 1200 || new_frequency > 1600)
-			new_frequency = sanitize_frequency(new_frequency, 1499)
-		tracking_freq = new_frequency
+		tracking_freq = sanitize_frequency(new_frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 		. = TOPIC_REFRESH
 
 	if(. == TOPIC_REFRESH)

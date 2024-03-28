@@ -127,38 +127,6 @@
 #define BOMBCAP_HEAVY_RADIUS (config.max_explosion_range / 2)
 #define BOMBCAP_LIGHT_RADIUS (config.max_explosion_range)
 #define BOMBCAP_FLASH_RADIUS (config.max_explosion_range * 1.5)
-									// SCiPnet module-configuration values. Do not change these. If you need to add another use larger number (5..6..7 etc)
-#define NTNET_SOFTWAREDOWNLOAD 1 	// Downloads of software from SCiPnet
-#define NTNET_PEERTOPEER 2			// P2P transfers of files between devices
-#define NTNET_COMMUNICATION 3		// Communication (messaging)
-#define NTNET_SYSTEMCONTROL 4		// Control of various systems, RCon, air alarm control, etc.
-
-// SCiPnet transfer speeds, used when downloading/uploading a file/program.
-#define NTNETSPEED_LOWSIGNAL 0.5	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
-#define NTNETSPEED_HIGHSIGNAL 1	// GQ/s transfer speed when the device is wirelessly connected and on High signal
-#define NTNETSPEED_ETHERNET 2		// GQ/s transfer speed when the device is using wired connection
-#define NTNETSPEED_DOS_AMPLIFICATION 5	// Multiplier for Denial of Service program. Resulting load on SCiPnet relay is this multiplied by NTNETSPEED of the device
-
-// Program bitflags
-#define PROGRAM_ALL 		(~0)
-#define PROGRAM_CONSOLE 	(1<<0)
-#define PROGRAM_LAPTOP 		(1<<1)
-#define PROGRAM_TABLET 		(1<<2)
-#define PROGRAM_TELESCREEN 	(1<<3)
-#define PROGRAM_PDA 		(1<<4)
-
-// Program states
-#define PROGRAM_STATE_KILLED 		0
-#define PROGRAM_STATE_BACKGROUND 	1
-#define PROGRAM_STATE_ACTIVE 		2
-
-// Data block sizes (data is divided by this to get file size)
-#define BLOCK_SIZE_DATA		2000
-#define BLOCK_SIZE_NEWS		5000
-
-// Caps for SCiPnet logging. Less than 10 would make logging useless anyway, more than 500 may make the log browser too laggy. Defaults to 100 unless user changes it.
-#define MAX_NTNET_LOGS 500
-#define MIN_NTNET_LOGS 10
 
 // Special return values from bullet_act(). Positive return values are already used to indicate the blocked level of the projectile.
 #define PROJECTILE_CONTINUE   -1 //if the projectile should continue flying after calling bullet_act()
@@ -243,11 +211,6 @@
 #define SHUTTLE_MISSION_STARTED  2
 #define SHUTTLE_MISSION_FINISHED 3
 #define SHUTTLE_MISSION_QUEUED   4
-
-//Built-in email accounts
-#define EMAIL_DOCUMENTS "document.server@internal-services.net"
-#define EMAIL_SYSADMIN  "admin@internal-services.net"
-#define EMAIL_BROADCAST "broadcast@internal-services.net"
 
 //Stats for department goals etc
 #define STAT_XENOPLANTS_SCANNED  "xenoplants_scanned"

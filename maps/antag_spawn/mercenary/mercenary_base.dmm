@@ -293,7 +293,7 @@
 /obj/machinery/computer/ship/engines{
 	uncreated_component_parts = list(/obj/item/stock_parts/power/battery/buildable/responsive = 1, /obj/item/cell/high = 1)
 	},
-/obj/item/device/radio/intercom/hailing{
+/obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -24
 	},
@@ -1485,7 +1485,7 @@
 	dir = 8;
 	id_tag = "merc_shuttle_pump"
 	},
-/obj/item/device/radio/intercom/hailing{
+/obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -28
 	},

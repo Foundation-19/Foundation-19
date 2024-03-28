@@ -2832,7 +2832,7 @@
 	dir = 8;
 	icon_state = "console"
 	},
-/obj/item/device/radio/intercom/hailing{
+/obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 24
 	},
@@ -3572,7 +3572,7 @@
 	dir = 4;
 	icon_state = "handrail"
 	},
-/obj/item/device/radio/intercom/hailing{
+/obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -24
 	},
