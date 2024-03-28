@@ -4,7 +4,7 @@
 	nanomodule_path = /datum/nano_module/atmos_control
 	program_icon_state = "atmos_control"
 	program_key_state = "atmos_key"
-	program_menu_icon = "shuffle"
+	program_menu_icon = "thermometer-half"
 	extended_desc = "This program allows remote control of air alarms. This program can not be run on tablet computers."
 	required_access = ACCESS_ENGINEERING_LVL2
 	requires_ntnet = TRUE

@@ -205,7 +205,7 @@
 /datum/gear_tweak/tablet
 	var/list/ValidProcessors = list(/obj/item/stock_parts/computer/processor_unit/small)
 	var/list/ValidBatteries = list(/obj/item/stock_parts/computer/battery_module/nano, /obj/item/stock_parts/computer/battery_module/micro, /obj/item/stock_parts/computer/battery_module)
-	var/list/ValidHardDrives = list(/obj/item/stock_parts/computer/hard_drive/micro, /obj/item/stock_parts/computer/hard_drive/small, /obj/item/stock_parts/computer/hard_drive)
+	var/list/ValidHardDrives = list(/obj/item/stock_parts/computer/storage/hard_drive/micro, /obj/item/stock_parts/computer/storage/hard_drive/small, /obj/item/stock_parts/computer/storage/hard_drive)
 	var/list/ValidNetworkCards = list(/obj/item/stock_parts/computer/network_card, /obj/item/stock_parts/computer/network_card/advanced)
 	var/list/ValidNanoPrinters = list(null, /obj/item/stock_parts/computer/nano_printer)
 	var/list/ValidCardSlots = list(null, /obj/item/stock_parts/computer/card_slot)

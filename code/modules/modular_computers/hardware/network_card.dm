@@ -15,7 +15,7 @@
 
 /obj/item/stock_parts/computer/network_card/diagnostics()
 	. = ..()
-	. += "SCiP Unique ID: [identification_id]"
+	. += "SCiP Network ID: [identification_id]"
 	. += "SCiP User Tag: [identification_string]"
 	. += "Supported protocols:"
 	. += "511.m SFS (Wireless) - Standard Frequency Spread"

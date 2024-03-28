@@ -3,7 +3,7 @@
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "server"
 	desc = "Impact resistant server rack. You might be able to pry a disk out."
-	var/obj/item/stock_parts/computer/hard_drive/cluster/drive = new /obj/item/stock_parts/computer/hard_drive/cluster
+	var/obj/item/stock_parts/computer/storage/hard_drive/cluster/drive = new /obj/item/stock_parts/computer/storage/hard_drive/cluster
 
 /obj/structure/backup_server/attackby(obj/item/W, mob/user, click_params)
 	if(isCrowbar(W))
@@ -15,7 +15,7 @@
 		playsound(loc, 'sounds/items/Crowbar.ogg', 50, 1)
 		show_sound_effect(loc, user, soundicon = SFX_ICON_SMALL)
 		drive.origin_tech = list(TECH_DATA = rand(4,5), TECH_ENGINEERING = rand(4,5), TECH_PHORON = rand(4,5), TECH_COMBAT = rand(2,5), TECH_ESOTERIC = rand(0,6))
-		var/obj/item/stock_parts/computer/hard_drive/cluster/extracted_drive = drive
+		var/obj/item/stock_parts/computer/storage/hard_drive/cluster/extracted_drive = drive
 		user.put_in_hands(extracted_drive)
 		drive = null
 

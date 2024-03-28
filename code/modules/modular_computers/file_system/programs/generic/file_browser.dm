@@ -4,10 +4,11 @@
 	extended_desc = "This program allows management of files."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "folder-collapsed"
+	program_menu_icon = "folder"
 	size = 8
 	requires_ntnet = FALSE
 	available_on_ntnet = FALSE
+	unsendable = TRUE
 	undeletable = TRUE
 	tgui_id = "NtosFileManager"
 
@@ -19,8 +20,8 @@
 	if(..())
 		return TRUE
 
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
-	var/obj/item/stock_parts/computer/hard_drive/RHDD = computer.portable_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/RHDD = computer.portable_drive
 
 	switch(action)
 		if("PRG_openfile")
@@ -132,6 +133,17 @@
 				return
 			file.filename = newname
 			return TRUE
+		if("PRG_usb_rename")
+			if(!RHDD)
+				return
+			var/datum/computer_file/file = RHDD.find_file_by_name(params["name"])
+			if(!file)
+				return
+			var/newname = params["new_name"]
+			if(!newname)
+				return
+			file.filename = newname
+			return TRUE
 		if("PRG_copytousb")
 			if(!HDD || !RHDD)
 				return
@@ -154,8 +166,8 @@
 /datum/computer_file/program/filemanager/tgui_data(mob/user)
 	var/list/data = get_header_data()
 
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
-	var/obj/item/stock_parts/computer/hard_drive/portable/RHDD = computer.portable_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/portable_drive/RHDD = computer.portable_drive
 
 	data["error"] = null
 	if(error)
@@ -188,7 +200,8 @@
 				"name" = F.filename,
 				"type" = F.filetype,
 				"size" = F.size,
-				"undeletable" = F.undeletable
+				"undeletable" = F.undeletable,
+				"unsendable" = F.unsendable
 			))
 		data["files"] = files
 		if(RHDD)
@@ -199,7 +212,8 @@
 					"name" = F.filename,
 					"type" = F.filetype,
 					"size" = F.size,
-					"undeletable" = F.undeletable
+					"undeletable" = F.undeletable,
+					"unsendable" = F.unsendable
 				))
 			data["usbfiles"] = usbfiles
 

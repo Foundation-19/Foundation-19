@@ -9,7 +9,7 @@
 	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 400, MATERIAL_GLASS = 100)
-	build_path = /obj/item/stock_parts/computer/hard_drive/
+	build_path = /obj/item/stock_parts/computer/storage/hard_drive/
 	sort_string = "VBAAA"
 
 /datum/design/item/modularcomponent/disk/advanced
@@ -18,7 +18,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 800, MATERIAL_GLASS = 200)
-	build_path = /obj/item/stock_parts/computer/hard_drive/advanced
+	build_path = /obj/item/stock_parts/computer/storage/hard_drive/advanced
 	sort_string = "VBAAB"
 
 /datum/design/item/modularcomponent/disk/super
@@ -27,7 +27,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 3)
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 1600, MATERIAL_GLASS = 400)
-	build_path = /obj/item/stock_parts/computer/hard_drive/super
+	build_path = /obj/item/stock_parts/computer/storage/hard_drive/super
 	sort_string = "VBAAC"
 
 /datum/design/item/modularcomponent/disk/cluster
@@ -36,7 +36,7 @@
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 4)
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 3200, MATERIAL_GLASS = 800)
-	build_path = /obj/item/stock_parts/computer/hard_drive/cluster
+	build_path = /obj/item/stock_parts/computer/storage/hard_drive/cluster
 	sort_string = "VBAAD"
 
 /datum/design/item/modularcomponent/disk/micro
@@ -45,7 +45,7 @@
 	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 400, MATERIAL_GLASS = 100)
-	build_path = /obj/item/stock_parts/computer/hard_drive/micro
+	build_path = /obj/item/stock_parts/computer/storage/hard_drive/micro
 	sort_string = "VBAAE"
 
 /datum/design/item/modularcomponent/disk/small
@@ -54,7 +54,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 800, MATERIAL_GLASS = 200)
-	build_path = /obj/item/stock_parts/computer/hard_drive/small
+	build_path = /obj/item/stock_parts/computer/storage/hard_drive/small
 	sort_string = "VBAAF"
 
 // Network cards
@@ -104,7 +104,7 @@
 	build_type = IMPRINTER
 	materials = list(MATERIAL_GLASS = 800)
 	chemicals = list(/datum/reagent/acid/sulphuric = 20)
-	build_path = /obj/item/stock_parts/computer/hard_drive/portable
+	build_path = /obj/item/stock_parts/computer/storage/portable_drive
 	sort_string = "VBACA"
 
 /datum/design/item/modularcomponent/portabledrive/advanced
@@ -114,7 +114,7 @@
 	build_type = IMPRINTER
 	materials = list(MATERIAL_GLASS = 1600)
 	chemicals = list(/datum/reagent/acid/sulphuric = 20)
-	build_path = /obj/item/stock_parts/computer/hard_drive/portable/advanced
+	build_path = /obj/item/stock_parts/computer/storage/portable_drive/advanced
 	sort_string = "VBACB"
 
 /datum/design/item/modularcomponent/portabledrive/super
@@ -124,7 +124,7 @@
 	build_type = IMPRINTER
 	materials = list(MATERIAL_GLASS = 3200)
 	chemicals = list(/datum/reagent/acid/sulphuric = 20)
-	build_path = /obj/item/stock_parts/computer/hard_drive/portable/super
+	build_path = /obj/item/stock_parts/computer/storage/portable_drive/super
 	sort_string = "VBACC"
 
 // Card slot

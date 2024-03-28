@@ -21661,6 +21661,17 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
+"clX" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "cme" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/red/border{
@@ -24190,6 +24201,12 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
+"eku" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/floor_decal/corner/black/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "ele" = (
 /obj/machinery/door/airlock/highsecurity/bolted{
 	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
@@ -25458,6 +25475,18 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/checkequip)
+"foZ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/science{
+	name = "Vacant Storeroom";
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/genstorage2)
 "fpy" = (
 /obj/machinery/light{
 	dir = 8
@@ -26613,6 +26642,22 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/vertical,
 /area/site53/lowertrams/hub)
+"gjC" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "gkq" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30491,6 +30536,18 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
+"jju" = (
+/obj/machinery/door/airlock/science{
+	name = "SCP-263";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL4"))
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/scp5295)
 "jjW" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
@@ -31093,6 +31150,10 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
+"jJk" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/scp5295)
 "jJn" = (
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/steel_grid,
@@ -31988,6 +32049,12 @@
 /obj/item/device/radio,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
+"kwl" = (
+/obj/machinery/light,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/black/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "kwv" = (
 /obj/machinery/light{
 	dir = 8
@@ -33254,6 +33321,22 @@
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/redline)
+"lyX" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "lzp" = (
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 1
@@ -36746,6 +36829,12 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/hallways)
+"nXH" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "nYC" = (
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
@@ -37475,6 +37564,10 @@
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"ozM" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/genstorage2)
 "oAo" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Chamber Airlock";
@@ -39705,6 +39798,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchwing)
+"qnb" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "qnc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -43370,6 +43474,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
+"tcQ" = (
+/obj/machinery/camera/network/lcz{
+	name = "SCP-5295"
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "tcV" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 5
@@ -45686,6 +45799,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"vgp" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "vgG" = (
 /obj/structure/closet/secure_closet/guard/lethalshotgunammunitionbuckshot,
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -46758,6 +46877,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
+"vXI" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/green/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "vXY" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -46920,6 +47045,12 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
+"wgp" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "wgK" = (
 /obj/machinery/light{
 	dir = 8
@@ -47817,6 +47948,12 @@
 	},
 /turf/simulated/floor/tiled/nullglass,
 /area/site53/reswing/psionic)
+"wOt" = (
+/obj/effect/floor_decal/corner/green/mono,
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/computer/storage/portable_drive/scp5295,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "wOB" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -60595,10 +60732,10 @@ bON
 bON
 bON
 bON
-azA
-azA
-azA
-azA
+jJk
+jJk
+jJk
+jJk
 azA
 azA
 azA
@@ -60852,10 +60989,10 @@ bON
 iIJ
 hGY
 bON
-azA
-azA
-azA
-azA
+jJk
+wOt
+vXI
+jJk
 azA
 azA
 azA
@@ -61109,10 +61246,10 @@ bON
 xWw
 jGc
 bON
-azA
-azA
-azA
-azA
+jJk
+tcQ
+wgp
+jJk
 azA
 azA
 azA
@@ -61366,6 +61503,10 @@ bON
 nsF
 sUN
 bON
+jJk
+lyX
+qnb
+jJk
 azA
 azA
 azA
@@ -61377,10 +61518,6 @@ aXp
 aXp
 aXp
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -61623,6 +61760,10 @@ bON
 bON
 bOE
 bON
+jJk
+jJk
+jju
+jJk
 aVS
 aXp
 aXp
@@ -61634,10 +61775,6 @@ umq
 sPS
 fAC
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -61880,6 +62017,10 @@ hrq
 gWp
 aWb
 eUh
+hrq
+gWp
+aWb
+eUh
 bcZ
 aXp
 vuY
@@ -61891,10 +62032,6 @@ aXq
 aXD
 ins
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -62137,6 +62274,10 @@ aXn
 aXn
 hSj
 aXn
+aXn
+aXn
+hSj
+aXn
 bda
 aXw
 bix
@@ -62148,10 +62289,6 @@ xaC
 xaC
 xmw
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -62394,6 +62531,10 @@ aLq
 ebk
 lqX
 bcY
+aLq
+ebk
+lqX
+bcY
 ayI
 aXp
 hES
@@ -62405,10 +62546,6 @@ aXz
 aXz
 aXz
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -62651,6 +62788,10 @@ ffp
 ffp
 jbZ
 ffp
+ozM
+ozM
+foZ
+ozM
 aVS
 aXp
 dhj
@@ -62662,10 +62803,6 @@ big
 big
 big
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -62908,6 +63045,10 @@ ffp
 otI
 wpo
 ffp
+ozM
+gjC
+clX
+ozM
 azA
 aXp
 aXp
@@ -62919,10 +63060,6 @@ eAI
 big
 aGu
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -63165,6 +63302,10 @@ ffp
 iHI
 xxa
 ffp
+ozM
+vgp
+nXH
+ozM
 azA
 azA
 azA
@@ -63176,10 +63317,6 @@ rvL
 big
 big
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -63422,6 +63559,10 @@ ffp
 dmf
 bEh
 ffp
+ozM
+eku
+kwl
+ozM
 azA
 azA
 azA
@@ -63433,10 +63574,6 @@ aXp
 aXp
 aXp
 aXp
-azA
-azA
-azA
-azA
 azA
 azA
 azA
@@ -63679,10 +63816,10 @@ ffp
 ffp
 ffp
 ffp
-azA
-azA
-azA
-azA
+ozM
+ozM
+ozM
+ozM
 azA
 azA
 azA

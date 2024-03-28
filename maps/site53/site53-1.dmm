@@ -7905,6 +7905,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table/standard,
+/obj/item/stock_parts/computer/storage/portable_drive,
+/obj/item/stock_parts/computer/storage/portable_drive,
+/obj/item/stock_parts/computer/storage/portable_drive,
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
 "hxG" = (

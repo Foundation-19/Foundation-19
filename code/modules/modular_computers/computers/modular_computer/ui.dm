@@ -51,7 +51,11 @@
 				IDJob = stored_title,
 			)
 
-	data["removable_media"] = list()
+	if(LAZYLEN(watched_by_5295))
+		data["unsafe_to_shutdown"] = TRUE
+
+	if(portable_drive)
+		data["removable_media"] = portable_drive.name
 
 	var/datum/computer_file/data/autorun = hard_drive.find_file_by_name("autorun")
 	data["programs"] = list()
@@ -112,11 +116,8 @@
 			set_autorun(params["name"])
 			return TRUE
 		if("PC_Eject_Disk")
-			var/param = params["name"]
-			switch(param)
-				if("ID")
-					proc_eject_id(usr)
-					return TRUE
+			proc_eject_usb()
+			return TRUE
 		else
 			return
 

@@ -4,6 +4,7 @@
 	extended_desc = "This program allows access to the manifest of active on-site personnel."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "clipboard-list"
 	size = 4
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE

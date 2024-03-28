@@ -4,7 +4,7 @@
 	extended_desc = "Allows access to file databases"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "arrowthickstop-1-s"
+	program_menu_icon = "file-download"
 	size = 2
 	requires_ntnet = TRUE
 	requires_ntnet_feature = NTNET_PEERTOPEER

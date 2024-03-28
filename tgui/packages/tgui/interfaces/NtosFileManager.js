@@ -6,7 +6,15 @@ import { NtosWindow } from '../layouts';
 
 export const NtosFileManager = (props, context) => {
   const { act, data } = useBackend(context);
-  const { PC_device_theme, usbconnected, filename, filedata, error, files = [], usbfiles = [] } = data;
+  const {
+    PC_device_theme,
+    usbconnected,
+    filename,
+    filedata,
+    error,
+    files = [],
+    usbfiles = [],
+  } = data;
   return (
     <NtosWindow resizable theme={PC_device_theme}>
       <NtosWindow.Content scrollable>
@@ -15,9 +23,21 @@ export const NtosFileManager = (props, context) => {
             title={'Viewing File ' + filename}
             buttons={
               <Fragment>
-                <Button icon="pen" content="Edit" onClick={() => act('PRG_edit')} />
-                <Button icon="print" content="Print" onClick={() => act('PRG_printfile')} />
-                <Button icon="times" content="Close" onClick={() => act('PRG_closefile')} />
+                <Button
+                  icon="pen"
+                  content="Edit"
+                  onClick={() => act('PRG_edit')}
+                />
+                <Button
+                  icon="print"
+                  content="Print"
+                  onClick={() => act('PRG_printfile')}
+                />
+                <Button
+                  icon="times"
+                  content="Close"
+                  onClick={() => act('PRG_closefile')}
+                />
               </Fragment>
             }>
             {error || null}
@@ -51,9 +71,9 @@ export const NtosFileManager = (props, context) => {
                   files={usbfiles}
                   usbconnected={usbconnected}
                   onUpload={(file) => act('PRG_copyfromusb', { name: file })}
-                  onDelete={(file) => act('PRG_deletefile', { name: file })}
+                  onDelete={(file) => act('PRG_usbdeletefile', { name: file })}
                   onRename={(file, newName) =>
-                    act('PRG_rename', {
+                    act('PRG_usb_rename', {
                       name: file,
                       new_name: newName,
                     })
@@ -76,7 +96,15 @@ export const NtosFileManager = (props, context) => {
 };
 
 const FileTable = (props) => {
-  const { files = [], usbconnected, usbmode, onUpload, onDelete, onRename, onOpen } = props;
+  const {
+    files = [],
+    usbconnected,
+    usbmode,
+    onUpload,
+    onDelete,
+    onRename,
+    onOpen,
+  } = props;
   return (
     <Table>
       <Table.Row header>
@@ -105,8 +133,8 @@ const FileTable = (props) => {
           <Table.Cell>{file.type}</Table.Cell>
           <Table.Cell>{file.size}</Table.Cell>
           <Table.Cell collapsing>
-            {!file.undeletable && (
-              <Fragment>
+            <Fragment>
+              {!file.undeletable && (
                 <Button.Confirm
                   icon="trash"
                   confirmIcon="times"
@@ -114,14 +142,23 @@ const FileTable = (props) => {
                   tooltip="Delete"
                   onClick={() => onDelete(file.name)}
                 />
-                {!!usbconnected &&
-                  (usbmode ? (
-                    <Button icon="download" tooltip="Download" onClick={() => onUpload(file.name)} />
-                  ) : (
-                    <Button icon="upload" tooltip="Upload" onClick={() => onUpload(file.name)} />
-                  ))}
-              </Fragment>
-            )}
+              )}
+              {!!usbconnected &&
+                !file.unsendable &&
+                (usbmode ? (
+                  <Button
+                    icon="download"
+                    tooltip="Download"
+                    onClick={() => onUpload(file.name)}
+                  />
+                ) : (
+                  <Button
+                    icon="upload"
+                    tooltip="Upload"
+                    onClick={() => onUpload(file.name)}
+                  />
+                ))}
+            </Fragment>
           </Table.Cell>
         </Table.Row>
       ))}

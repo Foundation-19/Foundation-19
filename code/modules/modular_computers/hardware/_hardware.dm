@@ -1,4 +1,5 @@
-/obj/item/stock_parts/computer/
+/obj/item/stock_parts/computer
+	abstract_type = /obj/item/stock_parts/computer
 	name = "Hardware"
 	desc = "Unknown Hardware."
 	icon = 'icons/obj/modular_components.dmi'
@@ -45,7 +46,7 @@
 	return ..()
 
 
-// Called on multitool click, prints diagnostic information to the user.
+/// Called on multitool click, prints diagnostic information to the user.
 /obj/item/stock_parts/computer/proc/diagnostics()
 	return list("Hardware Integrity Test... (Corruption: [damage]/[max_damage]) [damage > damage_failure ? "FAIL" : damage > damage_malfunction ? "WARN" : "PASS"]")
 
@@ -66,16 +67,16 @@
 /obj/item/stock_parts/computer/proc/check_functionality()
 	// Turned off
 	if(!enabled)
-		return 0
+		return FALSE
 	// Too damaged to work at all.
 	if(damage >= damage_failure)
-		return 0
+		return FALSE
 	// Still working. Well, sometimes...
 	if(damage >= damage_malfunction)
 		if(prob(damage / malfunction_divisor))
-			return 0
+			return FALSE
 	// Good to go.
-	return 1
+	return TRUE
 
 /obj/item/stock_parts/computer/examine(mob/user)
 	. = ..()

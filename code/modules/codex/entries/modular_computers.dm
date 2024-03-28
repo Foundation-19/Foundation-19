@@ -24,7 +24,7 @@
 	This is important for storing digital files. Larger and more technologically-advanced hard drives can store more than weaker ones."
 
 /datum/codex_entry/hard_drive/New()
-	associated_paths = (typesof(/obj/item/stock_parts/computer/hard_drive) - typesof(/obj/item/stock_parts/computer/hard_drive/portable))
+	associated_paths = typesof(/obj/item/stock_parts/computer/storage/hard_drive)
 
 /datum/codex_entry/hard_drive_portable
 	display_name = "portable hard drive"
@@ -33,7 +33,7 @@
 	Due to their small size, portable hard drives store less files than their respective built-in counterparts."
 
 /datum/codex_entry/hard_drive_portable/New()
-	associated_paths = typesof(/obj/item/stock_parts/computer/hard_drive/portable)
+	associated_paths = typesof(/obj/item/stock_parts/computer/storage/portable_drive)
 
 /datum/codex_entry/battery_module
 	display_name = "battery module"
