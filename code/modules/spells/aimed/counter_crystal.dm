@@ -82,8 +82,8 @@
 
 /obj/structure/cult/pylon/counter_crystal/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST, .proc/OnSpellCast)
-	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST_HAND, .proc/OnSpellCastHand)
+	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST, PROC_REF(OnSpellCast))
+	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST_HAND, PROC_REF(OnSpellCastHand))
 
 /obj/structure/cult/pylon/counter_crystal/Destroy()
 	UnregisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST)

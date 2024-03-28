@@ -63,17 +63,17 @@
 /datum/beam/proc/redrawing(atom/movable/mover, atom/oldloc, new_loc)
 	if(!QDELETED(origin) && !QDELETED(target) && get_dist(origin,target)<max_distance && origin.z == target.z)
 		QDEL_NULL_LIST(elements)
-		INVOKE_ASYNC(src, .proc/Draw)
+		INVOKE_ASYNC(src, PROC_REF(Draw))
 	else
 		qdel(src)
 
 /datum/beam/Destroy()
 	QDEL_NULL_LIST(elements)
 	QDEL_NULL(visuals)
-	UnregisterSignal(origin, COMSIG_MOVED, .proc/redrawing)
-	UnregisterSignal(target, COMSIG_MOVED, .proc/redrawing)
-	UnregisterSignal(origin, COMSIG_PARENT_QDELETING, .proc/redrawing)
-	UnregisterSignal(target, COMSIG_PARENT_QDELETING, .proc/redrawing)
+	UnregisterSignal(origin, COMSIG_MOVED, PROC_REF(redrawing))
+	UnregisterSignal(target, COMSIG_MOVED, PROC_REF(redrawing))
+	UnregisterSignal(origin, COMSIG_PARENT_QDELETING, PROC_REF(redrawing))
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(redrawing))
 	target = null
 	origin = null
 	return ..()
@@ -166,5 +166,5 @@
  */
 /atom/proc/Beam(atom/BeamTarget,icon_state="b_beam",icon='icons/effects/beam.dmi',time=INFINITY,maxdistance=INFINITY,beam_type=/obj/effect/ebeam)
 	var/datum/beam/newbeam = new(src,BeamTarget,icon,icon_state,time,maxdistance,beam_type)
-	INVOKE_ASYNC(newbeam, /datum/beam/.proc/Start)
+	INVOKE_ASYNC(newbeam, TYPE_PROC_REF(/datum/beam/, Start))
 	return newbeam
