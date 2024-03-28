@@ -3501,6 +3501,12 @@
 /obj/machinery/door/airlock/glass/research{
 	name = "Hallway"
 	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "LCZStairs";
+	name = "LCZ Stairs Lockdown Shutters"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/hallways)
 "dhQ" = (

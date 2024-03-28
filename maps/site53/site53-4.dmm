@@ -7836,13 +7836,15 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
 "Px" = (
-/obj/machinery/scp294,
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled,
 /area/site53/uez/hallway)
 "PE" = (
