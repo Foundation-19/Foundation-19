@@ -164,6 +164,7 @@
 	supervisors = "the Research Director"
 	economic_power = 4
 	requirements = list(EXP_TYPE_SCIENCE = 480)
+
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist", "Mentalist")
 	minimal_player_age = 7
 	ideal_character_age = 30

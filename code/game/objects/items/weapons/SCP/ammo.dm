@@ -190,6 +190,16 @@
 	ammo_type = /obj/item/ammo_casing/pistol/a357
 	max_ammo = 60
 
+// .454
+/obj/item/ammo_magazine/box/a454
+	name = "ammunition box (.454 Casull)"
+	icon_state = "ammobox_454"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_REVOLVER_HEAVY
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/revolver/heavy
+	max_ammo = 60
+
 // 45acp
 /obj/item/ammo_magazine/box/a45
 	name = "ammunition box (.45acp)"

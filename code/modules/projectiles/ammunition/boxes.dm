@@ -33,8 +33,10 @@
 	matter = list(MATERIAL_STEEL = 1440)
 
 /obj/item/ammo_magazine/speedloader/heavy
+	name = "speed loader (.454 Casull)"
 	desc = "A speed loader for heavy revolvers."
-	icon_state = "spdloader_magnum"
+	icon_state = "454"
+	max_ammo = 7
 	caliber = CALIBER_REVOLVER_HEAVY
 	ammo_type = /obj/item/ammo_casing/revolver/heavy
 	matter = list(MATERIAL_STEEL = 1820)
