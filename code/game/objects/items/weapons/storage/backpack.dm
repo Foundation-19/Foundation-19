@@ -87,7 +87,7 @@
 	spawn_gifts()
 
 /obj/item/storage/backpack/santabag/proc/spawn_gifts()
-	addtimer(CALLBACK(src, .proc/spawn_gifts), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(spawn_gifts)), 30 SECONDS)
 
 	var/mob/M = get(loc, /mob)
 	if(!istype(M))
@@ -202,7 +202,7 @@
 	item_state_slots = null
 	w_class = ITEM_SIZE_HUGE
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 10
-	open_icon = "duffleopen"
+	open_icon = null
 
 /obj/item/storage/backpack/dufflebag/Initialize()
 	. = ..()
@@ -213,7 +213,7 @@
 	desc = "A large dufflebag for holding extra tactical supplies."
 	icon_state = "duffle_syndie"
 	item_state_slots = list(slot_l_hand_str = "duffle_syndie", slot_r_hand_str = "duffle_syndie")
-	open_icon = "duffle_syndieopen"
+	open_icon = null
 
 /obj/item/storage/backpack/dufflebag/syndie/Initialize()
 	. = ..()
@@ -245,21 +245,21 @@
 	desc = "A large dufflebag for holding extra medical supplies."
 	icon_state = "duffle_med"
 	item_state_slots = list(slot_l_hand_str = "duffle_med", slot_r_hand_str = "duffle_med")
-	open_icon = "duffle_medopen"
+	open_icon = null
 
 /obj/item/storage/backpack/dufflebag/sec
 	name = "security dufflebag"
 	desc = "A large dufflebag for holding extra security supplies and ammunition."
 	icon_state = "duffle_sec"
 	item_state_slots = list(slot_l_hand_str = "duffle_sec", slot_r_hand_str = "duffle_sec")
-	open_icon = "duffle_secopen"
+	open_icon = null
 
 /obj/item/storage/backpack/dufflebag/eng
 	name = "industrial dufflebag"
 	desc = "A large dufflebag for holding extra tools and supplies."
 	icon_state = "duffle_eng"
 	item_state_slots = list(slot_l_hand_str = "duffle_eng", slot_r_hand_str = "duffle_eng")
-	open_icon = "duffle_engopen"
+	open_icon = null
 
 /obj/item/storage/backpack/dufflebag/firefighter
 	name = "firefighter's dufflebag"
@@ -522,3 +522,7 @@
 	desc = "A small, tactical backpack worn over one shoulder. This one is in EXO colors."
 	icon_state = "courierbagsec_exo"
 
+/obj/item/storage/backpack/rucksack/ci
+	name = "military rucksack"
+	desc = "A heavy rucksack that can carry more than the conventional rucksacks, usually used by the russian military forces, but this one is used by the Chaos Insurgency."
+	icon_state = "ci_rucksack"

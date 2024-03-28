@@ -2,7 +2,6 @@
 	name = "Return to Master"
 	desc = "Teleport back to your master."
 
-	school = "conjuration"
 	charge_max = 600
 	spell_flags = 0
 	invocation = "none"
@@ -14,6 +13,8 @@
 
 	hud_state = "wiz_tele"
 
+	mana_cost = 2
+	spell_book_visible = FALSE
 
 /datum/spell/contract/return_master/cast(mob/target,mob/user)
 	target = ..(target,user)

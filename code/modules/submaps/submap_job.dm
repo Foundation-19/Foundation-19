@@ -11,6 +11,8 @@
 	available_by_default = FALSE
 	skill_points = 25
 	give_psionic_implant_on_join = FALSE
+	higher_mana_chance = 5
+	higher_spell_points_chance = 5
 	max_skill = list(
 	    SKILL_HAULING = SKILL_MAX,
 	    SKILL_COMPUTER = SKILL_MAX,

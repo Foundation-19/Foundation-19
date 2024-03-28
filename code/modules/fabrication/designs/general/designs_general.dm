@@ -95,3 +95,6 @@
 
 /datum/fabricator_recipe/toolbox
 	path = /obj/item/storage/toolbox
+
+/datum/fabricator_recipe/earmuffs
+	path = /obj/item/clothing/ears/earmuffs

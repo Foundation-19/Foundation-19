@@ -72,11 +72,11 @@
 	equipment = list(/obj/item/clothing/under/caretaker = slot_w_uniform,
 					/obj/item/clothing/shoes/dress/caretakershoes = slot_shoes)
 	spells = list(/datum/spell/toggle_armor/caretaker,
-				/datum/spell/targeted/heal_target/touch,
+				/datum/spell/aimed/heal_target,
 				/datum/spell/aoe_turf/knock/slow,
-				/datum/spell/targeted/heal_target/area/slow,
-				/datum/spell/targeted/analyze,
-				/datum/spell/targeted/heal_target/trance
+				/datum/spell/targeted/heal_target/area,
+				/datum/spell/hand/analyze_health,
+				/datum/spell/aimed/heal_target/trance
 				)
 
 /datum/spellbound_type/servant/champion
@@ -186,7 +186,7 @@
 	spells = list(/datum/spell/toggle_armor/overseer,
 				/datum/spell/targeted/ethereal_jaunt,
 				/datum/spell/invisibility,
-				/datum/spell/targeted/revoke)
+				/datum/spell/aimed/revoke_death)
 
 /datum/spellbound_type/servant/overseer/equip_servant(mob/living/carbon/human/H)
 	..()

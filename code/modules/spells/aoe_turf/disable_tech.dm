@@ -1,7 +1,6 @@
 /datum/spell/aoe_turf/disable_tech
 	name = "Disable Tech"
 	desc = "This spell disables all weapons, cameras and most other technology in range."
-	feedback = "DT"
 	charge_max = 400
 	spell_flags = NEEDSCLOTHES
 	invocation = "NEC CANTIO"
@@ -18,13 +17,16 @@
 	hud_state = "wiz_tech"
 	cast_sound = 'sounds/magic/disable_tech.ogg'
 
+	spell_cost = 3
+	mana_cost = 15
+
 /datum/spell/aoe_turf/disable_tech/cast(list/targets)
 
 	for(var/turf/target in targets)
 		empulse(get_turf(target), emp_heavy, emp_light)
 	return
 
-/datum/spell/aoe_turf/disable_tech/empower_spell()
+/datum/spell/aoe_turf/disable_tech/ImproveSpellPower()
 	if(!..())
 		return 0
 	emp_heavy += 2

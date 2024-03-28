@@ -53,7 +53,7 @@
 	booster.regenerate_image()
 	trap.regenerate_image()
 
-	addtimer(CALLBACK(src, .proc/handle_fadein), focus_frequency)
+	addtimer(CALLBACK(src, PROC_REF(handle_fadein)), focus_frequency)
 
 /datum/progbar_booster_manager/proc/handle_fadein()
 	if(booster)
