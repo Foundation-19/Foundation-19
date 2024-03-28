@@ -246,7 +246,7 @@
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security/recon
-	mask = /obj/item/clothing/mask/gas
+	mask = /obj/item/clothing/mask/gas/security
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
 /decl/hierarchy/outfit/job/security/hcz_guard

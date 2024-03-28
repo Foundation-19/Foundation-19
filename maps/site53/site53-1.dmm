@@ -138,15 +138,26 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "ahI" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/flasher{
-	id_tag = "isolator6";
-	pixel_y = -30
+/obj/machinery/button/alternate/door/bolts{
+	dir = 1;
+	id_tag = "isolationcell7";
+	name = "Cell 7 Control";
+	pixel_y = -26;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "ahL" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -159,7 +170,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "aif" = (
 /obj/structure/virology/iso{
@@ -348,6 +362,17 @@
 /obj/effect/floor_decal/corner/yellow/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"ary" = (
+/obj/machinery/button/flasher{
+	id_tag = "isolator5";
+	pixel_y = -30
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/black/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "arK" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -643,7 +668,10 @@
 	id_tag = "d-class_corridor"
 	},
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/cellbubble)
 "aCj" = (
 /turf/simulated/wall/titanium,
@@ -1381,16 +1409,8 @@
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
 "bkM" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "isolationcell7";
-	name = "Cell 7 Control";
-	pixel_y = -26;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor,
-/area/site53/llcz/dclass/isolation)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/dclass/cellbubble)
 "blU" = (
 /obj/machinery/camera/network/lcz{
 	dir = 4
@@ -1604,6 +1624,15 @@
 /obj/effect/floor_decal/corner/yellow/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"btD" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/llcz/dclass/cellbubble)
 "buj" = (
 /obj/structure/table/woodentable,
 /obj/structure/plushie/ian,
@@ -2199,7 +2228,8 @@
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "bYs" = (
 /obj/structure/railing/mapped{
@@ -2807,7 +2837,8 @@
 	},
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "czh" = (
 /obj/structure/closet,
@@ -3307,7 +3338,7 @@
 	id_tag = "isolationcell3";
 	name = "Isolation"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/isolation)
 "dai" = (
 /obj/machinery/disposal/deliveryChute{
@@ -3787,7 +3818,10 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/cellbubble)
 "dyp" = (
 /turf/simulated/floor/wood{
@@ -4612,7 +4646,7 @@
 	id_tag = "Security Bubble Lockdown";
 	name = "Security Bubble Lockdown"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cellbubble)
 "eop" = (
 /obj/effect/catwalk_plated/white,
@@ -4927,7 +4961,10 @@
 /obj/machinery/camera/network/lcz,
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/llcz/dclass/cellbubble)
 "eET" = (
 /turf/simulated/floor,
@@ -5052,6 +5089,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
+"eJb" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/llcz/dclass/cellbubble)
 "eJf" = (
 /obj/effect/landmark{
 	name = "JoinLatelcz"
@@ -5113,7 +5156,8 @@
 /area/site53/lhcz/scp049containment)
 "ePy" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "eRz" = (
 /obj/effect/floor_decal/industrial/loading{
@@ -5693,7 +5737,8 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsa,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/llcz/dclass/cellbubble)
 "fsy" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -6235,19 +6280,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "fVo" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/flasher{
-	id_tag = "isolator5";
-	pixel_y = -30
+/obj/structure/bed/chair/office/light{
+	dir = 8
 	},
-/obj/machinery/camera/network/lcz{
-	dir = 1
+/obj/effect/landmark{
+	name = "JoinLatelcz"
 	},
-/obj/structure/closet{
-	name = "Coroner"
-	},
-/turf/simulated/floor,
-/area/site53/llcz/dclass/isolation)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/dclass/cellbubble)
 "fVv" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -7421,15 +7461,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "gXR" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "dclasscells";
-	begins_closed = 0
+/obj/machinery/button/flasher{
+	id_tag = "isolator7";
+	pixel_x = 26;
+	pixel_y = -30
 	},
-/obj/machinery/door/airlock/glass/medical{
-	id_tag = "isolationcell7";
-	name = "Isolation"
-	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "gYz" = (
 /obj/structure/table/reinforced,
@@ -7485,7 +7523,12 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/storage/pill_bottle/amnesticsa,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
 /area/site53/llcz/dclass/cellbubble)
 "hat" = (
 /obj/machinery/door/blast/regular{
@@ -7753,7 +7796,7 @@
 	id_tag = "isolationcell1";
 	name = "Isolation"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/isolation)
 "hnY" = (
 /turf/simulated/floor/tiled/monotile,
@@ -7865,7 +7908,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cellbubble)
 "hvd" = (
 /obj/effect/catwalk_plated/white,
@@ -7907,6 +7950,14 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
+"hxy" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/dclass/cellbubble)
 "hxG" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
@@ -7966,15 +8017,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
 "hBd" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "dclasscells";
-	begins_closed = 0
+/obj/machinery/button/flasher{
+	id_tag = "isolator6";
+	pixel_y = -30
 	},
-/obj/machinery/door/airlock/glass/medical{
-	id_tag = "isolationcell6";
-	name = "Isolation"
-	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "hBU" = (
 /turf/simulated/floor/tiled/monotile,
@@ -8922,7 +8970,10 @@
 "iCK" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/llcz/dclass/cellbubble)
 "iCQ" = (
 /obj/structure/bed/roller,
@@ -8973,8 +9024,26 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
 "iJx" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 1;
+	id_tag = "isolationcell5";
+	name = "Cell 5 Control";
+	pixel_y = -26;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 10
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "iKr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -9008,7 +9077,6 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "iKY" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "isolationcell2";
 	name = "Cell 2 Control";
@@ -9020,7 +9088,19 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "iLc" = (
 /obj/machinery/light/spot{
@@ -10301,7 +10381,7 @@
 	id_tag = "isolationcell2";
 	name = "Isolation"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/isolation)
 "jWV" = (
 /obj/structure/cable/green{
@@ -10909,7 +10989,10 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/cellbubble)
 "kDE" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
@@ -11282,7 +11365,12 @@
 /area/site53/llcz/hallways)
 "kUO" = (
 /obj/structure/filingcabinet,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
 /area/site53/llcz/dclass/cellbubble)
 "kWx" = (
 /obj/effect/floor_decal/corner/brown/border{
@@ -11690,13 +11778,13 @@
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "loF" = (
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/isolation)
 "loP" = (
 /obj/structure/closet,
@@ -11707,7 +11795,7 @@
 	name = "Security Bubble";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cellbubble)
 "lpI" = (
 /obj/structure/cable/green{
@@ -11779,6 +11867,12 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkpointoverlook)
+"lsx" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/llcz/dclass/cellbubble)
 "lsB" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -12196,7 +12290,8 @@
 /area/site53/llcz/dclass/med_checkpoint)
 "lMs" = (
 /obj/machinery/photocopier,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/llcz/dclass/cellbubble)
 "lME" = (
 /turf/simulated/floor/tiled/monotile,
@@ -12459,7 +12554,12 @@
 "lZg" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
 /area/site53/llcz/dclass/cellbubble)
 "lZB" = (
 /obj/item/fossil,
@@ -12927,7 +13027,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "mAq" = (
 /obj/machinery/light{
@@ -13056,6 +13156,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"mHG" = (
+/obj/machinery/camera/network/lcz{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "mHZ" = (
 /obj/structure/stairs/south,
 /turf/simulated/floor/tiled/monotile/white,
@@ -13492,7 +13598,6 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
 "nfn" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/button/flasher{
 	id_tag = "isolator3";
 	pixel_x = 26;
@@ -13503,7 +13608,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "nfp" = (
 /obj/structure/table/standard,
@@ -13601,7 +13709,10 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/corner,
 /area/site53/llcz/dclass/cellbubble)
 "njE" = (
 /obj/machinery/light{
@@ -14702,7 +14813,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "ohB" = (
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
@@ -14710,7 +14820,10 @@
 /obj/machinery/power/apc{
 	dir = 1
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "ohE" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -14793,7 +14906,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "onu" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "isolationcell1";
 	name = "Cell 1 Control";
@@ -14805,7 +14917,19 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "onv" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -16281,7 +16405,10 @@
 	dir = 8;
 	icon_state = "console"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/cellbubble)
 "pKZ" = (
 /obj/structure/cable/green{
@@ -16324,14 +16451,11 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
 "pNa" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/door/airlock/multi_tile/glass/security{
-	dir = 8;
-	icon_state = "closed";
-	name = "Guard Hallway";
+/obj/machinery/door/airlock/security{
+	name = "D-Class Temporary Isolation";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/isolation)
 "pNd" = (
 /obj/structure/table/reinforced,
@@ -16374,9 +16498,18 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
+"pPI" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "pPK" = (
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/cellbubble)
 "pQb" = (
 /obj/machinery/camera/network/lcz{
@@ -16416,7 +16549,10 @@
 /obj/item/device/megaphone,
 /obj/structure/table/reinforced,
 /obj/item/boombox,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/cellbubble)
 "pQw" = (
 /obj/effect/paint_stripe/orange,
@@ -16577,7 +16713,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "pWh" = (
 /turf/simulated/floor/tiled/monotile/white,
@@ -17058,7 +17194,7 @@
 	id_tag = "Security Bubble Lockdown";
 	name = "Security Bubble Lockdown"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cellbubble)
 "qzL" = (
 /obj/machinery/hologram/holopad,
@@ -18666,20 +18802,31 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
+"scR" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "dclasscells";
+	begins_closed = 0
+	},
+/obj/machinery/door/airlock/glass/medical{
+	id_tag = "isolationcell6";
+	name = "Isolation"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/isolation)
 "scT" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/luxuryhall)
 "sdh" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "isolationcell6";
-	name = "Cell 6 Control";
-	pixel_y = -26;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/machinery/door/blast/regular{
+	id_tag = "dclasscells";
+	begins_closed = 0
 	},
-/turf/simulated/floor,
+/obj/machinery/door/airlock/glass/medical{
+	id_tag = "isolationcell5";
+	name = "Isolation"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/isolation)
 "sdM" = (
 /obj/machinery/light{
@@ -18842,7 +18989,8 @@
 /obj/effect/landmark{
 	name = "JoinLatelcz"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/llcz/dclass/cellbubble)
 "slN" = (
 /obj/effect/decal/cleanable/blood,
@@ -18885,6 +19033,17 @@
 "snt" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/med_checkpoint)
+"snP" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "dclasscells";
+	begins_closed = 0
+	},
+/obj/machinery/door/airlock/glass/medical{
+	id_tag = "isolationcell7";
+	name = "Isolation"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/isolation)
 "snQ" = (
 /obj/machinery/door/window/brigdoor/southleft{
 	req_access = list("ACCESS_NETWORK")
@@ -19494,7 +19653,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "taD" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "isolationcell3";
 	name = "Cell 3 Control";
@@ -19506,7 +19664,19 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "taF" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -19698,7 +19868,7 @@
 /obj/structure/bed/chair/office/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "tpT" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -19987,15 +20157,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/selfdestruct)
 "tFx" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "isolationcell5";
-	name = "Cell 5 Control";
-	pixel_y = -26;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/effect/floor_decal/corner/black/border{
+	dir = 8
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "tFC" = (
 /obj/structure/closet/crate/freezer,
@@ -20373,15 +20538,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "tZZ" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "dclasscells";
-	begins_closed = 0
-	},
-/obj/machinery/door/airlock/glass/medical{
-	id_tag = "isolationcell5";
-	name = "Isolation"
-	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "uaa" = (
 /obj/effect/paint_stripe/mauve,
@@ -21066,13 +21224,10 @@
 /turf/unsimulated/mineral,
 /area/site53/llcz/mining/miningops)
 "uIW" = (
-/obj/machinery/door/airlock/multi_tile/glass/security{
-	dir = 8;
-	icon_state = "closed";
-	name = "Guard Hallway";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/effect/floor_decal/corner/black/border{
+	dir = 6
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "uKg" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -21282,6 +21437,12 @@
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
+"vae" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/llcz/dclass/cellbubble)
 "vai" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008";
@@ -21686,6 +21847,26 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
+"vwm" = (
+/obj/machinery/button/alternate/door/bolts{
+	dir = 1;
+	id_tag = "isolationcell6";
+	name = "Cell 6 Control";
+	pixel_y = -26;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/corner/black/border,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "vxq" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -21755,7 +21936,10 @@
 	},
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/llcz/dclass/cellbubble)
 "vBY" = (
 /obj/effect/catwalk_plated/dark,
@@ -21905,7 +22089,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/lowres/Lowerresearchwing)
 "vIG" = (
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/isolation)
 "vJC" = (
 /obj/structure/table/rack,
@@ -22120,7 +22305,7 @@
 	name = "Security Bubble";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cellbubble)
 "vSh" = (
 /obj/effect/paint_stripe/gray,
@@ -22427,7 +22612,8 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsi,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "wka" = (
 /obj/structure/table/standard,
@@ -22949,7 +23135,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
 "wMY" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -22963,7 +23148,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "wNp" = (
 /obj/structure/closet/crate,
@@ -23111,10 +23299,16 @@
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
 "wRQ" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/light,
-/turf/simulated/floor,
-/area/site53/llcz/dclass/luxuryhall)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "wSz" = (
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/exoplanet/grass,
@@ -23313,7 +23507,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/cellbubble)
 "xbq" = (
 /obj/structure/closet/l3closet/scientist,
@@ -24042,14 +24239,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "xJx" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/flasher{
-	id_tag = "isolator7";
-	pixel_x = 26;
-	pixel_y = -30
+/obj/structure/filingcabinet,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
 	},
-/turf/simulated/floor,
-/area/site53/llcz/dclass/isolation)
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/llcz/dclass/cellbubble)
 "xLv" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31667,7 +31862,7 @@ dyp
 adD
 scT
 scT
-srm
+mHG
 xHN
 xHN
 xHN
@@ -31923,8 +32118,8 @@ oKp
 dyp
 xHN
 wiD
-wRQ
-xHN
+scT
+kkC
 xHN
 hIH
 hIH
@@ -32181,8 +32376,8 @@ leT
 xHN
 scT
 scT
+bYA
 xHN
-hIH
 hIH
 hIH
 xHN
@@ -32438,8 +32633,8 @@ sWD
 xHN
 scT
 scT
+bYA
 xHN
-hIH
 hIH
 hIH
 xHN
@@ -32695,8 +32890,8 @@ wmM
 uGM
 iYr
 scT
+bYA
 xHN
-hIH
 hIH
 hIH
 xHN
@@ -32952,8 +33147,8 @@ wHJ
 pUL
 nuK
 scT
+bYA
 xHN
-hIH
 hIH
 hIH
 xHN
@@ -33203,16 +33398,16 @@ brl
 jxO
 nzF
 nzF
-iJx
-iJx
-iJx
-iJx
+vIG
+vIG
+vIG
+vIG
 loF
 pNa
-iJx
-iJx
-iJx
-iJx
+vIG
+vIG
+vIG
+vIG
 xHN
 wYf
 dyp
@@ -33463,13 +33658,13 @@ afh
 afh
 xFy
 vya
-iJx
+vIG
 onu
 tFx
 iJx
+vIG
 vya
 fhq
-iJx
 xHN
 fmD
 mwo
@@ -33721,12 +33916,12 @@ afh
 eLp
 jiy
 hmJ
-loF
+wRQ
 mDX
 tZZ
+sdh
 shb
 eLp
-iJx
 xHN
 dyp
 vPj
@@ -33975,15 +34170,15 @@ iut
 rno
 aAs
 afh
-iJx
-iJx
-iJx
+vIG
+vIG
+vIG
 wMY
-fVo
-iJx
-iJx
-iJx
-iJx
+mDX
+ary
+vIG
+vIG
+vIG
 xHN
 fmD
 qVM
@@ -34234,13 +34429,13 @@ lME
 afh
 xFy
 vya
-iJx
+vIG
 iKY
-sdh
-iJx
+mDX
+vwm
+vIG
 vya
 nBR
-iJx
 xHN
 vpo
 qlq
@@ -34492,12 +34687,12 @@ afh
 eLp
 fDc
 jWq
-loF
+wRQ
 mDX
-hBd
+tZZ
+scR
 kXj
 eLp
-iJx
 xHN
 dyp
 leT
@@ -34746,15 +34941,15 @@ iut
 lME
 lME
 afh
-iJx
-iJx
-iJx
+vIG
+vIG
+vIG
 ahL
-ahI
-iJx
-iJx
-iJx
-iJx
+mDX
+hBd
+vIG
+vIG
+vIG
 iSy
 iSy
 iSy
@@ -35005,13 +35200,13 @@ aAs
 afh
 xFy
 vya
-iJx
+vIG
 taD
-bkM
-iJx
+mDX
+ahI
+vIG
 vya
 nBR
-iJx
 iSy
 gGp
 sNM
@@ -35264,11 +35459,11 @@ eLp
 pQp
 cZL
 nfn
-xJx
+mDX
 gXR
+snP
 xgb
 eLp
-iJx
 iSy
 gGp
 dKX
@@ -35517,15 +35712,15 @@ qXI
 cbK
 cbK
 afh
-iJx
-iJx
-iJx
-loF
+vIG
+vIG
+vIG
+wRQ
 mDX
-iJx
-iJx
-iJx
-iJx
+tZZ
+vIG
+vIG
+vIG
 iSy
 iSy
 bnl
@@ -35776,11 +35971,11 @@ tih
 hIH
 hIH
 hIH
-iJx
+vIG
 ohB
-mDX
-iJx
-hIH
+pPI
+uIW
+vIG
 hIH
 hIH
 hIH
@@ -36033,11 +36228,11 @@ tih
 hIH
 hIH
 hIH
-iJx
 vIG
-uIW
-iJx
-hIH
+vIG
+pNa
+vIG
+vIG
 hIH
 hIH
 hIH
@@ -36293,8 +36488,8 @@ trp
 pLY
 hnY
 hnY
+hnY
 pLY
-hIH
 hIH
 hIH
 hIH
@@ -36549,8 +36744,8 @@ kCm
 pqD
 pLY
 hnY
+hnY
 lYG
-pLY
 pLY
 pLY
 pLY
@@ -37551,7 +37746,7 @@ har
 aBZ
 kDD
 xaK
-baI
+lsx
 pQv
 niR
 wjl
@@ -37805,11 +38000,11 @@ cKd
 baI
 wyI
 vBn
-skV
-baI
-xaK
-baI
-baI
+fVo
+bkM
+hxy
+bkM
+bkM
 skV
 cyX
 wyI
@@ -38061,13 +38256,13 @@ baI
 cKd
 baI
 lpC
-baI
-baI
-baI
+eJb
+bkM
+bkM
 pWf
 mzT
 mzT
-mzT
+btD
 bYp
 wyI
 oci
@@ -38319,12 +38514,12 @@ tPq
 baI
 wyI
 iCK
-baI
-baI
+bkM
+bkM
 ePy
-baI
-baI
-qGK
+bkM
+bkM
+vae
 wyI
 wyI
 sNj
@@ -38576,11 +38771,11 @@ baI
 baI
 wyI
 eEN
-baI
-baI
-baI
-baI
-baI
+bkM
+bkM
+bkM
+bkM
+bkM
 fsn
 wyI
 pbH
@@ -38832,12 +39027,12 @@ qGK
 baI
 baI
 lpC
-baI
-baI
+eJb
+bkM
 tpk
-baI
+bkM
 tpk
-baI
+bkM
 lMs
 fMo
 nXQ
@@ -39090,7 +39285,7 @@ oMx
 dCN
 wyI
 kUO
-kUO
+xJx
 pKY
 dxr
 pKY
