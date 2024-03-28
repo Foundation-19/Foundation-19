@@ -14,7 +14,7 @@
 	return MOVEMENT_STOP
 
 /datum/movement_handler/mob/relayed_movement/proc/AddAllowedMover(mover)
-	LAZYDISTINCTADD(allowed_movers, mover)
+	LAZYOR(allowed_movers, mover)
 
 /datum/movement_handler/mob/relayed_movement/proc/RemoveAllowedMover(mover)
 	LAZYREMOVE(allowed_movers, mover)
@@ -31,7 +31,7 @@
 	if(QDELETED(control_object))
 		. |= MOVEMENT_REMOVE
 	else
-		control_object.set_dir(direction)
+		control_object.setDir(direction)
 
 // Death handling
 /datum/movement_handler/mob/death/DoMove()
@@ -45,7 +45,6 @@
 // Incorporeal/Ghost movement
 /datum/movement_handler/mob/incorporeal/DoMove(direction)
 	. = MOVEMENT_HANDLED
-	direction = mob.AdjustMovementDirection(direction)
 
 	var/turf/T = get_step(mob, direction)
 	if(!mob.MayEnterTurf(T))
@@ -54,7 +53,7 @@
 	if(!mob.forceMove(T))
 		return
 
-	mob.set_dir(direction)
+	mob.setDir(direction)
 	mob.PostIncorporealMovement()
 
 /mob/proc/PostIncorporealMovement()
@@ -100,10 +99,10 @@
 
 // Buckle movement
 /datum/movement_handler/mob/buckle_relay/DoMove(direction, mover)
-	// TODO: Datumlize buckle-handling
+	// TODO: component-ize buckle-handling
 	if(istype(mob.buckled, /obj/vehicle))
-		//drunk driving
-		if(mob.confused && prob(20)) //vehicles tend to keep moving in the same direction
+		//drunk driving // TODO: this is kinda hacky, handling should be moved over to the confusion status effect
+		if(mob.has_status_effect(/datum/status_effect/confusion) && prob(20)) //vehicles tend to keep moving in the same direction
 			direction = turn(direction, pick(90, -90))
 		mob.buckled.relaymove(mob, direction)
 		return MOVEMENT_HANDLED
@@ -122,8 +121,6 @@
 				var/obj/item/organ/external/r_hand = driver.get_organ(BP_R_HAND)
 				if((!l_hand || l_hand.is_stump()) && (!r_hand || r_hand.is_stump()))
 					return // No hands to drive your chair? Tough luck!
-			//drunk wheelchair driving
-			direction = mob.AdjustMovementDirection(direction)
 			mob.buckled.DoMove(direction, mob)
 
 /datum/movement_handler/mob/buckle_relay/MayMove(mover)
@@ -237,7 +234,6 @@
 	//We are now going to move
 	mob.moving = 1
 
-	direction = mob.AdjustMovementDirection(direction)
 	var/turf/old_turf = get_turf(mob)
 
 	if(direction & (UP|DOWN))
@@ -253,11 +249,11 @@
 	mob.ExtraMoveCooldown(extra_delay)
 
 	var/moved_to = get_dir(old_turf, get_turf(mob))
-	mob.set_dir(moved_to)
+	mob.setDir(moved_to)
 
 	for (var/obj/item/grab/G in mob)
 		if (G.assailant_reverse_facing())
-			mob.set_dir(GLOB.reverse_dir[direction])
+			mob.setDir(GLOB.reverse_dir[direction])
 		G.assailant_moved()
 	for (var/obj/item/grab/G in mob.grabbed_by)
 		G.adjust_position()
@@ -322,14 +318,3 @@
 // Misc. helpers
 /mob/proc/MayEnterTurf(turf/T)
 	return T && !((mob_flags & MOB_FLAG_HOLY_BAD) && check_is_holy_turf(T))
-
-/mob/proc/AdjustMovementDirection(direction)
-	. = direction
-	if(!confused)
-		return
-
-	var/stability = MOVING_DELIBERATELY(src) ? 75 : 25
-	if(prob(stability))
-		return
-
-	return prob(50) ? GLOB.cw_dir[.] : GLOB.ccw_dir[.]

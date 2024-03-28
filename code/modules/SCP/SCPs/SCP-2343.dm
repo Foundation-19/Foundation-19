@@ -5,6 +5,8 @@
 	icon_state = "americangod"
 	status_flags = NO_ANTAG
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 /mob/living/carbon/human/scp343/scp2343/Initialize(mapload, new_species = "SCP-2343")
 	. = ..()
 	SCP = new /datum/scp(

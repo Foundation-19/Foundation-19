@@ -51,7 +51,7 @@ Pipelines + Other Objects -> Pipe network
 	if(!pipe_color_check(pipe_color))
 		pipe_color = null
 
-	set_dir(dir) // Does full dir init.
+	setDir(dir) // Does full dir init.
 	. = ..()
 
 /obj/machinery/atmospherics/proc/atmos_init()
@@ -162,7 +162,7 @@ Pipelines + Other Objects -> Pipe network
 	if(connect_dir_type & EAST)
 		. |= turn(dir, 90)
 
-/obj/machinery/atmospherics/set_dir(new_dir)
+/obj/machinery/atmospherics/setDir(new_dir)
 	. = ..()
 	initialize_directions = get_initialze_directions()
 

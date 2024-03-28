@@ -40,7 +40,7 @@
 
 	Spray_at(A, user, proximity)
 
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_QUICK)
 	return
 
 /obj/item/reagent_containers/spray/proc/Spray_at(atom/A as mob|obj, mob/user as mob, proximity)

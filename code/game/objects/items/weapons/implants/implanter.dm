@@ -48,7 +48,7 @@
 	if (user && src.imp)
 		M.visible_message(SPAN_WARNING("[user] is attemping to implant [M]."))
 
-		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_QUICK)
 		user.do_attack_animation(M)
 
 		var/target_zone = user.zone_sel.selecting

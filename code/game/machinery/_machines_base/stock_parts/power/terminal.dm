@@ -92,7 +92,7 @@
 	if(!machine)
 		return
 	var/obj/machinery/power/terminal/new_terminal = new (get_step(machine, terminal_dir))
-	new_terminal.set_dir(terminal_dir ? GLOB.reverse_dir[terminal_dir] : machine.dir)
+	new_terminal.setDir(terminal_dir ? GLOB.reverse_dir[terminal_dir] : machine.dir)
 	new_terminal.connect_to_network()
 	set_terminal(machine, new_terminal)
 

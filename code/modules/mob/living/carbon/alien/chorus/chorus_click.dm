@@ -11,6 +11,6 @@
 		..()
 
 /mob/living/carbon/alien/chorus/UnarmedAttack(atom/A)
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	setClickCooldown(CLICK_CD_ATTACK)
 	if(A.attack_generic(src, melee_damage, attack_text, 1, BRUTE))
 		playsound(src, attack_sound, 50, 1)

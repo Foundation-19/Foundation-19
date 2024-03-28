@@ -29,7 +29,7 @@
 		var/mob/living/silicon/robot/robot = user
 		power_cell = robot.get_cell()
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.visible_message(
 		SPAN_WARNING("There is a loud crack and the smell of ozone as \the [user] touches \the [src]."),
 		SPAN_WARNING("There is a loud crack and the smell of ozone as you touch \the [src]."),

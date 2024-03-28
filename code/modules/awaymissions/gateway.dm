@@ -118,13 +118,13 @@
 	if(!awaygate)	return
 	if(awaygate.calibrated)
 		M.forceMove(get_step(awaygate.loc, SOUTH))
-		M.set_dir(SOUTH)
+		M.setDir(SOUTH)
 		return
 	else
 		var/obj/effect/landmark/dest = pick(GLOB.awaydestinations)
 		if(dest)
 			M.forceMove(dest.loc)
-			M.set_dir(SOUTH)
+			M.setDir(SOUTH)
 			use_power_oneoff(5000)
 
 /obj/machinery/gateway/centerstation/attackby(obj/item/device/W as obj, mob/user as mob)
@@ -217,7 +217,7 @@
 				to_chat(M, "The remote gate has detected your exile implant and is blocking your entry.")
 				return
 	M.forceMove(get_step(stationgate.loc, SOUTH))
-	M.set_dir(SOUTH)
+	M.setDir(SOUTH)
 
 /obj/machinery/gateway/centeraway/attackby(obj/item/device/W as obj, mob/user as mob)
 	if(isMultitool(W))

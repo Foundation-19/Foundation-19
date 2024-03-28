@@ -2,10 +2,10 @@
 	hud_type = /datum/hud/chorus
 
 /datum/hud/chorus
-	var/obj/screen/chorus_current_building/selected
-	var/obj/screen/chorus_building_cost/cost
-	var/obj/screen/chorus_resource/followers
-	var/obj/screen/chorus_resource/buildings
+	var/atom/movable/screen/chorus_current_building/selected
+	var/atom/movable/screen/chorus_building_cost/cost
+	var/atom/movable/screen/chorus_resource/followers
+	var/atom/movable/screen/chorus_resource/buildings
 	var/list/resources = list()
 
 /datum/hud/chorus/FinalizeInstantiation(ui_style = 'icons/mob/screen1_Midnight.dmi')
@@ -14,25 +14,25 @@
 	resources = list()
 
 
-	var/obj/screen/chorus_current_building/ccb = new()
+	var/atom/movable/screen/chorus_current_building/ccb = new()
 
 	adding += ccb
 	selected = ccb
 
-	var/obj/screen/chorus_building_cost/cbc = new()
+	var/atom/movable/screen/chorus_building_cost/cbc = new()
 
 	adding += cbc
 	cost = cbc
 
-	adding += new /obj/screen/chorus_cancel_building()
-	adding += new /obj/screen/chorus_open_blueprints()
-	var/obj/screen/intent = new /obj/screen/intent()
+	adding += new /atom/movable/screen/chorus_cancel_building()
+	adding += new /atom/movable/screen/chorus_open_blueprints()
+	var/atom/movable/screen/intent = new /atom/movable/screen/intent()
 	intent.screen_loc = "WEST+6:8, SOUTH+1:8"
 	action_intent = intent
 	adding += intent
 
 	for(var/i in 1 to 4)
-		var/obj/screen/chorus_resource/res = new()
+		var/atom/movable/screen/chorus_resource/res = new()
 		res.maptext_x = 108 - (i%2) * 98
 		res.maptext_y = 28 - (i>2 ? 16 : 0)
 		res.icon_state = "resources_[i]"
@@ -51,9 +51,9 @@
 	adding += buildings
 
 	adding += resources
-	adding += new /obj/screen/chorus_build()
+	adding += new /atom/movable/screen/chorus_build()
 
-	mymob.healths = new /obj/screen()
+	mymob.healths = new /atom/movable/screen()
 	mymob.healths.SetName("health")
 	mymob.healths.icon = 'icons/mob/screen1_Midnight.dmi'
 	mymob.healths.icon_state = "health0"
@@ -69,7 +69,7 @@
 
 /datum/hud/chorus/proc/update_resources(list/prints)
 	for(var/i in 1 to prints.len)
-		var/obj/screen/chorus_resource/res = resources[i]
+		var/atom/movable/screen/chorus_resource/res = resources[i]
 		var/p = prints[i]
 		res.update_resource(p)
 
@@ -80,7 +80,7 @@
 	else
 		cost.update_to_cost(list())
 
-/obj/screen/chorus_current_building
+/atom/movable/screen/chorus_current_building
 	name = "Building"
 	screen_loc = "WEST:8,SOUTH:8"
 	icon = 'icons/mob/screen_chorus_big.dmi'
@@ -89,7 +89,7 @@
 	maptext_x = 62
 	maptext_y = 38
 
-/obj/screen/chorus_current_building/proc/update_to_building(datum/chorus_building/build)
+/atom/movable/screen/chorus_current_building/proc/update_to_building(datum/chorus_building/build)
 	cut_overlays()
 	if(build)
 		var/image/I = build.get_image()
@@ -100,7 +100,7 @@
 	else
 		maptext = null
 
-/obj/screen/chorus_building_cost
+/atom/movable/screen/chorus_building_cost
 	name = "Cost"
 	screen_loc = "WEST:8,SOUTH:8"
 	icon = 'icons/mob/screen_chorus_big.dmi'
@@ -110,7 +110,7 @@
 	maptext_width = 92
 	maptext_height = 30
 
-/obj/screen/chorus_building_cost/proc/update_to_cost(list/cost)
+/atom/movable/screen/chorus_building_cost/proc/update_to_cost(list/cost)
 	var/list/dat = list()
 	dat += {"
 	<p style=\"font-size:5px\">
@@ -129,46 +129,46 @@
 	dat += "</td></tr></table></center></p>"
 	maptext = jointext(dat,null)
 
-/obj/screen/chorus_cancel_building
+/atom/movable/screen/chorus_cancel_building
 	name = "Cancel"
 	screen_loc = "WEST+5:8, SOUTH:8"
 	icon = 'icons/mob/screen1_Midnight.dmi'
 	icon_state = "cancel"
 
-/obj/screen/chorus_cancel_building/Click()
+/atom/movable/screen/chorus_cancel_building/Click()
 	if(usr && istype(usr, /mob/living/carbon/alien/chorus))
 		var/mob/living/carbon/alien/chorus/C = usr
 		C.set_selected_building(null)
 
-/obj/screen/chorus_open_blueprints
+/atom/movable/screen/chorus_open_blueprints
 	name = "Blueprints"
 	screen_loc = "WEST+5:8, SOUTH+1:8"
 	icon = 'icons/mob/screen1_Midnight.dmi'
 	icon_state = "blueprints"
 
 
-/obj/screen/chorus_open_blueprints/Click()
+/atom/movable/screen/chorus_open_blueprints/Click()
 	if(usr && istype(usr, /mob/living/carbon/alien/chorus))
 		var/mob/living/carbon/alien/chorus/C = usr
 		C.open_building_menu()
 
-/obj/screen/chorus_resource
+/atom/movable/screen/chorus_resource
 	name = "Resources"
 	screen_loc = "EAST-4:-8, SOUTH:8"
 	icon = 'icons/mob/screen_chorus_big.dmi'
 	icon_state = "resources"
 	maptext_width = 50
 
-/obj/screen/chorus_resource/proc/update_resource(print)
+/atom/movable/screen/chorus_resource/proc/update_resource(print)
 	maptext = "<p style=\"font-size:5px\">[print]</p>"
 
-/obj/screen/chorus_build
+/atom/movable/screen/chorus_build
 	name = "Build"
 	screen_loc = "WEST+6:8, SOUTH:8"
 	icon = 'icons/mob/screen1_Midnight.dmi'
 	icon_state = "build"
 
-/obj/screen/chorus_build/Click()
+/atom/movable/screen/chorus_build/Click()
 	if(usr && istype(usr, /mob/living/carbon/alien/chorus))
 		var/mob/living/carbon/alien/chorus/c = usr
 		c.start_building()

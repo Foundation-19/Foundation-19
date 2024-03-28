@@ -199,7 +199,7 @@ SUBSYSTEM_DEF(overlays)
 			LAZYCLEARLIST(our_overlays)
 			LAZYADD(our_overlays, cached_other)
 		else
-			LAZYDISTINCTADD(our_overlays, cached_other)
+			LAZYOR(our_overlays, cached_other)
 		if(NOT_QUEUED_ALREADY)
 			QUEUE_FOR_COMPILE
 	else if(cut_old)

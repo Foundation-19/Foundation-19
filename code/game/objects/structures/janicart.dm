@@ -245,7 +245,7 @@
 	return M
 
 
-/obj/structure/bed/chair/janicart/set_dir()
+/obj/structure/bed/chair/janicart/setDir()
 	..()
 	if(buckled_mob)
 		if(buckled_mob.loc != loc)
@@ -257,7 +257,7 @@
 
 /obj/structure/bed/chair/janicart/proc/update_mob()
 	if(buckled_mob)
-		buckled_mob.set_dir(dir)
+		buckled_mob.setDir(dir)
 		switch(dir)
 			if(SOUTH)
 				buckled_mob.pixel_x = 0

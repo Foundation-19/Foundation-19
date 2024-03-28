@@ -100,7 +100,7 @@
 
 /datum/wound/proc/merge_wound(datum/wound/other)
 	if(LAZYLEN(other.embedded_objects))
-		LAZYDISTINCTADD(src.embedded_objects, other.embedded_objects)
+		LAZYOR(src.embedded_objects, other.embedded_objects)
 	src.damage += other.damage
 	src.amount += other.amount
 	src.bleed_timer += other.bleed_timer

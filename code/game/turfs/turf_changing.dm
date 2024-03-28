@@ -121,7 +121,7 @@
 /turf/proc/transport_properties_from(turf/other)
 	if(!istype(other, src.type))
 		return 0
-	src.set_dir(other.dir)
+	src.setDir(other.dir)
 	src.icon_state = other.icon_state
 	src.icon = other.icon
 	copy_overlays(other)

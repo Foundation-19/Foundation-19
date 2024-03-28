@@ -86,7 +86,7 @@
 			threat *= 2 // Target cannot see src.
 
 	// Handle statuses.
-	if(confused)
+	if(has_status_effect(/datum/status_effect/confusion))
 		threat /= 2
 
 	// if(has_modifier_of_type(/datum/modifier/berserk))
@@ -128,7 +128,7 @@
 			threat *= 2 // Target cannot see src.
 
 	// Handle statuses.
-	if(confused)
+	if(has_status_effect(/datum/status_effect/confusion))
 		threat /= 2
 
 	// if(has_modifier_of_type(/datum/modifier/berserk))
@@ -169,7 +169,7 @@
 		threat_guess += damage_guess
 
 	else
-		var/weapon_attack_speed = DEFAULT_ATTACK_COOLDOWN / (1 SECOND)
+		var/weapon_attack_speed = CLICK_CD_ATTACK / (1 SECOND)
 		var/weapon_damage = I.force
 
 		if(istype(I, /obj/item/gun))
@@ -239,7 +239,7 @@
 		tension *= 10
 		return tension
 
-	if(confused)
+	if(has_status_effect(/datum/status_effect/confusion))
 		tension *= 2
 
 	return tension

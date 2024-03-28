@@ -32,7 +32,7 @@
 /obj/item/device/scanner/proc/can_use(mob/user)
 	if (user.incapacitated())
 		return
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		return
 	return TRUE
 

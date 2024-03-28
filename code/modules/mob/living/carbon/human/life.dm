@@ -38,8 +38,8 @@
 	var/heartbeat = 0
 	var/stamina = 100
 	var/max_stamina = 100
-	var/obj/screen/fov/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
-	var/obj/screen/fov_mask/fov_mask
+	var/atom/movable/screen/fov/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/atom/movable/screen/fov_mask/fov_mask
 	var/usefov = 1
 
 /mob/living/carbon/human/Life()
@@ -186,26 +186,20 @@
 	else
 		return ONE_ATMOSPHERE + pressure_difference
 
+// TODO: phase this out
 /mob/living/carbon/human/handle_impaired_vision()
 	..()
 	//Vision
-	var/obj/item/organ/vision
 	if(species.vision_organ)
-		vision = internal_organs_by_name[species.vision_organ]
+		var/obj/item/organ/vision = internal_organs_by_name[species.vision_organ]
 
-	if(!species.vision_organ) // Presumably if a species has no vision organs, they see via some other means.
-		eye_blind =  0
-		blinded =    0
-		eye_blurry = 0
-	else if(!vision || (vision && !vision.is_usable()))   // Vision organs cut out or broken? Permablind.
-		eye_blind =  1
-		blinded =    1
-		eye_blurry = 1
-	else
-		//blindness
-		if(!(sdisabilities & BLINDED))
-			if(equipment_tint_total >= TINT_BLIND)	// Covered eyes, heal faster
-				eye_blurry = max(eye_blurry-2, 0)
+		if(!vision || (vision && !vision.is_usable()))   // Vision organs cut out or broken? Permablind.
+			become_blind(MISSING_ORGAN_TRAIT)
+		else
+			cure_blind(MISSING_ORGAN_TRAIT)
+
+	else if(!species.vision_organ) // Presumably if a species has no vision organs, they see via some other means.
+		cure_blind(MISSING_ORGAN_TRAIT)
 
 /mob/living/carbon/human/handle_disabilities()
 	..()
@@ -590,16 +584,18 @@
 	if(ssd_check() && species.get_ssd(src) || player_triggered_sleeping)
 		Sleeping(2)
 	if(stat == DEAD)	//DEAD. BROWN BREAD. SWIMMING WITH THE SPESS CARP
-		blinded = 1
-		silent = 0
+		become_blind(STAT_TRAIT)
 	else				//ALIVE. LIGHTS ARE ON
 		updatehealth()	//TODO
 
+		if(stat == UNCONSCIOUS)
+			become_blind(STAT_TRAIT)
+		else
+			cure_blind(STAT_TRAIT)
+
 		if(handle_death_check())
 			death()
-			blinded = 1
-			silent = 0
-			return 1
+			return
 
 		if(hallucination_power)
 			handle_hallucinations()
@@ -611,7 +607,6 @@
 			Paralyse(10)
 
 		if(paralysis || sleeping)
-			blinded = 1
 			set_stat(UNCONSCIOUS)
 			animate_tail_reset()
 			adjustHalLoss(-3)
@@ -636,26 +631,6 @@
 			if(!embedded_needs_process())
 				embedded_flag = 0
 
-		//Resting
-		if(resting)
-			dizziness = max(0, dizziness - 15)
-			jitteriness = max(0, jitteriness - 15)
-			adjustHalLoss(-3)
-		else
-			dizziness = max(0, dizziness - 3)
-			jitteriness = max(0, jitteriness - 3)
-			adjustHalLoss(-1)
-
-		if (drowsyness > 0)
-			drowsyness = max(0, drowsyness-1)
-			eye_blurry = max(2, eye_blurry)
-			if(drowsyness > 10)
-				var/zzzchance = min(5, 5*drowsyness/30)
-				if((prob(zzzchance) || drowsyness >= 60))
-					if(stat == CONSCIOUS)
-						to_chat(src, SPAN_NOTICE("You are about to fall asleep..."))
-					Sleeping(5)
-
 		// If you're dirty, your gloves will become dirty, too.
 		if(gloves && germ_level > gloves.germ_level && prob(10))
 			gloves.germ_level += 1
@@ -673,11 +648,6 @@
 		if(hydration > 0)
 			adjust_hydration(-species.thirst_factor)
 
-		if(stasis_value > 1 && drowsyness < stasis_value * 4)
-			drowsyness += min(stasis_value, 3)
-			if(!stat && prob(1))
-				to_chat(src, SPAN_NOTICE("You feel slow and sluggish..."))
-
 	return 1
 
 /mob/living/carbon/human/handle_regular_hud_updates()
@@ -694,31 +664,48 @@
 			//Critical damage passage overlay
 			var/severity = 0
 			switch(health - maxHealth/2)
-				if(-20 to -10)			severity = 1
-				if(-30 to -20)			severity = 2
-				if(-40 to -30)			severity = 3
-				if(-50 to -40)			severity = 4
-				if(-60 to -50)			severity = 5
-				if(-70 to -60)			severity = 6
-				if(-80 to -70)			severity = 7
-				if(-90 to -80)			severity = 8
-				if(-95 to -90)			severity = 9
-				if(-INFINITY to -95)	severity = 10
-			overlay_fullscreen("crit", /obj/screen/fullscreen/crit, severity)
+				if(-20 to -10)
+					severity = 1
+				if(-30 to -20)
+					severity = 2
+				if(-40 to -30)
+					severity = 3
+				if(-50 to -40)
+					severity = 4
+				if(-60 to -50)
+					severity = 5
+				if(-70 to -60)
+					severity = 6
+				if(-80 to -70)
+					severity = 7
+				if(-90 to -80)
+					severity = 8
+				if(-95 to -90)
+					severity = 9
+				if(-INFINITY to -95)
+					severity = 10
+			overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
 		else
 			clear_fullscreen("crit")
 			//Oxygen damage overlay
 			if(getOxyLoss())
 				var/severity = 0
 				switch(getOxyLoss())
-					if(10 to 20)		severity = 1
-					if(20 to 25)		severity = 2
-					if(25 to 30)		severity = 3
-					if(30 to 35)		severity = 4
-					if(35 to 40)		severity = 5
-					if(40 to 45)		severity = 6
-					if(45 to INFINITY)	severity = 7
-				overlay_fullscreen("oxy", /obj/screen/fullscreen/oxy, severity)
+					if(10 to 20)
+						severity = 1
+					if(20 to 25)
+						severity = 2
+					if(25 to 30)
+						severity = 3
+					if(30 to 35)
+						severity = 4
+					if(35 to 40)
+						severity = 5
+					if(40 to 45)
+						severity = 6
+					if(45 to INFINITY)
+						severity = 7
+				overlay_fullscreen("oxy", /atom/movable/screen/fullscreen/oxy, severity)
 			else
 				clear_fullscreen("oxy")
 
@@ -728,13 +715,19 @@
 		if(hurtdamage)
 			var/severity = 0
 			switch(hurtdamage)
-				if(10 to 25)		severity = 1
-				if(25 to 40)		severity = 2
-				if(40 to 55)		severity = 3
-				if(55 to 70)		severity = 4
-				if(70 to 85)		severity = 5
-				if(85 to INFINITY)	severity = 6
-			overlay_fullscreen("brute", /obj/screen/fullscreen/brute, severity)
+				if(10 to 25)
+					severity = 1
+				if(25 to 40)
+					severity = 2
+				if(40 to 55)
+					severity = 3
+				if(55 to 70)
+					severity = 4
+				if(70 to 85)
+					severity = 5
+				if(85 to INFINITY)
+					severity = 6
+			overlay_fullscreen("brute", /atom/movable/screen/fullscreen/brute, severity)
 		else
 			clear_fullscreen("brute")
 
@@ -774,38 +767,59 @@
 
 		if(nutrition_icon)
 			switch(nutrition)
-				if(450 to INFINITY)				nutrition_icon.icon_state = "nutrition0"
-				if(350 to 450)					nutrition_icon.icon_state = "nutrition1"
-				if(250 to 350)					nutrition_icon.icon_state = "nutrition2"
-				if(150 to 250)					nutrition_icon.icon_state = "nutrition3"
-				else							nutrition_icon.icon_state = "nutrition4"
+				if(450 to INFINITY)
+					nutrition_icon.icon_state = "nutrition0"
+				if(350 to 450)
+					nutrition_icon.icon_state = "nutrition1"
+				if(250 to 350)
+					nutrition_icon.icon_state = "nutrition2"
+				if(150 to 250)
+					nutrition_icon.icon_state = "nutrition3"
+				else
+					nutrition_icon.icon_state = "nutrition4"
 
 		if(hydration_icon)
 			switch(hydration)
-				if(450 to INFINITY)				hydration_icon.icon_state = "hydration0"
-				if(350 to 450)					hydration_icon.icon_state = "hydration1"
-				if(250 to 350)					hydration_icon.icon_state = "hydration2"
-				if(150 to 250)					hydration_icon.icon_state = "hydration3"
-				else							hydration_icon.icon_state = "hydration4"
+				if(450 to INFINITY)
+					hydration_icon.icon_state = "hydration0"
+				if(350 to 450)
+					hydration_icon.icon_state = "hydration1"
+				if(250 to 350)
+					hydration_icon.icon_state = "hydration2"
+				if(150 to 250)
+					hydration_icon.icon_state = "hydration3"
+				else
+					hydration_icon.icon_state = "hydration4"
 
 		if(sanity_icon)
 			var/sanity_lvl = getSanityLevel()
 			switch(sanity_lvl)
-				if(SL_SANE)						sanity_icon.icon_state = "sanity1"
-				if(SL_STRESSED)					sanity_icon.icon_state = "sanity2"
-				if(SL_DISTRESSED)				sanity_icon.icon_state = "sanity3"
-				if(SL_INSANE)					sanity_icon.icon_state = "sanity4"
-				else							sanity_icon.icon_state = "sanity-none" // fallback
+				if(SL_SANE)
+					sanity_icon.icon_state = "sanity1"
+				if(SL_STRESSED)
+					sanity_icon.icon_state = "sanity2"
+				if(SL_DISTRESSED)
+					sanity_icon.icon_state = "sanity3"
+				if(SL_INSANE)
+					sanity_icon.icon_state = "sanity4"
+				else
+					sanity_icon.icon_state = "sanity-none" // fallback
 
 		if(blink_icon)
 			var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
 			switch(eyes?.get_blink())
-				if(B_OPEN)						blink_icon.icon_state = "blink_4"
-				if(B_3)							blink_icon.icon_state = "blink_3"
-				if(B_2)							blink_icon.icon_state = "blink_2"
-				if(B_1)							blink_icon.icon_state = "blink_1"
-				else							blink_icon.icon_state = "blink_off"
-			if(eye_blind)					blink_icon.icon_state = "blink_0" //Blinking assigns new times before humans finish blinking, so we need this
+				if(B_OPEN)
+					blink_icon.icon_state = "blink_4"
+				if(B_3)
+					blink_icon.icon_state = "blink_3"
+				if(B_2)
+					blink_icon.icon_state = "blink_2"
+				if(B_1)
+					blink_icon.icon_state = "blink_1"
+				else
+					blink_icon.icon_state = "blink_off"
+			if(is_blind())
+				blink_icon.icon_state = "blink_0" //Blinking assigns new times before humans finish blinking, so we need this
 
 		if(cells && isSynthetic())
 			var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]
@@ -827,15 +841,24 @@
 		if(bodytemp)
 			if (!species)
 				switch(bodytemperature) //310.055 optimal body temp
-					if(370 to INFINITY)		bodytemp.icon_state = "temp4"
-					if(350 to 370)			bodytemp.icon_state = "temp3"
-					if(335 to 350)			bodytemp.icon_state = "temp2"
-					if(320 to 335)			bodytemp.icon_state = "temp1"
-					if(300 to 320)			bodytemp.icon_state = "temp0"
-					if(295 to 300)			bodytemp.icon_state = "temp-1"
-					if(280 to 295)			bodytemp.icon_state = "temp-2"
-					if(260 to 280)			bodytemp.icon_state = "temp-3"
-					else					bodytemp.icon_state = "temp-4"
+					if(370 to INFINITY)
+						bodytemp.icon_state = "temp4"
+					if(350 to 370)
+						bodytemp.icon_state = "temp3"
+					if(335 to 350)
+						bodytemp.icon_state = "temp2"
+					if(320 to 335)
+						bodytemp.icon_state = "temp1"
+					if(300 to 320)
+						bodytemp.icon_state = "temp0"
+					if(295 to 300)
+						bodytemp.icon_state = "temp-1"
+					if(280 to 295)
+						bodytemp.icon_state = "temp-2"
+					if(260 to 280)
+						bodytemp.icon_state = "temp-3"
+					else
+						bodytemp.icon_state = "temp-4"
 			else
 				//TODO: precalculate all of this stuff when the species datum is created
 				var/base_temperature = species.body_temperature
@@ -870,6 +893,16 @@
 						bodytemp.icon_state = "temp-1"
 					else
 						bodytemp.icon_state = "temp0"
+
+		switch(nutrition)
+			if(450 to INFINITY)
+				throw_alert(ALERT_NUTRITION, /atom/movable/screen/alert/fat)
+			if(350 to 450)
+				clear_alert(ALERT_NUTRITION)
+			if(150 to 350)
+				throw_alert(ALERT_NUTRITION, /atom/movable/screen/alert/hungry)
+			else
+				throw_alert(ALERT_NUTRITION, /atom/movable/screen/alert/starving)
 	return 1
 
 /mob/living/carbon/human/handle_random_events()
@@ -883,10 +916,6 @@
 			vomit_score += 45
 	if(chem_effects[CE_TOXIN] || radiation)
 		vomit_score += 0.5 * getToxLoss()
-	if(chem_effects[CE_ALCOHOL_TOXIC])
-		vomit_score += 10 * chem_effects[CE_ALCOHOL_TOXIC]
-	if(chem_effects[CE_ALCOHOL])
-		vomit_score += 10
 	if(stat != DEAD && vomit_score > 25 && prob(10))
 		vomit(vomit_score, vomit_score/25)
 
@@ -913,12 +942,13 @@
 		shock_stage = 0
 		return
 
-	if(is_asystole())
-		shock_stage = max(shock_stage + 1, 61)
 	var/traumatic_shock = get_shock()
 	if(traumatic_shock >= max(30, 0.8*shock_stage))
 		shock_stage += 1
-	else if (!is_asystole())
+
+	if(is_asystole())
+		shock_stage = max(shock_stage + 1, 61)
+	else
 		shock_stage = min(shock_stage, 160)
 		var/recovery = 1
 		if(traumatic_shock < 0.5 * shock_stage) //lower shock faster if pain is gone completely
@@ -938,8 +968,8 @@
 	if(shock_stage >= 30)
 		if(shock_stage == 30) visible_message("<b>[src]</b> is having trouble keeping \his eyes open.")
 		if(prob(30))
-			eye_blurry = max(2, eye_blurry)
-			stuttering = max(stuttering, 5)
+			set_eye_blur_if_lower(3 SECONDS)
+			set_stutter_if_lower(5 SECONDS)
 
 	if(shock_stage == 40)
 		custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", 40, nohalloss = TRUE)
@@ -988,7 +1018,7 @@
 	if (BITTEST(hud_updateflag, BLINK_HUD) && hud_list[BLINK_HUD])
 		var/image/holder = hud_list[BLINK_HUD]
 		if(is_blinking)
-			if(eye_blind > 0) //Blink mechanics apply new blink times even while the victim is still blind, so this check is neccesary
+			if(is_blind()) //Blink mechanics apply new blink times even while the victim is still blind, so this check is neccesary
 				holder.icon_state = "0"
 			else if(LAZYLEN(blink_causers) ? !can_see(blink_causers[1]) : !can_see()) //If victim cant see the blink_causer, updates HUD to "away" to alert blink HUD users
 				holder.icon_state = "away"

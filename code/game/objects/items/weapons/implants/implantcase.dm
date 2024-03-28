@@ -12,11 +12,12 @@
 /obj/item/implantcase/New()
 	if(ispath(imp))
 		imp = new imp(src)
-		update_description()
+		update_desc()
 	..()
 	update_icon()
 
-/obj/item/implantcase/proc/update_description()
+/obj/item/implantcase/update_desc()
+	. = ..()
 	if (imp)
 		desc = "A case containing \a [imp]."
 		origin_tech = imp.origin_tech
@@ -47,7 +48,7 @@
 			desc = "A case containing an implant."
 	else if(istype(I, /obj/item/reagent_containers/syringe))
 		if(istype(imp,/obj/item/implant/chem))
-			imp.attackby(I,user)
+			imp.attackby(I, user)
 	else if (istype(I, /obj/item/implanter))
 		var/obj/item/implanter/M = I
 		if (M.imp && !imp && !M.imp.implanted)
@@ -58,13 +59,13 @@
 			imp.forceMove(M)
 			M.imp = src.imp
 			imp = null
-		update_description()
+		update_desc()
 		update_icon()
 		M.update_icon()
 	else if (istype(I, /obj/item/implant) && user.unEquip(I, src))
 		to_chat(usr, SPAN_NOTICE("You slide \the [I] into \the [src]."))
 		imp = I
-		update_description()
+		update_desc()
 		update_icon()
 	else
 		return ..()

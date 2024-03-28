@@ -26,7 +26,7 @@
 
 /mob/observer/ghost/ClickOn(atom/A, params)
 	if(!canClick()) return
-	setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	setClickCooldown(CLICK_CD_QUICK)
 
 	// Not all of them require checking, see below
 	var/list/modifiers = params2list(params)

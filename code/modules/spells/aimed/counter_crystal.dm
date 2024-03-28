@@ -140,7 +140,7 @@
 	var/damage = clamp(mana_used * damage_multiplier, 20, 500)
 	caster.adjustFireLoss(damage)
 	caster.flash_eyes(FLASH_PROTECTION_MAJOR)
-	caster.confused = max(caster.confused, 3)
+	caster.set_confusion_if_lower(3)
 
 /obj/structure/cult/pylon/counter_crystal/proc/TimedCollapse()
 	if(QDELETED(src))

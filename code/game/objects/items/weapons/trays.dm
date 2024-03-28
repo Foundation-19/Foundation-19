@@ -66,7 +66,7 @@
 			to_chat(user, SPAN_WARNING("\The [src] can't hold \the [W]!"))
 		else
 			to_chat(user, SPAN_NOTICE("You add \the [W] to \the [src]."))
-			user.drop_item()
+			user.drop_active_hand()
 			pickup_item(W)
 		return TRUE
 	else
@@ -104,7 +104,7 @@
 // Intercepts hits against atoms in order to pick up items or dump stuff out as required.
 /obj/item/tray/resolve_attackby(atom/A, mob/user)
 	var/grab_intent = ishuman(user) ? I_GRAB : I_HELP
-	if (user.a_intent != grab_intent || istype(A, /obj/item/storage) || istype(A, /obj/screen/storage))
+	if (user.a_intent != grab_intent || istype(A, /obj/item/storage) || istype(A, /atom/movable/screen/storage))
 		return ..()
 
 	var/turf/T = get_turf(A)

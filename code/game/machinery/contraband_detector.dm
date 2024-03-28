@@ -157,7 +157,7 @@
 /mob/observer/has_contraband()
 	return FALSE
 
-/obj/screen/has_contraband()
+/atom/movable/screen/has_contraband()
 	return FALSE
 
 /obj/skybox/has_contraband()

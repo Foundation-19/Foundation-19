@@ -16,7 +16,7 @@
 		if(user.client.prefs.muted & MUTE_IC)
 			to_chat(src, SPAN_WARNING("You cannot speak in IC (muted)."))
 			return
-	if(user.silent)
+	if(HAS_TRAIT(user, TRAIT_MUTE))
 		return
 	if(spamcheck)
 		to_chat(user, SPAN_WARNING("\The [src] needs to recharge!"))

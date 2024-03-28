@@ -152,7 +152,7 @@
 	addtimer(CALLBACK(src, PROC_REF(finish_shot), target), rotation_speed)
 	animate(src, transform = rot_matrix, rotation_speed, easing = SINE_EASING)
 
-	set_dir(transform.get_angle() > 0 ? NORTH : SOUTH)
+	setDir(transform.get_angle() > 0 ? NORTH : SOUTH)
 
 /obj/machinery/pointdefense/proc/finish_shot(weakref/target)
 	//Cleanup from list
@@ -186,7 +186,7 @@
 		return
 	var/desiredir = transform.get_angle() > 0 ? NORTH : SOUTH
 	if(dir != desiredir)
-		set_dir(desiredir)
+		setDir(desiredir)
 	if(engaging || ((world.time - last_shot) < charge_cooldown))
 		return
 

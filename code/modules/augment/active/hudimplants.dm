@@ -25,8 +25,8 @@
 	if (istype(src.loc, /mob/living/carbon/human))
 		var/mob/living/carbon/human/M = src.loc
 		to_chat(M, SPAN_DANGER("Your [name] malfunctions, blinding you!"))
-		M.eye_blind = 4
-		M.eye_blurry = 8
+		M.adjust_temp_blindness(4 SECONDS)
+		M.adjust_eye_blur(8 SECONDS)
 		take_general_damage(rand(5, 15))
 		if (active)
 			active = FALSE

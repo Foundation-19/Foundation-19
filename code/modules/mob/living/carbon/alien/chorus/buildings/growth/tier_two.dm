@@ -151,7 +151,7 @@
 /obj/structure/chorus/processor/sentry/bone_shooter/trigger_effect(list/targets)
 	var/mob/living/T = get_atom_closest_to_atom(src, targets)
 	var/obj/item/projectile/bone_shard/bs = new(get_turf(src), owner)
-	set_dir(get_dir(src, T))
+	setDir(get_dir(src, T))
 	visible_message(SPAN_DANGER("<b>\The [src]</b> fires a small dart at \the [T]"))
 	bs.firer = src
 	bs.launch(T, BP_CHEST)

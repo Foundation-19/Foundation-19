@@ -21,7 +21,7 @@
 /datum/addiction/hallucinogens/WithdrawalStage3Process(mob/living/carbon/victim, delta_time)
 	. = ..()
 	victim.hallucination(50, 50)
-	victim.eye_blurry = clamp(victim.eye_blurry + 3 * delta_time, victim.eye_blurry, 50)
+	victim.adjust_eye_blur_up_to(3 SECONDS * delta_time, 1 MINUTE)
 	if(prob(6))
 		victim.Weaken(6)
 		to_chat(victim, SPAN_WARNING("Your legs feel unreal..."))

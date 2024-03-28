@@ -183,7 +183,7 @@
 		ui.open()
 
 /obj/machinery/suit_storage_unit/CanUseTopic(mob/user)
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		return STATUS_CLOSE
 	return ..()
 

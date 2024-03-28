@@ -65,7 +65,7 @@
 /// No stuttering, slurring, or other speech problems
 #define NO_STUTTER   (1<<8)
 /// Language is not based on vision or sound (TODO: add this into the say code and use it for the rootspeak languages)
-#define ALT_TRANSMIT (1<<8)
+#define ALT_TRANSMIT (1<<9)
 
 // Misc
 #define MAX_LANGUAGES 3

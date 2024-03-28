@@ -174,7 +174,7 @@
 	return
 
 /obj/machinery/power/turbine/CanUseTopic(mob/user, href_list)
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		to_chat(user, FEEDBACK_YOU_LACK_DEXTERITY)
 		return min(..(), STATUS_UPDATE)
 	return ..()

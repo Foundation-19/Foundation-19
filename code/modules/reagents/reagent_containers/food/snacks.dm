@@ -42,7 +42,7 @@
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/M)
 	if(!reagents.total_volume)
 		M.visible_message(SPAN_NOTICE("[M] finishes eating \the [src]."),SPAN_NOTICE("You finish eating \the [src]."))
-		M.drop_item()
+		M.drop_active_hand()
 		if(trash)
 			if(ispath(trash,/obj/item))
 				var/obj/item/TrashItem = new trash(get_turf(M))
@@ -78,7 +78,7 @@
 					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)//puts a limit on how fast people can eat/drink things
+			user.setClickCooldown(CLICK_CD_ATTACK)//puts a limit on how fast people can eat/drink things
 			if (fullness <= 50)
 				to_chat(C, SPAN_DANGER("You hungrily chew out a piece of [src] and gobble it!"))
 			if (fullness > 50 && fullness <= 150)
@@ -100,7 +100,8 @@
 				user.visible_message(SPAN_DANGER("[user] cannot force anymore of [src] down [M]'s throat."))
 				return 0
 
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			user.setClickCooldown(CLICK_CD_ATTACK)
+
 			if(!do_after(user, 4 SECONDS, M, bonus_percentage = 25)) return
 
 			if (user.get_active_hand() != src)

@@ -43,6 +43,8 @@
 	var/tmp/image/eyes
 	var/tmp/last_glow
 
+	roundstart_traits = list()
+
 /mob/living/carbon/alien/diona/get_jump_distance()
 	return 3
 
@@ -91,9 +93,6 @@
 	if(hat)
 		to_chat(user, SPAN_NOTICE("It is wearing [icon2html(hat, user)] \a [hat]."))
 
-/mob/living/carbon/alien/diona/IsAdvancedToolUser()
-	return FALSE
-
 /mob/living/carbon/alien/diona/proc/handle_npc(mob/living/carbon/alien/diona/D)
 	if(D.stat != CONSCIOUS)
 		return
@@ -112,7 +111,7 @@
 	for(var/mob/living/carbon/alien/diona/nymph in donor.contents)
 		nymph.dropInto(donor.loc)
 		transfer_languages(donor, nymph, (WHITELISTED|RESTRICTED))
-		nymph.set_dir(pick(NORTH, SOUTH, EAST, WEST))
+		nymph.setDir(pick(NORTH, SOUTH, EAST, WEST))
 		// Collect any available nymphs
 		if(!nymph.client && nymph.stat != DEAD)
 			available_nymphs += nymph
@@ -136,7 +135,7 @@
 		last_nymph.set_next_nymph(first_nymph)
 
 	// Transfer player over
-	first_nymph.set_dir(donor.dir)
+	first_nymph.setDir(donor.dir)
 	transfer_languages(donor, first_nymph)
 	if(donor.mind)
 		donor.mind.transfer_to(first_nymph)

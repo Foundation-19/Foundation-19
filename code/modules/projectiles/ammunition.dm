@@ -37,7 +37,7 @@
 	is_spent = TRUE
 	if(projectile_label)
 		proj.SetName("[initial(proj.name)] (\"[projectile_label]\")")
-	set_dir(pick(GLOB.alldirs)) //spin spent casings
+	setDir(pick(GLOB.alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.
 	if(leaves_residue)
@@ -67,7 +67,7 @@
 
 /obj/item/ammo_casing/proc/put_residue_on(atom/A)
 	if(A)
-		LAZYDISTINCTADD(A.gunshot_residue, caliber)
+		LAZYOR(A.gunshot_residue, caliber)
 
 /obj/item/ammo_casing/attackby(obj/item/W as obj, mob/user as mob)
 	if(!isScrewdriver(W))
@@ -275,7 +275,8 @@
 	var/max_sounds = clamp(round(length(stored_ammo) * 0.2), 1, 10)
 	for(var/obj/item/ammo_casing/C in stored_ammo)
 		C.forceMove(user.loc)
-		C.set_dir(pick(GLOB.alldirs))
+		C.setDir(pick(GLOB.alldirs))
+		C.setDir(pick(GLOB.alldirs))
 		if(LAZYLEN(C.fall_sounds) && curr_sounds < max_sounds)
 			playsound(user.loc, pick(C.fall_sounds), 20, TRUE)
 			curr_sounds += 1

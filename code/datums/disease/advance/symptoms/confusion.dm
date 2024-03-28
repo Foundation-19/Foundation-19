@@ -41,7 +41,7 @@ Bonus
 		suppress_warning = TRUE
 
 /datum/symptom/confusion/End(datum/disease/advance/A)
-	A.affected_mob.confused = max(0, A.affected_mob.confused - round(10 * power))
+	A.affected_mob.adjust_confusion(-10 * power SECONDS)
 	return ..()
 
 /datum/symptom/confusion/Activate(datum/disease/advance/A)
@@ -54,5 +54,5 @@ Bonus
 				to_chat(M, "<span class='warning'>[pick("Your head hurts.", "Your mind blanks for a moment.")]</span>")
 		else
 			to_chat(M, "<span class='userdanger'>You can't think straight!</span>")
-			M.confused += max(0, round(8 * power - M.confused))
+			M.adjust_confusion(8 * power SECONDS)
 	return

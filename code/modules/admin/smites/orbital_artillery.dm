@@ -25,7 +25,7 @@
 		target.adjustBruteLoss(min(BSA_MAX_DAMAGE, (target.health - 1)))
 		target.Stun(20)
 		target.Weaken(20)
-		target.stuttering = BSA_STUTTER_TIME
+		target.adjust_stutter(BSA_STUTTER_TIME)
 
 #undef BSA_CHANCE_TO_BREAK_TILE_TO_PLATING
 #undef BSA_MAX_DAMAGE

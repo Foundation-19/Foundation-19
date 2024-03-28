@@ -66,7 +66,7 @@ BONUS
 			if(power >= 1.5)
 				var/obj/item/I = M.get_active_hand()
 				if(I && I.w_class == ITEM_SIZE_SMALL)
-					M.drop_item()
+					M.drop_from_inventory(I)
 			if(power >= 2 && prob(30))
 				to_chat(M, "<span notice='userdanger'>[pick("You have a coughing fit!", "You can't stop coughing!")]</span>")
 				M.Stun(20)

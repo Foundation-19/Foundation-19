@@ -159,7 +159,7 @@
 	if(anchored)
 		to_chat(usr, SPAN_WARNING("You cannot rotate [src], it has been firmly fixed to the floor."))
 	else
-		set_dir(turn(dir, 90))
+		setDir(turn(dir, 90))
 
 /obj/machinery/suspension_gen/verb/rotate_cw()
 	set src in view(1)
@@ -169,7 +169,7 @@
 	if(anchored)
 		to_chat(usr, SPAN_WARNING("You cannot rotate [src], it has been firmly fixed to the floor."))
 	else
-		set_dir(turn(dir, -90))
+		setDir(turn(dir, -90))
 
 /obj/effect/suspension_field
 	name = "energy field"

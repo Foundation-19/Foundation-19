@@ -694,9 +694,8 @@
 	new_character.dna.ready_dna(new_character)
 	new_character.dna.b_type = prefs.b_type
 	new_character.sync_organ_dna()
-	if(prefs.disabilities)
-		new_character.dna.SetSEState(GLOB.GLASSESBLOCK,1,0)
-		new_character.disabilities |= NEARSIGHTED
+	if(prefs.char_nearsighted)
+		new_character.become_nearsighted(ROUNDSTART_TRAIT)
 	new_character.force_update_limbs()
 	new_character.update_eyes()
 	new_character.regenerate_icons()

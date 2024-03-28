@@ -1,4 +1,4 @@
-/obj/screen/psi/hub
+/atom/movable/screen/psi/hub
 	name = "Psi"
 	icon_state = "psi_suppressed"
 	screen_loc = "EAST-1:28,CENTER-3:11"
@@ -8,16 +8,16 @@
 	var/image/on_cooldown
 	var/list/components
 
-/obj/screen/psi/hub/New(mob/living/_owner)
+/atom/movable/screen/psi/hub/New(mob/living/_owner)
 	on_cooldown = image(icon, "cooldown")
 	components = list(
-		new /obj/screen/psi/armour(_owner),
-		new /obj/screen/psi/toggle_psi_menu(_owner, src)
+		new /atom/movable/screen/psi/armour(_owner),
+		new /atom/movable/screen/psi/toggle_psi_menu(_owner, src)
 		)
 	..()
 	START_PROCESSING(SSprocessing, src)
 
-/obj/screen/psi/hub/on_update_icon()
+/atom/movable/screen/psi/hub/on_update_icon()
 
 	if(!owner.psi)
 		return
@@ -29,11 +29,11 @@
 		cut_overlays()
 	var/offset = 1
 	for(var/thing in components)
-		var/obj/screen/psi/component = thing
+		var/atom/movable/screen/psi/component = thing
 		component.update_icon()
 		if(!component.invisibility) component.screen_loc = "EAST-[++offset]:28,CENTER-3:11"
 
-/obj/screen/psi/hub/Destroy()
+/atom/movable/screen/psi/hub/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
 	owner = null
 	for(var/thing in components)
@@ -41,7 +41,7 @@
 	components.Cut()
 	. = ..()
 
-/obj/screen/psi/hub/Process()
+/atom/movable/screen/psi/hub/Process()
 	if(!istype(owner))
 		qdel(src)
 		return
@@ -50,7 +50,7 @@
 	maptext = "[round((owner.psi.stamina/owner.psi.max_stamina)*100)]%"
 	update_icon()
 
-/obj/screen/psi/hub/Click(location, control, params)
+/atom/movable/screen/psi/hub/Click(location, control, params)
 	var/list/click_params = params2list(params)
 	if(click_params["shift"])
 		owner.show_psi_assay(owner)

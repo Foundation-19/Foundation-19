@@ -95,7 +95,7 @@ var/list/solars_list = list()
 		add_overlay(image('icons/obj/power.dmi', icon_state = "solar_panel-b", layer = ABOVE_HUMAN_LAYER))
 	else
 		add_overlay(image('icons/obj/power.dmi', icon_state = "solar_panel", layer = ABOVE_HUMAN_LAYER))
-		src.set_dir(angle2dir(adir))
+		src.setDir(angle2dir(adir))
 	return
 
 //calculates the fraction of the sunlight that the panel receives

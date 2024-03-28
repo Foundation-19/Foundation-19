@@ -510,7 +510,7 @@
 		to_chat(user, "You [anchored ? "wrench" : "unwrench"] \the [src].")
 
 	else if(O.force && seed)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [O]!"))
 		playsound(get_turf(src), O.hitsound, 100, 1)
 		if(!dead)

@@ -278,5 +278,5 @@
 		animate(alpha = 0, time = 2)
 	playsound(target, 'sounds/magic/staff_healing.ogg', 50, FALSE, 14)
 	target.revive()
-	target.confused = 30
+	target.adjust_confusion(30)
 	target.visible_message(SPAN_WARNING("\The [target] rises once more!"))

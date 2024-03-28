@@ -42,8 +42,8 @@ Bonus
 		power = 2
 
 /datum/symptom/dizzy/End(datum/disease/advance/A)
-	A.affected_mob.dizziness = max(0, A.affected_mob.dizziness - 30)
-	A.affected_mob.druggy = max(0, A.affected_mob.druggy - 30)
+	A.affected_mob.adjust_dizzy(-30 SECONDS)
+	A.affected_mob.adjust_drugginess(-30 SECONDS)
 	return ..()
 
 /datum/symptom/dizzy/Activate(datum/disease/advance/A)
@@ -56,6 +56,6 @@ Bonus
 				to_chat(M, SPAN_WARNING("[pick("You feel dizzy.", "Your head spins.")]"))
 		else
 			to_chat(M, "<span class='userdanger'>A wave of dizziness washes over you!</span>")
-			M.dizziness += max(0, 30 - M.dizziness)
+			M.set_dizzy_if_lower(30 SECONDS)
 			if(power >= 2)
-				M.druggy += max(0, 30 - M.druggy)
+				M.set_drugginess_if_lower(30 SECONDS)

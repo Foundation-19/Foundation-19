@@ -113,23 +113,23 @@ var/const/FINGERPRINT_COMPLETE = 6
 
 /atom/proc/transfer_fingerprints_to(atom/A)
 	if(fingerprints)
-		LAZYDISTINCTADD(A.fingerprints, fingerprints)
+		LAZYOR(A.fingerprints, fingerprints)
 	if(fingerprintshidden)
-		LAZYDISTINCTADD(A.fingerprintshidden, fingerprintshidden)
+		LAZYOR(A.fingerprintshidden, fingerprintshidden)
 		A.fingerprintslast = fingerprintslast
 	if(suit_fibers)
-		LAZYDISTINCTADD(A.suit_fibers, suit_fibers)
+		LAZYOR(A.suit_fibers, suit_fibers)
 	if(blood_DNA)
-		LAZYDISTINCTADD(A.blood_DNA, blood_DNA)
+		LAZYOR(A.blood_DNA, blood_DNA)
 	if(gunshot_residue)
 		var/obj/item/clothing/C = A
-		LAZYDISTINCTADD(C.gunshot_residue, gunshot_residue)
+		LAZYOR(C.gunshot_residue, gunshot_residue)
 
 /obj/item/transfer_fingerprints_to(atom/A)
 	..()
 	if(istype(A,/obj/item) && trace_DNA)
 		var/obj/item/I = A
-		LAZYDISTINCTADD(I.trace_DNA, trace_DNA)
+		LAZYOR(I.trace_DNA, trace_DNA)
 
 /atom/proc/add_fibers(mob/living/carbon/human/M)
 	if(!istype(M))
@@ -150,20 +150,20 @@ var/const/FINGERPRINT_COMPLETE = 6
 		var/obj/item/clothing/C = M.wear_suit
 		fibertext = C.get_fibers()
 		if(fibertext && prob(10*item_multiplier))
-			LAZYDISTINCTADD(suit_fibers, fibertext)
+			LAZYOR(suit_fibers, fibertext)
 		suit_coverage = C.body_parts_covered
 
 	if(istype(M.w_uniform, /obj/item/clothing) && (M.w_uniform.body_parts_covered & ~suit_coverage))
 		var/obj/item/clothing/C = M.w_uniform
 		fibertext = C.get_fibers()
 		if(fibertext && prob(15*item_multiplier))
-			LAZYDISTINCTADD(suit_fibers, fibertext)
+			LAZYOR(suit_fibers, fibertext)
 
 	if(istype(M.gloves, /obj/item/clothing) && (M.gloves.body_parts_covered & ~suit_coverage))
 		var/obj/item/clothing/C = M.gloves
 		fibertext = C.get_fibers()
 		if(fibertext && prob(20*item_multiplier))
-			LAZYDISTINCTADD(suit_fibers, fibertext)
+			LAZYOR(suit_fibers, fibertext)
 
 /obj/item/proc/add_trace_DNA(mob/living/carbon/M)
 	if(!istype(M))
@@ -171,7 +171,7 @@ var/const/FINGERPRINT_COMPLETE = 6
 	if(M.isSynthetic())
 		return
 	if(istype(M.dna))
-		LAZYDISTINCTADD(trace_DNA, M.dna.unique_enzymes)
+		LAZYOR(trace_DNA, M.dna.unique_enzymes)
 
 /mob/proc/get_full_print()
 	return FALSE

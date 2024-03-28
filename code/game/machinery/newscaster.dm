@@ -729,7 +729,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 
 /obj/machinery/newscaster/attackby(obj/item/I, mob/user)
 	if (user.a_intent == I_HURT)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		if (I.force < 15)
 			visible_message(SPAN_WARNING("\The [user] uselessly bops \the [src] with \an [I]."))
 		else if (stat & BROKEN)

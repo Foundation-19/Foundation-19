@@ -45,6 +45,8 @@
 	///sound cooldown track
 	var/sound_cooldown
 
+	roundstart_traits = list()
+
 /mob/living/carbon/human/scp106/Initialize(mapload, new_species = "SCP-106")
 	. = ..()
 	SCP = new /datum/scp(
@@ -186,9 +188,6 @@
 	last_z = z
 
 //Util Overrides
-
-/mob/living/carbon/human/scp106/IsAdvancedToolUser()
-	return FALSE
 
 /mob/living/carbon/human/scp106/get_pressure_weakness()
 	return 0
@@ -524,7 +523,7 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 	target.pixel_y = target.default_pixel_y
 	target.buckled = src
 	target.facing_dir = null
-	target.set_dir(buckle_dir ? buckle_dir : dir)
+	target.setDir(buckle_dir ? buckle_dir : dir)
 	target.UpdateLyingBuckledAndVerbStatus()
 	target.update_floating()
 	buckled_mob = target

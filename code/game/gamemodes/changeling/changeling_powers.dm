@@ -537,15 +537,10 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/sting/blind_sting/sting_effects()
 	to_chat(target, SPAN_WARNING("Your eyes burn horrifically!"))
-	target.eye_blind += 10
-	target.eye_blurry += 20
-	target.disabilities |= NEARSIGHTED
-	addtimer(CALLBACK(src, PROC_REF(unblind), target), 30 SECONDS)
+	target.adjust_temp_blindness(10 SECONDS)
+	target.adjust_eye_blur(20 SECONDS)
+	target.adjust_temp_nearsightedness(30 SECONDS)
 	SSstatistics.add_field_details("changeling_powers", "BS")
-
-/datum/power/changeling/sting/blind_sting/proc/unblind(mob/living/carbon/human/target)
-	if(target)
-		target.disabilities &= ~NEARSIGHTED
 
 
 /// Silences a target for 30 seconds.
@@ -559,7 +554,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	allow_during_lesser_form = TRUE
 
 /datum/power/changeling/sting/silence_sting/sting_effects()
-	target.silent += 30
+	target.set_silence_if_lower(30 SECONDS)
 	SSstatistics.add_field_details("changeling_powers", "SS")
 
 
@@ -619,7 +614,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/sting/death_sting/sting_effects()
 	to_chat(target, SPAN_DANGER("You feel a lance of pain and your chest becomes tight."))
-	target.make_jittery(400)
+	target.adjust_jitter(40 SECONDS)
 	if(target.reagents)
 		target.reagents.add_reagent(/datum/reagent/lexorin, 40)
 	SSstatistics.add_field_details("changeling_powers", "DS")

@@ -21,7 +21,7 @@
 	M.add_chemical_effect(CE_PULSE, 2)
 	M.add_chemical_effect(CE_STIMULANT, 2)
 	if (M.chem_doses[type] > 10)
-		M.make_jittery(5)
+		M.adjust_jitter(5 SECONDS * removed)
 	if (volume >= 5 && M.is_asystole())
 		remove_self(5)
 		if (M.resuscitate())
@@ -45,7 +45,7 @@
 		M.add_chemical_effect(CE_PULSE, 1)
 		M.add_chemical_effect(CE_SLOWDOWN, (volume / 5) ** 2)
 	else if (M.chem_doses[type] > 20) //after prolonged exertion
-		M.make_jittery(10)
+		M.adjust_jitter(10 SECONDS * removed)
 
 
 
@@ -195,5 +195,5 @@
 		for (var/obj/item/organ/external/E in H.organs)
 			E.status |= ORGAN_DISFIGURED //currently only matters for the head, but might as well disfigure them all.
 	if (M.chem_doses[type] > 10)
-		M.make_dizzy(5)
-		M.make_jittery(5)
+		M.adjust_dizzy(5 SECONDS)
+		M.adjust_jitter(5 SECONDS * removed)

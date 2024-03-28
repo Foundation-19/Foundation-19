@@ -40,6 +40,8 @@
 	#define SEC_HUD 1 //Security HUD mode
 	#define MED_HUD 2 //Medical HUD mode
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 /mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list += src
 	. = ..()
@@ -77,7 +79,7 @@
 /mob/living/silicon/proc/show_laws()
 	return
 
-/mob/living/silicon/drop_item()
+/mob/living/silicon/drop_active_hand()
 	return
 
 /mob/living/silicon/emp_act(severity)
@@ -87,11 +89,13 @@
 	switch(severity)
 		if(1)
 			take_organ_damage(0, 16, ORGAN_DAMAGE_SILICON_EMP)
-			if(prob(50)) Stun(rand(5,10))
-			else confused = (min(confused + 2, 40))
+			if(prob(50))
+				Stun(rand(5,10))
+			else
+				adjust_confusion_up_to(2 SECONDS, 40 SECONDS)
 		if(2)
 			take_organ_damage(0, 7, ORGAN_DAMAGE_SILICON_EMP)
-			confused = (min(confused + 2, 30))
+			adjust_confusion_up_to(2 SECONDS, 30 SECONDS)
 	flash_eyes(affect_silicon = 1)
 	to_chat(src, SPAN_DANGER("<B>*BZZZT*</B>"))
 	to_chat(src, SPAN_DANGER("Warning: Electromagnetic pulse detected."))
@@ -118,9 +122,6 @@
 
 /mob/living/silicon/proc/damage_mob(brute = 0, fire = 0, tox = 0)
 	return
-
-/mob/living/silicon/IsAdvancedToolUser()
-	return 1
 
 /mob/living/silicon/bullet_act(obj/item/projectile/Proj)
 	if(status_flags & GODMODE)
@@ -353,7 +354,7 @@
 	ghostize(0)
 	qdel(src)
 
-/mob/living/silicon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/silicon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(affect_silicon)
 		return ..()
 

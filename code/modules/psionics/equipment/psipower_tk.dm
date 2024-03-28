@@ -60,7 +60,7 @@
 
 	var/user_rank = owner.psi.get_rank(PSI_PSYCHOKINESIS) // Can only be above/equal to 4
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN * (8 / user_rank))
+	user.setClickCooldown(CLICK_CD_ATTACK * (8 / user_rank))
 	user.psi.set_cooldown((32 / user_rank))
 
 	var/user_psi_leech = user.do_psionics_check(5, user)
@@ -106,7 +106,7 @@
 		O.anchored = TRUE
 		O.density = FALSE
 		O.layer = FLY_LAYER
-		O.set_dir(pick(GLOB.cardinal))
+		O.setDir(pick(GLOB.cardinal))
 		O.icon = 'icons/effects/effects.dmi'
 		O.icon_state = "nothing"
 		flick("empdisable",O)

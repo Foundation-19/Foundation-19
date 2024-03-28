@@ -15,7 +15,7 @@
 	var/deployed = 0
 
 /obj/item/beartrap/proc/can_use(mob/user)
-	return (user.IsAdvancedToolUser() && !issilicon(user) && !user.stat && !user.restrained())
+	return (ISADVANCEDTOOLUSER(user) && !issilicon(user) && !user.stat && !user.restrained())
 
 /obj/item/beartrap/user_unbuckle_mob(mob/user as mob)
 	if(buckled_mob && can_use(user))
@@ -81,7 +81,7 @@
 		return 0
 
 	//trap the victim in place
-	set_dir(L.dir)
+	setDir(L.dir)
 	buckle_mob(L)
 	to_chat(L, SPAN_DANGER("The steel jaws of \the [src] bite into you, trapping you in place!"))
 	deployed = 0

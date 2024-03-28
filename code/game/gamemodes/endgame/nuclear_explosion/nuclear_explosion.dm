@@ -3,7 +3,7 @@ var/global/universe_has_ended = 0
 /datum/universal_state/nuclear_explosion
 	name = "Nuclear Demolition Warhead"
 	var/atom/explosion_source
-	var/obj/screen/cinematic
+	var/atom/movable/screen/cinematic
 
 /datum/universal_state/nuclear_explosion/New(atom/nuke)
 	explosion_source = nuke

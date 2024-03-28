@@ -36,7 +36,7 @@
 /datum/spell/aimed/proc/on_activation(mob/user)
 	active = TRUE
 	if(connected_button)
-		var/obj/screen/ability/spell/S = connected_button
+		var/atom/movable/screen/ability/spell/S = connected_button
 		if(!istype(S))
 			return
 		S.update_charge(1)
@@ -45,7 +45,7 @@
 /datum/spell/aimed/proc/on_deactivation(mob/user)
 	active = FALSE
 	if(connected_button)
-		var/obj/screen/ability/spell/S = connected_button
+		var/atom/movable/screen/ability/spell/S = connected_button
 		if(!istype(S))
 			return
 		S.update_charge(1)

@@ -53,7 +53,6 @@
 	var/irradiate = 0
 	var/stutter = 0
 	var/eyeblur = 0
-	var/drowsy = 0
 	var/agony = 0
 	var/embed = FALSE // whether or not the projectile can embed itself in the mob
 	var/penetration_modifier = 0.2 //How much internal damage this projectile can deal, as a multiplier.
@@ -116,7 +115,10 @@
 
 	var/mob/living/L = target
 
-	L.apply_effects(0, weaken, paralyze, stutter, eyeblur, drowsy, 0, blocked)
+	L.adjust_eye_blur(eyeblur)
+	L.adjust_stutter(stutter)
+
+	L.apply_effects(stun = 0, weaken = weaken, paralyze = paralyze, agony = 0, blocked = blocked)
 	L.stun_effect_act(stun, agony, def_zone, src)
 	//radiation protection is handled separately from other armour types.
 	L.apply_damage(irradiate, IRRADIATE, damage_flags = DAM_DISPERSED)

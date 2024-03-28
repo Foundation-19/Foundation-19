@@ -207,7 +207,7 @@
 	..(nloc)
 	nloc.hotspot_expose(1000,125)
 	set_light(0.5, 1, 4)
-	set_dir(ndir)
+	setDir(ndir)
 	spawn(20)
 		qdel(src)
 

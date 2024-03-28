@@ -59,7 +59,7 @@
 
 	forceMove(D.trunk)
 	active = 1
-	set_dir(DOWN)
+	setDir(DOWN)
 	START_PROCESSING(SSdisposals, src)
 
 	// movement process, persists while holder is moving through pipes

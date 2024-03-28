@@ -90,7 +90,7 @@
 
 	if (true_dose >= 110)
 		M.adjustHalLoss(5)
-		M.make_dizzy(10)
+		M.adjust_dizzy(10 SECONDS)
 		if (prob(8))
 			to_chat(M, SPAN_DANGER("<font style='font-size:[rand(3,4)]'>[pick(zombie_messages["stage3"])]</font>"))
 

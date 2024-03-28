@@ -57,7 +57,7 @@
 			anchored = init_anc
 			return 0
 
-		set_dir(get_dir(old_loc, loc))
+		setDir(get_dir(old_loc, loc))
 		anchored = init_anc
 
 		if(on && powered)
@@ -67,7 +67,7 @@
 		//See load_object() proc in cargo_trains.dm for an example
 		if(load && !istype(load, /datum/vehicle_dummy_load))
 			load.forceMove(loc)
-			load.set_dir(dir)
+			load.setDir(dir)
 
 		return 1
 	else
@@ -97,7 +97,7 @@
 			if(health < maxhealth)
 				if(open)
 					adjust_health(10)
-					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+					user.setClickCooldown(CLICK_CD_ATTACK)
 					user.visible_message(SPAN_WARNING("\The [user] repairs \the [src]!"),SPAN_NOTICE("You repair \the [src]!"))
 				else
 					to_chat(user, SPAN_NOTICE("Unable to repair with the maintenance panel closed."))
@@ -106,7 +106,7 @@
 		else
 			to_chat(user, SPAN_NOTICE("Unable to repair while [src] is off."))
 	else if(hasvar(W,"force") && hasvar(W,"damtype"))
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		switch(W.damtype)
 			if("fire")
 				adjust_health(-W.force * fire_dam_coeff)
@@ -148,7 +148,7 @@
 	pulse2.icon_state = "empdisable"
 	pulse2.SetName("emp sparks")
 	pulse2.anchored = TRUE
-	pulse2.set_dir(pick(GLOB.cardinal))
+	pulse2.setDir(pick(GLOB.cardinal))
 
 	spawn(10)
 		qdel(pulse2)
@@ -209,7 +209,7 @@
 	//stuns people who are thrown off a train that has been blown up
 	if(istype(load, /mob/living))
 		var/mob/living/M = load
-		M.apply_effects(5, 5)
+		M.apply_effects(stun = 5, weaken = 5)
 
 	unload()
 
@@ -282,7 +282,7 @@
 		return 0
 
 	C.forceMove(loc)
-	C.set_dir(dir)
+	C.setDir(dir)
 	C.anchored = TRUE
 
 	load = C
@@ -331,7 +331,7 @@
 		return 0
 
 	load.forceMove(dest)
-	load.set_dir(get_dir(loc, dest))
+	load.setDir(get_dir(loc, dest))
 	load.anchored = FALSE		//we can only load non-anchored items, so it makes sense to set this to false
 	if(ismob(load)) //atoms should probably have their own procs to define how their pixel shifts and layer can be manipulated, someday
 		var/mob/M = load

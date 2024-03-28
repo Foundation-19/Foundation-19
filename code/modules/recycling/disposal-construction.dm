@@ -34,7 +34,7 @@
 			sort_type = D.sort_type
 			dpdir = D.dpdir
 			constructed_path = D.type
-			set_dir(D.dir) // Needs to be set after turn and possibly other state.
+			setDir(D.dir) // Needs to be set after turn and possibly other state.
 		else if (istype(P, /obj/machinery/disposal))
 			var/obj/machinery/disposal/D = P
 			SetName(D.name)
@@ -45,7 +45,7 @@
 			set_density(D.density)
 			turn = D.turn
 			constructed_path = D.type
-			set_dir(D.dir)
+			setDir(D.dir)
 	update_icon()
 	update_verbs()
 
@@ -87,10 +87,10 @@
 			fake_pipe = constructed_path
 			turn = initial(fake_pipe.turn)
 			built_icon_state = initial(fake_pipe.icon_state)
-			set_dir(dir) // run the update, as our dpdir is probably wrong after this
+			setDir(dir) // run the update, as our dpdir is probably wrong after this
 			update_icon()
 			return
-	set_dir(turn(dir, 180))
+	setDir(turn(dir, 180))
 
 /obj/structure/disposalconstruct/on_update_icon()
 	if ("con[built_icon_state]" in icon_states(icon))
@@ -107,7 +107,7 @@
 	if (flipvalue & DISPOSAL_FLIP_RIGHT)
 		. |= turn(dir, -90)
 
-/obj/structure/disposalconstruct/set_dir(new_dir)
+/obj/structure/disposalconstruct/setDir(new_dir)
 	. = ..()
 	dpdir = flip_dirs(turn) //does the flipping stuff
 	update()
@@ -219,7 +219,7 @@
 	P.icon_state = built_icon_state
 	P.dpdir = dpdir
 	P.sort_type = sort_type
-	P.set_dir(dir)
+	P.setDir(dir)
 	P.on_build()
 
 // Subtypes
@@ -232,7 +232,7 @@
 /obj/structure/disposalconstruct/machine/build(obj/structure/disposalpipe/CP)
 	var/obj/machinery/disposal/P = new constructed_path(src.loc)
 	transfer_fingerprints_to(P)
-	P.set_dir(dir)
+	P.setDir(dir)
 	P.mode = 0 // start with pump off
 	var/obj/structure/disposalpipe/trunk/trunk = CP
 	if (trunk)

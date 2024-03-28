@@ -66,7 +66,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 
 
 	var/selected_choice
-	var/list/obj/screen/elements = list()
+	var/list/atom/movable/screen/elements = list()
 	var/atom/movable/screen/radial/center/close_button
 	var/client/current_user
 	var/atom/anchor

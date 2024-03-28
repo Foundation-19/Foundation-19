@@ -408,13 +408,9 @@ This saves us from having to call add_fingerprint() any time something is put in
 
 /mob/living/carbon/human/get_equipped_item(slot)
 	switch(slot)
-		if(slot_back)       return back
 		if(slot_handcuffed) return handcuffed
 		if(slot_l_store)    return l_store
 		if(slot_r_store)    return r_store
-		if(slot_wear_mask)  return wear_mask
-		if(slot_l_hand)     return l_hand
-		if(slot_r_hand)     return r_hand
 		if(slot_wear_id)    return wear_id
 		if(slot_glasses)    return glasses
 		if(slot_gloves)     return gloves
@@ -426,6 +422,37 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(slot_s_store)    return s_store
 		if(slot_l_ear)      return l_ear
 		if(slot_r_ear)      return r_ear
+	return ..()
+
+/mob/living/carbon/human/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == handcuffed)
+		return slot_handcuffed
+	if(looking_for == l_store)
+		return slot_l_store
+	if(looking_for == r_store)
+		return slot_r_store
+	if(looking_for == wear_id)
+		return slot_wear_id
+	if(looking_for == glasses)
+		return slot_glasses
+	if(looking_for == gloves)
+		return slot_gloves
+	if(looking_for == head)
+		return slot_head
+	if(looking_for == shoes)
+		return slot_shoes
+	if(looking_for == belt)
+		return slot_belt
+	if(looking_for == wear_suit)
+		return slot_wear_suit
+	if(looking_for == w_uniform)
+		return slot_w_uniform
+	if(looking_for == s_store)
+		return slot_s_store
+	if(looking_for == l_ear)
+		return slot_l_ear
+	if(looking_for == r_ear)
+		return slot_r_ear
 	return ..()
 
 /mob/living/carbon/human/get_equipped_items(include_carried = 0)

@@ -31,7 +31,6 @@
 	//testing("Assigning DNA blocks:")
 
 	// Standard muts, imported from older code above.
-	GLOB.BLINDBLOCK         = getAssignedBlock("BLINDED",         numsToAssign)
 	GLOB.DEAFBLOCK          = getAssignedBlock("DEAFENED",          numsToAssign)
 	GLOB.HULKBLOCK          = getAssignedBlock("HULK",          numsToAssign, DNA_HARD_BOUNDS)
 	GLOB.TELEBLOCK          = getAssignedBlock("TELE",          numsToAssign, DNA_HARD_BOUNDS)
@@ -42,7 +41,6 @@
 
 	// UNUSED!
 	//GLOB.COUGHBLOCK         = getAssignedBlock("COUGH",         numsToAssign)
-	//GLOB.GLASSESBLOCK       = getAssignedBlock("GLASSES",       numsToAssign)
 	//GLOB.EPILEPSYBLOCK      = getAssignedBlock("EPILEPSY",      numsToAssign)
 	//GLOB.TWITCHBLOCK        = getAssignedBlock("TWITCH",        numsToAssign)
 	//GLOB.NERVOUSBLOCK       = getAssignedBlock("NERVOUS",       numsToAssign)

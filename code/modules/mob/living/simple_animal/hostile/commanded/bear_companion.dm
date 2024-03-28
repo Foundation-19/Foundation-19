@@ -56,11 +56,11 @@
 							"shrugs [G.his] shoulders!",\
 							"dances like you've never seen!")
 			if(dir != WEST)
-				set_dir(WEST)
+				setDir(WEST)
 			else
-				set_dir(EAST)
+				setDir(EAST)
 			src.visible_message("\The [src] [message]")
 			sleep(30)
 		stance = COMMANDED_STOP
-		set_dir(SOUTH)
+		setDir(SOUTH)
 		src.visible_message("\The [src] bows, finished with [G.his] dance.")

@@ -1,11 +1,11 @@
 /obj/item/device/mmi/digital/New()
-	src.brainmob = new(src)
-	src.brainmob.set_stat(CONSCIOUS)
-	src.brainmob.add_language("Robot Talk")
-	src.brainmob.add_language("Encoded Audio Language")
+	brainmob = new(src)
+	brainmob.set_stat(CONSCIOUS)
+	brainmob.add_language("Robot Talk")
+	brainmob.add_language("Encoded Audio Language")
 
-	src.brainmob.container = src
-	src.brainmob.silent = 0
+	brainmob.container = src
+	brainmob.set_silence(0)
 	PickName()
 	return ..()
 

@@ -34,7 +34,7 @@ Made by TheDarkElites
 				return 100
 			return TRUE
 
-	if(!isturf(origin.loc)) //Are we inside something that may decrease our audio range?
+	if(!isturf(origin) && !isturf(origin.loc)) //Are we inside something that may decrease our audio range?
 		if(hearable_range > AUDIBLE_RANGE_DECREASED)
 			hearable_range = AUDIBLE_RANGE_DECREASED
 
@@ -57,7 +57,7 @@ Made by TheDarkElites
 			return FALSE
 
 /mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
-	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)) // cant hear if you're deaf.
+	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT) || HAS_TRAIT(src, TRAIT_DEAF)) // cant hear if you're deaf.
 		return A_INSL_PERFECT
 	return audible_insulation
 
@@ -66,8 +66,6 @@ Made by TheDarkElites
 /mob/living/carbon/human/can_see(atom/origin, visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
 	var/area/origin_area
-	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye_blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as a pre-caution.
-		return FALSE
 	if(stat) //Unconscious humans cant see.
 		return FALSE
 	if(origin)
@@ -106,7 +104,7 @@ Made by TheDarkElites
 	if(!(isobj(origin) || ismob(origin)))
 		return TRUE //if its not an object or mob it can always be identified/read (technically this should never happen but better safe than sorry)
 
-	var/viewdistance = 7 - get_how_nearsighted() //cant read if you're nearsighted and without prescription
+	var/viewdistance = is_nearsighted_currently() ? 2 : 7 //cant read if you're nearsighted
 	var/visual_insulation_calculated = get_visual_insul()
 	if(!visual_memetic) //If not memetic, we should still see objects even if wearing something with memetic insulation but no tint.
 		if((equipment_tint_total == TINT_NONE) && (visual_insulation_calculated != V_INSL_NONE))
@@ -137,20 +135,12 @@ Made by TheDarkElites
 	return FALSE
 
 /mob/living/carbon/human/proc/get_visual_insul(include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
-	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT)) // cant see if you're blind.
+	if((is_blind()) || incapacitated(INCAPACITATION_KNOCKOUT)) // cant see if you're blind.
 		return V_INSL_PERFECT
 	if(include_tint)
 		if(equipment_tint_total >= TINT_BLIND) //Checks tints. Tints are different from insulation in that they graphicaly obstruct your view, whereas insulation just insulates you from memetic hazards without obstructing your view.
 			return V_INSL_PERFECT
 	return visual_insulation
-
-/mob/living/carbon/human/proc/get_how_nearsighted() //Stolen from species.dm
-	var/prescriptions = 0
-	if(disabilities & NEARSIGHTED)
-		prescriptions += 7
-	if(equipment_prescription)
-		prescriptions -= equipment_prescription
-	return clamp(prescriptions,0,7)
 
 // BLINK MECHANICS
 
@@ -169,7 +159,7 @@ Made by TheDarkElites
 		remove_verb(src, /mob/living/carbon/human/verb/manual_blink)
 
 /mob/living/carbon/human/proc/cause_blink() //This cant be handled in the eyes as eye processing and human life() processing are out of sync, causing weird bugs.
-	eye_blind += 2
+	set_temp_blindness_if_lower(2 SECONDS)
 	visible_message(SPAN_NOTICE("[src] blinks."), SPAN_NOTICE("You blink."))
 	to_chat(src, SPAN_NOTICE("You blink.")) //Cant use visible_message's self function as you're technically blind when blinking.
 	BITSET(hud_updateflag, BLINK_HUD)

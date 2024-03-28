@@ -92,7 +92,7 @@
 	if (usr.incapacitated() || anchored)
 		return
 
-	src.set_dir(turn(src.dir, -90))
+	src.setDir(turn(src.dir, -90))
 
 /obj/machinery/atmospherics/binary/oxyregenerator/verb/rotate_anticlockwise()
 	set category = "Object"
@@ -102,7 +102,7 @@
 	if (usr.incapacitated() || anchored)
 		return
 
-	src.set_dir(turn(src.dir, 90))
+	src.setDir(turn(src.dir, 90))
 
 /obj/machinery/atmospherics/binary/oxyregenerator/Process(delay)
 	..()

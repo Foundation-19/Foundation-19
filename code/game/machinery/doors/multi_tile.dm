@@ -24,11 +24,11 @@
 	..()
 	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
 		if(connections in list(WEST, EAST, EAST|WEST))
-			set_dir(SOUTH)
+			setDir(SOUTH)
 		else
-			set_dir(WEST)
+			setDir(WEST)
 	else
-		set_dir(SOUTH)
+		setDir(SOUTH)
 
 /obj/machinery/door/airlock/multi_tile/update_connections(propagate = 0)
 	var/dirs = 0

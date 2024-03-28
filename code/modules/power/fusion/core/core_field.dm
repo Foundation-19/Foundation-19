@@ -398,7 +398,7 @@
 					continue
 				var/decl/fusion_reaction/cur_reaction = get_fusion_reaction(cur_p_react, cur_s_react)
 				if(cur_reaction && plasma_temperature >= cur_reaction.minimum_energy_level)
-					LAZYDISTINCTADD(possible_reactions, cur_reaction)
+					LAZYOR(possible_reactions, cur_reaction)
 
 			//if there are no possible reactions here, abandon this primary reactant and move on
 			if(!LAZYLEN(possible_reactions))

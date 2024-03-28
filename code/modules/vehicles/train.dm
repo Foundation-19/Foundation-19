@@ -59,7 +59,7 @@
 			var/mob/living/M = A
 			visible_message(SPAN_WARNING("[src] knocks over [M]!"))
 			var/def_zone = ran_zone()
-			M.apply_effects(5, 5)				//knock people down if you hit them
+			M.apply_effects(stun = 5, weaken = 5)				//knock people down if you hit them
 			M.apply_damage(22 / move_delay, BRUTE, def_zone)	// and do damage according to how fast the train is going
 			if(istype(load, /mob/living/carbon/human))
 				var/mob/living/D = load
@@ -167,7 +167,7 @@
 	//latch with src as the follower
 	lead = T
 	T.tow = src
-	set_dir(lead.dir)
+	setDir(lead.dir)
 
 	if(user)
 		to_chat(user, SPAN_NOTICE("You hitch \the [src] to \the [T]."))

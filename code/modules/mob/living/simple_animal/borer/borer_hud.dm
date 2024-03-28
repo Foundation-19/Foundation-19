@@ -1,21 +1,21 @@
 /mob/living/simple_animal/borer
 	var/list/hud_elements = list()
-	var/obj/screen/intent/hud_intent_selector
-	var/obj/screen/borer/toggle_host_control/hud_toggle_control
-	var/obj/screen/borer/inject_chemicals/hud_inject_chemicals
-	var/obj/screen/borer/leave_host/hud_leave_host
+	var/atom/movable/screen/intent/hud_intent_selector
+	var/atom/movable/screen/borer/toggle_host_control/hud_toggle_control
+	var/atom/movable/screen/borer/inject_chemicals/hud_inject_chemicals
+	var/atom/movable/screen/borer/leave_host/hud_leave_host
 
 /mob/living/simple_animal/borer/proc/reset_ui_callback()
 	if(world.time >= last_special)
 		for(var/obj/thing in hud_elements)
 			thing.color = null
 
-/obj/screen/borer
+/atom/movable/screen/borer
 	icon = 'icons/mob/borer_ui.dmi'
 	alpha = 0
 	invisibility = INVISIBILITY_MAXIMUM
 
-/obj/screen/borer/Click(location, control, params)
+/atom/movable/screen/borer/Click(location, control, params)
 	if(!istype(usr, /mob/living/simple_animal/borer))
 		return FALSE
 	if(usr.stat == DEAD)
@@ -25,12 +25,12 @@
 		return FALSE
 	return TRUE
 
-/obj/screen/borer/toggle_host_control
+/atom/movable/screen/borer/toggle_host_control
 	name = "Seize Control"
 	icon_state = "seize_control"
 	screen_loc = "WEST-3,NORTH-1"
 
-/obj/screen/borer/toggle_host_control/Click(location, control, params)
+/atom/movable/screen/borer/toggle_host_control/Click(location, control, params)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -82,12 +82,12 @@
 
 	return TRUE
 
-/obj/screen/borer/inject_chemicals
+/atom/movable/screen/borer/inject_chemicals
 	name = "Inject Chemicals"
 	icon_state = "inject_chemicals"
 	screen_loc = "WEST-2,NORTH-1"
 
-/obj/screen/borer/inject_chemicals/Click(location, control, params)
+/atom/movable/screen/borer/inject_chemicals/Click(location, control, params)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -109,12 +109,12 @@
 	worm.chemicals -= 50
 	return TRUE
 
-/obj/screen/borer/leave_host
+/atom/movable/screen/borer/leave_host
 	name = "Leave Host"
 	icon_state = "leave_host"
 	screen_loc = "WEST-1,NORTH-1"
 
-/obj/screen/borer/leave_host/Click(location, control, params)
+/atom/movable/screen/borer/leave_host/Click(location, control, params)
 	. = ..()
 	if(!.)
 		return FALSE

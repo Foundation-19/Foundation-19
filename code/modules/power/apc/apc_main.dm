@@ -72,7 +72,7 @@
 	// offset 22 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
-		set_dir(ndir)
+		setDir(ndir)
 
 	if(areastring)
 		area = get_area_by_name(areastring)

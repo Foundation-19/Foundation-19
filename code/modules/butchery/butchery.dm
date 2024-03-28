@@ -137,7 +137,7 @@
 /obj/structure/kitchenspike/on_update_icon()
 	cut_overlays()
 	if(occupant)
-		occupant.set_dir(SOUTH)
+		occupant.setDir(SOUTH)
 		var/image/I = image(null)
 		I.appearance = occupant
 		var/matrix/M = matrix()

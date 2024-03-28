@@ -77,7 +77,7 @@
 	var/ranged_attack_delay = null
 	var/special_attack_delay = null
 
-	var/ranged_attack_cooldown = DEFAULT_ATTACK_COOLDOWN
+	var/ranged_attack_cooldown = CLICK_CD_ATTACK
 
 	//Mob interaction
 	var/list/friends = list()		// Mobs on this list wont get attacked regardless of faction status.

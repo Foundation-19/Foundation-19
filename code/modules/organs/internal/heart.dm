@@ -107,7 +107,7 @@
 			pulse++
 
 /obj/item/organ/internal/heart/proc/handle_heartbeat()
-	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || is_below_sound_pressure(get_turf(owner)))
+	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || HAS_TRAIT(owner, TRAIT_HEAR_HEARTBEAT) || is_below_sound_pressure(get_turf(owner)))
 		//PULSE_THREADY - maximum value for pulse, currently it 5.
 		//High pulse value corresponds to a fast rate of heartbeat.
 		//Divided by 2, otherwise it is too slow.
@@ -186,7 +186,7 @@
 				FONT_HUGE(SPAN_DANGER("Blood sprays out from your [spray_organ]!"))
 			)
 			owner.Stun(1)
-			owner.eye_blurry = 2
+			owner.set_eye_blur_if_lower(3 SECONDS)
 
 			//AB occurs every heartbeat, this only throttles the visible effect
 			next_blood_squirt = world.time + 80

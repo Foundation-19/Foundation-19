@@ -66,12 +66,20 @@
 		return
 
 	log_ability_use(user, "basic encryption hack", A, 0)	// Does not notify admins, but it's still logged for reference.
+
+	var/atom/movable/screen/alert/hackingapc/hacking_apc
+	hacking_apc = user.throw_alert(ALERT_HACKING_APC, /atom/movable/screen/alert/hackingapc)
+	hacking_apc.target = A
+
 	to_chat(user, "Beginning APC system override...")
-	sleep(300)
+	sleep(30 SECONDS)
 	to_chat(user, "APC hack completed. Uploading modified operation software..")
-	sleep(200)
+	sleep(20 SECONDS)
 	to_chat(user, "Restarting APC to apply changes..")
-	sleep(100)
+	sleep(10 SECONDS)
+
+	user.clear_alert(ALERT_HACKING_APC)
+
 	if(A)
 		A.ai_hack(user)
 		if(A.hacker == user)
@@ -169,7 +177,7 @@
 			continue
 		remaining_apcs += A
 
-	var/duration = (remaining_apcs.len * 100)		// Calculates duration for announcing system
+	var/duration = (remaining_apcs.len * 10 SECONDS)	// Calculates duration for announcing system
 	if(user.hack_can_fail)								// Two types of announcements. Short hacks trigger immediate warnings. Long hacks are more "progressive".
 		spawn(0)
 			sleep(duration/5)
@@ -190,15 +198,23 @@
 			command_announcement.Announce("We have traced the intrude#, it seem& t( e yo3r AI s7stem, it &# *#ck@ng th$ sel$ destru$t mechani&m, stop i# bef*@!)$#&&@@  <CONNECTION LOST>", "Network Monitoring")
 
 	to_chat(user, "## BEGINNING SYSTEM OVERRIDE.")
-	to_chat(user, "## ESTIMATED DURATION: [round((duration+300)/600)] MINUTES")
+	to_chat(user, "## ESTIMATED DURATION: [round((duration + 30 SECONDS) / (1 MINUTE))] MINUTES")
 	user.system_override = 1
 	// Now actually begin the hack. Each APC takes 10 seconds.
 	for(var/obj/machinery/power/apc/A in shuffle(remaining_apcs))
-		sleep(100)
+
+		var/atom/movable/screen/alert/hackingapc/hacking_apc
+		hacking_apc = user.throw_alert(ALERT_HACKING_APC, /atom/movable/screen/alert/hackingapc)
+		hacking_apc.target = A
+
+		sleep(10 SECONDS)
 		if(!user || user.stat == DEAD)
 			return
 		if(!A || !istype(A) || A.aidisabled)
 			continue
+
+		user.clear_alert(ALERT_HACKING_APC)
+
 		A.ai_hack(user)
 		if(A.hacker == user)
 			to_chat(user, "## OVERRIDDEN: [A.name]")

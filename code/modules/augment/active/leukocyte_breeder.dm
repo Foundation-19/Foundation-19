@@ -64,4 +64,4 @@
 					owner.emote(pick("cough", "sneeze"))
 				if (prob(3))
 					to_chat(owner, SPAN_WARNING(pick("You feel uncomfortably hot.", "Your head aches.", "You feel lightheaded.")))
-					owner.dizziness += rand(3, 5)
+					owner.adjust_dizzy(rand(3 SECONDS, 5 SECONDS))

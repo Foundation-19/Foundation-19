@@ -1,24 +1,24 @@
 /datum/hud/pai/FinalizeInstantiation()
 	adding = list()
-	var/obj/screen/using
+	var/atom/movable/screen/using
 
-	using = new /obj/screen/pai/software()
+	using = new /atom/movable/screen/pai/software()
 	using.SetName("Software Interface")
 	adding += using
 
-	using = new /obj/screen/pai/subsystems()
+	using = new /atom/movable/screen/pai/subsystems()
 	using.SetName("Subsystems")
 	adding += using
 
-	using = new /obj/screen/pai/shell()
+	using = new /atom/movable/screen/pai/shell()
 	using.SetName("Toggle Chassis")
 	adding += using
 
-	using = new /obj/screen/pai/rest()
+	using = new /atom/movable/screen/pai/rest()
 	using.SetName("Rest")
 	adding += using
 
-	using = new /obj/screen/pai/light()
+	using = new /atom/movable/screen/pai/light()
 	using.SetName("Toggle Light")
 	adding += using
 
@@ -26,74 +26,74 @@
 	mymob.client.screen += adding
 	inventory_shown = 0
 
-/obj/screen/pai
+/atom/movable/screen/pai
 	icon = 'icons/mob/screen/pai.dmi'
 
-/obj/screen/pai/Click()
+/atom/movable/screen/pai/Click()
 	if(!isobserver(usr) && (!usr.incapacitated() || usr.resting))
 		OnClick()
 
-/obj/screen/pai/proc/OnClick()
+/atom/movable/screen/pai/proc/OnClick()
 
-/obj/screen/pai/software
+/atom/movable/screen/pai/software
 	name = "Software Interface"
 	icon_state = "pai"
 	screen_loc = ui_pai_software
 
-/obj/screen/pai/software/OnClick()
+/atom/movable/screen/pai/software/OnClick()
 	var/mob/living/silicon/pai/pAI = usr
 	pAI.paiInterface()
 
-/obj/screen/pai/shell
+/atom/movable/screen/pai/shell
 	name = "Toggle Chassis"
 	icon_state = "pai_holoform"
 	screen_loc = ui_pai_shell
 
-/obj/screen/pai/shell/OnClick()
+/atom/movable/screen/pai/shell/OnClick()
 	var/mob/living/silicon/pai/pAI = usr
 	if(pAI.is_in_card)
 		pAI.unfold()
 	else
 		pAI.fold()
 
-/obj/screen/pai/chassis
+/atom/movable/screen/pai/chassis
 	name = "Holochassis Appearance Composite"
 	icon_state = "pai_holoform"
 
-/obj/screen/pai/rest
+/atom/movable/screen/pai/rest
 	name = "Rest"
 	icon_state = "pai_rest"
 	screen_loc = ui_pai_rest
 
-/obj/screen/pai/rest/OnClick()
+/atom/movable/screen/pai/rest/OnClick()
 	var/mob/living/silicon/pai/pAI = usr
 	pAI.lay_down()
 
-/obj/screen/pai/light
+/atom/movable/screen/pai/light
 	name = "Toggle Integrated Lights"
 	icon_state = "light"
 	screen_loc = ui_pai_light
 
-/obj/screen/pai/light/OnClick()
+/atom/movable/screen/pai/light/OnClick()
 	var/mob/living/silicon/pai/pAI = usr
 	pAI.toggle_integrated_light()
 
-/obj/screen/pai/pull
+/atom/movable/screen/pai/pull
 	name = "pull"
 	icon_state = "pull1"
 
-/obj/screen/pai/pull/OnClick()
+/atom/movable/screen/pai/pull/OnClick()
 	var/mob/living/silicon/pai/pAI = usr
 	pAI.stop_pulling()
 	pAI.pullin.screen_loc = null
 	pAI.client.screen -= pAI.pullin
 
-/obj/screen/pai/subsystems
+/atom/movable/screen/pai/subsystems
 	name = "SubSystems"
 	icon_state = "subsystems"
 	screen_loc = ui_pai_subsystems
 
-/obj/screen/pai/subsystems/OnClick()
+/atom/movable/screen/pai/subsystems/OnClick()
 	var/mob/living/silicon/pai/pAI = usr
 	var/ss_name = input(usr, "Activates the given subsystem", "Subsystems", "") in pAI.silicon_subsystems_by_name
 	if (!ss_name)

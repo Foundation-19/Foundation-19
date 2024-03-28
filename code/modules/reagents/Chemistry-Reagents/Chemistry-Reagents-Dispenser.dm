@@ -60,7 +60,7 @@
 		M.adjustToxLoss(removed * 1.5)
 
 /datum/reagent/ammonia/overdose(mob/living/carbon/M, alien)
-	if(alien != IS_VOX || volume > overdose*6)
+	if(alien != IS_VOX || overdose_percentage() > 6)
 		..()
 
 /datum/reagent/carbon
@@ -113,10 +113,35 @@
 	var/strength = 10 // This is, essentially, units between stages - the lower, the stronger. Less fine tuning, more clarity.
 	var/toxicity = 1
 
-	var/druggy = 0
+	var/adj_druggy = 0
 	var/adj_temp = 0
 	var/targ_temp = 310
 	var/halluci = 0
+
+	/**
+	 * Boozepower Chart
+	 *
+	 * Higher numbers equal higher hardness, higher hardness equals more intense alcohol poisoning
+	 *
+	 * Note that all higher effects of alcohol poisoning will inherit effects for smaller amounts
+	 * (i.e. light poisoning inherts from slight poisoning)
+	 * In addition, severe effects won't always trigger unless the drink is poisonously strong
+	 * All effects don't start immediately, but rather get worse over time; the rate is affected by the imbiber's alcohol tolerance
+	 * (see [/datum/status_effect/inebriated])
+	 *
+	 * * 0: Non-alcoholic
+	 * * 1-10: Barely classifiable as alcohol - occassional slurring
+	 * * 11-20: Slight alcohol content - slurring
+	 * * 21-30: Below average - imbiber begins to look slightly drunk
+	 * * 31-40: Just below average - no unique effects
+	 * * 41-50: Average - mild disorientation, imbiber begins to look drunk
+	 * * 51-60: Just above average - disorientation, vomiting, imbiber begins to look heavily drunk
+	 * * 61-70: Above average - small chance of blurry vision, imbiber begins to look smashed
+	 * * 71-80: High alcohol content - blurry vision, imbiber completely shitfaced
+	 * * 81-90: Extremely high alcohol content - heavy toxin damage, passing out
+	 * * 91-100: Dangerously toxic - swift death
+	 */
+	var/boozepower = 65
 
 	glass_name = "ethanol"
 	glass_desc = "A well-known alcohol with a variety of applications."
@@ -138,37 +163,20 @@
 /datum/reagent/ethanol/affect_ingest(mob/living/carbon/M, alien, removed)
 	M.adjust_nutrition(nutriment_factor * removed)
 	M.adjust_hydration(hydration_factor * removed)
-	var/strength_mod = 1
+
+	var/adjusted_boozepower = boozepower
 	if(alien == IS_SKRELL)
-		strength_mod *= 5
+		adjusted_boozepower *= 5
 	if(alien == IS_DIONA)
-		strength_mod = 0
+		adjusted_boozepower = 0
 
-	M.add_chemical_effect(CE_ALCOHOL, 1)
-	var/effective_dose = M.chem_doses[type] * strength_mod * (1 + volume/60) //drinking a LOT will make you go down faster
+	// Short sips of light cocktails won't get you blackout drunk, no matter how many of them you have. Negative boozepower (i.e. getting LESS drunk) always works though.
+	if(M.get_drunk_amount() < volume * adjusted_boozepower || adjusted_boozepower < 0)
+		// Volume, power, and server alcohol rate effect how quickly one gets drunk
+		M.adjust_drunk_effect(sqrt(volume) * adjusted_boozepower * removed * ALCOHOL_RATE)
 
-	if(effective_dose >= strength) // Early warning
-		M.make_dizzy(6) // It is decreased at the speed of 3 per tick
-	if(effective_dose >= strength * 2) // Slurring
-		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
-		M.slurring = max(M.slurring, 30)
-	if(effective_dose >= strength * 3) // Confusion - walking in random directions
-		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
-		M.confused = max(M.confused, 20)
-	if(effective_dose >= strength * 4) // Blurry vision
-		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
-		M.eye_blurry = max(M.eye_blurry, 10)
-	if(effective_dose >= strength * 5) // Drowsyness - periodically falling asleep
-		M.add_chemical_effect(CE_PAINKILLER, 150/strength)
-		M.drowsyness = max(M.drowsyness, 20)
-	if(effective_dose >= strength * 6) // Toxic dose
-		M.add_chemical_effect(CE_ALCOHOL_TOXIC, toxicity)
-	if(effective_dose >= strength * 7) // Pass out
-		M.Paralyse(20)
-		M.Sleeping(30)
-
-	if(druggy != 0)
-		M.druggy = max(M.druggy, druggy)
+	if(adj_druggy != 0)
+		M.set_drugginess_if_lower(adj_druggy)
 
 	if(adj_temp > 0 && M.bodytemperature < targ_temp) // 310 is the normal bodytemp. 310.055
 		M.bodytemperature = min(targ_temp, M.bodytemperature + (adj_temp * TEMPERATURE_DAMAGE_COEFFICIENT))

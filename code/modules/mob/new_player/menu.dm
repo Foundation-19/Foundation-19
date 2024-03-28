@@ -8,38 +8,38 @@
 
 /datum/hud/new_player/FinalizeInstantiation(ui_style, ui_color, ui_alpha)
 	adding = list()
-	var/obj/screen/using
+	var/atom/movable/screen/using
 
-	using = new /obj/screen/new_player/title(src)
+	using = new /atom/movable/screen/new_player/title(src)
 	using.hud_ref = weakref(src)
 	adding += using
 
-	using = new /obj/screen/new_player/selection/join_game(src)
+	using = new /atom/movable/screen/new_player/selection/join_game(src)
 	using.hud_ref = weakref(src)
 	adding += using
 
-	using = new /obj/screen/new_player/selection/settings(src)
+	using = new /atom/movable/screen/new_player/selection/settings(src)
 	using.hud_ref = weakref(src)
 	adding += using
 
-	using = new /obj/screen/new_player/selection/manifest(src)
+	using = new /atom/movable/screen/new_player/selection/manifest(src)
 	using.hud_ref = weakref(src)
 	adding += using
 
-	using = new /obj/screen/new_player/selection/observe(src)
+	using = new /atom/movable/screen/new_player/selection/observe(src)
 	using.hud_ref = weakref(src)
 	adding += using
 
 	mymob.client.screen = list()
 	mymob.client.screen += adding
 
-/obj/screen/new_player
+/atom/movable/screen/new_player
 	icon = 'icons/misc/hudmenu.dmi'
 	layer = HUD_ABOVE_ITEM_LAYER
 
 //I am way too lazy to port map specific lobby screens since I heavily doubt we'll ever use them.
 
-/obj/screen/new_player/title
+/atom/movable/screen/new_player/title
 	name = "Lobby art"
 	icon = 'maps/site53/icons/lobby.dmi'
 	icon_state = "title_new"
@@ -47,7 +47,7 @@
 	var/lobby_index = 1
 	var/lobby_transition_delay = 100
 
-/obj/screen/new_player/title/Initialize()
+/atom/movable/screen/new_player/title/Initialize()
 	var/list/lobby_screens = icon_states(icon)
 
 	icon_state = lobby_screens[lobby_index]
@@ -56,7 +56,7 @@
 
 	return ..()
 
-/obj/screen/new_player/title/proc/cycle_lobby_screen(list/lobby_screens)
+/atom/movable/screen/new_player/title/proc/cycle_lobby_screen(list/lobby_screens)
 	var/datum/hud/hud = hud_ref.resolve()
 	if(!istype(hud) || !isnewplayer(hud.mymob))
 		return
@@ -71,30 +71,30 @@
 	else
 		addtimer(CALLBACK(src, PROC_REF(cycle_lobby_screen), lobby_screens), lobby_transition_delay, TIMER_UNIQUE | TIMER_CLIENT_TIME | TIMER_OVERRIDE)
 
-/obj/screen/new_player/selection/New(datum/hud/H)
+/atom/movable/screen/new_player/selection/New(datum/hud/H)
 	color = null
 	hud_ref = weakref(H)
 	return ..()
 
-/obj/screen/new_player/selection/MouseEntered(location, control, params)
+/atom/movable/screen/new_player/selection/MouseEntered(location, control, params)
 	animate(src, color = color_rotation(30), time = 3)
 	return ..()
 
-/obj/screen/new_player/selection/MouseExited(location, control, params)
+/atom/movable/screen/new_player/selection/MouseExited(location, control, params)
 	animate(src, color = null, time = 3)
 	return ..()
 
-/obj/screen/new_player/selection/join_game
+/atom/movable/screen/new_player/selection/join_game
 	name = "Join Game"
 	icon_state = "unready"
 	screen_loc = "NORTH, CENTER-7"
 
-/obj/screen/new_player/selection/join_game/Initialize()
+/atom/movable/screen/new_player/selection/join_game/Initialize()
 	. = ..()
 	RegisterSignal(SSticker, COMSIG_TICKER_STARTED, PROC_REF(update_lobby_icon))
 	update_lobby_icon()
 
-/obj/screen/new_player/selection/join_game/Click()
+/atom/movable/screen/new_player/selection/join_game/Click()
 	var/datum/hud/hud = hud_ref.resolve()
 	if(!istype(hud))
 		return
@@ -116,7 +116,7 @@
 
 	update_lobby_icon()
 
-/obj/screen/new_player/selection/join_game/proc/update_lobby_icon()
+/atom/movable/screen/new_player/selection/join_game/proc/update_lobby_icon()
 	SIGNAL_HANDLER
 
 	var/datum/hud/hud = hud_ref.resolve()
@@ -132,12 +132,12 @@
 	else
 		icon_state = "joingame"
 
-/obj/screen/new_player/selection/settings
+/atom/movable/screen/new_player/selection/settings
 	name = "Setup"
 	icon_state = "setup"
 	screen_loc = "NORTH-1,CENTER-7"
 
-/obj/screen/new_player/selection/settings/Click()
+/atom/movable/screen/new_player/selection/settings/Click()
 	var/datum/hud/hud = hud_ref.resolve()
 	if(!istype(hud))
 		return
@@ -149,12 +149,12 @@
 	client.prefs.open_setup_window(src) //see code\modules\client\preferences.dm
 	return TRUE
 
-/obj/screen/new_player/selection/manifest
+/atom/movable/screen/new_player/selection/manifest
 	name = "Crew Manifest"
 	icon_state = "manifest"
 	screen_loc = "NORTH-2,CENTER-7"
 
-/obj/screen/new_player/selection/manifest/Click()
+/atom/movable/screen/new_player/selection/manifest/Click()
 	var/datum/hud/hud = hud_ref.resolve()
 	if(!istype(hud))
 		return
@@ -165,12 +165,12 @@
 		return
 	player.ViewManifest() //see code\modules\mob\new_player\new_player.dm
 
-/obj/screen/new_player/selection/observe
+/atom/movable/screen/new_player/selection/observe
 	name = "Observe"
 	icon_state = "observe"
 	screen_loc = "NORTH-3,CENTER-7"
 
-/obj/screen/new_player/selection/observe/Click()
+/atom/movable/screen/new_player/selection/observe/Click()
 	var/datum/hud/hud = hud_ref.resolve()
 	if(!istype(hud))
 		return

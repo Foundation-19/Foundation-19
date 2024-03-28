@@ -63,7 +63,7 @@
 	if(!..())
 		return 0
 
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	setClickCooldown(CLICK_CD_ATTACK)
 	A.attack_generic(src,rand(5,6),"bitten")
 
 /*
@@ -86,7 +86,7 @@
 		return
 
 	//should have already been set if we are attacking a mob, but it doesn't hurt and will cover attacking non-mobs too
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	setClickCooldown(CLICK_CD_ATTACK)
 	var/mob/living/M = A
 	if(!istype(M))
 		A.attack_generic(src, (is_adult ? rand(20,40) : rand(5,25)), "glomped") // Basic attack.
@@ -141,7 +141,7 @@
 
 	if(!..())
 		return
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	setClickCooldown(CLICK_CD_ATTACK)
 	if(istype(A,/mob/living))
 		if(!get_natural_weapon() || a_intent == I_HELP)
 			custom_emote(1,"[friendly] [A]!")

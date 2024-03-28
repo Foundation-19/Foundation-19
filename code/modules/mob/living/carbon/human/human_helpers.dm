@@ -50,13 +50,9 @@
 	equipment_tint_total = 0
 	equipment_see_invis	= 0
 	equipment_vision_flags = 0
-	equipment_prescription = 0
 	equipment_light_protection = 0
 	equipment_darkness_modifier = 0
 	equipment_overlays.Cut()
-
-	if(istype(glasses, /obj/item/clothing/glasses))
-		process_prescription(glasses)
 
 	var/binoc_check
 	if(client)
@@ -77,10 +73,6 @@
 			add_clothing_protection(r_ear)
 		if(istype(src.l_ear, /obj/item/clothing/ears) && (src.l_ear != src.r_ear)) //Must avoid adding up ear coverings that cover both ears
 			add_clothing_protection(l_ear)
-
-/mob/living/carbon/human/proc/process_prescription(obj/item/clothing/glasses/G)
-	if(G)
-		equipment_prescription += G.prescription
 
 /mob/living/carbon/human/proc/process_glasses(obj/item/clothing/glasses/G)
 	if(G?.active)
@@ -243,17 +235,27 @@
 	if(!E)
 		return
 	var/safety = eyecheck()
+
+	if(safety < FLASH_PROTECTION_MAJOR)
+		if(E.damage > 10)
+			to_chat(src, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
+		if (E.damage >= E.min_bruised_damage)
+			to_chat(src, SPAN_DANGER("You go blind!"))
+			adjust_temp_blindness(5 SECONDS)
+			adjust_eye_blur(5 SECONDS)
+			adjust_temp_nearsightedness(10 SECONDS)
+
 	switch(safety)
 		if(FLASH_PROTECTION_MODERATE)
 			to_chat(src, SPAN_WARNING("Your eyes sting a little."))
 			E.damage += rand(1, 2)
 			if(E.damage > 12)
-				eye_blurry += rand(3,6)
+				adjust_eye_blur(rand(4 SECONDS, 5 SECONDS))
 		if(FLASH_PROTECTION_MINOR)
 			to_chat(src, SPAN_WARNING("Your eyes stings!"))
 			E.damage += rand(1, 4)
 			if(E.damage > 10)
-				eye_blurry += rand(3,6)
+				adjust_eye_blur(rand(4 SECONDS, 5 SECONDS))
 				E.damage += rand(1, 4)
 		if(FLASH_PROTECTION_NONE)
 			to_chat(src, SPAN_WARNING("Your eyes burn!"))
@@ -262,18 +264,8 @@
 				E.damage += rand(4,10)
 		if(FLASH_PROTECTION_REDUCED)
 			to_chat(src, SPAN_DANGER("Your equipment intensifies the welder's glow. Your eyes itch and burn severely."))
-			eye_blurry += rand(12,20)
+			adjust_eye_blur(rand(14 SECONDS, 18 SECONDS))
 			E.damage += rand(12, 16)
-	if(safety<FLASH_PROTECTION_MAJOR)
-		if(E.damage > 10)
-			to_chat(src, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
-		if (E.damage >= E.min_bruised_damage)
-			to_chat(src, SPAN_DANGER("You go blind!"))
-			eye_blind = 5
-			eye_blurry = 5
-			disabilities |= NEARSIGHTED
-			spawn(100)
-				disabilities &= ~NEARSIGHTED
 
 /mob/living/carbon/human/proc/make_grab(mob/living/carbon/human/attacker, mob/living/carbon/human/victim, grab_tag)
 	var/obj/item/grab/G
@@ -292,7 +284,7 @@
 // Returns true if, and only if, the human has gone from uncloaked to cloaked
 /mob/living/carbon/human/proc/add_cloaking_source(datum/cloaking_source)
 	var/has_uncloaked = clean_cloaking_sources()
-	LAZYDISTINCTADD(cloaking_sources, weakref(cloaking_source))
+	LAZYOR(cloaking_sources, weakref(cloaking_source))
 
 	// We don't present the cloaking message if the human was already cloaked just before cleanup.
 	if(!has_uncloaked && LAZYLEN(cloaking_sources) == 1)
@@ -359,7 +351,7 @@
 
 /mob/living/carbon/human/proc/has_meson_effect()
 	. = FALSE
-	for(var/obj/screen/equipment_screen in equipment_overlays) // check through our overlays to see if we have any source of the meson overlay
+	for(var/atom/movable/screen/equipment_screen in equipment_overlays) // check through our overlays to see if we have any source of the meson overlay
 		if (equipment_screen.icon_state == "meson_hud")
 			return TRUE
 

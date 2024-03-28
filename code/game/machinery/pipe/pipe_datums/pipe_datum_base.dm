@@ -76,7 +76,7 @@ GLOBAL_LIST_EMPTY(all_disposal_pipe_datums_by_category)
 			new_item.color = D.pipe_color
 		new_item.SetName(D.name)
 		new_item.desc = D.desc
-		new_item.set_dir(D.dir)
+		new_item.setDir(D.dir)
 		new_item.icon = D.build_icon
 		new_item.icon_state = D.build_icon_state
 
@@ -85,7 +85,7 @@ GLOBAL_LIST_EMPTY(all_disposal_pipe_datums_by_category)
 		var/obj/structure/disposalconstruct/new_item = new build_path(loc)
 		new_item.SetName(D.name)
 		new_item.desc = D.desc
-		new_item.set_dir(D.dir)
+		new_item.setDir(D.dir)
 		new_item.icon = D.build_icon
 		new_item.built_icon_state = D.build_icon_state
 		new_item.set_density(1)

@@ -34,7 +34,7 @@
 		to_chat(M, SPAN_NOTICE("But you already know all there is to know."))
 	else
 		to_chat(M, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_QUICK)
 
 /obj/item/book/tome/afterattack(atom/A, mob/user, proximity)
 	if(!proximity || !iscultist(user))

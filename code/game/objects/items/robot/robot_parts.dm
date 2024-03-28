@@ -11,7 +11,7 @@
 	var/bp_tag = null // What part is this?
 	dir = SOUTH
 
-/obj/item/robot_parts/set_dir()
+/obj/item/robot_parts/setDir()
 	return
 
 /obj/item/robot_parts/New(newloc, model)

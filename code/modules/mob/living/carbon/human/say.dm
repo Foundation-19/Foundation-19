@@ -146,12 +146,7 @@
 	return verb
 
 /mob/living/carbon/human/handle_speech_problems(list/message_data)
-	if(silent || (sdisabilities & MUTED))
-		to_chat(src, SPAN_WARNING("You try to speak, but cannot."))
-		message_data[1] = ""
-		. = 1
-
-	else if(istype(wear_mask, /obj/item/clothing/mask))
+	if(istype(wear_mask, /obj/item/clothing/mask))
 		var/obj/item/clothing/mask/M = wear_mask
 		if(M.voicechange)
 			message_data[1] = pick(M.say_messages)

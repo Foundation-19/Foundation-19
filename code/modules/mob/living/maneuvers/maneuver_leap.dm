@@ -9,9 +9,13 @@
 		var/old_pass_flags = user.pass_flags
 		user.pass_flags |= PASS_FLAG_TABLE
 		user.visible_message(SPAN_DANGER("\The [user] takes a flying leap!"))
+
 		strength = max(2, strength * user.get_jump_distance())
 		if(reflexively)
 			strength *= reflexive_modifier
+		if(HAS_TRAIT(target, TRAIT_CLUMSY))
+			strength -= 2
+
 		user.jump_layer_shift()
 		animate(user, pixel_z = 16, time = 3, easing = SINE_EASING | EASE_IN)
 		animate(pixel_z = user.default_pixel_z, time = 3, easing = SINE_EASING | EASE_OUT)

@@ -17,7 +17,7 @@
 	var/mode = 1;
 
 /obj/item/device/robotanalyzer/attack(mob/living/M as mob, mob/living/user as mob)
-	if((MUTATION_CLUMSY in user.mutations) && prob(50))
+	if(((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		to_chat(user, text(SPAN_WARNING("You try to analyze the floor's vitals!")))
 		for(var/mob/O in viewers(M, null))
 			O.show_message(text(SPAN_WARNING("[user] has analyzed the floor's vitals!")), 1)

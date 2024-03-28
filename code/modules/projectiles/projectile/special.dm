@@ -158,7 +158,7 @@
 /obj/item/projectile/beam/mindflayer/on_hit(atom/target, blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		M.confused += rand(5,8)
+		M.adjust_confusion(rand(6 SECONDS, 10 SECONDS))
 
 /obj/item/projectile/chameleon
 	name = "bullet"

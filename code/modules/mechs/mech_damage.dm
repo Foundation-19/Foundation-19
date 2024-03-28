@@ -25,7 +25,7 @@
 			effect = max((1-(get_armors_by_zone(null, IRRADIATE)/100))*effect/(blocked+1),0)
 		var/mob/living/pilot = pick(pilots)
 		return pilot.apply_effect(effect, effecttype, blocked)
-	if(!(effecttype in list(PAIN, STUTTER, EYE_BLUR, DROWSY, STUN, WEAKEN)))
+	if(!(effecttype in list(PAIN, STUN, WEAKEN)))
 		. = ..()
 
 /mob/living/exosuit/resolve_item_attack(obj/item/I, mob/living/user, def_zone)

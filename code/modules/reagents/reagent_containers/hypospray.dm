@@ -46,7 +46,7 @@
 		if(!user.do_skilled(INJECTION_PORT_DELAY, SKILL_MEDICAL, M))
 			return
 
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_QUICK)
 	user.do_attack_animation(M)
 
 	if(user != M && !M.incapacitated() && time) // you're injecting someone else who is concious, so apply the device's intrisic delay

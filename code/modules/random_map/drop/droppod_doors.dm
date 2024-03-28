@@ -65,5 +65,5 @@
 	door_bottom.deploying = 1
 	door_bottom.set_density(0)
 	door_bottom.set_opacity(0)
-	door_bottom.set_dir(src.dir)
+	door_bottom.setDir(src.dir)
 	door_bottom.icon_state = "rampbottom"

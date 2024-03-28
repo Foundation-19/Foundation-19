@@ -137,17 +137,14 @@
 
 	sdisabilities = 0
 	if(host)
-		blinded = host.blinded
-		eye_blind = host.eye_blind
-		eye_blurry = host.eye_blurry
-		if(host.sdisabilities & BLINDED)
-			sdisabilities |= BLINDED
+		if(host.is_blind() && !is_blind_from(BORER_HOST_TRAIT))
+			become_blind(BORER_HOST_TRAIT)
+		else if(!host.is_blind() && is_blind_from(BORER_HOST_TRAIT))
+			cure_blind(BORER_HOST_TRAIT)
 		if(host.sdisabilities & DEAFENED)
 			sdisabilities |= DEAFENED
 	else
-		blinded =    FALSE
-		eye_blind =  0
-		eye_blurry = 0
+		cure_blind(BORER_HOST_TRAIT)
 
 	. = ..()
 	if(!.)

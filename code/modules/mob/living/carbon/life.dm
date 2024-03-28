@@ -24,7 +24,7 @@
 		// eye, ear, brain damages
 		handle_disabilities()
 
-		//all special effects, stunned, weakened, jitteryness, hallucination, sleeping, etc
+		//all special effects, stunned, weakened, hallucination, sleeping, etc
 		handle_statuses()
 
 		handle_viruses()

@@ -328,7 +328,7 @@ steam.start() -- spawns the effect
 	if(R.wear_mask != null)
 		return FALSE
 
-	R.confused = max(R.confused, 3)
+	R.set_confusion_if_lower(3)
 	if(prob(25))
 		R.vomit(rand(2, 15), 5)
 	return
@@ -448,7 +448,7 @@ steam.start() -- spawns the effect
 	src.on = 0
 
 /datum/effect/effect/system/trail/proc/effect(obj/effect/effect/T)
-	T.set_dir(src.holder.dir)
+	T.setDir(src.holder.dir)
 	return
 
 /obj/effect/effect/ion_trails

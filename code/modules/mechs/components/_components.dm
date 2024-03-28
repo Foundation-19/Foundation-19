@@ -36,7 +36,7 @@
 		show_missing_parts(user)
 
 //These icons have multiple directions but before they're attached we only want south.
-/obj/item/mech_component/set_dir()
+/obj/item/mech_component/setDir()
 	..(SOUTH)
 
 /obj/item/mech_component/proc/show_missing_parts(mob/user)

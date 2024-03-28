@@ -44,7 +44,7 @@
 			location.ChangeTurf(build_type)
 		else
 			var/atom/instance = new build_type (location)
-			instance.set_dir(host.dir)
+			instance.setDir(host.dir)
 
 /datum/build_mode/build/CanUseTopic(mob/user)
 	if (!is_admin(user))

@@ -179,7 +179,7 @@
 					if(!past_damage_threshold(2) && prob(damprob))
 						take_internal_damage(1)
 				if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-					owner.eye_blurry = max(owner.eye_blurry,6)
+					owner.set_eye_blur_if_lower(2 SECONDS)
 					damprob = owner.chem_effects[CE_STABLE] ? 40 : 80
 					if(!past_damage_threshold(4) && prob(damprob))
 						take_internal_damage(1)
@@ -187,7 +187,7 @@
 						owner.Paralyse(rand(1,3))
 						to_chat(owner, SPAN_WARNING("You feel very [pick("dizzy","woozy","faint")]..."))
 				if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-					owner.eye_blurry = max(owner.eye_blurry,6)
+					owner.set_eye_blur_if_lower(2 SECONDS)
 					damprob = owner.chem_effects[CE_STABLE] ? 60 : 100
 					if(!past_damage_threshold(6) && prob(damprob))
 						take_internal_damage(1)
@@ -195,7 +195,7 @@
 						owner.Paralyse(3,5)
 						to_chat(owner, SPAN_WARNING("You feel extremely [pick("dizzy","woozy","faint")]..."))
 				if(-(INFINITY) to BLOOD_VOLUME_SURVIVE) // Also see heart.dm, being below this point puts you into cardiac arrest.
-					owner.eye_blurry = max(owner.eye_blurry,6)
+					owner.set_eye_blur_if_lower(2 SECONDS)
 					damprob = owner.chem_effects[CE_STABLE] ? 80 : 100
 					if(prob(damprob))
 						take_internal_damage(1)
@@ -224,10 +224,10 @@
 	if(damage >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
 		var/damage_secondary = damage * 0.20
 		owner.flash_eyes()
-		owner.eye_blurry += damage_secondary
-		owner.confused += damage_secondary
+		owner.adjust_eye_blur(damage_secondary SECONDS)
+		owner.adjust_confusion(damage_secondary SECONDS)
 		if(damage >= 25)
-			owner.Weaken(round(damage_secondary*0.5, 1))
+			owner.Weaken(round(damage_secondary / 2, 1))
 		if(prob(30))
 			addtimer(CALLBACK(src, PROC_REF(brain_damage_callback), damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
 
@@ -235,7 +235,7 @@
 	if (!owner)
 		return
 	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")
-	owner.confused += damage
+	owner.adjust_confusion(damage SECONDS)
 
 /obj/item/organ/internal/brain/proc/handle_disabilities()
 	if(owner.stat)
@@ -249,23 +249,23 @@
 				owner.emote("twitch")
 			if(2 to 3)
 				owner.say("[prob(50) ? ";" : ""][pick("SHIT", "PISS", "FUCK", "CUNT", "COCKSUCKER", "MOTHERFUCKER", "TITS")]")
-		owner.make_jittery(100)
+		owner.adjust_jitter(10 SECONDS)
 	else if((owner.disabilities & NERVOUS) && prob(10))
-		owner.stuttering = max(10, owner.stuttering)
+		owner.set_stutter_if_lower(3 SECONDS)
 
 /obj/item/organ/internal/brain/proc/handle_damage_effects()
 	if(owner.stat)
 		return
 	if(damage > 0 && prob(1))
 		owner.custom_pain("Your head feels numb and painful.",10)
-	if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
+	if(is_bruised() && prob(1) && !owner.has_status_effect(/datum/status_effect/eye_blur))
 		to_chat(owner, SPAN_WARNING("It becomes hard to see for some reason."))
-		owner.eye_blurry = 10
+		owner.set_eye_blur_if_lower(10 SECONDS)
 	if(damage >= 0.5*max_damage && prob(1) && owner.get_active_hand())
 		to_chat(owner, SPAN_DANGER("Your hand won't respond properly, and you drop what you are holding!"))
 		owner.unequip_item()
 	if(damage >= 0.6*max_damage)
-		owner.slurring = max(owner.slurring, 2)
+		owner.adjust_slurring(3 SECONDS)
 	if(is_broken())
 		if(!owner.lying)
 			to_chat(owner, SPAN_DANGER("You black out!"))

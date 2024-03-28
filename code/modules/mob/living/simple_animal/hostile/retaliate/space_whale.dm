@@ -53,7 +53,7 @@
 	if(prob(2))
 		color = pick(species_colors)
 
-/mob/living/simple_animal/hostile/retaliate/space_whale/set_dir()
+/mob/living/simple_animal/hostile/retaliate/space_whale/setDir()
 	..()
 	switch(dir)
 		if(NORTH, SOUTH)

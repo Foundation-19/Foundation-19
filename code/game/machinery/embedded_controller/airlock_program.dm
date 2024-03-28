@@ -340,7 +340,7 @@
 		"tag" = tag,
 		"sigtype" = "command",
 		"set_power" = power,
-		"set_direction" = direction ? "release" : "siphon",
+		"setDirection" = direction ? "release" : "siphon",
 		"set_external_pressure" = pressure,
 		"status" = TRUE
 	)

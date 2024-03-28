@@ -51,8 +51,8 @@
 		if(H == user)
 			continue
 		to_chat(H, SPAN_USERDANGER("Disgusting mess of organs and blood splatters all over you!"))
-		H.confused += amt_confusion
-		H.eye_blurry += amt_blurry
+		H.adjust_confusion(amt_confusion)
+		H.adjust_eye_blur(amt_blurry)
 		addtimer(CALLBACK(H, /mob/living/proc/empty_stomach, TRUE), rand(2, 10))
 		for(var/i = 1 to rand(1, 4))
 			addtimer(CALLBACK(H, /mob/living/proc/empty_stomach, TRUE), rand(10, 40) * (i + 1))

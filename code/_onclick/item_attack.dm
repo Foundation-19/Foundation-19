@@ -70,7 +70,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	var/hit_zone = 0
 	var/mob/living/attackee = null
 
-//I would prefer to rename this attack_as_weapon(), but that would involve touching hundreds of files.
+//I would prefer to rename this attack_as_weapon(), but that would involve touching hundreds of files. // lol ok, TODO: search and replace this
 /obj/item/proc/attack(mob/living/M, mob/living/user, target_zone, animate = TRUE)
 	if(!force || (item_flags & ITEM_FLAG_NO_BLUDGEON))
 		return 0
@@ -78,6 +78,9 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		return 0
 	if (user.a_intent == I_HELP && !attack_ignore_harm_check)
 		return FALSE
+
+	if (HAS_TRAIT(user, TRAIT_PACIFISM))
+		return
 
 	/////////////////////////
 
@@ -118,7 +121,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
  * This is just for inheritance.
  */
 /mob/proc/get_attack_speed()
-	return DEFAULT_ATTACK_COOLDOWN
+	return CLICK_CD_ATTACK
 
 /**
  * W is the item being used in the attack, if any. modifier is if the attack should be longer or shorter than usual, for whatever reason.

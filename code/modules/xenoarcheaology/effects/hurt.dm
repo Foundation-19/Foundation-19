@@ -15,7 +15,7 @@
 			C.adjustBrainLoss(rand(1,5) * weakness)
 			C.apply_damage(25 * weakness, IRRADIATE, damage_flags = DAM_DISPERSED)
 			C.set_nutrition(min(50 * weakness, C.nutrition))
-			C.make_dizzy(6 * weakness)
+			C.adjust_dizzy(6 SECONDS * weakness)
 			C.weakened += 6 * weakness
 
 /datum/artifact_effect/hurt/DoEffectAura()

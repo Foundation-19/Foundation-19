@@ -305,7 +305,7 @@
 	else
 		target.turf_collision(T, target.throw_speed / 2)
 	if(prob(50))
-		target.set_dir(GLOB.reverse_dir[target.dir])
+		target.setDir(GLOB.reverse_dir[target.dir])
 
 /datum/species/nabber/get_additional_examine_text(mob/living/carbon/human/H)
 	if(H.species.get_bodytype() == SPECIES_MONARCH_QUEEN)

@@ -59,6 +59,7 @@
 		return
 
 	var/list/modifiers = params2list(params)
+
 	if(modifiers["right"] && modifiers["ctrl"])
 		CtrlRightClickOn(A)
 		return 1
@@ -97,8 +98,8 @@
 	if(!canClick()) // in the year 2000...
 		return
 
-	if(restrained())
-		setClickCooldown(10)
+	if(restrained() || HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+		setClickCooldown(CLICK_CD_HANDCUFFED)
 		RestrainedClickOn(A)
 		return 1
 
@@ -130,7 +131,7 @@
 				W.afterattack(A, src, 1, params) // 1 indicates adjacency
 		else
 			if(ismob(A)) // No instant mob attacking
-				setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+				setClickCooldown(CLICK_CD_ATTACK)
 			UnarmedAttack(A, 1)
 
 		trigger_aiming(TARGET_CAN_CLICK)
@@ -151,7 +152,7 @@
 					W.afterattack(A, src, 1, params) // 1: clicking something Adjacent
 			else
 				if(ismob(A)) // No instant mob attacking
-					setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+					setClickCooldown(CLICK_CD_ATTACK)
 				UnarmedAttack(A, 1)
 
 			trigger_aiming(TARGET_CAN_CLICK)
@@ -166,7 +167,7 @@
 	return 1
 
 /mob/proc/setClickCooldown(timeout)
-	next_move = max(world.time + timeout, next_move)
+	next_move = max(world.time + (timeout * next_move_modifier), next_move)
 
 /mob/proc/canClick()
 	if(config.no_click_cooldown || next_move <= world.time)
@@ -357,7 +358,7 @@
 	return
 
 /mob/living/LaserEyes(atom/A)
-	setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	setClickCooldown(CLICK_CD_QUICK)
 	var/turf/T = get_turf(src)
 
 	var/obj/item/projectile/beam/LE = new (T)
@@ -407,14 +408,14 @@
 
 GLOBAL_LIST_INIT(click_catchers, create_click_catcher())
 
-/obj/screen/click_catcher
+/atom/movable/screen/click_catcher
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "click_catcher"
 	plane = CLICKCATCHER_PLANE
 	mouse_opacity = MOUSE_OPACITY_OPAQUE
 	screen_loc = "CENTER-7,CENTER-7"
 
-/obj/screen/click_catcher/Destroy()
+/atom/movable/screen/click_catcher/Destroy()
 	SHOULD_CALL_PARENT(FALSE)
 	return QDEL_HINT_LETMELIVE
 
@@ -422,11 +423,11 @@ GLOBAL_LIST_INIT(click_catchers, create_click_catcher())
 	. = list()
 	for(var/i = 0, i<15, i++)
 		for(var/j = 0, j<15, j++)
-			var/obj/screen/click_catcher/CC = new()
+			var/atom/movable/screen/click_catcher/CC = new()
 			CC.screen_loc = "NORTH-[i],EAST-[j]"
 			. += CC
 
-/obj/screen/click_catcher/Click(location, control, params)
+/atom/movable/screen/click_catcher/Click(location, control, params)
 	var/list/modifiers = params2list(params)
 	if(modifiers["middle"] && istype(usr, /mob/living/carbon))
 		var/mob/living/carbon/C = usr

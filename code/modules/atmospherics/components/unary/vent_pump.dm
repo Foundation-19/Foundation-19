@@ -454,7 +454,7 @@
 	)
 	receive_and_write = list(
 		"set_power" = /decl/public_access/public_variable/use_power,
-		"set_direction" = /decl/public_access/public_variable/pump_dir,
+		"setDirection" = /decl/public_access/public_variable/pump_dir,
 		"set_checks" = /decl/public_access/public_variable/pump_checks,
 		"set_internal_pressure" = /decl/public_access/public_variable/pressure_bound,
 		"set_external_pressure" = /decl/public_access/public_variable/pressure_bound/external,

@@ -160,7 +160,7 @@
 					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
+			user.setClickCooldown(CLICK_CD_ATTACK) //puts a limit on how fast people can eat/drink things
 			self_feed_message(user)
 			reagents.trans_to_mob(user, issmall(user) ? ceil(amount_per_transfer_from_this/2) : amount_per_transfer_from_this, CHEM_INGEST)
 			feed_sound(user)
@@ -182,7 +182,8 @@
 
 			other_feed_message_start(user, target)
 
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			user.setClickCooldown(CLICK_CD_ATTACK)
+
 			if(!do_after(user, 4 SECONDS, target, bonus_percentage = 25))
 				return
 

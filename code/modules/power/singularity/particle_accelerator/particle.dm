@@ -17,7 +17,7 @@
 
 /obj/effect/accelerated_particle/Initialize(maploading, dir = 2)
 	. = ..()
-	set_dir(dir)
+	setDir(dir)
 	if(movement_range > 20)
 		movement_range = 20
 	active = TRUE

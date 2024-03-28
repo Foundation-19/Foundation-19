@@ -501,11 +501,11 @@
 
 	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
 		if(connections in list(WEST, EAST, EAST|WEST))
-			set_dir(SOUTH)
+			setDir(SOUTH)
 		else
-			set_dir(EAST)
+			setDir(EAST)
 	else
-		set_dir(SOUTH)
+		setDir(SOUTH)
 
 	if(density)
 		icon_state = "closed"

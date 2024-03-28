@@ -25,7 +25,7 @@
 
 /mob/living/carbon/alien/diona/hotkey_drop()
 	if(holding_item || hat)
-		drop_item()
+		drop_active_hand()
 	else
 		to_chat(usr, SPAN_WARNING("You have nothing to drop."))
 
@@ -66,9 +66,9 @@
 	set desc = "Drop the item you are currently holding inside."
 	set category = "IC"
 	set src = usr
-	drop_item()
+	drop_active_hand()
 
-/mob/living/carbon/alien/diona/drop_item()
+/mob/living/carbon/alien/diona/drop_active_hand()
 	if(holding_item && unEquip(holding_item))
 		visible_message(SPAN_NOTICE("\The [src] regurgitates \the [holding_item]."))
 	else if(hat && unEquip(hat))

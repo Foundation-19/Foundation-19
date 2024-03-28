@@ -20,8 +20,18 @@
 			H.InitializeHud()
 		ai_status_image = image('icons/misc/buildmode.dmi', src, "ai_0")
 
+	register_init_signals()
+
 /mob/living/examine(mob/user, distance, infix, suffix)
 	. = ..()
+
+	for(var/datum/status_effect/effect as anything in status_effects)
+		var/effect_text = effect.get_examine_text()
+		if(!effect_text)
+			continue
+
+		to_chat(user, effect_text)
+
 	if (admin_paralyzed)
 		to_chat(user, SPAN_DEBUG("OOC: They have been paralyzed by staff. Please avoid interacting with them unless cleared to do so by staff."))
 
@@ -163,7 +173,7 @@ default behaviour is:
 			..()
 			var/saved_dir = AM.dir
 			if (!istype(AM, /atom/movable) || AM.anchored)
-				if ((confused || (MUTATION_CLUMSY in mutations)) && !weakened && !MOVING_DELIBERATELY(src))
+				if ((has_status_effect(/datum/status_effect/confusion) || (MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY))) && !weakened && !MOVING_DELIBERATELY(src))
 					AM.slam_into(src)
 				return
 			if (!now_pushing)
@@ -187,7 +197,7 @@ default behaviour is:
 						step(G.assailant, get_dir(G.assailant, AM))
 						G.adjust_position()
 				if(saved_dir)
-					AM.set_dir(saved_dir)
+					AM.setDir(saved_dir)
 				now_pushing = 0
 
 /proc/swap_density_check(mob/swapper, mob/swapee)
@@ -467,16 +477,11 @@ default behaviour is:
 	sdisabilities = 0
 	disabilities = 0
 
-	// fix blindness and deafness
-	blinded = 0
-	eye_blind = 0
-	eye_blurry = 0
+	// fix effects // TODO: move all of these to status effects
 	ear_deaf = 0
 	ear_damage = 0
-	drowsyness = 0
-	druggy = 0
-	jitteriness = 0
-	confused = 0
+
+	SEND_SIGNAL(src, COMSIG_LIVING_REJUVENATE)
 
 	heal_overall_damage(getBruteLoss(), getFireLoss())
 
@@ -568,7 +573,7 @@ default behaviour is:
 			M.UpdateFeed()
 	update_vision_cone()
 
-/mob/living/set_dir()
+/mob/living/setDir()
 	. = ..()
 	update_vision_cone()
 
@@ -630,13 +635,13 @@ default behaviour is:
 		if(isobj(pulling))
 			var/obj/O = pulling
 			if(O.w_class >= ITEM_SIZE_HUGE || O.density)
-				return set_dir(get_dir(src, pulling))
+				return setDir(get_dir(src, pulling))
 		if(isliving(pulling))
 			var/mob/living/L = pulling
 			// If pulled mob was bigger than us, we morelike will turn
 			// I made additional check in case if someone want a hand walk
 			if(L.mob_size > mob_size || L.lying || a_intent != I_HELP)
-				return set_dir(get_dir(src, pulling))
+				return setDir(get_dir(src, pulling))
 
 /mob/living/start_pulling(atom/movable/AM)
 	. = ..()
@@ -759,7 +764,7 @@ default behaviour is:
 		hud_used.rest_button?.icon_state = "rest_[resting]"
 
 //called when the mob receives a bright flash
-/mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(override_blindness_check || can_see())
 		..()
 		overlay_fullscreen("flash", type)
@@ -866,7 +871,7 @@ default behaviour is:
 		add_overlay(auras)
 
 /mob/living/proc/add_aura(obj/aura/aura)
-	LAZYDISTINCTADD(auras,aura)
+	LAZYOR(auras,aura)
 	update_icons()
 	return 1
 
@@ -892,24 +897,24 @@ default behaviour is:
 		. += 100
 	if(can_see())
 		. += 75
-	if(eye_blurry)
+	if(has_status_effect(/datum/status_effect/eye_blur))
 		. += 15
-	if(confused)
+	if(has_status_effect(/datum/status_effect/confusion))
 		. += 30
-	if(MUTATION_CLUMSY in mutations)
+	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY)))
 		. += 40
 
 /mob/living/proc/ranged_accuracy_mods()
 	. = 0
-	if(jitteriness)
+	if(has_status_effect(/datum/status_effect/jitter))
 		. -= 2
-	if(confused)
+	if(has_status_effect(/datum/status_effect/confusion))
 		. -= 2
 	if(can_see())
 		. -= 5
-	if(eye_blurry)
+	if(has_status_effect(/datum/status_effect/eye_blur))
 		. -= 1
-	if(MUTATION_CLUMSY in mutations)
+	if((MUTATION_CLUMSY in mutations) || (HAS_TRAIT(src, TRAIT_CLUMSY)))
 		. -= 3
 
 /mob/living/can_drown()
@@ -947,7 +952,7 @@ default behaviour is:
 	if(!paralysis && stat == CONSCIOUS)
 		visible_message(SPAN_DANGER("\The [src] starts having a seizure!"))
 		Paralyse(rand(8,16))
-		make_jittery(rand(150,200))
+		adjust_jitter(rand(15 SECONDS, 20 SECONDS))
 		adjustHalLoss(rand(50,60))
 
 /mob/living/proc/get_digestion_product()
@@ -983,6 +988,42 @@ default behaviour is:
 		exp_list[EXP_TYPE_SCP] = minutes
 
 	return exp_list
+
+/mob/living/verb/succumb(whispered as null)
+	set hidden = TRUE
+	if (!CAN_SUCCUMB(src))
+		to_chat(src, text="You are unable to succumb to death! This life continues.", type=MESSAGE_TYPE_INFO)
+		return
+	log_attack("Has [whispered ? "whispered his final words" : "succumbed to death"] with [round(health, 0.1)] points of health!")
+	adjustOxyLoss(health - config.health_threshold_dead)
+	updatehealth()
+	if(!whispered)
+		to_chat(src, SPAN_NOTICE("You have given up life and succumbed to death."))
+	//investigate_log("has succumbed to death.", INVESTIGATE_DEATHS) TODO: fix this shit up
+	death()
+
+/mob/living/set_stat(new_stat)
+	. = ..()
+	if(isnull(.))
+		return
+
+	switch(.) //Previous stat.
+		if(CONSCIOUS)
+			ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, STAT_TRAIT)
+		if(UNCONSCIOUS)
+			cure_blind(STAT_TRAIT)
+			REMOVE_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
+		if(DEAD)
+			NOOP
+
+	switch(stat) //Current stat.
+		if(CONSCIOUS)
+			REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, STAT_TRAIT)
+		if(UNCONSCIOUS)
+			become_blind(STAT_TRAIT)
+			ADD_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
+		if(DEAD)
+			NOOP
 
 /mob/living/proc/GetBloodColor()
 	return COLOR_BLOOD_HUMAN

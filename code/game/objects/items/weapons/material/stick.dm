@@ -31,7 +31,7 @@
 		//Playful poking is its own thing
 		user.visible_message(SPAN_NOTICE("[user] pokes [M] with [src]."), SPAN_NOTICE("You poke [M] with [src]."))
 		//Consider adding a check to see if target is dead
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		user.do_attack_animation(M)
 		return
 	return ..()

@@ -5,7 +5,7 @@
 /mob/Stat()
 	. = ..()
 	if(. && ability_master && ability_master.spell_objects)
-		for(var/obj/screen/ability/spell/screen in ability_master.spell_objects)
+		for(var/atom/movable/screen/ability/spell/screen in ability_master.spell_objects)
 			var/datum/spell/S = screen.spell
 			if(!istype(S))
 				ability_master.remove_ability(screen)
@@ -27,7 +27,7 @@
 		if(!mind.learned_spells)
 			mind.learned_spells = list()
 		if(ability_master && ability_master.spell_objects)
-			for(var/obj/screen/ability/spell/screen in ability_master.spell_objects)
+			for(var/atom/movable/screen/ability/spell/screen in ability_master.spell_objects)
 				var/datum/spell/S = screen.spell
 				mind.learned_spells |= S
 

@@ -9,7 +9,7 @@
 
 /datum/reagent/medicine/noexcutite/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien != IS_DIONA)
-		M.make_jittery(-50)
+		M.adjust_jitter(-50 SECONDS * removed)
 
 
 /datum/reagent/medicine/ethylredoxrazine
@@ -23,10 +23,10 @@
 	if(alien == IS_DIONA)
 		return
 
-	M.dizziness = max(M.dizziness - 10, 0)
-	M.drowsyness = max(M.drowsyness - 10, 0)
-	M.stuttering = max(M.stuttering - 10, 0)
-	M.confused = max(M.confused - 10, 0)
+	M.adjust_dizzy(-10 SECONDS * removed)
+	M.adjust_drowsiness(-10 SECONDS * removed)
+	M.adjust_stutter(-10 SECONDS * removed)
+	M.adjust_confusion(-5 SECONDS * removed)
 	var/datum/reagents/ingested = M.get_ingested_reagents()
 	if(ingested)
 		for(var/datum/reagent/R in ingested.reagent_list)
@@ -54,9 +54,9 @@
 
 	// Side effects
 	if(prob(15))
-		M.dizziness = clamp(M.dizziness + 15, M.dizziness, 50)
+		M.adjust_dizzy_up_to(15 SECONDS, 50 SECONDS)
 	if(prob(15))
-		M.confused = clamp(M.confused + 15, M.confused, 50)
+		M.adjust_confusion_up_to(5 SECONDS, 50 SECONDS)
 	// With liver damage, it will worsen it
 	var/obj/item/organ/internal/liver/L = M.internal_organs_by_name[BP_LIVER]
 	if(istype(L) && L.damage >= 5)
@@ -81,7 +81,7 @@
 
 	// Side effects
 	if(prob(15))
-		M.druggy = clamp(M.druggy + 15, M.druggy, 50)
+		M.adjust_drugginess_up_to(15 SECONDS, 50 SECONDS)
 	if(prob(1) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.vomit()
@@ -89,7 +89,7 @@
 	if(prob(3))
 		to_chat(M, SPAN_WARNING("Your head hurts!"))
 	// Slightly helps fix blurry vision
-	M.eye_blurry = max(M.eye_blurry - 2, 0)
+	M.adjust_eye_blur(-2 SECONDS * removed)
 	// Helps with nicotine addiction
 	M.RemoveAddictionPoints(/datum/addiction/nicotine, removed * 5)
 
@@ -101,8 +101,8 @@
 	value = 4.2
 
 /datum/reagent/medicine/imidazoline/affect_blood(mob/living/carbon/M, alien, removed)
-	M.eye_blurry = max(M.eye_blurry - 5, 0)
-	M.eye_blind = max(M.eye_blind - 5, 0)
+	M.adjust_eye_blur(-5 SECONDS * removed)
+	M.adjust_temp_blindness(-5 SECONDS)
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]

@@ -93,7 +93,7 @@
 		LAZYREMOVE(shells, chambered)
 
 /obj/item/gun/launcher/net/borg/finish_loading(obj/item/net_shell/S, mob/user)
-	LAZYDISTINCTADD(shells, S)
+	LAZYOR(shells, S)
 	update_chambered_shell()
 
 /obj/item/gun/launcher/net/borg/unload(mob/user)

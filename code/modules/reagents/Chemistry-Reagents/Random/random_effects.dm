@@ -240,18 +240,6 @@
 	mode = RANDOM_CHEM_EFFECT_INT
 	desc = "pain suppression"
 
-/decl/random_chem_effect/random_properties/ce_alcohol
-	chem_effect_define = CE_ALCOHOL
-	beneficial = -1
-	desc = "intoxication"
-
-/decl/random_chem_effect/random_properties/ce_alcotoxic
-	chem_effect_define = CE_ALCOHOL_TOXIC
-	beneficial = -1
-	maximum = 8
-	mode = RANDOM_CHEM_EFFECT_INT
-	desc = "liver damage"
-
 /decl/random_chem_effect/random_properties/ce_gofast
 	chem_effect_define = CE_SPEEDBOOST
 	beneficial = 1

@@ -119,8 +119,10 @@
 #define APPEARANCE_COMMON (APPEARANCE_DNA2|APPEARANCE_RACE|APPEARANCE_GENDER|APPEARANCE_SKIN|APPEARANCE_ALL_HAIR|APPEARANCE_EYES|APPEARANCE_LANG)
 
 // Click cooldown
-#define DEFAULT_ATTACK_COOLDOWN 8 //Default timeout for aggressive actions
-#define DEFAULT_QUICK_COOLDOWN  4
+#define CLICK_CD_ATTACK 8 //Default timeout for aggressive actions
+#define CLICK_CD_RESIST 20
+#define CLICK_CD_QUICK  4
+#define CLICK_CD_HANDCUFFED 10
 
 #define FAST_WEAPON_COOLDOWN 3
 #define DEFAULT_WEAPON_COOLDOWN 5
@@ -445,5 +447,10 @@
 #define FAKE_INVIS_ALPHA_THRESHOLD 127 // If something's alpha var is at or below this number, certain things will pretend it is invisible.
 
 #define ADJUSTED_GLIDE_SIZE(DELAY) (CEILING((WORLD_ICON_SIZE / max((DELAY), world.tick_lag) * world.tick_lag) - world.tick_lag, 1) + (config.glide_size_delay))
+
+/// Returns whether or not the given mob can succumb
+#define CAN_SUCCUMB(target) (HAS_TRAIT(target, TRAIT_CRITICAL_CONDITION))
+/// Returns true if the given mob is incapacitated or dead.
+#define IS_DEAD_OR_INCAP(mob) (mob.incapacitated() || mob.stat)
 
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;

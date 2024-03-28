@@ -79,7 +79,7 @@
 		return 0
 	if(user.incapacitated())
 		return 0
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		return 0
 	if(!proximity)
 		return 0

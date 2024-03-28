@@ -17,11 +17,11 @@
 	playsound(src, 'sounds/effects/fastbeep.ogg', 20)
 
 /proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, verbose)
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return
 
-	if ((MUTATION_CLUMSY in user.mutations) && prob(50))
+	if (((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		user.visible_message("<span class='notice'>\The [user] runs \the [scanner] over the floor.")
 		to_chat(user, SPAN_NOTICE("<b>Scan results for the floor:</b>"))
 		to_chat(user, "Overall Status: Healthy</span>")
