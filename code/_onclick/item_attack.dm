@@ -86,7 +86,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	/////////////////////////
 	user.setClickCooldown(attack_cooldown + w_class)
 	if(animate)
-		user.do_attack_animation(M)
+		attack_animation(user)
 	if(!M.aura_check(AURA_TYPE_WEAPON, src, user))
 		return 0
 

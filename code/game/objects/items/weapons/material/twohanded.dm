@@ -135,7 +135,7 @@
 	w_class = ITEM_SIZE_LARGE
 	throwforce = 7
 	attack_verb = list("smashed", "beaten", "slammed", "smacked", "struck", "battered", "bonked")
-	hitsound = 'sounds/weapons/genhit3.ogg'
+	hitsound = SFX_SWING_HIT
 	default_material = MATERIAL_MAPLE
 	max_force = 40	//for wielded
 	force_multiplier = 1.1           // 22 when wielded with weight 20 (steel)
