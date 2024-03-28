@@ -13,7 +13,7 @@
 	desc = "A helmet with 'COMBAT MEDIC' printed on the back."
 	icon_state = "medichelm"
 	body_parts_covered = HEAD|EYES
-	armor = list(melee = 40, bullet = 35, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 45, bullet = 50, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
 	action_button_name = null
