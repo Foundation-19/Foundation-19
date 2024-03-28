@@ -150,3 +150,9 @@
 	contains = list(/obj/item/stack/material/wood/yew/twentyfive)
 	cost = 10
 	containername = "yew planks crate"
+
+/decl/hierarchy/supply_pack/materials/boron10
+	name = "10 boron sheets"
+	contains = list(/obj/item/stack/material/boron/ten)
+	cost = 10
+	containername = "boron sheets crate"
