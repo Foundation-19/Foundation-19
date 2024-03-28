@@ -93,6 +93,9 @@
 /obj/effect/floor_decal/corner/beige/bordercorner{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "as" = (
@@ -159,6 +162,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -402,6 +408,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/innerentrancehallway)
@@ -1395,6 +1404,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
@@ -2579,6 +2591,7 @@
 	d1 = 32;
 	icon_state = "32-1"
 	},
+/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers,
 /turf/simulated/open,
 /area/site53/maintenance/surfacewest)
 "gx" = (
@@ -2589,6 +2602,9 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
@@ -2883,6 +2899,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
@@ -4864,6 +4883,23 @@
 /obj/structure/flora/grass/green,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"mU" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/maintenance/surfacewest)
+"nb" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/maintenance/surfacewest)
 "nd" = (
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/grass,
@@ -6221,6 +6257,10 @@
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"sY" = (
+/obj/structure/stairs/south,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "sZ" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
@@ -6275,6 +6315,9 @@
 	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
@@ -6511,6 +6554,9 @@
 	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
@@ -8281,7 +8327,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor,
 /area/site53/uez/mcrsubstation)
 "FS" = (
 /obj/machinery/camera/autoname{
@@ -8562,6 +8609,9 @@
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "HG" = (
@@ -8688,6 +8738,9 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
@@ -9508,6 +9561,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "Oi" = (
@@ -9931,7 +9987,10 @@
 	d2 = 0;
 	icon_state = "16-0"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
+	dir = 1
+	},
+/turf/simulated/floor,
 /area/site53/uez/mcrsubstation)
 "QP" = (
 /obj/effect/floor_decal/corner/yellow/three_quarters{
@@ -10008,6 +10067,9 @@
 "Rn" = (
 /obj/structure/lattice,
 /obj/structure/ladder,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
 /turf/simulated/open,
 /area/site53/maintenance/surfacewest)
 "Rx" = (
@@ -38295,7 +38357,7 @@ gl
 gm
 Ly
 gx
-gm
+mU
 bk
 dA
 dA
@@ -39836,7 +39898,7 @@ cQ
 bk
 gm
 gm
-Gg
+nb
 EA
 oD
 cX
@@ -40093,7 +40155,7 @@ bk
 bk
 gm
 gm
-Gg
+nb
 aN
 oD
 Lg
@@ -40350,7 +40412,7 @@ xP
 bk
 gm
 gm
-Gg
+nb
 gm
 oD
 bR
@@ -49901,7 +49963,7 @@ bO
 bO
 bm
 bm
-bm
+sY
 rm
 rm
 oS
@@ -50157,8 +50219,8 @@ rm
 rm
 rm
 rm
-bm
-bm
+rm
+rm
 rm
 oS
 oS
