@@ -1,4 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: 173 dirt in containment chamber is counted correctly
