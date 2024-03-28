@@ -130,6 +130,8 @@
 
 //called when src is thrown into hit_atom
 /atom/movable/proc/throw_impact(atom/hit_atom, datum/thrownthing/TT)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_IMPACT, hit_atom, TT)
+
 	if(istype(hit_atom,/mob/living))
 		var/mob/living/M = hit_atom
 		M.hitby(src,TT)

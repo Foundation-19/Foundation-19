@@ -94,6 +94,20 @@
 #define COMSIG_EXITED "exited"
 
 /*
+* Atom/Movable
+*/
+
+/// From base of atom/movable/throw_impact() after confirming a hit: (/atom/hit_atom, /datum/thrownthing/throwingdatum)
+#define COMSIG_MOVABLE_IMPACT "movable_impact"
+
+/*
+* Objects
+*/
+
+/// Sent from /obj/item/attack_atom(): (atom/attacked_atom, mob/living/user)
+#define COMSIG_ITEM_POST_ATTACK_ATOM "item_post_attack_atom"
+
+/*
 *	Mob
 */
 
