@@ -1,8 +1,6 @@
 /datum/spell/aoe_turf/exchange_wounds
 	name = "Exchange Wounds"
 	desc = "Syphon the wounds from your allies."
-	feedback = "EW"
-	school = "transmutation"
 	invocation = "Esh Yek Vai!"
 	invocation_type = INVOKE_SHOUT
 	charge_max = 400
@@ -16,6 +14,9 @@
 	time_between_channels = 20
 
 	hud_state = "wiz_exchange"
+
+	spell_cost = 2
+	mana_cost = 10
 
 /datum/spell/aoe_turf/exchange_wounds/perform()
 	amt_healed = 0

@@ -2,7 +2,7 @@
 	return
 
 /atom/proc/water_act(depth)
-	clean_blood()
+	clean()
 
 /atom/proc/return_fluid()
 	return null

@@ -45,7 +45,7 @@
 	playsound(T, explosion_warning_sound, (50 + explosion_delay), 1)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(user.loc, user.dir, user, explosion_delay + 2)
 	animate(D, alpha = 0, color = "#ff0000", transform = matrix()*1.8, time = explosion_delay)
-	addtimer(CALLBACK(src, .proc/do_explode, user, T), explosion_delay)
+	addtimer(CALLBACK(src, PROC_REF(do_explode), user, T), explosion_delay)
 
 /datum/random_ability/death/explosion/proc/do_explode(mob/living/user, turf/T)
 	if(!user || !T)

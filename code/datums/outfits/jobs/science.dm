@@ -1,6 +1,6 @@
 /decl/hierarchy/outfit/job/command/researchdirector
 	name = OUTFIT_JOB_NAME("Research Director")
-	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/rank/research_director/alt
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl5
@@ -76,3 +76,12 @@
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	glasses = /obj/item/clothing/glasses/science
 	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
+
+/decl/hierarchy/outfit/job/science/seniormentalist
+	name = OUTFIT_JOB_NAME("Senior Psychotronics Researcher")
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	shoes = /obj/item/clothing/shoes/black
+	id_type = /obj/item/card/id/sciencelvlp
+	l_pocket = /obj/item/material/coin/nullglass
+	l_ear = /obj/item/device/radio/headset/headset_sci

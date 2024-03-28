@@ -4,7 +4,7 @@
 	l_ear = /obj/item/device/radio/headset
 	r_pocket = /obj/item/teleportation_scroll
 	l_hand = /obj/item/staff
-	r_hand = /obj/item/spellbook
+	r_hand = /obj/item/spellbook/all_book_spells
 	back = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/storage/box = 1)
 	hierarchy_type = /decl/hierarchy/outfit/wizard

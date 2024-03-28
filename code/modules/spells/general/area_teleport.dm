@@ -1,8 +1,6 @@
 /datum/spell/area_teleport
 	name = "Teleport"
 	desc = "This spell teleports you to a type of area of your selection."
-	feedback = "TP"
-	school = "conjuration"
 	charge_max = 60 SECONDS
 	spell_flags = NEEDSCLOTHES
 	invocation = "Scyar Nila!"
@@ -18,6 +16,9 @@
 	cast_sound = 'sounds/effects/teleport.ogg'
 
 	hud_state = "wiz_tele"
+
+	spell_cost = 3
+	mana_cost = 5
 
 /datum/spell/area_teleport/before_cast()
 	return

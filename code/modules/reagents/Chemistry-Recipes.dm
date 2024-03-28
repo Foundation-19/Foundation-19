@@ -3166,3 +3166,13 @@
 		/datum/reagent/medicine/painkiller/tramadol/oxycodone = 1,
 		/datum/reagent/medicine/peridaxon = 1,
 		)
+
+/datum/chemical_reaction/sinlor
+	name = "Sinlor"
+	result = /datum/reagent/medicine/painkiller/sinlor
+	result_amount = 2
+	required_reagents = list(
+		/datum/reagent/grauel = 2,
+		/datum/reagent/medicine/painkiller/tramadol = 1,
+		/datum/reagent/medicine/inaprovaline = 1,
+		)

@@ -24,7 +24,7 @@
 			bot = department["names"]
 
 	var/list/isactive = new()
-	var/list/mil_ranks = list() // HTML to prepend to name
+	var/list/classes = list() // HTML to prepend to name
 	var/dat = {"
 	<head><style>
 		.manifest {border-collapse:collapse;width:100%;}
@@ -41,14 +41,8 @@
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
 		var/name = CR.get_formal_name()
 		var/rank = CR.get_job()
-		mil_ranks[name] = ""
 
-		if(GLOB.using_map.flags & MAP_HAS_RANK)
-			var/datum/mil_branch/branch_obj = mil_branches.get_branch(CR.get_branch())
-			var/datum/mil_rank/rank_obj = mil_branches.get_rank(CR.get_branch(), CR.get_rank())
-
-			if(branch_obj && rank_obj)
-				mil_ranks[name] = "<abbr title=\"[rank_obj.name], [branch_obj.name]\">[rank_obj.name_short]</abbr> "
+		classes[name] = "[CR.get_class()] "
 
 		if(OOC)
 			var/active = 0
@@ -88,7 +82,7 @@
 		if(names.len > 0)
 			dat += "<tr><th colspan=3>[department["header"]]</th></tr>"
 			for(var/name in names)
-				dat += "<tr class='candystripe'><td>[mil_ranks[name]][name]</td><td>[names[name]]</td><td>[isactive[name]]</td></tr>"
+				dat += "<tr class='candystripe'><td>[classes[name]][name]</td><td>[names[name]]</td><td>[isactive[name]]</td></tr>"
 
 	dat += "</table>"
 	dat = replacetext(dat, "\n", "") // so it can be placed on paper correctly
@@ -121,8 +115,7 @@
 			"name" = CR.get_name(),
 			"rank" = CR.get_job(),
 			"status" = CR.get_status(),
-			"branch" = CR.get_branch(),
-			"milrank" = CR.get_rank()
+			"class" = CR.get_class()
 		)))
 	return filtered_entries
 

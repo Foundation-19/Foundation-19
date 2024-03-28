@@ -1,4 +1,4 @@
-#define ANTIDEPRESSANT_MESSAGE_DELAY 5 MINUTES
+#define ANTIDEPRESSANT_MESSAGE_DELAY (5 MINUTES)
 /**
  * Antidepressants are meant to primarily heal sanity damage dealt to one's mind
  * although over some time.

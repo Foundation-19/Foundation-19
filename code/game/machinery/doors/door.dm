@@ -86,7 +86,7 @@
 	update_nearby_tiles(need_rebuild=1)
 
 /obj/machinery/door/Initialize()
-	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
+	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, PROC_REF(CheckPenetration))
 	. = ..()
 #ifdef UNIT_TEST
 	if(autoset_access)
@@ -476,7 +476,7 @@
 	operating = 0
 
 	//I shall not add a check every x ticks if a door has closed over some fire.
-	var/obj/fire/fire = locate() in loc
+	var/obj/hotspot/fire = locate() in loc
 	if(fire)
 		qdel(fire)
 	return
@@ -662,9 +662,9 @@
 /decl/public_access/public_method/open_door
 	name = "open door"
 	desc = "Opens the door if possible."
-	call_proc = /obj/machinery/door/proc/open
+	call_proc = TYPE_PROC_REF(/obj/machinery/door, open)
 
 /decl/public_access/public_method/toggle_door
 	name = "toggle door"
 	desc = "Toggles whether the door is open or not, if possible."
-	call_proc = /obj/machinery/door/proc/toggle
+	call_proc = TYPE_PROC_REF(/obj/machinery/door, toggle)

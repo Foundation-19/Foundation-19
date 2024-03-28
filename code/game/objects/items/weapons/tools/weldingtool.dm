@@ -175,7 +175,7 @@
 		if(M)
 			M.welding_eyecheck()//located in mob_helpers.dm
 			set_light(0.7, 2, 5, l_color = COLOR_LIGHT_CYAN)
-			addtimer(CALLBACK(src, /atom/proc/update_icon), 5)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 5)
 		return 1
 	else
 		if(M)
@@ -257,6 +257,7 @@
 				src.damtype = BURN
 			welding = 1
 			update_icon()
+			playsound(loc, 'sounds/items/welderactivate.ogg', 35, TRUE)
 			START_PROCESSING(SSobj, src)
 		else
 			if(M)
@@ -276,6 +277,7 @@
 		src.damtype = BRUTE
 		src.welding = 0
 		update_icon()
+		playsound(loc, 'sounds/items/welderdeactivate.ogg', 35, TRUE)
 
 /obj/item/weldingtool/attack(mob/living/M, mob/living/user, target_zone)
 	if(ishuman(M))

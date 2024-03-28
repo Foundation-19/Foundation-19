@@ -4,9 +4,9 @@
 /mob/living/simple_animal/hostile/giant_spider/phorogenic
 	desc = "Crystalline and purple, it makes you shudder to look at it. This one has haunting purple eyes."
 
-	icon_state = "phoron"
-	icon_living = "phoron"
-	icon_dead = "phoron_dead"
+	icon_state = "purple"
+	icon_living = "purple"
+	icon_dead = "purple_dead"
 
 	maxHealth = 225
 	health = 225
@@ -23,10 +23,10 @@
 	poison_type = /datum/reagent/toxin/phoron
 
 	var/exploded = FALSE
-	var/explosion_dev_range		= 1
-	var/explosion_heavy_range	= 2
-	var/explosion_light_range	= 4
-	var/explosion_flash_range	= 6
+	var/explosion_dev_range		= 0
+	var/explosion_heavy_range	= 1
+	var/explosion_light_range	= 3
+	var/explosion_flash_range	= 4
 
 	/// Lower bound for explosion delay.
 	var/explosion_delay_lower	= 3 SECONDS
@@ -34,13 +34,14 @@
 	var/explosion_delay_upper	= 5 SECONDS
 
 /mob/living/simple_animal/hostile/giant_spider/phorogenic/Initialize()
-	scale(1.25)
+	var/matrix/M = matrix()
+	M.Scale(1.25,1.25)
 	return ..()
 
 /mob/living/simple_animal/hostile/giant_spider/phorogenic/death()
 	visible_message(SPAN_DANGER("\The [src]'s body begins to rupture!"))
 	var/delay = rand(explosion_delay_lower, explosion_delay_upper)
-	addtimer(CALLBACK(src, .proc/flash, delay), 0)
+	addtimer(CALLBACK(src, PROC_REF(flash), delay), 0)
 
 	return ..()
 

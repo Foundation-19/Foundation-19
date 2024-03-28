@@ -1,4 +1,4 @@
-// Medium damage, Low health, Very high mobility
+// Medium damage, Low health, Very high mobility.
 // Ignores gravity and can "fly", temporarily turning non-dense
 // When attacked, can change its pixel position slightly, making it more difficult to hit
 
@@ -9,7 +9,7 @@
 	icon_living = "fly"
 	icon_dead = "fly_dead"
 	mob_size = MOB_SMALL
-	movement_cooldown = 2.5
+	movement_cooldown = 2.7
 
 	natural_weapon = /obj/item/natural_weapon/claws/floatfly
 
@@ -47,9 +47,15 @@
 	animate(src, pixel_z = 0, time = 3)
 	return ..()
 
+/mob/living/simple_animal/hostile/infestation/floatfly/movement_delay()
+	. = ..()
+	// Faster while flying
+	if(!density)
+		. -= 0.5
+
 /mob/living/simple_animal/hostile/infestation/floatfly/adjustBruteLoss(amount)
 	. = ..()
-	if(world.time > fly_cooldown && prob(amount * 5))
+	if(!stat && world.time > fly_cooldown && prob(amount * 5))
 		animate(src, pixel_x = default_pixel_x + rand(-10, 10), pixel_y = default_pixel_y + rand(-10, 10), time = 2)
 
 /mob/living/simple_animal/hostile/infestation/floatfly/Allow_Spacemove()
@@ -63,7 +69,7 @@
 	visible_message(SPAN_DANGER("\The [src] flies upwards!"))
 	animate(src, pixel_z = 16, time = 5)
 	default_pixel_z = 16
-	addtimer(CALLBACK(src, .proc/EndFlight), fly_duration)
+	addtimer(CALLBACK(src, PROC_REF(EndFlight)), fly_duration)
 
 /mob/living/simple_animal/hostile/infestation/floatfly/proc/EndFlight()
 	if(QDELETED(src) || stat == DEAD)

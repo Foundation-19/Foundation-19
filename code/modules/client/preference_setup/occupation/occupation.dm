@@ -114,33 +114,6 @@
 
 			for(var/datum/job/job in map_job_list)
 
-				var/datum/mil_rank/player_rank
-				var/datum/mil_branch/player_branch
-				var/branch_string = ""
-				var/rank_branch_string = ""
-				var/branch_rank = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
-				if(GLOB.using_map && (GLOB.using_map.flags & MAP_HAS_BRANCH) && LAZYLEN(branch_rank))
-					player_branch = mil_branches.get_branch(pref.branches[job.title])
-					if(player_branch)
-						if(LAZYLEN(branch_rank) > 1)
-							branch_string += "<td width='10%' align='left'><a href='?src=\ref[src];char_branch=1;checking_job=\ref[job]'>[player_branch.name_short || player_branch.name]</a></td>"
-						else
-							branch_string += "<td width='10%' align='left'>[player_branch.name_short || player_branch.name]</td>"
-				if(!branch_string)
-					branch_string = "<td>-</td>"
-				if(player_branch)
-					var/ranks = branch_rank[player_branch.name] || mil_branches.spawn_ranks(player_branch.name, S)
-					if(LAZYLEN(ranks))
-						player_rank = mil_branches.get_rank(player_branch.name, pref.ranks[job.title])
-						if(player_rank)
-							if(LAZYLEN(ranks) > 1)
-								rank_branch_string += "<td width='10%' align='left'><a href='?src=\ref[src];char_rank=1;checking_job=\ref[job]'>[player_rank.name_short || player_rank.name]</a></td>"
-							else
-								rank_branch_string += "<td width='10%' align='left'>[player_rank.name_short || player_rank.name]</td>"
-				if(!rank_branch_string)
-					rank_branch_string = "<td>-</td>"
-				rank_branch_string = "[branch_string][rank_branch_string]"
-
 				var/title = job.title
 				var/title_link = length(job.alt_titles) ? "<a href='?src=\ref[src];select_alt_title=\ref[job]'>[pref.GetPlayerAltTitle(job)]</a>" : job.title
 				if((title in SSjobs.titles_by_department(COM)) || (title == "AIC"))//Bold head jobs
@@ -157,15 +130,11 @@
 					bad_message = "<b>\[TIMELOCKED]</b>"
 				else if(jobban_isbanned(user, title))
 					bad_message = "<b>\[BANNED]</b>"
-				else if (!job.is_species_whitelist_allowed(user.client))
-					bad_message = "\[WHITELIST RESTRICTED ([job.use_species_whitelist])]"
 				else if(!job.player_old_enough(user.client))
 					var/available_in_days = job.available_in_days(user.client)
 					bad_message = "\[IN [(available_in_days)] DAYS]"
 				else if(LAZYACCESS(job.minimum_character_age, bodytype) && user.client && (user.client.prefs.age < job.minimum_character_age[bodytype]))
 					bad_message = "\[MIN CHAR AGE: [job.minimum_character_age[bodytype]]]"
-				else if(!job.is_species_allowed(S))
-					bad_message = "<b>\[SPECIES RESTRICTED]</b>"
 /* fix this
 				else if (job.is_job_whitelisted(user.client))
 					bad_message = "<b>\[WHITELISTED]</b>"
@@ -200,8 +169,7 @@
 					index = 0
 
 				. += "<tr bgcolor='[job.selection_color]'>"
-				if(rank_branch_string && rank_branch_string != "")
-					. += "[rank_branch_string]"
+				. += "<td width='10%' align='left'>[job.class]</td>"
 				. += "<td width='30%' align='left'>"
 
 				if(bad_message)
@@ -243,7 +211,7 @@
 							level_link = FONT_COLORED("#55cc55","High")
 						else
 							level_link = "<font color=black>Never</font>"
-					. += "<a href='?src=\ref[src];set_job=[title];inc_level=-1'>[level_link]</a>"
+					. += {"<a href='?src=\ref[src];set_job=[title];inc_level=-1' oncontextmenu='window.location.href="?src=\ref[src];set_job=[title];inc_level=1"; return false'>[level_link]</a>"}
 				. += "</td></tr>"
 			. += "</td></tr></table>"
 			. += "</center></table><center>"
@@ -258,47 +226,6 @@
 	. += "<a href='?src=\ref[src];reset_jobs=1'>\[Reset\]</a></center>"
 	. += "</tt><br>"
 	. = jointext(.,null)
-
-/datum/category_item/player_setup_item/proc/validate_branch_and_rank()
-
-	if(LAZYLEN(pref.branches))
-		for(var/job_name in pref.branches)
-			if(!(job_name in SSjobs.titles_to_datums))
-				pref.branches -= job_name
-
-	if(LAZYLEN(pref.ranks))
-		var/list/removing_ranks
-		for(var/job_name in pref.ranks)
-			var/datum/job/job = SSjobs.get_by_title(job_name, TRUE)
-			if(!job) LAZYADD(removing_ranks, job_name)
-		if(LAZYLEN(removing_ranks))
-			pref.ranks -= removing_ranks
-
-	var/datum/species/S = preference_species()
-	for(var/job_name in SSjobs.titles_to_datums)
-
-		var/datum/job/job = SSjobs.get_by_title(job_name)
-
-		var/datum/mil_branch/player_branch = pref.branches[job.title] ? mil_branches.get_branch(pref.branches[job.title]) : null
-		var/branch_rank = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
-		if(!player_branch || !(player_branch.name in branch_rank))
-			player_branch = LAZYLEN(branch_rank) ? mil_branches.get_branch(branch_rank[1]) : null
-
-		if(player_branch)
-			var/datum/mil_rank/player_rank = pref.ranks[job.title] ? mil_branches.get_rank(player_branch.name, pref.ranks[job.title]) : null
-			var/ranks = branch_rank[player_branch.name] || mil_branches.spawn_ranks(player_branch.name, S)
-			if(!player_rank || !(player_rank.name in ranks))
-				player_rank = LAZYLEN(ranks) ? mil_branches.get_rank(player_branch.name, ranks[1]) : null
-
-			// Now make the assignments
-			pref.branches[job.title] = player_branch.name
-			if(player_rank)
-				pref.ranks[job.title] = player_rank.name
-			else
-				pref.ranks -= job.title
-		else
-			pref.branches -= job.title
-			pref.ranks -= job.title
 
 /datum/category_item/player_setup_item/occupation/OnTopic(href, href_list, user)
 	if(href_list["reset_jobs"])
@@ -340,34 +267,6 @@
 		if(SetJob(user, set_job, set_to))
 			return (pref.equip_preview_mob ? TOPIC_REFRESH_UPDATE_PREVIEW : TOPIC_REFRESH)
 
-	else if(href_list["char_branch"])
-		var/datum/job/job = locate(href_list["checking_job"])
-		if(istype(job))
-			var/datum/species/S = preference_species()
-			var/list/options = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
-			var/choice = tgui_input_list(user, "Choose your branch of service.", options, CHARACTER_PREFERENCE_INPUT_TITLE)
-			if(choice && CanUseTopic(user) && mil_branches.is_spawn_branch(choice, S))
-				pref.branches[job.title] = choice
-				pref.ranks -= job.title
-				pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		// Check our skillset is still valid
-				validate_branch_and_rank()
-				return (pref.equip_preview_mob ? TOPIC_REFRESH_UPDATE_PREVIEW : TOPIC_REFRESH)
-			return TOPIC_REFRESH
-
-	else if(href_list["char_rank"])
-		var/datum/job/job = locate(href_list["checking_job"])
-		if(istype(job))
-			var/datum/mil_branch/branch = mil_branches.get_branch(pref.branches[job.title])
-			var/datum/species/S = preference_species()
-			var/list/branch_rank = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
-			var/list/options = branch_rank[branch.name] || mil_branches.spawn_ranks(branch.name, S)
-			var/choice = tgui_input_list(user, "Choose your rank.", options, CHARACTER_PREFERENCE_INPUT_TITLE)
-			if(choice && CanUseTopic(user) && mil_branches.is_spawn_rank(branch.name, choice, preference_species()))
-				pref.ranks[job.title] = choice
-				pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		// Check our skillset is still valid
-				validate_branch_and_rank()
-				return (pref.equip_preview_mob ? TOPIC_REFRESH_UPDATE_PREVIEW : TOPIC_REFRESH)
-			return TOPIC_REFRESH
 	else if(href_list["set_skills"])
 		var/rank = href_list["set_skills"]
 		var/datum/job/job = SSjobs.get_by_title(rank, TRUE)
@@ -526,7 +425,6 @@
 
 /datum/category_item/player_setup_item/proc/prune_occupation_prefs()
 	prune_job_prefs()
-	validate_branch_and_rank()
 
 /datum/category_item/player_setup_item/occupation/proc/ResetJobs()
 	pref.job_high = null
@@ -535,7 +433,6 @@
 	pref.player_alt_titles.Cut()
 	pref.branches = list()
 	pref.ranks = list()
-	validate_branch_and_rank()
 
 /datum/preferences/proc/GetPlayerAltTitle(datum/job/job)
 	return (job.title in player_alt_titles) ? player_alt_titles[job.title] : job.title

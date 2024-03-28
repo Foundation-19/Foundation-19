@@ -11,8 +11,7 @@
 	alt_titles = list("Facility Director")
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/command/facilitydir
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	class = CLASS_A
 	hud_icon = "hudsitedirector"
 
 	total_positions = 1
@@ -21,7 +20,7 @@
 	access = list()				// see get_access() override
 	minimal_access = list()		// see get_access() override
 
-	requirements = list(EXP_TYPE_COMMAND = 1800)
+	requirements = list(EXP_TYPE_COMMAND = 1200)
 
 /datum/job/captain/get_access()
 	return get_all_site_access()
@@ -41,8 +40,7 @@
 	minimal_player_age = 15
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/command/headofhr
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	class = CLASS_A
 	hud_icon = "hudhumanresources"
 	alt_titles = list("Head of Personnel")
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_BUR = 300)
@@ -77,13 +75,9 @@
 	minimal_player_age = 15
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
-	allowed_branches = list(/datum/mil_branch/security)
+	class = CLASS_B
 	hud_icon = "hudcommsofficer"
-	requirements = list("Communications Technician" = 600)
-	allowed_ranks = list(
-	/datum/mil_rank/security/w5,
-	/datum/mil_rank/security/w6
-	)
+	requirements = list("Communications Technician" = 360)
 
 	access = list(
 		ACCESS_SCIENCE_LVL1,
@@ -145,8 +139,7 @@
 		"Communications Dispatcher"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/command/commstech
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudcommsprogrammer"
 
 	access = list(
@@ -186,7 +179,7 @@
 	title = "Internal Tribunal Department Officer"
 	department = "Civilian"
 	selection_color = "#2f2f7f"
-	department_flag = COM
+	department_flag = COM|BUR
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Tribunal Department"
@@ -195,12 +188,7 @@
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
 	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600, EXP_TYPE_BUR = 60)
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classb
-	)
+	class = CLASS_B
 	hud_icon = "hud05rep"
 	access = list(
 		ACCESS_ADMIN_LVL1,
@@ -226,12 +214,7 @@
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/o5rep
 	requirements = list(EXP_TYPE_BUR = 300)
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classb
-	)
+	class = CLASS_B
 	hud_icon = "hud05rep"
 	access = list(
 		ACCESS_ADMIN_LVL1,
@@ -246,7 +229,7 @@
 /datum/job/goirep
 	title = "Global Occult Coalition Representative"
 	department = "Command"
-	department_flag = REP
+	department_flag = REP|BUR
 	selection_color = "#2f2f7f"
 	supervisors = "Your respective Group of Interest leaders"
 	total_positions = 1
@@ -257,13 +240,9 @@
 	ideal_character_age = 30
 	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/civ/thirep, "Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/civ/MCDRep )
 	outfit_type = /decl/hierarchy/outfit/job/civ/gocrep
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
-	)
+	class = CLASS_A
 	hud_icon = "hudgoi"
+	requirements = list(EXP_TYPE_BUR = 30)
 
 	access = list(
 		ACCESS_COM_COMMS,

@@ -10,8 +10,7 @@
 	access = list()
 	minimal_access = list()
 	outfit_type = /decl/hierarchy/outfit/job/civ/classd
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classd)
+	class = CLASS_D
 	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
@@ -46,12 +45,7 @@
 	ideal_character_age = 30
 	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
 	outfit_type = /decl/hierarchy/outfit/job/civ/officeworker
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classc
-	)
+	class = CLASS_C
 	hud_icon = "hudcrewman"
 
 	access = list(
@@ -81,8 +75,7 @@
 	requirements = list("Logistics Specialist" = 300)
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticsofficer
 	hud_icon = "huddeckchief"
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	class = CLASS_B
 
 	access = list(
 		ACCESS_ADMIN_LVL1,
@@ -119,8 +112,7 @@
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "huddecktechnician"
 
 	access = list(
@@ -160,12 +152,7 @@
 	ideal_character_age = 16
 	alt_titles = list("Interior caretaker")
 	outfit_type = /decl/hierarchy/outfit/job/civ/janitor
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-	/datum/mil_rank/civ/classc
-	)
+	class = CLASS_C
 	hud_icon = "hudsanitationtechnician"
 
 	access = list(
@@ -192,9 +179,8 @@
 	ideal_character_age = 18
 	alt_titles = list("Cook")
 	outfit_type = /decl/hierarchy/outfit/job/civ/chef
-	allowed_branches = list(/datum/mil_branch/civilian)
+	class = CLASS_C
 	hud_icon = "hudcook"
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
 
 	access = list(
 		ACCESS_CIV_COMMS,
@@ -223,8 +209,7 @@
 	ideal_character_age = 21
 	alt_titles = list("Waiter")
 	outfit_type = /decl/hierarchy/outfit/job/civ/bartender
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	class = CLASS_C
 	hud_icon = "hudbartender"
 
 	access = list(
@@ -245,3 +230,4 @@
 	roleplay_difficulty = "Easy - Medium"
 	mechanical_difficulty = "Medium"
 	duties = "Mix up drinks for the staff. Manage the bar."
+

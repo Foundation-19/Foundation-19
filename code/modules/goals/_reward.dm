@@ -13,9 +13,9 @@
 
 	on_success = reward_success
 	if(reward_success)
-		RegisterSignal(attached_goal, COMSIG_GOAL_SUCCEEDED, .proc/handle_behavior)
+		RegisterSignal(attached_goal, COMSIG_GOAL_SUCCEEDED, PROC_REF(handle_behavior))
 	else
-		RegisterSignal(attached_goal, COMSIG_GOAL_FAILED, .proc/handle_behavior)
+		RegisterSignal(attached_goal, COMSIG_GOAL_FAILED, PROC_REF(handle_behavior))
 
 /datum/reward/Destroy()
 	attached_goal = null

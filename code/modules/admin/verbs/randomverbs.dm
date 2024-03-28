@@ -826,7 +826,7 @@ Ccomp's first proc.
 
 	switch(tgui_alert(mob, "Do you wish to send an admin alert to this user?", "Admin Aalert", list("Yes","No","Custom")))
 		if("Yes")
-			show_blurb(M, 15, "An admin is trying to talk to you!<br>Check your chat window and click their name to respond or you may be banned!", null, "center", "center", COLOR_RED, null, null, 1)
+			show_blurb(M.client, 15, "An admin is trying to talk to you!<br>Check your chat window and click their name to respond or you may be banned!", null, "center", "center", COLOR_RED, null, null, 1)
 			log_admin("[key_name(src)] sent a default admin alert to [key_name(M)].")
 			message_staff("[key_name(src)] sent a default admin alert to [key_name(M)].")
 
@@ -839,6 +839,6 @@ Ccomp's first proc.
 			if(!new_color)
 				return
 
-			show_blurb(M, 15, message, null, "center", "center", new_color, null, null, 1)
+			show_blurb(M.client, 15, message, null, "center", "center", new_color, null, null, 1)
 			log_admin("[key_name(src)] sent an admin alert to [key_name(M)] with custom message [message].")
 			message_staff("[key_name(src)] sent an admin alert to [key_name(M)] with custom message [message].")
