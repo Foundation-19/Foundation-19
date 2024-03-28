@@ -39,7 +39,7 @@
 	armor = list(melee = 50, bullet = 35, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
-/obj/item/clothing/suit/armor/vest/scp/medarmor/recon
+/obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
 	name = "response armored vest"
 	desc = "An extremely durable synthetic armor vest, with a Recontainment Unit insignia on the chestplate."
 	icon_state = "reconguard"

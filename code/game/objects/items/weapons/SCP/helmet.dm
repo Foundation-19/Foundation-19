@@ -17,7 +17,7 @@
 	acid_resistance = 1.5
 	action_button_name = null
 
-/obj/item/clothing/head/helmet/scp/security/recon
+/obj/item/clothing/head/helmet/scp/security/recontain
 	name = "response security helmet"
 	desc = "An extremely durable, and thickened helmet with 'RECONTAINMENT UNIT' printed on the back."
 	icon_state = "reconhelm"

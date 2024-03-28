@@ -39,7 +39,7 @@
 	icon_state = "lczriot_guard"
 	worn_state = "lczriot_guard"
 
-/obj/item/clothing/under/rank/security/lcz/recon
+/obj/item/clothing/under/rank/security/lcz/recontain
 	name = "LCZ Recontainment Unit Jumpsuit"
 	desc = "A white tactical jumpsuit, with black shoulder and cyan wrist markings, as well as chevron insignia. Weaved with a durable fabric to absorb melee hits."
 	icon_state = "lczrecon_guard"

@@ -233,19 +233,19 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
-/decl/hierarchy/outfit/job/security/lcz_recon
+/decl/hierarchy/outfit/job/security/lcz_recontain
 	name = OUTFIT_JOB_NAME("LCZ Recontainment Unit")
-	uniform = /obj/item/clothing/under/rank/security/lcz/recon
+	uniform = /obj/item/clothing/under/rank/security/lcz/recontain
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/recon
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3lczdivision3
-	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/recon
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/recontain
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	head = /obj/item/clothing/head/helmet/scp/security/recon
+	head = /obj/item/clothing/head/helmet/scp/security/recontain
 	mask = /obj/item/clothing/mask/gas/security
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
