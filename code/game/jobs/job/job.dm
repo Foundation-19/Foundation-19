@@ -491,7 +491,7 @@
 
 	jt.update_jobtime()
 	for(var/requirement in requirements)
-		if(jt.get_jobtime(requirement) < requirements[requirement])
+		if(max(jt.get_jobtime(requirement), jt.get_jobtime(title) /* allows people who play in the role when timelocks are disabled to earn time for it */) < requirements[requirement])
 			return FALSE
 
 	return TRUE
