@@ -105,3 +105,16 @@
 
 /proc/cmp_advdisease_resistance_asc(datum/disease/advance/A, datum/disease/advance/B)
 	return A.TotalResistance() - B.TotalResistance()
+
+/proc/cmp_distance_asc(atom/a, atom/b)
+	return get_dist(get_turf(a), get_turf(b))
+
+/proc/cmp_distance_reagents_asc(datum/reagents/A, datum/reagents/B)
+	return cmp_distance_asc(A.my_atom, B.my_atom)
+
+/proc/cmp_distance_reagents_weakref_asc(weakref/A, weakref/B)
+	var/datum/reagents/Ares = A.resolve()
+	var/datum/reagents/Bres = B.resolve()
+	if(!Ares || !Bres)
+		return INFINITY
+	return cmp_distance_reagents_asc(Ares, Bres)
