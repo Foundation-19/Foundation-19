@@ -1326,7 +1326,7 @@
 /area/site53/uez/hallway)
 "dX" = (
 /obj/machinery/door/airlock/command{
-	name = "Chief Science Officer's Office";
+	name = "Chief Medical Officer's Office";
 	req_access = list("ACCESS_MEDICAL_LEVEL5")
 	},
 /turf/simulated/floor/tiled/dark/small,
