@@ -29534,16 +29534,13 @@
 /obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/box/rubbershot,
 /obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/scp/saiga12/stunshell,
-/obj/item/ammo_magazine/scp/saiga12/stunshell,
 /obj/item/ammo_magazine/scp/saiga12/flash,
 /obj/item/ammo_magazine/scp/saiga12/flash,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/box/buckshot,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "iik" = (
