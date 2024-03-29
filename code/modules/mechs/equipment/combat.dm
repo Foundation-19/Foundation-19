@@ -41,6 +41,7 @@
 	use_external_power = TRUE
 	has_safety = FALSE
 	self_recharge = TRUE
+	accuracy = 2
 
 /obj/item/gun/energy/get_hardpoint_maptext()
 	return "[round(power_supply.charge / charge_cost)]/[max_shots]"
