@@ -12,15 +12,17 @@
 	throwforce = 15
 	throw_speed = 3
 	throw_range = 7
-	///Some piggy banks are persistent, meaning they carry dosh between rounds.
+	/// How much dosh we have. Cheaper to destroy and re-create space cash than hold it in contents.
+	var/current_wealth = 0
+	/// Some piggy banks are persistent, meaning they carry dosh between rounds.
 	var/persistence_id
-	///Callback to execute upon roundend to save the current amount of cash it has stored, IF persistent.
+	/// Callback to execute upon roundend to save the current amount of cash it has stored, IF persistent.
 	var/datum/callback/persistence_cb
-	///How much dosh can this piggy bank hold.
+	/// How much dosh can this piggy bank hold.
 	var/maximum_value = 1000
-	///A limit to much dosh can you put inside this piggy bank each round. If 0, there's no limit. Only applies to persistent piggies.
+	/// A limit to much dosh can you put inside this piggy bank each round. If 0, there's no limit. Only applies to persistent piggies.
 	var/maximum_savings_per_shift = 0
-	///How much dosh this piggy bank spawns with.
+	/// How much dosh this piggy bank spawns with.
 	var/initial_value = 0
 
 /obj/item/piggy_bank/Initialize(mapload)
@@ -29,18 +31,18 @@
 	AddElement(/datum/element/can_shatter, shattering_sound = SFX_SHATTER, shatters_as_weapon = TRUE)
 	if(!persistence_id)
 		if(initial_value)
-			new /obj/item/spacecash/bundle(src, initial_value)
+			current_wealth = initial_value
 		return
 
 	SSpersistence.load_piggy_bank(src)
 	persistence_cb = CALLBACK(src, PROC_REF(save_cash))
 	SSticker.OnRoundend(persistence_cb)
 
-	if(initial_value & initial_value + calculate_dosh_amount() <= maximum_value)
-		new /obj/item/spacecash/bundle(src, initial_value)
+	if(initial_value > current_wealth)
+		current_wealth = initial_value
 
 	if(maximum_savings_per_shift)
-		maximum_value = calculate_dosh_amount() + maximum_savings_per_shift
+		maximum_value = min(maximum_value, maximum_savings_per_shift + current_wealth)
 
 /obj/item/piggy_bank/proc/save_cash()
 	SSpersistence.save_piggy_bank(src)
@@ -52,8 +54,8 @@
 	return ..()
 
 /obj/item/piggy_bank/decons(disassembled = TRUE)
-	for(var/obj/item/thing as anything in contents)
-		thing.forceMove(loc)
+	new /obj/item/spacecash/bundle(get_turf(src), current_wealth)
+
 	//Smashing the piggy after the round is over doesn't count.
 	if(persistence_id && GAME_STATE < RUNLEVEL_POSTGAME)
 		LAZYADD(SSpersistence.queued_broken_piggy_ids, persistence_id)
@@ -63,10 +65,12 @@
 	. = ..()
 	if(DOING_INTERACTION_WITH_TARGET(user, src))
 		return
+
 	balloon_alert(user, "rattle rattle...")
 	if(!do_after(user, 0.5 SECONDS, src))
 		return
-	var/percentile = round(calculate_dosh_amount() / maximum_value * 100, 1)
+
+	var/percentile = round(current_wealth / maximum_value * 100, 1)
 	if(percentile >= 10)
 		playsound(src, SFX_RATTLE, percentile * 0.5, FALSE, FALSE)
 	switch(percentile)
@@ -85,30 +89,31 @@
 		if(95 to INFINITY)
 			balloon_alert(user, "brimming with cash")
 
-/obj/item/piggy_bank/attackby(obj/item/item, mob/user, params)
+/obj/item/piggy_bank/attackby(obj/item/item, mob/user)
 	if (!istype(item, /obj/item/spacecash/bundle))
 		return ..()
 
-	var/obj/item/spacecash/bundle/C = item
+	var/obj/item/spacecash/bundle/cash = item
 
-	var/dosh_amount = calculate_dosh_amount()
-
-	if(dosh_amount >= maximum_value)
-		balloon_alert(user, "it's full!")
-	else if(dosh_amount + C.worth > maximum_value)
-		balloon_alert(user, "too much cash!")
-	else if(!user.unEquip(item, src))
+	if(!user.canUnEquip(item))
 		balloon_alert(user, "stuck in your hands!")
-	else
-		balloon_alert(user, "inserted [C.worth] creds")
-	return TRUE
+		return
 
-///Returns the total amount of credits that its contents amount to.
-/obj/item/piggy_bank/proc/calculate_dosh_amount()
-	var/total_value = 0
-	for(var/obj/item/spacecash/bundle/bundle in contents)
-		total_value += bundle.worth
-	return total_value
+	if(current_wealth >= maximum_value)
+		balloon_alert(user, "it's full!")
+		return
+
+	var/max_transfer = min(cash.worth, maximum_value - current_wealth)
+
+	balloon_alert(user, "inserted [max_transfer] dollars")
+
+	current_wealth += max_transfer
+	cash.worth -= max_transfer
+
+	if(!cash.worth)
+		qdel(cash)
+
+	return TRUE
 
 /obj/item/piggy_bank/vault
 	name = "vault piggy bank"
