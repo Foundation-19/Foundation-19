@@ -76,7 +76,7 @@
 	S.total_points_used = 0
 	user.add_spell(S)
 	stolen_spells += S
-	addtimer(CALLBACK(src, .proc/ForgetSpell, S), stolen_spell_duration)
+	addtimer(CALLBACK(src, PROC_REF(ForgetSpell), S), stolen_spell_duration)
 
 /datum/spell/aimed/spell_steal/ImproveSpell(upgrade_type)
 	. = ..()
