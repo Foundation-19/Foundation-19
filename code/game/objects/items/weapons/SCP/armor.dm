@@ -36,7 +36,7 @@
 	icon_state = "combatmedic"
 	body_parts_covered = UPPER_TORSO | ARMS
 	cold_protection = UPPER_TORSO | ARMS
-	armor = list(melee = 50, bullet = 35, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = 50, bullet = 35, laser = 25, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
@@ -45,7 +45,7 @@
 	icon_state = "reconguard"
 	body_parts_covered = UPPER_TORSO
 	cold_protection = UPPER_TORSO
-	armor = list(melee = 45, bullet = 65, laser = 65, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = 45, bullet = 60, laser = 45, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
