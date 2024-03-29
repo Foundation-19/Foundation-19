@@ -10,6 +10,7 @@
 GLOBAL_LIST_EMPTY(required_map_items)
 
 /datum/unit_test/required_map_items
+	name = "MAP: Required items check"
 	/// A list of all typepaths that we expect to be in the required items list
 	var/list/expected_types = list()
 
@@ -22,6 +23,8 @@ GLOBAL_LIST_EMPTY(required_map_items)
 /datum/unit_test/required_map_items/start_test()
 	setup_expected_types()
 
+	var/working = TRUE
+
 	var/list/required_map_items = GLOB.required_map_items.Copy()
 	for(var/got_type in expected_types)
 		var/datum/required_item/item = required_map_items[got_type]
@@ -29,14 +32,17 @@ GLOBAL_LIST_EMPTY(required_map_items)
 		required_map_items -= got_type
 		if(items_found <= 0)
 			fail("Item [got_type] was not found, but is expected to be mapped in on mapload!")
+			working = FALSE
 			continue
 
 		if(items_found < item.minimum_amount)
 			fail("Item [got_type] should have at least [item.minimum_amount] mapped in but only had [items_found] on mapload!")
+			working = FALSE
 			continue
 
 		if(items_found > item.maximum_amount)
 			fail("Item [got_type] should have at most [item.maximum_amount] mapped in but had [items_found] on mapload!")
+			working = FALSE
 			continue
 
 	// This primarily serves as a reminder to include the typepath in the expected types list above.
@@ -44,7 +50,11 @@ GLOBAL_LIST_EMPTY(required_map_items)
 	if(length(required_map_items))
 		log_bad("The following paths were found in required map items, but weren't checked: [english_list(required_map_items)]")
 
-	pass("All required map items within valid ranges.")
+	if(working == TRUE)
+		pass("All required map items within valid ranges.")
+		return TRUE
+	else
+		return FALSE
 
 /// Datum for tracking required map items
 /datum/required_item
