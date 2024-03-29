@@ -109,8 +109,16 @@
 	for(var/datum/reagents/reagent_container in reagents_to_fill_from)
 		var/amount_contained = reagent_container.get_reagent_amount(getMaster ? reagent_container.get_master_reagent_type() : input_path)
 
+		//Effects for when we take reagents from something
+		var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
+		S.set_up(1,0,get_turf(reagent_container.my_atom))
+		S.start()
+
+		reagent_container.my_atom.visible_message(SPAN_ALERT("Suddenly [lowertext(getMaster ? reagent_container.get_master_reagent_name() : initial(input_path["name"]))] drains out of \the [reagent_container.my_atom.name]!"))
+
+		//Actual reagent transfer
 		amount_contained = Clamp(amount_contained, 0, amount_need_filled)
-		reagent_container.trans_to_obj(D, amount_contained)
+		reagent_container.trans_type_to(D, getMaster ? reagent_container.get_master_reagent_type() : input_path, amount_contained)
 		amount_need_filled -= amount_contained
 
 		if(amount_need_filled <= 0)
@@ -153,13 +161,12 @@
 
 	if(!chosen_reagent)
 		for(var/possible in GLOB.chemical_reagents_list)
-			if(is_abstract(possible))
-				continue
 			var/datum/reagent/possible_reagent = possible
+			if(is_abstract(possible_reagent))
+				continue
 			var/chem_name = initial(possible_reagent.name) //It dosent work if we dont do this black magic
-			if(findtext(chosen_reagent_text, chem_name))
+			if(findtext(chosen_reagent_text, chem_name) && (!chosen_reagent || length(chem_name) - length(chosen_reagent_text) < length(initial(chosen_reagent[name])) - length(chosen_reagent_text)))
 				chosen_reagent = possible_reagent
-				break
 
 	var/list/reagents_to_fill_from = list();
 	if(!chosen_reagent)
@@ -184,6 +191,7 @@
 
 	var/obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D = new /obj/item/reagent_containers/food/drinks/sillycup/scp294cup(get_turf(src))
 	D.anchored = TRUE
+
 	spawn(3 SECONDS)
 		add_reagent_to_cup(chosen_reagent, D, reagents_to_fill_from, chosen_reagent ? FALSE : TRUE) //if we are taking by container name we wouldent have chosen reagent set
 		D.anchored = FALSE
