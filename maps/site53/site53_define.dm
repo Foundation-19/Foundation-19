@@ -17,6 +17,7 @@
 	overmap_size = 35
 	overmap_event_areas = 0
 	usable_email_tlds = list("site53.foundation", "security.site53.foundation", "science.site53.foundation", "utility.site53.foundation")
+	config_path = "config/site53_config.txt"
 
 	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone")
 	default_spawn = "Cryogenic Storage"
