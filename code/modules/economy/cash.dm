@@ -81,7 +81,8 @@
 	worth = 0
 
 /obj/item/spacecash/bundle/Initialize(worth)
-	src.worth = worth
+	if (worth != 0)
+		src.worth = worth
 	. = ..()
 	update_icon()
 
