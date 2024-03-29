@@ -58,7 +58,7 @@
 
 	//Smashing the piggy after the round is over doesn't count.
 	if(persistence_id && GAME_STATE < RUNLEVEL_POSTGAME)
-		LAZYADD(SSpersistence.queued_broken_piggy_ids, persistence_id)
+		SSpersistence.break_piggy_bank(src)
 	return ..()
 
 /obj/item/piggy_bank/attack_self(mob/user, modifiers)

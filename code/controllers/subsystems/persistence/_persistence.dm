@@ -7,8 +7,6 @@ SUBSYSTEM_DEF(persistence)
 
 	/// A json_database to data/piggy banks.json - Schema is persistence_id => array of space cash.
 	var/datum/json_database/piggy_banks_database
-	/// List of persistence ids of broken piggy banks.
-	var/list/queued_broken_piggy_ids
 
 /datum/controller/subsystem/persistence/Initialize()
 	. = ..()

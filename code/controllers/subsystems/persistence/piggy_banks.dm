@@ -10,9 +10,11 @@
 	if(isnull(piggy_banks_database))
 		return
 
-	if(queued_broken_piggy_ids)
-		for(var/broken_id in queued_broken_piggy_ids)
-			piggy_banks_database.remove(broken_id)
-		queued_broken_piggy_ids = null
-
 	piggy_banks_database.set_key(piggy.persistence_id, piggy.current_wealth)
+
+/// This proc is used to delete database information when a piggy bank breaks.
+/datum/controller/subsystem/persistence/proc/break_piggy_bank(obj/item/piggy_bank/piggy)
+	if(isnull(piggy_banks_database))
+		return
+
+	piggy_banks_database.remove(piggy.persistence_id)
