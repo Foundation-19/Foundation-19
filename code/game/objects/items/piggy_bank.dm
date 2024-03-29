@@ -115,15 +115,15 @@
 
 	return TRUE
 
-/obj/item/piggy_bank/vault
-	name = "vault piggy bank"
-	desc = "A pig-shaped money container made of porkelain, containing the station's emergency funds carried between shifts, oink. <i>Do not throw.</i>"
+/obj/item/piggy_bank/logistics
+	name = "logistics piggy bank"
+	desc = "A pig-shaped money container made of porkelain, containing the site's emergency funds carried between shifts, oink. <i>Do not throw.</i>"
 	persistence_id = "vault_piggy"
 	maximum_value = 1500
 	initial_value = 25 //it takes about 60 shifts for it to hit its max value on its own.
 	maximum_savings_per_shift = 750 //and 2 if you actively use it.
 
-/obj/item/piggy_bank/vault/Initialize(mapload)
+/obj/item/piggy_bank/logistics/Initialize(mapload)
 	. = ..()
-	//one piggy bank should exist, preferibly inside the vault's safe.
+	//one piggy bank should exist, preferably inside the vault's safe.
 	REGISTER_REQUIRED_MAP_ITEM(1, 1)

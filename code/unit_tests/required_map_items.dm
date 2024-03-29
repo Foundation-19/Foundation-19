@@ -18,7 +18,7 @@ GLOBAL_LIST_EMPTY(required_map_items)
 /// This list will just be full of typepaths that we expect.
 /// More detailed information about each item (mainly, how much of each should exist) is set on a per item basis
 /datum/unit_test/required_map_items/proc/setup_expected_types()
-	expected_types += /obj/item/piggy_bank/vault
+	expected_types += /obj/item/piggy_bank/logistics
 
 /datum/unit_test/required_map_items/start_test()
 	setup_expected_types()

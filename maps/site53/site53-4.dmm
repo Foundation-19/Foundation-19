@@ -1081,6 +1081,11 @@
 /area/site53/uez/hallway)
 "dg" = (
 /obj/effect/floor_decal/corner/brown/border,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "dh" = (
@@ -2497,6 +2502,11 @@
 	departmentType = 6;
 	pixel_x = -32
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "hQ" = (
@@ -2510,16 +2520,16 @@
 "hR" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2553,6 +2563,9 @@
 /area/site53/logistics/logisticsofficer)
 "hY" = (
 /obj/machinery/papershredder,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsofficer)
 "hZ" = (
@@ -2603,6 +2616,19 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
+"ij" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/carpet/orange,
+/area/site53/logistics/logisticsofficer)
 "ik" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -2643,13 +2669,12 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsofficer)
 "iu" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8
+/obj/machinery/button/blast_door{
+	id_tag = "logisticsvault";
+	name = "Logistics Officer's Vault Control";
+	dir = 4;
+	pixel_x = -25;
+	req_access = list("ACCESS_ADMIN_LEVEL2")
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
@@ -2674,9 +2699,9 @@
 /area/site53/logistics/logisticsofficer)
 "iB" = (
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
@@ -2754,15 +2779,6 @@
 	},
 /obj/structure/bed/chair/office/comfy{
 	dir = 8
-	},
-/turf/simulated/floor/carpet/orange,
-/area/site53/logistics/logisticsofficer)
-"iU" = (
-/obj/structure/cable,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
@@ -3278,6 +3294,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
 "kC" = (
@@ -3825,6 +3842,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"nu" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/carpet/orange,
+/area/site53/logistics/logisticsofficer)
 "nv" = (
 /obj/machinery/door/airlock/security{
 	name = "Evidence Storage";
@@ -3997,6 +4022,11 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 10
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "oD" = (
@@ -4085,6 +4115,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"pw" = (
+/obj/structure/table/standard,
+/obj/item/piggy_bank/logistics,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/logistics/logisticsofficer)
 "pI" = (
 /obj/structure/table/rack,
 /obj/item/melee/baton/loaded,
@@ -5513,13 +5551,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
-"yL" = (
-/obj/effect/paint_stripe/yellow,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/maintenance/upper_surface)
 "yN" = (
 /obj/structure/table/steel,
 /obj/item/storage/mre/random,
@@ -6877,6 +6908,16 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/armory)
+"IZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "Je" = (
 /obj/structure/table/standard,
 /obj/machinery/dnaforensics,
@@ -7844,6 +7885,9 @@
 /obj/structure/morgue,
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
+"Pw" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/logistics/logisticsofficer)
 "Px" = (
 /obj/machinery/scp294,
 /obj/effect/floor_decal/corner/blue/border{
@@ -8714,6 +8758,14 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
+"Vu" = (
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "logisticsvault";
+	name = "Logistics Officer's Vault"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/logistics/logisticsofficer)
 "Vv" = (
 /obj/machinery/bodyscanner{
 	dir = 1
@@ -34444,16 +34496,16 @@ ZS
 ZS
 ZS
 Yr
-yL
 kc
 kc
 kc
 kc
+IZ
 kc
 kc
 kc
 kc
-kc
+IZ
 kc
 kc
 kc
@@ -34700,7 +34752,7 @@ if
 if
 if
 if
-fz
+hL
 xv
 xv
 xv
@@ -34956,8 +35008,8 @@ Av
 Av
 Mj
 oC
-if
-fz
+ZZ
+kO
 xv
 hZ
 hZ
@@ -35214,7 +35266,7 @@ iy
 iy
 dg
 if
-hL
+xv
 xv
 hZ
 hZ
@@ -35471,8 +35523,8 @@ iy
 iy
 dg
 if
-fz
-xv
+pw
+iX
 hZ
 hZ
 hZ
@@ -35727,9 +35779,9 @@ ik
 ih
 iG
 hR
-ZZ
-kO
-xv
+if
+Pw
+iX
 hZ
 hZ
 hZ
@@ -35985,7 +36037,7 @@ iz
 iX
 iw
 iX
-iX
+Vu
 iX
 hZ
 hZ
@@ -36242,7 +36294,7 @@ hX
 hP
 iB
 iu
-iU
+Zm
 iz
 hZ
 hZ
@@ -36496,7 +36548,7 @@ xv
 fz
 iX
 hY
-Zm
+nu
 Ia
 JN
 TT
@@ -36753,7 +36805,7 @@ xv
 fz
 iX
 is
-Zm
+nu
 iD
 iR
 Zm
@@ -37010,9 +37062,9 @@ xv
 hL
 iX
 it
-ii
+ij
 Ka
-Zm
+ii
 Zm
 iz
 hZ
