@@ -3498,6 +3498,7 @@
 #include "code\unit_tests\overmap_tests.dm"
 #include "code\unit_tests\power_tests.dm"
 #include "code\unit_tests\reagent_color_test.dm"
+#include "code\unit_tests\required_map_items.dm"
 #include "code\unit_tests\seed_tests.dm"
 #include "code\unit_tests\shuttle_tests.dm"
 #include "code\unit_tests\submaps.dm"
