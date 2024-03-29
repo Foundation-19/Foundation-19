@@ -120,9 +120,9 @@
 		cached_data = backed_up_data
 		rustg_file_write(cached_contents, filepath)
 
-/datum/json_database/vv_edit_var(var_name, var_value)
-	switch (var_name)
-		if (nameof(filepath), nameof(backup_filepath))
-			return FALSE
-		else
-			return ..()
+///datum/json_database/vv_edit_var(var_name, var_value)
+//	switch (var_name)
+//		if (nameof(filepath), nameof(backup_filepath))
+//			return FALSE
+//		else
+//			return ..()
