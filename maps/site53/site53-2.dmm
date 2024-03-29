@@ -48458,7 +48458,7 @@
 	dir = 4
 	},
 /obj/machinery/conveyor_switch{
-	id = "trashunloading";
+	id = "fooddel";
 	id_tag = "fooddel";
 	name = "food delivery conveyor switch"
 	},
