@@ -13767,6 +13767,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "LCZControlBypass";
+	name = "LCZ Control Center Bypass Shutters"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
 "aNK" = (
@@ -20832,6 +20838,25 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"bIg" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "LCZControl";
+	name = "LCZ Control Center Lockdown Shutters"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "bIm" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -20877,6 +20902,11 @@
 	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/hallways)
@@ -21552,6 +21582,12 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = 32;
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -22392,6 +22428,15 @@
 /obj/item/device/radio/phone,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"cRc" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/ulcz/hallways)
 "cRl" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -23376,6 +23421,11 @@
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/serverfarmtunnel)
 "dDS" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
 "dDY" = (
@@ -24743,8 +24793,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/random/clipboard,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
 "eGG" = (
@@ -24905,6 +24954,7 @@
 	id_tag = "LCZControl";
 	name = "LCZ Control Center Lockdown Shutters"
 	},
+/obj/structure/cable/green,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "eNo" = (
@@ -25978,6 +26028,15 @@
 	id_tag = "LCZControl";
 	name = "LCZ Control Center Lockdown Shutters"
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "fFD" = (
@@ -26531,6 +26590,18 @@
 /area/site53/upper_surface/serverfarmtunnel)
 "gbx" = (
 /obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "LCZControlBypass";
+	name = "LCZ Control Center Bypass Control";
+	pixel_y = 7;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "LCZControlHalt";
+	name = "LCZ Control Center Checkpoint Control";
+	pixel_y = -2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
 "gci" = (
@@ -28461,6 +28532,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "LCZControlBypass";
+	name = "LCZ Control Center Bypass Shutters"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
 "hCs" = (
@@ -28922,6 +28999,21 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
+"hSh" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = 32;
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "hSj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -30557,6 +30649,20 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"jbM" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "LCZControl";
+	name = "LCZ Control Center Lockdown Shutters"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "jbZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -31409,6 +31515,25 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"jMM" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "LCZControl";
+	name = "LCZ Control Center Lockdown Shutters"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "jNc" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/bed/chair,
@@ -32712,6 +32837,25 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/engineering/biosupplies)
+"kLy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "LCZControlHalt";
+	name = "LCZ Control Center Checkpoint Shutters"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/hallways)
 "kLz" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -34332,6 +34476,22 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"lWY" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "LCZControl";
+	name = "LCZ Control Center Lockdown Shutters"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "lXi" = (
 /obj/machinery/r_n_d/circuit_imprinter,
 /obj/effect/floor_decal/corner/research/mono,
@@ -34719,6 +34879,26 @@
 	dir = 4
 	},
 /area/site53/uhcz/securitypost)
+"mmS" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = 32;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "mmX" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1;
@@ -37816,6 +37996,11 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light,
 /obj/machinery/recharger,
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
 "opm" = (
@@ -37927,6 +38112,23 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp513)
+"orV" = (
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "LCZControlHalt";
+	name = "LCZ Control Center Checkpoint Shutters"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/hallways)
 "osa" = (
 /obj/structure/table/rack,
 /obj/item/extinguisher,
@@ -38592,6 +38794,11 @@
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
 /obj/machinery/light,
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
 "oUN" = (
@@ -42653,6 +42860,11 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2");
 	name = "LCZ Control Center"
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/hallways)
 "sad" = (
@@ -43365,10 +43577,10 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/hallways)
 "svB" = (
@@ -43473,6 +43685,17 @@
 	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/sign/electrical{
+	name = "'ELECTRICAL GRILLE' Sign";
+	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
+	pixel_y = 32;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -49198,6 +49421,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
+"xcp" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/ulcz/hallways)
 "xcu" = (
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
@@ -59910,14 +60146,14 @@ aMe
 aNC
 aNI
 aNI
-aNJ
+kLy
 jPO
 ffT
 sfp
 sfp
 rmo
 tNo
-abZ
+orV
 tNo
 tNo
 aKI
@@ -60945,9 +61181,9 @@ kIt
 iiD
 kIt
 kIt
-ndv
-fFr
-aXf
+cRc
+jbM
+hSh
 aWJ
 sTZ
 bdf
@@ -62231,9 +62467,9 @@ eeB
 kIt
 kIt
 svA
-fFr
-aVZ
-aWJ
+bIg
+mmS
+xcp
 kZN
 bdf
 azA
@@ -62738,11 +62974,11 @@ gSw
 psc
 oWB
 vas
-eMV
-eMV
-eMV
-eMV
-eMV
+jMM
+lWY
+lWY
+lWY
+lWY
 eMV
 otk
 rMC
