@@ -2,7 +2,7 @@
 name: Runtime
 about: Record an occured runtime. For dev use only!
 title: ''
-labels: 'runtime'
+labels: 'Runtime'
 assignees: ''
 
 ---
