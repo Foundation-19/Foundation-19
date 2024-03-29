@@ -37,7 +37,7 @@
 	M *= 1.5
 	animate(target, transform = M, color = "#ffcccc", time = 5)
 	target.visible_message(SPAN_DANGER("[target]'s lifeless body visibly bloats!"))
-	addtimer(CALLBACK(src, PROC_REF(ExplodeCorpse), user, target), 6)
+	addtimer(CALLBACK(src, .proc/ExplodeCorpse, user, target), 6)
 
 /datum/spell/aimed/corpse_explosion/proc/ExplodeCorpse(mob/living/user, mob/living/target)
 	if(QDELETED(target) || target.stat != DEAD)

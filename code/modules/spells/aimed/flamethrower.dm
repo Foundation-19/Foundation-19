@@ -44,7 +44,7 @@
 				break
 		if(dense_obj)
 			break
-		addtimer(CALLBACK(src, PROC_REF(PlaceFlame), T), i-1)
+		addtimer(CALLBACK(src, .proc/PlaceFlame, T), i-1)
 
 /datum/spell/aimed/flamethrower/proc/PlaceFlame(turf/T)
 	var/obj/effect/turf_fire/TF = T.IgniteTurf(flame_power, flame_color)

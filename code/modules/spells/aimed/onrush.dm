@@ -61,7 +61,7 @@
 	OnrushAttack(user, target)
 	if(!QDELETED(target))
 		already_attacked |= target
-	addtimer(CALLBACK(src, PROC_REF(CheckAndRepeat), user, target), rand(3, 6))
+	addtimer(CALLBACK(src, .proc/CheckAndRepeat, user, target), rand(3, 6))
 
 /datum/spell/aimed/onrush/proc/OnrushAttack(mob/living/user, mob/living/target)
 	user.next_move = 0

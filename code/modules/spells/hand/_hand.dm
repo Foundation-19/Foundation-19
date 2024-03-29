@@ -33,8 +33,8 @@
 	if(!user.put_in_active_hand(current_hand))
 		QDEL_NULL(current_hand)
 		return FALSE
-	RegisterSignal(user, COMSIG_ATOM_MOVABLE_DISPELL, PROC_REF(OnUserDispell))
-	RegisterSignal(current_hand, COMSIG_PARENT_QDELETING, PROC_REF(OnHandDestroy))
+	RegisterSignal(user, COMSIG_ATOM_MOVABLE_DISPELL, .proc/OnUserDispell)
+	RegisterSignal(current_hand, COMSIG_PARENT_QDELETING, .proc/OnHandDestroy)
 	return TRUE
 
 /datum/spell/hand/proc/OnUserDispell(datum/source, dispell_strength = DISPELL_WEAK)
@@ -93,7 +93,7 @@
 /datum/spell/hand/duration/cast(list/targets, mob/user)
 	. = ..()
 	if(.)
-		hand_timer = addtimer(CALLBACK(src, PROC_REF(CancelHand)), hand_duration, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
+		hand_timer = addtimer(CALLBACK(src, .proc/CancelHand), hand_duration, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
 
 /datum/spell/hand/duration/CancelHand()
 	deltimer(hand_timer)

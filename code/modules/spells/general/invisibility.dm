@@ -29,7 +29,7 @@
 			playsound(get_turf(H), 'sounds/effects/teleport.ogg', 90, 1)
 			H.mutations |= MUTATION_CLUMSY
 			charge_counter = charge_max
-			addtimer(CALLBACK(src, PROC_REF(ToggleOffTimed), H), duration * 0.9)
+			addtimer(CALLBACK(src, .proc/ToggleOffTimed, H), duration * 0.9)
 		return
 	ToggleOff(H)
 
@@ -37,7 +37,7 @@
 	if(!on)
 		return
 	to_chat(H, SPAN_DANGER("You are about to turn visible again!"))
-	addtimer(CALLBACK(src, PROC_REF(ToggleOff), H), duration * 0.1)
+	addtimer(CALLBACK(src, .proc/ToggleOff, H), duration * 0.1)
 
 /datum/spell/invisibility/proc/ToggleOff(mob/living/carbon/human/H)
 	if(H.remove_cloaking_source(src))

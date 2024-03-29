@@ -39,7 +39,7 @@
 		recharging = FALSE
 		return FALSE
 	AddMana(mana_recharge_speed * 0.5)
-	addtimer(CALLBACK(src, PROC_REF(RechargeMana)), (0.5 SECONDS))
+	addtimer(CALLBACK(src, .proc/RechargeMana), (0.5 SECONDS))
 	return TRUE
 
 /* Helpers procs */

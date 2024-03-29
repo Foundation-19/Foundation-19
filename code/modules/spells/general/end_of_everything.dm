@@ -104,7 +104,7 @@
 	var/matrix/M = transform
 	transform *= 0.1 // Starts small
 	animate(src, transform = M, alpha = 175, time = 24 SECONDS)
-	addtimer(CALLBACK(src, PROC_REF(Annihilation)), 25 SECONDS)
+	addtimer(CALLBACK(src, .proc/Annihilation), 25 SECONDS)
 
 /obj/effect/end_of_everything/proc/Annihilation()
 	for(var/mob/M in GLOB.player_list)
