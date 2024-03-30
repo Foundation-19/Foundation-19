@@ -359,6 +359,10 @@
 		return 0
 	var/feces_amount = 0
 	for(var/obj/O in A)
+		if(istype(O, /obj/effect/decal/cleanable/blood))
+			var/obj/effect/decal/cleanable/blood/B = O
+			if(B.amount == 0)
+				continue
 		if(O.type in defecation_types)
 			feces_amount += 1
 			continue

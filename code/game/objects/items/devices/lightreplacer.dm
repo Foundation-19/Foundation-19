@@ -116,15 +116,17 @@
 			return
 
 /obj/item/device/lightreplacer/attack_self(mob/user)
-	/* // This would probably be a bit OP. If you want it though, uncomment the code.
-	if(isrobot(user))
-		var/mob/living/silicon/robot/R = user
-		if(R.emagged)
-			src.Emag()
-			to_chat(usr, "You shortcircuit the [src].")
+	if(uses <= 0 || !isliving(user))
+		return
+	if(!do_after(user, 0.5 SECONDS, src))
+		return
+	add_fingerprint(user)
+	for(var/obj/machinery/light/O in range(1,user))
+		if(O.get_status() == LIGHT_OK)
+			continue
+		if(uses <= 0 || !do_after(user, 0.2 SECONDS, src))
 			return
-	*/
-	to_chat(usr, "It has [uses] lights remaining.")
+		ReplaceLight(O, user)
 
 /obj/item/device/lightreplacer/on_update_icon()
 	icon_state = "lightreplacer[emagged]"

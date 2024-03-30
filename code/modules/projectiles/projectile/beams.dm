@@ -321,11 +321,16 @@
 	life_span = 5
 	pass_flags = PASS_FLAG_TABLE
 	distance_falloff = 2
+	penetrating = 4
 	damage_falloff_list = list(
 		list(3, 0.90),
 		list(5, 0.80),
 		list(7, 0.60),
 	)
+
+	/// start with 1 extra since somehow 5 becomes 6
+	var/rocks_pierced = 1
+	var/pierce_max = 4
 
 	muzzle_type = /obj/effect/projectile/muzzle/plasma_cutter
 	tracer_type = /obj/effect/projectile/tracer/plasma_cutter
@@ -334,8 +339,20 @@
 /obj/item/projectile/beam/plasmacutter/on_impact(atom/A)
 	if(istype(A, /turf/simulated/mineral))
 		var/turf/simulated/mineral/M = A
-		M.GetDrilled(1)
+		M.GetDrilled(4)
 	. = ..()
+
+/obj/item/projectile/beam/plasmacutter/check_penetrate(atom/A)
+	..()
+
+//	if(.)
+//		return .
+	if(istype(A, /turf/simulated/mineral) && rocks_pierced < pierce_max)
+		on_impact(A)
+		rocks_pierced++
+		return TRUE
+	else
+		return FALSE
 
 /obj/item/projectile/beam/confuseray
 	name = "disorientator ray"

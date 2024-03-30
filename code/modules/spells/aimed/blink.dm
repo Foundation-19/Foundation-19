@@ -33,7 +33,7 @@
 	. = ..()
 	var/turf/target_turf = get_turf(target)
 	if(target_turf.density)
-		target_turf = pick_turf_in_range(target_turf, 2, list(/proc/not_turf_contains_dense_objects))
+		target_turf = pick_turf_in_range(target_turf, 2, list(GLOBAL_PROC_REF(not_turf_contains_dense_objects)))
 	if(!istype(target_turf))
 		to_chat(user, SPAN_WARNING("Failed to find any open floors to blink to!"))
 		return

@@ -255,7 +255,7 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 /obj/item/spellbook/proc/SetOwner(mob/new_owner)
 	if(!istype(new_owner))
 		return
-	RegisterSignal(new_owner, COMSIG_PARENT_QDELETING, .proc/RemoveOwner)
+	RegisterSignal(new_owner, COMSIG_PARENT_QDELETING, PROC_REF(RemoveOwner))
 	owner = new_owner
 
 /obj/item/spellbook/proc/RemoveOwner()

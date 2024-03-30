@@ -88,4 +88,4 @@
 	D.color = COLOR_MANA
 	animate(D, alpha = 0, pixel_x = rand(-16, 16), pixel_y = rand(-16, 16), time = rand(8, 18))
 
-	addtimer(CALLBACK(src, .proc/DoTheDrain, user, target, iteration + 1), (0.5 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(DoTheDrain), user, target, iteration + 1), (0.5 SECONDS))
