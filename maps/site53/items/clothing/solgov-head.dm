@@ -310,7 +310,7 @@
 //helmets and other such trash
 
 /obj/item/clothing/head/helmet/solgov
-	accessories = list(/obj/item/clothing/accessory/armor/helmcover/blue/sol)
+	accessories = list(/obj/item/clothing/accessory/armor/helmcover/blue/un)
 
 //FOUNDATION
 /obj/item/clothing/head/helmet/site53/guard

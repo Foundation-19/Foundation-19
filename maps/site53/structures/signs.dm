@@ -46,15 +46,15 @@
 	icon = 'maps/torch/icons/obj/solgov-decals.dmi'
 	icon_state = "solgovseal"
 
-/obj/structure/sign/double/solgovflag
+/obj/structure/sign/double/gocflag
 	name = "United Nations Global Occult Coalition Flag"
 	desc = "The flag of the United Nations Global Occult Coalition, a symbol of many things to many people."
 	icon = 'maps/torch/icons/obj/solgov-decals.dmi'
 
-/obj/structure/sign/double/solgovflag/left
+/obj/structure/sign/double/gocflag/left
 	icon_state = "solgovflag-left"
 
-/obj/structure/sign/double/solgovflag/right
+/obj/structure/sign/double/gocflag/right
 	icon_state = "solgovflag-right"
 
 /* Foundation 19 Edits for Reshuffling of files*/
