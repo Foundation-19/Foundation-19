@@ -12,15 +12,6 @@
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
-/mob/living/silicon/robot/combat/isd
-	lawupdate = FALSE
-	scrambledcodes = TRUE
-	modtype = "Internal Security"
-	module = /obj/item/robot_module/special/general
-	spawn_sound = 'sounds/mecha/nominalsyndi.ogg'
-	cell = /obj/item/cell/infinite
-	pitch_toggle = FALSE
-
 /mob/living/silicon/robot/combat
 	lawupdate = FALSE
 	scrambledcodes = TRUE

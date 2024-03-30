@@ -6,4 +6,4 @@
 	required_players = 5
 	required_enemies = 1
 	end_on_antag_death = FALSE
-	antag_tags = list(MODE_WIZARD)
+	antag_tags = list(MODE_TRADER, MODE_INFORMANT, MODE_WIZARD)

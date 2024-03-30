@@ -24,12 +24,11 @@
 #define ANTAG_CLEAR_EQUIPMENT   (1<<2)  // All preexisting equipment is purged.
 #define ANTAG_CHOOSE_NAME       (1<<3)  // Antagonists are prompted to enter a name.
 #define ANTAG_IMPLANT_IMMUNE    (1<<4)  // Cannot be loyalty implanted.
-#define ANTAG_SUSPICIOUS        (1<<5)  // Shows up on roundstart report.
-#define ANTAG_HAS_LEADER        (1<<6)  // Generates a leader antagonist.
-#define ANTAG_RANDSPAWN         (1<<7)  // Potentially randomly spawns due to events.
-#define ANTAG_VOTABLE           (1<<8)  // Can be voted as an additional antagonist before roundstart.
-#define ANTAG_SET_APPEARANCE    (1<<9)  // Causes antagonists to use an appearance modifier on spawn.
-#define ANTAG_RANDOM_EXCEPTED   (1<<10) // If a game mode randomly selects antag types, antag types with this flag should be excluded.
+#define ANTAG_HAS_LEADER        (1<<5)  // Generates a leader antagonist.
+#define ANTAG_RANDSPAWN         (1<<6)  // Potentially randomly spawns due to events.
+#define ANTAG_VOTABLE           (1<<7)  // Can be voted as an additional antagonist before roundstart.
+#define ANTAG_SET_APPEARANCE    (1<<8)  // Causes antagonists to use an appearance modifier on spawn.
+#define ANTAG_RANDOM_EXCEPTED   (1<<9)  // If a game mode randomly selects antag types, antag types with this flag should be excluded.
 
 // Mode/antag template macros.
 #define MODE_BORER         "borer"
@@ -56,6 +55,8 @@
 #define MODE_FOUNDATION    "foundation agent"
 #define MODE_MISC_AGITATOR "provocateur"
 #define MODE_HUNTER        "hunter"
+#define MODE_TRADER        "trader"
+#define MODE_INFORMANT     "informant"
 
 #define DEFAULT_TELECRYSTAL_AMOUNT 130
 #define IMPLANT_TELECRYSTAL_AMOUNT(x) (round(x * 0.49)) // If this cost is ever greater than half of DEFAULT_TELECRYSTAL_AMOUNT then it is possible to buy more TC than you spend

@@ -7,7 +7,7 @@
 	required_enemies = 1
 	end_on_antag_death = FALSE
 	auto_recall_shuttle = FALSE
-	antag_tags = list(MODE_MALFUNCTION)
+	antag_tags = list(MODE_TRADER, MODE_INFORMANT, MODE_MALFUNCTION)
 	disabled_jobs = list("AIC")
 	cinematic_icon_states = list(
 		"intro_malf" = 76,

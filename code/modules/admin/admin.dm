@@ -84,7 +84,6 @@ var/global/floorIsLava = 0
 
 
 /datum/admins/proc/show_player_info(key as text)
-
 	set category = "Admin"
 	set name = "Show Player Info"
 	if (!istype(src,/datum/admins))
@@ -96,12 +95,13 @@ var/global/floorIsLava = 0
 	var/list/dat = list()
 
 	var/p_age
+	var/key_c = ckey(key)
 	for(var/client/C in GLOB.clients)
-		if(C.ckey == key)
+		if(C.ckey == key_c)
 			p_age = C.player_age
 			break
 
-	if(!p_age)
+	if(p_age == null)
 		p_age = get_player_age(key)
 
 	dat += "<b>Player age: [p_age ? p_age : "unknown"]</b><br><ul id='notes'>"

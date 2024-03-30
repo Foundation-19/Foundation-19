@@ -99,3 +99,96 @@
 2024-03-21:
   Saicchi:
   - rscadd: keybinds for pointing as a robot
+2024-03-22:
+  Saicchi:
+  - rscadd: Modifiable keybind 'F' to lock facing direction
+  - bugfix: Robots can now use the crematorium
+  - rscadd: Add missing tools to the Surgery Robot toolkit
+  - bugfix: robot surgeons can now do organ surgery
+  Tsurupeta:
+  - bugfix: fixed AI interface buttons.
+  quadbium:
+  - rscadd: Added SCP-347
+  - rscadd: Added a set of SCP-347 eyeballs
+  - rscadd: Added a SCP-347 file
+  - rscadd: Added SCP-347 to humanoid containment
+  - rscadd: Added a pair of medhuds to humanoid containment observation
+  - imageadd: added SCP-347 icons
+2024-03-24:
+  ChromeFoxxity:
+  - rscadd: Adds Epsilon-9 hardsuits. Adds more flooring, adds another ISD borg, adds
+      a few more fixes.
+2024-03-26:
+  checkraisefold:
+  - bugfix: Map config actually loads now
+  - admin: Show Player Info verb/notes should no longer show player age 'unknown'
+      for connected clients
+  - bugfix: Fix ghost trap href exploit
+  - admin: Player age in notes is actually fully fixed
+  - bugfix: Blurbs are now functional
+  cheesePizza2:
+  - rscadd: 'Added a new D-class exclusive antag: The TRADER, who starts off with
+      some (hopefully) valuable goods (sofar cash, duct tape rolls, and iron rods),
+      and desires to barter/work for for other goods.'
+  - rscadd: 'Added a new D-class exclusive antag: The INFORMANT, who''s secretly trying
+      to rat other prisoners out to the guards.'
+  - balance: As a byproduct of the new D-class antags, the likelihood of "regular"
+      antags (e.g. traitors, changelings) spawning is lower
+  - code_imp: General code cleanup in the antag spawning system.
+  quadbium:
+  - rscadd: Adds shutters to lower research mining access, controllable from R&D or
+      the RD's office
+  - rscadd: Electrifies the lower research external windows
+  - rscadd: Adds third Senior Researcher's office
+  - balance: Moved anomaly storage to underneath the robotics elevator
+  - rscadd: Adds windoor/tables to most labs
+  - rscadd: Expands psionics division
+  - rscadd: Expands AIC lab, with a place to build AIC units
+  - rscadd: Adds chem fridge and closet to research Chemistry
+  - rscadd: Adds elevator and ladder to robotics
+  - rscadd: Adds two robo-tech deluxe vending machines to robotics
+  - rscadd: Slightly enlarges robotics OR, adds holopad and IV drip
+  - rscadd: Adds 3 cell chargers to robotics
+  - rscadd: Adds shutters to robotics charging to improve ease of access
+  - rscadd: Adds temporary access terminal to robotics
+  - rscadd: Adds a vending machine and water cooler to research lobby
+  - rscadd: adds a pneumatic disposals pipe leading from xenobio to SCP-2347-3 deliveries
+      room
+  - rscadd: adds Disposals pipe leading from logistics storage to SCP-2347-3 deliveries
+      room
+  - balance: Moves robotics R&D to upper robotics
+  - rscdel: Removes destructive analyzer from robotics
+  - rscadd: Adds third OR to medical, with attached robotics access
+  - rscadd: Replaces command NutriMax with sweetMAX
+  - rscadd: Adds xenobotany job alt titles
+  - rscadd: Adds junior mentalist (without guaranteed latency) for researcher
+  - rscadd: Adds mentalist (without guaranteed latency) for Senior researcher
+2024-03-27:
+  TheDarkElites:
+  - balance: SD now requires 20 hours of command gameplay instead of 30.
+  checkraisefold:
+  - balance: Timelock requirements for all jobs have been significantly re-tuned.
+  - bugfix: Rocket launcher now works
+2024-03-28:
+  Saicchi:
+  - rscadd: light replacer replace lights in area
+  - bugfix: minor surgeon robot fixes
+  checkraisefold:
+  - bugfix: Personal lockers can now only be opened by someone with the same or higher
+      access as the person who owns them!
+  - bugfix: Lockers will actually say 'Access Denied' when you have invalid access
+      to use them.
+  - spellcheck: CMO Office door name is now correct
+  - bugfix: 173 dirt in containment chamber is counted correctly
+  - code_imp: Site 53 map config path fixed.
+  githubuser4141:
+  - balance: Loose ores on the floor can be picked up by mechs, mech plasma cutters
+      (MPCs) can now hold 10 shots, and PCs in general destroy multiple tiles (of
+      ore) in a shot. Mech's laser gun is slightly more accurate.
+2024-03-29:
+  Saicchi:
+  - bugfix: engi robot cleaner spray recharge
+2024-03-30:
+  checkraisefold:
+  - rscadd: Gavels and gavel blocks. You can now have a TRUE courtroom. Craftable
+      with wood!
