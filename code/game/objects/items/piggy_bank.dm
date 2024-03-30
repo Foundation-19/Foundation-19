@@ -12,6 +12,7 @@
 	throwforce = 15
 	throw_speed = 3
 	throw_range = 7
+	matter = list(MATERIAL_CERAMIC = 2000)
 	/// How much dosh we have. Cheaper to destroy and re-create space cash than hold it in contents.
 	var/current_wealth = 0
 	/// Some piggy banks are persistent, meaning they carry dosh between rounds.
@@ -27,8 +28,8 @@
 
 /obj/item/piggy_bank/Initialize(mapload)
 	. = ..()
+	AddElement(/datum/element/can_shatter, shatters_as_weapon = TRUE)
 
-	AddElement(/datum/element/can_shatter, shattering_sound = SFX_SHATTER, shatters_as_weapon = TRUE)
 	if(!persistence_id)
 		if(initial_value)
 			current_wealth = initial_value
@@ -54,7 +55,8 @@
 	return ..()
 
 /obj/item/piggy_bank/decons(disassembled = TRUE)
-	new /obj/item/spacecash/bundle(get_turf(src), current_wealth)
+	if(current_wealth)
+		new /obj/item/spacecash/bundle(get_turf(src), current_wealth)
 
 	//Smashing the piggy after the round is over doesn't count.
 	if(persistence_id && GAME_STATE < RUNLEVEL_POSTGAME)

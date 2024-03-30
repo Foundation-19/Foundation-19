@@ -45,6 +45,10 @@
 	..()
 	base_name = name
 
+/obj/item/reagent_containers/glass/Initialize()
+	. = ..()
+	AddElement(/datum/element/can_shatter, shattering_sound = SFX_SHATTER)
+
 /obj/item/reagent_containers/glass/examine(mob/user, distance)
 	. = ..()
 	if(distance > 2)
@@ -84,38 +88,6 @@
 
 /obj/item/reagent_containers/glass/self_feed_message(mob/user)
 	to_chat(user, SPAN_NOTICE("You swallow a gulp from \the [src]."))
-
-/obj/item/reagent_containers/glass/throw_impact(atom/hit_atom)
-	if (QDELETED(src))
-		return
-	if (prob(80))
-		if (reagents.reagent_list.len > 0)
-			visible_message(
-				SPAN_DANGER("\The [src] shatters from the impact and spills all its contents!"),
-				SPAN_DANGER("You hear the sound of glass shattering!")
-			)
-			reagents.splash(hit_atom, reagents.total_volume)
-		else
-			visible_message(
-				SPAN_DANGER("\The [src] shatters from the impact!"),
-				SPAN_DANGER("You hear the sound of glass shattering!")
-			)
-		playsound(src.loc, SFX_SHATTER, 100)
-		new /obj/item/material/shard(src.loc)
-		qdel(src)
-	else
-		if (reagents.reagent_list.len > 0)
-			visible_message(
-				SPAN_DANGER("\The [src] bounces and spills all its contents!"),
-				SPAN_WARNING("You hear the sound of glass hitting something.")
-			)
-			reagents.splash(hit_atom, reagents.total_volume)
-		else
-			visible_message(
-				SPAN_WARNING("\The [src] bounces dangerously. Luckily it didn't break."),
-				SPAN_WARNING("You hear the sound of glass hitting something.")
-			)
-		playsound(src.loc, "sounds/effects/Glasshit.ogg", 50)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
 	if (!proximity || (target.type in can_be_placed_into) || standard_dispenser_refill(user, target) || standard_pour_into(user, target))
