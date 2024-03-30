@@ -136,6 +136,8 @@
 	. += new/datum/stack_recipe/stick(src)
 	. += new/datum/stack_recipe/noticeboard(src)
 	. += new/datum/stack_recipe/furniture/table_frame(src)
+	. += new/datum/stack_recipe/gavelblock(src)
+	. += new/datum/stack_recipe/gavelhammer(src)
 
 /material/wood/mahogany/generate_recipes(reinforce_material)
 	. = ..()
