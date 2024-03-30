@@ -12,11 +12,11 @@
 	var/key_data
 
 	var/list/valid_colors = list(COLOR_GREEN_GRAY, COLOR_RED_GRAY, COLOR_BLUE_GRAY, COLOR_BROWN, COLOR_PALE_PINK, COLOR_PALE_BTL_GREEN, COLOR_OFF_WHITE, COLOR_GRAY40, COLOR_GOLD)
-	var/list/valid_scents = list("fresh air", "cinnamon", "mint", "cocoa", "lavender", "an ocean breeze", "a summer garden", "vanilla", "cheap perfume")
-	var/list/scent_intensity = list("faintly", "strongly", "overbearingly")
+	var/list/valid_scents = list("fresh air", "cinnamon", "mint", "cocoa", "lavender", "an ocean breeze", "a summer garden", "vanilla", "cheap perfume","█████████","\[DATA EXPUNGED\]")
+	var/list/scent_intensity = list("faintly", "strongly", "overbearingly","weakly")
 	var/list/valid_shapes = list("oval", "circular", "rectangular", "square")
 	var/decal_name
-	var/list/decals = list("diamond", "heart", "circle", "triangle", "")
+	var/list/decals = list("diamond", "heart", "circle", "triangle", "scp","")
 
 /obj/item/soap/New()
 	..()
