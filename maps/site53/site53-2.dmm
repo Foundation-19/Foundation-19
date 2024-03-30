@@ -19875,12 +19875,6 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "biV" = (
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -22462,6 +22456,11 @@
 /obj/machinery/icecream_vat,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/humanoidcontainment)
+"cRL" = (
+/obj/effect/floor_decal/corner/brown/border,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "cRR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -22549,9 +22548,6 @@
 /obj/machinery/door/airlock/glass/mining{
 	name = "Primary Storage";
 	req_access = list("ACCESS_ADMIN_LEVEL1")
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/logistics/logistics)
@@ -22756,6 +22752,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "dep" = (
@@ -23040,15 +23037,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"dsf" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site53/logistics/logistics)
 "dsm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -23654,6 +23642,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
+"dNz" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "dNM" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
@@ -24775,13 +24772,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose)
-"eKQ" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/logistics/logistics)
 "eKW" = (
 /obj/machinery/door/firedoor{
 	dir = 8
@@ -26038,6 +26028,11 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"fOq" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/site53/logistics/logistics)
 "fOI" = (
 /obj/machinery/vending/cigarette{
 	dir = 4
@@ -27925,10 +27920,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "hqB" = (
-/obj/machinery/suspension_gen,
-/obj/item/wrench,
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
+	},
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
@@ -28246,6 +28246,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "hAR" = (
@@ -29199,6 +29200,13 @@
 /obj/machinery/vending/medical,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"ifz" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "ifY" = (
 /obj/structure/curtain/black{
 	name = "Confession"
@@ -30007,14 +30015,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"iQv" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/logistics/logistics)
 "iQI" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/closet/secure_closet/guard/lethalshotgunammunitionbuckshot,
@@ -31169,9 +31169,6 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "jMj" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -31614,9 +31611,6 @@
 	},
 /area/site53/ulcz/maintenance)
 "keL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -32983,14 +32977,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
-"lku" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/large,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/logistics/logistics)
 "lkI" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/red/border{
@@ -33733,7 +33719,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 8;
 	name = "Food Delivery"
 	},
@@ -35136,6 +35122,13 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/hub)
+"mPc" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "mPf" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -39007,9 +39000,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
 "pKQ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -40102,14 +40092,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
-"qGy" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/logistics/logistics)
 "qHF" = (
 /obj/machinery/light{
 	dir = 1
@@ -40287,9 +40269,6 @@
 "qPV" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
@@ -41187,7 +41166,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/science/aiccore)
 "ryp" = (
-/obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/conveyor_switch/oneway{
 	id = "cargofromstorage";
@@ -41496,7 +41474,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 8
 	},
 /obj/machinery/door/window{
@@ -43412,13 +43390,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/psionic)
-"tdZ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/floor_decal/spline/fancy/black,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "tex" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -44902,9 +44873,6 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp247observation)
 "usu" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
@@ -75200,8 +75168,8 @@ bdW
 bdW
 bdW
 bdW
-yfP
-ipn
+bdy
+bdy
 ryp
 biV
 bdW
@@ -75714,7 +75682,7 @@ dBR
 bdW
 ark
 aPZ
-qGy
+ayT
 aVu
 aPZ
 fQH
@@ -75971,7 +75939,7 @@ nuW
 bdW
 ark
 aPZ
-eKQ
+fQH
 aVu
 aPZ
 ooJ
@@ -76228,7 +76196,7 @@ qrM
 bdW
 ark
 aPZ
-lku
+ooJ
 aVu
 aPZ
 ayT
@@ -76241,7 +76209,7 @@ ald
 eYo
 aDY
 hqB
-hqB
+bej
 qjE
 koR
 jSy
@@ -76485,7 +76453,7 @@ qWL
 cti
 ark
 aPZ
-iQv
+ayT
 aVu
 aPZ
 fQH
@@ -76497,7 +76465,7 @@ csb
 qmP
 azQ
 bdW
-bdW
+dNz
 bdW
 qpX
 qpX
@@ -76754,7 +76722,7 @@ csb
 beh
 azQ
 bdW
-bdW
+ark
 bdW
 bdW
 bdW
@@ -76999,19 +76967,19 @@ bdR
 qWL
 lCl
 nvb
-tdZ
+aPZ
 ayT
 fQH
 fQH
 aVu
 eFa
 azQ
-bdW
-csb
-ald
-azQ
-bdW
-bdW
+yfP
+cRL
+fOq
+ifz
+ipn
+mPc
 bdW
 bdW
 bdW
@@ -77263,7 +77231,7 @@ ooJ
 aVu
 eFa
 azQ
-bdW
+ark
 rYT
 aYJ
 cdz
@@ -77520,7 +77488,7 @@ whN
 eir
 ald
 azQ
-bdW
+ark
 csb
 aYJ
 mQH
@@ -77777,7 +77745,7 @@ fQH
 aVu
 aPQ
 azQ
-bdW
+ark
 csb
 aYJ
 yhW
@@ -78034,7 +78002,7 @@ fQH
 aVu
 beh
 azQ
-bdW
+ark
 csb
 aYJ
 tsG
@@ -78291,7 +78259,7 @@ xqF
 ugj
 ald
 azQ
-bdW
+ark
 csb
 aYJ
 tsG
@@ -78548,7 +78516,7 @@ aYJ
 aYJ
 aYJ
 wpt
-bdW
+ark
 csb
 aYJ
 nRU
@@ -78798,14 +78766,14 @@ aat
 ben
 bey
 bdn
-dsf
+bej
 cBJ
 bdE
 xIz
 sOy
 bem
 xDt
-bdW
+ark
 xKY
 aYJ
 aYJ
@@ -79055,14 +79023,14 @@ aOX
 aOX
 bdz
 eNZ
-ark
+bdW
 bdW
 bdW
 hQZ
 bdW
 bdW
 bdW
-bdW
+ark
 eXH
 aYJ
 azA
@@ -79312,14 +79280,14 @@ mDk
 lYu
 kbI
 jfA
+bdW
+bdW
+bdW
+bdW
+bdW
+bdW
+bdW
 ark
-bdW
-bdW
-bdW
-bdW
-bdW
-bdW
-bdW
 dKm
 aYJ
 azA
@@ -79569,14 +79537,14 @@ beC
 aFT
 lVZ
 sbb
-gXd
+ddT
 ddT
 ddT
 ddT
 hAP
 ddT
 ddT
-ddT
+gXd
 dsA
 aYJ
 azA
