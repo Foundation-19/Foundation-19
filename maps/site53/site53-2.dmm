@@ -35935,7 +35935,8 @@
 	dir = 1
 	},
 /obj/machinery/conveyor/east{
-	id_tag = "fooddel"
+	id_tag = "fooddelivery";
+	id = "fooddelivery"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -46053,7 +46054,8 @@
 /area/site53/llcz/scp513)
 "vws" = (
 /obj/machinery/conveyor/east{
-	id_tag = "fooddel"
+	id_tag = "fooddelivery";
+	id = "fooddelivery"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -48458,8 +48460,8 @@
 	dir = 4
 	},
 /obj/machinery/conveyor_switch{
-	id = "fooddel";
-	id_tag = "fooddel";
+	id = "fooddelivery";
+	id_tag = "fooddelivery";
 	name = "food delivery conveyor switch"
 	},
 /turf/simulated/floor/tiled/monotile,
