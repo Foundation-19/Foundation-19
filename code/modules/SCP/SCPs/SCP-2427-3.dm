@@ -326,7 +326,7 @@
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
-	if(istype(A, /obj/machinery/power/apc))
+	if(istype(A, /obj/machinery/power/apc) || istype(A, /obj/machinery/light) || istype(A, /obj/machinery/camera))
 		return // Fuck you RealB
 	if(A in purity_list)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
