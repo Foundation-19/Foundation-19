@@ -116,7 +116,7 @@
 	var/old_loc = loc
 	. = ..()
 	if (.)
-		SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
+		SEND_SIGNAL(src, COMSIG_MOVED, old_loc, loc)
 
 		// freelook
 		if(opacity)
