@@ -1695,9 +1695,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "dS" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "dT" = (
@@ -2093,9 +2091,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/isolation)
 "eX" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/bed/chair,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2393,9 +2389,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "fO" = (
@@ -3052,9 +3046,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
 "hR" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
 "hS" = (
@@ -8029,9 +8021,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom)
 "DG" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
 "DL" = (
@@ -10025,9 +10015,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
 "Qk" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "Qm" = (
@@ -10747,9 +10735,7 @@
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/roboticsupr)
 "UX" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 4
 	},
