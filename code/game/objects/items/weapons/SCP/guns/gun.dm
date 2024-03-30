@@ -31,6 +31,8 @@
 	var/bolt_hold = FALSE
 	/// Determines if bolt stays open on automatic cycle if magazine is empty
 	var/bolt_hold_on_empty_mag = FALSE
+	/// When you pull the trigger (i.e click someone), it releases bolt on first attempt if it's open without shooting the gun
+	var/bolt_release_on_trigger_pull = FALSE
 	/// Determines the need to cycle bolt manually after each shot (pump action shotgun)
 	var/manual_action = FALSE
 	fire_sound = null
@@ -178,8 +180,6 @@
 		return FALSE
 	if(!waterproof && submerged())
 		return FALSE
-	if(is_bolt_open)
-		return FALSE
 	return TRUE
 
 /obj/item/gun/projectile/scp/handle_click_empty(mob/user, is_cocked, automatic)
@@ -247,10 +247,18 @@
 // TODO split this proc into couple more
 
 /obj/item/gun/projectile/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE, automatic)
+	add_fingerprint(user)
+
 	if(!can_fire(user, target))
 		return
 
-	add_fingerprint(user)
+	if(is_bolt_open)
+		if(bolt_release_on_trigger_pull && (!check_magazine_empty() && (ammo_magazine && bolt_hold_on_empty_mag)))
+			bolt_forward(user, TRUE)
+			return
+		else
+			handle_click_empty(user, FALSE, automatic)
+			return
 
 	if(safety()) // TODO Move to separate function
 		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERIENCED, 0.5)) //reflex un-safeying
