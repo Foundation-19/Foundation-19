@@ -12,7 +12,7 @@
 	department = "Medical"
 	department_flag = MED|COM
 	selection_color = "#026865"
-	requirements = list(EXP_TYPE_MEDICAL = 1200)
+	requirements = list(EXP_TYPE_MEDICAL = 720)
 
 	head_position = 1
 	total_positions = 1
