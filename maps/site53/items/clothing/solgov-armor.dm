@@ -38,6 +38,3 @@
 
 /obj/item/clothing/suit/armor/pcarrier/medium/command
 	accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/goc/com)
-
-/obj/item/clothing/suit/armor/pcarrier/medium/command/security
-	accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/goc/com/sec)
