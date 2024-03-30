@@ -1,7 +1,7 @@
 /obj/structure/closet
 	name = "closet"
 	desc = "It's a basic storage unit."
-	icon = 'icons/obj/closet.dmi'
+	icon = 'icons/obj/closet_new.dmi'
 	icon_state = "closed"
 	density = TRUE
 	w_class = ITEM_SIZE_NO_CONTAINER
@@ -480,7 +480,7 @@
 /obj/structure/closet/proc/togglelock(mob/user, obj/item/card/id/id_card)
 	if(!(setup & CLOSET_HAS_LOCK))
 		return FALSE
-	if(!CanPhysicallyInteract(user))
+	if(!CanInteract(user, GLOB.physical_no_access_state))
 		return FALSE
 	if(src.opened)
 		to_chat(user, SPAN_NOTICE("Close \the [src] first."))

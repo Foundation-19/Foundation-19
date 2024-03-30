@@ -6,4 +6,4 @@
 	required_players = 10
 	required_enemies = 3
 	end_on_antag_death = FALSE
-	antag_tags = list(MODE_CULTIST)
+	antag_tags = list(MODE_TRADER, MODE_INFORMANT, MODE_CULTIST)

@@ -47,7 +47,7 @@
 	say_list_type = /datum/say_list/spider
 	ai_holder_type = /datum/ai_holder/simple_animal/melee
 
-	var/poison_type = "spidertoxin"	// The reagent that gets injected when it attacks.
+	var/poison_type = /datum/reagent/toxin/venom //By default.
 	var/poison_chance = 10			// Chance for injection to occur.
 	var/poison_per_bite = 5			// Amount added per injection.
 
@@ -88,7 +88,6 @@
 		I.appearance_flags = RESET_COLOR
 		add_overlay(I)
 
-
 /mob/living/simple_animal/hostile/giant_spider/apply_melee_effects(atom/A)
 	if(isliving(A))
 		var/mob/living/L = A
@@ -96,6 +95,7 @@
 			var/target_zone = pick(BP_CHEST,BP_CHEST,BP_CHEST,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_HEAD)
 			if(L.can_inject(src, null, target_zone))
 				inject_poison(L, target_zone)
+
 
 // Does actual poison injection, after all checks passed.
 /mob/living/simple_animal/hostile/giant_spider/proc/inject_poison(mob/living/L, target_zone)

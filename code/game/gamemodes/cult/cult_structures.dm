@@ -38,7 +38,18 @@
 			)
 			restore_health(5)
 		return
-	..()
+	return ..()
+
+/obj/structure/cult/pylon/handle_death_change(new_death_state)
+	. = ..()
+	if(new_death_state)
+		Shatter()
+
+/obj/structure/cult/pylon/proc/Shatter(display_message = TRUE)
+	playsound(src, "shatter", 70, 1)
+	if(display_message)
+		visible_message("<span class='warning'>\The [src] shatters!</span>")
+	qdel(src)
 
 /obj/structure/cult/tome
 	name = "Desk"

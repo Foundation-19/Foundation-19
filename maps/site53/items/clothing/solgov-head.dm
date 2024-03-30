@@ -368,13 +368,23 @@
 
 //GOC
 /obj/item/clothing/head/helmet/scp/goc
-	name = "GOC helmet"
-	desc = "A light blue, open face helmet with GOC writen on the side."
-	icon_state = "goc-helmet"
-	item_state = "goc-helmet"
+	name = "Global Occult Coalition helmet"
+	desc = "A cyan standard issue helmet, with the United Nations' initials on the front. A lightweight helmet for their military forces."
+	icon_state = "goc_helm"
+	item_state = "goc_helm"
 	body_parts_covered = HEAD
 	armor = list(melee = 40, bullet = 90, laser = 50,energy = 25, bomb = 40)
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/helmet/scp/security/goc
+	name = "Global Occult Coalition heavy helmet"
+	desc = "A cyan helmet with an added bulletproof visor, with the United Nations' initials on the front. A lightweight helmet for their superior military forces ranks."
+	icon_state = "goc_helmet"
+	body_parts_covered = HEAD|FACE|EYES //face shield
+	armor = list(melee = 50, bullet = 100, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS
+	action_button_name = "Toggle Visor"
 
 /obj/item/clothing/head/beret/scp/goc
 	name = "GOC beret"
