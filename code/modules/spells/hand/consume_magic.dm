@@ -121,4 +121,4 @@
 	animate(D, pixel_x = (user.x - target.x) * world.icon_size, pixel_y = (user.y - target.y) * world.icon_size, alpha = rand(100, 175), time = rand(3, 6))
 	animate(alpha = 0, time = 2)
 
-	addtimer(CALLBACK(src, .proc/DoEffects, user, target), rand(1, 3))
+	addtimer(CALLBACK(src, PROC_REF(DoEffects), user, target), rand(1, 3))

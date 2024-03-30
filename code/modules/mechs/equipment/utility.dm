@@ -563,6 +563,10 @@
 	restricted_software = list(MECH_SOFTWARE_UTILITY)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_PHORON = 4, TECH_ENGINEERING = 6, TECH_COMBAT = 3)
 
+/obj/item/gun/energy/plasmacutter/mounted/mech
+	name = "mounted plasma cutter"
+	max_shots = 10
+
 /obj/item/mech_equipment/mounted_system/taser/autoplasma
 	icon_state = "mech_energy"
 	holding_type = /obj/item/gun/energy/plasmacutter/mounted/mech/auto
