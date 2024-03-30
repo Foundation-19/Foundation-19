@@ -98,21 +98,21 @@
 
 		LAZYREMOVEASSOC(user.progressbars, target, src)
 
-	if(user && show_target && (target != user))
-		for(var/pb in target.progressbars_recipient[user])
-			var/datum/progressbar/progress_bar = pb
-			if(progress_bar == src || progress_bar.target_listindex <= target_listindex)
-				continue
-			progress_bar.target_listindex--
+		if(show_target && (target != user))
+			for(var/pb in target.progressbars_recipient[user])
+				var/datum/progressbar/progress_bar = pb
+				if(progress_bar == src || progress_bar.target_listindex <= target_listindex)
+					continue
+				progress_bar.target_listindex--
 
-			progress_bar.targetbar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1))
-			var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1)) - PROGRESSBAR_HEIGHT
-			animate(progress_bar.targetbar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+				progress_bar.targetbar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1))
+				var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1)) - PROGRESSBAR_HEIGHT
+				animate(progress_bar.targetbar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
-		LAZYREMOVEASSOC(target.progressbars_recipient, target, src)
-		target = null
+			LAZYREMOVEASSOC(target.progressbars_recipient, target, src)
+			target = null
 
-	user = null
+		user = null
 
 	if(user_client)
 		clean_user_client()
