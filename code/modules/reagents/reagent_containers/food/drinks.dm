@@ -237,7 +237,7 @@
 
 /obj/item/reagent_containers/food/drinks/sillycup/scp294cup
 	name = "strange cup"
-	desc = "Weird cup seemingly made of styrofoam."
+	desc = "A weird cup seemingly made of styrofoam."
 	icon = 'icons/SCP/scp294.dmi'
 
 	volume = 20

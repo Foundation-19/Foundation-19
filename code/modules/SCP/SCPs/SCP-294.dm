@@ -40,12 +40,22 @@
 
 	///Blacklisted reagents DO NOT USE THIS UNLESS ABSOLUTLEY NECCESARY, I DISLIKE PEOPLE IDIOT PROOFING SCPS - Dark
 	var/list/blacklist = list(
-		/datum/reagent/scp008,
-		/datum/reagent/scp500
+
 	)
 
 	///Blacklisted containers to take from
 	var/list/container_blacklist = list(
+
+	)
+
+	///Watchlist reagents alert admins when they are called
+	var/list/reagent_watchlist = list(
+		/datum/reagent/scp008,
+		/datum/reagent/scp500
+	)
+
+	///Containers which should be deleted if emptied
+	var/list/single_use_containers = list(
 
 	)
 
@@ -187,11 +197,14 @@
 	uses_tracker++
 	playsound(src, 'sounds/scp/294/dispense1.ogg', 35, FALSE)
 	visible_message(SPAN_NOTICE("[src] dispenses a small paper cup and starts filling it with a liquid."))
-	log_and_message_staff("[user.ckey]/[user.real_name] used SCP-[SCP.designation], dispensing [chosen_reagent]", user, get_turf(src))
+
+	if(chosen_reagent && (chosen_reagent in reagent_watchlist))
+		log_and_message_staff(SPAN_BAD("used SCP-[SCP.designation] to dispense a watchlisted reagent, [chosen_reagent]!"), user, get_turf(src))
 
 	var/obj/item/reagent_containers/food/drinks/sillycup/scp294cup/D = new /obj/item/reagent_containers/food/drinks/sillycup/scp294cup(get_turf(src))
 	D.anchored = TRUE
 
 	spawn(3 SECONDS)
 		add_reagent_to_cup(chosen_reagent, D, reagents_to_fill_from, chosen_reagent ? FALSE : TRUE) //if we are taking by container name we wouldent have chosen reagent set
+		user.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Interacted with SCP-[SCP.designation] to dispense [chosen_reagent ? chosen_reagent : "[D.reagents.get_reagents()] with the keyword [chosen_reagent_text]"])"
 		D.anchored = FALSE
