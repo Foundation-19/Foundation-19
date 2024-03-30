@@ -150,8 +150,8 @@
 	base_name = "heart cup"
 
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/SCG
-	name = "\improper SCG coffee cup"
-	desc = "A blue coffee cup emblazoned with the crest of the Sol Central Government."
+	name = "\improper GOC coffee cup"
+	desc = "A blue coffee cup emblazoned with the crest of the United Nations Global Occult Coalition."
 	icon_state = "coffeecup_SCG"
 	base_name = "\improper SCG cup"
 

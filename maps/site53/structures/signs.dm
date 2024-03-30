@@ -47,8 +47,8 @@
 	icon_state = "solgovseal"
 
 /obj/structure/sign/double/solgovflag
-	name = "Sol Central Government Flag"
-	desc = "The flag of the Sol Central Government, a symbol of many things to many people."
+	name = "United Nations Global Occult Coalition Flag"
+	desc = "The flag of the United Nations Global Occult Coalition, a symbol of many things to many people."
 	icon = 'maps/torch/icons/obj/solgov-decals.dmi'
 
 /obj/structure/sign/double/solgovflag/left

@@ -57,7 +57,7 @@ specialty pins
 
 /obj/item/clothing/accessory/solgov/speciality/pilot
 	name = "pilot's qualification pin"
-	desc = "An iron pin denoting the qualification to fly in the SGDF."
+	desc = "An iron pin denoting the qualification to fly."
 	icon_state = "pin_pilot"
 
 /*****
@@ -85,7 +85,7 @@ badges
 
 /obj/item/clothing/accessory/badge/solgov/representative
 	name = "representative's badge"
-	desc = "A leather-backed plastic badge with a variety of information printed on it. Belongs to a representative of the Sol Central Government."
+	desc = "A leather-backed plastic badge with a variety of information printed on it. Belongs to a representative of the United Nations Global Occult Coalition."
 	icon_state = "solbadge"
 	slot_flags = SLOT_TIE
 	badge_string = "Sol Central Government"
@@ -117,8 +117,8 @@ armbands
 armour attachments
 *****************/
 /obj/item/clothing/accessory/armor/tag/solgov
-	name = "\improper SCG Flag"
-	desc = "An emblem depicting the Sol Central Government's flag."
+	name = "\improper UNGOC Flag"
+	desc = "An emblem depicting the UNGOC's flag."
 	icon_override = 'maps/torch/icons/obj/solgov-accessory.dmi'
 	icon = 'maps/torch/icons/obj/solgov-accessory.dmi'
 	accessory_icons = list(slot_tie_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_w_uniform_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_wear_suit_str = 'maps/torch/icons/mob/solgov-accessory.dmi')
@@ -136,13 +136,13 @@ armour attachments
 	icon_state = "sectag"
 
 /obj/item/clothing/accessory/armor/tag/solgov/com
-	name = "\improper SCG tag"
-	desc = "An armor tag with the words SOL CENTRAL GOVERNMENT printed in gold lettering on it."
+	name = "\improper UNGOC tag"
+	desc = "An armor tag with the words UNITED NATIONS - GLOBAL OCCULT COALITION printed in gold lettering on it."
 	icon_state = "comtag"
 
 /obj/item/clothing/accessory/armor/tag/solgov/com/sec
-	name = "\improper POLICE tag"
-	desc = "An armor tag with the words POLICE printed in gold lettering on it."
+	name = "\improper FBI tag"
+	desc = "An armor tag with the words FEDERAL BUREAU OF INVESTIGATION printed in gold lettering on it."
 
 /obj/item/clothing/accessory/armor/tag/solgov/com/guardcomm
 	name = "\improper GUARD COMMANDER tag"
@@ -154,7 +154,7 @@ armour attachments
 
 /obj/item/clothing/accessory/armor/helmcover/blue/sol
 	name = "peacekeeper helmet cover"
-	desc = "A fabric cover for armored helmets. This one is in SCG peacekeeper colors."
+	desc = "A fabric cover for armored helmets. This one is in UN peacekeeper colors."
 
 /**************
 department tags
