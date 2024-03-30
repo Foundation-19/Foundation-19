@@ -13067,7 +13067,7 @@
 "mEL" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
-	id_tag = 049botany;
+	id_tag = "049botany";
 	name = "049 Botany Window Shutter"
 	},
 /turf/simulated/floor,
@@ -17027,6 +17027,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/hallways)
+"quk" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	id_tag = "049bedroom";
+	name = "049 Bedroom Window Shutter"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/scp049containment)
 "qus" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -21991,6 +21999,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"vHG" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	id_tag = "049bedroom";
+	name = "049 Bedroom Window Shutter";
+	acid_melted = sssss
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/scp049containment)
 "vHT" = (
 /obj/effect/floor_decal/corner/research/border,
 /turf/simulated/floor/tiled/monotile/white,
@@ -23342,7 +23359,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id_tag = "049 Bedroom Window Shutter";
+	id_tag = "049bedroom";
 	name = "049 Bedroom Window Shutter";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -23726,7 +23743,7 @@
 	dir = 1;
 	name = "049 Botany Window Shutter";
 	req_access = list("ACCESS_SECURITY_LEVEL2");
-	id_tag = 049botany
+	id_tag = "049botany"
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled,
@@ -69422,7 +69439,7 @@ pkT
 aKK
 tiC
 qKJ
-clm
+vHG
 mLx
 nqG
 aho
@@ -69679,7 +69696,7 @@ pkT
 tsZ
 tiC
 wXB
-clm
+quk
 buj
 nqG
 iKJ
@@ -69936,7 +69953,7 @@ pkT
 gUz
 tiC
 qKJ
-gQL
+quk
 bnP
 nqG
 nqG
@@ -70452,7 +70469,7 @@ tiC
 tiC
 tiC
 tiC
-wXB
+qKJ
 qKJ
 nYt
 tqa
