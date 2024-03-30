@@ -97,9 +97,8 @@
 			animate(progress_bar.bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
 		LAZYREMOVEASSOC(user.progressbars, target, src)
-		user = null
 
-	if(show_target && (target != user))
+	if(user && show_target && (target != user))
 		for(var/pb in target.progressbars_recipient[user])
 			var/datum/progressbar/progress_bar = pb
 			if(progress_bar == src || progress_bar.target_listindex <= target_listindex)
@@ -112,6 +111,8 @@
 
 		LAZYREMOVEASSOC(target.progressbars_recipient, target, src)
 		target = null
+
+	user = null
 
 	if(user_client)
 		clean_user_client()
