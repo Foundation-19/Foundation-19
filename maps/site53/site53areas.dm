@@ -564,6 +564,18 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
 
+/area/site53/uez/courtroom
+	name = "\improper Tribunal Courtroom"
+	sound_env = LARGE_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
+/area/site53/uez/courtroom/quarters
+	name = "\improper Magistrate's Quarters"
+	sound_env = LARGE_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
 /area/site53/uez/goirepoffice
 	name = "\improper GoI Representative's Office"
 	sound_env = MEDIUM_SOFTFLOOR
