@@ -13,7 +13,8 @@
 	UnregisterSignal(parent, COMSIG_MIND_POST_INIT)
 
 /datum/component/goalcontainer/Destroy()
-	QDEL_LIST_NULL(goal_list)
+	QDEL_LIST_ASSOC_VAL(goal_list)
+	goal_list = null
 	return ..()
 
 /datum/component/goalcontainer/proc/add_goal_by_type(type, category, autofill_rewards = FALSE)
