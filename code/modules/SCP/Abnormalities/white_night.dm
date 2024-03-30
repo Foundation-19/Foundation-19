@@ -159,7 +159,7 @@
 	H.visible_message(SPAN_WARNING("Holy light envelopes \the [H]..."))
 	playsound(src, 'sounds/scp/abnormality/white_night/apostle_convert.ogg', 50, FALSE, 4)
 	cancel_conversion_effect = FALSE
-	addtimer(CALLBACK(src, .proc/ConversionVisualEffect, H))
+	addtimer(CALLBACK(src, PROC_REF(ConversionVisualEffect), H))
 	if(!do_after(src, 7 SECONDS, H))
 		to_chat(src, SPAN_WARNING("The ritual has been interrupted!"))
 		cancel_conversion_effect = TRUE
@@ -354,7 +354,9 @@
 				var/apostle_line = apostle_lines[i]
 				apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 				if(findtext(apostle_line, "%PREV%"))
-					var/apostle_name = apostles[apostles[i - 1]][2]
+					var/apostle_name = "Unknown"
+					if(islist(apostles[min(1, i - 1)]) && length(apostles[min(1, i - 1)]) >= 2)
+						apostle_name = apostles[min(1, i - 1)][2]
 					apostle_line = replacetext(apostle_line, "%PREV%", apostle_name)
 				to_chat(M, FONT_LARGE(SPAN_DANGER(apostle_line)))
 				M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 100)

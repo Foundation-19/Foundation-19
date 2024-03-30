@@ -20,10 +20,10 @@
 	LAZYCLEARLIST(affected_mobs_weakref)
 
 /datum/component/memetic/RegisterWithParent()
-	RegisterSignal(parent, list(COMSIG_OBJECT_SOUND_HEARD, COMSIG_OBJECT_SOUND_HEARD_LOOPING), .proc/heard_memetic)
-	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, .proc/examined_memetic)
-	RegisterSignal(parent, COMSIG_PHOTO_SHOWN_OF, .proc/saw_memetic_photo)
-	RegisterSignal(parent, COMSIG_ATOM_VIEW_RESET, .proc/saw_through_camera)
+	RegisterSignal(parent, list(COMSIG_OBJECT_SOUND_HEARD, COMSIG_OBJECT_SOUND_HEARD_LOOPING), PROC_REF(heard_memetic))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, PROC_REF(examined_memetic))
+	RegisterSignal(parent, COMSIG_PHOTO_SHOWN_OF, PROC_REF(saw_memetic_photo))
+	RegisterSignal(parent, COMSIG_ATOM_VIEW_RESET, PROC_REF(saw_through_camera))
 
 /datum/component/memetic/UnregisterFromParent()
 	UnregisterSignal(parent, list(

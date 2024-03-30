@@ -25,24 +25,51 @@
 	name = "armored vest"
 	desc = "A synthetic armor vest."
 	icon_state = "guard-armor"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 40, bullet = 50, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
+	armor = list(melee = 60, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
+	acid_resistance = 1.5
+
+/obj/item/clothing/suit/armor/vest/scp/medarmor/medic
+	name = "medical armored vest"
+	desc = "A synthetic armor vest, with a medical pauldron."
+	icon_state = "combatmedic"
+	body_parts_covered = UPPER_TORSO | ARMS
+	cold_protection = UPPER_TORSO | ARMS
+	armor = list(melee = 50, bullet = 35, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
+	acid_resistance = 1.5
+
+/obj/item/clothing/suit/armor/vest/scp/medarmor/riot
+	name = "riot armored vest"
+	desc = "A synthetic armor vest, with a Riot Control Unit insignia on the chestplate."
+	icon_state = "riotguard"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | ARMS
+	armor = list(melee = 80, bullet = 25, laser = 25, energy = 25, bomb = 30, bio = 15, rad = 10)
+	acid_resistance = 1.5
+
+/obj/item/clothing/suit/armor/vest/scp/isd
+	name = "Internal Security trenchcoat"
+	desc = "A durable coat used by the Internal Security Department, there isn't much to note about it except for the golden SCP logo on the shoulder, and wrist designs."
+	icon_state = "isd_trenchcoat"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | ARMS
+	armor = list(melee = 40, bullet = 60, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
-	name = "Heavy-plated armor vest"
+	name = "Heavy-plated armored vest"
 	desc = "A synthetic armor vest. This one is for the LCZ Zone Commander."
 	icon_state = "heavy-guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 45, bullet = 65, laser = 40, energy = 40, bomb = 40, bio = 15, rad = 10)
+	armor = list(melee = 65, bullet = 45, laser = 30, energy = 40, bomb = 40, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
-	name = "armored vest"
-	desc = "A synthetic armor vest."
-	icon_state = "chaos-armor"
+	name = "Chaos Insurgency armored vest"
+	desc = "A heavy tan russian type ballistic vest, mainly protecting against bullets, and not much else. It's usually used by russian military forces, but is used by the Chaos Insurgency."
+	icon_state = "ci_vest"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 85, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)

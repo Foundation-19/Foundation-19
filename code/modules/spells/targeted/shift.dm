@@ -10,6 +10,9 @@
 
 	hud_state = "const_shift"
 
+	spell_cost = 2
+	mana_cost = 10
+
 /datum/spell/targeted/ethereal_jaunt/shift/jaunt_disappear(atom/movable/overlay/animation, mob/living/target)
 	to_chat(target, SPAN_DANGER("You silently phase out.")) // no visible message - phase shift is silent
 	animation.icon_state = "phase_shift"

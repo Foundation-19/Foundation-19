@@ -108,7 +108,7 @@
 		)
 		cooking = TRUE
 		playsound(src, 'sounds/machines/stove_on.ogg', 100, FALSE) // 100% volume here because the sound itself is pretty quiet
-		addtimer(CALLBACK(src, .proc/attempt_cook), cook_time + user_time_modifier)
+		addtimer(CALLBACK(src, PROC_REF(attempt_cook)), cook_time + user_time_modifier)
 		update_icon()
 		interface_interact(user)
 

@@ -18,6 +18,8 @@
 	turn_delay = 7
 	power_use = 150
 	color = COLOR_WHITE
+	mech_turn_sound = 'sounds/mecha/mechmove04.ogg'
+	mech_step_sound = 'sounds/machines/engine.ogg'
 
 /obj/item/mech_component/chassis/pod
 	name = "spherical exosuit chassis"

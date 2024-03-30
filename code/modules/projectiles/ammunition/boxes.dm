@@ -2,23 +2,15 @@
 	name = "speed loader"
 	desc = "A speed loader for revolvers."
 	icon_state = "spdloader"
-	caliber = CALIBER_PISTOL
-	ammo_type = /obj/item/ammo_casing/pistol
+	caliber = CALIBER_REVOLVER
+	ammo_type = /obj/item/ammo_casing/revolver
 	matter = list(MATERIAL_STEEL = 1260)
 	max_ammo = 6
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/speedloader/rubber
 	labels = list("rubber")
-	ammo_type = /obj/item/ammo_casing/pistol/rubber
-
-/obj/item/ammo_magazine/speedloader/magnum
-	icon_state = "spdloader_magnum"
-	caliber = CALIBER_PISTOL_MAGNUM
-	ammo_type = /obj/item/ammo_casing/pistol/magnum
-	matter = list(MATERIAL_STEEL = 1440)
-	max_ammo = 6
-	multiple_sprites = 1
+	ammo_type = /obj/item/ammo_casing/revolver/rubber
 
 /obj/item/ammo_magazine/c50
 	name = "speed loader (.44 magnum)"
@@ -31,13 +23,21 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/speedloader/small
-	name = "speed loader"
-	icon_state = "spdloader_small"
-	caliber = CALIBER_PISTOL_SMALL
-	ammo_type = /obj/item/ammo_casing/pistol/small
+	caliber = CALIBER_REVOLVER_SMALL
+	ammo_type = /obj/item/ammo_casing/revolver/small
 	matter = list(MATERIAL_STEEL = 1060)
-	max_ammo = 6
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speedloader/medium
+	caliber = CALIBER_REVOLVER_MEDIUM
+	ammo_type = /obj/item/ammo_casing/revolver/medium
+	matter = list(MATERIAL_STEEL = 1440)
+
+/obj/item/ammo_magazine/speedloader/heavy
+	desc = "A speed loader for heavy revolvers."
+	icon_state = "spdloader_magnum"
+	caliber = CALIBER_REVOLVER_HEAVY
+	ammo_type = /obj/item/ammo_casing/revolver/heavy
+	matter = list(MATERIAL_STEEL = 1820)
 
 /obj/item/ammo_magazine/speedloader/pclip
 	name = "pistol stripper clip"

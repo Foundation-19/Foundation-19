@@ -2,8 +2,7 @@
 	sort_category = "Tactical Equipment"
 	category = /datum/gear/tactical/
 	slot = slot_tie
-	allowed_branches = list(/datum/mil_branch/security)
-
+	whitelist_department_flags = SEC
 
 /datum/gear/tactical/armor_deco
 	display_name = "armor customization"
@@ -43,21 +42,13 @@
 	path = /obj/item/clothing/accessory/storage/holster/knife
 	flags = GEAR_HAS_TYPE_SELECTION
 
-
-/* 1) Syndicate gear, and 2) Guards should spawn with assigned uniform
-/datum/gear/tactical/tacticool
-	display_name = "tacticool turtleneck"
-	path = /obj/item/clothing/under/syndicate/tacticool
-	slot = slot_w_uniform
-*/
-
 //Guards already spawn with one, but no harm leaving this here
 /datum/gear/tactical/balaclava
 	display_name = "balaclava"
 	path = /obj/item/clothing/mask/balaclava
-	
+
 //Combat knifes can be printed at a hacked autolathe with ease, high point penalty for spawning with one round start
 /datum/gear/tactical/cknife
 	display_name = "combat knife"
 	path = /obj/item/material/knife/combat
-	cost = 8	
+	cost = 8

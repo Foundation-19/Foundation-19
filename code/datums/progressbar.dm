@@ -62,9 +62,9 @@
 	if(bonus_percentage)
 		booster = new(src, bonus_percentage, focus_frequency, focus_sound, focus_fail_sound)
 
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
-	RegisterSignal(user, COMSIG_MOB_LOGOUT, .proc/clean_user_client)
-	RegisterSignal(user, COMSIG_MOB_LOGIN, .proc/on_user_login)
+	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(on_user_delete))
+	RegisterSignal(user, COMSIG_MOB_LOGOUT, PROC_REF(clean_user_client))
+	RegisterSignal(user, COMSIG_MOB_LOGIN, PROC_REF(on_user_login))
 
 	if(show_target && (target != user))
 		targetbar = image('icons/hud/progressbar_target.dmi', target, "prog_bar_0")
@@ -79,9 +79,9 @@
 			target_client = target.get_client()
 			add_prog_bar_image_to_target()
 
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/on_target_delete)
-		RegisterSignal(target, COMSIG_MOB_LOGOUT, .proc/clean_target_client)
-		RegisterSignal(target, COMSIG_MOB_LOGIN, .proc/on_target_login)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(on_target_delete))
+		RegisterSignal(target, COMSIG_MOB_LOGOUT, PROC_REF(clean_target_client))
+		RegisterSignal(target, COMSIG_MOB_LOGIN, PROC_REF(on_target_login))
 
 
 /datum/progressbar/Destroy()

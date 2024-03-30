@@ -20,6 +20,7 @@
 #define GRAB_NAB			"nab"
 #define GRAB_NAB_SPECIAL	"special nab"
 #define GRAB_ABOMINATION	"terrifying grab"
+#define GRAB_PLAGUE_DOCTOR	"plague arm"
 
 // Grab levels.
 #define NORM_PASSIVE    "normal passive"
@@ -35,6 +36,9 @@
 #define GRAB_ABOMINATION_PASSIVE 	"terrifying grab passive"
 #define GRAB_ABOMINATION_AGGRESSIVE "terrifying grab aggressive"
 #define GRAB_ABOMINATION_KILL 		"terrifying grab kill"
+
+#define GRAB_PLAGUE_DOCTOR_PASSIVE		"plague arm passive"
+#define GRAB_PLAGUE_DOCTOR_AGGRESSIVE	"plague arm aggressive"
 
 #define BORGMESON       (1<<0)
 #define BORGTHERM       (1<<1)
@@ -436,7 +440,7 @@
 // used in /mob/living/carbon/human/can_inject, and by various callers of that proc
 #define CAN_INJECT              1
 #define INJECTION_PORT          2
-#define INJECTION_PORT_DELAY    3 SECONDS // used by injectors to apply delay due to searching for a port on the injectee's suit
+#define INJECTION_PORT_DELAY    (3 SECONDS) // used by injectors to apply delay due to searching for a port on the injectee's suit
 
 #define FAKE_INVIS_ALPHA_THRESHOLD 127 // If something's alpha var is at or below this number, certain things will pretend it is invisible.
 

@@ -160,6 +160,7 @@ var/list/ai_verbs_default = list(
 	add_language(LANGUAGE_HUMAN_ARABIC, 1)
 	add_language(LANGUAGE_HUMAN_CHINESE, 1)
 	add_language(LANGUAGE_HUMAN_SPANISH, 1)
+	add_language(LANGUAGE_HUMAN_FRENCH, 1)
 	add_language(LANGUAGE_HUMAN_INDIAN, 1)
 	add_language(LANGUAGE_HUMAN_RUSSIAN, 1)
 	add_language(LANGUAGE_UNATHI_SINTA, 1)
@@ -545,7 +546,7 @@ var/list/ai_verbs_default = list(
 		var/personnel_list[] = list()
 
 		for(var/datum/computer_file/report/crew_record/t in GLOB.all_crew_records)//Look in data core locked.
-			personnel_list["[t.get_name()]: [t.get_rank()]"] = t.uncropped_photo_front//Pull names, rank, and image.
+			personnel_list["[t.get_name()]: [t.get_class()]"] = t.uncropped_photo_front//Pull names, rank, and image.
 
 		if(personnel_list.len)
 			input = input("Select a crew member:") as null|anything in personnel_list

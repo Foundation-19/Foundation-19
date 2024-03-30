@@ -30,6 +30,7 @@
 	icon = 'icons/obj/food.dmi'
 	icon_state = "donutbox"
 	name = "donut box"
+	open_icon = "donutbox"
 	can_hold = list(/obj/item/reagent_containers/food/snacks/donut)
 	foldable = /obj/item/stack/material/cardboard
 

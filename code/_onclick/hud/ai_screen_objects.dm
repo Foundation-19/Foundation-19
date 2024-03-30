@@ -2,7 +2,7 @@
 	var/mob/living/silicon/ai/ai_verb
 	var/list/input_procs
 	var/list/input_args
-	icon = 'icons/mob/screen_ai.dmi'
+	icon = 'icons/hud/screen_ai.dmi'
 	var/list/template_icon = list(null, "template")
 	var/image/template_undelay
 
@@ -10,8 +10,6 @@
 	if(!isAI(usr))
 		return TRUE
 	var/mob/living/silicon/ai/A = usr
-	if(!(ai_verb in A.verbs))
-		return TRUE
 
 	var/input_arguments = list()
 	for(var/input_proc in input_procs)
@@ -27,10 +25,10 @@
 			if(!input_arg)
 				return // We assume a null-input means the user cancelled
 
-		if(!(ai_verb in A.verbs) || A.incapacitated())
-			return
-
 		input_arguments += input_arg
+
+	if(A.incapacitated())
+		return
 
 	if(length(input_args))
 		input_arguments |= input_args

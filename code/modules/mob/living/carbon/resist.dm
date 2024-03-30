@@ -38,7 +38,7 @@
 	var/obj/item/handcuffs/HC = handcuffed
 
 	//A default in case you are somehow handcuffed with something that isn't an obj/item/handcuffs type
-	var/breakouttime = istype(HC) ? HC.breakouttime : 2 MINUTES
+	var/breakouttime = istype(HC) ? HC.breakouttime * handcuffs_breakout_modifier : 2 MINUTES * handcuffs_breakout_modifier
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H) && H.gloves && istype(H.gloves,/obj/item/clothing/gloves/rig))
@@ -55,7 +55,7 @@
 
 	var/stages = 4
 	for(var/i = 1 to stages)
-		if(do_after(src, breakouttime*0.40, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED, bonus_percentage = 25))
+		if(do_after(src, (breakouttime / stages), incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED, bonus_percentage = 25))
 			if(!handcuffed || buckled)
 				return
 			visible_message(
@@ -135,9 +135,7 @@
 		..()
 	else
 		setClickCooldown(100)
-		unbuckle_time = 2 MINUTES
-		if(psi && psi.can_use())
-			unbuckle_time = max(0, unbuckle_time - ((25 SECONDS) * psi.get_rank(PSI_PSYCHOKINESIS)))
+		unbuckle_time = GetUnbuckleTime()
 
 		visible_message(
 			SPAN_DANGER("[src] attempts to unbuckle themself!"),
@@ -168,3 +166,8 @@
 			)
 		buckled.user_unbuckle_mob(src)
 		return
+
+/mob/living/carbon/proc/GetUnbuckleTime()
+	. = 2 MINUTES
+	if(psi && psi.can_use())
+		. = max(0, . - ((25 SECONDS) * psi.get_rank(PSI_PSYCHOKINESIS)))

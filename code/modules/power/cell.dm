@@ -216,7 +216,7 @@
 	desc = "This special experimental power cell has both very large capacity, and ability to recharge itself by draining power from contained bluespace pocket."
 	icon_state = "icell"
 	origin_tech =  null
-	maxcharge = 3000
+	maxcharge = 15000
 	matter = list(MATERIAL_STEEL = 700, MATERIAL_GLASS = 80, MATERIAL_ALUMINIUM = 20)
 
 /obj/item/cell/infinite/check_charge()
@@ -266,9 +266,9 @@
 	if(charge < maxcharge)
 		give(recharge_amount)
 
-// Coarse - returns cell with worse max charge, or reduces charge of itself
-// Fine - returns cell with better max charge, charges itself a bit, or EXPLODES(with low chance)!
-// Very fine - returns cell with much better max charge, fully charges, upgrades, or EXPLODES(with high chance)!
+// Coarse - Returns cell with worse max charge, or reduces charge of itself
+// Fine - Returns cell with better max charge, charges itself a bit, or EXPLODES(with low chance)!
+// Very fine - Returns cell with much better max charge, fully charges, upgrades, or EXPLODES(with high chance)!
 /obj/item/cell/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_COARSE)
@@ -285,7 +285,7 @@
 			playsound(src, 'sounds/effects/sparks3.ogg', 50, TRUE)
 			return src
 		if(MODE_FINE)
-			if(prob(maxcharge * 0.002))
+			if(prob(maxcharge * 0.0005))
 				explosion(get_turf(src), -1, -1, 2, 4, FALSE)
 				return null
 			if(prob(50))
@@ -301,7 +301,7 @@
 			playsound(src, 'sounds/effects/sparks3.ogg', 50, TRUE)
 			return src
 		if(MODE_VERY_FINE)
-			if(prob(maxcharge * 0.01)) // It's a VERY HIGH chance to explode
+			if(prob(maxcharge * 0.0025)) // It's a VERY HIGH chance to explode
 				explosion(get_turf(src), -1, prob(20), 4, 7, FALSE)
 				return null
 			if(prob(50))
@@ -313,8 +313,8 @@
 				if(LAZYLEN(potential_cells))
 					playsound(src, 'sounds/machines/synth_yes.ogg', 50, TRUE)
 					return pick(potential_cells)
-			if(prob(50)) // Upgrade!
-				maxcharge += clamp(maxcharge * pick(0.25, 0.5), 100, 1000)
+			if(maxcharge < 15000) // Upgrade!
+				maxcharge += clamp(maxcharge * pick(0.25, 0.5), 100, 2500)
 				playsound(src, 'sounds/magic/charge.ogg', 50, TRUE, 7)
 				color = COLOR_BLUE_LIGHT
 				name = "weird [initial(name)]"

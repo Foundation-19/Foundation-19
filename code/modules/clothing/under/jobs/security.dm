@@ -4,7 +4,124 @@
  *		Detective
  *		Head of Security
  */
+// STARTING NEW SECURITY UNIFORMS //
 
+// Entrance Zone Uniforms
+/obj/item/clothing/under/rank/security/ez
+	name = "EZ Security Suit"
+	desc = "A black formal-like uniform used by Entrance Zone's security personnel, woven with fabric durable enough to absorb melee attacks. It has a Entrance Zone badge on the chest."
+	icon_state = "ez_guard"
+	worn_state = "ez_guard"
+
+/obj/item/clothing/under/rank/warden/ez
+	name = "EZ Senior Security Suit"
+	desc = "A black formal-like uniform used by Entrance Zone's senior security personnel, woven with fabric durable enough to absorb melee attacks. It has a Entrance Zone badge on the chest, and silver insignia."
+	icon_state = "ez_sergeant"
+	worn_state = "ez_sergeant"
+
+/obj/item/clothing/under/rank/head_of_security/ez
+	name = "EZ Supervisor Suit"
+	desc = "A black formal-like uniform used by Entrance Zone's lead security personnel, woven with fabric durable enough to absorb melee attacks. It has a Entrance Zone badge on the chest, and golden insignia."
+	icon_state = "ez_supervisor"
+	worn_state = "ez_supervisor"
+
+// Light Containment Zone Uniforms
+
+/obj/item/clothing/under/rank/security/lcz/medic
+	name = "LCZ Combat Medic Jumpsuit"
+	desc = "A white tactical jumpsuit, with black shoulder and red wrist markings, as well as medical insignia. Weaved with a durable fabric to absorb melee hits."
+	icon_state = "lczmed_guard"
+	worn_state = "lczmed_guard"
+
+/obj/item/clothing/under/rank/security/lcz/riot
+	name = "LCZ Riot Control Unit Jumpsuit"
+	desc = "A white tactical jumpsuit, with black shoulder and blue wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits."
+	icon_state = "lczriot_guard"
+	worn_state = "lczriot_guard"
+
+/obj/item/clothing/under/rank/security/lcz
+	name = "LCZ Security Jumpsuit"
+	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
+	icon_state = "lcz_guard"
+	worn_state = "lcz_guard"
+
+/obj/item/clothing/under/rank/warden/lcz
+	name = "LCZ Senior Security Jumpsuit"
+	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color most known for Sergeants."
+	icon_state = "lcz_sergeant"
+	worn_state = "lcz_sergeant"
+
+/obj/item/clothing/under/rank/head_of_security/lcz
+	name = "LCZ Commander Jumpsuit"
+	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
+	icon_state = "lcz_commander"
+	worn_state = "lcz_commander"
+
+// Heavy Containment Zone Uniforms
+/obj/item/clothing/under/rank/security/hcz
+	name = "HCZ Security Jumpsuit"
+	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
+	icon_state = "hcz_guard"
+	worn_state = "hcz_guard"
+
+/obj/item/clothing/under/rank/warden/hcz
+	name = "HCZ Senior Security Jumpsuit"
+	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color most known for Sergeants."
+	icon_state = "hcz_sergeant"
+	worn_state = "hcz_sergeant"
+
+/obj/item/clothing/under/rank/head_of_security/hcz
+	name = "HCZ Commander Jumpsuit"
+	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a lighter red color most known for Commanders."
+	icon_state = "hcz_commander"
+	worn_state = "hcz_commander"
+
+// Guard Commander Uniforms
+/obj/item/clothing/under/rank/head_of_security/guardcom
+	name = "Guard Commander's Uniform"
+	desc = "A white tactical shirt, with a pair of black trousers with golden striping on the side, the shirt is covered in gold insignia, with an additional black color over the wrists. There's a golden badge and belt buckle. This is definitely the definition of prospertiy."
+	icon_state = "guard_commander"
+	worn_state = "guard_commander"
+
+/obj/item/clothing/under/rank/head_of_security/guardcom/alt
+	name = "Guard Commander's Turtleneck"
+	desc = "A white turtleneck, atop of a set of black tactical cargo pants. The turtleneck has a golden insignia on the right shoulder, denoting the rank of Guard Commander. It smells of gunpowder."
+	icon_state = "guard_commander_turtleneck"
+	worn_state = "guard_commander_turtleneck"
+
+// ENDING NEW SECURITY UNIFORMS //
+
+// REPRESENTATIVES START //
+
+/obj/item/clothing/under/rank/civilian/goc
+	name = "Global Occult Coalition formal suit"
+	desc = "A white formal shirt, with a cyan suit trousers. It has insignia of a executive officer of the Global Occult Coalition. You have a feeling whoever wears this doesn't care for SoP."
+	icon_state = "gocclothes"
+	worn_state = "gocclothes"
+
+/obj/item/clothing/under/rank/civilian/uiu
+	name = "Federal Bureau of Investigation turtleneck"
+	desc = "A comfortable turtleneck in FBI colors, with some khaki pants. Do the FBI really wear this kind of thing? Usually the outfit of a UIU Relations Agent."
+	icon_state = "uiuclothes"
+	worn_state = "uiuclothes"
+
+/obj/item/clothing/suit/gocjacket
+	name = "Global Occult Coalition formal jacket"
+	desc = "A cyan formal coat, those who wear this are executive officers of the Global Occult Coalition, with insignia of such."
+	icon_state = "gocjacket"
+
+/obj/item/clothing/suit/uiucoat
+	name = "Federal Bureau of Investigation jacket"
+	desc = "A FBI jacket, used by Federal Bureau of Investigation, and or UIU Relations Agents. You feel like you deserve more than this."
+	icon_state = "uiucoat"
+
+/obj/item/clothing/under/rank/security/goc
+	name = "Global Occult Coalition tactical jumpsuit"
+	desc = "A blue-ish black tactical suit with a UNGOC logo on one of the shoulders. It's comfortable materials make it good for manueverability. All combat, all the time."
+	icon_state = "goc_jumpsuit"
+	worn_state = "goc_jumpsuit"
+
+// REPRESENTATIVES END //
 /*
  * Security
  */
@@ -185,8 +302,61 @@
 		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_PADDED
 		)
-	flags_inv = HIDEJUMPSUIT
 	siemens_coefficient = 0.6
+
+/obj/item/clothing/under/syndicate/ci
+	name = "Chaos Insurgency field uniform"
+	desc = "Heavy green field military garbs from an unknown group of interest, you'd assume it's from the Chaos Insurgency."
+	icon_state = "ci_jumpsuit"
+	item_state = "g_suit"
+	worn_state = "ci_jumpsuit"
+
+/obj/item/clothing/under/rank/cargotech/utility
+	name = "Logistics Specialist utility uniform"
+	desc = "A heavy utility jumpsuit used by the Logistics Department."
+	icon_state = "gorka_cargo"
+	item_state = "bl_suit"
+	worn_state = "gorka_cargo"
+
+/obj/item/clothing/under/rank/cargotech/utility/qm
+	name = "Logistics Officer utility uniform"
+	desc = "A heavy utility jumpsuit used by the Logistics Department. This one has silver markings, and is for the Officer of Logistics."
+	icon_state = "gorka_qm"
+	item_state = "bl_suit"
+	worn_state = "gorka_qm"
+
+/obj/item/clothing/under/rank/engineer/comms
+	name = "Communications Technician jumpsuit"
+	desc = "A heavy duty pair of a tactical engineering high-vis jumpsuit. It's assumed to be mainly used by Communications Techs."
+	icon_state = "comms_tech"
+	item_state = "bl_suit"
+	worn_state = "comms_tech"
+
+/obj/item/clothing/under/rank/security/comms
+	name = "Communications Officer suit"
+	desc = "A pair of black trousers along with a white dress shirt. It has some golden patches on the shoulders denoting the rank of Communications Officer."
+	icon_state = "comms_officer"
+	item_state = "bl_suit"
+	worn_state = "comms_officer"
+
+/obj/item/clothing/suit/armor/comms
+	name = "Communications Officer jacket"
+	desc = "A luxurious suit jacket worn by the Communications Officer, it has the same gold patches on the shoulders."
+	icon_state = "co_coat"
+
+/obj/item/clothing/under/rank/security/isd
+	name = "Internal Security field uniform"
+	desc = "A smooth black, yet comfortable turtleneck. There isn't much to note about it, atop of some dark grey trousers. Worn by Internal Security Department's goons."
+	icon_state = "isd_field"
+	item_state = "bl_suit"
+	worn_state = "isd_field"
+
+/obj/item/clothing/under/rank/security/isd/suit
+	name = "Internal Security formal uniform"
+	desc = "A pair of formal slacks, with a dark grey dress shirt. It's covered by a black formal vest, and a snazzy red tie. Only worn by the executives of the Internal Security Department."
+	icon_state = "isd_suit"
+	item_state = "bl_suit"
+	worn_state = "isd_suit"
 
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/head_of_security/jensen
@@ -199,10 +369,22 @@
 
 /obj/item/clothing/suit/armor/hos/jensen
 	name = "Guard Commander Coat"
-	desc = "Trenchcoat issued to the SD commander of a Foundation site or area."
+	desc = "A long trenchcoat issued to the Highest Ranking security officer of the SCP Foundation."
 	icon_state = "hostrench"
 	flags_inv = 0
 	siemens_coefficient = 0.6
+
+/obj/item/clothing/suit/armor/hos/vest
+	name = "Guard Commander's armored vest"
+	desc = "A slim tactical vest with a golden badge on it. You feel like a marine wearing this somehow."
+	icon_state = "gc_vest"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+
+/obj/item/clothing/suit/armor/hos/coat
+	name = "Guard Commander's padded coat"
+	desc = "A black coat with a nameplate, and rank badge on the chest, it feels thick, and armored unlike most coats. This makes you feel the sense of style."
+	icon_state = "gc_coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /*
  * Navy uniforms

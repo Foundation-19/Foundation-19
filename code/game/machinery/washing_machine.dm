@@ -68,12 +68,12 @@
 
 	update_use_power(POWER_USE_ACTIVE)
 	update_icon()
-	addtimer(CALLBACK(src, /obj/machinery/washing_machine/proc/wash), 20 SECONDS)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/washing_machine, wash)), 20 SECONDS)
 
 /obj/machinery/washing_machine/proc/wash()
 	for(var/atom/A in (contents - component_parts))
 		if(detergent)
-			A.clean_blood()
+			A.clean()
 		if(isitem(A))
 			var/obj/item/I = A
 			if(detergent)
@@ -86,7 +86,7 @@
 				C.ironed_state = WRINKLES_WRINKLY
 				if(detergent)
 					C.change_smell(SMELL_CLEAN)
-					addtimer(CALLBACK(C, /obj/item/clothing/proc/change_smell), detergent.smell_clean_time, TIMER_UNIQUE | TIMER_OVERRIDE)
+					addtimer(CALLBACK(C, TYPE_PROC_REF(/obj/item/clothing, change_smell)), detergent.smell_clean_time, TIMER_UNIQUE | TIMER_OVERRIDE)
 	QDEL_NULL(detergent)
 
 	//Tanning!
@@ -119,7 +119,7 @@
 /obj/machinery/washing_machine/on_update_icon()
 	icon_state = "wm_[state][panel_open]"
 
-/obj/machinery/washing_machine/clean_blood()
+/obj/machinery/washing_machine/clean()
 	. = ..()
 	state &= ~WASHER_STATE_BLOODY
 	update_icon()

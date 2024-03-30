@@ -2,24 +2,25 @@
 
 	if(player.current)
 		if(jobban_isbanned(player.current, id))
-			return 0
+			return FALSE
 		if(player.current.faction != MOB_FACTION_NEUTRAL)
-			return 0
+			return FALSE
 
 	if(is_type_in_list(player.assigned_job, blacklisted_jobs))
-		return 0
+		return FALSE
+
+	if(!isnull(whitelisted_jobs) && !is_type_in_list(player.assigned_job, whitelisted_jobs))
+		return FALSE
 
 	if(!ignore_role)
 		if(player.current && player.current.client)
 			var/client/C = player.current.client
 			// Limits antag status to clients above player age, if the age system is being used.
 			if(C && config.use_age_restriction_for_jobs && isnum(C.player_age) && isnum(min_player_age) && (C.player_age < min_player_age))
-				return 0
-		if(is_type_in_list(player.assigned_job, restricted_jobs))
-			return 0
+				return FALSE
 		if(player.current && (player.current.status_flags & NO_ANTAG))
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
 /datum/antagonist/proc/antags_are_dead()
 	for(var/datum/mind/antag in current_antagonists)

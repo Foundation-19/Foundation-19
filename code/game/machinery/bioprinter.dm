@@ -151,7 +151,7 @@
 			update_use_power(POWER_USE_ACTIVE)
 			printing = TRUE
 			update_icon()
-			addtimer(CALLBACK(src, .proc/attempt_to_print, href_list["to_print"], user), print_delay)
+			addtimer(CALLBACK(src, PROC_REF(attempt_to_print), href_list["to_print"], user), print_delay)
 			return TOPIC_REFRESH
 
 

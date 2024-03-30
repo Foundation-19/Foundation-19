@@ -9,10 +9,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/survivor
 	hud_icon = "hudblank"
 	available_by_default = FALSE
-	allowed_ranks = null
-	allowed_branches = null
 	skill_points = 25
 	give_psionic_implant_on_join = FALSE
+	higher_mana_chance = 5
+	higher_spell_points_chance = 5
 	max_skill = list(
 	    SKILL_HAULING = SKILL_MAX,
 	    SKILL_COMPUTER = SKILL_MAX,
@@ -44,18 +44,6 @@
 		spawnpoints = list()
 		owner = _owner
 		..()
-
-/datum/job/submap/is_species_allowed(datum/species/S)
-	if(LAZYLEN(whitelisted_species) && !(S.name in whitelisted_species))
-		return FALSE
-	if(S.name in blacklisted_species)
-		return FALSE
-	if(owner && owner.archetype)
-		if(LAZYLEN(owner.archetype.whitelisted_species) && !(S.name in owner.archetype.whitelisted_species))
-			return FALSE
-		if(S.name in owner.archetype.blacklisted_species)
-			return FALSE
-	return TRUE
 
 /datum/job/submap/is_restricted(datum/preferences/prefs, feedback)
 	var/datum/species/S = all_species[prefs.species]

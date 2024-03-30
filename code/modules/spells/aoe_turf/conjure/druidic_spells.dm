@@ -19,7 +19,6 @@
 /datum/spell/aoe_turf/conjure/summon/bats
 	name = "Summon Space Bats"
 	desc = "This spell summons a flock of spooky space bats."
-	feedback = "SB"
 
 	charge_max = 1200 //2 minutes
 	spell_flags = NEEDSCLOTHES
@@ -35,7 +34,10 @@
 
 	hud_state = "wiz_bats"
 
-/datum/spell/aoe_turf/conjure/summon/bats/empower_spell()
+	spell_cost = 2
+	mana_cost = 10
+
+/datum/spell/aoe_turf/conjure/summon/bats/ImproveSpellPower()
 	if(!..())
 		return 0
 
@@ -72,7 +74,7 @@
 	..()
 	newVars["master"] = holder //why not do this in the beginning? MIND SWITCHING.
 
-/datum/spell/aoe_turf/conjure/summon/bear/empower_spell()
+/datum/spell/aoe_turf/conjure/summon/bear/ImproveSpellPower()
 	if(!..())
 		return 0
 	switch(spell_levels[UPGRADE_POWER])
