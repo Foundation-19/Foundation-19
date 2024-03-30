@@ -5548,12 +5548,15 @@
 /area/vacant/prototype/engine)
 "apN" = (
 /obj/structure/closet/crate,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/engine_smes)
 "apO" = (
@@ -9727,12 +9730,15 @@
 	icon_state = "2-8"
 	},
 /obj/structure/closet/crate,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
-/obj/item/cell/super,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/engine_smes)
 "aAM" = (
