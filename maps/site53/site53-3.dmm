@@ -6246,6 +6246,13 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
 	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/obj/effect/landmark{
+	name = "scp420j"
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/innerentrancehallway)
 "tz" = (
