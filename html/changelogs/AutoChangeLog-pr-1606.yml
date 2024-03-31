@@ -1,5 +1,0 @@
-author: quadbium
-delete-after: true
-changes:
-  - rscadd: replace fooddel ID with "fooddelivery"
-  - rscadd: fixed food delivery converyer
