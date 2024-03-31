@@ -5013,6 +5013,12 @@
 "nL" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/item/storage/bible,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 0
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "nM" = (
@@ -5169,6 +5175,10 @@
 /obj/structure/table/woodentable/mahogany,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "oq" = (
@@ -7397,6 +7407,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "yu" = (
@@ -7864,6 +7875,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"AE" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/recharger/wallcharger,
+/turf/simulated/wall/titanium,
+/area/site53/uez/courtroom)
 "AH" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -8244,6 +8260,10 @@
 /area/site53/uez/courtroom)
 "CR" = (
 /obj/structure/table/woodentable/mahogany,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "CT" = (
@@ -12063,6 +12083,10 @@
 /obj/item/storage/box/tapes,
 /obj/item/device/camera,
 /obj/item/device/taperecorder,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "ZF" = (
@@ -49727,7 +49751,7 @@ dA
 ZQ
 ZQ
 Na
-ZQ
+AE
 ZQ
 ZQ
 ZQ
