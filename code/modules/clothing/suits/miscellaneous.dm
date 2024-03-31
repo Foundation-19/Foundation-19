@@ -334,15 +334,6 @@
 	icon_open = "brown_jacket_nt_open"
 	icon_closed = "brown_jacket_nt"
 
-/obj/item/clothing/suit/storage/toggle/agent_jacket
-	name = "FBI agent jacket"
-	desc = "A black leather jacket belonging to an agent of the FBI."
-	icon_state = "agent_jacket"
-	icon_open = "agent_jacket_open"
-	icon_closed = "agent_jacket"
-	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
-	body_parts_covered = UPPER_TORSO|ARMS
-
 /obj/item/clothing/suit/storage/toggle/hoodie
 	name = "hoodie"
 	desc = "A warm sweatshirt."

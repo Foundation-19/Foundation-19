@@ -18,7 +18,7 @@
 	name = "brig officer's rubber stamp"
 	icon_state = "stamp-ward"
 
-/obj/item/weapon/stamp/solgov
+/obj/item/weapon/stamp/gocrep
 	name = "\improper Global Occult Coalition Representive's rubber stamp"
 	icon_state = "stamp-intaff"
 
