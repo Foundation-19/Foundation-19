@@ -1800,7 +1800,8 @@
 /area/site53/medical/surgery/hall)
 "ej" = (
 /obj/structure/table/woodentable/mahogany,
-/turf/simulated/floor/wood/walnut,
+/obj/item/storage/bible,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "ek" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -4567,16 +4568,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
 "lC" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/courtroom)
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "lD" = (
 /obj/structure/bed/chair/armchair/brown{
 	dir = 4
@@ -4643,6 +4637,12 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
+"lT" = (
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4659,11 +4659,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "lZ" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 5
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "ma" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -4679,6 +4679,13 @@
 /obj/effect/paint_stripe/gunmetal,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/morgue)
+"md" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "me" = (
 /obj/machinery/optable,
 /obj/structure/cable/green{
@@ -4774,6 +4781,21 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/entrancehallway)
+"mu" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/bed/chair/padded/red{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/green,
+/area/site53/uez/courtroom)
 "mx" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -4822,9 +4844,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface)
 "mJ" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 6
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
@@ -4835,6 +4854,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mM" = (
@@ -5498,6 +5518,11 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmreception)
+"pU" = (
+/obj/structure/table/woodentable/walnut,
+/obj/item/device/flashlight/lamp/green,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "pV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/closet/l3closet,
@@ -5583,9 +5608,10 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "qq" = (
-/obj/structure/table/woodentable/mahogany,
-/obj/item/storage/bible,
-/turf/simulated/floor/wood/walnut,
+/obj/structure/bed/chair/padded/red{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "qs" = (
 /obj/structure/table/woodentable/ebony,
@@ -5765,10 +5791,9 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "rf" = (
-/obj/structure/filingcabinet/wallcabinet,
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/titanium,
-/area/site53/uez/courtroom/quarters)
+/obj/structure/bed/chair/comfy/red,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "rg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 8
@@ -6367,6 +6392,10 @@
 "tO" = (
 /turf/unsimulated/mask,
 /area/site53/logistics/logisticsbreak)
+"tV" = (
+/obj/effect/floor_decal/spline/fancy/wood,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "tZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -7121,6 +7150,23 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"xY" = (
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Entrance Zone Network")
+	},
+/obj/structure/bed/chair/padded/red{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/green,
+/area/site53/uez/courtroom)
+"xZ" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/carpet/green,
+/area/site53/uez/courtroom/quarters)
 "yb" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -7133,13 +7179,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
 "ye" = (
-/obj/machinery/door/window/northleft{
-	name = "Gallery"
-	},
-/obj/structure/bed/chair/padded/red{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "yg" = (
 /obj/machinery/light{
@@ -7314,6 +7354,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
+"ze" = (
+/obj/structure/bed/chair/comfy/red,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "zf" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -7817,6 +7866,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"BQ" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "BS" = (
 /obj/machinery/light{
 	dir = 4
@@ -7979,6 +8040,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"CN" = (
+/obj/structure/table/woodentable/mahogany,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "CT" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -7995,6 +8060,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
+"CV" = (
+/obj/structure/bed/chair/padded/red{
+	dir = 8
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 8
+	},
+/obj/machinery/door/window/westleft,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "CW" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/paper_bin,
@@ -8008,10 +8083,13 @@
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/courtroom/quarters)
 "Dc" = (
-/obj/structure/table/woodentable/mahogany,
-/obj/item/gavelblock,
-/obj/item/gavelhammer,
-/turf/simulated/floor/wood/walnut,
+/obj/structure/bed/chair/padded/red{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "Dg" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
@@ -8065,8 +8143,8 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/restaurantkitchenarea)
 "DF" = (
-/obj/structure/bed/chair/padded/red{
-	dir = 8
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom)
@@ -8224,8 +8302,13 @@
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
 "Et" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/spline/fancy/wood/corner,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom)
 "Ew" = (
 /obj/structure/railing/mapped{
@@ -8300,6 +8383,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
+"EU" = (
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "Fd" = (
 /obj/structure/sign/directions/evac{
 	pixel_x = 32;
@@ -8417,11 +8506,8 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "FB" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/bed/chair/padded/red{
-	dir = 8
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom)
@@ -8436,6 +8522,17 @@
 	pixel_x = -24
 	},
 /turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
+"FI" = (
+/obj/structure/table/woodentable/mahogany,
+/obj/item/gavelblock,
+/obj/item/gavelhammer,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "FK" = (
 /obj/effect/floor_decal/industrial/firstaid{
@@ -8556,14 +8653,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
 "GG" = (
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Entrance Zone Network")
+/obj/structure/table/woodentable/ebony,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/bed/chair/padded/red{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
+/turf/simulated/floor/carpet/red,
 /area/site53/uez/courtroom)
 "GJ" = (
 /obj/structure/railing/mapped{
@@ -8583,6 +8679,13 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
+"GM" = (
+/obj/structure/bed/chair/padded/red{
+	dir = 1
+	},
+/obj/machinery/door/window/eastright,
+/turf/simulated/floor/carpet/green,
+/area/site53/uez/courtroom)
 "GO" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -8796,7 +8899,7 @@
 /obj/structure/bed/chair/padded/red{
 	dir = 1
 	},
-/turf/simulated/floor/wood/walnut,
+/turf/simulated/floor/carpet/green,
 /area/site53/uez/courtroom)
 "HU" = (
 /obj/structure/cable{
@@ -8843,13 +8946,8 @@
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
 "Id" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/glass/command{
-	name = "Tribunal Courtroom"
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 9
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom)
@@ -8902,6 +9000,12 @@
 /obj/item/boombox,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
+"Iq" = (
+/obj/structure/table/woodentable/walnut,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "Is" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -9000,6 +9104,12 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom/quarters)
+"IT" = (
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "IV" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green/three_quarters,
@@ -9309,19 +9419,32 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/courtroom/quarters)
+"KT" = (
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood/corner,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "KV" = (
 /obj/effect/paint_stripe/yellow,
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/bridge)
 "KZ" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/bed/chair/padded/red{
 	dir = 1
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/green,
 /area/site53/uez/courtroom)
 "Lb" = (
 /obj/structure/closet/wardrobe/white,
@@ -9429,6 +9552,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
+"LU" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/spline/fancy/wood,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "LW" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/table/standard,
@@ -9645,6 +9777,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/logistics/logisticsbreak)
+"Nv" = (
+/obj/structure/table/woodentable/walnut,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "NA" = (
 /obj/effect/floor_decal/carpet/orange{
 	dir = 1
@@ -9767,13 +9903,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "Om" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light{
+/obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom)
@@ -9824,6 +9958,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"OB" = (
+/obj/structure/table/woodentable/mahogany,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "OC" = (
 /obj/item/modular_computer/console/preset/security{
 	dir = 4
@@ -9843,8 +9983,16 @@
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
 "OH" = (
-/obj/structure/bed/chair/comfy/red,
-/turf/simulated/floor/wood/walnut,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/bed/chair/padded/red{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/green,
 /area/site53/uez/courtroom)
 "OK" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -10013,6 +10161,20 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
+"PI" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "PK" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/light/spot{
@@ -10020,6 +10182,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
+"PQ" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "PX" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -10319,6 +10492,13 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception/waiting)
+"RL" = (
+/obj/effect/floor_decal/spline/fancy/wood/corner,
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "RM" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/storage/fancy/cigar,
@@ -10357,10 +10537,13 @@
 /obj/structure/bed/chair/padded/red{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 8
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "Sd" = (
 /obj/machinery/light{
@@ -10485,7 +10668,9 @@
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/courtroom/quarters)
 "SK" = (
-/obj/structure/table/woodentable/walnut,
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 4
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom)
 "SM" = (
@@ -10601,7 +10786,8 @@
 /obj/structure/bed/chair/padded/red{
 	dir = 1
 	},
-/turf/simulated/floor/wood/walnut,
+/obj/machinery/door/window/westleft,
+/turf/simulated/floor/carpet/green,
 /area/site53/uez/courtroom)
 "Tv" = (
 /obj/structure/table/woodentable/ebony,
@@ -10718,6 +10904,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"Ue" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/courtroom)
 "Ug" = (
 /obj/machinery/light{
 	dir = 8
@@ -10827,6 +11021,12 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"UP" = (
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "UQ" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op3)
@@ -11055,12 +11255,9 @@
 /area/site53/reswing/roboticsupr)
 "WE" = (
 /obj/structure/bed/chair/padded/red{
-	dir = 8
+	dir = 1
 	},
-/obj/machinery/door/window/westleft{
-	name = "Jury Box"
-	},
-/turf/simulated/floor/wood/walnut,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/courtroom)
 "WF" = (
 /obj/structure/flora/ausbushes,
@@ -11292,6 +11489,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Yr" = (
+/obj/structure/bed/chair/padded/red{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/green,
+/area/site53/uez/courtroom)
 "Yu" = (
 /obj/structure/table/standard,
 /obj/machinery/reagent_temperature/cooler{
@@ -11347,6 +11550,24 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/titanium,
 /area/site53/medical/infirmreception)
+"YN" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
+"YP" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/courtroom)
 "YT" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -11396,6 +11617,13 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"Zi" = (
+/obj/effect/floor_decal/corner/orange/border,
+/obj/machinery/door/airlock/multi_tile/glass/command{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "Zn" = (
 /obj/structure/bed/chair/comfy/red,
 /turf/simulated/floor/carpet/green,
@@ -46051,7 +46279,7 @@ nY
 dA
 dA
 dt
-lZ
+lo
 mJ
 nr
 gy
@@ -46308,9 +46536,9 @@ dA
 dA
 dA
 dt
-Et
-Id
-Et
+lo
+lC
+Zp
 Zp
 Zp
 Zp
@@ -46564,10 +46792,10 @@ dA
 dA
 dA
 dA
-dA
-ZQ
-qb
-ZQ
+dt
+lo
+lC
+dt
 dA
 dA
 oS
@@ -46821,10 +47049,10 @@ dA
 dA
 dA
 dA
-dA
-ZQ
-Om
-ZQ
+dt
+lo
+lC
+dt
 dA
 dA
 oS
@@ -47078,10 +47306,10 @@ dA
 dA
 dA
 dA
-dA
-ZQ
+dt
+Uu
 lC
-ZQ
+dt
 dA
 dA
 oS
@@ -47329,18 +47557,18 @@ nM
 sZ
 rs
 dA
-ZQ
-ZQ
-ZQ
-ZQ
-ZQ
-ZQ
-ZQ
-ZQ
-qb
-ZQ
-ZQ
-ZQ
+dA
+dA
+dA
+dA
+dA
+dA
+dt
+lo
+lC
+dt
+dA
+dA
 oS
 rm
 bJ
@@ -47586,18 +47814,18 @@ Sx
 WN
 rs
 dA
-ZQ
-Tl
-Tl
-Tl
-FH
-AH
-Cb
-Cb
-YZ
-ye
-Tu
-ZQ
+dA
+dA
+dA
+dA
+dA
+dA
+dt
+lo
+lC
+dt
+dA
+dA
 oS
 rm
 ru
@@ -47843,18 +48071,18 @@ fc
 vc
 rs
 dA
-ZQ
-Tl
-Tl
-Tl
-Tl
-qb
-SK
-Tu
-Tl
-KZ
-Tu
-ZQ
+dA
+dA
+dA
+dA
+dA
+dA
+dt
+lo
+Zi
+dt
+dA
+dA
 oS
 rm
 bI
@@ -48100,18 +48328,18 @@ rs
 rs
 rs
 dA
+dA
+dA
+dA
+dA
+dA
+dA
 ZQ
-Nk
-Tl
-Tl
 Tl
 qb
-SK
-Tu
-Tl
-KZ
-HS
 ZQ
+dA
+dA
 oS
 rm
 rm
@@ -48357,18 +48585,18 @@ dA
 dA
 dA
 dA
+dA
+dA
+dA
+dA
+dA
+dA
 ZQ
-Tl
-OH
-ej
-Tl
+Nk
 qb
-Tl
-Tl
-Tl
-KZ
-Tu
 ZQ
+dA
+dA
 oS
 oS
 oS
@@ -48614,18 +48842,18 @@ dA
 dA
 dA
 dA
+dA
+dA
+dA
+dA
+dA
+dA
 ZQ
 Rm
-OH
-Dc
-Tl
 qb
-Tl
-Tl
-Tl
-KZ
-GG
 ZQ
+dA
+dA
 dA
 dA
 oS
@@ -48865,23 +49093,23 @@ dA
 dA
 dA
 dA
-Nr
-Nr
-Nr
-Nr
-Nr
-Nr
-Nr
-Tl
-OH
-qq
+dA
+dA
+dA
+dA
+dA
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 Tl
 qb
-Tl
-Tl
-Tl
-KZ
-Tu
+ZQ
+ZQ
 ZQ
 dA
 dA
@@ -49122,23 +49350,23 @@ dA
 dA
 dA
 dA
-Nr
-SJ
-wx
-wx
-wx
-TG
-Nr
-Nk
+dA
+dA
+dA
+dA
+dA
+ZQ
+md
 Tl
 Tl
 Tl
-qb
-SK
-Tu
+FH
+AH
+Cb
+Cb
+YZ
 Tl
-KZ
-HS
+Tl
 ZQ
 dA
 dA
@@ -49379,23 +49607,23 @@ dA
 dA
 dA
 dA
-Nr
-qs
-wx
-wx
-wx
-EQ
-Vo
-Cb
-Cb
-Cb
-Cb
-YZ
-SK
-Tu
+dA
+dA
+dA
+dA
+dA
+ZQ
 Tl
-KZ
-Tu
+Tl
+Tl
+Tl
+Tl
+Et
+SK
+SK
+FB
+Tl
+Tl
 ZQ
 dA
 dA
@@ -49636,21 +49864,21 @@ dA
 dA
 dA
 dA
-Nr
-KO
-wx
-wx
-IS
-zj
-Nr
+dA
+dA
+dA
+dA
+dA
+ZQ
+YN
+FB
 Tl
 Tl
 Tl
-Tl
-tx
-Tl
-Tl
-Tl
+LU
+pU
+WE
+lZ
 KZ
 Tu
 ZQ
@@ -49893,23 +50121,23 @@ dA
 dA
 dA
 dA
-Nr
-CY
-wx
-Zn
-Fj
-yZ
-XM
+dA
+dA
+dA
+dA
+dA
 ZQ
+ye
+DF
 FB
-FB
+Tl
+Tl
+LU
+Iq
 WE
-ZQ
-ZQ
-ZQ
-ZQ
-ZQ
-ZQ
+lZ
+OH
+Yr
 ZQ
 dA
 dA
@@ -50149,25 +50377,25 @@ dA
 dA
 dA
 dA
-dA
 Nr
-wx
-wx
-wx
-gd
-QF
+Nr
+Nr
+Nr
+Nr
+Nr
+Nr
 rf
-ZQ
+CN
 DF
-RY
-DF
+FB
+Tl
+LU
+Nv
+WE
+lZ
+OH
+HS
 ZQ
-dA
-dA
-dA
-dA
-dA
-dA
 dA
 dA
 dA
@@ -50406,25 +50634,25 @@ dA
 dA
 dA
 dA
-dA
 Nr
+SJ
+wx
+wx
+wx
+TG
 Nr
-Nr
-Nr
-Nr
-Nr
-Nr
+ye
+ye
+CN
+KT
+SK
+PI
+lT
+lT
+UP
+OH
+Yr
 ZQ
-ZQ
-ZQ
-ZQ
-ZQ
-dA
-dA
-dA
-dA
-dA
-dA
 dA
 dA
 dA
@@ -50663,25 +50891,25 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Nr
+qs
+wx
+wx
+wx
+EQ
+Vo
+Ue
+ze
+FI
+BQ
+GG
+PQ
+Tl
+Tl
+Tl
+OH
+xY
+ZQ
 dA
 dA
 dA
@@ -50920,25 +51148,25 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Nr
+KO
+wx
+wx
+IS
+zj
+Nr
+IT
+ye
+OB
+Om
+lT
+RL
+SK
+SK
+FB
+OH
+Yr
+ZQ
 dA
 dA
 dA
@@ -51177,25 +51405,25 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Nr
+CY
+wx
+Zn
+Fj
+yZ
+Nr
+rf
+ej
+Id
+UP
+Tl
+tV
+pU
+WE
+lZ
+OH
+HS
+ZQ
 dA
 dA
 dA
@@ -51434,25 +51662,25 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Nr
+xZ
+wx
+wx
+gd
+QF
+Nr
+ye
+Id
+UP
+Tl
+Tl
+tV
+Iq
+WE
+lZ
+OH
+Yr
+ZQ
 dA
 dA
 dA
@@ -51691,25 +51919,25 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Nr
+Nr
+Nr
+Nr
+Nr
+XM
+Nr
+YP
+UP
+Tl
+Tl
+Tl
+tV
+Nv
+WE
+lZ
+mu
+GM
+ZQ
 dA
 dA
 dA
@@ -51954,19 +52182,19 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+ZQ
+Tl
+Tl
+Tl
+Tl
+Tl
+EU
+lT
+lT
+UP
+Tl
+Tl
+ZQ
 dA
 dA
 dA
@@ -52211,19 +52439,19 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+ZQ
+Tl
+Tl
+Tl
+Tl
+Tl
+tx
+Tl
+Tl
+Tl
+Tl
+Tl
+ZQ
 dA
 dA
 dA
@@ -52468,19 +52696,19 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+ZQ
+ZQ
+ZQ
+RY
+RY
+CV
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 dA
 dA
 dA
@@ -52727,11 +52955,11 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
+ZQ
+qq
+Dc
+qq
+ZQ
 dA
 dA
 dA
@@ -52984,11 +53212,11 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 dA
 dA
 dA
