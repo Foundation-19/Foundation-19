@@ -1,4 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - bugfix: do_afters with a target no longer runtime on Destroy().
