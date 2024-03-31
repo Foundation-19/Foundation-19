@@ -169,6 +169,7 @@
 #define ui_ai_power_override "LEFT:6,TOP:0"
 #define ui_ai_shutdown "LEFT+1:6,TOP:0"
 #define ui_ai_holo_mov "LEFT:6, TOP-1:0"
+#define ui_ai_area_apc "LEFT+1:6, TOP-1:0"
 
 // AI: Crew
 #define ui_ai_crew_mon "RIGHT-1:30,TOP:0"

@@ -1,0 +1,5 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - balance: Department command roles now only require roughly six rounds to unlock
+      per department.
