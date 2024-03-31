@@ -2522,9 +2522,6 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom/quarters)
 "ge" = (
@@ -7875,11 +7872,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"AE" = (
-/obj/effect/paint_stripe/blue,
-/obj/machinery/recharger/wallcharger,
-/turf/simulated/wall/titanium,
-/area/site53/uez/courtroom)
 "AH" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -9930,6 +9922,11 @@
 /obj/item/storage/pill_bottle/amnesticsi,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"MS" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/recharger/wallcharger,
+/turf/simulated/wall/titanium,
+/area/site53/uez/courtroom)
 "MU" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/closet/crate/freezer,
@@ -10610,6 +10607,7 @@
 /turf/simulated/wall/prepainted,
 /area/site53/reswing/roboticsupr)
 "QF" = (
+/obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/courtroom/quarters)
 "QG" = (
@@ -49751,7 +49749,7 @@ dA
 ZQ
 ZQ
 Na
-AE
+MS
 ZQ
 ZQ
 ZQ
@@ -52315,7 +52313,7 @@ Nr
 Nr
 Nr
 Nr
-Nr
+XM
 XM
 Nr
 Jl
