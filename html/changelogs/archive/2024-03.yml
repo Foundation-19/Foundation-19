@@ -185,3 +185,25 @@
   - balance: Loose ores on the floor can be picked up by mechs, mech plasma cutters
       (MPCs) can now hold 10 shots, and PCs in general destroy multiple tiles (of
       ore) in a shot. Mech's laser gun is slightly more accurate.
+2024-03-29:
+  Saicchi:
+  - bugfix: engi robot cleaner spray recharge
+2024-03-30:
+  checkraisefold:
+  - rscadd: Gavels and gavel blocks. You can now have a TRUE courtroom. Craftable
+      with wood!
+2024-03-31:
+  Saicchi:
+  - rscadd: new verb and ui box to open area apc for aic
+  TheDarkElites:
+  - balance: Department command roles now only require roughly six rounds to unlock
+      per department.
+  checkraisefold:
+  - bugfix: Fix runtime in goal container code.
+  - bugfix: Fix goal list breaking completely when re-entering corpse while ghosted.
+      Relevant for admins who aghost.
+  cheesePizza2:
+  - bugfix: do_afters with a target no longer runtime on Destroy().
+  quadbium:
+  - rscadd: replace fooddel ID with "fooddelivery"
+  - rscadd: fixed food delivery converyer

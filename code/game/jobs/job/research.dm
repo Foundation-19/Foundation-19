@@ -297,7 +297,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 15
-	requirements = list(EXP_TYPE_SCIENCE = 900)
+	requirements = list(EXP_TYPE_SCIENCE = 720)
 	req_admin_notify = 1
 	supervisors = "the Site Director"
 	alt_titles = list("Chief Science Officer", "Head Researcher")
