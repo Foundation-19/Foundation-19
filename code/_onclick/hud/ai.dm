@@ -152,6 +152,13 @@
 			)
 
 	adding += new /obj/screen/ai_button(null,
+			ui_ai_area_apc,
+			"Access Area APC",
+			"ai_area_apc",
+			TYPE_PROC_REF(/mob/living/silicon/ai, access_area_apc)
+			)
+
+	adding += new /obj/screen/ai_button(null,
 			ui_ai_core_icon,
 			"Pick Icon",
 			"ai_core_pick",
