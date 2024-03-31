@@ -24,12 +24,12 @@
 	blood_mask = null
 
 	// damage overrides
-	brute_mod =      0.5                    // 50% physical damage
-	burn_mod =       0.5                    // 50% burn damage
-	oxy_mod =        0.0                    // No oxygen damage
-	toxins_mod =     0.0                    // No toxin damage
-	radiation_mod =  0.0                    // No radiation damage
-	flash_mod =      0.0                    // Unflashable
+	brute_mod =      0.5
+	burn_mod =       0.5
+	oxy_mod =        0.0
+	toxins_mod =     0.0
+	radiation_mod =  0.0
+	flash_mod =      0.5
 
 	has_limbs = list(
 		BP_CHEST =  list("path" = /obj/item/organ/external/chest/unbreakable),
