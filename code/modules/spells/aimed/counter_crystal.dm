@@ -51,7 +51,7 @@
 	var/obj/structure/cult/pylon/counter_crystal/CC = new (T)
 	CC.creator = user
 	CC.damage_multiplier = crystal_damage_multiplier
-	addtimer(CALLBACK(CC, /obj/structure/cult/pylon/counter_crystal/proc/TimedCollapse), duration)
+	addtimer(CALLBACK(CC, TYPE_PROC_REF(/obj/structure/cult/pylon/counter_crystal, TimedCollapse)), duration)
 
 /datum/spell/aimed/counter_crystal/ImproveSpellPower()
 	if(!..())
@@ -82,8 +82,8 @@
 
 /obj/structure/cult/pylon/counter_crystal/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST, .proc/OnSpellCast)
-	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST_HAND, .proc/OnSpellCastHand)
+	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST, PROC_REF(OnSpellCast))
+	RegisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST_HAND, PROC_REF(OnSpellCastHand))
 
 /obj/structure/cult/pylon/counter_crystal/Destroy()
 	UnregisterSignal(SSdcs, COMSIG_GLOB_SPELL_CAST)

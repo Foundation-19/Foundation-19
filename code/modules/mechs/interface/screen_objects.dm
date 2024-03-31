@@ -242,7 +242,7 @@
 /atom/movable/screen/exosuit/toggle/maint/toggled()
 	owner.maintenance_protocols = ..()
 	to_chat(usr, SPAN_NOTICE("Maintenance protocols [owner.maintenance_protocols ? "enabled" : "disabled"]."))
-	playsound(src.loc, 'sounds/mecha/eris/mech_maints_toggle.ogg', 50, 1, -6)
+	playsound(src.loc, 'sounds/mecha/mech_maints_toggle.ogg', 50, 1, -6)
 
 /atom/movable/screen/exosuit/toggle/hardpoint
 	name = "toggle hardpoint lock"
@@ -267,7 +267,7 @@
 		return
 	owner.hatch_locked = ..()
 	to_chat(usr, SPAN_NOTICE("The [owner.body.hatch_descriptor] is [owner.hatch_locked ? "now" : "no longer" ] locked."))
-	playsound(src.loc, 'sounds/mecha/eris/mech_lock_toggle.ogg', 50, 1, -6)
+	playsound(src.loc, 'sounds/mecha/mech_lock_toggle.ogg', 50, 1, -6)
 
 /atom/movable/screen/exosuit/toggle/hatch_open
 	name = "open or close hatch"
@@ -284,7 +284,7 @@
 	owner.hatch_closed = ..()
 	to_chat(usr, SPAN_NOTICE("The [owner.body.hatch_descriptor] is now [owner.hatch_closed ? "closed" : "open" ]."))
 	owner.update_icon()
-	playsound(src.loc, 'sounds/mecha/eris/mech_hatch_toggle.ogg', 50, 1, -6)
+	playsound(src.loc, 'sounds/mecha/mech_hatch_toggle.ogg', 50, 1, -6)
 
 /atom/movable/screen/exosuit/toggle/hatch_open/on_update_icon()
 	toggled = owner.hatch_closed

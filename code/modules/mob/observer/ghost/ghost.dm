@@ -198,6 +198,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind.current.teleop = null
 	mind.current.reload_fullscreen()
 	mind.current.client.init_verbs()
+	SEND_SIGNAL(mind, COMSIG_MIND_POST_INIT)
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
 	return 1

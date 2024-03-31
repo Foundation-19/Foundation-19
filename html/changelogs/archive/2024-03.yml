@@ -185,3 +185,10 @@
   - balance: Loose ores on the floor can be picked up by mechs, mech plasma cutters
       (MPCs) can now hold 10 shots, and PCs in general destroy multiple tiles (of
       ore) in a shot. Mech's laser gun is slightly more accurate.
+2024-03-29:
+  Saicchi:
+  - bugfix: engi robot cleaner spray recharge
+2024-03-30:
+  checkraisefold:
+  - rscadd: Gavels and gavel blocks. You can now have a TRUE courtroom. Craftable
+      with wood!
