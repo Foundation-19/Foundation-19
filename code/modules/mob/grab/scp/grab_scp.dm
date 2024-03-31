@@ -20,7 +20,7 @@
 	/// When TRUE - blocks quick_stabs() proc from continuing
 	var/stop_effects = FALSE
 
-// This causes the user to temporarily stun and weaken the target, dealing pain and slight brute damage
+/// This causes the user to temporarily stun and weaken the target, dealing pain and slight brute damage
 /datum/grab/plague_doctor/proc/attempt_cure(obj/item/grab/normal/G)
 	var/mob/living/carbon/human/scp049/user = G.assailant
 	var/mob/living/carbon/human/target = G.affecting
@@ -77,7 +77,7 @@
 	admin_attack_log(user, target, "'Cured' their victim.", "Was 'cured'.", "'cured'")
 	qdel(G)
 
-/// This proc repeatedly does minor Brute damage with a few visual effects (bloodspatters, random noises, etc)
+/// This proc repeatedly does minor Brute damage to the target with a few visual effects (bloodspatters, random noises, etc)
 /datum/grab/plague_doctor/proc/quick_stabs(obj/item/grab/normal/G)
 	if(QDELETED(G) || stop_effects)
 		return
