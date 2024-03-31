@@ -188,3 +188,7 @@
 2024-03-29:
   Saicchi:
   - bugfix: engi robot cleaner spray recharge
+2024-03-30:
+  checkraisefold:
+  - rscadd: Gavels and gavel blocks. You can now have a TRUE courtroom. Craftable
+      with wood!
