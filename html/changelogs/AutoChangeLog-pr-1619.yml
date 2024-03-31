@@ -1,6 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Fix runtime in goal container code.
-  - bugfix: Fix goal list breaking completely when re-entering corpse while ghosted.
-      Relevant for admins who aghost.
