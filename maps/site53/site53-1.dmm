@@ -22003,8 +22003,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
 	id_tag = "049bedroom";
-	name = "049 Bedroom Window Shutter";
-	acid_melted = sssss
+	name = "049 Bedroom Window Shutter"
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
