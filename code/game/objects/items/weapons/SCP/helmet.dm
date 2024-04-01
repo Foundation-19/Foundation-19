@@ -3,36 +3,36 @@
 	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back."
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
-	armor = list(melee = 60, bullet = 40, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 60, bullet = 40, laser = 25, energy = 25, bomb = 30, bio = 30, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = "Toggle Visor"
 
 /obj/item/clothing/head/helmet/scp/security/medic
 	name = "medical security helmet"
-	desc = "A helmet with 'COMBAT MEDIC' printed on the back."
+	desc = "A helmet with 'COMBAT MEDIC' printed on the back. Worn by Combat Medics. Durability lessened to cope with faster response."
 	icon_state = "medichelm"
 	body_parts_covered = HEAD|EYES
-	armor = list(melee = 45, bullet = 50, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 45, bullet = 30, laser = 35, energy = 45, bomb = 15, bio = 35, rad = 35)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/recontain
 	name = "response security helmet"
-	desc = "An extremely durable, and thickened helmet with 'RECONTAINMENT UNIT' printed on the back."
+	desc = "An extremely durable, and thickened helmet with 'RECONTAINMENT UNIT' printed on the back. Made with padding to cope with response, durability towards melee is lessened though."
 	icon_state = "reconhelm"
 	body_parts_covered = HEAD|EYES
-	armor = list(melee = 45, bullet = 65, laser = 65,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 35, bullet = 60, laser = 45, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/riot
 	name = "riot security helmet"
-	desc = "A helmet with 'RIOT CONTROL UNIT' printed on the back, it looks extremely durable."
+	desc = "A helmet with 'RIOT CONTROL UNIT' printed on the back, it looks extremely durable towards melee, not much of anything else though."
 	icon_state = "guardriothelm"
-	armor = list(melee = 80, bullet = 25, laser = 25,energy = 25, bomb = 25, bio = 10, rad = 10)
+	armor = list(melee = 80, bullet = 15, laser = 25, energy = 25, bomb = 50, bio = 25, rad = 15)
 
 /obj/item/clothing/head/helmet/scp/security/lczcom
 	name = "\improper Heavy-plated foundation security helmet"
