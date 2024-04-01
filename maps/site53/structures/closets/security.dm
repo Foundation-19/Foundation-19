@@ -86,8 +86,8 @@
 
 /obj/structure/closet/secure_closet/guard/lcz/WillContain()
 	return ..() | list(
-		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/head/helmet/scp/security,
 		/obj/item/clothing/head/beret/sec/guard,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
@@ -112,8 +112,8 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/accessory/storage/bandolier,
-		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/head/helmet/scp/security,
 		/obj/item/clothing/head/beret/sec/sergeant,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
