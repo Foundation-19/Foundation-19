@@ -567,7 +567,7 @@
 
 /obj/random/soap/spawn_choices()
 	return list(/obj/item/soap = 12,
-				/obj/item/reagent_containers/glass/rag = 2,
+				/obj/item/reagent_containers/rag = 2,
 				/obj/item/reagent_containers/spray/cleaner = 2)
 
 /obj/random/obstruction //Large objects to block things off in maintenance
