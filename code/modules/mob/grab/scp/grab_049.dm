@@ -17,6 +17,8 @@
 	stop_move = TRUE
 	can_grab_self = FALSE
 
+	action_cooldown = 10 SECONDS
+
 	/// When TRUE - blocks quick_stabs() proc from continuing
 	var/stop_effects = FALSE
 
@@ -44,7 +46,7 @@
 	quick_stabs(G)
 	for(var/stage = 1, stage <=4, stage++)
 		target.Weaken(4)
-		balloon_alert_to_viewers("curing...")
+		user.balloon_alert_to_viewers("curing [stage]/4...")
 		switch(stage)
 			if(1)
 				to_chat(user, SPAN_NOTICE("The disease has taken hold. We must work quickly..."))
@@ -67,7 +69,7 @@
 				playsound(target, 'sounds/weapons/bladeslice.ogg', 50, TRUE, 7)
 
 		if(!do_after(user, 10 SECONDS, target))
-			balloon_alert_to_viewers("curing interuptted!")
+			user.balloon_alert_to_viewers("curing interuptted!")
 			stop_effects = TRUE
 			return
 

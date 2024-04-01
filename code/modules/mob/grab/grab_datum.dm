@@ -179,7 +179,7 @@
 					make_log(G, harm_action)
 
 	else
-		to_chat(G.assailant, SPAN_WARNING("You must wait before you can do that."))
+		G.affecting.balloon_alert(G.assailant, "wait [round(((G.last_action + action_cooldown) - world.time) / (1 SECOND), 1)] seconds!")
 
 /datum/grab/proc/make_log(obj/item/grab/G, action)
 	admin_attack_log(G.assailant, G.affecting, "[action]s their victim", "was [action]ed", "used [action] on")
