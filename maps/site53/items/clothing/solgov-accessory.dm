@@ -58,7 +58,9 @@ specialty pins
 /*****
 badges
 *****/
-
+/obj/item/clothing/accessory/badge/representative
+	icon = 'maps/torch/icons/obj/solgov-accessory.dmi'
+	accessory_icons = list(slot_w_uniform_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_wear_suit_str = 'maps/torch/icons/mob/solgov-accessory.dmi')
 /obj/item/clothing/accessory/badge/representative/security
 	name = "security forces badge"
 	desc = "A silver law enforcement badge. Stamped with the words 'Master at Arms'."
