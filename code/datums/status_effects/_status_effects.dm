@@ -43,7 +43,7 @@
 		return
 	if(owner)
 		LAZYADD(owner.status_effects, src)
-		RegisterSignal(owner, COMSIG_LIVING_REJUVENATE, .proc/remove_effect_on_heal)
+		RegisterSignal(owner, COMSIG_LIVING_REJUVENATE, PROC_REF(remove_effect_on_heal))
 
 	if(duration != -1)
 		duration = world.time + duration

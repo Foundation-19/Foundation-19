@@ -29,7 +29,7 @@
 	freak_out(STACK_TERROR_AMOUNT)
 
 /datum/status_effect/terrified/on_apply()
-	RegisterSignal(owner, COMSIG_RECEIVED_HUG, .proc/comfort_owner)
+	RegisterSignal(owner, COMSIG_RECEIVED_HUG, PROC_REF(comfort_owner))
 	owner.emote("scream")
 	to_chat(owner, SPAN_ALERT("The darkness closes in around you, shadows dance around the corners of your vision... It feels like something is watching you!"))
 	return TRUE
