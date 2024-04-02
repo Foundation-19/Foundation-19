@@ -907,7 +907,7 @@
 /area/map_template/syndicate_mothership/raider_base)
 "cc" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/glass/rag,
+/obj/item/reagent_containers/rag,
 /obj/random/ammo,
 /turf/unsimulated/floor{
 	icon_state = "wood"

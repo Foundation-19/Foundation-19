@@ -35095,7 +35095,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/item/reagent_containers/glass/rag,
+/obj/item/reagent_containers/rag,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "mrP" = (
@@ -49556,7 +49556,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/glass/rag,
+/obj/item/reagent_containers/rag,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/restaurantkitchenarea)
 "xgn" = (
