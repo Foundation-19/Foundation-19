@@ -197,6 +197,7 @@ research holder datum.
 	id = TECH_ESOTERIC
 	level = 0
 
+// TODO: delete or restructure
 /obj/item/disk/tech_disk
 	name = "fabricator data disk"
 	desc = "A disk for storing fabricator learning data for backup."
@@ -207,7 +208,7 @@ research holder datum.
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 30, MATERIAL_GLASS = 10)
 	var/datum/tech/stored
 
-
+// TODO: delete or restructure
 /obj/item/disk/design_disk
 	name = "component design disk"
 	desc = "A disk for storing device design data for construction in lathes."

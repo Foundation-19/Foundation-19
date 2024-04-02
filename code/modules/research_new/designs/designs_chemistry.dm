@@ -4,6 +4,9 @@
 	id = "cryobeaker"
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 3000)
+	category = list(
+		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_CHEMISTRY
+	)
 	build_path = /obj/item/reagent_containers/glass/beaker/noreact
 	departmental_flags = SCI | MED
 
@@ -13,5 +16,8 @@
 	id = "bluespacebeaker"
 	build_type = PROTOLATHE
 	materials = list(MATERIAL_STEEL = 3000, MATERIAL_PHORON = 3000, MATERIAL_DIAMOND = 500)
+	category = list(
+		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_CHEMISTRY
+	)
 	build_path = /obj/item/reagent_containers/glass/beaker/bluespace
 	departmental_flags = SCI | MED
