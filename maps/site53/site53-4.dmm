@@ -1335,7 +1335,7 @@
 /area/site53/uez/hallway)
 "dX" = (
 /obj/machinery/door/airlock/command{
-	name = "Chief Science Officer's Office";
+	name = "Chief Medical Officer's Office";
 	req_access = list("ACCESS_MEDICAL_LEVEL5")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -3897,7 +3897,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
 "nR" = (

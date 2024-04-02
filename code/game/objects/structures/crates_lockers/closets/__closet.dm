@@ -480,7 +480,7 @@
 /obj/structure/closet/proc/togglelock(mob/user, obj/item/card/id/id_card)
 	if(!(setup & CLOSET_HAS_LOCK))
 		return FALSE
-	if(!CanPhysicallyInteract(user))
+	if(!CanInteract(user, GLOB.physical_no_access_state))
 		return FALSE
 	if(src.opened)
 		to_chat(user, SPAN_NOTICE("Close \the [src] first."))

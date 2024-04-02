@@ -55,7 +55,7 @@
 	M.Turn(Get_Angle(start_turf, target_turf))
 	S.transform = M
 	animate(S, alpha = 225, pixel_x = (move_turf.x - start_turf.x) * world.icon_size, pixel_y = (move_turf.y - start_turf.y) * world.icon_size, transform = matrix(S.transform) * 3, time = 1.5)
-	addtimer(CALLBACK(S, /obj/effect/temp_visual/slash/proc/FadeOut), 1.5)
+	addtimer(CALLBACK(S, TYPE_PROC_REF(/obj/effect/temp_visual/slash, FadeOut)), 1.5)
 	var/list/already_hit = list()
 	for(var/turf/T in attack_line)
 		for(var/turf/TT in range(1, T))
