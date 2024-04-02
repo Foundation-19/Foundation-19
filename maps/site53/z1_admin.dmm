@@ -9817,7 +9817,7 @@
 /area/centcom)
 "CV" = (
 /obj/structure/closet/jcloset_torch,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /obj/item/mop/advanced,
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 6
