@@ -12971,7 +12971,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
 "aKP" = (
@@ -18610,7 +18610,7 @@
 "bdV" = (
 /obj/structure/closet/jcloset_torch,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "bdW" = (
@@ -18707,7 +18707,7 @@
 /obj/machinery/light,
 /obj/structure/closet/jcloset_torch,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "bel" = (
@@ -24390,7 +24390,7 @@
 "eqf" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "eqq" = (
@@ -27584,7 +27584,7 @@
 "gRz" = (
 /obj/structure/closet/jcloset_torch,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "gSw" = (
@@ -28146,7 +28146,7 @@
 /area/site53/zonecommanderoffice)
 "hnw" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "hnz" = (
@@ -30307,9 +30307,9 @@
 "iRf" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "iRi" = (
@@ -31230,7 +31230,7 @@
 /area/site53/ulcz/humanoidcontainment)
 "jBQ" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp247observation)
 "jBT" = (
@@ -44553,7 +44553,7 @@
 	pixel_y = -32
 	},
 /obj/structure/reagent_dispensers/coolanttank,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/engine_smes)
 "tit" = (
@@ -45016,7 +45016,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor,
 /area/site53/surface/bunker)
 "tzd" = (
@@ -50682,7 +50682,7 @@
 "ybV" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
 "ybW" = (
