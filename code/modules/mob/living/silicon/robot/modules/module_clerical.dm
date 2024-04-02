@@ -22,7 +22,7 @@
 	equipment = list(
 		/obj/item/device/flash,
 		/obj/item/gripper/service,
-		/obj/item/reagent_containers/bucket,
+		/obj/item/reagent_containers/glass/bucket,
 		/obj/item/material/minihoe,
 		/obj/item/material/hatchet,
 		/obj/item/device/scanner/plant,

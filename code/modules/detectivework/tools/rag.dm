@@ -13,7 +13,7 @@
 /obj/item/clothing/shoes/
 	var/track_blood = 0
 
-/obj/item/reagent_containers/rag
+/obj/item/reagent_containers/glass/rag
 	name = "rag"
 	desc = "For cleaning up messes, you suppose."
 	w_class = ITEM_SIZE_TINY
@@ -29,22 +29,22 @@
 	var/on_fire = 0
 	var/burn_time = 20 //if the rag burns for too long it turns to ashes
 
-/obj/item/reagent_containers/rag/New()
+/obj/item/reagent_containers/glass/rag/New()
 	..()
 	update_name()
 
-/obj/item/reagent_containers/rag/Destroy()
+/obj/item/reagent_containers/glass/rag/Destroy()
 	STOP_PROCESSING(SSobj, src) //so we don't continue turning to ash while gc'd
 	. = ..()
 
-/obj/item/reagent_containers/rag/attack_self(mob/user as mob)
+/obj/item/reagent_containers/glass/rag/attack_self(mob/user as mob)
 	if(on_fire && user.unEquip(src))
 		user.visible_message(SPAN_WARNING("\The [user] stamps out [src]."), SPAN_WARNING("You stamp out [src]."))
 		extinguish()
 	else
 		remove_contents(user)
 
-/obj/item/reagent_containers/rag/attackby(obj/item/W, mob/user)
+/obj/item/reagent_containers/glass/rag/attackby(obj/item/W, mob/user)
 	if(!on_fire && isflamesource(W))
 		ignite()
 		if(on_fire)
@@ -58,7 +58,7 @@
 	. = ..()
 	update_name()
 
-/obj/item/reagent_containers/rag/proc/update_name()
+/obj/item/reagent_containers/glass/rag/proc/update_name()
 	if(on_fire)
 		SetName("burning [initial(name)]")
 	else if(reagents.total_volume)
@@ -66,7 +66,7 @@
 	else
 		SetName("dry [initial(name)]")
 
-/obj/item/reagent_containers/rag/on_update_icon()
+/obj/item/reagent_containers/glass/rag/on_update_icon()
 	if(on_fire)
 		icon_state = "raglit"
 	else
@@ -76,7 +76,7 @@
 	if(istype(B))
 		B.update_icon()
 
-/obj/item/reagent_containers/rag/proc/remove_contents(mob/user, atom/trans_dest = null)
+/obj/item/reagent_containers/glass/rag/proc/remove_contents(mob/user, atom/trans_dest = null)
 	if(!trans_dest && !user.loc)
 		return
 
@@ -92,7 +92,7 @@
 			user.visible_message(SPAN_DANGER("\The [user] wrings out [src] over [target_text]."), SPAN_NOTICE("You finish to wringing out [src]."))
 			update_name()
 
-/obj/item/reagent_containers/rag/proc/wipe_down(atom/A, mob/user)
+/obj/item/reagent_containers/glass/rag/proc/wipe_down(atom/A, mob/user)
 	if(!reagents.total_volume)
 		to_chat(user, SPAN_WARNING("The [initial(name)] is dry!"))
 	else
@@ -107,7 +107,7 @@
 			else
 				A.clean()
 
-/obj/item/reagent_containers/rag/attack(atom/target as obj|turf|area, mob/user as mob , flag)
+/obj/item/reagent_containers/glass/rag/attack(atom/target as obj|turf|area, mob/user as mob , flag)
 	if(isliving(target))
 		var/mob/living/M = target
 		if(on_fire)
@@ -157,7 +157,7 @@
 
 	return ..()
 
-/obj/item/reagent_containers/rag/afterattack(atom/A as obj|turf|area, mob/user as mob, proximity)
+/obj/item/reagent_containers/glass/rag/afterattack(atom/A as obj|turf|area, mob/user as mob, proximity)
 	if(!proximity)
 		return
 
@@ -178,7 +178,7 @@
 			wipe_down(A, user)
 		return
 
-/obj/item/reagent_containers/rag/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+/obj/item/reagent_containers/glass/rag/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature >= 50 + T0C)
 		ignite()
 	if(exposed_temperature >= 900 + T0C)
@@ -187,11 +187,11 @@
 
 //rag must have a minimum of 2 units welder fuel and at least 80% of the reagents must be welder fuel.
 //maybe generalize flammable reagents someday
-/obj/item/reagent_containers/rag/proc/can_ignite()
+/obj/item/reagent_containers/glass/rag/proc/can_ignite()
 	var/fuel = reagents.get_reagent_amount(/datum/reagent/fuel)
 	return (fuel >= 2 && fuel >= reagents.total_volume*0.8)
 
-/obj/item/reagent_containers/rag/proc/ignite()
+/obj/item/reagent_containers/glass/rag/proc/ignite()
 	if(on_fire)
 		return
 	if(!can_ignite())
@@ -212,7 +212,7 @@
 	update_name()
 	update_icon()
 
-/obj/item/reagent_containers/rag/proc/extinguish()
+/obj/item/reagent_containers/glass/rag/proc/extinguish()
 	STOP_PROCESSING(SSobj, src)
 	set_light(0)
 	on_fire = 0
@@ -226,7 +226,7 @@
 	update_name()
 	update_icon()
 
-/obj/item/reagent_containers/rag/Process()
+/obj/item/reagent_containers/glass/rag/Process()
 	if(!can_ignite())
 		visible_message(SPAN_WARNING("\The [src] burns out."))
 		extinguish()

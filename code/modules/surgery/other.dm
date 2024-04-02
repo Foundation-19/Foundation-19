@@ -156,7 +156,7 @@
 		/obj/item/reagent_containers/glass/beaker = 75,
 		/obj/item/reagent_containers/food/drinks/bottle = 75,
 		/obj/item/reagent_containers/food/drinks/glass2 = 75,
-		/obj/item/reagent_containers/bucket = 50
+		/obj/item/reagent_containers/glass/bucket = 50
 	)
 	can_infect = 0
 	blood_level = 0
