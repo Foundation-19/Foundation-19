@@ -8,3 +8,5 @@
 
 	id_type = /obj/item/card/id/civilian
 	pda_type = /obj/item/modular_computer/pda
+
+	flags = OUTFIT_FLAGS_JOB_DEFAULT
