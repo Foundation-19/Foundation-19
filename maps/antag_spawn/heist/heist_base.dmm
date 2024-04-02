@@ -146,7 +146,7 @@
 /area/map_template/syndicate_mothership/raider_base)
 "az" = (
 /obj/random/trash,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
