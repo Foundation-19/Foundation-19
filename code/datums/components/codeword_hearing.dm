@@ -13,7 +13,7 @@
 
 	/// Regex for matching words or phrases you want highlighted.
 	var/regex/replace_regex
-	/// The <span class=''> to use for highlighting matches.
+	/// The <span class=''></span> to use for highlighting matches. // unit test gets mad if you don't close the span here
 	var/span_class
 	/// The source of this component. Used to identify the source in delete_if_from_source since this component is COMPONENT_DUPE_ALLOWED.
 	var/source
