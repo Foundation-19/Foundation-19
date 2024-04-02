@@ -71,7 +71,7 @@
 	STOP_PROCESSING(SSobj, src)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(target, COMSIG_MOVED)
-	UnregisterSignal(to_targetarget, COMSIG_ADD_TO_DEAD_MOB_LIST)
+	UnregisterSignal(target, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	target = null
 	update_icon()
 
