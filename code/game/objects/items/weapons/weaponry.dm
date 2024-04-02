@@ -109,10 +109,10 @@
 	desc = "An energized net meant to subdue animals."
 
 	anchored = FALSE
-	health = 20
+	health = 5
 	temporary = 0
-	min_free_time = 20
-	max_free_time = 35
+	min_free_time = 5
+	max_free_time = 10
 
 /obj/effect/energy_net/teleport
 	countdown = 60
