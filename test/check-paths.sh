@@ -48,7 +48,7 @@ exactly 0 "density = 0/1" 'density\s*=\s*\d' -P
 exactly 0 "emagged = 0/1" 'emagged\s*=\s*\d' -P
 exactly 0 "simulated = 0/1" 'simulated\s*=\s*\d' -P
 exactly 2 ".proc/ uses" '([, ])\.proc/(\w+)'
-exactly 11 "/proc/ uses" '([(, ])/proc/(\w+)'
+exactly 9 "/proc/ uses" '([(, ])/proc/(\w+)'
 # With the potential exception of << if you increase any of these numbers you're probably doing it wrong
 # - Fuck you, I am going to use as many text2path as I want
 
