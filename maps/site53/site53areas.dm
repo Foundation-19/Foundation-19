@@ -640,7 +640,7 @@
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/llcz/mining/miningops
-	name = "\improper Mining Operations"
+	name = "\improper CDCZ Mining Operations"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 
@@ -669,13 +669,8 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint"
 
-/area/site53/llcz/dclass/checkpointoverlook
-	name = "\improper Primary D-Class Checkpoint Overlook"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
 /area/site53/llcz/dclass/prep
-	name = "\improper Primary D-Class Checkpoint Preparation"
+	name = "\improper CDCZ Class-D Preperations"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
