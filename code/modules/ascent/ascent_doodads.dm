@@ -6,7 +6,7 @@
 	icon = 'icons/obj/ascent_doodads.dmi'
 	item_state = "advmop"
 
-/obj/item/reagent_containers/glass/bucket/ascent
+/obj/item/reagent_containers/bucket/ascent
 	name = "portable liquid cleaning agent carrier"
 	desc = "An alien container of some sort."
 	icon = 'icons/obj/ascent_doodads.dmi'
