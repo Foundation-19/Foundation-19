@@ -26,7 +26,7 @@
 /obj/item/organ/internal/augment/active/memory_inhibitor/emp_act(mob/living/M, removed)
 	if(owner)
 		M.visible_message(SPAN_WARNING("[M] looks confused."))
-		to_chat(M, "<font size='5' color='red'>You forgot everything that happened today!")
+		to_chat(M, "<font size='5' color='red'>You forgot everything that happened today!</font>")
 	return TRUE
 
 /obj/item/organ/internal/augment/active/memory_inhibitor/emp_act(severity)
