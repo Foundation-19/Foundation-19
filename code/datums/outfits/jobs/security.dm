@@ -40,7 +40,7 @@
 	name = OUTFIT_JOB_NAME("LCZ Zone Commander")
 	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	shoes = /obj/item/clothing/shoes/combat/lcz
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl3lcz
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	suit = /obj/item/clothing/suit/armor/vest/scp/lczcomm
@@ -74,7 +74,7 @@
 	uniform = /obj/item/clothing/under/rank/warden/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
-	shoes = /obj/item/clothing/shoes/combat/lcz
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3lcz
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
@@ -190,7 +190,7 @@
 	uniform = /obj/item/clothing/under/rank/security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
-	shoes = /obj/item/clothing/shoes/combat/lcz
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/junseclvl2lcz
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
@@ -206,7 +206,7 @@
 	uniform = /obj/item/clothing/under/rank/security/lcz/medic
 	glasses = /obj/item/clothing/glasses/hud/health/visor
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
-	shoes = /obj/item/clothing/shoes/combat/lcz
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl2lczdivision
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/medic
 	l_pocket = /obj/item/handcuffs
@@ -222,7 +222,7 @@
 	uniform = /obj/item/clothing/under/rank/security/lcz/riot
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
-	shoes = /obj/item/clothing/shoes/combat/lcz
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl2lczdivision2
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
@@ -238,7 +238,7 @@
 	uniform = /obj/item/clothing/under/rank/security/lcz/recontain
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
-	shoes = /obj/item/clothing/shoes/combat/lcz
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3lczdivision3
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/recontain
 	l_pocket = /obj/item/handcuffs

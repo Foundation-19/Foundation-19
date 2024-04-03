@@ -222,7 +222,7 @@
 	supervisors = "the LCZ Zone Commander"
 	economic_power = 4
 	requirements = list(EXP_TYPE_LCZ = 480)
-	alt_titles = list("LCZ Senior Containment Response Agent" = /decl/hierarchy/outfit/job/security/lcz_recontain, "LCZ Containment Response Sergeant" = /decl/hierarchy/outfit/job/security/lcz_recontain, "LCZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Riot Control Sergeant" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Senior Riot Control Agent" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Senior Agent")
+	alt_titles = list("LCZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Riot Control Sergeant" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Senior Riot Control Agent" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/lcz_sergeant
@@ -366,7 +366,7 @@
 	supervisors = "the LCZ Sergeants and Zone Commander"
 	economic_power = 4
 	requirements = list("Class D" = 30)
-	alt_titles = list("LCZ Containment Response Agent" = /decl/hierarchy/outfit/job/security/lcz_recontain, "LCZ Containment Response Guard" = /decl/hierarchy/outfit/job/security/lcz_recontain, "LCZ Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Riot Control Guard" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Riot Control Agent" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Agent")
+	alt_titles = list("LCZ Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Riot Control Guard" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Riot Control Agent" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Agent")
 	minimal_player_age = 0
 	ideal_character_age = 25
 	balance_limited = TRUE
