@@ -3221,6 +3221,9 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/effect/landmark{
+	name = "JoinLatedclass"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
 "exZ" = (
@@ -7458,27 +7461,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"kCe" = (
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/llcz/hallways)
 "kCv" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/orange/border,
@@ -7599,6 +7581,23 @@
 /area/site53/llcz/mine/unexplored)
 "kLL" = (
 /turf/unsimulated/mineral,
+/area/site53/llcz/hallways)
+"kMj" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor,
 /area/site53/llcz/hallways)
 "kMu" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -11120,23 +11119,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
-"pTV" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "pVW" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12998,6 +12980,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/landmark{
+	name = "JoinLatedclass"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
 "sBS" = (
@@ -13057,6 +13042,27 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
+"sKe" = (
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/hallways)
 "sKy" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "CDCZ Greenhouse";
@@ -14105,6 +14111,9 @@
 	dir = 8
 	},
 /obj/machinery/light,
+/obj/effect/landmark{
+	name = "JoinLatedclass"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
 "uuK" = (
@@ -15163,6 +15172,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/effect/landmark{
+	name = "JoinLatedclass"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
@@ -30032,7 +30044,7 @@ hIH
 lIO
 lIO
 lIO
-kCe
+sKe
 lIO
 lIO
 lIO
@@ -30289,7 +30301,7 @@ lIO
 lIO
 naC
 fIC
-pTV
+kMj
 lDn
 kUH
 lIO

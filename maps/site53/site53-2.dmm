@@ -11189,6 +11189,22 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp895)
+"aEu" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "aEv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -22693,6 +22709,15 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"cJE" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "cJW" = (
 /obj/machinery/holosign/surgery{
 	dir = 4;
@@ -33728,22 +33753,6 @@
 /obj/item/boombox,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"khH" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "khQ" = (
 /obj/structure/bed/chair/wood{
 	dir = 8
@@ -35012,6 +35021,15 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkpointoverlook)
+"kZw" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "kZC" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -43914,15 +43932,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
-"qEH" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/llcz/dclass/medicalpost)
 "qEN" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 4
@@ -45237,6 +45246,15 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/reswing/lowres/researchmaint2)
+"rww" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "rxp" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/toxin,
@@ -45686,15 +45704,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
-"rLO" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/llcz/dclass/medicalpost)
 "rMC" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 9
@@ -47722,15 +47731,6 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
-"sYw" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/llcz/dclass/medicalpost)
 "sYE" = (
 /obj/machinery/flasher{
 	id_tag = "isolator1"
@@ -64725,9 +64725,9 @@ hAC
 hAC
 hAC
 hAC
-sYw
+cJE
 xSE
-khH
+aEu
 vnW
 uis
 uis
@@ -64976,13 +64976,13 @@ oAF
 wqy
 hAC
 hAC
-sYw
-qEH
+cJE
+kZw
 jLd
 mZX
-qEH
-qEH
-rLO
+kZw
+kZw
+rww
 tmi
 uXD
 xcT
