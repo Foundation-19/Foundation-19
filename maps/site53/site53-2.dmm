@@ -22408,6 +22408,7 @@
 /obj/item/gun/projectile/automatic/scp/p90{
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 	},
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "cAV" = (
@@ -25686,6 +25687,16 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/securitypost)
+"eKj" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/mopbucket,
+/obj/item/mop,
+/obj/item/reagent_containers/bucket,
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Cleaning Supplies"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "eKA" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
@@ -26917,6 +26928,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/generalpurpose)
+"fCz" = (
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Containment Chamber"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "fCD" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "ULCZ Secure Armoury";
@@ -27516,16 +27533,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
-"fWu" = (
-/obj/effect/floor_decal/corner/yellow/mono,
-/obj/structure/mopbucket,
-/obj/item/mop,
-/obj/item/reagent_containers/bucket,
-/obj/machinery/camera/network/scp173{
-	c_tag = "SCP-173 Cleaning Supplies"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "fXC" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
@@ -27644,6 +27651,7 @@
 /obj/item/ammo_magazine/box/a57/rubber,
 /obj/item/gun/energy/taser,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "gcN" = (
@@ -29037,6 +29045,7 @@
 /obj/item/gun/energy/taser,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/machinery/light,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "hbt" = (
@@ -29060,6 +29069,7 @@
 /obj/structure/table/reinforced,
 /obj/random/clipboard,
 /obj/effect/floor_decal/carpet/blue2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "hcC" = (
@@ -39348,6 +39358,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
 	},
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "nIS" = (
@@ -53647,12 +53658,6 @@
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
-"xhs" = (
-/obj/machinery/camera/network/scp173{
-	c_tag = "SCP-173 Containment Chamber"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "xiq" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -58144,7 +58149,7 @@ azA
 azA
 azA
 rsE
-xhs
+fCz
 vTF
 vTF
 xbH
@@ -60208,7 +60213,7 @@ azA
 azA
 azA
 rsE
-fWu
+eKj
 lPj
 fbT
 rsE
