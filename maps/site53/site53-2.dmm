@@ -11189,22 +11189,6 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp895)
-"aEu" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "aEv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -21714,6 +21698,15 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
+"cbv" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "cbx" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -22709,15 +22702,6 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
-"cJE" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/llcz/dclass/medicalpost)
 "cJW" = (
 /obj/machinery/holosign/surgery{
 	dir = 4;
@@ -35021,15 +35005,6 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkpointoverlook)
-"kZw" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/llcz/dclass/medicalpost)
 "kZC" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -38643,6 +38618,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
+"njK" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "nkR" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/monotile/white,
@@ -40094,6 +40078,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"odX" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "oee" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -45246,15 +45239,6 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/reswing/lowres/researchmaint2)
-"rww" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/llcz/dclass/medicalpost)
 "rxp" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/toxin,
@@ -54053,6 +54037,22 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"xvz" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "xvH" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/structure/flora/pottedplant/floorleaf,
@@ -64725,9 +64725,9 @@ hAC
 hAC
 hAC
 hAC
-cJE
+odX
 xSE
-aEu
+xvz
 vnW
 uis
 uis
@@ -64976,13 +64976,13 @@ oAF
 wqy
 hAC
 hAC
-cJE
-kZw
+odX
+njK
 jLd
 mZX
-kZw
-kZw
-rww
+njK
+njK
+cbv
 tmi
 uXD
 xcT

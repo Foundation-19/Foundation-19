@@ -751,6 +751,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
+"bbF" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/mining/miningops)
 "bcr" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -831,6 +838,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
+"bgW" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/primaryhallway)
 "bhr" = (
 /obj/structure/sign/directions/ez{
 	dir = 1;
@@ -1072,6 +1087,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "bvr" = (
@@ -1503,6 +1519,7 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 10
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "bYJ" = (
@@ -1571,6 +1588,13 @@
 /obj/item/bedsheet/orange,
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
+"cdm" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "cdI" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
@@ -2495,6 +2519,14 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"dqj" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/hallways)
 "drA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -2541,6 +2573,14 @@
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
+"dvo" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/mining/miningops)
 "dvC" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2825,6 +2865,15 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
+"dYv" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 10
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "dYW" = (
 /obj/machinery/door/airlock/science{
 	name = "Airlock"
@@ -3854,6 +3903,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "fsy" = (
@@ -4002,6 +4052,16 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/luxurylibrary)
+"fCD" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "fDH" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/plasteel/fifty,
@@ -4046,6 +4106,9 @@
 	pixel_x = -32
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
 "fGu" = (
@@ -4422,6 +4485,24 @@
 /obj/item/taperoll/engineering,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/llczmaint)
+"ghG" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/westleft{
+	name = "Ore Delivery Chute";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mining/miningops)
 "ghV" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/titanium/fifty,
@@ -4489,6 +4570,14 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"gnV" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/mining/miningops)
 "goX" = (
 /obj/machinery/reagentgrinder,
 /obj/machinery/light{
@@ -4572,6 +4661,12 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
+"gxr" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/llcz/hallways)
 "gxC" = (
 /obj/effect/decal/cleanable/blood/writing{
 	desc = "DEBT OF LIFE PAID TO THE LION OF DEATH";
@@ -5145,6 +5240,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "hcw" = (
@@ -5359,11 +5455,11 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/hallways)
 "hvG" = (
-/obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/cobweb2,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "hww" = (
@@ -5588,6 +5684,9 @@
 	name = "Mining Lockdown"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
 "hKc" = (
@@ -6794,6 +6893,7 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "jwn" = (
@@ -7583,17 +7683,6 @@
 /turf/unsimulated/mineral,
 /area/site53/llcz/hallways)
 "kMj" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -8204,6 +8293,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
+"lCZ" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "lDn" = (
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
@@ -9033,6 +9129,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/hallways)
 "mTw" = (
@@ -9286,6 +9386,27 @@
 "nhf" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
+"nhL" = (
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/hallways)
 "nia" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced{
@@ -11292,6 +11413,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"qom" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "qpI" = (
 /obj/machinery/camera/autoname{
 	network = list("SCP-247 CCTV Network")
@@ -11981,6 +12111,14 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
+"rdu" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/primaryhallway)
 "rej" = (
 /obj/machinery/light{
 	dir = 4
@@ -12159,6 +12297,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"rum" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/primaryhallway)
 "rvs" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "CDCZ Beach"
@@ -13042,27 +13187,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
-"sKe" = (
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/llcz/hallways)
 "sKy" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "CDCZ Greenhouse";
@@ -13280,6 +13404,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
+"thh" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/hallways)
 "thr" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -14088,6 +14220,9 @@
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
 "urB" = (
@@ -14605,6 +14740,11 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
+"vtG" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/mining/miningops)
 "vuK" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/effect/floor_decal/industrial/warning{
@@ -15125,6 +15265,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "wcx" = (
@@ -16119,6 +16260,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/primaryhallway)
 "xBf" = (
@@ -16484,6 +16626,23 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/space)
+"ydX" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "yeJ" = (
 /obj/structure/table/standard,
 /obj/item/storage/lockbox/vials,
@@ -26968,75 +27127,75 @@ qFA
 xct
 qLT
 mTm
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
-qLT
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
+qom
 xzN
 fsn
 buK
 wcp
 buK
 hcs
-nsQ
+cdm
 jvU
-nsQ
+cdm
 bYD
-nGe
+bgW
 lam
 lam
 vaS
@@ -27224,7 +27383,7 @@ pVW
 iEY
 ajJ
 lDn
-lIO
+gst
 dbi
 dbi
 dbi
@@ -27293,7 +27452,7 @@ nzF
 nzF
 nzF
 hsH
-nGe
+rum
 lam
 lam
 vaS
@@ -27481,7 +27640,7 @@ lIO
 jpf
 sBS
 lDn
-lIO
+gst
 hIH
 hIH
 hIH
@@ -27550,7 +27709,7 @@ nia
 vfM
 nzF
 fhq
-nGe
+rum
 lam
 lam
 vaS
@@ -27734,11 +27893,11 @@ lDn
 kFZ
 mcA
 jwx
-lIO
-lIO
-lIO
-lIO
-lIO
+thh
+dVr
+dVr
+dVr
+dqj
 hIH
 hIH
 hIH
@@ -27807,7 +27966,7 @@ vHz
 nHd
 nzF
 kQM
-nGe
+rum
 lam
 lam
 vaS
@@ -27990,8 +28149,8 @@ lIO
 lIO
 pSO
 lIO
-lIO
-lIO
+thh
+dqj
 hIH
 hIH
 hIH
@@ -28064,7 +28223,7 @@ vHz
 jwY
 nzF
 sfB
-nGe
+rum
 lam
 lam
 vaS
@@ -28247,7 +28406,7 @@ lIO
 uNK
 kFZ
 wIo
-lIO
+gst
 hIH
 hIH
 hIH
@@ -28321,7 +28480,7 @@ vHz
 nHd
 nzF
 iCK
-nGe
+rum
 lam
 lam
 vaS
@@ -28504,7 +28663,7 @@ lIO
 spY
 kFZ
 lDn
-lIO
+gst
 hIH
 hIH
 hIH
@@ -28578,7 +28737,7 @@ vfR
 dwg
 nzF
 fhq
-nGe
+rum
 lam
 lam
 vaS
@@ -28761,7 +28920,7 @@ lIO
 iWG
 hUO
 lDn
-lIO
+gst
 hIH
 hIH
 hIH
@@ -28835,9 +28994,9 @@ nzF
 nzF
 nzF
 hsH
-nGe
-vaS
-vaS
+rdu
+vtG
+dvo
 vaS
 sVS
 sVS
@@ -29018,7 +29177,7 @@ lIO
 uNK
 kvV
 aZZ
-lIO
+gst
 hIH
 hIH
 hIH
@@ -29275,7 +29434,7 @@ lIO
 uNK
 kFZ
 aZZ
-lIO
+gst
 hIH
 hIH
 hIH
@@ -29532,7 +29691,7 @@ lIO
 fXv
 lop
 bLc
-lIO
+gst
 hIH
 hIH
 hIH
@@ -29789,7 +29948,7 @@ lIO
 uNK
 kFZ
 sBS
-lIO
+gst
 hIH
 hIH
 hIH
@@ -30044,9 +30203,9 @@ hIH
 lIO
 lIO
 lIO
-sKe
+nhL
 lIO
-lIO
+gst
 lIO
 hIH
 hIH
@@ -30301,9 +30460,9 @@ lIO
 lIO
 naC
 fIC
-kMj
+ydX
 lDn
-kUH
+dYv
 lIO
 hIH
 hIH
@@ -30560,7 +30719,7 @@ fIC
 lDn
 cWC
 bZC
-lDn
+kMj
 lIO
 hIH
 hIH
@@ -30817,7 +30976,7 @@ bRu
 nwj
 rfs
 lDn
-xfJ
+gxr
 hie
 hIH
 hIH
@@ -31069,13 +31228,13 @@ xZI
 dtY
 xBf
 hNJ
-rYK
+dVr
 hvG
-bOp
+lCZ
 dwA
-bOp
-bOp
-rYK
+lCZ
+fCD
+lIO
 hIH
 hIH
 lam
@@ -31407,7 +31566,7 @@ vys
 vys
 vys
 vaS
-vaS
+bbF
 qOq
 sVS
 sVS
@@ -32178,15 +32337,15 @@ vys
 vys
 vys
 vaS
-vaS
-vaS
-vaS
-vaS
-vaS
-vaS
-vaS
-vaS
-vaS
+gnV
+vtG
+vtG
+vtG
+vtG
+vtG
+vtG
+vtG
+dvo
 wNp
 xue
 vaS
@@ -32443,7 +32602,7 @@ kdl
 wNp
 wNp
 jsg
-xue
+ghG
 xue
 xue
 vaS
