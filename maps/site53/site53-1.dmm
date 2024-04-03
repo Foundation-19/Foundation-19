@@ -3271,7 +3271,7 @@
 	},
 /obj/machinery/light,
 /obj/effect/landmark{
-	name = "JoinLatedclass"
+	name = "JoinLateDclass"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
@@ -13126,7 +13126,7 @@
 	dir = 1
 	},
 /obj/effect/landmark{
-	name = "JoinLatedclass"
+	name = "JoinLateDclass"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
@@ -14247,7 +14247,7 @@
 	},
 /obj/machinery/light,
 /obj/effect/landmark{
-	name = "JoinLatedclass"
+	name = "JoinLateDclass"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
@@ -15315,7 +15315,7 @@
 	dir = 1
 	},
 /obj/effect/landmark{
-	name = "JoinLatedclass"
+	name = "JoinLateDclass"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
@@ -27196,8 +27196,8 @@ jvU
 cdm
 bYD
 bgW
-lam
-lam
+hIH
+hIH
 vaS
 vaS
 vaS
@@ -27453,8 +27453,8 @@ nzF
 nzF
 hsH
 rum
-lam
-lam
+hIH
+hIH
 vaS
 ijv
 etl
@@ -27710,8 +27710,8 @@ vfM
 nzF
 fhq
 rum
-lam
-lam
+hIH
+hIH
 vaS
 ijv
 ijv
@@ -27967,8 +27967,8 @@ nHd
 nzF
 kQM
 rum
-lam
-lam
+hIH
+hIH
 vaS
 dit
 xPI
@@ -28224,8 +28224,8 @@ jwY
 nzF
 sfB
 rum
-lam
-lam
+hIH
+hIH
 vaS
 sVS
 sVS
@@ -28481,8 +28481,8 @@ nHd
 nzF
 iCK
 rum
-lam
-lam
+hIH
+hIH
 vaS
 sVS
 sVS
@@ -28738,8 +28738,8 @@ dwg
 nzF
 fhq
 rum
-lam
-lam
+hIH
+hIH
 vaS
 sVS
 sVS
@@ -31488,7 +31488,7 @@ lIO
 lIO
 lIO
 lIO
-gst
+lIO
 lIO
 lIO
 lIO

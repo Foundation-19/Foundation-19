@@ -644,11 +644,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 
-/area/site53/llcz/dclass/recreationhallway
-	name = "\improper Recreation Hallway"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "hallC1"
-
 /area/site53/llcz/dclass/checkpoint
 	name = "\improper LCZ Entrance Checkpoint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
