@@ -2,11 +2,11 @@
 	name = SPECIES_IPC
 	name_plural = "machines"
 
-	description = "Positronic intelligence really took off in the 26th century, and it is not uncommon to see independant, free-willed \
-	robots on many human stations, particularly in fringe systems where standards are slightly lax and public opinion less relevant \
-	to corporate operations. IPCs (Integrated Positronic Chassis) are a loose category of self-willed robots with a humanoid form, \
-	generally self-owned after being 'born' into servitude; they are reliable and dedicated workers, albeit more than slightly \
-	inhuman in outlook and perspective."
+	description = "Positronic intelligence really took off in the 21st century, and it is not uncommon to see independant, free-willed \
+	robots in the anolmalous world, particularly where Anderson Robotics is involved. IPCs (Integrated Positronic Chassis) are a \
+	loose category of self-willed robots with a humanoid form, generally owned and produced by Anderson robotics, or are occasionally \
+	quietly purchased or seized from them by the SCP Foundation, or produced in-house by the SCP foundation using assets aquired from Prometheus Labs. \
+	They are reliable and dedicated workers, albeit more than slightly inhuman in outlook and perspective."
 	cyborg_noun = null
 
 	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
