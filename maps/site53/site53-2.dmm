@@ -22716,8 +22716,7 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "cKg" = (
-/obj/machinery/camera/network/medbay{
-	c_tag = "Operating Room 1";
+/obj/machinery/camera/network/lcz{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -33083,6 +33082,11 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/storage/medical_lolli_jar,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/medicalpost)
 "jLw" = (
@@ -33724,6 +33728,22 @@
 /obj/item/boombox,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"khH" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "khQ" = (
 /obj/structure/bed/chair/wood{
 	dir = 8
@@ -38311,6 +38331,11 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -43889,6 +43914,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
+"qEH" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "qEN" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 4
@@ -45652,6 +45686,15 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"rLO" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "rMC" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 9
@@ -47679,6 +47722,15 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
+"sYw" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "sYE" = (
 /obj/machinery/flasher{
 	id_tag = "isolator1"
@@ -54589,6 +54641,11 @@
 	icon_state = "shutter0";
 	id_tag = "CDCZMedLock";
 	name = "CDCZ Medical Clinic Lockdown Shutters"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost)
@@ -64668,9 +64725,9 @@ hAC
 hAC
 hAC
 hAC
-hAC
+sYw
 xSE
-duS
+khH
 vnW
 uis
 uis
@@ -64919,13 +64976,13 @@ oAF
 wqy
 hAC
 hAC
-hAC
-hAC
+sYw
+qEH
 jLd
 mZX
-hAC
-hAC
-hAC
+qEH
+qEH
+rLO
 tmi
 uXD
 xcT
