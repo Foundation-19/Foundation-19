@@ -5110,6 +5110,7 @@
 /obj/structure/table/reinforced,
 /obj/item/material/knife/table/plastic,
 /obj/effect/floor_decal/corner/black/diagonal,
+/obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "gYS" = (
@@ -8539,9 +8540,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "lZf" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/beakers,
 /obj/effect/floor_decal/corner/black/diagonal,
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access = list()
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "lZB" = (
