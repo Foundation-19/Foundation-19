@@ -14092,10 +14092,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/engine_smes)
-"aOs" = (
-/obj/machinery/vending/tool,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "aOt" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -22621,19 +22617,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
-"cXI" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/grassybush,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/grass,
-/area/site53/science/aicobservation)
 "cYf" = (
 /obj/machinery/power/apc/high,
 /obj/structure/cable/green,
@@ -39811,7 +39794,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice)
 "qsG" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/drone_fabricator,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "qtD" = (
@@ -40342,6 +40325,12 @@
 /obj/effect/floor_decal/corner/yellow/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
+"qTL" = (
+/obj/machinery/vending/tool{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "qTO" = (
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
@@ -44451,6 +44440,15 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/white/small,
 /area/site53/ulcz/hallways)
+"uaD" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "uaR" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -45285,6 +45283,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/hczguardgear)
+"uMV" = (
+/obj/machinery/vending/coffee{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "uNq" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Containment Chamber";
@@ -80017,7 +80021,7 @@ wdB
 afd
 aTg
 jud
-aOW
+bTv
 rfa
 rnR
 rza
@@ -80274,7 +80278,7 @@ pgW
 afd
 iHs
 qsG
-aOW
+pPu
 bbP
 aOW
 aTg
@@ -80530,10 +80534,10 @@ afv
 aam
 afd
 aTg
-aOs
 aOW
+pPu
 bbP
-aOW
+uMV
 aTg
 aOW
 aOW
@@ -80787,10 +80791,10 @@ aSH
 aam
 afd
 aTg
-cXI
-aOW
+ubt
+pPu
 bbP
-aOW
+qTL
 aTg
 aOW
 aOW
@@ -81045,7 +81049,7 @@ pgW
 afd
 afd
 aTg
-ubt
+uaD
 bbP
 vGG
 aTg
