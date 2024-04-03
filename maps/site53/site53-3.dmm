@@ -2634,7 +2634,6 @@
 /area/site53/entrancezone/hallway)
 "gG" = (
 /obj/structure/closet/jcloset,
-/obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
@@ -2671,7 +2670,6 @@
 /area/site53/medical/surgery/hall)
 "gM" = (
 /obj/structure/closet/l3closet/janitor,
-/obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
@@ -2994,7 +2992,6 @@
 /area/site53/ulcz/scp173)
 "hJ" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
 "hK" = (

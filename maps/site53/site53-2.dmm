@@ -12657,8 +12657,8 @@
 "aJt" = (
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/structure/mopbucket,
-/obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aJv" = (
@@ -13024,7 +13024,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
 "aKP" = (
@@ -18662,7 +18661,6 @@
 "bdV" = (
 /obj/structure/closet/jcloset_torch,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "bdW" = (
@@ -18693,6 +18691,9 @@
 /area/site53/lowertrams/hub)
 "bdZ" = (
 /obj/structure/table/standard,
+/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/bucket,
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "beb" = (
@@ -18759,7 +18760,6 @@
 /obj/machinery/light,
 /obj/structure/closet/jcloset_torch,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "bel" = (
@@ -25144,7 +25144,6 @@
 "eqf" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "eqq" = (
@@ -28720,7 +28719,6 @@
 "gRz" = (
 /obj/structure/closet/jcloset_torch,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "gSw" = (
@@ -29354,7 +29352,6 @@
 /area/site53/zonecommanderoffice)
 "hnw" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "hnz" = (
@@ -31767,9 +31764,6 @@
 "iRf" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "iRi" = (
@@ -32805,11 +32799,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
-"jBQ" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/glass/bucket,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp247observation)
 "jBT" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 10
@@ -37176,7 +37165,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "mrP" = (
@@ -47940,7 +47928,6 @@
 	pixel_y = -32
 	},
 /obj/structure/reagent_dispensers/coolanttank,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/engine_smes)
 "tie" = (
@@ -48516,7 +48503,6 @@
 	icon_state = "0-8"
 	},
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor,
 /area/site53/surface/bunker)
 "tzd" = (
@@ -53602,7 +53588,6 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/restaurantkitchenarea)
 "xgn" = (
@@ -54867,7 +54852,6 @@
 "ybV" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
 "ybW" = (
@@ -104960,7 +104944,7 @@ azA
 azA
 azA
 aXF
-jBQ
+tOq
 rvJ
 tOq
 aXF
