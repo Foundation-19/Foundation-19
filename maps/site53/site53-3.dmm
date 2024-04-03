@@ -1103,18 +1103,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"ct" = (
-/obj/machinery/door/airlock/science{
-	name = "SCP-173 Observation";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/scp173)
 "cv" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1858,17 +1846,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmreception)
-"eo" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "intercom (SCP-173)";
-	pixel_x = -25
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "ep" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -2623,14 +2600,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
-"gA" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/device/taperecorder,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "gB" = (
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled/techfloor,
@@ -2665,7 +2634,7 @@
 /area/site53/entrancezone/hallway)
 "gG" = (
 /obj/structure/closet/jcloset,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
@@ -2702,7 +2671,7 @@
 /area/site53/medical/surgery/hall)
 "gM" = (
 /obj/structure/closet/l3closet/janitor,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
@@ -2999,6 +2968,12 @@
 /obj/effect/floor_decal/corner/black/border,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"hG" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/site53/ulcz/scp173)
 "hH" = (
 /obj/machinery/vitals_monitor,
 /obj/structure/cable/green{
@@ -3008,9 +2983,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
+"hI" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "hJ" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
 "hK" = (
@@ -3676,6 +3660,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
+"jp" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/radio,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "jq" = (
 /obj/machinery/optable,
 /obj/item/clothing/suit/surgicalapron,
@@ -3736,12 +3728,6 @@
 /obj/machinery/computer/pandemic,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
-"jy" = (
-/obj/structure/bed/chair/office/comfy/black{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "jz" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile,
@@ -3994,16 +3980,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/surface/cryogenicsprimary)
-"kc" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 9
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/photocopier{
-	pixel_y = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "kd" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -4607,15 +4583,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
 /area/site53/surface/surface)
-"lG" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
-	},
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
-/area/site53/ulcz/scp173)
 "lH" = (
 /obj/machinery/light{
 	dir = 8
@@ -4928,10 +4895,6 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor,
 /area/site53/reswing/roboticsupr)
-"nj" = (
-/obj/machinery/light,
-/turf/simulated/open,
-/area/site53/ulcz/scp173)
 "nl" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4989,9 +4952,24 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
+"nK" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/site53/ulcz/scp173)
 "nM" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/roboticsupr)
+"nN" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Window Shutters";
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/scp173)
 "nO" = (
 /obj/structure/table/woodentable,
 /obj/item/instrument/guitar,
@@ -5020,6 +4998,12 @@
 "nU" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/mentalhealth/isolation)
+"nV" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "nY" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
@@ -5175,6 +5159,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
+"ox" = (
+/obj/machinery/status_display,
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/ulcz/scp173)
 "oy" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -5283,6 +5272,15 @@
 "oS" = (
 /turf/unsimulated/mineral,
 /area/site53/surface/surface)
+"oT" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/ulcz/scp173)
 "oU" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -5397,10 +5395,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
-"pp" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/ulcz/scp173)
 "pq" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
@@ -5504,13 +5498,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"pK" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
-	},
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "pL" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -5537,6 +5524,18 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmreception)
+"pU" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "pV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/closet/l3closet,
@@ -5572,11 +5571,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
-"qe" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5624,6 +5618,12 @@
 /obj/item/pen,
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsbreak)
+"qv" = (
+/obj/structure/bed/chair/office/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "qx" = (
 /obj/structure/closet/cabinet,
 /obj/item/gun/projectile/shotgun/doublebarrel,
@@ -5894,6 +5894,16 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"rB" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "rC" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/stamp/scp/o5rep,
@@ -6099,6 +6109,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
+"sh" = (
+/obj/structure/table/reinforced,
+/obj/item/device/radio,
+/obj/effect/floor_decal/corner/yellow/bordercee{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "si" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -6107,13 +6125,6 @@
 /obj/item/clothing/under/kilt,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/bridge)
-"sj" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 6
-	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "sk" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green{
@@ -6338,6 +6349,25 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/innerentrancehallway)
+"tu" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
+"tw" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/camera,
+/obj/item/device/camera_film,
+/obj/machinery/alarm{
+	pixel_y = 23;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "tz" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow{
@@ -6377,12 +6407,12 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"tI" = (
+"tH" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+	dir = 5
 	},
 /obj/structure/table/reinforced,
-/obj/item/device/radio,
+/obj/structure/flora/pottedplant/deskfern,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "tJ" = (
@@ -6391,6 +6421,13 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsbreak)
+"tK" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "tM" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
@@ -6404,6 +6441,15 @@
 "tO" = (
 /turf/unsimulated/mask,
 /area/site53/logistics/logisticsbreak)
+"tR" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "tZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -6898,6 +6944,18 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"wd" = (
+/obj/machinery/door/airlock/science{
+	name = "SCP-173 Observation";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp173)
 "wi" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow{
@@ -6911,15 +6969,6 @@
 /obj/machinery/photocopier,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
-"wo" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "wp" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
@@ -7115,12 +7164,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"xj" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "xk" = (
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/exoplanet/grass,
@@ -7140,23 +7183,34 @@
 	dir = 1
 	},
 /area/site53/uez/goirepoffice)
+"xt" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Window Shutters"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/scp173)
 "xx" = (
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"xF" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "SCP173Window";
-	name = "SCP-173 Cell Observation Window Shutters";
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp173)
-"xJ" = (
+"xK" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
 	},
+/obj/item/device/radio/intercom/locked{
+	dir = 4;
+	name = "intercom (SCP-173)";
+	pixel_x = -25
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "xM" = (
@@ -7205,19 +7259,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/hallway)
-"yk" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/structure/table/reinforced,
-/obj/item/device/camera,
-/obj/item/device/camera_film,
-/obj/machinery/alarm{
-	pixel_y = 23;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "yo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -7270,14 +7311,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"yx" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/scp173)
 "yz" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -7432,6 +7465,9 @@
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
+"zn" = (
+/turf/simulated/open,
+/area/site53/ulcz/scp173)
 "zo" = (
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/closet/crate/bin{
@@ -7498,8 +7534,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
-"zz" = (
-/turf/simulated/open,
+"zB" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp173)
 "zE" = (
 /obj/machinery/power/apc{
@@ -7726,12 +7767,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"AR" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/site53/ulcz/scp173)
 "AT" = (
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
@@ -7839,18 +7874,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/cryogenicsprimary)
-"Bw" = (
-/obj/structure/closet,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/tape/random,
-/obj/item/device/tape/random,
-/obj/effect/floor_decal/corner/yellow/mono,
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "BD" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -7859,6 +7882,13 @@
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"BH" = (
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "BO" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -8004,18 +8034,22 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
-"Cz" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
+"Cs" = (
+/obj/structure/railing/mapped{
+	dir = 4
 	},
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "SCP173Window";
-	name = "SCP-173 Cell Observation Window Shutters"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
 	},
-/turf/simulated/floor,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
+"CA" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "CC" = (
 /obj/effect/paint_stripe/paleblue,
@@ -8071,6 +8105,36 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
+"Da" = (
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
+"Db" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173";
+	name = "SCP-173 Containment Chamber Access Control";
+	pixel_y = 7
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Windows Control";
+	pixel_y = -2;
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Control";
+	pixel_y = -2;
+	pixel_x = 6
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Dg" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Staff Area";
@@ -8098,15 +8162,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
-"Dt" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "DB" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -8135,15 +8190,6 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
-"DK" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "DL" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -8157,17 +8203,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"DM" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "DO" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -8311,16 +8346,6 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"Ey" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Ez" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -8379,6 +8404,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
+"EZ" = (
+/obj/machinery/light,
+/turf/simulated/open,
+/area/site53/ulcz/scp173)
 "Fd" = (
 /obj/structure/sign/directions/evac{
 	pixel_x = 32;
@@ -8470,14 +8499,6 @@
 /obj/item/defibrillator/compact/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"Fw" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Fx" = (
 /obj/structure/bed/chair/wood/ebony{
 	dir = 4
@@ -8505,12 +8526,6 @@
 	dir = 8
 	},
 /area/site53/surface/cryogenicsprimary)
-"FN" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/open,
-/area/site53/ulcz/scp173)
 "FR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8553,6 +8568,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"Gf" = (
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Gg" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8561,6 +8579,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
+"Gi" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
+/obj/item/device/camera,
+/obj/item/device/camera_film,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Gk" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -8609,6 +8640,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
+"Gy" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Gz" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9
@@ -8846,12 +8886,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/infirmary)
-"HS" = (
-/obj/effect/floor_decal/corner/yellow/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "HU" = (
 /obj/structure/cable{
 	d2 = 8;
@@ -8945,6 +8979,13 @@
 /obj/item/boombox,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
+"Ir" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
+	},
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Is" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -9112,19 +9153,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
-"JK" = (
-/obj/effect/floor_decal/corner/yellow/bordercorner{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/yellow/border,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "JN" = (
 /obj/structure/table/woodentable{
 	dir = 5
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"JP" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/ulcz/scp173)
 "JQ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -9135,6 +9173,17 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"JR" = (
+/obj/structure/scp173_cage,
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#C40000"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "JU" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -9148,14 +9197,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
-"JV" = (
-/obj/structure/table/reinforced,
-/obj/item/device/radio,
-/obj/effect/floor_decal/corner/yellow/bordercee{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "JX" = (
 /obj/machinery/organ_printer/robot/mapped,
 /obj/machinery/light{
@@ -9163,17 +9204,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
-"JY" = (
-/obj/structure/scp173_cage,
-/obj/effect/floor_decal/corner/yellow/mono,
-/obj/effect/floor_decal/industrial/outline{
-	color = "#C40000"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "JZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -9190,6 +9220,15 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/mentalhealth/isolation)
+"Ke" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/item/device/radio/intercom/locked{
+	dir = 1;
+	name = "intercom (SCP-173)";
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Kg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9280,15 +9319,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
-"Kx" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "intercom (SCP-173)";
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Ky" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -9374,6 +9404,18 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/bridge)
+"KX" = (
+/obj/structure/closet,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/tape/random,
+/obj/item/device/tape/random,
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Lb" = (
 /obj/structure/closet/wardrobe/white,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9400,6 +9442,17 @@
 /obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
+"Lk" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/item/device/radio/intercom/locked{
+	dir = 4;
+	name = "intercom (SCP-173)";
+	pixel_x = -25
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Lm" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
@@ -9444,6 +9497,12 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"LB" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "LC" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /turf/simulated/floor/tiled/white,
@@ -9457,25 +9516,20 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op3)
-"LF" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/site53/ulcz/scp173)
 "LG" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/infirmary)
-"LI" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 9
+"LH" = (
+/obj/machinery/door/airlock/science{
+	name = "SCP-173 Chamber Observation";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin";
-	pixel_y = 1
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp173)
 "LL" = (
 /obj/structure/bed/chair{
@@ -9540,9 +9594,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"Mi" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Mj" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/hatch/maintenance{
@@ -9574,15 +9625,6 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
-"Ms" = (
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "SCP173Window";
-	name = "SCP-173 Cell Observation Window Shutters";
-	dir = 4
-	},
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
-/area/site53/ulcz/scp173)
 "Mu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -9614,6 +9656,18 @@
 	dir = 8
 	},
 /area/site53/uez/goirepoffice)
+"MB" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
+"MD" = (
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "ME" = (
 /obj/structure/table/woodentable/ebony,
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -9649,18 +9703,6 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"MW" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "MX" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
@@ -9721,17 +9763,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
-"Nq" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
-	},
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-173 Containment Chamber";
-	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
-	},
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Ns" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -9751,12 +9782,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"ND" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "NE" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/titanium,
@@ -9772,19 +9797,6 @@
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"NK" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/obj/item/device/camera,
-/obj/item/device/camera_film,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "NM" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4;
@@ -9797,6 +9809,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
+"NO" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "NP" = (
 /obj/item/gun/energy/ionrifle,
 /turf/unsimulated/mineral,
@@ -9814,10 +9835,6 @@
 /obj/structure/flora/ausbushes,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"NU" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "NX" = (
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/monotile,
@@ -9897,17 +9914,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/surface/cryogenicsprimary)
-"Oo" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/device/megaphone,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Op" = (
 /obj/effect/floor_decal/corner/purple/bordercee{
 	dir = 4
@@ -9992,18 +9998,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
-"OY" = (
-/obj/machinery/door/airlock/science{
-	name = "SCP-173 Chamber Observation";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/scp173)
 "Pa" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -10023,6 +10017,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
+"Pd" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Ph" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -10066,6 +10065,17 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"Pp" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "SCP-173 Containment Chamber";
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	},
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Pq" = (
 /obj/machinery/optable,
 /obj/machinery/light{
@@ -10176,12 +10186,6 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/surface/surface)
-"Qd" = (
-/obj/effect/floor_decal/corner/yellow/bordercorner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Qe" = (
 /turf/simulated/wall/wood,
 /area/site53/surface/surface)
@@ -10380,12 +10384,6 @@
 "Rc" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
-"Rh" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Ri" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -10397,6 +10395,17 @@
 /obj/structure/ladder,
 /turf/simulated/open,
 /area/site53/maintenance/surfacewest)
+"Rp" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/megaphone,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Rx" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -10408,6 +10417,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
+"RB" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
+	},
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "RC" = (
 /obj/structure/table/standard,
 /obj/item/storage/mre/menu3,
@@ -10480,12 +10499,6 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"Sb" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Sd" = (
 /obj/machinery/light{
 	dir = 8
@@ -10655,6 +10668,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
+"Ta" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Tc" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
@@ -10749,6 +10770,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
+"TJ" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "TN" = (
 /obj/effect/landmark/start{
 	name = "Emergency Medical Technician"
@@ -10883,15 +10910,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
-"Ux" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "UC" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/monotile,
@@ -10960,15 +10978,6 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Vi" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "Vm" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -11024,15 +11033,14 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
-"VB" = (
-/obj/structure/closet,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/tape/random,
-/obj/item/device/tape/random,
-/obj/effect/floor_decal/corner/yellow/mono,
-/obj/machinery/light{
-	dir = 1
+"VC" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 9
+	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin";
+	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -11102,30 +11110,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
-"Wd" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "SCP173";
-	name = "SCP-173 Containment Chamber Access Control";
-	pixel_y = 7
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "SCP173Window";
-	name = "SCP-173 Cell Observation Windows Control";
-	pixel_y = -2;
-	pixel_x = -6
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Control";
-	pixel_y = -2;
-	pixel_x = 6
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "We" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/closet,
@@ -11171,6 +11155,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"Wy" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/site53/ulcz/scp173)
 "Wz" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -11252,6 +11242,10 @@
 /obj/structure/bed/chair/wood/ebony,
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface)
+"WZ" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Xb" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -11317,11 +11311,6 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/entrancezone/substation)
-"XC" = (
-/obj/machinery/status_display,
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/ulcz/scp173)
 "XD" = (
 /obj/structure/bed/chair/comfy/red,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -11346,6 +11335,15 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/medical/mentalhealth/office)
+"XJ" = (
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Window Shutters";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/ulcz/scp173)
 "XK" = (
 /obj/machinery/vending/coffee{
 	dir = 4
@@ -11439,18 +11437,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
-"YD" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "intercom (SCP-173)";
-	pixel_x = -25
-	},
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "YE" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/donkpockets,
@@ -11523,6 +11509,27 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"Ze" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
+"Zf" = (
+/obj/structure/closet,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/tape/random,
+/obj/item/device/tape/random,
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Zh" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11531,6 +11538,14 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"Zl" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/taperecorder,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Zp" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -11608,10 +11623,11 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/logistics/logisticsbreak)
-"ZC" = (
+"ZA" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 9
+	dir = 6
 	},
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "ZF" = (
@@ -11648,21 +11664,6 @@
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op1)
-"ZN" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
-	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
-"ZQ" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
-/obj/structure/table/reinforced,
-/obj/structure/flora/pottedplant/deskfern,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "ZR" = (
 /obj/structure/railing/mapped{
 	dir = 5
@@ -12537,15 +12538,15 @@ dA
 dA
 dA
 dA
-pp
-pp
-pp
-XC
-pp
-XC
-pp
-pp
-pp
+JP
+JP
+JP
+ox
+JP
+ox
+JP
+JP
+JP
 dA
 dA
 dA
@@ -12794,24 +12795,24 @@ dA
 dA
 dA
 dA
-pp
-kc
-Dt
-xJ
-eo
-xJ
-Dt
-Nq
-pp
-pp
-pp
-pp
-pp
-pp
-pp
-pp
-pp
-pp
+JP
+rB
+hI
+MB
+Lk
+MB
+hI
+Pp
+JP
+JP
+JP
+JP
+JP
+JP
+JP
+JP
+JP
+JP
 dA
 dA
 dA
@@ -13051,24 +13052,24 @@ dA
 dA
 dA
 dA
-pp
-yk
-jy
-Mi
-Mi
-jy
-Mi
-NU
-Cz
-LI
-Dt
-tI
-YD
-NK
-pK
-JY
-JV
-pp
+JP
+tw
+qv
+Gf
+Gf
+qv
+Gf
+WZ
+xt
+VC
+hI
+jp
+xK
+Gi
+tK
+JR
+sh
+JP
 dA
 dA
 dA
@@ -13308,24 +13309,24 @@ dA
 dA
 dA
 dA
-pp
-ZQ
-Fw
-Ux
-gA
-Fw
-Wd
-Sb
-OY
-Rh
-Qd
-Mi
-Mi
-Mi
-HS
-xJ
-JK
-pp
+JP
+tH
+Ta
+Ze
+Zl
+Ta
+Db
+LB
+LH
+TJ
+MD
+Gf
+Gf
+Gf
+Da
+MB
+BH
+JP
 dA
 dA
 dA
@@ -13565,24 +13566,24 @@ dA
 dA
 dA
 dA
-pp
-pp
-xF
-xF
-Ms
-Ms
-Ms
-pp
-pp
-VB
-ND
-jy
-Mi
-Mi
-Mi
-Mi
-NU
-XC
+JP
+JP
+nN
+nN
+XJ
+XJ
+XJ
+JP
+JP
+KX
+CA
+qv
+Gf
+Gf
+Gf
+Gf
+WZ
+ox
 dA
 dA
 dA
@@ -13822,28 +13823,28 @@ dA
 dA
 dA
 dA
-pp
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-pp
-Bw
-MW
-DM
-Oo
-Qd
-Mi
-Mi
-qe
-pp
-pp
-pp
-XC
-pp
+JP
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+JP
+Zf
+pU
+Cs
+Rp
+MD
+Gf
+Gf
+Pd
+JP
+JP
+JP
+ox
+JP
 dA
 dA
 dA
@@ -14079,28 +14080,28 @@ dA
 dA
 dA
 dA
-pp
-FN
-zz
-zz
-zz
-zz
-zz
-nj
-pp
-zz
-zz
-zz
-zz
-DK
-Mi
-Mi
-NU
-lG
-ZC
-Dt
-ZN
-pp
+JP
+Wy
+zn
+zn
+zn
+zn
+zn
+EZ
+JP
+zn
+zn
+zn
+zn
+Gy
+Gf
+Gf
+WZ
+oT
+nV
+hI
+Ir
+JP
 dA
 dA
 dA
@@ -14336,28 +14337,28 @@ dA
 dA
 dA
 dA
-pp
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-Ey
-xj
-Vi
-Sb
-ct
-ND
-Mi
-wo
-pp
+JP
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+RB
+tu
+tR
+LB
+wd
+CA
+Gf
+NO
+JP
 dA
 dA
 dA
@@ -14593,28 +14594,28 @@ dA
 dA
 dA
 dA
-pp
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-nj
-pp
-pp
-pp
-pp
-pp
-ND
-Mi
-Kx
-pp
+JP
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+EZ
+JP
+JP
+JP
+JP
+JP
+CA
+Gf
+Ke
+JP
 dA
 dA
 dA
@@ -14850,28 +14851,28 @@ dA
 dA
 dA
 dA
-pp
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-zz
-pp
-AR
-Mi
-Mi
-yx
-Rh
-Vi
-sj
-pp
+JP
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+JP
+hG
+Gf
+Gf
+zB
+TJ
+tR
+ZA
+JP
 dA
 dA
 dA
@@ -15107,28 +15108,28 @@ dA
 dA
 dA
 dA
-pp
-FN
-zz
-zz
-zz
-zz
-zz
-nj
-pp
-zz
-zz
-zz
-zz
-pp
-pp
-pp
-pp
-pp
-pp
-pp
-XC
-pp
+JP
+Wy
+zn
+zn
+zn
+zn
+zn
+EZ
+JP
+zn
+zn
+zn
+zn
+JP
+JP
+JP
+JP
+JP
+JP
+JP
+ox
+JP
 dA
 dA
 dA
@@ -15364,20 +15365,20 @@ dA
 dA
 dA
 dA
-pp
-zz
-LF
-zz
-zz
-zz
-LF
-zz
-pp
-zz
-zz
-zz
-zz
-pp
+JP
+zn
+nK
+zn
+zn
+zn
+nK
+zn
+JP
+zn
+zn
+zn
+zn
+JP
 dA
 dA
 dA
@@ -15621,20 +15622,20 @@ dA
 dA
 dA
 dA
-pp
-pp
-pp
-pp
-pp
-pp
-pp
-pp
-pp
-FN
-zz
-zz
-nj
-pp
+JP
+JP
+JP
+JP
+JP
+JP
+JP
+JP
+JP
+Wy
+zn
+zn
+EZ
+JP
 dA
 dA
 dA
@@ -15886,12 +15887,12 @@ dA
 dA
 dA
 dA
-pp
-zz
-zz
-zz
-zz
-pp
+JP
+zn
+zn
+zn
+zn
+JP
 dA
 dA
 dA
@@ -16143,12 +16144,12 @@ dA
 dA
 dA
 dA
-pp
-pp
-pp
-pp
-pp
-pp
+JP
+JP
+JP
+JP
+JP
+JP
 dA
 dA
 dA
