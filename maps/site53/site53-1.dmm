@@ -541,6 +541,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"aME" = (
+/obj/effect/floor_decal/corner/orange/diagonal,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/primaryhallway)
 "aNs" = (
 /obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/tiled/white/monotile,
@@ -797,6 +805,10 @@
 	dir = 8
 	},
 /obj/structure/flora/pottedplant/minitree,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "bev" = (
@@ -1920,6 +1932,13 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/science/seniorresearcherc)
+"cAI" = (
+/obj/effect/floor_decal/corner/grey/diagonal,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/primaryhallway)
 "cBd" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -3068,6 +3087,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"ejk" = (
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper"
+	},
+/turf/simulated/floor/beach/sand,
+/area/site53/llcz/dclass/luxuryhall)
 "ekg" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/purple/border,
@@ -3422,6 +3447,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"eGa" = (
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site53/llcz/dclass/janitorial)
 "eHE" = (
 /obj/machinery/light,
 /obj/effect/catwalk_plated,
@@ -3656,6 +3688,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
+"ffU" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "fgd" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/monotile,
@@ -3771,6 +3813,9 @@
 "fmD" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/floor_decal/corner/black/diagonal,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "fmP" = (
@@ -4415,6 +4460,10 @@
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -5767,6 +5816,16 @@
 /obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"hPG" = (
+/obj/effect/landmark/start{
+	name = "Class D"
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/cells)
 "hPI" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -6077,6 +6136,13 @@
 /obj/effect/floor_decal/corner/grey/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/primaryhallway)
+"isH" = (
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
+/turf/simulated/floor/beach/sand,
+/area/site53/llcz/dclass/luxuryhall)
 "isW" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 4
@@ -6389,6 +6455,16 @@
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
+"iQr" = (
+/obj/effect/landmark/start{
+	name = "Class D"
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/cells)
 "iQU" = (
 /obj/effect/floor_decal/corner/brown/bordercee{
 	dir = 1
@@ -6660,6 +6736,14 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"jet" = (
+/obj/effect/floor_decal/corner/orange/border,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "jez" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -8898,6 +8982,16 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
+"mDv" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/dclass/assignment)
 "mEw" = (
 /obj/structure/hygiene/sink/kitchen{
 	dir = 8;
@@ -9431,6 +9525,10 @@
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/luxurylibrary)
@@ -10710,6 +10808,10 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
 	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "pgs" = (
@@ -10824,6 +10926,19 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
+"ppM" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "prC" = (
 /obj/machinery/libraryscanner,
 /obj/structure/railing/mapped{
@@ -13087,6 +13202,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"stT" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/botany)
 "svF" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -13276,6 +13400,19 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"sRV" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "sUp" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -13453,6 +13590,19 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
+"tkr" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "tmt" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -14270,6 +14420,19 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/assignment)
+"uxw" = (
+/obj/effect/floor_decal/corner/orange/border,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "uxD" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline{
@@ -14363,6 +14526,16 @@
 "uGM" = (
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/canteen)
+"uHo" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/luxuryhall)
 "uHy" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 4
@@ -14676,6 +14849,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"vpZ" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "vqu" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -15309,6 +15492,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/assignment)
+"wix" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "wiB" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -15339,6 +15532,13 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
+"wkz" = (
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "wll" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
@@ -16548,6 +16748,10 @@
 	dir = 8
 	},
 /obj/structure/filingcabinet,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "xTs" = (
@@ -17179,7 +17383,7 @@ iSy
 ikN
 tAG
 cfc
-uVr
+wix
 hNI
 hNI
 hNI
@@ -17187,7 +17391,7 @@ eWR
 hNI
 hNI
 hNI
-nhf
+wkz
 eWR
 lHK
 hat
@@ -18451,7 +18655,7 @@ bSQ
 ixR
 bSQ
 xOY
-iyK
+mDv
 ixR
 bSQ
 xOY
@@ -18982,7 +19186,7 @@ fnT
 fnT
 fnT
 fnT
-oyV
+tkr
 fnT
 fnT
 fnT
@@ -18990,27 +19194,27 @@ dai
 eex
 tys
 fnT
-fnT
+vpZ
 jRk
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 hIH
@@ -20029,14 +20233,14 @@ deE
 xgb
 xgb
 xgb
-xgb
+ffU
 deE
 xgb
 xgb
 xgb
 xgb
 deE
-xgb
+ffU
 xgb
 xgb
 raV
@@ -21265,7 +21469,7 @@ tRz
 dXx
 uRY
 vED
-vIG
+eGa
 oMj
 jEj
 fEt
@@ -21283,7 +21487,7 @@ xUA
 xUA
 lPp
 vpo
-vpo
+ppM
 sNM
 mwo
 mwo
@@ -21297,7 +21501,7 @@ mwo
 mwo
 mwo
 kXj
-vpo
+ppM
 vpo
 akg
 xUA
@@ -21561,25 +21765,25 @@ iJx
 iJx
 uIW
 mwo
-epn
+jet
 afh
 loF
-pBI
-pBI
-loF
-afh
-loF
-pBI
+hPG
 pBI
 loF
 afh
 loF
-pBI
+hPG
 pBI
 loF
 afh
 loF
+hPG
 pBI
+loF
+afh
+loF
+hPG
 pBI
 loF
 afh
@@ -22079,22 +22283,22 @@ epn
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 loF
 pBI
-pBI
+iQr
 loF
 afh
 hIH
@@ -22278,13 +22482,13 @@ srm
 cKd
 srm
 srm
-srm
+uHo
 cKd
 srm
 srm
 srm
 cKd
-srm
+uHo
 srm
 srm
 cKd
@@ -22294,7 +22498,7 @@ srm
 cKd
 xJq
 srm
-srm
+uHo
 srm
 srm
 ovh
@@ -23113,14 +23317,14 @@ deE
 xgb
 xgb
 xgb
-xgb
+ffU
 deE
 xgb
 xgb
 xgb
 xgb
 deE
-xgb
+ffU
 xgb
 xgb
 elS
@@ -23294,7 +23498,7 @@ hIH
 hIH
 hIH
 xHN
-fVN
+ejk
 fVN
 fVN
 fVN
@@ -23604,7 +23808,7 @@ nGe
 nGe
 vHJ
 hfP
-vHJ
+aME
 nGe
 nGe
 cfH
@@ -23874,7 +24078,7 @@ iJx
 iJx
 uIW
 mwo
-wvX
+uxw
 afh
 afh
 qlq
@@ -24367,7 +24571,7 @@ orG
 orG
 cUC
 doT
-doT
+sRV
 isW
 mwo
 mwo
@@ -24381,7 +24585,7 @@ mwo
 mwo
 mwo
 snP
-doT
+sRV
 doT
 xMT
 orG
@@ -24648,22 +24852,22 @@ mwo
 wvX
 afh
 loF
-pBI
-pBI
-loF
-afh
-loF
-pBI
+hPG
 pBI
 loF
 afh
 loF
-pBI
+hPG
 pBI
 loF
 afh
 loF
+hPG
 pBI
+loF
+afh
+loF
+hPG
 pBI
 loF
 afh
@@ -24842,7 +25046,7 @@ fVN
 fVN
 tmL
 fVN
-fVN
+isH
 jzk
 czJ
 czJ
@@ -25162,7 +25366,7 @@ mwo
 eBB
 fnT
 jTY
-fnT
+vpZ
 oyV
 fnT
 jRk
@@ -25637,7 +25841,7 @@ hIH
 hIH
 hIH
 fSG
-tFx
+stT
 tFx
 tFx
 tFx
@@ -26189,7 +26393,7 @@ mwo
 mwo
 nxi
 nGe
-isr
+cAI
 isr
 mTl
 mTl
@@ -26444,7 +26648,7 @@ mwo
 mwo
 mwo
 mwo
-epn
+jet
 nGe
 pBl
 isr

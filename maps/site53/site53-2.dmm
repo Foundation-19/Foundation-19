@@ -1746,6 +1746,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 4
 	},
+/obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "afH" = (
@@ -21158,6 +21159,7 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
 "bLc" = (
@@ -21567,6 +21569,9 @@
 /area/site53/ulcz/scp914)
 "bWO" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner,
+/obj/machinery/camera/network/lcz{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "bWR" = (
@@ -22652,6 +22657,10 @@
 /obj/item/handcuffs,
 /obj/item/handcuffs,
 /obj/item/handcuffs,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/prep)
 "cIo" = (
@@ -27433,6 +27442,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"fTu" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "fTw" = (
 /obj/machinery/sleeper{
 	dir = 8
@@ -30142,6 +30162,10 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "hLR" = (
@@ -30504,6 +30528,13 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/securitypost)
+"hUF" = (
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "hUN" = (
 /obj/machinery/light{
 	dir = 4
@@ -32135,9 +32166,6 @@
 /obj/structure/table/reinforced,
 /obj/item/taperoll/medical,
 /obj/item/taperoll/medical,
-/obj/machinery/camera/network/lcz{
-	dir = 8
-	},
 /obj/item/reagent_containers/spray/cleaner,
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
@@ -36098,6 +36126,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"lLS" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/open,
+/area/site53/llcz/dclass/primaryhallway)
 "lMj" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/northright{
@@ -41063,6 +41101,7 @@
 	pixel_y = 25;
 	pixel_x = 8
 	},
+/obj/machinery/camera/network/lcz,
 /turf/simulated/floor/carpet/blue3,
 /area/site53/llcz/dclass/medicalpost)
 "oHH" = (
@@ -41858,6 +41897,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
+"pjn" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal{
+	dir = 1
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/medicalpost)
 "pjq" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "2gate";
@@ -41958,7 +42006,6 @@
 /obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/under/scp/dclass,
-/obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/prep)
 "pmq" = (
@@ -43091,13 +43138,13 @@
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -44260,6 +44307,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/camera/network/lcz{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkcryo)
 "qQN" = (
@@ -45436,6 +45486,13 @@
 /obj/item/storage/box/monkeycubes,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"rDp" = (
+/obj/structure/morgue{
+	dir = 2
+	},
+/obj/machinery/camera/network/lcz,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "rDs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -45487,6 +45544,9 @@
 	},
 /obj/effect/floor_decal/corner/green/bordercorner{
 	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -45947,6 +46007,10 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/primaryhallway)
 "rWn" = (
@@ -47071,8 +47135,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/glass/security{
-	name = "CDCZ Cryogenics"
+/obj/machinery/door/airlock/civilian{
+	name = "CDCZ Staff Cryogenics"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/checkcryo)
@@ -47550,6 +47614,7 @@
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/trauma,
 /obj/effect/floor_decal/corner/paleblue/mono,
+/obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "sVg" = (
@@ -48499,6 +48564,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"twA" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
+/turf/simulated/open,
+/area/site53/llcz/dclass/primaryhallway)
 "twH" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Evacuation Bunker"
@@ -49135,6 +49210,13 @@
 /obj/structure/janitorialcart,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp247observation)
+"tUA" = (
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "tVe" = (
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 10
@@ -49290,6 +49372,10 @@
 /obj/item/modular_computer/console/preset/security{
 	dir = 8
 	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/checkpointoverlook)
 "uce" = (
@@ -49335,6 +49421,19 @@
 /obj/structure/coatrack,
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"udK" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Stairs Upper";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkpoint)
 "udQ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -51228,6 +51327,15 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"vyT" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZControlWindows";
+	name = "CDCZ Control Room Window Shutters";
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/cellbubble)
 "vzw" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/simulated/floor/tiled/freezer,
@@ -57532,13 +57640,7 @@ cWG
 pbx
 xcT
 xcT
-xcT
-xcT
-xcT
-sjn
-xcT
-xcT
-xcT
+tUA
 xcT
 xcT
 sjn
@@ -57550,12 +57652,18 @@ xcT
 sjn
 xcT
 xcT
-xcT
+tUA
 xcT
 xcT
 sjn
 xcT
 xcT
+xcT
+xcT
+xcT
+sjn
+xcT
+tUA
 xcT
 xcT
 sjn
@@ -59852,23 +59960,23 @@ uis
 uis
 uis
 uis
+lLS
 xZz
+uis
+uis
+uis
+uis
+uis
+uis
+twA
+uis
+uis
+uis
+uis
+uis
+uis
 xZz
-uis
-uis
-uis
-uis
-uis
-uis
-tFu
-uis
-uis
-uis
-uis
-uis
-uis
-xZz
-xZz
+lLS
 uis
 uis
 uis
@@ -61374,7 +61482,7 @@ hFm
 wti
 lVI
 wti
-lVI
+udK
 wti
 lVI
 wti
@@ -61899,8 +62007,8 @@ xlo
 dtS
 dvA
 dvr
-mTr
-mTr
+vyT
+vyT
 naB
 cIO
 vnW
@@ -62157,7 +62265,7 @@ eKA
 kwF
 eKA
 mqj
-hln
+mTr
 mTr
 pDE
 vnW
@@ -62936,22 +63044,22 @@ uis
 uis
 uis
 uis
+twA
 tFu
-tFu
 uis
 uis
 uis
 uis
 uis
 uis
-xZz
+lLS
 uis
 uis
 uis
 uis
 uis
 uis
-tFu
+twA
 tFu
 uis
 uis
@@ -63951,7 +64059,7 @@ rmd
 hAC
 ehz
 hAC
-hAC
+pjn
 hAC
 kpB
 rSA
@@ -65251,7 +65359,7 @@ xZp
 sTO
 bhc
 cFR
-xZp
+fTu
 uyn
 xZp
 mgC
@@ -65265,7 +65373,7 @@ xcT
 xcT
 xcT
 xcT
-xcT
+hUF
 xcT
 vKZ
 xcT
@@ -66533,7 +66641,7 @@ lzz
 cVM
 ini
 wzt
-wNP
+rDp
 vpo
 vLg
 rXk
