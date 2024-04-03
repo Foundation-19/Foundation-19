@@ -640,12 +640,10 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp173)
 "aRP" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/wall/titanium,
+/obj/structure/closet/crate,
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/spider/stickyweb,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "aRY" = (
 /obj/structure/flora/ausbushes/fernybush,
@@ -912,9 +910,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "biM" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "bjX" = (
@@ -1738,9 +1734,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "ckq" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
+/obj/effect/spider/stickyweb,
+/obj/effect/spider/cocoon,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "clb" = (
 /obj/machinery/light,
@@ -1781,12 +1777,6 @@
 "cpa" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/mine/unexplored)
-"cpR" = (
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "cqS" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/machinery/light{
@@ -2281,7 +2271,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
 "cWx" = (
-/obj/machinery/light,
+/obj/item/remains,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "cWC" = (
@@ -3999,15 +3989,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"frp" = (
-/obj/machinery/door/airlock/multi_tile/glass/civilian{
-	dir = 8;
-	icon_state = "closed";
-	name = "Mining Factory"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/llcz/mining/miningops)
 "frs" = (
 /obj/structure/table/reinforced,
 /obj/item/pen,
@@ -4244,9 +4225,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "fGg" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "Mining Lockdown";
@@ -4640,7 +4618,8 @@
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
 "ghd" = (
-/obj/structure/closet/crate,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "ghe" = (
@@ -4746,6 +4725,7 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 8
 	},
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "gsq" = (
@@ -5835,15 +5815,12 @@
 /turf/unsimulated/mineral,
 /area/space)
 "hJf" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "Mining Lockdown";
 	name = "Mining Lockdown"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
 "hKc" = (
@@ -7003,13 +6980,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
-"jsg" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/mining/miningops)
 "jsr" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/blood,
@@ -7229,6 +7199,7 @@
 "jIX" = (
 /obj/machinery/mineral/unloading_machine,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/mining/miningops)
 "jJz" = (
@@ -7502,10 +7473,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/entrance_checkpoint)
-"kdl" = (
-/obj/machinery/camera/network/lcz,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "kdQ" = (
 /obj/structure/virology/centrifuge,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -7975,11 +7942,6 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp8containment)
-"kNW" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/mining/miningops)
 "kQc" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/dark,
@@ -10660,11 +10622,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
 "owG" = (
-/obj/effect/paint_stripe/gray,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/wall/titanium,
+/turf/unsimulated/mineral,
 /area/site53/llcz/dclass/reeducation)
 "oxf" = (
 /obj/structure/hygiene/shower{
@@ -11712,6 +11673,7 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
 	},
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "pYp" = (
@@ -12487,16 +12449,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "qXx" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
@@ -14536,8 +14498,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "udl" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/dark/small,
+/mob/living/simple_animal/hostile/giant_spider,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "ufK" = (
 /turf/simulated/floor/exoplanet/grass,
@@ -14756,9 +14718,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "ure" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "Mining Lockdown";
@@ -15714,12 +15673,9 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
 "vUj" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/wall/titanium,
+/obj/structure/closet/crate,
+/obj/effect/spider/stickyweb,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "vUA" = (
 /obj/effect/catwalk_plated/white,
@@ -16269,10 +16225,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "wNp" = (
-/obj/structure/closet/crate,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "wNr" = (
@@ -16614,10 +16567,9 @@
 	id_tag = "mining_internal";
 	name = "mining conveyor"
 	},
-/obj/machinery/light/spot{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/spider/stickyweb,
+/obj/effect/spider/cocoon,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "xiw" = (
@@ -24156,7 +24108,7 @@ hIH
 xlb
 cIp
 rot
-nQH
+lDn
 iMp
 dmk
 qAh
@@ -31083,7 +31035,7 @@ lIO
 lIO
 lIO
 lIO
-lIO
+kLL
 lIO
 lIO
 lIO
@@ -32111,7 +32063,7 @@ lIO
 lIO
 lIO
 lIO
-lIO
+kLL
 lIO
 lIO
 lIO
@@ -32195,7 +32147,7 @@ vys
 vys
 vys
 vaS
-jsg
+vaS
 qOq
 sVS
 sVS
@@ -32370,14 +32322,14 @@ oBl
 oBl
 dnO
 dnO
-oBl
-oBl
-oBl
-oBl
+dnO
+dnO
+dnO
+dnO
 owG
-oBl
-oBl
-oBl
+dnO
+dnO
+dnO
 hIH
 hIH
 hIH
@@ -32717,7 +32669,7 @@ sVS
 sVS
 okm
 cVt
-wJw
+vaS
 ghd
 wNp
 vaS
@@ -32966,17 +32918,17 @@ vys
 vys
 vys
 vaS
-aRP
-kNW
-kNW
-kNW
-udl
-frp
-ckq
-kNW
-vUj
-ghd
-ghd
+vaS
+vaS
+vaS
+vaS
+vaS
+vaS
+vaS
+vaS
+vaS
+wNp
+xue
 vaS
 lam
 xRT
@@ -33227,10 +33179,10 @@ lam
 lam
 lam
 vaS
-xue
-xue
-xue
-xue
+biM
+wNp
+wNp
+ckq
 xue
 xue
 xue
@@ -33484,9 +33436,9 @@ xRT
 xRT
 lam
 vaS
-biM
 xue
 xue
+wNp
 xue
 xue
 xue
@@ -33741,13 +33693,13 @@ emk
 xRT
 lam
 vaS
-kdl
+xue
+cWx
 xue
 xue
 xue
 xue
-xue
-xue
+ckq
 vaS
 lam
 xRT
@@ -34002,8 +33954,8 @@ pXs
 xhs
 xue
 xue
-xue
-cpR
+udl
+wNp
 gpk
 vaS
 lam
@@ -34257,9 +34209,9 @@ lam
 vaS
 jIX
 gbE
-ghd
-xue
-xue
+vUj
+cWx
+wNp
 cyf
 jez
 vaS
@@ -34514,9 +34466,9 @@ lam
 vaS
 idA
 wJw
-ghd
-xue
-xue
+aRP
+wNp
+ckq
 gbE
 obO
 vaS

@@ -12753,14 +12753,14 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "cdczeng";
+	name = "CDCZ Technical Closet Emergency Shutters"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
-	},
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "cdczeng";
-	name = "CDCZ Technical Closet Emergency Shutters"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
@@ -12789,17 +12789,13 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/checkequip)
 "aKb" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/site53/ulcz/hallways)
 "aKc" = (
@@ -19194,6 +19190,11 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "bhf" = (
@@ -22358,6 +22359,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp151)
+"czo" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "czA" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "CDCZ Isolation Cell";
@@ -22567,6 +22579,11 @@
 "cFR" = (
 /obj/effect/floor_decal/corner/black/bordercorner{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -25067,6 +25084,15 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/chapel)
+"enI" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "eon" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/wood/walnut,
@@ -29014,6 +29040,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
+"hbf" = (
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/hallways)
 "hbm" = (
 /obj/structure/closet/secure_closet/guard/lcz,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -33450,6 +33489,10 @@
 	id_tag = "cdczeng";
 	name = "CDCZ Technical Closet Emergency Shutters";
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
@@ -42917,6 +42960,19 @@
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
+"pXO" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "pXS" = (
 /obj/machinery/light{
 	dir = 8
@@ -60952,9 +61008,9 @@ aNL
 aNL
 aPo
 aMe
-abZ
-tNo
-tNo
+hbf
+aMe
+aMe
 aKb
 icO
 icO
@@ -65136,15 +65192,15 @@ xZp
 sTO
 bhc
 cFR
-xcT
-vKZ
-xcT
-xcT
-xcT
-xcT
-xcT
-vKZ
-xcT
+xZp
+czo
+xZp
+pXO
+xZp
+xZp
+pXO
+czo
+cIO
 xcT
 xcT
 xcT
@@ -65396,7 +65452,7 @@ wzt
 wzt
 wzt
 xcT
-xcT
+bhq
 xcT
 ktV
 jZW
@@ -65653,7 +65709,7 @@ vLg
 rXk
 wzt
 xcT
-xcT
+bhq
 bWO
 ktV
 eri
@@ -65910,7 +65966,7 @@ vLg
 mBP
 wzt
 xcT
-xcT
+bhq
 rqd
 kwD
 ohK
@@ -66167,8 +66223,8 @@ vLg
 rXk
 wzt
 ghI
-xcT
-rqd
+naB
+enI
 aJP
 ohK
 bUQ
