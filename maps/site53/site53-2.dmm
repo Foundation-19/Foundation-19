@@ -2204,6 +2204,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/hallways)
 "agT" = (
@@ -13791,10 +13792,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
 "aNG" = (
-/obj/structure/scp173_cage,
 /obj/effect/floor_decal/industrial/outline{
 	color = "#57967f"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "aNH" = (
@@ -22359,17 +22360,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp151)
-"czo" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "czA" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "CDCZ Isolation Cell";
@@ -23837,8 +23827,7 @@
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ RU";
-	name = "Recontainment Unit Division Armory Shutters Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_BRIG");
+	name = "Decommissioned Division Armory Shutters Control";
 	dir = 4;
 	pixel_x = -25
 	},
@@ -24419,17 +24408,10 @@
 	icon_off = "secoff";
 	icon_locked = "sec1";
 	icon_closed = "sec";
-	name = "recontainment unit locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_BRIG")
+	name = "division locker"
 	},
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/slug,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/stunshell,
-/obj/item/material/knife/combat,
+/obj/effect/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "dPF" = (
@@ -25084,15 +25066,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/chapel)
-"enI" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "eon" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/wood/walnut,
@@ -27543,6 +27516,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"fWu" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/mopbucket,
+/obj/item/mop,
+/obj/item/reagent_containers/bucket,
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Cleaning Supplies"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "fXC" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
@@ -29040,19 +29023,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
-"hbf" = (
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/hallways)
 "hbm" = (
 /obj/structure/closet/secure_closet/guard/lcz,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -29157,6 +29127,7 @@
 /area/site53/uhcz/scp106observ)
 "hft" = (
 /obj/effect/floor_decal/corner/b_green/border,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "hgn" = (
@@ -33267,6 +33238,17 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
+"jQt" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 23
+	},
+/obj/effect/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "jQy" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
@@ -34039,6 +34021,9 @@
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/effect/floor_decal/industrial/outline/red,
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Preperations Room"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "kqN" = (
@@ -34263,7 +34248,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "kyV" = (
@@ -35673,6 +35658,7 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_y = 23
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "lzu" = (
@@ -36726,18 +36712,18 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/hallways)
 "mgC" = (
-/obj/effect/floor_decal/corner/b_green/border{
-	dir = 8
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/obj/structure/table/rack,
-/obj/item/grenade/light,
-/obj/item/grenade/light,
-/obj/item/grenade/light,
-/obj/item/grenade/light,
-/obj/item/grenade/light,
-/obj/item/grenade/light,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/llcz/entrance_checkpoint)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "mgZ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -37071,12 +37057,7 @@
 /area/site53/ulcz/scp173)
 "moZ" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "Recontainment Unit Division";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_BRIG")
-	},
-/obj/machinery/door/blast/shutters{
-	name = "Recontainment Unit Division Shutters";
-	id_tag = "LCZ RU"
+	name = "Decommissioned Division"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -37087,6 +37068,10 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/machinery/door/blast/shutters{
+	name = "Decommissioned Division Shutters";
+	id_tag = "LCZ RU"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
@@ -38929,6 +38914,21 @@
 /obj/machinery/door/window/southleft,
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aicobservation)
+"nwk" = (
+/obj/effect/floor_decal/corner/b_green/border{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "division locker"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "nwp" = (
 /obj/item/clothing/mask/muzzle,
 /obj/item/clothing/mask/muzzle,
@@ -39569,20 +39569,10 @@
 	icon_off = "secoff";
 	icon_locked = "sec1";
 	icon_closed = "sec";
-	name = "recontainment unit locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_BRIG")
+	name = "division locker"
 	},
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/slug,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/stunshell,
-/obj/item/material/knife/combat,
+/obj/effect/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "nOJ" = (
@@ -42960,19 +42950,6 @@
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
-"pXO" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "pXS" = (
 /obj/machinery/light{
 	dir = 8
@@ -43012,13 +42989,13 @@
 /area/site53/llcz/dclass/medicalpost/storage)
 "pZa" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	name = "Recontainment Unit Division Shutters";
-	id_tag = "LCZ RU"
-	},
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/door/blast/shutters{
+	name = "Decommissioned Division Shutters";
+	id_tag = "LCZ RU"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/entrance_checkpoint)
@@ -46710,22 +46687,14 @@
 	dir = 10
 	},
 /obj/structure/table/rack,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ RU";
-	name = "Recontainment Unit Division Armory Shutters Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_BRIG");
+	name = "Decommissioned Division Armory Shutters Control";
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/effect/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "stq" = (
@@ -46903,6 +46872,10 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
+"syD" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "syL" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -48702,6 +48675,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Entrance"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "tCu" = (
@@ -49776,7 +49752,7 @@
 /area/site53/ulcz/scp151)
 "usV" = (
 /obj/structure/table/reinforced,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "uty" = (
@@ -49881,6 +49857,17 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
+"uyn" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "uyy" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 5
@@ -51873,6 +51860,15 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
+"vXl" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "vXu" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 1
@@ -52230,7 +52226,7 @@
 "wlv" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	name = "Recontainment Unit Division Shutters";
+	name = "Decommissioned Division Shutters";
 	id_tag = "LCZ RU"
 	},
 /obj/structure/cable/green{
@@ -52737,20 +52733,9 @@
 	icon_off = "secoff";
 	icon_locked = "sec1";
 	icon_closed = "sec";
-	name = "recontainment unit locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2","ACCESS_BRIG")
+	name = "division locker"
 	},
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/slug,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/stunshell,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/material/knife/combat,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "wDE" = (
@@ -53545,12 +53530,7 @@
 	dir = 8
 	},
 /obj/structure/table/rack,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "xfE" = (
@@ -53667,6 +53647,12 @@
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"xhs" = (
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Containment Chamber"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "xiq" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -54645,12 +54631,8 @@
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 9
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/vending/weaponry/lcz/energy{
-	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_BRIG")
-	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "xUj" = (
@@ -55203,6 +55185,19 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkcryo)
+"ylz" = (
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/hallways)
 "ylD" = (
 /obj/machinery/light{
 	dir = 4
@@ -58149,7 +58144,7 @@ azA
 azA
 azA
 rsE
-vTF
+xhs
 vTF
 vTF
 xbH
@@ -60213,7 +60208,7 @@ azA
 azA
 azA
 rsE
-aJt
+fWu
 lPj
 fbT
 rsE
@@ -61008,7 +61003,7 @@ aNL
 aNL
 aPo
 aMe
-hbf
+ylz
 aMe
 aMe
 aKb
@@ -65193,13 +65188,13 @@ sTO
 bhc
 cFR
 xZp
-czo
+uyn
 xZp
-pXO
+mgC
 xZp
 xZp
-pXO
-czo
+mgC
+uyn
 cIO
 xcT
 xcT
@@ -66224,7 +66219,7 @@ rXk
 wzt
 ghI
 naB
-enI
+vXl
 aJP
 ohK
 bUQ
@@ -69508,7 +69503,7 @@ azA
 bGY
 xTB
 xfp
-mgC
+xfp
 ssS
 bGY
 bGY
@@ -69764,8 +69759,8 @@ azA
 azA
 bGY
 lzp
-aVb
-aVb
+syD
+syD
 hft
 wlv
 dwq
@@ -70277,9 +70272,9 @@ azA
 azA
 azA
 bGY
-lzp
-aVb
-aVb
+jQt
+syD
+syD
 hft
 pZa
 qZh
@@ -70536,7 +70531,7 @@ azA
 bGY
 nOD
 dPA
-dPA
+nwk
 wDC
 bGY
 eDM

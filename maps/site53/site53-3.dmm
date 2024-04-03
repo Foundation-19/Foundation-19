@@ -3663,6 +3663,10 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/device/radio,
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Preperations Room Overlook";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "jq" = (
@@ -6346,6 +6350,15 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/upper_surface/innerentrancehallway)
+"tt" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Observation Stairs"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "tu" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
@@ -9447,6 +9460,10 @@
 	dir = 4;
 	name = "intercom (SCP-173)";
 	pixel_x = -25
+	},
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Cell Observation";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -14609,7 +14626,7 @@ JP
 JP
 JP
 JP
-CA
+tt
 Gf
 Ke
 JP

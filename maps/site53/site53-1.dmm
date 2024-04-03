@@ -641,7 +641,6 @@
 /area/site53/ulcz/scp173)
 "aRP" = (
 /obj/structure/closet/crate,
-/obj/effect/decal/cleanable/cobweb2,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
@@ -909,10 +908,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
-"biM" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "bjX" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8
@@ -1733,11 +1728,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
-"ckq" = (
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/cocoon,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "clb" = (
 /obj/machinery/light,
 /obj/structure/railing/mapped{
@@ -1819,9 +1809,6 @@
 /area/site53/lhcz/hallway)
 "cuJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
 	},
@@ -6888,13 +6875,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
-"jle" = (
-/obj/machinery/light,
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "jlH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -6980,6 +6960,11 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"jsg" = (
+/obj/effect/spider/stickyweb,
+/obj/effect/spider/cocoon,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mining/miningops)
 "jsr" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/blood,
@@ -7473,6 +7458,10 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/entrance_checkpoint)
+"kdl" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mining/miningops)
 "kdQ" = (
 /obj/structure/virology/centrifuge,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -7636,12 +7625,6 @@
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/yellow/mono,
@@ -7942,6 +7925,12 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp8containment)
+"kNW" = (
+/obj/structure/closet/crate,
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/spider/stickyweb,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mining/miningops)
 "kQc" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/dark,
@@ -9378,9 +9367,6 @@
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
 "mSI" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -9678,18 +9664,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
-"njE" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "nkz" = (
 /obj/machinery/camera/network/lcz{
 	dir = 4
@@ -13863,15 +13837,6 @@
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
-"tfU" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "tgG" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -14497,10 +14462,6 @@
 "ucY" = (
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
-"udl" = (
-/mob/living/simple_animal/hostile/giant_spider,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops)
 "ufK" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
@@ -15082,15 +15043,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
-"vhr" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "viB" = (
 /obj/machinery/light{
 	dir = 4
@@ -15673,8 +15625,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
 "vUj" = (
-/obj/structure/closet/crate,
-/obj/effect/spider/stickyweb,
+/mob/living/simple_animal/hostile/giant_spider,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "vUA" = (
@@ -31028,7 +30979,7 @@ iEC
 lIO
 bTx
 unC
-qFU
+unC
 unC
 kUH
 lIO
@@ -31283,7 +31234,7 @@ unC
 unC
 qYr
 lIO
-vhr
+fIC
 laj
 laj
 laj
@@ -31797,7 +31748,7 @@ jpf
 jpf
 ufP
 lIO
-tfU
+wnu
 laj
 sLH
 nwa
@@ -32058,7 +32009,7 @@ kWx
 wnu
 hkp
 mcA
-jle
+jwx
 lIO
 lIO
 lIO
@@ -32569,7 +32520,7 @@ hIH
 hIH
 lIO
 lIO
-njE
+spY
 hkp
 aZZ
 lIO
@@ -33179,10 +33130,10 @@ lam
 lam
 lam
 vaS
-biM
+kdl
 wNp
 wNp
-ckq
+jsg
 xue
 xue
 xue
@@ -33699,7 +33650,7 @@ xue
 xue
 xue
 xue
-ckq
+jsg
 vaS
 lam
 xRT
@@ -33954,7 +33905,7 @@ pXs
 xhs
 xue
 xue
-udl
+vUj
 wNp
 gpk
 vaS
@@ -34209,7 +34160,7 @@ lam
 vaS
 jIX
 gbE
-vUj
+aRP
 cWx
 wNp
 cyf
@@ -34466,9 +34417,9 @@ lam
 vaS
 idA
 wJw
-aRP
+kNW
 wNp
-ckq
+jsg
 gbE
 obO
 vaS

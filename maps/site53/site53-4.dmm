@@ -2317,7 +2317,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet{
-	icon_state = "sec";
+	icon_state = "sec1";
 	icon_opened = "secopen";
 	icon_off = "secoff";
 	icon_locked = "sec1";
