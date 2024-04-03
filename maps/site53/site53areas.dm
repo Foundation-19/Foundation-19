@@ -654,6 +654,11 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint"
 
+/area/site53/llcz/dclass/checkpointoverlook
+	name = "\improper LCZ Entrance Checkpoint Office"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint"
+
 /area/site53/llcz/checkequip
 	name = "\improper LCZ Security Center"
 	area_flags = AREA_FLAG_RAD_SHIELDED
