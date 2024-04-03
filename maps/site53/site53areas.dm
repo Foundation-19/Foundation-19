@@ -650,7 +650,22 @@
 	icon_state = "hallC1"
 
 /area/site53/llcz/dclass/checkpoint
-	name = "\improper Primary D-Class Checkpoint"
+	name = "\improper LCZ Entrance Checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint"
+
+/area/site53/llcz/checkequip
+	name = "\improper LCZ Security Center"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint"
+
+/area/site53/llcz/dclass/checkcryo
+	name = "\improper CDCZ Staff Cryogenics"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint"
+
+/area/site53/llcz/dclass/armory
+	name = "\improper LCZ Security Armory"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint"
 
@@ -664,169 +679,104 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
-/area/site53/llcz/dclass/med_checkpoint
-	name = "\improper Medical D-Class Checkpoint"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint"
-
-/area/site53/llcz/dclass/med_checkpointoverlook
-	name = "\improper Medical D-Class Checkpoint Overlook"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/kitchenbotanybubble
-	name = "\improper Kitchen and Botany Security Bubble"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/assignmentbubble
-	name = "\improper Assignments Security Bubble"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
 /area/site53/llcz/dclass/cellbubble
-	name = "\improper Cell Security Bubble"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/entrance_checkpoint
-	name = "\improper D-Class Cells Zone Checkpoint"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/assignmentline
-	name = "\improper Assignment Line Security Bubble"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/reeducation
-	name = "\improper Reeducation Security Bubble"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/canteenbubble
-	name = "\improper Canteen Security Bubble"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/checkequip
-	name = "\improper Primary Checkpoint Equipment"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/checkequip
-	name = "\improper Primary D-Class Checkpoint Equipment"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/checkcryo
-	name = "\improper Primary D-Class Checkpoint Cryo"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "checkpoint1"
-
-/area/site53/llcz/dclass/armory
-	name = "\improper Primary D-Class Checkpoint Armory"
+	name = "\improper CDCZ Control Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
 /area/site53/llcz/dclass/janitorial
-	name = "\improper Janitorial Closet"
+	name = "\improper CDCZ Custodial Closet"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "janitor"
 
 /area/site53/llcz/dclass/cells
-	name = "\improper D-Class Cell Area"
+	name = "\improper CDCZ Cells"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
 
 /area/site53/llcz/dclass/isolation
-	name = "\improper D-Class Isolation"
+	name = "\improper CDCZ Isolation"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
 
 /area/site53/llcz/dclass/briefing
-	name = "\improper D-Class Briefing Center"
+	name = "\improper CDCZ Briefing Hall"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "conference"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/primaryhallway
-	name = "\improper D-Class Cell Hallway"
+	name = "\improper CDCZ Auditorium"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/luxurysleep
-	name = "\improper D-Class Luxury Barracks"
+	name = "\improper CDCZ Luxury Bedrooms"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/luxuryhall
-	name = "\improper D-Class Luxury Barracks Hallway"
+	name = "\improper CDCZ Recreational Hallway"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/luxurylibrary
-	name = "\improper D-Class Luxury Library"
+	name = "\improper CDCZ Library"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/shower
-	name = "\improper D-Class Shower Area"
+	name = "\improper CDCZ Showers"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
 
 /area/site53/llcz/dclass/canteen
-	name = "\improper D-Class Canteen"
+	name = "\improper CDCZ Canteen"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "cafeteria"
 	sound_env = LARGE_SOFTFLOOR
 
 /area/site53/llcz/dclass/kitchen
-	name = "\improper D-Class Kitchen"
+	name = "\improper CDCZ Kitchen"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "kitchen"
 
 /area/site53/llcz/dclass/botany
-	name = "\improper D-Class Botany"
+	name = "\improper CDCZ Greenhouse"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "kitchen"
 
 /area/site53/llcz/dclass/assignment
-	name = "\improper D-Class Assingments"
+	name = "\improper CDCZ Assignments Post"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
 
 /area/site53/llcz/dclass/cryo
-	name = "\improper D-Class Cryo Area"
+	name = "\improper CDCZ Class-D Cryogenics"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
 
 /area/site53/llcz/dclass/medicalpost
-	name = "\improper D-Class Medical Post"
+	name = "\improper CDCZ Medical Clinic"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "exam_room"
 
 /area/site53/llcz/dclass/medicalpost/surgery
-	name = "\improper D-Class Medical Post Surgery"
+	name = "\improper CDCZ Surgery Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "kitchen"
 
 /area/site53/llcz/dclass/medicalpost/storage
-	name = "\improper D-Class Medical Post Storage"
+	name = "\improper CDCZ Medical Clinic Storage"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
 
-/area/site53/llcz/dclass/medicalpost/chem
-	name = "\improper D-Class Medical Post Chemistry"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "hallC1"
-
 /area/site53/llcz/dclass/medicalpost/morgue
-	name = "\improper D-Class Medical Post Morgue"
+	name = "\improper CDCZ Morgue"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "kitchen"
 
