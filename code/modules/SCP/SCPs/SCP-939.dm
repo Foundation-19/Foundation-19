@@ -136,7 +136,7 @@
 	var/nutrition = 500 //How it handles hunger
 	var/nutrition_max = 650 //Maximum nutrition storage
 	var/hunting_threshold = 300 //When 939 gets hungry enough that its AI will actively attack players
-	var/nutriloss = 0.5
+	var/nutriloss = 0.09 //Slow by default
 
 	var/spawn_area
 	var/door_cooldown
@@ -250,8 +250,9 @@
 
 /mob/living/simple_animal/hostile/scp939/Life() //call this here specifically so it only runs on alive instances
 	. = ..()
-	SCP.meme_comp.check_viewers()
-	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
+	if(!src.stat == DEAD)
+		SCP.meme_comp.check_viewers()
+		SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
 	if(src.client) //Will entirely stop nutrition loss and regeneration if you refuse to comply and eat.
 		if(istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses and goats around me to breach
 			for(var/mob/living/L in dview(7, src))
@@ -260,10 +261,10 @@
 				if(istype(L, /mob/living/carbon/human/monkey))
 					return FALSE
 	if(nutrition >= 1 && src.client)
-		if(health <= maxHealth)
+		if(health < maxHealth)
 			var/regen_coeff = (-round(maxHealth * regeneration_speed))
 			adjustBruteLoss(regen_coeff)
-			AdjustNutrition(regen_coeff)
+			AdjustNutrition(regen_coeff/2)
 	if(nutrition <= 15) // Starvation.
 		adjustBruteLoss(maxHealth * starvation_damage)
 	if(nutrition >= 1)
