@@ -48,6 +48,7 @@
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/medic
 	belt = /obj/item/storage/belt/holster/security
 	head = /obj/item/clothing/head/helmet/scp/security/medic
+	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
 	back = /obj/item/storage/backpack/rucksack
 
@@ -77,6 +78,7 @@
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/recontain
 	belt = /obj/item/storage/belt/holster/security
 	head = /obj/item/clothing/head/helmet/scp/security/recontain
+	mask = /obj/item/clothing/mask/gas/security
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 	back = /obj/item/storage/backpack/rucksack
 
@@ -84,7 +86,7 @@
 	name = "Scientist Associate"
 	id_pda_assignment = "Scientist Associate"
 	uniform = /obj/item/clothing/under/scp/suittie
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl1
 	l_ear = /obj/item/device/radio/headset/headset_sci
@@ -94,7 +96,7 @@
 	name = "Scientist"
 	id_pda_assignment = "Scientist"
 	uniform = /obj/item/clothing/under/scp/suittie
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl2
 	l_ear = /obj/item/device/radio/headset/headset_sci
@@ -105,10 +107,10 @@
 	name = "Senior Scientist"
 	id_pda_assignment = "Senior Scientist"
 	uniform = /obj/item/clothing/under/rank/scientist_new/senior
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl4
-	gloves = /obj/item/clothing/gloves/latex/nitrile
+	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	glasses = /obj/item/clothing/glasses/science
 	back = /obj/item/storage/backpack/satchel/leather
@@ -124,6 +126,7 @@
 	belt = /obj/item/storage/belt/utility/full
 	l_ear = /obj/item/device/radio/headset/headset_eng
 	back = /obj/item/storage/backpack/satchel/eng
+	gloves = /obj/item/clothing/gloves/insulated
 
 /decl/hierarchy/outfit/zombie/medicaldoctor
 	name = "Medical Doctor"
@@ -132,6 +135,8 @@
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	id_type = /obj/item/card/id/doctor
+	head = /obj/item/clothing/head/surgery/blue
+	gloves = /obj/item/clothing/gloves/latex/nitrile
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/satchel/leather
 

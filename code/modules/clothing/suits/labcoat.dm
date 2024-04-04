@@ -191,3 +191,11 @@
 	icon_open = "rdlabcoat_open"
 	icon_closed = "rdlabcoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/suit/storage/toggle/labcoat/science/scp
+	name = "scientist's labcoat"
+	desc = "A suit that protects against minor chemical spills. It has a purple stripe on the shoulder and purple trim on the sleeves, denoting it as a SCP Foundation labcoat."
+	icon_state = "scilabcoat_open"
+	icon_open = "scilabcoat_open"
+	icon_closed = "scilabcoat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
