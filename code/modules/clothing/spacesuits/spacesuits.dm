@@ -133,6 +133,7 @@
 	randpixel = 0
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
+	protects_against_weather = TRUE
 
 /obj/item/clothing/suit/space/Initialize()
 	. = ..()

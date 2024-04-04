@@ -39,7 +39,7 @@ var/global/list/state_machines = list()
 	var/datum/weakref/holder_ref
 	var/base_type = /datum/state_machine
 	var/expected_type = /datum
-	var/singleton/state/current_state = null // Acts both as a ref to the current state and holds which state it will default to on init.
+	var/decl/state/current_state = null // Acts both as a ref to the current state and holds which state it will default to on init.
 
 /datum/state_machine/New(var/datum/_holder)
 	..()
@@ -59,8 +59,8 @@ var/global/list/state_machines = list()
 	if(istype(current_state))
 		current_state.exited_state(holder_instance)
 	current_state = initial(current_state)
-	if(ispath(current_state, /singleton/state))
-		current_state = GET_SINGLETON(current_state)
+	if(ispath(current_state, /decl/state))
+		current_state = decls_repository.get_decl(current_state)
 		current_state.entered_state(holder_instance)
 	else
 		current_state = null
@@ -78,7 +78,7 @@ var/global/list/state_machines = list()
 	var/datum/holder_instance = get_holder()
 	var/list/options = current_state.get_open_transitions(holder_instance)
 	if(LAZYLEN(options))
-		var/singleton/state_transition/choice = choose_transition(options)
+		var/decl/state_transition/choice = choose_transition(options)
 		current_state.exited_state(holder_instance)
 		current_state = choice.target
 		current_state.entered_state(holder_instance)
@@ -96,7 +96,7 @@ var/global/list/state_machines = list()
 	if(istype(current_state))
 		current_state.exited_state(holder_instance)
 	if(ispath(new_state_type))
-		current_state = GET_SINGLETON(new_state_type)
+		current_state = decls_repository.get_decl(new_state_type)
 	else // need to include null here, so we can't do an istype
 		current_state = new_state_type
 	if(istype(current_state))
