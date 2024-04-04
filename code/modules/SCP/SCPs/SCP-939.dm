@@ -4,8 +4,6 @@
 #define SCP939_SCREEN_LOC_INTENT "EAST-2,SOUTH:5"
 #define SCP939_SCREEN_LOC_HEALTH ui_alien_health
 
-
-
 //HUDCODE + AI code
 /datum/hud/scp939
 
@@ -52,14 +50,14 @@
 	if(!..())
 		return FALSE
 	var/mob/living/simple_animal/hostile/scp939/O = holder
-	if(ishuman(the_target) && (O.nutrition > O.hunting_threshold))
+	if(ismonkey(the_target))
+		return TRUE //will always prioritise monkey
+	if(ishuman(the_target) && (O.nutrition < O.hunting_threshold))
 		var/mob/living/carbon/human/H = the_target
 		if(H.stat != DEAD)
-			if((world.time - H.l_move_time) <= 10 SECONDS) //If the mob hasn't been moved/moved in the last 10 seconds
+			if((world.time - H.l_move_time) <= 10 SECONDS && !istype(H.move_intent, /decl/move_intent/creep)  || (world.time - H.lastsound) <= 20 SECONDS && H.lastsound != null) //If the mob has moved near 939 instances without creeping, OR has made audible sounds.
 				return TRUE //Valid target
 	return FALSE
-
-
 
 //939 reagents, weapons and mobcode\\
 
@@ -137,6 +135,7 @@
 	var/nutrition = 500 //How it handles hunger
 	var/nutrition_max = 650 //Maximum nutrition storage
 	var/hunting_threshold = 300 //When 939 gets hungry enough that its AI will actively attack players
+	var/nutriloss = 0.5
 
 	var/spawn_area
 	var/door_cooldown
@@ -195,6 +194,11 @@
 /mob/living/simple_animal/hostile/scp939/attack_target(atom/A)
 	return UnarmedAttack(A)
 
+/mob/living/simple_animal/hostile/scp939/proc/AdjustNutrition(amount)
+	nutrition = max(0, nutrition + amount)
+	if(!is_sleeping && nutrition >= nutrition_max)
+		FallAsleep()
+
 /mob/living/simple_animal/hostile/scp939/proc/FallAsleep()
 	if(is_sleeping)
 		return
@@ -222,16 +226,24 @@
 	. = ..()
 	SCP.meme_comp.check_viewers()
 	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
+	if(src.client) //Will entirely stop nutrition loss and regeneration if you refuse to comply and eat.
+		if(istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses and goats around me to breach
+			for(var/mob/living/L in dview(7, src))
+				if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat))
+					return FALSE
+				if(istype(L, /mob/living/carbon/human/monkey))
+					return FALSE
+				if(L.stat)
+					return FALSE
 	if(nutrition >= 1 && src.client)
 		if(health <= maxHealth)
 			var/regen_coeff = (-round(maxHealth * regeneration_speed))
 			adjustBruteLoss(regen_coeff)
-			nutrition -= regen_coeff
-		nutrition
-	if(nutrition <= hunting_threshold)
-
+			AdjustNutrition(-regen_coeff)
 	if(nutrition <= 15) // Starvation.
 		adjustBruteLoss(maxHealth * starvation_damage)
+	if(nutrition >= 1)
+		AdjustNutrition(-nutriloss)
 
 /mob/living/simple_animal/hostile/scp939/proc/memetic_effect(mob/living/carbon/human/H)
 	for(var/obj/item/clothing/C in list(H.wear_mask, H.head))
@@ -269,6 +281,33 @@
 		return
 	if(istype(A, /obj/machinery/power/apc))
 		return // Fuck you RealB - Especially because I can see 939 doing this too.
+	if(isliving(A))
+		var/mob/living/L = A
+		// Brute loss part is mainly for humans
+		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2))))
+			var/nutr = L.mob_size
+			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Makes it simpler if kept consistent with 2427-3
+				nutr = round(nutrition_max * 0.5)
+			if(ismonkey(L))
+				nutr = round(nutrition_max * 0.1) //Smaller than 2427-3
+			if(ishuman(L))
+				if((world.time - L.lastsound) <= 20 SECONDS && L.lastsound != null)
+					nutr = round(nutrition_max * 0.2)
+					L.adjustBruteLoss(350)
+					L.lastsound = null //Null this (stops repeat-mauls from instantly gibbing crit people)
+					visible_message(SPAN_DANGER("[src] mauls [L]!"))
+					AdjustNutrition(nutr)
+					return
+				else
+					visible_message(SPAN_DANGER("[src] looks confused at [L]!"))
+					return
+			playsound(src, 'sounds/scp/2427/consume.ogg', rand(15, 35), TRUE)
+			visible_message(SPAN_DANGER("[src] mauls [L]!"))
+			AdjustNutrition(nutr)
+			L.gib()
+			return
+	return ..()
+
 
 /mob/living/simple_animal/hostile/scp939/proc/OpenDoor(obj/machinery/door/A)
 	if(door_cooldown > world.time)
