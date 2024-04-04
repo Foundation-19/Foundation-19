@@ -24,7 +24,7 @@
 
 	action_intent = new /obj/screen/intent/scp939()
 	adding += action_intent
-
+	var/list/hud_elements = list()
 	mymob.healths = new /obj/screen()
 	mymob.healths.icon = 'icons/mob/939hud.dmi'
 	mymob.healths.icon_state = "health0"
@@ -39,6 +39,8 @@
 
 	H.fov_mask = new /obj/screen/fov_mask/scp939()
 	hud_elements |= H.fov_mask
+	mymob.client.screen = list()
+	mymob.client.screen += hud_elements
 
 /obj/item/natural_weapon/scp939
 	name = "sharp jaws"
@@ -79,9 +81,7 @@
 	hud_type = /datum/hud/scp939
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	var/obj/screen/fov/fov = null //Copied from humans
-	var/obj/screen/fov_mask/fov_mask
-	var/usefov = 1
+	usefov = 1
 
 	universal_speak = 1	// 939 can understand all languages
 	speak_emote = list("growls", "shouts", "screams", "says", "whispers")
