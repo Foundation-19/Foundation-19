@@ -24,14 +24,14 @@
 
 /obj/abstract/weather_system
 	plane             = DEFAULT_PLANE
-	layer             = HIDING_MOB_LAYER
+	layer             = ABOVE_PROJECTILE_LAYER
 	icon              = 'icons/effects/weather.dmi'
 	icon_state        = "blank"
 	invisibility      = 0
 	appearance_flags  = (RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
 
-	var/water_material = null     // Material to use for the properties of rain.
-	var/ice_material =  null        // Material to use for the properties of snow and hail.
+	var/water_material = /datum/reagent/water    // Material to use for the properties of rain.
+	var/ice_material =   null       // Material to use for the properties of snow and hail. Will have to port the material system from nebula
 
 	var/list/affecting_zs                                // What z-levels are we affecting?
 	var/datum/state_machine/weather/weather_system       // What is our internal state and how do we decide what state to use?
@@ -90,8 +90,8 @@
 
 // Dummy object for lightning flash animation.
 /obj/abstract/lightning_overlay
-	plane             = DEFAULT_PLANE + 1
-	layer             = ABOVE_HUMAN_LAYER
+	plane             = DEFAULT_PLANE
+	layer             = ABOVE_LIGHTING_LAYER
 	icon              = 'icons/effects/weather.dmi'
 	icon_state        = "full"
 	alpha             = 0

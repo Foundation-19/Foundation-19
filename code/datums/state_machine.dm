@@ -44,7 +44,7 @@ var/global/list/state_machines = list()
 /datum/state_machine/New(datum/_holder)
 	..()
 	if(!istype(_holder))
-		stack_trace("Non-datum holder supplied to [type] New().")
+		crash_with("Non-datum holder supplied to [type] New().")
 	else
 		holder_ref = WEAKREF(_holder)
 	set_state(current_state)
