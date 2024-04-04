@@ -20923,9 +20923,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "bDO" = (
-/obj/structure/bed/chair/office/comfy/blue{
-	dir = 1
-	},
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "bDX" = (
@@ -21600,10 +21602,12 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/securitypost)
 "bZg" = (
-/obj/structure/sign/chemistry,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/r_titanium,
-/area/site53/llcz/dclass/medicalpost/storage)
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/cellbubble)
 "bZL" = (
 /obj/machinery/light{
 	dir = 1
@@ -22492,11 +22496,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
-"cEB" = (
-/obj/machinery/smartfridge/chemistry,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/r_titanium,
-/area/site53/llcz/dclass/medicalpost/storage)
 "cFl" = (
 /obj/structure/sign/scp/euclid_scp{
 	pixel_y = 32
@@ -24131,19 +24130,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/scp066)
-"dHe" = (
-/obj/machinery/door/airlock/medical{
-	name = "CDCZ Chemistry";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
-	},
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "CDCZMedLock";
-	name = "CDCZ Medical Clinic Lockdown Shutters"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/llcz/dclass/medicalpost/storage)
 "dIo" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/yellow/border{
@@ -25598,11 +25584,6 @@
 /obj/random/clipboard,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
-"eFL" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "eGG" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light{
@@ -27882,10 +27863,12 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp2398)
 "gkv" = (
-/obj/structure/closet/secure_closet/chemical,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/primaryhallway)
 "gkD" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/bed/roller,
@@ -31772,10 +31755,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
 "iQA" = (
-/obj/machinery/chemical_dispenser,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/primaryhallway)
 "iQI" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
@@ -32130,11 +32117,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"jag" = (
-/obj/machinery/chem_master,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "jao" = (
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/corner{
@@ -41989,13 +41971,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
-"pmt" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/beakers,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "pmy" = (
 /obj/effect/floor_decal/corner/brown/border,
 /obj/structure/cable/green{
@@ -45242,13 +45217,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
-"rvm" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/landmark{
-	name = "JoinLateCyborg"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/cellbubble)
 "rvJ" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/spray/cleaner,
@@ -53552,13 +53520,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
-"xck" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/landmark{
-	name = "JoinLateCyborg"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/primaryhallway)
 "xcp" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -61439,7 +61400,7 @@ iid
 jBt
 hIm
 ktV
-xck
+gkv
 xse
 uKT
 uis
@@ -62707,7 +62668,7 @@ bKM
 eKA
 eeW
 qVK
-rvm
+bZg
 xaA
 eKA
 mSV
@@ -65550,9 +65511,9 @@ ecb
 wzt
 wzt
 wzt
-xcT
-xcT
-xcT
+iQA
+iQA
+iQA
 kwD
 kwD
 kwD
@@ -67340,7 +67301,7 @@ fAC
 bMi
 ini
 iVj
-lzz
+bDO
 ffO
 ini
 wzt
@@ -67596,9 +67557,9 @@ aXD
 ins
 bMi
 ini
-bZg
-dHe
-cEB
+ini
+ini
+ini
 ini
 wzt
 mnW
@@ -67852,11 +67813,11 @@ xaC
 xaC
 xmw
 bMi
-ini
-iQA
-lzz
-eFL
-ini
+azA
+azA
+azA
+azA
+azA
 wzt
 vIu
 vLg
@@ -68109,11 +68070,11 @@ aXz
 aXz
 aXz
 bMi
-ini
-jag
-bDO
-pmt
-ini
+azA
+azA
+azA
+azA
+azA
 wzt
 wzt
 sNd
@@ -68366,11 +68327,11 @@ big
 big
 big
 bMi
-ini
-gkv
-lzz
-eFL
-ini
+azA
+azA
+azA
+azA
+azA
 azA
 wzt
 wzt
@@ -68623,11 +68584,11 @@ eAI
 big
 aGu
 bMi
-ini
-ini
-ini
-ini
-ini
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
