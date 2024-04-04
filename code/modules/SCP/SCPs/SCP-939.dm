@@ -98,7 +98,8 @@
 	melee_accuracy_bonus = 200
 	stun_prob = 0 // Only combat!
 	edge = 1
-	force = 19 //Lower damage
+	force = 22 //Lower damage
+	armor_penetration = 25
 
 /obj/item/natural_weapon/scp939/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	. = ..()
@@ -218,8 +219,34 @@
 		SPAN_NOTICE("You wake up."))
 	sleep(2 SECONDS)
 	is_sleeping = FALSE
-	if(icon_state == "sleep") // If somehow we died before WakeUp got called
+	icon_state = "crawling"
+	if(icon_state == "slep") // If somehow we died before WakeUp got called
 		icon_state = null
+
+/mob/living/simple_animal/hostile/scp939/SelfMove(direction)
+	resting = FALSE //Yeh.
+	if(is_sleeping)
+		return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/scp939/IMove(turf/newloc, safety = TRUE)
+	if(is_sleeping)
+		return MOVEMENT_ON_COOLDOWN
+	return ..()
+
+/mob/living/simple_animal/hostile/scp939/get_status_tab_items()
+	. = ..()
+	if(stat == DEAD)
+		. += "I am dead."
+	else if(is_sleeping)
+		. += "I am asleep."
+
+	if(nutrition <= 50)
+		. += "Hunger: I AM GOING TO STARVE TO DEATH!! ([round(nutrition)]/[nutrition_max])"
+	else if(nutrition <= hunting_threshold)
+		. += "Hunger: I NEED MEAT RIGHT NOW! HUNT AND KILL! ([round(nutrition)]/[nutrition_max])"
+	else
+		. += "Hunger: [round(nutrition)]/[nutrition_max]"
 
 /mob/living/simple_animal/hostile/scp939/Life() //call this here specifically so it only runs on alive instances
 	. = ..()
@@ -295,15 +322,15 @@
 		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2))))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Makes it simpler if kept consistent with 2427-3
-				nutr = round(nutrition_max * 0.5)
+				nutr = round(nutrition_max * 0.9)
 			if(ismonkey(L))
-				nutr = round(nutrition_max * 0.1) //Smaller than 2427-3
+				nutr = round(nutrition_max * 0.25) //Smaller than 2427-3
 				visible_message(SPAN_DANGER("[src] mauls [L]!"))
 				AdjustNutrition(nutr)
 				L.gib()
 			if(ishuman(L))
 				if((world.time - L.lastsound) <= 50 SECONDS && L.lastsound != null) //OBJECTIVE: SURVIVE 50 SECONDS AFTER AGGROING 939
-					nutr = round(nutrition_max * 0.2)
+					nutr = round(nutrition_max * 0.4)
 					L.adjustBruteLoss(350)
 					L.lastsound = null //Null this (stops repeat-mauls from instantly gibbing crit people)
 					visible_message(SPAN_DANGER("[src] mauls [L]!"))
