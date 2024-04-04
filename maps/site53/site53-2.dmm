@@ -1485,11 +1485,6 @@
 /obj/effect/shuttle_landmark/train/onsite,
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
-"aeM" = (
-/obj/machinery/chemical_dispenser,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "aeN" = (
 /obj/machinery/button/blast_door{
 	id_tag = "UHCZ Western Shutter Window";
@@ -20958,6 +20953,12 @@
 /obj/machinery/light/small/red,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"bDO" = (
+/obj/structure/bed/chair/office/comfy/blue{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "bDX" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
@@ -21629,6 +21630,11 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/securitypost)
+"bZg" = (
+/obj/structure/sign/chemistry,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/r_titanium,
+/area/site53/llcz/dclass/medicalpost/storage)
 "bZL" = (
 /obj/machinery/light{
 	dir = 1
@@ -22517,6 +22523,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
+"cEB" = (
+/obj/machinery/smartfridge/chemistry,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/r_titanium,
+/area/site53/llcz/dclass/medicalpost/storage)
 "cFl" = (
 /obj/structure/sign/scp/euclid_scp{
 	pixel_y = 32
@@ -23509,12 +23520,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"dnz" = (
-/obj/structure/bed/chair/office/comfy/blue{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "dnL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -24175,6 +24180,19 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/scp066)
+"dHe" = (
+/obj/machinery/door/airlock/medical{
+	name = "CDCZ Chemistry";
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "CDCZMedLock";
+	name = "CDCZ Medical Clinic Lockdown Shutters"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/medicalpost/storage)
 "dIo" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/yellow/border{
@@ -25627,6 +25645,11 @@
 /obj/random/clipboard,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
+"eFL" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "eGG" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light{
@@ -27904,6 +27927,11 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp2398)
+"gkv" = (
+/obj/structure/closet/secure_closet/chemical,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "gkD" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/bed/roller,
@@ -31686,13 +31714,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp078)
-"iLF" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/beakers,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "iMD" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -31796,6 +31817,11 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
+"iQA" = (
+/obj/machinery/chemical_dispenser,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "iQI" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
@@ -32068,11 +32094,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
-"iWP" = (
-/obj/machinery/smartfridge/chemistry,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/r_titanium,
-/area/site53/llcz/dclass/medicalpost/storage)
 "iWR" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -34719,11 +34740,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
-"kNY" = (
-/obj/structure/sign/chemistry,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/r_titanium,
-/area/site53/llcz/dclass/medicalpost/storage)
 "kOc" = (
 /obj/item/device/assembly/infra,
 /obj/item/device/assembly/infra,
@@ -40237,11 +40253,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp457containment)
-"oht" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "ohK" = (
 /obj/effect/floor_decal/corner/yellow/diagonal,
 /turf/simulated/floor/tiled,
@@ -42020,6 +42031,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
+"pmt" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/beakers,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "pmy" = (
 /obj/effect/floor_decal/corner/brown/border,
 /obj/structure/cable/green{
@@ -44199,7 +44217,7 @@
 	},
 /obj/machinery/door/airlock/glass/security{
 	name = "CDCZ Catwalks Access";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
@@ -50935,19 +50953,6 @@
 /obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
-"vmt" = (
-/obj/machinery/door/airlock/medical{
-	name = "CDCZ Chemistry";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
-	},
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "CDCZMedLock";
-	name = "CDCZ Medical Clinic Lockdown Shutters"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/llcz/dclass/medicalpost/storage)
 "vmF" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -53884,11 +53889,6 @@
 /obj/item/rig/ce/equipped,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/containment_engineer)
-"xlA" = (
-/obj/structure/closet/secure_closet/chemical,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "xlZ" = (
 /obj/structure/sign/scp/euclid_scp{
 	pixel_y = 32
@@ -67659,9 +67659,9 @@ aXD
 ins
 bMi
 ini
-kNY
-vmt
-iWP
+bZg
+dHe
+cEB
 ini
 wzt
 mnW
@@ -67916,9 +67916,9 @@ xaC
 xmw
 bMi
 ini
-aeM
+iQA
 lzz
-oht
+eFL
 ini
 wzt
 vIu
@@ -68174,8 +68174,8 @@ aXz
 bMi
 ini
 jag
-dnz
-iLF
+bDO
+pmt
 ini
 wzt
 wzt
@@ -68430,9 +68430,9 @@ big
 big
 bMi
 ini
-xlA
+gkv
 lzz
-oht
+eFL
 ini
 azA
 wzt

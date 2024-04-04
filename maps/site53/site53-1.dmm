@@ -5006,14 +5006,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
-"hpV" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/civilian{
-	name = "Decommissioned CDCZ Ore Processing";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/llcz/mining/miningops)
 "hrk" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -10836,7 +10828,8 @@
 	id_tag = "CDCZStairsLockdown"
 	},
 /obj/machinery/door/airlock/multi_tile/glass/security{
-	name = "CDCZ Stairs"
+	name = "CDCZ Stairs";
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark/small,
@@ -15422,6 +15415,14 @@
 /obj/item/material/twohanded/fireaxe,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"xyc" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/civilian{
+	name = "Decommissioned CDCZ Ore Processing";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/mining/miningops)
 "xyf" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -31489,7 +31490,7 @@ gnV
 bSa
 bSa
 bSa
-hpV
+xyc
 vtG
 vtG
 vtG
@@ -32778,7 +32779,7 @@ jIX
 gbE
 aRP
 cWx
-wNp
+xue
 cyf
 jez
 aqR
