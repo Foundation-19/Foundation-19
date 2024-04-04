@@ -18,6 +18,12 @@
 	if(modifiers["shift"] && modifiers["ctrl"])
 		CtrlShiftClickOn(A)
 		return
+	if(modifiers["middle"] && modifiers["alt"])
+		AltMiddleClickOn(A)
+		return
+	if(modifiers["middle"] && modifiers["shift"])
+		ShiftMiddleClickOn(A)
+		return
 	if(modifiers["middle"])
 		MiddleClickOn(A)
 		return

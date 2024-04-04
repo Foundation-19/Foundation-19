@@ -33,7 +33,8 @@ var/list/ai_verbs_default = list(
 	/mob/living/silicon/ai/proc/ai_power_override,
 	/mob/living/silicon/ai/proc/ai_shutdown,
 	/mob/living/silicon/ai/proc/ai_reset_radio_keys,
-	/mob/living/silicon/ai/proc/eye_puppet_toggle
+	/mob/living/silicon/ai/proc/eye_puppet_toggle,
+	/mob/living/silicon/ai/proc/access_area_apc,
 )
 
 //Not sure why this is necessary...
@@ -159,6 +160,7 @@ var/list/ai_verbs_default = list(
 	add_language(LANGUAGE_HUMAN_ARABIC, 1)
 	add_language(LANGUAGE_HUMAN_CHINESE, 1)
 	add_language(LANGUAGE_HUMAN_SPANISH, 1)
+	add_language(LANGUAGE_HUMAN_FRENCH, 1)
 	add_language(LANGUAGE_HUMAN_INDIAN, 1)
 	add_language(LANGUAGE_HUMAN_RUSSIAN, 1)
 	add_language(LANGUAGE_UNATHI_SINTA, 1)

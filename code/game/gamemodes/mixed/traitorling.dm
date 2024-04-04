@@ -6,5 +6,5 @@
 	required_players = 15
 	required_enemies = 5
 	end_on_antag_death = FALSE
-	antag_tags = list(MODE_CHANGELING, MODE_TRAITOR)
+	antag_tags = list(MODE_TRADER, MODE_INFORMANT, MODE_CHANGELING, MODE_TRAITOR)
 	require_all_templates = TRUE

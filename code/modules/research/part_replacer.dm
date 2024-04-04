@@ -29,7 +29,7 @@
 	if(istype(target, /obj/machinery))
 		var/obj/machinery/machine = target
 		if(machine.component_attackby(src, user))
-			user.Beam(machine, icon_state = "rped_upgrade", icon = 'icons/effects/effects.dmi', time = 5)
+			user.Beam(machine, icon_state = "rped_upgrade", time = 5)
 
 /obj/item/storage/part_replacer/bluespace
 	name = "bluespace rapid part exchange device"

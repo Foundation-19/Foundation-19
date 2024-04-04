@@ -1,7 +1,6 @@
 /datum/spell/targeted/equip_item/horsemask
 	name = "Curse of the Horseman"
 	desc = "This spell triggers a curse on a target, causing them to wield an unremovable horse head mask. They will speak like a horse! Any masks they are wearing will be disintegrated. This spell does not require robes."
-	school = "transmutation"
 	charge_type = SPELL_RECHARGE
 	charge_max = 150
 	charge_counter = 0
@@ -39,7 +38,7 @@
 		magichead.voicechange = 1	//NEEEEIIGHH
 	return new_item
 
-/datum/spell/targeted/equip_item/horsemask/empower_spell()
+/datum/spell/targeted/equip_item/horsemask/ImproveSpellPower()
 	if(!..())
 		return 0
 

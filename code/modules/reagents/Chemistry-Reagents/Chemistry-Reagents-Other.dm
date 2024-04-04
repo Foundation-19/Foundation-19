@@ -229,6 +229,7 @@
 	reagent_state = LIQUID
 	color = "#673910"
 	touch_met = 50
+	accelerant_quality = 20
 
 /datum/reagent/napalm/touch_turf(turf/T)
 	new /obj/effect/decal/cleanable/liquid_fuel(T, volume)
@@ -386,7 +387,7 @@
 	var/datum/gas_mixture/environment = T.return_air()
 	var/min_temperature = 0 // Room temperature + some variance. An actual diminishing return would be better, but this is *like* that. In a way. . This has the potential for weird behavior, but I says fuck it. Water grenades for everyone.
 
-	var/hotspot = (locate(/obj/fire) in T)
+	var/hotspot = (locate(/obj/hotspot) in T)
 	if(hotspot && !isspaceturf(T))
 		var/datum/gas_mixture/lowertemp = T.remove_air(T:air:total_moles)
 		lowertemp.temperature = max(min(lowertemp.temperature-2000, lowertemp.temperature / 2), 0)
@@ -817,3 +818,18 @@
 	// Remove all diseases
 	for(var/datum/disease/D in M.diseases)
 		qdel(D)
+
+/datum/reagent/concentrated_mana
+	name = "Concentrated Mana"
+	description = "A mysterious liquid used by magic-fluent people to restore their internal mana reserves. \
+		Can also be used in certain tools that utilize magic phenomenon."
+	taste_description = "cool air"
+	reagent_state = LIQUID
+	color = COLOR_MANA
+
+/datum/reagent/concentrated_mana/affect_blood(mob/living/carbon/human/H, alien, removed)
+	if(!ishuman(H))
+		return
+	if(!H.mind || !H.mind?.mana)
+		return
+	H.mind.mana.AddMana(2)

@@ -1,19 +1,23 @@
 /datum/spell/targeted/ethereal_jaunt
 	name = "Ethereal Jaunt"
 	desc = "This spell creates your ethereal form, temporarily making you invisible and able to pass through walls."
-	feedback = "EJ"
-	school = "transmutation"
-	charge_max = 30 SECONDS
+
 	spell_flags = Z2NOCAST | NEEDSCLOTHES | INCLUDEUSER
 	invocation = "none"
 	invocation_type = INVOKE_NONE
 	range = 0
 	max_targets = 1
-	level_max = list(UPGRADE_TOTAL = 4, UPGRADE_SPEED = 4, UPGRADE_POWER = 3)
-	cooldown_min = 10 SECONDS //50 deciseconds reduction per rank
+	level_max = list(UPGRADE_TOTAL = 4, UPGRADE_SPEED = 2, UPGRADE_POWER = 3)
+
+	charge_max = 30 SECONDS
+	cooldown_min = 10 SECONDS
+	cooldown_reduc = 5 SECONDS
 	duration = 5 SECONDS
 
 	hud_state = "wiz_jaunt"
+
+	spell_cost = 2
+	mana_cost = 7
 
 	var/reappear_duration = 5
 	var/obj/effect/dummy/spell_jaunt/jaunt_holder
@@ -70,7 +74,7 @@
 	QDEL_NULL(animation)
 	QDEL_NULL(jaunt_holder)
 
-/datum/spell/targeted/ethereal_jaunt/empower_spell()
+/datum/spell/targeted/ethereal_jaunt/ImproveSpellPower()
 	if(!..())
 		return 0
 	duration += 2 SECONDS
@@ -131,7 +135,3 @@
 	return
 /obj/effect/dummy/spell_jaunt/bullet_act(blah)
 	return
-
-/datum/spell/targeted/ethereal_jaunt/tower
-	charge_max = 2
-	spell_flags = Z2NOCAST | INCLUDEUSER

@@ -244,9 +244,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/setup_job_lists()
 	return
 
-/datum/map/proc/send_welcome()
-	return
-
 /datum/map/proc/perform_map_generation()
 	return
 
