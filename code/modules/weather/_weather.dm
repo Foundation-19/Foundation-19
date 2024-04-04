@@ -76,7 +76,7 @@
 	show_wind(user, force = TRUE)
 
 // Called by /decl/state/weather to assess validity of a state in the weather FSM.
-/obj/abstract/weather_system/proc/supports_weather_state(var/decl/state/weather/next_state)
+/obj/abstract/weather_system/proc/supports_weather_state(decl/state/weather/next_state)
 	// Exoplanet stuff for the future:
 	// - TODO: track and check exoplanet temperature.
 	// - TODO: compare to a list of 'acceptable' states
