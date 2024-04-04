@@ -18,18 +18,60 @@
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 	back = /obj/item/storage/backpack/rucksack
 
-/decl/hierarchy/outfit/zombie/ezguard
-	name = "EZ Agent"
-	uniform = /obj/item/clothing/under/rank/security/ez
+/decl/hierarchy/outfit/zombie/lczsergeant
+	name = "LCZ Sergeant"
+	uniform = /obj/item/clothing/under/rank/warden/lcz
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/card/id/seclvl3ez
-	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	id_type = /obj/item/card/id/seclvl3lcz
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	belt = /obj/item/storage/belt/holster/security
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
+	back = /obj/item/storage/backpack/rucksack
+
+/decl/hierarchy/outfit/zombie/lczmedic
+	name = "LCZ Combat Medic"
+	uniform = /obj/item/clothing/under/rank/security/lcz/medic
+	glasses = /obj/item/clothing/glasses/hud/health/visor
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl2lczdivision
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/medic
+	belt = /obj/item/storage/belt/holster/security
+	head = /obj/item/clothing/head/helmet/scp/security/medic
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
+	back = /obj/item/storage/backpack/rucksack
+
+/decl/hierarchy/outfit/zombie/lczriot
+	name = "LCZ Riot Control Unit"
+	uniform = /obj/item/clothing/under/rank/security/lcz/riot
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl2lczdivision2
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
+	belt = /obj/item/storage/belt/holster/security
+	head = /obj/item/clothing/head/helmet/scp/security/riot
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
+	back = /obj/item/storage/backpack/rucksack
+
+/decl/hierarchy/outfit/zombie/lczrecontain
+	name = "LCZ Recontainment Unit"
+	uniform = /obj/item/clothing/under/rank/security/lcz/recontain
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl3lczdivision3
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/recontain
+	belt = /obj/item/storage/belt/holster/security
+	head = /obj/item/clothing/head/helmet/scp/security/recontain
+	mask = /obj/item/clothing/mask/gas/security
+	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 	back = /obj/item/storage/backpack/rucksack
 
 /decl/hierarchy/outfit/zombie/ci
