@@ -129,14 +129,21 @@
 	default_pixel_x = -8
 	default_pixel_y = -8
 
-	maxHealth = 900
-	health = 900
+	maxHealth = 650 // Ditto for below
+	health = 650 //Beefy, but not as tanky as other SCPs.
+	var/regeneration_speed = 0.005 //controls how fast you restore health.
+	var/starvation_damage = 0.005
+
 	var/nutrition = 500 //How it handles hunger
 	var/nutrition_max = 650 //Maximum nutrition storage
 	var/hunting_threshold = 300 //When 939 gets hungry enough that its AI will actively attack players
+
+	var/spawn_area
+	var/door_cooldown
+
 	var/effect_cooldown = 5 SECONDS //ditto
 	var/effect_cooldown_counter //keeps track of 939 'breathing' cd
-
+	var/is_sleeping = FALSE
 	hud_type = /datum/hud/scp939
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -172,14 +179,59 @@
 	)
 
 	SCP.min_time = 25 MINUTES //These things become VERY dangerous when multiple of them spawn
-	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Needs to be synced to not indefinitely add this.
+	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Needs to be synced to not indefinitely add this. Also uses VISUAL and AUDIBLE as if you're in range to see or hear 939, you're usually breathing the same air as it.
 	SCP.memetic_proc = TYPE_PROC_REF(/mob/living/simple_animal/hostile/scp939, memetic_effect) //re-used SCP-012 code, works for our purposes
 	SCP.compInit() //if only I understood this code
+	spawn_area = get_area(src) //Used to track where SCP-939 is mapped in (or spawned)
+
+//Incorporates lots of 2427-3 code, just because its good
+
+/mob/living/simple_animal/hostile/scp939/Bump(atom/A)
+	. = ..()
+	if(a_intent != I_HELP)
+		if(isliving(A) && canClick())
+			UnarmedAttack(A)
+
+/mob/living/simple_animal/hostile/scp939/attack_target(atom/A)
+	return UnarmedAttack(A)
+
+/mob/living/simple_animal/hostile/scp939/proc/FallAsleep()
+	if(is_sleeping)
+		return
+	visible_message(
+		SPAN_NOTICE("[src] falls asleep."),
+		SPAN_NOTICE("You fall asleep."))
+	icon_state = "slep"
+	is_sleeping = TRUE
+	addtimer(CALLBACK(src, PROC_REF(WakeUp)), rand((2 MINUTES), (4 MINUTES)))
+
+/mob/living/simple_animal/hostile/scp939/proc/WakeUp(attacked = FALSE)
+	if(!is_sleeping)
+		return
+	revive() //Encouragement to not delay eating, only way for 939 to heal to full HP without constantly stopping to maul corpses.
+	playsound(src, 'sounds/mecha/lowpower.ogg', 75, FALSE, 4)
+	visible_message(
+		SPAN_DANGER("[src] wakes up, shaking dust and blood from its form."),
+		SPAN_NOTICE("You wake up."))
+	sleep(2 SECONDS)
+	is_sleeping = FALSE
+	if(icon_state == "sleep") // If somehow we died before WakeUp got called
+		icon_state = null
 
 /mob/living/simple_animal/hostile/scp939/Life() //call this here specifically so it only runs on alive instances
 	. = ..()
 	SCP.meme_comp.check_viewers()
 	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
+	if(nutrition >= 1 && src.client)
+		if(health <= maxHealth)
+			var/regen_coeff = (-round(maxHealth * regeneration_speed))
+			adjustBruteLoss(regen_coeff)
+			nutrition -= regen_coeff
+		nutrition
+	if(nutrition <= hunting_threshold)
+
+	if(nutrition <= 15) // Starvation.
+		adjustBruteLoss(maxHealth * starvation_damage)
 
 /mob/living/simple_animal/hostile/scp939/proc/memetic_effect(mob/living/carbon/human/H)
 	for(var/obj/item/clothing/C in list(H.wear_mask, H.head))
@@ -208,3 +260,71 @@
 				playsound(H, "sounds/voice/emotes/[gender2text(H.gender)]_cry[pick(list("1","2"))].ogg", 100)
 				stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.34)
 		effect_cooldown_counter = world.time
+
+/mob/living/simple_animal/hostile/scp939/UnarmedAttack(atom/A)
+	if(is_sleeping)
+		return
+	if(istype(A, /obj/machinery/door))
+		OpenDoor(A)
+		return
+	if(istype(A, /obj/machinery/power/apc))
+		return // Fuck you RealB - Especially because I can see 939 doing this too.
+
+/mob/living/simple_animal/hostile/scp939/proc/OpenDoor(obj/machinery/door/A)
+	if(door_cooldown > world.time)
+		return
+
+	if(!istype(A))
+		return
+
+	if(!A.density)
+		return
+
+	if(!A.Adjacent(src))
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
+		return
+
+	if(nutrition >= hunting_threshold && (get_area(A) == spawn_area))
+		to_chat(src, SPAN_WARNING("You cannot open blast doors in your containment zone unless sufficiently hungry."))
+		return
+
+	var/open_time = istype(A, /obj/machinery/door/blast) ? 8 SECONDS : 3 SECONDS
+
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		if(AR.locked)
+			open_time += 4 SECONDS
+		if(AR.welded)
+			open_time += 4 SECONDS
+		if(AR.secured_wires)
+			open_time += 5 SECONDS
+
+	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
+	if(open_time > 0.5 SECONDS)
+		playsound(get_turf(A), 'sounds/machines/airlock_creaking.ogg', 35, 1)
+	door_cooldown = world.time + open_time // To avoid sound spam
+
+	if(!do_after(src, open_time, A))
+		return
+
+	if(istype(A, /obj/machinery/door/blast))
+		var/obj/machinery/door/blast/DB = A
+		DB.visible_message(SPAN_DANGER("\The [src] tries to forcefully open \the [DB], damaging it with a shower of sparks!"))
+		DB.health -= 250 // Do severe damage per use
+		var/init_px = pixel_x
+		var/shake_dir = pick(-1, 1)
+		animate(DB, transform=turn(matrix(), 8*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
+		animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
+		if(DB.health <= 250)
+			DB.visible_message(SPAN_DANGER("\The [src] manages to rip open \the [DB]!"))
+			DB.force_open()
+		return
+
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
+		AR.welded = FALSE
+	A.set_broken(TRUE)
+	var/check = A.open(TRUE)
+	visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
+
