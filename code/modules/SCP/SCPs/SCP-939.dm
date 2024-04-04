@@ -290,8 +290,6 @@
 			playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
 			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.24)
 			H.humanStageHandler.setStage("939_message", world.time)
-	else
-		H.visible_message(SPAN_NOTICE("[H] was protected by their helmet!"))
 
 /mob/living/simple_animal/hostile/scp939/UnarmedAttack(atom/A)
 	if(is_sleeping)
