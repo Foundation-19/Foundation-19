@@ -275,11 +275,11 @@
 		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
 			H.humanStageHandler.setStage("939_message", world.time)
 			H.visible_message(SPAN_NOTICE("[H] looks at the [name] and cries."))
-			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.24)
+			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.67)
 		if(prob(60) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
 			H.humanStageHandler.setStage("939_message", world.time)
 			H.visible_message(SPAN_WARNING("[H] seems unfocused, [H.p_their()] eyes wandering towards \"[name]\", slavishly drooling..."))
-			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.95) //Largest exposure per tick
+			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 1.7) //Largest exposure per tick
 		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
 			H.visible_message(SPAN_DANGER("[H] seems to resist something intangible, [H.p_their()] eyes widening briefly as [H.p_their()] nose twitches!"))
 			H.emote("sniff") //avoids exposure
@@ -288,7 +288,7 @@
 		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
 			H.visible_message(SPAN_NOTICE("[H] doesn't seem to what they're doing, they stare at \"[name]\" and blink, not having known it was there..."))
 			playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
-			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.24)
+			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.67)
 			H.humanStageHandler.setStage("939_message", world.time)
 
 /mob/living/simple_animal/hostile/scp939/UnarmedAttack(atom/A)
