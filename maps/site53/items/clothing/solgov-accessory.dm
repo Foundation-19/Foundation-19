@@ -116,6 +116,7 @@ armour attachments
 	accessory_icons = list(slot_tie_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_w_uniform_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_wear_suit_str = 'maps/torch/icons/mob/solgov-accessory.dmi')
 	icon_state = "solflag"
 	slot = ACCESSORY_SLOT_ARMOR_M
+
 /obj/item/clothing/accessory/armor/tag/base/goc
 	name = "\improper UNGOC Flag"
 	desc = "An emblem depicting the UNGOC's flag."
