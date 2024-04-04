@@ -6,19 +6,19 @@
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
 	audio_insulation = A_INSL_IMPERFECT
 	volume_multiplier = 0.5
-	var/jukebox/jukebox
+//	var/jukebox/jukebox
 
 
 /obj/item/clothing/ears/headphones/Initialize()
 	. = ..()
-	var/ui_name = pick("Sandhouse", "Booze", "Boom & Olaf", "Jumble", "Sonnie", "Sonic-Technical")
+/*	var/ui_name = pick("Sandhouse", "Booze", "Boom & Olaf", "Jumble", "Sonnie", "Sonic-Technical")
 	ui_name += " [pick("Headphones", "Monitors", "Skullshakers", "Brain Jigglers", "Sonic Dewaxers")]"
 	jukebox = new(src, "boombox.tmpl", ui_name, 400, 150)
 	jukebox.range = 0
 
-
+*/
 /obj/item/clothing/ears/headphones/Destroy()
-	QDEL_NULL(jukebox)
+//	QDEL_NULL(jukebox)
 	. = ..()
 
 

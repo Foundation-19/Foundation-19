@@ -3,7 +3,7 @@
 
 /obj/item/boombox
 	name = "boombox"
-	desc = "A device used to emit rhythmic sounds, colloquialy refered to as a 'boombox'. It's in a retro style (massive), and absolutely unwieldy."
+	desc = "A device used to emit rhythmic sounds, colloquialy refered to as a 'boombox'. It's in a retro style (massive), and absolutely unwieldy. This one seems broken."
 	icon = 'icons/obj/boombox.dmi'
 	icon_state = "off"
 	item_state = "boombox"
@@ -11,20 +11,20 @@
 	w_class = ITEM_SIZE_HUGE //forbid putting something that emits loud sounds forever into a backpack
 	origin_tech = list(TECH_MAGNET = 2, TECH_COMBAT = 1)
 
-	var/jukebox/jukebox
+//	var/jukebox/jukebox
 	var/boombox_flags
 
 
 /obj/item/boombox/Initialize()
 	. = ..()
-	jukebox = new(src, "boombox.tmpl", "HEXABEATRON&trade;", 400, 150)
+//	jukebox = new(src, "boombox.tmpl", "HEXABEATRON&trade;", 400, 150) - DISABLED
 
 
 /obj/item/boombox/Destroy()
-	QDEL_NULL(jukebox)
+//	QDEL_NULL(jukebox)
 	. = ..()
 
-
+/*
 /obj/item/boombox/on_update_icon()
 	icon_state = jukebox?.playing ? "on" : "off"
 
@@ -121,7 +121,7 @@
 		return TRUE
 	. = ..()
 
-
+*/
 
 /obj/random_multi/single_item/boombox
 	name = "boombox spawnpoint"
