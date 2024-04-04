@@ -18,10 +18,10 @@
 
 */
 /obj/item/clothing/ears/headphones/Destroy()
-//	QDEL_NULL(jukebox)
+	QDEL_NULL(jukebox)
 	. = ..()
 
-
+/*
 /obj/item/clothing/ears/headphones/attack_self(mob/user)
 	jukebox.ui_interact(user)
 
@@ -38,3 +38,4 @@
 		icon_state = "headphones_off"
 		item_state = "headphones_off"
 	update_clothing_icon()
+*/
