@@ -37385,6 +37385,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/landmark{
+	name = "JoinLatelcz"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "mvZ" = (
@@ -44798,6 +44801,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp457containment)
+"rhl" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/primaryhallway)
 "rhp" = (
 /obj/machinery/firealarm{
 	name = "emergency alarm";
@@ -45694,6 +45704,13 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/hallways)
+"rLp" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/cellbubble)
 "rLz" = (
 /obj/machinery/papershredder,
 /obj/machinery/camera/network/entrance{
@@ -61417,7 +61434,7 @@ iid
 jBt
 hIm
 ktV
-mYX
+rhl
 xse
 uKT
 uis
@@ -62685,7 +62702,7 @@ bKM
 eKA
 eeW
 qVK
-eKA
+rLp
 xaA
 eKA
 mSV

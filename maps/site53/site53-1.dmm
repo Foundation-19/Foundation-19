@@ -177,6 +177,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"amk" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/space)
 "amA" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1300,15 +1306,12 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "bRu" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/hallways)
+/turf/unsimulated/mineral,
+/area/space)
 "bRK" = (
 /obj/machinery/vending/coffee{
 	dir = 8
@@ -2009,19 +2012,18 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "cWC" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/structure/disposalpipe/broken{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
@@ -2225,6 +2227,12 @@
 "dmE" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"dmT" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "dnj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4683,11 +4691,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
 "gVq" = (
@@ -6308,11 +6311,6 @@
 /area/site53/lhcz/hallway)
 "jlH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
@@ -8553,6 +8551,13 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/llczmaint)
+"mPW" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "mQk" = (
 /obj/structure/railing/mapped,
 /obj/machinery/button/blast_door{
@@ -9038,11 +9043,6 @@
 "nwj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "nxd" = (
@@ -11497,11 +11497,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
 "rfs" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
@@ -11837,11 +11832,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/llcz/hallways)
@@ -12404,9 +12394,7 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
 	},
-/obj/machinery/camera/network/lcz{
-	c_tag = "CDCZ Stairs Upper"
-	},
+/obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
 "svF" = (
@@ -15797,6 +15785,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"xWi" = (
+/obj/structure/disposalpipe/segment,
+/turf/unsimulated/mineral,
+/area/space)
 "xWY" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/orange/diagonal,
@@ -30150,14 +30142,14 @@ hIH
 hIH
 hIH
 gUJ
-bRu
+jlH
 rKx
-bRu
+jlH
 jlH
 gVa
-bRu
-bRu
-bRu
+jlH
+jlH
+jlH
 nwj
 rfs
 lDn
@@ -30401,12 +30393,12 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-gUJ
-gUJ
+bRu
+xWi
+xWi
+xWi
+amk
+amk
 bOp
 xZI
 xZI
@@ -30658,7 +30650,7 @@ hIH
 hIH
 hIH
 hIH
-hIH
+dmT
 hIH
 hIH
 hIH
@@ -30915,7 +30907,7 @@ hIH
 hIH
 hIH
 hIH
-hIH
+dmT
 hIH
 hIH
 hIH
@@ -31172,7 +31164,7 @@ hIH
 hIH
 hIH
 hIH
-hIH
+dmT
 hIH
 hIH
 hIH
@@ -31429,7 +31421,7 @@ lam
 lam
 lam
 hIH
-hIH
+dmT
 hIH
 hIH
 hIH
@@ -31686,7 +31678,7 @@ xRT
 xRT
 lam
 lam
-hIH
+dmT
 hIH
 hIH
 hIH
@@ -31943,7 +31935,7 @@ xRT
 xRT
 rpB
 bqv
-hIH
+mPW
 hIH
 hIH
 hIH
