@@ -169,7 +169,7 @@
 				owner.Paralyse(3)
 
 			// If we've got the proper chems, we can heal no matter what
-			var/healing = owner.chem_effects[CE_BRAIN_REGEN] ? 2 : 0
+			var/healing = owner.chem_effects[CE_BRAIN_REGEN] ? 1.6 : 0
 			healing += (!past_damage_threshold(3) && owner.chem_effects[CE_STABLE]) ? 0.5 : 0
 			var/incoming_damage
 			// Effects of bloodloss
