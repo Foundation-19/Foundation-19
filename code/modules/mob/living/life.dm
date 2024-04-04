@@ -256,7 +256,7 @@
 	if(!.) // If we're under or inside shelter, use the z-level rain (for ambience)
 		. = SSweather.weather_by_z["[my_turf.z]"]
 
-/mob/living/proc/handle_environment(var/datum/gas_mixture/environment)
+/mob/living/proc/handle_environment(datum/gas_mixture/environment)
 
 	SHOULD_CALL_PARENT(TRUE)
 
