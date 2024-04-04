@@ -24,7 +24,6 @@
 
 	action_intent = new /obj/screen/intent/scp939()
 	adding += action_intent
-	var/list/hud_elements = list()
 	mymob.healths = new /obj/screen()
 	mymob.healths.icon = 'icons/mob/939hud.dmi'
 	mymob.healths.icon_state = "health0"
@@ -33,6 +32,7 @@
 
 	mymob.client.screen = list(mymob.healths)
 	mymob.client.screen += src.adding + src.other
+	var/list/hud_elements = list()
 	var/mob/living/H = mymob
 	H.fov = new /obj/screen/fov/scp939()
 	hud_elements |= H.fov
@@ -64,6 +64,20 @@
 	B.pixel_x = rand(-8, 8)
 	B.pixel_y = rand(-8, 8)
 
+/datum/ai_holder/simple_animal/melee/scp939
+	mauling = TRUE
+
+/datum/ai_holder/simple_animal/melee/scp939/can_attack(atom/movable/the_target, vision_required = TRUE)
+	if(!..())
+		return FALSE
+	var/mob/living/simple_animal/hostile/scp939/O = holder
+	if(ishuman(the_target) && (O.nutrition > O.hunting_threshold))
+		var/mob/living/carbon/human/H = the_target
+		if(H.stat != DEAD)
+			if((world.time - H.l_move_time) >= 10 SECONDS) //If the mob hasn't been moved/moved in the last 10 seconds
+				return TRUE //Valid target
+	return FALSE
+
 /mob/living/simple_animal/hostile/scp939
 	name = "large red dog"
 	desc = "A huge, hulking dog-looking creature. It lacks eyes and seems to respond to sound..."
@@ -74,9 +88,14 @@
 	icon_rest = "standing"
 	icon_living = "crawling" //backup incase admins fuck something up
 	alpha = 255
+	default_pixel_x = -8
+	default_pixel_y = -8
 
 	maxHealth = 900
 	health = 900
+	var/nutrition = 500 //How it handles hunger
+	var/nutrition_max = 650 //Maximum nutrition storage
+	var/hunting_threshold = 300 //When 939 gets hungry enough that its AI will actively attack players
 
 	hud_type = /datum/hud/scp939
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
@@ -97,7 +116,7 @@
 		bullet = ARMOR_BALLISTIC_PISTOL
 		)
 
-	ai_holder_type = /datum/ai_holder/simple_animal/melee/s2427_3 //Uses 2427-3 AI by default
+	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp939 //janky but acceptable 939 AI
 	melee_attack_delay = 0
 
 /mob/living/simple_animal/hostile/scp939/Initialize()

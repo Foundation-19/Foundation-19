@@ -505,7 +505,7 @@
 /obj/screen/facedir/Click(location, control, params)
 	usr?.face_direction()
 
-/mob/living/carbon/human/InitializePlanes()
+/mob/living/InitializePlanes() //Moved to mob/living to account for mobs.
 	..()
 	var/obj/screen/plane_master/vision_cone_target/VC = new
 	var/obj/screen/plane_master/vision_cone/primary/mob = new

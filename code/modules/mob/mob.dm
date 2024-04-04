@@ -776,8 +776,8 @@
 		regenerate_icons()
 	else if( lying != lying_prev )
 		update_icons()
-		if (ishuman(src))
-			var/mob/living/carbon/human/H = src
+		if(isliving(src)) //Dead mobs shouldn't process FOV at all
+			var/mob/living/H = src
 			H.update_vision_cone()
 
 // Simply handles density
