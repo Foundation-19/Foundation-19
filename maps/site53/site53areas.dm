@@ -645,12 +645,12 @@
 	icon_state = "hallC1"
 
 /area/site53/llcz/dclass/checkpoint
-	name = "\improper LCZ Entrance Checkpoint"
+	name = "\improper CDCZ Entrance Checkpoint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint"
 
 /area/site53/llcz/dclass/checkpointoverlook
-	name = "\improper LCZ Entrance Checkpoint Office"
+	name = "\improper CDCZ Entrance Checkpoint Office"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint"
 

@@ -41,7 +41,18 @@
 	armor = list(
 		bio = ARMOR_BIO_MINOR
 		)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/rank/scientist_new/senior
+	desc = "A snazzy purple science-themed turtleneck usually worn by senior scientists like the highly famous Dr. Blight, and or Dr. Buck."
+	name = "senior scientist's turtleneck"
+	icon_state = "seniorscience"
+	item_state = "w_suit"
+	worn_state = "seniorscience"
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/rank/chemist
 	desc = "It's made of a special fiber that gives special protection against biohazards. The striping on the suit denotes the wearer as a trained pharmacist."

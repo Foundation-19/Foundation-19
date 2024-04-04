@@ -10,7 +10,9 @@
 	color = COLOR_WHITE
 
 /obj/item/clothing/gloves/color/black
-	color = COLOR_BLACK
+	desc = "A pair of black gloves, they're quite fireproof, and thick."
+	item_state = "bgloves"
+	icon_state = "black"
 
 /obj/item/clothing/gloves/color/white/modified
 	item_flags = ITEM_FLAG_PREMODIFIED

@@ -7,6 +7,12 @@
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/prepainted,
 /area/site53/reswing/lowres/xenobotany)
+"acC" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "adk" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-500 Cable Maintenance"
@@ -298,21 +304,9 @@
 /area/site53/lhcz/hallway)
 "avm" = (
 /obj/structure/table/reinforced,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dmining,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "avq" = (
@@ -408,6 +402,12 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"aHd" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "aHl" = (
 /obj/machinery/atmospherics/unary/heater{
 	dir = 1
@@ -427,6 +427,13 @@
 "aIv" = (
 /turf/simulated/floor/tiled,
 /area/site53/engineering/maintenance/llczmaint)
+"aJy" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "aJB" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
@@ -483,7 +490,8 @@
 "aME" = (
 /obj/effect/floor_decal/corner/orange/diagonal,
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Watchtower Lower"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/primaryhallway)
@@ -544,8 +552,13 @@
 /area/site53/reswing/lowres/Lowerresearchwing)
 "aRP" = (
 /obj/structure/closet/crate,
-/obj/effect/spider/stickyweb,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "aRY" = (
 /obj/structure/flora/ausbushes/fernybush,
@@ -658,6 +671,12 @@
 	icon_state = "0-8"
 	},
 /obj/structure/closet,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "bbw" = (
@@ -672,6 +691,21 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
+"bbx" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/primaryhallway)
 "bbF" = (
 /obj/effect/paint_stripe/orange,
 /obj/structure/disposalpipe/segment{
@@ -719,7 +753,8 @@
 	},
 /obj/structure/flora/pottedplant/minitree,
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Assignments Post South"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
@@ -805,8 +840,7 @@
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
 "blY" = (
-/obj/structure/table/marble,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "bmo" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -937,16 +971,19 @@
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "bsw" = (
-/obj/machinery/door/airlock/multi_tile/glass/civilian{
-	name = "Mining";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MINING"))
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
 /obj/machinery/contraband_detector,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#917448"
+	},
+/obj/machinery/door/airlock/multi_tile/glass/mining{
+	name = "CDCZ Mining Operations";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MINING"))
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
 "btv" = (
@@ -1069,6 +1106,10 @@
 /obj/machinery/microscope,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"bCc" = (
+/obj/structure/closet/crate/large,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/explored)
 "bCD" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -1095,6 +1136,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
+"bDB" = (
+/obj/effect/floor_decal/corner/brown/bordercorner,
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "bDI" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
@@ -1107,6 +1155,7 @@
 /area/site53/uhcz/scp8containment)
 "bFq" = (
 /obj/machinery/vending/cola,
+/obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "bGt" = (
@@ -1351,10 +1400,11 @@
 /turf/simulated/floor,
 /area/site53/engineering/selfdestruct)
 "bUX" = (
-/obj/machinery/washing_machine,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/spline/fancy/black,
+/obj/machinery/vending/games,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "bVx" = (
@@ -1526,7 +1576,8 @@
 	dir = 10
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ West Cellblock Cryogenics"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cryo)
@@ -1709,10 +1760,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"cyf" = (
-/obj/machinery/status_display,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/mining/miningops)
 "cyW" = (
 /obj/effect/catwalk_plated,
 /obj/structure/closet/crate/bin,
@@ -1767,7 +1814,9 @@
 /area/site53/science/seniorresearcherc)
 "cAI" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Bathroom"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/primaryhallway)
 "cBd" = (
@@ -1833,6 +1882,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
+"cId" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ West Cellblock South"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "cIi" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/white/monotile,
@@ -1854,6 +1913,10 @@
 "cIr" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/flora/pottedplant/minitree,
+/obj/machinery/camera/network/lcz{
+	dir = 1;
+	c_tag = "CDCZ Watchtower Lower External North"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "cIx" = (
@@ -1988,9 +2051,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/orange/bordercorner,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -2005,12 +2067,21 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/ore_box,
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/structure/closet/crate/large,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#808080"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "cWx" = (
-/obj/item/remains,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "cWC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -2234,7 +2305,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "dnq" = (
 /obj/structure/sign/SecureArealv4mtf{
@@ -2356,6 +2427,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "dwg" = (
@@ -2378,9 +2452,9 @@
 /area/site53/uhcz/scp8containment)
 "dyp" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "dzc" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -2475,7 +2549,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/obj/machinery/microwave{
+	pixel_y = 8
+	},
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "dGu" = (
 /obj/structure/table/rack,
@@ -2617,6 +2694,17 @@
 /obj/effect/floor_decal/corner/orange/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/primaryhallway)
+"dXu" = (
+/obj/structure/closet/crate/large,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "dXx" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8
@@ -2976,6 +3064,14 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/hallways)
+"eqB" = (
+/obj/structure/ore_box,
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#808080"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "eqD" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	id_tag = "cell7door";
@@ -3009,16 +3105,18 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
 "etl" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Mining Operations Checkpoint Office External"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "etE" = (
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/floor_decal/corner/brown/border,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "evo" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -3207,6 +3305,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
+"eIu" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/mining/miningops)
 "eIw" = (
 /obj/structure/table/standard,
 /obj/item/folder/nt/rd,
@@ -3268,6 +3372,12 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
+"eRm" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "eUf" = (
 /obj/item/tape_roll,
 /turf/simulated/floor/exoplanet/desert,
@@ -3400,7 +3510,6 @@
 /turf/simulated/floor,
 /area/site53/engineering/selfdestruct)
 "ffN" = (
-/obj/machinery/washing_machine,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -3410,6 +3519,8 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/floor_decal/spline/fancy/black,
+/obj/machinery/vending/classdwater,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "ffU" = (
@@ -3417,7 +3528,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ East Cellblock South"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
@@ -3526,7 +3638,9 @@
 "fmD" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/floor_decal/corner/black/diagonal,
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Kitchen"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "fmP" = (
@@ -3749,6 +3863,19 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
+"fzg" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 8;
+	c_tag = "CDCZ Southeast Pillar Lower"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "fzk" = (
 /turf/simulated/floor/lino,
 /area/site53/engineering/server_room)
@@ -3820,16 +3947,22 @@
 "fGg" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
 /obj/structure/sign/warning/internals_required{
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#917448"
+	},
+/obj/machinery/door/airlock/multi_tile/glass/mining{
+	name = "CDCZ Mining Operations";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MINING"))
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
@@ -3861,6 +3994,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
+"fIV" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "fIX" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/effect/floor_decal/industrial/warning{
@@ -3922,6 +4061,12 @@
 /obj/effect/floor_decal/corner/research/full,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"fOL" = (
+/obj/effect/floor_decal/corner/brown/bordercee{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "fPN" = (
 /obj/structure/plasticflaps,
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -3990,11 +4135,15 @@
 /area/site53/reswing/lowres/Lowerresearchwing)
 "fVc" = (
 /obj/machinery/light,
-/turf/simulated/floor/wood,
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "fVv" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Gym"
 	},
 /obj/structure/bed/chair{
 	dir = 1
@@ -4115,7 +4264,8 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Assignments Post Line South"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -4179,8 +4329,8 @@
 /area/site53/lhcz/scp049containment)
 "ghd" = (
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/spider/stickyweb,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/closet/crate/large,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "ghe" = (
 /obj/item/taperoll/engineering,
@@ -4259,9 +4409,13 @@
 /area/site53/llcz/dclass/primaryhallway)
 "gkX" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Mining Operations"
 	},
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "gnD" = (
 /obj/structure/cable/green{
@@ -4290,7 +4444,6 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 8
 	},
-/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "gsq" = (
@@ -4344,6 +4497,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"guX" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "gvl" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -4392,7 +4551,8 @@
 	pixel_y = -24
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ East Cellblock Cryogenics"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cryo)
@@ -4550,7 +4710,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "gJj" = (
 /obj/effect/floor_decal/corner/green/border{
@@ -4565,7 +4728,10 @@
 /area/site53/llcz/dclass/primaryhallway)
 "gKz" = (
 /obj/machinery/light,
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "gMw" = (
 /obj/structure/railing/mapped{
@@ -5127,12 +5293,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "hBX" = (
+/obj/effect/floor_decal/corner/brown/mono,
 /obj/structure/closet/crate/large,
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/light{
-	dir = 1
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#808080"
 	},
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "hCG" = (
 /obj/structure/disposalpipe/segment{
@@ -5260,8 +5426,8 @@
 "hJf" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/disposalpipe/segment{
@@ -5923,10 +6089,10 @@
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/brown/border{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "iNJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -6391,9 +6557,21 @@
 /obj/item/clothing/head/hardhat/orange,
 /turf/simulated/floor,
 /area/site53/surface)
+"jrZ" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Restrooms Hall"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "jsg" = (
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/cocoon,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Mining Operations Ore Refinery #2";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "jsr" = (
@@ -6564,10 +6742,22 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
 "jFj" = (
-/obj/structure/disposalpipe/junction/mirrored{
-	dir = 1
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
 	},
-/turf/simulated/wall/titanium,
+/obj/machinery/door/airlock/multi_tile/glass/mining{
+	name = "CDCZ Mining Operations Ore Refinery";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MINING"));
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#917448"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
 "jFX" = (
 /obj/structure/sign/containers{
@@ -6588,8 +6778,10 @@
 "jIX" = (
 /obj/machinery/mineral/unloading_machine,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/spider/stickyweb,
-/turf/simulated/floor/tiled,
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "jJz" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
@@ -6665,6 +6857,9 @@
 "jQZ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "jRk" = (
@@ -6819,8 +7014,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
 "kdl" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/machinery/conveyor{
+	id = "mining_internal";
+	id_tag = "mining_internal"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor,
 /area/site53/llcz/mining/miningops)
 "kdQ" = (
 /obj/structure/virology/centrifuge,
@@ -7019,13 +7220,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/assignment)
 "kvw" = (
-/obj/structure/table/reinforced,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "kvC" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
@@ -7223,8 +7423,7 @@
 "kNW" = (
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/cobweb2,
-/obj/effect/spider/stickyweb,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "kQw" = (
 /obj/machinery/light{
@@ -7301,8 +7500,8 @@
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 8;
-	id_tag = "Mining Access Gate 1";
-	name = "Mining Access Gate 1"
+	id_tag = "CDCZMiningCheckWest";
+	name = "CDCZ Mining Operations Checkpoint West Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/dark/small,
@@ -7577,13 +7776,8 @@
 /area/site53/llcz/mine/unexplored)
 "lqF" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "Security Bubble";
+	name = "CDCZ Mining Operations Checkpoint Office";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "Mining Checkpoint Lockdown";
-	name = "Mining Checkpoint Lockdown"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7865,6 +8059,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"lIu" = (
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Mining Operations Ore Refinery"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mining/miningops)
 "lIO" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -7904,6 +8104,12 @@
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
+"lLO" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/llcz/dclass/canteen)
 "lMe" = (
 /obj/effect/floor_decal/corner/orange/diagonal,
 /obj/structure/flora/pottedplant/minitree,
@@ -8140,21 +8346,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mine/unexplored)
 "miU" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 8
-	},
-/obj/structure/disposalpipe/trunk{
+/obj/structure/closet/crate/large,
+/obj/effect/floor_decal/corner/brown/border{
 	dir = 4
 	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 4
 	},
-/obj/machinery/door/window/brigdoor/westleft{
-	name = "Ore Delivery Chute";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "mjY" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -8417,7 +8616,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Assignments Post Line"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/assignment)
@@ -8562,9 +8762,20 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "mNT" = (
-/obj/machinery/vending/classdwater,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/canteen)
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Shutters";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/mining/miningops)
 "mNV" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/orange/border,
@@ -9069,6 +9280,10 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/hallways)
+"nxh" = (
+/obj/structure/closet/crate/large,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "nxi" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/machinery/light,
@@ -9312,7 +9527,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "nQV" = (
 /obj/effect/paint_stripe/gunmetal,
@@ -9553,8 +9768,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/xenobotany)
 "okm" = (
-/obj/structure/ore_box,
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "olE" = (
 /obj/structure/filingcabinet/wallcabinet{
@@ -9657,24 +9871,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
 "otc" = (
-/obj/structure/table/reinforced,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/item/pen,
-/obj/item/paper_bin,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "Mining Checkpoint Window";
-	name = "Mining Checkpoint Window"
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
-	},
+/obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/mining/miningops)
+/area/site53/llcz/dclass/primaryhallway)
 "ouk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -9832,6 +10031,16 @@
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/reswing/lowres/xenobotany)
+"oDV" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ East Cellblock North"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "oEy" = (
 /obj/structure/closet/l3closet/virology,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -9929,18 +10138,15 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/xenoarchaeology)
 "oKp" = (
-/obj/structure/table/reinforced,
-/turf/simulated/floor/wood,
-/area/site53/llcz/dclass/canteen)
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "oLh" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "Security Bubble";
+	name = "CDCZ Mining Operations Checkpoint Office";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "Mining Checkpoint Lockdown";
-	name = "Mining Checkpoint Lockdown"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
@@ -10006,6 +10212,19 @@
 	dir = 4
 	},
 /obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
+"oOE" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Northwest Pillar Lower"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "oPd" = (
@@ -10131,21 +10350,18 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Assignments Post Line North"
 	},
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "pgs" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "Mining Checkpoint Window";
-	name = "Mining Checkpoint Window"
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
@@ -10156,6 +10372,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/scp1102room)
+"phE" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "phI" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -10256,7 +10481,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Southwest Pillar Lower"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -10379,6 +10605,15 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp049containment)
+"pAI" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Watchtower Lower External South"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "pBl" = (
 /obj/machinery/light{
 	dir = 1
@@ -10509,58 +10744,58 @@
 /area/site53/llcz/hallways)
 "pKY" = (
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ Mining Operations Hallway"
 	},
-/obj/effect/floor_decal/corner/orange/border,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/brown/border,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "pKZ" = (
-/obj/structure/table/standard,
 /obj/machinery/door/blast/shutters/open{
-	id_tag = "Mining Checkpoint Window";
-	name = "Mining Checkpoint Window"
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Shutters"
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
 /obj/machinery/door/window/brigdoor{
-	name = "Secure booth";
+	name = "CDCZ Mining Operations Checkpoint Desk";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/window/brigdoor{
 	dir = 1;
-	name = "Secure booth";
+	name = "CDCZ Mining Operations Checkpoint Desk";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
 "pLY" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
 /obj/machinery/contraband_detector,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#917448"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
 "pMa" = (
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "Mining Checkpoint Window";
-	name = "Mining Checkpoint Window"
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Shutters"
+	},
+/turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
 "pMs" = (
 /obj/structure/table/standard,
@@ -10598,6 +10833,9 @@
 /area/site53/llcz/dclass/cells)
 "pQe" = (
 /obj/structure/filingcabinet,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "pQA" = (
@@ -10698,7 +10936,6 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
 	},
-/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "pYp" = (
@@ -10772,6 +11009,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "qiz" = (
@@ -10980,13 +11218,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/hallways)
 "qAl" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -11075,17 +11313,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "Mining Checkpoint Lockdown";
-	name = "Mining Checkpoint Lockdown";
-	pixel_y = 32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/orange/bordercorner{
+/obj/effect/floor_decal/corner/orange/border{
 	dir = 1
-	},
-/obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -11306,10 +11535,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 9
 	},
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "qOB" = (
 /obj/effect/floor_decal/corner/black/diagonal,
@@ -11398,19 +11627,17 @@
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "qXI" = (
-/obj/machinery/camera/network/lcz{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "Mining Checkpoint Lockdown";
-	name = "Mining Checkpoint Lockdown";
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Mining Operations Checkpoint Office"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -11441,16 +11668,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown";
-	pixel_y = 32;
-	req_access = list("ACCESS_SCIENCE_LEVEL1")
-	},
-/obj/effect/floor_decal/corner/orange/border{
+/obj/effect/floor_decal/corner/brown/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "raC" = (
 /obj/structure/table/reinforced,
@@ -11724,7 +11945,8 @@
 "rxF" = (
 /obj/machinery/light,
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ Mining Operations Checkpoint"
 	},
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/white/monotile,
@@ -12103,11 +12325,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "sav" = (
-/obj/structure/closet/secure_closet/site53/dmining,
-/obj/item/device/flashlight/lantern,
-/obj/item/clothing/mask/gas/half,
-/obj/item/tank/emergency/oxygen/engi,
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "sax" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -12420,9 +12644,16 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
 	},
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Greenhouse"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
+"svy" = (
+/obj/machinery/light,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/wood/walnut,
+/area/site53/llcz/dclass/canteen)
 "svF" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -12476,6 +12707,7 @@
 /area/site53/llcz/hallways)
 "sCu" = (
 /obj/structure/bed/chair/office/light,
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "sEg" = (
@@ -12504,6 +12736,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
+"sGy" = (
+/obj/effect/floor_decal/corner/brown/bordercorner,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "sHM" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/holofloor/beach/water,
@@ -12577,9 +12813,10 @@
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
 "sPd" = (
-/obj/item/modular_computer/console/preset/security{
-	dir = 8;
-	icon_state = "console"
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -12607,7 +12844,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Northeast Pillar Lower"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -12623,17 +12861,21 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "sVS" = (
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "sVZ" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "sWD" = (
-/obj/structure/table/marble,
-/obj/machinery/microwave,
-/turf/simulated/floor/wood,
-/area/site53/llcz/dclass/canteen)
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "sWU" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -12673,9 +12915,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "sZP" = (
-/obj/structure/bed/chair,
-/turf/simulated/floor/wood,
-/area/site53/llcz/dclass/canteen)
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "tah" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/closet/secure_closet/freezer{
@@ -12693,6 +12937,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
+"taj" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "taF" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5;
@@ -12789,7 +13039,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Briefing Hall External"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -13162,9 +13413,13 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
 "tTZ" = (
+/obj/structure/closet/secure_closet/site53/dmining,
+/obj/item/device/flashlight/lantern,
+/obj/item/clothing/mask/gas/half,
+/obj/item/tank/emergency/oxygen/engi,
+/obj/effect/floor_decal/corner/brown/mono,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "tUa" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
@@ -13391,21 +13646,24 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "ulB" = (
-/obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 3;
-	id_tag = "Mining Checkpoint Window";
-	name = "Mining Checkpoint Window";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
 	dir = 3;
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = -2
 	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "umi" = (
@@ -13454,12 +13712,15 @@
 /area/site53/llcz/hallways)
 "unJ" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Canteen"
 	},
-/turf/simulated/floor/wood,
+/obj/structure/table/marble,
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "unP" = (
-/obj/structure/flora/pottedplant,
+/obj/effect/floor_decal/spline/fancy/black,
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "unR" = (
@@ -13495,9 +13756,9 @@
 /area/site53/lhcz/scp895)
 "uol" = (
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ Mining Operations External"
 	},
-/obj/structure/ore_box,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/explored)
 "upa" = (
@@ -13516,16 +13777,18 @@
 "ure" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "Mining Lockdown";
-	name = "Mining Lockdown"
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
 	},
 /obj/structure/sign/warning/internals_required{
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#917448"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
@@ -13676,7 +13939,8 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
 "uGM" = (
-/turf/simulated/floor/wood,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "uHo" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -13796,9 +14060,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "uZz" = (
-/obj/effect/floor_decal/industrial/outline/grey,
+/obj/effect/floor_decal/corner/brown/mono,
 /obj/structure/ore_box,
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#808080"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "vai" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -13960,14 +14227,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "vmC" = (
-/obj/structure/bed/chair,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
-/area/site53/llcz/dclass/canteen)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "vmG" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/wood,
@@ -14064,7 +14325,14 @@
 /area/site53/engineering/server_room)
 "vtG" = (
 /obj/structure/disposalpipe/segment,
-/turf/simulated/wall/titanium,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
 "vuK" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -14098,10 +14366,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "vvA" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "vwm" = (
 /obj/effect/floor_decal/corner/green/border{
@@ -14109,6 +14377,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
+"vws" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "vxq" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -14131,9 +14405,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
 "vya" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -14142,6 +14413,9 @@
 /obj/structure/table/reinforced,
 /obj/item/boombox,
 /obj/item/device/megaphone,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "vys" = (
@@ -14390,6 +14664,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
+"vPt" = (
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "vPA" = (
 /obj/structure/hygiene/shower{
 	pixel_y = 17
@@ -14451,6 +14731,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cryo)
+"vTh" = (
+/obj/effect/floor_decal/corner/brown/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "vUi" = (
 /obj/machinery/button/crematorium{
 	id_tag = "scp8crem";
@@ -14460,8 +14744,9 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
 "vUj" = (
-/mob/living/simple_animal/hostile/giant_spider,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/paint_stripe/orange,
+/obj/machinery/status_display,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/mining/miningops)
 "vVm" = (
 /obj/structure/hygiene/sink{
@@ -14517,6 +14802,10 @@
 "vYN" = (
 /turf/simulated/floor,
 /area/site53/surface)
+"vZo" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/wood/walnut,
+/area/site53/llcz/dclass/canteen)
 "vZQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/camera/network/lcz{
@@ -14610,7 +14899,8 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Briefing Hall North"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
@@ -14646,7 +14936,8 @@
 /area/site53/uhcz/scp8containment)
 "wkz" = (
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Briefing Hall South"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
@@ -14664,6 +14955,7 @@
 /area/site53/llcz/dclass/primaryhallway)
 "woj" = (
 /obj/machinery/vending/snack,
+/obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "wok" = (
@@ -14819,21 +15111,22 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/llczmaint)
 "wAC" = (
-/obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	dir = 3;
-	id_tag = "Mining Access Gate 1";
-	name = "Mining Access Gate 1";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	id_tag = "CDCZMiningCheckWest";
+	name = "CDCZ Mining Operations Checkpoint West Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
 	dir = 3;
-	id_tag = "Mining Access Gate 2";
-	name = "Mining Access Gate 2";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	id_tag = "CDCZMiningCheckEast";
+	name = "CDCZ Mining Operations Checkpoint East Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = -2
 	},
+/obj/effect/floor_decal/corner/red/border,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "wBE" = (
@@ -14964,7 +15257,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "wNp" = (
-/obj/effect/spider/stickyweb,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "wNz" = (
@@ -15062,6 +15357,11 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
+"wTG" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/brown/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "wVT" = (
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 8
@@ -15173,9 +15473,10 @@
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "xaC" = (
-/obj/structure/closet/crate/large,
-/obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "xbq" = (
 /obj/structure/closet/l3closet/scientist,
@@ -15290,8 +15591,9 @@
 	name = "mining conveyor"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/cocoon,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "xiw" = (
@@ -15467,9 +15769,14 @@
 /area/site53/uhcz/scp8containment)
 "xyc" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/civilian{
-	name = "Decommissioned CDCZ Ore Processing";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#917448"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
@@ -15549,8 +15856,8 @@
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 8;
-	id_tag = "Mining Access Gate 2";
-	name = "Mining Access Gate 2"
+	id_tag = "CDCZMiningCheckEast";
+	name = "CDCZ Mining Operations Checkpoint East Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/dark/small,
@@ -15647,6 +15954,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
+"xLR" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "xLZ" = (
 /obj/structure/table/standard,
 /obj/item/storage/slide_projector,
@@ -15778,7 +16091,8 @@
 	},
 /obj/structure/filingcabinet,
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Assignments Post North"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
@@ -15917,6 +16231,26 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"yiF" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ West Cellblock North"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
+"yko" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/primaryhallway)
 "ylN" = (
 /obj/machinery/nuke_cylinder_dispenser,
 /obj/effect/paint_stripe/gunmetal,
@@ -19223,17 +19557,17 @@ xgb
 xgb
 xgb
 deE
-xgb
-xgb
-xgb
-ffU
-deE
-xgb
+yiF
 xgb
 xgb
 xgb
 deE
-ffU
+xgb
+xgb
+xgb
+xgb
+deE
+cId
 xgb
 xgb
 elS
@@ -20480,7 +20814,7 @@ xUA
 xUA
 lPp
 vpo
-ppM
+oOE
 sNM
 mwo
 mwo
@@ -21777,7 +22111,7 @@ vHJ
 vHJ
 vHJ
 nGe
-qNY
+pAI
 mwo
 mwo
 mwo
@@ -22307,10 +22641,10 @@ xgb
 xgb
 shN
 deE
+oDV
 xgb
 xgb
 xgb
-ffU
 deE
 xgb
 xgb
@@ -22517,11 +22851,11 @@ mwF
 mnX
 fCv
 unP
-uGM
-uGM
+blY
+blY
 dnj
-uGM
-uGM
+dyp
+dyp
 iRD
 plW
 fpr
@@ -22774,11 +23108,11 @@ mwF
 rTf
 fCv
 bUX
-uGM
-uGM
+blY
+blY
 dnj
 uGM
-fVc
+svy
 iRD
 wMY
 mHG
@@ -23032,10 +23366,10 @@ spZ
 fCv
 ffN
 nQH
-vmC
+nQH
 kvw
-dyp
-uGM
+lLO
+lLO
 iRD
 fmD
 mHG
@@ -23288,11 +23622,11 @@ mwF
 rTf
 fCv
 bFq
-uGM
-sZP
-oKp
+blY
+blY
+blY
 dyp
-uGM
+dyp
 iRD
 lZf
 mHG
@@ -23545,9 +23879,9 @@ mwF
 mnX
 fCv
 woj
-uGM
-uGM
-uGM
+blY
+blY
+blY
 uGM
 uGM
 iRD
@@ -23578,7 +23912,7 @@ mwo
 mwo
 mwo
 snP
-sRV
+fzg
 doT
 xMT
 orG
@@ -23802,10 +24136,10 @@ fCv
 fCv
 fCv
 qhn
-uGM
 blY
-sWD
 blY
+blY
+lLO
 fVc
 iRD
 vPj
@@ -24058,12 +24392,12 @@ hIH
 hIH
 hIH
 ena
-mNT
-uGM
+unP
+vZo
 dFL
 unJ
-uGM
-uGM
+blY
+blY
 iRD
 tdk
 bnl
@@ -24359,7 +24693,7 @@ mwo
 eBB
 fnT
 jTY
-vpZ
+jrZ
 oyV
 fnT
 jRk
@@ -26148,9 +26482,9 @@ nGe
 nGe
 nGe
 nGe
-nAJ
-aWG
-hsH
+yko
+bbx
+yko
 nGe
 nGe
 nGe
@@ -26912,7 +27246,7 @@ rum
 hIH
 hIH
 aqR
-ijv
+eIu
 ijv
 oLh
 dvC
@@ -27426,9 +27760,9 @@ rum
 hIH
 hIH
 aqR
-sVS
-sVS
-pgs
+acC
+sZP
+pMa
 pQe
 ijv
 sCu
@@ -27684,12 +28018,12 @@ hIH
 hIH
 aqR
 sVS
-sVS
-pgs
+vTh
+pMa
 jQZ
 sPd
 ulB
-otc
+pMa
 eFN
 hdm
 pbH
@@ -27941,11 +28275,11 @@ hIH
 hIH
 aqR
 sVS
-sVS
-pgs
-pgs
-pgs
-pgs
+vTh
+aqR
+mNT
+mNT
+mNT
 aqR
 xCd
 xCd
@@ -28197,16 +28531,16 @@ rdu
 bSa
 uxD
 aqR
-sVS
-sVS
-sVS
-sVS
-sVS
-sVS
+phE
+vPt
+vws
+vws
+vws
+sZP
 bsw
-dCN
-nsQ
-jUZ
+eRm
+aHd
+oKp
 nGe
 lam
 emk
@@ -28455,15 +28789,15 @@ vys
 hJf
 uZz
 sVS
-sVS
-sVS
-sVS
-sVS
-sVS
+okm
+okm
+okm
+okm
+vTh
 pLY
-nAJ
-nzF
-hsH
+guX
+vmC
+otc
 nGe
 lam
 emk
@@ -28710,17 +29044,17 @@ nGe
 nGe
 vys
 hJf
-uZz
+eqB
 sVS
-sVS
-sav
-sav
-sav
+sGy
+xaC
+xaC
+xaC
 gKz
 aqR
 rag
-nzF
-mNV
+vmC
+wTG
 nGe
 lam
 xRT
@@ -28969,15 +29303,15 @@ oBC
 hJf
 hBX
 sVS
-sVS
-sav
+vTh
 tTZ
 tTZ
-sav
+tTZ
+tTZ
 pgs
-nAJ
-nzF
-hsH
+guX
+vmC
+otc
 nGe
 lam
 xRT
@@ -29224,16 +29558,16 @@ vys
 vys
 vys
 hJf
-xaC
+hBX
 sVS
-sVS
+bDB
 sav
-tTZ
-tTZ
-tTZ
+sav
+sav
+fOL
 pgs
-nAJ
-nzF
+guX
+vmC
 pKY
 nGe
 lam
@@ -29477,21 +29811,21 @@ xRT
 vys
 vys
 vys
-tPX
+vys
 vys
 vys
 hJf
-xaC
+hBX
 sVS
-sVS
-sav
+vTh
+tTZ
 tTZ
 tTZ
 tTZ
 pgs
-nAJ
-nzF
-hsH
+guX
+vmC
+otc
 nGe
 lam
 xRT
@@ -29734,21 +30068,21 @@ xRT
 vys
 vys
 vys
-vys
+tPX
 vys
 vys
 hJf
-xaC
+hBX
 sVS
-sVS
+bDB
 sav
-tTZ
-tTZ
-tTZ
+sav
+sav
+fOL
 pgs
-nAJ
-nzF
-hsH
+guX
+vmC
+otc
 nGe
 lam
 xRT
@@ -29995,17 +30329,17 @@ vys
 vys
 vys
 hJf
-xaC
+hBX
 sVS
-sVS
-sav
+vTh
 tTZ
 tTZ
-sav
+tTZ
+tTZ
 pgs
-nAJ
-nzF
-hsH
+guX
+vmC
+otc
 nGe
 lam
 emk
@@ -30252,17 +30586,17 @@ vys
 vys
 vys
 hJf
-sav
+uZz
 sVS
-sVS
-sav
-sav
-sav
-gKz
+vPt
+vws
+vws
+vws
+aJy
 aqR
 rag
-nzF
-mNV
+vmC
+wTG
 nGe
 lam
 emk
@@ -30509,17 +30843,17 @@ vys
 vys
 uol
 hJf
-sav
+uZz
 sVS
-sVS
-sVS
-sVS
-sVS
-sVS
+okm
+okm
+okm
+okm
+vTh
 bsw
-nAJ
-nzF
-hsH
+guX
+vmC
+otc
 nGe
 lam
 xRT
@@ -30767,16 +31101,16 @@ vys
 aqR
 bbF
 qOq
-sVS
-sVS
-sVS
-sVS
-sVS
-sVS
+sWD
+okm
+okm
+okm
+okm
+vTh
 pLY
 iNo
-hdm
-pbH
+taj
+xLR
 nGe
 lam
 xRT
@@ -31018,18 +31352,18 @@ xRT
 xRT
 xRT
 vys
-vys
+bCc
 vys
 vys
 etE
 fGg
-vvA
 sVS
-sVS
-sVS
-sVS
-sVS
-sVS
+okm
+okm
+okm
+sGy
+xaC
+fIV
 vaS
 aqR
 aqR
@@ -31283,13 +31617,13 @@ ure
 vvA
 gkX
 gIX
-sVS
-miU
-okm
+xaC
+fIV
+hBX
 cVt
 vaS
 ghd
-wNp
+nxh
 aqR
 lam
 lam
@@ -31545,8 +31879,8 @@ jFj
 vtG
 vtG
 dvo
-wNp
-xue
+miU
+dXu
 aqR
 lam
 xRT
@@ -31797,10 +32131,10 @@ lam
 lam
 lam
 aqR
-kdl
-wNp
-wNp
-jsg
+xue
+xue
+xue
+xue
 ghG
 xue
 xue
@@ -32056,11 +32390,11 @@ lam
 aqR
 xue
 xue
-wNp
 xue
 xue
 xue
-cWx
+xue
+xue
 aqR
 lam
 xRT
@@ -32311,14 +32645,14 @@ emk
 xRT
 lam
 aqR
+lIu
 xue
-cWx
 xue
 xue
 xue
 xue
 jsg
-aqR
+vUj
 lam
 xRT
 xRT
@@ -32572,7 +32906,7 @@ pXs
 xhs
 xue
 xue
-vUj
+xue
 wNp
 gpk
 aqR
@@ -32829,8 +33163,8 @@ jIX
 gbE
 aRP
 cWx
-xue
-cyf
+cWx
+wHc
 jez
 aqR
 lam
@@ -33085,8 +33419,8 @@ aqR
 idA
 wJw
 kNW
-wNp
-jsg
+okm
+okm
 gbE
 obO
 aqR
@@ -33597,11 +33931,11 @@ xRT
 lam
 aqR
 qDa
-pYp
+kdl
 oAz
 cuy
 pYp
-pYp
+kdl
 oAz
 aqR
 lam

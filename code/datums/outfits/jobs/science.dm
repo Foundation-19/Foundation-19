@@ -1,7 +1,7 @@
 /decl/hierarchy/outfit/job/command/researchdirector
 	name = OUTFIT_JOB_NAME("Research Director")
 	uniform = /obj/item/clothing/under/rank/research_director/alt
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd/cso
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl5
 	gloves = /obj/item/clothing/gloves/latex/nitrile
@@ -67,7 +67,7 @@
 
 /decl/hierarchy/outfit/job/science/seniorscientist
 	name = OUTFIT_JOB_NAME("Senior Scientist")
-	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/rank/scientist_new/senior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl4

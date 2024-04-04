@@ -1746,7 +1746,9 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 4
 	},
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Medical Clinic External"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "afH" = (
@@ -12003,10 +12005,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
 "aHA" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/table/reinforced,
 /obj/item/defibrillator/loaded,
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "aHC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -21117,7 +21119,9 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Control Room"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
 "bLc" = (
@@ -21523,7 +21527,8 @@
 "bWO" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner,
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ Technical Closet External"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -21664,13 +21669,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
 "cbv" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "cbx" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -22365,6 +22372,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/corner/paleblue/bordercee,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "cAm" = (
@@ -22689,7 +22697,8 @@
 /area/site53/llcz/dclass/medicalpost/surgery)
 "cKg" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Medical Clinic Surgery"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
@@ -22709,6 +22718,7 @@
 /obj/structure/table/standard,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/structure/table/standard,
+/obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "cLu" = (
@@ -23720,6 +23730,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"duV" = (
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "dvi" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Restroom"
@@ -24346,6 +24360,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
+"dPn" = (
+/obj/machinery/camera/network/lcz{
+	dir = 8;
+	c_tag = "CDCZ Medical Clinic Morgue External"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "dPA" = (
 /obj/effect/floor_decal/corner/b_green/border{
 	dir = 4
@@ -24484,6 +24505,9 @@
 	max_stored_matter = 9000;
 	stored_matter = 9000
 	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "dTW" = (
@@ -24502,6 +24526,9 @@
 	pixel_y = 19
 	},
 /obj/item/stack/material/steel/fifty,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "dUa" = (
@@ -24864,11 +24891,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "ehz" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "ehP" = (
 /obj/structure/table/standard,
@@ -25057,6 +25086,16 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
+"ept" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Southwest Pillar Upper"
+	},
+/turf/simulated/open,
+/area/site53/llcz/dclass/primaryhallway)
 "epD" = (
 /obj/machinery/light{
 	dir = 8
@@ -25772,6 +25811,9 @@
 /obj/effect/floor_decal/corner/paleblue/bordercee{
 	dir = 1
 	},
+/obj/effect/landmark/start{
+	name = "Surgeon"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "eNo" = (
@@ -26256,6 +26298,7 @@
 	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/light,
+/obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "ffp" = (
@@ -26606,6 +26649,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106containment)
+"frT" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "fsz" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/wood/mahogany,
@@ -26869,7 +26918,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/black/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "fBg" = (
 /obj/structure/bed/chair/office/comfy/red{
@@ -27394,9 +27444,8 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#6a97b0"
-	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "fTE" = (
@@ -27581,6 +27630,12 @@
 "fZC" = (
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
+"fZY" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "gak" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -28145,6 +28200,14 @@
 "gvW" = (
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"gwZ" = (
+/obj/structure/morgue{
+	dir = 1
+	},
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/black/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "gxR" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 4
@@ -28993,6 +29056,10 @@
 /obj/item/storage/box/flashbangs,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"haL" = (
+/obj/effect/floor_decal/corner/black/border,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "hbe" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9
@@ -29143,6 +29210,12 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
+"hhx" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "hhA" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -29204,9 +29277,11 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "hjN" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#6a97b0"
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "hkp" = (
 /obj/structure/table/reinforced,
@@ -29381,12 +29456,9 @@
 	dir = 4;
 	pixel_x = -25
 	},
-/obj/structure/bed/chair/wheelchair{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#6a97b0"
-	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/bed/roller,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "hoG" = (
@@ -29551,6 +29623,7 @@
 /obj/structure/closet/secure_closet/medical2{
 	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
+/obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "hvl" = (
@@ -29703,8 +29776,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "hAC" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "hAF" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -30052,7 +30124,14 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/machinery/door/window/westright{
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
+	name = "Coroner's Office"
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "hIO" = (
 /obj/effect/paint_stripe/gray,
@@ -30112,7 +30191,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Entrance Hallway North"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -31523,6 +31603,13 @@
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"iFl" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "iFp" = (
 /obj/structure/sign/warning/high_voltage,
 /obj/effect/paint_stripe/brown,
@@ -32062,7 +32149,7 @@
 	id = "CDCZCremator"
 	},
 /obj/machinery/light,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "iXE" = (
 /obj/machinery/light{
@@ -32893,7 +32980,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Entrance Checkpoint"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -32942,6 +33030,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
+"jGh" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "jGl" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/bed/chair/padded/black{
@@ -33062,7 +33156,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
 "jLd" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/table/reinforced,
 /obj/item/roller,
 /obj/item/roller,
@@ -33076,7 +33169,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "jLw" = (
 /obj/effect/paint_stripe/gray,
@@ -34007,12 +34101,14 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "kpB" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/hygiene/sink{
 	dir = 8;
 	pixel_x = -11
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "kqw" = (
 /obj/machinery/floodlight,
@@ -34122,6 +34218,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"kuL" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/surgery)
 "kvW" = (
 /obj/item/device/taperecorder,
 /obj/structure/table/standard,
@@ -34809,6 +34911,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
+"kSX" = (
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Isolation External North"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "kTC" = (
 /obj/vehicle/train/cargo/engine{
 	dir = 2
@@ -35671,6 +35780,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "lzz" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "lzF" = (
@@ -35743,14 +35856,15 @@
 /obj/machinery/door/airlock/glass/security{
 	name = "Class-D Containment Zone Access"
 	},
-/obj/machinery/door/blast/regular{
-	name = "CDCZ Checkpoint North Blast Door";
-	id_tag = "CDCZNorth"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZNorth";
+	name = "CDCZ Checkpoint North Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/checkpoint)
@@ -36079,7 +36193,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Watchtower External Upper East"
 	},
 /turf/simulated/open,
 /area/site53/llcz/dclass/primaryhallway)
@@ -36583,6 +36698,17 @@
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/prepainted,
 /area/site53/lowertrams/brownline)
+"maq" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "maz" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/nullglass,
@@ -36609,6 +36735,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
+"mcg" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "mcr" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-1507 Containment Chamber";
@@ -36836,9 +36968,9 @@
 /obj/structure/hygiene/sink/kitchen{
 	dir = 8;
 	name = "surgery sink";
-	pixel_x = 21
+	pixel_x = 19
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "mjK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -37005,7 +37137,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "mog" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -37552,11 +37684,12 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/securitypost)
 "mBP" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/black/mono,
 /obj/structure/morgue{
 	dir = 1
 	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "mCO" = (
 /obj/machinery/light,
@@ -37883,6 +38016,18 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"mNE" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "mNH" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
@@ -38082,6 +38227,12 @@
 /obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"mTh" = (
+/obj/effect/floor_decal/corner/paleblue/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "mTr" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -38306,7 +38457,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "mZX" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/vending/medical{
 	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
 	dir = 8
@@ -38319,7 +38469,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "nan" = (
 /obj/structure/table/standard,
@@ -38608,13 +38760,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
 "njK" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "nkR" = (
 /obj/effect/floor_decal/corner/grey/border,
@@ -38768,6 +38922,19 @@
 /obj/item/storage/box/bodybags,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/prep)
+"nrA" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/obj/structure/closet/body_bag,
+/obj/effect/landmark/corpse/classd,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "nrM" = (
 /obj/item/modular_computer/console/preset/aislot/research{
 	dir = 4
@@ -39009,6 +39176,16 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
+"nxi" = (
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/structure/closet/crate/freezer,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "nxj" = (
 /obj/effect/floor_decal/corner/red/borderfull,
 /obj/machinery/light{
@@ -39068,6 +39245,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
+"nAH" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/surgery)
 "nAL" = (
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 4
@@ -39396,6 +39579,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercee{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -39874,6 +40060,13 @@
 "nVI" = (
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"nVJ" = (
+/obj/effect/floor_decal/corner/black/mono,
+/obj/structure/morgue{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "nWH" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -39917,6 +40110,12 @@
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"nYZ" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "nZl" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
@@ -39930,6 +40129,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
+"nZm" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "nZK" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable/green{
@@ -40068,13 +40273,16 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "odX" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "oee" = (
 /obj/structure/lattice,
@@ -40787,15 +40995,12 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
 "oxY" = (
-/obj/structure/bed/chair/wheelchair{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#6a97b0"
-	},
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/bed/roller,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "oyH" = (
@@ -41050,7 +41255,9 @@
 	pixel_y = 25;
 	pixel_x = 8
 	},
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Medical Clinic Office"
+	},
 /turf/simulated/floor/carpet/blue3,
 /area/site53/llcz/dclass/medicalpost)
 "oHH" = (
@@ -41173,6 +41380,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose)
+"oKv" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Northwest Pillar Upper"
+	},
+/turf/simulated/open,
+/area/site53/llcz/dclass/primaryhallway)
 "oKw" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/effect/floor_decal/spline/fancy/black/corner{
@@ -41263,6 +41480,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
+"oOO" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/surgery)
 "oPA" = (
 /obj/machinery/vending/engivend{
 	dir = 8;
@@ -41684,6 +41907,12 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
+"pcD" = (
+/obj/effect/landmark/start{
+	name = "Medical Doctor"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "pcN" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -41848,13 +42077,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
 "pjn" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal{
-	dir = 1
-	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Medical Clinic"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "pjq" = (
 /obj/machinery/door/blast/shutters{
@@ -42136,6 +42366,17 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
+"prT" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Entrance Hallway External"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "psc" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -42382,6 +42623,16 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/site53/ulcz/hallways)
+"pDC" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 8;
+	c_tag = "CDCZ Southeast Pillar Upper"
+	},
+/turf/simulated/open,
+/area/site53/llcz/dclass/primaryhallway)
 "pDE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -42765,6 +43016,9 @@
 	icon = 'icons/obj/closets/fridge.dmi';
 	name = "Secure Freezer"
 	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "pPu" = (
@@ -42911,6 +43165,9 @@
 	id_tag = "EMTflashCDZ";
 	name = "Medical Flash"
 	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "pVt" = (
@@ -43030,6 +43287,10 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -43576,6 +43837,7 @@
 /obj/item/defibrillator/loaded,
 /obj/item/auto_cpr,
 /obj/item/reagent_containers/dropper,
+/obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "qpB" = (
@@ -43709,6 +43971,7 @@
 "qwC" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
+/obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "qwF" = (
@@ -44067,6 +44330,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"qKI" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "qKO" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -44251,7 +44520,8 @@
 	},
 /obj/effect/floor_decal/corner/green/mono,
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Staff Cryogenics"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkcryo)
@@ -44899,10 +45169,9 @@
 "rmd" = (
 /obj/structure/bed,
 /obj/item/bedsheet/medical,
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#6a97b0"
-	},
 /obj/structure/iv_drip,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "rmo" = (
@@ -44976,14 +45245,15 @@
 /obj/machinery/door/airlock/glass/security{
 	name = "Class-D Containment Zone Access"
 	},
-/obj/machinery/door/blast/regular{
-	name = "CDCZ Checkpoint South Blast Door";
-	id_tag = "CDCZSouth"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZSouth";
+	name = "CDCZ Checkpoint South Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/checkpoint)
@@ -45433,8 +45703,8 @@
 /obj/structure/morgue{
 	dir = 2
 	},
-/obj/machinery/camera/network/lcz,
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/black/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "rDs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -45489,7 +45759,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 4
+	dir = 4;
+	c_tag = "CDCZ Entrance Hallway South"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -45621,6 +45892,10 @@
 /obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"rIy" = (
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "rIR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -45882,15 +46157,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
 "rSA" = (
-/obj/structure/bed/chair/wheelchair{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#6a97b0"
-	},
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/bed/roller,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "rSP" = (
@@ -45951,7 +46223,8 @@
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Watchtower Upper"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/primaryhallway)
@@ -46006,7 +46279,8 @@
 /obj/structure/morgue{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/black/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "rXl" = (
 /obj/structure/lattice,
@@ -46824,6 +47098,13 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "suY" = (
@@ -46932,6 +47213,9 @@
 "syZ" = (
 /obj/machinery/organ_printer/robot/mapped,
 /obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -47299,7 +47583,11 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
 /obj/item/storage/box/freezer,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Medical Clinic Morgue Office";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "sOs" = (
 /obj/structure/cable/green{
@@ -47545,7 +47833,9 @@
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/trauma,
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Medical Clinic Storage"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "sVg" = (
@@ -47868,6 +48158,12 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/hub)
+"tcs" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "tcy" = (
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/hallways)
@@ -48246,8 +48542,12 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
 /obj/item/storage/box/bodybags,
 /obj/item/storage/box/bodybags,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
+"toB" = (
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "toL" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
@@ -48493,7 +48793,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Watchtower External Upper West"
 	},
 /turf/simulated/open,
 /area/site53/llcz/dclass/primaryhallway)
@@ -49139,6 +49440,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"tUC" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/morgue)
 "tVe" = (
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 10
@@ -49243,6 +49555,17 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/ulcz/hallways)
+"uam" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Isolation South"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "uaR" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -49295,7 +49618,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Entrance Checkpoint Office"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/checkpointoverlook)
@@ -49350,7 +49674,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Entrance Hallway"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -49924,7 +50249,14 @@
 	id_tag = "CDCZCremator";
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/machinery/door/window/westleft{
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
+	name = "Coroner's Office"
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "uyy" = (
 /obj/effect/floor_decal/corner/brown/border{
@@ -49938,7 +50270,8 @@
 "uyR" = (
 /obj/effect/floor_decal/corner/yellow/diagonal,
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ Technical Closet"
 	},
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/primaryhallway)
@@ -50436,6 +50769,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp513)
+"uVX" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "uWu" = (
 /obj/structure/sign/emergonly{
 	pixel_x = 32
@@ -50851,8 +51195,8 @@
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
 "vlU" = (
-/obj/effect/landmark/start{
-	name = "Surgeon"
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
@@ -50938,7 +51282,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "vpu" = (
 /obj/machinery/smartfridge,
@@ -51111,6 +51458,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
+"vvo" = (
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Isolation External South"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "vvq" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp247observation)
@@ -51415,7 +51769,7 @@
 /area/site53/ulcz/scp914)
 "vIu" = (
 /obj/machinery/optable,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "vIL" = (
 /obj/structure/closet/firecloset,
@@ -51504,7 +51858,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "vLg" = (
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "vLm" = (
 /obj/machinery/button/blast_door{
@@ -52309,6 +52663,15 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
+"wnL" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "wnP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -52432,10 +52795,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
 "wqy" = (
-/obj/structure/bed/roller,
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#6a97b0"
+/obj/structure/bed/chair/wheelchair{
+	dir = 8
 	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "wrt" = (
@@ -52946,6 +53310,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
+"wIK" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 8;
+	c_tag = "CDCZ Northeast Pillar Upper"
+	},
+/turf/simulated/open,
+/area/site53/llcz/dclass/primaryhallway)
 "wIY" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -53096,7 +53470,11 @@
 /obj/structure/morgue{
 	dir = 2
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/black/mono,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Medical Clinic Morgue"
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "wNY" = (
 /obj/effect/paint_stripe/red,
@@ -53906,6 +54284,17 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
+"xqE" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Isolation North"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "xqF" = (
 /obj/machinery/light{
 	dir = 4
@@ -54392,11 +54781,13 @@
 	},
 /area/site53/uhcz/securitypost)
 "xGE" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/bodyscanner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#6a97b0"
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "xHy" = (
 /obj/machinery/vending/tool{
@@ -55275,11 +55666,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "ylL" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/body_scanconsole{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#6a97b0"
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "ylO" = (
 /obj/machinery/door/airlock/glass/civilian{
@@ -55734,13 +56127,7 @@ fHB
 dvl
 xfE
 byD
-xfE
-xfE
-byD
-dvl
-xfE
-byD
-xfE
+xqE
 xfE
 byD
 dvl
@@ -55748,6 +56135,12 @@ xfE
 byD
 xfE
 xfE
+byD
+dvl
+xfE
+byD
+xfE
+uam
 byD
 dvl
 xfE
@@ -57533,7 +57926,7 @@ cWG
 pbx
 xcT
 xcT
-tUA
+kSX
 xcT
 xcT
 sjn
@@ -57545,7 +57938,7 @@ xcT
 sjn
 xcT
 xcT
-tUA
+vvo
 xcT
 xcT
 sjn
@@ -59853,7 +60246,7 @@ uis
 uis
 uis
 uis
-lLS
+oKv
 xZz
 uis
 uis
@@ -59869,7 +60262,7 @@ uis
 uis
 uis
 xZz
-lLS
+ept
 uis
 uis
 uis
@@ -60612,7 +61005,7 @@ gdH
 sDd
 gdH
 gdH
-bhq
+prT
 vnW
 uis
 uis
@@ -62937,7 +63330,7 @@ uis
 uis
 uis
 uis
-twA
+wIK
 tFu
 uis
 uis
@@ -62952,8 +63345,8 @@ uis
 uis
 uis
 uis
-twA
 tFu
+pDC
 uis
 uis
 uis
@@ -63949,11 +64342,11 @@ uph
 xgn
 oAF
 rmd
-hAC
+fZY
 ehz
-hAC
+jGh
 pjn
-hAC
+jGh
 kpB
 rSA
 oxY
@@ -64206,15 +64599,15 @@ iBn
 xgn
 oAF
 rmd
-hAC
+mcg
 ylL
 hAC
 ylL
 hAC
-hAC
-hAC
-hAC
-hAC
+frT
+jGh
+jGh
+nYZ
 tmi
 uXD
 vnW
@@ -64462,16 +64855,16 @@ uph
 uph
 xgn
 lvt
-wqy
-hAC
+nxi
+mcg
 xGE
 hAC
 xGE
-hAC
+pcD
 hAC
 hjN
 hAC
-hAC
+toB
 tpt
 duS
 vnW
@@ -64720,15 +65113,15 @@ baE
 xgn
 oAF
 wqy
+mcg
 hAC
 hAC
+rIy
+iFl
+iFl
+hhx
 hAC
-hAC
-hAC
-hAC
-hAC
-hAC
-odX
+wnL
 xSE
 xvz
 vnW
@@ -64977,14 +65370,14 @@ icl
 xgn
 oAF
 wqy
-hAC
-hAC
+tcs
+iFl
 odX
 njK
 jLd
 mZX
-njK
-njK
+uVX
+mNE
 cbv
 tmi
 uXD
@@ -65252,7 +65645,7 @@ xZp
 sTO
 bhc
 cFR
-hUF
+dPn
 vKZ
 xcT
 xcT
@@ -65749,9 +66142,9 @@ xgn
 azA
 jIy
 pVr
-qRS
+kuL
 sII
-qRS
+nAH
 ffn
 jIy
 xbG
@@ -65763,9 +66156,9 @@ nJq
 gKt
 ini
 wzt
-wNP
-vpo
-vLg
+rDp
+maq
+qKI
 rXk
 wzt
 xcT
@@ -66022,8 +66415,8 @@ ini
 wzt
 fAT
 vpo
-vLg
-mBP
+haL
+gwZ
 wzt
 xcT
 xcT
@@ -66263,7 +66656,7 @@ bON
 azA
 jIy
 syZ
-qRS
+oOO
 sXS
 vlU
 qpz
@@ -66278,8 +66671,8 @@ lAw
 ini
 wzt
 wNP
-vpo
-vLg
+nrA
+haL
 rXk
 wzt
 ghI
@@ -66536,8 +66929,8 @@ ini
 wzt
 rDp
 vpo
-vLg
-rXk
+haL
+nVJ
 wzt
 xcT
 xcT
@@ -66793,7 +67186,7 @@ ini
 wzt
 fAT
 vpo
-vLg
+haL
 mBP
 wzt
 xcT
@@ -67044,18 +67437,18 @@ bMi
 bMi
 ini
 ixv
-lzz
+mTh
 tBm
 ini
 wzt
-wNP
-vpo
-vLg
+rDp
+tUC
+nZm
 rXk
 wzt
-xcT
+duV
 vKZ
-xcT
+duV
 kwD
 kwD
 kwD
