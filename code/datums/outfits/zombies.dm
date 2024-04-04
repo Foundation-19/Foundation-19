@@ -5,10 +5,11 @@
 	back = null
 	backpack_contents = null
 
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_RESET_EQUIPMENT
+	flags = OUTFIT_RESET_EQUIPMENT
 
 /decl/hierarchy/outfit/zombie/lczguard
 	name = "LCZ Guard"
+	id_pda_assignment = "LCZ Guard"
 	uniform = /obj/item/clothing/under/rank/security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
@@ -23,6 +24,7 @@
 
 /decl/hierarchy/outfit/zombie/lczsergeant
 	name = "LCZ Sergeant"
+	id_pda_assignment = "LCZ Sergeant"
 	uniform = /obj/item/clothing/under/rank/warden/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
@@ -37,6 +39,7 @@
 
 /decl/hierarchy/outfit/zombie/lczmedic
 	name = "LCZ Combat Medic"
+	id_pda_assignment = "LCZ Combat Medic"
 	uniform = /obj/item/clothing/under/rank/security/lcz/medic
 	glasses = /obj/item/clothing/glasses/hud/health/visor
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
@@ -50,6 +53,7 @@
 
 /decl/hierarchy/outfit/zombie/lczriot
 	name = "LCZ Riot Control Unit"
+	id_pda_assignment = "LCZ Riot Control Unit"
 	uniform = /obj/item/clothing/under/rank/security/lcz/riot
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
@@ -64,6 +68,7 @@
 
 /decl/hierarchy/outfit/zombie/lczrecontain
 	name = "LCZ Recontainment Unit"
+	id_pda_assignment = "LCZ Recontainment Unit"
 	uniform = /obj/item/clothing/under/rank/security/lcz/recontain
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
@@ -77,6 +82,7 @@
 
 /decl/hierarchy/outfit/zombie/juniorscientist
 	name = "Scientist Associate"
+	id_pda_assignment = "Scientist Associate"
 	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
@@ -86,6 +92,7 @@
 
 /decl/hierarchy/outfit/zombie/scientist
 	name = "Scientist"
+	id_pda_assignment = "Scientist"
 	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
@@ -96,6 +103,7 @@
 
 /decl/hierarchy/outfit/zombie/seniorscientist
 	name = "Senior Scientist"
+	id_pda_assignment = "Senior Scientist"
 	uniform = /obj/item/clothing/under/rank/scientist_new/senior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
@@ -107,6 +115,7 @@
 
 /decl/hierarchy/outfit/zombie/engineering
 	name = "Engineer"
+	id_pda_assignment = "Engineer"
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	head = /obj/item/clothing/head/hardhat/orange
@@ -118,6 +127,7 @@
 
 /decl/hierarchy/outfit/zombie/medicaldoctor
 	name = "Medical Doctor"
+	id_pda_assignment = "Medical Doctor"
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
@@ -127,6 +137,7 @@
 
 /decl/hierarchy/outfit/zombie/janitor
 	name = "Janitor"
+	id_pda_assignment = "Janitor"
 	uniform = /obj/item/clothing/under/rank/janitor
 	shoes = /obj/item/clothing/shoes/workboots
 	id_type = /obj/item/card/id/sciencelvl1
@@ -135,6 +146,7 @@
 
 /decl/hierarchy/outfit/zombie/officeworker
 	name = "Office Worker"
+	id_pda_assignment = "Office Worker"
 	uniform = /obj/item/clothing/under/scp/suittie
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/officeworker
@@ -144,6 +156,7 @@
 
 /decl/hierarchy/outfit/zombie/classd
 	name = "Class-D"
+	id_pda_assignment = "Class-D"
 	uniform = /obj/item/clothing/under/scp/dclass
 	shoes = /obj/item/clothing/shoes/workboots
 	id_type = /obj/item/card/id/classd

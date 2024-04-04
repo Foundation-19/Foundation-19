@@ -496,6 +496,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/chief_engineer
+	class = CLASS_A
 
 /obj/item/card/id/seclvl3it_tech
 	name = "security ID"
@@ -661,6 +662,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerhcz
+	class = CLASS_B
 
 /obj/item/card/id/zcseclvl3lcz
 	name = "security ID"
@@ -668,6 +670,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ltofficerlcz
+	class = CLASS_B
 
 /obj/item/card/id/zcseclvl4ez
 	name = "security ID"
@@ -675,6 +678,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerez
+	class = CLASS_B
 
 // GC ID.
 
@@ -684,6 +688,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/hos
+	class = CLASS_A
 
 // SCIENCE
 
@@ -728,6 +733,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "sciencelvl5"
 	item_state = "Science_ID5"
 	job_access_type = /datum/job/rd
+	class = CLASS_B
 
 // ADMIN
 /obj/item/card/id/adminlvl1
@@ -750,6 +756,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "adminlvl3"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/goirep
+	class = CLASS_A
 
 /obj/item/card/id/adminlvl4
 	name = "administration ID"
@@ -757,6 +764,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "adminlvl4"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/hop
+	class = CLASS_A
 
 /obj/item/card/id/adminlvl5
 	name = "administration ID"
@@ -764,6 +772,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/captain
+	class = CLASS_A
 
 // ERT CARDS
 
@@ -772,6 +781,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
+	class = CLASS_A
 
 /obj/item/card/id/mtf/ninetail
 	name = "mobile task force ID"
@@ -840,6 +850,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	job_access_type = /datum/job/commsofficer
 	icon_state = "adminlvl4"
 	item_state = "Admin_ID"
+	class = CLASS_A
 
 // MEDICAL CARDS
 
@@ -870,6 +881,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/cmo
+	class = CLASS_A
 
 /obj/item/card/id/psychiatrist
 	name = "administration ID"
@@ -886,6 +898,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "sciencelvl5"
 	item_state = "Science_ID5"
 	job_access_type = /datum/job/rd
+	class = CLASS_A
 
 // MISC
 
@@ -916,6 +929,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "classd"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/classd
+	class = CLASS_D
 
 // LOGISTICS
 
@@ -933,11 +947,13 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/cargo_tech
+	class = CLASS_B
 
 // CD ASSIGNMENT CARDS
 
 /obj/item/card/id/dassignment
 	desc = "A plain ID Card, used for granting access to D-Class personnel so they're able to perform their duties."
+	class = null
 
 /obj/item/card/id/dassignment/dmining
 	name = "mining assignment card"
