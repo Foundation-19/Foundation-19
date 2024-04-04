@@ -41,7 +41,7 @@ var/global/list/state_machines = list()
 	var/expected_type = /datum
 	var/decl/state/current_state = null // Acts both as a ref to the current state and holds which state it will default to on init.
 
-/datum/state_machine/New(var/datum/_holder)
+/datum/state_machine/New(datum/_holder)
 	..()
 	if(!istype(_holder))
 		stack_trace("Non-datum holder supplied to [type] New().")
