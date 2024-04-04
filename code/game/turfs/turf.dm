@@ -528,7 +528,7 @@ var/const/enterloopsanity = 100
 			break
 	return TRUE
 
-/turf/proc/update_weather(var/obj/abstract/weather_system/new_weather, var/force_update_below = FALSE)
+/turf/proc/update_weather(var/obj/abstract/weather_system/new_weather, force_update_below = FALSE)
 
 	if(isnull(new_weather))
 		new_weather = SSweather.weather_by_z["[z]"]
