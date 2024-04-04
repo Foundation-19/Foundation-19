@@ -21,13 +21,10 @@
 	return 0
 
 /obj/abstract/weather_system/proc/adjust_temperature(initial_temperature)
-	. = initial_temperature
-	var/decl/state/weather/current_weather = weather_system?.current_state
-	if(istype(current_weather))
-		. = current_weather.adjust_temperature(initial_temperature)
+	return initial_temperature
 
 /obj/abstract/weather_system/proc/show_weather(mob/M)
-	var/mob_ref = weakref(M)
+	var/mob_ref = WEAKREF(M)
 	if(mob_shown_weather[mob_ref])
 		return FALSE
 	var/decl/state/weather/current_weather = weather_system?.current_state

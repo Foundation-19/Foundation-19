@@ -30,8 +30,8 @@
 	invisibility      = 0
 	appearance_flags  = (RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
 
-	var/water_material = /datum/reagent/water    // Material to use for the properties of rain.
-	var/ice_material =   null       // Material to use for the properties of snow and hail. Will have to port the material system from nebula
+	var/water_material = null     // Material to use for the properties of rain.
+	var/ice_material =  null        // Material to use for the properties of snow and hail.
 
 	var/list/affecting_zs                                // What z-levels are we affecting?
 	var/datum/state_machine/weather/weather_system       // What is our internal state and how do we decide what state to use?
@@ -61,6 +61,7 @@
 	for(var/tz in affecting_zs)
 		for(var/turf/T as anything in block(locate(1, 1, tz), locate(world.maxx, world.maxy, tz)))
 			if(T.weather == src)
+				//T.remove_vis_contents(vis_contents_additions)
 				T.weather = null
 	vis_contents_additions.Cut()
 	SSweather.unregister_weather_system(src)
@@ -90,7 +91,7 @@
 
 // Dummy object for lightning flash animation.
 /obj/abstract/lightning_overlay
-	plane             = DEFAULT_PLANE
+	plane             = DEFAULT_PLANE + 1 //Future EMISSIVE_PLANE
 	layer             = ABOVE_LIGHTING_LAYER
 	icon              = 'icons/effects/weather.dmi'
 	icon_state        = "full"

@@ -33,19 +33,21 @@
 	weather.alpha = alpha
 
 	if(is_liquid && weather.water_material)
-		weather.color = COLOR_BLUE
+		var/material/mat = SSmaterials.get_material_by_name(weather.water_material)
+		weather.color = mat.icon_colour
 	else if(is_ice && weather.ice_material)
-		weather.color = COLOR_WHITE
+		var/material/mat = SSmaterials.get_material_by_name(weather.ice_material)
+		weather.color = mat.icon_colour
 	else
 		weather.color = COLOR_WHITE
 
-/decl/state/weather/proc/tick(obj/abstract/weather_system/weather)
+/decl/state/weather/proc/tick(var/obj/abstract/weather_system/weather)
 	return
 
-/decl/state/weather/proc/handle_roofed_effects(mob/living/M, obj/abstract/weather_system/weather)
+/decl/state/weather/proc/handle_roofed_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
 	return
 
-/decl/state/weather/proc/handle_protected_effects(mob/living/M, obj/abstract/weather_system/weather, obj/item/protected_by)
+/decl/state/weather/proc/handle_protected_effects(var/mob/living/M, var/obj/abstract/weather_system/weather, var/obj/item/protected_by)
 	if(prob(cosmetic_message_chance))
 		if(protected_by && length(protected_messages))
 			if(protected_by.loc == M)
@@ -55,10 +57,10 @@
 		else if(length(cosmetic_messages))
 			to_chat(M, "<span class='[cosmetic_span_class]'>[pick(cosmetic_messages)]</span>")
 
-/decl/state/weather/proc/handle_exposure_effects(mob/living/M, obj/abstract/weather_system/weather)
+/decl/state/weather/proc/handle_exposure_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
 	handle_protected_effects(M, weather)
 
-/decl/state/weather/proc/handle_exposure(mob/living/M, exposure, obj/abstract/weather_system/weather)
+/decl/state/weather/proc/handle_exposure(var/mob/living/M, var/exposure, var/obj/abstract/weather_system/weather)
 
 	// Send strings if we're outside.
 	if(M.is_outside() && M.client)
@@ -75,10 +77,7 @@
 			if(LAZYLEN(protected_by))
 				handle_protected_effects(M, weather, pick(protected_by))
 
-/decl/state/weather/proc/adjust_temperature(initial_temperature)
-	return initial_temperature
-
-/decl/state/weather/proc/show_to(mob/living/M, obj/abstract/weather_system/weather)
+/decl/state/weather/proc/show_to(var/mob/living/M, var/obj/abstract/weather_system/weather)
 	to_chat(M, descriptor)
 
 /decl/state/weather/calm
@@ -86,22 +85,9 @@
 	icon_state = "blank"
 	descriptor = "The weather is calm."
 	transitions = list(
-		/decl/state_transition/weather/cold,
-		/decl/state_transition/weather/rain
-	)
-
-/decl/state/weather/cold
-	name = "Cold"
-	icon_state = "blank"
-	descriptor = "There is a chill on the breeze."
-	transitions = list(
-		/decl/state_transition/weather/calm,
 		/decl/state_transition/weather/snow,
 		/decl/state_transition/weather/rain
 	)
-
-/decl/state/weather/cold/adjust_temperature(initial_temperature)
-	return max(initial_temperature - 10, min(initial_temperature, T0C))
 
 /decl/state/weather/snow
 	name = "Light Snow"
@@ -120,9 +106,6 @@
 		"Flakes of snow drift gently past."
 	)
 
-/decl/state/weather/snow/adjust_temperature(initial_temperature)
-	return min(initial_temperature - 20, T0C)
-
 /decl/state/weather/snow/medium
 	name =  "Snow"
 	icon_state = "snowfall_med"
@@ -131,9 +114,6 @@
 		/decl/state_transition/weather/snow,
 		/decl/state_transition/weather/snow_heavy
 	)
-
-/decl/state/weather/snow/heavy/adjust_temperature(initial_temperature)
-	return min(initial_temperature - 25, T0C)
 
 /decl/state/weather/snow/heavy
 	name =  "Heavy Snow"
@@ -145,9 +125,6 @@
 		"Thick flurries of snow swirl around you."
 	)
 	cosmetic_span_class = "warning"
-
-/decl/state/weather/snow/heavy/adjust_temperature(initial_temperature)
-	return min(initial_temperature - 30, T0C)
 
 /decl/state/weather/rain
 	name =  "Light Rain"
@@ -165,7 +142,7 @@
 	protected_messages =     list("Raindrops patter against $ITEM$.")
 	var/list/roof_messages = list("Rain patters against the roof.")
 
-/decl/state/weather/rain/handle_roofed_effects(mob/living/M, obj/abstract/weather_system/weather)
+/decl/state/weather/rain/handle_roofed_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
 	if(length(roof_messages) && prob(cosmetic_message_chance))
 		to_chat(M, "<span class='[cosmetic_span_class]'>[pick(roof_messages)]</span>")
 
@@ -183,7 +160,7 @@
 	roof_messages =      list("Torrential rain thunders against the roof.")
 	ambient_sounds =     list('sounds/effects/weather/rain_heavy.ogg')
 
-/decl/state/weather/rain/storm/tick(obj/abstract/weather_system/weather)
+/decl/state/weather/rain/storm/tick(var/obj/abstract/weather_system/weather)
 	..()
 	if(prob(0.5))
 		weather.lightning_strike()
@@ -202,9 +179,9 @@
 	ambient_sounds =         list('sounds/effects/weather/rain.ogg')
 	ambient_indoors_sounds = list('sounds/effects/weather/hail_indoors.ogg')
 
-/decl/state/weather/rain/hail/handle_exposure_effects(mob/living/M, obj/abstract/weather_system/weather)
+/decl/state/weather/rain/hail/handle_exposure_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
 	to_chat(M, SPAN_DANGER("You are pelted by a shower of hail!"))
-	// change to take brute M.take_damage(BRUTE, rand(1,3))
+	M.adjustBruteLoss(rand(1,3))
 
 /decl/state/weather/ash
 	name =  "Ash"
