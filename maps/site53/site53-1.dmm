@@ -1213,7 +1213,7 @@
 /area/site53/llcz/dclass/primaryhallway)
 "bdw" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
 "bdP" = (
@@ -5331,7 +5331,7 @@
 "feV" = (
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/thick/botany,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/effect/floor_decal/corner/research/border{
 	dir = 6
 	},
@@ -8363,7 +8363,7 @@
 "hYK" = (
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/thick/botany,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/effect/floor_decal/corner/research/border{
 	dir = 10
 	},
@@ -13160,7 +13160,7 @@
 "mNV" = (
 /obj/structure/table/standard,
 /obj/item/material/minihoe,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "mPc" = (
@@ -15469,7 +15469,7 @@
 /obj/structure/mopbucket,
 /obj/machinery/light/small,
 /obj/item/mop,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /turf/simulated/floor/tiled/dark,
 /area/site53/ulcz/scp173)
@@ -20259,7 +20259,7 @@
 /obj/item/clothing/gloves/thick/botany,
 /obj/item/material/minihoe,
 /obj/structure/closet/secure_closet/hydroponics_torch,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/item/shovel/spade,
 /obj/item/device/radio/headset/headset_service,
 /turf/simulated/floor/exoplanet/grass,

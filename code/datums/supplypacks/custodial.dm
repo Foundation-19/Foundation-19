@@ -3,7 +3,7 @@
 
 /decl/hierarchy/supply_pack/custodial/janitor
 	name = "Gear - Janitorial supplies"
-	contains = list(/obj/item/reagent_containers/bucket,
+	contains = list(/obj/item/reagent_containers/glass/bucket,
 					/obj/item/mop,
 					/obj/item/caution = 4,
 					/obj/item/storage/bag/trash,
@@ -35,7 +35,7 @@
 	contains = list(/obj/item/mop,
 					/obj/item/grenade/chem_grenade/cleaner = 3,
 					/obj/item/storage/box/detergent = 3,
-					/obj/item/reagent_containers/bucket,
+					/obj/item/reagent_containers/glass/bucket,
 					/obj/item/reagent_containers/glass/rag,
 					/obj/item/reagent_containers/spray/cleaner = 2,
 					/obj/item/soap)

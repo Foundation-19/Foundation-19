@@ -1,5 +1,5 @@
 /datum/fabricator_recipe/bucket
-	path = /obj/item/reagent_containers/bucket
+	path = /obj/item/reagent_containers/glass/bucket
 
 /datum/fabricator_recipe/flashlight
 	path = /obj/item/device/flashlight
