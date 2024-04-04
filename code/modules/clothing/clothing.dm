@@ -406,6 +406,7 @@ BLIND     // can't see anything
 	var/light_applied
 	var/brightness_on
 	var/on = 0
+	var/protects_against_weather = FALSE
 
 /obj/item/clothing/head/equipped(mob/user, slot)
 	light_overlay_image = null
@@ -749,6 +750,7 @@ BLIND     // can't see anything
 	blood_overlay_type = "suit"
 	siemens_coefficient = 0.9
 	w_class = ITEM_SIZE_NORMAL
+	var/protects_against_weather = FALSE
 
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_suit_vox.dmi',

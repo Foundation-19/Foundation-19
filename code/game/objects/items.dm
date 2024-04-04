@@ -1064,3 +1064,6 @@ GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 		rating += "edge "
 	rating += "item"
 	return rating
+
+/obj/item/proc/gives_weather_protection()
+	return FALSE

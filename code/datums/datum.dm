@@ -11,7 +11,8 @@
 	var/list/list/datum/callback/signal_procs
 	/// Datum level flags
 	var/datum_flags = NONE
-
+	/// Used to avoid unnecessary refstring creation in Destroy().
+	var/tmp/has_state_machine = FALSE
 #ifdef REFERENCE_TRACKING
 	var/tmp/running_find_references
 	var/tmp/last_find_references = 0
