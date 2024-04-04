@@ -504,7 +504,7 @@ var/const/enterloopsanity = 100
 		. = top_of_stack.is_outside()
 	last_outside_check = . // Cache this for later calls.
 
-/turf/proc/set_outside(var/new_outside, var/skip_weather_update = FALSE)
+/turf/proc/set_outside(new_outside, skip_weather_update = FALSE)
 	if(is_outside == new_outside)
 		return FALSE
 
@@ -528,7 +528,7 @@ var/const/enterloopsanity = 100
 			break
 	return TRUE
 
-/turf/proc/update_weather(var/obj/abstract/weather_system/new_weather, force_update_below = FALSE)
+/turf/proc/update_weather(obj/abstract/weather_system/new_weather, force_update_below = FALSE)
 
 	if(isnull(new_weather))
 		new_weather = SSweather.weather_by_z["[z]"]
