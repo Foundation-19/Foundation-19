@@ -92,7 +92,7 @@
 
 /obj/item/natural_weapon/scp939
 	name = "sharp jaws"
-	attack_verb = list("mauls", "tears", "bites")
+	attack_verb = list("mauled", "torn", "bitten", "savagely crunched")
 	hitsound = 'sounds/simple_mob/abominable_infestation/aggregate/attack.ogg'
 	damtype = BRUTE
 	melee_accuracy_bonus = 200
@@ -298,8 +298,11 @@
 				nutr = round(nutrition_max * 0.5)
 			if(ismonkey(L))
 				nutr = round(nutrition_max * 0.1) //Smaller than 2427-3
+				visible_message(SPAN_DANGER("[src] mauls [L]!"))
+				AdjustNutrition(nutr)
+				L.gib()
 			if(ishuman(L))
-				if((world.time - L.lastsound) <= 20 SECONDS && L.lastsound != null)
+				if((world.time - L.lastsound) <= 50 SECONDS && L.lastsound != null) //OBJECTIVE: SURVIVE 50 SECONDS AFTER AGGROING 939
 					nutr = round(nutrition_max * 0.2)
 					L.adjustBruteLoss(350)
 					L.lastsound = null //Null this (stops repeat-mauls from instantly gibbing crit people)
