@@ -11,6 +11,7 @@
 // "Poshel nahuy, Otuska!"
 // Rest in Peace, Honker. You will always be in our hearts.
 // Replaced with IS12's implementation authored by Chaoko99.
+// Moves all procs down to /mob/living for SCP implementations, Yawet330.
 // ~Tsurupeta
 
 //Defines.
@@ -60,20 +61,20 @@
 /mob/proc/update_vision_cone()
 	return
 
-/mob/living/carbon/human/update_vision_cone()
+/mob/living/update_vision_cone()
 	if(!client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
 		return
 	check_fov()
 	fov.dir = dir
 	fov_mask.dir = dir
 
-/mob/living/carbon/human/proc/SetFov(show)
+/mob/living/proc/SetFov(show)
 	if(!show)
 		hide_cone()
 	else
 		show_cone()
 
-/mob/living/carbon/human/proc/check_fov()
+/mob/living/proc/check_fov()
 	if(!client)
 		return
 
@@ -87,13 +88,13 @@
 		hide_cone()
 
 //Making these generic procs so you can call them anywhere.
-/mob/living/carbon/human/proc/show_cone()
+/mob/living/proc/show_cone()
 	if(fov)
 		fov.alpha = 255
 		usefov = TRUE
 		fov_mask.alpha = 255
 
-/mob/living/carbon/human/proc/hide_cone()
+/mob/living/proc/hide_cone()
 	if(fov)
 		fov.alpha = 0
 		usefov = FALSE
