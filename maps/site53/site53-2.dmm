@@ -21478,8 +21478,6 @@
 	dir = 1
 	},
 /obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/llcz/dclass/primaryhallway)
 "bUV" = (
@@ -35106,12 +35104,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"kVe" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white/small,
-/area/site53/llcz/dclass/medicalpost/morgue)
 "kVA" = (
 /obj/structure/bed/chair,
 /obj/machinery/light/small{
@@ -38621,8 +38613,6 @@
 	dir = 8
 	},
 /obj/structure/table/rack,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/llcz/dclass/primaryhallway)
@@ -68464,7 +68454,7 @@ azA
 wzt
 vIu
 vLg
-kVe
+vLg
 toy
 wzt
 azA
