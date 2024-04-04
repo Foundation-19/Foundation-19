@@ -22995,13 +22995,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
-"cVs" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/landmark{
-	name = "JoinLateCyborg"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/cellbubble)
 "cVu" = (
 /obj/structure/sign/scp/keter_scp{
 	pixel_y = 32
@@ -45249,6 +45242,13 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
+"rvm" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/cellbubble)
 "rvJ" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/spray/cleaner,
@@ -53108,13 +53108,6 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106observ)
-"wNi" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/landmark{
-	name = "JoinLateCyborg"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/primaryhallway)
 "wNk" = (
 /obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
@@ -53559,6 +53552,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
+"xck" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/primaryhallway)
 "xcp" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -61439,7 +61439,7 @@ iid
 jBt
 hIm
 ktV
-wNi
+xck
 xse
 uKT
 uis
@@ -62707,7 +62707,7 @@ bKM
 eKA
 eeW
 qVK
-cVs
+rvm
 xaA
 eKA
 mSV

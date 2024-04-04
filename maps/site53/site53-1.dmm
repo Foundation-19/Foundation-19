@@ -672,6 +672,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
+"bbC" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 10
+	},
+/obj/machinery/camera/network/lcz{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cryo)
 "bbF" = (
 /obj/effect/paint_stripe/orange,
 /obj/structure/disposalpipe/segment{
@@ -1300,11 +1309,10 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "bRu" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/unsimulated/mineral,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/hallways)
 "bRK" = (
 /obj/machinery/vending/coffee{
 	dir = 8
@@ -4858,11 +4866,8 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "hcw" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/cells)
+/turf/unsimulated/mineral,
+/area/site53/llcz/dclass/cryo)
 "hcU" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
@@ -4949,6 +4954,13 @@
 "hji" = (
 /turf/simulated/floor/blackgrid,
 /area/site53/engineering/selfdestruct)
+"hkT" = (
+/obj/effect/floor_decal/corner/green/border,
+/obj/machinery/computer/cryopod{
+	pixel_y = -25
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cryo)
 "hlA" = (
 /obj/machinery/smartfridge/seeds,
 /obj/effect/floor_decal/corner/research/border,
@@ -5511,10 +5523,6 @@
 /obj/machinery/camera/network/hcz,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
-"iiE" = (
-/obj/structure/disposalpipe/segment,
-/turf/unsimulated/mineral,
-/area/space)
 "ijv" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -6301,10 +6309,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
 "jlH" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/hallways)
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "jmI" = (
 /obj/machinery/biogenerator,
 /obj/machinery/light,
@@ -6741,6 +6751,12 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
+"jYO" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "jYT" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -7064,8 +7080,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "kCv" = (
-/obj/machinery/light,
-/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
 "kDi" = (
@@ -8954,6 +8969,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/scp1102room)
+"nqV" = (
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cryo)
 "nrz" = (
 /obj/machinery/light{
 	dir = 8
@@ -10722,6 +10741,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"qfC" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "qgv" = (
 /obj/machinery/vending/hydronutrients/generic,
 /turf/simulated/floor/exoplanet/grass,
@@ -11045,12 +11071,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
-"qDP" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/mineral/random{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/space)
 "qEO" = (
 /obj/effect/overlay/coconut,
 /turf/simulated/floor/beach/sand,
@@ -11427,11 +11447,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "raV" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 10
+/obj/effect/floor_decal/corner/green/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/cells)
+/area/site53/llcz/dclass/cryo)
 "raX" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/walnut,
@@ -12776,13 +12796,6 @@
 "tqa" = (
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
-"tqF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "tsZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -13132,6 +13145,12 @@
 /obj/item/device/radio/headset/headset_service,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
+"tTU" = (
+/obj/machinery/door/airlock/civilian{
+	name = "CDCZ Cryogenics"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/cryo)
 "tTZ" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/closet/crate,
@@ -13320,6 +13339,12 @@
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/prepainted,
 /area/site53/reswing/lowres/xenoarchaeology)
+"uiA" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/space)
 "uiE" = (
 /obj/item/light/tube,
 /turf/simulated/floor/plating,
@@ -13516,6 +13541,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/xenobotany)
+"utA" = (
+/obj/structure/disposalpipe/segment,
+/turf/unsimulated/mineral,
+/area/space)
 "uue" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -14470,13 +14499,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp895)
-"vXa" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "vXg" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "CDCZ Luxury Bedroom"
@@ -15564,10 +15586,10 @@
 /area/site53/lhcz/hallway)
 "xFP" = (
 /obj/structure/table/rack,
-/obj/random/soap,
-/obj/random/soap,
-/obj/random/soap,
 /obj/effect/floor_decal/corner/grey/diagonal,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/obj/item/towel/random,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/shower)
 "xHN" = (
@@ -18701,12 +18723,12 @@ raC
 lME
 lME
 raC
-ycT
-hIH
-hIH
-hIH
-hIH
-hIH
+afv
+afv
+afv
+afv
+afv
+afv
 hIH
 hIH
 hIH
@@ -18958,12 +18980,12 @@ ycT
 qlq
 xLM
 afh
-ycT
-hIH
-hIH
-hIH
-hIH
-hIH
+afv
+nJA
+nJA
+inX
+nJA
+afv
 hIH
 hIH
 hIH
@@ -19214,13 +19236,13 @@ deE
 ffU
 xgb
 xgb
-raV
-ycT
-hIH
-hIH
-hIH
-hIH
-hIH
+elS
+afv
+ryK
+vTe
+vTe
+bbC
+afv
 hIH
 hIH
 hIH
@@ -19472,12 +19494,12 @@ pQA
 pQA
 pQA
 kCv
-ycT
-hIH
-hIH
-hIH
-hIH
-hIH
+tTU
+raV
+nqV
+nqV
+hkT
+afv
 hIH
 hIH
 hIH
@@ -19728,13 +19750,13 @@ dzI
 oCq
 oCq
 oCq
-hcw
-ycT
-hIH
-hIH
-hIH
-hIH
-hIH
+qbQ
+afv
+bvr
+eip
+eip
+rbP
+afv
 hIH
 hIH
 hIH
@@ -19986,12 +20008,12 @@ ycT
 qlq
 kvC
 ycT
-ycT
-hIH
-hIH
-hIH
-hIH
-hIH
+afv
+liC
+liC
+egU
+liC
+afv
 hIH
 hIH
 hIH
@@ -20243,12 +20265,12 @@ raC
 lME
 lME
 raC
-ycT
-hIH
-hIH
-hIH
-hIH
-hIH
+afv
+afv
+afv
+afv
+afv
+afv
 hIH
 hIH
 hIH
@@ -20502,7 +20524,7 @@ lME
 uue
 ycT
 hIH
-hIH
+hcw
 hIH
 hIH
 hIH
@@ -20759,7 +20781,7 @@ pBI
 loF
 ycT
 hIH
-hIH
+hcw
 hIH
 hIH
 hIH
@@ -21016,7 +21038,7 @@ ycT
 ycT
 ycT
 hIH
-hIH
+hcw
 hIH
 hIH
 hIH
@@ -21273,7 +21295,7 @@ iQr
 loF
 ycT
 hIH
-hIH
+hcw
 hIH
 hIH
 hIH
@@ -21530,7 +21552,7 @@ lME
 ewk
 ycT
 hIH
-hIH
+hcw
 hIH
 hIH
 hIH
@@ -30142,14 +30164,14 @@ hIH
 hIH
 hIH
 gUJ
-jlH
+bRu
 rKx
-jlH
-jlH
+bRu
+bRu
 gVa
-jlH
-jlH
-jlH
+bRu
+bRu
+bRu
 nwj
 rfs
 lDn
@@ -30393,12 +30415,12 @@ hIH
 hIH
 hIH
 hIH
-tqF
-iiE
-iiE
-iiE
-qDP
-qDP
+jlH
+utA
+utA
+utA
+uiA
+uiA
 bOp
 xZI
 xZI
@@ -30650,7 +30672,7 @@ hIH
 hIH
 hIH
 hIH
-bRu
+jYO
 hIH
 hIH
 hIH
@@ -30907,7 +30929,7 @@ hIH
 hIH
 hIH
 hIH
-bRu
+jYO
 hIH
 hIH
 hIH
@@ -31164,7 +31186,7 @@ hIH
 hIH
 hIH
 hIH
-bRu
+jYO
 hIH
 hIH
 hIH
@@ -31421,7 +31443,7 @@ lam
 lam
 lam
 hIH
-bRu
+jYO
 hIH
 hIH
 hIH
@@ -31678,7 +31700,7 @@ xRT
 xRT
 lam
 lam
-bRu
+jYO
 hIH
 hIH
 hIH
@@ -31935,7 +31957,7 @@ xRT
 xRT
 rpB
 bqv
-vXa
+qfC
 hIH
 hIH
 hIH
