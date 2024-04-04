@@ -213,7 +213,6 @@
 	if(!is_sleeping)
 		return
 	revive() //Encouragement to not delay eating, only way for 939 to heal to full HP without constantly stopping to maul corpses.
-	playsound(src, 'sounds/mecha/lowpower.ogg', 75, FALSE, 4)
 	visible_message(
 		SPAN_DANGER("[src] wakes up, shaking dust and blood from its form."),
 		SPAN_NOTICE("You wake up."))
