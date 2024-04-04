@@ -19,7 +19,6 @@
 		icon_state = "intent_help"
 
 /datum/hud/scp939/FinalizeInstantiation() //uses SCP939 hud as placeholders
-
 	src.adding = list()
 	src.other = list()
 
@@ -35,10 +34,10 @@
 	mymob.client.screen = list(mymob.healths)
 	mymob.client.screen += src.adding + src.other
 	var/mob/living/H = mymob
-	H.fov = new /obj/screen/fov/939()
+	H.fov = new /obj/screen/fov/scp939()
 	hud_elements |= H.fov
 
-	H.fov_mask = new /obj/screen/fov_mask/939()
+	H.fov_mask = new /obj/screen/fov_mask/scp939()
 	hud_elements |= H.fov_mask
 
 /obj/item/natural_weapon/scp939
@@ -82,6 +81,7 @@
 	see_in_dark = 7
 	var/obj/screen/fov/fov = null //Copied from humans
 	var/obj/screen/fov_mask/fov_mask
+	var/usefov = 1
 
 	universal_speak = 1	// 939 can understand all languages
 	speak_emote = list("growls", "shouts", "screams", "says", "whispers")

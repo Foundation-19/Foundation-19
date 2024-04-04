@@ -403,14 +403,14 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	plane = HIDDEN_PLANE
 
-/obj/screen/fov/939
+/obj/screen/fov/scp939
 	icon = 'icons/mob/hide.dmi'
 	icon_state = "939"
 	screen_loc = "1,1"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	plane = VISION_CONE_PLANE
 
-/obj/screen/fov_mask/939
+/obj/screen/fov_mask/scp939
 	icon = 'icons/mob/hide.dmi'
 	icon_state = "939_mask"
 	screen_loc = "1,1"
