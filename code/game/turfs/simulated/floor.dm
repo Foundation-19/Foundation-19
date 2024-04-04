@@ -26,6 +26,7 @@
 	var/lava = 0
 
 	height = -FLUID_SHALLOW / 2
+	is_outside = OUTSIDE_AREA
 
 /turf/simulated/floor/is_plating()
 	return !flooring
