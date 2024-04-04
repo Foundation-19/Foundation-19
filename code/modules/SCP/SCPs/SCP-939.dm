@@ -141,7 +141,7 @@
 	var/spawn_area
 	var/door_cooldown
 
-	var/effect_cooldown = 15 SECONDS //ditto
+	var/message_cooldown = 25 SECONDS
 	var/effect_cooldown_counter //keeps track of 939 'breathing' cd
 	var/is_sleeping = FALSE
 	hud_type = /datum/hud/scp939
@@ -250,9 +250,8 @@
 
 /mob/living/simple_animal/hostile/scp939/Life() //call this here specifically so it only runs on alive instances
 	. = ..()
-	if(((world.time - effect_cooldown_counter) > effect_cooldown))
-		SCP.meme_comp.check_viewers()
-		SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
+	SCP.meme_comp.check_viewers()
+	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
 	if(src.client) //Will entirely stop nutrition loss and regeneration if you refuse to comply and eat.
 		if(istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses and goats around me to breach
 			for(var/mob/living/L in dview(7, src))
@@ -260,49 +259,39 @@
 					return FALSE
 				if(istype(L, /mob/living/carbon/human/monkey))
 					return FALSE
-				if(L.stat)
-					return FALSE
 	if(nutrition >= 1 && src.client)
 		if(health <= maxHealth)
 			var/regen_coeff = (-round(maxHealth * regeneration_speed))
 			adjustBruteLoss(regen_coeff)
-			AdjustNutrition(-regen_coeff)
+			AdjustNutrition(regen_coeff)
 	if(nutrition <= 15) // Starvation.
 		adjustBruteLoss(maxHealth * starvation_damage)
 	if(nutrition >= 1)
 		AdjustNutrition(-nutriloss)
 
 /mob/living/simple_animal/hostile/scp939/proc/memetic_effect(mob/living/carbon/human/H)
-	for(var/obj/item/clothing/C in list(H.wear_mask, H.head))
-		if(C && (C.body_parts_covered & FACE) && (C.item_flags & ITEM_FLAG_THICKMATERIAL))
-			return FALSE //You can't breathe in the amnestics gas if you're wearing a gasmask or hazmat, sorry bud.
 	var/obj/item/organ/internal/stomach/stomach_organ = H.internal_organs_by_name[BP_STOMACH]
-	if(!H || H.stat == DEAD) //the dead don't breathe
-		return
-	else if(((world.time - effect_cooldown_counter) > effect_cooldown) || abs((world.time - effect_cooldown_counter) - effect_cooldown) < 0.1 SECONDS) //Last part is so that this can run for all affected humans without worrying about cooldown
-		if(prob(60))
+	if(!(H.head && (H.head.body_parts_covered & FACE) || H.wear_mask))
+		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
+			H.humanStageHandler.setStage("939_message", world.time)
+			H.visible_message(SPAN_NOTICE("[H] looks at the [name] and cries."))
+			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.24)
+		if(prob(60) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
+			H.humanStageHandler.setStage("939_message", world.time)
 			H.visible_message(SPAN_WARNING("[H] seems unfocused, [H.p_their()] eyes wandering towards \"[name]\", slavishly drooling..."))
-			to_chat(H, SPAN_WARNING("What a delightful scent... Where is my pack, again?"))
 			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.95) //Largest exposure per tick
-			return
-		else if(prob(50))
+		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
 			H.visible_message(SPAN_DANGER("[H] seems to resist something intangible, [H.p_their()] eyes widening briefly as [H.p_their()] nose twitches!"))
 			H.emote("sniff") //avoids exposure
 			to_chat(H, SPAN_WARNING("Your barely-protected nose picks up the scent of something sweet and alluring. You feel like a fly in honeyed water."))
-			return
-		else if(prob(30))
-			if(prob(50))
-				H.visible_message(SPAN_NOTICE("[H] doesn't seem to what they're doing, they stare at \"[name]\" and blink, not having known it was there..."))
-				playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
-				stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.24)
-				return
-			else
-				H.visible_message(SPAN_NOTICE("[H] looks at the \"[name]\" and cries."))
-				to_chat(H, SPAN_WARNING("You feel sad for reasons you can't quite remember."))
-				playsound(H, "sounds/voice/emotes/[gender2text(H.gender)]_cry[pick(list("1","2"))].ogg", 100)
-				stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.34)
-				return
-		effect_cooldown_counter = world.time
+			H.humanStageHandler.setStage("939_message", world.time)
+		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
+			H.visible_message(SPAN_NOTICE("[H] doesn't seem to what they're doing, they stare at \"[name]\" and blink, not having known it was there..."))
+			playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
+			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.24)
+			H.humanStageHandler.setStage("939_message", world.time)
+	else
+		H.visible_message(SPAN_NOTICE("[H] was protected by their helmet!"))
 
 /mob/living/simple_animal/hostile/scp939/UnarmedAttack(atom/A)
 	if(is_sleeping)
