@@ -4,8 +4,6 @@
 	r_hand = null
 	back = null
 
-	flags = OUTFIT_RESET_EQUIPMENT
-
 /decl/hierarchy/outfit/zombie/lczguard
 	name = "LCZ Guard"
 	uniform = /obj/item/clothing/under/rank/security/lcz
@@ -38,6 +36,7 @@
 	name = "Chaos Insurgency"
 	uniform = /obj/item/clothing/under/syndicate/ci
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
+	belt = /obj/item/storage/belt/ci
 	id_type = null
 	head = /obj/item/clothing/head/helmet/scp/chaos
 	mask = /obj/item/clothing/mask/gas/ci
@@ -80,6 +79,8 @@
 /decl/hierarchy/outfit/zombie/engineering
 	name = "Engineer"
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
+	suit = /obj/item/clothing/suit/storage/hazardvest
+	head = /obj/item/clothing/head/hardhat/orange
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3eng
 	belt = /obj/item/storage/belt/utility/full
