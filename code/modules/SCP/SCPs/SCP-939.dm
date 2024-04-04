@@ -223,8 +223,9 @@
 
 /mob/living/simple_animal/hostile/scp939/Life() //call this here specifically so it only runs on alive instances
 	. = ..()
-	SCP.meme_comp.check_viewers()
-	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
+	if(((world.time - effect_cooldown_counter) > effect_cooldown))
+		SCP.meme_comp.check_viewers()
+		SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
 	if(src.client) //Will entirely stop nutrition loss and regeneration if you refuse to comply and eat.
 		if(istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses and goats around me to breach
 			for(var/mob/living/L in dview(7, src))
@@ -287,7 +288,7 @@
 	if(isliving(A))
 		var/mob/living/L = A
 		if(ishuman(L))
-			var/mob/living/carbon/human/RIP
+			var/mob/living/carbon/human/RIP = L
 			var/obj/item/organ/internal/stomach/stomach_organ = RIP.internal_organs_by_name[BP_STOMACH]
 			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.09) //Small exposure per bite.
 		// Brute loss part is mainly for humans
