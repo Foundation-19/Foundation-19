@@ -288,7 +288,8 @@
 	if(isliving(A))
 		var/mob/living/L = A
 		if(ishuman(L))
-			var/obj/item/organ/internal/stomach/stomach_organ = L.internal_organs_by_name[BP_STOMACH]
+			var/mob/living/carbon/human/RIP
+			var/obj/item/organ/internal/stomach/stomach_organ = RIP.internal_organs_by_name[BP_STOMACH]
 			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.09) //Small exposure per bite.
 		// Brute loss part is mainly for humans
 		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2))))
