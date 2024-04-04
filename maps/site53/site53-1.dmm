@@ -313,19 +313,6 @@
 /obj/item/card/id/dassignment/dmining,
 /obj/item/card/id/dassignment/dmining,
 /obj/item/card/id/dassignment/dmining,
-/obj/item/card/id/dassignment/dbotany,
-/obj/item/card/id/dassignment/dbotany,
-/obj/item/card/id/dassignment/dbotany,
-/obj/item/card/id/dassignment/dbotany,
-/obj/item/card/id/dassignment/dbotany,
-/obj/item/card/id/dassignment/djanitorial,
-/obj/item/card/id/dassignment/djanitorial,
-/obj/item/card/id/dassignment/djanitorial,
-/obj/item/card/id/dassignment/djanitorial,
-/obj/item/card/id/dassignment/djanitorial,
-/obj/item/card/id/dassignment/dkitchen,
-/obj/item/card/id/dassignment/dkitchen,
-/obj/item/card/id/dassignment/dkitchen,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "avq" = (
@@ -484,6 +471,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/fire,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "aLo" = (
@@ -2781,6 +2769,14 @@
 /obj/item/trash/cigbutt,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/mine/unexplored)
+"egU" = (
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/cryopod,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cryo)
 "ehK" = (
 /obj/effect/decal/cleanable/blood/writing{
 	desc = "DEBT OF LIFE PAID TO THE LION OF DEATH";
@@ -5036,6 +5032,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"htH" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignment)
 "hvF" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "D-Cells Checkpoint";
@@ -5572,20 +5575,15 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lhcz/scp049containment)
 "inX" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/table/reinforced,
-/obj/item/card/id/dassignment/dmedical,
-/obj/item/card/id/dassignment/dmedical,
-/obj/item/card/id/dassignment/dmedical,
-/obj/item/card/id/dassignment/dmedical,
-/obj/item/card/id/dassignment/dmedical,
-/obj/item/card/id/dassignment/dmedical,
-/obj/item/card/id/dassignment/dmedical,
-/obj/item/card/id/dassignment/dmedical,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/assignment)
+/area/site53/llcz/dclass/cryo)
 "ipG" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -5845,6 +5843,11 @@
 "iKY" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
+	},
+/obj/structure/sign/warning/detailed{
+	pixel_y = 25;
+	name = "TERMINATION LINE";
+	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance unless given permission by tests, or security staff.'"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -6866,6 +6869,9 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "kkR" = (
@@ -7438,6 +7444,11 @@
 "lhP" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
+	},
+/obj/structure/sign/warning/detailed{
+	pixel_y = 25;
+	name = "TERMINATION LINE";
+	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance unless given permission by tests, or security staff.'"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -10895,6 +10906,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/fire{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "qzL" = (
@@ -11435,7 +11449,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
-/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "rdu" = (
@@ -16566,18 +16579,18 @@ lUX
 xSn
 tSD
 eJG
-rSC
+htH
 sos
-inX
 tZy
 tAY
 xTs
+rSC
 beu
 sos
-inX
 tZy
 tAY
 xTs
+htH
 rdt
 iSy
 tcK
@@ -22017,7 +22030,7 @@ ycT
 afv
 nJA
 nJA
-nJA
+inX
 nJA
 afv
 lam
@@ -23045,7 +23058,7 @@ ycT
 afv
 liC
 liC
-liC
+egU
 liC
 afv
 lam

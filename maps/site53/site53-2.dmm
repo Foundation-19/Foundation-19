@@ -11612,22 +11612,6 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
-"aGo" = (
-/obj/effect/floor_decal/industrial/fire{
-	dir = 8
-	},
-/obj/structure/sign/warning/detailed{
-	pixel_y = 25;
-	name = "TERMINATION LINE";
-	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance unless given permission by tests, or security staff.'"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "aGq" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -12661,6 +12645,7 @@
 /obj/structure/mopbucket,
 /obj/item/mop,
 /obj/item/reagent_containers/bucket,
+/obj/random/soap,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aJv" = (
@@ -20810,22 +20795,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
-"bxM" = (
-/obj/effect/floor_decal/industrial/fire{
-	dir = 4
-	},
-/obj/structure/sign/warning/detailed{
-	pixel_y = 25;
-	name = "TERMINATION LINE";
-	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance unless given permission by tests, or security staff.'"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "bxW" = (
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 8
@@ -23583,17 +23552,6 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
-"dqY" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/fire{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "dre" = (
 /obj/structure/ladder,
 /turf/simulated/floor,
@@ -24043,13 +24001,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/hallways)
-"dDx" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/fire{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "dDB" = (
 /turf/simulated/floor/carpet/green,
 /area/chapel)
@@ -25714,6 +25665,7 @@
 /obj/machinery/camera/network/scp173{
 	c_tag = "SCP-173 Cleaning Supplies"
 	},
+/obj/random/soap,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "eKA" = (
@@ -33536,6 +33488,9 @@
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/item/device/binoculars,
+/obj/item/device/binoculars,
+/obj/item/device/binoculars,
+/obj/item/device/binoculars,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
 "kag" = (
@@ -34076,9 +34031,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/medicalpost)
 "kqw" = (
-/obj/machinery/floodlight{
-	dir = 1
-	},
+/obj/machinery/floodlight,
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/machinery/camera/network/scp173{
@@ -38368,8 +38321,7 @@
 "mZX" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/vending/medical{
-	name = "D-Block NanoMed Plus";
-	req_access = list("ACCESS_DCLASS_MEDICAL");
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
 	dir = 8
 	},
 /obj/machinery/light{
@@ -46120,17 +46072,6 @@
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
-"rZe" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/fire{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "rZq" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -48212,13 +48153,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"tkb" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/fire{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "tkI" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
@@ -48361,7 +48295,7 @@
 "tpt" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "CDCZ Medical Clinic";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1","ACCESS_DCLASS_MEDICAL"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/machinery/door/blast/shutters/open{
 	icon_state = "shutter0";
@@ -50911,14 +50845,12 @@
 /turf/simulated/floor/blackgrid,
 /area/site53/science/aiccore)
 "vlm" = (
-/obj/machinery/floodlight{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/floodlight,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "vlr" = (
@@ -51018,13 +50950,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"vos" = (
-/obj/effect/floor_decal/industrial/fire{
-	dir = 4
-	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "vpo" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -51929,14 +51854,6 @@
 "vTF" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
-"vTS" = (
-/obj/machinery/door/blast/regular{
-	name = "CDCZ Checkpoint North Blast Door";
-	id_tag = "CDCZNorth"
-	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor,
-/area/site53/llcz/dclass/checkpoint)
 "vVi" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -52423,14 +52340,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp012)
 "wnX" = (
-/obj/machinery/floodlight{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/machinery/status_display{
 	pixel_y = 32
 	},
+/obj/machinery/floodlight,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "woc" = (
@@ -53836,11 +53751,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
 "xjQ" = (
-/obj/machinery/door/blast/regular{
-	name = "CDCZ Checkpoint South Blast Door";
-	id_tag = "CDCZSouth"
-	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZEntWindows";
+	name = "CDCZ Checkpoint Window Shutters"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
 "xlc" = (
@@ -58144,8 +58059,8 @@ kwD
 kwD
 kwD
 kwD
-bxM
-vos
+bhq
+vnW
 uis
 uis
 uis
@@ -58401,8 +58316,8 @@ uis
 uis
 uis
 dlk
-dqY
-tkb
+bhq
+vnW
 uis
 uis
 uis
@@ -59429,8 +59344,8 @@ uis
 xcT
 xcT
 sYU
-rZe
-dDx
+bhq
+vnW
 uis
 uis
 uis
@@ -59686,8 +59601,8 @@ gdH
 gdH
 gdH
 gdH
-aGo
-tkb
+bhq
+vnW
 uis
 uis
 uis
@@ -60945,7 +60860,7 @@ aGM
 jVk
 aGM
 dzs
-vTS
+xjQ
 vWZ
 nrO
 jFl
@@ -61459,7 +61374,7 @@ aGM
 aWJ
 aGM
 tTl
-vTS
+xjQ
 qNL
 kKn
 kKn
