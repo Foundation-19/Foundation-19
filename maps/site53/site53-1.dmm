@@ -177,12 +177,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"amk" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/mineral/random{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/space)
 "amA" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1307,8 +1301,7 @@
 /area/site53/uhcz/scp8containment)
 "bRu" = (
 /obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
+	dir = 4
 	},
 /turf/unsimulated/mineral,
 /area/space)
@@ -2227,12 +2220,6 @@
 "dmE" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"dmT" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "dnj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5524,6 +5511,10 @@
 /obj/machinery/camera/network/hcz,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
+"iiE" = (
+/obj/structure/disposalpipe/segment,
+/turf/unsimulated/mineral,
+/area/space)
 "ijv" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -8551,13 +8542,6 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/llczmaint)
-"mPW" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "mQk" = (
 /obj/structure/railing/mapped,
 /obj/machinery/button/blast_door{
@@ -11061,6 +11045,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"qDP" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/space)
 "qEO" = (
 /obj/effect/overlay/coconut,
 /turf/simulated/floor/beach/sand,
@@ -12786,6 +12776,13 @@
 "tqa" = (
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
+"tqF" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "tsZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -14473,6 +14470,13 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp895)
+"vXa" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "vXg" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "CDCZ Luxury Bedroom"
@@ -15785,10 +15789,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"xWi" = (
-/obj/structure/disposalpipe/segment,
-/turf/unsimulated/mineral,
-/area/space)
 "xWY" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/orange/diagonal,
@@ -30393,12 +30393,12 @@ hIH
 hIH
 hIH
 hIH
-bRu
-xWi
-xWi
-xWi
-amk
-amk
+tqF
+iiE
+iiE
+iiE
+qDP
+qDP
 bOp
 xZI
 xZI
@@ -30650,7 +30650,7 @@ hIH
 hIH
 hIH
 hIH
-dmT
+bRu
 hIH
 hIH
 hIH
@@ -30907,7 +30907,7 @@ hIH
 hIH
 hIH
 hIH
-dmT
+bRu
 hIH
 hIH
 hIH
@@ -31164,7 +31164,7 @@ hIH
 hIH
 hIH
 hIH
-dmT
+bRu
 hIH
 hIH
 hIH
@@ -31421,7 +31421,7 @@ lam
 lam
 lam
 hIH
-dmT
+bRu
 hIH
 hIH
 hIH
@@ -31678,7 +31678,7 @@ xRT
 xRT
 lam
 lam
-dmT
+bRu
 hIH
 hIH
 hIH
@@ -31935,7 +31935,7 @@ xRT
 xRT
 rpB
 bqv
-mPW
+vXa
 hIH
 hIH
 hIH

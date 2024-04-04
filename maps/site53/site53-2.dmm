@@ -12733,7 +12733,7 @@
 "aJP" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Technical Closet";
-	req_access = list("ACCESS_ENGINEERING_LEVEL1")
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "cdczeng";
@@ -22995,6 +22995,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
+"cVs" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/cellbubble)
 "cVu" = (
 /obj/structure/sign/scp/keter_scp{
 	pixel_y = 32
@@ -23388,7 +23395,7 @@
 "dia" = (
 /obj/machinery/vending/engineering{
 	dir = 4;
-	req_access = list()
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -25136,7 +25143,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/engineering_electrical,
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
+	},
 /obj/item/device/lightreplacer,
 /obj/item/device/lightreplacer,
 /obj/item/device/lightreplacer,
@@ -41281,7 +41290,8 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "oPA" = (
 /obj/machinery/vending/engivend{
-	dir = 8
+	dir = 8;
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -43108,7 +43118,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "cdczeng";
 	name = "CDCZ Technical Closet Emergency Shutters Control";
-	pixel_y = 25
+	pixel_y = 25;
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
 	},
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/primaryhallway)
@@ -44801,13 +44812,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp457containment)
-"rhl" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/landmark{
-	name = "JoinLateCyborg"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/primaryhallway)
 "rhp" = (
 /obj/machinery/firealarm{
 	name = "emergency alarm";
@@ -45704,13 +45708,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/hallways)
-"rLp" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/landmark{
-	name = "JoinLateCyborg"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/cellbubble)
 "rLz" = (
 /obj/machinery/papershredder,
 /obj/machinery/camera/network/entrance{
@@ -45935,7 +45932,7 @@
 "rUg" = (
 /obj/machinery/vending/robotics{
 	dir = 8;
-	req_access = list()
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -53111,6 +53108,13 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106observ)
+"wNi" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/primaryhallway)
 "wNk" = (
 /obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
@@ -55146,7 +55150,8 @@
 /area/site53/ulcz/hallways)
 "yhn" = (
 /obj/machinery/vending/tool{
-	dir = 4
+	dir = 4;
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -61434,7 +61439,7 @@ iid
 jBt
 hIm
 ktV
-rhl
+wNi
 xse
 uKT
 uis
@@ -62702,7 +62707,7 @@ bKM
 eKA
 eeW
 qVK
-rLp
+cVs
 xaA
 eKA
 mSV
