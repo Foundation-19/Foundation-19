@@ -1,12 +1,12 @@
 // List and procs for caching state machine instances.
 var/global/list/state_machines = list()
 
-/proc/get_state_machine(var/datum/holder, var/base_type)
+/proc/get_state_machine(datum/holder, base_type)
 	if(istype(holder) && base_type && holder.has_state_machine)
 		var/list/machines = global.state_machines["\ref[holder]"]
 		return islist(machines) && machines[base_type]
 
-/proc/add_state_machine(var/datum/holder, var/base_type, var/fsm_type)
+/proc/add_state_machine(datum/holder, base_type, fsm_type)
 	if(istype(holder) && base_type)
 		var/holder_ref = "\ref[holder]"
 		var/list/machines = global.state_machines[holder_ref]
@@ -21,7 +21,7 @@ var/global/list/state_machines = list()
 			holder.has_state_machine = TRUE
 			return machine
 
-/proc/remove_state_machine(var/datum/holder, var/base_type)
+/proc/remove_state_machine(datum/holder, base_type)
 	if(istype(holder) && base_type && holder.has_state_machine)
 		var/holder_ref = "\ref[holder]"
 		var/list/machines = global.state_machines[holder_ref]
