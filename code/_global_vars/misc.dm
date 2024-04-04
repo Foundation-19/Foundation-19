@@ -1,3 +1,6 @@
+// Defined here due to being used immediately below.
+#define GET_DECL(D) (ispath(D, /decl) ? (decls_repository.fetched_decls[D] || decls_repository.get_decl(D)) : null)
+
 GLOBAL_LIST_EMPTY(all_observable_events)
 
 // True if net rebuild will be called manually after an event.

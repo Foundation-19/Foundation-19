@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(current_mob_ambience)
 
 // 'cooldown' in this context refers to weather effects like hail damage or being shown cosmetic messages.
 /obj/abstract/weather_system/proc/set_cooldown(var/mob/living/M, var/delay = 5 SECONDS)
-	var/mobref = WEAKREF(M)
+	var/mobref = weakref(M)
 	if(!(mobref in mobs_on_cooldown))
 		mobs_on_cooldown[mobref] = TRUE
 		addtimer(CALLBACK(src, PROC_REF(clear_cooldown), mobref), delay)

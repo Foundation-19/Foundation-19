@@ -286,7 +286,7 @@
 			GLOB.current_mob_ambience -= mob_ref
 		else
 			return
-/* Later TODO:
+/*
 		// Push sound to client. Pipe dream TODO: crossfade between the new and old weather ambience.
 		sound_to(src, sound(null, repeat = 0, wait = 0, volume = 0, channel = sound_channels.weather_channel))
 		if(send_sound)

@@ -22,7 +22,7 @@
 			mob_shown_wind.Cut()
 
 /obj/abstract/weather_system/proc/show_wind(var/mob/M, var/force = FALSE)
-	var/mob_ref = WEAKREF(M)
+	var/mob_ref = weakref(M)
 	if(mob_shown_wind[mob_ref] && !force)
 		return FALSE
 	mob_shown_wind[mob_ref] = TRUE
