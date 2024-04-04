@@ -36,13 +36,13 @@ var/global/repository/decls/decls_repository = new
 		if(decl_uid && (!TYPE_IS_ABSTRACT(decl) || (initial(decl.decl_flags) & DECL_FLAG_ALLOW_ABSTRACT_INIT)))
 			fetched_decl_ids[decl_uid] = decl
 
-/repository/decls/proc/get_decl_by_id(var/decl_id, var/validate_decl_type = TRUE)
+/repository/decls/proc/get_decl_by_id(decl_id, validate_decl_type = TRUE)
 	RETURN_TYPE(/decl)
 	. = get_decl(fetched_decl_ids[decl_id], validate_decl_type)
 
 // This proc and get_decl_by_id_or_var() are being added solely to grandfather in decls saved to player saves under name
 // rather than UID. They should be considered deprecated for this purpose - uid and get_decl_by_id() should be used instead.
-/repository/decls/proc/get_decl_by_var(var/decl_value, var/decl_prototype, var/check_var = "name")
+/repository/decls/proc/get_decl_by_var(decl_value, decl_prototype, check_var = "name")
 	var/list/all_decls = get_decls_of_type(decl_prototype)
 	var/decl/prototype = all_decls[all_decls[1]] // Can't just grab the prototype as it may be abstract
 	if(!(check_var in prototype.vars))
@@ -52,14 +52,14 @@ var/global/repository/decls/decls_repository = new
 		if(decl.vars[check_var] == decl_value)
 			return decl
 
-/repository/decls/proc/get_decl_by_id_or_var(var/decl_id, var/decl_prototype, var/check_var = "name")
+/repository/decls/proc/get_decl_by_id_or_var(decl_id, decl_prototype, check_var = "name")
 	RETURN_TYPE(/decl)
 	return get_decl_by_id(decl_id, validate_decl_type = FALSE) || get_decl_by_var(decl_id, decl_prototype, check_var)
 
 /repository/decls/proc/get_decl_path_by_id(decl_id)
 	. = fetched_decl_ids[decl_id]
 
-/repository/decls/proc/get_decl(var/decl/decl_type, var/validate_decl_type = TRUE)
+/repository/decls/proc/get_decl(decl/decl_type, validate_decl_type = TRUE)
 
 	RETURN_TYPE(/decl)
 
@@ -84,14 +84,14 @@ var/global/repository/decls/decls_repository = new
 					fetched_decls -= decl_type
 				crash_with("Invalid return hint to [decl_type]/Initialize(): [init_result || "NULL"]")
 
-/repository/decls/proc/get_decls(var/list/decl_types)
+/repository/decls/proc/get_decls(list/decl_types)
 	. = list()
 	for(var/decl_type in decl_types)
 		var/decl = get_decl(decl_type)
 		if(decl)
 			.[decl_type] = decl
 
-/repository/decls/proc/get_decl_paths_of_type(var/decl_prototype)
+/repository/decls/proc/get_decl_paths_of_type(decl_prototype)
 	. = fetched_decl_paths_by_type[decl_prototype]
 	if(!.)
 		. = list()
@@ -99,7 +99,7 @@ var/global/repository/decls/decls_repository = new
 			. += decl_path
 		fetched_decl_paths_by_type[decl_prototype] = .
 
-/repository/decls/proc/get_decl_paths_of_subtype(var/decl_prototype)
+/repository/decls/proc/get_decl_paths_of_subtype(decl_prototype)
 	. = fetched_decl_paths_by_subtype[decl_prototype]
 	if(!.)
 		. = list()
@@ -107,20 +107,20 @@ var/global/repository/decls/decls_repository = new
 			. += decl_path
 		fetched_decl_paths_by_subtype[decl_prototype] = .
 
-/repository/decls/proc/get_decls_unassociated(var/list/decl_types)
+/repository/decls/proc/get_decls_unassociated(list/decl_types)
 	. = list()
 	for(var/decl_type in decl_types)
 		var/decl = get_decl(decl_type)
 		if(decl)
 			. += decl
 
-/repository/decls/proc/get_decls_of_type(var/decl_prototype)
+/repository/decls/proc/get_decls_of_type(decl_prototype)
 	. = fetched_decl_types[decl_prototype]
 	if(!.)
 		. = get_decls(typesof(decl_prototype))
 		fetched_decl_types[decl_prototype] = .
 
-/repository/decls/proc/get_decls_of_subtype(var/decl_prototype)
+/repository/decls/proc/get_decls_of_subtype(decl_prototype)
 	. = fetched_decl_subtypes[decl_prototype]
 	if(!.)
 		. = get_decls(subtypesof(decl_prototype))
