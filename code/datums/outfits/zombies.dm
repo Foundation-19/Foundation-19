@@ -3,6 +3,9 @@
 	l_hand = null
 	r_hand = null
 	back = null
+	backpack_contents = null
+
+	flags = OUTFIT_RESET_EQUIPMENT
 
 /decl/hierarchy/outfit/zombie/lczguard
 	name = "LCZ Guard"
