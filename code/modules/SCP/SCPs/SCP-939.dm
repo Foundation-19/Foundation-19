@@ -140,7 +140,7 @@
 	var/spawn_area
 	var/door_cooldown
 
-	var/effect_cooldown = 5 SECONDS //ditto
+	var/effect_cooldown = 15 SECONDS //ditto
 	var/effect_cooldown_counter //keeps track of 939 'breathing' cd
 	var/is_sleeping = FALSE
 	hud_type = /datum/hud/scp939
@@ -257,20 +257,24 @@
 			H.visible_message(SPAN_WARNING("[H] seems unfocused, [H.p_their()] eyes wandering towards \"[name]\", slavishly drooling..."))
 			to_chat(H, SPAN_WARNING("What a delightful scent... Where is my pack, again?"))
 			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.95) //Largest exposure per tick
+			return
 		else if(prob(50))
 			H.visible_message(SPAN_DANGER("[H] seems to resist something intangible, [H.p_their()] eyes widening briefly as [H.p_their()] nose twitches!"))
 			H.emote("sniff") //avoids exposure
 			to_chat(H, SPAN_WARNING("Your barely-protected nose picks up the scent of something sweet and alluring. You feel like a fly in honeyed water."))
+			return
 		else if(prob(30))
 			if(prob(50))
 				H.visible_message(SPAN_NOTICE("[H] doesn't seem to what they're doing, they stare at \"[name]\" and blink, not having known it was there..."))
 				playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
 				stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.24)
+				return
 			else
 				H.visible_message(SPAN_NOTICE("[H] looks at the \"[name]\" and cries."))
 				to_chat(H, SPAN_WARNING("You feel sad for reasons you can't quite remember."))
 				playsound(H, "sounds/voice/emotes/[gender2text(H.gender)]_cry[pick(list("1","2"))].ogg", 100)
 				stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.34)
+				return
 		effect_cooldown_counter = world.time
 
 /mob/living/simple_animal/hostile/scp939/UnarmedAttack(atom/A)
@@ -283,6 +287,9 @@
 		return // Fuck you RealB - Especially because I can see 939 doing this too.
 	if(isliving(A))
 		var/mob/living/L = A
+		if(ishuman(L))
+			var/obj/item/organ/internal/stomach/stomach_organ = H.internal_organs_by_name[BP_STOMACH]
+			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.09) //Small exposure per bite.
 		// Brute loss part is mainly for humans
 		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2))))
 			var/nutr = L.mob_size
