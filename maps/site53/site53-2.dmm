@@ -1485,6 +1485,11 @@
 /obj/effect/shuttle_landmark/train/onsite,
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
+"aeM" = (
+/obj/machinery/chemical_dispenser,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "aeN" = (
 /obj/machinery/button/blast_door{
 	id_tag = "UHCZ Western Shutter Window";
@@ -23504,6 +23509,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"dnz" = (
+/obj/structure/bed/chair/office/comfy/blue{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "dnL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -31675,6 +31686,13 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/scp078)
+"iLF" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/beakers,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "iMD" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -32050,6 +32068,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"iWP" = (
+/obj/machinery/smartfridge/chemistry,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/r_titanium,
+/area/site53/llcz/dclass/medicalpost/storage)
 "iWR" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -32133,10 +32156,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "jag" = (
-/obj/structure/table/reinforced,
-/obj/item/taperoll/medical,
-/obj/item/taperoll/medical,
-/obj/item/reagent_containers/spray/cleaner,
+/obj/machinery/chem_master,
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -34699,6 +34719,11 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
+"kNY" = (
+/obj/structure/sign/chemistry,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/r_titanium,
+/area/site53/llcz/dclass/medicalpost/storage)
 "kOc" = (
 /obj/item/device/assembly/infra,
 /obj/item/device/assembly/infra,
@@ -40212,6 +40237,11 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp457containment)
+"oht" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "ohK" = (
 /obj/effect/floor_decal/corner/yellow/diagonal,
 /turf/simulated/floor/tiled,
@@ -50905,6 +50935,19 @@
 /obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"vmt" = (
+/obj/machinery/door/airlock/medical{
+	name = "CDCZ Chemistry";
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "CDCZMedLock";
+	name = "CDCZ Medical Clinic Lockdown Shutters"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/medicalpost/storage)
 "vmF" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -53841,6 +53884,11 @@
 /obj/item/rig/ce/equipped,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/containment_engineer)
+"xlA" = (
+/obj/structure/closet/secure_closet/chemical,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "xlZ" = (
 /obj/structure/sign/scp/euclid_scp{
 	pixel_y = 32
@@ -67355,7 +67403,7 @@ fAC
 bMi
 ini
 iVj
-jag
+lzz
 ffO
 ini
 wzt
@@ -67611,9 +67659,9 @@ aXD
 ins
 bMi
 ini
-ini
-ini
-ini
+kNY
+vmt
+iWP
 ini
 wzt
 mnW
@@ -67867,11 +67915,11 @@ xaC
 xaC
 xmw
 bMi
-azA
-azA
-azA
-azA
-azA
+ini
+aeM
+lzz
+oht
+ini
 wzt
 vIu
 vLg
@@ -68124,11 +68172,11 @@ aXz
 aXz
 aXz
 bMi
-azA
-azA
-azA
-azA
-azA
+ini
+jag
+dnz
+iLF
+ini
 wzt
 wzt
 sNd
@@ -68381,11 +68429,11 @@ big
 big
 big
 bMi
-azA
-azA
-azA
-azA
-azA
+ini
+xlA
+lzz
+oht
+ini
 azA
 wzt
 wzt
@@ -68638,11 +68686,11 @@ eAI
 big
 aGu
 bMi
-azA
-azA
-azA
-azA
-azA
+ini
+ini
+ini
+ini
+ini
 azA
 azA
 azA

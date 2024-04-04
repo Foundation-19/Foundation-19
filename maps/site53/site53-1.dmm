@@ -5006,6 +5006,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
+"hpV" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/civilian{
+	name = "Decommissioned CDCZ Ore Processing";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/mining/miningops)
 "hrk" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -14012,7 +14020,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
 "vtG" = (
-/obj/effect/paint_stripe/orange,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/mining/miningops)
@@ -31482,7 +31489,7 @@ gnV
 bSa
 bSa
 bSa
-vtG
+hpV
 vtG
 vtG
 vtG
