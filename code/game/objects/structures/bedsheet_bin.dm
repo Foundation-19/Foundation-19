@@ -26,7 +26,7 @@ LINEN BINS
 		if(do_after(user, 7 SECONDS, src, bonus_percentage = 25))
 			to_chat(user, SPAN_NOTICE("You cut \the [src] into pieces!"))
 			for(var/i in 1 to rand(2,5))
-				new /obj/item/reagent_containers/rag(get_turf(src))
+				new /obj/item/reagent_containers/glass/rag(get_turf(src))
 			qdel(src)
 		return
 	..()

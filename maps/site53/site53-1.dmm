@@ -23642,7 +23642,7 @@
 /obj/item/clothing/mask/surgical,
 /obj/structure/table/rack,
 /obj/item/defibrillator/loaded,
-/obj/item/reagent_containers/rag,
+/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
 "xtE" = (
