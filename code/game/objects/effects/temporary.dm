@@ -124,9 +124,9 @@
 	opacity = FALSE
 	anchored = TRUE
 	mouse_opacity = FALSE
-	layer = ABOVE_HUMAN_LAYER
+	layer = 6
 
-	duration = 1 SECONDS
+	duration = 1.2 SECONDS
 
 /obj/effect/temp_visual/bite/Initialize()
 	. = ..()
