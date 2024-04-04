@@ -18,7 +18,7 @@
 
 */
 /obj/item/clothing/ears/headphones/Destroy()
-	QDEL_NULL(jukebox)
+//	QDEL_NULL(jukebox)
 	. = ..()
 
 /*
