@@ -39,6 +39,7 @@
 #define SS_PRIORITY_ZCOPY          10  // Builds appearances for Z-Mimic.
 #define SS_PRIORITY_PROJECTILES    10  // Projectile processing!
 #define SS_PRIORITY_PING           10  // Pong!
+#define SS_PRIORITY_WEATHER			10 // Weather processing.
 
 // SS_BACKGROUND
 #define SS_PRIORITY_OBJECTS       100  // processing_objects processing.
