@@ -6552,6 +6552,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
+"jFj" = (
+/obj/structure/disposalpipe/junction/mirrored{
+	dir = 1
+	},
+/turf/simulated/wall/titanium,
+/area/site53/llcz/mining/miningops)
 "jFX" = (
 /obj/structure/sign/containers{
 	pixel_x = -32
@@ -8116,6 +8122,23 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mine/unexplored)
+"miU" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/westleft{
+	name = "Ore Delivery Chute";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mining/miningops)
 "mjY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -31247,7 +31270,7 @@ vvA
 gkX
 gIX
 sVS
-sVS
+miU
 okm
 cVt
 vaS
@@ -31504,7 +31527,7 @@ bSa
 bSa
 bSa
 xyc
-vtG
+jFj
 vtG
 vtG
 dvo
