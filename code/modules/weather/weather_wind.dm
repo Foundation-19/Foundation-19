@@ -21,8 +21,8 @@
 		if(old_strength != wind_strength)
 			mob_shown_wind.Cut()
 
-/obj/abstract/weather_system/proc/show_wind(mob/M, force = FALSE)
-	var/mob_ref = weakref(M)
+/obj/abstract/weather_system/proc/show_wind(var/mob/M, var/force = FALSE)
+	var/mob_ref = WEAKREF(M)
 	if(mob_shown_wind[mob_ref] && !force)
 		return FALSE
 	mob_shown_wind[mob_ref] = TRUE
