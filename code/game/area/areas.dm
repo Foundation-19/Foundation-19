@@ -39,7 +39,7 @@
 
 // Changes the area of T to A. Do not do this manually.
 // Area is expected to be a non-null instance.
-/proc/ChangeArea(var/turf/T, var/area/A)
+/proc/ChangeArea(turf/T, area/A)
 	if(!istype(A))
 		CRASH("Area change attempt failed: invalid area supplied.")
 	var/old_outside = T.is_outside()
@@ -56,7 +56,7 @@
 		A.Entered(AM, old_area)
 
 	for(var/obj/machinery/M in T)
-		M.shuttle_move(T)
+		M.area_changed(old_area, A) // They usually get moved events, but this is the one way an area can change without triggering one.
 
 	T.last_outside_check = OUTSIDE_UNCERTAIN
 	var/outside_changed = T.is_outside() != old_outside

@@ -1268,8 +1268,9 @@
 		goalcontainer.tgui_interact(src)
 	else
 		to_chat(src, SPAN_NOTICE("You have no goals in life!"))
-/*
+
 /mob/proc/get_weather_protection()
+/* Yes i know this is empty, i need to recode for 515, need help
 	for(var/obj/item/brolly in get_active_hand())
 		if(brolly.gives_weather_protection())
 			LAZYADD(., brolly)

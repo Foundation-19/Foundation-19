@@ -1,7 +1,23 @@
-#define IS_WEAKREF_OF(thing, potential_weakref) (isdatum(thing) && !isnull(potential_weakref) && thing.weak_reference == potential_weakref)
+#define IS_WEAKREF_OF(thing, potential_weakref) (isdatum(thing) && !isnull(potential_weakref) && thing.weakref == potential_weakref)
 
 /datum
 	var/weakref/weakref
+
+
+/// Creates a weakref to the given input.
+/// See /datum/weakref's documentation for more information.
+/proc/WEAKREF(datum/input)
+	if(istype(input) && !QDELETED(input))
+		if(isweakref(input))
+			return input
+
+		if(!input.weakref)
+			input.weakref = new /datum/weakref(input)
+		return input.weakref
+
+/datum/proc/create_weakref() //Forced creation for admin proccalls
+	return WEAKREF(src)
+
 
 //obtain a weak reference to a datum
 /proc/weakref(datum/D)
@@ -102,3 +118,45 @@
 
 /weakref/get_log_info_line()
 	return "[ref_name] ([ref_type]) ([ref]) (WEAKREF)"
+
+/datum/weakref
+	var/reference
+
+/datum/weakref/New(datum/thing)
+	reference = REF(thing)
+
+/datum/weakref/Destroy(force)
+	var/datum/target = resolve()
+	qdel(target)
+
+	if(!force)
+		return QDEL_HINT_LETMELIVE //Let BYOND autoGC thiswhen nothing is using it anymore.
+	target?.weakref = null
+	return ..()
+
+/**
+ * Retrieves the datum that this weakref is referencing.
+ *
+ * This will return `null` if the datum was deleted. This MUST be respected.
+ */
+/datum/weakref/proc/resolve()
+	var/datum/D = locate(reference)
+	return (!QDELETED(D) && D.weakref == src) ? D : null
+
+/**
+ * SERIOUSLY READ THE AUTODOC COMMENT FOR THIS PROC BEFORE EVEN THINKING ABOUT USING IT
+ *
+ * Like resolve, but doesn't care if the datum is being qdeleted but hasn't been deleted yet.
+ *
+ * The return value of this proc leaves hanging references if the datum is being qdeleted but hasn't been deleted yet.
+ *
+ * Do not do anything that would create a lasting reference to the return value, such as giving it a tag, putting it on the map,
+ * adding it to an atom's contents or vis_contents, giving it a key (if it's a mob), attaching it to an atom (if it's an image),
+ * or assigning it to a datum or list referenced somewhere other than a temporary value.
+ *
+ * Unless you're resolving a weakref to a datum in a COMSIG_QDELETING signal handler registered on that very same datum,
+ * just use resolve instead.
+ */
+/datum/weakref/proc/hard_resolve()
+	var/datum/D = locate(reference)
+	return (D?.weakref == src) ? D : null

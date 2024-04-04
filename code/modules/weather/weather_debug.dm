@@ -59,7 +59,7 @@
 		to_chat(usr, SPAN_WARNING("This z-level has no weather. Use <b>Initialize Weather For Level</b> if you want to create it."))
 		return
 
-	var/use_state = input(usr, "Which state do you wish to use?", "Target State") as null|anything in SSweather.weather_state(/decl/state/weather)
+	var/use_state = null
 	if(!use_state || weather != (T.weather || SSweather.weather_by_z["[T.z]"]))
 		return
 	weather.weather_system.set_state(use_state)

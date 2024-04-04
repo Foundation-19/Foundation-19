@@ -3,12 +3,11 @@
 	desc = "A perfect tool to protect you from the elements."
 	icon = 'icons/obj/item/umbrellas.dmi'
 	icon_state = "umbrella_yellow_closed"
-	contained_sprite = TRUE
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTIC = 1000)
 	force = 5
 	sharp = TRUE
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sounds/weapons/bladeslice.ogg'
 	attack_verb = list("pokes", "stabs")
 	/// If the umbrella is open or not.
 	var/is_open = FALSE
@@ -34,7 +33,7 @@
 			force = 1
 			sharp = FALSE
 			attack_verb = list("taps")
-			hitsound = /decl/sound_category/punchmiss_sound
+			hitsound = null
 		else
 			to_chat(user, SPAN_NOTICE("You close up \the [src]."))
 			item_state = "umbrella_[umbrella_color]_closed"
