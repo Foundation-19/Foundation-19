@@ -39,7 +39,6 @@
 
 	H.fov_mask = new /obj/screen/fov_mask/scp939()
 	hud_elements |= H.fov_mask
-	mymob.client.screen = list()
 	mymob.client.screen += hud_elements
 
 /obj/item/natural_weapon/scp939
@@ -74,7 +73,7 @@
 	if(ishuman(the_target) && (O.nutrition > O.hunting_threshold))
 		var/mob/living/carbon/human/H = the_target
 		if(H.stat != DEAD)
-			if((world.time - H.l_move_time) >= 10 SECONDS) //If the mob hasn't been moved/moved in the last 10 seconds
+			if((world.time - H.l_move_time) <= 10 SECONDS) //If the mob hasn't been moved/moved in the last 10 seconds
 				return TRUE //Valid target
 	return FALSE
 
