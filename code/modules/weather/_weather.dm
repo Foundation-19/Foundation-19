@@ -23,8 +23,8 @@
  */
 
 /obj/abstract/weather_system
-	plane             = PLANE_DEFAULT
-	layer             = ABOVE_ALL_MOB_LAYER
+	plane             = DEFAULT_PLANE
+	layer             = HIDING_MOB_LAYER
 	icon              = 'icons/effects/weather.dmi'
 	icon_state        = "blank"
 	invisibility      = 0
@@ -61,7 +61,6 @@
 	for(var/tz in affecting_zs)
 		for(var/turf/T as anything in block(locate(1, 1, tz), locate(world.maxx, world.maxy, tz)))
 			if(T.weather == src)
-				T.remove_vis_contents(vis_contents_additions)
 				T.weather = null
 	vis_contents_additions.Cut()
 	SSweather.unregister_weather_system(src)
@@ -91,8 +90,8 @@
 
 // Dummy object for lightning flash animation.
 /obj/abstract/lightning_overlay
-	plane             = PLANE_DEFAULT + 1
-	layer             = EFFECTS_ABOVE_LIGHTING_LAYER
+	plane             = DEFAULT_PLANE + 1
+	layer             = ABOVE_HUMAN_LAYER
 	icon              = 'icons/effects/weather.dmi'
 	icon_state        = "full"
 	alpha             = 0
