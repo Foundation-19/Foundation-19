@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(current_mob_ambience)
 	var/tmp/list/mob_shown_wind =     list() // Has this mob been sent the summary message about the current wind?
 
 // 'cooldown' in this context refers to weather effects like hail damage or being shown cosmetic messages.
-/obj/abstract/weather_system/proc/set_cooldown(var/mob/living/M, var/delay = 5 SECONDS)
+/obj/abstract/weather_system/proc/set_cooldown(mob/living/M, delay = 5 SECONDS)
 	var/mobref = WEAKREF(M)
 	if(!(mobref in mobs_on_cooldown))
 		mobs_on_cooldown[mobref] = TRUE
@@ -19,5 +19,5 @@ GLOBAL_LIST_EMPTY(current_mob_ambience)
 		return TRUE
 	return FALSE
 
-/obj/abstract/weather_system/proc/clear_cooldown(var/mobref)
+/obj/abstract/weather_system/proc/clear_cooldown(mobref)
 	mobs_on_cooldown -= mobref

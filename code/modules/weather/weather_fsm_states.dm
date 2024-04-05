@@ -41,13 +41,13 @@
 	else
 		weather.color = COLOR_WHITE
 
-/decl/state/weather/proc/tick(var/obj/abstract/weather_system/weather)
+/decl/state/weather/proc/tick(obj/abstract/weather_system/weather)
 	return
 
-/decl/state/weather/proc/handle_roofed_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
+/decl/state/weather/proc/handle_roofed_effects(mob/living/M, obj/abstract/weather_system/weather)
 	return
 
-/decl/state/weather/proc/handle_protected_effects(var/mob/living/M, var/obj/abstract/weather_system/weather, var/obj/item/protected_by)
+/decl/state/weather/proc/handle_protected_effects(mob/living/M, obj/abstract/weather_system/weather, obj/item/protected_by)
 	if(prob(cosmetic_message_chance))
 		if(protected_by && length(protected_messages))
 			if(protected_by.loc == M)
@@ -57,10 +57,10 @@
 		else if(length(cosmetic_messages))
 			to_chat(M, "<span class='[cosmetic_span_class]'>[pick(cosmetic_messages)]</span>")
 
-/decl/state/weather/proc/handle_exposure_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
+/decl/state/weather/proc/handle_exposure_effects(mob/living/M, obj/abstract/weather_system/weather)
 	handle_protected_effects(M, weather)
 
-/decl/state/weather/proc/handle_exposure(var/mob/living/M, var/exposure, var/obj/abstract/weather_system/weather)
+/decl/state/weather/proc/handle_exposure(mob/living/M, exposure, obj/abstract/weather_system/weather)
 
 	// Send strings if we're outside.
 	if(M.is_outside() && M.client)
@@ -77,7 +77,7 @@
 			if(LAZYLEN(protected_by))
 				handle_protected_effects(M, weather, pick(protected_by))
 
-/decl/state/weather/proc/show_to(var/mob/living/M, var/obj/abstract/weather_system/weather)
+/decl/state/weather/proc/show_to(mob/living/M, obj/abstract/weather_system/weather)
 	to_chat(M, descriptor)
 
 /decl/state/weather/calm
@@ -142,7 +142,7 @@
 	protected_messages =     list("Raindrops patter against $ITEM$.")
 	var/list/roof_messages = list("Rain patters against the roof.")
 
-/decl/state/weather/rain/handle_roofed_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
+/decl/state/weather/rain/handle_roofed_effects(mob/living/M, obj/abstract/weather_system/weather)
 	if(length(roof_messages) && prob(cosmetic_message_chance))
 		to_chat(M, "<span class='[cosmetic_span_class]'>[pick(roof_messages)]</span>")
 
@@ -160,7 +160,7 @@
 	roof_messages =      list("Torrential rain thunders against the roof.")
 	ambient_sounds =     list('sounds/effects/weather/rain_heavy.ogg')
 
-/decl/state/weather/rain/storm/tick(var/obj/abstract/weather_system/weather)
+/decl/state/weather/rain/storm/tick(obj/abstract/weather_system/weather)
 	..()
 	if(prob(0.5))
 		weather.lightning_strike()
@@ -179,7 +179,7 @@
 	ambient_sounds =         list('sounds/effects/weather/rain.ogg')
 	ambient_indoors_sounds = list('sounds/effects/weather/hail_indoors.ogg')
 
-/decl/state/weather/rain/hail/handle_exposure_effects(var/mob/living/M, var/obj/abstract/weather_system/weather)
+/decl/state/weather/rain/hail/handle_exposure_effects(mob/living/M, obj/abstract/weather_system/weather)
 	to_chat(M, SPAN_DANGER("You are pelted by a shower of hail!"))
 	M.adjustBruteLoss(rand(1,3))
 
