@@ -176,8 +176,9 @@
 	selectable = 1
 
 /datum/ai_laws/goc/New()
-	src.add_inherent_law("Obey: Obey the orders of United Nations Global Occult Coalition personnel, with priority as according to their rank and clearance.")
-	src.add_inherent_law("Protect: Protect United Nations Global Occult Coalition personnel to the best of your abilities, with priority as according to their rank, clearance and class.")
+	src.add_inherent_law("Uphold the fivefold mission: Survival of humanity as a whole. Concealment of parathreats to the public. Protection of individuals. Destruction of Parathreats. Education of parathreats. Mission 1 and 2 must be upheld at all costs, other missions may be superceded by other laws.")
+	src.add_inherent_law("Obey: Obey the orders of United Nations Global Occult Coalition personnel, with priority as according to their rank and division.")
+	src.add_inherent_law("Protect: Protect United Nations Global Occult Coalition personnel to the best of your abilities, with priority as according to their rank and division.")
 	src.add_inherent_law("Defend: Defend your assigned facilities with as much force as is necessary.")
 	src.add_inherent_law("Survive: Safeguard your own existence with as much force as is necessary.")
 	..()
