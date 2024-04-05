@@ -158,7 +158,7 @@
 
 			// If we've got the proper chems, we can heal no matter what
 			var/healing = owner.chem_effects[CE_BRAIN_REGEN] ? 1.6 : 0
-			healing += ((damage > 50) && owner.chem_effects[CE_STABLE]) ? 0.5 : 0
+			healing += ((damage > 40) && owner.chem_effects[CE_STABLE]) ? 0.5 : 0
 			// At good oxygenation levels, we passively autoheal as well.
 			if(blood_volume > (BLOOD_VOLUME_SAFE + 1))
 				healing += 1.05 * log(12, (blood_volume - BLOOD_VOLUME_SAFE))
