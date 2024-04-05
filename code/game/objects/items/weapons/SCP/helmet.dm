@@ -1,42 +1,42 @@
 /obj/item/clothing/head/helmet/scp/security
 	name = "\improper foundation security helmet"
-	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back."
+	desc = "A heavy non-descript helmet with built-in padding, and armor. It has a poly-carbonate yellow riot visor on it."
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
-	armor = list(melee = 60, bullet = 40, laser = 25, energy = 25, bomb = 30, bio = 30, rad = 10)
+	armor = list(melee = 50, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = "Toggle Visor"
 
 /obj/item/clothing/head/helmet/scp/security/medic
 	name = "medical security helmet"
-	desc = "A helmet with 'COMBAT MEDIC' printed on the back. Worn by Combat Medics. Durability lessened to cope with faster response."
+	desc = "A light non-descript helmet with built-in padding, and armor. It has a red cross on the front, and a red visor. Durability lessened to cope with faster response."
 	icon_state = "medichelm"
 	body_parts_covered = HEAD|EYES
-	armor = list(melee = 45, bullet = 30, laser = 35, energy = 45, bomb = 15, bio = 35, rad = 35)
+	armor = list(melee = 35, bullet = 40, laser = 40, energy = 45, bomb = 15, bio = 45, rad = 35)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/recontain
 	name = "response security helmet"
-	desc = "An extremely durable, and thickened helmet with 'RECONTAINMENT UNIT' printed on the back. Made with padding to cope with response, durability towards melee is lessened though."
+	desc = "A heavy non-descript helmet with extra built-in padding, and armor. The massive amount of armor makes the helmet look thicker, it has a cyan visor."
 	icon_state = "reconhelm"
 	body_parts_covered = HEAD|EYES
-	armor = list(melee = 35, bullet = 60, laser = 45, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = 35, bullet = 50, laser = 45, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/riot
 	name = "riot security helmet"
-	desc = "A helmet with 'RIOT CONTROL UNIT' printed on the back, it looks extremely durable towards melee, not much of anything else though."
+	desc = "A heavy non-descript helmet with a heavy durathread armor plating in the helmet, giving it a massive defense against melee. It has a poly-carbonate modernized white riot visor on it."
 	icon_state = "guardriothelm"
-	armor = list(melee = 80, bullet = 15, laser = 25, energy = 25, bomb = 50, bio = 25, rad = 15)
+	armor = list(melee = 70, bullet = 15, laser = 25, energy = 25, bomb = 50, bio = 25, rad = 15)
 
 /obj/item/clothing/head/helmet/scp/security/lczcom
 	name = "\improper Heavy-plated foundation security helmet"
-	desc = "A helmet with 'ZONE COMMANDER' printed on the back, with an added golden badge on the front of the helmet."
+	desc = "A heavy non-descript helmet with more built-in padding, and armor. The golden badge on the front of the helmet incidates the rank of 'Commander', looks important. It has a poly-carbonate yellow riot visor on it."
 	icon_state = "heavy-guard-helm"
 	armor = list(melee = 65, bullet = 45, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 
@@ -88,7 +88,7 @@
 	desc = "A russian type of helmet usually seen worn by modern russian military forces, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_helmet"
 	body_parts_covered = HEAD //face shield
-	armor = list(melee = 50, bullet = 83, laser = 50,energy = 25, bomb = 40, bio = 10, rad = 10)
+	armor = list(melee = 50, bullet = 65, laser = 50, energy = 25, bomb = 40, bio = 10, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 
@@ -96,13 +96,13 @@
 	name = "Heavy-plated Chaos Insurgency helmet"
 	desc = "A heavy russian type of helmet usually seen worn by modern russian military forces, this one has a face shield and is used by heavy soldiers, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_heavy_helmet"
-	armor = list(melee = 65, bullet = 90, laser = 50,energy = 35, bomb = 45, bio = 20, rad = 10)
+	armor = list(melee = 65, bullet = 85, laser = 50, energy = 35, bomb = 45, bio = 20, rad = 10)
 
 /obj/item/clothing/head/helmet/scp/chaos/officer
 	name = "Chaos Insurgency field cap"
-	desc = "A russian type of field cap used by mainly officers of the russian military forces, this one is colored tan and is used by the Chaos Insurgency."
+	desc = "A durable, unquestionably bulletproof russian type of field cap used by mainly officers of the russian military forces, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_officer"
-	armor = list(melee = 65, bullet = 90, laser = 25,energy = 15, bomb = 15, bio = 0, rad = 0)
+	armor = list(melee = 65, bullet = 60, laser = 25,energy = 15, bomb = 15, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/scp/donor
 	name = "\improper tactical helmet"

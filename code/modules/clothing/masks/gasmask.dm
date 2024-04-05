@@ -296,7 +296,7 @@
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
-		bullet = ARMOR_BALLISTIC_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
 		bio = ARMOR_BIO_STRONG,
 		rad = ARMOR_RAD_SMALL
 		)
