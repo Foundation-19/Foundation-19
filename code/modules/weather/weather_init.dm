@@ -1,5 +1,5 @@
 INITIALIZE_IMMEDIATE(/obj/abstract/weather_system)
-/obj/abstract/weather_system/Initialize(var/ml, var/target_z, var/initial_weather)
+/obj/abstract/weather_system/Initialize(ml, target_z, initial_weather)
 	SSweather.register_weather_system(src)
 
 	. = ..()
