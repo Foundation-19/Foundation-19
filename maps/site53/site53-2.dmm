@@ -26327,7 +26327,7 @@
 /obj/machinery/door/airlock/science{
 	name = "SCP-173 Janitorial Supplies"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp173)
 "fdK" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -33378,6 +33378,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"jPk" = (
+/obj/machinery/door/airlock/glass/security{
+	name = "CDCZ Assignments Post";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/primaryhallway)
 "jPr" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/barren,
@@ -57130,8 +57137,8 @@ azA
 azA
 azA
 azA
-azA
-azA
+kwD
+kwD
 vRO
 ogB
 ifT
@@ -57387,8 +57394,8 @@ azA
 azA
 azA
 azA
-azA
-azA
+kwD
+dhx
 vRO
 blD
 ifT
@@ -57644,8 +57651,8 @@ azA
 azA
 azA
 azA
-azA
-azA
+kwD
+xcT
 vRO
 jJA
 lXk
@@ -57901,8 +57908,8 @@ azA
 azA
 azA
 azA
-azA
-azA
+kwD
+xcT
 vRO
 wIY
 uer
@@ -58158,9 +58165,9 @@ azA
 azA
 azA
 azA
-azA
-azA
 kwD
+xcT
+jPk
 nsB
 cWG
 pbx
@@ -58415,8 +58422,8 @@ azA
 azA
 azA
 azA
-azA
-azA
+kwD
+kwD
 kwD
 sbn
 xcT

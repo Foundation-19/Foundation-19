@@ -850,7 +850,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	job_access_type = /datum/job/commsofficer
 	icon_state = "adminlvl4"
 	item_state = "Admin_ID"
-	class = CLASS_A
+	class = CLASS_B
 
 // MEDICAL CARDS
 
