@@ -73,10 +73,10 @@
 #define SS_INIT_GOALS           -7
 #define SS_INIT_LIGHTING        -8
 #define SS_INIT_ZCOPY           -9
-#define SS_INIT_WEATHER -9
-#define SS_INIT_HOLOMAP         -10
-#define SS_INIT_XENOARCH        -11
-#define SS_INIT_BAY_LEGACY      -12
+#define SS_INIT_WEATHER 		-10
+#define SS_INIT_HOLOMAP         -11
+#define SS_INIT_XENOARCH        -12
+#define SS_INIT_BAY_LEGACY      -13
 #define SS_INIT_TICKER          -20
 #define SS_INIT_AI              -21
 #define SS_INIT_AIFAST          -22
