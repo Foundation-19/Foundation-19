@@ -85,7 +85,7 @@
 /decl/hierarchy/outfit/zombie/juniorscientist
 	name = "Scientist Associate"
 	id_pda_assignment = "Scientist Associate"
-	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/rank/scientist_new/junior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl1
@@ -95,7 +95,7 @@
 /decl/hierarchy/outfit/zombie/scientist
 	name = "Scientist"
 	id_pda_assignment = "Scientist"
-	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/rank/scientist_new/junior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl2
@@ -152,7 +152,7 @@
 /decl/hierarchy/outfit/zombie/officeworker
 	name = "Office Worker"
 	id_pda_assignment = "Office Worker"
-	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/rank/officeworker
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/officeworker
 	l_ear = /obj/item/device/radio/headset/headset_service

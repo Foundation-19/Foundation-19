@@ -12,7 +12,7 @@
 
 /decl/hierarchy/outfit/job/science/juniorscientist
 	name = OUTFIT_JOB_NAME("Scientist Associate")
-	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/rank/scientist_new/junior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl1
@@ -21,7 +21,7 @@
 
 /decl/hierarchy/outfit/job/science/scientist
 	name = OUTFIT_JOB_NAME("Scientist")
-	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/rank/scientist_new/junior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/sciencelvl2

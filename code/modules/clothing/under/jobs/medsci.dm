@@ -54,6 +54,17 @@
 		)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
+/obj/item/clothing/under/rank/scientist_new/junior
+	name = "suit and tie"
+	desc = "A rather sterile looking suit and tie."
+	icon_state = "junscience"
+	item_state = "w_suit"
+	worn_state = "junscience"
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
 /obj/item/clothing/under/rank/chemist
 	desc = "It's made of a special fiber that gives special protection against biohazards. The striping on the suit denotes the wearer as a trained pharmacist."
 	name = "pharmacist's jumpsuit"

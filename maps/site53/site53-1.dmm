@@ -602,9 +602,9 @@
 /area/site53/llcz/hallways)
 "aWA" = (
 /obj/structure/table/rack,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/reagent_containers/spray/cleaner,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "aWG" = (
