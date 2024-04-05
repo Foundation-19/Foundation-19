@@ -1,8 +1,8 @@
 /obj/effect/temp_visual/item_pickup_ghost
 	duration = 0.2 SECONDS
 
-/obj/effect/temp_visual/item_pickup_ghost/Initialize(mapload, obj/item/picked_up)
-	. = ..()
+/obj/effect/temp_visual/item_pickup_ghost/Initialize(mapload, set_dir, obj/item/picked_up)
+	. =..()
 	appearance = picked_up.appearance
 
 /obj/effect/temp_visual/item_pickup_ghost/proc/animate_towards(atom/target)
