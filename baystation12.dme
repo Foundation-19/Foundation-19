@@ -282,6 +282,7 @@
 #include "code\controllers\subsystems\timer.dm"
 #include "code\controllers\subsystems\trade.dm"
 #include "code\controllers\subsystems\turf_fire.dm"
+#include "code\controllers\subsystems\vis_contents.dm"
 #include "code\controllers\subsystems\vote.dm"
 #include "code\controllers\subsystems\weather.dm"
 #include "code\controllers\subsystems\xenoarch.dm"

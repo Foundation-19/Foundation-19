@@ -2600,6 +2600,10 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
+"gz" = (
+/obj/abstract/weather_marker,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "gB" = (
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled/techfloor,
@@ -46047,7 +46051,7 @@ nE
 oG
 bO
 bO
-bO
+gz
 bO
 bO
 bO

@@ -24,6 +24,7 @@
 #define SS_PRIORITY_INPUT          20  // Input things.
 #define SS_PRIORITY_ALARM          20  // Alarm processing.
 #define SS_PRIORITY_EVENT          20  // Event processing and queue handling.
+#define SS_PRIORITY_VIS_CONTENTS   20  // Queued vis_contents updates.
 #define SS_PRIORITY_SHUTTLE        20  // Shuttle movement.
 #define SS_PRIORITY_CIRCUIT_COMP   20  // Processing circuit component do_work.
 #define SS_PRIORITY_TEMPERATURE    20  // Cooling and heating of atoms.
