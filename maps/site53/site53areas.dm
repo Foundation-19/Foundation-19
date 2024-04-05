@@ -177,6 +177,7 @@
 	name = "Surface"
 	requires_power = 0
 	dynamic_lighting = 0
+	is_outside = TRUE
 
 /area/site53/surface/surface/away/bar
 	name = "Away Bar"
