@@ -103,7 +103,7 @@
 	icon_state = "partylight-off"
 	item_state = "partylight-off"
 	var/activated = 0
-	var/strobe_effect = null
+	var/obj/effect/party_light/strobe_effect = null
 
 /obj/item/party_light/attack_self()
 	if (activated)
@@ -124,11 +124,10 @@
 
 	// Create the party light effect and place it on the turf of who/whatever has it.
 	var/turf/T = get_turf(src)
-	var/obj/effect/party_light/L = new(T)
-	strobe_effect = L
+	strobe_effect = new(T)
 
 	// Make the light effect follow this party light object.
-	GLOB.moved_event.register(src, L, TYPE_PROC_REF(/atom/movable, move_to_turf_or_null))
+	strobe_effect.RegisterSignal(src, COMSIG_MOVED, TYPE_PROC_REF(/atom/movable, move_to_turf_or_null))
 
 	update_icon()
 
@@ -136,7 +135,7 @@
 	activated = 0
 
 	// Cause the party light effect to stop following this object, and then delete it.
-	GLOB.moved_event.unregister(src, strobe_effect, TYPE_PROC_REF(/atom/movable, move_to_turf_or_null))
+	strobe_effect.UnregisterSignal(src, COMSIG_MOVED)
 	QDEL_NULL(strobe_effect)
 
 	update_icon()

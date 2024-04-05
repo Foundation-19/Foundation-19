@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - code_imp: Massive overhaul removing every single observable and replacing them
+      all with signals.
