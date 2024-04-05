@@ -19,8 +19,8 @@ var/decl/appearance_manager/appearance_manager = new()
 	if(!pq)
 		pq = new/PriorityQueue(GLOBAL_PROC_REF(cmp_appearance_data))
 		appearances_[viewer] = pq
-		GLOB.logged_in_event.register(viewer, src, TYPE_PROC_REF(/decl/appearance_manager, apply_appearance_images))
-		GLOB.destroyed_event.register(viewer, src, TYPE_PROC_REF(/decl/appearance_manager, remove_appearances))
+		RegisterSignal(viewer, COMSIG_MOB_LOGIN, TYPE_PROC_REF(/decl/appearance_manager, apply_appearance_images))
+		RegisterSignal(viewer, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/decl/appearance_manager, remove_appearances))
 	pq.Enqueue(ad)
 	reset_appearance_images(viewer)
 
@@ -30,8 +30,8 @@ var/decl/appearance_manager/appearance_manager = new()
 	if(viewer.client)
 		viewer.client.images -= ad.images
 	if(!pq.Length())
-		GLOB.logged_in_event.unregister(viewer, src, TYPE_PROC_REF(/decl/appearance_manager, apply_appearance_images))
-		GLOB.destroyed_event.register(viewer, src, TYPE_PROC_REF(/decl/appearance_manager, remove_appearances))
+		UnregisterSignal(viewer, COMSIG_MOB_LOGIN)
+		UnregisterSignal(viewer, COMSIG_PARENT_QDELETING)
 		appearances_ -= viewer
 
 /decl/appearance_manager/proc/remove_appearances(mob/viewer)
