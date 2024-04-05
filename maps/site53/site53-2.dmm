@@ -19445,6 +19445,19 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/office)
+"bhQ" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell4";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "bhR" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -20866,6 +20879,21 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/reswing/robotics)
+"bzf" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell5";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "bzh" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -20941,6 +20969,21 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
+"bCP" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell7";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "bDp" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -21051,6 +21094,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"bIb" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell3";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "bIg" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -21309,6 +21365,14 @@
 /obj/item/device/destTagger,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
+"bQs" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCellsInner";
+	name = "CDCZ Isolation Cells Inner Window Shutters"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "bQt" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -21782,6 +21846,21 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/llcz/entrance_checkpoint)
+"cek" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell8";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "ceo" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
@@ -23129,6 +23208,11 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "cWS" = (
@@ -23795,14 +23879,19 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/checkequip)
 "dvl" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 8
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell4";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 8
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "dvr" = (
 /obj/structure/table/reinforced,
@@ -24807,6 +24896,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "ecq" = (
@@ -24938,6 +25032,15 @@
 	id_tag = "CDCZIsoCell4";
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
@@ -25086,6 +25189,12 @@
 	id_tag = "CDCZIsoCell1";
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
@@ -26247,6 +26356,11 @@
 	id_tag = "isolator2"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "fbl" = (
@@ -26967,6 +27081,12 @@
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "fAC" = (
@@ -27204,6 +27324,13 @@
 "fHB" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "CDCZIsoCellsInner";
+	name = "CDCZ Isolation Cells Inner Windows Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
@@ -29467,6 +29594,14 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
+"hlQ" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/table/reinforced,
+/obj/machinery/reagent_temperature{
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "hmB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Staff Training";
@@ -31017,6 +31152,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp216)
+"ieH" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "ieK" = (
 /obj/effect/floor_decal/carpet/orange{
 	dir = 1
@@ -31649,6 +31790,19 @@
 "iCX" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"iDk" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell5";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "iDm" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 5
@@ -31800,6 +31954,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"iKf" = (
+/obj/machinery/door/airlock/medical{
+	name = "CDCZ Medical Chemistry Lab";
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/medicalpost/storage)
 "iKg" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
@@ -32025,6 +32186,24 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
+"iRu" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell2";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "iRC" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
@@ -33383,6 +33562,10 @@
 	name = "CDCZ Assignments Post";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
 "jPr" = (
@@ -34126,6 +34309,13 @@
 /obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/upper_surface/serverfarmtunnel)
+"knc" = (
+/obj/effect/paint_stripe/orange,
+/obj/machinery/smartfridge/chemistry{
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	},
+/turf/simulated/wall/r_titanium,
+/area/site53/llcz/dclass/medicalpost/storage)
 "knV" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 4
@@ -34265,6 +34455,14 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
+"krr" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "kry" = (
 /obj/machinery/camera/network/hcz,
 /obj/structure/railing/mapped,
@@ -34733,6 +34931,10 @@
 	name = "CDCZ Cryogenics Window Shutters"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkcryo)
 "kIt" = (
@@ -34971,6 +35173,24 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchwing)
+"kQP" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell8";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "kQW" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
@@ -35033,6 +35253,11 @@
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	c_tag = "CDCZ Isolation External North"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -35922,26 +36147,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "lAw" = (
-/obj/structure/closet{
-	name = "Class-D Resident Storage"
-	},
-/obj/item/clothing/suit/storage/toggle/labcoat,
-/obj/item/clothing/suit/storage/toggle/labcoat,
-/obj/item/clothing/suit/storage/toggle/labcoat,
-/obj/item/clothing/head/nursehat,
-/obj/item/clothing/head/nursehat,
-/obj/item/clothing/head/nursehat,
-/obj/item/clothing/glasses/hud/health/visor,
-/obj/item/clothing/glasses/hud/health/visor,
-/obj/item/clothing/glasses/hud/health/visor,
-/obj/item/device/scanner/health,
-/obj/item/device/scanner/health,
-/obj/item/device/scanner/health,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/box/armband/med,
-/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/reagentgrinder,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "lAA" = (
@@ -35995,6 +36203,11 @@
 	id_tag = "isolator3"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "lBX" = (
@@ -37573,6 +37786,24 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
+"mvw" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell3";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "mvx" = (
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 8
@@ -38302,6 +38533,19 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"mRb" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell1";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "mRy" = (
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
@@ -38393,6 +38637,12 @@
 	id_tag = "CDCZIsoCell3";
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
@@ -38842,6 +39092,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"niO" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "niQ" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -38886,6 +39149,18 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"nkm" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/bed/chair/office/comfy/beige{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "nkR" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/monotile/white,
@@ -39147,6 +39422,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp513)
+"nte" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "nty" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -39960,9 +40247,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "nQI" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -41999,6 +42283,11 @@
 /obj/effect/floor_decal/corner/black/bordercorner{
 	dir = 1
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "pbZ" = (
@@ -42525,6 +42814,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"ptg" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/closet/secure_closet/chemical{
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	},
+/obj/item/clothing/glasses/science,
+/obj/item/storage/box/beakers/insulated,
+/obj/item/storage/box/syringes,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "pts" = (
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 1
@@ -42967,6 +43266,19 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hub)
+"pIh" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/dropper/industrial,
+/obj/item/stack/material/phoron/ten,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Medical Clinic Chemistry";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "pIF" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -43275,6 +43587,14 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
+"pUO" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/dclass/isolation)
 "pVj" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 1
@@ -43589,6 +43909,15 @@
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "qel" = (
@@ -43610,6 +43939,9 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
+"qfj" = (
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "qfC" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -43879,6 +44211,11 @@
 	id_tag = "isolator7"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "qmP" = (
@@ -44043,6 +44380,11 @@
 	id_tag = "isolator8"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "qtB" = (
@@ -44097,6 +44439,11 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
+"qvs" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "qvG" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
@@ -45304,6 +45651,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost/storage)
 "rlj" = (
@@ -45631,6 +45983,11 @@
 	id_tag = "isolator6"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "rvd" = (
@@ -46439,6 +46796,17 @@
 /obj/item/device/radio,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"rXj" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "rXk" = (
 /obj/structure/morgue{
 	dir = 1
@@ -46906,6 +47274,11 @@
 	id_tag = "isolator4"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "sjI" = (
@@ -47069,6 +47442,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"soY" = (
+/obj/machinery/camera/network/lcz{
+	dir = 4;
+	c_tag = "CDCZ Isolation North"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/isolation)
 "spn" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/table/reinforced,
@@ -48187,6 +48567,11 @@
 	id_tag = "isolator1"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "sYT" = (
@@ -48639,6 +49024,10 @@
 	id_tag = "CDCZMedWindows";
 	name = "CDCZ Medical Clinic Window Shutters"
 	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
 "tmn" = (
@@ -48770,6 +49159,10 @@
 	id_tag = "CDCZMedLock";
 	name = "CDCZ Medical Clinic Lockdown Shutters"
 	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost)
 "tpZ" = (
@@ -48889,6 +49282,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
+"tua" = (
+/obj/effect/floor_decal/corner/yellow/bordercee{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "tuE" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
@@ -49513,6 +49913,10 @@
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "tOa" = (
@@ -49745,15 +50149,19 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/ulcz/hallways)
 "uam" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 8
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell2";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/camera/network/lcz{
-	dir = 4;
-	c_tag = "CDCZ Isolation South"
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "uaR" = (
 /obj/machinery/hologram/holopad,
@@ -49894,6 +50302,16 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/contraband_detector,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/isolation)
 "ufi" = (
@@ -50133,6 +50551,15 @@
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "ukZ" = (
@@ -50358,6 +50785,24 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
+"utI" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell6";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "utJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -51284,6 +51729,11 @@
 	id_tag = "isolator5"
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "vhB" = (
@@ -51533,6 +51983,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"vqK" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/table/reinforced,
+/obj/machinery/reagent_temperature/cooler{
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "vqL" = (
 /obj/structure/kitchenspike,
 /obj/item/material/knife/kitchen/cleaver,
@@ -51671,6 +52129,11 @@
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	c_tag = "CDCZ Isolation External South"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -52686,6 +53149,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"wfq" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell7";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "wfL" = (
 /obj/structure/closet/crate/secure/biohazard,
 /obj/machinery/light/small{
@@ -52905,6 +53381,13 @@
 /obj/machinery/floodlight,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"wob" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "woc" = (
 /obj/structure/cable/green{
 	d2 = 2;
@@ -53117,6 +53600,18 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
+"wuu" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "wuH" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
@@ -53534,6 +54029,15 @@
 /area/site53/llcz/dclass/primaryhallway)
 "wIY" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown";
+	dir = 4
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "wJn" = (
@@ -53754,6 +54258,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
+"wQH" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/chemical_dispenser,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost/storage)
 "wRe" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
@@ -54005,6 +54514,19 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
+"wXV" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell6";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "wYg" = (
 /obj/structure/table/standard,
 /obj/structure/flora/pottedplant/deskleaf,
@@ -54515,13 +55037,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
 "xqE" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 8
-	},
-/obj/structure/table/reinforced,
 /obj/machinery/camera/network/lcz{
 	dir = 4;
-	c_tag = "CDCZ Isolation North"
+	c_tag = "CDCZ Isolation South"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
@@ -54965,6 +55483,10 @@
 	name = "CDCZ Isolation Cell Lockdown Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "xFL" = (
@@ -55281,6 +55803,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost)
@@ -55886,6 +56412,10 @@
 	id_tag = "CDCZCryoWindows";
 	name = "CDCZ Cryogenics Window Shutters"
 	},
+/obj/machinery/door/blast/regular/open{
+	name = "CDCZ Lockdown Blast Door";
+	id_tag = "CDCZLockdown"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkcryo)
 "ylz" = (
@@ -55912,6 +56442,24 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"ylE" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell1";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "ylL" = (
 /obj/machinery/body_scanconsole{
 	dir = 4
@@ -56371,28 +56919,28 @@ azA
 vRO
 tnS
 fHB
-dvl
+vRO
 xfE
 byD
-xqE
+vRO
 xfE
 byD
-dvl
+vRO
 xfE
 byD
-xfE
-xfE
-byD
-dvl
+vRO
 xfE
 byD
-xfE
-uam
-byD
-dvl
+vRO
 xfE
 byD
+vRO
 xfE
+byD
+vRO
+xfE
+byD
+vRO
 xfE
 xys
 vRO
@@ -56628,25 +57176,25 @@ azA
 vRO
 wUN
 cJa
+ieH
+cJa
+cJa
+soY
+cJa
+cJa
+ieH
 cJa
 cJa
 cJa
 cJa
 cJa
+ieH
 cJa
 cJa
+xqE
 cJa
 cJa
-cJa
-cJa
-cJa
-cJa
-cJa
-cJa
-cJa
-cJa
-cJa
-cJa
+ieH
 cJa
 cJa
 cJa
@@ -57144,25 +57692,25 @@ ogB
 ifT
 vRO
 wzH
-emM
+mRb
 vRO
 gSP
 xFJ
 vRO
 eaX
-mVh
+bIb
 vRO
 czA
-ehe
+bhQ
 vRO
 ybf
-ukx
+iDk
 vRO
 jdj
-fAy
+wXV
 vRO
 phq
-qdH
+wfq
 vRO
 qDS
 tNA
@@ -57402,25 +57950,25 @@ ifT
 vRO
 kTD
 sYE
-vRO
+bQs
 kTD
 eZR
-vRO
+bQs
 kTD
 lBx
-vRO
+bQs
 kTD
 sjv
-vRO
+bQs
 kTD
 vhh
-vRO
+bQs
 kTD
 ruS
-vRO
+bQs
 kTD
 qmz
-vRO
+bQs
 kTD
 qsX
 vRO
@@ -57658,28 +58206,28 @@ jJA
 lXk
 vRO
 mXW
-kTD
+pUO
 flB
 mXW
-kTD
+pUO
 vRO
 mXW
-kTD
+pUO
 flB
 mXW
-kTD
+pUO
 vRO
 mXW
-kTD
+pUO
 flB
 mXW
-kTD
+pUO
 vRO
 mXW
-kTD
+pUO
 flB
 mXW
-kTD
+pUO
 vRO
 xcT
 xcT
@@ -57914,29 +58462,29 @@ vRO
 wIY
 uer
 vRO
-emM
+ylE
 emM
 vRO
-xFJ
-xFJ
+iRu
+uam
 vRO
-mVh
+mvw
 mVh
 vRO
 ehe
-ehe
+dvl
 vRO
 ukx
-ukx
+bzf
 vRO
-fAy
+utI
 fAy
 vRO
 qdH
-qdH
+bCP
 vRO
-tNA
-tNA
+kQP
+cek
 vRO
 kwD
 kwD
@@ -58171,28 +58719,28 @@ jPk
 nsB
 cWG
 pbx
-xcT
-xcT
+niO
+xZp
 kSX
-xcT
-xcT
-sjn
-xcT
-xcT
-xcT
-xcT
-xcT
-sjn
-xcT
-xcT
+niO
+xZp
+rXj
+niO
+xZp
+xZp
+niO
+xZp
+rXj
+niO
+xZp
 vvo
-xcT
-xcT
-sjn
-xcT
-xcT
-xcT
-xcT
+niO
+xZp
+rXj
+niO
+xZp
+xZp
+krr
 xcT
 sjn
 xcT
@@ -58425,7 +58973,7 @@ azA
 kwD
 kwD
 kwD
-sbn
+bhq
 xcT
 bLX
 bLX
@@ -58682,7 +59230,7 @@ kwD
 kwD
 kwD
 kwD
-bhq
+pDE
 vnW
 uis
 uis
@@ -59707,8 +60255,8 @@ azA
 kwD
 dhx
 uis
-xcT
-xcT
+qfj
+qfj
 azW
 bhq
 vnW
@@ -59964,8 +60512,8 @@ azA
 kwD
 uis
 uis
-xcT
-xcT
+qfj
+qfj
 sYU
 bhq
 vnW
@@ -60224,7 +60772,7 @@ gdH
 gdH
 gdH
 gdH
-bhq
+pDE
 vnW
 uis
 uis
@@ -66914,7 +67462,7 @@ cxc
 ini
 rxp
 pYX
-lAw
+bDO
 ini
 wzt
 wNP
@@ -67684,7 +68232,7 @@ bMi
 bMi
 ini
 ixv
-mTh
+lzz
 tBm
 ini
 wzt
@@ -67941,7 +68489,7 @@ fAC
 bMi
 ini
 iVj
-bDO
+mTh
 ffO
 ini
 wzt
@@ -68198,8 +68746,8 @@ ins
 bMi
 ini
 ini
-ini
-ini
+iKf
+knc
 ini
 wzt
 mnW
@@ -68453,11 +69001,11 @@ xaC
 xaC
 xmw
 bMi
-azA
-azA
-azA
-azA
-azA
+ini
+ptg
+wob
+vqK
+hlQ
 wzt
 vIu
 vLg
@@ -68710,11 +69258,11 @@ aXz
 aXz
 aXz
 bMi
-azA
-azA
-azA
-azA
-azA
+ini
+nte
+wuu
+nkm
+tua
 wzt
 wzt
 sNd
@@ -68967,12 +69515,12 @@ big
 big
 big
 bMi
-azA
-azA
-azA
-azA
-azA
-azA
+ini
+lAw
+pIh
+wQH
+qvs
+ini
 wzt
 wzt
 wzt
@@ -69224,12 +69772,12 @@ eAI
 big
 aGu
 bMi
-azA
-azA
-azA
-azA
-azA
-azA
+ini
+ini
+ini
+ini
+ini
+ini
 azA
 azA
 azA

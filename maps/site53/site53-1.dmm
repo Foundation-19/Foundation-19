@@ -307,6 +307,11 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/floor_decal/corner/red/border,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "avq" = (
@@ -495,6 +500,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"aMp" = (
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#808080"
+	},
+/obj/machinery/suspension_gen{
+	dir = 1
+	},
+/obj/item/wrench,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/mining/miningops)
 "aME" = (
 /obj/effect/floor_decal/corner/orange/diagonal,
 /obj/machinery/camera/network/lcz{
@@ -654,6 +670,15 @@
 	name = "CDCZ Briefing Hall Window Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/briefing)
 "aZZ" = (
@@ -770,11 +795,12 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	c_tag = "CDCZ Assignments Post South"
 	},
+/obj/structure/table/reinforced,
+/obj/item/card/id/dassignment/dmedical,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "bev" = (
@@ -1218,6 +1244,19 @@
 /obj/structure/sign/warning,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment)
+"bJw" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZBriefing";
+	name = "CDCZ Briefing Hall Window Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/briefing)
 "bKh" = (
 /obj/machinery/mineral/stacking_machine,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -1695,6 +1734,10 @@
 /obj/turbolift_map_holder/scp106,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hallway)
+"cuG" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/wood/walnut,
+/area/site53/llcz/dclass/luxurylibrary)
 "cuJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/exoplanet/desert,
@@ -2092,10 +2135,13 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/brown/mono,
-/obj/structure/closet/crate/large,
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#808080"
 	},
+/obj/machinery/suspension_gen{
+	dir = 1
+	},
+/obj/item/wrench,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "cWx" = (
@@ -2148,6 +2194,16 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -2239,6 +2295,28 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/lowres/Lowerresearchwing)
+"dgg" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Shutters"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/mining/miningops)
 "dgL" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Hallway"
@@ -2430,6 +2508,24 @@
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
+"dtl" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZBriefing";
+	name = "CDCZ Briefing Hall Window Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/briefing)
 "dtW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2559,6 +2655,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"dDl" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZAssignments";
+	name = "CDCZ Assignments Post Window Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor,
+/area/site53/llcz/dclass/assignment)
 "dEe" = (
 /obj/machinery/light{
 	dir = 1
@@ -2869,7 +2975,10 @@
 /obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/under/scp/dclass,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "eex" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -2971,7 +3080,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "ejk" = (
-/obj/machinery/camera/network/lcz,
+/obj/machinery/camera/network/lcz{
+	c_tag = "CDCZ Beach"
+	},
 /turf/simulated/floor/beach/sand,
 /area/site53/llcz/dclass/luxuryhall)
 "ekg" = (
@@ -4083,6 +4194,16 @@
 	name = "CDCZ Assignments Post Window Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/assignment)
 "fKN" = (
@@ -4635,7 +4756,7 @@
 /area/site53/llcz/dclass/cryo)
 "gAi" = (
 /obj/machinery/contraband_detector,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "gBl" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
@@ -4749,6 +4870,9 @@
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner{
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -4915,7 +5039,10 @@
 	dir = 1
 	},
 /obj/machinery/washing_machine,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "gTE" = (
 /obj/structure/cable/green{
@@ -5023,6 +5150,11 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/assignment)
@@ -5251,7 +5383,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "hpl" = (
@@ -5377,7 +5508,7 @@
 /obj/structure/sign/noidle{
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "hBX" = (
 /obj/effect/floor_decal/corner/brown/mono,
@@ -5917,7 +6048,8 @@
 /area/site53/llcz/dclass/primaryhallway)
 "isH" = (
 /obj/machinery/camera/network/lcz{
-	dir = 8
+	dir = 8;
+	c_tag = "CDCZ Beach #2"
 	},
 /turf/simulated/floor/beach/sand,
 /area/site53/llcz/dclass/luxuryhall)
@@ -6441,12 +6573,12 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "iZK" = (
-/obj/machinery/contraband_detector,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/contraband_detector,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "jaC" = (
@@ -6617,11 +6749,13 @@
 /area/site53/lhcz/scp049containment)
 "jnG" = (
 /obj/structure/table/reinforced,
-/obj/item/stack/medical/bruise_pack,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/status_display{
 	pixel_y = 32
 	},
+/obj/item/stack/medical/bruise_pack,
+/obj/item/stack/medical/bruise_pack,
+/obj/item/stack/medical/bruise_pack,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/primaryhallway)
 "jnQ" = (
@@ -6968,6 +7102,11 @@
 /obj/machinery/recharger,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -7446,11 +7585,12 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/canteen)
 "kFW" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/washing_machine,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/luxuryhall)
 "kFY" = (
 /obj/structure/bed/chair/wood{
 	dir = 4
@@ -7552,7 +7692,8 @@
 /area/site53/uhcz/scp8containment)
 "kQH" = (
 /obj/machinery/door/airlock/glass/medical{
-	name = "CDCZ Aid Post"
+	name = "CDCZ Aid Post";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
@@ -7764,6 +7905,10 @@
 	name = "CDCZ Assignments Post Window Shutters";
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignment)
 "lgU" = (
@@ -7804,6 +7949,11 @@
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
@@ -8712,6 +8862,30 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"mxI" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/mining/miningops)
 "myB" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -8743,11 +8917,13 @@
 /area/site53/lhcz/scp049containment)
 "mCe" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/stack/medical/ointment,
+/obj/item/stack/medical/ointment,
+/obj/item/stack/medical/ointment,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/primaryhallway)
 "mDv" = (
@@ -8912,6 +9088,15 @@
 	id_tag = "CDCZMiningCheckWindow";
 	name = "CDCZ Mining Operations Checkpoint Window Shutters";
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
@@ -9851,6 +10036,17 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/server_room)
+"ogM" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "ohE" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
@@ -10013,6 +10209,10 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"otS" = (
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/luxuryhall)
 "ouk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -10399,7 +10599,8 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/shoes/workboots,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "oWq" = (
 /obj/structure/cable/green{
@@ -10966,6 +11167,7 @@
 	id_tag = "CDCZMiningCheckWindow";
 	name = "CDCZ Mining Operations Checkpoint Window Shutters"
 	},
+/obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
 "pMs" = (
@@ -11177,6 +11379,30 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"qdD" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Shutters";
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/mining/miningops)
 "qei" = (
 /obj/machinery/portable_atmospherics/canister/phoron,
 /turf/simulated/floor,
@@ -11413,6 +11639,11 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "qAB" = (
@@ -11457,6 +11688,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/briefing)
+"qBW" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/luxuryhall)
 "qCJ" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/light/small/red{
@@ -12068,6 +12305,23 @@
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/prepainted,
 /area/site53/reswing/lowres/Lowerresearchwing)
+"rsR" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "CDCZMiningLock";
+	name = "CDCZ Mining Operations Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZMiningCheckWindow";
+	name = "CDCZ Mining Operations Checkpoint Window Shutters"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/mining/miningops)
 "rtz" = (
 /obj/machinery/light{
 	dir = 8
@@ -12339,6 +12593,12 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
+"rNQ" = (
+/obj/effect/floor_decal/corner/orange/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/luxuryhall)
 "rNS" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/mineral{
@@ -12914,6 +13174,11 @@
 "sCu" = (
 /obj/structure/bed/chair/office/light,
 /obj/effect/floor_decal/corner/red/border,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "sEg" = (
@@ -12947,9 +13212,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "sHL" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/medical/ointment,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/item/storage/firstaid/regular,
+/obj/structure/table/rack,
+/obj/item/storage/firstaid/regular,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/primaryhallway)
 "sHM" = (
@@ -13262,6 +13528,11 @@
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	c_tag = "CDCZ Briefing Hall External"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -13889,6 +14160,16 @@
 	dir = 6
 	},
 /obj/structure/table/reinforced,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "umi" = (
@@ -14154,6 +14435,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/xenobotany)
+"uFR" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "uFZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14585,7 +14877,10 @@
 "vvv" = (
 /obj/item/storage/laundry_basket,
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "vvz" = (
 /obj/machinery/access_button/airlock_exterior{
@@ -14928,6 +15223,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
+"vQd" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/luxuryhall)
 "vQv" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/bed/chair,
@@ -15233,6 +15534,10 @@
 	},
 /turf/simulated/floor/blackgrid,
 /area/site53/engineering/selfdestruct)
+"wqi" = (
+/obj/structure/stairs/east,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignment)
 "wqp" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/cable/green{
@@ -15369,6 +15674,16 @@
 	},
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/table/reinforced,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
 "wBE" = (
@@ -15822,8 +16137,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
 "xgH" = (
-/obj/structure/stairs/south{
-	dir = 4
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
@@ -16492,7 +16814,10 @@
 /area/site53/lhcz/hallway)
 "yic" = (
 /obj/machinery/washing_machine,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "yiF" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -17472,15 +17797,15 @@ gCV
 gCV
 gCV
 gCV
+xgH
 gCV
 gCV
 gCV
+xgH
 gCV
 gCV
 gCV
-gCV
-gCV
-gCV
+xgH
 gCV
 wyn
 uvi
@@ -17987,15 +18312,15 @@ iSy
 iSy
 lfT
 fKC
-lfT
+dDl
 iSy
 lfT
 fKC
-lfT
+dDl
 iSy
 lfT
 fKC
-lfT
+dDl
 iSy
 iSy
 cGx
@@ -18235,7 +18560,7 @@ hIH
 hIH
 hIH
 iSy
-xgH
+vvC
 iSy
 hph
 fFX
@@ -18492,7 +18817,7 @@ hIH
 hIH
 hIH
 iSy
-vvC
+wqi
 iSy
 lfT
 gZf
@@ -18515,14 +18840,14 @@ cLe
 cLe
 cLe
 cLe
-aZm
-aZm
-aZm
+bJw
+dtl
+dtl
 aZm
 cLe
-aZm
-aZm
-aZm
+bJw
+dtl
+dtl
 aZm
 cLe
 eWz
@@ -18775,11 +19100,11 @@ fnT
 fnT
 fnT
 fnT
-fnT
+ogM
 tkr
-fnT
-fnT
-fnT
+uFR
+uFR
+uFR
 dai
 eex
 tys
@@ -19517,9 +19842,9 @@ hIH
 hIH
 hIH
 nGe
-mwo
-mwo
-mwo
+uaw
+uaw
+uaw
 gAi
 qtC
 rlV
@@ -19774,9 +20099,9 @@ hIH
 hIH
 hIH
 nGe
-kFW
-mwo
-mwo
+nHt
+uaw
+uaw
 gAi
 wmM
 rlV
@@ -20032,7 +20357,7 @@ hIH
 hIH
 nGe
 hBd
-mwo
+uaw
 nGe
 nGe
 nGe
@@ -20288,12 +20613,12 @@ hIH
 hIH
 hIH
 nGe
-kFW
-mwo
+nHt
+uaw
 mwo
 bdM
 nGe
-uaw
+nHt
 aKI
 evH
 mwo
@@ -20545,12 +20870,12 @@ uRY
 uRY
 uRY
 nGe
-mwo
-mwo
+uaw
+uaw
 mwo
 bdM
 nGe
-nHt
+uaw
 aKI
 evH
 mwo
@@ -20782,7 +21107,7 @@ hIH
 hIH
 pHn
 yic
-bYA
+vQd
 eei
 uRY
 bpP
@@ -21039,7 +21364,7 @@ hIH
 hIH
 pHn
 gTy
-bYA
+qvB
 oRy
 uRY
 ccM
@@ -21295,9 +21620,9 @@ hIH
 hIH
 hIH
 pHn
-yic
-bYA
-bYA
+kFW
+rNQ
+otS
 uRY
 fTr
 tRz
@@ -21554,7 +21879,7 @@ pHn
 pHn
 pHn
 vvv
-bYA
+qBW
 uRY
 gwp
 tRz
@@ -23876,7 +24201,7 @@ qvB
 qvB
 wDY
 fCv
-wjl
+cuG
 mwF
 rTf
 mwF
@@ -24133,7 +24458,7 @@ rKy
 fZI
 dGu
 fCv
-mnX
+wjl
 gYS
 mwF
 nnm
@@ -28025,7 +28350,7 @@ hIH
 aqR
 acC
 sZP
-pMa
+rsR
 pQe
 ijv
 sCu
@@ -28282,7 +28607,7 @@ hIH
 aqR
 sVS
 vTh
-pMa
+dgg
 jQZ
 sPd
 ulB
@@ -28540,9 +28865,9 @@ aqR
 sVS
 vTh
 aqR
+mxI
 mNT
-mNT
-mNT
+qdD
 aqR
 xCd
 xCd
@@ -31882,7 +32207,7 @@ gkX
 gIX
 xaC
 fIV
-hBX
+aMp
 cVt
 vaS
 ghd
