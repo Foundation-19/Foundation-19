@@ -4,16 +4,16 @@
 /mob/observer/virtual/mob/New(location, mob/host)
 	..()
 
-	GLOB.sight_set_event.register(host, src, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
-	GLOB.see_invisible_set_event.register(host, src, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
-	GLOB.see_in_dark_set_event.register(host, src, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
+	RegisterSignal(host, COMSIG_SET_SIGHT, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
+	RegisterSignal(host, COMSIG_SET_SEE_INVISIBLE, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
+	RegisterSignal(host, COMSIG_SET_SEE_IN_DARK, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
 
 	sync_sight(host)
 
 /mob/observer/virtual/mob/Destroy()
-	GLOB.sight_set_event.unregister(host, src, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
-	GLOB.see_invisible_set_event.unregister(host, src, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
-	GLOB.see_in_dark_set_event.unregister(host, src, TYPE_PROC_REF(/mob/observer/virtual/mob, sync_sight))
+	UnregisterSignal(host, COMSIG_SET_SIGHT)
+	UnregisterSignal(host, COMSIG_SET_SEE_INVISIBLE)
+	UnregisterSignal(host, COMSIG_SET_SEE_IN_DARK)
 	. = ..()
 
 /mob/observer/virtual/mob/proc/sync_sight(mob/mob_host)

@@ -53,9 +53,9 @@
 		M.forceMove(trans) //move inside the new dude to hide him.
 		M.status_flags |= GODMODE //don't want him to die or breathe or do ANYTHING
 		transformed_dudes[trans] = M
-		GLOB.death_event.register(trans,src,TYPE_PROC_REF(/datum/spell/targeted/shapeshift, stop_transformation))
-		GLOB.destroyed_event.register(trans,src,TYPE_PROC_REF(/datum/spell/targeted/shapeshift, stop_transformation))
-		GLOB.destroyed_event.register(M, src, TYPE_PROC_REF(/datum/spell/targeted/shapeshift, destroyed_transformer))
+		RegisterSignal(trans, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/datum/spell/targeted/shapeshift, stop_transformation))
+		RegisterSignal(trans, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/spell/targeted/shapeshift, stop_transformation))
+		RegisterSignal(M, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/spell/targeted/shapeshift, destroyed_transformer))
 		if(duration)
 			spawn(duration)
 				stop_transformation(trans)
@@ -87,9 +87,9 @@
 
 /datum/spell/targeted/shapeshift/proc/remove_target(mob/living/target)
 	var/mob/current = transformed_dudes[target]
-	GLOB.destroyed_event.unregister(target,src)
-	GLOB.death_event.unregister(current,src)
-	GLOB.destroyed_event.unregister(current,src)
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(current, COMSIG_ADD_TO_DEAD_MOB_LIST)
+	UnregisterSignal(current, COMSIG_PARENT_QDELETING)
 	transformed_dudes[target] = null
 	transformed_dudes -= target
 
