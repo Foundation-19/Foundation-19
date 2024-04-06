@@ -30,15 +30,14 @@
 		return
 	to_chat(L, SPAN_NOTICE("You place your hands on \the [src], feeling yourself intune to its vibrations."))
 	intuned += L
-	GLOB.destroyed_event.register(L,src,TYPE_PROC_REF(/obj/structure/deity/pylon, remove_intuned))
+	RegisterSignal(L, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/structure/deity/pylon, remove_intuned))
 
 /obj/structure/deity/pylon/proc/remove_intuned(mob/living/L)
 	if(!(L in intuned))
 		return
 	to_chat(L, SPAN_WARNING("You no longer feel intuned to \the [src]."))
 	intuned -= L
-	GLOB.destroyed_event.unregister(L, src)
-
+	UnregisterSignal(L, COMSIG_PARENT_QDELETING)
 
 /obj/structure/deity/pylon/hear_talk(mob/M as mob, text, verb, datum/language/speaking)
 	if(!linked_god)

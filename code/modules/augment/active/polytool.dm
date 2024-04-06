@@ -19,8 +19,7 @@
 
 /obj/item/organ/internal/augment/active/polytool/proc/holding_dropped(obj/item/I)
 
-	//Stop caring
-	GLOB.item_unequipped_event.unregister(I, src)
+	UnregisterSignal(I, COMSIG_DROPPED_ITEM)
 
 	if(I.loc != src) //something went wrong and is no longer attached/ it broke
 		I.canremove = 1
@@ -56,7 +55,7 @@
 		if(owner.equip_to_slot_if_possible(item, slot))
 			items -= item
 			//Keep track of it, make sure it returns
-			GLOB.item_unequipped_event.register(item, src, TYPE_PROC_REF(/obj/item/organ/internal/augment/active/simple, holding_dropped) )
+			RegisterSignal(item, COMSIG_DROPPED_ITEM, TYPE_PROC_REF(/obj/item/organ/internal/augment/active/simple, holding_dropped))
 			owner.visible_message(
 				SPAN_WARNING("[owner] extends \his [item.name] from [limb]."),
 				SPAN_NOTICE("You extend your [item.name] from [limb].")

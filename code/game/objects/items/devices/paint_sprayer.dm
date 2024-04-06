@@ -97,20 +97,20 @@
 		var/datum/click_handler/default/paint_sprayer/CH = user.click_handlers[1]
 		CH.paint_sprayer = src
 		if (isrobot(user))
-			GLOB.module_deselected_event.register(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
-			GLOB.module_deactivated_event.register(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
+			RegisterSignal(user, COMSIG_ROBOT_DESELECTING_MODULE, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
+			RegisterSignal(user, COMSIG_ROBOT_DEACTIVATING_MODULE, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
 		else
-			GLOB.hands_swapped_event.register(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
-			GLOB.mob_equipped_event.register(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
-			GLOB.mob_unequipped_event.register(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
+			RegisterSignal(user, COMSIG_SWAPPED_HANDS, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
+			RegisterSignal(user, COMSIG_MOB_EQUIPPED_ITEM, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
+			RegisterSignal(user, COMSIG_MOB_DROPPED_ITEM, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
 
 /obj/item/device/paint_sprayer/proc/remove_click_handler(mob/user)
 	if (user.RemoveClickHandler(/datum/click_handler/default/paint_sprayer))
-		GLOB.hands_swapped_event.unregister(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
-		GLOB.mob_equipped_event.unregister(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
-		GLOB.mob_unequipped_event.unregister(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
-		GLOB.module_deselected_event.unregister(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
-		GLOB.module_deactivated_event.unregister(user, src, TYPE_PROC_REF(/obj/item/device/paint_sprayer, remove_click_handler))
+		UnregisterSignal(user, COMSIG_SWAPPED_HANDS)
+		UnregisterSignal(user, COMSIG_MOB_EQUIPPED_ITEM)
+		UnregisterSignal(user, COMSIG_MOB_DROPPED_ITEM)
+		UnregisterSignal(user, COMSIG_ROBOT_DESELECTING_MODULE)
+		UnregisterSignal(user, COMSIG_ROBOT_DEACTIVATING_MODULE)
 
 /obj/item/device/paint_sprayer/afterattack(atom/A, mob/user, proximity, params)
 	if (!proximity)

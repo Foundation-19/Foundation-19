@@ -21,7 +21,7 @@
 /mob/living/silicon/robot/proc/uneq_active()
 	if(isnull(module_active))
 		return
-	GLOB.module_deactivated_event.raise_event(src, module_active)
+	SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_active)
 	if(module_state_1 == module_active)
 		if(istype(module_state_1,/obj/item/borg/sight))
 			sight_mode &= ~module_state_1:sight_mode
@@ -56,7 +56,7 @@
 	module_active = null
 
 	if(module_state_1)
-		GLOB.module_deactivated_event.raise_event(src, module_state_1)
+		SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_state_1)
 		if(istype(module_state_1,/obj/item/borg/sight))
 			sight_mode &= ~module_state_1:sight_mode
 		if (client)
@@ -65,7 +65,7 @@
 		module_state_1 = null
 		inv1.icon_state = "inv1"
 	if(module_state_2)
-		GLOB.module_deactivated_event.raise_event(src, module_state_2)
+		SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_state_2)
 		if(istype(module_state_2,/obj/item/borg/sight))
 			sight_mode &= ~module_state_2:sight_mode
 		if (client)
@@ -74,7 +74,7 @@
 		module_state_2 = null
 		inv2.icon_state = "inv2"
 	if(module_state_3)
-		GLOB.module_deactivated_event.raise_event(src, module_state_3)
+		SEND_SIGNAL(src, COMSIG_ROBOT_DEACTIVATING_MODULE, module_state_3)
 		if(istype(module_state_3,/obj/item/borg/sight))
 			sight_mode &= ~module_state_3:sight_mode
 		if (client)
@@ -155,13 +155,12 @@
 				inv3.icon_state = "inv3 +a"
 				module_active = module_state_3
 	module_active.on_active_hand(src)
-	GLOB.module_selected_event.raise_event(src, module_active)
 
 //deselect_module(module) - Deselects the module slot specified by "module"
 /mob/living/silicon/robot/proc/deselect_module(module) //Module is 1-3
 	if(module < 1 || module > 3) return
 
-	GLOB.module_deselected_event.raise_event(src, module_active)
+	SEND_SIGNAL(src, COMSIG_ROBOT_DESELECTING_MODULE, module_active)
 	switch(module)
 		if(1)
 			if(module_active == module_state_1)
@@ -240,7 +239,6 @@
 	else
 		to_chat(src, SPAN_NOTICE("You need to disable a module first!"))
 		return
-	GLOB.module_activated_event.raise_event(src, O)
 
 /mob/living/silicon/put_in_hands(obj/item/W) // No hands.
 	if(W.loc)
