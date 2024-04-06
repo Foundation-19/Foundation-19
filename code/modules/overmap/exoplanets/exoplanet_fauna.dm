@@ -35,8 +35,8 @@
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/remove_animal(mob/M)
 	animals -= M
-	GLOB.death_event.unregister(M, src)
-	GLOB.destroyed_event.unregister(M, src)
+	UnregisterSignal(M, COMSIG_ADD_TO_DEAD_MOB_LIST)
+	UnregisterSignal(M, COMSIG_PARENT_QDELETING)
 	repopulate_types |= M.type
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/handle_repopulation()
@@ -52,8 +52,8 @@
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/track_animal(mob/A)
 	animals += A
-	GLOB.death_event.register(A, src, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
-	GLOB.destroyed_event.register(A, src, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
+	RegisterSignal(A, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
+	RegisterSignal(A, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/effect/overmap/visitable/sector/exoplanet, remove_animal))
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_random_species_name()
 	return pick("nol","shan","can","fel","xor")+pick("a","e","o","t","ar")+pick("ian","oid","ac","ese","inian","rd")
