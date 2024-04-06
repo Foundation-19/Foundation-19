@@ -267,15 +267,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
-"aQ" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/landmark/start{
-	name = "EZ Cadet"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "aS" = (
 /obj/machinery/light{
 	dir = 4
@@ -1764,7 +1755,7 @@
 /area/site53/uez/hallway)
 "eZ" = (
 /obj/effect/landmark/start{
-	name = "EZ Cadet"
+	name = "EZ Probationary Agent"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -3769,9 +3760,11 @@
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/repoffice/internaltribunal)
 "na" = (
-/obj/machinery/papershredder,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "EZ Probationary Agent"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -4821,7 +4814,6 @@
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
-/obj/structure/closet/secure_closet/guard/ez/cadet,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "uJ" = (
@@ -6996,12 +6988,10 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "Ke" = (
-/obj/structure/table/steel,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/structure/closet/secure_closet/guard/ez/cadet,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Kg" = (
@@ -9120,12 +9110,6 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
-"Yi" = (
-/obj/structure/table/steel,
-/obj/machinery/photocopier,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/equipmentroom)
 "Yk" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small/red{
@@ -37968,14 +37952,14 @@ np
 lT
 VT
 dU
-aQ
-oJ
+ZE
+ZO
 vU
 BC
 Kg
 Ke
 na
-Kg
+oJ
 cX
 hk
 ac
@@ -38225,14 +38209,14 @@ WK
 lT
 mX
 dU
-eZ
-oJ
+ZO
+ZO
 Jl
 tr
 Lo
-Jl
-tr
-Yi
+Ke
+eZ
+Qe
 cX
 hk
 ac
@@ -38482,14 +38466,14 @@ VE
 lT
 Bq
 dU
-eZ
-oJ
+ZO
+ZO
 BS
 lc
 TG
-TC
-lc
-TG
+Ke
+eZ
+oJ
 cX
 hk
 ac
@@ -38744,9 +38728,9 @@ ZO
 ZO
 ZO
 ZO
-ZO
 eZ
-oJ
+eZ
+eZ
 mr
 hk
 hk
@@ -39002,8 +38986,8 @@ ZO
 ZO
 ZO
 ZO
-eZ
-Qe
+ZO
+ds
 cX
 hk
 hk
@@ -39259,7 +39243,7 @@ ZO
 zm
 zm
 ZO
-eZ
+ZO
 uH
 cX
 ac
