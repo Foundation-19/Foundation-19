@@ -218,7 +218,7 @@
 
 // EZ - Cadet
 /obj/structure/closet/secure_closet/guard/ez/cadet
-	name = "EZ Cadet's Locker"
+	name = "EZ Probationary Agent's Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "ezcadet1"
 	icon_closed = "ezcadet"
