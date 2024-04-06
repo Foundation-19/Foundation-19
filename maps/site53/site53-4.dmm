@@ -267,6 +267,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"aQ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "EZ Cadet"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "aS" = (
 /obj/machinery/light{
 	dir = 4
@@ -1753,6 +1762,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
+"eZ" = (
+/obj/effect/landmark/start{
+	name = "EZ Cadet"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "fb" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
@@ -4004,6 +4019,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"oJ" = (
+/obj/structure/closet/secure_closet/guard/ez/cadet,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "oS" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/machinery/light{
@@ -4802,6 +4821,7 @@
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
+/obj/structure/closet/secure_closet/guard/ez/cadet,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "uJ" = (
@@ -7907,6 +7927,11 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
+"Qe" = (
+/obj/machinery/light,
+/obj/structure/closet/secure_closet/guard/ez/cadet,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "Ql" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
@@ -37943,8 +37968,8 @@ np
 lT
 VT
 dU
-ZE
-Mm
+aQ
+oJ
 vU
 BC
 Kg
@@ -38200,8 +38225,8 @@ WK
 lT
 mX
 dU
-ZO
-Kg
+eZ
+oJ
 Jl
 tr
 Lo
@@ -38457,8 +38482,8 @@ VE
 lT
 Bq
 dU
-ZO
-Kg
+eZ
+oJ
 BS
 lc
 TG
@@ -38720,8 +38745,8 @@ ZO
 ZO
 ZO
 ZO
-ZO
-mx
+eZ
+oJ
 mr
 hk
 hk
@@ -38977,8 +39002,8 @@ ZO
 ZO
 ZO
 ZO
-ZO
-Kk
+eZ
+Qe
 cX
 hk
 hk
@@ -39234,7 +39259,7 @@ ZO
 zm
 zm
 ZO
-ZO
+eZ
 uH
 cX
 ac

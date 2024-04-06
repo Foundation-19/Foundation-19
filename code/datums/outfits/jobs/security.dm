@@ -20,7 +20,7 @@
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /decl/hierarchy/outfit/job/security/hcz_zone_commander
-	name = OUTFIT_JOB_NAME("HCZ Zone Commander")
+	name = OUTFIT_JOB_NAME("HCZ Captain")
 	uniform = /obj/item/clothing/under/rank/head_of_security/hcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -37,7 +37,7 @@
 
 
 /decl/hierarchy/outfit/job/security/lcz_zone_commander
-	name = OUTFIT_JOB_NAME("LCZ Zone Commander")
+	name = OUTFIT_JOB_NAME("LCZ Captain")
 	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -278,6 +278,51 @@
 	backpack_contents = list()
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	belt = /obj/item/gun/energy/stunrevolver/taser
+	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/decl/hierarchy/outfit/job/security/lcz_cadet
+	name = OUTFIT_JOB_NAME("LCZ Cadet")
+	uniform = /obj/item/clothing/under/rank/security/lcz/cadet
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/cadet
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/junseclvl1lcz
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/handcuffs = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/decl/hierarchy/outfit/job/security/ez_probationary
+	name = OUTFIT_JOB_NAME("EZ Probationary Agent")
+	uniform = /obj/item/clothing/under/rank/security/ez
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/junseclvl1ez
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
+	l_pocket = /obj/item/book/manual/scp/secsop
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/cadet
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list()
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	head = /obj/item/clothing/head/helmet/scp/security/cadet/hat
+	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/decl/hierarchy/outfit/job/security/hcz_cadet
+	name = OUTFIT_JOB_NAME("HCZ Cadet")
+	uniform = /obj/item/clothing/under/rank/security/hcz
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/junseclvl2hcz
+	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
+	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list()
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /* Non-SCP security outfits */

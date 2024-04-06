@@ -7217,7 +7217,7 @@
 "xM" = (
 /obj/machinery/door/airlock/research{
 	name = "Surgical Theatre";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2","ACCESS_ROBOTICS")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
@@ -8264,7 +8264,7 @@
 "Eb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Mechanical Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2","ACCESS_ROBOTICS")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/roboticsupr)
@@ -10152,6 +10152,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
+"PJ" = (
+/obj/effect/landmark/start{
+	name = "Medical Intern"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/exam_room)
 "PK" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/light/spot{
@@ -41824,7 +41830,7 @@ LC
 iw
 iw
 iw
-iw
+PJ
 iw
 ir
 il

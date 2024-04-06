@@ -74,6 +74,24 @@
 			SetName(initial(name))
 			desc = initial(desc)
 
+// LCZ - Cadet
+/obj/structure/closet/secure_closet/guard/lcz/cadet
+	name = "LCZ Cadet's Locker"
+	req_access = list(ACCESS_SECURITY_LVL2)
+	icon_state = "lczcadet1"
+	icon_closed = "lczcadet"
+	icon_locked = "lczcadet1"
+	icon_opened = "lczopen"
+	icon_off = "lczcadetoff"
+
+/obj/structure/closet/secure_closet/guard/lcz/cadet/WillContain()
+	return ..() | list(
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/head/helmet/scp/security/cadet,
+		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+	)
+
 // LCZ - Guard
 /obj/structure/closet/secure_closet/guard/lcz
 	name = "LCZ Guard's Locker"
@@ -115,6 +133,29 @@
 		/obj/item/clothing/suit/armor/vest/scp/medarmor,
 		/obj/item/clothing/head/helmet/scp/security,
 		/obj/item/clothing/head/beret/sec/sergeant,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+	)
+
+// HCZ - Cadet
+/obj/structure/closet/secure_closet/guard/hcz/cadet
+	name = "HCZ Cadet's Locker"
+	req_access = list(ACCESS_SECURITY_LVL3)
+	icon_state = "hczcadet1"
+	icon_closed = "hczcadet"
+	icon_locked = "hczcadet1"
+	icon_opened = "hczopen"
+	icon_off = "hczcadetoff"
+
+/obj/structure/closet/secure_closet/guard/hcz/cadet/WillContain()
+	return ..() | list(
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/material/knife/combat,
+		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
+		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+		/obj/item/melee/telebaton,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/gun/energy/taser,
+		/obj/item/ammo_magazine/box/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -172,6 +213,27 @@
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/sergeant,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+	)
+
+// EZ - Cadet
+/obj/structure/closet/secure_closet/guard/ez/cadet
+	name = "EZ Cadet's Locker"
+	req_access = list(ACCESS_SECURITY_LVL2)
+	icon_state = "ezcadet1"
+	icon_closed = "ezcadet"
+	icon_locked = "ezcadet1"
+	icon_opened = "ezopen"
+	icon_off = "ezcadetoff"
+
+/obj/structure/closet/secure_closet/guard/ez/cadet/WillContain()
+	return ..() | list(
+		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
+		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+		/obj/item/melee/telebaton,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/gun/energy/taser,
+		/obj/item/ammo_magazine/box/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 

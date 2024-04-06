@@ -276,6 +276,15 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
+"aui" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 1;
+	pixel_y = -14
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/item/beach_ball/holoball,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "auK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -872,6 +881,12 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"bkx" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 10
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "bky" = (
 /obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning,
@@ -1774,6 +1789,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"cvf" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 1;
+	pixel_y = -14
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "cvg" = (
 /obj/machinery/door/airlock/civilian{
 	name = "CDCZ Restroom"
@@ -1856,7 +1881,7 @@
 	id_tag = "xenoaccess"
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/Lowerresearchwing)
+/area/site53/reswing/lowres/researchoffices)
 "czJ" = (
 /turf/simulated/floor/beach/water,
 /area/site53/llcz/dclass/luxuryhall)
@@ -2236,7 +2261,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/reswing/lowres/Lowerresearchwing)
+/area/site53/reswing/lowres/xenoarchaeology)
 "dcE" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/r_wall/prepainted,
@@ -2291,7 +2316,7 @@
 /area/site53/uhcz/scp106parts)
 "dfZ" = (
 /obj/machinery/door/airlock/glass/research{
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/lowres/Lowerresearchwing)
@@ -2526,6 +2551,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/briefing)
+"dtQ" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/plain/white,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "dtW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2835,6 +2867,13 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/primaryhallway)
+"dWL" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/spline/plain/white,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "dXu" = (
 /obj/structure/closet/crate/large,
 /obj/effect/floor_decal/corner/brown/border{
@@ -3390,7 +3429,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/reswing/lowres/Lowerresearchwing)
+/area/site53/reswing/lowres/researchoffices)
 "eDA" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -3839,6 +3878,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
+"fng" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/plain/white,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "fnu" = (
 /obj/effect/floor_decal/corner/research/border{
 	dir = 8
@@ -4059,7 +4105,7 @@
 	id_tag = "xenoaccess"
 	},
 /turf/simulated/floor,
-/area/site53/reswing/lowres/Lowerresearchwing)
+/area/site53/reswing/lowres/researchoffices)
 "fAr" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Self-Destruct Maintenance";
@@ -4178,6 +4224,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"fKu" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 1;
+	pixel_y = -14
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "fKC" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southleft{
@@ -4736,6 +4792,10 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
+"gyK" = (
+/obj/effect/floor_decal/spline/plain/white,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "gzk" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 10
@@ -4902,6 +4962,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"gHn" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 9
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "gIw" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/table,
@@ -5996,6 +6062,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cryo)
+"ioF" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "ipG" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -6139,6 +6211,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"iAn" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 1;
+	pixel_y = -14
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "iAs" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/bandana/orange,
@@ -6176,7 +6255,7 @@
 	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Senior Researcher Office C";
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/science/seniorresearcherc)
@@ -7116,6 +7195,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"jRT" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "jRU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -7738,6 +7823,12 @@
 /obj/item/stack/material/phoron/ten,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
+"kTb" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 8
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "kTy" = (
 /obj/machinery/light{
 	dir = 8
@@ -9599,6 +9690,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"nwk" = (
+/obj/machinery/door/airlock/glass/civilian{
+	name = "CDCZ Basketball Court"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/luxuryhall)
 "nxd" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/effect/decal/cleanable/cobweb2,
@@ -10845,6 +10942,13 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
+"ppn" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 5
+	},
+/obj/effect/floor_decal/spline/plain/white,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "ppM" = (
 /obj/machinery/light{
 	dir = 8
@@ -11472,6 +11576,14 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"qnq" = (
+/obj/structure/holohoop,
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "qnr" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 5
@@ -11653,7 +11765,7 @@
 /area/site53/llcz/dclass/luxuryhall)
 "qAN" = (
 /obj/machinery/door/airlock/glass/research{
-	req_access = list("ACCESS_SCIENCE_LEVEL3");
+	req_access = list("ACCESS_SCIENCE_LEVEL2");
 	name = "Anomaly gas storage"
 	},
 /turf/simulated/floor,
@@ -12965,6 +13077,12 @@
 /obj/structure/ladder/up,
 /turf/simulated/floor,
 /area/site53/surface)
+"sly" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 5
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "slN" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/old_tile,
@@ -13794,6 +13912,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
+"tNC" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 1
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "tNL" = (
 /obj/structure/table/rack,
 /obj/random/soap,
@@ -14314,6 +14438,20 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/xenobotany)
+"urQ" = (
+/obj/structure/holohoop{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/light,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
+"utH" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 4
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "uue" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -14576,6 +14714,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
+"uZg" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 6
+	},
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "uZz" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/structure/ore_box,
@@ -15045,6 +15189,13 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"vFK" = (
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 9
+	},
+/obj/effect/floor_decal/spline/plain/white,
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "vHe" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 8
@@ -16367,6 +16518,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/lowernukeladders)
+"xyE" = (
+/obj/machinery/door/airlock/glass/research{
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/reswing/lowres/xenoarchaeology)
 "xyX" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
@@ -16455,6 +16612,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"xFB" = (
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "xFG" = (
 /obj/structure/sign/directions/ez{
 	pixel_y = -30
@@ -24710,7 +24870,7 @@ czJ
 xOv
 pHn
 pHn
-pHn
+nwk
 pHn
 pHn
 pHn
@@ -24966,20 +25126,20 @@ jzk
 czJ
 czJ
 pHn
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-ena
+xFB
+xFB
+ioF
+xFB
+xFB
+xFB
+cvf
+xFB
+xFB
+xFB
+ioF
+xFB
+xFB
+pHn
 unP
 vZo
 dFL
@@ -25223,20 +25383,20 @@ pHn
 pHn
 pHn
 pHn
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-ena
+kTb
+kTb
+kTb
+bkx
+xFB
+xFB
+iAn
+xFB
+xFB
+gHn
+kTb
+kTb
+kTb
+pHn
 ena
 ena
 ena
@@ -25479,21 +25639,21 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+pHn
+kTb
+dWL
+bkx
+xFB
+bkx
+xFB
+iAn
+xFB
+gHn
+xFB
+vFK
+kTb
+kTb
+pHn
 hIH
 hIH
 hIH
@@ -25736,21 +25896,21 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+pHn
+qnq
+gyK
+gyK
+xFB
+gyK
+xFB
+aui
+xFB
+tNC
+xFB
+fng
+xFB
+urQ
+pHn
 hIH
 hIH
 hIH
@@ -25993,21 +26153,21 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+pHn
+utH
+dtQ
+uZg
+xFB
+uZg
+xFB
+iAn
+xFB
+sly
+xFB
+ppn
+utH
+utH
+pHn
 hIH
 hIH
 hIH
@@ -26250,21 +26410,21 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+pHn
+utH
+utH
+utH
+uZg
+xFB
+xFB
+iAn
+xFB
+xFB
+sly
+utH
+utH
+utH
+pHn
 hIH
 hIH
 hIH
@@ -26507,21 +26667,21 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+pHn
+xFB
+xFB
+jRT
+xFB
+xFB
+xFB
+fKu
+xFB
+xFB
+xFB
+jRT
+xFB
+xFB
+pHn
 hIH
 hIH
 hIH
@@ -26764,21 +26924,21 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
+pHn
 hIH
 hIH
 hIH
@@ -50825,14 +50985,14 @@ vjB
 bLq
 vTa
 hlA
-rlr
+ttM
 uij
 uij
-cre
+uij
 dbL
-cre
-cre
-rqB
+uij
+uij
+ttM
 qsq
 opP
 gOS
@@ -51082,10 +51242,10 @@ xmw
 ikJ
 ikJ
 ojW
-abc
+uij
 qjC
 wDo
-dfZ
+xyE
 pej
 jWe
 fmP
@@ -51339,10 +51499,10 @@ ikJ
 ikJ
 ikJ
 vEn
-abc
+uij
 mtp
 oxW
-cre
+uij
 umM
 bPl
 qIN
@@ -51596,17 +51756,17 @@ ikJ
 eNz
 ikJ
 xfh
-abc
-abc
-abc
-cre
+uij
+uij
+uij
+uij
 umM
 vHT
-cre
-cre
-cre
-cre
-cre
+mwR
+mwR
+mwR
+mwR
+mwR
 fAd
 dOa
 bVy
@@ -51859,7 +52019,7 @@ ikJ
 nTg
 umM
 rTU
-cre
+mwR
 rwn
 ubg
 jaM
@@ -53401,7 +53561,7 @@ ktv
 gOS
 umM
 rTU
-cre
+mwR
 wsD
 nVP
 bHr
@@ -53658,7 +53818,7 @@ rhA
 gOS
 gNB
 rTF
-rqB
+sWX
 mwR
 mwR
 sWX

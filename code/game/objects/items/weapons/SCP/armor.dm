@@ -57,6 +57,16 @@
 	armor = list(melee = 70, bullet = 15, laser = 25, energy = 25, bomb = 50, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
+/obj/item/clothing/suit/armor/vest/scp/medarmor/cadet
+	name = "foundation security trainee rig"
+	desc = "A lightly armored rig. Worn by facility security in training, it's nimble plating, and defensive properties make it faster to manuever in than a normal ol' vest."
+	icon_state = "cadetarmor"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO
+	cold_protection = UPPER_TORSO | LOWER_TORSO
+	armor = list(melee = 35, bullet = 20, laser = 15, energy = 15, bomb = 15, bio = 15, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = 0
+
 /obj/item/clothing/suit/armor/vest/scp/isd
 	name = "Internal Security trenchcoat"
 	desc = "A durable coat used by the Internal Security Department, there isn't much to note about it except for the golden SCP logo on the shoulder, and wrist designs."

@@ -507,11 +507,34 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 
 // JUNIOR GUARD ID'S
 
-/obj/item/card/id/junseclvl2lcz
+/obj/item/card/id/junseclvl1lcz
 	name = "security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
 	item_state = "Sec_ID1"
+	job_access_type = /datum/job/guardlcz
+
+/obj/item/card/id/junseclvl1ez
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl1"
+	item_state = "Sec_ID1"
+	job_access_type = /datum/job/guardez
+
+/obj/item/card/id/junseclvl2hcz
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/guardhcz
+
+// GUARD ID'S
+
+/obj/item/card/id/junseclvl2lcz
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
 	job_access_type = /datum/job/enlistedofficerlcz
 
 /obj/item/card/id/junseclvl2ez
@@ -532,8 +555,8 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/seclvl3lcz
 	name = "security ID"
 	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
-	icon_state = "securitylvl2"
-	item_state = "Sec_ID2"
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ncoofficerlcz
 
 /obj/item/card/id/seclvl3ez
@@ -711,14 +734,28 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A dark yellow ID. Looks cool, the person wearing it, not so much."
 	icon_state = "sciencelvl3"
 	item_state = "Science_ID3"
-	job_access_type = /datum/job/scientist
+	job_access_type = /datum/job/seniorscientist
+
+/obj/item/card/id/sciencelvl2robo
+	name = "science ID"
+	desc = "A bright yellow ID. Looks ordinary?"
+	icon_state = "sciencelvl2"
+	item_state = "Science_ID2"
+	job_access_type = /datum/job/roboticist
+
+/obj/item/card/id/sciencelvl3robo
+	name = "science ID"
+	desc = "An orange ID. Looks important."
+	icon_state = "sciencelvl4"
+	item_state = "Science_ID4"
+	job_access_type = /datum/job/seniorroboticist
 
 /obj/item/card/id/sciencelvl4
 	name = "science ID"
 	desc = "An orange ID. Looks important."
 	icon_state = "sciencelvl4"
 	item_state = "Science_ID4"
-	job_access_type = /datum/job/seniorscientist
+	job_access_type = /datum/job/ard
 
 /obj/item/card/id/sciencelvlp
 	name = "science ID"
@@ -854,6 +891,13 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 
 // MEDICAL CARDS
 
+/obj/item/card/id/medicintern
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl1"
+	item_state = "Sec_ID1"
+	job_access_type = /datum/job/medicaldoctor
+
 /obj/item/card/id/emt
 	name = "security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
@@ -883,6 +927,14 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	job_access_type = /datum/job/cmo
 	class = CLASS_A
 
+/obj/item/card/id/assistantmedicalofficer
+	name = "security ID"
+	desc = "A purple ID. Seems important."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/acmo
+	class = CLASS_A
+
 /obj/item/card/id/psychiatrist
 	name = "administration ID"
 	desc = "A light blue card. Seems important."
@@ -897,6 +949,14 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A red ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "sciencelvl5"
 	item_state = "Science_ID5"
+	job_access_type = /datum/job/rd
+	class = CLASS_A
+
+/obj/item/card/id/rd
+	name = "science ID"
+	desc = "A red ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "sciencelvl4"
+	item_state = "Science_ID4"
 	job_access_type = /datum/job/rd
 	class = CLASS_A
 

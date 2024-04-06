@@ -3,8 +3,20 @@
 	uniform = /obj/item/clothing/under/rank/research_director/alt
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd/cso
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/card/id/sciencelvl5
-	gloves = /obj/item/clothing/gloves/latex/nitrile
+	id_type = /obj/item/card/id/rd
+	gloves = /obj/item/clothing/gloves/thick
+	l_ear = /obj/item/device/radio/headset/heads/rd
+	l_pocket = /obj/item/book/manual/scp/scisop
+	glasses = /obj/item/clothing/glasses/hud/science
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
+
+/decl/hierarchy/outfit/job/command/aresearchdirector
+	name = OUTFIT_JOB_NAME("Assistant Research Director")
+	uniform = /obj/item/clothing/under/rank/scientist_new/senior
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/assistant
+	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/card/id/sciencelvl4
+	gloves = /obj/item/clothing/gloves/thick
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	l_pocket = /obj/item/book/manual/scp/scisop
 	glasses = /obj/item/clothing/glasses/hud/science
@@ -35,7 +47,7 @@
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
 	suit = /obj/item/clothing/suit/storage/toggle/highvis
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/card/id/sciencelvl4
+	id_type = /obj/item/card/id/sciencelvl3robo
 	gloves = /obj/item/clothing/gloves/insulated
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
@@ -47,7 +59,7 @@
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
 	suit = /obj/item/clothing/suit/storage/toggle/highvis
 	shoes = /obj/item/clothing/shoes/jackboots
-	id_type = /obj/item/card/id/sciencelvl3
+	id_type = /obj/item/card/id/sciencelvl2robo
 	gloves = /obj/item/clothing/gloves/insulated
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
@@ -70,7 +82,7 @@
 	uniform = /obj/item/clothing/under/rank/scientist_new/senior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/card/id/sciencelvl4
+	id_type = /obj/item/card/id/sciencelvl3
 	gloves = /obj/item/clothing/gloves/latex
 	l_pocket = /obj/item/book/manual/scp/scisop
 	l_ear = /obj/item/device/radio/headset/headset_sci

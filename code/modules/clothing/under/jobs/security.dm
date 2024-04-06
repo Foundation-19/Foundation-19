@@ -45,6 +45,12 @@
 	icon_state = "lczrecon_guard"
 	worn_state = "lczrecon_guard"
 
+/obj/item/clothing/under/rank/security/lcz/cadet
+	name = "LCZ Cadet Jumpsuit"
+	desc = "A black shortsleeved shirt worn by Cadets still in training, bearing \"Trainee\" on the back of the uniform in white, with the Security Department logo on the shoulder. Also along with this is the LCZ Security trousers."
+	icon_state = "lcz_cadet"
+	worn_state = "lcz_cadet"
+
 /obj/item/clothing/under/rank/security/lcz
 	name = "LCZ Security Jumpsuit"
 	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."

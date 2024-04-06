@@ -109,7 +109,7 @@
 	uniform = /obj/item/clothing/under/rank/scientist_new/senior
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/card/id/sciencelvl4
+	id_type = /obj/item/card/id/sciencelvl3
 	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	glasses = /obj/item/clothing/glasses/science

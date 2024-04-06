@@ -210,6 +210,55 @@
 // OFFICERS
 //##
 
+/datum/job/raisa
+	title = "RAISA Agent"
+	department = "Entrance Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|ECZ|BUR
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the EZ Supervisor"
+	economic_power = 5
+	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_ENGINEERING = 90, EXP_TYPE_BUR = 60)
+	alt_titles = list()
+	minimal_player_age = 7
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/raisa_agent
+	class = CLASS_B
+	hud_icon = "hudraisa"
+
+	access = list(
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_NETWORK
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+
+	max_skill = list(
+	    SKILL_COMPUTER    = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+	skill_points = 17
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Track and prevent potential espionage. Control access to classified information. Protect SCP databases from threats, both mundane and anomalous."
+
 /datum/job/ncoofficerlcz
 	title = "LCZ Sergeant"
 	department = "Light Containment Personnel"
@@ -365,7 +414,7 @@
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the LCZ Sergeants and Zone Commander"
 	economic_power = 4
-	requirements = list("Class D" = 30)
+	requirements = list(EXP_TYPE_LCZ = 220)
 	alt_titles = list("LCZ Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Riot Control Guard" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Riot Control Agent" = /decl/hierarchy/outfit/job/security/lcz_riot, "LCZ Agent")
 	minimal_player_age = 0
 	ideal_character_age = 25
@@ -413,7 +462,7 @@
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the HCZ Sergeants and Zone Commander"
 	economic_power = 4
-	requirements = list(EXP_TYPE_SECURITY = 120)
+	requirements = list(EXP_TYPE_HCZ = 220)
 	alt_titles = list("HCZ Containment Response Agent", "HCZ Containment Response Guard", "HCZ Combat Medic", "HCZ Agent")
 //	minimal_player_age = 0
 	ideal_character_age = 25
@@ -458,7 +507,7 @@
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the EZ Senior Agents and Supervisor"
 	economic_power = 4
-	requirements = list("Class D" = 30)
+	requirements = list(EXP_TYPE_ECZ = 220)
 	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/security/ez_guard_investigative, "EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 0
 	ideal_character_age = 25
@@ -496,51 +545,137 @@
 	)
 	skill_points = 17
 
-/datum/job/raisa
-	title = "RAISA Agent"
-	department = "Entrance Personnel"
+/datum/job/guardlcz
+	title = "LCZ Cadet"
+	department = "Light Containment Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC|ECZ|BUR
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the EZ Supervisor"
-	economic_power = 5
-	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_ENGINEERING = 90, EXP_TYPE_BUR = 60)
-	alt_titles = list()
-	minimal_player_age = 7
+	department_flag = SEC|LCZ
+	total_positions = 6
+	spawn_positions = 6
+	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
+	supervisors = "the LCZ Security and Zone Captain"
+	economic_power = 4
+	minimal_player_age = 0
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/security/raisa_agent
-	class = CLASS_B
-	hud_icon = "hudraisa"
+	balance_limited = TRUE
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_cadet
+	class = CLASS_C
+	hud_icon = "hudlczguard"
 
 	access = list(
-		ACCESS_ENG_COMMS,
 		ACCESS_SEC_COMMS,
-		ACCESS_SCIENCE_LVL1,
-		ACCESS_MEDICAL_LVL1,
-		ACCESS_ENGINEERING_LVL1,
-		ACCESS_ENGINEERING_LVL2,
 		ACCESS_SECURITY_LVL1,
 		ACCESS_SECURITY_LVL2,
-		ACCESS_SECURITY_LVL3,
-		ACCESS_ADMIN_LVL1,
-		ACCESS_ADMIN_LVL2,
-		ACCESS_ADMIN_LVL3,
-		ACCESS_NETWORK
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
 	)
 	minimal_access = list()
 
 	min_skill = list(
-	    SKILL_COMPUTER    = SKILL_EXPERIENCED,
-	    SKILL_FORENSICS   = SKILL_TRAINED
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_BASIC,
+	    SKILL_FORENSICS   = SKILL_BASIC
 	)
 
 	max_skill = list(
-	    SKILL_COMPUTER    = SKILL_MASTER,
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+	skill_points = 15
+
+/datum/job/guardhcz
+	title = "HCZ Cadet"
+	department = "Heavy Containment Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|HCZ
+	total_positions = 6
+	spawn_positions = 6
+	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
+	supervisors = "the HCZ Security and Zone Captain"
+	economic_power = 4
+//	minimal_player_age = 0
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/hcz_cadet
+	class = CLASS_C
+	hud_icon = "hudhczguard"
+
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_BASIC,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+	skill_points = 15
+
+/datum/job/guardez
+	title = "EZ Probationary Agent"
+	department = "Entrance Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|ECZ
+	total_positions = 6
+	spawn_positions = 6
+	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
+	supervisors = "the EZ Security Zone Supervisor"
+	economic_power = 4
+	minimal_player_age = 0
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/ez_probationary
+	class = CLASS_C
+	hud_icon = "hudezguard"
+
+	access = list(
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_CHAPEL_OFFICE
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_BASIC,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
 	    SKILL_FORENSICS   = SKILL_EXPERIENCED
 	)
-	skill_points = 17
 
-	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium"
-	duties = "Track and prevent potential espionage. Control access to classified information. Protect SCP databases from threats, both mundane and anomalous."
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+	skill_points = 15
+

@@ -262,8 +262,11 @@
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp106containment)
 "aaJ" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/guard/hcz/cadet,
+/turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/securitypost)
 "aaN" = (
 /obj/effect/paint_stripe/yellow,
@@ -686,7 +689,7 @@
 "acb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Xenobiology Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -922,12 +925,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/glass/research{
-	name = "Xenobiology Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/airlock/glass/research{
+	name = "Xenobiology Laboratory";
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -1803,7 +1806,7 @@
 "afP" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "Chemistry Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1;
@@ -12366,7 +12369,7 @@
 /obj/machinery/door/window/brigdoor/northleft,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/window/brigdoor/southright{
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -12589,7 +12592,7 @@
 /obj/machinery/door/window/brigdoor/westleft,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -15329,7 +15332,7 @@
 "aSC" = (
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Chemistry Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1;
@@ -16737,12 +16740,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
-"aXT" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
 "aXV" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
@@ -19500,8 +19497,8 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uhcz/commanderoffice)
 "bhZ" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
+/obj/effect/landmark/start{
+	name = "HCZ Cadet"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
@@ -21432,6 +21429,16 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
+"bTj" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/obj/machinery/vending/security{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "bTl" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal,
@@ -22208,7 +22215,7 @@
 /area/site53/uhcz/generalpurpose3)
 "cqc" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "Checkpoint holding cell";
+	name = "Cadet Locker Room";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -24138,7 +24145,7 @@
 	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Senior Researcher Office B";
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/researchwing)
@@ -24225,12 +24232,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/glass/research{
-	name = "Xenobiology Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/airlock/glass/research{
+	name = "Xenobiology Laboratory";
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/researchwing)
@@ -25743,16 +25750,12 @@
 /turf/simulated/open,
 /area/site53/llcz/dclass/primaryhallway)
 "eED" = (
-/obj/machinery/button/flasher{
-	dir = 1;
-	id_tag = "HCZ Holding Cell 2";
-	name = "Flasher Holding Cell 2";
-	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
 	},
-/obj/effect/floor_decal/corner/red/diagonal,
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/securitypost)
+/obj/structure/closet/secure_closet/guard/lcz/cadet,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "eEQ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/light{
@@ -27514,9 +27517,10 @@
 /area/site53/ulcz/hallways)
 "fQz" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 6
+	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/closet/secure_closet/guard/lcz/cadet,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "fQH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -30962,7 +30966,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "General Purpose Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/machinery/door/window/southleft,
 /turf/simulated/floor/tiled/dark/small,
@@ -31322,11 +31326,10 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp263research)
 "ijq" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet/guard/hcz/cadet,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "ijY" = (
@@ -31528,11 +31531,10 @@
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
 "ipQ" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
+/obj/structure/closet/secure_closet/guard/hcz/cadet,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
@@ -31882,7 +31884,7 @@
 "iHf" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Mechanical Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL2")
+	req_access = list("ACCESS_SCIENCE_LEVEL2","ACCESS_ROBOTICS")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/robotics)
@@ -32547,6 +32549,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/genstorage1)
+"jdb" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/guard/lcz/cadet,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "jdj" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "CDCZ Isolation Cell";
@@ -33296,7 +33305,7 @@
 	dir = 1
 	},
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list("ACCESS_SCIENCE_LEVEL3");
+	req_access = list("ACCESS_SCIENCE_LEVEL2");
 	name = "Chemistry Laboratory"
 	},
 /obj/machinery/door/window/westright,
@@ -33326,6 +33335,13 @@
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
+"jGS" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/effect/landmark/start{
+	name = "LCZ Cadet"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "jGW" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-012 Containment Chamber";
@@ -33901,6 +33917,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
+"kaJ" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/structure/closet/secure_closet/guard/lcz/cadet,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "kaT" = (
 /obj/structure/sign/scp/safe_scp{
 	pixel_x = 32
@@ -37679,7 +37702,7 @@
 "msH" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "AIC Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2","ACCESS_ROBOTICS")
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -37758,7 +37781,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northright{
 	name = "AIC Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2","ACCESS_ROBOTICS")
 	},
 /obj/machinery/door/window/southright,
 /turf/simulated/floor/tiled/dark/small,
@@ -38040,6 +38063,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
+"mCN" = (
+/obj/effect/landmark/start{
+	name = "LCZ Cadet"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "mCO" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/brown/border{
@@ -38671,7 +38700,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "AIC Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2","ACCESS_ROBOTICS")
 	},
 /obj/machinery/door/window/southleft,
 /turf/simulated/floor/tiled/dark/small,
@@ -38773,14 +38802,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
 "mYl" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
+/area/space)
 "mYp" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Logistics Maintenance";
@@ -39149,6 +39173,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"njM" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/obj/structure/closet/secure_closet/guard/hcz/cadet,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/uhcz/securitypost)
 "nkm" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
@@ -39179,7 +39212,7 @@
 "nmB" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Senior Researcher Office A";
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -40468,15 +40501,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "nWH" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet/guard/hcz/cadet,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "nWO" = (
@@ -40506,6 +40537,15 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/hallways)
+"nYz" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "LCZ Cadet"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "nYC" = (
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
@@ -40621,11 +40661,11 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
 "ocR" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "HCZ Cadet"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
@@ -41091,7 +41131,7 @@
 	pixel_y = -7
 	},
 /obj/structure/closet/secure_closet/chemical{
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/researchanddevelopment)
@@ -41168,12 +41208,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp012)
-"orD" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
 "orI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -42983,7 +43017,7 @@
 "pBj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/eastright{
-	req_access = list("ACCESS_SCIENCE_LEVEL3");
+	req_access = list("ACCESS_SCIENCE_LEVEL2");
 	name = "Chemistry Laboratory"
 	},
 /obj/machinery/door/window/westleft,
@@ -44250,11 +44284,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
 "qnO" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "HCZ Cadet"
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/securitypost)
@@ -45665,6 +45699,13 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
+"rlB" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "rlV" = (
 /obj/machinery/door/airlock/vault{
 	name = "Containment Chamber";
@@ -46492,18 +46533,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"rNI" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
 "rNJ" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
@@ -47285,10 +47314,6 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/machinery/flasher{
-	id_tag = "HCZ Holding Cell 2";
-	pixel_y = 25
-	},
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
@@ -47934,7 +47959,7 @@
 "sDw" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Mechanical Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL2")
+	req_access = list("ACCESS_SCIENCE_LEVEL2","ACCESS_ROBOTICS")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -48022,7 +48047,7 @@
 "sHs" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Xenobiology Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/researchwing)
@@ -48078,6 +48103,13 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
+"sJo" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/light,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "sJK" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/brown/border,
@@ -48855,7 +48887,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northright{
 	name = "General Purpose Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/machinery/door/window/southright,
 /turf/simulated/floor/tiled/dark/small,
@@ -49407,7 +49439,7 @@
 "txb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "AIC Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL3","ACCESS_ROBOTICS")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -51078,16 +51110,15 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
 "uGR" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light{
-	dir = 8
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 8
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/uhcz/securitypost)
+/obj/structure/closet/secure_closet/guard/lcz/cadet,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/entrance_checkpoint)
 "uGZ" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/warning{
@@ -51265,6 +51296,10 @@
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"uQc" = (
+/obj/structure/closet/secure_closet/guard/hcz/cadet,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uhcz/securitypost)
 "uQi" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -51647,11 +51682,12 @@
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/entrance_checkpoint)
 "vel" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 5
+/obj/machinery/door/airlock/glass/research{
+	name = "AIC Laboratory";
+	req_access = list("ACCESS_SCIENCE_LEVEL3","ACCESS_ROBOTICS")
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "vex" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-173 Preperation Room";
@@ -52211,18 +52247,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/checkequip)
-"vxr" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
 "vxy" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Research Wing Maintenance";
@@ -52699,7 +52723,7 @@
 "vOj" = (
 /obj/machinery/smartfridge/chemistry,
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/researchwing)
@@ -53294,10 +53318,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
-"wkv" = (
-/obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
 "wkx" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/blue/border{
@@ -72543,12 +72563,12 @@ hOR
 afQ
 bdf
 azA
-azA
-azA
-azA
-azA
-azA
-azA
+mYl
+mYl
+mYl
+mYl
+mYl
+mYl
 azA
 azA
 azA
@@ -72800,11 +72820,11 @@ hOR
 slO
 bdf
 azA
-azA
-bGY
-bGY
-bGY
-bGY
+mYl
+rlB
+eED
+eED
+kaJ
 bGY
 azA
 azA
@@ -73057,11 +73077,11 @@ hOR
 uOG
 bdf
 azA
-azA
-bGY
-vxr
 mYl
-rNI
+uGR
+mCN
+mCN
+jGS
 bGY
 bGY
 bGY
@@ -73314,11 +73334,11 @@ hOR
 afQ
 bdf
 azA
-azA
-bGY
-orD
-aVb
-wkv
+mYl
+jdb
+mCN
+mCN
+sJo
 bGY
 aUz
 jUp
@@ -73571,11 +73591,11 @@ hOR
 afQ
 bdf
 azA
-azA
-bGY
-vel
-aXT
+mYl
 fQz
+nYz
+mIA
+bTj
 bGY
 aUL
 aVf
@@ -89440,7 +89460,7 @@ aTg
 aTg
 hVd
 hVd
-aoJ
+vel
 hVd
 hVd
 agX
@@ -93640,7 +93660,7 @@ ipQ
 nWH
 ijq
 ocR
-uGR
+pPg
 ocX
 ass
 azA
@@ -93894,10 +93914,10 @@ bhE
 kFS
 ass
 qnO
-aaJ
 bhZ
-aaJ
 bhZ
+bhZ
+pVB
 hUo
 ass
 azA
@@ -94150,10 +94170,10 @@ ass
 viG
 ilx
 ass
-nQR
-dKG
-pVB
-pVB
+njM
+aaJ
+uQc
+bhZ
 pVB
 eKg
 ass
@@ -94396,7 +94416,7 @@ aEC
 ikz
 aEC
 aEC
-eED
+aEC
 ass
 shV
 qJk

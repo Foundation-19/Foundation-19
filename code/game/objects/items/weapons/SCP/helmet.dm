@@ -40,6 +40,26 @@
 	icon_state = "heavy-guard-helm"
 	armor = list(melee = 65, bullet = 45, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 
+/obj/item/clothing/head/helmet/scp/security/cadet
+	name = "\improper foundation security trainee helmet"
+	desc = "A light non-descript helmet with built-in padding, and armor, nothing special really."
+	icon_state = "cadethelm"
+	body_parts_covered = HEAD
+	armor = list(melee = 45, bullet = 30, laser = 30, energy = 15, bomb = 15, bio = 15, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS|BLOCKHAIR
+	action_button_name = null
+
+/obj/item/clothing/head/helmet/scp/security/cadet/hat
+	name = "foundation security trainee hat"
+	desc = "A hat given to Entrance Zone probationary agents, it's given light padding to keep those craniums living."
+	icon_state = "cadethat"
+	body_parts_covered = HEAD
+	armor = list(melee = 25, bullet = 15, laser = 15, energy = 15, bomb = 15, bio = 15, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = null
+	action_button_name = null
+
 /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	name = "\improper Tactical Security Officer Helmet"
 	desc = "The markings on this helmet indicate that it belongs to a SD zone commander."
