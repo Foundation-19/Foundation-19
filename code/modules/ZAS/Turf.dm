@@ -5,9 +5,9 @@
 /turf/var/datum/gas_mixture/air
 
 /turf/simulated/proc/update_graphic(list/graphic_add = null, list/graphic_remove = null)
-	if(graphic_add && graphic_add.len)
+	if(graphic_add && LAZYLEN(graphic_add))
 		add_vis_contents(graphic_add)
-	if(graphic_remove && graphic_remove.len)
+	if(graphic_remove && LAZYLEN(graphic_remove))
 		remove_vis_contents(graphic_remove)
 
 /turf/proc/update_air_properties()
