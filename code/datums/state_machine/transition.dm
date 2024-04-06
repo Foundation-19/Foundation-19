@@ -9,7 +9,7 @@
 	. = ..()
 	LAZYINITLIST(from)
 	if(ispath(target))
-		target = decls_repository.get_decl(target)
+		target = GET_DECL(target)
 
 // Tells the FSM if it should or should not be allowed to transfer to the target state.
 /decl/state_transition/proc/is_open(datum/holder)

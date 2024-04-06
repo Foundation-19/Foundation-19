@@ -131,6 +131,7 @@ GLOBAL_VAR_INIT(number_of_planetoids, 0)
 	generate_planet_image()
 	START_PROCESSING(SSobj, src)
 
+
 //attempt at more consistent history generation for xenoarch finds.
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_engravings()
 	if (!actors.len)

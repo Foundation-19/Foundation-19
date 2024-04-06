@@ -9,7 +9,7 @@
 /decl/state/Initialize()
 	. = ..()
 	for(var/i in 1 to LAZYLEN(transitions))
-		var/decl/state_transition/T = decls_repository.get_decl(transitions[i])
+		var/decl/state_transition/T = GET_DECL(transitions[i])
 		T.from += src
 		transitions[i] = T
 

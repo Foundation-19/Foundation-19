@@ -34,7 +34,7 @@ var/global/list/state_machines = list()
 	return FALSE
 
 // This contains the current state of the FSM and should be held by whatever the FSM is controlling.
-// Unlike the individual states and their transitions, the state machine objects are not singletons, and hence aren't `/decl`s.
+// Unlike the individual states and their transitions, the state machine objects are not decls, and hence aren't `/decl`s.
 /datum/state_machine
 	var/datum/weakref/holder_ref
 	var/base_type = /datum/state_machine
@@ -60,7 +60,7 @@ var/global/list/state_machines = list()
 		current_state.exited_state(holder_instance)
 	current_state = initial(current_state)
 	if(ispath(current_state, /decl/state))
-		current_state = decls_repository.get_decl(current_state)
+		current_state = GET_DECL(current_state)
 		current_state.entered_state(holder_instance)
 	else
 		current_state = null
@@ -96,7 +96,7 @@ var/global/list/state_machines = list()
 	if(istype(current_state))
 		current_state.exited_state(holder_instance)
 	if(ispath(new_state_type))
-		current_state = decls_repository.get_decl(new_state_type)
+		current_state = GET_DECL(new_state_type)
 	else // need to include null here, so we can't do an istype
 		current_state = new_state_type
 	if(istype(current_state))

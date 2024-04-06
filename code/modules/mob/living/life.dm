@@ -12,10 +12,10 @@
 	if(machine && !CanMouseDrop(machine, src))
 		machine = null
 
+	var/datum/gas_mixture/gas_environment = loc.return_air()
 	//Handle temperature/pressure differences between body and environment
-	var/datum/gas_mixture/environment = loc.return_air()
-	if(environment)
-		handle_environment(environment)
+	if(gas_environment)
+		handle_environment(gas_environment)
 
 	blinded = 0 // Placing this here just show how out of place it is.
 	// human/handle_regular_status_updates() needs a cleanup, as blindness should be handled in handle_disabilities()
@@ -238,7 +238,6 @@
 /mob/living/proc/handle_hud_icons_health()
 	return
 
-
 /mob/living
 	var/datum/weakref/last_weather
 
@@ -286,9 +285,8 @@
 			GLOB.current_mob_ambience -= mob_ref
 		else
 			return
-/*
+
 		// Push sound to client. Pipe dream TODO: crossfade between the new and old weather ambience.
-		sound_to(src, sound(null, repeat = 0, wait = 0, volume = 0, channel = sound_channels.weather_channel))
+		sound_to(src, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.sound_channels.weather_channel))
 		if(send_sound)
-			sound_to(src, sound(send_sound, repeat = TRUE, wait = 0, volume = 30, channel = sound_channels.weather_channel))
-*/
+			sound_to(src, sound(send_sound, repeat = TRUE, wait = 0, volume = 30, channel = GLOB.sound_channels.weather_channel))

@@ -118,6 +118,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/local_currency_name_short = "$"
 
 	var/game_year
+	var/decl/state/weather/initial_weather_state = /decl/state/weather/calm
 
 	var/list/available_cultural_info = list(
 		TAG_HOMEWORLD = list(

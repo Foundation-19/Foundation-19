@@ -127,9 +127,9 @@
 		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
 
-/*
-/datum/map/torch/setup_map()
+
+/datum/map/site53/setup_map()
 	..()
 	system_name = generate_system_name()
 	minor_announcement = new(new_sound = sound('sounds/AI/torch/commandreport.ogg', volume = 45))
-*/
+	SSweather.setup_weather_system(src)

@@ -1,23 +1,23 @@
 /*
- /decl is a subtype used for singletons that should never have more than one instance
- in existence at a time. If you want to use a /decl you should use a pattern like:
-     var/decl/somedecl/mydecl = GET_DECL(/decl/somedecl)
+/decl is a subtype used for singletons that should never have more than one instance
+in existence at a time. If you want to use a /decl you should use a pattern like:
+var/decl/somedecl/mydecl = GET_DECL(/decl/somedecl)
 
- /decls are created the first time they are fetched from decls_repository and will
- automatically call Initialize() and such when created in this way.
+/decls are created the first time they are fetched from decls_repository and will
+automatically call Initialize() and such when created in this way.
 
- decls_repository.get_decls_of_type() and decls_repository.get_decls_of_subtype()
- can be used similarly to typesof() and subtypesof(), returning assoc instance lists.
+decls_repository.get_decls_of_type() and decls_repository.get_decls_of_subtype()
+can be used similarly to typesof() and subtypesof(), returning assoc instance lists.
 
- decls_repository.get_decl_by_id() will retrieve a decl based on a string UID - at time
- of writing this is only set for materials and is used by omni devices to populate their
- mapped port settings.
+decls_repository.get_decl_by_id() will retrieve a decl based on a string UID - at time
+of writing this is only set for materials and is used by omni devices to populate their
+mapped port settings.
 
- The /decl commandments:
-     I.   Thou shalt not create a /decl with new().
-     II.  Thou shalt not del() or qdel() a /decl.
-     III. Thou shalt not write a decl that relies on arguments supplied to New().
-     IV.  Thou shalt not call Initialize() on a /decl.
+The /decl commandments:
+I.   Thou shalt not create a /decl with new().
+II.  Thou shalt not del() or qdel() a /decl.
+III. Thou shalt not write a decl that relies on arguments supplied to New().
+IV.  Thou shalt not call Initialize() on a /decl.
 */
 var/global/repository/decls/decls_repository = new
 
