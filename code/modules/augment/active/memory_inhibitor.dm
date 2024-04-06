@@ -23,14 +23,10 @@
 		M.visible_message(SPAN_WARNING("[M]'s eyes regain their focus."))
 		to_chat(M, "<font size='5' color='red'>Your mind feels a lot clearer, but... You can't recall the events since the last time you activated your memory inhibitor!</font>")
 
-/obj/item/organ/internal/augment/active/memory_inhibitor/emp_act(mob/living/M, removed)
-	if(owner)
-		M.visible_message(SPAN_WARNING("[M] looks confused."))
-		to_chat(M, "<font size='5' color='red'>You forgot everything that happened today!</font>")
-	return TRUE
-
 /obj/item/organ/internal/augment/active/memory_inhibitor/emp_act(severity)
 	. = ..()
+	if(severity)
+		//M.visible_message(SPAN_WARNING("[M] looks confused"))
+		to_chat(owner, "<font size='5' color='red'>You forgot everything that happened today!</font>")
 
-	if(prob(25))
-		emp_act()
+
