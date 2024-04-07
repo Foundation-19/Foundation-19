@@ -5874,6 +5874,10 @@
 /obj/item/folder/red,
 /obj/item/folder/blue,
 /obj/item/folder,
+/obj/item/clothing/suit/armor/hos/vest,
+/obj/item/clothing/suit/armor/hos/coat,
+/obj/item/clothing/suit/armor/hos/jensen,
+/obj/item/clothing/suit/armor/hos,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "AV" = (
