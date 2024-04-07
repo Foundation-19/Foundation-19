@@ -4012,7 +4012,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "oJ" = (
-/obj/structure/closet/secure_closet/guard/ez/cadet,
+/obj/structure/closet/secure_closet/cadet/ez,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "oS" = (
@@ -6994,7 +6994,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/guard/ez/cadet,
+/obj/structure/closet/secure_closet/cadet/ez,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Kg" = (
@@ -7922,7 +7922,7 @@
 /area/site53/uez/repoffice/internaltribunal)
 "Qe" = (
 /obj/machinery/light,
-/obj/structure/closet/secure_closet/guard/ez/cadet,
+/obj/structure/closet/secure_closet/cadet/ez,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Ql" = (
