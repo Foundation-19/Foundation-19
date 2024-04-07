@@ -136,7 +136,7 @@
 	var/nutrition = 500 //How it handles hunger
 	var/nutrition_max = 650 //Maximum nutrition storage
 	var/hunting_threshold = 300 //When 939 gets hungry enough that its AI will actively attack players
-	var/nutriloss = 0.09 //Slow by default
+	var/nutriloss = 0.12 //Slow by default. Ramps hard when injured.
 
 	var/spawn_area
 	var/door_cooldown
@@ -189,7 +189,7 @@
 /mob/living/simple_animal/hostile/scp939/Bump(atom/A)
 	. = ..()
 	if(a_intent != I_HELP)
-		if(isliving(A) && canClick())
+		if(isliving(A) && canClick() && !A.SCP)
 			UnarmedAttack(A)
 
 /mob/living/simple_animal/hostile/scp939/attack_target(atom/A)
@@ -272,25 +272,26 @@
 
 /mob/living/simple_animal/hostile/scp939/proc/memetic_effect(mob/living/carbon/human/H)
 	var/obj/item/organ/internal/stomach/stomach_organ = H.internal_organs_by_name[BP_STOMACH]
+	var/randval = rand(1,4)
 	if(!(H.head && (H.head.body_parts_covered & FACE) || H.wear_mask))
-		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
+		if((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown)
+			switch(randval)
+				if(1)
+					H.visible_message(SPAN_NOTICE("[H] looks at the [name] and cries."))
+					stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.67)
+				if(2)
+					H.visible_message(SPAN_WARNING("[H] seems unfocused, [H.p_their()] eyes wandering towards \"[name]\", slavishly drooling..."))
+					stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 1.7) //Largest exposure per tick
+				if(3)
+					H.visible_message(SPAN_DANGER("[H] seems to resist something intangible, [H.p_their()] eyes widening briefly as [H.p_their()] nose twitches!"))
+					H.emote("sniff") //avoids exposure
+					to_chat(H, SPAN_WARNING("Your barely-protected nose picks up the scent of something sweet and alluring. You feel like a fly in honeyed water."))
+				if(4)
+					H.visible_message(SPAN_NOTICE("[H] doesn't seem to what they're doing, they stare at \"[name]\" and blink, not having known it was there..."))
+					playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
+					stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.67)
 			H.humanStageHandler.setStage("939_message", world.time)
-			H.visible_message(SPAN_NOTICE("[H] looks at the [name] and cries."))
-			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.67)
-		if(prob(60) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
-			H.humanStageHandler.setStage("939_message", world.time)
-			H.visible_message(SPAN_WARNING("[H] seems unfocused, [H.p_their()] eyes wandering towards \"[name]\", slavishly drooling..."))
-			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 1.7) //Largest exposure per tick
-		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
-			H.visible_message(SPAN_DANGER("[H] seems to resist something intangible, [H.p_their()] eyes widening briefly as [H.p_their()] nose twitches!"))
-			H.emote("sniff") //avoids exposure
-			to_chat(H, SPAN_WARNING("Your barely-protected nose picks up the scent of something sweet and alluring. You feel like a fly in honeyed water."))
-			H.humanStageHandler.setStage("939_message", world.time)
-		if(prob(20) && ((world.time - H.humanStageHandler.getStage("939_message")) > message_cooldown))
-			H.visible_message(SPAN_NOTICE("[H] doesn't seem to what they're doing, they stare at \"[name]\" and blink, not having known it was there..."))
-			playsound(H, "sounds/voice/emotes/sigh_[gender2text(H.gender)].ogg", 100)
-			stomach_organ.ingested.add_reagent(/datum/reagent/medicine/amnestics/amnC227, 0.67)
-			H.humanStageHandler.setStage("939_message", world.time)
+
 
 /mob/living/simple_animal/hostile/scp939/UnarmedAttack(atom/A)
 	if(is_sleeping)
