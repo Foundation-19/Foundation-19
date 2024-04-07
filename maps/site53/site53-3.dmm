@@ -5952,6 +5952,12 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/surface/surface)
+"rn" = (
+/obj/effect/landmark/start{
+	name = "Assistant Medical Director"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/exam_room)
 "ro" = (
 /obj/machinery/light,
 /obj/structure/bed/chair/padded/green{
@@ -42060,7 +42066,7 @@ fQ
 hY
 iw
 gT
-iw
+rn
 gT
 iw
 gT

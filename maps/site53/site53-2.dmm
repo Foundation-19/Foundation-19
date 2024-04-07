@@ -40746,6 +40746,9 @@
 /obj/effect/floor_decal/corner/research/bordercorner{
 	dir = 8
 	},
+/obj/effect/landmark/start{
+	name = "Assistant Research Director"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/researchanddevelopment)
 "ofp" = (
@@ -50277,6 +50280,12 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/llcz/dclass/checkpointoverlook)
+"ubE" = (
+/obj/effect/landmark/start{
+	name = "Assistant Engineering Director"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/engineering/controlroom)
 "uce" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
@@ -73293,7 +73302,7 @@ ank
 anh
 apk
 apb
-apk
+ubE
 apk
 ank
 atn

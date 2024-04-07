@@ -2125,7 +2125,7 @@
 /area/site53/uez/hallway)
 "gr" = (
 /obj/effect/landmark/start{
-	name = "Chief Medical Officer"
+	name = "Medical Director"
 	},
 /obj/structure/bed/chair/office/comfy{
 	dir = 1
@@ -2180,7 +2180,7 @@
 /area/site53/upper_surface/commstower)
 "gy" = (
 /obj/effect/landmark/start{
-	name = "Chief Engineer"
+	name = "Engineering Director"
 	},
 /obj/structure/bed/chair/office/comfy{
 	dir = 1
