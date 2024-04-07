@@ -25329,7 +25329,7 @@
 "esf" = (
 /obj/machinery/door/airlock/security{
 	name = "Class-D Preperations";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34257,7 +34257,7 @@
 "kmz" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "CDCZ Entrance Checkpoint Office";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters/open{
 	name = "CDCZ Checkpoint North Access Shutters";
@@ -41217,7 +41217,7 @@
 "orS" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "CDCZ Entrance Checkpoint Office";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters/open{
 	name = "CDCZ Checkpoint South Access Shutters";
