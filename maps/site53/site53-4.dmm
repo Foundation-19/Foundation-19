@@ -293,7 +293,7 @@
 	},
 /obj/structure/bed/chair/office/comfy,
 /obj/effect/landmark/start{
-	name = "Head of Personnel"
+	name = "Site Manager"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -527,9 +527,7 @@
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bV" = (
-/obj/structure/closet/secure_closet/hop{
-	req_access = list("ACCESS_ADMIN_LEVEL1")
-	},
+/obj/structure/closet/secure_closet/hop,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bW" = (
@@ -545,7 +543,8 @@
 /area/site53/uez/hallway)
 "bX" = (
 /obj/machinery/door/airlock/command{
-	name = "Head of Personnel's Office"
+	name = "Site Manager's Office";
+	req_access = list("ACCESS_HEAD_OF_PERSONNEL")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1142,7 +1141,7 @@
 /area/site53/uez/hallway)
 "dp" = (
 /obj/machinery/door/airlock/command{
-	name = "Chief Science Officer's Office";
+	name = "Director of Research's Office";
 	req_access = list("ACCESS_SCIENCE_LEVEL5")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -1326,7 +1325,7 @@
 /area/site53/uez/hallway)
 "dX" = (
 /obj/machinery/door/airlock/command{
-	name = "Chief Medical Officer's Office";
+	name = "Director of Medical's Office";
 	req_access = list("ACCESS_MEDICAL_LEVEL5")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -1394,7 +1393,7 @@
 /area/site53/uez/hallway)
 "ec" = (
 /obj/machinery/door/airlock/command{
-	name = "Chief Engineering Officer's Office";
+	name = "Director of Engineering's Office";
 	req_access = list("ACCESS_ENGINEERING_LEVEL5")
 	},
 /turf/simulated/floor/tiled/dark/small,
