@@ -1,0 +1,10 @@
+2024-04-03:
+  chesse20:
+  - rscadd: New soap bars sometimes have the SCP logo on them. They come in new scents
+      too.
+2024-04-05:
+  Saicchi:
+  - rscadd: wire cut indicators on mounted flash
+  cheesePizza2:
+  - code_imp: Massive overhaul removing every single observable and replacing them
+      all with signals.
