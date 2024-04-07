@@ -77,7 +77,7 @@
 // LCZ - Cadet
 /obj/structure/closet/secure_closet/guard/lcz/cadet
 	name = "LCZ Cadet's Locker"
-	req_access = list(ACCESS_SECURITY_LVL2)
+	req_access = list(ACCESS_SECURITY_LVL1)
 	icon_state = "lczcadet1"
 	icon_closed = "lczcadet"
 	icon_locked = "lczcadet1"
@@ -162,7 +162,7 @@
 // HCZ - Guard
 /obj/structure/closet/secure_closet/guard/hcz
 	name = "HCZ Guard's Locker"
-	req_access = list(ACCESS_SECURITY_LVL3)
+	req_access = list(ACCESS_SECURITY_LVL3, ACCESS_SCIENCE_LVL3)
 	icon_state = "hczjunior1"
 	icon_closed = "hczjunior"
 	icon_locked = "hczjunior1"
@@ -219,7 +219,7 @@
 // EZ - Cadet
 /obj/structure/closet/secure_closet/guard/ez/cadet
 	name = "EZ Probationary Agent's Locker"
-	req_access = list(ACCESS_SECURITY_LVL2)
+	req_access = list(ACCESS_SECURITY_LVL3, ACCESS_ADMIN_LVL1)
 	icon_state = "ezcadet1"
 	icon_closed = "ezcadet"
 	icon_locked = "ezcadet1"
@@ -240,7 +240,7 @@
 // EZ - Guard
 /obj/structure/closet/secure_closet/guard/ez
 	name = "EZ Agent's Locker"
-	req_access = list(ACCESS_SECURITY_LVL3)
+	req_access = list(ACCESS_SECURITY_LVL3, ACCESS_ADMIN_LVL2)
 	icon_state = "ezjunior1"
 	icon_closed = "ezjunior"
 	icon_locked = "ezjunior1"

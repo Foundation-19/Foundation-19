@@ -11649,13 +11649,13 @@
 	id_tag = "ULCZ Checkpoint Lockdown Upper";
 	name = "LCZ Northern Entrance Checkpoint Lockdown Control";
 	pixel_y = 7;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "ULCZ Checkpoint Lockdown Lower";
 	name = "LCZ Southern Entrance Checkpoint Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_y = -2
 	},
 /obj/effect/floor_decal/corner/red/border{
@@ -15482,7 +15482,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ Security Office Access Lock";
 	name = "LCZ Security Office Bypass Access Control";
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL2");
 	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -15985,7 +15985,7 @@
 "aVY" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "LCZ Entrance Checkpoint Access";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -19436,7 +19436,7 @@
 "bia" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "LCZ Entrance Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20141,7 +20141,7 @@
 "bkn" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -20238,12 +20238,12 @@
 	id_tag = "ULCZ North Gate";
 	name = "ULCZ North Gate";
 	pixel_y = 7;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "ULCZ South Gate";
 	name = "ULCZ South Gate";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_y = -2
 	},
 /obj/effect/floor_decal/corner/red/border{
@@ -20253,14 +20253,14 @@
 	id_tag = "ULCZ Exit Point";
 	name = "ULCZ Exit Point";
 	pixel_y = 25;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"));
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_x = 25
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "ULCZ Checkpoint Central Window";
 	name = "LCZ Entrance Checkpoint Central Windows Control";
 	pixel_y = 25;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_x = 37
 	},
 /obj/structure/table/reinforced,
@@ -22147,7 +22147,7 @@
 "cqc" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Cadet Locker Room";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
@@ -32157,7 +32157,7 @@
 	},
 /obj/machinery/door/airlock/glass/security{
 	name = "LCZ Entrance Checkpoint Access";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
@@ -33215,7 +33215,7 @@
 "jEt" = (
 /obj/machinery/door/airlock/security{
 	name = "LCZ Security Office";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34257,7 +34257,7 @@
 "kmz" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "CDCZ Entrance Checkpoint Office";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters/open{
 	name = "CDCZ Checkpoint North Access Shutters";
@@ -35068,8 +35068,13 @@
 /area/site53/llcz/dclass/primaryhallway)
 "kLF" = (
 /obj/structure/table/reinforced,
-/obj/item/device/flashlight/lamp,
 /obj/effect/floor_decal/corner/red/border,
+/obj/machinery/button/blast_door{
+	id_tag = "ULCZ Checkpoint Lockdown Upper";
+	name = "LCZ Entrance Checkpoint Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/hallways)
 "kLR" = (
@@ -35293,7 +35298,7 @@
 	id_tag = "ULCZ Checkpoint Office Access N";
 	name = "LCZ Entrance Checkpoint North Access Control";
 	pixel_y = 25;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_x = -6
 	},
 /obj/machinery/button/blast_door{
@@ -35301,7 +35306,7 @@
 	id_tag = "LCZ Security Office Access Lock";
 	name = "LCZ Security Office Bypass Access Control";
 	pixel_x = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -35311,7 +35316,7 @@
 	id_tag = "ULCZ Checkpoint Lockdown Upper";
 	name = "LCZ Northern Lockdown Control";
 	pixel_y = 3;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_x = 5
 	},
 /obj/machinery/button/blast_door{
@@ -35326,7 +35331,7 @@
 	id_tag = "ULCZ Checkpoint Northern Window";
 	name = "LCZ Entrance Checkpoint North Windows Control";
 	pixel_y = 25;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_x = 6
 	},
 /obj/structure/table/reinforced,
@@ -38773,10 +38778,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
-"mYl" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_titanium,
-/area/space)
 "mYp" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Logistics Maintenance";
@@ -41216,7 +41217,7 @@
 "orS" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "CDCZ Entrance Checkpoint Office";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters/open{
 	name = "CDCZ Checkpoint South Access Shutters";
@@ -46972,7 +46973,7 @@
 "rZN" = (
 /obj/machinery/door/airlock/multi_tile/glass/security{
 	dir = 1;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	name = "LCZ Control Center"
 	},
 /obj/structure/cable/green{
@@ -52594,22 +52595,6 @@
 /turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "vLm" = (
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "ULCZ Checkpoint Northern Window";
-	name = "ULCZ Checkpoint Northern Window";
-	pixel_y = 3;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_x = 4
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "ULCZ Checkpoint Southern Window";
-	name = "ULCZ Checkpoint Southern Window";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 3;
-	pixel_x = -5
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
@@ -52617,7 +52602,7 @@
 	dir = 1;
 	id_tag = "ULCZ Checkpoint Office Access S";
 	name = "LCZ Entrance Checkpoint South Access Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_y = -25;
 	pixel_x = -6
 	},
@@ -52628,7 +52613,7 @@
 	dir = 1;
 	id_tag = "ULCZ Checkpoint Southern Window";
 	name = "LCZ Entrance Checkpoint South Windows Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_y = -25;
 	pixel_x = 6
 	},
@@ -55502,7 +55487,7 @@
 "xEG" = (
 /obj/machinery/door/airlock/security{
 	name = "Solitary Confinement";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
@@ -55826,7 +55811,7 @@
 "xRv" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -72585,12 +72570,12 @@ hOR
 afQ
 bdf
 azA
-mYl
-mYl
-mYl
-mYl
-mYl
-mYl
+bGY
+bGY
+bGY
+bGY
+bGY
+bGY
 azA
 azA
 azA
@@ -72842,7 +72827,7 @@ hOR
 slO
 bdf
 azA
-mYl
+bGY
 rlB
 eED
 eED
@@ -73099,7 +73084,7 @@ hOR
 uOG
 bdf
 azA
-mYl
+bGY
 uGR
 mCN
 mCN
@@ -73356,7 +73341,7 @@ hOR
 afQ
 bdf
 azA
-mYl
+bGY
 jdb
 mCN
 mCN
@@ -73613,7 +73598,7 @@ hOR
 afQ
 bdf
 azA
-mYl
+bGY
 fQz
 nYz
 mIA

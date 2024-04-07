@@ -62,7 +62,7 @@
 //##
 
 /datum/job/ltofficerlcz
-	title = "LCZ Zone Commander"
+	title = "LCZ Captain"
 	department = "Light Containment Personnel"
 	selection_color = "#8e2929"
 	department_flag = SEC|LCZ
@@ -107,7 +107,7 @@
 	skill_points = 25
 
 /datum/job/ltofficerhcz
-	title = "HCZ Zone Commander"
+	title = "HCZ Captain"
 	department = "Heavy Containment Personnel"
 	selection_color = "#8e2929"
 	department_flag = SEC|HCZ
@@ -565,7 +565,6 @@
 	access = list(
 		ACCESS_SEC_COMMS,
 		ACCESS_SECURITY_LVL1,
-		ACCESS_SECURITY_LVL2,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_DCLASS_KITCHEN,
@@ -613,8 +612,7 @@
 		ACCESS_SECURITY_LVL2,
 		ACCESS_SECURITY_LVL3,
 		ACCESS_SCIENCE_LVL1,
-		ACCESS_SCIENCE_LVL2,
-		ACCESS_SCIENCE_LVL3
+		ACCESS_SCIENCE_LVL2
 	)
 	minimal_access = list()
 
@@ -659,7 +657,6 @@
 		ACCESS_MEDICAL_LVL2,
 		ACCESS_MEDICAL_LVL3,
 		ACCESS_ADMIN_LVL1,
-		ACCESS_ADMIN_LVL2,
 		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()

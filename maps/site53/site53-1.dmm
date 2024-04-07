@@ -10637,7 +10637,7 @@
 /area/site53/llcz/dclass/janitorial)
 "oMs" = (
 /obj/effect/floor_decal/corner/green/mono,
-/obj/structure/table/standard,
+/obj/machinery/biogenerator,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
 "oNB" = (
