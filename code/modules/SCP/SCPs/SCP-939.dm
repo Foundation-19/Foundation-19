@@ -66,7 +66,7 @@
 	description = "AMN-C227 is a substance regularly exhaled by SCP-939 in low doses. In large quantities, or in the case of being directly bitten or in close proximity, it has been known to lead to direct fatalities, due to its incapacitating abilities."
 	taste_description = "sickly bitterness"
 	color = "#8a006c"
-	metabolism = 0.025
+	metabolism = 0.015
 	overdose = 60 //WAY higher for 'exhaled' (memetic system) SCP-939 air
 	value = 35
 	addiction_types = list(/datum/addiction/amnestics = 0.1) // very rare
@@ -311,15 +311,15 @@
 		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 2))))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Makes it simpler if kept consistent with 2427-3
-				nutr = round(nutrition_max * 0.9)
+				nutr = round(nutrition_max * 0.5) //Almost full nutrition
 			if(ismonkey(L))
-				nutr = round(nutrition_max * 0.25) //Smaller than 2427-3
+				nutr = round(nutrition_max * 0.18) //Smaller than 2427-3
 				visible_message(SPAN_DANGER("[src] mauls [L]!"))
 				AdjustNutrition(nutr)
 				L.gib()
 			if(ishuman(L))
 				if((world.time - L.lastsound) <= 50 SECONDS && L.lastsound != null) //OBJECTIVE: SURVIVE 50 SECONDS AFTER AGGROING 939
-					nutr = round(nutrition_max * 0.4)
+					nutr = round(nutrition_max * 0.23)
 					L.adjustBruteLoss(350)
 					L.lastsound = null //Null this (stops repeat-mauls from instantly gibbing crit people)
 					visible_message(SPAN_DANGER("[src] mauls [L]!"))
@@ -381,7 +381,7 @@
 		var/shake_dir = pick(-1, 1)
 		animate(DB, transform=turn(matrix(), 8*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
 		animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
-		if(DB.health <= 250)
+		if(DB.health <= 249) //Odd value to make Bdoors take longer to break
 			DB.visible_message(SPAN_DANGER("\The [src] manages to rip open \the [DB]!"))
 			DB.force_open()
 		return
