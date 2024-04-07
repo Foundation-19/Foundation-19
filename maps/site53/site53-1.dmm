@@ -202,6 +202,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/red/bordercee{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "apb" = (
@@ -532,6 +535,12 @@
 /obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/xenobotany)
+"aNN" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "aOg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -674,11 +683,6 @@
 /area/site53/lhcz/scp049containment)
 "aZm" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "CDCZBriefing";
-	name = "CDCZ Briefing Hall Window Shutters";
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -687,6 +691,11 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "CDCZBriefing";
+	name = "CDCZ Briefing Hall Window Shutters"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/briefing)
@@ -764,6 +773,12 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "bcr" = (
@@ -821,6 +836,20 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
+"beO" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "beU" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -968,9 +997,16 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
 "bqv" = (
-/obj/structure/disposalpipe/segment,
-/turf/unsimulated/mineral,
-/area/site53/llcz/mine/unexplored)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "bqw" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -1261,14 +1297,14 @@
 /area/site53/uhcz/scp8containment)
 "bJw" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "CDCZBriefing";
-	name = "CDCZ Briefing Hall Window Shutters";
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "CDCZBriefing";
+	name = "CDCZ Briefing Hall Window Shutters"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/briefing)
@@ -2535,11 +2571,6 @@
 /area/site53/llcz/dclass/kitchen)
 "dtl" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "CDCZBriefing";
-	name = "CDCZ Briefing Hall Window Shutters";
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -2548,6 +2579,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "CDCZBriefing";
+	name = "CDCZ Briefing Hall Window Shutters"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/briefing)
@@ -2689,12 +2725,12 @@
 /area/site53/llcz/dclass/primaryhallway)
 "dDl" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "CDCZAssignments";
-	name = "CDCZ Assignments Post Window Shutters";
-	dir = 4
-	},
 /obj/structure/cable/green,
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "CDCZAssignments";
+	name = "CDCZ Assignments Post Window Shutters"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignment)
 "dEe" = (
@@ -2728,6 +2764,13 @@
 /obj/item/boombox,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"dHg" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "dJZ" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -3584,7 +3627,8 @@
 /area/site53/llcz/dclass/cells)
 "eWz" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "CDCZ Briefing Hall"
+	name = "CDCZ Briefing Hall";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -3597,6 +3641,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/red/bordercee{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "eWV" = (
@@ -3604,8 +3651,10 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/turf/unsimulated/mineral,
-/area/space)
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/llcz/mine/unexplored)
 "eXy" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 8
@@ -4245,11 +4294,6 @@
 	name = "CDCZ Assignments Post Desk";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "CDCZAssignments";
-	name = "CDCZ Assignments Post Window Shutters";
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -4259,6 +4303,11 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "CDCZAssignments";
+	name = "CDCZ Assignments Post Window Shutters"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/assignment)
@@ -4496,7 +4545,8 @@
 /area/site53/llcz/maintenance)
 "gbE" = (
 /obj/machinery/computer/mining,
-/turf/simulated/wall/r_wall/prepainted,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
 /area/site53/llcz/mining/miningops)
 "gbQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -4671,6 +4721,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
+"gnz" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercorner,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "gnD" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -5050,6 +5110,17 @@
 /mob/living/simple_animal/yithian,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/llcz/mine/unexplored)
+"gPh" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "gQm" = (
 /obj/machinery/camera/network/hcz,
 /obj/structure/sign/scp/euclid_scp{
@@ -5137,10 +5208,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/xenobotany)
 "gUJ" = (
-/turf/simulated/mineral/random{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
 	},
-/area/space)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "gVa" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -5251,6 +5323,9 @@
 "hat" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light,
+/obj/effect/floor_decal/corner/red/bordercee{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "haC" = (
@@ -5333,8 +5408,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/unsimulated/mineral,
-/area/space)
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/llcz/mine/unexplored)
+"hcP" = (
+/obj/item/clothing/head/helmet/scp/security,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "hcU" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
@@ -5437,6 +5518,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"hnM" = (
+/obj/effect/floor_decal/corner/red/bordercorner,
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "hoU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -5464,9 +5552,11 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "hqW" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
-/area/site53/llcz/dclass/primaryhallway)
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "hrk" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -5731,6 +5821,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "hKh" = (
@@ -6799,11 +6890,19 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
 "jlH" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/mineral/random{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/area/space)
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "jmI" = (
 /obj/machinery/biogenerator,
 /obj/machinery/light,
@@ -7991,14 +8090,14 @@
 /area/site53/llcz/hallways)
 "lfT" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "CDCZAssignments";
-	name = "CDCZ Assignments Post Window Shutters";
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id_tag = "CDCZAssignments";
+	name = "CDCZ Assignments Post Window Shutters"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignment)
@@ -8253,6 +8352,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"lxk" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/llcz/hallways)
 "lyh" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
@@ -8405,6 +8509,10 @@
 	name = "west bump";
 	pixel_x = -24
 	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "lHT" = (
@@ -8983,7 +9091,7 @@
 	pixel_y = -25;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
-/obj/effect/floor_decal/corner/brown/bordercorner,
+/obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "mAQ" = (
@@ -9059,8 +9167,10 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/turf/unsimulated/mineral,
-/area/space)
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/llcz/mine/unexplored)
 "mFb" = (
 /obj/machinery/contraband_detector,
 /obj/structure/cable/green{
@@ -10710,6 +10820,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "oYY" = (
@@ -12223,8 +12334,10 @@
 /area/site53/lhcz/maintenance)
 "raV" = (
 /obj/structure/disposalpipe/segment,
-/turf/unsimulated/mineral,
-/area/space)
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/llcz/mine/unexplored)
 "raX" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/walnut,
@@ -13468,6 +13581,9 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"sVB" = (
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/llcz/mine/unexplored)
 "sVS" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
@@ -14712,6 +14828,10 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "uZg" = (
@@ -15596,6 +15716,9 @@
 	dir = 4;
 	c_tag = "CDCZ Briefing Hall North"
 	},
+/obj/effect/floor_decal/corner/red/bordercee{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
 "wiB" = (
@@ -15632,6 +15755,9 @@
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	c_tag = "CDCZ Briefing Hall South"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
@@ -15917,8 +16043,14 @@
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint)
 "wHc" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/mining/miningops)
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "wHx" = (
 /obj/machinery/light{
 	dir = 8
@@ -16538,6 +16670,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "xzN" = (
@@ -16555,6 +16688,9 @@
 	dir = 10
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "xBy" = (
@@ -16719,6 +16855,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/server_room)
+"xOm" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "xOq" = (
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
 	dir = 1
@@ -16860,6 +17005,12 @@
 /obj/effect/floor_decal/corner/orange/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/primaryhallway)
+"xYf" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/briefing)
 "xZI" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/exoplanet/desert,
@@ -17467,7 +17618,7 @@ hNI
 hNI
 hNI
 wkz
-eWR
+wHc
 lHK
 hat
 cLe
@@ -17719,11 +17870,11 @@ uVr
 hNI
 hNI
 hNI
-nhf
+dHg
 hNI
 hNI
 hNI
-nhf
+aNN
 nhf
 hKc
 jNO
@@ -17973,14 +18124,14 @@ dZk
 dZk
 qBR
 bcf
-mSV
-mSV
-mSV
-mSV
-mSV
-mSV
-mSV
-mSV
+bqv
+bqv
+bqv
+jlH
+bqv
+bqv
+bqv
+gPh
 mSV
 oWq
 jNO
@@ -18229,15 +18380,15 @@ iSy
 mvo
 cGx
 lnB
-uVr
-nhf
-nhf
-nhf
-nhf
-nhf
-nhf
-nhf
-nhf
+gnz
+hqW
+hqW
+hqW
+hnM
+hqW
+hqW
+hqW
+gUJ
 nhf
 hKc
 jNO
@@ -18490,11 +18641,11 @@ uVr
 hNI
 hNI
 hNI
-nhf
+dHg
 hNI
 hNI
 hNI
-nhf
+aNN
 nhf
 hKc
 jNO
@@ -18743,7 +18894,7 @@ cLe
 jcl
 bVP
 noO
-uVr
+xOm
 hNI
 hNI
 hNI
@@ -18751,9 +18902,9 @@ anP
 hNI
 hNI
 hNI
-nhf
-nhf
-hKc
+xYf
+hqW
+beO
 hat
 cLe
 hIH
@@ -26875,14 +27026,14 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+lam
+lam
+lam
+lam
+lam
+lam
 lIO
 lIO
 lIO
@@ -27131,15 +27282,15 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+bVy
 lIO
 lDn
 lDn
@@ -27234,9 +27385,9 @@ yko
 bbx
 yko
 nGe
-hqW
+atU
 kQH
-hqW
+atU
 dWy
 nGe
 lMp
@@ -27387,16 +27538,16 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+emk
+emk
+emk
+emk
+emk
+bVy
+bVy
+lqj
 lIO
 lDn
 laj
@@ -27644,17 +27795,17 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lIO
+lam
+emk
+emk
+emk
+emk
+emk
+bVy
+bVy
+lqj
+bVy
+lDn
 uNK
 laj
 jjc
@@ -27900,18 +28051,18 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lIO
+lam
+lam
+emk
+emk
+emk
+emk
+bVy
+bVy
+hcP
+bVy
+bVy
+lDn
 uNK
 laj
 kFZ
@@ -27922,12 +28073,12 @@ jpf
 sBS
 lDn
 gst
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+lam
+lam
+lam
+lam
 lam
 lam
 lam
@@ -28156,18 +28307,18 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+bVy
+bVy
+bVy
+lqj
 lIO
 poC
 lDn
@@ -28179,13 +28330,13 @@ dVr
 dVr
 dVr
 dqj
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 xRT
 xRT
 xRT
@@ -28413,18 +28564,18 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 lIO
 lIO
@@ -28432,17 +28583,17 @@ pSO
 lIO
 thh
 dqj
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 xRT
 xRT
 xRT
@@ -28670,36 +28821,36 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 uNK
 kFZ
 wIo
 gst
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
-lam
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 xRT
 xRT
 xRT
@@ -28927,32 +29078,32 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 spY
 kFZ
 lDn
 gst
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -29183,32 +29334,32 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 iWG
 hUO
 lDn
 gst
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -29440,31 +29591,31 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 uNK
 kvV
 aZZ
 gst
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -29697,31 +29848,31 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 uNK
 kFZ
 aZZ
 gst
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -29954,31 +30105,31 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 fXv
 lop
 bLc
 gst
-hIH
-hIH
-hIH
-hIH
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -30211,30 +30362,30 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 uNK
 kFZ
 sBS
 gst
-hIH
-hIH
-hIH
-hIH
-lam
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -30467,20 +30618,20 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 lIO
 lIO
@@ -30488,10 +30639,10 @@ nhL
 lIO
 gst
 lIO
-hIH
-hIH
-lam
-lam
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -30723,15 +30874,15 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+lam
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 lIO
 lIO
 lIO
@@ -30745,9 +30896,9 @@ ydX
 lDn
 dYv
 lIO
-hIH
-hIH
-lam
+emk
+emk
+emk
 emk
 emk
 emk
@@ -30980,21 +31131,21 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-gUJ
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+bVy
 cuJ
 coe
 bZC
-laj
-laj
-laj
+unC
+unC
+kUH
 lIO
 fIC
 lDn
@@ -31002,9 +31153,9 @@ cWC
 bZC
 kMj
 lIO
-hIH
-hIH
-lam
+bVy
+emk
+emk
 emk
 emk
 emk
@@ -31236,20 +31387,20 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-gUJ
+lam
+lam
+emk
+emk
+emk
+emk
+emk
+emk
+bVy
+bVy
 bRu
 rKx
 bRu
-bRu
+lxk
 gVa
 bRu
 bRu
@@ -31259,9 +31410,9 @@ rfs
 lDn
 gxr
 hie
-hIH
-hIH
-lam
+sVB
+lqj
+bVy
 emk
 emk
 emk
@@ -31493,16 +31644,16 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
 eWV
 raV
 raV
 raV
-jlH
-jlH
+raV
+raV
 bOp
 xZI
 xZI
@@ -31516,9 +31667,9 @@ dwA
 lCZ
 fCD
 lIO
-hIH
-hIH
-lam
+lqj
+bVy
+emk
 emk
 emk
 emk
@@ -31750,16 +31901,16 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
 hcw
-hIH
-hIH
-hIH
-hIH
-hIH
+emk
+emk
+emk
+emk
+emk
 lIO
 lIO
 lIO
@@ -31773,9 +31924,9 @@ lIO
 lIO
 lIO
 lIO
-hIH
-lam
-lam
+emk
+emk
+emk
 emk
 emk
 emk
@@ -32007,31 +32158,31 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hcw
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
 lam
+emk
+emk
+emk
+hcw
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -32264,31 +32415,31 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
+lam
+emk
+emk
+emk
 hcw
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
-lam
-lam
-lam
-lam
-lam
-lam
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -32522,21 +32673,21 @@ hIH
 hIH
 lam
 lam
-lam
-lam
-hIH
+emk
+emk
+emk
 hcw
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
-lam
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -32780,16 +32931,16 @@ hIH
 lam
 xRT
 xRT
-lam
-lam
+emk
+emk
 hcw
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -33038,14 +33189,14 @@ lam
 xRT
 xRT
 rpB
-bqv
+raV
 mEX
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -33295,14 +33446,14 @@ lam
 dWn
 bVy
 syV
-lam
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -33552,14 +33703,14 @@ lam
 xRT
 bVy
 syV
-lam
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -33809,14 +33960,14 @@ lam
 emk
 bVy
 syV
-lam
-hIH
-hIH
-hIH
-hIH
-hIH
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -33912,7 +34063,7 @@ gbE
 aRP
 cWx
 cWx
-wHc
+vaS
 jez
 aqR
 lam
@@ -34066,13 +34217,13 @@ lam
 emk
 bVy
 syV
-lam
-lam
-lam
-lam
-lam
-lam
-lam
+emk
+emk
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -34325,11 +34476,11 @@ bVy
 syV
 xRT
 xRT
-lam
-lam
-lam
-lam
-lam
+emk
+emk
+emk
+emk
+emk
 emk
 emk
 emk
@@ -34422,7 +34573,7 @@ xRT
 lam
 aqR
 idA
-wHc
+vaS
 wJw
 gbE
 wJw

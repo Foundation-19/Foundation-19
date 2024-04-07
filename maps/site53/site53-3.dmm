@@ -8387,6 +8387,17 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/entrancezone/courtroom)
+"Cz" = (
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/device/radio/intercom{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/red,
+/area/site53/entrancezone/courtroom)
 "CA" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -8912,6 +8923,13 @@
 	dir = 8
 	},
 /area/site53/surface/cryogenicsprimary)
+"FO" = (
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/carpet/red,
+/area/site53/entrancezone/courtroom)
 "FR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -9281,6 +9299,10 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"HN" = (
+/obj/structure/bed/chair/comfy/black,
+/turf/simulated/floor/carpet/red,
+/area/site53/entrancezone/courtroom)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -10848,6 +10870,12 @@
 "Qn" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"Qp" = (
+/obj/machinery/door/window/brigdoor/southleft{
+	name = "Witness Booth"
+	},
+/turf/simulated/floor/carpet/red,
+/area/site53/entrancezone/courtroom)
 "Qq" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -12203,6 +12231,9 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/titanium,
 /area/site53/medical/infirmreception)
+"YP" = (
+/turf/simulated/floor/carpet/red,
+/area/site53/entrancezone/courtroom)
 "YR" = (
 /obj/machinery/button/blast_door{
 	id_tag = "CourtLock";
@@ -50306,8 +50337,8 @@ QJ
 QJ
 QJ
 iJ
-QJ
-pF
+YP
+Qp
 QJ
 QJ
 QJ
@@ -50563,8 +50594,8 @@ iJ
 CK
 iJ
 iJ
-xT
-QJ
+HN
+FO
 QJ
 QJ
 JA
@@ -50821,7 +50852,7 @@ Xu
 Ag
 vQ
 vQ
-QJ
+Cz
 QJ
 QJ
 Sc
