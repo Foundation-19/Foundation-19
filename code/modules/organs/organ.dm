@@ -276,7 +276,7 @@ var/list/organ_cache = list()
 
 	if(!istype(owner))
 		return
-	GLOB.dismembered_event.raise_event(owner, src)
+	SEND_SIGNAL(owner, COMSIG_ORGAN_DISMEMBERED, src)
 
 	action_button_name = null
 

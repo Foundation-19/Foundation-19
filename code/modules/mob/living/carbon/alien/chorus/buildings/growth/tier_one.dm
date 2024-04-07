@@ -44,10 +44,10 @@
 
 /obj/structure/chorus/biter/Initialize(maploading, o)
 	. = ..()
-	GLOB.entered_event.register(get_turf(src), src, PROC_REF(bite_victim))
+	RegisterSignal(get_turf(src), COMSIG_ENTERED, PROC_REF(bite_victim))
 
 /obj/structure/chorus/biter/Destroy()
-	GLOB.entered_event.unregister(get_turf(src), src)
+	UnregisterSignal(get_turf(src), COMSIG_ENTERED)
 	. = ..()
 
 /obj/structure/chorus/biter/proc/bite_victim(atom/a, mob/living/L)
