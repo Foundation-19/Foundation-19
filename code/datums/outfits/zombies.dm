@@ -7,6 +7,18 @@
 
 	flags = OUTFIT_RESET_EQUIPMENT
 
+/decl/hierarchy/outfit/zombie/lczcadet
+	name = "LCZ Cadet"
+	id_pda_assignment = "LCZ Cadet"
+	uniform = /obj/item/clothing/under/rank/security/lcz/cadet
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/cadet
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/junseclvl1lcz
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
+	belt = /obj/item/storage/belt/holster/security
+	gloves = /obj/item/clothing/gloves/tactical/scp
+
 /decl/hierarchy/outfit/zombie/lczguard
 	name = "LCZ Guard"
 	id_pda_assignment = "LCZ Guard"
