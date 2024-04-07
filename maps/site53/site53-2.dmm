@@ -10983,7 +10983,9 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
 "aDZ" = (
-/obj/item/device/radio/intercom,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "aEa" = (
@@ -33186,7 +33188,9 @@
 /obj/structure/bed/chair/office/light{
 	dir = 4
 	},
-/obj/item/device/radio/intercom,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "lwe" = (
