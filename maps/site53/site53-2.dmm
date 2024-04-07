@@ -454,6 +454,17 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
+"abl" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "abm" = (
 /obj/effect/landmark/start{
 	name = "Chef"
@@ -9493,7 +9504,6 @@
 /area/site53/engineering/engine_smes)
 "azT" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/glass/bucket,
 /obj/effect/floor_decal/industrial/radiation/corner{
 	dir = 1
 	},
@@ -30737,6 +30747,14 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
+"hUO" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/flashlight/lamp,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/ulcz/hallways)
 "hUS" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/white/monotile,
@@ -40772,6 +40790,24 @@
 "ogF" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp1507containment)
+"ogI" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "CDCZIsoCell4";
+	name = "CDCZ Isolation Cell Lockdown Shutters";
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "ogT" = (
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile/white,
@@ -46493,17 +46529,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/engine)
 "rNI" = (
-/obj/structure/bed/chair{
-	dir = 4
+/obj/structure/cable/green,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/entrance_checkpoint)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/surgery)
 "rNJ" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
@@ -54618,14 +54651,14 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 9
 	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
@@ -57439,7 +57472,7 @@ lwG
 qMF
 lwG
 lwG
-gJr
+lwG
 lwG
 lwG
 qAP
@@ -58471,7 +58504,7 @@ vRO
 mvw
 mVh
 vRO
-ehe
+ogI
 dvl
 vRO
 ukx
@@ -60237,7 +60270,7 @@ azA
 azA
 azA
 ahX
-bgM
+aie
 ahg
 aie
 aie
@@ -60440,7 +60473,7 @@ ghu
 vex
 mFr
 hHo
-lKO
+abl
 wuH
 aUA
 jOk
@@ -62080,7 +62113,7 @@ wpQ
 wpQ
 wpQ
 jCp
-sTS
+mYX
 oZi
 rWP
 uis
@@ -62336,7 +62369,7 @@ ckA
 qSj
 eEm
 jzr
-cvl
+mYX
 mYX
 gYl
 rWP
@@ -62850,7 +62883,7 @@ ckA
 xxb
 qLc
 dzc
-cvl
+mYX
 mYX
 gYl
 rWP
@@ -65138,7 +65171,7 @@ xgn
 oAF
 rmd
 fZY
-ehz
+jGh
 jGh
 pjn
 jGh
@@ -66437,7 +66470,7 @@ cmG
 qov
 qKr
 xZp
-sTO
+xZp
 bhc
 cFR
 dPn
@@ -67360,7 +67393,7 @@ aaN
 aaN
 aaN
 aaN
-azA
+aaN
 azA
 azA
 azA
@@ -67710,7 +67743,7 @@ jIy
 dTL
 cKg
 vYY
-cvh
+rNI
 cLq
 jIy
 mFf
@@ -68192,7 +68225,7 @@ hMj
 bxm
 tzn
 sxm
-oUo
+hUO
 otk
 otk
 bdf
