@@ -10200,7 +10200,6 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light/small,
-/obj/structure/ladder,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/hallways)
 "aBW" = (
@@ -20236,13 +20235,13 @@
 "blg" = (
 /obj/machinery/button/blast_door{
 	id_tag = "ULCZ North Gate";
-	name = "ULCZ North Gate";
+	name = "North Checkpoint Gate";
 	pixel_y = 7;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "ULCZ South Gate";
-	name = "ULCZ South Gate";
+	name = "South Checkpoint Gate";
 	req_access = list("ACCESS_SECURITY_LEVEL1");
 	pixel_y = -2
 	},
@@ -23130,12 +23129,12 @@
 	},
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a57/rubber,
-/obj/item/ammo_magazine/box/a57/rubber,
-/obj/item/ammo_magazine/box/a57/rubber,
-/obj/item/ammo_magazine/box/a57/rubber,
-/obj/item/ammo_magazine/box/a57/rubber,
-/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/armory)
 "cWG" = (
@@ -38873,20 +38872,16 @@
 "naI" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/table/rack,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
 	},
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57/rubber,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "nbD" = (
@@ -50033,14 +50028,14 @@
 "tRA" = (
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/structure/table/rack,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
 /obj/item/melee/baton/loaded,
 /obj/item/melee/baton/loaded,
 /obj/item/melee/baton/loaded,
 /obj/item/melee/baton/loaded,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "tSr" = (

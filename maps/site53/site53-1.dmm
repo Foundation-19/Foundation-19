@@ -1513,7 +1513,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/fancy/black,
-/obj/machinery/vending/games,
+/obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "bVx" = (
@@ -1786,9 +1786,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hallway)
 "cuG" = (
-/obj/machinery/vending/cigarette,
-/turf/simulated/floor/wood/walnut,
-/area/site53/llcz/dclass/luxurylibrary)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/hallways)
 "cuJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/exoplanet/desert,
@@ -6408,7 +6408,8 @@
 /obj/structure/table/reinforced,
 /obj/random/action_figure,
 /obj/machinery/camera/network/lcz{
-	dir = 1
+	dir = 1;
+	c_tag = "CDCZ Storage Room"
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -15452,18 +15453,12 @@
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "vNU" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/machinery/camera/network/lcz{
+	dir = 8;
+	c_tag = "CDCZ Basketball Court"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/ladder/up,
-/turf/simulated/floor,
-/area/site53/llcz/maintenance)
+/turf/simulated/floor/wood/yew,
+/area/site53/llcz/dclass/luxuryhall)
 "vPj" = (
 /obj/machinery/stove,
 /obj/effect/floor_decal/corner/black/diagonal,
@@ -21966,7 +21961,7 @@ mwo
 mwo
 mwo
 srn
-iJx
+sQy
 iJx
 uIW
 mwo
@@ -24512,7 +24507,7 @@ qvB
 qvB
 wDY
 fCv
-cuG
+mwF
 mwF
 rTf
 mwF
@@ -24984,7 +24979,7 @@ xlb
 xlb
 xlb
 xlb
-xlb
+cuG
 gCc
 qXx
 rqf
@@ -25241,7 +25236,7 @@ lKr
 lQR
 gac
 lTr
-lDn
+cuG
 nRS
 qXx
 phI
@@ -25496,7 +25491,7 @@ hIH
 pso
 pPd
 pPd
-vNU
+rNL
 pso
 xlb
 xlb
@@ -26826,7 +26821,7 @@ xFB
 xFB
 xFB
 fKu
-xFB
+vNU
 xFB
 xFB
 jRT
