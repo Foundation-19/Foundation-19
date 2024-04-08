@@ -120,19 +120,55 @@
 	return TRUE
 
 
-/mob/living/scp080/proc/escalate_fear_effects(mob/living/L)
+/mob/living/scp080/proc/escalate_fear_effects()
+	var/mob/living/carbon/L = usr
 	var/exposure_time = (world.time - affected_mobs[L]) / 10 // Time in seconds since first affected
 	switch(exposure_time)
-		if(45 to INFINITY)
-			// Cause hallucinations - PLACE HOLDER
-			return
+		if(60 to INFINITY)
+			// At this point, the victim is consumed by their fear, leading to a catatonic state
+			if(prob(2))
+				L.visible_message("<span class='warning'>[L] stops dead in their tracks, their eyes wide with unspeakable terror.</span>",
+									"<span class='userdanger'>You are paralyzed by an overwhelming dread. You can't move... you can't even scream.</span>")
+				L.Paralyse(5 SECONDS)
+		if(45 to 60)
+			// Hallucinations become more vivid, potentially causing the victim to see SCP-080's manifestations as real entities
+			if(prob(10))
+				L.hallucination(50, 50)
+				L.visible_message("<span class='notice'>[L] starts screaming and batting at unseen horrors.</span>",
+									"<span class='userdanger'>The shadows twist into horrifying figures, lunging at you from all directions!</span>")
 		if(30 to 45)
-			// Temporary paralysis
+			// Temporary paralysis and increased hallucinations
 			if(prob(5))
 				L.Paralyse(2 SECONDS)
+				L.hallucination(20, 20)
+				L.visible_message("<span class='notice'>[L] suddenly freezes, their eyes darting around in panic.</span>",
+									"<span class='userdanger'>You can't move! Shadows creep closer, their forms becoming more terrifying.</span>")
 		if(15 to 30)
-			// Increase existing effects
-			return
+			// Voices whispering, shadows moving at the edge of the victim's vision
+			if(prob(20))
+				L.audible_message("<span class='hear'>Whispers fill the air around [L], too quiet to make out any words.</span>",
+									"<span class='userdanger'>You hear whispering all around you... are the shadows moving closer?</span>")
+				L.hallucination(10, 10)
+		if(0 to 15)
+			// Initial fear response, slight unease
+			if(prob(30))
+				L.audible_message("<span class='notice'>[L] jumps at a sudden, but faint, noise.</span>",
+									"<span class='userdanger'>You think you heard something... or was it just your imagination?</span>")
+
+	// Check for any immediate effects that should be applied regardless of exposure time
+	immediate_effects(L)
+
+// A separate proc to handle any immediate effects that don't depend on exposure time
+/mob/living/scp080/proc/immediate_effects(mob/living/L)
+	// Example: Random chance to trip or hear a disturbing sound
+	if(prob(5))
+		L.visible_message("<span class='notice'>[L] stumbles as if pushed by an unseen force.</span>",
+							"<span class='userdanger'>You feel a cold hand push you from behind!</span>")
+		L.Weaken(2)
+	if(prob(5))
+		L.audible_message("<span class='hear'>A disturbing, unidentifiable noise briefly echoes around [L].</span>",
+							"<span class='userdanger'>You hear a chilling sound that seems to come from nowhere... and everywhere.</span>")
+
 
 
 /mob/living/scp080/proc/teleport_to_darkness()
@@ -173,7 +209,7 @@
 	if(time)
 		lifetime = time
 	set_light(2, 0.8, "#5555AA") // Optional: eerie light
-	addtimer(CALLBACK(src, .proc/fade_out), lifetime)
+	addtimer(CALLBACK(src, PROC_REF(fade_out)), lifetime)
 
 /obj/effect/temp_visual/scp_anomaly/proc/fade_out()
 	animate(src, alpha = 0, time = 30)
