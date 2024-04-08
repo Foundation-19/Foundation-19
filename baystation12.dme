@@ -387,6 +387,7 @@
 #include "code\datums\disease\diseases\rage.dm"
 #include "code\datums\disease\diseases\transformation_mob.dm"
 #include "code\datums\elements\_elements.dm"
+#include "code\datums\elements\connect_loc.dm"
 #include "code\datums\extensions\_defines.dm"
 #include "code\datums\extensions\chameleon.dm"
 #include "code\datums\extensions\extensions.dm"
