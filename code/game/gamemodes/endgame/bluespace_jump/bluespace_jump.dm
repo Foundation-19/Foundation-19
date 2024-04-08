@@ -86,12 +86,12 @@
 	setDir(real_one.dir)
 	appearance = real_one.appearance
 	RegisterSignal(real_one, COMSIG_MOVED, TYPE_PROC_REF(/obj/effect/bluegoast, mirror))
-	RegisterSignal(real_one, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/effect/bluegoast, mirror_dir))
+	RegisterSignal(real_one, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/effect/bluegoast, mirror_dir))
 	RegisterSignal(real_one, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
 
 /obj/effect/bluegoast/Destroy()
 	UnregisterSignal(real_one, COMSIG_PARENT_QDELETING)
-	UnregisterSignal(real_one, COMSIG_DIR_SET)
+	UnregisterSignal(real_one, COMSIG_ATOM_DIR_CHANGE)
 	UnregisterSignal(real_one, COMSIG_MOVED)
 	real_one = null
 	. = ..()

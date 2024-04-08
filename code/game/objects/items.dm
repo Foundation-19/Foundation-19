@@ -766,7 +766,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	RegisterSignal(src, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/item, unzoom))
 	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/item, unzoom))
-	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/item, unzoom))
 	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/item, unzoom))
 	user.RegisterSignal(src, COMSIG_DROPPED_ITEM, TYPE_PROC_REF(/mob/living, unzoom))
 
@@ -783,7 +783,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(user, COMSIG_MOVED)
-	UnregisterSignal(user, COMSIG_DIR_SET)
+	UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 	user.UnregisterSignal(src, COMSIG_DROPPED_ITEM)
 
 	user = user == src ? loc : (user || loc)

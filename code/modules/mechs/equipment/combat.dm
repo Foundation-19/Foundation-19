@@ -158,7 +158,7 @@
 	. = ..()
 	target.vis_contents += src
 	setDir()
-	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
 
 /obj/aura/mechshield/proc/update_dir(user, old_dir, dir)
 	setDir(dir)
@@ -171,7 +171,7 @@
 
 /obj/aura/mechshield/Destroy()
 	if(user)
-		UnregisterSignal(user, COMSIG_DIR_SET)
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.vis_contents -= src
 	shields = null
 	. = ..()
@@ -405,14 +405,14 @@
 	. = ..()
 	target.vis_contents += src
 	setDir()
-	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
 
 /obj/aura/mech_ballistic/proc/update_dir(user, old_dir, dir)
 	setDir(dir)
 
 /obj/aura/mech_ballistic/Destroy()
 	if (user)
-		UnregisterSignal(user, COMSIG_DIR_SET)
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.vis_contents -= src
 	shield = null
 	. = ..()
