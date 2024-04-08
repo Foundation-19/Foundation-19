@@ -156,8 +156,9 @@
 
 /obj/aura/mechshield/added_to(mob/living/target)
 	. = ..()
+	target.vis_contents += src
 	setDir()
-	GLOB.dir_set_event.register(user, src, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
+	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
 
 /obj/aura/mechshield/proc/update_dir(user, old_dir, dir)
 	setDir(dir)
@@ -170,7 +171,7 @@
 
 /obj/aura/mechshield/Destroy()
 	if(user)
-		GLOB.dir_set_event.unregister(user, src, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
+		UnregisterSignal(user, COMSIG_DIR_SET)
 		user.vis_contents -= src
 	shields = null
 	. = ..()
@@ -404,14 +405,14 @@
 	. = ..()
 	target.vis_contents += src
 	setDir()
-	GLOB.dir_set_event.register(user, src, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
+	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
 
 /obj/aura/mech_ballistic/proc/update_dir(user, old_dir, dir)
 	setDir(dir)
 
 /obj/aura/mech_ballistic/Destroy()
 	if (user)
-		GLOB.dir_set_event.unregister(user, src, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
+		UnregisterSignal(user, COMSIG_DIR_SET)
 		user.vis_contents -= src
 	shield = null
 	. = ..()

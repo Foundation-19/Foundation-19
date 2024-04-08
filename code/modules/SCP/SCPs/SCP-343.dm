@@ -2,7 +2,6 @@
 	name = "strange elderly man"
 	desc = "A mysterious powerful man. He looks a lot like what you would imagine god to look like."
 	icon = 'icons/SCP/scp-343.dmi'
-
 	icon_state = null
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING

@@ -52,7 +52,7 @@
 
 	if(!(user in time_used))
 		time_used[user] = 0
-		GLOB.destroyed_event.register(user, src, PROC_REF(RemoveDeletedMob))
+		RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(RemoveDeletedMob))
 
 	time_used[user] += 1
 
@@ -159,5 +159,7 @@
 	return ..()
 
 /obj/item/clothing/accessory/scp_427/proc/RemoveDeletedMob(mob/target)
-	GLOB.destroyed_event.unregister(target, src, PROC_REF(RemoveDeletedMob))
+	SIGNAL_HANDLER
+
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	time_used -= target

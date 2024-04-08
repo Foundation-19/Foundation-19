@@ -99,9 +99,9 @@
 	var/old_loc = loc
 	. = ..()
 	if (.)
-		// observ
+		// signal
 		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
+			SEND_SIGNAL(src, COMSIG_MOVED, old_loc, null)
 
 		// freelook
 		if(opacity)
@@ -116,8 +116,7 @@
 	var/old_loc = loc
 	. = ..()
 	if (.)
-		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
+		SEND_SIGNAL(src, COMSIG_MOVED, old_loc, loc)
 
 		// freelook
 		if(opacity)
@@ -179,11 +178,11 @@
 	setDir(master.dir)
 
 	if(istype(master, /atom/movable))
-		GLOB.moved_event.register(master, src, follow_proc)
+		RegisterSignal(master, COMSIG_MOVED, follow_proc)
 		SetInitLoc()
 
-	GLOB.destroyed_event.register(master, src, TYPE_PROC_REF(/datum, qdel_self))
-	GLOB.dir_set_event.register(master, src, TYPE_PROC_REF(/atom, recursive_dir_set))
+	RegisterSignal(master, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
+	RegisterSignal(master, COMSIG_DIR_SET, TYPE_PROC_REF(/atom, recursive_dir_set))
 
 	. = ..()
 
@@ -192,9 +191,9 @@
 
 /atom/movable/overlay/Destroy()
 	if(istype(master, /atom/movable))
-		GLOB.moved_event.unregister(master, src)
-	GLOB.destroyed_event.unregister(master, src)
-	GLOB.dir_set_event.unregister(master, src)
+		UnregisterSignal(master, COMSIG_MOVED)
+	UnregisterSignal(master, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(master, COMSIG_DIR_SET)
 	master = null
 	. = ..()
 

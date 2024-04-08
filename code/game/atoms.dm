@@ -85,6 +85,22 @@
 	QDEL_NULL(reagents)
 	. = ..()
 
+/**
+ * An atom has entered this atom's contents
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_ENTERED]
+ */
+/atom/Entered(atom/movable/enterer, atom/old_loc)
+	SEND_SIGNAL(src, COMSIG_ENTERED, enterer, old_loc)
+
+/**
+ * An atom has exited this atom's contents
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_EXITED]
+ */
+/atom/Exited(atom/movable/exitee, atom/new_loc)
+	SEND_SIGNAL(src, COMSIG_EXITED, src, exitee, new_loc)
+
 /atom/proc/reveal_blood()
 	return
 
@@ -224,6 +240,16 @@
 		update_icon()
 	else
 		icon_state = new_icon_state
+
+/atom/proc/SetName(new_name)
+	var/old_name = name
+	if(old_name != new_name)
+		name = new_name
+
+		//TODO: de-shitcodify
+		if(has_extension(src, /datum/extension/labels))
+			var/datum/extension/labels/L = get_extension(src, /datum/extension/labels)
+			name = L.AppendLabelsToName(name)
 
 /atom/proc/update_icon()
 	on_update_icon(arglist(args))

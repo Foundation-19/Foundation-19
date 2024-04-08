@@ -249,7 +249,7 @@
 
 	if(user.put_in_active_hand(src))
 		if (isturf(old_loc))
-			var/obj/effect/temp_visual/item_pickup_ghost/ghost = new(old_loc, src)
+			var/obj/effect/temp_visual/item_pickup_ghost/ghost = new(old_loc, dir, src)	// named arguments don't work since we want this var in Initialize() not New()
 			ghost.animate_towards(user)
 		if(randpixel)
 			pixel_x = rand(-randpixel, randpixel)
@@ -304,6 +304,9 @@
 		if(user.r_hand)
 			user.r_hand.update_twohanding()
 
+	SEND_SIGNAL(src, COMSIG_DROPPED_ITEM, user)
+	SEND_SIGNAL(user, COMSIG_MOB_DROPPED_ITEM, src)
+
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
 	return
@@ -338,6 +341,9 @@
 		M.l_hand.update_twohanding()
 	if(M.r_hand)
 		M.r_hand.update_twohanding()
+
+	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
+	SEND_SIGNAL(user, COMSIG_MOB_EQUIPPED_ITEM, src, slot)
 
 //Defines which slots correspond to which slot flags
 var/list/global/slot_flags_enumeration = list(
@@ -758,11 +764,11 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	user.client.view = viewsize
 	zoom = 1
 
-	GLOB.destroyed_event.register(src, src, TYPE_PROC_REF(/obj/item, unzoom))
-	GLOB.moved_event.register(user, src, TYPE_PROC_REF(/obj/item, unzoom))
-	GLOB.dir_set_event.register(user, src, TYPE_PROC_REF(/obj/item, unzoom))
-	GLOB.item_unequipped_event.register(src, user, TYPE_PROC_REF(/mob/living, unzoom))
-	GLOB.stat_set_event.register(user, src, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(src, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/item, unzoom))
+	user.RegisterSignal(src, COMSIG_DROPPED_ITEM, TYPE_PROC_REF(/mob/living, unzoom))
 
 	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
 
@@ -775,17 +781,17 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		return
 	zoom = 0
 
-	GLOB.destroyed_event.unregister(src, src, TYPE_PROC_REF(/obj/item, unzoom))
-	GLOB.moved_event.unregister(user, src, TYPE_PROC_REF(/obj/item, unzoom))
-	GLOB.dir_set_event.unregister(user, src, TYPE_PROC_REF(/obj/item, unzoom))
-	GLOB.item_unequipped_event.unregister(src, user, TYPE_PROC_REF(/mob/living, unzoom))
+	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(user, COMSIG_MOVED)
+	UnregisterSignal(user, COMSIG_DIR_SET)
+	user.UnregisterSignal(src, COMSIG_DROPPED_ITEM)
 
 	user = user == src ? loc : (user || loc)
 	if(!istype(user))
 		crash_with("[log_info_line(src)]: Zoom user lost]")
 		return
 
-	GLOB.stat_set_event.unregister(user, src, TYPE_PROC_REF(/obj/item, unzoom))
+	UnregisterSignal(user, COMSIG_SET_STAT)
 
 	if(!user.client)
 		return

@@ -150,6 +150,7 @@
 	var/old_selecting = selecting
 	selecting = bodypart
 	if(old_selecting != selecting)
+		SEND_SIGNAL(src, COMSIG_SET_SELECTED_ZONE, selecting, old_selecting)
 		update_icon()
 		return TRUE
 
