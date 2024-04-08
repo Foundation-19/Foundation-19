@@ -1766,9 +1766,6 @@
 /obj/effect/floor_decal/corner/research/border{
 	dir = 1
 	},
-/obj/item/grenade/empgrenade,
-/obj/item/grenade/empgrenade,
-/obj/item/grenade/empgrenade,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/researchwing)
 "afL" = (
