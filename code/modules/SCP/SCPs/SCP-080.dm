@@ -39,27 +39,64 @@
         last_fear_induction = world.time // Update the last induction time
         induce_fear_aura()
 
-/mob/living/scp080/proc/induce_fear_aura()
-	for(var/mob/living/L in view(fear_radius, src))
-		if(L == src) // Check if the living entity is SCP-080 itself
-			continue
-		if(L.stat == DEAD || L.is_immune_to_fear==TRUE) // Check if the living entity is dead or immune to fear
-			continue
-		if(L in affected_mobs && world.time < (affected_mobs[L] + fear_message_cooldown * 10)) // Check if the mob is still on cooldown
-			continue
-		if(prob(50)) // 50% chance to induce fear each tick
-			L.visible_message("<span class='warning'>[L] shivers as a cold, unseen presence brushes past them.</span>",
-								"<span class='userdanger'>You feel a terrifying chill down your spine as something unseen whispers your name...</span>")
-			affected_mobs[L] = world.time // Update the cooldown for the affected mob
 
-    var/sound/fear_sound = null
-    fear_sound.volume = 50
-    for(var/mob/living/L in affected_mobs)
+/mob/living/scp080/proc/induce_fear_aura()
+    for(var/mob/living/L in view(fear_radius, src))
         if(L == src) // Check if the living entity is SCP-080 itself
             continue
-        if(world.time < (affected_mobs[L] + fear_message_cooldown * 10))
+        if(L.stat == DEAD) // Check if the living entity is dead or immune to fear
             continue
-        L.playsound_local(L, fear_sound)
+        if(L in affected_mobs && world.time < (affected_mobs[L] + fear_message_cooldown * 10)) // Check if the mob is still on cooldown
+            continue
+        // Increase the chance to induce fear based on how close the mob is to SCP-080
+        var/distance = get_dist(src, L)
+        var/fear_chance = max(50 - (distance * 5), 20) // Closer mobs have a higher chance, but not lower than 20%
+        if(prob(fear_chance))
+            var/message_type = prob(70) ? "warning" : "userdanger" // 70% chance for a warning message, 30% for a userdanger message
+            var/warning_messages = list(
+                "[L] feels their heart racing uncontrollably.",
+                "[L] feels a chill run down their spine.",
+                "[L] can't shake the feeling of being watched."
+            )
+            var/userdanger_messages = list(
+                "You hear your heartbeat in your ears, drowning out all other sounds.",
+                "A sudden fear grips you, but you can't understand why.",
+                "Panic washes over you, making your hands tremble."
+            )
+            var/message_text = message_type == "warning" ? pick(warning_messages) : pick(userdanger_messages)
+            L.visible_message("<span class='[message_type]'>[message_text]</span>")
+            affected_mobs[L] = world.time // Update the cooldown for the affected mob
+
+            // Introduce environmental effects based on proximity
+            if(distance <= 2)
+                // Whispering voices for those very close
+                L << "<span class='userdanger'>Whispers fill your ears, speaking in tongues you can't understand.</span>"
+            else if(distance <= 4)
+                // Unsettling sounds for those a bit further away
+                L << "<span class='warning'>The sound of footsteps approach you, yet nothing is there.</span>"
+
+    // Play fear-inducing sounds at random intervals
+    if(prob(20)) // 20% chance each tick to play a sound
+        var/list/fear_sounds = null //list('sound/ambience/ambiscp1.ogg', 'sound/ambience/ambiscp2.ogg', 'sound/ambience/ambiscp3.ogg')
+        var/sound/fear_sound = null //pick(fear_sounds)
+        fear_sound.volume = 50
+        for(var/mob/living/L in affected_mobs)
+            if(L == src || world.time < (affected_mobs[L] + fear_message_cooldown * 10))
+                continue
+            L.playsound_local(L, fear_sound, 50)
+
+    // Gradually increase fear effects based on exposure time
+    for(var/mob/living/L in affected_mobs)
+        if(L == src || world.time < (affected_mobs[L] + fear_message_cooldown * 10))
+            continue
+        var/exposure_time = (world.time - affected_mobs[L]) / 10 // Time in seconds since first affected
+        if(exposure_time > 30) // More than 30 seconds of exposure
+            L << "<span class='userdanger'>Your vision begins to blur as panic takes hold.</span>"
+        else if(exposure_time > 15) // More than 15 seconds of exposure
+            L << "<span class='warning'>You start to see shadows darting at the edge of your vision.</span>"
+
+
+
 
 
 /mob/living/scp080/attack_hand(mob/living/carbon/human/H)

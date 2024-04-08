@@ -53,3 +53,4 @@ __pycache__
 flyway.conf
 
 .cache
+.cody/ignore.txt
