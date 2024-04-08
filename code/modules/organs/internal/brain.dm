@@ -164,10 +164,10 @@
 				healing += 1.05 * log(12, (blood_volume - BLOOD_VOLUME_SAFE))
 
 			var/incoming_damage = ((100 - (1.1 * blood_volume)) / 50) + (((blood_volume - 100) / 120) ** 2)
-			if(chem_effects[CE_STABLE])
+			if(owner.chem_effects[CE_STABLE])
 				incoming_damage *= 0.5
 
-			var/max_incoming_damage = (max_damage + 75) - (3 * blood_volume)
+			var/current_max_health = (max_damage + 75) - (3 * blood_volume)
 
 			// Can't heal and take damage at the same time, so the smaller one is taken away from the larger
 			if(healing && incoming_damage)
@@ -178,7 +178,7 @@
 					incoming_damage -= healing
 					healing = 0
 
-			take_internal_damage(min(damage + incoming_damage, max_damage))
+			take_internal_damage(min(damage + incoming_damage, current_max_health - damage))
 
 			// we can't heal if we're above max damage
 			if(healing && damage && damage < max_damage)
