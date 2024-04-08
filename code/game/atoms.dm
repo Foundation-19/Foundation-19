@@ -91,7 +91,7 @@
  * Default behaviour is to send the [COMSIG_ATOM_ENTERED]
  */
 /atom/Entered(atom/movable/enterer, atom/old_loc)
-	SEND_SIGNAL(src, COMSIG_ENTERED, src, enterer, old_loc)
+	SEND_SIGNAL(src, COMSIG_ENTERED, enterer, old_loc)
 
 /**
  * An atom has exited this atom's contents
