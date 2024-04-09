@@ -395,7 +395,7 @@
 
 /material/boron
 	name = MATERIAL_BORON
-	lore_text = "A rare metalloid with use in fusion reactions."
+	codex_desc = "A rare metalloid with use in fusion reactions."
 	stack_type = /obj/item/stack/material/boron
 	chem_products = list(
 				/datum/reagent/toxin/boron = 20
