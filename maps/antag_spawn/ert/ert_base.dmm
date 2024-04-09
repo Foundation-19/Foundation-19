@@ -820,7 +820,7 @@
 /obj/structure/closet{
 	name = "mobile task force wardrobe"
 	},
-/obj/item/clothing/head/solgov/utility/fleet,
+/obj/item/clothing/head/goc/utility/ptolemy,
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
@@ -2252,7 +2252,7 @@
 /turf/space,
 /area/map_template/rescue_base/base)
 "er" = (
-/obj/item/clothing/head/solgov/dress/fleet/command{
+/obj/item/clothing/head/goc/dress/nexus{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -2708,7 +2708,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/map_template/rescue_base/start)
 "eZ" = (
-/obj/item/clothing/head/solgov/dress/fleet/command,
+/obj/item/clothing/head/goc/dress/nexus,
 /turf/simulated/floor/tiled/dark,
 /area/map_template/rescue_base/start)
 "fa" = (

@@ -1,6 +1,6 @@
 /obj/item/clothing/head/wizard
-	name = "wizard hat"
-	desc = "Strange-looking hat-wear that most certainly belongs to a real magic user."
+	name = "thaumatologist hat"
+	desc = "Strange-looking hat-wear that most certainly belongs to a real thaumatologist."
 	icon_state = "wizard"
 	item_state_slots = list(
 		slot_l_hand_str = "wizhat",
@@ -12,8 +12,8 @@
 	wizard_garb = TRUE
 
 /obj/item/clothing/head/wizard/red
-	name = "red wizard hat"
-	desc = "Strange-looking, red, hat-wear that most certainly belongs to a real magic user."
+	name = "red thaumatologist hat"
+	desc = "Strange-looking, red, hat-wear that most certainly belongs to a real thaumatologist."
 	icon_state = "redwizard"
 	siemens_coefficient = 0.8
 
@@ -52,7 +52,7 @@
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/suit/wizrobe
-	name = "wizard robe"
+	name = "thaumatologist robe"
 	desc = "A magnificant, gem-lined robe that seems to radiate power."
 	icon_state = "wizard"
 	gas_transfer_coefficient = 0.01 // IT'S MAGICAL OKAY JEEZ +1 TO NOT DIE
@@ -71,7 +71,7 @@
 	wizard_garb = TRUE
 
 /obj/item/clothing/suit/wizrobe/red
-	name = "red wizard robe"
+	name = "red thaumatologist robe"
 	desc = "A magnificant, red, gem-lined robe that seems to radiate power."
 	icon_state = "redwizard"
 
@@ -106,8 +106,8 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/wizrobe/fake
-	name = "wizard robe"
-	desc = "A rather dull, blue robe meant to mimick real wizard robes."
+	name = "thaumatologist robe"
+	desc = "A rather dull, blue robe meant to mimick real thaumatologist robes."
 	icon_state = "wizard-fake"
 	armor = null
 	siemens_coefficient = 1.0
