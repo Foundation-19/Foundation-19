@@ -237,10 +237,10 @@
 /*
 	Middle-Alt click
 	Used for pointing at something
-*/
-/mob/proc/AltMiddleClickOn(atom/A)
+	|= Transfer to mod_celadon/_components/code/_components.dm =| */
+/* /mob/proc/AltMiddleClickOn(atom/A)
 	pointed(A)
-	return
+	return */
 
 /*
 	Middle-Shift click

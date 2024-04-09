@@ -1,0 +1,4 @@
+#include "__components.dm"
+
+// Различный мелкий дополнительный функционал
+#include "code/_components.dm"
