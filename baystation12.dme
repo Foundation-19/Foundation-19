@@ -355,6 +355,7 @@
 #include "code\datums\communication\pray.dm"
 #include "code\datums\communication\~defines.dm"
 #include "code\datums\components\_component.dm"
+#include "code\datums\components\codeword_hearing.dm"
 #include "code\datums\components\helpers.dm"
 #include "code\datums\components\memetic.dm"
 #include "code\datums\disease\_disease.dm"
