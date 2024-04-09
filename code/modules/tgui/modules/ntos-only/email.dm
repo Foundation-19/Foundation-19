@@ -480,9 +480,6 @@
 			msg_attachment = null
 			return 1
 
-		if("codexinfo")
-			SScodex.present_codex_entry(usr, SScodex.get_codex_entry(/datum/codex_category/service_emails/))
-
 /datum/tgui_module/email_client/robot
 /datum/tgui_module/email_client/robot/tgui_state(mob/user)
 	return GLOB.self_tgui_state

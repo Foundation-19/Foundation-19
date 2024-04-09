@@ -301,7 +301,7 @@
 		. = TOPIC_REFRESH
 
 	else if(href_list["freq"])
-		var/new_frequency = (tracking_freq + text2num(href_list["freq"]))
+		var/new_frequency = (tracking_freq + text2num(href_list["freq"]))\
 		tracking_freq = sanitize_frequency(new_frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 		. = TOPIC_REFRESH
 
