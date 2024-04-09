@@ -20,9 +20,11 @@
 	var/datum/computer_file/program/nttransfer/remote	// Client var, specifies who are we downloading from.
 	var/download_completion = 0							// Download progress in GQ
 	var/actual_netspeed = 0								// Displayed in the UI, this is the actual transfer speed.
+	var/unique_token 									// UID of this program
 	var/upload_menu = FALSE								// Whether we show the program list and upload menu
 
 /datum/computer_file/program/nttransfer/New()
+	unique_token = ntnet_global.generate_uid()
 	..()
 
 /datum/computer_file/program/nttransfer/process_tick()
@@ -84,7 +86,7 @@
 
 	data["uploading"] = !!provided_file
 	if(provided_file)
-		data["upload_uid"] = computer.network_card.identification_id
+		data["upload_uid"] = unique_token
 		data["upload_clients"] = connected_clients.len
 		data["upload_haspassword"] = server_password ? 1 : 0
 		data["upload_filename"] = "[provided_file.filename].[provided_file.filetype]"
@@ -107,7 +109,7 @@
 			if(!P.provided_file)
 				continue
 			all_servers.Add(list(list(
-				"uid" = P.computer.network_card.identification_id,
+				"uid" = P.unique_token,
 				"filename" = "[P.provided_file.filename].[P.provided_file.filetype]",
 				"size" = P.provided_file.size,
 				"haspassword" = P.server_password ? 1 : 0
@@ -122,7 +124,7 @@
 	switch(action)
 		if("PRG_downloadfile")
 			for(var/datum/computer_file/program/nttransfer/P in ntnet_global.fileservers)
-				if(P.computer.network_card.identification_id == text2num(params["uid"]))
+				if(P.unique_token == text2num(params["uid"]))
 					remote = P
 					break
 			if(!remote || !remote.provided_file)

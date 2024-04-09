@@ -9,7 +9,7 @@
 	requires_ntnet = 1
 	requires_ntnet_feature = NTNET_COMMUNICATION
 	network_destination = "SCPRC server"
-	ui_header = "sciprc_idle.gif"
+	ui_header = "ntnrc_idle.gif"
 	available_on_ntnet = 1
 	tgui_id = "NtosNetChat"
 	/// Used to generate the toolbar icon
@@ -160,7 +160,7 @@
 			channel = chan
 			break
 	if(program_state != PROGRAM_STATE_KILLED)
-		ui_header = "sciprc_idle.gif"
+		ui_header = "ntnrc_idle.gif"
 		if(channel)
 			// Remember the last message. If there is no message in the channel remember null.
 			last_message = length(channel.messages) ? channel.messages[channel.messages.len - 1] : null
@@ -168,9 +168,9 @@
 			last_message = null
 		return 1
 	if(channel?.messages?.len)
-		ui_header = last_message == channel.messages[channel.messages.len - 1] ? "sciprc_idle.gif" : "sciprc_new.gif"
+		ui_header = last_message == channel.messages[channel.messages.len - 1] ? "ntnrc_idle.gif" : "ntnrc_new.gif"
 	else
-		ui_header = "sciprc_idle.gif"
+		ui_header = "ntnrc_idle.gif"
 
 /datum/computer_file/program/chatclient/kill_program(forced = FALSE)
 	for(var/datum/ntnet_conversation/channel as anything in ntnet_global.chat_channels)

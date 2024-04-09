@@ -53,9 +53,9 @@
 		if(check_count)
 			if(check_count == 2)
 				new_mail_notify()
-			ui_header = "sciprc_new.gif"
+			ui_header = "ntnrc_new.gif"
 		else
-			ui_header = "sciprc_idle.gif"
+			ui_header = "ntnrc_idle.gif"
 	else
-		ui_header = "sciprc_idle.gif"
+		ui_header = "ntnrc_idle.gif"
 

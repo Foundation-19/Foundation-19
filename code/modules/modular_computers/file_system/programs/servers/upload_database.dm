@@ -25,10 +25,14 @@
 	/// user-set name for easier identification by the client
 	var/server_name = ""
 
+	/// UID of this server
+	var/unique_token
+
 	/// all connected clients
 	var/list/datum/computer_file/program/upload_database_c/clients = list()
 
 /datum/computer_file/program/upload_database/New()
+	unique_token = ntnet_global.generate_uid()
 	if(!server_name)
 		server_name = GenerateKey()
 	..()
@@ -100,8 +104,8 @@
 			files_required_access[editing_file] = list()
 
 		var/list/all_regions = get_all_access_datums_by_region()
-		for(var/r_index in all_regions)
-			var/list/region = all_regions[r_index]
+		for(var/r_name in all_regions)
+			var/list/region = all_regions[r_name]
 
 			var/list/prepared_region = list()
 
@@ -115,7 +119,7 @@
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += get_region_accesses_name(r_index)
+			data["region_names"] += r_name
 
 	return data
 
