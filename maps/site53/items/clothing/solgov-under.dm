@@ -234,9 +234,6 @@
 /obj/item/clothing/under/solgov/utility/fleet/command
 	accessories = list(/obj/item/clothing/accessory/solgov/department/command/fleet)
 
-/obj/item/clothing/under/solgov/utility/fleet/command/pilot
-	accessories = list(/obj/item/clothing/accessory/solgov/speciality/pilot)
-
 /obj/item/clothing/under/solgov/utility/fleet/engineering
 	accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/fleet)
 

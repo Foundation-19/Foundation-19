@@ -189,7 +189,7 @@
 	target.forceMove(effect)
 	target.status_flags &= GODMODE
 	to_chat(target, SPAN_NOTICE("You will be in stasis for [time/10] second\s."))
-	addtimer(CALLBACK(src, .proc/CancelRift), time)
+	addtimer(CALLBACK(src, PROC_REF(CancelRift)), time)
 
 /datum/spell/aimed/heal_target/trance/Destroy()
 	CancelRift()
@@ -257,8 +257,8 @@
 		D.alpha = 145
 		animate(D, pixel_x = A.pixel_x + rand(-12, 12), pixel_y = A.pixel_y + rand(-12, 12), alpha = 0, time = rand(7, 20))
 	for(var/i = 1 to 25)
-		addtimer(CALLBACK(src, .proc/PerformTargetEffect, target), i * 2)
-	addtimer(CALLBACK(src, .proc/DoRevive, target), 6 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(PerformTargetEffect), target), i * 2)
+	addtimer(CALLBACK(src, PROC_REF(DoRevive), target), 6 SECONDS)
 
 /datum/spell/aimed/revoke_death/proc/PerformTargetEffect(mob/living/target)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(get_turf(target), target.dir, target)

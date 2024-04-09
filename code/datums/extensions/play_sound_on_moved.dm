@@ -24,10 +24,10 @@
 		move_volume = volume_override
 	if (sounds_override)
 		move_sounds = sounds_override
-	GLOB.moved_event.register(atom_holder, src, PROC_REF(DoMoveSound))
+	RegisterSignal(atom_holder, COMSIG_MOVED, PROC_REF(DoMoveSound))
 
 /datum/extension/play_sound_on_moved/Destroy()
-	GLOB.moved_event.unregister(atom_holder, src, PROC_REF(DoMoveSound))
+	UnregisterSignal(atom_holder, COMSIG_MOVED)
 	..()
 
 /// Plays a random sound from `move_sounds` at volume `move_volume`, centered at the turf of `atom_holder`.

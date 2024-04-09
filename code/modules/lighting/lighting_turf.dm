@@ -29,7 +29,7 @@
 
 	// If the counter changed and was or became 0 then lift event/reconsider lights
 	if(opaque_counter != old_opaque_counter && (!opaque_counter || !old_opaque_counter))
-		GLOB.opacity_set_event.raise_event(src, !opaque_counter, !!opaque_counter)
+		SEND_SIGNAL(src, COMSIG_SET_OPACITY, !opaque_counter, !!opaque_counter)
 		reconsider_lights()
 		return TRUE
 	return FALSE

@@ -63,15 +63,15 @@
 	START_PROCESSING(SSobj, src)
 	target = L
 	update_icon()
-	GLOB.destroyed_event.register(L,src,TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
-	GLOB.moved_event.register(L, src, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
-	GLOB.death_event.register(L, src, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
+	RegisterSignal(L, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
+	RegisterSignal(L, COMSIG_MOVED, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
+	RegisterSignal(L, COMSIG_ADD_TO_DEAD_MOB_LIST, TYPE_PROC_REF(/obj/structure/deity/altar, remove_target))
 
 /obj/structure/deity/altar/proc/remove_target()
 	STOP_PROCESSING(SSobj, src)
-	GLOB.destroyed_event.unregister(target, src)
-	GLOB.moved_event.unregister(target, src)
-	GLOB.death_event.unregister(target, src)
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(target, COMSIG_MOVED)
+	UnregisterSignal(target, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	target = null
 	update_icon()
 
