@@ -92,6 +92,6 @@
 	name = "Large Unidentified SCP"
 	cost = 25
 	contains = list(/obj/machinery/artifact)
-	containertype = /obj/structure/closet/crate/secure/gear
+	containertype = /obj/structure/closet/crate/secure/large
 	containername = "unidentified scp crate"
 	access = ACCESS_RESEARCH
