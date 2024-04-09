@@ -190,7 +190,7 @@
 /mob/living/scp080/proc/affect_environment()
 	// Flicker lights in the vicinity
 	for(var/obj/machinery/light/L in view(fear_radius, src))
-		if(prob(30)) // 30% chance to flicker lights
+		if(prob(5)) // 5% chance to flicker lights
 			L.flicker()
 
 	// Briefly manifest a visual anomaly (e.g., shadow figure, strange mist)
