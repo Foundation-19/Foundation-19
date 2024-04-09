@@ -85,9 +85,21 @@ SUBSYSTEM_DEF(jobs)
 						if (length(job.alt_titles))
 							LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.alt_titles)
 
-	// Set up syndicate phrases.
-	syndicate_code_phrase = generate_code_phrase()
-	syndicate_code_response	= generate_code_phrase()
+	if(!GLOB.syndicate_code_phrase)
+		GLOB.syndicate_code_phrase = generate_codephrase_list()
+
+		var/codewords = jointext(GLOB.syndicate_code_phrase, "|")
+		var/regex/codeword_match = new("([codewords])", "ig")
+
+		GLOB.syndicate_code_phrase_regex = codeword_match
+
+	if(!GLOB.syndicate_code_response)
+		GLOB.syndicate_code_response = generate_codephrase_list()
+
+		var/codewords = jointext(GLOB.syndicate_code_response, "|")
+		var/regex/codeword_match = new("([codewords])", "ig")
+
+		GLOB.syndicate_code_response_regex = codeword_match
 
 	// Set up AI spawn locations
 	spawn_empty_ai()
