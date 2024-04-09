@@ -69,6 +69,10 @@
 	name = "intercom (Medbay)"
 	frequency = MED_I_FREQ
 
+/obj/item/device/radio/intercom/department/security
+	name = "intercom (Security)"
+	frequency = SEC_I_FREQ
+
 /obj/item/device/radio/intercom/entertainment
 	name = "entertainment intercom"
 	frequency = ENT_FREQ
@@ -77,6 +81,14 @@
 /obj/item/device/radio/intercom/department/medbay/Initialize()
 	. = ..()
 	internal_channels = GLOB.default_medbay_channels.Copy()
+
+/obj/item/device/radio/intercom/department/security/Initialize()
+	. = ..()
+	internal_channels = list(
+		num2text(PUB_FREQ) = list(),
+		num2text(SEC_FREQ) = list(ACCESS_SECURITY),
+		num2text(SEC_I_FREQ) = list(ACCESS_SECURITY)
+	)
 
 /obj/item/device/radio/intercom/entertainment/Initialize()
 	. = ..()
