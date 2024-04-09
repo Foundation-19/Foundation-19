@@ -36,8 +36,7 @@
 		"GOC Central Office",
 		"Horizon Initiative Central Office ",
 		"Marshall, Carter, and Dark Central Office",
-		"Goldbaker-Reinz Central Office",
-		"MCF American Headquarters"
+		"Goldbaker-Reinz Central Office"
 	)
 
 	//These should probably be moved into the evac controller...
