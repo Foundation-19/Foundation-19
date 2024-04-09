@@ -4,7 +4,7 @@ dreamchecker = true
 [map_renderer]
 hide_invisible = [
 	"/obj/effect/landmark",
-    "/turf/unsimulated/mineral",
+	"/turf/unsimulated/mineral",
 ]
 
 [diagnostics]
