@@ -1,3 +1,20 @@
+/datum/keybinding/silicon
+	category = CATEGORY_ROBOT
+
+/datum/keybinding/silicon/toggle_lights
+	hotkey_keys = list("V")
+	name = "toggle_lights"
+	full_name = "Toggle Lights"
+	description = "Toggle camera lights"
+
+/datum/keybinding/silicon/toggle_lights/down(client/user)
+	if(isrobot(user.mob))
+		var/mob/living/silicon/robot/S = user.mob
+		S.toggle_lights()
+	else if(isAI(user.mob))
+		var/mob/living/silicon/ai/S = user.mob
+		S.toggle_camera_light()
+
 /datum/keybinding/robot
 	category = CATEGORY_ROBOT
 

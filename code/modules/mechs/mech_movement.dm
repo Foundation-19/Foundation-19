@@ -8,8 +8,19 @@
 
 /mob/living/exosuit/Move()
 	. = ..()
-	if(. && !isspaceturf(loc))
-		playsound(src.loc, mech_step_sound, 40, 1)
+//	if(. && !isspaceturf(loc))
+//		playsound(src.loc, mech_step_sound, 40, 1)
+
+	if(.)
+		// Check for ore auto insertion
+		var/obj/structure/ore_box/box = getOreCarrier()
+		if(box)
+			for(var/obj/item/ore/i in get_turf(src))
+				i.Move(box)
+		// Check for walking sound
+		if(!isinspace())
+			if(legs && legs.mech_step_sound)
+				playsound(src.loc,legs.mech_step_sound,40,1)
 
 /mob/living/exosuit/can_ztravel()
 	if(Allow_Spacemove()) //Handle here
@@ -116,7 +127,7 @@
 		exosuit.visible_message(SPAN_NOTICE("\The [exosuit] moves [txt_dir]."))
 
 	if(exosuit.dir != moving_dir && !(direction & (UP|DOWN)))
-		playsound(exosuit.loc, exosuit.mech_turn_sound, 40,1)
+		playsound(exosuit.loc, exosuit.legs.mech_turn_sound, 40,1)
 		exosuit.set_dir(moving_dir)
 		exosuit.SetMoveCooldown(exosuit.legs.turn_delay)
 	else

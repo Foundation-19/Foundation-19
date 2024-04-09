@@ -30,10 +30,10 @@
 	)
 	to_chat(user, info || SPAN_WARNING("[src] is completely blank!"))
 
-/obj/item/passport/scg
-	name = "\improper SCG passport"
+/obj/item/passport/goc
+	name = "\improper UNGOC passport"
 	icon_state = "passport_scg"
-	desc = "A passport from the Sol Central Government."
+	desc = "A laissez-passer used both by the ordinary and paranormal United Nations. Typically seen on diplomats and their retinues."
 
 /obj/item/passport/earth
 	name = "\improper Earth passport"
