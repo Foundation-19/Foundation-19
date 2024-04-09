@@ -257,8 +257,12 @@
 /obj/item/pinpointer/radio
 	name = "locator device"
 	desc = "Used to scan and locate signals on a particular frequency."
-	var/tracking_freq = PUB_FREQ
+	var/tracking_freq
 	matter = list(MATERIAL_ALUMINIUM = 1000, MATERIAL_GLASS = 500)
+
+/obj/item/pinpointer/radio/Initialize()
+	. = ..()
+	tracking_freq = pick(ENG_FREQ, MED_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, SEC_LCZ_FREQ, SEC_HCZ_FREQ, SEC_ECZ_FREQ)
 
 /obj/item/pinpointer/radio/acquire_target()
 	var/turf/T = get_turf(src)

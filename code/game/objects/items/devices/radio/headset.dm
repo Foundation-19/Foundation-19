@@ -67,7 +67,6 @@
 /obj/item/device/radio/headset/map_preset
 	var/preset_name
 	var/encryption_key = /obj/item/device/encryptionkey
-	var/use_common = FALSE
 
 /obj/item/device/radio/headset/map_preset/Initialize()
 	if (preset_name)
@@ -75,10 +74,7 @@
 		name = "[name_lower] radio headset"
 		ks1type = encryption_key
 		default_frequency = assign_away_freq(preset_name)
-		if (use_common)
-			frequency = PUB_FREQ
-		else
-			frequency = default_frequency
+		frequency = default_frequency
 	. = ..()
 
 /obj/item/device/radio/headset/syndicate
@@ -106,18 +102,6 @@
 /obj/item/device/radio/headset/binary
 	origin_tech = list(TECH_ESOTERIC = 3)
 	ks1type = /obj/item/device/encryptionkey/binary
-
-/obj/item/device/radio/headset/headset_sec
-	name = "security radio headset"
-	desc = "This is used by your elite security force."
-	icon_state = "sec_headset"
-	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_sec
-
-/obj/item/device/radio/headset/headset_sec/alt
-	name = "security bowman headset"
-	icon_state = "sec_headset_alt"
-	item_state = "sec_headset_alt"
 
 /obj/item/device/radio/headset/headset_eng
 	name = "engineering radio headset"

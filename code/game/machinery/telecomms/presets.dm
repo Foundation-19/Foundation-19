@@ -36,7 +36,6 @@
 
 /obj/machinery/telecomms/receiver/map_preset
 	var/preset_name
-	var/use_common = FALSE
 
 /obj/machinery/telecomms/receiver/map_preset/Initialize()
 	if (preset_name)
@@ -44,8 +43,6 @@
 		id = "[preset_name] Receiver"
 		network = "tcomm_[name_lower]"
 		freq_listening += list(assign_away_freq(preset_name))
-		if (use_common)
-			freq_listening += PUB_FREQ
 		autolinkers = list(
 			"[name_lower]_receiver"
 		)
@@ -75,7 +72,6 @@
 
 /obj/machinery/telecomms/bus/map_preset
 	var/preset_name
-	var/use_common = FALSE
 
 /obj/machinery/telecomms/bus/map_preset/Initialize()
 	if (preset_name)
@@ -83,8 +79,6 @@
 		id = "[preset_name] Bus"
 		network = "tcomm_[name_lower]"
 		freq_listening += list(assign_away_freq(preset_name))
-		if (use_common)
-			freq_listening += PUB_FREQ
 		autolinkers = list(
 			"[name_lower]_processor",
 			"[name_lower]_server"
@@ -175,7 +169,6 @@
 /obj/machinery/telecomms/server/map_preset
 	var/preset_name
 	var/preset_color = COMMS_COLOR_DEFAULT
-	var/use_common = FALSE
 
 /obj/machinery/telecomms/server/map_preset/Initialize()
 	if (preset_name)
@@ -184,9 +177,6 @@
 		network = "tcomm_[name_lower]"
 		freq_listening += list(assign_away_freq(preset_name))
 		channel_tags += list(list(assign_away_freq(preset_name), preset_name, preset_color))
-		if (use_common)
-			freq_listening += PUB_FREQ
-			channel_tags += list(list(PUB_FREQ, "Common", COMMS_COLOR_COMMON))
 		autolinkers = list(
 			"[name_lower]_server"
 		)
@@ -224,7 +214,6 @@
 	id = "Common Server"
 	freq_listening = list(PUB_FREQ, AI_FREQ, ENT_FREQ, MED_I_FREQ, SEC_I_FREQ) // AI Private, Common, and Departmental Intercomms
 	channel_tags = list(
-		list(PUB_FREQ, "Common", COMMS_COLOR_COMMON),
 		list(AI_FREQ, "AI Private", COMMS_COLOR_AI),
 		list(ENT_FREQ, "Entertainment", COMMS_COLOR_ENTERTAIN),
 		list(MED_I_FREQ, "Medical (I)", COMMS_COLOR_MEDICAL_I),

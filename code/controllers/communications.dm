@@ -123,6 +123,9 @@ var/const/SCI_FREQ = 1351
 var/const/SRV_FREQ = 1349
 var/const/SUP_FREQ = 1347
 var/const/EXP_FREQ = 1361
+var/const/SEC_HCZ_FREQ = 1479
+var/const/SEC_LCZ_FREQ = 1471
+var/const/SEC_ECZ_FREQ = 1473
 
 // internal department channels
 var/const/MED_I_FREQ = 1485
@@ -145,12 +148,6 @@ var/const/SHUTTLE_AIR_FREQ  = 1331 // Used by shuttles and shuttle-related atmos
 var/const/AIRLOCK_AIR_FREQ  = 1379 // Used by some airlocks for atmos devices.
 var/const/EXTERNAL_AIR_FREQ = 1380 // Used by some external airlocks.
 var/const/FEMURBREAKER_FREQ = 1329
-
-//Foundation 19 Edits
-
-var/const/SEC_HCZ_FREQ = 1479
-var/const/SEC_LCZ_FREQ = 1471
-var/const/SEC_ECZ_FREQ = 1473
 
 var/list/radiochannels = list(
 	"Common"		= PUB_FREQ,
@@ -179,7 +176,7 @@ var/list/channel_color_presets = list(
 	"Bitchin' Blue" = COMMS_COLOR_COMMAND,
 	"Bold Brass" = COMMS_COLOR_EXPLORER,
 	"Gastric Green" = COMMS_COLOR_SERVICE,
-	"Global Green" = COMMS_COLOR_COMMON,
+	"Global Green" = "#408010",
 	"Grand Gold" = COMMS_COLOR_COLONY,
 	"Hippin' Hot Pink" = "#cc00aa",
 	"Menacing Maroon" = COMMS_COLOR_SYNDICATE,

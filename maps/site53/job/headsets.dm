@@ -16,13 +16,13 @@
 	name = "comms admin encryption key"
 	desc = "An encryption key providing access to all channels."
 	icon_state = "comm_cypherkey"
-	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "HCZ-Security" = 1, "LCZ-Security" = 1, "ECZ-Security" = 1)
+	channels = list("Command" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "HCZ-Security" = 1, "LCZ-Security" = 1, "ECZ-Security" = 1)
 
 /obj/item/device/encryptionkey/heads/comms_dispatcher
 	name = "dispatcher encryption key"
 	desc = "An encryption key providing access to most channels."
 	icon_state = "comm_cypherkey"
-	channels = list("Command" = 0, "Security" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "HCZ-Security" = 1, "LCZ-Security" = 1, "ECZ-Security" = 1)
+	channels = list("Command" = 0, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "HCZ-Security" = 1, "LCZ-Security" = 1, "ECZ-Security" = 1)
 
 /obj/item/device/radio/headset/headset_sec_hcz
 	name = "HCZ security radio headset"
@@ -48,17 +48,17 @@
 /obj/item/device/encryptionkey/headset_sec_hcz
 	name = "HCZ security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("HCZ-Security" = 1, "Security" = 1)
+	channels = list("HCZ-Security" = 1)
 
 /obj/item/device/encryptionkey/headset_sec_lcz
 	name = "LCZ security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("LCZ-Security" = 1, "Security" = 1)
+	channels = list("LCZ-Security" = 1)
 
 /obj/item/device/encryptionkey/headset_sec_ecz
 	name = "ECZ security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("ECZ-Security" = 1, "Security" = 1)
+	channels = list("ECZ-Security" = 1)
 
 /obj/item/device/radio/headset/goc
 	name = "GOC headset"
