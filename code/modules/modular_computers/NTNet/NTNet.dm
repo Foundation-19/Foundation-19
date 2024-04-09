@@ -204,6 +204,11 @@ var/global/datum/ntnet/ntnet_global = new()
 			return 1
 	return 0
 
+/datum/ntnet/proc/get_chat_channel_by_id(id)
+	for(var/datum/ntnet_conversation/chan in chat_channels)
+		if(chan.id == id)
+			return chan
+
 //Used for initial email generation.
 /datum/ntnet/proc/create_email(mob/user, desired_name, domain, desired_password, department_flags)
 	desired_name = sanitize_for_email(desired_name)

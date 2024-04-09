@@ -83,14 +83,6 @@ const BasePage = (props, context) => {
           align-items="end">
           Servername: {server_name}
         </Button>
-        <Button
-          onClick={() =>
-            act('PRG_switch_page_and_channel', {
-              page: 'access_sysadmin',
-            })
-          }>
-          Sysadmin Access Settings
-        </Button>
       </Flex>
       <Table>
         <Table.Row header>

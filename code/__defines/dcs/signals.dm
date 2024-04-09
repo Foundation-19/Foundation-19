@@ -86,6 +86,11 @@
 /// Called on `/obj/machinery/cryopod/despawn_occupant` (/mob)
 #define COMSIG_HUMAN_DESPAWNED "human_despawned"
 
+/// Called on `/mob/login` (/mob)
+#define COMSIG_MOB_LOGIN "mob_login"
+/// Called on `mob/logout` (/mob)
+#define COMSIG_MOB_LOGOUT "mob_logout"
+
 /// Called on `/mob/living/carbon/ingest` (/mob/living/carbon/, type)
 #define COMSIG_REAGENT_INGESTED "reagent_ingested"
 /// Called on `/obj/item/clothing/mask/smokable/smoke` (/datum, /obj/item/clothing/mask/smokable, number)
@@ -98,11 +103,6 @@
 #define COMSIG_DO_AFTER_BEGAN "do_after_began"
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_ENDED "do_after_ended"
-
-/// Called on `/datum/chatserver_channel/add_message` (/datum/computer_file/program/chatserver, /datum/chatserver_channel, fullmessage)
-#define COMSIG_SCIPRC_MESSAGE_SENT "sciprc_message_sent"
-/// Called when a server program stops hosting (hosting program)
-#define COMSIG_SERVER_PROGRAM_OFFLINE "server_program_offline"
 
 /*
 * Atom
@@ -127,11 +127,6 @@
 #define COMSIG_MOB_HEARD_SPEECH "mobHeardSpeech"
 /// Called in '/mob/living/say' on the mob who heard the whisper (/mob/living/speaker, message)
 #define COMSIG_MOB_HEARD_WHISPER "mobHeardWhisper"
-
-/// Called on `/mob/login` (/mob)
-#define COMSIG_MOB_LOGIN "mob_login"
-/// Called on `mob/logout` (/mob)
-#define COMSIG_MOB_LOGOUT "mob_logout"
 
 /*
 *	Photos

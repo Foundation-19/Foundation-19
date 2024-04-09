@@ -41,7 +41,7 @@
 	/// List of log messages
 	var/list/server_logs = list()
 
-	/// List of accesses required to be a sysadmin.
+	/// List of access datums required to be a sysadmin.
 	var/list/req_accesses_sysadmin = list()
 
 	//  TGUI vars
@@ -73,11 +73,7 @@
 			requires_ntnet_feature = FALSE
 			ntnet_global.chatservers.Remove(src)
 
-			SEND_SIGNAL(src, COMSIG_SERVER_PROGRAM_OFFLINE)
-
-/datum/computer_file/program/upload_database/kill_program(forced)
-	set_hosting(FALSE)
-	. = ..()
+			// TODO: crash clients here
 
 /datum/computer_file/program/chatserver/tgui_data(mob/user)
 	var/list/data = get_header_data()
@@ -100,9 +96,6 @@
 
 	data["ed_channel_messages"] = editing_channel ? channel_list[editing_channel].messages : null
 
-	data["region_access"] = list()
-	data["region_names"] = list()
-
 	if((current_page == PAGE_CHANNEL_ACCESS_USER) && editing_channel)
 
 		var/list/all_regions = get_all_access_datums_by_region()
@@ -121,7 +114,7 @@
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += get_region_accesses_name(text2num(r_index))
+			data["region_names"] += get_region_accesses_name(r_index)
 
 	if((current_page == PAGE_CHANNEL_ACCESS_ADMIN) && editing_channel)
 
@@ -141,7 +134,7 @@
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += get_region_accesses_name(text2num(r_index))
+			data["region_names"] += get_region_accesses_name(r_index)
 
 	if(current_page == PAGE_ACCESS_SYSADMIN)
 
@@ -161,7 +154,7 @@
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += get_region_accesses_name(text2num(r_index))
+			data["region_names"] += get_region_accesses_name(r_index)
 
 	return data
 
@@ -268,10 +261,7 @@
 	if(isnull(reject_bad_text(message)))
 		return FALSE
 
-	var/fullmessage = "[station_time_timestamp("hh:mm")] - [username] ([uid]): [message]"
-
-	messages.Add(fullmessage)
-	SEND_SIGNAL(server, COMSIG_SCIPRC_MESSAGE_SENT, src, fullmessage)
+	messages.Add("[station_time_timestamp("hh:mm")] - [username] ([uid]): [message]")
 
 	if(!(messages.len <= MESSAGES_LIST_CAP))
 		messages.Cut(1, (messages.len - (MESSAGES_LIST_CAP - 1)))
