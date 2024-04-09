@@ -1,0 +1,4 @@
+author: Saicchi
+delete-after: true
+changes:
+  - rscadd: keybind 'V' for robot and AI lights
