@@ -158,7 +158,7 @@
 // This is performed on program startup. May be overriden to add extra logic. Return TRUE on success, FALSE on failure.
 // When implementing new program based device, use this to run the program.
 /datum/computer_file/program/proc/run_program(mob/living/user)
-	SHOULD_CALL_PARENT(TRUE)
+	SHOULD_CALL_PARENT(true)
 
 	if(program_malicious)
 		computer.idle_threads.Add(src)
@@ -181,7 +181,7 @@
 
 // Use this proc to kill the program. Designed to be implemented by each program if it requires on-quit logic, such as the SCPRC client.
 /datum/computer_file/program/proc/kill_program(forced = 0)
-	SHOULD_CALL_PARENT(TRUE)
+	SHOULD_CALL_PARENT(true)
 
 	program_state = PROGRAM_STATE_KILLED
 	if(requires_ntnet && network_destination)
