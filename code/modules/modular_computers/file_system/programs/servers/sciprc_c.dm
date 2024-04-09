@@ -172,8 +172,8 @@
 			if(!new_server || !new_server.hosting)
 				return FALSE
 			server = new_server
-			RegisterSignal(server, COMSIG_SCIPRC_MESSAGE_SENT, .proc/handle_new_message)
-			RegisterSignal(server, COMSIG_SERVER_PROGRAM_OFFLINE, .proc/handle_crash)
+			RegisterSignal(server, COMSIG_SCIPRC_MESSAGE_SENT, PROC_REF(handle_new_message))
+			RegisterSignal(server, COMSIG_SERVER_PROGRAM_OFFLINE, PROC_REF(handle_crash))
 			return TRUE
 		if("PRG_post")
 			if(isnull(active_channel))	// sanity check
