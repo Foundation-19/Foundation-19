@@ -1,4 +1,5 @@
 /obj/item/device/radio
+	abstract_type = /obj/item/device/radio
 	icon = 'icons/obj/radio.dmi'
 	name = "shortwave radio"
 	suffix = "\[3\]"

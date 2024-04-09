@@ -5,15 +5,18 @@
 	var/list/messages = list()
 	var/list/clients = list()
 	var/password
+	var/source_z
 
-/datum/ntnet_conversation/New()
+/datum/ntnet_conversation/New(_z)
+	source_z = _z
 	id = ntnet_global.generate_uid()
 	if(ntnet_global)
 		ntnet_global.chat_channels.Add(src)
 	..()
 
 /datum/ntnet_conversation/proc/add_message(message, username)
-	messages.Add("[station_time_timestamp("hh:mm")] [username]: [message]")
+	message = "[station_time_timestamp("hh:mm")] [username]: [message]"
+	messages.Add(message)
 	trim_message_list()
 
 /datum/ntnet_conversation/proc/add_status_message(message)
