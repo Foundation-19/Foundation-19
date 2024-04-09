@@ -11,7 +11,7 @@
 	if(isrobot(user.mob))
 		var/mob/living/silicon/robot/S = user.mob
 		S.toggle_lights()
-	if(isAI(user.mob))
+	else if(isAI(user.mob))
 		var/mob/living/silicon/ai/S = user.mob
 		S.toggle_camera_light()
 
