@@ -24,3 +24,6 @@
   - balance: The crates near the battery racks in Engineering have 9 high-capacity
       cells for each instead of 6 super-capacity cells.
   - balance: Upgrading SMESs no longer has a chance to blow up.
+2024-04-09:
+  Saicchi:
+  - rscadd: keybind 'V' for robot and AI lights
