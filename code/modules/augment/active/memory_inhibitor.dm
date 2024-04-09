@@ -7,7 +7,7 @@
 	origin_tech = list(TECH_MATERIAL = 5, TECH_BIO = 5, TECH_ESOTERIC = 5)
 	var/ready_to_erase = FALSE
 
-/obj/item/organ/internal/augment/active/memory_inhibitor/attack_self(mob/living/M, removed)
+/obj/item/organ/internal/augment/active/memory_inhibitor/attack_self(mob/living/owner, removed)
 	. = ..()
 
 	if(!.)
@@ -15,18 +15,18 @@
 
 	if(!ready_to_erase)
 		ready_to_erase = TRUE
-		M.visible_message(SPAN_WARNING("[M]'s eyes grow dim."))
-		to_chat(M, "<font size='5' color='red'>It feels like a haze falls in your head... You can remember everything just fine, but you'll forget what happens later on.</font>")
+		owner.visible_message(SPAN_WARNING("[owner]'s eyes grow dim."))
+		to_chat(owner, "<font size='5' color='red'>It feels like a haze falls in your head... You can remember everything just fine, but you'll forget what happens later on.</font>")
 		ready_to_erase = TRUE
 	else
 		ready_to_erase = FALSE
-		M.visible_message(SPAN_WARNING("[M]'s eyes regain their focus."))
-		to_chat(M, "<font size='5' color='red'>Your mind feels a lot clearer, but... You can't recall the events since the last time you activated your memory inhibitor!</font>")
+		owner.visible_message(SPAN_WARNING("[owner]'s eyes regain their focus."))
+		to_chat(owner, "<font size='5' color='red'>Your mind feels a lot clearer, but... You can't recall the events since the last time you activated your memory inhibitor!</font>")
 
 /obj/item/organ/internal/augment/active/memory_inhibitor/emp_act(severity)
-	if (istype(src.loc, /mob/living/carbon/human))
-		var/mob/living/carbon/human/M = src.loc
-		M.visible_message(SPAN_WARNING("[M] looks confused"))
-		to_chat(M, "<font size='5' color='red'>You forgot everything that happened today!</font>")
+	. = ..()
+	if(severity)
+		owner.visible_message(SPAN_WARNING("[owner] looks confused"))
+		to_chat(owner, "<font size='5' color='red'>You forgot everything that happened today!</font>")
 
 
