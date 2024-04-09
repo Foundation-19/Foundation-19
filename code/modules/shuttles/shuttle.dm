@@ -19,6 +19,10 @@
 	var/sound_takeoff = 'sounds/effects/shuttle_takeoff.ogg'
 	var/sound_landing = 'sounds/effects/shuttle_landing.ogg'
 
+	///These two can be customized under individual shuttles.
+	var/landing_message = "The rumble of engines are heard as a shuttle approaches."
+	var/takeoff_message = "The rumble of engines are heard as a shuttle takes off."
+
 	var/knockdown = 1 //whether shuttle downs non-buckled people when it moves
 
 	var/defer_initialisation = FALSE //this shuttle will/won't be initialised automatically. If set to true, you are responsible for initialzing the shuttle manually.
@@ -26,6 +30,7 @@
 
 	var/mothershuttle //tag of mothershuttle
 	var/motherdock    //tag of mothershuttle landmark, defaults to starting location
+
 
 /datum/shuttle/New(_name, obj/effect/shuttle_landmark/initial_location)
 	..()
@@ -102,7 +107,7 @@
 
 			for (var/mob/M in GLOB.player_list)
 				if (M.client && M.z == A.z && !isspaceturf(get_turf(M)) && !(get_area(M) in src.shuttle_area))
-					to_chat(M, SPAN_NOTICE("The rumble of engines are heard as a shuttle lifts off."))
+					to_chat(M, SPAN_NOTICE(takeoff_message)) //takeoff message
 
 	spawn(warmup_time*10)
 		if(moving_status == SHUTTLE_IDLE)
@@ -127,7 +132,7 @@
 
 						for (var/mob/M in GLOB.player_list)
 							if (M.client && M.z == A.z && !isspaceturf(get_turf(M)) && !(get_area(M) in src.shuttle_area))
-								to_chat(M, SPAN_NOTICE("The rumble of a shuttle's engines fill the area as a ship manuevers in for a landing."))
+								to_chat(M, SPAN_NOTICE(landing_message))
 
 				sleep(5)
 			if(!attempt_move(destination))
@@ -157,9 +162,9 @@
 		testing("Moving [A]")
 		translation += get_turf_translation(get_turf(current_location), get_turf(destination), A.contents)
 	var/old_location = current_location
-	GLOB.shuttle_pre_move_event.raise_event(src, old_location, destination)
+	SEND_SIGNAL(src, COMSIG_SHUTTLE_PRE_MOVE, destination, old_location)
 	shuttle_moved(destination, translation)
-	GLOB.shuttle_moved_event.raise_event(src, old_location, destination)
+	SEND_SIGNAL(src, COMSIG_SHUTTLE_MOVED, destination, old_location)
 	destination.shuttle_arrived(src)
 	return TRUE
 

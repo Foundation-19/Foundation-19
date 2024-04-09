@@ -96,6 +96,16 @@
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/emag)
 
+// Fine - Sets uses to random amount between 5 and 15.
+/obj/item/card/emag/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_FINE)
+			uses = rand(5, 15)
+			visible_message(SPAN_NOTICE("Electricity runs through \the [src] briefly."))
+			playsound(src, 'sounds/effects/sparks3.ogg', 50, TRUE)
+			return src
+	return ..()
+
 /obj/item/card/emag/broken
 	uses = 0
 
@@ -180,6 +190,70 @@
 	to_chat(user, "It says '[get_display_name()]'.")
 	if(distance <= 1)
 		show(user)
+
+/// List of ID cards that can be used in 914 conversion effect
+GLOBAL_LIST_INIT(valid_conversion_cards, \
+	subtypesof(/obj/item/card/id) - typesof(/obj/item/card/id/syndicate) - /obj/item/card/id/centcom)
+
+/// Associative list of card = list of cards that it can upgrade into
+GLOBAL_LIST_EMPTY(conversion_cards)
+
+// 1:1 - Returns random ID card type and copies ALL of our access to it. Nothing gained, nothing lost, just new sprite.
+// Fine - Returns an "upgrade" type of our card, but may turn into useless stuff.
+// Very Fine - ???
+/obj/item/card/id/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_ONE_TO_ONE)
+			var/type_path = pick(GLOB.valid_conversion_cards)
+			var/obj/item/card/id/new_id = new type_path(get_turf(src))
+			new_id.access = access.Copy()
+			CopyInfoToCard(new_id)
+			return new_id
+		if(MODE_FINE)
+			if(prob(7))
+				return pick(/obj/item/card/data, /obj/item/deck/cards, /obj/item/deck/tarot)
+			if(!LAZYLEN(GLOB.conversion_cards))
+				for(var/type_path in GLOB.valid_conversion_cards)
+					GLOB.conversion_cards[type_path] = list()
+					var/obj/item/card/id/id = new type_path(src)
+					var/must_match = max(1, round(length(id.access) * 0.5))
+					for(var/type_path_again in GLOB.valid_conversion_cards - type_path)
+						var/obj/item/card/id/new_id = new type_path(id)
+						// Returns a list of accesses that were in both lists
+						var/list/matches = id.access & new_id.access
+						if(length(matches) >= must_match && length(id.access) > length(access))
+							GLOB.conversion_cards[type_path] |= type_path_again
+						QDEL_NULL(new_id)
+					QDEL_NULL(id)
+			// Let's give it some random shit!
+			if(!LAZYLEN(GLOB.conversion_cards[type]) || prob(15))
+				var/list/valid_access = get_all_site_access() - access
+				if(LAZYLEN(valid_access))
+					var/new_access = pick(valid_access)
+					access |= new_access
+					visible_message(SPAN_NOTICE("\The [src] glows for a moment, as if something passed into it."))
+				return src
+			var/new_type = pick(GLOB.valid_conversion_cards[type])
+			var/obj/item/card/id/new_id = new new_type(get_turf(src))
+			return new_id
+	return ..()
+
+// Copies most of the info (such as owner and their job) to another card
+/obj/item/card/id/proc/CopyInfoToCard(obj/item/card/id/new_id)
+	if(!istype(new_id))
+		return
+
+	new_id.assignment = assignment
+	new_id.age = age
+	new_id.front = front
+	new_id.side = side
+	new_id.formal_name_prefix = formal_name_prefix
+	new_id.formal_name_suffix = formal_name_suffix
+	new_id.registered_name = registered_name
+	new_id.sex = sex
+	new_id.blood_type = blood_type
+	new_id.dna_hash = dna_hash
+	new_id.fingerprint_hash = fingerprint_hash
 
 /obj/item/card/id/proc/prevent_tracking()
 	return 0
@@ -471,6 +545,44 @@
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/raisa
 
+/obj/item/card/id/seclvl2lczdivision
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
+	)
+
+/obj/item/card/id/seclvl3lczdivision2
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ARMORY,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL
+	)
+
 /obj/item/card/id/seclvl3hcz
 	name = "security ID"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
@@ -540,6 +652,13 @@
 	item_state = "Science_ID4"
 	job_access_type = /datum/job/seniorscientist
 
+/obj/item/card/id/sciencelvlp
+	name = "science ID"
+	desc = "An orange ID. Looks important."
+	icon_state = "sciencelvl4"
+	item_state = "Science_ID4"
+	job_access_type = /datum/job/seniormentalist
+
 /obj/item/card/id/sciencelvl5
 	name = "science ID"
 	desc = "A red ID. Looks like the person wearing this won't give it up easy."
@@ -596,6 +715,11 @@
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	assignment = "Epsilon-11 Task Force Operative"
 
+/obj/item/card/id/mtf/epsilon
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Epsilon-9 Task Force Operative"
+
 /obj/item/card/id/mtf/nu_7
 	name = "mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
@@ -615,6 +739,11 @@
 	name = "mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	assignment = "Omega-1 Task Force Operative"
+
+/obj/item/card/id/mtf/isd
+	name = "internal security operations ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Internal Security Agent"
 
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
@@ -749,20 +878,21 @@
 
 /obj/item/card/id/dassignment/dmining
 	name = "mining assignment card"
-	access = ACCESS_DCLASS_MINING
+	access = list(ACCESS_DCLASS_MINING)
 
 /obj/item/card/id/dassignment/dbotany
 	name = "botany assignment card"
-	access = ACCESS_DCLASS_BOTANY
+	access = list(ACCESS_DCLASS_BOTANY)
 
 /obj/item/card/id/dassignment/dkitchen
 	name = "kitchen assignment card"
-	access = ACCESS_DCLASS_KITCHEN
+	access = list(ACCESS_DCLASS_KITCHEN)
 
 /obj/item/card/id/dassignment/djanitorial
 	name = "janitorial assignment card"
-	access = ACCESS_DCLASS_JANITORIAL
+	access = list(ACCESS_DCLASS_JANITORIAL)
 
 /obj/item/card/id/dassignment/dmedical
 	name = "medical assignment card"
-	access = ACCESS_DCLASS_MEDICAL
+	access = list(ACCESS_DCLASS_MEDICAL)
+

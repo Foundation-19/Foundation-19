@@ -9,9 +9,9 @@ Random item spawning
 	icon_state = "helmetglass" //placeholder so it doesn't fail tests pending deletion
 
 /obj/random/solgov/spawn_choices()
-	return list(/obj/item/clothing/head/solgov/utility/fleet = 4,
-				/obj/item/clothing/head/soft/solgov/expedition = 2,
-				/obj/item/clothing/head/soft/solgov/fleet = 4,
+	return list(/obj/item/clothing/head/goc/utility/ptolemy = 4,
+				/obj/item/clothing/head/soft/goc/ptolemy = 2,
+				/obj/item/clothing/head/soft/goc/physics = 4,
 				/obj/item/clothing/head/helmet/solgov = 1,
 				/obj/item/clothing/suit/storage/vest/solgov = 2,
 				/obj/item/clothing/under/solgov/utility = 5,

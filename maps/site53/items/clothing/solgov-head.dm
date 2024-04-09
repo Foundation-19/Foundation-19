@@ -1,39 +1,39 @@
-/obj/item/clothing/head/solgov
-	name = "master solgov hat"
+/obj/item/clothing/head/goc
+	icon = 'maps/torch/icons/obj/solgov-head.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/head/scp
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
 //Utility
-/obj/item/clothing/head/soft/solgov
-	name = "\improper Sol Central Government cap"
-	desc = "It's a ballcap in SCG colors."
+/obj/item/clothing/head/soft/goc
+	name = "\improper United Nations cap"
+	desc = "It's a ballcap in UN colors."
 	icon_state = "solsoft"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 
-/obj/item/clothing/head/soft/solgov/veteranhat
-	name = "veteran hat"
-	desc = "It's a tacky black ballcap bearing the yellow service ribbon of the Gaia Conflict."
-	icon_state = "cap_veteran"
-
-/obj/item/clothing/head/soft/solgov/expedition
-	name = "\improper Expeditionary Corps cap"
-	desc = "It's a black ballcap bearing the Expeditonary Corps crest."
+/obj/item/clothing/head/soft/goc/ptolemy
+	name = "\improper GOC PTOLEMY cap"
+	desc = "It's a black ballcap bearing the GOC's PTOLEMY divisional crest."
 	icon_state = "expeditionsoft"
 
-/obj/item/clothing/head/soft/solgov/expedition/co
-	name = "\improper Expeditionary Corps command cap"
-	desc = "It's a black ballcap bearing the Expeditonary Corps crest. The brim has gold trim."
+/obj/item/clothing/head/soft/goc/nexus
+	name = "\improper UNGOC NEXUS command cap"
+	desc = "It's a black ballcap bearing the GOC's NEXUS divisional crest. The brim has gold trim."
 	icon_state = "expeditioncomsoft"
 
-/obj/item/clothing/head/soft/solgov/fleet
-	name = "fleet cap"
-	desc = "It's a navy blue ballcap with the SCG Fleet crest."
+/obj/item/clothing/head/soft/goc/physics
+	name = "GOC PHYSICS cap"
+	desc = "It's a navy blue ballcap with the GOC's PHYSICS divisional crest."
 	icon_state = "fleetsoft"
 
-/obj/item/clothing/head/solgov/utility
+/obj/item/clothing/head/goc/utility
 	name = "utility cover"
 	desc = "An eight-point utility cover."
 	icon_state = "greyutility"
@@ -43,29 +43,29 @@
 		)
 	body_parts_covered = 0
 
-/obj/item/clothing/head/solgov/utility/fleet
-	name = "fleet utility cover"
-	desc = "A navy blue utility cover bearing the crest of the SCG Fleet."
+/obj/item/clothing/head/goc/utility/ptolemy
+	name = "PTOLEMY utility cover"
+	desc = "A navy blue utility cover bearing the crest of the GOC's PTOLEMY division."
 	icon_state = "navyutility"
 
-/obj/item/clothing/head/solgov/utility/marine
-	name = "marine utility cover"
-	desc = "A green utility cover bearing the crest of the SCG Marine Corps."
+/obj/item/clothing/head/goc/utility/physics
+	name = "PHYSICS utility cover"
+	desc = "A green utility cover bearing the crest of the GOC's PHYSICS division."
 	icon_state = "greenutility"
 
-/obj/item/clothing/head/solgov/utility/marine/tan
-	name = "tan utility cover"
-	desc = "A tan utility cover bearing the crest of the SCG Marine Corps."
+/obj/item/clothing/head/goc/utility/physics/tan
+	name = "PHYSICS tan utility cover"
+	desc = "A tan utility cover bearing the crest of the GOC's PHYSICS division."
 	icon_state = "tanutility"
 
-/obj/item/clothing/head/solgov/utility/marine/urban
-	name = "urban utility cover"
-	desc = "A grey utility cover bearing the crest of the Marine Corps."
+/obj/item/clothing/head/goc/utility/physics/urban
+	name = "PHYSICS urban utility cover"
+	desc = "A grey utility cover bearing the crest of the GOC's PHYSICS division."
 	icon_state = "greyutility"
 
 //Service
 
-/obj/item/clothing/head/solgov/service
+/obj/item/clothing/head/goc/service
 	name = "service cover"
 	desc = "A service uniform cover."
 	icon_state = "greenwheelcap"
@@ -74,44 +74,44 @@
 		slot_r_hand_str = "helmet")
 	body_parts_covered = 0
 
-/obj/item/clothing/head/solgov/service/expedition
-	name = "expedition peaked cap"
-	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps."
+/obj/item/clothing/head/goc/service/ptolemy
+	name = "PTOLEMY peaked cap"
+	desc = "A peaked grey uniform cap belonging to the GOC's PTOLEMY division."
 	icon_state = "greydresscap"
 
-/obj/item/clothing/head/solgov/service/expedition/command
-	name = "expedition officer's peaked cap"
-	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps. This one is trimmed in gold."
+/obj/item/clothing/head/goc/service/ptolemy/command
+	name = "PTOLEMY quartermaster's peaked cap"
+	desc = "A peaked grey uniform cap belonging to the GOC's PTOLEMY divison. This one is trimmed in gold."
 	icon_state = "greydresscap_com"
 
-/obj/item/clothing/head/solgov/service/marine
-	name = "marine wheel cover"
-	desc = "A green service uniform cover with an SCG Marine Corps crest."
+/obj/item/clothing/head/goc/service/physics
+	name = "PHYSICS wheel cover"
+	desc = "A green service uniform cover with an GOC PHYSICS divisional crest."
 	icon_state = "greenwheelcap"
 
-/obj/item/clothing/head/solgov/service/marine/command
-	name = "marine officer's wheel cover"
-	desc = "A green service uniform cover with an SCG Marine Corps crest and gold stripe."
+/obj/item/clothing/head/goc/service/physics/command
+	name = "GOC officer's wheel cover"
+	desc = "A green service uniform cover with an GOC PHYSICS divisional crest and gold stripe."
 	icon_state = "greenwheelcap_com"
 
-/obj/item/clothing/head/solgov/service/marine/garrison
-	name = "marine garrison cap"
-	desc = "A green garrison cap belonging to the SCG Marine Corps."
+/obj/item/clothing/head/goc/service/physics/garrison
+	name = "GOC garrison cap"
+	desc = "A green garrison cap belonging to the GOC'S PHYSICS divison."
 	icon_state = "greengarrisoncap"
 
-/obj/item/clothing/head/solgov/service/marine/garrison/command
-	name = "marine officer's garrison cap"
-	desc = "A green garrison cap belonging to the SCG Marine Corps. This one has a gold pin."
+/obj/item/clothing/head/goc/service/physics/garrison/command
+	name = "GOC officer's garrison cap"
+	desc = "A green garrison cap belonging to the GOC's PHYSICS divison. This one has a gold pin."
 	icon_state = "greengarrisoncap_com"
 
-/obj/item/clothing/head/solgov/service/marine/campaign
+/obj/item/clothing/head/goc/service/physics/campaign
 	name = "campaign cover"
-	desc = "A green campaign cover with an SCG Marine Corps crest. Only found on the heads of Drill Instructors."
+	desc = "A green campaign cover with an GOC PHYSICS divisional crest. Only found on the heads of Drill Instructors."
 	icon_state = "greendrill"
 
 //Dress
 
-/obj/item/clothing/head/solgov/dress
+/obj/item/clothing/head/goc/dress
 	name = "dress cover"
 	desc = "A dress uniform cover."
 	icon_state = "greenwheelcap"
@@ -120,31 +120,31 @@
 		slot_r_hand_str = "helmet")
 	body_parts_covered = 0
 
-/obj/item/clothing/head/solgov/dress/fleet
-	name = "fleet dress wheel cover"
-	desc = "A white dress uniform cover. This one has an SCG Fleet crest."
+/obj/item/clothing/head/goc/dress/ptolemy
+	name = "PTOLEMY dress wheel cover"
+	desc = "A white dress uniform cover. This one has an GOC PTOLEMY divisional crest."
 	icon_state = "whitepeakcap"
 
-/obj/item/clothing/head/solgov/dress/fleet/command
-	name = "fleet officer's dress wheel cover"
-	desc = "A white dress uniform cover. This one has a gold stripe and an SCG Fleet crest."
+/obj/item/clothing/head/goc/dress/nexus
+	name = "NEXUS officer's dress wheel cover"
+	desc = "A white dress uniform cover. This one has a gold stripe and a NEXUS divisional crest."
 	icon_state = "whitepeakcap_com"
 
-/obj/item/clothing/head/solgov/dress/marine
-	name = "marine dress wheel cover"
-	desc = "A white dress uniform cover with an SCG Marine Corps crest."
+/obj/item/clothing/head/goc/dress/physics
+	name = "PHYSICS dress wheel cover"
+	desc = "A white dress uniform cover with an GOC PHYSICS divisional crest."
 	icon_state = "whitewheelcap"
 
-/obj/item/clothing/head/solgov/dress/marine/command
-	name = "marine officer's dress wheel cover"
-	desc = "A white dress uniform cover with an SCG Marine Corps crest and gold stripe."
+/obj/item/clothing/head/goc/dress/physics/command
+	name = "PHYSICS officer's dress wheel cover"
+	desc = "A white dress uniform cover with an GOC PHYSICS divisional crest and gold stripe."
 	icon_state = "whitewheelcap_com"
 
 //Berets
 
 /obj/item/clothing/head/beret/solgov
 	name = "peacekeeper beret"
-	desc = "A beret in Sol Central Government colors. For peacekeepers that are more inclined towards style than safety."
+	desc = "A beret in UN colors. For peacekeepers that are more inclined towards style than safety."
 	icon_state = "beret_lightblue"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
@@ -170,13 +170,13 @@
 	icon_state = "beret_blue"
 
 /obj/item/clothing/head/beret/solgov/research
-	name = "government research beret"
-	desc = "A green beret denoting service in the Bureau of Research. For explorers that are more inclined towards style than safety."
+	name = "GOC research beret"
+	desc = "A green beret denoting service in the GOC's PTOLEMY division. For explorers that are more inclined towards style than safety."
 	icon_state = "beret_green"
 
 /obj/item/clothing/head/beret/solgov/health
 	name = "health service beret"
-	desc = "A white beret denoting service in the Interstellar Health Service. For medics that are more inclined towards style than safety."
+	desc = "A white beret denoting service in the World Parahealth Organization. For medics that are more inclined towards style than safety."
 	icon_state = "beret_white"
 
 /obj/item/clothing/head/beret/solgov/marcom
@@ -186,12 +186,12 @@
 
 /obj/item/clothing/head/beret/solgov/stratcom
 	name = "\improper STRATCOM beret"
-	desc = "A grey beret with a silver insignia, denoting service in the SCGDF Strategic Command. For intelligence personnel who are more inclined towards style than safety."
+	desc = "A grey beret with a silver insignia, denoting service in the GOC Strategic Command. For intelligence personnel who are more inclined towards style than safety."
 	icon_state = "beret_graysilver"
 
 /obj/item/clothing/head/beret/solgov/diplomatic
 	name = "diplomatic security beret"
-	desc = "A tan beret denoting service in the SCG Marine Corps Diplomatic Security Group. For security personnel who are more inclined towards style than safety."
+	desc = "A tan beret denoting service in the GOC's PSYCHE Diplomatic Security Group. For security personnel who are more inclined towards style than safety."
 	icon_state = "beret_tan"
 
 /obj/item/clothing/head/beret/solgov/borderguard
@@ -281,36 +281,38 @@
 
 //ushanka
 
-/obj/item/clothing/head/ushanka/solgov
-	name = "expeditionary fur hat"
-	desc = "An SCG Expeditionary Corps synthfur-lined hat for operating in cold environments."
+/obj/item/clothing/head/ushanka/goc
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+
+/obj/item/clothing/head/ushanka/goc/ptolemy
+	name = "PTOLEMY fur hat"
+	desc = "An GOC PTOLEMY synthfur-lined hat for operating in cold environments."
 	icon_state = "ecushankadown"
 	icon_state_up = "ecushankaup"
 
-/obj/item/clothing/head/ushanka/solgov/fleet
-	name = "fleet fur hat"
-	desc = "An SCG Fleet synthfur-lined hat for operating in cold environments."
+/obj/item/clothing/head/ushanka/goc/fleet
+	name = "GOC NEXUS fur hat"
+	desc = "An GOC NEXUS synthfur-lined hat for operating in cold environments."
 	icon_state = "flushankadown"
 	icon_state_up = "flushankaup"
 
-/obj/item/clothing/head/ushanka/solgov/marine
-	name = "marine fur hat"
-	desc = "An SCG Marine Corps synthfur-lined hat for operating in cold environments."
+/obj/item/clothing/head/ushanka/goc/marine
+	name = "PHYSICS fur hat"
+	desc = "An GOC PHYSICS synthfur-lined hat for operating in cold environments."
 	icon_state = "bmcushankadown"
 	icon_state_up = "bmcushankaup"
 
-/obj/item/clothing/head/ushanka/solgov/marine/green
-	name = "green marine fur hat"
-	desc = "An SCG Marine Corps synthfur-lined hat for operating in cold environments."
+/obj/item/clothing/head/ushanka/goc/marine/green
+	name = "green PHYSICS fur hat"
+	desc = "An GOC PHYSICS synthfur-lined hat for operating in cold environments."
 	icon_state = "mcushankadown"
 	icon_state_up = "mcushankaup"
 
 //helmets and other such trash
 
 /obj/item/clothing/head/helmet/solgov
-	accessories = list(/obj/item/clothing/accessory/armor/helmcover/blue/sol)
+	accessories = list(/obj/item/clothing/accessory/armor/helmcover/blue/un)
 
 //FOUNDATION
 /obj/item/clothing/head/helmet/site53/guard
@@ -329,7 +331,7 @@
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 	accessories = null
 
-/obj/item/clothing/head/solgov/service/site53
+/obj/item/clothing/head/scp/service/site53
 	name = "service cap"
 	desc = "A grey garrison cap, with the SCP Foundation logo in the interior. A purple insignia is on it's crest."
 	icon_state = "service_co_cap"
@@ -368,13 +370,23 @@
 
 //GOC
 /obj/item/clothing/head/helmet/scp/goc
-	name = "GOC helmet"
-	desc = "A light blue, open face helmet with GOC writen on the side."
-	icon_state = "goc-helmet"
-	item_state = "goc-helmet"
+	name = "Global Occult Coalition helmet"
+	desc = "A cyan standard issue helmet, with the United Nations' initials on the front. A lightweight helmet for their military forces."
+	icon_state = "goc_helm"
+	item_state = "goc_helm"
 	body_parts_covered = HEAD
 	armor = list(melee = 40, bullet = 90, laser = 50,energy = 25, bomb = 40)
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/helmet/scp/security/goc
+	name = "Global Occult Coalition heavy helmet"
+	desc = "A cyan helmet with an added bulletproof visor, with the United Nations' initials on the front. A lightweight helmet for their superior military forces ranks."
+	icon_state = "goc_helmet"
+	body_parts_covered = HEAD|FACE|EYES //face shield
+	armor = list(melee = 50, bullet = 100, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS
+	action_button_name = "Toggle Visor"
 
 /obj/item/clothing/head/beret/scp/goc
 	name = "GOC beret"

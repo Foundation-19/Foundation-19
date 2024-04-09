@@ -99,9 +99,9 @@
 	var/old_loc = loc
 	. = ..()
 	if (.)
-		// observ
+		// signal
 		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
+			SEND_SIGNAL(src, COMSIG_MOVED, old_loc, null)
 
 		// freelook
 		if(opacity)
@@ -116,8 +116,7 @@
 	var/old_loc = loc
 	. = ..()
 	if (.)
-		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
+		SEND_SIGNAL(src, COMSIG_MOVED, old_loc, loc)
 
 		// freelook
 		if(opacity)
@@ -179,11 +178,11 @@
 	set_dir(master.dir)
 
 	if(istype(master, /atom/movable))
-		GLOB.moved_event.register(master, src, follow_proc)
+		RegisterSignal(master, COMSIG_MOVED, follow_proc)
 		SetInitLoc()
 
-	GLOB.destroyed_event.register(master, src, TYPE_PROC_REF(/datum, qdel_self))
-	GLOB.dir_set_event.register(master, src, TYPE_PROC_REF(/atom, recursive_dir_set))
+	RegisterSignal(master, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
+	RegisterSignal(master, COMSIG_DIR_SET, TYPE_PROC_REF(/atom, recursive_dir_set))
 
 	. = ..()
 
@@ -192,9 +191,9 @@
 
 /atom/movable/overlay/Destroy()
 	if(istype(master, /atom/movable))
-		GLOB.moved_event.unregister(master, src)
-	GLOB.destroyed_event.unregister(master, src)
-	GLOB.dir_set_event.unregister(master, src)
+		UnregisterSignal(master, COMSIG_MOVED)
+	UnregisterSignal(master, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(master, COMSIG_DIR_SET)
 	master = null
 	. = ..()
 
@@ -264,6 +263,12 @@
 * Return value will be placed in the output section of the machine
 * If you don't return valid atom - nothing will be returned
 * If return value isn't src - the original item will be deleted
+**************************************************************************
+* Rough - Destroys or otherwise mutilates the object beyond repair.
+* Coarse - Dismantles/Deconstructs/Disassembles the object without damage.
+* 1:1 - Returns a similar object, either in material or other properties.
+* Fine - Simply upgrades the object or returns a better one.
+* Very Fine - Returns something with improved anomalous properties.
 */
 /atom/movable/proc/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
@@ -272,3 +277,9 @@
 		if(MODE_COARSE)
 			return (prob(50) ? null : src)
 	return src
+
+/// The effect of being affected by dispells, either a projectile or AOE effects
+/atom/movable/proc/Dispell(dispell_strength = DISPELL_WEAK)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_MOVABLE_DISPELL, dispell_strength) & COMPONENT_DISPELL_BLOCKED)
+		return FALSE
+	return TRUE

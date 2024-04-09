@@ -241,13 +241,6 @@ var/list/global/tank_gauge_cache = list()
 
 				src.air_contents.temperature = new_temperature
 
-	if(istype(W, /obj/item/flamethrower))
-		var/obj/item/flamethrower/F = W
-		if(!F.status || F.tank || !user.unEquip(src, F))
-			return
-		master = F
-		F.tank = src
-
 /obj/item/tank/attack_self(mob/user as mob)
 	add_fingerprint(user)
 	if (!air_contents)

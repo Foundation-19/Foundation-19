@@ -614,3 +614,16 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/grenade/chem_grenade/water = 2
 	)
+
+/obj/item/storage/belt/ci
+	name = "military belt"
+	desc = "A tactical tan russian belt, used by military forces."
+	icon_state = "ci_belt"
+	item_state = "ci_belt"
+
+/obj/item/storage/belt/ci/rig
+	name = "military rig"
+	desc = "A tactical tan russian rig, used by military forces."
+	icon_state = "ci_webbing"
+	item_state = "ci_webbing"
+	storage_slots = 10

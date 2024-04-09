@@ -12,7 +12,7 @@
 	department = "Medical"
 	department_flag = MED|COM
 	selection_color = "#026865"
-	requirements = list("Surgeon" = 60, "Medical Doctor" = 120, EXP_TYPE_MEDICAL = 1200)
+	requirements = list(EXP_TYPE_MEDICAL = 720)
 
 	head_position = TRUE
 	total_positions = 1
@@ -189,7 +189,7 @@
 	spawn_positions = 3
 	ideal_character_age = 30
 	economic_power = 5
-	requirements = list("Medical Doctor" = 480)
+	requirements = list(EXP_TYPE_MEDICAL = 480)
 	supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
 	outfit_type = /decl/hierarchy/outfit/job/medical/surgeon
@@ -234,7 +234,7 @@
 	spawn_positions = 4
 	ideal_character_age = 40
 	economic_power = 5
-	requirements = list("Medical Doctor" = 480)
+	requirements = list(EXP_TYPE_MEDICAL = 120)
 	supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/medical/emt
 	class = CLASS_C

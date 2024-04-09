@@ -20,6 +20,16 @@
 				qdel(src)
 	return
 
+//allows spiderlings to be killed with hands, harm intent on
+/obj/effect/spider/spiderling/attack_hand(mob/living/carbon/human/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(user.a_intent == I_HURT)
+		user.visible_message(SPAN_WARNING("\the [user] attacked \the [src]"))
+		disturbed()
+		health -= 1
+		healthcheck()
+	return
+
 /obj/effect/spider/attackby(obj/item/W, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
@@ -130,13 +140,19 @@
 	var/travelling_in_vent = 0
 	var/dormant = FALSE    // If dormant, does not add the spiderling to the process list unless it's also growing
 	var/growth_chance = 50 // % chance of beginning growth, and eventually become a beautiful death machine
-
 	var/shift_range = 6
-	var/castes = list(/mob/living/simple_animal/hostile/giant_spider = 2,
-						/mob/living/simple_animal/hostile/giant_spider/guard = 2,
-						/mob/living/simple_animal/hostile/giant_spider/nurse = 2,
-						/mob/living/simple_animal/hostile/giant_spider/spitter = 2,
-						/mob/living/simple_animal/hostile/giant_spider/hunter = 1)
+	var/castes = list(/mob/living/simple_animal/hostile/giant_spider = 4,
+						/mob/living/simple_animal/hostile/giant_spider/guard = 3,
+						/mob/living/simple_animal/hostile/giant_spider/nurse = 3,
+						/mob/living/simple_animal/hostile/giant_spider/spitter = 3,
+						/mob/living/simple_animal/hostile/giant_spider/hunter = 1,
+						/mob/living/simple_animal/hostile/giant_spider/phorogenic = 0.5,
+						/mob/living/simple_animal/hostile/giant_spider/frost = 0.5,
+						/mob/living/simple_animal/hostile/giant_spider/pepper = 1.5,
+						/mob/living/simple_animal/hostile/giant_spider/lurker = 0.5,
+						/mob/living/simple_animal/hostile/giant_spider/thermic = 2)
+
+						//^UPDATE THIS WHENEVER ADDING NEW SPODERS^\\
 
 /obj/effect/spider/spiderling/Initialize(mapload, atom/parent)
 	greater_form = pickweight(castes)
@@ -149,7 +165,7 @@
 		dormant = FALSE
 
 	if(dormant)
-		GLOB.moved_event.register(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
+		RegisterSignal(src, COMSIG_MOVED, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
 	else
 		START_PROCESSING(SSobj, src)
 
@@ -164,7 +180,7 @@
 
 /obj/effect/spider/spiderling/Destroy()
 	if(dormant)
-		GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
+		UnregisterSignal(src, COMSIG_MOVED)
 	STOP_PROCESSING(SSobj, src)
 	walk(src, 0) // Because we might have called walk_to, we must stop the walk loop or BYOND keeps an internal reference to us forever.
 	. = ..()
@@ -183,7 +199,7 @@
 		return
 	dormant = FALSE
 
-	GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
+	UnregisterSignal(src, COMSIG_MOVED)
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/spider/spiderling/Bump(atom/user)

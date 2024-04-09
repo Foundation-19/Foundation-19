@@ -391,3 +391,20 @@
 	ore_name = "rutile"
 	ore_icon_overlay = "lump"
 	sale_price = 2
+
+
+/material/boron
+	name = MATERIAL_BORON
+	lore_text = "A rare metalloid with use in fusion reactions."
+	stack_type = /obj/item/stack/material/boron
+	chem_products = list(
+				/datum/reagent/toxin/boron = 20
+				)
+	integrity = 15
+	weight = 3
+	icon_base = "solid"
+	icon_reinf = "reinf_over"
+	icon_colour = "#8d8d8d"
+	sale_price = 5
+	is_fusion_fuel = 1
+	construction_difficulty = MATERIAL_HARD_DIY

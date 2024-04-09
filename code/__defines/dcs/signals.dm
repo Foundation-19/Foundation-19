@@ -5,6 +5,19 @@
 // global signals
 // These are signals which can be listened to by any component on any parent
 
+/// Called after an explosion happened : (epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range)
+#define COMSIG_GLOB_EXPLOSION "!explosion"
+/// Mob was created somewhere : (mob)
+#define COMSIG_GLOB_MOB_CREATED "!mob_created"
+/// Mob died somewhere : (mob/living, gibbed)
+#define COMSIG_GLOB_MOB_DEATH "!mob_death"
+/// A magic orb was picked up by a mob: (orb, mob/living)
+#define COMSIG_GLOB_ORB_PICKUP "!orb_picked"
+/// When spell is cast; (user, spell, targets)
+#define COMSIG_GLOB_SPELL_CAST "!spell_cast"
+/// When hand type spell cast_hand is called; (user, spell, target)
+#define COMSIG_GLOB_SPELL_CAST_HAND "!spell_cast_hand"
+
 //////////////////////////////////////////////////////////////////
 
 #define SIGNAL_HANDLER SHOULD_NOT_SLEEP(TRUE)
@@ -39,6 +52,17 @@
 #define COMSIG_GOAL_SUCCEEDED "goal_succeeded"
 /// fired when a goal is failed
 #define COMSIG_GOAL_FAILED "goal_failed"
+
+// /atom/movable signals
+/// When an atom's Dispell() proc is called; Passes dispell strength as argument.
+#define COMSIG_ATOM_MOVABLE_DISPELL "atom_dispell"
+// Return value of a signal handler if dispell should be blocked
+#define COMPONENT_DISPELL_BLOCKED (1 << 0)
+
+/// When spell is cast; (user, spell, targets)
+#define COMSIG_SPELL_CAST "spell_cast"
+/// When hand type spell cast_hand is called; (user, spell, target)
+#define COMSIG_SPELL_CAST_HAND "spell_cast_hand"
 
 /// Called on `/obj/structure/fitness/weightlifter/attack_hand` (/mob/living/carbon/human)
 #define COMSIG_HUMAN_LIFT_WEIGHT "human_lift_weight"
@@ -75,13 +99,59 @@
 /// Called on `/datum/money_account/deposit` (/datum/money_account)
 #define COMSIG_MONEY_DEPOSITED "money_deposited"
 
+/// Called on `/obj/item/proc/dropped` (/mob, /obj)
+#define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"
+/// Called on `/obj/item/proc/dropped` (/obj, /mob)
+#define COMSIG_DROPPED_ITEM "dropped_item"
+
+/// Called on `/atom/set_opacity` (/atom, old_opacity, new_opacity)
+#define COMSIG_SET_OPACITY "set_opacity"
+
+/// Called on `/obj/screen/zone_sel/set_selected_zone` (/obj/screen/zone_sel, selecting, old_selecting)
+#define COMSIG_SET_SELECTED_ZONE "set_selected_zone"
+
+/// Called on `/mob/set_stat` (/mob, stat)
+#define COMSIG_SET_STAT "set_stat"
+/// Called on `/mob/set_see_in_dark` (/mob, old value, new value)
+#define COMSIG_SET_SEE_IN_DARK "set_see_in_dark"
+/// Called on `/mob/set_see_invisible` (/mob, old value, new value)
+#define COMSIG_SET_SEE_INVISIBLE "set_see_invisible"
+/// Called on `/mob/set_sight` (/mob, old value, new value)
+#define COMSIG_SET_SIGHT "set_sight"
+/// Called on `/mob/set_invisibility` (/mob, old value, new value)
+#define COMSIG_SET_INVISIBILITY "set_invisibility"
+/// Called on `/mob/living/add_to_dead_mob_list` (/mob)
+#define COMSIG_ADD_TO_DEAD_MOB_LIST "add_to_dead_mob_list"
+
+/// Called on `/mob/swap_hand` (/mob)
+#define COMSIG_SWAPPED_HANDS "swapped_hands"
+
+/// Called on `/datum/shuttle/attempt_move` before moving (/datum/shuttle, destination, old_location)
+#define COMSIG_SHUTTLE_PRE_MOVE "shuttle_pre_move"
+/// Called on `/datum/shuttle/attempt_move` after moving (/datum/shuttle, destination, old_location)
+#define COMSIG_SHUTTLE_MOVED "shuttle_moved"
+
+/// Called on `/mob/living/silicon/robot/deselect_module` (/mob/living/silicon/robot, /obj/item)
+#define COMSIG_ROBOT_DESELECTING_MODULE "robot_deselecting_module"
+/// Called on `/mob/living/silicon/robot/uneq_active` and `/mob/living/silicon/robot/uneq_all` (/mob/living/silicon/robot, /obj/item)
+#define COMSIG_ROBOT_DEACTIVATING_MODULE "robot_deactivating_module"
+
+
+/// Called on `/obj/item/organ/removed` (/mob/living/carbon/human, /obj/item/organ)
+#define COMSIG_ORGAN_DISMEMBERED "organ_dismembered"
+
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_BEGAN "do_after_began"
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_ENDED "do_after_ended"
 
+/// An item has just been equipped by a mob. Called on obj/item/equipped(): (obj/item/equipped_item, mob/equipper, slot)
+#define COMSIG_ITEM_EQUIPPED "item_equipped"
+/// A mob has just equipped an item. Called on [/mob] from base of [/obj/item/equipped()]: (mob/equipper, obj/item/equipped_item, slot)
+#define COMSIG_MOB_EQUIPPED_ITEM "mob_equipped_item"
+
 /*
-* Atom
+*	Atom
 */
 
 /// Called on `/atom/movable/Move` and `/atom/movable/proc/forceMove` (/atom/movable, /atom, /atom)
@@ -92,6 +162,21 @@
 
 /// Called on `/atom/Exited` (/atom, exitee, new_loc)
 #define COMSIG_EXITED "exited"
+
+/// Called on `/atom/dir_set` (/atom, new_dir, old_dir)
+#define COMSIG_DIR_SET "dir_set"
+
+/*
+*	Global
+*/
+
+/// Called on `/datum/controller/subsystem/shuttle/proc/initialize_shuttle` (/datum/ssdcs)
+#define COMSIG_GLOB_SHUTTLE_INITIALIZED "!shuttle_initialized"
+
+/// Called on `/mob/login` (/mob)
+#define COMSIG_GLOB_MOB_LOGIN "!mob_login"
+/// Called on `mob/logout` (/mob)
+#define COMSIG_GLOB_MOB_LOGOUT "!mob_logout"
 
 /*
 *	Mob

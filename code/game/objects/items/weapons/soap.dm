@@ -12,11 +12,11 @@
 	var/key_data
 
 	var/list/valid_colors = list(COLOR_GREEN_GRAY, COLOR_RED_GRAY, COLOR_BLUE_GRAY, COLOR_BROWN, COLOR_PALE_PINK, COLOR_PALE_BTL_GREEN, COLOR_OFF_WHITE, COLOR_GRAY40, COLOR_GOLD)
-	var/list/valid_scents = list("fresh air", "cinnamon", "mint", "cocoa", "lavender", "an ocean breeze", "a summer garden", "vanilla", "cheap perfume")
+	var/list/valid_scents = list("fresh air", "cinnamon", "mint", "cocoa", "lavender", "an ocean breeze", "a summer garden", "vanilla", "cheap perfume","\[DATA EXPUNGED\]")
 	var/list/scent_intensity = list("faintly", "strongly", "overbearingly")
 	var/list/valid_shapes = list("oval", "circular", "rectangular", "square")
 	var/decal_name
-	var/list/decals = list("diamond", "heart", "circle", "triangle", "")
+	var/list/decals = list("diamond", "heart", "circle", "triangle", "scp","")
 
 /obj/item/soap/New()
 	..()
@@ -51,7 +51,7 @@
 		to_chat(user, SPAN_NOTICE("You need to take that [target.name] off before cleaning it."))
 	else if(istype(target,/obj/effect/decal/cleanable/blood))
 		to_chat(user, SPAN_NOTICE("You scrub \the [target.name] out."))
-		target.clean_blood() //Blood is a cleanable decal, therefore needs to be accounted for before all cleanable decals.
+		target.clean() //Blood is a cleanable decal, therefore needs to be accounted for before all cleanable decals.
 	else if(istype(target,/obj/effect/decal/cleanable))
 		to_chat(user, SPAN_NOTICE("You scrub \the [target.name] out."))
 		qdel(target)
@@ -68,10 +68,10 @@
 		to_chat(user, SPAN_NOTICE("You clean \the [target.name]."))
 		if(reagents)
 			reagents.trans_to(target, reagents.total_volume / 8)
-		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
+		target.clean() //Clean bloodied atoms. Blood decals themselves need to be handled above.
 	else
 		to_chat(user, SPAN_NOTICE("You clean \the [target.name]."))
-		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
+		target.clean() //Clean bloodied atoms. Blood decals themselves need to be handled above.
 
 //attack_as_weapon
 /obj/item/soap/attack(mob/living/target, mob/living/user, target_zone)

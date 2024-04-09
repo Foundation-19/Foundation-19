@@ -139,3 +139,15 @@
 /obj/effect/landmark/corpse/riot_officer
 	name = "Riot Officer"
 	corpse_outfits = list(/decl/hierarchy/outfit/job/security/officer/armored/riot)
+
+/obj/effect/landmark/corpse/chaos
+	name = "Chaos Insurgent Trooper"
+	corpse_outfits = list(/decl/hierarchy/outfit/chaos/soldier)
+
+/obj/effect/landmark/corpse/chaos/heavy
+	name = "Chaos Insurgent Heavy Trooper"
+	corpse_outfits = list(/decl/hierarchy/outfit/chaos/heavy_soldier)
+
+/obj/effect/landmark/corpse/chaos/officer
+	name = "Chaos Insurgent Leader"
+	corpse_outfits = list(/decl/hierarchy/outfit/chaos/leader)

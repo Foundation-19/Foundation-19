@@ -50,3 +50,14 @@
 /obj/item/material/sword/katana/vibro/equipped(mob/user, slot)
 	if(slot == slot_l_hand || slot == slot_r_hand)
 		playsound(src, 'sounds/weapons/katana_out.wav', 50, 1, -5)
+
+/obj/item/material/sword/sabre
+	name = "officer's sabre"
+	desc = "An expensive golden sword, with a plasteel alloy in the blade, sharpened to microscopic levels. This one looks pretty sharp."
+	icon = 'icons/obj/weapons/melee_physical.dmi'
+	icon_state = "sabre"
+	item_state = "sabre"
+	max_force = 35
+	armor_penetration = 5
+	base_parry_chance = 50
+	melee_accuracy_bonus = 25

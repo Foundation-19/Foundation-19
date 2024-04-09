@@ -81,6 +81,8 @@
 		/obj/item/clothing/under/rank/head_of_security/jensen,
 		/obj/item/clothing/under/rank/head_of_security/corp,
 		/obj/item/clothing/suit/armor/hos/jensen,
+		/obj/item/clothing/suit/armor/hos/vest,
+		/obj/item/clothing/suit/armor/hos/coat,
 		/obj/item/clothing/suit/armor/hos,
 		/obj/item/clothing/head/HoS/dermal,
 		/obj/item/device/radio/headset/heads/hos,

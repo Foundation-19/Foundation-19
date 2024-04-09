@@ -1,8 +1,6 @@
 /datum/spell/targeted/shatter
 	name = "Shatter Mind"
-	desc = "this spell allows the caster to literally break an enemy's mind. Permanently."
-	feedback = "SM"
-	school = "illusion"
+	desc = "this spell allows the caster to literally break an enemy's mind."
 	charge_max = 300
 	spell_flags = 0
 	invocation_type = INVOKE_NONE
@@ -15,15 +13,18 @@
 
 	hud_state = "wiz_statue"
 
+	spell_cost = 1
+	mana_cost = 5
+
 /datum/spell/targeted/shatter/cast(list/targets, mob/user)
 	var/mob/living/carbon/human/H = targets[1]
 	if(prob(50))
-		sound_to(user, get_sfx(SFX_SWING_HIT))
+		sound_to(user, get_sfx("swing_hit"))
 	if(prob(5))
-		to_chat(H, SPAN_WARNING("You feel unhinged."))
+		to_chat(H, "<span class='warning'>You feel unhinged.</span>")
 	H.adjust_hallucination(5,5)
 	H.confused += 2
 	H.dizziness += 2
 	if(H.hallucination_power > 50)
 		H.adjustBrainLoss(5)
-		to_chat(H, SPAN_DANGER("You feel your mind tearing apart!"))
+		to_chat(H, "<span class='danger'>You feel your mind tearing apart!</span>")

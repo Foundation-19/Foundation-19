@@ -1,8 +1,6 @@
 /datum/spell/aoe_turf/conjure/forcewall
 	name = "Forcewall"
 	desc = "Create a wall of pure energy at your location."
-	school = "conjuration"
-	feedback = "FW"
 	summon_type = list(/obj/effect/forcefield)
 	duration = 300
 	charge_max = 100
@@ -12,10 +10,12 @@
 
 	hud_state = "wiz_shield"
 
+	spell_cost = 2
+	mana_cost = 10
+
 /datum/spell/aoe_turf/conjure/forcewall/mime
 	name = "Invisible wall"
 	desc = "Create an invisible wall on your location."
-	school = "mime"
 	panel = "Mime"
 	summon_type = list(/obj/effect/forcefield/mime)
 	invocation_type = INVOKE_EMOTE
@@ -25,6 +25,8 @@
 
 	override_base = "grey"
 	hud_state = "mime_wall"
+
+	mana_cost = 0
 
 /obj/effect/forcefield
 	desc = "A space wizard's magic wall."
@@ -47,6 +49,3 @@
 	icon_state = "empty"
 	name = "invisible wall"
 	desc = "You have a bad feeling about this."
-
-/datum/spell/aoe_turf/conjure/forcewall/tower
-	charge_max = 3
