@@ -1,6 +1,6 @@
 /datum/computer_file/program/chatclient
-	filename = "wrong_scprc_client"
-	filedesc = "WRONG SCiPnet Relay Chat Client"
+	filename = "scprc_client"
+	filedesc = "SCiPnet Relay Chat Client"
 	program_icon_state = "command"
 	program_key_state = "med_key"
 	program_menu_icon = "comment"

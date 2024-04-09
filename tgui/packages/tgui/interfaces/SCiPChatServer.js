@@ -144,7 +144,7 @@ const AccessSysadminPage = (props, context) => {
         </Button>
       }>
       {region_access.map((region = [], index) => (
-        <Section title={region_names[index]} key={index}>
+        <Section title={region_names[index]} key={region_names[index]}>
           {region.map((access) => (
             <Button.Checkbox
               key={access.id}
@@ -211,7 +211,7 @@ const ChannelAccessUserPage = (props, context) => {
         </Button>
       }>
       {region_access.map((region = [], index) => (
-        <Section title={region_names[index]} key={index}>
+        <Section title={region_names[index]} key={region_names[index]}>
           {region.map((access) => (
             <Button.Checkbox
               key={access.id}
@@ -241,7 +241,7 @@ const ChannelAccessAdminPage = (props, context) => {
         </Button>
       }>
       {region_access.map((region = [], index) => (
-        <Section title={region_names[index]} key={index}>
+        <Section title={region_names[index]} key={region_names[index]}>
           {region.map((access) => (
             <Button.Checkbox
               key={access.id}

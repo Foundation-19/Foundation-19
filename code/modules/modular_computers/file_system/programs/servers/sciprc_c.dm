@@ -56,10 +56,6 @@
 
 		data["editing_access"] = editing_access
 
-		if(active_channel)
-			data["channel_open"] = (active_channel in server.channel_list)
-			data["messages"] = active_channel.messages
-
 		var/i = 1	// we can't get the index from a forlist so we have to track this manually (pain)
 		for(var/thing in server.channel_list)
 			var/datum/chatserver_channel/channel = thing
@@ -150,7 +146,7 @@
 			active_channel.add_message(computer.network_card.identification_id, card.registered_name, params["message"])
 			return TRUE
 		if("PRG_save_log")
-			var/logname = sanitize(params["log_name"])
+			var/logname = sanitize(tgui_input_text(usr, "Enter new logfile name. Leave blank to cancel.", "Logfile Name", active_channel.title))
 			if(!logname)
 				return
 
