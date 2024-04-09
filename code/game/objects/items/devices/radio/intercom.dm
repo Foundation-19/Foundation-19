@@ -20,6 +20,7 @@
 
 /obj/item/device/radio/intercom/map_preset
 	var/preset_name
+	var/use_common = FALSE
 	channels = list()
 
 /obj/item/device/radio/intercom/map_preset/Initialize()
@@ -31,11 +32,16 @@
 	frequency = assign_away_freq(preset_name)
 	channels += list(
 		preset_name = 1,
+		"Hailing" = 1
 	)
+	if (use_common)
+		channels += list("Common" = 1)
 
 	. = ..()
 
 	internal_channels = list(num2text(assign_away_freq(preset_name)) = list())
+	if (use_common)
+		internal_channels += list(num2text(PUB_FREQ) = list())
 
 /obj/item/device/radio/intercom/custom
 	name = "intercom (Custom)"
@@ -75,6 +81,7 @@
 /obj/item/device/radio/intercom/entertainment/Initialize()
 	. = ..()
 	internal_channels = list(
+		num2text(PUB_FREQ) = list(),
 		num2text(ENT_FREQ) = list()
 	)
 
