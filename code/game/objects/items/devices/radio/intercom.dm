@@ -22,6 +22,7 @@
 	var/preset_name
 	var/use_common = FALSE
 	channels = list()
+	var/default_hailing = FALSE
 
 /obj/item/device/radio/intercom/map_preset/Initialize()
 	if (!preset_name)
@@ -30,6 +31,8 @@
 	var/name_lower = lowertext(preset_name)
 	name = "[name_lower] intercom"
 	frequency = assign_away_freq(preset_name)
+	if (default_hailing)
+		frequency = HAIL_FREQ
 	channels += list(
 		preset_name = 1,
 		"Hailing" = 1
@@ -39,7 +42,10 @@
 
 	. = ..()
 
-	internal_channels = list(num2text(assign_away_freq(preset_name)) = list())
+	internal_channels = list(
+		num2text(assign_away_freq(preset_name)) = list(),
+		num2text(HAIL_FREQ) = list(),
+	)
 	if (use_common)
 		internal_channels += list(num2text(PUB_FREQ) = list())
 
@@ -47,6 +53,10 @@
 	name = "intercom (Custom)"
 	broadcasting = 0
 	listening = 0
+
+/obj/item/device/radio/intercom/hailing
+	name = "intercom (Hailing)"
+	frequency = HAIL_FREQ
 
 /obj/item/device/radio/intercom/interrogation
 	name = "intercom (Interrogation)"
