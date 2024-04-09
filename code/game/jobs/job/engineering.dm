@@ -228,7 +228,7 @@
 	economic_power = 9
 	ideal_character_age = 35
 	minimal_player_age = 20
-	requirements = list(EXP_TYPE_ENGINEERING = 1200)
+	requirements = list(EXP_TYPE_ENGINEERING = 720)
 	outfit_type = /decl/hierarchy/outfit/job/command/chief_engineer
 	class = CLASS_A
 	hud_icon = "hudchiefengineer"

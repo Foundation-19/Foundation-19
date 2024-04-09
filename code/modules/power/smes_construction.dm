@@ -116,8 +116,7 @@
 
 		var/datum/wires/smes/smes_wires = wires
 
-		//yes, I know : operator is ass. No, I can't make this better. Wires is casted to /datum/wires by default by /obj/machinery. :(
-		log_debug("SMES GROUNDING TICK: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick! [ADMIN_JMP(src)]")
+		log_debug("SMES GROUNDING TICK: <b>[x]X [y]Y [z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick! [ADMIN_JMP(src)]")
 
 	..()
 
@@ -180,7 +179,7 @@
 		var/obj/item/clothing/gloves/G = h_user.gloves
 		if(G.siemens_coefficient == 0)
 			user_protected = 1
-	log_and_message_staff("SMES FAILURE: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - [ADMIN_JMP(src)]")
+	log_and_message_staff("SMES FAILURE: <b>[x]X [y]Y [z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - [ADMIN_JMP(src)]")
 
 
 	switch (intensity)
@@ -238,7 +237,7 @@
 			// Sparks, Near - instantkill shock, Strong EMP, 25% light overload, 5% APC failure. 50% of SMES explosion. This is bad.
 			s.set_up(10,1,src)
 			s.start()
-			to_chat(h_user, SPAN_WARNING("Massive electrical arc sparks between you and [src].<br>Last thing you can think about is <span class='danger'>\"Oh shit...\"</span>"))
+			to_chat(h_user, SPAN_WARNING("Massive electrical arc sparks between you and [src].<br>The last thought you have is <span class='danger'>\"Oh shit...\"</span>"))
 			// Remember, we have few gigajoules of electricity here.. Turn them into crispy toast.
 			h_user.electrocute_act(rand(170,210), src, def_zone = ran_zone(null))
 			h_user.Paralyse(8)
@@ -289,6 +288,8 @@
 		..()
 
 /obj/machinery/power/smes/buildable/cannot_transition_to(state_path, mob/user)
+	. = ..()
+
 	if(failing)
 		return SPAN_WARNING("\The [src]'s screen is flashing with alerts. It seems to be overloaded! Touching it now is probably not a good idea.")
 
@@ -304,12 +305,8 @@
 				return MCS_BLOCK
 			if(check_total_system_failure(user))
 				return MCS_BLOCK
-	return ..()
 
 /obj/machinery/power/smes/buildable/can_add_component(obj/item/stock_parts/component, mob/user)
-	if(charge > (capacity/100) && safeties_enabled)
-		to_chat(user,  SPAN_WARNING("\The [src]'s safety circuit is preventing modifications while it's charged!"))
-		return FALSE
 	. = ..()
 	if(!.)
 		return
@@ -317,18 +314,15 @@
 		if(output_attempt || input_attempt)
 			to_chat(user, SPAN_WARNING("Turn \the [src] off first!"))
 			return FALSE
-		if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25) || check_total_system_failure(user))
+		if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 			return FALSE
 
 /obj/machinery/power/smes/buildable/remove_part_and_give_to_user(path, mob/user)
-	if(charge > (capacity/100) && safeties_enabled)
-		to_chat(user,  SPAN_WARNING("\The [src]'s safety circuit is preventing modifications while it's charged!"))
-		return
 	if(ispath(path,/obj/item/stock_parts/smes_coil))
 		if(output_attempt || input_attempt)
 			to_chat(user, SPAN_WARNING("Turn \the [src] off first!"))
 			return
-		if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25) || check_total_system_failure(user))
+		if(!do_after(user, 6 SECONDS, src, bonus_percentage = 25))
 			return
 	..()
 

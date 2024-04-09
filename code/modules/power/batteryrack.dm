@@ -24,18 +24,14 @@
 	var/max_transfer_rate = 0							// Maximal input/output rate. Determined by used capacitors when building the device.
 	var/mode = PSU_OFFLINE								// Current inputting/outputting mode
 	var/list/internal_cells = list()					// Cells stored in this PSU
-	var/max_cells = 3									// Maximal amount of stored cells at once. Capped at 9.
+	var/max_cells = PSU_MAXCELLS						// Maximal amount of stored cells at once. Capped at 9.
 	var/previous_charge = 0								// Charge previous tick.
 	var/equalise = 0									// If true try to equalise charge between cells
 	var/icon_update = 0									// Timer in ticks for icon update.
 	var/ui_tick = 0
 
 /obj/machinery/power/smes/batteryrack/RefreshParts()
-	var/capacitor_efficiency = Clamp(total_component_rating_of_type(/obj/item/stock_parts/capacitor), 0, 10)
-	var/maxcells = 3 * total_component_rating_of_type(/obj/item/stock_parts/matter_bin)
-
-	max_transfer_rate = 10000 * capacitor_efficiency // 30kw - 90kw depending on used capacitors.
-	max_cells = min(PSU_MAXCELLS, maxcells)
+	max_transfer_rate = Clamp(total_component_rating_of_type(/obj/item/stock_parts/capacitor), 0, 10) * 10 KILOWATTS // 10kw - 100kw depending on used capacitors.
 	input_level = max_transfer_rate
 	output_level = max_transfer_rate
 	..()

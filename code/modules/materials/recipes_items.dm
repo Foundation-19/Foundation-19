@@ -255,3 +255,14 @@
 	req_amount = 2
 	on_floor = 1
 	send_material_data = 1
+
+/datum/stack_recipe/gavelblock
+	title = "gavel block"
+	result_type = /obj/item/gavelblock
+
+/datum/stack_recipe/gavelhammer
+	title = "gavel hammer"
+	result_type = /obj/item/gavelhammer
+	difficulty = 2
+	req_amount = 2
+	time = 10
