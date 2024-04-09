@@ -1,5 +1,5 @@
 #define FEAR_MESSAGE_COOLDOWN 30000 // Cooldown in seconds before a player can be affected again
-#define INDUCE_FEAR_COOLDOWN 40 SECONDS // Define a cooldown period of 10 seconds
+#define INDUCE_FEAR_COOLDOWN 20 SECONDS // Define a cooldown period of 10 seconds
 /mob/living/scp080
 	name = "SCP-080"
 	desc = "A barely visible shadowy figure that instills a deep sense of dread."
@@ -199,7 +199,7 @@
 		var/obj/effect/temp_visual/scp_anomaly/A = new /obj/effect/temp_visual/scp_anomaly(T)
 		A.lifetime = 5 SECONDS
 /obj/effect/temp_visual/scp_anomaly
-	icon = 'icons/effects/effects.dmi'
+	icon = 'icons/scp/scp-017.dmi'
 	icon_state = "shadow_figure" // Example icon state, replace with actual
 	layer = ABOVE_HUMAN_LAYER
 	var/lifetime = 0
