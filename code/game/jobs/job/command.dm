@@ -238,7 +238,10 @@
 	economic_power = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/civ/thirep, "Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/civ/MCDRep )
+	alt_titles = list(
+		"UIU Relations Agent" = /decl/hierarchy/outfit/job/civ/uiu,
+		"Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/civ/MCDRep,
+	)
 	outfit_type = /decl/hierarchy/outfit/job/civ/gocrep
 	class = CLASS_A
 	hud_icon = "hudgoi"
