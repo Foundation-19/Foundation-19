@@ -37,11 +37,6 @@
 	if(_channel == active_channel)
 		return
 
-	var/turf/T = get_turf(computer) // Because visible_message is being a butt
-	if(T)
-		T.visible_message(SPAN_NOTICE("[computer] beeps softly, indicating a new message has been posted."))
-	playsound(computer, 'sounds/misc/server-ready.ogg', 100, 0)
-
 	unread_channels |= _channel
 
 /datum/computer_file/program/chatserver_c/proc/handle_crash(datum/computer_file/program/chatserver/_server)
