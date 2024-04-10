@@ -16,7 +16,7 @@
 	break_chance_table = list(10, 15, 20, 25)
 
 /datum/grab/plague_doctor/aggressive/on_hit_grab(obj/item/grab/normal/G)
-	return attempt_cure(G)
+	return AttemptCure(G)
 
 /datum/grab/plague_doctor/aggressive/on_hit_harm(obj/item/grab/normal/G)
-	return attempt_cure(G)
+	return AttemptCure(G)

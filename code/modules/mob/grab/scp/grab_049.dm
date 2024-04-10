@@ -19,11 +19,11 @@
 
 	action_cooldown = 10 SECONDS
 
-	/// When TRUE - blocks quick_stabs() proc from continuing
+	/// When TRUE - blocks QuickStabs() proc from continuing
 	var/stop_effects = FALSE
 
 /// This causes the user to temporarily stun and weaken the target, dealing pain and slight brute damage
-/datum/grab/plague_doctor/proc/attempt_cure(obj/item/grab/normal/G)
+/datum/grab/plague_doctor/proc/AttemptCure(obj/item/grab/normal/G)
 	var/mob/living/carbon/human/scp049/user = G.assailant
 	var/mob/living/carbon/human/target = G.affecting
 
@@ -43,7 +43,7 @@
 		return
 
 	stop_effects = FALSE
-	quick_stabs(G)
+	QuickStabs(G)
 	for(var/stage = 1, stage <=4, stage++)
 		user.balloon_alert_to_viewers("curing [stage]/4...")
 		switch(stage)
@@ -83,7 +83,7 @@
 	qdel(G)
 
 /// This proc repeatedly does minor Brute damage to the target with a few visual effects (bloodspatters, random noises, etc)
-/datum/grab/plague_doctor/proc/quick_stabs(obj/item/grab/normal/G)
+/datum/grab/plague_doctor/proc/QuickStabs(obj/item/grab/normal/G)
 	if(QDELETED(G) || stop_effects)
 		return
 
@@ -112,4 +112,4 @@
 		playsound(get_turf(H), sound_path, rand(15, 35), TRUE)
 		show_sound_effect(get_turf(H), H)
 
-	addtimer(CALLBACK(src, PROC_REF(quick_stabs), G), rand(0.3 SECONDS, 0.8 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(QuickStabs), G), rand(0.3 SECONDS, 0.8 SECONDS))
