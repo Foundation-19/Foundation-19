@@ -148,7 +148,7 @@
 	icon_opened = "lczopen"
 	icon_off = "lczcadetoff"
 
-/obj/structure/closet/secure_closet/guard/lcz/cadet/WillContain()
+/obj/structure/closet/secure_closet/cadet/lcz/WillContain()
 	return ..() | list(
 		/obj/item/clothing/suit/armor/vest/scp/medarmor,
 		/obj/item/clothing/head/helmet/scp/security/cadet,
@@ -210,7 +210,7 @@
 	icon_opened = "hczopen"
 	icon_off = "hczcadetoff"
 
-/obj/structure/closet/secure_closet/guard/hcz/cadet/WillContain()
+/obj/structure/closet/secure_closet/cadet/hcz/WillContain()
 	return ..() | list(
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/material/knife/combat,
@@ -290,7 +290,7 @@
 	icon_opened = "ezopen"
 	icon_off = "ezcadetoff"
 
-/obj/structure/closet/secure_closet/guard/ez/cadet/WillContain()
+/obj/structure/closet/secure_closet/cadet/ez/WillContain()
 	return ..() | list(
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
