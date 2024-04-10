@@ -3660,13 +3660,34 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
 "akH" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	name = "LCZ Armory Riot Shotguns Access Blast Door";
-	id_tag = "LCZ_Riot_Armory"
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Riot Shotgun Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "gun1";
+	icon_closed = "gun";
+	icon_off = "gunoff";
+	icon_opened = "gunopen";
+	icon_state = "gun1"
 	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "akI" = (
 /obj/structure/table/steel_reinforced,
@@ -14726,33 +14747,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
-"aQI" = (
-/obj/effect/floor_decal/corner/red/bordercee,
-/obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Riot Shotgun Locker";
-	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "gun1";
-	icon_closed = "gun";
-	icon_off = "gunoff";
-	icon_opened = "gunopen";
-	icon_state = "gun1"
-	},
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/llcz/checkequip)
 "aQJ" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -15839,13 +15833,7 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
 	},
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "LCZ_Riot_Armory";
-	name = "LCZ Armory Riot Shotguns Access Control";
-	pixel_x = 25;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "aVs" = (
@@ -28335,9 +28323,6 @@
 /obj/item/storage/box/flashbangs,
 /obj/item/storage/box/flashbangs,
 /obj/item/storage/box/flashbangs,
-/obj/machinery/recharger/wallcharger{
-	pixel_y = 23
-	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/dark,
@@ -28495,7 +28480,6 @@
 /obj/item/clothing/head/helmet/scp/security,
 /obj/item/clothing/head/helmet/scp/security,
 /obj/item/clothing/head/helmet/scp/security,
-/obj/machinery/light,
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
 	},
@@ -34057,6 +34041,7 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "kgE" = (
@@ -36707,9 +36692,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "lPq" = (
-/obj/machinery/recharger/wallcharger{
-	pixel_y = 23
-	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light{
 	dir = 1
@@ -38870,7 +38852,6 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/llcz/dclass/primaryhallway)
 "naI" = (
-/obj/machinery/light,
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
@@ -40274,41 +40255,6 @@
 	dir = 4
 	},
 /area/site53/uhcz/securitypost)
-"nQV" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Riot Shotgun Locker";
-	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "gun1";
-	icon_closed = "gun";
-	icon_off = "gunoff";
-	icon_opened = "gunopen";
-	icon_state = "gun1"
-	},
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/llcz/checkequip)
 "nRf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -51359,13 +51305,37 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "uRY" = (
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	name = "LCZ Armory Riot Shotguns Access Blast Door";
-	id_tag = "LCZ_Riot_Armory"
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Riot Shotgun Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "gun1";
+	icon_closed = "gun";
+	icon_off = "gunoff";
+	icon_opened = "gunopen";
+	icon_state = "gun1"
+	},
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/machinery/light{
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "uSb" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -51507,6 +51477,9 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 10
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 23
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
@@ -52987,35 +52960,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"vXu" = (
-/obj/effect/floor_decal/corner/red/bordercee{
-	dir = 1
-	},
-/obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Riot Shotgun Locker";
-	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "gun1";
-	icon_closed = "gun";
-	icon_off = "gunoff";
-	icon_opened = "gunopen";
-	icon_state = "gun1"
-	},
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/obj/item/clothing/accessory/storage/bandolier/beanbag,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/llcz/checkequip)
 "vXy" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -77224,8 +77168,8 @@ lbi
 lbi
 nKy
 nKy
-uRY
 akH
+uRY
 akH
 nKy
 nKy
@@ -77481,9 +77425,9 @@ jnd
 gci
 nKy
 nKy
-aQI
-nQV
-vXu
+nKy
+nKy
+nKy
 nKy
 azA
 azA
@@ -77737,11 +77681,11 @@ wCH
 jnd
 hbm
 nKy
-nKy
-nKy
-nKy
-nKy
-nKy
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
