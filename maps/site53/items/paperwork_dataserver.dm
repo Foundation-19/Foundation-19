@@ -155,7 +155,7 @@ The entrant issued this permit is granted access to the zone listed.
 
 	for(var/thing in SSmaterials.materials)
 		var/material/mat = thing
-		if(mat.hidden_from_codex || (mat.type == /material))
+		if(mat.hidden_from_codex || is_abstract(mat))
 			continue
 
 		stored_data += "\[row\]\[cell\][mat.display_name]\[cell\]\[field\]\[cell\]\[small\][mat.sheet_plural_name]\[cell\][mat.value]\n"

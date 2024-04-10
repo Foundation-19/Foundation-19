@@ -42,6 +42,7 @@
 
 // Material definition and procs follow.
 /material
+	abstract_type = /material
 	var/name	                          // Unique name for use in indexing the list.
 	var/display_name                      // Prettier name for display.
 	var/adjective_name
