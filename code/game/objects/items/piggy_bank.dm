@@ -1,6 +1,5 @@
 /**
  * Piggy banks. They store your hard-earned money until you or someone destroys it.
- * If the persistence id is set, money will be carried between rounds until broken.
  */
 /obj/item/piggy_bank
 	name = "piggy bank"
@@ -15,14 +14,8 @@
 	matter = list(MATERIAL_CERAMIC = 2000)
 	/// How much dosh we have. Cheaper to destroy and re-create space cash than hold it in contents.
 	var/current_wealth = 0
-	/// Some piggy banks are persistent, meaning they carry dosh between rounds.
-	var/persistence_id
-	/// Callback to execute upon roundend to save the current amount of cash it has stored, IF persistent.
-	var/datum/callback/persistence_cb
 	/// How much dosh can this piggy bank hold.
 	var/maximum_value = 1000
-	/// A limit to much dosh can you put inside this piggy bank each round. If 0, there's no limit. Only applies to persistent piggies.
-	var/maximum_savings_per_shift = 0
 	/// How much dosh this piggy bank spawns with.
 	var/initial_value = 0
 
@@ -30,37 +23,13 @@
 	. = ..()
 	AddElement(/datum/element/can_shatter, shatters_as_weapon = TRUE)
 
-	if(!persistence_id)
-		if(initial_value)
-			current_wealth = initial_value
-		return
-
-	SSpersistence.load_piggy_bank(src)
-	persistence_cb = CALLBACK(src, PROC_REF(save_cash))
-	SSticker.OnRoundend(persistence_cb)
-
-	if(initial_value > current_wealth)
+	if(initial_value)
 		current_wealth = initial_value
-
-	if(maximum_savings_per_shift)
-		maximum_value = min(maximum_value, maximum_savings_per_shift + current_wealth)
-
-/obj/item/piggy_bank/proc/save_cash()
-	SSpersistence.save_piggy_bank(src)
-
-/obj/item/piggy_bank/Destroy()
-	if(persistence_cb)
-		LAZYREMOVE(SSticker.round_end_events, persistence_cb) //cleanup the callback.
-		persistence_cb = null
-	return ..()
+	return
 
 /obj/item/piggy_bank/decons(disassembled = TRUE)
 	if(current_wealth)
 		new /obj/item/spacecash/bundle(get_turf(src), current_wealth)
-
-	//Smashing the piggy after the round is over doesn't count.
-	if(persistence_id && GAME_STATE < RUNLEVEL_POSTGAME)
-		SSpersistence.break_piggy_bank(src)
 	return ..()
 
 /obj/item/piggy_bank/attack_self(mob/user, modifiers)
@@ -119,11 +88,9 @@
 
 /obj/item/piggy_bank/logistics
 	name = "logistics piggy bank"
-	desc = "A pig-shaped money container made of porkelain, containing the site's emergency funds carried between shifts, oink. <i>Do not throw.</i>"
-	persistence_id = "vault_piggy"
+	desc = "A pig-shaped money container made of porkelain, containing the site's emergency funds, oink. <i>Do not throw.</i>"
 	maximum_value = 1500
-	initial_value = 25 //it takes about 60 shifts for it to hit its max value on its own.
-	maximum_savings_per_shift = 750 //and 2 if you actively use it.
+	initial_value = 25
 
 /obj/item/piggy_bank/logistics/Initialize(mapload)
 	. = ..()

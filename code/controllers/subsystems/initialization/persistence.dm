@@ -5,9 +5,6 @@ SUBSYSTEM_DEF(persistence)
 	var/list/tracking_values = list()
 	var/list/persistence_datums = list()
 
-	/// A json_database to data/piggy banks.json - Schema is persistence_id => array of space cash.
-	var/datum/json_database/piggy_banks_database
-
 /datum/controller/subsystem/persistence/Initialize()
 	. = ..()
 	for(var/thing in subtypesof(/datum/persistent))
