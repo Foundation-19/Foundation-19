@@ -7,7 +7,7 @@
 	origin_tech = list(TECH_MATERIAL = 5, TECH_BIO = 5, TECH_ESOTERIC = 5)
 	var/ready_to_erase = FALSE
 
-/obj/item/organ/internal/augment/active/memory_inhibitor/attack_self(mob/living/owner, removed)
+/obj/item/organ/internal/augment/active/memory_inhibitor/activate()
 	if(!can_activate())
 		return
 
