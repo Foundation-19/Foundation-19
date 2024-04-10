@@ -210,6 +210,7 @@
 
 // Used by walls when qdel()ing to avoid neighbor merging.
 /material/placeholder
+	hidden_from_codex = TRUE
 	name = "placeholder"
 
 // Places a girder object when a wall is dismantled, also applies reinforced material.
