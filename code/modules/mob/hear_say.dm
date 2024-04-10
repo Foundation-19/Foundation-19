@@ -1,6 +1,6 @@
 // At minimum every mob has a hear_say proc.
 
-/mob/proc/hear_say(message, verb = "says", datum/language/language = null, alt_name = "",italics = 0, mob/speaker = null, sound/speech_sound, sound_vol)
+/mob/proc/hear_say(message, verb = "says", datum/language/language = null, alt_name = "", italics = 0, mob/speaker = null, sound/speech_sound, sound_vol)
 	if(!client)
 		return
 
@@ -93,11 +93,12 @@
 		return message
 
 /mob/proc/on_hear_say(message)
-	to_chat(src, message)
+	var/list/wrapped_message = list(message)// so the signal below can be back-edited
+	SEND_SIGNAL(src, COMSIG_MOB_HEAR, wrapped_message)
+	to_chat(src, wrapped_message[1])
 
 /mob/living/silicon/on_hear_say(message)
-	var/time = say_timestamp()
-	to_chat(src, "[time] [message]")
+	..("[say_timestamp()] [message]")
 
 /mob/proc/hear_radio(message, verb="says", datum/language/language=null, part_a, part_b, part_c, mob/speaker = null, hard_to_hear = 0, vname ="")
 

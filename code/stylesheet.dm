@@ -85,7 +85,7 @@ h1.alert, h2.alert		{color: #000080;}
 
 .helpful				{color: #368f31;}
 
-.italic				{font-style: italic;}
+.italic					{font-style: italic;}
 .bold					{font-weight: bold;}
 .danger					{color: #ff0000; font-weight: bold;}
 .userdanger				{color: #ff0000; font-weight: bold; font-size: 115%;}
@@ -103,6 +103,9 @@ h1.alert, h2.alert		{color: #000080;}
 .cultannounce			{color: #800080; font-style: italic; font-size: 175%;}
 .mfauna					{color: #884422; font-weight: bold; font-size: 125%;}
 .antagdesc				{color: #ff0033; font-size: 125%}
+
+.red					{color: #ff0000;}
+.blue					{color: #0000ff;}
 
 .reflex_shoot			{color: #000099; font-style: italic;}
 
