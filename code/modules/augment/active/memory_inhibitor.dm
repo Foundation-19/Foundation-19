@@ -8,10 +8,8 @@
 	var/ready_to_erase = FALSE
 
 /obj/item/organ/internal/augment/active/memory_inhibitor/attack_self(mob/living/owner, removed)
-	. = ..()
-
-	if(!.)
-		return FALSE
+	if(!can_activate())
+		return
 
 	if(!ready_to_erase)
 		ready_to_erase = TRUE
