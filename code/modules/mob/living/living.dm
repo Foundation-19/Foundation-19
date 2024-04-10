@@ -276,6 +276,9 @@ default behaviour is:
 		return
 	health = Clamp(health - amount, 0, maxHealth)
 
+/mob/living/proc/setBruteLoss(amount)
+	adjustBruteLoss(amount - getBruteLoss())
+
 /mob/living/proc/getOxyLoss()
 	return 0
 
