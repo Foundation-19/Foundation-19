@@ -8,10 +8,11 @@ SUBSYSTEM_DEF(vis_contents_update)
 	var/list/queue_refs = list()
 
 /datum/controller/subsystem/vis_contents_update/stat_entry()
-	..("Queue: [queue_refs.len]")
+	. = ..("Queue: [queue_refs.len]")
 
 /datum/controller/subsystem/vis_contents_update/Initialize()
-	fire(FALSE, TRUE)
+	. = ..()
+	fire(FALSE)
 
 /datum/controller/subsystem/vis_contents_update/StartLoadingMap()
 	suspend()
@@ -20,10 +21,7 @@ SUBSYSTEM_DEF(vis_contents_update)
 	wake()
 
 // Largely copied from SSicon_update.
-/datum/controller/subsystem/vis_contents_update/fire(resumed = FALSE, no_mc_tick = FALSE)
-	if(!queue_refs.len)
-		suspend()
-		return
+/datum/controller/subsystem/vis_contents_update/fire(resumed)
 	var/i = 0
 	while (i < queue_refs.len)
 		i++
@@ -35,9 +33,7 @@ SUBSYSTEM_DEF(vis_contents_update)
 			return
 		A.vis_update_queued = FALSE
 		A.update_vis_contents(force_no_queue = TRUE)
-		if (no_mc_tick)
-			CHECK_TICK
-		else if (MC_TICK_CHECK)
+		if(MC_TICK_CHECK)
 			queue_refs.Cut(1, i+1)
 			return
 	queue_refs.Cut()

@@ -10,15 +10,15 @@ SUBSYSTEM_DEF(weather)
 	var/list/processing_systems
 
 /datum/controller/subsystem/weather/stat_entry()
-	..("all systems: [length(weather_systems)], processing systems: [length(processing_systems)]")
+	. = ..("all systems: [length(weather_systems)], processing systems: [length(processing_systems)]")
 
 /datum/controller/subsystem/weather/Initialize(start_timeofday)
 	. = ..()
 	for(var/obj/abstract/weather_system/weather as anything in weather_systems)
 		weather.init_weather()
 	return
-/datum/controller/subsystem/weather/fire(resumed)
 
+/datum/controller/subsystem/weather/fire(resumed)
 	if(!resumed)
 		processing_systems = weather_systems.Copy()
 

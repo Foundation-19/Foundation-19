@@ -537,10 +537,12 @@ var/const/enterloopsanity = 100
 	if(istype(new_weather) && is_outside())
 		if(weather != new_weather)
 			weather = new_weather
+			add_vis_contents(weather.vis_contents_additions)
 			. = TRUE
 
 	// We are indoors or there is no local weather system, clear our vis contents.
 	else if(weather)
+		remove_vis_contents(weather.vis_contents_additions)
 		weather = null
 		. = TRUE
 
