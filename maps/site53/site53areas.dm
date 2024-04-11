@@ -172,7 +172,7 @@
 // SITE 53 SURFACE AREA'S
 /area/site53
 	base_turf = /turf/simulated/floor/plating
-	is_outside = TRUE
+	is_outside = FALSE
 
 /area/site53/Initialize()
 	. = ..()
