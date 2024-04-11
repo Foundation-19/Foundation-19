@@ -176,3 +176,10 @@
 
 /obj/effect/temp_visual/slash/proc/FadeOut()
 	animate(src, alpha = 0, time = 5)
+
+/obj/effect/temp_visual/blob
+	name = "blob"
+	icon_state = "blob_attack"
+	alpha = 140
+	randomdir = 0
+	duration = 6
