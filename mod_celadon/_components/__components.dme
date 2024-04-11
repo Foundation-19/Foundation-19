@@ -2,3 +2,4 @@
 
 // Различный мелкий дополнительный функционал
 #include "code/_components.dm"
+#include "code/keybinds.dm"
