@@ -42358,6 +42358,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"smD" = (
+/obj/effect/landmark{
+	name = "scp2020"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/ulcz/humanoidcontainment)
 "smH" = (
 /obj/machinery/smartfridge/secure/extract,
 /obj/effect/paint_stripe/mauve,
@@ -97833,7 +97839,7 @@ azA
 azA
 urC
 cBj
-hyr
+smD
 ikk
 hyr
 hyr
