@@ -765,10 +765,6 @@
 			return global.swapmaps_mode;
 		if("syndicate_access")
 			return global.syndicate_access;
-		if("syndicate_code_phrase")
-			return global.syndicate_code_phrase;
-		if("syndicate_code_response")
-			return global.syndicate_code_response;
 		if("syndicate_name")
 			return global.syndicate_name;
 		if("tail_icon_cache")
@@ -1608,10 +1604,6 @@
 			global.swapmaps_mode=newval;
 		if("syndicate_access")
 			global.syndicate_access=newval;
-		if("syndicate_code_phrase")
-			global.syndicate_code_phrase=newval;
-		if("syndicate_code_response")
-			global.syndicate_code_response=newval;
 		if("syndicate_name")
 			global.syndicate_name=newval;
 		if("tail_icon_cache")
