@@ -85,7 +85,7 @@ h1.alert, h2.alert		{color: #000080;}
 
 .helpful				{color: #368f31;}
 
-.italic				{font-style: italic;}
+.italic					{font-style: italic;}
 .bold					{font-weight: bold;}
 .danger					{color: #ff0000; font-weight: bold;}
 .userdanger				{color: #ff0000; font-weight: bold; font-size: 115%;}
@@ -97,6 +97,7 @@ h1.alert, h2.alert		{color: #000080;}
 .debug					{color: #ff00ff;}
 .mentor                 {color: #e236d8;}
 .notice					{color: #000099;}
+.boldnotice				{color: #000099; font-weight: bold;}
 .subtle					{color: #000099; font-size: 75%; font-style: italic;}
 .alium					{color: #00ff00;}
 .cult					{color: #800080; font-weight: bold; font-style: italic;}

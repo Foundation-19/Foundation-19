@@ -28,9 +28,6 @@
 		TAG_FACTION = list(
 			FACTION_OTHER
 		),
-		TAG_RELIGION = list(
-			RELIGION_OTHER
-		)
 	)
 
 	default_cultural_info = list(TAG_FACTION = FACTION_OTHER)

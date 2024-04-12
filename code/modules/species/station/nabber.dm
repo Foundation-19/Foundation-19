@@ -128,9 +128,6 @@
 		TAG_FACTION = list(
 			FACTION_OTHER
 		),
-		TAG_RELIGION =  list(
-			RELIGION_OTHER
-		)
 	)
 	pain_emotes_with_pain_level = list(
 			list(/decl/emote/audible/bug_hiss) = 40
@@ -433,7 +430,6 @@
 		TAG_CULTURE =   CULTURE_OTHER,
 		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
 		TAG_FACTION =   FACTION_OTHER,
-		TAG_RELIGION =  RELIGION_OTHER
 	)
 
 /datum/species/nabber/monarch_worker/get_bodytype(mob/living/carbon/human/H)
@@ -506,7 +502,6 @@
 		TAG_CULTURE =   CULTURE_OTHER,
 		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
 		TAG_FACTION =   FACTION_OTHER,
-		TAG_RELIGION =  RELIGION_OTHER
 		)
 
 /datum/species/nabber/monarch_queen/New()

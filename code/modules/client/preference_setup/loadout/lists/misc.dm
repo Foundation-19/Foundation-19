@@ -229,23 +229,6 @@
 	path = /obj/item/clothing/mask/smokable/ecig/deluxe
 	cost = 2
 
-/datum/gear/bible
-	display_name = "holy book"
-	path = /obj/item/storage/bible
-	cost = 2
-
-/datum/gear/bible/New()
-	..()
-	var/books = list()
-	books["bible (adjustable)"] = /obj/item/storage/bible
-	books["Bible"] = /obj/item/storage/bible/bible
-	books["Tanakh"] = /obj/item/storage/bible/tanakh
-	books["Quran"] = /obj/item/storage/bible/quran
-	books["Kitab-i-Aqdas"] = /obj/item/storage/bible/aqdas
-	books["Kojiki"] = /obj/item/storage/bible/kojiki
-	books["Guru Granth Sahib"] = /obj/item/storage/bible/guru
-	gear_tweaks += new/datum/gear_tweak/path(books)
-
 /datum/gear/swiss
 	display_name = "multi-tool"
 	path = /obj/item/material/knife/folding/swiss

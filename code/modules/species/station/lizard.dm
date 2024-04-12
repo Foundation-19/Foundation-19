@@ -104,15 +104,11 @@
 		TAG_FACTION = list(
 			FACTION_OTHER
 		),
-		TAG_RELIGION =  list(
-			RELIGION_OTHER
-		)
 	)
 	default_cultural_info = list(
 		TAG_CULTURE   = CULTURE_OTHER,
 		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
 		TAG_FACTION   = FACTION_OTHER,
-		TAG_RELIGION  = RELIGION_OTHER
 	)
 	pain_emotes_with_pain_level = list(
 			list(/decl/emote/audible/wheeze, /decl/emote/audible/roar, /decl/emote/audible/bellow, /decl/emote/audible/howl) = 80,

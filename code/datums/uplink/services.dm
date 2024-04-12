@@ -200,7 +200,6 @@
 		new_record.set_dna(I.dna_hash)
 	if(random_record)
 		COPY_VALUE(faction)
-		COPY_VALUE(religion)
 		COPY_VALUE(homeSystem)
 		COPY_VALUE(fingerprint)
 		COPY_VALUE(dna)

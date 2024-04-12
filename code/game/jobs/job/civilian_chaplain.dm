@@ -17,114 +17,75 @@
 	outfit_type = /decl/hierarchy/outfit/job/chaplain
 	class = CLASS_C
 
-/datum/job/chaplain/equip(mob/living/carbon/human/H, alt_title, ask_questions = TRUE)
+/datum/job/chaplain/equip(mob/living/carbon/human/spawned, alt_title, ask_questions = TRUE)
 	. = ..()
-	if(!. || !ask_questions)
+	if(!ishuman(spawned))
 		return
-
-	var/obj/item/storage/bible/B = locate(/obj/item/storage/bible) in H
-	if(!B)
+	var/obj/item/book/bible/holy_bible = new
+	if(GLOB.religion)
+		if(spawned.mind)
+			spawned.mind.holy_role = HOLY_ROLE_PRIEST
+		holy_bible.deity_name = GLOB.deity
+		holy_bible.name = GLOB.bible_name
+		// These checks are important as there's no guarantee the "HOLY_ROLE_HIGHPRIEST" chaplain has selected a bible skin.
+		if(GLOB.bible_icon_state)
+			holy_bible.icon_state = GLOB.bible_icon_state
+		if(GLOB.bible_inhand_icon_state)
+			holy_bible.inhand_icon_state = GLOB.bible_inhand_icon_state
+		to_chat(spawned, SPAN_BOLDNOTICE("There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain."))
+		spawned.equip_to_slot_or_del(holy_bible, ITEM_SLOT_BACKPACK, indirect_action = TRUE)
+		var/nrt = GLOB.holy_weapon_type || /obj/item/nullrod
+		var/obj/item/nullrod/nullrod = new nrt(spawned)
+		spawned.put_in_hands(nullrod)
+		if(GLOB.religious_sect)
+			GLOB.religious_sect.on_conversion(spawned)
 		return
+	if(spawned.mind)
+		spawned.mind.holy_role = HOLY_ROLE_HIGHPRIEST
 
-	spawn(0)
-		var/religion_name = "Christianity"
-		var/new_religion = sanitize(input(H, "You are the crew services officer. Would you like to change your religion? Default is Christianity, in SPACE.", "Name change", religion_name), MAX_NAME_LEN)
+	var/new_religion = player_client?.prefs?.read_preference(/datum/preference/name/religion) || DEFAULT_RELIGION
+	var/new_deity = player_client?.prefs?.read_preference(/datum/preference/name/deity) || DEFAULT_DEITY
+	var/new_bible = player_client?.prefs?.read_preference(/datum/preference/name/bible) || DEFAULT_BIBLE
 
-		if (!new_religion)
-			new_religion = religion_name
-		switch(lowertext(new_religion))
-			if("christianity")
-				B.SetName("The Holy Bible")
-			if("satanism")
-				B.SetName("The Unholy Bible")
-			if("cthulu")
-				B.SetName("The Necronomicon")
-			if("islam")
-				B.SetName("Quran")
-			if("scientology")
-				B.SetName(pick("The Biography of L. Ron Hubbard","Dianetics"))
-			if("chaos")
-				B.SetName("The Book of Lorgar")
-			if("imperium")
-				B.SetName("Uplifting Primer")
-			if("toolboxia")
-				B.SetName("Toolbox Manifesto")
-			if("homosexuality")
-				B.SetName("Guys Gone Wild")
-			if("science")
-				B.SetName(pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition"))
-			else
-				B.SetName("The Holy Book of [new_religion]")
-		SSstatistics.set_field_details("religion_name","[new_religion]")
-
-	spawn(1)
-		var/deity_name = "Space Jesus"
-		var/new_deity = sanitize(input(H, "Would you like to change your deity? Default is Space Jesus.", "Name change", deity_name), MAX_NAME_LEN)
-
-		if ((length(new_deity) == 0) || (new_deity == "Space Jesus") )
-			new_deity = deity_name
-		B.deity_name = new_deity
-
-		var/accepted = 0
-		var/outoftime = 0
-		spawn(200) // 20 seconds to choose
-			outoftime = 1
-		var/new_book_style = "Bible"
-
-		while(!accepted)
-			if(!B) break // prevents possible runtime errors
-			new_book_style = input(H,"Which bible style would you like?") in list("Bible", "Koran", "Scrapbook", "Creeper", "White Bible", "Holy Light", "Athiest", "Tome", "The King in Yellow", "Ithaqua", "Scientology", "the bible melts", "Necronomicon")
-			switch(new_book_style)
-				if("Koran")
-					B.icon_state = "koran"
-					B.item_state = "koran"
-				if("Scrapbook")
-					B.icon_state = "scrapbook"
-					B.item_state = "scrapbook"
-				if("Creeper")
-					B.icon_state = "creeper"
-					B.item_state = "syringe_kit"
-				if("White Bible")
-					B.icon_state = "white"
-					B.item_state = "syringe_kit"
-				if("Holy Light")
-					B.icon_state = "holylight"
-					B.item_state = "syringe_kit"
-				if("Athiest")
-					B.icon_state = "athiest"
-					B.item_state = "syringe_kit"
-				if("Tome")
-					B.icon_state = "tome"
-					B.item_state = "syringe_kit"
-				if("The King in Yellow")
-					B.icon_state = "kingyellow"
-					B.item_state = "kingyellow"
-				if("Ithaqua")
-					B.icon_state = "ithaqua"
-					B.item_state = "ithaqua"
-				if("Scientology")
-					B.icon_state = "scientology"
-					B.item_state = "scientology"
-				if("the bible melts")
-					B.icon_state = "melted"
-					B.item_state = "melted"
-				if("Necronomicon")
-					B.icon_state = "necronomicon"
-					B.item_state = "necronomicon"
+	holy_bible.deity_name = new_deity
+	switch(lowertext(new_religion))
+		if("homosexuality", "gay", "penis", "ass", "cock", "cocks")
+			new_bible = pick("Guys Gone Wild","Coming Out of The Closet","War of Cocks")
+			switch(new_bible)
+				if("War of Cocks")
+					holy_bible.deity_name = pick("Dick Powers", "King Cock")
 				else
-					B.icon_state = "bible"
-					B.item_state = "bible"
+					holy_bible.deity_name = pick("Gay Space Jesus", "Gandalf", "Dumbledore")
+			spawned.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // starts off brain damaged as fuck
+		if("lol", "wtf", "poo", "badmin", "shitmin", "deadmin", "meme", "memes")
+			new_bible = pick("Woody's Got Wood: The Aftermath", "Sweet Bro and Hella Jeff: Expanded Edition","F.A.T.A.L. Rulebook")
+			switch(new_bible)
+				if("Woody's Got Wood: The Aftermath")
+					holy_bible.deity_name = pick("Woody", "Andy", "Cherry Flavored Lube")
+				if("Sweet Bro and Hella Jeff: Expanded Edition")
+					holy_bible.deity_name = pick("Sweet Bro", "Hella Jeff", "Stairs", "AH")
+				if("F.A.T.A.L. Rulebook")
+					holy_bible.deity_name = "Twenty Ten-Sided Dice"
+			spawned.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // also starts off brain damaged as fuck
+		if("servicianism", "partying")
+			holy_bible.desc = "Happy, Full, Clean. Live it and give it."
+		if("weeaboo","kawaii")
+			new_bible = pick("Fanfiction Compendium","Japanese for Dummies","The Manganomicon","Establishing Your O.T.P")
+			holy_bible.deity_name = "Anime"
+		else
+			if(new_bible == DEFAULT_BIBLE)
+				new_bible = DEFAULT_BIBLE_REPLACE(new_bible)
 
-			H.update_inv_l_hand() // so that it updates the bible's item_state in his hand
+	holy_bible.name = new_bible
 
-			switch(input(H,"Look at your bible - is this what you want?") in list("Yes","No"))
-				if("Yes")
-					accepted = 1
-				if("No")
-					if(outoftime)
-						to_chat(H, "Welp, out of time, buddy. You're stuck. Next time choose faster.")
-						accepted = 1
+	GLOB.religion = new_religion
+	GLOB.bible_name = new_bible
+	GLOB.deity = holy_bible.deity_name
 
-		SSstatistics.set_field_details("religion_deity","[new_deity]")
-		SSstatistics.set_field_details("religion_book","[new_book_style]")
-	return 1
+	spawned.equip_to_slot_or_del(holy_bible, ITEM_SLOT_BACKPACK, indirect_action = TRUE)
+
+	SSstatistics.set_field_details("religion_name", "[new_religion]")
+	SSstatistics.set_field_details("religion_deity", "[new_deity]")
+	SSstatistics.set_field_details("religion_bible", "[new_bible]")
+
+	return TRUE

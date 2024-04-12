@@ -179,9 +179,6 @@
 		TAG_FACTION = list(
 			FACTION_OTHER
 		),
-		TAG_RELIGION = list(
-			RELIGION_OTHER
-		)
 	)
 
 	has_organ = list(
@@ -325,7 +322,6 @@
 		TAG_CULTURE =   list(CULTURE_OTHER),
 		TAG_HOMEWORLD = list(HOME_SYSTEM_OTHER),
 		TAG_FACTION =   list(FACTION_OTHER),
-		TAG_RELIGION =  list(RELIGION_OTHER)
 	)
 
 /proc/spawn_diona_nymph(turf/target)

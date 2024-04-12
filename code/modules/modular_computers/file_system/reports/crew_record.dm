@@ -114,7 +114,6 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 	// Misc cultural info.
 	set_faction(H ? html_decode(H.get_cultural_value(TAG_FACTION)) : "Unset")
-	set_religion(H ? html_decode(H.get_cultural_value(TAG_RELIGION)) : "Unset")
 
 	if(H)
 		var/skills = list()
@@ -196,7 +195,6 @@ FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, ACCESS_MEDICAL_L
 
 FIELD_SHORT("Species", species, null, ACCESS_ADMIN_LVL5)
 FIELD_LIST("Class", class, list(CLASS_A, CLASS_B, CLASS_C, CLASS_D, CLASS_E), null, ACCESS_ADMIN_LVL5)
-FIELD_SHORT("Religion", religion, ACCESS_CHAPEL_OFFICE, ACCESS_ADMIN_LVL5)
 
 FIELD_LONG("General Notes (Public)", public_record, null, ACCESS_ADMIN_LVL2)
 

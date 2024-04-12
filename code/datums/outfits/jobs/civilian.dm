@@ -69,7 +69,6 @@
 /decl/hierarchy/outfit/job/civ/thirep
 	name = OUTFIT_JOB_NAME("thirep")
 	uniform = /obj/item/clothing/under/rank/chaplain
-	l_hand = /obj/item/storage/bible
 	id_type = /obj/item/card/id/adminlvl3
 	pda_type = /obj/item/modular_computer/pda/medical
 	l_ear = /obj/item/device/radio/headset/heads/thi
@@ -112,9 +111,9 @@
 /decl/hierarchy/outfit/job/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain")
 	uniform = /obj/item/clothing/under/rank/chaplain
-	l_hand = /obj/item/storage/bible
 	id_type = /obj/item/card/id/civilian/chaplain
 	pda_type = /obj/item/modular_computer/pda/medical
+	l_ear = /obj/item/device/radio/headset/headset_service
 
 /decl/hierarchy/outfit/job/civ/officeworker
 	name = OUTFIT_JOB_NAME("Office Worker")

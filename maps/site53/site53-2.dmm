@@ -43959,7 +43959,6 @@
 /obj/effect/floor_decal/carpet/green{
 	dir = 1
 	},
-/obj/item/storage/bible,
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "tyT" = (

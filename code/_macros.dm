@@ -165,6 +165,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define SPAN_NOTICE(X) "<span class='notice'>[X]</span>"
 
+#define SPAN_BOLDNOTICE(X) "<span class='boldnotice'>[X]</span>"
+
 #define SPAN_WARNING(X) "<span class='warning'>[X]</span>"
 
 #define SPAN_GOOD(X) "<span class='good'>[X]</span>"

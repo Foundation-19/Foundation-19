@@ -97,7 +97,6 @@
 		TAG_CULTURE =   CULTURE_OTHER,
 		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
 		TAG_FACTION =   FACTION_OTHER,
-		TAG_RELIGION =  RELIGION_OTHER
 	)
 
 	descriptors = list(
@@ -175,7 +174,6 @@
 		TAG_CULTURE =   CULTURE_OTHER,
 		TAG_HOMEWORLD = HOME_SYSTEM_OTHER,
 		TAG_FACTION =   FACTION_OTHER,
-		TAG_RELIGION =  RELIGION_OTHER
 	)
 
 /datum/species/mantid/gyne/attempt_grab(mob/living/carbon/human/grabber, mob/living/target)

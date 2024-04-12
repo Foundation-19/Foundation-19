@@ -95,9 +95,6 @@
 		TAG_FACTION = list(
 			FACTION_OTHER
 		),
-		TAG_RELIGION =  list(
-			RELIGION_OTHER
-		)
 	)
 
 	exertion_effect_chance = 10
