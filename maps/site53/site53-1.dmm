@@ -3627,8 +3627,7 @@
 /area/site53/llcz/dclass/cells)
 "eWz" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "CDCZ Briefing Hall";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	name = "CDCZ Briefing Hall"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
