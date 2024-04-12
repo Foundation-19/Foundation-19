@@ -486,6 +486,7 @@
 	t = replacetext(t, "\[cmaxlogo\]", "<img src = cmax.png>")
 	t = replacetext(t, "\[mcflogo\]", "<img src = mcf.png>")
 	t = replacetext(t, "\[wwslogo\]", "<img src = wws.png>")
+	t = replacetext(t, "\[spclogo\]", "<img src = spc.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,

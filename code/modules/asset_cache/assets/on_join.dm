@@ -39,6 +39,7 @@
 		"mcf.png" = 'html/images/mcf.png',
 		"ar.png" = 'html/images/ar.png',
 		"wws.png" = 'html/images/wws.png',
+		"spc.png" = 'html/images/spc.png',
 		"scp3349_ekg.png" = 'html/images/scp3349_ekg.png',
 		"talisman.png" = 'html/images/talisman.png'
 	)
