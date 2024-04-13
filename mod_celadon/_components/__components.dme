@@ -4,3 +4,4 @@
 #include "code/_components.dm"
 #include "code/keybinds.dm"
 #include "code/security_state.dm"
+#include "code/mob_helpers.dm"

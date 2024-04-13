@@ -129,7 +129,21 @@
 	// Describes the alert itself, shown when choosing alarms
 	var/description
 
-// Called when we're switching from a lower security level to this one.
+/decl/security_level/proc/do_emergency()
+	for(var/obj/machinery/light/M in get_area_all_atoms(/area/site53))
+		if (M.current_mode <> "emergency_lighting")
+			M.set_emergency_lighting(TRUE)
+			playsound(M, 'sounds/machines/apc_nopower.ogg', 20, 0)
+		else
+			M.flicker(10)
+
+/decl/security_level/proc/undo_emergency()
+	for(var/obj/machinery/light/M in get_area_all_atoms(/area/site53))
+		if (M.current_mode == "emergency_lighting")
+			M.set_emergency_lighting(FALSE)
+			playsound(M, 'sounds/machines/lightson.ogg', 40, 0)
+
+
 /decl/security_level/proc/switching_up_to()
 	notify_station()
 
@@ -169,6 +183,7 @@
 
 /decl/security_level/code_green/switching_down_to()
 	security_announcement_green.Announce("Кризис преодолен. Весь персонал должен вернуться к своим стандартным процедурам.", "Внимание! Код тревоги понижен до зеленого кода.")
+	undo_emergency()
 	notify_station()
 
 /decl/security_level/code_yellow
@@ -186,7 +201,7 @@
 
 	description = "Испытание SCP класса Евклид."
 
-	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice3.ogg'))
 
 /decl/security_level/code_yellow/switching_up_to()
 	security_announcement_yellow.Announce("Начинаются испытания SCP класса Евклид. Службе безопасности зоны проведения испытания быть в повышенной готовности.", "Внимание! Объявляется желтый код тревоги!")
@@ -194,6 +209,7 @@
 
 /decl/security_level/code_yellow/switching_down_to()
 	security_announcement_yellow.Announce("Кризис преодолен. Планируются испытания SCP класса Евклид. Службе безопасности зоны проведения испытания быть в повышенной готовности.", "Внимание! Код тревоги понижен до желтого!")
+	undo_emergency()
 	notify_station()
 
 /decl/security_level/code_blue
@@ -211,7 +227,7 @@
 
 	description = "Испытание SCP класса Кетер."
 
-	var/static/datum/announcement/priority/security/security_announcement_blue = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_blue = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice3.ogg'))
 
 /decl/security_level/code_blue/switching_up_to()
 	security_announcement_blue.Announce("Начинаются испытания SCP класса Кетер. Вся служба безопасности должена быть в полной готовности.", "Внимание! Объявляется синий код тревоги!")
@@ -219,6 +235,7 @@
 
 /decl/security_level/code_blue/switching_down_to()
 	security_announcement_blue.Announce("Кризис преодолен. Планируются испытания SCP класса Кетер. Вся служба безопасности должена быть в полной готовности.", "Внимание! Код тревоги понижен до синего!")
+	undo_emergency()
 	notify_station()
 
 /decl/security_level/code_orange
@@ -244,6 +261,7 @@
 
 /decl/security_level/code_orange/switching_down_to()
 	security_announcement_orange.Announce("Кризис смягчен. Нарушение условий содержания SCP класса Евклид! Службе безопасности зоны с нарушением условий содержания - немедленное реагирование и восстановление условий содержания! Вся служба безопасности должена быть в боевой готовности! ", "Внимание! Код тревоги понижен до оранжевого!")
+	undo_emergency()
 	notify_station()
 
 /decl/security_level/code_red
@@ -269,6 +287,7 @@
 
 /decl/security_level/code_red/switching_down_to()
 	security_announcement_red.Announce("Кризис смягчен. Блокировка зоны снята. Нарушение условий содержания SCP класса Кетер! Службе безопасности зоны с нарушением условий содержания - немедленное реагирование и восстановление условий содержания! Вся служба безопасности должена быть в боевой готовности!", "Внимание! Код тревоги понижен до красного!")
+	undo_emergency()
 	notify_station()
 
 /decl/security_level/code_black
@@ -288,12 +307,16 @@
 
 	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codeblack.ogg'))
 
+
 /decl/security_level/code_black/switching_up_to()
+
 	security_announcement_black.Announce("Множественное нарушение условий содержаний! Вся служба безопасности обязана восстановить условия содеражния! Включена блокировка Зоны!", "Внимание! Объявляется черный код тревоги!")
+	do_emergency()
 	notify_station()
 
 /decl/security_level/code_black/switching_down_to()
 	security_announcement_black.Announce("Кризис смягчен! Вся служба безопасности обязана восстановить условия содеражния! Блокировка зоны активна!", "Внимание! Объявляется черный код тревоги!")
+	do_emergency()
 	notify_station()
 
 /decl/security_level/code_pitchblack
@@ -311,14 +334,16 @@
 
 	description = "Проникновение вражеских связанных организаций."
 
-	var/static/datum/announcement/priority/security/security_announcement_pitchblack = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codeblack.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_pitchblack = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/redalert1.ogg'))
 
 /decl/security_level/code_pitchblack/switching_up_to()
 	security_announcement_pitchblack.Announce("Подвтерждено вторжение вражеских агентов Связаннных Организаций. Вся служба безопасности должена быть в боевой готовности! Устранить враждебные элементы! " ,"Внимание! Объявлен код Мрак!")
+	do_emergency()
 	notify_station()
 
 /decl/security_level/code_pitchblack/switching_down_to()
 	security_announcement_pitchblack.Announce("Уничтожение предотвращено! Вся служба безопасности должена быть в боевой готовности! Устранить вражеских агентов Связаннных Организаций!", "Внимание! Объявлен код Мрак!")
+	do_emergency()
 	notify_station()
 
 
@@ -342,4 +367,5 @@
 
 /decl/security_level/code_delta/switching_up_to()
 	security_announcement_delta.Announce("Риск уничтожения объекта критический. Все сотрудники должны подчиняться указаниям административного персонала. Нарушение приказов карается незамедлительным устранением. Это не учебная тревога!", "Внимание! Объявлен код Дельта")
+	do_emergency()
 	notify_station()
