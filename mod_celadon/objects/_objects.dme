@@ -1,0 +1,4 @@
+#include "_objects.dm"
+
+#include "code/items/weapons/SCP/armor.dm"
+#include "code/items/weapons/SCP/helmet.dm"

@@ -328,7 +328,6 @@
 #include "code\datums\recipe.dm"
 #include "code\datums\reference_tracking.dm"
 #include "code\datums\ruins.dm"
-// #include "code\datums\security_state.dm"     =# Celadon Changes => mod_celadon\_components\code\security_state.dm #=
 #include "code\datums\shackle_law_sets.dm"
 #include "code\datums\sound_player.dm"
 #include "code\datums\suit_sensor_jammer_method.dm"

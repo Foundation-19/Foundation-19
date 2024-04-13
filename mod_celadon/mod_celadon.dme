@@ -11,7 +11,7 @@
 // --- ICONS --- //
 
 // --- OBJECTS --- //
-
+#include "objects/_objects.dme"
 
 // --- MISC --- //
 

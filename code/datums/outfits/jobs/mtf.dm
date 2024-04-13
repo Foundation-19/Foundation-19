@@ -10,7 +10,7 @@
 /decl/hierarchy/outfit/mtf/epsilon_11
 	hierarchy_type = /decl/hierarchy/outfit/mtf/epsilon_11
 
-/decl/hierarchy/outfit/mtf/epsilon_11/agent
+/* /decl/hierarchy/outfit/mtf/epsilon_11/agent
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Agent")
 	uniform = /obj/item/clothing/under/ert/epsilon11
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
@@ -80,7 +80,7 @@
 	r_pocket = null
 	id_type = /obj/item/card/id/mtf/ninetail
 	belt = /obj/item/defibrillator/compact/combat/loaded
-	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/clothing/mask/gas = 1,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/pill_bottle/zoom = 1)
+	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/clothing/mask/gas = 1,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/pill_bottle/zoom = 1) */
 
 /decl/hierarchy/outfit/mtf/eta_10 // See No Evil
 	name = OUTFIT_JOB_NAME("MTF Eta-10 Operative")
