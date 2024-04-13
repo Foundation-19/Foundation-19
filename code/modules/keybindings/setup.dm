@@ -61,10 +61,3 @@
 	//In case one got stuck and the previous loop didn't clean it, somehow.
 	for(var/key in key_combos_held)
 		keyUp(key_combos_held[key])
-
-/client/verb/fix_layout()
-	set name = "Исправить раскладку"
-	set category = "Special Verbs"
-
-	set_macros()
-	to_chat(src, SPAN_WARNING("Перерегистрация макросов выполнена. Если не сработало, убедитесь что раскладка переключена на английский язык."))
