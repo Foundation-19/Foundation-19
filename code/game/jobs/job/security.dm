@@ -210,7 +210,7 @@
 // OFFICERS
 //##
 
-/datum/job/ncoofficerlcz
+/* /datum/job/ncoofficerlcz			=# Mod Celadon Changes => mod_celadon\outfits\code\job\security.dm #=
 	title = "LCZ Sergeant"
 	department = "Light Containment Personnel"
 	selection_color = "#601c1c"
@@ -256,7 +256,7 @@
 	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	    SKILL_FORENSICS   = SKILL_TRAINED
 	)
-	skill_points = 21
+	skill_points = 21 */
 
 /datum/job/ncoofficerhcz
 	title = "HCZ Sergeant"

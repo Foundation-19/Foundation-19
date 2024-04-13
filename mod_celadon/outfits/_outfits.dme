@@ -1,3 +1,4 @@
 #include "_outfits.dm"
 
-#include "code/outfits.dm"
+#include "code/job/engineering.dm"
+#include "code/job/security.dm"
