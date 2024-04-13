@@ -5586,9 +5586,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "apQ" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
 /obj/structure/cable/green,
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 5
@@ -21635,6 +21632,27 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"cmX" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 8
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/lowertrams/hub)
 "cnz" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -48265,6 +48283,11 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/brown/bordercorner,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "xfG" = (
@@ -77568,7 +77591,7 @@ agv
 ahB
 akc
 alh
-azB
+cmX
 azB
 azB
 aFd
