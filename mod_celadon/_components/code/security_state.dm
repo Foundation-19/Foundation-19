@@ -1,4 +1,4 @@
-/* /decl/security_state			=# CELADON_CHANGES => mod_celadon\_components\code\security_state.dm #=
+/decl/security_state
 	// When defining any of these values type paths should be used, not instances. Instances will be acquired in /New()
 
 	// The security level in which the destruction of the site is likely. Not selectable by personnel; set internally or by admins
@@ -14,10 +14,10 @@
 	var/decl/security_level/stored_security_level  // The security level that we are escalating from - please set and use this when reverting.
 
 	// List of all available security levels
-	var/list/all_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack, /decl/security_level/code_delta)
+	var/list/all_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_blue, /decl/security_level/code_orange, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack, /decl/security_level/code_delta)
 
 	// List of all normally selectable security levels
-	var/list/standard_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack)
+	var/list/standard_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_blue, /decl/security_level/code_orange, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack)
 
 /decl/security_state/New()
 	// Setup threshold security levels
@@ -108,7 +108,7 @@
 	post_status("alert")
 
 /decl/security_level
-	var/icon = 'icons/misc/security_state.dmi'
+	var/icon = 'mod_celadon/_components/icon/security_state.dmi'
 	var/name
 	var/alarm_level = "off"
 
@@ -151,7 +151,7 @@
 // SECURITY LEVELS
 
 /decl/security_level/code_green
-	name = "code green"
+	name = "Green alert (Standart)"
 
 	light_max_bright = 0.25
 	light_inner_range = 0.1
@@ -163,16 +163,16 @@
 	overlay_status_display = "status_display_green"
 	alert_border = "alert_border_green"
 
-	description = "There is no active threat to the Site."
+	description = "Активная угроза объекту отсутствует."
 
 	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codegreen.ogg', volume = 150))
 
 /decl/security_level/code_green/switching_down_to()
-	security_announcement_green.Announce("The situation has been resolved. All personnel are to return to their regular duties.", "Attention! Alert level lowered to code green.")
+	security_announcement_green.Announce("Кризис преодолен. Весь персонал должен вернуться к своим стандартным процедурам.", "Внимание! Код тревоги понижен до зеленого кода.")
 	notify_station()
 
 /decl/security_level/code_yellow
-	name = "code yellow"
+	name = "Yellow alert (Euclid Research)"
 
 	light_max_bright = 0.5
 	light_inner_range = 1
@@ -184,20 +184,70 @@
 	overlay_status_display = "status_display_yellow"
 	alert_border = "alert_border_yellow"
 
-	description = "A potential threat has been reported but not yet confirmed."
+	description = "Испытание SCP класса Евклид."
 
 	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
 
 /decl/security_level/code_yellow/switching_up_to()
-	security_announcement_yellow.Announce("There is an unconfirmed potential threat to the facility. Guards are to cautiously investigate the facility and secure sensitive areas. All personnel are recommended to report unusual behaviour.", "Attention! Code Yellow alert procedures now in effect!")
+	security_announcement_yellow.Announce("Начинаются испытания SCP класса Евклид. Службе безопасности зоны проведения испытания быть в повышенной готовности.", "Внимание! Объявляется желтый код тревоги!")
 	notify_station()
 
 /decl/security_level/code_yellow/switching_down_to()
-	security_announcement_yellow.Announce("All Euclid and Keter SCPs have been recontained. All areas should be swept for Safe SCPs, and the general integrity of the site should be restored.", "Attention! Code Yellow alert procedures now in effect!")
+	security_announcement_yellow.Announce("Кризис преодолен. Планируются испытания SCP класса Евклид. Службе безопасности зоны проведения испытания быть в повышенной готовности.", "Внимание! Код тревоги понижен до желтого!")
+	notify_station()
+
+/decl/security_level/code_blue
+	name = "Blue alert (Keter Research)"
+
+	light_max_bright = 0.5
+	light_inner_range = 1
+	light_outer_range = 2
+	light_color_alarm = COLOR_BLUE
+	light_color_status_display = COLOR_BLUE
+
+	overlay_alarm = "alarm_blue"
+	overlay_status_display = "status_display_blue"
+	alert_border = "alert_border_blue"
+
+	description = "Испытание SCP класса Кетер."
+
+	var/static/datum/announcement/priority/security/security_announcement_blue = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/misc/notice1.ogg'))
+
+/decl/security_level/code_blue/switching_up_to()
+	security_announcement_blue.Announce("Начинаются испытания SCP класса Кетер. Вся служба безопасности должена быть в полной готовности.", "Внимание! Объявляется синий код тревоги!")
+	notify_station()
+
+/decl/security_level/code_blue/switching_down_to()
+	security_announcement_blue.Announce("Кризис преодолен. Планируются испытания SCP класса Кетер. Вся служба безопасности должена быть в полной готовности.", "Внимание! Код тревоги понижен до синего!")
+	notify_station()
+
+/decl/security_level/code_orange
+	name = "Orange alert (Euclid Containment Breach)"
+
+	light_max_bright = 0.75
+	light_inner_range = 1
+	light_outer_range = 3
+	light_color_alarm = COLOR_ORANGE
+	light_color_status_display = COLOR_ORANGE
+
+	overlay_alarm = "alarm_orange"
+	overlay_status_display = "status_display_orange"
+	alert_border = "alert_border_orange"
+
+	description = "Нарушение условий содержания SCP класса Евклид."
+
+	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codered.ogg'))
+
+/decl/security_level/code_orange/switching_up_to()
+	security_announcement_orange.Announce("Нарушение условий содержания SCP класса Евклид! Службе безопасности зоны с нарушением условий содержания - немедленное реагирование и восстановление условий содержания! Гражданскому персоналу в зоне с нарушением условий содержания - немедленная эвакуация! Вся служба безопасности должена быть в боевой готовности!", "Внимание! Объявляется оранжевый код тревоги!")
+	notify_station()
+
+/decl/security_level/code_orange/switching_down_to()
+	security_announcement_orange.Announce("Кризис смягчен. Нарушение условий содержания SCP класса Евклид! Службе безопасности зоны с нарушением условий содержания - немедленное реагирование и восстановление условий содержания! Вся служба безопасности должена быть в боевой готовности! ", "Внимание! Код тревоги понижен до оранжевого!")
 	notify_station()
 
 /decl/security_level/code_red
-	name = "code red"
+	name = "Red alert (Keter Containment Breach)"
 
 	light_max_bright = 0.75
 	light_inner_range = 1
@@ -209,20 +259,20 @@
 	overlay_status_display = "status_display_red"
 	alert_border = "alert_border_red"
 
-	description = "An SCP is currently uncontained."
+	description = "Нарушение условий содержания SCP класса Кетер."
 
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codered.ogg'))
 
 /decl/security_level/code_red/switching_up_to()
-	security_announcement_red.Announce("An SCP has broken containment and its current whereabouts are unknown. Security should secure all exit points immediately before recontaining breached anomalies.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("Нарушение условий содержания SCP класса Кетер! Службе безопасности зоны с нарушением условий содержания - немедленное реагирование и восстановление условий содержания! Гражданскому персоналу в зоне с нарушением условий содержания - немедленная эвакуация! Разрешается открытие бункеров. Вся служба безопасности должена быть в боевой готовности!", "Внимание! Объявляется красный код тревоги!")
 	notify_station()
 
 /decl/security_level/code_red/switching_down_to()
-	security_announcement_red.Announce("All major threats to the Site have been neutralized or contained, but one or more SCPs remain uncontained. Security should focus their efforts on recontaining the escaped SCP. Full site lockdown disengaged.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("Кризис смягчен. Блокировка зоны снята. Нарушение условий содержания SCP класса Кетер! Службе безопасности зоны с нарушением условий содержания - немедленное реагирование и восстановление условий содержания! Вся служба безопасности должена быть в боевой готовности!", "Внимание! Код тревоги понижен до красного!")
 	notify_station()
 
 /decl/security_level/code_black
-	name = "code black"
+	name = "Black alert (Multiple Containment Breach)"
 
 	light_max_bright = 0.75
 	light_inner_range = 0.1
@@ -234,20 +284,20 @@
 	overlay_status_display = "status_display_black"
 	alert_border = "alert_border_black"
 
-	description = "Several Keter and Euclid SCPs are uncontained."
+	description = "Множественные нарушения условий содержания SCP."
 
 	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codeblack.ogg'))
 
 /decl/security_level/code_black/switching_up_to()
-	security_announcement_black.Announce("The site is experiencing multiple Keter and Euclid level containment breaches. Full site lockdown initiated.", "Attention! Code Black alert procedures now in effect!")
+	security_announcement_black.Announce("Множественное нарушение условий содержаний! Вся служба безопасности обязана восстановить условия содеражния! Включена блокировка Зоны!", "Внимание! Объявляется черный код тревоги!")
 	notify_station()
 
 /decl/security_level/code_black/switching_down_to()
-	security_announcement_black.Announce("The Site has been secured from subversive elements. Security is to sweep the facility and recontain all dangerous SCPs immediately.", "Attention! Code Black alert procedures now in effect!")
+	security_announcement_black.Announce("Кризис смягчен! Вся служба безопасности обязана восстановить условия содеражния! Блокировка зоны активна!", "Внимание! Объявляется черный код тревоги!")
 	notify_station()
 
 /decl/security_level/code_pitchblack
-	name = "code pitchblack"
+	name = "Pitchblack alert (Invasion Group of Interest)"
 
 	light_max_bright = 0.75
 	light_inner_range = 0.1
@@ -259,21 +309,21 @@
 	overlay_status_display = "status_display_pitchblack"
 	alert_border = "alert_border_pitchblack"
 
-	description = "A hostile Group of Interest is invading or infiltrating the site."
+	description = "Проникновение вражеских связанных организаций."
 
 	var/static/datum/announcement/priority/security/security_announcement_pitchblack = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/AI/announcer/codeblack.ogg'))
 
 /decl/security_level/code_pitchblack/switching_up_to()
-	security_announcement_pitchblack.Announce("There have been confirmed reports of a hostile Group of Interest on-site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code pitchblack alert procedures now in effect!")
+	security_announcement_pitchblack.Announce("Подвтерждено вторжение вражеских агентов Связаннных Организаций. Вся служба безопасности должена быть в боевой готовности! Устранить враждебные элементы! " ,"Внимание! Объявлен код Мрак!")
 	notify_station()
 
 /decl/security_level/code_pitchblack/switching_down_to()
-	security_announcement_pitchblack.Announce("The destructive threat has been neutralized, however there is still a hostile Group of Interest within the facility.", "Attention! Code pitchblack alert procedures now in effect!")
+	security_announcement_pitchblack.Announce("Уничтожение предотвращено! Вся служба безопасности должена быть в боевой готовности! Устранить вражеских агентов Связаннных Организаций!", "Внимание! Объявлен код Мрак!")
 	notify_station()
 
 
 /decl/security_level/code_delta
-	name = "code delta"
+	name = "Delta alert (Risk imminent destruction)"
 	alarm_level = "on"
 
 	light_max_bright = 0.75
@@ -286,10 +336,10 @@
 	overlay_status_display = "status_display_delta"
 	alert_border = "alert_border_delta"
 
-	description = "The site is at risk of imminent destruction."
+	description = "Опасность неминуемого уничтожения Зоны."
 
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sounds/effects/siren.ogg'))
 
 /decl/security_level/code_delta/switching_up_to()
-	security_announcement_delta.Announce("The destruction of the site is imminent. All personnel are to obey instructions given by administrative staff. Any violation of these orders is punishable by immediate termination. This is not a drill.", "Attention! Code Delta evacuation procedures now in effect!")
-	notify_station() */
+	security_announcement_delta.Announce("Риск уничтожения объекта критический. Все сотрудники должны подчиняться указаниям административного персонала. Нарушение приказов карается незамедлительным устранением. Это не учебная тревога!", "Внимание! Объявлен код Дельта")
+	notify_station()
