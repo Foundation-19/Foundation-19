@@ -214,7 +214,7 @@
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/o5rep
 	requirements = list(EXP_TYPE_BUR = 300)
-	class = CLASS_B
+	class = CLASS_A
 	hud_icon = "hud05rep"
 	access = list(
 		ACCESS_ADMIN_LVL1,
