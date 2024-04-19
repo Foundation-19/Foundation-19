@@ -1,0 +1,6 @@
+#include "_SCP096.dm"
+
+#include "code/_macros.dm"
+#include "code/SCP096.dm"
+#include "code/SCP096_OBJ.dm"
+#include "code/keybinds.dm"

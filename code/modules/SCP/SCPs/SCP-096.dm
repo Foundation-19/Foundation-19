@@ -62,7 +62,7 @@
 		"????", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SCP_EUCLID, //Obj Class
 		"096", //Numerical Designation
-		SCP_MEMETIC|SCP_DISABLED //096 is disabled until traits are ported in as that is neccesary for it to pathfind through doors.
+		SCP_MEMETIC //096 is disabled until traits are ported in as that is neccesary for it to pathfind through doors.
 	)
 
 	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA
@@ -167,6 +167,7 @@
 // AI procs
 
 ///Handles 096 AI
+/*
 /mob/living/scp096/proc/handle_AI()
 	switch(current_state)
 		if(STATE_096_IDLE)
@@ -235,7 +236,7 @@
 		if(STATE_096_STAGGERED)
 			if(world.time > stagger_counter)
 				current_state = STATE_096_CHASING
-
+*/
 //Overrides
 
 /mob/living/scp096/Life()
@@ -268,7 +269,7 @@
 			oldViewers -= oldViewer
 
 	adjustBruteLoss(-10)
-	handle_AI()
+	//handle_AI()
 
 /mob/living/scp096/examine(mob/user, distance, infix, suffix)
 	if(user in GLOB.scramble_hud_users)
@@ -364,7 +365,7 @@
 /mob/living/scp096/movement_delay()
 	return -2
 
-#undef STATE_096_IDLE
+// #undef STATE_096_IDLE
 #undef STATE_096_SCREAMING
 #undef STATE_096_CHASING
 #undef STATE_096_SLAUGHTER
