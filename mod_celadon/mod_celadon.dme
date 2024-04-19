@@ -12,7 +12,7 @@
 
 // --- OBJECTS --- //
 #include "objects/_objects.dme"
-
+#include "_SCP096.dme"
 // --- MISC --- //
 
 
