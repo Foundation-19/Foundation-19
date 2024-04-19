@@ -139,7 +139,7 @@ english_only - whether to use traditional english letters only (for use in NanoU
 					if(english_only)
 						newletter += "*"
 					else
-						newletter = pick("ø", "Ð", "%", "æ", "µ")
+						newletter = pick("ш", "Р", "%", "ж", "µ")
 				distortion += 0.5 * distortion_speed
 			else if(prob(0.75 * distortion)) // Incomprehensible
 				newletter = pick("<", ">", "!", "$", "%", "^", "&", "*", "~", "#")
@@ -156,13 +156,13 @@ english_only - whether to use traditional english letters only (for use in NanoU
 					if("s")
 						newletter = "$"
 					if("e")
-						newletter = "£"
+						newletter = "Ј"
 					if("w")
-						newletter = "ø"
+						newletter = "ш"
 					if("y")
-						newletter = "¡"
+						newletter = "Ў"
 					if("x")
-						newletter = "æ"
+						newletter = "ж"
 					if("u")
 						newletter = "µ"
 		else

@@ -5,8 +5,8 @@ var/global/send_emergency_team = 0 // Used for automagic response teams
 								   // 'admin_emergency_team' for admin-spawned response teams
 
 /client/proc/response_team()
-	set name = "Dispatch Mobile Task Force"
-	set category = "Special Verbs"
+	set name = "Dispatch MTF"
+	set category = "Fun"
 	set desc = "Send an MTF squad"
 
 	if(!holder)
@@ -47,7 +47,7 @@ var/global/send_emergency_team = 0 // Used for automagic response teams
 /client/verb/JoinResponseTeam()
 
 	set name = "Join MTF Squad"
-	set category = "IC"
+	set category = "OOC"
 
 	if(!MayRespawn(1))
 		to_chat(usr, SPAN_WARNING("You cannot join the response team at this time."))

@@ -512,7 +512,7 @@ var/list/admin_verbs_mentors = list(
 	return
 
 /client/proc/colorooc()
-	set category = "Fun"
+	set category = "OOC"
 	set name = "OOC Text Color"
 	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change own OOC color", "Pick new color", "Reset to default", "Cancel")
@@ -569,7 +569,7 @@ var/list/admin_verbs_mentors = list(
 #undef AUTOBANTIME
 
 /client/proc/drop_bomb() // Some admin dickery that can probably be done better -- TLE
-	set category = "Special Verbs"
+	set category = "Fun"
 	set name = "Drop Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
 	if(!check_rights(R_FUN)) return
@@ -605,7 +605,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
-	set category = "Special Verbs"
+	set category = "Fun"
 
 	if(!check_rights(R_ADMIN))
 		return
@@ -615,7 +615,7 @@ var/list/admin_verbs_mentors = list(
 	SSstatistics.add_field_details("admin_verb","TBMS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/object_talk(msg as text) // -- TLE
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "oSay"
 	set desc = "Display a message to everyone who can hear the target"
 	if(mob.control_object)
@@ -734,7 +734,7 @@ var/list/admin_verbs_mentors = list(
 	SSstatistics.add_field_details("admin_verb","CMAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/change_security_level()
-	set name = "Set security level"
+	set name = "Fun"
 	set desc = "Sets the security level"
 	set category = "Fun"
 

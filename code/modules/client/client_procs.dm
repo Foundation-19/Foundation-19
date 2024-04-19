@@ -677,7 +677,7 @@
 
 /client/verb/toggle_status_bar()
 	set name = "Toggle Status Bar"
-	set category = "OOC"
+	set category = "Preferences"
 
 	show_status_bar = !show_status_bar
 

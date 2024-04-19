@@ -1,17 +1,17 @@
 #include "_modpack.dm"
 #include "_modpacks.dm"
 
+
 // #include "example/_example.dme"
 
 // --- MAINTENANCE --- //
-
 #include "_components/__components.dme"
-#include "SCP096/_SCP096.dme"
+#include "outfits/_outfits.dme"
 
 // --- ICONS --- //
 
 // --- OBJECTS --- //
-
+#include "objects/_objects.dme"
 
 // --- MISC --- //
 

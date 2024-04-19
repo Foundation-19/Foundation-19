@@ -238,7 +238,7 @@ var/list/ticket_panels = list()
 
 /client/verb/view_tickets()
 	set name = "View Tickets"
-	set category = "Admin"
+	set category = "Staff Help"
 
 	var/datum/ticket_panel/ticket_panel = new()
 	ticket_panels[src] = ticket_panel

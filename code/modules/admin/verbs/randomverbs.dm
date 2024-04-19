@@ -75,7 +75,7 @@
 
 
 /client/proc/cmd_admin_world_narrate() // Allows administrators to fluff events a little easier -- TLE
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "Global Narrate"
 	set desc = "Narrate to everyone."
 
@@ -152,7 +152,7 @@
 
 //Condenced version of the mob targeting narrates
 /client/proc/cmd_admin_narrate(atom/A)
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "Narrate"
 	set desc = "Selection of narrates targeting a mob."
 
@@ -211,7 +211,7 @@
 
 // Local narrate, narrates to everyone who can see where you are regardless of whether they are blind or deaf.
 /client/proc/cmd_admin_local_narrate()
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "Local Narrate"
 	set desc = "Narrate to everyone who can see the turf your mob is on."
 
@@ -288,7 +288,7 @@
 	SSstatistics.add_field_details("admin_verb","GOD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_notarget(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Debug"
 	set name = "Notarget"
 	set desc = "Makes the target mob become invisible to all simple mobs."
 
@@ -374,7 +374,7 @@ Ccomp's first proc.
 	. = sortAssoc(.)
 
 /client/proc/allow_character_respawn(selection in get_ghosts_by_key())
-	set category = "Special Verbs"
+	set category = "Server"
 	set name = "Allow player to respawn"
 	set desc = "Allows the player bypass the wait to respawn or allow them to re-enter their corpse."
 
@@ -494,7 +494,7 @@ Ccomp's first proc.
 	SSstatistics.add_field_details("admin_verb","IONC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_rejuvenate(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "Rejuvenate"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -513,7 +513,7 @@ Ccomp's first proc.
 	SSstatistics.add_field_details("admin_verb","REJU") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_create_centcom_report()
-	set category = "Special Verbs"
+	set category = "Fun"
 	set name = "Create Command Report"
 
 	if(!holder)
@@ -681,7 +681,7 @@ Ccomp's first proc.
 	return
 
 /client/proc/cmd_admin_check_contents(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "Check Contents"
 
 	var/list/L = M.get_contents()
@@ -721,7 +721,7 @@ Ccomp's first proc.
 */
 
 /client/proc/toggle_view_range()
-	set category = "Special Verbs"
+	set category = "Admin"
 	set name = "Change View Range"
 	set desc = "switches between 1x and custom views"
 
@@ -735,7 +735,7 @@ Ccomp's first proc.
 
 /client/proc/admin_call_shuttle()
 
-	set category = "Admin"
+	set category = "Fun"
 	set name = "Call Evacuation"
 
 	if(!SSticker.mode || !evacuation_controller)
@@ -757,7 +757,7 @@ Ccomp's first proc.
 	return
 
 /client/proc/admin_cancel_shuttle()
-	set category = "Admin"
+	set category = "Fun"
 	set name = "Cancel Evacuation"
 
 	if(!check_rights(R_ADMIN))	return

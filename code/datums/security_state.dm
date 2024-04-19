@@ -1,4 +1,4 @@
-/decl/security_state
+/* /decl/security_state			=# CELADON_CHANGES => mod_celadon\_components\code\security_state.dm #=
 	// When defining any of these values type paths should be used, not instances. Instances will be acquired in /New()
 
 	// The security level in which the destruction of the site is likely. Not selectable by personnel; set internally or by admins
@@ -292,4 +292,4 @@
 
 /decl/security_level/code_delta/switching_up_to()
 	security_announcement_delta.Announce("The destruction of the site is imminent. All personnel are to obey instructions given by administrative staff. Any violation of these orders is punishable by immediate termination. This is not a drill.", "Attention! Code Delta evacuation procedures now in effect!")
-	notify_station()
+	notify_station() */
