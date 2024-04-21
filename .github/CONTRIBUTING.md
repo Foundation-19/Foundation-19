@@ -1,91 +1,109 @@
-# CONTRIBUTING
-
-1. [Reporting Issues](#reporting-issues)
-2. [Introduction](#introduction)
-3. [Getting Started](#getting-started)
-4. [Meet the Team](#meet-the-team)
-	1. [Headcoder](#headcoder)
-	2. [Maintainers](#maintainers)
-	3. [Issue Managers](#issue-managers)
-5. [Specifications](#specifications)
-6. [Pull Request Process](#pull-request-process)
-7. [Porting features/sprites/sounds/tools from other codebases](#porting-featuresspritessoundstools-from-other-codebases)
-8. [Banned content](#banned-content)
-9. [A word on Git](#a-word-on-git)
-
-## Reporting Issues
-If you ever encounter a bug in-game, the best way to let a coder know about it is with our [GitHub Issue Tracker](https://github.com/Foundation-19/Foundation-19/issues). Please make sure you use the supplied issue template, and include the round ID for the server.
-
-(If you don't have an account, making a new one takes only one minute.)
-
-If you have difficulty, ask for help in the #coding-general channel on our discord.
-
-## Introduction
-
-Hello and welcome to Foundation 19's contributing page. You are here because you are curious or interested in contributing - thank you! Everyone is free to contribute to this project as long as they follow the simple guidelines and specifications below; at Foundation 19, we strive to maintain code stability and maintainability, and to do that, we need all pull requests to hold up to those specifications. It's in everyone's best interests - including yours! - if the same bug doesn't have to be fixed twice because of duplicated code.
-
-First things first, we want to make it clear how you can contribute (if you've never contributed before), as well as the kinds of powers the team has over your additions, to avoid any unpleasant surprises if your pull request is closed for a reason you didn't foresee.
-
-## Getting Started
-
-Foundation 19 doesn't have a list of goals and features to add; we instead allow freedom for contributors to suggest and create their ideas for the game. That doesn't mean we aren't determined to squash bugs, which unfortunately pop up a lot due to the deep complexity of the game. Here are some useful starting guides, if you want to contribute or if you want to know what challenges you can tackle with zero knowledge about the game's code structure.
-
-If you want to contribute the first thing you'll need to do is [set up Git](http://tgstation13.org/wiki/Setting_up_git) so you can download the source code.
-
-We have a [list of guides on the wiki](https://wiki.tegu.cupcore.net/view/Guides#Development_and_Contribution_Guides) that will help you get started contributing to Foundation 19 with Git and Dream Maker. For beginners, it is recommended you work on small projects like bugfixes at first. If you need help learning to program in BYOND, check out this [repository of resources](http://www.byond.com/developer/articles/resources).
-
-There is an open list of approachable issues for [your inspiration here](https://github.com/Foundation-19/Foundation-19/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+First+Issue%22).
-
-You can of course, as always, ask for help on the Discord channels or the forums. We're just here to have fun and help out, so please don't expect professional support.
-
-## Meet the Team
-
-### Headcoder
-
-The Headcoder is responsible for controlling, adding, and removing maintainers from the project. In addition to filling the role of a normal maintainer, they have sole authority on who becomes a maintainer, as well as who remains a maintainer and who does not.
-
-### Maintainers
-
-Maintainers are quality control. If a proposed pull request doesn't meet the following specifications, they can request you to change it, or simply just close the pull request. Maintainers are required to give a reason for closing the pull request.
-
-Maintainers can revert your changes if they feel they are not worth maintaining or if they did not live up to the quality specifications.
+# Contributing
 
 <details>
-<summary>Maintainer Guidelines</summary>
+<summary> Содержание</summary>
 
-These are the few directives we have for project maintainers.
+- [Основное](#основное)
+- [Создание PR](#создание-pull-request)
+- [Continuous Integration](#continuous-integration)
+- [Процесс прохождения Code Review](#процесс-прохождения-code-review)
+- [Договоренности по написанию кода](#договоренности-по-написанию-кода)
+  - [Правила именования переменных и функций](#правила-именования-переменных-и-функций)
+  - [Написание функций](#написание-функций)
+  - [Общие правила](#общие-правила)
+- [Разработка безопасного кода](#разработка-безопасного-кода)
+- [Файлы](#файлы)
+- [Фишки и лайфхаки Dream Maker](#фишки-и-лайфхаки-dream-maker)
 
-- Do not merge PRs you create, unless it is a follow-up fix to the previous one.
-- Do not merge PRs until 24 hours have passed since it was opened. Exceptions include:
-  - Emergency or follow-up fixes.
-    - Try to get secondary maintainer approval before merging if you are able to.
-  - Under explicit permission from Head Coder.
-- Do not merge PRs that contain content from the [banned content list](./CONTRIBUTING.md#banned-content).
-
-These are not steadfast rules as maintainers are expected to use their best judgement when operating.
 </details>
 
-### Developers
+# Основное
 
-Essentially experienced contributors and/or people that strive to become Maintainers. Their primary task on repository is helping other contributors and setting up the labels on Pull Requests and Issues.
+- Официальный язык нашего сообщества - русский. Коммиты, пулл реквесты и ишью стоит писать на нём, либо на английском. Однако в исходных кодах русский язык запрещен в связи с проблемами, связанными с кодировками.
+- Мы ожидаем, что вы поможете нам поддерживать код, который вы добавили. Скорее всего мы к вам обратимся в случае возникновения каких-то проблем, связанных с вашими изменениями, в том числе рантаймами или багами.
 
-Our team is entirely voluntary, as such we extend our thanks to maintainers, developers, and contributors alike for helping keep the project alive.
+# Создание Pull Request
 
+Здесь приведен небольшой чек-лист важных вещей, на которые обязательно нужно обращать внимание при открытии PR'а. Пренебрежение этим разделом может увеличить время проверки ваших изменений и принятия в сборку вплоть до бесконечности!
 
-## Specifications
+- **Заголовок PR'а - цель его изменений.**
+  У любого PR'а должна быть конкретная цель, которая должна быть указана в заголовке. PR не должен содержать изменений, которые не относятся к указанной цели. Если цель PR'а слишком большая, чтобы уместить её в одном заголовке - подумайте над тем, чтобы разбить свой PR на более мелкие части.
+- **Изменения востребованы.**
+  Перед началом разработки убедитесь, что то, что вы хотите сделать - востребовано и будет принято. Для этого нужно создать предложку в дискорде и дождаться её прохождения. Также изменения очевидно востребованы, если на них есть соответствующий ишью. Чтобы ваши изменения ТОЧНО были приняты - лучше убедиться в том, что у вас есть соответстующий ишью с подтверждением, либо предложка, так как любые договоренности в дискорде могут потеряться или оказаться неактуальными.
+- **Подробное описание.**
+  В описании PR'а должно быть подробное описание того, зачем он нужен и что в нем происходит. PR не должен содержать изменений, о которых ничего не написано в описании.
+- **Привяжите ишью.**
+  Если PR решает какие-то ишью, то они должны быть указаны в описании специальным образом, например, `close #23`, чтобы Github смог их автоматически привязать к вашим изменениям. Подробнее можно почитать тут: https://help.github.com/articles/closing-issues-via-commit-messages.
+- **Проверьте свой код.**
+  Открывайте PR только если вы уверены в его работоспособности. Это означает, что вы проверили каждую строчку своих изменений, а также **проверили свои изменения локально**, запустив сервер на своем компьютере. Если что-то невозможно проверить полностью или вы считаете, что на какую-то часть изменений нужно обратить пристальное внимание проверяющих, то укажите это отдельно в описании. Конечно мы также будем проверять ваши изменения, но вы не должны полагаться на то, что ваши баги заметит кто-то другой и исправит за вас.
+- **Ваш код соответствует принятым договоренностям по написанию кода.**
+  Подробнее смотрите раздел "[Договоренности по написанию кода](#договоренности-по-написанию-кода)" ниже.
+- **Ваш код - модульный.** Изменения в кода игры вне модов очень не приветствуются и скорее всего будут отклонены. Код обязан соотвествовать [руководству по модуляризации](/mods/README.md). 
 
-As mentioned before, you are expected to follow these specifications in order to make everyone's lives easier. It'll save both your time and ours, by making sure you don't have to make any changes and we don't have to ask you to. Thank you for reading this section!
+# Continuous Integration
 
-### Object Oriented Code
-As BYOND's Dream Maker (henceforth "DM") is an object-oriented language, code must be object-oriented when possible in order to be more flexible when adding content to it. If you don't know what "object-oriented" means, we highly recommend you do some light research to grasp the basics.
+Каждый PR проходит проверку на несколько вещей:
 
-### All BYOND paths must contain the full path
-(i.e. absolute pathing)
+- Наличие и корректность чейнджлога.
+- Наличие ошибок найденные статическим анализатором DreamChecker.
+- Наличие нарушений стиля кода.
+- Соответствие [руководству по модуляризации](/mods/README.md).
 
-DM will allow you nest almost any type keyword into a block, such as:
+Наличие и корректность чейнджлога проверяется при каждом открытии PR'а, редактировании текста в теле PR'а, добавлении и удаления меток на PR.
+
+# Процесс прохождения Code Review
+
+- **Аппрув разработчиков.**
+	Чтобы PR был принят - он должен быть аппрувнут активными разработчиками сервера.
+- **Аппрув администрации и игроков.**
+	Если в PR есть изменения игровой логики, то он должен быть аппрувнут голосованием, либо администрацией. Аппрув не нужен, если PR выполнен в рамках ишью, который был ранее аппрувнут голосованием/администрацией. Также аппрув не нужен для фикса багов и любых изменений, которые не затрагивают игровой опыт игроков (рефакторинг, оптимизации, фичи для администраторов и подобное).
+- **Проверка на локальной сборке.**
+	Принимаются только PR'ы, проверенные локально. Если сам разработчик не проверяет свои изменения, то проверка проходит тщательнее, из-за чего принятие изменений затягивается.
+- **Вливание изменений в основную ветку.**
+	Если коммиты в PR соответствуют правилам именования, при мерже не возникает конфликтов и каждый коммит по отдельности не ломает сборку, то принимать следует с помощью rebase. Если коммиты в PR соответствуют правилам именования, но принять её с помощью rebase невозможно т.к. на каких-то коммитах из PR сборка сломана, или же из-за конфликтов, то принимать нужно с помощью merge. Если хотя бы один коммит в PR не соответствует правилам именования, то весь PR может быть принят только через squash с названием, соответствующим правилам.
+- **Вливание изменений на сервер.**
+	Ветка разработки называется `beta-dev`. Перед обновлением серверов проверенные изменения из `beta-dev` вливаются в репозиторий `Foundation-19/stable`. В обоих репозиториях должна поддерживаться чистая история коммитов, которые соответствуют правилам именования. На сервер изменения должны попадать вместе с чейнжлогом для максимального оповещения игроков о статусе разработки.
+
+# Договоренности по написанию кода
+
+> By ChaoticOnyx
+
+## Правила именования переменных и функций
+
+### Имена должны передавать намерения программиста
+
+Имя переменной, функции или типа должно сообщить, почему эта переменная существует, что она делает и как используется. Если имя требует дополнительных комментариев, значит, оно не передает намерений программиста. Лучше написать, что именно измеряется и в каких именно единицах.
+
+Не бойтесь использовать длинные имена: длинное содержательное имя лучше короткого невразумительного.
+
+Пример хорошего названия переменной: days_since_creation;
+Цель: убрать неочевидность.
+
+### Избегайте неинформативных слов в названиях
+
+Неинформативные слова избыточны. Слово variable никогда не должно встречаться в именах переменных. Слово object никогда не должно встречаться в именах объектов. Чем имя name_string лучше name? Разве имя может быть, скажем, вещественным числом?
+
+### Избегайте сокращений, старайтесь выбирать удобопроизносимые имена
+
+russian_to_utf намного лучше rustoutf.
+
+### Выбирайте имена, удобные для поиска
+
+Чем дольше время жизни переменной - тем длиннее должно быть её название. Однобуквенные имена могут использоваться только для локальных переменных в коротких методах.
+
+### Имена типов
+
+Имена типов должны представлять собой существительные и их комбинации: traitor, profession, id_card и request_parser. Старайтесь не использовать в именах классов такие слова, как manager, processor, data или info. Имя класса не должно быть глаголом.
+
+### Имена функций
+
+Имена методов представляют собой глаголы или глагольные словосочетания: explode_station, delete_ian, save и т. д. Методы чтения/записи образуются из значения и префикса get, set и is.
+
+### Используйте абсолютные пути
+
+DM позволяет писать код блоками:
 
 ```DM
-// Not our style!
 datum
 	datum1
 		var
@@ -106,145 +124,201 @@ datum
 				proc3()
 					code
 			proc2()
-				. = ..()
+				..()
 				code
 ```
 
-The use of this is not allowed in this project as it makes finding definitions via full text searching next to impossible. The only exception is the variables of an object may be nested to the object, but must not nest further.
+Такой способ написания делает невозможным текстовый поиск функции или типа по коду. Единственное исключение - внутри блока описания типа можно определять переменные.
 
-The previous code made compliant:
+Тот же код, написанный правильно:
 
 ```DM
-// Matches Tegu Station style.
-/datum/datum_1
-	var/var_name_1
-	var/var_name_2
-	var/static/var_name_3
-	var/static/var_name_4
+/datum/datum1
+	var/varname1
+	var/varname2
+	var/static/varname3
+	var/static/varname4
 
-/datum/datum1/proc/Proc1()
+/datum/datum1/proc/proc1()
 	code
-
-/datum/datum1/proc/Proc2()
+/datum/datum1/proc/proc2()
 	code
-
 /datum/datum1/datum2
-	var_name_1 = 0
-
-/datum/datum1/datum2/proc/Proc3()
+	varname1 = 0
+/datum/datum1/datum2/proc/proc3()
 	code
+/datum/datum1/datum2/proc2()
+	..()
+	code
+```
 
-/datum/datum1/datum2/Proc2()
+## Написание функций
+
+### Компактность
+
+- **Первое правило:** функции должны быть компактными.
+- **Второе правило:** функции должны быть еще компактнее.
+
+Серьезные программисты работающие в реальном мире ценой многих проб и ошибок вывели, что функции должны быть очень маленькими. Желательно, чтобы длина фукнции не превышала 20 строк. В условиях разработки SS13 кому-то это может показаться излишним, но даже в наших проектах можно заметить, что чем длиннее функция тем сложнее её поддерживать, тем больше в ней багов и тем меньшее количество людей хочет в неё лезть и с ней разбираться.
+
+### Правило одной операции
+
+Функция должна выполнять только одну операцию. Она должна выполнять ее хорошо. И ничего другого она делать не должна. Если функция выполняет только те действия, которые находятся на одном уровне под объявленным именем функции, то эта функция выполняет одну операцию.
+
+### Функция не должна разбиваться на секции
+
+Функцию, выполняющую только одну операцию, невозможно осмысленно разделить на секции.
+
+### Разделение команд и запросов
+
+Функция должна что-то делать или отвечать на какой-то вопрос, но не одновременно. Либо функция изменяет состояние объекта, либо возвращает информацию об этом объекте. Совмещение двух операций часто создает путаницу.
+
+## Общие правила
+
+### Комментарии
+
+Закомметированный код запрещен.
+
+Запрещены комментарии отвечающие на вопрос "Что делает этот код?". Вместо этого используете методы для увеличения читаемости кода выше, чтобы код объяснял себя сам. Разрешены комментарии отвечающие на вопрос "Зачем этот код нужен?".
+
+Также можно писать комментарии типа "TODO" и "FIXME".
+
+### Не избавляйтесь от проверки типов
+
+Запрещено использовать оператор `:`. Всегда явно преобразуйте переменную к конкретному типу.
+
+Плохой пример:
+
+```DM
+var/something_general_object = ...
+something_general_object:specific_type_func()
+```
+
+Мы узнаем, что у something_general_object нет такой функции только когда запустим сервер. Более того, когда мы это узнаем - будет непонятным что это за тип, почему у него было этой функции и какой тип на самом деле ожидался. С другой стороны, в коде:
+
+```DM
+var/something_general_object
+var/more/specified/type/O = object
+ASSERT(istype(O)) // bad argument
+O.specific_type_funс()
+```
+
+Мы явно указываем какой тип мы ожидаем и статически проверяем, что у этого типа есть такая функция.
+
+### Используйте ASSERT для проверок аргументов функций
+
+Если ваша функция расчитана на то, чтобы работать только с аргументами определенного типа или какими-то конкретными значениями - используйте ASSERT, чтобы явно это указать. Если, вдруг, случится так, что откуда-то в функцию приедет неожиданный аргумент - лучше сразу зарепортить об этом рантаймом и выйти из функции, чем пойти дальше, сделать что-то неожиданное и, может быть, даже не оставить следа о том, что фукнция сработала не так, как нужно.
+
+Имейте в виду, что ASSERT генерирует рантайм, что ведет к выходу из функции с возвратом null. Функция выше по стеку продолжит свое выполнение с полученным null.
+
+Плохой пример:
+
+```DM
+/datum/controller/subsystem/open_space/proc/add_turf(turf/T, ...)
+	if(!isturf(T))
+		return
+	...
+```
+
+Если мы в функцию `add_turf` передали аргументом не turf - это очевидный баг. С таким вариантом реализации этот баг останется незамеченным и он может привести к неожиданным проблемам. Но если мы напишем так:
+
+```DM
+/datum/controller/subsystem/open_space/proc/add_turf(turf/T, ...)
+	ASSERT(isturf(T))
+	...
+```
+
+То мы все также выйдем из функции, вернув null, но при этом запишем рантайм, который мы увидим в логах, благодаря чему сможем обнаружить и пофиксить изначальный баг, который приводит к тому, что сюда аргументом передается неверный тип.
+
+### Пути типов всегда должны начинаться с /
+
+Например: `/datum/thing`, вместо `datum/thing`
+
+### Пути типов всегда должны быть в нижнем регистре
+
+Например: `/datum/thing/blue`, вместо `datum/thing/BLUE` или `datum/thing/Blue`
+
+### Использование ключевого слова `var`
+
+Локальные переменные всегда определяйте в формате `var/type/name`, вместо `var type/name`. В аргументах функций оно избыточно, поэтому всегда опускаем и пишем просто `type/name`.
+
+### Табы vs пробелы
+
+Для индентации (отступ до текущего блока кода) всегда используем только табы. После индентации может быть выравнивание пробелами (не выравнивайте табами - иначе разъедется в редакторах с разной длиной таба).
+
+### Избегайте дублирования кода
+
+Когда вы копируете один и тот же код в разные места - появляется необходимость одинаково поддерживать этот код в двух местах. При любом изменении оригинального кода надо помнить о копии этого кода в другом месте и зачастую вносить изменения и туда.
+
+Чтобы избежать подобных проблем используйте наследование объектов друг от друга или же просто вынесите необходимую логику в отдельную функцию.
+
+### Предпочитайте `Initialize()` вместо `New()` для atom (объектов, размещаемых на карте).
+
+Контроллеры, используемые в нашей сборке, должны справляться с длительными операциями и лагами, но они не могут контролировать то, что происходит во время загрузки карты, когда для всех объектов вызывается New. Для любых новых объектов, без явной необходимости, используйте `Initialize`, чтобы сделать все, что вы хотели сделать в `New`. Это уменьшает количество функций вызываемых на этапе загрузки карты. Чтобы узнать больше про то, как работает `Initialize`, смотрите [`code/game/atoms.dm`](https://github.com/MrCat15352/Foundation-19/blob/beta-dev/code/game/atoms.dm)
+
+**NB:** Важно понимать то, как работают Initialize и последовательность их выполнения относительно New, иначе можно [словить приколы](https://github.com/ChaoticOnyx/OnyxBay/issues/3817). Initialize вызывается в /atom/New. Соответственно при создании объекта сначала вызывается New последнего типа в иерархии наследования. Дальше через ..() (если они, конечно, есть) последовательно вызываются New более ранних по иерархии типов вплоть до /atom/New, где вызывается /atom/Initialize, который точно также начинает выполняться с последнего переопределения в иерархии наследования объектов.
+
+Таким образом получается, что в любом New, все что находится после ..() - вызывается после всех Initialize в цепочке наследования, а все что написано до ..() - работает перед всеми Initialize в цепочке наследования. Из этого следует, что если в вашей иерархии типов перемешиваются New и Initialize, то порядок их вызова может быть немного непредсказуемым, что вызывает приколы вроде перезаписи переменной, которая определяется в чайлдовом типе, в Initialize, значением из родителького объекта, из New. Пример и подробный разбор такой баги можно [посмотреть здесь](https://github.com/ChaoticOnyx/OnyxBay/issues/3817).
+
+Если вы не очень поняли что написано выше, то просто следуйте одному простому правилу:
+
+**Старайтесь не перемешивать New и Initialize в иерархиях объектов. Если меняете один New на Initialize - меняйте сразу всей иерархии. Если в иерархии используются New, то проще использовать New в новом объекте этой иерархии**, однако в плане производительности - лучше переписать всю иерархию на Initialize.
+
+### Удаление объектов
+
+Все объекты должны всегда помечаться к удалению с помощью `qdel`.
+
+Использование `del` запрещено, так как эта функция запускает довольно требовательную процедуру поиска и обнуления ссылок на объект по всему коду.
+
+Просто "бросать" объекты без вызова `qdel` не рекомендуется, так как в таком случае не будет вызван Destroy, который, даже если еще не реализован для конкретного объекта, кто-то может захотеть добавить позже.
+
+Отдельно важно помнить про случаи с циклическими зависимостями, когда объекты хранят ссылки друг на друга циклически. Если такие объекты просто пометить к удалению через `qdel`, то объекты никогда не будут удалены, так как сборщик мусора будет ждать, пока ссылки на объекты закончатся (а наши объекты циклически указывают друг на друга - поэтому ссылки никогда не закончатся). В таком случае нужно делать не только помечать объекты к удалению через `qdel`, но и занулять какую-то часть ссылок так, чтобы избавиться от цикла. С помощью макроса `QDEL_NULL(obj)` можно одной строчкой пометить `obj` к удалению и занулить ссылку.
+
+Пример реализации циклических объектов:
+
+```DM
+/mob/living/simple_animal
+	...
+	var/datum/mob_ai/mob_ai
+
+/mob/living/simple_animal/Initialize()
 	. = ..()
-	code
+	mob_ai = new()		// simple_mob создает и владеет своим искусственным интеллектом
+	mob_ai.holder = src	// искусственному интеллекту нужно знать кем он управляет
+				// получили циклическую ссылку simple_mob <-> mob_ai объектов друг на друга
+
+/mob/living/simple_animal/Destroy()
+	QDEL_NULL(mob_ai)	// когда моба удаляют с карты нам нужно разорвать циклическую ссылку. Убиваем ссылку на mob_ai.
+				// в итоге на mob_ai больше никто в мире не ссылается, сборщик мусора его собирает, а следом собирает simple_mob.
+	// the same as:
+	// 	qdel(mob_ai)	// тоже самое, что делает макрос QDEL_NULL в раскрытом виде
+	// 	mob_ai = null
+
+	return ..()
 ```
 
-### All `Process` procs need to make use of delta-time and be frame independent
+### Перемещайте объекты с помощью forceMove(newpos)
 
-In a lot of our older code, `Process()` is frame dependent. Here's some example mob code:
+В отличие от `loc = newpos`, `forceMove` может переопределяться и в нем написано много важной логики, которая нужна при перемещении объектов из одного места в другое.
+
+### Не используйте магические значения
+
+В коде не должно быть "брошенных" числовых/строчных или каких-либо еще значений, смысл которых неясен из контекста или которые могут быть переиспользованы. Определяйте их через макрос, если они нужны в глобальном скоупе, или создавайте локальную переменную с понятным названием.
+
+Пример:
 
 ```DM
-/mob/testmob
-	var/health = 100
-	var/health_loss = 4 //We want to lose 2 health per second, so 4 per SSmobs process
-
-/mob/testmob/Process(delta_time) //SSmobs runs once every 2 seconds
-	health -= health_loss
-```
-
-As the mobs subsystem runs once every 2 seconds, the mob now loses 4 health every process, or 2 health per second. This is called frame dependent programming.
-
-Why is this an issue? If someone decides to make it so the mobs subsystem processes once every second (2 times as fast), your effects in process() will also be two times as fast. Resulting in 4 health loss per second rather than 2.
-
-How do we solve this? By using delta-time. Delta-time is the amount of seconds you would theoretically have between 2 process() calls. In the case of the mobs subsystem, this would be 2 (As there is 2 seconds between every call in `process()`). Here is a new example using delta-time:
-
-```DM
-/mob/testmob
-	var/health = 100
-	var/health_loss = 2 //Health loss every second
-
-/mob/testmob/process(delta_time) //SSmobs runs once every 2 seconds
-	health -= health_loss * delta_time
-```
-
-In the above example, we made our health_loss variable a per second value rather than per process. In the actual process() proc we then make use of deltatime. Because SSmobs runs once every  2 seconds. Delta_time would have a value of 2. This means that by doing health_loss * delta_time, you end up with the correct amount of health_loss per process, but if for some reason the SSmobs subsystem gets changed to be faster or slower in a PR, your health_loss variable will work the same.
-
-For example, if SSmobs is set to run once every 4 seconds, it would call process once every 4 seconds and multiply your health_loss var by 4 before subtracting it. Ensuring that your code is frame independent.
-
-### No overriding type safety checks
-The use of the : operator to override type safety checks is not allowed. You must cast the variable to the proper type.
-
-### Type paths must begin with a `/`
-eg: `/datum/thing`, not `datum/thing`
-
-### Type paths must be snake case
-eg: `/datum/blue_bird`, not `/datum/BLUEBIRD` or `/datum/BlueBird` or `/datum/Bluebird` or `/datum/blueBird`
-
-### Datum type paths must begin with "datum"
-In DM, this is optional, but omitting it makes finding definitions harder.
-
-### Do not use text/string based type paths
-It is rarely allowed to put type paths in a text format, as there are no compile errors if the type path no longer exists. Here is an example:
-
-```DM
-//Good
-var/path_type = /obj/item/baseball_bat
-
-//Bad
-var/path_type = "/obj/item/baseball_bat"
-```
-
-### Use `var/name` format when declaring variables
-While DM allows other ways of declaring variables, this one should be used for consistency.
-
-### Variables paths must be snake case
-Same as above for type paths: `var/health_loss`, not `var/HealthLoss` or `var/healthLoss`
-
-### Procs(Functions) must be in CamelCase
-eg: `/mob/proc/StartAbility()`, not `mob/proc/start_ability()`
-
-### Tabs, not spaces
-You must use tabs to indent your code, NOT SPACES.
-
-You may use spaces to align something, but you should tab to the block level first, then add the remaining spaces.
-
-### No hacky code
-Hacky code, such as adding specific checks, is highly discouraged and only allowed when there is ***no*** other option. (Protip: "I couldn't immediately think of a proper way so thus there must be no other option" is not gonna cut it here! If you can't think of anything else, say that outright and admit that you need help with it. Maintainers and Developers exist for exactly that reason.)
-
-You can avoid hacky code by using object-oriented methodologies, such as overriding a function (called "procs" in DM) or sectioning code into functions and then overriding them as required.
-
-### No duplicated code
-Copying code from one place to another may be suitable for small, short-time projects, but Foundation 19 is a long-term project and highly discourages this.
-
-Instead you can use object orientation, or simply placing repeated code in a function, to obey this specification easily.
-
-### Startup/Runtime tradeoffs with lists and the "hidden" init proc
-First, read the comments in [this BYOND thread](http://www.byond.com/forum/?post=2086980&page=2#comment19776775), starting where the link takes you.
-
-There are two key points here:
-
-1) Defining a list in the variable's definition calls a hidden proc - init. If you have to define a list at startup, do so in New() (or preferably Initialize()) and avoid the overhead of a second call (Init() and then New())
-
-2) It also consumes more memory to the point where the list is actually required, even if the object in question may never use it!
-
-Remember: although this tradeoff makes sense in many cases, it doesn't cover them all. Think carefully about your addition before deciding if you need to use it.
-
-### Prefer `Initialize()` over `New()` for atoms
-Our game controller is pretty good at handling long operations and lag, but it can't control what happens when the map is loaded, which calls `New` for all atoms on the map. If you're creating a new atom, use the `Initialize` proc to do what you would normally do in `New`. This cuts down on the number of proc calls needed when the world is loaded.
-While we normally encourage (and in some cases, even require) bringing out of date code up to date when you make unrelated changes near the out of date code, that is not the case for `New` -> `Initialize` conversions. These systems are generally more dependant on parent and children procs so unrelated random conversions of existing things can cause bugs that take months to figure out.
-
-### No magic numbers or strings
-This means stuff like having a "mode" variable for an object set to "1" or "2" with no clear indicator of what that means. Make these #defines with a name that more clearly states what it's for. For instance:
-````DM
 /datum/proc/do_the_thing(thing_to_do)
 	switch(thing_to_do)
 		if(1)
 			(...)
 		if(2)
 			(...)
-````
-There's no indication of what "1" and "2" mean! Instead, you'd do something like this:
-````DM
+```
+
+Здесь неясно, что означают "1" и "2"! Вместо этого можно было бы написать:
+
+```DM
 #define DO_THE_THING_REALLY_HARD 1
 #define DO_THE_THING_EFFICIENTLY 2
 /datum/proc/do_the_thing(thing_to_do)
@@ -253,347 +327,231 @@ There's no indication of what "1" and "2" mean! Instead, you'd do something like
 			(...)
 		if(DO_THE_THING_EFFICIENTLY)
 			(...)
-````
-This is clearer and enhances readability of your code! Get used to doing it!
+```
 
-### Control statements
-(if, while, for, etc)
+Так получается гораздо понятнее, что увеличивает читаемость вашего кода.
 
-* No control statement may contain code on the same line as the statement (`if (blah) return`)
-* All control statements comparing a variable to a number should use the formula of `thing` `operator` `number`, not the reverse (eg: `if (count <= 10)` not `if (10 >= count)`)
+Еще пример:
 
-### Spaces after control statements
-DO NOT put spaces after control statements:
-This is bad:
-````DM
-	if (thing1 != thing2)
-		return
-````
-This is good:
-````DM
-	if(thing1 != thing2)
-		return
-````
+```DM
+/datun/gamemode/proc/create_events()
+	events.Add(new /datum/event(90, list(/datum/role/hos)))
+	events.Add(new /datum/event(50, list(/datum/role/officer)))
+```
 
-### Use early return
-Do not enclose a proc in an if-block when returning on a condition is more feasible
-This is bad:
-````DM
-/datum/datum1/proc/Proc1()
-	if(thing_1)
-		if(!thing_2)
-			if(thing_3 == 30)
-				do stuff
-````
-This is good:
-````DM
-/datum/datum1/proc/Proc1()
-	if(!thing_1)
-		return
-	if(thing_2)
-		return
-	if(thing_3 != 30)
+В примере понятно, что мы задаем ивенты для какого-то игрового режима, однако непонятно что за аргументы передаются внутрь - это как раз "магические" значения. Чтобы сделать понятнее, можно, например, явно указать переменные, которые мы присваиваем:
+
+```DM
+/datun/gamemode/proc/create_events()
+	events.Add(new /datum/event(chance=90, requires_roles=list(/datum/role/hos)))
+	events.Add(new /datum/event(chance=50, requires_roles=list(/datum/role/officer)))
+```
+
+### Операторы контроля выполнения
+
+(if, while, for и другие)
+
+- Все операторы контроля выполнения не должны содержать другого кода на той же строчке (`if (blah) return`)
+- Все операторы контроля выполнения, сравнивающие переменную с каким-то значением, должны использовать формулу `переменная` `оператор` `значение`, не наоборот (например: `if (count <= 10)`, вместо `if (10 >= count)`)
+
+### Оператор in
+
+Оператор in имеет наименьший приоритет (это не указано в рефе), поэтому его всегда нужно заключать в скобки: `if(A && (A in foo_list))`.
+
+### Оператор as запрещено использовать в проках, не использующихся как verb
+
+Потому что не имеет смысла
+
+### Используйте макросы оформления текста SPAN_NOTICE, SPAN_WARNING, SPAN_DANGER и другие
+
+Вместо `to_chat(usr, "<span class="warning">[text]</span>")` используйте `to_chat(usr, SPAN_WARNING(text))`.
+
+### Используйте ранний return
+
+Не стоит строчить многоуровневые конструкции из блоков if, когда того же результата можно достичь ранним возвратом из функции
+
+Вот так делать не стоит:
+
+```DM
+/datum/datum1/proc/proc1()
+	if (thing1)
+		do stuff
+		if (!thing2)
+			do more stuff
+			if (thing3 == 30)
+				do extra stuff
+```
+
+А так уже лучше:
+
+```DM
+/datum/datum1/proc/proc1()
+	if (!thing1)
 		return
 	do stuff
-````
-This prevents nesting levels from getting deeper then they need to be.
-
-### Use our time defines
-
-The codebase contains some defines which will automatically multiply a number by the correct amount to get a number in deciseconds. Using these is preffered over using a literal amount in deciseconds.
-
-The defines are as follows:
-* SECONDS
-* MINUTES
-* HOURS
-
-This is bad:
-````DM
-/datum/datum1/proc/Proc1()
-	if(do_after(mob, 15))
-		mob.DoThing()
-````
-
-This is good:
-````DM
-/datum/datum1/proc/Proc1()
-	if(do_after(mob, 1.5 SECONDS))
-		mob.DoThing()
-````
-
-### Getters and setters
-
-* Avoid getter procs. They are useful tools in languages with that properly enforce variable privacy and encapsulation, but DM is not one of them. The upfront cost in proc overhead is met with no benefits, and it may tempt to develop worse code.
-
-This is bad:
-```DM
-/datum/datum1/proc/SimpleGetter()
-	return gotten_variable
-```
-Prefer to either access the variable directly or use a macro/define.
-
-
-* Make usage of variables or traits, set up through condition setters, for a more maintainable alternative to compex and redefined getters.
-
-These are bad:
-```DM
-/datum/datum1/proc/ComplexGetter()
-	return condition ? VALUE_A : VALUE_B
-
-/datum/datum1/child_datum/ComplexGetter()
-	return condition ? VALUE_C : VALUE_D
-```
-
-This is good:
-```DM
-/datum/datum1
-	var/getter_turned_into_variable
-
-/datum/datum1/proc/SetCondition(new_value)
-	if(condition == new_value)
+	if (thing2)
 		return
-	condition = new_value
-	OnConditionChange()
-
-/datum/datum1/proc/OnConditionChange()
-	getter_turned_into_variable = condition ? VALUE_A : VALUE_B
-
-/datum/datum1/child_datum/OnConditionChange()
-	getter_turned_into_variable = condition ? VALUE_C : VALUE_D
+	do more stuff
+	if (thing3 != 30)
+		return
+	do extra stuff
 ```
 
-### Develop Secure Code
+### TRUE/FALSE для логических значений
 
-* Player input must always be escaped safely, we recommend you use stripped_input in all cases where you would use input. Essentially, just always treat input from players as inherently malicious and design with that use case in mind
+Во всех случаях, когда нужно логическое значение, вместо 1/0 используйте TRUE/FALSE.
 
-* Calls to the database must be escaped properly - use sanitizeSQL to escape text based database entries from players or admins, and isnum() for number based database entries from players or admins.
+### Global против static
 
-* All calls to topics must be checked for correctness. Topic href calls can be easily faked by clients, so you should ensure that the call is valid for the state the item is in. Do not rely on the UI code to provide only valid topic calls, because it won't.
+В DM есть ключевое слово global, которое используется в двух случаях:
 
-* Information that players could use to metagame (that is, to identify round information and/or antagonist type via information that would not be available to them in character) should be kept as administrator only.
+1. Внутри типа (или внутри функции) мы хотим определить переменную общую для всех объектов этого типа (для всех вызовов этой функции). (http://www.byond.com/docs/ref/#/var/global).
+2. Внутри функции мы хотим использовать переменную из глобального скоупа, когда у нас в локальном скоупе уже есть переменная с таким же названием. (http://www.byond.com/docs/ref/#/proc/var/global) Так использовать global не стоит! См. следующее правило.
 
-* It is recommended as well you do not expose information about the players - even something as simple as the number of people who have readied up at the start of the round can and has been used to try to identify the round type.
+Так как в первом случае речь идет не о видимости переменной, а том, что она общая для разных экземпляров типа (вызовов функции), то название ключевого слова global может кого-то запутать. Поэтому вместо него в первом случае мы стараемся использовать ключевое слово static, которое отсутствует в документации, но полностью заменяет global в этом случае и лучше описывает суть происходящего.
 
-* Where you have code that can cause large-scale modification and *FUN*, make sure you start it out locked behind one of the default admin roles - use common sense to determine which role fits the level of damage a function could do.
+Отдельно обратите внимание, что все переменные в BYOND имеют глобальную видимость с точки зрения доступа, поэтому global (и static) в глобальном скоупе не имеет смысла и запрещено.
 
-### Files
-* Because runtime errors do not give the full path, try to avoid having files with the same name across folders.
+### Избегайте глобальных переменных
 
-* File names should not be mixed case, or contain spaces or any character that would require escaping in a uri.
+Главная проблема глобальных переменных в том, что чем больше они используются, тем сложнее понять логику их изменения и поведения процессов, которые от них зависят. Поэтому глобальные переменные лучше вовсе не использовать. Однако, если вам все-таки очень нужна глобальная переменная, то, как минимум, создавайте их на контроллере глобальных переменных, что даст чуть больше возможностей для их дебага:
 
-* Files and path accessed and referenced by code above simply being #included should be strictly lowercase to avoid issues on filesystems where case matters.
+Там все просто - вместо глобальных перменных нужно всегда использовать макросы (ну и конечно же лучше всего вообще не использовать глобальные переменные). Пример с тг:
 
-### SQL
-* Do not use the shorthand sql insert format (where no column names are specified) because it unnecessarily breaks all queries on minor column changes and prevents using these tables for tracking outside related info such as in a connected site/forum.
-
-* All changes to the database's layout(schema) must be specified in the database changelog in SQL, as well as reflected in the schema files
-
-* Any time the schema is changed the `schema_revision` table and `DB_MAJOR_VERSION` or `DB_MINOR_VERSION` defines must be incremented.
-
-* Queries must never specify the database, be it in code, or in text files in the repo.
-
-* Primary keys are inherently immutable and you must never do anything to change the primary key of a row or entity. This includes preserving auto increment numbers of rows when copying data to a table in a conversion script. No amount of bitching about gaps in ids or out of order ids will save you from this policy.
-
-* The ttl for data from the database is 10 seconds. You must have a compelling reason to store and reuse data for longer then this.
-
-* Do not write stored and transformed data to the database, instead, apply the transformation to the data in the database directly.
-	* ie: SELECTing a number from the database, doubling it, then updating the database with the doubled number. If the data in the database changed between step 1 and 3, you'll get an incorrect result. Instead, directly double it in the update query. `UPDATE table SET num = num*2` instead of `UPDATE table SET num = [num]`.
-	* if the transformation is user provided (such as allowing a user to edit a string), you should confirm the value being updated did not change in the database in the intervening time before writing the new user provided data by checking the old value with the current value in the database, and if it has changed, allow the user to decide what to do next.
-
-### Mapping Standards
-* Adding, Removing, or Replacing Station Maps
-	* All pull requests adding, removing, or replacing station maps must receive prior approval from a maptainer, or they will be closed without additional warning.
-
-* TGM Format & Map Merge
-	* All new maps submitted to the repo through a pull request must be in TGM format (unless there is a valid reason present to have it in the default BYOND format). This is done using the [Map Merge](https://tgstation13.org/wiki/Map_Merger) utility included in the repo to convert the file to TGM format.
-	* Likewise, you MUST run Map Merge prior to opening your PR when updating existing maps to minimize the change differences (even when using third party mapping programs such as FastDMM.)
-		* Failure to run Map Merge on a map after using third party mapping programs (such as FastDMM) greatly increases the risk of the map's key dictionary becoming corrupted by future edits after running map merge. Resolving the corruption issue involves rebuilding the map's key dictionary; id est rewriting all the keys contained within the map by reconverting it from BYOND to TGM format - which creates very large differences that ultimately delay the PR process and is extremely likely to cause merge conflicts with other pull requests.
-
-* Variable Editing (Var-edits)
-	* While var-editing an item within the editor is perfectly fine, it is preferred that when you are changing the base behavior of an item (how it functions) that you make a new subtype of that item within the code, especially if you plan to use the item in multiple locations on the same map, or across multiple maps. This makes it easier to make corrections as needed to all instances of the item at one time as opposed to having to find each instance of it and change them all individually.
-		* Subtypes only intended to be used on away mission or ruin maps should be contained within a .dm file with a name corresponding to that map within `code\modules\awaymissions` or `code\modules\ruins` respectively. This is so in the event that the map is removed, that subtype will be removed at the same time as well to minimize leftover/unused data within the repo.
-	* Please attempt to clean out any dirty variables that may be contained within items you alter through var-editing. For example, due to how DM functions, changing the `pixel_x` variable from 23 to 0 will leave a dirty record in the map's code of `pixel_x = 0`. Likewise this can happen when changing an item's icon to something else and then back. This can lead to some issues where an item's icon has changed within the code, but becomes broken on the map due to it still attempting to use the old entry.
-	* Areas should not be var-edited on a map to change it's name or attributes. All areas of a single type and it's altered instances are considered the same area within the code, and editing their variables on a map can lead to issues with powernets and event subsystems which are difficult to debug.
-
-### Signal Handlers
-All procs that are registered to listen for signals using `RegisterSignal()` must contain at the start of the proc `SIGNAL_HANDLER` eg;
-```
-/type/path/proc/SignalCallback()
-	SIGNAL_HANDLER
-	// rest of the code
-```
-This is to ensure that it is clear the proc handles signals and turns on a lint to ensure it does not sleep.
-
-There exists `SIGNAL_HANDLER_DOES_SLEEP`, but this is only for legacy signal handlers that still sleep, new/changed code should not use this.
-
-### Enforcing parent calling
-When adding new signals to root level procs, eg;
-```
-/atom/proc/SetDir(newdir)
-	SHOULD_CALL_PARENT(TRUE)
-	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, dir, newdir)
-	dir = newdir
-```
-The `SHOULD_CALL_PARENT(TRUE)` lint should be added to ensure that overrides/child procs call the parent chain and ensure the signal is sent.
-
-### Other Notes
-* Code should be modular where possible; if you are working on a new addition, then strongly consider putting it in its own file unless it makes sense to put it with similar ones (i.e. a new tool would go in the "tools.dm" file)
-
-* Bloated code may be necessary to add a certain feature, which means there has to be a judgement over whether the feature is worth having or not. You can help make this decision easier by making sure your code is modular.
-
-* You are expected to help maintain the code that you add, meaning that if there is a problem then you are likely to be approached in order to fix any issues, runtimes, or bugs.
-
-* Do not divide when you can easily convert it to multiplication. (ie `4/2` should be done as `4*0.5`)
-
-* If you used regex to replace code during development of your code, post the regex in your PR for the benefit of future developers and downstream users.
-
-* Changes to the `/config` tree must be made in a way that allows for updating server deployments while preserving previous behaviour. This is due to the fact that the config tree is to be considered owned by the user and not necessarily updated alongside the remainder of the code. The code to preserve previous behaviour may be removed at some point in the future given the OK by maintainers.
-
-#### Enforced not enforced
-The following coding styles are not only not enforced at all, but are generally frowned upon to change for little to no reason:
-
-* English/British spelling on var/proc names
-	* Color/Colour - both are fine, but keep in mind that BYOND uses `color` as a base variable
-
-### Operators
-#### Spacing
-(this is not strictly enforced, but more a guideline for readability's sake)
-
-* Operators that should be separated by spaces
-	* Boolean and logic operators like &&, || <, >, ==, etc (but not !)
-	* Bitwise AND &
-	* Argument separator operators like , (and ; when used in a forloop)
-	* Assignment operators like = or += or the like
-* Operators that should not be separated by spaces
-	* Bitwise OR |
-	* Access operators like . and :
-	* Parentheses ()
-	* logical not !
-
-Math operators like +, -, /, *, etc are up in the air, just choose which version looks more readable.
-
-#### Use
-* Bitwise AND - '&'
-	* Should be written as `variable & CONSTANT` NEVER `CONSTANT & variable`. Both are valid, but the latter is confusing and nonstandard.
-* Associated lists declarations must have their key value quoted if it's a string
-	* WRONG: `list(a = "b")`
-	* RIGHT: `list("a" = "b")`
-
-### Dream Maker Quirks/Tricks
-Like all languages, Dream Maker has its quirks, some of them are beneficial to us, like these
-
-#### In-To for-loops
-`for(var/i = 1, i <= some_value, i++)` is a fairly standard way to write an incremental for loop in most languages (especially those in the C family), but DM's `for(var/i in 1 to some_value)` syntax is oddly faster than its implementation of the former syntax; where possible, it's advised to use DM's syntax. (Note, the `to` keyword is inclusive, so it automatically defaults to replacing `<=`; if you want `<` then you should write it as `1 to some_value-1`).
-
-HOWEVER, if either `some_value` or `i` changes within the body of the for (underneath the `for(...)` header) or if you are looping over a list AND changing the length of the list then you can NOT use this type of for-loop!
-
-#### `for(var/A in list)` versus `for(var/i in 1 to list.len)`
-The former is faster than the latter, as shown by the following profile results:
-https://file.house/zy7H.png
-Code used for the test in a readable format:
-https://pastebin.com/w50uERkG
-
-
-#### For loops without `istype`
-A name for a differing syntax for writing for-each style loops in DM. It's NOT DM's standard syntax, hence why this is considered a quirk. Take a look at this:
-```DM
-var/list/bag_of_items = list(sword, apple, coinpouch, sword, sword)
-var/obj/item/sword/best_sword
-for(var/obj/item/sword/S in bag_of_items)
-	if(!best_sword || S.damage > best_sword.damage)
-		best_sword = S
-```
-The above is a simple proc for checking all swords in a container and returning the one with the highest damage, and it uses DM's standard syntax for a for-loop by specifying a type in the variable of the for's header that DM interprets as a type to filter by. It performs this filter using `istype()` (or some internal-magic similar to `istype()` - this is BYOND, after all). This is fine in its current state for `bag_of_items`, but if `bag_of_items` contained ONLY swords, or only SUBTYPES of swords, then the above is inefficient. For example:
-```DM
-var/list/bag_of_swords = list(sword, sword, sword, sword)
-var/obj/item/sword/best_sword
-for(var/obj/item/sword/S in bag_of_swords)
-	if(!best_sword || S.damage > best_sword.damage)
-		best_sword = S
-```
-specifies a type for DM to filter by.
-
-With the previous example that's perfectly fine, we only want swords, but here the bag only contains swords? Is DM still going to try to filter because we gave it a type to filter by? YES, and here comes the inefficiency. Wherever a list (or other container, such as an atom (in which case you're technically accessing their special contents list, but that's irrelevant)) contains datums of the same datatype or subtypes of the datatype you require for your loop's body,
-you can circumvent DM's filtering and automatic `istype()` checks by writing the loop as such:
-```DM
-var/list/bag_of_swords = list(sword, sword, sword, sword)
-var/obj/item/sword/best_sword
-for(var/s in bag_of_swords)
-	var/obj/item/sword/S = s
-	if(!best_sword || S.damage > best_sword.damage)
-		best_sword = S
-```
-Of course, if the list contains data of a mixed type then the above optimisation is DANGEROUS, as it will blindly typecast all data in the list as the specified type, even if it isn't really that type, causing runtime errors.
-
-#### Dot variable
-Like other languages in the C family, DM has a `.` or "Dot" operator, used for accessing variables/members/functions of an object instance.
-eg:
-```DM
-var/mob/living/carbon/human/H = YOU_THE_READER
-H.gib()
-```
-However, DM also has a dot variable, accessed just as `.` on its own, defaulting to a value of null. Now, what's special about the dot operator is that it is automatically returned (as in the `return` statement) at the end of a proc, provided the proc does not already manually return (`return count` for example.) Why is this special?
-
-With `.` being everpresent in every proc, can we use it as a temporary variable? Of course we can! However, the `.` operator cannot replace a typecasted variable - it can hold data any other var in DM can, it just can't be accessed as one, although the `.` operator is compatible with a few operators that look weird but work perfectly fine, such as: `.++` for incrementing `.'s` value, or `.[1]` for accessing the first element of `.`, provided that it's a list.
-
-### Globals versus static
-
-DM has a var keyword, called global. This var keyword is for vars inside of types. For instance:
+Вместо:
 
 ```DM
-/mob
-	var/global/thing = TRUE
+var/X
+var/list/Y
+var/datum/genitalia/Z
+var/A = 42
+var/list/B = list(burn = "witch")
+var/datum/genitalia/C = MakeAPenis()
+var/hub_password
 ```
-This does NOT mean that you can access it everywhere like a global var. Instead, it means that that var will only exist once for all instances of its type, in this case that var will only exist once for all mobs - it's shared across everything in its type. (Much more like the keyword `static` in other languages like PHP/C++/C#/Java)
 
-Isn't that confusing?
+Используйте:
 
-There is also an undocumented keyword called `static` that has the same behaviour as global but more correctly describes BYOND's behaviour. Therefore, we always use static instead of global where we need it, as it reduces suprise when reading BYOND code.
+```DM
+GLOBAL_VAR(X)
+GLOBAL_LIST(Y)
+GLOBAL_DATUM(Z, /datum/genitalia)
+GLOBAL_VAR_INIT(A, 42)
+GLOBAL_LIST_INIT(B, list(burn = "witch"))
+GLOBAL_DATUM_INIT(C, /datum/genitalia, MakeAPenis())
+GLOBAL_PROTECT(hub_password)
+```
 
-## Pull Request Process
+### Избегайте использования генераторов списков
 
-There is no strict process when it comes to merging pull requests. Pull requests will sometimes take a while before they are looked at by a maintainer; the bigger the change, the more time it will take before they are accepted into the code. Every team member is a volunteer who is giving up their own time to help maintain and contribute, so please be courteous and respectful. Here are some helpful ways to make it easier for you and for the maintainers when making a pull request.
+`range()`, `view()`, `hearers()`, `locate() [in world]`, `for(... [in world])` и подобные операции очень требовательные в плане производительности, поэтому должны импользоваться как можно реже. Зачастую их можно заменить глобальным списком объектов нужного типа.
 
-* Make sure your pull request complies to the requirements outlined here
+### alert() и input(): изменение контекста после вызова
 
-* You are expected to have tested your pull requests if it is anything that would warrant testing. Text only changes, single number balance changes, and similar generally don't need testing, but anything else does. This means by extension web edits are disallowed for larger changes.
+`alert()` и `input()` ждут реакции пользователя и пока они ждут, все окружение может поменяться: поля объекта, переменные вокруг и т.д. Учитывайте это и добавляйте дополнительные проверки по необходимости.
 
-* You are going to be expected to document all your changes in the pull request. Failing to do so will mean delaying it as we will have to question why you made the change. On the other hand, you can speed up the process by making the pull request readable and easy to understand, with diagrams or before/after data. Should you be optimizing a routine you must provide proof by way of profiling that your changes are faster.
+### addtimer() вместо spawn()/sleep()
 
-* We ask that you use the changelog system to document your player facing changes, which prevents our players from being caught unaware by said changes - you can find more information about this [on this wiki page](http://tgstation13.org/wiki/Guide_to_Changelogs).
+Практика показывает, что `addtimer` лучше оптимизирован, чем встроенные spawn и sleep, плюс код, написанный с его использованием, гораздо проще дебажить.
 
-* If you are proposing multiple changes, which change many different aspects of the code, you are expected to section them off into different pull requests in order to make it easier to review them and to deny/accept the changes that are deemed acceptable.
+## Разработка безопасного кода
 
-* If your pull request is accepted, the code you add no longer belongs exclusively to you but to everyone; everyone is free to work on it, but you are also free to support or object to any changes being made, which will likely hold more weight, as you're the one who added the feature. It is a shame this has to be explicitly said, but there have been cases where this would've saved some trouble.
+- Всегда относитель к пользовательскому вводу так, как будто он намеренно пытается все сломать. Проверяйте пользовательский ввод на все случаи, которые не соответсвуют ожиданиям вашего кода. Для чисел проверяйте границы, для строк используйте escape-функции. Обратите внимание на функцию `sanitize`, которой удобно эскейпить вообще любой `input`, чтобы избежать ввод какого-то кода, который выполнится в браузере.
+- Обязательно эскейптьте все команды к базе данных - используйте `sql_query` чтобы обработать весь текст от игроков и админов перед тем как передавать его в базу данных. Для чисел используйте `isnum`.
+- Все вызовы топиков обязательно нужно проверять на их корректность. Такие вызовы могут быть подделаны со стороны клиента, поэтому их содержимым может быть что угодно!
+- Скрывайте от игроков любую информацию, которая может быть использована для метагейма (даже такую простую, как количество игроков, которые нажали Declare, так как даже она может быть использована, чтобы вычислить текущий режим).
+- Когда вы пишите код, который может каким-то образом влиять на раунд и генерировать _ВЕСЕЛЬЕ_, дважды проверьте, что такой функционал будет доступен только админам соответствующего ранга.
+- Не используйте `locate()` для глобального поиска экземпляра типа который может быть удалён в процессе игры. Эта функция может вернуть экземпляр который находится в процессе удаления но не до конца удалён. Вместо этого лучше держать список с ещё не удаленными объектами и искать в нём (`locate() in objects_list`).
 
-* Please explain why you are submitting the pull request, and how you think your change will be beneficial to the game. Failure to do so will be grounds for rejecting the PR.
+## Файлы
 
-* If your pull request is not finished, you may open it as a draft for potential review. If you open it as a full-fledged PR make sure it is at least testable in a live environment. Pull requests that do not at least meet this requirement will be closed. You may request a maintainer reopen the pull request when you're ready, or make a new one.
+- Рантаймы не содержат полного пути до файла - поэтому избегайте одинаковых названий файлов даже в разных папках.
+- Названия файлов не должны содержать пробелов или символов, которые придется эскейпить, указывая uri.
+- Названия файлов и все пути всегда должны быть в нижнем регистре, чтобы избежать проблем, связанных с разным отношением к регистру в разных операционных системах.
 
-* While we have no issue helping contributors (and especially new contributors) bring reasonably sized contributions up to standards via the pull request review process, larger contributions are expected to pass a higher bar of completeness and code quality *before* you open a pull request. Maintainers may close such pull requests that are deemed to be substantially flawed. You should take some time to discuss with maintainers or other contributors on how to improve the changes.
+## Фишки и лайфхаки Dream Maker
 
-* After leaving reviews on an open pull request, maintainers may convert it to a draft. Once you have addressed all their comments to the best of your ability, feel free to mark the pull as `Ready for Review` again.
+Как и любые другие языки, в BYOND есть свои особенности, которые стоит учитывать, чтобы писать более эффективный код. Тут описаны некоторые из них.
 
-* After you consider your pull request to be ready - make sure to squash commits and ask a Maintainer to review it for approval or additionaly requests.
+### In-To for-loops
 
-## Porting features/sprites/sounds/tools from other codebases
+`for(var/i = 1, i <= some_value, i++)` является стандартным способом писать циклы во многих языках программирования, однако в BYOND, внезапно, `for(var/i in 1 to some_value)` оказывается быстрее в плане производительности. (Обратите внимание, что `to` включает и левую, и правую границу).
 
-If you are porting features/tools from other codebases, you must give them credit where it's due. Typically, crediting them in your pull request and the changelog is the recommended way of doing it. Ideally you should link the original PR, if it is applicable. Take note of what license they use though, porting stuff from AGPLv3 and GPLv3 codebases is allowed.
+ОДНАКО, если `some_value` или `i` меняются в течение цикла, или вы итерируете по элементам списка, длина которого изменяется, вы НЕ можете использовать этот тип цикла for.
 
-Regarding sprites & sounds, you must credit the artist and possibly the codebase. All Foundation 19 assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
+### "Объединение переменных" с помощью оператора ||
 
-## Banned content
-Do not add any of the following in a Pull Request or risk getting the PR closed:
-* Any references to real-life political scenarios/equipment/figures: This includes things like content related to National Socialist Party of Germany, Union of Soviet Socialist Republics, United States of America, content related to currently relevant events, celebrities, political figures and so on.
-* Code where one line of code is split across mutiple lines (except for multiple, separate strings and comments; in those cases, existing longer lines must not be split up)
-* Code adding, removing, or updating the availability of alien races/species/human mutants without prior approval from relevant Species Maintainer and Head Coder. Pull requests attempting to add or remove features from said races/species/mutants require prior approval as well.
-* Code which violates GitHub's [terms of service](https://github.com/site/terms).
+Оператор (A || B) возвращает выражение A или B без изменений их значений. Этот факт можно использовать, чтобы кратким образом подставить B вместо нулевого (или ложного) A.
 
-Just because something isn't on this list doesn't mean that it's acceptable. Use common sense above all else.
+Пример:
 
-## A word on Git
-This repository uses `LF` line endings for all code as specified in the **.gitattributes** and **.editorconfig** files.
+```dm
+obj.name = some_name || "Unknown"
+```
 
-Unless overridden or a non standard git binary is used the line ending settings should be applied to your clone automatically.
+Этот код полностью аналогичен следующему:
 
-Note: VSC requires an [extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) to take advantage of editorconfig.
+```dm
+if (some_name):
+    obj.name = some_name
+else
+    obj.name = "Unknown"
+```
+
+Если some_name - это имеет ложное значение, то obj.name будет присвоено значение "Unknown".
+
+Начиная с версии 514 в BYOND добавили сокращенную версию оператора: A ||= B.
+
+### "Краткое условное выражение" через оператор &&
+
+Аналогичным образом работает и оператор &&, благодаря чему можно писать условия в одну строчку. Такое сокращение не настолько полезно, как предыдущее, но тоже может использоваться в разных ситуациях.
+
+Пример:
+
+```dm
+var/obj/a = some_object
+istype(a) && a.foo()
+```
+
+Этот пример равнозначен коду:
+
+```dm
+var/obj/a = some_object
+if(istype(a))
+    a.foo()
+```
+
+Начиная с версии 514 в BYOND добавили сокращенную версию оператора: A &&= B.
+
+### Циклы с "as anything()" или "as()"
+
+По дефолту BYOND проверяет в рантайме тип элемента при итерации по списку:
+
+```dm
+for(var/obj/item/projectile/O in weapon.content)
+```
+
+В этом примере из списка `content` будут отобраны только объекты типа `/obj/item/projectile` (объекты других типов будут пропущены), но ради такого поведения BYOND будет неявно проверять тип в каждой итерации, что влияет на перфоманс. Обычно это не очень критично, но если цикл вызывается часто или в нем много элементов, то такие циклы есть смысл оптимизировать.
+
+**as anything()** позволяет избавиться от неявной проверки типа:
+
+```dm
+for(var/obj/item/projectile/O as anything() in weapon.content)
+```
+
+Теперь проверки на тип не будет и обрабатываться будут все объекты из списка. Если случайно в списке окажется объект не являющийся `/obj/item/projectile`, то если вы попытаетесь вызывать методы `/obj/item/projectile` у такого объекта, то вы получите runtime ошибку. Таким образом следить за типом объектов в списке нужно самостоятельно, но цикл будет работать быстрее.
+
+Заметим, что следующие циклы равнозначны по своей логике работы:
+
+```dm
+for(var/obj/item/projectile/O in weapon.content)
+    ...
+
+for(var/obj/item/projectile/O as anything() in weapon.content)
+    if(!istype(O))  // "лишняя" проверка, от которой можно избавиться,
+                    // если мы знаем, что в weapon.content могут храниться только /obj/item/projectile
+        continue
+    ...
+```
+
+Также вместо **as anything()** можно писать просто **as()**.
