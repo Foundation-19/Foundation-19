@@ -1,4 +1,3 @@
-/*
 /mob/living/carbon/human/examine(mob/user, distance)
 	. = TRUE
 	var/skipgloves = 0
@@ -117,9 +116,9 @@
 		msg += "[p_they(TRUE)] [p_have()] [r_ear.get_examine_line(user)] on [p_their()] right ear.\n"
 
 	//ID
-
 	if(wear_id)
-		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line(user)].\n"
+		var/obj/item/card/id/id = GetIdCard()
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line(user)]. Job: [id.assignment], [id.class]\n "
 
 	//handcuffed?
 	if(handcuffed)
@@ -406,4 +405,3 @@
 	HTML +="<a href='?src=\ref[src];flavor_change=done'>\[Done\]</a>"
 	HTML += "<tt>"
 	show_browser(src, jointext(HTML,null), "window=flavor_changes;size=430x300")
-*/

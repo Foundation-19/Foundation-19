@@ -7,6 +7,7 @@
 // --- MAINTENANCE --- //
 #include "_components/__components.dme"
 #include "outfits/_outfits.dme"
+#include "human_examine/_human_examine.dme"
 
 // --- ICONS --- //
 
