@@ -8,7 +8,7 @@
 #include "_components/__components.dme"
 #include "outfits/_outfits.dme"
 #include "human_examine/_human_examine.dme"
-
+#include "laptop_rotate/_laptop_rotate.dme"
 // --- ICONS --- //
 
 // --- OBJECTS --- //

@@ -325,14 +325,13 @@
 /*
 	Control+Alt click
 */
+
 /mob/proc/CtrlAltClickOn(atom/A)
 	if(A.CtrlAltClick(src))
 		return
-	pointed(A)
 
 /atom/proc/CtrlAltClick(mob/user)
 	return
-
 
 /*
 	Rclick.
