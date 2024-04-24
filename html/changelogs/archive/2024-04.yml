@@ -32,3 +32,8 @@
   - rscadd: Traitor code phrases and responses are automatically re-colored!
   chesse20:
   - rscadd: Departments can now wear their own armbands
+2024-04-24:
+  chesse20:
+  - refactor: Space Carp are no longer carp or from space.
+  quadbium:
+  - rscadd: Replaced the high vis jacket textures
