@@ -13,8 +13,8 @@
 	mana_cost = 100
 
 /datum/spell/aoe_turf/conjure/carp
-	name = "Summon Carp"
-	desc = "This spell conjures a simple carp."
+	name = "Summon Selachian"
+	desc = "This spell conjures a simple selachian."
 
 	charge_max = 1200
 	spell_flags = NEEDSCLOTHES
