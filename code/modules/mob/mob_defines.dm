@@ -217,3 +217,5 @@
 	var/list/actionspeed_modification //Lazy list, see mob_movespeed.dm
 	/// List of action speed modifiers ignored by this mob. List -> List (id) -> List (sources)
 	var/list/actionspeed_mod_immunities //Lazy list, see mob_movespeed.dm
+
+	var/datum/focus

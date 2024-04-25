@@ -64,7 +64,7 @@
 			break
 
 	holder?.key_down(full_key, src)
-	mob.key_down(full_key, src)
+	mob.focus?.key_down(full_key, src)
 
 	mob.update_mouse_pointer()
 
@@ -94,11 +94,13 @@
 		if(kb.can_use(src) && kb.up(src))
 			break
 	holder?.key_up(_key, src)
-	mob.key_up(_key, src)
+	mob.focus?.key_up(_key, src)
 
 	mob.update_mouse_pointer()
 
+/*
 // Called every game tick
 /client/keyLoop()
 	holder?.keyLoop(src)
 	mob.keyLoop(src)
+*/

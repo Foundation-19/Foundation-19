@@ -14,6 +14,7 @@ SUBSYSTEM_DEF(input)
 	initialized = TRUE
 
 	refresh_client_macro_sets()
+
 	return ..()
 
 // This is for when macro sets are eventualy datumized
@@ -28,10 +29,11 @@ SUBSYSTEM_DEF(input)
 
 // Badmins just wanna have fun d
 /datum/controller/subsystem/input/proc/refresh_client_macro_sets()
-	var/list/clients_list = GLOB.clients
-	for(var/client/C in clients_list)
-		C.set_macros()
+	var/list/clients = GLOB.clients
+	for(var/i in 1 to clients.len)
+		var/client/user = clients[i]
+		INVOKE_ASYNC(user, TYPE_PROC_REF(/client, set_macros))
 
 /datum/controller/subsystem/input/fire()
-	for(var/client/C in GLOB.clients)
-		C.keyLoop()
+	for(var/mob/user as anything in GLOB.player_list)
+		user.focus?.keyLoop(user.client)

@@ -1992,6 +1992,7 @@
 #include "code\modules\keybindings\carbon.dm"
 #include "code\modules\keybindings\client.dm"
 #include "code\modules\keybindings\communication.dm"
+#include "code\modules\keybindings\focus.dm"
 #include "code\modules\keybindings\human.dm"
 #include "code\modules\keybindings\living.dm"
 #include "code\modules\keybindings\mob.dm"
