@@ -24,3 +24,29 @@
   - balance: The crates near the battery racks in Engineering have 9 high-capacity
       cells for each instead of 6 super-capacity cells.
   - balance: Upgrading SMESs no longer has a chance to blow up.
+2024-04-09:
+  Saicchi:
+  - rscadd: keybind 'V' for robot and AI lights
+2024-04-10:
+  cheesePizza2:
+  - rscadd: Traitor code phrases and responses are automatically re-colored!
+  chesse20:
+  - rscadd: Departments can now wear their own armbands
+2024-04-24:
+  chesse20:
+  - refactor: Space Carp are no longer carp or from space.
+  quadbium:
+  - rscadd: Replaced the high vis jacket textures
+2024-04-27:
+  cheesePizza2:
+  - balance: Inaprovaline metabolizes slower, so you'll have more time to heal a patient.
+  - balance: Brain healing from Inaprovaline separated from healing from Alkysine.
+      The former heals 0.5 damage a second, whereas the latter repairs 1.6 damage
+      a second.
+  - balance: Brain oxyloss damage/second, maximum brain oxyloss damage, and brain
+      passive healing is continuous instead of discrete. For details, see graphs attached
+      to PR.
+  quadbium:
+  - rscadd: Added logos for aiad, antimemetics, church of maxwellism, deconmissioning,
+      FDS, pataphysics, Raisa, SPC, MCF, WWS, and the cogwork orthodoxy.
+  - rscadd: Replaced the cogwork orthodoxy logo with the CotBG logo.

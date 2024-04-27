@@ -468,6 +468,13 @@
 	t = replacetext(t, "\[dealogo\]", "<img src = dea.png>")
 	t = replacetext(t, "\[intlogo\]", "<img src = int.png>")
 	t = replacetext(t, "\[triblogo\]", "<img src = trib.png>")
+	t = replacetext(t, "\[aiadlogo\]", "<img src = aiad.png>")
+	t = replacetext(t, "\[amdlogo\]", "<img src = amd.png>")
+	t = replacetext(t, "\[dcdlogo\]", "<img src = dcd.png>")
+	t = replacetext(t, "\[fsdlogo\]", "<img src = fsd.png>")
+	t = replacetext(t, "\[misilogo\]", "<img src = misi.png>")
+	t = replacetext(t, "\[patalogo\]", "<img src = pata.png>")
+	t = replacetext(t, "\[raisalogo\]", "<img src = raisa.png>")
 	t = replacetext(t, "\[goclogo\]", "<img src = ungoc.png>")
 	t = replacetext(t, "\[uiulogo\]", "<img src = uiu.png>")
 	t = replacetext(t, "\[thilogo\]", "<img src = thi.png>")
@@ -476,6 +483,11 @@
 	t = replacetext(t, "\[cilogo\]", "<img src = ci.png>")
 	t = replacetext(t, "\[shlogo\]", "<img src = sh.png>")
 	t = replacetext(t, "\[cotbglogo\]", "<img src = cotbg.png>")
+	t = replacetext(t, "\[coclogo\]", "<img src = coc.png>")
+	t = replacetext(t, "\[cmaxlogo\]", "<img src = cmax.png>")
+	t = replacetext(t, "\[mcflogo\]", "<img src = mcf.png>")
+	t = replacetext(t, "\[wwslogo\]", "<img src = wws.png>")
+	t = replacetext(t, "\[spclogo\]", "<img src = spc.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
