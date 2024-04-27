@@ -2,7 +2,7 @@
 
 #### Список PRов:
 
-- https://github.com/MysticalFaceLesS/Shiptest/pulls/#####
+- https://github.com/MysticalFaceLesS/Foundation-19/pulls/#####
 <!--
   Ссылки на PRы, связанные с модом:
   - Создание
@@ -72,7 +72,7 @@ ID мода: EXAMPLE
 
 ### Авторы:
 
-Твой никнейм
+Твой_никнейм
 <!--
   Здесь находится твой никнейм
   Если работал совместно - никнеймы тех, кто помогал.
