@@ -33,7 +33,7 @@
 
 Разработка и поддержка отдельной кодовой базы - это громадная, тяжёлая задача, пытаясь справиться с которой, многие потерпели неудачу и пострадали от последствий, таких как устаревший и беспорядочный код. Это не обязательно вина нехватки навыков у людей, поддерживающих кодбазу - просто нехватка ресурсов и то, сколько непрерывных усилий требует такая попытка.
 
-Одним из решений проблемы - основать наш сервер на надежной кодовой базе, которая в основном поддерживается кем-то другим, в нашем случае - [Foundation-19](https://github.com/MysticalFaceLesS/Foundation-19), и вставлять наш контент модульным образом, следуя общему направлению кода (но не геймплея) апстрима, отражая любые его изменения.
+Одним из решений проблемы - основать наш сервер на надежной кодовой базе, которая в основном поддерживается кем-то другим, в нашем случае - [Shiptest](https://github.com/MysticalFaceLesS/Shiptest), и вставлять наш контент модульным образом, следуя общему направлению кода (но не геймплея) апстрима, отражая любые его изменения.
 
 Git, как система контроля версий, очень удобен, однако это просто очень методичная вещь, которая следует своим многочисленным алгоритмам, и они, к сожалению, не всегда могут разумно разрешать определенные изменения в коде однозначным образом, вызывая *конфликты*, которые приходится решать вручную.
 
@@ -52,7 +52,7 @@ var/something = 1
 В *кор коде* мы решили заменить `1` на `2`
 ```diff
 - var/something = 1
-+ var/something = 2 // Foundation-19
++ var/something = 2 // SHIPTEST
 ```
 А на апстриме решили сменить на `1` вообще на `4`
 ```diff
@@ -63,7 +63,7 @@ var/something = 1
 ```diff
 - var/something = 1
 <<<<<< ours
-+ var/something = 2 // Foundation-19
++ var/something = 2 // SHIPTEST
 ======
 + var/something = 4
 >>>>>>> theirs
@@ -77,7 +77,7 @@ var/something = 1
 
 Решение - модуляризация кода.
 
-Модуляризация означает, что максимально возможное количество изменений будут производиться в отдельной папке `mods/`, независимой от *кор кода* насколько это возможно, а те изменения, которые ну никак не поддаются модуляризации будут отмечены специальными комментариями с указанием где они начинаются, заканчиваются и частью какого мода они являются.
+Модуляризация означает, что максимально возможное количество изменений будут производиться в отдельной папке `mod_celadon/`, независимой от *кор кода* насколько это возможно, а те изменения, которые ну никак не поддаются модуляризации будут отмечены специальными комментариями с указанием где они начинаются, заканчиваются и частью какого мода они являются.
 
 # Руководство по модуляризации
 Начни с определения темы/цели того что ты хочешь сделать. Возможно ты можешь не создавать новый мод, а добавить функционал к уже существующему.
@@ -86,13 +86,13 @@ var/something = 1
 
 В ином случае, выбери ID для своего мода, например `DNA_FEATURE_WINGS`, `XENOARCHEOLOGY` или `SHUTTLE_TOGGLE` - он будет использоваться для документирования и идентифицирования мода. Именно этот ID должен использоваться ВЕЗДЕ, чтобы можно было легко найти всё что относится к твоему моду.
 
-Далее тебе нужно создать папку, название которой - ID твоего мода строчными буквами. Например, для `HELLO_WORLD` это будет путь `mods/hello_world/`
+Далее тебе нужно создать папку, название которой - ID твоего мода строчными буквами. Например, для `HELLO_WORLD` это будет путь `mod_celadon/hello_world/`
 
 ## Модпаки
 
 Модпаки загружаются компилятором сразу после всего остального кода и после карты, что позволяет делать оверрайды, безболезненно добавлять предметы, пользуясь дефайнами из *кор кода* и много много всего.
 
-Инициализируются модпаки на этапе `SS_INIT_EARLY` с вызовом соответствующей процедуры у синглтона. Подробнее можно почитать в [`mods/_modpack.dm`](/mods/_modpack.dm)
+Инициализируются модпаки на этапе `SS_INIT_EARLY` с вызовом соответствующей процедуры у синглтона. Подробнее можно почитать в [`mod_celadon/_modpack.dm`](/mod_celadon/_modpack.dm)
 
 ## Создание модпака
 Любой модпак состоит из:
@@ -108,7 +108,7 @@ var/something = 1
 ### Структура модпака
 Если мы условимся, что наш пак будет называется `hello_world`, то это будет выглядеть так:
 ```
-mods/hello_world
+mod_celadon/hello_world
 ├─ code
 │  ├─ any_file.dm
 │  ╰─ some_file.dm
@@ -129,27 +129,27 @@ mods/hello_world
 ### Быстрое создание основы мода
 #### Автоматически
 
-**Для любой системы** с установленным Python 3 - запустить файл `mods/CREATE_MOD.py`.
+**Для любой системы** с установленным Python 3 - запустить файл `mod_celadon/CREATE_MOD.py`.
 
 В **Windows** можно это сделать ещё двумя способами:
-1. Открыть конмандную строку в папке Foundation-19 и прописать:
+1. Открыть конмандную строку в папке Shiptest и прописать:
     ```bat
-    powershell mods\CREATE_MOD.ps1
+    powershell mod_celadon\CREATE_MOD.ps1
     ```
-2. Открыть PowerShell в папке Foundation-19 и прописать:
+2. Открыть PowerShell в папке Shiptest и прописать:
     ```ps
-    .\mods\CREATE_MOD.ps1
+    .\mod_celadon\CREATE_MOD.ps1
     ```
 
 Те, кто пользуется **Linux или WSL** могут использовать bash файл:
 ```bash
-./mods/CREATE_MOD.sh
+./mod_celadon/CREATE_MOD.sh
 ```
 
 #### Вручную
 Чтобы реализовать основу мода достаточно выполнить три действия:
-- Создать папку `mods/hello_world/`.
-- Скопировать в папку `mods/hello_world/` все файлы из [`/mods/_example/`](/mods/_example/).
+- Создать папку `mod_celadon/hello_world/`.
+- Скопировать в папку `mod_celadon/hello_world/` все файлы из [`/mod_celadon/_example/`](/mod_celadon/_example/).
 - Переименовать `example.dme` и `example.dm` в `_hello_world.dme` и `_hello_world.dm`.
 
 ### Назначение каждого из файлов
@@ -181,7 +181,7 @@ mods/hello_world
 
 Пути здесь указываются локальные, а не глобальные. То есть писать нужно не так:
 ```dm
-#include "mods/hello_world/_hello_world.dm"
+#include "mod_celadon/hello_world/_hello_world.dm"
 ```
 А вот так:
 ```dm
@@ -194,12 +194,12 @@ mods/hello_world
 Примеры:
 
 `code/`:
-- **✅ Правильно:** `/mods/hello_world/code/disease_mob.dm`
-- **❌ Неправильно:** `/mods/hello_world/code/modules/antagonists/disease/disease_mob.dm`
+- **✅ Правильно:** `/mod_celadon/hello_world/code/disease_mob.dm`
+- **❌ Неправильно:** `/mod_celadon/hello_world/code/modules/antagonists/disease/disease_mob.dm`
 
 `icons/`:
-- **✅ Правильно:** `/mods/hello_world/icons/mining_righthand.dmi`
-- **❌ Неправильно:** `/mods/hello_world/icons/mob/inhands/equipment/mining_righthand.dmi`
+- **✅ Правильно:** `/mod_celadon/hello_world/icons/mining_righthand.dmi`
+- **❌ Неправильно:** `/mod_celadon/hello_world/icons/mob/inhands/equipment/mining_righthand.dmi`
 
 С `sounds/` и `maps/` **абсолютно** то же самое.
 
@@ -213,7 +213,7 @@ mods/hello_world
 ## Папка `_master_files`
 Ты всегда должен помещать любые модульные переопределения иконок, звуков, кода и всего другого в эту папку. Она должна соответствовать структуре папки основного кода.
 
-Например: `code/modules/mob/living/living.dm` → `mods/_master_files/code/modules/mob/living/living.dm`
+Например: `code/modules/mob/living/living.dm` → `mod_celadon/_master_files/code/modules/mob/living/living.dm`
 
 Это сделано для того, чтобы было проще выяснить, что изменилось в основном файле, без необходимости поиска в определениях процедур.
 
@@ -264,25 +264,25 @@ mods/hello_world
 В этом случае применяются следующие обозначения:
 - **Добавление**
   ```dm
-  // [FOUNDATION-19-ADD] - SHUTTLE_TOGGLE - (Необязательно - причина или комментарий)
+  // [CELADON-ADD] - SHUTTLE_TOGGLE - (Необязательно - причина или комментарий)
   var/adminEmergencyNoRecall = FALSE
   var/lastMode = SHUTTLE_IDLE
   var/lastCallTime = 6000
-  // [/FOUNDATION-19-ADD]
+  // [/CELADON-ADD]
   ```
 - **Удаление**
   ```dm
-  // [FOUNDATION-19-REMOVE] - SHUTTLE_TOGGLE - (Необязательно - причина или комментарий)
+  // [CELADON-REMOVE] - SHUTTLE_TOGGLE - (Необязательно - причина или комментарий)
   /*
   for(var/obj/docking_port/stationary/S in stationary)
   if(S.id = id)
     return S
   */
-  // [/FOUNDATION-19-REMOVE]
+  // [/CELADON-REMOVE]
   ```
   Для удаления с перемещением в другой файл:
   ```dm
-  // [FOUNDATION-19-REMOVE] - SHUTTLE_TOGGLE - (Перемещено в /mods/shuttle_toggle/randomverbs.dm)
+  // [CELADON-REMOVE] - SHUTTLE_TOGGLE - (Перемещено в /mod_celadon/shuttle_toggle/randomverbs.dm)
   /*
   /client/proc/admin_call_shuttle()
     set category = "Admin - Events"
@@ -296,29 +296,29 @@ mods/hello_world
     message_admins(span_adminnotice("[key_name_admin(usr)] admin-called the emergency shuttle."))
     return
   */
-  // [/FOUNDATION-19-REMOVE]
+  // [/CELADON-REMOVE]
   ```
 - **Изменение**
   ```dm
-  // [FOUNDATION-19-EDIT] - SHUTTLE_TOGGLE - (Optional Reason/comment)
-  // if(SHUTTLE_STRANDED, SHUTTLE_ESCAPE) // FOUNDATION-19-EDIT - ORIGINAL
+  // [CELADON-EDIT] - SHUTTLE_TOGGLE - (Optional Reason/comment)
+  // if(SHUTTLE_STRANDED, SHUTTLE_ESCAPE) // CELADON-EDIT - ORIGINAL
   if(SHUTTLE_STRANDED, SHUTTLE_ESCAPE, SHUTTLE_DISABLED)
-  // [FOUNDATION-19-EDIT]
+  // [CELADON-EDIT]
       return 1
   ```
 
 ## NanoUI
-Новый интерфейс необходимо создавать в папке `nano/templates/mods`. Для редактирования существующего - создать там его копию и включить в игру с помощью мода/модулярного изменения.
+Новый интерфейс необходимо создавать в папке `nano/templates/mod_celadon`. Для редактирования существующего - создать там его копию и включить в игру с помощью мода/модулярного изменения.
 
-Для подключения интерфейса из этой папки, нужно к названию файла добавить префикс `mods-`.
+Для подключения интерфейса из этой папки, нужно к названию файла добавить префикс `mod_celadon-`.
 
-То есть для файла `nano/templates/mods/jukebox.tmpl` при открытии интерфейса нужно использовать название `"mods-jukebox.tmpl"` вместо обычного `"jukebox.tmpl"`.
+То есть для файла `nano/templates/mod_celadon/jukebox.tmpl` при открытии интерфейса нужно использовать название `"mod_celadon-jukebox.tmpl"` вместо обычного `"jukebox.tmpl"`.
 
 ## Исключительные случаи
 Из каждого правила есть исключения, обусловленные многими обстоятельствами. Не задумывайся об этом сильно.
 
 ## Дефайны (`#define`)
-Из-за того, как BYOND загружает файлы, есть необходимость существования отдельной папки для хранения дефайнов модов. Эта папка - `code/__defines/~mods/`, в которой ты можешь создать новый файл, либо дописать код в существующий.
+Из-за того, как BYOND загружает файлы, есть необходимость существования отдельной папки для хранения дефайнов модов. Эта папка - `code/__defines/~mod_celadon/`, в которой ты можешь создать новый файл, либо дописать код в существующий.
 
 Если у тебя есть `#define`, который используется более чем в одном файле, он должен быть объявлен именно здесь.
 
