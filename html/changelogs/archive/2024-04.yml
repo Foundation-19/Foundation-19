@@ -37,3 +37,16 @@
   - refactor: Space Carp are no longer carp or from space.
   quadbium:
   - rscadd: Replaced the high vis jacket textures
+2024-04-27:
+  cheesePizza2:
+  - balance: Inaprovaline metabolizes slower, so you'll have more time to heal a patient.
+  - balance: Brain healing from Inaprovaline separated from healing from Alkysine.
+      The former heals 0.5 damage a second, whereas the latter repairs 1.6 damage
+      a second.
+  - balance: Brain oxyloss damage/second, maximum brain oxyloss damage, and brain
+      passive healing is continuous instead of discrete. For details, see graphs attached
+      to PR.
+  quadbium:
+  - rscadd: Added logos for aiad, antimemetics, church of maxwellism, deconmissioning,
+      FDS, pataphysics, Raisa, SPC, MCF, WWS, and the cogwork orthodoxy.
+  - rscadd: Replaced the cogwork orthodoxy logo with the CotBG logo.
