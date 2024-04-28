@@ -136,19 +136,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 
 /datum/controller/master/Recover()
-	var/msg = "## DEBUG: [time2text(world.timeofday)] MC restarted. Reports:\n"
-	for (var/varname in Master.vars)
-		switch (varname)
-			if("name", "tag", "bestF", "type", "parent_type", "vars", "stat_line") // Built-in junk.
-				continue
-			else
-				var/varval = Master.vars[varname]
-				if (istype(varval, /datum)) // Check if it has a type var.
-					var/datum/D = varval
-					msg += "\t [varname] = [D]([D.type])\n"
-				else
-					msg += "\t [varname] = [varval]\n"
-	log_world(msg)
+	log_world("## DEBUG: [time2text(world.timeofday)] MC restarted. Reports:\n")
+	Master.dumpDatumIntoWorldLog()
 
 	var/datum/controller/subsystem/BadBoy = Master.last_type_processed
 	var/FireHim = FALSE
@@ -165,6 +154,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		if(msg)
 			to_chat(GLOB.admins, SPAN_CLASS("boldannounce","[msg]"))
 			log_world(msg)
+			BadBoy.dumpDatumIntoWorldLog()
 
 	if (istype(Master.subsystems))
 		if(FireHim)

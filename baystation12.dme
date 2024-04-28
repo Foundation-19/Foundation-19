@@ -143,6 +143,7 @@
 #include "code\_helpers\chat.dm"
 #include "code\_helpers\cmp.dm"
 #include "code\_helpers\do_afters.dm"
+#include "code\_helpers\dumping.dm"
 #include "code\_helpers\files.dm"
 #include "code\_helpers\functional.dm"
 #include "code\_helpers\game.dm"
