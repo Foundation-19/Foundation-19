@@ -138,6 +138,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 /datum/controller/master/Recover()
 	var/msg = "## DEBUG: [time2text(world.timeofday)] MC restarted. Reports:\n"
 	log_world(msg)
+	send2chat(msg, "Dev")
 	Master.dumpDatumIntoWorldLog()
 
 	var/datum/controller/subsystem/BadBoy = Master.last_type_processed
@@ -155,6 +156,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		if(msg)
 			to_chat(GLOB.admins, SPAN_CLASS("boldannounce","[msg]"))
 			log_world(msg)
+			send2chat(msg, "Dev")
 			BadBoy.dumpDatumIntoWorldLog()
 
 	if (istype(Master.subsystems))
