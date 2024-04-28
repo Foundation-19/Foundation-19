@@ -50,3 +50,9 @@
   - rscadd: Added logos for aiad, antimemetics, church of maxwellism, deconmissioning,
       FDS, pataphysics, Raisa, SPC, MCF, WWS, and the cogwork orthodoxy.
   - rscadd: Replaced the cogwork orthodoxy logo with the CotBG logo.
+2024-04-28:
+  quadbium:
+  - rscadd: Added class H amnestic implant
+  - rscadd: Added the option to take the class H amnestic implant in the loadout
+  - rscadd: Changed the activation deactivation alerts to be in line with class H
+      amnestics
