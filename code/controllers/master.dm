@@ -136,7 +136,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 
 /datum/controller/master/Recover()
-	log_world("## DEBUG: [time2text(world.timeofday)] MC restarted. Reports:\n")
+	var/msg = "## DEBUG: [time2text(world.timeofday)] MC restarted. Reports:\n"
+	log_world(msg)
 	Master.dumpDatumIntoWorldLog()
 
 	var/datum/controller/subsystem/BadBoy = Master.last_type_processed
