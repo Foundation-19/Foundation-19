@@ -218,8 +218,10 @@
 
 /// Called in '/mob/living/say' on the mob who heard speech (/mob/living/speaker, message)
 #define COMSIG_MOB_HEARD_SPEECH "mobHeardSpeech"
-/// Called in '/mob/living/say' on the mob who heard the whisper (/mob/living/speaker, message)
+/// Called in '/mob/living/say' on the mob who heard the whisper (/mob/living/speaker, list(message)). Message is passed in a list so that back-editing is possible.
 #define COMSIG_MOB_HEARD_WHISPER "mobHeardWhisper"
+/// Called in 'mob/on_hear_say' on the mob who heard whatever message (/mob/hearer, message)
+#define COMSIG_MOB_HEAR "mob_hear"
 
 /// Called on `/mob/proc/update_movespeed` (/mob)
 #define COMSIG_MOB_MOVESPEED_UPDATED "mob_movespeed_updated"

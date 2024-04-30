@@ -6,7 +6,7 @@
 	name = "Inaprovaline"
 	description = "Inaprovaline is a multipurpose neurostimulant and cardioregulator. Commonly used to slow bleeding and stabilize patients."
 	color = "#00bfff"
-	metabolism = REM * 0.5
+	metabolism = REM * 0.4
 	overdose = REAGENTS_OVERDOSE * 2
 	value = 3.5
 
