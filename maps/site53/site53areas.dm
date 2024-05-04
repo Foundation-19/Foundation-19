@@ -1246,6 +1246,21 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/scp/scp1689entrance
+	name = "\improper SCP-1689 Entrance"
+	icon_state = "checkpoint1"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/scp1689/scp1689indoors
+	name = "\improper SCP-1689 Indoors"
+	icon_state = "checkpoint1"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/scp1689/scp1689outdoors
+	name = "\improper SCP-1689 Outdoors"
+	icon_state = "checkpoint1"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/lhcz/scp035room
 	name = "\improper SCP-035 Containment Chamber"
 	icon_state = "research"

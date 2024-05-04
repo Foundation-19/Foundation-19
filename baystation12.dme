@@ -3077,6 +3077,7 @@
 #include "code\modules\SCP\SCPs\SCP-131.dm"
 #include "code\modules\SCP\SCPs\SCP-1507.dm"
 #include "code\modules\SCP\SCPs\SCP-151.dm"
+#include "code\modules\SCP\SCPs\SCP-1689.dm"
 #include "code\modules\SCP\SCPs\SCP-173.dm"
 #include "code\modules\SCP\SCPs\SCP-216.dm"
 #include "code\modules\SCP\SCPs\SCP-2343.dm"

@@ -509,6 +509,7 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	req_access = list()
 	},
+/obj/item/storage/briefcase/scp1689,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
 "abv" = (

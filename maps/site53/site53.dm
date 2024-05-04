@@ -41,6 +41,7 @@
 	#include "z1_admin.dmm"
 	#include "z2_transit.dmm"
 	#include "away_mission-1.dmm"
+	#include "potato-zn.dmm"
 
 	#define using_map_DATUM /datum/map/site53
 
