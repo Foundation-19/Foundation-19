@@ -59,7 +59,7 @@
 	return target_up
 
 
-/obj/effect/blob/potato
+/obj/effect/potato
 	name = "potato wall"
 	desc = "A wall of potatoes, you can see them slowly growing."
 	icon = 'icons/SCP/scp-1689.dmi'
@@ -69,8 +69,18 @@
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_OPAQUE
 	health_max = 30
-
+/*
 	expandType = /obj/effect/blob/potato
 	attack_freq = 100
 	product = /obj/item/reagent_containers/food/snacks/grown/potato
-
+*/
+/obj/effect/potato/handle_death_change(new_death_state)
+	. = ..()
+	if (new_death_state)
+		playsound(loc, 'sounds/effects/splat.ogg', 50, 1)
+		new /obj/item/reagent_containers/food/snacks/loadedbakedpotato(get_turf(src), 1)
+		new /obj/item/reagent_containers/food/snacks/loadedbakedpotato(get_turf(src), 1)
+		new /obj/item/reagent_containers/food/snacks/loadedbakedpotato(get_turf(src), 1)
+		new /obj/item/reagent_containers/food/snacks/loadedbakedpotato(get_turf(src), 1)
+		new /obj/item/reagent_containers/food/snacks/loadedbakedpotato(get_turf(src), 1)
+		qdel(src)

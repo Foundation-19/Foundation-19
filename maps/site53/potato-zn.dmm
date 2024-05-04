@@ -1,14 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/effect/blob/potato,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/scp1689/scp1689outdoors)
 "c" = (
-/obj/effect/blob/potato,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/scp1689/scp1689indoors)
 "f" = (
-/obj/effect/blob/potato,
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/scp1689/scp1689indoors)
 "l" = (
@@ -31,6 +28,10 @@
 "T" = (
 /turf/simulated/floor/wood,
 /area/site53/scp/scp1689entrance)
+"V" = (
+/obj/effect/potato,
+/turf/simulated/floor/exoplanet/concrete,
+/area/site53/scp1689/scp1689indoors)
 
 (1,1,1) = {"
 l
@@ -32944,14 +32945,14 @@ f
 f
 f
 f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 v
 v
 v
@@ -33202,14 +33203,14 @@ f
 f
 f
 f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 v
 T
 T
@@ -33460,14 +33461,14 @@ f
 f
 f
 f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 v
 T
 T
@@ -33718,14 +33719,14 @@ f
 f
 f
 f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 q
 T
 T
@@ -33976,14 +33977,14 @@ f
 f
 f
 f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 v
 T
 T
@@ -34234,14 +34235,14 @@ f
 f
 f
 f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 v
 T
 T
@@ -34492,14 +34493,14 @@ f
 f
 f
 f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 v
 v
 v
