@@ -17,6 +17,15 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
+"ah" = (
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "am" = (
 /obj/structure/closet{
 	name = "Prisoner's Locker"
@@ -463,6 +472,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"bZ" = (
+/obj/structure/iv_drip,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "cf" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -794,6 +810,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
+"dl" = (
+/obj/item/clothing/shoes/orange,
+/turf/unsimulated/wall,
+/area/centcom)
 "dm" = (
 /obj/structure/grille{
 	health_max = null;
@@ -2141,6 +2161,20 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lhcz/scp1102entrance)
+"hO" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/ivbag/amnesticsf{
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/ivbag/amnesticsf{
+	pixel_x = 7
+	},
+/obj/item/storage/pill_bottle/amnesticsb,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "hP" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -3849,6 +3883,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"ni" = (
+/obj/structure/window/reinforced,
+/obj/structure/table/standard,
+/obj/item/device/flashlight/lamp,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "nk" = (
 /obj/structure/bed/chair/armchair/red{
 	dir = 4
@@ -4676,6 +4719,15 @@
 	icon_state = "techfloor_grid"
 	},
 /area/site53/tram/goc1)
+"oK" = (
+/obj/structure/bed/chair/office/comfy/green{
+	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "oL" = (
 /obj/machinery/vending/mredispenser{
 	dir = 1
@@ -4717,6 +4769,16 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"oS" = (
+/obj/machinery/door/airlock/vault{
+	name = "Overseer Auxillary Offices";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "oT" = (
@@ -5040,6 +5102,13 @@
 	dir = 10
 	},
 /turf/unsimulated/floor/reinforced,
+/area/centcom)
+"pu" = (
+/obj/machinery/turretid/stun{
+	req_access = list("ACCESS_MTF");
+	pixel_x = 32
+	},
+/turf/unsimulated/wall,
 /area/centcom)
 "px" = (
 /obj/structure/table/reinforced,
@@ -6048,6 +6117,15 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"sp" = (
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
+	dir = 4
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "sq" = (
 /obj/effect/landmark{
 	name = "Commando"
@@ -6519,6 +6597,17 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"sN" = (
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_MTF");
+	name = "O5-3's Desk";
+	dir = 3
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "sQ" = (
 /obj/machinery/door/airlock/vault{
 	name = "Emergency Equipment Storage";
@@ -6714,6 +6803,16 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
+	},
+/area/centcom)
+"sZ" = (
+/obj/structure/closet,
+/obj/item/clothing/shoes/orange,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
 	},
 /area/centcom)
 "ta" = (
@@ -7698,6 +7797,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"vw" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "vz" = (
 /obj/structure/table/standard,
 /turf/unsimulated/floor{
@@ -7902,6 +8010,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"wj" = (
+/obj/structure/table/standard,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "wk" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4;
@@ -8089,6 +8204,37 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
+	},
+/area/centcom)
+"wI" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen/multi/cmd{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/pen/fancy{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/machinery/turretid/stun{
+	req_access = list("ACCESS_MTF");
+	pixel_x = 32
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
+"wL" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "wT" = (
@@ -8483,6 +8629,13 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"yr" = (
+/obj/item/clothing/shoes/orange,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
 	},
 /area/centcom)
 "ys" = (
@@ -8914,6 +9067,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"zj" = (
+/obj/machinery/turretid/stun{
+	req_access = list("ACCESS_MTF");
+	pixel_x = 32
+	},
+/turf/space,
+/area/space)
 "zk" = (
 /obj/structure/window/phoronreinforced{
 	dir = 4
@@ -9316,6 +9476,16 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"AT" = (
+/obj/machinery/door/airlock/vault{
+	name = "O5-3";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "AU" = (
 /obj/structure/closet/crate/bin,
 /turf/unsimulated/floor{
@@ -9373,6 +9543,14 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"Br" = (
+/obj/structure/table/rack,
+/obj/item/storage/firstaid/surgery,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
 	},
 /area/centcom)
 "Bt" = (
@@ -9472,12 +9650,38 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
+"BX" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen/multi/cmd{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/pen/fancy{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "BY" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/device/flashlight/lamp/green{
 	pixel_y = 8
 	},
 /turf/simulated/floor/carpet/green,
+/area/centcom)
+"BZ" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
 /area/centcom)
 "Cb" = (
 /obj/structure/table/standard,
@@ -10132,6 +10336,17 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"DV" = (
+/obj/machinery/vending/cola{
+	name = "Robust Softdrinks";
+	prices = list();
+	dir = 4
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "DY" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/paper_bin,
@@ -10604,6 +10819,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Fa" = (
+/obj/structure/bed/chair/padded{
+	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Fb" = (
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/tiled/monotile,
@@ -10733,6 +10957,14 @@
 	dir = 4
 	},
 /area/centcom)
+"Fv" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/device/flashlight/lamp,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Fx" = (
 /obj/structure/skele_stand{
 	dir = 8
@@ -10796,7 +11028,7 @@
 "FN" = (
 /obj/machinery/door/window/brigdoor/eastright{
 	req_access = list("ACCESS_MTF");
-	name = "The Administrator's Desk"
+	name = "O5-2's Desk"
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
@@ -11243,6 +11475,15 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"HH" = (
+/obj/machinery/door/window/brigdoor/eastright{
+	dir = 3
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "HN" = (
 /obj/structure/flora/pottedplant/large,
 /turf/unsimulated/floor{
@@ -11653,6 +11894,14 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"Je" = (
+/obj/structure/window/reinforced,
+/obj/structure/table/standard,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Jg" = (
 /obj/structure/flora/pottedplant/large,
 /turf/unsimulated/floor{
@@ -11719,6 +11968,25 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
+	},
+/area/centcom)
+"Jn" = (
+/obj/machinery/vending/cola{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
+"Jo" = (
+/obj/machinery/door/airlock/vault{
+	name = "The Overseer Council Offices";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/misc.dmi';
+	icon_state = "concrete"
 	},
 /area/centcom)
 "Jp" = (
@@ -11944,6 +12212,16 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Kj" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 3
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Kk" = (
 /obj/structure/window/reinforced/polarized{
 	dir = 8
@@ -11953,6 +12231,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
+"Kl" = (
+/obj/structure/table/rack,
+/obj/item/device/taperecorder,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "Km" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/mk9,
@@ -12102,6 +12388,18 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"Ky" = (
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
+	dir = 8
+	},
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "KC" = (
@@ -12749,6 +13047,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Ma" = (
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Mb" = (
 /obj/machinery/door/airlock/vault{
 	name = "Internal Tribunal Court Security";
@@ -13162,6 +13466,14 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"Nm" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "Nn" = (
@@ -13624,6 +13936,26 @@
 	icon_state = "concrete"
 	},
 /area/centcom)
+"OS" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
+"OU" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "Mobile Task Force Dispatch Control Center"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "OW" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -13761,11 +14093,25 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Ps" = (
+/obj/structure/filingcabinet,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Pt" = (
 /obj/machinery/papershredder,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/linoleum.dmi';
 	icon_state = "lino"
+	},
+/area/centcom)
+"Pv" = (
+/obj/structure/bed/chair/padded,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "Pw" = (
@@ -13776,6 +14122,13 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"Px" = (
+/obj/machinery/door/window/brigdoor/eastright,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "PA" = (
@@ -13876,6 +14229,16 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"PM" = (
+/obj/machinery/door/airlock/vault{
+	name = "REDACTION";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "PN" = (
@@ -14802,6 +15165,13 @@
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
+"Sk" = (
+/obj/structure/filingcabinet,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
 "Sl" = (
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/white/border{
@@ -15027,6 +15397,13 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"SW" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "SZ" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Logistics Hangar";
@@ -15202,6 +15579,15 @@
 /obj/effect/shuttle_landmark/supply/centcom,
 /turf/simulated/floor,
 /area/supply/dock)
+"TG" = (
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "TI" = (
 /obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning{
@@ -15213,6 +15599,16 @@
 	},
 /turf/simulated/floor,
 /area/site53/tram/maintrain)
+"TJ" = (
+/obj/machinery/door/airlock/vault{
+	name = "O5-2";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "TL" = (
 /obj/structure/grille{
 	health_max = null;
@@ -15321,6 +15717,15 @@
 "Ub" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
+"Ui" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced,
+/obj/item/device/flashlight/lamp,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Uk" = (
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
@@ -15948,6 +16353,17 @@
 	icon_state = "techfloor_grid"
 	},
 /area/site53/tram/goc1)
+"Wy" = (
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_MTF");
+	name = "O5-2's Desk";
+	dir = 3
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "WB" = (
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -16051,6 +16467,13 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
+	},
+/area/centcom)
+"WV" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "WX" = (
@@ -16246,6 +16669,15 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"XB" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "XC" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/white/border{
@@ -16325,6 +16757,13 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
 	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "tile_full"
+	},
+/area/centcom)
+"XW" = (
+/obj/structure/window/reinforced,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "tile_full"
@@ -16445,6 +16884,16 @@
 	icon_state = "monotile"
 	},
 /area/centcom/chaos)
+"Yz" = (
+/obj/machinery/door/airlock/vault{
+	name = "O5-4";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "YB" = (
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/white/border{
@@ -16563,6 +17012,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"YT" = (
+/obj/structure/window/reinforced,
+/obj/structure/table/standard,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "YV" = (
 /obj/structure/bed/chair/armchair/red{
 	dir = 8
@@ -16598,6 +17056,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Zd" = (
+/obj/machinery/papershredder,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
+/area/centcom)
 "Ze" = (
 /obj/structure/bed,
 /obj/effect/floor_decal/corner/orange/border{
@@ -16627,6 +17092,16 @@
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
+	},
+/area/centcom)
+"Zt" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/machinery/photocopier{
+	pixel_y = 3
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
 	},
 /area/centcom)
 "Zu" = (
@@ -17035,7 +17510,7 @@ ab
 ab
 ab
 ab
-ab
+zj
 ab
 ab
 ab
@@ -17234,7 +17709,7 @@ ab
 ab
 ab
 ab
-ab
+tq
 tq
 tq
 tq
@@ -17436,25 +17911,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Ps
+Ma
+Ma
+Wy
+Ma
+Ma
+tq
+DV
+Ma
+Fa
+tq
+SW
+SW
+Ps
+Zt
+Zd
+SW
+SW
 tq
 Xa
 dJ
@@ -17638,25 +18113,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Zd
+Ma
+Ma
+Ui
+Ma
+Ma
+tq
+Ma
+Ma
+Fa
+tq
+Nm
+Fa
+Ma
+Ma
+Ma
+Pv
+Nm
 tq
 dU
 gp
@@ -17840,25 +18315,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+OU
+Ma
+Pv
+BZ
+oK
+Ma
+TJ
+Ma
+Ma
+wj
+tq
+Fv
+Ma
+Ma
+Ma
+Ma
+Ma
+Fv
 tq
 so
 rS
@@ -18042,25 +18517,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Kj
+TG
+wI
+wL
+Ma
+WV
+tq
+Ma
+Ma
+Fa
+tq
+OS
+XB
+XB
+Px
+XB
+XB
+OS
 tq
 tq
 Gt
@@ -18244,25 +18719,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+Ma
+Ma
+Fa
+tq
+Ma
+Ma
+Ma
+Ma
+Ma
+Ma
+Ma
 tq
 FK
 ks
@@ -18446,25 +18921,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Ps
+Ma
+Ma
+sN
+Ma
+Ma
+tq
+WV
+Ma
+wj
+tq
+tq
+tq
+tq
+oS
+tq
+tq
+tq
 tq
 Tm
 gp
@@ -18648,25 +19123,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Zd
+Ma
+Ma
+ni
+Ma
+Ma
+tq
+Ma
+Ma
+Ma
+Jo
+Ma
+Ma
+Ma
+Ma
+Ma
+Ma
+Ma
 tq
 Cb
 gp
@@ -18850,28 +19325,28 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+OU
+Ma
+Pv
+Je
+oK
+Ma
+AT
+Ma
+Ma
+Ma
+Jo
+Ma
+Ma
+Ma
+Ma
+Ma
+Ma
+Ma
 tq
 Tm
-gp
+yr
 tu
 PI
 gp
@@ -19052,26 +19527,26 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Kj
+Ky
+wI
+YT
+Ma
+WV
 tq
+Ma
+Ma
+wj
+tq
+tq
+tq
+tq
+PM
+tq
+tq
+tq
+dl
 Ry
 wE
 dR
@@ -19254,25 +19729,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+WV
+Ma
+Fa
+tq
+Sk
+WB
+sp
+WB
+XW
+WB
+sZ
 tq
 tq
 tq
@@ -19456,25 +19931,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Ps
+Ma
+Ma
+sN
+Ma
+Ma
+tq
+Ma
+Ma
+Fa
+tq
+Sk
+WB
+WB
+WB
+XW
+WB
+hO
 tq
 rw
 Ng
@@ -19658,25 +20133,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Zd
+Ma
+Ma
+ni
+Ma
+Ma
+tq
+Ma
+Ma
+wj
+tq
+Sk
+WB
+WB
+WB
+HH
+WB
+vw
 tq
 yZ
 gp
@@ -19860,25 +20335,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+OU
+Ma
+Pv
+Je
+oK
+Ma
+Yz
+Ma
+Ma
+Fa
+tq
+Sk
+WB
+WB
+WB
+XW
+WB
+bZ
 tq
 yZ
 gp
@@ -20062,25 +20537,25 @@ ab
 ab
 ab
 ab
-ab
 tq
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
-Rr
+Kj
+TG
+BX
+YT
+Ma
+WV
+tq
+Jn
+Ma
+Fa
+tq
+Sk
+WB
+ah
+WB
+XW
+Kl
+Br
 tq
 tG
 OO
@@ -20264,7 +20739,7 @@ ab
 ab
 ab
 ab
-ab
+tq
 tq
 tq
 tq
@@ -20887,7 +21362,7 @@ Rr
 Rr
 Rr
 Rr
-tq
+pu
 Sp
 kN
 lF
