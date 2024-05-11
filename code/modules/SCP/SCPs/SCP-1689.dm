@@ -1,4 +1,4 @@
-/obj/item/storage/briefcase/scp1689
+/obj/item/storage/box/scp1689
 	name = "burlap bag"
 	desc = "A burlap bag of potatos"
 	icon = 'icons/SCP/scp-1689.dmi'
@@ -10,7 +10,7 @@
 
 	var/obj/structure/ladder/scp1689ladder/enter_point
 
-/obj/item/storage/briefcase/scp1689/Initialize()
+/obj/item/storage/box/scp1689/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
@@ -21,7 +21,7 @@
 
 //Overrides
 
-/obj/item/storage/briefcase/scp1689/open(mob/user)
+/obj/item/storage/box/scp1689/open(mob/user)
 	if(!enter_point)
 		enter_point = locate(/obj/structure/ladder/scp1689ladder) in GLOB.SCP_list
 	var/turf/T = get_turf(enter_point)
@@ -55,7 +55,7 @@
 
 /obj/structure/ladder/scp1689ladder/getTargetLadder(mob/M)
 	if(!target_up)
-		target_up = locate(/obj/item/storage/briefcase/scp1689) in GLOB.SCP_list //Technically a type mismatch but uhhhhh ladders never check so this works without runtimes
+		target_up = locate(/obj/item/storage/box/scp1689) in GLOB.SCP_list //Technically a type mismatch but uhhhhh ladders never check so this works without runtimes
 	return target_up
 
 
