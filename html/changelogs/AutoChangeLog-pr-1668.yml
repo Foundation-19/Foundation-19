@@ -1,0 +1,4 @@
+author: quadbium
+delete-after: true
+changes:
+  - balance: Gave SCP's 049 and 106 the SPECIES_FLAG_NEED_DIRECT_ABSORB tag
