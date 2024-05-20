@@ -1,0 +1,58 @@
+2024-04-03:
+  chesse20:
+  - rscadd: New soap bars sometimes have the SCP logo on them. They come in new scents
+      too.
+2024-04-05:
+  Saicchi:
+  - rscadd: wire cut indicators on mounted flash
+  cheesePizza2:
+  - code_imp: Massive overhaul removing every single observable and replacing them
+      all with signals.
+2024-04-07:
+  RandomLad645:
+  - bugfix: Minor grammatical error in adminfax fixed.
+  cheesePizza2:
+  - rscadd: Moved the auxiliary nuclear reactors in Engineering down to a separate
+      sub-room, away from the SMESs.
+  - balance: Engineering SMESs no longer start with insane levels of power. Get that
+      reactor working!
+  - balance: The R-UST has an extra SMES.
+  - balance: The R-UST produces 2.5x more power
+  - balance: 'Boron is now fully implemented and can be bought from cargo (hint hint:
+      you need it for high-tier R-UST reactions)'
+  - bugfix: Battery racks now hold 9 cells (as their sprite implies).
+  - balance: The crates near the battery racks in Engineering have 9 high-capacity
+      cells for each instead of 6 super-capacity cells.
+  - balance: Upgrading SMESs no longer has a chance to blow up.
+2024-04-09:
+  Saicchi:
+  - rscadd: keybind 'V' for robot and AI lights
+2024-04-10:
+  cheesePizza2:
+  - rscadd: Traitor code phrases and responses are automatically re-colored!
+  chesse20:
+  - rscadd: Departments can now wear their own armbands
+2024-04-24:
+  chesse20:
+  - refactor: Space Carp are no longer carp or from space.
+  quadbium:
+  - rscadd: Replaced the high vis jacket textures
+2024-04-27:
+  cheesePizza2:
+  - balance: Inaprovaline metabolizes slower, so you'll have more time to heal a patient.
+  - balance: Brain healing from Inaprovaline separated from healing from Alkysine.
+      The former heals 0.5 damage a second, whereas the latter repairs 1.6 damage
+      a second.
+  - balance: Brain oxyloss damage/second, maximum brain oxyloss damage, and brain
+      passive healing is continuous instead of discrete. For details, see graphs attached
+      to PR.
+  quadbium:
+  - rscadd: Added logos for aiad, antimemetics, church of maxwellism, deconmissioning,
+      FDS, pataphysics, Raisa, SPC, MCF, WWS, and the cogwork orthodoxy.
+  - rscadd: Replaced the cogwork orthodoxy logo with the CotBG logo.
+2024-04-28:
+  quadbium:
+  - rscadd: Added class H amnestic implant
+  - rscadd: Added the option to take the class H amnestic implant in the loadout
+  - rscadd: Changed the activation deactivation alerts to be in line with class H
+      amnestics

@@ -18,9 +18,8 @@
 
 	var/can_use_mmi = TRUE
 	var/mob/living/carbon/brain/brainmob = null
-	var/const/damage_threshold_count = 10
-	var/damage_threshold_value
 	var/healed_threshold = 1
+	/// Basically, how many Process() calls we have until hardcrit if we run out of oxygen. Maximum value is equal to its starting value.
 	var/oxygen_reserve = 6
 	var/insanity = 0 // higher = bad
 
@@ -54,10 +53,6 @@
 	spawn(5)
 		if(brainmob && brainmob.client)
 			brainmob.client.screen.len = null //clear the hud
-
-/obj/item/organ/internal/brain/set_max_damage(ndamage)
-	..()
-	damage_threshold_value = round(max_damage / damage_threshold_count)
 
 /obj/item/organ/internal/brain/Destroy()
 	QDEL_NULL(brainmob)
@@ -119,12 +114,6 @@
 /obj/item/organ/internal/brain/can_recover()
 	return ~status & ORGAN_DEAD
 
-/obj/item/organ/internal/brain/proc/get_current_damage_threshold()
-	return round(damage / damage_threshold_value)
-
-/obj/item/organ/internal/brain/proc/past_damage_threshold(threshold)
-	return (get_current_damage_threshold() > threshold)
-
 /obj/item/organ/internal/brain/proc/handle_severe_brain_damage()
 	set waitfor = FALSE
 	healed_threshold = 0
@@ -160,47 +149,58 @@
 			var/blood_volume = owner.get_blood_oxygenation()
 			if(blood_volume < BLOOD_VOLUME_SURVIVE)
 				if(!owner.chem_effects[CE_STABLE] || prob(60))
-					oxygen_reserve = max(0, oxygen_reserve-1)
+					oxygen_reserve = max(0, oxygen_reserve - 1)
 			else
-				oxygen_reserve = min(initial(oxygen_reserve), oxygen_reserve+1)
+				oxygen_reserve = min(initial(oxygen_reserve), oxygen_reserve + 1)
+
 			if(!oxygen_reserve) //(hardcrit)
 				owner.Paralyse(3)
-			var/can_heal = damage && damage < max_damage && (damage % damage_threshold_value || owner.chem_effects[CE_BRAIN_REGEN] || (!past_damage_threshold(3) && owner.chem_effects[CE_STABLE]))
-			var/damprob
-			//Effects of bloodloss
+
+			// If we've got the proper chems, we can heal no matter what
+			var/healing = owner.chem_effects[CE_BRAIN_REGEN] ? 1.6 : 0
+			healing += ((damage > 40) && owner.chem_effects[CE_STABLE]) ? 0.5 : 0
+			// At good oxygenation levels, we passively autoheal as well.
+			if(blood_volume > (BLOOD_VOLUME_SAFE + 1))
+				healing += 1.05 * log(12, (blood_volume - BLOOD_VOLUME_SAFE))
+
+			var/incoming_damage = ((100 - (1.1 * blood_volume)) / 50) + (((blood_volume - 100) / 120) ** 2)
+			if(owner.chem_effects[CE_STABLE])
+				incoming_damage *= 0.5
+
+			var/current_max_health = (max_damage + 75) - (3 * blood_volume)
+
+			// Can't heal and take damage at the same time, so the smaller one is taken away from the larger
+			if(healing && incoming_damage)
+				if(healing > incoming_damage)
+					healing -= incoming_damage
+					incoming_damage = 0
+				else
+					incoming_damage -= healing
+					healing = 0
+
+			take_internal_damage(min(damage + incoming_damage, current_max_health - damage))
+
+			// we can't heal if we're above max damage
+			if(healing && damage && damage < max_damage)
+				damage = max(damage - healing, 0)
+
+			// Secondary effects of bloodloss
 			switch(blood_volume)
-				if(BLOOD_VOLUME_SAFE to INFINITY)
-					if(can_heal)
-						damage = max(damage-1, 0)
 				if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 					if(prob(1))
 						to_chat(owner, SPAN_WARNING("You feel [pick("dizzy","woozy","faint")]..."))
-					damprob = owner.chem_effects[CE_STABLE] ? 30 : 60
-					if(!past_damage_threshold(2) && prob(damprob))
-						take_internal_damage(1)
 				if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-					owner.eye_blurry = max(owner.eye_blurry,6)
-					damprob = owner.chem_effects[CE_STABLE] ? 40 : 80
-					if(!past_damage_threshold(4) && prob(damprob))
-						take_internal_damage(1)
-					if(!owner.paralysis && prob(10))
-						owner.Paralyse(rand(1,3))
+					owner.eye_blurry = max(owner.eye_blurry, 2)
+					if(prob(3))
 						to_chat(owner, SPAN_WARNING("You feel very [pick("dizzy","woozy","faint")]..."))
 				if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-					owner.eye_blurry = max(owner.eye_blurry,6)
-					damprob = owner.chem_effects[CE_STABLE] ? 60 : 100
-					if(!past_damage_threshold(6) && prob(damprob))
-						take_internal_damage(1)
-					if(!owner.paralysis && prob(15))
-						owner.Paralyse(3,5)
+					owner.Weaken(2)
+					owner.eye_blurry = max(owner.eye_blurry, 4)
+					if(prob(6))
 						to_chat(owner, SPAN_WARNING("You feel extremely [pick("dizzy","woozy","faint")]..."))
 				if(-(INFINITY) to BLOOD_VOLUME_SURVIVE) // Also see heart.dm, being below this point puts you into cardiac arrest.
-					owner.eye_blurry = max(owner.eye_blurry,6)
-					damprob = owner.chem_effects[CE_STABLE] ? 80 : 100
-					if(prob(damprob))
-						take_internal_damage(1)
-					if(prob(damprob))
-						take_internal_damage(1)
+					owner.Weaken(5)
+					owner.eye_blurry = max(owner.eye_blurry, 6)
 	..()
 
 /obj/item/organ/internal/brain/proc/take_sanity_damage(damage, silent)

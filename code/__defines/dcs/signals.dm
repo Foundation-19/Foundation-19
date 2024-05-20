@@ -99,13 +99,59 @@
 /// Called on `/datum/money_account/deposit` (/datum/money_account)
 #define COMSIG_MONEY_DEPOSITED "money_deposited"
 
+/// Called on `/obj/item/proc/dropped` (/mob, /obj)
+#define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"
+/// Called on `/obj/item/proc/dropped` (/obj, /mob)
+#define COMSIG_DROPPED_ITEM "dropped_item"
+
+/// Called on `/atom/set_opacity` (/atom, old_opacity, new_opacity)
+#define COMSIG_SET_OPACITY "set_opacity"
+
+/// Called on `/obj/screen/zone_sel/set_selected_zone` (/obj/screen/zone_sel, selecting, old_selecting)
+#define COMSIG_SET_SELECTED_ZONE "set_selected_zone"
+
+/// Called on `/mob/set_stat` (/mob, stat)
+#define COMSIG_SET_STAT "set_stat"
+/// Called on `/mob/set_see_in_dark` (/mob, old value, new value)
+#define COMSIG_SET_SEE_IN_DARK "set_see_in_dark"
+/// Called on `/mob/set_see_invisible` (/mob, old value, new value)
+#define COMSIG_SET_SEE_INVISIBLE "set_see_invisible"
+/// Called on `/mob/set_sight` (/mob, old value, new value)
+#define COMSIG_SET_SIGHT "set_sight"
+/// Called on `/mob/set_invisibility` (/mob, old value, new value)
+#define COMSIG_SET_INVISIBILITY "set_invisibility"
+/// Called on `/mob/living/add_to_dead_mob_list` (/mob)
+#define COMSIG_ADD_TO_DEAD_MOB_LIST "add_to_dead_mob_list"
+
+/// Called on `/mob/swap_hand` (/mob)
+#define COMSIG_SWAPPED_HANDS "swapped_hands"
+
+/// Called on `/datum/shuttle/attempt_move` before moving (/datum/shuttle, destination, old_location)
+#define COMSIG_SHUTTLE_PRE_MOVE "shuttle_pre_move"
+/// Called on `/datum/shuttle/attempt_move` after moving (/datum/shuttle, destination, old_location)
+#define COMSIG_SHUTTLE_MOVED "shuttle_moved"
+
+/// Called on `/mob/living/silicon/robot/deselect_module` (/mob/living/silicon/robot, /obj/item)
+#define COMSIG_ROBOT_DESELECTING_MODULE "robot_deselecting_module"
+/// Called on `/mob/living/silicon/robot/uneq_active` and `/mob/living/silicon/robot/uneq_all` (/mob/living/silicon/robot, /obj/item)
+#define COMSIG_ROBOT_DEACTIVATING_MODULE "robot_deactivating_module"
+
+
+/// Called on `/obj/item/organ/removed` (/mob/living/carbon/human, /obj/item/organ)
+#define COMSIG_ORGAN_DISMEMBERED "organ_dismembered"
+
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_BEGAN "do_after_began"
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_ENDED "do_after_ended"
 
+/// An item has just been equipped by a mob. Called on obj/item/equipped(): (obj/item/equipped_item, mob/equipper, slot)
+#define COMSIG_ITEM_EQUIPPED "item_equipped"
+/// A mob has just equipped an item. Called on [/mob] from base of [/obj/item/equipped()]: (mob/equipper, obj/item/equipped_item, slot)
+#define COMSIG_MOB_EQUIPPED_ITEM "mob_equipped_item"
+
 /*
-* Atom
+*	Atom
 */
 
 /// Called on `/atom/movable/Move` and `/atom/movable/proc/forceMove` (/atom/movable, /atom, /atom)
@@ -117,6 +163,21 @@
 /// Called on `/atom/Exited` (/atom, exitee, new_loc)
 #define COMSIG_EXITED "exited"
 
+/// Called on `/atom/dir_set` (/atom, new_dir, old_dir)
+#define COMSIG_DIR_SET "dir_set"
+
+/*
+*	Global
+*/
+
+/// Called on `/datum/controller/subsystem/shuttle/proc/initialize_shuttle` (/datum/ssdcs)
+#define COMSIG_GLOB_SHUTTLE_INITIALIZED "!shuttle_initialized"
+
+/// Called on `/mob/login` (/mob)
+#define COMSIG_GLOB_MOB_LOGIN "!mob_login"
+/// Called on `mob/logout` (/mob)
+#define COMSIG_GLOB_MOB_LOGOUT "!mob_logout"
+
 /*
 *	Mob
 */
@@ -125,8 +186,10 @@
 #define COMSIG_ATOM_EXAMINED "atomExamined"
 /// Called in '/mob/living/say' on the mob who heard speech (/mob/living/speaker, message)
 #define COMSIG_MOB_HEARD_SPEECH "mobHeardSpeech"
-/// Called in '/mob/living/say' on the mob who heard the whisper (/mob/living/speaker, message)
+/// Called in '/mob/living/say' on the mob who heard the whisper (/mob/living/speaker, list(message)). Message is passed in a list so that back-editing is possible.
 #define COMSIG_MOB_HEARD_WHISPER "mobHeardWhisper"
+/// Called in 'mob/on_hear_say' on the mob who heard whatever message (/mob/hearer, message)
+#define COMSIG_MOB_HEAR "mob_hear"
 
 /*
 *	Photos
