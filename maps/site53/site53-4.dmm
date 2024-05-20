@@ -4318,8 +4318,8 @@
 /area/site53/uez/commandpanicbunker)
 "qK" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
@@ -5475,8 +5475,8 @@
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
@@ -6093,8 +6093,8 @@
 "CD" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
@@ -6958,6 +6958,10 @@
 /obj/item/stamp/approved,
 /obj/item/stamp/denied,
 /obj/item/stamp/cargo,
+/obj/item/paper{
+	info = Logistics, As a reminder and warning of SCP-6819, do NOT drive at the times of 11PM to 4AM. Regardless of your site's condition of 'stressed logistical power' it is no excuse to put drivers into it's risk. Regards, Assistant Director of Department of Logistics.;
+	name = "Old Fax"
+	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "JS" = (
@@ -9304,8 +9308,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 4
+	dir = 4;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
