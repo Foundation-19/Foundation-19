@@ -18469,7 +18469,7 @@
 "bdC" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logistics)
+/area/site53/surface/cryogenicsprimary)
 "bdE" = (
 /obj/machinery/light{
 	dir = 8
@@ -25397,7 +25397,7 @@
 "foS" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
-/area/space)
+/area/site53/surface/cryogenicsprimary)
 "foW" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/red/border,
@@ -80654,8 +80654,8 @@ bdC
 bdC
 bdC
 bdC
-aYJ
-aYJ
+foS
+foS
 aYJ
 aYJ
 aYJ
@@ -80912,7 +80912,7 @@ xVc
 tjx
 crp
 uZM
-aYJ
+foS
 wBm
 nMX
 bej
@@ -81169,7 +81169,7 @@ bQA
 eCs
 uKO
 bxe
-aYJ
+foS
 bDX
 bdW
 bdW
@@ -81426,7 +81426,7 @@ hMo
 ufc
 lMD
 hMo
-aYJ
+foS
 lrd
 maO
 icF
@@ -81683,7 +81683,7 @@ tbe
 lIm
 lIm
 pej
-aYJ
+foS
 ahr
 xVz
 bei
@@ -81940,7 +81940,7 @@ ubv
 ubv
 ubv
 mzB
-aYJ
+foS
 bdU
 xVz
 tWW
@@ -82197,7 +82197,7 @@ ubv
 jIU
 ubv
 mzB
-aYJ
+foS
 sar
 xVz
 bei
@@ -82454,7 +82454,7 @@ ubv
 ubv
 ubv
 mzB
-aYJ
+foS
 pfh
 hOk
 bei
@@ -82711,7 +82711,7 @@ ext
 ext
 ext
 oGl
-aYJ
+foS
 aYJ
 aYJ
 aYJ
