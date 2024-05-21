@@ -6476,7 +6476,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/lowertrams/maintenance)
 "arR" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -31944,7 +31944,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/lowertrams/maintenance)
 "kqN" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/vending/medical{
@@ -39453,13 +39453,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "pYM" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/lowertrams/janitoroffice)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "pZa" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
@@ -39686,9 +39687,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
 "qig" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logistics)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/lowertrams/janitoroffice)
 "qiu" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
@@ -40595,7 +40600,7 @@
 "qWL" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/lowertrams/maintenance)
+/area/site53/logistics/logistics)
 "qXo" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -45294,20 +45299,6 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/logistics/logistics)
-"uwl" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
 "uyy" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-216 Containment Chamber";
@@ -45614,15 +45605,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "uOP" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/maintenance)
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
@@ -73751,40 +73736,40 @@ uJG
 uJG
 uJG
 uJG
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 aQK
 aQK
 aQK
 aQK
 aQK
 aQK
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 apn
 atA
 auS
@@ -74258,10 +74243,10 @@ lZE
 lZE
 lZE
 bBQ
-qig
-qig
-qig
-qig
+qWL
+qWL
+qWL
+qWL
 aYJ
 aYJ
 fXC
@@ -74273,31 +74258,31 @@ aYJ
 aYJ
 aYJ
 aYJ
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 asz
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 fzc
 pnh
 wFO
@@ -74515,7 +74500,7 @@ asu
 asu
 asu
 iMD
-qig
+qWL
 aYJ
 aYJ
 aYJ
@@ -74541,9 +74526,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 azA
 azA
 azA
@@ -74554,7 +74539,7 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 hvO
 fuJ
 aAd
@@ -74798,9 +74783,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 azA
 azA
 azA
@@ -74811,9 +74796,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -75055,9 +75040,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 pze
 pze
 pze
@@ -75068,9 +75053,9 @@ pze
 pze
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -75312,9 +75297,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 aYK
 aYK
 aYK
@@ -75325,9 +75310,9 @@ aYK
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -75569,9 +75554,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 aYK
 aYO
 aYO
@@ -75582,9 +75567,9 @@ aYO
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -75826,9 +75811,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 aYK
 aYP
 aYO
@@ -75839,9 +75824,9 @@ aYP
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -76083,9 +76068,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 aYK
 aYP
 aYO
@@ -76096,9 +76081,9 @@ aYP
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -76302,7 +76287,7 @@ adx
 lZE
 aoI
 ais
-pYM
+qig
 aAt
 ais
 dWR
@@ -76340,9 +76325,9 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
-qWL
+uOP
 aYK
 aYO
 aYO
@@ -76353,9 +76338,9 @@ beL
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -76597,7 +76582,7 @@ azA
 azA
 azA
 azA
-qWL
+uOP
 asz
 aQN
 aYK
@@ -76610,9 +76595,9 @@ aYQ
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -76820,7 +76805,7 @@ ahu
 aii
 sdf
 ais
-qig
+qWL
 cBd
 cBd
 cBd
@@ -76845,18 +76830,18 @@ qpX
 qpX
 hGJ
 aYJ
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 aYK
 aYR
 aYW
@@ -76867,9 +76852,9 @@ aYR
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -77124,9 +77109,9 @@ aYQ
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -77359,18 +77344,18 @@ bdW
 bdW
 csb
 aYJ
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
-qWL
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 aYK
 aYT
 aYY
@@ -77381,9 +77366,9 @@ aYT
 aYK
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -77627,7 +77612,7 @@ sGF
 sGF
 sGF
 sGF
-qWL
+uOP
 aYK
 aYQ
 aYZ
@@ -77638,9 +77623,9 @@ aYQ
 aZp
 pze
 azA
-qWL
+uOP
 hvO
-qWL
+uOP
 azA
 azA
 azA
@@ -77884,7 +77869,7 @@ pFm
 qJO
 wMi
 sGF
-qWL
+uOP
 aYK
 aYO
 aYO
@@ -77895,14 +77880,14 @@ aYO
 aYL
 pze
 azA
-qWL
+uOP
 hvO
-qWL
-pze
-pze
-pze
-pze
-pze
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 azA
 azA
 azA
@@ -78141,7 +78126,7 @@ ctX
 qJO
 aRH
 sGF
-qWL
+uOP
 aYK
 aYU
 aYR
@@ -78152,14 +78137,14 @@ aYP
 aYK
 pze
 azA
-pze
+uOP
 arN
+ast
+ast
+ast
+ast
+bEe
 uOP
-uOP
-uOP
-uOP
-uwl
-pze
 azA
 azA
 azA
@@ -78398,7 +78383,7 @@ ctX
 qJO
 kmR
 sGF
-qWL
+uOP
 aYL
 aYP
 aYR
@@ -78409,14 +78394,14 @@ aYP
 aYK
 pze
 azA
-pze
-pze
-pze
-pze
-pze
-pze
+uOP
+uOP
+uOP
+uOP
+uOP
+uOP
 koX
-pze
+uOP
 azA
 azA
 azA
@@ -78655,7 +78640,7 @@ aRx
 qJO
 aRH
 sGF
-qWL
+uOP
 beR
 aYO
 aYO
@@ -78671,9 +78656,9 @@ azA
 azA
 azA
 azA
-pze
-mXv
-pze
+uOP
+pYM
+uOP
 azA
 azA
 azA
@@ -78912,7 +78897,7 @@ rFH
 qJO
 cUG
 sGF
-qWL
+uOP
 aYK
 aYL
 aYO
@@ -79169,7 +79154,7 @@ ctX
 qJO
 aRH
 sGF
-qWL
+uOP
 aYK
 aYK
 aYK
