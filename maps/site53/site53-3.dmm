@@ -3129,11 +3129,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "iH" = (
@@ -6610,15 +6605,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
-"wV" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Entrance Zone Network");
-	c_tag = "Entrance Zone Security post 2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "wW" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
@@ -6959,13 +6945,6 @@
 "yV" = (
 /obj/structure/railing/mapped{
 	dir = 4
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfacewest)
@@ -7522,14 +7501,6 @@
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
-"BG" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
 "BH" = (
 /obj/effect/paint_stripe/mauve,
 /obj/structure/sign/warning/detailed{
@@ -39483,11 +39454,11 @@ Zt
 rg
 iG
 Ax
-BG
+iG
 IH
-BG
-BG
-BG
+iG
+iG
+iG
 VN
 MX
 dA
@@ -40814,7 +40785,7 @@ az
 ai
 ai
 On
-wV
+lR
 au
 au
 xc
