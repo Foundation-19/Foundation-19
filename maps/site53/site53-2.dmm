@@ -2381,6 +2381,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/maintenance)
 "ahu" = (
@@ -14705,19 +14710,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "aQK" = (
+/obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	d1 = 1;
+	d1 = 2;
 	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "2-4"
 	},
-/turf/simulated/floor/tiled/steel_grid,
+/turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
 "aQL" = (
 /turf/simulated/floor/tiled,
@@ -24705,6 +24704,10 @@
 /obj/effect/landmark/start{
 	name = "Janitor"
 	},
+/obj/machinery/power/apc{
+	dir = 4
+	},
+/obj/structure/cable,
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
 "eKW" = (
@@ -26396,6 +26399,14 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"gex" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/lowertrams/maintenance)
 "geB" = (
 /obj/structure/table/reinforced,
 /obj/item/device/camera,
@@ -39444,9 +39455,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "pYM" = (
-/obj/machinery/power/apc,
-/obj/structure/cable,
-/turf/simulated/floor/tiled/steel_grid,
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
 "pZa" = (
 /obj/effect/floor_decal/corner/paleblue/border{
@@ -42156,11 +42171,6 @@
 "sdf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/maintenance)
@@ -75762,7 +75772,7 @@ afu
 lZE
 nfX
 bed
-bed
+aQK
 eKQ
 tar
 bdQ
@@ -76019,7 +76029,7 @@ aZr
 lZE
 aal
 aal
-bed
+pYM
 aal
 ryp
 ryp
@@ -76276,7 +76286,7 @@ adx
 lZE
 aoI
 ais
-ais
+gex
 aAt
 ais
 dWR
@@ -76535,7 +76545,7 @@ cti
 ais
 aht
 ahN
-aQK
+ahN
 ahN
 aqy
 bex
@@ -76793,7 +76803,7 @@ ais
 ahu
 aii
 sdf
-pYM
+ais
 aab
 uOP
 uOP
