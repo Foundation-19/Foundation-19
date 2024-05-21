@@ -42,6 +42,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"ao" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "ar" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3300,7 +3306,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "jc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -3556,7 +3562,7 @@
 "jD" = (
 /obj/machinery/light/spot,
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "jE" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/bed,
@@ -3598,7 +3604,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "jI" = (
 /obj/effect/paint_stripe/white,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -3642,7 +3648,7 @@
 	},
 /turf/space,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "jR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4472,7 +4478,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "mx" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -4694,8 +4700,13 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "nP" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -4723,6 +4734,16 @@
 "nU" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/mentalhealth/isolation)
+"nX" = (
+/obj/machinery/power/apc{
+	dir = 8
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "nY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -5088,7 +5109,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "pu" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -5325,7 +5346,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "qG" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/tree/pine,
@@ -5356,6 +5377,9 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/bridge)
+"qM" = (
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "qN" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -5407,7 +5431,7 @@
 "qZ" = (
 /turf/space,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "ra" = (
 /obj/structure/flora/ausbushes/pointybush,
 /obj/structure/railing/mapped{
@@ -5422,6 +5446,12 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"re" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "rf" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/light{
@@ -5611,14 +5641,14 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "rP" = (
 /obj/machinery/camera/network/entrance{
 	c_tag = "Logistics Hangar"
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "rQ" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower External North";
@@ -5683,7 +5713,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "rZ" = (
 /obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/freezer,
@@ -5939,10 +5969,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"tn" = (
+/turf/simulated/floor/reinforced,
+/area/quartermaster/hangar)
 "tu" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "tz" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow{
@@ -6355,6 +6388,12 @@
 	},
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/surface/surface)
+"vw" = (
+/obj/effect/floor_decal/corner/white{
+	dir = 6
+	},
+/turf/simulated/floor/reinforced,
+/area/quartermaster/hangar)
 "vy" = (
 /obj/machinery/status_display,
 /obj/effect/paint_stripe/yellow,
@@ -7209,6 +7248,12 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/medical/mentalhealth/isolation)
+"Ag" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "Ah" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Surface Restaurant"
@@ -7360,7 +7405,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "Ba" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -8926,7 +8971,7 @@
 	},
 /turf/space,
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "KV" = (
 /obj/effect/paint_stripe/yellow,
 /obj/machinery/status_display,
@@ -8936,8 +8981,13 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "La" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border,
@@ -8955,7 +9005,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "Lm" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
@@ -9177,6 +9227,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/space)
+"Mz" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "MA" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -9535,7 +9596,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "Pi" = (
 /obj/machinery/door/airlock/multi_tile/glass/science{
 	name = "Mechanical Laboratory";
@@ -9639,7 +9700,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "PN" = (
 /turf/simulated/floor/plating,
 /area/space)
@@ -10203,6 +10264,14 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
+"Tm" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "Tp" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 8
@@ -10513,7 +10582,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "Vq" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
@@ -10658,7 +10727,7 @@
 	},
 /turf/space,
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "Wi" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 8
@@ -10838,7 +10907,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "Xp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -11105,6 +11174,19 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/logistics/logisticsbreak)
+"YS" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "YT" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -11170,6 +11252,14 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"Zk" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/quartermaster/hangar)
 "Zp" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -11254,7 +11344,7 @@
 "ZH" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/quartermaster/hangar)
 "ZL" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -11287,6 +11377,12 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
+"ZZ" = (
+/obj/effect/floor_decal/corner/white{
+	dir = 9
+	},
+/turf/simulated/floor/reinforced,
+/area/quartermaster/hangar)
 
 (1,1,1) = {"
 dA
@@ -37886,18 +37982,18 @@ dA
 dA
 dA
 dA
-nE
+qM
 jb
-nE
-nE
-nE
-nE
-nE
-nE
+qM
+qM
+qM
+qM
+qM
+qM
 jb
-nE
-nE
-nE
+qM
+nX
+qM
 kG
 oS
 sw
@@ -38143,18 +38239,18 @@ dA
 dA
 dA
 dA
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+Zk
+qM
 kG
 oS
 sw
@@ -38411,7 +38507,7 @@ qF
 qF
 qF
 KX
-nE
+qM
 kG
 ic
 sw
@@ -38658,15 +38754,15 @@ dA
 dA
 dA
 ZH
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+tn
 nO
 jD
 kG
@@ -38915,20 +39011,20 @@ dA
 dA
 dA
 ZH
-AT
-AT
-AT
-RT
-RT
-RT
-AT
-AT
-AT
-nO
-nE
-nE
-nE
-sw
+tn
+tn
+tn
+vw
+vw
+vw
+tn
+tn
+tn
+Mz
+Tm
+jR
+jR
+YS
 rQ
 Lm
 Lm
@@ -39172,17 +39268,17 @@ dA
 dA
 dA
 rP
-AT
-AT
-AT
-AT
+tn
+tn
+tn
+tn
 rY
-AT
-AT
-AT
-AT
-nO
-nE
+tn
+tn
+tn
+tn
+Ag
+qM
 nE
 nE
 sw
@@ -39429,17 +39525,17 @@ dA
 dA
 dA
 rO
-AT
-AT
-AT
-Tl
-Tl
-Tl
-AT
-AT
-AT
-nO
-nE
+tn
+tn
+tn
+ZZ
+ZZ
+ZZ
+tn
+tn
+tn
+Ag
+qM
 zU
 GJ
 sw
@@ -39686,17 +39782,17 @@ dA
 dA
 dA
 ZH
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-nO
-nE
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+Ag
+qM
 oG
 ic
 sw
@@ -39943,17 +40039,17 @@ dA
 dA
 dA
 Lf
-nl
-nl
-nl
-nl
-nl
-nl
-nl
-nl
-nl
+ao
+ao
+ao
+ao
+ao
+ao
+ao
+ao
+ao
 AZ
-nE
+qM
 qR
 iz
 sw
@@ -40200,17 +40296,17 @@ OD
 dA
 dA
 mv
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+qM
+qM
 oG
 iz
 sw
@@ -40466,8 +40562,8 @@ qF
 qF
 qF
 qF
-KX
-nE
+re
+qM
 qR
 iz
 sw
@@ -40714,17 +40810,17 @@ xc
 PC
 dA
 ZH
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-nO
-nE
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+tn
+Ag
+qM
 oG
 ic
 sw
@@ -40971,17 +41067,17 @@ xc
 Vn
 dA
 Xn
-AT
-AT
-AT
-RT
-RT
-RT
-AT
-AT
-AT
-nO
-nE
+tn
+tn
+tn
+vw
+vw
+vw
+tn
+tn
+tn
+Ag
+qM
 qR
 iz
 se
@@ -41228,17 +41324,17 @@ xc
 Vn
 dA
 rP
-AT
-AT
-AT
-AT
+tn
+tn
+tn
+tn
 Vp
-AT
-AT
-AT
-AT
-nO
-nE
+tn
+tn
+tn
+tn
+Ag
+qM
 ug
 NB
 sm
@@ -41742,17 +41838,17 @@ xc
 OD
 dA
 Xn
-AT
-AT
-AT
-AT
+tn
+tn
+tn
+tn
 qZ
 qZ
 qZ
-AT
-AT
-nO
-nE
+tn
+tn
+Ag
+qM
 nE
 nE
 nE
@@ -41999,17 +42095,17 @@ xc
 OD
 dA
 Lf
-nl
-nl
-nl
-nl
-nl
-nl
-nl
-nl
-nl
+ao
+ao
+ao
+ao
+ao
+ao
+ao
+ao
+ao
 AZ
-nE
+qM
 oy
 GJ
 nE
