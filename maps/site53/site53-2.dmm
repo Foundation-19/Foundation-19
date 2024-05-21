@@ -24534,7 +24534,7 @@
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/green,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
 "eCx" = (
 /obj/structure/flora/pottedplant/fern,
@@ -24973,7 +24973,7 @@
 	department = "Logistics Department"
 	},
 /obj/item/paper{
-	info = Logistics, As a reminder and warning of SCP-6819, do NOT drive at the times of 11PM to 4AM. Regardless of your site's condition of 'stressed logistical power' it is no excuse to put drivers into it's risk. Regards, Assistant Director of Department of Logistics.;
+	info = "Logistics, As a reminder and warning of SCP-6819, do NOT drive at the times of 11PM to 4AM. Regardless of your site's condition of 'stressed logistical power' it is no excuse to put drivers into it's risk. Regards, Assistant Director of Department of Logistics.";
 	name = "Old Fax"
 	},
 /turf/simulated/floor/tiled/horizontal,

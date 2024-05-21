@@ -7394,7 +7394,9 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/space)
 "Bl" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
+	id = 39
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
 "Bq" = (
@@ -7948,6 +7950,10 @@
 /area/site53/reswing/roboticsupr)
 "EJ" = (
 /obj/machinery/light/small,
+/obj/item/paper{
+	info = "Logistics, As a reminder and warning of SCP-6819, do NOT drive at the times of 11PM to 4AM. Regardless of your site's condition of 'stressed logistical power' it is no excuse to put drivers into it's risk. Regards, Assistant Director of Department of Logistics.";
+	name = "Old Fax"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/surface/surface)
 "EO" = (
@@ -9947,6 +9953,10 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/storage/fancy/cigar,
 /obj/item/flame/lighter/zippo/bronze,
+/obj/machinery/button/windowtint{
+	id = 39;
+	pixel_x = -32
+	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
 "RN" = (

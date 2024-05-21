@@ -1643,7 +1643,6 @@
 /area/site53/uez/commandpanicbunker)
 "eL" = (
 /obj/structure/table/glass,
-/obj/item/paper,
 /obj/item/storage/pill_bottle/dice,
 /obj/item/dice/d10,
 /obj/item/dice/d10,
@@ -4782,7 +4781,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "uy" = (
-/obj/item/paper,
 /obj/item/storage/pill_bottle/dice,
 /obj/item/dice/d10,
 /obj/item/dice/d10,
@@ -6959,7 +6957,7 @@
 /obj/item/stamp/denied,
 /obj/item/stamp/cargo,
 /obj/item/paper{
-	info = Logistics, As a reminder and warning of SCP-6819, do NOT drive at the times of 11PM to 4AM. Regardless of your site's condition of 'stressed logistical power' it is no excuse to put drivers into it's risk. Regards, Assistant Director of Department of Logistics.;
+	info = "Logistics, As a reminder and warning of SCP-6819, do NOT drive at the times of 11PM to 4AM. Regardless of your site's condition of 'stressed logistical power' it is no excuse to put drivers into it's risk. Regards, Assistant Director of Department of Logistics.";
 	name = "Old Fax"
 	},
 /turf/simulated/floor/carpet/orange,
