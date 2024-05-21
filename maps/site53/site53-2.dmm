@@ -2757,11 +2757,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/maintenance)
 "aiu" = (
@@ -6138,7 +6133,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "arh" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -6445,7 +6440,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "arM" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6476,7 +6471,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "arR" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -6719,7 +6714,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "asu" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6729,7 +6724,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "asv" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -32
@@ -6751,7 +6746,7 @@
 /area/site53/engineering/atmos)
 "asz" = (
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "asA" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
@@ -8747,7 +8742,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "axH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -9483,13 +9478,6 @@
 /area/site53/logistics/understorage)
 "aAe" = (
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/maintenance)
 "aAh" = (
@@ -12488,7 +12476,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "aJn" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -14717,9 +14705,20 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "aQK" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/lowertrams/maintenance)
 "aQL" = (
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/serverfarmtunnel)
@@ -14743,7 +14742,7 @@
 	},
 /obj/structure/barricade,
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "aQO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -18617,7 +18616,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "bef" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
@@ -18738,7 +18737,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "bey" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -20632,7 +20631,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "bBS" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 9
@@ -20675,7 +20674,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "bEh" = (
 /obj/machinery/light,
 /obj/structure/table/reinforced,
@@ -25552,7 +25551,7 @@
 "fuJ" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "fuT" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -25706,7 +25705,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "fAC" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/black/border{
@@ -26267,7 +26266,7 @@
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "fXD" = (
 /obj/machinery/light{
 	dir = 1
@@ -28043,7 +28042,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "hwk" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -29946,7 +29945,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "iNh" = (
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
@@ -30515,7 +30514,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/logistics/logistics)
 "jkl" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -31196,7 +31195,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "jMj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -31942,7 +31941,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "kqN" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/vending/medical{
@@ -39445,14 +39444,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "pYM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/obj/machinery/power/apc,
+/obj/structure/cable,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/lowertrams/maintenance)
 "pZa" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
@@ -42162,6 +42157,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/maintenance)
 "sdl" = (
@@ -42594,7 +42594,7 @@
 	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/area/site53/upper_surface/serverfarmtunnel)
 "sri" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -73725,40 +73725,40 @@ uJG
 uJG
 uJG
 uJG
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aQK
-aQK
-aQK
-aQK
-aQK
-aQK
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+aRh
+aRh
+aRh
+aRh
+aRh
+aRh
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
 apn
 atA
 auS
@@ -74232,10 +74232,10 @@ lZE
 lZE
 lZE
 bBQ
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
 aYJ
 aYJ
 fXC
@@ -74247,31 +74247,31 @@ aYJ
 aYJ
 aYJ
 aYJ
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
 asz
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
 fzc
 pnh
 wFO
@@ -74489,7 +74489,7 @@ asu
 asu
 asu
 iMD
-aab
+pze
 aYJ
 aYJ
 aYJ
@@ -74515,9 +74515,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 azA
 azA
 azA
@@ -74528,7 +74528,7 @@ azA
 azA
 azA
 azA
-aab
+pze
 hvO
 fuJ
 aAd
@@ -74772,9 +74772,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 azA
 azA
 azA
@@ -74785,9 +74785,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -75029,9 +75029,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 pze
 pze
 pze
@@ -75042,9 +75042,9 @@ pze
 pze
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -75286,9 +75286,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 aYK
 aYK
 aYK
@@ -75299,9 +75299,9 @@ aYK
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -75543,9 +75543,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 aYK
 aYO
 aYO
@@ -75556,9 +75556,9 @@ aYO
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -75800,9 +75800,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 aYK
 aYP
 aYO
@@ -75813,9 +75813,9 @@ aYP
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -76057,9 +76057,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 aYK
 aYP
 aYO
@@ -76070,9 +76070,9 @@ aYP
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -76314,9 +76314,9 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
-aab
+pze
 aYK
 aYO
 aYO
@@ -76327,9 +76327,9 @@ beL
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -76535,7 +76535,7 @@ cti
 ais
 aht
 ahN
-ahN
+aQK
 ahN
 aqy
 bex
@@ -76571,7 +76571,7 @@ azA
 azA
 azA
 azA
-aab
+pze
 asz
 aQN
 aYK
@@ -76584,9 +76584,9 @@ aYQ
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -76793,7 +76793,7 @@ ais
 ahu
 aii
 sdf
-ais
+pYM
 aab
 uOP
 uOP
@@ -76819,18 +76819,18 @@ qpX
 qpX
 hGJ
 aYJ
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
 aYK
 aYR
 aYW
@@ -76841,9 +76841,9 @@ aYR
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -77098,9 +77098,9 @@ aYQ
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -77333,18 +77333,18 @@ bdW
 bdW
 csb
 aYJ
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
+pze
 aYK
 aYT
 aYY
@@ -77355,9 +77355,9 @@ aYT
 aYK
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -77612,9 +77612,9 @@ aYQ
 aZp
 pze
 azA
-aab
+pze
 hvO
-aab
+pze
 azA
 azA
 azA
@@ -77869,14 +77869,14 @@ aYO
 aYL
 pze
 azA
-aab
+pze
 hvO
-aab
-aab
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
+pze
+pze
 azA
 azA
 azA
@@ -78126,14 +78126,14 @@ aYP
 aYK
 pze
 azA
-aab
+pze
 arN
 ast
 ast
 ast
 ast
 bEe
-aab
+pze
 azA
 azA
 azA
@@ -78383,14 +78383,14 @@ aYP
 aYK
 pze
 azA
-aab
-aab
-aab
-aab
-aab
-aab
+pze
+pze
+pze
+pze
+pze
+pze
 koX
-aab
+pze
 azA
 azA
 azA
@@ -78645,9 +78645,9 @@ azA
 azA
 azA
 azA
-aab
-pYM
-aab
+pze
+mXv
+pze
 azA
 azA
 azA
