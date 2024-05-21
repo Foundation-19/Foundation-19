@@ -12,7 +12,7 @@
 "ae" = (
 /obj/machinery/seed_storage/garden,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/site53/maintenance/surfaceeast)
 "af" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -789,7 +789,7 @@
 "cj" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/site53/maintenance/surfaceeast)
 "cl" = (
 /obj/machinery/door/airlock/multi_tile/glass/science{
 	name = "Research and Development"
@@ -1256,7 +1256,7 @@
 /obj/item/reagent_containers/food/snacks/cracker,
 /obj/item/reagent_containers/food/snacks/cracker,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/site53/maintenance/surfaceeast)
 "du" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmary)
@@ -1434,7 +1434,7 @@
 "dP" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/maple,
-/area/site53/surface/surface)
+/area/site53/maintenance/surfaceeast)
 "dQ" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Medical Equipment Storage";
@@ -3435,7 +3435,7 @@
 "jt" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/wood/maple,
-/area/site53/surface/surface)
+/area/site53/maintenance/surfaceeast)
 "ju" = (
 /obj/structure/closet/wardrobe/black,
 /turf/simulated/floor/tiled/monotile/white,
@@ -6495,7 +6495,7 @@
 "wn" = (
 /obj/structure/window/basic/full,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/site53/maintenance/surfaceeast)
 "wp" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
@@ -6605,6 +6605,9 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
+"wV" = (
+/turf/simulated/wall/wood,
+/area/site53/maintenance/surfaceeast)
 "wW" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
@@ -6751,6 +6754,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
+"yc" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/maintenance/surfaceeast)
 "ye" = (
 /obj/effect/floor_decal/industrial/outline{
 	color = "#a8b2b6"
@@ -7501,6 +7512,9 @@
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"BG" = (
+/turf/simulated/floor/wood/maple,
+/area/site53/maintenance/surfaceeast)
 "BH" = (
 /obj/effect/paint_stripe/mauve,
 /obj/structure/sign/warning/detailed{
@@ -7688,6 +7702,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
+"CH" = (
+/obj/machinery/power/apc{
+	dir = 4
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/maintenance/surfaceeast)
 "CI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -8212,7 +8236,7 @@
 "Gm" = (
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/wood/maple,
-/area/site53/surface/surface)
+/area/site53/maintenance/surfaceeast)
 "Go" = (
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
@@ -8776,6 +8800,14 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/mentalhealth/isolation)
+"Kf" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/wood/maple,
+/area/site53/maintenance/surfaceeast)
 "Kg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9513,6 +9545,14 @@
 "OD" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/space)
+"OF" = (
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/generator,
+/turf/simulated/floor/wood/maple,
+/area/site53/maintenance/surfaceeast)
 "OK" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -10962,9 +11002,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
 "XH" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
+/turf/simulated/floor/exoplanet/snow,
 /area/site53/maintenance/surfaceeast)
 "XI" = (
 /obj/structure/railing/mapped{
@@ -11020,6 +11058,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
+"XX" = (
+/obj/structure/curtain/open/bed,
+/turf/simulated/floor/wood/maple,
+/area/site53/maintenance/surfaceeast)
 "XY" = (
 /obj/machinery/door/airlock/engineering{
 	req_access = list("ACCESS_ADMIN_LEVEL1")
@@ -40494,14 +40536,14 @@ dA
 Ce
 dw
 Ce
-XH
-XH
-XH
-XH
-XH
-XH
-XH
-XH
+xP
+xP
+xP
+xP
+xP
+xP
+xP
+xP
 Ce
 Gg
 Ce
@@ -40751,14 +40793,14 @@ Ce
 Ce
 dw
 Ce
-XH
-XH
-XH
-XH
-XH
-XH
-XH
-XH
+xP
+xP
+xP
+xP
+xP
+xP
+xP
+xP
 Ce
 di
 Ce
@@ -41008,14 +41050,14 @@ Ra
 GO
 XO
 Ce
-XH
-XH
-XH
-XH
-XH
-XH
-XH
-XH
+xP
+xP
+xP
+xP
+xP
+xP
+xP
+xP
 Ce
 Gg
 Ce
@@ -41265,14 +41307,14 @@ Ce
 Ce
 Ce
 Ce
-XH
-XH
-XH
-XH
-XH
-XH
-XH
-XH
+xP
+xP
+xP
+xP
+xP
+xP
+xP
+xP
 hp
 dp
 hp
@@ -41517,15 +41559,15 @@ MX
 cp
 ES
 MX
-XH
-XH
-XH
-XH
-XH
-XH
-XH
-XH
-XH
+xP
+xP
+xP
+xP
+xP
+xP
+xP
+xP
+xP
 ur
 ur
 ur
@@ -41782,7 +41824,7 @@ mk
 Az
 Az
 mk
-XH
+xP
 ur
 Ip
 rS
@@ -58243,16 +58285,16 @@ bm
 Bv
 bO
 bO
-Qe
-sY
-Qe
-Qe
-Qe
-Qe
-Qe
-Qe
-sY
-Qe
+wV
+XX
+wV
+wV
+wV
+wV
+wV
+wV
+XX
+wV
 bO
 bO
 bO
@@ -58499,17 +58541,17 @@ Bv
 bO
 Bv
 bm
-Qe
-Ao
-bO
-bO
+wV
+BG
+XH
+XH
 Gm
-Qe
+wV
 cj
-bO
-Ao
-Ao
-Qe
+XH
+BG
+BG
+wV
 bO
 bO
 bO
@@ -58757,16 +58799,16 @@ bm
 Bv
 bO
 wn
-bO
-Ao
-Ao
-bO
-Qe
+XH
+BG
+Kf
+yc
+wV
 dt
 dP
-Ao
+BG
 jt
-Qe
+wV
 bO
 bO
 bm
@@ -59013,17 +59055,17 @@ Bv
 bO
 Bv
 bO
-Qe
+wV
 ae
-bO
-Ao
-bO
-Qe
+XH
+OF
+CH
+wV
 dP
-Ao
-Ao
+BG
+BG
 jt
-Qe
+wV
 bO
 bm
 bm
@@ -59271,16 +59313,16 @@ bm
 Bv
 bO
 bO
-Qe
-sY
-Qe
-Qe
-Qe
-Qe
-sY
-Qe
-Qe
-Qe
+wV
+XX
+wV
+wV
+wV
+wV
+XX
+wV
+wV
+wV
 bO
 bm
 dA
