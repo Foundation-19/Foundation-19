@@ -907,10 +907,6 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
 "cP" = (
-/obj/structure/cable{
-	d1 = 32;
-	icon_state = "32-1"
-	},
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/site53/uez/mcrsubstation)
@@ -2512,11 +2508,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 6
 	},
@@ -2642,11 +2633,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsofficer)
 "iu" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -2657,11 +2643,6 @@
 	name = "Logistics Officer";
 	req_access = list("ACCESS_ADMIN_LEVEL2")
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/logistics/logisticsofficer)
 "iy" = (
@@ -2670,14 +2651,6 @@
 "iz" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/site53/logistics/logisticsofficer)
-"iB" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "iD" = (
 /obj/item/device/flashlight/lamp,
@@ -2757,7 +2730,6 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "iU" = (
-/obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -36242,7 +36214,7 @@ fz
 iX
 hX
 hP
-iB
+Zm
 iu
 iU
 iz
