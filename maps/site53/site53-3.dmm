@@ -8909,14 +8909,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
-"Ko" = (
-/obj/structure/sign/directions/evac{
-	pixel_x = 32;
-	pixel_y = -20
-	},
-/obj/effect/floor_decal/corner/beige/border,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "Kq" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 6
@@ -9417,10 +9409,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/sign/directions/evac{
-	pixel_x = -32;
-	pixel_y = -20
 	},
 /obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -41966,7 +41954,7 @@ fa
 ai
 ai
 ax
-Ko
+Ln
 Ff
 ai
 ai
