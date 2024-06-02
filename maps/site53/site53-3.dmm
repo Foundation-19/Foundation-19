@@ -1519,7 +1519,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "ee" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -2101,7 +2101,7 @@
 "fF" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "fG" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post";
@@ -2324,7 +2324,7 @@
 /area/site53/engineering/maintenance/maintenancetunnel)
 "gq" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "gr" = (
 /turf/simulated/floor/tiled/white/monotile,
 /turf/simulated/floor/tiled/white/monotile,
@@ -2332,7 +2332,7 @@
 /area/site53/surface/surface/west)
 "gs" = (
 /turf/simulated/floor/plating,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "gw" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/down{
@@ -2370,7 +2370,7 @@
 "gB" = (
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "gC" = (
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4676,7 +4676,7 @@
 "nH" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "nL" = (
 /obj/structure/sign/warning/detailed{
 	name = "GATE A"
@@ -6553,7 +6553,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "wC" = (
 /obj/effect/paint_stripe/green,
 /obj/structure/closet/crate/secure/biohazard{
@@ -7564,7 +7564,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "BD" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -9432,7 +9432,7 @@
 "Ng" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "Nh" = (
 /obj/effect/landmark/start{
 	name = "Surgeon"
@@ -9513,7 +9513,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "NM" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4;
@@ -10010,7 +10010,7 @@
 "QG" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "QM" = (
 /obj/machinery/vending/snack{
 	dir = 8;
@@ -10546,7 +10546,7 @@
 	name = "Maintenance"
 	},
 /turf/simulated/floor/plating,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "Ua" = (
 /obj/machinery/vending/cola{
 	dir = 8;
@@ -10869,7 +10869,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "Wb" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post Storage Closet";
@@ -11226,7 +11226,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/surfaceeast)
 "Yg" = (
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
