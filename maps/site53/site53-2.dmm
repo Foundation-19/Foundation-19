@@ -19151,15 +19151,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
 	id_tag = "ULCZ Checkpoint Northern Window";
-	name = "ULCZ Checkpoint Northern Window"
+	name = "LCZ Entrance Checkpoint North Windows Shutter"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/entrance_checkpoint)
@@ -28238,7 +28238,7 @@
 /area/site53/uhcz/scp1507observation)
 "gut" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "Break Room";
+	name = "Security Break Room";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -32102,11 +32102,6 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "iRt" = (
-/obj/machinery/door/blast/shutters{
-	begins_closed = 0;
-	id_tag = "ULCZ Checkpoint Office Access N";
-	name = "LCZ Entrance Checkpoint North Access Shutters"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -32116,6 +32111,11 @@
 /obj/machinery/door/airlock/glass/security{
 	name = "LCZ Entrance Checkpoint Access";
 	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "ULCZ Checkpoint Office Access N";
+	name = "LCZ Entrance Checkpoint North Access Shutters"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
@@ -37701,18 +37701,19 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/scp173)
 "mtJ" = (
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/engineering_electrical,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/llcz/dclass/primaryhallway)
@@ -47073,25 +47074,26 @@
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/janitoroffice)
 "sbE" = (
-/obj/structure/table/standard,
-/obj/machinery/door/window/brigdoor{
-	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/machinery/door/window/brigdoor/northright{
-	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/structure/window/reinforced{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
 	id_tag = "ULCZ Checkpoint Northern Window";
-	name = "ULCZ Checkpoint Northern Window"
+	name = "LCZ Entrance Checkpoint North Windows Shutter"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/entrance_checkpoint)
