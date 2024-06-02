@@ -923,11 +923,6 @@
 	icon_state = "hallC1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/entrancezone/courtroom
-	name = "\improper Entrance Zone Courtroom"
-	icon_state = "hallC1"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/entrancezone/substation
 	name = "\improper Entrance Zone Substation"
 	icon_state = "substation"
