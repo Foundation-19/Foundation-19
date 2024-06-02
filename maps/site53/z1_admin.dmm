@@ -817,8 +817,11 @@
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
 "dl" = (
-/obj/item/clothing/shoes/orange,
-/turf/unsimulated/wall,
+/obj/structure/bed/chair/padded{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/southleft,
+/turf/unsimulated/floor/reinforced,
 /area/centcom)
 "dm" = (
 /obj/structure/grille{
@@ -1643,9 +1646,14 @@
 /area/site53/lhcz/scp1102entrance)
 "gb" = (
 /obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_MTF");
+	name = "O5-4's Desk";
 	dir = 3
 	},
-/turf/unsimulated/floor/reinforced,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "techmaint"
+	},
 /area/centcom)
 "gc" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -3586,13 +3594,6 @@
 /area/centcom/goc)
 "mo" = (
 /turf/simulated/floor/carpet/blue2,
-/area/centcom)
-"mp" = (
-/obj/structure/bed/chair/padded,
-/obj/machinery/door/window/brigdoor/eastright{
-	dir = 3
-	},
-/turf/unsimulated/floor/reinforced,
 /area/centcom)
 "mq" = (
 /obj/structure/table/rack,
@@ -8723,11 +8724,10 @@
 	},
 /area/centcom)
 "yr" = (
-/obj/item/clothing/shoes/orange,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
+/obj/machinery/door/window/brigdoor/eastright{
+	dir = 3
 	},
+/turf/unsimulated/wall,
 /area/centcom)
 "ys" = (
 /obj/structure/table/standard,
@@ -18126,8 +18126,8 @@ tq
 Ps
 Ma
 Ma
-Wy
 Ma
+Wy
 Ma
 tq
 DV
@@ -19136,8 +19136,8 @@ tq
 Ps
 Ma
 Ma
-sN
 Ma
+sN
 Ma
 tq
 WV
@@ -19557,7 +19557,7 @@ Ma
 Ma
 tq
 Tm
-yr
+gp
 tu
 PI
 gp
@@ -19757,7 +19757,7 @@ PM
 tq
 tq
 tq
-dl
+tq
 Ry
 wE
 dR
@@ -20146,8 +20146,8 @@ tq
 Ps
 Ma
 Ma
-sN
 Ma
+gb
 Ma
 tq
 Ma
@@ -20360,8 +20360,8 @@ Sk
 WB
 WB
 WB
-HH
 WB
+HH
 vw
 tq
 yZ
@@ -21355,8 +21355,8 @@ ab
 ab
 ab
 ab
-tq
-mp
+yr
+eO
 Uk
 Uk
 Uk
@@ -21369,8 +21369,8 @@ Uk
 PE
 Uk
 Uk
-gb
-Jc
+Uk
+dl
 tq
 tO
 Sp
@@ -22365,8 +22365,8 @@ ab
 ab
 ab
 ab
-tq
-mp
+yr
+eO
 Uk
 eO
 Yn
@@ -22379,8 +22379,8 @@ Yn
 Yn
 Yn
 Jc
-gb
-Jc
+Uk
+dl
 tq
 Op
 Sp
