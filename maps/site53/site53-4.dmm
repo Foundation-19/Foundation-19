@@ -908,6 +908,10 @@
 /area/site53/uez/substation)
 "cP" = (
 /obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 32;
+	icon_state = "32-1"
+	},
 /turf/simulated/open,
 /area/site53/uez/mcrsubstation)
 "cQ" = (
@@ -2460,6 +2464,11 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
