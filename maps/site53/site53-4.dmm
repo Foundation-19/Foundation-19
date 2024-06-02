@@ -2571,7 +2571,7 @@
 /area/site53/logistics/logisticsofficer)
 "hZ" = (
 /turf/simulated/open,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "ic" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/corner/brown/border{
@@ -4425,7 +4425,7 @@
 /area/site53/upper_surface/commstower)
 "qY" = (
 /turf/simulated/floor/exoplanet/desert,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "qZ" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -6173,7 +6173,7 @@
 /area/site53/uez/commandpanicbunker)
 "Cb" = (
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "Ch" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Living Quarters";
@@ -6928,7 +6928,7 @@
 "HU" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/desert,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "Ia" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -8959,7 +8959,7 @@
 "VG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "VK" = (
 /obj/machinery/door/airlock/glass{
 	name = "EZ Brig Cell 6";
@@ -9090,7 +9090,7 @@
 /area/site53/uez/equipmentroom)
 "WE" = (
 /turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "WK" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin,
@@ -9138,7 +9138,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "WR" = (
 /obj/structure/cryofeed,
 /obj/machinery/camera/network/entrance{
@@ -9246,7 +9246,7 @@
 "XE" = (
 /obj/structure/flora/tree/pine,
 /turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "XG" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/combat,

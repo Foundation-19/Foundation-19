@@ -335,6 +335,12 @@
 "bx" = (
 /turf/simulated/wall/r_wall,
 /area/site53/tram/mtf)
+"bA" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "bB" = (
 /obj/structure/window/reinforced,
 /obj/structure/bed/chair/shuttle/black{
@@ -16283,6 +16289,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
+"VE" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "VF" = (
 /obj/structure/closet/secure_closet/guard/scout,
 /obj/effect/floor_decal/corner/white/border{
@@ -24255,11 +24267,11 @@ Rr
 SD
 Mc
 Qz
+bA
 TN
 TN
 TN
-TN
-TN
+bA
 OB
 OB
 uA
@@ -24659,11 +24671,11 @@ Rr
 SD
 Mc
 Qz
+VE
 TN
 TN
 TN
-TN
-TN
+VE
 OB
 OB
 uA

@@ -11118,7 +11118,7 @@
 "aDt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset,
+/obj/item/modular_computer/laptop,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
 "aDu" = (
@@ -21153,7 +21153,6 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 9
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
 "bCi" = (
@@ -21641,7 +21640,8 @@
 "bVo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/closet/secure_closet/atmos_personal{
-	anchored = 1
+	anchored = 1;
+	req_access = list()
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
@@ -22964,7 +22964,6 @@
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/hub)
 "cSp" = (
@@ -24146,11 +24145,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"dJT" = (
-/obj/effect/floor_decal/corner/red/mono,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/site53/lowertrams/hub)
 "dJZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -24553,7 +24547,8 @@
 /area/vacant/prototype/engine)
 "dYf" = (
 /obj/structure/closet/secure_closet/atmos_personal{
-	anchored = 1
+	anchored = 1;
+	req_access = list()
 	},
 /obj/machinery/light{
 	dir = 8
@@ -25162,7 +25157,6 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 9
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lowertrams/hub)
 "etJ" = (
@@ -27934,7 +27928,9 @@
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
 "gxp" = (
-/obj/machinery/suit_cycler/engineering,
+/obj/machinery/suit_cycler/engineering{
+	req_access = list()
+	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -34425,7 +34421,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
 "lcF" = (
@@ -34729,7 +34724,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "lsu" = (
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
 "ltl" = (
@@ -36893,7 +36887,6 @@
 /area/site53/engineering/secstorage)
 "mOd" = (
 /obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
 "mOX" = (
@@ -43775,7 +43768,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "rIG" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/atmos{
+	req_access = list()
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/alarm{
 	dir = 8;
@@ -44672,7 +44667,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lowertrams/hub)
 "smH" = (
@@ -45920,7 +45914,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "tei" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/atmos{
+	req_access = list()
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
@@ -83638,7 +83634,7 @@ aSz
 mvy
 aPG
 aPF
-dJT
+aPF
 qzA
 aRF
 aQT
@@ -83895,7 +83891,7 @@ uSb
 mvy
 aPG
 aOY
-dJT
+aPF
 smi
 aac
 aac

@@ -166,7 +166,7 @@
 	name = "Supply Dock"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 1
+	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 // SITE 53 SURFACE AREA'S
@@ -175,8 +175,36 @@
 
 /area/site53/surface/surface
 	name = "Surface"
+	//requires_power = 0
+	//dynamic_lighting = 0
+
+/area/site53/surface/surface/west
+	name = "Surface West"
 	requires_power = 0
 	dynamic_lighting = 0
+
+/area/site53/surface/surface/east
+	name = "Surface East"
+	requires_power = 0
+	dynamic_lighting = 0
+
+/area/site53/surface/surface/upper
+	name = "Upper Surface"
+	requires_power = 0
+	dynamic_lighting = 0
+/area/site53/surface/surface/caves
+	name = "Surface Caverns"
+
+/area/site53/surface/surface/cabin/cabin1
+	name = "Surface Cabin 1"
+
+/area/site53/surface/surface/cabin/cabin2
+	name = "Surface Cabin 2"
+
+
+/area/site53/surface/surface/cabin/cabin3
+	name = "Surface Cabin 3"
+
 
 /area/site53/surface/surface/away/bar
 	name = "Away Bar"
@@ -1309,7 +1337,7 @@
 /area/quartermaster/hangar
 	name ="\improper Logistics Hangar"
 	icon_state = "quart"
-
+	dynamic_lighting = 0
 
 //SCP-106's realm
 /area/pocketdimension
