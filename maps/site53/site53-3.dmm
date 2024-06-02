@@ -937,13 +937,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
-"cC" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "Court Security Post";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
 "cD" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -1624,26 +1617,18 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmreception)
 "eo" = (
-/obj/machinery/door/airlock/command{
-	name = "Judge Offices";
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
 	},
-/obj/machinery/door/blast/shutters/open{
-	icon_state = "shutter0";
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Shutters"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "ep" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/entrancehallway)
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "eq" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Mental Isolation 4";
@@ -2381,21 +2366,16 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
-"gz" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "gA" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
 	},
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/folder/blue,
-/obj/item/stamp/cargo{
-	name = "Judge Stamp"
-	},
-/turf/simulated/floor/carpet/purple,
-/area/site53/entrancezone/courtroom)
+/obj/structure/table/reinforced,
+/obj/item/device/taperecorder,
+/obj/item/device/tape/random,
+/obj/item/device/tape/random,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "gB" = (
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled/techfloor,
@@ -2511,12 +2491,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
-"gS" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/gavelblock,
-/obj/item/gavelhammer,
-/turf/simulated/floor/carpet/purple,
-/area/site53/entrancezone/courtroom)
 "gT" = (
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/white,
@@ -2790,15 +2764,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
-"hI" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/scp173)
 "hI" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -3085,13 +3050,6 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmary)
-"it" = (
-/obj/machinery/door/airlock/multi_tile/glass/civilian{
-	dir = 4;
-	name = "Facility Courtroom Lobby"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
 "iu" = (
 /obj/machinery/sleeper{
 	dir = 4
@@ -3214,10 +3172,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"iJ" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/titanium,
-/area/site53/entrancezone/courtroom)
 "iK" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -3322,11 +3276,6 @@
 /obj/item/paper_bin,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
-"ja" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/folder,
-/turf/simulated/floor/carpet/red,
-/area/site53/entrancezone/courtroom)
 "jb" = (
 /obj/machinery/light/spot{
 	dir = 8
@@ -3494,8 +3443,6 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
 	},
-/obj/structure/table/reinforced,
-/obj/item/device/radio,
 /obj/machinery/camera/network/scp173{
 	c_tag = "SCP-173 Preperations Room Overlook";
 	dir = 4
@@ -3555,10 +3502,6 @@
 /obj/machinery/computer/pandemic,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
-"jy" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor/plating,
-/area/site53/entrancezone/courtroom)
 "jz" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile,
@@ -4337,15 +4280,17 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "lt" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Shutters"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/site53/entrancezone/courtroom)
+/obj/structure/table/reinforced,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "lu" = (
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/titanium,
@@ -4458,13 +4403,6 @@
 /obj/effect/paint_stripe/gunmetal,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/morgue)
-"md" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/bed/chair/office/comfy/red{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/entrancezone/courtroom)
 "me" = (
 /obj/machinery/optable,
 /obj/structure/cable/green{
@@ -4570,10 +4508,6 @@
 /obj/effect/floor_decal/corner/orange/bordercorner,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"mA" = (
-/obj/machinery/computer/arcade/battle,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "mB" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4712,12 +4646,6 @@
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"ng" = (
-/obj/effect/floor_decal/corner/red/bordercee{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/courtroom)
 "ni" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor,
@@ -5233,12 +5161,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
-"pw" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/blue2,
-/area/site53/entrancezone/courtroom)
 "pz" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -5279,12 +5201,6 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/mentalhealth/office)
-"pF" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "pG" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
@@ -5343,12 +5259,12 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "pV" = (
@@ -5917,10 +5833,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
 "sh" = (
-/obj/structure/table/reinforced,
-/obj/item/device/radio,
-/obj/effect/floor_decal/corner/yellow/bordercee{
-	dir = 4
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Window Control";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"));
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -6081,12 +6002,6 @@
 	},
 /turf/simulated/open,
 /area/site53/uez/bridge)
-"sR" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "sX" = (
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/monotile,
@@ -6757,12 +6672,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
-"wH" = (
-/obj/effect/floor_decal/corner/red/bordercee{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/courtroom)
 "wJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6782,25 +6691,21 @@
 /obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uez/goirepoffice)
-"wO" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	icon_state = "shutter0";
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Shutters";
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site53/entrancezone/courtroom)
 "wP" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "wR" = (
-/obj/structure/bookcase,
-/obj/machinery/light,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/radio,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "wS" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -6887,13 +6792,11 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "xl" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
 	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "xq" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
@@ -6940,13 +6843,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
-"xN" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "xO" = (
 /obj/structure/closet/crate/secure/biohazard{
 	req_access = list("ACCESS_MEDICAL_LEVEL2")
@@ -6959,10 +6855,6 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/space)
-"xT" = (
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "xW" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/railing/mapped{
@@ -7480,11 +7372,6 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/medical/mentalhealth/isolation)
-"Ag" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/folder/blue,
-/turf/simulated/floor/carpet/purple,
-/area/site53/entrancezone/courtroom)
 "Ah" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Surface Restaurant"
@@ -7570,15 +7457,17 @@
 /turf/simulated/wall/titanium,
 /area/site53/uez/goirepoffice)
 "AB" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/recharger/wallcharger{
-	dir = 1;
-	pixel_y = -25
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/item/device/flashlight/lamp,
-/turf/simulated/floor/tiled/dark,
-/area/site53/entrancezone/courtroom)
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "AC" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/cable/green{
@@ -7623,11 +7512,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "AR" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/turf/simulated/floor/tiled/dark,
-/area/site53/entrancezone/courtroom)
+/obj/structure/bed/chair/office/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "AT" = (
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
@@ -7898,9 +7787,14 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "Co" = (
-/obj/item/stool/padded,
-/turf/simulated/floor/carpet/green,
-/area/site53/entrancezone/courtroom)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/scp173)
 "Cp" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -7944,27 +7838,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "Ct" = (
-/obj/machinery/door/airlock/command{
-	name = "Court Main Floor"
-	},
-/obj/machinery/door/blast/shutters/open{
-	icon_state = "shutter0";
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Shutters"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
-"Cz" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/device/radio/intercom{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
+/obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/red,
-/area/site53/entrancezone/courtroom)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "CA" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -8020,12 +7898,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "CK" = (
-/obj/machinery/door/airlock/command{
-	name = "Judge Offices";
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
+/obj/structure/table/reinforced,
+/obj/item/device/flashlight/lamp,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "CT" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -8274,10 +8153,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
-"Ev" = (
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "Ew" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -8572,12 +8447,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception)
-"Gu" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/carpet/purple,
-/area/site53/entrancezone/courtroom)
 "Gv" = (
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
@@ -8844,10 +8713,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"HN" = (
-/obj/structure/bed/chair/comfy/black,
-/turf/simulated/floor/carpet/red,
-/area/site53/entrancezone/courtroom)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -8968,10 +8833,6 @@
 /obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uez/goirepoffice)
-"IA" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "IC" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
@@ -9185,12 +9046,6 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
-"Kk" = (
-/obj/machinery/door/airlock/command{
-	name = "Court Backroom"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
 "Kl" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor/plating,
@@ -9313,11 +9168,17 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "KI" = (
-/obj/machinery/vending/hotfood{
-	dir = 1
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
 	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
+/obj/machinery/door/airlock/science{
+	name = "SCP-173 Observation";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp173)
 "KM" = (
 /obj/machinery/organ_printer/flesh/mapped{
 	max_stored_matter = 9000;
@@ -9471,15 +9332,6 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
-"LO" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters/open{
-	icon_state = "shutter0";
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Shutters"
-	},
-/turf/simulated/floor/plating,
-/area/site53/entrancezone/courtroom)
 "LQ" = (
 /obj/machinery/computer/rdconsole/robotics{
 	req_access = list();
@@ -9684,10 +9536,6 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"MW" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "MX" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
@@ -9732,25 +9580,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
-"Nm" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/entrancezone/courtroom)
-"Nn" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "Courtroom Jury's Office"
-	},
-/obj/machinery/light,
-/obj/structure/table/woodentable_reinforced/ebony,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "Np" = (
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/orange/three_quarters{
@@ -9796,24 +9625,6 @@
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"NH" = (
-/obj/machinery/door/airlock/security{
-	name = "Court Security Post";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Shutters"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
 "NM" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4;
@@ -10017,9 +9828,15 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
 "OZ" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/turf/simulated/floor/carpet/blue2,
-/area/site53/entrancezone/courtroom)
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Pa" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -10044,25 +9861,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
-"Pg" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
-	icon_closed = "sec";
-	name = "evidence locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/structure/cable/green,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/entrancezone/courtroom)
 "Ph" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -10103,12 +9901,6 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"Po" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 8
-	},
-/turf/simulated/floor/carpet/blue2,
-/area/site53/entrancezone/courtroom)
 "Pp" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
@@ -10320,11 +10112,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "Qp" = (
-/obj/machinery/door/window/brigdoor/southleft{
-	name = "Witness Booth"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
 	},
-/turf/simulated/floor/carpet/red,
-/area/site53/entrancezone/courtroom)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Qq" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -10349,12 +10141,11 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
 "Qx" = (
-/obj/machinery/door/airlock/multi_tile/glass/civilian{
-	dir = 4;
-	name = "Jury Office"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Qy" = (
 /obj/effect/floor_decal/corner/beige/border,
 /obj/machinery/light,
@@ -10461,12 +10252,6 @@
 "Rc" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
-"Rf" = (
-/obj/structure/bed/chair/armchair/black{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "Ri" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -10531,12 +10316,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"RI" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "RJ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/mapped{
@@ -10599,12 +10378,6 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"Sc" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/carpet/red,
-/area/site53/entrancezone/courtroom)
 "Sd" = (
 /obj/machinery/light{
 	dir = 8
@@ -10727,9 +10500,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/surface)
 "SJ" = (
-/obj/machinery/papershredder,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/scp173)
 "SM" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -10943,15 +10718,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
-"TY" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/entrancezone/courtroom)
 "TZ" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
@@ -11079,11 +10845,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
-"UG" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/device/flashlight/lamp,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
 "UI" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -11142,18 +10903,6 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Vj" = (
-/obj/machinery/door/airlock/command{
-	name = "Court Backroom"
-	},
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "CourtLock";
-	name = "Courtroom Lockdown Shutters"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/courtroom)
 "Vm" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -11290,11 +11039,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
 "VV" = (
-/obj/machinery/vending/cola{
-	dir = 1
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
 	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Wb" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post Storage Closet";
@@ -11334,9 +11084,14 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/upper_surface/commstower)
 "Wj" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/turf/simulated/floor/tiled/dark,
-/area/site53/entrancezone/courtroom)
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/camera,
+/obj/item/device/camera_film,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Wl" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/cable{
@@ -11571,10 +11326,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
-"XE" = (
-/obj/structure/bed/chair/office/comfy/purple,
-/turf/simulated/floor/carpet/purple,
-/area/site53/entrancezone/courtroom)
 "XH" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/maintenance/surfaceeast)
@@ -11728,11 +11479,17 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
 "Yw" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
 	},
-/turf/simulated/floor/carpet/blue2,
-/area/site53/entrancezone/courtroom)
+/obj/structure/table/reinforced,
+/obj/item/crowbar,
+/obj/item/crowbar,
+/obj/item/crowbar,
+/obj/item/crowbar,
+/obj/item/crowbar,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Yz" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/hologram/holopad,
@@ -11884,15 +11641,20 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/device/taperecorder,
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173";
+	name = "SCP-173 Containment Chamber Access Control";
+	pixel_y = 7;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Control";
+	pixel_y = -2;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
-"Zm" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/carpet/blue2,
-/area/site53/entrancezone/courtroom)
 "Zp" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -12010,19 +11772,14 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
-"ZV" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
-	},
-/obj/machinery/light,
-/turf/simulated/floor/carpet/red,
-/area/site53/entrancezone/courtroom)
 "ZZ" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/wood/walnut,
-/area/site53/entrancezone/courtroom)
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp173)
 
 (1,1,1) = {"
 dA
@@ -12882,9 +12639,9 @@ dA
 JP
 JP
 JP
-ox
 JP
-ox
+JP
+JP
 JP
 JP
 JP
@@ -13138,11 +12895,11 @@ dA
 dA
 JP
 rB
-hI
-MB
-Lk
-MB
-hI
+Qx
+Qx
+Qx
+Qx
+Qx
 Pp
 JP
 JP
@@ -13394,22 +13151,22 @@ dA
 dA
 dA
 JP
-tw
-qv
+gA
+AR
 Gf
 Gf
-qv
+AR
 Gf
 WZ
-xt
-VC
-hI
+KI
+nV
+Qx
 jp
-xK
-Gi
-tK
-JR
-sh
+ep
+Yw
+AB
+lt
+Ir
 JP
 dA
 dA
@@ -13651,22 +13408,22 @@ dA
 dA
 dA
 JP
-tH
+CK
 Ta
-Ze
+Wj
 Zl
 Ta
-Db
-LB
-LH
-TJ
-MD
+xl
+sh
+Co
+CA
 Gf
 Gf
 Gf
-Da
-MB
-BH
+Gf
+Gf
+Gf
+WZ
 JP
 dA
 dA
@@ -13916,15 +13673,15 @@ XJ
 XJ
 JP
 JP
-KX
 CA
-qv
+Gf
+AR
 Gf
 Gf
 Gf
 Gf
 WZ
-ox
+JP
 dA
 dA
 dA
@@ -14173,18 +13930,18 @@ zn
 zn
 zn
 JP
-Zf
+OZ
 pU
 Cs
-Rp
-MD
+wR
+Ct
 Gf
 Gf
 Pd
 JP
 JP
 JP
-ox
+JP
 JP
 dA
 dA
@@ -14428,7 +14185,7 @@ zn
 zn
 zn
 zn
-EZ
+zn
 JP
 zn
 zn
@@ -14438,9 +14195,9 @@ Gy
 Gf
 Gf
 WZ
-oT
+Co
 nV
-hI
+Qx
 Ir
 JP
 dA
@@ -14692,10 +14449,10 @@ zn
 zn
 zn
 RB
-tu
-tR
-LB
-wd
+SJ
+xl
+Qp
+KI
 CA
 Gf
 NO
@@ -14947,15 +14704,15 @@ zn
 zn
 zn
 zn
-EZ
+zn
 JP
 JP
 JP
 JP
 JP
-Ue
+CA
 Gf
-Ke
+WZ
 JP
 dA
 dA
@@ -15209,10 +14966,10 @@ JP
 hG
 Gf
 Gf
-zB
-TJ
-tR
-ZA
+ZZ
+eo
+xl
+VV
 JP
 dA
 dA
@@ -15456,7 +15213,7 @@ zn
 zn
 zn
 zn
-EZ
+zn
 JP
 zn
 zn
@@ -15469,7 +15226,7 @@ JP
 JP
 JP
 JP
-ox
+JP
 JP
 dA
 dA
@@ -15708,11 +15465,11 @@ dA
 dA
 JP
 zn
-nK
 zn
 zn
 zn
-nK
+zn
+zn
 zn
 JP
 zn
@@ -15975,7 +15732,7 @@ JP
 Wy
 zn
 zn
-EZ
+zn
 JP
 dA
 dA
