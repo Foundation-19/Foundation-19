@@ -911,6 +911,10 @@
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
 	dir = 1
 	},
+/obj/structure/cable{
+	d1 = 32;
+	icon_state = "32-1"
+	},
 /turf/simulated/open,
 /area/site53/uez/mcrsubstation)
 "cQ" = (
@@ -2476,6 +2480,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
@@ -7425,9 +7432,6 @@
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
-"LJ" = (
-/turf/simulated/floor/exoplanet/snow,
-/area/space)
 "LL" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -42622,7 +42626,7 @@ hk
 hk
 hk
 hk
-LJ
+hk
 hk
 hk
 hk
