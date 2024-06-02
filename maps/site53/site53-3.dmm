@@ -588,9 +588,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface/west)
-"bO" = (
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
 "bP" = (
 /obj/structure/railing/mapped{
 	dir = 5
@@ -672,10 +669,6 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfacewest)
-"bX" = (
-/obj/structure/flora/tree/dead,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
 "bY" = (
 /obj/machinery/light{
 	dir = 8
@@ -4623,7 +4616,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/site53/surface/surface/west)
 "nm" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/exoplanet/concrete,
@@ -6508,7 +6501,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/site53/surface/surface/west)
 "wi" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow{
@@ -8827,7 +8820,7 @@
 	icon_state = "warningcorner"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/site53/surface/surface/west)
 "Jk" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 4
@@ -11005,7 +10998,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/area/site53/surface/surface/west)
 "WK" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -61560,10 +61553,10 @@ nF
 nF
 nF
 Gy
-bO
-bO
-bO
-bX
+Gy
+Gy
+Gy
+KU
 Gy
 Gy
 nF
