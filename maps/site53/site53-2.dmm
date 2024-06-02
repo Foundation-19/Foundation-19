@@ -30914,6 +30914,11 @@
 	name = "CDCZ Solitary Hall";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/isolation)
 "ias" = (
