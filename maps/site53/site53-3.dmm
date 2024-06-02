@@ -4475,6 +4475,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
+"mD" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "mE" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -5638,11 +5644,12 @@
 	dir = 1
 	},
 /obj/machinery/button/blast_door{
+	pixel_y = 20;
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Gate B Door Control";
 	dir = 1;
 	id_tag = "gateb";
-	name = "Gate B Door Control";
-	pixel_y = 33;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
@@ -9236,6 +9243,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/bridge)
+"Mw" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "Mx" = (
 /obj/effect/floor_decal/corner/orange,
 /obj/structure/closet/crate/bin{
@@ -9416,9 +9430,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
 "NP" = (
-/obj/item/gun/energy/ionrifle,
-/turf/unsimulated/mineral,
-/area/space)
+/obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "NS" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/regular,
@@ -9553,6 +9570,12 @@
 /obj/machinery/power/generator,
 /turf/simulated/floor/wood/maple,
 /area/site53/maintenance/surfaceeast)
+"OJ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "OK" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -40822,7 +40845,7 @@ aV
 pG
 au
 ai
-lR
+NP
 az
 ai
 ai
@@ -41085,7 +41108,7 @@ ai
 ai
 On
 WK
-ai
+OJ
 lO
 xc
 Vn
@@ -42370,7 +42393,7 @@ ai
 ai
 aD
 WK
-ai
+mD
 aU
 xc
 cY
@@ -42621,7 +42644,7 @@ XY
 pG
 au
 ai
-lR
+Mw
 On
 ai
 ai
@@ -46437,7 +46460,7 @@ rD
 yp
 rD
 Oa
-Yg
+Oa
 yF
 MF
 rf
@@ -65963,7 +65986,7 @@ dA
 dA
 dA
 dA
-NP
+dA
 dA
 dA
 dA
