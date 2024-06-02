@@ -196,6 +196,7 @@
 /obj/structure/reagent_dispensers/water_cooler{
 	dir = 4
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "aU" = (
@@ -2014,11 +2015,6 @@
 	},
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "Hub Access"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/innerentrancehallway)
@@ -4376,6 +4372,9 @@
 /area/site53/uez/repoffice/ethics)
 "lR" = (
 /obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/innerentrancehallway)
 "lW" = (
@@ -4540,11 +4539,8 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/effect/floor_decal/corner/orange/border,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -7999,6 +7995,11 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/restaurantkitchenarea)
+"DF" = (
+/obj/structure/table/standard,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "DG" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
@@ -8949,6 +8950,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Jn" = (
+/obj/effect/floor_decal/corner/beige/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "Jr" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -8967,6 +8973,13 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"Jx" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/innerentrancehallway)
 "JF" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -41195,12 +41208,12 @@ aV
 pG
 au
 ai
-lR
+Jx
 az
 ai
 ai
 On
-lR
+Jx
 au
 au
 xc
@@ -41706,7 +41719,7 @@ fa
 fa
 fa
 uV
-Ln
+Jn
 au
 ai
 Lu
@@ -42477,7 +42490,7 @@ fa
 fa
 fa
 xA
-Ln
+Jn
 ah
 ai
 Lu
@@ -42487,7 +42500,7 @@ ai
 az
 Lu
 ai
-On
+DF
 xc
 OD
 dA

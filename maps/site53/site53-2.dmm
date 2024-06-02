@@ -20784,6 +20784,11 @@
 	},
 /obj/structure/cable/green,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "bDX" = (
@@ -26340,7 +26345,7 @@
 "feq" = (
 /obj/effect/floor_decal/corner/paleblue/bordercee,
 /turf/simulated/floor/tiled/monotile/white,
-/area/space)
+/area/site53/llcz/dclass/medicalpost/surgery)
 "feJ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -31415,8 +31420,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
 "ioC" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
-/area/space)
+/area/site53/llcz/dclass/medicalpost/surgery)
 "ipi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
