@@ -197,7 +197,7 @@
 
 /area/site53/surface/surface/cabin/cabin1
 	name = "Surface Cabin 1"
-	requires_power = 1
+	requires_power = 0
 
 /area/site53/surface/surface/cabin/cabin2
 	name = "Surface Cabin 2"

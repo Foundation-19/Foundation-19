@@ -3160,6 +3160,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"iJ" = (
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/maintenance/surfaceeast)
 "iK" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -6552,6 +6562,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
 "wC" = (
@@ -6793,14 +6808,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
-"yc" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/cabin/cabin1)
 "ye" = (
 /obj/effect/floor_decal/industrial/outline{
 	color = "#a8b2b6"
@@ -7766,16 +7773,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"CH" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/cabin/cabin1)
 "CI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -8884,14 +8881,6 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/mentalhealth/isolation)
-"Kf" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/wood/maple,
-/area/site53/surface/surface/cabin/cabin1)
 "Kg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9662,14 +9651,6 @@
 "OD" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/space)
-"OF" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/generator,
-/turf/simulated/floor/wood/maple,
-/area/site53/surface/surface/cabin/cabin1)
 "OK" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -44071,7 +44052,7 @@ ed
 gs
 fF
 gq
-gq
+iJ
 wv
 VZ
 NH
@@ -58971,8 +58952,8 @@ Gy
 wn
 XH
 BG
-Kf
-yc
+BG
+XH
 wV
 dt
 dP
@@ -59228,8 +59209,8 @@ Gy
 Qe
 ae
 XH
-OF
-CH
+BG
+XH
 wV
 dP
 BG
