@@ -31,18 +31,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"ah" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters{
-	begins_closed = 0;
-	id_tag = "BreachSecurity";
-	name = "Breach Shelter Security Station Lockdown";
-	icon_state = "shutter0";
-	dir = 4
-	},
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/breachshelter)
 "ai" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -5392,7 +5380,7 @@
 	icon_state = "shutter0";
 	dir = 4
 	},
-/turf/space,
+/turf/simulated/floor/plating,
 /area/site53/upper_surface/breachshelter)
 "pH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -42062,16 +42050,16 @@ af
 af
 af
 af
-ah
-ah
+pG
+pG
 af
-ah
-ah
+pG
+pG
 af
 af
-ah
-ah
-ah
+pG
+pG
+pG
 aV
 pG
 af
