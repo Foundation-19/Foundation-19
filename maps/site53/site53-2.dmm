@@ -9565,7 +9565,8 @@
 "azW" = (
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Stairs Lockdown Blast Door";
-	id_tag = "CDCZStairsLockdown"
+	id_tag = "CDCZStairsLockdown";
+	icon_state = "pdoor0"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark/small,
@@ -12733,7 +12734,8 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "cdczeng";
-	name = "CDCZ Technical Closet Emergency Shutters"
+	name = "CDCZ Technical Closet Emergency Shutters";
+	icon_state = "shutter0"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24193,6 +24195,18 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/ulcz/hallways)
+"dGn" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkpoint)
 "dGx" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -24840,7 +24854,8 @@
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
 	id_tag = "CDCZLockdown";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
@@ -28745,7 +28760,17 @@
 "gLx" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/storage/box/handcuffs,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
 "gLD" = (
@@ -30346,7 +30371,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Watchtower Lockdown Blast Door";
-	id_tag = "CDCZWatchLockdown"
+	id_tag = "CDCZWatchLockdown";
+	icon_state = "pdoor0"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -33642,7 +33668,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
@@ -34381,7 +34408,8 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	name = "CDCZ Checkpoint North Access Shutters";
-	id_tag = "CDCZOffNorth"
+	id_tag = "CDCZOffNorth";
+	icon_state = "shutter0"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -35033,7 +35061,8 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkcryo)
@@ -35252,7 +35281,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/checkpoint)
@@ -37563,6 +37593,13 @@
 	dir = 4
 	},
 /area/site53/uhcz/securitypost)
+"mmO" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/machinery/contraband_detector,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkpoint)
 "mmS" = (
 /obj/machinery/light{
 	dir = 4
@@ -39804,6 +39841,15 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
+"nxL" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/contraband_detector,
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/llcz/dclass/checkpoint)
 "nxO" = (
 /obj/item/stool,
 /obj/effect/landmark/start{
@@ -41384,7 +41430,8 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	name = "CDCZ Checkpoint South Access Shutters";
-	id_tag = "CDCZOffSouth"
+	id_tag = "CDCZOffSouth";
+	icon_state = "shutter0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/checkpointoverlook)
@@ -41892,7 +41939,15 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/obj/structure/closet,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "confiscation locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
@@ -43054,7 +43109,8 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "cdczeng";
-	name = "CDCZ Technical Closet Emergency Shutters"
+	name = "CDCZ Technical Closet Emergency Shutters";
+	icon_state = "shutter0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
@@ -43492,7 +43548,8 @@
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
 	id_tag = "CDCZLockdown";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -44241,6 +44298,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"qgg" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/contraband_detector,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkpoint)
 "qgn" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
@@ -45225,11 +45289,12 @@
 	},
 /obj/machinery/door/airlock/glass/security{
 	name = "CDCZ Catwalks Access";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_ENGINEERING_LEVEL1","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
@@ -45960,7 +46025,8 @@
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
 	id_tag = "CDCZLockdown";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -47124,7 +47190,8 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Watchtower Lockdown Blast Door";
-	id_tag = "CDCZWatchLockdown"
+	id_tag = "CDCZWatchLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
@@ -48917,7 +48984,8 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Stairs Lockdown Blast Door";
-	id_tag = "CDCZStairsLockdown"
+	id_tag = "CDCZStairsLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
@@ -49377,7 +49445,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
@@ -49512,7 +49581,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost)
@@ -51134,7 +51204,8 @@
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
 	id_tag = "CDCZLockdown";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
@@ -53053,7 +53124,8 @@
 "vNZ" = (
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Watchtower Lockdown Blast Door";
-	id_tag = "CDCZWatchLockdown"
+	id_tag = "CDCZWatchLockdown";
+	icon_state = "pdoor0"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -53884,7 +53956,8 @@
 /obj/effect/floor_decal/industrial/hatch/orange,
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/checkpoint)
@@ -54398,7 +54471,8 @@
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
 	id_tag = "CDCZLockdown";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
@@ -54528,6 +54602,16 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106observ)
+"wMZ" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkpoint)
 "wNk" = (
 /obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
@@ -55313,7 +55397,8 @@
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "cdczeng";
 	name = "CDCZ Technical Closet Emergency Shutters";
-	dir = 4
+	dir = 4;
+	icon_state = "shutter0"
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -55322,7 +55407,8 @@
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
 	id_tag = "CDCZLockdown";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
@@ -55967,6 +56053,11 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"xIx" = (
+/obj/effect/catwalk_plated/white,
+/obj/machinery/contraband_detector,
+/turf/simulated/open,
+/area/site53/llcz/dclass/checkpoint)
 "xIz" = (
 /obj/machinery/r_n_d/protolathe,
 /obj/effect/floor_decal/corner/brown/border{
@@ -56122,7 +56213,8 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "cdczeng";
-	name = "CDCZ Technical Closet Emergency Shutters"
+	name = "CDCZ Technical Closet Emergency Shutters";
+	icon_state = "shutter0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
@@ -56170,7 +56262,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost)
@@ -56792,7 +56885,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
-	id_tag = "CDCZLockdown"
+	id_tag = "CDCZLockdown";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkcryo)
@@ -62413,7 +62507,7 @@ xjQ
 vWZ
 nrO
 jFl
-hZm
+wMZ
 rCb
 nrO
 vWZ
@@ -62423,7 +62517,7 @@ ykJ
 ykJ
 ykJ
 xxm
-vWZ
+qgg
 wti
 hZm
 vWZ
@@ -62670,7 +62764,7 @@ lBh
 uve
 ykJ
 ykJ
-ykJ
+xIx
 ykJ
 ykJ
 noN
@@ -62680,7 +62774,7 @@ ykJ
 ykJ
 ykJ
 noN
-fSn
+nxL
 kPI
 fSn
 fSn
@@ -62927,7 +63021,7 @@ xjQ
 qNL
 kKn
 kKn
-kKn
+dGn
 kKn
 kKn
 pCc
@@ -62937,7 +63031,7 @@ ykJ
 ykJ
 ykJ
 hdo
-hFm
+mmO
 wti
 lVI
 hFm

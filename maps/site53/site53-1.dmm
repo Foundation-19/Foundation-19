@@ -280,10 +280,6 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
 "aui" = (
-/obj/effect/floor_decal/spline/plain/white{
-	dir = 1;
-	pixel_y = -14
-	},
 /obj/effect/floor_decal/industrial/outline,
 /obj/item/beach_ball/holoball,
 /turf/simulated/floor/wood/yew,
@@ -1566,7 +1562,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	c_tag = "CDCZ Recreational Hallway North";
+	c_tag = "CDCZ Luxury Hallway North";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -1825,16 +1821,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
-"cvf" = (
-/obj/effect/floor_decal/spline/plain/white{
-	dir = 1;
-	pixel_y = -14
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood/yew,
-/area/site53/llcz/dclass/luxuryhall)
 "cvg" = (
 /obj/machinery/door/airlock/civilian{
 	name = "CDCZ Restroom"
@@ -2565,8 +2551,9 @@
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "dsS" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/head/chefhat,
 /obj/effect/floor_decal/corner/black/diagonal,
+/obj/item/clothing/suit/chef/classic,
+/obj/item/clothing/head/chefhat,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "dtl" = (
@@ -3634,6 +3621,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/contraband_detector,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/briefing)
 "eWR" = (
@@ -4048,12 +4036,11 @@
 /turf/simulated/wall/prepainted,
 /area/site53/science/seniorresearcherc)
 "ftB" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
 	},
-/obj/machinery/contraband_detector,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxuryhall)
+/turf/simulated/floor/wood/walnut,
+/area/site53/llcz/dclass/canteen)
 "ftP" = (
 /obj/structure/table/standard,
 /obj/item/anobattery,
@@ -4273,15 +4260,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "fKu" = (
-/obj/effect/floor_decal/spline/plain/white{
-	dir = 1;
-	pixel_y = -14
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/light{
-	dir = 4
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
 	},
-/turf/simulated/floor/wood/yew,
-/area/site53/llcz/dclass/luxuryhall)
+/turf/simulated/floor/wood/walnut,
+/area/site53/llcz/dclass/canteen)
 "fKC" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southleft{
@@ -6301,13 +6289,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
-"iAn" = (
-/obj/effect/floor_decal/spline/plain/white{
-	dir = 1;
-	pixel_y = -14
-	},
-/turf/simulated/floor/wood/yew,
-/area/site53/llcz/dclass/luxuryhall)
 "iAs" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/bandana/orange,
@@ -6427,10 +6408,8 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
-/obj/structure/sign/warning/detailed{
-	pixel_y = 25;
-	name = "TERMINATION LINE";
-	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance unless given permission by tests, or security staff.'"
+/obj/structure/sign/warning/termination{
+	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -6749,6 +6728,10 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/contraband_detector,
+/obj/machinery/door/airlock/civilian{
+	name = "CDCZ Luxury Hall";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_LUXURY"))
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "jaC" = (
@@ -8126,10 +8109,8 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
 	},
-/obj/structure/sign/warning/detailed{
-	pixel_y = 25;
-	name = "TERMINATION LINE";
-	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance unless given permission by tests, or security staff.'"
+/obj/structure/sign/warning/termination{
+	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -10444,13 +10425,6 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
-"ovh" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 8
-	},
-/obj/machinery/contraband_detector,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/luxuryhall)
 "owp" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
@@ -11431,13 +11405,11 @@
 /area/site53/llcz/dclass/cells)
 "pRN" = (
 /obj/effect/floor_decal/corner/orange/border,
-/obj/structure/sign/warning/detailed{
+/obj/structure/flora/pottedplant/minitree,
+/obj/structure/sign/warning/termination{
 	pixel_y = -32;
-	name = "TERMINATION LINE";
-	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance.'";
 	dir = 1
 	},
-/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "pRQ" = (
@@ -14718,7 +14690,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/lcz{
-	c_tag = "CDCZ Recreational Hallway Middle";
+	c_tag = "CDCZ Luxury Hallway Middle";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -15456,6 +15428,9 @@
 	dir = 8;
 	c_tag = "CDCZ Basketball Court"
 	},
+/obj/effect/floor_decal/spline/plain/white{
+	dir = 1
+	},
 /turf/simulated/floor/wood/yew,
 /area/site53/llcz/dclass/luxuryhall)
 "vPj" = (
@@ -15612,6 +15587,9 @@
 /area/site53/surface)
 "vZo" = (
 /obj/structure/table/marble,
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/canteen)
 "vZQ" = (
@@ -16777,7 +16755,7 @@
 	pixel_x = -24
 	},
 /obj/machinery/camera/network/lcz{
-	c_tag = "CDCZ Recreational Hallway South";
+	c_tag = "CDCZ Luxury Hallway South";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -19380,7 +19358,7 @@ hIH
 hIH
 iSy
 iSy
-nGe
+iSy
 uaw
 aKI
 peW
@@ -22721,7 +22699,7 @@ srm
 srm
 srm
 srm
-ovh
+pHn
 sNM
 kql
 mwo
@@ -23235,7 +23213,7 @@ jTW
 doB
 jTW
 jTW
-ftB
+pHn
 jKk
 jKk
 jKk
@@ -23744,7 +23722,7 @@ mwF
 mnX
 fCv
 unP
-blY
+ftB
 blY
 dnj
 dyp
@@ -24001,7 +23979,7 @@ mwF
 rTf
 fCv
 bUX
-blY
+ftB
 blY
 dnj
 uGM
@@ -24258,7 +24236,7 @@ mwF
 spZ
 fCv
 ffN
-nQH
+fKu
 nQH
 kvw
 lLO
@@ -24515,7 +24493,7 @@ mwF
 rTf
 fCv
 bFq
-blY
+ftB
 blY
 blY
 dyp
@@ -24772,7 +24750,7 @@ mwF
 mnX
 fCv
 woj
-blY
+ftB
 blY
 blY
 uGM
@@ -25029,7 +25007,7 @@ fCv
 fCv
 fCv
 qhn
-blY
+ftB
 blY
 blY
 lLO
@@ -25276,9 +25254,9 @@ xFB
 ioF
 xFB
 xFB
-xFB
-cvf
-xFB
+gyK
+ioF
+tNC
 xFB
 xFB
 ioF
@@ -25533,9 +25511,9 @@ kTb
 kTb
 bkx
 xFB
+gyK
 xFB
-iAn
-xFB
+tNC
 xFB
 gHn
 kTb
@@ -25790,9 +25768,9 @@ dWL
 bkx
 xFB
 bkx
+gyK
 xFB
-iAn
-xFB
+tNC
 gHn
 xFB
 vFK
@@ -26047,9 +26025,9 @@ gyK
 gyK
 xFB
 gyK
-xFB
+gyK
 aui
-xFB
+tNC
 tNC
 xFB
 fng
@@ -26304,9 +26282,9 @@ dtQ
 uZg
 xFB
 uZg
+gyK
 xFB
-iAn
-xFB
+tNC
 sly
 xFB
 ppn
@@ -26561,9 +26539,9 @@ utH
 utH
 uZg
 xFB
+gyK
 xFB
-iAn
-xFB
+tNC
 xFB
 sly
 utH
@@ -26818,8 +26796,8 @@ xFB
 jRT
 xFB
 xFB
-xFB
-fKu
+gyK
+jRT
 vNU
 xFB
 xFB

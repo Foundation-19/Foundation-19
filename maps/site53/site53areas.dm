@@ -713,7 +713,7 @@
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/luxuryhall
-	name = "\improper CDCZ Recreational Hallway"
+	name = "\improper CDCZ Luxury Hallway"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
