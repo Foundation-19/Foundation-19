@@ -11677,6 +11677,7 @@
 /area/site53/ulcz/hallways)
 "aGu" = (
 /obj/machinery/light,
+/obj/effect/landmark/test/safe_turf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/generalpurpose2)
 "aGw" = (
@@ -54434,6 +54435,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp012)
+"wIt" = (
+/obj/effect/landmark/test/space_turf,
+/turf/simulated/floor,
+/area/space)
 "wIH" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -57469,7 +57474,7 @@ azA
 (3,1,1) = {"
 azA
 kSo
-aBx
+wIt
 aBx
 azA
 azA
