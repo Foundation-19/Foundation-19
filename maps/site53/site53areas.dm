@@ -238,8 +238,8 @@
 //	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/upper_surface/innerentrancehallway
-	name = "\improper Site 53 Inner Entrance"
+/area/site53/upper_surface/breachshelter
+	name = "\improper Breach Shelter"
 	icon_state = "hallC1"
 //	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED

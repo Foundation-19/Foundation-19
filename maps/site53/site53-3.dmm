@@ -2,6 +2,14 @@
 "aa" = (
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/logistics/logisticsbreak)
+"ab" = (
+/obj/structure/flora/pottedplant,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "ad" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -14,9 +22,9 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/maintenance/surfaceeast)
 "af" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/breachshelter)
 "ag" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 6
@@ -24,13 +32,20 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
 "ah" = (
-/obj/effect/paint_stripe/green,
-/obj/structure/noticeboard,
-/turf/simulated/wall/prepainted,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "BreachSecurity";
+	name = "Breach Shelter Security Station Lockdown";
+	icon_state = "shutter0";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/breachshelter)
 "ai" = (
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "al" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp,
@@ -48,15 +63,34 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/effect/floor_decal/corner/beige/bordercorner{
+/obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
 	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "BreachShelterLock";
+	name = "Breach Shelter Lockdown"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "au" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/prepainted,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Emergency Armor Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "armor1";
+	icon_closed = "armor";
+	icon_off = "armoroff";
+	icon_opened = "armoropen";
+	icon_state = "armor1"
+	},
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "av" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/multi_tile/glass/medical{
@@ -80,26 +114,40 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmreception/waiting)
 "ax" = (
-/obj/effect/floor_decal/corner/beige/bordercorner{
+/obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "BreachShelterLock";
+	name = "Breach Shelter Lockdown"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "az" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "aA" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
-"aB" = (
-/obj/structure/flora/tree/pine,
-/turf/simulated/floor/exoplanet/snow,
-/area/space)
 "aC" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -111,11 +159,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmreception/waiting)
-"aD" = (
-/obj/structure/table/standard,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "aG" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	name = "Administration Offices"
@@ -158,6 +201,11 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"aL" = (
+/obj/effect/floor_decal/corner/green/border,
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "aM" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -173,13 +221,22 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "aN" = (
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/folder/red,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "aO" = (
-/obj/structure/flora/ausbushes/pointybush,
-/turf/simulated/floor/exoplanet/snow,
-/area/space)
+/obj/structure/bed/chair/office/comfy/red{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "aP" = (
 /obj/structure/table/glass,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -193,21 +250,40 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
 "aS" = (
-/obj/structure/reagent_dispensers/water_cooler{
-	dir = 4
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/machinery/door/airlock/maintenance{
+	name = "Maintenance";
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "aU" = (
-/obj/machinery/lapvend{
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/device/flashlight/lamp,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "aV" = (
-/obj/machinery/door/airlock/engineering{
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+/obj/machinery/door/airlock/glass/security{
+	name = "Security Station";
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "BreachSecurity";
+	name = "Breach Shelter Security Station Lockdown";
+	icon_state = "shutter0";
+	dir = 4
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -215,7 +291,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "aX" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Mental Isolation Hallway";
@@ -583,24 +659,17 @@
 /turf/simulated/open,
 /area/site53/surface/surface)
 "bR" = (
-/obj/effect/paint_stripe/green,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/innerentrancehallway)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "bS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/snow,
@@ -993,7 +1062,7 @@
 	id_tag = "EZ Security Maintenance Hatch";
 	name = "EZ Security Maintenance Hatch"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/maintenance/surfacewest)
 "cI" = (
 /obj/structure/cable{
@@ -1041,16 +1110,19 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "cM" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
 	},
-/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/maintenance/maintenancetunnel)
@@ -1080,20 +1152,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
 "cQ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/breachshelter)
 "cR" = (
 /obj/structure/stairs/south,
 /turf/simulated/floor/tiled/monotile,
@@ -1124,17 +1185,24 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
 "cX" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
 	},
-/turf/simulated/floor/exoplanet/grass,
-/area/space)
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "cY" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/exoplanet/grass,
-/area/space)
+/obj/item/modular_computer/console/preset/security{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "cZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1216,8 +1284,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/bridge)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "dq" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1483,6 +1551,14 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
+"dV" = (
+/obj/structure/filingcabinet,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "dY" = (
 /obj/machinery/chem_master,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1962,24 +2038,8 @@
 /turf/simulated/floor/plating,
 /area/site53/medical/mentalhealth/office)
 "fm" = (
-/obj/machinery/power/apc/hyper{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/turf/simulated/open,
+/area/site53/upper_surface/breachshelter)
 "fn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -2008,16 +2068,9 @@
 /turf/simulated/wall/titanium,
 /area/site53/upper_surface/entrancehallway)
 "fq" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/multi_tile/glass/civilian{
-	name = "Hub Access"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/uez/bridge)
 "fr" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -2031,6 +2084,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
+"ft" = (
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/vending/cola{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "fu" = (
 /obj/structure/table/woodentable/walnut,
 /obj/structure/bookcase/manuals/medical{
@@ -2098,9 +2158,11 @@
 /turf/simulated/floor/plating,
 /area/site53/medical/surgery/op2)
 "fF" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/mcrsubstation)
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "fG" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post";
@@ -2293,37 +2355,34 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
 "gl" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/item/modular_computer/console/preset/security{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "gm" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "gn" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Maintenance"
-	},
+/obj/structure/ladder/up,
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
+"go" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
-"go" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/maintenance/maintenancetunnel)
-"gq" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
 "gr" = (
 /turf/simulated/floor/tiled/white/monotile,
 /turf/simulated/floor/tiled/white/monotile,
@@ -2335,7 +2394,7 @@
 "gw" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/down{
-	dir = 4
+	dir = 1
 	},
 /obj/structure/cable{
 	d1 = 32;
@@ -2344,16 +2403,16 @@
 /turf/simulated/open,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "gx" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/machinery/door/airlock/highsecurity{
+	name = "Breach Shelter"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "BreachShelter";
+	name = "Breach Shelter Blast Door"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/breachshelter)
 "gy" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2373,9 +2432,18 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "gB" = (
-/obj/structure/ladder/up,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "security locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "gC" = (
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -3168,6 +3236,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"iJ" = (
+/obj/effect/floor_decal/corner/green/bordercorner,
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "iK" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -3873,6 +3948,15 @@
 "ks" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception)
+"kt" = (
+/obj/structure/bed/chair/armchair/blue{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "ku" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/closet/firecloset,
@@ -4002,7 +4086,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/janitor)
 "kP" = (
 /obj/structure/railing/mapped{
@@ -4285,6 +4369,9 @@
 /obj/item/device/radio,
 /obj/item/device/radio,
 /obj/item/device/radio,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "lu" = (
@@ -4362,21 +4449,29 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "lO" = (
-/obj/machinery/vending/cigarette{
-	dir = 1
+/obj/machinery/door/airlock/multi_tile/glass/security{
+	dir = 1;
+	req_access = list("ACCESS_SECURITY_LEVEL1");
+	name = "Security Control Center"
 	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/breachshelter)
 "lP" = (
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
-"lR" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/machinery/light{
-	dir = 4
+"lT" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "EmergencyArmory";
+	name = "Emergency Personnel Armory Blast Door Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4416,19 +4511,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
 "mg" = (
-/obj/machinery/papershredder,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/structure/table/reinforced,
+/obj/item/device/flashlight/lamp,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "mi" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/wood/walnut,
@@ -4478,6 +4567,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
+"mw" = (
+/obj/structure/flora/pottedplant,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "mx" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -4544,6 +4640,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"mL" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 9
+	},
+/obj/structure/closet/walllocker/emerglocker,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "mM" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4616,6 +4719,14 @@
 /obj/structure/flora/grass/green,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"mV" = (
+/obj/structure/table/reinforced,
+/obj/item/device/flashlight/lamp,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "mW" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4704,9 +4815,24 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
 "nH" = (
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Small Armnaments Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "tactical1";
+	icon_closed = "tactical";
+	icon_off = "tacticaloff";
+	icon_opened = "tacticalopen";
+	icon_state = "tactical1"
+	},
+/obj/item/ammo_magazine/scp/m1911,
+/obj/item/ammo_magazine/scp/m1911,
+/obj/item/ammo_magazine/scp/m1911,
+/obj/item/gun/projectile/pistol/m1911,
+/obj/item/storage/belt/holster/general,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "nL" = (
 /obj/structure/sign/warning/detailed{
 	name = "GATE A"
@@ -4837,6 +4963,10 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
+"oj" = (
+/obj/effect/floor_decal/corner/red/bordercorner,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "ok" = (
 /obj/structure/bed/chair/comfy/red,
 /turf/simulated/floor/carpet/green,
@@ -4878,6 +5008,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
+"op" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "BreachShelter";
+	name = "Breach Shelter Entrance Doors Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "oq" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/corner/orange/mono,
@@ -4966,8 +5109,22 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "oD" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/prepainted,
+/obj/machinery/door/airlock/engineering{
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "BreachSecurity";
+	name = "Breach Shelter Security Station Lockdown";
+	icon_state = "shutter0";
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "oE" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -5046,11 +5203,14 @@
 /turf/unsimulated/mineral,
 /area/site53/surface/surface)
 "oV" = (
-/obj/machinery/light{
-	dir = 4
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
 	},
-/turf/simulated/open,
-/area/site53/uez/bridge)
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "oX" = (
 /obj/structure/railing/mapped,
 /turf/simulated/open,
@@ -5137,6 +5297,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"pp" = (
+/obj/structure/filingcabinet,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "pq" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 9
@@ -5157,6 +5327,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"pv" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "pz" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -5197,10 +5376,24 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/mentalhealth/office)
+"pF" = (
+/obj/structure/flora/pottedplant,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "pG" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/prepainted,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "BreachSecurity";
+	name = "Breach Shelter Security Station Lockdown";
+	icon_state = "shutter0";
+	dir = 4
+	},
+/turf/space,
+/area/site53/upper_surface/breachshelter)
 "pH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -5240,6 +5433,17 @@
 /obj/item/pen,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/isolation)
+"pQ" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/device/flashlight/lamp,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "pR" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
@@ -5293,6 +5497,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/surface/surface)
+"qb" = (
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "qc" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 5
@@ -5839,6 +6052,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "si" = (
@@ -5945,6 +6159,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
+"sI" = (
+/obj/machinery/vending/security,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "sJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5997,7 +6218,7 @@
 	dir = 1
 	},
 /turf/simulated/open,
-/area/site53/uez/bridge)
+/area/site53/upper_surface/breachshelter)
 "sX" = (
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/monotile,
@@ -6017,6 +6238,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"tc" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "BreachSecurity";
+	name = "Security Station Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "td" = (
 /obj/structure/closet/secure_closet/personal/empty{
 	name = "Representative's Locker";
@@ -6058,16 +6292,11 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/effect/floor_decal/corner/beige/border{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "tD" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6143,6 +6372,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/isolation)
+"ua" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "ug" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -6175,6 +6410,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
+"uq" = (
+/obj/structure/filingcabinet,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "ur" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -6216,21 +6458,10 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/bridge)
-"uG" = (
-/obj/structure/bed/chair/office/light,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "uI" = (
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/titanium,
 /area/site53/entrancezone/hallway)
-"uL" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier{
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "uM" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 10
@@ -6300,11 +6531,11 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/beige/border{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "uW" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -6421,6 +6652,15 @@
 /obj/machinery/washing_machine,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/bridge)
+"vm" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "vn" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -6538,6 +6778,22 @@
 /obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"vP" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
+"vV" = (
+/obj/structure/filingcabinet,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "vW" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -6571,6 +6827,22 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"wf" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "security locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/structure/noticeboard{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "wg" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6597,6 +6869,15 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
+"wl" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/green/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "wn" = (
 /obj/structure/window/basic/full,
 /turf/simulated/floor/exoplanet/snow,
@@ -6651,6 +6932,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"wE" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/breachshelter)
 "wF" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/northleft{
@@ -6737,9 +7027,17 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/logistics/logisticsbreak)
 "xc" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "xd" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -6827,11 +7125,17 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/beige/border{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
+"xJ" = (
+/obj/structure/bed/chair/office/comfy/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "xM" = (
 /obj/machinery/door/airlock/research{
 	name = "Surgical Theatre";
@@ -6989,6 +7293,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
+"yx" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "yz" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -7031,6 +7341,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
+"yI" = (
+/obj/structure/bed/chair/armchair/blue{
+	dir = 1
+	},
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "yJ" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 5
@@ -7061,6 +7379,10 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/space,
 /area/site53/logistics/logisticsbreak)
+"yP" = (
+/obj/effect/floor_decal/corner/green/bordercorner,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "yQ" = (
 /obj/structure/fuel_port{
 	pixel_y = -31;
@@ -7069,6 +7391,18 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
+"yR" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
+"yT" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "yU" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -7110,6 +7444,11 @@
 /obj/item/reagent_containers/dropper/industrial,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"zh" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "zi" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/medical{
@@ -7223,6 +7562,10 @@
 /obj/effect/floor_decal/scp/clear_south,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/entrancehallway)
+"zB" = (
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "zE" = (
 /obj/machinery/power/apc{
 	dir = 4
@@ -7368,6 +7711,16 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/medical/mentalhealth/isolation)
+"Af" = (
+/obj/structure/bed/chair/armchair/blue,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Ah" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Surface Restaurant"
@@ -7389,6 +7742,13 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"Aj" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Al" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
@@ -7513,6 +7873,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"AS" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "AT" = (
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
@@ -7557,6 +7927,15 @@
 /obj/effect/floor_decal/industrial/loading,
 /turf/simulated/floor/tiled/dark,
 /area/site53/logistics/logisticsbreak)
+"Bg" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Bi" = (
 /obj/machinery/vending/soda{
 	dir = 8
@@ -7641,6 +8020,13 @@
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"Bw" = (
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/vending/snack{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Bx" = (
 /obj/structure/bed/chair/wood{
 	dir = 8
@@ -7722,6 +8108,12 @@
 /obj/item/stamp/chameleon,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"BV" = (
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "BW" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -7951,6 +8343,27 @@
 "Do" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/bridge)
+"Ds" = (
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Emergency Armor Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "armor1";
+	icon_closed = "armor";
+	icon_off = "armoroff";
+	icon_opened = "armoropen";
+	icon_state = "armor1"
+	},
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Du" = (
 /obj/machinery/camera/network/entrance{
 	c_tag = "Logistics Hangar"
@@ -7966,11 +8379,23 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
+"Dy" = (
+/obj/effect/floor_decal/corner/green/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Dz" = (
 /obj/item/bedsheet,
 /obj/structure/bed,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"DA" = (
+/obj/structure/flora/pottedplant,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "DB" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -7996,10 +8421,12 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/restaurantkitchenarea)
 "DF" = (
-/obj/structure/table/standard,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/machinery/door/airlock/glass/command{
+	req_access = list("ACCESS_ADMIN_LEVEL3");
+	name = "Executive Section"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/breachshelter)
 "DG" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
@@ -8039,6 +8466,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/bridge)
+"DQ" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 5
+	},
+/obj/structure/closet/walllocker/emerglocker,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "DR" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8046,6 +8480,13 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"DS" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "DV" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -8169,13 +8610,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
-"EA" = (
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
 "EH" = (
 /obj/effect/landmark/start{
 	name = "Medical Doctor"
@@ -8194,6 +8628,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/surface/surface)
+"EL" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/structure/bed/chair/armchair/blue{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "EO" = (
 /obj/machinery/door/airlock/glass/virology{
 	id_tag = "iso1";
@@ -8252,7 +8695,36 @@
 /area/site53/medical/exam_room)
 "Ff" = (
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
+"Fg" = (
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Small Armnaments Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "tactical1";
+	icon_closed = "tactical";
+	icon_off = "tacticaloff";
+	icon_opened = "tacticalopen";
+	icon_state = "tactical1"
+	},
+/obj/item/ammo_magazine/scp/m1911,
+/obj/item/ammo_magazine/scp/m1911,
+/obj/item/ammo_magazine/scp/m1911,
+/obj/item/gun/projectile/pistol/m1911,
+/obj/item/storage/belt/holster/general,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
+"Fi" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Fj" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8375,11 +8847,22 @@
 	dir = 8;
 	network = list("Entrance Zone Network 1")
 	},
-/obj/effect/floor_decal/corner/beige/border{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
+"FW" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Ga" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/green,
@@ -8414,6 +8897,20 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/maintenance/maintenancetunnel)
+"Gj" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/folder/red,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Gk" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -8444,6 +8941,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/logistics/logisticsbreak)
+"Gs" = (
+/obj/structure/table/reinforced,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Gt" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -8513,6 +9018,22 @@
 /obj/random/clipboard,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
+"GM" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Breach Shelter"
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "BreachShelter";
+	name = "Breach Shelter Blast Door"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/breachshelter)
 "GO" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -8631,14 +9152,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op3)
-"Hp" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
 "Hs" = (
 /obj/structure/iv_drip,
 /turf/simulated/floor/carpet/orange,
@@ -8679,11 +9192,11 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/beige/border{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "HG" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
@@ -8725,6 +9238,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/infirmary)
+"HT" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "HV" = (
 /obj/effect/landmark/start{
 	name = "Medical Doctor"
@@ -8788,6 +9310,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"Im" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 10
+	},
+/obj/structure/closet/walllocker/emerglocker,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Io" = (
 /obj/machinery/vending/cigarette{
 	dir = 4
@@ -8812,15 +9341,11 @@
 /turf/simulated/floor/plating,
 /area/site53/reswing/roboticsupr)
 "It" = (
-/obj/machinery/power/apc/hyper{
-	dir = 8
-	},
-/obj/structure/cable,
-/obj/effect/floor_decal/corner/beige/border{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "Iy" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -8910,6 +9435,30 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
+"IZ" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
+"Ja" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "Jc" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	dir = 4
@@ -8951,10 +9500,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "Jn" = (
-/obj/effect/floor_decal/corner/beige/border,
 /obj/machinery/light,
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "Jr" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -8974,12 +9523,17 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Jx" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/machinery/light{
-	dir = 8
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "JF" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -9023,6 +9577,13 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/mentalhealth/isolation)
+"Ke" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 6
+	},
+/obj/structure/closet/walllocker/emerglocker,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Kf" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -9121,6 +9682,13 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
+"Kx" = (
+/obj/structure/bed/chair/armchair/blue{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Ky" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -9136,6 +9704,13 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
+"KC" = (
+/obj/machinery/vending/coffee{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "KD" = (
 /obj/machinery/button/windowtint{
 	dir = 8;
@@ -9223,10 +9798,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
 "KV" = (
-/obj/effect/paint_stripe/yellow,
 /obj/machinery/status_display,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/bridge)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/breachshelter)
 "KX" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -9256,14 +9831,21 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
+"Lh" = (
+/obj/structure/bed/chair/armchair/blue,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Lm" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "Ln" = (
-/obj/effect/floor_decal/corner/beige/border,
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "Lo" = (
 /obj/structure/bed/chair/office/comfy,
 /obj/structure/cable{
@@ -9282,11 +9864,19 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "Lu" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/folder/red,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "Lv" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -9296,14 +9886,17 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"Ly" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+"Lx" = (
+/obj/structure/bed/chair{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/obj/structure/window/basic{
+	dir = 4;
+	pixel_x = 3
+	},
+/obj/effect/floor_decal/corner/green/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "LA" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 10
@@ -9327,6 +9920,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op3)
+"LF" = (
+/obj/structure/filingcabinet,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "LG" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/infirmary)
@@ -9569,9 +10170,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "Ng" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/uez/mcrsubstation)
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
+	},
+/obj/structure/flora/pottedplant/minitree,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "Nh" = (
 /obj/effect/landmark/start{
 	name = "Surgeon"
@@ -9584,9 +10189,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/beige/border,
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "Nl" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -9607,9 +10212,27 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
+"Nr" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Ns" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logisticsbreak)
+"Nt" = (
+/obj/structure/flora/pottedplant,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "NA" = (
 /obj/effect/floor_decal/carpet/orange{
 	dir = 1
@@ -9638,6 +10261,13 @@
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"NK" = (
+/obj/structure/bed/chair/armchair/blue,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "NM" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4;
@@ -9715,22 +10345,11 @@
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
 "Of" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/engineering/maintenance/maintenancetunnel)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Oi" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9752,9 +10371,26 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "On" = (
-/obj/structure/table/standard,
+/obj/structure/filingcabinet,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
+"Oo" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Op" = (
 /obj/effect/floor_decal/corner/purple/bordercee{
 	dir = 4
@@ -9773,9 +10409,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/logistics/logisticsbreak)
 "Os" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/space,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Oz" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -9787,8 +10425,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "OD" = (
-/turf/simulated/floor/exoplanet/grass,
-/area/space)
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "OF" = (
 /obj/structure/cable{
 	d2 = 8;
@@ -9816,6 +10460,14 @@
 /obj/item/storage/box/gloves,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op3)
+"OQ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "OR" = (
 /obj/effect/floor_decal/spline/plain/yellow{
 	dir = 4
@@ -9981,9 +10633,21 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
 "PC" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/exoplanet/snow,
-/area/space)
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "BreachShelterLock";
+	name = "Breach Shelter Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "PH" = (
 /obj/structure/closet/secure_closet/medical2{
 	req_access = list("ACCESS_MEDICAL_LEVEL3")
@@ -10147,6 +10811,17 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/dark,
 /area/site53/logistics/logisticsbreak)
+"Qu" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Qw" = (
 /obj/effect/landmark/start{
 	name = "Janitor"
@@ -10186,9 +10861,27 @@
 /turf/simulated/wall/prepainted,
 /area/site53/reswing/roboticsupr)
 "QG" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/mcrsubstation)
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
+"QI" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "BreachShelter";
+	name = "Breach Shelter Entrance Doors Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "QM" = (
 /obj/machinery/vending/snack{
 	dir = 8;
@@ -10196,6 +10889,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"QN" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "QP" = (
 /obj/effect/floor_decal/corner/yellow/three_quarters{
 	dir = 8
@@ -10265,12 +10964,27 @@
 "Rc" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
+"Rd" = (
+/obj/structure/table/reinforced,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Ri" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Rk" = (
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Rn" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -10329,6 +11043,12 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"RI" = (
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "RJ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/mapped{
@@ -10490,6 +11210,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
+"SD" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "SF" = (
 /obj/effect/floor_decal/industrial/outline{
 	color = "#b19664"
@@ -10621,6 +11352,22 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
+"Tn" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/window/basic{
+	dir = 4;
+	pixel_x = 3
+	},
+/obj/effect/floor_decal/corner/green/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Tp" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 8
@@ -10732,10 +11479,8 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "TZ" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Maintenance"
-	},
-/turf/simulated/floor/plating,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/uez/mcrsubstation)
 "Ua" = (
 /obj/machinery/vending/cola{
@@ -10817,7 +11562,7 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "Uw" = (
 /obj/structure/table/reinforced,
@@ -10858,6 +11603,12 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
+"UG" = (
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "UI" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -10873,6 +11624,17 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
+"UK" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "UN" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -10920,9 +11682,6 @@
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/surgery/op1)
-"Vn" = (
-/turf/simulated/floor/exoplanet/snow,
-/area/space)
 "Vp" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 9
@@ -11043,6 +11802,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
+"VP" = (
+/obj/machinery/door/airlock/glass/security{
+	name = "Breach Shelter Security Post";
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/breachshelter)
 "VR" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -11056,8 +11822,15 @@
 	dir = 6
 	},
 /obj/structure/flora/pottedplant/minitree,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"VW" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Wb" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post Storage Closet";
@@ -11131,6 +11904,14 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/roboticsupr)
+"Wv" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/red,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Ww" = (
 /obj/machinery/chemical_dispenser/full,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -11195,11 +11976,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "WK" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/innerentrancehallway)
+/obj/machinery/light,
+/turf/simulated/open,
+/area/site53/upper_surface/breachshelter)
 "WL" = (
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 4
@@ -11232,6 +12011,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/logistics/logisticsbreak)
+"WV" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "WX" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11267,6 +12055,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op1)
+"Xc" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Xd" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 9
@@ -11276,12 +12075,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
-"Xm" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/site53/uez/bridge)
 "Xn" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/light/spot{
@@ -11308,6 +12101,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Xs" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Xw" = (
 /obj/effect/floor_decal/industrial/outline{
 	color = "#C40000"
@@ -11369,6 +12174,15 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"XN" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "XO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -11394,6 +12208,13 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"XV" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/structure/bed/chair/armchair/blue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "XW" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -11410,17 +12231,24 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/maintenance/surfaceeast)
 "XY" = (
-/obj/machinery/door/airlock/engineering{
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+/obj/machinery/door/airlock/highsecurity{
+	name = "Emergency Personnel Armory";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "EmergencyArmory";
+	name = "Emergency Personnel Armory Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/upper_surface/innerentrancehallway)
+/area/site53/upper_surface/breachshelter)
 "XZ" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/flora/pottedplant,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/mcrsubstation)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Yg" = (
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
@@ -11584,6 +12412,18 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/logistics/logisticsbreak)
+"YP" = (
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/bordercorner,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "YT" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -11649,6 +12489,11 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"Zi" = (
+/obj/effect/floor_decal/corner/green/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Zl" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
@@ -11733,6 +12578,29 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/logistics/logisticsbreak)
+"ZC" = (
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
+"ZE" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "ZF" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower Lobby";
@@ -12908,11 +13776,11 @@ dA
 dA
 JP
 rB
+oV
 Qx
 Qx
 Qx
-Qx
-Qx
+oV
 Pp
 JP
 JP
@@ -13173,7 +14041,7 @@ Gf
 WZ
 KI
 nV
-Qx
+oV
 jp
 ep
 Yw
@@ -13426,7 +14294,7 @@ Ta
 Wj
 Zl
 Ta
-xl
+mg
 sh
 Co
 CA
@@ -14211,7 +15079,7 @@ WZ
 Co
 nV
 Qx
-Ir
+Ng
 JP
 dA
 dA
@@ -14463,7 +15331,7 @@ zn
 zn
 RB
 SJ
-xl
+OD
 Qp
 KI
 CA
@@ -38360,19 +39228,6 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 Ce
 Ce
 Ce
@@ -38380,6 +39235,19 @@ Ce
 Ce
 Ce
 Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+Ce
+dA
 dA
 dA
 dA
@@ -38617,26 +39485,26 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 Ce
-gm
-gm
+Fs
+aS
+Ra
+go
+Ra
+Ra
+Ra
+Ra
+Ra
+go
+Ra
+Ra
+Ra
+Ra
+Ja
 go
 gw
-gm
 Ce
+dA
 dA
 dA
 dA
@@ -38874,26 +39742,26 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 Ce
-gl
-gm
-Ly
-gx
-gm
-Ce
+dw
+af
+af
+af
+af
+af
+af
+af
+af
+af
+af
+af
+af
+af
+oD
+af
+af
+af
+af
 dA
 dA
 dA
@@ -39131,26 +39999,26 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 Ce
-gm
-gm
-gm
 dw
-gm
-Ce
+af
+Nt
+Os
+QG
+mw
+pQ
+cY
+On
+pQ
+cY
+LF
+af
+Oo
+UK
+SD
+Nr
+ab
+af
 dA
 dA
 dA
@@ -39388,26 +40256,26 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 Ce
-gm
-gm
-gm
-dw
-gm
-oD
+Jx
+af
+QN
+ai
+ai
+Ln
+cX
+aO
+Ln
+cX
+aO
+Ln
+cQ
+sI
+oj
+Of
+YP
+yx
+af
 dA
 dA
 dA
@@ -39645,26 +40513,26 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 Ce
-EA
-gm
-gm
 dw
-gm
-oD
+af
+HT
+zB
+ai
+Ln
+Lu
+bR
+yx
+Lu
+bR
+yx
+cQ
+sI
+Ln
+zh
+Xs
+wf
+af
 dA
 dA
 dA
@@ -39672,9 +40540,9 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
+af
+af
+af
 dA
 dA
 ZH
@@ -39902,37 +40770,37 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
 Ce
-Ce
-Ce
-gm
-gm
-dw
-gm
-oD
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+az
+af
+QN
+zB
+ai
+Rk
+Os
+Os
+Os
+Os
+Os
+It
+lO
+QN
+Ln
+zh
+Xs
+gB
+af
+af
+af
+af
+af
+af
+af
+af
+af
+KC
+af
+af
 dA
 rO
 PL
@@ -40160,36 +41028,36 @@ Ce
 Ce
 Ce
 Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-fm
-gn
-Ra
-Ra
+dw
+af
+QN
+zB
+ai
+oj
 Of
-gm
-oD
-dA
-dA
-PC
-OD
-OD
-Vn
-dA
-dA
-dA
-dA
-dA
+Of
+Of
+Of
+Of
+yx
+Ff
+QN
+Ln
+zh
+Xs
+gB
+af
+Nt
+vV
+uq
+uq
+Fi
+gB
+af
+XV
+vP
+EL
+af
 dA
 ZH
 PL
@@ -40418,35 +41286,35 @@ Ra
 Ra
 Uv
 cM
-Ra
-GO
-Ra
-Ra
-Ra
-Ra
-GO
-Ra
-Ra
-Ra
-Ra
+af
+HT
+zB
+ai
+Ln
+Gj
+xc
+It
+aN
+xc
+It
 cQ
-Ce
-gm
-gm
-Gg
-EA
-oD
-dA
-Vn
-Vn
-Vn
-OD
-aB
-Vn
-OD
-dA
-dA
-dA
+QN
+Ln
+zh
+Xs
+wf
+af
+OQ
+ai
+ai
+ai
+Rk
+It
+af
+Af
+ai
+yI
+af
 dA
 Lf
 Te
@@ -40675,35 +41543,35 @@ Ce
 Ce
 Ce
 Gg
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-Ce
-gm
-gm
-Gg
-aN
-oD
-OD
-OD
-Vn
-Vn
-Vn
-Vn
-OD
-PC
-Vn
-OD
-dA
+af
+QN
+ai
+ai
+Ln
+cX
+aO
+Ln
+cX
+aO
+Ln
+cQ
+lT
+Rk
+Os
+ZC
+Qu
+af
+pv
+xJ
+ai
+ai
+ai
+Ln
+af
+NK
+ai
+Kx
+af
 dA
 mv
 mf
@@ -40932,35 +41800,35 @@ xP
 xP
 Ce
 Gg
-Ce
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-Ce
-gm
-gm
-Gg
-gm
-au
-au
-au
-Os
-Os
-Os
-Os
-au
-au
-OD
-OD
-OD
+af
+pF
+Of
+AS
+XZ
+aU
+gl
+pp
+aU
+gl
+dV
+af
+PC
+tc
+QI
+Xc
+DA
+af
+Wv
+gl
+mV
+op
+IZ
+yx
+af
+Lh
+DS
+kt
+af
 dA
 tu
 qF
@@ -41189,35 +42057,35 @@ xP
 xP
 Ce
 di
-Ce
-xP
-xP
-xP
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
+af
+af
+af
+af
+af
+ah
+ah
+af
+ah
+ah
+af
+af
+ah
+ah
+ah
 aV
 pG
-au
-ai
-Jx
-az
-ai
-ai
-On
-Jx
-au
-au
-xc
-PC
+af
+af
+cQ
+cQ
+cQ
+af
+VP
+af
+cQ
+DF
+cQ
+af
 dA
 ZH
 PL
@@ -41446,35 +42314,35 @@ xP
 xP
 Ce
 Gg
-Ce
-xP
-xP
-xP
-hp
-fa
-fa
-Xm
-fa
-fa
-hp
+ZE
+gm
+gm
+gm
+af
+sQ
+fm
+fm
+fm
+WK
+af
 KV
 sQ
-fa
-fa
+fm
+fm
 tC
 It
 af
-ai
-uG
-On
-ai
-ai
-On
-WK
-ai
-lO
-xc
-Vn
+mL
+VW
+VW
+VW
+vm
+VW
+vm
+VW
+VW
+Im
+af
 dA
 Xn
 PL
@@ -41701,37 +42569,37 @@ xP
 xP
 xP
 xP
-hp
+Ce
 dp
-hp
-hp
-hp
-hp
-hp
-fa
-fa
-fa
-fa
-fa
-uS
-fa
-fa
-fa
-fa
+fq
+fq
+fq
+fq
+af
+fm
+fm
+fm
+fm
+fm
+cQ
+fm
+fm
+fm
+fm
 uV
 Jn
-au
-ai
-Lu
-On
-ai
-ai
-On
-Lu
-ai
-aS
-xc
-Vn
+af
+XN
+yP
+fF
+fF
+fF
+fF
+fF
+fF
+UG
+Zi
+af
 dA
 Du
 PL
@@ -41964,31 +42832,31 @@ Kh
 pY
 dD
 dD
-hp
-fa
-fa
-fa
-fa
-fa
-uS
-fa
-fa
+af
+fm
+fm
+fm
+fm
+fm
+cQ
+fm
+fm
 ai
 ai
 ar
 Ni
-fq
-Hp
-Hp
-Hp
-Hp
-Hp
-Hp
-Hp
-Hp
-mg
-bR
-cX
+GM
+FW
+wl
+Tn
+Tn
+Tn
+Tn
+Tn
+Tn
+FW
+wl
+wE
 cv
 jH
 Ph
@@ -42221,31 +43089,31 @@ sr
 RR
 dD
 dD
-hp
-fa
-fa
-fa
-fa
-fa
-uS
-fa
-fa
+af
+fm
+fm
+fm
+fm
+fm
+cQ
+fm
+fm
 ai
 ai
 ax
 Ln
-Ff
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-uL
-xc
-OD
+gx
+ua
+Dy
+Aj
+Aj
+Aj
+Aj
+Aj
+Aj
+ua
+Dy
+af
 dA
 Xn
 PL
@@ -42478,31 +43346,31 @@ lg
 ef
 eE
 eE
-hp
-fa
-fa
-fa
-fa
-fa
-uS
-fa
-fa
-fa
-fa
+af
+fm
+fm
+fm
+fm
+fm
+cQ
+fm
+fm
+fm
+fm
 xA
 Jn
-ah
-ai
-Lu
-On
-ai
-ai
-az
-Lu
-ai
-DF
-xc
-OD
+af
+ua
+iJ
+WV
+WV
+WV
+WV
+WV
+WV
+qb
+aL
+af
 dA
 Lf
 Te
@@ -42735,31 +43603,31 @@ lg
 eg
 eF
 fa
-hp
-fa
-fa
-oV
-fa
-fa
-hp
+af
+sQ
+fm
+fm
+fm
+WK
+af
 KV
 sQ
-fa
-fa
+fm
+fm
 HB
 FS
 af
-ai
-uG
-On
-ai
-ai
-aD
-WK
-ai
-aU
-xc
-cY
+ua
+Dy
+Lx
+Lx
+Lx
+Lx
+Lx
+Lx
+ua
+Dy
+af
 dA
 fK
 XS
@@ -42992,31 +43860,31 @@ lg
 dD
 eP
 hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
-hp
+af
+af
+af
+af
+af
+af
+af
+af
+af
+af
+af
 XY
-pG
-au
-ai
-lR
-On
-ai
-ai
-On
-lR
-au
-au
-xc
-OD
+af
+af
+ua
+Dy
+Aj
+Aj
+Aj
+Aj
+Aj
+Aj
+ua
+Dy
+af
 dA
 bm
 bO
@@ -43257,23 +44125,23 @@ qC
 gs
 gs
 gs
-fF
-gq
-gq
-gq
-gq
+af
 au
-au
-au
-Os
-Os
-Os
-Os
-au
-au
-Vn
-Vn
-OD
+yT
+It
+Gs
+af
+XN
+RI
+VW
+VW
+VW
+VW
+VW
+VW
+BV
+Zi
+af
 dA
 bO
 bO
@@ -43514,23 +44382,23 @@ qC
 gs
 ed
 gs
-TZ
-gq
-gq
-gq
-nH
-QG
-OD
-Vn
-PC
-OD
-OD
-aO
-Vn
-OD
-Vn
-Vn
-dA
+af
+Ds
+QN
+Ln
+Rd
+af
+DQ
+fF
+fF
+Bg
+fF
+fF
+Bg
+fF
+fF
+Ke
+af
 dA
 bO
 bm
@@ -43770,24 +44638,24 @@ vl
 qC
 gs
 ed
-gs
-fF
-gB
-gq
-gq
-gq
-QG
-dA
-Vn
-Vn
-Vn
-OD
-Vn
-Vn
-Vn
-dA
-dA
-dA
+gn
+af
+au
+QN
+Ln
+nH
+af
+af
+af
+af
+af
+ft
+Bw
+af
+af
+af
+af
+af
 dA
 bO
 bS
@@ -44028,19 +44896,19 @@ qC
 gs
 gs
 gs
-fF
-XZ
-gq
-gq
-gq
-QG
+af
+Ds
+QN
+Ln
+Fg
+af
 dA
 dA
-Vn
-Vn
-Vn
-PC
 dA
+af
+af
+af
+af
 dA
 dA
 dA
@@ -44285,12 +45153,12 @@ DP
 gs
 ed
 gs
-fF
-gq
-gq
-gq
-gq
-QG
+af
+au
+yR
+yx
+nH
+af
 dA
 dA
 dA
@@ -44542,12 +45410,12 @@ qC
 gs
 ed
 gs
-fF
-fF
-fF
-fF
-fF
-fF
+af
+af
+af
+af
+af
+af
 dA
 dA
 dA
@@ -44799,12 +45667,12 @@ qC
 gs
 gs
 gs
-Ng
-rm
-rm
-rm
-rm
+TZ
 oS
+oS
+oS
+oS
+dA
 dA
 dA
 dA
@@ -45060,7 +45928,7 @@ qC
 rm
 rm
 rm
-rm
+oS
 oS
 dA
 dA
