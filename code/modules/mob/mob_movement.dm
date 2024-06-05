@@ -171,7 +171,7 @@
 		if ((A != src.loc && A?.z == src.z))
 			src.last_move = get_dir(A, src.loc)
 
-	SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
+	SEND_SIGNAL(src, COMSIG_MOVED, old_loc, loc)
 
 /client/Move(new_loc, direction)
 	if(!user_acted(src))
