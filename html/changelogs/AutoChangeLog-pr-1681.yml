@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - bugfix: fixed crash when orbiting yourself and moving.
