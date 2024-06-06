@@ -43799,9 +43799,6 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
-/obj/item/organ/internal/stomach,
-/obj/item/organ/internal/stomach,
-/obj/item/organ/internal/stomach,
 /obj/item/organ/internal/eyes,
 /obj/item/organ/internal/eyes,
 /obj/item/organ/internal/eyes,
