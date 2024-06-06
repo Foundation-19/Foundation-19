@@ -20722,10 +20722,11 @@
 	icon_off = "secoff";
 	icon_locked = "sec1";
 	icon_closed = "sec";
-	name = "confiscation locker";
+	name = "solitary locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2");
 	anchored = 1
 	},
+/obj/item/clothing/under/scp/eclass,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "byY" = (
@@ -55741,10 +55742,11 @@
 	icon_off = "secoff";
 	icon_locked = "sec1";
 	icon_closed = "sec";
-	name = "confiscation locker";
+	name = "solitary locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2");
 	anchored = 1
 	},
+/obj/item/clothing/under/scp/eclass,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "xyF" = (

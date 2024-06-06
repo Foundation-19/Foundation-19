@@ -30,6 +30,16 @@
 	desc = "A bright orange jumpsuit, indicative of Class D personnel."
 	icon_state = "d"
 
+/obj/item/clothing/under/scp/eclass
+	name = "Solitary D-Class uniform"
+	desc = "A dark grey jumpsuit, indicative of trouble-making Class D personnel."
+	icon_state = "e"
+
+/obj/item/clothing/under/scp/hdclass
+	name = "High Security D-Class uniform"
+	desc = "A bright red jumpsuit, indicative of dangerous Class D personnel."
+	icon_state = "hd"
+
 /obj/item/clothing/under/scp/chaos
 	name = "tactical sweatshirt"
 	desc = "A white tactical shirt for tactical operations."

@@ -102,6 +102,11 @@
 	item_state = "overalls"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+/obj/item/clothing/suit/apron/overalls/dminer
+	name = "D-Class miner overalls"
+	desc = "A pair of heavy, brown utility overalls with a SCP Logo on the back."
+	icon_state = "overalls_dminer"
+	item_state = "overalls_dminer"
 
 /obj/item/clothing/suit/syndicatefake
 	name = "red space suit replica"

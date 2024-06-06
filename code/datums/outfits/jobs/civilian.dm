@@ -15,6 +15,16 @@
 		var/path = pick( /obj/item/wrench, /obj/item/screwdriver)
 		H.equip_to_slot_or_store_or_drop(new path (H), slot_l_store)
 
+/decl/hierarchy/outfit/job/civ/classd/high
+	name = OUTFIT_JOB_NAME("High-Security Class D")
+	uniform = /obj/item/clothing/under/scp/hdclass
+	shoes = /obj/item/clothing/shoes/workboots
+	l_ear = null
+	l_pocket = /obj/item/paper/dclass_orientation
+	id_type = /obj/item/card/id/classd
+	pda_type = null
+	back = null
+
 /decl/hierarchy/outfit/job/civ/janitor
 	name = OUTFIT_JOB_NAME("Janitor")
 	uniform = /obj/item/clothing/under/rank/janitor

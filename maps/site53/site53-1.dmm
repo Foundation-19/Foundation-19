@@ -2377,11 +2377,11 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/hallways)
 "dit" = (
-/obj/structure/sign/dclass{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/industrial/fire{
 	dir = 4
+	},
+/obj/structure/sign/warning/termination{
+	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -2993,11 +2993,9 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
 "ebh" = (
-/obj/item/clothing/under/scp/dclass{
-	pixel_y = -1
-	},
+/obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/head/collectable/hardhat{
-	pixel_y = 20
+	pixel_y = 17
 	},
 /obj/structure/statue{
 	desc = "A plaque on the statue reads: 'For once he stood here, a friend in orange. The Liberator.'";
@@ -14084,6 +14082,10 @@
 "tRz" = (
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
+"tRI" = (
+/obj/item/pickaxe,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "tSD" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -14127,6 +14129,7 @@
 /obj/item/tank/emergency/oxygen/engi,
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/clothing/suit/apron/overalls/dminer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "tUa" = (
@@ -14977,6 +14980,11 @@
 /obj/machinery/light,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
+"vme" = (
+/obj/item/remains,
+/obj/item/clothing/suit/apron/overalls/dminer,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "vmw" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/syringes,
@@ -34540,7 +34548,7 @@ emk
 emk
 xRT
 bVy
-bVy
+vme
 xRT
 lam
 aqR
@@ -34797,7 +34805,7 @@ xRT
 emk
 xRT
 xRT
-bVy
+tRI
 xRT
 lam
 aqR
