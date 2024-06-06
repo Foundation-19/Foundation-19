@@ -10,7 +10,7 @@
 	var/smash_duration = 5 //Directly relates to the 'weaken' duration. Lowered by armor (i.e. helmets)
 	var/isGlass = TRUE //Whether the 'bottle' is made of glass or not so that milk cartons don't shatter when someone gets hit by it
 
-	var/obj/item/reagent_containers/glass/rag = null
+	var/obj/item/reagent_containers/glass/rag/rag = null
 	var/rag_underlay = "rag"
 
 /obj/item/reagent_containers/food/drinks/bottle/Initialize()
