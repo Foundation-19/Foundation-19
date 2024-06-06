@@ -172,7 +172,7 @@
 // 9mm
 /obj/item/ammo_magazine/box/mk9
 	name = "ammunition box (9mm)"
-	icon_state = "9mm"
+	icon_state = "box_9mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "9mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -203,7 +203,7 @@
 // 45acp
 /obj/item/ammo_magazine/box/a45
 	name = "ammunition box (.45acp)"
-	icon_state = "ammobox"
+	icon_state = "box_45acp"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = ".45"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -222,7 +222,7 @@
 // 5.7x28mm
 /obj/item/ammo_magazine/box/a57
 	name = "ammunition box (5.7x28mm)"
-	icon_state = "fn_box"
+	icon_state = "box_57x28mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "5.7x28mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -232,6 +232,7 @@
 
 /obj/item/ammo_magazine/box/a57/rubber
 	name = "ammunition box (5.7x28mm rubber)"
+	icon_state = "box_57x28mmr"
 	ammo_type = /obj/item/ammo_casing/pistol/a57/rubber
 
 // 5.56
@@ -260,7 +261,7 @@
 // shotgun
 /obj/item/ammo_magazine/box/buckshot
 	name = "ammunition box (Buckshot)"
-	icon_state = "ammobox"
+	icon_state = "12gbox-buckshot"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -270,7 +271,7 @@
 
 /obj/item/ammo_magazine/box/slug
 	name = "ammunition box (Slug)"
-	icon_state = "ammobox"
+	icon_state = "12gbox-slug"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -280,7 +281,7 @@
 
 /obj/item/ammo_magazine/box/beanbag
 	name = "ammunition box (Beanbag)"
-	icon_state = "ammobox"
+	icon_state = "12gbox-beanbag"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -289,7 +290,7 @@
 
 /obj/item/ammo_magazine/box/rubbershot
 	name = "ammunition box (Rubbershot)"
-	icon_state = "ammobox"
+	icon_state = "12gbox-rubbershot"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -298,7 +299,7 @@
 
 /obj/item/ammo_magazine/box/stunshell
 	name = "ammunition box (Stunshell)"
-	icon_state = "ammobox"
+	icon_state = "12gbox-stunshot"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -307,7 +308,7 @@
 
 /obj/item/ammo_magazine/box/flash
 	name = "ammunition box (Flash)"
-	icon_state = "ammobox"
+	icon_state = "12gbox-flashshot"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
@@ -316,7 +317,7 @@
 
 /obj/item/ammo_magazine/box/emp
 	name = "ammunition box (EMP)"
-	icon_state = "ammobox"
+	icon_state = "12gbox-empshot"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
