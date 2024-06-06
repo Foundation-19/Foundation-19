@@ -3983,7 +3983,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
 "nR" = (

@@ -266,7 +266,7 @@
 	reagents.add_reagent(/datum/reagent/acid/sulphuric, 60)
 	update_icon()
 
-/obj/item/reagent_containers/bucket
+/obj/item/reagent_containers/glass/bucket
 	name = "bucket"
 	desc = "It's a bucket."
 	icon = 'icons/obj/janitor.dmi'
@@ -281,7 +281,7 @@
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	acid_resistance = 1
 
-/obj/item/reagent_containers/bucket/wood
+/obj/item/reagent_containers/glass/bucket/wood
 	name = "bucket"
 	desc = "It's a wooden bucket. How rustic."
 	icon_state = "wbucket"
@@ -289,7 +289,7 @@
 	matter = list(MATERIAL_WOOD = 280)
 	volume = 200
 
-/obj/item/reagent_containers/bucket/attackby(obj/D, mob/user as mob)
+/obj/item/reagent_containers/glass/bucket/attackby(obj/D, mob/user as mob)
 	if(istype(D, /obj/item/mop))
 		if(reagents.total_volume < 1)
 			to_chat(user, SPAN_WARNING("\The [src] is empty!"))
@@ -301,7 +301,7 @@
 	else
 		return ..()
 
-/obj/item/reagent_containers/bucket/on_update_icon()
+/obj/item/reagent_containers/glass/bucket/on_update_icon()
 	cut_overlays()
 	if (!is_open_container())
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")

@@ -239,7 +239,7 @@
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/table/standard,
 /obj/item/material/minihoe,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
 "arK" = (
@@ -15279,7 +15279,7 @@
 "vED" = (
 /obj/structure/janitorialcart,
 /obj/item/mop,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "vEY" = (

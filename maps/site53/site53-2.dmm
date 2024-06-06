@@ -12641,7 +12641,7 @@
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/random/soap,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -25830,7 +25830,7 @@
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/structure/mopbucket,
 /obj/item/mop,
-/obj/item/reagent_containers/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/machinery/camera/network/scp173{
 	c_tag = "SCP-173 Cleaning Supplies"
 	},
