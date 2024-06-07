@@ -450,3 +450,22 @@
 /obj/item/ammo_magazine/scp/saiga12/empty
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/scp/uzim9mm
+	name = "UZI magazine (9mm)"
+	desc = "A thin, 32-round magazine for the Uzi SMG. These rounds do okay damage, but struggle against armor."
+	icon_state = "uzi9mm"
+	caliber = "9mm"
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1260)
+	max_ammo = 32
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/smgm9mm
+	name = "MP5 magazine (9mm)"
+	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
+	icon_state = "smg9mm"
+	caliber = "9mm"
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1260)
+	max_ammo = 30
+	multiple_sprites = 1

@@ -76,7 +76,6 @@
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/suit/armor/vest,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
 "av" = (
@@ -151,13 +150,13 @@
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	name = "Administration Offices"
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#6a97b0"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ECZ Security Lockdown";
+	name = "Entrance Zone Lockdown Blast Door";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -173,13 +172,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/logistics/logisticsbreak)
 "aJ" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#a2819e"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ECZ Security Lockdown";
+	name = "Entrance Zone Lockdown Blast Door";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -642,9 +641,12 @@
 /area/site53/surface/surface)
 "bP" = (
 /obj/structure/railing/mapped{
-	dir = 5
+	dir = 1
 	},
-/turf/simulated/open,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "bR" = (
 /obj/structure/table/reinforced,
@@ -733,7 +735,8 @@
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "UEZ Checkpoint Bubble";
 	name = "North EZ Checkpoint Bubble";
-	dir = 4
+	dir = 4;
+	icon_state = "shutter0"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -761,21 +764,13 @@
 /turf/unsimulated/mask,
 /area/site53/upper_surface/commstower)
 "cd" = (
-/obj/structure/table/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble"
+	name = "North EZ Checkpoint Bubble";
+	icon_state = "shutter0"
 	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor/plating,
 /area/site53/entrancezone/securitypost)
 "ce" = (
 /obj/structure/table/reinforced,
@@ -787,43 +782,27 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble"
+	name = "North EZ Checkpoint Bubble";
+	icon_state = "shutter0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/securitypost)
 "cf" = (
+/obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/machinery/photocopier{
+	pixel_y = 4
 	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble"
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/entrancezone/securitypost)
-"cg" = (
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble"
-	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor/plating,
+/obj/item/device/toner,
+/turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
 "ch" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/industrial/hatch/orange,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ECZ Security Lockdown";
+	name = "Entrance Zone Lockdown Blast Door";
+	icon_state = "pdoor0"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
 "ci" = (
@@ -836,12 +815,12 @@
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/industrial/hatch/orange,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ECZ Security Lockdown";
+	name = "Entrance Zone Lockdown Blast Door";
+	icon_state = "pdoor0"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
 "cj" = (
@@ -852,13 +831,13 @@
 /obj/machinery/door/airlock/multi_tile/glass/science{
 	name = "Research and Development"
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#a2819e"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ECZ Security Lockdown";
+	name = "Entrance Zone Lockdown Blast Door";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -876,18 +855,16 @@
 /area/site53/medical/infirmreception)
 "cn" = (
 /obj/machinery/button/blast_door{
-	dir = 4;
 	id_tag = "EZ Checkpoint East";
 	name = "EZ Checkpoint East";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
-	dir = 4;
 	id_tag = "EZ Checkpoint West";
 	name = "EZ Checkpoint West";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = -2
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
@@ -973,18 +950,16 @@
 /area/site53/entrancezone/securitypost)
 "cB" = (
 /obj/machinery/button/blast_door{
-	dir = 4;
 	id_tag = "EZ Checkpoint Staircase";
 	name = "EZ Checkpoint Staircase";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
-	dir = 4;
 	id_tag = "EZ Security Maintenance Hatch";
 	name = "EZ Security Maintenance Hatch";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = -2
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable/green{
@@ -1200,9 +1175,20 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
 "da" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/entrancezone/securitypost)
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "security locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/industrial/outline/red,
+/obj/item/boombox,
+/obj/item/device/megaphone,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "db" = (
 /obj/machinery/status_display,
 /obj/effect/paint_stripe/red,
@@ -1348,20 +1334,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
 "dz" = (
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "UEZ Checkpoint Bubble";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1369,6 +1341,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
 "dA" = (
@@ -1419,8 +1392,18 @@
 "dG" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
-/obj/machinery/photocopier,
-/obj/item/device/toner,
+/obj/machinery/button/blast_door{
+	id_tag = "UEZ Checkpoint Bubble";
+	name = "UEZ Checkpoint Bubble";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 7
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = -2
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
 "dH" = (
@@ -2156,11 +2139,11 @@
 	name = "Security Post";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 4;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "EZ Checkpoint Access";
-	name = "North EZ Checkpoint Access"
+	name = "North EZ Checkpoint Access";
+	icon_state = "pdoor0";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/securitypost)
@@ -2177,7 +2160,10 @@
 /area/site53/medical/equipstorage)
 "fJ" = (
 /obj/structure/railing/mapped{
-	dir = 9
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8
 	},
 /turf/simulated/open,
 /area/site53/surface/surface)
@@ -3660,8 +3646,9 @@
 /area/space)
 "jL" = (
 /obj/structure/railing/mapped{
-	dir = 10
+	dir = 8
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "jM" = (
@@ -4087,8 +4074,9 @@
 /area/site53/logistics/logisticsbreak)
 "kQ" = (
 /obj/structure/railing/mapped{
-	dir = 10
+	dir = 8
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/surface/surface)
 "kS" = (
@@ -4429,12 +4417,13 @@
 	begins_closed = 0;
 	dir = 2;
 	id_tag = "EZ Checkpoint South";
-	name = "South Checkpoint Blast Door"
+	name = "South Checkpoint Blast Door";
+	icon_state = "pdoor0"
 	},
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#ceb689"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
 "lO" = (
 /obj/machinery/door/airlock/multi_tile/glass/security{
@@ -4572,7 +4561,8 @@
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "UEZ Checkpoint Bubble";
 	name = "North EZ Checkpoint Bubble";
-	dir = 4
+	dir = 4;
+	icon_state = "shutter0"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -5068,6 +5058,9 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "oz" = (
@@ -5187,6 +5180,13 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
+"oR" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/open,
+/area/site53/surface/surface)
 "oS" = (
 /turf/unsimulated/mineral,
 /area/site53/surface/surface)
@@ -5607,7 +5607,10 @@
 /area/site53/surface/surface)
 "qH" = (
 /obj/structure/railing/mapped{
-	dir = 9
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -5947,10 +5950,10 @@
 /obj/machinery/button/blast_door{
 	name = "EZ Checkpoint North";
 	id_tag = "EZ Checkpoint North";
-	pixel_y = 6
+	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
-	pixel_y = -4;
+	pixel_y = -2;
 	id_tag = "EZ Checkpoint South";
 	name = "EZ Checkpoint South"
 	},
@@ -6004,10 +6007,13 @@
 /area/site53/surface/surface)
 "sd" = (
 /obj/structure/railing/mapped{
-	dir = 5
+	dir = 1
 	},
 /obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
@@ -6462,20 +6468,14 @@
 /turf/simulated/wall/prepainted,
 /area/site53/entrancezone/hallway)
 "uP" = (
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/table/standard,
+/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "South EZ Checkpoint Bubble";
 	name = "South EZ Checkpoint Bubble";
-	dir = 4
+	dir = 4;
+	icon_state = "shutter0"
 	},
-/turf/simulated/floor/tiled/dark/small,
+/turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
 "uQ" = (
 /obj/structure/curtain/open/shower,
@@ -6542,9 +6542,10 @@
 	begins_closed = 0;
 	dir = 2;
 	id_tag = "EZ Checkpoint North";
-	name = "North Checkpoint Blast Door"
+	name = "North Checkpoint Blast Door";
+	icon_state = "pdoor0"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
 "uZ" = (
 /obj/machinery/door/airlock/civilian{
@@ -6557,10 +6558,11 @@
 	begins_closed = 0;
 	dir = 2;
 	id_tag = "EZ Checkpoint North";
-	name = "North Checkpoint Blast Door"
+	name = "North Checkpoint Blast Door";
+	icon_state = "pdoor0"
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
 "vb" = (
 /obj/machinery/conveyor_switch/oneway{
@@ -6942,7 +6944,8 @@
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "South EZ Checkpoint Bubble";
 	name = "South EZ Checkpoint Bubble";
-	dir = 4
+	dir = 4;
+	icon_state = "shutter0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -7513,10 +7516,11 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "zu" = (
-/obj/structure/railing/mapped{
-	dir = 6
-	},
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "zv" = (
@@ -7644,7 +7648,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "EZ Checkpoint Bubble 2";
-	name = "South EZ Checkpoint Access"
+	name = "South EZ Checkpoint Access";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -7943,8 +7948,11 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/upper_surface/entrancehallway)
 "Bl" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/no_grille/regular{
-	id = 39
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "goirep";
+	name = "Privacy Shutters";
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
@@ -8343,7 +8351,6 @@
 	icon_opened = "armoropen";
 	icon_state = "armor1"
 	},
-/obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
@@ -8851,6 +8858,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"FZ" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Ga" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/green,
@@ -8930,11 +8946,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/logistics/logisticsbreak)
 "Gs" = (
-/obj/structure/table/reinforced,
 /obj/item/ammo_magazine/box/a45,
 /obj/item/ammo_magazine/box/a45,
 /obj/item/ammo_magazine/box/a45,
 /obj/effect/floor_decal/corner/red/mono,
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
 "Gt" = (
@@ -8993,8 +9009,9 @@
 /area/site53/logistics/logisticsbreak)
 "GJ" = (
 /obj/structure/railing/mapped{
-	dir = 10
+	dir = 8
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "GK" = (
@@ -9185,6 +9202,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"HF" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "HG" = (
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 6
@@ -9826,6 +9852,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"Lk" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Lm" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
@@ -10256,6 +10291,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"NL" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "NM" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4;
@@ -10314,7 +10356,8 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "South EZ Checkpoint Bubble";
-	name = "South EZ Checkpoint Bubble"
+	name = "South EZ Checkpoint Bubble";
+	icon_state = "shutter0"
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
@@ -10501,14 +10544,14 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "Pc" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "South EZ Checkpoint Bubble";
-	name = "South EZ Checkpoint Bubble";
+/obj/machinery/button/blast_door{
+	id_tag = "goirep";
+	name = "Privacy Shutters Control";
+	pixel_x = -25;
 	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/carpet/orange,
+/area/site53/uez/goirepoffice)
 "Pd" = (
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/machinery/light,
@@ -10953,12 +10996,12 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
 "Rd" = (
-/obj/structure/table/reinforced,
 /obj/item/ammo_magazine/box/a45,
 /obj/item/ammo_magazine/box/a45,
 /obj/item/ammo_magazine/box/a45,
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/red/mono,
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
 "Ri" = (
@@ -11027,8 +11070,9 @@
 /area/site53/uez/bridge)
 "RG" = (
 /obj/structure/railing/mapped{
-	dir = 6
+	dir = 4
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "RI" = (
@@ -11059,10 +11103,6 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/storage/fancy/cigar,
 /obj/item/flame/lighter/zippo/bronze,
-/obj/machinery/button/windowtint{
-	id = 39;
-	pixel_x = -32
-	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
 "RN" = (
@@ -11557,7 +11597,8 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/blast_door{
 	name = "UEZ Checkpoint Bubble 2";
-	id_tag = "UEZ Checkpoint Bubble 2"
+	id_tag = "UEZ Checkpoint Bubble 2";
+	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
@@ -12204,13 +12245,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
 "XW" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#6a97b0"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ECZ Security Lockdown";
+	name = "Entrance Zone Lockdown Blast Door";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -38760,7 +38801,7 @@ nZ
 nZ
 Rx
 xW
-iW
+NL
 sw
 gr
 cb
@@ -40802,7 +40843,7 @@ PL
 PL
 VC
 mf
-zU
+bP
 GJ
 sw
 nE
@@ -41040,7 +41081,7 @@ vV
 uq
 uq
 Fi
-gB
+da
 af
 XV
 vP
@@ -42091,7 +42132,7 @@ oG
 ic
 sw
 nE
-ZR
+Lk
 Bs
 Lm
 qh
@@ -42104,13 +42145,13 @@ Pn
 zu
 nE
 gr
-bP
+dB
 fv
 fv
 fv
 fv
 fv
-vA
+oR
 nE
 nE
 bt
@@ -43063,7 +43104,7 @@ mk
 mk
 mk
 mk
-Az
+mk
 Az
 mk
 xP
@@ -43320,7 +43361,7 @@ UI
 rK
 qA
 RM
-Gv
+Pc
 Gv
 mk
 uO
@@ -43824,7 +43865,7 @@ vM
 ce
 hZ
 vE
-vE
+cf
 ux
 cN
 ux
@@ -44078,7 +44119,7 @@ jE
 lu
 bi
 tD
-cf
+cd
 cn
 vE
 vE
@@ -44335,11 +44376,11 @@ jF
 lu
 mN
 mO
-cg
+cd
 cr
 dG
 ev
-da
+ux
 cP
 ux
 mk
@@ -44609,7 +44650,7 @@ Bl
 mk
 mk
 ur
-Pc
+uP
 uP
 wF
 uP
@@ -44689,7 +44730,7 @@ fK
 GJ
 jg
 jg
-zU
+bP
 fK
 fK
 fL
@@ -46495,7 +46536,7 @@ AT
 AT
 AT
 AT
-ZR
+FZ
 bm
 bm
 rm
@@ -48551,7 +48592,7 @@ AT
 AT
 AT
 AT
-zU
+HF
 bO
 rm
 dA

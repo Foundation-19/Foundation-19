@@ -55,18 +55,18 @@
 	name = "magazine (.45, flash)"
 	ammo_type = /obj/item/ammo_casing/pistol/c45/flash
 
-/obj/item/ammo_magazine/c45uzi
-	name = "stick magazine (.45)"
-	icon_state = "uzi45"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/pistol/c45
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
-	max_ammo = 25
-	multiple_sprites = 1
+//obj/item/ammo_magazine/c45uzi /// Removed by Dutchy
+	//name = "stick magazine (.45)"
+	//icon_state = "uzi45"
+	//mag_type = MAGAZINE
+	//ammo_type = /obj/item/ammo_casing/pistol/c45
+	//matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	//caliber = ".45"
+	//max_ammo = 25
+	//multiple_sprites = 1
 
-/obj/item/ammo_magazine/c45uzi/empty
-	initial_ammo = 0
+//obj/item/ammo_magazine/c45uzi/empty
+	//initial_ammo = 0
 
 /obj/item/ammo_magazine/tac50
 	name = "tactical speedloader"
