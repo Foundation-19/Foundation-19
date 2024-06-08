@@ -6157,8 +6157,6 @@
 /obj/item/ammo_magazine/box/a9mm,
 /obj/item/ammo_magazine/box/a9mm,
 /obj/item/ammo_magazine/box/a9mm,
-/obj/item/ammo_magazine/box/a9mm/ap,
-/obj/item/ammo_magazine/box/a9mm/ap,
 /obj/effect/floor_decal/corner/red/mono,
 /obj/machinery/light{
 	dir = 8
