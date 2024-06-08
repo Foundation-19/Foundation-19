@@ -234,7 +234,7 @@
 /obj/item/storage/mre/random,
 /obj/item/storage/mre/random,
 /obj/item/storage/mre/random,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "aaF" = (
 /obj/structure/cable{
@@ -273,6 +273,7 @@
 /obj/structure/closet/secure_closet/guard/hcz,
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/red/mono,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "aaI" = (
@@ -284,6 +285,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/securitypost)
 "aaN" = (
@@ -13516,7 +13518,8 @@
 /area/site53/llcz/checkequip)
 "aMU" = (
 /obj/structure/closet/secure_closet/guard/zone_commander/hcz,
-/turf/simulated/floor/carpet/red,
+/obj/item/clothing/accessory/solgov/rank/fleet/junofficer/o2,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "aMW" = (
 /obj/machinery/door/airlock/glass/research{
@@ -15907,7 +15910,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "aVL" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -16589,16 +16592,12 @@
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/entrance_checkpoint)
 "aXL" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "aXM" = (
 /obj/machinery/disposal/deliveryChute{
@@ -16996,8 +16995,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
 "aZt" = (
-/obj/structure/filingcabinet,
-/turf/simulated/floor/carpet/red,
+/obj/machinery/papershredder,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "aZu" = (
 /obj/machinery/vending/coffee{
@@ -19079,7 +19078,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/commanderoffice)
 "bhh" = (
 /obj/structure/table/reinforced,
@@ -19345,11 +19344,11 @@
 /obj/machinery/power/apc/hyper{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/red,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "bhZ" = (
 /obj/effect/landmark/start{
-	name = "HCZ Cadet"
+	name = "HCZ Private"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
@@ -19506,7 +19505,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "bix" = (
 /obj/structure/cable/green{
@@ -19741,12 +19740,14 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "bjl" = (
-/obj/structure/table/standard,
-/obj/item/sticky_pad/random,
-/turf/simulated/floor/carpet/red,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "bjm" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -19803,7 +19804,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "bjv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -19832,7 +19833,7 @@
 	dir = 1;
 	name = "HCZ Guard Office"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/commanderoffice)
 "bjz" = (
 /obj/structure/disposalpipe/segment{
@@ -20063,7 +20064,7 @@
 /area/site53/llcz/checkequip)
 "bko" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "LCZ Commander's Office";
+	department = "LCZ Lieutenant's Office";
 	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/table/reinforced,
@@ -21407,7 +21408,7 @@
 /area/site53/reswing/researchwing)
 "bVj" = (
 /obj/effect/floor_decal/corner/blue/border,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/commanderoffice)
 "bVr" = (
 /obj/machinery/light{
@@ -22113,7 +22114,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "crW" = (
 /obj/effect/paint_stripe/red,
@@ -22221,7 +22222,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "cvQ" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -22239,6 +22240,7 @@
 "cwc" = (
 /obj/structure/closet/secure_closet/guard/hcz,
 /obj/effect/floor_decal/corner/red/mono,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "cwF" = (
@@ -22377,6 +22379,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 	},
 /obj/item/clothing/mask/gas/security,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "cAV" = (
@@ -23314,7 +23317,7 @@
 /area/site53/ulcz/humanoidcontainment)
 "dfy" = (
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "dfz" = (
 /turf/simulated/floor/tiled/white/monotile,
@@ -24684,15 +24687,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
-"dYs" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/uhcz/hallways)
 "dYB" = (
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/yellow/border{
@@ -25209,13 +25203,13 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "epJ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "epS" = (
 /obj/machinery/button/blast_door{
@@ -25682,6 +25676,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/cadet/lcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "eEQ" = (
@@ -27485,6 +27480,7 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet/cadet/lcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "fQH" = (
@@ -27688,6 +27684,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
 "fUI" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/commanderoffice)
 "fVd" = (
@@ -27848,6 +27847,7 @@
 /obj/item/gun/energy/taser,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/clothing/mask/gas/security,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "gcN" = (
@@ -29144,7 +29144,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "gXd" = (
 /obj/structure/cable{
@@ -29665,13 +29665,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "hoG" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/commanderoffice)
 "hoI" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -31299,10 +31299,10 @@
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/scp/saiga12/stunshell,
 /obj/item/ammo_magazine/scp/saiga12/flash,
 /obj/item/ammo_magazine/box/buckshot,
+/obj/item/clothing/accessory/solgov/rank/fleet/junofficer,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "iid" = (
@@ -31354,6 +31354,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "ijY" = (
@@ -31370,7 +31371,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "ikk" = (
 /obj/machinery/door/airlock/glass/civilian{
@@ -31568,6 +31569,7 @@
 	dir = 9
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
@@ -31901,7 +31903,7 @@
 	name = "HCZ Guard"
 	},
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "iEE" = (
 /obj/machinery/photocopier/faxmachine{
@@ -33979,6 +33981,7 @@
 	dir = 10
 	},
 /obj/structure/closet/secure_closet/cadet/lcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "kaT" = (
@@ -35957,6 +35960,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "los" = (
@@ -36218,7 +36222,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "lzz" = (
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -36457,10 +36461,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "lFi" = (
 /obj/effect/floor_decal/corner/red/mono,
@@ -36860,6 +36861,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/mono,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "lQa" = (
@@ -36979,7 +36981,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/carpet/red,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "lUd" = (
 /obj/structure/closet/wardrobe/suit,
@@ -37662,8 +37664,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "moW" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/carpet/red,
+/obj/machinery/photocopier/faxmachine{
+	department = "HCZ Lieutenant's Office";
+	send_access = list("ACCESS_SECURITY_LEVEL4")
+	},
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "moY" = (
 /obj/machinery/door/blast/regular{
@@ -37781,7 +37787,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "mqI" = (
 /obj/structure/bed/chair/office{
@@ -38374,8 +38380,8 @@
 /area/site53/uhcz/commanderoffice)
 "mGf" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/table/standard,
-/turf/simulated/floor/carpet/red,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "mGl" = (
 /obj/structure/lattice,
@@ -38411,6 +38417,7 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/clothing/mask/gas/security,
 /obj/machinery/light,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "mJm" = (
@@ -39161,7 +39168,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "nes" = (
 /obj/machinery/light{
@@ -39336,6 +39343,7 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
@@ -40173,6 +40181,7 @@
 	dir = 6
 	},
 /obj/item/clothing/mask/gas/security,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "nIS" = (
@@ -40648,6 +40657,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "nWO" = (
@@ -40805,7 +40815,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start{
-	name = "HCZ Cadet"
+	name = "HCZ Private"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
@@ -42055,6 +42065,7 @@
 /area/site53/science/aicobservation)
 "oLR" = (
 /obj/structure/closet/secure_closet/guard/hcz/sergeant,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6,
 /turf/simulated/floor/carpet/red,
 /area/site53/lhcz/hczguardgear)
 "oMg" = (
@@ -42623,9 +42634,16 @@
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/surface/cryogenicsprimary)
 "peA" = (
-/obj/structure/table/standard,
-/obj/item/device/radio/phone,
-/turf/simulated/floor/carpet/red,
+/obj/item/device/radio/phone{
+	pixel_y = 6;
+	pixel_x = -1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/sticky_pad/random{
+	pixel_y = -2;
+	pixel_x = 6
+	},
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "peR" = (
 /obj/effect/floor_decal/corner/green/bordercorner,
@@ -44448,7 +44466,7 @@
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "qjT" = (
 /obj/item/storage/toolbox/electrical,
@@ -44574,7 +44592,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start{
-	name = "HCZ Cadet"
+	name = "HCZ Private"
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/securitypost)
@@ -44727,12 +44745,10 @@
 /turf/simulated/floor,
 /area/site53/engineering/primaryhallway)
 "qtP" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "HCZ Commander's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
-	},
-/turf/simulated/floor/carpet/red,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "quy" = (
 /obj/structure/cable/green{
@@ -45809,7 +45825,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "reY" = (
 /obj/structure/cryofeed{
@@ -47072,11 +47088,14 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp1507observation)
 "rVb" = (
-/obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 8
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
+/obj/structure/bed/chair/padded/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uhcz/commanderoffice)
 "rVq" = (
 /obj/structure/table/reinforced,
 /obj/item/material/ashtray/plastic,
@@ -47463,6 +47482,7 @@
 	name = "HCZ Guard Office"
 	},
 /obj/effect/floor_decal/corner/red/mono,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "sez" = (
@@ -47724,14 +47744,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/uppernukeladders)
-"smh" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/uhcz/hallways)
 "smi" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -48160,7 +48172,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "sAJ" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -49024,7 +49036,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/carpet/red,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "taI" = (
 /obj/structure/cable/green{
@@ -49103,8 +49115,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "tcy" = (
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uhcz/hallways)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/site53/uhcz/commanderoffice)
 "tcK" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -49265,7 +49282,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "tiv" = (
 /obj/item/reagent_containers/glass/beaker/bowl{
@@ -49858,7 +49875,7 @@
 /area/site53/surface/bunker)
 "tzd" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Zone Commander's Office";
+	name = "HCZ Zone Lieutenant's Office";
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/cable/green{
@@ -50265,6 +50282,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "tMx" = (
@@ -51522,6 +51540,7 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/cadet/lcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "uGZ" = (
@@ -51694,6 +51713,7 @@
 /area/site53/science/seniorresearchera)
 "uQc" = (
 /obj/structure/closet/secure_closet/cadet/hcz,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
 "uQi" = (
@@ -52417,7 +52437,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "vqK" = (
 /obj/effect/floor_decal/corner/yellow/mono,
@@ -52606,7 +52626,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "vwK" = (
 /obj/structure/cable/green{
@@ -52748,11 +52768,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "vDN" = (
-/obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/item/paper_bin,
-/turf/simulated/floor/carpet/red,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "vEp" = (
 /obj/effect/catwalk_plated/dark,
@@ -53605,6 +53625,34 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
+/obj/structure/closet{
+	name = "Promotion locker"
+	},
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/zonecommanderoffice)
 "wio" = (
@@ -53900,7 +53948,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "wsM" = (
 /obj/structure/table/rack,
@@ -54527,7 +54575,7 @@
 /area/site53/science/seniorresearchera)
 "wLF" = (
 /obj/effect/landmark/start{
-	name = "LCZ Zone Commander"
+	name = "LCZ Zone Lieutenant"
 	},
 /obj/structure/bed/chair/office/comfy{
 	dir = 8
@@ -54906,16 +54954,15 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
 "wVL" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/commanderoffice)
 "wWz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -55378,7 +55425,23 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/closet{
+	name = "Promotion locker"
+	},
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8,
+/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/commanderoffice)
 "xpa" = (
 /obj/effect/floor_decal/corner/red/bordercee{
@@ -56325,7 +56388,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "xVz" = (
 /obj/effect/floor_decal/corner/brown/border,
@@ -56442,9 +56505,9 @@
 "xZB" = (
 /obj/structure/bed/chair/office/comfy,
 /obj/effect/landmark/start{
-	name = "HCZ Zone Commander"
+	name = "HCZ Zone Lieutenant"
 	},
-/turf/simulated/floor/carpet/red,
+/turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "xZE" = (
 /obj/effect/floor_decal/corner/yellow{
@@ -96598,7 +96661,7 @@ bIm
 xlZ
 xXC
 gpO
-tcy
+gpO
 gpO
 kRg
 kmC
@@ -96852,13 +96915,13 @@ rkv
 obI
 fSL
 fFD
-dYs
-dYs
+bel
+bel
 bel
 ggM
 bel
-dYs
-dYs
+bel
+bel
 aYw
 wjM
 bPM
@@ -97369,7 +97432,7 @@ bIm
 aBo
 cbx
 xKh
-smh
+fgE
 wwd
 uht
 aBo
@@ -97626,7 +97689,7 @@ bIm
 aBo
 aBo
 mhW
-smh
+fgE
 dwS
 aBo
 aBo
@@ -97669,7 +97732,7 @@ epJ
 quy
 mRJ
 bhU
-rVb
+hve
 gWM
 lPE
 gID
@@ -98949,7 +99012,7 @@ rrA
 aMU
 xZB
 mGf
-fUI
+rVb
 bVj
 mGa
 bjk
@@ -99719,7 +99782,7 @@ azA
 rrA
 lFb
 aXL
-wVL
+tcy
 wVL
 bhg
 tzd

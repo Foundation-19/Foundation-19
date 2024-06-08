@@ -100,7 +100,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "EZ Security Upper Maintenance Hatch";
-	name = "EZ Security Upper Maintenance Hatch"
+	name = "EZ Security Upper Maintenance Blast Door"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -228,7 +228,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "EZ Security Upper Maintenance Hatch";
-	name = "EZ Security Upper Maintenance Hatch"
+	name = "EZ Security Upper Maintenance Blast Door"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -240,7 +240,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "EZ Security Upper Maintenance Hatch";
-	name = "EZ Security Upper Maintenance Hatch"
+	name = "EZ Security Upper Maintenance Blast Door"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -275,20 +275,21 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "aP" = (
-/obj/machinery/door/airlock/highsecurity{
-	req_access = list("ACCESS_ADMIN_LEVEL4")
-	},
-/obj/machinery/door/blast/regular{
-	id_tag = "sitedirect";
-	name = "Administrative Offices Lockdown";
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/door/airlock/highsecurity{
+	req_access = list("ACCESS_ADMIN_LEVEL5");
+	name = "Site Manager's Office"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "sitedirect";
+	name = "Administrative Bunker Access Blast Door";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
 "aS" = (
 /obj/machinery/light{
@@ -397,11 +398,11 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
 "bq" = (
-/obj/structure/table/woodentable,
 /obj/machinery/photocopier/faxmachine{
 	department = "Head of Personnel's Office";
 	send_access = list("ACCESS_ADMIN_LEVEL4")
 	},
+/obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "br" = (
@@ -528,7 +529,7 @@
 /obj/structure/closet/crate/secure/biohazard{
 	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "bN" = (
 /obj/structure/filingcabinet,
@@ -580,7 +581,6 @@
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bW" = (
-/obj/structure/table/woodentable,
 /obj/item/device/flashlight/lamp/green,
 /obj/machinery/light{
 	dir = 4
@@ -588,6 +588,7 @@
 /obj/item/folder/blue,
 /obj/item/folder/red,
 /obj/item/folder/yellow,
+/obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bX" = (
@@ -605,21 +606,17 @@
 "bY" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/button/blast_door{
-	id_tag = "SD Office Outer Lockdown";
-	name = "SD Office Outer Lockdown";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/button/blast_door{
 	id_tag = "sitedirect";
-	name = "Panic Bunker Access";
+	name = "Administrative Bunker Access Control";
 	pixel_y = 25;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
+/obj/item/device/flashlight/lamp/green,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "bZ" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Senior Administrative Offices"
+	name = "Senior Site Administration Offices"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -670,7 +667,8 @@
 "cg" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "SD Office Outer Lockdown";
-	name = "Administrative Lockdown Blast Door"
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0"
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/structure/sign/warning/lethal_turrets{
@@ -723,7 +721,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "co" = (
-/obj/item/device/flashlight/lamp/green,
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -775,11 +772,10 @@
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cw" = (
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/table/woodentable_reinforced/mahogany,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cx" = (
@@ -810,7 +806,8 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect2";
 	name = "Site Director's Office Lockdown Blast Door";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
@@ -827,7 +824,8 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect2";
 	name = "Site Director's Office Lockdown Blast Door";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
@@ -874,8 +872,10 @@
 /area/site53/uez/commandpanicbunker)
 "cG" = (
 /obj/structure/table/standard,
-/obj/machinery/photocopier,
 /obj/item/device/toner,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "cH" = (
@@ -961,7 +961,8 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect2";
 	name = "Site Director's Office Lockdown Blast Door";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
@@ -980,11 +981,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "cU" = (
-/obj/structure/bed/chair/office,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/bed/chair/office/comfy{
+	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -1063,6 +1066,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/item/folder/blue,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "dd" = (
@@ -1175,7 +1179,7 @@
 "dq" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
-	pixel_y = 3
+	pixel_y = 4
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/uez/hallway)
@@ -1217,8 +1221,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
+"dw" = (
+/obj/structure/table/standard,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "dx" = (
-/obj/structure/table/reinforced,
+/obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "dz" = (
@@ -1252,8 +1264,13 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "dD" = (
-/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
 /obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/folder/blue,
+/obj/item/folder/yellow,
+/obj/item/folder/red,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "dE" = (
@@ -1285,7 +1302,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/uez/conference)
 "dI" = (
 /obj/machinery/camera/network/entrance{
@@ -1331,6 +1351,11 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
+"dR" = (
+/obj/structure/flora/pottedplant/minitree,
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/commandpanicbunker)
 "dS" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1346,7 +1371,8 @@
 /area/site53/uez/canteen)
 "dT" = (
 /obj/structure/curtain/medical,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "dU" = (
 /obj/structure/cable/green{
@@ -1379,7 +1405,7 @@
 	id_tag = "SD Office Outer Lockdown";
 	name = "Administrative Lockdown Control";
 	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 3;
+	pixel_y = 2;
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
@@ -1483,7 +1509,7 @@
 /area/site53/uez/hallway)
 "ek" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "Chief Medical Officer's Office";
+	department = "Medical Director's Office";
 	send_access = list("ACCESS_MEDICAL_LEVEL5")
 	},
 /obj/machinery/camera/autoname{
@@ -1494,7 +1520,7 @@
 /area/site53/uez/hallway)
 "el" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "Chief Engineer's Office";
+	department = "Engineering Director's Office";
 	send_access = list("ACCESS_ENGINEERING_LEVEL5")
 	},
 /obj/machinery/camera/autoname{
@@ -1506,7 +1532,7 @@
 "em" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
-	pixel_y = 3
+	pixel_y = 4
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/uez/hallway)
@@ -1533,10 +1559,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "eq" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/boombox,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/light,
+/turf/simulated/floor/grass,
 /area/site53/uez/conference)
 "er" = (
 /obj/structure/flora/grass/green,
@@ -1547,12 +1573,13 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/commandpanicbunker)
 "et" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "facilityLockdown";
-	name = "Exterior Lockdown Blast Door"
+	name = "Facility Lockdown Blast Door";
+	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/uez/canteen)
 "eu" = (
@@ -1575,12 +1602,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/commandpanicbunker)
 "ex" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "facilityLockdown";
-	name = "Exterior Lockdown Blast Door"
+	name = "Facility Lockdown Blast Door"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "ey" = (
@@ -1588,12 +1615,9 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/uez/hallway)
 "ez" = (
-/obj/structure/table/standard,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/conference)
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/commandpanicbunker)
 "eA" = (
 /obj/machinery/holosign/surgery{
 	dir = 4;
@@ -1622,6 +1646,7 @@
 /area/site53/uez/hallway)
 "eD" = (
 /obj/machinery/vending/cigarette,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "eE" = (
@@ -1808,12 +1833,15 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "fb" = (
+/obj/effect/floor_decal/corner/blue/mono,
 /obj/structure/table/standard,
-/obj/effect/floor_decal/corner/red/mono,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "fc" = (
-/obj/structure/coatrack,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/vending/boozeomat,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "fd" = (
@@ -1833,26 +1861,25 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "fg" = (
-/obj/structure/bed/chair/comfy/blue{
-	dir = 8;
-	name = "Communications Officer"
-	},
-/obj/effect/floor_decal/corner/blue/half{
+/obj/effect/floor_decal/corner/yellow{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
 /area/site53/uez/conference)
 "fh" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/black/mono,
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "fi" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/orange/mono,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "fj" = (
@@ -2098,13 +2125,13 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
 "fW" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "facilityLockdown";
-	name = "Exterior Lockdown Blast Door"
+	name = "Facility Lockdown Blast Door"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "fX" = (
@@ -2161,22 +2188,33 @@
 /area/site53/uez/hallway)
 "gk" = (
 /obj/structure/table/standard,
-/obj/item/stamp/scp/cmo,
-/obj/item/stamp/approved,
-/obj/item/stamp/denied,
 /obj/item/folder/blue,
 /obj/item/folder/yellow,
 /obj/item/folder/red,
+/obj/item/stamp/denied{
+	pixel_y = 10;
+	pixel_x = -5
+	},
+/obj/item/stamp/scp/cmo{
+	pixel_y = 10;
+	pixel_x = 5
+	},
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/hallway)
 "gl" = (
 /obj/structure/table/standard,
-/obj/item/stamp/approved,
-/obj/item/stamp/denied,
-/obj/item/stamp/ce,
 /obj/item/folder/yellow,
 /obj/item/folder/red,
 /obj/item/folder/blue,
+/obj/item/stamp/ce{
+	pixel_y = 10;
+	pixel_x = 5;
+	name = "Engineering Director's rubber stamp"
+	},
+/obj/item/stamp/denied{
+	pixel_y = 10;
+	pixel_x = -5
+	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
 "gm" = (
@@ -2189,7 +2227,8 @@
 	dir = 3;
 	network = list("Entrance Zone Network")
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "gn" = (
 /obj/structure/table/standard,
@@ -2221,10 +2260,8 @@
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/hallway)
 "gs" = (
-/obj/machinery/photocopier{
-	pixel_y = 3
-	},
-/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "gt" = (
@@ -2374,7 +2411,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "gT" = (
-/turf/simulated/floor/tiled,
+/obj/structure/bed/chair/comfy/brown{
+	dir = 1;
+	name = "Logistics Officer's chair"
+	},
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
 "gU" = (
 /obj/structure/table/standard,
@@ -2393,7 +2437,10 @@
 /obj/item/handcuffs,
 /obj/item/handcuffs,
 /obj/item/handcuffs,
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "gW" = (
 /obj/structure/cable/green{
@@ -2505,9 +2552,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "hp" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/red/half,
+/obj/structure/bed/chair/comfy/red{
+	name = "LCZ Zone Lieutenant's chair"
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
 "hr" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -2533,23 +2582,24 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
 "hw" = (
-/obj/machinery/vending/wallmed1{
-	name = "Emergency NanoMed";
-	pixel_y = 28
-	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/coatrack,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "hA" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "sitedirect";
-	name = "Panic Bunker Access";
+	name = "Administrative Bunker Access Control";
 	pixel_y = 25;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "hC" = (
@@ -2952,6 +3002,15 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
+"jj" = (
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "jl" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/westleft{
@@ -3728,6 +3787,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
+"ln" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uez/conference)
 "lp" = (
 /obj/structure/table/steel,
 /obj/item/boombox,
@@ -3788,7 +3856,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "lE" = (
 /obj/machinery/chemical_dispenser/bar_coffee/full,
@@ -3817,15 +3885,12 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
 "lM" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier{
-	pixel_y = 3
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/commandpanicbunker)
 "lN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -3845,6 +3910,10 @@
 	icon_state = "pdoor0"
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
+/obj/machinery/door/airlock/glass/command{
+	name = "Directorate's Offices";
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL5","ACCESS_MEDICAL_LEVEL5","ACCESS_SCIENCE_LEVEL5"))
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
 "lR" = (
@@ -3886,7 +3955,12 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
 "mg" = (
-/obj/machinery/papershredder,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/requests_console{
+	department = "Administrative";
+	departmentType = 5;
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "mh" = (
@@ -3909,9 +3983,19 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
 "ml" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled,
-/area/site53/uez/conference)
+/obj/structure/table/standard,
+/obj/item/stamp/rd{
+	pixel_y = 12;
+	pixel_x = 5
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/stamp/denied{
+	pixel_y = 12;
+	pixel_x = -5
+	},
+/turf/simulated/floor/carpet/purple,
+/area/site53/uez/hallway)
 "mn" = (
 /obj/structure/bed/chair/office/comfy/brown{
 	dir = 1
@@ -3921,6 +4005,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/upper_surface/commstower)
+"mo" = (
+/obj/structure/flora/pottedplant/minitree,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "mp" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -3934,9 +4024,8 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/uez/equipmentroom)
 "ms" = (
-/obj/effect/floor_decal/corner/brown{
-	dir = 1
-	},
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/purple/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "mt" = (
@@ -3970,7 +4059,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/civilian{
-	name = "Bar"
+	name = "Administrative Bunker Bar"
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -3988,7 +4077,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "mQ" = (
 /obj/structure/cable{
@@ -4101,6 +4190,7 @@
 /area/site53/uez/equipmentroom)
 "ni" = (
 /obj/structure/bed/chair/padded/black,
+/obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "nj" = (
@@ -4174,7 +4264,7 @@
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 4;
-	name = "Bar Shutters";
+	name = "Administrative Bunker Bar Shutters";
 	id_tag = "BarAdminShutter"
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -4217,6 +4307,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "SD Office Outer Lockdown";
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/conference)
 "nG" = (
@@ -4232,11 +4328,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
 "nI" = (
-/obj/structure/bed/chair/comfy/yellow{
-	name = "Containment Engineer"
+/obj/effect/floor_decal/corner/blue/half,
+/obj/structure/bed/chair/comfy/blue{
+	name = "Site Manager's chair"
 	},
-/obj/effect/floor_decal/corner/yellow/half,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
 "nJ" = (
 /obj/structure/flora/grass/both,
@@ -4295,6 +4391,13 @@
 "nX" = (
 /turf/simulated/floor/tiled/white/small,
 /area/site53/uez/commandpanicbunker)
+"nY" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "nZ" = (
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 9
@@ -4304,7 +4407,7 @@
 "oa" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "sitedirect";
-	name = "Administrative Offices Lockdown";
+	name = "Administrative Bunker Access Blast Door";
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -4312,6 +4415,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
 "od" = (
@@ -4326,6 +4430,13 @@
 /obj/item/card/id/classd,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"og" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "om" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4363,13 +4474,20 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
+"ox" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/boombox,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "oA" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "oB" = (
@@ -4389,11 +4507,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "oD" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/yellow/mono,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "oH" = (
 /obj/structure/table/standard,
@@ -4458,7 +4574,9 @@
 	network = list("Entrance Zone Network")
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/photocopier,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "pd" = (
@@ -4512,20 +4630,28 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"pq" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
+/area/site53/uez/conference)
 "pr" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/button/blast_door{
-	dir = 1;
 	id_tag = "sitedirect";
-	name = "Panic Bunker Access";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	name = "Administrative Bunker Access Control";
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL4");
+	dir = 1
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "pu" = (
@@ -4572,6 +4698,17 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"pK" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uez/conference)
 "pL" = (
 /obj/machinery/light{
 	dir = 8
@@ -4586,7 +4723,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "pN" = (
 /obj/structure/railing/mapped{
@@ -4619,6 +4756,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"pZ" = (
+/obj/effect/floor_decal/corner/yellow/half,
+/obj/structure/bed/chair/comfy/yellow{
+	name = "Assistant Engineering Director's chair"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uez/conference)
 "qd" = (
 /obj/machinery/power/port_gen/pacman/mrs,
 /obj/effect/catwalk_plated/dark,
@@ -4626,7 +4770,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "qf" = (
 /obj/structure/cable/green{
@@ -4639,11 +4783,22 @@
 "qj" = (
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/commandpanicbunker)
-"ql" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 8
+"qk" = (
+/obj/structure/bed/chair/comfy/purple{
+	dir = 1;
+	name = "Research Director's chair"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/mauve/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uez/conference)
+"ql" = (
+/obj/effect/floor_decal/corner/blue/half,
+/obj/structure/bed/chair/comfy/blue{
+	name = "Communications Officer's chair"
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
 "qm" = (
 /obj/structure/cable{
@@ -4898,10 +5053,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "rf" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "Meeting Room"
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "SD Office Outer Lockdown";
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/small,
+/turf/simulated/floor/plating,
 /area/site53/uez/conference)
 "rh" = (
 /obj/effect/floor_decal/corner/orange/mono,
@@ -4919,6 +5078,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"rn" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "rs" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
@@ -4940,12 +5103,12 @@
 	dir = 4;
 	icon_state = "bulb1"
 	},
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "rw" = (
@@ -5068,7 +5231,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/repoffice/internaltribunal)
 "rP" = (
-/obj/machinery/light,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uez/hallway)
 "rR" = (
@@ -5131,6 +5293,14 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"sk" = (
+/obj/machinery/button/blast_door{
+	id_tag = "xenoaccess";
+	name = "Xenoarchaeology Lockdown Shutters";
+	pixel_y = 24
+	},
+/turf/simulated/floor/carpet/purple,
+/area/site53/uez/hallway)
 "sn" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/storage/mre/random,
@@ -5150,10 +5320,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "sr" = (
-/obj/structure/bed/chair/comfy/yellow{
-	name = "Chief Engineer"
-	},
-/obj/effect/floor_decal/corner/orange/half,
+/obj/structure/table/standard,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "ss" = (
@@ -5198,8 +5369,21 @@
 /area/site53/upper_surface/commstower)
 "sC" = (
 /obj/item/modular_computer/console/preset/cardslot/command,
-/turf/simulated/floor/tiled/dark/horizontal,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"sL" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1;
+	name = "Assistant Medical Director's chair"
+	},
+/obj/effect/floor_decal/corner/paleblue/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uez/conference)
 "sN" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -5228,26 +5412,37 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/uez/armory)
 "tc" = (
-/obj/effect/floor_decal/corner/black/mono,
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/grass,
 /area/site53/uez/conference)
 "th" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/equipmentroom)
 "tj" = (
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/obj/machinery/power/apc/hyper{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "tm" = (
-/obj/structure/closet,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/bordercee{
+	dir = 4
+	},
+/obj/structure/hygiene/shower{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -5276,10 +5471,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "tv" = (
-/obj/effect/floor_decal/corner/green{
+/obj/structure/bed/chair/comfy/green{
+	dir = 4;
+	name = "Medical Director's chair"
+	},
+/obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/vertical,
 /area/site53/uez/conference)
 "tz" = (
 /obj/effect/floor_decal/corner/orange/half,
@@ -5400,6 +5599,16 @@
 /obj/item/melee/baton/loaded,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
+"uf" = (
+/obj/structure/bed/chair/comfy/purple{
+	dir = 1;
+	name = "Assistant Research Director's chair"
+	},
+/obj/effect/floor_decal/corner/mauve/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uez/conference)
 "ul" = (
 /obj/structure/cryofeed{
 	dir = 4
@@ -5416,12 +5625,16 @@
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/commandpanicbunker)
 "ut" = (
-/obj/structure/coatrack,
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uez/conference)
 "ux" = (
 /obj/effect/floor_decal/corner/red,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
 /area/site53/uez/conference)
 "uy" = (
 /obj/item/storage/pill_bottle/dice,
@@ -5448,8 +5661,8 @@
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "sitedirect";
-	name = "Panic Bunker Access";
-	pixel_y = -23;
+	name = "Administrative Bunker Access Control";
+	pixel_y = -25;
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/effect/floor_decal/corner/red/border,
@@ -5461,18 +5674,19 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
+"uL" = (
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/corner,
+/area/site53/uez/conference)
 "uM" = (
-/obj/structure/table/standard,
-/obj/item/stamp/rd,
-/obj/item/stamp/denied,
-/obj/item/stamp/approved,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/item/folder/red,
-/obj/item/folder/yellow,
-/obj/item/folder/blue,
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "uN" = (
 /obj/machinery/light{
 	dir = 8
@@ -5491,10 +5705,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "uX" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/bed/chair/padded/black,
+/obj/effect/floor_decal/corner/blue/bordercee{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "uZ" = (
@@ -5607,11 +5824,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
 	id_tag = "Panic Room Gate East";
-	name = "Panic Room Gate East"
+	name = "Administrative Bunker Checkpoint East Gate";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
@@ -5628,12 +5846,18 @@
 /turf/simulated/floor/tiled/white/small,
 /area/site53/uez/commandpanicbunker)
 "vE" = (
-/obj/machinery/papershredder,
-/obj/machinery/light,
-/turf/simulated/floor/wood/walnut,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "vF" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -5649,8 +5873,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"vG" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "vH" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5671,25 +5900,33 @@
 /area/site53/uez/equipmentroom)
 "vM" = (
 /obj/machinery/optable,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "vN" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/button/blast_door{
 	id_tag = "sitedirect2";
-	name = "Inner Lockdown SD"
+	name = "Inner Lockdown SD";
+	pixel_y = -2
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SD Office Outer Lockdown";
+	name = "SD Office Outer Lockdown";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 7
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "vR" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/railing/mapped{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/site53/uez/hallway)
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/exoplanet/barren,
+/area/site53/uez/commandpanicbunker)
 "vT" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5697,10 +5934,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 8
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -5710,6 +5947,7 @@
 /area/site53/uez/equipmentroom)
 "vX" = (
 /obj/structure/bed/roller,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "vY" = (
@@ -5741,11 +5979,17 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "wg" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilityLockdown";
+	name = "Facility Lockdown Blast Door"
+	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/uez/canteen)
 "wh" = (
 /obj/machinery/vending/medical,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "wi" = (
@@ -5868,7 +6112,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
 "wM" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -5878,6 +6121,7 @@
 	dir = 1;
 	icon_state = "bulb1"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "wO" = (
@@ -5952,6 +6196,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "xk" = (
@@ -6101,6 +6346,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
+"xP" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilityLockdown";
+	name = "Facility Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "xQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northleft{
@@ -6178,14 +6432,14 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
 "yb" = (
-/obj/effect/floor_decal/corner/green/half{
-	dir = 1
-	},
-/obj/structure/bed/chair/comfy{
-	dir = 1
-	},
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"ye" = (
+/obj/structure/coatrack,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "yi" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/button/alternate/door/bolts{
@@ -6297,21 +6551,22 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "yC" = (
-/obj/structure/closet,
-/obj/item/stack/material/tritium/fifty,
-/obj/item/stack/material/tritium/fifty,
-/obj/item/stack/material/tritium/fifty,
-/obj/item/stack/material/tritium/fifty,
 /obj/machinery/camera/autoname{
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "yE" = (
 /obj/machinery/sleeper{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "yJ" = (
@@ -6378,6 +6633,16 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"yX" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "yY" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -6490,10 +6755,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "zC" = (
-/obj/machinery/photocopier,
 /obj/structure/table/woodentable/ebony,
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
+	},
+/obj/machinery/photocopier{
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/repoffice/internaltribunal)
@@ -6511,9 +6778,6 @@
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/commandpanicbunker)
 "zG" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/camera/network/entrance{
 	dir = 8
 	},
@@ -6544,13 +6808,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "zN" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/exoplanet/barren,
+/obj/structure/table/standard,
+/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
+/turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "zO" = (
 /obj/machinery/power/apc/hyper{
@@ -6587,14 +6847,15 @@
 "zU" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "sitedirect";
-	name = "Administrative Offices Lockdown"
+	name = "Administrative Bunker Access Blast Door"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
 "zV" = (
 /obj/structure/cable{
@@ -6610,13 +6871,8 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
 "zW" = (
-/obj/structure/bed/chair/comfy/brown{
-	dir = 8;
-	name = "Logistics Officer"
-	},
-/obj/effect/floor_decal/corner/brown/half{
-	dir = 8
-	},
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "zX" = (
@@ -6626,7 +6882,10 @@
 /obj/machinery/camera/network/entrance{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "Aa" = (
 /obj/item/device/flashlight/lamp,
@@ -6649,6 +6908,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
+"An" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/commandpanicbunker)
 "Ap" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/machinery/chemical_dispenser/bar_alc/full{
@@ -6713,7 +6978,7 @@
 "AF" = (
 /obj/structure/bed/chair/comfy/red{
 	dir = 4;
-	name = "Guard Commander"
+	name = "Guard Commander's chair"
 	},
 /obj/effect/floor_decal/corner/red/half{
 	dir = 4
@@ -6723,7 +6988,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/vertical,
 /area/site53/uez/conference)
 "AG" = (
 /obj/machinery/camera/autoname{
@@ -6743,6 +7008,12 @@
 /obj/machinery/door/airlock/glass/command{
 	name = "Internal Tribunal Department Representative";
 	req_access = list("ACCESS_ADMIN_LEVEL5")
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "SD Office Outer Lockdown";
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/repoffice/internaltribunal)
@@ -6778,6 +7049,7 @@
 /obj/item/clothing/suit/armor/hos/coat,
 /obj/item/clothing/suit/armor/hos/jensen,
 /obj/item/clothing/suit/armor/hos,
+/obj/item/clothing/accessory/solgov/rank/fleet/officer/o6,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/equipmentroom)
 "AV" = (
@@ -6788,6 +7060,11 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"AX" = (
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "AY" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -6841,6 +7118,14 @@
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/uez/hallway)
+"Be" = (
+/obj/structure/table/standard,
+/obj/item/folder/red,
+/obj/item/folder/red,
+/obj/item/folder/red,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "Bf" = (
 /obj/effect/floor_decal/corner/beige/diagonal,
 /turf/simulated/floor/tiled/white,
@@ -6871,6 +7156,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"Bs" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "Bv" = (
 /obj/machinery/light{
 	dir = 8
@@ -6908,6 +7200,16 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"BB" = (
+/obj/structure/bed/chair/comfy/yellow{
+	name = "Engineering Director's chair";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/yellow/half{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uez/conference)
 "BC" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -6923,8 +7225,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "BG" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -6973,12 +7275,9 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "BV" = (
-/obj/machinery/door/airlock/highsecurity{
-	req_access = list("ACCESS_ADMIN_LEVEL3")
-	},
 /obj/machinery/door/blast/regular{
 	id_tag = "sitedirect";
-	name = "Administrative Offices Lockdown"
+	name = "Administrative Bunker Access Blast Door"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7054,12 +7353,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
 "Cz" = (
-/obj/machinery/door/airlock/highsecurity{
-	req_access = list("ACCESS_ADMIN_LEVEL3")
-	},
 /obj/machinery/door/blast/regular{
 	id_tag = "sitedirect";
-	name = "Administrative Offices Lockdown"
+	name = "Administrative Bunker Access Blast Door"
+	},
+/obj/machinery/door/airlock/multi_tile/security{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "EZ Security Center Bunker Access"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -7084,12 +7384,14 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/senioragentoffice)
 "CH" = (
-/obj/structure/table/standard,
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/item/folder/red,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/conference)
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "CI" = (
 /obj/machinery/door/airlock/glass{
 	name = "EZ Brig Cell 2";
@@ -7101,6 +7403,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
+/obj/machinery/light,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uez/commandpanicbunker)
 "CK" = (
@@ -7150,6 +7453,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"CW" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/light,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "CZ" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -7199,7 +7507,10 @@
 /obj/item/modular_computer/console/preset/aislot/sysadmin{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "Dm" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -7263,11 +7574,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
 	id_tag = "Panic Room Gate West";
-	name = "Panic Room Gate West"
+	name = "Administrative Bunker Checkpoint West Gate";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
@@ -7307,7 +7619,10 @@
 /area/site53/uez/equipmentroom)
 "DO" = (
 /obj/item/modular_computer/console/preset/aislot/research,
-/turf/simulated/floor/tiled/dark/horizontal,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "DQ" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -7417,7 +7732,7 @@
 	icon_state = "1-4"
 	},
 /obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "Ey" = (
 /obj/effect/floor_decal/corner/red/bordercee{
@@ -7508,10 +7823,20 @@
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
 "Fo" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/conference)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/hallway)
 "Fu" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/morgue{
@@ -7550,7 +7875,7 @@
 "FD" = (
 /obj/machinery/door/airlock/highsecurity{
 	req_access = list("ACCESS_ADMIN_LEVEL3");
-	name = "Panic Chamber CR"
+	name = "Administrative Bunker Checkpoint"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
@@ -7641,9 +7966,12 @@
 /turf/simulated/floor/greengrid,
 /area/site53/uez/commandpanicbunker)
 "Ga" = (
-/obj/structure/table/woodentable,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/item/stamp/scp/facdir{
+	name = "Site Manager's rubber stamp"
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "Gb" = (
@@ -7714,6 +8042,16 @@
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"Gx" = (
+/obj/structure/bed/chair/padded/black,
+/obj/effect/floor_decal/corner/blue/bordercee{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/commandpanicbunker)
 "GA" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -7736,12 +8074,22 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
+"GD" = (
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/table/reinforced,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "GE" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "GF" = (
@@ -7758,10 +8106,10 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "GJ" = (
+/obj/effect/floor_decal/corner/blue/bordercee,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/blue/bordercee,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "GL" = (
@@ -7802,14 +8150,16 @@
 /obj/item/defibrillator/loaded,
 /obj/machinery/cell_charger,
 /obj/item/screwdriver,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "GV" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "sitedirect";
-	name = "Administrative Offices Lockdown";
+	name = "Administrative Bunker Access Blast Door";
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
 "GW" = (
@@ -7976,22 +8326,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
 "HN" = (
-/obj/machinery/power/apc/hyper{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "HP" = (
-/obj/structure/table/standard,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/conference)
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "HS" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 8
@@ -8024,12 +8366,18 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "If" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uez/conference)
+"Ih" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
 /area/site53/uez/conference)
 "In" = (
 /obj/structure/table/standard,
@@ -8037,6 +8385,7 @@
 	id_tag = "evacbunker";
 	pixel_x = 24
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Ip" = (
@@ -8058,6 +8407,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"Iw" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/item/pen,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "Ix" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -8113,7 +8469,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "IJ" = (
 /obj/structure/bed/chair{
@@ -8176,12 +8532,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"Jd" = (
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "Je" = (
 /obj/structure/table/standard,
 /obj/machinery/dnaforensics,
 /obj/effect/floor_decal/corner/beige/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Jf" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "Ji" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/blast_door{
@@ -8215,6 +8579,27 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"Jr" = (
+/obj/structure/bed/chair/comfy/yellow{
+	name = "Containment Engineer's chair";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/yellow/half{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uez/conference)
+"Jz" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uez/conference)
 "JE" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small/red{
@@ -8267,7 +8652,8 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/corner/red/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "JY" = (
 /obj/structure/bed,
@@ -8452,6 +8838,16 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"KK" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "facilityLockdown";
+	name = "Facility Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "KL" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -8479,7 +8875,7 @@
 /area/site53/uez/hallway)
 "KS" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "EZ Commander's Office";
+	department = "EZ Zone Supervisor's Office";
 	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/table/steel_reinforced,
@@ -8491,6 +8887,16 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"KW" = (
+/obj/effect/floor_decal/corner/purple/half{
+	dir = 1
+	},
+/obj/structure/bed/chair/comfy/purple{
+	dir = 1;
+	name = "Internal Tribunal Representative's chair"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uez/conference)
 "KY" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -8565,12 +8971,10 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
 "Lv" = (
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin"
-	},
-/obj/machinery/light{
-	dir = 1
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/photocopier{
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -8682,6 +9086,7 @@
 /obj/item/device/scanner/health,
 /obj/item/device/scanner/health,
 /obj/item/device/scanner/health,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "LS" = (
@@ -8696,13 +9101,13 @@
 /area/site53/uez/commandpanicbunker)
 "LT" = (
 /obj/machinery/hologram/holopad,
-/obj/structure/table/woodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "LU" = (
@@ -8733,7 +9138,7 @@
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "BarAdminShutter";
-	name = "Bar Shutters Control";
+	name = "Administrative Bunker Bar Shutters Control";
 	pixel_x = -25
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -8786,6 +9191,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
+"My" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "Mz" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -8800,29 +9209,17 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "MG" = (
-/obj/structure/bed/chair/comfy/red{
-	dir = 1;
-	name = "HCZ Commander"
-	},
-/obj/effect/floor_decal/corner/red/half{
-	dir = 1
-	},
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/mauve/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "MI" = (
-/obj/structure/flora/pottedplant/minitree,
-/obj/structure/railing/mapped{
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/structure/railing/mapped,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/grass,
 /area/site53/uez/conference)
 "MK" = (
 /obj/structure/bed/chair/office/dark,
@@ -8834,22 +9231,20 @@
 "ML" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	dir = 4;
+	dir = 1;
 	id_tag = "Panic Room CR window";
 	name = "Panic Room CR window";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 2
 	},
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/item/wrench,
 /obj/machinery/button/blast_door{
-	dir = 1;
 	id_tag = "sitedirect";
-	name = "Panic Bunker Access";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	name = "Administrative Bunker Access Control";
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL4");
+	dir = 1
 	},
+/obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "MM" = (
@@ -8859,6 +9254,18 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"MR" = (
+/obj/machinery/door/airlock/glass/command{
+	name = "Meeting Room"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "SD Office Outer Lockdown";
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/conference)
 "MS" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8916,9 +9323,8 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "Nk" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
 "Nm" = (
 /obj/effect/floor_decal/corner/blue/bordercee{
@@ -8958,14 +9364,18 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	id_tag = "Panic Room CR window";
-	name = "Panic Room CR window"
+	name = "Administrative Bunker Checkpoint Window";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "Nv" = (
 /obj/effect/floor_decal/corner/blue/mono,
-/obj/structure/bed/chair/comfy/blue{
-	name = "Site Director"
+/obj/structure/table/reinforced,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -9004,12 +9414,12 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
 "NF" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/mono,
 /obj/structure/cable/green{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -9025,19 +9435,15 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/senioragentoffice)
 "NJ" = (
-/obj/structure/bed/chair/comfy/blue{
-	dir = 1;
-	name = "Chief Medical Officer"
-	},
-/obj/effect/floor_decal/corner/paleblue/half{
-	dir = 1
-	},
+/obj/effect/floor_decal/corner/black/mono,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "NL" = (
 /obj/machinery/body_scanconsole{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "NN" = (
@@ -9048,7 +9454,8 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "SD Office Outer Lockdown";
-	name = "Administrative Lockdown Blast Door"
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0"
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark,
@@ -9057,6 +9464,17 @@
 /obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
+"NQ" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
+"NR" = (
+/obj/structure/flora/ausbushes/pointybush,
+/obj/machinery/light,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "NV" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/turretid{
@@ -9097,6 +9515,9 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "Oh" = (
@@ -9119,7 +9540,7 @@
 "Op" = (
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "evaccell";
-	name = "Bunker Brig Cell";
+	name = "Administrative Bunker Brig";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -9140,6 +9561,14 @@
 "Ow" = (
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
+"Ox" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
+/area/site53/uez/conference)
 "OB" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/steel_reinforced,
@@ -9195,11 +9624,11 @@
 /area/site53/uez/commandpanicbunker)
 "OM" = (
 /obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "OS" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "OT" = (
@@ -9210,6 +9639,12 @@
 	dir = 4
 	},
 /area/site53/upper_surface/commstower)
+"OU" = (
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/machinery/light,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "OX" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 1
@@ -9267,21 +9702,26 @@
 "Ph" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	dir = 4;
+	dir = 8;
 	id_tag = "Panic Room Gate West";
 	name = "Panic Room Gate West";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_x = -4;
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 2
 	},
 /obj/machinery/button/blast_door{
-	dir = 4;
+	dir = 8;
 	id_tag = "Panic Room Gate East";
 	name = "Panic Room Gate East";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_x = 5;
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_y = 2
 	},
 /obj/machinery/camera/network/entrance{
 	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -9300,6 +9740,7 @@
 	dir = 8
 	},
 /obj/item/storage/firstaid/surgery,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Pl" = (
@@ -9336,18 +9777,11 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/forensics)
 "Pr" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Research Director's Office";
-	send_access = list("ACCESS_SCIENCE_LEVEL5")
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "xenoaccess";
-	name = "Xenoarchaeology Lockdown Shutters";
-	pixel_y = 24
-	},
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/commandpanicbunker)
 "Pt" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/cable/green{
@@ -9390,9 +9824,10 @@
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/commandpanicbunker)
 "PE" = (
-/obj/machinery/light,
-/obj/structure/reagent_dispensers/water_cooler,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/corner,
 /area/site53/uez/conference)
 "PG" = (
 /obj/item/clothing/suit/straight_jacket,
@@ -9426,6 +9861,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "PL" = (
@@ -9526,13 +9962,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "Ql" = (
-/obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "Qo" = (
@@ -9549,7 +9985,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "Qu" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -9560,18 +9995,18 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "Qv" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/purple/mono,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/uez/conference)
 "Qy" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/photocopier{
-	pixel_y = 4
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -9579,6 +10014,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
+	},
+/obj/machinery/photocopier{
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -9624,10 +10062,11 @@
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
 "QG" = (
-/obj/structure/table/standard,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
+/obj/effect/floor_decal/corner/black/mono,
+/obj/structure/bed/chair/armchair/black{
+	dir = 1;
+	name = "Command's armchair"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "QH" = (
@@ -9743,6 +10182,12 @@
 	icon_state = "shutter0"
 	},
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "SD Office Outer Lockdown";
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/repoffice/internaltribunal)
 "Rk" = (
@@ -9763,14 +10208,14 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
 "Rw" = (
-/obj/structure/bed/chair/comfy/green{
-	dir = 4;
-	name = "EZ Senior Agent"
-	},
-/obj/effect/floor_decal/corner/green/half{
+/obj/effect/floor_decal/corner/red/half{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/bed/chair/comfy/red{
+	dir = 4;
+	name = "RAISA Agent's chair"
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/uez/conference)
 "Ry" = (
 /obj/structure/cable/green{
@@ -9800,6 +10245,7 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "RF" = (
@@ -9815,9 +10261,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "RG" = (
-/obj/structure/closet,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/bordercee{
+	dir = 8
+	},
+/obj/structure/hygiene/shower{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -9837,14 +10288,19 @@
 /area/site53/uez/commandpanicbunker)
 "RR" = (
 /obj/effect/floor_decal/corner/red/half,
-/obj/structure/bed/chair/comfy,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/bed/chair/comfy/red{
+	name = "EZ Zone Supervisor's chair"
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
 "RS" = (
-/obj/machinery/requests_console{
-	department = "Administrative";
-	departmentType = 5;
-	pixel_y = 32
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -9884,6 +10340,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"Sd" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/small,
+/area/site53/uez/commandpanicbunker)
 "Sf" = (
 /obj/structure/filingcabinet/chestdrawer{
 	pixel_x = 6
@@ -9994,10 +10458,12 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "SD" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -10007,6 +10473,7 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "SE" = (
@@ -10014,7 +10481,8 @@
 	dir = 1
 	},
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list("ACCESS_ADMIN_LEVEL2")
+	req_access = list("ACCESS_ADMIN_LEVEL2");
+	name = "Administrative Staff Offices"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/commandpanicbunker)
@@ -10052,6 +10520,14 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
+"SK" = (
+/obj/structure/bed/chair/padded/black,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/commandpanicbunker)
 "SL" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner,
 /turf/simulated/floor/wood/walnut,
@@ -10060,6 +10536,21 @@
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_titanium,
 /area/site53/uez/hallway)
+"SR" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
+"SS" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
+/area/site53/uez/conference)
 "SU" = (
 /obj/machinery/light{
 	dir = 8
@@ -10085,17 +10576,19 @@
 /obj/structure/curtain/open/privacy{
 	name = "plastic curtain"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Ta" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
 	},
-/turf/simulated/floor/exoplanet/barren,
-/area/site53/uez/commandpanicbunker)
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uez/conference)
 "Tb" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1
@@ -10136,7 +10629,7 @@
 /obj/item/clothing/gloves/insulated,
 /obj/item/crowbar,
 /obj/item/wirecutters,
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "Ti" = (
 /obj/machinery/door/window/holowindoor{
@@ -10162,13 +10655,8 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uez/hallway)
 "Tp" = (
-/obj/structure/bed/chair/comfy/red{
-	dir = 1;
-	name = "Guard Commander"
-	},
-/obj/effect/floor_decal/corner/purple/half{
-	dir = 1
-	},
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "Tq" = (
@@ -10189,6 +10677,7 @@
 /obj/machinery/camera/network/entrance{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Tv" = (
@@ -10237,12 +10726,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
 "TB" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "TC" = (
@@ -10298,8 +10787,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "TP" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/mono,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "TR" = (
@@ -10327,7 +10816,10 @@
 /obj/item/clothing/head/helmet/facecover,
 /obj/item/clothing/head/helmet/facecover,
 /obj/item/clothing/head/helmet/facecover,
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "TT" = (
 /obj/structure/table/standard,
@@ -10371,6 +10863,11 @@
 /obj/effect/floor_decal/corner/blue/bordercee,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
+"Ub" = (
+/obj/machinery/light,
+/obj/structure/filingcabinet,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "Uh" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
@@ -10385,7 +10882,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start{
-	name = "EZ Supervisor"
+	name = "EZ Zone Supervisor"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/senioragentoffice)
@@ -10418,6 +10915,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/senioragentoffice)
+"Uv" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "Uz" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 1
@@ -10431,20 +10932,21 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "UF" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small/red,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "UG" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	id_tag = "SD Office Outer Lockdown";
-	name = "Administrative Lockdown Blast Door"
+	name = "Administrative Lockdown Blast Door";
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -10481,9 +10983,12 @@
 /obj/machinery/button/alternate/door/bolts{
 	dir = 4;
 	id_tag = "evaccell";
-	name = "Bunker Brig Cell bolt button";
+	name = "Administrative Bunker Brig Bolt Control";
 	pixel_x = -25;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -10507,10 +11012,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "UU" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Command Meeting Room"
-	},
+/obj/machinery/papershredder,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "UX" = (
@@ -10536,7 +11039,7 @@
 /obj/item/stamp/rd{
 	pixel_y = 13;
 	pixel_x = 5;
-	name = "Administrative Security Stamp"
+	name = "Administrative Security rubber stamp"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
@@ -10548,6 +11051,16 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"Vg" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 8
+	},
+/obj/structure/bed/chair/comfy/green{
+	dir = 8;
+	name = "Group of Interest Representative's chair"
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uez/conference)
 "Vh" = (
 /obj/machinery/camera/network/entrance{
 	dir = 8
@@ -10570,13 +11083,15 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
 "Vj" = (
-/obj/machinery/vending/coffee,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "Vl" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Vp" = (
@@ -10599,12 +11114,26 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilityLockdown";
+	name = "Facility Lockdown Blast Door"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/canteen)
+"Vu" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "Command Meeting Room"
+	},
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "Vv" = (
 /obj/machinery/bodyscanner{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Vx" = (
@@ -10698,17 +11227,20 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "VX" = (
-/obj/structure/bed/chair/comfy/yellow{
-	name = "LCZ Commander"
+/obj/effect/floor_decal/corner/red/half,
+/obj/structure/bed/chair/comfy/red{
+	name = "HCZ Zone Lieutenant's chair"
 	},
-/obj/effect/floor_decal/corner/yellow/half,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
+"Wc" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "Research Director's Office";
+	send_access = list("ACCESS_SCIENCE_LEVEL5")
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/hallway)
 "Wd" = (
 /obj/effect/floor_decal/corner/beige/bordercorner{
 	dir = 8
@@ -10760,6 +11292,11 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
+"Ws" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "Wu" = (
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
@@ -10799,6 +11336,14 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
+"WJ" = (
+/obj/machinery/door/airlock/glass/security{
+	id_tag = "evaccell";
+	name = "Administrative Bunker Brig Cell";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/commandpanicbunker)
 "WK" = (
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -10811,6 +11356,13 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/hallway)
+"WM" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "WP" = (
 /obj/machinery/door/blast/shutters/open{
@@ -10870,6 +11422,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"WX" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "WY" = (
 /obj/effect/floor_decal/corner/grey/bordercorner{
 	dir = 4
@@ -10913,6 +11471,13 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"Xq" = (
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/structure/bed/chair/armchair/blue{
+	name = "Site Director's armchair"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "Xu" = (
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 1
@@ -10949,6 +11514,7 @@
 /area/site53/upper_surface/commstower)
 "XB" = (
 /obj/machinery/vitals_monitor,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "XG" = (
@@ -10965,7 +11531,8 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
-/turf/simulated/floor/tiled/old_tile,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "XJ" = (
 /obj/item/paper_bin,
@@ -11010,8 +11577,24 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "XV" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/catwalk_plated/dark,
+/obj/item/stack/material/tritium/fifty,
+/obj/structure/closet,
+/obj/item/stack/material/tritium/fifty,
+/obj/item/stack/material/tritium/fifty,
+/obj/item/stack/material/tritium/fifty,
+/obj/item/stack/material/tritium/fifty,
+/turf/simulated/floor/plating,
+/area/site53/uez/commandpanicbunker)
+"XY" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 1
+	},
+/obj/structure/bed/chair/comfy/green{
+	dir = 1;
+	name = "Ethics Committee Liasion's chair"
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
 "Ya" = (
 /obj/machinery/light{
@@ -11183,14 +11766,18 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/photocopier{
-	pixel_y = 4
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"Zi" = (
+/obj/structure/flora/ausbushes/genericbush,
+/turf/simulated/floor/grass,
+/area/site53/uez/conference)
 "Zj" = (
 /obj/structure/table/steel,
 /obj/machinery/button/blast_door{
@@ -11317,7 +11904,8 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect2";
 	name = "Site Director's Office Lockdown Blast Door";
-	dir = 4
+	dir = 4;
+	icon_state = "pdoor0"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -11374,7 +11962,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "ZM" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -11385,6 +11972,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "ZO" = (
@@ -30212,10 +30800,10 @@ fo
 fo
 fo
 fo
-Op
+WJ
 Ee
 fo
-Op
+WJ
 Ee
 fo
 hk
@@ -30724,7 +31312,7 @@ fo
 sC
 Og
 rN
-rN
+ez
 BZ
 EC
 EC
@@ -30981,7 +31569,7 @@ fo
 DO
 SB
 Jp
-rN
+ez
 BZ
 EC
 EC
@@ -31238,7 +31826,7 @@ fo
 JS
 Dl
 TR
-rN
+Pr
 BZ
 EC
 EC
@@ -36647,7 +37235,7 @@ cX
 cX
 hk
 fo
-rN
+An
 BG
 FD
 GJ
@@ -36904,8 +37492,8 @@ FQ
 cX
 hk
 fo
-rN
-fo
+PB
+dR
 fo
 fo
 DB
@@ -37161,8 +37749,8 @@ wS
 cX
 hk
 fo
-FD
-fo
+Fh
+lM
 fo
 fo
 DB
@@ -37418,11 +38006,11 @@ Kk
 cX
 hk
 fo
-rN
+Fh
 ML
 fo
 uX
-ee
+Sd
 tm
 fo
 IQ
@@ -37675,11 +38263,11 @@ sy
 mr
 hk
 fo
-rN
+PB
 ni
 Nt
-ni
-ee
+SK
+Sd
 yC
 fo
 fo
@@ -37935,8 +38523,8 @@ fo
 GE
 Ph
 fo
-uX
-ee
+Gx
+Sd
 RG
 fo
 fo
@@ -38703,11 +39291,11 @@ Ey
 cX
 wX
 fo
-OM
+XV
 OM
 pM
 OM
-Ta
+ee
 OM
 pM
 OM
@@ -38716,13 +39304,13 @@ fo
 wX
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+SP
+SP
+SP
+mt
+SP
+SP
+SP
 hk
 hk
 hk
@@ -38971,15 +39559,15 @@ mN
 Ex
 fo
 wX
-SP
-cl
-SP
-SP
-SP
-SP
-SP
 hk
 hk
+SP
+hG
+dl
+cd
+KR
+Jf
+SP
 hk
 hk
 hk
@@ -39221,22 +39809,22 @@ IG
 YI
 OM
 OM
-Ta
+ee
 OM
 OM
 YI
 qd
 fo
 wX
+hk
+hk
 SP
-ut
-dl
-hG
+sk
+dm
+zN
 KR
 dQ
 SP
-hk
-hk
 hk
 hk
 hk
@@ -39476,24 +40064,24 @@ wX
 wX
 wX
 wX
-CJ
+vR
 QE
-Ta
+ee
 zE
 CJ
 wX
 wX
 wX
 wX
+hk
+hk
 SP
-Pr
-dm
 dD
+dn
+ml
 KR
-dQ
+Ub
 SP
-hk
-hk
 hk
 hk
 hk
@@ -39735,22 +40323,22 @@ hk
 SP
 zG
 OD
-zN
+pj
 fr
 rP
 SP
 hk
 hk
 hk
+hk
+hk
 SP
-lM
-dn
-uM
+Ms
+wQ
+sX
 KR
-vE
+rn
 SP
-hk
-hk
 hk
 hk
 hk
@@ -39990,24 +40578,24 @@ cX
 hk
 SP
 SP
-Zn
-Zn
-vR
-Zn
-Zn
+CH
+yX
+pj
+vE
+CH
 SP
 SP
 SP
 hk
+hk
+hk
 SP
-Ms
-wQ
-sX
 KR
-RI
+KR
+KR
+KR
+KR
 SP
-hk
-hk
 hk
 hk
 hk
@@ -40247,8 +40835,8 @@ cX
 hk
 SP
 bM
-aM
-aM
+Wu
+Wu
 vF
 TB
 TB
@@ -40256,15 +40844,15 @@ rv
 pr
 SP
 hk
-SP
-KR
-KR
-KR
-KR
-KR
-SP
 hk
 hk
+SP
+KR
+ye
+RI
+Bs
+Wc
+SP
 hk
 hk
 hk
@@ -40504,8 +41092,8 @@ cX
 hk
 SP
 SP
-aM
-aM
+nY
+Wu
 UF
 SP
 SP
@@ -40514,7 +41102,7 @@ cy
 SP
 SP
 SP
-SP
+hk
 SP
 dp
 fv
@@ -40761,9 +41349,9 @@ mr
 hk
 hk
 SP
-aM
-aM
-vR
+HP
+Wu
+pj
 SP
 bY
 vN
@@ -41018,9 +41606,9 @@ cX
 hk
 hk
 SP
-aM
-aM
-vR
+HP
+Wu
+pj
 SP
 cb
 ck
@@ -41275,9 +41863,9 @@ cX
 SP
 SP
 SP
-aM
-aM
-vR
+WM
+Wu
+pj
 SP
 SP
 cl
@@ -41534,7 +42122,7 @@ Wu
 Tw
 Wu
 Wu
-vR
+pj
 SP
 ov
 cm
@@ -42045,7 +42633,7 @@ cX
 cX
 SP
 hA
-vR
+pj
 zg
 Zn
 Zn
@@ -42556,7 +43144,7 @@ Hv
 Hv
 Mo
 dK
-vR
+pj
 SP
 SP
 aP
@@ -42813,7 +43401,7 @@ Hc
 nG
 qK
 dK
-vR
+pj
 zq
 SP
 vH
@@ -43833,7 +44421,7 @@ ep
 ep
 GP
 FL
-cH
+Fo
 cH
 cH
 cH
@@ -44090,7 +44678,7 @@ bK
 bK
 gO
 bK
-eo
+bK
 bK
 bK
 aS
@@ -44342,16 +44930,16 @@ hk
 hk
 hk
 dF
-xx
-xx
-dF
+rf
+rf
+rf
 nF
 rf
+MR
+rf
+rf
+rf
 dF
-xx
-xx
-dF
-SP
 SP
 SP
 SP
@@ -44596,21 +45184,21 @@ hk
 hk
 hk
 hk
-hk
-hk
+dF
+dF
 dF
 Vj
-gT
-gT
+Ih
+ln
 dH
-gT
-gT
-gT
+ut
+ut
+ln
 PE
+NQ
 dF
-hk
-hk
-hk
+dF
+dF
 SP
 gE
 mW
@@ -44853,21 +45441,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+MI
+xx
 eD
-gT
+If
 ux
 AF
 Rw
 tv
-gT
-eq
+uL
+Nk
+ox
+xx
+OU
 dF
-hk
-hk
-hk
 cD
 cD
 cD
@@ -45110,21 +45698,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+Zi
+xx
 fc
-gT
+If
 RR
 Ql
 TP
 yb
-gT
+sL
 Nk
+Iw
+xx
+Ws
 dF
-hk
-hk
-hk
 cD
 OG
 DC
@@ -45367,21 +45955,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+Uv
+xx
 HN
 If
 VX
 NF
-fb
+YJ
 MG
-gT
-QG
+qk
+Nk
+SR
+xx
+vG
 dF
-hk
-hk
-hk
 cD
 qs
 br
@@ -45624,21 +46212,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+uM
+xx
 hw
-gT
+If
 hp
-hp
-fh
-fh
-gT
+NF
 YJ
+MG
+uf
+Nk
+fb
+xx
+CW
 dF
-hk
-hk
-hk
 cD
 fY
 br
@@ -45881,21 +46469,21 @@ hk
 hk
 hk
 hk
-hk
-hk
+dF
+dF
 dF
 tj
-gT
+pK
 Nv
-hp
-fh
-tc
-ml
-XV
+GD
+YJ
+NJ
+NJ
+Nk
+Jd
 dF
-hk
-hk
-hk
+dF
+dF
 cD
 Vy
 br
@@ -46142,15 +46730,15 @@ hk
 hk
 dF
 RS
-gT
-hp
-hp
+If
+Xq
+fi
 fh
-fh
-gT
-YJ
+NJ
+QG
+Nk
+WX
 dF
-hk
 hk
 hk
 cD
@@ -46395,21 +46983,21 @@ hk
 hk
 hk
 hk
-hk
-hk
+dF
+dF
 dF
 mg
-gT
-sr
+If
 fi
-Fo
+fi
+YJ
 NJ
-gT
-ez
+NJ
+Nk
+jj
 dF
-hk
-hk
-hk
+dF
+dF
 cD
 lE
 br
@@ -46426,7 +47014,7 @@ bs
 bs
 bs
 kA
-fW
+ex
 aw
 er
 To
@@ -46652,21 +47240,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+og
+xx
 gs
-gT
+If
 nI
 OS
-Qv
+YJ
 Tp
 gT
-HP
+Nk
+AX
+xx
+eq
 dF
-hk
-hk
-hk
 cD
 nB
 Yo
@@ -46683,7 +47271,7 @@ ha
 bs
 gX
 kC
-fW
+ex
 aw
 To
 To
@@ -46909,21 +47497,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+My
+xx
 UU
-gT
+If
 ql
-fg
-zW
+OS
+YJ
 ms
-gT
-CH
+KW
+Nk
+sr
+xx
+tc
 dF
-hk
-hk
-hk
 cD
 cD
 cD
@@ -47166,21 +47754,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+Ws
+xx
 Lv
-gT
-gT
+If
+pZ
 oD
-gT
-gT
-gT
-MI
+oD
+zW
+XY
+Nk
+dw
+xx
+Ws
 dF
-hk
-hk
-hk
 hk
 hk
 SP
@@ -47197,7 +47785,7 @@ eS
 bs
 bs
 kJ
-fW
+ex
 To
 aw
 eg
@@ -47423,21 +48011,21 @@ hk
 hk
 hk
 hk
-hk
-hk
 dF
+uM
+xx
+Vu
+If
+fg
+BB
+Jr
+Vg
+pq
+Nk
+Be
+xx
+NR
 dF
-dF
-dF
-dF
-dF
-dF
-dF
-dF
-dF
-hk
-hk
-hk
 hk
 hk
 SP
@@ -47454,7 +48042,7 @@ ha
 bs
 gX
 kL
-fW
+ex
 aw
 aw
 aw
@@ -47680,21 +48268,21 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+dF
+dF
+dF
+Vj
+Ox
+Qv
+Ta
+Jz
+Ta
+Qv
+SS
+mo
+dF
+dF
+dF
 hk
 hk
 SP
@@ -47702,7 +48290,7 @@ aw
 To
 To
 To
-ex
+xP
 eO
 eT
 gg
@@ -47939,17 +48527,17 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+dF
+dF
+dF
+dF
+dF
+dF
+dF
+dF
+dF
+dF
+dF
 hk
 hk
 hk
@@ -48222,9 +48810,9 @@ fW
 fW
 fW
 SP
-fW
-fW
-fW
+KK
+KK
+KK
 SP
 To
 To

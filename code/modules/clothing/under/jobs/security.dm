@@ -64,7 +64,7 @@
 	worn_state = "lcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/lcz
-	name = "LCZ Commander Jumpsuit"
+	name = "LCZ Lieutenant Jumpsuit"
 	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
 	icon_state = "lcz_commander"
 	worn_state = "lcz_commander"
@@ -83,20 +83,20 @@
 	worn_state = "hcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/hcz
-	name = "HCZ Commander Jumpsuit"
+	name = "HCZ Lieutenant Jumpsuit"
 	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a lighter red color most known for Commanders."
 	icon_state = "hcz_commander"
 	worn_state = "hcz_commander"
 
 // Guard Commander Uniforms
 /obj/item/clothing/under/rank/head_of_security/guardcom
-	name = "Guard Commander's Uniform"
+	name = "Guard Commander Uniform"
 	desc = "A white tactical shirt, with a pair of black trousers with golden striping on the side, the shirt is covered in gold insignia, with an additional black color over the wrists. There's a golden badge and belt buckle. This is definitely the definition of prospertiy."
 	icon_state = "guard_commander"
 	worn_state = "guard_commander"
 
 /obj/item/clothing/under/rank/head_of_security/guardcom/alt
-	name = "Guard Commander's Turtleneck"
+	name = "Guard Commander Turtleneck"
 	desc = "A white turtleneck, atop of a set of black tactical cargo pants. The turtleneck has a golden insignia on the right shoulder, denoting the rank of Guard Commander. It smells of gunpowder."
 	icon_state = "guard_commander_turtleneck"
 	worn_state = "guard_commander_turtleneck"

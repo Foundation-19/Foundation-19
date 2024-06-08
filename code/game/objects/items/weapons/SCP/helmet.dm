@@ -36,7 +36,7 @@
 
 /obj/item/clothing/head/helmet/scp/security/lczcom
 	name = "\improper Heavy-plated foundation security helmet"
-	desc = "A heavy non-descript helmet with more built-in padding, and armor. The golden badge on the front of the helmet incidates the rank of 'Commander', looks important. It has a poly-carbonate yellow riot visor on it."
+	desc = "A heavy non-descript helmet with more built-in padding, and armor. The golden badge on the front of the helmet incidates the rank of 'Lieutenant', looks important. It has a poly-carbonate yellow riot visor on it."
 	icon_state = "heavy-guard-helm"
 	armor = list(melee = 65, bullet = 45, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 

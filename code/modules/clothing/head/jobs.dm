@@ -143,7 +143,7 @@
 	icon_state = "beret_sergeant"
 
 /obj/item/clothing/head/beret/sec/commander
-	name = "Zone Commander Beret"
+	name = "Zone Officer Beret"
 	desc = "A black beret with a golden badge in the shape of a shield, it feels durable due to the materials it's been made from."
 	icon_state = "beret_commander"
 

@@ -202,7 +202,7 @@
 
 // HCZ - Cadet
 /obj/structure/closet/secure_closet/cadet/hcz
-	name = "HCZ Cadet's Locker"
+	name = "HCZ Private's Locker"
 	req_access = list(ACCESS_SECURITY_LVL3)
 	icon_state = "hczcadet1"
 	icon_closed = "hczcadet"
@@ -388,7 +388,7 @@
 
 // Zone Commander
 /obj/structure/closet/secure_closet/guard/zone_commander
-	name = "Zone Commander Locker"
+	name = "LCZ Zone Lieutenant's Locker"
 	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "lczcomm1"
 	icon_closed = "lczcomm"
@@ -419,7 +419,7 @@
 	)
 
 /obj/structure/closet/secure_closet/guard/zone_commander/hcz
-	name = "Zone Commander Locker"
+	name = "HCZ Zone Lieutenant's Locker"
 	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "hczcomm1"
 	icon_closed = "hczcomm"
@@ -428,7 +428,7 @@
 	icon_off = "hczcommoff"
 
 /obj/structure/closet/secure_closet/guard/zone_commander/ez
-	name = "Zone Commander Locker"
+	name = "EZ Zone Supervisor's Locker"
 	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "ezcomm1"
 	icon_closed = "ezcomm"

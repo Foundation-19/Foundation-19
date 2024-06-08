@@ -20,7 +20,7 @@
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /decl/hierarchy/outfit/job/security/hcz_zone_commander
-	name = OUTFIT_JOB_NAME("HCZ Captain")
+	name = OUTFIT_JOB_NAME("HCZ Zone Lieutenant")
 	uniform = /obj/item/clothing/under/rank/head_of_security/hcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -37,7 +37,7 @@
 
 
 /decl/hierarchy/outfit/job/security/lcz_zone_commander
-	name = OUTFIT_JOB_NAME("LCZ Captain")
+	name = OUTFIT_JOB_NAME("LCZ Zone Lieutenant")
 	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -54,7 +54,7 @@
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
 /decl/hierarchy/outfit/job/security/ez_zone_commander
-	name = OUTFIT_JOB_NAME("EZ Supervisor")
+	name = OUTFIT_JOB_NAME("EZ Zone Supervisor")
 	uniform = /obj/item/clothing/under/rank/head_of_security/ez
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl4ez
@@ -311,7 +311,7 @@
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /decl/hierarchy/outfit/job/security/hcz_cadet
-	name = OUTFIT_JOB_NAME("HCZ Cadet")
+	name = OUTFIT_JOB_NAME("HCZ Private")
 	uniform = /obj/item/clothing/under/rank/security/hcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
