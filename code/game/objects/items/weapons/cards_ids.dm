@@ -1041,5 +1041,5 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	access = list(ACCESS_DCLASS_MEDICAL)
 
 /obj/item/card/id/dassignment/dluxury
-	name = "luxury assignment card"
+	name = "luxury reward card"
 	access = list(ACCESS_DCLASS_LUXURY)

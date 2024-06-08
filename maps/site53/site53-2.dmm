@@ -22371,7 +22371,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/paleblue/bordercee,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "cAm" = (
@@ -26229,6 +26234,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/checkpoint)
 "eYo" = (
@@ -26433,7 +26439,7 @@
 /area/site53/uhcz/scp106containment)
 "feq" = (
 /obj/effect/floor_decal/corner/paleblue/bordercee,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "feJ" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -38796,12 +38802,6 @@
 /obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
-"mTh" = (
-/obj/effect/floor_decal/corner/paleblue/bordercee{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost/storage)
 "mTr" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -39634,15 +39634,10 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp513)
 "nte" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/yellow/bordercee,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "nty" = (
@@ -68766,7 +68761,7 @@ bMi
 bMi
 ini
 iVj
-mTh
+lzz
 ffO
 ini
 wzt
