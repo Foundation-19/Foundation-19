@@ -62,7 +62,7 @@
 //##
 
 /datum/job/ltofficerlcz
-	title = "LCZ Zone Lieutenant"
+	title = "LCZ Zone Junior Lieutenant"
 	department = "Light Containment Personnel"
 	selection_color = "#8e2929"
 	department_flag = SEC|LCZ
@@ -107,7 +107,7 @@
 	skill_points = 25
 
 /datum/job/ltofficerhcz
-	title = "HCZ Zone Lieutenant"
+	title = "HCZ Zone Senior Lieutenant"
 	department = "Heavy Containment Personnel"
 	selection_color = "#8e2929"
 	department_flag = SEC|HCZ
