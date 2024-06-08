@@ -49523,6 +49523,11 @@
 /area/site53/llcz/dclass/medicalpost/morgue)
 "toB" = (
 /obj/effect/floor_decal/corner/blue/border,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "toL" = (
@@ -49565,6 +49570,11 @@
 /obj/machinery/door/airlock/glass/medical{
 	name = "CDCZ Medical Clinic";
 	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/medicalpost)
@@ -53770,12 +53780,12 @@
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
 "wnL" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/effect/floor_decal/corner/blue/border,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "wnP" = (
@@ -56275,11 +56285,6 @@
 	},
 /area/site53/llcz/entrance_checkpoint)
 "xSE" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	name = "CDCZ Lockdown Blast Door";
