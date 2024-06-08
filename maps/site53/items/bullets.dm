@@ -96,10 +96,10 @@
 	//name = "ammo box (.357)"
 	//desc = "A box of .357 ammo"
 	//icon_state = "357"
-	name = "speed loader (12,7x50mm)"
+	name = "speed loader (12.7x50mm)"
 	desc = "A speed loader for revolvers."
 	icon_state = "127"
-	caliber = "12,7x50"
+	caliber = "12.7x50"
 	ammo_type = /obj/item/ammo_casing/a127
 	matter = list(DEFAULT_WALL_MATERIAL = 1260)
 	max_ammo = 5

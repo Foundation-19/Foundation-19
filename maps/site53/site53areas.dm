@@ -577,7 +577,7 @@
 	icon_state = "head_quarters"
 
 /area/site53/uez/hallway
-	name = "\improper Upper Entrance Zone"
+	name = "\improper Entrance Zone"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
@@ -597,25 +597,25 @@
 	icon_state = "janitor"
 
 /area/site53/uez/maintenance
-	name = "Upper Entrance Zone Maintenance"
+	name = "UEZ Maintenance"
 	icon_state = "SolarcontrolS"
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/uez/substation
-	name = "Upper Entrance Zone Substation"
+	name = "UEZ Substation"
 	icon_state = "SolarcontrolS"
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/uez/equipmentroom
-	name = "Upper Entrance Zone Equipment Room"
+	name = "EZ Equipment Room"
 	icon_state = "security"
 
 /area/site53/uez/senioragentoffice
-	name = "Upper Entrance Zone Senior Agent Office"
+	name = "\improper EZ Zone Supervisor's Office"
 	icon_state = "security"
 
 /area/site53/uez/armory
-	name = "Upper Entrance Zone Armory"
+	name = "EZ Armory"
 	icon_state = "security"
 
 /area/site53/uez/bridge
@@ -1072,7 +1072,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/commanderoffice
-	name = "\improper HCZ Commander's Office"
+	name = "\improper HCZ Zone Lieutenant's Office"
 	icon_state = "checkpoint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -1087,7 +1087,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/zonecommanderoffice
-	name = "\improper Zone Commander's Office"
+	name = "\improper LCZ Zone Lieutenant's Office"
 	icon_state = "security"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 

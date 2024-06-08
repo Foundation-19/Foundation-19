@@ -115,8 +115,8 @@
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
 
 /obj/item/gun/projectile/pistol/usp45
-	name = "USP45"
-	desc = "Sidearm assigned to certain operatives and guards of the Foundation. Chambered in .45ACP."
+	name = "Colt Mustang"
+	desc = "In 1983, Colt introduced the Colt Mark IV/ Series 80 Government Model -.45 Caliber. This pocket pistol was similar in appearance, but not design, to the Colt M1911. Chambered in .45 ACP."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "usp"
 	w_class = ITEM_SIZE_NORMAL
@@ -172,4 +172,48 @@
 		icon_state = "saiga12"
 	else
 		icon_state = "saiga12-empty"
+	return
+
+/obj/item/gun/projectile/pistol/p232
+	name = "Sig Sauer P232"
+	desc = "The Sig P232 draws it's lineage from the older P-230, which in itself comes from the Sauer 38H. The old Sauer 38H was a blowback pistol intended to compete with the Walther PPK and Mauser HSC handguns. Due to Germany's pressing need for every last handgun they could get their hands on in the Second World War, Sauer would produce the 38H until the factory was captured by the Allies in 1945. The Sig P232, carries on the legacy of the Sauer 38H in spirit, as it is very much a modernized variant of the old handgun. This version is chambered in .45 ACP."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "p232"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = ".45"
+	silenced = 0
+	fire_delay = 2
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c45m
+	allowed_magazines = list(/obj/item/ammo_magazine/c45m, /obj/item/ammo_magazine/c45m/rubber)
+
+/obj/item/gun/projectile/pistol/p232/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "p232"
+	else
+		icon_state = "p232-empty"
+	return
+
+/obj/item/gun/projectile/pistol/makarov
+	name = "Makarov Pistol"
+	desc = "Shortly after the Second World War, the Soviet Union reactivated its plans to replace the TT pistols and Nagant M1895 revolvers. The adoption of the future AK assault rifle relegated the pistol to a light, handy self-defense weapon. The TT was unsuited for such a role, as it was heavy and bulky. Also, the Tokarev pistols omitted a safety and magazines were deemed too easy to lose. As a result, in December 1945, two separate contests for a new service pistol were created, respectively for a 7.62mm and 9mm pistol. It was later judged that the new 9.2x18mm cartridge, designed by B. V. Semin, was the best round suited for the intended role. The lower pressures of the cartridge allowed practical straight blowback operation, while retaining low recoil and good stopping power. This version is chambered in 9x19mm."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "makarov"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "9mm"
+	silenced = 0
+	fire_delay = 2
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/a9mm
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/a9mm)
+
+/obj/item/gun/projectile/pistol/makarov/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "makarov"
+	else
+		icon_state = "makarov-empty"
 	return

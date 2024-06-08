@@ -40,13 +40,43 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/rubber
-	name = "MK9 magazine (9mm rubber)"
+	name = "MK9 magazine (9mm Rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
 	max_ammo = 17
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/mk9/ap
+	name = "MK9 magazine (9mm AP)"
+	icon_state = "R9mmds"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 17
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/mk9/hp
+	name = "MK9 magazine (9mm HP)"
+	icon_state = "R9mmds"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 17
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a9mm
+	name = "pistol magazine (9mm)"
+	icon_state = "9x19p"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 12
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/p90_mag
@@ -63,8 +93,19 @@
 /obj/item/ammo_magazine/scp/p90_mag/empty
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/scp/p90_mag/rubber
+	name = "magazine (5.7x28mm Rubber)"
+	icon_state = "p90r"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "5.7x28mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/pistol/a57/rubber
+	max_ammo = 50
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/scp/p90_mag/ap
-	name = "magazine (5.7x28mm AP)"
+	name = "magazine (5.7x28mm Armor-Piercing)"
 	icon_state = "p90ap"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -74,14 +115,14 @@
 	max_ammo = 50
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/p90_mag/rubber
-	name = "magazine (5.7x28mm rubber)"
-	icon_state = "p90r"
+/obj/item/ammo_magazine/scp/p90_mag/hp
+	name = "magazine (5.7x28mm Hollow-Point)"
+	icon_state = "p90hp"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "5.7x28mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/pistol/a57/rubber
+	ammo_type = /obj/item/ammo_casing/pistol/a57/hp
 	max_ammo = 50
 	multiple_sprites = 1
 
@@ -170,8 +211,9 @@
 // BOXES //
 
 // 9mm
-/obj/item/ammo_magazine/box/mk9
-	name = "ammunition box (9mm)"
+/obj/item/ammo_magazine/box/a9mm
+	name = "ammunition box (9x19mm)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``9x19`` on the cartridge. You can only guess what's in it."
 	icon_state = "box_9mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "9mm"
@@ -179,6 +221,23 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm
 	max_ammo = 100
 
+/obj/item/ammo_magazine/box/a9mm/rubber
+	name = "ammunition box (9x19mm Rubber)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``9x19`` on the cartridge. It has a blue line for Rubber bullets. You can only guess what's in it."
+	icon_state = "box_9mmr"
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
+
+/obj/item/ammo_magazine/box/a9mm/ap
+	name = "ammunition box (9x19mm Armor-Piercing)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``9x19`` on the cartridge. It has a white line for AP bullets. You can only guess what's in it."
+	icon_state = "box_9mmap"
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
+
+/obj/item/ammo_magazine/box/a9mm/hp
+	name = "ammunition box (9x19mm Hollow-Point)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``9x19`` on the cartridge. It has a red line for HP bullets. You can only guess what's in it."
+	icon_state = "box_9mmhp"
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
 
 // .357
 /obj/item/ammo_magazine/box/a357
@@ -202,7 +261,8 @@
 
 // 45acp
 /obj/item/ammo_magazine/box/a45
-	name = "ammunition box (.45acp)"
+	name = "ammunition box (.45 ACP)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``.45`` on the cartridge. You can only guess what's in it."
 	icon_state = "box_45acp"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = ".45"
@@ -222,6 +282,7 @@
 // 5.7x28mm
 /obj/item/ammo_magazine/box/a57
 	name = "ammunition box (5.7x28mm)"
+	desc = "A quite heavy militarized ammunition box. It's green, and says ``5.7x28`` on the box. You can only guess what's in it."
 	icon_state = "box_57x28mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "5.7x28mm"
@@ -231,9 +292,22 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/box/a57/rubber
-	name = "ammunition box (5.7x28mm rubber)"
+	name = "ammunition box (5.7x28mm Rubber)"
+	desc = "A quite heavy militarized ammunition box. It's green, and says ``5.7x28`` on the box. It has a blue line for Rubber bullets. You can only guess what's in it."
 	icon_state = "box_57x28mmr"
 	ammo_type = /obj/item/ammo_casing/pistol/a57/rubber
+
+/obj/item/ammo_magazine/box/a57/ap
+	name = "ammunition box (5.7x28mm Armor-Piercing)"
+	desc = "A quite heavy militarized ammunition box. It's green, and says ``5.7x28`` on the box. It has a white line for AP bullets. You can only guess what's in it."
+	icon_state = "box_57x28mmap"
+	ammo_type = /obj/item/ammo_casing/pistol/a57/ap
+
+/obj/item/ammo_magazine/box/a57/hp
+	name = "ammunition box (5.7x28mm Hollow-Point)"
+	desc = "A quite heavy militarized ammunition box. It's green, and says ``5.7x28`` on the box. It has a red line for HP bullets. You can only guess what's in it."
+	icon_state = "box_57x28mmhp"
+	ammo_type = /obj/item/ammo_casing/pistol/a57/hp
 
 // 5.56
 /obj/item/ammo_magazine/box/a556

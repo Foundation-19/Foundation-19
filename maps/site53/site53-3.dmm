@@ -7826,6 +7826,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"AI" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/item/ammo_magazine/box/a57/rubber,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "AK" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9089,6 +9095,12 @@
 /obj/machinery/camera/autoname,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"GW" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/item/ammo_magazine/box/a9mm/rubber,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "GZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -40815,7 +40827,7 @@ It
 lO
 QN
 Ln
-zh
+GW
 Xs
 gB
 af
@@ -41329,7 +41341,7 @@ It
 cQ
 QN
 Ln
-zh
+AI
 Xs
 wf
 af

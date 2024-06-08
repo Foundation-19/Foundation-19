@@ -152,7 +152,7 @@
 	return ..() | list(
 		/obj/item/clothing/suit/armor/vest/scp/medarmor,
 		/obj/item/clothing/head/helmet/scp/security/cadet,
-		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -219,7 +219,7 @@
 		/obj/item/melee/telebaton,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/gun/energy/taser,
-		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -283,7 +283,7 @@
 // EZ - Cadet
 /obj/structure/closet/secure_closet/cadet/ez
 	name = "EZ Probationary Agent's Locker"
-	req_access = list(ACCESS_SECURITY_LVL3, ACCESS_ADMIN_LVL1)
+	req_access = list(ACCESS_SECURITY_LVL2, ACCESS_ADMIN_LVL1)
 	icon_state = "ezcadet1"
 	icon_closed = "ezcadet"
 	icon_locked = "ezcadet1"
@@ -297,7 +297,7 @@
 		/obj/item/melee/telebaton,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/gun/energy/taser,
-		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
@@ -382,7 +382,7 @@
 		/obj/item/clothing/under/rank/head_of_security/guardcom/alt,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
-		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/gun/energy/taser/carbine,
 	)
 
@@ -626,7 +626,7 @@
 		/obj/item/storage/backpack/rucksack,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
-		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/melee/telebaton,
 	)
