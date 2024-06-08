@@ -439,7 +439,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/usp45
-	name = "USP .45ACP Magazine"
+	name = "Colt Mustang Magazine (.45 ACP)"
 	icon_state = "magnum"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
@@ -449,13 +449,13 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/m1911
-	name = "M1911 Colt Magazine (.45ACP)"
+	name = "Pistol Magazine (.45 ACP)"
 	icon_state = "45"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = ".45"
-	max_ammo = 7
+	max_ammo = 8
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/saiga12

@@ -104,7 +104,7 @@
 	name = "M1911"
 	desc = "A classic Model 1911 pistol. Still effective even today, generally used as a surplus sidearm for Foundation security staff."
 	icon = 'icons/obj/gun.dmi'
-	icon_state = "colt"
+	icon_state = "m1911"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = ".45"
 	silenced = 0
