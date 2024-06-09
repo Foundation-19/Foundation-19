@@ -1,13 +1,13 @@
 /mob/living/simple_animal/hostile/carp
-	name = "space carp"
-	desc = "A ferocious, fang-bearing creature that resembles a fish."
+	name = "selachian"
+	desc = "A suspicously carp shaped shark with an extremely punchable face"
 	icon = 'icons/mob/simple_animal/carp.dmi'
 	icon_state = "carp" //for mapping purposes
 	icon_gib = "carp_gib"
 	turns_per_move = 3
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
-	response_harm = "hits the"
+	response_harm = "punches the"
 	movement_cooldown = 3
 	maxHealth = 50
 	health = 50

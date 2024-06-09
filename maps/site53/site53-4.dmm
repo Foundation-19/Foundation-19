@@ -907,10 +907,6 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
 "cP" = (
-/obj/structure/cable{
-	d1 = 32;
-	icon_state = "32-1"
-	},
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/site53/uez/mcrsubstation)
@@ -1643,7 +1639,6 @@
 /area/site53/uez/commandpanicbunker)
 "eL" = (
 /obj/structure/table/glass,
-/obj/item/paper,
 /obj/item/storage/pill_bottle/dice,
 /obj/item/dice/d10,
 /obj/item/dice/d10,
@@ -2463,11 +2458,6 @@
 "hJ" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
@@ -2513,13 +2503,13 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2643,13 +2633,13 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/logistics/logisticsofficer)
 "iu" = (
+/obj/machinery/light{
+	dir = 8
+	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
@@ -2758,12 +2748,12 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "iU" = (
-/obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
 	},
+/obj/structure/cable,
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "iX" = (
@@ -4318,8 +4308,8 @@
 /area/site53/uez/commandpanicbunker)
 "qK" = (
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
@@ -4782,7 +4772,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "uy" = (
-/obj/item/paper,
 /obj/item/storage/pill_bottle/dice,
 /obj/item/dice/d10,
 /obj/item/dice/d10,
@@ -5475,8 +5464,8 @@
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
@@ -6093,8 +6082,8 @@
 "CD" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
@@ -6958,6 +6947,10 @@
 /obj/item/stamp/approved,
 /obj/item/stamp/denied,
 /obj/item/stamp/cargo,
+/obj/item/paper{
+	info = "Logistics, As a reminder and warning of SCP-6819, do NOT drive at the times of 11PM to 4AM. Regardless of your site's condition of 'stressed logistical power' it is no excuse to put drivers into it's risk. Regards, Assistant Director of Department of Logistics.";
+	name = "Old Fax"
+	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
 "JS" = (
@@ -9304,8 +9297,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 4
+	dir = 4;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)

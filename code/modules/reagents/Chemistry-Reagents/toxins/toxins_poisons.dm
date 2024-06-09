@@ -67,8 +67,8 @@
 
 
 /datum/reagent/toxin/carpotoxin
-	name = "Carpotoxin"
-	description = "A neurotoxin found in the flesh of space carp. It causes artery blockages that disrupt blood circulation."
+	name = "Sharkotoxin"
+	description = "A neurotoxin found in the flesh of selachians. It causes artery blockages that disrupt blood circulation."
 	taste_description = "fish"
 	reagent_state = LIQUID
 	color = "#003333"

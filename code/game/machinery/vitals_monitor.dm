@@ -54,12 +54,12 @@
 		var/obj/item/organ/internal/brain/brain = victim.internal_organs_by_name[BP_BRAIN]
 		if(istype(brain) && victim.stat != DEAD && !(victim.status_flags & FAKEDEATH))
 			if(user.skill_check(SKILL_MEDICAL, SKILL_BASIC))
-				switch(brain.get_current_damage_threshold())
-					if(0 to 2)
+				switch(round(brain.damage / brain.max_damage, 0.1))
+					if(0 to 0.2)
 						brain_activity = "normal"
-					if(3 to 5)
+					if(0.3 to 0.5)
 						brain_activity = "weak"
-					if(6 to INFINITY)
+					if(0.6 to INFINITY)
 						brain_activity = "extremely weak"
 			else
 				brain_activity = "some"
@@ -172,14 +172,14 @@
 		return
 	var/obj/item/organ/internal/brain/brain = victim.internal_organs_by_name[BP_BRAIN]
 	if(istype(brain) && victim.stat != DEAD && !(victim.status_flags & FAKEDEATH))
-		switch(brain.get_current_damage_threshold())
-			if(0 to 2)
+		switch(round(brain.damage / brain.max_damage, 0.1))
+			if(0 to 0.2)
 				add_overlay(image(icon, icon_state = "brain_ok"))
-			if(3 to 5)
+			if(0.3 to 0.5)
 				add_overlay(image(icon, icon_state = "brain_bad"))
 				if(read_alerts)
 					alerts[BRAIN_ALERT] = "Weak brain activity!"
-			if(6 to INFINITY)
+			if(0.6 to INFINITY)
 				add_overlay(image(icon, icon_state = "brain_verybad"))
 				add_overlay(image(icon, icon_state = "brain_warning"))
 				if(read_alerts)
