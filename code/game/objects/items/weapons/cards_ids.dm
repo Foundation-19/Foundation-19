@@ -686,17 +686,17 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 
 /obj/item/card/id/zcseclvl4hcz
 	name = "security ID"
-	desc = "A teal ID. Looks cool."
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerhcz
 	class = CLASS_B
 
-/obj/item/card/id/zcseclvl3lcz
+/obj/item/card/id/zcseclvl4lcz
 	name = "security ID"
-	desc = "A teal ID. A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerlcz
 	class = CLASS_B
 

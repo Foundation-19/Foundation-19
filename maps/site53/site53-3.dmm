@@ -70,7 +70,7 @@
 	icon_locked = "armor1";
 	icon_closed = "armor";
 	icon_off = "armoroff";
-	icon_opened = "armoropen";
+	icon_opened = "gunopen";
 	icon_state = "armor1"
 	},
 /obj/item/clothing/suit/armor/vest,
@@ -4800,7 +4800,7 @@
 	icon_locked = "tactical1";
 	icon_closed = "tactical";
 	icon_off = "tacticaloff";
-	icon_opened = "tacticalopen";
+	icon_opened = "gunopen";
 	icon_state = "tactical1"
 	},
 /obj/item/ammo_magazine/scp/m1911,
@@ -8353,7 +8353,7 @@
 	icon_locked = "armor1";
 	icon_closed = "armor";
 	icon_off = "armoroff";
-	icon_opened = "armoropen";
+	icon_opened = "gunopen";
 	icon_state = "armor1"
 	},
 /obj/item/clothing/suit/armor/vest,
@@ -8705,7 +8705,7 @@
 	icon_locked = "tactical1";
 	icon_closed = "tactical";
 	icon_off = "tacticaloff";
-	icon_opened = "tacticalopen";
+	icon_opened = "gunopen";
 	icon_state = "tactical1"
 	},
 /obj/item/ammo_magazine/scp/m1911,

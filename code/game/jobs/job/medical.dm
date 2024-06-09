@@ -94,123 +94,6 @@
 	)
 	skill_points = 26
 
-/datum/job/chemist
-	title = "Chemist"
-	department = "Medical"
-	department_flag = MED
-	minimal_player_age = 3
-	total_positions = 2
-	spawn_positions = 2
-	requirements = list(EXP_TYPE_MEDICAL = 120)
-	supervisors = "the Medical Director and Assistant Medical Director"
-	selection_color = "#013d3b"
-	economic_power = 4
-	alt_titles = list("Pharmacist")
-	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
-	class = CLASS_C
-	hud_icon = "hudpharmacist"
-
-	access = list(
-		ACCESS_MED_COMMS,
-		ACCESS_MEDICAL_EQUIP,
-		ACCESS_MEDICAL_LVL1,
-		ACCESS_MEDICAL_LVL2
-	)
-	minimal_access = list()
-
-	min_skill = list(
-	    SKILL_MEDICAL     = SKILL_TRAINED,
-	    SKILL_ANATOMY     = SKILL_TRAINED,
-	    SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
-		SKILL_DEVICES     = SKILL_TRAINED
-	)
-
-	max_skill = list(
-		SKILL_MEDICAL     = SKILL_MASTER,
-	    SKILL_ANATOMY     = SKILL_MASTER,
-	    SKILL_CHEMISTRY   = SKILL_MASTER
-	)
-	skill_points = 24
-
-/datum/job/psychiatrist
-	title = "Psychiatrist"
-	department = "Medical"
-	department_flag = MED
-	selection_color = "#013d3b"
-	total_positions = 1
-	spawn_positions = 1
-	minimal_player_age = 3
-	ideal_character_age = 40
-	economic_power = 5
-	supervisors = "the Medical Director and Assistant Medical Director"
-	alt_titles = list("Counselor")
-	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
-	class = CLASS_C
-	hud_icon = "hudcounselor"
-
-	access = list(
-		ACCESS_MED_COMMS,
-		ACCESS_MEDICAL_EQUIP,
-		ACCESS_MEDICAL_LVL1
-	)
-	minimal_access = list()
-
-	min_skill = list(
-	    SKILL_MEDICAL     = SKILL_TRAINED,
-	    SKILL_ANATOMY     = SKILL_TRAINED,
-		SKILL_CHEMISTRY   = SKILL_BASIC,
-		SKILL_DEVICES     = SKILL_TRAINED
-	)
-
-	max_skill = list(
-		SKILL_MEDICAL     = SKILL_MASTER,
-	    SKILL_ANATOMY     = SKILL_MASTER,
-	    SKILL_CHEMISTRY   = SKILL_MASTER
-	)
-	skill_points = 24
-
-/datum/job/medicaldoctor
-	title = "Medical Doctor"
-	department = "Medical"
-	department_flag = MED
-	selection_color = "#013d3b"
-	total_positions = 5
-	spawn_positions = 5
-	requirements = list(EXP_TYPE_MEDICAL = 120)
-	supervisors = "the Medical Director and Assistant Medical Director"
-	ideal_character_age = 26
-	minimal_player_age = 3
-	economic_power = 5
-	alt_titles = list("Coroner")
-	outfit_type = /decl/hierarchy/outfit/job/medical/medicaldoctor
-	class = CLASS_C
-	hud_icon = "hudphysician"
-
-	access = list(
-		ACCESS_MED_COMMS,
-		ACCESS_MEDICAL_EQUIP,
-		ACCESS_MEDICAL_LVL1,
-		ACCESS_MEDICAL_LVL2,
-		ACCESS_MEDICAL_LVL3,
-		ACCESS_SCIENCE_LVL1
-	)
-	minimal_access = list()
-
-	min_skill = list(
-	    SKILL_MEDICAL     = SKILL_TRAINED,
-	    SKILL_ANATOMY     = SKILL_TRAINED,
-	    SKILL_CHEMISTRY   = SKILL_TRAINED,
-		SKILL_DEVICES     = SKILL_TRAINED
-	)
-
-	max_skill = list(
-		SKILL_MEDICAL     = SKILL_MASTER,
-	    SKILL_ANATOMY     = SKILL_MASTER,
-	    SKILL_CHEMISTRY   = SKILL_MASTER
-	)
-	skill_points = 24
-
 /datum/job/surgeon
 	title = "Surgeon"
 	department = "Medical"
@@ -251,6 +134,123 @@
 	    SKILL_CHEMISTRY   = SKILL_MASTER
 	)
 	skill_points = 27
+
+/datum/job/chemist
+	title = "Chemist"
+	department = "Medical"
+	department_flag = MED
+	minimal_player_age = 3
+	total_positions = 2
+	spawn_positions = 2
+	requirements = list(EXP_TYPE_MEDICAL = 120)
+	supervisors = "the Medical Director, Assistant Medical Director and Senior Doctor"
+	selection_color = "#013d3b"
+	economic_power = 4
+	alt_titles = list("Pharmacist")
+	ideal_character_age = 30
+	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
+	class = CLASS_C
+	hud_icon = "hudpharmacist"
+
+	access = list(
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_TRAINED,
+	    SKILL_ANATOMY     = SKILL_TRAINED,
+	    SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
+
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
+	skill_points = 24
+
+/datum/job/psychiatrist
+	title = "Psychiatrist"
+	department = "Medical"
+	department_flag = MED
+	selection_color = "#013d3b"
+	total_positions = 1
+	spawn_positions = 1
+	minimal_player_age = 3
+	ideal_character_age = 40
+	economic_power = 5
+	supervisors = "the Medical Director, Assistant Medical Director and Senior Doctor"
+	alt_titles = list("Counselor")
+	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
+	class = CLASS_C
+	hud_icon = "hudcounselor"
+
+	access = list(
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_MEDICAL_LVL1
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_TRAINED,
+	    SKILL_ANATOMY     = SKILL_TRAINED,
+		SKILL_CHEMISTRY   = SKILL_BASIC,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
+
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
+	skill_points = 24
+
+/datum/job/medicaldoctor
+	title = "Medical Doctor"
+	department = "Medical"
+	department_flag = MED
+	selection_color = "#013d3b"
+	total_positions = 5
+	spawn_positions = 5
+	requirements = list(EXP_TYPE_MEDICAL = 120)
+	supervisors = "the Medical Director, Assistant Medical Director and Senior Doctor"
+	ideal_character_age = 26
+	minimal_player_age = 3
+	economic_power = 5
+	alt_titles = list("Coroner")
+	outfit_type = /decl/hierarchy/outfit/job/medical/medicaldoctor
+	class = CLASS_C
+	hud_icon = "hudphysician"
+
+	access = list(
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_SCIENCE_LVL1
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_TRAINED,
+	    SKILL_ANATOMY     = SKILL_TRAINED,
+	    SKILL_CHEMISTRY   = SKILL_TRAINED,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
+
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
+	skill_points = 24
 
 /datum/job/emt
 	title = "Emergency Medical Technician"
