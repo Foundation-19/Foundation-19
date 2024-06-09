@@ -78,7 +78,7 @@
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	name = "Heavy-plated armored vest"
-	desc = "A heavy armored vest, with added arm armor, and kneepads for full body coverage. Worn by the facility security Commander, it has some durathread plating in it to make it durable against melee, and slightly in some other damage types."
+	desc = "A heavy armored vest, with added arm armor, and kneepads for full body coverage. Worn by the facility's LCZ Lieutenant, it has some durathread plating in it to make it durable against melee, and slightly in some other damage types."
 	icon_state = "heavy-guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS

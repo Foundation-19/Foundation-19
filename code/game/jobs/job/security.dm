@@ -8,7 +8,7 @@
 	supervisors = "the Site Director"
 	req_admin_notify = 1
 	economic_power = 10
-	requirements = list("LCZ Zone Commander" = 240, "HCZ Zone Commander" = 240, "EZ Supervisor" = 240)
+	requirements = list("LCZ Zone Junior Lieutenant" = 240, "HCZ Zone Senior Lieutenant" = 240, "EZ Zone Supervisor" = 240)
 	total_positions = 1
 	spawn_positions = 1
 	alt_titles = list("Security Chief", "Head of Security")
