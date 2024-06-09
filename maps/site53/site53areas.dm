@@ -445,6 +445,9 @@
 	icon_state = "hallC1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = LARGE_ENCLOSED
+	forced_ambience = list(
+	'sounds/ambience/lcz/crb/alarm.ogg'
+	)
 	ambience = list(
 	'sounds/ambience/lcz/general/Ambient1.ogg',
 	'sounds/ambience/lcz/general/Ambient2.ogg',
@@ -454,7 +457,7 @@
 	'sounds/ambience/lcz/general/Ambient6.ogg',
 	'sounds/ambience/lcz/general/Ambient7.ogg',
 	'sounds/ambience/lcz/general/Ambient8.ogg',
-	'sounds/ambience/lcz/general/Ambient9.ogg'
+	'sounds/ambience/lcz/general/Ambient9.ogg',
 	)
 //	ambience_crb = list(
 //	'sounds/ambience/lcz/crb/Commotion15.ogg',
