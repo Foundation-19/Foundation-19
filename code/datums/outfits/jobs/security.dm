@@ -41,7 +41,7 @@
 	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/card/id/zcseclvl3lcz
+	id_type = /obj/item/card/id/zcseclvl4lcz
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	suit = /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	shoes = /obj/item/clothing/shoes/dutyboots
