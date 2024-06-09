@@ -1,4 +1,13 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aag" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "abb" = (
 /obj/machinery/artifact_harvester,
 /turf/simulated/floor/tiled/white/monotile,
@@ -97,6 +106,11 @@
 	icon_state = "dark"
 	},
 /area/site53/engineering/selfdestruct)
+"agk" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/remains/human,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "aho" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light,
@@ -384,6 +398,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
+"aEi" = (
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "aER" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled,
@@ -695,8 +713,17 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/briefing)
 "aZZ" = (
-/obj/effect/floor_decal/corner/brown/border,
-/obj/item/ammo_casing/rifle/used,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
+"bak" = (
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 1
+	},
+/obj/item/clothing/suit/fire/firefighter,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "baB" = (
@@ -1916,14 +1943,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchoffices)
-"czA" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "Lower LCZ Checkpoint Windows";
-	name = "Lower LCZ Checkpoint Windows"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "czJ" = (
 /turf/simulated/floor/beach/water,
 /area/site53/llcz/dclass/luxuryhall)
@@ -1958,6 +1977,11 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/shower)
+"cCc" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/item/stack/material/wood,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "cCL" = (
 /obj/structure/closet,
 /obj/item/device/camera,
@@ -2005,11 +2029,6 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"cGu" = (
-/obj/structure/disposalpipe/segment,
-/obj/item/stack/tile/vertical/white,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/hallways)
 "cGx" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile,
@@ -2263,26 +2282,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"cYm" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/item/remains/human,
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/item/clothing/under/rank/security/lcz/cadet,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/llcz/hallways)
 "dai" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -2308,16 +2307,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/purple,
 /area/site53/engineering/server_room)
-"daF" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/hallways)
 "dbi" = (
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/hallways)
@@ -2615,6 +2604,16 @@
 /obj/item/clothing/head/chefhat,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
+"dsW" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/obj/machinery/light/small/red{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "dtl" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/green{
@@ -2744,6 +2743,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"dBZ" = (
+/obj/item/stack/tile/mono/white,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "dCd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -2793,10 +2796,6 @@
 /obj/machinery/door/window/brigdoor/westleft,
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/lowres/Anomaly)
-"dEG" = (
-/mob/living/simple_animal/hostile/scarybat,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "dEP" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
@@ -2890,11 +2889,6 @@
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
-"dQi" = (
-/obj/effect/decal/cleanable/blood,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/cadet,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "dRv" = (
 /obj/machinery/door/blast/regular{
 	dir = 8;
@@ -3617,14 +3611,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
-"eJh" = (
-/obj/item/ammo_casing/rifle/used,
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	icon = 'icons/effects/blood.dmi'
-	},
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/hallways)
 "eJk" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -3684,11 +3670,8 @@
 /obj/item/tape_roll,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/engineering/maintenance/llczmaint)
-"eUP" = (
-/obj/machinery/contraband_detector,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/cells)
-"eVj" = (
+"eUj" = (
+/obj/effect/decal/cleanable/blood/drip,
 /obj/machinery/light/small/red{
 	dir = 8;
 	icon_state = "bulb1";
@@ -3696,6 +3679,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"eUP" = (
+/obj/machinery/contraband_detector,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells)
 "eWz" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "CDCZ Briefing Hall"
@@ -3770,6 +3757,26 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
+"fcR" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/llcz/hallways)
 "fep" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4304,6 +4311,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/mining/miningops)
+"fGo" = (
+/obj/structure/barricade,
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "fGu" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
@@ -4330,7 +4341,12 @@
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 1
 	},
-/obj/item/ammo_casing/rifle/used,
+/obj/item/remains/human,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/clothing/head/hardhat/firefighter{
+	pixel_y = 11
+	},
+/obj/item/material/twohanded/baseballbat,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "fIV" = (
@@ -4483,30 +4499,6 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/botany)
-"fSJ" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/item/ammo_casing/rifle/used,
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	icon = 'icons/effects/blood.dmi';
-	dir = 8
-	},
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "fTr" = (
 /obj/structure/table/woodentable/maple,
 /turf/simulated/floor/wood/maple,
@@ -5006,10 +4998,6 @@
 	id_tag = "Lower LCZ Flash"
 	},
 /obj/structure/railing/mapped,
-/obj/machinery/light/small/red{
-	dir = 1;
-	icon_state = "bulb1"
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/hallways)
 "gCg" = (
@@ -5156,6 +5144,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cryo)
+"gKh" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light/small/red{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/hallways)
 "gKo" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/structure/table/rack,
@@ -5257,28 +5253,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
-"gSj" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	icon = 'icons/effects/blood.dmi';
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/llcz/hallways)
 "gSp" = (
 /obj/machinery/door/airlock/civilian{
 	name = "CDCZ Kitchen";
@@ -5360,8 +5334,12 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
-/obj/item/ammo_casing/rifle/used,
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
 "gVq" = (
@@ -5384,13 +5362,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
-"gWC" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "gWS" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/window/northleft,
@@ -5471,6 +5442,10 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"has" = (
+/obj/item/ammo_casing/pistol/used,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "hat" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light,
@@ -5609,6 +5584,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"hff" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "hfu" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/white,
@@ -5762,6 +5746,32 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
+"huM" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	icon = 'icons/effects/blood.dmi';
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "hvF" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "D-Cells Checkpoint"
@@ -5946,13 +5956,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint)
-"hHu" = (
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 1
-	},
-/obj/item/clothing/suit/fire/firefighter,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "hHC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6007,6 +6010,24 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp895)
+"hKp" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/llcz/hallways)
 "hMH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -7215,7 +7236,9 @@
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 8
 	},
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "jui" = (
@@ -7293,6 +7316,23 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/lowres/Lowerresearchwing)
+"jzQ" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/llcz/hallways)
 "jAi" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/orange/border,
@@ -7510,7 +7550,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/lowernukeladders)
 "jTT" = (
-/obj/item/stack/tile/mono/white,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	icon = 'icons/effects/blood.dmi'
+	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
 "jTW" = (
@@ -7694,24 +7740,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "khE" = (
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /obj/item/ammo_casing/rifle/used{
 	caliber = "5.7x28mm"
 	},
 /turf/simulated/floor,
-/area/site53/llcz/hallways)
-"kii" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/item/ammo_casing/rifle/used,
-/obj/item/ammo_casing/rifle/used,
-/turf/simulated/floor/tiled/white/vertical,
 /area/site53/llcz/hallways)
 "kiD" = (
 /obj/structure/table/reinforced,
@@ -7822,6 +7857,10 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"kqW" = (
+/obj/item/clothing/head/helmet/scp/security,
+/turf/simulated/floor,
+/area/site53/llcz/mine/unexplored)
 "krx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -8146,6 +8185,16 @@
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/llcz/dclass/luxuryhall)
+"kTe" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/hallways)
 "kTy" = (
 /obj/machinery/light{
 	dir = 8
@@ -8268,14 +8317,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"leq" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/hallways)
 "leC" = (
 /obj/machinery/contraband_detector,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -8358,6 +8399,11 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"lhR" = (
+/obj/structure/disposalpipe/segment,
+/obj/item/stack/tile/vertical/white,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/hallways)
 "lip" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -8840,16 +8886,6 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/hallways)
-"lNV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/item/stack/tile/mono/white,
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	icon = 'icons/effects/blood.dmi'
-	},
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/hallways)
 "lOA" = (
 /obj/machinery/door/airlock/security{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
@@ -8886,6 +8922,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
+"lSp" = (
+/obj/structure/girder,
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "lSS" = (
 /obj/machinery/floodlight,
 /obj/machinery/light{
@@ -8958,15 +8998,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Lowerresearchwing)
-"lYB" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/effect/floor_decal/industrial/outline/orange,
-/mob/living/simple_animal/hostile/scarybat,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/hallways)
 "lYE" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 8
@@ -9044,10 +9075,6 @@
 /obj/item/storage/box/gloves,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
-"mbE" = (
-/obj/structure/barricade,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "mcA" = (
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/white/monotile,
@@ -9089,10 +9116,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
-"miV" = (
-/obj/item/stack/tile/vertical/white,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "mjY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -9219,6 +9242,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
+"moJ" = (
+/obj/item/remains/human,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
+"mpc" = (
+/obj/machinery/light/small/red{
+	dir = 8;
+	icon_state = "bulb1";
+	pixel_x = -11
+	},
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "mpd" = (
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/prepainted,
@@ -9290,7 +9326,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
 "mtU" = (
@@ -9743,18 +9781,6 @@
 "mXN" = (
 /turf/simulated/floor,
 /area/site53/reswing/lowres/Anomaly)
-"mYE" = (
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 1
-	},
-/obj/item/remains/human,
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/item/clothing/head/hardhat/firefighter{
-	pixel_y = 11
-	},
-/obj/item/material/twohanded/baseballbat,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "mYX" = (
 /obj/effect/floor_decal/corner/research/border{
 	dir = 10
@@ -9959,6 +9985,15 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
+"niF" = (
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 1
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "nkz" = (
 /obj/machinery/camera/network/lcz{
 	dir = 4
@@ -10146,10 +10181,12 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
 "nxS" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/light/small/red{
-	dir = 4;
-	icon_state = "bulb1"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/item/stack/tile/mono/white,
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	icon = 'icons/effects/blood.dmi'
 	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
@@ -10277,6 +10314,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cryo)
+"nJE" = (
+/obj/item/material/twohanded/baseballbat/metal,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/hallways)
 "nJJ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/anomaly_container,
@@ -10370,11 +10411,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp895)
-"nOp" = (
-/obj/effect/floor_decal/corner/red/border,
-/obj/item/stack/material/wood,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "nQH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10400,6 +10436,10 @@
 "nVr" = (
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
+"nVF" = (
+/obj/item/stack/tile/vertical/white,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "nVK" = (
 /obj/machinery/button/blast_door{
 	id_tag = "247lockdown";
@@ -10594,17 +10634,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/lowernukeladders)
-"ojl" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 1;
-	icon_state = "human1"
-	},
-/obj/item/ammo_casing/rifle/used,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "ojm" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -10618,10 +10647,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp1102room)
-"ojq" = (
-/obj/structure/girder,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "ojs" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -11556,6 +11581,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
+"pCe" = (
+/obj/effect/floor_decal/stoneborder/corner,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "pCt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11636,6 +11665,15 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/hallways)
+"pJs" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/effect/floor_decal/industrial/outline/orange,
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/floor/tiled/dark,
 /area/site53/llcz/hallways)
 "pJw" = (
 /obj/structure/closet,
@@ -11746,24 +11784,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
-"pNR" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/item/ammo_casing/rifle/used,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/llcz/hallways)
 "pPd" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -11845,11 +11865,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
-"pTf" = (
-/obj/item/ammo_casing/rifle/used,
-/obj/item/ammo_casing/rifle/used,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "pTQ" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -12005,6 +12020,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"qjr" = (
+/obj/item/stack/tile/vertical/white,
+/turf/simulated/floor,
+/area/site53/llcz/mine/unexplored)
 "qjC" = (
 /obj/machinery/light{
 	dir = 1
@@ -12058,10 +12077,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"qnN" = (
-/obj/item/material/twohanded/baseballbat/metal,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/hallways)
 "qom" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12094,12 +12109,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/shower)
-"qrx" = (
-/obj/effect/floor_decal/stoneborder{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "qsq" = (
 /obj/structure/dispenser/oxygen,
 /turf/simulated/floor/tiled/monotile,
@@ -12415,6 +12424,18 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
+"qIB" = (
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 8
+	},
+/obj/item/remains/human,
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/obj/item/clothing/under/rank/security/lcz/recontain,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "qIN" = (
 /obj/effect/floor_decal/corner/research/border{
 	dir = 4
@@ -12483,7 +12504,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "qMo" = (
@@ -12618,15 +12641,6 @@
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/foundation,
 /turf/simulated/floor/carpet/purple,
 /area/site53/engineering/server_room)
-"qVJ" = (
-/obj/effect/decal/cleanable/blood/drip,
-/obj/machinery/light/small/red{
-	dir = 8;
-	icon_state = "bulb1";
-	pixel_x = -11
-	},
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "qVO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
@@ -12835,10 +12849,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp8containment)
-"rlm" = (
-/obj/item/clothing/head/helmet/scp/security,
-/turf/simulated/floor,
-/area/site53/llcz/mine/unexplored)
 "rlq" = (
 /obj/effect/catwalk_plated,
 /obj/structure/cable/green{
@@ -13192,6 +13202,10 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp049containment)
+"rNa" = (
+/obj/effect/floor_decal/stoneborder,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "rNL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -13485,6 +13499,12 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/engineering/server_room)
+"seX" = (
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "sfB" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/orange/border,
@@ -13585,10 +13605,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
-"sme" = (
-/obj/effect/floor_decal/stoneborder,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "smH" = (
 /obj/structure/ladder/up,
 /obj/machinery/power/terminal{
@@ -13680,7 +13696,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "spZ" = (
@@ -14140,16 +14158,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/llcz/dclass/luxurylibrary)
-"tko" = (
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 8
-	},
-/obj/item/remains/human,
-/obj/effect/decal/cleanable/blood,
-/obj/item/ammo_casing/rifle/used,
-/obj/item/clothing/under/rank/security/lcz/recontain,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "tkr" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -14168,11 +14176,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"tlH" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/item/remains/human,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "tmt" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -14192,26 +14195,6 @@
 "tqa" = (
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
-"tqq" = (
-/obj/item/stack/tile/vertical/white,
-/turf/simulated/floor,
-/area/site53/llcz/mine/unexplored)
-"tsm" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/mob/living/simple_animal/hostile/scarybat,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
-"tsK" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 8
-	},
-/obj/item/ammo_casing/rifle/used,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/hallways)
 "tsZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -14339,6 +14322,11 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"tDF" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/clothing/suit/armor/vest/scp/medarmor/cadet,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "tEy" = (
 /turf/unsimulated/mineral,
 /area/site53/uhcz/scp106parts)
@@ -14381,10 +14369,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
-"tFI" = (
-/obj/item/ammo_casing/pistol/used,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "tHJ" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Outbreak Gear";
@@ -14694,10 +14678,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "uaF" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/item/stack/tile/vertical/white,
-/turf/simulated/floor/exoplanet/desert,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "Lower LCZ Checkpoint Windows";
+	name = "Lower LCZ Checkpoint Windows"
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "uaL" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -15033,24 +15019,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/assignment)
-"uvA" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/llcz/hallways)
 "uxw" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/cable/green{
@@ -15127,6 +15095,14 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"uFq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/glass/research{
+	name = "Hallway"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/hallways)
 "uFG" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -15628,6 +15604,12 @@
 "vvC" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
+"vwh" = (
+/obj/effect/floor_decal/stoneborder{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "vwm" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
@@ -16169,10 +16151,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/assignment)
-"wik" = (
-/obj/item/stack/tile/mono/white,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "wix" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -16226,10 +16204,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/briefing)
-"wkE" = (
-/obj/item/ammo_casing/rifle/used,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "wll" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
@@ -16370,11 +16344,6 @@
 /obj/item/storage/box/botanydisk,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/xenobotany)
-"wxE" = (
-/obj/item/remains/human,
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
 "wyn" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/cable/green{
@@ -16537,9 +16506,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "wIo" = (
-/obj/effect/floor_decal/stoneborder/corner,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
+/obj/effect/floor_decal/corner/brown/border,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "wJw" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -16549,6 +16521,14 @@
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/botany)
+"wLp" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/hallways)
 "wLS" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/button/blast_door{
@@ -16774,7 +16754,33 @@
 	id_tag = "Lower LCZ Flash"
 	},
 /obj/structure/railing/mapped,
+/obj/machinery/light/small/red{
+	dir = 1;
+	icon_state = "bulb1"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/hallways)
+"wZa" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	icon = 'icons/effects/blood.dmi';
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/hallways)
 "wZv" = (
 /obj/structure/table/reinforced,
@@ -16798,6 +16804,26 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
+"xbK" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/remains/human,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/clothing/under/rank/security/lcz/cadet,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/llcz/hallways)
 "xcd" = (
 /obj/structure/bed/chair/comfy/beige{
 	dir = 4
@@ -16822,7 +16848,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "tracks";
 	icon = 'icons/effects/blood.dmi';
@@ -16970,6 +16998,19 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/xenobotany)
+"xkX" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1;
+	icon_state = "human1"
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/hallways)
 "xlb" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -17199,6 +17240,10 @@
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
+"xCe" = (
+/obj/item/stack/tile/mono/white,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/hallways)
 "xDp" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -17523,7 +17568,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/ammo_casing/rifle/used,
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "tracks";
 	icon = 'icons/effects/blood.dmi';
@@ -17626,15 +17673,11 @@
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/primaryhallway)
-"ylb" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
-	},
-/obj/machinery/light/small/red{
-	dir = 1;
-	icon_state = "bulb1"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+"ykN" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/item/stack/tile/vertical/white,
+/turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/hallways)
 "ylN" = (
 /obj/machinery/nuke_cylinder_dispenser,
@@ -22902,7 +22945,7 @@ hIH
 xlb
 dUC
 unC
-eVj
+mpc
 unC
 kUH
 xlb
@@ -23418,7 +23461,7 @@ xfJ
 lDn
 mRf
 laj
-nOp
+cCc
 hvF
 ohE
 lDn
@@ -23672,11 +23715,11 @@ cMd
 bZC
 xlb
 bWT
-dQi
+tDF
 vMb
 wQr
 vAo
-czA
+uaF
 lDn
 lDn
 viI
@@ -24189,8 +24232,8 @@ mTw
 xlb
 pIz
 xlb
-czA
-czA
+uaF
+uaF
 owq
 ohE
 ijy
@@ -24446,10 +24489,10 @@ xlb
 cIp
 rot
 lDn
-czA
+uaF
 dmk
 qAh
-dEG
+aEi
 ijy
 xlb
 hIH
@@ -24962,7 +25005,7 @@ nLm
 jia
 fyy
 dBP
-leq
+wLp
 sVZ
 upv
 xlb
@@ -25219,7 +25262,7 @@ xft
 lvy
 aUt
 ftc
-tsm
+hff
 bZC
 bZC
 xlb
@@ -25733,9 +25776,9 @@ qXx
 phI
 iMp
 cWF
-daF
+kTe
 ohE
-lYB
+pJs
 xlb
 hIH
 hIH
@@ -26242,7 +26285,7 @@ pPd
 rNL
 pso
 oNB
-fIC
+niF
 jDU
 jtD
 oZE
@@ -26499,7 +26542,7 @@ tOD
 rNL
 pso
 uNK
-tlH
+agk
 jDU
 khE
 vQP
@@ -27778,15 +27821,15 @@ lam
 lam
 bVy
 lIO
-jTT
+xCe
 bZC
-qVJ
-tsK
-gWC
+eUj
+aag
+aZZ
 lIO
 hyn
-pNR
-aZZ
+fcR
+wIo
 lIO
 dbi
 dbi
@@ -28036,10 +28079,10 @@ bVy
 lqj
 lIO
 lDn
-jTT
+xCe
 bZC
-wkE
-tko
+seX
+qIB
 lIO
 qFA
 xct
@@ -28288,19 +28331,19 @@ hIH
 lam
 lam
 bVy
-tFI
-rlm
+has
+kqW
 bVy
-mbE
+fGo
 bZC
-qnN
+nJE
 jjc
 mtK
-kii
+jzQ
 pVW
 iEY
 ajJ
-jTT
+xCe
 gst
 dbi
 dbi
@@ -28548,12 +28591,12 @@ bVy
 hcP
 bVy
 qtn
-ojq
-jTT
+lSp
+xCe
 kJy
 kFZ
 lDn
-wkE
+seX
 lIO
 jpf
 sBS
@@ -28808,7 +28851,7 @@ lqj
 lIO
 poC
 lDn
-uvA
+hKp
 qFU
 jwx
 thh
@@ -29323,7 +29366,7 @@ lam
 lIO
 uNK
 kFZ
-aZZ
+wIo
 gst
 lam
 lam
@@ -29579,8 +29622,8 @@ lam
 lam
 lIO
 spY
-cYm
-pTf
+xbK
+khE
 gst
 lam
 emk
@@ -30092,9 +30135,9 @@ emk
 emk
 lam
 lIO
-ylb
-fSJ
-aZZ
+dsW
+huM
+wIo
 gst
 lam
 emk
@@ -30350,7 +30393,7 @@ emk
 lam
 lIO
 uNK
-pNR
+fcR
 cly
 gst
 lam
@@ -30864,7 +30907,7 @@ lam
 lam
 lIO
 uNK
-gSj
+wZa
 sBS
 gst
 lam
@@ -31377,7 +31420,7 @@ lIO
 lIO
 lIO
 naC
-mYE
+fIC
 ydX
 lDn
 dYv
@@ -31625,18 +31668,18 @@ emk
 emk
 emk
 emk
-miV
+nVF
 cuJ
 coe
-jTT
-ojl
+xCe
+xkX
 lrF
 kUH
 lIO
-hHu
-wkE
+bak
+seX
 cWC
-eJh
+jTT
 kMj
 lIO
 bVy
@@ -31888,21 +31931,21 @@ rKx
 bRu
 lxk
 gVa
-uaF
-bRu
-lNV
+ykN
+uFq
+nxS
 nwj
 rfs
-wxE
+moJ
 gxr
 hie
 sVB
-tqq
+qjr
 bVy
 emk
 emk
 emk
-wIo
+pCe
 lam
 lam
 lam
@@ -32142,8 +32185,8 @@ raV
 raV
 bOp
 xZI
-cGu
-nxS
+lhR
+gKh
 xBf
 hNJ
 dVr
@@ -32154,11 +32197,11 @@ lCZ
 fCD
 lIO
 lqj
-wik
+dBZ
 emk
 emk
 emk
-sme
+rNa
 cCX
 emk
 lam
@@ -32933,7 +32976,7 @@ lam
 emk
 emk
 bVy
-wIo
+pCe
 kzN
 bVy
 xRT
@@ -33191,7 +33234,7 @@ lam
 emk
 emk
 bVy
-qrx
+vwh
 cCX
 lam
 lam
