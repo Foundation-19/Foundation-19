@@ -30,7 +30,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9
-	name = "MK9 magazine (9mm)"
+	name = "Pistol Magazine (9mm)"
 	icon_state = "9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm
@@ -40,7 +40,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/rubber
-	name = "MK9 magazine (9mm Rubber)"
+	name = "Pistol Magazine (9mm Rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
@@ -66,7 +66,7 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 17
+	max_ammo = 12
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/a9mm
@@ -76,6 +76,46 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
+	max_ammo = 7
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a9mm/rubber
+	name = "pistol magazine (9mm)"
+	icon_state = "9x19pr"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 7
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a380
+	name = "pistol magazine (.380 ACP)"
+	icon_state = "9x19p"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c380
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".380"
+	max_ammo = 12
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a380
+	name = "pistol magazine (.380 ACP)"
+	icon_state = "9x19p"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c380
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".380"
+	max_ammo = 7
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a380/rubber
+	name = "pistol magazine (.380 ACP Rubber)"
+	icon_state = "9x19pr"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c380/rubber
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".380"
 	max_ammo = 12
 	multiple_sprites = 1
 
@@ -268,6 +308,36 @@
 	caliber = ".45"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/pistol/c45
+	max_ammo = 100
+
+/obj/item/ammo_magazine/box/a45/rubber
+	name = "ammunition box (.45 ACP Rubber)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``.45`` on the cartridge. It has a blue line for Rubber bullets. You can only guess what's in it."
+	icon_state = "box_45acpr"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = ".45"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/pistol/c45/rubber
+	max_ammo = 100
+
+/obj/item/ammo_magazine/box/a380
+	name = "ammunition box (.380 ACP)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``.380`` on the cartridge. You can only guess what's in it."
+	icon_state = "box_380acp"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = ".380"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/pistol/c380
+	max_ammo = 100
+
+/obj/item/ammo_magazine/box/a380/rubber
+	name = "ammunition box (.380 ACP Rubber)"
+	desc = "A hefty militarized ammunition cartridge. It's green, and says ``.380`` on the cartridge. It has a blue line for Rubber bullets. You can only guess what's in it."
+	icon_state = "box_380acpr"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = ".380"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/pistol/c380/rubber
 	max_ammo = 100
 
 /obj/item/ammo_magazine/box/a50

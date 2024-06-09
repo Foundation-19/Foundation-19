@@ -239,6 +239,17 @@
 	desc = "A .45 flash shell casing."
 	projectile_type = /obj/item/projectile/energy/flash
 
+/obj/item/ammo_casing/pistol/c380
+	desc = "A .380 bullet casing."
+	caliber = ".380"
+	projectile_type = /obj/item/projectile/bullet/pistol
+
+/obj/item/ammo_casing/pistol/c380/rubber
+	desc = "A .380 rubber bullet casing."
+	caliber = ".380"
+	icon_state = "pistol-brass-rubber"
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+
 /obj/item/ammo_casing/pistol/a57
 	desc = "A 5.7x28mm bullet casing."
 	caliber = "5.7x28mm"

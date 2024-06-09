@@ -185,8 +185,8 @@
 	fire_delay = 2
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/c45m
-	allowed_magazines = list(/obj/item/ammo_magazine/c45m, /obj/item/ammo_magazine/c45m/rubber)
+	magazine_type = /obj/item/ammo_magazine/scp/a380
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/a380)
 
 /obj/item/gun/projectile/pistol/p232/update_icon()
 	..()
@@ -216,4 +216,48 @@
 		icon_state = "makarov"
 	else
 		icon_state = "makarov-empty"
+	return
+
+/obj/item/gun/projectile/pistol/glock
+	name = "Glock 19"
+	desc = "The Glock is a brand of polymer-framed, short recoil-operated, striker-fired, locked-breech semi-automatic pistols designed and produced by Austrian manufacturer Glock Ges.m.b.H. The firearm entered Austrian military and police service by 1982 after becoming the top performer in reliability and safety tests. Chambered in 9x19mm."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "glock"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "9mm"
+	silenced = 0
+	fire_delay = 3
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/mk9
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9)
+
+/obj/item/gun/projectile/pistol/glock/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "glock"
+	else
+		icon_state = "glock-empty"
+	return
+
+/obj/item/gun/projectile/pistol/glock/spec
+	name = "Glock 30"
+	desc = "The Glock is a brand of polymer-framed, short recoil-operated, striker-fired, locked-breech semi-automatic pistols designed and produced by Austrian manufacturer Glock Ges.m.b.H. The firearm entered Austrian military and police service by 1982 after becoming the top performer in reliability and safety tests. This one is made to fire faster, and control better. Chambered in 9x19mm."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "glock-spec"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "9mm"
+	silenced = 0
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/mk9
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9)
+
+/obj/item/gun/projectile/pistol/glock/spec/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "glock-spec"
+	else
+		icon_state = "glock-spec-empty"
 	return
