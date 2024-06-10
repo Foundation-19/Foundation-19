@@ -3104,7 +3104,7 @@
 	id_tag = "facilitylockdown";
 	name = "Facility Lockdown button";
 	req_access = list("ACCESS_ADMIN_LEVEL4");
-	pixel_y = 3
+	pixel_y = 2
 	},
 /obj/structure/railing/mapped{
 	dir = 4
@@ -3189,14 +3189,16 @@
 	id_tag = "dchecknorth";
 	name = "North CDZ Blastdoors";
 	pixel_x = -5;
-	pixel_y = 3
+	pixel_y = 2;
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "dchecksouth";
 	name = "South CDZ Blastdoors";
 	pixel_x = 5;
-	pixel_y = 3
+	pixel_y = 2;
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
@@ -3241,14 +3243,16 @@
 	id_tag = "hczwest";
 	name = "West HCZ Entry Blast Doors";
 	pixel_x = -5;
-	pixel_y = 3
+	pixel_y = 2;
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "hczeast";
 	name = "East HCZ Entry Blast Doors";
 	pixel_x = 5;
-	pixel_y = 3
+	pixel_y = 2;
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
@@ -3357,7 +3361,8 @@
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Control"
+	name = "Communications Tower Lockdown Control";
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/machinery/light{
 	dir = 1
@@ -3649,7 +3654,7 @@
 "kT" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Center";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor{
@@ -3693,7 +3698,7 @@
 	},
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Center";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -5003,7 +5008,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Living Quarters";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/commstower)
@@ -7100,7 +7105,7 @@
 "Bb" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Center";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/small,
@@ -7311,7 +7316,7 @@
 "Ch" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Communications Living Quarters";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/structure/cable{
 	d1 = 1;

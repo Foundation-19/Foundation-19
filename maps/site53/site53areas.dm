@@ -102,6 +102,22 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
+/area/turbolift/site53/gatea
+	name = "lift (Gate A)"
+	lift_floor_label = "Gate A"
+	lift_floor_name = "Gate A"
+	lift_announce_str = "Arriving at Gate A."
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/turbolift/site53/hub
+	name = "lift (Hub)"
+	lift_floor_label = "Hub"
+	lift_floor_name = "Hub"
+	lift_announce_str = "Arriving at Hub."
+	requires_power = 0
+	dynamic_lighting = 1
+
 // SITE 53 TRAM AREA'S
 
 /area/site53/tram/car1
@@ -233,7 +249,13 @@
 // Site 53 upper surface area's
 
 /area/site53/upper_surface/entrancehallway
-	name = "\improper Site 53 Entrance"
+	name = "\improper Site 53 Gate B"
+	icon_state = "hallC1"
+//	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/upper_surface/entrancehallway2
+	name = "\improper Site 53 Gate A"
 	icon_state = "hallC1"
 //	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED
