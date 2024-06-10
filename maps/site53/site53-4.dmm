@@ -1,4 +1,16 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "ac" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -3340,6 +3352,11 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
@@ -8112,9 +8129,8 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -44019,7 +44035,7 @@ hk
 hk
 ak
 bx
-bu
+aa
 ka
 aU
 Fn
