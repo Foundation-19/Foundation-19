@@ -1,18 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/site53/maintenance/upper_surface)
 "ac" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -44036,7 +44022,7 @@ bx
 bu
 ka
 aU
-aa
+Fn
 Fn
 Fn
 Fn
