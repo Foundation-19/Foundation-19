@@ -4574,6 +4574,15 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/entrancehallway2)
+"lG" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "lH" = (
 /obj/machinery/light{
 	dir = 8
@@ -5716,6 +5725,15 @@
 	dir = 8
 	},
 /obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway)
+"qe" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate B External Gate"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "qg" = (
@@ -7358,12 +7376,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/entrancehallway)
-"xp" = (
-/obj/machinery/camera/network/entrance{
-	c_tag = "Gate A Outside"
-	},
-/turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
 "xq" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
@@ -7393,16 +7405,6 @@
 	dir = 1
 	},
 /area/site53/uez/goirepoffice)
-"xt" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/standard,
-/obj/machinery/recharger,
-/obj/machinery/camera/network/entrance{
-	dir = 1;
-	c_tag = "Gate B Security Office"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/upper_surface/entrancehallway)
 "xv" = (
 /obj/structure/bed/chair/wood{
 	dir = 4
@@ -7861,15 +7863,15 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/op2)
 "zA" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/table/standard,
+/obj/machinery/recharger,
 /obj/machinery/camera/network/entrance{
-	c_tag = "Gate A Internal Gate";
-	dir = 4
+	dir = 1;
+	c_tag = "Gate B Security Office"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/entrancehallway)
 "zB" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -8159,6 +8161,16 @@
 /obj/item/ammo_magazine/box/a57/rubber,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"AJ" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A External Gate";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "AK" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -8570,6 +8582,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
+"Cv" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A Internal Gate";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "CA" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -8657,20 +8679,6 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
-"CZ" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/entrance{
-	c_tag = "Gate A Elevator Upper"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "Dc" = (
 /obj/item/bedsheet,
 /obj/structure/bed,
@@ -10046,6 +10054,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/op1)
+"Jt" = (
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A Outside"
+	},
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "Ju" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -11021,16 +11035,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
-"Ov" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/machinery/camera/network/entrance{
-	c_tag = "Gate A External Gate";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "Oz" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -11643,15 +11647,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/entrancehallway2)
-"Rv" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "Rx" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -12229,11 +12224,16 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/machinery/camera/network/entrance{
-	c_tag = "Gate B External Gate"
+	c_tag = "Gate A Elevator Upper"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway)
+/area/site53/upper_surface/entrancehallway2)
 "Uj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/mapped{
@@ -46526,7 +46526,7 @@ dA
 dA
 dA
 lE
-CZ
+Uh
 RY
 TS
 TS
@@ -47302,14 +47302,14 @@ Rg
 DZ
 YO
 xE
-zA
+Cv
 DZ
 cC
 lE
 vu
 DZ
 YO
-Ov
+AJ
 dk
 lE
 lE
@@ -48842,7 +48842,7 @@ lE
 Hp
 Hu
 Hu
-Rv
+lG
 iO
 Hu
 Hu
@@ -48855,7 +48855,7 @@ Hu
 At
 lE
 lE
-xp
+Jt
 bm
 bm
 jg
@@ -49833,7 +49833,7 @@ Ym
 Al
 Mf
 MF
-xt
+zA
 bG
 oS
 rm
@@ -50336,7 +50336,7 @@ dA
 dA
 dA
 Xz
-Uh
+qe
 CV
 tG
 tG

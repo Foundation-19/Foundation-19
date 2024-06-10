@@ -102,6 +102,12 @@
 /obj/item/clothing/gloves/thick/botany/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
 
+/obj/item/clothing/gloves/thick/miner
+	name = "heavy work gloves"
+	desc = "Some brown heavy gloves issued to mining D-Class personnel, very annoying to use with anything other than mining equipment. Has that classic prisoner color on the knuckles."
+	icon_state = "minegloves"
+	item_state = "minegloves"
+
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
 	desc = "Sterile latex gloves."

@@ -8190,9 +8190,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
 "avS" = (
-/obj/effect/floor_decal/corner/green/border{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkcryo)
 "avU" = (
@@ -20170,7 +20167,12 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/industrial/firstaid{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
 /area/site53/llcz/dclass/checkcryo)
 "blD" = (
 /obj/effect/floor_decal/corner/black/border{
@@ -20448,10 +20450,8 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "btb" = (
-/obj/effect/floor_decal/corner/green/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/corner/green/border,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/dclass/checkcryo)
 "btu" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -23003,10 +23003,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
-"cVg" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/lowertrams/hub)
 "cVu" = (
 /obj/structure/sign/scp/keter_scp{
 	pixel_y = 32
@@ -29929,6 +29925,13 @@
 "hyr" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
+"hyE" = (
+/obj/structure/cryofeed{
+	dir = 1
+	},
+/obj/structure/window/basic,
+/turf/simulated/floor/greengrid,
+/area/site53/llcz/dclass/checkcryo)
 "hzp" = (
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
@@ -30200,6 +30203,9 @@
 "hFm" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -33556,6 +33562,12 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"jMO" = (
+/obj/machinery/cryopod{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/llcz/dclass/checkcryo)
 "jNc" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/bed/chair,
@@ -37315,7 +37327,9 @@
 	dir = 6
 	},
 /obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
 /area/site53/llcz/dclass/checkcryo)
 "mhP" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -38362,7 +38376,7 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/llcz/dclass/checkcryo)
 "mIA" = (
 /obj/structure/closet/secure_closet/guard/lcz,
@@ -45286,18 +45300,17 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
 "qQy" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/green/mono,
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	c_tag = "CDCZ Staff Cryogenics"
 	},
-/obj/machinery/status_display{
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/machinery/computer/cryopod{
 	pixel_x = -32
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/llcz/dclass/checkcryo)
 "qQN" = (
 /obj/effect/floor_decal/corner/red/mono,
@@ -47069,13 +47082,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "rWv" = (
-/obj/machinery/computer/cryopod{
-	pixel_y = 25
-	},
 /obj/effect/floor_decal/corner/green/border{
-	dir = 9
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/industrial/firstaid{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/dclass/checkcryo)
 "rWA" = (
 /turf/simulated/floor/tiled/monotile/white,
@@ -50053,14 +50066,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
 "tGj" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/green/mono,
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white/corner,
 /area/site53/llcz/dclass/checkcryo)
 "tGo" = (
 /obj/machinery/conveyor_switch{
@@ -51630,6 +51642,10 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/maintenance)
+"uPb" = (
+/obj/effect/paint_stripe/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/hub)
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
@@ -56545,6 +56561,20 @@
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/securitypost)
+"ybM" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/firstaid{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/llcz/dclass/checkcryo)
 "ybV" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -59680,8 +59710,8 @@ bLX
 bLX
 bLX
 bLX
-xcT
-xcT
+bLX
+bLX
 bLX
 bLX
 bLX
@@ -59937,8 +59967,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -60194,8 +60224,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -60451,8 +60481,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -60708,8 +60738,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -60965,8 +60995,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -61209,8 +61239,8 @@ azA
 azA
 azA
 azA
-azA
-kwD
+gdH
+gdH
 gdH
 gdH
 gdH
@@ -61222,8 +61252,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -61466,10 +61496,10 @@ azA
 azA
 azA
 azA
-azA
-azA
 gdH
-tGj
+hyE
+jMO
+ybM
 qQy
 tGj
 kIn
@@ -61479,8 +61509,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -61723,9 +61753,9 @@ azA
 azA
 azA
 azA
-azA
-azA
 gdH
+hyE
+jMO
 rWv
 avS
 btb
@@ -61736,8 +61766,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -61981,8 +62011,8 @@ azA
 nWO
 nWO
 nWO
-azA
-gdH
+hyE
+jMO
 blm
 mIt
 mhB
@@ -61993,8 +62023,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -62238,7 +62268,7 @@ nWO
 nWO
 kPt
 nWO
-nWO
+gdH
 gdH
 gdH
 sDd
@@ -62250,8 +62280,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -62507,8 +62537,8 @@ uis
 uis
 uis
 uis
-tjK
-vnW
+uis
+uis
 uis
 uis
 uis
@@ -62764,8 +62794,8 @@ kju
 kju
 kju
 kju
-xcT
-xcT
+kju
+kju
 kju
 kju
 kju
@@ -89429,12 +89459,12 @@ vXh
 aaf
 aAF
 fQk
-cVg
-cVg
-cVg
-cVg
-cVg
-cVg
+uPb
+uPb
+uPb
+uPb
+uPb
+uPb
 aYJ
 pfh
 hOk
@@ -90457,12 +90487,12 @@ abY
 aPK
 lEx
 ahj
-cVg
-cVg
-cVg
-cVg
-cVg
-cVg
+uPb
+uPb
+uPb
+uPb
+uPb
+uPb
 aPK
 aPK
 aPK

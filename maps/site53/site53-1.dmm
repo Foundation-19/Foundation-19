@@ -13713,6 +13713,10 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"src" = (
+/obj/item/clothing/head/hardhat/dclassminer,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "srm" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -14524,7 +14528,7 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
 "tRI" = (
-/obj/item/pickaxe,
+/obj/item/pickaxe/silver,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "tSD" = (
@@ -14571,6 +14575,8 @@
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/clothing/suit/apron/overalls/dminer,
+/obj/item/clothing/gloves/thick/miner,
+/obj/item/clothing/head/hardhat/dclassminer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "tUa" = (
@@ -35096,7 +35102,7 @@ xRT
 emk
 emk
 xRT
-bVy
+src
 vme
 xRT
 lam
