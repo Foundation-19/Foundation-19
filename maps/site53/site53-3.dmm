@@ -4891,6 +4891,15 @@
 /obj/structure/flora/grass/green,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"mU" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway)
 "mV" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -4914,15 +4923,6 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/logistics/logisticsbreak)
-"na" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "nb" = (
 /obj/machinery/contraband_detector,
 /obj/effect/floor_decal/industrial/loading{
@@ -5550,15 +5550,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
-"px" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/machinery/status_display{
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "pz" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6516,17 +6507,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
-"tj" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/standard,
-/obj/machinery/recharger,
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	c_tag = "EZ Checkpoint";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/upper_surface/entrancehallway)
 "tk" = (
 /obj/item/modular_computer/console/preset/civilian{
 	dir = 4;
@@ -9597,6 +9577,15 @@
 /obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/hall)
+"Hn" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "Ho" = (
 /obj/machinery/vitals_monitor,
 /obj/structure/cable/green{
@@ -9658,6 +9647,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/bridge)
+"Hz" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/table/standard,
+/obj/machinery/recharger,
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network");
+	c_tag = "EZ Checkpoint";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/entrancehallway)
 "HB" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -12209,13 +12209,13 @@
 /area/site53/logistics/logisticsbreak)
 "Uh" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
+	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
+/obj/machinery/status_display{
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway)
+/area/site53/upper_surface/entrancehallway2)
 "Uj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/mapped{
@@ -42625,14 +42625,14 @@ dA
 ZE
 dw
 ZE
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 ZE
 Gg
 af
@@ -42882,14 +42882,14 @@ ZE
 ZE
 dw
 ZE
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 ZE
 di
 af
@@ -43139,14 +43139,14 @@ Ra
 GO
 XO
 ZE
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 ZE
 Gg
 ZE
@@ -43396,14 +43396,14 @@ ZE
 ZE
 ZE
 ZE
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 ZE
 dp
 ZE
@@ -43648,15 +43648,15 @@ MX
 cp
 ES
 MX
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
-xP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 ur
 ur
 ur
@@ -43913,7 +43913,7 @@ mk
 mk
 Az
 mk
-xP
+dA
 ur
 Ip
 rS
@@ -46503,10 +46503,10 @@ gs
 gs
 gs
 TZ
-oS
-oS
-oS
-oS
+dA
+dA
+dA
+dA
 dA
 lE
 Ia
@@ -46760,11 +46760,11 @@ fq
 fq
 fq
 fq
-rm
-rm
-rm
-oS
-oS
+dA
+dA
+dA
+dA
+dA
 lE
 lA
 RY
@@ -47017,11 +47017,11 @@ fq
 qV
 uQ
 fq
-rm
-rm
-rm
-rm
-oS
+dA
+dA
+dA
+dA
+dA
 lE
 yr
 RY
@@ -47274,16 +47274,16 @@ fq
 su
 fq
 fq
-rm
-rm
-rm
-rm
 oS
+oS
+oS
+dA
+dA
 lE
 Ia
 Rg
 DZ
-px
+Uh
 xE
 YO
 DZ
@@ -47291,7 +47291,7 @@ cC
 lE
 vu
 DZ
-px
+Uh
 YO
 dk
 lE
@@ -47533,8 +47533,8 @@ uQ
 fq
 rm
 rm
-rm
-rm
+oS
+oS
 oS
 lE
 dg
@@ -48825,7 +48825,7 @@ lE
 Hp
 Hu
 Hu
-na
+Hn
 iO
 Hu
 Hu
@@ -49816,7 +49816,7 @@ Ym
 Al
 Mf
 MF
-tj
+Hz
 bG
 oS
 rm
@@ -50319,7 +50319,7 @@ dA
 dA
 dA
 Xz
-Uh
+mU
 CV
 tG
 tG
