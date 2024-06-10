@@ -54,6 +54,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"aec" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignment)
 "aez" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 5
@@ -831,11 +841,11 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
+/obj/structure/table/reinforced,
 /obj/machinery/camera/network/lcz{
 	dir = 4;
 	c_tag = "CDCZ Assignments Post South"
 	},
-/obj/structure/table/reinforced,
 /obj/item/card/id/dassignment/dmedical,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
@@ -1345,7 +1355,7 @@
 /obj/effect/floor_decal/corner/brown/border,
 /obj/effect/decal/cleanable/blood,
 /obj/item/remains/human,
-/obj/item/clothing/head/hardhat,
+/obj/item/clothing/head/hardhat/dclassminer,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "bLq" = (
@@ -1625,6 +1635,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
+/obj/item/clothing/gloves/thick/miner,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
 "cbP" = (
@@ -2351,6 +2362,21 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
+"ddf" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/obj/item/card/id/dassignment/dmining,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignment)
 "dds" = (
 /obj/machinery/light{
 	dir = 8
@@ -2916,6 +2942,12 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/purple,
 /area/site53/engineering/server_room)
+"dTt" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/table/reinforced,
+/obj/item/storage/laundry_basket,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "dTE" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -3058,13 +3090,11 @@
 /area/site53/lhcz/scp049containment)
 "ebh" = (
 /obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/head/collectable/hardhat{
-	pixel_y = 17
-	},
 /obj/structure/statue{
 	desc = "A plaque on the statue reads: 'For once he stood here, a friend in orange. The Liberator.'";
 	name = "statue of The Liberator"
 	},
+/obj/item/clothing/suit/apron/overalls/dminer,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
 "ecQ" = (
@@ -3097,18 +3127,17 @@
 /area/site53/engineering/maintenance/llczmaint)
 "eei" = (
 /obj/structure/table/rack,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 10
 	},
+/obj/item/clothing/under/scp/dclass/turtleneck,
+/obj/item/clothing/under/scp/dclass/turtleneck,
+/obj/item/clothing/under/scp/dclass/turtleneck,
+/obj/item/clothing/under/scp/dclass/turtleneck,
+/obj/item/clothing/under/scp/dclass/turtleneck,
+/obj/item/clothing/under/scp/dclass/turtleneck,
+/obj/item/clothing/under/scp/dclass/turtleneck,
+/obj/item/clothing/under/scp/dclass/turtleneck,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "eex" = (
@@ -4268,6 +4297,10 @@
 /obj/item/stack/material/plasteel/fifty,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
+"fDY" = (
+/obj/item/clothing/head/hardhat/dclassminer,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "fEt" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled,
@@ -4947,6 +4980,12 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
+"gyy" = (
+/obj/machinery/door/airlock/glass/civilian{
+	name = "CDCZ Laundry Room"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/dclass/primaryhallway)
 "gyK" = (
 /obj/effect/floor_decal/spline/plain/white,
 /turf/simulated/floor/wood/yew,
@@ -5538,6 +5577,13 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/llcz/mine/unexplored)
+"hcO" = (
+/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "hcP" = (
 /obj/effect/decal/cleanable/blood,
 /obj/item/remains/human,
@@ -5843,6 +5889,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"hBO" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/table/rack,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "hBX" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/structure/closet/crate/large,
@@ -6103,6 +6162,7 @@
 /area/site53/reswing/lowres/researchmaint2)
 "hQQ" = (
 /obj/structure/railing/mapped,
+/obj/item/clothing/head/hardhat/dclassminer,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
 "hSj" = (
@@ -6299,6 +6359,12 @@
 /obj/machinery/camera/network/hcz,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
+"igO" = (
+/obj/effect/floor_decal/corner/orange/bordercee{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "ijv" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -6950,12 +7016,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/contraband_detector,
-/obj/machinery/door/airlock/civilian{
-	name = "CDCZ Luxury Hall";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_LUXURY"))
+/obj/machinery/door/airlock/glass/civilian{
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_LUXURY"));
+	name = "CDCZ Luxury Hall"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/luxuryhall)
 "jaC" = (
 /obj/item/modular_computer/laptop,
@@ -6994,9 +7059,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "jce" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
+/obj/item/clothing/shoes/workboots,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
 "jcl" = (
@@ -7034,6 +7097,19 @@
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"jgs" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "jhy" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -7492,6 +7568,12 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/lhcz/scp049containment)
+"jNR" = (
+/obj/effect/floor_decal/corner/orange/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "jPP" = (
 /obj/structure/bed,
 /turf/simulated/floor/tiled/white,
@@ -8489,12 +8571,12 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/obj/item/clothing/under/scp/dclass,
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "tracks";
 	icon = 'icons/effects/blood.dmi';
 	dir = 9
 	},
+/obj/item/clothing/under/scp/hdclass,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/hallways)
 "loF" = (
@@ -8965,6 +9047,22 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/hallway)
+"lTK" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/table/rack,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/clothing/under/scp/dclass/short,
+/obj/item/clothing/under/scp/dclass/short,
+/obj/item/clothing/under/scp/dclass/short,
+/obj/item/clothing/under/scp/dclass/short,
+/obj/item/clothing/under/scp/dclass/short,
+/obj/item/clothing/under/scp/dclass/short,
+/obj/item/clothing/under/scp/dclass/short,
+/obj/item/clothing/under/scp/dclass/short,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "lUX" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -10237,6 +10335,14 @@
 /obj/effect/floor_decal/corner/grey/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/shower)
+"nDz" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/machinery/washing_machine,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "nEK" = (
 /obj/machinery/door/airlock/civilian{
 	name = "CDCZ Cryogenics"
@@ -11164,7 +11270,6 @@
 /area/site53/lhcz/scp049containment)
 "oRy" = (
 /obj/structure/table/rack,
-/obj/item/clothing/shoes/workboots,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/shoes/workboots,
@@ -12757,6 +12862,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "rdt" = (
+/obj/structure/flora/pottedplant/minitree,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
@@ -13293,7 +13399,18 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/structure/closet/crate/bin,
+/obj/structure/table/reinforced,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/item/card/id/dassignment/djanitorial,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "rSE" = (
@@ -13713,10 +13830,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"src" = (
-/obj/item/clothing/head/hardhat/dclassminer,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
 "srm" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -13826,6 +13939,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
+"sCJ" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/table/rack,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/obj/item/clothing/under/scp/dclass/undershirt,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "sEg" = (
 /obj/structure/hygiene/sink/kitchen{
 	pixel_y = 22
@@ -14030,6 +14156,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
+/obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "sXP" = (
@@ -14199,6 +14326,21 @@
 "tqa" = (
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp049containment)
+"tsq" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/obj/item/card/id/dassignment/dkitchen,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignment)
 "tsZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -15484,6 +15626,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"vpt" = (
+/obj/effect/paint_stripe/orange,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/r_titanium,
+/area/site53/llcz/dclass/primaryhallway)
 "vpW" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6
@@ -16483,6 +16630,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
+"wFU" = (
+/obj/effect/floor_decal/corner/green/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/botany)
 "wFY" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17669,6 +17820,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"yjj" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/machinery/washing_machine,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "yko" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -18389,13 +18545,13 @@ sos
 tZy
 tAY
 xTs
-rSC
-beu
-sos
-tZy
-tAY
-xTs
 htH
+beu
+aec
+ddf
+tZy
+rSC
+tsq
 rdt
 iSy
 ikN
@@ -23260,9 +23416,9 @@ cKd
 xJq
 srm
 srm
+cKd
 srm
-srm
-pHn
+tmt
 sNM
 kql
 mwo
@@ -23776,7 +23932,7 @@ jTW
 doB
 jTW
 jTW
-pHn
+tmt
 jKk
 jKk
 jKk
@@ -26351,7 +26507,7 @@ cGB
 tZZ
 tZZ
 iuR
-nBR
+wFU
 kjW
 lLi
 mwo
@@ -27907,7 +28063,7 @@ atU
 nGe
 nGe
 nGe
-nGe
+gyy
 nGe
 nGe
 nGe
@@ -28163,8 +28319,8 @@ jvU
 cdm
 bYD
 bgW
-hIH
-hIH
+hBO
+igO
 aqR
 aqR
 aqR
@@ -28420,8 +28576,8 @@ nzF
 nzF
 hsH
 rum
-hIH
-hIH
+lTK
+hcO
 aqR
 ijv
 etl
@@ -28677,8 +28833,8 @@ vfM
 nzF
 fhq
 rum
-hIH
-hIH
+sCJ
+hcO
 aqR
 eIu
 ijv
@@ -28934,8 +29090,8 @@ nHd
 nzF
 kQM
 rum
-hIH
-hIH
+jgs
+hcO
 aqR
 dit
 xPI
@@ -29191,8 +29347,8 @@ jwY
 nzF
 sfB
 rum
-hIH
-hIH
+dTt
+hcO
 aqR
 acC
 sZP
@@ -29448,8 +29604,8 @@ nHd
 nzF
 iCK
 rum
-hIH
-hIH
+nDz
+hcO
 aqR
 sVS
 vTh
@@ -29705,8 +29861,8 @@ dwg
 nzF
 fhq
 rum
-hIH
-hIH
+yjj
+jNR
 aqR
 sVS
 vTh
@@ -29962,7 +30118,7 @@ nzF
 nzF
 hsH
 rdu
-bSa
+vpt
 uxD
 aqR
 phE
@@ -35102,7 +35258,7 @@ xRT
 emk
 emk
 xRT
-src
+fDY
 vme
 xRT
 lam

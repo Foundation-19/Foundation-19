@@ -1,17 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
-/area/site53/uez/mcrsubstation)
+/area/site53/maintenance/upper_surface)
 "ac" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -927,8 +928,13 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
 "cP" = (
-/obj/structure/lattice,
-/turf/simulated/open,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "cQ" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -1209,15 +1215,15 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
 "dv" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -2042,12 +2048,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/power/apc{
-	dir = 4
-	},
 /obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
@@ -2155,9 +2159,9 @@
 /area/site53/uez/hallway)
 "gf" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -2696,9 +2700,9 @@
 	dir = 6
 	},
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 1;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2745,9 +2749,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "id" = (
-/obj/machinery/light/small,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
-/area/site53/uez/mcrsubstation)
+/area/site53/surface/surface)
 "ie" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	name = "Guard Commander's Office"
@@ -3341,6 +3349,14 @@
 /obj/machinery/computer/station_alert/all,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
+"ka" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "kb" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -3352,8 +3368,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
-/area/site53/maintenance/upper_surface)
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/surface/surface)
 "kd" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -3413,9 +3431,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/maintenance/upper_surface)
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/surface/surface)
 "ko" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -3521,8 +3540,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/plating,
-/area/site53/maintenance/upper_surface)
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/surface/surface)
 "kC" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/computer/station_alert/all{
@@ -3741,13 +3762,13 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
@@ -5380,12 +5401,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "sL" = (
-/obj/structure/bed/chair/comfy{
-	dir = 1;
-	name = "Assistant Medical Director's chair"
-	},
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
+	},
+/obj/structure/bed/chair/comfy/blue{
+	dir = 1;
+	name = "Assistant Medical Director's chair"
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
@@ -5476,12 +5497,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "tv" = (
-/obj/structure/bed/chair/comfy/green{
-	dir = 4;
-	name = "Medical Director's chair"
-	},
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
+	},
+/obj/structure/bed/chair/comfy/blue{
+	dir = 4;
+	name = "Medical Director's chair"
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uez/conference)
@@ -6869,9 +6890,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 1;
+	d1 = 2;
 	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -8105,8 +8126,9 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -8123,6 +8145,10 @@
 /obj/effect/floor_decal/corner/beige/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"GN" = (
+/obj/effect/floor_decal/corner/black/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "GP" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9376,7 +9402,6 @@
 /area/site53/uez/commandpanicbunker)
 "Nv" = (
 /obj/effect/floor_decal/corner/blue/mono,
-/obj/structure/table/reinforced,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -10007,6 +10032,9 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4;
 	icon_state = "bordercolor"
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uez/conference)
@@ -11591,6 +11619,14 @@
 /obj/item/stack/material/tritium/fifty,
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
+"XX" = (
+/obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 32;
+	icon_state = "32-1"
+	},
+/turf/simulated/open,
+/area/site53/uez/mcrsubstation)
 "XY" = (
 /obj/effect/floor_decal/corner/green/half{
 	dir = 1
@@ -11766,6 +11802,16 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
+"YX" = (
+/obj/machinery/power/apc{
+	dir = 4
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/substation)
 "Zd" = (
 /obj/structure/table/steel,
 /obj/machinery/light{
@@ -11824,6 +11870,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"Zq" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "Zs" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/machinery/flasher{
@@ -36809,21 +36863,21 @@ xv
 xv
 xv
 kx
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -37080,7 +37134,7 @@ kc
 kc
 kc
 kB
-xv
+WQ
 WQ
 WQ
 WQ
@@ -37323,21 +37377,21 @@ if
 if
 fz
 xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
-xv
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
 kn
-xv
+WQ
 WQ
 WQ
 WQ
@@ -37593,7 +37647,7 @@ hZ
 hZ
 hZ
 hZ
-fz
+id
 hZ
 hZ
 hZ
@@ -43725,10 +43779,10 @@ ak
 ak
 ak
 ak
-ak
-ak
-ak
-ak
+xv
+xv
+xv
+xv
 xv
 xv
 xv
@@ -43980,12 +44034,12 @@ hk
 ak
 bx
 bu
-bu
-bu
-aa
-gf
-an
+ka
 aU
+aa
+Fn
+Fn
+Fn
 Fn
 Fn
 Fn
@@ -44233,16 +44287,16 @@ fC
 fC
 fC
 fC
-fC
-fC
-fC
+ak
 ak
 bA
 bu
-bu
-hH
-id
+cP
 ak
+xv
+xv
+xv
+xv
 xv
 xv
 xv
@@ -44490,16 +44544,16 @@ fP
 fw
 fw
 fw
-fw
-fw
-fw
 aU
-an
+gf
 an
 an
 hJ
-cP
 ak
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -44747,16 +44801,16 @@ fC
 fC
 fC
 fC
-fC
-fC
-fC
+ak
+hH
+bu
 ak
 ak
 ak
-ak
-ak
-ak
-ak
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -45004,10 +45058,10 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
+ak
+Zq
+XX
+ak
 hk
 hk
 hk
@@ -45261,10 +45315,10 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
+ak
+ak
+ak
+ak
 hk
 hk
 hk
@@ -45483,11 +45537,11 @@ Ah
 aI
 SP
 SP
-cK
-cK
-cK
-cK
-cK
+cJ
+cJ
+cJ
+YX
+cJ
 cK
 hk
 hk
@@ -45739,13 +45793,13 @@ oB
 gL
 aI
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+cK
+cK
+cK
+cK
+cK
+cK
+cK
 hk
 hk
 hk
@@ -46483,7 +46537,7 @@ Nv
 GD
 YJ
 NJ
-NJ
+GN
 Nk
 Jd
 dF
@@ -46993,11 +47047,11 @@ dF
 dF
 mg
 If
-fi
+Jd
 fi
 YJ
 NJ
-NJ
+GN
 Nk
 jj
 dF

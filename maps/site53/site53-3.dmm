@@ -895,7 +895,6 @@
 	d2 = 10;
 	icon_state = "0-10"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/maintenance/surfacewest)
 "cr" = (
@@ -1359,13 +1358,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "dr" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -1445,12 +1444,12 @@
 /obj/machinery/power/apc/hyper{
 	dir = 1
 	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -2437,6 +2436,11 @@
 /area/site53/upper_surface/breachshelter)
 "gm" = (
 /obj/effect/floor_decal/corner/beige/bordercee,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "gn" = (
@@ -4890,6 +4894,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"mR" = (
+/obj/effect/floor_decal/corner/beige/border,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "mS" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9
@@ -5867,6 +5880,11 @@
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 1
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "qL" = (
@@ -6357,6 +6375,11 @@
 /area/site53/logistics/logisticsbreak)
 "sr" = (
 /obj/effect/floor_decal/corner/beige/bordercorner,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "su" = (
@@ -6603,6 +6626,11 @@
 	},
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -7062,6 +7090,17 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"vU" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "vV" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/red/border{
@@ -7309,6 +7348,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/logistics/logisticsbreak)
+"wZ" = (
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "xc" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -8838,6 +8888,11 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/bridge)
 "DQ" = (
@@ -9034,7 +9089,6 @@
 	icon_state = "0-8"
 	},
 /obj/structure/cable/green,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/maintenance/surfacewest)
 "ET" = (
@@ -9176,6 +9230,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/maintenance/maintenancetunnel)
+"Ft" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "Fu" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -10205,6 +10267,20 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
+"Ks" = (
+/obj/effect/floor_decal/corner/beige/border,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "Ku" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11341,6 +11417,17 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway2)
+"Qd" = (
+/obj/machinery/door/airlock/civilian{
+	name = "Unisex Restrooms"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/bridge)
 "Qe" = (
 /turf/simulated/wall/wood,
 /area/site53/surface/surface)
@@ -11848,6 +11935,15 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/roboticsupr)
+"SA" = (
+/obj/effect/floor_decal/corner/beige/border,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "SB" = (
 /obj/structure/filingcabinet/wallcabinet,
 /obj/effect/paint_stripe/orange,
@@ -12378,6 +12474,15 @@
 "UQ" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op3)
+"UR" = (
+/obj/structure/cable{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable,
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
@@ -13152,6 +13257,14 @@
 /obj/item/crowbar,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
+"Yx" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "Yz" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/hologram/holopad,
@@ -13291,6 +13404,11 @@
 /obj/effect/floor_decal/corner/beige/bordercee{
 	dir = 1
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "YX" = (
@@ -13359,6 +13477,14 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/uez/repoffice/ethics)
+"Zr" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "Zs" = (
 /obj/machinery/holosign/surgery{
 	dir = 8;
@@ -13473,6 +13599,12 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
+"ZK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/mcrsubstation)
 "ZL" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -44194,7 +44326,7 @@ Wb
 ur
 ur
 dC
-lg
+Ks
 ef
 eE
 eE
@@ -44450,8 +44582,8 @@ vj
 zO
 rS
 zW
-am
-lg
+wZ
+SA
 eg
 eF
 fa
@@ -44707,7 +44839,7 @@ zO
 zO
 zO
 db
-am
+vU
 lg
 dD
 eP
@@ -44964,7 +45096,7 @@ zO
 zO
 vr
 Ob
-am
+vU
 lg
 dD
 eP
@@ -45221,7 +45353,7 @@ rV
 Si
 Uw
 Ob
-am
+vU
 lg
 fq
 fq
@@ -45735,7 +45867,7 @@ lY
 Tp
 tb
 lM
-am
+vU
 lg
 uS
 rL
@@ -45992,9 +46124,9 @@ uk
 Jk
 HG
 lM
-am
-lg
-uZ
+dr
+mR
+Qd
 gm
 tL
 tL
@@ -46002,7 +46134,7 @@ tL
 tL
 YW
 DP
-gs
+Ft
 ed
 gs
 af
@@ -46259,7 +46391,7 @@ uC
 Do
 Bq
 fq
-gs
+Zr
 ed
 gs
 af
@@ -46516,9 +46648,9 @@ bf
 Do
 vl
 fq
-gs
-gs
-gs
+Yx
+ZK
+UR
 TZ
 dA
 dA

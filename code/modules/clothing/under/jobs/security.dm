@@ -117,6 +117,12 @@
 	icon_state = "uiuclothes"
 	worn_state = "uiuclothes"
 
+/obj/item/clothing/under/rank/civilian/uiu/formal
+	name = "Federal Bureau of Investigation formal suit"
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in FBI colors, with some khaki pants. Usually the outfit of a UIU Relations Agent."
+	icon_state = "uiuformal"
+	worn_state = "uiuformal"
+
 /obj/item/clothing/suit/gocjacket
 	name = "Global Occult Coalition formal jacket"
 	desc = "A cyan formal coat, those who wear this are executive officers of the Global Occult Coalition, with insignia of such."

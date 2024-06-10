@@ -66,7 +66,7 @@
 
 /decl/hierarchy/outfit/job/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
-	uniform = /obj/item/clothing/under/rank/civilian/uiu
+	uniform = /obj/item/clothing/under/rank/civilian/uiu/formal
 	suit = /obj/item/clothing/suit/uiucoat
 	shoes = /obj/item/clothing/shoes/dress
 	glasses = /obj/item/clothing/glasses/sunglasses

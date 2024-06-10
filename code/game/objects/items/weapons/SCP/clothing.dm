@@ -30,6 +30,21 @@
 	desc = "A bright orange jumpsuit, indicative of Class D personnel."
 	icon_state = "d"
 
+/obj/item/clothing/under/scp/dclass/short
+	name = "Short Sleeved D-Class uniform"
+	desc = "A bright orange jumpsuit, indicative of Class D personnel. This one has short sleeves."
+	icon_state = "dr"
+
+/obj/item/clothing/under/scp/dclass/undershirt
+	name = "Undershirt D-Class uniform"
+	desc = "A bright orange jumpsuit, indicative of Class D personnel. This one is missing the upper button-up shirt, showing a white short sleeved shirt."
+	icon_state = "ds"
+
+/obj/item/clothing/under/scp/dclass/turtleneck
+	name = "Turtleneck D-Class uniform"
+	desc = "A bright orange jumpsuit, indicative of Class D personnel. This one has a quite well-kempt turtleneck above the uniform."
+	icon_state = "dt"
+
 /obj/item/clothing/under/scp/eclass
 	name = "Solitary D-Class uniform"
 	desc = "A dark grey jumpsuit, indicative of trouble-making Class D personnel."

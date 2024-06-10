@@ -28706,17 +28706,6 @@
 "gLx" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
-/obj/item/card/id/dassignment/dluxury,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
 "gLD" = (
@@ -39338,6 +39327,21 @@
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"nkS" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/item/card/id/dassignment/dluxury,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/primaryhallway)
 "nmq" = (
 /obj/structure/table/standard,
 /obj/item/storage/toolbox/mechanical,
@@ -39410,12 +39414,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "nqc" = (
@@ -48717,6 +48717,14 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
+"sUZ" = (
+/obj/effect/floor_decal/corner/yellow{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/dark,
+/area/site53/engineering/primaryhallway)
 "sVg" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/yellow/border{
@@ -62548,7 +62556,7 @@ uis
 uis
 rWP
 oZi
-mYX
+nkS
 pMx
 wpQ
 wpQ
@@ -85297,7 +85305,7 @@ vYK
 rDs
 rDs
 vxy
-amW
+sUZ
 npa
 auA
 arz
