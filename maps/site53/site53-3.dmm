@@ -4146,6 +4146,15 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmreception)
+"kC" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "kD" = (
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/white/monotile,
@@ -5541,20 +5550,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
-"py" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "pz" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -5757,15 +5752,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/quartermaster/hangar)
-"ql" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "qo" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor,
@@ -7547,16 +7533,13 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "yr" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door";
-	dir = 4
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#b19664"
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network")
 	},
-/turf/simulated/floor/tiled/dark/small,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "yu" = (
 /obj/structure/grille,
@@ -7868,14 +7851,17 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/op2)
 "zA" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door";
+	dir = 4
 	},
-/obj/machinery/status_display{
-	pixel_x = -32
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#b19664"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/upper_surface/entrancehallway)
 "zB" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -8806,15 +8792,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
-"DM" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway)
 "DO" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -12206,16 +12183,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/logistics/logisticsbreak)
 "Uh" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/standard,
-/obj/machinery/recharger,
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	c_tag = "EZ Checkpoint";
-	dir = 1
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/upper_surface/entrancehallway)
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "Uj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/mapped{
@@ -12852,6 +12827,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
+"Xo" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/table/standard,
+/obj/machinery/recharger,
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network");
+	c_tag = "EZ Checkpoint";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/entrancehallway)
 "Xp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -12917,6 +12903,20 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
+"XF" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "XH" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/maintenance/surfaceeast)
@@ -47023,7 +47023,7 @@ dA
 dA
 dA
 lE
-py
+XF
 RY
 lE
 lE
@@ -47283,7 +47283,7 @@ lE
 Ia
 Rg
 DZ
-zA
+Uh
 xE
 YO
 DZ
@@ -47291,7 +47291,7 @@ cC
 lE
 vu
 DZ
-zA
+Uh
 YO
 dk
 lE
@@ -48825,7 +48825,7 @@ lE
 Hp
 Hu
 Hu
-ql
+kC
 iO
 Hu
 Hu
@@ -49816,7 +49816,7 @@ Ym
 Al
 Mf
 MF
-Uh
+Xo
 bG
 oS
 rm
@@ -50319,7 +50319,7 @@ dA
 dA
 dA
 Xz
-DM
+yr
 CV
 tG
 tG
@@ -51092,9 +51092,9 @@ jJ
 jJ
 Xz
 My
-yr
-yr
-yr
+zA
+zA
+zA
 My
 Xz
 jJ
