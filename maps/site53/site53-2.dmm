@@ -13950,6 +13950,10 @@
 	pixel_y = -32;
 	dir = 1
 	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A Elevator Lower";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/corner{
 	dir = 1
 	},
@@ -22999,6 +23003,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
+"cVg" = (
+/obj/effect/paint_stripe/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/hub)
 "cVu" = (
 /obj/structure/sign/scp/keter_scp{
 	pixel_y = 32
@@ -89421,12 +89429,12 @@ vXh
 aaf
 aAF
 fQk
-bQA
-bQA
-bQA
-bQA
-bQA
-bQA
+cVg
+cVg
+cVg
+cVg
+cVg
+cVg
 aYJ
 pfh
 hOk
@@ -90449,12 +90457,12 @@ abY
 aPK
 lEx
 ahj
-bQA
-bQA
-bQA
-bQA
-bQA
-bQA
+cVg
+cVg
+cVg
+cVg
+cVg
+cVg
 aPK
 aPK
 aPK

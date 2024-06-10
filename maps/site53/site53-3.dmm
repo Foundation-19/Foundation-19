@@ -1254,13 +1254,13 @@
 /area/site53/medical/mentalhealth/isolation)
 "df" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 8
-	},
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Gate A Security Office"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway2)
 "dg" = (
@@ -4146,15 +4146,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmreception)
-"kC" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "kD" = (
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/white/monotile,
@@ -7367,6 +7358,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/entrancehallway)
+"xp" = (
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A Outside"
+	},
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "xq" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
@@ -7396,6 +7393,16 @@
 	dir = 1
 	},
 /area/site53/uez/goirepoffice)
+"xt" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/table/standard,
+/obj/machinery/recharger,
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "Gate B Security Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/upper_surface/entrancehallway)
 "xv" = (
 /obj/structure/bed/chair/wood{
 	dir = 4
@@ -7533,13 +7540,16 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "yr" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door";
+	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#b19664"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/entrancehallway)
 "yu" = (
 /obj/structure/grille,
@@ -7851,17 +7861,15 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/op2)
 "zA" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door";
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A Internal Gate";
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#b19664"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/upper_surface/entrancehallway)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "zB" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -8649,6 +8657,20 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
+"CZ" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A Elevator Upper"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "Dc" = (
 /obj/item/bedsheet,
 /obj/structure/bed,
@@ -9483,6 +9505,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
@@ -10996,6 +11021,16 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"Ov" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate A External Gate";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "Oz" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -11608,6 +11643,15 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/entrancehallway2)
+"Rv" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "Rx" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -11886,9 +11930,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	c_tag = "EZ Checkpoint"
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate B Internal Gate"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
@@ -12184,13 +12227,13 @@
 /area/site53/logistics/logisticsbreak)
 "Uh" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+	dir = 1
 	},
-/obj/machinery/status_display{
-	pixel_x = -32
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate B External Gate"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
+/area/site53/upper_surface/entrancehallway)
 "Uj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/mapped{
@@ -12827,17 +12870,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
-"Xo" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/standard,
-/obj/machinery/recharger,
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	c_tag = "EZ Checkpoint";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/upper_surface/entrancehallway)
 "Xp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -12903,20 +12935,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/goirepoffice)
-"XF" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway2)
 "XH" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/maintenance/surfaceeast)
@@ -13223,9 +13241,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 4
+/obj/machinery/status_display{
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
@@ -13277,9 +13294,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "YX" = (
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Entrance Zone Network")
+/obj/machinery/camera/network/entrance{
+	c_tag = "Gate B Outside";
+	dir = 4
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
@@ -46509,7 +46526,7 @@ dA
 dA
 dA
 lE
-Ia
+CZ
 RY
 TS
 TS
@@ -47023,7 +47040,7 @@ dA
 dA
 dA
 lE
-XF
+dg
 RY
 lE
 lE
@@ -47283,16 +47300,16 @@ lE
 Ia
 Rg
 DZ
-Uh
-xE
 YO
+xE
+zA
 DZ
 cC
 lE
 vu
 DZ
-Uh
 YO
+Ov
 dk
 lE
 lE
@@ -48825,7 +48842,7 @@ lE
 Hp
 Hu
 Hu
-kC
+Rv
 iO
 Hu
 Hu
@@ -48838,7 +48855,7 @@ Hu
 At
 lE
 lE
-bm
+xp
 bm
 bm
 jg
@@ -49816,7 +49833,7 @@ Ym
 Al
 Mf
 MF
-Xo
+xt
 bG
 oS
 rm
@@ -50319,7 +50336,7 @@ dA
 dA
 dA
 Xz
-yr
+Uh
 CV
 tG
 tG
@@ -51092,9 +51109,9 @@ jJ
 jJ
 Xz
 My
-zA
-zA
-zA
+yr
+yr
+yr
 My
 Xz
 jJ
