@@ -66,6 +66,8 @@
 		/area/turbolift/site53/scp106cont = NO_APC,
 		/area/turbolift/site53/robotlwr = NO_APC,
 		/area/turbolift/site53/robotupr = NO_APC,
+		/area/turbolift/site53/gatea = NO_APC,
+		/area/turbolift/site53/hub = NO_APC,
 		/area/centcom/goc = NO_APC,
 	)
 

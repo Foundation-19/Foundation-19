@@ -105,3 +105,21 @@
 	name = "light damage control helmet"
 	desc = "A lighter polymer helmet commonly used by engineers and first responders throughout the human space. It comes with a built-in flashlight and has 'Damage Control' written on its back in yellow lettering."
 	icon_state = "Damage-Control-Helmet-light"
+
+/obj/item/clothing/head/hardhat/dclassminer
+	name = "D-Class miner hard hat"
+	desc = "A piece of headgear used in dangerous working conditions to protect the head, this one is brown with a orange prisoner-colored stripe on it, it's defensive properties are also lessened greatly.. Comes with a built-in flashlight."
+	icon_state = "hardhat0_dclass"
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 0.5
+	light_overlay = "hardhat_light"
+	w_class = ITEM_SIZE_NORMAL
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_MINOR,
+		bio = ARMOR_BIO_MINOR,
+		rad = ARMOR_RAD_MINOR
+	)

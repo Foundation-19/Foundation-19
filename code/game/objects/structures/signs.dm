@@ -88,6 +88,11 @@
 /obj/structure/sign/warning/detailed
 	icon_state = "securearea2"
 
+/obj/structure/sign/warning/termination
+	name = "\improper TERMINATION LINE"
+	desc = "A sign that says. 'Any D-Class Personnel past the red striped line is to be apprehended/terminated for uncompliance unless given permission by tests, or security staff.'"
+	icon_state = "securearea2"
+
 /obj/structure/sign/warning/New()
 	..()
 	desc = "A warning sign which reads '[sanitize(name)]'."
