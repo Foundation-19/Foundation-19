@@ -141,8 +141,8 @@ armour attachments
 	desc = "An armor tag with the words GUARD COMMANDER printed in gold lettering on it."
 
 /obj/item/clothing/accessory/armor/tag/base/com/zonecomm
-	name = "\improper ZONE COMMANDER tag"
-	desc = "An armor tag with the words ZONE COMMANDER printed in gold lettering on it."
+	name = "\improper ZONE COMMANDING OFFICER tag"
+	desc = "An armor tag with the words ZONE COMMAND printed in gold lettering on it."
 
 /obj/item/clothing/accessory/armor/helmcover/blue/un
 	name = "peacekeeper helmet cover"
@@ -361,61 +361,61 @@ ranks - fleet
 	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted
-	name = "ranks (E-1 recruit)"
-	desc = "Insignia denoting the rank of Recruit."
+	name = "ranks (E-1 Cadet)"
+	desc = "Insignia denoting the rank of Cadet."
 	icon_state = "SCPRank_E"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2
-	name = "ranks (E-2 junior protection specialist)"
-	desc = "Insignia denoting the rank of Junior Protection Specialist."
+	name = "ranks (E-2 Private)"
+	desc = "Insignia denoting the rank of Private."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3
-	name = "ranks (E-3 protection specialist)"
-	desc = "Insignia denoting the rank of Protection Specialist."
+	name = "ranks (E-3 Private First Class)"
+	desc = "Insignia denoting the rank of Private First Class."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4
-	name = "ranks (E-4 senior protection specialist)"
-	desc = "Insignia denoting the rank of Senior Protection Specialist."
+	name = "ranks (E-4 Corporal)"
+	desc = "Insignia denoting the rank of Corporal."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5
-	name = "ranks (E-5 master protection specialist)"
-	desc = "Insignia denoting the rank of Master Protection Specialist."
+	name = "ranks (E-5 Sergeant)"
+	desc = "Insignia denoting the rank of Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6
-	name = "ranks (E-6 junior protection officer)"
-	desc = "Insignia denoting the rank of Junior Protection Officer."
+	name = "ranks (E-6 Staff Sergeant)"
+	desc = "Insignia denoting the rank of Staff Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7
-	name = "ranks (E-7 protection officer)"
-	desc = "Insignia denoting the rank of Protection Officer."
+	name = "ranks (E-7 Master Sergeant)"
+	desc = "Insignia denoting the rank of Master Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8
-	name = "ranks (E-8 senior protection officer)"
-	desc = "Insignia denoting the rank of Senior Protection Officer."
+	name = "ranks (E-8 First Sergeant)"
+	desc = "Insignia denoting the rank of First Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9
-	name = "ranks (E-9 master protections officer)"
-	desc = "Insignia denoting the rank of Master Protection Officer."
+	name = "ranks (E-9 Sergeant Major)"
+	desc = "Insignia denoting the rank of Sergeant Major."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt1
-	name = "ranks (E-10 O5 protections official)"
-	desc = "Insignia denoting the rank of O5 Protections Official"
+	name = "ranks (E-10 O5 Protection Agent)"
+	desc = "Insignia denoting the rank of O5 Protection Agent"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/warrant
-	name = "ranks (TS-1 technical specialist)"
+	name = "ranks (TS-1 Technical Specialist)"
 	desc = "Insignia denoting the rank of Technical Specialist."
 	icon_state = "SCPRank_WO"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/warrant/w2
-	name = "ranks (CS-1 containment specialist 1st grade)"
+	name = "ranks (CS-1 Containment Specialist 1st Grade)"
 	desc = "Insignia denoting the rank of Containment Specialist First Grade."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/warrant/w3
-	name = "ranks (CS-2 containment specialist 2nd grade)"
+	name = "ranks (CS-2 Containment Specialist 2nd Grade)"
 	desc = "Insignia denoting the rank of Containment Specialist Second Grade."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/warrant/w4
-	name = "ranks (CS-3 containment specialist 3rd grade)"
+	name = "ranks (CS-3 Containment Specialist 3rd Grade)"
 	desc = "Insignia denoting the rank of Containment Specialist Third Grade."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/warrant/w5
@@ -423,34 +423,34 @@ ranks - fleet
 	desc = "Insignia denoting the rank of Site Specialist."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/warrant/w6
-	name = "ranks (SS-2 O5 site specialist)"
+	name = "ranks (SS-2 O5 Site Specialist)"
 	desc = "Insignia denoting the rank of O5 Site Specialist."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/junofficer
-	name = "ranks (O-1 junior lieutenant)"
+	name = "ranks (O-1 Junior Lieutenant)"
 	desc = "Insignia denoting the rank of Junior Lieutenant."
 	icon_state = "SCPRank_JO"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/junofficer/o2
-	name = "ranks (O-2 senior lieutenant)"
+	name = "ranks (O-2 Senior Lieutenant)"
 	desc = "Insignia denoting the rank of Senior Lieutenant."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer
-	name = "ranks (O-3 site lieutenant)"
-	desc = "Insignia denoting the rank of Site Lieutenant."
+	name = "ranks (O-3 Captain)"
+	desc = "Insignia denoting the rank of Captain."
 	icon_state = "SCPRank_O"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o4
-	name = "ranks (O-4 captain)"
-	desc = "Insignia denoting the rank of Captain."
+	name = "ranks (O-4 Major)"
+	desc = "Insignia denoting the rank of Major."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o5
-	name = "ranks (O-5 commander)"
-	desc = "Insignia denoting the rank of Commander."
+	name = "ranks (O-5 Deputy Commander)"
+	desc = "Insignia denoting the rank of Deputy Commander."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o6
-	name = "ranks (O-6 site commander)"
-	desc = "Insignia denoting the rank of Site Commander."
+	name = "ranks (O-6 Commander)"
+	desc = "Insignia denoting the rank of Commander."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/flag
 	name = "ranks (O-7 tertiary division leader)"

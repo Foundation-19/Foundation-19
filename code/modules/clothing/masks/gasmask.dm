@@ -264,7 +264,7 @@
 	desc = "A glass gas mask that block all vision towards the person's identity. Can be connected to an air supply, this one is designed for the Internal Security Department."
 	icon_state = "isd-mask"
 	item_state = "isd-mask"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = FACE|EYES
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
@@ -283,6 +283,20 @@
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
 		bullet = ARMOR_BALLISTIC_SMALL,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)
+
+/obj/item/clothing/mask/gas/security
+	name = "security gas mask"
+	desc = "A top-grade tactical gas mask that encrypts your voice and can strike fear through those it who see it, oh wait, it's just a redesign of the standard-issue staff gasmask. Can be connected to an air supply.."
+	icon_state = "sec-mask"
+	item_state = "sec-mask"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_PISTOL,
 		bio = ARMOR_BIO_STRONG,
 		rad = ARMOR_RAD_SMALL
 		)
