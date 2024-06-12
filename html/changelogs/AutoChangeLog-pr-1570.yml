@@ -1,0 +1,6 @@
+author: ChromeFoxxity
+delete-after: true
+changes:
+  - rscadd: Adds headsets to make communcations easier, adds new armor, adds Recontainment
+      unit room, adds Combat Medic medkits, adds Riot Control metal shields.
+  - bugfix: Fixed heavy revolver.
