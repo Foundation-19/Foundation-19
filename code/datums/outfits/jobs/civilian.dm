@@ -7,12 +7,23 @@
 	l_pocket = /obj/item/paper/dclass_orientation
 	id_type = /obj/item/card/id/classd
 	pda_type = null
+	back = null
 
 /decl/hierarchy/outfit/job/civ/classd/post_equip(mob/living/carbon/human/H)
 	..()
 	if(prob(15))
 		var/path = pick( /obj/item/wrench, /obj/item/screwdriver)
 		H.equip_to_slot_or_store_or_drop(new path (H), slot_l_store)
+
+/decl/hierarchy/outfit/job/civ/classd/high
+	name = OUTFIT_JOB_NAME("High-Security Class D")
+	uniform = /obj/item/clothing/under/scp/hdclass
+	shoes = /obj/item/clothing/shoes/workboots
+	l_ear = null
+	l_pocket = /obj/item/paper/dclass_orientation
+	id_type = /obj/item/card/id/classd
+	pda_type = null
+	back = null
 
 /decl/hierarchy/outfit/job/civ/janitor
 	name = OUTFIT_JOB_NAME("Janitor")
@@ -55,7 +66,7 @@
 
 /decl/hierarchy/outfit/job/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
-	uniform = /obj/item/clothing/under/rank/civilian/uiu
+	uniform = /obj/item/clothing/under/rank/civilian/uiu/formal
 	suit = /obj/item/clothing/suit/uiucoat
 	shoes = /obj/item/clothing/shoes/dress
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -63,8 +74,8 @@
 	l_pocket = /obj/item/device/radio
 	id_type = /obj/item/card/id/adminlvl3
 	l_ear = /obj/item/device/radio/headset/heads/uiu
-	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911
+	backpack_contents = list(/obj/item/ammo_magazine/scp/mk9 = 1)
+	belt = /obj/item/gun/projectile/pistol/glock
 
 /decl/hierarchy/outfit/job/civ/thirep
 	name = OUTFIT_JOB_NAME("thirep")

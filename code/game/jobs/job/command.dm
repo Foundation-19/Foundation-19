@@ -26,7 +26,7 @@
 	return get_all_site_access()
 
 /datum/job/hop
-	title = "Human Resources Officer"
+	title = "Site Manager"
 	department = "Command"
 	supervisors = "The Site Director"
 	department_flag = COM|CIV|BUR|SRV
@@ -42,7 +42,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/headofhr
 	class = CLASS_A
 	hud_icon = "hudhumanresources"
-	alt_titles = list("Head of Personnel")
+	alt_titles = list("Human Resources Officer", "Facility Manager", "Assistant Site Director")
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_BUR = 300)
 
 	access = list(
