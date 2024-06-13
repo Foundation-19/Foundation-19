@@ -669,6 +669,12 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 3000)
 	id = "augment_circuitry"
 
+/datum/design/item/mechfab/augment/memory_inhibitor
+	name = "class H amnestic implant"
+	build_path = /obj/item/organ/internal/augment/active/memory_inhibitor
+	materials = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 1000, "gold" = 100, "diamond" = 500)
+	req_tech = list(TECH_MATERIAL = 5, TECH_BIO = 5, TECH_ESOTERIC = 5)
+	id = "augment_memory_inhibitor"
 //BigRigs
 /datum/design/item/mechfab/rig/zero
 	category = "Hardsuits"

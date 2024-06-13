@@ -74,7 +74,7 @@
 
 /datum/fabricator_recipe/arms_ammo/hidden/magazine_uzi
 	name = "ammunition (machine pistol)"
-	path = /obj/item/ammo_magazine/machine_pistol
+	path = /obj/item/ammo_magazine/scp/uzim9mm
 
 /datum/fabricator_recipe/arms_ammo/hidden/magazine_smg_topmounted
 	name = "ammunition (SMG, top mounted)"

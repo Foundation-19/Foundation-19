@@ -27,21 +27,35 @@
 /obj/item/device/radio/headset/headset_sec_hcz
 	name = "HCZ security radio headset"
 	desc = "This is used by your elite security force."
-	icon_state = "sec_headset"
+	icon_state = "hcz_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_sec_hcz
 
 /obj/item/device/radio/headset/headset_sec_lcz
 	name = "LCZ security radio headset"
 	desc = "This is used by your elite security force."
-	icon_state = "sec_headset"
+	icon_state = "lcz_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_sec_lcz
+
+/obj/item/device/radio/headset/headset_sec_lcz/medic
+	name = "LCZ combat medic security radio headset"
+	desc = "This is used by your elite security force."
+	icon_state = "lcz_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/headset_sec_lcz/medic
+
+/obj/item/device/radio/headset/headset_sec_lcz/recontain
+	name = "LCZ recontainment unit security radio headset"
+	desc = "This is used by your elite security force."
+	icon_state = "lcz_headset_alt"
+	item_state = "pilot_headset_alt"
+	ks2type = /obj/item/device/encryptionkey/headset_sec_lcz/recontain
 
 /obj/item/device/radio/headset/headset_sec_ecz
 	name = "EZ security radio headset"
 	desc = "This is used by your elite security force."
-	icon_state = "sec_headset"
+	icon_state = "ez_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_sec_ecz
 
@@ -54,6 +68,16 @@
 	name = "LCZ security radio encryption key"
 	icon_state = "sec_cypherkey"
 	channels = list("LCZ-Security" = 1, "Security" = 1)
+
+/obj/item/device/encryptionkey/headset_sec_lcz/medic
+	name = "LCZ combat medic security radio encryption key"
+	icon_state = "sec_cypherkey"
+	channels = list("LCZ-Security" = 1, "Security" = 1, "Medical" = 1)
+
+/obj/item/device/encryptionkey/headset_sec_lcz/recontain
+	name = "LCZ recontainment unit security radio encryption key"
+	icon_state = "sec_cypherkey"
+	channels = list("LCZ-Security" = 1, "Security" = 1, "HCZ-Security" = 1)
 
 /obj/item/device/encryptionkey/headset_sec_ecz
 	name = "ECZ security radio encryption key"

@@ -1,7 +1,7 @@
 //Contains: Engineering department jumpsuits
 /obj/item/clothing/under/rank/chief_engineer
-	desc = "It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of \"Chief engineer\". It has minor radiation shielding."
-	name = "chief engineer's jumpsuit"
+	desc = "It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of \"Director of Engineering\". It has minor radiation shielding."
+	name = "engineering director's jumpsuit"
 	icon_state = "chiefengineer"
 	item_state = "g_suit"
 	worn_state = "chief"

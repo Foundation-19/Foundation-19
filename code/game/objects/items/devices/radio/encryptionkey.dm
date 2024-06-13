@@ -108,7 +108,7 @@
 	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Hailing" = 1, "HCZ-Security" = 1, "LCZ-Security" =1, "ECZ-Security" = 1)
 
 /obj/item/device/encryptionkey/heads/rd
-	name = "chief science officer's encryption key"
+	name = "research director's encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Command" = 1, "Hailing" = 1)
 
@@ -118,12 +118,12 @@
 	channels = list("Security" = 1, "Command" = 1, "Hailing" = 1, "HCZ-Security" = 1, "LCZ-Security" =1, "ECZ-Security" = 1)
 
 /obj/item/device/encryptionkey/heads/ce
-	name = "chief engineer's encryption key"
+	name = "engineering director's encryption key"
 	icon_state = "ce_cypherkey"
 	channels = list("Engineering" = 1, "Command" = 1, "Hailing" = 1)
 
 /obj/item/device/encryptionkey/heads/cmo
-	name = "chief medical officer's encryption key"
+	name = "medical director's encryption key"
 	icon_state = "cmo_cypherkey"
 	channels = list("Medical" = 1, "Command" = 1, "Hailing" = 1)
 

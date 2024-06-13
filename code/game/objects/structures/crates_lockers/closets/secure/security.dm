@@ -25,7 +25,7 @@
 	)
 
 /obj/structure/closet/secure_closet/hop
-	name = "head of personnel's locker"
+	name = "facility manager's locker"
 	icon_state = "hopsecure1"
 	icon_closed = "hopsecure"
 	icon_locked = "hopsecure1"
