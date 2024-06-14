@@ -52,29 +52,29 @@
 //Medical
 /obj/item/clothing/head/surgery
 	name = "surgical cap"
-	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs."
+	desc = "A surgical cap worn by surgeons for the room to be sterile. Keeps the wearer's hair from falling into the open wounds of the patient."
 	icon_state = "surgcap"
 	flags_inv = BLOCKHEADHAIR
 
 /obj/item/clothing/head/surgery/purple
 	name = "purple surgical cap"
-	color = "#7a1b3f"
+	icon_state = "surgcap_purple"
 
 /obj/item/clothing/head/surgery/blue
 	name = "blue surgical cap"
-	color = "#4891e1"
+	icon_state = "surgcap_blue"
 
 /obj/item/clothing/head/surgery/green
 	name = "green surgical cap"
-	color = "#255a3e"
+	icon_state = "surgcap_green"
 
 /obj/item/clothing/head/surgery/black
 	name = "black surgical cap"
-	color = "#242424"
+	icon_state = "surgcap_black"
 
 /obj/item/clothing/head/surgery/navyblue
 	name = "navy blue surgical cap"
-	color = "#1f3a69"
+	icon_state = "surgcap_navyblue"
 
 /obj/item/clothing/head/surgery/lilac
 	name = "lilac surgical cap"
@@ -143,7 +143,7 @@
 	icon_state = "beret_sergeant"
 
 /obj/item/clothing/head/beret/sec/commander
-	name = "Zone Commander Beret"
+	name = "Zone Officer Beret"
 	desc = "A black beret with a golden badge in the shape of a shield, it feels durable due to the materials it's been made from."
 	icon_state = "beret_commander"
 

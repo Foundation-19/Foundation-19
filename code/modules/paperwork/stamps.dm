@@ -16,15 +16,15 @@
 	icon_state = "stamp-cap"
 
 /obj/item/stamp/ce
-	name = "chief engineer's rubber stamp"
+	name = "Engineering Director's rubber stamp"
 	icon_state = "stamp-ce"
 
 /obj/item/stamp/rd
-	name = "chief science officer's rubber stamp"
+	name = "Research Director's rubber stamp"
 	icon_state = "stamp-rd"
 
 /obj/item/stamp/cmo
-	name = "chief medical officer's rubber stamp"
+	name = "Medical Director's rubber stamp"
 	icon_state = "stamp-cmo"
 
 /obj/item/stamp/denied
@@ -44,7 +44,7 @@
 	. = ..()
 
 /obj/item/stamp/cargo
-	name = "cargo rubber stamp"
+	name = "logistics rubber stamp"
 	icon_state = "stamp-cargo"
 
 // Syndicate stamp to forge documents.
