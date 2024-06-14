@@ -211,18 +211,6 @@
 /area/site53/surface/surface/caves
 	name = "Surface Caverns"
 
-/area/site53/surface/surface/cabin/cabin1
-	name = "Surface Cabin 1"
-	requires_power = 0
-
-/area/site53/surface/surface/cabin/cabin2
-	name = "Surface Cabin 2"
-
-
-/area/site53/surface/surface/cabin/cabin3
-	name = "Surface Cabin 3"
-
-
 /area/site53/surface/surface/away/bar
 	name = "Away Bar"
 
