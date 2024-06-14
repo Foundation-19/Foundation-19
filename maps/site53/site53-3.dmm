@@ -9943,7 +9943,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
-	name = "Heavy Containment Maintenance";
+	name = "Gate A Access";
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/door/blast/regular/open{
