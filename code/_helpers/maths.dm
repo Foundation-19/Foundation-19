@@ -170,3 +170,10 @@
 // Will filter out extra rotations and negative rotations
 // E.g: 540 becomes 180. -180 becomes 180.
 #define SIMPLIFY_DEGREES(degrees) (MODULUS_FLOAT((degrees), 360))
+
+//Written by Lohikar
+//Returns the cube root of the input number
+/proc/cubert(num, iterations = 10)
+    . = num
+    for (var/i = 0, i < iterations, i++)
+        . = (1/3) * (num/(.**2)+2*.)

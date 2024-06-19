@@ -7,11 +7,20 @@
 	icon_state = "meat"
 	slice_path = /obj/item/reagent_containers/food/snacks/rawcutlet
 	slices_num = 3
-	bitesize = 3
+	bitesize = 1.5
 	filling_color = "#ff1c1c"
 	center_of_mass = "x=16;y=14"
-	food_reagents = list(/datum/reagent/nutriment/protein = 9)
+	food_reagents = list(/datum/reagent/nutriment/protein = 6, /datum/reagent/nutriment/triglyceride/oil = 2)
 	cooks_into_type = /obj/item/reagent_containers/food/snacks/plainsteak
+
+/obj/item/weapon/reagent_containers/food/snacks/meat/cook()
+
+	if (!isnull(cooked_icon))
+		icon_state = cooked_icon
+	..()
+
+	if (name == initial(name))
+		name = "cooked [name]"
 
 /obj/item/reagent_containers/food/snacks/meat/syntiflesh
 	name = "synthetic meat"

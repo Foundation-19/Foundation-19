@@ -1146,7 +1146,9 @@
 	/obj/item/storage/lunchbox/syndicate = 3,
 	/obj/item/storage/lunchbox/dais = 3,
 	/obj/item/storage/lunchbox/picnic = 3,
-	/obj/item/material/knife/kitchen/cleaver = 1)
+	/obj/item/material/knife/kitchen/cleaver = 1,
+	/obj/item/weapon/reagent_containers/cooking_container/oven = 5,
+	/obj/item/weapon/reagent_containers/cooking_container/fryer = 4)
 
 	contraband = list(/obj/item/material/knife/kitchen/cleaver/bronze = 1)
 
