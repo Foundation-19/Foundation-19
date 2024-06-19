@@ -884,8 +884,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	. = (!throwing) ? ..() : FALSE
 
 /// Called when this item is microwaved. Return an instance of an atom to add it to the microwave's list.
-/obj/item/proc/microwave_act(obj/machinery/microwave/M)
-	return
+
 
 /obj/item/proc/has_embedded()
 	return

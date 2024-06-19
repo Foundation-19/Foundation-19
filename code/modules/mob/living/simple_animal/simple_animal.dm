@@ -173,6 +173,8 @@
 	// List of potential death sounds, if any
 	var/list/death_sounds = list()
 
+	var/kitchen_tag = "animal" //Used for cooking with animals
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	if(LAZYLEN(natural_armor))
