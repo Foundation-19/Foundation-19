@@ -1,5 +1,5 @@
 /obj/machinery/appliance/cooker
-	var/temperature = T20C
+//	var/temperature = T20C
 	var/min_temp = 353//Minimum temperature to do any cooking
 	var/optimal_temp = 472//Temperature at which we have 100% efficiency. efficiency is lowered on either side of this
 	var/optimal_power = 0.1//cooking power at 100%
@@ -16,12 +16,12 @@
 	if (.)//no need to duplicate adjacency check
 		if (!stat)
 			if (temperature < min_temp)
-				user << span("warning", "It is heating up.")
+				to_chat(user, SPAN_WARNING("It is heating up."))
 			else
-				user << span("notice", "It is running at [round(get_efficiency(), 0.1)]% efficiency!")
+				to_chat(user, SPAN_NOTICE("It is running at [round(get_efficiency(), 0.1)]% efficiency!"))
 			user << "Temperature: [round(temperature - T0C, 0.1)]C / [round(optimal_temp - T0C, 0.1)]C"
 		else
-			user << span("warning", "It is switched off.")
+			to_chat(user, SPAN_WARNING("It is switched off."))
 
 /obj/machinery/appliance/cooker/list_contents(mob/user)
 	if (cooking_objs.len)
@@ -34,7 +34,7 @@
 				string += "- [CI.container.label(num)], [report_progress(CI)]</br>"
 		usr << string
 	else
-		usr << span("notice","It is empty.")
+		to_chat(user, SPAN_NOTICE("It is empty."))
 
 /obj/machinery/appliance/cooker/proc/get_efficiency()
 	. = cooking_power / optimal_power
@@ -121,7 +121,7 @@
 //Cookers do differently, they use containers
 /obj/machinery/appliance/cooker/has_space(obj/item/I)
 
-	if (istype(I, /obj/item/weapon/reagent_containers/cooking_container) && cooking_objs.len < max_contents)
+	if (istype(I, /obj/item/reagent_containers/cooking_container) && cooking_objs.len < max_contents)
 		//Containers can go into an empty slot
 		return 1
 

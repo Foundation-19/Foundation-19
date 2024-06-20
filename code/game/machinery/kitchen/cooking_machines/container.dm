@@ -2,41 +2,41 @@
 //They work fairly similar to the microwave - acting as a container for objects and reagents,
 //which can be checked against recipe requirements in order to cook recipes that require several things
 
-/obj/item/weapon/reagent_containers/cooking_container
+/obj/item/reagent_containers/cooking_container
 	icon = 'icons/obj/cooking_machines.dmi'
 	var/shortname
 	var/max_space = 15//Maximum sum of w-classes of foods in this container at once
 	var/max_reagents = 80//Maximum units of reagents
 
-/obj/item/weapon/reagent_containers/cooking_container/New()
+/obj/item/reagent_containers/cooking_container/New()
 	..()
 	create_reagents(max_reagents)
 	flags |= OPENCONTAINER
 
 
-/obj/item/weapon/reagent_containers/cooking_container/examine(mob/user)
+/obj/item/reagent_containers/cooking_container/examine(mob/user)
 	..()
 	if (contents.len)
 		var/string = "It contains....</br>"
 		for (var/atom/movable/A in contents)
 			string += "[A.name] </br>"
-		user << span("notice", string)
+		to_chat(user, SPAN_WARNING(string))
 	if (reagents.total_volume)
-		user << span("notice", "It contains [reagents.total_volume]u of reagents.")
+		to_chat(user, SPAN_WARNING("It contains [reagents.total_volume]u of reagents."))
 
 
-/obj/item/weapon/reagent_containers/cooking_container/attackby(obj/item/I as obj, mob/user as mob)
-	if (istype(I, /obj/item/weapon/reagent_containers/food/snacks))
+/obj/item/reagent_containers/cooking_container/attackby(obj/item/I as obj, mob/user as mob)
+	if (istype(I, /obj/item/reagent_containers/food/snacks))
 		if (!can_fit(I))
-			user << span("warning","There's no more space in the [src] for that!")
+			to_chat(user, SPAN_WARNING("There's no more space in the [src] for that!"))
 			return 0
 
 		if(!user.unEquip(I))
 			return
 		I.forceMove(src)
-		user << span("notice", "You put the [I] into the [src]")
+		to_chat(user, SPAN_NOTICE("You put the [I] into the [src]"))
 
-/obj/item/weapon/reagent_containers/cooking_container/verb/empty()
+/obj/item/reagent_containers/cooking_container/verb/empty()
 	set src in view()
 	set name = "Empty Container"
 	set category = "Object"
@@ -49,7 +49,7 @@
 	for (var/atom/movable/A in contents)
 		A.forceMove(get_turf(src))
 
-/obj/item/weapon/reagent_containers/cooking_container/proc/check_contents()
+/obj/item/reagent_containers/cooking_container/proc/check_contents()
 	if (contents.len == 0)
 		if (!reagents || reagents.total_volume == 0)
 			return 0//Completely empty
@@ -62,14 +62,14 @@
 
 //Deletes contents of container.
 //Used when food is burned, before replacing it with a burned mess
-/obj/item/weapon/reagent_containers/cooking_container/proc/clear()
+/obj/item/reagent_containers/cooking_container/proc/clear()
 	for (var/atom/a in contents)
 		qdel(a)
 
 	if (reagents)
 		reagents.clear_reagents()
 
-/obj/item/weapon/reagent_containers/cooking_container/proc/label(number, CT = null)
+/obj/item/reagent_containers/cooking_container/proc/label(number, CT = null)
 	//This returns something like "Fryer basket 1 - empty"
 	//The latter part is a brief reminder of contents
 	//This is used in the removal menu
@@ -91,7 +91,7 @@
 		. += "empty"
 
 
-/obj/item/weapon/reagent_containers/cooking_container/proc/can_fit(obj/item/I)
+/obj/item/reagent_containers/cooking_container/proc/can_fit(obj/item/I)
 	var/total = 0
 	for (var/obj/item/J in contents)
 		total += J.w_class
@@ -102,7 +102,7 @@
 
 //Takes a reagent holder as input and distributes its contents among the items in the container
 //Distribution is weighted based on the volume already present in each item
-/obj/item/weapon/reagent_containers/cooking_container/proc/soak_reagent(datum/reagents/holder)
+/obj/item/reagent_containers/cooking_container/proc/soak_reagent(datum/reagents/holder)
 	var/total = 0
 	var/list/weights = list()
 	for (var/obj/item/I in contents)
@@ -116,7 +116,7 @@
 				holder.trans_to(I, weights[I] / total)
 
 
-/obj/item/weapon/reagent_containers/cooking_container/oven
+/obj/item/reagent_containers/cooking_container/oven
 	name = "Oven Dish"
 	shortname = "shelf"
 	desc = "Put ingredients in this for cooking to a recipe,in an oven."
@@ -124,7 +124,7 @@
 	max_space = 30
 	max_reagents = 120
 
-/obj/item/weapon/reagent_containers/cooking_container/fryer
+/obj/item/reagent_containers/cooking_container/fryer
 	name = "Fryer basket"
 	shortname = "basket"
 	desc = "Belongs in a deep fryer, put ingredients in it for cooking to a recipe"

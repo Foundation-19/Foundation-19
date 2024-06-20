@@ -63,7 +63,7 @@
 	var/coated_adj = "coated"
 	var/cooked_name = "coating"
 
-/datum/reagent/nutriment/coating/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/nutriment/coating/affect_ingest(mob/living/carbon/M, alien, removed)
 
 	//We'll assume that the batter isnt going to be regurgitated and eaten by someone else. Only show this once
 	if (data["cooked"] != 1)
@@ -79,7 +79,7 @@
 			H.delayed_vomit()
 	..()
 
-/datum/reagent/nutriment/coating/initialize_data(var/newdata) // Called when the reagent is created.
+/datum/reagent/nutriment/coating/initialize_data(newdata) // Called when the reagent is created.
 	..()
 	if (!data)
 		data = list()
@@ -96,7 +96,7 @@
 
 
 //Handles setting the temperature when oils are mixed
-/datum/reagent/nutriment/coating/mix_data(var/newdata, var/newamount)
+/datum/reagent/nutriment/coating/mix_data(newdata, newamount)
 	world << "Coating mixed with new coating, setting cooked to [newdata["cooked"]]"
 	if (!data)
 		data = list()
@@ -124,7 +124,7 @@
 	icon_cooked = "batter_cooked"
 	coated_adj = "beer-battered"
 
-/datum/reagent/nutriment/coating/beerbatter/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/nutriment/coating/beerbatter/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	M.intoxication += removed*0.02 //Very slightly alcoholic
 
@@ -176,7 +176,7 @@
 	color = "#CCCCCC"
 
 //Unathi can digest fats too
-/datum/reagent/nutriment/triglyceride/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/nutriment/triglyceride/affect_ingest(mob/living/carbon/M, alien, removed)
 	if(alien && alien == IS_UNATHI)
 		digest(M,removed)
 		return
@@ -192,7 +192,7 @@
 	touch_met = 1.5
 	var/lastburnmessage = 0
 
-/datum/reagent/nutriment/triglyceride/oil/touch_turf(var/turf/simulated/T)
+/datum/reagent/nutriment/triglyceride/oil/touch_turf(turf/simulated/T)
 	if(!istype(T))
 		return
 
@@ -210,13 +210,13 @@
 	if(volume >= 3)
 		T.wet_floor(2)
 
-/datum/reagent/nutriment/triglyceride/oil/initialize_data(var/newdata) // Called when the reagent is created.
+/datum/reagent/nutriment/triglyceride/oil/initialize_data(newdata) // Called when the reagent is created.
 	..()
 	if (!data)
 		data = list("temperature" = T20C)
 
 //Handles setting the temperature when oils are mixed
-/datum/reagent/nutriment/triglyceride/oil/mix_data(var/newdata, var/newamount)
+/datum/reagent/nutriment/triglyceride/oil/mix_data(newdata, newamount)
 
 	if (!data)
 		data = list()
@@ -235,7 +235,7 @@
 
 
 //Calculates a scaling factor for scalding damage, based on the temperature of the oil and creature's heat resistance
-/datum/reagent/nutriment/triglyceride/oil/proc/heatdamage(var/mob/living/carbon/M)
+/datum/reagent/nutriment/triglyceride/oil/proc/heatdamage(mob/living/carbon/M)
 	var/threshold = 360//Human heatdamage threshold
 	var/datum/species/S = M.get_species(1)
 	if (S && istype(S))
@@ -254,7 +254,7 @@
 	. /= step
 	. = min(., 2.5)//Cap multiplier at 2.5
 
-/datum/reagent/nutriment/triglyceride/oil/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/nutriment/triglyceride/oil/affect_touch(mob/living/carbon/M, alien, removed)
 	var/dfactor = heatdamage(M)
 	world << "Oil touch. dfactor [dfactor]"
 	if (dfactor)

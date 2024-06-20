@@ -27,7 +27,7 @@
 	can_pull_size = ITEM_SIZE_TINY
 	can_pull_mobs = MOB_PULL_NONE
 
-kitchen_tag = "rodent"
+//kitchen_tag = "rodent"
 
 	meat_amount =   1
 	bone_amount =   1

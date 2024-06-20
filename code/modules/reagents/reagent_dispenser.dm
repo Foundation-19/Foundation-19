@@ -364,7 +364,7 @@
 		world << "Cooking oil spawned!"
 		world << "[src] spawned in [src.loc], [src.x], [src.y], [src.z]"
 
-/obj/structure/reagent_dispensers/cookingoil/bullet_act(var/obj/item/projectile/Proj)
+/obj/structure/reagent_dispensers/cookingoil/bullet_act(obj/item/projectile/Proj)
 	if(Proj.get_structure_damage())
 		explode()
 

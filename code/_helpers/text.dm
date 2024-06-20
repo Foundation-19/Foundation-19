@@ -212,8 +212,8 @@
 
 //Parses a string into a list
 /proc/dd_text2List(text, separator)
-	var/textlength      = lentext(text)
-	var/separatorlength = lentext(separator)
+	var/textlength      = length(text)
+	var/separatorlength = length(separator)
 	var/list/textList   = new /list()
 	var/searchPosition  = 1
 	var/findPosition    = 1

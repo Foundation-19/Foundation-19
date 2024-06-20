@@ -494,7 +494,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	return trans_to_holder(target.reagents, amount, multiplier, copy)
 
 //Spreads the contents of this reagent holder all over the vicinity of the target turf.
-/datum/reagents/proc/splash_area(var/turf/epicentre, var/range = 3, var/portion = 1.0, var/multiplier = 1, var/copy = 0)
+/datum/reagents/proc/splash_area(turf/epicentre, range = 3, portion = 1.0, multiplier = 1, copy = 0)
 	var/list/things = list()
 	DVIEW(things, range, epicentre, INVISIBILITY_LIGHTING)
 
@@ -521,7 +521,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 
 //Spreads the contents of this reagent holder all over the target turf, dividing among things in it.
 //50% is divided between mobs, 20% between objects, and whatever is left on the turf itself
-/datum/reagents/proc/splash_turf(var/turf/T, var/amount = null, var/multiplier = 1, var/copy = 0)
+/datum/reagents/proc/splash_turf(turf/T, amount = null, multiplier = 1, copy = 0)
 	if (isnull(amount))
 		amount = total_volume
 	else

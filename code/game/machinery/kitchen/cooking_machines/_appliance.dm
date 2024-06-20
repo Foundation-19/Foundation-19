@@ -1,7 +1,7 @@
 // This folder contains code that was originally ported from Apollo Station and then refactored/optimized/changed.
 
 // Tracks precooked food to stop deep fried baked grilled grilled grilled diona nymph cereal.
-/obj/item/weapon/reagent_containers/food/snacks/var/list/cooked = list()
+/obj/item/reagent_containers/food/snacks/var/list/cooked = list()
 
 // Root type for cooking machines. See following files for specific implementations.
 /obj/machinery/appliance
@@ -77,7 +77,7 @@
 			string += "-\a [CI.container.label(null, CI.combine_target)], [report_progress(CI)]</br>"
 		usr << string
 	else
-		usr << span("notice","It is empty.")
+		to_chat(user, SPAN_NOTICE("It is empty."))
 
 /obj/machinery/appliance/proc/report_progress(datum/cooking_item/CI)
 	if (!CI || !CI.max_cookwork)
@@ -90,17 +90,17 @@
 	if (progress < 0.25)
 		return "It's barely started cooking."
 	if (progress < 0.75)
-		return span("notice","It's cooking away nicely.")
+		return visible_message(SPAN_NOTICE("It's cooking away nicely."))
 	if (progress < 1)
-		return span("notice", "<b>It's almost ready!</b>")
+		return visible_message(SPAN_NOTICE("<b>It's almost ready!</b>"))
 
 	var/half_overcook = (CI.overcook_mult - 1)*0.5
 	if (progress < 1+half_overcook)
-		return span("soghun","<b>It is done !</b>")
+		return visible_message(SPAN_NOTICE("<b>It is done !</b>"))
 	if (progress < CI.overcook_mult)
-		return span("warning","It looks overcooked, get it out!")
+		return visible_message(SPAN_WARNING("It looks overcooked, get it out!"))
 	else
-		return span("danger","It is burning!!")
+		return visible_message(SPAN_DANGER("danger","It is burning!!"))
 
 /obj/machinery/appliance/update_icon()
 	if (!stat && cooking_objs.len)
@@ -160,7 +160,7 @@
 		return 0
 
 	// We are trying to cook a grabbed mob.
-	var/obj/item/weapon/grab/G = I
+	var/obj/item/grab/G = I
 	if(istype(G))
 
 		if(!can_cook_mobs)
@@ -183,17 +183,17 @@
 		return 1
 
 	// We're trying to cook something else. Check if it's valid.
-	var/obj/item/weapon/reagent_containers/food/snacks/check = I
+	var/obj/item/reagent_containers/food/snacks/check = I
 	if(istype(check) && islist(check.cooked) && (cook_type in check.cooked))
 		user << "<span class='warning'>\The [check] has already been [cook_type].</span>"
 		return 0
-	else if(istype(check, /obj/item/weapon/reagent_containers/glass))
+	else if(istype(check, /obj/item/reagent_containers/glass))
 		user << "<span class='warning'>That would probably break [src].</span>"
 		return 0
-	else if(istype(check, /obj/item/weapon/disk/nuclear))
+	else if(istype(check, /obj/item/disk/nuclear))
 		user << "Central Command would kill you if you [cook_type] that."
 		return 0
-	else if(!istype(check) && !istype(check, /obj/item/weapon/holder))
+	else if(!istype(check) && !istype(check, /obj/item/holder))
 		user << "<span class='warning'>That's not edible.</span>"
 		return 0
 
@@ -219,7 +219,7 @@
 		return
 
 	if (result == 2)
-		var/obj/item/weapon/grab/G = I
+		var/obj/item/grab/G = I
 		if (G && istype(G) && G.affecting)
 			cook_mob(G.affecting, user)
 			return
@@ -242,8 +242,8 @@
 		return
 
 	var/datum/cooking_item/CI = has_space(I)
-	if (istype(I, /obj/item/weapon/reagent_containers/cooking_container) && CI == 1)
-		var/obj/item/weapon/reagent_containers/cooking_container/CC = I
+	if (istype(I, /obj/item/reagent_containers/cooking_container) && CI == 1)
+		var/obj/item/reagent_containers/cooking_container/CC = I
 		CI = new /datum/cooking_item/(CC)
 		I.forceMove(src)
 		cooking_objs.Add(CI)
@@ -298,7 +298,7 @@
 
 //Just a helper to save code duplication in the above
 /obj/machinery/appliance/proc/oilwork(obj/item/I, datum/cooking_item/CI)
-	var/obj/item/weapon/reagent_containers/food/snacks/S = I
+	var/obj/item/reagent_containers/food/snacks/S = I
 	var/work = 0
 	if (istype(S))
 		if (S.reagents)
@@ -315,8 +315,8 @@
 					CI.max_oil += R.volume * 0.15
 
 
-	else if(istype(I, /obj/item/weapon/holder))
-		var/obj/item/weapon/holder/H = I
+	else if(istype(I, /obj/item/holder))
+		var/obj/item/holder/H = I
 		if (H.contained)
 			work += (H.contained.mob_size * H.contained.mob_size * 2)+2
 
@@ -342,7 +342,7 @@
 		burn_food(CI)
 
 	// Gotta hurt.
-	for(var/obj/item/weapon/holder/H in CI.container.contents)
+	for(var/obj/item/holder/H in CI.container.contents)
 		var/mob/living/M = H.contained
 		if (M)
 			M.apply_damage(rand(1,3), mobdamagetype, "chest")
@@ -388,7 +388,7 @@
 
 
 		for (var/r in results)
-			var/obj/item/weapon/reagent_containers/food/snacks/R = r
+			var/obj/item/reagent_containers/food/snacks/R = r
 			R.loc = C //Move everything from the buffer back to the container
 			qdel(temp) //delete buffer object
 			temp = null
@@ -407,7 +407,7 @@
 			modify_cook(i, CI)
 
 	//Final step. Cook function just cooks batter for now.
-	for (var/obj/item/weapon/reagent_containers/food/snacks/S in CI.container)
+	for (var/obj/item/reagent_containers/food/snacks/S in CI.container)
 		S.cook()
 
 
@@ -422,10 +422,10 @@
 	var/totalcolour
 
 	for (var/obj/item/I in CI.container)
-		var/obj/item/weapon/reagent_containers/food/snacks/S
-		if (istype(I, /obj/item/weapon/holder))
+		var/obj/item/reagent_containers/food/snacks/S
+		if (istype(I, /obj/item/holder))
 			S = create_mob_food(I, CI)
-		else if (istype(I, /obj/item/weapon/reagent_containers/food/snacks))
+		else if (istype(I, /obj/item/reagent_containers/food/snacks))
 			S = I
 
 		if (!S)
@@ -456,7 +456,7 @@
 
 	CI.container.reagents.trans_to_holder(buffer, CI.container.reagents.total_volume)
 
-	var/obj/item/weapon/reagent_containers/food/snacks/result = new cook_path(CI.container)
+	var/obj/item/reagent_containers/food/snacks/result = new cook_path(CI.container)
 	buffer.trans_to(result, buffer.total_volume)
 
 	//Filling overlay
@@ -485,10 +485,10 @@
 
 //Helper proc for standard modification cooking
 /obj/machinery/appliance/proc/modify_cook(obj/item/input, datum/cooking_item/CI)
-	var/obj/item/weapon/reagent_containers/food/snacks/result
-	if (istype(input, /obj/item/weapon/holder))
+	var/obj/item/reagent_containers/food/snacks/result
+	if (istype(input, /obj/item/holder))
 		result = create_mob_food(input, CI)
-	else if (istype(input, /obj/item/weapon/reagent_containers/food/snacks))
+	else if (istype(input, /obj/item/reagent_containers/food/snacks))
 		result = input
 	else
 		//Nonviable item
@@ -509,7 +509,7 @@
 	// You dun goofed.
 	CI.burned = 1
 	CI.container.clear()
-	new /obj/item/weapon/reagent_containers/food/snacks/badrecipe(CI.container)
+	new /obj/item/reagent_containers/food/snacks/badrecipe(CI.container)
 
 	// Produce nasty smoke.
 	visible_message("<span class='danger'>\The [src] vomits a gout of rancid smoke!</span>")
@@ -565,12 +565,12 @@
 /obj/machinery/appliance/proc/cook_mob(mob/living/victim, mob/user)
 	return
 
-/obj/machinery/appliance/proc/change_product_strings(obj/item/weapon/reagent_containers/food/snacks/product, datum/cooking_item/CI)
+/obj/machinery/appliance/proc/change_product_strings(obj/item/reagent_containers/food/snacks/product, datum/cooking_item/CI)
 	product.name = "[cook_type] [product.name]"
 	product.desc = "[product.desc] It has been [cook_type]."
 
 
-/obj/machinery/appliance/proc/change_product_appearance(obj/item/weapon/reagent_containers/food/snacks/product, datum/cooking_item/CI)
+/obj/machinery/appliance/proc/change_product_appearance(obj/item/reagent_containers/food/snacks/product, datum/cooking_item/CI)
 	if (!product.coating) //Coatings change colour through a new sprite
 		product.color = food_color
 	product.filling_color = food_color
@@ -579,7 +579,7 @@
 
 
 //This function creates a food item which represents a dead mob
-/obj/machinery/appliance/proc/create_mob_food(obj/item/weapon/holder/H, datum/cooking_item/CI)
+/obj/machinery/appliance/proc/create_mob_food(obj/item/holder/H, datum/cooking_item/CI)
 	if (!istype(H) || !H.contained)
 		qdel(H)
 		return null
@@ -589,7 +589,7 @@
 
 	victim.calculate_composition()
 
-	var/obj/item/weapon/reagent_containers/food/snacks/variable/mob/result = new /obj/item/weapon/reagent_containers/food/snacks/variable/mob(CI.container)
+	var/obj/item/reagent_containers/food/snacks/variable/mob/result = new /obj/item/reagent_containers/food/snacks/variable/mob(CI.container)
 	result.w_class = victim.mob_size
 	result.reagents.add_reagent(victim.composition_reagent, victim.composition_reagent_quantity)
 
@@ -623,7 +623,7 @@
 	var/cookwork
 	var/overcook_mult = 2
 	var/result_type = 0
-	var/obj/item/weapon/reagent_containers/cooking_container/container = null
+	var/obj/item/reagent_containers/cooking_container/container = null
 	var/combine_target = null
 
 	//Result type is one of the following:

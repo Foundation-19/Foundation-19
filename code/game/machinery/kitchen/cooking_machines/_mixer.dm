@@ -18,11 +18,11 @@ fundamental differences
 
 /obj/machinery/appliance/mixer/examine(mob/user)
 	..()
-	user << span("notice", "It is currently set to make a [selected_option]")
+	to_chat(user, SPAN_NOTICE("It is currently set to make a [selected_option]"))
 
 /obj/machinery/appliance/mixer/New()
 	..()
-	cooking_objs.Add(new /datum/cooking_item/(new /obj/item/weapon/reagent_containers/cooking_container(src)))
+	cooking_objs.Add(new /datum/cooking_item/(new /obj/item/reagent_containers/cooking_container(src)))
 	cooking = 0
 	selected_option = pick(output_options)
 
@@ -39,7 +39,7 @@ fundamental differences
 			return
 		else
 			selected_option = choice
-			user << "<span class='notice'>You prepare \the [src] to make \a [selected_option].</span>"
+			to_chat(user, SPAN_NOTICE("You prepare \the [src] to make \a [selected_option]."))
 			var/datum/cooking_item/CI = cooking_objs[1]
 			CI.combine_target = selected_option
 
@@ -59,7 +59,7 @@ fundamental differences
 	if (stat)
 		return 1
 	else
-		user << span("warning", "You can't remove ingredients while its turned on! Turn it off first or wait for it to finish.")
+		to_chat(user, SPAN_WARNING("You can't remove ingredients while its turned on! Turn it off first or wait for it to finish."))
 
 //Container is not removable
 /obj/machinery/appliance/mixer/removal_menu(mob/user)
@@ -111,7 +111,7 @@ fundamental differences
 
 /obj/machinery/appliance/mixer/can_insert(obj/item/I, mob/user)
 	if (!stat)
-		user << span("warning","You can't add items while \the [src] is running. Wait for it to finish or turn the power off to abort")
+		to_chat(user, SPAN_WARNING("You can't add items while \the [src] is running. Wait for it to finish or turn the power off to abort"))
 		return 0
 	else
 		return ..()
