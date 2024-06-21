@@ -44,7 +44,7 @@ SUBSYSTEM_DEF(ticker)
 	if(start_ASAP)
 		to_world(SPAN_INFO("<B>The game will start as soon as possible due to configuration!</B>"))
 	else
-		send2chat("<@&899514330461126656>, A New Round is Starting" , "roundping")
+		send2chat("<@&899514330461126656>, New Round Means a New MEEEEEEEEEEEEEEE!" , "roundping")
 		to_world(SPAN_INFO("<B>Welcome to the pre-game lobby!</B>"))
 		to_world("Please, setup your character and select ready. Game will start in [round(pregame_timeleft/10)] seconds.")
 	round_start_time = world.time
