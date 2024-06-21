@@ -52,7 +52,7 @@
 /obj/item/paper/scp012/proc/memetic_effect(mob/living/carbon/human/H)
 
 	var/obj/item/paper/scp012/A = locate(/obj/item/paper/scp012/) in GLOB.SCP_list
-	if (!A) // Уходим, если объекта нет O.O
+	if (!A)
 		return
 	if(!H || H.stat == UNCONSCIOUS || H.blinded || !H.can_see(A)) //Unconscious individuals cant keep hurting themselves
 		return
