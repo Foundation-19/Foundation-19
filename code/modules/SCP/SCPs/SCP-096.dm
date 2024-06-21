@@ -79,7 +79,7 @@
 		"????", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SCP_EUCLID, //Obj Class
 		"096", //Numerical Designation
-		SCP_MEMETIC|SCP_DISABLED //096 is disabled until traits are ported in as that is neccesary for it to pathfind through doors.
+		SCP_MEMETIC
 	)
 
 	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA
@@ -449,7 +449,7 @@
 	. = ..()
 	if(!istype(user, /mob/living/scp096))
 		var/mob/living/scp096/scp_to_trigger = locate(/mob/living/scp096) in GLOB.SCP_list
-		if(get_dist(user, src) <= 1 && isliving(user)) // если нужна дистанция юзать get_dist()
+		if(get_dist(user, src) <= 1 && isliving(user))
 			scp_to_trigger.trigger(user)
 			to_chat(user, SPAN_DANGER("You catch [scp_to_trigger]"))
 		else
