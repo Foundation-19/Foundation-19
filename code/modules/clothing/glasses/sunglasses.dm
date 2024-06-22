@@ -5,10 +5,11 @@
 	item_state = "sunglasses"
 	darkness_view = -1
 	flash_protection = FLASH_PROTECTION_MINOR
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/sunglasses/prescription
 	name = "prescription sunglasses"
-	prescription = 5
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/sunglasses/big
 	name = "thick sunglasses"

@@ -139,7 +139,7 @@
 	..(loc)
 
 	if(dir)
-		src.set_dir(dir)
+		src.setDir(dir)
 
 	if(istype(frame))
 		buildstage = 0
@@ -1105,7 +1105,7 @@ FIRE ALARM
 	..(loc)
 
 	if(dir)
-		src.set_dir((dir & (NORTH|SOUTH)) ? dir : GLOB.reverse_dir[dir])
+		src.setDir((dir & (NORTH|SOUTH)) ? dir : GLOB.reverse_dir[dir])
 
 	if(istype(frame))
 		buildstage = 0

@@ -123,7 +123,7 @@ Class Procs:
 /obj/machinery/Initialize(mapload, d=0, populate_parts = TRUE)
 	. = ..()
 	if(d)
-		set_dir(d)
+		setDir(d)
 	if (init_flags & INIT_MACHINERY_PROCESS_ALL)
 		START_PROCESSING_MACHINE(src, init_flags & INIT_MACHINERY_PROCESS_ALL)
 	SSmachines.machinery += src // All machines should remain in this list, always.
@@ -163,7 +163,7 @@ Class Procs:
 		pulse2.icon_state = "empdisable"
 		pulse2.SetName("emp sparks")
 		pulse2.anchored = TRUE
-		pulse2.set_dir(pick(GLOB.cardinal))
+		pulse2.setDir(pick(GLOB.cardinal))
 
 		spawn(10)
 			qdel(pulse2)
@@ -299,12 +299,12 @@ Class Procs:
 	if((. = ..())) // Buckling, climbers; unlikely to return true.
 		return
 	if(MUTATION_FERAL in user.mutations)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+		user.setClickCooldown(CLICK_CD_ATTACK*2)
 		attack_generic(user, 10, "smashes")
 		return TRUE
 	if(!CanPhysicallyInteract(user))
 		return FALSE // The interactions below all assume physical access to the machine. If this is not the case, we let the machine take further action.
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return TRUE
 	if(ishuman(user))

@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscdel: Removed the general Security radio channel.
+  - rscdel: Removed the Hailing radio channel.

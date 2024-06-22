@@ -14,48 +14,48 @@
 	if(!LAZYLEN(hud_elements))
 		var/i = 1
 		for(var/hardpoint in hardpoints)
-			var/obj/screen/exosuit/hardpoint/H = new(src, hardpoint)
+			var/atom/movable/screen/exosuit/hardpoint/H = new(src, hardpoint)
 			H.screen_loc = "1:6,[15-i]" //temp
 			hud_elements |= H
 			hardpoint_hud_elements[hardpoint] = H
 			i++
 
 		var/list/additional_hud_elements = list(
-			/obj/screen/exosuit/toggle/power_control,
-			/obj/screen/exosuit/toggle/maint,
-			/obj/screen/exosuit/eject,
-			/obj/screen/exosuit/toggle/hardpoint,
-			/obj/screen/exosuit/toggle/hatch,
-			/obj/screen/exosuit/toggle/hatch_open,
-			/obj/screen/exosuit/radio,
-			/obj/screen/exosuit/rename,
-			/obj/screen/exosuit/toggle/camera
+			/atom/movable/screen/exosuit/toggle/power_control,
+			/atom/movable/screen/exosuit/toggle/maint,
+			/atom/movable/screen/exosuit/eject,
+			/atom/movable/screen/exosuit/toggle/hardpoint,
+			/atom/movable/screen/exosuit/toggle/hatch,
+			/atom/movable/screen/exosuit/toggle/hatch_open,
+			/atom/movable/screen/exosuit/radio,
+			/atom/movable/screen/exosuit/rename,
+			/atom/movable/screen/exosuit/toggle/camera
 			)
 		if(body && body.pilot_coverage >= 100)
-			additional_hud_elements += /obj/screen/exosuit/toggle/air
+			additional_hud_elements += /atom/movable/screen/exosuit/toggle/air
 		i = 0
 		var/pos = 7
 		for(var/additional_hud in additional_hud_elements)
-			var/obj/screen/exosuit/M = new additional_hud(src)
+			var/atom/movable/screen/exosuit/M = new additional_hud(src)
 			M.screen_loc = "1:6,[pos]:[i]"
 			hud_elements |= M
 			i -= M.height
 
-		hud_health = new /obj/screen/exosuit/health(src)
+		hud_health = new /atom/movable/screen/exosuit/health(src)
 		hud_health.screen_loc = "EAST-1:28,CENTER-3:11"
 		hud_elements |= hud_health
-		hud_open = locate(/obj/screen/exosuit/toggle/hatch_open) in hud_elements
-		hud_power = new /obj/screen/exosuit/power(src)
+		hud_open = locate(/atom/movable/screen/exosuit/toggle/hatch_open) in hud_elements
+		hud_power = new /atom/movable/screen/exosuit/power(src)
 		hud_power.screen_loc = "EAST-1:12,CENTER-4:25"
 		hud_elements |= hud_power
-		hud_power_control = locate(/obj/screen/exosuit/toggle/power_control) in hud_elements
-		hud_camera = locate(/obj/screen/exosuit/toggle/camera) in hud_elements
+		hud_power_control = locate(/atom/movable/screen/exosuit/toggle/power_control) in hud_elements
+		hud_camera = locate(/atom/movable/screen/exosuit/toggle/camera) in hud_elements
 
 	refresh_hud()
 
 /mob/living/exosuit/handle_hud_icons()
 	for(var/hardpoint in hardpoint_hud_elements)
-		var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
+		var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
 		if(H) H.update_system_info()
 	handle_hud_icons_health()
 	var/obj/item/cell/C = get_cell()
@@ -110,14 +110,14 @@
 
 /mob/living/exosuit/proc/reset_hardpoint_color()
 	for(var/hardpoint in hardpoint_hud_elements)
-		var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
+		var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
 		if(H)
 			H.color = COLOR_WHITE
 
 /mob/living/exosuit/setClickCooldown(timeout)
 	. = ..()
 	for(var/hardpoint in hardpoint_hud_elements)
-		var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
+		var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
 		if(H)
 			H.color = "#a03b3b"
 			animate(H, color = COLOR_WHITE, time = timeout, easing = CUBIC_EASING | EASE_IN)

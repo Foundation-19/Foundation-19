@@ -102,10 +102,8 @@
 		return
 	if(!(flags & AFFECTS_DEAD) && M.stat == DEAD && (world.time - M.timeofdeath > 150))
 		return
-	if(overdose && (location != CHEM_TOUCH))
-		var/overdose_threshold = overdose * (flags & IGNORE_MOB_SIZE? 1 : MOB_MEDIUM/M.mob_size)
-		if(volume > overdose_threshold)
-			overdose(M, alien)
+	if(overdose_percentage() > 1)
+		overdose(M, alien)
 
 	//determine the metabolism rate
 	var/removed = metabolism
@@ -177,15 +175,19 @@
 /datum/reagent/proc/ex_act(obj/item/reagent_containers/holder, severity)
 	return
 
+/// Returns a percentage based on how close we are to overdosing. 0 means overdosing is impossible, 1 means you're exactly at the overdose limit, 2 means you're twice the overdose limit, and so on.
+/datum/reagent/proc/overdose_percentage()
+	if(isnull(overdose) || overdose == 0)
+		return 0
+
+	if(holder && istype(holder, /datum/reagents/metabolism))
+		var/datum/reagents/metabolism/m_holder = holder
+		if(m_holder.metabolism_class == CHEM_TOUCH)
+			return 0
+
+		var/adjusted_overdose = overdose * (flags & IGNORE_MOB_SIZE ? 1 : MOB_MEDIUM / m_holder.parent.mob_size)
+		return (volume / adjusted_overdose)
+
 /* DEPRECATED - TODO: REMOVE EVERYWHERE */
-
-/datum/reagent/proc/reaction_turf(turf/target)
-	touch_turf(target)
-
-/datum/reagent/proc/reaction_obj(obj/target)
-	touch_obj(target)
-
-/datum/reagent/proc/reaction_mob(mob/target)
-	touch_mob(target)
 
 /datum/reagent/proc/custom_temperature_effects(temperature)

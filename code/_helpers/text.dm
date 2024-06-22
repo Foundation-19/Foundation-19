@@ -479,6 +479,7 @@
 	t = replacetext(t, "\[uiulogo\]", "<img src = uiu.png>")
 	t = replacetext(t, "\[thilogo\]", "<img src = thi.png>")
 	t = replacetext(t, "\[mcdlogo\]", "<img src = mcd.png>")
+	t = replacetext(t, "\[grlogo\]", "<img src = gr.png>")
 	t = replacetext(t, "\[arlogo\]", "<img src = ar.png>")
 	t = replacetext(t, "\[cilogo\]", "<img src = ci.png>")
 	t = replacetext(t, "\[shlogo\]", "<img src = sh.png>")
