@@ -51,7 +51,6 @@ em						{font-style: normal;font-weight: bold;}
 .airadio				{color: #ff00ff;}
 .entradio				{color: #666666;}
 
-.secradio				{color: #930000;}
 .engradio				{color: #a66300;}
 .medradio				{color: #009190;}
 .sciradio				{color: #993399;}
@@ -61,7 +60,6 @@ em						{font-style: normal;font-weight: bold;}
 .seciradio				{color: #935050;}
 .mediradio				{color: #509190;}
 
-.hailradio				{color: #cc00aa;}
 .exampleradio			{color: #ff00ff;}
 .voxradio				{color: #f32b06;}
 .bearcatradio			{color: #590e2d;}

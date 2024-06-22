@@ -191,12 +191,6 @@
 	ks1type = /obj/item/device/encryptionkey/headset_com
 	max_keys = 3
 
-/obj/item/device/radio/headset/merchant
-	name = "merchant headset"
-	desc = "A headset utilizing the universal hailing frequency."
-	frequency = HAIL_FREQ
-	ks1type = /obj/item/device/encryptionkey/merchant
-
 /obj/item/device/radio/headset/heads/captain
 	name = "site director's headset"
 	desc = "The headset of the boss."
