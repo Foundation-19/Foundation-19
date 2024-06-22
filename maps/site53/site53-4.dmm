@@ -2082,10 +2082,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb1"
-	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
 "fP" = (
@@ -2904,6 +2900,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/logistics/logisticsofficer)
+"ix" = (
+/obj/structure/ladder,
+/turf/simulated/floor/plating,
+/area/site53/uez/substation)
 "iy" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -8347,7 +8347,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/space)
+/area/site53/uez/maintenance)
 "He" = (
 /obj/structure/hygiene/sink{
 	pixel_y = -13
@@ -45485,7 +45485,7 @@ gZ
 ep
 ep
 SP
-ft
+cJ
 cJ
 fL
 fM
@@ -45746,7 +45746,7 @@ cJ
 cJ
 cJ
 YX
-cJ
+ft
 cK
 hk
 hk
@@ -45997,9 +45997,9 @@ Kz
 oB
 gL
 aI
-hk
-cK
-cK
+ix
+cJ
+ft
 cK
 cK
 cK
@@ -46254,10 +46254,10 @@ dV
 dV
 Dm
 aI
-hk
-hk
-hk
-hk
+cK
+cK
+cK
+cK
 hk
 hk
 hk
