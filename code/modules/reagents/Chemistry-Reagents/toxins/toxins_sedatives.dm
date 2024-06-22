@@ -25,15 +25,15 @@
 		if (M.chem_doses[type] == metabolism * 2 || prob(5))
 			M.emote("yawn")
 	else if (M.chem_doses[type] < 1.5 * threshold)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 	else if (M.chem_doses[type] < 5 * threshold)
 		if (prob(50))
 			M.Weaken(2)
 			M.add_chemical_effect(CE_SEDATE, 1)
-		M.drowsyness = max(M.drowsyness, 20)
+		M.set_drowsiness_if_lower(20 SECONDS)
 	else
 		M.sleeping = max(M.sleeping, 20)
-		M.drowsyness = max(M.drowsyness, 60)
+		M.set_drowsiness_if_lower(60 SECONDS)
 		M.add_chemical_effect(CE_SEDATE, 1)
 	M.add_chemical_effect(CE_PULSE, -1)
 
@@ -59,16 +59,16 @@
 		threshold = 2.4
 
 	if (M.chem_doses[type] >= metabolism * threshold * 0.5)
-		M.confused = max(M.confused, 2)
+		M.set_confusion_if_lower(5 SECONDS)
 		M.add_chemical_effect(CE_VOICELOSS, 1)
 	if (M.chem_doses[type] > threshold * 0.5)
-		M.make_dizzy(3)
+		M.adjust_dizzy(3 SECONDS)
 		M.Weaken(2)
 	if (M.chem_doses[type] == round(threshold * 0.5, metabolism))
 		to_chat(M, SPAN_WARNING("Your muscles slacken and cease to obey you."))
 	if (M.chem_doses[type] >= threshold)
 		M.add_chemical_effect(CE_SEDATE, 1)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if (M.chem_doses[type] > 1 * threshold)
 		M.adjustToxLoss(removed)
@@ -96,12 +96,12 @@
 	M.add_chemical_effect(CE_SEDATE, 1)
 
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
-		M.drowsyness += 2
+		M.adjust_confusion(2 SECONDS)
+		M.adjust_drowsiness(2 SECONDS)
 
 	if (M.chem_doses[type] < 2 * threshold)
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 	else
 		M.sleeping = max(M.sleeping, 30)
 
@@ -143,7 +143,7 @@
 	M.status_flags |= FAKEDEATH
 	M.adjustOxyLoss(3 * removed)
 	M.Weaken(10)
-	M.silent = max(M.silent, 10)
+	M.set_silence_if_lower(10 SECONDS)
 	if (M.chem_doses[type] <= removed) //half-assed attempt to make timeofdeath update only at the onset
 		M.timeofdeath = world.time
 	M.add_chemical_effect(CE_NOPULSE, 1)

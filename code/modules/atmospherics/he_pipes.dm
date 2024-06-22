@@ -25,7 +25,7 @@
 	. = ..()
 	color = "#404040" //we don't make use of the fancy overlay system for colours, use this to set the default.
 
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging/set_dir(new_dir)
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/setDir(new_dir)
 	..()
 	initialize_directions_he = initialize_directions	// The auto-detection from /pipe is good enough for a simple HE pipe
 
@@ -116,7 +116,7 @@
 	build_icon_state = "junction"
 
 // Doubling up on initialize_directions is necessary to allow HE pipes to connect
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction/set_dir(new_dir)
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction/setDir(new_dir)
 	..()
 	initialize_directions_he = dir
 

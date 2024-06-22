@@ -201,6 +201,8 @@
 		res += "bio"
 	return english_list(res)
 
+#define ISADVANCEDTOOLUSER(mob) (HAS_TRAIT(mob, TRAIT_ADVANCED_TOOL_USER) && !HAS_TRAIT(mob, TRAIT_DISCOORDINATED_TOOL_USER))
+
 /mob/proc/set_see_in_dark(new_see_in_dark)
 	var/old_see_in_dark = sight
 	if(old_see_in_dark != new_see_in_dark)

@@ -1,7 +1,7 @@
 /datum/codex_entry/cbm
 	associated_paths = list(/obj/item/device/compact_bionic_module)
 	display_name = "Compact Bionic Module/CBM"
-	antag_text = "Compact bionic modules are one-use installers pre-loaded with medical software and an augment. \
+	entry_text = "Compact bionic modules are one-use installers pre-loaded with medical software and an augment. \
 	Due to safety concerns and their lack of licensing or registration, they are outlawed in most Sol Central Government territories, and are considered contraband. \
 	Activating it in-hand can be used to install an augment in the configured location by first tearing open an incision, then installing the augment, \
 	and finally sealing the wound.<br><br>\
@@ -21,7 +21,7 @@
 /datum/codex_entry/leukocyte_breeder
 	associated_paths = list(/obj/item/organ/internal/augment/active/leukocyte_breeder)
 	display_name = "Leukocyte Breeder"
-	lore_text = "These stimulators were originally developed to serve as both a control hub and a booster for white blood cells. \
+	entry_text = "These stimulators were originally developed to serve as both a control hub and a booster for white blood cells. \
 	It regulates the production and release of activation proteins to allow for more accurate threat recognition and immune response, \
 	while also ensuring the body has enough leukocytes to go around.<br>\
 	It sees the most use in those with autoimmune disorders, or for people with a naturally weak immune system that typically struggles to fight off infections and disease. \
@@ -34,7 +34,7 @@
 /datum/codex_entry/internal_air_system
 	associated_paths = list(/obj/item/organ/internal/augment/active/internal_air_system)
 	display_name = "Internal Air System"
-	lore_text = "This augment features a sophisticated air filtration system that activates based on the respiratory activity of its host, to ensure that poisons are avoided. \
+	entry_text = "This augment features a sophisticated air filtration system that activates based on the respiratory activity of its host, to ensure that poisons are avoided. \
 	It slowly replenishes its internal supply based on breathable gas in the environment - for most species, that's oxygen - \
 	and can be used as an internals tank like any other source if nothing else is available.<br>\
 	These systems are niche, but see use among miners, spacers, and other people that might suddenly find themselves requiring a source of clean, breathable air. \
@@ -43,7 +43,7 @@
 /datum/codex_entry/nerve_dampeners
 	associated_paths = list(/obj/item/organ/internal/augment/active/nerve_dampeners)
 	display_name = "Nerve Dampeners"
-	lore_text = "Selective control of synaptic signals combined with adjustments in brain chemistry can be used to effectively mitigate pain under strenuous conditions. \
+	entry_text = "Selective control of synaptic signals combined with adjustments in brain chemistry can be used to effectively mitigate pain under strenuous conditions. \
 	Its use is characterized by a tingling sensation across the entire body, which is unpleasant but much more manageable than whatever pain it might be canceling out.<br>\
 	The body isn't made to go without these feelings for long without a chemical aid, and so after it finishes a cycle, it is followed by a wave of tiredness and fatigue. \
 	Using it too often may lead to minor brain damage, or even blacking out. \

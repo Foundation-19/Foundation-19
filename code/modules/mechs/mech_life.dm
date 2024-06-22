@@ -42,6 +42,7 @@
 	..() //Handles stuff like environment
 
 	handle_hud_icons()
+	update_hud_alerts()
 
 	lying = FALSE // Fuck off, carp.
 	handle_vision(powered)
@@ -153,3 +154,49 @@
 
 /mob/living/exosuit/additional_see_invisible()
 	return see_invisible
+
+/mob/living/exosuit/proc/update_hud_alerts()
+	for(var/mob/pilot as anything in pilots)
+
+		var/obj/item/cell/cell = get_cell(TRUE)
+
+		if(cell)
+			var/cellcharge = cell.charge/cell.maxcharge
+			switch(cellcharge)
+				if(0.75 to INFINITY)
+					pilot.clear_alert(ALERT_CHARGE)
+				if(0.5 to 0.75)
+					pilot.throw_alert(ALERT_CHARGE, /atom/movable/screen/alert/lowcell/mech, 1)
+				if(0.25 to 0.5)
+					pilot.throw_alert(ALERT_CHARGE, /atom/movable/screen/alert/lowcell/mech, 2)
+				if(0.01 to 0.25)
+					pilot.throw_alert(ALERT_CHARGE, /atom/movable/screen/alert/lowcell/mech, 3)
+				else
+					pilot.throw_alert(ALERT_CHARGE, /atom/movable/screen/alert/emptycell/mech)
+		else
+			pilot.throw_alert(ALERT_CHARGE, /atom/movable/screen/alert/nocell/mech)
+
+		var/integrity = health/maxHealth
+		switch(integrity)
+			if(0.30 to 0.45)
+				pilot.throw_alert(ALERT_MECH_DAMAGE, /atom/movable/screen/alert/low_mech_integrity, 1)
+			if(0.15 to 0.35)
+				pilot.throw_alert(ALERT_MECH_DAMAGE, /atom/movable/screen/alert/low_mech_integrity, 2)
+			if(-INFINITY to 0.15)
+				pilot.throw_alert(ALERT_MECH_DAMAGE, /atom/movable/screen/alert/low_mech_integrity, 3)
+			else
+				pilot.clear_alert(ALERT_MECH_DAMAGE)
+
+		var/atom/checking = pilot.loc
+		// recursive check to handle all cases regarding very nested occupants,
+		// such as brainmob inside brainitem inside MMI inside mecha
+		while(!isnull(checking))
+			if(isturf(checking))
+				// hit a turf before hitting the mecha, seems like they have been moved out
+				pilot.clear_alert(ALERT_CHARGE)
+				pilot.clear_alert(ALERT_MECH_DAMAGE)
+				pilot = null
+				break
+			else if (checking == src)
+				break  // all good
+			checking = checking.loc

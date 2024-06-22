@@ -202,8 +202,8 @@ var/list/slot_equipment_priority = list( \
 /mob/proc/drop_r_hand(atom/Target)
 	return drop_from_inventory(r_hand, Target)
 
-//Drops the item in our active hand. TODO: rename this to drop_active_hand or something
-/mob/proc/drop_item(atom/Target)
+//Drops the item in our active hand.
+/mob/proc/drop_active_hand(atom/Target)
 	if(hand)	return drop_l_hand(Target)
 	else		return drop_r_hand(Target)
 
@@ -272,7 +272,7 @@ var/list/slot_equipment_priority = list( \
 /mob/proc/unequip_item(atom/target)
 	if(!canUnEquip(get_active_hand()))
 		return
-	drop_item(target)
+	drop_active_hand(target)
 	return 1
 
 //Attemps to remove an object on a mob.
@@ -294,13 +294,27 @@ var/list/slot_equipment_priority = list( \
 	return 1
 
 
-//Returns the item equipped to the specified slot, if any.
+/// Returns the item equipped to the specified slot, if any.
 /mob/proc/get_equipped_item(slot)
 	switch(slot)
 		if(slot_l_hand) return l_hand
 		if(slot_r_hand) return r_hand
 		if(slot_back) return back
 		if(slot_wear_mask) return wear_mask
+	return null
+
+/// Gets what slot the item on the mob is held in.
+/// Returns null if the item isn't in any slots on our mob.
+/// Does not check if the passed item is null, which may result in unexpected outcomes.
+/mob/proc/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == l_hand)
+		return slot_l_hand
+	if(looking_for == r_hand)
+		return slot_r_hand
+	if(looking_for == back)
+		return slot_back
+	if(looking_for == wear_mask)
+		return slot_wear_mask
 	return null
 
 /mob/proc/get_equipped_items(include_carried = 0)

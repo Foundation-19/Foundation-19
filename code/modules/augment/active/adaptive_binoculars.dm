@@ -15,6 +15,6 @@
 	. = ..()
 	if (holding?.zoom)
 		to_chat(owner, SPAN_WARNING("Your eyes fill with static as your [holding.name] malfunction."))
-		owner.eye_blind += 10
-		owner.eye_blurry += 20
+		owner.adjust_temp_blindness(10 SECONDS)
+		owner.adjust_eye_blur(20 SECONDS)
 		holding.unzoom()

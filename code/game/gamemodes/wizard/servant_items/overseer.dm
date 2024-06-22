@@ -2,10 +2,10 @@
 	name = "grim hood"
 	desc = "Darker than dark. What... what is this <i>made</i> of?"
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED, 
-		bullet = ARMOR_BALLISTIC_HEAVY, 
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
 		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED, 
+		energy = ARMOR_ENERGY_SHIELDED,
 		bomb = ARMOR_BOMB_SHIELDED
 		)
 	icon_state = "necromancer"
@@ -20,10 +20,10 @@
 	desc = "The void of space woven into fabric. It's hard to tell where its edges are."
 	icon_state = "overseercloak"
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED, 
-		bullet = ARMOR_BALLISTIC_HEAVY, 
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
 		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED, 
+		energy = ARMOR_ENERGY_SHIELDED,
 		bomb = ARMOR_BOMB_SHIELDED
 		)
 	item_flags = ITEM_FLAG_AIRTIGHT

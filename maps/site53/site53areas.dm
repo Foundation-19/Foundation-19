@@ -182,7 +182,7 @@
 	name = "Supply Dock"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 1
+	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 // SITE 53 SURFACE AREA'S
@@ -191,8 +191,25 @@
 
 /area/site53/surface/surface
 	name = "Surface"
+	//requires_power = 0
+	//dynamic_lighting = 0
+
+/area/site53/surface/surface/west
+	name = "Surface West"
 	requires_power = 0
 	dynamic_lighting = 0
+
+/area/site53/surface/surface/east
+	name = "Surface East"
+	requires_power = 0
+	dynamic_lighting = 0
+
+/area/site53/surface/surface/upper
+	name = "Upper Surface"
+	requires_power = 0
+	dynamic_lighting = 0
+/area/site53/surface/surface/caves
+	name = "Surface Caverns"
 
 /area/site53/surface/surface/away/bar
 	name = "Away Bar"
@@ -923,6 +940,11 @@
 	icon_state = "atmos"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/engineering/atmosext
+	name = "\improper External Atmospherics"
+	icon_state = "atmos"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/engineering/primaryhallway
 	name = "\improper Engineering Hallway"
 	icon_state = "engineering_foyer"
@@ -1058,6 +1080,11 @@
 
 /area/site53/engineering/auxstorage
 	name = "\improper Auxiliary Engineering Storage"
+	icon_state = "engineering_storage"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/engineering/secstorage
+	name = "\improper Secure Engineering Storage"
 	icon_state = "engineering_storage"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -1269,7 +1296,7 @@
 /area/quartermaster/hangar
 	name ="\improper Logistics Hangar"
 	icon_state = "quart"
-
+	dynamic_lighting = 0
 
 //SCP-106's realm
 /area/pocketdimension

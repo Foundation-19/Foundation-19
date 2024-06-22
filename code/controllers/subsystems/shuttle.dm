@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/shuttle_type in subtypesof(/datum/shuttle)) // This accounts for most shuttles, though away maps can queue up more.
 		var/datum/shuttle/shuttle = shuttle_type
 		if(!initial(shuttle.defer_initialisation))
-			LAZYDISTINCTADD(shuttles_to_initialize, shuttle_type)
+			LAZYOR(shuttles_to_initialize, shuttle_type)
 	block_queue = FALSE
 	clear_init_queue()
 	. = ..()

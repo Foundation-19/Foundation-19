@@ -49,7 +49,7 @@
 			update_icon()
 		return TRUE
 	if (user.a_intent == I_HURT)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		if (I.force < 7 || (I.damtype != BRUTE && I.damtype != BURN))
 			user.visible_message(
 				SPAN_WARNING("\The [user] bonks \an [I] against \the [src]."),

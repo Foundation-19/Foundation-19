@@ -46,3 +46,6 @@
 #define CL_MATRIX_CG 18
 #define CL_MATRIX_CB 19
 #define CL_MATRIX_CA 20
+
+/// The amount of lumcount on a tile for it to be considered dark.
+#define LIGHTING_TILE_IS_DARK 0.05

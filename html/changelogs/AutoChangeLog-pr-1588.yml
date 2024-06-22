@@ -1,0 +1,12 @@
+author: quadbium
+delete-after: true
+changes:
+  - rscadd: Added atmos intake/purge above the main entrance
+  - rscadd: Replaced atmos department with a larger atmos department
+  - rscadd: Add Hydrogen fuel line between atmos department and R-UST
+  - rscadd: Added engineering circuit storage
+  - rscadd: R-UST connection to scrubbers
+  - rscadd: Add scrubbers and vents to engineering department
+  - rscadd: adds firelocks and fire alarms to engineering department
+  - rscadd: Add scrubbers and vents to the floor 2 science
+  - rscadd: adds firelocks and fire alarms to floor 2 science
