@@ -18,7 +18,6 @@
 	var/move_delay = 3.0
 	//Mechanical
 /mob/living/carbon/human/scp343/verb/object_phase()
-	var/phase_cooldown_track
 	phase_time = 1 SECOND
 
 	var/obj/target_object = null
@@ -46,8 +45,6 @@
 	if(target_turf.density)
 		to_chat(src, SPAN_WARNING("\The [target_turf] is preventing us from phasing in that direction."))
 		return
-
-	phase_cooldown_track = world.time
 
 	// Mob effects
 	var/old_layer = layer
