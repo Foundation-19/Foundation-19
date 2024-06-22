@@ -23,20 +23,20 @@
 
 /obj/effect/bmode/dir/New()
 	..()
-	set_dir(host.dir)
+	setDir(host.dir)
 
 /obj/effect/bmode/dir/OnClick(list/parameters)
 	switch(dir)
 		if(SOUTH)
-			set_dir(WEST)
+			setDir(WEST)
 		if(WEST)
-			set_dir(NORTH)
+			setDir(NORTH)
 		if(NORTH)
-			set_dir(EAST)
+			setDir(EAST)
 		if(EAST)
-			set_dir(NORTHWEST)
+			setDir(NORTHWEST)
 		else
-			set_dir(SOUTH)
+			setDir(SOUTH)
 	host.dir = dir
 
 /obj/effect/bmode/help

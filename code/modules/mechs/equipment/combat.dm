@@ -157,13 +157,13 @@
 /obj/aura/mechshield/added_to(mob/living/target)
 	. = ..()
 	target.vis_contents += src
-	set_dir()
-	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
+	setDir()
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
 
 /obj/aura/mechshield/proc/update_dir(user, old_dir, dir)
-	set_dir(dir)
+	setDir(dir)
 
-/obj/aura/mechshield/set_dir(new_dir)
+/obj/aura/mechshield/setDir(new_dir)
 	. = ..()
 	if(dir == NORTH)
 		layer = north_layer
@@ -171,7 +171,7 @@
 
 /obj/aura/mechshield/Destroy()
 	if(user)
-		UnregisterSignal(user, COMSIG_DIR_SET)
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.vis_contents -= src
 	shields = null
 	. = ..()
@@ -404,15 +404,15 @@
 /obj/aura/mech_ballistic/added_to(mob/living/target)
 	. = ..()
 	target.vis_contents += src
-	set_dir()
-	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
+	setDir()
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
 
 /obj/aura/mech_ballistic/proc/update_dir(user, old_dir, dir)
-	set_dir(dir)
+	setDir(dir)
 
 /obj/aura/mech_ballistic/Destroy()
 	if (user)
-		UnregisterSignal(user, COMSIG_DIR_SET)
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.vis_contents -= src
 	shield = null
 	. = ..()
@@ -460,7 +460,7 @@
 
 /obj/item/mech_equipment/flash/proc/area_flash()
 	playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
-	var/flash_time = (rand(flash_min,flash_max) - 1)
+	var/flash_time = (rand(flash_min, flash_max) - 1) SECONDS
 
 	var/obj/item/cell/C = owner.get_cell()
 	C.use(active_power_use * CELLRATE)
@@ -482,8 +482,8 @@
 
 			if(O.can_see())
 				O.flash_eyes(FLASH_PROTECTION_MODERATE - protection)
-				O.eye_blurry += flash_time
-				O.confused += (flash_time + 2)
+				O.adjust_eye_blur(flash_time)
+				O.adjust_confusion(flash_time * 1.2)
 
 /obj/item/mech_equipment/flash/attack_self(mob/user)
 	. = ..()
@@ -508,7 +508,7 @@
 		if(istype(O))
 
 			playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
-			var/flash_time = (rand(flash_min,flash_max))
+			var/flash_time = (rand(flash_min, flash_max)) SECONDS
 
 			var/obj/item/cell/C = owner.get_cell()
 			C.use(active_power_use * CELLRATE)
@@ -528,18 +528,18 @@
 
 			if(O.can_see())
 				O.flash_eyes(FLASH_PROTECTION_MAJOR - protection)
-				O.eye_blurry += flash_time
-				O.confused += (flash_time + 2)
+				O.adjust_eye_blur(flash_time)
+				O.adjust_confusion(flash_time * 1.2)
 
 				if(isanimal(O)) //Hit animals a bit harder
-					O.Stun(flash_time)
+					O.Stun(flash_time / (1 SECOND))
 				else
-					O.Stun(flash_time / 2)
+					O.Stun(flash_time / (2 SECONDS))
 
-				if(flash_time > 3)
+				if(flash_time > (3 SECONDS))
 					O.drop_l_hand()
 					O.drop_r_hand()
-				if(flash_time > 5)
+				if(flash_time > (5 SECONDS))
 					O.Weaken(3)
 
 /obj/item/flamethrower/full/mech

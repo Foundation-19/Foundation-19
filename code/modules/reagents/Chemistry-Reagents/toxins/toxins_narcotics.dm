@@ -16,11 +16,11 @@
 /datum/reagent/cryptobiolin/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
-	var/drug_strength = 4
+	var/drug_strength = 4 SECONDS
 	if (alien == IS_SKRELL)
 		drug_strength = drug_strength * 0.8
-	M.make_dizzy(drug_strength)
-	M.confused = max(M.confused, drug_strength * 5)
+	M.adjust_dizzy(drug_strength)
+	M.set_confusion_if_lower(drug_strength * 3)
 
 
 
@@ -36,16 +36,16 @@
 /datum/reagent/impedrezene/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
-	M.jitteriness = max(M.jitteriness - 5, 0)
+	M.adjust_jitter(-5 SECONDS * removed)
 	M.add_chemical_effect(M.add_chemical_effect(CE_SLOWDOWN, 1))
 
 	if (prob(80))
-		M.confused = max(M.confused, 10)
+		M.set_confusion_if_lower(10 SECONDS)
 	if (prob(50))
-		M.drowsyness = max(M.drowsyness, 3)
+		M.set_drowsiness_if_lower(3 SECONDS)
 	if (prob(10))
 		M.emote("drool")
-		M.apply_effect(STUTTER, 3)
+		M.adjust_stutter(5 SECONDS)
 
 	if (M.getBrainLoss() < 60)
 		M.adjustBrainLoss(14 * removed)

@@ -29,16 +29,13 @@
 #define mSmallsize     110 // Table climbing.
 
 // disabilities
-#define NEARSIGHTED (1<<0)
 #define EPILEPSY    (1<<1)
 #define COUGHING    (1<<2)
 #define TOURETTES   (1<<3)
 #define NERVOUS     (1<<4)
 
 // sdisabilities
-#define BLINDED     (1<<0)
-#define MUTED       (1<<1)
-#define DEAFENED    (1<<2)
+#define DEAFENED    (1<<1)
 
 // What each index means:
 #define DNA_OFF_LOWERBOUND 0
@@ -75,7 +72,6 @@
 
 // The way blocks are handled badly needs a rewrite, this is horrible.
 // Too much of a project to handle at the moment, TODO for later.
-GLOBAL_VAR_INIT(BLINDBLOCK,0)
 GLOBAL_VAR_INIT(DEAFBLOCK,0)
 GLOBAL_VAR_INIT(HULKBLOCK,0)
 GLOBAL_VAR_INIT(TELEBLOCK,0)
@@ -84,7 +80,6 @@ GLOBAL_VAR_INIT(XRAYBLOCK,0)
 GLOBAL_VAR_INIT(CLUMSYBLOCK,0)
 GLOBAL_VAR_INIT(FAKEBLOCK,0)
 GLOBAL_VAR_INIT(COUGHBLOCK,0)
-GLOBAL_VAR_INIT(GLASSESBLOCK,0)
 GLOBAL_VAR_INIT(EPILEPSYBLOCK,0)
 GLOBAL_VAR_INIT(TWITCHBLOCK,0)
 GLOBAL_VAR_INIT(NERVOUSBLOCK,0)

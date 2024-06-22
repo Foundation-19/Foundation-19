@@ -175,7 +175,7 @@
 	if(same_tile)
 		affecting.forceMove(assailant.loc)
 		adir = assailant.dir
-		affecting.set_dir(assailant.dir)
+		affecting.setDir(assailant.dir)
 
 	switch(adir)
 		if(NORTH)
@@ -284,7 +284,7 @@
 
 	if(affecting.incapacitated(INCAPACITATION_ALL))
 		break_strength--
-	if(affecting.confused)
+	if(affecting.has_status_effect(/datum/status_effect/confusion))
 		break_strength--
 
 	if(break_strength < 1)

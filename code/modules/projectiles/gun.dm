@@ -160,7 +160,7 @@
 	if(!.)
 		clear_autofire()
 	else if(can_autofire())
-		autofiring_by.set_dir(get_dir(src, autofiring_at))
+		autofiring_by.setDir(get_dir(src, autofiring_at))
 		Fire(autofiring_at, autofiring_by, null, (get_dist(autofiring_at, autofiring_by) <= 1), FALSE, FALSE)
 
 /obj/item/gun/update_twohanding()
@@ -191,7 +191,7 @@
 
 	if(!istype(user, /mob/living))
 		return 0
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		return 0
 
 	var/mob/living/M = user
@@ -203,7 +203,7 @@
 		balloon_alert(M, "fingers too big!")
 		to_chat(M, SPAN_DANGER("Your fingers are too big for the trigger guard!"))
 		return 0
-	if((MUTATION_CLUMSY in M.mutations) && prob(40)) //Clumsy handling
+	if(((MUTATION_CLUMSY in M.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_FOOT, BP_R_FOOT)))
@@ -266,6 +266,9 @@
 	if((!waterproof && submerged()) || !special_check(user))
 		return
 
+	if (HAS_TRAIT(user, TRAIT_PACIFISM))
+		return
+
 	if(safety())
 		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERIENCED, 0.5)) //reflex un-safeying
 			toggle_safety(user)
@@ -315,7 +318,7 @@
 
 	//update timing
 	var/delay = max(burst_delay+1, fire_delay)
-	user.setClickCooldown(min(delay, DEFAULT_QUICK_COOLDOWN))
+	user.setClickCooldown(min(delay, CLICK_CD_QUICK))
 	user.SetMoveCooldown(move_delay)
 	next_fire_time = world.time + delay
 

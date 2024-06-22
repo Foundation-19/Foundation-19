@@ -2,11 +2,11 @@
 	return (stat == CONSCIOUS)
 
 /mob/living/can_emote(emote_type)
-	return (..() && !(silent && emote_type == AUDIBLE_MESSAGE))
+	return (..() && !(HAS_TRAIT(src, TRAIT_MUTE) && emote_type == AUDIBLE_MESSAGE))
 
 /mob/proc/emote(act, m_type, message)
 	// s-s-snowflake
-	if((stat == DEAD || status_flags & FAKEDEATH) && act != "deathgasp")
+	if((stat == DEAD || status_flags & FAKEDEATH || HAS_TRAIT(src, TRAIT_HANDS_BLOCKED)) && act != "deathgasp")
 		return
 	if(usr == src) //client-called emote
 		if (client && (client.prefs.muted & MUTE_IC))
