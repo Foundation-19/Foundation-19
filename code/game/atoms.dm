@@ -99,7 +99,7 @@
  * Default behaviour is to send the [COMSIG_ATOM_EXITED]
  */
 /atom/Exited(atom/movable/exitee, atom/new_loc)
-	SEND_SIGNAL(src, COMSIG_EXITED, src, exitee, new_loc)
+	SEND_SIGNAL(src, COMSIG_EXITED, exitee, new_loc)
 
 /atom/proc/reveal_blood()
 	return

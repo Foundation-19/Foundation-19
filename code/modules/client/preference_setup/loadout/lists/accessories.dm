@@ -67,22 +67,27 @@
 /datum/gear/accessory/armband_security/cargo
 	display_name = "cargo armband"
 	path = /obj/item/clothing/accessory/armband/cargo
+	whitelist_department_flags = SEC | SUP
 
 /datum/gear/accessory/armband_security/medical
 	display_name = "medical armband"
 	path = /obj/item/clothing/accessory/armband/med
+	whitelist_department_flags = SEC | MED
 
 /datum/gear/accessory/armband_security/emt
 	display_name = "EMT armband"
 	path = /obj/item/clothing/accessory/armband/medgreen
+	whitelist_department_flags = SEC | MED
 
 /datum/gear/accessory/armband_security/engineering
 	display_name = "engineering armband"
 	path = /obj/item/clothing/accessory/armband/engine
+	whitelist_department_flags = SEC | ENG
 
 /datum/gear/accessory/armband_security/hydro
 	display_name = "hydroponics armband"
 	path = /obj/item/clothing/accessory/armband/hydro
+	whitelist_department_flags = SEC | SRV
 
 /datum/gear/accessory/chaplaininsignia
 	display_name = "chaplain insignia"

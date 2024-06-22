@@ -492,6 +492,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/chief_engineer
+	class = CLASS_A
 
 /obj/item/card/id/seclvl3it_tech
 	name = "security ID"
@@ -502,11 +503,34 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 
 // JUNIOR GUARD ID'S
 
-/obj/item/card/id/junseclvl2lcz
+/obj/item/card/id/junseclvl1lcz
 	name = "security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
 	item_state = "Sec_ID1"
+	job_access_type = /datum/job/guardlcz
+
+/obj/item/card/id/junseclvl1ez
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl1"
+	item_state = "Sec_ID1"
+	job_access_type = /datum/job/guardez
+
+/obj/item/card/id/junseclvl2hcz
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/guardhcz
+
+// GUARD ID'S
+
+/obj/item/card/id/junseclvl2lcz
+	name = "security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
 	job_access_type = /datum/job/enlistedofficerlcz
 
 /obj/item/card/id/junseclvl2ez
@@ -527,8 +551,8 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/seclvl3lcz
 	name = "security ID"
 	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
-	icon_state = "securitylvl2"
-	item_state = "Sec_ID2"
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ncoofficerlcz
 
 /obj/item/card/id/seclvl3ez
@@ -561,14 +585,16 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 		ACCESS_DCLASS_BOTANY,
 		ACCESS_DCLASS_MINING,
 		ACCESS_DCLASS_JANITORIAL,
-		ACCESS_DCLASS_MEDICAL
+		ACCESS_DCLASS_MEDICAL,
+		ACCESS_DCLASS_LUXURY
 	)
 
-/obj/item/card/id/seclvl3lczdivision2
+// Riot Control Unit Sergeant
+/obj/item/card/id/seclvl2lczdivision2
 	name = "security ID"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
 	access = list(
 		ACCESS_SEC_COMMS,
 		ACCESS_SECURITY_LVL1,
@@ -580,7 +606,69 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 		ACCESS_DCLASS_BOTANY,
 		ACCESS_DCLASS_MINING,
 		ACCESS_DCLASS_JANITORIAL,
-		ACCESS_DCLASS_MEDICAL
+		ACCESS_DCLASS_MEDICAL,
+		ACCESS_DCLASS_LUXURY
+	)
+
+// Riot Control Unit Guard
+/obj/item/card/id/seclvl1lczdivision2
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ARMORY,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL,
+		ACCESS_DCLASS_LUXURY
+	)
+
+/obj/item/card/id/seclvl3lczdivision3
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_BRIG,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL,
+		ACCESS_DCLASS_LUXURY
+	)
+
+/obj/item/card/id/seclvl2lczdivision3
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_BRIG,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL,
+		ACCESS_DCLASS_LUXURY
 	)
 
 /obj/item/card/id/seclvl3hcz
@@ -594,17 +682,19 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 
 /obj/item/card/id/zcseclvl4hcz
 	name = "security ID"
-	desc = "A teal ID. Looks cool."
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerhcz
+	class = CLASS_B
 
-/obj/item/card/id/zcseclvl3lcz
+/obj/item/card/id/zcseclvl4lcz
 	name = "security ID"
-	desc = "A teal ID. A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerlcz
+	class = CLASS_B
 
 /obj/item/card/id/zcseclvl4ez
 	name = "security ID"
@@ -612,6 +702,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerez
+	class = CLASS_B
 
 // GC ID.
 
@@ -621,6 +712,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/hos
+	class = CLASS_A
 
 // SCIENCE
 
@@ -643,14 +735,28 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A dark yellow ID. Looks cool, the person wearing it, not so much."
 	icon_state = "sciencelvl3"
 	item_state = "Science_ID3"
-	job_access_type = /datum/job/scientist
+	job_access_type = /datum/job/seniorscientist
+
+/obj/item/card/id/sciencelvl2robo
+	name = "science ID"
+	desc = "A bright yellow ID. Looks ordinary?"
+	icon_state = "sciencelvl2"
+	item_state = "Science_ID2"
+	job_access_type = /datum/job/roboticist
+
+/obj/item/card/id/sciencelvl3robo
+	name = "science ID"
+	desc = "An orange ID. Looks important."
+	icon_state = "sciencelvl4"
+	item_state = "Science_ID4"
+	job_access_type = /datum/job/seniorroboticist
 
 /obj/item/card/id/sciencelvl4
 	name = "science ID"
 	desc = "An orange ID. Looks important."
 	icon_state = "sciencelvl4"
 	item_state = "Science_ID4"
-	job_access_type = /datum/job/seniorscientist
+	job_access_type = /datum/job/ard
 
 /obj/item/card/id/sciencelvlp
 	name = "science ID"
@@ -665,6 +771,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "sciencelvl5"
 	item_state = "Science_ID5"
 	job_access_type = /datum/job/rd
+	class = CLASS_B
 
 // ADMIN
 /obj/item/card/id/adminlvl1
@@ -687,6 +794,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "adminlvl3"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/goirep
+	class = CLASS_A
 
 /obj/item/card/id/adminlvl4
 	name = "administration ID"
@@ -694,6 +802,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "adminlvl4"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/hop
+	class = CLASS_A
 
 /obj/item/card/id/adminlvl5
 	name = "administration ID"
@@ -701,6 +810,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/captain
+	class = CLASS_A
 
 // ERT CARDS
 
@@ -709,6 +819,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
+	class = CLASS_A
 
 /obj/item/card/id/mtf/ninetail
 	name = "mobile task force ID"
@@ -777,8 +888,16 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	job_access_type = /datum/job/commsofficer
 	icon_state = "adminlvl4"
 	item_state = "Admin_ID"
+	class = CLASS_B
 
 // MEDICAL CARDS
+
+/obj/item/card/id/medicintern
+	name = "security ID"
+	desc = "A light blue card. Seems almost as unimportant as the person itself."
+	icon_state = "securitylvl1"
+	item_state = "Sec_ID1"
+	job_access_type = /datum/job/medicaldoctor
 
 /obj/item/card/id/emt
 	name = "security ID"
@@ -807,6 +926,15 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/cmo
+	class = CLASS_A
+
+/obj/item/card/id/assistantmedicalofficer
+	name = "security ID"
+	desc = "A purple ID. Seems important."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/acmo
+	class = CLASS_A
 
 /obj/item/card/id/psychiatrist
 	name = "administration ID"
@@ -823,6 +951,15 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "sciencelvl5"
 	item_state = "Science_ID5"
 	job_access_type = /datum/job/rd
+	class = CLASS_A
+
+/obj/item/card/id/rd
+	name = "science ID"
+	desc = "A red ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "sciencelvl4"
+	item_state = "Science_ID4"
+	job_access_type = /datum/job/rd
+	class = CLASS_A
 
 // MISC
 
@@ -853,6 +990,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "classd"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/classd
+	class = CLASS_D
 
 // LOGISTICS
 
@@ -870,11 +1008,13 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/cargo_tech
+	class = CLASS_B
 
 // CD ASSIGNMENT CARDS
 
 /obj/item/card/id/dassignment
 	desc = "A plain ID Card, used for granting access to D-Class personnel so they're able to perform their duties."
+	class = null
 
 /obj/item/card/id/dassignment/dmining
 	name = "mining assignment card"
@@ -896,3 +1036,6 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	name = "medical assignment card"
 	access = list(ACCESS_DCLASS_MEDICAL)
 
+/obj/item/card/id/dassignment/dluxury
+	name = "luxury reward card"
+	access = list(ACCESS_DCLASS_LUXURY)

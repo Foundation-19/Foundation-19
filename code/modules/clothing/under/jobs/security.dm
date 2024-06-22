@@ -39,6 +39,18 @@
 	icon_state = "lczriot_guard"
 	worn_state = "lczriot_guard"
 
+/obj/item/clothing/under/rank/security/lcz/recontain
+	name = "LCZ Recontainment Unit Jumpsuit"
+	desc = "A white tactical jumpsuit, with black shoulder and cyan wrist markings, as well as chevron insignia. Weaved with a durable fabric to absorb melee hits."
+	icon_state = "lczrecon_guard"
+	worn_state = "lczrecon_guard"
+
+/obj/item/clothing/under/rank/security/lcz/cadet
+	name = "LCZ Cadet Jumpsuit"
+	desc = "A black shortsleeved shirt worn by Cadets still in training, bearing \"Trainee\" on the back of the uniform in white, with the Security Department logo on the shoulder. Also along with this is the LCZ Security trousers."
+	icon_state = "lcz_cadet"
+	worn_state = "lcz_cadet"
+
 /obj/item/clothing/under/rank/security/lcz
 	name = "LCZ Security Jumpsuit"
 	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
@@ -52,7 +64,7 @@
 	worn_state = "lcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/lcz
-	name = "LCZ Commander Jumpsuit"
+	name = "LCZ Lieutenant Jumpsuit"
 	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
 	icon_state = "lcz_commander"
 	worn_state = "lcz_commander"
@@ -71,20 +83,20 @@
 	worn_state = "hcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/hcz
-	name = "HCZ Commander Jumpsuit"
+	name = "HCZ Lieutenant Jumpsuit"
 	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a lighter red color most known for Commanders."
 	icon_state = "hcz_commander"
 	worn_state = "hcz_commander"
 
 // Guard Commander Uniforms
 /obj/item/clothing/under/rank/head_of_security/guardcom
-	name = "Guard Commander's Uniform"
+	name = "Guard Commander Uniform"
 	desc = "A white tactical shirt, with a pair of black trousers with golden striping on the side, the shirt is covered in gold insignia, with an additional black color over the wrists. There's a golden badge and belt buckle. This is definitely the definition of prospertiy."
 	icon_state = "guard_commander"
 	worn_state = "guard_commander"
 
 /obj/item/clothing/under/rank/head_of_security/guardcom/alt
-	name = "Guard Commander's Turtleneck"
+	name = "Guard Commander Turtleneck"
 	desc = "A white turtleneck, atop of a set of black tactical cargo pants. The turtleneck has a golden insignia on the right shoulder, denoting the rank of Guard Commander. It smells of gunpowder."
 	icon_state = "guard_commander_turtleneck"
 	worn_state = "guard_commander_turtleneck"
@@ -104,6 +116,12 @@
 	desc = "A comfortable turtleneck in FBI colors, with some khaki pants. Do the FBI really wear this kind of thing? Usually the outfit of a UIU Relations Agent."
 	icon_state = "uiuclothes"
 	worn_state = "uiuclothes"
+
+/obj/item/clothing/under/rank/civilian/uiu/formal
+	name = "Federal Bureau of Investigation formal suit"
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in FBI colors, with some khaki pants. Usually the outfit of a UIU Relations Agent."
+	icon_state = "uiuformal"
+	worn_state = "uiuformal"
 
 /obj/item/clothing/suit/gocjacket
 	name = "Global Occult Coalition formal jacket"

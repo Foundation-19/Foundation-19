@@ -138,7 +138,7 @@
 	selectable = 0
 	toggleable = 0
 	disruptive = 0
-	use_power_cost = 500
+	use_power_cost = 0
 
 	engage_string = "Inject"
 
@@ -146,12 +146,12 @@
 	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream."
 
 	charges = list(
-		list("dexalin plus",  "dexalin plus",  /datum/reagent/medicine/dexalin_plus,          80),
-		list("inaprovaline",  "inaprovaline",  /datum/reagent/medicine/inaprovaline,      80),
-		list("dylovene",      "dylovene",      /datum/reagent/medicine/dylovene,          80),
-		list("hyronalin",     "hyronalin",     /datum/reagent/medicine/hyronalin,         80),
-		list("penicillin",    "penicillin",    /datum/reagent/medicine/penicillin,      80),
-		list("tramadol",      "tramadol",      /datum/reagent/medicine/painkiller/tramadol,          80)
+		list("tricordrazine", "tricordrazine", /datum/reagent/medicine/tricordrazine,     500),
+		list("tramadol",      "tramadol",      /datum/reagent/medicine/painkiller/tramadol,          500),
+		list("dexalin plus",  "dexalin plus",  /datum/reagent/medicine/dexalin_plus,          500),
+		list("antitoxins",    "antitoxins",    /datum/reagent/medicine/dylovene,          500),
+		list("glucose",       "glucose",       /datum/reagent/nutriment/glucose, 			500),
+		list("hyronalin",     "hyronalin",     /datum/reagent/medicine/hyronalin,         500)
 		)
 
 	var/max_reagent_volume = 80 //Used when refilling.

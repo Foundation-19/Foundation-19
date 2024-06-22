@@ -301,7 +301,7 @@
 	new /obj/item/gun/projectile/pistol/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
-	new /obj/item/ammo_magazine/box/mk9(src)
+	new /obj/item/ammo_magazine/box/a9mm(src)
 	new /obj/item/handcuffs(src)
 	update_icon()
 

@@ -1,0 +1,8 @@
+2024-06-05:
+  Tsurupeta:
+  - bugfix: fixed crash when orbiting yourself and moving.
+2024-06-12:
+  ChromeFoxxity:
+  - rscadd: Adds headsets to make communcations easier, adds new armor, adds Recontainment
+      unit room, adds Combat Medic medkits, adds Riot Control metal shields.
+  - bugfix: Fixed heavy revolver.

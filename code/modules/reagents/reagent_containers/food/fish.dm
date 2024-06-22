@@ -43,7 +43,7 @@
 	fish_type = "shark"
 
 /obj/item/reagent_containers/food/snacks/fish/carp
-	fish_type = "carp"
+	fish_type = "selachian"
 
 /obj/item/reagent_containers/food/snacks/fish/octopus
 	fish_type = "tako"
