@@ -50,12 +50,10 @@
 	)
 
 	skill_points = 25
-	roleplay_difficulty = "Easy"
-	mechanical_difficulty = "Easy - Medium"
-	duties = "Assist with experiments and technological developments."
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Manage the Research department. Coordinate experiments and technological developments."
 
-/datum/job/juniorroboticist
-	title = "Junior Robotics Technician"
 
 /datum/job/ard
 	title = "Assistant Research Director"
@@ -386,22 +384,17 @@
 /datum/job/juniorroboticist
 	title = "Junior Robotics Technician"
 	department = "Science"
-	department_flag = COM|SCI
-	selection_color = "#ad6bad"
-	head_position = TRUE
-	total_positions = 1
-	spawn_positions = 1
-	economic_power = 15
-	requirements = list(EXP_TYPE_SCIENCE = 720)
-	req_admin_notify = 1
-	supervisors = "the Site Director"
-	alt_titles = list("Chief Science Officer", "Head Researcher")
-	minimal_player_age = 20
-	ideal_character_age = 40
-	spawn_positions = 6
-	outfit_type = /decl/hierarchy/outfit/job/command/researchdirector
-	class = CLASS_A
-	hud_icon = "hudchiefscienceofficer"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 5
+	spawn_positions = 5
+	supervisors = "the Research Director and Assistant Research Director"
+	economic_power = 4
+	alt_titles = list("Junior Exoskeleton Technician", "Junior Hardsuit Technician")
+	ideal_character_age = 20
+	outfit_type = /decl/hierarchy/outfit/job/science/juniorroboticist
+	class = CLASS_C
+	hud_icon = "hudresearchassistant"
 
 	access = list(
 		ACCESS_SCI_COMMS,
@@ -425,6 +418,9 @@
 	)
 
 	skill_points = 12
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Assist with experiments and technological developments."
 
 /datum/job/juniorscientist
 	title = "Researcher Associate"
@@ -458,9 +454,7 @@
 	    SKILL_DEVICES     = SKILL_MASTER,
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
-	skill_points = 25
-
-	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium - Hard"
-	duties = "Manage the Research department. Coordinate experiments and technological developments."
-
+	skill_points = 12
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Assist with experiments and technological developments."
