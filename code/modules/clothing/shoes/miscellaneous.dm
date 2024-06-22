@@ -53,6 +53,20 @@
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
+/obj/item/clothing/shoes/combat/lcz
+	name = "heavy riot boots"
+	desc = "When you REALLY want to turn up the heat. Resistant to slippery surfaces, and melee damage."
+	icon_state = "lcz_boots"
+	force = 5
+	armor = list(melee = 80, bullet = 15, laser = 10,energy = 5, bomb = 5, bio = 0, rad = 0)
+	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_THICKMATERIAL
+	siemens_coefficient = 0.6
+
+	cold_protection = FEET
+	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = FEET
+	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
+
 /obj/item/clothing/shoes/jungleboots
 	name = "jungle boots"
 	desc = "A pair of durable brown boots. Waterproofed for use planetside."

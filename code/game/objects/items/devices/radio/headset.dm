@@ -198,14 +198,14 @@
 	ks1type = /obj/item/device/encryptionkey/merchant
 
 /obj/item/device/radio/headset/heads/captain
-	name = "captain's headset"
+	name = "site director's headset"
 	desc = "The headset of the boss."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/captain
 
 /obj/item/device/radio/headset/heads/captain/alt
-	name = "captain's bowman headset"
+	name = "site director's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 	max_keys = 3
@@ -230,45 +230,45 @@
 	return ..(freq, level, 1)
 
 /obj/item/device/radio/headset/heads/rd
-	name = "chief science officer's headset"
+	name = "research director's headset"
 	desc = "Headset of the researching God."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/rd
 
 /obj/item/device/radio/headset/heads/hos
-	name = "head of security's headset"
+	name = "security director's headset"
 	desc = "The headset of the man who protects your worthless lives."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/hos
 
 /obj/item/device/radio/headset/heads/ce
-	name = "chief engineer's headset"
+	name = "engineering director's headset"
 	desc = "The headset of the guy who is in charge of morons."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/ce
 
 /obj/item/device/radio/headset/heads/ce/alt
-	name = "chief engineer's bowman headset"
+	name = "engineering director's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
 /obj/item/device/radio/headset/heads/cmo
-	name = "chief medical officer's headset"
+	name = "medical director's headset"
 	desc = "The headset of the highly trained medical chief."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/cmo
 
 /obj/item/device/radio/headset/heads/cmo/alt
-	name = "chief medical officer's bowman headset"
+	name = "medical director's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
 /obj/item/device/radio/headset/heads/hop
-	name = "head of personnel's headset"
+	name = "site manager's headset"
 	desc = "The headset of the guy who will one day be captain."
 	icon_state = "com_headset"
 	item_state = "headset"

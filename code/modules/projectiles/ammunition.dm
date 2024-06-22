@@ -2,7 +2,7 @@
 	name = "bullet casing"
 	desc = "A bullet casing."
 	icon = 'icons/obj/ammo.dmi'
-	icon_state = "pistolcasing"
+	icon_state = "pistol-brass"
 	randpixel = 10
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT | SLOT_EARS
@@ -13,7 +13,7 @@
 	var/caliber = ""					//Which kind of guns it can be loaded into
 	var/projectile_type					//The bullet type to create when New() is called
 	var/is_spent = FALSE
-	var/spent_icon = "pistolcasing-spent"
+	var/spent_icon = "pistol-brass-empty"
 	var/fall_sounds = list('sounds/weapons/guns/casingfall1.ogg','sounds/weapons/guns/casingfall2.ogg','sounds/weapons/guns/casingfall3.ogg')
 	var/projectile_label
 

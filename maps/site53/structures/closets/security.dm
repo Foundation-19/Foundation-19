@@ -74,6 +74,88 @@
 			SetName(initial(name))
 			desc = initial(desc)
 
+/obj/structure/closet/secure_closet/cadet
+	name = "Cadet Locker - NO USE, ONLY FOR CODE."
+	icon = 'icons/obj/sec-lockers_new.dmi'
+	icon_state = "lczjunior1"
+	icon_closed = "lczjunior"
+	icon_locked = "lczjunior1"
+	icon_opened = "lczopen"
+	icon_off = "lczjunioroff"
+	anchored = TRUE
+	req_access = list(ACCESS_SECURITY_LVL1)
+	var/registered_name = null
+
+// Default contents of ALL cadet lockers
+/obj/structure/closet/secure_closet/cadet/WillContain()
+	return list(
+		/obj/item/handcuffs = 4,
+		/obj/item/storage/box/ifak,
+		/obj/item/crowbar/emergency_forcing_tool,
+		/obj/item/clothing/accessory/armor/tag/base/sec,
+		/obj/item/clothing/accessory/storage/black_vest,
+	)
+
+/obj/structure/closet/secure_closet/cadet/attackby(obj/item/W, mob/user)
+	if(opened)
+		return ..()
+	if(W.GetIdCard())
+		var/obj/item/card/id/I = W.GetIdCard()
+		if(!I || !I.registered_name)
+			return
+		if(togglelock(user, I))
+			if(!registered_name)
+				registered_name = I.registered_name
+				name += " ([I.registered_name])"
+				desc = "Owned by [I.registered_name]."
+				return
+		to_chat(user, SPAN_WARNING("Access Denied"))
+		return
+	return ..()
+
+/obj/structure/closet/secure_closet/cadet/CanToggleLock(mob/user, obj/item/card/id/id_card)
+	return ..() || (istype(id_card) && id_card.registered_name && (!registered_name || (registered_name == id_card.registered_name)))
+
+/obj/structure/closet/secure_closet/cadet/verb/reset()
+	set src in oview(1) // One square distance
+	set category = "Object"
+	set name = "Reset Lock"
+
+	if(!CanPhysicallyInteract(usr)) // Don't use it if you're not able to! Checks for stuns, ghost and restrain
+		return
+	if(ishuman(usr))
+		add_fingerprint(usr)
+		if (locked || !registered_name)
+			to_chat(usr, SPAN_WARNING("You need to unlock it first."))
+		else if (src.broken)
+			to_chat(usr, SPAN_WARNING("It appears to be broken."))
+		else
+			if(opened)
+				if(!close())
+					return
+			locked = 1
+			registered_name = null
+			SetName(initial(name))
+			desc = initial(desc)
+
+// LCZ - Cadet
+/obj/structure/closet/secure_closet/cadet/lcz
+	name = "LCZ Cadet's Locker"
+	req_access = list(ACCESS_SECURITY_LVL1)
+	icon_state = "lczcadet1"
+	icon_closed = "lczcadet"
+	icon_locked = "lczcadet1"
+	icon_opened = "lczopen"
+	icon_off = "lczcadetoff"
+
+/obj/structure/closet/secure_closet/cadet/lcz/WillContain()
+	return ..() | list(
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/head/helmet/scp/security/cadet,
+		/obj/item/ammo_magazine/box/a9mm,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+	)
+
 // LCZ - Guard
 /obj/structure/closet/secure_closet/guard/lcz
 	name = "LCZ Guard's Locker"
@@ -86,8 +168,8 @@
 
 /obj/structure/closet/secure_closet/guard/lcz/WillContain()
 	return ..() | list(
-		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/head/helmet/scp/security,
 		/obj/item/clothing/head/beret/sec/guard,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
@@ -112,16 +194,39 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/accessory/storage/bandolier,
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/head/helmet/scp/security,
+		/obj/item/clothing/head/beret/sec/sergeant,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+	)
+
+// HCZ - Cadet
+/obj/structure/closet/secure_closet/cadet/hcz
+	name = "HCZ Private's Locker"
+	req_access = list(ACCESS_SECURITY_LVL3)
+	icon_state = "hczcadet1"
+	icon_closed = "hczcadet"
+	icon_locked = "hczcadet1"
+	icon_opened = "hczopen"
+	icon_off = "hczcadetoff"
+
+/obj/structure/closet/secure_closet/cadet/hcz/WillContain()
+	return ..() | list(
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/material/knife/combat,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-		/obj/item/clothing/head/beret/sec/sergeant,
+		/obj/item/melee/telebaton,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/gun/energy/taser,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
 // HCZ - Guard
 /obj/structure/closet/secure_closet/guard/hcz
 	name = "HCZ Guard's Locker"
-	req_access = list(ACCESS_SECURITY_LVL3)
+	req_access = list(ACCESS_SECURITY_LVL3, ACCESS_SCIENCE_LVL3)
 	icon_state = "hczjunior1"
 	icon_closed = "hczjunior"
 	icon_locked = "hczjunior1"
@@ -175,10 +280,31 @@
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 	)
 
+// EZ - Cadet
+/obj/structure/closet/secure_closet/cadet/ez
+	name = "EZ Probationary Agent's Locker"
+	req_access = list(ACCESS_SECURITY_LVL2, ACCESS_ADMIN_LVL1)
+	icon_state = "ezcadet1"
+	icon_closed = "ezcadet"
+	icon_locked = "ezcadet1"
+	icon_opened = "ezopen"
+	icon_off = "ezcadetoff"
+
+/obj/structure/closet/secure_closet/cadet/ez/WillContain()
+	return ..() | list(
+		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
+		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+		/obj/item/melee/telebaton,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/gun/energy/taser,
+		/obj/item/ammo_magazine/box/a9mm,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+	)
+
 // EZ - Guard
 /obj/structure/closet/secure_closet/guard/ez
 	name = "EZ Agent's Locker"
-	req_access = list(ACCESS_SECURITY_LVL3)
+	req_access = list(ACCESS_SECURITY_LVL3, ACCESS_ADMIN_LVL2)
 	icon_state = "ezjunior1"
 	icon_closed = "ezjunior"
 	icon_locked = "ezjunior1"
@@ -256,13 +382,13 @@
 		/obj/item/clothing/under/rank/head_of_security/guardcom/alt,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
-		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/gun/energy/taser/carbine,
 	)
 
 // Zone Commander
 /obj/structure/closet/secure_closet/guard/zone_commander
-	name = "Zone Commander Locker"
+	name = "LCZ Zone Lieutenant's Locker"
 	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "lczcomm1"
 	icon_closed = "lczcomm"
@@ -293,7 +419,7 @@
 	)
 
 /obj/structure/closet/secure_closet/guard/zone_commander/hcz
-	name = "Zone Commander Locker"
+	name = "HCZ Zone Lieutenant's Locker"
 	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "hczcomm1"
 	icon_closed = "hczcomm"
@@ -302,7 +428,7 @@
 	icon_off = "hczcommoff"
 
 /obj/structure/closet/secure_closet/guard/zone_commander/ez
-	name = "Zone Commander Locker"
+	name = "EZ Zone Supervisor's Locker"
 	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "ezcomm1"
 	icon_closed = "ezcomm"
@@ -500,7 +626,7 @@
 		/obj/item/storage/backpack/rucksack,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
-		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/melee/telebaton,
 	)

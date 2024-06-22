@@ -3,7 +3,7 @@
 	desc = "A mysterious plague doctor."
 	icon = 'icons/SCP/scp-049.dmi'
 
-	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED
+	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NEED_DIRECT_ABSORB
 
 	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
 

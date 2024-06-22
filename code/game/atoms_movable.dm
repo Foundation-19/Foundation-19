@@ -91,7 +91,7 @@
 			if(is_new_area && is_destination_turf)
 				destination.loc.Entered(src, origin)
 
-	SEND_SIGNAL(src, COMSIG_MOVED, src, origin, destination)
+	SEND_SIGNAL(src, COMSIG_MOVED, origin, destination)
 
 	return 1
 
