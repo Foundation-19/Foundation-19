@@ -49,8 +49,9 @@
 	return ..()
 
 //Mechanics
-/obj/item/paper/scp012/proc/memetic_effect(var/mob/living/carbon/human/H)
+/obj/item/paper/scp012/proc/memetic_effect()
 
+	var/mob/living/carbon/human/H
 	var/obj/item/paper/scp012/A = locate(/obj/item/paper/scp012/) in GLOB.SCP_list
 	if (!A)
 		return
