@@ -55,7 +55,7 @@
 	var/obj/item/paper/scp012/A = locate(/obj/item/paper/scp012/) in GLOB.SCP_list
 	if (!A)
 		return
-	if(!H || H.stat == UNCONSCIOUS || H.blinded || !H.can_see(A)) //Unconscious individuals cant keep hurting themselves
+	if(!H || H.stat == UNCONSCIOUS || !H.can_see(A)) //Unconscious individuals cant keep hurting themselves
 		return
 
 	if(get_dist(H, src) > 1)
