@@ -23,6 +23,10 @@
 	//Generally applied during modification cooking with oven/fryer
 	//Used to stop deepfried meat from looking like slightly tanned raw meat, and make it actually look cooked
 
+	var/nutriment_amt = 0
+	var/list/nutriment_desc = list("food" = 1)
+	var/list/eat_sound = 'sounds/items/eatfood.ogg'
+
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/M)
 	if(!usr) usr = M
@@ -43,57 +47,62 @@
 	return
 
 /obj/item/reagent_containers/food/snacks/attack(mob/M as mob, mob/user as mob, def_zone)
-	if(!reagents.total_volume)
-		user << "<span class='danger'>None of [src] left!</span>"
-		user.drop_from_inventory(src)
+	return
+
+/obj/item/reagent_containers/food/snacks/attack(mob/M as mob, mob/user as mob, def_zone)
+	if(!reagents || !reagents.total_volume)
+		to_chat(user, SPAN_DANGER("None of [src] left!"))
 		qdel(src)
 		return 0
-
+	if(!is_open_container())
+		to_chat(user, SPAN_NOTICE("\The [src] isn't open!"))
+		return 0
 	if(istype(M, /mob/living/carbon))
 		//TODO: replace with standard_feed_mob() call.
-
-		var/fullness = M.nutrition + (M.reagents.get_reagent_amount("nutriment") * 25)
-		if(M == user)								//If you're eating it yourself
-			if(istype(M,/mob/living/carbon/human))
+		var/mob/living/carbon/C = M
+		var/fullness = C.get_fullness()
+		if(C == user)								//If you're eating it yourself
+			if(istype(C,/mob/living/carbon/human))
 				var/mob/living/carbon/human/H = M
 				if(!H.check_has_mouth())
-					user << "Where do you intend to put \the [src]? You don't have a mouth!"
+					to_chat(user, "Where do you intend to put \the [src]? You don't have a mouth!")
 					return
 				var/obj/item/blocked = H.check_mouth_coverage()
 				if(blocked)
-					user << "<span class='warning'>\The [blocked] is in the way!</span>"
+					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)//puts a limit on how fast people can eat/drink things
 			if (fullness <= 50)
-				M << "<span class='danger'>You hungrily chew out a piece of [src] and gobble it!</span>"
+				to_chat(C, SPAN_DANGER("You hungrily chew out a piece of [src] and gobble it!"))
 			if (fullness > 50 && fullness <= 150)
-				M << "<span class='notice'>You hungrily begin to eat [src].</span>"
+				to_chat(C, SPAN_NOTICE("You hungrily begin to eat [src]."))
 			if (fullness > 150 && fullness <= 350)
-				M << "<span class='notice'>You take a bite of [src].</span>"
+				to_chat(C, SPAN_NOTICE("You take a bite of [src]."))
 			if (fullness > 350 && fullness <= 550)
-				M << "<span class='notice'>You unwillingly chew a bit of [src].</span>"
-			if (fullness > (550 * (1 + M.overeatduration / 2000)))	// The more you eat - the more you can eat
-				M << "<span class='danger'>You cannot force any more of [src] to go down your throat.</span>"
+				to_chat(C, SPAN_NOTICE("You unwillingly chew a bit of [src]."))
+			if (fullness > 550)
+				to_chat(C, SPAN_DANGER("You cannot force any more of [src] to go down your throat."))
 				return 0
 		else
 			if(!M.can_force_feed(user, src))
 				return
 
-			if (fullness <= (550 * (1 + M.overeatduration / 1000)))
-				user.visible_message("<span class='danger'>[user] attempts to feed [M] [src].</span>")
+			if (fullness <= 550)
+				user.visible_message(SPAN_DANGER("[user] attempts to feed [M] [src]."))
 			else
-				user.visible_message("<span class='danger'>[user] cannot force anymore of [src] down [M]'s throat.</span>")
+				user.visible_message(SPAN_DANGER("[user] cannot force anymore of [src] down [M]'s throat."))
 				return 0
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			if(!do_mob(user, M)) return
+			if(!do_after(user, 4 SECONDS, M, bonus_percentage = 25)) return
 
-			M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been fed [src.name] by [user.name] ([user.ckey]) Reagents: [reagentlist(src)]</font>")
-			user.attack_log += text("\[[time_stamp()]\] <font color='red'>Fed [src.name] by [M.name] ([M.ckey]) Reagents: [reagentlist(src)]</font>")
-			msg_admin_attack("[key_name(user)] fed [key_name(M)] with [src.name] Reagents: [reagentlist(src)] (INTENT: [uppertext(user.a_intent)])")
+			if (user.get_active_hand() != src)
+				return
 
-			user.visible_message("<span class='danger'>[user] feeds [M] [src].</span>")
+			var/contained = reagentlist()
+			admin_attack_log(user, M, "Fed the victim with [name] (Reagents: [contained])", "Was fed [src] (Reagents: [contained])", "used [src] (Reagents: [contained]) to feed")
+			user.visible_message(SPAN_DANGER("[user] feeds [M] [src]."))
 
 		if(reagents)								//Handle ingestion of the reagent.
 			playsound(M.loc,'sound/items/eatfood.ogg', rand(10,50), 1)
@@ -3087,6 +3096,37 @@ proc/cooltime()
 	bitesize = 2
 	center_of_mass = list("x"=18, "y"=13)
 
+/obj/item/reagent_containers/food/snacks/sliceable
+	w_class = ITEM_SIZE_NORMAL //whole pizzas and cakes shouldn't fit in a pocket, you can slice them if you want to do that.
+
+/**
+ *  A food item slice
+ *
+ *  This path contains some extra code for spawning slices pre-filled with
+ *  reagents.
+ */
+/obj/item/reagent_containers/food/snacks/slice
+	name = "slice of... something"
+	var/whole_path // path for the item from which this slice comes
+	var/filled = FALSE // should the slice spawn with any reagents
+
+/**
+ *  Spawn a new slice of food
+ *
+ *  If the slice's filled is TRUE, this will also fill the slice with the
+ *  appropriate amount of reagents. Note that this is done by spawning a new
+ *  whole item, transferring the reagents and deleting the whole item, which may
+ *  have performance implications.
+ */
+/obj/item/reagent_containers/food/snacks/slice/Initialize()
+	. = ..()
+	if(filled)
+		var/obj/item/reagent_containers/food/snacks/whole = new whole_path()
+		if(whole && whole.slices_num)
+			var/reagent_amount = whole.reagents.total_volume/whole.slices_num
+			whole.reagents.trans_to_obj(src, reagent_amount)
+
+		qdel(whole)
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/crunch
 	name = "Pizza Crunch"

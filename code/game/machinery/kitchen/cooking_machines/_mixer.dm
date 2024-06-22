@@ -11,7 +11,7 @@ fundamental differences
 
 /obj/machinery/appliance/mixer
 	max_contents = 1
-	stat = POWEROFF
+	//stat = POWEROFF
 	cooking_power = 0.4
 	active_power_usage = 3000
 	idle_power_usage = 50
@@ -39,7 +39,7 @@ fundamental differences
 			return
 		else
 			selected_option = choice
-			to_chat(user, SPAN_NOTICE("You prepare \the [src] to make \a [selected_option]."))
+			to_chat(src, SPAN_NOTICE("You prepare \the [src] to make \a [selected_option]."))
 			var/datum/cooking_item/CI = cooking_objs[1]
 			CI.combine_target = selected_option
 

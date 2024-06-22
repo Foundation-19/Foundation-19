@@ -3000,6 +3000,7 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/snacks/jalapeno_poppers,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "hT" = (
@@ -13650,6 +13651,16 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
+"ZY" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/orange/border,
+/obj/item/reagent_containers/food/snacks/jalapeno_poppers,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "ZZ" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -46628,7 +46639,7 @@ gh
 gE
 aG
 hS
-tD
+ZY
 cl
 Op
 nA

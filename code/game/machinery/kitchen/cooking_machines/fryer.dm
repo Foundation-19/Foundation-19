@@ -172,9 +172,9 @@
 	if(ishuman(victim) && user.zone_sel.selecting != "groin" && user.zone_sel.selecting != "chest")
 		var/mob/living/carbon/human/H = victim
 		E = H.get_organ(user.zone_sel.selecting)
-		if(!E || E.species.flags & NO_PAIN)
+		if(!E || E.species.species_flags & SPECIES_FLAG_NO_PAIN)
 			nopain = 2
-		else if(E.robotic >= ORGAN_ROBOT)
+		else if(istype(E) && !BP_IS_ROBOTIC(E))
 			nopain = 1
 
 	user.visible_message("<span class='danger'>\The [user] shoves \the [victim][E ? "'s [E.name]" : ""] into \the [src]!</span>")
@@ -183,7 +183,7 @@
 
 			if(E.children && E.children.len)
 				for(var/obj/item/organ/external/child in E.children)
-					if(nopain && nopain < 2 && !(child.robotic >= ORGAN_ROBOT))
+					if(nopain && nopain < 2 && !(child.istype(E) && !BP_IS_ROBOTIC(E)))
 						nopain = 0
 					child.take_damage(0, damage)
 					damage -= (damage*0.5)//IF someone's arm is plunged in, the hand should take most of it
