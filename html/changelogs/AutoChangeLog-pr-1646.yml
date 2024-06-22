@@ -1,0 +1,4 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: The paperwork database now has a material inventory form (for logistics).
