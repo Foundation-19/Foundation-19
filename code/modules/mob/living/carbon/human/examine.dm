@@ -117,7 +117,8 @@
 
 	//ID
 	if(wear_id)
-		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line(user)].\n"
+		var/obj/item/card/id/id = GetIdCard()
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line(user)]. Job: [id.assignment]. CLASS: [id.class].\n "
 
 	//handcuffed?
 	if(handcuffed)
