@@ -156,7 +156,7 @@
 
 /datum/job/roboticist
 	title = "Robotics Technician"
-=======
+
 /datum/job/seniormentalist
 	title = "Senior Psychotronics Researcher"
 	department = "Science"
