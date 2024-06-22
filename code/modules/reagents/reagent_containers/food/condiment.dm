@@ -326,8 +326,9 @@
 	icon = 'icons/obj/food.dmi'
 	icon_state = "flour"
 	item_state = "flour"
+	volume = 220
 	randpixel = 10
-	starting_reagents = list(/datum/reagent/nutriment/flour = 50)
+	starting_reagents = list(/datum/reagent/nutriment/flour = 200)
 
 /obj/item/reagent_containers/food/condiment/flour/on_reagent_change()
 	return

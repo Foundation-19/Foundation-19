@@ -319,3 +319,10 @@
 #define FACILITY_EVACUATED 1
 #define FACILITY_DESTROYED_NUKE 2
 #define FACILITY_DESTROYED_SELF_DESTRUCT 3
+
+//Recipe type defines. Used to determine what machine makes them
+#define MICROWAVE			0x1
+#define FRYER				0x2
+#define OVEN				0x4
+#define CANDYMAKER			0x8
+#define CEREALMAKER			0x10

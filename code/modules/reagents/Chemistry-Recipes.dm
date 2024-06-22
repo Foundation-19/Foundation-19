@@ -1502,6 +1502,7 @@
 	name = "Dough"
 	result = null
 	required_reagents = list(/datum/reagent/nutriment/protein/egg = 3, /datum/reagent/nutriment/flour = 10, /datum/reagent/water = 10)
+	inhibitors = list("water" = 1, "beer" = 1) //To prevent it messing with batter recipes
 	result_amount = 1
 	mix_message = "The solution folds and thickens into a large ball of dough."
 
@@ -1526,12 +1527,19 @@
 
 //batter reaction as food precursor, for things that don't use pliable dough precursor.
 
-/datum/chemical_reaction/batter
+/datum/chemical_reaction/coating/batter
 	name = "Batter"
-	result = /datum/reagent/nutriment/batter
-	required_reagents = list(/datum/reagent/nutriment/protein/egg = 3, /datum/reagent/nutriment/flour = 5, /datum/reagent/drink/milk = 5)
-	result_amount = 10
-	mix_message = "The solution thickens into a glossy batter."
+	id = "batter"
+	result = "batter"
+	required_reagents = list("egg" = 3, "flour" = 10, "water" = 5, "sodiumchloride" = 2)
+	result_amount = 20
+
+/datum/chemical_reaction/coating/beerbatter
+	name = "Beer Batter"
+	id = "beerbatter"
+	result = "beerbatter"
+	required_reagents = list("egg" = 3, "flour" = 10, "beer" = 5, "sodiumchloride" = 2)
+	result_amount = 20
 
 /datum/chemical_reaction/cakebatter
 	name = "Cake Batter"

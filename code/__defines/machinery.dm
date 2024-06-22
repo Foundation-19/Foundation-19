@@ -30,6 +30,7 @@
 #define EMPED    (1<<3)  // Temporary broken by EMP pulse.
 #define NOSCREEN (1<<4)  // No UI shown via direct interaction
 #define NOINPUT  (1<<5)  // No input taken from direct interaction
+#define POWEROFF (1<<6)
 
 #define MACHINE_BROKEN_GENERIC  (1<<0) // Standard legacy brokenness, used on a case-by-case basis
 #define MACHINE_BROKEN_NO_PARTS (1<<1) // Missing required parts
