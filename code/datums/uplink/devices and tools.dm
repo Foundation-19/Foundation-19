@@ -167,3 +167,9 @@
 	name = "Large Package Bomb"
 	item_cost = 60
 	path = /obj/item/syndie/c4explosive/heavy
+
+/datum/uplink_item/item/tools/time_rewinder
+	name = "Time Rewinder"
+	item_cost = 20
+	path = /obj/item/device/time_rewinder
+	desc = "An experiment temporal device that loops the user through time."

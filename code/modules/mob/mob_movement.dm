@@ -367,5 +367,8 @@
 /mob/proc/adjust_stamina(amt)
 	return
 
+/mob/proc/set_stamina(amt)
+	return
+
 /mob/proc/get_stamina()
 	return 100
