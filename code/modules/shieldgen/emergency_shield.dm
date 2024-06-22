@@ -28,7 +28,7 @@
 		return
 
 /obj/machinery/shield/New()
-	src.set_dir(pick(1,2,3,4))
+	src.setDir(pick(1,2,3,4))
 	..()
 	update_nearby_tiles(need_rebuild=1)
 
@@ -56,7 +56,7 @@
 	check_failure()
 	set_opacity(1)
 	spawn(20) if(!QDELETED(src)) set_opacity(0)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 
 	..()
 

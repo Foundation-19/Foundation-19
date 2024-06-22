@@ -19,7 +19,7 @@
 	if(cached_icon)
 		icon = cached_icon
 
-	set_dir(pick(GLOB.cardinal))
+	setDir(pick(GLOB.cardinal))
 
 	//float over to our destination, if we have one
 	destination = dest_turf

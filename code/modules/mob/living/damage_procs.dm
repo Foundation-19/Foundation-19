@@ -72,22 +72,12 @@
 			Paralyse(effect * blocked_mult(blocked))
 		if(PAIN)
 			adjustHalLoss(effect * blocked_mult(blocked))
-		if(STUTTER)
-			if(status_flags & CANSTUN) // stun is usually associated with stutter - TODO CANSTUTTER flag?
-				stuttering = max(stuttering, effect * blocked_mult(blocked))
-		if(EYE_BLUR)
-			eye_blurry = max(eye_blurry, effect * blocked_mult(blocked))
-		if(DROWSY)
-			drowsyness = max(drowsyness, effect * blocked_mult(blocked))
 	updatehealth()
 	return TRUE
 
-/mob/living/proc/apply_effects(stun = 0, weaken = 0, paralyze = 0, stutter = 0, eyeblur = 0, drowsy = 0, agony = 0, blocked = 0)
+/mob/living/proc/apply_effects(stun = 0, weaken = 0, paralyze = 0, agony = 0, blocked = 0)
 	if(stun)		apply_effect(stun,      STUN, blocked)
 	if(weaken)		apply_effect(weaken,    WEAKEN, blocked)
 	if(paralyze)	apply_effect(paralyze,  PARALYZE, blocked)
-	if(stutter)		apply_effect(stutter,   STUTTER, blocked)
-	if(eyeblur)		apply_effect(eyeblur,   EYE_BLUR, blocked)
-	if(drowsy)		apply_effect(drowsy,    DROWSY, blocked)
 	if(agony)		apply_effect(agony,     PAIN, blocked)
 	return TRUE

@@ -39,7 +39,7 @@
 		var/force_emote = species.get_pain_emote(src, power)
 		if(force_emote && prob(power))
 			var/decl/emote/use_emote = usable_emotes[force_emote]
-			if(!(use_emote.message_type == AUDIBLE_MESSAGE && silent))
+			if(!(use_emote.message_type == AUDIBLE_MESSAGE && HAS_TRAIT(src, TRAIT_MUTE)))
 				emote(force_emote)
 	next_pain_time = world.time + (100-power)
 

@@ -17,7 +17,7 @@
 	var/str_max = 7 //how powerful the effect COULD be
 
 /obj/item/device/flash/proc/clown_check(mob/user)
-	if(user && (MUTATION_CLUMSY in user.mutations) && prob(50))
+	if(user && ((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		to_chat(user, SPAN_WARNING("\The [src] slips out of your hand."))
 		user.unequip_item()
 		return 0
@@ -60,7 +60,7 @@
 			to_chat(user, SPAN_WARNING("*click* *click*"))
 			return 0
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(M)
 
 	playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
@@ -80,8 +80,8 @@
 				if(flash_strength > 0)
 					M.flash_eyes(FLASH_PROTECTION_MODERATE - safety)
 					M.Stun(flash_strength / 2)
-					M.eye_blurry = max(M.eye_blurry, flash_strength)
-					M.confused = max(M.confused, (flash_strength + 2))
+					M.set_eye_blur_if_lower(flash_strength SECONDS)
+					M.set_confusion_if_lower((flash_strength * 1.2) SECONDS) // TODO: move SECONDS further up
 					if(flash_strength > 3)
 						M.drop_l_hand()
 						M.drop_r_hand()
@@ -98,8 +98,8 @@
 			if(safety < FLASH_PROTECTION_MODERATE)
 				SA.Stun(flash_strength - 2)
 				SA.flash_eyes(2)
-				SA.eye_blurry += flash_strength
-				SA.confused += flash_strength
+				SA.adjust_eye_blur(flash_strength SECONDS)
+				SA.adjust_confusion(flash_strength SECONDS) // TODO: move SECONDS further up
 		else
 			flashfail = 1
 
@@ -170,7 +170,7 @@
 		else	//can only use it  5 times a minute
 			user.show_message(SPAN_WARNING("*click* *click*"), 2)
 			return 0
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
 	flick("[initial(icon_state)]_on", src)
 	if(user && isrobot(user))
@@ -190,7 +190,7 @@
 		if(safety < FLASH_PROTECTION_MODERATE)
 			if(M.can_see())
 				M.flash_eyes()
-				M.eye_blurry += 2
+				M.adjust_eye_blur(2 SECONDS)
 
 	return 1
 

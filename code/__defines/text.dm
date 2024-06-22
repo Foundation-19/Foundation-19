@@ -12,3 +12,10 @@
 		var/_measurement = measurement; \
 		return_var = text2num(copytext(_measurement, findtextEx(_measurement, "x") + 1)); \
 	} while(FALSE);
+
+/// Folder directory for strings
+#define STRING_DIRECTORY "strings"
+
+// JSON text files found in the /strings folder
+/// File location for eigenstasium lines
+#define EIGENSTASIUM_FILE "eigenstasium.json"

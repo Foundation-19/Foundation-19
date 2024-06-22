@@ -249,8 +249,8 @@
 			return
 
 		switch(href_list["rotatedir"])
-			if("right")	A.set_dir(turn(A.dir, -45))
-			if("left")	A.set_dir(turn(A.dir, 45))
+			if("right")	A.setDir(turn(A.dir, -45))
+			if("left")	A.setDir(turn(A.dir, 45))
 		href_list["datumrefresh"] = href_list["rotatedatum"]
 
 	else if(href_list["makemonkey"])

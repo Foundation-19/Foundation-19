@@ -17,6 +17,9 @@
 	outfit_type = /decl/hierarchy/outfit/job/chaplain
 	class = CLASS_C
 
+	roleplay_difficulty = "Medium"
+	mechanical_difficulty = "Easy"
+
 /datum/job/chaplain/equip(mob/living/carbon/human/H, alt_title, ask_questions = TRUE)
 	. = ..()
 	if(!. || !ask_questions)
@@ -28,7 +31,7 @@
 
 	spawn(0)
 		var/religion_name = "Christianity"
-		var/new_religion = sanitize(input(H, "You are the crew services officer. Would you like to change your religion? Default is Christianity, in SPACE.", "Name change", religion_name), MAX_NAME_LEN)
+		var/new_religion = sanitize(input(H, "You are the crew services officer. Would you like to change your religion? Default is Christianity.", "Name change", religion_name), MAX_NAME_LEN)
 
 		if (!new_religion)
 			new_religion = religion_name

@@ -80,6 +80,10 @@
 			new /mob/living/carbon/human/scp347 (loc)
 			delete_me = 1
 			return
+		if ("scp2020")
+			new /mob/living/carbon/human/scp2020 (loc)
+			delete_me = 1
+			return
 		if ("scp173")
 			new /mob/living/scp173 (loc)
 			delete_me = 1

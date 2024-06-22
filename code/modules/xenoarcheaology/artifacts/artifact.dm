@@ -1,6 +1,6 @@
 /obj/machinery/artifact
-	name = "alien artifact"
-	desc = "A large alien device."
+	name = "anomalous artifact"
+	desc = "A large anomalous device."
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "ano00"
 	var/icon_num = 0
@@ -34,7 +34,7 @@
 		name = "alien computer"
 		desc = "It is covered in strange markings."
 	else if(icon_num == 10)
-		desc = "A large alien device, there appear to be some kind of vents in the side."
+		desc = "A large anomalous device, there appear to be some kind of vents in the side."
 	else if(icon_num == 11)
 		name = "sealed alien pod"
 		desc = "A strange alien device."

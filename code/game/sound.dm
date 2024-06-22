@@ -27,7 +27,7 @@
 var/const/FALLOFF_SOUNDS = 0.5
 
 /mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, ignore_pressure, atom/Ssource)
-	if(!client)
+	if(!src.client || ear_deaf > 0 || !can_hear(turf_source))
 		return
 	var/sound/S = soundin
 	if(!istype(S))
@@ -88,11 +88,11 @@ var/const/FALLOFF_SOUNDS = 0.5
 			var/mob/living/carbon/M = src
 			if (istype(M) && M.hallucination_power > 50 && M.chem_effects[CE_HALLUCINATION] < 1)
 				S.environment = PSYCHOTIC
-			else if (M.druggy)
+			else if (M.has_status_effect(/datum/status_effect/drugginess))
 				S.environment = DRUGGED
-			else if (M.drowsyness)
+			else if (M.has_status_effect(/datum/status_effect/drowsiness))
 				S.environment = DIZZY
-			else if (M.confused)
+			else if (M.has_status_effect(/datum/status_effect/confusion))
 				S.environment = DIZZY
 			else if (M.stat == UNCONSCIOUS)
 				S.environment = UNDERWATER
