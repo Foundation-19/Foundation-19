@@ -85,6 +85,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "ao" = (
@@ -932,6 +933,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "cQ" = (
@@ -2026,6 +2030,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/maple,
 /area/site53/uez/hallway)
+"fG" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "fH" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/yew,
@@ -2071,10 +2081,6 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb1"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
@@ -2165,6 +2171,9 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
@@ -2588,6 +2597,16 @@
 /obj/structure/coatrack,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"hz" = (
+/obj/machinery/power/apc{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "hA" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -2635,6 +2654,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "hJ" = (
@@ -2642,6 +2664,9 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
@@ -2738,7 +2763,7 @@
 /area/site53/logistics/logisticsofficer)
 "hZ" = (
 /turf/simulated/open,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "ic" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/corner/brown/border{
@@ -2753,7 +2778,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "ie" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	name = "Guard Commander's Office"
@@ -2875,6 +2900,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/logistics/logisticsofficer)
+"ix" = (
+/obj/structure/ladder,
+/turf/simulated/floor/plating,
+/area/site53/uez/substation)
 "iy" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -3139,6 +3168,11 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/upper_surface/commstower)
+"jA" = (
+/obj/structure/railing/mapped,
+/obj/machinery/atmospherics/pipe/manifold/visible/green,
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "jB" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -3358,6 +3392,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "kb" = (
@@ -3374,7 +3411,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "kd" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -3437,7 +3474,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "ko" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -3546,7 +3583,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "kC" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/computer/station_alert/all{
@@ -3856,6 +3893,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
+"lv" = (
+/obj/structure/railing/mapped,
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 9
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
+"lz" = (
+/obj/structure/railing/mapped{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/green,
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "lA" = (
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/structure/closet{
@@ -4122,6 +4173,12 @@
 /obj/effect/floor_decal/corner/grey/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"mT" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 10
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "mV" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1
@@ -4691,6 +4748,10 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/commandpanicbunker)
+"pB" = (
+/obj/machinery/atmospherics/valve,
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "pG" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4771,6 +4832,16 @@
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"pQ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
+	},
+/obj/machinery/alarm{
+	pixel_y = 23;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "pX" = (
 /obj/machinery/light{
 	dir = 1
@@ -4792,6 +4863,10 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uez/conference)
+"qc" = (
+/obj/structure/railing/mapped,
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "qd" = (
 /obj/machinery/power/port_gen/pacman/mrs,
 /obj/effect/catwalk_plated/dark,
@@ -5111,6 +5186,15 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/hallway)
+"rq" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "rs" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
@@ -6563,6 +6647,16 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uez/commandpanicbunker)
+"yz" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 5
+	},
+/turf/simulated/open,
+/area/site53/engineering/atmosext)
 "yB" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 8
@@ -6703,6 +6797,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"zj" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/obj/machinery/door/airlock/hatch/maintenance{
+	name = "Maintenance"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/site53/maintenance/upper_surface)
 "zl" = (
 /obj/effect/floor_decal/corner/orange/half,
 /obj/structure/closet/crate/bin{
@@ -7004,6 +7110,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"AE" = (
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 1;
+	icon_state = "map_injector";
+	id_tag = "external_out";
+	use_power = 1
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "AF" = (
 /obj/structure/bed/chair/comfy/red{
 	dir = 4;
@@ -7819,6 +7934,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"EQ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "ET" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -8226,7 +8347,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/space)
+/area/site53/uez/maintenance)
 "He" = (
 /obj/structure/hygiene/sink{
 	pixel_y = -13
@@ -8272,6 +8393,9 @@
 /obj/effect/floor_decal/corner/grey/bordercorner,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"Hs" = (
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "Ht" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/entrancezone/forensics)
@@ -8303,6 +8427,12 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
+"HD" = (
+/obj/structure/railing/mapped{
+	dir = 6
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "HE" = (
 /obj/machinery/door/airlock/command{
 	name = "EZ Interrogation Observation";
@@ -8393,6 +8523,17 @@
 /obj/item/folder,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/commandpanicbunker)
+"HY" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "Ia" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -8795,6 +8936,22 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"Kw" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "Ky" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9507,6 +9664,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/grass,
 /area/site53/uez/conference)
+"NT" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "NV" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/turretid{
@@ -9517,6 +9680,17 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
+"NX" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "NY" = (
 /obj/machinery/light{
 	dir = 4
@@ -9731,6 +9905,12 @@
 /obj/effect/floor_decal/corner/grey/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"Pf" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/site53/engineering/atmosext)
 "Ph" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -11419,7 +11599,7 @@
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
-/area/site53/surface/surface)
+/area/site53/surface/surface/upper)
 "WR" = (
 /obj/machinery/light{
 	dir = 1
@@ -11578,6 +11758,13 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/forensics)
+"XN" = (
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "XR" = (
 /obj/machinery/light{
 	dir = 4
@@ -11626,6 +11813,9 @@
 /obj/structure/cable{
 	d1 = 32;
 	icon_state = "32-1"
+	},
+/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
+	dir = 1
 	},
 /turf/simulated/open,
 /area/site53/uez/mcrsubstation)
@@ -11713,6 +11903,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"Yu" = (
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on,
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "Yx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11770,6 +11964,12 @@
 "YJ" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"YM" = (
+/obj/machinery/atmospherics/valve{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "YO" = (
 /obj/machinery/recharger/wallcharger{
 	dir = 1;
@@ -11877,6 +12077,9 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
@@ -40458,7 +40661,7 @@ xv
 fz
 xv
 WQ
-WQ
+hZ
 hZ
 hZ
 hZ
@@ -40714,8 +40917,8 @@ hk
 xv
 fz
 xv
-WQ
-WQ
+hZ
+hZ
 hZ
 hZ
 hZ
@@ -40971,9 +41174,9 @@ hk
 xv
 fz
 xv
-WQ
-WQ
-hZ
+NT
+XN
+yz
 hZ
 hZ
 hZ
@@ -41228,9 +41431,9 @@ hk
 xv
 fz
 xv
-WQ
-hZ
-hZ
+Hs
+Yu
+lz
 hZ
 hZ
 hZ
@@ -41485,9 +41688,9 @@ hk
 xv
 fz
 xv
-WQ
-hZ
-hZ
+fG
+Yu
+jA
 hZ
 hZ
 hZ
@@ -41742,9 +41945,9 @@ hk
 xv
 fz
 xv
-WQ
-hZ
-hZ
+Hs
+Yu
+jA
 hZ
 hZ
 hZ
@@ -41999,9 +42202,9 @@ hk
 xv
 fz
 xv
-WQ
-hZ
-hZ
+Hs
+Yu
+jA
 hZ
 hZ
 hZ
@@ -42256,9 +42459,9 @@ hk
 xv
 hL
 xv
-WQ
-hZ
-hZ
+hz
+Yu
+jA
 hZ
 hZ
 hZ
@@ -42511,11 +42714,11 @@ hk
 hk
 hk
 xv
-fz
-xv
-WQ
-hZ
-hZ
+Kw
+zj
+HY
+pB
+lv
 hZ
 hZ
 hZ
@@ -42768,11 +42971,11 @@ hk
 hk
 hk
 xv
-fz
+NX
 xv
-WQ
-hZ
-hZ
+YM
+Hs
+qc
 hZ
 hZ
 hZ
@@ -43025,11 +43228,11 @@ hk
 hk
 hk
 xv
-fz
+NX
 xv
-WQ
-hZ
-hZ
+pQ
+AE
+qc
 hZ
 hZ
 hZ
@@ -43284,9 +43487,9 @@ hk
 xv
 fz
 xv
-WQ
-WQ
-hZ
+rq
+AE
+qc
 hZ
 hZ
 hZ
@@ -43541,9 +43744,9 @@ hk
 xv
 fz
 xv
-WQ
-WQ
-hZ
+EQ
+AE
+HD
 hZ
 hZ
 hZ
@@ -43798,9 +44001,9 @@ xv
 xv
 fz
 xv
-WQ
-WQ
-hZ
+mT
+AE
+Pf
 hZ
 hZ
 hZ
@@ -44055,8 +44258,8 @@ Fn
 Fn
 iI
 xv
-WQ
-WQ
+hZ
+hZ
 hZ
 hZ
 hZ
@@ -44312,8 +44515,8 @@ xv
 xv
 xv
 xv
-WQ
-WQ
+hZ
+hZ
 hZ
 hZ
 hZ
@@ -44569,8 +44772,8 @@ hk
 WQ
 WQ
 WQ
-WQ
-WQ
+hZ
+hZ
 hZ
 hZ
 hZ
@@ -44826,8 +45029,8 @@ hk
 WQ
 WQ
 WQ
-WQ
-WQ
+hZ
+hZ
 hZ
 hZ
 hZ
@@ -45084,7 +45287,7 @@ WQ
 WQ
 WQ
 WQ
-WQ
+hZ
 hZ
 hZ
 hZ
@@ -45282,7 +45485,7 @@ gZ
 ep
 ep
 SP
-ft
+cJ
 cJ
 fL
 fM
@@ -45341,7 +45544,7 @@ WQ
 WQ
 WQ
 WQ
-WQ
+hZ
 hZ
 hZ
 hZ
@@ -45543,7 +45746,7 @@ cJ
 cJ
 cJ
 YX
-cJ
+ft
 cK
 hk
 hk
@@ -45598,7 +45801,7 @@ WQ
 WQ
 WQ
 WQ
-WQ
+hZ
 hZ
 hZ
 hZ
@@ -45794,9 +45997,9 @@ Kz
 oB
 gL
 aI
-hk
-cK
-cK
+ix
+cJ
+ft
 cK
 cK
 cK
@@ -46051,10 +46254,10 @@ dV
 dV
 Dm
 aI
-hk
-hk
-hk
-hk
+cK
+cK
+cK
+cK
 hk
 hk
 hk
