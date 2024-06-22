@@ -358,6 +358,9 @@
 /mob/living/carbon/human/proc/is_in_pocket(obj/item/I)
 	return I in list(l_store, r_store)
 
+/mob/living/carbon/human/get_codex_value()
+	return "[lowertext(species.name)] (species)"
+
 ///Checks if a human can make direct contact with another humans bare skin. Uses the select ui to determine where to check.
 /mob/living/carbon/human/proc/can_touch_bare_skin(mob/living/carbon/human/target)
 	var/covered_parts = target.get_covered_body_parts()

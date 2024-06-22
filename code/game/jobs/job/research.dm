@@ -50,6 +50,12 @@
 	)
 
 	skill_points = 25
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Assist with experiments and technological developments."
+
+/datum/job/juniorroboticist
+	title = "Junior Robotics Technician"
 
 /datum/job/ard
 	title = "Assistant Research Director"
@@ -89,6 +95,49 @@
 	minimal_access = list()
 
 	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_BASIC,
+	    SKILL_SCIENCE     = SKILL_BASIC,
+		SKILL_ELECTRICAL  = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
+
+	skill_points = 12
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Easy - Medium"
+
+/datum/job/scientist
+	title = "Researcher"
+	department = "Science"
+	department_flag = SCI
+	total_positions = 8
+	spawn_positions = 8
+	selection_color = "#633d63"
+	supervisors = "the Senior Researchers and Research Director"
+	economic_power = 4
+	requirements = list(EXP_TYPE_SCIENCE = 60)
+	alt_titles = list("Xenobiologist", "Xenoarcheologist", "Xenobotanist", "Junior Mentalist")
+	minimal_player_age = 3
+	ideal_character_age = 24
+	outfit_type = /decl/hierarchy/outfit/job/science/scientist
+	class = CLASS_C
+	hud_icon = "hudscientist"
+
+	access = list(
+	ACCESS_SCI_COMMS,
+	ACCESS_RESEARCH,
+	ACCESS_SCIENCE_LVL1,
+	ACCESS_SCIENCE_LVL2,
+	ACCESS_SCIENCE_LVL3
+	)
+	minimal_access = list()
+
+	min_skill = list(
 	    SKILL_COMPUTER    = SKILL_TRAINED,
 	    SKILL_DEVICES     = SKILL_TRAINED,
 	    SKILL_SCIENCE     = SKILL_EXPERIENCED
@@ -101,6 +150,12 @@
 	)
 
 	skill_points = 22
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Perform experiments and develop new technologies. Instruct junior researchers."
+
+/datum/job/roboticist
+	title = "Robotics Technician"
 
 /datum/job/seniormentalist
 	title = "Senior Psychotronics Researcher"
@@ -143,6 +198,8 @@
 	)
 
 	skill_points = 20
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
 
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
 	if (H.mind?.role_alt_title == "Senior Mentalist")
@@ -191,6 +248,10 @@
 
 	skill_points = 20
 
+	roleplay_difficulty = "Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Perform experiments and develop new technologies. Manage subordinate researchers."
+
 /datum/job/seniorroboticist
 	title = "Senior Robotics Technician"
 	department = "Science"
@@ -231,6 +292,11 @@
 	)
 
 	skill_points = 18
+	roleplay_difficulty = "Medium"
+	mechanical_difficulty = "Medium"
+
+/datum/job/seniormentalist
+	title = "Senior Psychotronics Researcher"
 
 /datum/job/scientist
 	title = "Researcher"
@@ -308,23 +374,34 @@
 	    SKILL_DEVICES     = SKILL_MASTER,
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
+	skill_points = 20
+	roleplay_difficulty = "Medium"
+	mechanical_difficulty = "Medium - Hard"
 
-	skill_points = 14
+/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
+	if (H.mind?.role_alt_title == "Senior Mentalist")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
+	return ..()
 
 /datum/job/juniorroboticist
 	title = "Junior Robotics Technician"
 	department = "Science"
-	department_flag = SCI
-	selection_color = "#633d63"
-	total_positions = 5
-	spawn_positions = 5
-	supervisors = "the Research Director and Assistant Research Director"
-	economic_power = 4
-	alt_titles = list("Junior Exoskeleton Technician", "Junior Hardsuit Technician")
-	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/science/juniorroboticist
-	class = CLASS_C
-	hud_icon = "hudresearchassistant"
+	department_flag = COM|SCI
+	selection_color = "#ad6bad"
+	head_position = TRUE
+	total_positions = 1
+	spawn_positions = 1
+	economic_power = 15
+	requirements = list(EXP_TYPE_SCIENCE = 720)
+	req_admin_notify = 1
+	supervisors = "the Site Director"
+	alt_titles = list("Chief Science Officer", "Head Researcher")
+	minimal_player_age = 20
+	ideal_character_age = 40
+	spawn_positions = 6
+	outfit_type = /decl/hierarchy/outfit/job/command/researchdirector
+	class = CLASS_A
+	hud_icon = "hudchiefscienceofficer"
 
 	access = list(
 		ACCESS_SCI_COMMS,
@@ -381,5 +458,9 @@
 	    SKILL_DEVICES     = SKILL_MASTER,
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
+	skill_points = 25
 
-	skill_points = 10
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Manage the Research department. Coordinate experiments and technological developments."
+

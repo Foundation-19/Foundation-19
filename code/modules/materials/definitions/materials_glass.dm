@@ -1,7 +1,6 @@
 
 /material/glass
 	name = MATERIAL_GLASS
-	lore_text = "A brittle, transparent material made from molten silicates. It is generally not a liquid."
 	stack_type = /obj/item/stack/material/glass
 	flags = MATERIAL_BRITTLE
 	icon_colour = GLASS_COLOR
@@ -31,7 +30,6 @@
 
 /material/glass/phoron
 	name = MATERIAL_PHORON_GLASS
-	lore_text = "An extremely heat-resistant form of glass."
 	display_name = "borosilicate glass"
 	stack_type = /obj/item/stack/material/glass/phoronglass
 	flags = MATERIAL_BRITTLE

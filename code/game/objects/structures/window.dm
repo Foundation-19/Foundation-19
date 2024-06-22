@@ -30,9 +30,6 @@
 
 	atmos_canpass = CANPASS_PROC
 
-/obj/structure/window/get_mechanics_info()
-	. = "<p>If damaged, it can be repaired by applying some [get_material_display_name()] then welding it. This particular window can require up to [get_glass_cost()] sheets to fully repair depending on damage.</p>"
-
 /obj/structure/window/get_material()
 	return material
 
