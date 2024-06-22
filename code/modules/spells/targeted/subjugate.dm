@@ -12,9 +12,9 @@
 
 	level_max = list(UPGRADE_TOTAL = 3, UPGRADE_SPEED = 0, UPGRADE_POWER = 3)
 
-	amt_dizziness = 100
-	amt_confused = 100
-	amt_stuttering = 100
+	amt_dizziness = 20
+	amt_confused = 20
+	amt_stuttering = 75
 
 	compatible_mobs = list(/mob/living/carbon/human)
 

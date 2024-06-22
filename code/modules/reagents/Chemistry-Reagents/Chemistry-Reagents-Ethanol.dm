@@ -73,7 +73,7 @@
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.jitteriness = max(M.jitteriness - 3, 0)
+	M.adjust_jitter(-3 SECONDS * removed)
 
 /datum/reagent/ethanol/blackstrap
 	name = "Blackstrap"
@@ -161,7 +161,7 @@
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.dizziness +=5
+	M.adjust_dizzy(5 SECONDS)
 
 /datum/reagent/ethanol/gin
 	name = "Gin"
@@ -192,8 +192,8 @@
 	if(alien == IS_DIONA)
 		return
 	..()
-	M.dizziness = max(0, M.dizziness - 5)
-	M.drowsyness = max(0, M.drowsyness - 3)
+	M.adjust_dizzy(-5 SECONDS)
+	M.adjust_drowsiness(-3 SECONDS)
 	M.sleeping = max(0, M.sleeping - 2)
 	if(M.bodytemperature > 310)
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
@@ -201,7 +201,7 @@
 /datum/reagent/ethanol/coffee/overdose(mob/living/carbon/M, alien)
 	if(alien == IS_DIONA)
 		return
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS)
 
 /datum/reagent/ethanol/coffee/kahlua
 	name = "Kahlua"
@@ -311,10 +311,10 @@
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.drowsyness = max(0, M.drowsyness - 7)
+	M.adjust_drowsiness(-7 SECONDS)
 	if (M.bodytemperature > 310)
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS * removed)
 	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/ethanol/triple_sec
@@ -485,7 +485,7 @@
 	reagent_state = LIQUID
 	color = "#666300"
 	strength = 10
-	druggy = 50
+	adj_druggy = 1 MINUTE
 
 	glass_name = "Atomic Bomb"
 	glass_desc = "We cannot take legal responsibility for your actions after imbibing."
@@ -865,7 +865,7 @@
 	reagent_state = LIQUID
 	color = "#ff88ff"
 	strength = 15
-	druggy = 50
+	adj_druggy = 1 MINUTE
 
 	glass_name = "Hippie's Delight"
 	glass_desc = "A drink enjoyed by people during the 1960's."
@@ -992,7 +992,7 @@
 	taste_description = "death, the destroyer of worlds"
 	color = "#c15d00"
 	strength = 10
-	druggy = 30
+	adj_druggy = 30 SECONDS
 
 	glass_name = "Manhattan Project"
 	glass_desc = "A scientist's drink of choice, for pondering ways to blow stuff up."
@@ -1154,7 +1154,7 @@
 	taste_description = "purified alcoholic death"
 	color = "#000000"
 	strength = 10
-	druggy = 50
+	adj_druggy = 1 MINUTE
 	halluci = 10
 
 	glass_name = "???"
@@ -1220,8 +1220,8 @@
 	)
 
 /datum/reagent/ethanol/regrettiforgetti/affect_ingest(mob/living/carbon/M, removed)
-	M.make_dizzy(5)
-	M.confused += 5
+	M.adjust_dizzy(5 SECONDS)
+	M.adjust_confusion(6 SECONDS)
 	if (prob(10))
 		to_chat(M, SPAN_WARNING("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
 
@@ -1374,7 +1374,7 @@
 	taste_description = "dry"
 	color = "#666340"
 	strength = 10
-	druggy = 50
+	adj_druggy = 1 MINUTE
 
 	glass_name = "Three Mile Island iced tea"
 	glass_desc = "A glass of this is sure to prevent a meltdown."
@@ -1580,7 +1580,7 @@
 	taste_description = "a thick potion of mushroom, slime, and hard alcohol"
 	color = "#c76c4d"
 	strength = 100
-	druggy = 5
+	adj_druggy = 5 SECONDS
 
 	glass_name = "qokk'hrona"
 	glass_desc = "Delicious Skrellian wine from refined qokk'loa."

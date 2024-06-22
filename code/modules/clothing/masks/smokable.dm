@@ -338,7 +338,7 @@
 			"You take a [pick("drag","puff","pull")] on your [name].")
 		smoke(12, TRUE)
 		add_trace_DNA(H)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		return TRUE
 
 	if(!lit && istype(H) && H.on_fire)

@@ -431,6 +431,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 		if(H != target)
 			SEND_SIGNAL(H, COMSIG_GAVE_HUG, target)
+			SEND_SIGNAL(target, COMSIG_RECEIVED_HUG, H)
 
 /datum/species/proc/add_base_auras(mob/living/carbon/human/H)
 	if(base_auras)
@@ -556,55 +557,32 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	if(H.stat == DEAD)
 		return 1
 
-	if(!H.druggy)
+	if(!H.has_status_effect(/datum/status_effect/drugginess))
 		H.set_see_in_dark((H.sight == (SEE_TURFS|SEE_MOBS|SEE_OBJS)) ? 8 : min(H.getDarkvisionRange() + H.equipment_darkness_modifier, 8))
 		if(H.equipment_see_invis)
 			H.set_see_invisible(max(min(H.see_invisible, H.equipment_see_invis), vision[2]))
 
 	if(H.equipment_tint_total >= TINT_BLIND)
-		H.eye_blind = max(H.eye_blind, 1)
+		H.become_blind(EQUIPMENT_TINT_TOTAL_TRAIT)
+	else
+		H.cure_blind(EQUIPMENT_TINT_TOTAL_TRAIT)
 
 	if(!H.client)//no client, no screen to update
 		return 1
 
-	H.set_fullscreen(H.eye_blind && !H.equipment_prescription, "blind", /obj/screen/fullscreen/blind)
-	H.set_fullscreen(H.stat == UNCONSCIOUS, "blackout", /obj/screen/fullscreen/blackout)
+	H.set_fullscreen(H.stat == UNCONSCIOUS, "blackout", /atom/movable/screen/fullscreen/blackout)
 
-	if(config.welder_vision)
-		H.set_fullscreen(H.equipment_tint_total, "welder", /obj/screen/fullscreen/impaired, H.equipment_tint_total)
-	var/how_nearsighted = get_how_nearsighted(H)
-	H.set_fullscreen(how_nearsighted, "nearsighted", /obj/screen/fullscreen/oxy, how_nearsighted)
-	H.set_fullscreen(H.eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
-	H.set_fullscreen(H.druggy, "high", /obj/screen/fullscreen/high)
+	if(config.welder_vision && H.equipment_tint_total)
+		H.become_nearsighted(EQUIPMENT_TINT_TOTAL_TRAIT)
+	else
+		H.cure_nearsighted(EQUIPMENT_TINT_TOTAL_TRAIT)
+	var/how_nearsighted = H.is_nearsighted_currently()
+	H.set_fullscreen(how_nearsighted, "nearsighted", /atom/movable/screen/fullscreen/oxy, how_nearsighted)
 
 	for(var/overlay in H.equipment_overlays)
 		H.client.screen |= overlay
 
 	return 1
-
-/datum/species/proc/get_how_nearsighted(mob/living/carbon/human/H)
-	var/prescriptions = short_sighted
-	if(H.disabilities & NEARSIGHTED)
-		prescriptions += 7
-	if(H.equipment_prescription)
-		prescriptions -= H.equipment_prescription
-
-	var/light = light_sensitive
-	if(light)
-		if(H.eyecheck() > FLASH_PROTECTION_NONE)
-			light = 0
-		else
-			var/turf_brightness = 1
-			var/turf/T = get_turf(H)
-			if(T?.lighting_overlay)
-				turf_brightness = min(1, T.get_lumcount())
-			if(turf_brightness < 0.33)
-				light = 0
-			else
-				light = round(light * turf_brightness)
-				if(H.equipment_light_protection)
-					light -= H.equipment_light_protection
-	return Clamp(max(prescriptions, light), 0, 7)
 
 /datum/species/proc/set_default_hair(mob/living/carbon/human/H)
 	H.h_style = H.species.default_h_style

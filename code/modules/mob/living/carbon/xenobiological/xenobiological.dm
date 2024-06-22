@@ -230,7 +230,7 @@
 				visible_message(SPAN_WARNING("\The [M] manages to wrestle \the [src] off!"))
 				playsound(loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 
-				confused = max(confused, 2)
+				set_confusion_if_lower(2 SECONDS)
 				Feedstop()
 				UpdateFace()
 				step_away(src, M)
@@ -245,7 +245,7 @@
 				visible_message(SPAN_WARNING("\The [M] manages to wrestle \the [src] off \the [Victim]!"))
 				playsound(loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 
-				confused = max(confused, 2)
+				set_confusion_if_lower(2 SECONDS)
 				Feedstop()
 				UpdateFace()
 				step_away(src, M)
@@ -260,7 +260,7 @@
 			var/success = prob(40)
 			visible_message(SPAN_WARNING("\The [M] pushes \the [src]![success ? " \The [src] looks momentarily disoriented!" : ""]"))
 			if(success)
-				confused = max(confused, 2)
+				set_confusion_if_lower(2 SECONDS)
 				UpdateFace()
 				playsound(loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 			else

@@ -39,7 +39,7 @@
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"
 	desc = "A medical HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 	icon_state = "healthhudpresc"
 	off_state = "healthhudpresc_off"
 	item_state = "healthhudpresc"
@@ -82,7 +82,7 @@
 /obj/item/clothing/glasses/hud/security/prescription
 	name = "prescription security HUD"
 	desc = "A security HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 	icon_state = "sechudpresc"
 	off_state = "sechudpresc_off"
 	item_state = "sechudpresc"
@@ -115,7 +115,7 @@
 	off_state = "janihudpresc_off"
 	item_state = "janihudpresc"
 	desc = "A janitor HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/hud/janitor/process_hud(mob/M)
 	process_jani_hud(M)
@@ -134,7 +134,7 @@
 	off_state = "scihudpresc_off"
 	item_state = "scihudpresc"
 	desc = "A science HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/hud/scramble
 	name = "SCRAMBLE goggles"

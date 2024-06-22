@@ -116,14 +116,6 @@ var/list/channel_to_radio_key = new
 		verb = pick("yells","roars","hollers")
 		message_data[3] = 0
 		. = 1
-	else if(slurring)
-		message = slur(message)
-		verb = pick("slobbers","slurs")
-		. = 1
-	else if(stuttering)
-		message = NewStutter(message)
-		verb = pick("stammers","stutters")
-		. = 1
 	else if(has_chem_effect(CE_SQUEAKY, 1))
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
 		verb = "squeaks"
@@ -181,6 +173,9 @@ var/list/channel_to_radio_key = new
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
 		return custom_emote(1, copytext(message,2))
 
+	if(HAS_TRAIT(src, TRAIT_MUTE))
+		return FALSE
+
 	//parse the language code and consume it
 	if(!speaking)
 		speaking = parse_language(message)
@@ -188,6 +183,11 @@ var/list/channel_to_radio_key = new
 			message = copytext(message,2+length(speaking.key))
 		else
 			speaking = get_default_language()
+
+	if (speaking)
+		if (speaking.flags & SIGNLANG && HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+			to_chat(src, SPAN_WARNING("You can't use your hands to sign!"))
+			return
 
 	//parse the radio code and consume it
 	var/message_mode = parse_message_mode(message, "headset")
@@ -219,6 +219,9 @@ var/list/channel_to_radio_key = new
 	message = handle_autohiss(message, speaking)
 	message = format_say_message(message)
 	message = process_chat_markup(message)
+
+	//TODO: move hardcoded checks to this signal
+	SEND_SIGNAL(src, COMSIG_LIVING_TREAT_MESSAGE, message, speaking)
 
 	if(speaking && !speaking.can_be_spoken_properly_by(src))
 		message = speaking.muddle(message)

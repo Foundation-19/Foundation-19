@@ -19,7 +19,7 @@
 	if(client)
 		remove_screen_obj_references()
 		for(var/atom/movable/AM in client.screen)
-			var/obj/screen/screenobj = AM
+			var/atom/movable/screen/screenobj = AM
 			if(!istype(screenobj) || !screenobj.globalscreen)
 				qdel(screenobj)
 		client.screen = list()
@@ -61,7 +61,11 @@
 	START_PROCESSING(SSmobs, src)
 	if(!mob_panel)
 		mob_panel = new(src)
+
+	update_config_movespeed()
 	initialize_actionspeed()
+
+	add_traits(roundstart_traits, ROUNDSTART_TRAIT)
 
 /mob/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(!client)	return
@@ -267,11 +271,12 @@
 		var/turf/T = loc
 		. += T.movement_delay
 
-	if (drowsyness > 0)
+	if (has_status_effect(/datum/status_effect/drowsiness))
 		. += 6
 	if(lying) //Crawling, it's slower
-		. += (8 + ((weakened * 3) + (confused * 2)))
+		. += (8 + ((weakened * 3) + (has_status_effect(/datum/status_effect/confusion) ? 5 : 0)))
 	. += move_intent.move_delay
+	. += cached_multiplicative_slowdown
 	. += encumbrance() * (0.5 + 1.5 * (SKILL_MAX - get_skill_value(SKILL_HAULING))/(SKILL_MAX - SKILL_MIN)) //Varies between 0.5 and 2, depending on skill
 
 //How much the stuff the mob is pulling contributes to its movement delay.
@@ -308,7 +313,7 @@
 	return restrained() ? FULLY_BUCKLED : PARTIALLY_BUCKLED
 
 /mob/proc/can_see(atom/origin)
-	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
+	if((is_blind()) || incapacitated(INCAPACITATION_KNOCKOUT))
 		return FALSE
 	if(origin)
 		if(!(origin in view(7, src)))
@@ -316,7 +321,7 @@
 	return TRUE
 
 /mob/proc/can_hear(atom/origin)
-	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
+	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT) || HAS_TRAIT(src, TRAIT_DEAF))
 		return FALSE
 	if(origin)
 		if(isturf(origin.loc))
@@ -458,7 +463,7 @@
 	P.set_invisibility(invisibility)
 	animate(P, pixel_x = (T.x - mob_tile.x) * world.icon_size + A.pixel_x, pixel_y = (T.y - mob_tile.y) * world.icon_size + A.pixel_y, time = 3, easing = EASE_OUT)
 	face_atom(A)
-	setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	setClickCooldown(CLICK_CD_QUICK)
 	return TRUE
 
 //Gets the mob grab conga line.
@@ -804,9 +809,9 @@
 /mob/proc/facedir(ndir)
 	if(!canface() || moving || (buckled && !buckled.buckle_movable))
 		return 0
-	set_dir(ndir)
+	setDir(ndir)
 	if(buckled && buckled.buckle_movable)
-		buckled.set_dir(ndir)
+		buckled.setDir(ndir)
 	SetMoveCooldown(movement_delay())
 	return 1
 
@@ -829,11 +834,6 @@
 /mob/verb/southface()
 	set hidden = 1
 	return facedir(client.client_dir(SOUTH))
-
-
-//This might need a rename but it should replace the can this mob use things check
-/mob/proc/IsAdvancedToolUser()
-	return 0
 
 /mob/proc/Stun(amount)
 	if(status_flags & CANSTUN)
@@ -1042,7 +1042,7 @@
 	if(newdir)
 		if(!facing_dir || facing_dir != newdir)
 			facing_dir = newdir
-			set_dir(newdir)
+			setDir(newdir)
 
 			balloon_alert(src, "facing [dir2text(facing_dir)]")
 	else
@@ -1057,13 +1057,13 @@
 			hud_used.facedir_button?.icon_state = "facedir1"
 			hud_used.facedir_button?.dir = facing_dir
 
-/mob/set_dir()
+/mob/setDir()
 	if(facing_dir)
 		if(!canface() || lying || restrained())
 			facing_dir = null
 		else if(buckled)
 			if(buckled.obj_flags & OBJ_FLAG_ROTATABLE)
-				buckled.set_dir(facing_dir)
+				buckled.setDir(facing_dir)
 				return ..(facing_dir)
 			else
 				facing_dir = null
@@ -1167,7 +1167,7 @@
 	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility)
 
 /client/proc/check_has_body_select()
-	return mob && mob.hud_used && istype(mob.zone_sel, /obj/screen/zone_sel)
+	return mob && mob.hud_used && istype(mob.zone_sel, /atom/movable/screen/zone_sel)
 
 /client/verb/body_toggle_head()
 	set name = "body-toggle-head"
@@ -1207,7 +1207,7 @@
 /client/proc/toggle_zone_sel(list/zones)
 	if(!check_has_body_select())
 		return
-	var/obj/screen/zone_sel/selector = mob.zone_sel
+	var/atom/movable/screen/zone_sel/selector = mob.zone_sel
 	selector.set_selected_zone(next_in_list(mob.zone_sel.selecting,zones))
 
 /mob/proc/has_chem_effect(chem, threshold)

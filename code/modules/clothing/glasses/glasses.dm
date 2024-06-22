@@ -6,13 +6,12 @@
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_eyes_vox_armalis.dmi',
 		)
 	var/hud_type
-	var/prescription = FALSE
 	var/toggleable = FALSE
 	var/off_state = "degoggles"
 	var/active = TRUE
 	var/activation_sound = 'sounds/items/goggles_charge.ogg'
 	var/deactivation_sound // set this if you want a sound on deactivation
-	var/obj/screen/overlay = null
+	var/atom/movable/screen/overlay = null
 	var/obj/item/clothing/glasses/hud/hud = null	// Hud glasses, if any
 	var/electric = FALSE //if the glasses should be disrupted by EMP
 
@@ -81,14 +80,11 @@
 			if(M.glasses != src)
 				to_chat(M, SPAN_DANGER("\The [name] malfunction[gender != PLURAL ? "s":""], releasing a small spark."))
 			else
-				M.eye_blind = 2
-				M.eye_blurry = 4
+				M.adjust_temp_blindness(2 SECONDS)
+				M.adjust_eye_blur(4 SECONDS)
 				to_chat(M, SPAN_DANGER("\The [name] malfunction[gender != PLURAL ? "s":""], blinding you!"))
-				// Don't cure being nearsighted
-				if(!(M.disabilities & NEARSIGHTED))
-					M.disabilities |= NEARSIGHTED
-					spawn(100)
-						M.disabilities &= ~NEARSIGHTED
+
+				M.set_temp_nearsightedness_if_lower(10 SECONDS)
 			if(toggleable)
 				deactivate(M, FALSE)
 
@@ -128,7 +124,7 @@
 /obj/item/clothing/glasses/meson/prescription
 	name = "prescription mesons"
 	desc = "Optical meson scanner with prescription lenses."
-	prescription = 6
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/science
 	name = "science goggles"
@@ -143,7 +139,7 @@
 /obj/item/clothing/glasses/science/prescription
 	name = "prescription science goggles"
 	desc = "Science goggles with prescription lenses."
-	prescription = 6
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/science/Initialize()
 	. = ..()

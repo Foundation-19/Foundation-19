@@ -132,6 +132,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disposals Explosion",					/datum/event/disposals_explosion,		20,		list(ASSIGNMENT_ENGINEER = 40)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brain Expansion",						/datum/event/brain_expansion,			100,	list(ASSIGNMENT_SCIENTIST = -10), 0, 10, 100),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mail Delivery",							/datum/event/mail,						0,		list(ASSIGNMENT_ANY = 5), 1),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Fake Virus",							/datum/event/fake_virus,				30,		list(ASSIGNMENT_MEDICAL = 2)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Psi Balm",								/datum/event/psi/balm,					20),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Psi Wail",								/datum/event/psi/wail,					20),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disease Outbreak",						/datum/event/disease_outbreak,			40,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_SCIENCE = 10)),
