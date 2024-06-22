@@ -121,7 +121,7 @@
 					owner.adjust_nutrition(max(1, Floor(digested/100)))
 					updated_stacks = TRUE
 				else if(can_process_matter[mat])
-					LAZYDISTINCTADD(check_materials, mat)
+					LAZYOR(check_materials, mat)
 					stored_matter[mat] += digested
 
 		// Convert stored matter into sheets.

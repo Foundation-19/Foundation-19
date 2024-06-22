@@ -38,6 +38,6 @@
 	set desc = "Give this guy possess/release verbs"
 	set category = "Debug"
 	set name = "Give Possessing Verbs"
-	add_verb(M, /proc/possess)
-	add_verb(M, /proc/release)
+	add_verb(M, GLOBAL_PROC_REF(possess))
+	add_verb(M, GLOBAL_PROC_REF(release))
 	SSstatistics.add_field_details("admin_verb","GPV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

@@ -17,7 +17,6 @@
 	if(environment)
 		handle_environment(environment)
 
-	blinded = 0 // Placing this here just show how out of place it is.
 	// human/handle_regular_status_updates() needs a cleanup, as blindness should be handled in handle_disabilities()
 	handle_regular_status_updates() // Status & health update, are we dead or alive etc.
 
@@ -86,11 +85,6 @@
 	handle_stunned()
 	handle_weakened()
 	handle_paralysed()
-	handle_stuttering()
-	handle_silent()
-	handle_drugged()
-	handle_slurring()
-	handle_confused()
 
 /mob/living/proc/handle_stunned()
 	if(stunned)
@@ -106,26 +100,6 @@
 			update_icons()
 	return weakened
 
-/mob/living/proc/handle_stuttering()
-	if(stuttering)
-		stuttering = max(stuttering-1, 0)
-	return stuttering
-
-/mob/living/proc/handle_silent()
-	if(silent)
-		silent = max(silent-1, 0)
-	return silent
-
-/mob/living/proc/handle_drugged()
-	if(druggy)
-		druggy = max(druggy-1, 0)
-	return druggy
-
-/mob/living/proc/handle_slurring()
-	if(slurring)
-		slurring = max(slurring-1, 0)
-	return slurring
-
 /mob/living/proc/handle_paralysed()
 	if(paralysis)
 		AdjustParalysis(-1)
@@ -137,19 +111,8 @@
 	handle_impaired_vision()
 	handle_impaired_hearing()
 
-/mob/living/proc/handle_confused()
-	if(confused)
-		confused = max(0, confused - 1)
-	return confused
-
 /mob/living/proc/handle_impaired_vision()
-	//Eyes
-	if(sdisabilities & BLINDED || stat)	//blindness from disability or unconsciousness doesn't get better on its own
-		eye_blind = max(eye_blind, 1)
-	else if(eye_blind)			//blindness, heals slowly over time
-		eye_blind = max(eye_blind-1,0)
-	else if(eye_blurry)			//blurry eyes heal slowly
-		eye_blurry = max(eye_blurry-1, 0)
+	return
 
 /mob/living/proc/handle_impaired_hearing()
 	//Ears
@@ -176,15 +139,7 @@
 	if(stat == DEAD)
 		return
 
-	if(eye_blind)
-		overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
-	else
-		clear_fullscreen("blind")
-		set_fullscreen(disabilities & NEARSIGHTED, "impaired", /obj/screen/fullscreen/impaired, 1)
-		set_fullscreen(eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
-		set_fullscreen(druggy, "high", /obj/screen/fullscreen/high)
-
-	set_fullscreen(stat == UNCONSCIOUS, "blackout", /obj/screen/fullscreen/blackout)
+	set_fullscreen(stat == UNCONSCIOUS, "blackout", /atom/movable/screen/fullscreen/blackout)
 
 	if(machine)
 		var/viewflags = machine.check_eye(src)

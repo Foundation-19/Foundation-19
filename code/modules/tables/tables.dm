@@ -218,17 +218,16 @@
 		update_icon()
 		update_material()
 
-/obj/structure/table/proc/update_desc()
+/obj/structure/table/update_desc()
+	desc = initial(desc)
+	name = initial(name)
+	. = ..()
 	if(material)
 		name = "[material.display_name] table"
-	else
-		name = "table frame"
 
 	if(reinforced)
 		name = "reinforced [name]"
-		desc = "[initial(desc)] This one seems to be reinforced with [reinforced.display_name]."
-	else
-		desc = initial(desc)
+		desc += " This one seems to be reinforced with [reinforced.display_name]."
 
 // Returns the material to set the table to.
 /obj/structure/table/proc/common_material_add(obj/item/stack/material/S, mob/user, verb) // Verb is actually verb without 'e' or 'ing', which is added. Works for 'plate'/'plating' and 'reinforce'/'reinforcing'.

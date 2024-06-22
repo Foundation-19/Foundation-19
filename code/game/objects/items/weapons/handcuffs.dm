@@ -27,10 +27,10 @@
 
 /obj/item/handcuffs/attack(mob/living/carbon/C, mob/living/user)
 
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		return
 
-	if ((MUTATION_CLUMSY in user.mutations) && prob(50))
+	if (((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		to_chat(user, SPAN_WARNING("Uh ... how do those things work?!"))
 		place_handcuffs(user, user)
 		return
@@ -93,7 +93,7 @@
 	admin_attack_log(user, H, "Attempted to handcuff the victim", "Was target of an attempted handcuff", "attempted to handcuff")
 	SSstatistics.add_field_details("handcuffs","H")
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(H)
 
 	user.visible_message(SPAN_DANGER("\The [user] has put [cuff_type] on \the [H]!"))

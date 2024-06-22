@@ -85,7 +85,7 @@
 /turf/simulated/wall/attack_hand(mob/user)
 	radiate()
 	add_fingerprint(user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	var/rotting = (locate(/obj/effect/overlay/wallrot) in src)
 	if (MUTATION_HULK in user.mutations)
 		if (rotting || !prob(material.hardness))
@@ -113,7 +113,7 @@
 					M.visible_message(SPAN_DANGER("[M.name] slams into \the [src]!"), SPAN_DANGER("You slam into \the [src]!"))
 					playsound(src, SFX_PUNCH, 45)
 					damage_health(5, BRUTE)
-					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2) //Additional cooldown
+					user.setClickCooldown(CLICK_CD_ATTACK*2) //Additional cooldown
 					attack_animation(user)
 				else
 					M.visible_message(SPAN_DANGER("[M.name] punches \the [src]!"), SPAN_DANGER("You punch \the [src]!"))
@@ -129,7 +129,7 @@
 	if(!istype(user))
 		return
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	var/rotting = (locate(/obj/effect/overlay/wallrot) in src)
 	if(!damage || !wallbreaker)
 		try_touch(user, rotting)
@@ -151,12 +151,12 @@
 		to_chat(user, SPAN_NOTICE("\The [src] deflects all attempts to interact with it!"))
 		return
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 
 	if(!construction_stage && try_graffiti(user, W))
 		return
 
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return
 

@@ -9,6 +9,8 @@
 
 	status_flags = CANPUSH|GODMODE
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 	//Config
 
 	///Cooldown for our phasing ability
@@ -125,9 +127,6 @@
 		return
 
 	return ..()
-
-/mob/living/carbon/human/scp343/IsAdvancedToolUser()
-	return TRUE
 
 /mob/living/carbon/human/scp343/get_pressure_weakness()
 	return 0

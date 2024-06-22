@@ -175,14 +175,14 @@
 		return INITIALIZE_HINT_QDEL
 	master = loc
 	SetName(master.name)
-	set_dir(master.dir)
+	setDir(master.dir)
 
 	if(istype(master, /atom/movable))
 		RegisterSignal(master, COMSIG_MOVED, follow_proc)
 		SetInitLoc()
 
 	RegisterSignal(master, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
-	RegisterSignal(master, COMSIG_DIR_SET, TYPE_PROC_REF(/atom, recursive_dir_set))
+	RegisterSignal(master, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/atom, recursive_dir_set))
 
 	. = ..()
 
@@ -193,7 +193,7 @@
 	if(istype(master, /atom/movable))
 		UnregisterSignal(master, COMSIG_MOVED)
 	UnregisterSignal(master, COMSIG_PARENT_QDELETING)
-	UnregisterSignal(master, COMSIG_DIR_SET)
+	UnregisterSignal(master, COMSIG_ATOM_DIR_CHANGE)
 	master = null
 	. = ..()
 

@@ -66,7 +66,7 @@
 	if(user.a_intent != I_HURT)
 		return ..()
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(src)
 	playsound(src, 'sounds/weapons/smash.ogg', 25, 1)
 	show_sound_effect(src.loc, user)

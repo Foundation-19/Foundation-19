@@ -455,13 +455,13 @@
 			to_chat(M, SPAN_WARNING("Your [eye_protection] protects your eyes from the pepperspray!"))
 	else
 		to_chat(M, SPAN_WARNING("The pepperspray gets in your eyes!"))
-		M.confused += 2
+		M.adjust_confusion(5 SECONDS)
 		if(mouth_covered)
-			M.eye_blurry = max(M.eye_blurry, effective_strength * 3)
-			M.eye_blind = max(M.eye_blind, effective_strength)
+			M.set_eye_blur_if_lower(3 SECONDS * effective_strength * removed)
+			M.adjust_temp_blindness(1 SECOND * effective_strength * removed)
 		else
-			M.eye_blurry = max(M.eye_blurry, effective_strength * 5)
-			M.eye_blind = max(M.eye_blind, effective_strength * 2)
+			M.set_eye_blur_if_lower(5 SECONDS * effective_strength * removed)
+			M.adjust_temp_blindness(2 SECONDS * effective_strength * removed)
 
 	if(mouth_covered)
 		to_chat(M, SPAN_WARNING("Your [face_protection] protects you from the pepperspray!"))

@@ -22,6 +22,9 @@
 	var/ironed_state = WRINKLES_DEFAULT
 	var/smell_state = SMELL_DEFAULT
 
+	/// Trait modification, lazylist of traits to add/take away, on equipment/drop in the correct slot
+	var/list/clothing_traits = list()
+
 	var/move_trail = /obj/effect/decal/cleanable/blood/tracks/footprints // if this item covers the feet, the footprints it should leave
 
 // Updates the icons of the mob wearing the clothing item, if any.
@@ -112,7 +115,14 @@
 /obj/item/clothing/equipped(mob/user)
 	if(needs_vision_update())
 		update_vision()
-	return ..()
+	. = ..()
+	for(var/trait in clothing_traits)
+		ADD_CLOTHING_TRAIT(user, trait)
+
+/obj/item/clothing/dropped(mob/user)
+	. = ..()
+	for(var/trait in clothing_traits)
+		REMOVE_CLOTHING_TRAIT(user, trait)
 
 /obj/item/clothing/proc/refit_for_species(target_species)
 	if(!species_restricted)
@@ -179,6 +189,51 @@
 	. = HAS_FLAGS(flags_inv, CLOTHING_BULKY) ? body_parts_covered : 0
 	for (var/obj/item/clothing/accessory/A in accessories)
 		. |= HAS_FLAGS(A.flags_inv, CLOTHING_BULKY) ? A.body_parts_covered : 0
+
+/**
+ * Inserts a trait (or multiple traits) into the clothing traits list
+ *
+ * If worn, then we will also give the wearer the trait as if equipped
+ *
+ * This is so you can add clothing traits without worrying about needing to equip or unequip them to gain effects
+ */
+/obj/item/clothing/proc/attach_clothing_traits(trait_or_traits)
+	if(!islist(trait_or_traits))
+		trait_or_traits = list(trait_or_traits)
+
+	LAZYOR(clothing_traits, trait_or_traits)
+
+	var/mob/wearer = loc
+
+	if(!istype(wearer))
+		return null
+
+	var/in_slot = wearer.get_slot_by_item(src)
+
+	if("[in_slot]" in slot_flags_enumeration)
+		var/req_flags = slot_flags_enumeration["[in_slot]"]
+		if(!(req_flags & slot_flags))
+			return null
+
+	for(var/new_trait in trait_or_traits)
+		ADD_CLOTHING_TRAIT(wearer, new_trait)
+
+/**
+ * Removes a trait (or multiple traits) from the clothing traits list
+ *
+ * If worn, then we will also remove the trait from the wearer as if unequipped
+ *
+ * This is so you can add clothing traits without worrying about needing to equip or unequip them to gain effects
+ */
+/obj/item/clothing/proc/detach_clothing_traits(trait_or_traits)
+	if(!islist(trait_or_traits))
+		trait_or_traits = list(trait_or_traits)
+
+	LAZYREMOVE(clothing_traits, trait_or_traits)
+	var/mob/wearer = loc
+	if(istype(wearer))
+		for(var/new_trait in trait_or_traits)
+			REMOVE_CLOTHING_TRAIT(wearer, new_trait)
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
