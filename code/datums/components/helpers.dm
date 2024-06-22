@@ -19,12 +19,12 @@
 		forceMove(new_loc)
 
 /atom/proc/recursive_dir_set(atom/a, old_dir, new_dir)
-	set_dir(new_dir)
+	setDir(new_dir)
 
 /proc/register_all_movement(event_source, datum/listener)
 	listener.RegisterSignal(event_source, COMSIG_MOVED, TYPE_PROC_REF(/atom/movable, recursive_move))
-	listener.RegisterSignal(event_source, COMSIG_DIR_SET, TYPE_PROC_REF(/atom, recursive_dir_set))
+	listener.RegisterSignal(event_source, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/atom, recursive_dir_set))
 
 /proc/unregister_all_movement(event_source, datum/listener)
 	listener.UnregisterSignal(event_source, COMSIG_MOVED)
-	listener.UnregisterSignal(event_source, COMSIG_DIR_SET)
+	listener.UnregisterSignal(event_source, COMSIG_ATOM_DIR_CHANGE)

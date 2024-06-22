@@ -147,7 +147,7 @@ SUBSYSTEM_DEF(explosions)
 	//flash mobs
 	if(flash_range)
 		for(var/mob/living/O in viewers(flash_range, epicenter))
-			var/flash_time = 10
+			var/flash_time = 10 SECONDS
 			if(istype(O, /mob/living/carbon/human))
 				var/mob/living/carbon/human/H = O
 				if(!H.eyecheck() <= 0)
@@ -163,9 +163,9 @@ SUBSYSTEM_DEF(explosions)
 				if (istype(O,/mob/living/silicon/ai))
 					return
 				O.flash_eyes()
-				O.eye_blurry += flash_time
-				O.confused += (flash_time + 2)
-				O.Stun(flash_time / 2)
+				O.adjust_eye_blur(flash_time)
+				O.adjust_confusion(flash_time * 1.2)
+				O.Stun(flash_time / 20)
 				O.Weaken(3)
 
 	var/list/affected_turfs = GatherSpiralTurfs(max_range, epicenter)

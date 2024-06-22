@@ -8,22 +8,22 @@
 
 	var/mob/observer/ghost/G = mymob
 
-	var/obj/screen/using
+	var/atom/movable/screen/using
 	adding = list()
 
-	using = new /obj/screen/ghost/orbit()
+	using = new /atom/movable/screen/ghost/orbit()
 	using.screen_loc = ui_ghost_orbit
 	adding += using
 
-	using = new /obj/screen/ghost/reenter_corpse()
+	using = new /atom/movable/screen/ghost/reenter_corpse()
 	using.screen_loc = ui_ghost_reenter_corpse
 	adding += using
 
-	using = new /obj/screen/ghost/teleport()
+	using = new /atom/movable/screen/ghost/teleport()
 	using.screen_loc = ui_ghost_teleport
 	adding += using
 
-	using = new /obj/screen/ghost/become_scp()
+	using = new /atom/movable/screen/ghost/become_scp()
 	using.screen_loc = ui_ghost_become_scp
 	adding += using
 

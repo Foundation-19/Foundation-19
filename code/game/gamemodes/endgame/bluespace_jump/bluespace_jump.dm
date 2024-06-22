@@ -52,15 +52,15 @@
 	bluespaced += M
 	if(M.client)
 		to_chat(M,SPAN_NOTICE("You feel oddly light, and somewhat disoriented as everything around you shimmers and warps ever so slightly."))
-		M.overlay_fullscreen("bluespace", /obj/screen/fullscreen/bluespace_overlay)
-	M.confused = 20
+		M.overlay_fullscreen("bluespace", /atom/movable/screen/fullscreen/bluespace_overlay)
+	M.set_confusion_if_lower(20 SECONDS)
 	bluegoasts += new/obj/effect/bluegoast/(get_turf(M),M)
 
 /datum/universal_state/bluespace_jump/proc/clear_bluespaced(mob/living/M)
 	if(M.client)
 		to_chat(M,SPAN_NOTICE("You feel rooted in material world again."))
 		M.clear_fullscreen("bluespace")
-	M.confused = 0
+	M.set_confusion(0)
 	for(var/mob/goast in GLOB.ghost_mob_list)
 		goast.mouse_opacity = initial(goast.mouse_opacity)
 		goast.set_invisibility(initial(goast.invisibility))
@@ -83,15 +83,15 @@
 		qdel(src)
 		return
 	real_one = nreal_one
-	set_dir(real_one.dir)
+	setDir(real_one.dir)
 	appearance = real_one.appearance
 	RegisterSignal(real_one, COMSIG_MOVED, TYPE_PROC_REF(/obj/effect/bluegoast, mirror))
-	RegisterSignal(real_one, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/effect/bluegoast, mirror_dir))
+	RegisterSignal(real_one, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/effect/bluegoast, mirror_dir))
 	RegisterSignal(real_one, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum, qdel_self))
 
 /obj/effect/bluegoast/Destroy()
 	UnregisterSignal(real_one, COMSIG_PARENT_QDELETING)
-	UnregisterSignal(real_one, COMSIG_DIR_SET)
+	UnregisterSignal(real_one, COMSIG_ATOM_DIR_CHANGE)
 	UnregisterSignal(real_one, COMSIG_MOVED)
 	real_one = null
 	. = ..()
@@ -105,17 +105,17 @@
 	if(nloc == new_loc)
 		to_chat(real_one, SPAN_WARNING("You feel a bit less real. Which one of you two was original again?.."))
 		if(prob(50))
-			real_one.confused = max(real_one.confused, 10)
+			real_one.set_confusion_if_lower(10 SECONDS)
 		if(prob(20))
-			real_one.drowsyness = max(real_one.drowsyness, 3)
+			real_one.set_drowsiness_if_lower(5 SECONDS)
 
 /obj/effect/bluegoast/proc/mirror_dir(atom/movable/am, old_dir, new_dir)
-	set_dir(GLOB.reverse_dir[new_dir])
+	setDir(GLOB.reverse_dir[new_dir])
 
 /obj/effect/bluegoast/examine()
 	return real_one?.examine(arglist(args))
 
-/obj/screen/fullscreen/bluespace_overlay
+/atom/movable/screen/fullscreen/bluespace_overlay
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "mfoam"
 	screen_loc = "WEST,SOUTH to EAST,NORTH"

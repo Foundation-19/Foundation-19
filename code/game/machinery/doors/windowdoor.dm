@@ -26,7 +26,7 @@
 
 /obj/machinery/door/window/Initialize(mapload, obj/structure/windoor_assembly/assembly)
 	if(assembly)
-		set_dir(assembly.dir)
+		setDir(assembly.dir)
 		set_density(0)
 		if(assembly.electronics)
 			if(assembly.electronics.autoset)
@@ -85,7 +85,7 @@
 	var/mob/M = AM // we've returned by here if M is not a mob
 	if (src.operating)
 		return
-	if (src.density && (!issmall(M) || ishuman(M) || issilicon(M)) && src.allowed(AM))
+	if (src.density && (!issmall(M) || ishuman(M) || issilicon(M)) && src.allowed(AM) && !(HAS_TRAIT(M, TRAIT_HANDS_BLOCKED)))
 		open()
 		var/open_timer
 		if(src.check_access(null))
@@ -223,7 +223,7 @@
 				wa.SetName("Wired Windoor Assembly")
 			if (src.base_state == "right" || src.base_state == "rightsecure")
 				wa.facing = "r"
-			wa.set_dir(src.dir)
+			wa.setDir(src.dir)
 			wa.state = "02"
 			wa.update_icon()
 

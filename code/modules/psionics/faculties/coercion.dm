@@ -45,9 +45,9 @@
 					M.emote("scream")
 			to_chat(M, SPAN_DANGER("Your senses are blasted into oblivion by a psionic scream!"))
 			M.flash_eyes()
-			M.eye_blind = max(M.eye_blind,3)
+			M.adjust_temp_blindness(3 SECONDS)
 			M.ear_deaf = max(M.ear_deaf,6)
-			M.confused = rand(3,8)
+			M.adjust_confusion(rand(5 SECONDS, 10 SECONDS))
 		return TRUE
 
 /decl/psionic_power/coercion/mindread
@@ -217,7 +217,7 @@
 		var/coercion_rank = user.psi.get_rank(PSI_COERCION)
 		if(coercion_rank >= PSI_RANK_GRANDMASTER)
 			target.AdjustParalysis(-1)
-		target.drowsyness = 0
+		target.set_drowsiness(0)
 		if(istype(target, /mob/living/carbon))
 			var/mob/living/carbon/M = target
 			M.adjust_hallucination(-30)

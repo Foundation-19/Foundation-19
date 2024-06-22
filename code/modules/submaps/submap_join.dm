@@ -94,11 +94,8 @@
 		if(istype(ojob) && ojob.info)
 			to_chat(character, ojob.info)
 
-		if(user_human && user_human.disabilities & NEARSIGHTED)
-			var/equipped = user_human.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(user_human), slot_glasses)
-			if(equipped)
-				var/obj/item/clothing/glasses/G = user_human.glasses
-				G.prescription = 7
+		if(user_human && user_human.is_nearsighted())
+			user_human.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(user_human), slot_glasses)
 
 		BITSET(character.hud_updateflag, ID_HUD)
 		BITSET(character.hud_updateflag, IMPLOYAL_HUD)

@@ -1,10 +1,9 @@
 /datum/job/hos
 	title = "Guard Commander"
-	head_position = 1
+	head_position = TRUE
 	department = "Command"
 	selection_color = "#8e2929"
 	department_flag = SEC|COM
-	//duties = "<big><b>As the Guard Commander, you have direct say over the Security department. You're not assigned to any zone, but instead should jump in where necessary or requested. You are to speak with your Zone Commanders oftenly, and assign new guards to the right zone, or where it's needed mostly.</b></big>"
 	supervisors = "the Site Director"
 	req_admin_notify = 1
 	economic_power = 10
@@ -57,6 +56,10 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
+	roleplay_difficulty = "Hard"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Manage all three Security branches. Keep track of potential and on-going threats (such as containment breaches). Work with other departments to respond to said threats."
+
 //##
 //ZONE COMMANDERS
 //##
@@ -68,7 +71,6 @@
 	department_flag = SEC|LCZ
 	total_positions = 1
 	spawn_positions = 1
-	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	supervisors = "the Guard Commander"
 	economic_power = 4
 	requirements = list(EXP_TYPE_LCZ = 720)
@@ -106,6 +108,10 @@
 	)
 	skill_points = 25
 
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Manage the Light Containment Zone. Keep track of potential and on-going riots and containment breaches."
+
 /datum/job/ltofficerhcz
 	title = "HCZ Zone Senior Lieutenant"
 	department = "Heavy Containment Personnel"
@@ -113,7 +119,6 @@
 	department_flag = SEC|HCZ
 	total_positions = 1
 	spawn_positions = 1
-	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</b></big>"
 	supervisors = "the Guard Commander"
 	economic_power = 4
 	requirements = list(EXP_TYPE_HCZ = 720)
@@ -151,6 +156,10 @@
 	    SKILL_FORENSICS   = SKILL_TRAINED
 	)
 	skill_points = 25
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Manage the Heavy Containment Zone. Keep track of potential and on-going containment breaches."
 
 /datum/job/ltofficerez
 	title = "EZ Zone Supervisor"
@@ -205,6 +214,10 @@
 	    SKILL_FORENSICS   = SKILL_MASTER
 	)
 	skill_points = 25
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Manage the Entrance Zone. Ensure safety of all administrative staff, especially during containment breaches."
 
 //##
 // OFFICERS

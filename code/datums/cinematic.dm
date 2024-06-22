@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(cinematic, /datum/cinematic, new)
 /datum/cinematic
 	//station_explosion used to be a variable for every mob's hud. Which was a waste!
 	//Now we have a general cinematic centrally held within the gameticker....far more efficient!
-	var/obj/screen/cinematic_screen = null
+	var/atom/movable/screen/cinematic_screen = null
 	/// List of clients currently watching a cinematic
 	var/list/watching_clients = list()
 

@@ -4,6 +4,7 @@
 	desc = "The words 'Blue Lady' are written on this deftly-rolled cigarette in blue ink."
 
 	filling = list(/datum/reagent/medicine/fluff/tobacco = 1)
+	hidden_from_codex = TRUE
 
 	//Mechanical
 
