@@ -330,6 +330,7 @@
 #include "code\datums\changelog.dm"
 #include "code\datums\cinematic.dm"
 #include "code\datums\datum.dm"
+#include "code\datums\feedback.dm"
 #include "code\datums\footsteps.dm"
 #include "code\datums\hierarchy.dm"
 #include "code\datums\local_network.dm"

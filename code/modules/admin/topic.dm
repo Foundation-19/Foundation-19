@@ -580,61 +580,58 @@
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
 				if(!reason)
 					return
-				var/mob_key = LAST_CKEY(M)
-				if(mob_key != given_key)
-					to_chat(usr, SPAN_DANGER("This mob's occupant has changed from [given_key] to [mob_key]. Please try again."))
-					show_player_panel(M)
-					return
-				AddBan(mob_key, M.computer_id, reason, usr.ckey, 1, mins)
-				var/mins_readable = minutes_to_readable(mins)
-				ban_unban_log_save("[usr.client.ckey] has banned [mob_key]. - Reason: [reason] - This will be removed in [mins_readable].")
-				notes_add(mob_key,"[usr.client.ckey] has banned [mob_key]. - Reason: [reason] - This will be removed in [mins_readable].",usr)
-				to_chat(M, SPAN_DANGER("You have been banned by [usr.client.ckey].\nReason: [reason]."))
-				to_chat(M, SPAN_WARNING("This is a temporary ban, it will be removed in [mins_readable]."))
-				SSstatistics.add_field("ban_tmp",1)
-				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
-				SSstatistics.add_field("ban_tmp_mins",mins)
-				if(config.banappeals)
-					to_chat(M, SPAN_WARNING("To try to resolve this matter head to [config.banappeals]"))
+				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
+				ban_unban_log_save("[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
+				if (config.ban_legacy_system)
+					notes_add(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.",usr)
 				else
-					to_chat(M, SPAN_WARNING("No ban appeals URL has been set."))
-				log_and_message_staff("has banned [mob_key].\nReason: [reason]\nThis will be removed in [mins_readable].")
+					notes_add_sql(M.ckey, "[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", usr, M.lastKnownIP, M.computer_id)
+				to_chat_immediate(M, SPAN_DANGER("<BIG>You have been banned by [usr.client.ckey].\nReason: [reason].</BIG>"))
+				to_chat_immediate(M, SPAN_DANGER("This is a temporary ban, it will be removed in [mins] minutes."))
+				feedback_inc("ban_tmp",1)
+				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
+				feedback_inc("ban_tmp_mins",mins)
+				if(config.banappeals)
+					to_chat_immediate(M, SPAN_WARNING("To try to resolve this matter head to [config.banappeals]"))
+				else
+					to_chat_immediate(M, SPAN_WARNING("No ban appeals URL has been set."))
+				log_admin("[usr.client.ckey] has banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.",admin_key=key_name(usr),ckey=key_name(M))
+				message_admins(SPAN_NOTICE("[usr.client.ckey] has banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes."))
 
-				qdel(M.client)
+				del(M.client)
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
 			if("No")
-				if(!check_rights(R_BAN))   return
+				if(!check_rights(R_BAN))
+					return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
 				if(!reason)
-					return
-				var/mob_key = LAST_CKEY(M)
-				if(mob_key != given_key)
-					to_chat(usr, SPAN_DANGER("This mob's occupant has changed from [given_key] to [mob_key]. Please try again."))
-					show_player_panel(M)
 					return
 				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
 					if("Cancel")	return
 					if("Yes")
-						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
+						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
 					if("No")
-						AddBan(mob_key, M.computer_id, reason, usr.ckey, 0, 0)
-				to_chat(M, SPAN_DANGER("You have been banned by [usr.client.ckey].\nReason: [reason]."))
-				to_chat(M, SPAN_WARNING("This is a ban until appeal."))
+						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
+				to_chat(M, SPAN_DANGER("<BIG>You have been banned by [usr.client.ckey].\nReason: [reason].</BIG>"))
+				to_chat(M, SPAN_WARNING("This is a permanent ban."))
 				if(config.banappeals)
 					to_chat(M, SPAN_WARNING("To try to resolve this matter head to [config.banappeals]"))
 				else
 					to_chat(M, SPAN_WARNING("No ban appeals URL has been set."))
-				ban_unban_log_save("[usr.client.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.")
-				notes_add(mob_key,"[usr.client.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.",usr)
-				log_and_message_staff("has banned [mob_key].\nReason: [reason]\nThis is a ban until appeal.")
-				SSstatistics.add_field("ban_perma",1)
+				ban_unban_log_save("[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
+				if (config.ban_legacy_system)
+					notes_add(M.ckey,"[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.",usr)
+				else
+					notes_add_sql(M.ckey, "[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", usr, M.lastKnownIP, M.computer_id)
+				log_admin("[usr.client.ckey] has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.",admin_key=key_name(usr),ckey=key_name(M))
+				message_admins(SPAN_NOTICE("[usr.client.ckey] has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban."))
+				feedback_inc("ban_perma",1)
 				DB_ban_record(BANTYPE_PERMA, M, -1, reason)
 
-				qdel(M.client)
+				del(M.client)
 				//qdel(M)
 			if("Cancel")
 				return
-
 	else if(href_list["mute"])
 		if(!check_rights(R_MOD,0) && !check_rights(R_ADMIN))  return
 

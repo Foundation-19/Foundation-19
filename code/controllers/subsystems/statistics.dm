@@ -29,8 +29,20 @@ SUBSYSTEM_DEF(statistics)
 	var/list/value_details = list()
 	var/list/population_log = list()
 
+	var/list/datum/feedback_variable/feedback = list()
+
 /datum/controller/subsystem/statistics/fire(resumed = FALSE)
 	population_log[time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")] = list("players" = LAZYLEN(GLOB.clients), "admin" = LAZYLEN(GLOB.admins))
+
+
+/datum/controller/subsystem/statistics/proc/find_feedback_datum(variable)
+	for (var/datum/feedback_variable/FV in feedback)
+		if (FV.get_variable() == variable)
+			return FV
+
+	var/datum/feedback_variable/FV = new(variable)
+	feedback += FV
+	return FV
 
 /datum/controller/subsystem/statistics/Shutdown()
 
@@ -168,3 +180,62 @@ SUBSYSTEM_DEF(statistics)
 
 		if(!player_is_antag(dead.mind) && dead.mind.assigned_job && dead.mind.assigned_job.department_flag)
 			crew_death_count++
+
+
+/proc/feedback_set(var/variable,var/value)
+	if(!SSstatistics)
+		return
+
+	variable = sql_sanitize_text(variable)
+
+	var/datum/feedback_variable/FV = SSstatistics.find_feedback_datum(variable)
+
+	if(!FV) return
+
+	FV.set_value(value)
+
+/proc/feedback_inc(var/variable,var/value)
+	if(!SSstatistics) return
+
+	variable = sql_sanitize_text(variable)
+
+	var/datum/feedback_variable/FV = SSstatistics.find_feedback_datum(variable)
+
+	if(!FV) return
+
+	FV.inc(value)
+
+/proc/feedback_dec(var/variable,var/value)
+	if(!SSstatistics) return
+
+	variable = sql_sanitize_text(variable)
+
+	var/datum/feedback_variable/FV = SSstatistics.find_feedback_datum(variable)
+
+	if(!FV) return
+
+	FV.dec(value)
+
+/proc/feedback_set_details(var/variable,var/details)
+	if(!SSstatistics) return
+
+	variable = sql_sanitize_text(variable)
+	details = sql_sanitize_text(details)
+
+	var/datum/feedback_variable/FV = SSstatistics.find_feedback_datum(variable)
+
+	if(!FV) return
+
+	FV.set_details(details)
+
+/proc/feedback_add_details(var/variable,var/details)
+	if(!SSstatistics) return
+
+	variable = sql_sanitize_text(variable)
+	details = sql_sanitize_text(details)
+
+	var/datum/feedback_variable/FV = SSstatistics.find_feedback_datum(variable)
+
+	if(!FV) return
+
+	FV.add_details(details)
