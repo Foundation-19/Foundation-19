@@ -1,5 +1,0 @@
-author: chesse20
-delete-after: true
-changes:
-  - rscadd: Logistics can now buy unidentified scps
-  - bugfix: Artifacts are less alien and more anomalous
