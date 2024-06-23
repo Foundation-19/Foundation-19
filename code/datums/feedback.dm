@@ -3,11 +3,11 @@
 	var/value
 	var/details
 
-/datum/feedback_variable/New(var/param_variable,var/param_value = 0)
+/datum/feedback_variable/New(param_variable, param_value = 0)
 	variable = param_variable
 	value = param_value
 
-/datum/feedback_variable/proc/inc(var/num = 1)
+/datum/feedback_variable/proc/inc(num = 1)
 	if(isnum(value))
 		value += num
 	else
@@ -17,7 +17,7 @@
 		else
 			value = num
 
-/datum/feedback_variable/proc/dec(var/num = 1)
+/datum/feedback_variable/proc/dec(num = 1)
 	if(isnum(value))
 		value -= num
 	else
@@ -27,7 +27,7 @@
 		else
 			value = -num
 
-/datum/feedback_variable/proc/set_value(var/num)
+/datum/feedback_variable/proc/set_value(num)
 	if(isnum(num))
 		value = num
 
@@ -37,11 +37,11 @@
 /datum/feedback_variable/proc/get_variable()
 	return variable
 
-/datum/feedback_variable/proc/set_details(var/text)
+/datum/feedback_variable/proc/set_details(text)
 	if(istext(text))
 		details = text
 
-/datum/feedback_variable/proc/add_details(var/text)
+/datum/feedback_variable/proc/add_details(text)
 	if(istext(text))
 		if(!details)
 			details = text

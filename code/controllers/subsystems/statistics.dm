@@ -182,7 +182,7 @@ SUBSYSTEM_DEF(statistics)
 			crew_death_count++
 
 
-/proc/feedback_set(var/variable,var/value)
+/proc/feedback_set(variable, value)
 	if(!SSstatistics)
 		return
 
@@ -194,7 +194,7 @@ SUBSYSTEM_DEF(statistics)
 
 	FV.set_value(value)
 
-/proc/feedback_inc(var/variable,var/value)
+/proc/feedback_inc(variable, value)
 	if(!SSstatistics) return
 
 	variable = sql_sanitize_text(variable)
@@ -205,7 +205,7 @@ SUBSYSTEM_DEF(statistics)
 
 	FV.inc(value)
 
-/proc/feedback_dec(var/variable,var/value)
+/proc/feedback_dec( variable, value)
 	if(!SSstatistics) return
 
 	variable = sql_sanitize_text(variable)
@@ -216,7 +216,7 @@ SUBSYSTEM_DEF(statistics)
 
 	FV.dec(value)
 
-/proc/feedback_set_details(var/variable,var/details)
+/proc/feedback_set_details( variable, details)
 	if(!SSstatistics) return
 
 	variable = sql_sanitize_text(variable)
@@ -228,7 +228,7 @@ SUBSYSTEM_DEF(statistics)
 
 	FV.set_details(details)
 
-/proc/feedback_add_details(var/variable,var/details)
+/proc/feedback_add_details(variable, details)
 	if(!SSstatistics) return
 
 	variable = sql_sanitize_text(variable)

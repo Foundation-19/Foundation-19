@@ -1,7 +1,7 @@
 //System will now support SQL pulls for fetching player notes.
 //Yay!
 
-/proc/notes_add_sql(var/player_ckey, var/note, var/mob/user, var/player_address, var/player_computerid)
+/proc/notes_add_sql(player_ckey, note, mob/user, player_address, player_computerid)
 	if(!player_ckey || !note)
 		return
 
@@ -31,7 +31,7 @@
 	message_admins(SPAN_NOTICE("[key_name_admin(user)] has edited [player_ckey]'s notes."))
 	log_admin("[key_name(user)] has edited [player_ckey]'s notes.",admin_key=key_name(user),ckey=player_ckey)
 
-/proc/notes_edit_sql(var/note_id, var/note_edit)
+/proc/notes_edit_sql(note_id, note_edit)
 	if (!note_id || !note_edit)
 		return
 
@@ -79,7 +79,7 @@
 			var/DBQuery/editquery = GLOB.dbcon.NewQuery("UPDATE ss13_notes SET content = :new_content:, lasteditor = :a_ckey:, lasteditdate = Now(), edited = 1 WHERE id = :note_id:")
 			editquery.Execute(list("new_content" = new_content, "a_ckey" = usr.client.ckey, "note_id" = note_id))
 
-/datum/admins/proc/show_notes_sql(var/player_ckey = null, var/admin_ckey = null)
+/datum/admins/proc/show_notes_sql(player_ckey = null, admin_ckey = null)
 	if (!check_rights(R_ADMIN|R_MOD))
 		return
 
@@ -178,7 +178,7 @@
 	dat += "</table>"
 	show_browser(usr, dat, "window=lookupnotes;size=900x500")
 
-/proc/show_player_info_discord(var/ckey)
+/proc/show_player_info_discord(ckey)
 	if (!ckey)
 		return "No ckey given!"
 

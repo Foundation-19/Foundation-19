@@ -199,3 +199,6 @@
 	#define url_encode(text) rustg_url_encode(text)
 	#define url_decode(text) rustg_url_decode(text)
 #endif
+
+#define rustg_udp_send(addr, text) RUSTG_CALL(RUST_G, "udp_send")(addr, text)
+
