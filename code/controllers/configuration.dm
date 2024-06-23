@@ -246,6 +246,78 @@ var/list/gamemode_cache = list()
 
 	var/use_timelocks = FALSE
 
+	/**
+	 * This is the nuclear option, this will make Hadii proud of you, and the players/other staff VERY VERY
+	 * ANGRY at you if you flip this on in production, also, everyone connected will be able to see the logs
+	 * so once again:
+	 *
+	 *		 NUCLEAR OPTION, TEST ENVIRONMENT/LOCAL INSTANCE/EVERYTHING IS FUCKED ONLY
+	 *
+	 * don't come cry to me if you fuck this up, but at least you can unfuck it just as easily. If the server survives.
+	*/
+	var/all_logs_to_chat = FALSE
+
+	var/condense_all_logs = TRUE
+
+	// Enable/Disable Logging
+	var/list/logsettings = list(
+	"log_access" = FALSE,	// log login/logout
+	"log_say" = FALSE,	// log client say
+	"log_signaler" = FALSE,	// log signaler actions
+	"log_debug" = TRUE,	// log debug output
+	"log_whisper" = FALSE,	// log client whisper
+	"log_attack" = FALSE,	// log attack messages
+	"log_hrefs" = FALSE,	// logs all links clicked in-game. Could be used for debugging and tracking down exploits
+	"log_runtime" = FALSE,	// logs world.log to a file
+	"log_asset" = FALSE,	// Asset loadings and changes
+	"log_job_debug" = FALSE,	// Jobs debugging
+	"log_signals" = FALSE,	// Signals
+	"log_admin" = TRUE,	// Admin actions
+	"log_adminchat" = TRUE,	// Admin chat
+	"log_suspicious_login" = TRUE,
+	"log_traitor" = TRUE,	// Antags
+	"log_uplink" = TRUE,	// Antag uplink
+	"log_game" = TRUE,	// General game events
+	"log_emote" = TRUE,	// Audible emotes (like ME/F4)
+	"log_ooc" = TRUE,	// OOC Chat
+	"log_prayer" = TRUE,	// Prays
+	"log_vote" = FALSE,	// OOC Votes, like transfer
+	"log_pda" = TRUE,	// PDA messages
+	"log_telecomms" = FALSE,	// Radiochat / telecommunications
+	"log_speech_indicators" = FALSE,	// Speech indicator
+	"log_tools" = FALSE,	// Tools
+	"log_manifest" = TRUE,	// Manifest
+	"log_asset" = FALSE,	// log asset caching
+	"log_loadout" = TRUE,	// Loadout
+
+	/*#### SUBSYSTEMS ####*/
+
+	"log_subsystems" = TRUE,	// General Subsystems
+	"log_subsystems_chemistry" = TRUE,	// SSChemistry
+	"log_subsystems_codex" = TRUE,	// SScodex
+	"log_subsystems_atlas" = TRUE,	// ATLAS
+	"log_subsystems_ghostroles" = TRUE,	// Ghost Roles
+	"log_subsystems_law" = TRUE,	// Law
+	"log_subsystems_cargo" = TRUE, // Cargo
+	"log_subsystems_documents" = TRUE, // Documents
+	"log_subsystems_fail2topic" = TRUE, // Fail2Topic
+	"log_subsystems_mapfinalization" = TRUE, // Map Finalization
+	"log_subsystems_tgui" = TRUE, // TGUI
+	"log_subsystems_zas" = FALSE, // ZAS
+	"log_subsystems_zas_debug" = FALSE, // ZAS debug
+	"log_subsystems_http" = TRUE, //HTTP Log
+
+	/*#### MODULES ####*/
+
+	"log_modules_ghostroles" = TRUE,	// Ghost Roles
+	"log_modules_customitems" = TRUE,	// Custom Items
+	"log_modules_exoplanets" = TRUE,	// Exoplanets
+	"log_modules_sectors" = TRUE,	// Overmap Sectors
+	"world_modules_ruins_log" = TRUE,	// Ruins
+
+	)
+
+
 	/* Cross-communications */
 	var/comms_key = null
 	var/cross_comms_name = null
