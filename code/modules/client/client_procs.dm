@@ -121,6 +121,61 @@
 		reset_macros(skip_alert = TRUE)
 		return
 
+	if(href_list["linkingrequest"])
+		if (!GLOB.config.webint_url)
+			return
+
+		if (!href_list["linkingaction"])
+			return
+
+		var/request_id = text2num(href_list["linkingrequest"])
+
+		if (!establish_db_connection(GLOB.dbcon))
+			to_chat(src, SPAN_WARNING("Action failed! Database link could not be established!"))
+			return
+
+
+		var/DBQuery/check_query = GLOB.dbcon.NewQuery("SELECT player_ckey, status FROM ss13_player_linking WHERE id = :id:")
+		check_query.Execute(list("id" = request_id))
+
+		if (!check_query.NextRow())
+			to_chat(src, SPAN_WARNING("No request found!"))
+			return
+
+		if (ckey(check_query.item[1]) != ckey || check_query.item[2] != "new")
+			to_chat(src, SPAN_WARNING("Request authentication failed!"))
+			return
+
+		var/query_contents = ""
+		var/list/query_details = list("new_status", "id")
+		var/feedback_message = ""
+		switch (href_list["linkingaction"])
+			if ("accept")
+				query_contents = "UPDATE ss13_player_linking SET status = :new_status:, updated_at = NOW() WHERE id = :id:"
+				query_details["new_status"] = "confirmed"
+				query_details["id"] = request_id
+
+				feedback_message = SPAN_DANGER("<b>Account successfully linked!</b>")
+			if ("deny")
+				query_contents = "UPDATE ss13_player_linking SET status = :new_status:, deleted_at = NOW() WHERE id = :id:"
+				query_details["new_status"] = "rejected"
+				query_details["id"] = request_id
+
+				feedback_message = SPAN_WARNING("<b>Link request rejected!</b>")
+			else
+				to_chat(src, SPAN_WARNING("Invalid command sent."))
+				return
+
+		var/DBQuery/update_query = GLOB.dbcon.NewQuery(query_contents)
+		update_query.Execute(query_details)
+
+		if (href_list["linkingaction"] == "accept" && alert("To complete the process, you have to visit the website. Do you want to do so now?",,"Yes","No") == "Yes")
+			process_webint_link("interface/user/link")
+
+		to_chat(src, feedback_message)
+		check_linking_requests()
+		return
+
 	..()	//redirect to hsrc.Topic()
 
 //This stops files larger than UPLOAD_LIMIT being sent from client to server via input(), client.Import() etc.
