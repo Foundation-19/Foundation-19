@@ -228,3 +228,5 @@
 
 	/// List of traits that this mob has by default
 	var/list/roundstart_traits = list()
+
+	var/list/mob/observer/observers

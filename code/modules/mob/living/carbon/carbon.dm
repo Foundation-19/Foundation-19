@@ -530,3 +530,26 @@
 	LAZYSET(addiction_points, type, max(LAZYACCESS(addiction_points, type) - amount, 0))
 	var/datum/addiction/affected_addiction = SSaddiction.all_addictions[type]
 	return affected_addiction.OnLoseAddictionPoints(src)
+
+/**
+ * Called by [/mob/dead/observer/proc/do_observe] when a carbon mob is observed by a ghost with [/datum/preferences/var/auto_observe] enabled.
+ *
+ * Any HUD changes past this point are handled by [/mob/dead/observer/proc/observe_target_screen_add]
+ * and [/mob/dead/observer/proc/observe_target_screen_remove].
+ *
+ * Override on subtype mobs if they have any extra HUD elements/behaviour.
+ */
+/mob/living/carbon/proc/auto_observed(mob/observer/observer)
+	SHOULD_CALL_PARENT(TRUE)
+
+	LAZYINITLIST(observers)
+	observers |= observer
+	hud_used.show_hud(hud_used.hud_version, observer)
+
+	// Add the player's action buttons (not the actions themselves) to the observer's screen.
+	for(var/datum/action/action as anything in actions)
+		// Skip any hidden ones (of course).
+		if(action.hidden || action.player_hidden)
+			continue
+
+		observer.client.add_to_screen(action.button)

@@ -16,6 +16,7 @@
 	var/init_flags = EMPTY_BITFIELD
 	var/list/orbiters = null
 	var/datum/scp/SCP //For SCP's
+	
 
 	///Value used to increment ex_act() if reactionary_explosions is on
 	var/explosion_block = 0
@@ -648,3 +649,21 @@
 /atom/proc/update_desc(updates=ALL)
 	SHOULD_CALL_PARENT(TRUE)
 	return SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_DESC, updates)
+
+/**
+ * Recursive getter method to return a list of all ghosts orbitting this atom
+ *
+ * This will work fine without manually passing arguments.
+ */
+/atom/proc/get_all_orbiters(list/processed, source = TRUE)
+	var/list/output = list()
+	if (!processed)
+		processed = list()
+	if (src in processed)
+		return output
+	if (!source)
+		output += src
+	processed += src
+	for(var/atom/atom_orbiter as anything in orbiters?.orbiters)
+		output += atom_orbiter.get_all_orbiters(processed, source = FALSE)
+	return output

@@ -318,3 +318,99 @@
 	icon_state = "prog_bar_100"
 	invisibility = INVISIBILITY_MAXIMUM
 	screen_loc = ui_stamina
+
+/datum/hud/show_hud(version = 0, mob/viewmob)
+	. = ..()
+	if(!.)
+		return
+	var/mob/screenmob = viewmob || mymob
+	if(!screenmob.client)
+		return FALSE
+	hidden_inventory_update(screenmob)
+
+//Version denotes which style should be displayed. blank or 0 means "next version"
+/datum/hud/proc/show_hud(version = 0, mob/viewmob)
+	if(!ismob(mymob))
+		return FALSE
+// if(!mymob.client)
+// return FALSE
+	var/mob/screenmob = viewmob || mymob
+	if(!screenmob.client)
+		return FALSE
+
+	screenmob.client.clear_screen()
+	screenmob.client.apply_clickcatcher()
+
+	var/display_hud_version = version
+	if(!display_hud_version) //If 0 or blank, display the next hud version
+		display_hud_version = hud_version + 1
+	if(display_hud_version > HUD_VERSIONS) //If the requested version number is greater than the available versions, reset back to the first version
+		display_hud_version = 1
+
+	switch(display_hud_version)
+		if(HUD_STYLE_STANDARD) //Default HUD
+			hud_shown = 1 //Governs behavior of other procs
+			if(static_inventory.len)
+				screenmob.client.add_to_screen(static_inventory)
+			if(toggleable_inventory.len && inventory_shown)
+				screenmob.client.add_to_screen(toggleable_inventory)
+			if(hotkeybuttons.len && !hotkey_ui_hidden)
+				screenmob.client.add_to_screen(hotkeybuttons)
+			if(infodisplay.len)
+				screenmob.client.add_to_screen(infodisplay)
+
+		if(HUD_STYLE_REDUCED) //Reduced HUD
+			hud_shown = 0 //Governs behavior of other procs
+			if(static_inventory.len)
+				screenmob.client.remove_from_screen(static_inventory)
+			if(toggleable_inventory.len)
+				screenmob.client.remove_from_screen(toggleable_inventory)
+			if(hotkeybuttons.len)
+				screenmob.client.remove_from_screen(hotkeybuttons)
+			if(infodisplay.len)
+				screenmob.client.add_to_screen(infodisplay)
+
+			//These ones are a part of 'static_inventory', 'toggleable_inventory' or 'hotkeybuttons' but we want them to stay
+			if(l_hand_hud_object)
+				screenmob.client.add_to_screen(l_hand_hud_object) //we want the hands to be visible
+			if(r_hand_hud_object)
+				screenmob.client.add_to_screen(r_hand_hud_object) //we want the hands to be visible
+			if(action_intent)
+				screenmob.client.add_to_screen(action_intent) //we want the intent switcher visible
+
+		if(HUD_STYLE_NOHUD) //No HUD
+			hud_shown = 0 //Governs behavior of other procs
+			if(static_inventory.len)
+				screenmob.client.remove_from_screen(static_inventory)
+			if(toggleable_inventory.len)
+				screenmob.client.remove_from_screen(toggleable_inventory)
+			if(hotkeybuttons.len)
+				screenmob.client.remove_from_screen(hotkeybuttons)
+			if(infodisplay.len)
+				screenmob.client.remove_from_screen(infodisplay)
+
+	hud_version = display_hud_version
+	persistent_inventory_update(screenmob)
+	mymob.update_action_buttons(TRUE)
+	reorganize_alerts(screenmob)
+	mymob.reload_fullscreens()
+
+	// ensure observers get an accurate and up-to-date view
+	if(!viewmob)
+		plane_masters_update()
+		for(var/M in mymob.observers)
+			show_hud(hud_version, M)
+	else if(viewmob.hud_used)
+		viewmob.hud_used.plane_masters_update()
+
+	return TRUE
+
+/// Wrapper for adding anything to a client's screen
+/client/proc/add_to_screen(screen_add)
+	screen += screen_add
+	SEND_SIGNAL(src, COMSIG_CLIENT_SCREEN_ADD, screen_add)
+
+/// Wrapper for removing anything from a client's screen
+/client/proc/remove_from_screen(screen_remove)
+	screen -= screen_remove
+	SEND_SIGNAL(src, COMSIG_CLIENT_SCREEN_REMOVE, screen_remove)

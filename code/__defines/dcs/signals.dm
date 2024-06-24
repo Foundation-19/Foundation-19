@@ -250,3 +250,17 @@
 
 /// Called in '/mob/proc/reset_view' on every atom in view of new eyeobj (/mob/viewer, /atom/new_view)
 #define COMSIG_ATOM_VIEW_RESET "atomViewReset"
+
+/// When a mob is turned into a /mob/dead/observer at /mob/proc/ghostize()
+#define COMSIG_MOB_GHOSTIZE "mob_ghostize"
+
+
+/// Called when something is added to a client's screen : /client/proc/add_to_screen(screen_add)
+#define COMSIG_CLIENT_SCREEN_ADD "client_screen_add"
+
+/// Called when something is removed from a client's screen : /client/proc/remove_from_screen(screen_remove)
+#define COMSIG_CLIENT_SCREEN_REMOVE "client_screen_remove"
+
+
+/// When a mob gets a new mind via transfer at /datum/mind/proc/transfer_to()
+#define COMSIG_MOB_NEW_MIND "mob_new_mind"

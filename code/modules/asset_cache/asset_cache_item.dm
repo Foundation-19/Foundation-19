@@ -46,3 +46,8 @@
 	if (extstart)
 		ext = ".[copytext(name, extstart+1)]"
 	resource = file
+
+/datum/asset/simple/orbit
+	assets = list(
+		"ghost.png" = 'html/images/ghost.png'
+	)
