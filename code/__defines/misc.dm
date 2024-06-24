@@ -319,3 +319,11 @@
 #define FACILITY_EVACUATED 1
 #define FACILITY_DESTROYED_NUKE 2
 #define FACILITY_DESTROYED_SELF_DESTRUCT 3
+
+
+//Ghost orbit types:
+#define GHOST_ORBIT_CIRCLE "circular"
+#define GHOST_ORBIT_TRIANGLE "triangular"
+#define GHOST_ORBIT_HEXAGON "hexagonal"
+#define GHOST_ORBIT_SQUARE "square"
+#define GHOST_ORBIT_PENTAGON "pentagonal"

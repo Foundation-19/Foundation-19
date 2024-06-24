@@ -3117,6 +3117,7 @@
 #include "code\modules\SCP\scp.dm"
 #include "code\modules\SCP\Abnormalities\white_night.dm"
 #include "code\modules\SCP\Abnormalities\white_night_apostles.dm"
+#include "code\modules\SCP\New Orbit Menu\orbit.dm"
 #include "code\modules\SCP\SCPs\SCP-008.dm"
 #include "code\modules\SCP\SCPs\SCP-012.dm"
 #include "code\modules\SCP\SCPs\SCP-013.dm"

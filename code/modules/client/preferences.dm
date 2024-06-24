@@ -43,6 +43,8 @@
 	var/datum/category_collection/player_setup_collection/player_setup
 	var/datum/browser/panel
 
+	/// If this client has auto observe enabled, used by /datum/orbit_menu
+	var/auto_observe = TRUE
 /datum/preferences/New(client/C)
 	// give them default keybinds too
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key)
