@@ -20,6 +20,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	/// The target client that the ghost is observing.
 	var/client/observe_target_client = null
 	var/ghost_orbit = GHOST_ORBIT_CIRCLE
+	var/datum/orbit_menu/orbit_menu
 /mob/observer/Initialize()
 	.=..()
 	ghost_image = image(src.icon,src)
@@ -34,6 +35,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	SSghost_images.queue_global_image_update()
 
 /mob/observer/Destroy()
+	QDEL_NULL(orbit_menu)
 	if (ghost_image)
 		ghost_darkness_images -= ghost_image
 		ghost_sightless_images -= ghost_image
