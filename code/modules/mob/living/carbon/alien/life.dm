@@ -9,7 +9,7 @@
 
 	..()
 
-	blinded = null
+	set_temp_blindness(0)
 
 	//Status updates, death etc.
 	update_icons()
@@ -35,48 +35,43 @@
 	if(status_flags & GODMODE)	return 0
 
 	if(stat == DEAD)
-		blinded = 1
-		silent = 0
-	else
-		updatehealth()
-		if(health <= 0)
-			death()
-			blinded = 1
-			silent = 0
-			return 1
+		become_blind(STAT_TRAIT)
+	else if(stat == UNCONSCIOUS)
+		become_blind(STAT_TRAIT)
+	else // stat == CONSCIOUS
+		cure_blind(STAT_TRAIT)
 
-		if(paralysis && paralysis > 0)
-			blinded = 1
-			set_stat(UNCONSCIOUS)
-			if(getHalLoss() > 0)
-				adjustHalLoss(-3)
 
-		if(sleeping)
+	updatehealth()
+	if(health <= 0)
+		death()
+		become_blind(STAT_TRAIT)
+		return
+
+	if(paralysis && paralysis > 0)
+		set_stat(UNCONSCIOUS)
+		if(getHalLoss() > 0)
 			adjustHalLoss(-3)
-			if (mind)
-				if(mind.active && client != null)
-					sleeping = max(sleeping-1, 0)
-			blinded = 1
-			set_stat(UNCONSCIOUS)
-		else if(resting)
-			if(getHalLoss() > 0)
-				adjustHalLoss(-3)
 
-		else
-			set_stat(CONSCIOUS)
-			if(getHalLoss() > 0)
-				adjustHalLoss(-1)
+	if(sleeping)
+		adjustHalLoss(-3)
+		if (mind)
+			if(mind.active && client != null)
+				sleeping = max(sleeping-1, 0)
+		set_stat(UNCONSCIOUS)
+	else if(resting)
+		if(getHalLoss() > 0)
+			adjustHalLoss(-3)
+	else
+		set_stat(CONSCIOUS)
+		if(getHalLoss() > 0)
+			adjustHalLoss(-1)
 
-		// Eyes and blindness.
-		if(!has_eyes())
-			eye_blind =  1
-			blinded =    1
-			eye_blurry = 1
-		else if(eye_blind)
-			eye_blind =  max(eye_blind-1,0)
-			blinded =    1
-		else if(eye_blurry)
-			eye_blurry = max(eye_blurry-1, 0)
+	// Eyes and blindness.
+	if(!has_eyes())
+		become_blind(MISSING_ORGAN_TRAIT)
+	else
+		cure_blind(MISSING_ORGAN_TRAIT)
 
 		update_icons()
 
@@ -105,13 +100,6 @@
 			healths.icon_state = "health7"
 
 	if(stat != DEAD)
-		if(blinded)
-			overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
-		else
-			clear_fullscreen("blind")
-			set_fullscreen(disabilities & NEARSIGHTED, "impaired", /obj/screen/fullscreen/impaired, 1)
-			set_fullscreen(eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
-			set_fullscreen(druggy, "high", /obj/screen/fullscreen/high)
 		if(machine)
 			if(machine.check_eye(src) < 0)
 				reset_view(null)

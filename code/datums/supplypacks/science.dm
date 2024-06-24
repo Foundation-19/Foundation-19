@@ -87,3 +87,11 @@
 	contains = list(/obj/structure/anomaly_container)
 	containertype = /obj/structure/largecrate
 	containername = "anomaly container crate"
+
+/decl/hierarchy/supply_pack/science/artifact
+	name = "Large Unidentified SCP"
+	cost = 25
+	contains = list(/obj/machinery/artifact)
+	containertype = /obj/structure/closet/crate/secure/large
+	containername = "unidentified scp crate"
+	access = ACCESS_RESEARCH

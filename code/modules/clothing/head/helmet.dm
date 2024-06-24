@@ -26,6 +26,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_ADHERENT)
 	protects_against_weather = TRUE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/helmet/nt
 	name = "\improper corporate security helmet"

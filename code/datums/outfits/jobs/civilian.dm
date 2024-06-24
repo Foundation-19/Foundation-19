@@ -100,6 +100,17 @@
 	backpack_contents = list(/obj/item/ammo_magazine/c45m = 1)
 	belt = /obj/item/gun/projectile/silenced
 
+/decl/hierarchy/outfit/job/civ/grcl
+	name = OUTFIT_JOB_NAME("Goldbaker-Reinz Corporate Liaison")
+	uniform = /obj/item/clothing/under/scp/suittie
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/device/radio
+	id_type = /obj/item/card/id/adminlvl3
+	r_hand = /obj/item/storage/secure/briefcase/money
+	l_ear = /obj/item/device/radio/headset/heads/grcl
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
+	belt = /obj/item/gun/projectile/pistol/m1911
+
 /decl/hierarchy/outfit/job/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
 	uniform = /obj/item/clothing/under/suit_jacket/really_black

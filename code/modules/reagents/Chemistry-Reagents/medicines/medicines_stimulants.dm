@@ -17,7 +17,7 @@
 /datum/reagent/medicine/stimulant/synaptizine/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
-	M.drowsyness = max(M.drowsyness - 5, 0)
+	M.adjust_drowsiness(-5 SECONDS)
 	M.AdjustParalysis(-1)
 	M.AdjustStunned(-1)
 	M.AdjustWeakened(-1)

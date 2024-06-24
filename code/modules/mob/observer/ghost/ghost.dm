@@ -7,7 +7,6 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"
 	appearance_flags = KEEP_TOGETHER | LONG_GLIDE
-	blinded = 0
 	anchored = TRUE	//  don't get pushed around
 	universal_speak = TRUE
 
@@ -277,6 +276,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Follow"
 	set desc = "Follow a player"
 
+	if(src)
+		to_chat(src, SPAN_WARNING("YOU CANT FOLLOW YOURSELF!"))
+		return
 	if(!fh)
 		to_chat(src, SPAN_WARNING("No active players found."))
 		return

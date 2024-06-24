@@ -209,7 +209,7 @@
 		for(var/hardpoint in hardpoints)
 			if(hardpoint != selected_hardpoint)
 				continue
-			var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
+			var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
 			if(istype(H))
 				H.icon_state = "hardpoint"
 				break
@@ -244,11 +244,11 @@
 		return
 	to_chat(user, SPAN_NOTICE("You climb into \the [src]."))
 	user.forceMove(src)
-	LAZYDISTINCTADD(pilots, user)
+	LAZYOR(pilots, user)
 	sync_access()
 	playsound(src, 'sounds/machines/windowdoor.ogg', 50, 1)
 	if(user.client) user.client.screen |= hud_elements
-	LAZYDISTINCTADD(user.additional_vision_handlers, src)
+	LAZYOR(user.additional_vision_handlers, src)
 	update_pilots()
 	user.PushClickHandler(/datum/click_handler/default/mech)
 	return 1
@@ -450,7 +450,7 @@
 				eject(pilot, silent=1)
 		else if(hatch_closed)
 			if(MUTATION_FERAL in user.mutations)
-				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+				user.setClickCooldown(CLICK_CD_ATTACK)
 				attack_generic(user, 5)
 		return
 

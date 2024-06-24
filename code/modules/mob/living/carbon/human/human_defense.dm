@@ -303,7 +303,7 @@ meteor_act
 		var/obj/O = AM
 
 		if(in_throw_mode && !get_active_hand() && TT.speed <= THROWFORCE_SPEED_DIVISOR)	//empty active hand and we're in throw mode
-			if(!incapacitated())
+			if(!incapacitated() || HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
 				if(isturf(O.loc))
 					put_in_active_hand(O)
 					visible_message(SPAN_WARNING("[src] catches [O]!"))

@@ -111,3 +111,7 @@
 /obj/item/device/radio/headset/heads/mcd
 	name = "Marshall, Carter, and Dark Liaison's headset"
 	desc = "The headset of the capitalist, keep an eye on your wallet."
+
+/obj/item/device/radio/headset/heads/grcl
+	name = "Goldbaker-Reinz Corporate Liaison's headset"
+	desc = "The headset of the humanitarian, or so they might say."

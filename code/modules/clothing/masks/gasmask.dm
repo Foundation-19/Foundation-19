@@ -26,6 +26,7 @@
 	var/clogged
 	var/filter_water
 	var/gas_filter_strength = 1			//For gas mask filters
+	hidden_from_codex = FALSE
 
 
 /obj/item/clothing/mask/gas/examine(mob/user)

@@ -175,7 +175,7 @@
 		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
 		return
 
-	set_dir(turn(dir, 90))
+	setDir(turn(dir, 90))
 	update_icon()
 
 //For things to apply special effects after damaging an organ, called by organ's take_damage

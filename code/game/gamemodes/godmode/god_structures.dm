@@ -40,7 +40,7 @@
 	return ..()
 
 /obj/structure/deity/attackby(obj/item/W as obj, mob/user as mob)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(src)
 	playsound(get_turf(src), 'sounds/effects/Glasshit.ogg', 50, 1)
 	user.visible_message(

@@ -598,7 +598,7 @@ var/list/global/slot_flags_enumeration = list(
 
 	admin_attack_log(user, M, "Attacked using \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(M)
 
 	src.add_fingerprint(user)
@@ -627,7 +627,7 @@ var/list/global/slot_flags_enumeration = list(
 				if(M.stat != 2)
 					to_chat(M, SPAN_WARNING("You drop what you're holding and clutch at your eyes!"))
 					M.unequip_item()
-				M.eye_blurry += 10
+				M.adjust_eye_blur(10 SECONDS)
 				M.Paralyse(1)
 				M.Weaken(4)
 			if (eyes.damage >= eyes.min_broken_damage)
@@ -638,7 +638,7 @@ var/list/global/slot_flags_enumeration = list(
 		affecting.take_external_damage(7)
 	else
 		M.take_organ_damage(7, 0)
-	M.eye_blurry += rand(3,4)
+	M.adjust_eye_blur(rand(3 SECONDS, 4 SECONDS))
 	return
 
 /obj/item/clean()
@@ -766,7 +766,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	RegisterSignal(src, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/item, unzoom))
 	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/item, unzoom))
-	RegisterSignal(user, COMSIG_DIR_SET, TYPE_PROC_REF(/obj/item, unzoom))
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, TYPE_PROC_REF(/obj/item, unzoom))
 	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/item, unzoom))
 	user.RegisterSignal(src, COMSIG_DROPPED_ITEM, TYPE_PROC_REF(/mob/living, unzoom))
 
@@ -783,7 +783,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(user, COMSIG_MOVED)
-	UnregisterSignal(user, COMSIG_DIR_SET)
+	UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 	user.UnregisterSignal(src, COMSIG_DROPPED_ITEM)
 
 	user = user == src ? loc : (user || loc)

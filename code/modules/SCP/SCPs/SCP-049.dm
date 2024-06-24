@@ -5,6 +5,8 @@
 
 	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NEED_DIRECT_ABSORB
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 	handcuffs_breakout_modifier = 0.2
 
 	//Config
@@ -196,7 +198,7 @@
 		return
 
 	if(istype(target, /obj/machinery/door))
-		setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		setClickCooldown(CLICK_CD_ATTACK)
 		OpenDoor(target)
 		return
 
@@ -216,7 +218,7 @@
 		to_chat(src, SPAN_WARNING("This thing... it isnt normal... you cannot cure it."))
 		return
 
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	setClickCooldown(CLICK_CD_ATTACK)
 
 	switch(a_intent)
 		if(I_HELP)
@@ -299,9 +301,6 @@
 	last_interaction_time = world.time
 
 //Util Overrides
-
-/mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return TRUE
 
 /mob/living/carbon/human/scp049/update_icons()
 	return
@@ -433,7 +432,7 @@
 	target.visible_message(SPAN_DANGER(SPAN_BOLD("The lifeless corpse of [target] begins to convulse violently!")))
 	target.humanStageHandler.setStage("Pestilence", 0)
 
-	target.make_jittery(300)
+	target.adjust_jitter(30 SECONDS)
 	target.adjustBruteLoss(100)
 
 	addtimer(CALLBACK(src, PROC_REF(FinishPlagueDoctorCure), target), 15 SECONDS)

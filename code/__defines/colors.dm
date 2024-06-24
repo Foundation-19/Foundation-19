@@ -98,7 +98,6 @@
 #define	COMMS_COLOR_ENTERTAIN  "#666666"
 #define	COMMS_COLOR_AI         "#ff00ff"
 #define	COMMS_COLOR_COMMON     "#408010"
-#define COMMS_COLOR_HAILING    "#cc00aa"
 #define	COMMS_COLOR_SERVICE    "#709b00"
 #define	COMMS_COLOR_SUPPLY     "#7f6539"
 #define	COMMS_COLOR_SCIENCE    "#993399"
@@ -106,7 +105,6 @@
 #define	COMMS_COLOR_MEDICAL_I  "#509190"
 #define	COMMS_COLOR_EXPLORER   "#929820"
 #define	COMMS_COLOR_ENGINEER   "#a66300"
-#define	COMMS_COLOR_SECURITY   "#930000"
 #define	COMMS_COLOR_SECURITY_I "#935050"
 #define	COMMS_COLOR_COMMAND    "#4160ad"
 #define	COMMS_COLOR_CENTCOMM   "#5c5c7c"
@@ -175,11 +173,6 @@
 #define BLOB_COLOR_PULS      "#b5ff5b"
 
 #define RANDOM_RGB rgb(rand(0,255), rand(0,255), rand(0,255))
-
-// Codex category colours.
-#define CODEX_COLOR_LORE      "#abdb9b"
-#define CODEX_COLOR_MECHANICS "#9ebcd8"
-#define CODEX_COLOR_ANTAG     "#e5a2a2"
 
 #define COLOR_WEBHOOK_DEFAULT 0x8bbbd5
 

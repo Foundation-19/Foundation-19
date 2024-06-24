@@ -136,7 +136,7 @@
 	if (usr.stat || usr.restrained() || anchored)
 		return
 
-	src.set_dir(turn(src.dir, 90))
+	src.setDir(turn(src.dir, 90))
 	desc = initial(desc) + " Its outlet port is to the [dir2text(dir)]."
 
 
@@ -148,5 +148,5 @@
 	if (usr.stat || usr.restrained() || anchored)
 		return
 
-	src.set_dir(turn(src.dir, -90))
+	src.setDir(turn(src.dir, -90))
 	desc = initial(desc) + " Its outlet port is to the [dir2text(dir)]."
