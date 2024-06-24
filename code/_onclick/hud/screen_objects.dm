@@ -16,6 +16,8 @@
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
 	var/weakref/hud_ref
 	//var/datum/hud/hud
+		/// If FALSE, this will not be cleared when calling /client/clear_screen()
+	var/clear_with_screen = TRUE
 
 /atom/movable/screen/Destroy()
 	master = null

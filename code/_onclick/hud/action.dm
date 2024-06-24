@@ -24,7 +24,10 @@
 	var/button_icon_state = "default"
 	var/background_icon_state = "bg_default"
 	var/mob/living/owner
-
+	/// Whether the action is hidden from its owner
+	var/hidden = FALSE //Preserve action state while preventing mob from using action
+	///Hide the action from the owner without preventing them from using it (incase of keybind listen_signal)
+	var/player_hidden = FALSE
 /datum/action/New(Target)
 	target = Target
 

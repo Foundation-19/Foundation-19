@@ -46,6 +46,8 @@
 /// Copies an input list if the list has entries, If it doesn't returns null
 #define LAZYLISTDUPLICATE(L) (L ? L.Copy() : null )
 
+#define ismovableatom(A) (ismovable(A))
+
 /// Passed into BINARY_INSERT to compare keys
 #define COMPARE_KEY __BIN_LIST[__BIN_MID]
 /// Passed into BINARY_INSERT to compare values

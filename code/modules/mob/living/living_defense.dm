@@ -356,7 +356,9 @@
 			A.button = N
 
 		var/atom/movable/screen/movable/action_button/B = A.button
-
+		if(A.hidden || A.player_hidden)
+			B.screen_loc = null
+			continue
 		B.UpdateIcon()
 
 		B.SetName(A.UpdateName())

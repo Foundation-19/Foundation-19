@@ -14,9 +14,9 @@
 	var/list/climbers
 	var/climb_speed_mult = 1
 	var/init_flags = EMPTY_BITFIELD
-	var/list/orbiters = null
 	var/datum/scp/SCP //For SCP's
-	
+	var/datum/component/orbiter/orbiters
+
 
 	///Value used to increment ex_act() if reactionary_explosions is on
 	var/explosion_block = 0
@@ -667,3 +667,8 @@
 	for(var/atom/atom_orbiter as anything in orbiters?.orbiters)
 		output += atom_orbiter.get_all_orbiters(processed, source = FALSE)
 	return output
+
+/atom/proc/get_orbit_size()
+	var/icon/I = icon(icon, icon_state, dir)
+	return (I.Width() + I.Height()) * 0.5
+

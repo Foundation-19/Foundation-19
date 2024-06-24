@@ -73,6 +73,11 @@
 	var/atom/movable/screen/rest_button
 	var/atom/movable/screen/facedir_button = null
 
+	var/list/atom/movable/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
+	///Assoc list of controller groups, associated with key string group name with value of the plane master controller ref
+	var/list/atom/movable/plane_master_controller/plane_master_controllers = list()
+
+
 	var/list/adding
 	var/list/other
 	var/list/atom/movable/screen/hotkeybuttons
@@ -338,9 +343,9 @@
 	if(!screenmob.client)
 		return FALSE
 
-	screenmob.client.clear_screen()
-	screenmob.client.apply_clickcatcher()
-
+	//screenmob.client.clear_screen()
+	//screenmob.client.apply_clickcatcher()
+	/*
 	var/display_hud_version = version
 	if(!display_hud_version) //If 0 or blank, display the next hud version
 		display_hud_version = hud_version + 1
@@ -390,21 +395,28 @@
 				screenmob.client.remove_from_screen(infodisplay)
 
 	hud_version = display_hud_version
-	persistent_inventory_update(screenmob)
+	*/
+	//persistent_inventory_update(screenmob)
 	mymob.update_action_buttons(TRUE)
 	reorganize_alerts(screenmob)
-	mymob.reload_fullscreens()
+	mymob.reload_fullscreen()
 
 	// ensure observers get an accurate and up-to-date view
 	if(!viewmob)
 		plane_masters_update()
 		for(var/M in mymob.observers)
-			show_hud(hud_version, M)
+			show_hud(M)
 	else if(viewmob.hud_used)
 		viewmob.hud_used.plane_masters_update()
 
 	return TRUE
 
+/datum/hud/proc/plane_masters_update()
+	// Plane masters are always shown to OUR mob, never to observers
+	for(var/thing in plane_masters)
+		var/atom/movable/screen/plane_master/PM = plane_masters[thing]
+		PM.backdrop(mymob)
+		mymob.client.add_to_screen(PM)
 /// Wrapper for adding anything to a client's screen
 /client/proc/add_to_screen(screen_add)
 	screen += screen_add

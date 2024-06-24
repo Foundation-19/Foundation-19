@@ -264,3 +264,11 @@
 
 /// When a mob gets a new mind via transfer at /datum/mind/proc/transfer_to()
 #define COMSIG_MOB_NEW_MIND "mob_new_mind"
+
+///called when an atom starts orbiting another atom: (atom)
+#define COMSIG_ATOM_ORBIT_BEGIN "atom_orbit_begin"
+///called when an atom stops orbiting another atom: (atom)
+#define COMSIG_ATOM_ORBIT_STOP "atom_orbit_stop"
+
+///from base of /atom/movable/proc/set_glide_size(): (target)
+#define COMSIG_MOVABLE_UPDATE_GLIDE_SIZE "movable_glide_size"
