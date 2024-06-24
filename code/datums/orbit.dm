@@ -31,8 +31,8 @@
 	if (orbiting)
 		if (orbiting.orbiters)
 			orbiting.orbiters -= src
-			if (!orbiting.orbiters.len)//we are the last orbit, delete the list
-				orbiting.orbiters = null
+			//if (!orbiting.orbiters.len)//we are the last orbit, delete the list
+				//orbiting.orbiters = null
 		orbiting = null
 	return ..()
 

@@ -544,7 +544,7 @@
 
 	LAZYINITLIST(observers)
 	observers |= observer
-	hud_used.show_hud(hud_used.hud_version, observer)
+	//hud_used.show_hud(hud_used.hud_version, observer)
 
 	// Add the player's action buttons (not the actions themselves) to the observer's screen.
 	for(var/datum/action/action as anything in actions)

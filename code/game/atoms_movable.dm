@@ -283,3 +283,8 @@
 	if(SEND_SIGNAL(src, COMSIG_ATOM_MOVABLE_DISPELL, dispell_strength) & COMPONENT_DISPELL_BLOCKED)
 		return FALSE
 	return TRUE
+
+/atom/movable/proc/abstract_move(atom/new_loc)
+	var/atom/old_loc = loc
+	loc = new_loc
+	//Moved(old_loc)

@@ -794,3 +794,6 @@ Checks if a list has the same entries and values as an element of big.
 		else
 			output_list += item
 	return output_list
+
+//Checks for specific types in specifically structured (Assoc "type" = TRUE) lists ('typecaches')
+#define is_type_in_typecache(A, L) (A && length(L) && L[(ispath(A) ? A : A:type)])

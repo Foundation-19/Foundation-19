@@ -177,7 +177,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	observe_target_client = null
 
 	client.eye = src
-	hud_used.show_hud(hud_used.hud_version, src)
+	//hud_used.show_hud(hud_used.hud_version, src)
 	UnregisterSignal(src, COMSIG_MOVED)
 
 /// When the observer moves we disconnect from the observe target if we aren't on the same turf
@@ -220,3 +220,28 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	// Override the signal from any previous targets.
 	RegisterSignal(observe_target_client, COMSIG_CLIENT_SCREEN_ADD, PROC_REF(observe_target_screen_add), TRUE)
 	RegisterSignal(observe_target_client, COMSIG_CLIENT_SCREEN_REMOVE, PROC_REF(observe_target_screen_remove), TRUE)
+
+
+// This is the ghost's follow verb with an argument
+/mob/observer/proc/ManualFollow(atom/movable/target)
+	if(!istype(target))
+		return
+
+	var/orbitsize = target.get_orbit_size()
+	orbitsize -= (orbitsize / world.icon_size) * (world.icon_size * 0.25)
+
+	var/rot_seg
+
+	switch(ghost_orbit)
+		if(GHOST_ORBIT_TRIANGLE)
+			rot_seg = 3
+		if(GHOST_ORBIT_SQUARE)
+			rot_seg = 4
+		if(GHOST_ORBIT_PENTAGON)
+			rot_seg = 5
+		if(GHOST_ORBIT_HEXAGON)
+			rot_seg = 6
+		else //Circular
+			rot_seg = 36
+
+	orbit(target, orbitsize, FALSE, 20, rot_seg)
