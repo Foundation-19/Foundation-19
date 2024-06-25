@@ -1,11 +1,16 @@
 #!/bin/bash
 set -euo pipefail
 
-tools/deploy.sh ci_test
-mkdir ci_test/config
+MAP=$1
 
-#test config
-cp tools/ci/ci_config.txt ci_test/config/config.txt
+echo Testing $MAP
+
+tools/deploy.sh ci_test
+mkdir ci_test/data
+
+#set the map
+cp maps/$MAP.json ci_test/data/next_map.json
+cp maps/templates/space.json ci_test/data/next_ship.json
 
 cd ci_test
 DreamDaemon baystation12.dmb -close -trusted -verbose -params "log-directory=ci"

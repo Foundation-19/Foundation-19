@@ -9,7 +9,7 @@ import {
 } from '../components';
 import { NtosWindow } from '../layouts';
 import { resolveAsset } from '../assets';
-import { Fragment } from 'inferno';
+import { Component, Fragment } from 'react';
 
 export const NtosNewsBrowser = (props, context) => {
   const { act, data } = useBackend(context);

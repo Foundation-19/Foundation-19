@@ -40,7 +40,7 @@ def pretty_path(settings, path_str):
 
 def prompt_maps(settings, verb):
     if not settings.map_folder:
-        print("Could not autodetect the maps folder, set MAPROOT")
+        print("Could not autodetect the _maps folder, set MAPROOT")
         exit(1)
 
     list_of_files = list()

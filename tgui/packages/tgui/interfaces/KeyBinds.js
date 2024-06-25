@@ -1,8 +1,9 @@
-import { Component } from 'inferno';
+import { Component } from 'react';
+
 import { useBackend } from '../backend';
-import { Button, Flex, Section, Box } from '../components';
-import { Window } from '../layouts';
+import { Box, Button, Flex, Section } from '../components';
 import { globalEvents } from '../events.js';
+import { Window } from '../layouts';
 
 const KEY_MODS = {
   "SHIFT": true,

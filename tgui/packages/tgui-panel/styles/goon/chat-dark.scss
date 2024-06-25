@@ -228,6 +228,7 @@ a.popt {
 .looc,
 .adminooc,
 .admin,
+.niche,
 .medal,
 .yell {
   font-weight: bold;
@@ -267,7 +268,6 @@ em {
 }
 
 .ooc {
-  color: #cca300;
   font-weight: bold;
 }
 
@@ -282,11 +282,16 @@ em {
 }
 
 .adminsay {
-  color: #ff4500;
+  color: #9611d4;
   font-weight: bold;
 }
 
 .admin {
+  color: #5975da;
+  font-weight: bold;
+}
+
+.niche {
   color: #5975da;
   font-weight: bold;
 }
@@ -332,6 +337,10 @@ em {
 
 .comradio {
   color: #fcdf03;
+}
+
+.secradio {
+  color: #dd3535;
 }
 
 .medradio {
@@ -431,9 +440,9 @@ em {
   font-weight: bold;
 }
 
-.minorannounce {
+.bigannounce {
   font-weight: bold;
-  font-size: 185%;
+  font-size: 115%;
 }
 
 .greenannounce {
@@ -450,6 +459,10 @@ em {
 }
 
 .notice {
+  color: #6685f5;
+}
+
+.staff_ic {
   color: #6685f5;
 }
 
@@ -473,6 +486,11 @@ em {
   color: #6685f5;
   font-style: italic;
   font-size: 90%;
+}
+
+.bolditalic {
+  font-style: italic;
+  font-weight: bold;
 }
 
 .boldnotice {
@@ -792,6 +810,10 @@ em {
   font-size: 2.5em;
 }
 
+.hugeicon {
+  font-size: 5em;
+}
+
 .memo {
   color: #638500;
   text-align: center;
@@ -832,6 +854,15 @@ em {
 
 .resonate {
   color: #298f85;
+}
+
+.upside_down {
+  display: inline;
+  -moz-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -ms-transform: scale(-1, -1);
+  transform: scale(-1, -1);
 }
 
 .monkeyhive {
@@ -883,155 +914,176 @@ em {
   margin-left: 3em;
 }
 
-.examine_block {
-  background: #1b1c1e;
-  border: 1px solid #a4bad6;
-  margin: 0.5em;
-  padding: 0.5em 0.75em;
+/* CM stuff */
+
+.xooc {
+  color: #ac04e9;
+  font-weight: bold;
+  font-size: 140%;
 }
 
-.tooltip {
-  font-style: italic;
-  border-bottom: 1px dashed #fff;
+.mooc {
+  color: #009900;
+  font-weight: bold;
+  font-size: 140%;
 }
 
-// Unique stuff from code/stylesheet.dm is below
+.yooc {
+  color: #999600;
+  font-weight: bold;
+  font-size: 140%;
+}
 
-.log_message {
-  color: #386aff;
+.headminsay {
+  color: #653d78;
   font-weight: bold;
 }
 
-/* OOC */
-.ooc img.text_tag {
-  width: 32px;
-  height: 10px;
+.radio {
+  color: #b4b4b4;
 }
 
-.ooc .everyone {
-  color: #163ec8;
-}
-.ooc .looc {
-  color: #3a7496;
-}
-.ooc .elevated {
-  color: #2e78d9;
-}
-.ooc .moderator {
-  color: #184880;
-}
-.ooc .developer {
-  color: #1b521f;
-}
-.ooc .admin {
-  color: #b82e00;
-}
-.ooc .aooc {
-  color: #960018;
-}
-
-.staffwarn {
-  color: #ff0000;
-  font-weight: bold;
-  font-size: 150%;
-}
-/* Admin: Private Messages */
-.pm .howto {
-  color: #ff0000;
-  font-weight: bold;
-  font-size: 200%;
-}
-.pm .in {
-  color: #ff0000;
-}
-.pm .out {
-  color: #ff0000;
-}
-.pm .other {
-  color: #5353ff;
-}
-
-/* Admin: Channels */
-.mentor_channel {
-  color: #735638;
-  font-weight: bold;
-}
-.mentor_channel .admin {
-  color: #b82e00;
-  font-weight: bold;
-}
-.admin_channel {
-  color: #9611d4;
-  font-weight: bold;
-}
-
-/* Radio: Misc */
 .deptradio {
-  color: #ff00ff;
-} /* when all other department colors fail */
-.newscaster {
-  color: #750000;
+  color: #993399;
 }
 
-/* Radio Channels */
-.centradio {
-  color: #5c5c7c;
+.comradio {
+  color: #779cc2;
 }
+
+.centradio {
+  color: #5c5c8a;
+}
+.hcradio {
+  color: #318779;
+}
+.pvstradio {
+  color: #9b0612;
+}
+.cryoradio {
+  color: #ad6d48;
+}
+
 .airadio {
   color: #ff00ff;
 }
-.entradio {
-  color: #666666;
+
+.secradio {
+  color: #a52929;
+}
+
+.engradio {
+  color: #a66300;
+}
+
+.sentryradio {
+  color: #844300;
+}
+
+.medradio {
+  color: #008160;
 }
 
 .supradio {
-  color: #7f6539;
-}
-.srvradio {
-  color: #709b00;
-}
-.expradio {
-  color: #929820;
-}
-.seciradio {
-  color: #935050;
-}
-.mediradio {
-  color: #509190;
+  color: #ba8e41;
 }
 
-.exampleradio {
-  color: #ff00ff;
-}
-.voxradio {
-  color: #f32b06;
-}
-.bearcatradio {
-  color: #590e2d;
-}
-.colonyradio {
-  color: #ceaf3e;
-}
-.verneradio {
-  color: #738465;
+.jtacradio {
+  color: #ad3b98;
 }
 
-/* Miscellaneous */
-.emote {
-  font-style: italic;
+.intelradio {
+  color: #027d02;
 }
 
-/* Game Messages */
+.wyradio {
+  color: #fe9b24;
+}
+
+.pmcradio {
+  color: #4dc5ce;
+}
+
+.vairadio {
+  color: #e3580e;
+}
+
+.rmcradio {
+  color: #e3580e;
+}
+
+.cmbradio {
+  color: #1b748c;
+}
+
+.clfradio {
+  color: #8e83ca;
+}
+
+.alpharadio {
+  color: #db2626;
+}
+
+.bravoradio {
+  color: #c68610;
+}
+
+.charlieradio {
+  color: #aa55aa;
+}
+
+.deltaradio {
+  color: #007fcf;
+}
+
+.echoradio {
+  color: #3eb489;
+}
+
+.medium {
+  font-size: 110%;
+}
+
+.big {
+  font-size: 115%;
+}
+
+.large {
+  font-size: 125%;
+}
+
+.extra_large {
+  font-size: 130%;
+}
+
+.huge {
+  font-size: 150%;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.orange {
+  color: #eca100;
+}
+
+.normal {
+  font-style: normal;
+}
 
 .attack {
-  color: #ff0000;
+  color: #ff3838;
 }
+
 .moderate {
   color: #cc0000;
 }
+
 .disarm {
   color: #990000;
 }
+
 .passive {
   color: #660000;
 }
@@ -1040,121 +1092,382 @@ em {
   color: #368f31;
 }
 
-.bigdanger {
-  color: #ff0000;
+.scanner {
+  color: #ff3838;
+}
+
+.scannerb {
+  color: #ff3838;
   font-weight: bold;
-  font-size: 115%;
 }
-.bigwarning {
-  color: #ff0000;
+
+.scannerburn {
+  color: #ffa500;
+}
+
+.scannerburnb {
+  color: #ffa500;
+  font-weight: bold;
+}
+
+.rose {
+  color: #ff5050;
+}
+
+.debuginfo {
+  color: #493d26;
   font-style: italic;
-  font-size: 115%;
 }
-.debug {
-  color: #ff00ff;
+
+.xenonotice {
+  color: #51a16c;
 }
-.mentor {
-  color: #e236d8;
+
+.xenoboldnotice {
+  color: #51a16c;
+  font-weight: bold;
 }
-.subtle {
-  color: #000099;
-  font-size: 75%;
+
+.xenowarning {
+  color: #51a16c;
   font-style: italic;
 }
-.alium {
+
+.xenominorwarning {
+  color: #51a16c;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.xenodanger {
+  color: #51a16c;
+  font-weight: bold;
+}
+
+.avoidharm {
+  color: #72a0e5;
+  font-weight: bold;
+}
+
+.highdanger {
+  color: #ff3838;
+  font-weight: bold;
+  font-size: 140%;
+}
+
+.xenohighdanger {
+  color: #51a16c;
+  font-weight: bold;
+  font-size: 140%;
+}
+
+.xenoannounce {
+  color: #65c585;
+  font-family: book-antiqua;
+  font-weight: bold;
+  font-size: 140%;
+}
+
+.yautjabold {
+  color: #800080;
+  font-weight: bold;
+}
+
+.yautjaboldbig {
+  color: #800080;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.objectivebig {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.objectivegreen {
   color: #00ff00;
 }
-.cultannounce {
-  color: #800080;
-  font-style: italic;
-  font-size: 175%;
+
+.objectivered {
+  color: #ff0000;
 }
-.mfauna {
-  color: #884422;
+
+.objectivesuccess {
+  color: #00ff00;
   font-weight: bold;
-  font-size: 125%;
+  font-size: 110%;
 }
-.antagdesc {
-  color: #ff0033;
+
+.objectivefail {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.xenotalk,
+.xeno {
+  color: #c048c0;
+  font-style: italic;
+}
+
+.xenoleader {
+  color: #996e99;
+  font-style: italic;
   font-size: 125%;
 }
 
-.reflex_shoot {
-  color: #000099;
+.xenoqueen {
+  color: #996e99;
   font-style: italic;
-}
-.scp {
-  color: #1eb093;
   font-weight: bold;
-  font-size: 115%;
+  font-size: 125%;
 }
 
-/* Languages */
+.newscaster {
+  color: #800000;
+}
+
+.role_header {
+  color: #e92d2d;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-family: trebuchet-ms;
+  font-size: 150%;
+}
+
+.role_body {
+  color: #3a3ae9;
+  display: block;
+  text-align: center;
+  font-size: 125%;
+}
+
+.round_header {
+  color: #e92d2d;
+  display: block;
+  text-align: center;
+  font-family: courier;
+  font-weight: bold;
+  font-size: 180%;
+}
+
+.round_body {
+  color: #c5c5c5;
+  display: block;
+  text-align: center;
+  font-family: trebuchet-ms;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.event_announcement {
+  color: #600d48;
+  font-family: arial-narrow;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.announce_header {
+  color: #cecece;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.announce_header_blue {
+  color: #7575f3;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.announce_header_admin {
+  color: #7575f3;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.announce_body {
+  color: #e92d2d;
+  font-weight: normal;
+  font-size: 125%;
+}
+
+.centerbold {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mod {
+  color: #917455;
+  font-weight: bold;
+}
+
+.modooc {
+  color: #184880;
+  font-weight: bold;
+}
+
+.adminmod {
+  color: #7c440c;
+  font-weight: bold;
+}
+
+.mentorsay {
+  color: #d4af57;
+  font-weight: bold;
+}
+
+.mentorhelp {
+  color: #009900;
+  font-weight: bold;
+}
+
+.mentorbody {
+  color: #da6200;
+  font-weight: bold;
+}
+
+.mentorstaff {
+  color: #b5850d;
+  font-weight: bold;
+}
+
+.staffsay {
+  color: #b5850d;
+  font-weight: bold;
+}
+
+.tajaran {
+  color: #803b56;
+}
+
+.tajaran_signlang {
+  color: #941c1c;
+}
 
 .skrell {
   color: #00ced1;
 }
+
 .soghun {
   color: #228b22;
 }
-.yeosa {
-  color: #218b89;
+
+.changeling {
+  color: #800080;
 }
-.nabber_lang {
-  color: #525252;
-}
+
 .vox {
   color: #aa00aa;
 }
-.rough {
-  font-family: 'Trebuchet MS', cursive, sans-serif;
+
+.monkey {
+  color: #966c47;
 }
-.say_quote {
-  font-family: Georgia, Verdana, sans-serif;
+
+.german {
+  color: #858f1e;
+  font-family: 'Times New Roman', Times, serif;
 }
-.adherent {
-  color: #526c7a;
+
+.spanish {
+  color: #cf982b;
+}
+
+.japanese {
+  color: #940927;
 }
 
 .chinese {
-  color: #d4a52a;
+  color: #fe1919;
 }
-.indian {
-  color: #422863;
-}
-.iberian {
-  color: #ff6600;
-}
-.russian {
-  color: #9c250b;
-}
-.arabic {
-  color: #128b11;
-}
-.spacer {
-  color: #9c660b;
-}
-.selenian {
-  color: #22228b;
-}
+
 .zombie {
-  color: #800024;
-}
-.zombie_mental {
-  color: #800024;
+  color: #2dacb1;
   font-style: italic;
 }
 
-.good {
-  color: #4f7529;
-  font-weight: bold;
+.rough {
+  font-family: trebuchet-ms, cursive, sans-serif;
 }
-.bad {
-  color: #ee0000;
+
+.commando {
+  color: #fe9b24;
+  font-style: bold;
+}
+
+.say_quote {
+  font-family: Georgia, Verdana, sans-serif;
+}
+
+.admin .message {
+  color: #314cad;
+}
+
+.admin .prefix {
+  font-weight: bolder;
+}
+
+.pm {
+  font-size: 110%;
+}
+
+.deadsay {
+  color: #8b4dff;
+}
+
+.retro_translator {
   font-weight: bold;
 }
 
-BIG IMG.icon {
-  width: 32px;
-  height: 32px;
+.yautja_translator {
+  color: #aa0000;
+  font-weight: bold;
+
+  /*Animation*/
+  animation: glitch 0.5s infinite;
+}
+
+/*Keyframes*/
+
+@keyframes glitch {
+  25% {
+    color: #aa0000;
+    transform: translate(-2px, -1px);
+  }
+
+  50% {
+    color: #be0000;
+    transform: translate(1px, -2px);
+  }
+
+  75% {
+    color: #8d0000;
+    transform: translate(-1px, 2px);
+  }
+
+  100% {
+    color: #830000;
+    transform: translate(1px, 1px);
+  }
+}
+
+.examine_block {
+  background: #1b1c1e;
+  border: 1px solid #a4bad6;
+  margin: 0.5em;
+  padding: 0.5em 0.75em;
+}
+
+.examine_block .icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.tooltip {
+  font-style: italic;
+  border-bottom: 1px dashed #fff;
 }

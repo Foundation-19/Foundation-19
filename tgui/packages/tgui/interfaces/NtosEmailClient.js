@@ -1,5 +1,5 @@
 /* eslint react/no-danger: "off" */
-import { Fragment } from 'inferno';
+import { Component, Fragment } from 'react';
 import { useBackend } from '../backend';
 import { Button, Box, Section, Table, LabeledList, Input, Tabs, Flex, AnimatedNumber, ProgressBar } from '../components';
 import { NtosWindow } from '../layouts';
