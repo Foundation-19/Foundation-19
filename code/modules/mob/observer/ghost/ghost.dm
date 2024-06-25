@@ -276,15 +276,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Follow"
 	set desc = "Follow a player"
 
-	if(!fh)
-		to_chat(src, SPAN_WARNING("No active players found."))
-		return
-	start_following(fh)
+	if(!orbit_menu)
+		orbit_menu = new(src)
+	orbit_menu.tgui_interact(src)
 
 /mob/observer/ghost/verb/jumptomob(mob/M in SSmobs.mob_list)
 	set category = "Ghost"
 	set name = "Jump to Mob"
 	set desc = "Jump to any mob"
+
 
 	if(!M)
 		return

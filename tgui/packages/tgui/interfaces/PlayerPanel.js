@@ -1,6 +1,6 @@
 import { useBackend, useLocalState } from '../backend';
 import { Input, Button, Stack, Section, Tabs, Box, Slider, Divider } from '../components';
-import { Fragment } from 'inferno';
+import { Component, Fragment } from 'react';
 import { Window } from '../layouts';
 import { round } from '../../common/math';
 

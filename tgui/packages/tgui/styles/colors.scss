@@ -17,6 +17,7 @@ $olive: #b5cc18 !default;
 $green: #20b142 !default;
 $teal: #00b5ad !default;
 $blue: #2185d0 !default;
+$dark-blue: #004981 !default;
 $violet: #6435c9 !default;
 $purple: #a333c8 !default;
 $pink: #e03997 !default;
@@ -29,6 +30,8 @@ $good: #5baa27 !default;
 $average: #f08f11 !default;
 $bad: #db2828 !default;
 $label: #7e90a7 !default;
+$underline: #7e90a767 !default;
+$xeno: #52375c !default;
 
 // Background and foreground color lightness ratios
 $bg-lightness: -15% !default;
@@ -54,6 +57,7 @@ $_gen_map: (
   'green': $green,
   'teal': $teal,
   'blue': $blue,
+  'dark-blue': $dark-blue,
   'violet': $violet,
   'purple': $purple,
   'pink': $pink,
@@ -64,6 +68,7 @@ $_gen_map: (
   'average': $average,
   'bad': $bad,
   'label': $label,
+  'xeno': $xeno,
 );
 
 // Foreground color names for which to generate a color map

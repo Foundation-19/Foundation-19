@@ -1,5 +1,6 @@
 /* eslint react/no-danger: "off" */
-import { Fragment } from 'inferno';
+import { Fragment } from 'react';
+
 import { useBackend } from '../backend';
 import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
@@ -28,7 +29,7 @@ const ServerSettings = (props, context) => {
     <Section
       title="Server Settings"
       buttons={
-        <Fragment>
+        <>
           <Button.Checkbox
             checked={hosting}
             onClick={() => act('PRG_togglehosting')}>
@@ -37,7 +38,7 @@ const ServerSettings = (props, context) => {
           <Button icon="lock" onClick={() => act('PRG_setname')}>
             Set Name
           </Button>
-        </Fragment>
+        </>
       }>
       <Table>
         <Table.Row header>

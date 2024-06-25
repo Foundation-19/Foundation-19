@@ -1,4 +1,5 @@
 import { capitalizeFirst } from 'common/string';
+import { createContext, useContext, useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {
   Box,
@@ -23,8 +24,8 @@ import {
 import {
   buildSquadObservable,
   groupSorter,
-  Observable,
-  OrbitData,
+  type Observable,
+  type OrbitData,
   splitter,
 } from './types';
 

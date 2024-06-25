@@ -1,6 +1,6 @@
 import { Section, Box, Button, NoticeBox, LabeledList, NumberInput } from '../components';
 import { useBackend } from '../backend';
-import { Fragment } from 'inferno';
+import { Component, Fragment } from 'react';
 import { NtosWindow } from '../layouts';
 
 export const NtosNetMonitor = (props, context) => {
