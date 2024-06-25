@@ -16,6 +16,7 @@
 		return TRUE
 	return FALSE
 
+
 // Tries to use power from APC, if present.
 /obj/item/modular_computer/proc/apc_power(power_usage = 0)
 	apc_powered = TRUE

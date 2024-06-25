@@ -17,6 +17,7 @@ const PAGES = [
   },
 ];
 
+
 export const MedalsPanel = (props) => {
   const { data } = useBackend();
   const { uscm_awards, uscm_award_ckeys, xeno_awards, xeno_award_ckeys } = data;
