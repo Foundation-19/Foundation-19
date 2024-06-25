@@ -19,7 +19,8 @@
 		forceMove(new_loc)
 
 /atom/proc/recursive_dir_set(atom/a, old_dir, new_dir)
-	setDir(new_dir)
+	if(old_dir != new_dir)
+		setDir(new_dir)
 
 /proc/register_all_movement(event_source, datum/listener)
 	listener.RegisterSignal(event_source, COMSIG_MOVED, TYPE_PROC_REF(/atom/movable, recursive_move))
