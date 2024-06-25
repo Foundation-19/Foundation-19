@@ -4,6 +4,7 @@
 	var/list/orbiters
 	var/datum/movement_detector/tracker
 
+
 //radius: range to orbit at, radius of the circle formed by orbiting (in pixels)
 //clockwise: whether you orbit clockwise or anti clockwise
 //rotation_speed: how fast to rotate (how many ds should it take for a rotation to complete)

@@ -1,10 +1,8 @@
 import { map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
-import { pureComponentHooks } from 'common/react';
-import { Component, Fragment } from 'react';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Chart, ColorBox, Flex, Icon, LabeledList, ProgressBar, Section, Table } from '../components';
+import { Box, Button, Chart, ColorBox, Flex, Icon, LabeledList, ProgressBar, Section, Table, Dimmer, Stack } from '../components';
 import { Window } from '../layouts';
 
 const PEAK_DRAW = 500000;
@@ -16,7 +14,7 @@ export const powerRank = (str) => {
 
 export const PowerMonitor = () => {
   return (
-    <Window width={550} height={700} resizable>
+    <Window width={550} height={700}>
       <Window.Content scrollable>
         <PowerMonitorContent />
       </Window.Content>
@@ -24,49 +22,10 @@ export const PowerMonitor = () => {
   );
 };
 
-export const PowerMonitorContent = (props, context) => {
-  const { act, data } = useBackend(context);
-
-  const { all_sensors, focus } = data;
-
-  if (focus) {
-    return <PowerMonitorFocus focus={focus} />;
-  }
-
-  let body = <Box color="bad">No sensors detected</Box>;
-
-  if (all_sensors) {
-    body = (
-      <Table>
-        {all_sensors.map((sensor) => (
-          <Table.Row key={sensor.name}>
-            <Table.Cell>
-              <Button
-                content={sensor.name}
-                icon={sensor.alarm ? 'bell' : 'sign-in-alt'}
-                onClick={() => act('setsensor', { id: sensor.name })}
-              />
-            </Table.Cell>
-          </Table.Row>
-        ))}
-      </Table>
-    );
-  }
-
-  return (
-    <Section
-      title="No active sensor. Listing all."
-      buttons={<Button content="Scan For Sensors" icon="undo" onClick={() => act('refresh')} />}>
-      {body}
-    </Section>
-  );
-};
-
-export const PowerMonitorFocus = (props, context) => {
-  const { act, data } = useBackend(context);
-  const { focus } = props;
-  const { history } = focus;
-  const [sortByField, setSortByField] = useLocalState(context, 'sortByField', null);
+export const PowerMonitorContent = (props) => {
+  const { data } = useBackend();
+  const { history = { supply: [], demand: [] } } = data;
+  const [sortByField, setSortByField] = useLocalState('sortByField', null);
   const supply = history.supply[history.supply.length - 1] || 0;
   const demand = history.demand[history.demand.length - 1] || 0;
   const supplyData = history.supply.map((value, i) => [i, value]);
@@ -86,32 +45,40 @@ export const PowerMonitorFocus = (props, context) => {
         (area) => -powerRank(area.load),
         (area) => -parseFloat(area.load)
       ),
-    sortByField === 'problems' &&
-      sortBy(
-        (area) => area.eqp,
-        (area) => area.lgt,
-        (area) => area.env,
-        (area) => area.charge,
-        (area) => area.name
-      ),
-  ])(focus.areas);
+  ])(data.areas);
   return (
-    <Fragment>
-      <Section
-        title={focus.name}
-        buttons={<Button icon="sign-out-alt" content="Back To Main" onClick={() => act('clear')} />}
-      />
+    <>
+      {areas.length === 0 && (
+        <Dimmer>
+          <Stack>
+            <Stack.Item>
+              <Icon name="plug-circle-exclamation" size={2} />
+            </Stack.Item>
+            <Stack.Item>
+              <h1>No APCs found!</h1>
+            </Stack.Item>
+          </Stack>
+        </Dimmer>
+      )}
       <Flex mx={-0.5} mb={1}>
         <Flex.Item mx={0.5} width="200px">
           <Section>
             <LabeledList>
               <LabeledList.Item label="Supply">
-                <ProgressBar value={supply} minValue={0} maxValue={maxValue} color="teal">
+                <ProgressBar
+                  value={supply}
+                  minValue={0}
+                  maxValue={maxValue}
+                  color="teal">
                   {toFixed(supply / 1000) + ' kW'}
                 </ProgressBar>
               </LabeledList.Item>
               <LabeledList.Item label="Draw">
-                <ProgressBar value={demand} minValue={0} maxValue={maxValue} color="pink">
+                <ProgressBar
+                  value={demand}
+                  minValue={0}
+                  maxValue={maxValue}
+                  color="pink">
                   {toFixed(demand / 1000) + ' kW'}
                 </ProgressBar>
               </LabeledList.Item>
@@ -119,7 +86,7 @@ export const PowerMonitorFocus = (props, context) => {
           </Section>
         </Flex.Item>
         <Flex.Item mx={0.5} grow={1}>
-          <Section position="relative" height="100%">
+          <Section position="relative" height="100%" fill="true">
             <Chart.Line
               fillPositionedParent
               data={supplyData}
@@ -159,11 +126,6 @@ export const PowerMonitorFocus = (props, context) => {
             content="Draw"
             onClick={() => setSortByField(sortByField !== 'draw' && 'draw')}
           />
-          <Button.Checkbox
-            checked={sortByField === 'problems'}
-            content="Problems"
-            onClick={() => setSortByField(sortByField !== 'problems' && 'problems')}
-          />
         </Box>
         <Table>
           <Table.Row header>
@@ -186,7 +148,9 @@ export const PowerMonitorFocus = (props, context) => {
               <td className="Table__cell text-right text-nowrap">
                 <AreaCharge charging={area.charging} charge={area.charge} />
               </td>
-              <td className="Table__cell text-right text-nowrap">{area.load}</td>
+              <td className="Table__cell text-right text-nowrap">
+                {area.load}
+              </td>
               <td className="Table__cell text-center text-nowrap">
                 <AreaStatusColorBox status={area.eqp} />
               </td>
@@ -200,19 +164,20 @@ export const PowerMonitorFocus = (props, context) => {
           ))}
         </Table>
       </Section>
-    </Fragment>
+    </>
   );
 };
 
 export const AreaCharge = (props) => {
   const { charging, charge } = props;
   return (
-    <Fragment>
+    <>
       <Icon
         width="18px"
         textAlign="center"
         name={
-          (charging === 0 && (charge > 50 ? 'battery-half' : 'battery-quarter')) ||
+          (charging === 0 &&
+            (charge > 50 ? 'battery-half' : 'battery-quarter')) ||
           (charging === 1 && 'bolt') ||
           (charging === 2 && 'battery-full')
         }
@@ -225,18 +190,20 @@ export const AreaCharge = (props) => {
       <Box inline width="36px" textAlign="right">
         {toFixed(charge) + '%'}
       </Box>
-    </Fragment>
+    </>
   );
 };
-
-AreaCharge.defaultHooks = pureComponentHooks;
 
 const AreaStatusColorBox = (props) => {
   const { status } = props;
   const power = Boolean(status & 2);
   const mode = Boolean(status & 1);
   const tooltipText = (power ? 'On' : 'Off') + ` [${mode ? 'auto' : 'manual'}]`;
-  return <ColorBox color={power ? 'good' : 'bad'} content={mode ? undefined : 'M'} title={tooltipText} />;
+  return (
+    <ColorBox
+      color={power ? 'good' : 'bad'}
+      content={mode ? undefined : 'M'}
+      title={tooltipText}
+    />
+  );
 };
-
-AreaStatusColorBox.defaultHooks = pureComponentHooks;
