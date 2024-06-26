@@ -42,7 +42,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl4lcz
-	l_ear = /obj/item/device/radio/headset/heads/cos
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/commander
 	suit = /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_pocket = /obj/item/handcuffs
