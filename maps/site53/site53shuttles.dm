@@ -77,12 +77,15 @@
 	base_area = /area/site53/lowertrams/escape
 
 
-/datum/shuttle/autodock/ferry/chaos1
+/datum/shuttle/autodock/ferry/heli/ci
 	name = "Chaos Insurgency Helicopter"
-	warmup_time = 20
+	sound_takeoff = 'sounds/effects/helicopter.ogg'
+	warmup_time = 14
 	shuttle_area = list(/area/site53/tram/ci)
-	waypoint_station = "car1_start"
-	waypoint_offsite = "car1_out"
+	waypoint_station = "nav_ci_start"
+	landmark_transition = "nav_ci_transition"
+	waypoint_offsite = "nav_ci_out"
+	move_time = 15
 
 
 /obj/effect/shuttle_landmark/chaos1/start
