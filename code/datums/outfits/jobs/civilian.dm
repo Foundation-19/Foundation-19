@@ -119,7 +119,7 @@
 	id_type = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911
+	belt = /obj/item/gun/projectile/pistol/m1911/gold
 
 /decl/hierarchy/outfit/job/civ/tribunal
 	name = OUTFIT_JOB_NAME("Tribunal Officer")
@@ -129,7 +129,7 @@
 	id_type = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911
+	belt = /obj/item/gun/projectile/pistol/m1911/gold
 
 /decl/hierarchy/outfit/job/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain")

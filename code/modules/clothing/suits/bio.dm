@@ -44,12 +44,12 @@
 	slowdown_per_slot[slot_wear_suit] = 1
 
 //Standard biosuit, orange stripe
-/obj/item/clothing/head/bio_hood/general
-	icon_state = "bio_general"
+/obj/item/clothing/head/bio_hood/dclass
+	icon_state = "bio_dclass"
 	body_parts_covered = HEAD|FACE|EYES
 
-/obj/item/clothing/suit/bio_suit/general
-	icon_state = "bio_general"
+/obj/item/clothing/suit/bio_suit/dclass
+	icon_state = "bio_dclass"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HANDS|FEET
 	flags_inv = HIDEJUMPSUIT|HIDETAIL|HIDEGLOVES|HIDESHOES
 

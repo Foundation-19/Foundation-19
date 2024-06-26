@@ -120,7 +120,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/p90_mag
-	name = "magazine (5.7x28mm)"
+	name = "P90 magazine (5.7x28mm)"
 	icon_state = "p90"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -168,7 +168,7 @@
 
 /obj/item/ammo_magazine/scp/m16_mag
 	name = "magazine (5.56)"
-	icon_state = "m16"
+	icon_state = "556_mag"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "5.56x45mm"
@@ -182,7 +182,7 @@
 
 /obj/item/ammo_magazine/scp/m16_mag/ext
 	name = "magazine (5.56)"
-	icon_state = "m16"
+	icon_state = "556_mag"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "5.56x45mm"
@@ -193,7 +193,7 @@
 
 /obj/item/ammo_magazine/scp/ak
 	name = "magazine (7.62)"
-	icon_state = "7.62x39mm"
+	icon_state = "ak47_mag"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "7.62x39mm"
@@ -519,10 +519,20 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/m1911
-	name = "Pistol Magazine (.45 ACP)"
+	name = "handgun magazine (.45)"
 	icon_state = "45"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 8
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/m1911/ap
+	name = "handgun magazine (.45 Armor-Piercing)"
+	icon_state = "45"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c45/ap
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = ".45"
 	max_ammo = 8

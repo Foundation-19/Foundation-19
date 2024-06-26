@@ -11735,10 +11735,10 @@
 "XG" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/trauma,
+/obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/burn,
 /obj/item/storage/firstaid/toxin,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,

@@ -918,11 +918,11 @@
 /obj/item/storage/firstaid/adv,
 /obj/item/storage/firstaid/adv,
 /obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/o2,
@@ -933,11 +933,11 @@
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/trauma,
-/obj/item/storage/firstaid/trauma,
-/obj/item/storage/firstaid/trauma,
-/obj/item/storage/firstaid/trauma,
-/obj/item/storage/firstaid/trauma,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/stab,
 /obj/item/storage/firstaid/stab,
 /obj/item/storage/firstaid/stab,
@@ -8175,7 +8175,7 @@
 /area/centcom)
 "wy" = (
 /obj/structure/table/rack,
-/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/burn,
 /obj/item/material/twohanded/fireaxe,
 /obj/item/grenade/chem_grenade/incendiary,
 /obj/effect/floor_decal/corner/orange/border{
@@ -12308,7 +12308,7 @@
 /area/centcom)
 "Ki" = (
 /obj/structure/table/rack,
-/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/burn,
 /obj/item/material/twohanded/fireaxe,
 /obj/item/grenade/chem_grenade/incendiary,
 /obj/effect/floor_decal/corner/orange/border{

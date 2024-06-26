@@ -22,7 +22,7 @@
 	acid_resistance = 1.3
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor
-	name = "armored vest"
+	name = "foundation security vest"
 	desc = "A heavy armored vest. Worn by facility security, it has some durathread plating in it to make it durable against melee, sadly not much else though."
 	icon_state = "guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
@@ -31,7 +31,7 @@
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
-	name = "medical armored vest"
+	name = "foundation security medical vest"
 	desc = "A light armored vest, with a medical pauldron. Worn by facility security in the Combat Medic division. This one's armor padding has been lessened to cope with faster response."
 	icon_state = "combatmedic"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS
@@ -40,7 +40,7 @@
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
-	name = "response armored vest"
+	name = "foundation security response vest"
 	desc = "A heavy armored vest, with added kneepads. It has a Recontainment Unit insignia on the chest. Worn by facility security in the Riot Control Unit division. Universally defensive."
 	icon_state = "reconguard"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
@@ -49,7 +49,7 @@
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
-	name = "riot armored vest"
+	name = "foundation security riot vest"
 	desc = "A heavy armored vest, with added arm armor, and kneepads for full body coverage. Worn by facility security in the Riot Control Unit division, it has some durathread plating in it to make it durable against melee, sadly not much else though. It looks extremely durable from impacts, but in return is fragile towards bullets."
 	icon_state = "riotguard"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS | LEGS
@@ -77,7 +77,7 @@
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
-	name = "Heavy-plated armored vest"
+	name = "heavy-plated foundation security armored vest"
 	desc = "A heavy armored vest, with added arm armor, and kneepads for full body coverage. Worn by the facility's LCZ Lieutenant, it has some durathread plating in it to make it durable against melee, and slightly in some other damage types."
 	icon_state = "heavy-guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS

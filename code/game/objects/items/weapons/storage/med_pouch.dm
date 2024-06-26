@@ -33,7 +33,6 @@ Single Use Emergency Pouches
 	for(var/obj/item/reagent_containers/pill/P in contents)
 		P.color = color
 	for(var/obj/item/reagent_containers/hypospray/autoinjector/A in contents)
-		A.band_color = color
 		A.update_icon()
 
 /obj/item/storage/med_pouch/on_update_icon()

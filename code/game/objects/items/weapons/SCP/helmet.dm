@@ -9,7 +9,7 @@
 	action_button_name = "Toggle Visor"
 
 /obj/item/clothing/head/helmet/scp/security/medic
-	name = "medical security helmet"
+	name = "\improper foundation security medical helmet"
 	desc = "A light non-descript helmet with built-in padding, and armor. It has a red cross on the front, and a red visor. Durability lessened to cope with faster response."
 	icon_state = "medichelm"
 	body_parts_covered = HEAD|EYES
@@ -19,7 +19,7 @@
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/recontain
-	name = "response security helmet"
+	name = "\improper foundation security response helmet"
 	desc = "A heavy non-descript helmet with extra built-in padding, and armor. The massive amount of armor makes the helmet look thicker, it has a cyan visor."
 	icon_state = "reconhelm"
 	body_parts_covered = HEAD|EYES
@@ -29,20 +29,20 @@
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/riot
-	name = "riot security helmet"
+	name = "\improper foundation security riot helmet"
 	desc = "A heavy non-descript helmet with a heavy durathread armor plating in the helmet, giving it a massive defense against melee. It has a poly-carbonate modernized white riot visor on it."
 	icon_state = "guardriothelm"
 	armor = list(melee = 70, bullet = 15, laser = 25, energy = 25, bomb = 50, bio = 25, rad = 15)
 
 /obj/item/clothing/head/helmet/scp/security/lczcom
-	name = "\improper Heavy-plated foundation security helmet"
+	name = "\improper heavy-plated foundation security helmet"
 	desc = "A heavy non-descript helmet with more built-in padding, and armor. The golden badge on the front of the helmet incidates the rank of 'Lieutenant', looks important. It has a poly-carbonate yellow riot visor on it."
 	icon_state = "heavy-guard-helm"
-	armor = list(melee = 65, bullet = 45, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 55, bullet = 45, laser = 45, energy = 30, bomb = 30, bio = 15, rad = 15)
 
 /obj/item/clothing/head/helmet/scp/security/cadet
 	name = "\improper foundation security trainee helmet"
-	desc = "A light non-descript helmet with built-in padding, and armor, nothing special really."
+	desc = "A light non-descript helmet given to Light Containment Zone cadets, with barely any built-in armor plating, nothing special really."
 	icon_state = "cadethelm"
 	body_parts_covered = HEAD
 	armor = list(melee = 45, bullet = 30, laser = 30, energy = 15, bomb = 15, bio = 15, rad = 10)
@@ -51,8 +51,8 @@
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/cadet/hat
-	name = "foundation security trainee hat"
-	desc = "A hat given to Entrance Zone probationary agents, it's given light padding to keep those craniums living."
+	name = "\improper foundation security trainee hat"
+	desc = "A hat given to Entrance Zone probationary agents, it's given light padding to keep those craniums intact."
 	icon_state = "cadethat"
 	body_parts_covered = HEAD
 	armor = list(melee = 25, bullet = 15, laser = 15, energy = 15, bomb = 15, bio = 15, rad = 10)

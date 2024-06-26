@@ -185,6 +185,8 @@
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/pistol
+	icon_state = "pistol-brass"
+	spent_icon = "pistol-brass-empty"
 
 /obj/item/ammo_casing/pistol/c9mm/rubber
 	desc = "A 9mm rubber bullet casing."
@@ -225,9 +227,14 @@
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium
 
+/obj/item/ammo_casing/pistol/c45/ap
+	desc = "A .45 armor-piercing bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/ap
+	icon_state = "pistol-brass-ap"
+
 /obj/item/ammo_casing/pistol/c45/practice
 	desc = "A .45 practice bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/practice
+	projectile_type = /obj/item/projectile/bullet/pistol/ap
 	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/c45/rubber
@@ -255,6 +262,7 @@
 	caliber = "5.7x28mm"
 	projectile_type = /obj/item/projectile/bullet/a57
 	icon_state = "rifle-brass"
+	icon_state = "rifle-brass-spent"
 
 /obj/item/ammo_casing/pistol/a57/rubber
 	desc = "A 5.7x28mm rubber bullet casing."

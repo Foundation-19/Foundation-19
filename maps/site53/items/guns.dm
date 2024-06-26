@@ -102,7 +102,7 @@
 
 /obj/item/gun/projectile/pistol/m1911
 	name = "M1911"
-	desc = "A classic Model 1911 pistol. Still effective even today, generally used as a surplus sidearm for Foundation security staff."
+	desc = "A classic Model 1911 pistol. A trusty sidearm even to this day, usually seen by administrative staff."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "m1911"
 	w_class = ITEM_SIZE_NORMAL
@@ -113,6 +113,12 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m1911
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
+
+/obj/item/gun/projectile/pistol/m1911/gold
+	name = "gold trimmed M1911"
+	desc = "A classic Model 1911 pistol. A trusty sidearm even to this day, usually seen by administrative staff. Now trimmed in a luxury gold."
+	icon_state = "m1911-spec"
+	fire_delay = 2
 
 /obj/item/gun/projectile/pistol/usp45
 	name = "Colt Mustang"

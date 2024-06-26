@@ -1,7 +1,7 @@
 /decl/hierarchy/outfit/job/command/researchdirector
 	name = OUTFIT_JOB_NAME("Research Director")
 	uniform = /obj/item/clothing/under/rank/research_director/alt
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd/cso
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/scp/rd
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/card/id/rd
 	gloves = /obj/item/clothing/gloves/thick

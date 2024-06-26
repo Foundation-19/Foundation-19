@@ -1007,11 +1007,6 @@
 	icon_state = "surgery"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/medical/surgery/op3
-	name = "\improper Operating Theatre #3"
-	icon_state = "surgery"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/medical/surgery/hall
 	name = "\improper Surgical Hallway"
 	icon_state = "surgery"
@@ -1028,7 +1023,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/mentalhealth/isolation
-	name = "\improper Mental Health Isolation"
+	name = "\improper Virology"
 	icon_state = "medbay3"
 	ambience = list('sounds/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
