@@ -29,13 +29,13 @@
 /obj/effect/shuttle_landmark/heli/start/ci
 	name = "CI Base"
 	landmark_tag = "nav_ci_start"
-	base_turf = /turf/unsimulated/floor/reinforced
+	base_turf = /turf/simulated/floor/exoplanet/snow
 	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/heli/out/ci
 	name = "Site 53"
 	landmark_tag = "nav_ci_out"
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/exoplanet/snow
 	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/transit/helitransit/ci
