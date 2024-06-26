@@ -5596,6 +5596,7 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/railing/mapped,
+/mob/living/simple_animal/hostile/scarybat,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/hallways)
 "fYq" = (
@@ -8978,10 +8979,9 @@
 /obj/item/ammo_casing/rifle/used{
 	caliber = "5.7x28mm"
 	},
+/mob/living/simple_animal/hostile/scarybat,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/llcz/hallways)
-"jzR" = (
-)
 "jAi" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/orange/border,
@@ -9760,7 +9760,7 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/lhcz/scp895)
 "kqW" = (
-/obj/item/clothing/head/helmet/scp/security,
+/obj/item/clothing/head/helmet/scp/security/cadet,
 /turf/simulated/floor,
 /area/site53/llcz/mine/unexplored)
 "krx" = (
@@ -17484,6 +17484,10 @@
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
+"tdy" = (
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/hallways)
 "teo" = (
 /obj/machinery/camera/network/hcz{
 	c_tag = "SCP-500 Primary Chamber Access Hall"
@@ -18017,6 +18021,27 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"tPB" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/ammo_casing/rifle/used{
+	caliber = "5.7x28mm"
+	},
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/llcz/hallways)
 "tPX" = (
 /obj/structure/ore_box,
 /turf/simulated/floor/exoplanet/desert,
@@ -18946,6 +18971,10 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/briefing)
+"uVW" = (
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/floor,
+/area/site53/llcz/mine/unexplored)
 "uXM" = (
 /obj/structure/sign/SecureArealv4mtf{
 	pixel_y = 32
@@ -19969,6 +19998,8 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
 /area/site53/lhcz/scp895)
+"vWW" = (
+)
 "vXg" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "CDCZ Luxury Bedroom"
@@ -30930,7 +30961,7 @@ xoO
 gDi
 xpo
 epG
-bZC
+tdy
 xzj
 xlb
 wLS
@@ -32205,7 +32236,7 @@ lam
 lam
 bVy
 bVy
-lqj
+uVW
 lIO
 lDn
 xCe
@@ -34522,7 +34553,7 @@ emk
 lam
 lIO
 uNK
-fcR
+tPB
 cly
 gst
 lam
@@ -49631,7 +49662,7 @@ wrb
 wrb
 nKA
 nKA
-jzR
+vWW
 nKA
 nKA
 nKA
