@@ -120,15 +120,15 @@
 
 // SITE 53 TRAM AREA'S
 
-/area/site53/tram/car1
-	name = "Chaos Car"
+/area/site53/tram/ci
+	name = "Chaos Insurgency Helicopter"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/centcom/chaos
-	name = "Chaos Insurgency"
+	name = "Chaos Insurgency Outpost"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0
@@ -142,7 +142,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/centcom/goc
-	name = "GOC"
+	name = "Global Occult Coalition Outpost"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0
@@ -157,7 +157,7 @@
 
 
 /area/site53/tram/mtf
-	name = "MTF Heli"
+	name = "Mobile Task Force Helicopter"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0

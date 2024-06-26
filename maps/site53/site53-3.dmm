@@ -6672,7 +6672,7 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "vG" = (
-/obj/effect/shuttle_landmark/goc1/out,
+/obj/effect/shuttle_landmark/heli/out/ci,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "vI" = (

@@ -26,6 +26,24 @@
 	base_turf = /turf/unsimulated/floor/plating
 	base_area = /area/space
 
+/obj/effect/shuttle_landmark/heli/start/ci
+	name = "CI Base"
+	landmark_tag = "nav_ci_start"
+	base_turf = /turf/unsimulated/floor/reinforced
+	base_area = /area/site53/surface/surface
+
+/obj/effect/shuttle_landmark/heli/out/ci
+	name = "Site 53"
+	landmark_tag = "nav_ci_out"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/surface/surface
+
+/obj/effect/shuttle_landmark/transit/helitransit/ci
+	name = "In transit"
+	landmark_tag = "nav_ci_transition"
+	base_turf = /turf/unsimulated/floor/plating
+	base_area = /area/space
+
 /datum/shuttle/autodock/ferry/emergency/train //The transfer/escape train
 	name = "Foundation Main Train"
 	sound_takeoff = 'sounds/effects/TrainLeavingSite.ogg'
@@ -60,9 +78,9 @@
 
 
 /datum/shuttle/autodock/ferry/chaos1
-	name = "Chaos Car 1"
+	name = "Chaos Insurgency Helicopter"
 	warmup_time = 20
-	shuttle_area = list(/area/site53/tram/car1)
+	shuttle_area = list(/area/site53/tram/ci)
 	waypoint_station = "car1_start"
 	waypoint_offsite = "car1_out"
 
