@@ -73,6 +73,7 @@
 	item_state = "goc_vest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor = list(melee = 90, bullet = 90, laser = 65, energy = 15, bomb = 80)
+	allowed = list(/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight, /obj/item/gun/launcher/grenade/thumper)
 
 /obj/item/clothing/suit/armor/goc/heavy
 	name = "Global Occult Coalition heavy-plating armored vest"
