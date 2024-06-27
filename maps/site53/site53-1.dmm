@@ -11409,9 +11409,6 @@
 /obj/item/reagent_containers/glass/beaker/vial/scp008,
 /obj/item/reagent_containers/glass/beaker/vial/scp008,
 /obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/syringe/scp008/clean,
-/obj/item/reagent_containers/syringe/scp008/clean,
-/obj/item/reagent_containers/syringe/scp008/clean,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
 "lwC" = (

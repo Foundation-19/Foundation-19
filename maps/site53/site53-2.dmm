@@ -25208,7 +25208,7 @@
 	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Senior Researcher Office B";
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -42436,7 +42436,7 @@
 "nmB" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Senior Researcher Office A";
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
