@@ -2032,6 +2032,14 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/infirmary)
+"fZ" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/medical/infirmary)
 "ga" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -9822,14 +9830,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
-"ER" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 30
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/medical/infirmary)
 "ES" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Medical Bay Bypass"
@@ -44030,7 +44030,7 @@ Am
 ms
 MP
 VK
-ER
+fZ
 ir
 zd
 SL
