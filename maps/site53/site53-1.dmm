@@ -2557,6 +2557,11 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/item/taperoll/engineering/applied,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106parts)
 "cMd" = (
@@ -9553,6 +9558,11 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/lhcz/hallway)
 "kih" = (
@@ -10670,10 +10680,9 @@
 /obj/item/reagent_containers/glass/beaker/vial/scp008,
 /obj/item/reagent_containers/glass/beaker/vial/scp008,
 /obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/syringe/scp008/clean,
-/obj/item/reagent_containers/syringe/scp008/clean,
-/obj/item/reagent_containers/syringe/scp008/clean,
-/obj/item/reagent_containers/syringe/scp008/clean,
+/obj/item/reagent_containers/syringe/scp008,
+/obj/item/reagent_containers/syringe/scp008,
+/obj/item/reagent_containers/syringe/scp008,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
 "lwC" = (
@@ -11638,6 +11647,22 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/primaryhallway)
+"mDl" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/scp106parts)
 "mDv" = (
 /obj/machinery/light{
 	dir = 8
@@ -12279,6 +12304,11 @@
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/lhcz/hallway)
@@ -14667,6 +14697,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/hallways)
+"pWA" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/scp106parts)
 "pXp" = (
 /obj/effect/floor_decal/corner/euclid/bordercorner{
 	dir = 1
@@ -67419,7 +67461,7 @@ ltx
 hIH
 hIH
 cIx
-vCU
+mDl
 cIx
 hIH
 hIH
@@ -67676,7 +67718,7 @@ ltx
 hIH
 hIH
 cIx
-vCU
+pWA
 cIx
 hIH
 hIH
@@ -67933,7 +67975,7 @@ ltx
 ltx
 hIH
 cIx
-vCU
+pWA
 cIx
 hIH
 hIH

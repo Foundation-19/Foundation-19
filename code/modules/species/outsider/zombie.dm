@@ -420,7 +420,3 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	ChangeToHusk()
 	zombify()
-
-/obj/item/reagent_containers/syringe/scp008/clean
-	name = "Syringe (SCP-008)"
-	desc = "Contains a strange, crimson substance, it looks incredibly violent."

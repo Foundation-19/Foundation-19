@@ -2890,7 +2890,7 @@
 	req_access = list("ACCESS_SYNDICATE");
 	name = "Abandoned Warehouse Maintenance"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom/chaos)
 "jR" = (
 /obj/structure/table/rack,
