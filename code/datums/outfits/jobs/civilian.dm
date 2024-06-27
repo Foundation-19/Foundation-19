@@ -150,3 +150,19 @@
 	r_pocket = /obj/item/folder
 	l_hand = null
 	r_hand = null
+
+/decl/hierarchy/outfit/job/civ/clown
+	name = OUTFIT_JOB_NAME("Clown")
+	uniform = /obj/item/clothing/under/rank/civilian/clown
+	backpack_contents = list(
+		/obj/item/stamp/clown = 1,
+		/obj/item/reagent_containers/spray/waterflower = 1,
+		/obj/item/bananapeel = 1,
+		/obj/item/reagent_containers/food/snacks/bananapie,
+		/obj/item/instrument/bikehorn = 1,
+		)
+	ears = /obj/item/device/radio/headset/headset_service
+	shoes = /obj/item/clothing/shoes/clown_shoes
+	mask = /obj/item/clothing/mask/gas/clown_hat
+	l_pocket = /obj/item/bikehorn
+	back = /obj/item/storage/backpack/clown
