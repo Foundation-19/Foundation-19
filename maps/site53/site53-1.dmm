@@ -3822,7 +3822,6 @@
 	dir = 5
 	},
 /obj/structure/closet/crate/bin,
-/obj/item/reagent_containers/syringe/scp008,
 /obj/item/trash/driedfish,
 /obj/item/trash/pluto,
 /obj/item/trash/raisins,
