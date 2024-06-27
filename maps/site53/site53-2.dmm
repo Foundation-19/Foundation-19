@@ -3367,10 +3367,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/site53/engineering/sleeproom)
-"ajR" = (
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
-/area/site53/uhcz/hallways)
 "ajS" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 9
@@ -3935,17 +3931,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
-"alk" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "Hallway"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/uhcz/hallways)
 "alm" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
@@ -31213,7 +31198,6 @@
 	req_access = list();
 	storedpower = 50000
 	},
-/obj/structure/cable/cyan,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable/cyan,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -55129,6 +55113,17 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/generalpurpose3)
+"vCz" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "Hallway"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uhcz/hallways)
 "vCK" = (
 /obj/effect/floor_decal/corner/keter/border{
 	dir = 4
@@ -55579,6 +55574,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "vPv" = (
@@ -112056,7 +112052,7 @@ bSt
 bSt
 bSt
 bSt
-alk
+vCz
 bSt
 bSt
 bSt
@@ -112069,7 +112065,7 @@ bSt
 bSt
 bSt
 bSt
-alk
+vCz
 bSt
 bSt
 bSt
@@ -112082,7 +112078,7 @@ bSt
 bSt
 bSt
 bSt
-alk
+vCz
 bSt
 bSt
 bSt
@@ -117716,7 +117712,7 @@ azA
 aBo
 hDO
 akt
-ajR
+akt
 rXl
 mMi
 rXl

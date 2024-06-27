@@ -5105,6 +5105,10 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/bridge)
+"qW" = (
+/obj/structure/ladder/up,
+/turf/simulated/floor/plating,
+/area/site53/entrancezone/substation)
 "qZ" = (
 /turf/space,
 /turf/simulated/floor/reinforced,
@@ -11965,10 +11969,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/mentalhealth/office)
-"LU" = (
-/obj/structure/ladder/up,
-/turf/simulated/floor/plating,
-/area/site53/entrancezone/substation)
 "LV" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -50310,7 +50310,7 @@ HI
 is
 jW
 PN
-LU
+qW
 Xz
 of
 om
