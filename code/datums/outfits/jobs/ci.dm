@@ -53,6 +53,7 @@
 	l_pocket = null
 	r_pocket = null
 	back = null
+	backpack_contents = null
 
 	flags = OUTFIT_RESET_EQUIPMENT
 

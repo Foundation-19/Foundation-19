@@ -67,7 +67,8 @@
 	l_ear = /obj/item/device/radio/headset
 	id_type = /obj/item/card/id/physics
 	back = /obj/item/storage/backpack/rucksack
-	belt = /obj/item/storage/belt/holster/security
+	belt = null
+	backpack_contents = null
 
 	id_type = null
 	flags = OUTFIT_RESET_EQUIPMENT
