@@ -186,7 +186,7 @@
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "p232"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = ".45"
+	caliber = ".380"
 	silenced = 0
 	fire_delay = 2
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)

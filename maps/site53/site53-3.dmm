@@ -8426,7 +8426,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "medlock";
 	name = "Medical Lobby Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
 	pixel_y = 25;
 	pixel_x = -25
 	},
@@ -8434,13 +8434,15 @@
 	id_tag = "medent";
 	name = "Medical Entrance Control";
 	pixel_y = 6;
-	pixel_x = -25
+	pixel_x = -25;
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "medex";
 	name = "Medical Exit Control";
 	pixel_y = -3;
-	pixel_x = -25
+	pixel_x = -25;
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/machinery/computer/guestpass{
 	pixel_x = -39;
@@ -9820,6 +9822,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
+"ER" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/medical/infirmary)
 "ES" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Medical Bay Bypass"
@@ -10687,9 +10697,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/op1)
 "Ho" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/spline/fancy/black,
 /obj/effect/decal/cleanable/spiderling_remains,
@@ -10700,6 +10707,10 @@
 	},
 /obj/item/crowbar/emergency_forcing_tool,
 /obj/item/material/shard,
+/obj/machinery/light_construct/spot{
+	dir = 8
+	},
+/obj/item/light/tube,
 /turf/simulated/floor/shuttle/black,
 /area/site53/surface/surface/caves)
 "Hp" = (
@@ -11341,7 +11352,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/surface/caves)
 "Jq" = (
-/obj/structure/closet/secure_closet/virology,
+/obj/structure/closet/secure_closet/virology{
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
+	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -44017,7 +44030,7 @@ Am
 ms
 MP
 VK
-tR
+ER
 ir
 zd
 SL

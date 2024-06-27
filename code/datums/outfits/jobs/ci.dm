@@ -13,7 +13,7 @@
 	r_pocket = /obj/item/card/emag
 	back = /obj/item/storage/backpack/rucksack/ci
 
-	id_type = null
+	id_type = /obj/item/card/id/chaos
 	hierarchy_type = /decl/hierarchy/outfit/chaos
 	flags = OUTFIT_HAS_BACKPACK | OUTFIT_RESET_EQUIPMENT
 
@@ -35,6 +35,7 @@
 	head = /obj/item/clothing/head/helmet/scp/chaos/officer
 	suit_store = /obj/item/gun/projectile/automatic/scp/ak47
 	belt = /obj/item/storage/belt/ci/rig
+	id_type = /obj/item/card/id/chaos/lead
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 5,/obj/item/grenade/smokebomb = 1)
 
 /decl/hierarchy/outfit/chaos/pilot
@@ -52,6 +53,8 @@
 	l_pocket = null
 	r_pocket = null
 	back = null
+
+	flags = OUTFIT_RESET_EQUIPMENT
 
 // CHAOS INSURGENCY CORPSES
 

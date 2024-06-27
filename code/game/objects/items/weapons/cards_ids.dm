@@ -1046,7 +1046,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "ci"
 	item_state = "ci"
 	class = CLASS_CI
-	access = list(ACCESS_ENGINEERING_LEVEL1, ACCESS_SYNDICATE)
+	access = list(ACCESS_ENGINEERING_LVL1, ACCESS_SYNDICATE)
 
 /obj/item/card/id/chaos/lead
 	name = "stolen administrative ID"
@@ -1054,4 +1054,4 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	icon_state = "cilead"
 	item_state = "cilead"
 	class = CLASS_CI
-	access = list(ACCESS_ENGINEERING_LEVEL1, ACCESS_ADMIN_LEVEL1, ACCESS_SYNDICATE)
+	access = list(ACCESS_ENGINEERING_LVL1, ACCESS_ADMIN_LVL1, ACCESS_SYNDICATE)

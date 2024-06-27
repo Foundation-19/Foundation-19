@@ -70,3 +70,4 @@
 	belt = /obj/item/storage/belt/holster/security
 
 	id_type = null
+	flags = OUTFIT_RESET_EQUIPMENT

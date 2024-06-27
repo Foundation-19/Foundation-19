@@ -7,6 +7,10 @@
 	icon = 'icons/obj/gun_wide.dmi'
 	icon_state = "m16a1"
 	item_state = "m16a1"
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_backpacks.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_backpacks.dmi',
+		)
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
@@ -77,7 +81,6 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
-	wielded_item_state = "ak47-wielded"
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
