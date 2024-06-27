@@ -61611,6 +61611,10 @@
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
+"xVC" = (
+/obj/structure/ladder/up,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/lowertrams/janitoroffice)
 "xWw" = (
 /obj/machinery/camera/network/lcz{
 	name = "SCP-263"
@@ -89086,7 +89090,7 @@ qUH
 adx
 lZE
 agf
-ais
+xVC
 ahu
 aii
 sdf
