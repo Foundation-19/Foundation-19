@@ -142,11 +142,12 @@
 	},
 /area/centcom)
 "aJ" = (
-/obj/structure/bed/chair/office/comfy/black{
-	dir = 8
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/brown,
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
 /area/centcom/chaos)
 "aL" = (
 /obj/structure/bed/chair/shuttle/black{
@@ -346,6 +347,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"bw" = (
+/obj/structure/table/glass,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/chaos)
 "bx" = (
 /turf/simulated/wall/r_wall,
 /area/site53/tram/mtf)
@@ -419,13 +427,6 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"bO" = (
-/obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "bT" = (
 /obj/machinery/light,
 /obj/structure/closet/crate/internals,
@@ -831,7 +832,8 @@
 	},
 /area/centcom)
 "di" = (
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor/plating,
 /area/centcom/chaos)
 "dm" = (
 /obj/structure/grille{
@@ -919,11 +921,11 @@
 	},
 /area/centcom)
 "dw" = (
-/obj/structure/table/rack,
-/obj/item/storage/box/syndie_kit/chameleon,
-/obj/item/storage/box/syndie_kit/chameleon,
-/obj/item/storage/box/syndie_kit/chameleon,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/bed/chair/office/comfy/black{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
 "dz" = (
 /obj/structure/table/rack,
@@ -997,13 +999,6 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
-"dF" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/old_tile,
-/area/centcom/chaos)
 "dG" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
@@ -1130,14 +1125,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/site53/tram/mtf)
-"ed" = (
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/vending/soda{
-	dir = 1
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "eg" = (
 /obj/structure/grille{
 	health_max = null;
@@ -1160,6 +1147,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"em" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/chaos)
 "ep" = (
 /obj/structure/table/standard,
 /obj/item/implantcase/death_alarm,
@@ -1175,6 +1169,14 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"eq" = (
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
+/area/centcom/chaos)
 "er" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1;
@@ -1214,17 +1216,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"ex" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	icon = 'icons/effects/blood.dmi';
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "eB" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#272B5B"
@@ -1720,8 +1711,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp1102entrance)
 "gg" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/turf/simulated/floor/wood/ebony,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "gh" = (
 /obj/structure/barricade,
@@ -2071,15 +2064,12 @@
 	},
 /area/centcom)
 "hr" = (
-/obj/effect/floor_decal/corner/brown/border,
-/obj/machinery/button/blast_door{
-	id_tag = "cistorage";
-	name = "Abandoned Warehouse Storage Control";
-	pixel_y = -25;
-	dir = 1;
-	req_access = list("ACCESS_SYNDICATE")
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 9
 	},
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
 /area/centcom/chaos)
 "hs" = (
 /obj/effect/floor_decal/corner/green/border,
@@ -2328,29 +2318,15 @@
 	},
 /area/centcom)
 "hY" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 1
-	},
+/obj/effect/floor_decal/industrial/warning/dust,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/obj/item/clothing/accessory/storage/black_vest,
-/obj/item/storage/belt/ci/rig,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
-/obj/item/clothing/head/helmet/scp/chaos,
-/obj/item/storage/backpack/rucksack/ci,
-/obj/item/clothing/glasses/night,
-/obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SYNDICATE");
-	name = "Armory Locker";
-	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "armor1";
-	icon_closed = "armor";
-	icon_off = "armoroff";
-	icon_opened = "gunopen";
-	icon_state = "armor1"
+/obj/machinery/door/blast/shutters{
+	id_tag = "cistorage";
+	name = "Abandoned Warehouse Storage Shutters"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom/chaos)
 "ia" = (
 /obj/structure/bed/chair/wheelchair{
@@ -2527,8 +2503,10 @@
 	},
 /area/centcom)
 "iF" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/centcom/chaos)
 "iH" = (
 /obj/machinery/light,
@@ -2753,11 +2731,6 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/lhcz/scp1102entrance)
-"jt" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "jv" = (
 /turf/unsimulated/floor/plating,
 /area/space)
@@ -2816,7 +2789,23 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/ci)
+"jH" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/obj/structure/noticeboard/anomaly{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/chaos)
 "jI" = (
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/bordercorner,
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/chaos)
+"jJ" = (
 /turf/unsimulated/wall{
 	desc = "That looks like it doesn't open easily.";
 	icon = 'icons/obj/doors/rapid_pdoor.dmi';
@@ -2824,12 +2813,6 @@
 	name = "Facility Tunnel"
 	},
 /area/space)
-"jJ" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/centcom/chaos)
 "jK" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -2856,11 +2839,17 @@
 	},
 /area/centcom)
 "jM" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/obj/item/ammo_magazine/machine_pistol,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	icon = 'icons/effects/blood.dmi';
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/item/organ/internal/liver,
+/obj/item/scalpel,
+/turf/simulated/floor/plating,
 /area/centcom/chaos)
 "jN" = (
 /obj/structure/flora/pottedplant/dead,
@@ -2871,9 +2860,14 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "jO" = (
-/obj/structure/table/rack,
-/obj/item/storage/belt/ci/rig,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/machinery/light/small/red{
+	dir = 1
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "jP" = (
 /obj/structure/table/rack,
@@ -2892,32 +2886,33 @@
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
 "jQ" = (
-/obj/structure/closet/crate/medical,
-/obj/effect/floor_decal/corner/blue/three_quarters{
-	dir = 4
+/obj/machinery/door/airlock/hatch/maintenance{
+	req_access = list("ACCESS_SYNDICATE");
+	name = "Abandoned Warehouse Maintenance"
 	},
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/turf/simulated/floor/tiled/white,
+/turf/space,
 /area/centcom/chaos)
 "jR" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/reagent_containers/food/drinks/bottle/premiumvodka{
-	pixel_y = 13;
-	pixel_x = -4
-	},
-/turf/simulated/floor/wood/ebony,
-/area/centcom/chaos)
-"jS" = (
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/structure/flora/pottedplant/floorleaf,
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos/pilot,
+/obj/item/clothing/head/helmet/scp/chaos/pilot,
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
+"jS" = (
+/obj/structure/table/steel_reinforced,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/drinkbottle,
+/obj/random/smokes,
+/turf/simulated/floor/carpet/brown,
+/area/centcom/chaos)
 "jT" = (
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "jU" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -2993,13 +2988,12 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/ci)
 "kg" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/window/basic{
-	dir = 8
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/brown,
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
 /area/centcom/chaos)
 "kh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3024,11 +3018,12 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/ci)
 "kl" = (
-/obj/effect/floor_decal/corner/yellow/bordercorner{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner,
-/turf/simulated/floor/tiled/horizontal,
+/obj/structure/table/steel_reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/structure/window/basic,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
 "ko" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -3073,26 +3068,31 @@
 	},
 /area/centcom)
 "kx" = (
-/turf/simulated/wall/r_titanium,
-/area/centcom/chaos)
-"ky" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/folder/yellow,
-/obj/structure/window/basic{
-	dir = 8
-	},
+/obj/machinery/door/window/northright,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
+"ky" = (
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "kz" = (
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/wood/ebony,
+/obj/machinery/vending/weaponry/chaos,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "kA" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
+/obj/machinery/door/airlock/highsecurity{
+	req_access = list("ACCESS_ADMIN_LEVEL1","ACCESS_SYNDICATE");
+	name = "Abandoned Warehouse Supervisor's Office"
 	},
-/turf/simulated/floor/carpet/green,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/techfloor.dmi';
+	icon_state = "techfloor_grid"
+	},
 /area/centcom/chaos)
 "kB" = (
 /obj/structure/table/reinforced,
@@ -3115,6 +3115,7 @@
 /area/centcom)
 "kE" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/coatrack,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "kF" = (
@@ -3128,16 +3129,14 @@
 /area/centcom)
 "kI" = (
 /obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/clothing/accessory/solgov/specialty/officer,
-/turf/simulated/floor/wood/ebony,
+/obj/item/folder/red,
+/turf/simulated/floor/carpet/green,
 /area/centcom/chaos)
 "kJ" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/structure/window/basic,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/brown,
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "kK" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -3196,12 +3195,21 @@
 	},
 /area/centcom)
 "kS" = (
-/obj/machinery/vending/weaponry/chaos,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/centcom/chaos)
 "kT" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
+"kV" = (
+/obj/effect/floor_decal/corner/blue{
+	dir = 10
+	},
+/obj/machinery/reagentgrinder,
+/turf/simulated/floor/tiled/white,
+/area/centcom/chaos)
 "kW" = (
 /obj/machinery/computer/station_alert/all{
 	dir = 8
@@ -3257,6 +3265,10 @@
 	req_access = list("ACCESS_MTF")
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/machinery/door/blast/shutters{
+	id_tag = "omega1";
+	name = "Omega-1 Armory Access Shutters"
+	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/techfloor.dmi';
 	icon_state = "techfloor_grid"
@@ -3279,7 +3291,9 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/centcom/chaos)
 "lo" = (
-/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "lu" = (
 /obj/structure/table/steel_reinforced,
@@ -3304,9 +3318,7 @@
 	},
 /area/centcom)
 "lw" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/carpet/green,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "lx" = (
 /obj/structure/table/rack,
@@ -3327,13 +3339,10 @@
 	},
 /area/centcom)
 "lz" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 10
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/effect/landmark{
-	name = "Syndicate-Spawn"
-	},
-/turf/simulated/floor/tiled/corner,
+/turf/simulated/floor/carpet/green,
 /area/centcom/chaos)
 "lA" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -3354,10 +3363,9 @@
 /turf/simulated/wall/r_wall,
 /area/site53/tram/goc1)
 "lE" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/vertical,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a57,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "lF" = (
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -3374,10 +3382,12 @@
 /turf/simulated/wall/titanium,
 /area/centcom/goc)
 "lJ" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
 /area/centcom/chaos)
 "lK" = (
 /obj/structure/table/steel_reinforced,
@@ -3388,12 +3398,6 @@
 /obj/item/crowbar/emergency_forcing_tool,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
-"lL" = (
-/obj/effect/floor_decal/corner/brown/bordercorner,
-/turf/simulated/floor/tiled/corner{
-	dir = 8
-	},
-/area/centcom/chaos)
 "lM" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/westleft,
@@ -3402,18 +3406,16 @@
 /turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
 "lO" = (
-/obj/machinery/door/airlock/hatch/maintenance{
-	req_access = list("ACCESS_SYNDICATE");
-	name = "Abandoned Warehouse Maintenance"
-	},
-/turf/space,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "lP" = (
 /turf/simulated/mineral,
 /area/space)
 "lQ" = (
-/obj/effect/floor_decal/corner/brown/border,
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom/chaos)
 "lR" = (
 /obj/structure/bed/chair/padded/red{
@@ -3462,11 +3464,11 @@
 /turf/simulated/floor,
 /area/centcom)
 "lX" = (
-/obj/effect/floor_decal/corner/safe/border,
-/obj/effect/landmark{
-	name = "Syndicate-Spawn"
-	},
-/turf/simulated/floor/tiled/horizontal,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/obj/item/ammo_magazine/machine_pistol,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "lZ" = (
 /obj/effect/floor_decal/corner/safe/border{
@@ -3502,28 +3504,22 @@
 /turf/unsimulated/beach/sand,
 /area/beach)
 "mi" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/wood/ebony,
 /area/centcom/chaos)
 "mj" = (
-/obj/structure/closet,
-/obj/effect/floor_decal/corner/blue/three_quarters{
-	dir = 4
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
 	},
-/obj/random/firstaid,
-/obj/random/firstaid,
-/turf/simulated/floor/tiled/white,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "mk" = (
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
-"mm" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/device/flashlight/lamp,
-/turf/simulated/floor/carpet/green,
-/area/centcom/chaos)
 "mo" = (
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
@@ -3578,7 +3574,11 @@
 	},
 /area/centcom)
 "mw" = (
-/turf/simulated/floor/wood/ebony,
+/obj/effect/floor_decal/corner/safe/border,
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "mx" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -3637,10 +3637,13 @@
 	},
 /area/centcom)
 "mE" = (
-/obj/structure/flora/pottedplant/dead,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/old_tile,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "mG" = (
 /obj/structure/bed/chair/shuttle/black{
@@ -3656,14 +3659,7 @@
 	},
 /area/site53/tram/goc1)
 "mI" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/toy/desk/fan,
-/obj/structure/window/basic,
-/obj/structure/window/basic{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/brown,
+/turf/simulated/floor/plating,
 /area/centcom/chaos)
 "mJ" = (
 /obj/effect/floor_decal/corner/green/bordercorner,
@@ -3676,9 +3672,8 @@
 	},
 /area/centcom)
 "mK" = (
-/obj/structure/table/rack,
-/obj/item/storage/box/frags,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/vending/boozeomat,
+/turf/simulated/floor/wood/ebony,
 /area/centcom/chaos)
 "mL" = (
 /turf/unsimulated/floor{
@@ -3698,12 +3693,16 @@
 /turf/simulated/floor/lino,
 /area/centcom)
 "mO" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 9
+/obj/structure/chair/sofa/right{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/corner{
-	dir = 8
-	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/chaos)
+"mP" = (
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/material/sword/replica/officersword/pettyofficer,
+/turf/simulated/floor/wood/ebony,
 /area/centcom/chaos)
 "mQ" = (
 /obj/machinery/vending/security{
@@ -3826,6 +3825,10 @@
 	},
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"ng" = (
+/obj/structure/bed/chair/office/comfy/green,
+/turf/simulated/floor/carpet/green,
+/area/centcom/chaos)
 "nh" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
@@ -4067,7 +4070,8 @@
 	},
 /area/centcom)
 "nK" = (
-/turf/simulated/floor/plating,
+/obj/structure/table/woodentable_reinforced/ebony,
+/turf/simulated/floor/wood/ebony,
 /area/centcom/chaos)
 "nL" = (
 /obj/structure/target_stake,
@@ -4333,20 +4337,15 @@
 	},
 /area/site53/tram/goc1)
 "oc" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/vending/weaponry/chaos/specialized,
+/turf/simulated/floor/wood/ebony,
 /area/centcom/chaos)
 "od" = (
-/obj/effect/floor_decal/industrial/warning/dust,
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
+/obj/structure/bed/chair/office/comfy/black{
+	dir = 4
 	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "cistorage";
-	name = "Abandoned Warehouse Storage Shutters"
-	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
 "oe" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -4417,9 +4416,6 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/centcom/chaos)
 "om" = (
-/obj/structure/table/glass,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
@@ -4548,9 +4544,14 @@
 	},
 /area/centcom)
 "ow" = (
-/obj/structure/table/rack,
-/obj/item/storage/box/emps,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Abandoned Warehouse Clinic";
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/techfloor.dmi';
+	icon_state = "techfloor_grid"
+	},
 /area/centcom/chaos)
 "ox" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -5218,6 +5219,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"pV" = (
+/obj/structure/bed/chair/padded{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/plating,
+/area/centcom/chaos)
 "pW" = (
 /obj/structure/table/rack,
 /obj/item/storage/box/ammo/shotgunshells,
@@ -5256,6 +5264,11 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white,
+/area/centcom/chaos)
+"qb" = (
+/obj/structure/table/rack,
+/obj/item/storage/box/emps,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "qc" = (
 /obj/structure/bed/chair/padded{
@@ -5357,6 +5370,14 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"qx" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/centcom/chaos)
 "qy" = (
 /obj/structure/closet/crate/secure/biohazard{
 	req_access = null
@@ -5378,6 +5399,13 @@
 	icon_state = "greygrass"
 	},
 /area/centcom)
+"qA" = (
+/obj/effect/floor_decal/corner/yellow/bordercorner,
+/obj/effect/floor_decal/corner/brown/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/chaos)
 "qB" = (
 /turf/unsimulated/beach/water{
 	density = 1;
@@ -5397,6 +5425,19 @@
 /area/centcom)
 "qJ" = (
 /obj/effect/floor_decal/corner/green/border{
+	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/centcom)
+"qM" = (
+/obj/effect/floor_decal/corner/white/border,
+/obj/machinery/button/blast_door{
+	id_tag = "omega1";
+	name = "Omega-1 Armory Access Shutters Control";
+	pixel_y = -25;
 	dir = 1
 	},
 /turf/unsimulated/floor{
@@ -5542,16 +5583,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"rc" = (
-/obj/structure/bed/chair/office/comfy/black{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/brown,
-/area/centcom/chaos)
 "re" = (
-/obj/structure/bed/chair/office/comfy/green,
-/turf/simulated/floor/carpet/green,
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/vending/soda{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "rf" = (
 /obj/machinery/vending/mredispenser,
@@ -5573,6 +5611,12 @@
 	icon_state = "snow"
 	},
 /area/centcom)
+"rn" = (
+/obj/item/device/taperecorder,
+/obj/item/device/tape,
+/obj/structure/table/steel,
+/turf/simulated/floor/plating,
+/area/centcom/chaos)
 "rp" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/unsimulated/floor{
@@ -5866,15 +5910,6 @@
 	icon_state = "concrete"
 	},
 /area/centcom)
-"rN" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/machinery/light/small/red{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/centcom/chaos)
 "rO" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin{
@@ -5893,13 +5928,6 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
-"rR" = (
-/obj/structure/bed/chair/padded{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood,
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "rS" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#111111";
@@ -6024,13 +6052,6 @@
 	icon_state = "techfloor_grid"
 	},
 /area/site53/tram/goc1)
-"sc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/old_tile,
-/area/centcom/chaos)
 "sd" = (
 /obj/structure/table/rack,
 /obj/item/storage/belt/utility/full,
@@ -6065,10 +6086,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"si" = (
-/obj/machinery/vending/boozeomat,
-/turf/simulated/floor/wood/ebony,
-/area/centcom/chaos)
 "sm" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#D8B100"
@@ -6078,13 +6095,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"sn" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Abandoned Warehouse Technician Locker Room";
-	req_access = list("ACCESS_SYNDICATE")
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/centcom/chaos)
 "so" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/white/border{
@@ -6350,14 +6360,6 @@
 /obj/structure/window/basic/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"sx" = (
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/vending/fitness{
-	dir = 1
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "sy" = (
 /obj/structure/table/standard,
 /obj/item/folder/blue,
@@ -6515,16 +6517,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/lino,
 /area/centcom)
-"sF" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/machinery/light/small/red{
-	dir = 1
-	},
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/tiled/horizontal,
-/area/centcom/chaos)
 "sG" = (
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "isdlock";
@@ -6915,12 +6907,6 @@
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall,
 /area/site53/tram/ci)
-"tj" = (
-/obj/item/device/taperecorder,
-/obj/item/device/tape,
-/obj/structure/table/steel,
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "tk" = (
 /obj/structure/hygiene/toilet{
 	pixel_y = 16
@@ -7019,10 +7005,6 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
-"tx" = (
-/obj/machinery/light/small/red,
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "ty" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/upgraded,
@@ -7186,8 +7168,12 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "tQ" = (
-/obj/machinery/vending/weaponry/chaos/specialized,
-/turf/simulated/floor/wood/ebony,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/flora/pottedplant/dead,
+/turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "tR" = (
 /obj/machinery/chemical_dispenser/ert,
@@ -7394,13 +7380,6 @@
 /obj/structure/window/basic/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"tY" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/safe/bordercorner,
-/turf/simulated/floor/tiled/vertical,
-/area/centcom/chaos)
 "tZ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -7531,14 +7510,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"uk" = (
-/obj/machinery/door/window/northright,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/brown,
-/area/centcom/chaos)
 "ul" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/mtftactical,
@@ -7639,14 +7610,6 @@
 	color = "#543c30"
 	},
 /area/centcom)
-"uF" = (
-/obj/machinery/door/window/southright,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/brown,
-/area/centcom/chaos)
 "uG" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -7957,6 +7920,10 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"vQ" = (
+/obj/machinery/light/small/red,
+/turf/simulated/floor/plating,
+/area/centcom/chaos)
 "vT" = (
 /obj/structure/bed,
 /obj/effect/floor_decal/corner/orange/border{
@@ -8308,12 +8275,6 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
-"wK" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "wL" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced,
@@ -8323,6 +8284,21 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
+"wO" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/folder/yellow,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/brown,
+/area/centcom/chaos)
+"wQ" = (
+/obj/effect/floor_decal/corner/brown/bordercorner,
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/centcom/chaos)
 "wT" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -8397,19 +8373,18 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
-"xh" = (
+"xg" = (
 /obj/structure/table/rack,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos/pilot,
-/obj/item/clothing/head/helmet/scp/chaos/pilot,
+/obj/item/storage/box/frags,
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "xj" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 5
+/obj/effect/landmark/corpse/goc,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/corner{
-	dir = 4
-	},
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/plating,
 /area/centcom/chaos)
 "xl" = (
 /obj/machinery/papershredder,
@@ -8450,6 +8425,14 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"xu" = (
+/obj/machinery/door/window/southright,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/brown,
+/area/centcom/chaos)
 "xw" = (
 /obj/machinery/door/airlock/vault{
 	name = "Task Force Preperations";
@@ -8460,6 +8443,12 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"xx" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/ak/big,
+/obj/item/ammo_magazine/scp/ak/big,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "xy" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Mobile Task Force Dispatch Control Center"
@@ -8667,19 +8656,6 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
-"yb" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	icon = 'icons/effects/blood.dmi';
-	dir = 9
-	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
-	},
-/obj/item/organ/internal/liver,
-/obj/item/scalpel,
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "ye" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -9185,6 +9161,13 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"za" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Abandoned Warehouse Technician Locker Room";
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/chaos)
 "ze" = (
 /obj/structure/bed/chair/office/comfy/red{
 	dir = 8
@@ -9366,12 +9349,12 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"zM" = (
-/obj/structure/chair/sofa/left{
+"zN" = (
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/vending/mredispenser{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "zQ" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -9560,6 +9543,16 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"AL" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/toy/desk/fan,
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/brown,
+/area/centcom/chaos)
 "AM" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southright{
@@ -9645,12 +9638,16 @@
 	},
 /area/centcom)
 "AU" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 5
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/corner{
-	dir = 4
+/obj/machinery/button/blast_door{
+	id_tag = "cistorage";
+	name = "Abandoned Warehouse Storage Control";
+	pixel_y = 25;
+	req_access = list("ACCESS_SYNDICATE")
 	},
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "AW" = (
 /obj/structure/table/rack,
@@ -9691,6 +9688,13 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"Bk" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "Bn" = (
 /obj/machinery/light/spot,
 /turf/simulated/floor,
@@ -9713,9 +9717,19 @@
 	},
 /area/centcom)
 "Bt" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/clothing/accessory/solgov/specialty/officer,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/chaos)
+"By" = (
+/obj/machinery/vending/medical{
+	req_access = list();
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/three_quarters{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
 "BA" = (
 /obj/machinery/light{
@@ -9840,13 +9854,6 @@
 	},
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
-"BV" = (
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/vending/mredispenser{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "BW" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -9901,18 +9908,8 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"Cc" = (
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/corner{
-	dir = 4
-	},
-/area/centcom/chaos)
 "Cd" = (
-/obj/effect/floor_decal/corner/brown/border,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/wall/r_titanium,
 /area/centcom/chaos)
 "Ce" = (
 /obj/machinery/vending/security{
@@ -9962,6 +9959,12 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Cn" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/corner,
+/area/centcom/chaos)
 "Cp" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/white/border{
@@ -10255,15 +10258,6 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
-"Dc" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/centcom/chaos)
 "Dd" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -10283,12 +10277,6 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"Di" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/ak/big,
-/obj/item/ammo_magazine/scp/ak/big,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "Dj" = (
 /obj/structure/table/standard,
 /obj/item/storage/chewables/candy/gum,
@@ -10618,6 +10606,13 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"Eg" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/skele_stand,
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/chaos)
 "Eh" = (
 /obj/structure/table/rack,
 /obj/item/rig/hazmat/equipped,
@@ -10645,6 +10640,18 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Ek" = (
+/obj/structure/closet/crate/medical,
+/obj/effect/floor_decal/corner/blue/three_quarters{
+	dir = 4
+	},
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/turf/simulated/floor/tiled/white,
+/area/centcom/chaos)
 "En" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1;
@@ -10671,12 +10678,11 @@
 	},
 /area/centcom)
 "Es" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/corner{
-	dir = 8
-	},
+/obj/structure/table/rack,
+/obj/item/storage/box/syndie_kit/chameleon,
+/obj/item/storage/box/syndie_kit/chameleon,
+/obj/item/storage/box/syndie_kit/chameleon,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "Et" = (
 /obj/structure/table/rack,
@@ -10763,20 +10769,6 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
-"EB" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
-	},
-/obj/structure/noticeboard/anomaly{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/centcom/chaos)
-"EC" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/ak,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "ED" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10;
@@ -11147,13 +11139,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Fn" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 10
-	},
-/obj/machinery/reagentgrinder,
-/turf/simulated/floor/tiled/white,
-/area/centcom/chaos)
 "Fo" = (
 /obj/structure/bed/chair/comfy,
 /turf/unsimulated/floor{
@@ -11163,12 +11148,12 @@
 	},
 /area/centcom)
 "Fp" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
+/obj/structure/coatrack,
+/obj/item/clothing/head/helmet/scp/chaos/officer{
+	pixel_y = 11;
+	pixel_x = -7
 	},
-/obj/item/gun/projectile/pistol/p232,
-/obj/structure/table/steel,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/wood/ebony,
 /area/centcom/chaos)
 "Fq" = (
 /obj/structure/table/standard,
@@ -11218,10 +11203,8 @@
 	},
 /area/centcom)
 "Fx" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/carpet/green,
+/obj/effect/floor_decal/corner/brown/border,
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "FA" = (
 /obj/machinery/door/airlock{
@@ -11313,6 +11296,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Gf" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/brown,
+/area/centcom/chaos)
 "Gh" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -11425,12 +11417,10 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"GH" = (
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/vending/snack{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
+"GC" = (
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/device/flashlight/lamp,
+/turf/simulated/floor/carpet/green,
 /area/centcom/chaos)
 "GL" = (
 /obj/structure/bed/chair/office/comfy/green{
@@ -11479,15 +11469,8 @@
 	color = "#d5a66e"
 	},
 /area/centcom)
-"GU" = (
-/obj/structure/table/steel_reinforced,
-/obj/structure/window/basic{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/random/drinkbottle,
-/obj/random/smokes,
-/turf/simulated/floor/carpet/brown,
+"GV" = (
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom/chaos)
 "Hb" = (
 /obj/structure/table/standard,
@@ -11758,6 +11741,12 @@
 	icon_state = "tile_full"
 	},
 /area/centcom)
+"HK" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/centcom/chaos)
 "HN" = (
 /obj/structure/flora/pottedplant/large,
 /turf/unsimulated/floor{
@@ -11808,15 +11797,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Ic" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/safe/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/centcom/chaos)
 "Id" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin{
@@ -11901,14 +11881,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Ik" = (
-/obj/effect/landmark/corpse/goc,
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood,
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "Il" = (
 /obj/machinery/door/airlock/vault{
 	name = "Eta-10 Preperations";
@@ -12173,6 +12145,25 @@
 /obj/structure/window/reinforced,
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
+"IX" = (
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/reagent_containers/food/drinks/bottle/premiumvodka{
+	pixel_y = 13;
+	pixel_x = -4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/chaos)
+"IY" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 6
+	},
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
+/area/centcom/chaos)
 "IZ" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
@@ -12418,6 +12409,10 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"JL" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/brown,
+/area/centcom/chaos)
 "JM" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -12484,14 +12479,6 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/tram/maintrain)
-"JY" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/corner{
-	dir = 1
-	},
-/area/centcom/chaos)
 "JZ" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#E5511B";
@@ -12506,6 +12493,13 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Kc" = (
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/vending/snack{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "Kf" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -12716,17 +12710,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Kw" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "cistorage";
-	name = "Abandoned Warehouse Storage Control";
-	pixel_y = 25;
+"Kt" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Abandoned Warehouse Access";
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/turf/simulated/floor/tiled/horizontal,
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom/chaos)
 "Ky" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
@@ -12860,16 +12849,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"KK" = (
-/obj/machinery/vending/medical{
-	req_access = list();
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/blue/three_quarters{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/centcom/chaos)
 "KM" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -12879,6 +12858,10 @@
 	color = "#543c30"
 	},
 /area/centcom)
+"KN" = (
+/obj/effect/floor_decal/corner/safe/border,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "KQ" = (
 /obj/structure/table/standard,
 /obj/item/flame/lighter/zippo{
@@ -13107,6 +13090,13 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Lc" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/safe/bordercorner,
+/turf/simulated/floor/tiled/vertical,
+/area/centcom/chaos)
 "Le" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -13344,11 +13334,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"LL" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/folder/red,
-/turf/simulated/floor/carpet/green,
-/area/centcom/chaos)
 "LN" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -13502,6 +13487,15 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"Mw" = (
+/obj/structure/closet,
+/obj/effect/floor_decal/corner/blue/three_quarters{
+	dir = 4
+	},
+/obj/random/firstaid,
+/obj/random/firstaid,
+/turf/simulated/floor/tiled/white,
+/area/centcom/chaos)
 "Mx" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -13615,12 +13609,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"MM" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/centcom/chaos)
 "MN" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/orange/border{
@@ -13836,6 +13824,14 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Nl" = (
+/obj/machinery/door/airlock/multi_tile/glass/mining{
+	dir = 8;
+	icon_state = "closed";
+	name = "Abandoned Foundation Warehouse"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/chaos)
 "Nm" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -13977,6 +13973,32 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"NX" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/storage/belt/ci/rig,
+/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
+/obj/item/clothing/head/helmet/scp/chaos,
+/obj/item/storage/backpack/rucksack/ci,
+/obj/item/clothing/glasses/night,
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SYNDICATE");
+	name = "Armory Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "armor1";
+	icon_closed = "armor";
+	icon_off = "armoroff";
+	icon_opened = "gunopen";
+	icon_state = "armor1"
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/techmaint,
+/area/centcom/chaos)
 "NZ" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -14054,6 +14076,18 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Od" = (
+/obj/structure/table/rack,
+/obj/item/storage/belt/ci/rig,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
+"Oe" = (
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/chaos)
 "Oh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/trashcart,
@@ -14113,11 +14147,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Ok" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a57,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "Ol" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#D8B100";
@@ -14145,12 +14174,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
-"Or" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/centcom/chaos)
 "Os" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 8
@@ -14191,13 +14214,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"OA" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Abandoned Warehouse Access";
-	req_access = list("ACCESS_SYNDICATE")
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/centcom/chaos)
 "OB" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_titanium,
@@ -14271,6 +14287,11 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"OL" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "OM" = (
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -14518,12 +14539,6 @@
 	icon_state = "lino"
 	},
 /area/centcom)
-"Pu" = (
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "Pv" = (
 /obj/structure/bed/chair/padded,
 /turf/unsimulated/floor{
@@ -14825,16 +14840,6 @@
 "Qi" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
-"Qj" = (
-/obj/machinery/door/airlock/highsecurity{
-	req_access = list("ACCESS_ADMIN_LEVEL1","ACCESS_SYNDICATE");
-	name = "Abandoned Warehouse Supervisor's Office"
-	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/techfloor.dmi';
-	icon_state = "techfloor_grid"
-	},
-/area/centcom/chaos)
 "Qk" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9;
@@ -14990,10 +14995,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"QH" = (
-/obj/effect/floor_decal/corner/safe/border,
-/turf/simulated/floor/tiled/monotile,
-/area/centcom/chaos)
 "QI" = (
 /obj/item/trash/salo,
 /turf/simulated/floor/lino,
@@ -15009,6 +15010,17 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
+/area/centcom/chaos)
+"QL" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	icon = 'icons/effects/blood.dmi';
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
 /area/centcom/chaos)
 "QM" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -15164,6 +15176,12 @@
 	icon_state = "lino"
 	},
 /area/centcom)
+"Rl" = (
+/obj/structure/flora/pottedplant/dead,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/chaos)
 "Ro" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/m16_mag/ext,
@@ -15264,11 +15282,29 @@
 	},
 /area/centcom)
 "Rs" = (
-/obj/effect/floor_decal/corner/yellow/bordercorner,
-/obj/effect/floor_decal/corner/brown/bordercorner{
-	dir = 8
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/horizontal,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/storage/belt/ci/rig,
+/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
+/obj/item/clothing/head/helmet/scp/chaos,
+/obj/item/storage/backpack/rucksack/ci,
+/obj/item/clothing/glasses/night,
+/obj/structure/closet/secure_closet{
+	req_access = list("ACCESS_SYNDICATE");
+	name = "Armory Locker";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_locked = "armor1";
+	icon_closed = "armor";
+	icon_off = "armoroff";
+	icon_opened = "gunopen";
+	icon_state = "armor1"
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/centcom/chaos)
 "Rt" = (
 /obj/machinery/door/blast/shutters{
@@ -15416,6 +15452,17 @@
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall,
 /area/site53/tram/ci)
+"RD" = (
+/obj/effect/floor_decal/corner/brown/border,
+/obj/machinery/button/blast_door{
+	id_tag = "cistorage";
+	name = "Abandoned Warehouse Storage Control";
+	pixel_y = -25;
+	dir = 1;
+	req_access = list("ACCESS_SYNDICATE")
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/chaos)
 "RE" = (
 /obj/structure/table/standard,
 /obj/item/device/taperecorder,
@@ -15452,12 +15499,6 @@
 "RH" = (
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom/chaos)
-"RJ" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/centcom/chaos)
 "RM" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
@@ -15469,12 +15510,6 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
-"RN" = (
-/obj/item/storage/toolbox/syndicate,
-/obj/item/surgicaldrill,
-/obj/structure/table/steel,
-/turf/simulated/floor/plating,
-/area/centcom/chaos)
 "RO" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -15576,6 +15611,10 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
+"RY" = (
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/chaos)
 "Sa" = (
 /obj/structure/closet/secure_closet/guard/ntf{
 	icon_locked = "mtfsenior1";
@@ -15900,12 +15939,7 @@
 	},
 /area/centcom)
 "Te" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/effect/floor_decal/corner/yellow/border,
 /turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "Tg" = (
@@ -16037,17 +16071,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"TA" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 6
-	},
-/obj/effect/landmark{
-	name = "Syndicate-Spawn"
-	},
-/turf/simulated/floor/tiled/corner{
-	dir = 1
-	},
-/area/centcom/chaos)
 "TB" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	dir = 8
@@ -16068,44 +16091,10 @@
 	icon_state = "lino"
 	},
 /area/centcom)
-"TD" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
-	},
-/obj/item/clothing/accessory/storage/black_vest,
-/obj/item/storage/belt/ci/rig,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
-/obj/item/clothing/head/helmet/scp/chaos,
-/obj/item/storage/backpack/rucksack/ci,
-/obj/item/clothing/glasses/night,
-/obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SYNDICATE");
-	name = "Armory Locker";
-	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "armor1";
-	icon_closed = "armor";
-	icon_off = "armoroff";
-	icon_opened = "gunopen";
-	icon_state = "armor1"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/techmaint,
-/area/centcom/chaos)
 "TE" = (
 /obj/effect/shuttle_landmark/supply/centcom,
 /turf/simulated/floor,
 /area/supply/dock)
-"TF" = (
-/obj/structure/coatrack,
-/obj/item/clothing/head/helmet/scp/chaos/officer{
-	pixel_y = 11;
-	pixel_x = -7
-	},
-/turf/simulated/floor/wood/ebony,
-/area/centcom/chaos)
 "TG" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 8
@@ -16115,11 +16104,6 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
-"TH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/coatrack,
-/turf/simulated/floor/tiled/old_tile,
-/area/centcom/chaos)
 "TI" = (
 /obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning{
@@ -16141,6 +16125,14 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
+"TK" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/item/gun/projectile/pistol/p232,
+/obj/structure/table/steel,
+/turf/simulated/floor/plating,
+/area/centcom/chaos)
 "TL" = (
 /obj/structure/grille{
 	health_max = null;
@@ -16172,12 +16164,9 @@
 	},
 /area/centcom)
 "TQ" = (
-/obj/machinery/door/airlock/multi_tile/glass/mining{
-	dir = 8;
-	icon_state = "closed";
-	name = "Abandoned Foundation Warehouse"
-	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/floor_decal/corner/brown/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "TS" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -16278,6 +16267,14 @@
 "Um" = (
 /turf/simulated/floor/wood,
 /area/centcom/goc)
+"Un" = (
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/vending/fitness{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "Uo" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -16315,6 +16312,11 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Uu" = (
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/carpet/green,
+/area/centcom/chaos)
 "UB" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -16539,14 +16541,6 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
-"Vi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/flora/pottedplant/dead,
-/turf/simulated/floor/tiled/old_tile,
-/area/centcom/chaos)
 "Vo" = (
 /obj/machinery/door/airlock/vault{
 	name = "Workshop";
@@ -16751,6 +16745,15 @@
 	icon_state = "tile_full"
 	},
 /area/centcom)
+"VY" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/machinery/light/small/red{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/chaos)
 "Wa" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -16791,6 +16794,15 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Wf" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 10
+	},
+/obj/effect/landmark{
+	name = "Syndicate-Spawn"
+	},
+/turf/simulated/floor/tiled/corner,
+/area/centcom/chaos)
 "Wg" = (
 /obj/machinery/vending/cola{
 	dir = 1;
@@ -16930,11 +16942,6 @@
 	icon_state = "tile_full"
 	},
 /area/centcom)
-"WE" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/material/sword/replica/officersword/pettyofficer,
-/turf/simulated/floor/wood/ebony,
-/area/centcom/chaos)
 "WH" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -17179,16 +17186,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
-"Xr" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Abandoned Warehouse Clinic";
-	req_access = list("ACCESS_SYNDICATE")
-	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/techfloor.dmi';
-	icon_state = "techfloor_grid"
-	},
-/area/centcom/chaos)
 "Xs" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/hydroponics,
@@ -17280,12 +17277,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/centcom/goc)
-"XJ" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/corner,
-/area/centcom/chaos)
 "XK" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Internal Tribunal Court";
@@ -17306,6 +17297,11 @@
 /obj/machinery/vending/soda,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
+"XM" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/ak,
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/chaos)
 "XO" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/unsimulated/floor{
@@ -17448,6 +17444,12 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"Yv" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/green,
+/area/centcom/chaos)
 "Yw" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
@@ -17461,8 +17463,9 @@
 	},
 /area/centcom)
 "Yy" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/brown,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "Yz" = (
 /obj/machinery/door/airlock/vault{
@@ -17485,6 +17488,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"YD" = (
+/obj/item/storage/toolbox/syndicate,
+/obj/item/surgicaldrill,
+/obj/structure/table/steel,
+/turf/simulated/floor/plating,
+/area/centcom/chaos)
 "YF" = (
 /obj/structure/table/reinforced,
 /obj/machinery/vending/wallmed1{
@@ -17542,6 +17551,15 @@
 	icon_state = "techfloor_grid"
 	},
 /area/centcom)
+"YN" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/safe/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/centcom/chaos)
 "YO" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/syringe/amnesticsc,
@@ -17636,6 +17654,12 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Zi" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/centcom/chaos)
 "Zn" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -17726,13 +17750,6 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"ZL" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/structure/skele_stand,
-/turf/simulated/floor/tiled/horizontal,
-/area/centcom/chaos)
 "ZO" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
@@ -25686,7 +25703,7 @@ ab
 ab
 ab
 ab
-jI
+jJ
 RH
 RH
 RH
@@ -25720,7 +25737,7 @@ RH
 RH
 RH
 RH
-jI
+jJ
 eL
 eL
 eL
@@ -25888,41 +25905,41 @@ ab
 ab
 ab
 ab
-jI
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-jI
+jJ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+jJ
 eL
 eL
 eL
@@ -26090,41 +26107,41 @@ ab
 ab
 ab
 ab
-jI
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-jI
+jJ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+jJ
 eL
 eL
 eL
@@ -26292,41 +26309,41 @@ ab
 ab
 ab
 ab
-jI
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-jI
+jJ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+jJ
 eL
 eL
 eL
@@ -26494,41 +26511,41 @@ ab
 ab
 ab
 ab
-jI
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-lo
-jI
+jJ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+jJ
 eL
 eL
 eL
@@ -26611,7 +26628,7 @@ gp
 gp
 gp
 gp
-PD
+qM
 tq
 Ob
 dn
@@ -26696,7 +26713,7 @@ ab
 ab
 ab
 ab
-jI
+jJ
 RH
 RH
 RH
@@ -26730,7 +26747,7 @@ RH
 RH
 RH
 RH
-jI
+jJ
 eL
 eL
 eL
@@ -29133,19 +29150,19 @@ cw
 cw
 cw
 cw
-kx
-kx
-iF
-jT
-TQ
-iF
-kx
-iF
-jT
-TQ
-iF
-kx
-kx
+Cd
+Cd
+di
+GV
+Nl
+di
+Cd
+di
+GV
+Nl
+di
+Cd
+Cd
 cw
 cw
 cw
@@ -29335,19 +29352,19 @@ cw
 cw
 cw
 cw
-kx
+Cd
 jN
 kM
+om
+om
 kE
+tQ
 kE
-TH
-Vi
-TH
-kE
-kE
+om
+om
 kM
-mE
-kx
+Rl
+Cd
 cw
 cw
 cw
@@ -29537,19 +29554,19 @@ cw
 cw
 cw
 cw
-kx
+Cd
+bw
 om
-kE
-kE
-kE
-kE
-kE
-kE
-kE
-kE
-kE
+om
+om
+om
+om
+om
+om
+om
+om
 kZ
-kx
+Cd
 cw
 cw
 cw
@@ -29739,19 +29756,19 @@ cw
 cw
 cw
 cw
-kx
+Cd
 kX
-kE
-kE
-kE
-kE
-kE
-kE
-kE
-kE
-kE
-zM
-kx
+om
+om
+om
+om
+om
+om
+om
+om
+om
+Oe
+Cd
 cw
 cw
 cw
@@ -29941,19 +29958,19 @@ cw
 cw
 cw
 cw
-kx
+Cd
 kY
-kE
-kE
+om
+om
 lu
-ky
+wO
 lM
-kg
-mI
-kE
-kE
-dF
-kx
+Gf
+AL
+om
+om
+mO
+Cd
 cw
 cw
 cw
@@ -30143,19 +30160,19 @@ cw
 cw
 cw
 cw
-kx
+Cd
 kZ
-kE
-kE
-GU
-aJ
-Yy
-rc
-kJ
-kE
-kE
+om
+om
+jS
+dw
+JL
+od
+kl
+om
+om
 kZ
-kx
+Cd
 cw
 cw
 cw
@@ -30345,19 +30362,19 @@ cw
 cw
 cw
 cw
-kx
+Cd
 jN
-kE
-kE
-uk
-Yy
-Yy
-Yy
-uF
-sc
-sc
-La
+om
+om
 kx
+JL
+JL
+JL
+xu
+em
+em
+La
+Cd
 cw
 cw
 cw
@@ -30547,23 +30564,23 @@ cw
 cw
 cw
 cw
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-OA
-OA
-kx
-kx
-kx
-kx
-kx
-kx
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Kt
+Kt
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
 cw
 cw
 cw
@@ -30751,21 +30768,21 @@ cw
 cw
 cw
 cw
-kx
-Es
-lE
-lE
-lE
-XJ
-kx
-Es
-XJ
-kx
-KK
+Cd
+hr
+kS
+kS
+kS
+Cn
+Cd
+hr
+Cn
+Cd
+By
 nu
 nH
 nY
-kx
+Cd
 cw
 cw
 cw
@@ -30953,21 +30970,21 @@ cw
 cw
 cw
 cw
-kx
-Te
-dw
-Ok
-bO
 Cd
-kx
-Te
-lQ
-Xr
+mj
+Es
+lE
+Bk
+TQ
+Cd
+mj
+Fx
+ow
 eJ
 nw
 nw
 pZ
-kx
+Cd
 cw
 cw
 cw
@@ -31155,21 +31172,21 @@ cw
 cw
 cw
 cw
-kx
-lJ
-di
-di
-di
-lQ
-kx
-Kw
-lQ
-kx
+Cd
+gg
+lw
+lw
+lw
+Fx
+Cd
+AU
+Fx
+Cd
 QJ
 nw
 nw
-Fn
-kx
+kV
+Cd
 cw
 cw
 cw
@@ -31357,21 +31374,21 @@ cw
 cw
 cw
 cw
-kx
-lJ
-Bt
-mK
-jO
-lQ
-od
-lJ
-lQ
-kx
+Cd
+gg
+OL
+xg
+Od
+Fx
+hY
+gg
+Fx
+Cd
 nb
 nw
 nw
 QT
-kx
+Cd
 cw
 cw
 cw
@@ -31559,21 +31576,21 @@ cw
 cw
 cw
 cw
-kx
-lJ
-di
-di
-di
-lQ
-od
-lJ
-lQ
-kx
+Cd
+gg
+lw
+lw
+lw
+Fx
+hY
+gg
+Fx
+Cd
 eJ
 nw
 nx
-jQ
-kx
+Ek
+Cd
 cw
 cw
 cw
@@ -31761,21 +31778,21 @@ cw
 cw
 cw
 cw
-kx
-Te
+Cd
+mj
 lx
-xh
-Di
-lQ
-od
-lJ
-lQ
-kx
+jR
+xx
+Fx
+hY
+gg
+Fx
+Cd
 kb
 jP
-mj
-kx
-kx
+Mw
+Cd
+Cd
 cw
 cw
 cw
@@ -31963,20 +31980,20 @@ cw
 cw
 cw
 cw
-kx
-lJ
-di
-di
-di
-lQ
-od
-lJ
-lQ
-kx
-kx
-kx
-kx
-kx
+Cd
+gg
+lw
+lw
+lw
+Fx
+hY
+gg
+Fx
+Cd
+Cd
+Cd
+Cd
+Cd
 cw
 cw
 cw
@@ -32165,23 +32182,23 @@ cw
 cw
 cw
 cw
-kx
-lJ
-ow
-oc
-EC
-lQ
-od
-lJ
-lQ
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-kx
+Cd
+gg
+qb
+lo
+XM
+Fx
+hY
+gg
+Fx
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
 cw
 cw
 aa
@@ -32367,23 +32384,23 @@ cw
 cw
 cw
 cw
-kx
-lJ
-di
-di
-di
-hr
-kx
-lJ
-lQ
-jS
-kx
-mO
-RJ
-RJ
-lz
-hY
-kx
+Cd
+gg
+lw
+lw
+lw
+RD
+Cd
+gg
+Fx
+ky
+Cd
+qx
+Zi
+Zi
+Wf
+Rs
+Cd
 cw
 cw
 aa
@@ -32569,23 +32586,23 @@ cw
 cw
 cw
 cw
-kx
-Te
-jM
-wK
-jt
 Cd
-kx
-Te
-lQ
-GH
-kx
-Dc
-kS
-kS
+mj
 lX
-TD
-kx
+lO
+Yy
+TQ
+Cd
+mj
+Fx
+Kc
+Cd
+mE
+kz
+kz
+mw
+NX
+Cd
 cw
 cw
 aa
@@ -32771,23 +32788,23 @@ cw
 cw
 cw
 cw
-kx
-xj
+Cd
+kg
 lG
 lG
 lG
-JY
-kx
-lJ
-lQ
-ed
-kx
-jJ
-di
-di
-lX
-hY
-kx
+aJ
+Cd
+gg
+Fx
+re
+Cd
+kJ
+lw
+lw
+mw
+Rs
+Cd
 cw
 cw
 aa
@@ -32973,23 +32990,23 @@ cw
 cw
 cw
 cw
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-lJ
-Cc
-tY
-kx
-jJ
-kS
-kS
-lX
-hY
-kx
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+gg
+eq
+Lc
+Cd
+kJ
+kz
+kz
+mw
+Rs
+Cd
 cw
 cw
 aa
@@ -33181,17 +33198,17 @@ cw
 cw
 cw
 cw
-kx
-EB
-di
-QH
-sn
-jJ
-di
-di
-lX
-TD
-kx
+Cd
+jH
+lw
+KN
+za
+kJ
+lw
+lw
+mw
+NX
+Cd
 cw
 cw
 aa
@@ -33377,23 +33394,23 @@ cw
 cw
 cw
 cw
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-lJ
-lL
-Ic
-kx
-jJ
-kS
-kS
-lX
-hY
-kx
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+gg
+wQ
+YN
+Cd
+kJ
+kz
+kz
+mw
+Rs
+Cd
 cw
 cw
 aa
@@ -33579,23 +33596,23 @@ cw
 cw
 cw
 cw
-kx
-tQ
-kI
-WE
+Cd
+oc
+Bt
+mP
+mi
+mi
+Cd
+gg
+Fx
+Un
+Cd
+kJ
+lw
+lw
 mw
-mw
-kx
-lJ
-lQ
-sx
-kx
-jJ
-di
-di
-lX
-hY
-kx
+Rs
+Cd
 cw
 cw
 aa
@@ -33781,23 +33798,23 @@ cw
 cw
 cw
 cw
-kx
+Cd
+lz
+nO
+nO
+mi
+mi
+Cd
+mj
 Fx
-nO
-nO
+zN
+Cd
+mE
+kz
+kz
 mw
-mw
-kx
-Te
-lQ
-BV
-kx
-Dc
-kS
-kS
-lX
-TD
-kx
+NX
+Cd
 cw
 cw
 aa
@@ -33983,23 +34000,23 @@ cw
 cw
 cw
 cw
-kx
+Cd
 nO
-mm
+GC
 nO
-mw
-TF
-kx
+mi
+Fp
+Cd
+gg
+Fx
+ky
+Cd
 lJ
-lQ
-jS
-kx
-AU
-Or
-Or
-TA
-hY
-kx
+iF
+iF
+IY
+Rs
+Cd
 cw
 cw
 aa
@@ -34185,23 +34202,23 @@ cw
 cw
 cw
 cw
-kx
-re
-LL
+Cd
+ng
+kI
+Yv
+mi
+mi
 kA
-mw
-mw
-Qj
-lJ
-lQ
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-kx
+gg
+Fx
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
 cw
 cw
 aa
@@ -34387,22 +34404,22 @@ cw
 cw
 cw
 cw
-kx
+Cd
 nO
-lw
+Uu
 nO
-mw
-kz
-kx
-lJ
-lQ
-kx
-sF
 mi
-Pu
-nK
-tx
-kx
+RY
+Cd
+gg
+Fx
+Cd
+jO
+Te
+HK
+mI
+vQ
+Cd
 cw
 cw
 cw
@@ -34589,22 +34606,22 @@ cw
 cw
 cw
 cw
-kx
-Fx
+Cd
+lz
 nO
 nO
-mw
-mw
-kx
-lJ
-Rs
-kx
-MM
 mi
-Fp
-RN
-nK
-kx
+mi
+Cd
+gg
+qA
+Cd
+jT
+Te
+TK
+YD
+mI
+Cd
 cw
 cw
 cw
@@ -34791,22 +34808,22 @@ cw
 cw
 cw
 cw
-kx
-si
-jR
-gg
-mw
-mw
-kx
-Te
-mi
-lO
-MM
-mi
-yb
-rR
+Cd
+mK
+IX
 nK
-kx
+mi
+mi
+Cd
+mj
+Te
+jQ
+jT
+Te
+jM
+pV
+mI
+Cd
 cw
 cw
 cw
@@ -34993,22 +35010,22 @@ cw
 cw
 cw
 cw
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-lJ
-kl
-kx
-ZL
-mi
-ex
-tj
-nK
-kx
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+gg
+jI
+Cd
+Eg
+Te
+QL
+rn
+mI
+Cd
 cw
 cw
 cw
@@ -35201,16 +35218,16 @@ cw
 cw
 cw
 cw
-kx
+Cd
+kg
+aJ
+Cd
+VY
+Te
 xj
-JY
-kx
-rN
-mi
-Ik
-nK
-tx
-kx
+mI
+vQ
+Cd
 cw
 cw
 cw
@@ -35403,16 +35420,16 @@ cw
 cw
 cw
 cw
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-kx
-kx
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
+Cd
 cw
 cw
 cw
