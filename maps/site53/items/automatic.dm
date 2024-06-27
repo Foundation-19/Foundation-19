@@ -7,10 +7,6 @@
 	icon = 'icons/obj/gun_wide.dmi'
 	icon_state = "m16a1"
 	item_state = "m16a1"
-	item_icons = list(
-		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_backpacks.dmi',
-		slot_r_hand_str = 'icons/mob/onmob/items/righthand_backpacks.dmi',
-		)
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
