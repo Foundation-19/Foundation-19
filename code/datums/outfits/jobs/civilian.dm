@@ -159,9 +159,9 @@
 		/obj/item/reagent_containers/spray/waterflower = 1,
 		/obj/item/bananapeel = 1,
 		/obj/item/reagent_containers/food/snacks/bananapie,
-		/obj/item/instrument/bikehorn = 1,
+		/obj/item/bikehorn/airhorn = 1,
 		)
-	ears = /obj/item/device/radio/headset/headset_service
+	l_ear = /obj/item/device/radio/headset/headset_service
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
