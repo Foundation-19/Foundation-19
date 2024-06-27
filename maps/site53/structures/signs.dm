@@ -161,7 +161,22 @@
 	corpse_outfits = list(/decl/hierarchy/outfit/goc/trooper/corpse)
 	icon_state = "goccorpse"
 
-/obj/effect/landmark/corpse/cipilot
+/obj/effect/landmark/corpse/chaos
+	name = "Chaos Insurgent Trooper"
+	corpse_outfits = list(/decl/hierarchy/outfit/chaos/soldier/corpse)
+	icon_state = "cicorpse"
+
+/obj/effect/landmark/corpse/chaos/heavy
+	name = "Chaos Insurgent Heavy Trooper"
+	corpse_outfits = list(/decl/hierarchy/outfit/chaos/heavy_soldier/corpse)
+	icon_state = "ciheavycorpse"
+
+/obj/effect/landmark/corpse/chaos/officer
+	name = "Chaos Insurgent Officer"
+	corpse_outfits = list(/decl/hierarchy/outfit/chaos/leader/corpse)
+	icon_state = "ciofficercorpse"
+
+/obj/effect/landmark/corpse/chaos/pilot
 	name = "CI Pilot"
 	corpse_outfits = list(/decl/hierarchy/outfit/chaos/pilot)
 	icon_state = "cipilotcorpse"

@@ -20,7 +20,7 @@
 	caliber = CALIBER_PISTOL_SMALL
 	projectile_type = /obj/item/projectile/bullet/pistol/holdout
 	icon_state = "pistol-brass"
-	spent_icon = "pistol-brass-spent"
+	spent_icon = "pistol-brass-empty"
 
 /obj/item/ammo_casing/pistol/small/rubber
 	desc = "A small pistol rubber bullet casing."
@@ -262,7 +262,7 @@
 	caliber = "5.7x28mm"
 	projectile_type = /obj/item/projectile/bullet/a57
 	icon_state = "rifle-brass"
-	icon_state = "rifle-brass-spent"
+	spent_icon = "rifle-brass-empty"
 
 /obj/item/ammo_casing/pistol/a57/rubber
 	desc = "A 5.7x28mm rubber bullet casing."
@@ -382,7 +382,7 @@
 	caliber = "a762nato"
 	projectile_type = /obj/item/projectile/bullet/rifle/a762nato
 	icon_state = "rifle-brass"
-	spent_icon = "rifle-brass-spent"
+	spent_icon = "rifle-brass-empty"
 
 /obj/item/ammo_casing/a145
 	name = "shell casing"

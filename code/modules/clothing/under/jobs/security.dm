@@ -325,7 +325,7 @@
 		)
 	siemens_coefficient = 0.6
 
-/obj/item/clothing/under/syndicate/ci
+/obj/item/clothing/under/syndicate/chaos
 	name = "Chaos Insurgency field uniform"
 	desc = "Heavy green field military garbs from an unknown group of interest, you'd assume it's from the Chaos Insurgency."
 	icon_state = "ci_jumpsuit"

@@ -1039,3 +1039,19 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/dassignment/dluxury
 	name = "luxury reward card"
 	access = list(ACCESS_DCLASS_LUXURY)
+
+/obj/item/card/id/chaos
+	name = "stolen ID"
+	desc = "A green ID card, it's drawn on with black ink saying \"C.I.\", it's also got a crudely painted Chaos Insurgency logo over the SCP Logo, and an X marked over the SCP slogan, whoever's wearing this must be scary."
+	icon_state = "ci"
+	item_state = "ci"
+	class = CLASS_CI
+	access = list(ACCESS_ENGINEERING_LEVEL1, ACCESS_SYNDICATE)
+
+/obj/item/card/id/chaos/lead
+	name = "stolen administrative ID"
+	desc = "A golden ID card mostly used by administrative staff, it's drawn on professionally with white ink saying \"C.I.\", it's also got a crudely painted Chaos Insurgency logo over the SCP Logo, and an aggressively red X marked over the SCP slogan, whoever's wearing this must be scary."
+	icon_state = "cilead"
+	item_state = "cilead"
+	class = CLASS_CI
+	access = list(ACCESS_ENGINEERING_LEVEL1, ACCESS_ADMIN_LEVEL1, ACCESS_SYNDICATE)

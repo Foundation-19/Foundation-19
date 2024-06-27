@@ -55,15 +55,6 @@
 	desc = "A bright red jumpsuit, indicative of dangerous Class D personnel."
 	icon_state = "hd"
 
-/obj/item/clothing/under/scp/chaos
-	name = "tactical sweatshirt"
-	desc = "A white tactical shirt for tactical operations."
-	icon_state = "tac"
-	has_sensor = 0
-	item_flags = ITEM_FLAG_THICKMATERIAL
-	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
-	siemens_coefficient = 0.9
-
 /obj/item/clothing/under/scp/alpha
 	name = "Alpha-1 uniform"
 	desc = "A modified uniform made specificly for the MTF unit 'Red Right Handp'."

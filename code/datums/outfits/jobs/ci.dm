@@ -1,5 +1,5 @@
 /decl/hierarchy/outfit/chaos
-	uniform = /obj/item/clothing/under/syndicate/ci
+	uniform = /obj/item/clothing/under/syndicate/chaos
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
 	head = /obj/item/clothing/head/helmet/scp/chaos
 	mask = /obj/item/clothing/mask/gas/ci
@@ -39,7 +39,7 @@
 
 /decl/hierarchy/outfit/chaos/pilot
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Pilot")
-	uniform = /obj/item/clothing/under/syndicate/ci
+	uniform = /obj/item/clothing/under/syndicate/chaos
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos/pilot
 	head = /obj/item/clothing/head/helmet/scp/chaos/pilot
 	mask = /obj/item/clothing/mask/gas/half
@@ -52,3 +52,25 @@
 	l_pocket = null
 	r_pocket = null
 	back = null
+
+// CHAOS INSURGENCY CORPSES
+
+/decl/hierarchy/outfit/chaos/soldier/corpse
+	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier Corpse")
+	suit_store = null
+	belt = /obj/item/storage/belt/ci
+	backpack_contents = null
+
+/decl/hierarchy/outfit/chaos/heavy_soldier/corpse
+	name = OUTFIT_JOB_NAME("Chaos Insurgency Heavy Soldier Corpse")
+	head = /obj/item/clothing/head/helmet/scp/security/chaos
+	suit_store = null
+	belt = /obj/item/storage/belt/ci/rig
+	backpack_contents = null
+
+/decl/hierarchy/outfit/chaos/leader/corpse
+	name = OUTFIT_JOB_NAME("Chaos Insurgency Squad Leader Corpse")
+	head = /obj/item/clothing/head/helmet/scp/chaos/officer
+	suit_store = null
+	belt = /obj/item/storage/belt/ci/rig
+	backpack_contents = null
