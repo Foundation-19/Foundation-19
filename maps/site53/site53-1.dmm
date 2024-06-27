@@ -774,7 +774,6 @@
 /area/site53/uhcz/scp8containment)
 "aQl" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/wall/r_titanium,
 /area/site53/lhcz/scp049containment)
 "aRa" = (
