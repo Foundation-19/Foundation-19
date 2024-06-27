@@ -383,8 +383,12 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 
 /obj/item/reagent_containers/syringe/scp008
-	name = "Syringe (SCP-###)"
+	name = "Syringe SCP-###"
 	desc = "Contains a strange, crimson substance. The label appears to be partially scratched out."
+
+/obj/item/reagent_containers/syringe/scp008/clean
+	name = "Syringe SCP-008"
+	desc = "Contains a strange, extremely violent crimson color, you wouldn't wanna prick yourself with this."
 
 /obj/item/reagent_containers/syringe/scp008/Initialize()
 	..()
