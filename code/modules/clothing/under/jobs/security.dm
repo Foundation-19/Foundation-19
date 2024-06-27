@@ -28,20 +28,20 @@
 // Light Containment Zone Uniforms
 
 /obj/item/clothing/under/rank/security/lcz/medic
-	name = "LCZ Combat Medic Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and red wrist markings, as well as medical insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Combat Medic uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with red shoulder and wrist markings, as well as medical insignia. Weaved with a durable fabric to absorb melee hits. Sterilized fabric for better treatment, and less likely for infections."
 	icon_state = "lczmed_guard"
 	worn_state = "lczmed_guard"
 
 /obj/item/clothing/under/rank/security/lcz/riot
-	name = "LCZ Riot Control Unit Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and blue wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Riot Control Unit uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with blue shoulder and wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits. Moreso than the other security uniforms."
 	icon_state = "lczriot_guard"
 	worn_state = "lczriot_guard"
 
 /obj/item/clothing/under/rank/security/lcz/recontain
-	name = "LCZ Recontainment Unit Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and cyan wrist markings, as well as chevron insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Recontainment Unit uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with cyan shoulder and wrist markings, as well as chevron insignia. Weaved with a durable fabric to absorb melee hits. You feel like this division will come back one day.."
 	icon_state = "lczrecon_guard"
 	worn_state = "lczrecon_guard"
 
