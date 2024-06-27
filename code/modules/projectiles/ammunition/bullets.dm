@@ -261,28 +261,28 @@
 	desc = "A 5.7x28mm bullet casing."
 	caliber = "5.7x28mm"
 	projectile_type = /obj/item/projectile/bullet/a57
-	icon_state = "rifle-brass"
-	spent_icon = "rifle-brass-empty"
+	icon_state = "pistol-brass"
+	spent_icon = "pistol-brass-empty"
 
 /obj/item/ammo_casing/pistol/a57/rubber
 	desc = "A 5.7x28mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/rubber
-	icon_state = "rifle-brass-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/a57/ap
 	desc = "A 5.7x28mm armor piercing bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/ap
-	icon_state = "rifle-brass-ap"
+	icon_state = "pistol-brass-ap"
 
 /obj/item/ammo_casing/pistol/a57/hp
 	desc = "A 5.7x28mm hollow-point bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/hollowpoint
-	icon_state = "rifle-brass-hollow"
+	icon_state = "pistol-brass-hollow"
 
 /obj/item/ammo_casing/a57/sc
 	desc = "A 5.7x28mm Silver Crescent bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/silver
-	icon_state = "rifle-silver"
+	icon_state = "pistol-silver"
 
 /obj/item/ammo_casing/shotgun
 	name = "slug shell"
