@@ -153,7 +153,7 @@
 
 /decl/hierarchy/outfit/job/civ/clown
 	name = OUTFIT_JOB_NAME("Clown")
-	uniform = /obj/item/clothing/under/rank/civilian/clown
+	uniform = /obj/item/clothing/under/rank/clown
 	backpack_contents = list(
 		/obj/item/stamp/clown = 1,
 		/obj/item/reagent_containers/spray/waterflower = 1,
