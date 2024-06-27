@@ -156,6 +156,16 @@
 	name = "Class D"
 	corpse_outfits = list(/decl/hierarchy/outfit/job/civ/classd)
 
+/obj/effect/landmark/corpse/goc
+	name = "GOC Trooper"
+	corpse_outfits = list(/decl/hierarchy/outfit/goc/trooper/corpse)
+	icon_state = "goccorpse"
+
+/obj/effect/landmark/corpse/cipilot
+	name = "CI Pilot"
+	corpse_outfits = list(/decl/hierarchy/outfit/chaos/pilot)
+	icon_state = "cipilotcorpse"
+
 /obj/effect/landmark/corpse/classdescaped
 	name = "Class D"
 	corpse_outfits = list(/decl/hierarchy/outfit/zombie/classd)

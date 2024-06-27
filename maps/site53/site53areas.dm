@@ -208,8 +208,10 @@
 	name = "Upper Surface"
 	requires_power = 0
 	dynamic_lighting = 0
+
 /area/site53/surface/surface/caves
 	name = "Surface Caverns"
+	dynamic_lighting = 1
 
 /area/site53/surface/surface/away/bar
 	name = "Away Bar"

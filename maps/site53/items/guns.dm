@@ -182,7 +182,7 @@
 
 /obj/item/gun/projectile/pistol/p232
 	name = "Sig Sauer P232"
-	desc = "The Sig P232 draws it's lineage from the older P-230, which in itself comes from the Sauer 38H. The old Sauer 38H was a blowback pistol intended to compete with the Walther PPK and Mauser HSC handguns. Due to Germany's pressing need for every last handgun they could get their hands on in the Second World War, Sauer would produce the 38H until the factory was captured by the Allies in 1945. The Sig P232, carries on the legacy of the Sauer 38H in spirit, as it is very much a modernized variant of the old handgun. This version is chambered in .45 ACP."
+	desc = "The Sig P232 draws it's lineage from the older P-230, which in itself comes from the Sauer 38H. The old Sauer 38H was a blowback pistol intended to compete with the Walther PPK and Mauser HSC handguns. Due to Germany's pressing need for every last handgun they could get their hands on in the Second World War, Sauer would produce the 38H until the factory was captured by the Allies in 1945. The Sig P232, carries on the legacy of the Sauer 38H in spirit, as it is very much a modernized variant of the old handgun. This version is chambered in .380 ACP."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "p232"
 	w_class = ITEM_SIZE_NORMAL

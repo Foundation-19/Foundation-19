@@ -53,3 +53,20 @@
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak/big = 3)
+
+/decl/hierarchy/outfit/goc/trooper/corpse
+	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Trooper Corpse")
+	uniform = /obj/item/clothing/under/rank/security/goc
+	suit = /obj/item/clothing/suit/armor/goc
+	suit_store = null
+	head = /obj/item/clothing/head/helmet/scp/goc
+	mask = /obj/item/clothing/mask/gas/goc
+	shoes = /obj/item/clothing/shoes/dutyboots
+	gloves = /obj/item/clothing/gloves/tactical/scp
+	glasses = null
+	l_ear = /obj/item/device/radio/headset
+	id_type = /obj/item/card/id/physics
+	back = /obj/item/storage/backpack/rucksack
+	belt = /obj/item/storage/belt/holster/security
+
+	id_type = null

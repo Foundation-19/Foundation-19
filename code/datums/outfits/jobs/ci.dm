@@ -36,3 +36,19 @@
 	suit_store = /obj/item/gun/projectile/automatic/scp/ak47
 	belt = /obj/item/storage/belt/ci/rig
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 5,/obj/item/grenade/smokebomb = 1)
+
+/decl/hierarchy/outfit/chaos/pilot
+	name = OUTFIT_JOB_NAME("Chaos Insurgency Pilot")
+	uniform = /obj/item/clothing/under/syndicate/ci
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos/pilot
+	head = /obj/item/clothing/head/helmet/scp/chaos/pilot
+	mask = /obj/item/clothing/mask/gas/half
+	glasses = null
+	gloves = /obj/item/clothing/gloves/tactical/ci
+	shoes = /obj/item/clothing/shoes/tactical
+	r_hand = null
+	l_hand = null
+	l_ear = /obj/item/device/radio/headset
+	l_pocket = null
+	r_pocket = null
+	back = null

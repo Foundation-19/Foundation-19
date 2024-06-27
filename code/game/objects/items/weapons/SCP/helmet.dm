@@ -107,7 +107,7 @@
 	name = "Chaos Insurgency helmet"
 	desc = "A russian type of helmet usually seen worn by modern russian military forces, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_helmet"
-	body_parts_covered = HEAD //face shield
+	body_parts_covered = HEAD
 	armor = list(melee = 50, bullet = 65, laser = 50, energy = 25, bomb = 40, bio = 10, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS
@@ -123,6 +123,15 @@
 	desc = "A durable, unquestionably bulletproof russian type of field cap used by mainly officers of the russian military forces, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_officer"
 	armor = list(melee = 65, bullet = 60, laser = 25,energy = 15, bomb = 15, bio = 0, rad = 0)
+
+/obj/item/clothing/head/helmet/scp/chaos/pilot
+	name = "Chaos Insurgency pilot helmet"
+	desc = "A pilot helmet worn by air pilots usually wanting the utmost defense while flying a plane. Also keeps the bugs out of your eyes if your windshield ever breaks. usually seen worn by modern russian military forces, this one is colored tan and is used by the Chaos Insurgency."
+	icon_state = "ci_pilot_helmet"
+	body_parts_covered = EYES|FACE
+	armor = list(melee = 10, bullet = 15, laser = 10, energy = 0, bomb = 5, bio = 5, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/helmet/scp/donor
 	name = "\improper tactical helmet"

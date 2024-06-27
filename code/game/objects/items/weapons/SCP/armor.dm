@@ -94,6 +94,14 @@
 	armor = list(melee = 40, bullet = 65, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
+/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos/pilot
+	name = "Chaos Insurgency pilot vest"
+	desc = "A light, agile-purposed vest with barely any plating, meant for pilots who need the manueverability, but also need protection. It's usually used by russian military forces, but is used by the Chaos Insurgency."
+	icon_state = "ci_pilot_vest"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO
+	cold_protection = UPPER_TORSO | LOWER_TORSO
+	armor = list(melee = 15, bullet = 25, laser = 10, energy = 0, bomb = 5, bio = 5, rad = 10)
+
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
 	name = "armored vest"
 	desc = "A synthetic armor vest designed for MTF unit Eta-10."

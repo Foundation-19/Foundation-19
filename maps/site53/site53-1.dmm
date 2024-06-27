@@ -1729,12 +1729,6 @@
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/simulated/floor,
 /area/site53/lhcz/maintenance)
-"bQK" = (
-/obj/structure/table/glass,
-/obj/item/storage/firstaid/combat,
-/obj/item/device/scanner/health,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/lhcz/scp049containment)
 "bQS" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7692,10 +7686,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp1102room)
-"ihI" = (
-/obj/structure/table/woodentable/walnut,
-/turf/simulated/floor/wood/walnut,
-/area/site53/lhcz/scp049containment)
 "ijv" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/mining/miningops)
@@ -19969,6 +19959,10 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
 /area/site53/lhcz/scp895)
+"vWW" = (
+/obj/structure/table/woodentable/walnut,
+/turf/simulated/floor/wood/walnut,
+/area/site53/lhcz/scp049containment)
 "vXg" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "CDCZ Luxury Bedroom"
@@ -20211,6 +20205,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
+"wrb" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/combat,
+/obj/item/device/scanner/health,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/lhcz/scp049containment)
 "wro" = (
 /obj/structure/closet,
 /obj/item/device/camera,
@@ -73258,7 +73258,7 @@ iMK
 vxL
 aDa
 rXQ
-ihI
+vWW
 aDa
 vSe
 nOi
@@ -75579,7 +75579,7 @@ aDa
 pkT
 bnP
 goX
-bQK
+wrb
 dwI
 kFY
 mZc

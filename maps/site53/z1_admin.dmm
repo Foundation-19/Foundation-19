@@ -10,10 +10,10 @@
 /obj/machinery/door/blast/shutters{
 	dir = 4;
 	explosion_resistance = 100;
-	id_tag = "helicopter-left";
-	name = "MTF Helicopter"
+	id_tag = "cihelicopter-left";
+	name = "Military Helicopter"
 	},
-/turf/simulated/floor/shuttle/black,
+/turf/simulated/floor/tiled/steel_ridged,
 /area/site53/tram/ci)
 "af" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -6612,7 +6612,7 @@
 	id_tag = "cihelicopter-right";
 	name = "Military Helicopter"
 	},
-/turf/simulated/floor/shuttle/black,
+/turf/simulated/floor/tiled/steel_ridged,
 /area/site53/tram/ci)
 "sN" = (
 /obj/machinery/door/window/brigdoor/eastright{
@@ -8388,7 +8388,7 @@
 "xm" = (
 /obj/machinery/computer/shuttle_control{
 	shuttle_tag = "Chaos Insurgency Helicopter";
-	name = "Helicopter Control Console"
+	name = "Military Helicopter Control Console"
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/ci)
@@ -9367,9 +9367,10 @@
 /area/centcom)
 "Ad" = (
 /obj/machinery/button/blast_door{
-	id_tag = "helicopter-left";
-	name = "MTF Helicopter Side Doors";
-	dir = 1
+	id_tag = "cihelicopter-left";
+	name = "Military Helicopter Side Doors";
+	dir = 1;
+	pixel_y = 8
 	},
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall,
@@ -15196,9 +15197,10 @@
 /area/centcom)
 "RC" = (
 /obj/machinery/button/blast_door{
-	id_tag = "helicopter-right";
+	id_tag = "cihelicopter-right";
 	name = "Military Helicopter Side Doors";
-	dir = 1
+	dir = 1;
+	pixel_y = 8
 	},
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall,
