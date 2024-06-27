@@ -1023,11 +1023,6 @@
 	icon_state = "exam_room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/medical/isolation
-	name = "\improper Isolation Quarantine"
-	icon_state = "medbay3"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/medical/mentalhealth/isolation
 	name = "\improper Virology"
 	icon_state = "medbay3"

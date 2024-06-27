@@ -386,10 +386,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	name = "Syringe (SCP-###)"
 	desc = "Contains a strange, crimson substance. The label appears to be partially scratched out."
 
-/obj/item/reagent_containers/syringe/scp008/clean
-	name = "Syringe (SCP-008)"
-	desc = "Contains a strange, crimson substance, it looks incredibly violent."
-
 /obj/item/reagent_containers/syringe/scp008/Initialize()
 	..()
 	reagents.add_reagent(/datum/reagent/scp008, 15)
@@ -424,3 +420,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	ChangeToHusk()
 	zombify()
+
+/obj/item/reagent_containers/syringe/scp008/clean
+	name = "Syringe (SCP-008)"
+	desc = "Contains a strange, crimson substance, it looks incredibly violent."

@@ -3941,7 +3941,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/highsecurity{
 	name = "Hallway"
 	},
@@ -55130,17 +55129,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/generalpurpose3)
-"vCz" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-2427-3"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/uhcz/hallways)
 "vCK" = (
 /obj/effect/floor_decal/corner/keter/border{
 	dir = 4
@@ -112094,7 +112082,7 @@ bSt
 bSt
 bSt
 bSt
-vCz
+alk
 bSt
 bSt
 bSt

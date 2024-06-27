@@ -1820,10 +1820,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/roboticsupr)
-"ff" = (
-/obj/structure/disposalpipe/junction,
-/turf/unsimulated/mineral,
-/area/space)
 "fj" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 9
@@ -2561,13 +2557,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"iB" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "iG" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5116,13 +5105,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uez/bridge)
-"qW" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "qZ" = (
 /turf/space,
 /turf/simulated/floor/reinforced,
@@ -11655,10 +11637,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
-"KZ" = (
-/obj/structure/disposalpipe/segment,
-/turf/unsimulated/mineral,
-/area/space)
 "La" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border,
@@ -11988,11 +11966,9 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/mentalhealth/office)
 "LU" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/unsimulated/mineral,
-/area/space)
+/obj/structure/ladder/up,
+/turf/simulated/floor/plating,
+/area/site53/entrancezone/substation)
 "LV" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -42643,8 +42619,8 @@ dA
 dA
 dA
 dA
-qW
-iB
+dA
+dA
 dA
 dA
 dA
@@ -42899,9 +42875,9 @@ dA
 dA
 dA
 dA
-qW
-ff
-ty
+dA
+dA
+dA
 dA
 dA
 dA
@@ -43150,13 +43126,13 @@ ZD
 is
 dA
 dA
-qW
-KZ
-KZ
-KZ
-KZ
-KZ
-ty
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -43407,7 +43383,7 @@ yC
 is
 dA
 dA
-LU
+dA
 dA
 dA
 dA
@@ -43664,7 +43640,7 @@ is
 is
 dA
 dA
-LU
+dA
 dA
 dA
 dA
@@ -43914,14 +43890,14 @@ NQ
 bB
 ty
 dA
-KZ
-KZ
-KZ
-KZ
-KZ
-KZ
-KZ
-ty
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -50334,7 +50310,7 @@ HI
 is
 jW
 PN
-PN
+LU
 Xz
 of
 om
