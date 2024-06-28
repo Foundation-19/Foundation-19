@@ -107,3 +107,8 @@
 	name = "corporate security cap"
 	desc = "It's field cap in corporate colors."
 	icon_state = "corpsec_soft"
+
+/obj/item/clothing/head/soft/dclass
+	name = "D-Class cap"
+	desc = "It's a peaked cap in a bland Class-D orange color, with the SCP logo on the front."
+	icon_state = "dclasssoft"

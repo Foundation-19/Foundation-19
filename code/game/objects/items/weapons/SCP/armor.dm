@@ -30,6 +30,15 @@
 	armor = list(melee = 60, bullet = 35, laser = 35, energy = 25, bomb = 30, bio = 15, rad = 10)
 	acid_resistance = 1.5
 
+/obj/item/clothing/suit/armor/vest/scp/medarmor/ruined
+	name = "ruined foundation security vest"
+	desc = "A heavy, wrecked armored vest. Worn by facility security, it has some durathread plating in it to make it durable against melee, which of itself has degraded due to age. Not to mention the two massive holes in the vest, whoever wore this definitely isn't alive anymore."
+	icon_state = "forgotten-guard-armor"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO
+	cold_protection = UPPER_TORSO | LOWER_TORSO
+	armor = list(melee = 30, bullet = 15, laser = 15, energy = 10, bomb = 15, bio = 5, rad = 5)
+	acid_resistance = 1.5
+
 /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
 	name = "foundation security medical vest"
 	desc = "A light armored vest, with a medical pauldron. Worn by facility security in the Combat Medic division. This one's armor padding has been lessened to cope with faster response."

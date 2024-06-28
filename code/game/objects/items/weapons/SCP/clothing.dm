@@ -45,6 +45,11 @@
 	desc = "A bright orange jumpsuit, indicative of Class D personnel. This one has a quite well-kempt turtleneck above the uniform."
 	icon_state = "dt"
 
+/obj/item/clothing/under/scp/dclass/janitor
+	name = "Janitorial D-Class uniform"
+	desc = "A bright orange jumpsuit, indicative of Class D personnel. This one only has the orange colors on the sleeves, indicating it's a janitor, but still D-Class scum."
+	icon_state = "dj"
+
 /obj/item/clothing/under/scp/eclass
 	name = "Solitary D-Class uniform"
 	desc = "A dark grey jumpsuit, indicative of trouble-making Class D personnel."

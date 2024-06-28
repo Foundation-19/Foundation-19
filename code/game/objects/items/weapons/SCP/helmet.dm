@@ -8,6 +8,16 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = "Toggle Visor"
 
+/obj/item/clothing/head/helmet/scp/security/ruined
+	name = "\improper ruined foundation security helmet"
+	desc = "A heavy non-descript helmet with built-in padding, and armor, however age has deminished it's quality, scratching the paint off. It has a cracked, and shattered poly-carbonate yellow riot visor on it, devestating blow to it's previous owner."
+	icon_state = "forgotten-guard-helm"
+	body_parts_covered = HEAD
+	armor = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 15, bio = 5, rad = 5)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS|BLOCKHAIR
+	action_button_name = null
+
 /obj/item/clothing/head/helmet/scp/security/medic
 	name = "\improper foundation security medical helmet"
 	desc = "A light non-descript helmet with built-in padding, and armor. It has a red cross on the front, and a red visor. Durability lessened to cope with faster response."

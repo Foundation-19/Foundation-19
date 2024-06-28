@@ -18,12 +18,17 @@
 /decl/hierarchy/outfit/job/civ/classd/high
 	name = OUTFIT_JOB_NAME("High-Security Class D")
 	uniform = /obj/item/clothing/under/scp/hdclass
-	shoes = /obj/item/clothing/shoes/workboots
-	l_ear = null
 	l_pocket = /obj/item/paper/dclass_orientation
 	id_type = /obj/item/card/id/classd
-	pda_type = null
-	back = null
+
+/decl/hierarchy/outfit/job/civ/classd/janitor
+	name = OUTFIT_JOB_NAME("Class D Janitor")
+	uniform = /obj/item/clothing/under/scp/dclass/janitor
+	head = /obj/item/clothing/head/soft/dclass
+	glasses = /obj/item/clothing/glasses/hud/janitor
+	shoes = /obj/item/clothing/shoes/galoshes
+	l_pocket = /obj/item/paper/dclass_orientation
+	id_type = /obj/item/card/id/classd/janitor
 
 /decl/hierarchy/outfit/job/civ/janitor
 	name = OUTFIT_JOB_NAME("Janitor")

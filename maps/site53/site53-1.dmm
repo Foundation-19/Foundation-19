@@ -485,6 +485,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"aAZ" = (
+/obj/item/organ/internal/eyes,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "aBF" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 4
@@ -896,6 +901,10 @@
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
+/obj/item/device/lightreplacer,
+/obj/item/device/lightreplacer,
+/obj/item/device/lightreplacer,
+/obj/effect/floor_decal/corner/purple/full,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "aWF" = (
@@ -5423,6 +5432,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Lowerresearchwing)
+"fvN" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "fxu" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 9
@@ -5584,7 +5599,10 @@
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "fEt" = (
-/obj/structure/reagent_dispensers/watertank,
+/obj/structure/closet/l3closet/dclass,
+/obj/effect/floor_decal/corner/purple/full,
+/obj/item/clothing/under/scp/dclass/janitor,
+/obj/item/clothing/head/soft/dclass,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "fFH" = (
@@ -7060,6 +7078,7 @@
 /area/site53/llcz/dclass/primaryhallway)
 "has" = (
 /obj/item/ammo_casing/pistol/used,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "hat" = (
@@ -7151,6 +7170,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/item/remains/human,
 /obj/item/clothing/under/rank/security/lcz,
+/obj/item/clothing/suit/armor/vest/scp/medarmor/ruined,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "hcU" = (
@@ -9564,13 +9584,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/hallways)
-"jEj" = (
-/obj/structure/table/rack,
-/obj/item/clothing/head/soft/purple,
-/obj/item/clothing/head/soft/purple,
-/obj/item/clothing/head/soft/purple,
-/turf/simulated/floor/tiled,
-/area/site53/llcz/dclass/janitorial)
 "jEB" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -10347,7 +10360,7 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/lhcz/scp895)
 "kqW" = (
-/obj/item/clothing/head/helmet/scp/security/cadet,
+/obj/item/clothing/head/helmet/scp/security/ruined,
 /turf/simulated/floor,
 /area/site53/llcz/mine/unexplored)
 "krx" = (
@@ -11848,6 +11861,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
+"lXJ" = (
+/obj/item/organ/internal/liver,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "lYE" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 8
@@ -13205,6 +13223,11 @@
 "nhf" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/briefing)
+"nhK" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "nhL" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Hallway"
@@ -14339,7 +14362,7 @@
 /obj/structure/table/rack,
 /obj/item/clothing/suit/storage/toggle/hoodie/orange,
 /obj/item/clothing/shoes/hightops/orange,
-/obj/item/clothing/head/soft/orange,
+/obj/item/clothing/head/soft/dclass,
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
 "oyC" = (
@@ -14651,10 +14674,10 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/item/device/lightreplacer,
-/obj/item/device/lightreplacer,
-/obj/item/device/lightreplacer,
-/obj/structure/table/rack,
+/obj/structure/closet/l3closet/dclass,
+/obj/effect/floor_decal/corner/purple/full,
+/obj/item/clothing/under/scp/dclass/janitor,
+/obj/item/clothing/head/soft/dclass,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "oMk" = (
@@ -16957,6 +16980,12 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/uhcz/scp8containment)
+"rnJ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/organ/internal/lungs,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "rnQ" = (
 /obj/effect/floor_decal/corner/research/border,
 /obj/machinery/light,
@@ -18875,6 +18904,11 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"twF" = (
+/obj/item/organ/internal/heart,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "txJ" = (
 /obj/effect/landmark/start{
 	name = "Junior Robotics Technician"
@@ -18954,7 +18988,7 @@
 /area/site53/reswing/lowres/Anomaly)
 "tDF" = (
 /obj/effect/decal/cleanable/blood,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/cadet,
+/obj/item/clothing/glasses/sunglasses,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "tEy" = (
@@ -19134,13 +19168,14 @@
 /turf/simulated/floor/wood/yew,
 /area/site53/llcz/dclass/luxuryhall)
 "tNL" = (
+/obj/machinery/light{
+	dir = 4
+	},
 /obj/structure/table/rack,
 /obj/random/soap,
 /obj/random/soap,
 /obj/random/soap,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/effect/floor_decal/corner/purple/full,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "tNR" = (
@@ -19389,6 +19424,11 @@
 	dir = 8
 	},
 /area/site53/lhcz/scp049containment)
+"tZa" = (
+/obj/item/organ/internal/augment/active/hud/security,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "tZy" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -20368,7 +20408,8 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
 "vdz" = (
-/obj/structure/closet/crate/trashcart,
+/obj/structure/reagent_dispensers/watertank,
+/obj/effect/floor_decal/corner/purple/full,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "veA" = (
@@ -20862,6 +20903,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
+"vEm" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item{
+	desc = "A FN P90, bent out of shape, and heat warped. Caked in blood, it's unusable. The magazines no longer fit in it, registering this thing useless. Worn to all hell, whoever used this must've fucked up somehow.";
+	icon = 'icons/obj/gun.dmi';
+	icon_state = "p90-empty";
+	name = "destroyed FN P90"
+	},
+/turf/simulated/floor/exoplanet/desert,
+/area/site53/llcz/mine/unexplored)
 "vEn" = (
 /obj/structure/closet/crate/hydroponics/prespawned,
 /obj/machinery/light,
@@ -20872,6 +20923,7 @@
 /obj/structure/janitorialcart,
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
+/obj/effect/floor_decal/corner/purple/full,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/janitorial)
 "vEY" = (
@@ -27839,7 +27891,7 @@ uRY
 vED
 eGa
 oMj
-jEj
+fEt
 fEt
 boZ
 gGp
@@ -33687,7 +33739,7 @@ hIH
 hIH
 lam
 lam
-bVy
+tZa
 bVy
 uVW
 lIO
@@ -33943,10 +33995,10 @@ hIH
 hIH
 lam
 lam
-bVy
+twF
 has
 kqW
-bVy
+qtn
 fGo
 bZC
 nJE
@@ -34200,10 +34252,10 @@ lam
 lam
 lam
 bVy
-bVy
+fvN
 hcP
-bVy
-qtn
+vEm
+rnJ
 lSp
 xCe
 kJy
@@ -34457,9 +34509,9 @@ emk
 lam
 lam
 lam
-bVy
-bVy
-bVy
+aAZ
+nhK
+lXJ
 lqj
 lIO
 poC
