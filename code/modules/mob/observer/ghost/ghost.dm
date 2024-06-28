@@ -276,9 +276,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Follow"
 	set desc = "Follow a player"
 
-	if(src)
-		to_chat(src, SPAN_WARNING("YOU CANT FOLLOW YOURSELF!"))
-		return
 	if(!fh)
 		to_chat(src, SPAN_WARNING("No active players found."))
 		return
