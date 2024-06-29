@@ -13374,7 +13374,6 @@
 /obj/item/device/flashlight/pen,
 /obj/item/clothing/accessory/storage/white_vest,
 /obj/item/clothing/accessory/stethoscope,
-/obj/item/clothing/suit/armor/pcarrier/light,
 /obj/structure/closet/secure_closet/paramedic{
 	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
@@ -13592,7 +13591,6 @@
 /obj/item/device/flashlight/pen,
 /obj/item/clothing/accessory/storage/white_vest,
 /obj/item/clothing/accessory/stethoscope,
-/obj/item/clothing/suit/armor/pcarrier/light,
 /obj/structure/closet/secure_closet/paramedic{
 	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
