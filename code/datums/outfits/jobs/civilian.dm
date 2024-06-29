@@ -28,7 +28,6 @@
 	glasses = /obj/item/clothing/glasses/hud/janitor
 	shoes = /obj/item/clothing/shoes/galoshes
 	l_pocket = /obj/item/paper/dclass_orientation
-	id_type = /obj/item/card/id/classd/janitor
 
 /decl/hierarchy/outfit/job/civ/janitor
 	name = OUTFIT_JOB_NAME("Janitor")

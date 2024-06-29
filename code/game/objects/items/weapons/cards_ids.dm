@@ -992,46 +992,6 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	job_access_type = /datum/job/classd
 	class = CLASS_D
 
-/obj/item/card/id/classd/janitor
-	name = "Class-D Janitor ID"
-	desc = "An ID card issued to Class-D Foundation personnel, with the side job of Janitorial."
-	icon_state = "classdjan"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/classd/janitor
-	class = CLASS_D
-
-/obj/item/card/id/classd/medic
-	name = "Class-D Clinic Doctor ID"
-	desc = "An ID card issued to Class-D Foundation personnel, with the side job of Medical."
-	icon_state = "classdmed"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/classd/medic
-	class = CLASS_D
-
-/obj/item/card/id/classd/cook
-	name = "Class-D Cook ID"
-	desc = "An ID card issued to Class-D Foundation personnel, with the side job of Cooking."
-	icon_state = "classdcook"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/classd/cook
-	class = CLASS_D
-
-/obj/item/card/id/classd/botany
-	name = "Class-D Botanist ID"
-	desc = "An ID card issued to Class-D Foundation personnel, with the side job of Hydroponics."
-	icon_state = "classdbot"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/classd/botany
-	class = CLASS_D
-
-/obj/item/card/id/classd/miner
-	name = "Class-D Miner ID"
-	desc = "An ID card issued to Class-D Foundation personnel, with the side job of Excavating."
-	icon_state = "classdmine"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/classd/miner
-	class = CLASS_D
-
 // LOGISTICS
 
 /obj/item/card/id/logoff

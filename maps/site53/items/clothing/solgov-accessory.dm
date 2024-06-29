@@ -117,10 +117,6 @@ armour attachments
 	icon_state = "solflag"
 	slot = ACCESSORY_SLOT_ARMOR_M
 
-/obj/item/clothing/accessory/armor/tag/base/goc
-	name = "\improper UNGOC Flag"
-	desc = "An emblem depicting the UNGOC's flag."
-
 /obj/item/clothing/accessory/armor/tag/base/sec
 	name = "\improper GUARD tag"
 	desc = "An armor tag with the word GUARD printed in silver lettering on it."
@@ -128,13 +124,6 @@ armour attachments
 
 /obj/item/clothing/accessory/armor/tag/base/com
 	icon_state = "comtag"
-
-/obj/item/clothing/accessory/armor/tag/base/com/goc
-	name = "\improper UNGOC tag"
-	desc = "An armor tag with the words UNITED NATIONS - GLOBAL OCCULT COALITION printed in gold lettering on it."
-/obj/item/clothing/accessory/armor/tag/base/com/uiu
-	name = "\improper FBI tag"
-	desc = "An armor tag with the words FEDERAL BUREAU OF INVESTIGATION printed in gold lettering on it."
 
 /obj/item/clothing/accessory/armor/tag/base/com/guardcomm
 	name = "\improper GUARD COMMANDER tag"
@@ -144,9 +133,24 @@ armour attachments
 	name = "\improper ZONE COMMANDING OFFICER tag"
 	desc = "An armor tag with the words ZONE COMMAND printed in gold lettering on it."
 
-/obj/item/clothing/accessory/armor/helmcover/blue/un
-	name = "peacekeeper helmet cover"
-	desc = "A fabric cover for armored helmets. This one is in UN peacekeeper colors."
+/obj/item/clothing/accessory/armor/unobtainable/tag/base
+	icon_override = 'maps/torch/icons/obj/solgov-accessory.dmi'
+	icon = 'maps/torch/icons/obj/solgov-accessory.dmi'
+	accessory_icons = list(slot_tie_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_w_uniform_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_wear_suit_str = 'maps/torch/icons/mob/solgov-accessory.dmi')
+	icon_state = "solflag"
+	slot = ACCESSORY_SLOT_ARMOR_M
+
+/obj/item/clothing/accessory/armor/unobtainable/tag/base/goc
+	name = "\improper UNGOC Flag"
+	desc = "An emblem depicting the UNGOC's flag."
+
+/obj/item/clothing/accessory/armor/unobtainable/tag/base/com/goc
+	name = "\improper UNGOC tag"
+	desc = "An armor tag with the words UNITED NATIONS - GLOBAL OCCULT COALITION printed in gold lettering on it."
+
+/obj/item/clothing/accessory/armor/unobtainable/tag/base/com/uiu
+	name = "\improper FBI tag"
+	desc = "An armor tag with the words FEDERAL BUREAU OF INVESTIGATION printed in gold lettering on it."
 
 /**************
 department tags
