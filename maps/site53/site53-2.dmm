@@ -30254,10 +30254,12 @@
 /turf/simulated/floor,
 /area/site53/llcz/entrance_checkpoint)
 "gKM" = (
-/obj/effect/landmark/start{
-	name = "HCZ Sergeant"
-	},
 /obj/structure/bed/chair/office/comfy,
+/obj/effect/landmark/start{
+	name = "HCZ Sergeant";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "hczsargespawn"
+	},
 /turf/simulated/floor/carpet/red,
 /area/site53/lhcz/hczguardgear)
 "gKP" = (
@@ -30711,7 +30713,9 @@
 /area/site53/uhcz/scp106containment)
 "gWM" = (
 /obj/effect/landmark/start{
-	name = "HCZ Guard"
+	name = "HCZ Guard";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "hczguardspawn"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -33742,7 +33746,9 @@
 /area/site53/uhcz/scp247observation)
 "iEb" = (
 /obj/effect/landmark/start{
-	name = "HCZ Guard"
+	name = "HCZ Guard";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "hczguardspawn"
 	},
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
@@ -34568,13 +34574,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
-"jdL" = (
-/obj/structure/bed/chair/office/comfy,
-/obj/effect/landmark/start{
-	name = "HCZ Sergeant"
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/lhcz/hczguardgear)
 "jee" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
@@ -61250,7 +61249,9 @@
 "xZB" = (
 /obj/structure/bed/chair/office/comfy,
 /obj/effect/landmark/start{
-	name = "HCZ Zone Lieutenant"
+	name = "HCZ Zone Senior Lieutenant";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "hczcommspawn"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
@@ -106102,7 +106103,7 @@ atV
 azA
 gID
 aDK
-jdL
+gKM
 hSN
 szK
 nbE

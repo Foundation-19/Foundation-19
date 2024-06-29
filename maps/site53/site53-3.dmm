@@ -3564,8 +3564,8 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/op2)
 "md" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/carpet/blue2,
+/obj/structure/table/woodentable_reinforced,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "me" = (
 /obj/structure/cable/green{
@@ -3672,7 +3672,7 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "mu" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -4064,16 +4064,22 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/repoffice/ethics)
 "nt" = (
-/obj/machinery/door/airlock/glass/medical{
-	name = "Medical Office";
-	req_access = list("ACCESS_MEDICAL_LEVEL1")
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/airlock/glass/security{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Security Office"
+	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "medseclock";
+	name = "Medical Security Office Shutters";
+	icon_state = "shutter0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -6679,7 +6685,7 @@
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/medical/infirmary)
 "uH" = (
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "uJ" = (
 /obj/effect/floor_decal/corner/paleblue/border{
@@ -7151,9 +7157,12 @@
 /turf/simulated/floor/plating,
 /area/site53/medical/infirmary)
 "wd" = (
-/obj/structure/table/woodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/carpet/blue2,
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 18
+	},
+/obj/structure/table/woodentable_reinforced,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "we" = (
 /obj/machinery/disposal,
@@ -7436,7 +7445,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "wM" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -7576,7 +7585,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "xo" = (
 /obj/machinery/light{
@@ -7790,10 +7799,24 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
 "xZ" = (
-/obj/structure/flora/pottedplant/floorleaf,
 /obj/machinery/vending/wallmed1{
 	dir = 8;
 	pixel_x = 22
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec1";
+	icon_opened = "secopen";
+	icon_off = "secoff";
+	icon_locked = "sec1";
+	icon_closed = "sec";
+	name = "department security locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/item/clothing/suit/armor/pcarrier/medium,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/device/radio/headset/headset_sec_ecz,
+/obj/item/clothing/accessory/armband/medblue{
+	name = "medical guard armband"
 	},
 /turf/simulated/floor/wood,
 /area/site53/medical/exam_room)
@@ -8526,11 +8549,18 @@
 	dir = 4
 	},
 /obj/effect/landmark/start{
-	name = "Medical Doctor";
-	icon_state = "meddocspawn";
-	icon = 'icons/effects/landmarks.dmi'
+	name = "EZ Senior Agent";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "ezseniorspawn"
 	},
-/turf/simulated/floor/carpet/blue2,
+/obj/machinery/button/blast_door{
+	id_tag = "medseclock";
+	name = "Medical Security Office Shutters Control";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	pixel_x = -25;
+	dir = 4
+	},
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "An" = (
 /obj/effect/floor_decal/corner/lime/border{
@@ -12899,10 +12929,10 @@
 	pixel_x = -25
 	},
 /obj/machinery/requests_console{
-	department = "Medical Department";
+	department = "Medical Security Office";
 	departmentType = 7;
 	pixel_y = -32;
-	name = "Medical Department Requests Console"
+	name = "Medical Security Office Requests Console"
 	},
 /turf/simulated/floor/wood,
 /area/site53/medical/exam_room)
@@ -15736,13 +15766,13 @@
 /turf/simulated/floor/grass,
 /area/site53/medical/infirmary)
 "Vj" = (
-/obj/structure/table/woodentable,
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/machinery/camera/network/entrance{
-	c_tag = "Medical Office"
+	c_tag = "Medical Security Office"
 	},
-/turf/simulated/floor/carpet/blue2,
+/obj/structure/table/woodentable_reinforced,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "Vl" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -15937,8 +15967,14 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/exam_room)
 "VT" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "medseclock";
+	name = "Medical Security Office Shutters";
+	icon_state = "shutter0";
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -16554,11 +16590,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "XP" = (
-/obj/structure/table/woodentable,
 /obj/structure/flora/pottedplant/deskfern{
 	pixel_y = 14
 	},
-/turf/simulated/floor/carpet/blue2,
+/obj/structure/table/woodentable_reinforced,
+/turf/simulated/floor/carpet/red,
 /area/site53/medical/exam_room)
 "XR" = (
 /obj/effect/floor_decal/corner/paleblue/border{
