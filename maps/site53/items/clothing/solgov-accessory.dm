@@ -117,21 +117,8 @@ armour attachments
 	icon_state = "solflag"
 	slot = ACCESSORY_SLOT_ARMOR_M
 
-/obj/item/clothing/accessory/armor/tag/base/sec
-	name = "\improper GUARD tag"
-	desc = "An armor tag with the word GUARD printed in silver lettering on it."
-	icon_state = "sectag"
-
 /obj/item/clothing/accessory/armor/tag/base/com
 	icon_state = "comtag"
-
-/obj/item/clothing/accessory/armor/tag/base/com/guardcomm
-	name = "\improper GUARD COMMANDER tag"
-	desc = "An armor tag with the words GUARD COMMANDER printed in gold lettering on it."
-
-/obj/item/clothing/accessory/armor/tag/base/com/zonecomm
-	name = "\improper ZONE COMMANDING OFFICER tag"
-	desc = "An armor tag with the words ZONE COMMAND printed in gold lettering on it."
 
 /obj/item/clothing/accessory/armor/unobtainable/tag/base
 	icon_override = 'maps/torch/icons/obj/solgov-accessory.dmi'
@@ -151,6 +138,19 @@ armour attachments
 /obj/item/clothing/accessory/armor/unobtainable/tag/base/com/uiu
 	name = "\improper FBI tag"
 	desc = "An armor tag with the words FEDERAL BUREAU OF INVESTIGATION printed in gold lettering on it."
+
+/obj/item/clothing/accessory/armor/unobtainable/tag/base/com/guardcomm
+	name = "\improper GUARD COMMANDER tag"
+	desc = "An armor tag with the words GUARD COMMANDER printed in gold lettering on it."
+
+/obj/item/clothing/accessory/armor/unobtainable/tag/base/com/zonecomm
+	name = "\improper ZONE COMMANDING OFFICER tag"
+	desc = "An armor tag with the words ZONE COMMAND printed in gold lettering on it."
+
+/obj/item/clothing/accessory/armor/unobtainable/tag/base/sec
+	name = "\improper GUARD tag"
+	desc = "An armor tag with the word GUARD printed in silver lettering on it."
+	icon_state = "sectag"
 
 /**************
 department tags
