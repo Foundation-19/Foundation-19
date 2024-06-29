@@ -1726,6 +1726,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/landmark/start{
+	name = "Chemist";
+	icon_state = "medchemspawn";
+	icon = 'icons/effects/landmarks.dmi'
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
 "en" = (
@@ -2008,6 +2013,14 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/securitypost)
+"fI" = (
+/obj/effect/landmark/start{
+	name = "Communications Officer";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "commsoffspawn"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "fJ" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -2459,7 +2472,9 @@
 "hl" = (
 /obj/structure/bed/chair/office/comfy/beige,
 /obj/effect/landmark/start{
-	name = "Chemist"
+	name = "Chemist";
+	icon_state = "medchemspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/chemistry)
@@ -3546,11 +3561,13 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/effect/landmark/start{
-	name = "Medical Doctor"
-	},
 /obj/effect/floor_decal/corner/paleblue/bordercee{
 	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Medical Doctor";
+	icon_state = "meddocspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
@@ -3638,12 +3655,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"mr" = (
-/obj/effect/landmark/start{
-	name = "Medical Intern"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/medical/exam_room)
 "ms" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -3704,6 +3715,11 @@
 /area/site53/entrancezone/hallway)
 "mA" = (
 /obj/structure/chair/sofa/corp/right,
+/obj/effect/landmark/start{
+	name = "Medical Intern";
+	icon_state = "medinternspawn";
+	icon = 'icons/effects/landmarks.dmi'
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
 "mB" = (
@@ -3715,12 +3731,6 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"mC" = (
-/obj/effect/landmark/start{
-	name = "Medical Doctor"
-	},
-/turf/simulated/floor/tiled/white/small,
-/area/site53/medical/equipstorage)
 "mD" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
@@ -6048,11 +6058,13 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/morgue)
 "sU" = (
-/obj/effect/landmark/start{
-	name = "Emergency Medical Technician"
-	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Emergency Medical Technician";
+	icon_state = "medemtspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
@@ -6976,9 +6988,6 @@
 /obj/structure/bed/chair/office/comfy/black{
 	dir = 8
 	},
-/obj/effect/landmark/start{
-	name = "Medical Doctor"
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/morgue)
 "vK" = (
@@ -7093,6 +7102,11 @@
 "vX" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Chemist";
+	icon_state = "medchemspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
@@ -7728,10 +7742,12 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/landmark/start{
-	name = "Medical Doctor"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/landmark/start{
+	name = "Medical Doctor";
+	icon_state = "meddocspawn";
+	icon = 'icons/effects/landmarks.dmi'
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
 "xV" = (
@@ -7753,6 +7769,11 @@
 "xX" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Surgeon";
+	icon_state = "medsurgspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
@@ -8493,7 +8514,9 @@
 	dir = 4
 	},
 /obj/effect/landmark/start{
-	name = "Medical Intern"
+	name = "Medical Doctor";
+	icon_state = "meddocspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/exam_room)
@@ -8546,7 +8569,9 @@
 "Aw" = (
 /obj/structure/chair/sofa/corp/right,
 /obj/effect/landmark/start{
-	name = "Medical Intern"
+	name = "Medical Doctor";
+	icon_state = "meddocspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
@@ -9213,7 +9238,9 @@
 	dir = 1
 	},
 /obj/effect/landmark/start{
-	name = "Psychiatrist"
+	name = "Psychiatrist";
+	icon_state = "medpsychspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/medical/mentalhealth/office)
@@ -11543,7 +11570,9 @@
 	dir = 1
 	},
 /obj/effect/landmark/start{
-	name = "Assistant Medical Director"
+	name = "Assistant Medical Director";
+	icon_state = "medacmospawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue3,
 /area/site53/medical/infirmary)
@@ -12345,11 +12374,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "LB" = (
-/obj/effect/landmark/start{
-	name = "Surgeon"
-	},
 /obj/effect/floor_decal/corner/lime/bordercorner{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Surgeon";
+	icon_state = "medsurgspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/medical/surgery/op1)
@@ -13659,15 +13690,17 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 9
 	},
-/obj/effect/landmark/start{
-	name = "Emergency Medical Technician"
-	},
 /obj/machinery/vending/wallmed1{
 	name = "Emergency NanoMed";
 	pixel_y = 28
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Emergency Medical Technician";
+	icon_state = "medemtspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
@@ -14488,6 +14521,15 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface/west)
+"Ry" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/effect/landmark/start{
+	name = "Communications Technician";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "commstechspawn"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/upper_surface/commstower)
 "Rz" = (
 /obj/machinery/papershredder,
 /obj/machinery/camera/network/entrance{
@@ -14615,6 +14657,8 @@
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
 	},
+/obj/item/storage/firstaid/surgery,
+/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/equipstorage)
 "RQ" = (
@@ -14777,7 +14821,9 @@
 "So" = (
 /obj/structure/chair/sofa/corp/left,
 /obj/effect/landmark/start{
-	name = "Medical Doctor"
+	name = "Medical Doctor";
+	icon_state = "meddocspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
@@ -15423,11 +15469,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "Ut" = (
-/obj/effect/landmark/start{
-	name = "Surgeon"
-	},
 /obj/effect/floor_decal/corner/lime/bordercorner{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Surgeon";
+	icon_state = "medsurgspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/medical/surgery/op2)
@@ -15561,12 +15609,16 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "UP" = (
-/obj/structure/bed/chair/office/comfy/blue,
+/obj/structure/chair/sofa/corp/left{
+	dir = 1
+	},
 /obj/effect/landmark/start{
-	name = "Medical Doctor"
+	name = "Surgeon";
+	icon_state = "medsurgspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/site53/medical/infirmreception/waiting)
+/area/site53/medical/equipstorage)
 "UR" = (
 /obj/structure/cable{
 	d1 = 16;
@@ -15587,12 +15639,14 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
 	},
-/obj/effect/landmark/start{
-	name = "Emergency Medical Technician"
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30;
 	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Emergency Medical Technician";
+	icon_state = "medemtspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
@@ -16375,7 +16429,9 @@
 "Xv" = (
 /obj/structure/bed/chair/office/comfy/blue,
 /obj/effect/landmark/start{
-	name = "Medical Intern"
+	name = "Medical Intern";
+	icon_state = "medinternspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/infirmreception/waiting)
@@ -16400,6 +16456,11 @@
 /obj/structure/chair/sofa/corp/left,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Medical Intern";
+	icon_state = "medinternspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/equipstorage)
@@ -16641,9 +16702,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/landmark/start{
-	name = "Medical Doctor"
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
@@ -16658,6 +16716,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Medical Doctor";
+	icon_state = "meddocspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
@@ -16764,6 +16827,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/landmark/start{
+	name = "Medical Doctor";
+	icon_state = "meddocspawn";
+	icon = 'icons/effects/landmarks.dmi'
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/medical/infirmreception/waiting)
 "YB" = (
@@ -38674,7 +38742,7 @@ hY
 MV
 kJ
 kJ
-mC
+kJ
 kJ
 kJ
 RP
@@ -41233,7 +41301,7 @@ dA
 hY
 mA
 sR
-vX
+UP
 xI
 Aw
 aE
@@ -43100,8 +43168,8 @@ TE
 TE
 TE
 TE
-wl
-wl
+TE
+TE
 wl
 Me
 FW
@@ -43357,9 +43425,9 @@ TE
 TE
 TE
 TE
-wl
 TE
-FW
+TE
+wl
 Gg
 FW
 rI
@@ -43615,10 +43683,10 @@ wl
 wl
 wl
 wl
-FW
-FW
-Gg
 wl
+wl
+Gg
+FW
 rI
 rI
 rI
@@ -43875,8 +43943,8 @@ Ni
 Ni
 Ni
 if
+FW
 wl
-TE
 kG
 mf
 jb
@@ -44132,8 +44200,8 @@ FW
 FW
 FW
 FW
+FW
 wl
-TE
 kG
 mf
 mf
@@ -44390,7 +44458,7 @@ wl
 wl
 wl
 wl
-TE
+wl
 kG
 PK
 qF
@@ -45187,7 +45255,7 @@ cc
 Lm
 ZF
 bn
-oJ
+Ry
 vt
 ca
 YT
@@ -45442,9 +45510,9 @@ cc
 cc
 cc
 cc
-bn
+fI
 sM
-oJ
+Ry
 vt
 Ky
 YT
@@ -45701,7 +45769,7 @@ cc
 Lm
 bn
 bn
-oJ
+Ry
 vt
 ca
 YT
@@ -47159,7 +47227,7 @@ zd
 eJ
 EZ
 AF
-UP
+Xv
 IR
 jN
 Ti
@@ -47403,7 +47471,7 @@ XF
 uu
 VK
 xt
-mr
+dM
 Hz
 dM
 YG

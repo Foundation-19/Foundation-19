@@ -7923,7 +7923,9 @@
 /area/site53/lhcz/hallway)
 "hPG" = (
 /obj/effect/landmark/start{
-	name = "Class D"
+	name = "Class D";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "classdspawn"
 	},
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -8798,7 +8800,9 @@
 /area/site53/llcz/dclass/botany)
 "iQr" = (
 /obj/effect/landmark/start{
-	name = "Class D"
+	name = "Class D";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "classdspawn"
 	},
 /obj/machinery/camera/network/lcz{
 	dir = 4
@@ -15290,7 +15294,9 @@
 /area/site53/llcz/dclass/primaryhallway)
 "pBI" = (
 /obj/effect/landmark/start{
-	name = "Class D"
+	name = "Class D";
+	icon = 'icons/effects/landmarks.dmi';
+	icon_state = "classdspawn"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
