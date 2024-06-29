@@ -91,7 +91,7 @@
 		/obj/item/ammo_magazine/box/a556 = 16,
 		/obj/item/ammo_magazine/scp/usp45 = 12,
 		/obj/item/gun/projectile/pistol/mk9 = 4,
-		/obj/item/ammo_magazine/box/mk9 = 4,
+		/obj/item/ammo_magazine/box/a9mm = 4,
 		/obj/item/ammo_magazine/scp/mk9 = 8,
 		/obj/item/ammo_magazine/scp/p90_mag/ap = 24
 	)
