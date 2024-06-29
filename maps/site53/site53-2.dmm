@@ -32956,15 +32956,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
-"ies" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp106containment)
 "ieB" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 4
@@ -35588,7 +35579,7 @@
 	c_tag = "SCP-106 Upper Shield Power Maintenance";
 	dir = 1
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "jKc" = (
@@ -45130,10 +45121,6 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
-"oPV" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp106containment)
 "oQu" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -48705,7 +48692,7 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "qUx" = (
@@ -50521,6 +50508,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
+"rOM" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp106containment)
 "rPm" = (
 /obj/machinery/chem_master/condimaster,
 /turf/simulated/floor/tiled/monotile/white,
@@ -60817,6 +60808,15 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
+"xLG" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp106containment)
 "xLV" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -112469,7 +112469,7 @@ xrt
 snz
 cDZ
 frv
-oPV
+rOM
 xrt
 nJN
 oee
@@ -113240,7 +113240,7 @@ xrt
 oYK
 cPX
 frv
-ies
+xLG
 xrt
 nJN
 jZA

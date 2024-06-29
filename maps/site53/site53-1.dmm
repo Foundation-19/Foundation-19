@@ -1468,6 +1468,17 @@
 /obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/lhcz/scp895)
+"byt" = (
+/obj/structure/cable/green,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/obj/machinery/power/port_gen/pacman/mrs,
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uhcz/scp106containment)
 "byC" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/effect/floor_decal/corner/research/border{
@@ -3477,10 +3488,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
-"dwZ" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_titanium,
-/area/space)
 "dyp" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -4952,17 +4959,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
-"feU" = (
-/obj/structure/cable/green,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/status_display{
-	pixel_y = -32
-	},
-/obj/machinery/power/port_gen/pacman/super,
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "feV" = (
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/thick/botany,
@@ -7458,7 +7454,7 @@
 	c_tag = "SCP-106 Lower Shield Power Maintenance";
 	dir = 1
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "hww" = (
@@ -9602,7 +9598,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "jIX" = (
@@ -10843,7 +10839,7 @@
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "kTP" = (
@@ -10945,6 +10941,21 @@
 /obj/item/device/flashlight/lantern,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
+"lcR" = (
+/obj/structure/cable/cyan{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
+	},
+/obj/machinery/power/smes/buildable{
+	name = "Lower Shield power storage unit"
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uhcz/scp106containment)
 "len" = (
 /obj/machinery/light/small/red{
 	dir = 8;
@@ -12682,7 +12693,7 @@
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "mRf" = (
@@ -16677,19 +16688,7 @@
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/primaryhallway)
 "rej" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8";
-	d1 = 4;
-	d2 = 8
-	},
-/obj/machinery/power/smes/buildable{
-	name = "Lower Shield power storage unit"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/unsimulated/mineral,
 /area/site53/uhcz/scp106containment)
 "rel" = (
 /obj/machinery/shieldwallgen/online{
@@ -18619,8 +18618,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "tlN" = (
-/turf/unsimulated/mineral,
-/area/site53/uhcz/scp106containment)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
+/area/space)
 "tmt" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -21097,7 +21097,7 @@
 	d1 = 4;
 	d2 = 8
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "vTa" = (
 /obj/machinery/door/window/brigdoor/eastright,
@@ -22607,7 +22607,7 @@
 	c_tag = "SCP-106 Maintenance Storage";
 	dir = 4
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/mrs,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "xEu" = (
@@ -74204,11 +74204,11 @@ mhz
 vJX
 vLt
 hCG
-tlN
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -74462,10 +74462,10 @@ rGi
 fBS
 hCG
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -74713,16 +74713,16 @@ cPK
 aWN
 moA
 hCG
-rej
+lcR
 jui
 rGi
 xOG
-feU
+byt
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -74970,16 +74970,16 @@ cPK
 aWN
 moA
 hCG
-rej
+lcR
 jui
 rGi
 hhb
 hwk
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 pNO
 iOA
@@ -75233,10 +75233,10 @@ rGi
 npW
 hCG
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -75489,11 +75489,11 @@ qTA
 wbB
 rGi
 hCG
-tlN
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -75747,10 +75747,10 @@ vSG
 kUy
 hCG
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -76004,10 +76004,10 @@ kbR
 nWt
 hMY
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -76261,10 +76261,10 @@ pQS
 jjy
 hMY
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -76518,10 +76518,10 @@ psf
 qKW
 hMY
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 pNO
 iOA
@@ -76775,10 +76775,10 @@ gcF
 hCG
 hCG
 hCG
-tlN
-tlN
-tlN
-tlN
+rej
+rej
+rej
+rej
 iOA
 fxX
 iOA
@@ -77026,13 +77026,13 @@ aWN
 nAe
 ptH
 hCG
-dwZ
-dwZ
+tlN
+tlN
 hCG
 hCG
-tlN
-tlN
-tlN
+rej
+rej
+rej
 hIH
 hIH
 hIH

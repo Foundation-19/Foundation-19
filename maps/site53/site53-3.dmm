@@ -1640,6 +1640,18 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/medical/infirmreception/waiting)
+"dU" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/scp/arrow,
+/obj/machinery/button/alternate/door{
+	id_tag = "medex";
+	name = "Medical Exit Control";
+	pixel_y = -30;
+	pixel_x = -25;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/medical/infirmary)
 "dV" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light,
@@ -3239,19 +3251,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/surface/surface/west)
-"kV" = (
-/obj/effect/floor_decal/corner/paleblue/border,
-/obj/effect/floor_decal/scp/arrow,
-/obj/machinery/button/alternate/door{
-	id_tag = "medex";
-	name = "Medical Exit Control";
-	pixel_y = -30;
-	pixel_x = -25;
-	req_access = list("ACCESS_MEDICAL_LEVEL1");
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/medical/infirmary)
 "lf" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
@@ -7286,8 +7285,8 @@
 /turf/simulated/wall/r_titanium,
 /area/site53/medical/infirmary)
 "wv" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /turf/simulated/floor/plating,
 /area/site53/medical/infirmary)
 "wx" = (
@@ -11305,7 +11304,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Is" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/reswing/roboticsupr)
 "It" = (
@@ -46466,7 +46465,7 @@ bq
 wo
 ir
 zd
-kV
+dU
 tl
 fj
 Ov
