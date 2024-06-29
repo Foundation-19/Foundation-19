@@ -1595,6 +1595,9 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/lhcz/hallway)
+"bHf" = (
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/lhcz/scp049containment)
 "bHh" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline{
@@ -1627,6 +1630,13 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
+"bIc" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/scp049containment)
 "bIz" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -3016,6 +3026,13 @@
 /obj/turbolift_map_holder/scp106,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp106containment)
+"dck" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/grass,
+/area/site53/lhcz/scp049containment)
 "dcv" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 8
@@ -4149,6 +4166,9 @@
 	},
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
 "egg" = (
@@ -4231,6 +4251,14 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/lhcz/scp1102room)
+"ekB" = (
+/obj/item/paper/crumpled{
+	info = "Hello, the hallway we bought from that dollar store really is effective, now we can see where 049 is at all times, except for the bedroom. That's your own issue.";
+	name = "informational paper"
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/scp049containment)
 "ekK" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/flare,
@@ -4323,10 +4351,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "enz" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/grass,
+/turf/simulated/wall/r_titanium,
 /area/site53/lhcz/scp049containment)
 "eoA" = (
 /obj/machinery/atmospherics/portables_connector,
@@ -5259,6 +5284,11 @@
 /obj/item/book/manual/chef_recipes,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
+"fpW" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/bed/chair/office/dark,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/scp049containment)
 "fqZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light/small{
@@ -7495,12 +7525,8 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
 "hyK" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/storage/box/beakers,
-/turf/simulated/floor/tiled/white/vertical,
+/obj/effect/floor_decal/corner/red/diagonal,
+/turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/scp049containment)
 "hzb" = (
 /obj/machinery/light{
@@ -7676,6 +7702,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Lowerresearchwing)
+"hIA" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "lock049";
+	name = "SCP-049 Lockdown Blast Door"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/scp049containment)
 "hID" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -8498,8 +8533,7 @@
 "iCQ" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/hygiene/sink{
-	dir = 1;
-	pixel_y = 22
+	pixel_y = -13
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
@@ -11427,14 +11461,16 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
 "lCh" = (
-/obj/effect/floor_decal/corner/red/mono,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
 /obj/machinery/disposal{
 	name = "Seed Delivery unit"
 	},
 /obj/structure/disposalpipe/trunk{
-	dir = 1
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/lhcz/scp049containment)
 "lCr" = (
 /obj/effect/floor_decal/corner/purple/border{
@@ -11478,10 +11514,10 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/uhcz/scp8containment)
 "lGT" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/old_tile,
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/effect/floor_decal/corner/red/diagonal,
+/turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/scp049containment)
 "lHF" = (
 /obj/structure/cable{
@@ -12931,6 +12967,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
+/obj/item/storage/box/beakers,
 /obj/item/stack/material/phoron/ten,
 /obj/item/stack/material/phoron/ten,
 /obj/item/stack/material/phoron/ten,
@@ -14487,6 +14524,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/xenoarchaeology)
+"oJF" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "lock049";
+	name = "SCP-049 Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor,
+/area/site53/lhcz/scp049containment)
 "oKa" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 4;
@@ -14699,6 +14745,12 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
+"oXL" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/lhcz/scp049containment)
 "oYY" = (
 /obj/machinery/light,
 /turf/simulated/floor/plating,
@@ -15123,6 +15175,11 @@
 /obj/structure/ladder/up,
 /turf/simulated/floor,
 /area/site53/reswing/lowres/researchmaint)
+"pyr" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/diagonal,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/scp049containment)
 "pyD" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 1
@@ -22162,6 +22219,18 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/cells)
+"xgc" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/button/blast_door{
+	id_tag = "lock049";
+	name = "SCP-049 Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/scp049containment)
 "xgx" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 9
@@ -22694,6 +22763,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
+"xJe" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Discount Hallway";
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_MEDICAL_LEVEL3"))
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/lhcz/scp049containment)
 "xJq" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -74895,11 +74971,11 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+enz
+enz
+enz
+enz
 aDa
 aDa
 aDa
@@ -75152,12 +75228,12 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+hyK
+hyK
+hyK
+hyK
+hIA
 aDa
 aYR
 gjY
@@ -75409,14 +75485,14 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+bIc
+hyK
+hyK
+pyr
+hIA
 aQl
-iCQ
+bBZ
 bBZ
 bBZ
 bBZ
@@ -75666,12 +75742,12 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+hyK
+hyK
+fpW
+lGT
+hIA
 rmy
 laA
 aGa
@@ -75923,17 +75999,17 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+hyK
+hyK
+hyK
+pyr
+hIA
 aQl
 bBZ
 bBZ
 bBZ
-bBZ
+iCQ
 aDa
 aDa
 aDa
@@ -76180,12 +76256,12 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+hyK
+hyK
+hyK
+hyK
+hIA
 aDa
 ozo
 oEl
@@ -76437,11 +76513,11 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+bIc
+hyK
+hyK
+hyK
 aDa
 aDa
 aDa
@@ -76694,13 +76770,13 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+hyK
+hyK
+hyK
+hyK
 aDa
-xbq
+dck
 xbq
 xbq
 rul
@@ -76951,13 +77027,13 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
 enz
+hyK
+ekB
+hyK
+hyK
+hIA
+dSm
 auY
 cBp
 rul
@@ -77208,12 +77284,12 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+hyK
+hyK
+hyK
+xgc
+hIA
 dds
 dds
 dds
@@ -77465,12 +77541,12 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+bIc
+hyK
+fpW
+lGT
+hIA
 uzb
 rul
 rul
@@ -77722,12 +77798,12 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
+enz
+hyK
+hyK
+hyK
+pyr
+oJF
 kmd
 sip
 bnd
@@ -77744,8 +77820,8 @@ qeT
 qZD
 bSr
 tsZ
+lCh
 xtx
-hyK
 mII
 aDa
 hIH
@@ -77979,13 +78055,13 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
-lGT
+enz
+hyK
+hyK
+hyK
+hyK
+hIA
+psp
 psp
 psp
 rul
@@ -78001,8 +78077,8 @@ xeA
 xeA
 iqd
 iqd
-lCh
-aDa
+dOP
+xJe
 aDa
 aDa
 hIH
@@ -78236,11 +78312,11 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+hyK
+hyK
+hyK
+hyK
 aDa
 efP
 ppY
@@ -78250,17 +78326,17 @@ xbq
 xbq
 xbq
 nXJ
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-aDa
-aDa
-aDa
-hIH
+bHf
+bHf
+bHf
+oXL
+bHf
+bHf
+bHf
+oXL
+bHf
+bHf
+enz
 hIH
 hIH
 hIH
@@ -78493,11 +78569,11 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+bIc
+hyK
+hyK
+hyK
 aDa
 lfn
 pjZ
@@ -78507,17 +78583,17 @@ aQl
 jNQ
 xeA
 dOP
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+bHf
+enz
+enz
+enz
+enz
+enz
+enz
+enz
+enz
+enz
+enz
 hIH
 hIH
 hIH
@@ -78750,22 +78826,22 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+hyK
+hyK
+hyK
+hyK
+xJe
+bHf
 lfn
 xeA
 xeA
 xeA
 dOP
-hIH
-hIH
-hIH
-hIH
+bHf
+oXL
+bHf
+enz
 hIH
 hIH
 hIH
@@ -79007,22 +79083,22 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+enz
+enz
+enz
+enz
+enz
+bHf
+bHf
+bHf
+oXL
+bHf
+bHf
+bHf
+enz
+enz
+enz
 hIH
 hIH
 hIH
@@ -79269,15 +79345,15 @@ hIH
 hIH
 hIH
 hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
-hIH
+enz
+enz
+enz
+enz
+enz
+enz
+enz
+enz
+enz
 hIH
 hIH
 hIH
