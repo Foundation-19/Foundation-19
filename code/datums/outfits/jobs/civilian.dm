@@ -170,3 +170,5 @@
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	back = /obj/item/storage/backpack/clown
+
+	flags = OUTFIT_RESET_EQUIPMENT

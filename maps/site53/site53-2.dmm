@@ -21357,17 +21357,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/grass,
 /area/site53/uhcz/scp1507containment)
-"bCH" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "bCP" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -23675,19 +23664,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp1507observation)
-"cPW" = (
-/obj/structure/cable/cyan{
-	icon_state = "2-4";
-	d1 = 2;
-	d2 = 4
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "cPX" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -26168,14 +26144,12 @@
 /area/site53/science/aiccore)
 "els" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp106containment)
 "emf" = (
 /obj/machinery/camera/autoname{
@@ -28037,16 +28011,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp012)
-"fqg" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "fqn" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/monotile,
@@ -33001,14 +32965,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
-"ies" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "ieB" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 4
@@ -33123,11 +33079,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
 "ihM" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -35629,7 +35580,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/isolation)
 "jKa" = (
-/obj/machinery/power/port_gen/pacman/mrs,
 /obj/structure/cable/green,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -35638,6 +35588,7 @@
 	c_tag = "SCP-106 Upper Shield Power Maintenance";
 	dir = 1
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "jKc" = (
@@ -35659,19 +35610,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/hallways)
-"jKO" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "jKR" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -40744,19 +40682,6 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"mxf" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-8";
-	d2 = 8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
-	name = "Upper Shield power storage unit"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "mxl" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -45205,21 +45130,6 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
-"oPV" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "oQu" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -45482,7 +45392,7 @@
 	icon_state = "0-8";
 	d2 = 8
 	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
+/obj/machinery/power/smes/buildable{
 	name = "Upper Shield power storage unit"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
@@ -47702,15 +47612,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp513)
-"qjM" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/structure/cable/green,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "qjN" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
@@ -48793,7 +48694,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp2427_3)
 "qUp" = (
-/obj/machinery/power/port_gen/pacman/mrs,
 /obj/structure/cable/green,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -48801,6 +48701,7 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "qUx" = (
@@ -50616,14 +50517,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
-"rOM" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/structure/cable/green,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "rPm" = (
 /obj/machinery/chem_master/condimaster,
 /turf/simulated/floor/tiled/monotile/white,
@@ -51639,7 +51532,7 @@
 	d1 = 4;
 	d2 = 8
 	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
+/obj/machinery/power/smes/buildable{
 	name = "Upper Shield power storage unit"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
@@ -53190,10 +53083,8 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
@@ -57542,12 +57433,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "vOZ" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp106containment)
 "vPp" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -60901,24 +60788,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
-"xJh" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-8";
-	d2 = 8
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8";
-	d1 = 4;
-	d2 = 8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
-	name = "Upper Shield power storage unit"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "xJI" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -60948,14 +60817,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
-"xLG" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "xLV" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -110804,14 +110665,14 @@ azA
 azA
 azA
 azA
-xrt
-xrt
-xrt
-xrt
-xrt
 azA
 azA
 azA
+xrt
+xrt
+xrt
+xrt
+xrt
 azA
 azA
 azA
@@ -111058,6 +110919,9 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
 xrt
 xrt
 xrt
@@ -111065,9 +110929,6 @@ xrt
 nvu
 vVy
 nvu
-xrt
-xrt
-xrt
 xrt
 xrt
 xrt
@@ -111315,12 +111176,12 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
 xrt
 euX
 jQg
-oTx
-oTx
-oTx
 oTx
 oTx
 fiu
@@ -111572,12 +111433,12 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
 xrt
 euX
 ixG
-aEK
-aEK
-aEK
 aEK
 vMI
 ufP
@@ -111829,12 +111690,12 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
 xrt
 euX
 ltI
-aCg
-aCg
-aCg
 aCg
 cen
 aCg
@@ -112086,12 +111947,12 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
 xrt
 xrt
-nKv
-nKv
-nKv
-nKv
+xrt
 nKv
 xCz
 nKv
@@ -112343,16 +112204,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
 xrt
 dCn
-ies
-cPW
-ies
-cPW
 flj
 nSv
-lrJ
-rOM
+frv
+xrt
 nJN
 nJN
 fRv
@@ -112600,16 +112461,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
 xrt
-xJh
-fqg
-snz
-fqg
 snz
 cDZ
 frv
-kWh
-qjM
+vOZ
+xrt
 nJN
 oee
 jcd
@@ -112857,15 +112718,15 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
 xrt
-snz
-oPV
-snz
-oPV
 snz
 cPX
 frv
-kWh
+lrJ
 qUp
 nJN
 aBc
@@ -113114,11 +112975,11 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
 xrt
-snz
-oPV
-snz
-oPV
 snz
 cPX
 frv
@@ -113371,16 +113232,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
 xrt
-mxf
-oPV
-oYK
-oPV
 oYK
 cPX
 frv
-kWh
-qjM
+els
+xrt
 nJN
 jZA
 vkJ
@@ -113628,16 +113489,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
 xrt
 srh
-bCH
-xLG
-jKO
-els
 tdE
 hWH
 ihM
-vOZ
+xrt
 nJN
 oMM
 bwU
@@ -113885,10 +113746,10 @@ azA
 azA
 azA
 azA
-xrt
-xrt
-xrt
-xrt
+azA
+azA
+azA
+azA
 xrt
 xrt
 xrt

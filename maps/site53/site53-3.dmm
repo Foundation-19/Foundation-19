@@ -3142,7 +3142,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "chemlock";
 	name = "Pharmacy Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
 	pixel_y = 25;
 	pixel_x = -25
 	},
@@ -11722,16 +11722,16 @@
 /obj/machinery/button/blast_door{
 	id_tag = "viroshut";
 	name = "Privacy Shutters Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
 	pixel_y = 25;
 	pixel_x = -25
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "virolock";
 	name = "Virology Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
 	pixel_y = 34;
-	pixel_x = -25
+	pixel_x = -25;
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12459,6 +12459,19 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
+"LN" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/scp/arrow,
+/obj/machinery/button/alternate/door{
+	id_tag = "medex";
+	name = "Medical Exit Control";
+	pixel_y = -30;
+	pixel_x = -25;
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/medical/infirmary)
 "LQ" = (
 /obj/machinery/computer/rdconsole/robotics{
 	req_access = list();
@@ -12482,7 +12495,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "medlock";
 	name = "Medical Lobby Lockdown Lockdown";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
 	pixel_x = -25;
 	dir = 4;
 	pixel_y = 6
@@ -12490,14 +12503,14 @@
 /obj/machinery/button/blast_door{
 	id_tag = "virolock";
 	name = "Virology Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
 	pixel_x = -34;
 	dir = 4
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "chemlock";
 	name = "Pharmacy Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
 	pixel_x = -25;
 	dir = 4;
 	pixel_y = -6
@@ -46453,7 +46466,7 @@ bq
 wo
 ir
 zd
-Va
+LN
 tl
 fj
 Ov

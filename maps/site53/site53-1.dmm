@@ -1469,13 +1469,9 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/lhcz/scp895)
 "byt" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
+/area/space)
 "byC" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/effect/floor_decal/corner/research/border{
@@ -1969,16 +1965,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/hallways)
-"bXm" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
-	name = "Lower Shield power storage unit"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "bYs" = (
 /obj/machinery/light{
 	dir = 8
@@ -3424,14 +3410,6 @@
 /obj/effect/floor_decal/spline/plain/white,
 /turf/simulated/floor/wood/yew,
 /area/site53/llcz/dclass/luxuryhall)
-"dtW" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "dvb" = (
 /obj/machinery/atmospherics/omni/filter{
 	tag_south = 1;
@@ -3504,16 +3482,15 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "dwZ" = (
-/obj/structure/cable/cyan{
-	icon_state = "2-8";
-	d1 = 2;
-	d2 = 8
+/obj/structure/cable/green,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
 	},
-/obj/structure/cable/cyan{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
+/obj/machinery/camera/network/scp106{
+	c_tag = "SCP-106 Lower Shield Power Maintenance";
+	dir = 1
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "dyp" = (
@@ -3611,19 +3588,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignment)
-"dEe" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp106containment)
 "dEF" = (
 /obj/machinery/door/window/brigdoor/eastright,
 /obj/machinery/door/window/brigdoor/westleft,
@@ -3770,17 +3734,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/engineering/server_room)
-"dMx" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "dNj" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -5011,14 +4964,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
-"feU" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "feV" = (
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/thick/botany,
@@ -5112,6 +5057,10 @@
 /obj/structure/closet/toolcloset,
 /obj/item/device/lightreplacer,
 /obj/item/device/lightreplacer,
+/obj/item/stock_parts/circuitboard/smes,
+/obj/item/stock_parts/circuitboard/smes,
+/obj/item/stock_parts/circuitboard/smes,
+/obj/item/stock_parts/circuitboard/smes,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp106containment)
 "fhq" = (
@@ -5557,19 +5506,13 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp106containment)
 "fBS" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp106containment)
 "fCv" = (
 /obj/effect/paint_stripe/orange,
@@ -6900,14 +6843,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/xenobotany)
-"gUq" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/structure/cable/green,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "gUJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7516,18 +7451,14 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
 "hwk" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-4";
-	d2 = 4
+/obj/structure/cable/green,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
 	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8";
-	d1 = 4;
-	d2 = 8
+/obj/machinery/status_display{
+	pixel_y = -32
 	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
-	name = "Lower Shield power storage unit"
-	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "hww" = (
@@ -9668,10 +9599,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "jGV" = (
-/obj/machinery/power/port_gen/pacman/mrs,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "jIX" = (
@@ -10539,20 +10470,7 @@
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "kAb" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel_grid,
+/turf/unsimulated/mineral,
 /area/site53/uhcz/scp106containment)
 "kAF" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -10922,13 +10840,13 @@
 	},
 /area/site53/llcz/scp500)
 "kTy" = (
-/obj/machinery/power/port_gen/pacman/mrs,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "kTP" = (
@@ -11030,18 +10948,6 @@
 /obj/item/device/flashlight/lantern,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
-"lcR" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/structure/cable/green,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 Lower Shield Power Maintenance";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "len" = (
 /obj/machinery/light/small/red{
 	dir = 8;
@@ -12056,9 +11962,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "mhI" = (
@@ -12508,19 +12412,6 @@
 	},
 /turf/simulated/floor/grass,
 /area/site53/lhcz/scp049containment)
-"mEC" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
-	},
-/obj/structure/cable/cyan{
-	icon_state = "2-8";
-	d1 = 2;
-	d2 = 8
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "mEG" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/flora/pottedplant/floorleaf,
@@ -12788,13 +12679,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "mQt" = (
-/obj/machinery/power/port_gen/pacman/mrs,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "mRf" = (
@@ -13324,14 +13215,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/briefing)
 "npW" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp106containment)
 "nql" = (
 /obj/machinery/light{
@@ -14877,17 +14762,6 @@
 	d2 = 2
 	},
 /turf/simulated/floor/tiled/vertical,
-/area/site53/uhcz/scp106containment)
-"pcD" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/structure/cable/green,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/status_display{
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "pdi" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
@@ -16805,15 +16679,6 @@
 	},
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/primaryhallway)
-"rej" = (
-/obj/machinery/power/port_gen/pacman/mrs,
-/obj/structure/cable/green,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "rel" = (
 /obj/machinery/shieldwallgen/online{
 	max_range = 10;
@@ -17182,16 +17047,19 @@
 	},
 /area/site53/lhcz/hallway)
 "rzt" = (
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "rzN" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2";
 	d1 = 1;
 	d2 = 2
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
@@ -18071,8 +17939,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/button/blast_door{
-	id_tag = "049centerview";
-	name = "SCP-049 Study Windows Control";
+	id_tag = "cycle0492";
+	name = "SCP-049 Interior Access Checkpoint Cycle Control";
 	pixel_y = -2;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
@@ -18738,20 +18606,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
-"tlN" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "tmt" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -19367,15 +19221,15 @@
 /area/site53/reswing/lowres/Lowerresearchwing)
 "tWD" = (
 /obj/structure/cable/cyan{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/obj/structure/cable/cyan{
 	icon_state = "4-8";
 	d1 = 4;
 	d2 = 8
 	},
-/obj/structure/cable/cyan{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
+/obj/machinery/power/smes/buildable{
 	name = "Lower Shield power storage unit"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
@@ -19762,10 +19616,7 @@
 	icon_state = "0-4";
 	d2 = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
+/obj/machinery/power/smes/buildable{
 	name = "Lower Shield power storage unit"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
@@ -21042,16 +20893,14 @@
 /area/site53/llcz/dclass/primaryhallway)
 "vLt" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp106containment)
 "vLz" = (
 /obj/machinery/requests_console{
@@ -21108,14 +20957,11 @@
 	d1 = 4;
 	d2 = 8
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/cable/cyan{
 	icon_state = "0-4";
 	d2 = 4
 	},
-/obj/machinery/power/smes/buildable/preset/admin/scp{
+/obj/machinery/power/smes/buildable{
 	name = "Lower Shield power storage unit"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
@@ -22754,7 +22600,6 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp106containment)
 "xEf" = (
-/obj/machinery/power/port_gen/pacman/mrs,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
@@ -22762,6 +22607,7 @@
 	c_tag = "SCP-106 Maintenance Storage";
 	dir = 4
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "xEu" = (
@@ -74355,14 +74201,14 @@ tMr
 hCG
 rzt
 mhz
-dtW
-vLt
-dMx
-tlN
 vJX
-kAb
-gUq
+vLt
 hCG
+kAb
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -74611,15 +74457,15 @@ aWN
 moA
 hCG
 uoM
-fBS
-bXm
-fBS
-bXm
 jui
 rGi
-xOG
-rej
+fBS
 hCG
+hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -74867,16 +74713,16 @@ cPK
 aWN
 moA
 hCG
-hwk
-fBS
-hwk
-fBS
-hwk
+tWD
 jui
 rGi
 xOG
-pcD
+hwk
 hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -75124,16 +74970,16 @@ cPK
 aWN
 moA
 hCG
-hwk
-fBS
-hwk
-fBS
-hwk
+tWD
 jui
 rGi
-dEe
-lcR
+hhb
+dwZ
 hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 pNO
 iOA
@@ -75382,15 +75228,15 @@ aWN
 moA
 hCG
 vMh
-npW
-tWD
-npW
-tWD
 bMX
 rGi
-dEe
-rej
+npW
 hCG
+hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -75639,15 +75485,15 @@ aWN
 moA
 hCG
 sDy
-feU
-dwZ
-feU
-mEC
 qTA
 wbB
-hhb
-byt
+rGi
 hCG
+kAb
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -75897,14 +75743,14 @@ tMr
 hCG
 hCG
 kUy
-kUy
-kUy
-kUy
-kUy
 vSG
 kUy
 hCG
 hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -76154,14 +76000,14 @@ qGJ
 hCG
 jVq
 smH
-smH
-smH
-smH
-smH
 kbR
 nWt
 hMY
 hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -76411,14 +76257,14 @@ ifA
 nfv
 rzN
 owF
-owF
-owF
-owF
-owF
 pQS
 jjy
 hMY
 hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -76669,13 +76515,13 @@ hCG
 gzJ
 xDt
 psf
-psf
-psf
-psf
-psf
 qKW
 hMY
 hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 pNO
 iOA
@@ -76923,16 +76769,16 @@ jXp
 owF
 aEC
 hCG
-hCG
-hCG
-hCG
 gcF
 nYq
 gcF
 hCG
 hCG
 hCG
-hCG
+kAb
+kAb
+kAb
+kAb
 iOA
 fxX
 iOA
@@ -77180,13 +77026,13 @@ aWN
 nAe
 ptH
 hCG
-hIH
-hIH
+byt
+byt
 hCG
 hCG
-hCG
-hCG
-hCG
+kAb
+kAb
+kAb
 hIH
 hIH
 hIH
