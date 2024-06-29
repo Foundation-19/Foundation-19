@@ -3239,6 +3239,19 @@
 /obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/surface/surface/west)
+"kV" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/scp/arrow,
+/obj/machinery/button/alternate/door{
+	id_tag = "medex";
+	name = "Medical Exit Control";
+	pixel_y = -30;
+	pixel_x = -25;
+	req_access = list("ACCESS_MEDICAL_LEVEL1");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/medical/infirmary)
 "lf" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
@@ -12459,19 +12472,6 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
-"LN" = (
-/obj/effect/floor_decal/corner/paleblue/border,
-/obj/effect/floor_decal/scp/arrow,
-/obj/machinery/button/alternate/door{
-	id_tag = "medex";
-	name = "Medical Exit Control";
-	pixel_y = -30;
-	pixel_x = -25;
-	req_access = list("ACCESS_MEDICAL_LEVEL1");
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site53/medical/infirmary)
 "LQ" = (
 /obj/machinery/computer/rdconsole/robotics{
 	req_access = list();
@@ -46466,7 +46466,7 @@ bq
 wo
 ir
 zd
-LN
+kV
 tl
 fj
 Ov

@@ -26142,15 +26142,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
-"els" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp106containment)
 "emf" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -32965,6 +32956,15 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
+"ies" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp106containment)
 "ieB" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 4
@@ -45130,6 +45130,10 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
+"oPV" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp106containment)
 "oQu" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -57432,10 +57436,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
-"vOZ" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp106containment)
 "vPp" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -59215,7 +59215,7 @@
 /area/site53/engineering/atmos)
 "wQH" = (
 /obj/effect/floor_decal/corner/yellow/mono,
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
 "wQL" = (
@@ -112469,7 +112469,7 @@ xrt
 snz
 cDZ
 frv
-vOZ
+oPV
 xrt
 nJN
 oee
@@ -113240,7 +113240,7 @@ xrt
 oYK
 cPX
 frv
-els
+ies
 xrt
 nJN
 jZA
