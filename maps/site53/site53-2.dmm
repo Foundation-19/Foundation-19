@@ -23603,8 +23603,8 @@
 	c_tag = "Cryogenics Central Hall"
 	},
 /obj/machinery/button/blast_door{
-	name = "East Cryogenics Emergency Lockdown Control";
-	id_tag = "ecryogen";
+	name = "Cryogenics Emergency Lockdown Control";
+	id_tag = "lockcryo";
 	pixel_y = 25
 	},
 /obj/effect/floor_decal/corner/lime/border,
