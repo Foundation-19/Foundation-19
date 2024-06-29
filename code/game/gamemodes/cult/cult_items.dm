@@ -44,7 +44,7 @@
 /obj/item/melee/cultblade/pickup(mob/living/user as mob)
 	if(!iscultist(user))
 		to_chat(user, SPAN_WARNING("An overwhelming feeling of dread comes over you as you pick up the cultist's sword. It would be wise to be rid of this blade quickly."))
-		user.make_dizzy(120)
+		user.adjust_dizzy(2 MINUTES)
 
 
 /obj/item/clothing/head/culthood
@@ -60,6 +60,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.8 //That's a pretty cool opening in the hood. Also: Cloth making physical contact to the skull.
+	hidden_from_codex = TRUE
 
 /obj/item/clothing/head/culthood/magus
 	name = "magus helm"
@@ -128,6 +129,7 @@
 		rad = ARMOR_RAD_MINOR
 	) //Real tanky shit.
 	siemens_coefficient = 0.3 //Bone is not very conducive to electricity.
+	hidden_from_codex = TRUE
 
 /obj/item/clothing/suit/space/cult
 	name = "cult armour"

@@ -9,7 +9,7 @@
 	damage_type = BURN
 	sharp = TRUE
 	damage_flags = DAM_LASER
-	eyeblur = 4
+	eyeblur = 4 SECONDS
 	hitscan = TRUE
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
 	penetration_modifier = 0.3
@@ -28,7 +28,7 @@
 /obj/item/projectile/beam/practice
 	fire_sound = 'sounds/weapons/Taser.ogg'
 	damage = 0
-	eyeblur = 2
+	eyeblur = 2 SECONDS
 
 /obj/item/projectile/beam/smalllaser
 	damage = 45
@@ -229,7 +229,7 @@
 	armor_penetration = 10
 	stun = 3
 	weaken = 3
-	stutter = 3
+	stutter = 3 SECONDS
 	damage_falloff_list = list(
 		list(8, 0.97),
 		list(12, 0.94),
@@ -246,9 +246,9 @@
 	fire_sound = 'sounds/weapons/Taser.ogg'
 	damage_flags = 0
 	sharp = FALSE
-	damage = 1//flavor burn! still not a laser, dmg will be reduce by energy resistance not laser resistances
+	damage = 1 //flavor burn! still not a laser, dmg will be reduce by energy resistance not laser resistances
 	damage_type = BURN
-	eyeblur = 1//Some feedback that you've been hit
+	eyeblur = 1 SECOND //Some feedback that you've been hit
 	agony = 40
 	distance_falloff = 1.5
 	damage_falloff_list = list(
@@ -366,8 +366,8 @@
 	damage_type = STUN
 	life_span = 3
 	penetration_modifier = 0
-	var/potency_min = 4
-	var/potency_max = 6
+	var/potency_min = 4 SECONDS
+	var/potency_max = 6 SECONDS
 
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	tracer_type = /obj/effect/projectile/tracer/disabler
@@ -376,13 +376,15 @@
 /obj/item/projectile/beam/confuseray/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
-		var/potency = rand(potency_min, potency_max)
-		L.confused += potency
-		L.eye_blurry += potency
-		if(L.confused >= 10)
+
+		if(L.has_status_effect(/datum/status_effect/confusion))	// if we're already confused
 			L.Stun(1)
 			L.drop_l_hand()
 			L.drop_r_hand()
+
+		var/potency = rand(potency_min, potency_max)
+		L.adjust_confusion(potency)
+		L.adjust_eye_blur(potency)
 
 	return 1
 
@@ -439,7 +441,7 @@
 	fire_sound='sounds/weapons/scan.ogg'
 	damage = 30
 	agony = 8
-	eyeblur = 8
+	eyeblur = 8 SECONDS
 	sharp = FALSE
 	damage_flags = 0
 	life_span = 8
@@ -468,7 +470,7 @@
 	fire_sound = 'sounds/weapons/lasercannonfire.ogg'
 	damage = 35
 	agony = 5
-	eyeblur = 5
+	eyeblur = 5 SECONDS
 	sharp = FALSE
 	life_span = 20
 	penetration_modifier = 0.5

@@ -42,33 +42,33 @@
 
 	var/stat = CONSCIOUS //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
-	var/obj/screen/cells = null
+	var/atom/movable/screen/cells = null
 
-	var/obj/screen/hands = null
-	var/obj/screen/pullin = null
-	var/obj/screen/purged = null
-	var/obj/screen/internals = null
-	var/obj/screen/oxygen = null
-	var/obj/screen/i_select = null
-	var/obj/screen/m_select = null
-	var/obj/screen/toxin = null
-	var/obj/screen/fire = null
-	var/obj/screen/bodytemp = null
-	var/obj/screen/healths = null
-	var/obj/screen/sanity_icon = null
-	var/obj/screen/blink_icon = null
-	var/obj/screen/throw_icon = null
-	var/obj/screen/nutrition_icon = null
-	var/obj/screen/hydration_icon = null
-	var/obj/screen/pressure = null
-	var/obj/screen/pain = null
-	var/obj/screen/gun/item/item_use_icon = null
-	var/obj/screen/gun/radio/radio_use_icon = null
-	var/obj/screen/gun/move/gun_move_icon = null
-	var/obj/screen/gun/run/gun_run_icon = null
-	var/obj/screen/gun/mode/gun_setting_icon = null
+	var/atom/movable/screen/hands = null
+	var/atom/movable/screen/pullin = null
+	var/atom/movable/screen/purged = null
+	var/atom/movable/screen/internals = null
+	var/atom/movable/screen/oxygen = null
+	var/atom/movable/screen/i_select = null
+	var/atom/movable/screen/m_select = null
+	var/atom/movable/screen/toxin = null
+	var/atom/movable/screen/fire = null
+	var/atom/movable/screen/bodytemp = null
+	var/atom/movable/screen/healths = null
+	var/atom/movable/screen/sanity_icon = null
+	var/atom/movable/screen/blink_icon = null
+	var/atom/movable/screen/throw_icon = null
+	var/atom/movable/screen/nutrition_icon = null
+	var/atom/movable/screen/hydration_icon = null
+	var/atom/movable/screen/pressure = null
+	var/atom/movable/screen/pain = null
+	var/atom/movable/screen/gun/item/item_use_icon = null
+	var/atom/movable/screen/gun/radio/radio_use_icon = null
+	var/atom/movable/screen/gun/move/gun_move_icon = null
+	var/atom/movable/screen/gun/run/gun_run_icon = null
+	var/atom/movable/screen/gun/mode/gun_setting_icon = null
 
-	var/obj/screen/movable/ability_master/ability_master = null
+	var/atom/movable/screen/movable/ability_master/ability_master = null
 
 	/*A bunch of this stuff really needs to go under their own defines instead of being globally attached to mob.
 	A variable should only be globally attached to turfs/objects/whatever, when it is in fact needed as such.
@@ -76,7 +76,7 @@
 	I'll make some notes on where certain variable defines should probably go.
 	Changing this around would probably require a good look-over the pre-existing code.
 	*/
-	var/obj/screen/zone_sel/zone_sel = null
+	var/atom/movable/screen/zone_sel/zone_sel = null
 
 	/// Cursor icon used when holding shift over things.
 	var/examine_cursor_icon = 'icons/effects/mouse_pointers/examine_pointer.dmi'
@@ -91,13 +91,13 @@
 	var/atom/movable/pulling = null
 	var/other_mobs = null
 	var/next_move = null
+	/// Multiplies delays by this amount. TODO: move this to a system similar to movespeed/actionspeed
+	var/next_move_modifier = 1
 	var/hand = null
 	var/real_name = null
 
 	var/bhunger = 0			//Carbon
 
-	var/druggy = 0			//Carbon
-	var/confused = 0		//Carbon
 	var/sleeping = 0		//Carbon
 	var/resting = FALSE			//Carbon
 	var/is_shifted = FALSE
@@ -162,7 +162,6 @@
 	var/voice_name = "unidentifiable voice"
 
 	var/faction = MOB_FACTION_NEUTRAL //Used for checking whether hostile simple animals will attack you, possibly more stuff later
-	var/blinded = null
 	var/ear_deaf = null		//Carbon
 
 //The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
@@ -195,7 +194,6 @@
 	var/paralysis = 0
 	var/stunned = 0
 	var/weakened = 0
-	var/drowsyness = 0.0//Carbon
 
 	var/flavor_text = ""
 
@@ -211,9 +209,22 @@
 
 	var/list/datum/action/actions = list()
 
+	/// Contains [/atom/movable/screen/alert] only.	On [/mob] so clientless mobs will throw alerts properly.
+	var/list/alerts = list()
+
+	/// List of movement speed modifiers applying to this mob
+	var/list/movespeed_modification //Lazy list, see mob_movespeed.dm
+	/// List of movement speed modifiers ignored by this mob. List -> List (id) -> List (sources)
+	var/list/movespeed_mod_immunities //Lazy list, see mob_movespeed.dm
+	/// The calculated mob speed slowdown based on the modifiers list
+	var/cached_multiplicative_slowdown
+
 	/// The calculated mob action speed slowdown based on the modifiers list
 	var/cached_multiplicative_actions_slowdown
 	/// List of action speed modifiers applying to this mob
 	var/list/actionspeed_modification //Lazy list, see mob_movespeed.dm
 	/// List of action speed modifiers ignored by this mob. List -> List (id) -> List (sources)
 	var/list/actionspeed_mod_immunities //Lazy list, see mob_movespeed.dm
+
+	/// List of traits that this mob has by default
+	var/list/roundstart_traits = list()

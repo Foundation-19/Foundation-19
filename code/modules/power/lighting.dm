@@ -40,7 +40,7 @@
 	..(newloc)
 
 	if(newdir)
-		set_dir(newdir)
+		setDir(newdir)
 
 	if(istype(fixture))
 		if(istype(fixture, /obj/machinery/light))
@@ -125,7 +125,7 @@
 			playsound(loc, 'sounds/items/Screwdriver.ogg', 50, TRUE)
 
 			var/obj/machinery/light/newlight = new fixture_type(loc, src)
-			newlight.set_dir(dir)
+			newlight.setDir(dir)
 
 			transfer_fingerprints_to(newlight)
 			qdel(src)
@@ -219,7 +219,7 @@
 	if(construct)
 		construct_type = construct.type
 		construct.transfer_fingerprints_to(src)
-		set_dir(construct.dir)
+		setDir(construct.dir)
 	else
 		lightbulb = new light_type(src)
 		if(prob(lightbulb.broken_chance))

@@ -67,7 +67,7 @@
 	add_fingerprint(user)
 	if(on && user.zone_sel.selecting == BP_EYES)
 
-		if((MUTATION_CLUMSY in user.mutations) && prob(50))	//too dumb to use flashlight properly
+		if(((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
 
 		var/mob/living/carbon/human/H = M	//mob has protective eyewear
@@ -93,7 +93,7 @@
 
 			inspect_vision(vision, user)
 
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //can be used offensively
+			user.setClickCooldown(CLICK_CD_ATTACK) //can be used offensively
 			M.flash_eyes()
 	else
 		return ..()
@@ -106,14 +106,14 @@
 
 	if(!BP_IS_ROBOTIC(vision))
 
-		if(vision.owner.stat == DEAD || H.blinded)	//mob is dead or fully blind
+		if(vision.owner.stat == DEAD || H.is_blind())	//mob is dead or fully blind
 			to_chat(user, SPAN_WARNING("\The [H]'s pupils do not react to the light!"))
 			return
 		if(MUTATION_XRAY in H.mutations)
 			to_chat(user, SPAN_NOTICE("\The [H]'s pupils give an eerie glow!"))
 		if(vision.damage)
 			to_chat(user, SPAN_WARNING("There's visible damage to [H]'s [vision.name]!"))
-		else if(H.eye_blurry)
+		else if(H.has_status_effect(/datum/status_effect/eye_blur))
 			to_chat(user, SPAN_NOTICE("\The [H]'s pupils react slower than normally."))
 		if(H.getBrainLoss() > 15)
 			to_chat(user, SPAN_NOTICE("There's visible lag between left and right pupils' reactions."))

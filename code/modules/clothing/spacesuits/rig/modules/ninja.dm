@@ -8,16 +8,16 @@
 
 /obj/item/rig_module/stealth_field
 
-	name = "active camouflage module"
-	desc = "A robust hardsuit-integrated stealth module."
+	name = "total exclusion module"
+	desc = "A robust hardsuit-integrated anomalous module used in the total exclusion harness to completely render a person uncomprehendable, and thus, invisible."
 	icon_state = "cloak"
 
 	toggleable = 1
 	disruptable = 1
 	disruptive = 0
 
-	use_power_cost = 250 KILOWATTS
-	active_power_cost = 30 KILOWATTS
+	use_power_cost = 0 KILOWATTS
+	active_power_cost = 0 KILOWATTS
 	passive_power_cost = 0
 	module_cooldown = 10 SECONDS
 	origin_tech = list(TECH_MATERIAL = 5, TECH_POWER = 6, TECH_MAGNET = 6, TECH_ESOTERIC = 6, TECH_ENGINEERING = 7)
@@ -57,8 +57,8 @@
 
 /obj/item/rig_module/teleporter
 
-	name = "teleportation module"
-	desc = "A complex, sleek-looking, hardsuit-integrated teleportation module."
+	name = "blink module"
+	desc = "A complex, sleek-looking, hardsuit-integrated tachyonic field distributor that can translocate it's user a short distance."
 	icon_state = "teleporter"
 	use_power_cost = 400 KILOWATTS
 	redundant = 1

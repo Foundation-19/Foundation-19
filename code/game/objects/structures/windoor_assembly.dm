@@ -32,9 +32,9 @@
 		anchored = FALSE
 	switch(start_dir)
 		if(NORTH, SOUTH, EAST, WEST)
-			set_dir(start_dir)
+			setDir(start_dir)
 		else //If the user is facing northeast. northwest, southeast, southwest or north, default to north
-			set_dir(NORTH)
+			setDir(NORTH)
 
 	update_nearby_tiles(need_rebuild=1)
 
@@ -246,7 +246,7 @@
 	if(src.state != "01")
 		update_nearby_tiles(need_rebuild=1) //Compel updates before
 
-	src.set_dir(turn(src.dir, 270))
+	src.setDir(turn(src.dir, 270))
 
 	if(src.state != "01")
 		update_nearby_tiles(need_rebuild=1)

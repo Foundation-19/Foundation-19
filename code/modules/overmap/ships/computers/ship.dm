@@ -59,7 +59,7 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 		user.client.view = world.view + extra_view
 	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
 	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
-	LAZYDISTINCTADD(viewers, weakref(user))
+	LAZYOR(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/unlook(mob/user)
 	user.reset_view(null, FALSE)
@@ -82,7 +82,7 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 		look(user)
 
 /obj/machinery/computer/ship/check_eye(mob/user)
-	if (!get_dist(user, src) > 1 || user.blinded || !linked )
+	if (!get_dist(user, src) > 1 || user.is_blind() || !linked )
 		unlook(user)
 		return -1
 	else

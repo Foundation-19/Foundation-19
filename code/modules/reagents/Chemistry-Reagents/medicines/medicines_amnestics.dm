@@ -26,10 +26,9 @@
 		to_chat(M, "<font size='5' color='red'>Your recent memories are fading away... You completely forget the last [round(M.chem_doses[type], 1) * 2] minutes.</font>")
 
 	if(prob(10))
-		M.drowsyness += 5
+		M.adjust_drowsiness(5 SECONDS)
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classa/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(14 * removed)
@@ -49,10 +48,9 @@
 		to_chat(M, "<font size='5' color='red'>Your memories are melting away... You have lost all memory of the last [round(M.chem_doses[type], 1)] days.</font>")
 
 	if(prob(15))
-		M.drowsyness += 5
+		M.adjust_drowsiness(5 SECONDS)
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classb/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
@@ -75,15 +73,14 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
-		M.drowsyness += 2
+		M.adjust_confusion(2 SECONDS)
+		M.adjust_drowsiness(2 SECONDS)
 	else
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classc/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(25 * removed)
@@ -106,15 +103,14 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
-		M.drowsyness += 2
+		M.adjust_confusion(2 SECONDS)
+		M.adjust_drowsiness(2 SECONDS)
 	else
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classe/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
@@ -138,19 +134,18 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
-		M.drowsyness += 2
+		M.adjust_confusion(2 SECONDS)
+		M.adjust_drowsiness(2 SECONDS)
 	if (M.chem_doses[type] < 2 * threshold)
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 	else
 		M.sleeping = max(M.sleeping, 30)
 	M.add_chemical_effect(CE_BREATHLOSS, 1.5)
 	if(prob(10))
 		M.adjustBrainLoss(2.5 * removed)
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(10)
+		M.adjust_dizzy_up_to(10 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classg
 	name = "Class-G Amnestics"
@@ -169,15 +164,14 @@
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
-		M.confused += 2
-		M.drowsyness += 2
+		M.adjust_confusion(2 SECONDS)
+		M.adjust_drowsiness(2 SECONDS)
 	else
 		M.Weaken(30)
-		M.eye_blurry = max(M.eye_blurry, 10)
+		M.set_eye_blur_if_lower(10 SECONDS)
 
 	if(prob(35))
-		if(M.dizziness <= 200)
-			M.make_dizzy(15)
+		M.adjust_dizzy_up_to(15 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classg/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
@@ -206,10 +200,9 @@
 		to_chat(M, "<font size='5' color='red'>Your mind feels a lot clearer, but... You can't recall the last [2 * round(M.chem_doses[type], 1) / metabolism] seconds.</font>")
 
 	if(prob(1))
-		M.drowsyness += 2
+		M.adjust_drowsiness(2 SECONDS)
 	if(prob(2))
-		if(M.dizziness <= 200)
-			M.make_dizzy(7)
+		M.adjust_dizzy_up_to(7 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classh/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(16 * removed)
@@ -236,10 +229,9 @@
 		to_chat(M, "<font size='5' color='red'>Your memories suddenly rush back into place... You can remember your past again.</font>")
 
 	if(prob(1))
-		M.drowsyness += 2
+		M.adjust_drowsiness(2 SECONDS)
 	if(prob(2))
-		if(M.dizziness <= 200)
-			M.make_dizzy(7)
+		M.adjust_dizzy_up_to(7 SECONDS, 100 SECONDS)
 
 /datum/reagent/medicine/amnestics/classi/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(15 * removed)

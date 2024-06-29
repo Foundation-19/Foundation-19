@@ -1,0 +1,51 @@
+2024-06-05:
+  Tsurupeta:
+  - bugfix: fixed crash when orbiting yourself and moving.
+2024-06-12:
+  ChromeFoxxity:
+  - rscadd: Adds headsets to make communcations easier, adds new armor, adds Recontainment
+      unit room, adds Combat Medic medkits, adds Riot Control metal shields.
+  - bugfix: Fixed heavy revolver.
+2024-06-23:
+  cheesePizza2:
+  - rscadd: Ports TG alerts system. Alerts are the notifications that show up on the
+      top-right when you're e.g. hot, hungry, a robot with a low power cell, etc.
+  - rscadd: Ports TG traits. Traits are a backend system that allows things to track
+      what exactly is making you blind/clumsy/whatever.
+  - rscadd: Ports TG status effects. Status effects are things like being stunned,
+      blinded, or having a speech impediment. We have these things, but they don't
+      work very well at all (compared to how TG does em).
+  - rscadd: Ports TG movespeed modifiers. Movespeed modifiers allow code to cleanly
+      adjust movement speed.
+  - rscdel: Removes old shitcode that was phased out with all the TG ports.
+  - imageadd: Adds icons related to the new alerts system.
+  - rscdel: Removed the general Security radio channel.
+  - rscdel: Removed the Hailing radio channel.
+  - rscadd: The paperwork database now has a material inventory form (for logistics).
+  - code_imp: Time loop component ported. When added, an effect spawns at your location,
+      and after a set duration, you're teleported back to it with your health and
+      stamina reset.
+  - rscadd: Time loop spell for wizards.
+  - rscadd: Time rewinder device that can be bought by traitors and researched by
+      Science.
+  - rscadd: New codex categories and entries.
+  - bugfix: Massive codex improvements.
+  chesse20:
+  - rscadd: Logistics can now buy unidentified scps
+  - bugfix: Artifacts are less alien and more anomalous
+  quadbium:
+  - rscadd: Goldbaker-Reinz Corporate Liaison as an alt title for GOC rep.
+  - rscadd: adds Goldbaker-Reinz outfit, headset, and Fax office
+  - rscadd: adds goldbaker-reinz logo, accessable with [grlogo]
+  - rscadd: Added SCP-2020
+  - rscadd: Added SCP-2020 document and addendum
+  - bugfix: fixes assistant robotics techs being research directors
+  - rscadd: Added atmos intake/purge above the main entrance
+  - rscadd: Replaced atmos department with a larger atmos department
+  - rscadd: Add Hydrogen fuel line between atmos department and R-UST
+  - rscadd: Added engineering circuit storage
+  - rscadd: R-UST connection to scrubbers
+  - rscadd: Add scrubbers and vents to engineering department
+  - rscadd: adds firelocks and fire alarms to engineering department
+  - rscadd: Add scrubbers and vents to the floor 2 science
+  - rscadd: adds firelocks and fire alarms to floor 2 science

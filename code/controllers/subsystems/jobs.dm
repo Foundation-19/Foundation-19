@@ -80,10 +80,10 @@ SUBSYSTEM_DEF(jobs)
 			if(job.department_flag)
 				for (var/I in 1 to GLOB.bitflags.len)
 					if(job.department_flag & GLOB.bitflags[I])
-						LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.title)
-						LAZYDISTINCTADD(distinct_department_positions["[GLOB.bitflags[I]]"], job.title)
+						LAZYOR(positions_by_department["[GLOB.bitflags[I]]"], job.title)
+						LAZYOR(distinct_department_positions["[GLOB.bitflags[I]]"], job.title)
 						if (length(job.alt_titles))
-							LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.alt_titles)
+							LAZYOR(positions_by_department["[GLOB.bitflags[I]]"], job.alt_titles)
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase = generate_codephrase_list()
@@ -477,7 +477,7 @@ SUBSYSTEM_DEF(jobs)
 		// Moving wheelchair if they have one
 		if(H.buckled && istype(H.buckled, /obj/structure/bed/chair/wheelchair))
 			H.buckled.forceMove(H.loc)
-			H.buckled.set_dir(H.dir)
+			H.buckled.setDir(H.dir)
 
 	// If they're head, give them the account info for their department
 	if(H.mind && job.head_position)
@@ -509,7 +509,7 @@ SUBSYSTEM_DEF(jobs)
 			var/obj/structure/bed/chair/wheelchair/W = new /obj/structure/bed/chair/wheelchair(H.loc)
 			H.buckled = W
 			H.UpdateLyingBuckledAndVerbStatus()
-			W.set_dir(H.dir)
+			W.setDir(H.dir)
 			W.buckled_mob = H
 			W.add_fingerprint(H)
 
@@ -524,11 +524,8 @@ SUBSYSTEM_DEF(jobs)
 		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
 
 	//Gives glasses to the vision impaired
-	if(H.disabilities & NEARSIGHTED)
-		var/equipped = H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
-		if(equipped)
-			var/obj/item/clothing/glasses/G = H.glasses
-			G.prescription = 7
+	if(H.is_nearsighted())
+		H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
 
 	BITSET(H.hud_updateflag, ID_HUD)
 	BITSET(H.hud_updateflag, IMPLOYAL_HUD)

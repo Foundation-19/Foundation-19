@@ -129,3 +129,36 @@ The entrant issued this permit is granted access to the zone listed.
 [hr][b]Audit Notes:[/b] [field]
 [hr][b]Recommended Actions:[/b] [field]
 [b]Ethics Liason Signature:[/b]"}
+
+// LOGISTICS
+
+/datum/computer_file/data/text/paperwork/material_inventory
+	filename = "MaterialInventory"
+	stored_data = @{"[center][h1]Material Collection[/h1]
+[ethicslogo]
+[b]Secure. Contain. Protect.[/b][/center]
+[hr][b]Audited Department:[/b] [field]
+[b]Start of Audit (date and time):[/b] [field]
+[b]End of Audit (date and time):[/b] [field]
+[b]Department Grade (A to F):[/b] [field]
+[hr][b]Audit Notes:[/b] [field]
+[hr][b]Recommended Actions:[/b] [field]
+[b]Ethics Liason Signature:[/b]"}
+
+/datum/computer_file/data/text/paperwork/material_inventory/New() // futureproofed paperwork here we go!
+	. = ..()
+	stored_data = @{"[center][h1]Material Collection[/h1]
+[loglogo]
+[b]Secure. Contain. Protect.[/b][/center]
+[hr][table][row][cell][b]Material[/b][cell][b]Count[/b][cell][b]Type[/b][cell][b]Value[/b]
+"}
+
+	for(var/thing in SSmaterials.materials)
+		var/material/mat = thing
+		if(mat.hidden_from_codex || is_abstract(mat))
+			continue
+
+		stored_data += "\[row\]\[cell\][mat.display_name]\[cell\]\[field\]\[cell\]\[small\][mat.sheet_plural_name]\[cell\][mat.value]\n"
+
+	stored_data += @{"[/table][hr][b]Inventory timestamp (date and time):[/b] [field]
+[b]Signature of Officer Responsible for Inventory:[/b]"}

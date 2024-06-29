@@ -23,8 +23,8 @@
 		M.adjust_nutrition(nutrition * removed)
 	if(hydration)
 		M.adjust_hydration(hydration * removed)
-	M.dizziness = max(0, M.dizziness + adj_dizzy)
-	M.drowsyness = max(0, M.drowsyness + adj_drowsy)
+	M.adjust_dizzy(adj_dizzy)
+	M.adjust_drowsiness(adj_drowsy)
 	M.sleeping = max(0, M.sleeping + adj_sleepy)
 	if(adj_temp > 0 && M.bodytemperature < 310) // 310 is the normal bodytemp. 310.055
 		M.bodytemperature = min(310, M.bodytemperature + (adj_temp * TEMPERATURE_DAMAGE_COEFFICIENT))
@@ -314,8 +314,8 @@
 	taste_description = "bitterness"
 	taste_mult = 1.3
 	color = "#482000"
-	adj_dizzy = -5
-	adj_drowsy = -3
+	adj_dizzy = -5 SECONDS
+	adj_drowsy = -3 SECONDS
 	adj_sleepy = -2
 	adj_temp = 25
 	overdose = 60
@@ -342,7 +342,7 @@
 /datum/reagent/drink/coffee/overdose(mob/living/carbon/M, alien)
 	if(alien == IS_DIONA)
 		return
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS)
 	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/drink/coffee/icecoffee
@@ -496,8 +496,8 @@
 	description = "A can of club soda. Why not make a scotch and soda?"
 	taste_description = "carbonated water"
 	color = "#619494"
-	adj_dizzy = -5
-	adj_drowsy = -3
+	adj_dizzy = -5 SECONDS
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 
 	glass_name = "soda water"
@@ -509,7 +509,7 @@
 	description = "Grapes made into a fine drank."
 	taste_description = "grape soda"
 	color = "#421c52"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 
 	glass_name = "grape soda"
 	glass_desc = "Looks like a delicious drink!"
@@ -520,8 +520,8 @@
 	description = "It tastes strange but at least the quinine keeps the Space Malaria at bay."
 	taste_description = "tart and fresh"
 	color = "#619494"
-	adj_dizzy = -5
-	adj_drowsy = -3
+	adj_dizzy = -5 SECONDS
+	adj_drowsy = -3 SECONDS
 	adj_sleepy = -2
 	adj_temp = -5
 
@@ -645,7 +645,7 @@
 
 /datum/reagent/drink/rewriter/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
-	M.make_jittery(5)
+	M.adjust_jitter(5 SECONDS * removed)
 
 /datum/reagent/drink/nuka_cola
 	name = "Nuka Cola"
@@ -654,6 +654,7 @@
 	color = "#100800"
 	adj_temp = -5
 	adj_sleepy = -2
+	adj_dizzy = 5 SECONDS
 
 	glass_name = "Nuka-Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland"
@@ -662,10 +663,9 @@
 /datum/reagent/drink/nuka_cola/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.make_jittery(20)
-	M.druggy = max(M.druggy, 30)
-	M.dizziness += 5
-	M.drowsyness = 0
+	M.adjust_jitter(20 SECONDS * removed)
+	M.set_drugginess_if_lower(30 SECONDS)
+	M.set_drowsiness(0)
 
 /datum/reagent/drink/grenadine
 	name = "Grenadine Syrup"
@@ -697,7 +697,7 @@
 	taste_description = "cola"
 	reagent_state = LIQUID
 	color = "#100800"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 
 	glass_name = "Space Cola"
@@ -709,7 +709,7 @@
 	description = "Blows right through you like a space wind."
 	taste_description = "sweet citrus soda"
 	color = "#102000"
-	adj_drowsy = -7
+	adj_drowsy = -7 SECONDS
 	adj_sleepy = -1
 	adj_temp = -5
 
@@ -722,7 +722,7 @@
 	description = "A delicious blend of 42 different flavours"
 	taste_description = "cherry soda"
 	color = "#102000"
-	adj_drowsy = -6
+	adj_drowsy = -6 SECONDS
 	adj_temp = -5
 
 	glass_name = "Dr. Gibb"
@@ -768,10 +768,9 @@
 	M.adjustOxyLoss(-4 * removed)
 	M.heal_organ_damage(2 * removed, 2 * removed)
 	M.adjustToxLoss(-2 * removed)
-	if(M.dizziness)
-		M.dizziness = max(0, M.dizziness - 15)
-	if(M.confused)
-		M.confused = max(0, M.confused - 5)
+	M.adjust_dizzy(-15 SECONDS)
+
+	M.adjust_confusion(-5 SECONDS)
 
 /datum/reagent/drink/dry_ramen
 	name = "Dry Ramen"
@@ -852,13 +851,13 @@
 	color = "#d69115"
 	glass_name = "beast energy"
 	glass_desc = "Why would you drink this without mixer?"
+	adj_drowsy = -7 SECONDS
 
 /datum/reagent/drink/beastenergy/affect_ingest(mob/living/carbon/M, alien, removed)
 	..()
 	if(alien == IS_DIONA)
 		return
-	M.drowsyness = max(0, M.drowsyness - 7)
-	M.make_jittery(2)
+	M.adjust_jitter(2 SECONDS * removed)
 	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/drink/kefir
@@ -956,7 +955,7 @@
 	taste_description = "carbonated ice cream"
 	reagent_state = LIQUID
 	color = "#cfe5ae"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 	protein_amount = 0.5
 
@@ -970,7 +969,7 @@
 	taste_description = "vanilla cola"
 	reagent_state = LIQUID
 	color = "#100800"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 
 	glass_name = "Space Cola"
@@ -983,7 +982,7 @@
 	taste_description = "orange cola"
 	reagent_state = LIQUID
 	color = "#100800"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 
 	glass_name = "Space Cola"
@@ -996,7 +995,7 @@
 	taste_description = "cherry cola"
 	reagent_state = LIQUID
 	color = "#100800"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 
 	glass_name = "Space Cola"
@@ -1009,7 +1008,7 @@
 	taste_description = "coffee and cola"
 	reagent_state = LIQUID
 	color = "#100800"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 
 	glass_name = "Coffee Cola"
@@ -1022,7 +1021,7 @@
 	taste_description = "diet cola"
 	reagent_state = LIQUID
 	color = "#100800"
-	adj_drowsy = -3
+	adj_drowsy = -3 SECONDS
 	adj_temp = -5
 
 	glass_name = "Space Cola"
@@ -1034,7 +1033,7 @@
 	description = "The official drink of some faraway, mountainous land."
 	taste_description = "sweet orangy-creamy soda"
 	color = "#a77718"
-	adj_drowsy = -7
+	adj_drowsy = -7 SECONDS
 	adj_sleepy = -1
 	adj_temp = -5
 
@@ -1047,7 +1046,7 @@
 	description = "Tastes like industrial shipbuilding capability."
 	taste_description = "metal girders"
 	color = "#a77718"
-	adj_drowsy = -7
+	adj_drowsy = -7 SECONDS
 	adj_sleepy = -1
 	adj_temp = -5
 
@@ -1110,8 +1109,8 @@
 	description = "Tasty black tea, it has antioxidants, it's good for you!"
 	taste_description = "tart black tea"
 	color = "#101000"
-	adj_dizzy = -2
-	adj_drowsy = -1
+	adj_dizzy = -2 SECONDS
+	adj_drowsy = -1 SECOND
 	adj_sleepy = -3
 	adj_temp = 20
 

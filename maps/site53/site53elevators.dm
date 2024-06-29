@@ -53,3 +53,14 @@
 		/area/turbolift/site53/robotlwr,
 		/area/turbolift/site53/robotupr
 		)
+
+/obj/turbolift_map_holder/gatea
+	name = "gate a turbolift map placeholder"
+	depth = 2
+	lift_size_x = 2
+	lift_size_y = 3
+
+	areas_to_use = list(
+		/area/turbolift/site53/hub,
+		/area/turbolift/site53/gatea
+		)

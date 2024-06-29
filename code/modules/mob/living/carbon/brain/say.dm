@@ -1,6 +1,6 @@
 //TODO: Convert this over for languages.
 /mob/living/carbon/brain/say(message)
-	if (silent)
+	if (HAS_TRAIT(src, TRAIT_MUTE))
 		return
 
 	message = sanitize(message)
