@@ -11,6 +11,7 @@
 	deactivation_sound = sound('sounds/effects/compbeep1.ogg', volume = 30)
 
 	species_restricted = list("exclude", SPECIES_DIONA)
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/hud/Initialize()
 	. = ..()
@@ -39,7 +40,7 @@
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"
 	desc = "A medical HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 	icon_state = "healthhudpresc"
 	off_state = "healthhudpresc_off"
 	item_state = "healthhudpresc"
@@ -62,10 +63,27 @@
 	var/global/list/jobs[0]
 	req_access = list(ACCESS_SECURITY_LVL1)
 
+/obj/item/clothing/glasses/hud/night/security
+	name = "security night vision goggles"
+	desc = "You can totally see in the dark now, AND see criminals!"
+	icon_state = "securityhudnight"
+	hud_type = HUD_SECURITY
+	body_parts_covered = 0
+	var/global/list/jobs[0]
+	req_access = list(ACCESS_SECURITY_LVL1)
+	origin_tech = list(TECH_MAGNET = 2)
+	darkness_view = 7
+	action_button_name = "Toggle Goggles"
+	toggleable = TRUE
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	off_state = "denight"
+	electric = TRUE
+	species_restricted = list("exclude", SPECIES_DIONA)
+
 /obj/item/clothing/glasses/hud/security/prescription
 	name = "prescription security HUD"
 	desc = "A security HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 	icon_state = "sechudpresc"
 	off_state = "sechudpresc_off"
 	item_state = "sechudpresc"
@@ -98,7 +116,7 @@
 	off_state = "janihudpresc_off"
 	item_state = "janihudpresc"
 	desc = "A janitor HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/hud/janitor/process_hud(mob/M)
 	process_jani_hud(M)
@@ -117,7 +135,7 @@
 	off_state = "scihudpresc_off"
 	item_state = "scihudpresc"
 	desc = "A science HUD integrated with a set of prescription glasses."
-	prescription = 7
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
 
 /obj/item/clothing/glasses/hud/scramble
 	name = "SCRAMBLE goggles"

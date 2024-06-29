@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(customitems)
 					if(result)
 						crash_with("Invalid custom item [checkfile]: [result]")
 					else
-						LAZYDISTINCTADD(custom_items_by_ckey[citem.ckey], citem)
+						LAZYOR(custom_items_by_ckey[citem.ckey], citem)
 						item_count++
 				catch(var/exception/e)
 					crash_with("Exception loading custom item [checkfile]: [e] on [e.file]:[e.line]")

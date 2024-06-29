@@ -96,7 +96,7 @@
 		SPAN_DANGER("Tendrils lash out from \the [src] and drag you in!"))
 	victim.forceMove(loc)
 	if(buckle_mob(victim))
-		victim.set_dir(pick(GLOB.cardinal))
+		victim.setDir(pick(GLOB.cardinal))
 		to_chat(victim, SPAN_DANGER("The tendrils [pick("wind", "tangle", "tighten", "coil", "knot", "snag", "twist", "constrict", "squeeze", "clench", "tense")] around you!"))
 
 /obj/effect/vine/buckle_mob()

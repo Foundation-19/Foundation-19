@@ -34,14 +34,14 @@
 			ai.holo.move_hologram(ai)
 		return 1
 
-/mob/observer/eye/aiEye/set_dir(new_dir)
+/mob/observer/eye/aiEye/setDir(new_dir)
 	. = ..()
 	if(. && isAI(owner))
 		var/mob/living/silicon/ai/ai = owner
 
 		//Holopad
 		if(ai.holo && ai.hologram_follow)
-			ai.holo.set_dir_hologram(new_dir, ai)
+			ai.holo.setDir_hologram(new_dir, ai)
 		return 1
 
 // AI MOVEMENT

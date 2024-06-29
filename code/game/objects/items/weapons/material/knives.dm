@@ -22,7 +22,7 @@
 
 	if(user.a_intent != I_HELP)
 		if(target_zone == BP_EYES)
-			if((MUTATION_CLUMSY in user.mutations) && prob(50))
+			if(((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 				M = user
 			return eyestab(M, user)
 

@@ -26,9 +26,9 @@ Buildable meters
 	if(!P)
 		return
 	if(!P.dir)
-		set_dir(SOUTH)
+		setDir(SOUTH)
 	else
-		set_dir(P.dir)
+		setDir(P.dir)
 	SetName(P.name)
 	desc = P.desc
 
@@ -55,17 +55,17 @@ Buildable meters
 /obj/item/pipe/Move()
 	var/old_dir = dir
 	. = ..()
-	set_dir(old_dir)
+	setDir(old_dir)
 
 /obj/item/pipe/proc/sanitize_dir()
 	switch(rotate_class)
 		if(PIPE_ROTATE_TWODIR)
 			if(dir==2)
-				set_dir(1)
+				setDir(1)
 			else if(dir==8)
-				set_dir(4)
+				setDir(4)
 		if(PIPE_ROTATE_ONEDIR)
-			set_dir(2)
+			setDir(2)
 
 /obj/item/pipe/attack_self(mob/user as mob)
 	return rotate(user)
@@ -156,7 +156,7 @@ Buildable meters
 	P.pipe_color = color
 	if (P.colorable)
 		P.color = color
-	P.set_dir(dir)
+	P.setDir(dir)
 	P.set_initial_level()
 
 	if(P.pipe_class == PIPE_CLASS_UNARY)
@@ -205,7 +205,7 @@ Buildable meters
 		return
 	frequency = I.frequency
 	id = I.id
-	set_dir(I.dir)
+	setDir(I.dir)
 	name = I.name
 	desc = I.desc
 	connect_types = I.connect_types

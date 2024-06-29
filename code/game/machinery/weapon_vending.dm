@@ -58,7 +58,7 @@
 		/obj/item/gun/projectile/pistol/mk9 = 4,
 		/obj/item/ammo_magazine/box/a57 = 6,
 		/obj/item/ammo_magazine/box/a57/rubber = 30,
-		/obj/item/ammo_magazine/box/mk9 = 4,
+		/obj/item/ammo_magazine/box/a9mm = 4,
 		/obj/item/ammo_magazine/box/a357 = 4,
 		/obj/item/ammo_magazine/scp/mk9 = 8,
 		/obj/item/ammo_magazine/scp/p90_mag = 12
@@ -120,7 +120,7 @@
 		/obj/item/gun/projectile/pistol/usp45 = 3,
 		/obj/item/gun/projectile/pistol/mk9 = 3,
 		/obj/item/ammo_magazine/box/a57 = 24,
-		/obj/item/ammo_magazine/box/mk9 = 4,
+		/obj/item/ammo_magazine/box/a9mm = 4,
 		/obj/item/ammo_magazine/box/a357 = 6,
 		/obj/item/ammo_magazine/box/a45 = 2,
 		/obj/item/ammo_magazine/scp/mk9 = 6,

@@ -1,6 +1,5 @@
 /material/diamond
 	name = MATERIAL_DIAMOND
-	lore_text = "An extremely hard allotrope of carbon. Valued for its use in industrial tools."
 	stack_type = /obj/item/stack/material/diamond
 	flags = MATERIAL_UNMELTABLE
 	cut_delay = 60
@@ -36,7 +35,6 @@
 
 /material/stone
 	name = MATERIAL_SANDSTONE
-	lore_text = "A clastic sedimentary rock. The cost of boosting it to orbit is almost universally much higher than the actual value of the material."
 	stack_type = /obj/item/stack/material/sandstone
 	icon_base = "stone"
 	table_icon_base = "stone"
@@ -59,7 +57,6 @@
 
 /material/stone/marble
 	name = MATERIAL_MARBLE
-	lore_text = "A metamorphic rock largely sourced from Earth. Prized for use in extremely expensive decorative surfaces."
 	icon_colour = "#aaaaaa"
 	weight = 26
 	hardness = MATERIAL_HARD
@@ -73,7 +70,6 @@
 
 /material/stone/concrete
 	name = MATERIAL_CONCRETE
-	lore_text = "The most ubiquitous building material of old Earth, now in space. Consists of mineral aggregate bound with some sort of cementing solution."
 	stack_type = /obj/item/stack/material/generic/brick
 	icon_colour = COLOR_GRAY
 	value = 1

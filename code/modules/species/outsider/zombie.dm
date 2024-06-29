@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 				target = M //For closest target
 				dist = D
 
-	H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+	H.setClickCooldown(CLICK_CD_ATTACK*2)
 	if (target)
 		if (isspecies(target, SPECIES_ZOMBIE))
 			target = null
@@ -180,7 +180,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 				H.face_atom(target)
 
 				if (!H.zone_sel)
-					H.zone_sel = new /obj/screen/zone_sel(null)
+					H.zone_sel = new /atom/movable/screen/zone_sel(null)
 				H.zone_sel.selecting = BP_CHEST
 				target.attack_hand(H)
 
@@ -243,7 +243,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	addtimer(CALLBACK(src, PROC_REF(transform_zombie)), 20)
 
 /mob/living/carbon/human/proc/transform_zombie()
-	make_jittery(300)
+	adjust_jitter(30 SECONDS)
 	adjustBruteLoss(100)
 	sleep(150)
 
@@ -259,8 +259,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	log_admin("[key_name(src)] has transformed into a zombie!")
 
 	Weaken(4)
-	jitteriness = 0
-	dizziness = 0
+	set_dizzy(0)
 	hallucination_power = 0
 	hallucination_duration = 0
 	if (should_have_organ(BP_HEART))
@@ -401,10 +400,19 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	real_name = name
 
 	var/decl/hierarchy/outfit/outfit = pick(
+		/decl/hierarchy/outfit/zombie/lczcadet,\
 		/decl/hierarchy/outfit/zombie/lczguard,\
+		/decl/hierarchy/outfit/zombie/lczsergeant,\
+		/decl/hierarchy/outfit/zombie/lczmedic,\
+		/decl/hierarchy/outfit/zombie/lczriot,\
+		/decl/hierarchy/outfit/zombie/lczrecontain,\
 		/decl/hierarchy/outfit/zombie/juniorscientist,\
 		/decl/hierarchy/outfit/zombie/scientist,\
+		/decl/hierarchy/outfit/zombie/seniorscientist,\
+		/decl/hierarchy/outfit/zombie/engineering,\
 		/decl/hierarchy/outfit/zombie/medicaldoctor,\
+		/decl/hierarchy/outfit/zombie/janitor,\
+		/decl/hierarchy/outfit/zombie/officeworker,\
 		/decl/hierarchy/outfit/zombie/classd\
 	)
 	outfit = outfit_by_type(outfit)

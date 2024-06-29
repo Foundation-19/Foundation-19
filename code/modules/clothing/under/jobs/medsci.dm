@@ -3,7 +3,7 @@
  */
 /obj/item/clothing/under/rank/research_director/alt
 	desc = "It's a dull black comfortable turtleneck which shows no emotion, and smells slightly of chemicals, and lacks morales. It's paired with some black jeans."
-	name = "Chief Science Officer's turtleneck"
+	name = "research director's turtleneck"
 	icon_state = "rdclothes"
 	item_state = "bl_suit"
 	worn_state = "rdclothes"
@@ -13,8 +13,8 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/research_director
-	desc = "It's a jumpsuit worn by those with the know-how to achieve the position of \"Chief Science Officer\". Its fabric provides minor protection from biological contaminants."
-	name = "chief science officer's jumpsuit"
+	desc = "It's a jumpsuit worn by those with the know-how to achieve the position of \"Research Director\". Its fabric provides minor protection from biological contaminants."
+	name = "research director's jumpsuit"
 	icon_state = "director"
 	item_state = "lb_suit"
 	worn_state = "director"
@@ -33,15 +33,37 @@
 		)
 
 /obj/item/clothing/under/rank/research_director/dress_rd
-	name = "chief science officer dress uniform"
-	desc = "Feminine fashion for the style concious CSO. Its fabric provides minor protection from biological contaminants."
+	name = "research director dress uniform"
+	desc = "Feminine fashion for the style concious RD. Its fabric provides minor protection from biological contaminants."
 	icon_state = "dress_rd"
 	item_state = "lb_suit"
 	worn_state = "dress_rd"
 	armor = list(
 		bio = ARMOR_BIO_MINOR
 		)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/rank/scientist_new/senior
+	desc = "A snazzy purple science-themed turtleneck usually worn by senior scientists like the highly famous Dr. Blight, and or Dr. Buck."
+	name = "researcher's turtleneck"
+	icon_state = "seniorscience"
+	item_state = "w_suit"
+	worn_state = "seniorscience"
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/rank/scientist_new/junior
+	name = "researcher's formal uniform"
+	desc = "A white dress shirt, with some khahki slacks, and a purple tie in science colors, smells like chemicals."
+	icon_state = "junscience"
+	item_state = "w_suit"
+	worn_state = "junscience"
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/rank/chemist
 	desc = "It's made of a special fiber that gives special protection against biohazards. The striping on the suit denotes the wearer as a trained pharmacist."
@@ -58,8 +80,8 @@
  * Medical
  */
 /obj/item/clothing/under/rank/chief_medical_officer
-	desc = "It's a jumpsuit worn by those with the experience to be \"Chief Medical Officer\". It provides minor biological protection."
-	name = "chief medical officer's jumpsuit"
+	desc = "It's a jumpsuit worn by those with the experience to be \"Medical Director\". It provides minor biological protection."
+	name = "medical director's jumpsuit"
 	icon_state = "cmo"
 	item_state = "w_suit"
 	worn_state = "cmo"
@@ -68,9 +90,20 @@
 		bio = ARMOR_BIO_MINOR
 		)
 
+/obj/item/clothing/under/rank/chief_medical_officer/turtleneck
+	desc = "It's a jumpsuit worn by those with the experience to be \"Medical Director\". It provides minor biological protection."
+	name = "medical director's turtleneck"
+	icon_state = "cmoturtle"
+	item_state = "w_suit"
+	worn_state = "cmoturtle"
+	permeability_coefficient = 0.50
+	armor = list(
+		bio = ARMOR_BIO_MINOR
+		)
+
 /obj/item/clothing/under/rank/chief_medical_officer/skirt
-	desc = "It's a jumpskirt worn by those with the experience to be \"Chief Medical Officer\". It provides minor biological protection."
-	name = "chief medical officer's jumpskirt"
+	desc = "It's a jumpskirt worn by those with the experience to be \"Medical Director\". It provides minor biological protection."
+	name = "medical director's jumpskirt"
 	icon_state = "cmo_skirt"
 	item_state = "w_suit"
 	worn_state = "cmo_skirt"
