@@ -224,6 +224,10 @@
 	name = "ammunition box (5.7x28mm rubber)"
 	ammo_type = /obj/item/ammo_casing/pistol/a57/rubber
 
+/obj/item/ammo_magazine/box/a57/ap
+	name = "ammunition box (5.7x28mm armor piercing)"
+	ammo_type = /obj/item/ammo_casing/pistol/a57/ap
+
 // 5.56
 /obj/item/ammo_magazine/box/a556
 	name = "magazine box (5.56mm)"

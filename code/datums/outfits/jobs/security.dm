@@ -243,7 +243,7 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
-	backpack_contents = list()
+	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
