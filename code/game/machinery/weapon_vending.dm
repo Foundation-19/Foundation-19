@@ -84,13 +84,13 @@
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/p90 = 6,
 		/obj/item/gun/projectile/revolver/mateba = 2,
-		/obj/item/gun/projectile/pistol/mk9 = 4,
+		/obj/item/gun/projectile/pistol/usp45 = 4,
 		/obj/item/ammo_magazine/box/a357 = 4,
 		/obj/item/ammo_magazine/box/a50 = 4,
 		/obj/item/ammo_magazine/box/a57 = 12,
-		/obj/item/ammo_magazine/box/mk9 = 6,
+		/obj/item/ammo_magazine/box/a45 = 8,
 		/obj/item/ammo_magazine/box/a556 = 16,
-		/obj/item/ammo_magazine/scp/mk9 = 8,
+		/obj/item/ammo_magazine/scp/usp45 = 12,
 		/obj/item/ammo_magazine/scp/p90_mag = 12
 	)
 
@@ -100,11 +100,11 @@
 	icon_state = "weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/m4a1 = 2,
-		/obj/item/gun/projectile/automatic/scp/m16 = 2,
-		/obj/item/ammo_magazine/scp/m16_mag = 8,
-		/obj/item/ammo_magazine/box/a556 = 2,
-		/obj/item/grenade/frag = 2
+		/obj/item/gun/projectile/automatic/scp/m4a1 = 6,
+		/obj/item/gun/projectile/automatic/scp/m16 = 6,
+		/obj/item/ammo_magazine/scp/m16_mag = 16,
+		/obj/item/ammo_magazine/box/a556 = 6,
+		/obj/item/grenade/frag = 8
 
 	)
 
@@ -127,5 +127,7 @@
 		/obj/item/ammo_magazine/scp/mk9 = 6,
 		/obj/item/ammo_magazine/scp/p90_mag = 12,
 		/obj/item/ammo_magazine/scp/usp45 = 6,
+		/obj/item/gun/energy/stunrevolver/rifle = 2,
+		/obj/item/gun/energy/ionrifle = 1
 	)
 
