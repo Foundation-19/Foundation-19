@@ -1270,7 +1270,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "eT" = (
 /obj/structure/grille{
 	health_max = null;
@@ -2239,7 +2239,7 @@
 	},
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/r_wall,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "ie" = (
 /obj/machinery/light{
 	dir = 8;
@@ -2646,7 +2646,7 @@
 "jC" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "jD" = (
 /obj/structure/flora/tree/dead,
 /turf/simulated/floor/exoplanet/grass,
@@ -2814,7 +2814,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "kb" = (
 /obj/structure/table/rack,
 /obj/item/bodybag,
@@ -2890,7 +2890,7 @@
 	name = "Unknown Truck Storage Shutters"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "kp" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -3172,7 +3172,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "lE" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a57,
@@ -3238,7 +3238,7 @@
 /obj/machinery/computer/crew,
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "lT" = (
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3383,7 +3383,7 @@
 "mx" = (
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/r_wall,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "my" = (
 /obj/effect/overlay/palmtree_l,
 /turf/unsimulated/beach/sand,
@@ -3434,7 +3434,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "mI" = (
 /turf/simulated/floor/plating,
 /area/centcom/chaos)
@@ -4041,7 +4041,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/vertical,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "oc" = (
 /obj/machinery/vending/weaponry/chaos/specialized,
 /turf/simulated/floor/wood/ebony,
@@ -4244,7 +4244,7 @@
 	name = "Unknown Truck"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "oz" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
@@ -4283,7 +4283,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "oE" = (
 /obj/machinery/light{
 	dir = 4
@@ -4327,7 +4327,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "oK" = (
 /obj/structure/bed/chair/office/comfy/green{
 	dir = 1
@@ -5159,7 +5159,7 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "rq" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -5393,7 +5393,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "rK" = (
 /obj/effect/landmark{
 	name = "NewPlayer"
@@ -7618,7 +7618,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "wY" = (
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
@@ -9563,7 +9563,7 @@
 	dir = 4
 	},
 /turf/simulated/wall/r_wall,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "DS" = (
 /obj/structure/table/reinforced,
 /obj/item/defibrillator/loaded,
@@ -14653,7 +14653,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "UB" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -14774,7 +14774,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/vertical,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "UY" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -15402,7 +15402,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/scpcar)
+/area/site53/tram/goc1)
 "Xy" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood/walnut,
