@@ -572,7 +572,18 @@
 "aGa" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/table/reinforced,
-/obj/item/book/manual/chef_recipes,
+/obj/item/book/manual/chef_recipes{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/condiment/small/saltshaker{
+	pixel_x = 8;
+	pixel_y = 13
+	},
+/obj/item/reagent_containers/food/condiment/small/peppermill{
+	pixel_y = 4;
+	pixel_x = 9
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "aGp" = (
@@ -6101,7 +6112,13 @@
 /area/site53/lhcz/hallway)
 "ggA" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/folder/white,
+/obj/item/folder/white{
+	pixel_y = 2
+	},
+/obj/item/folder/white{
+	pixel_y = 4;
+	pixel_x = 2
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/lhcz/scp049containment)
 "ghd" = (
@@ -10964,6 +10981,7 @@
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/item/storage/box/beakers,
 /obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "laF" = (
@@ -12337,7 +12355,14 @@
 /area/site53/llcz/dclass/briefing)
 "mwa" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/newspaper,
+/obj/item/newspaper{
+	pixel_y = 3;
+	pixel_x = -2
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp{
+	pixel_y = 7;
+	pixel_x = 13
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/lhcz/scp049containment)
 "mwg" = (
@@ -14435,7 +14460,7 @@
 /area/site53/llcz/dclass/cells)
 "oEl" = (
 /obj/effect/floor_decal/corner/black/diagonal,
-/obj/machinery/cooker/oven,
+/obj/machinery/stove,
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "oEy" = (
@@ -14708,6 +14733,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
+"oTj" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/camera/autoname{
+	network = list("Heavy Containment Zone Network");
+	c_tag = "SCP-049 North Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/scp049containment)
 "oVj" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /obj/structure/cable/green,
@@ -20198,6 +20231,13 @@
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/llcz/dclass/luxuryhall)
+"uZj" = (
+/obj/machinery/chemical_dispenser/bar_coffee/full{
+	pixel_y = 5
+	},
+/obj/structure/table/reinforced,
+/turf/simulated/floor/lino,
+/area/site53/lhcz/scp049containment)
 "uZw" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/black,
 /turf/simulated/floor/tiled/monotile,
@@ -21923,10 +21963,10 @@
 /area/site53/llcz/maintenance)
 "wSz" = (
 /obj/effect/floor_decal/corner/black/diagonal,
-/obj/structure/table/reinforced,
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "wTd" = (
@@ -74215,7 +74255,7 @@ aDa
 sXP
 jaZ
 wNS
-nqG
+uZj
 nqG
 hRU
 sXP
@@ -77028,7 +77068,7 @@ hIH
 hIH
 hIH
 enz
-hyK
+oTj
 ekB
 hyK
 hyK
