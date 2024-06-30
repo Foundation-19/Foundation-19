@@ -11,7 +11,7 @@
 /obj/effect/shuttle_landmark/heli/start
 	name = "MTF Base"
 	landmark_tag = "nav_mtf_start"
-	base_turf = /turf/unsimulated/floor/reinforced
+	base_turf = /turf/simulated/floor/reinforced
 	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/heli/out

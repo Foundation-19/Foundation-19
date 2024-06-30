@@ -15579,7 +15579,6 @@
 /area/site53/logistics/logisticsbreak)
 "UF" = (
 /obj/effect/shuttle_landmark/heli/out,
-/obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface/west)
 "UG" = (
@@ -52258,8 +52257,8 @@ AT
 AT
 AT
 AT
-AT
 UF
+RT
 AT
 AT
 AT

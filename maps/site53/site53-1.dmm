@@ -3829,6 +3829,13 @@
 /obj/effect/floor_decal/corner/safe/border,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lhcz/scp1102room)
+"dRM" = (
+/obj/machinery/chemical_dispenser/bar_coffee/full{
+	pixel_y = 5
+	},
+/obj/structure/table/reinforced,
+/turf/simulated/floor/lino,
+/area/site53/lhcz/scp049containment)
 "dSm" = (
 /turf/simulated/floor/grass,
 /area/site53/lhcz/scp049containment)
@@ -13956,6 +13963,14 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
+"odU" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/camera/autoname{
+	network = list("Heavy Containment Zone Network");
+	c_tag = "SCP-049 North Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/scp049containment)
 "ogM" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -14733,14 +14748,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
-"oTj" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	c_tag = "SCP-049 North Office"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/scp049containment)
 "oVj" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /obj/structure/cable/green,
@@ -20231,13 +20238,6 @@
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/llcz/dclass/luxuryhall)
-"uZj" = (
-/obj/machinery/chemical_dispenser/bar_coffee/full{
-	pixel_y = 5
-	},
-/obj/structure/table/reinforced,
-/turf/simulated/floor/lino,
-/area/site53/lhcz/scp049containment)
 "uZw" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/black,
 /turf/simulated/floor/tiled/monotile,
@@ -74255,7 +74255,7 @@ aDa
 sXP
 jaZ
 wNS
-uZj
+dRM
 nqG
 hRU
 sXP
@@ -77068,7 +77068,7 @@ hIH
 hIH
 hIH
 enz
-oTj
+odU
 ekB
 hyK
 hyK
