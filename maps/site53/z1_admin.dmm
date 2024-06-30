@@ -8929,11 +8929,16 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "Ac" = (
-/obj/machinery/light/small/red{
-	dir = 8
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
-/turf/simulated/floor/reinforced,
-/area/centcom)
+/obj/effect/paint_stripe/gunmetal,
+/obj/machinery/light/small/red{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/site53/tram/mtf)
 "Ad" = (
 /obj/machinery/button/blast_door{
 	id_tag = "cihelicopter-left";
@@ -10624,11 +10629,16 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Fn" = (
-/obj/machinery/light/small/red{
-	dir = 4
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
-/turf/simulated/floor/reinforced,
-/area/centcom)
+/obj/effect/paint_stripe/gunmetal,
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/turf/simulated/wall/r_wall,
+/area/site53/tram/mtf)
 "Fo" = (
 /obj/structure/bed/chair/comfy,
 /obj/machinery/light{
@@ -27767,8 +27777,8 @@ cU
 dD
 bx
 xC
-Fn
-ec
+xC
+Ac
 xC
 uA
 Rr
@@ -28171,8 +28181,8 @@ cY
 dE
 bx
 xC
-Ac
-ec
+xC
+Fn
 xC
 uA
 Rr
