@@ -643,8 +643,7 @@
 /obj/structure/closet/secure_closet/guard/epsilon11agent/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/ammo_magazine/scp/a9mm = 3,
-		/obj/item/ammo_magazine/box/a454,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/gun/projectile/pistol/glock/spec,
 		/obj/item/clothing/glasses/night,
 		/obj/item/clothing/mask/gas/mtf,
