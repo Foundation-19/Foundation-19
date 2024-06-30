@@ -630,3 +630,53 @@
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/melee/telebaton,
 	)
+
+/obj/structure/closet/secure_closet/guard/epsilon11agent
+	name = "Epsilon-11 Task Force Agent's locker"
+	req_access = list(ACCESS_MTF)
+	icon_state = "mtf1"
+	icon_closed = "mtf"
+	icon_locked = "mtf1"
+	icon_opened = "mtfopen"
+	icon_off = "mtfoff"
+
+/obj/structure/closet/secure_closet/guard/epsilon11agent/WillContain()
+	return list(
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/ammo_magazine/scp/a9mm = 3,
+		/obj/item/ammo_magazine/box/a454,
+		/obj/item/gun/projectile/pistol/glock/spec,
+		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/mask/gas/mtf,
+		/obj/item/melee/baton/loaded,
+		/obj/item/crowbar/emergency_forcing_tool,
+		/obj/item/storage/box/cdeathalarm_kit,
+		/obj/item/material/knife/combat,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+	)
+
+/obj/structure/closet/secure_closet/guard/epsilon11leader
+	name = "Epsilon-11 Task Force Leader's locker"
+	req_access = list(ACCESS_MTF_COMMAND)
+	icon_state = "mtfsenior1"
+	icon_closed = "mtfsenior"
+	icon_locked = "mtfsenior1"
+	icon_opened = "mtfopen"
+	icon_off = "mtfsenioroff"
+
+/obj/structure/closet/secure_closet/guard/epsilon11leader/WillContain()
+	return list(
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/ammo_magazine/speedloader/heavy = 3,
+		/obj/item/ammo_magazine/box/a454,
+		/obj/item/gun/projectile/revolver/military/heavy,
+		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/mask/gas/mtf,
+		/obj/item/melee/baton/loaded,
+		/obj/item/crowbar/emergency_forcing_tool,
+		/obj/item/storage/box/cdeathalarm_kit,
+		/obj/item/material/knife/combat,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+	)

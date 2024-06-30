@@ -50,7 +50,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/ap
-	name = "MK9 magazine (9mm AP)"
+	name = "MK9 magazine (9mm Armor-Piercing)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
@@ -60,7 +60,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/hp
-	name = "MK9 magazine (9mm HP)"
+	name = "MK9 magazine (9mm Hollow-Point)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
@@ -76,17 +76,37 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 7
+	max_ammo = 12
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a9mm/ap
+	name = "pistol magazine (9mm Armor-Piercing)"
+	icon_state = "9x19pap"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 12
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a9mm/hp
+	name = "pistol magazine (9mm Hollow-Point)"
+	icon_state = "9x19php"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 12
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/a9mm/rubber
-	name = "pistol magazine (9mm)"
+	name = "pistol magazine (9mm Rubber)"
 	icon_state = "9x19pr"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 7
+	max_ammo = 12
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/a380

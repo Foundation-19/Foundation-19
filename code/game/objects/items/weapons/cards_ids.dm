@@ -826,6 +826,12 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	assignment = "Epsilon-11 Task Force Operative"
 
+
+/obj/item/card/id/mtf/ninetaillead
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Epsilon-11 Task Force Leader"
+
 /obj/item/card/id/mtf/epsilon
 	name = "mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
@@ -839,7 +845,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/mtf/beta_7
 	name = "mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
-	assignment = "beta_7 Task Force Operative"
+	assignment = "Beta-7 Task Force Operative"
 
 /obj/item/card/id/mtf/alpha
 	name = "mobile task force ID"
@@ -861,6 +867,10 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	rank = "Mobile Task Force Operative"
 	access |= get_all_site_access()
 
+/obj/item/card/id/mtf/ninetaillead/Initialize()
+	. = ..()
+	rank = "Mobile Task Force Leader"
+	access = "ACCESS_MTF_COMMAND"
 
 /obj/item/card/id/physics
 	name = "military ID"

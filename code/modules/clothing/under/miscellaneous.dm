@@ -128,7 +128,7 @@
 
 /obj/item/clothing/under/ert/epsilon11
 	name = "'Nine Tailed Fox' tactical uniform"
-	desc = "A shortsleeved turtleneck orange in color, paired with grey digital-camo cargo pants. It looks very tactical."
+	desc = "A tactical uniform worn by Epsilon-11 agents, it has a dark orange field suit top, with some black tactical trousers, the classic design."
 	icon_state = "mtf_epsilon11"
 	worn_state = "mtf_epsilon11"
 
