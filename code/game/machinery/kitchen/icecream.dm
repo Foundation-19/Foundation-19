@@ -21,6 +21,7 @@
 	var/list/product_types = list()
 	var/dispense_flavour = ICECREAM_VANILLA
 	var/flavour_name = "vanilla"
+	var/canmake = 1
 
 /obj/machinery/icecream_vat/proc/get_ingredient_list(type)
 	switch(type)
@@ -122,6 +123,8 @@
 		..()
 
 /obj/machinery/icecream_vat/proc/make(mob/user, make_type, amount)
+	if(amount > 5 || !canmake)
+		return
 	for(var/R in get_ingredient_list(make_type))
 		if(reagents.has_reagent(R, amount))
 			continue
