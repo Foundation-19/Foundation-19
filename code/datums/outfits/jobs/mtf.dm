@@ -4,7 +4,7 @@
 
 	id_type = /obj/item/card/id/mtf
 	hierarchy_type = /decl/hierarchy/outfit/mtf
-	flags = OUTFIT_HAS_BACKPACK | OUTFIT_RESET_EQUIPMENT
+	flags = OUTFIT_RESET_EQUIPMENT
 
 // Nine Tailed Fox
 /decl/hierarchy/outfit/mtf/epsilon_11
@@ -20,8 +20,6 @@
 	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
-	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
@@ -38,8 +36,6 @@
 	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/shotgun/pump/combat
-	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
@@ -57,7 +53,6 @@
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/automatic/scp/m16
 	r_hand = /obj/item/storage/box/syndie_kit/spy
-	l_hand = null
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = null
 	id_type = /obj/item/card/id/mtf/ninetaillead
@@ -75,7 +70,6 @@
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = /obj/item/storage/firstaid/surgery
-	l_hand = /obj/item/crowbar/red
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = null
 	id_type = /obj/item/card/id/mtf/ninetail
