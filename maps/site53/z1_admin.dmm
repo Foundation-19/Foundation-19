@@ -49,12 +49,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
-"ap" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/centcom/goc)
 "ar" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#111111";
@@ -118,16 +112,7 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom)
 "aF" = (
-/obj/structure/closet,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
-	},
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/unsimulated/wall,
 /area/centcom/goc)
 "aG" = (
 /obj/machinery/light{
@@ -144,6 +129,14 @@
 	dir = 8
 	},
 /area/centcom)
+"aI" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/rig/light/ninja{
+	name = "Mk.II Combat Garment control module";
+	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for deadly GOC strike teams."
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/goc)
 "aJ" = (
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 6
@@ -168,15 +161,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/centcom)
 "aN" = (
-/obj/effect/floor_decal/corner/white/border{
-	dir = 4;
-	color = "#E5511B"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/centcom)
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/centcom/goc)
 "aP" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -443,23 +430,6 @@
 	dir = 4
 	},
 /area/centcom)
-"bR" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/table/steel_reinforced,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
 "bT" = (
 /obj/machinery/light,
 /obj/structure/closet/crate/internals,
@@ -593,14 +563,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/mtf)
-"co" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
-/area/centcom/goc)
 "cp" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1;
@@ -619,14 +581,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/mtf)
-"cr" = (
-/obj/effect/floor_decal/corner/paleblue/bordercorner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
-/area/centcom/goc)
 "cs" = (
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#272B5B"
@@ -788,6 +742,15 @@
 /obj/effect/paint/blue,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
+"cT" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "cU" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -1005,16 +968,10 @@
 	},
 /area/centcom)
 "dr" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/structure/closet,
-/obj/item/storage/belt/holster/security,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/ert,
-/obj/item/clothing/glasses/night,
-/obj/item/device/radio/headset/goc,
-/turf/simulated/floor/wood,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
 "ds" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -1154,15 +1111,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
-"dL" = (
-/obj/effect/floor_decal/corner/blue/bordercorner{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/paleblue/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/centcom/goc)
 "dN" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -1275,15 +1223,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/centcom)
-"ei" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/machinery/status_display{
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "ek" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/centcom/chaos)
@@ -1361,6 +1300,15 @@
 	dir = 8
 	},
 /area/centcom)
+"ew" = (
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/centcom/goc)
 "eB" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4;
@@ -2944,10 +2892,10 @@
 /turf/simulated/floor/plating,
 /area/site53/tram/goc1)
 "jD" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/recharger,
-/obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner,
 /area/centcom/goc)
 "jF" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -3125,6 +3073,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
+"kc" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "ke" = (
 /obj/machinery/computer/crew{
 	dir = 4
@@ -3183,11 +3139,13 @@
 /turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
 "ko" = (
-/obj/machinery/door/blast/shutters{
-	id_tag = "goc1";
-	name = "Unknown Truck Storage Shutters"
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/goc1)
 "kp" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -3282,14 +3240,21 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "kK" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 9
+	dir = 4;
+	icon_state = "bordercolor"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/iv_drip,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom/goc)
 "kM" = (
 /obj/structure/bed/chair/armchair{
@@ -3329,7 +3294,13 @@
 /turf/simulated/floor/tiled/vertical,
 /area/centcom/chaos)
 "kT" = (
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
 "kV" = (
 /obj/effect/floor_decal/corner/blue{
@@ -3425,15 +3396,6 @@
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
-"lq" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/centcom/goc)
 "lt" = (
 /obj/machinery/light{
 	dir = 4
@@ -3514,7 +3476,10 @@
 /turf/simulated/floor/tiled/vertical,
 /area/centcom/chaos)
 "lI" = (
-/turf/simulated/wall/titanium,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
 "lJ" = (
 /obj/effect/floor_decal/corner/safe/border{
@@ -3525,13 +3490,10 @@
 	},
 /area/centcom/chaos)
 "lK" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/door/airlock/command{
+	name = "United Nations Headquarters Preperations"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom/goc)
 "lL" = (
 /obj/effect/floor_decal/corner/white/mono{
@@ -3567,13 +3529,13 @@
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
 "lS" = (
-/obj/machinery/computer/crew,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/tram/goc1)
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom/goc)
 "lT" = (
-/obj/structure/curtain/medical,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/space,
 /area/centcom/goc)
 "lU" = (
 /obj/machinery/light{
@@ -3669,9 +3631,18 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
 "mk" = (
-/obj/structure/closet/secure_closet/medical2,
-/obj/effect/floor_decal/corner/blue/border,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom/goc)
 "mo" = (
 /turf/simulated/floor/carpet/blue2,
@@ -3698,14 +3669,9 @@
 	},
 /area/centcom)
 "mr" = (
-/obj/machinery/optable,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 10
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
 "ms" = (
 /turf/unsimulated/floor{
@@ -3714,15 +3680,6 @@
 	name = "water"
 	},
 /area/space)
-"mt" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/machinery/status_display{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "mv" = (
 /obj/structure/table/standard,
 /obj/item/device/megaphone,
@@ -3752,7 +3709,10 @@
 /turf/unsimulated/beach/sand,
 /area/beach)
 "mA" = (
-/turf/simulated/wall/r_titanium,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/grass,
 /area/centcom/goc)
 "mB" = (
 /obj/structure/table/rack,
@@ -4360,12 +4320,6 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
-"nT" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/light,
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "nV" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -4383,14 +4337,37 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom)
 "nX" = (
-/obj/effect/floor_decal/corner/blue/border{
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 5
+	},
+/obj/structure/table/rack,
+/obj/item/clothing/suit/storage/toggle/labcoat/cmo/md{
+	name = "thaumatologist's labcoat";
+	desc = "A coat that protects against minor chemical spills. It has a GOC logo on the chest, and a blue stripe on it in Global Occult Coalition colors."
+	},
+/obj/item/clothing/suit/storage/toggle/labcoat/cmo/md{
+	name = "thaumatologist's labcoat";
+	desc = "A coat that protects against minor chemical spills. It has a GOC logo on the chest, and a blue stripe on it in Global Occult Coalition colors."
+	},
+/obj/item/clothing/suit/storage/toggle/labcoat/cmo/md{
+	name = "thaumatologist's labcoat";
+	desc = "A coat that protects against minor chemical spills. It has a GOC logo on the chest, and a blue stripe on it in Global Occult Coalition colors."
+	},
+/obj/item/clothing/suit/storage/toggle/labcoat/cmo/md{
+	name = "thaumatologist's labcoat";
+	desc = "A coat that protects against minor chemical spills. It has a GOC logo on the chest, and a blue stripe on it in Global Occult Coalition colors."
+	},
+/obj/item/clothing/suit/storage/toggle/labcoat/cmo/md{
+	name = "thaumatologist's labcoat";
+	desc = "A coat that protects against minor chemical spills. It has a GOC logo on the chest, and a blue stripe on it in Global Occult Coalition colors."
+	},
+/obj/item/clothing/suit/storage/toggle/labcoat/cmo/md{
+	name = "thaumatologist's labcoat";
+	desc = "A coat that protects against minor chemical spills. It has a GOC logo on the chest, and a blue stripe on it in Global Occult Coalition colors."
+	},
+/turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/acting/changer,
-/turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
 "nY" = (
 /obj/structure/table/steel_reinforced,
@@ -4430,11 +4407,11 @@
 /turf/unsimulated/beach/sand,
 /area/beach)
 "ob" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 8
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/tram/goc1)
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/goc)
 "oc" = (
 /obj/machinery/vending/weaponry/chaos/specialized,
 /turf/simulated/floor/wood/ebony,
@@ -4507,17 +4484,12 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "oo" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+/obj/structure/table/steel_reinforced,
+/obj/item/organ/internal/augment/active/hud{
+	name = "Mk. VII Sensory-Loop Alternative Ego Emplacement Projector implant";
+	desc = "SLEEP is a set of thaumaneurological implants inserted into a subject's occipital and temporal lobes, which protrude into their insular lobe and thalamus. The specific locations of these implants are classified."
 	},
-/obj/structure/table/rack,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
 "op" = (
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -4640,7 +4612,13 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/tram/goc1)
 "oz" = (
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
 "oA" = (
 /obj/effect/floor_decal/corner/safe/border{
@@ -5303,11 +5281,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
-"qa" = (
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "qb" = (
 /obj/structure/table/rack,
 /obj/item/storage/box/emps,
@@ -5358,6 +5331,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"ql" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white/corner,
+/area/centcom/goc)
 "qn" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/gloves,
@@ -5415,13 +5394,6 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"qv" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 10
-	},
-/obj/structure/flora/pottedplant/floorleaf,
-/turf/simulated/floor/tiled/white/corner,
-/area/centcom/goc)
 "qx" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 9
@@ -5477,24 +5449,12 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
-"qF" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/white/corner,
-/area/centcom/goc)
 "qG" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
-"qI" = (
-/obj/structure/bed/chair/office/comfy/teal{
-	dir = 8
-	},
-/turf/simulated/floor/carpet/blue2,
-/area/centcom/goc)
 "qJ" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#32441C";
@@ -5655,6 +5615,12 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"rc" = (
+/obj/effect/floor_decal/corner/paleblue/bordercorner,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/centcom/goc)
 "rd" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/burn,
@@ -5728,6 +5694,15 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"rh" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/centcom/goc)
 "ri" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -6109,7 +6084,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "sb" = (
-/turf/simulated/floor/tiled/white/monotile,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/concrete,
 /area/centcom/goc)
 "sd" = (
 /obj/structure/table/rack,
@@ -6356,6 +6334,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"ss" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/centcom/goc)
 "st" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
@@ -6466,6 +6452,16 @@
 	dir = 8
 	},
 /area/centcom)
+"sF" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_y = 3
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "sG" = (
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "isdlock";
@@ -6567,17 +6563,13 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
 "sS" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/blue/border{
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 1
 	},
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/toy/figure/md{
-	desc = "Awwww, a cute Medical Doctor action figure."
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
 "sT" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -6791,8 +6783,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "tc" = (
-/obj/machinery/body_scanconsole,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/structure/flora/ausbushes,
+/turf/simulated/floor/exoplanet/grass,
 /area/centcom/goc)
 "te" = (
 /obj/structure/table/rack,
@@ -6814,6 +6806,15 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"tf" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "tg" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epsilon-11 Preperations";
@@ -6936,6 +6937,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"tD" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/centcom/goc)
 "tE" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4;
@@ -7005,6 +7019,39 @@
 	dir = 4
 	},
 /area/centcom)
+"tH" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/obj/structure/table/rack,
+/obj/item/clothing/under/rank/civilian/uiu/formal{
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in GOC colors, with some khaki pants. Usually the outfit of a GOC Thaumatologist.";
+	name = "Global Occult Coalition civil formal suit"
+	},
+/obj/item/clothing/under/rank/civilian/uiu/formal{
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in GOC colors, with some khaki pants. Usually the outfit of a GOC Thaumatologist.";
+	name = "Global Occult Coalition civil formal suit"
+	},
+/obj/item/clothing/under/rank/civilian/uiu/formal{
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in GOC colors, with some khaki pants. Usually the outfit of a GOC Thaumatologist.";
+	name = "Global Occult Coalition civil formal suit"
+	},
+/obj/item/clothing/under/rank/civilian/uiu/formal{
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in GOC colors, with some khaki pants. Usually the outfit of a GOC Thaumatologist.";
+	name = "Global Occult Coalition civil formal suit"
+	},
+/obj/item/clothing/under/rank/civilian/uiu/formal{
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in GOC colors, with some khaki pants. Usually the outfit of a GOC Thaumatologist.";
+	name = "Global Occult Coalition civil formal suit"
+	},
+/obj/item/clothing/under/rank/civilian/uiu/formal{
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in GOC colors, with some khaki pants. Usually the outfit of a GOC Thaumatologist.";
+	name = "Global Occult Coalition civil formal suit"
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/centcom/goc)
 "tK" = (
 /obj/structure/table/rack,
 /obj/item/grenade/chem_grenade/incendiary,
@@ -7438,6 +7485,12 @@
 	dir = 1
 	},
 /area/centcom)
+"ux" = (
+/obj/structure/bed/chair/office/comfy/teal{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "uy" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/white/border{
@@ -7594,15 +7647,6 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
-"uW" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor/plating,
-/area/centcom/goc)
-"vb" = (
-/obj/structure/table/reinforced,
-/obj/item/folder/blue,
-/turf/simulated/floor/carpet/blue2,
-/area/centcom/goc)
 "ve" = (
 /turf/unsimulated/wall{
 	desc = "That looks like it doesn't open easily.";
@@ -7794,6 +7838,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
+"vK" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/white/corner,
+/area/centcom/goc)
 "vM" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/hypospray,
@@ -7842,6 +7893,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"vV" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "vX" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#E5511B";
@@ -7873,17 +7932,6 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"wd" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/vending/weaponry/lcz/nonlethal{
-	name = "\improper Global Occult Coalition Non-Lethal Equipment Dispenser";
-	icon_state = "goc_weaponry"
-	},
-/obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
 "we" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#2B0F42";
@@ -7983,15 +8031,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
-"wm" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 8
-	},
-/obj/machinery/status_display{
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/centcom/goc)
 "wo" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9;
@@ -8050,10 +8089,10 @@
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ws" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/combat,
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
 "wt" = (
 /obj/effect/paint/silver,
@@ -8221,27 +8260,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
-"wP" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_y = 3
-	},
-/obj/item/pen{
-	pixel_y = 3
-	},
-/turf/simulated/floor/carpet/blue2,
-/area/centcom/goc)
 "wQ" = (
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/corner{
 	dir = 8
 	},
 /area/centcom/chaos)
-"wR" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/exoplanet/grass,
-/area/centcom/goc)
 "wT" = (
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
@@ -8354,6 +8378,14 @@
 	dir = 8
 	},
 /area/centcom)
+"xq" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/centcom/goc)
 "xr" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -8427,10 +8459,21 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "xE" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
+/obj/machinery/light{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/structure/table/steel_reinforced,
+/obj/item/device/flashlight/maglight,
+/obj/item/device/flashlight/maglight,
+/obj/item/device/flashlight/maglight,
+/obj/item/device/flashlight/maglight,
+/obj/item/device/flashlight/maglight,
+/obj/item/device/flashlight/maglight,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom/goc)
 "xF" = (
 /obj/machinery/vending/snack{
@@ -8606,14 +8649,6 @@
 	dir = 1
 	},
 /area/centcom)
-"ym" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 4
-	},
-/area/centcom/goc)
 "yo" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -8695,15 +8730,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
-"yz" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 9
-	},
-/obj/structure/flora/pottedplant/floorleaf,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 8
-	},
-/area/centcom/goc)
 "yB" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#272B5B";
@@ -8793,6 +8819,12 @@
 /obj/item/reagent_containers/hypospray/autoinjector/pain,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"yK" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/large/psinullers,
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "yL" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -9096,17 +9128,14 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
-"zq" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/filingcabinet/chestdrawer,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "zs" = (
-/obj/effect/floor_decal/corner/blue/border,
-/turf/simulated/floor/tiled/dark/horizontal,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 9
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
 /area/centcom/goc)
 "zu" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -9161,12 +9190,9 @@
 	},
 /area/centcom)
 "zA" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/obj/item/bodybag/cryobag,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/machinery/psi_meter,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
 "zE" = (
 /obj/machinery/sleeper{
@@ -9241,6 +9267,12 @@
 	dir = 1
 	},
 /area/centcom)
+"zS" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "zU" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#ADA493";
@@ -9250,15 +9282,6 @@
 	dir = 8
 	},
 /area/centcom)
-"zV" = (
-/obj/effect/floor_decal/corner/blue/bordercorner{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/paleblue/bordercorner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/centcom/goc)
 "zY" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -9269,6 +9292,17 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"zZ" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/obj/item/spellbook/random,
+/obj/item/spellbook/random,
+/obj/item/spellbook/random,
+/obj/item/spellbook/random,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/white/vertical,
+/area/centcom/goc)
 "Ab" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#E5511B";
@@ -9298,10 +9332,6 @@
 /obj/effect/paint/green,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/ci)
-"Af" = (
-/obj/effect/floor_decal/corner/paleblue/border,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/centcom/goc)
 "Ag" = (
 /obj/structure/closet/secure_closet/guard/ntf,
 /obj/item/melee/baton/loaded,
@@ -9313,41 +9343,6 @@
 /obj/item/ammo_magazine/c45m,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
-"Ai" = (
-/obj/machinery/door/airlock/command{
-	name = "United Nations Headquarters Thaumatology Lab"
-	},
-/turf/space,
-/area/centcom/goc)
-"Al" = (
-/obj/structure/table/rack,
-/obj/item/clothing/under/rank/security/goc,
-/obj/item/clothing/under/rank/security/goc,
-/obj/item/clothing/under/rank/security/goc,
-/obj/item/clothing/under/rank/security/goc,
-/obj/item/clothing/under/rank/security/goc,
-/obj/item/clothing/under/rank/security/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/clothing/mask/gas/goc,
-/obj/item/clothing/mask/gas/goc,
-/obj/item/clothing/mask/gas/goc,
-/obj/item/clothing/mask/gas/goc,
-/obj/item/clothing/mask/gas/goc,
-/obj/item/clothing/mask/gas/goc,
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
 "Am" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#272B5B"
@@ -9375,14 +9370,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/centcom)
 "Aq" = (
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
-"Ar" = (
-/obj/machinery/psi_meter,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskleaf{
+	pixel_y = 14
+	},
+/turf/simulated/floor/carpet/blue2,
 /area/centcom/goc)
 "As" = (
 /obj/structure/window/reinforced/polarized{
@@ -9400,12 +9392,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
-"Au" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
 "Av" = (
 /obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/carpet/blue2,
@@ -9421,9 +9407,7 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "AA" = (
-/obj/effect/floor_decal/corner/blue/border,
-/obj/machinery/bodyscanner,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
 "AB" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -9618,12 +9602,6 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
-"Bb" = (
-/obj/machinery/door/airlock/command{
-	name = "United Nations Headquarters"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/centcom/goc)
 "Bc" = (
 /obj/machinery/door/airlock/security{
 	name = "Arrivals Security";
@@ -9631,6 +9609,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
+"Bj" = (
+/obj/structure/bed/chair/office/comfy/teal{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "Bk" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/scp/p90,
@@ -9656,6 +9640,16 @@
 	icon_state = "tile_full"
 	},
 /area/centcom)
+"Bs" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/centcom/goc)
 "Bt" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/clothing/accessory/solgov/specialty/officer,
@@ -9718,19 +9712,23 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "BC" = (
-/obj/effect/floor_decal/corner/blue/border,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
 "BF" = (
 /obj/structure/undies_wardrobe,
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
 "BG" = (
-/obj/structure/curtain/medical,
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom/goc)
 "BH" = (
 /turf/simulated/floor/tiled/old_tile,
@@ -9915,12 +9913,6 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
-"Cc" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/centcom/goc)
 "Cd" = (
 /turf/simulated/wall/r_titanium,
 /area/centcom/chaos)
@@ -10149,12 +10141,6 @@
 	name = "Logistics Supplies Gate"
 	},
 /area/centcom)
-"CN" = (
-/obj/effect/floor_decal/corner/paleblue/bordercorner,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 8
-	},
-/area/centcom/goc)
 "CO" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/white/border{
@@ -10422,11 +10408,10 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom)
 "DH" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/filingcabinet/chestdrawer,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
+/obj/effect/paint_stripe/paleblue,
+/obj/machinery/light/small/red,
+/turf/simulated/wall/r_wall,
+/area/site53/tram/goc1)
 "DI" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#2B0F42"
@@ -10749,6 +10734,12 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"Ez" = (
+/obj/machinery/door/airlock/command{
+	name = "United Nations Headquarters Central Hall"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/goc)
 "EA" = (
 /obj/machinery/door/airlock/vault{
 	name = "Internal Tribunal Courtroom";
@@ -10813,6 +10804,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"EP" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/turf/simulated/floor/tiled/white/vertical,
+/area/centcom/goc)
 "EQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagent_temperature/cooler{
@@ -11286,6 +11285,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
+"Gg" = (
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "Gh" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -11296,6 +11298,9 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"Gi" = (
+/turf/unsimulated/wall/fakeglass,
+/area/centcom/goc)
 "Gk" = (
 /obj/machinery/door/airlock/vault{
 	name = "Administrative Hallway";
@@ -11539,8 +11544,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/centcom)
 "Hn" = (
-/obj/machinery/door/airlock,
-/turf/simulated/floor/wood,
+/obj/machinery/door/airlock/command{
+	name = "United Nations Headquarters"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom/goc)
 "Ho" = (
 /obj/structure/table/standard,
@@ -11576,18 +11583,8 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "Hs" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/centcom/goc)
-"Ht" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 8
-	},
+/obj/effect/floor_decal/corner/paleblue/border,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
 "Hu" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -11749,6 +11746,16 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "tile_full"
 	},
+/area/centcom)
+"HJ" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 4;
+	color = "#E5511B"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "HK" = (
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -11936,12 +11943,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
-"Ip" = (
-/obj/machinery/door/airlock/command{
-	name = "United Nations Headquarters Preperations"
-	},
-/turf/space,
-/area/centcom/goc)
 "Ir" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 8
@@ -11949,6 +11950,10 @@
 /obj/structure/window/reinforced,
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
+"Is" = (
+/mob/living/exosuit/premade/heavy/merc,
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/goc)
 "It" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -11959,6 +11964,15 @@
 	dir = 4
 	},
 /area/centcom)
+"Iv" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/centcom/goc)
 "Iw" = (
 /obj/structure/hygiene/sink{
 	dir = 1;
@@ -11989,12 +12003,6 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/centcom)
-"IA" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/blue2,
-/area/centcom/goc)
 "IC" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#ADA493";
@@ -12108,15 +12116,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/small/alcoholfreebeer,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
-"IQ" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 6
-	},
-/obj/structure/flora/pottedplant/floorleaf,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
-/area/centcom/goc)
 "IR" = (
 /obj/machinery/vending/security{
 	req_access = null
@@ -12353,6 +12352,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/centcom)
+"JC" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/plating,
+/area/site53/tram/goc1)
 "JD" = (
 /obj/item/implantcase/explosive,
 /obj/item/implantcase/explosive,
@@ -12402,6 +12409,11 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"JI" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "JJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -12836,10 +12848,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
-"KG" = (
-/obj/structure/flora/ausbushes,
-/turf/simulated/floor/exoplanet/grass,
-/area/centcom/goc)
 "KH" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
@@ -12869,6 +12877,12 @@
 /obj/effect/floor_decal/corner/safe/border,
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
+"KP" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "KQ" = (
 /obj/structure/table/standard,
 /obj/item/flame/lighter/zippo{
@@ -13046,12 +13060,6 @@
 	dir = 4
 	},
 /area/centcom)
-"KW" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/centcom/goc)
 "KY" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#D8B100";
@@ -13109,13 +13117,13 @@
 /turf/simulated/floor/tiled/vertical,
 /area/centcom/chaos)
 "Le" = (
+/obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 8
+	dir = 6
 	},
-/obj/machinery/light{
-	dir = 8
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
 "Lg" = (
 /obj/machinery/vending/medical{
@@ -13227,6 +13235,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
+"Lp" = (
+/obj/machinery/door/airlock/command{
+	name = "United Nations Headquarters Thaumatology Lab"
+	},
+/turf/space,
+/area/centcom/goc)
 "Lq" = (
 /obj/machinery/door/airlock/vault{
 	name = "Archive";
@@ -13265,23 +13279,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
-"Lz" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
 "LB" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/machinery/light,
@@ -13477,12 +13474,11 @@
 /obj/structure/window/basic/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"Mn" = (
-/obj/structure/table/reinforced,
-/obj/structure/flora/pottedplant/deskleaf{
-	pixel_y = 14
+"Mk" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
 	},
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/tiled/dark/corner,
 /area/centcom/goc)
 "Mo" = (
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -13671,11 +13667,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "MO" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
 	},
-/obj/machinery/vending/weaponry/goc,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom/goc)
 "MP" = (
 /obj/structure/table/standard,
@@ -13744,15 +13740,6 @@
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/centcom)
-"MZ" = (
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 1
-	},
-/area/centcom/goc)
 "Nb" = (
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/old_tile,
@@ -13919,14 +13906,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
-"Nt" = (
-/obj/effect/floor_decal/corner/paleblue/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 4
-	},
-/area/centcom/goc)
 "Nu" = (
 /obj/machinery/door/airlock/vault{
 	name = "Internal Tribunal Department";
@@ -14003,16 +13982,6 @@
 "NO" = (
 /turf/simulated/floor/grass,
 /area/centcom)
-"NQ" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/flora/pottedplant/floorleaf,
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
-"NT" = (
-/obj/machinery/vending/weaponry/goc,
-/obj/effect/floor_decal/corner/blue/mono,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
 "NU" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9
@@ -14061,10 +14030,6 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
-"Oa" = (
-/obj/structure/flora/ausbushes/sunnybush,
-/turf/simulated/floor/exoplanet/grass,
-/area/centcom/goc)
 "Ob" = (
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
@@ -14099,10 +14064,10 @@
 /turf/simulated/floor,
 /area/centcom)
 "Oi" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 10
+/mob/living/exosuit/premade/combat/military{
+	name = "Mk. III Ultra-Heavy Engagement Chassis"
 	},
-/turf/simulated/floor/tiled/dark/corner,
+/turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
 "Oj" = (
 /obj/structure/table/rack,
@@ -14555,6 +14520,19 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
+"Pz" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/white/corner,
+/area/centcom/goc)
 "PA" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -14691,25 +14669,20 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "PR" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
-	},
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/machinery/vending/weaponry/goc,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/centcom/goc)
 "PS" = (
 /turf/simulated/floor/reinforced,
 /area/centcom/chaos)
 "PT" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
 	},
-/obj/machinery/vending/medical{
-	req_access = list()
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
 "PU" = (
 /obj/structure/bed/chair{
@@ -14728,15 +14701,9 @@
 	},
 /area/centcom)
 "PW" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/structure/closet,
-/obj/item/storage/belt/holster/security,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/glasses/night,
-/obj/item/device/radio/headset/goc,
-/turf/simulated/floor/wood,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/exoplanet/grass,
 /area/centcom/goc)
 "PX" = (
 /obj/structure/filingcabinet,
@@ -14802,10 +14769,15 @@
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
 "Qi" = (
-/obj/effect/floor_decal/corner/paleblue/border{
+/obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white/vertical,
+/obj/machinery/vending/weaponry/lcz/nonlethal{
+	name = "\improper Global Occult Coalition Non-Lethal Equipment Dispenser";
+	icon_state = "goc_weaponry"
+	},
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/centcom/goc)
 "Qj" = (
 /obj/machinery/light{
@@ -14931,6 +14903,9 @@
 	dir = 1
 	},
 /area/centcom)
+"QE" = (
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/goc)
 "QF" = (
 /obj/machinery/chemical_dispenser/ert,
 /obj/effect/floor_decal/industrial/outline{
@@ -15176,6 +15151,23 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
+"Rm" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "Ro" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/m16_mag/ext,
@@ -15417,6 +15409,10 @@
 	dir = 4
 	},
 /area/centcom)
+"RA" = (
+/obj/machinery/light,
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/goc)
 "RB" = (
 /obj/machinery/door/airlock/vault{
 	name = "Interrogation";
@@ -15500,6 +15496,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"RP" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white/vertical,
+/area/centcom/goc)
 "RQ" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 1
@@ -15676,12 +15679,6 @@
 "Sp" = (
 /turf/simulated/floor/carpet/red,
 /area/centcom)
-"Sq" = (
-/obj/item/storage/box/large/psinullers,
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "Sr" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -15742,6 +15739,14 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"Sy" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/white/vertical,
+/area/centcom/goc)
 "SA" = (
 /obj/effect/floor_decal/corner/white/mono{
 	color = "#E5511B"
@@ -16287,6 +16292,12 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"TZ" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "Ua" = (
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/unsimulated/wall,
@@ -16294,10 +16305,6 @@
 "Ub" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
-"Uc" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "Ui" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced,
@@ -16321,7 +16328,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Um" = (
-/turf/simulated/floor/wood,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor/plating,
 /area/centcom/goc)
 "Un" = (
 /obj/effect/floor_decal/corner/brown/mono,
@@ -16373,16 +16381,13 @@
 /turf/simulated/floor/carpet/green,
 /area/centcom/chaos)
 "Ux" = (
-/obj/structure/bed/chair/shuttle/black{
-	dir = 1;
-	name = "Passenger's seat"
-	},
-/obj/effect/floor_decal/corner/paleblue/border,
 /obj/effect/floor_decal/corner/paleblue/border{
-	dir = 1
+	dir = 9
 	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/tram/goc1)
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/centcom/goc)
 "Uz" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919"
@@ -16408,6 +16413,12 @@
 /obj/machinery/computer/crew,
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
+"UF" = (
+/obj/effect/floor_decal/corner/paleblue/bordercee{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/goc1)
 "UG" = (
 /obj/machinery/door/airlock{
 	name = "Custodial Closet"
@@ -16496,23 +16507,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/centcom)
-"UV" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
 "UW" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green/border{
@@ -16523,9 +16517,7 @@
 	},
 /area/centcom)
 "UX" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 4
-	},
+/obj/effect/floor_decal/corner/paleblue/bordercee,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/goc1)
 "UY" = (
@@ -16594,9 +16586,6 @@
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
-"Vh" = (
-/turf/simulated/floor/carpet/blue2,
-/area/centcom/goc)
 "Vo" = (
 /obj/machinery/door/airlock/vault{
 	name = "Workshop";
@@ -16627,15 +16616,6 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/grass,
 /area/centcom)
-"Vw" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 5
-	},
-/obj/structure/flora/pottedplant/floorleaf,
-/turf/simulated/floor/tiled/white/corner{
-	dir = 4
-	},
-/area/centcom/goc)
 "Vx" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -16655,13 +16635,10 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "VD" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/item/storage/box/large/psinullers,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
 "VE" = (
 /obj/machinery/light{
@@ -16794,16 +16771,9 @@
 /turf/unsimulated/floor/plating,
 /area/site53/tram/maintrain)
 "Wb" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 6
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/vending/medical{
-	req_access = list()
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/centcom/goc)
 "Wc" = (
 /obj/effect/floor_decal/industrial/loading{
@@ -16911,14 +16881,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
-"Wu" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
 "Wv" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#2B0F42";
@@ -16937,13 +16899,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Wx" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/vertical,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/machinery/light,
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
 "Wy" = (
 /obj/machinery/door/window/brigdoor/eastright{
@@ -16974,15 +16933,6 @@
 	icon_state = "tile_full"
 	},
 /area/centcom)
-"WC" = (
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 4
-	},
-/area/centcom/goc)
 "WF" = (
 /obj/machinery/light{
 	dir = 8
@@ -17037,6 +16987,14 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"WP" = (
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/centcom/goc)
 "WR" = (
 /obj/structure/iv_drip,
 /obj/effect/floor_decal/corner/red/border{
@@ -17175,13 +17133,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
-"Xh" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
 "Xi" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9;
@@ -17228,12 +17179,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
-"Xq" = (
-/obj/machinery/door/airlock/command{
-	name = "United Nations Headquarters Central Hall"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/centcom/goc)
 "Xs" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/hydroponics,
@@ -17310,11 +17255,9 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "XG" = (
-/obj/structure/bed,
-/obj/structure/bed{
-	pixel_y = 8
-	},
-/turf/simulated/floor/wood,
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
 "XK" = (
 /obj/machinery/door/airlock/glass/civilian{
@@ -17338,20 +17281,6 @@
 /obj/item/ammo_magazine/scp/ak,
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
-"XN" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
 "XO" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/old_tile,
@@ -17364,11 +17293,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "XQ" = (
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 5
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
-/obj/machinery/vending/weaponry/goc,
-/turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "XS" = (
 /obj/effect/paint_stripe/green,
@@ -17441,11 +17372,10 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"Yl" = (
-/obj/effect/floor_decal/corner/paleblue/bordercorner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/corner,
+"Yk" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/machinery/psi_meter,
+/turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
 "Ym" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -17550,6 +17480,14 @@
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/corner,
 /area/centcom)
+"YC" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "goc1";
+	name = "Unknown Truck Storage Shutters"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/goc1)
 "YD" = (
 /obj/item/storage/toolbox/syndicate,
 /obj/item/surgicaldrill,
@@ -17588,8 +17526,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
 "YL" = (
-/obj/structure/sign/bluecross_2,
-/turf/simulated/wall/r_titanium,
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom/goc)
 "YM" = (
 /obj/machinery/door/airlock/security{
@@ -17678,16 +17616,10 @@
 /turf/simulated/floor/carpet/green,
 /area/centcom)
 "YZ" = (
-/obj/machinery/vending/weaponry/goc,
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom/goc)
-"Za" = (
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
 "Zb" = (
 /obj/machinery/chemical_dispenser/ert,
@@ -17723,11 +17655,13 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/centcom/chaos)
-"Zk" = (
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 1
+"Zj" = (
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white/horizontal,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
 /area/centcom/goc)
 "Zn" = (
 /obj/structure/bed/chair{
@@ -17885,6 +17819,35 @@
 	name = "Facility Exit"
 	},
 /area/centcom)
+"ZS" = (
+/obj/structure/table/rack,
+/obj/item/clothing/under/rank/security/goc,
+/obj/item/clothing/under/rank/security/goc,
+/obj/item/clothing/under/rank/security/goc,
+/obj/item/clothing/under/rank/security/goc,
+/obj/item/clothing/under/rank/security/goc,
+/obj/item/clothing/under/rank/security/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/mask/gas/goc,
+/obj/item/clothing/mask/gas/goc,
+/obj/item/clothing/mask/gas/goc,
+/obj/item/clothing/mask/gas/goc,
+/obj/item/clothing/mask/gas/goc,
+/obj/item/clothing/mask/gas/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "ZW" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -31142,11 +31105,11 @@ tq
 JV
 Jq
 Jq
-aN
+HJ
 Jq
 Jq
 Jq
-aN
+HJ
 Jq
 Jq
 ZX
@@ -44496,39 +44459,39 @@ ab
 ab
 ab
 ab
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -44699,37 +44662,37 @@ ab
 ab
 ab
 aa
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 ab
 ab
@@ -44909,10 +44872,10 @@ eL
 eL
 eL
 eL
-rz
-hB
-rz
-rz
+eL
+eL
+eL
+eL
 eL
 eL
 eL
@@ -45107,18 +45070,14 @@ eL
 eL
 eL
 eL
-rz
-rz
-Oa
-rz
-hB
-wR
+eL
+eL
+eL
+eL
 rz
 hB
 rz
-KG
 rz
-hB
 eL
 eL
 eL
@@ -45126,11 +45085,15 @@ eL
 eL
 eL
 eL
-cx
-wR
-hB
-rz
-rz
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 eL
 eL
@@ -45305,37 +45268,37 @@ ab
 ab
 ab
 aa
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
-IE
+eL
+eL
+eL
+eL
+rz
+rz
+aN
+rz
+hB
+PW
+rz
+hB
+rz
+tc
+rz
+hB
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+cx
+PW
+hB
+rz
+rz
+eL
+eL
+eL
 aa
 ab
 ab
@@ -45506,39 +45469,39 @@ ab
 ab
 ab
 ab
-jJ
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-jC
-oy
-mx
-id
-id
-mx
-mx
-id
-id
-mx
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-mL
-jJ
+aa
+ob
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+IE
+RA
+aa
 ab
 ab
 ab
@@ -45715,21 +45678,21 @@ mL
 mL
 mL
 mL
-jC
-jC
-lC
+mL
+mL
+mL
+mL
+mL
+JC
+oy
 mx
-rI
-mG
-mG
-mG
-mG
-oD
-DR
-mL
-mL
-mL
-mL
+id
+id
+mx
+mx
+id
+id
+DH
 mL
 mL
 mL
@@ -45917,21 +45880,21 @@ mL
 mL
 mL
 mL
+mL
+mL
+mL
+mL
 jC
-rp
-eS
+jC
+lC
 mx
-ob
-ob
-ob
-ob
-ob
-ob
-ko
-mL
-mL
-mL
-mL
+rI
+mG
+mG
+mG
+mG
+oD
+DR
 mL
 mL
 mL
@@ -46119,21 +46082,21 @@ mL
 mL
 mL
 mL
+mL
+mL
+mL
+mL
 jC
-lS
-Ux
+rp
+eS
 mx
 UX
-UX
-UX
-UX
-UX
-UX
 ko
-mL
-mL
-mL
-mL
+ko
+ko
+ko
+UF
+YC
 mL
 mL
 mL
@@ -46321,6 +46284,10 @@ mL
 mL
 mL
 mL
+mL
+mL
+mL
+mL
 jC
 jC
 wX
@@ -46332,10 +46299,6 @@ Xx
 Xx
 oJ
 mx
-mL
-mL
-mL
-mL
 mL
 mL
 mL
@@ -46524,7 +46487,11 @@ mL
 mL
 mL
 mL
-jC
+mL
+mL
+mL
+mL
+JC
 oy
 mx
 id
@@ -46533,11 +46500,7 @@ mx
 mx
 id
 id
-mx
-mL
-mL
-mL
-mL
+DH
 mL
 mL
 mL
@@ -46719,6 +46682,7 @@ ab
 ab
 ab
 aa
+ob
 IE
 IE
 IE
@@ -46748,8 +46712,7 @@ IE
 IE
 IE
 IE
-IE
-IE
+RA
 aa
 ab
 ab
@@ -46926,7 +46889,7 @@ eL
 eL
 rz
 hB
-wR
+PW
 hB
 hB
 rz
@@ -46943,7 +46906,7 @@ IE
 IE
 rz
 hB
-wR
+PW
 rz
 rz
 hB
@@ -47136,18 +47099,18 @@ rz
 rz
 IE
 IE
+sb
 IE
 IE
 IE
-IE
-IE
+sb
 IE
 IE
 rz
 rz
-KG
+tc
 rz
-Oa
+aN
 rz
 hB
 rz
@@ -47329,21 +47292,21 @@ eL
 eL
 eL
 eL
-KG
+tc
 rz
 hB
-wR
+PW
 rz
 rz
 hB
 rz
-uW
-uW
-Bb
-uW
-Bb
-uW
-uW
+Um
+Um
+Hn
+Um
+Hn
+Um
+Um
 hB
 rz
 hB
@@ -47536,21 +47499,21 @@ rz
 hB
 rz
 hB
-Oa
+aN
 rz
-uW
-uW
-NQ
-Ht
-Qi
-qF
-NQ
-uW
-uW
+Um
+Um
+mr
+Ux
+dr
+ql
+mr
+Um
+Um
 hB
 rz
 rz
-wR
+PW
 cx
 eL
 eL
@@ -47739,17 +47702,17 @@ eL
 eL
 rz
 cx
-hB
-uW
-NQ
-Ht
-cr
-sb
-Nt
-qF
-NQ
-uW
-hB
+mA
+Um
+mr
+Ux
+WP
+AA
+Zj
+ql
+mr
+Um
+mA
 rz
 hB
 hB
@@ -47932,35 +47895,35 @@ ab
 ab
 aa
 eL
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-Wu
-Zk
-Vh
-IA
-Vh
-Af
-nT
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+kc
+ws
+Gg
+KP
+Gg
+Hs
+Wx
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
 eL
 aa
 ab
@@ -48134,35 +48097,35 @@ ab
 ab
 aa
 eL
-mA
+aF
+Wb
+Qi
+zS
+PR
+ZS
+PR
+zS
+Qi
+Wb
+aF
+tf
+ws
 Aq
-wd
-jD
-NT
-Al
-NT
-jD
-wd
-Aq
-mA
-mt
-Zk
-Mn
-vb
-wP
-Af
-ei
-mA
-qa
-Ht
-Qi
-Qi
-Qi
-Qi
-Qi
-qF
-qa
-mA
+JI
+sF
+Hs
+cT
+aF
+XG
+Bs
+Sy
+tD
+RP
+EP
+Sy
+Pz
+XG
+aF
 eL
 aa
 ab
@@ -48336,35 +48299,35 @@ ab
 ab
 aa
 eL
-mA
-Za
-Au
-Au
-Au
-Au
-Au
-Au
-Au
-Oi
-mA
-zq
-Zk
-Vh
-qI
-Vh
-Af
-DH
-mA
-Sq
-Zk
-sb
-sb
-sb
-sb
-sb
-Af
-Uc
-mA
+aF
+ss
+BG
+BG
+BG
+BG
+BG
+BG
+BG
+Mk
+aF
+vV
+ws
+Gg
+ux
+Gg
+Hs
+TZ
+aF
+VD
+ws
+Bj
+AA
+AA
+AA
+Bj
+Hs
+yK
+aF
 eL
 aa
 ab
@@ -48538,8 +48501,8 @@ ab
 ab
 aa
 eL
-mA
-Cc
+aF
+lS
 kt
 kt
 kt
@@ -48547,26 +48510,26 @@ kt
 kt
 kt
 kt
-zs
-mA
-NQ
-ym
-Yl
-sb
-CN
-co
-NQ
-mA
-Ar
-Zk
-sb
-sb
-sb
-sb
-sb
-Af
-Uc
-mA
+YL
+aF
+mr
+xq
+jD
+AA
+rc
+PT
+mr
+aF
+zA
+ws
+AA
+AA
+AA
+AA
+AA
+Hs
+Yk
+aF
 eL
 aa
 ab
@@ -48740,35 +48703,35 @@ ab
 ab
 aa
 eL
-mA
-WC
-XN
-UV
-Xh
-Xh
-Xh
-Lz
-bR
-MZ
-mA
-mA
-NQ
-ym
-ap
-co
-NQ
-mA
-mA
-qa
-ym
-ap
-ap
-ap
-ap
-ap
-co
-qa
-mA
+aF
+ew
+mk
+Rm
+MO
+MO
+MO
+kK
+xE
+Le
+aF
+aF
+mr
+xq
+lI
+PT
+mr
+aF
+aF
+XG
+nX
+zZ
+lI
+lI
+lI
+zZ
+tH
+XG
+aF
 eL
 aa
 ab
@@ -48942,35 +48905,35 @@ ab
 ab
 aa
 eL
-mA
-mA
-mA
-mA
-mA
-Ip
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-uW
-Xq
-uW
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-Ai
-mA
-mA
-mA
-mA
-mA
+aF
+aF
+aF
+aF
+Um
+lK
+Um
+aF
+aF
+aF
+aF
+aF
+aF
+Um
+Ez
+Um
+aF
+aF
+aF
+Um
+aF
+Um
+Um
+Lp
+Um
+Um
+aF
+Um
+aF
 eL
 aa
 ab
@@ -49144,35 +49107,35 @@ ab
 ab
 aa
 eL
-mA
-yz
-lq
-Qi
-zV
-KW
-dL
-Qi
-lq
-Qi
-wm
-Qi
-lq
-Qi
-Qi
-Qi
-lq
-Qi
-wm
-Qi
-lq
-Qi
-Qi
-Qi
-Qi
-Qi
-lq
-qv
-mA
+aF
+zs
+oz
+kT
+YZ
+YZ
+YZ
+sS
+oz
+dr
+Iv
+dr
+oz
+dr
+dr
+dr
+oz
+dr
+Iv
+dr
+oz
+dr
+dr
+dr
+dr
+dr
+oz
+vK
+aF
 eL
 aa
 ab
@@ -49346,35 +49309,35 @@ ab
 ab
 aa
 eL
-mA
-Zk
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-sb
-Af
-mA
+aF
+ws
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+AA
+Hs
+aF
 eL
 aa
 ab
@@ -49548,35 +49511,35 @@ ab
 ab
 aa
 eL
-mA
-Vw
-Wx
-ap
-ap
-ap
-ap
-ap
-Wx
-ap
-ap
-ap
-ap
-ap
-Wx
-ap
-ap
-ap
-ap
-ap
-Wx
-ap
-ap
-ap
-ap
-ap
-Wx
-IQ
-mA
+aF
+XQ
+BC
+lI
+lI
+lI
+lI
+lI
+BC
+lI
+lI
+lI
+BC
+jD
+AA
+rc
+BC
+lI
+lI
+lI
+BC
+lI
+lI
+lI
+lI
+lI
+BC
+rh
+aF
 eL
 aa
 ab
@@ -49750,35 +49713,35 @@ ab
 ab
 aa
 eL
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-YL
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-Hn
-mA
-mA
-mA
+aF
+aF
+aF
+aF
+Um
+QE
+Um
+aF
+aF
+aF
+aF
+aF
+aF
+ws
+AA
+Hs
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
 eL
 aa
 ab
@@ -49952,20 +49915,7 @@ ab
 ab
 aa
 eL
-lI
-MO
-kT
-kT
-kT
-MO
-lI
-kK
-xE
-Le
-BG
-xE
-mr
-lI
+aF
 eL
 eL
 eL
@@ -49974,13 +49924,26 @@ eL
 eL
 eL
 eL
-lI
-XG
-dr
-Um
-dr
-XG
-lI
+eL
+aF
+eL
+aF
+ws
+AA
+Hs
+aF
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 aa
 ab
@@ -50154,20 +50117,7 @@ ab
 ab
 aa
 eL
-lI
-ws
-kT
-kT
-kT
-lK
-lI
 aF
-oz
-oz
-lT
-oz
-mk
-lI
 eL
 eL
 eL
@@ -50176,13 +50126,26 @@ eL
 eL
 eL
 eL
-lI
-Um
-Um
-Um
-Um
-Um
-lI
+eL
+aF
+eL
+aF
+ws
+AA
+Hs
+aF
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 aa
 ab
@@ -50356,20 +50319,7 @@ ab
 ab
 aa
 eL
-lI
-YZ
-kT
-kT
-kT
-YZ
-lI
-sS
-oz
-oz
-lI
-lI
-lI
-lI
+aF
 eL
 eL
 eL
@@ -50378,13 +50328,26 @@ eL
 eL
 eL
 eL
-lI
-XG
-dr
-Um
-dr
-XG
-lI
+eL
+aF
+eL
+aF
+ws
+AA
+Hs
+aF
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 aa
 ab
@@ -50558,20 +50521,23 @@ ab
 ab
 aa
 eL
-lI
+aF
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+aF
+aF
+aF
 ws
-kT
-kT
-kT
-lK
-lI
-PR
-oz
-oz
-oz
-tc
 AA
-lI
+Hs
+aF
 eL
 eL
 eL
@@ -50580,13 +50546,10 @@ eL
 eL
 eL
 eL
-lI
-Um
-Um
-Um
-Um
-Um
-lI
+eL
+eL
+eL
+eL
 eL
 aa
 ab
@@ -50760,20 +50723,7 @@ ab
 ab
 aa
 eL
-lI
-XQ
-kT
-kT
-kT
-XQ
-lI
-oo
-oz
-oz
-oz
-oz
-BC
-lI
+aF
 eL
 eL
 eL
@@ -50782,13 +50732,26 @@ eL
 eL
 eL
 eL
-lI
-XG
-PW
-Um
-dr
-XG
-lI
+eL
+aF
+Is
+Gi
+ws
+AA
+Hs
+aF
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 aa
 ab
@@ -50962,20 +50925,23 @@ ab
 ab
 aa
 eL
-lI
-lI
-lI
-lI
-lI
-lI
-lI
-VD
+aF
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+aF
+oo
+Gi
+ws
+AA
 Hs
-nX
-zA
-PT
-Wb
-lI
+aF
 eL
 eL
 eL
@@ -50984,13 +50950,10 @@ eL
 eL
 eL
 eL
-lI
-lI
-lI
-lI
-lI
-lI
-lI
+eL
+eL
+eL
+eL
 eL
 aa
 ab
@@ -51164,23 +51127,23 @@ ab
 ab
 aa
 eL
+aF
 eL
 eL
 eL
 eL
 eL
 eL
-mA
-mA
-mA
-mA
-mA
-mA
-mA
-mA
 eL
 eL
 eL
+aF
+aI
+Gi
+ws
+AA
+Hs
+aF
 eL
 eL
 eL
@@ -51366,6 +51329,7 @@ ab
 ab
 aa
 eL
+aF
 eL
 eL
 eL
@@ -51375,14 +51339,13 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+aF
+Oi
+Gi
+ws
+AA
+Hs
+aF
 eL
 eL
 eL
@@ -51568,6 +51531,7 @@ ab
 ab
 aa
 eL
+aF
 eL
 eL
 eL
@@ -51577,14 +51541,13 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+aF
+aF
+aF
+ws
+AA
+Hs
+aF
 eL
 eL
 eL
@@ -51770,6 +51733,7 @@ ab
 ab
 aa
 eL
+aF
 eL
 eL
 eL
@@ -51779,14 +51743,13 @@ eL
 eL
 eL
 eL
+aF
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+aF
+ws
+AA
+Hs
+aF
 eL
 eL
 eL
@@ -51972,23 +51935,23 @@ ab
 ab
 aa
 eL
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+aF
+ws
+AA
+Hs
+aF
 eL
 eL
 eL
@@ -52186,11 +52149,11 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
+aF
+ws
+AA
+Hs
+aF
 eL
 eL
 eL
@@ -52375,37 +52338,37 @@ ab
 ab
 ab
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+eL
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+ws
+AA
+Hs
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
 aa
 ab
 ab
@@ -52576,39 +52539,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -52778,39 +52741,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -52980,39 +52943,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -53182,39 +53145,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -53384,39 +53347,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -53586,39 +53549,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -53788,39 +53751,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -53990,39 +53953,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -54192,39 +54155,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -54394,39 +54357,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+ws
+AA
+Hs
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -54596,39 +54559,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aF
+xq
+lI
+PT
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -54798,39 +54761,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -55000,39 +54963,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+lT
+aa
 ab
 ab
 ab
@@ -55202,39 +55165,39 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
