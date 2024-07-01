@@ -76,7 +76,7 @@
 	/// Starting psi faculties, if any.
 	var/list/psi_faculties
 	/// Chance of an additional psi latency, if any.
-	var/psi_latency_chance = 2
+	var/psi_latency_chance = 5
 	/// If psionic, will be implanted for control.
 	var/give_psionic_implant_on_join = FALSE
 
