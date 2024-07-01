@@ -733,8 +733,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface/west)
 "bN" = (
-/obj/effect/floor_decal/corner/green/border{
-	dir = 5
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/vending/cigarette{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -1076,8 +1077,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "cD" = (
@@ -1938,7 +1939,7 @@
 /area/site53/medical/surgery/op2)
 "fp" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
 "fq" = (
@@ -2863,6 +2864,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/green/mono,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
 "jp" = (
@@ -3625,10 +3627,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/equipstorage)
-"mm" = (
-/obj/effect/floor_decal/corner/green/mono,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/breachshelter)
 "mn" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
@@ -4312,10 +4310,10 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 9
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "og" = (
@@ -4361,7 +4359,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "oo" = (
@@ -5066,7 +5064,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "qd" = (
@@ -5201,7 +5199,7 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 6
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "qw" = (
@@ -6928,10 +6926,10 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 9
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "vv" = (
@@ -7280,12 +7278,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/mentalhealth/isolation)
 "wt" = (
-/obj/structure/sign/warning/detailed{
-	name = "GATE A"
+/obj/effect/floor_decal/corner/green/border{
+	dir = 5
 	},
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/entrancehallway2)
+/obj/structure/closet/firecloset,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "wu" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -9012,8 +9010,9 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface/east)
 "Bw" = (
-/obj/effect/floor_decal/corner/green/border{
-	dir = 6
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/vending/soda{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -10996,10 +10995,10 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 5
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "Hu" = (
@@ -11149,10 +11148,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/infirmreception/waiting)
-"HQ" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/entrancehallway2)
 "HT" = (
 /obj/machinery/light{
 	dir = 1
@@ -11511,7 +11506,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "IY" = (
@@ -11736,7 +11731,7 @@
 /area/site53/logistics/logisticsbreak)
 "JG" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway2)
 "JH" = (
@@ -11884,11 +11879,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/infirmary)
-"JZ" = (
-/obj/effect/floor_decal/corner/green/mono,
-/obj/structure/closet/firecloset,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/breachshelter)
 "Ka" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/effect/floor_decal/spline/fancy/black{
@@ -11975,8 +11965,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 6
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "Kr" = (
@@ -12409,10 +12399,10 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "LB" = (
@@ -14734,10 +14724,10 @@
 /area/site53/surface/surface/west)
 "RW" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
 "RX" = (
@@ -15482,7 +15472,7 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "Um" = (
@@ -15554,7 +15544,7 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 6
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "UB" = (
@@ -16513,7 +16503,7 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 5
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
 "XC" = (
@@ -17210,16 +17200,6 @@
 	dir = 8
 	},
 /area/site53/medical/surgery/op2)
-"Zx" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway)
 "Zy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -49119,12 +49099,12 @@ QN
 Ln
 Rd
 af
-ua
-ai
-ai
-ai
-ai
-yP
+wt
+fF
+fF
+fF
+fF
+fF
 Bg
 fF
 fF
@@ -49376,12 +49356,12 @@ QN
 Ln
 nH
 af
+af
 bN
-fF
-fF
-fF
-fF
 Bw
+jm
+Cu
+lA
 af
 af
 af
@@ -49633,12 +49613,12 @@ QN
 Ln
 Fg
 af
-JZ
-mm
-mm
-jm
-Cu
-lA
+af
+af
+af
+af
+af
+af
 af
 dA
 dA
@@ -49890,15 +49870,15 @@ yR
 yx
 nH
 af
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
 dA
 dA
 oS
@@ -50147,15 +50127,15 @@ af
 af
 af
 af
-HQ
+lE
 vu
 WI
-HQ
+lE
 TS
 TS
 TS
 TS
-HQ
+lE
 dA
 dA
 oS
@@ -50404,7 +50384,7 @@ dA
 dA
 dA
 dA
-HQ
+lE
 Uh
 RY
 TS
@@ -50412,7 +50392,7 @@ TS
 TS
 TS
 TS
-HQ
+lE
 dA
 dA
 dA
@@ -50661,15 +50641,15 @@ dA
 dA
 dA
 dA
-HQ
+lE
 Gl
 RY
-HQ
+lE
 TS
 TS
 TS
 TS
-HQ
+lE
 dA
 dA
 dA
@@ -50918,22 +50898,22 @@ dA
 dA
 dA
 dA
-HQ
+lE
 cg
 RY
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
-HQ
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
+lE
 Dk
 nz
 nz
@@ -51175,7 +51155,7 @@ gk
 gk
 dA
 dA
-HQ
+lE
 Ia
 Rg
 DZ
@@ -51184,14 +51164,14 @@ xE
 Cv
 DZ
 cC
-HQ
+lE
 vu
 DZ
 YO
 AJ
 dk
-HQ
-HQ
+lE
+lE
 nz
 nz
 nz
@@ -51432,7 +51412,7 @@ rm
 gk
 gk
 gk
-HQ
+lE
 cg
 OP
 Hu
@@ -51448,7 +51428,7 @@ Dp
 Ai
 Rg
 Ul
-wt
+nL
 nz
 nz
 nz
@@ -51689,7 +51669,7 @@ rm
 rm
 rm
 gk
-HQ
+lE
 dg
 Ej
 qM
@@ -51946,7 +51926,7 @@ rm
 rm
 rm
 rm
-HQ
+lE
 MO
 RY
 rw
@@ -51955,7 +51935,7 @@ cg
 Ai
 Ai
 WS
-HQ
+lE
 Gl
 HU
 EY
@@ -52203,7 +52183,7 @@ rm
 NT
 bm
 rm
-HQ
+lE
 cg
 RY
 rw
@@ -53450,7 +53430,7 @@ rD
 eb
 rD
 rD
-Zx
+LA
 Ym
 rT
 Fm
