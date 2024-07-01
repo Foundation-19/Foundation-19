@@ -222,7 +222,7 @@
 	uniform = /obj/item/clothing/under/rank/security/lcz/riot
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
-	shoes = /obj/item/clothing/shoes/dutyboots
+	shoes = /obj/item/clothing/shoes/combat/lcz
 	id_type = /obj/item/card/id/seclvl2lczdivision2
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
