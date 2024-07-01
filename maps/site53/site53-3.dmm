@@ -732,13 +732,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface/west)
-"bN" = (
-/obj/effect/floor_decal/corner/green/mono,
-/obj/machinery/vending/cigarette{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/breachshelter)
 "bO" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface/east)
@@ -7278,10 +7271,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/mentalhealth/isolation)
 "wt" = (
-/obj/effect/floor_decal/corner/green/border{
-	dir = 5
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/vending/cigarette{
+	dir = 8
 	},
-/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
 "wu" = (
@@ -9009,13 +9002,6 @@
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface/east)
-"Bw" = (
-/obj/effect/floor_decal/corner/green/mono,
-/obj/machinery/vending/soda{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/upper_surface/breachshelter)
 "Bx" = (
 /obj/structure/bed/chair/wood{
 	dir = 8
@@ -11148,6 +11134,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/infirmreception/waiting)
+"HQ" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 5
+	},
+/obj/structure/closet/firecloset,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "HT" = (
 /obj/machinery/light{
 	dir = 1
@@ -11879,6 +11872,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/infirmary)
+"JZ" = (
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/vending/soda{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/upper_surface/breachshelter)
 "Ka" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/effect/floor_decal/spline/fancy/black{
@@ -12395,16 +12395,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/surgery/op1)
-"LA" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/flora/pottedplant/floorleaf,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/entrancehallway)
 "LB" = (
 /obj/effect/floor_decal/corner/lime/bordercorner{
 	dir = 4
@@ -17200,6 +17190,16 @@
 	dir = 8
 	},
 /area/site53/medical/surgery/op2)
+"Zx" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway)
 "Zy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -49099,7 +49099,7 @@ QN
 Ln
 Rd
 af
-wt
+HQ
 fF
 fF
 fF
@@ -49357,8 +49357,8 @@ Ln
 nH
 af
 af
-bN
-Bw
+wt
+JZ
 jm
 Cu
 lA
@@ -51117,7 +51117,7 @@ or
 ou
 EV
 yp
-LA
+Zx
 Xz
 lo
 WX
@@ -53430,7 +53430,7 @@ rD
 eb
 rD
 rD
-LA
+Zx
 Ym
 rT
 Fm

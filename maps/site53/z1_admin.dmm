@@ -340,8 +340,8 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "bx" = (
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/blue,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "by" = (
 /obj/structure/scp173_cage,
@@ -381,6 +381,23 @@
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
+"bD" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "bF" = (
 /obj/machinery/light{
 	dir = 4
@@ -727,7 +744,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "cS" = (
-/obj/effect/paint_stripe/gunmetal,
 /obj/machinery/button/blast_door{
 	id_tag = "helicopter-left";
 	name = "MTF Helicopter Side Doors";
@@ -735,7 +751,8 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/blue,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "cU" = (
 /obj/structure/bed/chair/shuttle/black{
@@ -826,7 +843,6 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "dc" = (
-/obj/effect/paint_stripe/gunmetal,
 /obj/machinery/button/blast_door{
 	id_tag = "helicopter-right";
 	name = "MTF Helicopter Side Doors";
@@ -834,8 +850,29 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/blue,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
+"dd" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "de" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 8
@@ -861,6 +898,49 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/centcom/chaos)
+"dk" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "dm" = (
 /obj/structure/grille{
 	health_max = null;
@@ -944,6 +1024,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/brown,
 /area/centcom/chaos)
+"dy" = (
+/obj/effect/floor_decal/corner/white/bordercee{
+	dir = 4;
+	color = "#E5511B"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom)
 "dz" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a556,
@@ -1135,8 +1222,8 @@
 	health_max = null;
 	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/blue,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "eg" = (
 /obj/structure/grille{
@@ -3224,8 +3311,8 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/centcom/chaos)
 "lb" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/ci)
 "lc" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -3252,6 +3339,17 @@
 	},
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/small,
+/area/centcom)
+"li" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "lj" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -3373,6 +3471,14 @@
 /obj/item/crowbar/emergency_forcing_tool,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
+"lL" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/storage/box/flashbangs,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "lM" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/westleft,
@@ -5360,7 +5466,7 @@
 	dir = 9;
 	color = "#E5511B"
 	},
-/obj/machinery/vending/engineering{
+/obj/machinery/vending/medical{
 	req_access = list("ACCESS_MTF")
 	},
 /turf/simulated/floor/tiled/dark/corner{
@@ -5372,9 +5478,6 @@
 	dir = 1;
 	color = "#E5511B"
 	},
-/obj/machinery/vending/security{
-	req_access = list("ACCESS_MTF")
-	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "qX" = (
@@ -5382,8 +5485,11 @@
 	dir = 1;
 	color = "#E5511B"
 	},
-/obj/machinery/vending/medical{
+/obj/machinery/vending/security{
 	req_access = list("ACCESS_MTF")
+	},
+/obj/machinery/status_display{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
@@ -5535,8 +5641,10 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/turf/unsimulated/floor/grass{
+	color = "#799c4b";
+	icon = 'icons/turf/jungle.dmi';
+	icon_state = "greygrass"
 	},
 /area/centcom)
 "rn" = (
@@ -6626,8 +6734,8 @@
 	health_max = null;
 	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/ci)
 "tk" = (
 /obj/structure/hygiene/toilet{
@@ -7061,7 +7169,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
@@ -7210,8 +7318,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/turf/unsimulated/floor/grass{
+	color = "#799c4b";
+	icon = 'icons/turf/jungle.dmi';
+	icon_state = "greygrass"
 	},
 /area/centcom)
 "ur" = (
@@ -7274,6 +7384,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1;
 	color = "#E5511B"
+	},
+/obj/machinery/status_display{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
@@ -7552,6 +7665,14 @@
 /obj/item/device/flashlight/lamp/green,
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
+"vF" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/storage/box/trackimp,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "vH" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
@@ -7752,6 +7873,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/mtf)
+"wp" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack,
+/obj/item/storage/lockbox/loyalty,
+/obj/item/storage/lockbox/loyalty,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "wq" = (
 /obj/structure/window/basic,
 /obj/structure/closet/crate/bin{
@@ -8480,16 +8610,26 @@
 	color = "#E5511B"
 	},
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
-/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
+/obj/item/reagent_containers/hypospray/autoinjector/pain,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "yL" = (
@@ -8522,8 +8662,10 @@
 /obj/structure/railing/mapped{
 	dir = 9
 	},
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/turf/unsimulated/floor/grass{
+	color = "#799c4b";
+	icon = 'icons/turf/jungle.dmi';
+	icon_state = "greygrass"
 	},
 /area/centcom)
 "yP" = (
@@ -8963,11 +9105,11 @@
 	health_max = null;
 	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
-/obj/effect/paint_stripe/gunmetal,
 /obj/machinery/light/small/red{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/blue,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "Ad" = (
 /obj/machinery/button/blast_door{
@@ -8977,8 +9119,8 @@
 	pixel_y = 8;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/ci)
 "Ag" = (
 /obj/structure/closet/secure_closet/guard/ntf,
@@ -9309,6 +9451,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
+"Bz" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#E5511B"
+	},
+/obj/structure/closet/secure_closet/guard/epsilon11agent,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom)
 "BA" = (
 /obj/machinery/light{
 	dir = 4
@@ -9362,6 +9514,19 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
+"BJ" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/plastique,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "BK" = (
@@ -9864,6 +10029,19 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
+"Da" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack/combat,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack/combat,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack/combat,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack/combat,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack/combat,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack/combat,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "Dd" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -10170,11 +10348,11 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "Ed" = (
-/obj/structure/flora/pottedplant/minitree,
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/corner,
 /area/centcom)
 "Ee" = (
@@ -10663,11 +10841,11 @@
 	health_max = null;
 	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
-/obj/effect/paint_stripe/gunmetal,
 /obj/machinery/light/small/red{
 	dir = 8
 	},
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/blue,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "Fo" = (
 /obj/structure/bed/chair/comfy,
@@ -10796,6 +10974,19 @@
 	dir = 8
 	},
 /area/centcom)
+"FL" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "FN" = (
 /obj/machinery/door/window/brigdoor/eastright{
 	req_access = list("ACCESS_MTF");
@@ -10823,6 +11014,17 @@
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
+/area/centcom)
+"Gd" = (
+/obj/machinery/door/airlock/vault{
+	name = "Epsilon-11 Team Equipment";
+	req_access = list("ACCESS_MTF")
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "epsilon11team";
+	name = "Epsilon-11 Team Equipment Access Shutters"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom)
 "Gf" = (
 /obj/structure/table/steel_reinforced,
@@ -11314,6 +11516,13 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"HR" = (
+/obj/machinery/door/airlock/vault{
+	name = "Epsilon-11 Medic Equipment";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom)
 "HV" = (
 /obj/structure/table/rack,
 /obj/item/gun/energy/pulse_rifle,
@@ -11340,6 +11549,16 @@
 	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
 /turf/unsimulated/floor/plating,
+/area/centcom)
+"HX" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/white/bordercee{
+	dir = 8;
+	color = "#E5511B"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "HZ" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -11797,10 +12016,11 @@
 	},
 /area/centcom)
 "Jq" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/obj/effect/floor_decal/corner/white/border{
+	dir = 4;
+	color = "#E5511B"
 	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "Jr" = (
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -11968,6 +12188,16 @@
 	dir = 4
 	},
 /area/centcom)
+"JV" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 5;
+	color = "#E5511B"
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/centcom)
 "JW" = (
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
@@ -11978,6 +12208,18 @@
 	color = "#E5511B"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
+/area/centcom)
+"Kb" = (
+/obj/structure/table/rack,
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/beakers,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Kc" = (
 /obj/effect/floor_decal/corner/brown/mono,
@@ -12003,13 +12245,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Kh" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 9
+/obj/effect/floor_decal/corner/white/border{
+	color = "#E5511B";
+	dir = 1
 	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 8
+/obj/effect/floor_decal/corner/white/border{
+	color = "#E5511B"
 	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "Ki" = (
 /obj/structure/table/rack,
@@ -12810,6 +13053,19 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
+"LP" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 10;
+	color = "#E5511B"
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "epsilon11team";
+	name = "Epsilon-11 Team Equipment Access Shutters Control";
+	pixel_x = -25
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/centcom)
 "LQ" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -12817,8 +13073,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/turf/unsimulated/floor/grass{
+	color = "#799c4b";
+	icon = 'icons/turf/jungle.dmi';
+	icon_state = "greygrass"
 	},
 /area/centcom)
 "LU" = (
@@ -13116,6 +13374,13 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"MR" = (
+/obj/machinery/door/airlock/vault{
+	name = "Epsilon-11 Leader Equipment";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom)
 "MU" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/upgraded,
@@ -13287,8 +13552,10 @@
 /area/centcom)
 "Nn" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/turf/unsimulated/floor/grass{
+	color = "#799c4b";
+	icon = 'icons/turf/jungle.dmi';
+	icon_state = "greygrass"
 	},
 /area/centcom)
 "Np" = (
@@ -13336,11 +13603,19 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
+"Nv" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/closet/secure_closet/guard/breachshotguns,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "Nx" = (
 /turf/unsimulated/mineral,
 /area/centcom)
 "Nz" = (
 /obj/machinery/light,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom)
 "NA" = (
@@ -13613,6 +13888,16 @@
 	color = "#E5511B"
 	},
 /obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom)
+"OA" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#E5511B"
+	},
+/obj/effect/floor_decal/corner/white/border{
+	color = "#E5511B";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
@@ -14384,6 +14669,16 @@
 /obj/effect/floor_decal/corner/orange/bordercorner,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"QP" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8;
+	color = "#E5511B"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom)
 "QR" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/phoronreinforced{
@@ -14467,6 +14762,31 @@
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
+/area/centcom)
+"Re" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Rg" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -14758,8 +15078,8 @@
 	pixel_y = 8;
 	req_access = list("ACCESS_SYNDICATE")
 	},
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall,
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/ci)
 "RD" = (
 /obj/effect/floor_decal/corner/brown/border,
@@ -14800,6 +15120,15 @@
 "RH" = (
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom/chaos)
+"RL" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/gunrack,
+/obj/item/gun/projectile/shotgun/pump/combat,
+/obj/item/gun/projectile/shotgun/pump/combat,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "RM" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
@@ -14961,11 +15290,11 @@
 	},
 /area/centcom)
 "Sl" = (
-/obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 6;
 	color = "#ADA493"
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
@@ -15053,6 +15382,16 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"SA" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/machinery/vending/medical{
+	req_access = list("ACCESS_MTF");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "SB" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/storage/fancy/cigar,
@@ -15081,6 +15420,41 @@
 "SG" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/lino,
+/area/centcom)
+"SK" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/ammo_magazine/shotholder,
+/obj/item/ammo_magazine/shotholder,
+/obj/item/ammo_magazine/shotholder,
+/obj/item/ammo_magazine/shotholder,
+/obj/item/ammo_magazine/shotholder,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/beanbag,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/flash,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/item/ammo_magazine/shotholder/stun,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "SL" = (
 /obj/structure/table/standard,
@@ -15215,6 +15589,17 @@
 /obj/effect/floor_decal/corner/yellow/border,
 /turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
+"Tf" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#E5511B";
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_y = 4
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom)
 "Tg" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -15896,10 +16281,9 @@
 	color = "#E5511B"
 	},
 /obj/structure/closet/secure_closet/guard/epsilon11leader,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/box/a556,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "VG" = (
@@ -15956,12 +16340,21 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom)
 "VT" = (
-/obj/structure/railing/mapped{
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
 	dir = 8
 	},
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/obj/structure/window/phoronreinforced{
+	dir = 4
 	},
+/obj/structure/window/phoronreinforced/full,
+/turf/unsimulated/floor/plating,
 /area/centcom)
 "VU" = (
 /obj/structure/closet/crate/bin{
@@ -16239,11 +16632,11 @@
 	},
 /area/centcom)
 "WS" = (
-/obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9;
 	color = "#272B5B"
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
@@ -16380,6 +16773,15 @@
 	dir = 8
 	},
 /area/centcom)
+"Xl" = (
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/obj/machinery/vending/weaponry/hcz/sergeant{
+	name = "\improper Epsilon-11 Leader AutoEquipment Device"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "Xn" = (
 /obj/machinery/light{
 	dir = 4
@@ -16431,11 +16833,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Xw" = (
-/obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
 	color = "#272B5B"
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
@@ -16509,7 +16911,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
 "XO" = (
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom)
 "XP" = (
@@ -16597,6 +16999,16 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"Ym" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 9;
+	color = "#E5511B"
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/centcom)
 "Yn" = (
 /obj/structure/table/steel_reinforced,
 /turf/unsimulated/floor/reinforced,
@@ -16683,11 +17095,11 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "YB" = (
-/obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/white/border{
 	color = "#ADA493";
 	dir = 10
 	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark/corner,
 /area/centcom)
 "YD" = (
@@ -16821,6 +17233,13 @@
 /obj/machinery/vending/weaponry/goc,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
+"Zb" = (
+/obj/machinery/chemical_dispenser/ert,
+/obj/effect/floor_decal/corner/white/mono{
+	color = "#E5511B"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom)
 "Zd" = (
 /obj/machinery/papershredder,
 /turf/unsimulated/floor{
@@ -16908,8 +17327,11 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom)
 "ZA" = (
-/turf/unsimulated/floor{
-	icon_state = "snow"
+/obj/machinery/light,
+/turf/unsimulated/floor/grass{
+	color = "#799c4b";
+	icon = 'icons/turf/jungle.dmi';
+	icon_state = "greygrass"
 	},
 /area/centcom)
 "ZC" = (
@@ -16918,6 +17340,13 @@
 	icon = 'icons/turf/jungle.dmi';
 	icon_state = "greygrass"
 	},
+/area/centcom)
+"ZD" = (
+/obj/machinery/door/airlock/vault{
+	name = "Epsilon-11 Breacher Equipment";
+	req_access = list("ACCESS_MTF")
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom)
 "ZF" = (
 /obj/effect/floor_decal/corner/red/border,
@@ -17001,6 +17430,15 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/corner,
+/area/centcom)
+"ZX" = (
+/obj/effect/floor_decal/corner/white/border{
+	color = "#E5511B";
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
 /area/centcom)
 "ZY" = (
 /obj/machinery/door/airlock/security{
@@ -20595,10 +21033,10 @@ Nx
 Nx
 ZC
 ZC
-ZA
-ZA
-ZA
-ZA
+ZC
+ZC
+ZC
+ZC
 tq
 ab
 ab
@@ -20794,12 +21232,12 @@ ab
 Nx
 Nx
 ZC
-Jq
-ZA
-ZA
-ZA
+qz
 ZC
-ZA
+ZC
+ZC
+ZC
+ZC
 ZA
 tq
 ab
@@ -20995,14 +21433,14 @@ ab
 Nx
 Nx
 ZC
-ZA
-ZA
-ZA
-ZA
+ZC
+ZC
+ZC
+ZC
 ZC
 WT
 ZC
-ZA
+ZC
 tq
 ab
 ab
@@ -21201,10 +21639,10 @@ WT
 qz
 ZC
 ZC
-ZA
-ZA
-ZA
-ZA
+ZC
+ZC
+ZC
+ZC
 tq
 ab
 ab
@@ -21597,9 +22035,9 @@ ab
 ab
 Nx
 Nx
-ZA
-ZA
-ZA
+ZC
+ZC
+ZC
 nW
 wT
 wT
@@ -21798,9 +22236,9 @@ ab
 ab
 ab
 Nx
-ZA
 ZC
-ZA
+ZC
+ZC
 WT
 nW
 wT
@@ -22001,7 +22439,7 @@ ab
 ab
 Nx
 ZC
-ZA
+ZC
 WT
 ZC
 nW
@@ -22203,9 +22641,9 @@ ab
 ab
 Nx
 ZC
-ZA
-ZA
-ZA
+ZC
+ZC
+ZC
 nW
 wT
 wT
@@ -22407,7 +22845,7 @@ Nx
 Nx
 Nx
 Nn
-ZA
+ZC
 nW
 Rr
 Rr
@@ -22608,13 +23046,13 @@ ab
 ab
 Nx
 Nx
-ZA
-ZA
+ZC
+ZC
 nW
 yO
-VT
 PC
-VT
+PC
+PC
 rl
 qg
 Rr
@@ -22815,7 +23253,7 @@ uq
 nW
 LQ
 ZC
-ZA
+ZC
 ZC
 ZC
 NC
@@ -24218,7 +24656,7 @@ Ju
 Ju
 Pt
 tq
-Kh
+oZ
 To
 ML
 Zn
@@ -29631,19 +30069,19 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
 tq
 qQ
 IZ
@@ -29833,19 +30271,19 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Ym
+QP
+JZ
+JZ
+JZ
+JZ
+QP
+JZ
+JZ
+JZ
+QP
+LP
 tq
 mQ
 yv
@@ -30035,20 +30473,20 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 tq
+Tf
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+er
+Gd
 qV
 er
 by
@@ -30237,19 +30675,19 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+JV
+Jq
+Jq
+Jq
+Jq
+Jq
+Jq
+Jq
+Jq
+Jq
+Jq
+ZX
 tq
 qX
 er
@@ -30439,19 +30877,19 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+tq
+NF
+MR
+VT
+tq
+NF
+HR
+VT
+tq
+NF
+ZD
+VT
 tq
 qY
 er
@@ -30642,18 +31080,18 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+Xl
+dy
+wp
+tq
+Zb
+dy
+FL
+tq
+li
+dy
+Nv
 tq
 BO
 er
@@ -30844,18 +31282,18 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+dd
+Kh
+BJ
+tq
+Kb
+Kh
+Da
+tq
+SK
+OA
+lL
 tq
 Qd
 er
@@ -31046,24 +31484,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+bD
+HX
+vF
+tq
+Re
+HX
+SA
+tq
+dk
+HX
+RL
 tq
 uz
 er
 yJ
 vX
-If
+Bz
 tq
 tq
 tq
@@ -31248,18 +31686,18 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
 tq
 MK
 er
