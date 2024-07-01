@@ -123,8 +123,10 @@
 		..()
 
 /obj/machinery/icecream_vat/proc/make(mob/user, make_type, amount)
-	if(amount > 5 || !canmake)
+	if(amount > 5)
 		return
+	if(!canmake)
+		to_chat(user, SPAN_WARNING("The machine is cooling off!"))
 	for(var/R in get_ingredient_list(make_type))
 		if(reagents.has_reagent(R, amount))
 			continue
@@ -139,6 +141,9 @@
 			src.visible_message(SPAN_INFO("[user] cooks up some [flavour] cones."))
 		else
 			src.visible_message(SPAN_INFO("[user] whips up some [flavour] icecream."))
+		canmake = 0
+		sleep(100)
+		canmake = 1
 	else
 		to_chat(user, SPAN_WARNING("You don't have the ingredients to make this."))
 
