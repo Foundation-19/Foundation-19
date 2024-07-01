@@ -123,10 +123,11 @@
 		..()
 
 /obj/machinery/icecream_vat/proc/make(mob/user, make_type, amount)
-	if(amount > 5)
+	if(amount > 5 || amount < 1)
 		return
 	if(!canmake)
 		to_chat(user, SPAN_WARNING("The machine is cooling off!"))
+		return
 	for(var/R in get_ingredient_list(make_type))
 		if(reagents.has_reagent(R, amount))
 			continue
