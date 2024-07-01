@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Ice cream vat can no longer be exploited to crash server
