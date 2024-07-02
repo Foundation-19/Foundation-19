@@ -39894,6 +39894,11 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
+"mMG" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/newscaster,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/restaurantkitchenarea)
 "mNa" = (
 /obj/effect/landmark/start{
 	name = "Office Worker"
@@ -91123,7 +91128,7 @@ aMb
 aMb
 tjW
 aGb
-aav
+mMG
 sWF
 aPS
 aPT
