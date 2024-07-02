@@ -15,7 +15,7 @@
 
 	id_type = /obj/item/card/id/chaos
 	hierarchy_type = /decl/hierarchy/outfit/chaos
-	flags = OUTFIT_HAS_BACKPACK | OUTFIT_RESET_EQUIPMENT
+	flags = OUTFIT_RESET_EQUIPMENT
 
 /decl/hierarchy/outfit/chaos/soldier
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier")
@@ -53,28 +53,42 @@
 	l_pocket = null
 	r_pocket = null
 	back = null
+	id_type = /obj/item/card/id/chaos
 	backpack_contents = null
-
-	flags = OUTFIT_RESET_EQUIPMENT
 
 // CHAOS INSURGENCY CORPSES
 
 /decl/hierarchy/outfit/chaos/soldier/corpse
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier Corpse")
 	suit_store = null
+	l_hand = null
+	l_ear = /obj/item/device/radio/headset
+	l_pocket = null
+	r_pocket = null
 	belt = /obj/item/storage/belt/ci
+	id_type = /obj/item/card/id/chaos
 	backpack_contents = null
 
 /decl/hierarchy/outfit/chaos/heavy_soldier/corpse
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Heavy Soldier Corpse")
 	head = /obj/item/clothing/head/helmet/scp/security/chaos
 	suit_store = null
+	l_hand = null
+	l_ear = /obj/item/device/radio/headset
+	l_pocket = null
+	r_pocket = null
 	belt = /obj/item/storage/belt/ci/rig
+	id_type = /obj/item/card/id/chaos
 	backpack_contents = null
 
 /decl/hierarchy/outfit/chaos/leader/corpse
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Squad Leader Corpse")
 	head = /obj/item/clothing/head/helmet/scp/chaos/officer
 	suit_store = null
+	l_hand = null
+	l_ear = /obj/item/device/radio/headset
+	l_pocket = null
+	r_pocket = null
 	belt = /obj/item/storage/belt/ci/rig
+	id_type = /obj/item/card/id/chaos/lead
 	backpack_contents = null
