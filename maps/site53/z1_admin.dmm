@@ -430,7 +430,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "bx" = (
-/obj/effect/paint/blue,
+/obj/effect/paint/merc,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "by" = (
@@ -924,7 +924,7 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/obj/effect/paint/blue,
+/obj/effect/paint/merc,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "cT" = (
@@ -1043,7 +1043,7 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/obj/effect/paint/blue,
+/obj/effect/paint/merc,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "dd" = (
@@ -1441,7 +1441,7 @@
 	health_max = null;
 	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
 	},
-/obj/effect/paint/blue,
+/obj/effect/paint/merc,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "eg" = (
@@ -1681,7 +1681,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "eT" = (
 /obj/structure/grille{
 	health_max = null;
@@ -2756,7 +2756,7 @@
 	},
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/r_wall,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "ie" = (
 /obj/machinery/light{
 	dir = 8;
@@ -3371,7 +3371,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "kb" = (
 /obj/structure/table/rack,
 /obj/item/bodybag,
@@ -3457,7 +3457,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "kp" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -3806,7 +3806,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "lE" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a57,
@@ -4092,7 +4092,7 @@
 "mx" = (
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/r_wall,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "my" = (
 /obj/effect/overlay/palmtree_l,
 /turf/unsimulated/beach/sand,
@@ -4152,7 +4152,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "mI" = (
 /turf/simulated/floor/plating,
 /area/centcom/chaos)
@@ -5048,7 +5048,7 @@
 	name = "Unknown Truck"
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "oz" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
@@ -5096,7 +5096,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "oE" = (
 /obj/machinery/light{
 	dir = 4
@@ -5140,7 +5140,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "oK" = (
 /obj/structure/bed/chair/office/comfy/green{
 	dir = 1
@@ -6251,7 +6251,7 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "rq" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -6481,7 +6481,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "rK" = (
 /obj/effect/landmark{
 	name = "NewPlayer"
@@ -8128,11 +8128,11 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/landmark/corpse/goc,
 /obj/structure/closet/body_bag,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
+/obj/effect/landmark/corpse/chaos/pilot,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom/goc)
 "ux" = (
@@ -9044,7 +9044,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "wY" = (
 /obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced{
@@ -10267,7 +10267,7 @@
 /obj/machinery/light/small/red{
 	dir = 4
 	},
-/obj/effect/paint/blue,
+/obj/effect/paint/merc,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "Ad" = (
@@ -10529,7 +10529,7 @@
 	},
 /obj/effect/shuttle_landmark/goc1/start,
 /turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "AQ" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/adv,
@@ -11601,7 +11601,7 @@
 /obj/effect/paint_stripe/paleblue,
 /obj/machinery/light/small/red,
 /turf/simulated/wall/r_wall,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "DI" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#2B0F42"
@@ -11726,7 +11726,7 @@
 	dir = 4
 	},
 /turf/simulated/wall/r_wall,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "DS" = (
 /obj/structure/table/reinforced,
 /obj/item/defibrillator/loaded,
@@ -12374,7 +12374,7 @@
 /obj/machinery/light/small/red{
 	dir = 8
 	},
-/obj/effect/paint/blue,
+/obj/effect/paint/merc,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/mtf)
 "Fo" = (
@@ -12645,6 +12645,10 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"Go" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/tram/goc1)
 "Gp" = (
 /obj/structure/closet/secure_closet/guard/ntf{
 	icon_locked = "mtfsenior1";
@@ -13826,7 +13830,7 @@
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/plating,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "JD" = (
 /obj/item/implantcase/explosive,
 /obj/item/implantcase/explosive,
@@ -18434,7 +18438,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "UG" = (
 /obj/machinery/door/airlock{
 	name = "Custodial Closet"
@@ -18535,7 +18539,7 @@
 "UX" = (
 /obj/effect/floor_decal/corner/paleblue/bordercee,
 /turf/simulated/floor/tiled/dark/vertical,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "UY" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -19361,7 +19365,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "Xy" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood/walnut,
@@ -19689,7 +19693,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark/small,
-/area/centcom/goc)
+/area/site53/tram/goc1)
 "YD" = (
 /obj/item/storage/toolbox/syndicate,
 /obj/item/surgicaldrill,
@@ -48230,8 +48234,8 @@ mL
 mL
 mL
 mL
-jC
-jC
+Go
+Go
 lC
 mx
 rI
@@ -48432,7 +48436,7 @@ mL
 mL
 mL
 mL
-jC
+Go
 rp
 eS
 mx
@@ -48634,8 +48638,8 @@ mL
 mL
 mL
 mL
-jC
-jC
+Go
+Go
 wX
 mx
 ka
