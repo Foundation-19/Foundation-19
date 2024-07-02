@@ -44,6 +44,16 @@
 	r_pocket = /obj/item/card/emag
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/fragshells = 5,/obj/item/clothing/accessory/storage/bandolier = 1)
 
+/decl/hierarchy/outfit/goc/pointman
+	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Pointman")
+	head = /obj/item/clothing/head/helmet/scp/security/goc
+	suit = /obj/item/clothing/suit/armor/goc/heavy
+	r_hand = /obj/item/shield/riot/metal // BULLETS? WHAT BULLETS?
+	l_hand = /obj/item/melee/baton/loaded
+	l_pocket = /obj/item/grenade/flashbang
+	r_pocket = /obj/item/card/emag
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/grenade/smokebomb = 2,/obj/item/grenade/flashbang/clusterbang = 1)
+
 /decl/hierarchy/outfit/goc/leader
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Team Leader")
 	head = /obj/item/clothing/head/beret/goc/lead

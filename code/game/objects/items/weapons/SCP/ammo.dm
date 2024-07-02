@@ -76,7 +76,7 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 12
+	max_ammo = 7
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/a9mm/ap
@@ -86,7 +86,7 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 12
+	max_ammo = 7
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/a9mm/hp
@@ -96,7 +96,7 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 12
+	max_ammo = 7
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/a9mm/rubber
@@ -106,7 +106,7 @@
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 12
+	max_ammo = 7
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/a380

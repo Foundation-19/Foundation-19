@@ -19,6 +19,19 @@
 	access = list()				// see get_access() override
 	minimal_access = list()		// see get_access() override
 
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_TRAINED,
+		SKILL_COMPUTER		= SKILL_BASIC,
+		SKILL_FINANCE       = SKILL_BASIC,
+	)
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_EXPERIENCED,
+		SKILL_COMPUTER		= SKILL_MASTER,
+		SKILL_FINANCE       = SKILL_MASTER,
+	)
+	skill_points = 22
+
 	requirements = list(EXP_TYPE_COMMAND = 1200)
 
 	roleplay_difficulty = "Hard"
@@ -61,6 +74,19 @@
 	)
 
 	minimal_access = list()
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_TRAINED,
+		SKILL_COMPUTER		= SKILL_BASIC,
+		SKILL_FINANCE       = SKILL_BASIC,
+	)
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_EXPERIENCED,
+		SKILL_COMPUTER		= SKILL_MASTER,
+		SKILL_FINANCE       = SKILL_MASTER,
+	)
+	skill_points = 20
 
 	roleplay_difficulty = "Medium"
 	mechanical_difficulty = "Low - Medium"
@@ -212,6 +238,19 @@
 
 	minimal_access = list()
 
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_TRAINED,
+		SKILL_COMPUTER		= SKILL_BASIC,
+		SKILL_FINANCE       = SKILL_BASIC,
+	)
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_EXPERIENCED,
+		SKILL_COMPUTER		= SKILL_MASTER,
+		SKILL_FINANCE       = SKILL_MASTER,
+	)
+	skill_points = 20
+
 	roleplay_difficulty = "Hard"
 	mechanical_difficulty = "Easy"
 	duties = "Ensure Foundation protocols are followed. Keep security in line."
@@ -241,6 +280,19 @@
 	)
 
 	minimal_access = list()
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_TRAINED,
+		SKILL_COMPUTER		= SKILL_BASIC,
+		SKILL_FINANCE       = SKILL_BASIC,
+	)
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_EXPERIENCED,
+		SKILL_COMPUTER		= SKILL_MASTER,
+		SKILL_FINANCE       = SKILL_MASTER,
+	)
+	skill_points = 20
 
 	roleplay_difficulty = "Hard"
 	mechanical_difficulty = "Easy"
@@ -275,6 +327,19 @@
 	)
 
 	minimal_access = list()
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_TRAINED,
+		SKILL_COMPUTER		= SKILL_BASIC,
+		SKILL_FINANCE       = SKILL_BASIC,
+	)
+
+	max_skill = list(
+		SKILL_WEAPONS       = SKILL_EXPERIENCED,
+		SKILL_COMPUTER		= SKILL_MASTER,
+		SKILL_FINANCE       = SKILL_MASTER,
+	)
+	skill_points = 20
 
 	roleplay_difficulty = "Hard"
 	mechanical_difficulty = "Easy"

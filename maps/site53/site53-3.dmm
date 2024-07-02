@@ -6985,7 +6985,7 @@
 "vG" = (
 /obj/effect/shuttle_landmark/heli/out/ci,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
+/area/site53/surface/surface/east)
 "vI" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/adv,
@@ -9200,10 +9200,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface/west)
-"Ca" = (
-/obj/effect/shuttle_landmark/chaos1/out,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/east)
 "Cb" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/white/vertical,
@@ -54269,12 +54265,12 @@ xO
 xO
 nz
 xO
-xO
 nz
 nz
 nz
 nz
-vG
+nz
+nz
 nz
 nz
 nz
@@ -54525,8 +54521,6 @@ xO
 xO
 xO
 xO
-xO
-xO
 nz
 nz
 nz
@@ -54538,7 +54532,9 @@ nz
 nz
 nz
 nz
-xO
+nz
+nz
+nz
 xO
 xO
 xO
@@ -54794,8 +54790,8 @@ nz
 nz
 nz
 nz
-xO
-xO
+nz
+nz
 xO
 xO
 xO
@@ -55051,7 +55047,7 @@ nz
 nz
 nz
 nz
-xO
+nz
 xO
 nz
 nz
@@ -65846,7 +65842,7 @@ bO
 bO
 bO
 bO
-Ca
+bO
 bO
 bO
 bO
@@ -66103,7 +66099,7 @@ bO
 bO
 bO
 bO
-bO
+vG
 bO
 bO
 bO

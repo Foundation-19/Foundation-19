@@ -17373,10 +17373,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/scpcar)
-"aZc" = (
-/obj/item/clothing/accessory/armband/bluegold,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/scpcar)
 "aZd" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/scpcar)
@@ -25554,11 +25550,6 @@
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -54562,6 +54553,7 @@
 /obj/item/shield/riot,
 /obj/item/shield/riot,
 /obj/item/shield/riot,
+/obj/item/shield/riot/metal,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "tSr" = (
@@ -88605,7 +88597,7 @@ aQN
 aYK
 aYQ
 aYV
-aZc
+aZd
 aZd
 aZo
 aYQ
