@@ -538,7 +538,7 @@
 	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
 	pixel_x = 32
 	},
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/vertical,
@@ -789,8 +789,12 @@
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/scp8containment)
 "aQl" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/wall/r_titanium,
+/obj/machinery/camera/autoname{
+	network = list("Heavy Containment Zone Network");
+	dir = 8;
+	c_tag = "SCP-049 Garden"
+	},
+/turf/simulated/floor/wood/maple,
 /area/site53/lhcz/scp049containment)
 "aRa" = (
 /obj/effect/catwalk_plated/dark,
@@ -950,10 +954,12 @@
 /area/site53/reswing/lowres/xenobotany)
 "aYR" = (
 /obj/effect/floor_decal/corner/black/diagonal,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/machinery/camera/autoname{
+	network = list("Heavy Containment Zone Network");
+	c_tag = "SCP-049 Kitchen";
+	dir = 4
 	},
-/obj/structure/closet/secure_closet/freezer/meat,
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "aZm" = (
@@ -1161,10 +1167,10 @@
 /turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/primaryhallway)
 "bhr" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/vertical,
@@ -1240,7 +1246,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/keter/mono,
+/obj/effect/floor_decal/corner/euclid/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
 "blY" = (
@@ -1716,10 +1722,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/keter/border{
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 9
 	},
-/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner{
 	dir = 8
 	},
@@ -2406,7 +2412,7 @@
 	name = "SCP-049 Lockdown Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch{
-	color = "#65261e"
+	color = "#635424"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp049containment)
@@ -2433,7 +2439,7 @@
 	desc = "A warning sign which reads: CAUTION, ELECTRIFIED GRILLES.";
 	pixel_x = 32
 	},
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/vertical,
@@ -2855,7 +2861,7 @@
 "cTH" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline{
-	color = "#65261e"
+	color = "#635424"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
@@ -2956,7 +2962,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/hallways)
 "cXf" = (
-/obj/effect/floor_decal/corner/keter/bordercorner{
+/obj/effect/floor_decal/corner/euclid/bordercorner{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/corner{
@@ -3585,7 +3591,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/horizontal,
@@ -3947,6 +3953,13 @@
 /obj/effect/floor_decal/industrial/outline{
 	color = "#a2819e"
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "lock008";
+	name = "SCP-008 Lockdown Control";
+	dir = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "dYv" = (
@@ -3979,12 +3992,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "lock500";
-	name = "SCP-500 Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp500)
@@ -4076,7 +4083,7 @@
 /area/site53/lhcz/scp049containment)
 "eaY" = (
 /obj/structure/flora/pottedplant/floorleaf,
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white/corner{
@@ -4271,7 +4278,7 @@
 /area/site53/lhcz/scp1102room)
 "ekB" = (
 /obj/item/paper/crumpled{
-	info = "Hello, the hallway we bought from that dollar store really is effective, now we can see where 049 is at all times, except for the bedroom. That's your own issue.";
+	info = "Hello, the hallway we bought from that dollar store really is effective, now we can see where 049 is at all times, except for the bedroom. That's your own issue. We got lazy with the decor. Fuck you guys. - Manufacturing Department";
 	name = "informational paper"
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -4369,7 +4376,12 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "enz" = (
-/turf/simulated/wall/r_titanium,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "eoA" = (
 /obj/machinery/atmospherics/portables_connector,
@@ -4832,7 +4844,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/vertical,
@@ -5283,12 +5295,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
 "fod" = (
-/obj/effect/floor_decal/corner/keter/mono,
-/obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/closet/l3closet/dclass,
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
+/obj/effect/floor_decal/corner/euclid/mono,
+/obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
 "fov" = (
@@ -5949,11 +5961,11 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 4
-	},
 /obj/machinery/status_display{
 	pixel_x = 32
+	},
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
@@ -6217,9 +6229,17 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/lhcz/hallway)
 "gjY" = (
-/obj/effect/floor_decal/corner/black/diagonal,
-/obj/structure/closet/secure_closet/freezer/fridge,
-/turf/simulated/floor/tiled/white,
+/obj/machinery/button/blast_door{
+	id_tag = "lock049";
+	name = "SCP-049 Lockdown Control";
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/lhcz/scp049containment)
 "gko" = (
 /obj/effect/floor_decal/corner/orange/border,
@@ -6540,7 +6560,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/keter/mono,
+/obj/effect/floor_decal/corner/euclid/mono,
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
@@ -6666,7 +6686,7 @@
 /turf/simulated/floor/wood/yew,
 /area/site53/llcz/dclass/luxuryhall)
 "gHz" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/vertical,
@@ -7162,7 +7182,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "hcZ" = (
-/obj/effect/floor_decal/corner/keter/border,
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
@@ -7170,6 +7189,7 @@
 	c_tag = "SCP-049 Security Checkpoint";
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
 "hde" = (
@@ -7305,13 +7325,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
 "hjJ" = (
-/obj/structure/sign/scp/keter_scp{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/keter/bordercorner{
+/obj/effect/floor_decal/corner/euclid/bordercorner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/horizontal,
@@ -7557,10 +7574,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/keter/border{
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 5
 	},
-/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
@@ -7617,7 +7634,7 @@
 	dir = 4
 	},
 /obj/structure/closet/l3closet/scientist,
-/obj/effect/floor_decal/corner/keter/mono,
+/obj/effect/floor_decal/corner/euclid/mono,
 /obj/effect/floor_decal/industrial/outline{
 	color = "#a2819e"
 	},
@@ -8121,12 +8138,12 @@
 /turf/simulated/floor,
 /area/site53/llcz/mining/miningops)
 "idZ" = (
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 8
-	},
 /obj/machinery/camera/network/scp049{
 	c_tag = "SCP-049 Access Hall";
 	dir = 4
+	},
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/lhcz/scp049containment)
@@ -9022,8 +9039,8 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/luxuryhall)
 "iZX" = (
-/obj/effect/floor_decal/corner/keter/mono,
 /obj/structure/closet/l3closet,
+/obj/effect/floor_decal/corner/euclid/mono,
 /obj/effect/floor_decal/industrial/outline{
 	color = "#8bbbd5"
 	},
@@ -9208,8 +9225,8 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/primaryhallway)
 "jmJ" = (
-/obj/effect/floor_decal/corner/keter/border,
 /obj/machinery/light,
+/obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
 "jny" = (
@@ -9292,7 +9309,7 @@
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/uhcz/scp8containment)
 "jql" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white/corner{
@@ -9416,7 +9433,7 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "juK" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/vertical,
@@ -9578,7 +9595,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/keter/bordercorner,
+/obj/effect/floor_decal/corner/euclid/bordercorner,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/lhcz/scp049containment)
 "jED" = (
@@ -9587,7 +9604,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/corner/keter/border,
+/obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
 "jFj" = (
@@ -10009,14 +10026,14 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/engineering/server_room)
 "kbf" = (
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 1
-	},
 /obj/machinery/status_display{
 	pixel_y = 32
 	},
 /obj/machinery/camera/network/scp049{
 	c_tag = "SCP-049 Security Inner Checkpoint"
+	},
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
@@ -10064,7 +10081,7 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "kdY" = (
-/obj/effect/floor_decal/corner/keter/border,
+/obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
 "keb" = (
@@ -10171,10 +10188,10 @@
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/lhcz/hallway)
 "kih" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 10
 	},
-/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/lhcz/scp049containment)
 "kiD" = (
@@ -10333,7 +10350,7 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uhcz/scp8containment)
 "kpJ" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white/corner,
@@ -10796,11 +10813,11 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp8containment)
 "kQw" = (
-/obj/effect/floor_decal/corner/keter/border,
 /obj/machinery/camera/network/scp049{
 	c_tag = "SCP-049 Entrance Hall";
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
 "kQH" = (
@@ -10986,7 +11003,6 @@
 /area/site53/llcz/dclass/cryo)
 "laA" = (
 /obj/effect/floor_decal/corner/black/diagonal,
-/obj/item/storage/box/beakers,
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/white,
@@ -11170,11 +11186,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/cryo)
 "liV" = (
-/obj/effect/floor_decal/corner/keter/bordercorner{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
+	},
+/obj/effect/floor_decal/corner/euclid/bordercorner{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
@@ -11642,7 +11658,7 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/scp8containment)
 "lKQ" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white/corner{
@@ -12257,11 +12273,6 @@
 	name = "SCP-049";
 	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "lock049";
-	name = "SCP-049 Lockdown Blast Door"
-	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp049containment)
 "mpM" = (
@@ -12607,7 +12618,7 @@
 /area/site53/llcz/dclass/kitchen)
 "mHO" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white/corner,
@@ -12831,7 +12842,7 @@
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
-/obj/effect/floor_decal/corner/keter/mono,
+/obj/effect/floor_decal/corner/euclid/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
 "mSV" = (
@@ -13093,6 +13104,9 @@
 "ndO" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/machinery/chem_master/condimaster,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "ndP" = (
@@ -14084,13 +14098,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops)
 "oky" = (
-/obj/effect/floor_decal/corner/keter/mono,
-/obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/closet/l3closet/dclass,
 /obj/machinery/camera/network/scp049{
 	c_tag = "SCP-049 Access Hall Class-D Prep";
 	dir = 4
 	},
+/obj/effect/floor_decal/corner/euclid/mono,
+/obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
 "olE" = (
@@ -14355,9 +14369,6 @@
 /area/site53/llcz/dclass/primaryhallway)
 "ozo" = (
 /obj/effect/floor_decal/corner/black/diagonal,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/cooker/grill,
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
@@ -15012,12 +15023,12 @@
 /turf/simulated/floor/reinforced/hydrogen,
 /area/site53/engineering/atmos)
 "pjZ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/machinery/cooker/oven,
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "pka" = (
 /obj/effect/paint_stripe/red,
@@ -15050,9 +15061,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/keter/mono,
-/obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/closet/l3closet/dclass,
+/obj/effect/floor_decal/corner/euclid/mono,
+/obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
 "plW" = (
@@ -15252,7 +15263,7 @@
 	name = "SCP-049 Access Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch{
-	color = "#65261e"
+	color = "#635424"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp049containment)
@@ -15608,9 +15619,6 @@
 	name = "SCP-049 Lockdown Blast Door";
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/hatch{
-	color = "#65261e"
-	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-049 Study";
 	req_access = list("ACCESS_SECURITY_LEVEL3");
@@ -15620,6 +15628,9 @@
 	dir = 8;
 	id_tag = "cycle0492";
 	name = "SCP-049 Access Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch{
+	color = "#635424"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp049containment)
@@ -15964,7 +15975,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/shower)
 "qqS" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/horizontal,
@@ -16557,12 +16568,6 @@
 	name = "SCP-1102-RU";
 	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
 	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "lock1102ru";
-	name = "SCP-1102-RU Lockdown Blast Door"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -16663,11 +16668,11 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/structure/sign/scp/keter_scp{
-	pixel_y = 32
-	},
-/obj/effect/floor_decal/corner/keter/bordercorner{
+/obj/effect/floor_decal/corner/euclid/bordercorner{
 	dir = 4
+	},
+/obj/structure/sign/scp/euclid_scp{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/lhcz/hallway)
@@ -16934,16 +16939,10 @@
 	},
 /area/site53/uhcz/scp8containment)
 "rmy" = (
-/obj/machinery/door/window/brigdoor/eastright{
-	name = "Secure Camera Maintenance Door";
-	dir = 2;
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
-	},
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	c_tag = "SCP-049 Kitchen"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/beakers,
+/turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "rmQ" = (
 /obj/effect/floor_decal/corner/euclid/border{
@@ -18343,18 +18342,18 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/lhcz/scp049containment)
 "sMN" = (
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	dir = 8;
-	c_tag = "SCP-049 Garden"
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-008";
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	aiControlDisabled = 1
 	},
-/obj/machinery/door/window/brigdoor/eastright{
-	name = "Secure Camera Maintenance Door";
-	dir = 8;
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/lhcz/scp049containment)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uhcz/scp8containment)
 "sNi" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -18561,6 +18560,13 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 1
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "lock1102ru";
+	name = "SCP-1102-RU Lockdown Control";
+	dir = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
 	},
@@ -18753,7 +18759,7 @@
 /area/site53/reswing/lowres/xenobotany)
 "tqa" = (
 /obj/structure/bed/chair,
-/obj/effect/floor_decal/corner/keter/mono,
+/obj/effect/floor_decal/corner/euclid/mono,
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
@@ -19741,7 +19747,7 @@
 	name = "SCP-049 Access Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch{
-	color = "#65261e"
+	color = "#635424"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp049containment)
@@ -20279,7 +20285,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/keter/bordercorner{
+/obj/effect/floor_decal/corner/euclid/bordercorner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/vertical,
@@ -20882,7 +20888,7 @@
 /area/site53/llcz/dclass/janitorial)
 "vEY" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white/corner{
@@ -20938,6 +20944,13 @@
 	},
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 1
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "lock500";
+	name = "SCP-500 Lockdown Control";
+	dir = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL4");
+	pixel_x = -25
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
@@ -21070,7 +21083,7 @@
 /area/site53/uhcz/scp106parts)
 "vMr" = (
 /obj/structure/closet/l3closet/scientist,
-/obj/effect/floor_decal/corner/keter/mono,
+/obj/effect/floor_decal/corner/euclid/mono,
 /obj/effect/floor_decal/industrial/outline{
 	color = "#a2819e"
 	},
@@ -21967,6 +21980,9 @@
 	pixel_y = 5
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "wTd" = (
@@ -22199,7 +22215,7 @@
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
 "xdM" = (
-/obj/effect/floor_decal/corner/keter/border{
+/obj/effect/floor_decal/corner/euclid/border{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white/corner{
@@ -22519,7 +22535,7 @@
 	name = "SCP-049 Access Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch{
-	color = "#65261e"
+	color = "#635424"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp049containment)
@@ -22614,7 +22630,7 @@
 	dir = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
-/obj/effect/floor_decal/corner/keter/mono,
+/obj/effect/floor_decal/corner/euclid/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/scp049containment)
 "xzN" = (
@@ -74783,7 +74799,7 @@ aDa
 hjJ
 fQu
 cXf
-juK
+gjY
 kih
 aDa
 qYI
@@ -75011,11 +75027,11 @@ hIH
 hIH
 hIH
 hIH
-enz
-enz
-enz
-enz
-enz
+aDa
+aDa
+aDa
+aDa
+aDa
 aDa
 aDa
 aDa
@@ -75268,16 +75284,16 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
 hyK
 hIA
-aDa
+enz
 aYR
-gjY
 imb
+rmy
 ndO
 kej
 dFE
@@ -75525,13 +75541,13 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 bIc
 hyK
 hyK
 pyr
 hIA
-aQl
+bBZ
 bBZ
 bBZ
 bBZ
@@ -75782,13 +75798,13 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 fpW
 lGT
 hIA
-rmy
+bBZ
 laA
 aGa
 wXB
@@ -76039,13 +76055,13 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
 pyr
 hIA
-aQl
+bBZ
 bBZ
 bBZ
 bBZ
@@ -76088,7 +76104,7 @@ hIH
 hIH
 pka
 pka
-jXt
+sMN
 pka
 pka
 pka
@@ -76296,13 +76312,13 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
 hyK
 hIA
-aDa
+pjZ
 ozo
 oEl
 bBZ
@@ -76553,7 +76569,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 bIc
 hyK
 hyK
@@ -76810,7 +76826,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
@@ -77067,7 +77083,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 odU
 ekB
 hyK
@@ -77324,7 +77340,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
@@ -77581,7 +77597,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 bIc
 hyK
 fpW
@@ -77838,7 +77854,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
@@ -78095,7 +78111,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
@@ -78352,7 +78368,7 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
@@ -78361,7 +78377,7 @@ aDa
 efP
 ppY
 tCM
-rul
+aQl
 xbq
 xbq
 xbq
@@ -78376,7 +78392,7 @@ bHf
 oXL
 bHf
 bHf
-enz
+aDa
 hIH
 hIH
 hIH
@@ -78609,31 +78625,31 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 bIc
 hyK
 hyK
 hyK
 aDa
 lfn
-pjZ
-aQl
-sMN
-aQl
-jNQ
+xeA
+xeA
+xeA
+xeA
+xeA
 xeA
 dOP
 bHf
-enz
-enz
-enz
-enz
-enz
-enz
-enz
-enz
-enz
-enz
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
 hIH
 hIH
 hIH
@@ -78866,22 +78882,22 @@ hIH
 hIH
 hIH
 hIH
-enz
+aDa
 hyK
 hyK
 hyK
 hyK
 xJe
 bHf
-lfn
-xeA
-xeA
-xeA
-dOP
+bHf
 bHf
 oXL
 bHf
-enz
+bHf
+bHf
+oXL
+bHf
+aDa
 hIH
 hIH
 hIH
@@ -79123,22 +79139,22 @@ hIH
 hIH
 hIH
 hIH
-enz
-enz
-enz
-enz
-enz
-enz
-bHf
-bHf
-bHf
-oXL
-bHf
-bHf
-bHf
-enz
-enz
-enz
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
+aDa
 hIH
 hIH
 hIH
@@ -79385,15 +79401,15 @@ hIH
 hIH
 hIH
 hIH
-enz
-enz
-enz
-enz
-enz
-enz
-enz
-enz
-enz
+hIH
+hIH
+hIH
+hIH
+hIH
+hIH
+hIH
+hIH
+hIH
 hIH
 hIH
 hIH

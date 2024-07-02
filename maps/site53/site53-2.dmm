@@ -17711,6 +17711,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "lock1507";
+	name = "SCP-1507 Lockdown Control";
+	pixel_y = 2;
+	dir = 8;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
 "bad" = (
@@ -17947,12 +17954,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "035lock";
-	name = "SCP-035 Lockdown Blast Door";
-	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp035room)
@@ -21079,12 +21080,6 @@
 	},
 /obj/machinery/door/firedoor{
 	dir = 4
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "lock457";
-	name = "SCP-457 Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp457containment)
@@ -30601,12 +30596,6 @@
 	name = "SCP-096";
 	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
 	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "lock096";
-	name = "SCP-096 Lockdown Blast Door"
-	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp096)
 "gUq" = (
@@ -30755,11 +30744,6 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-106";
 	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "lock106";
-	name = "SCP-106 Lockdown Blast Door"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34127,12 +34111,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "lock1507";
-	name = "SCP-1507 Lockdown Blast Door";
-	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp1507observation)
@@ -41650,6 +41628,12 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "lock106";
+	name = "SCP-106 Lockdown Control";
+	pixel_y = 25;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
 	},
@@ -46892,6 +46876,13 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "lock096";
+	name = "SCP-096 Lockdown Control";
+	pixel_y = 2;
+	dir = 8;
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp096)
 "pOf" = (
