@@ -144,7 +144,11 @@
 	icon_state = "mtf_alpha1"
 	worn_state = "mtf_alpha1"
 
-
+/obj/item/clothing/under/scp/scp912
+	name = "unknown SWAT BDU"
+	desc = "A black SWAT BDU with what looks like Anchorage Police Department patches on the shoulders, it's in pristine condition, looks a little out of date."
+	icon_state = "912_bdu"
+	worn_state = "912_bdu"
 
 /obj/item/clothing/under/space
 	name = "\improper NASA jumpsuit"

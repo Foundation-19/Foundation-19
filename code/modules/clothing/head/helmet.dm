@@ -239,3 +239,15 @@
 	flags_inv = BLOCKHAIR
 	body_parts_covered = 0
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/head/helmet/scp912
+	name = "SWAT helmet"
+	desc = "A standard-issue helmet that has railings for attachments, the only notable thing about it is it's padding to resist bullets, and also it's iconic dark blue visor, it's in rather pristine condition, even if a little out of date."
+	icon_state = "912_helm"
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED
+		)

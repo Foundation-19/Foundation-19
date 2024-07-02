@@ -444,3 +444,15 @@
 	desc = "Pukish armor."
 	icon_state = "tdgreen"
 	siemens_coefficient = 1
+
+/obj/item/clothing/suit/storage/vest/scp912
+	name = "SWAT vest"
+	desc = "A rather heavy-looking, Special Weapons and Tactics standard-issue vest, or at least a slightly outdated one, given standard armor padding to stop bullets. It displays the iconic SWAT letters on the front of the vest. This one has added webbing and ballistic plates."
+	icon_state = "912_vest"
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED
+		)

@@ -330,6 +330,23 @@
 	new /obj/item/handcuffs(src)
 	update_icon()
 
+/obj/item/storage/belt/holster/security/tactical/full912pistol/New()
+	..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/device/holowarrant(src)
+	new /obj/item/gun/projectile/pistol/glock(src)
+	new /obj/item/ammo_magazine/scp/mk9(src)
+	new /obj/item/ammo_magazine/scp/mk9(src)
+	new /obj/item/ammo_magazine/box/a9mm(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/melee/classic_baton(src)
+	update_icon()
+
 /obj/item/storage/belt/general
 	name = "equipment belt"
 	desc = "Can hold general equipment such as tablets, folders, and other office supplies."
