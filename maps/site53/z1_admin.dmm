@@ -55,6 +55,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"aq" = (
+/obj/structure/bed/chair/office/comfy/blue{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "ar" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#111111";
@@ -348,6 +354,23 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
+"bu" = (
+/obj/item/clothing/under/rank/medical/scrubs/black,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/gloves/latex/nitrile,
+/obj/item/autopsy_scanner,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/bodybags,
+/obj/structure/closet{
+	icon_closed = "black";
+	icon_state = "black";
+	name = "Mortician's Locker"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "bv" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#32441C";
@@ -450,6 +473,10 @@
 /obj/random/action_figure,
 /turf/simulated/floor/wood,
 /area/centcom)
+"bK" = (
+/obj/structure/bed/chair/armchair/black,
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "bL" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#2B0F42";
@@ -470,6 +497,23 @@
 	dir = 4
 	},
 /area/centcom)
+"bN" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
+"bO" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/centcom/goc)
 "bR" = (
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 9
@@ -683,6 +727,12 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/grass,
 /area/centcom/goc)
+"cy" = (
+/obj/structure/bed/chair/armchair/black{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "cz" = (
 /turf/simulated/floor/tiled/monotile,
 /area/centcom)
@@ -872,6 +922,14 @@
 	},
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"cX" = (
+/obj/structure/table/glass,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/spectrometer,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/centcom/goc)
 "cY" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -1185,6 +1243,9 @@
 	},
 /obj/item/storage/firstaid/adv{
 	pixel_y = 5
+	},
+/obj/machinery/status_display{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
@@ -2332,6 +2393,21 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"hu" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "hv" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
@@ -2757,6 +2833,23 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/centcom/chaos)
+"iG" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "iH" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/kafel_full,
@@ -3032,6 +3125,12 @@
 	},
 /turf/simulated/floor/tiled/white/corner,
 /area/centcom/goc)
+"jE" = (
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/goc)
 "jF" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
@@ -3291,6 +3390,10 @@
 	dir = 8
 	},
 /area/centcom)
+"kq" = (
+/obj/structure/table/woodentable_reinforced/ebony,
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "ks" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 8
@@ -3537,6 +3640,15 @@
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
+"lq" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "lt" = (
 /obj/machinery/light{
 	dir = 4
@@ -3676,7 +3788,12 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom/goc)
 "lT" = (
-/turf/space,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/landmark/corpse/goc/grenadier,
+/obj/structure/closet/body_bag,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/centcom/goc)
 "lU" = (
 /obj/machinery/light{
@@ -3985,6 +4102,13 @@
 	icon_state = "lino"
 	},
 /area/centcom)
+"mX" = (
+/obj/effect/floor_decal/corner/lime/border,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/centcom/goc)
 "mZ" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -4539,6 +4663,9 @@
 /obj/item/clothing/suit/storage/toggle/labcoat/cmo/md{
 	name = "thaumatologist's labcoat";
 	desc = "A coat that protects against minor chemical spills. It has a GOC logo on the chest, and a blue stripe on it in Global Occult Coalition colors."
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
@@ -5287,6 +5414,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
+"pA" = (
+/obj/structure/hygiene/sink{
+	dir = 1;
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom/goc)
 "pD" = (
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -5420,6 +5554,10 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"pS" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "pT" = (
 /turf/simulated/mineral,
 /area/centcom/goc)
@@ -5524,6 +5662,21 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"qk" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "ql" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
@@ -5822,6 +5975,13 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"rb" = (
+/obj/structure/table/glass,
+/obj/item/storage/box/freezer,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/centcom/goc)
 "rc" = (
 /obj/effect/floor_decal/corner/paleblue/bordercorner,
 /turf/simulated/floor/tiled/white/corner{
@@ -5942,6 +6102,12 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/plating,
 /area/centcom/chaos)
+"ro" = (
+/obj/structure/morgue{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "rp" = (
 /obj/machinery/computer/shuttle_control{
 	shuttle_tag = "GOC Car 1";
@@ -6313,6 +6479,15 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom/goc)
+"sc" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "sd" = (
 /obj/structure/table/rack,
 /obj/item/storage/belt/utility/full,
@@ -6357,6 +6532,14 @@
 /obj/item/stack/material/plastic/ten,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
+"sk" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/surgery,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom/goc)
 "sm" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -6686,6 +6869,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
+"sC" = (
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom/goc)
 "sD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/proteinbar,
@@ -7134,6 +7320,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom/goc)
+"to" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "tq" = (
 /turf/unsimulated/wall,
 /area/centcom)
@@ -7317,6 +7509,9 @@
 /obj/item/clothing/under/rank/civilian/uiu/formal{
 	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in GOC colors, with some khaki pants. Usually the outfit of a GOC Thaumatologist.";
 	name = "Global Occult Coalition civil formal suit"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 1
@@ -7763,6 +7958,14 @@
 	dir = 1
 	},
 /area/centcom)
+"uv" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/landmark/corpse/goc,
+/obj/structure/closet/body_bag,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "ux" = (
 /obj/structure/bed/chair/office/comfy/teal{
 	dir = 8
@@ -7851,6 +8054,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/tram/ci)
+"uI" = (
+/turf/unsimulated/wall/fakeglass{
+	dir = 8
+	},
+/area/centcom/goc)
 "uJ" = (
 /obj/structure/flora/tree/dead,
 /turf/simulated/floor/exoplanet/snow,
@@ -7929,6 +8137,9 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/structure/table/reinforced,
 /obj/item/storage/chewables/candy/medicallollis,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
 "vb" = (
@@ -7959,6 +8170,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"vg" = (
+/obj/structure/morgue,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "vh" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/shuttle_landmark/train/central,
@@ -8148,6 +8366,20 @@
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner,
+/area/centcom/goc)
+"vL" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
 /area/centcom/goc)
 "vM" = (
 /obj/structure/table/reinforced,
@@ -8671,6 +8903,13 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"xc" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/centcom/goc)
 "xd" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#006DC6";
@@ -9132,6 +9371,21 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"yz" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "yA" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
@@ -9611,6 +9865,13 @@
 	dir = 8
 	},
 /area/centcom)
+"zy" = (
+/obj/structure/morgue,
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "zz" = (
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/corner/white/border{
@@ -9695,8 +9956,22 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/centcom/chaos)
+"zO" = (
+/obj/structure/bed/chair/office/comfy/blue{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/centcom/goc)
 "zP" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced/full,
 /turf/simulated/floor/plating,
 /area/centcom/goc)
 "zQ" = (
@@ -9722,6 +9997,9 @@
 	dir = 8
 	},
 /area/centcom)
+"zX" = (
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "zY" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -9772,6 +10050,23 @@
 /obj/effect/paint/green,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/tram/ci)
+"Ae" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "Ag" = (
 /obj/structure/closet/secure_closet/guard/ntf,
 /obj/item/melee/baton/loaded,
@@ -9985,6 +10280,16 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"AP" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/obj/effect/shuttle_landmark/goc1/start,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/goc1)
 "AQ" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/adv,
@@ -10034,6 +10339,12 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/centcom/chaos)
+"AV" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "AW" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/scp/m4a1,
@@ -10057,6 +10368,23 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"Bb" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "Bc" = (
 /obj/machinery/door/airlock/security{
 	name = "Arrivals Security";
@@ -10064,6 +10392,21 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
+"Bf" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "Bh" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
@@ -10110,6 +10453,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/book/manual/psionics,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 8
 	},
@@ -10509,6 +10855,20 @@
 	dir = 1
 	},
 /area/centcom)
+"Cq" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "Cr" = (
 /obj/machinery/door/airlock/vault{
 	name = "Internal Tribunal Offices";
@@ -10818,6 +11178,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"Di" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "Dj" = (
 /obj/structure/table/standard,
 /obj/item/storage/chewables/candy/gum,
@@ -10947,6 +11321,10 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom)
+"DE" = (
+/obj/structure/morgue,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "DH" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/machinery/light/small/red,
@@ -11872,6 +12250,18 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"FT" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "FU" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 6;
@@ -11895,6 +12285,7 @@
 	dir = 6
 	},
 /obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
@@ -11933,7 +12324,9 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "Gi" = (
-/turf/unsimulated/wall/fakeglass,
+/turf/unsimulated/wall/fakeglass{
+	dir = 4
+	},
 /area/centcom/goc)
 "Gk" = (
 /obj/machinery/door/airlock/vault{
@@ -12055,6 +12448,21 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/carpet/green,
 /area/centcom/chaos)
+"GF" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "GG" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -12581,6 +12989,18 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"Ik" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "Il" = (
 /obj/machinery/door/airlock/vault{
 	name = "Eta-10 Preperations";
@@ -13040,6 +13460,23 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/centcom)
+"Jz" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "JC" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/light/small{
@@ -13192,6 +13629,12 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/tram/maintrain)
+"JX" = (
+/obj/machinery/door/airlock/command{
+	name = "United Nations Headquarters Morgue"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/goc)
 "JZ" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8;
@@ -13445,6 +13888,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"Kx" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/centcom/goc)
 "Ky" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 8
@@ -13999,9 +14450,27 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"Lu" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "Lx" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/wood/ebony,
+/area/centcom/goc)
+"LA" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "United Nations Headquarters Command Meeting Room"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/centcom/goc)
 "LB" = (
 /obj/effect/floor_decal/corner/red/border,
@@ -14075,12 +14544,45 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"LM" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 8
+	},
+/obj/structure/window/phoronreinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "LN" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
+"LO" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "LP" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10;
@@ -14122,6 +14624,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/vertical,
+/area/centcom/goc)
+"LS" = (
+/turf/simulated/floor/tiled/dark/corner,
 /area/centcom/goc)
 "LU" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -14356,6 +14861,20 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/centcom)
+"MI" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "MK" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1;
@@ -14799,6 +15318,12 @@
 	dir = 8
 	},
 /area/centcom)
+"NV" = (
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/goc)
 "NX" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -15253,6 +15778,13 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
+"Pe" = (
+/obj/structure/mopbucket,
+/obj/item/mop,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/centcom/goc)
 "Pg" = (
 /obj/machinery/light{
 	dir = 8
@@ -15363,6 +15895,9 @@
 	},
 /obj/item/pen{
 	pixel_y = 3
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/corner,
 /area/centcom/goc)
@@ -15666,6 +16201,15 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"Qn" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "Qp" = (
 /obj/structure/table/standard,
 /obj/structure/window/phoronreinforced{
@@ -15958,6 +16502,21 @@
 /obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"Rf" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "Rg" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919"
@@ -16656,6 +17215,14 @@
 /obj/item/folder/blue,
 /turf/simulated/floor/carpet/blue2,
 /area/centcom/goc)
+"SI" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/landmark/corpse/goc,
+/obj/structure/closet/body_bag,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/centcom/goc)
 "SK" = (
 /obj/effect/floor_decal/corner/white/mono{
 	color = "#E5511B"
@@ -17258,7 +17825,18 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Um" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced/full,
 /turf/simulated/floor/plating,
 /area/centcom/goc)
 "Un" = (
@@ -17275,6 +17853,21 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
+"Up" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "Uq" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 6
@@ -17511,6 +18104,15 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/centcom)
+"Vd" = (
+/obj/structure/morgue{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "Vg" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epsilon-9 Preperations";
@@ -17601,6 +18203,11 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"VC" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/bodybags,
+/turf/simulated/floor/tiled/white/monotile,
+/area/centcom/goc)
 "VD" = (
 /obj/item/storage/box/large/psinullers,
 /obj/structure/table/reinforced,
@@ -17682,6 +18289,18 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom)
+"VS" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic,
+/obj/structure/window/basic/full,
+/turf/unsimulated/floor/plating,
+/area/centcom/goc)
 "VT" = (
 /obj/structure/grille{
 	health_max = null;
@@ -17813,6 +18432,15 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
+"Wj" = (
+/obj/structure/morgue{
+	dir = 8
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/centcom/goc)
 "Wl" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -17961,6 +18589,12 @@
 	dir = 8
 	},
 /area/centcom)
+"WL" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/centcom/goc)
 "WM" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -18122,6 +18756,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
+"Xh" = (
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/goc)
 "Xi" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 9;
@@ -18367,6 +19007,14 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/centcom)
+"Yi" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/centcom/goc)
 "Yj" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "mtfext";
@@ -18671,6 +19319,23 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"Zc" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/centcom/goc)
 "Zd" = (
 /obj/machinery/papershredder,
 /turf/unsimulated/floor{
@@ -18705,6 +19370,15 @@
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
+/area/centcom/goc)
+"Zl" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
 "Zm" = (
 /obj/effect/floor_decal/corner/lime/bordercorner{
@@ -18762,6 +19436,14 @@
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
+/area/centcom/goc)
+"Zs" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/optable,
+/obj/effect/landmark/corpse/goc,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom/goc)
 "Zt" = (
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -47217,7 +47899,7 @@ eS
 mx
 UX
 ko
-ko
+AP
 ko
 ko
 UF
@@ -48425,13 +49107,13 @@ rz
 rz
 hB
 rz
-Um
-Um
+vL
+Bf
 Hn
-Um
+LO
 Hn
-Um
-Um
+Bb
+VS
 hB
 rz
 hB
@@ -48626,15 +49308,15 @@ rz
 hB
 aN
 rz
-Um
-Um
+vL
+Lu
 mr
 Ux
 dr
 ql
 mr
-Um
-Um
+Cq
+VS
 hB
 rz
 rz
@@ -48828,7 +49510,7 @@ pT
 rz
 cx
 mA
-Um
+FT
 mr
 Ux
 WP
@@ -48836,7 +49518,7 @@ AA
 Zj
 ql
 mr
-Um
+FT
 mA
 rz
 hB
@@ -50022,11 +50704,11 @@ aa
 aF
 aF
 aF
-Um
+Di
 aF
 zf
 aF
-Um
+Di
 aF
 aF
 aF
@@ -50034,30 +50716,30 @@ aF
 aF
 aF
 aF
-zP
+yz
 lK
-zP
+iG
 aF
 aF
 aF
 aF
 aF
 aF
-Um
+Up
 Ez
-Um
+Ae
 aF
 aF
 aF
-Um
+Di
 aF
-Um
-Um
+Di
+Rf
 Lp
-Um
-Um
+Jz
+Di
 aF
-Um
+Di
 aF
 eL
 aa
@@ -50636,7 +51318,7 @@ wm
 jt
 wm
 cQ
-Um
+hu
 co
 BC
 lI
@@ -50830,11 +51512,11 @@ aa
 aF
 aF
 aF
-Um
+MI
 aF
 ov
 aF
-Um
+MI
 aF
 aF
 aF
@@ -50851,13 +51533,13 @@ aF
 aF
 aF
 aF
-Um
+GF
 GH
-Um
+Zc
 aF
 aF
 aF
-Um
+MI
 aF
 aF
 aF
@@ -51062,7 +51744,7 @@ OK
 OK
 OK
 hZ
-Um
+Ik
 bR
 Bu
 LR
@@ -51255,10 +51937,10 @@ AA
 aF
 eL
 aF
-ws
+Zl
 AA
 Hs
-Um
+Ik
 ei
 AA
 AA
@@ -51269,7 +51951,7 @@ EJ
 vW
 cJ
 GT
-Tl
+mX
 aF
 eL
 aa
@@ -51668,12 +52350,12 @@ AA
 AA
 AA
 Tl
-Um
+hu
 EJ
 CM
 cJ
 Dn
-Tl
+mX
 aF
 eL
 aa
@@ -51860,17 +52542,17 @@ AA
 AA
 aF
 Is
-Gi
+uI
 ws
 AA
 Hs
 QE
 ws
-qa
+VC
 He
 qa
 Tl
-Um
+Ik
 Zr
 Xk
 EB
@@ -52066,7 +52748,7 @@ Gi
 ws
 AA
 Hs
-Um
+hu
 ws
 AA
 AA
@@ -52264,7 +52946,7 @@ AA
 AA
 aF
 aI
-Gi
+uI
 ws
 AA
 Hs
@@ -52476,7 +53158,7 @@ Yp
 AA
 Yp
 Hs
-Um
+Ik
 zs
 dr
 BM
@@ -52874,7 +53556,7 @@ aF
 ws
 AA
 Hs
-Um
+hu
 ws
 FW
 AA
@@ -53073,16 +53755,16 @@ aF
 aF
 eL
 aF
-ws
+Zl
 AA
 Hs
-Um
+Ik
 ws
 qN
 AA
 qN
 Hs
-Um
+hu
 Ca
 ql
 Vm
@@ -53284,7 +53966,7 @@ lI
 lI
 lI
 NM
-Um
+Ik
 XQ
 lI
 wc
@@ -53477,13 +54159,13 @@ aF
 aF
 aF
 aF
-zP
+yz
 ad
-zP
+iG
 aF
 aF
-aF
-aF
+GF
+JX
 aF
 aF
 aF
@@ -53669,11 +54351,11 @@ aF
 QQ
 Lx
 ZH
-AY
+Xh
 AY
 nG
 AY
-AY
+Xh
 AY
 nG
 AY
@@ -53683,17 +54365,17 @@ yc
 VI
 Em
 aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+cX
+zX
+LS
+aF
+DE
+vg
+DE
+zy
+DE
+vg
+DE
 aF
 eL
 aa
@@ -53868,7 +54550,7 @@ aa
 eL
 aF
 aF
-AY
+NV
 AY
 AY
 AY
@@ -53885,17 +54567,17 @@ Ts
 Gg
 tC
 aF
+sk
+kt
+sC
+Um
+AV
+SI
+AV
+AV
 lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+AV
+AV
 aF
 eL
 aa
@@ -54087,17 +54769,17 @@ Xr
 Gg
 NH
 aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+Zs
+kt
+sC
+JX
+kt
+kt
+kt
+kt
+kt
+kt
+pS
 aF
 eL
 aa
@@ -54289,17 +54971,17 @@ Ts
 Gg
 tC
 aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+pA
+kt
+sC
+hu
+to
+to
+to
+to
+to
+uv
+to
 aF
 eL
 aa
@@ -54479,29 +55161,29 @@ Fi
 Wu
 AY
 AY
+Zx
 AY
 AY
 AY
+Zx
 AY
 AY
-AY
-AY
-zP
+qk
 Ts
 Gg
-tC
+xc
 aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+rb
+bu
+Pe
+aF
+ro
+Vd
+ro
+Wj
+ro
+Vd
+ro
 aF
 eL
 aa
@@ -54681,11 +55363,11 @@ Ko
 JH
 AY
 AY
+aF
 AY
 AY
 AY
-AY
-AY
+aF
 AY
 AY
 tn
@@ -54693,17 +55375,17 @@ Ts
 Gg
 tC
 aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
 aF
 eL
 aa
@@ -54883,29 +55565,29 @@ MQ
 le
 AY
 AY
+nG
 AY
 AY
 AY
+nG
 AY
 AY
-AY
-AY
-zP
+LM
 Ts
 Gg
-tC
+NH
 aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+Yi
+sc
+VI
+bN
+VI
+sc
+VI
+bN
+VI
+sc
+WL
 aF
 eL
 aa
@@ -55096,18 +55778,18 @@ zP
 Ts
 Gg
 tC
-aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+qk
+Ts
+Gg
+aq
+Gg
+aq
+Gg
+aq
+Gg
+aq
+Gg
+tC
 aF
 eL
 aa
@@ -55297,19 +55979,19 @@ rs
 aF
 Xr
 Gg
-NH
-aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+tC
+LA
+Ts
+bK
+kq
+kq
+kq
+kq
+kq
+kq
+kq
+cy
+tC
 aF
 eL
 aa
@@ -55484,7 +56166,7 @@ aa
 eL
 aF
 aF
-AY
+NV
 AY
 AY
 AY
@@ -55500,18 +56182,18 @@ zP
 Ts
 Gg
 tC
-aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+LM
+Ts
+Gg
+zO
+Gg
+zO
+Gg
+zO
+Gg
+zO
+Gg
+tC
 aF
 eL
 aa
@@ -55689,11 +56371,11 @@ aF
 QQ
 Lx
 MZ
-AY
+jE
 AY
 Zx
 AY
-AY
+jE
 AY
 Zx
 AY
@@ -55703,17 +56385,17 @@ se
 mc
 Gc
 aF
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
-lT
+bO
+Qn
+mc
+lq
+mc
+Qn
+mc
+lq
+mc
+Qn
+Kx
 aF
 eL
 aa

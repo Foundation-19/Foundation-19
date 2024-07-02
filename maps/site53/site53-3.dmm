@@ -3024,6 +3024,10 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface/east)
+"jU" = (
+/obj/effect/shuttle_landmark/goc1/out,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/site53/surface/surface/east)
 "jV" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 10
@@ -57537,7 +57541,7 @@ CF
 CF
 CF
 CF
-CF
+jU
 CF
 CF
 CF
