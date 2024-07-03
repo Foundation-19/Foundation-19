@@ -870,7 +870,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/mtf/ninetaillead/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Leader"
-	access = "ACCESS_MTF_COMMAND"
+	access |= get_all_site_access()
 
 /obj/item/card/id/physics
 	name = "military ID"

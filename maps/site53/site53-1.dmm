@@ -1749,6 +1749,11 @@
 	d2 = 0;
 	icon_state = "16-0"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor,
 /area/site53/lhcz/maintenance)
 "bMX" = (
@@ -2060,11 +2065,6 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/lhcz/hallway)
 "cbg" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -4542,11 +4542,6 @@
 	icon_state = "2-4"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6175,11 +6170,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mining/miningops)
 "ghV" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/structure/table/standard,
 /obj/item/device/paint_sprayer,
 /turf/simulated/floor,
@@ -15360,6 +15350,10 @@
 	RCon_tag = "Lower Heavy Containment Substation"
 	},
 /obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor,
 /area/site53/lhcz/maintenance)
 "pFF" = (
@@ -16454,11 +16448,6 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor,
 /area/site53/lhcz/maintenance)
@@ -16477,13 +16466,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
 "qOe" = (
-/obj/machinery/power/breakerbox/activated{
-	RCon_tag = "Lower Heavy Containment Zone Bypass"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
+/obj/structure/closet/secure_closet/engineering_personal,
 /turf/simulated/floor,
 /area/site53/lhcz/maintenance)
 "qOq" = (
@@ -20063,14 +20046,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
-"uIc" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor,
-/area/site53/lhcz/maintenance)
 "uIm" = (
 /turf/simulated/floor/reinforced/phoron,
 /area/site53/engineering/atmos)
@@ -20803,11 +20778,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/assignment)
 "vzC" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/power/breakerbox/activated{
+	RCon_tag = "Lower Heavy Containment Zone Bypass"
 	},
+/obj/structure/cable/green,
 /turf/simulated/floor,
 /area/site53/lhcz/maintenance)
 "vAo" = (
@@ -78439,7 +78413,7 @@ btv
 gtw
 ghV
 cbg
-uIc
+oCE
 lyh
 skI
 hIH
@@ -78694,7 +78668,7 @@ moA
 rJr
 oCE
 oCE
-vzC
+oCE
 dvd
 qNb
 bMH
@@ -78954,7 +78928,7 @@ gYV
 qOe
 exD
 pEW
-oCE
+vzC
 skI
 hIH
 hIH

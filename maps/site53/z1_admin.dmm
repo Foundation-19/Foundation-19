@@ -109,8 +109,8 @@
 "ax" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter Control Console";
-	req_access = list("ACCESS_MTF");
-	shuttle_tag = "MTF Helicopter"
+	shuttle_tag = "Mobile Task Force Helicopter";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
@@ -248,7 +248,6 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom/goc)
 "aW" = (
-/obj/effect/shuttle_landmark/heli/start,
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
@@ -376,6 +375,17 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/snow,
 /area/centcom/chaos)
+"bo" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/effect/paint/green,
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/tram/ci)
 "bp" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#111111";
@@ -1507,9 +1517,16 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "es" = (
-/obj/item/trash/cigbutt/jerichos,
-/turf/simulated/floor/exoplanet/concrete,
-/area/centcom)
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/effect/paint/green,
+/obj/machinery/light/small/red{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/tram/ci)
 "et" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
@@ -3931,7 +3948,7 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 1
 	},
-/obj/effect/shuttle_landmark/heli/start/ci,
+/obj/effect/shuttle_landmark/ci_heli/start,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/ci)
 "ma" = (
@@ -29754,7 +29771,7 @@ CI
 lb
 PS
 PS
-ti
+es
 PS
 eU
 RH
@@ -30158,7 +30175,7 @@ xH
 lb
 PS
 PS
-ti
+bo
 PS
 eU
 RH
@@ -30827,7 +30844,7 @@ xC
 xC
 xC
 uA
-es
+Rr
 Rr
 DD
 tq

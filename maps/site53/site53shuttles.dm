@@ -1,5 +1,5 @@
 /datum/shuttle/autodock/ferry/heli
-	name = "MTF Helicopter"
+	name = "Mobile Task Force Helicopter"
 	sound_takeoff = 'sounds/effects/helicopter.ogg'
 	warmup_time = 14
 	shuttle_area = list(/area/site53/tram/mtf)
@@ -9,16 +9,16 @@
 	move_time = 15
 
 /obj/effect/shuttle_landmark/heli/start
-	name = "MTF Base"
+	name = "Mobile Task Force Base"
 	landmark_tag = "nav_mtf_start"
 	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/surface/surface
+	base_area = /area/site53/tram/mtf
 
 /obj/effect/shuttle_landmark/heli/out
 	name = "Site 53"
 	landmark_tag = "nav_mtf_out"
 	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/surface/surface
+	base_area = /area/site53/surface/surface/west
 
 /obj/effect/shuttle_landmark/transit/helitransit
 	name = "In transit"
@@ -26,19 +26,29 @@
 	base_turf = /turf/unsimulated/floor/plating
 	base_area = /area/space
 
-/obj/effect/shuttle_landmark/heli/start/ci
-	name = "CI Base"
-	landmark_tag = "nav_ci_start"
-	base_turf = /turf/simulated/floor/exoplanet/snow
-	base_area = /area/site53/surface/surface
+/datum/shuttle/autodock/ferry/ci_heli
+	name = "Chaos Insurgency Helicopter"
+	sound_takeoff = 'sounds/effects/helicopter.ogg'
+	warmup_time = 14
+	shuttle_area = list(/area/site53/tram/ci)
+	waypoint_station = "nav_ci_start"
+	landmark_transition = "nav_ci_transition"
+	waypoint_offsite = "nav_ci_out"
+	move_time = 15
 
-/obj/effect/shuttle_landmark/heli/out/ci
+/obj/effect/shuttle_landmark/ci_heli/start
+	name = "Chaos Insurgency Base"
+	landmark_tag = "nav_ci_start"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/tram/ci
+
+/obj/effect/shuttle_landmark/ci_heli/out
 	name = "Site 53"
 	landmark_tag = "nav_ci_out"
 	base_turf = /turf/simulated/floor/exoplanet/snow
-	base_area = /area/site53/surface/surface
+	base_area = /area/site53/surface/surface/east
 
-/obj/effect/shuttle_landmark/transit/helitransit/ci
+/obj/effect/shuttle_landmark/transit/ci_helitransit
 	name = "In transit"
 	landmark_tag = "nav_ci_transition"
 	base_turf = /turf/unsimulated/floor/plating
@@ -75,18 +85,6 @@
 	landmark_tag = "nav_train_onsite"
 	base_turf = /turf/simulated/floor/reinforced
 	base_area = /area/site53/lowertrams/escape
-
-
-/datum/shuttle/autodock/ferry/heli/ci
-	name = "Chaos Insurgency Helicopter"
-	sound_takeoff = 'sounds/effects/helicopter.ogg'
-	warmup_time = 14
-	shuttle_area = list(/area/site53/tram/ci)
-	waypoint_station = "nav_ci_start"
-	landmark_transition = "nav_ci_transition"
-	waypoint_offsite = "nav_ci_out"
-	move_time = 15
-
 
 /obj/effect/shuttle_landmark/chaos1/start
 	name = "Chaos Base"

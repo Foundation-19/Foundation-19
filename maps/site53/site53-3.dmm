@@ -9197,7 +9197,7 @@
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface/west)
 "Ca" = (
-/obj/effect/shuttle_landmark/heli/out/ci,
+/obj/effect/shuttle_landmark/ci_heli/out,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface/east)
 "Cb" = (
@@ -65066,9 +65066,9 @@ bm
 bm
 bm
 bm
-bm
-bm
-bm
+bO
+bO
+bO
 bO
 bO
 bO
@@ -65833,7 +65833,7 @@ bO
 bO
 bO
 bO
-bK
+bO
 bO
 bO
 bO
@@ -66098,8 +66098,8 @@ bO
 bO
 bO
 bO
-bO
 Ca
+bO
 bO
 bO
 bO
@@ -67122,20 +67122,20 @@ bO
 bO
 bO
 bO
-bK
-bO
-bm
-bm
-bm
-bm
-bO
-bO
-bK
 bO
 bO
 bO
 bO
-bK
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
 bO
 bO
 bO
@@ -67383,7 +67383,7 @@ bO
 bO
 bm
 bm
-cO
+bm
 FA
 bm
 bO

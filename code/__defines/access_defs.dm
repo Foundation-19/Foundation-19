@@ -61,7 +61,6 @@
 #define ACCESS_ADMIN_LVL5 "ACCESS_ADMIN_LEVEL5" //Site Director
 
 #define ACCESS_MTF "ACCESS_MTF"
-#define ACCESS_MTF_COMMAND "ACCESS_MTF_COMMAND"
 #define ACCESS_TORCH_FAX "ACCESS_TORCH_FAX"
 
 // SCP containment access defines

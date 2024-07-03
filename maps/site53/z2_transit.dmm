@@ -161,7 +161,7 @@
 /turf/simulated/floor/reinforced,
 /area/site53/tram/maintrain/Tunnel)
 "w" = (
-/obj/effect/shuttle_landmark/transit/helitransit/ci,
+/obj/effect/shuttle_landmark/transit/ci_helitransit,
 /turf/unsimulated/floor/plating,
 /area/space)
 "x" = (

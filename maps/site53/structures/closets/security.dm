@@ -657,6 +657,7 @@
 
 /obj/structure/closet/secure_closet/guard/epsilon11leader
 	name = "Epsilon-11 Task Force Leader's locker"
+	req_access = list(ACCESS_MTF)
 	icon_state = "mtfsenior1"
 	icon_closed = "mtfsenior"
 	icon_locked = "mtfsenior1"

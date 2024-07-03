@@ -2760,13 +2760,13 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ahS" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
+/obj/machinery/light,
 /obj/effect/floor_decal/corner/keter/border{
 	dir = 1
 	},
-/obj/machinery/light,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
 "ahU" = (
@@ -10337,18 +10337,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/hallways)
-"aBs" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site53/uhcz/scp106containment)
 "aBt" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-096 Containment Chamber"
@@ -11532,20 +11520,6 @@
 	dir = 1
 	},
 /area/site53/uhcz/scp096)
-"aEd" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/corner{
-	dir = 4
-	},
-/area/site53/uhcz/scp106containment)
 "aEe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -20201,12 +20175,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/securitypost)
-"bji" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/uhcz/scp106containment)
 "bjk" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -23809,16 +23777,12 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
 "cTj" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/corner{
+/obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/keter/border,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
 "cTk" = (
 /obj/structure/table/reinforced,
@@ -23913,9 +23877,16 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "cVu" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/corner/keter/border,
-/turf/simulated/floor/tiled/horizontal,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp106containment)
 "cVM" = (
 /obj/structure/closet/secure_closet/medical1{
@@ -30965,10 +30936,18 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
 "hfi" = (
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 9
+	},
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
 /area/site53/uhcz/scp106containment)
 "hft" = (
 /obj/effect/floor_decal/corner/b_green/border{
@@ -34510,10 +34489,16 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "jbs" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced,
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp106containment)
 "jbv" = (
 /obj/structure/cable{
@@ -36818,10 +36803,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
-"ksL" = (
-/obj/machinery/light,
-/turf/simulated/floor/reinforced,
-/area/site53/uhcz/scp106containment)
 "ktF" = (
 /obj/effect/floor_decal/chapel{
 	dir = 4
@@ -38630,12 +38611,16 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/redline)
 "lyf" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 6
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /obj/structure/railing/mapped,
-/obj/effect/floor_decal/corner/keter/border,
-/obj/machinery/light{
+/turf/simulated/floor/tiled/corner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
 "lyi" = (
 /obj/structure/cable/green{
@@ -42164,17 +42149,13 @@
 /area/site53/surface/bunker)
 "nmy" = (
 /obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/keter/border{
-	dir = 9
+	dir = 10
 	},
-/turf/simulated/floor/tiled/corner{
-	dir = 8
-	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/corner,
 /area/site53/uhcz/scp106containment)
 "nmB" = (
 /obj/machinery/door/airlock/glass/research{
@@ -44915,15 +44896,6 @@
 	},
 /turf/simulated/floor/carpet/blue3,
 /area/site53/llcz/dclass/medicalpost)
-"oHH" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site53/uhcz/scp106containment)
 "oHL" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -49442,14 +49414,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "rmm" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
+/obj/effect/floor_decal/corner/keter/border,
 /obj/structure/railing/mapped,
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/corner,
+/turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
 "rmo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -52593,10 +52560,18 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/hallways)
 "sRV" = (
-/obj/effect/landmark{
-	name = "scp106"
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 5
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
 /area/site53/uhcz/scp106containment)
 "sSn" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -112399,15 +112374,15 @@ aEK
 ioT
 nVI
 nVI
-nmy
-xCX
-niQ
-fEW
+nVI
+nVI
+nVI
+xUC
 aEK
-uDT
-niQ
-xCX
 rmm
+nVI
+nVI
+nVI
 nVI
 nVI
 xUC
@@ -112655,17 +112630,17 @@ slB
 aEK
 ioT
 nVI
-nmy
-aPn
-kxc
-kxc
-kxc
-xFg
-kxc
-kxc
-kxc
+nVI
+hfi
+xCX
+niQ
+fEW
+aEK
 uDT
-rmm
+jbs
+xCX
+nmy
+nVI
 nVI
 xUC
 mjg
@@ -112912,17 +112887,17 @@ rqI
 aEK
 ioT
 nVI
-oHH
+nVI
+xUC
 kxc
 kxc
-bji
-pKU
-pKU
-pKU
-bji
+kxc
+xFg
 kxc
 kxc
-cVu
+kxc
+rmm
+nVI
 nVI
 xUC
 mjg
@@ -113169,17 +113144,17 @@ aCY
 aEK
 ioT
 nVI
+nVI
 ahS
 kxc
-hfi
 pKU
 pKU
 pKU
 pKU
 pKU
-ksL
 kxc
-lyf
+cTj
+nVI
 nVI
 xUC
 mjg
@@ -113426,17 +113401,17 @@ aCY
 aEK
 ioT
 nVI
-oHH
+nVI
+xUC
 kxc
-pKU
 pKU
 hjO
 qNc
 fQA
 pKU
-pKU
 kxc
-cVu
+rmm
+nVI
 nVI
 xUC
 mjg
@@ -113683,17 +113658,17 @@ bib
 aEK
 mve
 nVI
+nVI
 xUC
 kxc
 eFA
-pKU
 fln
 ngF
 udz
 pKU
-pKU
 kxc
-cVu
+rmm
+nVI
 nVI
 xUC
 mjg
@@ -113940,17 +113915,17 @@ aCY
 aEK
 ioT
 nVI
-oHH
+nVI
+xUC
 kxc
-pKU
 pKU
 njp
 nNb
 fYu
 pKU
-pKU
 kxc
-cVu
+rmm
+nVI
 nVI
 xUC
 mjg
@@ -114197,17 +114172,17 @@ aCY
 aEK
 ioT
 nVI
+nVI
 ahS
 kxc
-hfi
 pKU
 pKU
-sRV
 pKU
 pKU
-ksL
+pKU
 kxc
-lyf
+cTj
+nVI
 nVI
 xUC
 mjg
@@ -114454,17 +114429,17 @@ aCY
 aEK
 ioT
 nVI
-oHH
+nVI
+xUC
 kxc
 kxc
-jbs
-pKU
-pKU
-pKU
-jbs
 kxc
 kxc
-cVu
+kxc
+kxc
+kxc
+rmm
+nVI
 nVI
 xUC
 mjg
@@ -114711,17 +114686,17 @@ aCY
 aEK
 ioT
 nVI
-aEd
-oCm
-kxc
-kxc
-kxc
-kxc
-kxc
-kxc
-kxc
-aCe
-cTj
+nVI
+sRV
+hGd
+cVu
+hGd
+hGd
+hGd
+cVu
+hGd
+lyf
+nVI
 nVI
 xUC
 mjg
@@ -114969,15 +114944,15 @@ aEK
 ioT
 nVI
 nVI
-aEd
-arr
-aBs
-arr
-arr
-arr
-aBs
-arr
-cTj
+nVI
+nVI
+nVI
+nVI
+nVI
+nVI
+nVI
+nVI
+nVI
 nVI
 nVI
 xUC
