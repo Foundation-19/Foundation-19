@@ -388,6 +388,9 @@
 	pixel_x = 0
 	pixel_y = 0
 
+/mob/living/carbon/human/scp106/IsAdvancedToolUser()
+	return FALSE
+
 /mob/living/carbon/human/scp106/proc/wall_unphase()
 	set name = "Leave wall"
 	set category = "SCP"
