@@ -10263,10 +10263,6 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
-/obj/item/spellbook/random,
-/obj/item/spellbook/random,
-/obj/item/spellbook/random,
-/obj/item/spellbook/random,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
@@ -13408,11 +13404,11 @@
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
 "Is" = (
-/mob/living/exosuit/premade/heavy/merc{
-	name = "Mk. III Ultra-Heavy Engagement Chassis"
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/mob/living/exosuit/premade/heavy/merc{
+	name = "Mk. III Ultra-Heavy Engagement Chassis"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
@@ -15840,10 +15836,10 @@
 /turf/simulated/floor,
 /area/centcom)
 "Oi" = (
-/mob/living/exosuit/premade/combat/military,
 /obj/machinery/light{
 	dir = 1
 	},
+/mob/living/exosuit/premade/powerloader/old,
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
 "Oj" = (
