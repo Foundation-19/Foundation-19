@@ -335,13 +335,12 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/device/holowarrant(src)
 	new /obj/item/gun/projectile/pistol/glock(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/box/a9mm(src)
 	new /obj/item/handcuffs(src)
-	new /obj/item/melee/classic_baton(src)
+	new /obj/item/melee/baton/loaded(src)
 	update_icon()
 
 /obj/item/storage/belt/general

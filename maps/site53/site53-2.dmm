@@ -23250,7 +23250,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp912)
 "cBD" = (
 /obj/structure/table/reinforced,
@@ -51216,7 +51216,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
 "rSc" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/obj/effect/wallframe_spawn/reinforced_phoron,
 /turf/simulated/floor,
 /area/site53/ulcz/scp912)
 "rSg" = (
@@ -55466,12 +55466,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/breakroom)
-"uhk" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/securitypost)
 "uhs" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -60512,16 +60506,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
-"xfJ" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
-/obj/item/paper/crumpled{
-	info = "HCZ does not, and will not 3 checkpoints. Why the fuck waste the space.";
-	name = "informational paper"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/securitypost)
 "xfK" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 8
@@ -102765,10 +102749,10 @@ vSp
 aFr
 jQy
 cEb
-ppD
-uhk
-bfb
-cEb
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -103022,10 +103006,10 @@ nQR
 hat
 eOZ
 cEb
-iVK
-xfJ
-nGd
-cEb
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -103279,10 +103263,10 @@ fqs
 gPT
 fqs
 cEb
-cEb
-cEb
-cEb
-cEb
+azA
+azA
+azA
+azA
 azA
 azA
 azA

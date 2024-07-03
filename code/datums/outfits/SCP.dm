@@ -35,5 +35,6 @@
 	l_pocket = /obj/item/melee/telebaton
 	r_pocket = /obj/item/material/hatchet/tacknife
 	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = /obj/item/gun/energy/taser
 	flags = OUTFIT_RESET_EQUIPMENT
 

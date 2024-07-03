@@ -149,6 +149,7 @@
 	desc = "A black SWAT BDU with what looks like Anchorage Police Department patches on the shoulders, it's in pristine condition, looks a little out of date."
 	icon_state = "912_bdu"
 	worn_state = "912_bdu"
+	accessories = /obj/item/clothing/accessory/storage/holster/thigh
 
 /obj/item/clothing/under/police
 	name = "police uniform"
