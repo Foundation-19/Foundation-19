@@ -12,7 +12,7 @@
 	name = "Mobile Task Force Base"
 	landmark_tag = "nav_mtf_start"
 	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/tram/mtf
+	base_area = /area/site53/surface/surface/west // Where the helicopter goes, not where it starts - Terrytehtryhard
 
 /obj/effect/shuttle_landmark/heli/out
 	name = "Site 53"
@@ -40,7 +40,7 @@
 	name = "Chaos Insurgency Base"
 	landmark_tag = "nav_ci_start"
 	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/tram/ci
+	base_area = /area/site53/surface/surface/east
 
 /obj/effect/shuttle_landmark/ci_heli/out
 	name = "Site 53"
@@ -68,7 +68,7 @@
 	name = "Global Occult Coalition Headquarters"
 	landmark_tag = "nav_goc_start"
 	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/tram/goc2
+	base_area = /area/site53/surface/surface/west
 
 /obj/effect/shuttle_landmark/goc_heli/out
 	name = "Site 53"
@@ -127,7 +127,7 @@
 	base_area = /area/site53/surface/surface
 
 /datum/shuttle/autodock/ferry/goc1
-	name = "GOC Car 1"
+	name = "Global Occult Coalition Truck"
 	warmup_time = 20
 	shuttle_area = list(/area/site53/tram/goc1)
 	waypoint_station = "goc1_start"
@@ -138,13 +138,13 @@
 	name = "GOC Base"
 	landmark_tag = "goc1_start"
 	base_turf = /turf/simulated/floor/exoplanet/snow
-	base_area = /area/site53/surface/surface
+	base_area = /area/site53/surface/surface/east
 
 /obj/effect/shuttle_landmark/goc1/out
 	name = "Site 53"
 	landmark_tag = "goc1_out"
-	base_turf = /turf/simulated/floor/exoplanet/snow
-	base_area = /area/site53/surface/surface
+	base_turf = /turf/simulated/floor/exoplanet/concrete/reinforced/road
+	base_area = /area/site53/surface/surface/east
 /*
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"
