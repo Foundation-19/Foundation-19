@@ -2592,6 +2592,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"hT" = (
+/obj/effect/shuttle_landmark/goc_heli/out,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface/west)
 "hU" = (
 /obj/structure/showcase{
 	desc = "An expensive set of avionics and controls to allow a trained pilot to fly even more effectively or allow an untrained pilot to operate the heli. Too bad this heli is broken down.";
@@ -54527,7 +54531,7 @@ nz
 nz
 nz
 nz
-nz
+hT
 nz
 nz
 nz

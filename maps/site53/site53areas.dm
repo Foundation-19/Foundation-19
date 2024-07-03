@@ -135,14 +135,21 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/tram/goc1
-	name = "GOC Truck"
+	name = "Global Occult Coalition Truck"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/tram/goc2
+	name = "Global Occult Coalition Helicopter"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/centcom/goc
-	name = "Global Occult Coalition Outpost"
+	name = "Global Occult Coalition Headquarters"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 1

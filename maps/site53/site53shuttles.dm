@@ -54,6 +54,34 @@
 	base_turf = /turf/unsimulated/floor/plating
 	base_area = /area/space
 
+/datum/shuttle/autodock/ferry/goc_heli
+	name = "Global Occult Coalition Helicopter"
+	sound_takeoff = 'sounds/effects/helicopter.ogg'
+	warmup_time = 14
+	shuttle_area = list(/area/site53/tram/goc2)
+	waypoint_station = "nav_goc_start"
+	landmark_transition = "nav_goc_transition"
+	waypoint_offsite = "nav_goc_out"
+	move_time = 15
+
+/obj/effect/shuttle_landmark/goc_heli/start
+	name = "Global Occult Coalition Headquarters"
+	landmark_tag = "nav_goc_start"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/tram/goc2
+
+/obj/effect/shuttle_landmark/goc_heli/out
+	name = "Site 53"
+	landmark_tag = "nav_goc_out"
+	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface/west
+
+/obj/effect/shuttle_landmark/transit/goc_helitransit
+	name = "In transit"
+	landmark_tag = "nav_goc_transition"
+	base_turf = /turf/unsimulated/floor/plating
+	base_area = /area/space
+
 /datum/shuttle/autodock/ferry/emergency/train //The transfer/escape train
 	name = "Foundation Main Train"
 	sound_takeoff = 'sounds/effects/TrainLeavingSite.ogg'

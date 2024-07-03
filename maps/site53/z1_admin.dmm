@@ -251,8 +251,9 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
+/obj/effect/shuttle_landmark/goc_heli/start,
 /turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "aY" = (
 /turf/simulated/wall/r_wall,
 /area/centcom)
@@ -805,7 +806,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "cD" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -1101,7 +1102,7 @@
 	},
 /obj/effect/paint/ocean,
 /turf/simulated/wall/r_wall/prepainted,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "dh" = (
 /obj/machinery/bodyscanner{
 	dir = 4
@@ -1313,7 +1314,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "dG" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 5;
@@ -1750,7 +1751,7 @@
 "fa" = (
 /obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "fb" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -3212,7 +3213,7 @@
 "jC" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "jD" = (
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 4
@@ -3575,7 +3576,7 @@
 /obj/item/crowbar/emergency_forcing_tool,
 /obj/item/crowbar/emergency_forcing_tool,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "kI" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/folder/red,
@@ -4054,7 +4055,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "mo" = (
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
@@ -7329,7 +7330,7 @@
 	},
 /obj/effect/paint/ocean,
 /turf/simulated/wall/r_wall/prepainted,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "sY" = (
 /obj/machinery/door/window/brigdoor/westleft{
 	dir = 4;
@@ -7403,7 +7404,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "te" = (
 /obj/structure/table/rack,
 /obj/item/clothing/head/helmet/mtftactical,
@@ -9098,7 +9099,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "xc" = (
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/machinery/status_display{
@@ -10110,7 +10111,7 @@
 /obj/structure/window/reinforced,
 /obj/item/gun/projectile/flare/loaded,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "zE" = (
 /obj/machinery/sleeper{
 	dir = 8
@@ -10212,7 +10213,7 @@
 	},
 /obj/effect/paint/ocean,
 /turf/simulated/wall/r_wall/prepainted,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "zS" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
@@ -10383,7 +10384,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Av" = (
 /obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/carpet/blue2,
@@ -11494,7 +11495,7 @@
 "Dm" = (
 /obj/effect/paint/ocean,
 /turf/simulated/wall/r_wall/prepainted,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Dn" = (
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 9
@@ -12305,7 +12306,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Fe" = (
 /obj/structure/grille{
 	health_max = null;
@@ -12750,7 +12751,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Gz" = (
 /obj/structure/grille{
 	health_max = null;
@@ -12867,7 +12868,7 @@
 	},
 /obj/effect/paint/ocean,
 /turf/simulated/wall/r_wall/prepainted,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "GR" = (
 /obj/machinery/vending/cola{
 	dir = 1
@@ -12877,10 +12878,10 @@
 "GS" = (
 /obj/machinery/computer/shuttle_control{
 	name = "UNGOC Helicopter Control Console";
-	shuttle_tag = "GOC Helicopter"
+	shuttle_tag = "Global Occult Coalition Helicopter"
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "GT" = (
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 5
@@ -12982,7 +12983,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Hm" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
@@ -14722,7 +14723,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Ll" = (
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain,
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain,
@@ -15623,7 +15624,7 @@
 	name = "United Nations Helicopter"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Nu" = (
 /obj/machinery/door/airlock/vault{
 	name = "Internal Tribunal Department";
@@ -15912,7 +15913,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Op" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/wood/walnut,
@@ -16356,7 +16357,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Pz" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
@@ -16932,7 +16933,7 @@
 	name = "United Nations Helicopter"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "QY" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/rack,
@@ -17529,7 +17530,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Sd" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/paper_bin{
@@ -18606,7 +18607,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "Vc" = (
 /obj/vehicle/train/cargo/trolley,
 /obj/effect/floor_decal/industrial/warning{
@@ -19430,7 +19431,7 @@
 	},
 /obj/effect/paint/ocean,
 /turf/simulated/wall/r_wall/prepainted,
-/area/centcom/goc)
+/area/site53/tram/goc2)
 "XG" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/paleblue/mono,
