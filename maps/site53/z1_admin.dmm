@@ -6264,8 +6264,8 @@
 /area/centcom/goc)
 "rp" = (
 /obj/machinery/computer/shuttle_control{
-	shuttle_tag = "GOC Car 1";
-	name = "Driving Control Console"
+	shuttle_tag = "Global Occult Coalition Truck";
+	name = "Unknown Truck Control Console"
 	},
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -13408,7 +13408,9 @@
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
 "Is" = (
-/mob/living/exosuit/premade/heavy/merc,
+/mob/living/exosuit/premade/heavy/merc{
+	name = "Mk. III Ultra-Heavy Engagement Chassis"
+	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -15838,9 +15840,7 @@
 /turf/simulated/floor,
 /area/centcom)
 "Oi" = (
-/mob/living/exosuit/premade/combat/military{
-	name = "Mk. III Ultra-Heavy Engagement Chassis"
-	},
+/mob/living/exosuit/premade/combat/military,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -18998,8 +18998,8 @@
 /area/centcom)
 "Wu" = (
 /obj/machinery/computer/shuttle_control{
-	shuttle_tag = "GOC Car 1";
-	name = "GOC Truck Control Console";
+	shuttle_tag = "Global Occult Coalition Truck";
+	name = "UNGOC Truck Control Console";
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
