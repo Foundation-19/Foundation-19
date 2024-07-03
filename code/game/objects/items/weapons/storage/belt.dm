@@ -341,9 +341,6 @@
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/box/a9mm(src)
 	new /obj/item/handcuffs(src)
-	new /obj/item/handcuffs(src)
-	new /obj/item/handcuffs(src)
-	new /obj/item/handcuffs(src)
 	new /obj/item/melee/classic_baton(src)
 	update_icon()
 
