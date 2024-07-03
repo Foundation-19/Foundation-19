@@ -244,10 +244,4 @@
 	name = "SWAT helmet"
 	desc = "A standard-issue helmet that has railings for attachments, the only notable thing about it is it's padding to resist bullets, and also it's iconic dark blue visor, it's in rather pristine condition, even if a little out of date."
 	icon_state = "912_helm"
-	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH,
-		bullet = ARMOR_BALLISTIC_RESISTANT,
-		laser = ARMOR_LASER_SMALL,
-		energy = ARMOR_ENERGY_MINOR,
-		bomb = ARMOR_BOMB_PADDED
-		)
+	armor = list(melee = 999, bullet = 999, laser = 999, energy = 999, bomb = 999, bio = 999, rad = 999) // DON'T ASK, IT'S UNOBTAINABLE ARMOR, AND 912 IS UNKILLABLE KEEP IT AT THAT.

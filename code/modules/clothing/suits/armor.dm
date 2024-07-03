@@ -449,10 +449,11 @@
 	name = "SWAT vest"
 	desc = "A rather heavy-looking, Special Weapons and Tactics standard-issue vest, or at least a slightly outdated one, given standard armor padding to stop bullets. It displays the iconic SWAT letters on the front of the vest. This one has added webbing and ballistic plates."
 	icon_state = "912_vest"
-	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH,
-		bullet = ARMOR_BALLISTIC_RESISTANT,
-		laser = ARMOR_LASER_SMALL,
-		energy = ARMOR_ENERGY_MINOR,
-		bomb = ARMOR_BOMB_PADDED
-		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	flags_inv = CLOTHING_BULKY
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	armor = list(melee = 999, bullet = 999, laser = 999, energy = 999, bomb = 999, bio = 999, rad = 999) // DON'T ASK, IT'S UNOBTAINABLE ARMOR, AND 912 IS UNKILLABLE KEEP IT AT THAT.
