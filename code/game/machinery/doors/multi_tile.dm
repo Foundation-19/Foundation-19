@@ -24,11 +24,11 @@
 	..()
 	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
 		if(connections in list(WEST, EAST, EAST|WEST))
-			set_dir(SOUTH)
+			setDir(SOUTH)
 		else
-			set_dir(WEST)
+			setDir(WEST)
 	else
-		set_dir(SOUTH)
+		setDir(SOUTH)
 
 /obj/machinery/door/airlock/multi_tile/update_connections(propagate = 0)
 	var/dirs = 0
@@ -92,10 +92,11 @@
 		crash_with("Attempted to pair an airlock filler with no parent airlock specified!")
 
 	filled_airlock = parent_airlock
-	GLOB.destroyed_event.register(filled_airlock, src, PROC_REF(no_airlock))
+	RegisterSignal(filled_airlock, COMSIG_PARENT_QDELETING, PROC_REF(no_airlock))
 
 /obj/airlock_filler_object/proc/no_airlock()
-	GLOB.destroyed_event.unregister(filled_airlock, src)
+	SIGNAL_HANDLER
+	UnregisterSignal(filled_airlock, COMSIG_PARENT_QDELETING)
 	qdel_self()
 
 /// Multi-tile airlocks (using a filler panel) have special handling for movables with PASS_FLAG_GLASS

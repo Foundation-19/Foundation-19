@@ -169,7 +169,15 @@
 #define ui_ai_power_override "LEFT:6,TOP:0"
 #define ui_ai_shutdown "LEFT+1:6,TOP:0"
 #define ui_ai_holo_mov "LEFT:6, TOP-1:0"
+#define ui_ai_area_apc "LEFT+1:6, TOP-1:0"
 
 // AI: Crew
 #define ui_ai_crew_mon "RIGHT-1:30,TOP:0"
 #define ui_ai_crew_rec "RIGHT-2:30, TOP:0"
+
+//Upper-middle right (alerts)
+#define ui_alert1 "EAST-1:28,CENTER+5:27"
+#define ui_alert2 "EAST-1:28,CENTER+4:25"
+#define ui_alert3 "EAST-1:28,CENTER+3:23"
+#define ui_alert4 "EAST-1:28,CENTER+2:21"
+#define ui_alert5 "EAST-1:28,CENTER+1:19"

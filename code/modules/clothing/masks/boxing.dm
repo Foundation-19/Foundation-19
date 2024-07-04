@@ -12,6 +12,7 @@
 	w_class = ITEM_SIZE_SMALL
 	sprite_sheets = list(
 		)
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/mask/balaclava/tactical
 	name = "green balaclava"

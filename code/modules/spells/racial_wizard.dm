@@ -221,15 +221,15 @@
 	var/mob/living/L = targets[1]
 
 	vision.possess(L)
-	GLOB.destroyed_event.register(L, src, TYPE_PROC_REF(/datum/spell/camera_connection, release))
-	GLOB.logged_out_event.register(L, src, TYPE_PROC_REF(/datum/spell/camera_connection, release))
+	RegisterSignal(L, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/spell/camera_connection, release))
+	RegisterSignal(L, COMSIG_MOB_LOGOUT, TYPE_PROC_REF(/datum/spell/camera_connection, release))
 	add_verb(L, /mob/living/proc/release_eye)
 
 /datum/spell/camera_connection/proc/release(mob/living/L)
 	vision.release(L)
 	remove_verb(L, /mob/living/proc/release_eye)
-	GLOB.destroyed_event.unregister(L, src)
-	GLOB.logged_out_event.unregister(L, src)
+	UnregisterSignal(L, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(L, COMSIG_MOB_LOGOUT)
 
 /mob/observer/eye/wizard_eye
 	name_sufix = "Wizard Eye"

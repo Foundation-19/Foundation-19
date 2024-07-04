@@ -151,7 +151,7 @@
 
 	if(owner && BP_IS_CRYSTAL(src)) // Crystalline robotics == piezoelectrics.
 		owner.Weaken(4 - severity)
-		owner.confused = max(owner.confused, 6 - (severity * 2))
+		owner.set_confusion_if_lower((8 - (severity * 2)) SECONDS)
 		return
 
 	var/burn_damage = 0
@@ -384,7 +384,8 @@
 			to_chat(user, SPAN_WARNING("You can't reach your [src.name] while holding [tool] in your [owner.get_bodypart_name(grasp)]."))
 			return 0
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
+
 	if(!do_after(user, 1 SECOND, owner, bonus_percentage = 100))
 		to_chat(user, SPAN_WARNING("You must stand still to do that."))
 		return 0

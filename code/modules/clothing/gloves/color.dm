@@ -2,6 +2,7 @@
 	desc = "A pair of gloves, they don't look special in any way."
 	item_state = "lgloves"
 	icon_state = "white"
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/color/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
@@ -10,7 +11,9 @@
 	color = COLOR_WHITE
 
 /obj/item/clothing/gloves/color/black
-	color = COLOR_BLACK
+	desc = "A pair of black gloves, they're quite fireproof, and thick."
+	item_state = "bgloves"
+	icon_state = "black"
 
 /obj/item/clothing/gloves/color/white/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
@@ -31,6 +34,7 @@
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "rainbow"
 	item_state = "rainbowgloves"
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/rainbow/modified
 	item_flags = ITEM_FLAG_PREMODIFIED

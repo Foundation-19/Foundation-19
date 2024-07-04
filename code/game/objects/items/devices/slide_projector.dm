@@ -22,10 +22,6 @@
 /obj/item/storage/slide_projector/on_update_icon()
 	icon_state = "projector[!!projection]"
 
-/obj/item/storage/slide_projector/get_mechanics_info()
-	. = ..()
-	. += "Use in hand to open the interface."
-
 /obj/item/storage/slide_projector/remove_from_storage(obj/item/W, atom/new_location, NoUpdate = 0)
 	. = ..()
 	if(. && W == current_slide)
@@ -75,7 +71,7 @@
 /obj/item/storage/slide_projector/proc/stop_projecting()
 	if(projection)
 		QDEL_NULL(projection)
-	GLOB.moved_event.unregister(src, src, PROC_REF(check_projections))
+	UnregisterSignal(src, COMSIG_MOVED)
 	set_light(0)
 	update_icon()
 
@@ -92,7 +88,7 @@
 			break
 	projection = new projection_type(target)
 	projection.set_source(current_slide)
-	GLOB.moved_event.register(src, src, PROC_REF(check_projections))
+	RegisterSignal(src, COMSIG_MOVED, PROC_REF(check_projections))
 	set_light(0.1, 0.1, 1, 2, COLOR_WHITE) //Bit of light
 	update_icon()
 

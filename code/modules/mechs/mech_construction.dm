@@ -45,9 +45,9 @@
 	if(target == selected_hardpoint)
 		clear_selected_hardpoint()
 
-	GLOB.destroyed_event.unregister(module_to_forget, src, PROC_REF(forget_module))
+	UnregisterSignal(module_to_forget, COMSIG_PARENT_QDELETING)
 
-	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[target]
+	var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[target]
 	H.holding = null
 
 	hud_elements -= module_to_forget
@@ -96,13 +96,13 @@
 		else
 			return FALSE
 
-	GLOB.destroyed_event.register(system, src, PROC_REF(forget_module))
+	RegisterSignal(system, COMSIG_PARENT_QDELETING, PROC_REF(forget_module))
 
 	system.forceMove(src)
 	hardpoints[system_hardpoint] = system
 	ME.installed(src)
 
-	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
+	var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
 	H.holding = system
 
 	system.screen_loc = H.screen_loc
@@ -138,9 +138,9 @@
 	system.forceMove(get_turf(src))
 	system.screen_loc = null
 	system.layer = initial(system.layer)
-	GLOB.destroyed_event.unregister(system, src, PROC_REF(forget_module))
+	UnregisterSignal(system, COMSIG_PARENT_QDELETING)
 
-	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
+	var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
 	H.holding = null
 
 	for(var/thing in pilots)

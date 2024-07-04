@@ -22,7 +22,7 @@
 
 //allows spiderlings to be killed with hands, harm intent on
 /obj/effect/spider/spiderling/attack_hand(mob/living/carbon/human/user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	if(user.a_intent == I_HURT)
 		user.visible_message(SPAN_WARNING("\the [user] attacked \the [src]"))
 		disturbed()
@@ -31,7 +31,7 @@
 	return
 
 /obj/effect/spider/attackby(obj/item/W, mob/user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 
 	if(W.attack_verb.len)
 		visible_message(SPAN_WARNING("\The [src] have been [pick(W.attack_verb)] with \the [W][(user ? " by [user]." : ".")]"))
@@ -165,7 +165,7 @@
 		dormant = FALSE
 
 	if(dormant)
-		GLOB.moved_event.register(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
+		RegisterSignal(src, COMSIG_MOVED, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
 	else
 		START_PROCESSING(SSobj, src)
 
@@ -180,7 +180,7 @@
 
 /obj/effect/spider/spiderling/Destroy()
 	if(dormant)
-		GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
+		UnregisterSignal(src, COMSIG_MOVED)
 	STOP_PROCESSING(SSobj, src)
 	walk(src, 0) // Because we might have called walk_to, we must stop the walk loop or BYOND keeps an internal reference to us forever.
 	. = ..()
@@ -199,7 +199,7 @@
 		return
 	dormant = FALSE
 
-	GLOB.moved_event.unregister(src, src, TYPE_PROC_REF(/obj/effect/spider/spiderling, disturbed))
+	UnregisterSignal(src, COMSIG_MOVED)
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/spider/spiderling/Bump(atom/user)

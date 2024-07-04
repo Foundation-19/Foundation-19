@@ -19,7 +19,7 @@
 		to_chat(user, SPAN_WARNING("You need more energy to use the punching bag. Go eat something."))
 	else
 		if(user.a_intent == I_HURT)
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			user.setClickCooldown(CLICK_CD_ATTACK)
 			flick("[icon_state]_hit", src)
 			playsound(src.loc, 'sounds/effects/woodhit.ogg', 25, 1, -1)
 			user.do_attack_animation(src)
@@ -59,7 +59,7 @@
 	else
 		being_used = 1
 		playsound(src.loc, 'sounds/effects/weightlifter.ogg', 50, 1)
-		user.set_dir(SOUTH)
+		user.setDir(SOUTH)
 		flick("[icon_state]_[weight]", src)
 		if(do_after(user, (2 + weight) SECONDS, bonus_percentage = 35))
 			playsound(src.loc, 'sounds/effects/weightdrop.ogg', 25, 1)

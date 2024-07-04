@@ -57,16 +57,16 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 		user.reset_view(linked)
 	if(user.client)
 		user.client.view = world.view + extra_view
-	GLOB.moved_event.register(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
-	GLOB.stat_set_event.register(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
-	LAZYDISTINCTADD(viewers, weakref(user))
+	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
+	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
+	LAZYOR(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/unlook(mob/user)
 	user.reset_view(null, FALSE)
 	if(user.client)
 		user.client.view = world.view
-	GLOB.moved_event.unregister(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
-	GLOB.stat_set_event.unregister(user, src, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
+	UnregisterSignal(user, COMSIG_MOVED)
+	UnregisterSignal(user, COMSIG_SET_STAT)
 	LAZYREMOVE(viewers, weakref(user))
 
 /obj/machinery/computer/ship/proc/viewing_overmap(mob/user)
@@ -82,7 +82,7 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 		look(user)
 
 /obj/machinery/computer/ship/check_eye(mob/user)
-	if (!get_dist(user, src) > 1 || user.blinded || !linked )
+	if (!get_dist(user, src) > 1 || user.is_blind() || !linked )
 		unlook(user)
 		return -1
 	else

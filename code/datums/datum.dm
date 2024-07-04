@@ -12,6 +12,9 @@
 	/// Datum level flags
 	var/datum_flags = NONE
 
+	/// Status traits attached to this datum. associative list of the form: list(trait name (string) = list(source1, source2, source3,...))
+	var/list/_status_traits
+
 #ifdef REFERENCE_TRACKING
 	var/tmp/running_find_references
 	var/tmp/last_find_references = 0
@@ -55,11 +58,6 @@
 				qdel(extension)
 		extensions = null
 
-	GLOB.destroyed_event && GLOB.destroyed_event.raise_event(src)
-
-	if (!isturf(src))	// Not great, but the 'correct' way to do it would add overhead for little benefit.
-		cleanup_events(src)
-
 	//BEGIN: ECS SHIT
 	///Only override this if you know what you're doing. You do not know what you're doing
 	///This is a threat
@@ -97,3 +95,7 @@
 /datum/proc/Process()
 	set waitfor = 0
 	return PROCESS_KILL
+
+/// QDELs yourself. Useful for signals (sometimes you just want to end yourself).
+/datum/proc/qdel_self()
+	qdel(src)

@@ -34,7 +34,7 @@
 					to_chat(H, SPAN_INFO("[pick(messages)]"))
 
 			if(prob(50))
-				H.dizziness += rand(3,5)
+				H.adjust_dizzy(rand(3 SECONDS, 5 SECONDS))
 
 /datum/artifact_effect/goodfeeling/DoEffectAura()
 	if(holder)
@@ -47,7 +47,7 @@
 					to_chat(H, SPAN_CLASS("info' size='[num2text(rand(1,5))]","<b>[pick(drastic_messages)]</b>"))
 
 			if(prob(5))
-				H.dizziness += rand(3,5)
+				H.adjust_dizzy(rand(3 SECONDS, 5 SECONDS))
 		return 1
 
 /datum/artifact_effect/goodfeeling/DoEffectPulse()
@@ -61,7 +61,7 @@
 					to_chat(H, SPAN_INFO("[pick(messages)]"))
 
 			if(prob(50))
-				H.dizziness += rand(3,5)
+				H.adjust_dizzy(rand(3 SECONDS, 5 SECONDS))
 			else if(prob(25))
-				H.dizziness += rand(5,15)
+				H.adjust_dizzy(rand(5 SECONDS, 15 SECONDS))
 		return 1

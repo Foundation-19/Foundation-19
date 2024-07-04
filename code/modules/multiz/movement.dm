@@ -209,6 +209,15 @@
 /atom/movable/proc/handle_fall(turf/landing)
 	forceMove(landing)
 	if(locate(/obj/structure/stairs) in landing)
+		if(isliving(src))
+			var/mob/living/L = src
+			if(L.pulling)
+				L.pulling.forceMove(landing)
+		if(ishuman(src))
+			var/mob/living/carbon/human/H = src
+			if(H.has_footsteps())
+				playsound(landing, 'sounds/effects/stairs_step.ogg', 50)
+				playsound(landing, 'sounds/effects/stairs_step.ogg', 50)
 		return 1
 	else if(landing.get_fluid_depth() >= FLUID_DEEP)
 		visible_message(SPAN_NOTICE("\The [src] falls into the water!"), SPAN_NOTICE("What a splash!"))
@@ -317,7 +326,7 @@
 	. = ..()
 	owner = user
 	follow()
-	GLOB.moved_event.register(owner, src, TYPE_PROC_REF(/atom/movable/z_observer, follow))
+	RegisterSignal(owner, COMSIG_MOVED, TYPE_PROC_REF(/atom/movable/z_observer, follow))
 
 /atom/movable/z_observer/proc/follow()
 
@@ -341,7 +350,7 @@
 	qdel(src)
 
 /atom/movable/z_observer/Destroy()
-	GLOB.moved_event.unregister(owner, src, TYPE_PROC_REF(/atom/movable/z_observer, follow))
+	UnregisterSignal(owner, COMSIG_MOVED)
 	owner = null
 	. = ..()
 

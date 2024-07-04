@@ -142,10 +142,12 @@
 // Returns true if the mob was in neither the dead or living list
 /mob/proc/add_to_dead_mob_list()
 	return FALSE
+
 /mob/living/add_to_dead_mob_list()
 	if((src in GLOB.living_mob_list_) || (src in GLOB.dead_mob_list_))
 		return FALSE
 	GLOB.dead_mob_list_ += src
+	SEND_SIGNAL(src, COMSIG_ADD_TO_DEAD_MOB_LIST)
 	return TRUE
 
 // Returns true if the mob was removed form the dead list
@@ -198,6 +200,32 @@
 	if(damflags & DAM_BIO)
 		res += "bio"
 	return english_list(res)
+
+#define ISADVANCEDTOOLUSER(mob) (HAS_TRAIT(mob, TRAIT_ADVANCED_TOOL_USER) && !HAS_TRAIT(mob, TRAIT_DISCOORDINATED_TOOL_USER))
+
+/mob/proc/set_see_in_dark(new_see_in_dark)
+	var/old_see_in_dark = sight
+	if(old_see_in_dark != new_see_in_dark)
+		see_in_dark = new_see_in_dark
+		SEND_SIGNAL(src, COMSIG_SET_SEE_IN_DARK, old_see_in_dark, new_see_in_dark)
+
+/mob/proc/set_see_invisible(new_see_invisible)
+	var/old_see_invisible = see_invisible
+	if(old_see_invisible != new_see_invisible)
+		see_invisible = new_see_invisible
+		SEND_SIGNAL(src, COMSIG_SET_SEE_INVISIBLE, old_see_invisible, new_see_invisible)
+
+/mob/proc/set_sight(new_sight)
+	var/old_sight = sight
+	if(old_sight != new_sight)
+		sight = new_sight
+		SEND_SIGNAL(src, COMSIG_SET_SIGHT, old_sight, new_sight)
+
+/atom/proc/set_invisibility(new_invisibility = 0)
+	var/old_invisibility = invisibility
+	if(old_invisibility != new_invisibility)
+		invisibility = new_invisibility
+		SEND_SIGNAL(src, COMSIG_SET_INVISIBILITY, old_invisibility, new_invisibility)
 
 ///Lets us attempt to set faction of something not explicitly defined as a mob
 /proc/set_faction(mob/M, faction)

@@ -8,7 +8,7 @@
 	var/sa_accuracy = 85 //base chance to hit out of 100
 	var/fire_desc = "fires" //"X fire_desc at Y!"
 	var/ranged_range = 6 //tiles of range for ranged attackers to attack
-	var/attack_delay = DEFAULT_ATTACK_COOLDOWN
+	var/attack_delay = CLICK_CD_ATTACK
 	var/break_stuff_probability = 10
 	var/destroy_surroundings = 1
 	a_intent = I_HURT

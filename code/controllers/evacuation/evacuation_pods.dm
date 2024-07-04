@@ -133,7 +133,7 @@
 	if (evacuation_controller && evacuation_controller.cancel_evacuation())
 		log_and_message_staff("[key_name(user)] has cancelled the bluespace jump.")
 
-/obj/screen/fullscreen/bluespace_overlay
+/atom/movable/screen/fullscreen/bluespace_overlay
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "mfoam"
 	screen_loc = "WEST,SOUTH to EAST,NORTH"

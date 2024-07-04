@@ -242,42 +242,42 @@ What is the naming convention for planes or layers?
   PLANE MASTERS
 */
 
-/obj/screen/plane_master
+/atom/movable/screen/plane_master
 	appearance_flags = PLANE_MASTER
 	screen_loc = "CENTER,CENTER"
 	globalscreen = 1
 
-/obj/screen/plane_master/ghost_master
+/atom/movable/screen/plane_master/ghost_master
 	plane = OBSERVER_PLANE
 
-/obj/screen/plane_master/ghost_dummy
+/atom/movable/screen/plane_master/ghost_dummy
 	// this avoids a bug which means plane masters which have nothing to control get angry and mess with the other plane masters out of spite
 	alpha = 0
 	appearance_flags = 0
 	plane = OBSERVER_PLANE
 
 GLOBAL_LIST_INIT(ghost_master, list(
-	new /obj/screen/plane_master/ghost_master(),
-	new /obj/screen/plane_master/ghost_dummy()
+	new /atom/movable/screen/plane_master/ghost_master(),
+	new /atom/movable/screen/plane_master/ghost_dummy()
 ))
 
-/obj/screen/plane_master/effects_planemaster
+/atom/movable/screen/plane_master/effects_planemaster
 	appearance_flags = PLANE_MASTER | KEEP_TOGETHER
 	blend_mode = BLEND_OVERLAY
 
-/obj/screen/plane_master/effects_planemaster/openspace/Initialize()
+/atom/movable/screen/plane_master/effects_planemaster/openspace/Initialize()
 	. = ..()
 	add_filter("openspace_blur", 0, list(type = "blur", size = 0.6))
 
-/obj/screen/plane_master/vision_cone_target
+/atom/movable/screen/plane_master/vision_cone_target
 	name = "vision cone master"
 	plane = HIDDEN_PLANE
 	render_target = "vision_cone_target"
 
-/obj/screen/plane_master/vision_cone/primary/Initialize() //Things to hide
+/atom/movable/screen/plane_master/vision_cone/primary/Initialize() //Things to hide
 	. = ..()
 	add_filter("vision_cone", 50, list(type="alpha", render_source="vision_cone_target", flags=MASK_INVERSE))
 
-/obj/screen/plane_master/vision_cone/inverted/Initialize() //Things to show in hidden section
+/atom/movable/screen/plane_master/vision_cone/inverted/Initialize() //Things to show in hidden section
 	. = ..()
 	add_filter("inverted_vision_cone", 50, list(type="alpha", render_source="vision_cone_target"))

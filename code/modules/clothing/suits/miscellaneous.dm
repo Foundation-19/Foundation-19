@@ -102,6 +102,11 @@
 	item_state = "overalls"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+/obj/item/clothing/suit/apron/overalls/dminer
+	name = "D-Class miner overalls"
+	desc = "A pair of heavy, brown utility overalls with a SCP Logo on the back."
+	icon_state = "overalls_dminer"
+	item_state = "overalls_dminer"
 
 /obj/item/clothing/suit/syndicatefake
 	name = "red space suit replica"
@@ -333,15 +338,6 @@
 	icon_state = "brown_jacket_nt"
 	icon_open = "brown_jacket_nt_open"
 	icon_closed = "brown_jacket_nt"
-
-/obj/item/clothing/suit/storage/toggle/agent_jacket
-	name = "agent jacket"
-	desc = "A black leather jacket belonging to an agent of the Sol Federal Police."
-	icon_state = "agent_jacket"
-	icon_open = "agent_jacket_open"
-	icon_closed = "agent_jacket"
-	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
-	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/toggle/hoodie
 	name = "hoodie"

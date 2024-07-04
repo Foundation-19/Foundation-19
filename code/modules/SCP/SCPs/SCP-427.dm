@@ -52,7 +52,7 @@
 
 	if(!(user in time_used))
 		time_used[user] = 0
-		GLOB.destroyed_event.register(user, src, PROC_REF(RemoveDeletedMob))
+		RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(RemoveDeletedMob))
 
 	time_used[user] += 1
 
@@ -63,17 +63,17 @@
 	user.radiation = max(user.radiation - 20, 0)
 	// Heal minor effects
 	user.adjustEarDamage(-5, -5)
-	user.eye_blurry = max(user.eye_blurry - 5, 0)
-	user.eye_blind = max(user.eye_blind - 3, 0)
-	user.confused = max(user.confused - 3, 0)
+	user.adjust_eye_blur(-3 SECONDS)
+	user.adjust_temp_blindness(-3 SECONDS)
+	user.adjust_confusion(-3 SECONDS)
 	user.AdjustParalysis(-2)
 	user.AdjustStunned(-2)
 	user.AdjustWeakened(-2)
 	user.sleeping = max(user.sleeping - 5, 0)
-	user.slurring = max(user.slurring - 5, 0)
-	user.druggy = max(user.druggy - 5, 0)
-	user.silent = max(user.silent - 5, 0)
-	user.stuttering = max(user.stuttering - 5, 0)
+	user.adjust_slurring(-5 SECONDS)
+	user.adjust_drugginess(-5 SECONDS)
+	user.adjust_silence(-5 SECONDS)
+	user.adjust_stutter(-5 SECONDS)
 	// Nutrition
 	user.adjust_nutrition(3)
 	user.adjust_hydration(3)
@@ -159,5 +159,7 @@
 	return ..()
 
 /obj/item/clothing/accessory/scp_427/proc/RemoveDeletedMob(mob/target)
-	GLOB.destroyed_event.unregister(target, src, PROC_REF(RemoveDeletedMob))
+	SIGNAL_HANDLER
+
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	time_used -= target

@@ -2,42 +2,42 @@
 	desc = "A pistol bullet casing."
 	caliber = CALIBER_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol
-	icon_state = "pistol-casing"
-	spent_icon = "pistol-casing-spent"
+	icon_state = "pistol-brass"
+	spent_icon = "pistol-brass-empty"
 
 /obj/item/ammo_casing/pistol/rubber
 	desc = "A rubber pistol bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/practice
 	desc = "A practice pistol bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/small
 	desc = "A small pistol bullet casing."
 	caliber = CALIBER_PISTOL_SMALL
 	projectile_type = /obj/item/projectile/bullet/pistol/holdout
-	icon_state = "pistol-casing"
-	spent_icon = "pistol-casing-spent"
+	icon_state = "pistol-brass"
+	spent_icon = "pistol-brass-spent"
 
 /obj/item/ammo_casing/pistol/small/rubber
 	desc = "A small pistol rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber/holdout
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/small/practice
 	desc = "A small pistol practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/magnum
 	desc = "A high-power pistol bullet casing."
 	caliber = CALIBER_PISTOL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
-	icon_state = "10mm-casing"
-	spent_icon = "10mm-casing-spent"
+	icon_state = "magnum-brass"
+	spent_icon = "magnum-brass-empty"
 
 /obj/item/ammo_casing/pistol/throwback
 	desc = "An antique pistol bullet casing. Somewhere between 9 and 11 mm in caliber."
@@ -45,8 +45,8 @@
 
 /obj/item/ammo_casing/revolver
 	desc = "A revolver bullet casing."
-	icon_state = "magnumcasing"
-	spent_icon = "magnumcasing-spent"
+	icon_state = "magnum-brass"
+	spent_icon = "magnum-brass-empty"
 	caliber = CALIBER_REVOLVER
 	projectile_type = /obj/item/projectile/bullet/revolver
 
@@ -90,8 +90,8 @@
 	desc = "A rifle bullet casing."
 	caliber = CALIBER_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
+	icon_state = "rifle-brass"
+	spent_icon = "rifle-brass-empty"
 
 /obj/item/ammo_casing/shell
 	name = "shell casing"
@@ -111,13 +111,13 @@
 	desc = "A military rifle bullet casing."
 	caliber = CALIBER_RIFLE_MILITARY
 	projectile_type = /obj/item/projectile/bullet/rifle/military
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
+	icon_state = "rifle-brass"
+	spent_icon = "rifle-brass-empty"
 
 /obj/item/ammo_casing/rifle/military/practice
 	desc = "A military rifle practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/military/practice
-	icon_state = "rifle-casing-rubber"
+	icon_state = "rifle-brass-rubber"
 
 /obj/item/ammo_casing/rifle/t12
 	caliber = CALIBER_T12
@@ -151,21 +151,25 @@
 	desc = "A .357 bullet casing."
 	caliber = ".357"
 	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver
+	icon_state = "magnum-brass"
 
 /obj/item/ammo_casing/pistol/a50
 	desc = "A .44 magnum bullet casing."
 	caliber = ".44"
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
+	icon_state = "magnum-brass"
 
 /obj/item/ammo_casing/a127
-	desc = "A 12,7x50mm bullet casing."
-	caliber = "12,7x50"
+	desc = "A 12.7x50mm bullet casing."
+	caliber = "12.7x50"
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
+	icon_state = "big-brass"
 
 /obj/item/ammo_casing/pistol/m500
 	desc = "A .500 S&W Magnum bullet casing."
 	caliber = ".500 Magnum"
 	projectile_type = /obj/item/projectile/bullet/pistol/vstrong
+	icon_state = "magnum-brass"
 
 /obj/item/ammo_casing/pistol/c38
 	desc = "A .38 bullet casing."
@@ -175,7 +179,7 @@
 /obj/item/ammo_casing/pistol/c38/rubber
 	desc = "A .38 rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/c9mm
 	desc = "A 9mm bullet casing."
@@ -185,7 +189,7 @@
 /obj/item/ammo_casing/pistol/c9mm/rubber
 	desc = "A 9mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/c9mm/flash
 	desc = "A 9mm flash shell casing."
@@ -194,6 +198,17 @@
 /obj/item/ammo_casing/pistol/c9mm/practice
 	desc = "A 9mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
+	icon_state = "pistol-brass-rubber"
+
+/obj/item/ammo_casing/pistol/c9mm/ap
+	desc = "A 9mm armor-piercing bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/ap
+	icon_state = "pistol-brass-ap"
+
+/obj/item/ammo_casing/pistol/c9mm/hp
+	desc = "A 9mm hollow-point bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/hp
+	icon_state = "pistol-brass-hollow"
 
 /obj/item/ammo_casing/pistol/c44
 	desc = "A .44 magnum bullet casing."
@@ -203,7 +218,7 @@
 /obj/item/ammo_casing/pistol/c44/rubber
 	desc = "A .44 magnum rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/c45
 	desc = "A .45 bullet casing."
@@ -213,37 +228,53 @@
 /obj/item/ammo_casing/pistol/c45/practice
 	desc = "A .45 practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/c45/rubber
 	desc = "A .45 rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "pistol-casing-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/c45/flash
 	desc = "A .45 flash shell casing."
 	projectile_type = /obj/item/projectile/energy/flash
 
+/obj/item/ammo_casing/pistol/c380
+	desc = "A .380 bullet casing."
+	caliber = ".380"
+	projectile_type = /obj/item/projectile/bullet/pistol
+
+/obj/item/ammo_casing/pistol/c380/rubber
+	desc = "A .380 rubber bullet casing."
+	caliber = ".380"
+	icon_state = "pistol-brass-rubber"
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+
 /obj/item/ammo_casing/pistol/a57
 	desc = "A 5.7x28mm bullet casing."
 	caliber = "5.7x28mm"
 	projectile_type = /obj/item/projectile/bullet/a57
+	icon_state = "rifle-brass"
 
 /obj/item/ammo_casing/pistol/a57/rubber
-	desc = "A rubber 5.7x28mm bullet casing."
+	desc = "A 5.7x28mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/rubber
-	icon_state = "pistol-casing-rubber"
+	icon_state = "rifle-brass-rubber"
 
 /obj/item/ammo_casing/pistol/a57/ap
-	desc = "A armor piercing 5.7x28mm bullet casing."
+	desc = "A 5.7x28mm armor piercing bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/ap
+	icon_state = "rifle-brass-ap"
 
 /obj/item/ammo_casing/pistol/a57/hp
-	desc = "A hollowpoint 5.7x28mm bullet casing."
+	desc = "A 5.7x28mm hollow-point bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/hollowpoint
+	icon_state = "rifle-brass-hollow"
 
 /obj/item/ammo_casing/a57/sc
-	desc = "A Silver Crescent 5.7x28mm bullet casing."
+	desc = "A 5.7x28mm Silver Crescent bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/silver
+	icon_state = "rifle-silver"
 
 /obj/item/ammo_casing/shotgun
 	name = "slug shell"
@@ -342,8 +373,8 @@
 	desc = "A 7.62x51mm NATO bullet casing."
 	caliber = "a762nato"
 	projectile_type = /obj/item/projectile/bullet/rifle/a762nato
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
+	icon_state = "rifle-brass"
+	spent_icon = "rifle-brass-spent"
 
 /obj/item/ammo_casing/a145
 	name = "shell casing"
@@ -371,14 +402,14 @@
 	name = ".45 haywire round"
 	desc = "A .45 bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/small
-	icon_state = "pistol-casing-emp"
+	icon_state = "pistol-brass-emp"
 	matter = list(DEFAULT_WALL_MATERIAL = 130, "uranium" = 100)
 
 /obj/item/ammo_casing/pistol/a10mm/emp
 	name = "10mm haywire round"
 	desc = "A 10mm bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/small
-	icon_state = "pistol-casing-emp"
+	icon_state = "pistol-brass-emp"
 	matter = list(DEFAULT_WALL_MATERIAL = 130, "uranium" = 100)
 
 /obj/item/ammo_casing/shotgun/emp
@@ -393,14 +424,14 @@
 	name = "haywire round"
 	desc = "A pistol bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/small
-	icon_state = "pistol-casing-emp"
+	icon_state = "pistol-brass-emp"
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
 
 /obj/item/ammo_casing/pistol/small/emp
 	name = "small haywire round"
 	desc = "A small bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/tiny
-	icon_state = "pistol-casing-emp"
+	icon_state = "pistol-brass-emp"
 
 /* Used bullet casings **/
 /obj/item/ammo_casing/rifle/used/Initialize()

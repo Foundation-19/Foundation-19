@@ -45,7 +45,7 @@
 // Use to process on the machine it's installed on.
 
 /obj/item/stock_parts/proc/start_processing(obj/machinery/machine)
-	LAZYDISTINCTADD(machine.processing_parts, src)
+	LAZYOR(machine.processing_parts, src)
 	START_PROCESSING_MACHINE(machine, MACHINERY_PROCESS_COMPONENTS)
 	set_status(machine, PART_STAT_PROCESSING)
 

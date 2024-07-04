@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/shuttle_type in subtypesof(/datum/shuttle)) // This accounts for most shuttles, though away maps can queue up more.
 		var/datum/shuttle/shuttle = shuttle_type
 		if(!initial(shuttle.defer_initialisation))
-			LAZYDISTINCTADD(shuttles_to_initialize, shuttle_type)
+			LAZYOR(shuttles_to_initialize, shuttle_type)
 	block_queue = FALSE
 	clear_init_queue()
 	. = ..()
@@ -122,6 +122,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(initial(shuttle.category) != shuttle_type)
 		shuttle = new shuttle()
 		shuttle_areas |= shuttle.shuttle_area
+		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_SHUTTLE_INITIALIZED, shuttle)
 		return shuttle
 
 /datum/controller/subsystem/shuttle/proc/hook_up_motherships(shuttles_list)

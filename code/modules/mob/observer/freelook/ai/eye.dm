@@ -34,14 +34,14 @@
 			ai.holo.move_hologram(ai)
 		return 1
 
-/mob/observer/eye/aiEye/set_dir(new_dir)
+/mob/observer/eye/aiEye/setDir(new_dir)
 	. = ..()
 	if(. && isAI(owner))
 		var/mob/living/silicon/ai/ai = owner
 
 		//Holopad
 		if(ai.holo && ai.hologram_follow)
-			ai.holo.set_dir_hologram(new_dir, ai)
+			ai.holo.setDir_hologram(new_dir, ai)
 		return 1
 
 // AI MOVEMENT
@@ -118,4 +118,17 @@
 	else //Eye is off, so we turn it on
 		AI.eyeobj.icon_state = "AI-eye"
 
+/mob/living/silicon/ai/proc/access_area_apc()
+	set category = "Silicon Commands"
+	set name = "Access Area APC"
+
+	if(!eyeobj)
+		return
+
+	var/area/A = get_area(eyeobj)
+	if(A)
+		var/obj/machinery/power/apc/P = A.get_apc()
+		if(P && P.attack_ai(src))
+			return
+	to_chat(usr, SPAN_WARNING("Unable to interface with area APC."))
 

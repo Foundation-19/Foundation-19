@@ -560,3 +560,17 @@
 	icon_state = "brick"
 	plural_icon_state = "brick-mult"
 	max_icon_state = "brick-max"
+
+/obj/item/stack/material/boron
+	name = "boron"
+	icon_state = "sheet-sheen"
+	item_state = "sheet-shiny"
+	plural_icon_state = "sheet-sheen-mult"
+	max_icon_state = "sheet-sheen-max"
+	default_type = MATERIAL_BORON
+
+/obj/item/stack/material/boron/ten
+	amount = 10
+
+/obj/item/stack/material/boron/fifty
+	amount = 50

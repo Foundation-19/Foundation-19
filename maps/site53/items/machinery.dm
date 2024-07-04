@@ -13,7 +13,7 @@
  	"receiverA", "broadcasterA")
 
 /obj/machinery/telecomms/receiver/preset_right
-	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, ENT_FREQ, EXP_FREQ, SEC_ECZ_FREQ, SEC_FREQ, SEC_HCZ_FREQ, SEC_LCZ_FREQ)
+	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, ENT_FREQ, EXP_FREQ, SEC_ECZ_FREQ, SEC_HCZ_FREQ, SEC_LCZ_FREQ)
 
 /obj/machinery/telecomms/bus/preset_two
 	freq_listening = list(SUP_FREQ, SRV_FREQ, EXP_FREQ)
@@ -39,5 +39,5 @@
 	vend_delay = 14
 	req_access = list(ACCESS_SECURITY_LVL2)
 	products = list(/obj/item/weapon/handcuffs = 8,/obj/item/weapon/grenade/flashbang = 4,/obj/item/weapon/grenade/chem_grenade/teargas = 4,/obj/item/device/flash = 5,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12,/obj/item/weapon/storage/box/evidence = 6,/obj/item/clothing/accessory/badge/solgov/security = 6)
+					/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12,/obj/item/weapon/storage/box/evidence = 6,/obj/item/clothing/accessory/badge/representative/security = 6)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/weapon/storage/box/donut = 2)

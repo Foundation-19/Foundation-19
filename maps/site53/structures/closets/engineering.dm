@@ -3,7 +3,7 @@
  */
 
 /obj/structure/closet/secure_closet/engineering_chief_torch
-	name = "chief engineer's locker"
+	name = "engineering director's locker"
 	req_access = list(access_ce)
 	icon_state = "securece1"
 	icon_closed = "securece"

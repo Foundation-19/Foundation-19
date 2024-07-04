@@ -14,11 +14,7 @@
 	var/badge_string = "Detective"
 	var/stored_name
 
-/obj/item/clothing/accessory/badge/get_lore_info()
-	. = ..()
-	. += "<br>Denotes affiliation to <l>[badge_string]</l>."
-
-/obj/item/clothing/accessory/badge/proc/set_name(new_name)
+/obj/item/clothing/accessory/badge/proc/set_stored_name(new_name)
 	stored_name = new_name
 
 /obj/item/clothing/accessory/badge/proc/set_desc(mob/living/carbon/human/H)
@@ -46,7 +42,7 @@
 
 	if(!stored_name)
 		to_chat(user, "You inspect your [src.name]. Everything seems to be in order and you give it a quick cleaning with your hand.")
-		set_name(user.real_name)
+		set_stored_name(user.real_name)
 		set_desc(user)
 		return
 
@@ -96,7 +92,7 @@
 	icon_state = "holobadge-cord"
 	slot_flags = SLOT_MASK | SLOT_TIE
 
-/obj/item/clothing/accessory/badge/holo/set_name(new_name)
+/obj/item/clothing/accessory/badge/holo/set_stored_name(new_name)
 	..()
 	badge_number = random_id(type,1000,9999)
 	name = "[name] ([badge_number])"
@@ -131,7 +127,7 @@
 
 		if((badge_access in id_card.access) || emagged)
 			to_chat(user, "You imprint your ID details onto the badge.")
-			set_name(id_card.registered_name)
+			set_stored_name(id_card.registered_name)
 			set_desc(user)
 		else
 			to_chat(user, "[src] rejects your ID, and flashes 'Insufficient access!'")
@@ -216,6 +212,6 @@
 		return
 
 	if(badge_string)
-		set_name(usr.real_name)
+		set_stored_name(usr.real_name)
 		set_desc(usr)
 		verbs -= /obj/item/clothing/accessory/badge/tags/skrell/verb/set_sdtf

@@ -73,7 +73,7 @@
 	if(!hand)
 		to_chat(src, SPAN_WARNING("You have nothing to drop in your hand."))
 	else if(hand.can_be_dropped_by_client(src))
-		drop_item()
+		drop_active_hand()
 
 //This gets called when you press the delete button.
 /client/verb/delete_key_pressed()
@@ -117,10 +117,13 @@
 	if(!isrobot(mob) && mob.stat == CONSCIOUS && isturf(mob.loc))
 		var/obj/item/I = mob.get_active_hand()
 		if(I?.can_be_dropped_by_client(mob))
-			mob.drop_item()
+			mob.drop_active_hand()
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
+	if(SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_MOVE, newloc) & COMPONENT_MOVABLE_BLOCK_PRE_MOVE)
+		return
+
 	var/old_loc = loc
 
 	if (direct & (direct - 1))
@@ -160,7 +163,7 @@
 		. = ..()
 		if(direct != olddir)
 			dir = olddir
-			set_dir(direct)
+			setDir(direct)
 
 		src.move_speed = world.time - src.l_move_time
 		src.l_move_time = world.time
@@ -168,14 +171,17 @@
 		if ((A != src.loc && A?.z == src.z))
 			src.last_move = get_dir(A, src.loc)
 
-	SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
+	SEND_SIGNAL(src, COMSIG_MOVED, old_loc, loc)
 
-/client/Move(n, direction)
+/client/Move(new_loc, direction)
 	if(!user_acted(src))
 		return
 
 	if(!mob)
 		return // Moved here to avoid nullrefs below
+
+	if(SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_PRE_MOVE, args) & COMSIG_MOB_CLIENT_BLOCK_PRE_MOVE)
+		return FALSE
 
 	return mob.SelfMove(direction)
 
@@ -359,6 +365,9 @@
 	return FALSE
 
 /mob/proc/adjust_stamina(amt)
+	return
+
+/mob/proc/set_stamina(amt)
 	return
 
 /mob/proc/get_stamina()

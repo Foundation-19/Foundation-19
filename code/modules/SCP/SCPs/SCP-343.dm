@@ -2,7 +2,6 @@
 	name = "strange elderly man"
 	desc = "A mysterious powerful man. He looks a lot like what you would imagine god to look like."
 	icon = 'icons/SCP/scp-343.dmi'
-
 	icon_state = null
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
@@ -10,49 +9,18 @@
 
 	status_flags = CANPUSH|GODMODE
 
+	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
+
 	//Config
 
 	///Cooldown for our phasing ability
 	var/phase_cooldown = 5 SECONDS
 	///How long it takes us to phase
 	var/phase_time = 2 SECONDS
-
+	var/move_delay = 3.0
 	//Mechanical
-
-	///Cooldow tracker for our phasing ability
-	var/phase_cooldown_track
-
-/mob/living/carbon/human/scp343/Initialize(mapload, new_species = "SCP-343")
-	. = ..()
-	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"strange elderly man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"343", //Numerical Designation
-		SCP_PLAYABLE|SCP_ROLEPLAY|SCP_DISABLED
-	)
-
-	add_language(LANGUAGE_ENGLISH)
-	add_language(LANGUAGE_HUMAN_FRENCH)
-	add_language(LANGUAGE_HUMAN_GERMAN)
-	add_language(LANGUAGE_HUMAN_SPANISH)
-	if(!(MUTATION_XRAY in mutations))
-		mutations.Add(MUTATION_XRAY)
-		update_mutations()
-		update_sight()
-
-	add_verb(src, /mob/living/carbon/human/scp343/verb/object_phase)
-
-//Mechanics
-
 /mob/living/carbon/human/scp343/verb/object_phase()
-	set name = "Phase Through Object"
-	set category = "SCP"
-	set desc = "Phase through an object in front of you."
-
-	if((world.time - phase_cooldown_track) < phase_cooldown)
-		to_chat(src, SPAN_WARNING("You can't phase again yet."))
-		return
+	phase_time = 1 SECOND
 
 	var/obj/target_object = null
 	for(var/obj/O in get_step(src, dir))
@@ -80,14 +48,11 @@
 		to_chat(src, SPAN_WARNING("\The [target_turf] is preventing us from phasing in that direction."))
 		return
 
-	phase_cooldown_track = world.time
-
 	// Mob effects
 	var/old_layer = layer
 	var/anim_x = 0
 	var/anim_y = 0
 	layer = OBSERVER_LAYER
-	alpha = 128
 
 	if(dir in list(NORTH, NORTHEAST, NORTHWEST))
 		anim_y = 32
@@ -99,14 +64,39 @@
 		anim_x = -32
 	animate(src, pixel_x = anim_x, pixel_y = anim_y, time = phase_time)
 
-	if(do_after(src, phase_time, target_object))
-		forceMove(get_step(src, dir))
-		visible_message(SPAN_NOTICE("[src] silently phases through [target_object]"))
+	//if(do_after(src, phase_time, target_object))
+	forceMove(get_step(src, dir))
+	visible_message(SPAN_NOTICE("[src] silently phases through [target_object]"))
 
 	layer = old_layer
-	alpha = 255
 	pixel_x = 0
 	pixel_y = 0
+	///Cooldow tracker for our phasing ability
+/mob/living/carbon/human/scp343/Initialize(mapload, new_species = "SCP-343")
+	. = ..()
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"strange elderly man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_SAFE, //Obj Class
+		"343", //Numerical Designation
+		SCP_PLAYABLE|SCP_ROLEPLAY
+	)
+
+	add_language(LANGUAGE_ENGLISH)
+	add_language(LANGUAGE_HUMAN_FRENCH)
+	add_language(LANGUAGE_HUMAN_GERMAN)
+	add_language(LANGUAGE_HUMAN_SPANISH)
+	if(!(MUTATION_XRAY in mutations))
+		mutations.Add(MUTATION_XRAY)
+		update_mutations()
+		update_sight()
+
+	add_verb(src, /mob/living/carbon/human/scp343/verb/object_phase)
+
+	SCP.min_time = 15 MINUTES
+	SCP.min_playercount = 20
+
+//Mechanics
 
 //Overrides
 
@@ -126,9 +116,6 @@
 		return
 
 	return ..()
-
-/mob/living/carbon/human/scp343/IsAdvancedToolUser()
-	return TRUE
 
 /mob/living/carbon/human/scp343/get_pressure_weakness()
 	return 0
@@ -150,3 +137,23 @@
 	else
 		transform = null
 	return
+
+
+/mob/living/carbon/human/scp343/verb/change_shell()
+	set name = "Change shell"
+	set category = "SCP"
+	set desc = "Become unreal"
+
+	// Invisible
+	if (alpha < 255)
+		alpha = 255
+		move_delay = 3.0 // Default speed
+	else if (alpha == 255)
+		alpha = 0
+		move_delay = 1.0 // Max speed
+
+
+	to_chat(src, SPAN_WARNING("You change your visibility."))
+
+/mob/living/carbon/human/scp343/movement_delay()
+	return move_delay

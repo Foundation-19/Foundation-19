@@ -137,7 +137,7 @@
 		if(31 to INFINITY)
 			Weaken(10) //This should work for now, more is really silly and makes you lay there forever
 
-	make_jittery(min(shock_damage*5, 200))
+	adjust_jitter(min(shock_damage/2 SECONDS, 20 SECONDS))
 
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(5, 1, loc)
@@ -155,6 +155,7 @@
 	return(shock_damage)
 
 /mob/proc/swap_hand()
+	SEND_SIGNAL(src, COMSIG_SWAPPED_HANDS)
 	return
 
 /mob/living/carbon/swap_hand()
@@ -250,7 +251,7 @@
 
 			playsound(src.loc, 'sounds/weapons/thudswoosh.ogg', 50, 1, -1)
 
-/mob/living/carbon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/carbon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(eyecheck() < intensity || override_blindness_check)
 		return ..()
 
@@ -273,7 +274,7 @@
 	src.throw_mode_off()
 	if(src.stat || !target)
 		return
-	if(target.type == /obj/screen) return
+	if(target.type == /atom/movable/screen) return
 
 	var/atom/movable/item = src.get_active_hand()
 

@@ -9,7 +9,7 @@
 		if (isturf(dest))
 			bound_overlay.forceMove(get_step(src, UP))
 			if (dir != bound_overlay.dir)
-				bound_overlay.set_dir(dir)
+				bound_overlay.setDir(dir)
 		else	// Not a turf, so we need to destroy immediately instead of waiting for the destruction timer to proc.
 			qdel(bound_overlay)
 
@@ -18,12 +18,12 @@
 	if (. && bound_overlay)
 		bound_overlay.forceMove(get_step(src, UP))
 		if (bound_overlay.dir != dir)
-			bound_overlay.set_dir(dir)
+			bound_overlay.setDir(dir)
 
-/atom/movable/set_dir(ndir)
+/atom/movable/setDir(ndir)
 	. = ..()
 	if (. && bound_overlay)
-		bound_overlay.set_dir(ndir)
+		bound_overlay.setDir(ndir)
 
 /atom/movable/update_above()
 	if (!bound_overlay || !isturf(loc))

@@ -12,12 +12,12 @@ SUBSYSTEM_DEF(fabrication)
 		var/datum/fabricator_recipe/recipe = new R
 		for(var/fab_type in recipe.fabricator_types)
 			LAZYADD(recipes[fab_type], recipe)
-			LAZYDISTINCTADD(categories[fab_type], recipe.category)
+			LAZYOR(categories[fab_type], recipe.category)
 	var/list/all_crafting_handlers = decls_repository.get_decls_of_subtype(/decl/crafting_stage)
 	for(var/hid in all_crafting_handlers)
 		var/decl/crafting_stage/handler = all_crafting_handlers[hid]
 		if(ispath(handler.begins_with_object_type))
-			LAZYDISTINCTADD(crafting_procedures_by_type[handler.begins_with_object_type], handler)
+			LAZYOR(crafting_procedures_by_type[handler.begins_with_object_type], handler)
 	. = ..()
 
 /datum/controller/subsystem/fabrication/proc/get_categories(fab_type)

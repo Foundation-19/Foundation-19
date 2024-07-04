@@ -31,7 +31,7 @@
 
 	if(user.a_intent != I_HELP)
 		if(user.zone_sel.selecting == BP_HEAD || user.zone_sel.selecting == BP_EYES)
-			if((MUTATION_CLUMSY in user.mutations) && prob(50))
+			if(((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 				M = user
 			return eyestab(M,user)
 		else
@@ -119,7 +119,7 @@
 	thrown_force_multiplier = 1 // as above
 
 /obj/item/material/kitchen/rollingpin/attack(mob/living/M as mob, mob/living/user as mob)
-	if ((MUTATION_CLUMSY in user.mutations) && prob(50) && user.unEquip(src))
+	if (((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50) && user.unEquip(src))
 		to_chat(user, SPAN_WARNING("\The [src] slips out of your hand and hits your head."))
 		user.take_organ_damage(10, 0)
 		user.Paralyse(2)
