@@ -1,0 +1,4 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - bugfix: Disabled 106's ability to use advanced tools
