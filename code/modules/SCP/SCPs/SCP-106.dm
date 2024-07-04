@@ -82,6 +82,8 @@
 	WallEye.visualnet.add_source(src)
 	WallEye.visualnet.add_source(WallEye)
 
+	ADD_TRAIT(src, TRAIT_DISCOORDINATED_TOOL_USER, ROUNDSTART_TRAIT)
+
 /mob/living/carbon/human/scp106/Destroy()
 	QDEL_NULL(WallEye)
 	target = null
