@@ -99,7 +99,7 @@
  * Default behaviour is to send the [COMSIG_ATOM_EXITED]
  */
 /atom/Exited(atom/movable/exitee, atom/new_loc)
-	SEND_SIGNAL(src, COMSIG_EXITED, src, exitee, new_loc)
+	SEND_SIGNAL(src, COMSIG_EXITED, exitee, new_loc)
 
 /atom/proc/reveal_blood()
 	return
@@ -232,17 +232,6 @@
 // see code/modules/mob/mob_movement.dm for more.
 /atom/proc/relaymove()
 	return
-
-//called to set the atom's dir and used to add behaviour to dir-changes
-/atom/proc/set_dir(new_dir)
-	var/old_dir = dir
-	if(new_dir == old_dir)
-		return FALSE
-
-	SEND_SIGNAL(src, COMSIG_DIR_SET, new_dir, old_dir)
-
-	dir = new_dir
-	return TRUE
 
 /atom/proc/set_icon_state(new_icon_state)
 	if(has_extension(src, /datum/extension/base_icon_state))
@@ -516,7 +505,7 @@
 
 	add_fingerprint(user)
 	user.visible_message(SPAN_WARNING("\The [user] starts climbing onto \the [src]!"))
-	LAZYDISTINCTADD(climbers,user)
+	LAZYOR(climbers,user)
 
 	if(!do_after(user,(issmall(user) ? MOB_CLIMB_TIME_SMALL : MOB_CLIMB_TIME_MEDIUM) * climb_speed_mult, src, bonus_percentage = 25))
 		LAZYREMOVE(climbers,user)
@@ -640,3 +629,22 @@
 		return TRUE
 	*/
 	. = !density
+
+/**
+ * Hook for running code when a dir change occurs
+ *
+ * Not recommended to use, listen for the [COMSIG_ATOM_DIR_CHANGE] signal instead (sent by this proc)
+ */
+/atom/proc/setDir(newdir)
+	//SHOULD_CALL_PARENT(TRUE)
+	var/olddir = dir
+	if (SEND_SIGNAL(src, COMSIG_ATOM_PRE_DIR_CHANGE, dir, newdir) & COMPONENT_ATOM_BLOCK_DIR_CHANGE)
+		newdir = dir
+		return
+	dir = newdir
+	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, olddir, dir)
+
+/// Updates the description of the atom
+/atom/proc/update_desc(updates=ALL)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_DESC, updates)

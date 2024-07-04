@@ -21,6 +21,7 @@
 	laws_sanity_check()
 	laws.set_zeroth_law(law, law_borg)
 	log_law("has given [src] the zeroth law: '[law]'[law_borg ? " / '[law_borg]'" : ""]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/robot/set_zeroth_law(law, law_borg)
 	..()
@@ -33,39 +34,46 @@
 	to_chat(src, law)
 	laws.add_ion_law(law)
 	log_law("has given [src] the ion law: [law]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/proc/add_inherent_law(law)
 	laws_sanity_check()
 	laws.add_inherent_law(law)
 	log_law("has given [src] the inherent law: [law]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/proc/add_supplied_law(number, law)
 	laws_sanity_check()
 	laws.add_supplied_law(number, law)
 	log_law("has given [src] the supplied law: [law]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/proc/delete_law(datum/ai_law/law)
 	laws_sanity_check()
 	laws.delete_law(law)
 	log_law("has deleted a law belonging to [src]: [law.law]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/proc/clear_inherent_laws(silent = 0)
 	laws_sanity_check()
 	laws.clear_inherent_laws()
 	if(!silent)
 		log_law("cleared the inherent laws of [src]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/proc/clear_ion_laws(silent = 0)
 	laws_sanity_check()
 	laws.clear_ion_laws()
 	if(!silent)
 		log_law("cleared the ion laws of [src]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/proc/clear_supplied_laws(silent = 0)
 	laws_sanity_check()
 	laws.clear_supplied_laws()
 	if(!silent)
 		log_law("cleared the supplied laws of [src]")
+	throw_alert(ALERT_NEW_LAW, /atom/movable/screen/alert/newlaw)
 
 /mob/living/silicon/proc/statelaws(datum/ai_laws/laws)
 	var/prefix = ""

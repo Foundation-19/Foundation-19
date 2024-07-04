@@ -3,7 +3,7 @@
  */
 
 /obj/structure/closet/secure_closet/site53/cmo
-	name = "chief medical officer's locker"
+	name = "medical director's locker"
 	req_access = list(ACCESS_MEDICAL_LVL5)
 	icon_state = "cmosecure1"
 	icon_closed = "cmosecure"
@@ -19,6 +19,7 @@
 		/obj/item/clothing/under/rank/chief_medical_officer/skirt,
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmo,
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt,
+		/obj/item/clothing/suit/storage/toggle/labcoat/cmo/md,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/reagent_containers/hypospray/vial,

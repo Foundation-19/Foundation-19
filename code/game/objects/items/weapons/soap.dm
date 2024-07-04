@@ -79,7 +79,7 @@
 		user.visible_message(SPAN_DANGER("\The [user] washes \the [target]'s mouth out with soap!"))
 		if(reagents)
 			reagents.trans_to_mob(target, reagents.total_volume / 2, CHEM_INGEST)
-		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN) //prevent spam
+		user.setClickCooldown(CLICK_CD_QUICK) //prevent spam
 		return
 	..()
 

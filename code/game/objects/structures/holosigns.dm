@@ -30,6 +30,6 @@
 	deactivate(user)
 
 /obj/structure/holosign/proc/deactivate(mob/living/user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(src)
 	qdel(src)

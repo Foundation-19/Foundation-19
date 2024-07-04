@@ -181,7 +181,7 @@
 	)
 
 /obj/structure/closet/secure_closet/scpscience/directorofscience
-	name = "Research Director's Locker"
+	name = "research director's locker"
 	req_access = list(ACCESS_SCIENCE_LVL5)
 	icon_state = "dslocked"
 	icon_closed = "dsunlocked"

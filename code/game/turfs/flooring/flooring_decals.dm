@@ -20,7 +20,7 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/Initialize()
 	SHOULD_CALL_PARENT(FALSE)
-	if(supplied_dir) set_dir(supplied_dir)
+	if(supplied_dir) setDir(supplied_dir)
 	var/turf/T = get_turf(src)
 	if(istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
 		layer = T.is_plating() ? DECAL_PLATING_LAYER : DECAL_LAYER

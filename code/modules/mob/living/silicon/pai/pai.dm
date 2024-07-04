@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 
 	can_pull_size = ITEM_SIZE_SMALL
 	can_pull_mobs = MOB_PULL_SMALLER
-	pullin = new /obj/screen/pai/pull
+	pullin = new /atom/movable/screen/pai/pull
 	holder_type = /obj/item/holder
 	idcard = /obj/item/card/id
 	silicon_radio = null // pAIs get their radio from the card they belong to.

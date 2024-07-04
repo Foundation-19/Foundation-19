@@ -1,6 +1,12 @@
 [langserver]
 dreamchecker = true
 
+[map_renderer]
+hide_invisible = [
+	"/obj/effect/landmark",
+	"/turf/unsimulated/mineral",
+]
+
 [diagnostics]
 var_in_proc_parameter = "error"
 

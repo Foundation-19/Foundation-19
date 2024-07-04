@@ -280,7 +280,7 @@
 								 SPAN_NOTICE("You hear rustling of clothes."))
 			return
 
-		if(usr.drop_item())
+		if(usr.drop_active_hand())
 			W.forceMove(loc)
 			W.pixel_x = 0
 			W.pixel_y = 0
@@ -321,7 +321,7 @@
 	qdel(src)
 
 /obj/structure/closet/MouseDrop_T(atom/movable/O as mob|obj, mob/user as mob)
-	if(istype(O, /obj/screen))	//fix for HUD elements making their way into the world	-Pete
+	if(istype(O, /atom/movable/screen))	//fix for HUD elements making their way into the world	-Pete
 		return
 	if(O.loc == user)
 		return
@@ -497,7 +497,7 @@
 	if(!id_card)
 		id_card = user.GetIdCard()
 
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		to_chat(user, FEEDBACK_YOU_LACK_DEXTERITY)
 		return FALSE
 

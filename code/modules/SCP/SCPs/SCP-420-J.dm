@@ -11,6 +11,7 @@
 	chem_volume = 200
 	smoketime = INFINITY
 	filling = list()
+	hidden_from_codex = TRUE
 
 	//Config
 

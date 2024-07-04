@@ -21,7 +21,7 @@
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier")
 	suit_store = /obj/item/gun/projectile/automatic/scp/ak47
 	belt = /obj/item/storage/belt/ci
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 3,/obj/item/ammo_magazine/c45uzi = 2,/obj/item/grenade/smokebomb = 1,/obj/item/gun/projectile/automatic/machine_pistol)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 3,/obj/item/ammo_magazine/scp/uzim9mm = 2,/obj/item/grenade/smokebomb = 1,/obj/item/gun/projectile/automatic/machine_pistol)
 
 /decl/hierarchy/outfit/chaos/heavy_soldier
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Heavy Soldier")

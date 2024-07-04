@@ -102,7 +102,7 @@
 
 /obj/item/integrated_circuit/memory/constant/attack_self(mob/user)
 	var/datum/integrated_io/O = outputs[1]
-	if(!user.IsAdvancedToolUser())
+	if(!ISADVANCEDTOOLUSER(user))
 		return
 	var/type_to_use = input("Please choose a type to use.","[src] type setting") as null|anything in list("string","number","ref", "null")
 
@@ -111,13 +111,13 @@
 		if("string")
 			accepting_refs = FALSE
 			new_data = input("Now type in a string.","[src] string writing") as null|text
-			if(istext(new_data) && user.IsAdvancedToolUser())
+			if(istext(new_data) && ISADVANCEDTOOLUSER(user))
 				O.data = new_data
 				to_chat(user, SPAN_NOTICE("You set \the [src]'s memory to [O.display_data(O.data)]."))
 		if("number")
 			accepting_refs = FALSE
 			new_data = input("Now type in a number.","[src] number writing") as null|num
-			if(isnum(new_data) && user.IsAdvancedToolUser())
+			if(isnum(new_data) && ISADVANCEDTOOLUSER(user))
 				O.data = new_data
 				to_chat(user, SPAN_NOTICE("You set \the [src]'s memory to [O.display_data(O.data)]."))
 		if("ref")

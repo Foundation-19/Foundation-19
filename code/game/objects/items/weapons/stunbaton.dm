@@ -130,7 +130,7 @@
 		update_icon()
 
 /obj/item/melee/baton/attack(mob/M, mob/user)
-	if(status && (MUTATION_CLUMSY in user.mutations) && prob(50))
+	if(status && ((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		to_chat(user, SPAN_DANGER("You accidentally hit yourself with the [src]!"))
 		user.Weaken(30)
 		deductcharge(hitcost)

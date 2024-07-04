@@ -403,7 +403,7 @@
 		O = new result_type(location, use_material, use_reinf_material)
 	else
 		O = new result_type(location)
-	O.set_dir(user.dir)
+	O.setDir(user.dir)
 	return O
 
 /datum/stack_recipe/proc/can_make(mob/user)

@@ -148,8 +148,6 @@
 
 /obj/structure/closet/secure_closet/site53/dmining/WillContain()
 	return list(
-		/obj/item/clothing/gloves/thick,
-//		/obj/item/device/analyzer,
 		/obj/item/storage/ore,
 		/obj/item/device/flashlight/lantern,
 		/obj/item/shovel,
