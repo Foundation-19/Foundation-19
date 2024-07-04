@@ -130,15 +130,6 @@
 	armor = list(melee = 80, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 90, rad = 90)
 	acid_resistance = 5
 
-/obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
-	name = "armored vest"
-	desc = "A synthetic armor vest designed for MTF unit Alpha-1."
-	icon_state = "alpha-armor"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
-	armor = list(melee = 90, bullet = 90, laser = 90, energy = 95, bomb = 90, bio = 15, rad = 0)
-	acid_resistance = 2
-
 /obj/item/clothing/head/hcz_hazmat
 	name = "combat hazmat helmet"
 	icon_state = "hcz-hazard-helmet"

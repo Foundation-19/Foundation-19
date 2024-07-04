@@ -207,7 +207,7 @@
 /obj/item/clothing/head/beret/mtf/omega
 	name = "'Laws Left Hand' tactical beret"
 	desc = "A heavy padded beret used by MTF Omega-1, it's quite armored, more than traditional helmets."
-	icon_state = "beret_guardcom"
+	icon_state = "beret_omega1"
 
 /obj/item/clothing/head/beret/engineering
 	name = "corporate engineering beret"

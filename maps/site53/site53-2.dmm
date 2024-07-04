@@ -20098,10 +20098,12 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "biQ" = (
-/obj/effect/floor_decal/corner/safe/border{
+/obj/effect/floor_decal/corner/safe/bordercorner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white/horizontal,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
 /area/site53/ulcz/scp912)
 "biS" = (
 /obj/structure/railing/mapped{
@@ -20919,15 +20921,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp2427_3)
 "brw" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/white/horizontal,
+/obj/effect/floor_decal/corner/safe/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/corner,
 /area/site53/ulcz/scp912)
 "brK" = (
 /obj/structure/table/standard{
@@ -23143,12 +23145,16 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "czJ" = (
-/obj/effect/floor_decal/corner/safe/mono,
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
 /area/site53/ulcz/scp912)
 "czN" = (
 /obj/effect/floor_decal/corner/euclid/border{
@@ -31158,13 +31164,15 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
 "hgr" = (
-/obj/effect/floor_decal/corner/safe/mono,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp912)
 "hgX" = (
 /obj/effect/floor_decal/spline/plain/blue,
@@ -38143,15 +38151,12 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "laI" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/white/horizontal,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp912)
 "laQ" = (
 /obj/structure/cable{
@@ -44098,7 +44103,7 @@
 /area/site53/llcz/dclass/medicalpost)
 "odZ" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"));
 	name = "SCP-912 Police Uniforms"
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -47867,6 +47872,18 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/hub)
+"qeY" = (
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/ulcz/scp912)
 "qfc" = (
 /obj/effect/floor_decal/corner/keter/bordercorner{
 	dir = 1
@@ -76564,7 +76581,7 @@ kXd
 jhb
 eRn
 umo
-czJ
+qeY
 brw
 hoz
 gyK

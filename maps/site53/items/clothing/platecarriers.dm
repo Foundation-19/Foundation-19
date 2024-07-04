@@ -69,7 +69,7 @@
 	icon_state = "mtf-medic"
 	item_state = "mtf-medic"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 50, bullet = 75, laser = 70, energy = 25, bomb = 50, bio = 35, rad = 15)
+	armor = list(melee = 55, bullet = 75, laser = 70, energy = 25, bomb = 50, bio = 35, rad = 15)
 
 /obj/item/clothing/suit/armor/mtfmedium
 	name = "heavy tactical vest"
@@ -78,6 +78,30 @@
 	item_state = "mtf-medium"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
 	armor = list(melee = 70, bullet = 85, laser = 75, energy = 15, bomb = 70, bio = 25, rad = 15)
+
+/obj/item/clothing/suit/armor/mtfscout
+	name = "compact scout vest"
+	desc = "An advanced multi-plated composite vest with lessened kevlar lining than other models, and still plenty of room to move. Compact, and easy to move in."
+	icon_state = "mtf-scout"
+	item_state = "mtf-scout"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(melee = 45, bullet = 55, laser = 45, energy = 15, bomb = 45, bio = 15, rad = 15)
+
+/obj/item/clothing/suit/armor/mtfalpha1
+	name = "heavy compact 'Red Right Hand' vest"
+	desc = "An extremely advanced multi-plated composite vest with extremely toughened kevlar lining, added additional plating, and more body coverage and plenty of room to move. 'A-1' is sewn onto the torso in red."
+	icon_state = "mtf-alpha1"
+	item_state = "mtf-alpha1"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(melee = 80, bullet = 95, laser = 80, energy = 25, bomb = 70, bio = 25, rad = 15)
+
+/obj/item/clothing/suit/armor/mtfomega1
+	name = "heavy compact 'Laws Left Hand' vest"
+	desc = "An extremely advanced multi-plated composite vest with extremely toughened kevlar lining, added additional plating, and more body coverage and plenty of room to move. 'O-1' is sewn onto the torso in white."
+	icon_state = "mtf-omega1"
+	item_state = "mtf-omega1"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(melee = 80, bullet = 95, laser = 80, energy = 25, bomb = 70, bio = 25, rad = 15)
 
 //GOC
 /obj/item/clothing/suit/armor/goc
