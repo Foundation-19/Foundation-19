@@ -40,6 +40,8 @@
 	var/client/client = null
 	var/client_ckey = null
 
+	var/will_late_init = FALSE
+
 	var/datum/category_collection/player_setup_collection/player_setup
 	var/datum/browser/panel
 
@@ -55,6 +57,7 @@
 		if(SScharacter_setup.initialized)
 			setup()
 		else
+			will_late_init = TRUE
 			SScharacter_setup.prefs_awaiting_setup += src
 	..()
 
@@ -73,6 +76,7 @@
 			load_data()
 
 	sanitize_preferences()
+	SEND_SIGNAL(client, COMSIG_CLIENT_PREFS_LOADED, src)
 
 /datum/preferences/proc/load_data()
 	load_failed = null
