@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: FPS preference randomly not applying no longer happens
