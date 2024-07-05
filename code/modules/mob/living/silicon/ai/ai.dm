@@ -386,7 +386,7 @@ var/list/ai_verbs_default = list(
 	if(!input)
 		return
 
-	message_offsite(input, usr, /datum/offsite/site_01)
+	message_offsite(input, usr, /datum/offsite/foundation/regional_command)
 
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
 	log_say("[key_name_admin(usr)] has made an emergency AIC [GLOB.using_map.boss_short] announcement: [input]")

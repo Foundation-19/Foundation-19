@@ -90,7 +90,8 @@
 	if(href_list["send_message"] && usr)
 		var/client/C = usr.client
 		if(C && C.holder)
-			if (!istype(C.holder, /datum/admins))
+			// send_message already checks it, but we shouldn't rely on other procs not being changed
+			if(!istype(C.holder, /datum/admins))
 				to_chat(C, "Error: you are not an admin!")
 				return
 			send_message(C, locate(href_list["send_message"]))
