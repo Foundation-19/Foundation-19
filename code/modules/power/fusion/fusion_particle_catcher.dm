@@ -37,4 +37,6 @@
 	return 0
 
 /obj/effect/fusion_particle_catcher/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	return ismob(mover)
+	if(parent.size >= mysize)
+		return ismob(mover)
+	return ..()
