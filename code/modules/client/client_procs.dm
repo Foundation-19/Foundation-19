@@ -210,11 +210,10 @@
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = SScharacter_setup.preferences_datums[ckey]
 	if(!prefs)
+		RegisterSignal(src, COMSIG_CLIENT_PREFS_LOADED, PROC_REF(on_prefs_loaded))
 		prefs = new /datum/preferences(src)
-		if(prefs.will_late_init)
-			RegisterSignal(src, COMSIG_CLIENT_PREFS_LOADED, PROC_REF(on_prefs_loaded))
-		else
-			on_prefs_loaded(src, prefs)
+	else
+		on_prefs_loaded(src, prefs)
 	prefs.macros.owner = src
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
