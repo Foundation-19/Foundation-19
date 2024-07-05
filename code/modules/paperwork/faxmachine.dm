@@ -230,7 +230,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 
 	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
 
-	// this is so fucking ghetto // TODO: use alerts to make this more user-friendly
+	// this is so fucking ghetto
 	if(intercepters.len)
 		for(var/thing in intercepters)
 			var/mob/living/silicon/ai/ai = thing
@@ -249,21 +249,14 @@ GLOBAL_LIST_EMPTY(admin_departments)
 							if(!t)
 								continue
 
+							var/old_fields_value = paper_copy.fields
+							paper_copy.fields = 0
 							t = replacetext(t, "\n", "<BR>")
 							t = paper_copy.parsepencode(t) // Encode everything from pencode to html
 
-							//Count the fields
-							var/field_count = 0
-							var/laststart = 1
-							while(field_count <= 50)
-								var/i = findtext(t, "<span class=\"paper_field\">", laststart)	//</span>
-								if(i==0)
-									break
-								laststart = i + 1
-								field_count++
-
-							if(field_count > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
+							if(paper_copy.fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
 								to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
+								paper_copy.fields = old_fields_value
 								continue
 
 							paper_copy.info = t // set the file to the new text

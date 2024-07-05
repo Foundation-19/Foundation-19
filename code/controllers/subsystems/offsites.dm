@@ -43,7 +43,9 @@ SUBSYSTEM_DEF(offsites)
 
 		for(var/thing in OS.sent_faxes)
 			var/list/sent_fax = thing
+			var/weakref/paper_ref = sent_fax[2]
 			sent_fax += "Sent fax to"
+			sent_fax[2] = paper_ref?.resolve()
 			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
 
 		for(var/thing in OS.received_messages)

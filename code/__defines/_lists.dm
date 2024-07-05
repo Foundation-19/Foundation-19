@@ -21,8 +21,6 @@
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 /// Insert I into L at position X, initalizing L if necessary
 #define LAZYINSERT(L, I, X) if(!L) { L = list(); } L.Insert(X, I);
-/// Adds I to L, initalizing L if necessary, if I is not already in L
-#define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
 /// Sets L[A] to I, initalizing L if necessary
 #define LAZYSET(L, A, I) if(!L) { L = list(); } L[A] = I;
 /// Reads I from L safely - Works with both associative and traditional lists.
