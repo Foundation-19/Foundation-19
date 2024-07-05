@@ -1,7 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: R-UST projectile catchers no longer block movement on their turf while
-      they are invisible/off
-  - bugfix: R-UST gyrotron gets a 50% performance improvement in regards to instability
-      reduction due to a bugfix

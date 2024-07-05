@@ -4,3 +4,17 @@
 2024-07-04:
   TheDarkElites:
   - bugfix: Disabled 106's ability to use advanced tools
+2024-07-05:
+  Joel-682:
+  - config: Raised the  var/psi_latency_chance from 2 to 5.
+  checkraisefold:
+  - bugfix: R-UST projectile catchers no longer block movement on their turf while
+      they are invisible/off
+  - bugfix: R-UST gyrotron gets a 50% performance improvement in regards to instability
+      reduction due to a bugfix
+  - bugfix: FPS preference randomly not applying no longer happens
+  - bugfix: Orbit menu cancel button now works correctly
+  - bugfix: Orbit menu is no longer extremely long and no longer duplicates its items
+      when opened
+  quadbium:
+  - bugfix: fixes list of engineering and science jobs
