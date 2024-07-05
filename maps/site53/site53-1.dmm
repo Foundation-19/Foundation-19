@@ -1716,7 +1716,7 @@
 "bTC" = (
 /obj/machinery/door/airlock/vault{
 	name = "Self Destruct Room";
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -3871,7 +3871,7 @@
 "eyu" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Self-Destruct Maintenance";
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4371,7 +4371,7 @@
 "fhK" = (
 /obj/machinery/door/airlock/vault{
 	name = "Self Destruct Room";
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4955,7 +4955,7 @@
 "fLA" = (
 /obj/machinery/door/airlock/vault{
 	name = "Self Destruct Room";
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/catwalk_plated/dark,
@@ -7760,7 +7760,7 @@
 "iWU" = (
 /obj/machinery/door/airlock/vault{
 	name = "Self Destruct Room";
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/catwalk_plated/dark,
@@ -16151,7 +16151,7 @@
 "tyk" = (
 /obj/machinery/keycard_auth{
 	pixel_y = 28;
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ENGINEERING_LEVEL4","ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
