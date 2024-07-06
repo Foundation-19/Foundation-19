@@ -654,7 +654,7 @@
 "ce" = (
 /obj/machinery/keycard_auth{
 	pixel_y = 28;
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ENGINEERING_LEVEL4")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -1159,7 +1159,7 @@
 "dl" = (
 /obj/machinery/keycard_auth{
 	pixel_x = -28;
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ENGINEERING_LEVEL4")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -2340,7 +2340,7 @@
 "gB" = (
 /obj/machinery/keycard_auth{
 	pixel_y = -28;
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ENGINEERING_LEVEL4")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/hallway)
@@ -2357,7 +2357,7 @@
 "gF" = (
 /obj/machinery/keycard_auth{
 	pixel_y = -28;
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ENGINEERING_LEVEL4")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
@@ -6019,6 +6019,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/keycard_auth{
+	pixel_y = 28;
+	req_access = list("ACCESS_KEYCARD_AUTH")
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "vK" = (
@@ -6746,6 +6750,13 @@
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/maintenance/upper_surface)
+"yM" = (
+/obj/machinery/keycard_auth{
+	pixel_y = 28;
+	req_access = list("ACCESS_KEYCARD_AUTH")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "yN" = (
 /obj/structure/bed/chair/padded/black{
 	dir = 8
@@ -7876,7 +7887,7 @@
 "Eq" = (
 /obj/machinery/keycard_auth{
 	pixel_x = 28;
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ENGINEERING_LEVEL4")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -40210,7 +40221,7 @@ jO
 jO
 jO
 aY
-Np
+yM
 Np
 kN
 Cq

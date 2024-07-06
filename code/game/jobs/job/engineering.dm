@@ -53,11 +53,11 @@
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
 
-	roleplay_difficulty = "Easy"
-	mechanical_difficulty = "Medium"
-	duties = "Perform constructions and repairs. Guide junior engineers"
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Hard"
+	duties = "Manage the Engineering department. Delegate construction and repair work. Facilitate larger projects."
 	codex_guides = list("<l>Hacking Wires</l>")
-
+  
 /datum/job/achief_engineer
 	title = "Assistant Engineering Director"
 	department = "Engineering"
@@ -111,7 +111,7 @@
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
 
-	roleplay_difficulty = "Easy - Medium"
+	roleplay_difficulty = "Medium"
 	mechanical_difficulty = "Medium - Hard"
 	duties = "Perform constructions and repairs. Manage lower engineers."
 	codex_guides = list("<l>Hacking Wires</l>")
@@ -205,6 +205,47 @@
 	duties = "Perform constructions and repairs on SCP containment chambers."
 	codex_guides = list("<l>Hacking Wires</l>")
 
+/datum/job/it_tech
+	title = "IT Technician"
+	department = "Engineering"
+	selection_color = "#5b4d20"
+	department_flag = ENG
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Engineering Director and Assistant Engineering Director"
+	economic_power = 4
+	minimal_player_age = 3
+	ideal_character_age = 30
+	requirements = list(EXP_TYPE_ENGINEERING = 120)
+	outfit_type = /decl/hierarchy/outfit/job/engineering/it_tech
+	class = CLASS_B
+	hud_icon = "hudittech"
+
+	access = list(
+		ACCESS_ENG_COMMS,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_NETWORK
+	)
+	minimal_access = list()
+
+	min_skill = list(
+		SKILL_COMPUTER     = SKILL_EXPERIENCED,
+	    SKILL_CONSTRUCTION = SKILL_BASIC,
+	    SKILL_ELECTRICAL   = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_COMPUTER     = SKILL_MASTER
+	)
+
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+	duties = "Maintain and expand the advanced technology behind the site's server infrastructure. Resolve technical problems. Prepare and protect against cybersecurity attacks."
+
 /datum/job/seneng
 	title = "Senior Engineer"
 	department = "Engineering"
@@ -213,7 +254,7 @@
 	department = "Engineering"
 	department_flag = ENG
 	selection_color = "#5b4d20"
-	supervisors = "the Engineering"
+	supervisors = "the Engineering Director"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -237,7 +278,6 @@
 		ACCESS_SCIENCE_LVL1
 	)
 	minimal_access = list()
-
 	min_skill = list(
 		SKILL_COMPUTER     = SKILL_BASIC,
 	    SKILL_HAULING      = SKILL_EXPERIENCED,
@@ -246,7 +286,6 @@
 	    SKILL_ATMOS        = SKILL_EXPERIENCED,
 	    SKILL_ENGINES      = SKILL_EXPERIENCED
 	)
-
 	max_skill = list(
 		SKILL_CONSTRUCTION = SKILL_MASTER,
 	    SKILL_ELECTRICAL   = SKILL_MASTER,
@@ -299,6 +338,11 @@
 	mechanical_difficulty = "Medium"
 	duties = "Maintain and expand the advanced technology behind the site's server infrastructure. Resolve technical problems. Prepare and protect against cybersecurity attacks."
 
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Perform constructions and repairs. Manage lower engineers."
+	codex_guides = list("<l>Hacking Wires</l>")
+
 /datum/job/eng
 	title = "Engineer"
 	department = "Engineering"
@@ -320,7 +364,6 @@
 	outfit_type = /decl/hierarchy/outfit/job/engineering/eng
 	class = CLASS_C
 	hud_icon = "hudengineer"
-
 	access = list(
 		ACCESS_ENG_COMMS,
 		ACCESS_ENGINEERING_LVL1,
@@ -329,7 +372,6 @@
 		ACCESS_SCIENCE_LVL1
 	)
 	minimal_access = list()
-
 	min_skill = list(
 		SKILL_COMPUTER     = SKILL_BASIC,
 	    SKILL_HAULING      = SKILL_EXPERIENCED,
@@ -338,13 +380,17 @@
 	    SKILL_ATMOS        = SKILL_EXPERIENCED,
 	    SKILL_ENGINES      = SKILL_EXPERIENCED
 	)
-
 	max_skill = list(
 		SKILL_CONSTRUCTION = SKILL_MASTER,
 	    SKILL_ELECTRICAL   = SKILL_MASTER,
 	    SKILL_ATMOS        = SKILL_MASTER,
 	    SKILL_ENGINES      = SKILL_MASTER
 	)
+
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Medium"
+	duties = "Help with constructions and repairs."
+	codex_guides = list("<l>Hacking Wires</l>")
 
 /datum/job/juneng
 	title = "Junior Engineer"
@@ -354,7 +400,7 @@
 	department = "Engineering"
 	department_flag = ENG
 	selection_color = "#5b4d20"
-	supervisors = "the Engineering Director and Assistant Engineering Director"
+	supervisors = "the Senior Engineers and Chief Engineer"
 	economic_power = 3
 	minimal_player_age = 0
 	ideal_character_age = 20
