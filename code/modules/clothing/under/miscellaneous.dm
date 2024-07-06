@@ -808,3 +808,10 @@
 	icon_state = "kimono"
 	worn_state = "kimono"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/itd
+	desc = "It's a snazzy dark purple formal shirt worn by someone who works in the \"Internal Tribunal Department\", it has silver markings and a white nametag."
+	name = "Internal Tribunal uniform"
+	icon_state = "itdo"
+	item_state = "b_suit"
+	worn_state = "itdo"

@@ -19488,7 +19488,6 @@
 /obj/machinery/door/airlock/civilian{
 	name = "CDCZ Gym"
 	},
-/obj/machinery/contraband_detector,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;

@@ -645,16 +645,6 @@
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
 
-/area/site53/uez/canteen
-	name = "\improper Canteen"
-	icon_state = "bar"
-	sound_env = LARGE_SOFTFLOOR
-
-/area/site53/uez/conference
-	name = "\improper Conference Room A"
-	icon_state = "bar"
-	sound_env = LARGE_SOFTFLOOR
-
 /area/site53/uez/janitor
 	name = "\improper Janitor's Office"
 	icon_state = "janitor"
