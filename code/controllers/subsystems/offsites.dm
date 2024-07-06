@@ -34,6 +34,7 @@ SUBSYSTEM_DEF(offsites)
 /datum/controller/subsystem/offsites/tgui_data(mob/user)
 	var/list/data = list()
 
+	data["offsites"] = list()
 	for(var/key in offsites)
 		var/datum/offsite/OS = offsites[key]
 
@@ -41,26 +42,28 @@ SUBSYSTEM_DEF(offsites)
 		var/list/timesorted_data = list()
 
 		for(var/thing in OS.received_faxes)
-			var/list/rec_fax = thing
+			var/list/rec_fax = list()
+			rec_fax += thing
 			rec_fax += "Received fax from"
-			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
+			BINARY_INSERT_DEFINE(list(rec_fax), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		for(var/thing in OS.sent_faxes)
-			var/list/sent_fax = thing
-			var/weakref/paper_ref = sent_fax[2]
+			var/list/sent_fax = list()
+			sent_fax += thing
 			sent_fax += "Sent fax to"
-			sent_fax[2] = paper_ref?.resolve()
-			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
+			BINARY_INSERT_DEFINE(list(sent_fax), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		for(var/thing in OS.received_messages)
-			var/list/received_message = thing
+			var/list/received_message = list()
+			received_message += thing
 			received_message += "Received message from"
-			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
+			BINARY_INSERT_DEFINE(list(received_message), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		for(var/thing in OS.sent_messages)
-			var/list/sent_message = thing
+			var/list/sent_message = list()
+			sent_message += thing
 			sent_message += "Sent message to"
-			BINARY_INSERT_DEFINE(thing, timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_VALUE)
+			BINARY_INSERT_DEFINE(list(sent_message), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		data["offsites"] += list(list(OS.name, OS.type, timesorted_data))
 
@@ -70,14 +73,53 @@ SUBSYSTEM_DEF(offsites)
 	if(..())
 		return
 
+	var/mob/admin = usr
 	switch(action)
 		if("send_fax")
-			var/datum/offsite/cur_os = offsites[params["id"]]
+			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
 			cur_os.send_fax() // TODO
 		if("send_msg")
-			var/datum/offsite/cur_os = offsites[params["id"]]
-			cur_os.send_message(usr)
+			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
+			cur_os.send_message(admin)
+		if("read_fax")
+			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
+			var/fax_type = params["fax_type"]
+			var/fax_time = text2num(params["fax"])
 
+			var/obj/item/fax
+			if(findtext(fax_type, "Sent fax"))
+				for(var/F in cur_os.sent_faxes)
+					if(F[1] == fax_time)
+						var/weakref/faxRef = F[2]
+						fax = faxRef?.resolve()
+						break
+			else
+				for(var/F in cur_os.received_faxes)
+					if(F[1] == fax_time)
+						fax = F[2]
+						break
+			if(isnull(fax))
+				to_chat(admin, SPAN_WARNING("The fax you're trying to view has been deleted!"))
+
+			if (istype(fax, /obj/item/paper))
+				var/obj/item/paper/P = fax
+				P.show_content(admin, TRUE)
+			else if (istype(fax, /obj/item/photo))
+				var/obj/item/photo/H = fax
+				H.show(admin)
+			else if (istype(fax, /obj/item/paper_bundle))
+				//having multiple people turning pages on a paper_bundle can cause issues
+				//open a browse window listing the contents instead
+				var/data = ""
+				var/obj/item/paper_bundle/B = fax
+
+				for (var/page = 1, page <= B.pages.len, page++)
+					var/obj/pageobj = B.pages[page]
+					data += "<A href='?_src_=holder;AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
+
+				show_browser(admin, data, "window=[B.name]")
+			else
+				to_chat(admin, SPAN_WARNING("The faxed item is not viewable. This is probably a bug, and should be reported on the tracker. Fax type: [fax ? fax.type : "null"]"))
 
 /datum/controller/subsystem/offsites/tgui_state(mob/user)
 	return GLOB.admin_tgui_state
@@ -132,7 +174,7 @@ SUBSYSTEM_DEF(offsites)
 							t = paper_copy.parsepencode(t) // Encode everything from pencode to html
 
 							if(paper_copy.fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
-								to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
+								to_chat(sender, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
 								paper_copy.fields = old_fields_value
 								continue
 

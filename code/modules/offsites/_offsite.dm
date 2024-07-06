@@ -18,8 +18,8 @@
 // TODO: use alerts to notify admins
 
 /datum/offsite/proc/receive_fax(obj/item/ref, origin_department = "Unknown", mob/sender)
-	received_faxes += list(world.time, ref, origin_department)
-	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [uppertext(name)] FROM [origin_department] BY [key_name(sender, 1)] [ADMIN_FULLMONTY(sender)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>")
+	received_faxes += list(list(world.time, ref, origin_department, key_name(sender)))
+	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [uppertext(name)] FROM [origin_department] BY [key_name(sender, 1)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>, <a href='?src=\ref[src];send_message=\ref[sender]'>Reply with Message</a>")
 
 	for(var/client/C in GLOB.admins)
 		if(R_MOD & C.holder.rights)
@@ -46,12 +46,12 @@
 	P.destinations = get_fax_machines_by_department(department)
 	P.adminbrowse()
 
-	sent_faxes += list(world.time, weakref(P), department)
+	sent_faxes += list(list(world.time, weakref(P), department, key_name(admin)))
 
 	log_admin("[admin] sent a fax to [department].")
 
 /datum/offsite/proc/receive_message(message, mob/sender)
-	received_messages += list(world.time, message, sender)
+	received_messages += list(list(world.time, message, null, key_name(sender)))
 
 	var/adjusted_message = SPAN_NOTICE("<b><font color=orange>MESSAGE TO [uppertext(name)] FROM [key_name(sender, 1)] [ADMIN_FULLMONTY(sender)] <a href='?src=\ref[src];send_message=\ref[sender]'>Reply</a></b></font>: [message]")
 
@@ -73,7 +73,7 @@
 	if(recipient.can_centcom_reply())
 		var/message = tgui_input_text(admin, message = "Enter a message to be sent to the recipient.", title = "Message Input", multiline = TRUE)
 
-		sent_messages += list(world.time, message, recipient)
+		sent_messages += list(list(world.time, message, null, key_name(recipient)))
 
 		log_admin("[admin] sent a message to [key_name(recipient)]: \"[message]\".")
 

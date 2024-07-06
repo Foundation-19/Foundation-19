@@ -1,6 +1,6 @@
 import { Window } from '../layouts';
 import { useBackend, useLocalState } from '../backend';
-import { Section, Button, Tabs } from '../components';
+import { Section, Button, Tabs, Flex, Collapsible, Box } from '../components';
 
 export const OffsitePanel = (props, context) => {
   const { act, data } = useBackend(context);
@@ -39,8 +39,9 @@ export const OffsitePanel = (props, context) => {
   );
 };
 
-const OffsitePage = (current_offsite_data = [], context) => {
+const OffsitePage = (props, context) => {
   const { act, data } = useBackend(context);
+  const current_offsite_data = props.current_offsite_data || [];
   const name = current_offsite_data[0];
   const type = current_offsite_data[1];
   const comms_data = current_offsite_data[2];
@@ -48,18 +49,28 @@ const OffsitePage = (current_offsite_data = [], context) => {
   return (
     <Section>
       <h1>{name}</h1>
-      {comms_data &&
-        comms_data.map((c_data = [], i) => {
-          return (
-            <Button key={i}>
-              {c_data[3]} {c_data[2]} at world time {c_data[0]}.
-            </Button>
-          );
-        })}
-      <Button onClick={() => act('send_fax', { id: type })}>Send fax</Button>
-      <Button onClick={() => act('send_msg', { id: type })}>
-        Send message
-      </Button>
+      <Flex direction="column-reverse">
+        {comms_data &&
+          comms_data.map((c_data = [], i) => {
+            return (
+              <Flex.Item>
+                {c_data[4]} {c_data[3]} {c_data[2] ? "(department: " + c_data[2] + " " : ""}at world time {c_data[0]}
+                <Box ml={2}>
+                  {(c_data[4].indexOf("fax") > -1)
+                    ? <Button onClick={() => act('read_fax', { id: type, fax: c_data[0], fax_type: c_data[4] })}>Read</Button>
+                    : <Collapsible title="Message Contents">{c_data[1]}</Collapsible>
+                  }
+                </Box>
+              </Flex.Item>
+            );
+          })}
+      </Flex>
+      <Box mt={2}>
+        <Button onClick={() => act('send_fax', { id: type })}>Send fax</Button>
+        <Button onClick={() => act('send_msg', { id: type })}>
+          Send message
+        </Button>
+      </Box>
     </Section>
   );
 };
