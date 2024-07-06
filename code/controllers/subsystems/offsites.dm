@@ -8,6 +8,9 @@ SUBSYSTEM_DEF(offsites)
 	/// Associative list. Key is the offsite type, value is the offsite ref
 	var/list/offsites = list()
 
+	/// Associative list. Key is the offsite name, value is the offsite ref
+	var/list/offsites_by_name = list()
+
 /datum/controller/subsystem/offsites/Initialize(timeofday)
 	initialize_offsites()
 	return ..()
@@ -20,6 +23,7 @@ SUBSYSTEM_DEF(offsites)
 
 		var/datum/offsite/ref = new type
 		offsites[type] = ref
+		offsites_by_name[ref.name] = ref
 
 /datum/controller/subsystem/offsites/tgui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -96,3 +100,69 @@ SUBSYSTEM_DEF(offsites)
 
 	var/datum/offsite/os = SSoffsites.offsites[offsite_type]
 	os.receive_message(msg, sender)
+
+/proc/fax_offsite(obj/item/rcvdcopy, mob/sender, offsite_type, department)
+	var/datum/offsite/os = SSoffsites.offsites[offsite_type]
+	if(!os)
+		// we can still forward to other fax machines with the dept tag
+		return TRUE
+
+	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
+	if(intercepters.len)
+		for(var/thing in intercepters)
+			var/mob/living/silicon/ai/ai = thing
+
+			if(tgui_alert(ai, "Outgoing fax from [department] to [os.name]!", "Fax intercepted", list("Intercept", "Allow"), timeout = 30 SECONDS) == "Intercept")
+
+				if(istype(rcvdcopy, /obj/item/paper))
+					var/obj/item/paper/paper_copy = rcvdcopy
+					paper_copy.show_content(ai, TRUE)
+					var/action = tgui_alert(ai, "Modify, block, or allow fax?", "Choose action", list("Modify", "Block", "Allow"))
+
+					switch(action)
+						if("Modify")
+							var/t =  sanitize(input(ai, "Enter what you want to write:", "Write", html2pencode(paper_copy.info), null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
+
+							if(!t)
+								continue
+
+							var/old_fields_value = paper_copy.fields
+							paper_copy.fields = 0
+							t = replacetext(t, "\n", "<BR>")
+							t = paper_copy.parsepencode(t) // Encode everything from pencode to html
+
+							if(paper_copy.fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
+								to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
+								paper_copy.fields = old_fields_value
+								continue
+
+							paper_copy.info = t // set the file to the new text
+							paper_copy.updateinfolinks()
+
+							//manualy set freespace
+							paper_copy.free_space = MAX_PAPER_MESSAGE_LEN - length(strip_html_properly(t))
+							paper_copy.update_icon()
+
+						if("Block")
+							paper_copy = null
+							QDEL_NULL(rcvdcopy)
+							return FALSE
+				else if(istype(rcvdcopy, /obj/item/photo))
+					var/obj/item/photo/photo_copy = rcvdcopy
+					photo_copy.show(ai)
+
+					if(tgui_alert(ai, "Block or allow fax?", "Choose action", list("Block", "Allow")) == "Block")
+						photo_copy = null
+						QDEL_NULL(rcvdcopy)
+						return FALSE
+				else // paper bundle
+					var/obj/item/paper_bundle/bundle_copy = rcvdcopy
+					bundle_copy.show_content(ai)
+
+					if(tgui_alert(ai, "Block or allow fax?", "Choose action", list("Block", "Allow")) == "Block")
+						bundle_copy = null
+						QDEL_NULL(rcvdcopy)
+						return FALSE
+
+	os.receive_fax(rcvdcopy, department, sender)
+	return TRUE

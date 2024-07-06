@@ -22,15 +22,10 @@ GLOBAL_LIST_EMPTY(admin_departments)
 /obj/machinery/photocopier/faxmachine/Initialize()
 	. = ..()
 
-	if(!length(GLOB.admin_departments))
-		if(length(GLOB.using_map?.map_admin_faxes))
-			GLOB.admin_departments = GLOB.using_map.map_admin_faxes.Copy()
-		else
-			GLOB.admin_departments = list("[station_name()] Head Office", "[station_name()] Supply")
-
 	if(!destination)
-		if(length(GLOB.admin_departments))
-			destination = GLOB.admin_departments[1]
+		var/datum/offsite/initialOffsite = SSoffsites.offsites[/datum/offsite/foundation/regional_command]
+		if(initialOffsite)
+			destination = initialOffsite.name
 		else if(length(GLOB.alldepartments))
 			destination = pick(GLOB.alldepartments)
 
@@ -50,15 +45,15 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		if(!emagged)
 			to_chat(user, SPAN_WARNING("\The [src]'s department configuration is vendor locked."))
 			return
-		var/list/option_list = GLOB.alldepartments.Copy() + GLOB.admin_departments.Copy() + "(Custom)" + "(Cancel)"
-		var/new_department = input(user, "Which department do you want to tag this fax machine as? Choose '(Custom)' to enter a custom department or '(Cancel) to cancel.", "Fax Machine Department Tag") as null|anything in option_list
-		if(!new_department || new_department == department || new_department == "(Cancel)" || !CanUseTopic(user) || !Adjacent(user))
+		var/list/option_list = GLOB.alldepartments.Copy() + "(Custom)"
+		var/new_department = tgui_input_list(user, "Which department do you want to tag this fax machine as? Choose '(Custom)' to enter a custom department.", "Fax Machine Department Tag", option_list, department)
+		if(!new_department || new_department == department || !CanUseTopic(user) || !Adjacent(user))
 			return
 		if(new_department == "(Custom)")
-			new_department = input(user, "Which department do you want to tag this fax machine as?", "Fax Machine Department Tag", department) as text|null
+			new_department = tgui_input_text(user, "Which department do you want to tag this fax machine as?", "Fax Machine Department Tag", department)
 			if(!new_department || new_department == department || !CanUseTopic(user) || !Adjacent(user))
 				return
-		if(new_department == "Unknown" || new_department == "(Custom)" || new_department == "(Cancel)")
+		if(new_department == "Unknown" || new_department == "(Custom)")
 			to_chat(user, SPAN_WARNING("Invalid department tag selected."))
 			return
 		department = new_department
@@ -122,7 +117,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 /obj/machinery/photocopier/faxmachine/OnTopic(mob/user, href_list, state)
 	if(href_list["send"])
 		if(copyitem)
-			if(destination in GLOB.admin_departments)
+			if(SSoffsites.offsites_by_name[destination])
 				send_admin_fax(user, destination)
 			else
 				sendfax(destination)
@@ -148,7 +143,13 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		return TOPIC_REFRESH
 
 	if(href_list["dept"])
-		var/desired_destination = input(user, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments + GLOB.admin_departments)
+		var/list/allTargets = list()
+		allTargets |= GLOB.alldepartments
+		for(var/D in SSoffsites.offsites_by_name)
+			if(!is_abstract(SSoffsites.offsites_by_name[D]))
+				allTargets |= D
+
+		var/desired_destination = tgui_input_list(user, "Which department?", "Choose a department", allTargets, destination)
 		if(desired_destination && CanInteract(user, state))
 			destination = desired_destination
 		return TOPIC_REFRESH
@@ -211,6 +212,10 @@ GLOBAL_LIST_EMPTY(admin_departments)
 /obj/machinery/photocopier/faxmachine/proc/send_admin_fax(mob/sender, destination)
 	if(stat & (BROKEN|NOPOWER))
 		return
+	
+	var/datum/offsite/destinationOffsite = SSoffsites.offsites_by_name[destination]
+	if(!destinationOffsite)
+		return
 
 	use_power_oneoff(200)
 
@@ -228,68 +233,11 @@ GLOBAL_LIST_EMPTY(admin_departments)
 
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
 
-	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
+	if(!fax_offsite(rcvdcopy, sender, destinationOffsite.type, department))
+		// interception!
+		visible_message("[src] beeps, \"Message transmitted successfully.\"")
+		return
 
-	// this is so fucking ghetto
-	if(intercepters.len)
-		for(var/thing in intercepters)
-			var/mob/living/silicon/ai/ai = thing
-
-			if(tgui_alert(ai, "Outgoing fax from [department] to [destination]!", "Fax intercepted", list("Intercept", "Allow"), timeout = 30 SECONDS) == "Intercept")
-
-				if(istype(rcvdcopy, /obj/item/paper))
-					var/obj/item/paper/paper_copy = rcvdcopy
-					paper_copy.show_content(ai, TRUE)
-					var/action = tgui_alert(ai, "Modify, block, or allow fax?", "Choose action", list("Modify", "Block", "Allow"))
-
-					switch(action)
-						if("Modify")
-							var/t =  sanitize(input(ai, "Enter what you want to write:", "Write", html2pencode(paper_copy.info), null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
-
-							if(!t)
-								continue
-
-							var/old_fields_value = paper_copy.fields
-							paper_copy.fields = 0
-							t = replacetext(t, "\n", "<BR>")
-							t = paper_copy.parsepencode(t) // Encode everything from pencode to html
-
-							if(paper_copy.fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
-								to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
-								paper_copy.fields = old_fields_value
-								continue
-
-							paper_copy.info = t // set the file to the new text
-							paper_copy.updateinfolinks()
-
-							//manualy set freespace
-							paper_copy.free_space = MAX_PAPER_MESSAGE_LEN - length(strip_html_properly(t))
-							paper_copy.update_icon()
-
-						if("Block")
-							paper_copy = null
-							QDEL_NULL(rcvdcopy)
-							return
-				else if(istype(rcvdcopy, /obj/item/photo))
-					var/obj/item/photo/photo_copy = rcvdcopy
-					photo_copy.show(ai)
-
-					if(tgui_alert(ai, "Block or allow fax?", "Choose action", list("Block", "Allow")) == "Block")
-						photo_copy = null
-						QDEL_NULL(rcvdcopy)
-						return
-				else // paper bundle
-					var/obj/item/paper_bundle/bundle_copy = rcvdcopy
-					bundle_copy.show_content(ai)
-
-					if(tgui_alert(ai, "Block or allow fax?", "Choose action", list("Block", "Allow")) == "Block")
-						bundle_copy = null
-						QDEL_NULL(rcvdcopy)
-						return
-
-	GLOB.adminfaxes += rcvdcopy
-
-	message_admins(sender, "[uppertext(destination)] FAX", rcvdcopy, destination)
 	send_fax_loop(copyitem, destination, department) // Forward to any listening fax machines
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
 

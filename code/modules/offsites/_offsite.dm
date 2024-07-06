@@ -17,9 +17,9 @@
 
 // TODO: use alerts to notify admins
 
-/datum/offsite/proc/recieve_fax(obj/item/ref, origin_department = "Unknown")
+/datum/offsite/proc/receive_fax(obj/item/ref, origin_department = "Unknown", mob/sender)
 	received_faxes += list(world.time, ref, origin_department)
-	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [uppertext(name)] FROM [origin_department]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>")
+	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [uppertext(name)] FROM [origin_department] BY [key_name(sender, 1)] [ADMIN_FULLMONTY(sender)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>")
 
 	for(var/client/C in GLOB.admins)
 		if(R_MOD & C.holder.rights)
@@ -63,7 +63,7 @@
 /datum/offsite/proc/send_message(client/admin, mob/living/recipient = null)
 	var/datum/admins/admin_datum = admin.holder
 
-	if (!istype(admin_datum, /datum/admins))
+	if (!istype(admin_datum))
 		to_chat(admin, "Error: you are not an admin!")
 		return
 
@@ -90,8 +90,4 @@
 	if(href_list["send_message"] && usr)
 		var/client/C = usr.client
 		if(C && C.holder)
-			// send_message already checks it, but we shouldn't rely on other procs not being changed
-			if(!istype(C.holder, /datum/admins))
-				to_chat(C, "Error: you are not an admin!")
-				return
 			send_message(C, locate(href_list["send_message"]))

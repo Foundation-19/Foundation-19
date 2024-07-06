@@ -2676,6 +2676,7 @@
 #include "code\modules\offsites\_offsite.dm"
 #include "code\modules\offsites\offsites\chaos_insurgency.dm"
 #include "code\modules\offsites\offsites\foundation.dm"
+#include "code\modules\offsites\offsites\goc.dm"
 #include "code\modules\organs\_organ_setup.dm"
 #include "code\modules\organs\blood.dm"
 #include "code\modules\organs\organ.dm"

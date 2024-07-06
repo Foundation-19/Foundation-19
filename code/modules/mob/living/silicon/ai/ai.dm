@@ -374,6 +374,9 @@ var/list/ai_verbs_default = list(
 	set category = "Silicon Commands"
 	set name = "Send Emergency Message"
 
+	var/datum/offsite/targetOffsite = SSoffsites.offsites[/datum/offsite/foundation/regional_command]
+	if(!istype(targetOffsite))
+		return
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
 	if(!is_relay_online())
@@ -382,11 +385,11 @@ var/list/ai_verbs_default = list(
 	if(emergency_message_cooldown)
 		to_chat(usr, SPAN_WARNING("Supercapacitors recharging. Please stand by."))
 		return
-	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [GLOB.using_map.boss_short] via encrypted radio frequency. Abuse may lead to decommissioning. There is a 30 second delay before you may send another message; be clear, full and concise.", "O5 Emergency Message", "To abort, enter an empty message"))
+	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [targetOffsite.name] via encrypted radio frequency. Abuse may lead to decommissioning. There is a 30 second delay before you may send another message; be clear, full and concise.", "O5 Emergency Message", "To abort, enter an empty message"))
 	if(!input)
 		return
 
-	message_offsite(input, usr, /datum/offsite/foundation/regional_command)
+	message_offsite(input, usr, targetOffsite.type)
 
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
 	log_say("[key_name_admin(usr)] has made an emergency AIC [GLOB.using_map.boss_short] announcement: [input]")

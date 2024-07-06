@@ -1,4 +1,4 @@
-/datum/offsite/foundation/site_01
+/datum/offsite/foundation
 	name = "Foundation Site-01"
 
 /datum/offsite/foundation/regional_command
