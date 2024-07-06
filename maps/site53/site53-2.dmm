@@ -16204,6 +16204,11 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/entrance_checkpoint)
 "aUQ" = (
+/obj/structure/closet,
+/obj/item/device/tape/random,
+/obj/item/device/tape/random,
+/obj/item/device/tape/random,
+/obj/item/device/tape/random,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
@@ -28185,6 +28190,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "fqQ" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
@@ -28796,6 +28804,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"fMf" = (
+/obj/structure/table/reinforced,
+/obj/item/device/flashlight/lamp,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/ulcz/scp912)
 "fME" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -43935,6 +43948,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "nZp" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/scp912)
 "nZK" = (
@@ -44035,6 +44051,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp2427_3)
+"ocr" = (
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/ulcz/scp912)
 "ocR" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -47789,6 +47810,12 @@
 /obj/structure/closet/secure_closet/logistics/specialist,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
+"qda" = (
+/obj/structure/bed/chair/office/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/ulcz/scp912)
 "qdd" = (
 /obj/structure/table/reinforced,
 /obj/item/device/taperecorder,
@@ -57603,6 +57630,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "vyU" = (
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/ulcz/scp912)
 "vzw" = (
@@ -60186,9 +60214,8 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/office)
 "wVy" = (
-/obj/effect/floor_decal/industrial/outline{
-	color = "#C40000"
-	},
+/obj/structure/table/reinforced,
+/obj/item/device/taperecorder,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp912)
 "wVB" = (
@@ -61506,6 +61533,12 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/lhcz/hczguardgear)
+"xHU" = (
+/obj/structure/bed/chair/office{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/ulcz/scp912)
 "xIn" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -75816,7 +75849,7 @@ xfK
 mql
 umo
 aUQ
-nZp
+ocr
 vyU
 aWv
 aWB
@@ -76330,7 +76363,7 @@ pFz
 gCC
 rSc
 gjx
-mTx
+qda
 gjx
 aWv
 aWD
@@ -76586,7 +76619,7 @@ brw
 hoz
 gyK
 rSc
-gjx
+fMf
 wVy
 gjx
 aWv
@@ -76844,7 +76877,7 @@ dma
 bSf
 rSc
 gjx
-mTx
+xHU
 gjx
 umo
 azA

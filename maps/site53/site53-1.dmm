@@ -6665,7 +6665,8 @@
 	dir = 1;
 	name = "Secure Containment turret control panel";
 	req_access = list("ACCESS_SECURITY_LEVEL4");
-	pixel_y = 2
+	pixel_y = 2;
+	ailock = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
