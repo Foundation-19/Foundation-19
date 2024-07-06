@@ -300,6 +300,22 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
+"aV" = (
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/structure/closet{
+	icon_closed = "black";
+	icon_state = "black";
+	name = "Prisoner locker"
+	},
+/obj/item/clothing/under/scp/eclass,
+/obj/item/clothing/shoes/workboots,
+/obj/item/card/id/classd,
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "EZ Security Center Confinement Preperation"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "aY" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
@@ -316,14 +332,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
-"bd" = (
-/obj/effect/floor_decal/corner/red/border,
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center North Hall";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/equipmentroom)
 "bl" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/photocopier{
@@ -491,8 +499,8 @@
 	pixel_x = 28
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Agent Locker Room";
-	dir = 8
+	dir = 8;
+	c_tag = "EZ Security Center Agent Locker Room"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
@@ -531,7 +539,7 @@
 "cd" = (
 /obj/machinery/camera/network/entrance{
 	dir = 1;
-	department = "Administration Director of Research's Office"
+	c_tag = "Administration Director of Research's Office"
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -644,11 +652,29 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
+"cs" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "EZ Security Center Hub South"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "ct" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/wood/mahogany,
+/area/site53/uez/hallway)
+"cu" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Administration Upper Command Hall North"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
 "cv" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -955,7 +981,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center External Hall"
+	c_tag = "EZ Security Center External Hall"
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
@@ -1377,8 +1403,8 @@
 	pixel_y = -32
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Internal Tribunal Office";
-	dir = 1
+	dir = 1;
+	c_tag = "EZ Security Center Internal Tribunal Office"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/internaltribunal)
@@ -1671,12 +1697,6 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/commandpanicbunker)
-"fT" = (
-/obj/machinery/camera/network/entrance{
-	department = "Administration Site Director's External Office"
-	},
-/turf/simulated/floor/wood/mahogany,
-/area/site53/uez/hallway)
 "fU" = (
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/structure/cable/green{
@@ -1692,13 +1712,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
-"fW" = (
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Confinement Control Room";
-	dir = 1
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/uez/equipmentroom)
 "ga" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
@@ -1781,7 +1794,7 @@
 "gq" = (
 /obj/machinery/camera/network/entrance{
 	dir = 1;
-	department = "Administration Director of Medical's Office"
+	c_tag = "Administration Director of Medical's Office"
 	},
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/hallway)
@@ -1860,7 +1873,7 @@
 "gz" = (
 /obj/machinery/camera/network/entrance{
 	dir = 1;
-	department = "Administration Director of Engineering's Office"
+	c_tag = "Administration Director of Engineering's Office"
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
@@ -3328,8 +3341,8 @@
 /obj/item/ammo_magazine/box/a9mm,
 /obj/effect/floor_decal/corner/red/mono,
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Armory";
-	dir = 4
+	dir = 4;
+	c_tag = "EZ Security Center Armory"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
@@ -3374,22 +3387,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/uez/commandpanicbunker)
-"ls" = (
-/obj/effect/floor_decal/scp/arrow{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/obj/machinery/camera/network/entrance{
-	department = "Administration Site Manager's Line";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/uez/hallway)
 "lv" = (
 /obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/simple/visible/green{
@@ -3397,6 +3394,14 @@
 	},
 /turf/simulated/floor,
 /area/site53/engineering/atmosext)
+"lx" = (
+/obj/effect/floor_decal/corner/blue/border,
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "Administration Bunker Access Hall"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/hallway)
 "lz" = (
 /obj/structure/railing/mapped{
 	dir = 10
@@ -3416,16 +3421,6 @@
 /obj/item/card/id/classd,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
-"lB" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/obj/machinery/camera/network/entrance{
-	dir = 8;
-	department = "Administration Checkpoint Exit"
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/uez/hallway)
 "lC" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -3544,6 +3539,14 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
+"ma" = (
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Administration Site Manager's Office"
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/uez/hallway)
 "mb" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/wood/mahogany,
@@ -3619,6 +3622,21 @@
 /obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
+"mp" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 4;
+	c_tag = "Administration Upper Command Hall South"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/hallway)
 "mr" = (
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/structure/closet{
@@ -3676,6 +3694,22 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
+"mH" = (
+/obj/effect/floor_decal/scp/arrow{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Administration Site Manager's Line"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/hallway)
 "mJ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -3790,18 +3824,6 @@
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
-"no" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 9
-	},
-/obj/machinery/camera/network/entrance{
-	department = "Administration Control Room Northwest";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 8
-	},
-/area/site53/uez/hallway)
 "nq" = (
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 4
@@ -4069,6 +4091,17 @@
 /obj/effect/floor_decal/corner/grey/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"oR" = (
+/obj/effect/floor_decal/corner/blue/border,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "Administration Directorate Offices East"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/hallway)
 "oS" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -4147,8 +4180,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Hub North";
-	dir = 8
+	dir = 8;
+	c_tag = "EZ Security Center Hub North"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
@@ -4166,8 +4199,8 @@
 	pixel_y = -32
 	},
 /obj/machinery/camera/network/entrance{
-	department = "Administration Site Director's Quarters";
-	dir = 1
+	dir = 1;
+	c_tag = "Administration Site Director's Quarters"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -4208,6 +4241,16 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/yew,
+/area/site53/uez/hallway)
+"pE" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Administration Checkpoint Exit"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
 "pI" = (
 /obj/machinery/light,
@@ -4420,18 +4463,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
-"qx" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 6
-	},
-/obj/machinery/camera/network/entrance{
-	dir = 8;
-	department = "Administration Checkpoint Entrance"
-	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 1
-	},
-/area/site53/uez/hallway)
 "qz" = (
 /obj/machinery/light{
 	dir = 4
@@ -4454,7 +4485,7 @@
 	},
 /obj/machinery/camera/network/entrance{
 	dir = 1;
-	department = "Administration Directorate Offices East"
+	c_tag = "Administration Directorate Offices West"
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/hallway)
@@ -4612,17 +4643,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
-"ry" = (
-/obj/effect/floor_decal/corner/blue/border,
-/obj/machinery/status_display{
-	pixel_y = -32
-	},
-/obj/machinery/camera/network/entrance{
-	dir = 1;
-	department = "Administration Directorate Offices West"
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/hallway)
 "rz" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -5109,6 +5129,16 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"tU" = (
+/obj/structure/bed/chair/padded{
+	dir = 1
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "EZ Security Center Interrogation"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/uez/equipmentroom)
 "tX" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5200,6 +5230,15 @@
 "us" = (
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/commandpanicbunker)
+"uv" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "EZ Security Center North Hall West"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "ux" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -5343,6 +5382,18 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"uY" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 4;
+	c_tag = "Administration Control Room Northwest"
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/uez/hallway)
 "uZ" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/carpet/purple,
@@ -5483,18 +5534,6 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
-"vN" = (
-/obj/structure/closet/secure_closet{
-	name = "secure evidence locker";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/red/mono,
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Evidence Storage";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/entrancezone/forensics)
 "vO" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
@@ -5629,12 +5668,6 @@
 /obj/machinery/computer/rcon,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
-"wy" = (
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Senior Agent Office #2"
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/uez/equipmentroom)
 "wz" = (
 /obj/machinery/light{
 	dir = 4
@@ -5672,7 +5705,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Zone Supervisor's Office"
+	c_tag = "EZ Security Center Zone Supervisor's Office"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/senioragentoffice)
@@ -5761,6 +5794,16 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"xb" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 10
+	},
+/obj/machinery/camera/network/entrance{
+	department = "EZ Security Center Confinement Checkpoint";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/uez/equipmentroom)
 "xe" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -5851,16 +5894,6 @@
 	dir = 1
 	},
 /area/site53/uez/armory)
-"xE" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center South Hall";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/uez/equipmentroom)
 "xI" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 8
@@ -5902,13 +5935,6 @@
 	dir = 8
 	},
 /area/site53/uez/hallway)
-"xU" = (
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Senior Agent Office #1";
-	dir = 1
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/uez/equipmentroom)
 "ya" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Site Director's Office";
@@ -6155,6 +6181,15 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
+"zn" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/machinery/camera/network/entrance{
+	c_tag = "EZ Security Center Confinement"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "zq" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#2B0F42"
@@ -6268,8 +6303,8 @@
 	},
 /obj/effect/floor_decal/corner/red/mono,
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Probationary Cadet Locker Room";
-	dir = 1
+	dir = 1;
+	c_tag = "EZ Security Center Probationary Cadet Locker Room"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
@@ -6347,21 +6382,12 @@
 /obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
-"Ae" = (
-/obj/effect/floor_decal/corner/grey/mono,
-/obj/structure/closet{
-	icon_closed = "black";
-	icon_state = "black";
-	name = "Prisoner locker"
-	},
-/obj/item/clothing/under/scp/eclass,
-/obj/item/clothing/shoes/workboots,
-/obj/item/card/id/classd,
+"Ab" = (
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Confinement Preperation";
-	dir = 1
+	dir = 1;
+	c_tag = "EZ Security Center Senior Agent Office #1"
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "Af" = (
 /obj/effect/floor_decal/corner/orange/half,
@@ -6382,14 +6408,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
-"Ao" = (
-/obj/effect/floor_decal/corner/blue/border,
-/obj/machinery/camera/network/entrance{
-	department = "Administration Bunker Access Hall";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/hallway)
 "Ap" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/machinery/chemical_dispenser/bar_alc/full{
@@ -6546,18 +6564,6 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
-"AX" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 6
-	},
-/obj/machinery/camera/network/entrance{
-	department = "Administration Control Room Southeast";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 1
-	},
-/area/site53/uez/hallway)
 "AY" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -6712,6 +6718,18 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
+"BP" = (
+/obj/structure/closet/secure_closet{
+	name = "secure evidence locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/corner/red/mono,
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "EZ Security Center Evidence Storage"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/entrancezone/forensics)
 "BV" = (
 /obj/machinery/requests_console{
 	department = "Guard Commander";
@@ -6720,8 +6738,8 @@
 	name = "Guard Commander Requests Console"
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Guard Commander's Office";
-	dir = 8
+	dir = 8;
+	c_tag = "EZ Security Center Guard Commander's Office"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/equipmentroom)
@@ -6912,16 +6930,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/commandpanicbunker)
-"CP" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center North Hall East";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/uez/equipmentroom)
 "CR" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_titanium,
@@ -7021,6 +7029,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"Dq" = (
+/obj/machinery/camera/network/entrance{
+	c_tag = "EZ Security Center Senior Agent Office #2"
+	},
+/turf/simulated/floor/carpet/red,
+/area/site53/uez/equipmentroom)
 "Ds" = (
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 8
@@ -7064,6 +7078,15 @@
 /obj/item/folder/blue,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
+"Dy" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/light,
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "EZ Security Center North Hall"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "DA" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -7222,7 +7245,7 @@
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/chair/sofa/corp/right,
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Entrance"
+	c_tag = "EZ Security Center Entrance"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
@@ -7382,6 +7405,18 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/commandpanicbunker)
+"Fm" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Administration Control Room Northeast"
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/uez/hallway)
 "Fn" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -7434,8 +7469,8 @@
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Forensics Lab";
-	dir = 1
+	dir = 1;
+	c_tag = "EZ Security Center Forensics Lab"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
@@ -7580,7 +7615,7 @@
 	pixel_y = 31
 	},
 /obj/machinery/camera/network/entrance{
-	department = "Administration Site Director's Office"
+	c_tag = "Administration Site Director's Office"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -7900,13 +7935,15 @@
 	},
 /area/site53/uez/equipmentroom)
 "HH" = (
-/obj/effect/floor_decal/corner/red/border,
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Hub South";
-	dir = 1
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
 	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/equipmentroom)
+/obj/machinery/camera/network/entrance{
+	dir = 4;
+	c_tag = "Administration Control Room Southwest"
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/uez/hallway)
 "HI" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -8083,7 +8120,7 @@
 	},
 /obj/machinery/camera/network/entrance{
 	dir = 8;
-	department = "Administration Checkpoint Office"
+	c_tag = "Administration Checkpoint Office"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -8189,21 +8226,6 @@
 	dir = 8
 	},
 /area/site53/uez/armory)
-"Jf" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/entrance{
-	department = "Administration Upper Command Hall South";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/uez/hallway)
 "Jg" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
@@ -8241,6 +8263,12 @@
 "Jq" = (
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/wood/ebony,
+/area/site53/uez/hallway)
+"Jr" = (
+/obj/machinery/camera/network/entrance{
+	c_tag = "Administration Site Director's External Office"
+	},
+/turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "Js" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
@@ -8629,7 +8657,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Checkpoint Office"
+	c_tag = "EZ Security Center Checkpoint Office"
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
@@ -8761,7 +8789,7 @@
 	},
 /obj/machinery/camera/network/entrance{
 	dir = 4;
-	department = "Administration Upper Command Security Post"
+	c_tag = "Administration Upper Command Security Post"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
@@ -8976,14 +9004,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
-"Nk" = (
-/obj/effect/floor_decal/corner/grey/border,
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Confinement Hall";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/equipmentroom)
 "Nm" = (
 /obj/effect/floor_decal/corner/blue/bordercee{
 	dir = 4
@@ -9089,15 +9109,6 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
-"NN" = (
-/obj/effect/floor_decal/corner/grey/border{
-	dir = 1
-	},
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Confinement"
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/equipmentroom)
 "NR" = (
 /obj/structure/bed/chair/office/comfy/red{
 	dir = 8
@@ -9301,6 +9312,18 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
+"Pc" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Administration Control Room Southeast"
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/uez/hallway)
 "Pf" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -9314,7 +9337,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner,
 /obj/machinery/camera/network/entrance{
 	dir = 8;
-	department = "Administration Central"
+	c_tag = "Administration Central"
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -9573,16 +9596,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
-"PX" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/obj/machinery/camera/network/entrance{
-	department = "Administration Upper Command Hall North";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site53/uez/hallway)
 "PY" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -9613,18 +9626,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
-"Qj" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 5
-	},
-/obj/machinery/camera/network/entrance{
-	department = "Administration Control Room Northeast";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 4
-	},
-/area/site53/uez/hallway)
 "Qp" = (
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -9906,6 +9907,21 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/commandpanicbunker)
+"RD" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "EZ Security Center Checkpoint"
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/uez/equipmentroom)
 "RE" = (
 /obj/machinery/camera/network/entrance{
 	dir = 4
@@ -9947,16 +9963,6 @@
 "RL" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/commandpanicbunker)
-"RM" = (
-/obj/effect/floor_decal/corner/grey/border{
-	dir = 10
-	},
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Confinement Checkpoint";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/corner,
-/area/site53/uez/equipmentroom)
 "RT" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -9988,8 +9994,8 @@
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Interrogation Observation";
-	dir = 1
+	dir = 1;
+	c_tag = "EZ Security Center Interrogation Observation"
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uez/equipmentroom)
@@ -10020,16 +10026,6 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
-"Si" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 10
-	},
-/obj/machinery/camera/network/entrance{
-	department = "Administration Control Room Southwest";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/corner,
-/area/site53/uez/hallway)
 "Sn" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -10078,6 +10074,13 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
+"SA" = (
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "EZ Security Center Confinement Control Room"
+	},
+/turf/simulated/floor/carpet/red,
+/area/site53/uez/equipmentroom)
 "SB" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -10184,14 +10187,6 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
-"Ta" = (
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/machinery/camera/network/entrance{
-	department = "Administration Site Manager's Office";
-	dir = 8
-	},
-/turf/simulated/floor/wood/mahogany,
-/area/site53/uez/hallway)
 "Tb" = (
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -10292,21 +10287,6 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/uez/equipmentroom)
-"Tx" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 10
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Checkpoint";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/equipmentroom)
 "Tz" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -10476,6 +10456,13 @@
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
+/area/site53/uez/equipmentroom)
+"Uy" = (
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "EZ Security Center RAISA's Office"
+	},
+/turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "Uz" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
@@ -10698,6 +10685,21 @@
 	dir = 1
 	},
 /area/site53/uez/equipmentroom)
+"Vz" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 4;
+	c_tag = "Administration Checkpoint"
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/uez/hallway)
 "VA" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -10738,6 +10740,14 @@
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/senioragentoffice)
+"VN" = (
+/obj/effect/floor_decal/corner/grey/border,
+/obj/machinery/camera/network/entrance{
+	dir = 1;
+	c_tag = "EZ Security Center Confinement Hall"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "VO" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	name = "ITD Rep's Office"
@@ -10811,6 +10821,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/commstower)
+"Wl" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "Administration Checkpoint Entrance"
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/uez/hallway)
 "Wm" = (
 /obj/machinery/light{
 	dir = 4
@@ -10978,6 +11000,16 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
+"Xf" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "EZ Security Center North Hall East"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/equipmentroom)
 "Xq" = (
 /obj/item/storage/box/gloves{
 	pixel_y = 6
@@ -11065,21 +11097,6 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
-"XH" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 10
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/entrance{
-	dir = 4;
-	department = "Administration Checkpoint"
-	},
-/turf/simulated/floor/tiled/dark/corner,
-/area/site53/uez/hallway)
 "XN" = (
 /obj/machinery/atmospherics/unary/vent_pump/siphon/on,
 /obj/structure/railing/mapped{
@@ -11103,13 +11120,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
-"XU" = (
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center RAISA's Office";
-	dir = 8
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/uez/equipmentroom)
 "XV" = (
 /obj/effect/catwalk_plated/dark,
 /obj/item/stack/material/tritium/fifty,
@@ -11212,15 +11222,6 @@
 	},
 /turf/simulated/floor/grass,
 /area/site53/uez/hallway)
-"Yk" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center North Hall West"
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/equipmentroom)
 "Yl" = (
 /obj/machinery/door/airlock/command{
 	name = "Upper Command Evacuation Tunnel";
@@ -11526,6 +11527,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
+"Zz" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8;
+	c_tag = "EZ Security Center South Hall"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/equipmentroom)
 "ZA" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -11538,16 +11549,6 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/commandpanicbunker)
-"ZB" = (
-/obj/structure/bed/chair/padded{
-	dir = 1
-	},
-/obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Interrogation";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/uez/equipmentroom)
 "ZC" = (
 /obj/structure/filingcabinet{
 	pixel_x = -10
@@ -39201,7 +39202,7 @@ hk
 SP
 Ue
 de
-Ao
+lx
 SP
 SP
 Sa
@@ -40492,7 +40493,7 @@ hk
 SP
 Rp
 Ue
-ry
+qC
 SP
 SP
 SP
@@ -42034,7 +42035,7 @@ hk
 SP
 dJ
 Ue
-qC
+oR
 SP
 SP
 SP
@@ -43305,7 +43306,7 @@ aw
 SP
 Sa
 SP
-fT
+Jr
 ci
 ci
 vj
@@ -43546,7 +43547,7 @@ eC
 To
 aw
 QC
-no
+uY
 Zh
 ep
 ep
@@ -43556,7 +43557,7 @@ ep
 ep
 ep
 Ds
-Si
+HH
 SP
 aw
 SP
@@ -44597,7 +44598,7 @@ Hf
 DA
 DA
 DA
-Jf
+mp
 jl
 Zw
 ml
@@ -44615,7 +44616,7 @@ yJ
 Az
 vK
 py
-XH
+Vz
 gg
 ll
 Rb
@@ -44847,7 +44848,7 @@ Hq
 xy
 aT
 uk
-PX
+cu
 oY
 uk
 uk
@@ -44867,7 +44868,7 @@ ep
 LN
 Dv
 rd
-lB
+pE
 Rf
 AK
 rd
@@ -44876,7 +44877,7 @@ Rf
 Co
 Tl
 Yp
-qx
+Wl
 ep
 ep
 SP
@@ -45368,7 +45369,7 @@ QO
 QO
 QO
 QO
-ls
+mH
 KE
 SP
 SP
@@ -45859,7 +45860,7 @@ To
 eC
 aw
 QC
-Qj
+Fm
 Es
 ep
 ep
@@ -45869,7 +45870,7 @@ ep
 ep
 ep
 UL
-AX
+Pc
 SP
 aM
 SP
@@ -46649,7 +46650,7 @@ ci
 ci
 ci
 ct
-Ta
+ma
 Mh
 Uk
 dx
@@ -47439,7 +47440,7 @@ YK
 cp
 Gs
 LW
-Yk
+uv
 VF
 gk
 uP
@@ -47945,7 +47946,7 @@ wS
 uz
 Tp
 Nn
-Tx
+RD
 uP
 gE
 sy
@@ -48225,13 +48226,13 @@ VF
 VF
 VF
 in
-HH
+cs
 uP
 mo
 LM
-xU
+Ab
 uP
-wy
+Dq
 ey
 Tf
 uP
@@ -48720,7 +48721,7 @@ Kq
 uP
 ZO
 wS
-XU
+Uy
 Ps
 da
 OE
@@ -49240,7 +49241,7 @@ gT
 pJ
 ga
 dM
-gk
+Dy
 uP
 bQ
 VF
@@ -49514,7 +49515,7 @@ Ah
 YO
 dD
 qw
-xE
+Zz
 Iy
 hn
 qw
@@ -50011,7 +50012,7 @@ Fx
 CR
 Vp
 VF
-bd
+Ah
 uP
 uP
 uP
@@ -50541,7 +50542,7 @@ VP
 vU
 YG
 Gn
-vN
+BP
 YG
 Pl
 gF
@@ -50787,7 +50788,7 @@ pg
 Bd
 LX
 xn
-Ae
+aV
 uP
 uP
 vU
@@ -51295,7 +51296,7 @@ Mp
 QA
 sr
 tO
-CP
+Xf
 AN
 uP
 As
@@ -51810,7 +51811,7 @@ hU
 HE
 cj
 jD
-RM
+xb
 ej
 cj
 Rd
@@ -52830,7 +52831,7 @@ uL
 Xa
 zt
 uP
-NN
+zn
 VF
 VF
 VF
@@ -52842,7 +52843,7 @@ xr
 uP
 Bd
 VF
-Nk
+VN
 uP
 YW
 YW
@@ -53103,7 +53104,7 @@ xn
 Lo
 Wy
 bI
-ZB
+tU
 uP
 hk
 hk
@@ -53352,7 +53353,7 @@ xn
 SH
 hj
 wz
-fW
+SA
 uP
 cY
 Qi
