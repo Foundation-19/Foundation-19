@@ -5349,6 +5349,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/keycard_auth{
+	pixel_y = 28;
+	req_access = list("ACCESS_KEYCARD_AUTH")
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "vK" = (
@@ -39210,7 +39214,7 @@ jO
 jO
 jO
 aY
-Np
+yM
 Np
 kN
 Cq

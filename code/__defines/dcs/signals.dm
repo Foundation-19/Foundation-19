@@ -174,6 +174,9 @@
 /// A mob has just equipped an item. Called on [/mob] from base of [/obj/item/equipped()]: (mob/equipper, obj/item/equipped_item, slot)
 #define COMSIG_MOB_EQUIPPED_ITEM "mob_equipped_item"
 
+/// Called on `/client` after `/datum/preferences/setup` has completed with prefs datum as argument.
+#define COMSIG_CLIENT_PREFS_LOADED "client_prefs_loaded"
+
 /*
 *	Atom
 */
