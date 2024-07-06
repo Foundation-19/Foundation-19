@@ -4669,7 +4669,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "selfdestruct";
 	pixel_y = 24;
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 8
@@ -28052,7 +28052,7 @@
 	dir = 1;
 	id_tag = "selfdestruct";
 	pixel_y = -23;
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_KEYCARD_AUTH")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/uppernukeladders)
