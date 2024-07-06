@@ -38,9 +38,7 @@
 	var/heartbeat = 0
 	var/stamina = 100
 	var/max_stamina = 100
-	var/atom/movable/screen/fov/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
-	var/atom/movable/screen/fov_mask/fov_mask
-	var/usefov = 1
+	usefov = 1
 
 /mob/living/carbon/human/Life()
 	set invisibility = 0
