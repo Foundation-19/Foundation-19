@@ -3406,7 +3406,7 @@
 "dsS" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/black/diagonal,
-/obj/item/clothing/suit/chef/classic,
+/obj/item/clothing/suit/chef,
 /obj/item/clothing/head/chefhat,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
@@ -8258,6 +8258,7 @@
 	name = "trash bin"
 	},
 /obj/effect/floor_decal/corner/black/diagonal,
+/obj/item/clothing/suit/chef/classic,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/kitchen)
 "ilE" = (
@@ -12171,7 +12172,8 @@
 /obj/item/organ/internal/lungs,
 /obj/structure/closet/secure_closet/freezer{
 	icon = 'icons/obj/closets/fridge.dmi';
-	name = "Secure Freezer"
+	name = "Secure Freezer";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /obj/item/organ/internal/eyes,
 /obj/item/organ/internal/eyes,
@@ -14230,7 +14232,7 @@
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_DCLASS_MEDICAL"))
 	},
 /obj/machinery/holosign/surgery{
-	dir = 4;
+	dir = 8;
 	id_tag = "surgcdccdsign"
 	},
 /turf/simulated/floor/tiled/dark/small,
