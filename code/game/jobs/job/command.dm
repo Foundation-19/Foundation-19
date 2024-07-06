@@ -212,7 +212,7 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/civ/o5rep
+	outfit_type = /decl/hierarchy/outfit/job/civ/ethics
 	requirements = list(EXP_TYPE_BUR = 300)
 	class = CLASS_B
 	hud_icon = "hud05rep"
