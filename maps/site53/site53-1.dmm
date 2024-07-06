@@ -789,10 +789,9 @@
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/scp8containment)
 "aQl" = (
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	dir = 8;
-	c_tag = "SCP-049 Garden"
+/obj/machinery/camera/network/scp049{
+	c_tag = "SCP-049 Garden";
+	dir = 8
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/lhcz/scp049containment)
@@ -955,11 +954,6 @@
 "aYR" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	c_tag = "SCP-049 Kitchen";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
 "aZm" = (
@@ -4072,10 +4066,9 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
+/obj/machinery/camera/network/scp049{
 	dir = 8;
-	c_tag = "SCP-049 Security Office"
+	c_tag = "SCP-049 Checkpoint Security Office"
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
@@ -8274,6 +8267,10 @@
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	req_access = list()
+	},
+/obj/machinery/camera/network/scp049{
+	c_tag = "SCP-049 Kitchen";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/lhcz/scp049containment)
@@ -12507,10 +12504,9 @@
 	name = "Secure Camera Maintenance Door";
 	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	dir = 4;
-	c_tag = "SCP-049 Quarters"
+/obj/machinery/camera/network/scp049{
+	c_tag = "SCP-049 Quarters";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/scp049containment)
@@ -13970,8 +13966,7 @@
 /area/site53/uhcz/scp106containment)
 "odU" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
+/obj/machinery/camera/network/scp049{
 	c_tag = "SCP-049 North Office"
 	},
 /turf/simulated/floor/tiled/dark,
