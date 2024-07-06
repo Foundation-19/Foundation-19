@@ -84,6 +84,13 @@ badges
 	slot_flags = SLOT_TIE
 	badge_string = "United Nations Global Occult Coalition"
 
+/obj/item/clothing/accessory/badge/representative/uiu
+	name = "representative's badge"
+	desc = "A leather-backed plastic badge with a variety of information printed on it. Belongs to a representative of the FBI's Unusual Incidents Unit."
+	icon_state = "solbadge"
+	slot_flags = SLOT_TIE
+	badge_string = "Federal Bureau of Investigation - Unusual Incidents Unit"
+
 /*******
 armbands
 *******/
