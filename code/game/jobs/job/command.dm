@@ -7,7 +7,6 @@
 	req_admin_notify = 1
 	minimal_player_age = 20
 	economic_power = 15
-	alt_titles = list("Facility Director")
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/command/facilitydir
 	class = CLASS_A
@@ -57,7 +56,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/headofhr
 	class = CLASS_A
 	hud_icon = "hudhumanresources"
-	alt_titles = list("Human Resources Officer", "Facility Manager", "Assistant Site Director")
+	alt_titles = list("Assistant Site Director")
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_BUR = 300)
 
 	access = list(
@@ -155,60 +154,6 @@
 	roleplay_difficulty = "Medium"
 	mechanical_difficulty = "Medium"
 	duties = "Keep communications systems online. Inform the site of on-going threats. Dispatch security. Manage your department."
-
-/datum/job/commeng
-	title = "Communications Technician"
-	department = "Engineering"
-	selection_color = "#5b4d20"
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Communications Officer"
-	department_flag = ENG
-	economic_power = 5
-	minimal_player_age = 7
-	ideal_character_age = 30
-	requirements = list(EXP_TYPE_ENGINEERING = 300)
-	alt_titles = list(
-		"Communications Programmer",
-		"Communications Dispatcher"
-		)
-	outfit_type = /decl/hierarchy/outfit/job/command/commstech
-	class = CLASS_C
-	hud_icon = "hudcommsprogrammer"
-
-	access = list(
-		ACCESS_COM_COMMS,
-		ACCESS_SCI_COMMS,
-		ACCESS_CIV_COMMS,
-		ACCESS_LOG_COMMS,
-		ACCESS_MED_COMMS,
-		ACCESS_ENG_COMMS,
-		ACCESS_SEC_COMMS,
-		ACCESS_ADMIN_LVL1,
-		ACCESS_ENGINEERING_LVL1,
-		ACCESS_ENGINEERING_LVL2,
-		ACCESS_ENGINEERING_LVL3
-	)
-
-	min_skill = list(
-		SKILL_COMPUTER      = SKILL_BASIC,
-		SKILL_CONSTRUCTION  = SKILL_EXPERIENCED,
-		SKILL_ELECTRICAL    = SKILL_BASIC,
-		SKILL_ATMOS         = SKILL_BASIC,
-		SKILL_ENGINES       = SKILL_BASIC
-	)
-
-	max_skill = list(
-		SKILL_CONSTRUCTION  = SKILL_MASTER,
-		SKILL_ELECTRICAL    = SKILL_MASTER,
-		SKILL_ATMOS         = SKILL_MASTER,
-		SKILL_ENGINES       = SKILL_MASTER
-	)
-	skill_points = 20
-
-	roleplay_difficulty = "Easy"
-	mechanical_difficulty = "Medium"
-	duties = "Keep communications systems online. Inform the site of on-going threats. Assist the Communications Officer."
 
 // MISC
 
@@ -344,3 +289,57 @@
 	roleplay_difficulty = "Hard"
 	mechanical_difficulty = "Easy"
 	duties = "Communicate with your respective Group of Interest and maintain diplomatic relations with the Foundation while also pursuing your group's interests."
+
+/datum/job/commeng
+	title = "Communications Technician"
+	department = "Engineering"
+	selection_color = "#5b4d20"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Communications Officer"
+	department_flag = ENG
+	economic_power = 5
+	minimal_player_age = 7
+	ideal_character_age = 30
+	requirements = list(EXP_TYPE_ENGINEERING = 300)
+	alt_titles = list(
+		"Communications Programmer",
+		"Communications Dispatcher"
+		)
+	outfit_type = /decl/hierarchy/outfit/job/command/commstech
+	class = CLASS_C
+	hud_icon = "hudcommsprogrammer"
+
+	access = list(
+		ACCESS_COM_COMMS,
+		ACCESS_SCI_COMMS,
+		ACCESS_CIV_COMMS,
+		ACCESS_LOG_COMMS,
+		ACCESS_MED_COMMS,
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3
+	)
+
+	min_skill = list(
+		SKILL_COMPUTER      = SKILL_BASIC,
+		SKILL_CONSTRUCTION  = SKILL_EXPERIENCED,
+		SKILL_ELECTRICAL    = SKILL_BASIC,
+		SKILL_ATMOS         = SKILL_BASIC,
+		SKILL_ENGINES       = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_CONSTRUCTION  = SKILL_MASTER,
+		SKILL_ELECTRICAL    = SKILL_MASTER,
+		SKILL_ATMOS         = SKILL_MASTER,
+		SKILL_ENGINES       = SKILL_MASTER
+	)
+	skill_points = 20
+
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Medium"
+	duties = "Keep communications systems online. Inform the site of on-going threats. Assist the Communications Officer."

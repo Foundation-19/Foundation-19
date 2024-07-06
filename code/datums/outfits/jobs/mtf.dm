@@ -209,3 +209,16 @@
 	head = /obj/item/clothing/head/beret/isd/fedora
 	l_pocket = /obj/item/reagent_containers/spray/pepper
 	belt = /obj/item/gun/energy/pulse_rifle/pistol
+
+/decl/hierarchy/outfit/mtf/o5rep
+	name = OUTFIT_JOB_NAME("O5 Representative")
+	uniform = /obj/item/clothing/under/suit_jacket/really_black
+	suit = /obj/item/clothing/suit/armor/overseer
+	mask = /obj/item/clothing/mask/smokable/cigarette/cigar/havana
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/flame/lighter/zippo/brass
+	r_pocket = /obj/item/ammo_magazine/speedloader/heavy
+	id_type = /obj/item/card/id/mtf/o5rep
+	backpack_contents = list(/obj/item/ammo_magazine/speedloader/heavy = 2)
+	belt = /obj/item/gun/projectile/revolver/military/heavy

@@ -862,6 +862,11 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	assignment = "Internal Security Agent"
 
+/obj/item/card/id/mtf/o5rep
+	name = "central council command ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "O5 Representative"
+
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Operative"
