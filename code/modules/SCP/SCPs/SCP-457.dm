@@ -46,9 +46,9 @@
                 H.adjust_fire_stacks(1)
                 H.IgniteMob()
                 visible_message(SPAN_DANGER("[src] radiates intense heat, scorching [H]!"))
-    if(. && loc && istype(loc, /turf/open/floor))
-        var/turf/open/floor/F = loc
-        if(F.has_hotspot())
+    if(. && loc && istype(loc, /turf/simulated/floor))
+        var/turf/simulated/floor/F = loc
+        if(F.hotspot)
             heal_over_time() // Custom function to heal SCP-457
 /mob/living/simple_animal/hostile/scp457/Initialize()
 	SCP = new /datum/scp(
