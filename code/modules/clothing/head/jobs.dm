@@ -106,12 +106,6 @@
 	desc = "Usually worn by superior officers of Foundation SD."
 	icon_state = "beret_corporate_red"
 
-	permeability_coefficient = 0
-	armor = list(melee = 50, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
-	cold_protection = HEAD
-	item_flags = ITEM_FLAG_THICKMATERIAL
-	body_parts_covered = HEAD|FACE|EYES
-
 /obj/item/clothing/head/beret/sec/navy/officer
 	name = "corporate security officer beret"
 	desc = "A navy blue beret with an officer's rank emblem. For officers that are more inclined towards style than safety."
@@ -198,6 +192,8 @@
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_PHORONGUARD|ITEM_FLAG_AIRTIGHT
 	armor = list(melee = 90, bullet = 90, laser = 50,energy = 25, bomb = 50, bio = 50, rad = 60)
 	cold_protection = HEAD
 	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_AIRTIGHT
