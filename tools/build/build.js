@@ -187,7 +187,7 @@ export const TguiTarget = new Juke.Target({
     'tgui/public/tgui-say.bundle.css',
     'tgui/public/tgui-say.bundle.js',
   ],
-  executes: () => yarn('tgui:build', '--mode=development'),
+  executes: () => yarn('tgui:build'),
 });
 
 export const TguiEslintTarget = new Juke.Target({
