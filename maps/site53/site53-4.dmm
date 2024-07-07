@@ -11876,7 +11876,6 @@
 "Zw" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	icon_state = "closed";
-	req_access = list(list("ACCESS_ENGINEERING_LEVEL5","ACCESS_MEDICAL_LEVEL5","ACCESS_SCIENCE_LEVEL5"));
 	name = "Upper Command's Offices"
 	},
 /obj/machinery/door/blast/regular/open{
