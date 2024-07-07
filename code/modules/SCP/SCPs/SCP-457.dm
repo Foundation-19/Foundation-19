@@ -38,6 +38,18 @@
 	///Our spawn area
 	var/area/spawn_area
 
+/mob/living/simple_animal/hostile/scp457/Life()
+    . = ..()
+    if(.)
+        for(var/mob/living/carbon/human/H in orange(2, src))
+            if(prob(10))
+                H.adjust_fire_stacks(1)
+                H.IgniteMob()
+                visible_message(SPAN_DANGER("[src] radiates intense heat, scorching [H]!"))
+    if(. && loc && istype(loc, /turf/open/floor))
+        var/turf/open/floor/F = loc
+        if(F.has_hotspot())
+            heal_over_time() // Custom function to heal SCP-457
 /mob/living/simple_animal/hostile/scp457/Initialize()
 	SCP = new /datum/scp(
 		src, // Ref to actual SCP atom
@@ -183,3 +195,27 @@
 /mob/living/simple_animal/hostile/scp457/do_attack(atom/A, turf/T)
 	if(..())
 		UnarmedAttack(A)
+
+/mob/living/simple_animal/hostile/scp457/proc/spread_fire()
+    for(var/turf/simulated/floor/T in orange(1, src))
+        if(prob(30)) // 30% chance to spread fire to adjacent tiles
+            new /obj/hotspot(T)
+
+    aflame_cooldown_track = world.time + aflame_cooldown_time
+    playsound(src, 'sounds/items/welder.ogg', 75, 1)
+    visible_message(SPAN_WARNING("[src] spreads the fire around it!"))
+
+
+/mob/living/simple_animal/hostile/scp457/water_act()
+    aflame_cooldown_time += 10 SECONDS
+    visible_message(SPAN_WARNING("[src]'s flames dim as it's doused with water!"))
+    addtimer(CALLBACK(src, .proc/reset_flame_cooldown), 10 SECONDS)
+
+/mob/living/simple_animal/hostile/scp457/proc/reset_flame_cooldown()
+    aflame_cooldown_time = initial(aflame_cooldown_time)
+    visible_message(SPAN_NOTICE("[src]'s flames roar back to life!"))
+
+/mob/living/simple_animal/hostile/scp457/proc/heal_over_time()
+    if(health < maxHealth)
+        health += 5
+        visible_message(SPAN_NOTICE("[src]'s flames grow stronger as it basks in the fire!"))

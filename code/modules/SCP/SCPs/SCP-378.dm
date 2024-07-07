@@ -1,6 +1,6 @@
 /mob/living/simple_animal/borer
-	name = "cortical borer"
-	real_name = "cortical borer"
+	name = "gangly worm"
+	real_name = "gangly worm"
 	desc = "A small, quivering sluglike creature."
 	speak_emote = list("chirrups")
 	// emote_hear = list("chirrups")
@@ -41,10 +41,6 @@
 	)
 
 	var/generation = 1
-	var/static/list/borer_names = list(
-		"Primary", "Secondary", "Tertiary", "Quaternary", "Quinary", "Senary",
-		"Septenary", "Octonary", "Novenary", "Decenary", "Undenary", "Duodenary",
-		)
 
 	var/image/aura_image
 	var/chemicals = 10                      // Chemicals used for reproduction and spitting neurotoxin.
@@ -92,12 +88,19 @@
 
 	. = ..()
 
+	SCP = new /datum/scp(
+		src, // Ref to actual SCP atom
+		"gangly worm", //Name (Should not be the scp desg, more like what it can be described as to viewers)
+		SCP_EUCLID, //Obj Class
+		"378", //Numerical Designation
+		SCP_MEMETIC|SCP_PLAYABLE
+	)
+
 	add_language(LANGUAGE_BORER_GLOBAL)
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
 
 	generation = gen
-	set_borer_name()
 
 	if(!roundstart)
 		request_player()
@@ -129,9 +132,6 @@
 	hud_inject_chemicals = null
 	hud_leave_host =       null
 	. = ..()
-
-/mob/living/simple_animal/borer/proc/set_borer_name()
-	truename = "[borer_names[min(generation, borer_names.len)]] [random_id("borer[generation]", 1000, 9999)]"
 
 /mob/living/simple_animal/borer/Life()
 
