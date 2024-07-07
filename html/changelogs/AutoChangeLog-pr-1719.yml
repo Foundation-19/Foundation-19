@@ -1,0 +1,6 @@
+author: ChromeFoxxity
+delete-after: true
+changes:
+  - rscadd: New Office.
+  - rscadd: ECL Locker.
+  - rscdel: Old Office.
