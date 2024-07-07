@@ -1050,6 +1050,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/bed/chair{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "dM" = (
@@ -1347,13 +1350,6 @@
 	dir = 4
 	},
 /area/site53/uez/equipmentroom)
-"eO" = (
-/obj/effect/floor_decal/corner/red/mono,
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/uez/equipmentroom)
 "eP" = (
 /obj/machinery/status_display{
 	pixel_y = -32
@@ -1401,9 +1397,7 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
 "eV" = (
-/obj/effect/floor_decal/corner/red/mono,
-/obj/structure/table/reinforced,
-/obj/item/device/megaphone,
+/obj/structure/bed/chair,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "eW" = (
@@ -2107,41 +2101,6 @@
 /turf/simulated/floor,
 /area/site53/engineering/atmosext)
 "hC" = (
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL3");
-	name = "MP5 SMG Locker";
-	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "tactical1";
-	icon_closed = "tactical";
-	icon_off = "tacticaloff";
-	icon_opened = "gunopen";
-	icon_state = "tactical1"
-	},
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/box/a9mm,
-/obj/item/ammo_magazine/box/a9mm,
-/obj/item/ammo_magazine/box/a9mm,
-/obj/item/ammo_magazine/box/a9mm,
-/obj/item/ammo_magazine/box/a9mm,
-/obj/item/ammo_magazine/box/a9mm,
 /obj/effect/floor_decal/corner/red/mono,
 /obj/machinery/button/blast_door{
 	dir = 4;
@@ -2149,6 +2108,9 @@
 	name = "EZ Armory Access Control";
 	req_access = list("ACCESS_SECURITY_LEVEL4");
 	pixel_x = -25
+	},
+/obj/structure/closet/secure_closet/guard/breachautomatics{
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
@@ -2715,8 +2677,6 @@
 "jw" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/repoffice/internaltribunal)
 "jx" = (
@@ -3548,11 +3508,11 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
 "mg" = (
-/obj/effect/floor_decal/corner/red/mono,
-/obj/item/modular_computer/console/preset/cardslot/command{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/turf/simulated/floor/wood/ebony,
 /area/site53/uez/equipmentroom)
 "mh" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
@@ -3671,7 +3631,6 @@
 "mM" = (
 /obj/item/deck/cards,
 /obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "mN" = (
@@ -3724,11 +3683,6 @@
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /obj/structure/table/steel_reinforced,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/uez/equipmentroom)
-"nd" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "ne" = (
@@ -4709,7 +4663,6 @@
 /obj/item/device/tape,
 /obj/item/device/taperecorder,
 /obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "rZ" = (
@@ -5439,11 +5392,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/uez/repoffice/internaltribunal)
-"vG" = (
-/obj/effect/floor_decal/corner/red/mono,
-/obj/structure/bed/chair,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/uez/equipmentroom)
 "vH" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5934,9 +5882,14 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
 "yn" = (
-/obj/effect/floor_decal/corner/red/mono,
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/gun/projectile/automatic/scp/m4a1,
+/turf/simulated/floor/wood/ebony,
 /area/site53/uez/equipmentroom)
 "yo" = (
 /obj/effect/floor_decal/corner/orange/three_quarters,
@@ -6066,11 +6019,16 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "yN" = (
-/obj/structure/bed/chair/armchair/black{
-	dir = 4
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
 	},
-/obj/effect/floor_decal/corner/red/mono,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
 "yR" = (
 /obj/effect/floor_decal/corner/blue/mono,
@@ -7826,6 +7784,8 @@
 "HB" = (
 /obj/machinery/light,
 /obj/structure/closet/secure_closet/administration/internaltribunal,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/repoffice/internaltribunal)
 "HD" = (
@@ -8116,6 +8076,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/equipmentroom)
 "IX" = (
@@ -8148,7 +8112,6 @@
 "Jd" = (
 /obj/item/device/camera,
 /obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "Je" = (
@@ -8832,7 +8795,6 @@
 "Ms" = (
 /obj/item/storage/mre/random,
 /obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/mono,
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
@@ -8880,8 +8842,14 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "MI" = (
-/obj/effect/floor_decal/corner/red/mono,
-/obj/item/modular_computer/console/preset/security,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/bed/chair{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "ML" = (
@@ -9461,7 +9429,6 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
 "Pv" = (
-/obj/effect/floor_decal/corner/red/mono,
 /obj/structure/bed/chair{
 	dir = 4
 	},
@@ -10431,7 +10398,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "TZ" = (
-/obj/effect/floor_decal/corner/red/mono,
 /obj/structure/bed/chair{
 	dir = 8
 	},
@@ -47978,7 +47944,7 @@ TP
 TP
 Vu
 TP
-TP
+yN
 Vu
 De
 tc
@@ -48493,10 +48459,10 @@ VF
 Jd
 rX
 VF
+eV
+xe
+xe
 MI
-yN
-mg
-in
 Ah
 YO
 FQ
@@ -48751,9 +48717,9 @@ TZ
 TZ
 VF
 eV
-nd
-yn
-in
+xe
+xe
+MI
 gk
 uP
 YO
@@ -49007,10 +48973,10 @@ VF
 VF
 VF
 VF
-vG
-nd
-eO
-in
+eV
+xe
+xe
+MI
 Ah
 YO
 HG
@@ -49264,9 +49230,9 @@ rR
 VF
 VF
 VF
-vG
-nd
-eO
+eV
+xe
+xe
 dL
 fc
 Pt
@@ -50010,8 +49976,8 @@ SP
 uP
 jj
 IV
-vd
-uJ
+yn
+mg
 cl
 uJ
 Nd
