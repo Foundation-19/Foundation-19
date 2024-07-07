@@ -57,7 +57,7 @@
 	mechanical_difficulty = "Hard"
 	duties = "Manage the Engineering department. Delegate construction and repair work. Facilitate larger projects."
 	codex_guides = list("<l>Hacking Wires</l>")
-  
+
 /datum/job/achief_engineer
 	title = "Assistant Engineering Director"
 	department = "Engineering"
@@ -83,14 +83,12 @@
 		ACCESS_SCIENCE_LVL4,
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
-		ACCESS_ADMIN_LVL3,
 		ACCESS_ENGINEERING_LVL1,
 		ACCESS_ENGINEERING_LVL2,
 		ACCESS_ENGINEERING_LVL3,
 		ACCESS_ENGINEERING_LVL4,
 		ACCESS_ATMOSPHERICS,
 		ACCESS_ENGINE_EQUIP,
-		ACCESS_KEYAUTH,
 		ACCESS_NETWORK
 	)
 	minimal_access = list()
