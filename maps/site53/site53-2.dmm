@@ -52205,15 +52205,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/securitypost)
-"snz" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
-	},
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_titanium,
-/area/site53/uhcz/scp106containment)
 "soj" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -111122,7 +111113,7 @@ nvk
 nvk
 nvk
 eEI
-snz
+xrt
 mWF
 aox
 uIb
