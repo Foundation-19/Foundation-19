@@ -898,6 +898,13 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "EZ Armoury Lockdown";
+	name = "EZ Armory Access Control";
+	req_access = list("ACCESS_SECURITY_LEVEL4");
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/senioragentoffice)
 "dp" = (
@@ -4629,7 +4636,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/security{
 	icon_state = "closed";
 	name = "EZ Agent Locker Room";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -5220,17 +5227,10 @@
 "uz" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	id_tag = "Administration Lockdown";
-	name = "Administrative Lockdown Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = -2;
-	dir = 1
-	},
-/obj/machinery/button/blast_door{
 	id_tag = "EZSec Lockdown";
 	name = "EZ Security Center Lockdown Control";
 	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 7;
+	pixel_y = 2;
 	dir = 1
 	},
 /turf/simulated/floor/carpet/red,
@@ -50529,7 +50529,7 @@ vd
 Nd
 Wu
 Ah
-CR
+sr
 Zi
 jF
 jF
@@ -51043,7 +51043,7 @@ ZD
 Nd
 Wu
 Ah
-CR
+sr
 CI
 Mn
 Mn
