@@ -6281,6 +6281,16 @@
 /obj/item/storage/backpack/rucksack,
 /obj/item/storage/backpack/rucksack,
 /obj/item/storage/backpack/rucksack,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
