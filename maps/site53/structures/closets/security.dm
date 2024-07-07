@@ -239,13 +239,13 @@
 		/obj/item/material/knife/combat,
 		/obj/item/melee/telebaton,
 		/obj/item/gun/energy/stunrevolver/taser,
-		/obj/item/ammo_magazine/box/a57,
+		/obj/item/ammo_magazine/box/a57/ap,
 		/obj/item/ammo_magazine/box/a57/rubber,
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/guard,
-		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/ammo_magazine/scp/usp45 = 3,
 	)
 
 // HCZ - Sergeant
@@ -277,7 +277,7 @@
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/sergeant,
-		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/ammo_magazine/scp/usp45 = 3,
 	)
 
 // EZ - Cadet

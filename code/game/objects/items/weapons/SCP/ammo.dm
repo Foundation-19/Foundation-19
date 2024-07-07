@@ -398,7 +398,6 @@
 	desc = "A quite heavy militarized ammunition box. It's green, and says ``5.7x28`` on the box. It has a red line for HP bullets. You can only guess what's in it."
 	icon_state = "box_57x28mmhp"
 	ammo_type = /obj/item/ammo_casing/pistol/a57/hp
-
 // 5.56
 /obj/item/ammo_magazine/box/a556
 	name = "magazine box (5.56mm)"
