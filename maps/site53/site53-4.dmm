@@ -5569,8 +5569,8 @@
 	dir = 10
 	},
 /obj/machinery/camera/network/entrance{
-	department = "EZ Security Center Confinement Checkpoint";
-	dir = 4
+	dir = 4;
+	c_tag = "EZ Security Center Confinement Checkpoint"
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/equipmentroom)
