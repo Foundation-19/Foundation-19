@@ -170,7 +170,7 @@
 	suit = /obj/item/clothing/suit/armor/mtfalpha1
 	mask = /obj/item/clothing/mask/gas/security
 	head = /obj/item/clothing/head/beret/mtf/alpha
-	gloves = /obj/item/clothing/gloves/tactical/alpha
+	gloves = /obj/item/clothing/gloves/thick/combat
 	glasses = /obj/item/clothing/glasses/hud/security/night
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = null
