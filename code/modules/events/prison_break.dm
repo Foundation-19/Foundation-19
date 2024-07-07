@@ -85,7 +85,6 @@
 	areaType = list(/area/site53/medical)
 	areaNotType = list(
 		/area/site53/medical/mentalhealth/isolation,
-		/area/site53/medical/isolation
 	)
 
 /datum/prisonbreakarea/research

@@ -41,6 +41,7 @@
 /decl/hierarchy/outfit/job/medical/chemist
 	name = OUTFIT_JOB_NAME("Chemist")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/navyblue
+	head = /obj/item/clothing/head/surgery/navyblue
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	id_type = /obj/item/card/id/chemist
@@ -50,6 +51,7 @@
 /decl/hierarchy/outfit/job/medical/medicaldoctor
 	name = OUTFIT_JOB_NAME("Medical Doctor")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
+	head = /obj/item/clothing/head/surgery/blue
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	id_type = /obj/item/card/id/doctor
@@ -59,6 +61,7 @@
 /decl/hierarchy/outfit/job/medical/surgeon
 	name = OUTFIT_JOB_NAME("Surgeon")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/green
+	head = /obj/item/clothing/head/surgery/green
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	id_type = /obj/item/card/id/doctor

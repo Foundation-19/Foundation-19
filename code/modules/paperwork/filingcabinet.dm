@@ -28,6 +28,11 @@
 	name = "chest drawer"
 	icon_state = "chestdrawer"
 
+/obj/structure/filingcabinet/golden
+	name = "executive filing cabinet"
+	desc = "A large cabinet with drawers, this time with golden design."
+	icon_state = "employmentcabinet"
+
 /obj/structure/filingcabinet/wallcabinet
 	name = "wall-mounted filing cabinet"
 	desc = "A filing cabinet installed into a cavity in the wall to save space. Wow!"

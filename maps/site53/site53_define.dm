@@ -19,7 +19,7 @@
 	usable_email_tlds = list("site53.foundation", "security.site53.foundation", "science.site53.foundation", "utility.site53.foundation")
 	config_path = "config/site53_config.txt"
 
-	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone")
+	allowed_spawns = list("Cryogenic Storage", "D-Cells")
 	default_spawn = "Cryogenic Storage"
 
 	station_name  = "Foundation Site 53"

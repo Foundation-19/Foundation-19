@@ -2,6 +2,7 @@
 	name = "anomaly suit"
 	desc = "A suit that protects against exotic alien energies and biological contamination."
 	icon_state = "bio_anom"
+	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDESHOES
 
 /obj/item/clothing/head/bio_hood/anomaly
 	name = "anomaly hood"
