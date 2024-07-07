@@ -63,13 +63,12 @@
 	var/global/list/jobs[0]
 	req_access = list(ACCESS_SECURITY_LVL1)
 
-/obj/item/clothing/glasses/hud/night/security
+/obj/item/clothing/glasses/hud/security/night
 	name = "security night vision goggles"
 	desc = "You can totally see in the dark now, AND see criminals!"
 	icon_state = "securityhudnight"
 	hud_type = HUD_SECURITY
 	body_parts_covered = 0
-	var/global/list/jobs[0]
 	req_access = list(ACCESS_SECURITY_LVL1)
 	origin_tech = list(TECH_MAGNET = 2)
 	darkness_view = 7
@@ -79,6 +78,11 @@
 	off_state = "denight"
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
+	hidden_from_codex = FALSE
+
+/obj/item/clothing/glasses/hud/security/night/Initialize()
+	. = ..()
+	overlay = GLOB.global_hud.thermal
 
 /obj/item/clothing/glasses/hud/security/prescription
 	name = "prescription security HUD"
