@@ -32,6 +32,7 @@
 				if(!(thing in base_states))
 					LAZYADD(bad_base_state, "[closet.type] - [thing] - [closet.base_icon]")
 		if(LAZYLEN(closet.decals) && !closet.decal_icon)
+			log_unit_test("[closet.type] FUCKED UP!!")
 			LAZYADD(bad_decal_icon, "[closet.type]")
 		else
 			var/list/decal_states = icon_states(closet.decal_icon)
@@ -39,6 +40,7 @@
 				if(isnull(closet.decals[thing]))
 					LAZYADD(bad_decal_colour, "[check_appearance] - [thing]")
 				if(!(thing in decal_states))
+					log_unit_test("[closet.type] FUCKED UP 2!!")
 					LAZYADD(bad_decal_state, "[check_appearance] - [thing] - [closet.decal_icon]")
 
 	if( \
