@@ -88,7 +88,7 @@
 	armor = list(melee = 45, bullet = 55, laser = 45, energy = 15, bomb = 45, bio = 15, rad = 15)
 
 /obj/item/clothing/suit/armor/mtfalpha1
-	name = "heavy compact 'Red Right Hand' vest"
+	name = "'Red Right Hand' heavy compact vest"
 	desc = "An extremely advanced multi-plated composite vest with extremely toughened kevlar lining, added additional plating, and more body coverage and plenty of room to move. 'A-1' is sewn onto the torso in red."
 	icon_state = "mtf-alpha1"
 	item_state = "mtf-alpha1"
@@ -96,7 +96,7 @@
 	armor = list(melee = 80, bullet = 95, laser = 80, energy = 25, bomb = 70, bio = 25, rad = 15)
 
 /obj/item/clothing/suit/armor/mtfomega1
-	name = "heavy compact 'Laws Left Hand' vest"
+	name = "'Laws Left Hand' heavy compact vest"
 	desc = "An extremely advanced multi-plated composite vest with extremely toughened kevlar lining, added additional plating, and more body coverage and plenty of room to move. 'O-1' is sewn onto the torso in white."
 	icon_state = "mtf-omega1"
 	item_state = "mtf-omega1"

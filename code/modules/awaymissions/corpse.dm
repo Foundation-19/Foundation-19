@@ -35,7 +35,7 @@
 	var/genders_per_species       = list() // For gender biases per species -type-
 
 	// Spawn damage
-	var/brute_loss = 0
+	var/brute_loss = 300
 	var/burn_loss = 0
 
 /obj/effect/landmark/corpse/Initialize()
