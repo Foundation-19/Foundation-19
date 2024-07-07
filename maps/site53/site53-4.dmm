@@ -2344,7 +2344,7 @@
 "hT" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Directorate Evacuation Tunnel";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -4180,7 +4180,7 @@
 "pc" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Directorate Evacuation Tunnel";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL3")
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "Administrative Evacuation";
@@ -9449,7 +9449,6 @@
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	dir = 8;
 	icon_state = "closed";
-	req_access = list(list("ACCESS_ENGINEERING_LEVEL5","ACCESS_MEDICAL_LEVEL5","ACCESS_SCIENCE_LEVEL5"));
 	name = "Directorate's Offices"
 	},
 /obj/machinery/door/blast/regular/open{
@@ -10316,6 +10315,24 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
+"Sc" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/sign/goldenplaque{
+	pixel_x = -32;
+	name = "Administrative Checkpoint Rules";
+	desc = "All non-security, and non-administrative staff MUST turn in their weapons for confiscation. All weapons will be returned when leaving. Any signs of hostility, and or aggressive, or otherwise non-civil manner will be escorted out."
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/uez/hallway)
 "Sd" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -44985,7 +45002,7 @@ vK
 DA
 yJ
 Az
-vK
+Sc
 py
 qD
 gg
