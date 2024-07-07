@@ -31,7 +31,7 @@
 
 /datum/offsite/proc/receive_fax(obj/item/ref, origin_department = "Unknown", mob/sender)
 	received_faxes += list(list(world.time, ref, origin_department, key_name(sender)))
-	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [uppertext(name)] FROM [origin_department] BY [key_name(sender, 1)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>, <a href='?src=\ref[src];send_message=\ref[sender]'>Reply with Message</a>")
+	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [uppertext(name)] FROM [origin_department] BY [ADMIN_FULLMONTY(sender)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>, <a href='?src=\ref[src];send_message=\ref[sender]'>Reply with Message</a>")
 
 	for(var/client/C in GLOB.admins)
 		if(R_MOD & C.holder.rights)
@@ -64,7 +64,7 @@
 /datum/offsite/proc/receive_message(message, mob/sender)
 	received_messages += list(list(world.time, message, null, key_name(sender)))
 
-	var/adjusted_message = SPAN_NOTICE("<b><font color=orange>MESSAGE TO [uppertext(name)] FROM [key_name(sender, 1)] [ADMIN_FULLMONTY(sender)] <a href='?src=\ref[src];send_message=\ref[sender]'>Reply</a></b></font>: [message]")
+	var/adjusted_message = SPAN_NOTICE("<b><font color=orange>MESSAGE TO [uppertext(name)] FROM [ADMIN_FULLMONTY(sender)] <a href='?src=\ref[src];send_message=\ref[sender]'>Reply</a></b></font>: [message]")
 
 	for(var/client/C in GLOB.admins)
 		if(R_MOD & C.holder.rights)

@@ -181,7 +181,7 @@
 						send_offsite_message("\[ABNORMAL ROUTING CORDINATES\]", /datum/offsite/chaos_insurgency)
 			else if(href_list["target"] == "regular")
 				if(is_authenticated(user) && !issilicon(usr) && ntn_comm)
-					send_offsite_message(GLOB.using_map.boss_short, /datum/offsite/chaos_insurgency)
+					send_offsite_message(GLOB.using_map.boss_short, /datum/offsite/foundation/regional_command)
 		if("evac")
 			. = TRUE
 			if(is_authenticated(user))
