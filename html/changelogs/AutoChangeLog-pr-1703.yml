@@ -1,0 +1,6 @@
+author: projectkepler-ru
+delete-after: true
+changes:
+  - rscadd: Everyone in HCZ now has a much more powerful arsenal, all zone commander
+      has their sidearm upped by 1 tier
+  - rscadd: EZ now has an ion gun in their arsenal, they previously did not have it

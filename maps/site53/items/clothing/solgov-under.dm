@@ -431,9 +431,3 @@
 	species_restricted = list("Monkey")
 	sprite_sheets = list("Monkey" = 'icons/mob/species/monkey/uniform.dmi')
 //	accessories = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer/wo1_monkey)
-
-/obj/item/clothing/under/scp/utility/chaos
-	desc = "A dark black uniform. On the back, in silver lettering, are the words 'CHAOS INSURGENCY'."
-	name = "chaos uniform"
-	icon_state = "scpuniform3"
-	worn_state = "chaos"

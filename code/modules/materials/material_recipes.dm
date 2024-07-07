@@ -112,7 +112,6 @@
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
-	. += new/datum/stack_recipe/furniture/crate/plastic(src)
 	. += new/datum/stack_recipe/bag(src)
 	. += new/datum/stack_recipe/ivbag(src)
 	. += create_recipe_list(/datum/stack_recipe/tile/light)

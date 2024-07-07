@@ -187,14 +187,14 @@
 
 /obj/random/firstaid/spawn_choices()
 	return list(/obj/item/storage/firstaid/regular = 4,
-				/obj/item/storage/firstaid/trauma = 3,
+				/obj/item/storage/firstaid/brute = 3,
 				/obj/item/storage/firstaid/toxin = 3,
 				/obj/item/storage/firstaid/o2 = 3,
 				/obj/item/storage/firstaid/stab = 2,
 				/obj/item/storage/firstaid/adv = 2,
 				/obj/item/storage/firstaid/combat = 1,
 				/obj/item/storage/firstaid/empty = 2,
-				/obj/item/storage/firstaid/fire = 3)
+				/obj/item/storage/firstaid/burn = 3)
 
 /obj/random/contraband
 	name = "Random Illegal Item"
@@ -445,7 +445,6 @@
 				/obj/structure/closet/jcloset,
 				/obj/structure/closet/athletic_mixed,
 				/obj/structure/closet/toolcloset,
-				/obj/structure/closet/l3closet/general,
 				/obj/structure/closet/cabinet,
 				/obj/structure/closet/crate,
 				/obj/structure/closet/crate/freezer,
@@ -808,7 +807,6 @@
 	return list(/obj/item/clothing/head/helmet = 2,
 				/obj/item/clothing/head/helmet/tactical = 1,
 				/obj/item/clothing/head/helmet/space/emergency = 1,
-				/obj/item/clothing/head/bio_hood/general = 1,
 				/obj/item/clothing/head/hardhat = 4,
 				/obj/item/clothing/head/hardhat/orange = 4,
 				/obj/item/clothing/head/hardhat/red = 4,
@@ -833,7 +831,6 @@
 				/obj/item/clothing/suit/chef/classic = 3,
 				/obj/item/clothing/suit/surgicalapron = 2,
 				/obj/item/clothing/suit/apron/overalls = 3,
-				/obj/item/clothing/suit/bio_suit/general = 1,
 				/obj/item/clothing/suit/storage/toggle/hoodie/black = 3,
 				/obj/item/clothing/suit/storage/toggle/brown_jacket = 3,
 				/obj/item/clothing/suit/storage/leather_jacket = 3,
