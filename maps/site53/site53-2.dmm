@@ -3283,11 +3283,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -17059,11 +17054,6 @@
 	id_tag = "lock106";
 	name = "SCP-106 Lockdown Blast Door"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
 "aXN" = (
@@ -17585,6 +17575,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/scp457containment)
 "aZN" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2";
 	d1 = 1;
@@ -22207,6 +22202,11 @@
 	pixel_y = 32
 	},
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -24764,6 +24764,17 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/researchwing)
+"dtv" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uhcz/scp106containment)
 "dtS" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -25787,6 +25798,11 @@
 	},
 /area/site53/uhcz/scp1507observation)
 "dXB" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-106 Observation";
 	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
@@ -25795,11 +25811,6 @@
 	icon_state = "pdoor0";
 	id_tag = "lock106";
 	name = "SCP-106 Lockdown Blast Door"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106observ)
@@ -26965,11 +26976,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/corner,
 /area/site53/uhcz/scp106containment)
 "eEQ" = (
@@ -27960,6 +27966,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
 "fiu" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
 	},
@@ -28030,12 +28041,17 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
 "flj" = (
-/obj/effect/floor_decal/industrial/warning,
 /obj/structure/cable/cyan{
 	icon_state = "1-2";
 	d1 = 1;
 	d2 = 2
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "fln" = (
@@ -36203,6 +36219,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/psionic)
+"jTm" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
+/area/site53/uhcz/scp106containment)
 "jUp" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/machinery/light/small/red{
@@ -36246,13 +36271,13 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-8";
 	d1 = 1;
 	d2 = 8
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
@@ -36324,6 +36349,17 @@
 	},
 /turf/simulated/floor,
 /area/site53/reswing/robotics)
+"jYA" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uhcz/scp106containment)
 "jYG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -38685,16 +38721,16 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
 "lrE" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/effect/floor_decal/corner/keter/border{
 	dir = 1
 	},
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
@@ -42807,11 +42843,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp106containment)
 "nvu" = (
@@ -43777,6 +43808,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
+"nTV" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
+/area/site53/uhcz/scp106containment)
 "nUn" = (
 /obj/machinery/light{
 	dir = 1
@@ -44292,6 +44332,22 @@
 /obj/effect/floor_decal/corner/yellow/diagonal,
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/primaryhallway)
+"ohN" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8";
+	d1 = 1;
+	d2 = 8
+	},
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uhcz/scp106containment)
 "ohQ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -45653,6 +45709,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
 "oTx" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
 	},
@@ -45834,9 +45895,14 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/hallways)
 "oYK" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-8";
-	d2 = 8
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/machinery/power/smes/buildable{
 	name = "Upper Shield power storage unit"
@@ -46655,11 +46721,6 @@
 /area/site53/ulcz/hallways)
 "pvp" = (
 /obj/effect/floor_decal/corner/red/border,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
 "pwe" = (
@@ -47635,6 +47696,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
+"pXN" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/uhcz/scp106containment)
 "pXS" = (
 /obj/machinery/light{
 	dir = 8
@@ -49496,16 +49568,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
 "raM" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/effect/floor_decal/corner/keter/bordercorner{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
@@ -51004,9 +51076,9 @@
 	pixel_y = 24;
 	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+/obj/structure/cable/cyan{
+	icon_state = "0-4";
+	d2 = 4
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
@@ -52036,13 +52108,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "slB" = (
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
@@ -52135,18 +52207,12 @@
 /area/site53/uhcz/securitypost)
 "snz" = (
 /obj/structure/cable/cyan{
-	icon_state = "0-8";
-	d2 = 8
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
 	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8";
-	d1 = 4;
-	d2 = 8
-	},
-/obj/machinery/power/smes/buildable{
-	name = "Upper Shield power storage unit"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_titanium,
 /area/site53/uhcz/scp106containment)
 "soj" = (
 /obj/machinery/papershredder,
@@ -52248,12 +52314,26 @@
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
 "srh" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "sri" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
 /area/site53/uhcz/scp1507observation)
+"srl" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor,
+/area/site53/uhcz/scp106containment)
 "srm" = (
 /obj/machinery/bodyscanner{
 	dir = 1
@@ -53728,6 +53808,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "tdY" = (
@@ -54818,6 +54903,21 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/office)
+"tJk" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "lock106";
+	name = "SCP-106 Lockdown Blast Door";
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/scp106containment)
 "tJl" = (
 /obj/effect/floor_decal/corner/red/bordercorner,
 /obj/machinery/light,
@@ -56995,6 +57095,11 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/toy/desk/fan,
+/obj/structure/cable/cyan{
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
+	},
 /turf/simulated/floor/tiled/corner{
 	dir = 4
 	},
@@ -58994,6 +59099,11 @@
 "woI" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/corner,
 /area/site53/uhcz/scp106containment)
@@ -61554,6 +61664,11 @@
 	dir = 1
 	},
 /obj/item/modular_computer/console/preset/security,
+/obj/structure/cable/cyan{
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
+	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/uhcz/scp106containment)
 "xIs" = (
@@ -111007,7 +111122,7 @@ nvk
 nvk
 nvk
 eEI
-xrt
+snz
 mWF
 aox
 uIb
@@ -111770,7 +111885,7 @@ xrt
 xrt
 xrt
 xrt
-ujD
+tJk
 ujD
 ujD
 ujD
@@ -112012,7 +112127,7 @@ azA
 xrt
 euX
 jQg
-oTx
+dtv
 oTx
 fiu
 oTx
@@ -112021,13 +112136,13 @@ oTx
 fiu
 oTx
 woI
-xrt
+nTV
 wOn
 fcc
 aZG
 fcc
 uiA
-fcc
+ohN
 fcc
 fcc
 fcc
@@ -112269,7 +112384,7 @@ azA
 xrt
 euX
 ixG
-aEK
+mjg
 vMI
 ufP
 ufP
@@ -112526,7 +112641,7 @@ azA
 xrt
 euX
 ltI
-aCg
+pXN
 cen
 aCg
 aCg
@@ -112535,7 +112650,7 @@ aCg
 aCg
 aCg
 aBf
-xrt
+jTm
 bXF
 aEK
 hxf
@@ -112783,7 +112898,7 @@ azA
 xrt
 xrt
 xrt
-nKv
+srl
 xCz
 nKv
 xrt
@@ -113296,8 +113411,8 @@ azA
 azA
 azA
 xrt
-snz
-cDZ
+oYK
+jYA
 frv
 rOM
 xrt
@@ -113553,8 +113668,8 @@ azA
 azA
 azA
 xrt
-snz
-cPX
+oYK
+cDZ
 frv
 lrJ
 qUp
@@ -113810,7 +113925,7 @@ azA
 azA
 azA
 xrt
-snz
+oYK
 cPX
 frv
 kWh
