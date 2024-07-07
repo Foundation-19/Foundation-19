@@ -1345,8 +1345,7 @@ var/global/floorIsLava = 0
 
 	var/shouldStamp = TRUE
 	if(!P.sender) // admin initiated
-		var/need_stamp = alert(src.owner, "Would you like the fax stamped?", "Stamp", "Yes", "No")
-		tgui_alert(src.owner, "Would you like the fax stamped?", "Stamp", list("Yes", "No"))
+		var/need_stamp = tgui_alert(src.owner, "Would you like the fax stamped?", "Stamp", list("Yes", "No"))
 		if(need_stamp != "Yes")
 			shouldStamp = FALSE
 
@@ -1377,20 +1376,23 @@ var/global/floorIsLava = 0
 	var/obj/machinery/photocopier/faxmachine/destination = P.destinations[1]
 	rcvdcopy = destination.copy(P, FALSE)
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
+
+	if(P.origin_offsite)
+		SEND_SIGNAL(P.origin_offsite, COMSIG_OFFSITE_FAX_SENT, rcvdcopy, P)
 	GLOB.adminfaxes += rcvdcopy
 	var/success = send_fax_loop(P, P.department, P.origin)
-
+	
 	if(success)
 		to_chat(src.owner, SPAN_NOTICE("Message reply to transmitted successfully."))
 		if(P.sender) // sent as a reply
 			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
 			for(var/client/C in GLOB.admins)
-				if((R_ADMIN|R_MOD) & C.holder.rights)
+				if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 					to_chat(C, SPAN_CLASS("log_message","<span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)"))
 		else
 			log_admin("[key_name(src.owner)] has sent a fax message to [P.department]")
 			for(var/client/C in GLOB.admins)
-				if((R_ADMIN|R_MOD) & C.holder.rights)
+				if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 					to_chat(C, SPAN_CLASS("log_message","<span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [P.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)"))
 
 	else

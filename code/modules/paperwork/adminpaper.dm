@@ -6,6 +6,7 @@
 
 	var/interactions = null
 	var/origin = null
+	var/datum/offsite/origin_offsite = null
 	var/mob/sender = null
 	/// List (`/obj/machinery/photocopier/faxmachine`). List of fax machines matching the paper's target department.
 	var/list/destinations = list()
@@ -76,7 +77,7 @@
 		return
 
 	if(href_list["confirm"])
-		switch(alert("Are you sure you want to send the fax as is?",, "Yes", "No"))
+		switch(tgui_alert(usr, "Are you sure you want to send the fax as is?", "Confirm Sending", list("Yes", "No")))
 			if("Yes")
 				updateinfolinks()
 				close_browser(usr, "window=[name]")

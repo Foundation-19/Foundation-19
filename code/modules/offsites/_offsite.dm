@@ -17,6 +17,18 @@
 
 // TODO: use alerts to notify admins
 
+/datum/offsite/New()
+	. = ..()
+	RegisterSignal(src, COMSIG_OFFSITE_FAX_SENT, PROC_REF(add_sent_fax))
+
+/datum/offsite/Destroy()
+	UnregisterSignal(src, COMSIG_OFFSITE_FAX_SENT)
+	. = ..()
+
+/datum/offsite/proc/add_sent_fax(datum/source, obj/item/copy, obj/item/paper/admin/original)
+	var/client/admin = original.admindatum.owner
+	sent_faxes += list(list(world.time, copy, original.department || "unknown department", key_name(admin)))
+
 /datum/offsite/proc/receive_fax(obj/item/ref, origin_department = "Unknown", mob/sender)
 	received_faxes += list(list(world.time, ref, origin_department, key_name(sender)))
 	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [uppertext(name)] FROM [origin_department] BY [key_name(sender, 1)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>, <a href='?src=\ref[src];send_message=\ref[sender]'>Reply with Message</a>")
@@ -42,11 +54,10 @@
 	admin_datum.faxreply = P
 	P.admindatum = admin_datum
 	P.origin = name
+	P.origin_offsite = src
 	P.department = department
 	P.destinations = get_fax_machines_by_department(department)
 	P.adminbrowse()
-
-	sent_faxes += list(list(world.time, weakref(P), department, key_name(admin)))
 
 	log_admin("[admin] sent a fax to [department].")
 

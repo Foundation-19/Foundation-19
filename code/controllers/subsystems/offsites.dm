@@ -95,17 +95,12 @@ SUBSYSTEM_DEF(offsites)
 			var/fax_time = text2num(params["fax"])
 
 			var/obj/item/fax
-			if(findtext(fax_type, "Sent fax"))
-				for(var/F in cur_os.sent_faxes)
-					if(F[1] == fax_time)
-						var/weakref/faxRef = F[2]
-						fax = faxRef?.resolve()
-						break
-			else
-				for(var/F in cur_os.received_faxes)
-					if(F[1] == fax_time)
-						fax = F[2]
-						break
+			var/list/target_list = findtext(fax_type, "Sent fax") ? cur_os.sent_faxes : cur_os.received_faxes
+			for(var/F in target_list)
+				if(F[1] == fax_time)
+					fax = F[2]
+					break
+
 			if(isnull(fax))
 				to_chat(admin, SPAN_WARNING("The fax you're trying to view has been deleted!"))
 
