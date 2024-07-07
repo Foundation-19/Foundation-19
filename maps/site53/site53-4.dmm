@@ -1455,7 +1455,7 @@
 "eY" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Upper Command Evacuation Tunnel";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL3")
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "Administrative Evacuation";
@@ -4960,7 +4960,7 @@
 "te" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Upper Command Evacuation Tunnel";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -5592,6 +5592,13 @@
 /obj/structure/closet/secure_closet/guard/ez,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"vV" = (
+/obj/machinery/door/airlock/hatch/maintenance{
+	name = "Upper Command Evacuation Tunnel";
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/turf/simulated/floor,
+/area/site53/uez/hallway)
 "vX" = (
 /obj/structure/bed/roller,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
@@ -7002,6 +7009,18 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/commandpanicbunker)
+"CQ" = (
+/obj/machinery/door/airlock/command{
+	name = "Upper Command Evacuation Tunnel";
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "Administrative Evacuation";
+	name = "Administrative Evacuation Tunnels Blast Door";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/hallway)
 "CR" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_titanium,
@@ -7502,7 +7521,7 @@
 "Fp" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Upper Command Evacuation Tunnel";
-	req_access = list("ACCESS_HEAD_OF_PERSONNEL")
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -8994,7 +9013,7 @@
 "Mv" = (
 /obj/machinery/door/airlock/command{
 	name = "Upper Command Evacuation Tunnel";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	req_access = list("ACCESS_ADMIN_LEVEL3")
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "Administrative Evacuation";
@@ -9801,7 +9820,7 @@
 "PT" = (
 /obj/machinery/door/airlock/command{
 	name = "Upper Command Evacuation Tunnel";
-	req_access = list("ACCESS_SECURITY_LEVEL5")
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "Administrative Evacuation";
@@ -45409,7 +45428,7 @@ ep
 ep
 fa
 SP
-Gr
+CQ
 SP
 SP
 Ci
@@ -47726,7 +47745,7 @@ SP
 SP
 SP
 SP
-xM
+vV
 AZ
 Vn
 zD
