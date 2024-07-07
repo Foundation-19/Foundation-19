@@ -825,12 +825,6 @@
 /area/site53/uez/equipmentroom)
 "cW" = (
 /obj/machinery/door/blast/regular/open{
-	id_tag = "Administration Lockdown";
-	name = "Administrative Lockdown Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
-/obj/machinery/door/blast/regular/open{
 	id_tag = "EZSec Lockdown";
 	name = "EZ Security Center Lockdown Blast Door";
 	icon_state = "pdoor0";
@@ -5556,12 +5550,6 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "Administration Lockdown";
-	name = "Administrative Lockdown Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
-/obj/machinery/door/blast/regular/open{
 	id_tag = "EZSec Lockdown";
 	name = "EZ Security Center Lockdown Blast Door";
 	icon_state = "pdoor0";
@@ -7906,12 +7894,6 @@
 	icon_state = "pdoor0";
 	dir = 4
 	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "EZSec Lockdown";
-	name = "EZ Security Center Lockdown Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -8583,12 +8565,6 @@
 	icon_state = "pdoor0";
 	dir = 4
 	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "EZSec Lockdown";
-	name = "EZ Security Center Lockdown Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9199,12 +9175,6 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "EZentrancewest";
 	name = "EZ Security Center Checkpoint West Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "EZSec Lockdown";
-	name = "EZ Security Center Lockdown Blast Door";
 	icon_state = "pdoor0";
 	dir = 4
 	},
@@ -10017,12 +9987,6 @@
 	dir = 8;
 	icon_state = "closed";
 	name = "EZ Security Center"
-	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "Administration Lockdown";
-	name = "Administrative Lockdown Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "EZSec Lockdown";
@@ -11823,12 +11787,6 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "EZentrancewest";
 	name = "EZ Security Center Checkpoint West Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "EZSec Lockdown";
-	name = "EZ Security Center Lockdown Blast Door";
 	icon_state = "pdoor0";
 	dir = 4
 	},
