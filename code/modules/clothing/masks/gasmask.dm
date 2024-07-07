@@ -237,7 +237,7 @@
 	desc = "A face-covering mask that can be connected to an air supply, this one is designed for MTF unit 'Laws Left Hand'."
 	icon_state = "alpha-mask"
 	item_state = "alpha-mask"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = FACE|EYES
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
