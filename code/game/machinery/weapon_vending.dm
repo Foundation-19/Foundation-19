@@ -48,27 +48,28 @@
 // ## LCZ MACHINES ## //
 
 /obj/machinery/vending/weaponry/lcz
-	name = "\improper LightCZ AutoEquipment Device"
-	desc = "An automated gun storage device that can dispense guns on demand, this one has been designed to supply LCZ personnel."
+	name = "\improper Light Containment Zone Lethal AutoEquipment Device"
+	desc = "An automated gun storage device that can dispense guns on demand, this one has been designed to supply lethal weapons LCZ personnel."
 	icon_state = "lcz_weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/p90 = 6,
-		/obj/item/gun/projectile/revolver/rhino = 2,
 		/obj/item/gun/projectile/pistol/mk9 = 4,
 		/obj/item/ammo_magazine/box/a57 = 6,
-		/obj/item/ammo_magazine/box/a57/rubber = 30,
+		/obj/item/ammo_magazine/box/a57/hp = 3,
 		/obj/item/ammo_magazine/box/a9mm = 4,
-		/obj/item/ammo_magazine/box/a357 = 4,
-		/obj/item/ammo_magazine/scp/mk9 = 8,
-		/obj/item/ammo_magazine/scp/p90_mag = 12
+		/obj/item/ammo_magazine/scp/p90_mag = 12,
+		/obj/item/ammo_magazine/scp/p90_mag/hp = 6,
+		/obj/item/ammo_magazine/scp/mk9 = 8
 	)
 
-/obj/machinery/vending/weaponry/lcz/energy
-	name = "\improper LightCZ E.G. Storage"
-	desc = "An automated gun storage device that can dispense guns on demand, this one houses energy/pulse weapons for LCZ personnel."
+/obj/machinery/vending/weaponry/lcz/nonlethal
+	name = "\improper Light Containment Zone Non-Lethal AutoEquipment Device"
+	desc = "An automated gun storage device that can dispense guns on demand, this one has been designed to supply non-lethal weapons LCZ personnel."
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
+		/obj/item/ammo_magazine/box/a57/rubber = 30,
+		/obj/item/ammo_magazine/scp/p90_mag/rubber = 24,
 		/obj/item/gun/energy/stunrevolver/taser = 6,
 		/obj/item/gun/energy/stunrevolver/rifle = 2,
 		/obj/item/gun/energy/ionrifle = 1

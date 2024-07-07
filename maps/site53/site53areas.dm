@@ -120,32 +120,39 @@
 
 // SITE 53 TRAM AREA'S
 
-/area/site53/tram/car1
-	name = "Chaos Car"
+/area/site53/tram/ci
+	name = "Chaos Insurgency Helicopter"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/centcom/chaos
-	name = "Chaos Insurgency"
+	name = "Chaos Insurgency Outpost"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/tram/goc1
-	name = "GOC Car"
+	name = "Global Occult Coalition Truck"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/tram/goc2
+	name = "Global Occult Coalition Helicopter"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/centcom/goc
-	name = "GOC"
+	name = "Global Occult Coalition Headquarters"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/tram/scpcar
@@ -157,10 +164,10 @@
 
 
 /area/site53/tram/mtf
-	name = "MTF Heli"
+	name = "Mobile Task Force Helicopter"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/tram/maintrain
@@ -208,8 +215,10 @@
 	name = "Upper Surface"
 	requires_power = 0
 	dynamic_lighting = 0
+
 /area/site53/surface/surface/caves
 	name = "Surface Caverns"
+	dynamic_lighting = 1
 
 /area/site53/surface/surface/away/bar
 	name = "Away Bar"
@@ -382,12 +391,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
-/area/site53/ulcz/scp078
-	name = "\improper SCP-078"
-	icon_state = "research"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = SMALL_ENCLOSED
-
 /area/site53/ulcz/scp173
 	name = "\improper SCP-173"
 	icon_state = "research"
@@ -420,6 +423,12 @@
 
 /area/site53/llcz/scp500
 	name = "\improper SCP-500"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/llcz/scp529
+	name = "\improper SCP-529"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
@@ -465,6 +474,12 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/llcz/scp294
+	name = "\improper SCP-294"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
 /area/site53/ulcz/scp914
 	name = "\improper SCP-914"
 	icon_state = "research"
@@ -472,6 +487,12 @@
 	sound_env = SMALL_ENCLOSED
 	// Looping music
 	forced_ambience = list('sounds/music/914.ogg')
+
+/area/site53/ulcz/scp912
+	name = "\improper SCP-912"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
 
 /area/site53/llcz/genstorage1
 	name = "\improper General Storage #1"
@@ -623,16 +644,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
-
-/area/site53/uez/canteen
-	name = "\improper Canteen"
-	icon_state = "bar"
-	sound_env = LARGE_SOFTFLOOR
-
-/area/site53/uez/conference
-	name = "\improper Conference Room A"
-	icon_state = "bar"
-	sound_env = LARGE_SOFTFLOOR
 
 /area/site53/uez/janitor
 	name = "\improper Janitor's Office"
@@ -1007,11 +1018,6 @@
 	icon_state = "surgery"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/medical/surgery/op3
-	name = "\improper Operating Theatre #3"
-	icon_state = "surgery"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/medical/surgery/hall
 	name = "\improper Surgical Hallway"
 	icon_state = "surgery"
@@ -1022,13 +1028,8 @@
 	icon_state = "exam_room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/medical/isolation
-	name = "\improper Isolation Quarantine"
-	icon_state = "medbay3"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/medical/mentalhealth/isolation
-	name = "\improper Mental Health Isolation"
+	name = "\improper Virology"
 	icon_state = "medbay3"
 	ambience = list('sounds/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED

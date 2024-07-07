@@ -301,3 +301,17 @@
 		bio = ARMOR_BIO_STRONG,
 		rad = ARMOR_RAD_SMALL
 		)
+
+/obj/item/clothing/mask/gas/mtf
+	name = "tactical coifed gas mask"
+	desc = "A top-grade tactical clear gasmask above an added balaclava, it has a bit of melee-padding in it, along with some heavy bulletproof glass on it. Can be connected to an air supply."
+	icon_state = "gasmask_alt_cover"
+	item_state = "gasmask_alt_cover"
+	flags_inv = HIDEEARS|HIDEFACE|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_AP,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)

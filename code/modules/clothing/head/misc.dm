@@ -389,3 +389,8 @@
 	name = "\improper SAARE beret"
 	desc = "A gray beret with the emblem of Strategic Assault and Asset Retention Enterprises, a private military corporation. For mercenaries that are more inclined towards style than safety."
 	icon_state = "beret_corporate_saare"
+
+/obj/item/clothing/head/police
+	name = "police cap"
+	desc = "An outdated police cap, usually worn by law enforcement. It still smells of gunpowder, it has an Anchorage Police Department badge on it."
+	icon_state = "policehat"

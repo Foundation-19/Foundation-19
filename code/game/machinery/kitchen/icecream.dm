@@ -21,6 +21,7 @@
 	var/list/product_types = list()
 	var/dispense_flavour = ICECREAM_VANILLA
 	var/flavour_name = "vanilla"
+	var/canmake = 1
 
 /obj/machinery/icecream_vat/proc/get_ingredient_list(type)
 	switch(type)
@@ -122,6 +123,11 @@
 		..()
 
 /obj/machinery/icecream_vat/proc/make(mob/user, make_type, amount)
+	if(amount > 5 || amount < 1)
+		return
+	if(!canmake)
+		to_chat(user, SPAN_WARNING("The machine is cooling off!"))
+		return
 	for(var/R in get_ingredient_list(make_type))
 		if(reagents.has_reagent(R, amount))
 			continue
@@ -136,6 +142,9 @@
 			src.visible_message(SPAN_INFO("[user] cooks up some [flavour] cones."))
 		else
 			src.visible_message(SPAN_INFO("[user] whips up some [flavour] icecream."))
+		canmake = 0
+		sleep(100)
+		canmake = 1
 	else
 		to_chat(user, SPAN_WARNING("You don't have the ingredients to make this."))
 

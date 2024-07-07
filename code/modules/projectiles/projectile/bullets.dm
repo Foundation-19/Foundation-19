@@ -296,6 +296,10 @@
 	damage = 45 //.45
 	armor_penetration = 0
 
+/obj/item/projectile/bullet/pistol/medium/ap
+	damage = 45 //.45
+	armor_penetration = 10
+
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
 	damage = 50 //.44 magnum or something
