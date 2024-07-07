@@ -89,7 +89,7 @@
 	)
 
 /obj/structure/closet/secure_closet/administration/ethicscommittee
-	name = "ethic committee liaison's locker"
+	name = "ethics committee liaison's locker"
 	req_access = list(ACCESS_ADMIN_LVL5)
 	icon_state = "ecllocked"
 	icon_closed = "eclunlocked"
