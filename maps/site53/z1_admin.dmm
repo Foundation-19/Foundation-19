@@ -2362,7 +2362,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -4486,7 +4486,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -7423,7 +7423,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -16899,7 +16899,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
 /obj/item/clothing/glasses/thermal,
@@ -17523,7 +17523,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -18016,7 +18016,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -18243,7 +18243,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -19323,7 +19323,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,

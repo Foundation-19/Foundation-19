@@ -18,3 +18,14 @@
       when opened
   quadbium:
   - bugfix: fixes list of engineering and science jobs
+2024-07-07:
+  ChromeFoxxity:
+  - rscadd: CI Helicopter, GOC overhaul, HCZ overhaul, better containment chambers,
+      adds SCP-912, GOC Helicopter, GOC Pointman.
+  checkraisefold:
+  - bugfix: Fixed runtime spam on every mob life
+  - bugfix: 106 no longer breaches immediately on grid check event
+  projectkepler-ru:
+  - rscadd: Everyone in HCZ now has a much more powerful arsenal, all zone commander
+      has their sidearm upped by 1 tier
+  - rscadd: EZ now has an ion gun in their arsenal, they previously did not have it

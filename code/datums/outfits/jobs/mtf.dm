@@ -76,6 +76,23 @@
 	belt = /obj/item/defibrillator/compact/combat/loaded
 	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/firstaid/combat = 1)
 
+/decl/hierarchy/outfit/mtf/epsilon_11/pointman
+	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Pointman")
+	uniform = /obj/item/clothing/under/mtf/epsilon11
+	suit = /obj/item/clothing/suit/armor/mtfmedium
+	head = /obj/item/clothing/head/helmet/mtftactical
+	mask = /obj/item/clothing/mask/gas/mtf
+	glasses = /obj/item/clothing/glasses/night
+	gloves = /obj/item/clothing/gloves/tactical/scp
+	shoes = /obj/item/clothing/shoes/swat
+	suit_store = null
+	r_hand = /obj/item/shield/riot/metal
+	l_pocket = /obj/item/grenade/flashbang
+	r_pocket = /obj/item/grenade/flashbang
+	id_type = /obj/item/card/id/mtf/ninetail
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2)
+
 /decl/hierarchy/outfit/mtf/eta_10 // See No Evil
 	name = OUTFIT_JOB_NAME("MTF Eta-10 Operative")
 	uniform = /obj/item/clothing/under/mtf/eta10
@@ -151,10 +168,10 @@
 	name = OUTFIT_JOB_NAME("MTF Alpha-1 Operative")
 	uniform = /obj/item/clothing/under/mtf/alpha1
 	suit = /obj/item/clothing/suit/armor/mtfalpha1
-	mask = /obj/item/clothing/mask/gas/alpha
+	mask = /obj/item/clothing/mask/gas/security
 	head = /obj/item/clothing/head/beret/mtf/alpha
-	gloves = /obj/item/clothing/gloves/tactical/alpha
-	glasses = /obj/item/clothing/glasses/night
+	gloves = /obj/item/clothing/gloves/thick/combat
+	glasses = /obj/item/clothing/glasses/hud/security/night
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = null
 	r_hand = /obj/item/gun/projectile/automatic/t12
@@ -169,10 +186,10 @@
 	name = OUTFIT_JOB_NAME("MTF Omega-1 Enforcement")
 	uniform = /obj/item/clothing/under/mtf/omega1
 	suit = /obj/item/clothing/suit/armor/mtfomega1
-	mask = /obj/item/clothing/mask/gas/security
+	mask = /obj/item/clothing/mask/gas/omega1
 	head = /obj/item/clothing/head/beret/mtf/omega
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
-	glasses = /obj/item/clothing/glasses/hud/night/security
+	glasses = /obj/item/clothing/glasses/hud/security/night
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = null
 	r_hand = /obj/item/gun/projectile/automatic/scp/vector
