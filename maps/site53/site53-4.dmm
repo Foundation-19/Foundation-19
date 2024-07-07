@@ -4636,7 +4636,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/security{
 	icon_state = "closed";
 	name = "EZ Agent Locker Room";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_ADMIN_LEVEL2");
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -5895,7 +5895,7 @@
 "ye" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "EZ Senior Agent's Office";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -9093,6 +9093,8 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/floor_decal/industrial/outline/red,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "NE" = (
@@ -9276,7 +9278,7 @@
 "OE" = (
 /obj/machinery/door/airlock/command{
 	name = "RAISA's Office";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_NETWORK")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -47453,7 +47455,7 @@ cp
 Gs
 LW
 Pu
-VF
+rR
 gk
 uP
 Cz
@@ -49258,7 +49260,7 @@ uP
 bQ
 VF
 VF
-VF
+rR
 VF
 VF
 VF
@@ -49509,7 +49511,7 @@ od
 tj
 cf
 so
-rR
+VF
 Ah
 YO
 YB
@@ -50280,7 +50282,7 @@ Gt
 CF
 Fw
 NY
-VF
+rR
 bW
 uP
 PG

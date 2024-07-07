@@ -9961,7 +9961,7 @@
 "jXt" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/regular/open{
@@ -10107,14 +10107,14 @@
 	id_tag = "viro008";
 	name = "SCP-008 Virology Lab Lockdown Control";
 	dir = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL3");
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	pixel_x = -25
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "viro0082";
 	name = "SCP-008-2 Containment Cell Control";
 	dir = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL3");
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	pixel_x = -34
 	},
 /turf/simulated/floor/tiled/white/vertical,
@@ -11390,7 +11390,7 @@
 	},
 /obj/machinery/door/window/brigdoor/westright{
 	name = "SCP-008 Secure Freezer";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/light{
 	dir = 4
@@ -12668,7 +12668,7 @@
 "mLc" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Sterilization Storage";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/regular/open{
@@ -13535,7 +13535,7 @@
 "nFD" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Sample Testing Lab";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -14257,7 +14257,7 @@
 "oub" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008-2 Containment Cell";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -14394,7 +14394,7 @@
 "oAH" = (
 /obj/machinery/door/window/brigdoor/westright{
 	name = "SCP-008 Secure Freezer";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
@@ -16511,7 +16511,7 @@
 "qTm" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Medical Office";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/structure/cable/green{
@@ -16745,7 +16745,7 @@
 "rcD" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Security Office";
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/regular/open{
@@ -18325,7 +18325,7 @@
 "sMN" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/structure/cable/green{
@@ -20586,7 +20586,7 @@
 "vqu" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Virology Lab";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -21376,7 +21376,7 @@
 "wcx" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Security Office";
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	aiControlDisabled = 1
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -21805,7 +21805,7 @@
 "wHx" = (
 /obj/machinery/door/airlock/highsecurity/bolted{
 	name = "SCP-008 Sample Storage";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1;
 	id_tag = "scp008bolt"
 	},
