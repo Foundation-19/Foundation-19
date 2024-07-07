@@ -355,8 +355,9 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uez/hallway)
 "bq" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "Cell 4"
+/obj/machinery/door/window/brigdoor/southleft{
+	id_tag = "EZ Cell 4";
+	name = "EZ Cell 4"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -522,7 +523,7 @@
 	name = "EZ Confinement Hallway";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/space,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
 "bY" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -4712,6 +4713,18 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"rY" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/machinery/door_timer{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 1";
+	name = "EZ Cell 1";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "rZ" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/floor_decal/corner/blue/border{
@@ -4725,8 +4738,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "sb" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "Cell 1"
+/obj/machinery/door/window/brigdoor/southleft{
+	id_tag = "EZ Cell 1";
+	name = "EZ Cell 1"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -5275,8 +5289,13 @@
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/equipmentroom)
 "uL" = (
-/obj/structure/bed,
-/obj/effect/floor_decal/corner/grey/mono,
+/obj/structure/table/steel_reinforced,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_y = 3
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "uM" = (
@@ -5724,7 +5743,10 @@
 /turf/unsimulated/mineral,
 /area/site53/uez/commandpanicbunker)
 "wZ" = (
-/obj/effect/floor_decal/corner/grey/mono,
+/obj/machinery/flasher{
+	id_tag = "EZ Cell 3"
+	},
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "xa" = (
@@ -6159,10 +6181,11 @@
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/equipmentroom)
 "zt" = (
-/obj/structure/bed/chair{
-	dir = 1
+/obj/structure/closet/secure_closet/brig{
+	name = "Cell 3 Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 3"
 	},
-/obj/effect/floor_decal/corner/grey/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "zu" = (
@@ -6601,8 +6624,9 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/commandpanicbunker)
 "Bz" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "Cell 2"
+/obj/machinery/door/window/brigdoor/southleft{
+	id_tag = "EZ Cell 2";
+	name = "EZ Cell 2"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -7080,6 +7104,18 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
+"DL" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/machinery/door_timer{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 3";
+	name = "EZ Cell 3";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "DO" = (
 /obj/item/modular_computer/console/preset/aislot/research,
 /obj/effect/floor_decal/corner/red/border{
@@ -7490,6 +7526,20 @@
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/uez/hallway)
+"FZ" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 5
+	},
+/obj/machinery/door_timer{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 4";
+	name = "EZ Cell 4";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/uez/equipmentroom)
 "Gb" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/storage/box/glasses/pint,
@@ -7502,8 +7552,9 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "Gd" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "Cell 3"
+/obj/machinery/door/window/brigdoor/southleft{
+	id_tag = "EZ Cell 3";
+	name = "EZ Cell 3"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -7904,6 +7955,13 @@
 	},
 /turf/simulated/floor/grass,
 /area/site53/uez/hallway)
+"HR" = (
+/obj/machinery/flasher{
+	id_tag = "EZ Cell 2"
+	},
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "HS" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 8
@@ -8254,6 +8312,12 @@
 	},
 /obj/machinery/camera/network/entrance{
 	c_tag = "EZ Security Center Confinement"
+	},
+/obj/machinery/door_timer{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 2";
+	name = "EZ Cell 2";
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
@@ -8811,6 +8875,14 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/uez/hallway)
+"Mm" = (
+/obj/structure/closet/secure_closet/brig{
+	name = "Cell 2 Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 2"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Mn" = (
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/senioragentoffice)
@@ -8882,6 +8954,13 @@
 "MI" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/item/modular_computer/console/preset/security,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
+"MJ" = (
+/obj/machinery/flasher{
+	id_tag = "EZ Cell 1"
+	},
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "ML" = (
@@ -9213,7 +9292,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	dir = 8;
 	icon_state = "closed";
-	req_access = list(list("ACCESS_ENGINEERING_LEVEL5","ACCESS_MEDICAL_LEVEL5","ACCESS_SCIENCE_LEVEL5"));
+	req_access = list(list("ACCESS_ENGINEERING_LEVEL5","ACCESS_MEDICAL_LEVEL5","ACCESS_SCIENCE_LEVEL5","ACCESS_SECURITY_LEVEL2"));
 	name = "Directorate's Offices"
 	},
 /obj/machinery/door/blast/regular/open{
@@ -9561,6 +9640,17 @@
 	dir = 1
 	},
 /area/site53/uez/hallway)
+"PK" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/brig{
+	name = "Perma Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Perma"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/equipmentroom)
 "PL" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/reagent_containers/food/condiment/enzyme,
@@ -9647,6 +9737,14 @@
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"Qq" = (
+/obj/structure/closet/secure_closet/brig{
+	name = "Cell 1 Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 1"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Qr" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -9801,6 +9899,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"QW" = (
+/obj/machinery/flasher{
+	id_tag = "EZ Cell 4"
+	},
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Ra" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
@@ -10213,6 +10318,19 @@
 "Tb" = (
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
+"Td" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 5
+	},
+/obj/structure/closet/secure_closet/brig{
+	name = "Perma Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Perma"
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/uez/equipmentroom)
 "Te" = (
 /obj/machinery/status_display{
 	pixel_x = -32
@@ -10248,6 +10366,11 @@
 	dir = 6
 	},
 /obj/machinery/light,
+/obj/structure/closet/secure_closet/brig{
+	name = "Perma Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Perma"
+	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
@@ -10657,6 +10780,10 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
+"Vr" = (
+/obj/structure/bed,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Vt" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -10860,6 +10987,18 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
+"Ws" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/machinery/door_timer{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Perma";
+	name = "EZ Perma";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "Wu" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
@@ -10905,6 +11044,14 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
+"WK" = (
+/obj/structure/closet/secure_closet/brig{
+	name = "Cell 4 Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	id = "EZ Cell 4"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "WQ" = (
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
@@ -10954,17 +11101,12 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/internaltribunal)
 "Xa" = (
-/obj/structure/table/steel_reinforced,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/paper_bin{
-	pixel_y = 3
+/obj/structure/bed/chair{
+	dir = 1
 	},
-/obj/item/pen{
-	pixel_y = 3
-	},
-/obj/effect/floor_decal/corner/grey/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "Xb" = (
@@ -11402,6 +11544,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
+"Zb" = (
+/obj/machinery/flasher{
+	id_tag = "EZ Perma"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Zc" = (
 /obj/machinery/light{
 	dir = 8
@@ -11518,7 +11666,6 @@
 "Zw" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	icon_state = "closed";
-	req_access = list(list("ACCESS_ENGINEERING_LEVEL5","ACCESS_MEDICAL_LEVEL5","ACCESS_SCIENCE_LEVEL5"));
 	name = "Upper Command's Offices"
 	},
 /obj/machinery/door/blast/regular/open{
@@ -51813,9 +51960,9 @@ hk
 hk
 hk
 uP
-wZ
-wZ
-wZ
+Vr
+MJ
+VF
 sb
 cj
 jD
@@ -52072,9 +52219,9 @@ hk
 uP
 uL
 Xa
-zt
+Qq
 uP
-Bd
+rY
 VF
 Fo
 VF
@@ -52584,14 +52731,14 @@ hk
 hk
 hk
 uP
-wZ
-wZ
-wZ
+Vr
+HR
+VF
 Bz
 Bd
-VF
+Zb
 cx
-VF
+Zb
 xk
 uP
 pK
@@ -52843,7 +52990,7 @@ hk
 uP
 uL
 Xa
-zt
+Mm
 uP
 JP
 VF
@@ -52855,7 +53002,7 @@ qk
 nI
 xr
 uP
-Bd
+Ws
 VF
 HH
 uP
@@ -53355,9 +53502,9 @@ hk
 hk
 hk
 uP
+Vr
 wZ
-wZ
-wZ
+VF
 Gd
 Bd
 VF
@@ -53369,8 +53516,8 @@ hj
 wz
 Nc
 uP
-cY
-Qi
+Td
+PK
 Tk
 uP
 YW
@@ -53616,10 +53763,10 @@ uL
 Xa
 zt
 uP
-Bd
-VF
+DL
+Zb
 Fo
-VF
+Zb
 xk
 uP
 uP
@@ -54126,9 +54273,9 @@ hk
 hk
 hk
 uP
-wZ
-wZ
-wZ
+Vr
+QW
+VF
 bq
 Bd
 VF
@@ -54385,9 +54532,9 @@ hk
 uP
 uL
 Xa
-zt
+WK
 uP
-cY
+FZ
 Pm
 Qi
 Pm

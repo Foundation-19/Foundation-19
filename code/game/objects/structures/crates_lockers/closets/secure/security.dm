@@ -222,8 +222,8 @@
 
 /obj/structure/closet/secure_closet/brig/WillContain()
 	return list(
-		/obj/item/clothing/under/color/orange,
-		/obj/item/clothing/shoes/orange
+		/obj/item/clothing/under/scp/eclass,
+		/obj/item/clothing/shoes/workboots
 	)
 
 /obj/structure/closet/secure_closet/courtroom
