@@ -92,7 +92,7 @@ GLOBAL_VAR(href_logfile)
 
 	LoadVerbs(/datum/verbs/menu)
 
-	GLOB.timezoneOffset = text2num(time2text(0,"hh")) * 36000
+	GLOB.timezoneOffset = world.timezone * 36000
 
 	var/latest_changelog = file("html/changelogs/archive/" + time2text(world.timeofday, "YYYY-MM") + ".yml")
 	GLOB.changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for telling if the changelog has changed recently

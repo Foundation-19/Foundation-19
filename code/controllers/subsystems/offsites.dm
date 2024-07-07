@@ -129,8 +129,15 @@ SUBSYSTEM_DEF(offsites)
 
 // TODO: track interception separately for each offsite + methods that bypass interception?
 /proc/message_offsite(msg, mob/sender, offsite_type)
-	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
+	var/datum/offsite/os
+	if(isdatum(offsite_type))
+		os = offsite_type
+	else
+		os = SSoffsites.offsites[offsite_type]
+	if(!os)
+		return
 
+	var/list/mob/living/silicon/ai/intercepters = check_for_interception()
 	if(intercepters.len)
 		for(var/thing in intercepters)
 			var/mob/living/silicon/ai/ai = thing
@@ -143,11 +150,14 @@ SUBSYSTEM_DEF(offsites)
 				if("Block")
 					return
 
-	var/datum/offsite/os = SSoffsites.offsites[offsite_type]
 	os.receive_message(msg, sender)
 
 /proc/fax_offsite(obj/item/rcvdcopy, mob/sender, offsite_type, department)
-	var/datum/offsite/os = SSoffsites.offsites[offsite_type]
+	var/datum/offsite/os
+	if(isdatum(offsite_type))
+		os = offsite_type
+	else
+		os = SSoffsites.offsites[offsite_type]
 	if(!os)
 		// we can still forward to other fax machines with the dept tag
 		return TRUE

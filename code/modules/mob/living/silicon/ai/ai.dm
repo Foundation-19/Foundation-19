@@ -374,7 +374,7 @@ var/list/ai_verbs_default = list(
 	set category = "Silicon Commands"
 	set name = "Send Emergency Message"
 
-	var/datum/offsite/targetOffsite = SSoffsites.offsites[/datum/offsite/foundation/regional_command]
+	var/datum/offsite/targetOffsite = SSoffsites.offsites[/datum/offsite/foundation]
 	if(!istype(targetOffsite))
 		return
 	if(check_unable(AI_CHECK_WIRELESS))
@@ -389,10 +389,10 @@ var/list/ai_verbs_default = list(
 	if(!input)
 		return
 
-	message_offsite(input, usr, targetOffsite.type)
+	message_offsite(input, usr, targetOffsite)
 
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
-	log_say("[key_name_admin(usr)] has made an emergency AIC [GLOB.using_map.boss_short] announcement: [input]")
+	log_say("[key_name_admin(usr)] has made an emergency AIC [targetOffsite.name] announcement: [input]")
 	emergency_message_cooldown = 1
 	spawn(30 SECONDS)
 		emergency_message_cooldown = 0

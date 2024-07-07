@@ -22,7 +22,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	. = ..()
 
 	if(!destination)
-		var/datum/offsite/initialOffsite = SSoffsites.offsites[/datum/offsite/foundation/regional_command]
+		var/datum/offsite/initialOffsite = SSoffsites.offsites[/datum/offsite/foundation]
 		if(initialOffsite)
 			destination = initialOffsite.name
 		else if(length(GLOB.alldepartments))
@@ -232,7 +232,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
 
-	if(!fax_offsite(rcvdcopy, sender, destinationOffsite.type, department))
+	if(!fax_offsite(rcvdcopy, sender, destinationOffsite, department))
 		// interception!
 		visible_message("[src] beeps, \"Message transmitted successfully.\"")
 		return

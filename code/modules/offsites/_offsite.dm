@@ -76,7 +76,7 @@
 		return
 
 	if(!recipient)
-		recipient = input(admin, "Choose the recipient of your message.", "Choose Recipient") in GLOB.living_mob_list_
+		recipient = tgui_input_list(admin, "Choose the recipient of your message.", "Choose Recipient", GLOB.player_list)
 
 	if(recipient.can_centcom_reply())
 		var/message = tgui_input_text(admin, message = "Enter a message to be sent to the recipient.", title = "Message Input", multiline = TRUE)

@@ -125,14 +125,14 @@
 /datum/nano_module/program/comm/proc/send_offsite_message(target, datum/offsite/O)
 	if(!is_relay_online())
 		to_chat(usr, SPAN_WARNING("Radio antenna not responding. Unable to transmit message."))
-		return 1
+		return
 	if(centcomm_message_cooldown)
 		to_chat(usr, SPAN_WARNING("Supercapacitors recharging. Please stand by."))
 		SSnano.update_uis(src)
 		return
 	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [target] via encrypted radio frequency. Abuse may lead to termination of duty. Transmission does not guarantee a response. There is a 30 second delay before you may send another message; be clear, full and concise.", "?? Emergency Message", "To abort, enter an empty message"))
 	if(!input || !can_still_topic())
-		return 1
+		return
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
 	log_say("[key_name(usr)] has made an announcement to [target]: [input]")
 
@@ -177,11 +177,13 @@
 			. = TRUE
 			if(href_list["target"] == "emagged")
 				if(program)
-					if(is_authenticated(user) && program.computer.computer_emagged && !issilicon(usr) && ntn_comm)
-						send_offsite_message("\[ABNORMAL ROUTING CORDINATES\]", /datum/offsite/chaos_insurgency)
+					var/datum/offsite/targetOffsite = SSoffsites.offsites[/datum/offsite/chaos_insurgency]
+					if(is_authenticated(user) && program.computer.computer_emagged && !issilicon(usr) && ntn_comm && targetOffsite)
+						send_offsite_message("\[ABNORMAL ROUTING COORDINATES\]", targetOffsite)
 			else if(href_list["target"] == "regular")
-				if(is_authenticated(user) && !issilicon(usr) && ntn_comm)
-					send_offsite_message(GLOB.using_map.boss_short, /datum/offsite/foundation/regional_command)
+				var/datum/offsite/targetOffsite = SSoffsites.offsites[/datum/offsite/foundation]
+				if(is_authenticated(user) && !issilicon(usr) && ntn_comm && targetOffsite)
+					send_offsite_message(targetOffsite.name, targetOffsite)
 		if("evac")
 			. = TRUE
 			if(is_authenticated(user))
