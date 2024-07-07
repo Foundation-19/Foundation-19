@@ -12038,6 +12038,11 @@
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "mhI" = (
@@ -17138,6 +17143,11 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp106containment)
 "rzN" = (
@@ -19694,16 +19704,6 @@
 	},
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/explored)
-"uoM" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/machinery/power/smes/buildable{
-	name = "Lower Shield power storage unit"
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp106containment)
 "uoX" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 4
@@ -74559,7 +74559,7 @@ cPK
 aWN
 moA
 hCG
-uoM
+lcR
 jui
 rGi
 fBS
