@@ -1,6 +1,6 @@
 import { Window } from '../layouts';
 import { useBackend, useLocalState } from '../backend';
-import { Section, Button, Tabs, Flex, Collapsible, Box } from '../components';
+import { Section, Button, Tabs, Flex, Collapsible, Box, BlockQuote } from '../components';
 
 export const OffsitePanel = (props, context) => {
   const { act, data } = useBackend(context);
@@ -52,13 +52,14 @@ const OffsitePage = (props, context) => {
       <Flex direction="column-reverse">
         {comms_data &&
           comms_data.map((c_data = [], i) => {
+            const [ log_time, log_ref, log_dept, log_user, log_type, log_time_pretty ] = c_data;
             return (
               <Flex.Item>
-                {c_data[4]} {c_data[3]} {c_data[2] ? "(department: " + c_data[2] + " " : ""}at world time {c_data[0]}
+                {log_type} {log_user} {log_dept ? "(department: " + log_dept + ") " : ""}at round time {log_time_pretty}
                 <Box ml={2}>
-                  {(c_data[4].indexOf("fax") > -1)
-                    ? <Button onClick={() => act('read_fax', { id: type, fax: c_data[0], fax_type: c_data[4] })}>Read</Button>
-                    : <Collapsible title="Message Contents">{c_data[1]}</Collapsible>
+                  {(log_type.indexOf("fax") > -1)
+                    ? <Button onClick={() => act('read_fax', { id: type, fax: log_time, fax_type: log_type })}>Read</Button>
+                    : <Collapsible title="Message Contents"><BlockQuote>{log_ref}</BlockQuote></Collapsible>
                   }
                 </Box>
               </Flex.Item>

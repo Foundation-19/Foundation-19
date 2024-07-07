@@ -61,10 +61,7 @@
 			sound_to(C, 'sounds/machines/dotprinter.ogg')
 
 /datum/offsite/proc/send_message(client/admin, mob/living/recipient = null)
-	var/datum/admins/admin_datum = admin.holder
-
-	if (!istype(admin_datum))
-		to_chat(admin, "Error: you are not an admin!")
+	if (!check_rights(R_ADMIN|R_MOD, TRUE, admin))
 		return
 
 	if(!recipient)
@@ -87,7 +84,10 @@
 		to_chat(admin, "The person you are trying to contact does not have functional radio equipment.")
 
 /datum/offsite/Topic(href, href_list)
+	if((. = ..()))
+		return
+
 	if(href_list["send_message"] && usr)
 		var/client/C = usr.client
-		if(C && C.holder)
+		if(check_rights(R_ADMIN|R_MOD, TRUE, C))
 			send_message(C, locate(href_list["send_message"]))

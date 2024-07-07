@@ -1296,7 +1296,7 @@ var/global/floorIsLava = 0
 		return
 
 	// Origin
-	var/list/option_list = GLOB.admin_departments.Copy() + GLOB.alldepartments.Copy() + "(Custom)"
+	var/list/option_list = GLOB.alldepartments.Copy() + "(Custom)"
 	var/replyorigin = tgui_input_list(owner, "Please specify who the fax is coming from. Choose '(Custom)' to enter a custom department or '(Cancel) to cancel.", "Fax Origin", option_list)
 	if (!replyorigin || replyorigin == "(Cancel)")
 		return

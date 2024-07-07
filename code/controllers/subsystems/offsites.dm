@@ -4,6 +4,7 @@
 
 SUBSYSTEM_DEF(offsites)
 	name = "Offsites"
+	init_order = SS_INIT_OFFSITES
 	flags = SS_NO_FIRE
 	/// Associative list. Key is the offsite type, value is the offsite ref
 	var/list/offsites = list()
@@ -45,24 +46,28 @@ SUBSYSTEM_DEF(offsites)
 			var/list/rec_fax = list()
 			rec_fax += thing
 			rec_fax += "Received fax from"
+			rec_fax += gameTimestamp("hh:mm:ss", rec_fax[1])
 			BINARY_INSERT_DEFINE(list(rec_fax), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		for(var/thing in OS.sent_faxes)
 			var/list/sent_fax = list()
 			sent_fax += thing
 			sent_fax += "Sent fax to"
+			sent_fax += gameTimestamp("hh:mm:ss", sent_fax[1])
 			BINARY_INSERT_DEFINE(list(sent_fax), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		for(var/thing in OS.received_messages)
 			var/list/received_message = list()
 			received_message += thing
 			received_message += "Received message from"
+			received_message += gameTimestamp("hh:mm:ss", received_message[1])
 			BINARY_INSERT_DEFINE(list(received_message), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		for(var/thing in OS.sent_messages)
 			var/list/sent_message = list()
 			sent_message += thing
 			sent_message += "Sent message to"
+			sent_message += gameTimestamp("hh:mm:ss", sent_message[1])
 			BINARY_INSERT_DEFINE(list(sent_message), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
 
 		data["offsites"] += list(list(OS.name, OS.type, timesorted_data))
@@ -74,13 +79,16 @@ SUBSYSTEM_DEF(offsites)
 		return
 
 	var/mob/admin = usr
+	if(!check_rights(R_ADMIN|R_MOD, TRUE, admin.client))
+		return
+
 	switch(action)
 		if("send_fax")
 			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
-			cur_os.send_fax() // TODO
+			cur_os.send_fax(admin.client)
 		if("send_msg")
 			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
-			cur_os.send_message(admin)
+			cur_os.send_message(admin.client)
 		if("read_fax")
 			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
 			var/fax_type = params["fax_type"]

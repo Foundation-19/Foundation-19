@@ -2,7 +2,6 @@ GLOBAL_LIST_EMPTY(allfaxes)
 GLOBAL_LIST_EMPTY(alldepartments)
 
 GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
-GLOBAL_LIST_EMPTY(admin_departments)
 
 /obj/machinery/photocopier/faxmachine
 	name = "fax machine"
@@ -31,7 +30,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 
 	GLOB.allfaxes += src
 
-	if(department && !(("[department]" in GLOB.alldepartments) || ("[department]" in GLOB.admin_departments)))
+	if(department && !(("[department]" in GLOB.alldepartments) || SSoffsites.offsites_by_name["[department]"]))
 		GLOB.alldepartments |= department
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/O as obj, mob/user as mob)
