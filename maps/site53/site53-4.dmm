@@ -4277,6 +4277,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/clothing/under/solgov/utility/fleet/engineering,
 /turf/simulated/floor/wood/yew,
 /area/site53/uez/hallway)
 "pI" = (
