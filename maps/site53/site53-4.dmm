@@ -4021,10 +4021,6 @@
 "on" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/photocopier/faxmachine{
-	department = "Site Director's Office";
-	send_access = list("ACCESS_ADMIN_LEVEL5")
-	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
 "oo" = (
@@ -6220,7 +6216,7 @@
 "yM" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/photocopier/faxmachine{
-	department = "Site Director Office"
+	department = "Site Director's Office"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -9511,7 +9507,7 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/uez/hallway)
 "OE" = (
-/obj/machinery/door/airlock/command{
+/obj/machinery/door/airlock/security{
 	name = "RAISA's Office";
 	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_NETWORK")
 	},
