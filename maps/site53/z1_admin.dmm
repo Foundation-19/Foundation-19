@@ -13442,9 +13442,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/exosuit/premade/heavy/merc{
-	name = "Mk. III Ultra-Heavy Engagement Chassis"
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
 "It" = (
