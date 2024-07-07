@@ -10736,8 +10736,7 @@
 /area/site53/uez/commandpanicbunker)
 "Uq" = (
 /obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/implantcase/death_alarm,
-/obj/item/implanter,
+/obj/item/book/manual/scp/fra,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
 "Uv" = (
