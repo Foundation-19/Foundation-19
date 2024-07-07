@@ -1555,9 +1555,9 @@
 /area/map_template/rescue_base/base)
 "cU" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,

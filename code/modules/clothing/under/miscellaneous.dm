@@ -91,7 +91,7 @@
 	worn_state = "centcom"
 	displays_id = 0
 
-/obj/item/clothing/under/ert
+/obj/item/clothing/under/mtf
 	name = "MTF tactical uniform"
 	desc = "A shortsleeved turtleneck dark blue in color, paired with grey digital-camo cargo pants. It looks very tactical."
 	icon_state = "ert_uniform"
@@ -102,49 +102,60 @@
 		)
 	siemens_coefficient = 0.9
 
-/obj/item/clothing/under/ert/beta7
+/obj/item/clothing/under/mtf/beta7
 	name = "'Maz Hatters' tactical uniform"
 	desc = "A shortsleeved turtleneck yellow in color, paired with grey digital-camo cargo pants. It looks very tactical."
 	icon_state = "mtf_beta7"
 	worn_state = "mtf_beta7"
 
-/obj/item/clothing/under/ert/epsilon9
+/obj/item/clothing/under/mtf/epsilon9
 	name = "'Fire Eaters' tactical uniform"
 	desc = "A shortsleeved turtleneck dark orange in color, paired with grey digital-camo cargo pants, they look like they're covered in soot. It looks very tactical."
 	icon_state = "mtf_epsilon9"
 	worn_state = "mtf_epsilon9"
 
-/obj/item/clothing/under/ert/eta10
+/obj/item/clothing/under/mtf/eta10
 	name = "'See No Evil' tactical uniform"
 	desc = "A shortsleeved turtleneck cyan in color, paired with grey digital-camo cargo pants. It looks very tactical."
 	icon_state = "mtf_eta10"
 	worn_state = "mtf_eta10"
 
-/obj/item/clothing/under/ert/nu7
+/obj/item/clothing/under/mtf/nu7
 	name = "'Hammer Down' tactical uniform"
 	desc = "A shortsleeved turtleneck green in color, paired with grey digital-camo cargo pants. It looks very tactical."
 	icon_state = "mtf_nu7"
 	worn_state = "mtf_nu7"
 
-/obj/item/clothing/under/ert/epsilon11
+/obj/item/clothing/under/mtf/epsilon11
 	name = "'Nine Tailed Fox' tactical uniform"
-	desc = "A shortsleeved turtleneck orange in color, paired with grey digital-camo cargo pants. It looks very tactical."
+	desc = "A tactical uniform worn by Epsilon-11 agents, it has a dark orange field suit top, with some black tactical trousers, the classic design."
 	icon_state = "mtf_epsilon11"
 	worn_state = "mtf_epsilon11"
 
-/obj/item/clothing/under/ert/omega1
+/obj/item/clothing/under/mtf/omega1
 	name = "'Laws Left Hand' tactical uniform"
-	desc = "A shortsleeved turtleneck white in color, paired with grey digital-camo cargo pants, this one has a gold belt buckle. It looks very tactical."
+	desc = "A tactical uniform worn by Omega-1 agents, it has a dark white field suit top, with some black tactical trousers, the classic design."
 	icon_state = "mtf_omega1"
 	worn_state = "mtf_omega1"
 
-/obj/item/clothing/under/ert/alpha1
+/obj/item/clothing/under/mtf/alpha1
 	name = "'Red Right Hand' tactical uniform"
-	desc = "A shortsleeved turtleneck red in color, paired with grey digital-camo cargo pants, this one has a gold belt buckle. It looks very tactical."
+	desc = "A tactical uniform worn by Alpha-1 agents, it has a dark red field suit top, with some black tactical trousers, the classic design."
 	icon_state = "mtf_alpha1"
 	worn_state = "mtf_alpha1"
 
+/obj/item/clothing/under/scp/scp912
+	name = "unknown SWAT BDU"
+	desc = "A black SWAT BDU with what looks like Anchorage Police Department patches on the shoulders, it's in pristine condition, looks a little out of date."
+	icon_state = "912_bdu"
+	worn_state = "912_bdu"
+	accessories = /obj/item/clothing/accessory/storage/holster/thigh
 
+/obj/item/clothing/under/police
+	name = "police uniform"
+	desc = "A slightly outdated police uniform worn by Anchorage Police officers, with the APD patch on the left shoulder, and a rank patch on the right."
+	icon_state = "police"
+	worn_state = "police"
 
 /obj/item/clothing/under/space
 	name = "\improper NASA jumpsuit"
@@ -797,3 +808,10 @@
 	icon_state = "kimono"
 	worn_state = "kimono"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/itd
+	desc = "It's a snazzy dark purple formal shirt worn by someone who works in the \"Internal Tribunal Department\", it has silver markings and a white nametag."
+	name = "Internal Tribunal uniform"
+	icon_state = "itdo"
+	item_state = "b_suit"
+	worn_state = "itdo"

@@ -102,7 +102,7 @@
 
 /obj/item/gun/projectile/pistol/m1911
 	name = "M1911"
-	desc = "A classic Model 1911 pistol. Still effective even today, generally used as a surplus sidearm for Foundation security staff."
+	desc = "A classic Model 1911 pistol. A trusty sidearm even to this day, usually seen by administrative staff."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "m1911"
 	w_class = ITEM_SIZE_NORMAL
@@ -113,6 +113,12 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m1911
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
+
+/obj/item/gun/projectile/pistol/m1911/gold
+	name = "gold trimmed M1911"
+	desc = "A classic Model 1911 pistol. A trusty sidearm even to this day, usually seen by administrative staff. Now trimmed in a luxury gold."
+	icon_state = "m1911-spec"
+	fire_delay = 2
 
 /obj/item/gun/projectile/pistol/usp45
 	name = "Colt Mustang"
@@ -176,11 +182,11 @@
 
 /obj/item/gun/projectile/pistol/p232
 	name = "Sig Sauer P232"
-	desc = "The Sig P232 draws it's lineage from the older P-230, which in itself comes from the Sauer 38H. The old Sauer 38H was a blowback pistol intended to compete with the Walther PPK and Mauser HSC handguns. Due to Germany's pressing need for every last handgun they could get their hands on in the Second World War, Sauer would produce the 38H until the factory was captured by the Allies in 1945. The Sig P232, carries on the legacy of the Sauer 38H in spirit, as it is very much a modernized variant of the old handgun. This version is chambered in .45 ACP."
+	desc = "The Sig P232 draws it's lineage from the older P-230, which in itself comes from the Sauer 38H. The old Sauer 38H was a blowback pistol intended to compete with the Walther PPK and Mauser HSC handguns. Due to Germany's pressing need for every last handgun they could get their hands on in the Second World War, Sauer would produce the 38H until the factory was captured by the Allies in 1945. The Sig P232, carries on the legacy of the Sauer 38H in spirit, as it is very much a modernized variant of the old handgun. This version is chambered in .380 ACP."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "p232"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = ".45"
+	caliber = ".380"
 	silenced = 0
 	fire_delay = 2
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
