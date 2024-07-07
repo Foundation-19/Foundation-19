@@ -1,7 +1,7 @@
 /obj/structure/closet/crate
 	name = "crate"
 	desc = "A rectangular steel crate."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/crates_new.dmi'
 	icon_state = "crate"
 	icon_opened = "crateopen"
 	icon_closed = "crate"
@@ -81,14 +81,6 @@
 	. = ..()
 	update_icon()
 
-/obj/structure/closet/crate/plastic
-	name = "plastic crate"
-	desc = "A rectangular plastic crate."
-	icon_state = "plasticcrate"
-	icon_opened = "plasticcrateopen"
-	icon_closed = "plasticcrate"
-	points_per_crate = 1
-
 /obj/structure/closet/crate/internals
 	name = "internals crate"
 	desc = "A internals crate."
@@ -117,14 +109,14 @@
 	icon_opened = "medicalcrateopen"
 	icon_closed = "medicalcrate"
 
-/obj/structure/closet/crate/rcd
+/obj/structure/closet/crate/secure/rcd
 	name = "\improper RCD crate"
 	desc = "A crate with rapid construction device."
-	icon_state = "crate"
-	icon_opened = "crateopen"
-	icon_closed = "crate"
+	icon_state = "engi_secure_crate"
+	icon_opened = "engi_secure_crateopen"
+	icon_closed = "engi_secure_crate"
 
-/obj/structure/closet/crate/rcd/WillContain()
+/obj/structure/closet/crate/secure/rcd/WillContain()
 	return list(
 		/obj/item/rcd_ammo = 3,
 		/obj/item/rcd
@@ -132,6 +124,9 @@
 
 /obj/structure/closet/crate/solar
 	name = "solar pack crate"
+	icon_state = "engi_e_crate"
+	icon_opened = "engi_e_crateopen"
+	icon_closed = "engi_e_crate"
 
 /obj/structure/closet/crate/solar/WillContain()
 	return list(
@@ -140,12 +135,6 @@
 		/obj/item/tracker_electronics,
 		/obj/item/paper/solar
 	)
-
-/obj/structure/closet/crate/solar_assembly
-	name = "solar assembly crate"
-
-/obj/structure/closet/crate/solar_assembly/WillContain()
-	return list(/obj/item/solar_assembly = 16)
 
 /obj/structure/closet/crate/freezer
 	name = "freezer"
@@ -195,9 +184,9 @@
 /obj/structure/closet/crate/bin
 	name = "large bin"
 	desc = "A large bin."
-	icon_state = "largebin"
-	icon_opened = "largebinopen"
-	icon_closed = "largebin"
+	icon_state = "trashbin"
+	icon_opened = "trashbinopen"
+	icon_closed = "trashbin"
 
 /obj/structure/closet/crate/radiation
 	name = "radioactive crate"
@@ -226,9 +215,9 @@
 /obj/structure/closet/crate/secure/phoron
 	name = "phoron crate"
 	desc = "A secure phoron crate."
-	icon_state = "phoroncrate"
-	icon_opened = "phoroncrateopen"
-	icon_closed = "phoroncrate"
+	icon_state = "plasmacrate"
+	icon_opened = "plasmacrateopen"
+	icon_closed = "plasmacrate"
 
 /obj/structure/closet/crate/secure/shuttle
 	name = "storage compartment"
@@ -310,6 +299,7 @@
 /obj/structure/closet/crate/secure/biohazard
 	name = "biohazard cart"
 	desc = "A heavy cart with extensive sealing. You shouldn't eat things you find in it."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "biohazard"
 	icon_opened = "biohazardopen"
 	icon_closed = "biohazard"
@@ -336,10 +326,10 @@
 
 /obj/structure/closet/crate/paper_refill
 	name = "paper refill crate"
-	desc = "A rectangular plastic crate, filled up with blank papers for refilling bins and printers. A bureaucrat's favorite."
-	icon_state = "plasticcrate"
-	icon_opened = "plasticcrateopen"
-	icon_closed = "plasticcrate"
+	desc = "A rectangular steel crate, filled up with blank papers for refilling bins and printers. A bureaucrat's favorite."
+	icon_state = "crate"
+	icon_opened = "crateopen"
+	icon_closed = "crate"
 
 /obj/structure/closet/crate/paper_refill/WillContain()
 	return list(/obj/item/paper = 30)

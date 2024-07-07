@@ -4,8 +4,11 @@
 
 /decl/hierarchy/outfit/job/command/chief_engineer
 	name = OUTFIT_JOB_NAME("Engineering Director")
-	uniform = /obj/item/clothing/under/scp/utility/engineering
+	uniform = /obj/item/clothing/under/rank/chief_engineer
+	suit = /obj/item/clothing/suit/storage/hazardvest/white
+	head = /obj/item/clothing/head/hardhat/white
 	shoes = /obj/item/clothing/shoes/dutyboots
+	gloves = /obj/item/clothing/gloves/insulated/chief_engineer
 	id_type = /obj/item/card/id/seclvl5eng
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio

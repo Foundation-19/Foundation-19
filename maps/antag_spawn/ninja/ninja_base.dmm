@@ -139,7 +139,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/fire{
+/obj/item/storage/firstaid/burn{
 	pixel_x = 1
 	},
 /obj/structure/window/reinforced/crescent{
