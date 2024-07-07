@@ -385,7 +385,7 @@ var/list/ai_verbs_default = list(
 	if(emergency_message_cooldown)
 		to_chat(usr, SPAN_WARNING("Supercapacitors recharging. Please stand by."))
 		return
-	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [targetOffsite.name] via encrypted radio frequency. Abuse may lead to decommissioning. There is a 30 second delay before you may send another message; be clear, full and concise.", "O5 Emergency Message", "To abort, enter an empty message"))
+	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [targetOffsite.name] via encrypted radio frequency. Abuse may lead to decommissioning. There is a 30 second delay before you may send another message; be clear, full and concise.", "Command Emergency Message", "To abort, enter an empty message"))
 	if(!input)
 		return
 
