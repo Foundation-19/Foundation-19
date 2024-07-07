@@ -9324,6 +9324,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"Nk" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/carpet/green,
+/area/site53/uez/repoffice/ethics)
 "Nm" = (
 /obj/effect/floor_decal/corner/blue/bordercee{
 	dir = 4
@@ -10899,6 +10903,22 @@
 /obj/item/implanter,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
+"Us" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/uez/equipmentroom)
 "Uv" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -48405,7 +48425,7 @@ hk
 SP
 cG
 AZ
-xD
+Nk
 zD
 zD
 zD
@@ -49697,7 +49717,7 @@ nH
 XH
 XH
 dC
-ON
+Us
 TP
 TP
 TP
