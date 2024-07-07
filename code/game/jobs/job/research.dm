@@ -12,7 +12,7 @@
 	supervisors = "the Site Director"
 	minimal_player_age = 20
 	ideal_character_age = 40
-	spawn_positions = 6
+	spawn_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/command/researchdirector
 	class = CLASS_A
 	hud_icon = "hudchiefscienceofficer"
@@ -69,7 +69,7 @@
 	supervisors = "the Site Director and Research Director"
 	minimal_player_age = 18
 	ideal_character_age = 40
-	spawn_positions = 6
+	spawn_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/command/aresearchdirector
 	class = CLASS_A
 	hud_icon = "hudassistantscienceofficer"
