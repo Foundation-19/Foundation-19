@@ -43,3 +43,8 @@
 #define DARKTINT_NONE      "#ffffff"
 #define DARKTINT_MODERATE  "#f9f9f5"
 #define DARKTINT_GOOD      "#ebebe6"
+
+// Species spawn flags
+#define IS_WHITELISTED    0x1    // Must be whitelisted to play.
+#define CAN_JOIN          0x2    // Species is selectable in chargen.
+#define IS_RESTRICTED     0x4    // Is not a core/normally playable species. (castes, mutantraces)

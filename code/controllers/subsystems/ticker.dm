@@ -15,6 +15,8 @@ SUBSYSTEM_DEF(ticker)
 	var/datum/game_mode/mode        //The actual gamemode, if selected.
 	var/round_progressing = 1       //Whether the lobby clock is ticking down.
 
+	var/random_players = 0 	// if set to nonzero, ALL players who latejoin or declare-ready join will have random appearances/genders
+
 	var/list/bad_modes = list()     //Holds modes we tried to start and failed to.
 	var/revotes_allowed = 0         //How many times a game mode revote might be attempted before giving up.
 
@@ -214,7 +216,7 @@ SUBSYSTEM_DEF(ticker)
 	master_mode = SSticker.master_mode
 	mode = SSticker.mode
 	round_progressing = SSticker.round_progressing
-
+	random_players = SSticker.random_players
 	end_game_state = SSticker.end_game_state
 	delay_end = SSticker.delay_end
 	delay_notified = SSticker.delay_notified

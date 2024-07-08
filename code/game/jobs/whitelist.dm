@@ -90,4 +90,29 @@ var/list/whitelist = list()
 					return 1
 	return 0
 
+/proc/whitelist_lookup(item, ckey)
+	if(!alien_whitelist)
+		return 0
+
+	if(config.usealienwhitelistSQL)
+		//SQL Whitelist
+		if(!(ckey in alien_whitelist))
+			return 0;
+		var/list/whitelisted = alien_whitelist[ckey]
+		if(lowertext(item) in whitelisted)
+			return 1
+	else
+		//Config File Whitelist
+		for(var/s in alien_whitelist)
+			if(findtext(s,"[ckey] - [item]"))
+				return 1
+			if(findtext(s,"[ckey] - All"))
+				return 1
+	return 0
+
+/proc/is_species_whitelisted(mob/M, species_name)
+	var/datum/species/S = all_species[species_name]
+	return is_alien_whitelisted(M, S)
+
+
 #undef WHITELISTFILE
