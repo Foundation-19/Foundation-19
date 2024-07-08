@@ -25,6 +25,8 @@
 	return list(/obj/item/clothing/suit/hospital/blue, /obj/item/clothing/suit/hospital/green, /obj/item/clothing/suit/hospital/pink)
 
 /obj/structure/closet/secure_closet/personal/cabinet
+	name = "personal cabinet"
+	desc = "It's a secure cabinet for the classiest of personnel"
 	icon_state = "cabinetdetective"
 	icon_closed = "cabinetdetective"
 	icon_locked = "cabinetdetective_locked"

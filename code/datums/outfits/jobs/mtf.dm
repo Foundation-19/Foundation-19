@@ -4,7 +4,7 @@
 
 	id_type = /obj/item/card/id/mtf
 	hierarchy_type = /decl/hierarchy/outfit/mtf
-	flags = OUTFIT_HAS_BACKPACK | OUTFIT_RESET_EQUIPMENT
+	flags = OUTFIT_RESET_EQUIPMENT
 
 // Nine Tailed Fox
 /decl/hierarchy/outfit/mtf/epsilon_11
@@ -12,79 +12,90 @@
 
 /decl/hierarchy/outfit/mtf/epsilon_11/agent
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Agent")
-	uniform = /obj/item/clothing/under/ert/epsilon11
-	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
-	head = /obj/item/clothing/head/helmet/ballistic
-	mask = /obj/item/clothing/mask/balaclava/tactical
+	uniform = /obj/item/clothing/under/mtf/epsilon11
+	suit = /obj/item/clothing/suit/armor/mtftactical
+	head = /obj/item/clothing/head/helmet/mtftactical
+	mask = /obj/item/clothing/mask/gas/mtf
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
-	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/mask/gas = 1)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/breacher
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Breacher")
-	uniform = /obj/item/clothing/under/ert/epsilon11
-	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
-	head = /obj/item/clothing/head/helmet/ballistic
-	mask = /obj/item/clothing/mask/balaclava/tactical
+	uniform = /obj/item/clothing/under/mtf/epsilon11
+	suit = /obj/item/clothing/suit/armor/mtfmedium
+	head = /obj/item/clothing/head/helmet/scp/security/mtftactical
+	mask = /obj/item/clothing/mask/gas/mtf
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/shotgun/pump/combat
-	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2,/obj/item/ammo_magazine/shotholder/shell = 6,/obj/item/clothing/accessory/storage/bandolier = 1,/obj/item/clothing/mask/gas = 1)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2,/obj/item/ammo_magazine/shotholder/shell = 6,/obj/item/clothing/accessory/storage/bandolier = 1)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/leader
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Team Leader")
-	uniform = /obj/item/clothing/under/ert/epsilon11
-	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
+	uniform = /obj/item/clothing/under/mtf/epsilon11
+	suit = /obj/item/clothing/suit/armor/mtfmedium
 	head = /obj/item/clothing/head/beret/mtf
-	mask = /obj/item/clothing/mask/balaclava
+	mask = /obj/item/clothing/mask/gas/mtf
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/automatic/scp/m16
 	r_hand = /obj/item/storage/box/syndie_kit/spy
-	l_hand = null
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = null
-	id_type = /obj/item/card/id/mtf/ninetail
+	id_type = /obj/item/card/id/mtf/ninetaillead
 	belt = /obj/item/storage/belt/holster/security/fullmateba
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/m16_mag = 3,/obj/item/ammo_magazine/c44 = 4,/obj/item/clothing/mask/gas = 1)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/m16_mag = 3,/obj/item/ammo_magazine/c44 = 4)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/medic
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Medic")
-	uniform = /obj/item/clothing/under/ert/epsilon11
-	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
-	head = /obj/item/clothing/head/helmet/ballistic
-	mask = /obj/item/clothing/mask/balaclava
+	uniform = /obj/item/clothing/under/mtf/epsilon11
+	suit = /obj/item/clothing/suit/armor/mtfmedic
+	head = /obj/item/clothing/head/helmet/mtftactical
+	mask = /obj/item/clothing/mask/gas/mtf
 	glasses = /obj/item/clothing/glasses/night
-	gloves = /obj/item/clothing/gloves/tactical/scp
-	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
+	shoes = /obj/item/clothing/shoes/swat
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = /obj/item/storage/firstaid/surgery
-	l_hand = /obj/item/crowbar/red
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = null
 	id_type = /obj/item/card/id/mtf/ninetail
 	belt = /obj/item/defibrillator/compact/combat/loaded
-	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/clothing/mask/gas = 1,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/pill_bottle/zoom = 1)
+	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/firstaid/combat = 1)
+
+/decl/hierarchy/outfit/mtf/epsilon_11/pointman
+	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Pointman")
+	uniform = /obj/item/clothing/under/mtf/epsilon11
+	suit = /obj/item/clothing/suit/armor/mtfmedium
+	head = /obj/item/clothing/head/helmet/mtftactical
+	mask = /obj/item/clothing/mask/gas/mtf
+	glasses = /obj/item/clothing/glasses/night
+	gloves = /obj/item/clothing/gloves/tactical/scp
+	shoes = /obj/item/clothing/shoes/swat
+	suit_store = null
+	r_hand = /obj/item/shield/riot/metal
+	l_pocket = /obj/item/grenade/flashbang
+	r_pocket = /obj/item/grenade/flashbang
+	id_type = /obj/item/card/id/mtf/ninetail
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2)
 
 /decl/hierarchy/outfit/mtf/eta_10 // See No Evil
 	name = OUTFIT_JOB_NAME("MTF Eta-10 Operative")
-	uniform = /obj/item/clothing/under/ert/eta10
+	uniform = /obj/item/clothing/under/mtf/eta10
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
 	head = /obj/item/clothing/head/helmet/scp/eta
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -101,7 +112,7 @@
 
 /decl/hierarchy/outfit/mtf/beta_7 // Maz Hatters
 	name = OUTFIT_JOB_NAME("MTF Beta-7 Operative")
-	uniform = /obj/item/clothing/under/ert/beta7
+	uniform = /obj/item/clothing/under/mtf/beta7
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
 	head = /obj/item/clothing/head/helmet/scp/beta
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -119,7 +130,7 @@
 
 /decl/hierarchy/outfit/mtf/epsilon_9
 	name = OUTFIT_JOB_NAME("MTF Epsilon-9 Operative")
-	uniform = /obj/item/clothing/under/ert/epsilon9
+	uniform = /obj/item/clothing/under/mtf/epsilon9
 	suit = null
 	head = null
 	mask = /obj/item/clothing/mask/balaclava
@@ -137,7 +148,7 @@
 
 /decl/hierarchy/outfit/mtf/nu_7 // Hammer Down
 	name = OUTFIT_JOB_NAME("MTF Nu-7 Operative")
-	uniform = /obj/item/clothing/under/ert/nu7
+	uniform = /obj/item/clothing/under/mtf/nu7
 	suit = /obj/item/clothing/suit/armor/mtfheavy
 	mask = /obj/item/clothing/mask/gas
 	head = /obj/item/clothing/head/helmet/mtfheavy
@@ -155,13 +166,13 @@
 
 /decl/hierarchy/outfit/mtf/alpha_1 // Red Right Hand
 	name = OUTFIT_JOB_NAME("MTF Alpha-1 Operative")
-	uniform = /obj/item/clothing/under/ert/alpha1
-	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
-	mask = /obj/item/clothing/mask/gas/alpha
+	uniform = /obj/item/clothing/under/mtf/alpha1
+	suit = /obj/item/clothing/suit/armor/mtfalpha1
+	mask = /obj/item/clothing/mask/gas/security
 	head = /obj/item/clothing/head/beret/mtf/alpha
-	gloves = /obj/item/clothing/gloves/tactical/alpha
-	glasses = /obj/item/clothing/glasses/night
-	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/thick/combat
+	glasses = /obj/item/clothing/glasses/hud/security/night
+	shoes = /obj/item/clothing/shoes/swat
 	suit_store = null
 	r_hand = /obj/item/gun/projectile/automatic/t12
 	l_hand = null
@@ -173,13 +184,13 @@
 
 /decl/hierarchy/outfit/mtf/omega1 // Laws Left Hand
 	name = OUTFIT_JOB_NAME("MTF Omega-1 Enforcement")
-	uniform = /obj/item/clothing/under/ert/omega1
-	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
-	mask = /obj/item/clothing/mask/gas/syndicate
+	uniform = /obj/item/clothing/under/mtf/omega1
+	suit = /obj/item/clothing/suit/armor/mtfomega1
+	mask = /obj/item/clothing/mask/gas/omega1
 	head = /obj/item/clothing/head/beret/mtf/omega
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/hud/security/night
+	shoes = /obj/item/clothing/shoes/swat
 	suit_store = null
 	r_hand = /obj/item/gun/projectile/automatic/scp/vector
 	l_hand = null
@@ -215,3 +226,16 @@
 	head = /obj/item/clothing/head/beret/isd/fedora
 	l_pocket = /obj/item/reagent_containers/spray/pepper
 	belt = /obj/item/gun/energy/pulse_rifle/pistol
+
+/decl/hierarchy/outfit/mtf/o5rep
+	name = OUTFIT_JOB_NAME("O5 Representative")
+	uniform = /obj/item/clothing/under/suit_jacket/really_black
+	suit = /obj/item/clothing/suit/armor/overseer
+	mask = /obj/item/clothing/mask/smokable/cigarette/cigar/havana
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/flame/lighter/zippo/brass
+	r_pocket = /obj/item/ammo_magazine/speedloader/heavy
+	id_type = /obj/item/card/id/mtf/o5rep
+	backpack_contents = list(/obj/item/ammo_magazine/speedloader/heavy = 2)
+	belt = /obj/item/gun/projectile/revolver/military/heavy

@@ -19,14 +19,14 @@
 	usable_email_tlds = list("site53.foundation", "security.site53.foundation", "science.site53.foundation", "utility.site53.foundation")
 	config_path = "config/site53_config.txt"
 
-	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone")
+	allowed_spawns = list("Cryogenic Storage", "D-Cells")
 	default_spawn = "Cryogenic Storage"
 
 	station_name  = "Foundation Site 53"
 	station_short = "Site 53"
 	dock_name     = "Central Command Depo"
-	boss_name     = "O5 Foundation Council"
-	boss_short    = "O5 Council"
+	boss_name     = "Foundation Central Office"
+	boss_short    = "Central Office"
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 

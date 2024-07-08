@@ -17,8 +17,6 @@
 	var/image/O = image(icon = 'icons/obj/furniture.dmi', icon_state = "w_overlay", dir = src.dir)
 	O.layer = ABOVE_HUMAN_LAYER
 	add_overlay(O)
-	if(buckled_mob)
-		buckled_mob.setDir(dir)
 
 /obj/structure/bed/chair/wheelchair/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W) || istype(W,/obj/item/stack) || isWirecutter(W))

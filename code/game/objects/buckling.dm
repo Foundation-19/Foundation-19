@@ -115,5 +115,5 @@
 				SPAN_NOTICE("You hear metal clanking."))
 		add_fingerprint(user)
 
-	buckled_mob.clear_alert(ALERT_BUCKLED)
+	M.clear_alert(ALERT_BUCKLED)
 	return M

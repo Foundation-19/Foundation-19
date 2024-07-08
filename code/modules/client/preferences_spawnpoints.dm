@@ -125,11 +125,3 @@ GLOBAL_VAR(spawntypes)
 /datum/spawnpoint/dclass/New()
 	..()
 	turfs = GLOB.latejoin_dclass
-
-/datum/spawnpoint/lcz
-	display_name = "Light Containment Zone"
-	msg = "has entered the light containment zone"
-
-/datum/spawnpoint/lcz/New()
-	..()
-	turfs = GLOB.latejoin_lcz

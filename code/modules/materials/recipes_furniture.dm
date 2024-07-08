@@ -158,6 +158,10 @@ ARMCHAIR(yellow)
 	title = "rack"
 	result_type = /obj/structure/table/rack
 
+/datum/stack_recipe/furniture/rack/shelf
+	title = "shelf"
+	result_type = /obj/structure/table/rack/shelf
+
 /datum/stack_recipe/furniture/closet
 	title = "closet"
 	result_type = /obj/structure/closet
@@ -243,9 +247,6 @@ ARMCHAIR(yellow)
 	result_type = /obj/structure/closet/crate
 	req_amount = 10
 	time = 50
-
-/datum/stack_recipe/furniture/crate/plastic
-	result_type = /obj/structure/closet/crate/plastic
 
 /datum/stack_recipe/furniture/flaps
 	title = "flaps"
