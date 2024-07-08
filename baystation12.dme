@@ -1440,7 +1440,6 @@
 #include "code\modules\admin\secrets\admin_secrets\list_fingerprints.dm"
 #include "code\modules\admin\secrets\admin_secrets\mentor_logs.dm"
 #include "code\modules\admin\secrets\admin_secrets\move_shuttle.dm"
-#include "code\modules\admin\secrets\admin_secrets\offsite_panel.dm"
 #include "code\modules\admin\secrets\admin_secrets\prison_warp.dm"
 #include "code\modules\admin\secrets\admin_secrets\show_ai_laws.dm"
 #include "code\modules\admin\secrets\admin_secrets\show_crew_manifest.dm"

@@ -176,8 +176,7 @@ SUBSYSTEM_DEF(offsites)
 
 					switch(action)
 						if("Modify")
-							var/t =  sanitize(input(ai, "Enter what you want to write:", "Write", html2pencode(paper_copy.info), null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
-
+							var/t = sanitize(tgui_input_text(ai, "Enter what you want to write:", "Write", html2pencode(paper_copy.info), MAX_PAPER_MESSAGE_LEN), MAX_PAPER_MESSAGE_LEN, extra = 0)
 							if(!t)
 								continue
 

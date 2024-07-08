@@ -42,20 +42,15 @@
 /obj/item/paper/admin/Topic(href, href_list)
 	if(href_list["write"])
 		var/id = href_list["write"]
-
-		var/t =  sanitize(input("Enter what you want to write:", "Write", unformatedText, null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
-
+		var/t = sanitize(tgui_input_text(usr, "Enter what you want to write:", "Write", id == "end" ? unformatedText : null, MAX_PAPER_MESSAGE_LEN), MAX_PAPER_MESSAGE_LEN, extra = 0)
 		if(!t)
 			return
-
-		var last_fields_value = fields
+	
+		var/last_fields_value = fields
 
 		unformatedText = t
-
-		//t = html_encode(t)
 		t = replacetext(t, "\n", "<BR>")
 		t = parsepencode(t) // Encode everything from pencode to html
-
 
 		if(fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
 			to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
@@ -65,14 +60,11 @@
 		if(id!="end")
 			addtofield(text2num(id), t) // He wants to edit a field, let him.
 		else
+			fields -= last_fields_value
 			info = t // set the file to the new text
 			updateinfolinks()
 
-		//manualy set freespace
-		free_space = MAX_PAPER_MESSAGE_LEN - length(strip_html_properly(t))
-
 		updateDisplay()
-
 		update_icon()
 		return
 
