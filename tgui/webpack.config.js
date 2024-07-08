@@ -65,11 +65,11 @@ module.exports = (env = {}, argv) => {
                 jsc: {
                   experimental: {
                     plugins: [
-                        [require.resolve('swc-plugin-inferno'), {}]
-                    ]
-                  }
-                }
-              }
+                        [require.resolve('swc-plugin-inferno'), {}],
+                    ],
+                  },
+                },
+              },
             },
           ],
         },
