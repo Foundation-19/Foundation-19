@@ -1,4 +1,5 @@
 import { Component, createRef } from 'inferno';
+
 import { resolveAsset } from '../assets';
 import { Box } from './Box';
 

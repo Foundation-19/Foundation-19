@@ -1,9 +1,10 @@
 /* eslint react/no-danger: "off" */
-import { Fragment } from 'inferno';
-import { useBackend } from '../backend';
-import { Button, Box, Section, Table, LabeledList, Input, Tabs, Flex, AnimatedNumber, ProgressBar } from '../components';
-import { NtosWindow } from '../layouts';
 import { round } from 'common/math';
+import { Fragment } from 'inferno';
+
+import { useBackend } from '../backend';
+import { AnimatedNumber, Box, Button, Flex, Input, LabeledList, ProgressBar, Section, Table, Tabs } from '../components';
+import { NtosWindow } from '../layouts';
 
 export const NtosEmailClient = (props, context) => {
   const { act, data } = useBackend(context);

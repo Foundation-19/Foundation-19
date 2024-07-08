@@ -1,8 +1,9 @@
-import { useBackend, useLocalState } from '../backend';
-import { Input, Button, Stack, Section, Tabs, Box, Slider, Divider } from '../components';
 import { Fragment } from 'inferno';
-import { Window } from '../layouts';
+
 import { round } from '../../common/math';
+import { useBackend, useLocalState } from '../backend';
+import { Box, Button, Divider, Input, Section, Slider, Stack, Tabs } from '../components';
+import { Window } from '../layouts';
 
 const PAGES = [
   {

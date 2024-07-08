@@ -7,6 +7,7 @@
 import { BooleanLike, classes, pureComponentHooks } from 'common/react';
 import { createVNode, InfernoNode, SFC } from 'inferno';
 import { ChildFlags, VNodeFlags } from 'inferno-vnode-flags';
+
 import { CSS_COLORS } from '../constants';
 
 export type BoxProps = {

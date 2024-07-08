@@ -1,11 +1,12 @@
 import { classes } from 'common/react';
-import { useBackend } from '../backend';
+import dateformat from 'dateformat';
 import { Component, Fragment } from 'inferno';
+import yaml from 'js-yaml';
+
+import { resolveAsset } from '../assets';
+import { useBackend } from '../backend';
 import { Box, Button, Dropdown, Icon, Section, Stack, Table } from '../components';
 import { Window } from '../layouts';
-import { resolveAsset } from '../assets';
-import dateformat from 'dateformat';
-import yaml from 'js-yaml';
 
 const icons = {
   bugfix: { icon: 'bug', color: 'green' },

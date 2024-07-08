@@ -3,6 +3,7 @@ import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
 import { pureComponentHooks } from 'common/react';
 import { Fragment } from 'inferno';
+
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Chart, ColorBox, Flex, Icon, LabeledList, ProgressBar, Section, Table } from '../components';
 import { Window } from '../layouts';

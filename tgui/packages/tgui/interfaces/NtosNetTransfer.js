@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, Box, LabeledList, ProgressBar, Section, Icon } from '../components';
+import { Box, Button, Icon, LabeledList, ProgressBar, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosNetTransfer = (props, context) => {

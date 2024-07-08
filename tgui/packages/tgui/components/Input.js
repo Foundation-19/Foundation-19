@@ -7,6 +7,7 @@
 import { KEY_ENTER, KEY_ESCAPE } from 'common/keycodes';
 import { classes } from 'common/react';
 import { Component, createRef } from 'inferno';
+
 import { Box } from './Box';
 
 // prettier-ignore

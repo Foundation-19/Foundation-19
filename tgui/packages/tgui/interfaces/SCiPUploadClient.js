@@ -1,6 +1,6 @@
 /* eslint react/no-danger: "off" */
 import { useBackend } from '../backend';
-import { Button, Box, Section, Table, LabeledList, ProgressBar } from '../components';
+import { Box, Button, LabeledList, ProgressBar, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const SCiPUploadClient = (props, context) => {

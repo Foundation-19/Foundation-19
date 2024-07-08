@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, Section, Knob, LabeledList } from '../components';
+import { Button, Knob, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
 export const Signaller = (props, context) => {

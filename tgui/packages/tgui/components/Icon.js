@@ -7,6 +7,7 @@
  */
 
 import { classes, pureComponentHooks } from 'common/react';
+
 import { computeBoxClassName, computeBoxProps } from './Box';
 
 const FA_OUTLINE_REGEX = /-o$/;

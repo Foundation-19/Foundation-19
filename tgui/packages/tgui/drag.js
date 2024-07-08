@@ -5,7 +5,8 @@
  */
 
 import { storage } from 'common/storage';
-import { vecAdd, vecSubtract, vecMultiply, vecScale } from 'common/vector';
+import { vecAdd, vecMultiply, vecScale, vecSubtract } from 'common/vector';
+
 import { createLogger } from './logging';
 
 const logger = createLogger('drag');

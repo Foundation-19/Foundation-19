@@ -1,7 +1,8 @@
-import { useBackend, useLocalState } from '../backend';
-import { Section, Box, Button, Stack, LabeledList, Tabs, NoticeBox, NumberInput, BlockQuote } from '../components';
-import { Window } from '../layouts';
 import { BooleanLike } from 'common/react';
+
+import { useBackend, useLocalState } from '../backend';
+import { BlockQuote, Box, Button, LabeledList, NoticeBox, NumberInput, Section, Stack, Tabs } from '../components';
+import { Window } from '../layouts';
 
 type Access = {
   desc: string;
