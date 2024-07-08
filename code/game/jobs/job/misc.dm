@@ -33,38 +33,6 @@
 		var/obj/item/card/id/ID = H.wear_id
 		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
 
-//Office Worker
-
-/datum/job/officeworker
-	title = "Office Worker"
-	department = "Civilian"
-	department_flag = CIV|BUR
-	total_positions = 100
-	spawn_positions = 100
-	minimal_player_age = 10
-	economic_power = 2
-	minimal_player_age = 5
-	ideal_character_age = 30
-	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
-	outfit_type = /decl/hierarchy/outfit/job/civ/officeworker
-	class = CLASS_C
-	hud_icon = "hudcrewman"
-
-	access = list(
-		ACCESS_CIV_COMMS,
-		ACCESS_ADMIN_LVL1,
-		ACCESS_SCIENCE_LVL1,
-		ACCESS_SCIENCE_LVL2,
-		ACCESS_MEDICAL_LVL1,
-		ACCESS_MEDICAL_LVL2,
-	)
-
-	minimal_access = list()
-
-	roleplay_difficulty = "Medium"
-	mechanical_difficulty = "Easy - Medium"
-	duties = "Work with, and for, various departments. Fill out forms. Maximize bureaucracy."
-	codex_guides = list("<l>Paperwork</l>")
 
 //LOGISTICS
 
@@ -75,7 +43,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Site Director"
-	selection_color = "#515151"
+	selection_color = "#B4802B"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
@@ -118,7 +86,7 @@
 	department_flag = SUP|BUR
 	total_positions = 2
 	spawn_positions = 2
-	selection_color = "B4802B"
+	selection_color = "#B4802B"
 	supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
@@ -152,6 +120,40 @@
 	roleplay_difficulty = "Easy - Medium"
 	mechanical_difficulty = "Medium"
 	duties = "Facilitate logistics throughout the site. Buy supplies."
+
+
+//Office Worker
+
+/datum/job/officeworker
+	title = "Office Worker"
+	department = "Civilian"
+	department_flag = CIV|BUR
+	total_positions = 100
+	spawn_positions = 100
+	minimal_player_age = 10
+	economic_power = 2
+	minimal_player_age = 5
+	ideal_character_age = 30
+	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
+	outfit_type = /decl/hierarchy/outfit/job/civ/officeworker
+	class = CLASS_C
+	hud_icon = "hudcrewman"
+
+	access = list(
+		ACCESS_CIV_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+	)
+
+	minimal_access = list()
+
+	roleplay_difficulty = "Medium"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Work with, and for, various departments. Fill out forms. Maximize bureaucracy."
+	codex_guides = list("<l>Paperwork</l>")
 
 
 // MISC JOBS
