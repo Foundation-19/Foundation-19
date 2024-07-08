@@ -322,9 +322,9 @@
 				else if(authenticated_account && amount > 0)
 					//create an entry in the account transaction log
 					if(amount <= authenticated_account.money)
-						authenticated_account.withdraw(amount, "Credit withdrawal", machine_id)
-						playsound(src, 'sounds/machines/chime.ogg', 50, 1)
-						spawn_ewallet(amount,get_turf(src),usr)
+						if(authenticated_account.withdraw(amount, "Credit withdrawal", machine_id))
+							playsound(src, 'sounds/machines/chime.ogg', 50, 1)
+							spawn_ewallet(amount,get_turf(src),usr)
 					else
 						to_chat(usr, "[icon2html(src, usr)]<span class='warning'>You don't have enough funds to do that!</span>")
 
@@ -336,9 +336,9 @@
 				else if(authenticated_account && amount > 0)
 					//remove the money
 					if(amount <= authenticated_account.money)
-						authenticated_account.withdraw(amount, "Credit withdrawal", machine_id)
-						playsound(src, 'sounds/machines/chime.ogg', 50, 1)
-						spawn_money(amount,get_turf(src),usr)
+						if(authenticated_account.withdraw(amount, "Credit withdrawal", machine_id))
+							playsound(src, 'sounds/machines/chime.ogg', 50, 1)
+							spawn_money(amount,get_turf(src),usr)
 					else
 						to_chat(usr, "[icon2html(src, usr)]<span class='warning'>You don't have enough funds to do that!</span>")
 
