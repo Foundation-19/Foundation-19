@@ -33,7 +33,8 @@ var/global/list/skin_styles_female_list = list()		//unused
 GLOBAL_LIST_EMPTY(body_marking_styles_list)		//stores /datum/sprite_accessory/marking indexed by name
 
 GLOBAL_DATUM_INIT(underwear, /datum/category_collection/underwear, new())
-
+/// Species that require a whitelist check.
+GLOBAL_LIST_INIT(whitelisted_species, list(SPECIES_HUMAN))
 // Visual nets
 var/list/datum/visualnet/visual_nets = list()
 var/datum/visualnet/camera/cameranet = new()
@@ -159,6 +160,20 @@ var/global/list/string_slot_flags = list(
 	for(var/grabstate_name in all_grabstates)
 		var/datum/grab/G = all_grabstates[grabstate_name]
 		G.refresh_updown()
+
+		sortTim(global.all_species, GLOBAL_PROC_REF(cmp_text_asc))
+
+	// The other lists are generated *after* we sort the main one so they don't need sorting too.
+	for (var/thing in global.all_species)
+		var/datum/species/S = global.all_species[thing]
+
+		if(!(S.spawn_flags & IS_RESTRICTED) && S.category_name)
+			if(!length(global.playable_species[S.category_name]))
+				global.playable_species[S.category_name] = list()
+			global.playable_species[S.category_name] += S.name
+		if(S.spawn_flags & IS_WHITELISTED)
+			GLOB.whitelisted_species += S.name
+
 	return 1
 
 //*** params cache

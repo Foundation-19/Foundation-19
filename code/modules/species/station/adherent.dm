@@ -1,6 +1,7 @@
 /datum/species/adherent
 	name = SPECIES_ADHERENT
 	name_plural = "Adherents"
+	category_name = "Adherent"
 
 	description = "The Vigil is a relatively loose association of machine-servitors, Adherents, \
 	built by an extinct culture. They are devoted to the memory of their long-dead Creators, \

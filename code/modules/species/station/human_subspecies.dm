@@ -1,6 +1,7 @@
 /datum/species/human/gravworlder
 	name = SPECIES_GRAVWORLDER
 	name_plural = "Grav-Adapted Humans"
+	category_name = "Human"
 	description = "Heavier and stronger than a baseline human, gravity-adapted people have \
 	thick radiation-resistant skin with a high lead content, denser bones, and recessed \
 	eyes beneath a prominent brow in order to shield them from the glare of a dangerously \
@@ -33,6 +34,7 @@
 /datum/species/human/spacer
 	name = SPECIES_SPACER
 	name_plural = "Space-Adapted Humans"
+	category_name = "Human"
 	description = "Lithe and frail, these sickly folk were engineered for work in environments that \
 	lack both light and atmosphere. As such, they're quite resistant to asphyxiation as well as \
 	toxins, but they suffer from weakened bone structure and a marked vulnerability to bright lights."
@@ -64,6 +66,7 @@
 /datum/species/human/vatgrown
 	name = SPECIES_VATGROWN
 	name_plural = "Vat-Grown Humans"
+	category_name = "Human"
 	description = "With cloning on the forefront of human scientific advancement, mass production \
 	of bodies is a very real and rather ethically grey industry. Although slavery, indentured servitude \
 	and flash-cloning are all illegal in SCG space, there still exists a margin for those legitimate \
@@ -100,6 +103,7 @@
 /datum/species/human/tritonian
 	name = SPECIES_TRITONIAN
 	name_plural = "Tritonians"
+	category_name = "Human"
 	description = "Of all human gene-adapts, the Tritonian genotype is probably the most wildly divergent from \
 	baseline humanity. Conceived alongside dolphin and octopus genetic engineering projects, this genotype \
 	is adapted for amphibious life on flooded ocean moons like Triton, but is equally comfortable in a range \
@@ -148,6 +152,7 @@
 /datum/species/human/mule
 	name = SPECIES_MULE
 	name_plural = "Mules"
+	category_name = "Human"
 	description = "There are a huge number of 'uncurated' genetic lines in human space, many of which fall under the \
 	general header of baseline humanity. One recently discovered genotype is remarkable for both being deeply feral, \
 	in the sense that it still has many of the inherited diseases and weaknesses that plagued pre-expansion humanity, \

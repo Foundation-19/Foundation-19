@@ -54,8 +54,8 @@ var/list/whitelist = list()
 			query.Execute()
 
 			while (query.NextRow())
-				if (query.item[1] in whitelisted_species)
-					whitelisted_species[query.item[1]] = text2num(query.item[2])
+				if (query.item[1] in GLOB.whitelisted_species)
+					GLOB.whitelisted_species[query.item[1]] = text2num(query.item[2])
 
 			return
 
@@ -80,7 +80,7 @@ var/list/whitelist = list()
 
 	if (config.sql_whitelists)
 		if (M.client && M.client.whitelist_status)
-			return (M.client.whitelist_status & whitelisted_species[species])
+			return (M.client.whitelist_status & GLOB.whitelisted_species[species])
 	else
 		if (M && species)
 			for (var/s in alien_whitelist)

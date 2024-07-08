@@ -1,6 +1,7 @@
 /datum/species/golem
 	name = SPECIES_GOLEM
 	name_plural = "Golems"
+	category_name = "Golem"
 
 	icobase = 'icons/mob/human_races/species/golem/body.dmi'
 	deform = 'icons/mob/human_races/species/golem/body.dmi'
