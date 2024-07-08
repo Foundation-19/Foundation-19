@@ -1,5 +1,0 @@
-author: ChromeFoxxity
-delete-after: true
-changes:
-  - rscadd: Switched Mask from A-1 to O-1.
-  - bugfix: Fixed Security Nightvision
