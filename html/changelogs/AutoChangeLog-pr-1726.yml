@@ -1,0 +1,7 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Wheelchairs no longer crash the server
+  - bugfix: Unbuckling no longer spams runtimes and doesn't leave a buckled alert
+      on the screen forever
+  - code_imp: Auxtools implementation updated, spacemandmm implementation updated
