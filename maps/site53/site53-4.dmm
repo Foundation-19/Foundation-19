@@ -427,10 +427,10 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
 "bz" = (
-/obj/effect/floor_decal/corner/brown/border,
 /obj/structure/bed/chair/office/comfy/brown{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/hallway)
 "bA" = (
@@ -2131,6 +2131,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/emergency,
 /obj/item/crowbar/emergency_forcing_tool,
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "he" = (
@@ -4987,10 +4988,10 @@
 /area/site53/uez/equipmentroom)
 "sp" = (
 /obj/machinery/light,
-/obj/effect/floor_decal/corner/brown/border{
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/effect/floor_decal/corner/beige/border{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/blue/bordercorner,
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/hallway)
 "sr" = (
@@ -6912,7 +6913,7 @@
 	req_access = list("ACCESS_ADMIN_LEVEL3");
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/brown/mono,
+/obj/effect/floor_decal/corner/beige/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "AV" = (
@@ -7181,6 +7182,7 @@
 	req_access = list("ACCESS_ADMIN_LEVEL3");
 	pixel_y = 2
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "Cd" = (
@@ -7628,10 +7630,6 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
-"Ec" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/uez/hallway)
 "Ee" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/monotile,
@@ -7889,6 +7887,7 @@
 	req_access = list("ACCESS_ADMIN_LEVEL3");
 	pixel_y = 2
 	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "Fw" = (
@@ -8084,7 +8083,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner/brown/bordercorner,
+/obj/effect/floor_decal/corner/beige/bordercorner,
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/hallway)
 "Gn" = (
@@ -8510,7 +8509,7 @@
 	req_access = list("ACCESS_ADMIN_LEVEL3");
 	pixel_y = 2
 	},
-/obj/effect/floor_decal/corner/brown/mono,
+/obj/effect/floor_decal/corner/beige/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "Ii" = (
@@ -8809,7 +8808,7 @@
 /turf/simulated/floor,
 /area/site53/uez/commandpanicbunker)
 "JI" = (
-/obj/effect/floor_decal/corner/brown/border,
+/obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/hallway)
 "JK" = (
@@ -10450,7 +10449,7 @@
 	req_access = list("ACCESS_ADMIN_LEVEL3");
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/brown/mono,
+/obj/effect/floor_decal/corner/beige/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "Ra" = (
@@ -11367,7 +11366,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "Vk" = (
-/obj/effect/floor_decal/corner/brown/bordercorner{
+/obj/effect/floor_decal/corner/beige/bordercorner{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/corner{
@@ -11709,12 +11708,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Armoury Lockdown";
-	name = "EZ Armory Access Control";
-	req_access = list("ACCESS_ADMIN_LEVEL3");
-	pixel_y = 2
-	},
+/obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "WW" = (
@@ -44881,10 +44875,10 @@ sJ
 un
 AK
 ep
-ep
-ep
-ep
-ep
+UL
+Xe
+Xe
+Es
 AK
 JI
 Ic
@@ -45138,10 +45132,10 @@ Hh
 xZ
 uK
 ep
-Ec
+fa
 SP
 hb
-ep
+Ue
 ep
 Vk
 sp
@@ -45395,10 +45389,10 @@ Qk
 wb
 pV
 ep
-ep
+LN
 me
 Cc
-ep
+Ue
 ep
 ep
 LN
@@ -45652,10 +45646,10 @@ Su
 JB
 yi
 ep
-ep
+LN
 Kd
 Fv
-ep
+Ue
 ep
 ep
 LN
@@ -45909,10 +45903,10 @@ yS
 yc
 pq
 ep
-Ec
+fa
 SP
 WV
-ep
+Ue
 ep
 CU
 uU
@@ -46166,10 +46160,10 @@ Xl
 VR
 AK
 ep
-ep
-ep
-ep
-ep
+Ds
+tD
+tD
+Zh
 AK
 nS
 UR
