@@ -1,9 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - code_imp: Time loop component ported. When added, an effect spawns at your location,
-      and after a set duration, you're teleported back to it with your health and
-      stamina reset.
-  - rscadd: Time loop spell for wizards.
-  - rscadd: Time rewinder device that can be bought by traitors and researched by
-      Science.

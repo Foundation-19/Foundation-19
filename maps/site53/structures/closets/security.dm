@@ -26,7 +26,7 @@
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
 		/obj/item/crowbar/emergency_forcing_tool,
-		/obj/item/clothing/accessory/armor/tag/base/sec,
+		/obj/item/clothing/accessory/armor/unobtainable/tag/base/sec,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
@@ -92,7 +92,7 @@
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
 		/obj/item/crowbar/emergency_forcing_tool,
-		/obj/item/clothing/accessory/armor/tag/base/sec,
+		/obj/item/clothing/accessory/armor/unobtainable/tag/base/sec,
 		/obj/item/clothing/accessory/storage/black_vest,
 	)
 
@@ -189,7 +189,7 @@
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
 		/obj/item/crowbar/emergency_forcing_tool,
-		/obj/item/clothing/accessory/armor/tag/base/sec,
+		/obj/item/clothing/accessory/armor/unobtainable/tag/base/sec,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
@@ -239,13 +239,13 @@
 		/obj/item/material/knife/combat,
 		/obj/item/melee/telebaton,
 		/obj/item/gun/energy/stunrevolver/taser,
-		/obj/item/ammo_magazine/box/a57,
+		/obj/item/ammo_magazine/box/a57/ap,
 		/obj/item/ammo_magazine/box/a57/rubber,
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/guard,
-		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/ammo_magazine/scp/usp45 = 3,
 	)
 
 // HCZ - Sergeant
@@ -262,7 +262,7 @@
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
 		/obj/item/crowbar/emergency_forcing_tool,
-		/obj/item/clothing/accessory/armor/tag/base/sec,
+		/obj/item/clothing/accessory/armor/unobtainable/tag/base/sec,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
@@ -277,7 +277,7 @@
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/sergeant,
-		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/ammo_magazine/scp/usp45 = 3,
 	)
 
 // EZ - Cadet
@@ -338,7 +338,7 @@
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
 		/obj/item/crowbar/emergency_forcing_tool,
-		/obj/item/clothing/accessory/armor/tag/base/sec,
+		/obj/item/clothing/accessory/armor/unobtainable/tag/base/sec,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
@@ -406,7 +406,7 @@
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/clothing/accessory/armor/tag/base/com/zonecomm,
+		/obj/item/clothing/accessory/armor/unobtainable/tag/base/com/zonecomm,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
@@ -629,4 +629,53 @@
 		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/melee/telebaton,
+	)
+
+/obj/structure/closet/secure_closet/guard/epsilon11agent
+	name = "Epsilon-11 Task Force Agent's locker"
+	req_access = list(ACCESS_MTF)
+	icon_state = "mtf1"
+	icon_closed = "mtf"
+	icon_locked = "mtf1"
+	icon_opened = "mtfopen"
+	icon_off = "mtfoff"
+
+/obj/structure/closet/secure_closet/guard/epsilon11agent/WillContain()
+	return list(
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/gun/projectile/pistol/glock/spec,
+		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/mask/gas/mtf,
+		/obj/item/melee/baton/loaded,
+		/obj/item/crowbar/emergency_forcing_tool,
+		/obj/item/storage/box/cdeathalarm_kit,
+		/obj/item/material/knife/combat,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+	)
+
+/obj/structure/closet/secure_closet/guard/epsilon11leader
+	name = "Epsilon-11 Task Force Leader's locker"
+	req_access = list(ACCESS_MTF)
+	icon_state = "mtfsenior1"
+	icon_closed = "mtfsenior"
+	icon_locked = "mtfsenior1"
+	icon_opened = "mtfopen"
+	icon_off = "mtfsenioroff"
+
+/obj/structure/closet/secure_closet/guard/epsilon11leader/WillContain()
+	return list(
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/ammo_magazine/speedloader/heavy = 3,
+		/obj/item/ammo_magazine/box/a454,
+		/obj/item/gun/projectile/revolver/military/heavy,
+		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/mask/gas/mtf,
+		/obj/item/melee/baton/loaded,
+		/obj/item/crowbar/emergency_forcing_tool,
+		/obj/item/storage/box/cdeathalarm_kit,
+		/obj/item/material/knife/combat,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/accessory/storage/holster/thigh,
 	)

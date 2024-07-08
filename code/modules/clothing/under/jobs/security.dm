@@ -28,44 +28,44 @@
 // Light Containment Zone Uniforms
 
 /obj/item/clothing/under/rank/security/lcz/medic
-	name = "LCZ Combat Medic Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and red wrist markings, as well as medical insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Combat Medic uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with red shoulder and wrist markings, as well as medical insignia. Weaved with a durable fabric to absorb melee hits. Sterilized fabric for better treatment, and less likely for infections."
 	icon_state = "lczmed_guard"
 	worn_state = "lczmed_guard"
 
 /obj/item/clothing/under/rank/security/lcz/riot
-	name = "LCZ Riot Control Unit Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and blue wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Riot Control Unit uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with blue shoulder and wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits. Moreso than the other security uniforms."
 	icon_state = "lczriot_guard"
 	worn_state = "lczriot_guard"
 
 /obj/item/clothing/under/rank/security/lcz/recontain
-	name = "LCZ Recontainment Unit Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and cyan wrist markings, as well as chevron insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Recontainment Unit uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with cyan shoulder and wrist markings, as well as chevron insignia. Weaved with a durable fabric to absorb melee hits. You feel like this division will come back one day.."
 	icon_state = "lczrecon_guard"
 	worn_state = "lczrecon_guard"
 
 /obj/item/clothing/under/rank/security/lcz/cadet
-	name = "LCZ Cadet Jumpsuit"
-	desc = "A black shortsleeved shirt worn by Cadets still in training, bearing \"Trainee\" on the back of the uniform in white, with the Security Department logo on the shoulder. Also along with this is the LCZ Security trousers."
+	name = "LCZ cadet uniform"
+	desc = "A black shortsleeved shirt worn by Cadets still in training, bearing \"Trainee\" on the back of the shirt in white, with the Security Department logo on the shoulder. Also along with this is the LCZ security trousers."
 	icon_state = "lcz_cadet"
 	worn_state = "lcz_cadet"
 
 /obj/item/clothing/under/rank/security/lcz
-	name = "LCZ Security Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ security uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
 	icon_state = "lcz_guard"
 	worn_state = "lcz_guard"
 
 /obj/item/clothing/under/rank/warden/lcz
-	name = "LCZ Senior Security Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color most known for Sergeants."
+	name = "LCZ senior security uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color on the shoulders and wrists most known for Sergeants."
 	icon_state = "lcz_sergeant"
 	worn_state = "lcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/lcz
-	name = "LCZ Lieutenant Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
+	name = "LCZ lieutenant uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
 	icon_state = "lcz_commander"
 	worn_state = "lcz_commander"
 
@@ -325,7 +325,7 @@
 		)
 	siemens_coefficient = 0.6
 
-/obj/item/clothing/under/syndicate/ci
+/obj/item/clothing/under/syndicate/chaos
 	name = "Chaos Insurgency field uniform"
 	desc = "Heavy green field military garbs from an unknown group of interest, you'd assume it's from the Chaos Insurgency."
 	icon_state = "ci_jumpsuit"

@@ -12,7 +12,6 @@ Random item spawning
 	return list(/obj/item/clothing/head/goc/utility/ptolemy = 4,
 				/obj/item/clothing/head/soft/goc/ptolemy = 2,
 				/obj/item/clothing/head/soft/goc/physics = 4,
-				/obj/item/clothing/head/helmet/solgov = 1,
 				/obj/item/clothing/suit/storage/vest/solgov = 2,
 				/obj/item/clothing/under/solgov/utility = 5,
 				/obj/item/clothing/under/solgov/utility/fleet = 3,

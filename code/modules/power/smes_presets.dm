@@ -32,4 +32,7 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
-	
+
+/obj/machinery/power/smes/buildable/preset/admin/scp
+	_fully_charged = FALSE
+

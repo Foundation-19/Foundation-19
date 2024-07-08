@@ -1,5 +1,5 @@
 /datum/shuttle/autodock/ferry/heli
-	name = "MTF Helicopter"
+	name = "Mobile Task Force Helicopter"
 	sound_takeoff = 'sounds/effects/helicopter.ogg'
 	warmup_time = 14
 	shuttle_area = list(/area/site53/tram/mtf)
@@ -9,20 +9,76 @@
 	move_time = 15
 
 /obj/effect/shuttle_landmark/heli/start
-	name = "MTF Base"
+	name = "Mobile Task Force Base"
 	landmark_tag = "nav_mtf_start"
-	base_turf = /turf/unsimulated/floor/reinforced
-	base_area = /area/site53/surface/surface
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/surface/surface/west // Where the helicopter goes, not where it starts - Terrytehtryhard
 
 /obj/effect/shuttle_landmark/heli/out
 	name = "Site 53"
 	landmark_tag = "nav_mtf_out"
 	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/surface/surface
+	base_area = /area/site53/surface/surface/west
 
 /obj/effect/shuttle_landmark/transit/helitransit
 	name = "In transit"
 	landmark_tag = "nav_mtf_transition"
+	base_turf = /turf/unsimulated/floor/plating
+	base_area = /area/space
+
+/datum/shuttle/autodock/ferry/ci_heli
+	name = "Chaos Insurgency Helicopter"
+	sound_takeoff = 'sounds/effects/helicopter.ogg'
+	warmup_time = 14
+	shuttle_area = list(/area/site53/tram/ci)
+	waypoint_station = "nav_ci_start"
+	landmark_transition = "nav_ci_transition"
+	waypoint_offsite = "nav_ci_out"
+	move_time = 15
+
+/obj/effect/shuttle_landmark/ci_heli/start
+	name = "Chaos Insurgency Base"
+	landmark_tag = "nav_ci_start"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/surface/surface/east
+
+/obj/effect/shuttle_landmark/ci_heli/out
+	name = "Site 53"
+	landmark_tag = "nav_ci_out"
+	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface/east
+
+/obj/effect/shuttle_landmark/transit/ci_helitransit
+	name = "In transit"
+	landmark_tag = "nav_ci_transition"
+	base_turf = /turf/unsimulated/floor/plating
+	base_area = /area/space
+
+/datum/shuttle/autodock/ferry/goc_heli
+	name = "Global Occult Coalition Helicopter"
+	sound_takeoff = 'sounds/effects/helicopter.ogg'
+	warmup_time = 14
+	shuttle_area = list(/area/site53/tram/goc2)
+	waypoint_station = "nav_goc_start"
+	landmark_transition = "nav_goc_transition"
+	waypoint_offsite = "nav_goc_out"
+	move_time = 15
+
+/obj/effect/shuttle_landmark/goc_heli/start
+	name = "Global Occult Coalition Headquarters"
+	landmark_tag = "nav_goc_start"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/surface/surface/west
+
+/obj/effect/shuttle_landmark/goc_heli/out
+	name = "Site 53"
+	landmark_tag = "nav_goc_out"
+	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface/west
+
+/obj/effect/shuttle_landmark/transit/goc_helitransit
+	name = "In transit"
+	landmark_tag = "nav_goc_transition"
 	base_turf = /turf/unsimulated/floor/plating
 	base_area = /area/space
 
@@ -58,15 +114,6 @@
 	base_turf = /turf/simulated/floor/reinforced
 	base_area = /area/site53/lowertrams/escape
 
-
-/datum/shuttle/autodock/ferry/chaos1
-	name = "Chaos Car 1"
-	warmup_time = 20
-	shuttle_area = list(/area/site53/tram/car1)
-	waypoint_station = "car1_start"
-	waypoint_offsite = "car1_out"
-
-
 /obj/effect/shuttle_landmark/chaos1/start
 	name = "Chaos Base"
 	landmark_tag = "car1_start"
@@ -80,7 +127,7 @@
 	base_area = /area/site53/surface/surface
 
 /datum/shuttle/autodock/ferry/goc1
-	name = "GOC Car 1"
+	name = "Global Occult Coalition Truck"
 	warmup_time = 20
 	shuttle_area = list(/area/site53/tram/goc1)
 	waypoint_station = "goc1_start"
@@ -91,13 +138,13 @@
 	name = "GOC Base"
 	landmark_tag = "goc1_start"
 	base_turf = /turf/simulated/floor/exoplanet/snow
-	base_area = /area/site53/surface/surface
+	base_area = /area/site53/surface/surface/east
 
 /obj/effect/shuttle_landmark/goc1/out
 	name = "Site 53"
 	landmark_tag = "goc1_out"
-	base_turf = /turf/simulated/floor/exoplanet/snow
-	base_area = /area/site53/surface/surface
+	base_turf = /turf/simulated/floor/exoplanet/concrete/reinforced/road
+	base_area = /area/site53/surface/surface/east
 /*
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"

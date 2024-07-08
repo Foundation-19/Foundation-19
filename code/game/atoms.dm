@@ -637,12 +637,12 @@
  */
 /atom/proc/setDir(newdir)
 	//SHOULD_CALL_PARENT(TRUE)
+	var/olddir = dir
 	if (SEND_SIGNAL(src, COMSIG_ATOM_PRE_DIR_CHANGE, dir, newdir) & COMPONENT_ATOM_BLOCK_DIR_CHANGE)
 		newdir = dir
 		return
-	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, dir, newdir)
 	dir = newdir
-	SEND_SIGNAL(src, COMSIG_ATOM_POST_DIR_CHANGE, dir, newdir)
+	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, olddir, dir)
 
 /// Updates the description of the atom
 /atom/proc/update_desc(updates=ALL)

@@ -50,7 +50,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/ap
-	name = "MK9 magazine (9mm AP)"
+	name = "MK9 magazine (9mm Armor-Piercing)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
@@ -60,7 +60,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/hp
-	name = "MK9 magazine (9mm HP)"
+	name = "MK9 magazine (9mm Hollow-Point)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
@@ -79,8 +79,28 @@
 	max_ammo = 7
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/scp/a9mm/ap
+	name = "pistol magazine (9mm Armor-Piercing)"
+	icon_state = "9x19pap"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 7
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/a9mm/hp
+	name = "pistol magazine (9mm Hollow-Point)"
+	icon_state = "9x19php"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 7
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/scp/a9mm/rubber
-	name = "pistol magazine (9mm)"
+	name = "pistol magazine (9mm Rubber)"
 	icon_state = "9x19pr"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
@@ -120,7 +140,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/p90_mag
-	name = "magazine (5.7x28mm)"
+	name = "P90 magazine (5.7x28mm)"
 	icon_state = "p90"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -134,7 +154,7 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/scp/p90_mag/rubber
-	name = "magazine (5.7x28mm Rubber)"
+	name = "P90 magazine (5.7x28mm Rubber)"
 	icon_state = "p90r"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -145,7 +165,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/p90_mag/ap
-	name = "magazine (5.7x28mm Armor-Piercing)"
+	name = "P90 magazine (5.7x28mm Armor-Piercing)"
 	icon_state = "p90ap"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -156,7 +176,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/p90_mag/hp
-	name = "magazine (5.7x28mm Hollow-Point)"
+	name = "P90 magazine (5.7x28mm Hollow-Point)"
 	icon_state = "p90hp"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -168,7 +188,7 @@
 
 /obj/item/ammo_magazine/scp/m16_mag
 	name = "magazine (5.56)"
-	icon_state = "m16"
+	icon_state = "556_mag"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "5.56x45mm"
@@ -182,7 +202,7 @@
 
 /obj/item/ammo_magazine/scp/m16_mag/ext
 	name = "magazine (5.56)"
-	icon_state = "m16"
+	icon_state = "556_mag"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "5.56x45mm"
@@ -193,7 +213,7 @@
 
 /obj/item/ammo_magazine/scp/ak
 	name = "magazine (7.62)"
-	icon_state = "7.62x39mm"
+	icon_state = "ak47_mag"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "7.62x39mm"
@@ -378,7 +398,6 @@
 	desc = "A quite heavy militarized ammunition box. It's green, and says ``5.7x28`` on the box. It has a red line for HP bullets. You can only guess what's in it."
 	icon_state = "box_57x28mmhp"
 	ammo_type = /obj/item/ammo_casing/pistol/a57/hp
-
 // 5.56
 /obj/item/ammo_magazine/box/a556
 	name = "magazine box (5.56mm)"
@@ -519,10 +538,20 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/m1911
-	name = "Pistol Magazine (.45 ACP)"
+	name = "handgun magazine (.45)"
 	icon_state = "45"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 8
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/m1911/ap
+	name = "handgun magazine (.45 Armor-Piercing)"
+	icon_state = "45"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c45/ap
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = ".45"
 	max_ammo = 8
