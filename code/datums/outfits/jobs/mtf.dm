@@ -57,7 +57,7 @@
 	r_pocket = null
 	id_type = /obj/item/card/id/mtf/ninetaillead
 	belt = /obj/item/storage/belt/holster/security/fullmateba
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/m16_mag = 3, /obj/item/ammo_magazine/c44 = 4)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/m16_mag = 3,/obj/item/ammo_magazine/c44 = 4)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/medic
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Medic")
