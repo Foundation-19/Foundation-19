@@ -19,7 +19,7 @@
 
 /decl/hierarchy/outfit/chaos/soldier
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier")
-	suit_store = /obj/item/gun/projectile/automatic/scp/ak47
+	suit_store = /obj/item/gun/projectile/scp/automatic/ak12
 	belt = /obj/item/storage/belt/ci
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 3,/obj/item/ammo_magazine/scp/uzim9mm = 2,/obj/item/grenade/smokebomb = 1,/obj/item/gun/projectile/automatic/machine_pistol)
 
@@ -33,7 +33,7 @@
 /decl/hierarchy/outfit/chaos/leader
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Squad Leader")
 	head = /obj/item/clothing/head/helmet/scp/chaos/officer
-	suit_store = /obj/item/gun/projectile/automatic/scp/ak47
+	suit_store = /obj/item/gun/projectile/scp/automatic/ak12
 	belt = /obj/item/storage/belt/ci/rig
 	id_type = /obj/item/card/id/chaos/lead
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak = 5,/obj/item/grenade/smokebomb = 1)

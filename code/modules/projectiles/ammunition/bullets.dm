@@ -459,3 +459,22 @@
 	expend()
 	pixel_x = rand(-10, 10)
 	pixel_y = rand(-10, 10)
+
+/obj/item/ammo_casing/shotgun/buckshot
+	name = "buckshot shell"
+	desc = "A 12 gauge 00 buck shell."
+	icon_state = "shell-pellet"
+	spent_icon = "shell-pellet-spent"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
+	matter = list(DEFAULT_WALL_MATERIAL = 360)
+
+
+/obj/item/ammo_casing/rifle/a545
+	desc = "A 5.45mm bullet casing."
+	caliber = "5.45x39mm"
+	projectile_type = /obj/item/projectile/bullet/rifle/a545
+
+/obj/item/projectile/bullet/rifle/a545
+	fire_sound = 'sounds/weapons/gunshot/gunshot3.ogg'
+	damage = 45
+	armor_penetration = 10

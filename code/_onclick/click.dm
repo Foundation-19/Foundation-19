@@ -232,6 +232,8 @@
 	Only used for swapping hands
 */
 /mob/proc/MiddleClickOn(atom/A)
+	if(A.MiddleClick(src))
+		return
 	swap_hand()
 	return
 
@@ -253,10 +255,10 @@
 	return
 
 // In case of use break glass
-/*
+
 /atom/proc/MiddleClick(mob/M as mob)
 	return
-*/
+
 
 /*
 	Shift click

@@ -298,7 +298,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/gun/projectile/pistol/mk9(src)
+	new /obj/item/gun/projectile/scp/pistol/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/box/a9mm(src)
@@ -311,7 +311,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/gun/projectile/pistol/usp45(src)
+	new /obj/item/gun/projectile/scp/pistol/usp45tac(src)
 	new /obj/item/ammo_magazine/scp/usp45(src)
 	new /obj/item/ammo_magazine/scp/usp45(src)
 	new /obj/item/ammo_magazine/box/acp45(src)
@@ -642,3 +642,25 @@
 	icon_state = "ci_webbing"
 	item_state = "ci_webbing"
 	storage_slots = 10
+
+/obj/item/storage/belt/holster/security/fullmk44/New()
+	..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/scp/revolver/mk27/mk44(src)
+	new /obj/item/ammo_magazine/c50(src)
+	new /obj/item/ammo_magazine/c50(src)
+	new /obj/item/ammo_magazine/box/a50(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
+
+/obj/item/storage/belt/holster/security/fullmk27/Initialize()
+	. = ..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/scp/revolver/mk27(src)
+	new /obj/item/ammo_magazine/box/a357(src)
+	new /obj/item/handcuffs(src)
+	update_icon()

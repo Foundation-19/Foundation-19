@@ -153,3 +153,13 @@
 
 /obj/item/material/cross/gold
 	default_material = MATERIAL_GOLD
+
+
+/obj/item/material/hatchet/tacknife
+	name = "tactical knife"
+	desc = "You'd be killing loads of people if this was 'Medal of Honor'."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "tacknife"
+	item_state = "knife"
+	attack_verb = list("stabbed", "chopped", "cut")
+	applies_material_colour = 1

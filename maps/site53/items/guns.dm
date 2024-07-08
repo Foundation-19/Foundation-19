@@ -100,7 +100,7 @@
 	else
 		icon_state = "gyropistol"
 
-/obj/item/gun/projectile/pistol/m1911
+/obj/item/gun/projectile/scp/pistol/m1911
 	name = "M1911"
 	desc = "A classic Model 1911 pistol. A trusty sidearm even to this day, usually seen by administrative staff."
 	icon = 'icons/obj/gun.dmi'
@@ -114,13 +114,13 @@
 	magazine_type = /obj/item/ammo_magazine/scp/m1911
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
 
-/obj/item/gun/projectile/pistol/m1911/gold
+/obj/item/gun/projectile/scp/pistol/m1911/gold
 	name = "gold trimmed M1911"
 	desc = "A classic Model 1911 pistol. A trusty sidearm even to this day, usually seen by administrative staff. Now trimmed in a luxury gold."
 	icon_state = "m1911-spec"
 	fire_delay = 2
 
-/obj/item/gun/projectile/pistol/usp45
+/obj/item/gun/projectile/scp/pistol/usp45tac
 	name = "Colt Mustang"
 	desc = "In 1983, Colt introduced the Colt Mark IV/ Series 80 Government Model -.45 Caliber. This pocket pistol was similar in appearance, but not design, to the Colt M1911. Chambered in .45 ACP."
 	icon = 'icons/obj/gun.dmi'

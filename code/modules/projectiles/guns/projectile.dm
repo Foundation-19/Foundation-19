@@ -19,8 +19,7 @@
 	var/ammo_type = null		//the type of ammo that the gun comes preloaded with
 	var/list/loaded = list()	//stored ammo
 	var/starts_loaded = 1		//whether the gun starts loaded or not, can be overridden for guns crafted in-game
-	var/load_sound = 'sounds/weapons/guns/interaction/bullet_insert.ogg'
-
+	var/load_sound = SFX_BULLET_INSERT
 	//For MAGAZINE guns
 	var/magazine_type = null	//the type of magazine that the gun comes preloaded with
 	var/obj/item/ammo_magazine/ammo_magazine = null //stored magazine
@@ -175,7 +174,7 @@
 							user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
 												SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
 					ammo_magazine = AM
-					playsound(loc, mag_insert_sound, 75, 1)
+					playsound(loc, mag_insert_sound, 80, 1)
 					show_sound_effect(loc, user, SFX_ICON_SMALL)
 					update_icon()
 					AM.update_icon()
@@ -184,7 +183,7 @@
 					return
 				ammo_magazine = AM
 				user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
-				playsound(loc, mag_insert_sound, 50, 1)
+				playsound(loc, mag_insert_sound, 80, 1)
 				show_sound_effect(loc, user, SFX_ICON_SMALL)
 			if(SPEEDLOADER)
 				if(loaded.len >= max_shells)
@@ -233,11 +232,13 @@
 		is_jammed = 0
 		playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 	if(ammo_magazine)
-		user.put_in_hands(ammo_magazine)
-		user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
-		playsound(loc, mag_remove_sound, 50, 1)
-		ammo_magazine.update_icon()
-		ammo_magazine = null
+		if(allow_dump)
+			user.drop_from_inventory(ammo_magazine)
+			user.visible_message("[user] ejects [ammo_magazine] from [src].", SPAN_NOTICE("You eject [ammo_magazine] from [src]."))
+		else
+			user.put_in_hands(ammo_magazine)
+			user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
+		playsound(src.loc, mag_remove_sound, 80, 1)
 	else if(loaded.len)
 		//presumably, if it can be speed-loaded, it can be speed-unloaded.
 		if(allow_dump && (load_method & SPEEDLOADER))
@@ -249,6 +250,7 @@
 						playsound(loc, pick(C.fall_sounds), 50, 1)
 					C.forceMove(T)
 					count++
+					C.SpinAnimation(4, 1)
 				loaded.Cut()
 			if(count)
 				user.visible_message("[user] unloads [src].", SPAN_NOTICE("You unload [count] round\s from [src]."))
@@ -298,9 +300,9 @@
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))
-		to_chat(user, "Has [getAmmo()] round\s remaining.")
+		to_chat(user, "Has [get_ammo_count()] round\s remaining.")
 
-/obj/item/gun/projectile/proc/getAmmo()
+/obj/item/gun/projectile/proc/get_ammo_count()
 	var/bullets = 0
 	if(loaded)
 		bullets += loaded.len
@@ -364,3 +366,20 @@ GLOBAL_LIST_INIT(banned_914_projectile_guns, list(
 				return src
 			return pick(potential_return)
 	return ..()
+
+/obj/item/gun/projectile/proc/ejectCasing(manual)
+	chambered.forceMove(get_turf(src))
+	var/hor_eject_vel = rand(45, 55) / 10
+	var/vert_eject_vel = rand(40, 45) / 10
+
+	if(istype(chambered, /obj/item/ammo_casing/shotgun) || manual)
+		hor_eject_vel /= 2
+		vert_eject_vel /= 2
+	pixel_z = 8
+	chambered.SpinAnimation(4, 1)
+	var/angle_of_movement = ismob(loc) ? (rand(-30, 30)) + dir2angle(turn(loc.dir, -90)) : rand(-30, 30)
+	chambered.AddComponent(/datum/component/movable_physics, _horizontal_velocity = hor_eject_vel, \
+		_vertical_velocity = vert_eject_vel, _horizontal_friction = rand(20, 24) / 100, _z_gravity = 9.8, \
+		_z_floor = 0, _angle_of_movement = angle_of_movement, _physic_flags = QDEL_WHEN_NO_MOVEMENT, \
+		_bounce_sounds = chambered.fall_sounds)
+	chambered = null

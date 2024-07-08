@@ -94,7 +94,7 @@
 
 /datum/fabricator_recipe/arms_ammo/hidden/shotgun_pellet
 	name = "ammunition (shell, shotgun)"
-	path = /obj/item/ammo_casing/shotgun/pellet
+	path = /obj/item/ammo_casing/shotgun/buckshot
 
 /datum/fabricator_recipe/arms_ammo/hidden/tacknife
 	path = /obj/item/material/knife/combat

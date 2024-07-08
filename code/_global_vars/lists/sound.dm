@@ -170,6 +170,46 @@ GLOBAL_LIST_INIT(sfx_list, list(
 		'sounds/scp/1507/attack4.ogg',
 		'sounds/scp/1507/attack5.ogg',
 		'sounds/scp/1507/attack6.ogg'
-	)
+	),
+	SFX_BULLET_INSERT = list(
+		'sounds/weapons/guns/interaction/bullet_insert1.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert2.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert3.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert4.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert5.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert6.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert7.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert8.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert9.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert10.ogg',
+		'sounds/weapons/guns/interaction/bullet_insert11.ogg'
+		),
 
+	SFX_SHELL_INSERT = list(
+		'sounds/weapons/guns/interaction/shell_insert1.ogg',
+		'sounds/weapons/guns/interaction/shell_insert2.ogg'
+		),
+
+	SFX_REM870_SHELL_INSERT = list(
+		'sounds/weapons/guns/shotguns/mp133_insert1.ogg',
+		'sounds/weapons/guns/shotguns/mp133_insert2.ogg',
+		'sounds/weapons/guns/shotguns/mp133_insert3.ogg'
+		),
+
+	SFX_SPAS12_SHELL_INSERT = list(
+		'sounds/weapons/guns/shotguns/spas12_insert1.ogg',
+		'sounds/weapons/guns/shotguns/spas12_insert2.ogg',
+		'sounds/weapons/guns/shotguns/spas12_insert3.ogg',
+		'sounds/weapons/guns/shotguns/spas12_insert4.ogg'
+		),
+
+	SFX_CASING_DROP = list(
+		'sounds/weapons/guns/casing_drop1.ogg',
+		'sounds/weapons/guns/casing_drop2.ogg',
+		'sounds/weapons/guns/casing_drop3.ogg',
+		'sounds/weapons/guns/casing_drop4.ogg',
+		'sounds/weapons/guns/casing_drop5.ogg',
+		'sounds/weapons/guns/casing_drop6.ogg',
+		'sounds/weapons/guns/casing_drop7.ogg',
+		)
 ))

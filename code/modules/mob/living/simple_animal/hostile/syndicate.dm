@@ -147,7 +147,7 @@
 	projectiletype = /obj/item/projectile/bullet/flechette
 	corpse = /obj/effect/landmark/corpse/chaos
 	loot_list = list(
-		/obj/item/gun/projectile/automatic/scp/ak47 = 1,
+		/obj/item/gun/projectile/scp/automatic/ak12 = 1,
 	)
 
 /mob/living/simple_animal/hostile/syndicate/chaos/heavy
@@ -183,5 +183,5 @@
 	projectiletype = /obj/item/projectile/bullet/flechette
 	corpse = /obj/effect/landmark/corpse/chaos/officer
 	loot_list = list(
-		/obj/item/gun/projectile/automatic/scp/ak47 = 1,
+		/obj/item/gun/projectile/scp/automatic/ak12 = 1,
 	)

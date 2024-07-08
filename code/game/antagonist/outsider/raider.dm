@@ -83,7 +83,7 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 		/obj/item/gun/projectile/automatic/sec_smg,
 		/obj/item/gun/projectile/automatic/assault_rifle,
 		/obj/item/gun/projectile/shotgun/pump,
-		/obj/item/gun/projectile/shotgun/pump/combat,
+		/obj/item/gun/projectile/scp/shotgun/spas12,
 		/obj/item/gun/projectile/shotgun/doublebarrel,
 		/obj/item/gun/projectile/shotgun/doublebarrel/pellet,
 		/obj/item/gun/projectile/shotgun/doublebarrel/sawn,
@@ -319,7 +319,7 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 				/obj/item/gun/projectile/automatic/assault_rifle,
 				/obj/item/gun/projectile/automatic/sec_smg,
 				/obj/item/gun/energy/crossbow/largecrossbow,
-				/obj/item/gun/projectile/shotgun/pump/combat,
+				/obj/item/gun/projectile/scp/shotgun/spas12,
 				/obj/item/gun/energy/ionrifle,
 				/obj/item/gun/projectile/shotgun/pump
 	)

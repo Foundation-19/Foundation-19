@@ -22,9 +22,9 @@
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	caliber = CALIBER_SHOTGUN
 	load_method = SINGLE_CASING
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	handle_casings = EJECT_CASINGS
-	load_sound = 'sounds/weapons/guns/interaction/shotgun_instert.ogg'
+	load_sound = SFX_SHELL_INSERT
 	has_safety = FALSE // No brakes on this train baby
 	acid_resistance = -1
 

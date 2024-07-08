@@ -67,7 +67,6 @@
 	var/move_delay = 1
 	var/fire_sound = 'sounds/weapons/gunshot/gunshot.ogg'
 	var/fire_sound_text = "gunshot"
-	var/fire_anim = null
 	var/screen_shake = 0 //shouldn't be greater than 2 unless zoomed
 	var/silenced = FALSE
 	var/accuracy = 0   //accuracy is measured in tiles. +1 accuracy means that everything is effectively one tile closer for the purpose of miss chance, -1 means the opposite. launchers are not supported, at the moment.
@@ -252,7 +251,7 @@
 	update_icon()
 	return ..()
 
-/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown=TRUE)
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown=TRUE, automatic)
 	if(!user || !target)
 		return
 	if(target.z != user.z)
@@ -348,9 +347,6 @@
 
 //called after successfully firing
 /obj/item/gun/proc/handle_post_fire(mob/user, atom/target, pointblank=0, reflex=0)
-	if(fire_anim)
-		flick(fire_anim, src)
-
 	if (user)
 		if (silenced)
 			to_chat(user, SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"))
@@ -599,7 +595,7 @@
 	sel_mode = next_mode
 	var/datum/firemode/new_mode = firemodes[sel_mode]
 	new_mode.apply_to(src)
-	playsound(loc, selector_sound, 50, 1)
+	playsound(loc, selector_sound, 25, 1)
 	return new_mode
 
 /obj/item/gun/proc/get_next_firemode()

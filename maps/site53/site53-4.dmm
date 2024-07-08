@@ -2156,13 +2156,6 @@
 /turf/simulated/floor,
 /area/site53/engineering/atmosext)
 "hC" = (
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
 /obj/structure/closet/secure_closet{
 	req_access = list("ACCESS_SECURITY_LEVEL3");
 	name = "MP5 SMG Locker";
@@ -2173,18 +2166,6 @@
 	icon_opened = "gunopen";
 	icon_state = "tactical1"
 	},
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
 /obj/item/ammo_magazine/box/a9mm,
 /obj/item/ammo_magazine/box/a9mm,
 /obj/item/ammo_magazine/box/a9mm,
@@ -3364,13 +3345,6 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "lk" = (
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
-/obj/item/gun/projectile/automatic/scp/mp5,
 /obj/structure/closet/secure_closet{
 	req_access = list("ACCESS_SECURITY_LEVEL3");
 	name = "MP5 SMG Locker";
@@ -3381,18 +3355,6 @@
 	icon_opened = "gunopen";
 	icon_state = "tactical1"
 	},
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
-/obj/item/ammo_magazine/scp/smgm9mm,
 /obj/item/ammo_magazine/box/a9mm,
 /obj/item/ammo_magazine/box/a9mm,
 /obj/item/ammo_magazine/box/a9mm,

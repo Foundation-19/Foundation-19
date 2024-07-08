@@ -700,3 +700,14 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	result[2] = ainvis
 
 	return result
+
+
+/proc/directional_recoil(mob/M, strength=1, angle = 0)
+	if(!M || !M.client)
+		return
+	var/client/C = M.client
+	var/recoil_x = -sin(angle) * 4 * strength + rand(-strength, strength)
+	var/recoil_y = -cos(angle) * 4 * strength + rand(-strength, strength)
+	animate(C, pixel_x=recoil_x, pixel_y=recoil_y, time=1, easing=SINE_EASING|EASE_OUT, flags=ANIMATION_PARALLEL|ANIMATION_RELATIVE)
+	sleep(2)
+	animate(C, pixel_x=0, pixel_y=0, time=3, easing=SINE_EASING|EASE_IN)

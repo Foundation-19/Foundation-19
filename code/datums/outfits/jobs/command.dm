@@ -10,7 +10,7 @@
 	id_type = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911/gold
+	belt = /obj/item/gun/projectile/scp/pistol/m1911/gold
 
 /decl/hierarchy/outfit/job/command/headofhr
 	name = OUTFIT_JOB_NAME("Head of Human Resources")
@@ -20,7 +20,7 @@
 	id_type = /obj/item/card/id/adminlvl4
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-	belt = /obj/item/gun/projectile/pistol/m1911/gold
+	belt = /obj/item/gun/projectile/scp/pistol/m1911/gold
 
 /decl/hierarchy/outfit/job/command/commsofficer
 	name = OUTFIT_JOB_NAME("Communications Officer")
