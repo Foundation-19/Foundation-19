@@ -7009,6 +7009,7 @@
 "Bq" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/device/flashlight/lamp,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/equipmentroom)
 "Br" = (
@@ -9290,7 +9291,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/equipmentroom)
 "LP" = (
