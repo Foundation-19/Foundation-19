@@ -79,18 +79,19 @@ SUBSYSTEM_DEF(offsites)
 		return
 
 	var/mob/admin = usr
-	if(!check_rights(R_ADMIN|R_MOD, TRUE, admin.client))
+	if(!check_rights(R_ADMIN|R_MOD, TRUE, admin))
+		return
+
+	var/datum/offsite/cur_os = offsites[text2path(params["id"])]
+	if(!cur_os)
 		return
 
 	switch(action)
 		if("send_fax")
-			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
 			cur_os.send_fax(admin.client)
 		if("send_msg")
-			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
 			cur_os.send_message(admin.client)
 		if("read_fax")
-			var/datum/offsite/cur_os = offsites[text2path(params["id"])]
 			var/fax_type = params["fax_type"]
 			var/fax_time = text2num(params["fax"])
 
