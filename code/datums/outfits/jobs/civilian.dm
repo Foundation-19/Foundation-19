@@ -61,7 +61,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
-	l_hand = /obj/item/weapon/stamp/gocrep
+	l_hand = /obj/item/stamp/gocrep
 	l_pocket = /obj/item/device/radio
 	id_type = /obj/item/card/id/adminlvl3
 	l_ear = /obj/item/device/radio/headset/heads/goc
