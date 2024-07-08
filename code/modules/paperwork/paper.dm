@@ -450,7 +450,7 @@
 		if(P.isfancy)
 			isfancy = TRUE
 
-		var/t = sanitize(tgui_input_text(usr, "Enter what you want to write:", "Write", null, free_space), free_space, extra = 0, trim = 0)
+		var/t = tgui_input_text(usr, "Enter what you want to write:", "Write", null, free_space, TRUE)
 		if(!t)
 			return
 

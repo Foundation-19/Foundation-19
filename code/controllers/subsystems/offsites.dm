@@ -176,13 +176,13 @@ SUBSYSTEM_DEF(offsites)
 
 					switch(action)
 						if("Modify")
-							var/t = sanitize(tgui_input_text(ai, "Enter what you want to write:", "Write", html2pencode(paper_copy.info), MAX_PAPER_MESSAGE_LEN), MAX_PAPER_MESSAGE_LEN, extra = 0)
+							var/t = sanitize(tgui_input_text(ai, "Enter what you want to write:", "Write", html2pencode(paper_copy.info), MAX_PAPER_MESSAGE_LEN, TRUE), MAX_PAPER_MESSAGE_LEN, extra = 0)
 							if(!t)
 								continue
 
 							var/old_fields_value = paper_copy.fields
 							paper_copy.fields = 0
-							t = replacetext(t, "\n", "<BR>")
+							t = replacetext(t, "\n", "\[br\]")
 							t = paper_copy.parsepencode(t) // Encode everything from pencode to html
 
 							if(paper_copy.fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
