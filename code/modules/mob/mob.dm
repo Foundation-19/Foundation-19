@@ -810,8 +810,6 @@
 	if(!canface() || moving || (buckled && !buckled.buckle_movable))
 		return 0
 	setDir(ndir)
-	if(buckled && buckled.buckle_movable)
-		buckled.setDir(ndir)
 	SetMoveCooldown(movement_delay())
 	return 1
 
@@ -1057,12 +1055,12 @@
 			hud_used.facedir_button?.icon_state = "facedir1"
 			hud_used.facedir_button?.dir = facing_dir
 
-/mob/setDir()
+/mob/setDir(ndir)
 	if(facing_dir)
 		if(!canface() || lying || restrained())
 			facing_dir = null
 		else if(buckled)
-			if(buckled.obj_flags & OBJ_FLAG_ROTATABLE)
+			if(buckled.buckle_movable)
 				buckled.setDir(facing_dir)
 				return ..(facing_dir)
 			else
@@ -1070,7 +1068,9 @@
 		else if(dir != facing_dir)
 			return ..(facing_dir)
 	else
-		return ..()
+		if(buckled && buckled.buckle_movable)
+			buckled.setDir(ndir)
+		return ..(ndir)
 
 /mob/proc/set_stat(new_stat)
 	if(new_stat == stat)
