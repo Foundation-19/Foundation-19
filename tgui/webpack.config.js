@@ -50,7 +50,7 @@ module.exports = (env = {}, argv) => {
       chunkLoadTimeout: 15000,
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js'],
+      extensions: ['.tsx', '.ts', '.js', '.jsx'],
       alias: {},
     },
     module: {
@@ -61,6 +61,15 @@ module.exports = (env = {}, argv) => {
           use: [
             {
               loader: require.resolve('swc-loader'),
+              options: {
+                jsc: {
+                  experimental: {
+                    plugins: [
+                        [require.resolve('swc-plugin-inferno'), {}]
+                    ]
+                  }
+                }
+              }
             },
           ],
         },

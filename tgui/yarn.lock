@@ -1393,7 +1393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.6.13":
+"@swc/core@npm:1.6.13":
   version: 1.6.13
   resolution: "@swc/core@npm:1.6.13"
   dependencies:
@@ -9391,7 +9391,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tgui-workspace@workspace:."
   dependencies:
-    "@swc/core": "npm:^1.6.13"
+    "@swc/core": "npm:1.6.13"
     "@swc/jest": "npm:^0.2.36"
     "@types/jest": "npm:^27.5.2"
     "@types/jsdom": "npm:^16.2.15"
@@ -9423,6 +9423,9 @@ __metadata:
     webpack: "npm:^5.92.1"
     webpack-bundle-analyzer: "npm:^4.10.2"
     webpack-cli: "npm:^4.10.0"
+  dependenciesMeta:
+    swc-plugin-inferno@0.0.21:
+      unplugged: true
   languageName: unknown
   linkType: soft
 
