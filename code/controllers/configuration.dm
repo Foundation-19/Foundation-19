@@ -240,11 +240,19 @@ var/list/gamemode_cache = list()
 
 	var/asset_cdn_webroot = FALSE
 
+	//Web interface settings
+	var/webint_url = ""
+
 	var/asset_cdn_url
 
 	var/bccm = FALSE
 
 	var/use_timelocks = FALSE
+
+	var/sql_stats = 0			//Do we record round statistics on the database (deaths, round reports, population, etcetera) or not?
+	var/sql_whitelists = 0		//Defined whether the server uses an SQL based whitelist system, or the legacy one with two .txts. Config option in config.txt
+	var/sql_saves = 0			//Defines whether the server uses an SQL based character and preference saving system. Config option in config.txt
+	var/sql_ccia_logs = 0		//Defines weather the server saves CCIA Logs to the database aswell
 
 	/**
 	 * This is the nuclear option, this will make Hadii proud of you, and the players/other staff VERY VERY
@@ -453,6 +461,9 @@ var/list/gamemode_cache = list()
 
 				if ("jobs_have_minimal_access")
 					config.jobs_have_minimal_access = 1
+
+				if("webint_url")
+					config.webint_url = value
 
 				if("lowpop_access")
 					config.lowpop_access = 1

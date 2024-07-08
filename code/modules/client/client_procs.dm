@@ -122,7 +122,7 @@
 		return
 
 	if(href_list["linkingrequest"])
-		if (!GLOB.config.webint_url)
+		if (!config.webint_url)
 			return
 
 		if (!href_list["linkingaction"])
@@ -762,3 +762,107 @@
 	new_character.regenerate_icons()
 	new_character.ckey = ckey
 	return new_character
+
+/client/proc/process_webint_link(var/route, var/attributes)
+	if (!route)
+		return
+
+	var/linkURL = ""
+
+	switch (route)
+		if ("forums/members")
+			if (!webint_validate_attributes(list("mode", "u"), attributes_text = attributes))
+				return
+
+			if (!config.forumurl)
+				return
+
+			linkURL = "[config.forumurl]memberlist.php?"
+
+			linkURL += attributes
+
+		if ("interface/user/link")
+			if (!config.webint_url)
+				return
+
+			linkURL = "[config.webint_url]user/link"
+
+		if ("interface/login/sso_server")
+			//This also validates the attributes as it runs
+			var/new_attributes = webint_start_singlesignon(src, attributes)
+			if (!new_attributes)
+				return
+
+			if (!config.webint_url)
+				return
+
+			linkURL = "[config.webint_url]login/sso_server?"
+			linkURL += new_attributes
+
+		else
+			log_debug("Unrecognized process_webint_link() call used. Route sent: '[route]'.")
+			return
+
+	send_link(src, linkURL)
+	return
+
+//I honestly can't find a good place for this atm.
+//If the webint interaction gets more features, I'll move it. - Skull132
+/client/verb/view_linking_requests()
+	set name = "View Linking Requests"
+	set category = "OOC"
+
+	check_linking_requests()
+
+/client/proc/check_linking_requests()
+	if (!config.webint_url || !global.sqlenabled)
+		return
+
+	if (!establish_db_connection(GLOB.dbcon))
+		return
+
+	var/list/requests = list()
+	var/list/query_details = list("ckey" = ckey)
+
+	var/DBQuery/select_query = GLOB.dbcon.NewQuery("SELECT id, forum_id, forum_username, datediff(Now(), created_at) as request_age FROM ss13_player_linking WHERE status = 'new' AND player_ckey = :ckey: AND deleted_at IS NULL")
+	select_query.Execute(query_details)
+
+	while (select_query.NextRow())
+		requests.Add(list(list("id" = text2num(select_query.item[1]), "forum_id" = text2num(select_query.item[2]), "forum_username" = select_query.item[3], "request_age" = select_query.item[4])))
+
+	if (!requests.len)
+		return
+
+	var/dat = "<center><b>You have active requests to check!</b></center>"
+	var/i = 0
+	for (var/list/request in requests)
+		i++
+
+		var/linked_forum_name = null
+		if (config.forumurl)
+			var/route_attributes = list2params(list("mode" = "viewprofile", "u" = request["forum_id"]))
+			linked_forum_name = "<a href='byond://?src=\ref[src];routeWebInt=forums/members;routeAttributes=[route_attributes]'>[request["forum_username"]]</a>"
+
+		dat += "<hr>"
+		dat += "#[i] - Request to link your current key ([key]) to a forum account with the username of: <b>[linked_forum_name ? linked_forum_name : request["forum_username"]]</b>.<br>"
+		dat += "The request is [request["request_age"]] days old.<br>"
+		dat += "OPTIONS: <a href='byond://?src=\ref[src];linkingrequest=[request["id"]];linkingaction=accept'>Accept Request</a> | <a href='byond://?src=\ref[src];linkingrequest=[request["id"]];linkingaction=deny'>Deny Request</a>"
+
+	src << browse(dat, "window=LinkingRequests")
+	return
+
+/client/proc/gather_linking_requests()
+	if (!config.webint_url || !global.sqlenabled)
+		return
+
+	if (!establish_db_connection(GLOB.dbcon))
+		return
+
+	var/DBQuery/select_query = GLOB.dbcon.NewQuery("SELECT COUNT(*) AS request_count FROM ss13_player_linking WHERE status = 'new' AND player_ckey = :ckey: AND deleted_at IS NULL")
+	select_query.Execute(list("ckey" = ckey))
+
+	if (select_query.NextRow())
+		if (text2num(select_query.item[1]) > 0)
+			return "You have [select_query.item[1]] account linking requests pending review. Click <a href='?JSlink=linking;notification=:src_ref'>here</a> to see them!"
+
+	return null

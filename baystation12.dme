@@ -3423,6 +3423,7 @@
 #include "code\modules\ventcrawl\ventcrawl_atmospherics.dm"
 #include "code\modules\ventcrawl\ventcrawl_multiz.dm"
 #include "code\modules\ventcrawl\ventcrawl_verb.dm"
+#include "code\modules\web_interface\webint_procs.dm"
 #include "code\modules\webhooks\_webhook.dm"
 #include "code\modules\webhooks\webhook_custom_event.dm"
 #include "code\modules\webhooks\webhook_roundend.dm"
