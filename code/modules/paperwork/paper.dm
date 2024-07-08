@@ -134,7 +134,7 @@
 			if (L.has_written_form)
 				selectable_languages += L
 
-	var/new_language = input(user, "What language do you want to write in?", "Change language", language) as null|anything in selectable_languages
+	var/new_language = tgui_input_list(user, "What language do you want to write in?", "Change language", selectable_languages, language)
 	if (!new_language || new_language == language)
 		to_chat(user, SPAN_NOTICE("You decide to leave the language as [language.name]."))
 		return
@@ -204,7 +204,10 @@
 		to_chat(usr, SPAN_WARNING("You cut yourself on the paper."))
 		return
 
-	var/n_name = sanitizeSafe(input(usr, "What would you like to label the paper?", "Paper Labelling", null)  as text, MAX_NAME_LEN)
+	var/u_name = tgui_input_text(usr, "What would you like to label the paper?", "Paper Labelling", name, MAX_NAME_LEN)
+	if(!u_name)
+		return
+	var/n_name = sanitizeSafe(u_name, MAX_NAME_LEN)
 
 	// We check loc one level up, so we can rename in clipboards and such. See also: /obj/item/photo/rename()
 	if(!n_name || !CanInteract(usr, GLOB.deep_inventory_state))
@@ -449,7 +452,7 @@
 
 		if(P.isfancy)
 			isfancy = TRUE
-
+		sanitize()
 		var/t = tgui_input_text(usr, "Enter what you want to write:", "Write", null, free_space, TRUE)
 		if(!t)
 			return
@@ -459,9 +462,7 @@
 			return
 
 		var/last_fields_value = fields
-
 		t = parsepencode(t, I, usr, iscrayon, isfancy) // Encode everything from pencode to html
-
 
 		if(fields > MAX_FIELDS)
 			to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
@@ -479,7 +480,6 @@
 		update_space(t)
 
 		show_content(usr, editable = TRUE)
-
 		playsound(src, pick('sounds/effects/pen1.ogg','sounds/effects/pen2.ogg'), 10)
 		update_icon()
 

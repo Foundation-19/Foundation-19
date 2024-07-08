@@ -42,13 +42,14 @@
 /obj/item/paper/admin/Topic(href, href_list)
 	if(href_list["write"])
 		var/id = href_list["write"]
-		var/t = sanitize(tgui_input_text(usr, "Enter what you want to write:", "Write", id == "end" ? unformatedText : null, MAX_PAPER_MESSAGE_LEN, TRUE, FALSE), MAX_PAPER_MESSAGE_LEN, extra = 0)
+		var/t = tgui_input_text(usr, "Enter what you want to write:", "Write", id == "end" ? unformatedText : null, MAX_PAPER_MESSAGE_LEN, TRUE, FALSE)
 		if(!t)
 			return
 	
 		var/last_fields_value = fields
 
 		unformatedText = t
+		t = html_encode(t)
 		t = replacetext(t, "\n", "\[br\]")
 		t = parsepencode(t) // Encode everything from pencode to html
 
@@ -92,4 +93,4 @@
 		return
 
 /obj/item/paper/admin/get_signature()
-	return input(usr, "Enter the name you wish to sign the paper with (will prompt for multiple entries, in order of entry)", "Signature") as text|null
+	return tgui_input_text(usr, "Enter the name you wish to sign the paper with (will prompt for multiple entries, in order of entry)", "Signature")
