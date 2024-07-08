@@ -39,38 +39,36 @@ SUBSYSTEM_DEF(offsites)
 	for(var/key in offsites)
 		var/datum/offsite/OS = offsites[key]
 
-		// TODO: timesort instead of type categories
-		var/list/timesorted_data = list()
-
+		var/list/offsite_history = list()
 		for(var/thing in OS.received_faxes)
 			var/list/rec_fax = list()
 			rec_fax += thing
-			rec_fax += "Received fax from"
-			rec_fax += gameTimestamp("hh:mm:ss", rec_fax[1])
-			BINARY_INSERT_DEFINE(list(rec_fax), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
+			rec_fax["type"] = "Received fax from"
+			rec_fax["time_pretty"] = gameTimestamp("hh:mm:ss", rec_fax[1])
+			offsite_history[rec_fax[1]] = rec_fax
 
 		for(var/thing in OS.sent_faxes)
 			var/list/sent_fax = list()
 			sent_fax += thing
-			sent_fax += "Sent fax to"
-			sent_fax += gameTimestamp("hh:mm:ss", sent_fax[1])
-			BINARY_INSERT_DEFINE(list(sent_fax), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
+			sent_fax["type"] = "Sent fax to"
+			sent_fax["time_pretty"] = gameTimestamp("hh:mm:ss", sent_fax[1])
+			offsite_history[sent_fax[1]] = sent_fax
 
 		for(var/thing in OS.received_messages)
 			var/list/received_message = list()
 			received_message += thing
-			received_message += "Received message from"
-			received_message += gameTimestamp("hh:mm:ss", received_message[1])
-			BINARY_INSERT_DEFINE(list(received_message), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
+			received_message["type"] = "Received message from"
+			received_message["time_pretty"] = gameTimestamp("hh:mm:ss", received_message[1])
+			offsite_history[received_message[1]] = received_message
 
 		for(var/thing in OS.sent_messages)
 			var/list/sent_message = list()
 			sent_message += thing
-			sent_message += "Sent message to"
-			sent_message += gameTimestamp("hh:mm:ss", sent_message[1])
-			BINARY_INSERT_DEFINE(list(sent_message), timesorted_data, SORT_VAR_NO_TYPE, thing, SORT_FIRST_INDEX, COMPARE_KEY)
+			sent_message["type"] = "Sent message to"
+			sent_message["time_pretty"] = gameTimestamp("hh:mm:ss", sent_message[1])
+			offsite_history[sent_message[1]] = sent_message
 
-		data["offsites"] += list(list(OS.name, OS.type, timesorted_data))
+		data["offsites"] += list(list("name" = OS.name, "type" = OS.type, "data" = offsite_history))
 
 	return data
 

@@ -1,9 +1,26 @@
-import { Window } from '../layouts';
 import { useBackend, useLocalState } from '../backend';
 import { Section, Button, Tabs, Flex, Collapsible, Box, BlockQuote } from '../components';
+import { Window } from '../layouts';
+
+type OffsiteHistoryItem = {
+  time: number;
+  ref: string;
+  department: string;
+  user: string;
+}
+
+type OffsiteInfo = {
+  name: string;
+  type: string;
+  data: {[time: number] : OffsiteHistoryItem};
+};
+
+type Data = {
+  offsites: OffsiteInfo[];
+};
 
 export const OffsitePanel = (props, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<Data>(context);
   const [openDataTab, setOpenDataTab] = useLocalState(
     context,
     'openDataTab',
@@ -21,13 +38,13 @@ export const OffsitePanel = (props, context) => {
       <Window.Content Scrollable>
         <Section fitted>
           <Tabs horizontal>
-            {offsites.map((offsite_data = [], i) => {
+            {offsites.map((offsite_data, i) => {
               return (
                 <Tabs.Tab
                   key={i}
                   selected={i === openOffsite}
                   onClick={() => setOpenOffsite(i)}>
-                  {offsite_data[0]}
+                  {offsite_data.name}
                 </Tabs.Tab>
               );
             })}
@@ -40,11 +57,11 @@ export const OffsitePanel = (props, context) => {
 };
 
 const OffsitePage = (props, context) => {
-  const { act, data } = useBackend(context);
-  const current_offsite_data = props.current_offsite_data || [];
-  const name = current_offsite_data[0];
-  const type = current_offsite_data[1];
-  const comms_data = current_offsite_data[2];
+  const { act } = useBackend(context);
+  const current_offsite_data: OffsiteInfo = props.current_offsite_data;
+  const name = current_offsite_data.name;
+  const type = current_offsite_data.type;
+  const comms_data = current_offsite_data.data;
 
   return (
     <Section>

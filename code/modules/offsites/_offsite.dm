@@ -27,7 +27,12 @@
 
 /datum/offsite/proc/add_sent_fax(datum/source, obj/item/copy, obj/item/paper/admin/original)
 	var/client/admin = original.admindatum.owner
-	sent_faxes += list(list(world.time, copy, original.department || "unknown department", key_name(admin)))
+	sent_faxes += list(list(
+		"time" = world.time,
+		"ref" = copy,
+		"department" = (original.department || "unknown department"),
+		"user" = key_name(admin)
+	))
 
 /datum/offsite/proc/receive_fax(obj/item/ref, origin_department = "Unknown", mob/sender)
 	received_faxes += list(list(world.time, ref, origin_department, key_name(sender)))
