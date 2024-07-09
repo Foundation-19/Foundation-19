@@ -1,7 +1,6 @@
 import { Fragment } from 'inferno';
 
 import { useBackend } from '../backend';
-import { Fragment } from 'inferno';
 import { Box, Section, Table } from '../components';
 import { Window } from '../layouts';
 
