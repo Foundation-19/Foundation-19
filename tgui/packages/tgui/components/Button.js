@@ -7,6 +7,7 @@
 import { KEY_ENTER, KEY_ESCAPE, KEY_SPACE } from 'common/keycodes';
 import { classes, pureComponentHooks } from 'common/react';
 import { Component, createRef } from 'inferno';
+
 import { createLogger } from '../logging';
 import { Box, computeBoxClassName, computeBoxProps } from './Box';
 import { Icon } from './Icon';
@@ -45,7 +46,7 @@ export const Button = (props) => {
       `Lowercase 'onclick' is not supported on Button and lowercase` +
         ` prop names are discouraged in general. Please use a camelCase` +
         `'onClick' instead and read: ` +
-        `https://infernojs.org/docs/guides/event-handling`
+        `https://infernojs.org/docs/guides/event-handling`,
     );
   }
   rest.onClick = (e) => {
@@ -96,10 +97,10 @@ export const Button = (props) => {
         // Refocus layout on pressing escape.
         if (keyCode === KEY_ESCAPE) {
           e.preventDefault();
-          return;
         }
       }}
-      {...computeBoxProps(rest)}>
+      {...computeBoxProps(rest)}
+    >
       <div className="Button__content">
         {icon && iconPosition !== 'right' && (
           <Icon
@@ -265,14 +266,15 @@ export class ButtonInput extends Component {
           'Button--color--' + color,
         ])}
         {...rest}
-        onClick={() => this.setInInput(true)}>
+        onClick={() => this.setInInput(true)}
+      >
         {icon && <Icon name={icon} rotation={iconRotation} spin={iconSpin} />}
         <div>{content}</div>
         <input
           ref={this.inputRef}
           className="NumberInput__input"
           style={{
-            'display': !this.state.inInput ? 'none' : undefined,
+            display: !this.state.inInput ? 'none' : undefined,
             'text-align': 'left',
           }}
           onBlur={(e) => {

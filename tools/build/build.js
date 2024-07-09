@@ -177,7 +177,7 @@ export const TguiTarget = new Juke.Target({
     'tgui/.yarn/install-target',
     'tgui/webpack.config.js',
     'tgui/**/package.json',
-    'tgui/packages/**/*.+(js|cjs|ts|tsx|scss)',
+    'tgui/packages/**/*.+(js|jsx|cjs|ts|tsx|scss)',
   ],
   outputs: [
     'tgui/public/tgui.bundle.css',
@@ -278,8 +278,6 @@ export const CleanTarget = new Juke.Target({
   dependsOn: [TguiCleanTarget],
   executes: async () => {
     Juke.rm('*.{dmb,rsc}');
-    Juke.rm('*.mdme*');
-    Juke.rm('*.m.*');
     Juke.rm('_maps/templates.dm');
   },
 });
