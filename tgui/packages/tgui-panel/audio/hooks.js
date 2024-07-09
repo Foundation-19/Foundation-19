@@ -4,7 +4,8 @@
  * @license MIT
  */
 
-import { useSelector, useDispatch } from 'common/redux';
+import { useDispatch, useSelector } from 'common/redux';
+
 import { selectAudio } from './selectors';
 
 export const useAudio = (context) => {

@@ -1,12 +1,21 @@
 /* eslint react/no-danger: "off" */
 import { Fragment } from 'inferno';
+
 import { useBackend } from '../backend';
 import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosFileManager = (props, context) => {
   const { act, data } = useBackend(context);
-  const { PC_device_theme, usbconnected, filename, filedata, error, files = [], usbfiles = [] } = data;
+  const {
+    PC_device_theme,
+    usbconnected,
+    filename,
+    filedata,
+    error,
+    files = [],
+    usbfiles = [],
+  } = data;
   return (
     <NtosWindow resizable theme={PC_device_theme}>
       <NtosWindow.Content scrollable>
@@ -15,11 +24,24 @@ export const NtosFileManager = (props, context) => {
             title={'Viewing File ' + filename}
             buttons={
               <Fragment>
-                <Button icon="pen" content="Edit" onClick={() => act('PRG_edit')} />
-                <Button icon="print" content="Print" onClick={() => act('PRG_printfile')} />
-                <Button icon="times" content="Close" onClick={() => act('PRG_closefile')} />
+                <Button
+                  icon="pen"
+                  content="Edit"
+                  onClick={() => act('PRG_edit')}
+                />
+                <Button
+                  icon="print"
+                  content="Print"
+                  onClick={() => act('PRG_printfile')}
+                />
+                <Button
+                  icon="times"
+                  content="Close"
+                  onClick={() => act('PRG_closefile')}
+                />
               </Fragment>
-            }>
+            }
+          >
             {error || null}
             {/* This dangerouslySetInnerHTML is only ever passed data that has passed through pencode2html
              * It should be safe enough to support pencode in this way.
@@ -76,7 +98,15 @@ export const NtosFileManager = (props, context) => {
 };
 
 const FileTable = (props) => {
-  const { files = [], usbconnected, usbmode, onUpload, onDelete, onRename, onOpen } = props;
+  const {
+    files = [],
+    usbconnected,
+    usbmode,
+    onUpload,
+    onDelete,
+    onRename,
+    onOpen,
+  } = props;
   return (
     <Table>
       <Table.Row header>
@@ -116,9 +146,17 @@ const FileTable = (props) => {
                 />
                 {!!usbconnected &&
                   (usbmode ? (
-                    <Button icon="download" tooltip="Download" onClick={() => onUpload(file.name)} />
+                    <Button
+                      icon="download"
+                      tooltip="Download"
+                      onClick={() => onUpload(file.name)}
+                    />
                   ) : (
-                    <Button icon="upload" tooltip="Upload" onClick={() => onUpload(file.name)} />
+                    <Button
+                      icon="upload"
+                      tooltip="Upload"
+                      onClick={() => onUpload(file.name)}
+                    />
                   ))}
               </Fragment>
             )}

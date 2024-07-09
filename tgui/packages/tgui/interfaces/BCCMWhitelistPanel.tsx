@@ -1,5 +1,13 @@
 import { useBackend, useLocalState } from '../backend';
-import { Section, Flex, Stack, Button, Box, Input, NoticeBox } from '../components';
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  NoticeBox,
+  Section,
+  Stack,
+} from '../components';
 import { Window } from '../layouts';
 
 type BCCMDisplayData = {
@@ -18,7 +26,7 @@ export const BCCMWhitelistPanel = (props, context) => {
   const [inputWLCkey, setInputWLCkey] = useLocalState(
     context,
     'inputWLCkey',
-    ''
+    '',
   );
   return (
     <Window width={600} height={500} title="BCCM Whitelist Panel" theme="admin">
@@ -52,7 +60,7 @@ export const BCCMWhitelistPanel = (props, context) => {
           </Flex>
         </Section>
         <Section title={'Whitelist Entries: ' + (displayData?.length || 0)}>
-          {((displayData?.length || 0)!== 0 && (
+          {((displayData?.length || 0) !== 0 && (
             <Stack vertical>
               <Stack.Item>
                 <Flex justify="space-evenly">
