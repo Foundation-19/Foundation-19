@@ -1010,20 +1010,20 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 // LOGISTICS
 
 /obj/item/card/id/logoff
-	name = "security ID"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	name = "science ID"
+	desc = "A dark yellow ID. Looks cool, the person wearing it, not so much."
+	icon_state = "sciencelvl3"
+	item_state = "Science_ID3"
 	job_access_type = /datum/job/qm
+	class = CLASS_B
 
 
 /obj/item/card/id/logspec
-	name = "security ID"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	name = "science ID"
+	desc = "A bright yellow ID. Looks ordinary?"
+	icon_state = "sciencelvl2"
+	item_state = "Science_ID2"
 	job_access_type = /datum/job/cargo_tech
-	class = CLASS_B
 
 // CD ASSIGNMENT CARDS
 
