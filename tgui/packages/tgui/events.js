@@ -120,7 +120,6 @@ window.addEventListener('focusin', (e) => {
   setWindowFocus(true);
   if (canStealFocus(e.target)) {
     stealFocus(e.target);
-    return;
   }
 });
 

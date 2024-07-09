@@ -5,11 +5,12 @@
  * @license MIT
  */
 
+import { KEY_ENTER, KEY_ESCAPE, KEY_TAB } from 'common/keycodes';
 import { classes } from 'common/react';
 import { Component, createRef } from 'inferno';
+
 import { Box } from './Box';
 import { toInputValue } from './Input';
-import { KEY_ENTER, KEY_ESCAPE, KEY_TAB } from 'common/keycodes';
 
 export class TextArea extends Component {
   constructor(props, context) {
@@ -175,7 +176,8 @@ export class TextArea extends Component {
     return (
       <Box
         className={classes(['TextArea', fluid && 'TextArea--fluid', className])}
-        {...rest}>
+        {...rest}
+      >
         <textarea
           ref={this.textareaRef}
           className="TextArea__textarea"
