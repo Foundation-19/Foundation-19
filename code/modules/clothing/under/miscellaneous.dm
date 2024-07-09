@@ -824,8 +824,22 @@
 	worn_state = "itdo"
 
 /obj/item/clothing/under/ecl
-	desc = "A white dress shirt with a tan pair of slacks, the dress shirt has two logos on the lower shoulders, denoting the department of \"Ethics Committee\". It also has gold etching on the upper shoulders. It comes with a Ethics Committee green tie."
+	desc = "A white dress shirt with a beige pair of slacks, the dress shirt has two logos on the lower shoulders, denoting the department of \"Ethics Committee\". It also has gold etching on the upper shoulders. It comes with a Ethics Committee green tie."
 	name = "Ethics Committee Liaison uniform"
 	icon_state = "ecl"
 	item_state = "w_suit"
 	worn_state = "ecl"
+
+/obj/item/clothing/under/ecl/grey
+	desc = "A white dress shirt with a grey pair of slacks, the dress shirt has two logos on the lower shoulders, denoting the department of \"Ethics Committee\". It also has gold etching on the upper shoulders. It comes with a Ethics Committee green tie."
+	name = "Ethics Committee Liaison uniform"
+	icon_state = "eclg"
+	item_state = "w_suit"
+	worn_state = "eclg"
+
+/obj/item/clothing/under/ecl/exec
+	desc = "A white dress shirt with a black pair of slacks, the dress shirt has two logos on the lower shoulders, denoting the department of \"Ethics Committee\". It also has gold etching on the upper shoulders. It comes with a Ethics Committee green tie."
+	name = "Ethics Committee Executive uniform"
+	icon_state = "eclb"
+	item_state = "b_suit"
+	worn_state = "eclb"

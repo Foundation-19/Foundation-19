@@ -115,4 +115,6 @@
 		/obj/item/clothing/under/lawyer/black,
 		/obj/item/clothing/under/ecl,
 		/obj/item/clothing/suit/armor/ecl,
+		/obj/item/clothing/under/ecl/grey,
+		/obj/item/clothing/suit/armor/ecl/grey,
 	)
