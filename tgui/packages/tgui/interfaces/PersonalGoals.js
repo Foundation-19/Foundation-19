@@ -16,13 +16,11 @@ export const PersonalGoals = (props, context) => {
     <Window title="Personal Goals" width={675} height={700}>
       <Window.Content scrollable>
         <Section>
-          {categories_values.map((value, index) => {
-            return (
-              <Fragment key={categories_keys[index]}>
-                <GoalCategory goals={value} catname={categories_keys[index]} />
-              </Fragment>
-            );
-          })}
+          {categories_values.map((value, index) => (
+            <Fragment key={categories_keys[index]}>
+              <GoalCategory goals={value} catname={categories_keys[index]} />
+            </Fragment>
+          ))}
         </Section>
       </Window.Content>
     </Window>
