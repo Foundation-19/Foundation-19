@@ -1,9 +1,9 @@
-import { Loader } from './common/Loader';
-import { InputButtons } from './common/InputButtons';
-import { useBackend, useLocalState } from '../backend';
 import { KEY_ENTER, KEY_ESCAPE } from '../../common/keycodes';
+import { useBackend, useLocalState } from '../backend';
 import { Box, Section, Stack, TextArea } from '../components';
 import { Window } from '../layouts';
+import { InputButtons } from './common/InputButtons';
+import { Loader } from './common/Loader';
 
 type TextInputData = {
   large_buttons: boolean;
@@ -29,7 +29,7 @@ export const TextInputModal = (props, context) => {
   const [input, setInput] = useLocalState<string>(
     context,
     'input',
-    placeholder || ''
+    placeholder || '',
   );
   const onType = (value: string) => {
     if (value === input) {
@@ -56,7 +56,8 @@ export const TextInputModal = (props, context) => {
           if (keyCode === KEY_ESCAPE) {
             act('cancel');
           }
-        }}>
+        }}
+      >
         <Section fill>
           <Stack fill vertical>
             <Stack.Item>

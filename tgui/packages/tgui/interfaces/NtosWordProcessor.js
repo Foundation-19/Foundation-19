@@ -1,12 +1,21 @@
 /* eslint react/no-danger: "off" */
 import { useBackend } from '../backend';
-import { Button, Box, Section, Table } from '../components';
+import { Box, Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosWordProcessor = (props, context) => {
   const { act, data } = useBackend(context);
 
-  const { PC_device_theme, error, browsing, files, usbconnected, usbfiles, filename, filedata } = data;
+  const {
+    PC_device_theme,
+    error,
+    browsing,
+    files,
+    usbconnected,
+    usbfiles,
+    filename,
+    filedata,
+  } = data;
 
   return (
     <NtosWindow resizable theme={PC_device_theme}>
@@ -15,14 +24,26 @@ export const NtosWordProcessor = (props, context) => {
           <Box color="bad">
             <h2>An Error has occured:</h2>
             Additional Information: {error}
-            Please try again. If the problem persists, contact your system administrator for assistance.
-            <Button icon="arrow-left" content="Back to menu" onClick={() => act('PRG_backtomenu')} />
+            Please try again. If the problem persists, contact your system
+            administrator for assistance.
+            <Button
+              icon="arrow-left"
+              content="Back to menu"
+              onClick={() => act('PRG_backtomenu')}
+            />
           </Box>
         )) ||
           (browsing && (
             <Section
               title="File Browser"
-              buttons={<Button icon="arrow-left" content="Back to editor" onClick={() => act('PRG_closebrowser')} />}>
+              buttons={
+                <Button
+                  icon="arrow-left"
+                  content="Back to editor"
+                  onClick={() => act('PRG_closebrowser')}
+                />
+              }
+            >
               <Section title="Available documents (local)" level={2}>
                 <Table>
                   <Table.Row header>
@@ -35,7 +56,12 @@ export const NtosWordProcessor = (props, context) => {
                       <Table.Cell>{file.name}</Table.Cell>
                       <Table.Cell>{file.size}</Table.Cell>
                       <Table.Cell collapsing>
-                        <Button icon="file-word" onClick={() => act('PRG_openfile', { 'PRG_openfile': file.name })}>
+                        <Button
+                          icon="file-word"
+                          onClick={() =>
+                            act('PRG_openfile', { PRG_openfile: file.name })
+                          }
+                        >
                           Open
                         </Button>
                       </Table.Cell>
@@ -55,8 +81,13 @@ export const NtosWordProcessor = (props, context) => {
               <Box>
                 <Button onClick={() => act('PRG_editfile')}>Edit</Button>
                 <Button onClick={() => act('PRG_txtrpeview')}>Preview</Button>
-                <Button onClick={() => act('PRG_taghelp')}>Formatting Help</Button>
-                <Button disabled={!filedata} onClick={() => act('PRG_printfile')}>
+                <Button onClick={() => act('PRG_taghelp')}>
+                  Formatting Help
+                </Button>
+                <Button
+                  disabled={!filedata}
+                  onClick={() => act('PRG_printfile')}
+                >
                   Print
                 </Button>
               </Box>
