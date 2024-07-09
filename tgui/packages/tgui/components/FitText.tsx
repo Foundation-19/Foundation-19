@@ -1,4 +1,4 @@
-import { Component, createRef, RefObject } from 'inferno';
+import { Component, createRef, Inferno, RefObject } from 'inferno';
 
 const DEFAULT_ACCEPTABLE_DIFFERENCE = 5;
 
@@ -6,7 +6,7 @@ type Props = {
   acceptableDifference?: number;
   maxWidth: number;
   maxFontSize: number;
-  native?: HTMLAttributes<HTMLDivElement>;
+  native?: Inferno.HTMLAttributes<HTMLDivElement>;
 };
 
 type State = {

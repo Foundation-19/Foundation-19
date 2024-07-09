@@ -6,8 +6,8 @@
     "common": "workspace:*",
     "fastify": "^3.29.5",
     "fastify-static": "^4.7.0",
-    "inferno": "^7.4.11",
-    "inferno-vnode-flags": "^7.4.11",
+    "inferno": "^8.2.3",
+    "inferno-vnode-flags": "^8.2.3",
     "lodash": "^4.17.21",
     "platform": "^1.3.6",
     "tgui": "workspace:*"

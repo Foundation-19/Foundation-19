@@ -1,5 +1,5 @@
 import { classes } from 'common/react';
-import dateformat from 'dateformat';
+import dateFormat from 'dateformat';
 import { Component, Fragment } from 'inferno';
 import yaml from 'js-yaml';
 
@@ -101,7 +101,7 @@ export class Changelog extends Component {
 
     if (dates) {
       dates.forEach((date) =>
-        this.dateChoices.push(dateformat(date, 'mmmm yyyy', true)),
+        this.dateChoices.push(dateFormat(date, 'mmmm yyyy', true)),
       );
       this.setSelectedDate(this.dateChoices[0]);
       this.getData(dates[0]);
@@ -234,7 +234,7 @@ export class Changelog extends Component {
       Object.entries(data)
         .reverse()
         .map(([date, authors]) => (
-          <Section key={date} title={dateformat(date, 'd mmmm yyyy', true)}>
+          <Section key={date} title={dateFormat(date, 'd mmmm yyyy', true)}>
             <Box ml={3}>
               {Object.entries(authors).map(([name, changes]) => (
                 <Fragment key={name}>

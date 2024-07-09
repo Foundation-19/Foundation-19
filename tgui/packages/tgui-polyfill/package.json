@@ -8,7 +8,7 @@
   "dependencies": {
     "core-js": "^3.37.1",
     "regenerator-runtime": "^0.14.1",
-    "unfetch": "^4.2.0"
+    "unfetch": "^5.0.0"
   },
   "devDependencies": {
     "terser": "^5.31.1"
