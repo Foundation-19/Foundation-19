@@ -174,7 +174,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
 	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600, EXP_TYPE_BUR = 60)
 	class = CLASS_A
-	hud_icon = "hud05rep"
+	hud_icon = "huditdo"
 	access = list(
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
@@ -217,7 +217,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/civ/ethics
 	requirements = list(EXP_TYPE_BUR = 300)
 	class = CLASS_A
-	hud_icon = "hud05rep"
+	hud_icon = "hudecl"
 	access = list(
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,

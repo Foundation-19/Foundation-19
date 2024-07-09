@@ -1,5 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - code_imp: Fixed href exploits in spellbooks, material stacks, ATM, and accounts
-      database computer
