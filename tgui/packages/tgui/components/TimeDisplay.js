@@ -1,5 +1,6 @@
-import { formatTime } from '../format';
 import { Component } from 'inferno';
+
+import { formatTime } from '../format';
 
 // AnimatedNumber Copypaste
 const isSafeNumber = (value) => {

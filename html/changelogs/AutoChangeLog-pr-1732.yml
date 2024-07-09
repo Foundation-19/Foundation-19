@@ -1,0 +1,5 @@
+author: quadbium
+delete-after: true
+changes:
+  - rscadd: adds a line of text to the basic weapons skill about piloting exosuits
+  - balance: gave the robotics tech and senior robotics techs the basic weapons skill

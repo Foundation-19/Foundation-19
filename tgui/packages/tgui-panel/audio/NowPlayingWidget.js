@@ -7,6 +7,7 @@
 import { toFixed } from 'common/math';
 import { useDispatch, useSelector } from 'common/redux';
 import { Button, Flex, Knob } from 'tgui/components';
+
 import { useSettings } from '../settings';
 import { selectAudio } from './selectors';
 
@@ -27,9 +28,10 @@ export const NowPlayingWidget = (props, context) => {
             grow={1}
             style={{
               'white-space': 'nowrap',
-              'overflow': 'hidden',
+              overflow: 'hidden',
               'text-overflow': 'ellipsis',
-            }}>
+            }}
+          >
             {title || 'Unknown Track'}
           </Flex.Item>
         </>

@@ -4079,6 +4079,7 @@
 	},
 /obj/structure/closet/secure_closet/guard/epsilon11agent,
 /obj/machinery/light,
+/obj/item/clothing/under/mtf/epsilon11,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "mf" = (
@@ -6270,6 +6271,26 @@
 /obj/item/clothing/head/helmet/mtftactical,
 /obj/item/clothing/head/helmet/mtftactical,
 /obj/item/clothing/head/helmet/mtftactical,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
@@ -10826,6 +10847,7 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
+/obj/item/clothing/under/mtf/epsilon11,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "BA" = (
@@ -13347,6 +13369,7 @@
 	color = "#E5511B"
 	},
 /obj/structure/closet/secure_closet/guard/epsilon11agent,
+/obj/item/clothing/under/mtf/epsilon11,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "Ig" = (
@@ -17635,8 +17658,8 @@
 "Sh" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter Control Console";
-	req_access = list("ACCESS_MTF");
-	shuttle_tag = "MTF Helicopter"
+	shuttle_tag = "Mobile Task Force Helicopter";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
@@ -18826,6 +18849,8 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
+/obj/item/clothing/under/mtf/epsilon11,
+/obj/item/clothing/head/beret/mtf,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "VG" = (
