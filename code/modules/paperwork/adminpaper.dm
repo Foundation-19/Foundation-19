@@ -31,7 +31,7 @@
 
 /obj/item/paper/admin/New()
 	..()
-	changeTemplate(/decl/offsite_template/default)
+	changeTemplate(SSoffsites.default_template)
 	generateInteractions()
 
 /obj/item/paper/admin/proc/generateInteractions()

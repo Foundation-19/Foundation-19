@@ -21,6 +21,8 @@ SUBSYSTEM_DEF(offsites)
 	var/default_offsite = /datum/offsite/foundation
 	/// Default offsite for antagonist communications.
 	var/default_antag_offsite = /datum/offsite/chaos_insurgency
+	/// Default fax template for admins.
+	var/default_template = /decl/offsite_template/default
 
 /datum/controller/subsystem/offsites/Initialize(timeofday)
 	initialize_offsites()
