@@ -240,11 +240,157 @@ var/list/gamemode_cache = list()
 
 	var/asset_cdn_webroot = FALSE
 
+	//Web interface settings
+	var/webint_url = ""
+
 	var/asset_cdn_url
 
 	var/bccm = FALSE
 
 	var/use_timelocks = FALSE
+
+	var/sql_stats = 0			//Do we record round statistics on the database (deaths, round reports, population, etcetera) or not?
+	var/sql_whitelists = 0		//Defined whether the server uses an SQL based whitelist system, or the legacy one with two .txts. Config option in config.txt
+	var/sql_saves = 0			//Defines whether the server uses an SQL based character and preference saving system. Config option in config.txt
+	var/sql_ccia_logs = 0		//Defines weather the server saves CCIA Logs to the database aswell
+
+	/**
+	 * This is the nuclear option, this will make Hadii proud of you, and the players/other staff VERY VERY
+	 * ANGRY at you if you flip this on in production, also, everyone connected will be able to see the logs
+	 * so once again:
+	 *
+	 *		 NUCLEAR OPTION, TEST ENVIRONMENT/LOCAL INSTANCE/EVERYTHING IS FUCKED ONLY
+	 *
+	 * don't come cry to me if you fuck this up, but at least you can unfuck it just as easily. If the server survives.
+	*/
+	var/all_logs_to_chat = FALSE
+
+	var/condense_all_logs = TRUE
+
+	// Enable/Disable Logging
+	var/list/logsettings = list(
+	"log_access" = FALSE,	// log login/logout
+	"log_say" = FALSE,	// log client say
+	"log_signaler" = FALSE,	// log signaler actions
+	"log_debug" = TRUE,	// log debug output
+	"log_whisper" = FALSE,	// log client whisper
+	"log_attack" = FALSE,	// log attack messages
+	"log_hrefs" = FALSE,	// logs all links clicked in-game. Could be used for debugging and tracking down exploits
+	"log_runtime" = FALSE,	// logs world.log to a file
+	"log_asset" = FALSE,	// Asset loadings and changes
+	"log_job_debug" = FALSE,	// Jobs debugging
+	"log_signals" = FALSE,	// Signals
+	"log_admin" = TRUE,	// Admin actions
+	"log_adminchat" = TRUE,	// Admin chat
+	"log_suspicious_login" = TRUE,
+	"log_traitor" = TRUE,	// Antags
+	"log_uplink" = TRUE,	// Antag uplink
+	"log_game" = TRUE,	// General game events
+	"log_emote" = TRUE,	// Audible emotes (like ME/F4)
+	"log_ooc" = TRUE,	// OOC Chat
+	"log_prayer" = TRUE,	// Prays
+	"log_vote" = FALSE,	// OOC Votes, like transfer
+	"log_pda" = TRUE,	// PDA messages
+	"log_telecomms" = FALSE,	// Radiochat / telecommunications
+	"log_speech_indicators" = FALSE,	// Speech indicator
+	"log_tools" = FALSE,	// Tools
+	"log_manifest" = TRUE,	// Manifest
+	"log_asset" = FALSE,	// log asset caching
+	"log_loadout" = TRUE,	// Loadout
+
+	/*#### SUBSYSTEMS ####*/
+
+	"log_subsystems" = TRUE,	// General Subsystems
+	"log_subsystems_chemistry" = TRUE,	// SSChemistry
+	"log_subsystems_codex" = TRUE,	// SScodex
+	"log_subsystems_atlas" = TRUE,	// ATLAS
+	"log_subsystems_ghostroles" = TRUE,	// Ghost Roles
+	"log_subsystems_law" = TRUE,	// Law
+	"log_subsystems_cargo" = TRUE, // Cargo
+	"log_subsystems_documents" = TRUE, // Documents
+	"log_subsystems_fail2topic" = TRUE, // Fail2Topic
+	"log_subsystems_mapfinalization" = TRUE, // Map Finalization
+	"log_subsystems_tgui" = TRUE, // TGUI
+	"log_subsystems_zas" = FALSE, // ZAS
+	"log_subsystems_zas_debug" = FALSE, // ZAS debug
+	"log_subsystems_http" = TRUE, //HTTP Log
+
+	/*#### MODULES ####*/
+
+	"log_modules_ghostroles" = TRUE,	// Ghost Roles
+	"log_modules_customitems" = TRUE,	// Custom Items
+	"log_modules_exoplanets" = TRUE,	// Exoplanets
+	"log_modules_sectors" = TRUE,	// Overmap Sectors
+	"world_modules_ruins_log" = TRUE,	// Ruins
+
+	)
+
+
+	// Files to send the logs to
+	var/list/logfiles = list(
+	"world_asset_log" = "world_asset.log",
+	"config_error_log" = "config_error.log",
+	"filter_log" = "filter.log",
+	"lua_log" = "lua.log",
+	"world_map_error_log" = "world_map_error.log",
+	"perf_log" = "perf.log",
+	"world_qdel_log" = "world_qdel.log",
+	"query_debug_log" = "query_debug.log",
+	"world_runtime_log" = "world_runtime.log",
+	"sql_error_log" = "sql_error.log",
+	"topic_log" = "topic.log",
+	"world_game_log" = "world_game.log",
+	"world_job_debug_log" = "world_job_debug.log",
+	"signals_log" = "signals.log",
+	"world_suspicious_login_log" = "world_suspicious_login.log",
+	"world_uplink_log" = "world_uplink.log",
+	"world_attack_log" = "world_attack.log",
+	"combat_log" = "combat.log",
+	"world_pda_log" = "world_pda.log",
+	"world_telecomms_log" = "world_telecomms.log",
+	"world_speech_indicators_log" = "world_speech_indicators.log",
+	"world_tool_log" = "world_tool.log",
+	"world_href_log" = "href.log",
+	"garbage_collector_log" = "garbage_collector.log",
+	"harddel_log" = "harddel.log",
+	"world_paper_log" = "world_paper.log",
+	"world_manifest_log" = "world_manifest.log",
+	"world_loadout_log" = "world_loadout.log",
+
+	/*#### SUBSYSTEMS ####*/
+
+	"world_subsystems_log" = "subsystems/world_subsystems.log",
+	"world_subsystems_chemistry_log" = "subsystems/chemistry.log",
+	"world_subsystems_codex_log" = "subsystems/codex.log",
+	"world_subsystems_atlas_log" = "subsystems/atlas.log",
+	"world_subsystems_ghostroles_log" = "subsystems/ghostroles.log",
+	"world_subsystems_law_log" = "subsystems/law.log",
+	"world_subsystems_cargo_log" = "subsystems/cargo.log",
+	"world_subsystems_documents_log" = "subsystems/documents.log",
+	"world_subsystems_fail2topic_log" = "subsystems/fail2topic.log",
+	"world_subsystems_mapfinalization_log" = "subsystems/mapfinalization.log",
+	"world_subsystems_tgui" = "subsystems/tgui.log",
+	"world_subsystems_zas" = "subsystems/zas.log",
+	"world_subsystems_zas_debug" = "subsystems/zas.log",
+	"world_subsystems_http" = "subsystems/http.log",
+
+	/*#### MODULES ####*/
+
+	"world_modules_ghostroles_log" = "modules/ghostroles.log",
+	"world_modules_customitems_log" = "modules/customitems.log",
+	"world_modules_exoplanets_log" = "modules/exoplanets.log",
+	"world_modules_sectors_log" = "modules/sectors.log",
+	"world_modules_ruins_log" = "modules/ruins.log",
+	)
+
+
+	/*#############################################
+				END LOGGING SETTINGS
+	#############################################*/
+
+	//UDP GELF Logging
+	var/log_gelf_enabled = 0
+	var/log_gelf_addr = ""
 
 	/* Cross-communications */
 	var/comms_key = null
@@ -315,6 +461,9 @@ var/list/gamemode_cache = list()
 
 				if ("jobs_have_minimal_access")
 					config.jobs_have_minimal_access = 1
+
+				if("webint_url")
+					config.webint_url = value
 
 				if("lowpop_access")
 					config.lowpop_access = 1

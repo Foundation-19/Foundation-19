@@ -29,10 +29,16 @@
 #define mSmallsize     110 // Table climbing.
 
 // disabilities
-#define EPILEPSY    (1<<1)
-#define COUGHING    (1<<2)
-#define TOURETTES   (1<<3)
-#define NERVOUS     (1<<4)
+// disabilities
+#define NEARSIGHTED 	(1<<0)
+#define EPILEPSY    	(1<<1)
+#define COUGHING    	(1<<2)
+#define STUTTERING  	(1<<3)
+#define DUMB            (1<<4)
+#define PACIFIST        (1<<5)
+#define ASTHMA 			(1<<6)
+#define TOURETTES   	(1<<7)
+#define NERVOUS     	(1<<8)
 
 // sdisabilities
 #define DEAFENED    (1<<1)
@@ -100,3 +106,4 @@ GLOBAL_VAR_INIT(HALLUCINATIONBLOCK,0)
 GLOBAL_VAR_INIT(NOPRINTSBLOCK,0)
 GLOBAL_VAR_INIT(SHOCKIMMUNITYBLOCK,0)
 GLOBAL_VAR_INIT(SMALLSIZEBLOCK,0)
+GLOBAL_VAR_INIT(GLASSESBLOCK,0)

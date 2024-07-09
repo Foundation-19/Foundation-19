@@ -9,6 +9,7 @@
 	new environment."
 	hidden_from_codex = FALSE
 	silent_steps = TRUE
+	category_name = "Snake"
 
 	antaghud_offset_y = 8
 
@@ -412,6 +413,8 @@
 /datum/species/nabber/monarch_worker
 	name = SPECIES_MONARCH_WORKER
 	name_plural = "Monarch Serpentid Workers"
+	category_name = "Snake"
+
 	description = "close cousins to the Giant Armoured Serpentids, saved from their crippled homeworld hundreds of \
 	years ago and now allies and peers within the Ascent."
 	icobase = 'icons/mob/human_races/species/nabber/body_msw.dmi'
@@ -451,6 +454,7 @@
 	and eventually promoted from 'entertaining pets' to the middle men that keep Ascent society functioning smoothly. \
 	Gynes have tremendous difficulties in communicating with each other politely, so the queens act as intermediaries, \
 	smoothing over the fractious and unproductive squabbling."
+	category_name = "Snake"
 
 	silent_steps = TRUE
 

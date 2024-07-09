@@ -3,6 +3,8 @@
 	name_plural = "Monkeys"
 	description = "Ook."
 	hidden_from_codex = FALSE
+	category_name = "Primitive"
+
 
 	icobase =         'icons/mob/human_races/species/monkey/monkey_body.dmi'
 	deform =          'icons/mob/human_races/species/monkey/monkey_body.dmi'
@@ -117,6 +119,7 @@
 	name = "Farwa"
 	name_plural = "Farwa"
 	health_hud_intensity = 2
+	category_name = "Primitive"
 
 	icobase = 'icons/mob/human_races/species/monkey/farwa_body.dmi'
 	deform = 'icons/mob/human_races/species/monkey/farwa_body.dmi'
@@ -154,6 +157,7 @@
 	name = "Stok"
 	name_plural = "Stok"
 	health_hud_intensity = 1.5
+	category_name = "Primitive"
 
 	icobase = 'icons/mob/human_races/species/monkey/stok_body.dmi'
 	deform = 'icons/mob/human_races/species/monkey/stok_body.dmi'

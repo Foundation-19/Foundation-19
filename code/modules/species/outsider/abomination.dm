@@ -12,6 +12,7 @@
 	show_ssd = "hybernating"
 	blood_color = COLOR_MAROON
 	flesh_color = COLOR_MAROON
+	category_name = "Alien"
 
 	speech_chance = 50
 	speech_sounds = list(

@@ -1,6 +1,7 @@
 /datum/species/unathi/yeosa
 	name = SPECIES_YEOSA
 	name_plural = SPECIES_YEOSA
+	category_name = "Lizard"
 
 	genders = list(MALE, FEMALE, PLURAL)
 

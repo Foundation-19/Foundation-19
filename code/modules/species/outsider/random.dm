@@ -3,6 +3,7 @@
 	name_plural = "Humanoids"
 	description = "Some alien humanoid species, unknown to humanity. How exciting."
 	rarity_value = 5
+	category_name = "Alien"
 
 	species_flags = SPECIES_FLAG_NO_SCAN
 	spawn_flags = SPECIES_IS_RESTRICTED

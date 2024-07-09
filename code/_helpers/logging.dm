@@ -3,6 +3,15 @@
 // will get logs that are one big line if the system is Linux and they are using notepad.  This solves it by adding CR to every line ending
 // in the logs.  ascii character 13 = CR
 
+#define SEVERITY_ALERT    1 //Alert: action must be taken immediately
+#define SEVERITY_CRITICAL 2 //Critical: critical conditions
+#define SEVERITY_ERROR    3 //Error: error conditions
+#define SEVERITY_WARNING  4 //Warning: warning conditions
+#define SEVERITY_NOTICE   5 //Notice: normal but significant condition
+#define SEVERITY_INFO     6 //Informational: informational messages
+#define SEVERITY_DEBUG    7 //Debug: debug-level messages
+
+
 /var/global/log_end= world.system_type == UNIX ? ascii2text(13) : ""
 
 
@@ -32,11 +41,9 @@
 /proc/game_log(category, text)
 	to_file(diary, "\[[time_stamp()]] [game_id] [category]: [text][log_end]")
 
-/proc/log_admin(text)
-	GLOB.admin_log.Add(text)
-	if (config.log_admin)
-		game_log("ADMIN", text)
-
+/proc/log_admin(text,level=SEVERITY_NOTICE,ckey="",admin_key="",ckey_target="")
+	_log_admin(text)
+	send_gelf_log(short_message=text, long_message="[time_stamp()]: [text]",level=level,category="ADMIN",additional_data=list("_ckey"=html_encode(ckey),"_admin_key"=html_encode(admin_key),"_ckey_target"=html_encode(ckey_target)))
 /proc/log_mentor(text)
 	GLOB.mentor_log.Add(text)
 	if (config.log_mentor)

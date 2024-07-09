@@ -109,3 +109,9 @@
 	var/list/panel_tabs = list()
 	/// list of tabs containing spells and abilities
 	var/list/spell_tabs = list()
+	// Database
+	var/whitelist_status = 0 //Used to determine what whitelists the player has access to. Uses bitflag values!
+	var/need_saves_migrated = "Requires database" //Used to determine whether or not the ckey needs their saves migrated over to the database. Default is 0 upon successful connection.
+	var/account_age = -1 // Age on the BYOND account in days.
+	var/account_join_date = null // Date of the BYOND account creation in ISO 8601 format.
+	var/unacked_warning_count = 0

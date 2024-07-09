@@ -2,6 +2,8 @@
 	name = SPECIES_HUMAN
 	name_plural = "Humans"
 	primitive_form = "Monkey"
+	category_name = "Human"
+
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
 	description = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
@@ -125,6 +127,7 @@
 	hidden_from_codex = FALSE
 	min_age = 19
 	max_age = 90
+	category_name = "Alien"
 
 	burn_mod = 0.9
 	oxy_mod = 1.3
@@ -253,6 +256,7 @@
 	health_hud_intensity = 2
 	hunger_factor = 3
 	thirst_factor = 0.01
+	category_name = "Alien"
 
 	min_age = 1
 	max_age = 300

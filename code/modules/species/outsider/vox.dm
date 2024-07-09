@@ -7,6 +7,7 @@
 	damage_overlays = 'icons/mob/human_races/species/vox/damage_overlay.dmi'
 	damage_mask =     'icons/mob/human_races/species/vox/damage_mask.dmi'
 	blood_mask =      'icons/mob/human_races/species/vox/blood_mask.dmi'
+	category_name = "Alien"
 
 	unarmed_types = list(
 		/datum/unarmed_attack/stomp,
@@ -140,6 +141,7 @@
 	damage_overlays = 'icons/mob/human_races/species/vox/damage_overlay_armalis.dmi'
 	damage_mask =     'icons/mob/human_races/species/vox/damage_mask_armalis.dmi'
 	blood_mask =      'icons/mob/human_races/species/vox/blood_mask_armalis.dmi'
+	category_name = "Alien"
 
 	speech_sounds = list('sounds/voice/ashriek.ogg')
 	speech_chance = 10

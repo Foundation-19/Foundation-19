@@ -10,6 +10,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	death_message =    "rapidly loses cohesion, splattering across the ground..."
 	knockout_message = "collapses inwards, forming a disordered puddle of goo."
 	remains_type = /obj/effect/decal/cleanable/ash
+	category_name = "Slime"
 
 	meat_type = null
 	bone_material = null

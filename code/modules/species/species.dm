@@ -7,6 +7,7 @@
 	// Descriptors and strings.
 	var/name
 	var/name_plural                                      // Pluralized name (since "[name]s" is not always valid)
+	var/category_name                                    // a name for this overarching species, ie 'Human', 'Skrell', 'IPC'. only used in character creation
 	var/description
 	var/ooc_codex_information
 	var/cyborg_noun = "Cyborg"

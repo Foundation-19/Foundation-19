@@ -4,6 +4,7 @@
 	meat_type = null
 	bone_material = null
 	skin_material = null
+	category_name = "Alien"
 
 	has_limbs = list(
 		BP_CHEST =  list("path" = /obj/item/organ/external/chest/unbreakable),
@@ -42,6 +43,7 @@
 	deform = 'icons/mob/human_races/species/starborn/body.dmi'
 	husk_icon = 'icons/mob/human_races/species/starborn/husk.dmi'
 	description = "Beings of fire and light, split off from a sun deity of unbelievable power."
+	category_name = "Alien"
 
 	blood_color = "#ffff00"
 	flesh_color = "#ffff00"
@@ -92,6 +94,7 @@
 	icobase = 'icons/mob/human_races/species/blueforged/body.dmi'
 	deform = 'icons/mob/human_races/species/blueforged/body.dmi'
 	description = "Living chunks of Bluespace, carved out of the original dimension and given life by a being of unbelievable power."
+	category_name = "Alien"
 
 	blood_color = "#2222ff"
 	flesh_color = "#2222ff"

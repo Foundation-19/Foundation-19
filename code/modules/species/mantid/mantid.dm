@@ -3,6 +3,7 @@
 	name =                   SPECIES_MANTID_ALATE
 	name_plural =            "Kharmaan Alates"
 	show_ssd =               "quiescent"
+	category_name = "Alien"
 
 	description = "When human explorers finally arrived at the outer reaches of Skrellian space, they hoped to find \
 	new frontiers and new planets to exploit. They were largely not expecting to have entire expeditions lost \
@@ -137,6 +138,7 @@
 
 	name =                    SPECIES_MANTID_GYNE
 	name_plural =             "Kharmaan Gynes"
+	category_name = "Alien"
 
 	genders =                 list(FEMALE)
 	icobase =                 'icons/mob/human_races/species/ascent/gyne/body.dmi'

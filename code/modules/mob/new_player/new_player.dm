@@ -273,67 +273,74 @@
 	popup.open(0)
 
 /mob/new_player/proc/create_character(turf/spawn_turf)
-	spawning = TRUE
-	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
-		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-			tgui_alert(client, "You are currently not whitelisted to play as FBP.", null, list("Ok"))
-			spawning = FALSE
-			return
+	spawning = 1
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character
 
+	var/use_species_name
 	var/datum/species/chosen_species
 	if(client.prefs.species)
-		chosen_species = all_species[client.prefs.species]
+		chosen_species = global.all_species[client.prefs.species]
+		use_species_name = chosen_species.get_station_variant() //Only used by pariahs atm.
 
-	if(!spawn_turf)
-		var/datum/job/job = SSjobs.get_by_title(mind.assigned_role)
-		if(!job)
-			job = SSjobs.get_by_title(GLOB.using_map.default_assistant_title)
-		var/datum/spawnpoint/spawnpoint = job.get_spawnpoint(client, client.prefs.ranks[job.title])
-		spawn_turf = pick(spawnpoint.turfs)
-
-	if(chosen_species)
-		if(!check_species_allowed(chosen_species))
-			spawning = FALSE //abort
-			return null
-		new_character = new(spawn_turf, chosen_species.name)
-		if(chosen_species.has_organ[BP_POSIBRAIN] && client && client.prefs.is_shackled)
-			var/obj/item/organ/internal/posibrain/B = new_character.internal_organs_by_name[BP_POSIBRAIN]
-			if(B)	B.shackle(client.prefs.get_lawset())
+	if(chosen_species && use_species_name)
+		// Have to recheck admin due to no usr at roundstart. Latejoins are fine though.
+		if(is_species_whitelisted(chosen_species) || has_admin_rights())
+			new_character = new(GLOB.newplayer_start, use_species_name)
 
 	if(!new_character)
-		new_character = new(spawn_turf)
+		new_character = new(GLOB.newplayer_start)
 
-	new_character.lastarea = get_area(spawn_turf)
+	new_character.lastarea = get_area(loc)
 
-	client.prefs.copy_to(new_character)
+	for(var/lang in client.prefs.alternate_languages)
+		var/datum/language/chosen_language = global.all_languages[lang]
+		if(chosen_language)
+			if(!config.usealienwhitelist || !(chosen_language.flags & WHITELISTED) || is_alien_whitelisted(src, lang) || has_admin_rights() \
+				|| (new_character.species && (chosen_language.name in new_character.species.secondary_langs)))
+				new_character.add_language(lang)
 
-	sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
+	if(SSticker.random_players)
+		new_character.gender = pick(MALE, FEMALE)
+		client.prefs.real_name = random_name(new_character.gender)
+		client.prefs.randomize_appearance_and_body_for(new_character)
+	else
+		client.prefs.copy_to(new_character)
+
+	client.autohiss_mode = client.prefs.autohiss_setting
+
+	src.stop_sound_channel(CHANNEL_LOBBYMUSIC) // MAD JAMS cant last forever yo)
 
 	if(mind)
-		mind.active = FALSE //we wish to transfer the key manually
+		mind.active = 0					//we wish to transfer the key manually
 		mind.original = new_character
-		if(client.prefs.memory)
-			mind.StoreMemory(client.prefs.memory)
 		mind.transfer_to(new_character)					//won't transfer key since the mind is not active
 
+	new_character.name = real_name
 	new_character.dna.ready_dna(new_character)
 	new_character.dna.b_type = client.prefs.b_type
 	new_character.sync_organ_dna()
-	if(client.prefs.char_nearsighted)
-		new_character.become_nearsighted(ROUNDSTART_TRAIT)
+	new_character.fixblood() // now that dna is set
+	if(client.prefs.disabilities & NEARSIGHTED)
+		// Set defer to 1 if you add more crap here so it only recalculates struc_enzymes once. - N3X
+		new_character.dna.SetSEState(GLASSESBLOCK,1,0)
+
+	// And uncomment this, too.
+	//new_character.dna.UpdateSE()
 
 	// Do the initial caching of the player's body icons.
 	new_character.force_update_limbs()
 	new_character.update_eyes()
 	new_character.regenerate_icons()
 
-	new_character.key = key		//Manually transfer the key to log them in
-	new_character.client.init_verbs()
-	return new_character
+	client.prefs.log_character(new_character)
 
+	new_character.key = key		//Manually transfer the key to log them in
+
+	new_character.client.init_verbs()
+
+	return new_character
 /mob/new_player/proc/ViewManifest()
 	var/dat = "<div align='center'>"
 	dat += html_crew_manifest(OOC = 1)
