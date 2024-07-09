@@ -22,7 +22,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	. = ..()
 
 	if(!destination)
-		var/datum/offsite/initialOffsite = SSoffsites.offsites[/datum/offsite/foundation]
+		var/datum/offsite/initialOffsite = SSoffsites.offsites[SSoffsites.default_offsite]
 		if(initialOffsite)
 			destination = initialOffsite.name
 		else if(length(GLOB.alldepartments))
@@ -211,7 +211,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 /obj/machinery/photocopier/faxmachine/proc/send_admin_fax(mob/sender, destination)
 	if(stat & (BROKEN|NOPOWER))
 		return
-	
+
 	var/datum/offsite/destinationOffsite = SSoffsites.offsites_by_name[destination]
 	if(!destinationOffsite)
 		return
@@ -239,17 +239,6 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	send_fax_loop(copyitem, destination, department) // Forward to any listening fax machines
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
-
-
-/obj/machinery/photocopier/faxmachine/proc/message_admins(mob/sender, faxname, obj/item/sent, reply_type)
-	var/msg = "<span class='notice'><b><font color='#006100'>[faxname]: </font>[get_options_bar(sender, 2,1,1)]"
-	msg += "(<A HREF='?_src_=holder;take_ic=\ref[sender]'>TAKE</a>) (<a href='?_src_=holder;FaxReply=\ref[sender];originfax=\ref[src];replyorigin=[reply_type]'>REPLY</a>)</b>: "
-	msg += "Receiving '[sent.name]' via secure connection ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>view message</a></span>"
-
-	for(var/client/C in GLOB.admins)
-		if(check_rights((R_ADMIN|R_MOD),0,C))
-			to_chat(C, msg)
-			sound_to(C, 'sounds/machines/dotprinter.ogg')
 
 /// Retrieves a list of all fax machines matching the given department tag.
 /proc/get_fax_machines_by_department(department)

@@ -374,7 +374,7 @@ var/list/ai_verbs_default = list(
 	set category = "Silicon Commands"
 	set name = "Send Emergency Message"
 
-	var/datum/offsite/targetOffsite = SSoffsites.offsites[/datum/offsite/foundation]
+	var/datum/offsite/targetOffsite = SSoffsites.offsites[SSoffsites.default_offsite]
 	if(!istype(targetOffsite))
 		return
 	if(check_unable(AI_CHECK_WIRELESS))

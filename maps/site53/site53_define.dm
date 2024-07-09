@@ -24,9 +24,9 @@
 
 	station_name  = "Foundation Site 53"
 	station_short = "Site 53"
-	dock_name     = "Central Command Depo"
-	boss_name     = "Foundation Central Office"
-	boss_short    = "Central Office"
+	dock_name     = "Emergency Site-91"
+	boss_name     = "Foundation North American Command"
+	boss_short    = "Regional Command"
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 

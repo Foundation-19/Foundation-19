@@ -6,17 +6,27 @@ SUBSYSTEM_DEF(offsites)
 	name = "Offsites"
 	init_order = SS_INIT_OFFSITES
 	flags = SS_NO_FIRE
+
 	/// Associative list. Key is the offsite type, value is the offsite ref
 	var/list/offsites = list()
-
 	/// Associative list. Key is the offsite name, value is the offsite ref
 	var/list/offsites_by_name = list()
+
+	/// Associative list. Key is template decl type, value is template decl ref.
+	var/list/templates = list()
+	/// Associative list. Key is template decl name, value is template decl ref.
+	var/list/templates_by_name = list()
+
+	/// Default offsite for regular communications.
+	var/default_offsite = /datum/offsite/foundation
+	/// Default offsite for antagonist communications.
+	var/default_antag_offsite = /datum/offsite/chaos_insurgency
 
 /datum/controller/subsystem/offsites/Initialize(timeofday)
 	initialize_offsites()
 	return ..()
 
-///Ran on initialize, populates the addiction dictionary
+/// Ran on initialize, populates the offsite lists
 /datum/controller/subsystem/offsites/proc/initialize_offsites()
 	for(var/type in subtypesof(/datum/offsite))
 		if(is_abstract(type))
@@ -25,6 +35,15 @@ SUBSYSTEM_DEF(offsites)
 		var/datum/offsite/ref = new type
 		offsites[type] = ref
 		offsites_by_name[ref.name] = ref
+
+	// There is a function in decls_repository to do this, but it doesn't check abstractness.
+	for(var/type in subtypesof(/decl/offsite_template))
+		if(is_abstract(type))
+			continue
+
+		var/decl/offsite_template/ref = decls_repository.get_decl(type)
+		templates[type] = ref
+		templates_by_name[ref.name] = ref
 
 /datum/controller/subsystem/offsites/tgui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -44,84 +63,119 @@ SUBSYSTEM_DEF(offsites)
 			var/list/rec_fax = list()
 			rec_fax += thing
 			rec_fax["type"] = "Received fax from"
-			rec_fax["time_pretty"] = gameTimestamp("hh:mm:ss", rec_fax[1])
-			offsite_history[rec_fax[1]] = rec_fax
+			offsite_history += list(rec_fax)
 
 		for(var/thing in OS.sent_faxes)
 			var/list/sent_fax = list()
 			sent_fax += thing
-			sent_fax["type"] = "Sent fax to"
-			sent_fax["time_pretty"] = gameTimestamp("hh:mm:ss", sent_fax[1])
-			offsite_history[sent_fax[1]] = sent_fax
+			sent_fax["type"] = "Sent fax by"
+			offsite_history += list(sent_fax)
 
 		for(var/thing in OS.received_messages)
 			var/list/received_message = list()
 			received_message += thing
 			received_message["type"] = "Received message from"
-			received_message["time_pretty"] = gameTimestamp("hh:mm:ss", received_message[1])
-			offsite_history[received_message[1]] = received_message
+			received_message["ref"] = html_decode(received_message["ref"])
+			offsite_history += list(received_message)
 
 		for(var/thing in OS.sent_messages)
 			var/list/sent_message = list()
 			sent_message += thing
 			sent_message["type"] = "Sent message to"
-			sent_message["time_pretty"] = gameTimestamp("hh:mm:ss", sent_message[1])
-			offsite_history[sent_message[1]] = sent_message
+			sent_message["ref"] = html_decode(sent_message["ref"])
+			offsite_history += list(sent_message)
 
 		data["offsites"] += list(list("name" = OS.name, "type" = OS.type, "data" = offsite_history))
 
 	return data
 
+/// Returns true if affirmative response with alert to the item already being taken. usr by default.
+/datum/controller/subsystem/offsites/proc/verify_ui_taker(mob/user = usr)
+	return (tgui_alert(user, "This is already taken! Are you sure?", "Already Taken", list("Yes", "No")) == "Yes")
+
 /datum/controller/subsystem/offsites/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return
 
-	var/mob/admin = usr
+	var/client/admin = usr.client
 	if(!check_rights(R_ADMIN|R_MOD, TRUE, admin))
 		return
 
-	var/datum/offsite/cur_os = offsites[text2path(params["id"])]
+	var/datum/offsite/cur_os = offsites[text2path(params["os"])]
 	if(!cur_os)
 		return
 
 	switch(action)
 		if("send_fax")
-			cur_os.send_fax(admin.client)
+			var/fax_target = params["target"]
+			var/taker = params["taker"]
+			if(taker && (taker != admin.ckey))
+				if(!verify_ui_taker())
+					return TRUE
+
+			if(fax_target in GLOB.alldepartments)
+				cur_os.send_fax(admin, fax_target)
+			else
+				cur_os.send_fax(admin)
+			return TRUE
 		if("send_msg")
-			cur_os.send_message(admin.client)
+			var/msg_target = params["target"]
+			var/taker = params["taker"]
+			if(taker && (taker != admin.ckey))
+				if(!verify_ui_taker())
+					return TRUE
+
+			var/mob/living/target
+			if(msg_target)
+				for(var/client/C in GLOB.clients)
+					if(C.ckey == msg_target)
+						target = C.mob
+						break
+
+			if(istype(target))
+				cur_os.send_message(admin, target)
+			else
+				cur_os.send_message(admin)
+			return TRUE
+		if("take")
+			var/type = params["type"]
+			var/id = params["fax"]
+
+			var/list/target_list = findtext(type, "Received fax") ? cur_os.received_faxes : cur_os.received_messages
+			var/list/item
+			for(var/F in target_list)
+				if(F["id"] == id)
+					item = F
+					break
+			if(!item)
+				to_chat(admin, SPAN_WARNING("Couldn't find that history item! Report how you did this on the tracker."))
+				return TRUE
+
+			if(item["taker"] == admin.ckey)
+				item["taker"] = null
+				return TRUE
+			if(item["taker"] && !verify_ui_taker())
+				return TRUE
+
+			item["taker"] = admin.ckey
+			return TRUE
 		if("read_fax")
-			var/fax_type = params["fax_type"]
-			var/fax_time = text2num(params["fax"])
+			var/fax_type = params["type"]
+			var/fax_id = params["fax"]
 
 			var/obj/item/fax
 			var/list/target_list = findtext(fax_type, "Sent fax") ? cur_os.sent_faxes : cur_os.received_faxes
 			for(var/F in target_list)
-				if(F[1] == fax_time)
-					fax = F[2]
+				if(F["id"] == fax_id)
+					fax = F["ref"]
 					break
 
-			if(isnull(fax))
-				to_chat(admin, SPAN_WARNING("The fax you're trying to view has been deleted!"))
+			if(!fax)
+				to_chat(admin, SPAN_WARNING("The fax you're trying to view doesn't exist."))
+				return TRUE
+			show_fax_admin(fax)
 
-			if (istype(fax, /obj/item/paper))
-				var/obj/item/paper/P = fax
-				P.show_content(admin, TRUE)
-			else if (istype(fax, /obj/item/photo))
-				var/obj/item/photo/H = fax
-				H.show(admin)
-			else if (istype(fax, /obj/item/paper_bundle))
-				//having multiple people turning pages on a paper_bundle can cause issues
-				//open a browse window listing the contents instead
-				var/data = ""
-				var/obj/item/paper_bundle/B = fax
-
-				for (var/page = 1, page <= B.pages.len, page++)
-					var/obj/pageobj = B.pages[page]
-					data += "<A href='?_src_=holder;AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
-
-				show_browser(admin, data, "window=[B.name]")
-			else
-				to_chat(admin, SPAN_WARNING("The faxed item is not viewable. This is probably a bug, and should be reported on the tracker. Fax type: [fax ? fax.type : "null"]"))
+			return TRUE
 
 /datum/controller/subsystem/offsites/tgui_state(mob/user)
 	return GLOB.admin_tgui_state
@@ -217,5 +271,29 @@ SUBSYSTEM_DEF(offsites)
 						QDEL_NULL(rcvdcopy)
 						return FALSE
 
+	// For legacy menu support.
+	GLOB.adminfaxes += rcvdcopy
 	os.receive_fax(rcvdcopy, department, sender)
 	return TRUE
+
+/// Intended for staff. Uses admin holder to view paper bundles, normal calls for everything else. usr by default.
+/proc/show_fax_admin(obj/item/fax, mob/user = usr)
+	if (istype(fax, /obj/item/paper))
+		var/obj/item/paper/P = fax
+		P.show_content(user, TRUE)
+	else if (istype(fax, /obj/item/photo))
+		var/obj/item/photo/H = fax
+		H.show(user)
+	else if (istype(fax, /obj/item/paper_bundle))
+		//having multiple people turning pages on a paper_bundle can cause issues
+		//open a browse window listing the contents instead
+		var/data = ""
+		var/obj/item/paper_bundle/B = fax
+
+		for (var/page = 1, page <= B.pages.len, page++)
+			var/obj/pageobj = B.pages[page]
+			data += "<A href='?_src_=holder;AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
+
+		show_browser(user, data, "window=[B.name]")
+	else
+		to_chat(user, SPAN_WARNING("The faxed item is not viewable. This is probably a bug, and should be reported on the tracker. Fax type: [fax ? fax.type : "null"]"))
