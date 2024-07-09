@@ -7,7 +7,21 @@
 import { toFixed } from 'common/math';
 import { useDispatch, useSelector } from 'common/redux';
 import { useLocalState } from 'tgui/backend';
-import { Box, Button, ColorBox, Divider, Dropdown, Flex, Input, LabeledList, NumberInput, Section, Stack, Tabs, TextArea } from 'tgui/components';
+import {
+  Box,
+  Button,
+  ColorBox,
+  Divider,
+  Dropdown,
+  Flex,
+  Input,
+  LabeledList,
+  NumberInput,
+  Section,
+  Stack,
+  Tabs,
+  TextArea,
+} from 'tgui/components';
 
 import { ChatPageSettings } from '../chat';
 import { rebuildChat, saveChatToDisk } from '../chat/actions';
@@ -32,9 +46,10 @@ export const SettingsPanel = (props, context) => {
                   dispatch(
                     changeSettingsTab({
                       tabId: tab.id,
-                    })
+                    }),
                   )
-                }>
+                }
+              >
                 {tab.name}
               </Tabs.Tab>
             ))}
@@ -73,7 +88,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   theme: value,
-                })
+                }),
               )
             }
           />
@@ -89,7 +104,7 @@ export const SettingsGeneral = (props, context) => {
                     dispatch(
                       updateSettings({
                         fontFamily: value,
-                      })
+                      }),
                     )
                   }
                 />
@@ -100,7 +115,7 @@ export const SettingsGeneral = (props, context) => {
                     dispatch(
                       updateSettings({
                         fontFamily: value,
-                      })
+                      }),
                     )
                   }
                 />
@@ -133,7 +148,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   fontSize: value,
-                })
+                }),
               )
             }
           />
@@ -151,7 +166,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   lineHeight: value,
-                })
+                }),
               )
             }
           />
@@ -172,7 +187,7 @@ export const SettingsGeneral = (props, context) => {
                 dispatch(
                   updateSettings({
                     highlightColor: value,
-                  })
+                  }),
                 )
               }
             />
@@ -185,7 +200,7 @@ export const SettingsGeneral = (props, context) => {
             dispatch(
               updateSettings({
                 highlightText: value,
-              })
+              }),
             )
           }
         />
@@ -197,9 +212,10 @@ export const SettingsGeneral = (props, context) => {
             dispatch(
               updateSettings({
                 matchWord: !matchWord,
-              })
+              }),
             )
-          }>
+          }
+        >
           Match word
         </Button.Checkbox>
         <Button.Checkbox
@@ -208,9 +224,10 @@ export const SettingsGeneral = (props, context) => {
             dispatch(
               updateSettings({
                 matchCase: !matchCase,
-              })
+              }),
             )
-          }>
+          }
+        >
           Match case
         </Button.Checkbox>
       </Box>

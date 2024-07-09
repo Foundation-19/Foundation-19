@@ -21,7 +21,7 @@ export const Radio = (props, context) => {
     subspaceSwitchable,
   } = data;
   const tunedChannel = RADIO_CHANNELS.find(
-    (channel) => channel.freq === frequency
+    (channel) => channel.freq === frequency,
   );
   const channels = map((value, key) => ({
     name: key,
@@ -59,7 +59,8 @@ export const Radio = (props, context) => {
                   onDrag={(e, value) =>
                     act('frequency', {
                       adjust: value - frequency / 10,
-                    })}
+                    })
+                  }
                 />
               )}
               {tunedChannel && (
@@ -118,7 +119,8 @@ export const Radio = (props, context) => {
                       onClick={() =>
                         act('channel', {
                           channel: channel.name,
-                        })}
+                        })
+                      }
                     />
                   </Box>
                 ))}

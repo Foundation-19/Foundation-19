@@ -1,5 +1,13 @@
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Flex, Input, NoticeBox, Section, Stack } from '../components';
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  NoticeBox,
+  Section,
+  Stack,
+} from '../components';
 import { Window } from '../layouts';
 
 type BCCMDisplayData = {

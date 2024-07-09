@@ -23,7 +23,12 @@ export const NtosNetDosContent = (props, context) => {
     return (
       <Fragment>
         <NoticeBox>{error}</NoticeBox>
-        <Button fluid content="Reset" textAlign="center" onClick={() => act('PRG_reset')} />
+        <Button
+          fluid
+          content="Reset"
+          textAlign="center"
+          onClick={() => act('PRG_reset')}
+        />
       </Fragment>
     );
   }

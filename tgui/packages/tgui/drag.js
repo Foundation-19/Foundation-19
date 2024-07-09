@@ -96,7 +96,7 @@ const storeWindowGeometry = async () => {
   // Update the list of stored geometries
   const [geometries, trimmedKey] = touchRecents(
     (await storage.get('geometries')) || [],
-    windowKey
+    windowKey,
   );
   if (trimmedKey) {
     storage.remove(trimmedKey);
@@ -147,7 +147,7 @@ export const recallWindowGeometry = async (options = {}) => {
     pos = vecAdd(
       vecScale(areaAvailable, 0.5),
       vecScale(size, -0.5),
-      vecScale(screenOffset, -1.0)
+      vecScale(screenOffset, -1.0),
     );
     setWindowPosition(pos);
   }
@@ -194,7 +194,7 @@ export const dragStartHandler = (event) => {
   dragging = true;
   dragPointOffset = vecSubtract(
     [event.screenX, event.screenY],
-    getWindowPosition()
+    getWindowPosition(),
   );
   // Focus click target
   event.target?.focus();
@@ -218,7 +218,7 @@ const dragMoveHandler = (event) => {
   }
   event.preventDefault();
   setWindowPosition(
-    vecSubtract([event.screenX, event.screenY], dragPointOffset)
+    vecSubtract([event.screenX, event.screenY], dragPointOffset),
   );
 };
 
@@ -228,7 +228,7 @@ export const resizeStartHandler = (x, y) => (event) => {
   resizing = true;
   dragPointOffset = vecSubtract(
     [event.screenX, event.screenY],
-    getWindowPosition()
+    getWindowPosition(),
   );
   initialSize = getWindowSize();
   // Focus click target
@@ -254,7 +254,7 @@ const resizeMoveHandler = (event) => {
   event.preventDefault();
   const currentOffset = vecSubtract(
     [event.screenX, event.screenY],
-    getWindowPosition()
+    getWindowPosition(),
   );
   const delta = vecSubtract(currentOffset, dragPointOffset);
   // Extra 1x1 area is added to ensure the browser can see the cursor

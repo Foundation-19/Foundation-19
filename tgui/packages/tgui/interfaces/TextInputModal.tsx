@@ -29,7 +29,7 @@ export const TextInputModal = (props, context) => {
   const [input, setInput] = useLocalState<string>(
     context,
     'input',
-    placeholder || ''
+    placeholder || '',
   );
   const onType = (value: string) => {
     if (value === input) {
@@ -56,7 +56,8 @@ export const TextInputModal = (props, context) => {
           if (keyCode === KEY_ESCAPE) {
             act('cancel');
           }
-        }}>
+        }}
+      >
         <Section fill>
           <Stack fill vertical>
             <Stack.Item>

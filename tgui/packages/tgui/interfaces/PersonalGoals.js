@@ -10,7 +10,7 @@ export const PersonalGoals = (props, context) => {
   const categories_map = new Map(
     categories_values.map((value, index) => {
       return [categories_keys[index], value];
-    })
+    }),
   );
   return (
     <Window title="Personal Goals" width={675} height={700}>
