@@ -158,7 +158,7 @@
 	uniform = /obj/item/clothing/under/det/grey
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/det_trench/grey
-	id_type = /obj/item/card/id/zcseclvl4ez
+	id_type = /obj/item/card/id/seclvl3ez
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
@@ -174,7 +174,7 @@
 	uniform = /obj/item/clothing/under/det
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/det_trench
-	id_type = /obj/item/card/id/zcseclvl4ez
+	id_type = /obj/item/card/id/seclvl3ez
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
