@@ -55,6 +55,20 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 15, rad = 15)
 
+/obj/item/clothing/suit/armor/ecl/grey
+	name = "Ethics Committee Liaison's suit jacket"
+	desc = "A grey suit jacket with two logos on the shoulders denoting the department of \"Ethics Committee\". Looks expensive."
+	icon_state = "eclg_coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 15, rad = 15)
+
+/obj/item/clothing/suit/armor/ecl/exec
+	name = "Ethics Committee Executive's suit jacket"
+	desc = "A black suit jacket with two logos on the shoulders denoting the department of \"Ethics Committee\". Looks expensive."
+	icon_state = "eclb_coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 15, rad = 15)
+
 //Chaplain
 /obj/item/clothing/suit/chaplain_hoodie
 	name = "chaplain hoodie"
