@@ -16199,11 +16199,11 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/llcz/entrance_checkpoint)
 "aUQ" = (
-/obj/structure/closet,
 /obj/item/device/tape/random,
 /obj/item/device/tape/random,
 /obj/item/device/tape/random,
 /obj/item/device/tape/random,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
@@ -31086,36 +31086,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp012)
-"hdl" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/accessory/badge/old{
-	name = "police badge";
-	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
-	},
-/obj/item/clothing/accessory/badge/old{
-	name = "police badge";
-	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
-	},
-/obj/item/clothing/accessory/badge/old{
-	name = "police badge";
-	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
-	},
-/obj/item/clothing/accessory/badge/old{
-	name = "police badge";
-	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
-	},
-/obj/item/clothing/accessory/badge/old{
-	name = "police badge";
-	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
-	},
-/obj/item/clothing/accessory/badge/old{
-	name = "police badge";
-	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
-	},
-/obj/effect/floor_decal/corner/safe/mono,
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/ulcz/scp912)
 "hdo" = (
 /obj/effect/floor_decal/corner/orange/bordercorner,
 /obj/structure/cable/green{
@@ -33999,14 +33969,24 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
 "iDW" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/head/police,
-/obj/item/clothing/head/police,
-/obj/item/clothing/head/police,
-/obj/item/clothing/head/police,
-/obj/item/clothing/head/police,
 /obj/effect/floor_decal/corner/safe/mono,
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/secure_closet{
+	icon_closed = "hopsecure";
+	icon_locked = "hopsecure1";
+	icon_off = "hopsecureoff";
+	icon_opened = "hopsecureopen";
+	icon_state = "hopsecure1";
+	name = "police garments locker"
+	},
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/police,
+/obj/item/clothing/suit/storage/vest/policejacket,
+/obj/item/clothing/head/police,
+/obj/item/clothing/accessory/badge/old{
+	name = "police badge";
+	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp912)
 "iEb" = (
@@ -36721,17 +36701,6 @@
 /obj/item/boombox,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"khd" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/shoes/laceup,
-/obj/effect/floor_decal/corner/safe/mono,
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/ulcz/scp912)
 "khQ" = (
 /obj/structure/bed/chair/wood{
 	dir = 8
@@ -50924,17 +50893,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp151)
-"rIn" = (
-/obj/item/clothing/under/police,
-/obj/item/clothing/under/police,
-/obj/item/clothing/under/police,
-/obj/item/clothing/under/police,
-/obj/item/clothing/under/police,
-/obj/structure/table/rack/shelf,
-/obj/effect/floor_decal/corner/safe/mono,
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/ulcz/scp912)
 "rIu" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
@@ -57730,6 +57688,10 @@
 /area/site53/llcz/dclass/primaryhallway)
 "vyU" = (
 /obj/structure/table/reinforced,
+/obj/item/clothing/accessory/badge/old{
+	name = "police badge";
+	desc = "An Anchorage Police Department badge, usually officiated with law enforcement."
+	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/ulcz/scp912)
 "vzw" = (
@@ -77235,7 +77197,7 @@ azA
 umo
 iDW
 miT
-hdl
+iDW
 umo
 umo
 dGP
@@ -77490,9 +77452,9 @@ azA
 azA
 azA
 umo
-rIn
+iDW
 xxY
-khd
+iDW
 umo
 umo
 kBt

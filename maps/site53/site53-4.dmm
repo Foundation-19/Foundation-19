@@ -130,7 +130,10 @@
 	pixel_y = 2;
 	name = "Ethics Committee Liaison's rubber stamp"
 	},
-/obj/item/pen/fancy/quill,
+/obj/item/pen/fancy/quill{
+	pixel_x = -2;
+	pixel_y = 7
+	},
 /obj/machinery/requests_console{
 	department = "Ethics Committee Liaison";
 	departmentType = 5;
@@ -7576,12 +7579,6 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "DK" = (
-/obj/machinery/door/blast/regular/open{
-	id_tag = "Administrative Evacuation";
-	name = "Administrative Evacuation Tunnels Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
 /obj/machinery/door/airlock/glass/command{
 	name = "Administrative Bunker Access"
 	},
@@ -8376,11 +8373,6 @@
 "HB" = (
 /obj/machinery/light,
 /obj/structure/closet/secure_closet/administration/internaltribunal,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/implantcase/death_alarm,
-/obj/item/implanter,
-/obj/item/clothing/accessory/storage/holster/thigh,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/repoffice/internaltribunal)
 "HD" = (
@@ -10553,9 +10545,6 @@
 /area/site53/uez/hallway)
 "Ru" = (
 /obj/structure/closet/secure_closet/administration/ethicscommittee,
-/obj/item/implantcase/death_alarm,
-/obj/item/implanter,
-/obj/item/clothing/accessory/storage/holster/thigh,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
 "Rv" = (
