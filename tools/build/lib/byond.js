@@ -101,7 +101,7 @@ export const DreamMaker = async (dmeFile, options = {}) => {
   if (defines && defines.length > 0) {
     Juke.logger.info('Using defines:', defines.join(', '));
   }
-  await runWithWarningChecks(dmPath, [dmeFile]);
+  await runWithWarningChecks(dmPath, [...defines.map(def => `-D${def}`), dmeFile]);
 };
 
 export const DreamDaemon = async (dmbFile, ...args) => {
