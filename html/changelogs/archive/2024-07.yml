@@ -29,3 +29,21 @@
   - rscadd: Everyone in HCZ now has a much more powerful arsenal, all zone commander
       has their sidearm upped by 1 tier
   - rscadd: EZ now has an ion gun in their arsenal, they previously did not have it
+2024-07-08:
+  ChromeFoxxity:
+  - rscadd: Switched Mask from A-1 to O-1.
+  - bugfix: Fixed Security Nightvision
+  - rscadd: New Office.
+  - rscadd: ECL Locker.
+  - rscdel: Old Office.
+  checkraisefold:
+  - bugfix: Wheelchairs no longer crash the server
+  - bugfix: Unbuckling no longer spams runtimes and doesn't leave a buckled alert
+      on the screen forever
+  - code_imp: Auxtools implementation updated, spacemandmm implementation updated
+  - bugfix: GOC rep stamp is no longer invisible
+  - code_imp: Fixed href exploits in spellbooks, material stacks, ATM, and accounts
+      database computer
+2024-07-09:
+  ChromeFoxxity:
+  - rscadd: More Job Blacklists.
