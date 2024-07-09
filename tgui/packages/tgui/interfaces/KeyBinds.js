@@ -104,9 +104,7 @@ export const KeybindElement = (props, context) => {
                   const mods = keysDown.filter((k) => KEY_MODS[k]);
                   const keys = keysDown.filter((k) => !KEY_MODS[k]);
                   if (keys.length === 0) {
-                    if (mods.length >= 0) {
-                      keys.push(mods.pop());
-                    }
+                    keys.push(mods.pop());
                   }
                   act('set_keybind', {
                     keybind_name: keybind.name,
@@ -128,9 +126,7 @@ export const KeybindElement = (props, context) => {
             const mods = keysDown.filter((k) => KEY_MODS[k]);
             const keys = keysDown.filter((k) => !KEY_MODS[k]);
             if (keys.length === 0) {
-              if (mods.length >= 0) {
-                keys.push(mods.pop());
-              } else return;
+              keys.push(mods.pop());
             }
             act('set_keybind', {
               keybind_name: keybind.name,

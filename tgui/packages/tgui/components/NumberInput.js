@@ -266,7 +266,6 @@ export class NumberInput extends Component {
               this.setState({
                 editing: false,
               });
-              return;
             }
           }}
         />
