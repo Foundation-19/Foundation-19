@@ -15,7 +15,6 @@
 /obj/item/clothing/gloves/insulated
 	desc = "These gloves will protect the wearer from electric shocks."
 	name = "insulated gloves"
-	color = COLOR_YELLOW
 	icon_state = "yellow"
 	item_state = "yellow"
 	siemens_coefficient = 0
@@ -31,6 +30,29 @@
 	..()
 	//average of 0.4, better than regular gloves' 0.75
 	siemens_coefficient = pick(0, 0.1, 0.2, 0.3, 0.4, 0.6, 1.3)
+
+/obj/item/clothing/gloves/insulated/chief_engineer
+	desc = "These gloves will protect the wearer from electric shocks, and also no longer hinder your fingers."
+	name = "advanced insulated gloves"
+	icon_state = "ce_insuls"
+	item_state = "ce_insuls"
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	hidden_from_codex = FALSE
+
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
+	force = 5
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_MINOR)
 
 /obj/item/clothing/gloves/forensic
 	desc = "Specially made gloves for forensic technicians. The luminescent threads woven into the material stand out under scrutiny."

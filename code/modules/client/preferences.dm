@@ -73,6 +73,7 @@
 			load_data()
 
 	sanitize_preferences()
+	SEND_SIGNAL(client, COMSIG_CLIENT_PREFS_LOADED, src)
 
 /datum/preferences/proc/load_data()
 	load_failed = null

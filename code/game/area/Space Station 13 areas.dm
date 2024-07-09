@@ -97,10 +97,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 //AREAS USED BY CODE//
 //////////////////////
 /area/centcom
-	name = "\improper Centcom"
+	name = "Mobile Task Force Dispatch Center"
 	icon_state = "centcom"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	req_access = list(ACCESS_CENT_GENERAL)
 
 /area/centcom/holding

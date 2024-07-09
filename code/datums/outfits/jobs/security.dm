@@ -30,7 +30,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullmateba
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -42,13 +42,13 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl4lcz
-	l_ear = /obj/item/device/radio/headset/heads/cos
+	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/commander
 	suit = /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/handcuffs = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/security/lczcom
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
@@ -63,7 +63,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullrhino
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
@@ -97,7 +97,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list()
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -222,7 +222,7 @@
 	uniform = /obj/item/clothing/under/rank/security/lcz/riot
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
-	shoes = /obj/item/clothing/shoes/dutyboots
+	shoes = /obj/item/clothing/shoes/combat/lcz
 	id_type = /obj/item/card/id/seclvl2lczdivision2
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
@@ -259,8 +259,8 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
-	backpack_contents = list()
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	backpack_contents = list(/obj/item/handcuffs = 1)
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp

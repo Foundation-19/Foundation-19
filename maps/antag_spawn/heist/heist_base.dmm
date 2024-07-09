@@ -1902,7 +1902,7 @@
 /area/map_template/skipjack_station/start)
 "eC" = (
 /obj/structure/table/standard,
-/obj/item/storage/firstaid/fire{
+/obj/item/storage/firstaid/burn{
 	pixel_x = 1
 	},
 /obj/item/storage/firstaid/o2{

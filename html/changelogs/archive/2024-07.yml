@@ -1,0 +1,46 @@
+2024-07-02:
+  checkraisefold:
+  - bugfix: Ice cream vat can no longer be exploited to crash server
+2024-07-04:
+  TheDarkElites:
+  - bugfix: Disabled 106's ability to use advanced tools
+2024-07-05:
+  Joel-682:
+  - config: Raised the  var/psi_latency_chance from 2 to 5.
+  checkraisefold:
+  - bugfix: R-UST projectile catchers no longer block movement on their turf while
+      they are invisible/off
+  - bugfix: R-UST gyrotron gets a 50% performance improvement in regards to instability
+      reduction due to a bugfix
+  - bugfix: FPS preference randomly not applying no longer happens
+  - bugfix: Orbit menu cancel button now works correctly
+  - bugfix: Orbit menu is no longer extremely long and no longer duplicates its items
+      when opened
+  quadbium:
+  - bugfix: fixes list of engineering and science jobs
+2024-07-07:
+  ChromeFoxxity:
+  - rscadd: CI Helicopter, GOC overhaul, HCZ overhaul, better containment chambers,
+      adds SCP-912, GOC Helicopter, GOC Pointman.
+  checkraisefold:
+  - bugfix: Fixed runtime spam on every mob life
+  - bugfix: 106 no longer breaches immediately on grid check event
+  projectkepler-ru:
+  - rscadd: Everyone in HCZ now has a much more powerful arsenal, all zone commander
+      has their sidearm upped by 1 tier
+  - rscadd: EZ now has an ion gun in their arsenal, they previously did not have it
+2024-07-08:
+  ChromeFoxxity:
+  - rscadd: Switched Mask from A-1 to O-1.
+  - bugfix: Fixed Security Nightvision
+  - rscadd: New Office.
+  - rscadd: ECL Locker.
+  - rscdel: Old Office.
+  checkraisefold:
+  - bugfix: Wheelchairs no longer crash the server
+  - bugfix: Unbuckling no longer spams runtimes and doesn't leave a buckled alert
+      on the screen forever
+  - code_imp: Auxtools implementation updated, spacemandmm implementation updated
+  - bugfix: GOC rep stamp is no longer invisible
+  - code_imp: Fixed href exploits in spellbooks, material stacks, ATM, and accounts
+      database computer

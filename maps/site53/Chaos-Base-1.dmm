@@ -12,7 +12,7 @@
 /area/space)
 "d" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/clothing/under/scp/utility/chaos,
+/obj/item/clothing/under/syndicate/chaos,
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "g" = (
@@ -131,7 +131,7 @@
 /area/space)
 "D" = (
 /obj/machinery/cryopod,
-/obj/item/clothing/under/scp/utility/chaos,
+/obj/item/clothing/under/syndicate/chaos,
 /turf/simulated/floor/shuttle/darkred,
 /area/space)
 "E" = (
