@@ -110,10 +110,9 @@ SUBSYSTEM_DEF(offsites)
 	switch(action)
 		if("send_fax")
 			var/fax_target = params["target"]
-			var/taker = params["taker"]
-			if(taker && (taker != admin.ckey))
-				if(!verify_ui_taker())
-					return TRUE
+			var/id = params["id"]
+			if(!isnull(id) && !cur_os.find_and_verify_taker(id, admin))
+				return TRUE
 
 			if(fax_target in GLOB.alldepartments)
 				cur_os.send_fax(admin, fax_target)
@@ -122,17 +121,15 @@ SUBSYSTEM_DEF(offsites)
 			return TRUE
 		if("send_msg")
 			var/msg_target = params["target"]
-			var/taker = params["taker"]
-			if(taker && (taker != admin.ckey))
-				if(!verify_ui_taker())
-					return TRUE
+			var/id = params["id"]
+			if(!isnull(id) && !cur_os.find_and_verify_taker(id, admin))
+				return TRUE
 
 			var/mob/living/target
 			if(msg_target)
-				for(var/client/C in GLOB.clients)
-					if(C.ckey == msg_target)
-						target = C.mob
-						break
+				var/client/C = client_by_ckey(msg_target)
+				if(istype(C))
+					target = C.mob
 
 			if(istype(target))
 				cur_os.send_message(admin, target)
@@ -140,39 +137,19 @@ SUBSYSTEM_DEF(offsites)
 				cur_os.send_message(admin)
 			return TRUE
 		if("take")
-			var/type = params["type"]
 			var/id = params["fax"]
-
-			var/list/target_list = findtext(type, "Received fax") ? cur_os.received_faxes : cur_os.received_messages
-			var/list/item
-			for(var/F in target_list)
-				if(F["id"] == id)
-					item = F
-					break
-			if(!item)
-				to_chat(admin, SPAN_WARNING("Couldn't find that history item! Report how you did this on the tracker."))
-				return TRUE
-
-			if(item["taker"] == admin.ckey)
-				item["taker"] = null
-				return TRUE
-			if(item["taker"] && !verify_ui_taker())
-				return TRUE
-
-			item["taker"] = admin.ckey
+			cur_os.take_by_id(id)
 			return TRUE
 		if("read_fax")
-			var/fax_type = params["type"]
 			var/fax_id = params["fax"]
 
 			var/obj/item/fax
-			var/list/target_list = findtext(fax_type, "Sent fax") ? cur_os.sent_faxes : cur_os.received_faxes
-			for(var/F in target_list)
+			for(var/F in cur_os.history)
 				if(F["id"] == fax_id)
 					fax = F["ref"]
 					break
 
-			if(!fax)
+			if(!istype(fax))
 				to_chat(admin, SPAN_WARNING("The fax you're trying to view doesn't exist."))
 				return TRUE
 			show_fax_admin(fax)

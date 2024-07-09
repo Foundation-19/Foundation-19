@@ -15,6 +15,9 @@
 	/// A list of lists. Each list represents a message we sent. (time sent, sent message, receiving mob)
 	var/list/sent_messages = list()
 
+	/// Combined history of all other types of lists.
+	var/list/history = list()
+
 	/// Current ID being added to any of the offsite history lists. Shared between the lists.
 	var/current_history_id = 0;
 
@@ -29,7 +32,7 @@
 /datum/offsite/proc/add_sent_fax(datum/source, obj/item/copy, obj/item/paper/admin/original)
 	var/client/admin = original.admindatum.owner
 	current_history_id++
-	sent_faxes += list(list(
+	var/list/to_add = list(list(
 		"id" = current_history_id,
 		"time" = world.time,
 		"time_pretty" = gameTimestamp("hh:mm:ss", world.time),
@@ -37,11 +40,49 @@
 		"dept" = (original.department || "Unknown"),
 		"user" = admin.ckey
 	))
+	sent_faxes += to_add
+	history += to_add
+
+/// Finds a history item by ID and alerts to verify when it's already taken.
+/datum/offsite/proc/find_and_verify_taker(id, client/admin = usr.client)
+	id = text2num(id)
+	var/list/target_item
+	for(var/L in history)
+		if(L["id"] == id)
+			target_item = L
+			break
+	if(!target_item)
+		return
+	if((target_item["taker"] && target_item["taker"] != admin.ckey))
+		return list("override" = SSoffsites.verify_ui_taker(admin.mob), "item" = target_item)
+	else
+		return list("item" = target_item)
+
+/datum/offsite/proc/take_by_id(id, client/admin = usr.client)
+	var/list/target_item = find_and_verify_taker(id, admin)
+	if(!target_item)
+		to_chat(admin, SPAN_WARNING("Couldn't find that history item! Report how you did this on the tracker."))
+		return
+	if(target_item["override"] == FALSE)
+		return
+
+	var/time_pretty = target_item["item"]["time_pretty"]
+	var/user_key = target_item["item"]["user_key"]
+	var/taker = target_item["item"]["taker"]
+	if(taker == admin.ckey)
+		target_item["item"]["taker"] = null
+		message_staff("[key_name_admin(admin)] has un-taken an offsite item sent by [user_key] at [time_pretty].")
+		log_admin("[key_name(admin)] has un-taken an offsite item sent by [user_key] at [time_pretty].")
+		return
+
+	message_staff("[key_name_admin(admin)] has taken an offsite item sent by [user_key] at [time_pretty].")
+	log_admin("[key_name(admin)] has taken an offsite item sent by [user_key] at [time_pretty].")
+	target_item["item"]["taker"] = admin.ckey
 
 /datum/offsite/proc/receive_fax(obj/item/ref, origin_department = "Unknown", mob/sender)
 	origin_department = (origin_department || "Unknown")
 	current_history_id++
-	received_faxes += list(list(
+	var/list/to_add = list(list(
 		"id" = current_history_id,
 		"time" = world.time,
 		"time_pretty" = gameTimestamp("hh:mm:ss", world.time),
@@ -50,9 +91,11 @@
 		"user" = key_name(sender),
 		"user_key" = sender.ckey
 	))
+	received_faxes += to_add
+	history += to_add
 
-	var/fax_reply_message = origin_department == "Unknown" ? "" : ", <a href='?src=\ref[src];send_fax=[origin_department]'>Reply with Fax</a>"
-	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [name] FROM [origin_department] BY [ADMIN_FULLMONTY(sender)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>, <a href='?src=\ref[src];send_message=\ref[sender]'>Reply with Message</a>[fax_reply_message]")
+	var/fax_reply_message = origin_department == "Unknown" ? "" : ", <a href='?src=\ref[src];send_fax=[current_history_id]'>Reply with Fax</a>"
+	var/adjusted_message = SPAN_NOTICE("<b><font color=darkgreen>FAX TO [name] FROM [origin_department] BY [ADMIN_FULLMONTY(sender)]</b></font> - <a href='?_src_=holder;AdminFaxView=\ref[ref]'>View</a>, <a href='?src=\ref[src];take=[current_history_id]'>Take</a>, <a href='?src=\ref[src];send_message=[current_history_id]'>Reply with Message</a>[fax_reply_message]")
 	for(var/client/C in GLOB.admins)
 		if(R_MOD & C.holder.rights)
 			to_chat(C, adjusted_message)
@@ -86,7 +129,7 @@
 
 /datum/offsite/proc/receive_message(message, mob/sender)
 	current_history_id++
-	received_messages += list(list(
+	var/list/to_add = list(list(
 		"id" = current_history_id,
 		"time" = world.time,
 		"time_pretty" = gameTimestamp("hh:mm:ss", world.time),
@@ -94,8 +137,10 @@
 		"user" = key_name(sender),
 		"user_key" = sender.ckey
 	))
+	received_messages += to_add
+	history += to_add
 
-	var/adjusted_message = SPAN_NOTICE("<b><font color=orange>MESSAGE TO [name] FROM [ADMIN_FULLMONTY(sender)] <a href='?src=\ref[src];send_message=\ref[sender]'>Reply</a></b></font>: [message]")
+	var/adjusted_message = SPAN_NOTICE("<b><font color=orange>MESSAGE TO [name] FROM [ADMIN_FULLMONTY(sender)] - <a href='?src=\ref[src];take=[current_history_id]'>Take</a>, <a href='?src=\ref[src];send_message=[current_history_id]'>Reply</a></b></font>: [message]")
 
 	for(var/client/C in GLOB.admins)
 		if(R_MOD & C.holder.rights)
@@ -148,16 +193,38 @@
 		return
 
 	if(href_list["send_message"])
-		var/mob/living/target = locate(href_list["send_message"])
+		var/id = href_list["send_message"]
+		var/list/target_item = find_and_verify_taker(id, admin)
+		if(!target_item)
+			return
+		if(target_item["override"] == FALSE)
+			return
+
+		var/client/target_client = client_by_ckey(target_item["item"]["user_key"])
+		if(!target_client || !target_client.mob)
+			to_chat(admin, SPAN_WARNING("That client or mob no longer exist!"))
+			return
+
+		var/mob/living/target = target_client.mob
 		if(istype(target))
 			send_message(admin, target)
 		else
-			to_chat(admin, SPAN_WARNING("That mob no longer exists!"))
+			to_chat(admin, SPAN_WARNING("That mob is not living!"))
 		return
 	if(href_list["send_fax"])
-		var/fax_target = href_list["send_fax"]
+		var/id = href_list["send_fax"]
+		var/list/target_item = find_and_verify_taker(id, admin)
+		if(!target_item)
+			return
+		if(target_item["override"] == FALSE)
+			return
+
+		var/fax_target = target_item["item"]["dept"]
 		if(fax_target in GLOB.alldepartments)
 			send_fax(admin, fax_target)
 		else
 			to_chat(admin, SPAN_WARNING("That fax came from an invalid department!"))
+		return
+	if(href_list["take"])
+		take_by_id(href_list["take"], admin)
 		return

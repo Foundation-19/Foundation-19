@@ -1,5 +1,13 @@
 import { useBackend, useLocalState } from '../backend';
-import { Section, Button, Tabs, Flex, Collapsible, Box, BlockQuote } from '../components';
+import {
+  BlockQuote,
+  Box,
+  Button,
+  Collapsible,
+  Flex,
+  Section,
+  Tabs,
+} from '../components';
 import { Window } from '../layouts';
 
 type OffsiteHistoryItem = {
@@ -30,7 +38,7 @@ export const OffsitePanel = (_, context) => {
   const [openOffsite, setOpenOffsite] = useLocalState(
     context,
     'openOffsite',
-    0
+    0,
   );
   const { offsites = [] } = data;
 
@@ -44,7 +52,8 @@ export const OffsitePanel = (_, context) => {
                 <Tabs.Tab
                   key={i}
                   selected={i === openOffsite}
-                  onClick={() => setOpenOffsite(i)}>
+                  onClick={() => setOpenOffsite(i)}
+                >
                   {offsite_data.name}
                 </Tabs.Tab>
               );
@@ -59,16 +68,17 @@ export const OffsitePanel = (_, context) => {
 
 const SendButton = (props, context) => {
   const { act } = useBackend(context);
-  const { type, os, target, taker, children } = props;
+  const { type, os, target, id, children } = props;
   return (
     <Button
       onClick={() =>
         act(`send_${type}`, {
           os: os,
           target: target,
-          taker: taker,
+          id: id,
         })
-      }>
+      }
+    >
       {children}
     </Button>
   );
@@ -76,16 +86,16 @@ const SendButton = (props, context) => {
 
 const ReadButton = (props, context) => {
   const { act } = useBackend(context);
-  const { os, fax, to, children } = props;
+  const { os, fax, children } = props;
   return (
     <Button
       onClick={() =>
         act(`read_fax`, {
           os: os,
           fax: fax,
-          type: to,
         })
-      }>
+      }
+    >
       {children}
     </Button>
   );
@@ -143,7 +153,8 @@ const OffsitePage = (props, context) => {
                         type="msg"
                         os={os_type}
                         target={user_key}
-                        taker={taker}>
+                        id={id}
+                      >
                         Reply (Message)
                       </SendButton>
                       {dept && (
@@ -151,7 +162,8 @@ const OffsitePage = (props, context) => {
                           type="fax"
                           os={os_type}
                           target={dept}
-                          taker={taker}>
+                          id={id}
+                        >
                           Reply (Fax)
                         </SendButton>
                       )}
@@ -160,9 +172,9 @@ const OffsitePage = (props, context) => {
                           act(`take`, {
                             os: os_type,
                             fax: id,
-                            type: type,
                           })
-                        }>
+                        }
+                      >
                         {taker === config.client.ckey ? 'Untake' : 'Take'}
                       </Button>
                     </>
