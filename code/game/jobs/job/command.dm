@@ -173,7 +173,7 @@
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
 	requirements = list(EXP_TYPE_COMMAND = 600, EXP_TYPE_SECURITY = 600, EXP_TYPE_BUR = 60)
-	class = CLASS_B
+	class = CLASS_A
 	hud_icon = "huditdo"
 	access = list(
 		ACCESS_ADMIN_LVL1,
@@ -216,7 +216,7 @@
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/civ/ethics
 	requirements = list(EXP_TYPE_BUR = 300)
-	class = CLASS_B
+	class = CLASS_A
 	hud_icon = "hudecl"
 	access = list(
 		ACCESS_ADMIN_LVL1,

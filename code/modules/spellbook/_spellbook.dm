@@ -155,30 +155,34 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 	/* Normal interact topics */
 	if(href_list["spell"])
 		var/datum/spell/S = text2path(href_list["spell"])
-		if(!ispath(S))
-			return TOPIC_REFRESH
+		if(!ispath(S, /datum/spell))
+			return TOPIC_NOACTION
+		if(!(S in allowed_spells))
+			return TOPIC_NOACTION
+
 		ShowSpellMenu(user, S)
 		return TOPIC_NOACTION
 
 	else if(href_list["purchase"])
 		var/path = text2path(href_list["purchase"])
-		if(!path)
+		if(!ispath(path, /datum/spell))
 			return TOPIC_NOACTION
+		if(!(path in allowed_spells))
+			return TOPIC_NOACTION
+
 		// No duplicate spells
 		if(locate(path) in user.mind.learned_spells)
 			return TOPIC_NOACTION
 		SendFeedback(path) //feedback stuff
-		if(ispath(path, /datum/spell))
-			to_chat(user, AddSpell(user, path))
-			ShowSpellMenu(user, path)
-		else
-			var/obj/O = new path(get_turf(user))
-			to_chat(user, SPAN_NOTICE("You have purchased \a [O]."))
-			//finally give it a bit of an oomf
-			playsound(get_turf(user),'sounds/effects/phasein.ogg',50,1)
+		to_chat(user, AddSpell(user, path))
+		ShowSpellMenu(user, path)
 
 	else if(href_list["upgrade"])
 		var/spell_path = text2path(href_list["upgrade"])
+		if(!ispath(spell_path, /datum/spell))
+			return TOPIC_NOACTION
+		if(!(spell_path in allowed_spells))
+			return TOPIC_NOACTION
 		var/upgrade_return = UpgradeSpell(user, spell_path, href_list["upgrade_type"])
 		if(istext(upgrade_return))
 			to_chat(user, upgrade_return)
