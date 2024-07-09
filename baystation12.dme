@@ -738,7 +738,6 @@
 #include "code\game\jobs\access\access_misc.dm"
 #include "code\game\jobs\access\access_science.dm"
 #include "code\game\jobs\access\access_security.dm"
-#include "code\game\jobs\job\civilian_chaplain.dm"
 #include "code\game\jobs\job\command.dm"
 #include "code\game\jobs\job\engineering.dm"
 #include "code\game\jobs\job\job.dm"
