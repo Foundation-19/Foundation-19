@@ -40,7 +40,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/rubber
-	name = "Pistol Magazine (9mm Rubber)"
+	name = "pistol magazine (9mm Rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
@@ -50,7 +50,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/ap
-	name = "MK9 magazine (9mm Armor-Piercing)"
+	name = "pistol magazine (9mm Armor-Piercing)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/ap
@@ -60,7 +60,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/hp
-	name = "MK9 magazine (9mm Hollow-Point)"
+	name = "pistol magazine (9mm Hollow-Point)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c9mm/hp
