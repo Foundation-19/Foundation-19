@@ -117,7 +117,9 @@
 
 /decl/hierarchy/outfit/job/civ/ethics
 	name = OUTFIT_JOB_NAME("Ethics Committee Liasion")
-	uniform = /obj/item/clothing/under/suit_jacket/really_black
+	uniform = /obj/item/clothing/under/ecl
+	suit = /obj/item/clothing/suit/armor/ecl
+	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/device/radio
 	id_type = /obj/item/card/id/adminlvl5
@@ -127,8 +129,9 @@
 
 /decl/hierarchy/outfit/job/civ/tribunal
 	name = OUTFIT_JOB_NAME("Tribunal Officer")
-	uniform = /obj/item/clothing/under/itd
-	suit = /obj/item/clothing/suit/armor/itd
+	uniform = /obj/item/clothing/under/itdo
+	suit = /obj/item/clothing/suit/armor/itdo
+	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/device/radio
 	id_type = /obj/item/card/id/adminlvl5

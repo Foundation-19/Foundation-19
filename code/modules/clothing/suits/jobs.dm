@@ -41,11 +41,18 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(melee = 90, bullet = 90, laser = 90, energy = 90, bomb = 80, bio = 40, rad = 60)
 
-/obj/item/clothing/suit/armor/itd
+/obj/item/clothing/suit/armor/itdo
 	name = "Internal Tribunal Officer's coat"
 	desc = "A heavy, black long coat with silver markings along the wrists, as well as real genuine polar bear fur on it. It's woven from the finest cotton."
 	icon_state = "itd_coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 15, rad = 15)
+
+/obj/item/clothing/suit/armor/ecl
+	name = "Ethics Committee Liaison's suit jacket"
+	desc = "A tan suit jacket with two logos on the shoulders denoting the department of \"Ethics Committee\". Looks expensive."
+	icon_state = "ecl_coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 15, rad = 15)
 
 //Chaplain

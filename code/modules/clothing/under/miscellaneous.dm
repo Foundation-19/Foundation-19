@@ -809,9 +809,23 @@
 	worn_state = "kimono"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
-/obj/item/clothing/under/itd
+/obj/item/clothing/under/itdofficial
 	desc = "It's a snazzy dark purple formal shirt worn by someone who works in the \"Internal Tribunal Department\", it has silver markings and a white nametag."
-	name = "Internal Tribunal uniform"
+	name = "Internal Tribunal Official uniform"
+	icon_state = "itdofficial"
+	item_state = "b_suit"
+	worn_state = "itdofficial"
+
+/obj/item/clothing/under/itdo
+	desc = "A white dress shirt with a black pair of slacks, the dress shirt has two logos on the lower shoulders, denoting the department of \"Internal Tribunal Department\". It comes with a Internal Tribunal Department purple tie, and fitting formal vest."
+	name = "Internal Tribunal Officer uniform"
 	icon_state = "itdo"
 	item_state = "b_suit"
 	worn_state = "itdo"
+
+/obj/item/clothing/under/ecl
+	desc = "A white dress shirt with a tan pair of slacks, the dress shirt has two logos on the lower shoulders, denoting the department of \"Ethics Committee\". It also has gold etching on the upper shoulders. It comes with a Ethics Committee green tie."
+	name = "Ethics Committee Liaison uniform"
+	icon_state = "ecl"
+	item_state = "w_suit"
+	worn_state = "ecl"

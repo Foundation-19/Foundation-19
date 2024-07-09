@@ -457,3 +457,14 @@
 	heat_protection = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	armor = list(melee = 999, bullet = 999, laser = 999, energy = 999, bomb = 999, bio = 999, rad = 999) // DON'T ASK, IT'S UNOBTAINABLE ARMOR, AND 912 IS UNKILLABLE KEEP IT AT THAT.
+
+/obj/item/clothing/suit/storage/vest/policejacket
+	name = "police jacket"
+	desc = "An iconic police jacket. Usually worn by officers patrolling on cold days, though that's always when it comes to the department that owns it, the Anchorage Police Department."
+	icon_state = "policejacket"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	flags_inv = CLOTHING_BULKY
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	armor = list(melee = 15, bullet = 10, laser = 10, energy = 25, bomb = 5, bio = 0, rad = 0)
