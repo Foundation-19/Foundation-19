@@ -44136,7 +44136,7 @@
 /area/site53/llcz/dclass/medicalpost)
 "odZ" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL3"));
 	name = "SCP-912 Police Uniforms"
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -54299,7 +54299,7 @@
 /area/site53/ulcz/scp2427_3)
 "ttp" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL2"));
 	name = "SCP-912 Containment Chamber"
 	},
 /turf/simulated/floor/tiled/dark/small,
