@@ -12266,7 +12266,9 @@
 	dir = 4
 	},
 /obj/effect/landmark/start{
-	name = "Ethics Committee Liaison"
+	name = "Ethics Committee Liaison";
+	icon_state = "comeclspawn";
+	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
