@@ -7,6 +7,7 @@
 import { clamp } from 'common/math';
 import { classes, pureComponentHooks } from 'common/react';
 import { Component, createRef } from 'inferno';
+
 import { AnimatedNumber } from './AnimatedNumber';
 import { Box } from './Box';
 
@@ -40,7 +41,7 @@ export class NumberInput extends Component {
             this.setState({
               suppressingFlicker: false,
             }),
-          suppressFlicker
+          suppressFlicker,
         );
       }
     };
@@ -87,13 +88,13 @@ export class NumberInput extends Component {
           state.internalValue = clamp(
             state.internalValue + (offset * step) / stepPixelSize,
             minValue - step,
-            maxValue + step
+            maxValue + step,
           );
           // Clamp the final value
           state.value = clamp(
             state.internalValue - (state.internalValue % step) + stepOffset,
             minValue,
-            maxValue
+            maxValue,
           );
           state.origin = e.screenY;
         } else if (Math.abs(offset) > 4) {
@@ -188,7 +189,8 @@ export class NumberInput extends Component {
         minHeight={height}
         lineHeight={lineHeight}
         fontSize={fontSize}
-        onMouseDown={this.handleDragStart}>
+        onMouseDown={this.handleDragStart}
+      >
         <div className="NumberInput__barContainer">
           <div
             className="NumberInput__bar"
@@ -264,7 +266,6 @@ export class NumberInput extends Component {
               this.setState({
                 editing: false,
               });
-              return;
             }
           }}
         />
