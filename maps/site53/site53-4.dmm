@@ -2729,7 +2729,8 @@
 "ji" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Engineering Director's Office"
+	department = "Engineering Director's Office";
+	send_access = list("ACCESS_ENGINEERING_LEVEL5")
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/uez/hallway)
@@ -3488,7 +3489,8 @@
 "lm" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/photocopier/faxmachine{
-	department = "Internal Tribunal Officer's Office"
+	department = "Internal Tribunal Officer's Office";
+	send_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/internaltribunal)
@@ -5775,7 +5777,8 @@
 "vO" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Medical Director's Office"
+	department = "Medical Director's Office";
+	send_access = list("ACCESS_MEDICAL_LEVEL5")
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/uez/hallway)
@@ -6031,7 +6034,7 @@
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/machinery/photocopier/faxmachine{
 	department = "Guard Commander's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
+	send_access = list("ACCESS_SECURITY_LEVEL5")
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/equipmentroom)
@@ -6446,7 +6449,8 @@
 "yM" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/photocopier/faxmachine{
-	department = "Site Director's Office"
+	department = "Site Director's Office";
+	send_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -6796,6 +6800,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"Ax" = (
+/obj/structure/table/reinforced,
+/obj/item/boombox,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Ay" = (
 /obj/machinery/light,
 /obj/structure/closet/secure_closet/administration/facilityadmin,
@@ -7624,7 +7633,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "RAISA's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
+	send_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
@@ -7913,7 +7922,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "EZ Forensics Lab";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
+	send_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/camera/network/entrance{
@@ -8767,7 +8776,8 @@
 "Js" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/photocopier/faxmachine{
-	department = "Site Manager's Office"
+	department = "Site Manager's Office";
+	send_access = list("ACCESS_HEAD_OF_PERSONNEL")
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -8988,6 +8998,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
+"Kx" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Ky" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10172,7 +10187,12 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_y = 3
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
 "PO" = (
@@ -10447,7 +10467,8 @@
 "Ra" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Research Director's Office"
+	department = "Research Director's Office";
+	send_access = list("ACCESS_SCIENCE_LEVEL5")
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/hallway)
@@ -11044,7 +11065,10 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/boombox,
+/obj/machinery/photocopier/faxmachine{
+	department = "EZ Security Center";
+	send_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
 "TI" = (
@@ -11369,7 +11393,8 @@
 "Vn" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/photocopier/faxmachine{
-	department = "Ethics Committee Liaison's Office"
+	department = "Ethics Committee Liaison's Office";
+	send_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
@@ -11698,6 +11723,10 @@
 	},
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/photocopier/faxmachine{
+	department = "Administrative Control Room";
+	send_access = list("ACCESS_ADMIN_LEVEL3")
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "WW" = (
@@ -11811,7 +11840,8 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Administrative Security"
+	department = "Administrative Security";
+	send_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/light{
 	dir = 4
@@ -49281,7 +49311,7 @@ Jd
 rX
 VF
 eV
-xe
+Kx
 xe
 MI
 Ah
@@ -49538,7 +49568,7 @@ TZ
 TZ
 VF
 eV
-xe
+Ax
 xe
 MI
 gk
@@ -50053,7 +50083,7 @@ VF
 VF
 eV
 xe
-xe
+Kx
 dL
 fc
 Pt
