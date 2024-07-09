@@ -131,13 +131,13 @@ const OffsitePage = (props, context) => {
                 {admin ? ` by ${admin}` : ''}
                 {dept ? ` to department: ${dept}` : ''} at round time{' '}
                 {time_pretty}
-                {taker && (
-                  <>
-                    <br />
-                    <b>Taken by {taker}</b>
-                  </>
-                )}
                 <Box ml={2}>
+                  {taker && (
+                    <>
+                      <br />
+                      <b>Taken by {taker}</b>
+                    </>
+                  )}
                   {type.includes('fax') ? (
                     <ReadButton os={os_type} to={type} fax={id}>
                       Read
