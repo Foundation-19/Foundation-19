@@ -121,6 +121,7 @@
 	if(href_list["confirm"])
 		switch(tgui_alert(usr, "Are you sure you want to send the fax as is?", "Confirm Sending", list("Yes", "No")))
 			if("Yes")
+				info = header + info + footer
 				updateinfolinks()
 				close_browser(usr, "window=[name]")
 				admindatum.faxCallback(src)
