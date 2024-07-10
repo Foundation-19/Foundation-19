@@ -107,6 +107,8 @@
 
 GLOBAL_LIST_INIT(banned_914_energy_guns, list(
 	/obj/item/gun/energy/pulse_rifle/destroyer,
+	/obj/item/gun/energy/meteorgun,
+	/obj/item/gun/energy/meteorgun/pen
 	))
 
 // Coarse - Returns random gun with lower max_shots or damage

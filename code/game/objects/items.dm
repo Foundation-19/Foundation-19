@@ -931,6 +931,24 @@ GLOBAL_LIST_EMPTY(items_by_convert_rating)
 // A list of types that will not be added to the auto-item-generator below;
 GLOBAL_LIST_INIT(items_conversion_blacklist, list(
 	/obj/item/card/id/syndicate/station_access,
+	/obj/item/paper/scp012,
+	/obj/item/photo/scp096,
+	/obj/item/photo/scp096/scp096_photo,
+	/obj/item/storage/backpack/santabag,
+	/obj/item/reagent_containers/glass/beaker/vial/scp008,
+	/obj/item/storage/pill_bottle/scp500,
+	/obj/item/reagent_containers/pill/scp500,
+	/obj/item/reagent_containers/syringe/scp008,
+	/obj/item/rig/light/stealth/scp5000,
+	/obj/item/rig/light/stealth/scp5000/working,
+	/obj/item/storage/briefcase/scp1102ru,
+	/obj/item/scp113,
+	/obj/item/scp513,
+	/obj/item/clothing/head/helmet/scp912,
+	/obj/item/clothing/suit/storage/vest/scp912,
+	/obj/item/clothing/under/scp/scp912,
+	/obj/item/storage/belt/holster/security/tactical/full912pistol,
+	/obj/item/material/twohanded/baseballbat/scp2398,
 	/obj/item/card/id/captains_spare) \
 	+ typesof(/obj/item/spellbook) \
 	+ typesof(/obj/item/card/id/centcom) \
