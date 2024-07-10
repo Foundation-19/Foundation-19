@@ -24,3 +24,28 @@
 /obj/item/stamp/scp/acmo
 	name = "Assistant Medical Director's rubber stamp"
 	icon_state = "stamp-cmo"
+
+/obj/item/stamp/scp/itdo
+	name = "Internal Tribunal Department Officer's rubber stamp"
+	icon_state = "stamp-rd"
+
+/obj/item/stamp/scp/ecl
+	name = "Ethics Committee Liaison's rubber stamp"
+	icon_state = "stamp-boss"
+
+/obj/item/stamp/scp/sechead
+	name = "Zone Lieutenant's rubber stamp"
+	icon_state = "stamp-brig"
+
+/obj/item/stamp/scp/sechead/ez
+	name = "EZ Zone Supervisor's rubber stamp"
+
+/obj/item/stamp/scp/sechead/lcz
+	name = "LCZ Zone Junior Lieutenant's rubber stamp"
+
+/obj/item/stamp/scp/sechead/hcz
+	name = "HCZ Zone Senior Lieutenant's rubber stamp"
+
+/obj/item/stamp/scp/sec
+	name = "Security rubber stamp"
+	icon_state = "stamp-cos"
