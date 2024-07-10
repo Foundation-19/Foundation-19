@@ -43,11 +43,11 @@ var/list/whitelist = list()
 	else
 		while(query.NextRow())
 			var/list/row = query.item
-			if(alien_whitelist[row["ckey"]])
-				var/list/A = alien_whitelist[row["ckey"]]
-				A.Add(row["race"])
+			if(alien_whitelist[row[2]])
+				var/list/A = alien_whitelist[row[2]]
+				A.Add(row[3])
 			else
-				alien_whitelist[row["ckey"]] = list(row["race"])
+				alien_whitelist[row[2]] = list(row[3])
 	qdel(query)
 	return 1
 
