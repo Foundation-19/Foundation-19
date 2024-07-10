@@ -631,6 +631,9 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	GLOB.world_qdel_log = file("[GLOB.log_directory]/qdel.log")
 	GLOB.query_debug_log = file("[GLOB.log_directory]/sql.log")
 	GLOB.tgui_log = file("[GLOB.log_directory]/tgui.log")
+#ifdef REFERENCE_TRACKING_LOG_APART
+	GLOB.harddel_log = file("[GLOB.log_directory]/harddels.log")
+#endif
 	to_file(GLOB.world_qdel_log, "\n\nStarting up round ID [game_id]. [time_stamp()]\n---------------------")
 
 #define FAILED_DB_CONNECTION_CUTOFF 5

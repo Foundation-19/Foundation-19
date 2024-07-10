@@ -130,9 +130,16 @@
 	if(config.log_world_output)
 		game_log("DD_OUTPUT", text)
 
-#ifdef REFERENCE_TRACKING_LOG
+#if defined(REFERENCE_TRACKING_LOG_APART)
+#define log_reftracker(msg) log_harddel("## REF SEARCH [msg]")
+
+/proc/log_harddel(text)
+	to_file(GLOB.harddel_log, text)
+
+#elif defined(REFERENCE_TRACKING) // Doing it locally
 #define log_reftracker(msg) log_world("## REF SEARCH [msg]")
-#else
+
+#else //Not tracking at all
 #define log_reftracker(msg)
 #endif
 
