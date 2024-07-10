@@ -517,7 +517,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 		var/list/limb_selection_list = list("Left Leg","Right Leg","Left Arm","Right Arm","Left Foot","Right Foot","Left Hand","Right Hand")
 
-		if(check_rights(R_MOD, 0) || whitelist_lookup(SPECIES_FBP, user.client.ckey))
+		if(check_rights(RADMIN|R_MOD, 0) || whitelist_lookup(SPECIES_FBP, user.client.ckey))
 			limb_selection_list |= "Full Body"
 
 		// Full prosthetic bodies without a brain are borderline unkillable so make sure they have a brain to remove/destroy.
