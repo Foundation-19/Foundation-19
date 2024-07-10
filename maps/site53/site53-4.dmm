@@ -124,12 +124,6 @@
 	pixel_y = 8;
 	pixel_x = 8
 	},
-/obj/item/stamp{
-	icon_state = "stamp-boss";
-	pixel_x = 8;
-	pixel_y = 2;
-	name = "Ethics Committee Liaison's rubber stamp"
-	},
 /obj/item/pen/fancy/quill{
 	pixel_x = -2;
 	pixel_y = 7
@@ -139,6 +133,10 @@
 	departmentType = 5;
 	name = "Ethics Committee Liaison Requests Console";
 	pixel_y = -32
+	},
+/obj/item/stamp/scp/ecl{
+	pixel_x = 8;
+	pixel_y = 2
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
@@ -5038,11 +5036,10 @@
 	pixel_y = 8;
 	pixel_x = 8
 	},
-/obj/item/stamp{
+/obj/item/stamp/scp/sec{
+	name = "RAISA's rubber stamp";
 	pixel_x = 8;
-	icon_state = "stamp-cos";
-	pixel_y = 2;
-	name = "RAISA's rubber stamp"
+	pixel_y = 2
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
@@ -7340,11 +7337,9 @@
 	pixel_y = 8;
 	pixel_x = 8
 	},
-/obj/item/stamp{
+/obj/item/stamp/scp/sechead/ez{
 	pixel_x = 8;
-	icon_state = "stamp-brig";
-	pixel_y = 2;
-	name = "EZ Zone Supervisor's rubber stamp"
+	pixel_y = 2
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/senioragentoffice)
@@ -10787,10 +10782,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
-"Su" = (
-/obj/machinery/computer/station_alert/all,
-/turf/simulated/floor/carpet/blue,
-/area/site53/uez/hallway)
 "Sv" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
@@ -12319,11 +12310,10 @@
 	pixel_y = 8;
 	pixel_x = 8
 	},
-/obj/item/stamp{
+/obj/item/stamp/scp/sec{
+	name = "EZ Security rubber stamp";
 	pixel_x = 8;
-	icon_state = "stamp-cos";
-	pixel_y = 2;
-	name = "EZ Security rubber stamp"
+	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
@@ -45663,7 +45653,7 @@ aw
 aw
 aw
 QC
-Su
+Qk
 JB
 yi
 ep
