@@ -11,7 +11,7 @@
 /mob/living/carbon/human/proc/recheck_bad_external_organs()
 	var/damage_this_tick = getToxLoss()
 	for(var/obj/item/organ/external/O in organs)
-		damage_this_tick += O.burn_dam + O.brute_dam
+		damage_this_tick += O.burn_dam + O.brute_dam + O.pain
 
 	if(damage_this_tick > last_dam)
 		. = TRUE
