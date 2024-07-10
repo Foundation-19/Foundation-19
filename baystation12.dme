@@ -2407,6 +2407,7 @@
 #include "code\modules\mob\living\silicon\robot\modules\_module.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_clerical.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_engineering.dm"
+#include "code\modules\mob\living\silicon\robot\modules\module_forensics.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_illegal.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_janitor.dm"
 #include "code\modules\mob\living\silicon\robot\modules\module_maintenance_drone.dm"

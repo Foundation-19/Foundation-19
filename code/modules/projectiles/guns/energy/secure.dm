@@ -73,6 +73,58 @@
 	GLOB.secure_weapons |= src
 	. = ..()
 
+/obj/item/gun/energy/gun/mounted/mk9/mounted/rubber
+	name = "MK9 Foundation Pistol"
+	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the HK VP9. This one is shaped for cyborgs. Chambered in rubber bullets."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "MK9"
+	modifystate = null
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	fire_delay = 2
+	self_recharge = 1
+	use_external_power = 0
+	has_safety = FALSE
+
+/obj/item/gun/energy/gun/mounted/p90/mounted
+	name = "P90 SMG"
+	desc = "A submachine gun sample of the 2010s, with a scope mounted on top. This one is shaped for cyborgs."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "p90"
+	modifystate = null
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/a57
+	force = 10
+	one_hand_penalty = 1
+	self_recharge = 1
+	use_external_power = 0
+	has_safety = FALSE
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
+		)
+
+/obj/item/gun/energy/gun/mounted/m16/mounted
+	name = "M16A2"
+	desc = "A Foundation-standard service rifle that takes 5.56x45mm straight magazines. Like many reliable firearms of old, the Foundation has found a use for them in the hands of Security Department operatives. This one is shaped for cyborgs."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "m16"
+	modifystate = null
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/rifle/m16
+	force = 10
+	one_hand_penalty = 1
+	self_recharge = 1
+	use_external_power = 0
+	has_safety = FALSE
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
+		)
+
 /obj/item/gun/energy/laser/secure
 	name = "laser carbine"
 	desc = "A Hephaestus Industries G40E carbine, designed to kill with concentrated energy blasts. Fitted with an NT1019 chip to make sure killcount is tracked appropriately."
