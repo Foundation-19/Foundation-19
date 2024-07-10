@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - admin: TrialGameMaster+ now get FBP whitelist bypass instead of only moderators
