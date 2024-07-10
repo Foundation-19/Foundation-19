@@ -21,9 +21,9 @@
 	sprites = list(
 		"Standard" = "surgeon",
 		"Advanced Droid" = "droid-medical",
-		"Android - Medical Intern" = "medinternrobot"
-		"Android - Nurse" = "nurserobot"
-		"Android - Doctor" = "doctorrobot"
+		"Android - Medical Intern" = "medinternrobot",
+		"Android - Nurse" = "nurserobot",
+		"Android - Doctor" = "doctorrobot",
 		"Android - Surgeon" = "surgeonrobot"
 		)
 	equipment = list(
