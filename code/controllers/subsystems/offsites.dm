@@ -111,8 +111,10 @@ SUBSYSTEM_DEF(offsites)
 		if("send_fax")
 			var/fax_target = params["target"]
 			var/id = params["id"]
-			if(!isnull(id) && !cur_os.find_and_verify_taker(id, admin))
-				return TRUE
+			if(!isnull(id))
+				var/output = cur_os.find_and_verify_taker(id, admin)
+				if(output && (output["override"] == FALSE))
+					return TRUE
 
 			if(fax_target in GLOB.alldepartments)
 				cur_os.send_fax(admin, fax_target)
@@ -122,8 +124,10 @@ SUBSYSTEM_DEF(offsites)
 		if("send_msg")
 			var/msg_target = params["target"]
 			var/id = params["id"]
-			if(!isnull(id) && !cur_os.find_and_verify_taker(id, admin))
-				return TRUE
+			if(!isnull(id))
+				var/output = cur_os.find_and_verify_taker(id, admin)
+				if(output && (output["override"] == FALSE))
+					return TRUE
 
 			var/mob/living/target
 			if(msg_target)
