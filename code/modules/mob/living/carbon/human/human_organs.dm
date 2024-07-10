@@ -11,8 +11,7 @@
 /mob/living/carbon/human/proc/recheck_bad_external_organs()
 	var/damage_this_tick = getToxLoss()
 	for(var/obj/item/organ/external/O in organs)
-		// pain adding is bandaid fix for adjustHalLoss issue causing infinite pain until punching/hurting self
-		damage_this_tick += O.burn_dam + O.brute_dam + O.pain
+		damage_this_tick += O.burn_dam + O.brute_dam
 
 	if(damage_this_tick > last_dam)
 		. = TRUE
