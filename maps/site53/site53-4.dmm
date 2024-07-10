@@ -413,6 +413,10 @@
 "bu" = (
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
+"bw" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_titanium,
+/area/site53/uez/guardcommanderoffice)
 "bx" = (
 /obj/structure/ladder,
 /turf/simulated/floor/plating,
@@ -447,7 +451,7 @@
 /area/site53/uez/commandpanicbunker)
 "bD" = (
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "bE" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -507,6 +511,17 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
+"bN" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/machinery/light/small/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/uez/nukesilo)
 "bO" = (
 /obj/structure/flora/bush,
 /turf/simulated/floor/exoplanet/snow,
@@ -586,6 +601,17 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/armory)
+"cb" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "cd" = (
 /obj/machinery/camera/network/entrance{
 	dir = 1;
@@ -620,6 +646,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"ch" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/machinery/light/small/red{
+	dir = 4
+	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/uez/nukesilo)
 "ci" = (
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -650,7 +690,13 @@
 /obj/item/implantcase/death_alarm,
 /obj/item/implanter,
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
+"cn" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/nukesilo)
 "co" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1077,6 +1123,14 @@
 	dir = 4
 	},
 /area/site53/uez/equipmentroom)
+"dG" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "dH" = (
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/structure/flora/pottedplant/floorleaf,
@@ -1158,7 +1212,7 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "dT" = (
 /obj/structure/curtain/medical,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
@@ -1194,7 +1248,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "ea" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 4
@@ -1450,7 +1504,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "eS" = (
 /obj/machinery/status_display{
 	pixel_y = -32
@@ -1737,6 +1791,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
+"fQ" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Control";
+	req_access = list("ACCESS_KEYCARD_AUTH");
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/nukesilo)
 "fR" = (
 /obj/machinery/door/airlock/command{
 	name = "Emergency Evacuation Tunnel";
@@ -1871,7 +1939,7 @@
 "gl" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "gm" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
@@ -2095,6 +2163,20 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
+"gY" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/uez/nukesilo)
 "gZ" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 9
@@ -2653,6 +2735,23 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
+"iO" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/nukesilo)
+"iQ" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "iR" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 8
@@ -2708,8 +2807,13 @@
 	name = "Guard Commander's Office";
 	req_access = list("ACCESS_SECURITY_LEVEL5")
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/small,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "je" = (
 /obj/machinery/light{
 	dir = 1
@@ -2733,7 +2837,7 @@
 "jj" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "jl" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
@@ -3700,7 +3804,7 @@
 /obj/item/folder/blue,
 /obj/item/folder/blue,
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "mh" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 8
@@ -3731,6 +3835,10 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/hallway)
+"mm" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_titanium,
+/area/site53/uez/nukesilo)
 "mn" = (
 /obj/structure/bed/chair/office/comfy/brown{
 	dir = 1
@@ -3803,6 +3911,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
+"mI" = (
+/obj/machinery/light/small/red{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uez/nukesilo)
 "mJ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -4060,7 +4174,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "oa" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -4113,6 +4227,13 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
+"ot" = (
+/obj/structure/window/phoronreinforced,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/nukesilo)
 "ov" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4243,6 +4364,12 @@
 	dir = 8
 	},
 /area/site53/uez/hallway)
+"oX" = (
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uez/nukesilo)
 "oY" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -4489,6 +4616,15 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
+"pX" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/uez/nukesilo)
 "qc" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor,
@@ -4554,7 +4690,7 @@
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "qp" = (
 /obj/machinery/papershredder,
 /obj/machinery/light{
@@ -4799,7 +4935,7 @@
 	pixel_x = 10
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "rw" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
@@ -5401,7 +5537,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "ug" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
@@ -5455,6 +5591,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
+"uq" = (
+/obj/structure/window/phoronreinforced,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/nukesilo)
 "ur" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/light{
@@ -5555,7 +5699,7 @@
 	pixel_y = 13
 	},
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "uK" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -5643,7 +5787,7 @@
 /area/site53/uez/commandpanicbunker)
 "vd" = (
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "vf" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 10
@@ -5860,6 +6004,14 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
+"wa" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/uez/guardcommanderoffice)
 "wb" = (
 /obj/structure/bed/chair/armchair/black{
 	dir = 1
@@ -5918,7 +6070,7 @@
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "ws" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/red/border{
@@ -6031,7 +6183,7 @@
 	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "wQ" = (
 /obj/structure/table/reinforced,
 /obj/item/device/taperecorder,
@@ -6096,6 +6248,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
+"xl" = (
+/obj/structure/window/phoronreinforced,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/nukesilo)
 "xn" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/dark/horizontal,
@@ -6220,6 +6376,15 @@
 	dir = 8
 	},
 /area/site53/uez/hallway)
+"xU" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/nukesilo)
 "xZ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -6311,8 +6476,17 @@
 /obj/item/ammo_magazine/scp/m16_mag,
 /obj/item/ammo_magazine/box/a556,
 /obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "yo" = (
 /obj/effect/floor_decal/corner/orange/three_quarters,
 /obj/item/device/radio/intercom{
@@ -6358,6 +6532,11 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2");
 	pixel_y = -25;
 	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
@@ -6757,6 +6936,14 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/commandpanicbunker)
+"Aq" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/uez/guardcommanderoffice)
 "Ar" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7011,7 +7198,7 @@
 /obj/item/device/flashlight/lamp,
 /obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "Br" = (
 /obj/structure/bed/chair/office/comfy/teal{
 	dir = 8
@@ -7140,7 +7327,7 @@
 	c_tag = "EZ Security Center Guard Commander's Office"
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "BW" = (
 /obj/machinery/light{
 	dir = 8
@@ -7157,7 +7344,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "BY" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7631,6 +7818,15 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
+"Ed" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/structure/sign/SecureArealv5mtf{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/hallway)
 "Ee" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/monotile,
@@ -7851,6 +8047,17 @@
 	},
 /turf/simulated/floor/carpet/blue3,
 /area/site53/uez/hallway)
+"Fk" = (
+/obj/machinery/door/airlock/vault{
+	name = "Warhead Silo A Access";
+	req_access = list("ACCESS_KEYCARD_AUTH")
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "Fl" = (
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 1
@@ -8070,6 +8277,14 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
+"Gg" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/uez/nukesilo)
 "Gh" = (
 /obj/machinery/status_display{
 	pixel_y = 31
@@ -8079,6 +8294,10 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
+"Gk" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/turf/simulated/floor/plating,
+/area/site53/uez/nukesilo)
 "Gl" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border{
@@ -8142,6 +8361,9 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
+"Gv" = (
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/nukesilo)
 "Gw" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -8159,6 +8381,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"Gz" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/nukesilo)
 "GB" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Administrative Bunker Access"
@@ -8250,6 +8479,10 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
+"GY" = (
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/nukesilo)
 "Hb" = (
 /obj/machinery/light,
 /turf/simulated/floor/exoplanet/grass,
@@ -8310,6 +8543,19 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
+"Hl" = (
+/obj/machinery/turretid/lethal{
+	dir = 4;
+	pixel_x = -32;
+	req_access = list("ACCESS_KEYCARD_AUTH")
+	},
+/obj/effect/floor_decal/corner/blue/mono,
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_KEYCARD_AUTH");
+	name = "Turret Control Access"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/nukesilo)
 "Hp" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -8593,6 +8839,9 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"ID" = (
+/turf/unsimulated/mask,
+/area/site53/uez/nukesilo)
 "IG" = (
 /obj/machinery/power/port_gen/pacman/mrs,
 /obj/structure/cable/green{
@@ -8693,7 +8942,7 @@
 	pixel_y = 13
 	},
 /turf/simulated/floor/wood/ebony,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "IX" = (
 /obj/machinery/camera/network/entrance{
 	dir = 1;
@@ -9144,7 +9393,7 @@
 	pixel_x = 25
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "Lc" = (
 /obj/machinery/door/window/brigdoor/westright{
 	name = "EC Rep's Office"
@@ -9157,6 +9406,16 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"Lh" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/nukesilo)
 "Lj" = (
 /obj/machinery/camera/network/entrance{
 	c_tag = "Administration Site Director's External Office"
@@ -9292,7 +9551,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "LP" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/combat,
@@ -9456,6 +9715,17 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
+"MC" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/uez/nukesilo)
 "MI" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9577,7 +9847,7 @@
 	name = "Office Privacy Shutters"
 	},
 /turf/simulated/floor,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "Nh" = (
 /obj/structure/bed/chair/office/comfy/teal{
 	dir = 1
@@ -9710,6 +9980,18 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
+"NS" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "NT" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -10503,6 +10785,11 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
 "Rk" = (
@@ -10551,6 +10838,13 @@
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/wood/maple,
 /area/site53/uez/hallway)
+"Rt" = (
+/obj/machinery/porta_turret/crescent{
+	name = "Warhead Silo Turret";
+	req_access = list("ACCESS_KEYCARD_AUTH")
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uez/nukesilo)
 "Ru" = (
 /obj/structure/closet/secure_closet/administration/ethicscommittee,
 /obj/item/implantcase/death_alarm,
@@ -10587,7 +10881,7 @@
 	icon_state = "guardcommspawn"
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "RC" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/carpet/orange,
@@ -11195,6 +11489,17 @@
 /obj/item/book/manual/scp/fra,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
+"Uu" = (
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "Uv" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -11300,6 +11605,15 @@
 /obj/structure/window/phoronreinforced,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
+"Vb" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/equipmentroom)
 "Vc" = (
 /obj/machinery/requests_console{
 	department = "Medical Director";
@@ -11498,6 +11812,17 @@
 "VF" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"VG" = (
+/obj/machinery/light/small/red{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "VK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -11550,6 +11875,15 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
+"VZ" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/phoronreinforced,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "Wb" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11559,6 +11893,18 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
+"Wc" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "nukesilolockdown";
+	name = "Warhead Silo A Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/structure/window/phoronreinforced,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "Wd" = (
 /obj/effect/floor_decal/corner/beige/bordercorner{
 	dir = 8
@@ -11671,6 +12017,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/commandpanicbunker)
+"WN" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/nukesilo)
 "WQ" = (
 /turf/simulated/mineral{
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
@@ -11719,6 +12071,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"WX" = (
+/obj/machinery/door/airlock/vault{
+	name = "Warhead Silo A Access";
+	req_access = list("ACCESS_KEYCARD_AUTH")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uez/nukesilo)
 "WZ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -12281,6 +12640,15 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
+"Zt" = (
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uez/nukesilo)
 "Zu" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -12376,7 +12744,7 @@
 	name = "Guard Commander's rubber stamp"
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/guardcommanderoffice)
 "ZE" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -38967,16 +39335,16 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 hk
 hk
 hk
@@ -39224,20 +39592,20 @@ hk
 hk
 hk
 hk
+mm
+Rt
+oX
+Rt
+mm
+mm
+Rt
+oX
+Rt
+mm
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-wX
+mm
+mm
+mm
 SP
 QC
 DK
@@ -39475,27 +39843,27 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-SP
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+Gk
+Gk
+Gk
+mm
+mm
+Gk
+Gk
+Gk
+mm
+mm
+mm
+Hl
+mm
+mm
 nO
 Hk
 mP
@@ -39732,28 +40100,28 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-SP
-je
+mm
+ID
+ID
+ID
+ID
+mm
+Uu
+Gg
+xU
+WN
+cb
+VZ
+WN
+ot
+WN
+pX
+mm
+gY
+WN
+pX
+mm
+Ed
 de
 fa
 SP
@@ -39989,27 +40357,27 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-SP
+mm
+ID
+ID
+ID
+ID
+ID
+dG
+Zt
+iO
+iO
+Wc
+NS
+xl
+xl
+xl
+GY
+Fk
+cn
+Gv
+GY
+WX
 Ue
 de
 Kj
@@ -40246,27 +40614,27 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-SP
+mm
+ID
+ID
+ID
+ID
+mm
+VG
+MC
+Gz
+Lh
+VZ
+cb
+uq
+Gz
+uq
+bN
+mm
+ch
+fQ
+bN
+mm
 fB
 de
 LN
@@ -40503,27 +40871,27 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-SP
-SP
-SP
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+Gk
+Gk
+Gk
+mm
+mm
+Gk
+Gk
+Gk
+mm
+mm
+mm
+mm
+mm
+mm
 je
 de
 fa
@@ -40766,16 +41134,16 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
-hk
+mm
+Rt
+mI
+Rt
+mm
+mm
+Rt
+mI
+Rt
+mm
 hk
 hk
 SP
@@ -41023,16 +41391,16 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
-hk
-hk
-SP
-SP
-SP
-SP
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
+mm
 SP
 SP
 SP
@@ -50551,11 +50919,11 @@ AZ
 AZ
 AZ
 dS
-uP
+bw
 dS
-uP
+bw
 dw
-Ah
+Vb
 Tp
 Ps
 fe
@@ -50803,7 +51171,7 @@ SP
 SP
 SP
 SP
-uP
+bw
 jj
 IV
 yn
@@ -50812,7 +51180,7 @@ cl
 uJ
 Nd
 Wu
-Ah
+Vb
 CR
 CR
 CR
@@ -51063,12 +51431,12 @@ hp
 Yl
 vd
 vd
-vd
-vd
-vd
-vd
+Aq
+wa
+wa
+wa
 jd
-Wu
+iQ
 yt
 CR
 Nv
@@ -51317,7 +51685,7 @@ SP
 SP
 SP
 SP
-uP
+bw
 qo
 vd
 vd
@@ -51574,7 +51942,7 @@ hk
 hk
 hk
 hk
-uP
+bw
 gl
 bD
 BX
@@ -51831,7 +52199,7 @@ hk
 hk
 hk
 hk
-uP
+bw
 eR
 bD
 bD
@@ -52088,14 +52456,14 @@ hk
 hk
 hk
 hk
-uP
+bw
 wP
 nZ
 Lb
 BV
 LO
 rv
-uP
+bw
 eN
 da
 CR
@@ -52345,14 +52713,14 @@ hk
 hk
 hk
 hk
-uP
-uP
-uP
-uP
-uP
-uP
-uP
-uP
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
 uP
 uP
 CR

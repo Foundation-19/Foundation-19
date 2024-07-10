@@ -74,9 +74,6 @@
 	areaType = list(/area/site53/engineering)
 	areaNotType = list(
 		/area/site53/engineering/maintenance,
-		/area/site53/engineering/selfdestruct,
-		/area/site53/engineering/lowernukeladders,
-		/area/site53/engineering/uppernukeladders
 	)
 
 /datum/prisonbreakarea/medbay

@@ -118,6 +118,22 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
+/area/turbolift/site53/nukeadmin
+	name = "lift (Administration Sector)"
+	lift_floor_label = "Administration Sector"
+	lift_floor_name = "Administration Sector"
+	lift_announce_str = "Arriving at Administration Sector."
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/turbolift/site53/nukesilo
+	name = "lift (Warhead Silo A)"
+	lift_floor_label = "Warhead Silo A"
+	lift_floor_name = "Warhead Silo A"
+	lift_announce_str = "Arriving at Warhead Silo A."
+	requires_power = 0
+	dynamic_lighting = 1
+
 // SITE 53 TRAM AREA'S
 
 /area/site53/tram/ci
@@ -627,6 +643,18 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
 
+/area/site53/uez/sitedirectoroffice
+	name = "\improper Site Director's Office"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
+/area/site53/uez/uppercommandoffices
+	name = "\improper Upper Command Offices"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
 /area/site53/uez/goirepoffice
 	name = "\improper GoI Representative's Office"
 	sound_env = MEDIUM_SOFTFLOOR
@@ -640,10 +668,17 @@
 	icon_state = "head_quarters"
 
 /area/site53/uez/hallway
-	name = "\improper Entrance Zone"
+	name = "\improper Administration Sector"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
+
+/area/site53/uez/nukesilo
+	name = "\improper Warhead Silo A"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallC1"
+	sound_env = LARGE_ENCLOSED
+	requires_power = 0
 
 /area/site53/uez/janitor
 	name = "\improper Janitor's Office"
@@ -660,7 +695,7 @@
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/uez/equipmentroom
-	name = "EZ Equipment Room"
+	name = "EZ Security Center"
 	icon_state = "security"
 
 /area/site53/uez/senioragentoffice
@@ -668,7 +703,11 @@
 	icon_state = "security"
 
 /area/site53/uez/armory
-	name = "EZ Armory"
+	name = "EZ Security Armory"
+	icon_state = "security"
+
+/area/site53/uez/guardcommanderoffice
+	name = "\improper Guard Commander's Office"
 	icon_state = "security"
 
 /area/site53/uez/bridge
@@ -835,30 +874,6 @@
 /area/site53/llcz/mine/unexplored
 	name = "Mine"
 	icon_state = "unexplored"
-
-/area/site53/engineering/lowernukeladders
-	name = "\improper Lower Self Destruct Ladders"
-	icon_state = "nuke_storage"
-
-/area/site53/engineering/uppernukeladders
-	name = "\improper Upper Self Destruct Ladders"
-	icon_state = "nuke_storage"
-
-/area/site53/engineering/selfdestruct
-	name = "\improper Self-Destruct Room"
-	icon_state = "nuke_storage"
-
-/area/site53/engineering/maintenance/lowerselfdestruct
-	name = "Lower Self Destruct Maintenance"
-	icon_state = "SolarcontrolS"
-	sound_env = SMALL_ENCLOSED
-	turf_initializer = /decl/turf_initializer/maintenance
-
-/area/site53/engineering/maintenance/upperselfdestruct
-	name = "Upper Self Destruct Maintenance"
-	icon_state = "SolarcontrolS"
-	sound_env = SMALL_ENCLOSED
-	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/uhcz/scp457containment
 	name = "\improper SCP-457 Containment Chamber"
