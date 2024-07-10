@@ -1,0 +1,6 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - admin: Advanced proccall on global proc now works instead of runtiming
+  - bugfix: IsBanned query is properly garbage collected
+  - bugfix: Tear gas no longer causes infinite pain slowdown
