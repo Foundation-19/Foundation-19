@@ -50,7 +50,7 @@ jobs:
       - name: Run Tests
         env:
           TEST: CODE
-        run: test/run-test.sh
+        run: bash test/run-test.sh
       - name: Run Failure Webhook
         env:
           JOB_STATUS: ${{ job.status }}
@@ -78,7 +78,7 @@ jobs:
         env:
           TEST: MAP
           MAP_PATH: ${{ matrix.map_path }}
-        run: test/run-test.sh
+        run: bash test/run-test.sh
       - name: Run Failure Webhook
         env:
           JOB_STATUS: ${{ job.status }}
