@@ -1,6 +1,8 @@
-import { Window } from '../layouts';
+import { Fragment } from 'inferno';
+
 import { useBackend } from '../backend';
 import { Box, Section, Table } from '../components';
+import { Window } from '../layouts';
 
 export const PersonalGoals = (props, context) => {
   const { act, data } = useBackend(context);
@@ -8,19 +10,17 @@ export const PersonalGoals = (props, context) => {
   const categories_map = new Map(
     categories_values.map((value, index) => {
       return [categories_keys[index], value];
-    })
+    }),
   );
   return (
     <Window title="Personal Goals" width={675} height={700}>
       <Window.Content scrollable>
         <Section>
-          {categories_values.map((value, index) => {
-            return (
-              <Fragment key={categories_keys[index]}>
-                <GoalCategory goals={value} catname={categories_keys[index]} />
-              </Fragment>
-            );
-          })}
+          {categories_values.map((value, index) => (
+            <Fragment key={categories_keys[index]}>
+              <GoalCategory goals={value} catname={categories_keys[index]} />
+            </Fragment>
+          ))}
         </Section>
       </Window.Content>
     </Window>

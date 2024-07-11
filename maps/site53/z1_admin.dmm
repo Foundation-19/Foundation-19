@@ -2362,7 +2362,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -4079,6 +4079,7 @@
 	},
 /obj/structure/closet/secure_closet/guard/epsilon11agent,
 /obj/machinery/light,
+/obj/item/clothing/under/mtf/epsilon11,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "mf" = (
@@ -4486,7 +4487,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -6270,6 +6271,26 @@
 /obj/item/clothing/head/helmet/mtftactical,
 /obj/item/clothing/head/helmet/mtftactical,
 /obj/item/clothing/head/helmet/mtftactical,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/storage/backpack/rucksack,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/clothing/mask/gas/mtf,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
@@ -7423,7 +7444,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -10826,6 +10847,7 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
+/obj/item/clothing/under/mtf/epsilon11,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "BA" = (
@@ -13347,6 +13369,7 @@
 	color = "#E5511B"
 	},
 /obj/structure/closet/secure_closet/guard/epsilon11agent,
+/obj/item/clothing/under/mtf/epsilon11,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "Ig" = (
@@ -13441,9 +13464,6 @@
 "Is" = (
 /obj/machinery/light{
 	dir = 1
-	},
-/mob/living/exosuit/premade/heavy/merc{
-	name = "Mk. III Ultra-Heavy Engagement Chassis"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/goc)
@@ -16902,7 +16922,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
 /obj/item/clothing/glasses/thermal,
@@ -17526,7 +17546,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -17638,8 +17658,8 @@
 "Sh" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter Control Console";
-	req_access = list("ACCESS_MTF");
-	shuttle_tag = "MTF Helicopter"
+	shuttle_tag = "Mobile Task Force Helicopter";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
@@ -18019,7 +18039,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -18246,7 +18266,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,
@@ -18829,6 +18849,8 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
+/obj/item/clothing/under/mtf/epsilon11,
+/obj/item/clothing/head/beret/mtf,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "VG" = (
@@ -19326,7 +19348,7 @@
 	icon_state = "agent-locked";
 	name = "Alpha-1 Gear Closet"
 	},
-/obj/item/clothing/mask/gas/alpha,
+/obj/item/clothing/mask/gas/security,
 /obj/item/clothing/gloves/tactical/alpha,
 /obj/item/clothing/under/scp/alpha,
 /obj/item/clothing/head/beret/scp/alpha,

@@ -1,4 +1,5 @@
 import { Component } from 'inferno';
+
 import { KeyEvent } from '../events';
 import { listenForKeyEvents } from '../hotkeys';
 
