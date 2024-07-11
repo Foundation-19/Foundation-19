@@ -710,7 +710,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A teal ID. Looks cool."
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
-	job_access_type = /datum/job/ltofficerez
+	job_access_type = /datum/job/invesigation_agent
 	class = CLASS_B
 
 

@@ -700,15 +700,14 @@
 	department_flag = COM|SEC|ECZ
 	total_positions = 6 // A rough estimate of how many IA you can get if you compacted them
 	spawn_positions = 6
-	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</b></big>"
-	supervisors = "the Guard Commander"
+	supervisors = "Internal Tribunal Department Officer & Ethic Committee Liason"
 	economic_power = 4
 	requirements = list(EXP_TYPE_COMMAND = 720, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 60)
 	minimal_player_age = 10
 	ideal_character_age = 27
 	outfit_type = /decl/hierarchy/outfit/job/security/investigation_agent
 	class = CLASS_B
-	hud_icon = "hudezcommander"
+	hud_icon = "hudbridgeofficer"
 
 	access = list(
 		ACCESS_SEC_COMMS,
@@ -720,6 +719,7 @@
 		ACCESS_ADMIN_LVL2,
 		ACCESS_ADMIN_LVL3,
 		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_ENGINEERING_LVL1,
@@ -748,6 +748,6 @@
 	skill_points = 25
 
 	roleplay_difficulty = "Medium - Hard"
-	mechanical_difficulty = "Medium"
-	duties = "Manage the Entrance Zone. Ensure safety of all administrative staff, especially during containment breaches."
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Ensure Foundation protocols are followed. Keep security in line."
 
