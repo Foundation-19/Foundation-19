@@ -1,0 +1,5 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Species whitelist SQL edition now actually functions
+  - bugfix: Species list does not have duplicated human
