@@ -41,10 +41,21 @@
 	else
 		icon_state = "[initial(icon_state)]-e"
 
+/obj/item/gun/projectile/revolver/mateba
+	name = "mateba"
+	desc = "Standard issue Foundation revolver based on the Mateba Unica. Chambered in .44 Magnum"
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "mateba"
+	caliber = ".44"
+	fire_delay = 6
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/pistol/a50
+	handle_casings = CYCLE_CASINGS
+
 
 /obj/item/gun/projectile/revolver/mateba/bigiron
 	name = "Big Iron"
-	desc = "A Mateba Unica chambered in .44 Magnum, it has multiple engravings of fine art along it's barrel, on the right side a fine engraving reads "I fought the law and the law won", while the left side has nineteen notches and one more. The grip has a precisely cut SCPF Security Department logo and below if "Marty Robbins is finely written."
+	desc = "A Mateba Unica chambered in .44 Magnum, it has multiple engravings of fine art along it's barrel, on the right side a fine engraving reads "I fought the law and the law won", while the left side has nineteen notches and one more. The grip has a precisely cut SCPF Security Department logo and below if "Marty Robbins" is finely written."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "mateba"
 	caliber = ".44"
