@@ -32,6 +32,10 @@ libprof.so
 # https://gist.github.com/Mothblocks/db5462aa84d7d6b1d1b1276b820f62da
 Tracy.exe
 
+
+# Ignore compiled linux libs in the root folder, e.g. librust_g.so
+/*.so
+
 # VisualStudioCode
 *.code-workspace
 

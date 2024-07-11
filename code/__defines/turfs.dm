@@ -21,7 +21,7 @@
 
 //supposedly the fastest way to do this according to https://gist.github.com/Giacom/be635398926bb463b42a
 ///Returns a list of turf in a square
-#define RANGE_TURFS(RADIUS, CENTER) \
+#define RANGE_TURFS(CENTER, RADIUS) \
 	RECT_TURFS(RADIUS, RADIUS, CENTER)
 
 #define RECT_TURFS(H_RADIUS, V_RADIUS, CENTER) \

@@ -13,11 +13,6 @@
  * SQL sanitization
  */
 
-// Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
-/proc/sanitizeSQL(t as text)
-	var/sqltext = dbcon.Quote(t);
-	return copytext_char(sqltext, 2, length(sqltext));//Quote() adds quotes around input, we already do that
-
 // Adds a prefix to the table parameter, used in SQL to unify all tables under a common prefix, i.e. "tegu__[tablename]"
 /proc/format_table_name(table as text)
 	return "" + table // TODO: Remove hardcoded table prefix, make config entry instead

@@ -12,7 +12,7 @@
 	explosion_block = 1
 
 	var/damage_overlay = 0
-	var/global/damage_overlays[16]
+	var/static/damage_overlays[16]
 	var/active
 	var/can_open = 0
 	var/material/material
@@ -25,14 +25,17 @@
 	var/floor_type = /turf/simulated/floor/plating //turf it leaves after destruction
 	var/paint_color
 	var/stripe_color
-	var/global/list/wall_stripe_cache = list()
-	var/list/blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall/wood, /turf/simulated/wall/walnut, /turf/simulated/wall/maple, /turf/simulated/wall/mahogany, /turf/simulated/wall/ebony)
-	var/list/blend_objects = list(/obj/machinery/door, /obj/structure/wall_frame, /obj/structure/grille, /obj/structure/window/reinforced/full, /obj/structure/window/reinforced/polarized/full, /obj/structure/window/shuttle, ,/obj/structure/window/phoronbasic/full, /obj/structure/window/phoronreinforced/full) // Objects which to blend with
-	var/list/noblend_objects = list(/obj/machinery/door/window) //Objects to avoid blending with (such as children of listed blend objects.)
+	var/static/list/wall_stripe_cache = list()
+	var/list/blend_turfs // Turfs which to blend with
+	var/list/blend_objects // Objects which to blend with
+	var/list/noblend_objects //Objects to avoid blending with (such as children of listed blend objects.)
 	var/dismantling = FALSE
 
-/turf/simulated/wall/New(newloc, materialtype, rmaterialtype)
-	..(newloc)
+/turf/simulated/wall/Initialize(mapload, materialtype, rmaterialtype)
+	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall/wood, /turf/simulated/wall/walnut, /turf/simulated/wall/maple, /turf/simulated/wall/mahogany, /turf/simulated/wall/ebony)
+	blend_objects = list(/obj/machinery/door, /obj/structure/wall_frame, /obj/structure/grille, /obj/structure/window/reinforced/full, /obj/structure/window/reinforced/polarized/full, /obj/structure/window/shuttle, ,/obj/structure/window/phoronbasic/full, /obj/structure/window/phoronreinforced/full)
+	noblend_objects = list(/obj/machinery/door/window)
+
 	icon_state = "blank"
 	if(!materialtype)
 		materialtype = DEFAULT_WALL_MATERIAL
@@ -42,7 +45,6 @@
 	update_material()
 	hitsound = material.hitsound
 
-/turf/simulated/wall/Initialize()
 	set_extension(src, /datum/extension/penetration/proc_call, PROC_REF(CheckPenetration))
 	START_PROCESSING(SSturf, src) //Used for radiation.
 	. = ..()
@@ -284,9 +286,9 @@
 		spawn(2)
 			new /obj/structure/girder(src)
 			src.ChangeTurf(/turf/simulated/floor)
-			for(var/turf/simulated/wall/W in range(3,src))
+			for(var/turf/simulated/wall/W in RANGE_TURFS(src, 3))
 				W.burn((temperature/4))
-			for(var/obj/machinery/door/airlock/phoron/D in range(3,src))
+			for(var/obj/machinery/door/airlock/phoron/D in orange(3,src))
 				D.ignite(temperature/4)
 
 /turf/simulated/wall/get_color()

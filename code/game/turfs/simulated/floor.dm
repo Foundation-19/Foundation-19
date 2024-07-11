@@ -33,8 +33,8 @@
 /turf/simulated/floor/protects_atom(atom/A)
 	return (A.level <= 1 && !is_plating()) || ..()
 
-/turf/simulated/floor/New(newloc, floortype)
-	..(newloc)
+/turf/simulated/floor/Initialize(mapload, floortype)
+	. = ..()
 	if(!floortype && initial_flooring)
 		floortype = initial_flooring
 	if(floortype)

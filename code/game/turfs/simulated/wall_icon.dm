@@ -54,12 +54,14 @@
 		add_overlay(I)
 		return
 
-	for(var/i = 1 to 4)
-		I = image('icons/turf/wall_masks.dmi', "[material.icon_base][wall_connections[i]]", dir = 1<<(i-1))
+	var/conn_iter = 0
+	for(var/connection in wall_connections)
+		conn_iter++
+		I = image('icons/turf/wall_masks.dmi', "[material.icon_base][connection]", dir = 1<<(conn_iter-1))
 		I.color = base_color
 		add_overlay(I)
-		if(other_connections[i] != "0")
-			I = image('icons/turf/wall_masks.dmi', "[material.icon_base]_other[wall_connections[i]]", dir = 1<<(i-1))
+		if(other_connections[conn_iter] != "0")
+			I = image('icons/turf/wall_masks.dmi', "[material.icon_base]_other[connection]", dir = 1<<(conn_iter-1))
 			I.color = base_color
 			add_overlay(I)
 
@@ -116,7 +118,7 @@
 	var/list/wall_dirs = list()
 	var/list/other_dirs = list()
 
-	for(var/turf/simulated/wall/W in orange(src, 1))
+	for(var/turf/simulated/wall/W in RANGE_TURFS(src, 1))
 		switch(can_join_with(W))
 			if(0)
 				continue
@@ -129,7 +131,7 @@
 			W.update_connections()
 			W.update_icon()
 
-	for(var/turf/T in orange(src, 1))
+	for(var/turf/T as anything in RANGE_TURFS(src, 1))
 		var/success = 0
 		for(var/obj/O in T)
 			for(var/b_type in blend_objects)
