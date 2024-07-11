@@ -251,8 +251,8 @@
 	department = "Command"
 	selection_color = "#2f2f7f"
 	department_flag = COM|SEC
-	total_positions = 6 // A rough estimate of how many IA you can get if you compacted them
-	spawn_positions = 6
+	total_positions = 3 // A rough estimate of how many IA you can get if you compacted them
+	spawn_positions = 3
 	supervisors = "Internal Tribunal Department Officer & Ethic Committee Liason"
 	economic_power = 4
 	requirements = list(EXP_TYPE_COMMAND = 720, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 60)
