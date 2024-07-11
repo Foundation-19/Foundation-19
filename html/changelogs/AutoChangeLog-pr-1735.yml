@@ -1,4 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - code_imp: Major TGUI improvements and updates ported over from tgstation

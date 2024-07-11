@@ -8,8 +8,8 @@
 	grab_slowdown = 5
 
 	point_blank_mult = 2
-	restrains = 1
-	can_throw = 1
+	restrains = TRUE
+	can_throw = TRUE
 
 	icon_state = "reinforce1"
 
@@ -19,7 +19,4 @@
 	return AttemptCure(G)
 
 /datum/grab/plague_doctor/aggressive/on_hit_harm(obj/item/grab/normal/G)
-	return AttemptCure(G)
-
-/datum/grab/plague_doctor/aggressive/upgrade(obj/item/grab/G)
 	return AttemptCure(G)
