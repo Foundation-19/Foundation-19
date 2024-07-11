@@ -17,8 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Dreamchecker
-        run: scripts/install-spaceman-dmm.sh dreamchecker
+      - name: Install Tools
+        run: |
+          pip3 install setuptools
+          bash tools/ci/install_node.sh
+          bash tools/ci/install_spaceman_dmm.sh dreamchecker
+          tools/bootstrap/python -c ''
       - name: Run Dreamchecker
         run: ~/dreamchecker 2>&1 | bash tools/ci/annotate_dm.sh
       - name: Run Failure Webhook
