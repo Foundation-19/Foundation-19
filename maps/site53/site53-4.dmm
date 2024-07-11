@@ -3698,10 +3698,13 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
 "mg" = (
-/obj/structure/table/woodentable_reinforced/ebony,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
+/obj/structure/dogbed{
+	name = "Mateba's bed"
+	},
+/mob/living/simple_animal/friendly/corgi{
+	dir = 4;
+	name = "Mateba"
+	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/equipmentroom)
 "mh" = (
@@ -7457,6 +7460,18 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/green,
+/mob/living/simple_animal/friendly{
+	desc = "The ITD Officer's pet gator. Looks like nobody can detain him now.";
+	name = "Steppy";
+	icon_dead = "gator_dead";
+	icon_living = "gator_cool";
+	icon_state = "gator_cool";
+	gender = "male";
+	dir = 4
+	},
+/obj/structure/dogbed{
+	name = "Steppy's bed"
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/internaltribunal)
 "Dl" = (
@@ -9511,10 +9526,6 @@
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "MQ" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
@@ -9523,6 +9534,18 @@
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
+	},
+/obj/structure/dogbed{
+	name = "Paperwork's bed"
+	},
+/mob/living/simple_animal/friendly{
+	desc = "The EC Liaison's pet puppy. Wait.. What is that thing?!";
+	name = "Paperwork";
+	icon_dead = "void_puppy_dead";
+	icon_living = "void_puppy";
+	icon_state = "void_puppy";
+	gender = "male";
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
@@ -11157,6 +11180,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"Ub" = (
+/obj/structure/dogbed{
+	name = "Sam's bed"
+	},
+/mob/living/simple_animal/friendly{
+	desc = "The Research Director's pet... Ant? Wait.. What? What have they been up to?";
+	name = "Sam";
+	icon_dead = "ant_dead";
+	icon_living = "ant";
+	icon_state = "ant";
+	gender = "male"
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/uez/hallway)
 "Ue" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
@@ -11812,6 +11849,13 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Xx" = (
+/obj/structure/dogbed{
+	name = "Runtime's bed"
+	},
+/mob/living/simple_animal/friendly/cat/fluff/Runtime,
+/turf/simulated/floor/wood/maple,
+/area/site53/uez/hallway)
 "Xz" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -40288,7 +40332,7 @@ SP
 Ue
 LN
 hi
-dh
+Xx
 dh
 Rq
 Oe
@@ -41830,7 +41874,7 @@ Ca
 Ue
 LN
 Ni
-Kp
+Ub
 Kp
 Jq
 lP
