@@ -134,3 +134,22 @@
 		/obj/item/gun/energy/ionrifle = 1
 	)
 
+// Tribunal Vendor
+/obj/machinery/vending/weaponry/internal_operative
+	name = "\improper Tribunal VendOMat"
+	desc = "An automated gun storage device that can dispense guns on demand, this one was designed for those seeking to dispense justice."
+	icon_state = "weaponry"
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	products = list(
+		/obj/item/gun/projectile/automatic/scp/p90 = 6,
+		/obj/item/gun/projectile/pistol/usp45 = 4,
+		/obj/item/ammo_magazine/box/a57/ap = 6,
+		/obj/item/ammo_magazine/box/a57/hp = 6,
+		/obj/item/ammo_magazine/box/a45 = 8,
+		/obj/item/ammo_magazine/scp/usp45 = 12,
+		/obj/item/ammo_magazine/box/a357 = 6,
+		/obj/item/ammo_magazine/scp/p90_mag/ap = 24,
+		/obj/item/ammo_magazine/scp/p90_mag/hp = 24,
+		/obj/item/gun/energy/stunrevolver = 6,
+	)
+

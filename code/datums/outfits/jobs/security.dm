@@ -309,8 +309,25 @@
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1, /obj/item/crowbar/emergency_forcing_tool = 1, /obj/item/gun/energy/stunrevolver = 1)
 
+/decl/hierarchy/outfit/job/security/investigation_operative
+	name = OUTFIT_JOB_NAME("Internal Tribunal Department Operative")
+	uniform = /obj/item/clothing/under/det/grey
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/zcseclvl4ia
+	l_ear = /obj/item/device/radio/headset/heads/cos
+	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/handcuffs = 1)
+	belt = /obj/item/storage/belt/holster/security/fullusp45
+	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/tactical/scp
+
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/crowbar/emergency_forcing_tool = 1, /obj/item/gun/energy/stunrevolver = 1, /obj/item/ammo_magazine/box/a45 = 1)
 /* Non-SCP security outfits */
 
 /decl/hierarchy/outfit/job/security/officer
