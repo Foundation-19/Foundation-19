@@ -42,15 +42,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Dependencies
         run: sudo apt-get install -y uchardet
-      - name: Install rust-g and BYOND
+      - name: Run Tests
+        env:
+          TEST: CODE
         run: |
           bash tools/ci/install_byond.sh
           bash tools/ci/install_rust_g.sh
           source $HOME/BYOND/byond/bin/byondsetup
-      - name: Run Tests
-        env:
-          TEST: CODE
-        run: bash test/run-test.sh
+          bash test/run-test.sh
       - name: Run Failure Webhook
         env:
           JOB_STATUS: ${{ job.status }}
@@ -69,16 +68,15 @@ jobs:
         map_path: [site53]
     steps:
       - uses: actions/checkout@v4
-      - name: Install rust-g and BYOND
-        run: |
-          bash tools/ci/install_byond.sh
-          bash tools/ci/install_rust_g.sh
-          source $HOME/BYOND/byond/bin/byondsetup
       - name: Run Tests
         env:
           TEST: MAP
           MAP_PATH: ${{ matrix.map_path }}
-        run: bash test/run-test.sh
+        run: |
+          bash tools/ci/install_byond.sh
+          bash tools/ci/install_rust_g.sh
+          source $HOME/BYOND/byond/bin/byondsetup
+          bash test/run-test.sh
       - name: Run Failure Webhook
         env:
           JOB_STATUS: ${{ job.status }}
