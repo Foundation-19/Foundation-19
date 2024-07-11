@@ -9,19 +9,14 @@ on:
       - dev
 env:
   BYOND_MAJOR: "515"
-  BYOND_MINOR: "1623"
+  BYOND_MINOR: "1641"
   SPACEMAN_DMM_VERSION: suite-1.9
 
 jobs:
   DreamChecker:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
-        with:
-          path: $HOME/spaceman_dmm/$SPACEMAN_DMM_VERSION
-          key: ${{ runner.os }}-spacemandmm-${{ env.SPACEMAN_DMM_VERSION }}
       - name: Install Dreamchecker
         run: scripts/install-spaceman-dmm.sh dreamchecker
       - name: Run Dreamchecker
@@ -43,18 +38,14 @@ jobs:
           chmod +x send.sh
           ./send.sh failure $WEBHOOK_URL
   Code:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
-        with:
-          path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
-          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
       - name: Install Dependencies
         run: sudo apt-get install -y uchardet
-      - name: Install rust-g
+      - name: Install rust-g and BYOND
         run: |
+          bash tools/ci/install_byond.sh
           bash tools/ci/install_rust_g.sh
       - name: Run Tests
         env:
@@ -72,19 +63,15 @@ jobs:
           chmod +x send.sh
           ./send.sh failure $WEBHOOK_URL
   Maps:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         map_path: [site53]
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
-        with:
-          path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
-          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
-      - name: Install rust-g
+      - name: Install rust-g and BYOND
         run: |
+          bash tools/ci/install_byond.sh
           bash tools/ci/install_rust_g.sh
       - name: Run Tests
         env:
