@@ -1160,11 +1160,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
 "dL" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/structure/bed/chair{
 	dir = 1
 	},
@@ -1997,11 +1992,6 @@
 	},
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
@@ -5395,11 +5385,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
 "te" = (
@@ -7783,11 +7768,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
 "Dg" = (
@@ -9979,17 +9959,6 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
-"MI" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/uez/equipmentroom)
 "ML" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -10272,17 +10241,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/upper_surface)
-"NY" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/uez/equipmentroom)
 "NZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -10619,11 +10577,6 @@
 /obj/machinery/door/airlock/glass/security{
 	name = "EZ Lower Hall";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
@@ -12068,11 +12021,6 @@
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -49858,7 +49806,7 @@ VF
 VF
 VF
 VF
-in
+VF
 Oq
 uP
 mo
@@ -50115,7 +50063,7 @@ VF
 eV
 xe
 xe
-MI
+dL
 Ah
 YO
 FQ
@@ -50372,7 +50320,7 @@ VF
 eV
 xe
 xe
-MI
+dL
 gk
 uP
 YO
@@ -50629,7 +50577,7 @@ VF
 eV
 xe
 xe
-MI
+dL
 Ah
 YO
 HG
@@ -50887,11 +50835,11 @@ eV
 xe
 xe
 dL
-fc
+Ah
 Pt
-od
-tj
-tj
+YB
+VF
+VF
 NA
 VF
 VF
@@ -51900,7 +51848,7 @@ LF
 Ug
 eD
 uP
-NY
+Wu
 rR
 bW
 uP
