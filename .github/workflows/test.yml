@@ -42,6 +42,7 @@ jobs:
         run: |
           bash tools/ci/install_byond.sh
           bash tools/ci/install_rust_g.sh
+          source $HOME/BYOND/byond/bin/byondsetup
       - name: Run Tests
         env:
           TEST: CODE
@@ -68,6 +69,7 @@ jobs:
         run: |
           bash tools/ci/install_byond.sh
           bash tools/ci/install_rust_g.sh
+          source $HOME/BYOND/byond/bin/byondsetup
       - name: Run Tests
         env:
           TEST: MAP
