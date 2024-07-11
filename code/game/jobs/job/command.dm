@@ -245,6 +245,67 @@
 	mechanical_difficulty = "Easy"
 	duties = "Ensure that proper ethics is upheld, both with the treatment of personnel and of SCPs. Communicate with the Ethics Committee. Keep security in line."
 
+// IO  && IA Moved into a singular role
+/datum/job/invesigation_agent
+	title = "Internal Tribunal Department Agent"
+	department = "Command"
+	selection_color = "#2f2f7f"
+	department_flag = COM|SEC
+	total_positions = 6 // A rough estimate of how many IA you can get if you compacted them
+	spawn_positions = 6
+	supervisors = "Internal Tribunal Department Officer & Ethic Committee Liason"
+	economic_power = 4
+	requirements = list(EXP_TYPE_COMMAND = 720, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 60)
+	minimal_player_age = 10
+	ideal_character_age = 27
+	alt_titles = list("Internal Tribunal Departmen Operative" = /decl/hierarchy/outfit/job/security/investigation_operative)
+	outfit_type = /decl/hierarchy/outfit/job/security/investigation_agent
+	class = CLASS_B
+	hud_icon = "hudbridgeofficer"
+
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_MEDICAL_LVL4,
+		ACCESS_CHAPEL_OFFICE
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMPUTER    = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_MASTER,
+	    SKILL_WEAPONS     = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
+	skill_points = 25
+
+	roleplay_difficulty = "Hard - Very Hard"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Ensure Foundation protocols are followed. Keep security in line. Protect the Ethics Committee Liason and Tribunal Officer"
+
+
 /datum/job/goirep
 	title = "Global Occult Coalition Representative"
 	department = "Command"
