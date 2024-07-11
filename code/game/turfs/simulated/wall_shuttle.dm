@@ -19,7 +19,7 @@
 	var/image/corner_overlay
 
 /turf/simulated/shuttle/wall/corner/Initialize()
-	..()
+	. = ..()
 	reset_base_appearance()
 	reset_overlay()
 

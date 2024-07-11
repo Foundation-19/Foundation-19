@@ -1,2 +1,2 @@
 /turf/simulated/wall/elevator/Initialize()
-	..(MATERIAL_ELEVATORIUM)
+	. = ..(MATERIAL_ELEVATORIUM)

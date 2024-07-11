@@ -220,11 +220,6 @@ function run_byond_tests {
     else msg "configured map is '$MAP_PATH'"
     fi
     cp config/example/* config/
-    if [[ "$CI" == "true" ]]; then
-        msg "installing BYOND"
-        ./install-byond.sh || exit 1
-        source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
-    fi
     #run_test_ci "check globals build" "python3 tools/GenerateGlobalVarAccess/gen_globals.py baystation12.dme code/_helpers/global_access.dm"
     #run_test "check globals unchanged" "md5sum -c - <<< '867473a8a8375e5b73b8bd0d58433c2a *code/_helpers/global_access.dm'" whatever
     run_test "build map unit tests" "tools/build/build --ci dm -DUNIT_TEST -M$MAP_PATH | tee build_log.txt"
