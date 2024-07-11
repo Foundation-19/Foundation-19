@@ -279,17 +279,14 @@
 /turf/simulated/floor,
 /area/supply/dock)
 "bc" = (
-/obj/structure/railing/mapped{
-	dir = 6
-	},
-/obj/structure/flora/pottedplant/minitree{
-	pixel_x = -2;
-	pixel_y = 8
-	},
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "be" = (
 /obj/structure/bed/chair{
@@ -584,7 +581,6 @@
 	},
 /area/centcom/goc)
 "bT" = (
-/obj/machinery/light,
 /obj/structure/closet/crate/internals,
 /obj/item/tank/emergency/oxygen,
 /obj/item/tank/emergency/oxygen,
@@ -600,7 +596,13 @@
 /obj/item/clothing/mask/breath/emergency,
 /obj/item/clothing/mask/breath/emergency,
 /obj/item/clothing/mask/breath/emergency,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "bU" = (
 /obj/effect/floor_decal/corner/red/bordercorner,
@@ -3731,6 +3733,13 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
+"kU" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/maintrain)
 "kV" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
@@ -5368,8 +5377,11 @@
 	},
 /area/centcom)
 "pc" = (
-/obj/machinery/door/airlock/glass/command,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/door/airlock/glass/command{
+	req_access = list("ACCESS_ADMIN_LEVEL3");
+	name = "Control Cabin"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/tram/maintrain)
 "pd" = (
 /obj/machinery/vending/medical{
@@ -5926,14 +5938,13 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "qp" = (
-/obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/maintrain)
 "qq" = (
 /turf/unsimulated/beach/coastline{
@@ -6558,7 +6569,10 @@
 /obj/structure/handrail{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "rG" = (
 /obj/structure/table/rack,
@@ -7106,7 +7120,8 @@
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "sC" = (
 /obj/effect/floor_decal/corner/white/border,
@@ -7259,11 +7274,13 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/item/device/radio/intercom{
-	pixel_x = 20;
-	dir = 8
+/obj/machinery/status_display{
+	pixel_x = 32
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "sV" = (
 /obj/structure/bed/chair/office/comfy/blue{
@@ -7817,11 +7834,13 @@
 	},
 /area/centcom)
 "tN" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CabinShutters";
+	dir = 4
 	},
-/turf/simulated/floor,
-/area/centcom)
+/turf/unsimulated/floor/plating,
+/area/site53/tram/maintrain)
 "tO" = (
 /obj/machinery/button/blast_door{
 	id_tag = "theadmin";
@@ -8009,7 +8028,10 @@
 	dir = 4;
 	pixel_x = -35
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "tW" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -8289,8 +8311,9 @@
 /turf/simulated/floor/reinforced,
 /area/centcom)
 "uB" = (
-/obj/structure/bed/chair,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/bed/chair/shuttle/black,
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/tram/maintrain)
 "uC" = (
 /obj/structure/table/reinforced,
@@ -8376,6 +8399,12 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
+"uP" = (
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Breakroom Cabin"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/maintrain)
 "uR" = (
 /obj/structure/window/reinforced,
 /turf/unsimulated/floor/reinforced,
@@ -8403,6 +8432,9 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
+"va" = (
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/maintrain)
 "vb" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
@@ -8439,9 +8471,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/centcom/goc)
 "vh" = (
-/obj/machinery/door/airlock/hatch,
 /obj/effect/shuttle_landmark/train/central,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Passenger Cabin"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/tram/maintrain)
 "vi" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -8536,7 +8570,6 @@
 	},
 /area/space)
 "vt" = (
-/obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -8544,7 +8577,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/maintrain)
 "vu" = (
 /obj/structure/table/rack,
@@ -10424,17 +10457,16 @@
 /obj/structure/window/reinforced/polarized{
 	dir = 8
 	},
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
-/obj/machinery/conveyor_switch{
-	desc = "A control switch which you assume operates some part of the train...but you're not sure...";
-	name = "Control Switch"
-	},
 /obj/item/device/radio/phone{
-	pixel_y = 10
+	pixel_y = 7
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/reinforced,
+/obj/item/toy/plushie/kitten{
+	name = "Conductor Whiskers";
+	desc = "A plushie of a cute kitten! This one means business. Tickets please!"
+	},
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "Au" = (
 /obj/effect/floor_decal/corner/paleblue/border{
@@ -10449,6 +10481,12 @@
 /obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
+"Ax" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/maintrain)
 "Ay" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
@@ -10857,7 +10895,10 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "BB" = (
 /obj/structure/sign/warning/secure_area/armory{
@@ -11208,13 +11249,11 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
 "Cs" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/structure/handrail{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "Ct" = (
 /obj/structure/bed/chair,
@@ -11255,9 +11294,6 @@
 /obj/structure/window/reinforced/polarized{
 	dir = 4
 	},
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
 /obj/machinery/conveyor_switch{
 	pixel_y = 10;
 	desc = "A control switch which you assume operates some part of the train...but you're not sure...";
@@ -11268,7 +11304,9 @@
 	desc = "A control switch which you assume operates some part of the train...but you're not sure...";
 	name = "Control Switch"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "CB" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -11587,11 +11625,8 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "Dt" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/centcom)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/maintrain)
 "Du" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -11632,10 +11667,13 @@
 /area/centcom)
 "DB" = (
 /obj/machinery/status_display{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /obj/structure/handrail,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/maintrain)
 "DC" = (
 /obj/machinery/vending/coffee,
@@ -11883,6 +11921,16 @@
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/white,
 /area/centcom/chaos)
+"El" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/maintrain)
 "Em" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
@@ -12312,8 +12360,10 @@
 	},
 /area/centcom)
 "Fb" = (
-/obj/machinery/door/airlock/hatch,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Passenger Cabin"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/tram/maintrain)
 "Fc" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -12444,22 +12494,22 @@
 /obj/structure/window/reinforced/polarized{
 	dir = 4
 	},
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
 /obj/machinery/button/blast_door{
-	pixel_y = -10;
+	pixel_y = -2;
 	id_tag = "CabinShutters";
 	name = "Cabin Shutters"
 	},
 /obj/machinery/button/blast_door{
 	name = "Rear Shutters";
-	id_tag = "RearShutters"
+	id_tag = "RearShutters";
+	pixel_y = 7
 	},
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "Fu" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -12805,6 +12855,14 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/carpet/green,
 /area/centcom/chaos)
+"GE" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "RearShutters";
+	dir = 4
+	},
+/turf/unsimulated/floor/plating,
+/area/site53/tram/maintrain)
 "GF" = (
 /obj/structure/grille{
 	health_max = null;
@@ -13571,7 +13629,8 @@
 /obj/item/modular_computer/console/preset/civilian{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "IL" = (
 /obj/item/clothing/under/syndicate/combat,
@@ -13746,7 +13805,11 @@
 	pixel_y = 30
 	},
 /obj/structure/handrail,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/maintrain)
 "Jk" = (
 /obj/structure/bed/chair/office/comfy/green,
@@ -13830,7 +13893,10 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "Ju" = (
 /turf/unsimulated/floor{
@@ -13844,6 +13910,18 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
+"Jw" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/tram/maintrain)
 "Jx" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
@@ -14028,7 +14106,7 @@
 /area/centcom)
 "JW" = (
 /obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
+/turf/simulated/floor/reinforced,
 /area/site53/tram/maintrain)
 "JX" = (
 /obj/machinery/door/airlock/command{
@@ -14135,7 +14213,9 @@
 /obj/item/modular_computer/console/preset/security{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "Kl" = (
 /obj/structure/table/rack,
@@ -14286,6 +14366,12 @@
 /obj/structure/bed/chair/armchair/black,
 /turf/simulated/floor/carpet/blue,
 /area/centcom/goc)
+"Ks" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/tram/maintrain)
 "Kt" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Abandoned Warehouse Access";
@@ -14840,7 +14926,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "Ln" = (
-/obj/machinery/light,
 /obj/structure/closet/crate,
 /obj/item/device/flashlight/flare,
 /obj/item/device/flashlight/flare,
@@ -14863,7 +14948,13 @@
 	name = "Crisis Management 101";
 	desc = "Overall pretty uninformative, the back cover summed it up pretty well with Step 1: Don't panic."
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "Lp" = (
 /obj/machinery/door/airlock/glass/command{
@@ -15164,14 +15255,11 @@
 /turf/simulated/floor/carpet/red,
 /area/centcom)
 "Mf" = (
-/obj/machinery/light,
-/obj/structure/bed/chair{
-	dir = 8
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/structure/handrail{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "Mi" = (
 /obj/structure/grille{
@@ -15303,9 +15391,10 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
 "MB" = (
-/obj/structure/closet/crate/bin,
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/bed/chair/armchair/black{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "ME" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
@@ -15744,6 +15833,12 @@
 /obj/structure/window/phoronreinforced/full,
 /turf/unsimulated/floor/plating,
 /area/centcom)
+"NG" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/maintrain)
 "NH" = (
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/machinery/light,
@@ -15756,16 +15851,16 @@
 /turf/simulated/floor/carpet/blue2,
 /area/centcom)
 "NL" = (
-/obj/machinery/status_display{
-	pixel_y = 30
-	},
 /obj/structure/bed/chair{
 	dir = 4
 	},
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "NM" = (
 /obj/effect/floor_decal/corner/paleblue/border{
@@ -15981,13 +16076,25 @@
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
 "Oq" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/structure/handrail{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/reinforced,
+/obj/machinery/chemical_dispenser/bar_coffee/full{
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp{
+	pixel_y = -4;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/corp{
+	pixel_y = -4;
+	pixel_x = 6
+	},
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "Os" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
@@ -15996,7 +16103,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
 "Ot" = (
-/obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -16006,7 +16112,7 @@
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = 32
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/maintrain)
 "Ou" = (
 /obj/machinery/door/airlock/vault{
@@ -16088,7 +16194,8 @@
 /obj/machinery/computer/station_alert/all{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "OF" = (
 /obj/machinery/light{
@@ -16249,7 +16356,10 @@
 /obj/item/storage/mrebag/menu3,
 /obj/item/storage/mrebag/menu2,
 /obj/item/storage/mrebag/menu2,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "OX" = (
 /obj/effect/floor_decal/corner/b_green/border{
@@ -16343,9 +16453,6 @@
 /obj/structure/window/reinforced/polarized{
 	dir = 8
 	},
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
 /obj/machinery/button/windowtint{
 	pixel_y = 8
 	},
@@ -16357,7 +16464,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "Pl" = (
 /obj/structure/table/standard,
@@ -16613,7 +16722,10 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "PV" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -16635,8 +16747,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
 "PZ" = (
-/turf/simulated/floor,
-/area/centcom)
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/maintrain)
 "Qa" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood/walnut,
@@ -17008,7 +17125,10 @@
 /obj/structure/sign/warning/nosmoking_burned{
 	pixel_y = 30
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "QV" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -17948,7 +18068,8 @@
 /obj/item/modular_computer/console/preset/aislot/research{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "SU" = (
 /obj/effect/floor_decal/corner/white/border{
@@ -18111,7 +18232,8 @@
 	machine_desc = "A simple control system for small train systems, allowing automated movement from one navigation point to another.";
 	shuttle_tag = "Foundation Main Train"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "Tr" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -18213,7 +18335,6 @@
 	},
 /area/centcom)
 "TI" = (
-/obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
@@ -18221,7 +18342,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/tram/maintrain)
 "TJ" = (
 /obj/machinery/door/airlock/vault{
@@ -18675,7 +18796,13 @@
 /obj/item/stack/medical/splint,
 /obj/item/storage/pill_bottle/paracetamol,
 /obj/item/storage/pill_bottle/paracetamol,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/handrail{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "UZ" = (
 /obj/structure/table/rack,
@@ -19287,14 +19414,11 @@
 	},
 /area/centcom)
 "WX" = (
-/obj/machinery/light,
-/obj/structure/bed/chair{
-	dir = 4
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/structure/handrail{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "WY" = (
 /obj/structure/closet/crate/bin{
@@ -19383,7 +19507,10 @@
 /obj/structure/handrail{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
 /area/site53/tram/maintrain)
 "Xh" = (
 /obj/machinery/status_display{
@@ -19439,11 +19566,10 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
 "Xp" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/armchair/black{
 	dir = 4
 	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "Xr" = (
 /obj/effect/floor_decal/corner/paleblue/border{
@@ -19463,12 +19589,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/standard,
-/obj/item/toy/plushie/kitten{
-	name = "Conductor Whiskers";
-	desc = "A plushie of a cute kitten! This one means business. Tickets please!"
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "Xv" = (
 /obj/structure/table/standard,
@@ -19564,8 +19689,8 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
 "XL" = (
-/obj/machinery/vending/soda,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/vending/hotfood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/tram/maintrain)
 "XM" = (
 /obj/structure/table/rack,
@@ -19883,7 +20008,9 @@
 /obj/item/modular_computer/console/preset/engineering{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/blue/mono,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/maintrain)
 "YK" = (
 /obj/structure/table/rack,
@@ -20225,6 +20352,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"ZG" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/tram/maintrain)
 "ZH" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light{
@@ -20361,6 +20492,15 @@
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
+"ZV" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/maintrain)
 "ZW" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -33242,44 +33382,44 @@ Ob
 PF
 tq
 ve
-PZ
-tN
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-tN
-PZ
-PZ
-PZ
-PZ
-PZ
-tN
-PZ
-PZ
-PZ
-PZ
-tN
-PZ
-PZ
-PZ
-PZ
-PZ
-tN
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-tN
-PZ
+xC
+pX
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+pX
+xC
+xC
+xC
+xC
+xC
+pX
+xC
+xC
+xC
+xC
+pX
+xC
+xC
+xC
+xC
+xC
+pX
+xC
+xC
+xC
+xC
+xC
+xC
+pX
+xC
 xC
 xC
 xC
@@ -33444,44 +33584,44 @@ Ob
 yE
 tq
 ve
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
 xC
 xC
 xC
@@ -33649,19 +33789,13 @@ ve
 dN
 XS
 XS
-Wa
-Wa
+GE
+GE
 XS
 XS
 XS
-PZ
-PZ
-XS
-XS
-XS
-IO
-XS
-XS
+xC
+xC
 XS
 XS
 XS
@@ -33670,20 +33804,26 @@ XS
 XS
 XS
 XS
-yX
-yX
-yX
+XS
+IO
 XS
 XS
-PZ
-PZ
 XS
 XS
+tN
+tN
+tN
+XS
+XS
+xC
+xC
+ZG
+ZG
 Pj
 As
 ST
 Kk
-XS
+ZG
 Hj
 GP
 GP
@@ -33848,10 +33988,10 @@ Ob
 yE
 tq
 ve
-PZ
+xC
 Wa
 bc
-Jt
+Xp
 Xp
 Oq
 WX
@@ -33861,13 +34001,13 @@ vt
 XS
 NL
 tV
-Ub
+Ks
 Xg
-WX
+NL
 XS
 NL
 rF
-Ub
+Ks
 UY
 bT
 XS
@@ -33875,16 +34015,16 @@ NL
 Jt
 Jt
 Jt
-WX
+NL
 XS
 Ot
 vt
-XS
+ZG
 DB
-Ub
-Ub
-PU
-Ub
+NG
+NG
+ZV
+Ax
 sB
 xC
 xC
@@ -34050,14 +34190,14 @@ Ob
 PF
 tq
 ve
-PZ
+xC
 Wa
 XL
-Ub
-Ub
-Ub
-Ub
-Fb
+va
+va
+va
+va
+uP
 JW
 JW
 Fb
@@ -34082,10 +34222,10 @@ Fb
 JW
 JW
 pc
-Ub
-Ub
-Ub
-Ub
+Dt
+Dt
+Dt
+Dt
 uB
 Tp
 xC
@@ -34252,10 +34392,10 @@ Ob
 yE
 tq
 ve
-PZ
+xC
 Wa
 Xu
-PU
+MB
 MB
 Cs
 Mf
@@ -34267,7 +34407,7 @@ QU
 PU
 sU
 PU
-Mf
+Jw
 XS
 BA
 PU
@@ -34279,16 +34419,16 @@ BA
 PU
 sU
 PU
-Mf
+Jw
 XS
 qp
 TI
-XS
+ZG
 Jj
-Ub
-Ub
-Jt
-Ub
+kU
+kU
+El
+PZ
 OE
 xC
 xC
@@ -34457,19 +34597,13 @@ ve
 dN
 XS
 XS
-Wa
-Wa
+GE
+GE
 XS
 XS
 XS
-PZ
-PZ
-XS
-XS
-yX
-XS
-yX
-XS
+xC
+xC
 XS
 XS
 yX
@@ -34483,15 +34617,21 @@ XS
 yX
 XS
 XS
-PZ
-PZ
+XS
+tN
+XS
+tN
 XS
 XS
+xC
+xC
+ZG
+ZG
 Fs
 CA
 IJ
 YJ
-XS
+ZG
 Hj
 GP
 GP
@@ -34656,44 +34796,44 @@ Ob
 yE
 tq
 ve
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
+xC
 xC
 xC
 xC
@@ -34858,44 +34998,44 @@ Ob
 PF
 tq
 ve
-PZ
-Dt
-PZ
-PZ
-PZ
-PZ
-Dt
-PZ
-PZ
-PZ
-PZ
-PZ
-Dt
-PZ
-PZ
-PZ
-PZ
-PZ
-Dt
-PZ
-PZ
-PZ
-PZ
-Dt
-PZ
-PZ
-PZ
-PZ
-PZ
-Dt
-PZ
-PZ
-PZ
-PZ
-PZ
-PZ
-Dt
-PZ
+xC
+Xn
+xC
+xC
+xC
+xC
+Xn
+xC
+xC
+xC
+xC
+xC
+Xn
+xC
+xC
+xC
+xC
+xC
+Xn
+xC
+xC
+xC
+xC
+Xn
+xC
+xC
+xC
+xC
+xC
+Xn
+xC
+xC
+xC
+xC
+xC
+xC
+Xn
+xC
 xC
 xC
 xC
