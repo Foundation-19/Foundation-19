@@ -72,9 +72,6 @@ FAILED_BYNAME=()
 # Global counter of passed tests
 PASSED=0
 
-# Version of Node to install for tgui
-NODE_VERSION=4
-
 function msg {
     echo -e "\t\e[34mtest\e[0m: $*"
 }
