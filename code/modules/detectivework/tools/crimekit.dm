@@ -12,6 +12,9 @@
 		/obj/item/device/uv_light,
 		/obj/item/forensics/sample_kit,
 		/obj/item/forensics/sample_kit/powder,
+		/obj/item/storage/photo_album,
+		/obj/item/tape/police,
+		/obj/item/device/camera,
 		/obj/item/storage/csi_markers
 		)
 	can_hold = list(
@@ -34,5 +37,8 @@
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape,
 		/obj/item/storage/csi_markers,
-		/obj/item/device/scanner
+		/obj/item/device/scanner,
+		/obj/item/device/camera_film,
+		/obj/item/storage/photo_album,
+		/obj/item/tape/police
 		)

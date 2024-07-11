@@ -704,7 +704,7 @@
 	economic_power = 4
 	requirements = list(EXP_TYPE_COMMAND = 720, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 60)
 	minimal_player_age = 10
-	ideal_character_age = 27
+	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/investigation_agent
 	class = CLASS_B
 	hud_icon = "hudbridgeofficer"

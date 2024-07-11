@@ -309,7 +309,7 @@
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1, /obj/item/device/camera = 1, /obj/item/storage/photo_album = 1,)
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
 
 /* Non-SCP security outfits */
 
