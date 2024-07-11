@@ -1,9 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - balance: Instead of dealing a flat 10 weakness every step, 049 curing now gradually
-      increases in power. The first step has no effect, the second gives 3 stacks
-      of weakness, the third gives 8 stacks, and the fourth and final one gives 12
-      stacks of weakness, as well as 4 stacks of paralysis.
-  - balance: 049 curing grab has a delay of 10 seconds (from 4 seconds).
-  - balance: 049 now has partial flash resistance (from FULL flash resistance).
