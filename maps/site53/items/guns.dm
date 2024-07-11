@@ -43,8 +43,8 @@
 
 
 /obj/item/gun/projectile/revolver/mateba
-	name = "mateba"
-	desc = "Standard issue Foundation revolver based on the Mateba Unica. Chambered in .44 Magnum"
+	name = "Big Iron"
+	desc = "A Mateba Unica chambered in .44 Magnum, it has multiple engravings of fine art along it's barrel, on the right side a fine engraving reads "I fought the law and the law won", while the left side has nineteen notches and one more. The grip has a precisely cut SCPF Security Department logo and below if "Fuck Ethics' is finely written."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "mateba"
 	caliber = ".44"
