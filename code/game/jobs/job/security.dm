@@ -376,7 +376,7 @@
 	supervisors = "the EZ Zone Supervisor"
 	economic_power = 4
 	requirements = list(EXP_TYPE_ECZ = 480)
-	alt_titles = list("Investigation Officer" = /decl/hierarchy/outfit/job/security/ez_sergeant_investigative, "EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
+	alt_titles = list("EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_sergeant
@@ -523,7 +523,7 @@
 	supervisors = "the EZ Senior Agents and Zone Supervisor"
 	economic_power = 4
 	requirements = list(EXP_TYPE_ECZ = 220)
-	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/security/ez_guard_investigative, "EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
+	alt_titles = list("EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_guard
@@ -691,4 +691,63 @@
 	    SKILL_FORENSICS   = SKILL_EXPERIENCED
 	)
 	skill_points = 15
+
+// IO  && IA Moved into a singular role
+/datum/job/invesigation_agent
+	title = "Internal Tribunal Department Agent"
+	department = "Command"
+	selection_color = "#2f2f7f"
+	department_flag = COM|SEC|ECZ
+	total_positions = 6 // A rough estimate of how many IA you can get if you compacted them
+	spawn_positions = 6
+	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</b></big>"
+	supervisors = "the Guard Commander"
+	economic_power = 4
+	requirements = list(EXP_TYPE_COMMAND = 720, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 60)
+	minimal_player_age = 10
+	ideal_character_age = 27
+	outfit_type = /decl/hierarchy/outfit/job/security/investigation_agent
+	class = CLASS_B
+	hud_icon = "hudezcommander"
+
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_MEDICAL_LVL4,
+		ACCESS_CHAPEL_OFFICE
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMPUTER    = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_MASTER,
+	    SKILL_WEAPONS     = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
+	skill_points = 25
+
+	roleplay_difficulty = "Medium - Hard"
+	mechanical_difficulty = "Medium"
+	duties = "Manage the Entrance Zone. Ensure safety of all administrative staff, especially during containment breaches."
 

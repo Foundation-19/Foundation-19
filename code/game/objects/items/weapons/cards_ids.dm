@@ -704,6 +704,16 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	job_access_type = /datum/job/ltofficerez
 	class = CLASS_B
 
+// IA - Stop fucking with the access, you know who you are
+/obj/item/card/id/zcseclvl4ia
+	name = "security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/ltofficerez
+	class = CLASS_B
+
+
 // GC ID.
 
 /obj/item/card/id/gcseclvl5
