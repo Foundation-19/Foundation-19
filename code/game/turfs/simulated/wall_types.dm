@@ -163,16 +163,16 @@
 	floor_type = /turf/simulated/floor/fixed/alium
 	blend_objects = newlist()
 
-/turf/simulated/wall/Initialize()
-	..(MATERIAL_ALIENALLOY)
+/turf/simulated/wall/alium/Initialize(mapload)
+	. = ..(mapload, MATERIAL_ALIENALLOY)
 
 //Cult wall
 /turf/simulated/wall/cult
 	icon_state = "cult"
 	blend_turfs = list(/turf/simulated/wall)
 
-/turf/simulated/wall/cult/Initialize(reinforce = 0)
-	..(MATERIAL_CULT, reinforce ? MATERIAL_REINFORCED_CULT : null)
+/turf/simulated/wall/cult/Initialize(mapload, reinforce = 0)
+	. = ..(mapload, MATERIAL_CULT, reinforce ? MATERIAL_REINFORCED_CULT : null)
 
 /turf/simulated/wall/cult/reinf/Initialize(mapload)
 	. = ..(mapload, TRUE)
