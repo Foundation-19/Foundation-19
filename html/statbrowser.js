@@ -612,7 +612,6 @@ if (!current_tab) {
 }
 
 window.onload = function () {
-	addPermanentTab("Debug Stat Panel");
 	Byond.sendMessage("Update-Verbs");
 };
 

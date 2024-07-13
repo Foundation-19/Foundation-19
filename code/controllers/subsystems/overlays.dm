@@ -101,16 +101,20 @@ SUBSYSTEM_DEF(overlays)
 		target = appearance_bro.appearance; \
 	}
 
-/atom/proc/build_appearance_list(atom/new_overlays)
-	var/static/image/appearance_bro = new
-	if (islist(new_overlays))
-		listclearnulls(new_overlays)
-		for (var/i in 1 to length(new_overlays))
-			var/image/cached_overlay = new_overlays[i]
-			APPEARANCEIFY(cached_overlay, new_overlays[i])
-		return new_overlays
-	else
-		APPEARANCEIFY(new_overlays, .)
+/atom/proc/build_appearance_list(list/build_overlays)
+	if (!islist(build_overlays))
+		build_overlays = list(build_overlays)
+	for (var/overlay in build_overlays)
+		if(!overlay)
+			build_overlays -= overlay
+			continue
+		if (istext(overlay))
+			var/index = build_overlays.Find(overlay)
+			build_overlays[index] = iconstate2appearance(icon, overlay)
+		else if(isicon(overlay))
+			var/index = build_overlays.Find(overlay)
+			build_overlays[index] = icon2appearance(overlay)
+	return build_overlays
 
 #undef APPEARANCEIFY
 #define NOT_QUEUED_ALREADY (!(overlay_queued))
@@ -156,10 +160,6 @@ SUBSYSTEM_DEF(overlays)
 		return
 
 	overlays_list = build_appearance_list(overlays_list)
-
-	if (!overlays_list || (islist(overlays_list) && !overlays_list.len))
-		// No point trying to compile if we don't have any overlays.
-		return
 
 	if(priority)
 		LAZYADD(priority_overlays, overlays_list)
