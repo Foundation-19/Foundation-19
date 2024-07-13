@@ -1,3 +1,7 @@
+GLOBAL_LIST_INIT(default_wall_blend_turfs, list(/turf/simulated/wall/cult, /turf/simulated/wall/wood, /turf/simulated/wall/walnut, /turf/simulated/wall/maple, /turf/simulated/wall/mahogany, /turf/simulated/wall/ebony))
+GLOBAL_LIST_INIT(default_wall_blend_objects, list(/obj/machinery/door, /obj/structure/wall_frame, /obj/structure/grille, /obj/structure/window/reinforced/full, /obj/structure/window/reinforced/polarized/full, /obj/structure/window/shuttle, ,/obj/structure/window/phoronbasic/full, /obj/structure/window/phoronreinforced/full))
+GLOBAL_LIST_INIT(default_wall_noblend_objects, list(/obj/machinery/door/window))
+
 /turf/simulated/wall
 	name = "wall"
 	desc = "A huge chunk of metal used to separate rooms."
@@ -32,9 +36,12 @@
 	var/dismantling = FALSE
 
 /turf/simulated/wall/Initialize(mapload, materialtype, rmaterialtype)
-	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall/wood, /turf/simulated/wall/walnut, /turf/simulated/wall/maple, /turf/simulated/wall/mahogany, /turf/simulated/wall/ebony)
-	blend_objects = list(/obj/machinery/door, /obj/structure/wall_frame, /obj/structure/grille, /obj/structure/window/reinforced/full, /obj/structure/window/reinforced/polarized/full, /obj/structure/window/shuttle, ,/obj/structure/window/phoronbasic/full, /obj/structure/window/phoronreinforced/full)
-	noblend_objects = list(/obj/machinery/door/window)
+	if(!blend_turfs)
+		blend_turfs = GLOB.default_wall_blend_turfs
+	if(!blend_objects)
+		blend_objects = GLOB.default_wall_blend_objects
+	if(!noblend_objects)
+		noblend_objects = GLOB.default_wall_noblend_objects
 
 	icon_state = "blank"
 	if(!materialtype)

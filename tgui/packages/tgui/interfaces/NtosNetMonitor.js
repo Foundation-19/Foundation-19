@@ -40,10 +40,11 @@ export const NtosNetMonitor = (props, context) => {
           buttons={
             <Button.Confirm
               icon={ntnetstatus ? 'power-off' : 'times'}
-              content={ntnetstatus ? 'ENABLED' : 'DISABLED'}
               selected={ntnetstatus}
               onClick={() => act('toggleWireless')}
-            />
+            >
+              {ntnetstatus ? 'ENABLED' : 'DISABLED'}
+            </Button.Confirm>
           }
         >
           {ntnetrelays ? (
@@ -170,11 +171,9 @@ export const NtosNetMonitor = (props, context) => {
             title="System Log"
             level={2}
             buttons={
-              <Button.Confirm
-                icon="trash"
-                content="Clear Logs"
-                onClick={() => act('purgelogs')}
-              />
+              <Button.Confirm icon="trash" onClick={() => act('purgelogs')}>
+                Clear Logs
+              </Button.Confirm>
             }
           >
             {ntnetlogs.map((log) => (

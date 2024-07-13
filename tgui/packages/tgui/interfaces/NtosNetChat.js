@@ -134,18 +134,20 @@ export const NtosNetChat = (props, context) => {
                     />
                     <Button.Confirm
                       fluid
-                      content="Leave Channel"
                       onClick={() => act('PRG_leavechannel')}
-                    />
+                    >
+                      Leave Channel
+                    </Button.Confirm>
                   </Fragment>
                 )}
                 {!!is_operator && authed && (
                   <Fragment>
                     <Button.Confirm
                       fluid
-                      content="Delete Channel"
                       onClick={() => act('PRG_deletechannel')}
-                    />
+                    >
+                      Delete Channel
+                    </Button.Confirm>
                     <Button.Input
                       fluid
                       content="Rename Channel..."

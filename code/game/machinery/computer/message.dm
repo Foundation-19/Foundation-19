@@ -305,15 +305,15 @@
 	//..()
 	name = "Monitor Decryption Key"
 
-/obj/item/paper/monitorkey/proc/print(obj/machinery/telecomms/message_server/server)
+/obj/item/paper/monitorkey/proc/print(obj/machinery/message_server/server)
 	set_content("<center><h2>Daily Key Reset</h2></center><br>The new message monitor key is '[server.decryptkey]'.<br>This key is only intended for personnel granted access to the messaging server. Keep it safe.<br>If necessary, change the password to a more secure one.")
 
-/obj/item/paper/monitorkey/Initialize(mapload, obj/machinery/telecomms/message_server/server)
+/obj/item/paper/monitorkey/Initialize(mapload, obj/machinery/message_server/server)
 	. = ..()
 	if(server)
 		print(server)
 		return INITIALIZE_HINT_NORMAL
-	return INITIALIZE_HINT_LATE
+	return INITIALIZE_HINT_LATELOAD
 
 /obj/item/paper/monitorkey/LateInitialize()
 	. = ..()

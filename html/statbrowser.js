@@ -230,7 +230,7 @@ function tab_change(tab) {
 		draw_debug();
 	} else if (tab == turfname) {
 		draw_listedturf();
-	} else if (tab == "Subsystems"){
+	} else if (tab == "Subsystems") {
 		draw_borg_subsystems();
 	} else {
 		statcontentdiv.textContext = "Loading...";
@@ -612,6 +612,7 @@ if (!current_tab) {
 }
 
 window.onload = function () {
+	addPermanentTab("Debug Stat Panel");
 	Byond.sendMessage("Update-Verbs");
 };
 
@@ -761,7 +762,6 @@ Byond.subscribeTo("add_borg_subsystems", function () {
 	}
 
 	addPermanentTab("Subsystems");
-
 });
 
 Byond.subscribeTo("update_borg_subsystems", function (new_borg_subsystems) {
