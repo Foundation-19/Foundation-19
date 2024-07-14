@@ -10,6 +10,8 @@ static_files:
   - name: config
     # This implies the folder should be pre-populated with contents from the repo
     populate: true
+    # Populate the folder with the config example_files from the repo
+    sources: ["config/example"]
   # Data directory must be static
   - name: data
 # String dictionary. The value is the location of the file in the repo to upload to TGS. The key is the name of the file to upload to "<instance_path>/Configuration/EventScripts/"

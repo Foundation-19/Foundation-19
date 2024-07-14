@@ -492,12 +492,13 @@
 	prefs?.open_setup_window(usr)
 
 /client/proc/apply_fps(client_fps)
-	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
+	if(client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
 		vars["fps"] = client_fps
 
 /client/proc/on_prefs_loaded(client/target, datum/preferences/prefs)
 	SIGNAL_HANDLER
 	apply_fps(prefs.clientfps)
+	view = getScreenSize(get_preference_value(/datum/client_preference/widescreen) == GLOB.PREF_YES)
 
 /client/MouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
 	. = ..()

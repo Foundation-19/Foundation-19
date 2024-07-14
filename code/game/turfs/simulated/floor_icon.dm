@@ -57,10 +57,8 @@ var/list/flooring_cache = list()
 					if(!flooring.symmetric_test_link(src, get_step(src, direction)))
 						add_overlay(get_flooring_overlay("[flooring.icon]_[flooring.icon_base]-edge-[direction]", "[flooring.icon_base]_edges", direction,(flooring.flags & TURF_HAS_EDGES)))
 
-		if(flooring.can_paint && decals && decals.len)
-			// FIXME: add_overlay on list completely smashes/overwrites and invalidates images
-			for(var/image/I as anything in decals)
-				add_overlay(I)
+		if(flooring.can_paint && length(decals))
+			add_overlay(decals)
 
 		/*
 		//Now lets handle those fancy floors which have many centre icons

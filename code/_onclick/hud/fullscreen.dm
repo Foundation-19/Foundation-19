@@ -23,6 +23,7 @@
 
 	screens[category] = screen
 	if(client && (stat != DEAD || screen.allstate))
+		screen.update_for_view(client.view)
 		client.screen += screen
 	return screen
 
@@ -56,8 +57,11 @@
 
 /mob/proc/reload_fullscreen()
 	if(client)
+		var/atom/movable/screen/fullscreen/screen
 		for(var/category in screens)
-			client.screen |= screens[category]
+			screen = screens[category]
+			screen.update_for_view(client.view)
+			client.screen |= screen
 
 /atom/movable/screen/fullscreen
 	icon = 'icons/mob/screen_full.dmi'
@@ -65,8 +69,15 @@
 	screen_loc = "CENTER-7,CENTER-7"
 	plane = FULLSCREEN_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	var/view
 	var/severity = 0
 	var/allstate = 0 //shows if it should show up for dead people too
+
+/atom/movable/screen/fullscreen/proc/update_for_view(client_view)
+	if (screen_loc == "CENTER-7,CENTER-7" && view != client_view)
+		var/list/actualview = getviewsize(client_view)
+		view = client_view
+		transform = matrix(actualview[1] / 15, 0, 0, 0, actualview[2] / 15, 0)
 
 /atom/movable/screen/fullscreen/Destroy()
 	severity = 0

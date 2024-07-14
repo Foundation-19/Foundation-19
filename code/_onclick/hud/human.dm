@@ -33,7 +33,7 @@
 		inv_box.alpha = ui_alpha
 
 		var/list/slot_data =  hud_data.gear[gear_slot]
-		inv_box.SetName(gear_slot)
+		inv_box.SetName(slot_data["name"])
 		inv_box.screen_loc =  slot_data["loc"]
 		inv_box.slot_id =     slot_data["slot"]
 		inv_box.icon_state =  slot_data["state"]
@@ -69,7 +69,7 @@
 
 	if(hud_data.has_m_intent)
 		using = new /atom/movable/screen/movement()
-		using.SetName("movement method")
+		using.SetName("Movement Method")
 		using.icon = ui_style
 		using.icon_state = mymob.move_intent.hud_icon_state
 		using.screen_loc = ui_movi
@@ -331,10 +331,9 @@
 
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
-		H.fov = new /atom/movable/screen/fov()
+		H.fov = new /atom/movable/screen/fov(null, H.client.view)
+		H.fov_mask = new /atom/movable/screen/fov/fov_mask(null, H.client.view)
 		hud_elements |= H.fov
-
-		H.fov_mask = new /atom/movable/screen/fov_mask()
 		hud_elements |= H.fov_mask
 
 	mymob.client.screen = list()

@@ -281,6 +281,18 @@ var/list/_client_preferences_by_type
 	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
 	default_value = GLOB.PREF_YES
 
+/datum/client_preference/widescreen
+	description = "Widescreen"
+	key = "WIDESCREEN"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/widescreen/changed(mob/preference_mob, new_value)
+	var/new_view = getScreenSize(new_value == GLOB.PREF_YES)
+	preference_mob.client.view = new_view
+	preference_mob.update_cone_size()
+	preference_mob.reload_fullscreen()
+
 /********************
 * General Staff Preferences *
 ********************/

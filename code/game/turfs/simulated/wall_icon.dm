@@ -1,8 +1,4 @@
 /turf/simulated/wall/proc/update_material()
-
-	if(!material)
-		return
-
 	if(reinf_material)
 		construction_stage = 6
 	else

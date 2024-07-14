@@ -49,12 +49,12 @@ SUBSYSTEM_DEF(overlays)
 /atom/proc/compile_overlays()
 	var/list/oo = our_overlays
 	var/list/po = priority_overlays
-	if(LAZYLEN(po) && LAZYLEN(oo))
-		overlays = oo + po
-	else if(LAZYLEN(oo))
-		overlays = oo
-	else if(LAZYLEN(po))
-		overlays = po
+	if(length(po) && length(oo))
+		overlays |= oo + po
+	else if(length(oo))
+		overlays |= oo
+	else if(length(po))
+		overlays |= po
 	else
 		overlays.Cut()
 
@@ -86,21 +86,6 @@ SUBSYSTEM_DEF(overlays)
 		. = iconbro.appearance
 		icon_cache[icon] = .
 
-#define APPEARANCEIFY(origin, target) \
-	if (istext(origin)) { \
-		target = iconstate2appearance(icon, origin); \
-	} \
-	else if (isicon(origin)) { \
-		target = icon2appearance(origin); \
-	} \
-	else { \
-		appearance_bro.appearance = origin; \
-		if (!ispath(origin)) { \
-			appearance_bro.dir = origin.dir; \
-		} \
-		target = appearance_bro.appearance; \
-	}
-
 /atom/proc/build_appearance_list(list/build_overlays)
 	if (!islist(build_overlays))
 		build_overlays = list(build_overlays)
@@ -116,7 +101,6 @@ SUBSYSTEM_DEF(overlays)
 			build_overlays[index] = icon2appearance(overlay)
 	return build_overlays
 
-#undef APPEARANCEIFY
 #define NOT_QUEUED_ALREADY (!(overlay_queued))
 #define QUEUE_FOR_COMPILE overlay_queued = TRUE; SSoverlays.processing += src;
 
