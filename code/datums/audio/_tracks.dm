@@ -430,5 +430,12 @@
 	title = "goc spawn theme (project scp) (real("
 	author = "amperndsn"
 	license = /decl/license/cc_by_sa_3_0
-	url = "https://www.youtube.com/watch?v=dkwdgm6hk3E&list=RDNXZ4hbOl7eY&index=3"
+	url = "https://www.youtube.com/watch?v=dkwdgm6hk3E"
+
+/decl/audio/track/fall_of_ganzir
+	source = 'sounds/music/fall_of_ganzir.ogg'
+	title = "SCP-5000 Fall of Ganzir (original song haha yes)"
+	author = "amperndsn"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=u4fsXAeun4w"
 
