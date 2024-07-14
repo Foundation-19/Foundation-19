@@ -94,3 +94,13 @@
 	scope_zoom = 0
 	scoped_accuracy = 0
 	wielded_item_state = "boltaction-wielded"
+
+/obj/item/gun/projectile/heavysniper/boltaction/mosin
+	name = "M91-30 Mosin-Nagant"
+	desc = "In 1891, the Three Line Rifle was introduced into the service of the Russian Empire. The Russian Empire was formed in 1721. Obviously, this time period is pre-modern day Russia, and even pre-USSR. The Three Line rifle would be fielded by the Russian Empire until 1930 when an overhaul of the design was made that brought about a few advancements, but the general shape of the Mosin stayed the same. At that point, the M1891 would be known as the M91/30. Chambered in 7.62x54R"
+	icon = 'icons/obj/gun_wide.dmi'
+	icon_state = "moistnugget"
+	item_state = "moistnugget"
+	caliber = CALIBER_RIFLE_SOVIET
+	ammo_type = /obj/item/ammo_casing/rifle/a762x54
+	wielded_item_state = "moistnugget"

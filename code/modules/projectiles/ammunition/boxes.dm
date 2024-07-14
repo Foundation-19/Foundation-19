@@ -61,6 +61,16 @@
 	max_ammo = 5
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/speedloader/clip/mosin
+	name = "stripper clip (7.62x54mmR)"
+	desc = "A rifle-cartrige stripper clip."
+	icon_state = "762"
+	caliber = CALIBER_RIFLE_SOVIET
+	ammo_type = /obj/item/ammo_casing/rifle/a762x54
+	matter = list(MATERIAL_STEEL = 1800)
+	max_ammo = 5
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/shotholder
 	name = "shotgun slug holder"
 	desc = "A convenient pouch that holds 12 gauge shells."

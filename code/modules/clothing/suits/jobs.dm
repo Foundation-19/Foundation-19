@@ -83,23 +83,36 @@
 	body_parts_covered = 0
 
 //Security
-/obj/item/clothing/suit/security/navyofficer
+/obj/item/clothing/suit/sec_formal
 	name = "security officer's jacket"
 	desc = "This jacket is for those special occasions when a security officer actually feels safe."
 	icon_state = "officerbluejacket"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
-/obj/item/clothing/suit/security/navywarden
+/obj/item/clothing/suit/sec_formal/warden
 	name = "warden's jacket"
 	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
 	icon_state = "wardenbluejacket"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
-/obj/item/clothing/suit/security/navyhos
+/obj/item/clothing/suit/sec_formal/hos
 	name = "head of security's jacket"
 	desc = "This piece of clothing was specifically designed for asserting superior authority."
 	icon_state = "hosbluejacket"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/sec_formal/tan
+	name = "security officer's jacket"
+	desc = "This jacket is for those special occasions when a security officer actually feels safe."
+	icon_state = "officertanjacket"
+
+/obj/item/clothing/suit/sec_formal/warden/tan
+	name = "warden's jacket"
+	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
+	icon_state = "wardentanjacket"
+
+/obj/item/clothing/suit/sec_formal/hos/tan
+	name = "head of security's jacket"
+	desc = "This piece of clothing was specifically designed for asserting superior authority."
+	icon_state = "hostanjacket"
 
 //Detective
 /obj/item/clothing/suit/storage/det_trench

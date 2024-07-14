@@ -457,3 +457,20 @@
 	heat_protection = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	armor = list(melee = 999, bullet = 999, laser = 999, energy = 999, bomb = 999, bio = 999, rad = 999) // DON'T ASK, IT'S UNOBTAINABLE ARMOR, AND 912 IS UNKILLABLE KEEP IT AT THAT.
+
+/obj/item/clothing/suit/armor/vest/russian
+	name = "russian vest"
+	desc = "A bulletproof vest with forest camo. Good thing there's plenty of forests to hide in around here, right?"
+	icon_state = "rus_armor"
+	item_state = "rus_armor"
+	armor = list(melee = 25, bullet = 30, laser = 0, energy = 10, bomb = 10, bio = 0, rad = 20)
+
+/obj/item/clothing/suit/armor/vest/russian_coat
+	name = "russian battle coat"
+	desc = "Used in extremly cold fronts, made out of real bears."
+	icon_state = "rus_coat"
+	item_state = "rus_coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	armor = list(melee = 25, bullet = 20, laser = 20, energy = 30, bomb = 20, bio = 50, rad = 20)

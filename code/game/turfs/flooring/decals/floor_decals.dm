@@ -1228,6 +1228,14 @@
 /obj/effect/floor_decal/ntlogo
 	icon_state = "ntlogo"
 
+/obj/effect/floor_decal/hammerandsickle
+	name = "hammer and sickle"
+	desc = "Communism powerful force."
+	icon = 'icons/turf/flooring/decals_wide.dmi'
+	icon_state = "communist"
+	pixel_x = -32
+	pixel_y = -32
+
 /obj/effect/floor_decal/torchltdlogo
 	alpha = 230
 	icon = 'icons/turf/flooring/corp_floor.dmi'

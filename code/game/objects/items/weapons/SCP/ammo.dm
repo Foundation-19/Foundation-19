@@ -415,11 +415,17 @@
 	name = "ammunition box (7.62)"
 	icon_state = "csla_box"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = "7.62x39mm"
+	caliber = "7.62x39mmR"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/rifle/a762
 	max_ammo = 100
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/box/a762x54
+	name = "ammunition box (7.62x54mmR)"
+	icon_state = "box_762mm"
+	caliber = "7.62x54mmR"
+	ammo_type = /obj/item/ammo_casing/rifle/a762x54
 
 // shotgun
 /obj/item/ammo_magazine/box/buckshot

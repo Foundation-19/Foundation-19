@@ -245,3 +245,20 @@
 	desc = "A standard-issue helmet that has railings for attachments, the only notable thing about it is it's padding to resist bullets, and also it's iconic dark blue visor, it's in rather pristine condition, even if a little out of date."
 	icon_state = "912_helm"
 	armor = list(melee = 999, bullet = 999, laser = 999, energy = 999, bomb = 999, bio = 999, rad = 999) // DON'T ASK, IT'S UNOBTAINABLE ARMOR, AND 912 IS UNKILLABLE KEEP IT AT THAT.
+
+/obj/item/clothing/head/helmet/rus_helmet
+	name = "russian helmet"
+	desc = "It can hold a bottle of vodka."
+	icon_state = "rus_helmet"
+	item_state = "rus_helmet"
+	armor = list(melee = 25, bullet = 30, laser = 0, energy = 10, bomb = 10, bio = 0, rad = 20)
+
+/obj/item/clothing/head/helmet/rus_ushanka
+	name = "battle ushanka"
+	desc = "100% bear."
+	icon_state = "rus_ushanka"
+	item_state = "rus_ushanka"
+	body_parts_covered = HEAD
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	armor = list(melee = 25, bullet = 20, laser = 20, energy = 30, bomb = 20, bio = 50, rad = 20)

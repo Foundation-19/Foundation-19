@@ -10,6 +10,7 @@
 #define CALIBER_REVOLVER_HEAVY		".454 Casull"
 
 #define CALIBER_RIFLE			"5mmR"
+#define CALIBER_RIFLE_SOVIET	"7.62x54mmR"
 #define CALIBER_RIFLE_MILITARY	"7mmR"
 #define CALIBER_T12				"10x24mmR"
 #define CALIBER_ANTIMATERIAL	"15mmR"

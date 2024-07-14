@@ -1,6 +1,7 @@
 /obj/item/storage/briefcase/scp1102ru
-	name = "old plastic case"
-	desc = "A strange plastic case covered in cloth."
+	name = "old cloth suitcase"
+	desc = "A strange, aged and old suitcase covered in cloth, it seems to have an electronic lock on it."
+	icon_state = "1102secure"
 
 	w_class = ITEM_SIZE_HUGE
 

@@ -411,23 +411,44 @@
  * Navy uniforms
  */
 
-/obj/item/clothing/under/rank/security/navyblue
+/obj/item/clothing/under/rank/security/formal
 	name = "security officer's uniform"
 	desc = "The latest in fashionable security outfits."
 	icon_state = "officerblueclothes"
 	item_state = "ba_suit"
 	worn_state = "officerblueclothes"
 
-/obj/item/clothing/under/rank/head_of_security/navyblue
+/obj/item/clothing/under/rank/head_of_security/formal
 	desc = "The insignia on this uniform tells you that this uniform belongs to a SD Officer."
 	name = "Security Officer Uniform"
 	icon_state = "hosblueclothes"
 	item_state = "ba_suit"
 	worn_state = "hosblueclothes"
 
-/obj/item/clothing/under/rank/warden/navyblue
+/obj/item/clothing/under/rank/warden/formal
 	desc = "The insignia on this uniform tells you that this uniform belongs to an agent of SD."
 	name = "Security Uniform"
 	icon_state = "wardenblueclothes"
 	item_state = "ba_suit"
 	worn_state = "wardenblueclothes"
+
+/obj/item/clothing/under/rank/security/formal/tan
+	name = "security officer's uniform"
+	desc = "The latest in fashionable security outfits."
+	icon_state = "officertanclothes"
+	item_state = "ba_suit"
+	worn_state = "officertanclothes"
+
+/obj/item/clothing/under/rank/head_of_security/formal/tan
+	desc = "The insignia on this uniform tells you that this uniform belongs to a SD Officer."
+	name = "Security Officer Uniform"
+	icon_state = "hostanclothes"
+	item_state = "ba_suit"
+	worn_state = "hostanclothes"
+
+/obj/item/clothing/under/rank/warden/formal/tan
+	desc = "The insignia on this uniform tells you that this uniform belongs to an agent of SD."
+	name = "Security Uniform"
+	icon_state = "wardentanclothes"
+	item_state = "ba_suit"
+	worn_state = "wardentanclothes"

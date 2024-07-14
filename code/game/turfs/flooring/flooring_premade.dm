@@ -311,6 +311,20 @@
 	icon_state = "monotile"
 	initial_flooring = /decl/flooring/tiling/new_tile/monofloor
 
+// FAKE STAIRS
+
+/turf/simulated/floor/tiled/stairs
+	icon_state = "stairs"
+
+/turf/simulated/floor/tiled/stairs/left
+	icon_state = "stairs-l"
+
+/turf/simulated/floor/tiled/stairs/medium
+	icon_state = "stairs-m"
+
+/turf/simulated/floor/tiled/stairs/right
+	icon_state = "stairs-r"
+
 // DESIGNED
 
 /turf/simulated/floor/tiled/steel_grid
