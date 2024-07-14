@@ -30,7 +30,6 @@
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 
-=======
 	map_admin_faxes = list(
 		"Foundation Central Office",
 		"UIU Central Office",
