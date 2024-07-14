@@ -60,7 +60,7 @@
 //For projectiles that actually represent clouds of projectiles
 /obj/item/projectile/bullet/pellet
 	name = "shrapnel" //'shrapnel' sounds more dangerous (i.e. cooler) than 'pellet'
-	damage = 35
+	damage = DAM_BULLET_LIGHT_SIDEARM
 	//icon_state = "bullet" //TODO: would be nice to have it's own icon state
 	var/pellets = 6			//number of pellets
 	var/range_step = 2		//projectile will lose a fragment each time it travels this distance. Can be a non-integer.
@@ -121,12 +121,12 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sounds/weapons/gunshot/gunshot_9mm.ogg'
-	damage = 37
+	damage = DAM_BULLET_LIGHT_SIDEARM
 	armor_penetration = 0
 	distance_falloff = 3
 
 /obj/item/projectile/bullet/pistol/holdout
-	damage = 35
+	damage = DAM_BULLET_LIGHT_SIDEARM
 	penetration_modifier = 1.2
 	distance_falloff = 4
 
@@ -140,7 +140,7 @@
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
 	damage_flags = 0
-	damage = 5
+	damage = DAM_BULLET_HEAVY_RUBBER
 	agony = 30
 	embed = FALSE
 
@@ -156,7 +156,7 @@
 /obj/item/projectile/bullet/revolver/rubber
 	name = "rubber bullet"
 	damage_flags = 0
-	damage = 5
+	damage = DAM_BULLET_HEAVY_RUBBER
 	agony = 40
 	embed = FALSE
 
@@ -271,18 +271,18 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sounds/weapons/gunshot/gunshot_9mm.ogg'
-	damage = 37 //9mm, .38, etc
+	damage = DAM_BULLET_LIGHT_SIDEARM //9mm, .38, etc
 	armor_penetration = 0
 	distance_falloff = 3
 
 /obj/item/projectile/bullet/pistol/holdout
-	damage = 35
+	damage = DAM_BULLET_LIGHT_SIDEARM
 	penetration_modifier = 1
 	distance_falloff = 4
 
 /obj/item/projectile/bullet/pistol/rubber
 	name = "rubber bullet"
-	damage = 3 //Pistol rubber
+	damage = DAM_BULLET_RUBBER //Pistol rubber
 	agony = 30
 	embed = FALSE
 	sharp = FALSE
@@ -293,59 +293,59 @@
 	agony = 20
 
 /obj/item/projectile/bullet/pistol/medium
-	damage = 45 //.45
+	damage = DAM_BULLET_SIDEARM //.45
 	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol/medium/ap
-	damage = 45 //.45
+	damage = DAM_BULLET_SIDEARM //.45
 	armor_penetration = 10
 
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
-	damage = 50 //.44 magnum or something
+	damage = DAM_BULLET_REVOLVER //.44 magnum or something
 	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol/strong //matebas
 	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
-	damage = 52 //.50AE
+	damage = DAM_BULLET_REVOLVER //.50AE
 	armor_penetration = 0
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
 
 /obj/item/projectile/bullet/pistol/vstrong //tacrevolver
 	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'
-	damage = 60 //.500 S&W Magnum
+	damage = DAM_BULLET_RIFLE //.500 S&W Magnum
 	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol/strong/revolver //revolvers
-	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
+	damage = DAM_BULLET_REVOLVER //Revolvers get snowflake bullets, to keep them relevant
 	armor_penetration = 0
 
 // P90 SMG
 /obj/item/projectile/bullet/a57
 	fire_sound = 'sounds/weapons/gunshot/p90.ogg'
-	damage = 35
+	damage = DAM_BULLET_LIGHT_SIDEARM
 	armor_penetration = 10
 	distance_falloff = 3
 
 /obj/item/projectile/bullet/a57/rubber
-	damage = 2
+	damage = DAM_BULLET_RUBBER
 	armor_penetration = 0
 	agony = 10 // This thing has 50 bullets and full auto, come on
 	embed = 0
 	sharp = 0
 
 /obj/item/projectile/bullet/a57/hollowpoint
-	damage = 45 //10mm hollowpoint
+	damage = DAM_BULLET_SIDEARM //10mm hollowpoint
 	armor_penetration = 0
 	embed = 1
 
 /obj/item/projectile/bullet/a57/ap
-	damage = 35
+	damage = DAM_BULLET_LIGHT_SIDEARM
 	armor_penetration = 20
 
 /obj/item/projectile/bullet/a57/silver
-	damage = 55
+	damage = DAM_BULLET_RIFLE
 	armor_penetration = 10
 
 /* shotgun projectiles */
@@ -353,12 +353,12 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	fire_sound = 'sounds/weapons/gunshot/shotgun.ogg'
-	damage = 60
+	damage = DAM_BULLET_SLUG
 	armor_penetration = 5
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	damage = 7
+	damage = DAM_BULLET_HEAVY_RUBBER
 	agony = 70
 	embed = FALSE
 	sharp = FALSE
@@ -371,14 +371,14 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sounds/weapons/gunshot/shotgun.ogg'
-	damage = 16
+	damage = DAM_BULLET_PELLET
 	pellets = 9
 	range_step = 1
 	spread_step = 10
 
 /obj/item/projectile/bullet/pellet/shotgun/rubbershot
 	name = "rubbershot"
-	damage = 1
+	damage = DAM_BULLET_RUBBER
 	pellets = 8
 	range_step = 1
 	spread_step = 10
@@ -390,7 +390,7 @@
 
 /obj/item/projectile/bullet/rifle
 	fire_sound = 'sounds/weapons/gunshot/gunshot3.ogg'
-	damage = 40
+	damage = DAM_BULLET_LIGHT_REVOLVER
 	armor_penetration = 25
 	penetration_modifier = 1.5
 	penetrating = 1
@@ -398,27 +398,27 @@
 
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sounds/weapons/gunshot/gunshot3.ogg'
-	damage = 45
+	damage = DAM_BULLET_SIDEARM
 	armor_penetration = 10
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
-	damage = 50
+	damage = DAM_BULLET_REVOLVER
 	armor_penetration = 5
 
 /obj/item/projectile/bullet/rifle/a762x54
 	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
-	damage = 55
+	damage = DAM_BULLET_RIFLE
 	armor_penetration = 15
 
 /obj/item/projectile/bullet/rifle/a762nato
 	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
-	damage = 55
+	damage = DAM_BULLET_RIFLE
 	armor_penetration = 15
 
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sounds/weapons/gunshot/sniper.ogg'
-	damage = 150
+	damage = DAM_BULLET_HEAVY_SNIPER
 	stun = 3
 	weaken = 3
 	penetrating = 5
@@ -427,36 +427,36 @@
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a145/apds
-	damage = 125
+	damage = DAM_BULLET_SNIPER
 	penetrating = 6
 	armor_penetration = 120
 	penetration_modifier = 1.5
 
 /obj/item/projectile/bullet/blank
 	invisibility = 101
-	damage = 1
+	damage = DAM_BULLET_RUBBER
 	embed = 0
 
 /* "Rifle" rounds */
 
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sounds/weapons/gunshot/gunshot2.ogg'
-	damage = 45
+	damage = DAM_BULLET_SIDEARM
 	armor_penetration = 35
 	penetration_modifier = 1
 
 /obj/item/projectile/bullet/rifle/t12
 	fire_sound = SFX_GUN_T12
-	damage = 22 // If you buff the damage I will murder you, it is meant to have high AP low damage
+	damage = DAM_BULLET_PELLET // If you buff the damage I will murder you, it is meant to have high AP low damage
 	armor_penetration = 85
 
 /obj/item/projectile/bullet/rifle/m16
 	fire_sound = 'sounds/weapons/gunshot/m16.ogg'
-	damage = 35
+	damage = DAM_BULLET_LIGHT_SIDEARM
 
 /obj/item/projectile/bullet/rifle/shell
 	fire_sound = 'sounds/weapons/gunshot/sniper.ogg'
-	damage = 150
+	damage = DAM_BULLET_HEAVY_SNIPER
 	stun = 3
 	weaken = 3
 	penetrating = 3
@@ -465,7 +465,7 @@
 	distance_falloff = 0.5
 
 /obj/item/projectile/bullet/rifle/shell/apds
-	damage = 120
+	damage = DAM_BULLET_SNIPER
 	penetrating = 5
 	armor_penetration = 80
 	penetration_modifier = 1.5
