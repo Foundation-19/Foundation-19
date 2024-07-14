@@ -116,10 +116,6 @@
 	icon_state = "goc_cypherkey"
 	channels = list("GOC" = 1)
 
-/obj/item/device/radio/headset/heads/thi
-	name = "Horizon Initiative representative's headset"
-	desc = "The headset of the holy man, don't let them see 343."
-
 /obj/item/device/radio/headset/heads/mcd
 	name = "Marshall, Carter, and Dark Liaison's headset"
 	desc = "The headset of the capitalist, keep an eye on your wallet."

@@ -81,16 +81,6 @@
 	backpack_contents = list(/obj/item/ammo_magazine/scp/mk9 = 1)
 	belt = /obj/item/gun/projectile/pistol/glock
 
-/decl/hierarchy/outfit/job/civ/thirep
-	name = OUTFIT_JOB_NAME("thirep")
-	uniform = /obj/item/clothing/under/rank/chaplain
-	l_hand = /obj/item/storage/bible
-	id_type = /obj/item/card/id/adminlvl3
-	pda_type = /obj/item/modular_computer/pda/medical
-	l_ear = /obj/item/device/radio/headset/heads/thi
-	belt = /obj/item/gun/projectile/pistol/m1911
-	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
-
 /decl/hierarchy/outfit/job/civ/MCDRep
 	name = OUTFIT_JOB_NAME("Marshall, Carter, and Dark Corporate Liaison")
 	uniform = /obj/item/clothing/under/suit_jacket/really_black

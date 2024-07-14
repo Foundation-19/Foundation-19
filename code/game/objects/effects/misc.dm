@@ -31,6 +31,7 @@
 	if(WF)
 		WF.paint_color = color
 		WF.update_icon()
+	atom_flags |= ATOM_FLAG_INITIALIZED
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/paint/pink
@@ -81,6 +82,7 @@
 	if(WF)
 		WF.stripe_color = color
 		WF.update_icon()
+	atom_flags |= ATOM_FLAG_INITIALIZED
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/paint_stripe/green

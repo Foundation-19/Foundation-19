@@ -29,9 +29,7 @@ var/list/floor_decals = list()
 			I.color = src.color
 			I.alpha = src.alpha
 			if(detail_overlay)
-				var/image/B = overlay_image(icon, "[detail_overlay]", flags=RESET_COLOR)
-				B.color = detail_color
-				I.add_overlay(B)
+				I.overlays |= overlay_image(icon, "[detail_overlay]", color = detail_color, flags = RESET_COLOR)
 			floor_decals[cache_key] = I
 
 		if(!T.decals) T.decals = list()
