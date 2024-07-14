@@ -242,8 +242,8 @@
 	icon_state = "detective3"
 	worn_state = "detective3"
 
-/obj/item/clothing/head/det
-	name = "detective's fedora"
+/obj/item/clothing/head/fedora/det
+	name = "brown fedora"
 	desc = "There's only one man who can sniff out the dirty stench of crime, and he's likely wearing this hat."
 	icon_state = "detective"
 	item_state_slots = list(
